@@ -32,8 +32,8 @@ Workflow {
 		}
 		language = StandardLanguage {
 			name = "dut.control.sysmloc.SysMLOC"
-			fileExtensions = "sysmloc"
-			referencedResource = "platform:/resource/dut.control.sysmloc/metamodel/SysML.ecore"
+			fileExtensions = "sysml"
+//			referencedResource = "platform:/resource/dut.control.sysmloc/metamodel/SysML.ecore"
 			serializer = {
 				generateStub = false
 			}
