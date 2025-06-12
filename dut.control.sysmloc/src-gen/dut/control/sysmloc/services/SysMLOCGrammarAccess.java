@@ -26,7 +26,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Assignment cPackagesAssignment = (Assignment)rule.eContents().get(1);
 		private final RuleCall cPackagesPackageParserRuleCall_0 = (RuleCall)cPackagesAssignment.eContents().get(0);
 		
-		//Namespace returns Namespace:
+		//Namespace:
 		//    (packages+=Package)*;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -78,7 +78,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cElementsTypeParserRuleCall_3_0 = (RuleCall)cElementsAssignment_3.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
-		//Package returns Package:
+		//Package:
 		//    'package' name=QualifiedName '{'
 		//    (elements+=Type)*
 		//    '}';
@@ -117,7 +117,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Assignment cBodyAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cBodyREGULAR_COMMENTTerminalRuleCall_1_0 = (RuleCall)cBodyAssignment_1.eContents().get(0);
 		
-		//Comment returns Comment:
+		//Comment:
 		//    'doc' body = REGULAR_COMMENT;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -143,7 +143,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cNameQualifiedNameParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
-		//Import returns Import:
+		//Import:
 		//    visibility=QualifiedName 'import' name=QualifiedName ';';
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -176,7 +176,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cNameQualifiedNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
-		//PartUsage returns PartUsage:
+		//PartUsage:
 		//   'part' name=QualifiedName ';';
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -204,7 +204,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cNameQualifiedNameParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
-		//PartDefinition returns PartDefinition:
+		//PartDefinition:
 		//   'part' 'def' name=QualifiedName ';';
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -358,7 +358,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	
 
 	
-	//Namespace returns Namespace:
+	//Namespace:
 	//    (packages+=Package)*;
 	public NamespaceElements getNamespaceAccess() {
 		return pNamespace;
@@ -378,7 +378,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		return getTypeAccess().getRule();
 	}
 	
-	//Package returns Package:
+	//Package:
 	//    'package' name=QualifiedName '{'
 	//    (elements+=Type)*
 	//    '}';
@@ -390,7 +390,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		return getPackageAccess().getRule();
 	}
 	
-	//Comment returns Comment:
+	//Comment:
 	//    'doc' body = REGULAR_COMMENT;
 	public CommentElements getCommentAccess() {
 		return pComment;
@@ -400,7 +400,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		return getCommentAccess().getRule();
 	}
 	
-	//Import returns Import:
+	//Import:
 	//    visibility=QualifiedName 'import' name=QualifiedName ';';
 	public ImportElements getImportAccess() {
 		return pImport;
@@ -410,7 +410,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		return getImportAccess().getRule();
 	}
 	
-	//PartUsage returns PartUsage:
+	//PartUsage:
 	//   'part' name=QualifiedName ';';
 	public PartUsageElements getPartUsageAccess() {
 		return pPartUsage;
@@ -420,7 +420,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		return getPartUsageAccess().getRule();
 	}
 	
-	//PartDefinition returns PartDefinition:
+	//PartDefinition:
 	//   'part' 'def' name=QualifiedName ';';
 	public PartDefinitionElements getPartDefinitionAccess() {
 		return pPartDefinition;
