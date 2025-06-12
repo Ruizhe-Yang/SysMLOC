@@ -1,0 +1,8 @@
+package VehicleDefinitions {
+	public import a;
+	doc /* aaa */
+	part a;
+	part def aaa;
+	
+	
+}

@@ -1,0 +1,72 @@
+grammar dut.control.sysmloc.SysMLOC hidden(WS, ML_NOTE, SL_NOTE)
+
+import "http://www.eclipse.org/emf/2002/Ecore" as Ecore
+//import "https://www.omg.org/spec/SysML/20240201" as SysML
+
+generate sysMLOC "http://www.control.dut/sysmloc/SysMLOC"
+ 
+Namespace:
+    (packages+=Package)*;
+ 
+Type:
+    Package | Comment | Import | PartUsage | PartDefinition;
+ 
+Package:
+    'package' name=QualifiedName '{'
+    (elements+=Type)*
+    '}';
+ 
+Comment:
+    'doc' body = REGULAR_COMMENT;
+
+Import:
+    visibility=QualifiedName 'import' name=QualifiedName ';';
+     
+PartUsage:
+   'part' name=QualifiedName ';';
+    
+PartDefinition:
+   'part' 'def' name=QualifiedName ';';
+
+/* NAMES */
+
+Name:
+	ID | UNRESTRICTED_NAME
+;
+
+Qualification :
+	( Name '::' )+
+;
+
+QualifiedName:
+	Qualification? Name
+;
+
+/* TERMINALS */
+
+terminal DECIMAL_VALUE returns Ecore::EInt:
+	'0'..'9' ('0'..'9')*;
+
+terminal EXP_VALUE:
+	DECIMAL_VALUE ('e' | 'E') ('+' | '-')? DECIMAL_VALUE;
+
+terminal ID:
+	('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
+
+terminal UNRESTRICTED_NAME returns Ecore::EString:
+	'\'' ('\\' ('b' | 't' | 'n' | 'f' | 'r' | '"' | "'" | '\\') | !('\\' | '\''))* '\'';
+
+terminal STRING_VALUE returns Ecore::EString:
+	'"' ('\\' ('b' | 't' | 'n' | 'f' | 'r' | '"' | "'" | '\\') | !('\\' | '"'))* '"';
+
+terminal REGULAR_COMMENT:
+	'/*' ->'*/';
+
+terminal ML_NOTE:
+	'//*'->'*/';
+
+terminal SL_NOTE:
+	'//' (!('\n' | '\r') !('\n' | '\r')*)? ('\r'? '\n')?;
+
+terminal WS:
+	(' ' | '\t' | '\r' | '\n')+;
