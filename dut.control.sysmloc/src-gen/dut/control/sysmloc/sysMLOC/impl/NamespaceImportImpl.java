@@ -3,7 +3,7 @@
  */
 package dut.control.sysmloc.sysMLOC.impl;
 
-import dut.control.sysmloc.sysMLOC.Import;
+import dut.control.sysmloc.sysMLOC.NamespaceImport;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -14,19 +14,19 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Import</b></em>'.
+ * An implementation of the model object '<em><b>Namespace Import</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ImportImpl#getVisibility <em>Visibility</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ImportImpl#getName <em>Name</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.NamespaceImportImpl#getVisibility <em>Visibility</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.NamespaceImportImpl#getDeclaredName <em>Declared Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ImportImpl extends TypeImpl implements Import
+public class NamespaceImportImpl extends ImportElementImpl implements NamespaceImport
 {
   /**
    * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
@@ -49,31 +49,31 @@ public class ImportImpl extends TypeImpl implements Import
   protected String visibility = VISIBILITY_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The default value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getDeclaredName()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
+  protected static final String DECLARED_NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getDeclaredName()
    * @generated
    * @ordered
    */
-  protected String name = NAME_EDEFAULT;
+  protected String declaredName = DECLARED_NAME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ImportImpl()
+  protected NamespaceImportImpl()
   {
     super();
   }
@@ -86,7 +86,7 @@ public class ImportImpl extends TypeImpl implements Import
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.IMPORT;
+    return SysMLOCPackage.Literals.NAMESPACE_IMPORT;
   }
 
   /**
@@ -111,7 +111,7 @@ public class ImportImpl extends TypeImpl implements Import
     String oldVisibility = visibility;
     visibility = newVisibility;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.IMPORT__VISIBILITY, oldVisibility, visibility));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.NAMESPACE_IMPORT__VISIBILITY, oldVisibility, visibility));
   }
 
   /**
@@ -120,9 +120,9 @@ public class ImportImpl extends TypeImpl implements Import
    * @generated
    */
   @Override
-  public String getName()
+  public String getDeclaredName()
   {
-    return name;
+    return declaredName;
   }
 
   /**
@@ -131,12 +131,12 @@ public class ImportImpl extends TypeImpl implements Import
    * @generated
    */
   @Override
-  public void setName(String newName)
+  public void setDeclaredName(String newDeclaredName)
   {
-    String oldName = name;
-    name = newName;
+    String oldDeclaredName = declaredName;
+    declaredName = newDeclaredName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.IMPORT__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.NAMESPACE_IMPORT__DECLARED_NAME, oldDeclaredName, declaredName));
   }
 
   /**
@@ -149,10 +149,10 @@ public class ImportImpl extends TypeImpl implements Import
   {
     switch (featureID)
     {
-      case SysMLOCPackage.IMPORT__VISIBILITY:
+      case SysMLOCPackage.NAMESPACE_IMPORT__VISIBILITY:
         return getVisibility();
-      case SysMLOCPackage.IMPORT__NAME:
-        return getName();
+      case SysMLOCPackage.NAMESPACE_IMPORT__DECLARED_NAME:
+        return getDeclaredName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -167,11 +167,11 @@ public class ImportImpl extends TypeImpl implements Import
   {
     switch (featureID)
     {
-      case SysMLOCPackage.IMPORT__VISIBILITY:
+      case SysMLOCPackage.NAMESPACE_IMPORT__VISIBILITY:
         setVisibility((String)newValue);
         return;
-      case SysMLOCPackage.IMPORT__NAME:
-        setName((String)newValue);
+      case SysMLOCPackage.NAMESPACE_IMPORT__DECLARED_NAME:
+        setDeclaredName((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -187,11 +187,11 @@ public class ImportImpl extends TypeImpl implements Import
   {
     switch (featureID)
     {
-      case SysMLOCPackage.IMPORT__VISIBILITY:
+      case SysMLOCPackage.NAMESPACE_IMPORT__VISIBILITY:
         setVisibility(VISIBILITY_EDEFAULT);
         return;
-      case SysMLOCPackage.IMPORT__NAME:
-        setName(NAME_EDEFAULT);
+      case SysMLOCPackage.NAMESPACE_IMPORT__DECLARED_NAME:
+        setDeclaredName(DECLARED_NAME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -207,10 +207,10 @@ public class ImportImpl extends TypeImpl implements Import
   {
     switch (featureID)
     {
-      case SysMLOCPackage.IMPORT__VISIBILITY:
+      case SysMLOCPackage.NAMESPACE_IMPORT__VISIBILITY:
         return VISIBILITY_EDEFAULT == null ? visibility != null : !VISIBILITY_EDEFAULT.equals(visibility);
-      case SysMLOCPackage.IMPORT__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case SysMLOCPackage.NAMESPACE_IMPORT__DECLARED_NAME:
+        return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
     }
     return super.eIsSet(featureID);
   }
@@ -228,10 +228,10 @@ public class ImportImpl extends TypeImpl implements Import
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (visibility: ");
     result.append(visibility);
-    result.append(", name: ");
-    result.append(name);
+    result.append(", declaredName: ");
+    result.append(declaredName);
     result.append(')');
     return result.toString();
   }
 
-} //ImportImpl
+} //NamespaceImportImpl

@@ -9,39 +9,11 @@ package dut.control.sysmloc.sysMLOC;
  * A representation of the model object '<em><b>Part Definition</b></em>'.
  * <!-- end-user-doc -->
  *
- * <p>
- * The following features are supported:
- * </p>
- * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.PartDefinition#getName <em>Name</em>}</li>
- * </ul>
  *
  * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getPartDefinition()
  * @model
  * @generated
  */
-public interface PartDefinition extends Type
+public interface PartDefinition extends DefinitionElement
 {
-  /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getPartDefinition_Name()
-   * @model
-   * @generated
-   */
-  String getName();
-
-  /**
-   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.PartDefinition#getName <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
-   * @generated
-   */
-  void setName(String value);
-
 } // PartDefinition

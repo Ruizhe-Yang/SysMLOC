@@ -86,23 +86,23 @@ public interface SysMLOCPackage extends EPackage
   int NAMESPACE_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.TypeImpl <em>Type</em>}' class.
+   * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.BaseElementImpl <em>Base Element</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see dut.control.sysmloc.sysMLOC.impl.TypeImpl
-   * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getType()
+   * @see dut.control.sysmloc.sysMLOC.impl.BaseElementImpl
+   * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getBaseElement()
    * @generated
    */
-  int TYPE = 1;
+  int BASE_ELEMENT = 2;
 
   /**
-   * The number of structural features of the '<em>Type</em>' class.
+   * The number of structural features of the '<em>Base Element</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TYPE_FEATURE_COUNT = 0;
+  int BASE_ELEMENT_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.PackageImpl <em>Package</em>}' class.
@@ -112,16 +112,16 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getPackage()
    * @generated
    */
-  int PACKAGE = 2;
+  int PACKAGE = 1;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Declared Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PACKAGE__NAME = TYPE_FEATURE_COUNT + 0;
+  int PACKAGE__DECLARED_NAME = BASE_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -130,7 +130,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PACKAGE__ELEMENTS = TYPE_FEATURE_COUNT + 1;
+  int PACKAGE__ELEMENTS = BASE_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Package</em>' class.
@@ -139,7 +139,157 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PACKAGE_FEATURE_COUNT = TYPE_FEATURE_COUNT + 2;
+  int PACKAGE_FEATURE_COUNT = BASE_ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.AnnotatingElementImpl <em>Annotating Element</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.sysmloc.sysMLOC.impl.AnnotatingElementImpl
+   * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getAnnotatingElement()
+   * @generated
+   */
+  int ANNOTATING_ELEMENT = 3;
+
+  /**
+   * The number of structural features of the '<em>Annotating Element</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATING_ELEMENT_FEATURE_COUNT = BASE_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.ImportElementImpl <em>Import Element</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.sysmloc.sysMLOC.impl.ImportElementImpl
+   * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getImportElement()
+   * @generated
+   */
+  int IMPORT_ELEMENT = 4;
+
+  /**
+   * The number of structural features of the '<em>Import Element</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT_ELEMENT_FEATURE_COUNT = BASE_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.DefinitionElementImpl <em>Definition Element</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.sysmloc.sysMLOC.impl.DefinitionElementImpl
+   * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getDefinitionElement()
+   * @generated
+   */
+  int DEFINITION_ELEMENT = 5;
+
+  /**
+   * The feature id for the '<em><b>Declared Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEFINITION_ELEMENT__DECLARED_NAME = BASE_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEFINITION_ELEMENT__ELEMENTS = BASE_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Definition Element</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEFINITION_ELEMENT_FEATURE_COUNT = BASE_ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.UsageElementImpl <em>Usage Element</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.sysmloc.sysMLOC.impl.UsageElementImpl
+   * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getUsageElement()
+   * @generated
+   */
+  int USAGE_ELEMENT = 6;
+
+  /**
+   * The number of structural features of the '<em>Usage Element</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int USAGE_ELEMENT_FEATURE_COUNT = BASE_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.NonOccurrenceUsageElementImpl <em>Non Occurrence Usage Element</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.sysmloc.sysMLOC.impl.NonOccurrenceUsageElementImpl
+   * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getNonOccurrenceUsageElement()
+   * @generated
+   */
+  int NON_OCCURRENCE_USAGE_ELEMENT = 7;
+
+  /**
+   * The number of structural features of the '<em>Non Occurrence Usage Element</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT = USAGE_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.NamespaceImportImpl <em>Namespace Import</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.sysmloc.sysMLOC.impl.NamespaceImportImpl
+   * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getNamespaceImport()
+   * @generated
+   */
+  int NAMESPACE_IMPORT = 8;
+
+  /**
+   * The feature id for the '<em><b>Visibility</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAMESPACE_IMPORT__VISIBILITY = IMPORT_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Declared Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAMESPACE_IMPORT__DECLARED_NAME = IMPORT_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Namespace Import</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAMESPACE_IMPORT_FEATURE_COUNT = IMPORT_ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.CommentImpl <em>Comment</em>}' class.
@@ -149,7 +299,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getComment()
    * @generated
    */
-  int COMMENT = 3;
+  int COMMENT = 9;
 
   /**
    * The feature id for the '<em><b>Body</b></em>' attribute.
@@ -158,7 +308,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMMENT__BODY = TYPE_FEATURE_COUNT + 0;
+  int COMMENT__BODY = ANNOTATING_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Comment</em>' class.
@@ -167,72 +317,44 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMMENT_FEATURE_COUNT = TYPE_FEATURE_COUNT + 1;
+  int COMMENT_FEATURE_COUNT = ANNOTATING_ELEMENT_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.ImportImpl <em>Import</em>}' class.
+   * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.AttributeDefinitionImpl <em>Attribute Definition</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see dut.control.sysmloc.sysMLOC.impl.ImportImpl
-   * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getImport()
+   * @see dut.control.sysmloc.sysMLOC.impl.AttributeDefinitionImpl
+   * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getAttributeDefinition()
    * @generated
    */
-  int IMPORT = 4;
+  int ATTRIBUTE_DEFINITION = 10;
 
   /**
-   * The feature id for the '<em><b>Visibility</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IMPORT__VISIBILITY = TYPE_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Declared Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IMPORT__NAME = TYPE_FEATURE_COUNT + 1;
+  int ATTRIBUTE_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENT__DECLARED_NAME;
 
   /**
-   * The number of structural features of the '<em>Import</em>' class.
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IMPORT_FEATURE_COUNT = TYPE_FEATURE_COUNT + 2;
+  int ATTRIBUTE_DEFINITION__ELEMENTS = DEFINITION_ELEMENT__ELEMENTS;
 
   /**
-   * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.PartUsageImpl <em>Part Usage</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.sysmloc.sysMLOC.impl.PartUsageImpl
-   * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getPartUsage()
-   * @generated
-   */
-  int PART_USAGE = 5;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The number of structural features of the '<em>Attribute Definition</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PART_USAGE__NAME = TYPE_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Part Usage</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PART_USAGE_FEATURE_COUNT = TYPE_FEATURE_COUNT + 1;
+  int ATTRIBUTE_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.PartDefinitionImpl <em>Part Definition</em>}' class.
@@ -242,16 +364,25 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getPartDefinition()
    * @generated
    */
-  int PART_DEFINITION = 6;
+  int PART_DEFINITION = 11;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Declared Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PART_DEFINITION__NAME = TYPE_FEATURE_COUNT + 0;
+  int PART_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENT__DECLARED_NAME;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PART_DEFINITION__ELEMENTS = DEFINITION_ELEMENT__ELEMENTS;
 
   /**
    * The number of structural features of the '<em>Part Definition</em>' class.
@@ -260,7 +391,118 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PART_DEFINITION_FEATURE_COUNT = TYPE_FEATURE_COUNT + 1;
+  int PART_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.AttributeUsageImpl <em>Attribute Usage</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.sysmloc.sysMLOC.impl.AttributeUsageImpl
+   * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getAttributeUsage()
+   * @generated
+   */
+  int ATTRIBUTE_USAGE = 12;
+
+  /**
+   * The feature id for the '<em><b>Declared Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATTRIBUTE_USAGE__DECLARED_NAME = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATTRIBUTE_USAGE__ELEMENTS = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Attribute Usage</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATTRIBUTE_USAGE_FEATURE_COUNT = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.PartUsageImpl <em>Part Usage</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.sysmloc.sysMLOC.impl.PartUsageImpl
+   * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getPartUsage()
+   * @generated
+   */
+  int PART_USAGE = 13;
+
+  /**
+   * The feature id for the '<em><b>Declared Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PART_USAGE__DECLARED_NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PART_USAGE__ELEMENTS = 1;
+
+  /**
+   * The number of structural features of the '<em>Part Usage</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PART_USAGE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.TBDImpl <em>TBD</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.sysmloc.sysMLOC.impl.TBDImpl
+   * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getTBD()
+   * @generated
+   */
+  int TBD = 14;
+
+  /**
+   * The feature id for the '<em><b>Text</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TBD__TEXT = BASE_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TBD__ELEMENTS = BASE_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>TBD</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TBD_FEATURE_COUNT = BASE_ELEMENT_FEATURE_COUNT + 2;
 
 
   /**
@@ -285,16 +527,6 @@ public interface SysMLOCPackage extends EPackage
   EReference getNamespace_Packages();
 
   /**
-   * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.Type <em>Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Type</em>'.
-   * @see dut.control.sysmloc.sysMLOC.Type
-   * @generated
-   */
-  EClass getType();
-
-  /**
    * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.Package <em>Package</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -305,15 +537,15 @@ public interface SysMLOCPackage extends EPackage
   EClass getPackage();
 
   /**
-   * Returns the meta object for the attribute '{@link dut.control.sysmloc.sysMLOC.Package#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.sysmloc.sysMLOC.Package#getDeclaredName <em>Declared Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see dut.control.sysmloc.sysMLOC.Package#getName()
+   * @return the meta object for the attribute '<em>Declared Name</em>'.
+   * @see dut.control.sysmloc.sysMLOC.Package#getDeclaredName()
    * @see #getPackage()
    * @generated
    */
-  EAttribute getPackage_Name();
+  EAttribute getPackage_DeclaredName();
 
   /**
    * Returns the meta object for the containment reference list '{@link dut.control.sysmloc.sysMLOC.Package#getElements <em>Elements</em>}'.
@@ -325,6 +557,120 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    */
   EReference getPackage_Elements();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.BaseElement <em>Base Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Base Element</em>'.
+   * @see dut.control.sysmloc.sysMLOC.BaseElement
+   * @generated
+   */
+  EClass getBaseElement();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.AnnotatingElement <em>Annotating Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Annotating Element</em>'.
+   * @see dut.control.sysmloc.sysMLOC.AnnotatingElement
+   * @generated
+   */
+  EClass getAnnotatingElement();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.ImportElement <em>Import Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Import Element</em>'.
+   * @see dut.control.sysmloc.sysMLOC.ImportElement
+   * @generated
+   */
+  EClass getImportElement();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.DefinitionElement <em>Definition Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Definition Element</em>'.
+   * @see dut.control.sysmloc.sysMLOC.DefinitionElement
+   * @generated
+   */
+  EClass getDefinitionElement();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.sysmloc.sysMLOC.DefinitionElement#getDeclaredName <em>Declared Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Declared Name</em>'.
+   * @see dut.control.sysmloc.sysMLOC.DefinitionElement#getDeclaredName()
+   * @see #getDefinitionElement()
+   * @generated
+   */
+  EAttribute getDefinitionElement_DeclaredName();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.sysmloc.sysMLOC.DefinitionElement#getElements <em>Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see dut.control.sysmloc.sysMLOC.DefinitionElement#getElements()
+   * @see #getDefinitionElement()
+   * @generated
+   */
+  EReference getDefinitionElement_Elements();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.UsageElement <em>Usage Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Usage Element</em>'.
+   * @see dut.control.sysmloc.sysMLOC.UsageElement
+   * @generated
+   */
+  EClass getUsageElement();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.NonOccurrenceUsageElement <em>Non Occurrence Usage Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Non Occurrence Usage Element</em>'.
+   * @see dut.control.sysmloc.sysMLOC.NonOccurrenceUsageElement
+   * @generated
+   */
+  EClass getNonOccurrenceUsageElement();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.NamespaceImport <em>Namespace Import</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Namespace Import</em>'.
+   * @see dut.control.sysmloc.sysMLOC.NamespaceImport
+   * @generated
+   */
+  EClass getNamespaceImport();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.sysmloc.sysMLOC.NamespaceImport#getVisibility <em>Visibility</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Visibility</em>'.
+   * @see dut.control.sysmloc.sysMLOC.NamespaceImport#getVisibility()
+   * @see #getNamespaceImport()
+   * @generated
+   */
+  EAttribute getNamespaceImport_Visibility();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.sysmloc.sysMLOC.NamespaceImport#getDeclaredName <em>Declared Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Declared Name</em>'.
+   * @see dut.control.sysmloc.sysMLOC.NamespaceImport#getDeclaredName()
+   * @see #getNamespaceImport()
+   * @generated
+   */
+  EAttribute getNamespaceImport_DeclaredName();
 
   /**
    * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.Comment <em>Comment</em>}'.
@@ -348,57 +694,14 @@ public interface SysMLOCPackage extends EPackage
   EAttribute getComment_Body();
 
   /**
-   * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.Import <em>Import</em>}'.
+   * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.AttributeDefinition <em>Attribute Definition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Import</em>'.
-   * @see dut.control.sysmloc.sysMLOC.Import
+   * @return the meta object for class '<em>Attribute Definition</em>'.
+   * @see dut.control.sysmloc.sysMLOC.AttributeDefinition
    * @generated
    */
-  EClass getImport();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.sysmloc.sysMLOC.Import#getVisibility <em>Visibility</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Visibility</em>'.
-   * @see dut.control.sysmloc.sysMLOC.Import#getVisibility()
-   * @see #getImport()
-   * @generated
-   */
-  EAttribute getImport_Visibility();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.sysmloc.sysMLOC.Import#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see dut.control.sysmloc.sysMLOC.Import#getName()
-   * @see #getImport()
-   * @generated
-   */
-  EAttribute getImport_Name();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.PartUsage <em>Part Usage</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Part Usage</em>'.
-   * @see dut.control.sysmloc.sysMLOC.PartUsage
-   * @generated
-   */
-  EClass getPartUsage();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.sysmloc.sysMLOC.PartUsage#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see dut.control.sysmloc.sysMLOC.PartUsage#getName()
-   * @see #getPartUsage()
-   * @generated
-   */
-  EAttribute getPartUsage_Name();
+  EClass getAttributeDefinition();
 
   /**
    * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.PartDefinition <em>Part Definition</em>}'.
@@ -411,15 +714,100 @@ public interface SysMLOCPackage extends EPackage
   EClass getPartDefinition();
 
   /**
-   * Returns the meta object for the attribute '{@link dut.control.sysmloc.sysMLOC.PartDefinition#getName <em>Name</em>}'.
+   * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.AttributeUsage <em>Attribute Usage</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see dut.control.sysmloc.sysMLOC.PartDefinition#getName()
-   * @see #getPartDefinition()
+   * @return the meta object for class '<em>Attribute Usage</em>'.
+   * @see dut.control.sysmloc.sysMLOC.AttributeUsage
    * @generated
    */
-  EAttribute getPartDefinition_Name();
+  EClass getAttributeUsage();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.sysmloc.sysMLOC.AttributeUsage#getDeclaredName <em>Declared Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Declared Name</em>'.
+   * @see dut.control.sysmloc.sysMLOC.AttributeUsage#getDeclaredName()
+   * @see #getAttributeUsage()
+   * @generated
+   */
+  EAttribute getAttributeUsage_DeclaredName();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.sysmloc.sysMLOC.AttributeUsage#getElements <em>Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see dut.control.sysmloc.sysMLOC.AttributeUsage#getElements()
+   * @see #getAttributeUsage()
+   * @generated
+   */
+  EReference getAttributeUsage_Elements();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.PartUsage <em>Part Usage</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Part Usage</em>'.
+   * @see dut.control.sysmloc.sysMLOC.PartUsage
+   * @generated
+   */
+  EClass getPartUsage();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.sysmloc.sysMLOC.PartUsage#getDeclaredName <em>Declared Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Declared Name</em>'.
+   * @see dut.control.sysmloc.sysMLOC.PartUsage#getDeclaredName()
+   * @see #getPartUsage()
+   * @generated
+   */
+  EAttribute getPartUsage_DeclaredName();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.sysmloc.sysMLOC.PartUsage#getElements <em>Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see dut.control.sysmloc.sysMLOC.PartUsage#getElements()
+   * @see #getPartUsage()
+   * @generated
+   */
+  EReference getPartUsage_Elements();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.TBD <em>TBD</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>TBD</em>'.
+   * @see dut.control.sysmloc.sysMLOC.TBD
+   * @generated
+   */
+  EClass getTBD();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.sysmloc.sysMLOC.TBD#getText <em>Text</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Text</em>'.
+   * @see dut.control.sysmloc.sysMLOC.TBD#getText()
+   * @see #getTBD()
+   * @generated
+   */
+  EAttribute getTBD_Text();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.sysmloc.sysMLOC.TBD#getElements <em>Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see dut.control.sysmloc.sysMLOC.TBD#getElements()
+   * @see #getTBD()
+   * @generated
+   */
+  EReference getTBD_Elements();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -463,16 +851,6 @@ public interface SysMLOCPackage extends EPackage
     EReference NAMESPACE__PACKAGES = eINSTANCE.getNamespace_Packages();
 
     /**
-     * The meta object literal for the '{@link dut.control.sysmloc.sysMLOC.impl.TypeImpl <em>Type</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.sysmloc.sysMLOC.impl.TypeImpl
-     * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getType()
-     * @generated
-     */
-    EClass TYPE = eINSTANCE.getType();
-
-    /**
      * The meta object literal for the '{@link dut.control.sysmloc.sysMLOC.impl.PackageImpl <em>Package</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -483,12 +861,12 @@ public interface SysMLOCPackage extends EPackage
     EClass PACKAGE = eINSTANCE.getPackage();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Declared Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PACKAGE__NAME = eINSTANCE.getPackage_Name();
+    EAttribute PACKAGE__DECLARED_NAME = eINSTANCE.getPackage_DeclaredName();
 
     /**
      * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
@@ -497,6 +875,108 @@ public interface SysMLOCPackage extends EPackage
      * @generated
      */
     EReference PACKAGE__ELEMENTS = eINSTANCE.getPackage_Elements();
+
+    /**
+     * The meta object literal for the '{@link dut.control.sysmloc.sysMLOC.impl.BaseElementImpl <em>Base Element</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.sysmloc.sysMLOC.impl.BaseElementImpl
+     * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getBaseElement()
+     * @generated
+     */
+    EClass BASE_ELEMENT = eINSTANCE.getBaseElement();
+
+    /**
+     * The meta object literal for the '{@link dut.control.sysmloc.sysMLOC.impl.AnnotatingElementImpl <em>Annotating Element</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.sysmloc.sysMLOC.impl.AnnotatingElementImpl
+     * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getAnnotatingElement()
+     * @generated
+     */
+    EClass ANNOTATING_ELEMENT = eINSTANCE.getAnnotatingElement();
+
+    /**
+     * The meta object literal for the '{@link dut.control.sysmloc.sysMLOC.impl.ImportElementImpl <em>Import Element</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.sysmloc.sysMLOC.impl.ImportElementImpl
+     * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getImportElement()
+     * @generated
+     */
+    EClass IMPORT_ELEMENT = eINSTANCE.getImportElement();
+
+    /**
+     * The meta object literal for the '{@link dut.control.sysmloc.sysMLOC.impl.DefinitionElementImpl <em>Definition Element</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.sysmloc.sysMLOC.impl.DefinitionElementImpl
+     * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getDefinitionElement()
+     * @generated
+     */
+    EClass DEFINITION_ELEMENT = eINSTANCE.getDefinitionElement();
+
+    /**
+     * The meta object literal for the '<em><b>Declared Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DEFINITION_ELEMENT__DECLARED_NAME = eINSTANCE.getDefinitionElement_DeclaredName();
+
+    /**
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DEFINITION_ELEMENT__ELEMENTS = eINSTANCE.getDefinitionElement_Elements();
+
+    /**
+     * The meta object literal for the '{@link dut.control.sysmloc.sysMLOC.impl.UsageElementImpl <em>Usage Element</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.sysmloc.sysMLOC.impl.UsageElementImpl
+     * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getUsageElement()
+     * @generated
+     */
+    EClass USAGE_ELEMENT = eINSTANCE.getUsageElement();
+
+    /**
+     * The meta object literal for the '{@link dut.control.sysmloc.sysMLOC.impl.NonOccurrenceUsageElementImpl <em>Non Occurrence Usage Element</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.sysmloc.sysMLOC.impl.NonOccurrenceUsageElementImpl
+     * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getNonOccurrenceUsageElement()
+     * @generated
+     */
+    EClass NON_OCCURRENCE_USAGE_ELEMENT = eINSTANCE.getNonOccurrenceUsageElement();
+
+    /**
+     * The meta object literal for the '{@link dut.control.sysmloc.sysMLOC.impl.NamespaceImportImpl <em>Namespace Import</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.sysmloc.sysMLOC.impl.NamespaceImportImpl
+     * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getNamespaceImport()
+     * @generated
+     */
+    EClass NAMESPACE_IMPORT = eINSTANCE.getNamespaceImport();
+
+    /**
+     * The meta object literal for the '<em><b>Visibility</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute NAMESPACE_IMPORT__VISIBILITY = eINSTANCE.getNamespaceImport_Visibility();
+
+    /**
+     * The meta object literal for the '<em><b>Declared Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute NAMESPACE_IMPORT__DECLARED_NAME = eINSTANCE.getNamespaceImport_DeclaredName();
 
     /**
      * The meta object literal for the '{@link dut.control.sysmloc.sysMLOC.impl.CommentImpl <em>Comment</em>}' class.
@@ -517,48 +997,14 @@ public interface SysMLOCPackage extends EPackage
     EAttribute COMMENT__BODY = eINSTANCE.getComment_Body();
 
     /**
-     * The meta object literal for the '{@link dut.control.sysmloc.sysMLOC.impl.ImportImpl <em>Import</em>}' class.
+     * The meta object literal for the '{@link dut.control.sysmloc.sysMLOC.impl.AttributeDefinitionImpl <em>Attribute Definition</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see dut.control.sysmloc.sysMLOC.impl.ImportImpl
-     * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getImport()
+     * @see dut.control.sysmloc.sysMLOC.impl.AttributeDefinitionImpl
+     * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getAttributeDefinition()
      * @generated
      */
-    EClass IMPORT = eINSTANCE.getImport();
-
-    /**
-     * The meta object literal for the '<em><b>Visibility</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute IMPORT__VISIBILITY = eINSTANCE.getImport_Visibility();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute IMPORT__NAME = eINSTANCE.getImport_Name();
-
-    /**
-     * The meta object literal for the '{@link dut.control.sysmloc.sysMLOC.impl.PartUsageImpl <em>Part Usage</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.sysmloc.sysMLOC.impl.PartUsageImpl
-     * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getPartUsage()
-     * @generated
-     */
-    EClass PART_USAGE = eINSTANCE.getPartUsage();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute PART_USAGE__NAME = eINSTANCE.getPartUsage_Name();
+    EClass ATTRIBUTE_DEFINITION = eINSTANCE.getAttributeDefinition();
 
     /**
      * The meta object literal for the '{@link dut.control.sysmloc.sysMLOC.impl.PartDefinitionImpl <em>Part Definition</em>}' class.
@@ -571,12 +1017,82 @@ public interface SysMLOCPackage extends EPackage
     EClass PART_DEFINITION = eINSTANCE.getPartDefinition();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '{@link dut.control.sysmloc.sysMLOC.impl.AttributeUsageImpl <em>Attribute Usage</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.sysmloc.sysMLOC.impl.AttributeUsageImpl
+     * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getAttributeUsage()
+     * @generated
+     */
+    EClass ATTRIBUTE_USAGE = eINSTANCE.getAttributeUsage();
+
+    /**
+     * The meta object literal for the '<em><b>Declared Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PART_DEFINITION__NAME = eINSTANCE.getPartDefinition_Name();
+    EAttribute ATTRIBUTE_USAGE__DECLARED_NAME = eINSTANCE.getAttributeUsage_DeclaredName();
+
+    /**
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ATTRIBUTE_USAGE__ELEMENTS = eINSTANCE.getAttributeUsage_Elements();
+
+    /**
+     * The meta object literal for the '{@link dut.control.sysmloc.sysMLOC.impl.PartUsageImpl <em>Part Usage</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.sysmloc.sysMLOC.impl.PartUsageImpl
+     * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getPartUsage()
+     * @generated
+     */
+    EClass PART_USAGE = eINSTANCE.getPartUsage();
+
+    /**
+     * The meta object literal for the '<em><b>Declared Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PART_USAGE__DECLARED_NAME = eINSTANCE.getPartUsage_DeclaredName();
+
+    /**
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PART_USAGE__ELEMENTS = eINSTANCE.getPartUsage_Elements();
+
+    /**
+     * The meta object literal for the '{@link dut.control.sysmloc.sysMLOC.impl.TBDImpl <em>TBD</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.sysmloc.sysMLOC.impl.TBDImpl
+     * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getTBD()
+     * @generated
+     */
+    EClass TBD = eINSTANCE.getTBD();
+
+    /**
+     * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TBD__TEXT = eINSTANCE.getTBD_Text();
+
+    /**
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TBD__ELEMENTS = eINSTANCE.getTBD_Elements();
 
   }
 

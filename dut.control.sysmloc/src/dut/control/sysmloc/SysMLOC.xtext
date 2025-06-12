@@ -1,32 +1,176 @@
 grammar dut.control.sysmloc.SysMLOC hidden(WS, ML_NOTE, SL_NOTE)
 
 import "http://www.eclipse.org/emf/2002/Ecore" as Ecore
-//import "https://www.omg.org/spec/SysML/20240201" as SysML
 
 generate sysMLOC "http://www.control.dut/sysmloc/SysMLOC"
  
 Namespace:
     (packages+=Package)*;
- 
-Type:
-    Package | Comment | Import | PartUsage | PartDefinition;
- 
-Package:
-    'package' name=QualifiedName '{'
-    (elements+=Type)*
-    '}';
- 
-Comment:
-    'doc' body = REGULAR_COMMENT;
 
-Import:
-    visibility=QualifiedName 'import' name=QualifiedName ';';
-     
-PartUsage:
-   'part' name=QualifiedName ';';
+Package:
+    'package' 
+    declaredName=QualifiedName 
+    '{' (elements+=BaseElement)* '}'
+;
     
+BaseElement:
+    Package 
+    | AnnotatingElement 
+    | ImportElement
+    | DefinitionElement
+    | UsageElement
+;
+
+// Annotating
+
+AnnotatingElement:
+	Comment 
+//	| Documentation
+//	| TextualRepresentation
+//	| MetadataUsage
+;
+
+// Importing
+
+ImportElement:
+	NamespaceImport
+//	| MembershipImport
+;
+
+// Definitions
+
+DefinitionElement:
+	AttributeDefinition
+//	| EnumerationDefinition
+//	| OccurrenceDefinition
+//	| IndividualDefinition
+//	| ItemDefinition
+//	| MetadataDefinition
+	| PartDefinition
+//	| ConnectionDefinition
+//	| FlowConnectionDefinition
+//	| InterfaceDefinition
+//	| AllocationDefinition
+//	| PortDefinition
+//	| ActionDefinition
+//	| CalculationDefinition
+//	| StateDefinition
+//	| ConstraintDefinition
+//	| RequirementDefinition
+//	| ConcernDefinition
+//	| CaseDefinition
+//	| AnalysisCaseDefinition
+//	| VerificationCaseDefinition
+//	| UseCaseDefinition
+//	| ViewDefinition
+//	| ViewpointDefinition
+//	| RenderingDefinition
+//	| ExtendedDefinition
+;
+
+// Usages
+
+UsageElement:
+	NonOccurrenceUsageElement 
+//	| OccurrenceUsageElement
+;
+
+NonOccurrenceUsageElement:
+	AttributeUsage
+//	DefaultReferenceUsage
+//	| ReferenceUsage
+//	| AttributeUsage
+//	| EnumerationUsage
+//	| BindingConnectorAsUsage
+//	| SuccessionAsUsage
+//	| ExtendedUsage
+	
+;
+
+//OccurrenceUsageElement: 
+//	StructureUsageElement | BehaviorUsageElement
+//;
+//
+//StructureUsageElement:
+//	OccurrenceUsage
+//	| IndividualUsage
+//	| PortionUsage
+//	| EventOccurrenceUsage
+//	| ItemUsage
+//	| PartUsage
+//	| ViewUsage
+//	| RenderingUsage
+//	| PortUsage
+//	| ConnectionUsage
+//	| InterfaceUsage
+//	| AllocationUsage
+//	| Message
+//	| FlowConnectionUsage
+//	| SuccessionFlowConnectionUsage
+//;
+//
+//BehaviorUsageElement:
+//	ActionUsage
+//	| CalculationUsage
+//	| StateUsage
+//	| ConstraintUsage
+//	| RequirementUsage
+//	| ConcernUsage
+//	| CaseUsage
+//	| AnalysisCaseUsage
+//	| VerificationCaseUsage
+//	| UseCaseUsage
+//	| ViewpointUsage
+//	| PerformActionUsage
+//	| ExhibitStateUsage
+//	| IncludeUseCaseUsage
+//	| AssertConstraintUsage
+//	| SatisfyRequirementUsage
+//;
+
+
+NamespaceImport:
+    visibility=VisibilityIndicator 
+    'import'
+    declaredName=QualifiedName
+    ';';
+    
+Comment:
+    'doc' 
+    body=REGULAR_COMMENT
+;
+    
+AttributeDefinition:
+	'attribute'
+	'def'
+	declaredName=QualifiedName
+	(';' | '{' (elements+=BaseElement)* '}')
+;
+
 PartDefinition:
-   'part' 'def' name=QualifiedName ';';
+    'part'
+	'def' 
+	declaredName=QualifiedName ';'
+	(';' | '{' (elements+=BaseElement)* '}')
+;
+   
+AttributeUsage:
+	'attribute'
+	declaredName=QualifiedName
+	(';' | '{' (elements+=BaseElement)* '}')
+;
+
+PartUsage:
+   'part'
+   	declaredName=QualifiedName
+	(';' | '{' (elements+=BaseElement)* '}')
+;
+
+// enum
+
+enum VisibilityIndicator:
+	public = 'public' | private = 'private'| protected = 'protected'
+;
 
 /* NAMES */
 
@@ -60,10 +204,10 @@ terminal STRING_VALUE returns Ecore::EString:
 	'"' ('\\' ('b' | 't' | 'n' | 'f' | 'r' | '"' | "'" | '\\') | !('\\' | '"'))* '"';
 
 terminal REGULAR_COMMENT:
-	'/*' ->'*/';
+	'/*' -> '*/';
 
 terminal ML_NOTE:
-	'//*'->'*/';
+	'//*'-> '*/';
 
 terminal SL_NOTE:
 	'//' (!('\n' | '\r') !('\n' | '\r')*)? ('\r'? '\n')?;

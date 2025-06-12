@@ -5,12 +5,15 @@ package dut.control.sysmloc.serializer;
 
 import com.google.inject.Inject;
 import dut.control.sysmloc.services.SysMLOCGrammarAccess;
+import dut.control.sysmloc.sysMLOC.AttributeDefinition;
+import dut.control.sysmloc.sysMLOC.AttributeUsage;
 import dut.control.sysmloc.sysMLOC.Comment;
-import dut.control.sysmloc.sysMLOC.Import;
 import dut.control.sysmloc.sysMLOC.Namespace;
+import dut.control.sysmloc.sysMLOC.NamespaceImport;
 import dut.control.sysmloc.sysMLOC.PartDefinition;
 import dut.control.sysmloc.sysMLOC.PartUsage;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
+import dut.control.sysmloc.sysMLOC.TBD;
 import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -36,14 +39,20 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == SysMLOCPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case SysMLOCPackage.ATTRIBUTE_DEFINITION:
+				sequence_AttributeDefinition(context, (AttributeDefinition) semanticObject); 
+				return; 
+			case SysMLOCPackage.ATTRIBUTE_USAGE:
+				sequence_AttributeUsage(context, (AttributeUsage) semanticObject); 
+				return; 
 			case SysMLOCPackage.COMMENT:
 				sequence_Comment(context, (Comment) semanticObject); 
 				return; 
-			case SysMLOCPackage.IMPORT:
-				sequence_Import(context, (Import) semanticObject); 
-				return; 
 			case SysMLOCPackage.NAMESPACE:
 				sequence_Namespace(context, (Namespace) semanticObject); 
+				return; 
+			case SysMLOCPackage.NAMESPACE_IMPORT:
+				sequence_NamespaceImport(context, (NamespaceImport) semanticObject); 
 				return; 
 			case SysMLOCPackage.PACKAGE:
 				sequence_Package(context, (dut.control.sysmloc.sysMLOC.Package) semanticObject); 
@@ -54,6 +63,9 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 			case SysMLOCPackage.PART_USAGE:
 				sequence_PartUsage(context, (PartUsage) semanticObject); 
 				return; 
+			case SysMLOCPackage.TBD:
+				sequence_TBD(context, (TBD) semanticObject); 
+				return; 
 			}
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
@@ -62,7 +74,41 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Type returns Comment
+	 *     BaseElement returns AttributeDefinition
+	 *     DefinitionElement returns AttributeDefinition
+	 *     AttributeDefinition returns AttributeDefinition
+	 *
+	 * Constraint:
+	 *     (declaredName=QualifiedName elements+=BaseElement*)
+	 * </pre>
+	 */
+	protected void sequence_AttributeDefinition(ISerializationContext context, AttributeDefinition semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     BaseElement returns AttributeUsage
+	 *     UsageElement returns AttributeUsage
+	 *     NonOccurrenceUsageElement returns AttributeUsage
+	 *     AttributeUsage returns AttributeUsage
+	 *
+	 * Constraint:
+	 *     (declaredName=QualifiedName elements+=BaseElement*)
+	 * </pre>
+	 */
+	protected void sequence_AttributeUsage(ISerializationContext context, AttributeUsage semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     BaseElement returns Comment
+	 *     AnnotatingElement returns Comment
 	 *     Comment returns Comment
 	 *
 	 * Constraint:
@@ -83,23 +129,24 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Type returns Import
-	 *     Import returns Import
+	 *     BaseElement returns NamespaceImport
+	 *     ImportElement returns NamespaceImport
+	 *     NamespaceImport returns NamespaceImport
 	 *
 	 * Constraint:
-	 *     (visibility=QualifiedName name=QualifiedName)
+	 *     (visibility=QualifiedName declaredName=QualifiedName)
 	 * </pre>
 	 */
-	protected void sequence_Import(ISerializationContext context, Import semanticObject) {
+	protected void sequence_NamespaceImport(ISerializationContext context, NamespaceImport semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SysMLOCPackage.Literals.IMPORT__VISIBILITY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SysMLOCPackage.Literals.IMPORT__VISIBILITY));
-			if (transientValues.isValueTransient(semanticObject, SysMLOCPackage.Literals.IMPORT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SysMLOCPackage.Literals.IMPORT__NAME));
+			if (transientValues.isValueTransient(semanticObject, SysMLOCPackage.Literals.NAMESPACE_IMPORT__VISIBILITY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SysMLOCPackage.Literals.NAMESPACE_IMPORT__VISIBILITY));
+			if (transientValues.isValueTransient(semanticObject, SysMLOCPackage.Literals.NAMESPACE_IMPORT__DECLARED_NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SysMLOCPackage.Literals.NAMESPACE_IMPORT__DECLARED_NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getImportAccess().getVisibilityQualifiedNameParserRuleCall_0_0(), semanticObject.getVisibility());
-		feeder.accept(grammarAccess.getImportAccess().getNameQualifiedNameParserRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getNamespaceImportAccess().getVisibilityQualifiedNameParserRuleCall_0_0(), semanticObject.getVisibility());
+		feeder.accept(grammarAccess.getNamespaceImportAccess().getDeclaredNameQualifiedNameParserRuleCall_2_0(), semanticObject.getDeclaredName());
 		feeder.finish();
 	}
 	
@@ -121,11 +168,11 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Type returns Package
 	 *     Package returns Package
+	 *     BaseElement returns Package
 	 *
 	 * Constraint:
-	 *     (name=QualifiedName elements+=Type*)
+	 *     (declaredName=QualifiedName elements+=BaseElement*)
 	 * </pre>
 	 */
 	protected void sequence_Package(ISerializationContext context, dut.control.sysmloc.sysMLOC.Package semanticObject) {
@@ -136,42 +183,45 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Type returns PartDefinition
+	 *     BaseElement returns PartDefinition
+	 *     DefinitionElement returns PartDefinition
 	 *     PartDefinition returns PartDefinition
 	 *
 	 * Constraint:
-	 *     name=QualifiedName
+	 *     (declaredName=QualifiedName elements+=BaseElement*)
 	 * </pre>
 	 */
 	protected void sequence_PartDefinition(ISerializationContext context, PartDefinition semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SysMLOCPackage.Literals.PART_DEFINITION__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SysMLOCPackage.Literals.PART_DEFINITION__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getPartDefinitionAccess().getNameQualifiedNameParserRuleCall_2_0(), semanticObject.getName());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Type returns PartUsage
 	 *     PartUsage returns PartUsage
 	 *
 	 * Constraint:
-	 *     name=QualifiedName
+	 *     (declaredName=QualifiedName elements+=BaseElement*)
 	 * </pre>
 	 */
 	protected void sequence_PartUsage(ISerializationContext context, PartUsage semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SysMLOCPackage.Literals.PART_USAGE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SysMLOCPackage.Literals.PART_USAGE__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getPartUsageAccess().getNameQualifiedNameParserRuleCall_1_0(), semanticObject.getName());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     BaseElement returns TBD
+	 *     TBD returns TBD
+	 *
+	 * Constraint:
+	 *     (text=QualifiedName elements+=BaseElement*)
+	 * </pre>
+	 */
+	protected void sequence_TBD(ISerializationContext context, TBD semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

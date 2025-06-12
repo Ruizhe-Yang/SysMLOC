@@ -3,14 +3,22 @@
  */
 package dut.control.sysmloc.sysMLOC.impl;
 
+import dut.control.sysmloc.sysMLOC.AnnotatingElement;
+import dut.control.sysmloc.sysMLOC.AttributeDefinition;
+import dut.control.sysmloc.sysMLOC.AttributeUsage;
+import dut.control.sysmloc.sysMLOC.BaseElement;
 import dut.control.sysmloc.sysMLOC.Comment;
-import dut.control.sysmloc.sysMLOC.Import;
+import dut.control.sysmloc.sysMLOC.DefinitionElement;
+import dut.control.sysmloc.sysMLOC.ImportElement;
 import dut.control.sysmloc.sysMLOC.Namespace;
+import dut.control.sysmloc.sysMLOC.NamespaceImport;
+import dut.control.sysmloc.sysMLOC.NonOccurrenceUsageElement;
 import dut.control.sysmloc.sysMLOC.PartDefinition;
 import dut.control.sysmloc.sysMLOC.PartUsage;
 import dut.control.sysmloc.sysMLOC.SysMLOCFactory;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
-import dut.control.sysmloc.sysMLOC.Type;
+import dut.control.sysmloc.sysMLOC.TBD;
+import dut.control.sysmloc.sysMLOC.UsageElement;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -73,12 +81,20 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
     switch (eClass.getClassifierID())
     {
       case SysMLOCPackage.NAMESPACE: return createNamespace();
-      case SysMLOCPackage.TYPE: return createType();
       case SysMLOCPackage.PACKAGE: return createPackage();
+      case SysMLOCPackage.BASE_ELEMENT: return createBaseElement();
+      case SysMLOCPackage.ANNOTATING_ELEMENT: return createAnnotatingElement();
+      case SysMLOCPackage.IMPORT_ELEMENT: return createImportElement();
+      case SysMLOCPackage.DEFINITION_ELEMENT: return createDefinitionElement();
+      case SysMLOCPackage.USAGE_ELEMENT: return createUsageElement();
+      case SysMLOCPackage.NON_OCCURRENCE_USAGE_ELEMENT: return createNonOccurrenceUsageElement();
+      case SysMLOCPackage.NAMESPACE_IMPORT: return createNamespaceImport();
       case SysMLOCPackage.COMMENT: return createComment();
-      case SysMLOCPackage.IMPORT: return createImport();
-      case SysMLOCPackage.PART_USAGE: return createPartUsage();
+      case SysMLOCPackage.ATTRIBUTE_DEFINITION: return createAttributeDefinition();
       case SysMLOCPackage.PART_DEFINITION: return createPartDefinition();
+      case SysMLOCPackage.ATTRIBUTE_USAGE: return createAttributeUsage();
+      case SysMLOCPackage.PART_USAGE: return createPartUsage();
+      case SysMLOCPackage.TBD: return createTBD();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -102,10 +118,10 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
    * @generated
    */
   @Override
-  public Type createType()
+  public dut.control.sysmloc.sysMLOC.Package createPackage()
   {
-    TypeImpl type = new TypeImpl();
-    return type;
+    PackageImpl package_ = new PackageImpl();
+    return package_;
   }
 
   /**
@@ -114,10 +130,82 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
    * @generated
    */
   @Override
-  public dut.control.sysmloc.sysMLOC.Package createPackage()
+  public BaseElement createBaseElement()
   {
-    PackageImpl package_ = new PackageImpl();
-    return package_;
+    BaseElementImpl baseElement = new BaseElementImpl();
+    return baseElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public AnnotatingElement createAnnotatingElement()
+  {
+    AnnotatingElementImpl annotatingElement = new AnnotatingElementImpl();
+    return annotatingElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ImportElement createImportElement()
+  {
+    ImportElementImpl importElement = new ImportElementImpl();
+    return importElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public DefinitionElement createDefinitionElement()
+  {
+    DefinitionElementImpl definitionElement = new DefinitionElementImpl();
+    return definitionElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public UsageElement createUsageElement()
+  {
+    UsageElementImpl usageElement = new UsageElementImpl();
+    return usageElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NonOccurrenceUsageElement createNonOccurrenceUsageElement()
+  {
+    NonOccurrenceUsageElementImpl nonOccurrenceUsageElement = new NonOccurrenceUsageElementImpl();
+    return nonOccurrenceUsageElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NamespaceImport createNamespaceImport()
+  {
+    NamespaceImportImpl namespaceImport = new NamespaceImportImpl();
+    return namespaceImport;
   }
 
   /**
@@ -138,10 +226,34 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
    * @generated
    */
   @Override
-  public Import createImport()
+  public AttributeDefinition createAttributeDefinition()
   {
-    ImportImpl import_ = new ImportImpl();
-    return import_;
+    AttributeDefinitionImpl attributeDefinition = new AttributeDefinitionImpl();
+    return attributeDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PartDefinition createPartDefinition()
+  {
+    PartDefinitionImpl partDefinition = new PartDefinitionImpl();
+    return partDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public AttributeUsage createAttributeUsage()
+  {
+    AttributeUsageImpl attributeUsage = new AttributeUsageImpl();
+    return attributeUsage;
   }
 
   /**
@@ -162,10 +274,10 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
    * @generated
    */
   @Override
-  public PartDefinition createPartDefinition()
+  public TBD createTBD()
   {
-    PartDefinitionImpl partDefinition = new PartDefinitionImpl();
-    return partDefinition;
+    TBDImpl tbd = new TBDImpl();
+    return tbd;
   }
 
   /**

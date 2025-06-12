@@ -1,8 +1,10 @@
 package VehicleDefinitions {
 	public import a;
 	doc /* aaa */
-	part a;
-	part def aaa;
-	
-	
+	attribute def a;
+	attribute a{
+		attribute def a;
+		attribute def a;
+		
+	}
 }

@@ -20,7 +20,7 @@ package dut.control.sysmloc.sysMLOC;
  * @model
  * @generated
  */
-public interface Comment extends Type
+public interface Comment extends AnnotatingElement
 {
   /**
    * Returns the value of the '<em><b>Body</b></em>' attribute.

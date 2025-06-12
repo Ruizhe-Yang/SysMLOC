@@ -7,22 +7,22 @@ import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Package</b></em>'.
+ * A representation of the model object '<em><b>Definition Element</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.Package#getDeclaredName <em>Declared Name</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.Package#getElements <em>Elements</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.DefinitionElement#getDeclaredName <em>Declared Name</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.DefinitionElement#getElements <em>Elements</em>}</li>
  * </ul>
  *
- * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getPackage()
+ * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getDefinitionElement()
  * @model
  * @generated
  */
-public interface Package extends BaseElement
+public interface DefinitionElement extends BaseElement
 {
   /**
    * Returns the value of the '<em><b>Declared Name</b></em>' attribute.
@@ -30,14 +30,14 @@ public interface Package extends BaseElement
    * <!-- end-user-doc -->
    * @return the value of the '<em>Declared Name</em>' attribute.
    * @see #setDeclaredName(String)
-   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getPackage_DeclaredName()
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getDefinitionElement_DeclaredName()
    * @model
    * @generated
    */
   String getDeclaredName();
 
   /**
-   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.Package#getDeclaredName <em>Declared Name</em>}' attribute.
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.DefinitionElement#getDeclaredName <em>Declared Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Declared Name</em>' attribute.
@@ -52,10 +52,10 @@ public interface Package extends BaseElement
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Elements</em>' containment reference list.
-   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getPackage_Elements()
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getDefinitionElement_Elements()
    * @model containment="true"
    * @generated
    */
   EList<BaseElement> getElements();
 
-} // Package
+} // DefinitionElement

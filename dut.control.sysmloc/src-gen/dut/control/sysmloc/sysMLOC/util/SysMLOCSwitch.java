@@ -3,13 +3,21 @@
  */
 package dut.control.sysmloc.sysMLOC.util;
 
+import dut.control.sysmloc.sysMLOC.AnnotatingElement;
+import dut.control.sysmloc.sysMLOC.AttributeDefinition;
+import dut.control.sysmloc.sysMLOC.AttributeUsage;
+import dut.control.sysmloc.sysMLOC.BaseElement;
 import dut.control.sysmloc.sysMLOC.Comment;
-import dut.control.sysmloc.sysMLOC.Import;
+import dut.control.sysmloc.sysMLOC.DefinitionElement;
+import dut.control.sysmloc.sysMLOC.ImportElement;
 import dut.control.sysmloc.sysMLOC.Namespace;
+import dut.control.sysmloc.sysMLOC.NamespaceImport;
+import dut.control.sysmloc.sysMLOC.NonOccurrenceUsageElement;
 import dut.control.sysmloc.sysMLOC.PartDefinition;
 import dut.control.sysmloc.sysMLOC.PartUsage;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
-import dut.control.sysmloc.sysMLOC.Type;
+import dut.control.sysmloc.sysMLOC.TBD;
+import dut.control.sysmloc.sysMLOC.UsageElement;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -86,18 +94,68 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SysMLOCPackage.TYPE:
-      {
-        Type type = (Type)theEObject;
-        T result = caseType(type);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case SysMLOCPackage.PACKAGE:
       {
         dut.control.sysmloc.sysMLOC.Package package_ = (dut.control.sysmloc.sysMLOC.Package)theEObject;
         T result = casePackage(package_);
-        if (result == null) result = caseType(package_);
+        if (result == null) result = caseBaseElement(package_);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SysMLOCPackage.BASE_ELEMENT:
+      {
+        BaseElement baseElement = (BaseElement)theEObject;
+        T result = caseBaseElement(baseElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SysMLOCPackage.ANNOTATING_ELEMENT:
+      {
+        AnnotatingElement annotatingElement = (AnnotatingElement)theEObject;
+        T result = caseAnnotatingElement(annotatingElement);
+        if (result == null) result = caseBaseElement(annotatingElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SysMLOCPackage.IMPORT_ELEMENT:
+      {
+        ImportElement importElement = (ImportElement)theEObject;
+        T result = caseImportElement(importElement);
+        if (result == null) result = caseBaseElement(importElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SysMLOCPackage.DEFINITION_ELEMENT:
+      {
+        DefinitionElement definitionElement = (DefinitionElement)theEObject;
+        T result = caseDefinitionElement(definitionElement);
+        if (result == null) result = caseBaseElement(definitionElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SysMLOCPackage.USAGE_ELEMENT:
+      {
+        UsageElement usageElement = (UsageElement)theEObject;
+        T result = caseUsageElement(usageElement);
+        if (result == null) result = caseBaseElement(usageElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SysMLOCPackage.NON_OCCURRENCE_USAGE_ELEMENT:
+      {
+        NonOccurrenceUsageElement nonOccurrenceUsageElement = (NonOccurrenceUsageElement)theEObject;
+        T result = caseNonOccurrenceUsageElement(nonOccurrenceUsageElement);
+        if (result == null) result = caseUsageElement(nonOccurrenceUsageElement);
+        if (result == null) result = caseBaseElement(nonOccurrenceUsageElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SysMLOCPackage.NAMESPACE_IMPORT:
+      {
+        NamespaceImport namespaceImport = (NamespaceImport)theEObject;
+        T result = caseNamespaceImport(namespaceImport);
+        if (result == null) result = caseImportElement(namespaceImport);
+        if (result == null) result = caseBaseElement(namespaceImport);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -105,23 +163,17 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         Comment comment = (Comment)theEObject;
         T result = caseComment(comment);
-        if (result == null) result = caseType(comment);
+        if (result == null) result = caseAnnotatingElement(comment);
+        if (result == null) result = caseBaseElement(comment);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SysMLOCPackage.IMPORT:
+      case SysMLOCPackage.ATTRIBUTE_DEFINITION:
       {
-        Import import_ = (Import)theEObject;
-        T result = caseImport(import_);
-        if (result == null) result = caseType(import_);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case SysMLOCPackage.PART_USAGE:
-      {
-        PartUsage partUsage = (PartUsage)theEObject;
-        T result = casePartUsage(partUsage);
-        if (result == null) result = caseType(partUsage);
+        AttributeDefinition attributeDefinition = (AttributeDefinition)theEObject;
+        T result = caseAttributeDefinition(attributeDefinition);
+        if (result == null) result = caseDefinitionElement(attributeDefinition);
+        if (result == null) result = caseBaseElement(attributeDefinition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -129,7 +181,33 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         PartDefinition partDefinition = (PartDefinition)theEObject;
         T result = casePartDefinition(partDefinition);
-        if (result == null) result = caseType(partDefinition);
+        if (result == null) result = caseDefinitionElement(partDefinition);
+        if (result == null) result = caseBaseElement(partDefinition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SysMLOCPackage.ATTRIBUTE_USAGE:
+      {
+        AttributeUsage attributeUsage = (AttributeUsage)theEObject;
+        T result = caseAttributeUsage(attributeUsage);
+        if (result == null) result = caseNonOccurrenceUsageElement(attributeUsage);
+        if (result == null) result = caseUsageElement(attributeUsage);
+        if (result == null) result = caseBaseElement(attributeUsage);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SysMLOCPackage.PART_USAGE:
+      {
+        PartUsage partUsage = (PartUsage)theEObject;
+        T result = casePartUsage(partUsage);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SysMLOCPackage.TBD:
+      {
+        TBD tbd = (TBD)theEObject;
+        T result = caseTBD(tbd);
+        if (result == null) result = caseBaseElement(tbd);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -154,22 +232,6 @@ public class SysMLOCSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Type</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Type</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseType(Type object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Package</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -181,6 +243,118 @@ public class SysMLOCSwitch<T> extends Switch<T>
    * @generated
    */
   public T casePackage(dut.control.sysmloc.sysMLOC.Package object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Base Element</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Base Element</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBaseElement(BaseElement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Annotating Element</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Annotating Element</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAnnotatingElement(AnnotatingElement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Import Element</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Import Element</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseImportElement(ImportElement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Definition Element</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Definition Element</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDefinitionElement(DefinitionElement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Usage Element</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Usage Element</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseUsageElement(UsageElement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Non Occurrence Usage Element</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Non Occurrence Usage Element</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNonOccurrenceUsageElement(NonOccurrenceUsageElement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Namespace Import</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Namespace Import</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNamespaceImport(NamespaceImport object)
   {
     return null;
   }
@@ -202,17 +376,49 @@ public class SysMLOCSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Import</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Attribute Definition</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Import</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Attribute Definition</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseImport(Import object)
+  public T caseAttributeDefinition(AttributeDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Part Definition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Part Definition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePartDefinition(PartDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Attribute Usage</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Attribute Usage</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAttributeUsage(AttributeUsage object)
   {
     return null;
   }
@@ -234,17 +440,17 @@ public class SysMLOCSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Part Definition</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>TBD</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Part Definition</em>'.
+   * @return the result of interpreting the object as an instance of '<em>TBD</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T casePartDefinition(PartDefinition object)
+  public T caseTBD(TBD object)
   {
     return null;
   }

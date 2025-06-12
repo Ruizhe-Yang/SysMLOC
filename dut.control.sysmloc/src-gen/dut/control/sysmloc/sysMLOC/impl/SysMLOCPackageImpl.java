@@ -3,14 +3,21 @@
  */
 package dut.control.sysmloc.sysMLOC.impl;
 
+import dut.control.sysmloc.sysMLOC.AnnotatingElement;
+import dut.control.sysmloc.sysMLOC.AttributeDefinition;
+import dut.control.sysmloc.sysMLOC.AttributeUsage;
+import dut.control.sysmloc.sysMLOC.BaseElement;
 import dut.control.sysmloc.sysMLOC.Comment;
-import dut.control.sysmloc.sysMLOC.Import;
+import dut.control.sysmloc.sysMLOC.DefinitionElement;
+import dut.control.sysmloc.sysMLOC.ImportElement;
 import dut.control.sysmloc.sysMLOC.Namespace;
+import dut.control.sysmloc.sysMLOC.NamespaceImport;
+import dut.control.sysmloc.sysMLOC.NonOccurrenceUsageElement;
 import dut.control.sysmloc.sysMLOC.PartDefinition;
 import dut.control.sysmloc.sysMLOC.PartUsage;
 import dut.control.sysmloc.sysMLOC.SysMLOCFactory;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
-import dut.control.sysmloc.sysMLOC.Type;
+import dut.control.sysmloc.sysMLOC.UsageElement;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -39,14 +46,56 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass typeEClass = null;
+  private EClass packageEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass packageEClass = null;
+  private EClass baseElementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass annotatingElementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass importElementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass definitionElementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass usageElementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass nonOccurrenceUsageElementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass namespaceImportEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -60,7 +109,21 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass importEClass = null;
+  private EClass attributeDefinitionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass partDefinitionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass attributeUsageEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -74,7 +137,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass partDefinitionEClass = null;
+  private EClass tbdEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -166,17 +229,6 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   @Override
-  public EClass getType()
-  {
-    return typeEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EClass getPackage()
   {
     return packageEClass;
@@ -188,7 +240,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   @Override
-  public EAttribute getPackage_Name()
+  public EAttribute getPackage_DeclaredName()
   {
     return (EAttribute)packageEClass.getEStructuralFeatures().get(0);
   }
@@ -202,6 +254,127 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   public EReference getPackage_Elements()
   {
     return (EReference)packageEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getBaseElement()
+  {
+    return baseElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getAnnotatingElement()
+  {
+    return annotatingElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getImportElement()
+  {
+    return importElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getDefinitionElement()
+  {
+    return definitionElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getDefinitionElement_DeclaredName()
+  {
+    return (EAttribute)definitionElementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getDefinitionElement_Elements()
+  {
+    return (EReference)definitionElementEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getUsageElement()
+  {
+    return usageElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getNonOccurrenceUsageElement()
+  {
+    return nonOccurrenceUsageElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getNamespaceImport()
+  {
+    return namespaceImportEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getNamespaceImport_Visibility()
+  {
+    return (EAttribute)namespaceImportEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getNamespaceImport_DeclaredName()
+  {
+    return (EAttribute)namespaceImportEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -232,53 +405,9 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   @Override
-  public EClass getImport()
+  public EClass getAttributeDefinition()
   {
-    return importEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getImport_Visibility()
-  {
-    return (EAttribute)importEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getImport_Name()
-  {
-    return (EAttribute)importEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getPartUsage()
-  {
-    return partUsageEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getPartUsage_Name()
-  {
-    return (EAttribute)partUsageEClass.getEStructuralFeatures().get(0);
+    return attributeDefinitionEClass;
   }
 
   /**
@@ -298,9 +427,97 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   @Override
-  public EAttribute getPartDefinition_Name()
+  public EClass getAttributeUsage()
   {
-    return (EAttribute)partDefinitionEClass.getEStructuralFeatures().get(0);
+    return attributeUsageEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getAttributeUsage_DeclaredName()
+  {
+    return (EAttribute)attributeUsageEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getAttributeUsage_Elements()
+  {
+    return (EReference)attributeUsageEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getPartUsage()
+  {
+    return partUsageEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getPartUsage_DeclaredName()
+  {
+    return (EAttribute)partUsageEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getPartUsage_Elements()
+  {
+    return (EReference)partUsageEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getTBD()
+  {
+    return tbdEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTBD_Text()
+  {
+    return (EAttribute)tbdEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getTBD_Elements()
+  {
+    return (EReference)tbdEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -337,24 +554,46 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
     namespaceEClass = createEClass(NAMESPACE);
     createEReference(namespaceEClass, NAMESPACE__PACKAGES);
 
-    typeEClass = createEClass(TYPE);
-
     packageEClass = createEClass(PACKAGE);
-    createEAttribute(packageEClass, PACKAGE__NAME);
+    createEAttribute(packageEClass, PACKAGE__DECLARED_NAME);
     createEReference(packageEClass, PACKAGE__ELEMENTS);
+
+    baseElementEClass = createEClass(BASE_ELEMENT);
+
+    annotatingElementEClass = createEClass(ANNOTATING_ELEMENT);
+
+    importElementEClass = createEClass(IMPORT_ELEMENT);
+
+    definitionElementEClass = createEClass(DEFINITION_ELEMENT);
+    createEAttribute(definitionElementEClass, DEFINITION_ELEMENT__DECLARED_NAME);
+    createEReference(definitionElementEClass, DEFINITION_ELEMENT__ELEMENTS);
+
+    usageElementEClass = createEClass(USAGE_ELEMENT);
+
+    nonOccurrenceUsageElementEClass = createEClass(NON_OCCURRENCE_USAGE_ELEMENT);
+
+    namespaceImportEClass = createEClass(NAMESPACE_IMPORT);
+    createEAttribute(namespaceImportEClass, NAMESPACE_IMPORT__VISIBILITY);
+    createEAttribute(namespaceImportEClass, NAMESPACE_IMPORT__DECLARED_NAME);
 
     commentEClass = createEClass(COMMENT);
     createEAttribute(commentEClass, COMMENT__BODY);
 
-    importEClass = createEClass(IMPORT);
-    createEAttribute(importEClass, IMPORT__VISIBILITY);
-    createEAttribute(importEClass, IMPORT__NAME);
-
-    partUsageEClass = createEClass(PART_USAGE);
-    createEAttribute(partUsageEClass, PART_USAGE__NAME);
+    attributeDefinitionEClass = createEClass(ATTRIBUTE_DEFINITION);
 
     partDefinitionEClass = createEClass(PART_DEFINITION);
-    createEAttribute(partDefinitionEClass, PART_DEFINITION__NAME);
+
+    attributeUsageEClass = createEClass(ATTRIBUTE_USAGE);
+    createEAttribute(attributeUsageEClass, ATTRIBUTE_USAGE__DECLARED_NAME);
+    createEReference(attributeUsageEClass, ATTRIBUTE_USAGE__ELEMENTS);
+
+    partUsageEClass = createEClass(PART_USAGE);
+    createEAttribute(partUsageEClass, PART_USAGE__DECLARED_NAME);
+    createEReference(partUsageEClass, PART_USAGE__ELEMENTS);
+
+    tbdEClass = createEClass(TBD);
+    createEAttribute(tbdEClass, TBD__TEXT);
+    createEReference(tbdEClass, TBD__ELEMENTS);
   }
 
   /**
@@ -386,34 +625,63 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    packageEClass.getESuperTypes().add(this.getType());
-    commentEClass.getESuperTypes().add(this.getType());
-    importEClass.getESuperTypes().add(this.getType());
-    partUsageEClass.getESuperTypes().add(this.getType());
-    partDefinitionEClass.getESuperTypes().add(this.getType());
+    packageEClass.getESuperTypes().add(this.getBaseElement());
+    annotatingElementEClass.getESuperTypes().add(this.getBaseElement());
+    importElementEClass.getESuperTypes().add(this.getBaseElement());
+    definitionElementEClass.getESuperTypes().add(this.getBaseElement());
+    usageElementEClass.getESuperTypes().add(this.getBaseElement());
+    nonOccurrenceUsageElementEClass.getESuperTypes().add(this.getUsageElement());
+    namespaceImportEClass.getESuperTypes().add(this.getImportElement());
+    commentEClass.getESuperTypes().add(this.getAnnotatingElement());
+    attributeDefinitionEClass.getESuperTypes().add(this.getDefinitionElement());
+    partDefinitionEClass.getESuperTypes().add(this.getDefinitionElement());
+    attributeUsageEClass.getESuperTypes().add(this.getNonOccurrenceUsageElement());
+    tbdEClass.getESuperTypes().add(this.getBaseElement());
 
     // Initialize classes and features; add operations and parameters
     initEClass(namespaceEClass, Namespace.class, "Namespace", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getNamespace_Packages(), this.getPackage(), null, "packages", null, 0, -1, Namespace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(typeEClass, Type.class, "Type", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
     initEClass(packageEClass, dut.control.sysmloc.sysMLOC.Package.class, "Package", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getPackage_Name(), ecorePackage.getEString(), "name", null, 0, 1, dut.control.sysmloc.sysMLOC.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPackage_Elements(), this.getType(), null, "elements", null, 0, -1, dut.control.sysmloc.sysMLOC.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getPackage_DeclaredName(), ecorePackage.getEString(), "declaredName", null, 0, 1, dut.control.sysmloc.sysMLOC.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPackage_Elements(), this.getBaseElement(), null, "elements", null, 0, -1, dut.control.sysmloc.sysMLOC.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(baseElementEClass, BaseElement.class, "BaseElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(annotatingElementEClass, AnnotatingElement.class, "AnnotatingElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(importElementEClass, ImportElement.class, "ImportElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(definitionElementEClass, DefinitionElement.class, "DefinitionElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDefinitionElement_DeclaredName(), ecorePackage.getEString(), "declaredName", null, 0, 1, DefinitionElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDefinitionElement_Elements(), this.getBaseElement(), null, "elements", null, 0, -1, DefinitionElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(usageElementEClass, UsageElement.class, "UsageElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(nonOccurrenceUsageElementEClass, NonOccurrenceUsageElement.class, "NonOccurrenceUsageElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(namespaceImportEClass, NamespaceImport.class, "NamespaceImport", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getNamespaceImport_Visibility(), ecorePackage.getEString(), "visibility", null, 0, 1, NamespaceImport.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getNamespaceImport_DeclaredName(), ecorePackage.getEString(), "declaredName", null, 0, 1, NamespaceImport.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(commentEClass, Comment.class, "Comment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getComment_Body(), ecorePackage.getEString(), "body", null, 0, 1, Comment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getImport_Visibility(), ecorePackage.getEString(), "visibility", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImport_Name(), ecorePackage.getEString(), "name", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(partUsageEClass, PartUsage.class, "PartUsage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getPartUsage_Name(), ecorePackage.getEString(), "name", null, 0, 1, PartUsage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(attributeDefinitionEClass, AttributeDefinition.class, "AttributeDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(partDefinitionEClass, PartDefinition.class, "PartDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getPartDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, PartDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(attributeUsageEClass, AttributeUsage.class, "AttributeUsage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAttributeUsage_DeclaredName(), ecorePackage.getEString(), "declaredName", null, 0, 1, AttributeUsage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAttributeUsage_Elements(), this.getBaseElement(), null, "elements", null, 0, -1, AttributeUsage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(partUsageEClass, PartUsage.class, "PartUsage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getPartUsage_DeclaredName(), ecorePackage.getEString(), "declaredName", null, 0, 1, PartUsage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPartUsage_Elements(), this.getBaseElement(), null, "elements", null, 0, -1, PartUsage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(tbdEClass, dut.control.sysmloc.sysMLOC.TBD.class, "TBD", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTBD_Text(), ecorePackage.getEString(), "text", null, 0, 1, dut.control.sysmloc.sysMLOC.TBD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTBD_Elements(), this.getBaseElement(), null, "elements", null, 0, -1, dut.control.sysmloc.sysMLOC.TBD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

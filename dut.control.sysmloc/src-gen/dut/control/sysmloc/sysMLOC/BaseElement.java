@@ -7,14 +7,14 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Type</b></em>'.
+ * A representation of the model object '<em><b>Base Element</b></em>'.
  * <!-- end-user-doc -->
  *
  *
- * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getType()
+ * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getBaseElement()
  * @model
  * @generated
  */
-public interface Type extends EObject
+public interface BaseElement extends EObject
 {
-} // Type
+} // BaseElement

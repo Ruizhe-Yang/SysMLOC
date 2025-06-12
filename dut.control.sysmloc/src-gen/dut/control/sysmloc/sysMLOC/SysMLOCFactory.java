@@ -33,15 +33,6 @@ public interface SysMLOCFactory extends EFactory
   Namespace createNamespace();
 
   /**
-   * Returns a new object of class '<em>Type</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Type</em>'.
-   * @generated
-   */
-  Type createType();
-
-  /**
    * Returns a new object of class '<em>Package</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -49,6 +40,69 @@ public interface SysMLOCFactory extends EFactory
    * @generated
    */
   Package createPackage();
+
+  /**
+   * Returns a new object of class '<em>Base Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Base Element</em>'.
+   * @generated
+   */
+  BaseElement createBaseElement();
+
+  /**
+   * Returns a new object of class '<em>Annotating Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Annotating Element</em>'.
+   * @generated
+   */
+  AnnotatingElement createAnnotatingElement();
+
+  /**
+   * Returns a new object of class '<em>Import Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Import Element</em>'.
+   * @generated
+   */
+  ImportElement createImportElement();
+
+  /**
+   * Returns a new object of class '<em>Definition Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Definition Element</em>'.
+   * @generated
+   */
+  DefinitionElement createDefinitionElement();
+
+  /**
+   * Returns a new object of class '<em>Usage Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Usage Element</em>'.
+   * @generated
+   */
+  UsageElement createUsageElement();
+
+  /**
+   * Returns a new object of class '<em>Non Occurrence Usage Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Non Occurrence Usage Element</em>'.
+   * @generated
+   */
+  NonOccurrenceUsageElement createNonOccurrenceUsageElement();
+
+  /**
+   * Returns a new object of class '<em>Namespace Import</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Namespace Import</em>'.
+   * @generated
+   */
+  NamespaceImport createNamespaceImport();
 
   /**
    * Returns a new object of class '<em>Comment</em>'.
@@ -60,13 +114,31 @@ public interface SysMLOCFactory extends EFactory
   Comment createComment();
 
   /**
-   * Returns a new object of class '<em>Import</em>'.
+   * Returns a new object of class '<em>Attribute Definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Import</em>'.
+   * @return a new object of class '<em>Attribute Definition</em>'.
    * @generated
    */
-  Import createImport();
+  AttributeDefinition createAttributeDefinition();
+
+  /**
+   * Returns a new object of class '<em>Part Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Part Definition</em>'.
+   * @generated
+   */
+  PartDefinition createPartDefinition();
+
+  /**
+   * Returns a new object of class '<em>Attribute Usage</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Attribute Usage</em>'.
+   * @generated
+   */
+  AttributeUsage createAttributeUsage();
 
   /**
    * Returns a new object of class '<em>Part Usage</em>'.
@@ -78,13 +150,13 @@ public interface SysMLOCFactory extends EFactory
   PartUsage createPartUsage();
 
   /**
-   * Returns a new object of class '<em>Part Definition</em>'.
+   * Returns a new object of class '<em>TBD</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Part Definition</em>'.
+   * @return a new object of class '<em>TBD</em>'.
    * @generated
    */
-  PartDefinition createPartDefinition();
+  TBD createTBD();
 
   /**
    * Returns the package supported by this factory.

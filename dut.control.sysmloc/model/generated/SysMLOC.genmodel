@@ -9,23 +9,39 @@
     <genClasses ecoreClass="SysMLOC.ecore#//Namespace">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//Namespace/packages"/>
     </genClasses>
-    <genClasses ecoreClass="SysMLOC.ecore#//Type"/>
     <genClasses ecoreClass="SysMLOC.ecore#//Package">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//Package/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//Package/declaredName"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//Package/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//BaseElement"/>
+    <genClasses ecoreClass="SysMLOC.ecore#//AnnotatingElement"/>
+    <genClasses ecoreClass="SysMLOC.ecore#//ImportElement"/>
+    <genClasses ecoreClass="SysMLOC.ecore#//DefinitionElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//DefinitionElement/declaredName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//DefinitionElement/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//UsageElement"/>
+    <genClasses ecoreClass="SysMLOC.ecore#//NonOccurrenceUsageElement"/>
+    <genClasses ecoreClass="SysMLOC.ecore#//NamespaceImport">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//NamespaceImport/visibility"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//NamespaceImport/declaredName"/>
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//Comment">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//Comment/body"/>
     </genClasses>
-    <genClasses ecoreClass="SysMLOC.ecore#//Import">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//Import/visibility"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//Import/name"/>
+    <genClasses ecoreClass="SysMLOC.ecore#//AttributeDefinition"/>
+    <genClasses ecoreClass="SysMLOC.ecore#//PartDefinition"/>
+    <genClasses ecoreClass="SysMLOC.ecore#//AttributeUsage">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//AttributeUsage/declaredName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//AttributeUsage/elements"/>
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//PartUsage">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//PartUsage/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//PartUsage/declaredName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//PartUsage/elements"/>
     </genClasses>
-    <genClasses ecoreClass="SysMLOC.ecore#//PartDefinition">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//PartDefinition/name"/>
+    <genClasses ecoreClass="SysMLOC.ecore#//TBD">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//TBD/text"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//TBD/elements"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

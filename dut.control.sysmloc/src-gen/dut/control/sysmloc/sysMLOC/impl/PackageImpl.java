@@ -3,8 +3,8 @@
  */
 package dut.control.sysmloc.sysMLOC.impl;
 
+import dut.control.sysmloc.sysMLOC.BaseElement;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
-import dut.control.sysmloc.sysMLOC.Type;
 
 import java.util.Collection;
 
@@ -29,33 +29,33 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PackageImpl#getName <em>Name</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PackageImpl#getDeclaredName <em>Declared Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PackageImpl#getElements <em>Elements</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class PackageImpl extends TypeImpl implements dut.control.sysmloc.sysMLOC.Package
+public class PackageImpl extends BaseElementImpl implements dut.control.sysmloc.sysMLOC.Package
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The default value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getDeclaredName()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
+  protected static final String DECLARED_NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getDeclaredName()
    * @generated
    * @ordered
    */
-  protected String name = NAME_EDEFAULT;
+  protected String declaredName = DECLARED_NAME_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
@@ -65,7 +65,7 @@ public class PackageImpl extends TypeImpl implements dut.control.sysmloc.sysMLOC
    * @generated
    * @ordered
    */
-  protected EList<Type> elements;
+  protected EList<BaseElement> elements;
 
   /**
    * <!-- begin-user-doc -->
@@ -94,9 +94,9 @@ public class PackageImpl extends TypeImpl implements dut.control.sysmloc.sysMLOC
    * @generated
    */
   @Override
-  public String getName()
+  public String getDeclaredName()
   {
-    return name;
+    return declaredName;
   }
 
   /**
@@ -105,12 +105,12 @@ public class PackageImpl extends TypeImpl implements dut.control.sysmloc.sysMLOC
    * @generated
    */
   @Override
-  public void setName(String newName)
+  public void setDeclaredName(String newDeclaredName)
   {
-    String oldName = name;
-    name = newName;
+    String oldDeclaredName = declaredName;
+    declaredName = newDeclaredName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.PACKAGE__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.PACKAGE__DECLARED_NAME, oldDeclaredName, declaredName));
   }
 
   /**
@@ -119,11 +119,11 @@ public class PackageImpl extends TypeImpl implements dut.control.sysmloc.sysMLOC
    * @generated
    */
   @Override
-  public EList<Type> getElements()
+  public EList<BaseElement> getElements()
   {
     if (elements == null)
     {
-      elements = new EObjectContainmentEList<Type>(Type.class, this, SysMLOCPackage.PACKAGE__ELEMENTS);
+      elements = new EObjectContainmentEList<BaseElement>(BaseElement.class, this, SysMLOCPackage.PACKAGE__ELEMENTS);
     }
     return elements;
   }
@@ -154,8 +154,8 @@ public class PackageImpl extends TypeImpl implements dut.control.sysmloc.sysMLOC
   {
     switch (featureID)
     {
-      case SysMLOCPackage.PACKAGE__NAME:
-        return getName();
+      case SysMLOCPackage.PACKAGE__DECLARED_NAME:
+        return getDeclaredName();
       case SysMLOCPackage.PACKAGE__ELEMENTS:
         return getElements();
     }
@@ -173,12 +173,12 @@ public class PackageImpl extends TypeImpl implements dut.control.sysmloc.sysMLOC
   {
     switch (featureID)
     {
-      case SysMLOCPackage.PACKAGE__NAME:
-        setName((String)newValue);
+      case SysMLOCPackage.PACKAGE__DECLARED_NAME:
+        setDeclaredName((String)newValue);
         return;
       case SysMLOCPackage.PACKAGE__ELEMENTS:
         getElements().clear();
-        getElements().addAll((Collection<? extends Type>)newValue);
+        getElements().addAll((Collection<? extends BaseElement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -194,8 +194,8 @@ public class PackageImpl extends TypeImpl implements dut.control.sysmloc.sysMLOC
   {
     switch (featureID)
     {
-      case SysMLOCPackage.PACKAGE__NAME:
-        setName(NAME_EDEFAULT);
+      case SysMLOCPackage.PACKAGE__DECLARED_NAME:
+        setDeclaredName(DECLARED_NAME_EDEFAULT);
         return;
       case SysMLOCPackage.PACKAGE__ELEMENTS:
         getElements().clear();
@@ -214,8 +214,8 @@ public class PackageImpl extends TypeImpl implements dut.control.sysmloc.sysMLOC
   {
     switch (featureID)
     {
-      case SysMLOCPackage.PACKAGE__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case SysMLOCPackage.PACKAGE__DECLARED_NAME:
+        return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
       case SysMLOCPackage.PACKAGE__ELEMENTS:
         return elements != null && !elements.isEmpty();
     }
@@ -233,8 +233,8 @@ public class PackageImpl extends TypeImpl implements dut.control.sysmloc.sysMLOC
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (name: ");
-    result.append(name);
+    result.append(" (declaredName: ");
+    result.append(declaredName);
     result.append(')');
     return result.toString();
   }

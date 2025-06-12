@@ -3,8 +3,8 @@
  */
 package dut.control.sysmloc.sysMLOC.impl;
 
+import dut.control.sysmloc.sysMLOC.AttributeUsage;
 import dut.control.sysmloc.sysMLOC.BaseElement;
-import dut.control.sysmloc.sysMLOC.PartUsage;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 
 import java.util.Collection;
@@ -18,26 +18,25 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Part Usage</b></em>'.
+ * An implementation of the model object '<em><b>Attribute Usage</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PartUsageImpl#getDeclaredName <em>Declared Name</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PartUsageImpl#getElements <em>Elements</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AttributeUsageImpl#getDeclaredName <em>Declared Name</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AttributeUsageImpl#getElements <em>Elements</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class PartUsageImpl extends MinimalEObjectImpl.Container implements PartUsage
+public class AttributeUsageImpl extends NonOccurrenceUsageElementImpl implements AttributeUsage
 {
   /**
    * The default value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
@@ -74,7 +73,7 @@ public class PartUsageImpl extends MinimalEObjectImpl.Container implements PartU
    * <!-- end-user-doc -->
    * @generated
    */
-  protected PartUsageImpl()
+  protected AttributeUsageImpl()
   {
     super();
   }
@@ -87,7 +86,7 @@ public class PartUsageImpl extends MinimalEObjectImpl.Container implements PartU
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.PART_USAGE;
+    return SysMLOCPackage.Literals.ATTRIBUTE_USAGE;
   }
 
   /**
@@ -112,7 +111,7 @@ public class PartUsageImpl extends MinimalEObjectImpl.Container implements PartU
     String oldDeclaredName = declaredName;
     declaredName = newDeclaredName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.PART_USAGE__DECLARED_NAME, oldDeclaredName, declaredName));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ATTRIBUTE_USAGE__DECLARED_NAME, oldDeclaredName, declaredName));
   }
 
   /**
@@ -125,7 +124,7 @@ public class PartUsageImpl extends MinimalEObjectImpl.Container implements PartU
   {
     if (elements == null)
     {
-      elements = new EObjectContainmentEList<BaseElement>(BaseElement.class, this, SysMLOCPackage.PART_USAGE__ELEMENTS);
+      elements = new EObjectContainmentEList<BaseElement>(BaseElement.class, this, SysMLOCPackage.ATTRIBUTE_USAGE__ELEMENTS);
     }
     return elements;
   }
@@ -140,7 +139,7 @@ public class PartUsageImpl extends MinimalEObjectImpl.Container implements PartU
   {
     switch (featureID)
     {
-      case SysMLOCPackage.PART_USAGE__ELEMENTS:
+      case SysMLOCPackage.ATTRIBUTE_USAGE__ELEMENTS:
         return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -156,9 +155,9 @@ public class PartUsageImpl extends MinimalEObjectImpl.Container implements PartU
   {
     switch (featureID)
     {
-      case SysMLOCPackage.PART_USAGE__DECLARED_NAME:
+      case SysMLOCPackage.ATTRIBUTE_USAGE__DECLARED_NAME:
         return getDeclaredName();
-      case SysMLOCPackage.PART_USAGE__ELEMENTS:
+      case SysMLOCPackage.ATTRIBUTE_USAGE__ELEMENTS:
         return getElements();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -175,10 +174,10 @@ public class PartUsageImpl extends MinimalEObjectImpl.Container implements PartU
   {
     switch (featureID)
     {
-      case SysMLOCPackage.PART_USAGE__DECLARED_NAME:
+      case SysMLOCPackage.ATTRIBUTE_USAGE__DECLARED_NAME:
         setDeclaredName((String)newValue);
         return;
-      case SysMLOCPackage.PART_USAGE__ELEMENTS:
+      case SysMLOCPackage.ATTRIBUTE_USAGE__ELEMENTS:
         getElements().clear();
         getElements().addAll((Collection<? extends BaseElement>)newValue);
         return;
@@ -196,10 +195,10 @@ public class PartUsageImpl extends MinimalEObjectImpl.Container implements PartU
   {
     switch (featureID)
     {
-      case SysMLOCPackage.PART_USAGE__DECLARED_NAME:
+      case SysMLOCPackage.ATTRIBUTE_USAGE__DECLARED_NAME:
         setDeclaredName(DECLARED_NAME_EDEFAULT);
         return;
-      case SysMLOCPackage.PART_USAGE__ELEMENTS:
+      case SysMLOCPackage.ATTRIBUTE_USAGE__ELEMENTS:
         getElements().clear();
         return;
     }
@@ -216,9 +215,9 @@ public class PartUsageImpl extends MinimalEObjectImpl.Container implements PartU
   {
     switch (featureID)
     {
-      case SysMLOCPackage.PART_USAGE__DECLARED_NAME:
+      case SysMLOCPackage.ATTRIBUTE_USAGE__DECLARED_NAME:
         return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
-      case SysMLOCPackage.PART_USAGE__ELEMENTS:
+      case SysMLOCPackage.ATTRIBUTE_USAGE__ELEMENTS:
         return elements != null && !elements.isEmpty();
     }
     return super.eIsSet(featureID);
@@ -241,4 +240,4 @@ public class PartUsageImpl extends MinimalEObjectImpl.Container implements PartU
     return result.toString();
   }
 
-} //PartUsageImpl
+} //AttributeUsageImpl

@@ -3,6 +3,9 @@
  */
 package dut.control.sysmloc.sysMLOC;
 
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,35 +16,48 @@ package dut.control.sysmloc.sysMLOC;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.PartUsage#getName <em>Name</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.PartUsage#getDeclaredName <em>Declared Name</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.PartUsage#getElements <em>Elements</em>}</li>
  * </ul>
  *
  * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getPartUsage()
  * @model
  * @generated
  */
-public interface PartUsage extends Type
+public interface PartUsage extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Declared Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getPartUsage_Name()
+   * @return the value of the '<em>Declared Name</em>' attribute.
+   * @see #setDeclaredName(String)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getPartUsage_DeclaredName()
    * @model
    * @generated
    */
-  String getName();
+  String getDeclaredName();
 
   /**
-   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.PartUsage#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.PartUsage#getDeclaredName <em>Declared Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
+   * @param value the new value of the '<em>Declared Name</em>' attribute.
+   * @see #getDeclaredName()
    * @generated
    */
-  void setName(String value);
+  void setDeclaredName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
+   * The list contents are of type {@link dut.control.sysmloc.sysMLOC.BaseElement}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Elements</em>' containment reference list.
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getPartUsage_Elements()
+   * @model containment="true"
+   * @generated
+   */
+  EList<BaseElement> getElements();
 
 } // PartUsage

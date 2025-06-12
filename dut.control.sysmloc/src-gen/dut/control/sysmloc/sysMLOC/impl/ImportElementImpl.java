@@ -3,26 +3,26 @@
  */
 package dut.control.sysmloc.sysMLOC.impl;
 
-import dut.control.sysmloc.sysMLOC.PartDefinition;
+import dut.control.sysmloc.sysMLOC.ImportElement;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Part Definition</b></em>'.
+ * An implementation of the model object '<em><b>Import Element</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class PartDefinitionImpl extends DefinitionElementImpl implements PartDefinition
+public class ImportElementImpl extends BaseElementImpl implements ImportElement
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected PartDefinitionImpl()
+  protected ImportElementImpl()
   {
     super();
   }
@@ -35,7 +35,7 @@ public class PartDefinitionImpl extends DefinitionElementImpl implements PartDef
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.PART_DEFINITION;
+    return SysMLOCPackage.Literals.IMPORT_ELEMENT;
   }
 
-} //PartDefinitionImpl
+} //ImportElementImpl

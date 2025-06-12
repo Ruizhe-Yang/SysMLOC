@@ -3,26 +3,26 @@
  */
 package dut.control.sysmloc.sysMLOC.impl;
 
-import dut.control.sysmloc.sysMLOC.PartDefinition;
+import dut.control.sysmloc.sysMLOC.NonOccurrenceUsageElement;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Part Definition</b></em>'.
+ * An implementation of the model object '<em><b>Non Occurrence Usage Element</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class PartDefinitionImpl extends DefinitionElementImpl implements PartDefinition
+public class NonOccurrenceUsageElementImpl extends UsageElementImpl implements NonOccurrenceUsageElement
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected PartDefinitionImpl()
+  protected NonOccurrenceUsageElementImpl()
   {
     super();
   }
@@ -35,7 +35,7 @@ public class PartDefinitionImpl extends DefinitionElementImpl implements PartDef
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.PART_DEFINITION;
+    return SysMLOCPackage.Literals.NON_OCCURRENCE_USAGE_ELEMENT;
   }
 
-} //PartDefinitionImpl
+} //NonOccurrenceUsageElementImpl

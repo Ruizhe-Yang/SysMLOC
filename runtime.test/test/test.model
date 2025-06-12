@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
-  <packages name="VehicleDefinitions">
-    <elements xsi:type="sysMLOC:Import" visibility="public" name="a"/>
+  <packages declaredName="VehicleDefinitions">
+    <elements xsi:type="sysMLOC:NamespaceImport" visibility="public" declaredName="a"/>
     <elements xsi:type="sysMLOC:Comment" body="/* aaa */"/>
-    <elements xsi:type="sysMLOC:PartUsage" name="a"/>
-    <elements xsi:type="sysMLOC:PartDefinition" name="aaa"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="a"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="a">
+      <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="a"/>
+      <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="a"/>
+    </elements>
   </packages>
 </sysMLOC:Namespace>

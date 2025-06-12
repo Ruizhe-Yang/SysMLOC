@@ -4,8 +4,8 @@
 package dut.control.sysmloc.sysMLOC.impl;
 
 import dut.control.sysmloc.sysMLOC.BaseElement;
-import dut.control.sysmloc.sysMLOC.PartUsage;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
+import dut.control.sysmloc.sysMLOC.TBD;
 
 import java.util.Collection;
 
@@ -18,46 +18,45 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Part Usage</b></em>'.
+ * An implementation of the model object '<em><b>TBD</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PartUsageImpl#getDeclaredName <em>Declared Name</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PartUsageImpl#getElements <em>Elements</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.TBDImpl#getText <em>Text</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.TBDImpl#getElements <em>Elements</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class PartUsageImpl extends MinimalEObjectImpl.Container implements PartUsage
+public class TBDImpl extends BaseElementImpl implements TBD
 {
   /**
-   * The default value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
+   * The default value of the '{@link #getText() <em>Text</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDeclaredName()
+   * @see #getText()
    * @generated
    * @ordered
    */
-  protected static final String DECLARED_NAME_EDEFAULT = null;
+  protected static final String TEXT_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
+   * The cached value of the '{@link #getText() <em>Text</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDeclaredName()
+   * @see #getText()
    * @generated
    * @ordered
    */
-  protected String declaredName = DECLARED_NAME_EDEFAULT;
+  protected String text = TEXT_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
@@ -74,7 +73,7 @@ public class PartUsageImpl extends MinimalEObjectImpl.Container implements PartU
    * <!-- end-user-doc -->
    * @generated
    */
-  protected PartUsageImpl()
+  protected TBDImpl()
   {
     super();
   }
@@ -87,7 +86,7 @@ public class PartUsageImpl extends MinimalEObjectImpl.Container implements PartU
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.PART_USAGE;
+    return SysMLOCPackage.Literals.TBD;
   }
 
   /**
@@ -96,9 +95,9 @@ public class PartUsageImpl extends MinimalEObjectImpl.Container implements PartU
    * @generated
    */
   @Override
-  public String getDeclaredName()
+  public String getText()
   {
-    return declaredName;
+    return text;
   }
 
   /**
@@ -107,12 +106,12 @@ public class PartUsageImpl extends MinimalEObjectImpl.Container implements PartU
    * @generated
    */
   @Override
-  public void setDeclaredName(String newDeclaredName)
+  public void setText(String newText)
   {
-    String oldDeclaredName = declaredName;
-    declaredName = newDeclaredName;
+    String oldText = text;
+    text = newText;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.PART_USAGE__DECLARED_NAME, oldDeclaredName, declaredName));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.TBD__TEXT, oldText, text));
   }
 
   /**
@@ -125,7 +124,7 @@ public class PartUsageImpl extends MinimalEObjectImpl.Container implements PartU
   {
     if (elements == null)
     {
-      elements = new EObjectContainmentEList<BaseElement>(BaseElement.class, this, SysMLOCPackage.PART_USAGE__ELEMENTS);
+      elements = new EObjectContainmentEList<BaseElement>(BaseElement.class, this, SysMLOCPackage.TBD__ELEMENTS);
     }
     return elements;
   }
@@ -140,7 +139,7 @@ public class PartUsageImpl extends MinimalEObjectImpl.Container implements PartU
   {
     switch (featureID)
     {
-      case SysMLOCPackage.PART_USAGE__ELEMENTS:
+      case SysMLOCPackage.TBD__ELEMENTS:
         return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -156,9 +155,9 @@ public class PartUsageImpl extends MinimalEObjectImpl.Container implements PartU
   {
     switch (featureID)
     {
-      case SysMLOCPackage.PART_USAGE__DECLARED_NAME:
-        return getDeclaredName();
-      case SysMLOCPackage.PART_USAGE__ELEMENTS:
+      case SysMLOCPackage.TBD__TEXT:
+        return getText();
+      case SysMLOCPackage.TBD__ELEMENTS:
         return getElements();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -175,10 +174,10 @@ public class PartUsageImpl extends MinimalEObjectImpl.Container implements PartU
   {
     switch (featureID)
     {
-      case SysMLOCPackage.PART_USAGE__DECLARED_NAME:
-        setDeclaredName((String)newValue);
+      case SysMLOCPackage.TBD__TEXT:
+        setText((String)newValue);
         return;
-      case SysMLOCPackage.PART_USAGE__ELEMENTS:
+      case SysMLOCPackage.TBD__ELEMENTS:
         getElements().clear();
         getElements().addAll((Collection<? extends BaseElement>)newValue);
         return;
@@ -196,10 +195,10 @@ public class PartUsageImpl extends MinimalEObjectImpl.Container implements PartU
   {
     switch (featureID)
     {
-      case SysMLOCPackage.PART_USAGE__DECLARED_NAME:
-        setDeclaredName(DECLARED_NAME_EDEFAULT);
+      case SysMLOCPackage.TBD__TEXT:
+        setText(TEXT_EDEFAULT);
         return;
-      case SysMLOCPackage.PART_USAGE__ELEMENTS:
+      case SysMLOCPackage.TBD__ELEMENTS:
         getElements().clear();
         return;
     }
@@ -216,9 +215,9 @@ public class PartUsageImpl extends MinimalEObjectImpl.Container implements PartU
   {
     switch (featureID)
     {
-      case SysMLOCPackage.PART_USAGE__DECLARED_NAME:
-        return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
-      case SysMLOCPackage.PART_USAGE__ELEMENTS:
+      case SysMLOCPackage.TBD__TEXT:
+        return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
+      case SysMLOCPackage.TBD__ELEMENTS:
         return elements != null && !elements.isEmpty();
     }
     return super.eIsSet(featureID);
@@ -235,10 +234,10 @@ public class PartUsageImpl extends MinimalEObjectImpl.Container implements PartU
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (declaredName: ");
-    result.append(declaredName);
+    result.append(" (text: ");
+    result.append(text);
     result.append(')');
     return result.toString();
   }
 
-} //PartUsageImpl
+} //TBDImpl

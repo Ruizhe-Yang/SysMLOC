@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class CommentImpl extends TypeImpl implements Comment
+public class CommentImpl extends AnnotatingElementImpl implements Comment
 {
   /**
    * The default value of the '{@link #getBody() <em>Body</em>}' attribute.

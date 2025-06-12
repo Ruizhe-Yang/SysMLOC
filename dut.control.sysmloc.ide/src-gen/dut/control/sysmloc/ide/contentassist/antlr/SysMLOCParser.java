@@ -31,23 +31,45 @@ public class SysMLOCParser extends AbstractContentAssistParser {
 		}
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, SysMLOCGrammarAccess grammarAccess) {
-			builder.put(grammarAccess.getTypeAccess().getAlternatives(), "rule__Type__Alternatives");
+			builder.put(grammarAccess.getBaseElementAccess().getAlternatives(), "rule__BaseElement__Alternatives");
+			builder.put(grammarAccess.getDefinitionElementAccess().getAlternatives(), "rule__DefinitionElement__Alternatives");
+			builder.put(grammarAccess.getAttributeDefinitionAccess().getAlternatives_3(), "rule__AttributeDefinition__Alternatives_3");
+			builder.put(grammarAccess.getPartDefinitionAccess().getAlternatives_4(), "rule__PartDefinition__Alternatives_4");
+			builder.put(grammarAccess.getAttributeUsageAccess().getAlternatives_2(), "rule__AttributeUsage__Alternatives_2");
+			builder.put(grammarAccess.getPartUsageAccess().getAlternatives_3(), "rule__PartUsage__Alternatives_3");
+			builder.put(grammarAccess.getTBDAccess().getAlternatives_1(), "rule__TBD__Alternatives_1");
 			builder.put(grammarAccess.getNameAccess().getAlternatives(), "rule__Name__Alternatives");
 			builder.put(grammarAccess.getPackageAccess().getGroup(), "rule__Package__Group__0");
+			builder.put(grammarAccess.getNamespaceImportAccess().getGroup(), "rule__NamespaceImport__Group__0");
 			builder.put(grammarAccess.getCommentAccess().getGroup(), "rule__Comment__Group__0");
-			builder.put(grammarAccess.getImportAccess().getGroup(), "rule__Import__Group__0");
-			builder.put(grammarAccess.getPartUsageAccess().getGroup(), "rule__PartUsage__Group__0");
+			builder.put(grammarAccess.getAttributeDefinitionAccess().getGroup(), "rule__AttributeDefinition__Group__0");
+			builder.put(grammarAccess.getAttributeDefinitionAccess().getGroup_3_1(), "rule__AttributeDefinition__Group_3_1__0");
 			builder.put(grammarAccess.getPartDefinitionAccess().getGroup(), "rule__PartDefinition__Group__0");
+			builder.put(grammarAccess.getPartDefinitionAccess().getGroup_4_1(), "rule__PartDefinition__Group_4_1__0");
+			builder.put(grammarAccess.getAttributeUsageAccess().getGroup(), "rule__AttributeUsage__Group__0");
+			builder.put(grammarAccess.getAttributeUsageAccess().getGroup_2_1(), "rule__AttributeUsage__Group_2_1__0");
+			builder.put(grammarAccess.getPartUsageAccess().getGroup(), "rule__PartUsage__Group__0");
+			builder.put(grammarAccess.getPartUsageAccess().getGroup_3_1(), "rule__PartUsage__Group_3_1__0");
+			builder.put(grammarAccess.getTBDAccess().getGroup(), "rule__TBD__Group__0");
+			builder.put(grammarAccess.getTBDAccess().getGroup_1_1(), "rule__TBD__Group_1_1__0");
 			builder.put(grammarAccess.getQualificationAccess().getGroup(), "rule__Qualification__Group__0");
 			builder.put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
 			builder.put(grammarAccess.getNamespaceAccess().getPackagesAssignment(), "rule__Namespace__PackagesAssignment");
-			builder.put(grammarAccess.getPackageAccess().getNameAssignment_1(), "rule__Package__NameAssignment_1");
+			builder.put(grammarAccess.getPackageAccess().getDeclaredNameAssignment_1(), "rule__Package__DeclaredNameAssignment_1");
 			builder.put(grammarAccess.getPackageAccess().getElementsAssignment_3(), "rule__Package__ElementsAssignment_3");
+			builder.put(grammarAccess.getNamespaceImportAccess().getVisibilityAssignment_0(), "rule__NamespaceImport__VisibilityAssignment_0");
+			builder.put(grammarAccess.getNamespaceImportAccess().getDeclaredNameAssignment_2(), "rule__NamespaceImport__DeclaredNameAssignment_2");
 			builder.put(grammarAccess.getCommentAccess().getBodyAssignment_1(), "rule__Comment__BodyAssignment_1");
-			builder.put(grammarAccess.getImportAccess().getVisibilityAssignment_0(), "rule__Import__VisibilityAssignment_0");
-			builder.put(grammarAccess.getImportAccess().getNameAssignment_2(), "rule__Import__NameAssignment_2");
-			builder.put(grammarAccess.getPartUsageAccess().getNameAssignment_1(), "rule__PartUsage__NameAssignment_1");
-			builder.put(grammarAccess.getPartDefinitionAccess().getNameAssignment_2(), "rule__PartDefinition__NameAssignment_2");
+			builder.put(grammarAccess.getAttributeDefinitionAccess().getDeclaredNameAssignment_2(), "rule__AttributeDefinition__DeclaredNameAssignment_2");
+			builder.put(grammarAccess.getAttributeDefinitionAccess().getElementsAssignment_3_1_1(), "rule__AttributeDefinition__ElementsAssignment_3_1_1");
+			builder.put(grammarAccess.getPartDefinitionAccess().getDeclaredNameAssignment_2(), "rule__PartDefinition__DeclaredNameAssignment_2");
+			builder.put(grammarAccess.getPartDefinitionAccess().getElementsAssignment_4_1_1(), "rule__PartDefinition__ElementsAssignment_4_1_1");
+			builder.put(grammarAccess.getAttributeUsageAccess().getDeclaredNameAssignment_1(), "rule__AttributeUsage__DeclaredNameAssignment_1");
+			builder.put(grammarAccess.getAttributeUsageAccess().getElementsAssignment_2_1_1(), "rule__AttributeUsage__ElementsAssignment_2_1_1");
+			builder.put(grammarAccess.getPartUsageAccess().getDeclaredNameAssignment_1(), "rule__PartUsage__DeclaredNameAssignment_1");
+			builder.put(grammarAccess.getPartUsageAccess().getElementsAssignment_3_1_1(), "rule__PartUsage__ElementsAssignment_3_1_1");
+			builder.put(grammarAccess.getTBDAccess().getTextAssignment_0(), "rule__TBD__TextAssignment_0");
+			builder.put(grammarAccess.getTBDAccess().getElementsAssignment_1_1_1(), "rule__TBD__ElementsAssignment_1_1_1");
 		}
 	}
 	
