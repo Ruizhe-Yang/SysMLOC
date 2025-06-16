@@ -4,7 +4,6 @@ package VehicleDefinitions {
 	attribute def a;
 	attribute a{
 		attribute def a;
-		attribute def a;
 		
 	}
 }

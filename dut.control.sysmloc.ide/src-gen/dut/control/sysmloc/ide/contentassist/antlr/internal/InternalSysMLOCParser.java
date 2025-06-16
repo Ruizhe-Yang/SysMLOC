@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_UNRESTRICTED_NAME", "RULE_REGULAR_COMMENT", "RULE_DECIMAL_VALUE", "RULE_EXP_VALUE", "RULE_STRING_VALUE", "RULE_ML_NOTE", "RULE_SL_NOTE", "RULE_WS", "';'", "'package'", "'{'", "'}'", "'import'", "'doc'", "'attribute'", "'def'", "'part'", "'::'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_UNRESTRICTED_NAME", "RULE_REGULAR_COMMENT", "RULE_DECIMAL_VALUE", "RULE_EXP_VALUE", "RULE_STRING_VALUE", "RULE_ML_NOTE", "RULE_SL_NOTE", "RULE_WS", "';'", "'public'", "'private'", "'protected'", "'package'", "'{'", "'}'", "'import'", "'doc'", "'attribute'", "'def'", "'part'", "'::'"
     };
     public static final int RULE_REGULAR_COMMENT=6;
     public static final int RULE_SL_NOTE=11;
@@ -39,7 +39,10 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
     public static final int RULE_DECIMAL_VALUE=7;
     public static final int RULE_UNRESTRICTED_NAME=5;
     public static final int T__22=22;
+    public static final int T__23=23;
+    public static final int T__24=24;
     public static final int RULE_STRING_VALUE=9;
+    public static final int T__25=25;
     public static final int RULE_ML_NOTE=10;
     public static final int RULE_EXP_VALUE=8;
     public static final int T__20=20;
@@ -130,7 +133,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==14) ) {
+                if ( (LA1_0==17) ) {
                     alt1=1;
                 }
 
@@ -1075,89 +1078,12 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleAttributeUsage"
 
 
-    // $ANTLR start "entryRuleTBD"
-    // InternalSysMLOC.g:378:1: entryRuleTBD : ruleTBD EOF ;
-    public final void entryRuleTBD() throws RecognitionException {
-        try {
-            // InternalSysMLOC.g:379:1: ( ruleTBD EOF )
-            // InternalSysMLOC.g:380:1: ruleTBD EOF
-            {
-             before(grammarAccess.getTBDRule()); 
-            pushFollow(FOLLOW_1);
-            ruleTBD();
-
-            state._fsp--;
-
-             after(grammarAccess.getTBDRule()); 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-        }
-        return ;
-    }
-    // $ANTLR end "entryRuleTBD"
-
-
-    // $ANTLR start "ruleTBD"
-    // InternalSysMLOC.g:387:1: ruleTBD : ( ( rule__TBD__Group__0 ) ) ;
-    public final void ruleTBD() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSysMLOC.g:391:2: ( ( ( rule__TBD__Group__0 ) ) )
-            // InternalSysMLOC.g:392:2: ( ( rule__TBD__Group__0 ) )
-            {
-            // InternalSysMLOC.g:392:2: ( ( rule__TBD__Group__0 ) )
-            // InternalSysMLOC.g:393:3: ( rule__TBD__Group__0 )
-            {
-             before(grammarAccess.getTBDAccess().getGroup()); 
-            // InternalSysMLOC.g:394:3: ( rule__TBD__Group__0 )
-            // InternalSysMLOC.g:394:4: rule__TBD__Group__0
-            {
-            pushFollow(FOLLOW_2);
-            rule__TBD__Group__0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getTBDAccess().getGroup()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "ruleTBD"
-
-
     // $ANTLR start "entryRuleName"
-    // InternalSysMLOC.g:403:1: entryRuleName : ruleName EOF ;
+    // InternalSysMLOC.g:378:1: entryRuleName : ruleName EOF ;
     public final void entryRuleName() throws RecognitionException {
         try {
-            // InternalSysMLOC.g:404:1: ( ruleName EOF )
-            // InternalSysMLOC.g:405:1: ruleName EOF
+            // InternalSysMLOC.g:379:1: ( ruleName EOF )
+            // InternalSysMLOC.g:380:1: ruleName EOF
             {
              before(grammarAccess.getNameRule()); 
             pushFollow(FOLLOW_1);
@@ -1183,21 +1109,21 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleName"
-    // InternalSysMLOC.g:412:1: ruleName : ( ( rule__Name__Alternatives ) ) ;
+    // InternalSysMLOC.g:387:1: ruleName : ( ( rule__Name__Alternatives ) ) ;
     public final void ruleName() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:416:2: ( ( ( rule__Name__Alternatives ) ) )
-            // InternalSysMLOC.g:417:2: ( ( rule__Name__Alternatives ) )
+            // InternalSysMLOC.g:391:2: ( ( ( rule__Name__Alternatives ) ) )
+            // InternalSysMLOC.g:392:2: ( ( rule__Name__Alternatives ) )
             {
-            // InternalSysMLOC.g:417:2: ( ( rule__Name__Alternatives ) )
-            // InternalSysMLOC.g:418:3: ( rule__Name__Alternatives )
+            // InternalSysMLOC.g:392:2: ( ( rule__Name__Alternatives ) )
+            // InternalSysMLOC.g:393:3: ( rule__Name__Alternatives )
             {
              before(grammarAccess.getNameAccess().getAlternatives()); 
-            // InternalSysMLOC.g:419:3: ( rule__Name__Alternatives )
-            // InternalSysMLOC.g:419:4: rule__Name__Alternatives
+            // InternalSysMLOC.g:394:3: ( rule__Name__Alternatives )
+            // InternalSysMLOC.g:394:4: rule__Name__Alternatives
             {
             pushFollow(FOLLOW_2);
             rule__Name__Alternatives();
@@ -1230,11 +1156,11 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleQualification"
-    // InternalSysMLOC.g:428:1: entryRuleQualification : ruleQualification EOF ;
+    // InternalSysMLOC.g:403:1: entryRuleQualification : ruleQualification EOF ;
     public final void entryRuleQualification() throws RecognitionException {
         try {
-            // InternalSysMLOC.g:429:1: ( ruleQualification EOF )
-            // InternalSysMLOC.g:430:1: ruleQualification EOF
+            // InternalSysMLOC.g:404:1: ( ruleQualification EOF )
+            // InternalSysMLOC.g:405:1: ruleQualification EOF
             {
              before(grammarAccess.getQualificationRule()); 
             pushFollow(FOLLOW_1);
@@ -1260,24 +1186,24 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleQualification"
-    // InternalSysMLOC.g:437:1: ruleQualification : ( ( ( rule__Qualification__Group__0 ) ) ( ( rule__Qualification__Group__0 )* ) ) ;
+    // InternalSysMLOC.g:412:1: ruleQualification : ( ( ( rule__Qualification__Group__0 ) ) ( ( rule__Qualification__Group__0 )* ) ) ;
     public final void ruleQualification() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:441:2: ( ( ( ( rule__Qualification__Group__0 ) ) ( ( rule__Qualification__Group__0 )* ) ) )
-            // InternalSysMLOC.g:442:2: ( ( ( rule__Qualification__Group__0 ) ) ( ( rule__Qualification__Group__0 )* ) )
+            // InternalSysMLOC.g:416:2: ( ( ( ( rule__Qualification__Group__0 ) ) ( ( rule__Qualification__Group__0 )* ) ) )
+            // InternalSysMLOC.g:417:2: ( ( ( rule__Qualification__Group__0 ) ) ( ( rule__Qualification__Group__0 )* ) )
             {
-            // InternalSysMLOC.g:442:2: ( ( ( rule__Qualification__Group__0 ) ) ( ( rule__Qualification__Group__0 )* ) )
-            // InternalSysMLOC.g:443:3: ( ( rule__Qualification__Group__0 ) ) ( ( rule__Qualification__Group__0 )* )
+            // InternalSysMLOC.g:417:2: ( ( ( rule__Qualification__Group__0 ) ) ( ( rule__Qualification__Group__0 )* ) )
+            // InternalSysMLOC.g:418:3: ( ( rule__Qualification__Group__0 ) ) ( ( rule__Qualification__Group__0 )* )
             {
-            // InternalSysMLOC.g:443:3: ( ( rule__Qualification__Group__0 ) )
-            // InternalSysMLOC.g:444:4: ( rule__Qualification__Group__0 )
+            // InternalSysMLOC.g:418:3: ( ( rule__Qualification__Group__0 ) )
+            // InternalSysMLOC.g:419:4: ( rule__Qualification__Group__0 )
             {
              before(grammarAccess.getQualificationAccess().getGroup()); 
-            // InternalSysMLOC.g:445:4: ( rule__Qualification__Group__0 )
-            // InternalSysMLOC.g:445:5: rule__Qualification__Group__0
+            // InternalSysMLOC.g:420:4: ( rule__Qualification__Group__0 )
+            // InternalSysMLOC.g:420:5: rule__Qualification__Group__0
             {
             pushFollow(FOLLOW_4);
             rule__Qualification__Group__0();
@@ -1291,11 +1217,11 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
             }
 
-            // InternalSysMLOC.g:448:3: ( ( rule__Qualification__Group__0 )* )
-            // InternalSysMLOC.g:449:4: ( rule__Qualification__Group__0 )*
+            // InternalSysMLOC.g:423:3: ( ( rule__Qualification__Group__0 )* )
+            // InternalSysMLOC.g:424:4: ( rule__Qualification__Group__0 )*
             {
              before(grammarAccess.getQualificationAccess().getGroup()); 
-            // InternalSysMLOC.g:450:4: ( rule__Qualification__Group__0 )*
+            // InternalSysMLOC.g:425:4: ( rule__Qualification__Group__0 )*
             loop2:
             do {
                 int alt2=2;
@@ -1304,7 +1230,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                 if ( (LA2_0==RULE_ID) ) {
                     int LA2_2 = input.LA(2);
 
-                    if ( (LA2_2==22) ) {
+                    if ( (LA2_2==25) ) {
                         alt2=1;
                     }
 
@@ -1313,7 +1239,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                 else if ( (LA2_0==RULE_UNRESTRICTED_NAME) ) {
                     int LA2_3 = input.LA(2);
 
-                    if ( (LA2_3==22) ) {
+                    if ( (LA2_3==25) ) {
                         alt2=1;
                     }
 
@@ -1323,7 +1249,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
                 switch (alt2) {
             	case 1 :
-            	    // InternalSysMLOC.g:450:5: rule__Qualification__Group__0
+            	    // InternalSysMLOC.g:425:5: rule__Qualification__Group__0
             	    {
             	    pushFollow(FOLLOW_4);
             	    rule__Qualification__Group__0();
@@ -1365,11 +1291,11 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleQualifiedName"
-    // InternalSysMLOC.g:460:1: entryRuleQualifiedName : ruleQualifiedName EOF ;
+    // InternalSysMLOC.g:435:1: entryRuleQualifiedName : ruleQualifiedName EOF ;
     public final void entryRuleQualifiedName() throws RecognitionException {
         try {
-            // InternalSysMLOC.g:461:1: ( ruleQualifiedName EOF )
-            // InternalSysMLOC.g:462:1: ruleQualifiedName EOF
+            // InternalSysMLOC.g:436:1: ( ruleQualifiedName EOF )
+            // InternalSysMLOC.g:437:1: ruleQualifiedName EOF
             {
              before(grammarAccess.getQualifiedNameRule()); 
             pushFollow(FOLLOW_1);
@@ -1395,21 +1321,21 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleQualifiedName"
-    // InternalSysMLOC.g:469:1: ruleQualifiedName : ( ( rule__QualifiedName__Group__0 ) ) ;
+    // InternalSysMLOC.g:444:1: ruleQualifiedName : ( ( rule__QualifiedName__Group__0 ) ) ;
     public final void ruleQualifiedName() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:473:2: ( ( ( rule__QualifiedName__Group__0 ) ) )
-            // InternalSysMLOC.g:474:2: ( ( rule__QualifiedName__Group__0 ) )
+            // InternalSysMLOC.g:448:2: ( ( ( rule__QualifiedName__Group__0 ) ) )
+            // InternalSysMLOC.g:449:2: ( ( rule__QualifiedName__Group__0 ) )
             {
-            // InternalSysMLOC.g:474:2: ( ( rule__QualifiedName__Group__0 ) )
-            // InternalSysMLOC.g:475:3: ( rule__QualifiedName__Group__0 )
+            // InternalSysMLOC.g:449:2: ( ( rule__QualifiedName__Group__0 ) )
+            // InternalSysMLOC.g:450:3: ( rule__QualifiedName__Group__0 )
             {
              before(grammarAccess.getQualifiedNameAccess().getGroup()); 
-            // InternalSysMLOC.g:476:3: ( rule__QualifiedName__Group__0 )
-            // InternalSysMLOC.g:476:4: rule__QualifiedName__Group__0
+            // InternalSysMLOC.g:451:3: ( rule__QualifiedName__Group__0 )
+            // InternalSysMLOC.g:451:4: rule__QualifiedName__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__QualifiedName__Group__0();
@@ -1441,22 +1367,116 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleQualifiedName"
 
 
+    // $ANTLR start "ruleVisibilityIndicator"
+    // InternalSysMLOC.g:460:1: ruleVisibilityIndicator : ( ( rule__VisibilityIndicator__Alternatives ) ) ;
+    public final void ruleVisibilityIndicator() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSysMLOC.g:464:1: ( ( ( rule__VisibilityIndicator__Alternatives ) ) )
+            // InternalSysMLOC.g:465:2: ( ( rule__VisibilityIndicator__Alternatives ) )
+            {
+            // InternalSysMLOC.g:465:2: ( ( rule__VisibilityIndicator__Alternatives ) )
+            // InternalSysMLOC.g:466:3: ( rule__VisibilityIndicator__Alternatives )
+            {
+             before(grammarAccess.getVisibilityIndicatorAccess().getAlternatives()); 
+            // InternalSysMLOC.g:467:3: ( rule__VisibilityIndicator__Alternatives )
+            // InternalSysMLOC.g:467:4: rule__VisibilityIndicator__Alternatives
+            {
+            pushFollow(FOLLOW_2);
+            rule__VisibilityIndicator__Alternatives();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getVisibilityIndicatorAccess().getAlternatives()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleVisibilityIndicator"
+
+
     // $ANTLR start "rule__BaseElement__Alternatives"
-    // InternalSysMLOC.g:484:1: rule__BaseElement__Alternatives : ( ( rulePackage ) | ( ruleAnnotatingElement ) | ( ruleImportElement ) | ( ruleDefinitionElement ) | ( ruleUsageElement ) | ( ruleTBD ) );
+    // InternalSysMLOC.g:475:1: rule__BaseElement__Alternatives : ( ( rulePackage ) | ( ruleAnnotatingElement ) | ( ruleImportElement ) | ( ruleDefinitionElement ) | ( ruleUsageElement ) );
     public final void rule__BaseElement__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:488:1: ( ( rulePackage ) | ( ruleAnnotatingElement ) | ( ruleImportElement ) | ( ruleDefinitionElement ) | ( ruleUsageElement ) | ( ruleTBD ) )
-            int alt3=6;
-            alt3 = dfa3.predict(input);
+            // InternalSysMLOC.g:479:1: ( ( rulePackage ) | ( ruleAnnotatingElement ) | ( ruleImportElement ) | ( ruleDefinitionElement ) | ( ruleUsageElement ) )
+            int alt3=5;
+            switch ( input.LA(1) ) {
+            case 17:
+                {
+                alt3=1;
+                }
+                break;
+            case 21:
+                {
+                alt3=2;
+                }
+                break;
+            case 14:
+            case 15:
+            case 16:
+                {
+                alt3=3;
+                }
+                break;
+            case 22:
+                {
+                int LA3_4 = input.LA(2);
+
+                if ( ((LA3_4>=RULE_ID && LA3_4<=RULE_UNRESTRICTED_NAME)) ) {
+                    alt3=5;
+                }
+                else if ( (LA3_4==23) ) {
+                    alt3=4;
+                }
+                else {
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 3, 4, input);
+
+                    throw nvae;
+                }
+                }
+                break;
+            case 24:
+                {
+                alt3=4;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 3, 0, input);
+
+                throw nvae;
+            }
+
             switch (alt3) {
                 case 1 :
-                    // InternalSysMLOC.g:489:2: ( rulePackage )
+                    // InternalSysMLOC.g:480:2: ( rulePackage )
                     {
-                    // InternalSysMLOC.g:489:2: ( rulePackage )
-                    // InternalSysMLOC.g:490:3: rulePackage
+                    // InternalSysMLOC.g:480:2: ( rulePackage )
+                    // InternalSysMLOC.g:481:3: rulePackage
                     {
                      before(grammarAccess.getBaseElementAccess().getPackageParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
@@ -1472,10 +1492,10 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalSysMLOC.g:495:2: ( ruleAnnotatingElement )
+                    // InternalSysMLOC.g:486:2: ( ruleAnnotatingElement )
                     {
-                    // InternalSysMLOC.g:495:2: ( ruleAnnotatingElement )
-                    // InternalSysMLOC.g:496:3: ruleAnnotatingElement
+                    // InternalSysMLOC.g:486:2: ( ruleAnnotatingElement )
+                    // InternalSysMLOC.g:487:3: ruleAnnotatingElement
                     {
                      before(grammarAccess.getBaseElementAccess().getAnnotatingElementParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
@@ -1491,10 +1511,10 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // InternalSysMLOC.g:501:2: ( ruleImportElement )
+                    // InternalSysMLOC.g:492:2: ( ruleImportElement )
                     {
-                    // InternalSysMLOC.g:501:2: ( ruleImportElement )
-                    // InternalSysMLOC.g:502:3: ruleImportElement
+                    // InternalSysMLOC.g:492:2: ( ruleImportElement )
+                    // InternalSysMLOC.g:493:3: ruleImportElement
                     {
                      before(grammarAccess.getBaseElementAccess().getImportElementParserRuleCall_2()); 
                     pushFollow(FOLLOW_2);
@@ -1510,10 +1530,10 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // InternalSysMLOC.g:507:2: ( ruleDefinitionElement )
+                    // InternalSysMLOC.g:498:2: ( ruleDefinitionElement )
                     {
-                    // InternalSysMLOC.g:507:2: ( ruleDefinitionElement )
-                    // InternalSysMLOC.g:508:3: ruleDefinitionElement
+                    // InternalSysMLOC.g:498:2: ( ruleDefinitionElement )
+                    // InternalSysMLOC.g:499:3: ruleDefinitionElement
                     {
                      before(grammarAccess.getBaseElementAccess().getDefinitionElementParserRuleCall_3()); 
                     pushFollow(FOLLOW_2);
@@ -1529,10 +1549,10 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 5 :
-                    // InternalSysMLOC.g:513:2: ( ruleUsageElement )
+                    // InternalSysMLOC.g:504:2: ( ruleUsageElement )
                     {
-                    // InternalSysMLOC.g:513:2: ( ruleUsageElement )
-                    // InternalSysMLOC.g:514:3: ruleUsageElement
+                    // InternalSysMLOC.g:504:2: ( ruleUsageElement )
+                    // InternalSysMLOC.g:505:3: ruleUsageElement
                     {
                      before(grammarAccess.getBaseElementAccess().getUsageElementParserRuleCall_4()); 
                     pushFollow(FOLLOW_2);
@@ -1541,25 +1561,6 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
 
                      after(grammarAccess.getBaseElementAccess().getUsageElementParserRuleCall_4()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 6 :
-                    // InternalSysMLOC.g:519:2: ( ruleTBD )
-                    {
-                    // InternalSysMLOC.g:519:2: ( ruleTBD )
-                    // InternalSysMLOC.g:520:3: ruleTBD
-                    {
-                     before(grammarAccess.getBaseElementAccess().getTBDParserRuleCall_5()); 
-                    pushFollow(FOLLOW_2);
-                    ruleTBD();
-
-                    state._fsp--;
-
-                     after(grammarAccess.getBaseElementAccess().getTBDParserRuleCall_5()); 
 
                     }
 
@@ -1584,20 +1585,20 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DefinitionElement__Alternatives"
-    // InternalSysMLOC.g:529:1: rule__DefinitionElement__Alternatives : ( ( ruleAttributeDefinition ) | ( rulePartDefinition ) );
+    // InternalSysMLOC.g:514:1: rule__DefinitionElement__Alternatives : ( ( ruleAttributeDefinition ) | ( rulePartDefinition ) );
     public final void rule__DefinitionElement__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:533:1: ( ( ruleAttributeDefinition ) | ( rulePartDefinition ) )
+            // InternalSysMLOC.g:518:1: ( ( ruleAttributeDefinition ) | ( rulePartDefinition ) )
             int alt4=2;
             int LA4_0 = input.LA(1);
 
-            if ( (LA4_0==19) ) {
+            if ( (LA4_0==22) ) {
                 alt4=1;
             }
-            else if ( (LA4_0==21) ) {
+            else if ( (LA4_0==24) ) {
                 alt4=2;
             }
             else {
@@ -1608,10 +1609,10 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             }
             switch (alt4) {
                 case 1 :
-                    // InternalSysMLOC.g:534:2: ( ruleAttributeDefinition )
+                    // InternalSysMLOC.g:519:2: ( ruleAttributeDefinition )
                     {
-                    // InternalSysMLOC.g:534:2: ( ruleAttributeDefinition )
-                    // InternalSysMLOC.g:535:3: ruleAttributeDefinition
+                    // InternalSysMLOC.g:519:2: ( ruleAttributeDefinition )
+                    // InternalSysMLOC.g:520:3: ruleAttributeDefinition
                     {
                      before(grammarAccess.getDefinitionElementAccess().getAttributeDefinitionParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
@@ -1627,10 +1628,10 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalSysMLOC.g:540:2: ( rulePartDefinition )
+                    // InternalSysMLOC.g:525:2: ( rulePartDefinition )
                     {
-                    // InternalSysMLOC.g:540:2: ( rulePartDefinition )
-                    // InternalSysMLOC.g:541:3: rulePartDefinition
+                    // InternalSysMLOC.g:525:2: ( rulePartDefinition )
+                    // InternalSysMLOC.g:526:3: rulePartDefinition
                     {
                      before(grammarAccess.getDefinitionElementAccess().getPartDefinitionParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
@@ -1663,20 +1664,20 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AttributeDefinition__Alternatives_3"
-    // InternalSysMLOC.g:550:1: rule__AttributeDefinition__Alternatives_3 : ( ( ';' ) | ( ( rule__AttributeDefinition__Group_3_1__0 ) ) );
+    // InternalSysMLOC.g:535:1: rule__AttributeDefinition__Alternatives_3 : ( ( ';' ) | ( ( rule__AttributeDefinition__Group_3_1__0 ) ) );
     public final void rule__AttributeDefinition__Alternatives_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:554:1: ( ( ';' ) | ( ( rule__AttributeDefinition__Group_3_1__0 ) ) )
+            // InternalSysMLOC.g:539:1: ( ( ';' ) | ( ( rule__AttributeDefinition__Group_3_1__0 ) ) )
             int alt5=2;
             int LA5_0 = input.LA(1);
 
             if ( (LA5_0==13) ) {
                 alt5=1;
             }
-            else if ( (LA5_0==15) ) {
+            else if ( (LA5_0==18) ) {
                 alt5=2;
             }
             else {
@@ -1687,10 +1688,10 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             }
             switch (alt5) {
                 case 1 :
-                    // InternalSysMLOC.g:555:2: ( ';' )
+                    // InternalSysMLOC.g:540:2: ( ';' )
                     {
-                    // InternalSysMLOC.g:555:2: ( ';' )
-                    // InternalSysMLOC.g:556:3: ';'
+                    // InternalSysMLOC.g:540:2: ( ';' )
+                    // InternalSysMLOC.g:541:3: ';'
                     {
                      before(grammarAccess.getAttributeDefinitionAccess().getSemicolonKeyword_3_0()); 
                     match(input,13,FOLLOW_2); 
@@ -1702,14 +1703,14 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalSysMLOC.g:561:2: ( ( rule__AttributeDefinition__Group_3_1__0 ) )
+                    // InternalSysMLOC.g:546:2: ( ( rule__AttributeDefinition__Group_3_1__0 ) )
                     {
-                    // InternalSysMLOC.g:561:2: ( ( rule__AttributeDefinition__Group_3_1__0 ) )
-                    // InternalSysMLOC.g:562:3: ( rule__AttributeDefinition__Group_3_1__0 )
+                    // InternalSysMLOC.g:546:2: ( ( rule__AttributeDefinition__Group_3_1__0 ) )
+                    // InternalSysMLOC.g:547:3: ( rule__AttributeDefinition__Group_3_1__0 )
                     {
                      before(grammarAccess.getAttributeDefinitionAccess().getGroup_3_1()); 
-                    // InternalSysMLOC.g:563:3: ( rule__AttributeDefinition__Group_3_1__0 )
-                    // InternalSysMLOC.g:563:4: rule__AttributeDefinition__Group_3_1__0
+                    // InternalSysMLOC.g:548:3: ( rule__AttributeDefinition__Group_3_1__0 )
+                    // InternalSysMLOC.g:548:4: rule__AttributeDefinition__Group_3_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__AttributeDefinition__Group_3_1__0();
@@ -1744,20 +1745,20 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PartDefinition__Alternatives_4"
-    // InternalSysMLOC.g:571:1: rule__PartDefinition__Alternatives_4 : ( ( ';' ) | ( ( rule__PartDefinition__Group_4_1__0 ) ) );
+    // InternalSysMLOC.g:556:1: rule__PartDefinition__Alternatives_4 : ( ( ';' ) | ( ( rule__PartDefinition__Group_4_1__0 ) ) );
     public final void rule__PartDefinition__Alternatives_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:575:1: ( ( ';' ) | ( ( rule__PartDefinition__Group_4_1__0 ) ) )
+            // InternalSysMLOC.g:560:1: ( ( ';' ) | ( ( rule__PartDefinition__Group_4_1__0 ) ) )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
             if ( (LA6_0==13) ) {
                 alt6=1;
             }
-            else if ( (LA6_0==15) ) {
+            else if ( (LA6_0==18) ) {
                 alt6=2;
             }
             else {
@@ -1768,10 +1769,10 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalSysMLOC.g:576:2: ( ';' )
+                    // InternalSysMLOC.g:561:2: ( ';' )
                     {
-                    // InternalSysMLOC.g:576:2: ( ';' )
-                    // InternalSysMLOC.g:577:3: ';'
+                    // InternalSysMLOC.g:561:2: ( ';' )
+                    // InternalSysMLOC.g:562:3: ';'
                     {
                      before(grammarAccess.getPartDefinitionAccess().getSemicolonKeyword_4_0()); 
                     match(input,13,FOLLOW_2); 
@@ -1783,14 +1784,14 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalSysMLOC.g:582:2: ( ( rule__PartDefinition__Group_4_1__0 ) )
+                    // InternalSysMLOC.g:567:2: ( ( rule__PartDefinition__Group_4_1__0 ) )
                     {
-                    // InternalSysMLOC.g:582:2: ( ( rule__PartDefinition__Group_4_1__0 ) )
-                    // InternalSysMLOC.g:583:3: ( rule__PartDefinition__Group_4_1__0 )
+                    // InternalSysMLOC.g:567:2: ( ( rule__PartDefinition__Group_4_1__0 ) )
+                    // InternalSysMLOC.g:568:3: ( rule__PartDefinition__Group_4_1__0 )
                     {
                      before(grammarAccess.getPartDefinitionAccess().getGroup_4_1()); 
-                    // InternalSysMLOC.g:584:3: ( rule__PartDefinition__Group_4_1__0 )
-                    // InternalSysMLOC.g:584:4: rule__PartDefinition__Group_4_1__0
+                    // InternalSysMLOC.g:569:3: ( rule__PartDefinition__Group_4_1__0 )
+                    // InternalSysMLOC.g:569:4: rule__PartDefinition__Group_4_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__PartDefinition__Group_4_1__0();
@@ -1825,20 +1826,20 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AttributeUsage__Alternatives_2"
-    // InternalSysMLOC.g:592:1: rule__AttributeUsage__Alternatives_2 : ( ( ';' ) | ( ( rule__AttributeUsage__Group_2_1__0 ) ) );
+    // InternalSysMLOC.g:577:1: rule__AttributeUsage__Alternatives_2 : ( ( ';' ) | ( ( rule__AttributeUsage__Group_2_1__0 ) ) );
     public final void rule__AttributeUsage__Alternatives_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:596:1: ( ( ';' ) | ( ( rule__AttributeUsage__Group_2_1__0 ) ) )
+            // InternalSysMLOC.g:581:1: ( ( ';' ) | ( ( rule__AttributeUsage__Group_2_1__0 ) ) )
             int alt7=2;
             int LA7_0 = input.LA(1);
 
             if ( (LA7_0==13) ) {
                 alt7=1;
             }
-            else if ( (LA7_0==15) ) {
+            else if ( (LA7_0==18) ) {
                 alt7=2;
             }
             else {
@@ -1849,10 +1850,10 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             }
             switch (alt7) {
                 case 1 :
-                    // InternalSysMLOC.g:597:2: ( ';' )
+                    // InternalSysMLOC.g:582:2: ( ';' )
                     {
-                    // InternalSysMLOC.g:597:2: ( ';' )
-                    // InternalSysMLOC.g:598:3: ';'
+                    // InternalSysMLOC.g:582:2: ( ';' )
+                    // InternalSysMLOC.g:583:3: ';'
                     {
                      before(grammarAccess.getAttributeUsageAccess().getSemicolonKeyword_2_0()); 
                     match(input,13,FOLLOW_2); 
@@ -1864,14 +1865,14 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalSysMLOC.g:603:2: ( ( rule__AttributeUsage__Group_2_1__0 ) )
+                    // InternalSysMLOC.g:588:2: ( ( rule__AttributeUsage__Group_2_1__0 ) )
                     {
-                    // InternalSysMLOC.g:603:2: ( ( rule__AttributeUsage__Group_2_1__0 ) )
-                    // InternalSysMLOC.g:604:3: ( rule__AttributeUsage__Group_2_1__0 )
+                    // InternalSysMLOC.g:588:2: ( ( rule__AttributeUsage__Group_2_1__0 ) )
+                    // InternalSysMLOC.g:589:3: ( rule__AttributeUsage__Group_2_1__0 )
                     {
                      before(grammarAccess.getAttributeUsageAccess().getGroup_2_1()); 
-                    // InternalSysMLOC.g:605:3: ( rule__AttributeUsage__Group_2_1__0 )
-                    // InternalSysMLOC.g:605:4: rule__AttributeUsage__Group_2_1__0
+                    // InternalSysMLOC.g:590:3: ( rule__AttributeUsage__Group_2_1__0 )
+                    // InternalSysMLOC.g:590:4: rule__AttributeUsage__Group_2_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__AttributeUsage__Group_2_1__0();
@@ -1905,21 +1906,21 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__AttributeUsage__Alternatives_2"
 
 
-    // $ANTLR start "rule__TBD__Alternatives_1"
-    // InternalSysMLOC.g:613:1: rule__TBD__Alternatives_1 : ( ( ';' ) | ( ( rule__TBD__Group_1_1__0 ) ) );
-    public final void rule__TBD__Alternatives_1() throws RecognitionException {
+    // $ANTLR start "rule__Name__Alternatives"
+    // InternalSysMLOC.g:598:1: rule__Name__Alternatives : ( ( RULE_ID ) | ( RULE_UNRESTRICTED_NAME ) );
+    public final void rule__Name__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:617:1: ( ( ';' ) | ( ( rule__TBD__Group_1_1__0 ) ) )
+            // InternalSysMLOC.g:602:1: ( ( RULE_ID ) | ( RULE_UNRESTRICTED_NAME ) )
             int alt8=2;
             int LA8_0 = input.LA(1);
 
-            if ( (LA8_0==13) ) {
+            if ( (LA8_0==RULE_ID) ) {
                 alt8=1;
             }
-            else if ( (LA8_0==15) ) {
+            else if ( (LA8_0==RULE_UNRESTRICTED_NAME) ) {
                 alt8=2;
             }
             else {
@@ -1930,91 +1931,10 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             }
             switch (alt8) {
                 case 1 :
-                    // InternalSysMLOC.g:618:2: ( ';' )
+                    // InternalSysMLOC.g:603:2: ( RULE_ID )
                     {
-                    // InternalSysMLOC.g:618:2: ( ';' )
-                    // InternalSysMLOC.g:619:3: ';'
-                    {
-                     before(grammarAccess.getTBDAccess().getSemicolonKeyword_1_0()); 
-                    match(input,13,FOLLOW_2); 
-                     after(grammarAccess.getTBDAccess().getSemicolonKeyword_1_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalSysMLOC.g:624:2: ( ( rule__TBD__Group_1_1__0 ) )
-                    {
-                    // InternalSysMLOC.g:624:2: ( ( rule__TBD__Group_1_1__0 ) )
-                    // InternalSysMLOC.g:625:3: ( rule__TBD__Group_1_1__0 )
-                    {
-                     before(grammarAccess.getTBDAccess().getGroup_1_1()); 
-                    // InternalSysMLOC.g:626:3: ( rule__TBD__Group_1_1__0 )
-                    // InternalSysMLOC.g:626:4: rule__TBD__Group_1_1__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__TBD__Group_1_1__0();
-
-                    state._fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getTBDAccess().getGroup_1_1()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__TBD__Alternatives_1"
-
-
-    // $ANTLR start "rule__Name__Alternatives"
-    // InternalSysMLOC.g:634:1: rule__Name__Alternatives : ( ( RULE_ID ) | ( RULE_UNRESTRICTED_NAME ) );
-    public final void rule__Name__Alternatives() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSysMLOC.g:638:1: ( ( RULE_ID ) | ( RULE_UNRESTRICTED_NAME ) )
-            int alt9=2;
-            int LA9_0 = input.LA(1);
-
-            if ( (LA9_0==RULE_ID) ) {
-                alt9=1;
-            }
-            else if ( (LA9_0==RULE_UNRESTRICTED_NAME) ) {
-                alt9=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 9, 0, input);
-
-                throw nvae;
-            }
-            switch (alt9) {
-                case 1 :
-                    // InternalSysMLOC.g:639:2: ( RULE_ID )
-                    {
-                    // InternalSysMLOC.g:639:2: ( RULE_ID )
-                    // InternalSysMLOC.g:640:3: RULE_ID
+                    // InternalSysMLOC.g:603:2: ( RULE_ID )
+                    // InternalSysMLOC.g:604:3: RULE_ID
                     {
                      before(grammarAccess.getNameAccess().getIDTerminalRuleCall_0()); 
                     match(input,RULE_ID,FOLLOW_2); 
@@ -2026,10 +1946,10 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalSysMLOC.g:645:2: ( RULE_UNRESTRICTED_NAME )
+                    // InternalSysMLOC.g:609:2: ( RULE_UNRESTRICTED_NAME )
                     {
-                    // InternalSysMLOC.g:645:2: ( RULE_UNRESTRICTED_NAME )
-                    // InternalSysMLOC.g:646:3: RULE_UNRESTRICTED_NAME
+                    // InternalSysMLOC.g:609:2: ( RULE_UNRESTRICTED_NAME )
+                    // InternalSysMLOC.g:610:3: RULE_UNRESTRICTED_NAME
                     {
                      before(grammarAccess.getNameAccess().getUNRESTRICTED_NAMETerminalRuleCall_1()); 
                     match(input,RULE_UNRESTRICTED_NAME,FOLLOW_2); 
@@ -2057,15 +1977,128 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Name__Alternatives"
 
 
+    // $ANTLR start "rule__VisibilityIndicator__Alternatives"
+    // InternalSysMLOC.g:619:1: rule__VisibilityIndicator__Alternatives : ( ( ( 'public' ) ) | ( ( 'private' ) ) | ( ( 'protected' ) ) );
+    public final void rule__VisibilityIndicator__Alternatives() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSysMLOC.g:623:1: ( ( ( 'public' ) ) | ( ( 'private' ) ) | ( ( 'protected' ) ) )
+            int alt9=3;
+            switch ( input.LA(1) ) {
+            case 14:
+                {
+                alt9=1;
+                }
+                break;
+            case 15:
+                {
+                alt9=2;
+                }
+                break;
+            case 16:
+                {
+                alt9=3;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 9, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt9) {
+                case 1 :
+                    // InternalSysMLOC.g:624:2: ( ( 'public' ) )
+                    {
+                    // InternalSysMLOC.g:624:2: ( ( 'public' ) )
+                    // InternalSysMLOC.g:625:3: ( 'public' )
+                    {
+                     before(grammarAccess.getVisibilityIndicatorAccess().getPublicEnumLiteralDeclaration_0()); 
+                    // InternalSysMLOC.g:626:3: ( 'public' )
+                    // InternalSysMLOC.g:626:4: 'public'
+                    {
+                    match(input,14,FOLLOW_2); 
+
+                    }
+
+                     after(grammarAccess.getVisibilityIndicatorAccess().getPublicEnumLiteralDeclaration_0()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalSysMLOC.g:630:2: ( ( 'private' ) )
+                    {
+                    // InternalSysMLOC.g:630:2: ( ( 'private' ) )
+                    // InternalSysMLOC.g:631:3: ( 'private' )
+                    {
+                     before(grammarAccess.getVisibilityIndicatorAccess().getPrivateEnumLiteralDeclaration_1()); 
+                    // InternalSysMLOC.g:632:3: ( 'private' )
+                    // InternalSysMLOC.g:632:4: 'private'
+                    {
+                    match(input,15,FOLLOW_2); 
+
+                    }
+
+                     after(grammarAccess.getVisibilityIndicatorAccess().getPrivateEnumLiteralDeclaration_1()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // InternalSysMLOC.g:636:2: ( ( 'protected' ) )
+                    {
+                    // InternalSysMLOC.g:636:2: ( ( 'protected' ) )
+                    // InternalSysMLOC.g:637:3: ( 'protected' )
+                    {
+                     before(grammarAccess.getVisibilityIndicatorAccess().getProtectedEnumLiteralDeclaration_2()); 
+                    // InternalSysMLOC.g:638:3: ( 'protected' )
+                    // InternalSysMLOC.g:638:4: 'protected'
+                    {
+                    match(input,16,FOLLOW_2); 
+
+                    }
+
+                     after(grammarAccess.getVisibilityIndicatorAccess().getProtectedEnumLiteralDeclaration_2()); 
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__VisibilityIndicator__Alternatives"
+
+
     // $ANTLR start "rule__Package__Group__0"
-    // InternalSysMLOC.g:655:1: rule__Package__Group__0 : rule__Package__Group__0__Impl rule__Package__Group__1 ;
+    // InternalSysMLOC.g:646:1: rule__Package__Group__0 : rule__Package__Group__0__Impl rule__Package__Group__1 ;
     public final void rule__Package__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:659:1: ( rule__Package__Group__0__Impl rule__Package__Group__1 )
-            // InternalSysMLOC.g:660:2: rule__Package__Group__0__Impl rule__Package__Group__1
+            // InternalSysMLOC.g:650:1: ( rule__Package__Group__0__Impl rule__Package__Group__1 )
+            // InternalSysMLOC.g:651:2: rule__Package__Group__0__Impl rule__Package__Group__1
             {
             pushFollow(FOLLOW_5);
             rule__Package__Group__0__Impl();
@@ -2096,20 +2129,20 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Package__Group__0__Impl"
-    // InternalSysMLOC.g:667:1: rule__Package__Group__0__Impl : ( 'package' ) ;
+    // InternalSysMLOC.g:658:1: rule__Package__Group__0__Impl : ( 'package' ) ;
     public final void rule__Package__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:671:1: ( ( 'package' ) )
-            // InternalSysMLOC.g:672:1: ( 'package' )
+            // InternalSysMLOC.g:662:1: ( ( 'package' ) )
+            // InternalSysMLOC.g:663:1: ( 'package' )
             {
-            // InternalSysMLOC.g:672:1: ( 'package' )
-            // InternalSysMLOC.g:673:2: 'package'
+            // InternalSysMLOC.g:663:1: ( 'package' )
+            // InternalSysMLOC.g:664:2: 'package'
             {
              before(grammarAccess.getPackageAccess().getPackageKeyword_0()); 
-            match(input,14,FOLLOW_2); 
+            match(input,17,FOLLOW_2); 
              after(grammarAccess.getPackageAccess().getPackageKeyword_0()); 
 
             }
@@ -2133,14 +2166,14 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Package__Group__1"
-    // InternalSysMLOC.g:682:1: rule__Package__Group__1 : rule__Package__Group__1__Impl rule__Package__Group__2 ;
+    // InternalSysMLOC.g:673:1: rule__Package__Group__1 : rule__Package__Group__1__Impl rule__Package__Group__2 ;
     public final void rule__Package__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:686:1: ( rule__Package__Group__1__Impl rule__Package__Group__2 )
-            // InternalSysMLOC.g:687:2: rule__Package__Group__1__Impl rule__Package__Group__2
+            // InternalSysMLOC.g:677:1: ( rule__Package__Group__1__Impl rule__Package__Group__2 )
+            // InternalSysMLOC.g:678:2: rule__Package__Group__1__Impl rule__Package__Group__2
             {
             pushFollow(FOLLOW_6);
             rule__Package__Group__1__Impl();
@@ -2171,21 +2204,21 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Package__Group__1__Impl"
-    // InternalSysMLOC.g:694:1: rule__Package__Group__1__Impl : ( ( rule__Package__DeclaredNameAssignment_1 ) ) ;
+    // InternalSysMLOC.g:685:1: rule__Package__Group__1__Impl : ( ( rule__Package__DeclaredNameAssignment_1 ) ) ;
     public final void rule__Package__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:698:1: ( ( ( rule__Package__DeclaredNameAssignment_1 ) ) )
-            // InternalSysMLOC.g:699:1: ( ( rule__Package__DeclaredNameAssignment_1 ) )
+            // InternalSysMLOC.g:689:1: ( ( ( rule__Package__DeclaredNameAssignment_1 ) ) )
+            // InternalSysMLOC.g:690:1: ( ( rule__Package__DeclaredNameAssignment_1 ) )
             {
-            // InternalSysMLOC.g:699:1: ( ( rule__Package__DeclaredNameAssignment_1 ) )
-            // InternalSysMLOC.g:700:2: ( rule__Package__DeclaredNameAssignment_1 )
+            // InternalSysMLOC.g:690:1: ( ( rule__Package__DeclaredNameAssignment_1 ) )
+            // InternalSysMLOC.g:691:2: ( rule__Package__DeclaredNameAssignment_1 )
             {
              before(grammarAccess.getPackageAccess().getDeclaredNameAssignment_1()); 
-            // InternalSysMLOC.g:701:2: ( rule__Package__DeclaredNameAssignment_1 )
-            // InternalSysMLOC.g:701:3: rule__Package__DeclaredNameAssignment_1
+            // InternalSysMLOC.g:692:2: ( rule__Package__DeclaredNameAssignment_1 )
+            // InternalSysMLOC.g:692:3: rule__Package__DeclaredNameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Package__DeclaredNameAssignment_1();
@@ -2218,14 +2251,14 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Package__Group__2"
-    // InternalSysMLOC.g:709:1: rule__Package__Group__2 : rule__Package__Group__2__Impl rule__Package__Group__3 ;
+    // InternalSysMLOC.g:700:1: rule__Package__Group__2 : rule__Package__Group__2__Impl rule__Package__Group__3 ;
     public final void rule__Package__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:713:1: ( rule__Package__Group__2__Impl rule__Package__Group__3 )
-            // InternalSysMLOC.g:714:2: rule__Package__Group__2__Impl rule__Package__Group__3
+            // InternalSysMLOC.g:704:1: ( rule__Package__Group__2__Impl rule__Package__Group__3 )
+            // InternalSysMLOC.g:705:2: rule__Package__Group__2__Impl rule__Package__Group__3
             {
             pushFollow(FOLLOW_7);
             rule__Package__Group__2__Impl();
@@ -2256,20 +2289,20 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Package__Group__2__Impl"
-    // InternalSysMLOC.g:721:1: rule__Package__Group__2__Impl : ( '{' ) ;
+    // InternalSysMLOC.g:712:1: rule__Package__Group__2__Impl : ( '{' ) ;
     public final void rule__Package__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:725:1: ( ( '{' ) )
-            // InternalSysMLOC.g:726:1: ( '{' )
+            // InternalSysMLOC.g:716:1: ( ( '{' ) )
+            // InternalSysMLOC.g:717:1: ( '{' )
             {
-            // InternalSysMLOC.g:726:1: ( '{' )
-            // InternalSysMLOC.g:727:2: '{'
+            // InternalSysMLOC.g:717:1: ( '{' )
+            // InternalSysMLOC.g:718:2: '{'
             {
              before(grammarAccess.getPackageAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,15,FOLLOW_2); 
+            match(input,18,FOLLOW_2); 
              after(grammarAccess.getPackageAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
@@ -2293,14 +2326,14 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Package__Group__3"
-    // InternalSysMLOC.g:736:1: rule__Package__Group__3 : rule__Package__Group__3__Impl rule__Package__Group__4 ;
+    // InternalSysMLOC.g:727:1: rule__Package__Group__3 : rule__Package__Group__3__Impl rule__Package__Group__4 ;
     public final void rule__Package__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:740:1: ( rule__Package__Group__3__Impl rule__Package__Group__4 )
-            // InternalSysMLOC.g:741:2: rule__Package__Group__3__Impl rule__Package__Group__4
+            // InternalSysMLOC.g:731:1: ( rule__Package__Group__3__Impl rule__Package__Group__4 )
+            // InternalSysMLOC.g:732:2: rule__Package__Group__3__Impl rule__Package__Group__4
             {
             pushFollow(FOLLOW_7);
             rule__Package__Group__3__Impl();
@@ -2331,33 +2364,33 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Package__Group__3__Impl"
-    // InternalSysMLOC.g:748:1: rule__Package__Group__3__Impl : ( ( rule__Package__ElementsAssignment_3 )* ) ;
+    // InternalSysMLOC.g:739:1: rule__Package__Group__3__Impl : ( ( rule__Package__ElementsAssignment_3 )* ) ;
     public final void rule__Package__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:752:1: ( ( ( rule__Package__ElementsAssignment_3 )* ) )
-            // InternalSysMLOC.g:753:1: ( ( rule__Package__ElementsAssignment_3 )* )
+            // InternalSysMLOC.g:743:1: ( ( ( rule__Package__ElementsAssignment_3 )* ) )
+            // InternalSysMLOC.g:744:1: ( ( rule__Package__ElementsAssignment_3 )* )
             {
-            // InternalSysMLOC.g:753:1: ( ( rule__Package__ElementsAssignment_3 )* )
-            // InternalSysMLOC.g:754:2: ( rule__Package__ElementsAssignment_3 )*
+            // InternalSysMLOC.g:744:1: ( ( rule__Package__ElementsAssignment_3 )* )
+            // InternalSysMLOC.g:745:2: ( rule__Package__ElementsAssignment_3 )*
             {
              before(grammarAccess.getPackageAccess().getElementsAssignment_3()); 
-            // InternalSysMLOC.g:755:2: ( rule__Package__ElementsAssignment_3 )*
+            // InternalSysMLOC.g:746:2: ( rule__Package__ElementsAssignment_3 )*
             loop10:
             do {
                 int alt10=2;
                 int LA10_0 = input.LA(1);
 
-                if ( ((LA10_0>=RULE_ID && LA10_0<=RULE_UNRESTRICTED_NAME)||LA10_0==14||(LA10_0>=18 && LA10_0<=19)||LA10_0==21) ) {
+                if ( ((LA10_0>=14 && LA10_0<=17)||(LA10_0>=21 && LA10_0<=22)||LA10_0==24) ) {
                     alt10=1;
                 }
 
 
                 switch (alt10) {
             	case 1 :
-            	    // InternalSysMLOC.g:755:3: rule__Package__ElementsAssignment_3
+            	    // InternalSysMLOC.g:746:3: rule__Package__ElementsAssignment_3
             	    {
             	    pushFollow(FOLLOW_8);
             	    rule__Package__ElementsAssignment_3();
@@ -2396,14 +2429,14 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Package__Group__4"
-    // InternalSysMLOC.g:763:1: rule__Package__Group__4 : rule__Package__Group__4__Impl ;
+    // InternalSysMLOC.g:754:1: rule__Package__Group__4 : rule__Package__Group__4__Impl ;
     public final void rule__Package__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:767:1: ( rule__Package__Group__4__Impl )
-            // InternalSysMLOC.g:768:2: rule__Package__Group__4__Impl
+            // InternalSysMLOC.g:758:1: ( rule__Package__Group__4__Impl )
+            // InternalSysMLOC.g:759:2: rule__Package__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Package__Group__4__Impl();
@@ -2429,20 +2462,20 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Package__Group__4__Impl"
-    // InternalSysMLOC.g:774:1: rule__Package__Group__4__Impl : ( '}' ) ;
+    // InternalSysMLOC.g:765:1: rule__Package__Group__4__Impl : ( '}' ) ;
     public final void rule__Package__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:778:1: ( ( '}' ) )
-            // InternalSysMLOC.g:779:1: ( '}' )
+            // InternalSysMLOC.g:769:1: ( ( '}' ) )
+            // InternalSysMLOC.g:770:1: ( '}' )
             {
-            // InternalSysMLOC.g:779:1: ( '}' )
-            // InternalSysMLOC.g:780:2: '}'
+            // InternalSysMLOC.g:770:1: ( '}' )
+            // InternalSysMLOC.g:771:2: '}'
             {
              before(grammarAccess.getPackageAccess().getRightCurlyBracketKeyword_4()); 
-            match(input,16,FOLLOW_2); 
+            match(input,19,FOLLOW_2); 
              after(grammarAccess.getPackageAccess().getRightCurlyBracketKeyword_4()); 
 
             }
@@ -2466,14 +2499,14 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NamespaceImport__Group__0"
-    // InternalSysMLOC.g:790:1: rule__NamespaceImport__Group__0 : rule__NamespaceImport__Group__0__Impl rule__NamespaceImport__Group__1 ;
+    // InternalSysMLOC.g:781:1: rule__NamespaceImport__Group__0 : rule__NamespaceImport__Group__0__Impl rule__NamespaceImport__Group__1 ;
     public final void rule__NamespaceImport__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:794:1: ( rule__NamespaceImport__Group__0__Impl rule__NamespaceImport__Group__1 )
-            // InternalSysMLOC.g:795:2: rule__NamespaceImport__Group__0__Impl rule__NamespaceImport__Group__1
+            // InternalSysMLOC.g:785:1: ( rule__NamespaceImport__Group__0__Impl rule__NamespaceImport__Group__1 )
+            // InternalSysMLOC.g:786:2: rule__NamespaceImport__Group__0__Impl rule__NamespaceImport__Group__1
             {
             pushFollow(FOLLOW_9);
             rule__NamespaceImport__Group__0__Impl();
@@ -2504,21 +2537,21 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NamespaceImport__Group__0__Impl"
-    // InternalSysMLOC.g:802:1: rule__NamespaceImport__Group__0__Impl : ( ( rule__NamespaceImport__VisibilityAssignment_0 ) ) ;
+    // InternalSysMLOC.g:793:1: rule__NamespaceImport__Group__0__Impl : ( ( rule__NamespaceImport__VisibilityAssignment_0 ) ) ;
     public final void rule__NamespaceImport__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:806:1: ( ( ( rule__NamespaceImport__VisibilityAssignment_0 ) ) )
-            // InternalSysMLOC.g:807:1: ( ( rule__NamespaceImport__VisibilityAssignment_0 ) )
+            // InternalSysMLOC.g:797:1: ( ( ( rule__NamespaceImport__VisibilityAssignment_0 ) ) )
+            // InternalSysMLOC.g:798:1: ( ( rule__NamespaceImport__VisibilityAssignment_0 ) )
             {
-            // InternalSysMLOC.g:807:1: ( ( rule__NamespaceImport__VisibilityAssignment_0 ) )
-            // InternalSysMLOC.g:808:2: ( rule__NamespaceImport__VisibilityAssignment_0 )
+            // InternalSysMLOC.g:798:1: ( ( rule__NamespaceImport__VisibilityAssignment_0 ) )
+            // InternalSysMLOC.g:799:2: ( rule__NamespaceImport__VisibilityAssignment_0 )
             {
              before(grammarAccess.getNamespaceImportAccess().getVisibilityAssignment_0()); 
-            // InternalSysMLOC.g:809:2: ( rule__NamespaceImport__VisibilityAssignment_0 )
-            // InternalSysMLOC.g:809:3: rule__NamespaceImport__VisibilityAssignment_0
+            // InternalSysMLOC.g:800:2: ( rule__NamespaceImport__VisibilityAssignment_0 )
+            // InternalSysMLOC.g:800:3: rule__NamespaceImport__VisibilityAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__NamespaceImport__VisibilityAssignment_0();
@@ -2551,14 +2584,14 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NamespaceImport__Group__1"
-    // InternalSysMLOC.g:817:1: rule__NamespaceImport__Group__1 : rule__NamespaceImport__Group__1__Impl rule__NamespaceImport__Group__2 ;
+    // InternalSysMLOC.g:808:1: rule__NamespaceImport__Group__1 : rule__NamespaceImport__Group__1__Impl rule__NamespaceImport__Group__2 ;
     public final void rule__NamespaceImport__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:821:1: ( rule__NamespaceImport__Group__1__Impl rule__NamespaceImport__Group__2 )
-            // InternalSysMLOC.g:822:2: rule__NamespaceImport__Group__1__Impl rule__NamespaceImport__Group__2
+            // InternalSysMLOC.g:812:1: ( rule__NamespaceImport__Group__1__Impl rule__NamespaceImport__Group__2 )
+            // InternalSysMLOC.g:813:2: rule__NamespaceImport__Group__1__Impl rule__NamespaceImport__Group__2
             {
             pushFollow(FOLLOW_5);
             rule__NamespaceImport__Group__1__Impl();
@@ -2589,20 +2622,20 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NamespaceImport__Group__1__Impl"
-    // InternalSysMLOC.g:829:1: rule__NamespaceImport__Group__1__Impl : ( 'import' ) ;
+    // InternalSysMLOC.g:820:1: rule__NamespaceImport__Group__1__Impl : ( 'import' ) ;
     public final void rule__NamespaceImport__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:833:1: ( ( 'import' ) )
-            // InternalSysMLOC.g:834:1: ( 'import' )
+            // InternalSysMLOC.g:824:1: ( ( 'import' ) )
+            // InternalSysMLOC.g:825:1: ( 'import' )
             {
-            // InternalSysMLOC.g:834:1: ( 'import' )
-            // InternalSysMLOC.g:835:2: 'import'
+            // InternalSysMLOC.g:825:1: ( 'import' )
+            // InternalSysMLOC.g:826:2: 'import'
             {
              before(grammarAccess.getNamespaceImportAccess().getImportKeyword_1()); 
-            match(input,17,FOLLOW_2); 
+            match(input,20,FOLLOW_2); 
              after(grammarAccess.getNamespaceImportAccess().getImportKeyword_1()); 
 
             }
@@ -2626,14 +2659,14 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NamespaceImport__Group__2"
-    // InternalSysMLOC.g:844:1: rule__NamespaceImport__Group__2 : rule__NamespaceImport__Group__2__Impl rule__NamespaceImport__Group__3 ;
+    // InternalSysMLOC.g:835:1: rule__NamespaceImport__Group__2 : rule__NamespaceImport__Group__2__Impl rule__NamespaceImport__Group__3 ;
     public final void rule__NamespaceImport__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:848:1: ( rule__NamespaceImport__Group__2__Impl rule__NamespaceImport__Group__3 )
-            // InternalSysMLOC.g:849:2: rule__NamespaceImport__Group__2__Impl rule__NamespaceImport__Group__3
+            // InternalSysMLOC.g:839:1: ( rule__NamespaceImport__Group__2__Impl rule__NamespaceImport__Group__3 )
+            // InternalSysMLOC.g:840:2: rule__NamespaceImport__Group__2__Impl rule__NamespaceImport__Group__3
             {
             pushFollow(FOLLOW_10);
             rule__NamespaceImport__Group__2__Impl();
@@ -2664,21 +2697,21 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NamespaceImport__Group__2__Impl"
-    // InternalSysMLOC.g:856:1: rule__NamespaceImport__Group__2__Impl : ( ( rule__NamespaceImport__DeclaredNameAssignment_2 ) ) ;
+    // InternalSysMLOC.g:847:1: rule__NamespaceImport__Group__2__Impl : ( ( rule__NamespaceImport__DeclaredNameAssignment_2 ) ) ;
     public final void rule__NamespaceImport__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:860:1: ( ( ( rule__NamespaceImport__DeclaredNameAssignment_2 ) ) )
-            // InternalSysMLOC.g:861:1: ( ( rule__NamespaceImport__DeclaredNameAssignment_2 ) )
+            // InternalSysMLOC.g:851:1: ( ( ( rule__NamespaceImport__DeclaredNameAssignment_2 ) ) )
+            // InternalSysMLOC.g:852:1: ( ( rule__NamespaceImport__DeclaredNameAssignment_2 ) )
             {
-            // InternalSysMLOC.g:861:1: ( ( rule__NamespaceImport__DeclaredNameAssignment_2 ) )
-            // InternalSysMLOC.g:862:2: ( rule__NamespaceImport__DeclaredNameAssignment_2 )
+            // InternalSysMLOC.g:852:1: ( ( rule__NamespaceImport__DeclaredNameAssignment_2 ) )
+            // InternalSysMLOC.g:853:2: ( rule__NamespaceImport__DeclaredNameAssignment_2 )
             {
              before(grammarAccess.getNamespaceImportAccess().getDeclaredNameAssignment_2()); 
-            // InternalSysMLOC.g:863:2: ( rule__NamespaceImport__DeclaredNameAssignment_2 )
-            // InternalSysMLOC.g:863:3: rule__NamespaceImport__DeclaredNameAssignment_2
+            // InternalSysMLOC.g:854:2: ( rule__NamespaceImport__DeclaredNameAssignment_2 )
+            // InternalSysMLOC.g:854:3: rule__NamespaceImport__DeclaredNameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__NamespaceImport__DeclaredNameAssignment_2();
@@ -2711,14 +2744,14 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NamespaceImport__Group__3"
-    // InternalSysMLOC.g:871:1: rule__NamespaceImport__Group__3 : rule__NamespaceImport__Group__3__Impl ;
+    // InternalSysMLOC.g:862:1: rule__NamespaceImport__Group__3 : rule__NamespaceImport__Group__3__Impl ;
     public final void rule__NamespaceImport__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:875:1: ( rule__NamespaceImport__Group__3__Impl )
-            // InternalSysMLOC.g:876:2: rule__NamespaceImport__Group__3__Impl
+            // InternalSysMLOC.g:866:1: ( rule__NamespaceImport__Group__3__Impl )
+            // InternalSysMLOC.g:867:2: rule__NamespaceImport__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__NamespaceImport__Group__3__Impl();
@@ -2744,17 +2777,17 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NamespaceImport__Group__3__Impl"
-    // InternalSysMLOC.g:882:1: rule__NamespaceImport__Group__3__Impl : ( ';' ) ;
+    // InternalSysMLOC.g:873:1: rule__NamespaceImport__Group__3__Impl : ( ';' ) ;
     public final void rule__NamespaceImport__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:886:1: ( ( ';' ) )
-            // InternalSysMLOC.g:887:1: ( ';' )
+            // InternalSysMLOC.g:877:1: ( ( ';' ) )
+            // InternalSysMLOC.g:878:1: ( ';' )
             {
-            // InternalSysMLOC.g:887:1: ( ';' )
-            // InternalSysMLOC.g:888:2: ';'
+            // InternalSysMLOC.g:878:1: ( ';' )
+            // InternalSysMLOC.g:879:2: ';'
             {
              before(grammarAccess.getNamespaceImportAccess().getSemicolonKeyword_3()); 
             match(input,13,FOLLOW_2); 
@@ -2781,14 +2814,14 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comment__Group__0"
-    // InternalSysMLOC.g:898:1: rule__Comment__Group__0 : rule__Comment__Group__0__Impl rule__Comment__Group__1 ;
+    // InternalSysMLOC.g:889:1: rule__Comment__Group__0 : rule__Comment__Group__0__Impl rule__Comment__Group__1 ;
     public final void rule__Comment__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:902:1: ( rule__Comment__Group__0__Impl rule__Comment__Group__1 )
-            // InternalSysMLOC.g:903:2: rule__Comment__Group__0__Impl rule__Comment__Group__1
+            // InternalSysMLOC.g:893:1: ( rule__Comment__Group__0__Impl rule__Comment__Group__1 )
+            // InternalSysMLOC.g:894:2: rule__Comment__Group__0__Impl rule__Comment__Group__1
             {
             pushFollow(FOLLOW_11);
             rule__Comment__Group__0__Impl();
@@ -2819,20 +2852,20 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comment__Group__0__Impl"
-    // InternalSysMLOC.g:910:1: rule__Comment__Group__0__Impl : ( 'doc' ) ;
+    // InternalSysMLOC.g:901:1: rule__Comment__Group__0__Impl : ( 'doc' ) ;
     public final void rule__Comment__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:914:1: ( ( 'doc' ) )
-            // InternalSysMLOC.g:915:1: ( 'doc' )
+            // InternalSysMLOC.g:905:1: ( ( 'doc' ) )
+            // InternalSysMLOC.g:906:1: ( 'doc' )
             {
-            // InternalSysMLOC.g:915:1: ( 'doc' )
-            // InternalSysMLOC.g:916:2: 'doc'
+            // InternalSysMLOC.g:906:1: ( 'doc' )
+            // InternalSysMLOC.g:907:2: 'doc'
             {
              before(grammarAccess.getCommentAccess().getDocKeyword_0()); 
-            match(input,18,FOLLOW_2); 
+            match(input,21,FOLLOW_2); 
              after(grammarAccess.getCommentAccess().getDocKeyword_0()); 
 
             }
@@ -2856,14 +2889,14 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comment__Group__1"
-    // InternalSysMLOC.g:925:1: rule__Comment__Group__1 : rule__Comment__Group__1__Impl ;
+    // InternalSysMLOC.g:916:1: rule__Comment__Group__1 : rule__Comment__Group__1__Impl ;
     public final void rule__Comment__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:929:1: ( rule__Comment__Group__1__Impl )
-            // InternalSysMLOC.g:930:2: rule__Comment__Group__1__Impl
+            // InternalSysMLOC.g:920:1: ( rule__Comment__Group__1__Impl )
+            // InternalSysMLOC.g:921:2: rule__Comment__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Comment__Group__1__Impl();
@@ -2889,21 +2922,21 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comment__Group__1__Impl"
-    // InternalSysMLOC.g:936:1: rule__Comment__Group__1__Impl : ( ( rule__Comment__BodyAssignment_1 ) ) ;
+    // InternalSysMLOC.g:927:1: rule__Comment__Group__1__Impl : ( ( rule__Comment__BodyAssignment_1 ) ) ;
     public final void rule__Comment__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:940:1: ( ( ( rule__Comment__BodyAssignment_1 ) ) )
-            // InternalSysMLOC.g:941:1: ( ( rule__Comment__BodyAssignment_1 ) )
+            // InternalSysMLOC.g:931:1: ( ( ( rule__Comment__BodyAssignment_1 ) ) )
+            // InternalSysMLOC.g:932:1: ( ( rule__Comment__BodyAssignment_1 ) )
             {
-            // InternalSysMLOC.g:941:1: ( ( rule__Comment__BodyAssignment_1 ) )
-            // InternalSysMLOC.g:942:2: ( rule__Comment__BodyAssignment_1 )
+            // InternalSysMLOC.g:932:1: ( ( rule__Comment__BodyAssignment_1 ) )
+            // InternalSysMLOC.g:933:2: ( rule__Comment__BodyAssignment_1 )
             {
              before(grammarAccess.getCommentAccess().getBodyAssignment_1()); 
-            // InternalSysMLOC.g:943:2: ( rule__Comment__BodyAssignment_1 )
-            // InternalSysMLOC.g:943:3: rule__Comment__BodyAssignment_1
+            // InternalSysMLOC.g:934:2: ( rule__Comment__BodyAssignment_1 )
+            // InternalSysMLOC.g:934:3: rule__Comment__BodyAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Comment__BodyAssignment_1();
@@ -2936,14 +2969,14 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AttributeDefinition__Group__0"
-    // InternalSysMLOC.g:952:1: rule__AttributeDefinition__Group__0 : rule__AttributeDefinition__Group__0__Impl rule__AttributeDefinition__Group__1 ;
+    // InternalSysMLOC.g:943:1: rule__AttributeDefinition__Group__0 : rule__AttributeDefinition__Group__0__Impl rule__AttributeDefinition__Group__1 ;
     public final void rule__AttributeDefinition__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:956:1: ( rule__AttributeDefinition__Group__0__Impl rule__AttributeDefinition__Group__1 )
-            // InternalSysMLOC.g:957:2: rule__AttributeDefinition__Group__0__Impl rule__AttributeDefinition__Group__1
+            // InternalSysMLOC.g:947:1: ( rule__AttributeDefinition__Group__0__Impl rule__AttributeDefinition__Group__1 )
+            // InternalSysMLOC.g:948:2: rule__AttributeDefinition__Group__0__Impl rule__AttributeDefinition__Group__1
             {
             pushFollow(FOLLOW_12);
             rule__AttributeDefinition__Group__0__Impl();
@@ -2974,20 +3007,20 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AttributeDefinition__Group__0__Impl"
-    // InternalSysMLOC.g:964:1: rule__AttributeDefinition__Group__0__Impl : ( 'attribute' ) ;
+    // InternalSysMLOC.g:955:1: rule__AttributeDefinition__Group__0__Impl : ( 'attribute' ) ;
     public final void rule__AttributeDefinition__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:968:1: ( ( 'attribute' ) )
-            // InternalSysMLOC.g:969:1: ( 'attribute' )
+            // InternalSysMLOC.g:959:1: ( ( 'attribute' ) )
+            // InternalSysMLOC.g:960:1: ( 'attribute' )
             {
-            // InternalSysMLOC.g:969:1: ( 'attribute' )
-            // InternalSysMLOC.g:970:2: 'attribute'
+            // InternalSysMLOC.g:960:1: ( 'attribute' )
+            // InternalSysMLOC.g:961:2: 'attribute'
             {
              before(grammarAccess.getAttributeDefinitionAccess().getAttributeKeyword_0()); 
-            match(input,19,FOLLOW_2); 
+            match(input,22,FOLLOW_2); 
              after(grammarAccess.getAttributeDefinitionAccess().getAttributeKeyword_0()); 
 
             }
@@ -3011,14 +3044,14 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AttributeDefinition__Group__1"
-    // InternalSysMLOC.g:979:1: rule__AttributeDefinition__Group__1 : rule__AttributeDefinition__Group__1__Impl rule__AttributeDefinition__Group__2 ;
+    // InternalSysMLOC.g:970:1: rule__AttributeDefinition__Group__1 : rule__AttributeDefinition__Group__1__Impl rule__AttributeDefinition__Group__2 ;
     public final void rule__AttributeDefinition__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:983:1: ( rule__AttributeDefinition__Group__1__Impl rule__AttributeDefinition__Group__2 )
-            // InternalSysMLOC.g:984:2: rule__AttributeDefinition__Group__1__Impl rule__AttributeDefinition__Group__2
+            // InternalSysMLOC.g:974:1: ( rule__AttributeDefinition__Group__1__Impl rule__AttributeDefinition__Group__2 )
+            // InternalSysMLOC.g:975:2: rule__AttributeDefinition__Group__1__Impl rule__AttributeDefinition__Group__2
             {
             pushFollow(FOLLOW_5);
             rule__AttributeDefinition__Group__1__Impl();
@@ -3049,20 +3082,20 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AttributeDefinition__Group__1__Impl"
-    // InternalSysMLOC.g:991:1: rule__AttributeDefinition__Group__1__Impl : ( 'def' ) ;
+    // InternalSysMLOC.g:982:1: rule__AttributeDefinition__Group__1__Impl : ( 'def' ) ;
     public final void rule__AttributeDefinition__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:995:1: ( ( 'def' ) )
-            // InternalSysMLOC.g:996:1: ( 'def' )
+            // InternalSysMLOC.g:986:1: ( ( 'def' ) )
+            // InternalSysMLOC.g:987:1: ( 'def' )
             {
-            // InternalSysMLOC.g:996:1: ( 'def' )
-            // InternalSysMLOC.g:997:2: 'def'
+            // InternalSysMLOC.g:987:1: ( 'def' )
+            // InternalSysMLOC.g:988:2: 'def'
             {
              before(grammarAccess.getAttributeDefinitionAccess().getDefKeyword_1()); 
-            match(input,20,FOLLOW_2); 
+            match(input,23,FOLLOW_2); 
              after(grammarAccess.getAttributeDefinitionAccess().getDefKeyword_1()); 
 
             }
@@ -3086,14 +3119,14 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AttributeDefinition__Group__2"
-    // InternalSysMLOC.g:1006:1: rule__AttributeDefinition__Group__2 : rule__AttributeDefinition__Group__2__Impl rule__AttributeDefinition__Group__3 ;
+    // InternalSysMLOC.g:997:1: rule__AttributeDefinition__Group__2 : rule__AttributeDefinition__Group__2__Impl rule__AttributeDefinition__Group__3 ;
     public final void rule__AttributeDefinition__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1010:1: ( rule__AttributeDefinition__Group__2__Impl rule__AttributeDefinition__Group__3 )
-            // InternalSysMLOC.g:1011:2: rule__AttributeDefinition__Group__2__Impl rule__AttributeDefinition__Group__3
+            // InternalSysMLOC.g:1001:1: ( rule__AttributeDefinition__Group__2__Impl rule__AttributeDefinition__Group__3 )
+            // InternalSysMLOC.g:1002:2: rule__AttributeDefinition__Group__2__Impl rule__AttributeDefinition__Group__3
             {
             pushFollow(FOLLOW_13);
             rule__AttributeDefinition__Group__2__Impl();
@@ -3124,21 +3157,21 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AttributeDefinition__Group__2__Impl"
-    // InternalSysMLOC.g:1018:1: rule__AttributeDefinition__Group__2__Impl : ( ( rule__AttributeDefinition__DeclaredNameAssignment_2 ) ) ;
+    // InternalSysMLOC.g:1009:1: rule__AttributeDefinition__Group__2__Impl : ( ( rule__AttributeDefinition__DeclaredNameAssignment_2 ) ) ;
     public final void rule__AttributeDefinition__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1022:1: ( ( ( rule__AttributeDefinition__DeclaredNameAssignment_2 ) ) )
-            // InternalSysMLOC.g:1023:1: ( ( rule__AttributeDefinition__DeclaredNameAssignment_2 ) )
+            // InternalSysMLOC.g:1013:1: ( ( ( rule__AttributeDefinition__DeclaredNameAssignment_2 ) ) )
+            // InternalSysMLOC.g:1014:1: ( ( rule__AttributeDefinition__DeclaredNameAssignment_2 ) )
             {
-            // InternalSysMLOC.g:1023:1: ( ( rule__AttributeDefinition__DeclaredNameAssignment_2 ) )
-            // InternalSysMLOC.g:1024:2: ( rule__AttributeDefinition__DeclaredNameAssignment_2 )
+            // InternalSysMLOC.g:1014:1: ( ( rule__AttributeDefinition__DeclaredNameAssignment_2 ) )
+            // InternalSysMLOC.g:1015:2: ( rule__AttributeDefinition__DeclaredNameAssignment_2 )
             {
              before(grammarAccess.getAttributeDefinitionAccess().getDeclaredNameAssignment_2()); 
-            // InternalSysMLOC.g:1025:2: ( rule__AttributeDefinition__DeclaredNameAssignment_2 )
-            // InternalSysMLOC.g:1025:3: rule__AttributeDefinition__DeclaredNameAssignment_2
+            // InternalSysMLOC.g:1016:2: ( rule__AttributeDefinition__DeclaredNameAssignment_2 )
+            // InternalSysMLOC.g:1016:3: rule__AttributeDefinition__DeclaredNameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__AttributeDefinition__DeclaredNameAssignment_2();
@@ -3171,14 +3204,14 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AttributeDefinition__Group__3"
-    // InternalSysMLOC.g:1033:1: rule__AttributeDefinition__Group__3 : rule__AttributeDefinition__Group__3__Impl ;
+    // InternalSysMLOC.g:1024:1: rule__AttributeDefinition__Group__3 : rule__AttributeDefinition__Group__3__Impl ;
     public final void rule__AttributeDefinition__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1037:1: ( rule__AttributeDefinition__Group__3__Impl )
-            // InternalSysMLOC.g:1038:2: rule__AttributeDefinition__Group__3__Impl
+            // InternalSysMLOC.g:1028:1: ( rule__AttributeDefinition__Group__3__Impl )
+            // InternalSysMLOC.g:1029:2: rule__AttributeDefinition__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__AttributeDefinition__Group__3__Impl();
@@ -3204,21 +3237,21 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AttributeDefinition__Group__3__Impl"
-    // InternalSysMLOC.g:1044:1: rule__AttributeDefinition__Group__3__Impl : ( ( rule__AttributeDefinition__Alternatives_3 ) ) ;
+    // InternalSysMLOC.g:1035:1: rule__AttributeDefinition__Group__3__Impl : ( ( rule__AttributeDefinition__Alternatives_3 ) ) ;
     public final void rule__AttributeDefinition__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1048:1: ( ( ( rule__AttributeDefinition__Alternatives_3 ) ) )
-            // InternalSysMLOC.g:1049:1: ( ( rule__AttributeDefinition__Alternatives_3 ) )
+            // InternalSysMLOC.g:1039:1: ( ( ( rule__AttributeDefinition__Alternatives_3 ) ) )
+            // InternalSysMLOC.g:1040:1: ( ( rule__AttributeDefinition__Alternatives_3 ) )
             {
-            // InternalSysMLOC.g:1049:1: ( ( rule__AttributeDefinition__Alternatives_3 ) )
-            // InternalSysMLOC.g:1050:2: ( rule__AttributeDefinition__Alternatives_3 )
+            // InternalSysMLOC.g:1040:1: ( ( rule__AttributeDefinition__Alternatives_3 ) )
+            // InternalSysMLOC.g:1041:2: ( rule__AttributeDefinition__Alternatives_3 )
             {
              before(grammarAccess.getAttributeDefinitionAccess().getAlternatives_3()); 
-            // InternalSysMLOC.g:1051:2: ( rule__AttributeDefinition__Alternatives_3 )
-            // InternalSysMLOC.g:1051:3: rule__AttributeDefinition__Alternatives_3
+            // InternalSysMLOC.g:1042:2: ( rule__AttributeDefinition__Alternatives_3 )
+            // InternalSysMLOC.g:1042:3: rule__AttributeDefinition__Alternatives_3
             {
             pushFollow(FOLLOW_2);
             rule__AttributeDefinition__Alternatives_3();
@@ -3251,14 +3284,14 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AttributeDefinition__Group_3_1__0"
-    // InternalSysMLOC.g:1060:1: rule__AttributeDefinition__Group_3_1__0 : rule__AttributeDefinition__Group_3_1__0__Impl rule__AttributeDefinition__Group_3_1__1 ;
+    // InternalSysMLOC.g:1051:1: rule__AttributeDefinition__Group_3_1__0 : rule__AttributeDefinition__Group_3_1__0__Impl rule__AttributeDefinition__Group_3_1__1 ;
     public final void rule__AttributeDefinition__Group_3_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1064:1: ( rule__AttributeDefinition__Group_3_1__0__Impl rule__AttributeDefinition__Group_3_1__1 )
-            // InternalSysMLOC.g:1065:2: rule__AttributeDefinition__Group_3_1__0__Impl rule__AttributeDefinition__Group_3_1__1
+            // InternalSysMLOC.g:1055:1: ( rule__AttributeDefinition__Group_3_1__0__Impl rule__AttributeDefinition__Group_3_1__1 )
+            // InternalSysMLOC.g:1056:2: rule__AttributeDefinition__Group_3_1__0__Impl rule__AttributeDefinition__Group_3_1__1
             {
             pushFollow(FOLLOW_7);
             rule__AttributeDefinition__Group_3_1__0__Impl();
@@ -3289,20 +3322,20 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AttributeDefinition__Group_3_1__0__Impl"
-    // InternalSysMLOC.g:1072:1: rule__AttributeDefinition__Group_3_1__0__Impl : ( '{' ) ;
+    // InternalSysMLOC.g:1063:1: rule__AttributeDefinition__Group_3_1__0__Impl : ( '{' ) ;
     public final void rule__AttributeDefinition__Group_3_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1076:1: ( ( '{' ) )
-            // InternalSysMLOC.g:1077:1: ( '{' )
+            // InternalSysMLOC.g:1067:1: ( ( '{' ) )
+            // InternalSysMLOC.g:1068:1: ( '{' )
             {
-            // InternalSysMLOC.g:1077:1: ( '{' )
-            // InternalSysMLOC.g:1078:2: '{'
+            // InternalSysMLOC.g:1068:1: ( '{' )
+            // InternalSysMLOC.g:1069:2: '{'
             {
              before(grammarAccess.getAttributeDefinitionAccess().getLeftCurlyBracketKeyword_3_1_0()); 
-            match(input,15,FOLLOW_2); 
+            match(input,18,FOLLOW_2); 
              after(grammarAccess.getAttributeDefinitionAccess().getLeftCurlyBracketKeyword_3_1_0()); 
 
             }
@@ -3326,14 +3359,14 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AttributeDefinition__Group_3_1__1"
-    // InternalSysMLOC.g:1087:1: rule__AttributeDefinition__Group_3_1__1 : rule__AttributeDefinition__Group_3_1__1__Impl rule__AttributeDefinition__Group_3_1__2 ;
+    // InternalSysMLOC.g:1078:1: rule__AttributeDefinition__Group_3_1__1 : rule__AttributeDefinition__Group_3_1__1__Impl rule__AttributeDefinition__Group_3_1__2 ;
     public final void rule__AttributeDefinition__Group_3_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1091:1: ( rule__AttributeDefinition__Group_3_1__1__Impl rule__AttributeDefinition__Group_3_1__2 )
-            // InternalSysMLOC.g:1092:2: rule__AttributeDefinition__Group_3_1__1__Impl rule__AttributeDefinition__Group_3_1__2
+            // InternalSysMLOC.g:1082:1: ( rule__AttributeDefinition__Group_3_1__1__Impl rule__AttributeDefinition__Group_3_1__2 )
+            // InternalSysMLOC.g:1083:2: rule__AttributeDefinition__Group_3_1__1__Impl rule__AttributeDefinition__Group_3_1__2
             {
             pushFollow(FOLLOW_7);
             rule__AttributeDefinition__Group_3_1__1__Impl();
@@ -3364,33 +3397,33 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AttributeDefinition__Group_3_1__1__Impl"
-    // InternalSysMLOC.g:1099:1: rule__AttributeDefinition__Group_3_1__1__Impl : ( ( rule__AttributeDefinition__ElementsAssignment_3_1_1 )* ) ;
+    // InternalSysMLOC.g:1090:1: rule__AttributeDefinition__Group_3_1__1__Impl : ( ( rule__AttributeDefinition__ElementsAssignment_3_1_1 )* ) ;
     public final void rule__AttributeDefinition__Group_3_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1103:1: ( ( ( rule__AttributeDefinition__ElementsAssignment_3_1_1 )* ) )
-            // InternalSysMLOC.g:1104:1: ( ( rule__AttributeDefinition__ElementsAssignment_3_1_1 )* )
+            // InternalSysMLOC.g:1094:1: ( ( ( rule__AttributeDefinition__ElementsAssignment_3_1_1 )* ) )
+            // InternalSysMLOC.g:1095:1: ( ( rule__AttributeDefinition__ElementsAssignment_3_1_1 )* )
             {
-            // InternalSysMLOC.g:1104:1: ( ( rule__AttributeDefinition__ElementsAssignment_3_1_1 )* )
-            // InternalSysMLOC.g:1105:2: ( rule__AttributeDefinition__ElementsAssignment_3_1_1 )*
+            // InternalSysMLOC.g:1095:1: ( ( rule__AttributeDefinition__ElementsAssignment_3_1_1 )* )
+            // InternalSysMLOC.g:1096:2: ( rule__AttributeDefinition__ElementsAssignment_3_1_1 )*
             {
              before(grammarAccess.getAttributeDefinitionAccess().getElementsAssignment_3_1_1()); 
-            // InternalSysMLOC.g:1106:2: ( rule__AttributeDefinition__ElementsAssignment_3_1_1 )*
+            // InternalSysMLOC.g:1097:2: ( rule__AttributeDefinition__ElementsAssignment_3_1_1 )*
             loop11:
             do {
                 int alt11=2;
                 int LA11_0 = input.LA(1);
 
-                if ( ((LA11_0>=RULE_ID && LA11_0<=RULE_UNRESTRICTED_NAME)||LA11_0==14||(LA11_0>=18 && LA11_0<=19)||LA11_0==21) ) {
+                if ( ((LA11_0>=14 && LA11_0<=17)||(LA11_0>=21 && LA11_0<=22)||LA11_0==24) ) {
                     alt11=1;
                 }
 
 
                 switch (alt11) {
             	case 1 :
-            	    // InternalSysMLOC.g:1106:3: rule__AttributeDefinition__ElementsAssignment_3_1_1
+            	    // InternalSysMLOC.g:1097:3: rule__AttributeDefinition__ElementsAssignment_3_1_1
             	    {
             	    pushFollow(FOLLOW_8);
             	    rule__AttributeDefinition__ElementsAssignment_3_1_1();
@@ -3429,14 +3462,14 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AttributeDefinition__Group_3_1__2"
-    // InternalSysMLOC.g:1114:1: rule__AttributeDefinition__Group_3_1__2 : rule__AttributeDefinition__Group_3_1__2__Impl ;
+    // InternalSysMLOC.g:1105:1: rule__AttributeDefinition__Group_3_1__2 : rule__AttributeDefinition__Group_3_1__2__Impl ;
     public final void rule__AttributeDefinition__Group_3_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1118:1: ( rule__AttributeDefinition__Group_3_1__2__Impl )
-            // InternalSysMLOC.g:1119:2: rule__AttributeDefinition__Group_3_1__2__Impl
+            // InternalSysMLOC.g:1109:1: ( rule__AttributeDefinition__Group_3_1__2__Impl )
+            // InternalSysMLOC.g:1110:2: rule__AttributeDefinition__Group_3_1__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__AttributeDefinition__Group_3_1__2__Impl();
@@ -3462,20 +3495,20 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AttributeDefinition__Group_3_1__2__Impl"
-    // InternalSysMLOC.g:1125:1: rule__AttributeDefinition__Group_3_1__2__Impl : ( '}' ) ;
+    // InternalSysMLOC.g:1116:1: rule__AttributeDefinition__Group_3_1__2__Impl : ( '}' ) ;
     public final void rule__AttributeDefinition__Group_3_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1129:1: ( ( '}' ) )
-            // InternalSysMLOC.g:1130:1: ( '}' )
+            // InternalSysMLOC.g:1120:1: ( ( '}' ) )
+            // InternalSysMLOC.g:1121:1: ( '}' )
             {
-            // InternalSysMLOC.g:1130:1: ( '}' )
-            // InternalSysMLOC.g:1131:2: '}'
+            // InternalSysMLOC.g:1121:1: ( '}' )
+            // InternalSysMLOC.g:1122:2: '}'
             {
              before(grammarAccess.getAttributeDefinitionAccess().getRightCurlyBracketKeyword_3_1_2()); 
-            match(input,16,FOLLOW_2); 
+            match(input,19,FOLLOW_2); 
              after(grammarAccess.getAttributeDefinitionAccess().getRightCurlyBracketKeyword_3_1_2()); 
 
             }
@@ -3499,14 +3532,14 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PartDefinition__Group__0"
-    // InternalSysMLOC.g:1141:1: rule__PartDefinition__Group__0 : rule__PartDefinition__Group__0__Impl rule__PartDefinition__Group__1 ;
+    // InternalSysMLOC.g:1132:1: rule__PartDefinition__Group__0 : rule__PartDefinition__Group__0__Impl rule__PartDefinition__Group__1 ;
     public final void rule__PartDefinition__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1145:1: ( rule__PartDefinition__Group__0__Impl rule__PartDefinition__Group__1 )
-            // InternalSysMLOC.g:1146:2: rule__PartDefinition__Group__0__Impl rule__PartDefinition__Group__1
+            // InternalSysMLOC.g:1136:1: ( rule__PartDefinition__Group__0__Impl rule__PartDefinition__Group__1 )
+            // InternalSysMLOC.g:1137:2: rule__PartDefinition__Group__0__Impl rule__PartDefinition__Group__1
             {
             pushFollow(FOLLOW_12);
             rule__PartDefinition__Group__0__Impl();
@@ -3537,20 +3570,20 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PartDefinition__Group__0__Impl"
-    // InternalSysMLOC.g:1153:1: rule__PartDefinition__Group__0__Impl : ( 'part' ) ;
+    // InternalSysMLOC.g:1144:1: rule__PartDefinition__Group__0__Impl : ( 'part' ) ;
     public final void rule__PartDefinition__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1157:1: ( ( 'part' ) )
-            // InternalSysMLOC.g:1158:1: ( 'part' )
+            // InternalSysMLOC.g:1148:1: ( ( 'part' ) )
+            // InternalSysMLOC.g:1149:1: ( 'part' )
             {
-            // InternalSysMLOC.g:1158:1: ( 'part' )
-            // InternalSysMLOC.g:1159:2: 'part'
+            // InternalSysMLOC.g:1149:1: ( 'part' )
+            // InternalSysMLOC.g:1150:2: 'part'
             {
              before(grammarAccess.getPartDefinitionAccess().getPartKeyword_0()); 
-            match(input,21,FOLLOW_2); 
+            match(input,24,FOLLOW_2); 
              after(grammarAccess.getPartDefinitionAccess().getPartKeyword_0()); 
 
             }
@@ -3574,14 +3607,14 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PartDefinition__Group__1"
-    // InternalSysMLOC.g:1168:1: rule__PartDefinition__Group__1 : rule__PartDefinition__Group__1__Impl rule__PartDefinition__Group__2 ;
+    // InternalSysMLOC.g:1159:1: rule__PartDefinition__Group__1 : rule__PartDefinition__Group__1__Impl rule__PartDefinition__Group__2 ;
     public final void rule__PartDefinition__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1172:1: ( rule__PartDefinition__Group__1__Impl rule__PartDefinition__Group__2 )
-            // InternalSysMLOC.g:1173:2: rule__PartDefinition__Group__1__Impl rule__PartDefinition__Group__2
+            // InternalSysMLOC.g:1163:1: ( rule__PartDefinition__Group__1__Impl rule__PartDefinition__Group__2 )
+            // InternalSysMLOC.g:1164:2: rule__PartDefinition__Group__1__Impl rule__PartDefinition__Group__2
             {
             pushFollow(FOLLOW_5);
             rule__PartDefinition__Group__1__Impl();
@@ -3612,20 +3645,20 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PartDefinition__Group__1__Impl"
-    // InternalSysMLOC.g:1180:1: rule__PartDefinition__Group__1__Impl : ( 'def' ) ;
+    // InternalSysMLOC.g:1171:1: rule__PartDefinition__Group__1__Impl : ( 'def' ) ;
     public final void rule__PartDefinition__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1184:1: ( ( 'def' ) )
-            // InternalSysMLOC.g:1185:1: ( 'def' )
+            // InternalSysMLOC.g:1175:1: ( ( 'def' ) )
+            // InternalSysMLOC.g:1176:1: ( 'def' )
             {
-            // InternalSysMLOC.g:1185:1: ( 'def' )
-            // InternalSysMLOC.g:1186:2: 'def'
+            // InternalSysMLOC.g:1176:1: ( 'def' )
+            // InternalSysMLOC.g:1177:2: 'def'
             {
              before(grammarAccess.getPartDefinitionAccess().getDefKeyword_1()); 
-            match(input,20,FOLLOW_2); 
+            match(input,23,FOLLOW_2); 
              after(grammarAccess.getPartDefinitionAccess().getDefKeyword_1()); 
 
             }
@@ -3649,14 +3682,14 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PartDefinition__Group__2"
-    // InternalSysMLOC.g:1195:1: rule__PartDefinition__Group__2 : rule__PartDefinition__Group__2__Impl rule__PartDefinition__Group__3 ;
+    // InternalSysMLOC.g:1186:1: rule__PartDefinition__Group__2 : rule__PartDefinition__Group__2__Impl rule__PartDefinition__Group__3 ;
     public final void rule__PartDefinition__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1199:1: ( rule__PartDefinition__Group__2__Impl rule__PartDefinition__Group__3 )
-            // InternalSysMLOC.g:1200:2: rule__PartDefinition__Group__2__Impl rule__PartDefinition__Group__3
+            // InternalSysMLOC.g:1190:1: ( rule__PartDefinition__Group__2__Impl rule__PartDefinition__Group__3 )
+            // InternalSysMLOC.g:1191:2: rule__PartDefinition__Group__2__Impl rule__PartDefinition__Group__3
             {
             pushFollow(FOLLOW_10);
             rule__PartDefinition__Group__2__Impl();
@@ -3687,21 +3720,21 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PartDefinition__Group__2__Impl"
-    // InternalSysMLOC.g:1207:1: rule__PartDefinition__Group__2__Impl : ( ( rule__PartDefinition__DeclaredNameAssignment_2 ) ) ;
+    // InternalSysMLOC.g:1198:1: rule__PartDefinition__Group__2__Impl : ( ( rule__PartDefinition__DeclaredNameAssignment_2 ) ) ;
     public final void rule__PartDefinition__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1211:1: ( ( ( rule__PartDefinition__DeclaredNameAssignment_2 ) ) )
-            // InternalSysMLOC.g:1212:1: ( ( rule__PartDefinition__DeclaredNameAssignment_2 ) )
+            // InternalSysMLOC.g:1202:1: ( ( ( rule__PartDefinition__DeclaredNameAssignment_2 ) ) )
+            // InternalSysMLOC.g:1203:1: ( ( rule__PartDefinition__DeclaredNameAssignment_2 ) )
             {
-            // InternalSysMLOC.g:1212:1: ( ( rule__PartDefinition__DeclaredNameAssignment_2 ) )
-            // InternalSysMLOC.g:1213:2: ( rule__PartDefinition__DeclaredNameAssignment_2 )
+            // InternalSysMLOC.g:1203:1: ( ( rule__PartDefinition__DeclaredNameAssignment_2 ) )
+            // InternalSysMLOC.g:1204:2: ( rule__PartDefinition__DeclaredNameAssignment_2 )
             {
              before(grammarAccess.getPartDefinitionAccess().getDeclaredNameAssignment_2()); 
-            // InternalSysMLOC.g:1214:2: ( rule__PartDefinition__DeclaredNameAssignment_2 )
-            // InternalSysMLOC.g:1214:3: rule__PartDefinition__DeclaredNameAssignment_2
+            // InternalSysMLOC.g:1205:2: ( rule__PartDefinition__DeclaredNameAssignment_2 )
+            // InternalSysMLOC.g:1205:3: rule__PartDefinition__DeclaredNameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__PartDefinition__DeclaredNameAssignment_2();
@@ -3734,14 +3767,14 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PartDefinition__Group__3"
-    // InternalSysMLOC.g:1222:1: rule__PartDefinition__Group__3 : rule__PartDefinition__Group__3__Impl rule__PartDefinition__Group__4 ;
+    // InternalSysMLOC.g:1213:1: rule__PartDefinition__Group__3 : rule__PartDefinition__Group__3__Impl rule__PartDefinition__Group__4 ;
     public final void rule__PartDefinition__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1226:1: ( rule__PartDefinition__Group__3__Impl rule__PartDefinition__Group__4 )
-            // InternalSysMLOC.g:1227:2: rule__PartDefinition__Group__3__Impl rule__PartDefinition__Group__4
+            // InternalSysMLOC.g:1217:1: ( rule__PartDefinition__Group__3__Impl rule__PartDefinition__Group__4 )
+            // InternalSysMLOC.g:1218:2: rule__PartDefinition__Group__3__Impl rule__PartDefinition__Group__4
             {
             pushFollow(FOLLOW_13);
             rule__PartDefinition__Group__3__Impl();
@@ -3772,17 +3805,17 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PartDefinition__Group__3__Impl"
-    // InternalSysMLOC.g:1234:1: rule__PartDefinition__Group__3__Impl : ( ';' ) ;
+    // InternalSysMLOC.g:1225:1: rule__PartDefinition__Group__3__Impl : ( ';' ) ;
     public final void rule__PartDefinition__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1238:1: ( ( ';' ) )
-            // InternalSysMLOC.g:1239:1: ( ';' )
+            // InternalSysMLOC.g:1229:1: ( ( ';' ) )
+            // InternalSysMLOC.g:1230:1: ( ';' )
             {
-            // InternalSysMLOC.g:1239:1: ( ';' )
-            // InternalSysMLOC.g:1240:2: ';'
+            // InternalSysMLOC.g:1230:1: ( ';' )
+            // InternalSysMLOC.g:1231:2: ';'
             {
              before(grammarAccess.getPartDefinitionAccess().getSemicolonKeyword_3()); 
             match(input,13,FOLLOW_2); 
@@ -3809,14 +3842,14 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PartDefinition__Group__4"
-    // InternalSysMLOC.g:1249:1: rule__PartDefinition__Group__4 : rule__PartDefinition__Group__4__Impl ;
+    // InternalSysMLOC.g:1240:1: rule__PartDefinition__Group__4 : rule__PartDefinition__Group__4__Impl ;
     public final void rule__PartDefinition__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1253:1: ( rule__PartDefinition__Group__4__Impl )
-            // InternalSysMLOC.g:1254:2: rule__PartDefinition__Group__4__Impl
+            // InternalSysMLOC.g:1244:1: ( rule__PartDefinition__Group__4__Impl )
+            // InternalSysMLOC.g:1245:2: rule__PartDefinition__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__PartDefinition__Group__4__Impl();
@@ -3842,21 +3875,21 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PartDefinition__Group__4__Impl"
-    // InternalSysMLOC.g:1260:1: rule__PartDefinition__Group__4__Impl : ( ( rule__PartDefinition__Alternatives_4 ) ) ;
+    // InternalSysMLOC.g:1251:1: rule__PartDefinition__Group__4__Impl : ( ( rule__PartDefinition__Alternatives_4 ) ) ;
     public final void rule__PartDefinition__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1264:1: ( ( ( rule__PartDefinition__Alternatives_4 ) ) )
-            // InternalSysMLOC.g:1265:1: ( ( rule__PartDefinition__Alternatives_4 ) )
+            // InternalSysMLOC.g:1255:1: ( ( ( rule__PartDefinition__Alternatives_4 ) ) )
+            // InternalSysMLOC.g:1256:1: ( ( rule__PartDefinition__Alternatives_4 ) )
             {
-            // InternalSysMLOC.g:1265:1: ( ( rule__PartDefinition__Alternatives_4 ) )
-            // InternalSysMLOC.g:1266:2: ( rule__PartDefinition__Alternatives_4 )
+            // InternalSysMLOC.g:1256:1: ( ( rule__PartDefinition__Alternatives_4 ) )
+            // InternalSysMLOC.g:1257:2: ( rule__PartDefinition__Alternatives_4 )
             {
              before(grammarAccess.getPartDefinitionAccess().getAlternatives_4()); 
-            // InternalSysMLOC.g:1267:2: ( rule__PartDefinition__Alternatives_4 )
-            // InternalSysMLOC.g:1267:3: rule__PartDefinition__Alternatives_4
+            // InternalSysMLOC.g:1258:2: ( rule__PartDefinition__Alternatives_4 )
+            // InternalSysMLOC.g:1258:3: rule__PartDefinition__Alternatives_4
             {
             pushFollow(FOLLOW_2);
             rule__PartDefinition__Alternatives_4();
@@ -3889,14 +3922,14 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PartDefinition__Group_4_1__0"
-    // InternalSysMLOC.g:1276:1: rule__PartDefinition__Group_4_1__0 : rule__PartDefinition__Group_4_1__0__Impl rule__PartDefinition__Group_4_1__1 ;
+    // InternalSysMLOC.g:1267:1: rule__PartDefinition__Group_4_1__0 : rule__PartDefinition__Group_4_1__0__Impl rule__PartDefinition__Group_4_1__1 ;
     public final void rule__PartDefinition__Group_4_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1280:1: ( rule__PartDefinition__Group_4_1__0__Impl rule__PartDefinition__Group_4_1__1 )
-            // InternalSysMLOC.g:1281:2: rule__PartDefinition__Group_4_1__0__Impl rule__PartDefinition__Group_4_1__1
+            // InternalSysMLOC.g:1271:1: ( rule__PartDefinition__Group_4_1__0__Impl rule__PartDefinition__Group_4_1__1 )
+            // InternalSysMLOC.g:1272:2: rule__PartDefinition__Group_4_1__0__Impl rule__PartDefinition__Group_4_1__1
             {
             pushFollow(FOLLOW_7);
             rule__PartDefinition__Group_4_1__0__Impl();
@@ -3927,20 +3960,20 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PartDefinition__Group_4_1__0__Impl"
-    // InternalSysMLOC.g:1288:1: rule__PartDefinition__Group_4_1__0__Impl : ( '{' ) ;
+    // InternalSysMLOC.g:1279:1: rule__PartDefinition__Group_4_1__0__Impl : ( '{' ) ;
     public final void rule__PartDefinition__Group_4_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1292:1: ( ( '{' ) )
-            // InternalSysMLOC.g:1293:1: ( '{' )
+            // InternalSysMLOC.g:1283:1: ( ( '{' ) )
+            // InternalSysMLOC.g:1284:1: ( '{' )
             {
-            // InternalSysMLOC.g:1293:1: ( '{' )
-            // InternalSysMLOC.g:1294:2: '{'
+            // InternalSysMLOC.g:1284:1: ( '{' )
+            // InternalSysMLOC.g:1285:2: '{'
             {
              before(grammarAccess.getPartDefinitionAccess().getLeftCurlyBracketKeyword_4_1_0()); 
-            match(input,15,FOLLOW_2); 
+            match(input,18,FOLLOW_2); 
              after(grammarAccess.getPartDefinitionAccess().getLeftCurlyBracketKeyword_4_1_0()); 
 
             }
@@ -3964,14 +3997,14 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PartDefinition__Group_4_1__1"
-    // InternalSysMLOC.g:1303:1: rule__PartDefinition__Group_4_1__1 : rule__PartDefinition__Group_4_1__1__Impl rule__PartDefinition__Group_4_1__2 ;
+    // InternalSysMLOC.g:1294:1: rule__PartDefinition__Group_4_1__1 : rule__PartDefinition__Group_4_1__1__Impl rule__PartDefinition__Group_4_1__2 ;
     public final void rule__PartDefinition__Group_4_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1307:1: ( rule__PartDefinition__Group_4_1__1__Impl rule__PartDefinition__Group_4_1__2 )
-            // InternalSysMLOC.g:1308:2: rule__PartDefinition__Group_4_1__1__Impl rule__PartDefinition__Group_4_1__2
+            // InternalSysMLOC.g:1298:1: ( rule__PartDefinition__Group_4_1__1__Impl rule__PartDefinition__Group_4_1__2 )
+            // InternalSysMLOC.g:1299:2: rule__PartDefinition__Group_4_1__1__Impl rule__PartDefinition__Group_4_1__2
             {
             pushFollow(FOLLOW_7);
             rule__PartDefinition__Group_4_1__1__Impl();
@@ -4002,33 +4035,33 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PartDefinition__Group_4_1__1__Impl"
-    // InternalSysMLOC.g:1315:1: rule__PartDefinition__Group_4_1__1__Impl : ( ( rule__PartDefinition__ElementsAssignment_4_1_1 )* ) ;
+    // InternalSysMLOC.g:1306:1: rule__PartDefinition__Group_4_1__1__Impl : ( ( rule__PartDefinition__ElementsAssignment_4_1_1 )* ) ;
     public final void rule__PartDefinition__Group_4_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1319:1: ( ( ( rule__PartDefinition__ElementsAssignment_4_1_1 )* ) )
-            // InternalSysMLOC.g:1320:1: ( ( rule__PartDefinition__ElementsAssignment_4_1_1 )* )
+            // InternalSysMLOC.g:1310:1: ( ( ( rule__PartDefinition__ElementsAssignment_4_1_1 )* ) )
+            // InternalSysMLOC.g:1311:1: ( ( rule__PartDefinition__ElementsAssignment_4_1_1 )* )
             {
-            // InternalSysMLOC.g:1320:1: ( ( rule__PartDefinition__ElementsAssignment_4_1_1 )* )
-            // InternalSysMLOC.g:1321:2: ( rule__PartDefinition__ElementsAssignment_4_1_1 )*
+            // InternalSysMLOC.g:1311:1: ( ( rule__PartDefinition__ElementsAssignment_4_1_1 )* )
+            // InternalSysMLOC.g:1312:2: ( rule__PartDefinition__ElementsAssignment_4_1_1 )*
             {
              before(grammarAccess.getPartDefinitionAccess().getElementsAssignment_4_1_1()); 
-            // InternalSysMLOC.g:1322:2: ( rule__PartDefinition__ElementsAssignment_4_1_1 )*
+            // InternalSysMLOC.g:1313:2: ( rule__PartDefinition__ElementsAssignment_4_1_1 )*
             loop12:
             do {
                 int alt12=2;
                 int LA12_0 = input.LA(1);
 
-                if ( ((LA12_0>=RULE_ID && LA12_0<=RULE_UNRESTRICTED_NAME)||LA12_0==14||(LA12_0>=18 && LA12_0<=19)||LA12_0==21) ) {
+                if ( ((LA12_0>=14 && LA12_0<=17)||(LA12_0>=21 && LA12_0<=22)||LA12_0==24) ) {
                     alt12=1;
                 }
 
 
                 switch (alt12) {
             	case 1 :
-            	    // InternalSysMLOC.g:1322:3: rule__PartDefinition__ElementsAssignment_4_1_1
+            	    // InternalSysMLOC.g:1313:3: rule__PartDefinition__ElementsAssignment_4_1_1
             	    {
             	    pushFollow(FOLLOW_8);
             	    rule__PartDefinition__ElementsAssignment_4_1_1();
@@ -4067,14 +4100,14 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PartDefinition__Group_4_1__2"
-    // InternalSysMLOC.g:1330:1: rule__PartDefinition__Group_4_1__2 : rule__PartDefinition__Group_4_1__2__Impl ;
+    // InternalSysMLOC.g:1321:1: rule__PartDefinition__Group_4_1__2 : rule__PartDefinition__Group_4_1__2__Impl ;
     public final void rule__PartDefinition__Group_4_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1334:1: ( rule__PartDefinition__Group_4_1__2__Impl )
-            // InternalSysMLOC.g:1335:2: rule__PartDefinition__Group_4_1__2__Impl
+            // InternalSysMLOC.g:1325:1: ( rule__PartDefinition__Group_4_1__2__Impl )
+            // InternalSysMLOC.g:1326:2: rule__PartDefinition__Group_4_1__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__PartDefinition__Group_4_1__2__Impl();
@@ -4100,20 +4133,20 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PartDefinition__Group_4_1__2__Impl"
-    // InternalSysMLOC.g:1341:1: rule__PartDefinition__Group_4_1__2__Impl : ( '}' ) ;
+    // InternalSysMLOC.g:1332:1: rule__PartDefinition__Group_4_1__2__Impl : ( '}' ) ;
     public final void rule__PartDefinition__Group_4_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1345:1: ( ( '}' ) )
-            // InternalSysMLOC.g:1346:1: ( '}' )
+            // InternalSysMLOC.g:1336:1: ( ( '}' ) )
+            // InternalSysMLOC.g:1337:1: ( '}' )
             {
-            // InternalSysMLOC.g:1346:1: ( '}' )
-            // InternalSysMLOC.g:1347:2: '}'
+            // InternalSysMLOC.g:1337:1: ( '}' )
+            // InternalSysMLOC.g:1338:2: '}'
             {
              before(grammarAccess.getPartDefinitionAccess().getRightCurlyBracketKeyword_4_1_2()); 
-            match(input,16,FOLLOW_2); 
+            match(input,19,FOLLOW_2); 
              after(grammarAccess.getPartDefinitionAccess().getRightCurlyBracketKeyword_4_1_2()); 
 
             }
@@ -4137,14 +4170,14 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AttributeUsage__Group__0"
-    // InternalSysMLOC.g:1357:1: rule__AttributeUsage__Group__0 : rule__AttributeUsage__Group__0__Impl rule__AttributeUsage__Group__1 ;
+    // InternalSysMLOC.g:1348:1: rule__AttributeUsage__Group__0 : rule__AttributeUsage__Group__0__Impl rule__AttributeUsage__Group__1 ;
     public final void rule__AttributeUsage__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1361:1: ( rule__AttributeUsage__Group__0__Impl rule__AttributeUsage__Group__1 )
-            // InternalSysMLOC.g:1362:2: rule__AttributeUsage__Group__0__Impl rule__AttributeUsage__Group__1
+            // InternalSysMLOC.g:1352:1: ( rule__AttributeUsage__Group__0__Impl rule__AttributeUsage__Group__1 )
+            // InternalSysMLOC.g:1353:2: rule__AttributeUsage__Group__0__Impl rule__AttributeUsage__Group__1
             {
             pushFollow(FOLLOW_5);
             rule__AttributeUsage__Group__0__Impl();
@@ -4175,20 +4208,20 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AttributeUsage__Group__0__Impl"
-    // InternalSysMLOC.g:1369:1: rule__AttributeUsage__Group__0__Impl : ( 'attribute' ) ;
+    // InternalSysMLOC.g:1360:1: rule__AttributeUsage__Group__0__Impl : ( 'attribute' ) ;
     public final void rule__AttributeUsage__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1373:1: ( ( 'attribute' ) )
-            // InternalSysMLOC.g:1374:1: ( 'attribute' )
+            // InternalSysMLOC.g:1364:1: ( ( 'attribute' ) )
+            // InternalSysMLOC.g:1365:1: ( 'attribute' )
             {
-            // InternalSysMLOC.g:1374:1: ( 'attribute' )
-            // InternalSysMLOC.g:1375:2: 'attribute'
+            // InternalSysMLOC.g:1365:1: ( 'attribute' )
+            // InternalSysMLOC.g:1366:2: 'attribute'
             {
              before(grammarAccess.getAttributeUsageAccess().getAttributeKeyword_0()); 
-            match(input,19,FOLLOW_2); 
+            match(input,22,FOLLOW_2); 
              after(grammarAccess.getAttributeUsageAccess().getAttributeKeyword_0()); 
 
             }
@@ -4212,14 +4245,14 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AttributeUsage__Group__1"
-    // InternalSysMLOC.g:1384:1: rule__AttributeUsage__Group__1 : rule__AttributeUsage__Group__1__Impl rule__AttributeUsage__Group__2 ;
+    // InternalSysMLOC.g:1375:1: rule__AttributeUsage__Group__1 : rule__AttributeUsage__Group__1__Impl rule__AttributeUsage__Group__2 ;
     public final void rule__AttributeUsage__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1388:1: ( rule__AttributeUsage__Group__1__Impl rule__AttributeUsage__Group__2 )
-            // InternalSysMLOC.g:1389:2: rule__AttributeUsage__Group__1__Impl rule__AttributeUsage__Group__2
+            // InternalSysMLOC.g:1379:1: ( rule__AttributeUsage__Group__1__Impl rule__AttributeUsage__Group__2 )
+            // InternalSysMLOC.g:1380:2: rule__AttributeUsage__Group__1__Impl rule__AttributeUsage__Group__2
             {
             pushFollow(FOLLOW_13);
             rule__AttributeUsage__Group__1__Impl();
@@ -4250,21 +4283,21 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AttributeUsage__Group__1__Impl"
-    // InternalSysMLOC.g:1396:1: rule__AttributeUsage__Group__1__Impl : ( ( rule__AttributeUsage__DeclaredNameAssignment_1 ) ) ;
+    // InternalSysMLOC.g:1387:1: rule__AttributeUsage__Group__1__Impl : ( ( rule__AttributeUsage__DeclaredNameAssignment_1 ) ) ;
     public final void rule__AttributeUsage__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1400:1: ( ( ( rule__AttributeUsage__DeclaredNameAssignment_1 ) ) )
-            // InternalSysMLOC.g:1401:1: ( ( rule__AttributeUsage__DeclaredNameAssignment_1 ) )
+            // InternalSysMLOC.g:1391:1: ( ( ( rule__AttributeUsage__DeclaredNameAssignment_1 ) ) )
+            // InternalSysMLOC.g:1392:1: ( ( rule__AttributeUsage__DeclaredNameAssignment_1 ) )
             {
-            // InternalSysMLOC.g:1401:1: ( ( rule__AttributeUsage__DeclaredNameAssignment_1 ) )
-            // InternalSysMLOC.g:1402:2: ( rule__AttributeUsage__DeclaredNameAssignment_1 )
+            // InternalSysMLOC.g:1392:1: ( ( rule__AttributeUsage__DeclaredNameAssignment_1 ) )
+            // InternalSysMLOC.g:1393:2: ( rule__AttributeUsage__DeclaredNameAssignment_1 )
             {
              before(grammarAccess.getAttributeUsageAccess().getDeclaredNameAssignment_1()); 
-            // InternalSysMLOC.g:1403:2: ( rule__AttributeUsage__DeclaredNameAssignment_1 )
-            // InternalSysMLOC.g:1403:3: rule__AttributeUsage__DeclaredNameAssignment_1
+            // InternalSysMLOC.g:1394:2: ( rule__AttributeUsage__DeclaredNameAssignment_1 )
+            // InternalSysMLOC.g:1394:3: rule__AttributeUsage__DeclaredNameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__AttributeUsage__DeclaredNameAssignment_1();
@@ -4297,14 +4330,14 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AttributeUsage__Group__2"
-    // InternalSysMLOC.g:1411:1: rule__AttributeUsage__Group__2 : rule__AttributeUsage__Group__2__Impl ;
+    // InternalSysMLOC.g:1402:1: rule__AttributeUsage__Group__2 : rule__AttributeUsage__Group__2__Impl ;
     public final void rule__AttributeUsage__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1415:1: ( rule__AttributeUsage__Group__2__Impl )
-            // InternalSysMLOC.g:1416:2: rule__AttributeUsage__Group__2__Impl
+            // InternalSysMLOC.g:1406:1: ( rule__AttributeUsage__Group__2__Impl )
+            // InternalSysMLOC.g:1407:2: rule__AttributeUsage__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__AttributeUsage__Group__2__Impl();
@@ -4330,21 +4363,21 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AttributeUsage__Group__2__Impl"
-    // InternalSysMLOC.g:1422:1: rule__AttributeUsage__Group__2__Impl : ( ( rule__AttributeUsage__Alternatives_2 ) ) ;
+    // InternalSysMLOC.g:1413:1: rule__AttributeUsage__Group__2__Impl : ( ( rule__AttributeUsage__Alternatives_2 ) ) ;
     public final void rule__AttributeUsage__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1426:1: ( ( ( rule__AttributeUsage__Alternatives_2 ) ) )
-            // InternalSysMLOC.g:1427:1: ( ( rule__AttributeUsage__Alternatives_2 ) )
+            // InternalSysMLOC.g:1417:1: ( ( ( rule__AttributeUsage__Alternatives_2 ) ) )
+            // InternalSysMLOC.g:1418:1: ( ( rule__AttributeUsage__Alternatives_2 ) )
             {
-            // InternalSysMLOC.g:1427:1: ( ( rule__AttributeUsage__Alternatives_2 ) )
-            // InternalSysMLOC.g:1428:2: ( rule__AttributeUsage__Alternatives_2 )
+            // InternalSysMLOC.g:1418:1: ( ( rule__AttributeUsage__Alternatives_2 ) )
+            // InternalSysMLOC.g:1419:2: ( rule__AttributeUsage__Alternatives_2 )
             {
              before(grammarAccess.getAttributeUsageAccess().getAlternatives_2()); 
-            // InternalSysMLOC.g:1429:2: ( rule__AttributeUsage__Alternatives_2 )
-            // InternalSysMLOC.g:1429:3: rule__AttributeUsage__Alternatives_2
+            // InternalSysMLOC.g:1420:2: ( rule__AttributeUsage__Alternatives_2 )
+            // InternalSysMLOC.g:1420:3: rule__AttributeUsage__Alternatives_2
             {
             pushFollow(FOLLOW_2);
             rule__AttributeUsage__Alternatives_2();
@@ -4377,14 +4410,14 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AttributeUsage__Group_2_1__0"
-    // InternalSysMLOC.g:1438:1: rule__AttributeUsage__Group_2_1__0 : rule__AttributeUsage__Group_2_1__0__Impl rule__AttributeUsage__Group_2_1__1 ;
+    // InternalSysMLOC.g:1429:1: rule__AttributeUsage__Group_2_1__0 : rule__AttributeUsage__Group_2_1__0__Impl rule__AttributeUsage__Group_2_1__1 ;
     public final void rule__AttributeUsage__Group_2_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1442:1: ( rule__AttributeUsage__Group_2_1__0__Impl rule__AttributeUsage__Group_2_1__1 )
-            // InternalSysMLOC.g:1443:2: rule__AttributeUsage__Group_2_1__0__Impl rule__AttributeUsage__Group_2_1__1
+            // InternalSysMLOC.g:1433:1: ( rule__AttributeUsage__Group_2_1__0__Impl rule__AttributeUsage__Group_2_1__1 )
+            // InternalSysMLOC.g:1434:2: rule__AttributeUsage__Group_2_1__0__Impl rule__AttributeUsage__Group_2_1__1
             {
             pushFollow(FOLLOW_7);
             rule__AttributeUsage__Group_2_1__0__Impl();
@@ -4415,20 +4448,20 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AttributeUsage__Group_2_1__0__Impl"
-    // InternalSysMLOC.g:1450:1: rule__AttributeUsage__Group_2_1__0__Impl : ( '{' ) ;
+    // InternalSysMLOC.g:1441:1: rule__AttributeUsage__Group_2_1__0__Impl : ( '{' ) ;
     public final void rule__AttributeUsage__Group_2_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1454:1: ( ( '{' ) )
-            // InternalSysMLOC.g:1455:1: ( '{' )
+            // InternalSysMLOC.g:1445:1: ( ( '{' ) )
+            // InternalSysMLOC.g:1446:1: ( '{' )
             {
-            // InternalSysMLOC.g:1455:1: ( '{' )
-            // InternalSysMLOC.g:1456:2: '{'
+            // InternalSysMLOC.g:1446:1: ( '{' )
+            // InternalSysMLOC.g:1447:2: '{'
             {
              before(grammarAccess.getAttributeUsageAccess().getLeftCurlyBracketKeyword_2_1_0()); 
-            match(input,15,FOLLOW_2); 
+            match(input,18,FOLLOW_2); 
              after(grammarAccess.getAttributeUsageAccess().getLeftCurlyBracketKeyword_2_1_0()); 
 
             }
@@ -4452,14 +4485,14 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AttributeUsage__Group_2_1__1"
-    // InternalSysMLOC.g:1465:1: rule__AttributeUsage__Group_2_1__1 : rule__AttributeUsage__Group_2_1__1__Impl rule__AttributeUsage__Group_2_1__2 ;
+    // InternalSysMLOC.g:1456:1: rule__AttributeUsage__Group_2_1__1 : rule__AttributeUsage__Group_2_1__1__Impl rule__AttributeUsage__Group_2_1__2 ;
     public final void rule__AttributeUsage__Group_2_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1469:1: ( rule__AttributeUsage__Group_2_1__1__Impl rule__AttributeUsage__Group_2_1__2 )
-            // InternalSysMLOC.g:1470:2: rule__AttributeUsage__Group_2_1__1__Impl rule__AttributeUsage__Group_2_1__2
+            // InternalSysMLOC.g:1460:1: ( rule__AttributeUsage__Group_2_1__1__Impl rule__AttributeUsage__Group_2_1__2 )
+            // InternalSysMLOC.g:1461:2: rule__AttributeUsage__Group_2_1__1__Impl rule__AttributeUsage__Group_2_1__2
             {
             pushFollow(FOLLOW_7);
             rule__AttributeUsage__Group_2_1__1__Impl();
@@ -4490,33 +4523,33 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AttributeUsage__Group_2_1__1__Impl"
-    // InternalSysMLOC.g:1477:1: rule__AttributeUsage__Group_2_1__1__Impl : ( ( rule__AttributeUsage__ElementsAssignment_2_1_1 )* ) ;
+    // InternalSysMLOC.g:1468:1: rule__AttributeUsage__Group_2_1__1__Impl : ( ( rule__AttributeUsage__ElementsAssignment_2_1_1 )* ) ;
     public final void rule__AttributeUsage__Group_2_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1481:1: ( ( ( rule__AttributeUsage__ElementsAssignment_2_1_1 )* ) )
-            // InternalSysMLOC.g:1482:1: ( ( rule__AttributeUsage__ElementsAssignment_2_1_1 )* )
+            // InternalSysMLOC.g:1472:1: ( ( ( rule__AttributeUsage__ElementsAssignment_2_1_1 )* ) )
+            // InternalSysMLOC.g:1473:1: ( ( rule__AttributeUsage__ElementsAssignment_2_1_1 )* )
             {
-            // InternalSysMLOC.g:1482:1: ( ( rule__AttributeUsage__ElementsAssignment_2_1_1 )* )
-            // InternalSysMLOC.g:1483:2: ( rule__AttributeUsage__ElementsAssignment_2_1_1 )*
+            // InternalSysMLOC.g:1473:1: ( ( rule__AttributeUsage__ElementsAssignment_2_1_1 )* )
+            // InternalSysMLOC.g:1474:2: ( rule__AttributeUsage__ElementsAssignment_2_1_1 )*
             {
              before(grammarAccess.getAttributeUsageAccess().getElementsAssignment_2_1_1()); 
-            // InternalSysMLOC.g:1484:2: ( rule__AttributeUsage__ElementsAssignment_2_1_1 )*
+            // InternalSysMLOC.g:1475:2: ( rule__AttributeUsage__ElementsAssignment_2_1_1 )*
             loop13:
             do {
                 int alt13=2;
                 int LA13_0 = input.LA(1);
 
-                if ( ((LA13_0>=RULE_ID && LA13_0<=RULE_UNRESTRICTED_NAME)||LA13_0==14||(LA13_0>=18 && LA13_0<=19)||LA13_0==21) ) {
+                if ( ((LA13_0>=14 && LA13_0<=17)||(LA13_0>=21 && LA13_0<=22)||LA13_0==24) ) {
                     alt13=1;
                 }
 
 
                 switch (alt13) {
             	case 1 :
-            	    // InternalSysMLOC.g:1484:3: rule__AttributeUsage__ElementsAssignment_2_1_1
+            	    // InternalSysMLOC.g:1475:3: rule__AttributeUsage__ElementsAssignment_2_1_1
             	    {
             	    pushFollow(FOLLOW_8);
             	    rule__AttributeUsage__ElementsAssignment_2_1_1();
@@ -4555,14 +4588,14 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AttributeUsage__Group_2_1__2"
-    // InternalSysMLOC.g:1492:1: rule__AttributeUsage__Group_2_1__2 : rule__AttributeUsage__Group_2_1__2__Impl ;
+    // InternalSysMLOC.g:1483:1: rule__AttributeUsage__Group_2_1__2 : rule__AttributeUsage__Group_2_1__2__Impl ;
     public final void rule__AttributeUsage__Group_2_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1496:1: ( rule__AttributeUsage__Group_2_1__2__Impl )
-            // InternalSysMLOC.g:1497:2: rule__AttributeUsage__Group_2_1__2__Impl
+            // InternalSysMLOC.g:1487:1: ( rule__AttributeUsage__Group_2_1__2__Impl )
+            // InternalSysMLOC.g:1488:2: rule__AttributeUsage__Group_2_1__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__AttributeUsage__Group_2_1__2__Impl();
@@ -4588,20 +4621,20 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AttributeUsage__Group_2_1__2__Impl"
-    // InternalSysMLOC.g:1503:1: rule__AttributeUsage__Group_2_1__2__Impl : ( '}' ) ;
+    // InternalSysMLOC.g:1494:1: rule__AttributeUsage__Group_2_1__2__Impl : ( '}' ) ;
     public final void rule__AttributeUsage__Group_2_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1507:1: ( ( '}' ) )
-            // InternalSysMLOC.g:1508:1: ( '}' )
+            // InternalSysMLOC.g:1498:1: ( ( '}' ) )
+            // InternalSysMLOC.g:1499:1: ( '}' )
             {
-            // InternalSysMLOC.g:1508:1: ( '}' )
-            // InternalSysMLOC.g:1509:2: '}'
+            // InternalSysMLOC.g:1499:1: ( '}' )
+            // InternalSysMLOC.g:1500:2: '}'
             {
              before(grammarAccess.getAttributeUsageAccess().getRightCurlyBracketKeyword_2_1_2()); 
-            match(input,16,FOLLOW_2); 
+            match(input,19,FOLLOW_2); 
              after(grammarAccess.getAttributeUsageAccess().getRightCurlyBracketKeyword_2_1_2()); 
 
             }
@@ -4624,428 +4657,15 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__AttributeUsage__Group_2_1__2__Impl"
 
 
-    // $ANTLR start "rule__TBD__Group__0"
-    // InternalSysMLOC.g:1519:1: rule__TBD__Group__0 : rule__TBD__Group__0__Impl rule__TBD__Group__1 ;
-    public final void rule__TBD__Group__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSysMLOC.g:1523:1: ( rule__TBD__Group__0__Impl rule__TBD__Group__1 )
-            // InternalSysMLOC.g:1524:2: rule__TBD__Group__0__Impl rule__TBD__Group__1
-            {
-            pushFollow(FOLLOW_13);
-            rule__TBD__Group__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__TBD__Group__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__TBD__Group__0"
-
-
-    // $ANTLR start "rule__TBD__Group__0__Impl"
-    // InternalSysMLOC.g:1531:1: rule__TBD__Group__0__Impl : ( ( rule__TBD__TextAssignment_0 ) ) ;
-    public final void rule__TBD__Group__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSysMLOC.g:1535:1: ( ( ( rule__TBD__TextAssignment_0 ) ) )
-            // InternalSysMLOC.g:1536:1: ( ( rule__TBD__TextAssignment_0 ) )
-            {
-            // InternalSysMLOC.g:1536:1: ( ( rule__TBD__TextAssignment_0 ) )
-            // InternalSysMLOC.g:1537:2: ( rule__TBD__TextAssignment_0 )
-            {
-             before(grammarAccess.getTBDAccess().getTextAssignment_0()); 
-            // InternalSysMLOC.g:1538:2: ( rule__TBD__TextAssignment_0 )
-            // InternalSysMLOC.g:1538:3: rule__TBD__TextAssignment_0
-            {
-            pushFollow(FOLLOW_2);
-            rule__TBD__TextAssignment_0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getTBDAccess().getTextAssignment_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__TBD__Group__0__Impl"
-
-
-    // $ANTLR start "rule__TBD__Group__1"
-    // InternalSysMLOC.g:1546:1: rule__TBD__Group__1 : rule__TBD__Group__1__Impl ;
-    public final void rule__TBD__Group__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSysMLOC.g:1550:1: ( rule__TBD__Group__1__Impl )
-            // InternalSysMLOC.g:1551:2: rule__TBD__Group__1__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__TBD__Group__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__TBD__Group__1"
-
-
-    // $ANTLR start "rule__TBD__Group__1__Impl"
-    // InternalSysMLOC.g:1557:1: rule__TBD__Group__1__Impl : ( ( rule__TBD__Alternatives_1 ) ) ;
-    public final void rule__TBD__Group__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSysMLOC.g:1561:1: ( ( ( rule__TBD__Alternatives_1 ) ) )
-            // InternalSysMLOC.g:1562:1: ( ( rule__TBD__Alternatives_1 ) )
-            {
-            // InternalSysMLOC.g:1562:1: ( ( rule__TBD__Alternatives_1 ) )
-            // InternalSysMLOC.g:1563:2: ( rule__TBD__Alternatives_1 )
-            {
-             before(grammarAccess.getTBDAccess().getAlternatives_1()); 
-            // InternalSysMLOC.g:1564:2: ( rule__TBD__Alternatives_1 )
-            // InternalSysMLOC.g:1564:3: rule__TBD__Alternatives_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__TBD__Alternatives_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getTBDAccess().getAlternatives_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__TBD__Group__1__Impl"
-
-
-    // $ANTLR start "rule__TBD__Group_1_1__0"
-    // InternalSysMLOC.g:1573:1: rule__TBD__Group_1_1__0 : rule__TBD__Group_1_1__0__Impl rule__TBD__Group_1_1__1 ;
-    public final void rule__TBD__Group_1_1__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSysMLOC.g:1577:1: ( rule__TBD__Group_1_1__0__Impl rule__TBD__Group_1_1__1 )
-            // InternalSysMLOC.g:1578:2: rule__TBD__Group_1_1__0__Impl rule__TBD__Group_1_1__1
-            {
-            pushFollow(FOLLOW_7);
-            rule__TBD__Group_1_1__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__TBD__Group_1_1__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__TBD__Group_1_1__0"
-
-
-    // $ANTLR start "rule__TBD__Group_1_1__0__Impl"
-    // InternalSysMLOC.g:1585:1: rule__TBD__Group_1_1__0__Impl : ( '{' ) ;
-    public final void rule__TBD__Group_1_1__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSysMLOC.g:1589:1: ( ( '{' ) )
-            // InternalSysMLOC.g:1590:1: ( '{' )
-            {
-            // InternalSysMLOC.g:1590:1: ( '{' )
-            // InternalSysMLOC.g:1591:2: '{'
-            {
-             before(grammarAccess.getTBDAccess().getLeftCurlyBracketKeyword_1_1_0()); 
-            match(input,15,FOLLOW_2); 
-             after(grammarAccess.getTBDAccess().getLeftCurlyBracketKeyword_1_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__TBD__Group_1_1__0__Impl"
-
-
-    // $ANTLR start "rule__TBD__Group_1_1__1"
-    // InternalSysMLOC.g:1600:1: rule__TBD__Group_1_1__1 : rule__TBD__Group_1_1__1__Impl rule__TBD__Group_1_1__2 ;
-    public final void rule__TBD__Group_1_1__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSysMLOC.g:1604:1: ( rule__TBD__Group_1_1__1__Impl rule__TBD__Group_1_1__2 )
-            // InternalSysMLOC.g:1605:2: rule__TBD__Group_1_1__1__Impl rule__TBD__Group_1_1__2
-            {
-            pushFollow(FOLLOW_7);
-            rule__TBD__Group_1_1__1__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__TBD__Group_1_1__2();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__TBD__Group_1_1__1"
-
-
-    // $ANTLR start "rule__TBD__Group_1_1__1__Impl"
-    // InternalSysMLOC.g:1612:1: rule__TBD__Group_1_1__1__Impl : ( ( rule__TBD__ElementsAssignment_1_1_1 )* ) ;
-    public final void rule__TBD__Group_1_1__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSysMLOC.g:1616:1: ( ( ( rule__TBD__ElementsAssignment_1_1_1 )* ) )
-            // InternalSysMLOC.g:1617:1: ( ( rule__TBD__ElementsAssignment_1_1_1 )* )
-            {
-            // InternalSysMLOC.g:1617:1: ( ( rule__TBD__ElementsAssignment_1_1_1 )* )
-            // InternalSysMLOC.g:1618:2: ( rule__TBD__ElementsAssignment_1_1_1 )*
-            {
-             before(grammarAccess.getTBDAccess().getElementsAssignment_1_1_1()); 
-            // InternalSysMLOC.g:1619:2: ( rule__TBD__ElementsAssignment_1_1_1 )*
-            loop14:
-            do {
-                int alt14=2;
-                int LA14_0 = input.LA(1);
-
-                if ( ((LA14_0>=RULE_ID && LA14_0<=RULE_UNRESTRICTED_NAME)||LA14_0==14||(LA14_0>=18 && LA14_0<=19)||LA14_0==21) ) {
-                    alt14=1;
-                }
-
-
-                switch (alt14) {
-            	case 1 :
-            	    // InternalSysMLOC.g:1619:3: rule__TBD__ElementsAssignment_1_1_1
-            	    {
-            	    pushFollow(FOLLOW_8);
-            	    rule__TBD__ElementsAssignment_1_1_1();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop14;
-                }
-            } while (true);
-
-             after(grammarAccess.getTBDAccess().getElementsAssignment_1_1_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__TBD__Group_1_1__1__Impl"
-
-
-    // $ANTLR start "rule__TBD__Group_1_1__2"
-    // InternalSysMLOC.g:1627:1: rule__TBD__Group_1_1__2 : rule__TBD__Group_1_1__2__Impl ;
-    public final void rule__TBD__Group_1_1__2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSysMLOC.g:1631:1: ( rule__TBD__Group_1_1__2__Impl )
-            // InternalSysMLOC.g:1632:2: rule__TBD__Group_1_1__2__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__TBD__Group_1_1__2__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__TBD__Group_1_1__2"
-
-
-    // $ANTLR start "rule__TBD__Group_1_1__2__Impl"
-    // InternalSysMLOC.g:1638:1: rule__TBD__Group_1_1__2__Impl : ( '}' ) ;
-    public final void rule__TBD__Group_1_1__2__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSysMLOC.g:1642:1: ( ( '}' ) )
-            // InternalSysMLOC.g:1643:1: ( '}' )
-            {
-            // InternalSysMLOC.g:1643:1: ( '}' )
-            // InternalSysMLOC.g:1644:2: '}'
-            {
-             before(grammarAccess.getTBDAccess().getRightCurlyBracketKeyword_1_1_2()); 
-            match(input,16,FOLLOW_2); 
-             after(grammarAccess.getTBDAccess().getRightCurlyBracketKeyword_1_1_2()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__TBD__Group_1_1__2__Impl"
-
-
     // $ANTLR start "rule__Qualification__Group__0"
-    // InternalSysMLOC.g:1654:1: rule__Qualification__Group__0 : rule__Qualification__Group__0__Impl rule__Qualification__Group__1 ;
+    // InternalSysMLOC.g:1510:1: rule__Qualification__Group__0 : rule__Qualification__Group__0__Impl rule__Qualification__Group__1 ;
     public final void rule__Qualification__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1658:1: ( rule__Qualification__Group__0__Impl rule__Qualification__Group__1 )
-            // InternalSysMLOC.g:1659:2: rule__Qualification__Group__0__Impl rule__Qualification__Group__1
+            // InternalSysMLOC.g:1514:1: ( rule__Qualification__Group__0__Impl rule__Qualification__Group__1 )
+            // InternalSysMLOC.g:1515:2: rule__Qualification__Group__0__Impl rule__Qualification__Group__1
             {
             pushFollow(FOLLOW_14);
             rule__Qualification__Group__0__Impl();
@@ -5076,17 +4696,17 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Qualification__Group__0__Impl"
-    // InternalSysMLOC.g:1666:1: rule__Qualification__Group__0__Impl : ( ruleName ) ;
+    // InternalSysMLOC.g:1522:1: rule__Qualification__Group__0__Impl : ( ruleName ) ;
     public final void rule__Qualification__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1670:1: ( ( ruleName ) )
-            // InternalSysMLOC.g:1671:1: ( ruleName )
+            // InternalSysMLOC.g:1526:1: ( ( ruleName ) )
+            // InternalSysMLOC.g:1527:1: ( ruleName )
             {
-            // InternalSysMLOC.g:1671:1: ( ruleName )
-            // InternalSysMLOC.g:1672:2: ruleName
+            // InternalSysMLOC.g:1527:1: ( ruleName )
+            // InternalSysMLOC.g:1528:2: ruleName
             {
              before(grammarAccess.getQualificationAccess().getNameParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -5117,14 +4737,14 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Qualification__Group__1"
-    // InternalSysMLOC.g:1681:1: rule__Qualification__Group__1 : rule__Qualification__Group__1__Impl ;
+    // InternalSysMLOC.g:1537:1: rule__Qualification__Group__1 : rule__Qualification__Group__1__Impl ;
     public final void rule__Qualification__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1685:1: ( rule__Qualification__Group__1__Impl )
-            // InternalSysMLOC.g:1686:2: rule__Qualification__Group__1__Impl
+            // InternalSysMLOC.g:1541:1: ( rule__Qualification__Group__1__Impl )
+            // InternalSysMLOC.g:1542:2: rule__Qualification__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Qualification__Group__1__Impl();
@@ -5150,20 +4770,20 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Qualification__Group__1__Impl"
-    // InternalSysMLOC.g:1692:1: rule__Qualification__Group__1__Impl : ( '::' ) ;
+    // InternalSysMLOC.g:1548:1: rule__Qualification__Group__1__Impl : ( '::' ) ;
     public final void rule__Qualification__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1696:1: ( ( '::' ) )
-            // InternalSysMLOC.g:1697:1: ( '::' )
+            // InternalSysMLOC.g:1552:1: ( ( '::' ) )
+            // InternalSysMLOC.g:1553:1: ( '::' )
             {
-            // InternalSysMLOC.g:1697:1: ( '::' )
-            // InternalSysMLOC.g:1698:2: '::'
+            // InternalSysMLOC.g:1553:1: ( '::' )
+            // InternalSysMLOC.g:1554:2: '::'
             {
              before(grammarAccess.getQualificationAccess().getColonColonKeyword_1()); 
-            match(input,22,FOLLOW_2); 
+            match(input,25,FOLLOW_2); 
              after(grammarAccess.getQualificationAccess().getColonColonKeyword_1()); 
 
             }
@@ -5187,14 +4807,14 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group__0"
-    // InternalSysMLOC.g:1708:1: rule__QualifiedName__Group__0 : rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 ;
+    // InternalSysMLOC.g:1564:1: rule__QualifiedName__Group__0 : rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 ;
     public final void rule__QualifiedName__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1712:1: ( rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 )
-            // InternalSysMLOC.g:1713:2: rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1
+            // InternalSysMLOC.g:1568:1: ( rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 )
+            // InternalSysMLOC.g:1569:2: rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1
             {
             pushFollow(FOLLOW_5);
             rule__QualifiedName__Group__0__Impl();
@@ -5225,40 +4845,40 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group__0__Impl"
-    // InternalSysMLOC.g:1720:1: rule__QualifiedName__Group__0__Impl : ( ( ruleQualification )? ) ;
+    // InternalSysMLOC.g:1576:1: rule__QualifiedName__Group__0__Impl : ( ( ruleQualification )? ) ;
     public final void rule__QualifiedName__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1724:1: ( ( ( ruleQualification )? ) )
-            // InternalSysMLOC.g:1725:1: ( ( ruleQualification )? )
+            // InternalSysMLOC.g:1580:1: ( ( ( ruleQualification )? ) )
+            // InternalSysMLOC.g:1581:1: ( ( ruleQualification )? )
             {
-            // InternalSysMLOC.g:1725:1: ( ( ruleQualification )? )
-            // InternalSysMLOC.g:1726:2: ( ruleQualification )?
+            // InternalSysMLOC.g:1581:1: ( ( ruleQualification )? )
+            // InternalSysMLOC.g:1582:2: ( ruleQualification )?
             {
              before(grammarAccess.getQualifiedNameAccess().getQualificationParserRuleCall_0()); 
-            // InternalSysMLOC.g:1727:2: ( ruleQualification )?
-            int alt15=2;
-            int LA15_0 = input.LA(1);
+            // InternalSysMLOC.g:1583:2: ( ruleQualification )?
+            int alt14=2;
+            int LA14_0 = input.LA(1);
 
-            if ( (LA15_0==RULE_ID) ) {
-                int LA15_1 = input.LA(2);
+            if ( (LA14_0==RULE_ID) ) {
+                int LA14_1 = input.LA(2);
 
-                if ( (LA15_1==22) ) {
-                    alt15=1;
+                if ( (LA14_1==25) ) {
+                    alt14=1;
                 }
             }
-            else if ( (LA15_0==RULE_UNRESTRICTED_NAME) ) {
-                int LA15_2 = input.LA(2);
+            else if ( (LA14_0==RULE_UNRESTRICTED_NAME) ) {
+                int LA14_2 = input.LA(2);
 
-                if ( (LA15_2==22) ) {
-                    alt15=1;
+                if ( (LA14_2==25) ) {
+                    alt14=1;
                 }
             }
-            switch (alt15) {
+            switch (alt14) {
                 case 1 :
-                    // InternalSysMLOC.g:1727:3: ruleQualification
+                    // InternalSysMLOC.g:1583:3: ruleQualification
                     {
                     pushFollow(FOLLOW_2);
                     ruleQualification();
@@ -5294,14 +4914,14 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group__1"
-    // InternalSysMLOC.g:1735:1: rule__QualifiedName__Group__1 : rule__QualifiedName__Group__1__Impl ;
+    // InternalSysMLOC.g:1591:1: rule__QualifiedName__Group__1 : rule__QualifiedName__Group__1__Impl ;
     public final void rule__QualifiedName__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1739:1: ( rule__QualifiedName__Group__1__Impl )
-            // InternalSysMLOC.g:1740:2: rule__QualifiedName__Group__1__Impl
+            // InternalSysMLOC.g:1595:1: ( rule__QualifiedName__Group__1__Impl )
+            // InternalSysMLOC.g:1596:2: rule__QualifiedName__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__QualifiedName__Group__1__Impl();
@@ -5327,17 +4947,17 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group__1__Impl"
-    // InternalSysMLOC.g:1746:1: rule__QualifiedName__Group__1__Impl : ( ruleName ) ;
+    // InternalSysMLOC.g:1602:1: rule__QualifiedName__Group__1__Impl : ( ruleName ) ;
     public final void rule__QualifiedName__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1750:1: ( ( ruleName ) )
-            // InternalSysMLOC.g:1751:1: ( ruleName )
+            // InternalSysMLOC.g:1606:1: ( ( ruleName ) )
+            // InternalSysMLOC.g:1607:1: ( ruleName )
             {
-            // InternalSysMLOC.g:1751:1: ( ruleName )
-            // InternalSysMLOC.g:1752:2: ruleName
+            // InternalSysMLOC.g:1607:1: ( ruleName )
+            // InternalSysMLOC.g:1608:2: ruleName
             {
              before(grammarAccess.getQualifiedNameAccess().getNameParserRuleCall_1()); 
             pushFollow(FOLLOW_2);
@@ -5368,17 +4988,17 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Namespace__PackagesAssignment"
-    // InternalSysMLOC.g:1762:1: rule__Namespace__PackagesAssignment : ( rulePackage ) ;
+    // InternalSysMLOC.g:1618:1: rule__Namespace__PackagesAssignment : ( rulePackage ) ;
     public final void rule__Namespace__PackagesAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1766:1: ( ( rulePackage ) )
-            // InternalSysMLOC.g:1767:2: ( rulePackage )
+            // InternalSysMLOC.g:1622:1: ( ( rulePackage ) )
+            // InternalSysMLOC.g:1623:2: ( rulePackage )
             {
-            // InternalSysMLOC.g:1767:2: ( rulePackage )
-            // InternalSysMLOC.g:1768:3: rulePackage
+            // InternalSysMLOC.g:1623:2: ( rulePackage )
+            // InternalSysMLOC.g:1624:3: rulePackage
             {
              before(grammarAccess.getNamespaceAccess().getPackagesPackageParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -5409,17 +5029,17 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Package__DeclaredNameAssignment_1"
-    // InternalSysMLOC.g:1777:1: rule__Package__DeclaredNameAssignment_1 : ( ruleQualifiedName ) ;
+    // InternalSysMLOC.g:1633:1: rule__Package__DeclaredNameAssignment_1 : ( ruleQualifiedName ) ;
     public final void rule__Package__DeclaredNameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1781:1: ( ( ruleQualifiedName ) )
-            // InternalSysMLOC.g:1782:2: ( ruleQualifiedName )
+            // InternalSysMLOC.g:1637:1: ( ( ruleQualifiedName ) )
+            // InternalSysMLOC.g:1638:2: ( ruleQualifiedName )
             {
-            // InternalSysMLOC.g:1782:2: ( ruleQualifiedName )
-            // InternalSysMLOC.g:1783:3: ruleQualifiedName
+            // InternalSysMLOC.g:1638:2: ( ruleQualifiedName )
+            // InternalSysMLOC.g:1639:3: ruleQualifiedName
             {
              before(grammarAccess.getPackageAccess().getDeclaredNameQualifiedNameParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -5450,17 +5070,17 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Package__ElementsAssignment_3"
-    // InternalSysMLOC.g:1792:1: rule__Package__ElementsAssignment_3 : ( ruleBaseElement ) ;
+    // InternalSysMLOC.g:1648:1: rule__Package__ElementsAssignment_3 : ( ruleBaseElement ) ;
     public final void rule__Package__ElementsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1796:1: ( ( ruleBaseElement ) )
-            // InternalSysMLOC.g:1797:2: ( ruleBaseElement )
+            // InternalSysMLOC.g:1652:1: ( ( ruleBaseElement ) )
+            // InternalSysMLOC.g:1653:2: ( ruleBaseElement )
             {
-            // InternalSysMLOC.g:1797:2: ( ruleBaseElement )
-            // InternalSysMLOC.g:1798:3: ruleBaseElement
+            // InternalSysMLOC.g:1653:2: ( ruleBaseElement )
+            // InternalSysMLOC.g:1654:3: ruleBaseElement
             {
              before(grammarAccess.getPackageAccess().getElementsBaseElementParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -5491,25 +5111,25 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NamespaceImport__VisibilityAssignment_0"
-    // InternalSysMLOC.g:1807:1: rule__NamespaceImport__VisibilityAssignment_0 : ( ruleQualifiedName ) ;
+    // InternalSysMLOC.g:1663:1: rule__NamespaceImport__VisibilityAssignment_0 : ( ruleVisibilityIndicator ) ;
     public final void rule__NamespaceImport__VisibilityAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1811:1: ( ( ruleQualifiedName ) )
-            // InternalSysMLOC.g:1812:2: ( ruleQualifiedName )
+            // InternalSysMLOC.g:1667:1: ( ( ruleVisibilityIndicator ) )
+            // InternalSysMLOC.g:1668:2: ( ruleVisibilityIndicator )
             {
-            // InternalSysMLOC.g:1812:2: ( ruleQualifiedName )
-            // InternalSysMLOC.g:1813:3: ruleQualifiedName
+            // InternalSysMLOC.g:1668:2: ( ruleVisibilityIndicator )
+            // InternalSysMLOC.g:1669:3: ruleVisibilityIndicator
             {
-             before(grammarAccess.getNamespaceImportAccess().getVisibilityQualifiedNameParserRuleCall_0_0()); 
+             before(grammarAccess.getNamespaceImportAccess().getVisibilityVisibilityIndicatorEnumRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
-            ruleQualifiedName();
+            ruleVisibilityIndicator();
 
             state._fsp--;
 
-             after(grammarAccess.getNamespaceImportAccess().getVisibilityQualifiedNameParserRuleCall_0_0()); 
+             after(grammarAccess.getNamespaceImportAccess().getVisibilityVisibilityIndicatorEnumRuleCall_0_0()); 
 
             }
 
@@ -5532,17 +5152,17 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NamespaceImport__DeclaredNameAssignment_2"
-    // InternalSysMLOC.g:1822:1: rule__NamespaceImport__DeclaredNameAssignment_2 : ( ruleQualifiedName ) ;
+    // InternalSysMLOC.g:1678:1: rule__NamespaceImport__DeclaredNameAssignment_2 : ( ruleQualifiedName ) ;
     public final void rule__NamespaceImport__DeclaredNameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1826:1: ( ( ruleQualifiedName ) )
-            // InternalSysMLOC.g:1827:2: ( ruleQualifiedName )
+            // InternalSysMLOC.g:1682:1: ( ( ruleQualifiedName ) )
+            // InternalSysMLOC.g:1683:2: ( ruleQualifiedName )
             {
-            // InternalSysMLOC.g:1827:2: ( ruleQualifiedName )
-            // InternalSysMLOC.g:1828:3: ruleQualifiedName
+            // InternalSysMLOC.g:1683:2: ( ruleQualifiedName )
+            // InternalSysMLOC.g:1684:3: ruleQualifiedName
             {
              before(grammarAccess.getNamespaceImportAccess().getDeclaredNameQualifiedNameParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -5573,17 +5193,17 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comment__BodyAssignment_1"
-    // InternalSysMLOC.g:1837:1: rule__Comment__BodyAssignment_1 : ( RULE_REGULAR_COMMENT ) ;
+    // InternalSysMLOC.g:1693:1: rule__Comment__BodyAssignment_1 : ( RULE_REGULAR_COMMENT ) ;
     public final void rule__Comment__BodyAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1841:1: ( ( RULE_REGULAR_COMMENT ) )
-            // InternalSysMLOC.g:1842:2: ( RULE_REGULAR_COMMENT )
+            // InternalSysMLOC.g:1697:1: ( ( RULE_REGULAR_COMMENT ) )
+            // InternalSysMLOC.g:1698:2: ( RULE_REGULAR_COMMENT )
             {
-            // InternalSysMLOC.g:1842:2: ( RULE_REGULAR_COMMENT )
-            // InternalSysMLOC.g:1843:3: RULE_REGULAR_COMMENT
+            // InternalSysMLOC.g:1698:2: ( RULE_REGULAR_COMMENT )
+            // InternalSysMLOC.g:1699:3: RULE_REGULAR_COMMENT
             {
              before(grammarAccess.getCommentAccess().getBodyREGULAR_COMMENTTerminalRuleCall_1_0()); 
             match(input,RULE_REGULAR_COMMENT,FOLLOW_2); 
@@ -5610,17 +5230,17 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AttributeDefinition__DeclaredNameAssignment_2"
-    // InternalSysMLOC.g:1852:1: rule__AttributeDefinition__DeclaredNameAssignment_2 : ( ruleQualifiedName ) ;
+    // InternalSysMLOC.g:1708:1: rule__AttributeDefinition__DeclaredNameAssignment_2 : ( ruleQualifiedName ) ;
     public final void rule__AttributeDefinition__DeclaredNameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1856:1: ( ( ruleQualifiedName ) )
-            // InternalSysMLOC.g:1857:2: ( ruleQualifiedName )
+            // InternalSysMLOC.g:1712:1: ( ( ruleQualifiedName ) )
+            // InternalSysMLOC.g:1713:2: ( ruleQualifiedName )
             {
-            // InternalSysMLOC.g:1857:2: ( ruleQualifiedName )
-            // InternalSysMLOC.g:1858:3: ruleQualifiedName
+            // InternalSysMLOC.g:1713:2: ( ruleQualifiedName )
+            // InternalSysMLOC.g:1714:3: ruleQualifiedName
             {
              before(grammarAccess.getAttributeDefinitionAccess().getDeclaredNameQualifiedNameParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -5651,17 +5271,17 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AttributeDefinition__ElementsAssignment_3_1_1"
-    // InternalSysMLOC.g:1867:1: rule__AttributeDefinition__ElementsAssignment_3_1_1 : ( ruleBaseElement ) ;
+    // InternalSysMLOC.g:1723:1: rule__AttributeDefinition__ElementsAssignment_3_1_1 : ( ruleBaseElement ) ;
     public final void rule__AttributeDefinition__ElementsAssignment_3_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1871:1: ( ( ruleBaseElement ) )
-            // InternalSysMLOC.g:1872:2: ( ruleBaseElement )
+            // InternalSysMLOC.g:1727:1: ( ( ruleBaseElement ) )
+            // InternalSysMLOC.g:1728:2: ( ruleBaseElement )
             {
-            // InternalSysMLOC.g:1872:2: ( ruleBaseElement )
-            // InternalSysMLOC.g:1873:3: ruleBaseElement
+            // InternalSysMLOC.g:1728:2: ( ruleBaseElement )
+            // InternalSysMLOC.g:1729:3: ruleBaseElement
             {
              before(grammarAccess.getAttributeDefinitionAccess().getElementsBaseElementParserRuleCall_3_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -5692,17 +5312,17 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PartDefinition__DeclaredNameAssignment_2"
-    // InternalSysMLOC.g:1882:1: rule__PartDefinition__DeclaredNameAssignment_2 : ( ruleQualifiedName ) ;
+    // InternalSysMLOC.g:1738:1: rule__PartDefinition__DeclaredNameAssignment_2 : ( ruleQualifiedName ) ;
     public final void rule__PartDefinition__DeclaredNameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1886:1: ( ( ruleQualifiedName ) )
-            // InternalSysMLOC.g:1887:2: ( ruleQualifiedName )
+            // InternalSysMLOC.g:1742:1: ( ( ruleQualifiedName ) )
+            // InternalSysMLOC.g:1743:2: ( ruleQualifiedName )
             {
-            // InternalSysMLOC.g:1887:2: ( ruleQualifiedName )
-            // InternalSysMLOC.g:1888:3: ruleQualifiedName
+            // InternalSysMLOC.g:1743:2: ( ruleQualifiedName )
+            // InternalSysMLOC.g:1744:3: ruleQualifiedName
             {
              before(grammarAccess.getPartDefinitionAccess().getDeclaredNameQualifiedNameParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -5733,17 +5353,17 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PartDefinition__ElementsAssignment_4_1_1"
-    // InternalSysMLOC.g:1897:1: rule__PartDefinition__ElementsAssignment_4_1_1 : ( ruleBaseElement ) ;
+    // InternalSysMLOC.g:1753:1: rule__PartDefinition__ElementsAssignment_4_1_1 : ( ruleBaseElement ) ;
     public final void rule__PartDefinition__ElementsAssignment_4_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1901:1: ( ( ruleBaseElement ) )
-            // InternalSysMLOC.g:1902:2: ( ruleBaseElement )
+            // InternalSysMLOC.g:1757:1: ( ( ruleBaseElement ) )
+            // InternalSysMLOC.g:1758:2: ( ruleBaseElement )
             {
-            // InternalSysMLOC.g:1902:2: ( ruleBaseElement )
-            // InternalSysMLOC.g:1903:3: ruleBaseElement
+            // InternalSysMLOC.g:1758:2: ( ruleBaseElement )
+            // InternalSysMLOC.g:1759:3: ruleBaseElement
             {
              before(grammarAccess.getPartDefinitionAccess().getElementsBaseElementParserRuleCall_4_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -5774,17 +5394,17 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AttributeUsage__DeclaredNameAssignment_1"
-    // InternalSysMLOC.g:1912:1: rule__AttributeUsage__DeclaredNameAssignment_1 : ( ruleQualifiedName ) ;
+    // InternalSysMLOC.g:1768:1: rule__AttributeUsage__DeclaredNameAssignment_1 : ( ruleQualifiedName ) ;
     public final void rule__AttributeUsage__DeclaredNameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1916:1: ( ( ruleQualifiedName ) )
-            // InternalSysMLOC.g:1917:2: ( ruleQualifiedName )
+            // InternalSysMLOC.g:1772:1: ( ( ruleQualifiedName ) )
+            // InternalSysMLOC.g:1773:2: ( ruleQualifiedName )
             {
-            // InternalSysMLOC.g:1917:2: ( ruleQualifiedName )
-            // InternalSysMLOC.g:1918:3: ruleQualifiedName
+            // InternalSysMLOC.g:1773:2: ( ruleQualifiedName )
+            // InternalSysMLOC.g:1774:3: ruleQualifiedName
             {
              before(grammarAccess.getAttributeUsageAccess().getDeclaredNameQualifiedNameParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -5815,17 +5435,17 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AttributeUsage__ElementsAssignment_2_1_1"
-    // InternalSysMLOC.g:1927:1: rule__AttributeUsage__ElementsAssignment_2_1_1 : ( ruleBaseElement ) ;
+    // InternalSysMLOC.g:1783:1: rule__AttributeUsage__ElementsAssignment_2_1_1 : ( ruleBaseElement ) ;
     public final void rule__AttributeUsage__ElementsAssignment_2_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:1931:1: ( ( ruleBaseElement ) )
-            // InternalSysMLOC.g:1932:2: ( ruleBaseElement )
+            // InternalSysMLOC.g:1787:1: ( ( ruleBaseElement ) )
+            // InternalSysMLOC.g:1788:2: ( ruleBaseElement )
             {
-            // InternalSysMLOC.g:1932:2: ( ruleBaseElement )
-            // InternalSysMLOC.g:1933:3: ruleBaseElement
+            // InternalSysMLOC.g:1788:2: ( ruleBaseElement )
+            // InternalSysMLOC.g:1789:3: ruleBaseElement
             {
              before(grammarAccess.getAttributeUsageAccess().getElementsBaseElementParserRuleCall_2_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -5854,153 +5474,24 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
     }
     // $ANTLR end "rule__AttributeUsage__ElementsAssignment_2_1_1"
 
-
-    // $ANTLR start "rule__TBD__TextAssignment_0"
-    // InternalSysMLOC.g:1942:1: rule__TBD__TextAssignment_0 : ( ruleQualifiedName ) ;
-    public final void rule__TBD__TextAssignment_0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSysMLOC.g:1946:1: ( ( ruleQualifiedName ) )
-            // InternalSysMLOC.g:1947:2: ( ruleQualifiedName )
-            {
-            // InternalSysMLOC.g:1947:2: ( ruleQualifiedName )
-            // InternalSysMLOC.g:1948:3: ruleQualifiedName
-            {
-             before(grammarAccess.getTBDAccess().getTextQualifiedNameParserRuleCall_0_0()); 
-            pushFollow(FOLLOW_2);
-            ruleQualifiedName();
-
-            state._fsp--;
-
-             after(grammarAccess.getTBDAccess().getTextQualifiedNameParserRuleCall_0_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__TBD__TextAssignment_0"
-
-
-    // $ANTLR start "rule__TBD__ElementsAssignment_1_1_1"
-    // InternalSysMLOC.g:1957:1: rule__TBD__ElementsAssignment_1_1_1 : ( ruleBaseElement ) ;
-    public final void rule__TBD__ElementsAssignment_1_1_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSysMLOC.g:1961:1: ( ( ruleBaseElement ) )
-            // InternalSysMLOC.g:1962:2: ( ruleBaseElement )
-            {
-            // InternalSysMLOC.g:1962:2: ( ruleBaseElement )
-            // InternalSysMLOC.g:1963:3: ruleBaseElement
-            {
-             before(grammarAccess.getTBDAccess().getElementsBaseElementParserRuleCall_1_1_1_0()); 
-            pushFollow(FOLLOW_2);
-            ruleBaseElement();
-
-            state._fsp--;
-
-             after(grammarAccess.getTBDAccess().getElementsBaseElementParserRuleCall_1_1_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__TBD__ElementsAssignment_1_1_1"
-
     // Delegated rules
 
 
-    protected DFA3 dfa3 = new DFA3(this);
-    static final String dfa_1s = "\16\uffff";
-    static final String dfa_2s = "\1\4\2\uffff\2\15\1\4\2\uffff\1\4\2\uffff\2\15\1\4";
-    static final String dfa_3s = "\1\25\2\uffff\2\26\1\24\2\uffff\1\5\2\uffff\2\26\1\5";
-    static final String dfa_4s = "\1\uffff\1\1\1\2\3\uffff\1\4\1\3\1\uffff\1\6\1\5\3\uffff";
-    static final String dfa_5s = "\16\uffff}>";
-    static final String[] dfa_6s = {
-            "\1\3\1\4\10\uffff\1\1\3\uffff\1\2\1\5\1\uffff\1\6",
-            "",
-            "",
-            "\1\11\1\uffff\1\11\1\uffff\1\7\4\uffff\1\10",
-            "\1\11\1\uffff\1\11\1\uffff\1\7\4\uffff\1\10",
-            "\2\12\16\uffff\1\6",
-            "",
-            "",
-            "\1\13\1\14",
-            "",
-            "",
-            "\1\11\1\uffff\1\11\1\uffff\1\7\4\uffff\1\15",
-            "\1\11\1\uffff\1\11\1\uffff\1\7\4\uffff\1\15",
-            "\1\13\1\14"
-    };
-
-    static final short[] dfa_1 = DFA.unpackEncodedString(dfa_1s);
-    static final char[] dfa_2 = DFA.unpackEncodedStringToUnsignedChars(dfa_2s);
-    static final char[] dfa_3 = DFA.unpackEncodedStringToUnsignedChars(dfa_3s);
-    static final short[] dfa_4 = DFA.unpackEncodedString(dfa_4s);
-    static final short[] dfa_5 = DFA.unpackEncodedString(dfa_5s);
-    static final short[][] dfa_6 = unpackEncodedStringArray(dfa_6s);
-
-    class DFA3 extends DFA {
-
-        public DFA3(BaseRecognizer recognizer) {
-            this.recognizer = recognizer;
-            this.decisionNumber = 3;
-            this.eot = dfa_1;
-            this.eof = dfa_1;
-            this.min = dfa_2;
-            this.max = dfa_3;
-            this.accept = dfa_4;
-            this.special = dfa_5;
-            this.transition = dfa_6;
-        }
-        public String getDescription() {
-            return "484:1: rule__BaseElement__Alternatives : ( ( rulePackage ) | ( ruleAnnotatingElement ) | ( ruleImportElement ) | ( ruleDefinitionElement ) | ( ruleUsageElement ) | ( ruleTBD ) );";
-        }
-    }
  
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000004002L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000020002L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000032L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x00000000002D4030L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x00000000002C4032L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x00000000016BC000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x000000000163C002L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000100000L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000002000L});
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x000000000000A000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000042000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000002000000L});
 
 }
