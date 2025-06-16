@@ -12,7 +12,7 @@ Package:
     declaredName=QualifiedName 
     '{' (elements+=BaseElement)* '}'
 ;
-    
+
 BaseElement:
     Package 
     | AnnotatingElement 
