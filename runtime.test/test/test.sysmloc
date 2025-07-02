@@ -1,9 +1,3 @@
 package VehicleDefinitions {
-	public import a;
-	doc /* aaa */
-	attribute def a;
-	attribute a{
-		attribute def a;
-		
-	}
+	part a :>pp.aa [0] : aa, bb = (aa)a;
 }

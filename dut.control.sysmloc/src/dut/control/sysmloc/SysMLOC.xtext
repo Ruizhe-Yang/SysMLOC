@@ -72,7 +72,7 @@ DefinitionElement:
 
 UsageElement:
 	NonOccurrenceUsageElement 
-//	| OccurrenceUsageElement
+	| OccurrenceUsageElement
 ;
 
 NonOccurrenceUsageElement:
@@ -87,17 +87,17 @@ NonOccurrenceUsageElement:
 	
 ;
 
-//OccurrenceUsageElement: 
-//	StructureUsageElement | BehaviorUsageElement
-//;
-//
-//StructureUsageElement:
+OccurrenceUsageElement: 
+	StructureUsageElement | BehaviorUsageElement
+;
+
+StructureUsageElement:
 //	OccurrenceUsage
 //	| IndividualUsage
 //	| PortionUsage
 //	| EventOccurrenceUsage
 //	| ItemUsage
-//	| PartUsage
+	PartUsage
 //	| ViewUsage
 //	| RenderingUsage
 //	| PortUsage
@@ -107,10 +107,10 @@ NonOccurrenceUsageElement:
 //	| Message
 //	| FlowConnectionUsage
 //	| SuccessionFlowConnectionUsage
-//;
+;
 //
-//BehaviorUsageElement:
-//	ActionUsage
+BehaviorUsageElement:
+	ActionUsage
 //	| CalculationUsage
 //	| StateUsage
 //	| ConstraintUsage
@@ -126,7 +126,7 @@ NonOccurrenceUsageElement:
 //	| IncludeUseCaseUsage
 //	| AssertConstraintUsage
 //	| SatisfyRequirementUsage
-//;
+;
 
 
 NamespaceImport:
@@ -160,9 +160,16 @@ AttributeUsage:
 	(';' | '{' (elements+=BaseElement)* '}')
 ;
 
+
+ActionUsage:
+   'action'
+   	declaredName=QualifiedName
+	(';' | '{' (elements+=BaseElement)* '}')
+;
+
 PartUsage:
    'part'
-   	declaredName=QualifiedName
+	Usage
 	(';' | '{' (elements+=BaseElement)* '}')
 ;
 
@@ -172,22 +179,74 @@ enum VisibilityIndicator:
 	public = 'public' | private = 'private'| protected = 'protected'
 ;
 
+fragment Usage:
+	FeatureDeclaration? 
+	FeatureValue? 
+;
+
+fragment FeatureValue:
+	( '=' 
+	| isInitial ?= ':='
+	| isDefault ?= 'default' ( '=' | isInitial ?= ':=' )?
+	)
+	ownedExpression += Expression
+;
+
+fragment FeatureDeclaration:
+	  declaredName = Name FeatureSpecializationPart?
+	| FeatureSpecializationPart
+;
+
+fragment FeatureSpecializationPart:
+	( -> FeatureSpecialization )+ MultiplicityPart? FeatureSpecialization*
+	| MultiplicityPart FeatureSpecialization*
+;
+
+fragment MultiplicityPart:
+	'[' Multiplicity += DECIMAL_VALUE ( '..' Multiplicity += DECIMAL_VALUE )? ']'
+	| ('[' Multiplicity += DECIMAL_VALUE ( '..' Multiplicity += DECIMAL_VALUE )? ']')?
+	  ( isOrdered ?= 'ordered' isNonunique ?= 'nonunique'?
+	  | isNonunique ?= 'nonunique' isOrdered ?= 'ordered'?
+	  )
+;
+
+fragment FeatureSpecialization:
+	(':'|'defined' 'by') typings+=FeatureChainName (',' typings+=FeatureChainName)*|
+	(':>'|'specializes'|'subsets') subsetting+=FeatureChainName (',' subsetting+=FeatureChainName)*|
+	('::>'|'references')  references+=FeatureChainName (',' references+=FeatureChainName)*|
+	('=>'|'crosses') crosses+=FeatureChainName (',' crosses+=FeatureChainName)*|
+	(':>>'|'redefines') redefinitions+=FeatureChainName (',' redefinitions+=FeatureChainName)*
+;
+
 /* NAMES */
 
 Name:
 	ID | UNRESTRICTED_NAME
 ;
 
-Qualification :
-	( Name '::' )+
+QualifiedName:
+	Name ('::' Name)*
 ;
 
-QualifiedName:
-	Qualification? Name
+FeatureChainName:
+	Name ('.' Name)*
+;
+
+ExpressionName:
+	FeatureChainName | EXP_VALUE
+;
+
+Expression:
+	OPERATOR* ExpressionName ((OPERATOR Expression)* | OPERATOR)
 ;
 
 /* TERMINALS */
 
+terminal OPERATOR:
+	'if' | '??' | 'implies' | '|' | 'or' | 'xor' | '&' | 'and' | '==' | '!=' | '===' | '!==' | 'hastype' | 'istype' | '@'|
+	'@@' | 'as' | 'meta' | '<' | '>' | '<=' | '>=' | '+' | '-' | '*' | '/' | '%' | '..' | '**' | '^' | '~' | 'not' |
+	'true' | 'false' | ',' | '(' | ')';
+	
 terminal DECIMAL_VALUE returns Ecore::EInt:
 	'0'..'9' ('0'..'9')*;
 
