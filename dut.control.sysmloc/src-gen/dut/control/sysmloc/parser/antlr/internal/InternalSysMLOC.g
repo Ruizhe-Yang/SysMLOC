@@ -1882,12 +1882,12 @@ ruleExpressionName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRule
 			afterParserOrEnumRuleCall();
 		}
 		    |
-		this_EXP_VALUE_1=RULE_EXP_VALUE
+		this_NORMAL_VALUE_1=RULE_NORMAL_VALUE
 		{
-			$current.merge(this_EXP_VALUE_1);
+			$current.merge(this_NORMAL_VALUE_1);
 		}
 		{
-			newLeafNode(this_EXP_VALUE_1, grammarAccess.getExpressionNameAccess().getEXP_VALUETerminalRuleCall_1());
+			newLeafNode(this_NORMAL_VALUE_1, grammarAccess.getExpressionNameAccess().getNORMAL_VALUETerminalRuleCall_1());
 		}
 	)
 ;
@@ -1928,32 +1928,45 @@ ruleExpression returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToke
 			afterParserOrEnumRuleCall();
 		}
 		(
-			this_OPERATOR_2=RULE_OPERATOR
-			{
-				$current.merge(this_OPERATOR_2);
-			}
-			{
-				newLeafNode(this_OPERATOR_2, grammarAccess.getExpressionAccess().getOPERATORTerminalRuleCall_2_0());
-			}
-			{
-				newCompositeNode(grammarAccess.getExpressionAccess().getExpressionParserRuleCall_2_1());
-			}
-			this_Expression_3=ruleExpression
-			{
-				$current.merge(this_Expression_3);
-			}
-			{
-				afterParserOrEnumRuleCall();
-			}
-		)*
-		(
-			this_OPERATOR_4=RULE_OPERATOR
-			{
-				$current.merge(this_OPERATOR_4);
-			}
-			{
-				newLeafNode(this_OPERATOR_4, grammarAccess.getExpressionAccess().getOPERATORTerminalRuleCall_3());
-			}
+			(
+				this_OPERATOR_2=RULE_OPERATOR
+				{
+					$current.merge(this_OPERATOR_2);
+				}
+				{
+					newLeafNode(this_OPERATOR_2, grammarAccess.getExpressionAccess().getOPERATORTerminalRuleCall_2_0_0());
+				}
+				(
+					{
+						newCompositeNode(grammarAccess.getExpressionAccess().getExpressionNameParserRuleCall_2_0_1());
+					}
+					this_ExpressionName_3=ruleExpressionName
+					{
+						$current.merge(this_ExpressionName_3);
+					}
+					{
+						afterParserOrEnumRuleCall();
+					}
+				)?
+			)
+			    |
+			(
+				kw=','
+				{
+					$current.merge(kw);
+					newLeafNode(kw, grammarAccess.getExpressionAccess().getCommaKeyword_2_1_0());
+				}
+				{
+					newCompositeNode(grammarAccess.getExpressionAccess().getExpressionNameParserRuleCall_2_1_1());
+				}
+				this_ExpressionName_5=ruleExpressionName
+				{
+					$current.merge(this_ExpressionName_5);
+				}
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
 		)*
 	)
 ;
@@ -1993,11 +2006,13 @@ ruleVisibilityIndicator returns [Enumerator current=null]
 	)
 ;
 
-RULE_OPERATOR : ('if'|'??'|'implies'|'|'|'or'|'xor'|'&'|'and'|'=='|'!='|'==='|'!=='|'hastype'|'istype'|'@'|'@@'|'as'|'meta'|'<'|'>'|'<='|'>='|'+'|'-'|'*'|'/'|'%'|'..'|'**'|'^'|'~'|'not'|'true'|'false'|','|'('|')');
+RULE_OPERATOR : ('if'|'??'|'implies'|'|'|'or'|'xor'|'&'|'and'|'=='|'!='|'==='|'!=='|'hastype'|'istype'|'@'|'@@'|'as'|'meta'|'<'|'>'|'<='|'>='|'+'|'-'|'*'|'/'|'%'|'..'|'**'|'^'|'~'|'not'|'true'|'false'|'('|')');
 
 RULE_DECIMAL_VALUE : '0'..'9' ('0'..'9')*;
 
-RULE_EXP_VALUE : RULE_DECIMAL_VALUE ('e'|'E') ('+'|'-')? RULE_DECIMAL_VALUE;
+RULE_NORMAL_VALUE : RULE_DECIMAL_VALUE ('.' RULE_DECIMAL_VALUE)?;
+
+RULE_EXP_VALUE : RULE_NORMAL_VALUE ('e'|'E') ('+'|'-')? RULE_DECIMAL_VALUE;
 
 RULE_ID : ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

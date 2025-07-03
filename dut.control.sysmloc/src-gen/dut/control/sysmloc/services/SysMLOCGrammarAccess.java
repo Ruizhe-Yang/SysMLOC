@@ -1315,38 +1315,41 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.ExpressionName");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cFeatureChainNameParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cEXP_VALUETerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cNORMAL_VALUETerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//ExpressionName:
-		//    FeatureChainName | EXP_VALUE
+		//    FeatureChainName | NORMAL_VALUE
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//FeatureChainName | EXP_VALUE
+		//FeatureChainName | NORMAL_VALUE
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//FeatureChainName
 		public RuleCall getFeatureChainNameParserRuleCall_0() { return cFeatureChainNameParserRuleCall_0; }
 		
-		//EXP_VALUE
-		public RuleCall getEXP_VALUETerminalRuleCall_1() { return cEXP_VALUETerminalRuleCall_1; }
+		//NORMAL_VALUE
+		public RuleCall getNORMAL_VALUETerminalRuleCall_1() { return cNORMAL_VALUETerminalRuleCall_1; }
 	}
 	public class ExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.Expression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final RuleCall cOPERATORTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final RuleCall cExpressionNameParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final RuleCall cOPERATORTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
-		private final RuleCall cExpressionParserRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
-		private final RuleCall cOPERATORTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
+		private final Group cGroup_2_0 = (Group)cAlternatives_2.eContents().get(0);
+		private final RuleCall cOPERATORTerminalRuleCall_2_0_0 = (RuleCall)cGroup_2_0.eContents().get(0);
+		private final RuleCall cExpressionNameParserRuleCall_2_0_1 = (RuleCall)cGroup_2_0.eContents().get(1);
+		private final Group cGroup_2_1 = (Group)cAlternatives_2.eContents().get(1);
+		private final Keyword cCommaKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
+		private final RuleCall cExpressionNameParserRuleCall_2_1_1 = (RuleCall)cGroup_2_1.eContents().get(1);
 		
 		//Expression:
-		//    OPERATOR* ExpressionName (OPERATOR Expression)* OPERATOR*
+		//    OPERATOR* ExpressionName (OPERATOR ExpressionName? | ',' ExpressionName)*
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//OPERATOR* ExpressionName (OPERATOR Expression)* OPERATOR*
+		//OPERATOR* ExpressionName (OPERATOR ExpressionName? | ',' ExpressionName)*
 		public Group getGroup() { return cGroup; }
 		
 		//OPERATOR*
@@ -1355,17 +1358,26 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//ExpressionName
 		public RuleCall getExpressionNameParserRuleCall_1() { return cExpressionNameParserRuleCall_1; }
 		
-		//(OPERATOR Expression)*
-		public Group getGroup_2() { return cGroup_2; }
+		//(OPERATOR ExpressionName? | ',' ExpressionName)*
+		public Alternatives getAlternatives_2() { return cAlternatives_2; }
+		
+		//OPERATOR ExpressionName?
+		public Group getGroup_2_0() { return cGroup_2_0; }
 		
 		//OPERATOR
-		public RuleCall getOPERATORTerminalRuleCall_2_0() { return cOPERATORTerminalRuleCall_2_0; }
+		public RuleCall getOPERATORTerminalRuleCall_2_0_0() { return cOPERATORTerminalRuleCall_2_0_0; }
 		
-		//Expression
-		public RuleCall getExpressionParserRuleCall_2_1() { return cExpressionParserRuleCall_2_1; }
+		//ExpressionName?
+		public RuleCall getExpressionNameParserRuleCall_2_0_1() { return cExpressionNameParserRuleCall_2_0_1; }
 		
-		//OPERATOR*
-		public RuleCall getOPERATORTerminalRuleCall_3() { return cOPERATORTerminalRuleCall_3; }
+		//',' ExpressionName
+		public Group getGroup_2_1() { return cGroup_2_1; }
+		
+		//','
+		public Keyword getCommaKeyword_2_1_0() { return cCommaKeyword_2_1_0; }
+		
+		//ExpressionName
+		public RuleCall getExpressionNameParserRuleCall_2_1_1() { return cExpressionNameParserRuleCall_2_1_1; }
 	}
 	
 	public class VisibilityIndicatorElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
@@ -1438,6 +1450,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	private final ExpressionElements pExpression;
 	private final TerminalRule tOPERATOR;
 	private final TerminalRule tDECIMAL_VALUE;
+	private final TerminalRule tNORMAL_VALUE;
 	private final TerminalRule tEXP_VALUE;
 	private final TerminalRule tID;
 	private final TerminalRule tUNRESTRICTED_NAME;
@@ -1484,6 +1497,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		this.pExpression = new ExpressionElements();
 		this.tOPERATOR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.OPERATOR");
 		this.tDECIMAL_VALUE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.DECIMAL_VALUE");
+		this.tNORMAL_VALUE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.NORMAL_VALUE");
 		this.tEXP_VALUE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.EXP_VALUE");
 		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.ID");
 		this.tUNRESTRICTED_NAME = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.UNRESTRICTED_NAME");
@@ -1934,7 +1948,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//ExpressionName:
-	//    FeatureChainName | EXP_VALUE
+	//    FeatureChainName | NORMAL_VALUE
 	//;
 	public ExpressionNameElements getExpressionNameAccess() {
 		return pExpressionName;
@@ -1945,7 +1959,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//Expression:
-	//    OPERATOR* ExpressionName (OPERATOR Expression)* OPERATOR*
+	//    OPERATOR* ExpressionName (OPERATOR ExpressionName? | ',' ExpressionName)*
 	//;
 	public ExpressionElements getExpressionAccess() {
 		return pExpression;
@@ -1959,7 +1973,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	//terminal OPERATOR:
 	//    'if' | '??' | 'implies' | '|' | 'or' | 'xor' | '&' | 'and' | '==' | '!=' | '===' | '!==' | 'hastype' | 'istype' | '@'|
 	//    '@@' | 'as' | 'meta' | '<' | '>' | '<=' | '>=' | '+' | '-' | '*' | '/' | '%' | '..' | '**' | '^' | '~' | 'not' |
-	//    'true' | 'false' | ',' | '(' | ')';
+	//    'true' | 'false' | '(' | ')';
 	public TerminalRule getOPERATORRule() {
 		return tOPERATOR;
 	}
@@ -1970,8 +1984,14 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		return tDECIMAL_VALUE;
 	}
 	
+	//terminal NORMAL_VALUE returns Ecore::EDouble:
+	//    DECIMAL_VALUE ('.' DECIMAL_VALUE)?;
+	public TerminalRule getNORMAL_VALUERule() {
+		return tNORMAL_VALUE;
+	}
+	
 	//terminal EXP_VALUE:
-	//    DECIMAL_VALUE ('e' | 'E') ('+' | '-')? DECIMAL_VALUE;
+	//    NORMAL_VALUE ('e' | 'E') ('+' | '-')? DECIMAL_VALUE;
 	public TerminalRule getEXP_VALUERule() {
 		return tEXP_VALUE;
 	}

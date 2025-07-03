@@ -54,6 +54,7 @@ public class SysMLOCParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getFeatureSpecializationAccess().getAlternatives_4_0(), "rule__FeatureSpecialization__Alternatives_4_0");
 			builder.put(grammarAccess.getNameAccess().getAlternatives(), "rule__Name__Alternatives");
 			builder.put(grammarAccess.getExpressionNameAccess().getAlternatives(), "rule__ExpressionName__Alternatives");
+			builder.put(grammarAccess.getExpressionAccess().getAlternatives_2(), "rule__Expression__Alternatives_2");
 			builder.put(grammarAccess.getVisibilityIndicatorAccess().getAlternatives(), "rule__VisibilityIndicator__Alternatives");
 			builder.put(grammarAccess.getPackageAccess().getGroup(), "rule__Package__Group__0");
 			builder.put(grammarAccess.getNamespaceImportAccess().getGroup(), "rule__NamespaceImport__Group__0");
@@ -97,7 +98,8 @@ public class SysMLOCParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getFeatureChainNameAccess().getGroup(), "rule__FeatureChainName__Group__0");
 			builder.put(grammarAccess.getFeatureChainNameAccess().getGroup_1(), "rule__FeatureChainName__Group_1__0");
 			builder.put(grammarAccess.getExpressionAccess().getGroup(), "rule__Expression__Group__0");
-			builder.put(grammarAccess.getExpressionAccess().getGroup_2(), "rule__Expression__Group_2__0");
+			builder.put(grammarAccess.getExpressionAccess().getGroup_2_0(), "rule__Expression__Group_2_0__0");
+			builder.put(grammarAccess.getExpressionAccess().getGroup_2_1(), "rule__Expression__Group_2_1__0");
 			builder.put(grammarAccess.getNamespaceAccess().getPackagesAssignment(), "rule__Namespace__PackagesAssignment");
 			builder.put(grammarAccess.getPackageAccess().getDeclaredNameAssignment_1(), "rule__Package__DeclaredNameAssignment_1");
 			builder.put(grammarAccess.getPackageAccess().getElementsAssignment_3(), "rule__Package__ElementsAssignment_3");

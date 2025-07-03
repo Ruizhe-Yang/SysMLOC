@@ -44,14 +44,14 @@ DefinitionElement:
 //	| EnumerationDefinition
 //	| OccurrenceDefinition
 //	| IndividualDefinition
-//	| ItemDefinition
+	| ItemDefinition
 //	| MetadataDefinition
 	| PartDefinition
-//	| ConnectionDefinition
+	| ConnectionDefinition
 //	| FlowConnectionDefinition
 //	| InterfaceDefinition
 //	| AllocationDefinition
-//	| PortDefinition
+	| PortDefinition
 //	| ActionDefinition
 //	| CalculationDefinition
 //	| StateDefinition
@@ -96,12 +96,12 @@ StructureUsageElement:
 //	| IndividualUsage
 //	| PortionUsage
 //	| EventOccurrenceUsage
-//	| ItemUsage
-	PartUsage
+	ItemUsage
+	| PartUsage
 //	| ViewUsage
 //	| RenderingUsage
-//	| PortUsage
-//	| ConnectionUsage
+	| PortUsage
+	| ConnectionUsage
 //	| InterfaceUsage
 //	| AllocationUsage
 //	| Message
@@ -141,36 +141,57 @@ Comment:
 ;
     
 AttributeDefinition:
-	'attribute'
-	'def'
-	declaredName=QualifiedName
-	(';' | '{' (elements+=BaseElement)* '}')
+	'attribute' 'def' Definition (';' | '{' (elements+=BaseElement)* '}')
+;
+
+AttributeUsage:
+    'attribute' declaredName=QualifiedName (';' | '{' (elements+=BaseElement)* '}')
 ;
 
 PartDefinition:
-    'part'
-	'def' 
-	declaredName=QualifiedName ';'
-	(';' | '{' (elements+=BaseElement)* '}')
-;
-   
-AttributeUsage:
-	'attribute'
-	declaredName=QualifiedName
-	(';' | '{' (elements+=BaseElement)* '}')
-;
-
-
-ActionUsage:
-   'action'
-   	declaredName=QualifiedName
-	(';' | '{' (elements+=BaseElement)* '}')
+    'part' 'def' Definition (';' | '{' (elements+=BaseElement)* '}')
 ;
 
 PartUsage:
-   'part'
-	Usage
-	(';' | '{' (elements+=BaseElement)* '}')
+    'part' Usage (';' | '{' (elements+=BaseElement)* '}')
+;
+
+PortDefinition:
+    'port' 'def' Definition (';' | '{' (elements+=BaseElement)* '}')
+;
+
+PortUsage:
+    'port' Usage (';' | '{' (elements+=BaseElement)* '}')
+;
+
+ConnectionDefinition:
+	'connection' 'def' Definition (';' | '{' (elements+=BaseElement)* '}')
+;
+
+ConnectionUsage:
+	'connection' UsageDeclaration FeatureValue? ( 'connect' ConnectorPart )?  (';' | '{' (elements+=BaseElement)* '}') 
+	| 'connect' ConnectorPart (';' | '{' (elements+=BaseElement)* '}')
+;
+
+fragment UsageDeclaration:
+	FeatureDeclaration?
+;
+
+fragment ConnectorPart:
+	connectorEnd += FeatureChainName 'to' connectorEnd += FeatureChainName 
+	| '(' connectorEnd += FeatureChainName ','  connectorEnd += FeatureChainName (',' connectorEnd += FeatureChainName)* ')'
+;
+
+ItemDefinition:
+    'item' 'def' Definition (';' | '{' (elements+=BaseElement)* '}')
+;
+
+ItemUsage:
+    'item' Usage (';' | '{' (elements+=BaseElement)* '}')
+;
+
+ActionUsage:
+    'action' declaredName=QualifiedName (';' | '{' (elements+=BaseElement)* '}')
 ;
 
 // enum
@@ -179,9 +200,12 @@ enum VisibilityIndicator:
 	public = 'public' | private = 'private'| protected = 'protected'
 ;
 
+fragment Definition:
+	(declaredName = Name)? ((':'|':>'|'specializes') superclassifiers+=FeatureChainName (',' superclassifiers+=FeatureChainName)*)?
+;
+
 fragment Usage:
-	FeatureDeclaration? 
-	FeatureValue? 
+	UsageDeclaration FeatureValue?
 ;
 
 fragment FeatureValue:
@@ -189,7 +213,7 @@ fragment FeatureValue:
 	| isInitial ?= ':='
 	| isDefault ?= 'default' ( '=' | isInitial ?= ':=' )?
 	)
-	ownedExpression += Expression
+	valuePart += Expression
 ;
 
 fragment FeatureDeclaration:
@@ -229,15 +253,15 @@ QualifiedName:
 ;
 
 FeatureChainName:
-	Name ('.' Name)*
+	'~'? Name ('.' Name)*
 ;
 
 ExpressionName:
-	FeatureChainName | EXP_VALUE
+	FeatureChainName | NORMAL_VALUE
 ;
 
 Expression:
-	OPERATOR* ExpressionName ((OPERATOR Expression)* | OPERATOR)
+	OPERATOR* ExpressionName (OPERATOR ExpressionName? | ',' ExpressionName)*
 ;
 
 /* TERMINALS */
@@ -245,13 +269,16 @@ Expression:
 terminal OPERATOR:
 	'if' | '??' | 'implies' | '|' | 'or' | 'xor' | '&' | 'and' | '==' | '!=' | '===' | '!==' | 'hastype' | 'istype' | '@'|
 	'@@' | 'as' | 'meta' | '<' | '>' | '<=' | '>=' | '+' | '-' | '*' | '/' | '%' | '..' | '**' | '^' | '~' | 'not' |
-	'true' | 'false' | ',' | '(' | ')';
+	'true' | 'false' | '(' | ')';
 	
 terminal DECIMAL_VALUE returns Ecore::EInt:
 	'0'..'9' ('0'..'9')*;
 
+terminal NORMAL_VALUE returns Ecore::EDouble:
+	DECIMAL_VALUE ('.' DECIMAL_VALUE)?;
+
 terminal EXP_VALUE:
-	DECIMAL_VALUE ('e' | 'E') ('+' | '-')? DECIMAL_VALUE;
+	NORMAL_VALUE (('e' | 'E') ('+' | '-')? DECIMAL_VALUE)?;
 
 terminal ID:
 	('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
