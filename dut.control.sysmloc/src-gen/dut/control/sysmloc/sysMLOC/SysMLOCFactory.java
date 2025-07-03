@@ -141,6 +141,15 @@ public interface SysMLOCFactory extends EFactory
   Comment createComment();
 
   /**
+   * Returns a new object of class '<em>Reference Usage</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Reference Usage</em>'.
+   * @generated
+   */
+  ReferenceUsage createReferenceUsage();
+
+  /**
    * Returns a new object of class '<em>Attribute Definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -148,15 +157,6 @@ public interface SysMLOCFactory extends EFactory
    * @generated
    */
   AttributeDefinition createAttributeDefinition();
-
-  /**
-   * Returns a new object of class '<em>Part Definition</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Part Definition</em>'.
-   * @generated
-   */
-  PartDefinition createPartDefinition();
 
   /**
    * Returns a new object of class '<em>Attribute Usage</em>'.
@@ -168,13 +168,31 @@ public interface SysMLOCFactory extends EFactory
   AttributeUsage createAttributeUsage();
 
   /**
-   * Returns a new object of class '<em>Action Usage</em>'.
+   * Returns a new object of class '<em>Item Definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Action Usage</em>'.
+   * @return a new object of class '<em>Item Definition</em>'.
    * @generated
    */
-  ActionUsage createActionUsage();
+  ItemDefinition createItemDefinition();
+
+  /**
+   * Returns a new object of class '<em>Item Usage</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Item Usage</em>'.
+   * @generated
+   */
+  ItemUsage createItemUsage();
+
+  /**
+   * Returns a new object of class '<em>Part Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Part Definition</em>'.
+   * @generated
+   */
+  PartDefinition createPartDefinition();
 
   /**
    * Returns a new object of class '<em>Part Usage</em>'.
@@ -186,6 +204,141 @@ public interface SysMLOCFactory extends EFactory
   PartUsage createPartUsage();
 
   /**
+   * Returns a new object of class '<em>Port Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Port Definition</em>'.
+   * @generated
+   */
+  PortDefinition createPortDefinition();
+
+  /**
+   * Returns a new object of class '<em>Port Usage</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Port Usage</em>'.
+   * @generated
+   */
+  PortUsage createPortUsage();
+
+  /**
+   * Returns a new object of class '<em>Connection Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Connection Definition</em>'.
+   * @generated
+   */
+  ConnectionDefinition createConnectionDefinition();
+
+  /**
+   * Returns a new object of class '<em>Connection Usage</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Connection Usage</em>'.
+   * @generated
+   */
+  ConnectionUsage createConnectionUsage();
+
+  /**
+   * Returns a new object of class '<em>Interface Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Interface Definition</em>'.
+   * @generated
+   */
+  InterfaceDefinition createInterfaceDefinition();
+
+  /**
+   * Returns a new object of class '<em>Interface Usage</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Interface Usage</em>'.
+   * @generated
+   */
+  InterfaceUsage createInterfaceUsage();
+
+  /**
+   * Returns a new object of class '<em>Flow Connection Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Flow Connection Definition</em>'.
+   * @generated
+   */
+  FlowConnectionDefinition createFlowConnectionDefinition();
+
+  /**
+   * Returns a new object of class '<em>Flow Connection Usage</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Flow Connection Usage</em>'.
+   * @generated
+   */
+  FlowConnectionUsage createFlowConnectionUsage();
+
+  /**
+   * Returns a new object of class '<em>Action Usage</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Action Usage</em>'.
+   * @generated
+   */
+  ActionUsage createActionUsage();
+
+  /**
+   * Returns a new object of class '<em>Occurrence Usage Prefix</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Occurrence Usage Prefix</em>'.
+   * @generated
+   */
+  OccurrenceUsagePrefix createOccurrenceUsagePrefix();
+
+  /**
+   * Returns a new object of class '<em>Ref Prefix</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Ref Prefix</em>'.
+   * @generated
+   */
+  RefPrefix createRefPrefix();
+
+  /**
+   * Returns a new object of class '<em>Basic Usage Prefix</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Basic Usage Prefix</em>'.
+   * @generated
+   */
+  BasicUsagePrefix createBasicUsagePrefix();
+
+  /**
+   * Returns a new object of class '<em>Connector Part</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Connector Part</em>'.
+   * @generated
+   */
+  ConnectorPart createConnectorPart();
+
+  /**
+   * Returns a new object of class '<em>Interface Part</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Interface Part</em>'.
+   * @generated
+   */
+  InterfacePart createInterfacePart();
+
+  /**
+   * Returns a new object of class '<em>Definition Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Definition Declaration</em>'.
+   * @generated
+   */
+  DefinitionDeclaration createDefinitionDeclaration();
+
+  /**
    * Returns a new object of class '<em>Usage</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -193,6 +346,15 @@ public interface SysMLOCFactory extends EFactory
    * @generated
    */
   Usage createUsage();
+
+  /**
+   * Returns a new object of class '<em>Usage Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Usage Declaration</em>'.
+   * @generated
+   */
+  UsageDeclaration createUsageDeclaration();
 
   /**
    * Returns a new object of class '<em>Feature Value</em>'.

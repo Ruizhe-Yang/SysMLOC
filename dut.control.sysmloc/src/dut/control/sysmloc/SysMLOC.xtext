@@ -44,14 +44,14 @@ DefinitionElement:
 //	| EnumerationDefinition
 //	| OccurrenceDefinition
 //	| IndividualDefinition
-//	| ItemDefinition
+	| ItemDefinition
 //	| MetadataDefinition
 	| PartDefinition
-//	| ConnectionDefinition
-//	| FlowConnectionDefinition
-//	| InterfaceDefinition
+	| ConnectionDefinition
+	| FlowConnectionDefinition
+	| InterfaceDefinition
 //	| AllocationDefinition
-//	| PortDefinition
+	| PortDefinition
 //	| ActionDefinition
 //	| CalculationDefinition
 //	| StateDefinition
@@ -76,10 +76,8 @@ UsageElement:
 ;
 
 NonOccurrenceUsageElement:
+//	ReferenceUsage
 	AttributeUsage
-//	DefaultReferenceUsage
-//	| ReferenceUsage
-//	| AttributeUsage
 //	| EnumerationUsage
 //	| BindingConnectorAsUsage
 //	| SuccessionAsUsage
@@ -96,16 +94,16 @@ StructureUsageElement:
 //	| IndividualUsage
 //	| PortionUsage
 //	| EventOccurrenceUsage
-//	| ItemUsage
-	PartUsage
+	ItemUsage
+	| PartUsage
 //	| ViewUsage
 //	| RenderingUsage
-//	| PortUsage
-//	| ConnectionUsage
-//	| InterfaceUsage
+	| PortUsage
+	| ConnectionUsage
+	| InterfaceUsage
 //	| AllocationUsage
 //	| Message
-//	| FlowConnectionUsage
+	| FlowConnectionUsage
 //	| SuccessionFlowConnectionUsage
 ;
 //
@@ -130,47 +128,88 @@ BehaviorUsageElement:
 
 
 NamespaceImport:
-    visibility=VisibilityIndicator 
-    'import'
-    declaredName=QualifiedName
-    ';';
+    visibility=VisibilityIndicator 'import' declaredName=QualifiedName '::' ( '*' | isRecursive ?= '**' )? ';'
+;
     
 Comment:
-    'doc' 
+    'doc'? 
     body=REGULAR_COMMENT
+;
+
+ReferenceUsage:
+    OccurrenceUsagePrefix Usage (';' | '{' (elements+=BaseElement)* '}')
 ;
     
 AttributeDefinition:
-	'attribute'
-	'def'
-	declaredName=QualifiedName
-	(';' | '{' (elements+=BaseElement)* '}')
+	'attribute' 'def' DefinitionDeclaration (';' | '{' (elements+=BaseElement)* '}')
+;
+
+AttributeUsage:
+    'attribute' Usage (';' | '{' (elements+=BaseElement)* '}')
+;
+
+ItemDefinition:
+    'item' 'def' DefinitionDeclaration (';' | '{' (elements+=BaseElement)* '}')
+;
+
+ItemUsage:
+    'item' Usage (';' | '{' (elements+=BaseElement)* '}')
 ;
 
 PartDefinition:
-    'part'
-	'def' 
-	declaredName=QualifiedName ';'
-	(';' | '{' (elements+=BaseElement)* '}')
-;
-   
-AttributeUsage:
-	'attribute'
-	declaredName=QualifiedName
-	(';' | '{' (elements+=BaseElement)* '}')
-;
-
-
-ActionUsage:
-   'action'
-   	declaredName=QualifiedName
-	(';' | '{' (elements+=BaseElement)* '}')
+    'part' 'def' DefinitionDeclaration (';' | '{' (elements+=BaseElement)* '}')
 ;
 
 PartUsage:
-   'part'
-	Usage
-	(';' | '{' (elements+=BaseElement)* '}')
+    OccurrenceUsagePrefix 'part' Usage (';' | '{' (elements+=BaseElement)* '}')
+;
+
+PortDefinition:
+    'port' 'def' DefinitionDeclaration (';' | '{' (elements+=BaseElement)* '}')
+;
+
+PortUsage:
+    OccurrenceUsagePrefix 'port'? Usage (';' | '{' (elements+=BaseElement)* '}')
+;
+
+ConnectionDefinition:
+	'connection' 'def' DefinitionDeclaration (';' | '{' (elements+=BaseElement)* '}')
+;
+
+ConnectionUsage:
+	(OccurrenceUsagePrefix 'connection' UsageDeclaration FeatureValue? ( 'connect' ConnectorPart )?
+	| OccurrenceUsagePrefix 'connect' ConnectorPart) (';' | '{' (elements+=BaseElement)* '}')
+;
+
+InterfaceDefinition:
+	'interface' 'def' DefinitionDeclaration (';' | '{' (elements += BaseElement)* '}')
+;
+
+//InterfaceBody:
+//	InterfaceEnd | BaseElement
+//;
+//
+//InterfaceEnd returns PortUsage:
+//	isEnd ?= 'end' Usage
+//;
+
+InterfaceUsage:
+	OccurrenceUsagePrefix 'interface' (UsageDeclaration ('connect' InterfacePart )? | InterfacePart) (';' | '{' (elements+=BaseElement)* '}')
+;
+
+FlowConnectionDefinition:
+	'flow' 'def' DefinitionDeclaration (';' | '{' (elements+=BaseElement)* '}')
+;
+
+FlowConnectionUsage:
+	OccurrenceUsagePrefix 'flow' UsageDeclaration FeatureValue?
+	( 'of' ItemFeature += Name )?
+    ( 'from'? FlowEnd += FeatureChainName 'to' FlowEnd += FeatureChainName )?
+    (';' | '{' (elements+=BaseElement)* '}')
+;
+
+ActionUsage:
+    OccurrenceUsagePrefix 'action' declaredName=QualifiedName (';' | '{' (elements+=BaseElement)* '}')
 ;
 
 // enum
@@ -179,9 +218,53 @@ enum VisibilityIndicator:
 	public = 'public' | private = 'private'| protected = 'protected'
 ;
 
+enum FeatureDirection:
+	in = 'in' | out = 'out' | inout = 'inout'
+;
+
+enum PortionKind:
+	snapshot = 'snapshot' | timeslice = 'timeslice'
+;
+
+fragment OccurrenceUsagePrefix:
+	isEnd ?= 'end'
+	| BasicUsagePrefix
+//	  ( isIndividual ?= 'individual' )?
+//	  ( portionKind = PortionKind )?
+;
+
+fragment RefPrefix:
+    ( direction = FeatureDirection )?
+//    ( isAbstract ?= 'abstract' | isVariation ?= 'variation')?
+//    ( isReadOnly ?= 'readonly' )?
+//    ( isDerived ?= 'derived' )?
+;
+
+fragment BasicUsagePrefix:
+	RefPrefix
+	( isReference ?= 'ref' )?
+;
+
+fragment ConnectorPart:
+	connectorEnd += FeatureChainName 'to' connectorEnd += FeatureChainName 
+	| '(' connectorEnd += FeatureChainName ','  connectorEnd += FeatureChainName (',' connectorEnd += FeatureChainName)* ')'
+;
+
+fragment InterfacePart:
+	InterfaceEnd += FeatureChainName 'to' InterfaceEnd += FeatureChainName 
+	| '(' InterfaceEnd += FeatureChainName ','  InterfaceEnd += FeatureChainName (',' InterfaceEnd += FeatureChainName)* ')'
+;
+
+fragment DefinitionDeclaration:
+	(declaredName = Name)? ((':'|':>'|'specializes') superclassifiers+=FeatureChainName (',' superclassifiers+=FeatureChainName)*)?
+;
+
 fragment Usage:
-	FeatureDeclaration? 
-	FeatureValue? 
+	UsageDeclaration FeatureValue?
+;
+
+fragment UsageDeclaration:
+	FeatureDeclaration?
 ;
 
 fragment FeatureValue:
@@ -189,7 +272,7 @@ fragment FeatureValue:
 	| isInitial ?= ':='
 	| isDefault ?= 'default' ( '=' | isInitial ?= ':=' )?
 	)
-	ownedExpression += Expression
+	valuePart += Expression
 ;
 
 fragment FeatureDeclaration:
@@ -229,15 +312,19 @@ QualifiedName:
 ;
 
 FeatureChainName:
-	Name ('.' Name)*
+	'~'? QualifiedName ('.' Name)*
 ;
 
 ExpressionName:
-	FeatureChainName | EXP_VALUE
+	FeatureChainName | NORMAL_VALUE
 ;
 
 Expression:
-	OPERATOR* ExpressionName ((OPERATOR Expression)* | OPERATOR)
+	OPERATOR* ExpressionName (OPERATOR ExpressionName?)* | '(' SequenceExpression ')'
+;
+
+SequenceExpression:
+	Expression (',' Expression)*
 ;
 
 /* TERMINALS */
@@ -245,13 +332,16 @@ Expression:
 terminal OPERATOR:
 	'if' | '??' | 'implies' | '|' | 'or' | 'xor' | '&' | 'and' | '==' | '!=' | '===' | '!==' | 'hastype' | 'istype' | '@'|
 	'@@' | 'as' | 'meta' | '<' | '>' | '<=' | '>=' | '+' | '-' | '*' | '/' | '%' | '..' | '**' | '^' | '~' | 'not' |
-	'true' | 'false' | ',' | '(' | ')';
+	'true' | 'false';
 	
 terminal DECIMAL_VALUE returns Ecore::EInt:
 	'0'..'9' ('0'..'9')*;
 
+terminal NORMAL_VALUE returns Ecore::EDouble:
+	DECIMAL_VALUE ('.' DECIMAL_VALUE)?;
+
 terminal EXP_VALUE:
-	DECIMAL_VALUE ('e' | 'E') ('+' | '-')? DECIMAL_VALUE;
+	NORMAL_VALUE (('e' | 'E') ('+' | '-')? DECIMAL_VALUE)?;
 
 terminal ID:
 	('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;

@@ -3,6 +3,7 @@
  */
 package dut.control.sysmloc.sysMLOC.impl;
 
+import dut.control.sysmloc.sysMLOC.BaseElement;
 import dut.control.sysmloc.sysMLOC.FeatureValue;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 import dut.control.sysmloc.sysMLOC.Usage;
@@ -10,14 +11,18 @@ import dut.control.sysmloc.sysMLOC.Usage;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,12 +34,13 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.UsageImpl#isIsInitial <em>Is Initial</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.UsageImpl#isIsDefault <em>Is Default</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.UsageImpl#getOwnedExpression <em>Owned Expression</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.UsageImpl#getValuePart <em>Value Part</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.UsageImpl#getElements <em>Elements</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class UsageImpl extends FeatureDeclarationImpl implements Usage
+public class UsageImpl extends UsageDeclarationImpl implements Usage
 {
   /**
    * The default value of the '{@link #isIsInitial() <em>Is Initial</em>}' attribute.
@@ -77,14 +83,24 @@ public class UsageImpl extends FeatureDeclarationImpl implements Usage
   protected boolean isDefault = IS_DEFAULT_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getOwnedExpression() <em>Owned Expression</em>}' attribute list.
+   * The cached value of the '{@link #getValuePart() <em>Value Part</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getOwnedExpression()
+   * @see #getValuePart()
    * @generated
    * @ordered
    */
-  protected EList<String> ownedExpression;
+  protected EList<String> valuePart;
+
+  /**
+   * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getElements()
+   * @generated
+   * @ordered
+   */
+  protected EList<BaseElement> elements;
 
   /**
    * <!-- begin-user-doc -->
@@ -163,13 +179,44 @@ public class UsageImpl extends FeatureDeclarationImpl implements Usage
    * @generated
    */
   @Override
-  public EList<String> getOwnedExpression()
+  public EList<String> getValuePart()
   {
-    if (ownedExpression == null)
+    if (valuePart == null)
     {
-      ownedExpression = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.USAGE__OWNED_EXPRESSION);
+      valuePart = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.USAGE__VALUE_PART);
     }
-    return ownedExpression;
+    return valuePart;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<BaseElement> getElements()
+  {
+    if (elements == null)
+    {
+      elements = new EObjectContainmentEList<BaseElement>(BaseElement.class, this, SysMLOCPackage.USAGE__ELEMENTS);
+    }
+    return elements;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case SysMLOCPackage.USAGE__ELEMENTS:
+        return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -186,8 +233,10 @@ public class UsageImpl extends FeatureDeclarationImpl implements Usage
         return isIsInitial();
       case SysMLOCPackage.USAGE__IS_DEFAULT:
         return isIsDefault();
-      case SysMLOCPackage.USAGE__OWNED_EXPRESSION:
-        return getOwnedExpression();
+      case SysMLOCPackage.USAGE__VALUE_PART:
+        return getValuePart();
+      case SysMLOCPackage.USAGE__ELEMENTS:
+        return getElements();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -209,9 +258,13 @@ public class UsageImpl extends FeatureDeclarationImpl implements Usage
       case SysMLOCPackage.USAGE__IS_DEFAULT:
         setIsDefault((Boolean)newValue);
         return;
-      case SysMLOCPackage.USAGE__OWNED_EXPRESSION:
-        getOwnedExpression().clear();
-        getOwnedExpression().addAll((Collection<? extends String>)newValue);
+      case SysMLOCPackage.USAGE__VALUE_PART:
+        getValuePart().clear();
+        getValuePart().addAll((Collection<? extends String>)newValue);
+        return;
+      case SysMLOCPackage.USAGE__ELEMENTS:
+        getElements().clear();
+        getElements().addAll((Collection<? extends BaseElement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -233,8 +286,11 @@ public class UsageImpl extends FeatureDeclarationImpl implements Usage
       case SysMLOCPackage.USAGE__IS_DEFAULT:
         setIsDefault(IS_DEFAULT_EDEFAULT);
         return;
-      case SysMLOCPackage.USAGE__OWNED_EXPRESSION:
-        getOwnedExpression().clear();
+      case SysMLOCPackage.USAGE__VALUE_PART:
+        getValuePart().clear();
+        return;
+      case SysMLOCPackage.USAGE__ELEMENTS:
+        getElements().clear();
         return;
     }
     super.eUnset(featureID);
@@ -254,8 +310,10 @@ public class UsageImpl extends FeatureDeclarationImpl implements Usage
         return isInitial != IS_INITIAL_EDEFAULT;
       case SysMLOCPackage.USAGE__IS_DEFAULT:
         return isDefault != IS_DEFAULT_EDEFAULT;
-      case SysMLOCPackage.USAGE__OWNED_EXPRESSION:
-        return ownedExpression != null && !ownedExpression.isEmpty();
+      case SysMLOCPackage.USAGE__VALUE_PART:
+        return valuePart != null && !valuePart.isEmpty();
+      case SysMLOCPackage.USAGE__ELEMENTS:
+        return elements != null && !elements.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -274,7 +332,7 @@ public class UsageImpl extends FeatureDeclarationImpl implements Usage
       {
         case SysMLOCPackage.USAGE__IS_INITIAL: return SysMLOCPackage.FEATURE_VALUE__IS_INITIAL;
         case SysMLOCPackage.USAGE__IS_DEFAULT: return SysMLOCPackage.FEATURE_VALUE__IS_DEFAULT;
-        case SysMLOCPackage.USAGE__OWNED_EXPRESSION: return SysMLOCPackage.FEATURE_VALUE__OWNED_EXPRESSION;
+        case SysMLOCPackage.USAGE__VALUE_PART: return SysMLOCPackage.FEATURE_VALUE__VALUE_PART;
         default: return -1;
       }
     }
@@ -295,7 +353,7 @@ public class UsageImpl extends FeatureDeclarationImpl implements Usage
       {
         case SysMLOCPackage.FEATURE_VALUE__IS_INITIAL: return SysMLOCPackage.USAGE__IS_INITIAL;
         case SysMLOCPackage.FEATURE_VALUE__IS_DEFAULT: return SysMLOCPackage.USAGE__IS_DEFAULT;
-        case SysMLOCPackage.FEATURE_VALUE__OWNED_EXPRESSION: return SysMLOCPackage.USAGE__OWNED_EXPRESSION;
+        case SysMLOCPackage.FEATURE_VALUE__VALUE_PART: return SysMLOCPackage.USAGE__VALUE_PART;
         default: return -1;
       }
     }
@@ -317,8 +375,8 @@ public class UsageImpl extends FeatureDeclarationImpl implements Usage
     result.append(isInitial);
     result.append(", isDefault: ");
     result.append(isDefault);
-    result.append(", ownedExpression: ");
-    result.append(ownedExpression);
+    result.append(", valuePart: ");
+    result.append(valuePart);
     result.append(')');
     return result.toString();
   }

@@ -4,14 +4,19 @@
 package dut.control.sysmloc.sysMLOC.impl;
 
 import dut.control.sysmloc.sysMLOC.BaseElement;
+import dut.control.sysmloc.sysMLOC.BasicUsagePrefix;
 import dut.control.sysmloc.sysMLOC.FeatureDeclaration;
+import dut.control.sysmloc.sysMLOC.FeatureDirection;
 import dut.control.sysmloc.sysMLOC.FeatureSpecialization;
 import dut.control.sysmloc.sysMLOC.FeatureSpecializationPart;
 import dut.control.sysmloc.sysMLOC.FeatureValue;
 import dut.control.sysmloc.sysMLOC.MultiplicityPart;
+import dut.control.sysmloc.sysMLOC.OccurrenceUsagePrefix;
 import dut.control.sysmloc.sysMLOC.PartUsage;
+import dut.control.sysmloc.sysMLOC.RefPrefix;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 import dut.control.sysmloc.sysMLOC.Usage;
+import dut.control.sysmloc.sysMLOC.UsageDeclaration;
 
 import java.util.Collection;
 
@@ -37,6 +42,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PartUsageImpl#getDirection <em>Direction</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PartUsageImpl#isIsReference <em>Is Reference</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PartUsageImpl#isIsEnd <em>Is End</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PartUsageImpl#getTypings <em>Typings</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PartUsageImpl#getSubsetting <em>Subsetting</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PartUsageImpl#getReferences <em>References</em>}</li>
@@ -48,7 +56,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PartUsageImpl#getDeclaredName <em>Declared Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PartUsageImpl#isIsInitial <em>Is Initial</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PartUsageImpl#isIsDefault <em>Is Default</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PartUsageImpl#getOwnedExpression <em>Owned Expression</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PartUsageImpl#getValuePart <em>Value Part</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PartUsageImpl#getElements <em>Elements</em>}</li>
  * </ul>
  *
@@ -56,6 +64,66 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class PartUsageImpl extends StructureUsageElementImpl implements PartUsage
 {
+  /**
+   * The default value of the '{@link #getDirection() <em>Direction</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDirection()
+   * @generated
+   * @ordered
+   */
+  protected static final FeatureDirection DIRECTION_EDEFAULT = FeatureDirection.IN;
+
+  /**
+   * The cached value of the '{@link #getDirection() <em>Direction</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDirection()
+   * @generated
+   * @ordered
+   */
+  protected FeatureDirection direction = DIRECTION_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsReference() <em>Is Reference</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsReference()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_REFERENCE_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsReference() <em>Is Reference</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsReference()
+   * @generated
+   * @ordered
+   */
+  protected boolean isReference = IS_REFERENCE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsEnd() <em>Is End</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsEnd()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_END_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsEnd() <em>Is End</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsEnd()
+   * @generated
+   * @ordered
+   */
+  protected boolean isEnd = IS_END_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getTypings() <em>Typings</em>}' attribute list.
    * <!-- begin-user-doc -->
@@ -217,14 +285,14 @@ public class PartUsageImpl extends StructureUsageElementImpl implements PartUsag
   protected boolean isDefault = IS_DEFAULT_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getOwnedExpression() <em>Owned Expression</em>}' attribute list.
+   * The cached value of the '{@link #getValuePart() <em>Value Part</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getOwnedExpression()
+   * @see #getValuePart()
    * @generated
    * @ordered
    */
-  protected EList<String> ownedExpression;
+  protected EList<String> valuePart;
 
   /**
    * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
@@ -255,6 +323,81 @@ public class PartUsageImpl extends StructureUsageElementImpl implements PartUsag
   protected EClass eStaticClass()
   {
     return SysMLOCPackage.Literals.PART_USAGE;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public FeatureDirection getDirection()
+  {
+    return direction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDirection(FeatureDirection newDirection)
+  {
+    FeatureDirection oldDirection = direction;
+    direction = newDirection == null ? DIRECTION_EDEFAULT : newDirection;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.PART_USAGE__DIRECTION, oldDirection, direction));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsReference()
+  {
+    return isReference;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsReference(boolean newIsReference)
+  {
+    boolean oldIsReference = isReference;
+    isReference = newIsReference;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.PART_USAGE__IS_REFERENCE, oldIsReference, isReference));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsEnd()
+  {
+    return isEnd;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsEnd(boolean newIsEnd)
+  {
+    boolean oldIsEnd = isEnd;
+    isEnd = newIsEnd;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.PART_USAGE__IS_END, oldIsEnd, isEnd));
   }
 
   /**
@@ -478,13 +621,13 @@ public class PartUsageImpl extends StructureUsageElementImpl implements PartUsag
    * @generated
    */
   @Override
-  public EList<String> getOwnedExpression()
+  public EList<String> getValuePart()
   {
-    if (ownedExpression == null)
+    if (valuePart == null)
     {
-      ownedExpression = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.PART_USAGE__OWNED_EXPRESSION);
+      valuePart = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.PART_USAGE__VALUE_PART);
     }
-    return ownedExpression;
+    return valuePart;
   }
 
   /**
@@ -528,6 +671,12 @@ public class PartUsageImpl extends StructureUsageElementImpl implements PartUsag
   {
     switch (featureID)
     {
+      case SysMLOCPackage.PART_USAGE__DIRECTION:
+        return getDirection();
+      case SysMLOCPackage.PART_USAGE__IS_REFERENCE:
+        return isIsReference();
+      case SysMLOCPackage.PART_USAGE__IS_END:
+        return isIsEnd();
       case SysMLOCPackage.PART_USAGE__TYPINGS:
         return getTypings();
       case SysMLOCPackage.PART_USAGE__SUBSETTING:
@@ -550,8 +699,8 @@ public class PartUsageImpl extends StructureUsageElementImpl implements PartUsag
         return isIsInitial();
       case SysMLOCPackage.PART_USAGE__IS_DEFAULT:
         return isIsDefault();
-      case SysMLOCPackage.PART_USAGE__OWNED_EXPRESSION:
-        return getOwnedExpression();
+      case SysMLOCPackage.PART_USAGE__VALUE_PART:
+        return getValuePart();
       case SysMLOCPackage.PART_USAGE__ELEMENTS:
         return getElements();
     }
@@ -569,6 +718,15 @@ public class PartUsageImpl extends StructureUsageElementImpl implements PartUsag
   {
     switch (featureID)
     {
+      case SysMLOCPackage.PART_USAGE__DIRECTION:
+        setDirection((FeatureDirection)newValue);
+        return;
+      case SysMLOCPackage.PART_USAGE__IS_REFERENCE:
+        setIsReference((Boolean)newValue);
+        return;
+      case SysMLOCPackage.PART_USAGE__IS_END:
+        setIsEnd((Boolean)newValue);
+        return;
       case SysMLOCPackage.PART_USAGE__TYPINGS:
         getTypings().clear();
         getTypings().addAll((Collection<? extends String>)newValue);
@@ -608,9 +766,9 @@ public class PartUsageImpl extends StructureUsageElementImpl implements PartUsag
       case SysMLOCPackage.PART_USAGE__IS_DEFAULT:
         setIsDefault((Boolean)newValue);
         return;
-      case SysMLOCPackage.PART_USAGE__OWNED_EXPRESSION:
-        getOwnedExpression().clear();
-        getOwnedExpression().addAll((Collection<? extends String>)newValue);
+      case SysMLOCPackage.PART_USAGE__VALUE_PART:
+        getValuePart().clear();
+        getValuePart().addAll((Collection<? extends String>)newValue);
         return;
       case SysMLOCPackage.PART_USAGE__ELEMENTS:
         getElements().clear();
@@ -630,6 +788,15 @@ public class PartUsageImpl extends StructureUsageElementImpl implements PartUsag
   {
     switch (featureID)
     {
+      case SysMLOCPackage.PART_USAGE__DIRECTION:
+        setDirection(DIRECTION_EDEFAULT);
+        return;
+      case SysMLOCPackage.PART_USAGE__IS_REFERENCE:
+        setIsReference(IS_REFERENCE_EDEFAULT);
+        return;
+      case SysMLOCPackage.PART_USAGE__IS_END:
+        setIsEnd(IS_END_EDEFAULT);
+        return;
       case SysMLOCPackage.PART_USAGE__TYPINGS:
         getTypings().clear();
         return;
@@ -663,8 +830,8 @@ public class PartUsageImpl extends StructureUsageElementImpl implements PartUsag
       case SysMLOCPackage.PART_USAGE__IS_DEFAULT:
         setIsDefault(IS_DEFAULT_EDEFAULT);
         return;
-      case SysMLOCPackage.PART_USAGE__OWNED_EXPRESSION:
-        getOwnedExpression().clear();
+      case SysMLOCPackage.PART_USAGE__VALUE_PART:
+        getValuePart().clear();
         return;
       case SysMLOCPackage.PART_USAGE__ELEMENTS:
         getElements().clear();
@@ -683,6 +850,12 @@ public class PartUsageImpl extends StructureUsageElementImpl implements PartUsag
   {
     switch (featureID)
     {
+      case SysMLOCPackage.PART_USAGE__DIRECTION:
+        return direction != DIRECTION_EDEFAULT;
+      case SysMLOCPackage.PART_USAGE__IS_REFERENCE:
+        return isReference != IS_REFERENCE_EDEFAULT;
+      case SysMLOCPackage.PART_USAGE__IS_END:
+        return isEnd != IS_END_EDEFAULT;
       case SysMLOCPackage.PART_USAGE__TYPINGS:
         return typings != null && !typings.isEmpty();
       case SysMLOCPackage.PART_USAGE__SUBSETTING:
@@ -705,8 +878,8 @@ public class PartUsageImpl extends StructureUsageElementImpl implements PartUsag
         return isInitial != IS_INITIAL_EDEFAULT;
       case SysMLOCPackage.PART_USAGE__IS_DEFAULT:
         return isDefault != IS_DEFAULT_EDEFAULT;
-      case SysMLOCPackage.PART_USAGE__OWNED_EXPRESSION:
-        return ownedExpression != null && !ownedExpression.isEmpty();
+      case SysMLOCPackage.PART_USAGE__VALUE_PART:
+        return valuePart != null && !valuePart.isEmpty();
       case SysMLOCPackage.PART_USAGE__ELEMENTS:
         return elements != null && !elements.isEmpty();
     }
@@ -721,6 +894,30 @@ public class PartUsageImpl extends StructureUsageElementImpl implements PartUsag
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
   {
+    if (baseClass == RefPrefix.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.PART_USAGE__DIRECTION: return SysMLOCPackage.REF_PREFIX__DIRECTION;
+        default: return -1;
+      }
+    }
+    if (baseClass == BasicUsagePrefix.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.PART_USAGE__IS_REFERENCE: return SysMLOCPackage.BASIC_USAGE_PREFIX__IS_REFERENCE;
+        default: return -1;
+      }
+    }
+    if (baseClass == OccurrenceUsagePrefix.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.PART_USAGE__IS_END: return SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_END;
+        default: return -1;
+      }
+    }
     if (baseClass == FeatureSpecialization.class)
     {
       switch (derivedFeatureID)
@@ -758,13 +955,20 @@ public class PartUsageImpl extends StructureUsageElementImpl implements PartUsag
         default: return -1;
       }
     }
+    if (baseClass == UsageDeclaration.class)
+    {
+      switch (derivedFeatureID)
+      {
+        default: return -1;
+      }
+    }
     if (baseClass == FeatureValue.class)
     {
       switch (derivedFeatureID)
       {
         case SysMLOCPackage.PART_USAGE__IS_INITIAL: return SysMLOCPackage.FEATURE_VALUE__IS_INITIAL;
         case SysMLOCPackage.PART_USAGE__IS_DEFAULT: return SysMLOCPackage.FEATURE_VALUE__IS_DEFAULT;
-        case SysMLOCPackage.PART_USAGE__OWNED_EXPRESSION: return SysMLOCPackage.FEATURE_VALUE__OWNED_EXPRESSION;
+        case SysMLOCPackage.PART_USAGE__VALUE_PART: return SysMLOCPackage.FEATURE_VALUE__VALUE_PART;
         default: return -1;
       }
     }
@@ -772,6 +976,7 @@ public class PartUsageImpl extends StructureUsageElementImpl implements PartUsag
     {
       switch (derivedFeatureID)
       {
+        case SysMLOCPackage.PART_USAGE__ELEMENTS: return SysMLOCPackage.USAGE__ELEMENTS;
         default: return -1;
       }
     }
@@ -786,6 +991,30 @@ public class PartUsageImpl extends StructureUsageElementImpl implements PartUsag
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
   {
+    if (baseClass == RefPrefix.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.REF_PREFIX__DIRECTION: return SysMLOCPackage.PART_USAGE__DIRECTION;
+        default: return -1;
+      }
+    }
+    if (baseClass == BasicUsagePrefix.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.BASIC_USAGE_PREFIX__IS_REFERENCE: return SysMLOCPackage.PART_USAGE__IS_REFERENCE;
+        default: return -1;
+      }
+    }
+    if (baseClass == OccurrenceUsagePrefix.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_END: return SysMLOCPackage.PART_USAGE__IS_END;
+        default: return -1;
+      }
+    }
     if (baseClass == FeatureSpecialization.class)
     {
       switch (baseFeatureID)
@@ -823,13 +1052,20 @@ public class PartUsageImpl extends StructureUsageElementImpl implements PartUsag
         default: return -1;
       }
     }
+    if (baseClass == UsageDeclaration.class)
+    {
+      switch (baseFeatureID)
+      {
+        default: return -1;
+      }
+    }
     if (baseClass == FeatureValue.class)
     {
       switch (baseFeatureID)
       {
         case SysMLOCPackage.FEATURE_VALUE__IS_INITIAL: return SysMLOCPackage.PART_USAGE__IS_INITIAL;
         case SysMLOCPackage.FEATURE_VALUE__IS_DEFAULT: return SysMLOCPackage.PART_USAGE__IS_DEFAULT;
-        case SysMLOCPackage.FEATURE_VALUE__OWNED_EXPRESSION: return SysMLOCPackage.PART_USAGE__OWNED_EXPRESSION;
+        case SysMLOCPackage.FEATURE_VALUE__VALUE_PART: return SysMLOCPackage.PART_USAGE__VALUE_PART;
         default: return -1;
       }
     }
@@ -837,6 +1073,7 @@ public class PartUsageImpl extends StructureUsageElementImpl implements PartUsag
     {
       switch (baseFeatureID)
       {
+        case SysMLOCPackage.USAGE__ELEMENTS: return SysMLOCPackage.PART_USAGE__ELEMENTS;
         default: return -1;
       }
     }
@@ -854,7 +1091,13 @@ public class PartUsageImpl extends StructureUsageElementImpl implements PartUsag
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (typings: ");
+    result.append(" (direction: ");
+    result.append(direction);
+    result.append(", isReference: ");
+    result.append(isReference);
+    result.append(", isEnd: ");
+    result.append(isEnd);
+    result.append(", typings: ");
     result.append(typings);
     result.append(", subsetting: ");
     result.append(subsetting);
@@ -876,8 +1119,8 @@ public class PartUsageImpl extends StructureUsageElementImpl implements PartUsag
     result.append(isInitial);
     result.append(", isDefault: ");
     result.append(isDefault);
-    result.append(", ownedExpression: ");
-    result.append(ownedExpression);
+    result.append(", valuePart: ");
+    result.append(valuePart);
     result.append(')');
     return result.toString();
   }

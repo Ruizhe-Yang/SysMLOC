@@ -3,20 +3,12 @@
  */
 package dut.control.sysmloc.sysMLOC;
 
-import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Definition Element</b></em>'.
  * <!-- end-user-doc -->
  *
- * <p>
- * The following features are supported:
- * </p>
- * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.DefinitionElement#getDeclaredName <em>Declared Name</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.DefinitionElement#getElements <em>Elements</em>}</li>
- * </ul>
  *
  * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getDefinitionElement()
  * @model
@@ -24,38 +16,4 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface DefinitionElement extends BaseElement
 {
-  /**
-   * Returns the value of the '<em><b>Declared Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Declared Name</em>' attribute.
-   * @see #setDeclaredName(String)
-   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getDefinitionElement_DeclaredName()
-   * @model
-   * @generated
-   */
-  String getDeclaredName();
-
-  /**
-   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.DefinitionElement#getDeclaredName <em>Declared Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Declared Name</em>' attribute.
-   * @see #getDeclaredName()
-   * @generated
-   */
-  void setDeclaredName(String value);
-
-  /**
-   * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
-   * The list contents are of type {@link dut.control.sysmloc.sysMLOC.BaseElement}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Elements</em>' containment reference list.
-   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getDefinitionElement_Elements()
-   * @model containment="true"
-   * @generated
-   */
-  EList<BaseElement> getElements();
-
 } // DefinitionElement

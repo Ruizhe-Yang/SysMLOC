@@ -5,6 +5,10 @@ package dut.control.sysmloc.sysMLOC.impl;
 
 import dut.control.sysmloc.sysMLOC.ActionUsage;
 import dut.control.sysmloc.sysMLOC.BaseElement;
+import dut.control.sysmloc.sysMLOC.BasicUsagePrefix;
+import dut.control.sysmloc.sysMLOC.FeatureDirection;
+import dut.control.sysmloc.sysMLOC.OccurrenceUsagePrefix;
+import dut.control.sysmloc.sysMLOC.RefPrefix;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 
 import java.util.Collection;
@@ -30,6 +34,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ActionUsageImpl#getDirection <em>Direction</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ActionUsageImpl#isIsReference <em>Is Reference</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ActionUsageImpl#isIsEnd <em>Is End</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ActionUsageImpl#getDeclaredName <em>Declared Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ActionUsageImpl#getElements <em>Elements</em>}</li>
  * </ul>
@@ -38,6 +45,66 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class ActionUsageImpl extends BehaviorUsageElementImpl implements ActionUsage
 {
+  /**
+   * The default value of the '{@link #getDirection() <em>Direction</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDirection()
+   * @generated
+   * @ordered
+   */
+  protected static final FeatureDirection DIRECTION_EDEFAULT = FeatureDirection.IN;
+
+  /**
+   * The cached value of the '{@link #getDirection() <em>Direction</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDirection()
+   * @generated
+   * @ordered
+   */
+  protected FeatureDirection direction = DIRECTION_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsReference() <em>Is Reference</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsReference()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_REFERENCE_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsReference() <em>Is Reference</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsReference()
+   * @generated
+   * @ordered
+   */
+  protected boolean isReference = IS_REFERENCE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsEnd() <em>Is End</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsEnd()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_END_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsEnd() <em>Is End</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsEnd()
+   * @generated
+   * @ordered
+   */
+  protected boolean isEnd = IS_END_EDEFAULT;
+
   /**
    * The default value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -87,6 +154,81 @@ public class ActionUsageImpl extends BehaviorUsageElementImpl implements ActionU
   protected EClass eStaticClass()
   {
     return SysMLOCPackage.Literals.ACTION_USAGE;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public FeatureDirection getDirection()
+  {
+    return direction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDirection(FeatureDirection newDirection)
+  {
+    FeatureDirection oldDirection = direction;
+    direction = newDirection == null ? DIRECTION_EDEFAULT : newDirection;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ACTION_USAGE__DIRECTION, oldDirection, direction));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsReference()
+  {
+    return isReference;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsReference(boolean newIsReference)
+  {
+    boolean oldIsReference = isReference;
+    isReference = newIsReference;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ACTION_USAGE__IS_REFERENCE, oldIsReference, isReference));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsEnd()
+  {
+    return isEnd;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsEnd(boolean newIsEnd)
+  {
+    boolean oldIsEnd = isEnd;
+    isEnd = newIsEnd;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ACTION_USAGE__IS_END, oldIsEnd, isEnd));
   }
 
   /**
@@ -155,6 +297,12 @@ public class ActionUsageImpl extends BehaviorUsageElementImpl implements ActionU
   {
     switch (featureID)
     {
+      case SysMLOCPackage.ACTION_USAGE__DIRECTION:
+        return getDirection();
+      case SysMLOCPackage.ACTION_USAGE__IS_REFERENCE:
+        return isIsReference();
+      case SysMLOCPackage.ACTION_USAGE__IS_END:
+        return isIsEnd();
       case SysMLOCPackage.ACTION_USAGE__DECLARED_NAME:
         return getDeclaredName();
       case SysMLOCPackage.ACTION_USAGE__ELEMENTS:
@@ -174,6 +322,15 @@ public class ActionUsageImpl extends BehaviorUsageElementImpl implements ActionU
   {
     switch (featureID)
     {
+      case SysMLOCPackage.ACTION_USAGE__DIRECTION:
+        setDirection((FeatureDirection)newValue);
+        return;
+      case SysMLOCPackage.ACTION_USAGE__IS_REFERENCE:
+        setIsReference((Boolean)newValue);
+        return;
+      case SysMLOCPackage.ACTION_USAGE__IS_END:
+        setIsEnd((Boolean)newValue);
+        return;
       case SysMLOCPackage.ACTION_USAGE__DECLARED_NAME:
         setDeclaredName((String)newValue);
         return;
@@ -195,6 +352,15 @@ public class ActionUsageImpl extends BehaviorUsageElementImpl implements ActionU
   {
     switch (featureID)
     {
+      case SysMLOCPackage.ACTION_USAGE__DIRECTION:
+        setDirection(DIRECTION_EDEFAULT);
+        return;
+      case SysMLOCPackage.ACTION_USAGE__IS_REFERENCE:
+        setIsReference(IS_REFERENCE_EDEFAULT);
+        return;
+      case SysMLOCPackage.ACTION_USAGE__IS_END:
+        setIsEnd(IS_END_EDEFAULT);
+        return;
       case SysMLOCPackage.ACTION_USAGE__DECLARED_NAME:
         setDeclaredName(DECLARED_NAME_EDEFAULT);
         return;
@@ -215,6 +381,12 @@ public class ActionUsageImpl extends BehaviorUsageElementImpl implements ActionU
   {
     switch (featureID)
     {
+      case SysMLOCPackage.ACTION_USAGE__DIRECTION:
+        return direction != DIRECTION_EDEFAULT;
+      case SysMLOCPackage.ACTION_USAGE__IS_REFERENCE:
+        return isReference != IS_REFERENCE_EDEFAULT;
+      case SysMLOCPackage.ACTION_USAGE__IS_END:
+        return isEnd != IS_END_EDEFAULT;
       case SysMLOCPackage.ACTION_USAGE__DECLARED_NAME:
         return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
       case SysMLOCPackage.ACTION_USAGE__ELEMENTS:
@@ -229,12 +401,88 @@ public class ActionUsageImpl extends BehaviorUsageElementImpl implements ActionU
    * @generated
    */
   @Override
+  public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == RefPrefix.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.ACTION_USAGE__DIRECTION: return SysMLOCPackage.REF_PREFIX__DIRECTION;
+        default: return -1;
+      }
+    }
+    if (baseClass == BasicUsagePrefix.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.ACTION_USAGE__IS_REFERENCE: return SysMLOCPackage.BASIC_USAGE_PREFIX__IS_REFERENCE;
+        default: return -1;
+      }
+    }
+    if (baseClass == OccurrenceUsagePrefix.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.ACTION_USAGE__IS_END: return SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_END;
+        default: return -1;
+      }
+    }
+    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == RefPrefix.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.REF_PREFIX__DIRECTION: return SysMLOCPackage.ACTION_USAGE__DIRECTION;
+        default: return -1;
+      }
+    }
+    if (baseClass == BasicUsagePrefix.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.BASIC_USAGE_PREFIX__IS_REFERENCE: return SysMLOCPackage.ACTION_USAGE__IS_REFERENCE;
+        default: return -1;
+      }
+    }
+    if (baseClass == OccurrenceUsagePrefix.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_END: return SysMLOCPackage.ACTION_USAGE__IS_END;
+        default: return -1;
+      }
+    }
+    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public String toString()
   {
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (declaredName: ");
+    result.append(" (direction: ");
+    result.append(direction);
+    result.append(", isReference: ");
+    result.append(isReference);
+    result.append(", isEnd: ");
+    result.append(isEnd);
+    result.append(", declaredName: ");
     result.append(declaredName);
     result.append(')');
     return result.toString();

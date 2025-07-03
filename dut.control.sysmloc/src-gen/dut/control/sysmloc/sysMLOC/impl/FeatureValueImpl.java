@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FeatureValueImpl#isIsInitial <em>Is Initial</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FeatureValueImpl#isIsDefault <em>Is Default</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FeatureValueImpl#getOwnedExpression <em>Owned Expression</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FeatureValueImpl#getValuePart <em>Value Part</em>}</li>
  * </ul>
  *
  * @generated
@@ -77,14 +77,14 @@ public class FeatureValueImpl extends MinimalEObjectImpl.Container implements Fe
   protected boolean isDefault = IS_DEFAULT_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getOwnedExpression() <em>Owned Expression</em>}' attribute list.
+   * The cached value of the '{@link #getValuePart() <em>Value Part</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getOwnedExpression()
+   * @see #getValuePart()
    * @generated
    * @ordered
    */
-  protected EList<String> ownedExpression;
+  protected EList<String> valuePart;
 
   /**
    * <!-- begin-user-doc -->
@@ -163,13 +163,13 @@ public class FeatureValueImpl extends MinimalEObjectImpl.Container implements Fe
    * @generated
    */
   @Override
-  public EList<String> getOwnedExpression()
+  public EList<String> getValuePart()
   {
-    if (ownedExpression == null)
+    if (valuePart == null)
     {
-      ownedExpression = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.FEATURE_VALUE__OWNED_EXPRESSION);
+      valuePart = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.FEATURE_VALUE__VALUE_PART);
     }
-    return ownedExpression;
+    return valuePart;
   }
 
   /**
@@ -186,8 +186,8 @@ public class FeatureValueImpl extends MinimalEObjectImpl.Container implements Fe
         return isIsInitial();
       case SysMLOCPackage.FEATURE_VALUE__IS_DEFAULT:
         return isIsDefault();
-      case SysMLOCPackage.FEATURE_VALUE__OWNED_EXPRESSION:
-        return getOwnedExpression();
+      case SysMLOCPackage.FEATURE_VALUE__VALUE_PART:
+        return getValuePart();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -209,9 +209,9 @@ public class FeatureValueImpl extends MinimalEObjectImpl.Container implements Fe
       case SysMLOCPackage.FEATURE_VALUE__IS_DEFAULT:
         setIsDefault((Boolean)newValue);
         return;
-      case SysMLOCPackage.FEATURE_VALUE__OWNED_EXPRESSION:
-        getOwnedExpression().clear();
-        getOwnedExpression().addAll((Collection<? extends String>)newValue);
+      case SysMLOCPackage.FEATURE_VALUE__VALUE_PART:
+        getValuePart().clear();
+        getValuePart().addAll((Collection<? extends String>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -233,8 +233,8 @@ public class FeatureValueImpl extends MinimalEObjectImpl.Container implements Fe
       case SysMLOCPackage.FEATURE_VALUE__IS_DEFAULT:
         setIsDefault(IS_DEFAULT_EDEFAULT);
         return;
-      case SysMLOCPackage.FEATURE_VALUE__OWNED_EXPRESSION:
-        getOwnedExpression().clear();
+      case SysMLOCPackage.FEATURE_VALUE__VALUE_PART:
+        getValuePart().clear();
         return;
     }
     super.eUnset(featureID);
@@ -254,8 +254,8 @@ public class FeatureValueImpl extends MinimalEObjectImpl.Container implements Fe
         return isInitial != IS_INITIAL_EDEFAULT;
       case SysMLOCPackage.FEATURE_VALUE__IS_DEFAULT:
         return isDefault != IS_DEFAULT_EDEFAULT;
-      case SysMLOCPackage.FEATURE_VALUE__OWNED_EXPRESSION:
-        return ownedExpression != null && !ownedExpression.isEmpty();
+      case SysMLOCPackage.FEATURE_VALUE__VALUE_PART:
+        return valuePart != null && !valuePart.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -275,8 +275,8 @@ public class FeatureValueImpl extends MinimalEObjectImpl.Container implements Fe
     result.append(isInitial);
     result.append(", isDefault: ");
     result.append(isDefault);
-    result.append(", ownedExpression: ");
-    result.append(ownedExpression);
+    result.append(", valuePart: ");
+    result.append(valuePart);
     result.append(')');
     return result.toString();
   }

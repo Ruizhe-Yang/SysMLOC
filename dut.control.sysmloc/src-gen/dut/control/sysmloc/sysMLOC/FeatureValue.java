@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.FeatureValue#isIsInitial <em>Is Initial</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.FeatureValue#isIsDefault <em>Is Default</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.FeatureValue#getOwnedExpression <em>Owned Expression</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.FeatureValue#getValuePart <em>Value Part</em>}</li>
  * </ul>
  *
  * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getFeatureValue()
@@ -72,15 +72,15 @@ public interface FeatureValue extends EObject
   void setIsDefault(boolean value);
 
   /**
-   * Returns the value of the '<em><b>Owned Expression</b></em>' attribute list.
+   * Returns the value of the '<em><b>Value Part</b></em>' attribute list.
    * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Owned Expression</em>' attribute list.
-   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getFeatureValue_OwnedExpression()
+   * @return the value of the '<em>Value Part</em>' attribute list.
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getFeatureValue_ValuePart()
    * @model unique="false"
    * @generated
    */
-  EList<String> getOwnedExpression();
+  EList<String> getValuePart();
 
 } // FeatureValue

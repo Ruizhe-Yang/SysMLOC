@@ -4,19 +4,83 @@
 package dut.control.sysmloc.sysMLOC.impl;
 
 import dut.control.sysmloc.sysMLOC.AttributeDefinition;
+import dut.control.sysmloc.sysMLOC.BaseElement;
+import dut.control.sysmloc.sysMLOC.DefinitionDeclaration;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Attribute Definition</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AttributeDefinitionImpl#getDeclaredName <em>Declared Name</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AttributeDefinitionImpl#getSuperclassifiers <em>Superclassifiers</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AttributeDefinitionImpl#getElements <em>Elements</em>}</li>
+ * </ul>
  *
  * @generated
  */
 public class AttributeDefinitionImpl extends DefinitionElementImpl implements AttributeDefinition
 {
+  /**
+   * The default value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredName()
+   * @generated
+   * @ordered
+   */
+  protected static final String DECLARED_NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredName()
+   * @generated
+   * @ordered
+   */
+  protected String declaredName = DECLARED_NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getSuperclassifiers() <em>Superclassifiers</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSuperclassifiers()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> superclassifiers;
+
+  /**
+   * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getElements()
+   * @generated
+   * @ordered
+   */
+  protected EList<BaseElement> elements;
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -36,6 +100,225 @@ public class AttributeDefinitionImpl extends DefinitionElementImpl implements At
   protected EClass eStaticClass()
   {
     return SysMLOCPackage.Literals.ATTRIBUTE_DEFINITION;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getDeclaredName()
+  {
+    return declaredName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDeclaredName(String newDeclaredName)
+  {
+    String oldDeclaredName = declaredName;
+    declaredName = newDeclaredName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ATTRIBUTE_DEFINITION__DECLARED_NAME, oldDeclaredName, declaredName));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<String> getSuperclassifiers()
+  {
+    if (superclassifiers == null)
+    {
+      superclassifiers = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.ATTRIBUTE_DEFINITION__SUPERCLASSIFIERS);
+    }
+    return superclassifiers;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<BaseElement> getElements()
+  {
+    if (elements == null)
+    {
+      elements = new EObjectContainmentEList<BaseElement>(BaseElement.class, this, SysMLOCPackage.ATTRIBUTE_DEFINITION__ELEMENTS);
+    }
+    return elements;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case SysMLOCPackage.ATTRIBUTE_DEFINITION__ELEMENTS:
+        return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object eGet(int featureID, boolean resolve, boolean coreType)
+  {
+    switch (featureID)
+    {
+      case SysMLOCPackage.ATTRIBUTE_DEFINITION__DECLARED_NAME:
+        return getDeclaredName();
+      case SysMLOCPackage.ATTRIBUTE_DEFINITION__SUPERCLASSIFIERS:
+        return getSuperclassifiers();
+      case SysMLOCPackage.ATTRIBUTE_DEFINITION__ELEMENTS:
+        return getElements();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @SuppressWarnings("unchecked")
+  @Override
+  public void eSet(int featureID, Object newValue)
+  {
+    switch (featureID)
+    {
+      case SysMLOCPackage.ATTRIBUTE_DEFINITION__DECLARED_NAME:
+        setDeclaredName((String)newValue);
+        return;
+      case SysMLOCPackage.ATTRIBUTE_DEFINITION__SUPERCLASSIFIERS:
+        getSuperclassifiers().clear();
+        getSuperclassifiers().addAll((Collection<? extends String>)newValue);
+        return;
+      case SysMLOCPackage.ATTRIBUTE_DEFINITION__ELEMENTS:
+        getElements().clear();
+        getElements().addAll((Collection<? extends BaseElement>)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eUnset(int featureID)
+  {
+    switch (featureID)
+    {
+      case SysMLOCPackage.ATTRIBUTE_DEFINITION__DECLARED_NAME:
+        setDeclaredName(DECLARED_NAME_EDEFAULT);
+        return;
+      case SysMLOCPackage.ATTRIBUTE_DEFINITION__SUPERCLASSIFIERS:
+        getSuperclassifiers().clear();
+        return;
+      case SysMLOCPackage.ATTRIBUTE_DEFINITION__ELEMENTS:
+        getElements().clear();
+        return;
+    }
+    super.eUnset(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean eIsSet(int featureID)
+  {
+    switch (featureID)
+    {
+      case SysMLOCPackage.ATTRIBUTE_DEFINITION__DECLARED_NAME:
+        return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
+      case SysMLOCPackage.ATTRIBUTE_DEFINITION__SUPERCLASSIFIERS:
+        return superclassifiers != null && !superclassifiers.isEmpty();
+      case SysMLOCPackage.ATTRIBUTE_DEFINITION__ELEMENTS:
+        return elements != null && !elements.isEmpty();
+    }
+    return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == DefinitionDeclaration.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.ATTRIBUTE_DEFINITION__DECLARED_NAME: return SysMLOCPackage.DEFINITION_DECLARATION__DECLARED_NAME;
+        case SysMLOCPackage.ATTRIBUTE_DEFINITION__SUPERCLASSIFIERS: return SysMLOCPackage.DEFINITION_DECLARATION__SUPERCLASSIFIERS;
+        default: return -1;
+      }
+    }
+    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == DefinitionDeclaration.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.DEFINITION_DECLARATION__DECLARED_NAME: return SysMLOCPackage.ATTRIBUTE_DEFINITION__DECLARED_NAME;
+        case SysMLOCPackage.DEFINITION_DECLARATION__SUPERCLASSIFIERS: return SysMLOCPackage.ATTRIBUTE_DEFINITION__SUPERCLASSIFIERS;
+        default: return -1;
+      }
+    }
+    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (declaredName: ");
+    result.append(declaredName);
+    result.append(", superclassifiers: ");
+    result.append(superclassifiers);
+    result.append(')');
+    return result.toString();
   }
 
 } //AttributeDefinitionImpl

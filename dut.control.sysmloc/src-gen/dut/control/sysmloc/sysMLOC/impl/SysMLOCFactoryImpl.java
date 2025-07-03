@@ -8,25 +8,45 @@ import dut.control.sysmloc.sysMLOC.AnnotatingElement;
 import dut.control.sysmloc.sysMLOC.AttributeDefinition;
 import dut.control.sysmloc.sysMLOC.AttributeUsage;
 import dut.control.sysmloc.sysMLOC.BaseElement;
+import dut.control.sysmloc.sysMLOC.BasicUsagePrefix;
 import dut.control.sysmloc.sysMLOC.BehaviorUsageElement;
 import dut.control.sysmloc.sysMLOC.Comment;
+import dut.control.sysmloc.sysMLOC.ConnectionDefinition;
+import dut.control.sysmloc.sysMLOC.ConnectionUsage;
+import dut.control.sysmloc.sysMLOC.ConnectorPart;
+import dut.control.sysmloc.sysMLOC.DefinitionDeclaration;
 import dut.control.sysmloc.sysMLOC.DefinitionElement;
 import dut.control.sysmloc.sysMLOC.FeatureDeclaration;
+import dut.control.sysmloc.sysMLOC.FeatureDirection;
 import dut.control.sysmloc.sysMLOC.FeatureSpecialization;
 import dut.control.sysmloc.sysMLOC.FeatureSpecializationPart;
 import dut.control.sysmloc.sysMLOC.FeatureValue;
+import dut.control.sysmloc.sysMLOC.FlowConnectionDefinition;
+import dut.control.sysmloc.sysMLOC.FlowConnectionUsage;
 import dut.control.sysmloc.sysMLOC.ImportElement;
+import dut.control.sysmloc.sysMLOC.InterfaceDefinition;
+import dut.control.sysmloc.sysMLOC.InterfacePart;
+import dut.control.sysmloc.sysMLOC.InterfaceUsage;
+import dut.control.sysmloc.sysMLOC.ItemDefinition;
+import dut.control.sysmloc.sysMLOC.ItemUsage;
 import dut.control.sysmloc.sysMLOC.MultiplicityPart;
 import dut.control.sysmloc.sysMLOC.Namespace;
 import dut.control.sysmloc.sysMLOC.NamespaceImport;
 import dut.control.sysmloc.sysMLOC.NonOccurrenceUsageElement;
 import dut.control.sysmloc.sysMLOC.OccurrenceUsageElement;
+import dut.control.sysmloc.sysMLOC.OccurrenceUsagePrefix;
 import dut.control.sysmloc.sysMLOC.PartDefinition;
 import dut.control.sysmloc.sysMLOC.PartUsage;
+import dut.control.sysmloc.sysMLOC.PortDefinition;
+import dut.control.sysmloc.sysMLOC.PortUsage;
+import dut.control.sysmloc.sysMLOC.PortionKind;
+import dut.control.sysmloc.sysMLOC.RefPrefix;
+import dut.control.sysmloc.sysMLOC.ReferenceUsage;
 import dut.control.sysmloc.sysMLOC.StructureUsageElement;
 import dut.control.sysmloc.sysMLOC.SysMLOCFactory;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 import dut.control.sysmloc.sysMLOC.Usage;
+import dut.control.sysmloc.sysMLOC.UsageDeclaration;
 import dut.control.sysmloc.sysMLOC.UsageElement;
 import dut.control.sysmloc.sysMLOC.VisibilityIndicator;
 
@@ -104,12 +124,30 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
       case SysMLOCPackage.BEHAVIOR_USAGE_ELEMENT: return createBehaviorUsageElement();
       case SysMLOCPackage.NAMESPACE_IMPORT: return createNamespaceImport();
       case SysMLOCPackage.COMMENT: return createComment();
+      case SysMLOCPackage.REFERENCE_USAGE: return createReferenceUsage();
       case SysMLOCPackage.ATTRIBUTE_DEFINITION: return createAttributeDefinition();
-      case SysMLOCPackage.PART_DEFINITION: return createPartDefinition();
       case SysMLOCPackage.ATTRIBUTE_USAGE: return createAttributeUsage();
-      case SysMLOCPackage.ACTION_USAGE: return createActionUsage();
+      case SysMLOCPackage.ITEM_DEFINITION: return createItemDefinition();
+      case SysMLOCPackage.ITEM_USAGE: return createItemUsage();
+      case SysMLOCPackage.PART_DEFINITION: return createPartDefinition();
       case SysMLOCPackage.PART_USAGE: return createPartUsage();
+      case SysMLOCPackage.PORT_DEFINITION: return createPortDefinition();
+      case SysMLOCPackage.PORT_USAGE: return createPortUsage();
+      case SysMLOCPackage.CONNECTION_DEFINITION: return createConnectionDefinition();
+      case SysMLOCPackage.CONNECTION_USAGE: return createConnectionUsage();
+      case SysMLOCPackage.INTERFACE_DEFINITION: return createInterfaceDefinition();
+      case SysMLOCPackage.INTERFACE_USAGE: return createInterfaceUsage();
+      case SysMLOCPackage.FLOW_CONNECTION_DEFINITION: return createFlowConnectionDefinition();
+      case SysMLOCPackage.FLOW_CONNECTION_USAGE: return createFlowConnectionUsage();
+      case SysMLOCPackage.ACTION_USAGE: return createActionUsage();
+      case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX: return createOccurrenceUsagePrefix();
+      case SysMLOCPackage.REF_PREFIX: return createRefPrefix();
+      case SysMLOCPackage.BASIC_USAGE_PREFIX: return createBasicUsagePrefix();
+      case SysMLOCPackage.CONNECTOR_PART: return createConnectorPart();
+      case SysMLOCPackage.INTERFACE_PART: return createInterfacePart();
+      case SysMLOCPackage.DEFINITION_DECLARATION: return createDefinitionDeclaration();
       case SysMLOCPackage.USAGE: return createUsage();
+      case SysMLOCPackage.USAGE_DECLARATION: return createUsageDeclaration();
       case SysMLOCPackage.FEATURE_VALUE: return createFeatureValue();
       case SysMLOCPackage.FEATURE_DECLARATION: return createFeatureDeclaration();
       case SysMLOCPackage.FEATURE_SPECIALIZATION_PART: return createFeatureSpecializationPart();
@@ -132,6 +170,10 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
     {
       case SysMLOCPackage.VISIBILITY_INDICATOR:
         return createVisibilityIndicatorFromString(eDataType, initialValue);
+      case SysMLOCPackage.FEATURE_DIRECTION:
+        return createFeatureDirectionFromString(eDataType, initialValue);
+      case SysMLOCPackage.PORTION_KIND:
+        return createPortionKindFromString(eDataType, initialValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -149,6 +191,10 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
     {
       case SysMLOCPackage.VISIBILITY_INDICATOR:
         return convertVisibilityIndicatorToString(eDataType, instanceValue);
+      case SysMLOCPackage.FEATURE_DIRECTION:
+        return convertFeatureDirectionToString(eDataType, instanceValue);
+      case SysMLOCPackage.PORTION_KIND:
+        return convertPortionKindToString(eDataType, instanceValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -316,10 +362,10 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
    * @generated
    */
   @Override
-  public AttributeDefinition createAttributeDefinition()
+  public ReferenceUsage createReferenceUsage()
   {
-    AttributeDefinitionImpl attributeDefinition = new AttributeDefinitionImpl();
-    return attributeDefinition;
+    ReferenceUsageImpl referenceUsage = new ReferenceUsageImpl();
+    return referenceUsage;
   }
 
   /**
@@ -328,10 +374,10 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
    * @generated
    */
   @Override
-  public PartDefinition createPartDefinition()
+  public AttributeDefinition createAttributeDefinition()
   {
-    PartDefinitionImpl partDefinition = new PartDefinitionImpl();
-    return partDefinition;
+    AttributeDefinitionImpl attributeDefinition = new AttributeDefinitionImpl();
+    return attributeDefinition;
   }
 
   /**
@@ -352,10 +398,34 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
    * @generated
    */
   @Override
-  public ActionUsage createActionUsage()
+  public ItemDefinition createItemDefinition()
   {
-    ActionUsageImpl actionUsage = new ActionUsageImpl();
-    return actionUsage;
+    ItemDefinitionImpl itemDefinition = new ItemDefinitionImpl();
+    return itemDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ItemUsage createItemUsage()
+  {
+    ItemUsageImpl itemUsage = new ItemUsageImpl();
+    return itemUsage;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PartDefinition createPartDefinition()
+  {
+    PartDefinitionImpl partDefinition = new PartDefinitionImpl();
+    return partDefinition;
   }
 
   /**
@@ -376,10 +446,202 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
    * @generated
    */
   @Override
+  public PortDefinition createPortDefinition()
+  {
+    PortDefinitionImpl portDefinition = new PortDefinitionImpl();
+    return portDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PortUsage createPortUsage()
+  {
+    PortUsageImpl portUsage = new PortUsageImpl();
+    return portUsage;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ConnectionDefinition createConnectionDefinition()
+  {
+    ConnectionDefinitionImpl connectionDefinition = new ConnectionDefinitionImpl();
+    return connectionDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ConnectionUsage createConnectionUsage()
+  {
+    ConnectionUsageImpl connectionUsage = new ConnectionUsageImpl();
+    return connectionUsage;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public InterfaceDefinition createInterfaceDefinition()
+  {
+    InterfaceDefinitionImpl interfaceDefinition = new InterfaceDefinitionImpl();
+    return interfaceDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public InterfaceUsage createInterfaceUsage()
+  {
+    InterfaceUsageImpl interfaceUsage = new InterfaceUsageImpl();
+    return interfaceUsage;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public FlowConnectionDefinition createFlowConnectionDefinition()
+  {
+    FlowConnectionDefinitionImpl flowConnectionDefinition = new FlowConnectionDefinitionImpl();
+    return flowConnectionDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public FlowConnectionUsage createFlowConnectionUsage()
+  {
+    FlowConnectionUsageImpl flowConnectionUsage = new FlowConnectionUsageImpl();
+    return flowConnectionUsage;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ActionUsage createActionUsage()
+  {
+    ActionUsageImpl actionUsage = new ActionUsageImpl();
+    return actionUsage;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public OccurrenceUsagePrefix createOccurrenceUsagePrefix()
+  {
+    OccurrenceUsagePrefixImpl occurrenceUsagePrefix = new OccurrenceUsagePrefixImpl();
+    return occurrenceUsagePrefix;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public RefPrefix createRefPrefix()
+  {
+    RefPrefixImpl refPrefix = new RefPrefixImpl();
+    return refPrefix;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public BasicUsagePrefix createBasicUsagePrefix()
+  {
+    BasicUsagePrefixImpl basicUsagePrefix = new BasicUsagePrefixImpl();
+    return basicUsagePrefix;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ConnectorPart createConnectorPart()
+  {
+    ConnectorPartImpl connectorPart = new ConnectorPartImpl();
+    return connectorPart;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public InterfacePart createInterfacePart()
+  {
+    InterfacePartImpl interfacePart = new InterfacePartImpl();
+    return interfacePart;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public DefinitionDeclaration createDefinitionDeclaration()
+  {
+    DefinitionDeclarationImpl definitionDeclaration = new DefinitionDeclarationImpl();
+    return definitionDeclaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Usage createUsage()
   {
     UsageImpl usage = new UsageImpl();
     return usage;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public UsageDeclaration createUsageDeclaration()
+  {
+    UsageDeclarationImpl usageDeclaration = new UsageDeclarationImpl();
+    return usageDeclaration;
   }
 
   /**
@@ -460,6 +722,50 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
    * @generated
    */
   public String convertVisibilityIndicatorToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FeatureDirection createFeatureDirectionFromString(EDataType eDataType, String initialValue)
+  {
+    FeatureDirection result = FeatureDirection.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertFeatureDirectionToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PortionKind createPortionKindFromString(EDataType eDataType, String initialValue)
+  {
+    PortionKind result = PortionKind.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertPortionKindToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

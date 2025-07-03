@@ -8,24 +8,42 @@ import dut.control.sysmloc.sysMLOC.AnnotatingElement;
 import dut.control.sysmloc.sysMLOC.AttributeDefinition;
 import dut.control.sysmloc.sysMLOC.AttributeUsage;
 import dut.control.sysmloc.sysMLOC.BaseElement;
+import dut.control.sysmloc.sysMLOC.BasicUsagePrefix;
 import dut.control.sysmloc.sysMLOC.BehaviorUsageElement;
 import dut.control.sysmloc.sysMLOC.Comment;
+import dut.control.sysmloc.sysMLOC.ConnectionDefinition;
+import dut.control.sysmloc.sysMLOC.ConnectionUsage;
+import dut.control.sysmloc.sysMLOC.ConnectorPart;
+import dut.control.sysmloc.sysMLOC.DefinitionDeclaration;
 import dut.control.sysmloc.sysMLOC.DefinitionElement;
 import dut.control.sysmloc.sysMLOC.FeatureDeclaration;
 import dut.control.sysmloc.sysMLOC.FeatureSpecialization;
 import dut.control.sysmloc.sysMLOC.FeatureSpecializationPart;
 import dut.control.sysmloc.sysMLOC.FeatureValue;
+import dut.control.sysmloc.sysMLOC.FlowConnectionDefinition;
+import dut.control.sysmloc.sysMLOC.FlowConnectionUsage;
 import dut.control.sysmloc.sysMLOC.ImportElement;
+import dut.control.sysmloc.sysMLOC.InterfaceDefinition;
+import dut.control.sysmloc.sysMLOC.InterfacePart;
+import dut.control.sysmloc.sysMLOC.InterfaceUsage;
+import dut.control.sysmloc.sysMLOC.ItemDefinition;
+import dut.control.sysmloc.sysMLOC.ItemUsage;
 import dut.control.sysmloc.sysMLOC.MultiplicityPart;
 import dut.control.sysmloc.sysMLOC.Namespace;
 import dut.control.sysmloc.sysMLOC.NamespaceImport;
 import dut.control.sysmloc.sysMLOC.NonOccurrenceUsageElement;
 import dut.control.sysmloc.sysMLOC.OccurrenceUsageElement;
+import dut.control.sysmloc.sysMLOC.OccurrenceUsagePrefix;
 import dut.control.sysmloc.sysMLOC.PartDefinition;
 import dut.control.sysmloc.sysMLOC.PartUsage;
+import dut.control.sysmloc.sysMLOC.PortDefinition;
+import dut.control.sysmloc.sysMLOC.PortUsage;
+import dut.control.sysmloc.sysMLOC.RefPrefix;
+import dut.control.sysmloc.sysMLOC.ReferenceUsage;
 import dut.control.sysmloc.sysMLOC.StructureUsageElement;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 import dut.control.sysmloc.sysMLOC.Usage;
+import dut.control.sysmloc.sysMLOC.UsageDeclaration;
 import dut.control.sysmloc.sysMLOC.UsageElement;
 
 import org.eclipse.emf.ecore.EObject;
@@ -206,21 +224,30 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SysMLOCPackage.REFERENCE_USAGE:
+      {
+        ReferenceUsage referenceUsage = (ReferenceUsage)theEObject;
+        T result = caseReferenceUsage(referenceUsage);
+        if (result == null) result = caseOccurrenceUsagePrefix(referenceUsage);
+        if (result == null) result = caseUsage(referenceUsage);
+        if (result == null) result = caseBasicUsagePrefix(referenceUsage);
+        if (result == null) result = caseUsageDeclaration(referenceUsage);
+        if (result == null) result = caseFeatureValue(referenceUsage);
+        if (result == null) result = caseRefPrefix(referenceUsage);
+        if (result == null) result = caseFeatureDeclaration(referenceUsage);
+        if (result == null) result = caseFeatureSpecializationPart(referenceUsage);
+        if (result == null) result = caseFeatureSpecialization(referenceUsage);
+        if (result == null) result = caseMultiplicityPart(referenceUsage);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SysMLOCPackage.ATTRIBUTE_DEFINITION:
       {
         AttributeDefinition attributeDefinition = (AttributeDefinition)theEObject;
         T result = caseAttributeDefinition(attributeDefinition);
         if (result == null) result = caseDefinitionElement(attributeDefinition);
+        if (result == null) result = caseDefinitionDeclaration(attributeDefinition);
         if (result == null) result = caseBaseElement(attributeDefinition);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case SysMLOCPackage.PART_DEFINITION:
-      {
-        PartDefinition partDefinition = (PartDefinition)theEObject;
-        T result = casePartDefinition(partDefinition);
-        if (result == null) result = caseDefinitionElement(partDefinition);
-        if (result == null) result = caseBaseElement(partDefinition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -229,19 +256,53 @@ public class SysMLOCSwitch<T> extends Switch<T>
         AttributeUsage attributeUsage = (AttributeUsage)theEObject;
         T result = caseAttributeUsage(attributeUsage);
         if (result == null) result = caseNonOccurrenceUsageElement(attributeUsage);
+        if (result == null) result = caseUsage(attributeUsage);
         if (result == null) result = caseUsageElement(attributeUsage);
+        if (result == null) result = caseUsageDeclaration(attributeUsage);
+        if (result == null) result = caseFeatureValue(attributeUsage);
         if (result == null) result = caseBaseElement(attributeUsage);
+        if (result == null) result = caseFeatureDeclaration(attributeUsage);
+        if (result == null) result = caseFeatureSpecializationPart(attributeUsage);
+        if (result == null) result = caseFeatureSpecialization(attributeUsage);
+        if (result == null) result = caseMultiplicityPart(attributeUsage);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SysMLOCPackage.ACTION_USAGE:
+      case SysMLOCPackage.ITEM_DEFINITION:
       {
-        ActionUsage actionUsage = (ActionUsage)theEObject;
-        T result = caseActionUsage(actionUsage);
-        if (result == null) result = caseBehaviorUsageElement(actionUsage);
-        if (result == null) result = caseOccurrenceUsageElement(actionUsage);
-        if (result == null) result = caseUsageElement(actionUsage);
-        if (result == null) result = caseBaseElement(actionUsage);
+        ItemDefinition itemDefinition = (ItemDefinition)theEObject;
+        T result = caseItemDefinition(itemDefinition);
+        if (result == null) result = caseDefinitionElement(itemDefinition);
+        if (result == null) result = caseDefinitionDeclaration(itemDefinition);
+        if (result == null) result = caseBaseElement(itemDefinition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SysMLOCPackage.ITEM_USAGE:
+      {
+        ItemUsage itemUsage = (ItemUsage)theEObject;
+        T result = caseItemUsage(itemUsage);
+        if (result == null) result = caseStructureUsageElement(itemUsage);
+        if (result == null) result = caseUsage(itemUsage);
+        if (result == null) result = caseOccurrenceUsageElement(itemUsage);
+        if (result == null) result = caseUsageDeclaration(itemUsage);
+        if (result == null) result = caseFeatureValue(itemUsage);
+        if (result == null) result = caseUsageElement(itemUsage);
+        if (result == null) result = caseFeatureDeclaration(itemUsage);
+        if (result == null) result = caseBaseElement(itemUsage);
+        if (result == null) result = caseFeatureSpecializationPart(itemUsage);
+        if (result == null) result = caseFeatureSpecialization(itemUsage);
+        if (result == null) result = caseMultiplicityPart(itemUsage);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SysMLOCPackage.PART_DEFINITION:
+      {
+        PartDefinition partDefinition = (PartDefinition)theEObject;
+        T result = casePartDefinition(partDefinition);
+        if (result == null) result = caseDefinitionElement(partDefinition);
+        if (result == null) result = caseDefinitionDeclaration(partDefinition);
+        if (result == null) result = caseBaseElement(partDefinition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -250,15 +311,200 @@ public class SysMLOCSwitch<T> extends Switch<T>
         PartUsage partUsage = (PartUsage)theEObject;
         T result = casePartUsage(partUsage);
         if (result == null) result = caseStructureUsageElement(partUsage);
+        if (result == null) result = caseOccurrenceUsagePrefix(partUsage);
         if (result == null) result = caseUsage(partUsage);
         if (result == null) result = caseOccurrenceUsageElement(partUsage);
-        if (result == null) result = caseFeatureDeclaration(partUsage);
+        if (result == null) result = caseBasicUsagePrefix(partUsage);
+        if (result == null) result = caseUsageDeclaration(partUsage);
         if (result == null) result = caseFeatureValue(partUsage);
         if (result == null) result = caseUsageElement(partUsage);
-        if (result == null) result = caseFeatureSpecializationPart(partUsage);
+        if (result == null) result = caseRefPrefix(partUsage);
+        if (result == null) result = caseFeatureDeclaration(partUsage);
         if (result == null) result = caseBaseElement(partUsage);
+        if (result == null) result = caseFeatureSpecializationPart(partUsage);
         if (result == null) result = caseFeatureSpecialization(partUsage);
         if (result == null) result = caseMultiplicityPart(partUsage);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SysMLOCPackage.PORT_DEFINITION:
+      {
+        PortDefinition portDefinition = (PortDefinition)theEObject;
+        T result = casePortDefinition(portDefinition);
+        if (result == null) result = caseDefinitionElement(portDefinition);
+        if (result == null) result = caseDefinitionDeclaration(portDefinition);
+        if (result == null) result = caseBaseElement(portDefinition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SysMLOCPackage.PORT_USAGE:
+      {
+        PortUsage portUsage = (PortUsage)theEObject;
+        T result = casePortUsage(portUsage);
+        if (result == null) result = caseStructureUsageElement(portUsage);
+        if (result == null) result = caseOccurrenceUsagePrefix(portUsage);
+        if (result == null) result = caseUsage(portUsage);
+        if (result == null) result = caseOccurrenceUsageElement(portUsage);
+        if (result == null) result = caseBasicUsagePrefix(portUsage);
+        if (result == null) result = caseUsageDeclaration(portUsage);
+        if (result == null) result = caseFeatureValue(portUsage);
+        if (result == null) result = caseUsageElement(portUsage);
+        if (result == null) result = caseRefPrefix(portUsage);
+        if (result == null) result = caseFeatureDeclaration(portUsage);
+        if (result == null) result = caseBaseElement(portUsage);
+        if (result == null) result = caseFeatureSpecializationPart(portUsage);
+        if (result == null) result = caseFeatureSpecialization(portUsage);
+        if (result == null) result = caseMultiplicityPart(portUsage);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SysMLOCPackage.CONNECTION_DEFINITION:
+      {
+        ConnectionDefinition connectionDefinition = (ConnectionDefinition)theEObject;
+        T result = caseConnectionDefinition(connectionDefinition);
+        if (result == null) result = caseDefinitionElement(connectionDefinition);
+        if (result == null) result = caseDefinitionDeclaration(connectionDefinition);
+        if (result == null) result = caseBaseElement(connectionDefinition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SysMLOCPackage.CONNECTION_USAGE:
+      {
+        ConnectionUsage connectionUsage = (ConnectionUsage)theEObject;
+        T result = caseConnectionUsage(connectionUsage);
+        if (result == null) result = caseStructureUsageElement(connectionUsage);
+        if (result == null) result = caseOccurrenceUsagePrefix(connectionUsage);
+        if (result == null) result = caseUsageDeclaration(connectionUsage);
+        if (result == null) result = caseFeatureValue(connectionUsage);
+        if (result == null) result = caseConnectorPart(connectionUsage);
+        if (result == null) result = caseOccurrenceUsageElement(connectionUsage);
+        if (result == null) result = caseBasicUsagePrefix(connectionUsage);
+        if (result == null) result = caseFeatureDeclaration(connectionUsage);
+        if (result == null) result = caseUsageElement(connectionUsage);
+        if (result == null) result = caseRefPrefix(connectionUsage);
+        if (result == null) result = caseFeatureSpecializationPart(connectionUsage);
+        if (result == null) result = caseBaseElement(connectionUsage);
+        if (result == null) result = caseFeatureSpecialization(connectionUsage);
+        if (result == null) result = caseMultiplicityPart(connectionUsage);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SysMLOCPackage.INTERFACE_DEFINITION:
+      {
+        InterfaceDefinition interfaceDefinition = (InterfaceDefinition)theEObject;
+        T result = caseInterfaceDefinition(interfaceDefinition);
+        if (result == null) result = caseDefinitionElement(interfaceDefinition);
+        if (result == null) result = caseDefinitionDeclaration(interfaceDefinition);
+        if (result == null) result = caseBaseElement(interfaceDefinition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SysMLOCPackage.INTERFACE_USAGE:
+      {
+        InterfaceUsage interfaceUsage = (InterfaceUsage)theEObject;
+        T result = caseInterfaceUsage(interfaceUsage);
+        if (result == null) result = caseStructureUsageElement(interfaceUsage);
+        if (result == null) result = caseOccurrenceUsagePrefix(interfaceUsage);
+        if (result == null) result = caseUsageDeclaration(interfaceUsage);
+        if (result == null) result = caseInterfacePart(interfaceUsage);
+        if (result == null) result = caseOccurrenceUsageElement(interfaceUsage);
+        if (result == null) result = caseBasicUsagePrefix(interfaceUsage);
+        if (result == null) result = caseFeatureDeclaration(interfaceUsage);
+        if (result == null) result = caseUsageElement(interfaceUsage);
+        if (result == null) result = caseRefPrefix(interfaceUsage);
+        if (result == null) result = caseFeatureSpecializationPart(interfaceUsage);
+        if (result == null) result = caseBaseElement(interfaceUsage);
+        if (result == null) result = caseFeatureSpecialization(interfaceUsage);
+        if (result == null) result = caseMultiplicityPart(interfaceUsage);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SysMLOCPackage.FLOW_CONNECTION_DEFINITION:
+      {
+        FlowConnectionDefinition flowConnectionDefinition = (FlowConnectionDefinition)theEObject;
+        T result = caseFlowConnectionDefinition(flowConnectionDefinition);
+        if (result == null) result = caseDefinitionElement(flowConnectionDefinition);
+        if (result == null) result = caseDefinitionDeclaration(flowConnectionDefinition);
+        if (result == null) result = caseBaseElement(flowConnectionDefinition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SysMLOCPackage.FLOW_CONNECTION_USAGE:
+      {
+        FlowConnectionUsage flowConnectionUsage = (FlowConnectionUsage)theEObject;
+        T result = caseFlowConnectionUsage(flowConnectionUsage);
+        if (result == null) result = caseStructureUsageElement(flowConnectionUsage);
+        if (result == null) result = caseOccurrenceUsagePrefix(flowConnectionUsage);
+        if (result == null) result = caseUsageDeclaration(flowConnectionUsage);
+        if (result == null) result = caseFeatureValue(flowConnectionUsage);
+        if (result == null) result = caseOccurrenceUsageElement(flowConnectionUsage);
+        if (result == null) result = caseBasicUsagePrefix(flowConnectionUsage);
+        if (result == null) result = caseFeatureDeclaration(flowConnectionUsage);
+        if (result == null) result = caseUsageElement(flowConnectionUsage);
+        if (result == null) result = caseRefPrefix(flowConnectionUsage);
+        if (result == null) result = caseFeatureSpecializationPart(flowConnectionUsage);
+        if (result == null) result = caseBaseElement(flowConnectionUsage);
+        if (result == null) result = caseFeatureSpecialization(flowConnectionUsage);
+        if (result == null) result = caseMultiplicityPart(flowConnectionUsage);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SysMLOCPackage.ACTION_USAGE:
+      {
+        ActionUsage actionUsage = (ActionUsage)theEObject;
+        T result = caseActionUsage(actionUsage);
+        if (result == null) result = caseBehaviorUsageElement(actionUsage);
+        if (result == null) result = caseOccurrenceUsagePrefix(actionUsage);
+        if (result == null) result = caseOccurrenceUsageElement(actionUsage);
+        if (result == null) result = caseBasicUsagePrefix(actionUsage);
+        if (result == null) result = caseUsageElement(actionUsage);
+        if (result == null) result = caseRefPrefix(actionUsage);
+        if (result == null) result = caseBaseElement(actionUsage);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX:
+      {
+        OccurrenceUsagePrefix occurrenceUsagePrefix = (OccurrenceUsagePrefix)theEObject;
+        T result = caseOccurrenceUsagePrefix(occurrenceUsagePrefix);
+        if (result == null) result = caseBasicUsagePrefix(occurrenceUsagePrefix);
+        if (result == null) result = caseRefPrefix(occurrenceUsagePrefix);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SysMLOCPackage.REF_PREFIX:
+      {
+        RefPrefix refPrefix = (RefPrefix)theEObject;
+        T result = caseRefPrefix(refPrefix);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SysMLOCPackage.BASIC_USAGE_PREFIX:
+      {
+        BasicUsagePrefix basicUsagePrefix = (BasicUsagePrefix)theEObject;
+        T result = caseBasicUsagePrefix(basicUsagePrefix);
+        if (result == null) result = caseRefPrefix(basicUsagePrefix);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SysMLOCPackage.CONNECTOR_PART:
+      {
+        ConnectorPart connectorPart = (ConnectorPart)theEObject;
+        T result = caseConnectorPart(connectorPart);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SysMLOCPackage.INTERFACE_PART:
+      {
+        InterfacePart interfacePart = (InterfacePart)theEObject;
+        T result = caseInterfacePart(interfacePart);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SysMLOCPackage.DEFINITION_DECLARATION:
+      {
+        DefinitionDeclaration definitionDeclaration = (DefinitionDeclaration)theEObject;
+        T result = caseDefinitionDeclaration(definitionDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -266,11 +512,23 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         Usage usage = (Usage)theEObject;
         T result = caseUsage(usage);
-        if (result == null) result = caseFeatureDeclaration(usage);
+        if (result == null) result = caseUsageDeclaration(usage);
         if (result == null) result = caseFeatureValue(usage);
+        if (result == null) result = caseFeatureDeclaration(usage);
         if (result == null) result = caseFeatureSpecializationPart(usage);
         if (result == null) result = caseFeatureSpecialization(usage);
         if (result == null) result = caseMultiplicityPart(usage);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SysMLOCPackage.USAGE_DECLARATION:
+      {
+        UsageDeclaration usageDeclaration = (UsageDeclaration)theEObject;
+        T result = caseUsageDeclaration(usageDeclaration);
+        if (result == null) result = caseFeatureDeclaration(usageDeclaration);
+        if (result == null) result = caseFeatureSpecializationPart(usageDeclaration);
+        if (result == null) result = caseFeatureSpecialization(usageDeclaration);
+        if (result == null) result = caseMultiplicityPart(usageDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -527,6 +785,22 @@ public class SysMLOCSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Reference Usage</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Reference Usage</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseReferenceUsage(ReferenceUsage object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Attribute Definition</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -538,22 +812,6 @@ public class SysMLOCSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAttributeDefinition(AttributeDefinition object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Part Definition</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Part Definition</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casePartDefinition(PartDefinition object)
   {
     return null;
   }
@@ -575,17 +833,49 @@ public class SysMLOCSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Action Usage</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Item Definition</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Action Usage</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Item Definition</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseActionUsage(ActionUsage object)
+  public T caseItemDefinition(ItemDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Item Usage</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Item Usage</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseItemUsage(ItemUsage object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Part Definition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Part Definition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePartDefinition(PartDefinition object)
   {
     return null;
   }
@@ -607,6 +897,246 @@ public class SysMLOCSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Port Definition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Port Definition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePortDefinition(PortDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Port Usage</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Port Usage</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePortUsage(PortUsage object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Connection Definition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Connection Definition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseConnectionDefinition(ConnectionDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Connection Usage</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Connection Usage</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseConnectionUsage(ConnectionUsage object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Interface Definition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Interface Definition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInterfaceDefinition(InterfaceDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Interface Usage</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Interface Usage</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInterfaceUsage(InterfaceUsage object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Flow Connection Definition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Flow Connection Definition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFlowConnectionDefinition(FlowConnectionDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Flow Connection Usage</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Flow Connection Usage</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFlowConnectionUsage(FlowConnectionUsage object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Action Usage</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Action Usage</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseActionUsage(ActionUsage object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Occurrence Usage Prefix</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Occurrence Usage Prefix</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOccurrenceUsagePrefix(OccurrenceUsagePrefix object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Ref Prefix</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Ref Prefix</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRefPrefix(RefPrefix object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Basic Usage Prefix</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Basic Usage Prefix</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBasicUsagePrefix(BasicUsagePrefix object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Connector Part</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Connector Part</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseConnectorPart(ConnectorPart object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Interface Part</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Interface Part</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInterfacePart(InterfacePart object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Definition Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Definition Declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDefinitionDeclaration(DefinitionDeclaration object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Usage</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -618,6 +1148,22 @@ public class SysMLOCSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseUsage(Usage object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Usage Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Usage Declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseUsageDeclaration(UsageDeclaration object)
   {
     return null;
   }

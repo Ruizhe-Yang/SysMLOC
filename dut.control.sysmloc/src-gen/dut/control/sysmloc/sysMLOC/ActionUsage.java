@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface ActionUsage extends BehaviorUsageElement
+public interface ActionUsage extends BehaviorUsageElement, OccurrenceUsagePrefix, BasicUsagePrefix, RefPrefix
 {
   /**
    * Returns the value of the '<em><b>Declared Name</b></em>' attribute.

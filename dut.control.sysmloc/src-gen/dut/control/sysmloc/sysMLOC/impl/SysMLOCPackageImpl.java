@@ -8,25 +8,45 @@ import dut.control.sysmloc.sysMLOC.AnnotatingElement;
 import dut.control.sysmloc.sysMLOC.AttributeDefinition;
 import dut.control.sysmloc.sysMLOC.AttributeUsage;
 import dut.control.sysmloc.sysMLOC.BaseElement;
+import dut.control.sysmloc.sysMLOC.BasicUsagePrefix;
 import dut.control.sysmloc.sysMLOC.BehaviorUsageElement;
 import dut.control.sysmloc.sysMLOC.Comment;
+import dut.control.sysmloc.sysMLOC.ConnectionDefinition;
+import dut.control.sysmloc.sysMLOC.ConnectionUsage;
+import dut.control.sysmloc.sysMLOC.ConnectorPart;
+import dut.control.sysmloc.sysMLOC.DefinitionDeclaration;
 import dut.control.sysmloc.sysMLOC.DefinitionElement;
 import dut.control.sysmloc.sysMLOC.FeatureDeclaration;
+import dut.control.sysmloc.sysMLOC.FeatureDirection;
 import dut.control.sysmloc.sysMLOC.FeatureSpecialization;
 import dut.control.sysmloc.sysMLOC.FeatureSpecializationPart;
 import dut.control.sysmloc.sysMLOC.FeatureValue;
+import dut.control.sysmloc.sysMLOC.FlowConnectionDefinition;
+import dut.control.sysmloc.sysMLOC.FlowConnectionUsage;
 import dut.control.sysmloc.sysMLOC.ImportElement;
+import dut.control.sysmloc.sysMLOC.InterfaceDefinition;
+import dut.control.sysmloc.sysMLOC.InterfacePart;
+import dut.control.sysmloc.sysMLOC.InterfaceUsage;
+import dut.control.sysmloc.sysMLOC.ItemDefinition;
+import dut.control.sysmloc.sysMLOC.ItemUsage;
 import dut.control.sysmloc.sysMLOC.MultiplicityPart;
 import dut.control.sysmloc.sysMLOC.Namespace;
 import dut.control.sysmloc.sysMLOC.NamespaceImport;
 import dut.control.sysmloc.sysMLOC.NonOccurrenceUsageElement;
 import dut.control.sysmloc.sysMLOC.OccurrenceUsageElement;
+import dut.control.sysmloc.sysMLOC.OccurrenceUsagePrefix;
 import dut.control.sysmloc.sysMLOC.PartDefinition;
 import dut.control.sysmloc.sysMLOC.PartUsage;
+import dut.control.sysmloc.sysMLOC.PortDefinition;
+import dut.control.sysmloc.sysMLOC.PortUsage;
+import dut.control.sysmloc.sysMLOC.PortionKind;
+import dut.control.sysmloc.sysMLOC.RefPrefix;
+import dut.control.sysmloc.sysMLOC.ReferenceUsage;
 import dut.control.sysmloc.sysMLOC.StructureUsageElement;
 import dut.control.sysmloc.sysMLOC.SysMLOCFactory;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 import dut.control.sysmloc.sysMLOC.Usage;
+import dut.control.sysmloc.sysMLOC.UsageDeclaration;
 import dut.control.sysmloc.sysMLOC.UsageElement;
 import dut.control.sysmloc.sysMLOC.VisibilityIndicator;
 
@@ -142,14 +162,14 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass attributeDefinitionEClass = null;
+  private EClass referenceUsageEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass partDefinitionEClass = null;
+  private EClass attributeDefinitionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -163,7 +183,21 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass actionUsageEClass = null;
+  private EClass itemDefinitionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass itemUsageEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass partDefinitionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -177,7 +211,119 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass portDefinitionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass portUsageEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass connectionDefinitionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass connectionUsageEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass interfaceDefinitionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass interfaceUsageEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass flowConnectionDefinitionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass flowConnectionUsageEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass actionUsageEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass occurrenceUsagePrefixEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass refPrefixEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass basicUsagePrefixEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass connectorPartEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass interfacePartEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass definitionDeclarationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass usageEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass usageDeclarationEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -220,6 +366,20 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   private EEnum visibilityIndicatorEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum featureDirectionEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum portionKindEEnum = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -388,28 +548,6 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   @Override
-  public EAttribute getDefinitionElement_DeclaredName()
-  {
-    return (EAttribute)definitionElementEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getDefinitionElement_Elements()
-  {
-    return (EReference)definitionElementEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EClass getUsageElement()
   {
     return usageElementEClass;
@@ -498,6 +636,17 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   @Override
+  public EAttribute getNamespaceImport_IsRecursive()
+  {
+    return (EAttribute)namespaceImportEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getComment()
   {
     return commentEClass;
@@ -520,6 +669,17 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   @Override
+  public EClass getReferenceUsage()
+  {
+    return referenceUsageEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getAttributeDefinition()
   {
     return attributeDefinitionEClass;
@@ -531,9 +691,9 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   @Override
-  public EClass getPartDefinition()
+  public EReference getAttributeDefinition_Elements()
   {
-    return partDefinitionEClass;
+    return (EReference)attributeDefinitionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -553,9 +713,9 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   @Override
-  public EAttribute getAttributeUsage_DeclaredName()
+  public EClass getItemDefinition()
   {
-    return (EAttribute)attributeUsageEClass.getEStructuralFeatures().get(0);
+    return itemDefinitionEClass;
   }
 
   /**
@@ -564,9 +724,240 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   @Override
-  public EReference getAttributeUsage_Elements()
+  public EReference getItemDefinition_Elements()
   {
-    return (EReference)attributeUsageEClass.getEStructuralFeatures().get(1);
+    return (EReference)itemDefinitionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getItemUsage()
+  {
+    return itemUsageEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getPartDefinition()
+  {
+    return partDefinitionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getPartDefinition_Elements()
+  {
+    return (EReference)partDefinitionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getPartUsage()
+  {
+    return partUsageEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getPortDefinition()
+  {
+    return portDefinitionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getPortDefinition_Elements()
+  {
+    return (EReference)portDefinitionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getPortUsage()
+  {
+    return portUsageEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getConnectionDefinition()
+  {
+    return connectionDefinitionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getConnectionDefinition_Elements()
+  {
+    return (EReference)connectionDefinitionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getConnectionUsage()
+  {
+    return connectionUsageEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getConnectionUsage_Elements()
+  {
+    return (EReference)connectionUsageEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getInterfaceDefinition()
+  {
+    return interfaceDefinitionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getInterfaceDefinition_Elements()
+  {
+    return (EReference)interfaceDefinitionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getInterfaceUsage()
+  {
+    return interfaceUsageEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getInterfaceUsage_Elements()
+  {
+    return (EReference)interfaceUsageEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getFlowConnectionDefinition()
+  {
+    return flowConnectionDefinitionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getFlowConnectionDefinition_Elements()
+  {
+    return (EReference)flowConnectionDefinitionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getFlowConnectionUsage()
+  {
+    return flowConnectionUsageEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getFlowConnectionUsage_ItemFeature()
+  {
+    return (EAttribute)flowConnectionUsageEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getFlowConnectionUsage_FlowEnd()
+  {
+    return (EAttribute)flowConnectionUsageEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getFlowConnectionUsage_Elements()
+  {
+    return (EReference)flowConnectionUsageEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -608,9 +999,9 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   @Override
-  public EClass getPartUsage()
+  public EClass getOccurrenceUsagePrefix()
   {
-    return partUsageEClass;
+    return occurrenceUsagePrefixEClass;
   }
 
   /**
@@ -619,9 +1010,130 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   @Override
-  public EReference getPartUsage_Elements()
+  public EAttribute getOccurrenceUsagePrefix_IsEnd()
   {
-    return (EReference)partUsageEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)occurrenceUsagePrefixEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getRefPrefix()
+  {
+    return refPrefixEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getRefPrefix_Direction()
+  {
+    return (EAttribute)refPrefixEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getBasicUsagePrefix()
+  {
+    return basicUsagePrefixEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getBasicUsagePrefix_IsReference()
+  {
+    return (EAttribute)basicUsagePrefixEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getConnectorPart()
+  {
+    return connectorPartEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getConnectorPart_ConnectorEnd()
+  {
+    return (EAttribute)connectorPartEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getInterfacePart()
+  {
+    return interfacePartEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getInterfacePart_InterfaceEnd()
+  {
+    return (EAttribute)interfacePartEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getDefinitionDeclaration()
+  {
+    return definitionDeclarationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getDefinitionDeclaration_DeclaredName()
+  {
+    return (EAttribute)definitionDeclarationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getDefinitionDeclaration_Superclassifiers()
+  {
+    return (EAttribute)definitionDeclarationEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -633,6 +1145,28 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   public EClass getUsage()
   {
     return usageEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getUsage_Elements()
+  {
+    return (EReference)usageEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getUsageDeclaration()
+  {
+    return usageDeclarationEClass;
   }
 
   /**
@@ -674,7 +1208,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   @Override
-  public EAttribute getFeatureValue_OwnedExpression()
+  public EAttribute getFeatureValue_ValuePart()
   {
     return (EAttribute)featureValueEClass.getEStructuralFeatures().get(2);
   }
@@ -839,6 +1373,28 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   @Override
+  public EEnum getFeatureDirection()
+  {
+    return featureDirectionEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EEnum getPortionKind()
+  {
+    return portionKindEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public SysMLOCFactory getSysMLOCFactory()
   {
     return (SysMLOCFactory)getEFactoryInstance();
@@ -878,8 +1434,6 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
     importElementEClass = createEClass(IMPORT_ELEMENT);
 
     definitionElementEClass = createEClass(DEFINITION_ELEMENT);
-    createEAttribute(definitionElementEClass, DEFINITION_ELEMENT__DECLARED_NAME);
-    createEReference(definitionElementEClass, DEFINITION_ELEMENT__ELEMENTS);
 
     usageElementEClass = createEClass(USAGE_ELEMENT);
 
@@ -894,31 +1448,85 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
     namespaceImportEClass = createEClass(NAMESPACE_IMPORT);
     createEAttribute(namespaceImportEClass, NAMESPACE_IMPORT__VISIBILITY);
     createEAttribute(namespaceImportEClass, NAMESPACE_IMPORT__DECLARED_NAME);
+    createEAttribute(namespaceImportEClass, NAMESPACE_IMPORT__IS_RECURSIVE);
 
     commentEClass = createEClass(COMMENT);
     createEAttribute(commentEClass, COMMENT__BODY);
 
-    attributeDefinitionEClass = createEClass(ATTRIBUTE_DEFINITION);
+    referenceUsageEClass = createEClass(REFERENCE_USAGE);
 
-    partDefinitionEClass = createEClass(PART_DEFINITION);
+    attributeDefinitionEClass = createEClass(ATTRIBUTE_DEFINITION);
+    createEReference(attributeDefinitionEClass, ATTRIBUTE_DEFINITION__ELEMENTS);
 
     attributeUsageEClass = createEClass(ATTRIBUTE_USAGE);
-    createEAttribute(attributeUsageEClass, ATTRIBUTE_USAGE__DECLARED_NAME);
-    createEReference(attributeUsageEClass, ATTRIBUTE_USAGE__ELEMENTS);
+
+    itemDefinitionEClass = createEClass(ITEM_DEFINITION);
+    createEReference(itemDefinitionEClass, ITEM_DEFINITION__ELEMENTS);
+
+    itemUsageEClass = createEClass(ITEM_USAGE);
+
+    partDefinitionEClass = createEClass(PART_DEFINITION);
+    createEReference(partDefinitionEClass, PART_DEFINITION__ELEMENTS);
+
+    partUsageEClass = createEClass(PART_USAGE);
+
+    portDefinitionEClass = createEClass(PORT_DEFINITION);
+    createEReference(portDefinitionEClass, PORT_DEFINITION__ELEMENTS);
+
+    portUsageEClass = createEClass(PORT_USAGE);
+
+    connectionDefinitionEClass = createEClass(CONNECTION_DEFINITION);
+    createEReference(connectionDefinitionEClass, CONNECTION_DEFINITION__ELEMENTS);
+
+    connectionUsageEClass = createEClass(CONNECTION_USAGE);
+    createEReference(connectionUsageEClass, CONNECTION_USAGE__ELEMENTS);
+
+    interfaceDefinitionEClass = createEClass(INTERFACE_DEFINITION);
+    createEReference(interfaceDefinitionEClass, INTERFACE_DEFINITION__ELEMENTS);
+
+    interfaceUsageEClass = createEClass(INTERFACE_USAGE);
+    createEReference(interfaceUsageEClass, INTERFACE_USAGE__ELEMENTS);
+
+    flowConnectionDefinitionEClass = createEClass(FLOW_CONNECTION_DEFINITION);
+    createEReference(flowConnectionDefinitionEClass, FLOW_CONNECTION_DEFINITION__ELEMENTS);
+
+    flowConnectionUsageEClass = createEClass(FLOW_CONNECTION_USAGE);
+    createEAttribute(flowConnectionUsageEClass, FLOW_CONNECTION_USAGE__ITEM_FEATURE);
+    createEAttribute(flowConnectionUsageEClass, FLOW_CONNECTION_USAGE__FLOW_END);
+    createEReference(flowConnectionUsageEClass, FLOW_CONNECTION_USAGE__ELEMENTS);
 
     actionUsageEClass = createEClass(ACTION_USAGE);
     createEAttribute(actionUsageEClass, ACTION_USAGE__DECLARED_NAME);
     createEReference(actionUsageEClass, ACTION_USAGE__ELEMENTS);
 
-    partUsageEClass = createEClass(PART_USAGE);
-    createEReference(partUsageEClass, PART_USAGE__ELEMENTS);
+    occurrenceUsagePrefixEClass = createEClass(OCCURRENCE_USAGE_PREFIX);
+    createEAttribute(occurrenceUsagePrefixEClass, OCCURRENCE_USAGE_PREFIX__IS_END);
+
+    refPrefixEClass = createEClass(REF_PREFIX);
+    createEAttribute(refPrefixEClass, REF_PREFIX__DIRECTION);
+
+    basicUsagePrefixEClass = createEClass(BASIC_USAGE_PREFIX);
+    createEAttribute(basicUsagePrefixEClass, BASIC_USAGE_PREFIX__IS_REFERENCE);
+
+    connectorPartEClass = createEClass(CONNECTOR_PART);
+    createEAttribute(connectorPartEClass, CONNECTOR_PART__CONNECTOR_END);
+
+    interfacePartEClass = createEClass(INTERFACE_PART);
+    createEAttribute(interfacePartEClass, INTERFACE_PART__INTERFACE_END);
+
+    definitionDeclarationEClass = createEClass(DEFINITION_DECLARATION);
+    createEAttribute(definitionDeclarationEClass, DEFINITION_DECLARATION__DECLARED_NAME);
+    createEAttribute(definitionDeclarationEClass, DEFINITION_DECLARATION__SUPERCLASSIFIERS);
 
     usageEClass = createEClass(USAGE);
+    createEReference(usageEClass, USAGE__ELEMENTS);
+
+    usageDeclarationEClass = createEClass(USAGE_DECLARATION);
 
     featureValueEClass = createEClass(FEATURE_VALUE);
     createEAttribute(featureValueEClass, FEATURE_VALUE__IS_INITIAL);
     createEAttribute(featureValueEClass, FEATURE_VALUE__IS_DEFAULT);
-    createEAttribute(featureValueEClass, FEATURE_VALUE__OWNED_EXPRESSION);
+    createEAttribute(featureValueEClass, FEATURE_VALUE__VALUE_PART);
 
     featureDeclarationEClass = createEClass(FEATURE_DECLARATION);
     createEAttribute(featureDeclarationEClass, FEATURE_DECLARATION__DECLARED_NAME);
@@ -939,6 +1547,8 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
 
     // Create enums
     visibilityIndicatorEEnum = createEEnum(VISIBILITY_INDICATOR);
+    featureDirectionEEnum = createEEnum(FEATURE_DIRECTION);
+    portionKindEEnum = createEEnum(PORTION_KIND);
   }
 
   /**
@@ -981,22 +1591,116 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
     behaviorUsageElementEClass.getESuperTypes().add(this.getOccurrenceUsageElement());
     namespaceImportEClass.getESuperTypes().add(this.getImportElement());
     commentEClass.getESuperTypes().add(this.getAnnotatingElement());
+    referenceUsageEClass.getESuperTypes().add(this.getOccurrenceUsagePrefix());
+    referenceUsageEClass.getESuperTypes().add(this.getBasicUsagePrefix());
+    referenceUsageEClass.getESuperTypes().add(this.getRefPrefix());
+    referenceUsageEClass.getESuperTypes().add(this.getUsage());
+    referenceUsageEClass.getESuperTypes().add(this.getUsageDeclaration());
+    referenceUsageEClass.getESuperTypes().add(this.getFeatureDeclaration());
+    referenceUsageEClass.getESuperTypes().add(this.getFeatureSpecializationPart());
+    referenceUsageEClass.getESuperTypes().add(this.getFeatureSpecialization());
+    referenceUsageEClass.getESuperTypes().add(this.getMultiplicityPart());
+    referenceUsageEClass.getESuperTypes().add(this.getFeatureValue());
     attributeDefinitionEClass.getESuperTypes().add(this.getDefinitionElement());
-    partDefinitionEClass.getESuperTypes().add(this.getDefinitionElement());
+    attributeDefinitionEClass.getESuperTypes().add(this.getDefinitionDeclaration());
     attributeUsageEClass.getESuperTypes().add(this.getNonOccurrenceUsageElement());
-    actionUsageEClass.getESuperTypes().add(this.getBehaviorUsageElement());
+    attributeUsageEClass.getESuperTypes().add(this.getUsage());
+    attributeUsageEClass.getESuperTypes().add(this.getUsageDeclaration());
+    attributeUsageEClass.getESuperTypes().add(this.getFeatureDeclaration());
+    attributeUsageEClass.getESuperTypes().add(this.getFeatureSpecializationPart());
+    attributeUsageEClass.getESuperTypes().add(this.getFeatureSpecialization());
+    attributeUsageEClass.getESuperTypes().add(this.getMultiplicityPart());
+    attributeUsageEClass.getESuperTypes().add(this.getFeatureValue());
+    itemDefinitionEClass.getESuperTypes().add(this.getDefinitionElement());
+    itemDefinitionEClass.getESuperTypes().add(this.getDefinitionDeclaration());
+    itemUsageEClass.getESuperTypes().add(this.getStructureUsageElement());
+    itemUsageEClass.getESuperTypes().add(this.getUsage());
+    itemUsageEClass.getESuperTypes().add(this.getUsageDeclaration());
+    itemUsageEClass.getESuperTypes().add(this.getFeatureDeclaration());
+    itemUsageEClass.getESuperTypes().add(this.getFeatureSpecializationPart());
+    itemUsageEClass.getESuperTypes().add(this.getFeatureSpecialization());
+    itemUsageEClass.getESuperTypes().add(this.getMultiplicityPart());
+    itemUsageEClass.getESuperTypes().add(this.getFeatureValue());
+    partDefinitionEClass.getESuperTypes().add(this.getDefinitionElement());
+    partDefinitionEClass.getESuperTypes().add(this.getDefinitionDeclaration());
     partUsageEClass.getESuperTypes().add(this.getStructureUsageElement());
+    partUsageEClass.getESuperTypes().add(this.getOccurrenceUsagePrefix());
+    partUsageEClass.getESuperTypes().add(this.getBasicUsagePrefix());
+    partUsageEClass.getESuperTypes().add(this.getRefPrefix());
     partUsageEClass.getESuperTypes().add(this.getUsage());
+    partUsageEClass.getESuperTypes().add(this.getUsageDeclaration());
     partUsageEClass.getESuperTypes().add(this.getFeatureDeclaration());
     partUsageEClass.getESuperTypes().add(this.getFeatureSpecializationPart());
     partUsageEClass.getESuperTypes().add(this.getFeatureSpecialization());
     partUsageEClass.getESuperTypes().add(this.getMultiplicityPart());
     partUsageEClass.getESuperTypes().add(this.getFeatureValue());
+    portDefinitionEClass.getESuperTypes().add(this.getDefinitionElement());
+    portDefinitionEClass.getESuperTypes().add(this.getDefinitionDeclaration());
+    portUsageEClass.getESuperTypes().add(this.getStructureUsageElement());
+    portUsageEClass.getESuperTypes().add(this.getOccurrenceUsagePrefix());
+    portUsageEClass.getESuperTypes().add(this.getBasicUsagePrefix());
+    portUsageEClass.getESuperTypes().add(this.getRefPrefix());
+    portUsageEClass.getESuperTypes().add(this.getUsage());
+    portUsageEClass.getESuperTypes().add(this.getUsageDeclaration());
+    portUsageEClass.getESuperTypes().add(this.getFeatureDeclaration());
+    portUsageEClass.getESuperTypes().add(this.getFeatureSpecializationPart());
+    portUsageEClass.getESuperTypes().add(this.getFeatureSpecialization());
+    portUsageEClass.getESuperTypes().add(this.getMultiplicityPart());
+    portUsageEClass.getESuperTypes().add(this.getFeatureValue());
+    connectionDefinitionEClass.getESuperTypes().add(this.getDefinitionElement());
+    connectionDefinitionEClass.getESuperTypes().add(this.getDefinitionDeclaration());
+    connectionUsageEClass.getESuperTypes().add(this.getStructureUsageElement());
+    connectionUsageEClass.getESuperTypes().add(this.getOccurrenceUsagePrefix());
+    connectionUsageEClass.getESuperTypes().add(this.getBasicUsagePrefix());
+    connectionUsageEClass.getESuperTypes().add(this.getRefPrefix());
+    connectionUsageEClass.getESuperTypes().add(this.getUsageDeclaration());
+    connectionUsageEClass.getESuperTypes().add(this.getFeatureDeclaration());
+    connectionUsageEClass.getESuperTypes().add(this.getFeatureSpecializationPart());
+    connectionUsageEClass.getESuperTypes().add(this.getFeatureSpecialization());
+    connectionUsageEClass.getESuperTypes().add(this.getMultiplicityPart());
+    connectionUsageEClass.getESuperTypes().add(this.getFeatureValue());
+    connectionUsageEClass.getESuperTypes().add(this.getConnectorPart());
+    interfaceDefinitionEClass.getESuperTypes().add(this.getDefinitionElement());
+    interfaceDefinitionEClass.getESuperTypes().add(this.getDefinitionDeclaration());
+    interfaceUsageEClass.getESuperTypes().add(this.getStructureUsageElement());
+    interfaceUsageEClass.getESuperTypes().add(this.getOccurrenceUsagePrefix());
+    interfaceUsageEClass.getESuperTypes().add(this.getBasicUsagePrefix());
+    interfaceUsageEClass.getESuperTypes().add(this.getRefPrefix());
+    interfaceUsageEClass.getESuperTypes().add(this.getUsageDeclaration());
+    interfaceUsageEClass.getESuperTypes().add(this.getFeatureDeclaration());
+    interfaceUsageEClass.getESuperTypes().add(this.getFeatureSpecializationPart());
+    interfaceUsageEClass.getESuperTypes().add(this.getFeatureSpecialization());
+    interfaceUsageEClass.getESuperTypes().add(this.getMultiplicityPart());
+    interfaceUsageEClass.getESuperTypes().add(this.getInterfacePart());
+    flowConnectionDefinitionEClass.getESuperTypes().add(this.getDefinitionElement());
+    flowConnectionDefinitionEClass.getESuperTypes().add(this.getDefinitionDeclaration());
+    flowConnectionUsageEClass.getESuperTypes().add(this.getStructureUsageElement());
+    flowConnectionUsageEClass.getESuperTypes().add(this.getOccurrenceUsagePrefix());
+    flowConnectionUsageEClass.getESuperTypes().add(this.getBasicUsagePrefix());
+    flowConnectionUsageEClass.getESuperTypes().add(this.getRefPrefix());
+    flowConnectionUsageEClass.getESuperTypes().add(this.getUsageDeclaration());
+    flowConnectionUsageEClass.getESuperTypes().add(this.getFeatureDeclaration());
+    flowConnectionUsageEClass.getESuperTypes().add(this.getFeatureSpecializationPart());
+    flowConnectionUsageEClass.getESuperTypes().add(this.getFeatureSpecialization());
+    flowConnectionUsageEClass.getESuperTypes().add(this.getMultiplicityPart());
+    flowConnectionUsageEClass.getESuperTypes().add(this.getFeatureValue());
+    actionUsageEClass.getESuperTypes().add(this.getBehaviorUsageElement());
+    actionUsageEClass.getESuperTypes().add(this.getOccurrenceUsagePrefix());
+    actionUsageEClass.getESuperTypes().add(this.getBasicUsagePrefix());
+    actionUsageEClass.getESuperTypes().add(this.getRefPrefix());
+    occurrenceUsagePrefixEClass.getESuperTypes().add(this.getBasicUsagePrefix());
+    occurrenceUsagePrefixEClass.getESuperTypes().add(this.getRefPrefix());
+    basicUsagePrefixEClass.getESuperTypes().add(this.getRefPrefix());
+    usageEClass.getESuperTypes().add(this.getUsageDeclaration());
     usageEClass.getESuperTypes().add(this.getFeatureDeclaration());
     usageEClass.getESuperTypes().add(this.getFeatureSpecializationPart());
     usageEClass.getESuperTypes().add(this.getFeatureSpecialization());
     usageEClass.getESuperTypes().add(this.getMultiplicityPart());
     usageEClass.getESuperTypes().add(this.getFeatureValue());
+    usageDeclarationEClass.getESuperTypes().add(this.getFeatureDeclaration());
+    usageDeclarationEClass.getESuperTypes().add(this.getFeatureSpecializationPart());
+    usageDeclarationEClass.getESuperTypes().add(this.getFeatureSpecialization());
+    usageDeclarationEClass.getESuperTypes().add(this.getMultiplicityPart());
     featureDeclarationEClass.getESuperTypes().add(this.getFeatureSpecializationPart());
     featureDeclarationEClass.getESuperTypes().add(this.getFeatureSpecialization());
     featureDeclarationEClass.getESuperTypes().add(this.getMultiplicityPart());
@@ -1018,8 +1722,6 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
     initEClass(importElementEClass, ImportElement.class, "ImportElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(definitionElementEClass, DefinitionElement.class, "DefinitionElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDefinitionElement_DeclaredName(), ecorePackage.getEString(), "declaredName", null, 0, 1, DefinitionElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDefinitionElement_Elements(), this.getBaseElement(), null, "elements", null, 0, -1, DefinitionElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(usageElementEClass, UsageElement.class, "UsageElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1034,31 +1736,85 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
     initEClass(namespaceImportEClass, NamespaceImport.class, "NamespaceImport", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getNamespaceImport_Visibility(), this.getVisibilityIndicator(), "visibility", null, 0, 1, NamespaceImport.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getNamespaceImport_DeclaredName(), ecorePackage.getEString(), "declaredName", null, 0, 1, NamespaceImport.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getNamespaceImport_IsRecursive(), ecorePackage.getEBoolean(), "isRecursive", null, 0, 1, NamespaceImport.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(commentEClass, Comment.class, "Comment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getComment_Body(), ecorePackage.getEString(), "body", null, 0, 1, Comment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(attributeDefinitionEClass, AttributeDefinition.class, "AttributeDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(referenceUsageEClass, ReferenceUsage.class, "ReferenceUsage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(partDefinitionEClass, PartDefinition.class, "PartDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(attributeDefinitionEClass, AttributeDefinition.class, "AttributeDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getAttributeDefinition_Elements(), this.getBaseElement(), null, "elements", null, 0, -1, AttributeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(attributeUsageEClass, AttributeUsage.class, "AttributeUsage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAttributeUsage_DeclaredName(), ecorePackage.getEString(), "declaredName", null, 0, 1, AttributeUsage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAttributeUsage_Elements(), this.getBaseElement(), null, "elements", null, 0, -1, AttributeUsage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(itemDefinitionEClass, ItemDefinition.class, "ItemDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getItemDefinition_Elements(), this.getBaseElement(), null, "elements", null, 0, -1, ItemDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(itemUsageEClass, ItemUsage.class, "ItemUsage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(partDefinitionEClass, PartDefinition.class, "PartDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getPartDefinition_Elements(), this.getBaseElement(), null, "elements", null, 0, -1, PartDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(partUsageEClass, PartUsage.class, "PartUsage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(portDefinitionEClass, PortDefinition.class, "PortDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getPortDefinition_Elements(), this.getBaseElement(), null, "elements", null, 0, -1, PortDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(portUsageEClass, PortUsage.class, "PortUsage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(connectionDefinitionEClass, ConnectionDefinition.class, "ConnectionDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getConnectionDefinition_Elements(), this.getBaseElement(), null, "elements", null, 0, -1, ConnectionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(connectionUsageEClass, ConnectionUsage.class, "ConnectionUsage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getConnectionUsage_Elements(), this.getBaseElement(), null, "elements", null, 0, -1, ConnectionUsage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(interfaceDefinitionEClass, InterfaceDefinition.class, "InterfaceDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getInterfaceDefinition_Elements(), this.getBaseElement(), null, "elements", null, 0, -1, InterfaceDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(interfaceUsageEClass, InterfaceUsage.class, "InterfaceUsage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getInterfaceUsage_Elements(), this.getBaseElement(), null, "elements", null, 0, -1, InterfaceUsage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(flowConnectionDefinitionEClass, FlowConnectionDefinition.class, "FlowConnectionDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getFlowConnectionDefinition_Elements(), this.getBaseElement(), null, "elements", null, 0, -1, FlowConnectionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(flowConnectionUsageEClass, FlowConnectionUsage.class, "FlowConnectionUsage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFlowConnectionUsage_ItemFeature(), ecorePackage.getEString(), "ItemFeature", null, 0, -1, FlowConnectionUsage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFlowConnectionUsage_FlowEnd(), ecorePackage.getEString(), "FlowEnd", null, 0, -1, FlowConnectionUsage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFlowConnectionUsage_Elements(), this.getBaseElement(), null, "elements", null, 0, -1, FlowConnectionUsage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(actionUsageEClass, ActionUsage.class, "ActionUsage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getActionUsage_DeclaredName(), ecorePackage.getEString(), "declaredName", null, 0, 1, ActionUsage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getActionUsage_Elements(), this.getBaseElement(), null, "elements", null, 0, -1, ActionUsage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(partUsageEClass, PartUsage.class, "PartUsage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getPartUsage_Elements(), this.getBaseElement(), null, "elements", null, 0, -1, PartUsage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(occurrenceUsagePrefixEClass, OccurrenceUsagePrefix.class, "OccurrenceUsagePrefix", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getOccurrenceUsagePrefix_IsEnd(), ecorePackage.getEBoolean(), "isEnd", null, 0, 1, OccurrenceUsagePrefix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(refPrefixEClass, RefPrefix.class, "RefPrefix", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getRefPrefix_Direction(), this.getFeatureDirection(), "direction", null, 0, 1, RefPrefix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(basicUsagePrefixEClass, BasicUsagePrefix.class, "BasicUsagePrefix", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getBasicUsagePrefix_IsReference(), ecorePackage.getEBoolean(), "isReference", null, 0, 1, BasicUsagePrefix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(connectorPartEClass, ConnectorPart.class, "ConnectorPart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getConnectorPart_ConnectorEnd(), ecorePackage.getEString(), "connectorEnd", null, 0, -1, ConnectorPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(interfacePartEClass, InterfacePart.class, "InterfacePart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getInterfacePart_InterfaceEnd(), ecorePackage.getEString(), "InterfaceEnd", null, 0, -1, InterfacePart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(definitionDeclarationEClass, DefinitionDeclaration.class, "DefinitionDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDefinitionDeclaration_DeclaredName(), ecorePackage.getEString(), "declaredName", null, 0, 1, DefinitionDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDefinitionDeclaration_Superclassifiers(), ecorePackage.getEString(), "superclassifiers", null, 0, -1, DefinitionDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(usageEClass, Usage.class, "Usage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getUsage_Elements(), this.getBaseElement(), null, "elements", null, 0, -1, Usage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(usageDeclarationEClass, UsageDeclaration.class, "UsageDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(featureValueEClass, FeatureValue.class, "FeatureValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFeatureValue_IsInitial(), ecorePackage.getEBoolean(), "isInitial", null, 0, 1, FeatureValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFeatureValue_IsDefault(), ecorePackage.getEBoolean(), "isDefault", null, 0, 1, FeatureValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getFeatureValue_OwnedExpression(), ecorePackage.getEString(), "ownedExpression", null, 0, -1, FeatureValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFeatureValue_ValuePart(), ecorePackage.getEString(), "valuePart", null, 0, -1, FeatureValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(featureDeclarationEClass, FeatureDeclaration.class, "FeatureDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFeatureDeclaration_DeclaredName(), ecorePackage.getEString(), "declaredName", null, 0, 1, FeatureDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1082,6 +1838,15 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
     addEEnumLiteral(visibilityIndicatorEEnum, VisibilityIndicator.PUBLIC);
     addEEnumLiteral(visibilityIndicatorEEnum, VisibilityIndicator.PRIVATE);
     addEEnumLiteral(visibilityIndicatorEEnum, VisibilityIndicator.PROTECTED);
+
+    initEEnum(featureDirectionEEnum, FeatureDirection.class, "FeatureDirection");
+    addEEnumLiteral(featureDirectionEEnum, FeatureDirection.IN);
+    addEEnumLiteral(featureDirectionEEnum, FeatureDirection.OUT);
+    addEEnumLiteral(featureDirectionEEnum, FeatureDirection.INOUT);
+
+    initEEnum(portionKindEEnum, PortionKind.class, "PortionKind");
+    addEEnumLiteral(portionKindEEnum, PortionKind.SNAPSHOT);
+    addEEnumLiteral(portionKindEEnum, PortionKind.TIMESLICE);
 
     // Create resource
     createResource(eNS_URI);

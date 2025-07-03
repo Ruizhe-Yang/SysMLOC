@@ -15,6 +15,7 @@ package dut.control.sysmloc.sysMLOC;
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.NamespaceImport#getVisibility <em>Visibility</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.NamespaceImport#getDeclaredName <em>Declared Name</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.NamespaceImport#isIsRecursive <em>Is Recursive</em>}</li>
  * </ul>
  *
  * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getNamespaceImport()
@@ -69,5 +70,27 @@ public interface NamespaceImport extends ImportElement
    * @generated
    */
   void setDeclaredName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Is Recursive</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Is Recursive</em>' attribute.
+   * @see #setIsRecursive(boolean)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getNamespaceImport_IsRecursive()
+   * @model
+   * @generated
+   */
+  boolean isIsRecursive();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.NamespaceImport#isIsRecursive <em>Is Recursive</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Is Recursive</em>' attribute.
+   * @see #isIsRecursive()
+   * @generated
+   */
+  void setIsRecursive(boolean value);
 
 } // NamespaceImport

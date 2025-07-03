@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.NamespaceImportImpl#getVisibility <em>Visibility</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.NamespaceImportImpl#getDeclaredName <em>Declared Name</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.NamespaceImportImpl#isIsRecursive <em>Is Recursive</em>}</li>
  * </ul>
  *
  * @generated
@@ -68,6 +69,26 @@ public class NamespaceImportImpl extends ImportElementImpl implements NamespaceI
    * @ordered
    */
   protected String declaredName = DECLARED_NAME_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsRecursive() <em>Is Recursive</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsRecursive()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_RECURSIVE_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsRecursive() <em>Is Recursive</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsRecursive()
+   * @generated
+   * @ordered
+   */
+  protected boolean isRecursive = IS_RECURSIVE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -146,6 +167,31 @@ public class NamespaceImportImpl extends ImportElementImpl implements NamespaceI
    * @generated
    */
   @Override
+  public boolean isIsRecursive()
+  {
+    return isRecursive;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsRecursive(boolean newIsRecursive)
+  {
+    boolean oldIsRecursive = isRecursive;
+    isRecursive = newIsRecursive;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.NAMESPACE_IMPORT__IS_RECURSIVE, oldIsRecursive, isRecursive));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
@@ -154,6 +200,8 @@ public class NamespaceImportImpl extends ImportElementImpl implements NamespaceI
         return getVisibility();
       case SysMLOCPackage.NAMESPACE_IMPORT__DECLARED_NAME:
         return getDeclaredName();
+      case SysMLOCPackage.NAMESPACE_IMPORT__IS_RECURSIVE:
+        return isIsRecursive();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -173,6 +221,9 @@ public class NamespaceImportImpl extends ImportElementImpl implements NamespaceI
         return;
       case SysMLOCPackage.NAMESPACE_IMPORT__DECLARED_NAME:
         setDeclaredName((String)newValue);
+        return;
+      case SysMLOCPackage.NAMESPACE_IMPORT__IS_RECURSIVE:
+        setIsRecursive((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -194,6 +245,9 @@ public class NamespaceImportImpl extends ImportElementImpl implements NamespaceI
       case SysMLOCPackage.NAMESPACE_IMPORT__DECLARED_NAME:
         setDeclaredName(DECLARED_NAME_EDEFAULT);
         return;
+      case SysMLOCPackage.NAMESPACE_IMPORT__IS_RECURSIVE:
+        setIsRecursive(IS_RECURSIVE_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -212,6 +266,8 @@ public class NamespaceImportImpl extends ImportElementImpl implements NamespaceI
         return visibility != VISIBILITY_EDEFAULT;
       case SysMLOCPackage.NAMESPACE_IMPORT__DECLARED_NAME:
         return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
+      case SysMLOCPackage.NAMESPACE_IMPORT__IS_RECURSIVE:
+        return isRecursive != IS_RECURSIVE_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -231,6 +287,8 @@ public class NamespaceImportImpl extends ImportElementImpl implements NamespaceI
     result.append(visibility);
     result.append(", declaredName: ");
     result.append(declaredName);
+    result.append(", isRecursive: ");
+    result.append(isRecursive);
     result.append(')');
     return result.toString();
   }

@@ -5,7 +5,14 @@ package dut.control.sysmloc.sysMLOC.impl;
 
 import dut.control.sysmloc.sysMLOC.AttributeUsage;
 import dut.control.sysmloc.sysMLOC.BaseElement;
+import dut.control.sysmloc.sysMLOC.FeatureDeclaration;
+import dut.control.sysmloc.sysMLOC.FeatureSpecialization;
+import dut.control.sysmloc.sysMLOC.FeatureSpecializationPart;
+import dut.control.sysmloc.sysMLOC.FeatureValue;
+import dut.control.sysmloc.sysMLOC.MultiplicityPart;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
+import dut.control.sysmloc.sysMLOC.Usage;
+import dut.control.sysmloc.sysMLOC.UsageDeclaration;
 
 import java.util.Collection;
 
@@ -19,6 +26,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -30,7 +38,18 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AttributeUsageImpl#getTypings <em>Typings</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AttributeUsageImpl#getSubsetting <em>Subsetting</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AttributeUsageImpl#getReferences <em>References</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AttributeUsageImpl#getCrosses <em>Crosses</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AttributeUsageImpl#getRedefinitions <em>Redefinitions</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AttributeUsageImpl#getMultiplicity <em>Multiplicity</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AttributeUsageImpl#isIsOrdered <em>Is Ordered</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AttributeUsageImpl#isIsNonunique <em>Is Nonunique</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AttributeUsageImpl#getDeclaredName <em>Declared Name</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AttributeUsageImpl#isIsInitial <em>Is Initial</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AttributeUsageImpl#isIsDefault <em>Is Default</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AttributeUsageImpl#getValuePart <em>Value Part</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AttributeUsageImpl#getElements <em>Elements</em>}</li>
  * </ul>
  *
@@ -38,6 +57,106 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class AttributeUsageImpl extends NonOccurrenceUsageElementImpl implements AttributeUsage
 {
+  /**
+   * The cached value of the '{@link #getTypings() <em>Typings</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTypings()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> typings;
+
+  /**
+   * The cached value of the '{@link #getSubsetting() <em>Subsetting</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSubsetting()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> subsetting;
+
+  /**
+   * The cached value of the '{@link #getReferences() <em>References</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getReferences()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> references;
+
+  /**
+   * The cached value of the '{@link #getCrosses() <em>Crosses</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCrosses()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> crosses;
+
+  /**
+   * The cached value of the '{@link #getRedefinitions() <em>Redefinitions</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRedefinitions()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> redefinitions;
+
+  /**
+   * The cached value of the '{@link #getMultiplicity() <em>Multiplicity</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMultiplicity()
+   * @generated
+   * @ordered
+   */
+  protected EList<Integer> multiplicity;
+
+  /**
+   * The default value of the '{@link #isIsOrdered() <em>Is Ordered</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsOrdered()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_ORDERED_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsOrdered() <em>Is Ordered</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsOrdered()
+   * @generated
+   * @ordered
+   */
+  protected boolean isOrdered = IS_ORDERED_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsNonunique() <em>Is Nonunique</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsNonunique()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_NONUNIQUE_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsNonunique() <em>Is Nonunique</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsNonunique()
+   * @generated
+   * @ordered
+   */
+  protected boolean isNonunique = IS_NONUNIQUE_EDEFAULT;
+
   /**
    * The default value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -57,6 +176,56 @@ public class AttributeUsageImpl extends NonOccurrenceUsageElementImpl implements
    * @ordered
    */
   protected String declaredName = DECLARED_NAME_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsInitial() <em>Is Initial</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsInitial()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_INITIAL_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsInitial() <em>Is Initial</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsInitial()
+   * @generated
+   * @ordered
+   */
+  protected boolean isInitial = IS_INITIAL_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsDefault() <em>Is Default</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsDefault()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_DEFAULT_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsDefault() <em>Is Default</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsDefault()
+   * @generated
+   * @ordered
+   */
+  protected boolean isDefault = IS_DEFAULT_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getValuePart() <em>Value Part</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getValuePart()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> valuePart;
 
   /**
    * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
@@ -95,6 +264,146 @@ public class AttributeUsageImpl extends NonOccurrenceUsageElementImpl implements
    * @generated
    */
   @Override
+  public EList<String> getTypings()
+  {
+    if (typings == null)
+    {
+      typings = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.ATTRIBUTE_USAGE__TYPINGS);
+    }
+    return typings;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<String> getSubsetting()
+  {
+    if (subsetting == null)
+    {
+      subsetting = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.ATTRIBUTE_USAGE__SUBSETTING);
+    }
+    return subsetting;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<String> getReferences()
+  {
+    if (references == null)
+    {
+      references = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.ATTRIBUTE_USAGE__REFERENCES);
+    }
+    return references;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<String> getCrosses()
+  {
+    if (crosses == null)
+    {
+      crosses = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.ATTRIBUTE_USAGE__CROSSES);
+    }
+    return crosses;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<String> getRedefinitions()
+  {
+    if (redefinitions == null)
+    {
+      redefinitions = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.ATTRIBUTE_USAGE__REDEFINITIONS);
+    }
+    return redefinitions;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<Integer> getMultiplicity()
+  {
+    if (multiplicity == null)
+    {
+      multiplicity = new EDataTypeEList<Integer>(Integer.class, this, SysMLOCPackage.ATTRIBUTE_USAGE__MULTIPLICITY);
+    }
+    return multiplicity;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsOrdered()
+  {
+    return isOrdered;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsOrdered(boolean newIsOrdered)
+  {
+    boolean oldIsOrdered = isOrdered;
+    isOrdered = newIsOrdered;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ATTRIBUTE_USAGE__IS_ORDERED, oldIsOrdered, isOrdered));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsNonunique()
+  {
+    return isNonunique;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsNonunique(boolean newIsNonunique)
+  {
+    boolean oldIsNonunique = isNonunique;
+    isNonunique = newIsNonunique;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ATTRIBUTE_USAGE__IS_NONUNIQUE, oldIsNonunique, isNonunique));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public String getDeclaredName()
   {
     return declaredName;
@@ -112,6 +421,71 @@ public class AttributeUsageImpl extends NonOccurrenceUsageElementImpl implements
     declaredName = newDeclaredName;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ATTRIBUTE_USAGE__DECLARED_NAME, oldDeclaredName, declaredName));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsInitial()
+  {
+    return isInitial;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsInitial(boolean newIsInitial)
+  {
+    boolean oldIsInitial = isInitial;
+    isInitial = newIsInitial;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ATTRIBUTE_USAGE__IS_INITIAL, oldIsInitial, isInitial));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsDefault()
+  {
+    return isDefault;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsDefault(boolean newIsDefault)
+  {
+    boolean oldIsDefault = isDefault;
+    isDefault = newIsDefault;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ATTRIBUTE_USAGE__IS_DEFAULT, oldIsDefault, isDefault));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<String> getValuePart()
+  {
+    if (valuePart == null)
+    {
+      valuePart = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.ATTRIBUTE_USAGE__VALUE_PART);
+    }
+    return valuePart;
   }
 
   /**
@@ -155,8 +529,30 @@ public class AttributeUsageImpl extends NonOccurrenceUsageElementImpl implements
   {
     switch (featureID)
     {
+      case SysMLOCPackage.ATTRIBUTE_USAGE__TYPINGS:
+        return getTypings();
+      case SysMLOCPackage.ATTRIBUTE_USAGE__SUBSETTING:
+        return getSubsetting();
+      case SysMLOCPackage.ATTRIBUTE_USAGE__REFERENCES:
+        return getReferences();
+      case SysMLOCPackage.ATTRIBUTE_USAGE__CROSSES:
+        return getCrosses();
+      case SysMLOCPackage.ATTRIBUTE_USAGE__REDEFINITIONS:
+        return getRedefinitions();
+      case SysMLOCPackage.ATTRIBUTE_USAGE__MULTIPLICITY:
+        return getMultiplicity();
+      case SysMLOCPackage.ATTRIBUTE_USAGE__IS_ORDERED:
+        return isIsOrdered();
+      case SysMLOCPackage.ATTRIBUTE_USAGE__IS_NONUNIQUE:
+        return isIsNonunique();
       case SysMLOCPackage.ATTRIBUTE_USAGE__DECLARED_NAME:
         return getDeclaredName();
+      case SysMLOCPackage.ATTRIBUTE_USAGE__IS_INITIAL:
+        return isIsInitial();
+      case SysMLOCPackage.ATTRIBUTE_USAGE__IS_DEFAULT:
+        return isIsDefault();
+      case SysMLOCPackage.ATTRIBUTE_USAGE__VALUE_PART:
+        return getValuePart();
       case SysMLOCPackage.ATTRIBUTE_USAGE__ELEMENTS:
         return getElements();
     }
@@ -174,8 +570,48 @@ public class AttributeUsageImpl extends NonOccurrenceUsageElementImpl implements
   {
     switch (featureID)
     {
+      case SysMLOCPackage.ATTRIBUTE_USAGE__TYPINGS:
+        getTypings().clear();
+        getTypings().addAll((Collection<? extends String>)newValue);
+        return;
+      case SysMLOCPackage.ATTRIBUTE_USAGE__SUBSETTING:
+        getSubsetting().clear();
+        getSubsetting().addAll((Collection<? extends String>)newValue);
+        return;
+      case SysMLOCPackage.ATTRIBUTE_USAGE__REFERENCES:
+        getReferences().clear();
+        getReferences().addAll((Collection<? extends String>)newValue);
+        return;
+      case SysMLOCPackage.ATTRIBUTE_USAGE__CROSSES:
+        getCrosses().clear();
+        getCrosses().addAll((Collection<? extends String>)newValue);
+        return;
+      case SysMLOCPackage.ATTRIBUTE_USAGE__REDEFINITIONS:
+        getRedefinitions().clear();
+        getRedefinitions().addAll((Collection<? extends String>)newValue);
+        return;
+      case SysMLOCPackage.ATTRIBUTE_USAGE__MULTIPLICITY:
+        getMultiplicity().clear();
+        getMultiplicity().addAll((Collection<? extends Integer>)newValue);
+        return;
+      case SysMLOCPackage.ATTRIBUTE_USAGE__IS_ORDERED:
+        setIsOrdered((Boolean)newValue);
+        return;
+      case SysMLOCPackage.ATTRIBUTE_USAGE__IS_NONUNIQUE:
+        setIsNonunique((Boolean)newValue);
+        return;
       case SysMLOCPackage.ATTRIBUTE_USAGE__DECLARED_NAME:
         setDeclaredName((String)newValue);
+        return;
+      case SysMLOCPackage.ATTRIBUTE_USAGE__IS_INITIAL:
+        setIsInitial((Boolean)newValue);
+        return;
+      case SysMLOCPackage.ATTRIBUTE_USAGE__IS_DEFAULT:
+        setIsDefault((Boolean)newValue);
+        return;
+      case SysMLOCPackage.ATTRIBUTE_USAGE__VALUE_PART:
+        getValuePart().clear();
+        getValuePart().addAll((Collection<? extends String>)newValue);
         return;
       case SysMLOCPackage.ATTRIBUTE_USAGE__ELEMENTS:
         getElements().clear();
@@ -195,8 +631,41 @@ public class AttributeUsageImpl extends NonOccurrenceUsageElementImpl implements
   {
     switch (featureID)
     {
+      case SysMLOCPackage.ATTRIBUTE_USAGE__TYPINGS:
+        getTypings().clear();
+        return;
+      case SysMLOCPackage.ATTRIBUTE_USAGE__SUBSETTING:
+        getSubsetting().clear();
+        return;
+      case SysMLOCPackage.ATTRIBUTE_USAGE__REFERENCES:
+        getReferences().clear();
+        return;
+      case SysMLOCPackage.ATTRIBUTE_USAGE__CROSSES:
+        getCrosses().clear();
+        return;
+      case SysMLOCPackage.ATTRIBUTE_USAGE__REDEFINITIONS:
+        getRedefinitions().clear();
+        return;
+      case SysMLOCPackage.ATTRIBUTE_USAGE__MULTIPLICITY:
+        getMultiplicity().clear();
+        return;
+      case SysMLOCPackage.ATTRIBUTE_USAGE__IS_ORDERED:
+        setIsOrdered(IS_ORDERED_EDEFAULT);
+        return;
+      case SysMLOCPackage.ATTRIBUTE_USAGE__IS_NONUNIQUE:
+        setIsNonunique(IS_NONUNIQUE_EDEFAULT);
+        return;
       case SysMLOCPackage.ATTRIBUTE_USAGE__DECLARED_NAME:
         setDeclaredName(DECLARED_NAME_EDEFAULT);
+        return;
+      case SysMLOCPackage.ATTRIBUTE_USAGE__IS_INITIAL:
+        setIsInitial(IS_INITIAL_EDEFAULT);
+        return;
+      case SysMLOCPackage.ATTRIBUTE_USAGE__IS_DEFAULT:
+        setIsDefault(IS_DEFAULT_EDEFAULT);
+        return;
+      case SysMLOCPackage.ATTRIBUTE_USAGE__VALUE_PART:
+        getValuePart().clear();
         return;
       case SysMLOCPackage.ATTRIBUTE_USAGE__ELEMENTS:
         getElements().clear();
@@ -215,12 +684,180 @@ public class AttributeUsageImpl extends NonOccurrenceUsageElementImpl implements
   {
     switch (featureID)
     {
+      case SysMLOCPackage.ATTRIBUTE_USAGE__TYPINGS:
+        return typings != null && !typings.isEmpty();
+      case SysMLOCPackage.ATTRIBUTE_USAGE__SUBSETTING:
+        return subsetting != null && !subsetting.isEmpty();
+      case SysMLOCPackage.ATTRIBUTE_USAGE__REFERENCES:
+        return references != null && !references.isEmpty();
+      case SysMLOCPackage.ATTRIBUTE_USAGE__CROSSES:
+        return crosses != null && !crosses.isEmpty();
+      case SysMLOCPackage.ATTRIBUTE_USAGE__REDEFINITIONS:
+        return redefinitions != null && !redefinitions.isEmpty();
+      case SysMLOCPackage.ATTRIBUTE_USAGE__MULTIPLICITY:
+        return multiplicity != null && !multiplicity.isEmpty();
+      case SysMLOCPackage.ATTRIBUTE_USAGE__IS_ORDERED:
+        return isOrdered != IS_ORDERED_EDEFAULT;
+      case SysMLOCPackage.ATTRIBUTE_USAGE__IS_NONUNIQUE:
+        return isNonunique != IS_NONUNIQUE_EDEFAULT;
       case SysMLOCPackage.ATTRIBUTE_USAGE__DECLARED_NAME:
         return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
+      case SysMLOCPackage.ATTRIBUTE_USAGE__IS_INITIAL:
+        return isInitial != IS_INITIAL_EDEFAULT;
+      case SysMLOCPackage.ATTRIBUTE_USAGE__IS_DEFAULT:
+        return isDefault != IS_DEFAULT_EDEFAULT;
+      case SysMLOCPackage.ATTRIBUTE_USAGE__VALUE_PART:
+        return valuePart != null && !valuePart.isEmpty();
       case SysMLOCPackage.ATTRIBUTE_USAGE__ELEMENTS:
         return elements != null && !elements.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == FeatureSpecialization.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.ATTRIBUTE_USAGE__TYPINGS: return SysMLOCPackage.FEATURE_SPECIALIZATION__TYPINGS;
+        case SysMLOCPackage.ATTRIBUTE_USAGE__SUBSETTING: return SysMLOCPackage.FEATURE_SPECIALIZATION__SUBSETTING;
+        case SysMLOCPackage.ATTRIBUTE_USAGE__REFERENCES: return SysMLOCPackage.FEATURE_SPECIALIZATION__REFERENCES;
+        case SysMLOCPackage.ATTRIBUTE_USAGE__CROSSES: return SysMLOCPackage.FEATURE_SPECIALIZATION__CROSSES;
+        case SysMLOCPackage.ATTRIBUTE_USAGE__REDEFINITIONS: return SysMLOCPackage.FEATURE_SPECIALIZATION__REDEFINITIONS;
+        default: return -1;
+      }
+    }
+    if (baseClass == MultiplicityPart.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.ATTRIBUTE_USAGE__MULTIPLICITY: return SysMLOCPackage.MULTIPLICITY_PART__MULTIPLICITY;
+        case SysMLOCPackage.ATTRIBUTE_USAGE__IS_ORDERED: return SysMLOCPackage.MULTIPLICITY_PART__IS_ORDERED;
+        case SysMLOCPackage.ATTRIBUTE_USAGE__IS_NONUNIQUE: return SysMLOCPackage.MULTIPLICITY_PART__IS_NONUNIQUE;
+        default: return -1;
+      }
+    }
+    if (baseClass == FeatureSpecializationPart.class)
+    {
+      switch (derivedFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    if (baseClass == FeatureDeclaration.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.ATTRIBUTE_USAGE__DECLARED_NAME: return SysMLOCPackage.FEATURE_DECLARATION__DECLARED_NAME;
+        default: return -1;
+      }
+    }
+    if (baseClass == UsageDeclaration.class)
+    {
+      switch (derivedFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    if (baseClass == FeatureValue.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.ATTRIBUTE_USAGE__IS_INITIAL: return SysMLOCPackage.FEATURE_VALUE__IS_INITIAL;
+        case SysMLOCPackage.ATTRIBUTE_USAGE__IS_DEFAULT: return SysMLOCPackage.FEATURE_VALUE__IS_DEFAULT;
+        case SysMLOCPackage.ATTRIBUTE_USAGE__VALUE_PART: return SysMLOCPackage.FEATURE_VALUE__VALUE_PART;
+        default: return -1;
+      }
+    }
+    if (baseClass == Usage.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.ATTRIBUTE_USAGE__ELEMENTS: return SysMLOCPackage.USAGE__ELEMENTS;
+        default: return -1;
+      }
+    }
+    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == FeatureSpecialization.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.FEATURE_SPECIALIZATION__TYPINGS: return SysMLOCPackage.ATTRIBUTE_USAGE__TYPINGS;
+        case SysMLOCPackage.FEATURE_SPECIALIZATION__SUBSETTING: return SysMLOCPackage.ATTRIBUTE_USAGE__SUBSETTING;
+        case SysMLOCPackage.FEATURE_SPECIALIZATION__REFERENCES: return SysMLOCPackage.ATTRIBUTE_USAGE__REFERENCES;
+        case SysMLOCPackage.FEATURE_SPECIALIZATION__CROSSES: return SysMLOCPackage.ATTRIBUTE_USAGE__CROSSES;
+        case SysMLOCPackage.FEATURE_SPECIALIZATION__REDEFINITIONS: return SysMLOCPackage.ATTRIBUTE_USAGE__REDEFINITIONS;
+        default: return -1;
+      }
+    }
+    if (baseClass == MultiplicityPart.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.MULTIPLICITY_PART__MULTIPLICITY: return SysMLOCPackage.ATTRIBUTE_USAGE__MULTIPLICITY;
+        case SysMLOCPackage.MULTIPLICITY_PART__IS_ORDERED: return SysMLOCPackage.ATTRIBUTE_USAGE__IS_ORDERED;
+        case SysMLOCPackage.MULTIPLICITY_PART__IS_NONUNIQUE: return SysMLOCPackage.ATTRIBUTE_USAGE__IS_NONUNIQUE;
+        default: return -1;
+      }
+    }
+    if (baseClass == FeatureSpecializationPart.class)
+    {
+      switch (baseFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    if (baseClass == FeatureDeclaration.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.FEATURE_DECLARATION__DECLARED_NAME: return SysMLOCPackage.ATTRIBUTE_USAGE__DECLARED_NAME;
+        default: return -1;
+      }
+    }
+    if (baseClass == UsageDeclaration.class)
+    {
+      switch (baseFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    if (baseClass == FeatureValue.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.FEATURE_VALUE__IS_INITIAL: return SysMLOCPackage.ATTRIBUTE_USAGE__IS_INITIAL;
+        case SysMLOCPackage.FEATURE_VALUE__IS_DEFAULT: return SysMLOCPackage.ATTRIBUTE_USAGE__IS_DEFAULT;
+        case SysMLOCPackage.FEATURE_VALUE__VALUE_PART: return SysMLOCPackage.ATTRIBUTE_USAGE__VALUE_PART;
+        default: return -1;
+      }
+    }
+    if (baseClass == Usage.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.USAGE__ELEMENTS: return SysMLOCPackage.ATTRIBUTE_USAGE__ELEMENTS;
+        default: return -1;
+      }
+    }
+    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
   }
 
   /**
@@ -234,8 +871,30 @@ public class AttributeUsageImpl extends NonOccurrenceUsageElementImpl implements
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (declaredName: ");
+    result.append(" (typings: ");
+    result.append(typings);
+    result.append(", subsetting: ");
+    result.append(subsetting);
+    result.append(", references: ");
+    result.append(references);
+    result.append(", crosses: ");
+    result.append(crosses);
+    result.append(", redefinitions: ");
+    result.append(redefinitions);
+    result.append(", Multiplicity: ");
+    result.append(multiplicity);
+    result.append(", isOrdered: ");
+    result.append(isOrdered);
+    result.append(", isNonunique: ");
+    result.append(isNonunique);
+    result.append(", declaredName: ");
     result.append(declaredName);
+    result.append(", isInitial: ");
+    result.append(isInitial);
+    result.append(", isDefault: ");
+    result.append(isDefault);
+    result.append(", valuePart: ");
+    result.append(valuePart);
     result.append(')');
     return result.toString();
   }
