@@ -1,0 +1,28 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: dut.control.sysmloc
+Bundle-ManifestVersion: 2
+Bundle-Name: dut.control.sysmloc
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: dut.control.sysmloc; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.16.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.36.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.common,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Export-Package: dut.control.sysmloc.services,
+ dut.control.sysmloc.scoping,
+ dut.control.sysmloc,
+ dut.control.sysmloc.serializer,
+ dut.control.sysmloc.validation,
+ dut.control.sysmloc.generator,
+ dut.control.sysmloc.sysMLOC,
+ dut.control.sysmloc.parser.antlr,
+ dut.control.sysmloc.parser.antlr.internal,
+ dut.control.sysmloc.sysMLOC.impl,
+ dut.control.sysmloc.sysMLOC.util
+Import-Package: org.apache.log4j
