@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <packages declaredName="'Variation Configuration'">
+    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="'Variation Usages'"/>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle4Cyl">
+      <subsetting>vehicleFamily</subsetting>
+      <elements xsi:type="sysMLOC:PartUsage">
+        <redefinitions>engine</redefinitions>
+        <valuePart>engine::'4cylEngine'</valuePart>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage">
+        <redefinitions>transmission</redefinitions>
+        <valuePart>transmission::manualTransmission</valuePart>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle6Cyl">
+      <subsetting>vehicleFamily</subsetting>
+      <elements xsi:type="sysMLOC:PartUsage">
+        <redefinitions>engine</redefinitions>
+        <valuePart>engine::'6cylEngine'</valuePart>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage">
+        <redefinitions>transmission</redefinitions>
+        <valuePart>transmission::manualTransmission</valuePart>
+      </elements>
+    </elements>
+  </packages>
+</sysMLOC:Namespace>

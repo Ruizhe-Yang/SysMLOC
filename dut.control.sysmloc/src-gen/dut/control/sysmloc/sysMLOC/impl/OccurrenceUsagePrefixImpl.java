@@ -4,6 +4,7 @@
 package dut.control.sysmloc.sysMLOC.impl;
 
 import dut.control.sysmloc.sysMLOC.OccurrenceUsagePrefix;
+import dut.control.sysmloc.sysMLOC.PortionKind;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -21,6 +22,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.OccurrenceUsagePrefixImpl#isIsEnd <em>Is End</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.OccurrenceUsagePrefixImpl#isIsIndividual <em>Is Individual</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.OccurrenceUsagePrefixImpl#getPortionKind <em>Portion Kind</em>}</li>
  * </ul>
  *
  * @generated
@@ -46,6 +49,46 @@ public class OccurrenceUsagePrefixImpl extends BasicUsagePrefixImpl implements O
    * @ordered
    */
   protected boolean isEnd = IS_END_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsIndividual() <em>Is Individual</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsIndividual()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_INDIVIDUAL_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsIndividual() <em>Is Individual</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsIndividual()
+   * @generated
+   * @ordered
+   */
+  protected boolean isIndividual = IS_INDIVIDUAL_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getPortionKind() <em>Portion Kind</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPortionKind()
+   * @generated
+   * @ordered
+   */
+  protected static final PortionKind PORTION_KIND_EDEFAULT = PortionKind.SNAPSHOT;
+
+  /**
+   * The cached value of the '{@link #getPortionKind() <em>Portion Kind</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPortionKind()
+   * @generated
+   * @ordered
+   */
+  protected PortionKind portionKind = PORTION_KIND_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -99,12 +142,66 @@ public class OccurrenceUsagePrefixImpl extends BasicUsagePrefixImpl implements O
    * @generated
    */
   @Override
+  public boolean isIsIndividual()
+  {
+    return isIndividual;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsIndividual(boolean newIsIndividual)
+  {
+    boolean oldIsIndividual = isIndividual;
+    isIndividual = newIsIndividual;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_INDIVIDUAL, oldIsIndividual, isIndividual));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PortionKind getPortionKind()
+  {
+    return portionKind;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setPortionKind(PortionKind newPortionKind)
+  {
+    PortionKind oldPortionKind = portionKind;
+    portionKind = newPortionKind == null ? PORTION_KIND_EDEFAULT : newPortionKind;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__PORTION_KIND, oldPortionKind, portionKind));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
       case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_END:
         return isIsEnd();
+      case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_INDIVIDUAL:
+        return isIsIndividual();
+      case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__PORTION_KIND:
+        return getPortionKind();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -121,6 +218,12 @@ public class OccurrenceUsagePrefixImpl extends BasicUsagePrefixImpl implements O
     {
       case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_END:
         setIsEnd((Boolean)newValue);
+        return;
+      case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_INDIVIDUAL:
+        setIsIndividual((Boolean)newValue);
+        return;
+      case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__PORTION_KIND:
+        setPortionKind((PortionKind)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -139,6 +242,12 @@ public class OccurrenceUsagePrefixImpl extends BasicUsagePrefixImpl implements O
       case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_END:
         setIsEnd(IS_END_EDEFAULT);
         return;
+      case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_INDIVIDUAL:
+        setIsIndividual(IS_INDIVIDUAL_EDEFAULT);
+        return;
+      case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__PORTION_KIND:
+        setPortionKind(PORTION_KIND_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -155,6 +264,10 @@ public class OccurrenceUsagePrefixImpl extends BasicUsagePrefixImpl implements O
     {
       case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_END:
         return isEnd != IS_END_EDEFAULT;
+      case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_INDIVIDUAL:
+        return isIndividual != IS_INDIVIDUAL_EDEFAULT;
+      case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__PORTION_KIND:
+        return portionKind != PORTION_KIND_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -172,6 +285,10 @@ public class OccurrenceUsagePrefixImpl extends BasicUsagePrefixImpl implements O
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (isEnd: ");
     result.append(isEnd);
+    result.append(", isIndividual: ");
+    result.append(isIndividual);
+    result.append(", portionKind: ");
+    result.append(portionKind);
     result.append(')');
     return result.toString();
   }

@@ -1021,6 +1021,28 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   @Override
+  public EAttribute getOccurrenceUsagePrefix_IsIndividual()
+  {
+    return (EAttribute)occurrenceUsagePrefixEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getOccurrenceUsagePrefix_PortionKind()
+  {
+    return (EAttribute)occurrenceUsagePrefixEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getRefPrefix()
   {
     return refPrefixEClass;
@@ -1035,6 +1057,50 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   public EAttribute getRefPrefix_Direction()
   {
     return (EAttribute)refPrefixEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getRefPrefix_IsAbstract()
+  {
+    return (EAttribute)refPrefixEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getRefPrefix_IsVariation()
+  {
+    return (EAttribute)refPrefixEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getRefPrefix_IsReadOnly()
+  {
+    return (EAttribute)refPrefixEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getRefPrefix_IsDerived()
+  {
+    return (EAttribute)refPrefixEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -1501,9 +1567,15 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
 
     occurrenceUsagePrefixEClass = createEClass(OCCURRENCE_USAGE_PREFIX);
     createEAttribute(occurrenceUsagePrefixEClass, OCCURRENCE_USAGE_PREFIX__IS_END);
+    createEAttribute(occurrenceUsagePrefixEClass, OCCURRENCE_USAGE_PREFIX__IS_INDIVIDUAL);
+    createEAttribute(occurrenceUsagePrefixEClass, OCCURRENCE_USAGE_PREFIX__PORTION_KIND);
 
     refPrefixEClass = createEClass(REF_PREFIX);
     createEAttribute(refPrefixEClass, REF_PREFIX__DIRECTION);
+    createEAttribute(refPrefixEClass, REF_PREFIX__IS_ABSTRACT);
+    createEAttribute(refPrefixEClass, REF_PREFIX__IS_VARIATION);
+    createEAttribute(refPrefixEClass, REF_PREFIX__IS_READ_ONLY);
+    createEAttribute(refPrefixEClass, REF_PREFIX__IS_DERIVED);
 
     basicUsagePrefixEClass = createEClass(BASIC_USAGE_PREFIX);
     createEAttribute(basicUsagePrefixEClass, BASIC_USAGE_PREFIX__IS_REFERENCE);
@@ -1789,9 +1861,15 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
 
     initEClass(occurrenceUsagePrefixEClass, OccurrenceUsagePrefix.class, "OccurrenceUsagePrefix", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getOccurrenceUsagePrefix_IsEnd(), ecorePackage.getEBoolean(), "isEnd", null, 0, 1, OccurrenceUsagePrefix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getOccurrenceUsagePrefix_IsIndividual(), ecorePackage.getEBoolean(), "isIndividual", null, 0, 1, OccurrenceUsagePrefix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getOccurrenceUsagePrefix_PortionKind(), this.getPortionKind(), "portionKind", null, 0, 1, OccurrenceUsagePrefix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(refPrefixEClass, RefPrefix.class, "RefPrefix", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getRefPrefix_Direction(), this.getFeatureDirection(), "direction", null, 0, 1, RefPrefix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRefPrefix_IsAbstract(), ecorePackage.getEBoolean(), "isAbstract", null, 0, 1, RefPrefix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRefPrefix_IsVariation(), ecorePackage.getEBoolean(), "isVariation", null, 0, 1, RefPrefix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRefPrefix_IsReadOnly(), ecorePackage.getEBoolean(), "isReadOnly", null, 0, 1, RefPrefix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRefPrefix_IsDerived(), ecorePackage.getEBoolean(), "isDerived", null, 0, 1, RefPrefix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(basicUsagePrefixEClass, BasicUsagePrefix.class, "BasicUsagePrefix", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getBasicUsagePrefix_IsReference(), ecorePackage.getEBoolean(), "isReference", null, 0, 1, BasicUsagePrefix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <packages declaredName="'Generalization Example'">
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="HumanDrivenVehicle">
+      <superclassifiers>Vehicle</superclassifiers>
+      <elements xsi:type="sysMLOC:PartUsage" isReference="true" declaredName="driver">
+        <typings>Person</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="PoweredVehicle">
+      <superclassifiers>Vehicle</superclassifiers>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="eng">
+        <typings>Engine</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="HumanDrivenPoweredVehicle">
+      <superclassifiers>HumanDrivenVehicle</superclassifiers>
+      <superclassifiers>PoweredVehicle</superclassifiers>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Engine"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Person"/>
+  </packages>
+</sysMLOC:Namespace>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <packages declaredName="CircularImport">
+    <elements xsi:type="sysMLOC:Package" declaredName="P1">
+      <elements xsi:type="sysMLOC:NamespaceImport" declaredName="P2"/>
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="A"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Package" declaredName="P2">
+      <elements xsi:type="sysMLOC:NamespaceImport" declaredName="P1"/>
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="B"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Package" declaredName="Test1">
+      <elements xsi:type="sysMLOC:NamespaceImport" declaredName="P1"/>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="x">
+        <typings>A</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="y">
+        <typings>B</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Package" declaredName="Test2">
+      <elements xsi:type="sysMLOC:NamespaceImport" declaredName="P2"/>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="x">
+        <typings>A</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="y">
+        <typings>B</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="x">
+      <typings>P1::A</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="y">
+      <typings>P1::B</typings>
+    </elements>
+  </packages>
+</sysMLOC:Namespace>

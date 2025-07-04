@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <packages declaredName="'Part Definition Example'">
+    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="ScalarValues"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="status">
+        <typings>VehicleStatus</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="eng">
+        <typings>Engine</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" isReference="true" declaredName="driver">
+        <typings>Person</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="VehicleStatus">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="gearSetting">
+        <typings>Integer</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="acceleratorPosition">
+        <typings>Real</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Engine"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Person"/>
+  </packages>
+</sysMLOC:Namespace>

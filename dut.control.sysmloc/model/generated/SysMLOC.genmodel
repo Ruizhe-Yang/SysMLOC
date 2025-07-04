@@ -5,7 +5,7 @@
     updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="17.0" copyrightFields="false" runtimeVersion="2.36">
   <genPackages prefix="SysMLOC" basePackage="dut.control.sysmloc" disposableProviderFactory="true"
-      fileExtensions="sysmloc" ecorePackage="SysMLOC.ecore#/">
+      fileExtensions="sysml" ecorePackage="SysMLOC.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="SysMLOC.ecore#//VisibilityIndicator">
       <genEnumLiterals ecoreEnumLiteral="SysMLOC.ecore#//VisibilityIndicator/public"/>
       <genEnumLiterals ecoreEnumLiteral="SysMLOC.ecore#//VisibilityIndicator/private"/>
@@ -87,9 +87,15 @@
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//OccurrenceUsagePrefix">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//OccurrenceUsagePrefix/isEnd"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//OccurrenceUsagePrefix/isIndividual"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//OccurrenceUsagePrefix/portionKind"/>
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//RefPrefix">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//RefPrefix/direction"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//RefPrefix/isAbstract"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//RefPrefix/isVariation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//RefPrefix/isReadOnly"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//RefPrefix/isDerived"/>
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//BasicUsagePrefix">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//BasicUsagePrefix/isReference"/>

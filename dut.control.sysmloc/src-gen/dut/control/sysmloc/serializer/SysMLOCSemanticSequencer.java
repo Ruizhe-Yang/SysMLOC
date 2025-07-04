@@ -125,7 +125,22 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     ActionUsage returns ActionUsage
 	 *
 	 * Constraint:
-	 *     ((isEnd?='end' | (direction=FeatureDirection? isReference?='ref'?))? declaredName=QualifiedName elements+=BaseElement*)
+	 *     (
+	 *         (
+	 *             isEnd?='end' | 
+	 *             (
+	 *                 direction=FeatureDirection? 
+	 *                 (isAbstract?='abstract' | isVariation?='variation')? 
+	 *                 isReadOnly?='readonly'? 
+	 *                 isDerived?='derived'? 
+	 *                 isReference?='ref'? 
+	 *                 isIndividual?='individual'? 
+	 *                 portionKind=PortionKind?
+	 *             )
+	 *         )? 
+	 *         declaredName=QualifiedName 
+	 *         elements+=BaseElement*
+	 *     )
 	 * </pre>
 	 */
 	protected void sequence_ActionUsage_BasicUsagePrefix_OccurrenceUsagePrefix_RefPrefix(ISerializationContext context, ActionUsage semanticObject) {
@@ -161,9 +176,10 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     (
 	 *         declaredName=Name? 
 	 *         (
-	 *             (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE?) | 
+	 *             Multiplicity+=DECIMAL_VALUE | 
+	 *             (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE) | 
 	 *             (
-	 *                 (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE?)? 
+	 *                 (Multiplicity+=DECIMAL_VALUE | (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE))? 
 	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
 	 *             )
 	 *         )? 
@@ -176,9 +192,10 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
 	 *             (
-	 *                 (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE?) | 
+	 *                 Multiplicity+=DECIMAL_VALUE | 
+	 *                 (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE) | 
 	 *                 (
-	 *                     (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE?)? 
+	 *                     (Multiplicity+=DECIMAL_VALUE | (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE))? 
 	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
 	 *                 )
 	 *             )?
@@ -204,12 +221,24 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *
 	 * Constraint:
 	 *     (
-	 *         (isEnd?='end' | (direction=FeatureDirection? isReference?='ref'?))? 
+	 *         (
+	 *             isEnd?='end' | 
+	 *             (
+	 *                 direction=FeatureDirection? 
+	 *                 (isAbstract?='abstract' | isVariation?='variation')? 
+	 *                 isReadOnly?='readonly'? 
+	 *                 isDerived?='derived'? 
+	 *                 isReference?='ref'? 
+	 *                 isIndividual?='individual'? 
+	 *                 portionKind=PortionKind?
+	 *             )
+	 *         )? 
 	 *         declaredName=Name? 
 	 *         (
-	 *             (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE?) | 
+	 *             Multiplicity+=DECIMAL_VALUE | 
+	 *             (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE) | 
 	 *             (
-	 *                 (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE?)? 
+	 *                 (Multiplicity+=DECIMAL_VALUE | (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE))? 
 	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
 	 *             )
 	 *         )? 
@@ -222,9 +251,10 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
 	 *             (
-	 *                 (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE?) | 
+	 *                 Multiplicity+=DECIMAL_VALUE | 
+	 *                 (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE) | 
 	 *                 (
-	 *                     (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE?)? 
+	 *                     (Multiplicity+=DECIMAL_VALUE | (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE))? 
 	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
 	 *                 )
 	 *             )?
@@ -254,12 +284,24 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *
 	 * Constraint:
 	 *     (
-	 *         (isEnd?='end' | (direction=FeatureDirection? isReference?='ref'?))? 
+	 *         (
+	 *             isEnd?='end' | 
+	 *             (
+	 *                 direction=FeatureDirection? 
+	 *                 (isAbstract?='abstract' | isVariation?='variation')? 
+	 *                 isReadOnly?='readonly'? 
+	 *                 isDerived?='derived'? 
+	 *                 isReference?='ref'? 
+	 *                 isIndividual?='individual'? 
+	 *                 portionKind=PortionKind?
+	 *             )
+	 *         )? 
 	 *         declaredName=Name? 
 	 *         (
-	 *             (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE?) | 
+	 *             Multiplicity+=DECIMAL_VALUE | 
+	 *             (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE) | 
 	 *             (
-	 *                 (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE?)? 
+	 *                 (Multiplicity+=DECIMAL_VALUE | (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE))? 
 	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
 	 *             )
 	 *         )? 
@@ -272,9 +314,10 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
 	 *             (
-	 *                 (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE?) | 
+	 *                 Multiplicity+=DECIMAL_VALUE | 
+	 *                 (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE) | 
 	 *                 (
-	 *                     (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE?)? 
+	 *                     (Multiplicity+=DECIMAL_VALUE | (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE))? 
 	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
 	 *                 )
 	 *             )?
@@ -302,12 +345,24 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *
 	 * Constraint:
 	 *     (
-	 *         (isEnd?='end' | (direction=FeatureDirection? isReference?='ref'?))? 
+	 *         (
+	 *             isEnd?='end' | 
+	 *             (
+	 *                 direction=FeatureDirection? 
+	 *                 (isAbstract?='abstract' | isVariation?='variation')? 
+	 *                 isReadOnly?='readonly'? 
+	 *                 isDerived?='derived'? 
+	 *                 isReference?='ref'? 
+	 *                 isIndividual?='individual'? 
+	 *                 portionKind=PortionKind?
+	 *             )
+	 *         )? 
 	 *         declaredName=Name? 
 	 *         (
-	 *             (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE?) | 
+	 *             Multiplicity+=DECIMAL_VALUE | 
+	 *             (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE) | 
 	 *             (
-	 *                 (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE?)? 
+	 *                 (Multiplicity+=DECIMAL_VALUE | (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE))? 
 	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
 	 *             )
 	 *         )? 
@@ -320,9 +375,10 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
 	 *             (
-	 *                 (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE?) | 
+	 *                 Multiplicity+=DECIMAL_VALUE | 
+	 *                 (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE) | 
 	 *                 (
-	 *                     (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE?)? 
+	 *                     (Multiplicity+=DECIMAL_VALUE | (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE))? 
 	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
 	 *                 )
 	 *             )?
@@ -348,12 +404,24 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *
 	 * Constraint:
 	 *     (
-	 *         (isEnd?='end' | (direction=FeatureDirection? isReference?='ref'?))? 
+	 *         (
+	 *             isEnd?='end' | 
+	 *             (
+	 *                 direction=FeatureDirection? 
+	 *                 (isAbstract?='abstract' | isVariation?='variation')? 
+	 *                 isReadOnly?='readonly'? 
+	 *                 isDerived?='derived'? 
+	 *                 isReference?='ref'? 
+	 *                 isIndividual?='individual'? 
+	 *                 portionKind=PortionKind?
+	 *             )
+	 *         )? 
 	 *         declaredName=Name? 
 	 *         (
-	 *             (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE?) | 
+	 *             Multiplicity+=DECIMAL_VALUE | 
+	 *             (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE) | 
 	 *             (
-	 *                 (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE?)? 
+	 *                 (Multiplicity+=DECIMAL_VALUE | (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE))? 
 	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
 	 *             )
 	 *         )? 
@@ -366,9 +434,10 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
 	 *             (
-	 *                 (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE?) | 
+	 *                 Multiplicity+=DECIMAL_VALUE | 
+	 *                 (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE) | 
 	 *                 (
-	 *                     (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE?)? 
+	 *                     (Multiplicity+=DECIMAL_VALUE | (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE))? 
 	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
 	 *                 )
 	 *             )?
@@ -390,8 +459,27 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *
 	 * Constraint:
 	 *     (
-	 *         (isEnd?='end' | (direction=FeatureDirection? isReference?='ref'?))? 
+	 *         (
+	 *             isEnd?='end' | 
+	 *             (
+	 *                 direction=FeatureDirection? 
+	 *                 (isAbstract?='abstract' | isVariation?='variation')? 
+	 *                 isReadOnly?='readonly'? 
+	 *                 isDerived?='derived'? 
+	 *                 isReference?='ref'? 
+	 *                 isIndividual?='individual'? 
+	 *                 portionKind=PortionKind?
+	 *             )
+	 *         )? 
 	 *         declaredName=Name? 
+	 *         (
+	 *             Multiplicity+=DECIMAL_VALUE | 
+	 *             (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE) | 
+	 *             (
+	 *                 (Multiplicity+=DECIMAL_VALUE | (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE))? 
+	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
+	 *             )
+	 *         )? 
 	 *         (
 	 *             (
 	 *                 (typings+=FeatureChainName typings+=FeatureChainName*) | 
@@ -400,10 +488,13 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE?)? 
 	 *             (
-	 *                 (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE?)? 
-	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
+	 *                 Multiplicity+=DECIMAL_VALUE | 
+	 *                 (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE) | 
+	 *                 (
+	 *                     (Multiplicity+=DECIMAL_VALUE | (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE))? 
+	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
+	 *                 )
 	 *             )?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
@@ -427,12 +518,24 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *
 	 * Constraint:
 	 *     (
-	 *         (isEnd?='end' | (direction=FeatureDirection? isReference?='ref'?))? 
+	 *         (
+	 *             isEnd?='end' | 
+	 *             (
+	 *                 direction=FeatureDirection? 
+	 *                 (isAbstract?='abstract' | isVariation?='variation')? 
+	 *                 isReadOnly?='readonly'? 
+	 *                 isDerived?='derived'? 
+	 *                 isReference?='ref'? 
+	 *                 isIndividual?='individual'? 
+	 *                 portionKind=PortionKind?
+	 *             )
+	 *         )? 
 	 *         declaredName=Name? 
 	 *         (
-	 *             (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE?) | 
+	 *             Multiplicity+=DECIMAL_VALUE | 
+	 *             (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE) | 
 	 *             (
-	 *                 (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE?)? 
+	 *                 (Multiplicity+=DECIMAL_VALUE | (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE))? 
 	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
 	 *             )
 	 *         )? 
@@ -445,9 +548,10 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
 	 *             (
-	 *                 (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE?) | 
+	 *                 Multiplicity+=DECIMAL_VALUE | 
+	 *                 (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE) | 
 	 *                 (
-	 *                     (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE?)? 
+	 *                     (Multiplicity+=DECIMAL_VALUE | (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE))? 
 	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
 	 *                 )
 	 *             )?
@@ -596,9 +700,10 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     (
 	 *         declaredName=Name? 
 	 *         (
-	 *             (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE?) | 
+	 *             Multiplicity+=DECIMAL_VALUE | 
+	 *             (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE) | 
 	 *             (
-	 *                 (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE?)? 
+	 *                 (Multiplicity+=DECIMAL_VALUE | (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE))? 
 	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
 	 *             )
 	 *         )? 
@@ -611,9 +716,10 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
 	 *             (
-	 *                 (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE?) | 
+	 *                 Multiplicity+=DECIMAL_VALUE | 
+	 *                 (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE) | 
 	 *                 (
-	 *                     (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE?)? 
+	 *                     (Multiplicity+=DECIMAL_VALUE | (Multiplicity+=DECIMAL_VALUE Multiplicity+=DECIMAL_VALUE))? 
 	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
 	 *                 )
 	 *             )?

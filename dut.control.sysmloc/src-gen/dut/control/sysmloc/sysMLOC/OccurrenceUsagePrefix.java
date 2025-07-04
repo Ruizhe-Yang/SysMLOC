@@ -14,6 +14,8 @@ package dut.control.sysmloc.sysMLOC;
  * </p>
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.OccurrenceUsagePrefix#isIsEnd <em>Is End</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.OccurrenceUsagePrefix#isIsIndividual <em>Is Individual</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.OccurrenceUsagePrefix#getPortionKind <em>Portion Kind</em>}</li>
  * </ul>
  *
  * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getOccurrenceUsagePrefix()
@@ -43,5 +45,52 @@ public interface OccurrenceUsagePrefix extends BasicUsagePrefix, RefPrefix
    * @generated
    */
   void setIsEnd(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Is Individual</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Is Individual</em>' attribute.
+   * @see #setIsIndividual(boolean)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getOccurrenceUsagePrefix_IsIndividual()
+   * @model
+   * @generated
+   */
+  boolean isIsIndividual();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.OccurrenceUsagePrefix#isIsIndividual <em>Is Individual</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Is Individual</em>' attribute.
+   * @see #isIsIndividual()
+   * @generated
+   */
+  void setIsIndividual(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Portion Kind</b></em>' attribute.
+   * The literals are from the enumeration {@link dut.control.sysmloc.sysMLOC.PortionKind}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Portion Kind</em>' attribute.
+   * @see dut.control.sysmloc.sysMLOC.PortionKind
+   * @see #setPortionKind(PortionKind)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getOccurrenceUsagePrefix_PortionKind()
+   * @model
+   * @generated
+   */
+  PortionKind getPortionKind();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.OccurrenceUsagePrefix#getPortionKind <em>Portion Kind</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Portion Kind</em>' attribute.
+   * @see dut.control.sysmloc.sysMLOC.PortionKind
+   * @see #getPortionKind()
+   * @generated
+   */
+  void setPortionKind(PortionKind value);
 
 } // OccurrenceUsagePrefix

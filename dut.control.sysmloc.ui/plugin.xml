@@ -7,7 +7,7 @@
 			class="dut.control.sysmloc.ui.SysMLOCExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
 			contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
 			default="true"
-			extensions="sysmloc"
+			extensions="sysml"
 			id="dut.control.sysmloc.SysMLOC"
 			name="SysMLOC Editor">
 		</editor>
@@ -207,7 +207,7 @@
 	<extension point="org.eclipse.core.contenttype.contentTypes">
 		<content-type
 			base-type="org.eclipse.core.runtime.text"
-			file-extensions="sysmloc"
+			file-extensions="sysml"
 			id="dut.control.sysmloc.SysMLOC.contenttype"
 			name="SysMLOC File"
 			priority="normal">
@@ -218,13 +218,13 @@
 		point="org.eclipse.emf.ecore.extension_parser">
 		<parser
 			class="dut.control.sysmloc.ui.SysMLOCExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
-			type="sysmloc">
+			type="sysml">
 		</parser>
 	</extension>
 	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
 		<resourceServiceProvider
 			class="dut.control.sysmloc.ui.SysMLOCExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
-			uriExtension="sysmloc">
+			uriExtension="sysml">
 		</resourceServiceProvider>
 	</extension>
 	<!-- marker definitions for dut.control.sysmloc.SysMLOC -->
@@ -261,7 +261,7 @@
 	<extension point="org.eclipse.xtext.builder.participant">
 		<participant
 			class="dut.control.sysmloc.ui.SysMLOCExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
-			fileExtensions="sysmloc"/>
+			fileExtensions="sysml"/>
 	</extension>
 	<extension point="org.eclipse.ui.preferencePages">
 		<page
@@ -404,7 +404,7 @@
 	<extension point="org.eclipse.compare.contentViewers">
 		<viewer id="dut.control.sysmloc.SysMLOC.compare.contentViewers"
 			class="dut.control.sysmloc.ui.SysMLOCExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
-			extensions="sysmloc">
+			extensions="sysml">
 		</viewer>
 		<contentTypeBinding
 			contentTypeId="dut.control.sysmloc.SysMLOC.contenttype"
@@ -413,7 +413,7 @@
 	<extension point="org.eclipse.compare.contentMergeViewers">
 		<viewer id="dut.control.sysmloc.SysMLOC.compare.contentMergeViewers"
 			class="dut.control.sysmloc.ui.SysMLOCExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
-			extensions="sysmloc" label="SysMLOC Compare">
+			extensions="sysml" label="SysMLOC Compare">
 		</viewer>
 		<contentTypeBinding
 			contentTypeId="dut.control.sysmloc.SysMLOC.contenttype"
@@ -422,12 +422,12 @@
 	<extension point="org.eclipse.ui.editors.documentProviders">
 		<provider id="dut.control.sysmloc.SysMLOC.editors.documentProviders"
 			class="dut.control.sysmloc.ui.SysMLOCExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
-			extensions="sysmloc">
+			extensions="sysml">
 		</provider>
 	</extension>
 	<extension point="org.eclipse.team.core.fileTypes">
 		<fileTypes
-			extension="sysmloc"
+			extension="sysml"
 			type="text">
 		</fileTypes>
 	</extension>

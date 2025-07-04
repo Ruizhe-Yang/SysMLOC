@@ -15,6 +15,10 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.RefPrefix#getDirection <em>Direction</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.RefPrefix#isIsAbstract <em>Is Abstract</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.RefPrefix#isIsVariation <em>Is Variation</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.RefPrefix#isIsReadOnly <em>Is Read Only</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.RefPrefix#isIsDerived <em>Is Derived</em>}</li>
  * </ul>
  *
  * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getRefPrefix()
@@ -47,5 +51,93 @@ public interface RefPrefix extends EObject
    * @generated
    */
   void setDirection(FeatureDirection value);
+
+  /**
+   * Returns the value of the '<em><b>Is Abstract</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Is Abstract</em>' attribute.
+   * @see #setIsAbstract(boolean)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getRefPrefix_IsAbstract()
+   * @model
+   * @generated
+   */
+  boolean isIsAbstract();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.RefPrefix#isIsAbstract <em>Is Abstract</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Is Abstract</em>' attribute.
+   * @see #isIsAbstract()
+   * @generated
+   */
+  void setIsAbstract(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Is Variation</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Is Variation</em>' attribute.
+   * @see #setIsVariation(boolean)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getRefPrefix_IsVariation()
+   * @model
+   * @generated
+   */
+  boolean isIsVariation();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.RefPrefix#isIsVariation <em>Is Variation</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Is Variation</em>' attribute.
+   * @see #isIsVariation()
+   * @generated
+   */
+  void setIsVariation(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Is Read Only</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Is Read Only</em>' attribute.
+   * @see #setIsReadOnly(boolean)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getRefPrefix_IsReadOnly()
+   * @model
+   * @generated
+   */
+  boolean isIsReadOnly();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.RefPrefix#isIsReadOnly <em>Is Read Only</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Is Read Only</em>' attribute.
+   * @see #isIsReadOnly()
+   * @generated
+   */
+  void setIsReadOnly(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Is Derived</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Is Derived</em>' attribute.
+   * @see #setIsDerived(boolean)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getRefPrefix_IsDerived()
+   * @model
+   * @generated
+   */
+  boolean isIsDerived();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.RefPrefix#isIsDerived <em>Is Derived</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Is Derived</em>' attribute.
+   * @see #isIsDerived()
+   * @generated
+   */
+  void setIsDerived(boolean value);
 
 } // RefPrefix

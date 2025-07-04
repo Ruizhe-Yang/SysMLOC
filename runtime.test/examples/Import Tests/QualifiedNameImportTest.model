@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <packages declaredName="QualifiedNameImportTest">
+    <elements xsi:type="sysMLOC:Package" declaredName="P1">
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="A"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Package" declaredName="P2">
+      <elements xsi:type="sysMLOC:Package" declaredName="P2a">
+        <elements xsi:type="sysMLOC:NamespaceImport" declaredName="P1"/>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="x">
+        <typings>P2a::A</typings>
+      </elements>
+    </elements>
+  </packages>
+</sysMLOC:Namespace>

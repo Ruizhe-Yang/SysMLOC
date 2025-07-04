@@ -177,7 +177,7 @@ ConnectionDefinition:
 ;
 
 ConnectionUsage:
-	(OccurrenceUsagePrefix 'connection' UsageDeclaration FeatureValue? ( 'connect' ConnectorPart )?
+	(OccurrenceUsagePrefix 'connection' UsageDeclaration FeatureValue? ( 'connect' ConnectorPart)?
 	| OccurrenceUsagePrefix 'connect' ConnectorPart) (';' | '{' (elements+=BaseElement)* '}')
 ;
 
@@ -229,15 +229,15 @@ enum PortionKind:
 fragment OccurrenceUsagePrefix:
 	isEnd ?= 'end'
 	| BasicUsagePrefix
-//	  ( isIndividual ?= 'individual' )?
-//	  ( portionKind = PortionKind )?
+	  ( isIndividual ?= 'individual' )?
+	  ( portionKind = PortionKind )?
 ;
 
 fragment RefPrefix:
     ( direction = FeatureDirection )?
-//    ( isAbstract ?= 'abstract' | isVariation ?= 'variation')?
-//    ( isReadOnly ?= 'readonly' )?
-//    ( isDerived ?= 'derived' )?
+    ( isAbstract ?= 'abstract' | isVariation ?= 'variation')?
+    ( isReadOnly ?= 'readonly' )?
+    ( isDerived ?= 'derived' )?
 ;
 
 fragment BasicUsagePrefix:
@@ -286,12 +286,30 @@ fragment FeatureSpecializationPart:
 ;
 
 fragment MultiplicityPart:
-	'[' Multiplicity += DECIMAL_VALUE ( '..' Multiplicity += DECIMAL_VALUE )? ']'
-	| ('[' Multiplicity += DECIMAL_VALUE ( '..' Multiplicity += DECIMAL_VALUE )? ']')?
-	  ( isOrdered ?= 'ordered' isNonunique ?= 'nonunique'?
-	  | isNonunique ?= 'nonunique' isOrdered ?= 'ordered'?
-	  )
+//	'[' Multiplicity += DECIMAL_VALUE ( '..' Multiplicity += DECIMAL_VALUE )? ']'
+//	| ('[' Multiplicity += DECIMAL_VALUE ( '..' Multiplicity += DECIMAL_VALUE )? ']')?
+//	  ( isOrdered ?= 'ordered' isNonunique ?= 'nonunique'? | isNonunique ?= 'nonunique' isOrdered ?= 'ordered'? )
+	  
+	( '[' Multiplicity += DECIMAL_VALUE ']' | '[' Multiplicity += DECIMAL_VALUE '..' Multiplicity += DECIMAL_VALUE ']')
+	| ( '[' Multiplicity += DECIMAL_VALUE ']' | '[' Multiplicity += DECIMAL_VALUE '..' Multiplicity += DECIMAL_VALUE ']')?
+	  ( isOrdered ?= 'ordered' isNonunique ?= 'nonunique'? | isNonunique ?= 'nonunique' isOrdered ?= 'ordered'? )
+	  
+//	  ownedRelationship += OwnedMultiplicity 
+//	| ( ownedRelationship += OwnedMultiplicity )?
+//	  ( isOrdered ?= 'ordered' isNonunique ?= 'nonunique'?
+//	  | isNonunique ?= 'nonunique' isOrdered ?= 'ordered'?
+//	  )
 ;
+
+//OwnedMultiplicity:
+//	ownedRelatedElement += MultiplicityRange 
+//;
+//
+//MultiplicityRange:
+//	// TODO: Allow general expressions for bounds. (Causes LL parsing issues.)
+//	'[' ownedRelationship += MultiplicityExpressionMember
+//	      ( '..' ownedRelationship += MultiplicityExpressionMember )? ']'
+//;
 
 fragment FeatureSpecialization:
 	(':'|'defined' 'by') typings+=FeatureChainName (',' typings+=FeatureChainName)*|
@@ -316,7 +334,7 @@ FeatureChainName:
 ;
 
 ExpressionName:
-	FeatureChainName | NORMAL_VALUE
+	FeatureChainName | DECIMAL_VALUE
 ;
 
 Expression:

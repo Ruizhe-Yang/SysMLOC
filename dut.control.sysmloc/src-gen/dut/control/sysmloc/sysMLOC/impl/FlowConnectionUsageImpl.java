@@ -13,6 +13,7 @@ import dut.control.sysmloc.sysMLOC.FeatureValue;
 import dut.control.sysmloc.sysMLOC.FlowConnectionUsage;
 import dut.control.sysmloc.sysMLOC.MultiplicityPart;
 import dut.control.sysmloc.sysMLOC.OccurrenceUsagePrefix;
+import dut.control.sysmloc.sysMLOC.PortionKind;
 import dut.control.sysmloc.sysMLOC.RefPrefix;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 import dut.control.sysmloc.sysMLOC.UsageDeclaration;
@@ -42,8 +43,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowConnectionUsageImpl#getDirection <em>Direction</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowConnectionUsageImpl#isIsAbstract <em>Is Abstract</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowConnectionUsageImpl#isIsVariation <em>Is Variation</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowConnectionUsageImpl#isIsReadOnly <em>Is Read Only</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowConnectionUsageImpl#isIsDerived <em>Is Derived</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowConnectionUsageImpl#isIsReference <em>Is Reference</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowConnectionUsageImpl#isIsEnd <em>Is End</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowConnectionUsageImpl#isIsIndividual <em>Is Individual</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowConnectionUsageImpl#getPortionKind <em>Portion Kind</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowConnectionUsageImpl#getTypings <em>Typings</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowConnectionUsageImpl#getSubsetting <em>Subsetting</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowConnectionUsageImpl#getReferences <em>References</em>}</li>
@@ -86,6 +93,86 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
   protected FeatureDirection direction = DIRECTION_EDEFAULT;
 
   /**
+   * The default value of the '{@link #isIsAbstract() <em>Is Abstract</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAbstract()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_ABSTRACT_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsAbstract() <em>Is Abstract</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAbstract()
+   * @generated
+   * @ordered
+   */
+  protected boolean isAbstract = IS_ABSTRACT_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsVariation() <em>Is Variation</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsVariation()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_VARIATION_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsVariation() <em>Is Variation</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsVariation()
+   * @generated
+   * @ordered
+   */
+  protected boolean isVariation = IS_VARIATION_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsReadOnly() <em>Is Read Only</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsReadOnly()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_READ_ONLY_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsReadOnly() <em>Is Read Only</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsReadOnly()
+   * @generated
+   * @ordered
+   */
+  protected boolean isReadOnly = IS_READ_ONLY_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsDerived() <em>Is Derived</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsDerived()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_DERIVED_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsDerived() <em>Is Derived</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsDerived()
+   * @generated
+   * @ordered
+   */
+  protected boolean isDerived = IS_DERIVED_EDEFAULT;
+
+  /**
    * The default value of the '{@link #isIsReference() <em>Is Reference</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -124,6 +211,46 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
    * @ordered
    */
   protected boolean isEnd = IS_END_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsIndividual() <em>Is Individual</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsIndividual()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_INDIVIDUAL_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsIndividual() <em>Is Individual</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsIndividual()
+   * @generated
+   * @ordered
+   */
+  protected boolean isIndividual = IS_INDIVIDUAL_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getPortionKind() <em>Portion Kind</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPortionKind()
+   * @generated
+   * @ordered
+   */
+  protected static final PortionKind PORTION_KIND_EDEFAULT = PortionKind.SNAPSHOT;
+
+  /**
+   * The cached value of the '{@link #getPortionKind() <em>Portion Kind</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPortionKind()
+   * @generated
+   * @ordered
+   */
+  protected PortionKind portionKind = PORTION_KIND_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getTypings() <em>Typings</em>}' attribute list.
@@ -377,6 +504,106 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
    * @generated
    */
   @Override
+  public boolean isIsAbstract()
+  {
+    return isAbstract;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsAbstract(boolean newIsAbstract)
+  {
+    boolean oldIsAbstract = isAbstract;
+    isAbstract = newIsAbstract;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_ABSTRACT, oldIsAbstract, isAbstract));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsVariation()
+  {
+    return isVariation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsVariation(boolean newIsVariation)
+  {
+    boolean oldIsVariation = isVariation;
+    isVariation = newIsVariation;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_VARIATION, oldIsVariation, isVariation));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsReadOnly()
+  {
+    return isReadOnly;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsReadOnly(boolean newIsReadOnly)
+  {
+    boolean oldIsReadOnly = isReadOnly;
+    isReadOnly = newIsReadOnly;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_READ_ONLY, oldIsReadOnly, isReadOnly));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsDerived()
+  {
+    return isDerived;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsDerived(boolean newIsDerived)
+  {
+    boolean oldIsDerived = isDerived;
+    isDerived = newIsDerived;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_DERIVED, oldIsDerived, isDerived));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public boolean isIsReference()
   {
     return isReference;
@@ -419,6 +646,56 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
     isEnd = newIsEnd;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_END, oldIsEnd, isEnd));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsIndividual()
+  {
+    return isIndividual;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsIndividual(boolean newIsIndividual)
+  {
+    boolean oldIsIndividual = isIndividual;
+    isIndividual = newIsIndividual;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_INDIVIDUAL, oldIsIndividual, isIndividual));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PortionKind getPortionKind()
+  {
+    return portionKind;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setPortionKind(PortionKind newPortionKind)
+  {
+    PortionKind oldPortionKind = portionKind;
+    portionKind = newPortionKind == null ? PORTION_KIND_EDEFAULT : newPortionKind;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.FLOW_CONNECTION_USAGE__PORTION_KIND, oldPortionKind, portionKind));
   }
 
   /**
@@ -724,10 +1001,22 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
     {
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__DIRECTION:
         return getDirection();
+      case SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_ABSTRACT:
+        return isIsAbstract();
+      case SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_VARIATION:
+        return isIsVariation();
+      case SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_READ_ONLY:
+        return isIsReadOnly();
+      case SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_DERIVED:
+        return isIsDerived();
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_REFERENCE:
         return isIsReference();
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_END:
         return isIsEnd();
+      case SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_INDIVIDUAL:
+        return isIsIndividual();
+      case SysMLOCPackage.FLOW_CONNECTION_USAGE__PORTION_KIND:
+        return getPortionKind();
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__TYPINGS:
         return getTypings();
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__SUBSETTING:
@@ -776,11 +1065,29 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__DIRECTION:
         setDirection((FeatureDirection)newValue);
         return;
+      case SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_ABSTRACT:
+        setIsAbstract((Boolean)newValue);
+        return;
+      case SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_VARIATION:
+        setIsVariation((Boolean)newValue);
+        return;
+      case SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_READ_ONLY:
+        setIsReadOnly((Boolean)newValue);
+        return;
+      case SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_DERIVED:
+        setIsDerived((Boolean)newValue);
+        return;
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_REFERENCE:
         setIsReference((Boolean)newValue);
         return;
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_END:
         setIsEnd((Boolean)newValue);
+        return;
+      case SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_INDIVIDUAL:
+        setIsIndividual((Boolean)newValue);
+        return;
+      case SysMLOCPackage.FLOW_CONNECTION_USAGE__PORTION_KIND:
+        setPortionKind((PortionKind)newValue);
         return;
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__TYPINGS:
         getTypings().clear();
@@ -854,11 +1161,29 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__DIRECTION:
         setDirection(DIRECTION_EDEFAULT);
         return;
+      case SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_ABSTRACT:
+        setIsAbstract(IS_ABSTRACT_EDEFAULT);
+        return;
+      case SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_VARIATION:
+        setIsVariation(IS_VARIATION_EDEFAULT);
+        return;
+      case SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_READ_ONLY:
+        setIsReadOnly(IS_READ_ONLY_EDEFAULT);
+        return;
+      case SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_DERIVED:
+        setIsDerived(IS_DERIVED_EDEFAULT);
+        return;
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_REFERENCE:
         setIsReference(IS_REFERENCE_EDEFAULT);
         return;
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_END:
         setIsEnd(IS_END_EDEFAULT);
+        return;
+      case SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_INDIVIDUAL:
+        setIsIndividual(IS_INDIVIDUAL_EDEFAULT);
+        return;
+      case SysMLOCPackage.FLOW_CONNECTION_USAGE__PORTION_KIND:
+        setPortionKind(PORTION_KIND_EDEFAULT);
         return;
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__TYPINGS:
         getTypings().clear();
@@ -921,10 +1246,22 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
     {
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__DIRECTION:
         return direction != DIRECTION_EDEFAULT;
+      case SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_ABSTRACT:
+        return isAbstract != IS_ABSTRACT_EDEFAULT;
+      case SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_VARIATION:
+        return isVariation != IS_VARIATION_EDEFAULT;
+      case SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_READ_ONLY:
+        return isReadOnly != IS_READ_ONLY_EDEFAULT;
+      case SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_DERIVED:
+        return isDerived != IS_DERIVED_EDEFAULT;
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_REFERENCE:
         return isReference != IS_REFERENCE_EDEFAULT;
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_END:
         return isEnd != IS_END_EDEFAULT;
+      case SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_INDIVIDUAL:
+        return isIndividual != IS_INDIVIDUAL_EDEFAULT;
+      case SysMLOCPackage.FLOW_CONNECTION_USAGE__PORTION_KIND:
+        return portionKind != PORTION_KIND_EDEFAULT;
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__TYPINGS:
         return typings != null && !typings.isEmpty();
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__SUBSETTING:
@@ -972,6 +1309,10 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
       switch (derivedFeatureID)
       {
         case SysMLOCPackage.FLOW_CONNECTION_USAGE__DIRECTION: return SysMLOCPackage.REF_PREFIX__DIRECTION;
+        case SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_ABSTRACT: return SysMLOCPackage.REF_PREFIX__IS_ABSTRACT;
+        case SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_VARIATION: return SysMLOCPackage.REF_PREFIX__IS_VARIATION;
+        case SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_READ_ONLY: return SysMLOCPackage.REF_PREFIX__IS_READ_ONLY;
+        case SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_DERIVED: return SysMLOCPackage.REF_PREFIX__IS_DERIVED;
         default: return -1;
       }
     }
@@ -988,6 +1329,8 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
       switch (derivedFeatureID)
       {
         case SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_END: return SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_END;
+        case SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_INDIVIDUAL: return SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_INDIVIDUAL;
+        case SysMLOCPackage.FLOW_CONNECTION_USAGE__PORTION_KIND: return SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__PORTION_KIND;
         default: return -1;
       }
     }
@@ -1061,6 +1404,10 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
       switch (baseFeatureID)
       {
         case SysMLOCPackage.REF_PREFIX__DIRECTION: return SysMLOCPackage.FLOW_CONNECTION_USAGE__DIRECTION;
+        case SysMLOCPackage.REF_PREFIX__IS_ABSTRACT: return SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_ABSTRACT;
+        case SysMLOCPackage.REF_PREFIX__IS_VARIATION: return SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_VARIATION;
+        case SysMLOCPackage.REF_PREFIX__IS_READ_ONLY: return SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_READ_ONLY;
+        case SysMLOCPackage.REF_PREFIX__IS_DERIVED: return SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_DERIVED;
         default: return -1;
       }
     }
@@ -1077,6 +1424,8 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
       switch (baseFeatureID)
       {
         case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_END: return SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_END;
+        case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_INDIVIDUAL: return SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_INDIVIDUAL;
+        case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__PORTION_KIND: return SysMLOCPackage.FLOW_CONNECTION_USAGE__PORTION_KIND;
         default: return -1;
       }
     }
@@ -1150,10 +1499,22 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (direction: ");
     result.append(direction);
+    result.append(", isAbstract: ");
+    result.append(isAbstract);
+    result.append(", isVariation: ");
+    result.append(isVariation);
+    result.append(", isReadOnly: ");
+    result.append(isReadOnly);
+    result.append(", isDerived: ");
+    result.append(isDerived);
     result.append(", isReference: ");
     result.append(isReference);
     result.append(", isEnd: ");
     result.append(isEnd);
+    result.append(", isIndividual: ");
+    result.append(isIndividual);
+    result.append(", portionKind: ");
+    result.append(portionKind);
     result.append(", typings: ");
     result.append(typings);
     result.append(", subsetting: ");
