@@ -18,6 +18,7 @@ package 'Redefinition Example' {
 	}
 	part def BigEngine :> Engine {
 		part redefines cyl[6];
+		
 	}
 
 	part def Cylinder;
