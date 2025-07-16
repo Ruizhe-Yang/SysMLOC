@@ -17,10 +17,17 @@ package 'Port Example' {
 	}
 	
 	part def FuelTankAssembly {
-		port fuelTankPort : FuelOutPort;
+		port fuelTankPort : FuelOutPort{
+			
+		}
 	}
 	
 	part def Engine {
 		port engineFuelPort : FuelInPort;
+	}
+
+	port aa{
+
+		port temperature :> subports;
 	}
 }

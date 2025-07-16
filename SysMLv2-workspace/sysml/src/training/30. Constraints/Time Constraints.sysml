@@ -18,15 +18,18 @@ package 'Time Constraints' {
 	state healthStates {
 		in vehicle : Vehicle;
 		
-		entry; then normal;
-		
+		entry; 
+		then normal;
 		state normal;
-		accept at vehicle.maintenanceTime
-			then maintenance;
+		accept at vehicle.maintenanceTime then maintenance;
 		
 		state maintenance {
-			assert constraint { TimeOf(maintenance) > vehicle.maintenanceTime }
-			assert constraint { TimeOf(maintenance) - TimeOf(normal.done) < 2 [s] }
+			assert constraint {
+				TimeOf(maintenance) > vehicle.maintenanceTime
+			}
+			assert constraint {
+				TimeOf(maintenance) - TimeOf(normal.done) < 2 [s]
+			}
 			entry assign vehicle.maintenanceTime := vehicle.maintenanceTime + vehicle.maintenanceInterval;
 		}
 		accept MaintenanceDone
