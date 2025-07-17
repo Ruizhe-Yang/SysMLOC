@@ -1,4 +1,4 @@
-package 'Requirement CubeSat' {
+package QB50Requirements {
 	// private import 'Requirement Definitions'::*;
 	// private import 'Requirement Usages'::*;
 	private import ScalarValues::*;

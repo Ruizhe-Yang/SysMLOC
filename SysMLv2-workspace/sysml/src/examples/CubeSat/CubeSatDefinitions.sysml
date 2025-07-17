@@ -1,19 +1,28 @@
 package CubeSatDefinitions{
-    private import SI::*;
-    private import ISQ::*;
-    private import ScalarValues::*;
-    private import ShapeItems::*;
-    private import SpatialItems::*;
+    public import SI::*;
+    public import ISQ::*;
+    public import ScalarValues::*;
+    public import ShapeItems::*;
+    public import SpatialItems::*;
+    // private import MeasurementReferences::CoordinateFrame;
+    public import MeasurementReferences::TranslationRotationSequence;
+    public import MeasurementReferences::Translation;
+    public import MeasurementReferences::Rotation;
 
     abstract part def BaseComponent{
-        attribute mass : ISQ::MassValue := 0.0 [g];
-        attribute temperature : ISQ::ThermodynamicTemperatureValue := 20.0 ['°C'];
-        attribute material : Material;
-        attribute price : Natural := 0.0;
-        attribute systemType : SystemType;
+        attribute sysType : SystemType;
     }
 
-    part def EntityComponent :> BaseComponent, SpatialItem;
+    part def EntityComponent :> BaseComponent, SpatialItem{
+        attribute mass : ISQ::MassValue;
+        attribute massError : ISQ::MassValue;
+        attribute tupper : ISQ::ThermodynamicTemperatureValue;
+        attribute tlower : ISQ::ThermodynamicTemperatureValue;
+        attribute material : Material[1..*];
+        attribute price : Natural;
+        attribute vendor : String[1..*];
+    }
+
 
     part def FunctionComponent :> EntityComponent{
         port powerEnd : PowerEnd [0..*];
@@ -22,7 +31,13 @@ package CubeSatDefinitions{
 
     abstract port def PortComponent :> BaseComponent;
     port def PowerEnd :> PortComponent;
-    port def DataEnd :> PortComponent;
+    port def DataEnd :> PortComponent{
+        attribute BAUDRate : Natural;
+        attribute dataWidth : ISQ::StorageCapacityValue;
+        attribute parityBit : Boolean;
+        attribute STARTBit : ISQ::StorageCapacityValue;
+        attribute STOPBit : ISQ::StorageCapacityValue;
+    }
 
     flow def PowerLine{
 		ref :>> payload : ElectricPower;
@@ -35,79 +50,132 @@ package CubeSatDefinitions{
         end port b : DataEnd;
     }
 
-    part def CubeSatEntity{
-        part body : BaseComponent [1];
-        part structure : EntityComponent [1..*];
-        part payload : FunctionComponent [0..*];
+    part def CubeSatEntity :> FunctionComponent{
+        part sys : BaseComponent [1];
+        part ss : EntityComponent [1..*];
+        part pay : FunctionComponent [0..*];
         part adcs : FunctionComponent [1..*];
-        part power : FunctionComponent [1..*];
+        part eps : FunctionComponent [1..*];
         part obdh : FunctionComponent [1..*];
-        part communication : FunctionComponent [1..*];
-        part thermalControl : FunctionComponent [0..*];
-        part others : FunctionComponent [0..*];
+        part comm : FunctionComponent [1..*];
+        part tcs : FunctionComponent [0..*];
+        part dep : FunctionComponent [0..1];
+        part prop : FunctionComponent [0..*];
+        part gs : FunctionComponent [0..*];
+        part others : FunctionComponent [0..*]; 
     }
 
-    package BodySystem{
-
+    package SYS{
     }
 
-    package StructureSystem{
-        part def TwoUStructure :> EntityComponent{
-            :>> systemType = SystemType::Structure;
+    package SS{
+        part def OneUnitStructure :> EntityComponent{
+            :>> sysType = SystemType::SS;
+            part body{
+                item :>> shape : Box {
+                    :>> length = 100.0 [mm];
+                    :>> width = 100.0 [mm];
+                    :>> height = 100.0 [mm];
+                }
+                attribute :>> coordinateFrame {
+                    :>> transformation : TranslationRotationSequence {
+                        :>> elements = (Translation( (0, 0, 0)[source]), Rotation((0, 0, 1)[source], 0['°']));
+                    }
+                }
+                attribute lengthError : LengthValue[0..1];
+                attribute widthError : LengthValue[0..1];
+                attribute heightError : LengthValue[0..1];
+            }
+            part feet : Rectangle{
+                item :>> shape : Box {
+                    :>> length = 8.5 [mm];
+                    :>> width = 8.5 [mm];
+                }
+                attribute lengthError : LengthValue[0..1];
+                attribute widthError : LengthValue[0..1];
+            }
+        }
+
+        part def TwoUnitsStructure :> OneUnitStructure{
+            item :>> shape {
+                :>> height = 277.0 [mm];
+            }
+        }
+
+        part def ThreeUnitsStructure :> OneUnitStructure{
+            item :>> shape {
+                :>> height = 340.0 [mm];
+            }
         }
     }
 
-    package PayloadSystem{
+    package PAY{
         part def INMS :> FunctionComponent{
-            :>> systemType = SystemType::Payload;
+            :>> sysType = SystemType::PAY;
         }
     }
-    package ADCSSystem{
+
+    package ADCS{
         part def Gyro :> FunctionComponent{
-            :>> systemType = SystemType::ADCS;
+            :>> sysType = SystemType::ADCS;
         }
         part def MTQ :> FunctionComponent{
-            :>> systemType = SystemType::ADCS;
+            :>> sysType = SystemType::ADCS;
         }
         part def SunSensor :> FunctionComponent{
-            :>> systemType = SystemType::ADCS;
+            :>> sysType = SystemType::ADCS;
         }
         part def Reaction :> FunctionComponent{
-            :>> systemType = SystemType::ADCS;
+            :>> sysType = SystemType::ADCS;
         }
     }
-    package PowerSystem{
+    package EPS{
         part def SolarPanel :> FunctionComponent{
-            :>> systemType = SystemType::Power;    
+            :>> sysType = SystemType::EPS;    
         }
         part def PowerSupplyBoard :> FunctionComponent{
-            :>> systemType = SystemType::Power;
+            :>> sysType = SystemType::EPS;
         }
     }
 
-    package OBDHSystem{
+    package OBDH{
         part def OnBoardComputer :> FunctionComponent{
-            :>> systemType = SystemType::OBDH;
+            :>> sysType = SystemType::OBDH;
         }
         part def Magnetometer :> FunctionComponent{
-            :>> systemType = SystemType::OBDH;
+            :>> sysType = SystemType::OBDH;
+        }
+        part def Bus :> FunctionComponent{
+            :>> sysType = SystemType::OTHERS;
         }
     }
 
-    package CommunicationSystem{
+    package COMM{
         part def Antenna :> FunctionComponent{
-            :>> systemType = SystemType::Communication;
+            :>> sysType = SystemType::COMM;
         }
         part def Transceiver :> FunctionComponent{
-            :>> systemType = SystemType::Communication;
+            :>> sysType = SystemType::COMM;
         }
     }
 
-    package ThermalControlSystem{
+    package TCS{
 
     }
 
-    package OtherSystem{
+    package DEP{
+
+    }
+
+    package PROP{
+
+    }
+
+    package GS{
+        
+    }
+
+    package OTHERS{
 
 
     }
@@ -121,24 +189,28 @@ package CubeSatDefinitions{
         attribute voltage : SourceVoltageValue;
         attribute type : CurrentType;
     }
-
-    enum def Material{
-        enum aluminum;
-        enum copper;
-        enum steel;
-        enum plastics;
-        enum composite;
+    
+    attribute def Material{
+        attribute name : String;
+        attribute mechanicalProperty{
+            attribute youngsModule : ISQ::ModulusOfElasticityValue;
+            attribute yieldStress : ISQ::NormalStressValue;
+            attribute ultimateStrength : ISQ::NormalStressValue;
+        }
     }
 
     enum def SystemType{
-        enum Body;
-        enum Structure;
-        enum Payload;
-        enum ADCS;
-        enum Power;
-        enum OBDH;
-        enum Communication;
-        enum ThermalControl;
-        enum Other;
+        enum SYS;    // 总体
+        enum SS;     // 结构
+        enum PAY;    // 载荷
+        enum ADCS;   // 姿控
+        enum EPS;    // 供电
+        enum OBDH;   // 星务
+        enum COMM;   // 通信
+        enum TCS;    // 热控
+        enum DEP;    // 部署
+        enum PROP;   // 推进
+        enum GS;     // 地面站
+        enum OTHERS; // 其他
     }
 }

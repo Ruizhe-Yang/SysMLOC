@@ -8,8 +8,7 @@ package MassRollup2 {
 	
 	part compositeThing : MassedThing {
 		part subcomponents: MassedThing[*];		
-		attribute :>> totalMass default
-			simpleMass + sum(subcomponents.totalMass); 
+		attribute :>> totalMass default simpleMass + sum(subcomponents.totalMass); 
 	}
 	
 	part filteredMassThing :> compositeThing {

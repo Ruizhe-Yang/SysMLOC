@@ -25,5 +25,4 @@ package 'Calculation Usages-2' {
 			}
 		}
 	} 
-	
 }

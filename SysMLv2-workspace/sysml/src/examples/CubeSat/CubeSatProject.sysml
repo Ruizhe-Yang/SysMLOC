@@ -1,5 +1,6 @@
 package cubeSatProjects{
     private import ScalarValues::*;
+    private import SI::*;
     part def CubeSat {
         part structure;
         attribute centre : Real;
@@ -12,7 +13,7 @@ package cubeSatProjects{
     attribute def AccelerationCharacteristics{
         attribute referenceFrame : String := "{BRF}";
         attribute direction : String := "X,Y,Z";
-        attribute amplitude : Real := 0.0;
+        attribute amplitude : Real := 0.0[mm];
         attribute method : Boolean := false;
     }
 

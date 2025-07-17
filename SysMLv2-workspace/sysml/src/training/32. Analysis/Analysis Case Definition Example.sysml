@@ -56,7 +56,8 @@ package 'Analysis Case Definition Example' {
 			 * to support the scenario.
 			 */
 			assert constraint {
-				(1..size(scenario)-1)->forAll {in i: Positive;
+				(1..size(scenario)-1)->forAll {
+					in i: Positive;
 					StraightLineDynamicsEquations (
 						power#(i),
 						vehicle.mass,

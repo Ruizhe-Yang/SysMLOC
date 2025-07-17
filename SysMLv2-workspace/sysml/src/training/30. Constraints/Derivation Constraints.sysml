@@ -4,7 +4,9 @@ package 'Derivation Constraints' {
 	
 	part vehicle1 : Vehicle {
 		attribute totalMass : MassValue;			
-		assert constraint {totalMass == chassisMass + engine.mass + transmission.mass}	
+		assert constraint {
+			totalMass == chassisMass + engine.mass + transmission.mass
+		}
 	}
 	
 	part vehicle2 : Vehicle {
