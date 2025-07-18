@@ -28,6 +28,23 @@ package Aoxiang1{
     part aoXiang1Sys : SYS::QB50_SYS{
         :>> geometricCenter = aoXiang1Entity.ss.geometricCenter;
         :>> gravityCenter = CountCubeSatGravityCenter(aoXiang1Entity);
+        // TBD
+        :>> track : EarthOrbit{
+            :>> Epoch {
+                :>> year = 2016;
+                :>> month = 3;
+                :>> day = 15;
+                :>> hour = 12;
+                :>> minute = 0;
+                :>> second = 0;
+            }
+            :>> semiMajorAxis = 6751.0[km];
+            :>> inclination = 98['°'];
+            :>> eccentricity = 0.001;
+            :>> RAAN = 175.72['°'];
+            :>> argumentOfPerigee = 167.0['°'];
+            :>> meanAnomalyAtEpoch = 0.0['°'];
+        }
     }
 
     /* 2. Payload Subsystem */
@@ -78,7 +95,7 @@ package Aoxiang1{
         :>> name = "Aluminum 7075";
         :>> mechanicalProperty{
             :>> youngsModule = 72e9 [Pa];
-            :>> yieldStress; = 320e6 [Pa];
+            :>> yieldStress = 320e6 [Pa];
             :>> ultimateStrength = 650e6 [Pa];
         }
     }
@@ -90,6 +107,7 @@ package Aoxiang1{
     /* 3.5 Center of gravity */
     attribute AoXiang1GeometricCenter = aoXiang1Entity.sys.geometricCenter;
     attribute AoXiang1GravityCenter = aoXiang1Entity.sys.gravityCenter;
+    // TBD
 
     /* 3.6 Access hatch on the structure */
     part def MDC1_9S1 :> FunctionComponent{
@@ -120,6 +138,7 @@ package Aoxiang1{
     }
 
     /* 4 Attitude Determination and Control Subsystem */
+    // TBD
     /* 4.1 Sensors */
     /* 4.1.1 Sun Sensor */
     part sunSensor : ADCS::SunSensor{
@@ -158,8 +177,8 @@ package Aoxiang1{
         :>> mass = 15e-3[g];
         :>> accuracy = 2.0e-3[T];
         :>> magneticFieldRange{
-            :>> upper = 8.0;
-            :>> lower = -8.0;
+            :>> upper = 8.0 [H];
+            :>> lower = -8.0 [H];
         }
         :>> interfaceType = (InterfaceType::I2C, InterfaceType::SPI);
         :>> offsetCompensatio = "Automatic";

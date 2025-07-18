@@ -105,6 +105,7 @@ package CubeSat_Base{
         enum GS;     // 地面站
         enum OTHERS; // 其他
     }
-
-
+    attribute PI = 3.1415927;
+    attribute GravitationalConstant = 3.986e14['m³'*'s⁻²'];
+    attribute EarthRadius = 6371.0[km];
 }
