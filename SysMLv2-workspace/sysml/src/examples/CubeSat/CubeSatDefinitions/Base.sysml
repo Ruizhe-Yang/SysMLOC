@@ -1,9 +1,10 @@
-package CubeSatDefinitions{
+package CubeSat_Base{
     public import SI::*;
     public import ISQ::*;
     public import ScalarValues::*;
     public import ShapeItems::*;
     public import SpatialItems::*;
+    public import RealFunctions::*;
     // private import MeasurementReferences::CoordinateFrame;
     public import MeasurementReferences::TranslationRotationSequence;
     public import MeasurementReferences::Translation;
@@ -11,18 +12,19 @@ package CubeSatDefinitions{
 
     abstract part def BaseComponent{
         attribute sysType : SystemType;
+        attribute mass : ISQ::MassValue;
+        attribute massError : ISQ::MassValue;
     }
 
     part def EntityComponent :> BaseComponent, SpatialItem{
-        attribute mass : ISQ::MassValue;
-        attribute massError : ISQ::MassValue;
         attribute tupper : ISQ::ThermodynamicTemperatureValue;
         attribute tlower : ISQ::ThermodynamicTemperatureValue;
         attribute material : Material[1..*];
         attribute price : Natural;
         attribute vendor : String[1..*];
+        attribute geometricCenter : CartesianPosition3dVector;
+        attribute gravityCenter : CartesianPosition3dVector;
     }
-
 
     part def FunctionComponent :> EntityComponent{
         port powerEnd : PowerEnd [0..*];
@@ -65,120 +67,6 @@ package CubeSatDefinitions{
         part others : FunctionComponent [0..*]; 
     }
 
-    package SYS{
-    }
-
-    package SS{
-        part def OneUnitStructure :> EntityComponent{
-            :>> sysType = SystemType::SS;
-            part body{
-                item :>> shape : Box {
-                    :>> length = 100.0 [mm];
-                    :>> width = 100.0 [mm];
-                    :>> height = 100.0 [mm];
-                }
-                attribute :>> coordinateFrame {
-                    :>> transformation : TranslationRotationSequence {
-                        :>> elements = (Translation( (0, 0, 0)[source]), Rotation((0, 0, 1)[source], 0['°']));
-                    }
-                }
-                attribute lengthError : LengthValue[0..1];
-                attribute widthError : LengthValue[0..1];
-                attribute heightError : LengthValue[0..1];
-            }
-            part feet : Rectangle{
-                item :>> shape : Box {
-                    :>> length = 8.5 [mm];
-                    :>> width = 8.5 [mm];
-                }
-                attribute lengthError : LengthValue[0..1];
-                attribute widthError : LengthValue[0..1];
-            }
-        }
-
-        part def TwoUnitsStructure :> OneUnitStructure{
-            item :>> shape {
-                :>> height = 277.0 [mm];
-            }
-        }
-
-        part def ThreeUnitsStructure :> OneUnitStructure{
-            item :>> shape {
-                :>> height = 340.0 [mm];
-            }
-        }
-    }
-
-    package PAY{
-        part def INMS :> FunctionComponent{
-            :>> sysType = SystemType::PAY;
-        }
-    }
-
-    package ADCS{
-        part def Gyro :> FunctionComponent{
-            :>> sysType = SystemType::ADCS;
-        }
-        part def MTQ :> FunctionComponent{
-            :>> sysType = SystemType::ADCS;
-        }
-        part def SunSensor :> FunctionComponent{
-            :>> sysType = SystemType::ADCS;
-        }
-        part def Reaction :> FunctionComponent{
-            :>> sysType = SystemType::ADCS;
-        }
-    }
-    package EPS{
-        part def SolarPanel :> FunctionComponent{
-            :>> sysType = SystemType::EPS;    
-        }
-        part def PowerSupplyBoard :> FunctionComponent{
-            :>> sysType = SystemType::EPS;
-        }
-    }
-
-    package OBDH{
-        part def OnBoardComputer :> FunctionComponent{
-            :>> sysType = SystemType::OBDH;
-        }
-        part def Magnetometer :> FunctionComponent{
-            :>> sysType = SystemType::OBDH;
-        }
-        part def Bus :> FunctionComponent{
-            :>> sysType = SystemType::OTHERS;
-        }
-    }
-
-    package COMM{
-        part def Antenna :> FunctionComponent{
-            :>> sysType = SystemType::COMM;
-        }
-        part def Transceiver :> FunctionComponent{
-            :>> sysType = SystemType::COMM;
-        }
-    }
-
-    package TCS{
-
-    }
-
-    package DEP{
-
-    }
-
-    package PROP{
-
-    }
-
-    package GS{
-        
-    }
-
-    package OTHERS{
-
-
-    }
     enum def CurrentType{
         enum DC;
         enum AC;
@@ -199,6 +87,10 @@ package CubeSatDefinitions{
         }
     }
 
+    enum def InterfaceType{
+        enum I2C;
+        enum SPI;
+    }
     enum def SystemType{
         enum SYS;    // 总体
         enum SS;     // 结构
@@ -213,4 +105,6 @@ package CubeSatDefinitions{
         enum GS;     // 地面站
         enum OTHERS; // 其他
     }
+
+
 }
