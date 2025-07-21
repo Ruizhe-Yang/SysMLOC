@@ -17,8 +17,8 @@ package SS{
             attribute widthError : LengthValue[0..1];
             attribute heightError : LengthValue[0..1];
         }
-        part feet : Rectangle{
-            item :>> shape : Box {
+        part feet {
+            item :>> shape : Rectangle {
                 :>> length = 8.5 [mm];
                 :>> width = 8.5 [mm];
             }

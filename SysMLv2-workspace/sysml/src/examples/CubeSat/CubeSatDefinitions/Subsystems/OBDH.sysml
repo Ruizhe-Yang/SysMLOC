@@ -6,7 +6,21 @@ package OBDH{
     part def Magnetometer :> FunctionComponent{
         :>> sysType = SystemType::OBDH;
     }
-    part def Bus :> FunctionComponent{
-        :>> sysType = SystemType::OTHERS;
+
+    part def ElectronicComponents :> FunctionComponent;
+    part def FPGA :> ElectronicComponents{
+        :>> sysType = SystemType::OBDH;
+        attribute fpgaType : FPGAType;
     }
+
+    part def FRAM :> ElectronicComponents{
+        :>> sysType = SystemType::OBDH;
+
+    }
+    enum def FPGAType{
+        enum DataProcessingUnit;
+        enum VotingControlUnit;
+    }
+    
+    part def I2C :> FunctionComponent;
 }

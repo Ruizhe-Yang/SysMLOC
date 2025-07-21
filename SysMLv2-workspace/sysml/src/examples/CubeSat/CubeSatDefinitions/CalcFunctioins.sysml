@@ -35,5 +35,15 @@ package CubeSat_CalcFunctions {
         return : ISQ::LengthValue;
 	}
 
+    calc def CountSysPowerConsumed{
+        in cubeSat : CubeSatEntity;
+        return : ISQ::PowerValue;
+    }
     
+    calc def CountSysPowerGenerated{
+        in cubeSat : CubeSatEntity;
+        return : ISQ::PowerValue;
+    }
+    
+
 }

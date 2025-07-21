@@ -2,7 +2,7 @@ package Aoxiang1{
     private import CubeSat_Definitions::*;
     /* 1. System Overview */
     part aoXiang1Entity : CubeSatEntity{
-        :>> vendor = "Northwestern Polytechnical University";
+        :>> vendor = "NPU";
         :>> sys :>  aoXiang1Sys;
         :>> ss  :>  twoU;
         :>> pay  =  INMS;
@@ -12,16 +12,16 @@ package Aoxiang1{
                     GPSReceiver,
                     threeAxisReactionWeel,
                     ISIS_MTQ);
-        :>> eps  =  (solarPanel, 
-                    powerSupplyBoard);
-        :>> obdh =  (onBoardComputer, 
-                    Magnetometer);
+        :>> eps  =  (tripleJunctionGaAs_SolarPanels, 
+                    P31U);
+        :>> obdh =  (AoXiang1OBC,
+                    Aoxiang1DataBUS);
         :>> comm =  (antenna,
-                    transceiver);
-        :>> tcs;
+                    AoXiang1Transceiver);
+        :>> tcs = AoXiang1TCS;
         :>> dep;
         :>> prop;
-        :>> gs;
+        :>> gs = NPU_GroundStation;
         :>> others = (connector1, connector2);
     }
 
@@ -45,6 +45,9 @@ package Aoxiang1{
             :>> argumentOfPerigee = 167.0['°'];
             :>> meanAnomalyAtEpoch = 0.0['°'];
         }
+        attribute sysPowerConsumed = CountSysPowerConsumed(aoXiang1Entity);
+        attribute sysPowerGenerated = CountSysPowerGenerated(aoXiang1Entity);
+        attribute powerMargin = sysPowerConsumed / sysPowerGenerated;
     }
 
     /* 2. Payload Subsystem */
@@ -52,10 +55,14 @@ package Aoxiang1{
         doc /* 
             The INMS is a miniaturized analyzer designed for sampling of low mass ionized and neutral 
             particles in lower thermosphere, i.e., O, O2, and N2. The key sensor components consist of
-             a collimatorion filter, an ionizer and a charged particle spectrometer. 
+            a collimatorion filter, an ionizer and a charged particle spectrometer. 
             */
         :>> mass = 210 [g];
         :>> massError = 90 [g];
+        :>> tempRange{
+            :>> upper = 40['°C'];
+            :>> lower = -20['°C'];
+        }
         :>> vendor = "University College London";
         port INMSport :> dataEnd {
             :>> BAUDRate = 38400;
@@ -72,8 +79,13 @@ package Aoxiang1{
         doc /*
             AoXiang-1 is a 2U CubeSat.
             */
+        :>> vendor = "ISIS";
         :>> mass = 280 [g];
         :>> massError = 20 [g];
+        :>> tempRange{
+            :>> upper = 80['°C'];
+            :>> lower = -40['°C'];
+        }
         :>> body{
             :>> lengthError = 0.1 [mm];
             :>> widthError = 0.1 [mm];
@@ -152,12 +164,19 @@ package Aoxiang1{
             :>> width = 11 [mm];
             :>> height = 6 [mm];
         }
-        :>> accuracy = 0.5['°'];
         :>> mass = 0.5[g];
+        :>> accuracy = 0.5['°'];
         :>> power = 10e-3[A];
         :>> fieldOfView = 114['°'];
         :>> updateRate = 10[Hz];
+        :>> powerConsumption = 0.05[W];
+        :>> mode : AoXiang1Modes{
+            safe{:>> percent = 0;}
+            recovery{:>> percent = 100;}
+            payloadOperation{:>> percent = 100;}
+        }
     }
+
     part sunSensor_1 :> sunSensor;
     part sunSensor_2 :> sunSensor;
     part sunSensor_3 :> sunSensor;
@@ -169,12 +188,17 @@ package Aoxiang1{
             HMC5983 is a low cost three-axis low cost magnetometer. The HMC5983 includes magnetoresistive sensors, amplification,
             automatic degaussing strap drivers, offset cancellation, and a 12-bit ADC.
             */
+        :>> vendor = "Honeywell";
         item :>> shape : Box {
             :>> length = 33 [mm];
             :>> width = 11 [mm];
             :>> height = 6 [mm];
         }
         :>> mass = 15e-3[g];
+        :>> tempRange{
+            :>> upper = 70['°C'];
+            :>> lower = -40['°C'];
+        }
         :>> accuracy = 2.0e-3[T];
         :>> magneticFieldRange{
             :>> upper = 8.0 [H];
@@ -182,7 +206,8 @@ package Aoxiang1{
         }
         :>> interfaceType = (InterfaceType::I2C, InterfaceType::SPI);
         :>> offsetCompensatio = "Automatic";
-        :>> power = 0.43e-3[W];
+        :>> powerConsumption = 0.43e-3[W];
+        // :>> power = 0.43e-3[W];
         :>> updateRate = 220[Hz];
     }
 
@@ -192,8 +217,19 @@ package Aoxiang1{
             An Analog DeviceADIS16355 was used to measure the tip-off rates of AoXiang-1.
             ADIS 16355 incorporate a Tri-axis gyroscope and a Tri-axis accelerometer.
             */
+            :>> vendor = "ADI";
+        :>> tempRange{
+            :>> upper = 70['°C'];
+            :>> lower = -40['°C'];
+        }
         :>> digitalRangeScaling =(75, 150, 300)['°'/s];
         :>> triAxisMeasurementRange = 14[bit];
+        :>> powerConsumption = 0.25[W];
+        :>> mode : AoXiang1Modes{
+            safe{:>> percent = 0;}
+            recovery{:>> percent = 100;}
+            payloadOperation{:>> percent = 0;}
+        }
     }
 
     /* 4.1.4 GPS receiver */
@@ -202,6 +238,11 @@ package Aoxiang1{
             The GPS receiver is used to get the position information of AoXiang-1. 
             Low latency and high update rates give the response time and accuracy required for precise dynamic applications.
             */
+        :>> vendor = "NPU";
+        :>> tempRange{
+            :>> upper = 60['°C'];
+            :>> lower = -30['°C'];
+        }
         port TLL :> dataEnd;
     }
     
@@ -219,13 +260,18 @@ package Aoxiang1{
         }
         :>> mass = 80 [g];
         :>> accuracy = 0.5['°'];
-        :>> poweConsumption{
+        :>> powerConsumption{
             :>> typical = 250e-3[W];
             :>> peak = 1.5[W];
         }
         :>> maxRotateSpeed = 12000['s⁻¹'];
         :>> momentum = 6e-6['kg⋅m²'];
         :>> maxTorque = 0.2e-3['N⋅m'];
+        :>> mode : AoXiang1Modes{
+            safe{:>> percent = 0;}
+            recovery{:>> percent = 0;}
+            payloadOperation{:>> percent = 50;}
+        }
     }
 
     /* 4.2 MTQ */
@@ -239,14 +285,23 @@ package Aoxiang1{
             :>> width = 90 [mm];
             :>> height = 22 [mm];
         }
+        :>> vendor = ("ISIS", "NPU");
         :>> mass = 200[g];
+        :>> tempRange{
+            :>> upper = 70['°C'];
+            :>> lower = -40['°C'];
+        }
         :>> actuationPower_Rods = "0.5W/0.2Am2"; // TBD
         :>> actuationPower_AirCore = "0.7W/0.2Am2"; // TBD
         :>> interfaceType = InterfaceType::I2C;
         :>> offsetCompensatio = "Automatic";
         :>> updateRate = 220[Hz];
         :>> processor = "MSP430";
-
+        :>> mode : AoXiang1Modes{
+            safe{:>> percent = 0;}
+            recovery{:>> percent = 20;}
+            payloadOperation{:>> percent = 20;}
+        }
     }
 
     part NPU_MTQ : ADCS::MTQ{
@@ -261,15 +316,226 @@ package Aoxiang1{
     // TBD
 
     /* 4.4 Attitude control */
+    /* 4.4.1 De-tumbling control*/
     // TBD
 
-    part solarPanel : EPS::SolarPanel;
-    part powerSupplyBoard : EPS::PowerSupplyBoard;
-    part onBoardComputer : OBDH::OnBoardComputer;
-    part Magnetometer : OBDH::Magnetometer;
-    part antenna : COMM::Antenna;
-    part transceiver : COMM::Transceiver;
+    /* 4.4.2 Attitude stabilization */
+    // TBD
+
+    /* 5. Electrical Power Subsystem */
+    part tripleJunctionGaAs_SolarPanels : EPS::SolarPanels{
+        :>> powerConsumption = 0.25[W];
+        :>> mode : AoXiang1Modes{
+            safe{:>> percent = 100;}
+            recovery{:>> percent = 100;}
+            payloadOperation{:>> percent = 100;}
+        }
+        part solarPanel_1 :> tripleJunctionGaAs;
+        part solarPanel_2 :> tripleJunctionGaAs;
+        part solarPanel_3 :> tripleJunctionGaAs;
+        part solarPanel_4 :> tripleJunctionGaAs;
+        part solarPanel_5 :> tripleJunctionGaAs;
+        part solarPanel_6 :> tripleJunctionGaAs;
+    }
+
+    part tripleJunctionGaAs : EPS::SolarPanel{
+        :>> vendor = "ISIS";
+        :>> conversionEfficiency = 0.28;
+        :>> tempRange{
+            :>> upper = 125['°C'];
+            :>> lower = -20['°C'];
+        }
+    }
     
+    attribute def AoXiang1Mode{
+        attribute name : String;
+        attribute percent : Natural;
+    }
+
+    enum def AoXiang1Modes :> AoXiang1Mode{
+        enum safe{
+            :>> name = "Safe Mode";
+        }
+        enum recovery{
+            :>> name = "Recovery Mode";
+        }
+        enum payloadOperation{
+            :>> name = "Payload Operation Mode";
+        }
+    }
+
+    attribute AoXiang1PowerMargin = aoXiang1Sys.powerMargin;
+
+    /* 5.1 P31U from Gomspace for electrical power control */
+    part P31U : EPS::PowerSupplyBoard{
+        doc /*
+            The NanoPower is designed as fully analogue solution,
+            but with a microcontroller for digital interfacing and maximum power point tracking. 
+            This together with a simple and flight proven architecture ensures high reliability. 
+            */
+        :>> vendor = ("Gomspace", "NPU");
+        item :>> shape : Box {
+            :>> length = 96 [mm];
+            :>> width = 90 [mm];
+            :>> height = 26 [mm];
+        }
+        attribute ChargeTempRange :> tempRange{
+            :>> upper = 45['°C'];
+            :>> lower = -5['°C'];
+        }
+        attribute DischargeTempRange :> tempRange{
+            :>> upper = 60['°C'];
+            :>> lower = -20['°C'];
+        }
+        :>> powerEnd[3]{
+            attribute power = 30[W];
+        }
+        :>> converterEfficiency = 0.93;
+        attribute photovoltaicPowerPoint : photovoltaicPowerPointOperations;
+        :>> interfaceType = InterfaceType::I2C;
+        :>> lithiumIonBatteryPack{
+            :>> power = 2600e-3['A'*'h'];
+        }
+    }
+
+    enum def photovoltaicPowerPointOperations{
+        enum HardwareFixedVoltage;
+        enum SoftwareAdjustableVoltage;
+        enum MaximumPowerPointTracking;
+    }
+
+    /* 5.2 EPS board from NPU for another candidate */
+    // TBD
+
+    /* 6、7 On Board Computer */
+    part AoXiang1OBC : OBDH::OnBoardComputer{
+        doc /*
+            There are two parallel processors are embedded in one SRAM CycloneV FPGA 
+            and an arbitrator is embedded in another Flash Based FPGA.
+            */
+        :>> vendor = "NPU";
+        :>> operationSystem = "MicroC/OSII";
+        :>> tempRange{
+            :>> upper = 70['°C'];
+            :>> lower = -40['°C'];
+        }
+        :>> powerConsumption = 0.9[W];
+        :>> mode : AoXiang1Modes{
+            safe{:>> percent = 100;}
+            recovery{:>> percent = 100;}
+            payloadOperation{:>> percent = 100;}
+        }
+        part SRAM_FPGA : OBDH::FPGA{
+            :>> fpgaType = DataProcessingUnit;
+            doc /*
+                The ferroelectric RAM cell, known as FRAM or FRAM, is conceptually similar to the DRAM cell,
+                in that a single capacitor stores one bit of information and the cell is connected to a memory
+                column via a single pass transistor(1T-1C cell, although 2T cells are also common).
+                */
+            part SoftKernelProcessor_1 : OBDH::FRAM;
+            part SoftKernelProcessor_2 : OBDH::FRAM;
+        }
+        part FLASHS29GL256 : OBDH::FPGA{
+            :>> fpgaType = VotingControlUnit;
+            action Switcher;
+            action ReconfigurationControl;
+            action VotingControl;
+            action ErrorDectection;
+            action SyncControl;
+        }
+        part CrystalOscillator [2] : OBDH::ElectronicComponents;
+        part FPGACycloneV : OBDH::FPGA;
+        part PowerRegulatorEP53A [3] : OBDH::ElectronicComponents;
+        part PC104Connector : OBDH::ElectronicComponents;
+        part ConfigurationChipEPCQ256 : OBDH::ElectronicComponents;
+        part Proasic3FPGA : OBDH::FPGA;
+
+        interface : BUS connect SRAM_FPGA.dataEnd to Aoxiang1DataBUS.dataEnd;
+        interface : DataLine connect SRAM_FPGA.dataEnd to HMC5983.dataEnd;
+        interface Processor1Output : DataLine connect SRAM_FPGA.dataEnd to FLASHS29GL256.dataEnd;
+        interface Processor2Output : DataLine connect SRAM_FPGA.dataEnd to FLASHS29GL256.dataEnd;
+    }
+
+    part Aoxiang1DataBUS : OBDH::I2C;
+
+    /* 8 Communication Subsystem */
+    part AoXiang1Transceiver : COMM::Transceiver{
+        doc/*
+            ‘AoXiang-1’ use amateur radio band UHF and VHF for the communication between ground station and satellite. 
+            */
+        :>> vendor = "ISIS";
+        :>> tempRange{
+            :>> upper = 50['°C'];
+            :>> lower = -20['°C'];
+        }
+        :>> waveType = (UHF, VHF);
+        :>> powerConsumption = 1.7[W];
+        :>> mode : AoXiang1Modes{
+            safe{:>> percent = 100;}
+            recovery{:>> percent = 100;}
+            payloadOperation{:>> percent = 100;}
+        }
+        attribute UHFDownlink :>> Downlink{
+            :>> frequencyRange{
+                :>> upper = 450e6[Hz];
+                :>> lower = 400e6[Hz];
+            }
+            :>> transmitPower = 500e-3[W];
+            :>> modulation = "Raised Shift Keying (BPSK)";
+        }
+
+        attribute VHFUplink :>> Uplink{
+            :>> frequencyRange{
+                :>> upper = 170e6[Hz];
+                :>> lower = 130e6[Hz];
+            }
+            :>> receivePower = 100e-3[W];
+            :>> modulation = "Audio Frequency Shift Keyinng 1200Hz/2200Hz (Bell202)";
+            :>> protocol = "AX.25";
+        }
+    }
+
+    part antenna : COMM::Antenna{
+        :>> vendor = "ISIS";
+        :>> tempRange{
+            :>> upper = 70['°C'];
+            :>> lower = -30['°C'];
+        }
+    }
+
+    /* 9 Ground Station */
+    part NPU_GroundStation : GS::GroundStation{
+        :>> location = "Xi'an, China";
+        :>> latitude = 34.2392['°'];
+        :>> longitude = 108.915['°'];
+        UHFfrequency :> frequencyRange{
+            :>> waveType = UHF;
+            :>> upper = 450e6[Hz];
+            :>> lower = 430e6[Hz];
+        }
+        VHFfrequency :> frequencyRange{
+            :>> waveType = VHF;
+            :>> upper = 146e6[Hz];
+            :>> lower = 144e6[Hz];
+        }
+        :>> modulationType{
+            :>> upper = 1200;
+            :>> lower = 9600;
+        }
+        :>> UplinkCapabilities = ('1200bd AFSK', '9600bd G3RUH FSK');
+        :>> DownlinkCapabilities = ('1200bd AFSK', '1200bd BPSK', '9600bd G3RUH FSK');
+    }
+
+    /* 10 Thermal Control Subsystem */
+    attribute AoXiang1TCS : TCS::TCSParameters{
+        :>> solarCellsEfficiency = 0.2;
+        :>> solarCellsAbsorptivity = 0.9;
+        :>> frameAbsorptivity = 0.25;
+        :>> solarCellsEmissivity = 0.8;
+        :>> frameEmissivity = 0.8;
+        :>> PCBPanelsAbsorptivity = 0.75;
+        :>> PCBPanelsEmissivity = 0.89;
+    }
     // private import 'Requirement CubeSat'::*;
     // private import cubeSatProjects::*;
     // part Aoxiang_1System{

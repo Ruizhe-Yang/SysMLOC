@@ -16,9 +16,17 @@ package CubeSat_Base{
         attribute massError : ISQ::MassValue;
     }
 
+    part def Building :> BaseComponent{
+        attribute location : String;
+        attribute latitude : AngularMeasureValue;
+        attribute longitude : AngularMeasureValue;
+    }
+
     part def EntityComponent :> BaseComponent, SpatialItem{
-        attribute tupper : ISQ::ThermodynamicTemperatureValue;
-        attribute tlower : ISQ::ThermodynamicTemperatureValue;
+        attribute tempRange : Range{
+            :>> upper : ISQ::ThermodynamicTemperatureValue;
+            :>> lower : ISQ::ThermodynamicTemperatureValue;
+        }
         attribute material : Material[1..*];
         attribute price : Natural;
         attribute vendor : String[1..*];
@@ -27,6 +35,11 @@ package CubeSat_Base{
     }
 
     part def FunctionComponent :> EntityComponent{
+        attribute mode;
+        attribute powerConsumption {
+            attribute typical : ISQ::PowerValue;
+            attribute peak : ISQ::PowerValue;
+        }
         port powerEnd : PowerEnd [0..*];
         port dataEnd : DataEnd [0..*];
     }
@@ -46,11 +59,11 @@ package CubeSat_Base{
 		end in source : PowerEnd;
 		end out target : PowerEnd;
 	}
-
     interface def DataLine{
         end port a : DataEnd;
         end port b : DataEnd;
     }
+    interface def BUS :> DataLine;
 
     part def CubeSatEntity :> FunctionComponent{
         part sys : BaseComponent [1];
@@ -78,6 +91,10 @@ package CubeSat_Base{
         attribute type : CurrentType;
     }
     
+    attribute def Range{
+        attribute upper;
+        attribute lower;
+    }
     attribute def Material{
         attribute name : String;
         attribute mechanicalProperty{
@@ -91,6 +108,7 @@ package CubeSat_Base{
         enum I2C;
         enum SPI;
     }
+    
     enum def SystemType{
         enum SYS;    // 总体
         enum SS;     // 结构
@@ -105,7 +123,19 @@ package CubeSat_Base{
         enum GS;     // 地面站
         enum OTHERS; // 其他
     }
+
+    enum def WaveBand{
+        enum UHF;
+        enum VHF;
+        enum X;
+    }
+
     attribute PI = 3.1415927;
     attribute GravitationalConstant = 3.986e14['m³'*'s⁻²'];
-    attribute EarthRadius = 6371.0[km];
+    attribute EarthRadius = 6378.0[km];
+    attribute SolarConstantGsun = 1412[W/m];
+    attribute EarthIRConstantGearth = 217[W/m];
+    attribute AlbedoRatio = 0.3;
+    attribute DeepSpaceTemperatureTspace= 2.7[K];
+
 }

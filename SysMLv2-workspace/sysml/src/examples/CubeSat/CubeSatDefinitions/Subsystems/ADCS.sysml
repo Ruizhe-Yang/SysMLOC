@@ -10,13 +10,13 @@ package ADCS{
     part def Magnetometer :> FunctionComponent{
         :>> sysType = SystemType::ADCS;
         attribute accuracy : ISQ::MagneticFluxDensityValue;
-        attribute magneticFieldRange{
-            attribute upper : ISQ::MagneticFieldStrengthValue;
-            attribute lower : ISQ::MagneticFieldStrengthValue;
+        attribute magneticFieldRange : Range{
+            :>> upper : ISQ::MagneticFieldStrengthValue;
+            :>> lower : ISQ::MagneticFieldStrengthValue;
         }
         attribute interfaceType : InterfaceType[1..*];
         attribute offsetCompensatio : String;
-        attribute power : ISQ::PowerValue;
+        // attribute power : ISQ::PowerValue;
         attribute updateRate : ISQ::FrequencyValue;
     }
 
@@ -39,10 +39,10 @@ package ADCS{
     part def ThreeAxisReactionWeel :> FunctionComponent{
         :>> sysType = SystemType::ADCS;
         attribute accuracy : ISQ::AngularMeasureValue;
-        attribute poweConsumption {
-            attribute typical : ISQ::PowerValue;
-            attribute peak : ISQ::PowerValue;
-        }
+        // attribute powerConsumption {
+        //     attribute typical : ISQ::PowerValue;
+        //     attribute peak : ISQ::PowerValue;
+        // }
         attribute maxRotateSpeed : ISQ::AngularVelocityValue;
         attribute momentum : ISQ::MomentOfInertiaUnit;
         attribute maxTorque : ISQ::MomentOfForceUnit;
