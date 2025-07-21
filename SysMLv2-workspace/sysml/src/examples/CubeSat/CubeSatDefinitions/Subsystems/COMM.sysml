@@ -25,9 +25,5 @@ package COMM{
         }
     }
     
-    enum def WaveBand{
-        enum UHF;
-        enum VHF;
-        enum X;
-    }
+
 }

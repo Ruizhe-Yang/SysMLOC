@@ -2,6 +2,7 @@ package OBDH{
     private import CubeSat_Base::*;
     part def OnBoardComputer :> FunctionComponent{
         :>> sysType = SystemType::OBDH;
+        attribute operationSystem : String;
     }
     part def Magnetometer :> FunctionComponent{
         :>> sysType = SystemType::OBDH;
