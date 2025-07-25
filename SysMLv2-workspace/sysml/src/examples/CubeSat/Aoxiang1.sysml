@@ -535,7 +535,9 @@ package Aoxiang1{
         :>> frameEmissivity = 0.8;
         :>> PCBPanelsAbsorptivity = 0.75;
         :>> PCBPanelsEmissivity = 0.89;
+
     }
+
     // private import 'Requirement CubeSat'::*;
     // private import cubeSatProjects::*;
     // part Aoxiang_1System{
