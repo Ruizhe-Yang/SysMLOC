@@ -128,8 +128,6 @@ package CubeSat_Base{
         enum UHF;
         enum VHF;
         enum X;
-        enum Ka;
-        enum S;
     }
 
     attribute PI = 3.1415927;
