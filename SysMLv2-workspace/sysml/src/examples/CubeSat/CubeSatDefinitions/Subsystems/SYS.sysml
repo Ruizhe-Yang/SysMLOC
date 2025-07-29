@@ -1,7 +1,7 @@
 package SYS{
     private import CubeSat_Base::*;
     private import CubeSat_CalcFunctions::*;
-    public import Time::Iso8601DateTimeStructure;
+    public import Time::Iso8601DateTime;
     part def CubeSatSystem :> FunctionComponent{
         attribute track : Track;
         
@@ -16,7 +16,7 @@ package SYS{
     }
 
     attribute def EarthOrbit :> Track{
-        attribute Epoch : Iso8601DateTimeStructure;
+        attribute Epoch : Iso8601DateTime;
         attribute semiMajorAxis : ISQ::LengthValue;
         attribute inclination : ISQ::AngularMeasureValue;
         attribute eccentricity : Positive;
@@ -29,7 +29,7 @@ package SYS{
     }
 
     attribute def EarthOrbit2 :> Track{
-        attribute Epoch : Iso8601DateTimeStructure;
+        attribute Epoch : Iso8601DateTime;
         attribute ndot : Real;
         attribute ndotdot : Real;
         attribute bSTAR : Real;
@@ -48,16 +48,9 @@ package SYS{
         :> SatelliteCatalogNumber = 99130;
         // :> Classification = Unclassified;
         :> InternationalDesignator = "24099A";
-        // :> Epoch {
-        //     :> year = 2024;
-        //     :> month = 11;
-        //     :> day = 9;
-        //     :> hour = 1;
-        //     :> minute = 10;
-        //     :> second = 14;
-        //     :> microsecond = 533;
-        // }
-        :> Epoch = ASRTU1_Epoch;
+        :> Epoch {
+            :> val = "2024-11-09T01:10:14.533Z";
+        }
         :> ndot = -0.00328134;
         :> ndotdot = 0;
         :> bSTAR = -0.00328134;
@@ -69,18 +62,9 @@ package SYS{
         :> eccentricity = 0.001672;
         :> argumentofPerigee = 216.0612['°'];
         :> meanAnomaly = 302.6737['°'];
-        :> meanMotion = 15.22998775000015;
+        :> meanMotion = 15.23;
     }
-    attribute ASRTU1_Epoch : Iso8601DateTimeStructure{
-        :> year = 2024;
-        :> month = 11;
-        :> day = 9;
-        :> hour = 1;
-        :> minute = 10;
-        :> second = 14;
-        :> microsecond = 533;
-    } 
-    
+
     enum def ClassificationType{
         enum Unclassified;
         enum Classified;

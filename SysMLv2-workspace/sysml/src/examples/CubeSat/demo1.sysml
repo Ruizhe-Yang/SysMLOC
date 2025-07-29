@@ -1,9 +1,53 @@
-package Aoxiang1{
+package demo1{
     private import CubeSat_Definitions::*;
     /* 1. System Overview */
-    part aoXiang1Entity : CubeSatEntity{
+    part demo1Entity : CubeSatEntity{
+        // :>> sys :>  demo1Sys;
+        // :>> ss  :>  twoU;
+        // :>> pay  =  INMS;
+        // :>> adcs =  (sunSensor_1, sunSensor_2, sunSensor_3,
+        //             HMC5983,
+        //             ADIS16355,
+        //             GPSReceiver,
+        //             threeAxisReactionWeel,
+        //             ISIS_MTQ);
+        // :>> eps  =  (tripleJunctionGaAs_SolarPanels, 
+        //             P31U);
+        // :>> obdh =  (demo1OBC,
+        //             demo1DataBUS);
+        // :>> comm =  (antenna,
+        //             demo1Transceiver);
+        // :>> tcs = demo1TCS;
+        // :>> dep;
+        // :>> prop;
+        // :>> gs = NPU_GroundStation;
+        // :>> others = (connector1, connector2);
+        part demo1_sys :> sys = demo1Sys;
+        part demo1_ss :> ss = twoU;
+        
+        part demo1_pay :> pay = INMS;
+        part demo1_adcs :> adcs = (sunSensor_1, sunSensor_2, sunSensor_3,
+                                        HMC5983,
+                                        ADIS16355,
+                                        GPSReceiver,
+                                        threeAxisReactionWeel,
+                                        ISIS_MTQ, NPU_MTQ);
+        part demo1_eps :> eps = (tripleJunctionGaAs_SolarPanels,
+                                        P31U);
+        part demo1_obdh :> obdh = (demo1OBC,
+                                        demo1DataBUS);
+        part demo1_comm :> comm = (antenna,
+                                        demo1Transceiver);
+        part demo1_tcs :> tcs = demo1TCS;
+        part demo1_dep :> dep;
+        part demo1_prop :> prop;
+        part demo1_gs :> gs = NPU_GroundStation;
+        part demo1_others :> others = (connector1, connector2);
+    }
+
+    part demo1Entity2 : CubeSatEntity{
         :>> vendor = "NPU";
-        :>> sys :>  aoXiang1Sys;
+        :>> sys :>  demo1Sys;
         :>> ss  :>  twoU;
         :>> pay  =  INMS;
         :>> adcs =  (sunSensor_1, sunSensor_2, sunSensor_3,
@@ -14,30 +58,57 @@ package Aoxiang1{
                     ISIS_MTQ);
         :>> eps  =  (tripleJunctionGaAs_SolarPanels, 
                     P31U);
-        :>> obdh =  (AoXiang1OBC,
-                    Aoxiang1DataBUS);
+        :>> obdh =  (demo1OBC,
+                    demo1DataBUS);
         :>> comm =  (antenna,
-                    AoXiang1Transceiver);
-        :>> tcs = AoXiang1TCS;
+                    demo1Transceiver);
+        :>> tcs = demo1TCS;
         :>> dep;
         :>> prop;
         :>> gs = NPU_GroundStation;
         :>> others = (connector1, connector2);
     }
 
-    part aoXiang1Sys : SYS::QB50_SYS{
-        :>> geometricCenter = aoXiang1Entity.ss.geometricCenter;
-        :>> gravityCenter = CountCubeSatGravityCenter(aoXiang1Entity);
+    part demo1Entity3 : CubeSatEntity{
+        :> vendor = "NPU";
+        :> sys :>  demo1Sys;
+        :> ss  :>  twoU;
+        :> pay  =  INMS;
+        :> adcs =  (sunSensor_1, sunSensor_2, sunSensor_3,
+                    HMC5983,
+                    ADIS16355,
+                    GPSReceiver,
+                    threeAxisReactionWeel,
+                    ISIS_MTQ);
+        :> eps  =  (tripleJunctionGaAs_SolarPanels, 
+                    P31U);
+        :> obdh =  (demo1OBC,
+                    demo1DataBUS);
+        :> comm =  (antenna,
+                    demo1Transceiver);
+        :> tcs = demo1TCS;
+        :> dep;
+        :> prop;
+        :> gs = NPU_GroundStation;
+        :> others = (connector1, connector2);
+    }
+
+    part demo1Sys : SYS::QB50_SYS{
+        :>> geometricCenter = demo1Entity.ss.geometricCenter;
+        :>> gravityCenter = CountCubeSatGravityCenter(demo1Entity);
         // TBD
         :>> track : EarthOrbit{
             :>> Epoch {
-                :>> year = 2016;
-                :>> month = 3;
-                :>> day = 15;
-                :>> hour = 12;
-                :>> minute = 0;
-                :>> second = 0;
+                :>> val = "2016-03-00T15:12:00.000Z";
             }
+            // {
+            //     :>> year = 2016;
+            //     :>> month = 3;
+            //     :>> day = 15;
+            //     :>> hour = 12;
+            //     :>> minute = 0;
+            //     :>> second = 0;
+            // }
             :>> semiMajorAxis = 6751.0[km];
             :>> inclination = 98['°'];
             :>> eccentricity = 0.001;
@@ -45,8 +116,8 @@ package Aoxiang1{
             :>> argumentOfPerigee = 167.0['°'];
             :>> meanAnomalyAtEpoch = 0.0['°'];
         }
-        attribute sysPowerConsumed = CountSysPowerConsumed(aoXiang1Entity);
-        attribute sysPowerGenerated = CountSysPowerGenerated(aoXiang1Entity);
+        attribute sysPowerConsumed = CountSysPowerConsumed(demo1Entity);
+        attribute sysPowerGenerated = CountSysPowerGenerated(demo1Entity);
         attribute powerMargin = sysPowerConsumed / sysPowerGenerated;
     }
 
@@ -77,7 +148,7 @@ package Aoxiang1{
     /* 3.1 Dimension */
     part twoU : SS::TwoUnitsStructure{
         doc /*
-            AoXiang-1 is a 2U CubeSat.
+            demo-1 is a 2U CubeSat.
             */
         :>> vendor = "ISIS";
         :>> mass = 280 [g];
@@ -101,7 +172,7 @@ package Aoxiang1{
     /* 3.2 Material */
     attribute AL7075 : Material{
         doc /*
-            The material adopted to construct the AoXiang-1 CubeSat is aluminum 7075, 
+            The material adopted to construct the demo-1 CubeSat is aluminum 7075, 
             since the AL7075 has relative high yield strength and ultimate strength with low density.
             */
         :>> name = "Aluminum 7075";
@@ -114,11 +185,11 @@ package Aoxiang1{
     /* 3.3 Main components of structure */
 
     /* 3.4 Mass budget */
-    attribute AoXiang1EntityMass : ISQ::MassValue = CountCubeSatSystemMass(aoXiang1Entity);
+    attribute demo1EntityMass : ISQ::MassValue = CountCubeSatSystemMass(demo1Entity);
     
     /* 3.5 Center of gravity */
-    attribute AoXiang1GeometricCenter = aoXiang1Entity.sys.geometricCenter;
-    attribute AoXiang1GravityCenter = aoXiang1Entity.sys.gravityCenter;
+    attribute demo1GeometricCenter = demo1Entity2.sys.geometricCenter;
+    attribute demo1GravityCenter = demo1Entity2.sys.gravityCenter;
     // TBD
 
     /* 3.6 Access hatch on the structure */
@@ -156,7 +227,7 @@ package Aoxiang1{
     part sunSensor : ADCS::SunSensor{
         doc /*
             In order to achieve high resolution,
-            AoXiang-1 select CubeSat Sun Sensor (CSS) for QB50 mission.
+            demo-1 select CubeSat Sun Sensor (CSS) for QB50 mission.
             */
         :>> vendor = "SSBV Space and Ground System Ltd";
         item :>> shape : Box {
@@ -170,7 +241,7 @@ package Aoxiang1{
         :>> fieldOfView = 114['°'];
         :>> updateRate = 10[Hz];
         :>> powerConsumption = 0.05[W];
-        :>> mode : AoXiang1Modes{
+        :>> mode : demo1Modes{
             safe{:>> percent = 0;}
             recovery{:>> percent = 100;}
             payloadOperation{:>> percent = 100;}
@@ -214,7 +285,7 @@ package Aoxiang1{
     /* 4.1.3 Gyro */
     part ADIS16355 : ADCS::Gyro{
         doc /*
-            An Analog DeviceADIS16355 was used to measure the tip-off rates of AoXiang-1.
+            An Analog DeviceADIS16355 was used to measure the tip-off rates of demo-1.
             ADIS 16355 incorporate a Tri-axis gyroscope and a Tri-axis accelerometer.
             */
             :>> vendor = "ADI";
@@ -225,7 +296,7 @@ package Aoxiang1{
         :>> digitalRangeScaling =(75, 150, 300)['°'/s];
         :>> triAxisMeasurementRange = 14[bit];
         :>> powerConsumption = 0.25[W];
-        :>> mode : AoXiang1Modes{
+        :>> mode : demo1Modes{
             safe{:>> percent = 0;}
             recovery{:>> percent = 100;}
             payloadOperation{:>> percent = 0;}
@@ -235,7 +306,7 @@ package Aoxiang1{
     /* 4.1.4 GPS receiver */
     part GPSReceiver : ADCS::Reaction{
         doc /*
-            The GPS receiver is used to get the position information of AoXiang-1. 
+            The GPS receiver is used to get the position information of demo-1. 
             Low latency and high update rates give the response time and accuracy required for precise dynamic applications.
             */
         :>> vendor = "NPU";
@@ -267,7 +338,7 @@ package Aoxiang1{
         :>> maxRotateSpeed = 12000['s⁻¹'];
         :>> momentum = 6e-6['kg⋅m²'];
         :>> maxTorque = 0.2e-3['N⋅m'];
-        :>> mode : AoXiang1Modes{
+        :>> mode : demo1Modes{
             safe{:>> percent = 0;}
             recovery{:>> percent = 0;}
             payloadOperation{:>> percent = 50;}
@@ -297,7 +368,7 @@ package Aoxiang1{
         :>> offsetCompensatio = "Automatic";
         :>> updateRate = 220[Hz];
         :>> processor = "MSP430";
-        :>> mode : AoXiang1Modes{
+        :>> mode : demo1Modes{
             safe{:>> percent = 0;}
             recovery{:>> percent = 20;}
             payloadOperation{:>> percent = 20;}
@@ -325,7 +396,7 @@ package Aoxiang1{
     /* 5. Electrical Power Subsystem */
     part tripleJunctionGaAs_SolarPanels : EPS::SolarPanels{
         :>> powerConsumption = 0.25[W];
-        :>> mode : AoXiang1Modes{
+        :>> mode : demo1Modes{
             safe{:>> percent = 100;}
             recovery{:>> percent = 100;}
             payloadOperation{:>> percent = 100;}
@@ -347,12 +418,12 @@ package Aoxiang1{
         }
     }
     
-    attribute def AoXiang1Mode{
+    attribute def demo1Mode{
         attribute name : String;
         attribute percent : Natural;
     }
 
-    enum def AoXiang1Modes :> AoXiang1Mode{
+    enum def demo1Modes :> demo1Mode{
         enum safe{
             :>> name = "Safe Mode";
         }
@@ -364,7 +435,7 @@ package Aoxiang1{
         }
     }
 
-    attribute AoXiang1PowerMargin = aoXiang1Sys.powerMargin;
+    attribute demo1PowerMargin = demo1Sys.powerMargin;
 
     /* 5.1 P31U from Gomspace for electrical power control */
     part P31U : EPS::PowerSupplyBoard{
@@ -408,7 +479,7 @@ package Aoxiang1{
     // TBD
 
     /* 6、7 On Board Computer */
-    part AoXiang1OBC : OBDH::OnBoardComputer{
+    part demo1OBC : OBDH::OnBoardComputer{
         doc /*
             There are two parallel processors are embedded in one SRAM CycloneV FPGA 
             and an arbitrator is embedded in another Flash Based FPGA.
@@ -420,7 +491,7 @@ package Aoxiang1{
             :>> lower = -40['°C'];
         }
         :>> powerConsumption = 0.9[W];
-        :>> mode : AoXiang1Modes{
+        :>> mode : demo1Modes{
             safe{:>> percent = 100;}
             recovery{:>> percent = 100;}
             payloadOperation{:>> percent = 100;}
@@ -450,18 +521,18 @@ package Aoxiang1{
         part ConfigurationChipEPCQ256 : OBDH::ElectronicComponents;
         part Proasic3FPGA : OBDH::FPGA;
 
-        interface : BUS connect SRAM_FPGA.dataEnd to Aoxiang1DataBUS.dataEnd;
+        interface : BUS connect SRAM_FPGA.dataEnd to demo1DataBUS.dataEnd;
         interface : DataLine connect SRAM_FPGA.dataEnd to HMC5983.dataEnd;
         interface Processor1Output : DataLine connect SRAM_FPGA.dataEnd to FLASHS29GL256.dataEnd;
         interface Processor2Output : DataLine connect SRAM_FPGA.dataEnd to FLASHS29GL256.dataEnd;
     }
 
-    part Aoxiang1DataBUS : OBDH::I2C;
+    part demo1DataBUS : OBDH::I2C;
 
     /* 8 Communication Subsystem */
-    part AoXiang1Transceiver : COMM::Transceiver{
+    part demo1Transceiver : COMM::Transceiver{
         doc/*
-            ‘AoXiang-1’ use amateur radio band UHF and VHF for the communication between ground station and satellite. 
+            ‘demo-1’ use amateur radio band UHF and VHF for the communication between ground station and satellite. 
             */
         :>> vendor = "ISIS";
         :>> tempRange{
@@ -470,7 +541,7 @@ package Aoxiang1{
         }
         :>> waveType = (UHF, VHF);
         :>> powerConsumption = 1.7[W];
-        :>> mode : AoXiang1Modes{
+        :>> mode : demo1Modes{
             safe{:>> percent = 100;}
             recovery{:>> percent = 100;}
             payloadOperation{:>> percent = 100;}
@@ -527,7 +598,7 @@ package Aoxiang1{
     }
 
     /* 10 Thermal Control Subsystem */
-    attribute AoXiang1TCS : TCS::TCSParameters{
+    part demo1TCS : TCS::TCSParameters{
         :>> solarCellsEfficiency = 0.2;
         :>> solarCellsAbsorptivity = 0.9;
         :>> frameAbsorptivity = 0.25;
@@ -540,14 +611,14 @@ package Aoxiang1{
 
     // private import 'Requirement CubeSat'::*;
     // private import cubeSatProjects::*;
-    // part Aoxiang_1System{
-    //     part Aoxiang : CubeSat;
-    //     part AoxiangProject : CubeSatProject;
-    //     satisfy CubeSatSystemRequirements by Aoxiang{
-    //         satisfy 'QB50-SYS-1.1.6' by Aoxiang;
+    // part demo_1System{
+    //     part demo : CubeSat;
+    //     part demoProject : CubeSatProject;
+    //     satisfy CubeSatSystemRequirements by demo{
+    //         satisfy 'QB50-SYS-1.1.6' by demo;
     //     }
-    //     satisfy '2' by AoxiangProject{
-    //         satisfy 'QB50-SYS-2.1.1' by AoxiangProject;
+    //     satisfy '2' by demoProject{
+    //         satisfy 'QB50-SYS-2.1.1' by demoProject;
     //     }
     // }
 }
