@@ -30,6 +30,7 @@
     <elements xsi:type="sysMLOC:PartUsage" declaredName="x">
       <typings>P1::A</typings>
     </elements>
+    <elements xsi:type="sysMLOC:CodeAnnotation" body="// The following should not fail.&#xD;&#xA;"/>
     <elements xsi:type="sysMLOC:PartUsage" declaredName="y">
       <typings>P1::B</typings>
     </elements>

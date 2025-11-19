@@ -6,6 +6,20 @@
       <typings>bb</typings>
       <subsetting>pp.aa</subsetting>
       <Multiplicity>0</Multiplicity>
+      <valuePart>(aaaa, aaa)</valuePart>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="a">
+      <typings>aa</typings>
+      <typings>bb</typings>
+      <subsetting>pp.aa</subsetting>
+      <Multiplicity>0</Multiplicity>
+      <valuePart>(aaaa)</valuePart>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="a">
+      <typings>aa</typings>
+      <typings>bb</typings>
+      <subsetting>pp.aa</subsetting>
+      <Multiplicity>0</Multiplicity>
       <valuePart>(aaaa)</valuePart>
     </elements>
   </packages>

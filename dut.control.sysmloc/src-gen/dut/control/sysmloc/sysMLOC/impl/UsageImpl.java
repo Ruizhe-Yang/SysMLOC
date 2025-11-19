@@ -3,10 +3,10 @@
  */
 package dut.control.sysmloc.sysMLOC.impl;
 
-import dut.control.sysmloc.sysMLOC.BaseElement;
 import dut.control.sysmloc.sysMLOC.FeatureValue;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 import dut.control.sysmloc.sysMLOC.Usage;
+import dut.control.sysmloc.sysMLOC.UsageBodyElement;
 
 import java.util.Collection;
 
@@ -100,7 +100,7 @@ public class UsageImpl extends UsageDeclarationImpl implements Usage
    * @generated
    * @ordered
    */
-  protected EList<BaseElement> elements;
+  protected EList<UsageBodyElement> elements;
 
   /**
    * <!-- begin-user-doc -->
@@ -194,11 +194,11 @@ public class UsageImpl extends UsageDeclarationImpl implements Usage
    * @generated
    */
   @Override
-  public EList<BaseElement> getElements()
+  public EList<UsageBodyElement> getElements()
   {
     if (elements == null)
     {
-      elements = new EObjectContainmentEList<BaseElement>(BaseElement.class, this, SysMLOCPackage.USAGE__ELEMENTS);
+      elements = new EObjectContainmentEList<UsageBodyElement>(UsageBodyElement.class, this, SysMLOCPackage.USAGE__ELEMENTS);
     }
     return elements;
   }
@@ -264,7 +264,7 @@ public class UsageImpl extends UsageDeclarationImpl implements Usage
         return;
       case SysMLOCPackage.USAGE__ELEMENTS:
         getElements().clear();
-        getElements().addAll((Collection<? extends BaseElement>)newValue);
+        getElements().addAll((Collection<? extends UsageBodyElement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

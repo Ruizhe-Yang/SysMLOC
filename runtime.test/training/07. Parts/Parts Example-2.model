@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <packages declaredName="'Parts Example-2'">
+    <elements xsi:type="sysMLOC:CodeAnnotation" body="// Definitions&#xD;&#xA;"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Engine"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Cylinder"/>
+    <elements xsi:type="sysMLOC:CodeAnnotation" body="// Usages&#xD;&#xA;"/>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle">
+      <typings>Vehicle</typings>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="eng">
+        <typings>Engine</typings>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="cyl">
+          <typings>Cylinder</typings>
+          <Multiplicity>4</Multiplicity>
+          <Multiplicity>6</Multiplicity>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="smallVehicle">
+      <subsetting>vehicle</subsetting>
+      <elements xsi:type="sysMLOC:PartUsage">
+        <redefinitions>eng</redefinitions>
+        <elements xsi:type="sysMLOC:PartUsage">
+          <redefinitions>cyl</redefinitions>
+          <Multiplicity>4</Multiplicity>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="bigVehicle">
+      <subsetting>vehicle</subsetting>
+      <elements xsi:type="sysMLOC:PartUsage">
+        <redefinitions>eng</redefinitions>
+        <elements xsi:type="sysMLOC:PartUsage">
+          <redefinitions>cyl</redefinitions>
+          <Multiplicity>6</Multiplicity>
+        </elements>
+      </elements>
+    </elements>
+  </packages>
+</sysMLOC:Namespace>

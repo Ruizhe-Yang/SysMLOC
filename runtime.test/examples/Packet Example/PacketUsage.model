@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <packages declaredName="'Packet Usage'">
+    <elements xsi:type="sysMLOC:NamespaceImport" declaredName="Packets"/>
+    <elements xsi:type="sysMLOC:MembershipImport" visibility="private" declaredName="ScalarValues::Real"/>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="packet1">
+      <typings>'Thermal Data Packet'</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="packet2">
+      <typings>'Thermal Data Packet'</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="packet3">
+      <typings>'Thermal Data Packet'</typings>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="'special data field'">
+        <redefinitions>'packet data field'</redefinitions>
+        <elements xsi:type="sysMLOC:AttributeUsage">
+          <redefinitions>'user data field'</redefinitions>
+          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="'special data'">
+            <typings>Real</typings>
+          </elements>
+        </elements>
+      </elements>
+    </elements>
+  </packages>
+</sysMLOC:Namespace>

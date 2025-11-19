@@ -29,7 +29,7 @@ public interface MultiplicityPart extends EObject
 {
   /**
    * Returns the value of the '<em><b>Multiplicity</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.Integer}.
+   * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Multiplicity</em>' attribute list.
@@ -37,7 +37,7 @@ public interface MultiplicityPart extends EObject
    * @model unique="false"
    * @generated
    */
-  EList<Integer> getMultiplicity();
+  EList<String> getMultiplicity();
 
   /**
    * Returns the value of the '<em><b>Is Ordered</b></em>' attribute.

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <packages declaredName="'Binding Connectors Example-2'">
+    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="'Port Example'"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="FuelPump"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="FuelTank"/>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle">
+      <typings>Vehicle</typings>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="tank">
+        <typings>FuelTankAssembly</typings>
+        <elements xsi:type="sysMLOC:PortUsage">
+          <redefinitions>fuelTankPort</redefinitions>
+          <elements xsi:type="sysMLOC:ItemUsage" direction="out">
+            <redefinitions>fuelSupply</redefinitions>
+          </elements>
+          <elements xsi:type="sysMLOC:ItemUsage">
+            <redefinitions>fuelReturn</redefinitions>
+          </elements>
+        </elements>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="pump">
+          <typings>FuelPump</typings>
+          <elements xsi:type="sysMLOC:ItemUsage" direction="out" declaredName="pumpOut">
+            <typings>Fuel</typings>
+            <valuePart>fuelTankPort.fuelSupply</valuePart>
+          </elements>
+          <elements xsi:type="sysMLOC:ItemUsage" declaredName="pumpIn">
+            <typings>Fuel</typings>
+          </elements>
+        </elements>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="tank">
+          <typings>FuelTank</typings>
+          <elements xsi:type="sysMLOC:ItemUsage" direction="out" declaredName="fuelOut">
+            <typings>Fuel</typings>
+          </elements>
+          <elements xsi:type="sysMLOC:ItemUsage" declaredName="fuelIn">
+            <typings>Fuel</typings>
+            <valuePart>fuelTankPort.fuelReturn</valuePart>
+          </elements>
+        </elements>
+      </elements>
+    </elements>
+  </packages>
+</sysMLOC:Namespace>

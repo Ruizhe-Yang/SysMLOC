@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <intro body="// SysML v2 Interpretation of the SysML v1 Room Connection Example&#xD;&#xA;"/>
   <packages declaredName="RoomModel">
     <elements xsi:type="sysMLOC:Package" declaredName="RoomDefinitionModelLibrary">
       <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="Port_Definitions"/>
       <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="Flow_Definitions"/>
       <elements xsi:type="sysMLOC:Package" declaredName="Part_Definitions">
+        <elements xsi:type="sysMLOC:CodeAnnotation" body="// Rooms&#xD;&#xA;"/>
         <elements xsi:type="sysMLOC:PartDefinition" declaredName="Classroom">
           <elements xsi:type="sysMLOC:PortUsage" declaredName="classEntry">
             <typings>EntryWay_to_Classroom</typings>
@@ -16,6 +18,7 @@
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:PartDefinition" declaredName="Hallway">
+          <elements xsi:type="sysMLOC:CodeAnnotation" body="// conjugate ports with ~&#xD;&#xA;"/>
           <elements xsi:type="sysMLOC:PortUsage" declaredName="hallExit_to_Classroom">
             <typings>~EntryWay_to_Classroom</typings>
           </elements>
@@ -26,6 +29,7 @@
       </elements>
       <elements xsi:type="sysMLOC:Package" declaredName="Port_Definitions">
         <elements xsi:type="sysMLOC:PortDefinition" declaredName="EntryWay_to_Classroom">
+          <elements xsi:type="sysMLOC:CodeAnnotation" body="//flow properties&#xD;&#xA;"/>
           <elements xsi:type="sysMLOC:PortUsage" isReference="true" declaredName="student">
             <typings>Student</typings>
           </elements>
@@ -40,6 +44,7 @@
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:PortDefinition" declaredName="EntryWay_to_Storageroom">
+          <elements xsi:type="sysMLOC:CodeAnnotation" body="//flow properties&#xD;&#xA;"/>
           <elements xsi:type="sysMLOC:PortUsage" isReference="true" declaredName="furniture">
             <typings>Furniture</typings>
           </elements>
@@ -49,6 +54,7 @@
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:Package" declaredName="Flow_Definitions">
+        <elements xsi:type="sysMLOC:CodeAnnotation" body="// Conveyed items between Hallway, Classroom, and Storageroom&#xD;&#xA;"/>
         <elements xsi:type="sysMLOC:PartDefinition" declaredName="Air"/>
         <elements xsi:type="sysMLOC:PartDefinition" declaredName="Furniture"/>
         <elements xsi:type="sysMLOC:PartDefinition" declaredName="Student"/>
@@ -56,6 +62,7 @@
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:Package" declaredName="Room_Configuration">
+      <elements xsi:type="sysMLOC:CodeAnnotation" body="// defining the parts and their interconnection in context &#xD;&#xA;"/>
       <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="RoomDefinitionModelLibrary"/>
       <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="RoomDefinitionModelLibrary::Part_Definitions"/>
       <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="RoomDefinitionModelLibrary::Port_Definitions"/>
@@ -70,6 +77,7 @@
         <elements xsi:type="sysMLOC:PartUsage" declaredName="h">
           <typings>Hallway</typings>
         </elements>
+        <elements xsi:type="sysMLOC:CodeAnnotation" body="//  Connectors and item flows between hallway and classroom&#xD;&#xA;"/>
         <elements xsi:type="sysMLOC:FlowConnectionUsage" declaredName="HallToClassroom_Air">
           <FlowEnd>h.hallExit_to_Classroom.air</FlowEnd>
           <FlowEnd>c.classEntry.air</FlowEnd>

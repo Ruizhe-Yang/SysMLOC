@@ -25,7 +25,7 @@ public interface Usage extends UsageDeclaration, FeatureDeclaration, FeatureSpec
 {
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
-   * The list contents are of type {@link dut.control.sysmloc.sysMLOC.BaseElement}.
+   * The list contents are of type {@link dut.control.sysmloc.sysMLOC.UsageBodyElement}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Elements</em>' containment reference list.
@@ -33,6 +33,6 @@ public interface Usage extends UsageDeclaration, FeatureDeclaration, FeatureSpec
    * @model containment="true"
    * @generated
    */
-  EList<BaseElement> getElements();
+  EList<UsageBodyElement> getElements();
 
 } // Usage

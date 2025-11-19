@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <packages declaredName="'Vehicle Decomposition - Updated'">
+    <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9; * Example from the SysML 1.6 spec, subclause 8.4.5 Constraining Decomposition,&#xD;&#xA;&#x9; * updated for usage-focused approach.&#xD;&#xA;&#x9; */"/>
+    <elements xsi:type="sysMLOC:CodeAnnotation" body="// Blocks&#xD;&#xA;"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="'Chassis Assembly'"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Wheel"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="LugBolt"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="RollBar"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="HeavyRollBar">
+      <superclassifiers>RollBar</superclassifiers>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="LightRollBar">
+      <superclassifiers>RollBar</superclassifiers>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Engine"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Cylinder"/>
+    <elements xsi:type="sysMLOC:CodeAnnotation" body="// Parts&#xD;&#xA;"/>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle">
+      <typings>Vehicle</typings>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="chs">
+        <typings>'Chassis Assembly'</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="rb">
+          <typings>RollBar</typings>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="w">
+          <typings>Wheel</typings>
+          <Multiplicity>4</Multiplicity>
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="lb">
+            <typings>LugBolt</typings>
+            <Multiplicity>6</Multiplicity>
+            <Multiplicity>10</Multiplicity>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="eng">
+        <typings>Engine</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="cyl">
+          <typings>Cylinder</typings>
+          <Multiplicity>4</Multiplicity>
+          <Multiplicity>8</Multiplicity>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="'vehicle model 1'">
+      <subsetting>vehicle</subsetting>
+      <elements xsi:type="sysMLOC:PartUsage">
+        <redefinitions>chs</redefinitions>
+        <elements xsi:type="sysMLOC:PartUsage">
+          <typings>LightRollBar</typings>
+          <redefinitions>rb</redefinitions>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:PartUsage">
+          <redefinitions>w</redefinitions>
+          <elements xsi:type="sysMLOC:PartUsage">
+            <redefinitions>lb</redefinitions>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage">
+        <redefinitions>eng</redefinitions>
+        <elements xsi:type="sysMLOC:PartUsage">
+          <redefinitions>cyl</redefinitions>
+          <Multiplicity>4</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:CodeAnnotation" body="// Constrains total number of lugbolts.&#xD;&#xA;"/>
+      <elements xsi:type="sysMLOC:PortUsage" isReference="true" declaredName="lugBolts">
+        <Multiplicity>24</Multiplicity>
+        <valuePart>chs.w.lb</valuePart>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="'vehicle model 2'">
+      <subsetting>vehicle</subsetting>
+      <elements xsi:type="sysMLOC:PartUsage">
+        <redefinitions>chs</redefinitions>
+        <elements xsi:type="sysMLOC:PartUsage">
+          <redefinitions>rb</redefinitions>
+          <Multiplicity>0</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:PartUsage">
+          <redefinitions>w</redefinitions>
+          <elements xsi:type="sysMLOC:CodeAnnotation" body="// Constrains number of lugbolts per wheel.&#xD;&#xA;"/>
+          <elements xsi:type="sysMLOC:PartUsage">
+            <redefinitions>lb</redefinitions>
+            <Multiplicity>6</Multiplicity>
+            <Multiplicity>7</Multiplicity>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage">
+        <redefinitions>eng</redefinitions>
+        <elements xsi:type="sysMLOC:PartUsage">
+          <redefinitions>cyl</redefinitions>
+          <Multiplicity>6</Multiplicity>
+          <Multiplicity>8</Multiplicity>
+        </elements>
+      </elements>
+    </elements>
+  </packages>
+</sysMLOC:Namespace>

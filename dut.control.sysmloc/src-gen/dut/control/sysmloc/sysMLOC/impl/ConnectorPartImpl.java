@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ConnectorPartImpl#getConnectorEnd <em>Connector End</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ConnectorPartImpl#getConnectorPart <em>Connector Part</em>}</li>
  * </ul>
  *
  * @generated
@@ -32,14 +32,14 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
 public class ConnectorPartImpl extends MinimalEObjectImpl.Container implements ConnectorPart
 {
   /**
-   * The cached value of the '{@link #getConnectorEnd() <em>Connector End</em>}' attribute list.
+   * The cached value of the '{@link #getConnectorPart() <em>Connector Part</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getConnectorEnd()
+   * @see #getConnectorPart()
    * @generated
    * @ordered
    */
-  protected EList<String> connectorEnd;
+  protected EList<String> connectorPart;
 
   /**
    * <!-- begin-user-doc -->
@@ -68,13 +68,13 @@ public class ConnectorPartImpl extends MinimalEObjectImpl.Container implements C
    * @generated
    */
   @Override
-  public EList<String> getConnectorEnd()
+  public EList<String> getConnectorPart()
   {
-    if (connectorEnd == null)
+    if (connectorPart == null)
     {
-      connectorEnd = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.CONNECTOR_PART__CONNECTOR_END);
+      connectorPart = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.CONNECTOR_PART__CONNECTOR_PART);
     }
-    return connectorEnd;
+    return connectorPart;
   }
 
   /**
@@ -87,8 +87,8 @@ public class ConnectorPartImpl extends MinimalEObjectImpl.Container implements C
   {
     switch (featureID)
     {
-      case SysMLOCPackage.CONNECTOR_PART__CONNECTOR_END:
-        return getConnectorEnd();
+      case SysMLOCPackage.CONNECTOR_PART__CONNECTOR_PART:
+        return getConnectorPart();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -104,9 +104,9 @@ public class ConnectorPartImpl extends MinimalEObjectImpl.Container implements C
   {
     switch (featureID)
     {
-      case SysMLOCPackage.CONNECTOR_PART__CONNECTOR_END:
-        getConnectorEnd().clear();
-        getConnectorEnd().addAll((Collection<? extends String>)newValue);
+      case SysMLOCPackage.CONNECTOR_PART__CONNECTOR_PART:
+        getConnectorPart().clear();
+        getConnectorPart().addAll((Collection<? extends String>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -122,8 +122,8 @@ public class ConnectorPartImpl extends MinimalEObjectImpl.Container implements C
   {
     switch (featureID)
     {
-      case SysMLOCPackage.CONNECTOR_PART__CONNECTOR_END:
-        getConnectorEnd().clear();
+      case SysMLOCPackage.CONNECTOR_PART__CONNECTOR_PART:
+        getConnectorPart().clear();
         return;
     }
     super.eUnset(featureID);
@@ -139,8 +139,8 @@ public class ConnectorPartImpl extends MinimalEObjectImpl.Container implements C
   {
     switch (featureID)
     {
-      case SysMLOCPackage.CONNECTOR_PART__CONNECTOR_END:
-        return connectorEnd != null && !connectorEnd.isEmpty();
+      case SysMLOCPackage.CONNECTOR_PART__CONNECTOR_PART:
+        return connectorPart != null && !connectorPart.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -156,8 +156,8 @@ public class ConnectorPartImpl extends MinimalEObjectImpl.Container implements C
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (connectorEnd: ");
-    result.append(connectorEnd);
+    result.append(" (connectorPart: ");
+    result.append(connectorPart);
     result.append(')');
     return result.toString();
   }

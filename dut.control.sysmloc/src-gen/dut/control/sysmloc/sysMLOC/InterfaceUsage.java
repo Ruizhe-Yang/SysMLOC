@@ -21,11 +21,11 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface InterfaceUsage extends StructureUsageElement, OccurrenceUsagePrefix, BasicUsagePrefix, RefPrefix, UsageDeclaration, FeatureDeclaration, FeatureSpecializationPart, FeatureSpecialization, MultiplicityPart, InterfacePart
+public interface InterfaceUsage extends StructureUsageElement, MemberPrefix, OccurrenceUsagePrefix, BasicUsagePrefix, RefPrefix, UsageDeclaration, FeatureDeclaration, FeatureSpecializationPart, FeatureSpecialization, MultiplicityPart, InterfacePart
 {
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
-   * The list contents are of type {@link dut.control.sysmloc.sysMLOC.BaseElement}.
+   * The list contents are of type {@link dut.control.sysmloc.sysMLOC.UsageBodyElement}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Elements</em>' containment reference list.
@@ -33,6 +33,6 @@ public interface InterfaceUsage extends StructureUsageElement, OccurrenceUsagePr
    * @model containment="true"
    * @generated
    */
-  EList<BaseElement> getElements();
+  EList<UsageBodyElement> getElements();
 
 } // InterfaceUsage

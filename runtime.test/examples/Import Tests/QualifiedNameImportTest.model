@@ -8,6 +8,8 @@
       <elements xsi:type="sysMLOC:Package" declaredName="P2a">
         <elements xsi:type="sysMLOC:NamespaceImport" declaredName="P1"/>
       </elements>
+      <elements xsi:type="sysMLOC:CodeAnnotation" body="// The following should not fail.&#xD;&#xA;"/>
+      <elements xsi:type="sysMLOC:CodeAnnotation" body="// A is a member of P2a because of the import.&#xD;&#xA;"/>
       <elements xsi:type="sysMLOC:PartUsage" declaredName="x">
         <typings>P2a::A</typings>
       </elements>

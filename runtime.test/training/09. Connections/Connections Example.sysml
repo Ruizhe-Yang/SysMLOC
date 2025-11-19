@@ -27,7 +27,7 @@ package 'Connections Example' {
 				part mountingHoles : LugBoltMountingHole[5];
 			}						
 			connection : PressureSeat 
-				connect bead ::> t.bead 
+				connect bead ::> t.bead
 				to mountingRim references w.rim;		
 		}
 		

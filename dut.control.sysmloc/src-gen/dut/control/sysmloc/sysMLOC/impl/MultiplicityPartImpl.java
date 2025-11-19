@@ -44,7 +44,7 @@ public class MultiplicityPartImpl extends MinimalEObjectImpl.Container implement
    * @generated
    * @ordered
    */
-  protected EList<Integer> multiplicity;
+  protected EList<String> multiplicity;
 
   /**
    * The default value of the '{@link #isIsOrdered() <em>Is Ordered</em>}' attribute.
@@ -113,11 +113,11 @@ public class MultiplicityPartImpl extends MinimalEObjectImpl.Container implement
    * @generated
    */
   @Override
-  public EList<Integer> getMultiplicity()
+  public EList<String> getMultiplicity()
   {
     if (multiplicity == null)
     {
-      multiplicity = new EDataTypeEList<Integer>(Integer.class, this, SysMLOCPackage.MULTIPLICITY_PART__MULTIPLICITY);
+      multiplicity = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.MULTIPLICITY_PART__MULTIPLICITY);
     }
     return multiplicity;
   }
@@ -205,7 +205,7 @@ public class MultiplicityPartImpl extends MinimalEObjectImpl.Container implement
     {
       case SysMLOCPackage.MULTIPLICITY_PART__MULTIPLICITY:
         getMultiplicity().clear();
-        getMultiplicity().addAll((Collection<? extends Integer>)newValue);
+        getMultiplicity().addAll((Collection<? extends String>)newValue);
         return;
       case SysMLOCPackage.MULTIPLICITY_PART__IS_ORDERED:
         setIsOrdered((Boolean)newValue);

@@ -4,6 +4,6 @@ package 'Package Example' {
 	 
 	private part def Automobile;
 	
-	public alias Car for Automobile;	                         
+	public alias Car for Automobile;                      
 	alias Torque for ISQ::TorqueValue;
 }

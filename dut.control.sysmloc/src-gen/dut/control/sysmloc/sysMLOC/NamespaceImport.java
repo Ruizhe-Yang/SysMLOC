@@ -22,7 +22,7 @@ package dut.control.sysmloc.sysMLOC;
  * @model
  * @generated
  */
-public interface NamespaceImport extends ImportElement
+public interface NamespaceImport extends ImportElement, isImportAllFragment
 {
   /**
    * Returns the value of the '<em><b>Visibility</b></em>' attribute.

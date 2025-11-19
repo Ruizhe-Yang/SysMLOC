@@ -14,6 +14,6 @@ package dut.control.sysmloc.sysMLOC;
  * @model
  * @generated
  */
-public interface AttributeUsage extends NonOccurrenceUsageElement, Usage, UsageDeclaration, FeatureDeclaration, FeatureSpecializationPart, FeatureSpecialization, MultiplicityPart, FeatureValue
+public interface AttributeUsage extends NonOccurrenceUsageElement, MemberPrefix, Usage, UsageDeclaration, FeatureDeclaration, FeatureSpecializationPart, FeatureSpecialization, MultiplicityPart, FeatureValue
 {
 } // AttributeUsage

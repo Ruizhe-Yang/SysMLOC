@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.ConnectorPart#getConnectorEnd <em>Connector End</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.ConnectorPart#getConnectorPart <em>Connector Part</em>}</li>
  * </ul>
  *
  * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getConnectorPart()
@@ -26,15 +26,15 @@ import org.eclipse.emf.ecore.EObject;
 public interface ConnectorPart extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Connector End</b></em>' attribute list.
+   * Returns the value of the '<em><b>Connector Part</b></em>' attribute list.
    * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Connector End</em>' attribute list.
-   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getConnectorPart_ConnectorEnd()
+   * @return the value of the '<em>Connector Part</em>' attribute list.
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getConnectorPart_ConnectorPart()
    * @model unique="false"
    * @generated
    */
-  EList<String> getConnectorEnd();
+  EList<String> getConnectorPart();
 
 } // ConnectorPart

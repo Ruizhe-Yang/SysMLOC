@@ -1,32 +1,58 @@
-grammar dut.control.sysmloc.SysMLOC hidden(WS, ML_NOTE, SL_NOTE)
+//grammar dut.control.sysmloc.SysMLOC hidden(WS, ML_NOTE, SL_NOTE)
+grammar dut.control.sysmloc.SysMLOC hidden(WS)
 
 import "http://www.eclipse.org/emf/2002/Ecore" as Ecore
 
 generate sysMLOC "http://www.control.dut/sysmloc/SysMLOC"
  
 Namespace:
-    (packages+=Package)*;
+	(intro+=CodeAnnotation)?
+	(packages+=Package)*
+;
 
 Package:
     'package' 
     declaredName=QualifiedName 
-    '{' (elements+=BaseElement)* '}'
+    '{' (elements+=PackageBodyElement)* '}'
 ;
 
-BaseElement:
-    Package 
+// TODO --------------------------------- Root Level ---------------------------------//
+
+PackageBodyElement:
+    Package
     | AnnotatingElement 
+    | DefinitionElement
+    | UsageElement
+//    | ElementFilterMember
+    | AliasElement
+    | ImportElement
+    | CodeAnnotation
+;
+
+DefinitionBodyElement:
+	AnnotatingElement
     | ImportElement
     | DefinitionElement
     | UsageElement
+    | CodeAnnotation
+    | AliasElement
 ;
 
+UsageBodyElement:
+	DefinitionBodyElement
+;
+
+EnumerationBodyElement:
+	AnnotatingElement
+	| EnumerationElement
+;
+// TODO --------------------------------- Abstract Level ---------------------------------//
 // Annotating
 
 AnnotatingElement:
 	Comment 
-//	| Documentation
-//	| TextualRepresentation
+	| Documentation
+	| TextualRepresentation
 //	| MetadataUsage
 ;
 
@@ -34,14 +60,14 @@ AnnotatingElement:
 
 ImportElement:
 	NamespaceImport
-//	| MembershipImport
+	| MembershipImport
 ;
 
 // Definitions
 
 DefinitionElement:
 	AttributeDefinition
-//	| EnumerationDefinition
+	| EnumerationDefinition
 //	| OccurrenceDefinition
 //	| IndividualDefinition
 	| ItemDefinition
@@ -78,7 +104,7 @@ UsageElement:
 NonOccurrenceUsageElement:
 //	ReferenceUsage
 	AttributeUsage
-//	| EnumerationUsage
+	| EnumerationUsage
 //	| BindingConnectorAsUsage
 //	| SuccessionAsUsage
 //	| ExtendedUsage
@@ -126,63 +152,123 @@ BehaviorUsageElement:
 //	| SatisfyRequirementUsage
 ;
 
+EnumerationElement:
+	EnumeratedValue
+;
 
+// TODO --------------------------------- Instance Level ---------------------------------//
 NamespaceImport:
-    visibility=VisibilityIndicator 'import' declaredName=QualifiedName '::' ( '*' | isRecursive ?= '**' )? ';'
+    visibility=VisibilityIndicator isImportAllFragment? 'import' declaredName=QualifiedName '::' ( '*' | isRecursive ?= '**' )? ';'
+;
+
+MembershipImport:
+	visibility=VisibilityIndicator isImportAllFragment? 'import' declaredName=QualifiedName ( '*' | isRecursive ?= '**' )? ';'
 ;
     
+CodeAnnotation:
+    body=SL_NOTE | body=ML_NOTE
+;
+
 Comment:
-    'doc'? 
+	( 'comment' Identification? 
+	  ('about' annotatedElement += QualifiedName
+	     ( ',' annotatedElement += QualifiedName )* )? 
+	)?
+    ( 'locale' locale = STRING_VALUE )?
     body=REGULAR_COMMENT
 ;
 
-ReferenceUsage:
-    OccurrenceUsagePrefix Usage (';' | '{' (elements+=BaseElement)* '}')
+Documentation:
+    'doc' Identification? 
+    ( 'locale' locale = STRING_VALUE )?
+    body=REGULAR_COMMENT
 ;
+
+TextualRepresentation:
+    ( 'rep' Identification? )?
+    'language' language = STRING_VALUE 
+    body = REGULAR_COMMENT
+;
+
+
+//ReferenceUsage:
+//    OccurrenceUsagePrefix Usage (';' | '{' (elements+=GenericElement)* '}')
+//;
     
 AttributeDefinition:
-	'attribute' 'def' DefinitionDeclaration (';' | '{' (elements+=BaseElement)* '}')
+	MemberPrefix DefinitionPrefix 'attribute' 'def' DefinitionDeclaration 
+	(';' | '{' (elements+=DefinitionBodyElement)* '}')
 ;
 
 AttributeUsage:
-    'attribute' Usage (';' | '{' (elements+=BaseElement)* '}')
+    MemberPrefix 'attribute' Usage 
+    (';' | '{' (elements+=UsageBodyElement)* '}')
+;
+
+EnumerationDefinition:
+//	DefinitionExtensionKeyword*
+	'enum' 'def' DefinitionDeclaration
+	(';' | '{' (elements+=EnumerationBodyElement)* '}')
+;
+
+EnumeratedValue:
+//	UsageExtensionKeyword*
+	'enum'? Usage
+	(';' | '{' (elements+=UsageBodyElement)* '}')
+;
+
+EnumerationUsage:
+	UsagePrefix 'enum' Usage
+	(';' | '{' (elements+=UsageBodyElement)* '}')
 ;
 
 ItemDefinition:
-    'item' 'def' DefinitionDeclaration (';' | '{' (elements+=BaseElement)* '}')
+    MemberPrefix OccurrenceDefinitionPrefix 'item' 'def' DefinitionDeclaration 
+    (';' | '{' (elements+=DefinitionBodyElement)* '}')
 ;
 
 ItemUsage:
-    'item' Usage (';' | '{' (elements+=BaseElement)* '}')
+    MemberPrefix OccurrenceUsagePrefix 'item' Usage 
+    (';' | '{' (elements+=UsageBodyElement)* '}')
 ;
 
 PartDefinition:
-    'part' 'def' DefinitionDeclaration (';' | '{' (elements+=BaseElement)* '}')
+    MemberPrefix OccurrenceDefinitionPrefix 'part' 'def' DefinitionDeclaration 
+    (';' | '{' (elements+=DefinitionBodyElement)* '}')
 ;
 
 PartUsage:
-    OccurrenceUsagePrefix 'part' Usage (';' | '{' (elements+=BaseElement)* '}')
+    MemberPrefix OccurrenceUsagePrefix 'part' Usage 
+    (';' | '{' (elements+=UsageBodyElement)* '}')
 ;
 
 PortDefinition:
-    'port' 'def' DefinitionDeclaration (';' | '{' (elements+=BaseElement)* '}')
+    MemberPrefix DefinitionPrefix 'port' 'def' DefinitionDeclaration 
+    (';' | '{' (elements+=DefinitionBodyElement)* '}')
 ;
 
 PortUsage:
-    OccurrenceUsagePrefix 'port'? Usage (';' | '{' (elements+=BaseElement)* '}')
+    MemberPrefix OccurrenceUsagePrefix 'port'? Usage 
+    (';' | '{' (elements+=UsageBodyElement)* '}')
 ;
 
 ConnectionDefinition:
-	'connection' 'def' DefinitionDeclaration (';' | '{' (elements+=BaseElement)* '}')
+	MemberPrefix OccurrenceDefinitionPrefix 'connection' 'def' DefinitionDeclaration 
+	(';' | '{' (elements+=DefinitionBodyElement)* '}')
 ;
 
 ConnectionUsage:
-	(OccurrenceUsagePrefix 'connection' UsageDeclaration FeatureValue? ( 'connect' ConnectorPart)?
-	| OccurrenceUsagePrefix 'connect' ConnectorPart) (';' | '{' (elements+=BaseElement)* '}')
+	MemberPrefix 
+	OccurrenceUsagePrefix
+	('connection' UsageDeclaration? FeatureValue? 
+		( 'connect' ConnectorPart)?
+	| 'connect' ConnectorPart) 
+	(';' | '{' (elements+=UsageBodyElement)* '}')
 ;
 
 InterfaceDefinition:
-	'interface' 'def' DefinitionDeclaration (';' | '{' (elements += BaseElement)* '}')
+	MemberPrefix OccurrenceDefinitionPrefix 'interface' 'def' DefinitionDeclaration 
+	(';' | '{' (elements += DefinitionBodyElement)* '}')
 ;
 
 //InterfaceBody:
@@ -194,23 +280,34 @@ InterfaceDefinition:
 //;
 
 InterfaceUsage:
-	OccurrenceUsagePrefix 'interface' (UsageDeclaration ('connect' InterfacePart )? | InterfacePart) (';' | '{' (elements+=BaseElement)* '}')
+	MemberPrefix OccurrenceUsagePrefix 'interface' (UsageDeclaration? ('connect' InterfacePart )? | InterfacePart) 
+	(';' | '{' (elements+=UsageBodyElement)* '}')
 ;
 
 FlowConnectionDefinition:
-	'flow' 'def' DefinitionDeclaration (';' | '{' (elements+=BaseElement)* '}')
+	MemberPrefix OccurrenceDefinitionPrefix 'flow' 'def' DefinitionDeclaration 
+	(';' | '{' (elements+=DefinitionBodyElement)* '}')
 ;
 
 FlowConnectionUsage:
-	OccurrenceUsagePrefix 'flow' UsageDeclaration FeatureValue?
+	MemberPrefix OccurrenceUsagePrefix 'flow' 
+	UsageDeclaration? FeatureValue?
 	( 'of' ItemFeature += Name )?
     ( 'from'? FlowEnd += FeatureChainName 'to' FlowEnd += FeatureChainName )?
-    (';' | '{' (elements+=BaseElement)* '}')
+    (';' | '{' (elements+=UsageBodyElement)* '}')
 ;
 
 ActionUsage:
-    OccurrenceUsagePrefix 'action' declaredName=QualifiedName (';' | '{' (elements+=BaseElement)* '}')
+    MemberPrefix OccurrenceUsagePrefix 'action' declaredName=QualifiedName 
+    (';' | '{' (elements+=UsageBodyElement)* '}')
 ;
+
+AliasElement:
+	MemberPrefix 'alias' ( '<' memberShortName = Name '>' )? ( memberName = Name )? 
+	'for' memberElement = QualifiedName
+	(';' | '{' (elements+=AnnotatingElement)* '}')
+;
+// TODO --------------------------------- Enum Level ---------------------------------//
 
 // enum
 
@@ -224,6 +321,48 @@ enum FeatureDirection:
 
 enum PortionKind:
 	snapshot = 'snapshot' | timeslice = 'timeslice'
+;
+
+// TODO --------------------------------- Fragment Level ---------------------------------//
+
+fragment isImportAllFragment:
+	isImportAll ?= 'all'
+;
+
+fragment MemberPrefix:
+	( visibility = VisibilityIndicator )?
+;
+
+fragment DefinitionPrefix:
+	BasicDefinitionPrefix? 
+	//DefinitionExtensionKeyword*
+;
+
+fragment OccurrenceDefinitionPrefix:
+	BasicDefinitionPrefix?
+	( isIndividual ?= 'individual' 
+//		ownedRelationship += LifeClassMembership
+	)?
+//	DefinitionExtensionKeyword*
+;
+
+fragment BasicDefinitionPrefix:
+	isAbstract ?= 'abstract' 
+	| isVariation ?= 'variation'
+;
+
+fragment UsagePrefix:
+	UnextendedUsagePrefix
+//	UsageExtensionKeyword*	
+;
+
+fragment UnextendedUsagePrefix:
+	EndUsagePrefix | BasicUsagePrefix
+;
+
+fragment EndUsagePrefix:
+	isEnd ?= 'end' 
+//	( ownedRelationship += OwnedCrossFeatureMember )?
 ;
 
 fragment OccurrenceUsagePrefix:
@@ -246,8 +385,8 @@ fragment BasicUsagePrefix:
 ;
 
 fragment ConnectorPart:
-	connectorEnd += FeatureChainName 'to' connectorEnd += FeatureChainName 
-	| '(' connectorEnd += FeatureChainName ','  connectorEnd += FeatureChainName (',' connectorEnd += FeatureChainName)* ')'
+	connectorPart += ConnectorEnd 'to' connectorPart += ConnectorEnd 
+	| '(' connectorPart += ConnectorEnd ','  connectorPart += ConnectorEnd (',' connectorPart += ConnectorEnd)* ')'
 ;
 
 fragment InterfacePart:
@@ -260,11 +399,11 @@ fragment DefinitionDeclaration:
 ;
 
 fragment Usage:
-	UsageDeclaration FeatureValue?
+	UsageDeclaration? FeatureValue?
 ;
 
 fragment UsageDeclaration:
-	FeatureDeclaration?
+	FeatureDeclaration
 ;
 
 fragment FeatureValue:
@@ -285,40 +424,79 @@ fragment FeatureSpecializationPart:
 	| MultiplicityPart FeatureSpecialization*
 ;
 
-fragment MultiplicityPart:
-//	'[' Multiplicity += DECIMAL_VALUE ( '..' Multiplicity += DECIMAL_VALUE )? ']'
-//	| ('[' Multiplicity += DECIMAL_VALUE ( '..' Multiplicity += DECIMAL_VALUE )? ']')?
-//	  ( isOrdered ?= 'ordered' isNonunique ?= 'nonunique'? | isNonunique ?= 'nonunique' isOrdered ?= 'ordered'? )
-	  
-	( '[' Multiplicity += DECIMAL_VALUE ']' | '[' Multiplicity += DECIMAL_VALUE '..' Multiplicity += DECIMAL_VALUE ']')
-	| ( '[' Multiplicity += DECIMAL_VALUE ']' | '[' Multiplicity += DECIMAL_VALUE '..' Multiplicity += DECIMAL_VALUE ']')?
-	  ( isOrdered ?= 'ordered' isNonunique ?= 'nonunique'? | isNonunique ?= 'nonunique' isOrdered ?= 'ordered'? )
-	  
-//	  ownedRelationship += OwnedMultiplicity 
-//	| ( ownedRelationship += OwnedMultiplicity )?
-//	  ( isOrdered ?= 'ordered' isNonunique ?= 'nonunique'?
-//	  | isNonunique ?= 'nonunique' isOrdered ?= 'ordered'?
-//	  )
+fragment Identification:
+	'<' declaredShortName = Name '>' ( declaredName = Name )?
+	| declaredName = Name
 ;
 
-//OwnedMultiplicity:
-//	ownedRelatedElement += MultiplicityRange 
-//;
-//
-//MultiplicityRange:
-//	// TODO: Allow general expressions for bounds. (Causes LL parsing issues.)
-//	'[' ownedRelationship += MultiplicityExpressionMember
-//	      ( '..' ownedRelationship += MultiplicityExpressionMember )? ']'
-//;
+fragment MultiplicityPart:
+//	( '[' Multiplicity += DECIMAL_VALUE ']' | '[' Multiplicity += DECIMAL_VALUE '..' Multiplicity += DECIMAL_VALUE ']')
+//	| (( '[' Multiplicity += DECIMAL_VALUE ']' | '[' Multiplicity += DECIMAL_VALUE '..' Multiplicity += DECIMAL_VALUE ']')?
+//	  ( isOrdered ?= 'ordered' isNonunique ?= 'nonunique'? | isNonunique ?= 'nonunique' isOrdered ?= 'ordered'? ))
+	( '[' Multiplicity += MultiplicityExpression ']' | '[' Multiplicity += MultiplicityExpression '..' Multiplicity += MultiplicityExpression ']')
+	| (( '[' Multiplicity += MultiplicityExpression ']' | '[' Multiplicity += MultiplicityExpression '..' Multiplicity += MultiplicityExpression ']')?
+	  ( isOrdered ?= 'ordered' isNonunique ?= 'nonunique'? | isNonunique ?= 'nonunique' isOrdered ?= 'ordered'? ))
+;
 
 fragment FeatureSpecialization:
-	(':'|'defined' 'by') typings+=FeatureChainName (',' typings+=FeatureChainName)*|
-	(':>'|'specializes'|'subsets') subsetting+=FeatureChainName (',' subsetting+=FeatureChainName)*|
-	('::>'|'references')  references+=FeatureChainName (',' references+=FeatureChainName)*|
-	('=>'|'crosses') crosses+=FeatureChainName (',' crosses+=FeatureChainName)*|
-	(':>>'|'redefines') redefinitions+=FeatureChainName (',' redefinitions+=FeatureChainName)*
+	(':'|'defined' 'by') typings+=FeatureChainName (',' typings+=FeatureChainName)*
+	| (':>'|'specializes'|'subsets') subsetting+=FeatureChainName (',' subsetting+=FeatureChainName)*
+	| ('::>'|'references')  references+=FeatureChainName (',' references+=FeatureChainName)*
+	| ('=>'|'crosses') crosses+=FeatureChainName (',' crosses+=FeatureChainName)*
+	| (':>>'|'redefines') redefinitions+=FeatureChainName (',' redefinitions+=FeatureChainName)*
 ;
 
+// TODO --------------------------------- Terminal Level ---------------------------------//
+
+ConnectorEnd:
+	('[' MultiplicityExpression '..' MultiplicityExpression ']')?
+	( Name ('::>' | 'references') )?
+	FeatureChainName
+;
+
+MultiplicityExpression:
+	LiteralExpression | FeatureReferenceExpression
+;
+
+LiteralExpression:
+	LiteralBoolean
+	| LiteralString
+	| LiteralInteger
+	| LiteralReal
+	| LiteralInfinity
+;
+
+LiteralBoolean:
+	BooleanValue
+;
+
+BooleanValue:
+	'true' | 'false'
+;
+
+LiteralString:
+	STRING_VALUE
+;
+
+LiteralInteger:
+	DECIMAL_VALUE
+;
+
+LiteralReal:
+	RealValue
+;
+
+RealValue:
+	DECIMAL_VALUE? '.' ( DECIMAL_VALUE | EXP_VALUE ) | EXP_VALUE
+;
+
+LiteralInfinity:
+	'*'
+;
+
+FeatureReferenceExpression:
+	QualifiedName
+;
 /* NAMES */
 
 Name:
@@ -334,12 +512,21 @@ FeatureChainName:
 ;
 
 ExpressionName:
-	FeatureChainName | DECIMAL_VALUE
+	FeatureChainName | RealValue
 ;
 
 Expression:
 	OPERATOR* ExpressionName (OPERATOR ExpressionName?)* | '(' SequenceExpression ')'
 ;
+
+//Expression:
+//	ConditionalExpression
+//;
+//
+//ConditionalExpression:
+//	NullCoalescingExpression 
+//	| 'if' NullCoalescingExpression '?' OwnedExpressionReference
+//;
 
 SequenceExpression:
 	Expression (',' Expression)*
@@ -355,11 +542,8 @@ terminal OPERATOR:
 terminal DECIMAL_VALUE returns Ecore::EInt:
 	'0'..'9' ('0'..'9')*;
 
-terminal NORMAL_VALUE returns Ecore::EDouble:
-	DECIMAL_VALUE ('.' DECIMAL_VALUE)?;
-
 terminal EXP_VALUE:
-	NORMAL_VALUE (('e' | 'E') ('+' | '-')? DECIMAL_VALUE)?;
+	DECIMAL_VALUE (('e' | 'E') ('+' | '-')? DECIMAL_VALUE)?;
 
 terminal ID:
 	('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;

@@ -22,64 +22,80 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected SysMLOCGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_ActionUsage_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__;
-	protected AbstractElementAlias match_AttributeDefinition_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__;
-	protected AbstractElementAlias match_AttributeUsage_SemicolonKeyword_2_0_or___LeftCurlyBracketKeyword_2_1_0_RightCurlyBracketKeyword_2_1_2__;
-	protected AbstractElementAlias match_Comment_DocKeyword_0_q;
-	protected AbstractElementAlias match_ConnectionDefinition_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__;
-	protected AbstractElementAlias match_ConnectionUsage_SemicolonKeyword_1_0_or___LeftCurlyBracketKeyword_1_1_0_RightCurlyBracketKeyword_1_1_2__;
+	protected AbstractElementAlias match_ActionUsage_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__;
+	protected AbstractElementAlias match_AliasElement_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__;
+	protected AbstractElementAlias match_AttributeDefinition_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__;
+	protected AbstractElementAlias match_AttributeUsage_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__;
+	protected AbstractElementAlias match_Comment_CommentKeyword_0_0_q;
+	protected AbstractElementAlias match_ConnectionDefinition_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__;
+	protected AbstractElementAlias match_ConnectionUsage_ConnectKeyword_2_1_0_or___ConnectionKeyword_2_0_0_ConnectKeyword_2_0_3_0__;
+	protected AbstractElementAlias match_ConnectionUsage_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__;
 	protected AbstractElementAlias match_DefinitionDeclaration_ColonGreaterThanSignKeyword_1_0_1_or_ColonKeyword_1_0_0_or_SpecializesKeyword_1_0_2;
+	protected AbstractElementAlias match_EnumeratedValue_EnumKeyword_0_q;
+	protected AbstractElementAlias match_EnumeratedValue_SemicolonKeyword_2_0_or___LeftCurlyBracketKeyword_2_1_0_RightCurlyBracketKeyword_2_1_2__;
+	protected AbstractElementAlias match_EnumerationDefinition_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__;
+	protected AbstractElementAlias match_EnumerationUsage_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__;
 	protected AbstractElementAlias match_FeatureSpecialization_ColonColonGreaterThanSignKeyword_2_0_0_or_ReferencesKeyword_2_0_1;
 	protected AbstractElementAlias match_FeatureSpecialization_ColonGreaterThanSignGreaterThanSignKeyword_4_0_0_or_RedefinesKeyword_4_0_1;
 	protected AbstractElementAlias match_FeatureSpecialization_ColonGreaterThanSignKeyword_1_0_0_or_SpecializesKeyword_1_0_1_or_SubsetsKeyword_1_0_2;
 	protected AbstractElementAlias match_FeatureSpecialization_ColonKeyword_0_0_0_or___DefinedKeyword_0_0_1_0_ByKeyword_0_0_1_1__;
 	protected AbstractElementAlias match_FeatureSpecialization_CrossesKeyword_3_0_1_or_EqualsSignGreaterThanSignKeyword_3_0_0;
 	protected AbstractElementAlias match_FeatureValue_EqualsSignKeyword_0_2_1_0_q;
-	protected AbstractElementAlias match_FlowConnectionDefinition_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__;
-	protected AbstractElementAlias match_FlowConnectionUsage_FromKeyword_5_0_q;
-	protected AbstractElementAlias match_FlowConnectionUsage_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__;
-	protected AbstractElementAlias match_InterfaceDefinition_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__;
-	protected AbstractElementAlias match_InterfaceUsage_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__;
-	protected AbstractElementAlias match_ItemDefinition_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__;
-	protected AbstractElementAlias match_ItemUsage_SemicolonKeyword_2_0_or___LeftCurlyBracketKeyword_2_1_0_RightCurlyBracketKeyword_2_1_2__;
-	protected AbstractElementAlias match_NamespaceImport_AsteriskKeyword_4_0_q;
-	protected AbstractElementAlias match_PartDefinition_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__;
-	protected AbstractElementAlias match_PartUsage_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__;
-	protected AbstractElementAlias match_PortDefinition_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__;
-	protected AbstractElementAlias match_PortUsage_PortKeyword_1_q;
-	protected AbstractElementAlias match_PortUsage_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__;
-	protected AbstractElementAlias match_ReferenceUsage_SemicolonKeyword_2_0_or___LeftCurlyBracketKeyword_2_1_0_RightCurlyBracketKeyword_2_1_2__;
+	protected AbstractElementAlias match_FlowConnectionDefinition_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__;
+	protected AbstractElementAlias match_FlowConnectionUsage_FromKeyword_6_0_q;
+	protected AbstractElementAlias match_FlowConnectionUsage_SemicolonKeyword_7_0_or___LeftCurlyBracketKeyword_7_1_0_RightCurlyBracketKeyword_7_1_2__;
+	protected AbstractElementAlias match_InterfaceDefinition_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__;
+	protected AbstractElementAlias match_InterfaceUsage_ConnectKeyword_3_0_1_0_q;
+	protected AbstractElementAlias match_InterfaceUsage_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__;
+	protected AbstractElementAlias match_ItemDefinition_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__;
+	protected AbstractElementAlias match_ItemUsage_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__;
+	protected AbstractElementAlias match_MembershipImport_AsteriskKeyword_4_0_q;
+	protected AbstractElementAlias match_NamespaceImport_AsteriskKeyword_5_0_q;
+	protected AbstractElementAlias match_PartDefinition_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__;
+	protected AbstractElementAlias match_PartUsage_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__;
+	protected AbstractElementAlias match_PortDefinition_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__;
+	protected AbstractElementAlias match_PortUsage_PortKeyword_2_q;
+	protected AbstractElementAlias match_PortUsage_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__;
+	protected AbstractElementAlias match_TextualRepresentation_RepKeyword_0_0_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (SysMLOCGrammarAccess) access;
-		match_ActionUsage_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getActionUsageAccess().getLeftCurlyBracketKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getActionUsageAccess().getRightCurlyBracketKeyword_3_1_2())), new TokenAlias(false, false, grammarAccess.getActionUsageAccess().getSemicolonKeyword_3_0()));
-		match_AttributeDefinition_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getAttributeDefinitionAccess().getLeftCurlyBracketKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getAttributeDefinitionAccess().getRightCurlyBracketKeyword_3_1_2())), new TokenAlias(false, false, grammarAccess.getAttributeDefinitionAccess().getSemicolonKeyword_3_0()));
-		match_AttributeUsage_SemicolonKeyword_2_0_or___LeftCurlyBracketKeyword_2_1_0_RightCurlyBracketKeyword_2_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getAttributeUsageAccess().getLeftCurlyBracketKeyword_2_1_0()), new TokenAlias(false, false, grammarAccess.getAttributeUsageAccess().getRightCurlyBracketKeyword_2_1_2())), new TokenAlias(false, false, grammarAccess.getAttributeUsageAccess().getSemicolonKeyword_2_0()));
-		match_Comment_DocKeyword_0_q = new TokenAlias(false, true, grammarAccess.getCommentAccess().getDocKeyword_0());
-		match_ConnectionDefinition_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getConnectionDefinitionAccess().getLeftCurlyBracketKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getConnectionDefinitionAccess().getRightCurlyBracketKeyword_3_1_2())), new TokenAlias(false, false, grammarAccess.getConnectionDefinitionAccess().getSemicolonKeyword_3_0()));
-		match_ConnectionUsage_SemicolonKeyword_1_0_or___LeftCurlyBracketKeyword_1_1_0_RightCurlyBracketKeyword_1_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getConnectionUsageAccess().getLeftCurlyBracketKeyword_1_1_0()), new TokenAlias(false, false, grammarAccess.getConnectionUsageAccess().getRightCurlyBracketKeyword_1_1_2())), new TokenAlias(false, false, grammarAccess.getConnectionUsageAccess().getSemicolonKeyword_1_0()));
+		match_ActionUsage_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getActionUsageAccess().getLeftCurlyBracketKeyword_4_1_0()), new TokenAlias(false, false, grammarAccess.getActionUsageAccess().getRightCurlyBracketKeyword_4_1_2())), new TokenAlias(false, false, grammarAccess.getActionUsageAccess().getSemicolonKeyword_4_0()));
+		match_AliasElement_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getAliasElementAccess().getLeftCurlyBracketKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getAliasElementAccess().getRightCurlyBracketKeyword_6_1_2())), new TokenAlias(false, false, grammarAccess.getAliasElementAccess().getSemicolonKeyword_6_0()));
+		match_AttributeDefinition_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getAttributeDefinitionAccess().getLeftCurlyBracketKeyword_5_1_0()), new TokenAlias(false, false, grammarAccess.getAttributeDefinitionAccess().getRightCurlyBracketKeyword_5_1_2())), new TokenAlias(false, false, grammarAccess.getAttributeDefinitionAccess().getSemicolonKeyword_5_0()));
+		match_AttributeUsage_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getAttributeUsageAccess().getLeftCurlyBracketKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getAttributeUsageAccess().getRightCurlyBracketKeyword_3_1_2())), new TokenAlias(false, false, grammarAccess.getAttributeUsageAccess().getSemicolonKeyword_3_0()));
+		match_Comment_CommentKeyword_0_0_q = new TokenAlias(false, true, grammarAccess.getCommentAccess().getCommentKeyword_0_0());
+		match_ConnectionDefinition_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getConnectionDefinitionAccess().getLeftCurlyBracketKeyword_5_1_0()), new TokenAlias(false, false, grammarAccess.getConnectionDefinitionAccess().getRightCurlyBracketKeyword_5_1_2())), new TokenAlias(false, false, grammarAccess.getConnectionDefinitionAccess().getSemicolonKeyword_5_0()));
+		match_ConnectionUsage_ConnectKeyword_2_1_0_or___ConnectionKeyword_2_0_0_ConnectKeyword_2_0_3_0__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getConnectionUsageAccess().getConnectionKeyword_2_0_0()), new TokenAlias(false, false, grammarAccess.getConnectionUsageAccess().getConnectKeyword_2_0_3_0())), new TokenAlias(false, false, grammarAccess.getConnectionUsageAccess().getConnectKeyword_2_1_0()));
+		match_ConnectionUsage_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getConnectionUsageAccess().getLeftCurlyBracketKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getConnectionUsageAccess().getRightCurlyBracketKeyword_3_1_2())), new TokenAlias(false, false, grammarAccess.getConnectionUsageAccess().getSemicolonKeyword_3_0()));
 		match_DefinitionDeclaration_ColonGreaterThanSignKeyword_1_0_1_or_ColonKeyword_1_0_0_or_SpecializesKeyword_1_0_2 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getDefinitionDeclarationAccess().getColonGreaterThanSignKeyword_1_0_1()), new TokenAlias(false, false, grammarAccess.getDefinitionDeclarationAccess().getColonKeyword_1_0_0()), new TokenAlias(false, false, grammarAccess.getDefinitionDeclarationAccess().getSpecializesKeyword_1_0_2()));
+		match_EnumeratedValue_EnumKeyword_0_q = new TokenAlias(false, true, grammarAccess.getEnumeratedValueAccess().getEnumKeyword_0());
+		match_EnumeratedValue_SemicolonKeyword_2_0_or___LeftCurlyBracketKeyword_2_1_0_RightCurlyBracketKeyword_2_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getEnumeratedValueAccess().getLeftCurlyBracketKeyword_2_1_0()), new TokenAlias(false, false, grammarAccess.getEnumeratedValueAccess().getRightCurlyBracketKeyword_2_1_2())), new TokenAlias(false, false, grammarAccess.getEnumeratedValueAccess().getSemicolonKeyword_2_0()));
+		match_EnumerationDefinition_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getEnumerationDefinitionAccess().getLeftCurlyBracketKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getEnumerationDefinitionAccess().getRightCurlyBracketKeyword_3_1_2())), new TokenAlias(false, false, grammarAccess.getEnumerationDefinitionAccess().getSemicolonKeyword_3_0()));
+		match_EnumerationUsage_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getEnumerationUsageAccess().getLeftCurlyBracketKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getEnumerationUsageAccess().getRightCurlyBracketKeyword_3_1_2())), new TokenAlias(false, false, grammarAccess.getEnumerationUsageAccess().getSemicolonKeyword_3_0()));
 		match_FeatureSpecialization_ColonColonGreaterThanSignKeyword_2_0_0_or_ReferencesKeyword_2_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getFeatureSpecializationAccess().getColonColonGreaterThanSignKeyword_2_0_0()), new TokenAlias(false, false, grammarAccess.getFeatureSpecializationAccess().getReferencesKeyword_2_0_1()));
 		match_FeatureSpecialization_ColonGreaterThanSignGreaterThanSignKeyword_4_0_0_or_RedefinesKeyword_4_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getFeatureSpecializationAccess().getColonGreaterThanSignGreaterThanSignKeyword_4_0_0()), new TokenAlias(false, false, grammarAccess.getFeatureSpecializationAccess().getRedefinesKeyword_4_0_1()));
 		match_FeatureSpecialization_ColonGreaterThanSignKeyword_1_0_0_or_SpecializesKeyword_1_0_1_or_SubsetsKeyword_1_0_2 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getFeatureSpecializationAccess().getColonGreaterThanSignKeyword_1_0_0()), new TokenAlias(false, false, grammarAccess.getFeatureSpecializationAccess().getSpecializesKeyword_1_0_1()), new TokenAlias(false, false, grammarAccess.getFeatureSpecializationAccess().getSubsetsKeyword_1_0_2()));
 		match_FeatureSpecialization_ColonKeyword_0_0_0_or___DefinedKeyword_0_0_1_0_ByKeyword_0_0_1_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getFeatureSpecializationAccess().getDefinedKeyword_0_0_1_0()), new TokenAlias(false, false, grammarAccess.getFeatureSpecializationAccess().getByKeyword_0_0_1_1())), new TokenAlias(false, false, grammarAccess.getFeatureSpecializationAccess().getColonKeyword_0_0_0()));
 		match_FeatureSpecialization_CrossesKeyword_3_0_1_or_EqualsSignGreaterThanSignKeyword_3_0_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getFeatureSpecializationAccess().getCrossesKeyword_3_0_1()), new TokenAlias(false, false, grammarAccess.getFeatureSpecializationAccess().getEqualsSignGreaterThanSignKeyword_3_0_0()));
 		match_FeatureValue_EqualsSignKeyword_0_2_1_0_q = new TokenAlias(false, true, grammarAccess.getFeatureValueAccess().getEqualsSignKeyword_0_2_1_0());
-		match_FlowConnectionDefinition_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getFlowConnectionDefinitionAccess().getLeftCurlyBracketKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getFlowConnectionDefinitionAccess().getRightCurlyBracketKeyword_3_1_2())), new TokenAlias(false, false, grammarAccess.getFlowConnectionDefinitionAccess().getSemicolonKeyword_3_0()));
-		match_FlowConnectionUsage_FromKeyword_5_0_q = new TokenAlias(false, true, grammarAccess.getFlowConnectionUsageAccess().getFromKeyword_5_0());
-		match_FlowConnectionUsage_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getFlowConnectionUsageAccess().getLeftCurlyBracketKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getFlowConnectionUsageAccess().getRightCurlyBracketKeyword_6_1_2())), new TokenAlias(false, false, grammarAccess.getFlowConnectionUsageAccess().getSemicolonKeyword_6_0()));
-		match_InterfaceDefinition_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getInterfaceDefinitionAccess().getLeftCurlyBracketKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getInterfaceDefinitionAccess().getRightCurlyBracketKeyword_3_1_2())), new TokenAlias(false, false, grammarAccess.getInterfaceDefinitionAccess().getSemicolonKeyword_3_0()));
-		match_InterfaceUsage_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getInterfaceUsageAccess().getLeftCurlyBracketKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getInterfaceUsageAccess().getRightCurlyBracketKeyword_3_1_2())), new TokenAlias(false, false, grammarAccess.getInterfaceUsageAccess().getSemicolonKeyword_3_0()));
-		match_ItemDefinition_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getItemDefinitionAccess().getLeftCurlyBracketKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getItemDefinitionAccess().getRightCurlyBracketKeyword_3_1_2())), new TokenAlias(false, false, grammarAccess.getItemDefinitionAccess().getSemicolonKeyword_3_0()));
-		match_ItemUsage_SemicolonKeyword_2_0_or___LeftCurlyBracketKeyword_2_1_0_RightCurlyBracketKeyword_2_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getItemUsageAccess().getLeftCurlyBracketKeyword_2_1_0()), new TokenAlias(false, false, grammarAccess.getItemUsageAccess().getRightCurlyBracketKeyword_2_1_2())), new TokenAlias(false, false, grammarAccess.getItemUsageAccess().getSemicolonKeyword_2_0()));
-		match_NamespaceImport_AsteriskKeyword_4_0_q = new TokenAlias(false, true, grammarAccess.getNamespaceImportAccess().getAsteriskKeyword_4_0());
-		match_PartDefinition_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getPartDefinitionAccess().getLeftCurlyBracketKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getPartDefinitionAccess().getRightCurlyBracketKeyword_3_1_2())), new TokenAlias(false, false, grammarAccess.getPartDefinitionAccess().getSemicolonKeyword_3_0()));
-		match_PartUsage_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getPartUsageAccess().getLeftCurlyBracketKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getPartUsageAccess().getRightCurlyBracketKeyword_3_1_2())), new TokenAlias(false, false, grammarAccess.getPartUsageAccess().getSemicolonKeyword_3_0()));
-		match_PortDefinition_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getPortDefinitionAccess().getLeftCurlyBracketKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getPortDefinitionAccess().getRightCurlyBracketKeyword_3_1_2())), new TokenAlias(false, false, grammarAccess.getPortDefinitionAccess().getSemicolonKeyword_3_0()));
-		match_PortUsage_PortKeyword_1_q = new TokenAlias(false, true, grammarAccess.getPortUsageAccess().getPortKeyword_1());
-		match_PortUsage_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getPortUsageAccess().getLeftCurlyBracketKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getPortUsageAccess().getRightCurlyBracketKeyword_3_1_2())), new TokenAlias(false, false, grammarAccess.getPortUsageAccess().getSemicolonKeyword_3_0()));
-		match_ReferenceUsage_SemicolonKeyword_2_0_or___LeftCurlyBracketKeyword_2_1_0_RightCurlyBracketKeyword_2_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getReferenceUsageAccess().getLeftCurlyBracketKeyword_2_1_0()), new TokenAlias(false, false, grammarAccess.getReferenceUsageAccess().getRightCurlyBracketKeyword_2_1_2())), new TokenAlias(false, false, grammarAccess.getReferenceUsageAccess().getSemicolonKeyword_2_0()));
+		match_FlowConnectionDefinition_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getFlowConnectionDefinitionAccess().getLeftCurlyBracketKeyword_5_1_0()), new TokenAlias(false, false, grammarAccess.getFlowConnectionDefinitionAccess().getRightCurlyBracketKeyword_5_1_2())), new TokenAlias(false, false, grammarAccess.getFlowConnectionDefinitionAccess().getSemicolonKeyword_5_0()));
+		match_FlowConnectionUsage_FromKeyword_6_0_q = new TokenAlias(false, true, grammarAccess.getFlowConnectionUsageAccess().getFromKeyword_6_0());
+		match_FlowConnectionUsage_SemicolonKeyword_7_0_or___LeftCurlyBracketKeyword_7_1_0_RightCurlyBracketKeyword_7_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getFlowConnectionUsageAccess().getLeftCurlyBracketKeyword_7_1_0()), new TokenAlias(false, false, grammarAccess.getFlowConnectionUsageAccess().getRightCurlyBracketKeyword_7_1_2())), new TokenAlias(false, false, grammarAccess.getFlowConnectionUsageAccess().getSemicolonKeyword_7_0()));
+		match_InterfaceDefinition_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getInterfaceDefinitionAccess().getLeftCurlyBracketKeyword_5_1_0()), new TokenAlias(false, false, grammarAccess.getInterfaceDefinitionAccess().getRightCurlyBracketKeyword_5_1_2())), new TokenAlias(false, false, grammarAccess.getInterfaceDefinitionAccess().getSemicolonKeyword_5_0()));
+		match_InterfaceUsage_ConnectKeyword_3_0_1_0_q = new TokenAlias(false, true, grammarAccess.getInterfaceUsageAccess().getConnectKeyword_3_0_1_0());
+		match_InterfaceUsage_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getInterfaceUsageAccess().getLeftCurlyBracketKeyword_4_1_0()), new TokenAlias(false, false, grammarAccess.getInterfaceUsageAccess().getRightCurlyBracketKeyword_4_1_2())), new TokenAlias(false, false, grammarAccess.getInterfaceUsageAccess().getSemicolonKeyword_4_0()));
+		match_ItemDefinition_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getItemDefinitionAccess().getLeftCurlyBracketKeyword_5_1_0()), new TokenAlias(false, false, grammarAccess.getItemDefinitionAccess().getRightCurlyBracketKeyword_5_1_2())), new TokenAlias(false, false, grammarAccess.getItemDefinitionAccess().getSemicolonKeyword_5_0()));
+		match_ItemUsage_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getItemUsageAccess().getLeftCurlyBracketKeyword_4_1_0()), new TokenAlias(false, false, grammarAccess.getItemUsageAccess().getRightCurlyBracketKeyword_4_1_2())), new TokenAlias(false, false, grammarAccess.getItemUsageAccess().getSemicolonKeyword_4_0()));
+		match_MembershipImport_AsteriskKeyword_4_0_q = new TokenAlias(false, true, grammarAccess.getMembershipImportAccess().getAsteriskKeyword_4_0());
+		match_NamespaceImport_AsteriskKeyword_5_0_q = new TokenAlias(false, true, grammarAccess.getNamespaceImportAccess().getAsteriskKeyword_5_0());
+		match_PartDefinition_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getPartDefinitionAccess().getLeftCurlyBracketKeyword_5_1_0()), new TokenAlias(false, false, grammarAccess.getPartDefinitionAccess().getRightCurlyBracketKeyword_5_1_2())), new TokenAlias(false, false, grammarAccess.getPartDefinitionAccess().getSemicolonKeyword_5_0()));
+		match_PartUsage_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getPartUsageAccess().getLeftCurlyBracketKeyword_4_1_0()), new TokenAlias(false, false, grammarAccess.getPartUsageAccess().getRightCurlyBracketKeyword_4_1_2())), new TokenAlias(false, false, grammarAccess.getPartUsageAccess().getSemicolonKeyword_4_0()));
+		match_PortDefinition_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getPortDefinitionAccess().getLeftCurlyBracketKeyword_5_1_0()), new TokenAlias(false, false, grammarAccess.getPortDefinitionAccess().getRightCurlyBracketKeyword_5_1_2())), new TokenAlias(false, false, grammarAccess.getPortDefinitionAccess().getSemicolonKeyword_5_0()));
+		match_PortUsage_PortKeyword_2_q = new TokenAlias(false, true, grammarAccess.getPortUsageAccess().getPortKeyword_2());
+		match_PortUsage_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getPortUsageAccess().getLeftCurlyBracketKeyword_4_1_0()), new TokenAlias(false, false, grammarAccess.getPortUsageAccess().getRightCurlyBracketKeyword_4_1_2())), new TokenAlias(false, false, grammarAccess.getPortUsageAccess().getSemicolonKeyword_4_0()));
+		match_TextualRepresentation_RepKeyword_0_0_q = new TokenAlias(false, true, grammarAccess.getTextualRepresentationAccess().getRepKeyword_0_0());
 	}
 	
 	@Override
@@ -94,20 +110,32 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_ActionUsage_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__.equals(syntax))
-				emit_ActionUsage_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_AttributeDefinition_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__.equals(syntax))
-				emit_AttributeDefinition_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_AttributeUsage_SemicolonKeyword_2_0_or___LeftCurlyBracketKeyword_2_1_0_RightCurlyBracketKeyword_2_1_2__.equals(syntax))
-				emit_AttributeUsage_SemicolonKeyword_2_0_or___LeftCurlyBracketKeyword_2_1_0_RightCurlyBracketKeyword_2_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Comment_DocKeyword_0_q.equals(syntax))
-				emit_Comment_DocKeyword_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_ConnectionDefinition_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__.equals(syntax))
-				emit_ConnectionDefinition_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_ConnectionUsage_SemicolonKeyword_1_0_or___LeftCurlyBracketKeyword_1_1_0_RightCurlyBracketKeyword_1_1_2__.equals(syntax))
-				emit_ConnectionUsage_SemicolonKeyword_1_0_or___LeftCurlyBracketKeyword_1_1_0_RightCurlyBracketKeyword_1_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			if (match_ActionUsage_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__.equals(syntax))
+				emit_ActionUsage_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_AliasElement_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__.equals(syntax))
+				emit_AliasElement_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_AttributeDefinition_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__.equals(syntax))
+				emit_AttributeDefinition_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_AttributeUsage_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__.equals(syntax))
+				emit_AttributeUsage_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Comment_CommentKeyword_0_0_q.equals(syntax))
+				emit_Comment_CommentKeyword_0_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ConnectionDefinition_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__.equals(syntax))
+				emit_ConnectionDefinition_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ConnectionUsage_ConnectKeyword_2_1_0_or___ConnectionKeyword_2_0_0_ConnectKeyword_2_0_3_0__.equals(syntax))
+				emit_ConnectionUsage_ConnectKeyword_2_1_0_or___ConnectionKeyword_2_0_0_ConnectKeyword_2_0_3_0__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ConnectionUsage_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__.equals(syntax))
+				emit_ConnectionUsage_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_DefinitionDeclaration_ColonGreaterThanSignKeyword_1_0_1_or_ColonKeyword_1_0_0_or_SpecializesKeyword_1_0_2.equals(syntax))
 				emit_DefinitionDeclaration_ColonGreaterThanSignKeyword_1_0_1_or_ColonKeyword_1_0_0_or_SpecializesKeyword_1_0_2(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_EnumeratedValue_EnumKeyword_0_q.equals(syntax))
+				emit_EnumeratedValue_EnumKeyword_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_EnumeratedValue_SemicolonKeyword_2_0_or___LeftCurlyBracketKeyword_2_1_0_RightCurlyBracketKeyword_2_1_2__.equals(syntax))
+				emit_EnumeratedValue_SemicolonKeyword_2_0_or___LeftCurlyBracketKeyword_2_1_0_RightCurlyBracketKeyword_2_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_EnumerationDefinition_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__.equals(syntax))
+				emit_EnumerationDefinition_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_EnumerationUsage_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__.equals(syntax))
+				emit_EnumerationUsage_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_FeatureSpecialization_ColonColonGreaterThanSignKeyword_2_0_0_or_ReferencesKeyword_2_0_1.equals(syntax))
 				emit_FeatureSpecialization_ColonColonGreaterThanSignKeyword_2_0_0_or_ReferencesKeyword_2_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_FeatureSpecialization_ColonGreaterThanSignGreaterThanSignKeyword_4_0_0_or_RedefinesKeyword_4_0_1.equals(syntax))
@@ -120,34 +148,38 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_FeatureSpecialization_CrossesKeyword_3_0_1_or_EqualsSignGreaterThanSignKeyword_3_0_0(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_FeatureValue_EqualsSignKeyword_0_2_1_0_q.equals(syntax))
 				emit_FeatureValue_EqualsSignKeyword_0_2_1_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_FlowConnectionDefinition_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__.equals(syntax))
-				emit_FlowConnectionDefinition_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_FlowConnectionUsage_FromKeyword_5_0_q.equals(syntax))
-				emit_FlowConnectionUsage_FromKeyword_5_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_FlowConnectionUsage_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__.equals(syntax))
-				emit_FlowConnectionUsage_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_InterfaceDefinition_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__.equals(syntax))
-				emit_InterfaceDefinition_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_InterfaceUsage_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__.equals(syntax))
-				emit_InterfaceUsage_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_ItemDefinition_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__.equals(syntax))
-				emit_ItemDefinition_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_ItemUsage_SemicolonKeyword_2_0_or___LeftCurlyBracketKeyword_2_1_0_RightCurlyBracketKeyword_2_1_2__.equals(syntax))
-				emit_ItemUsage_SemicolonKeyword_2_0_or___LeftCurlyBracketKeyword_2_1_0_RightCurlyBracketKeyword_2_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_NamespaceImport_AsteriskKeyword_4_0_q.equals(syntax))
-				emit_NamespaceImport_AsteriskKeyword_4_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_PartDefinition_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__.equals(syntax))
-				emit_PartDefinition_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_PartUsage_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__.equals(syntax))
-				emit_PartUsage_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_PortDefinition_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__.equals(syntax))
-				emit_PortDefinition_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_PortUsage_PortKeyword_1_q.equals(syntax))
-				emit_PortUsage_PortKeyword_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_PortUsage_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__.equals(syntax))
-				emit_PortUsage_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_ReferenceUsage_SemicolonKeyword_2_0_or___LeftCurlyBracketKeyword_2_1_0_RightCurlyBracketKeyword_2_1_2__.equals(syntax))
-				emit_ReferenceUsage_SemicolonKeyword_2_0_or___LeftCurlyBracketKeyword_2_1_0_RightCurlyBracketKeyword_2_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_FlowConnectionDefinition_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__.equals(syntax))
+				emit_FlowConnectionDefinition_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_FlowConnectionUsage_FromKeyword_6_0_q.equals(syntax))
+				emit_FlowConnectionUsage_FromKeyword_6_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_FlowConnectionUsage_SemicolonKeyword_7_0_or___LeftCurlyBracketKeyword_7_1_0_RightCurlyBracketKeyword_7_1_2__.equals(syntax))
+				emit_FlowConnectionUsage_SemicolonKeyword_7_0_or___LeftCurlyBracketKeyword_7_1_0_RightCurlyBracketKeyword_7_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_InterfaceDefinition_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__.equals(syntax))
+				emit_InterfaceDefinition_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_InterfaceUsage_ConnectKeyword_3_0_1_0_q.equals(syntax))
+				emit_InterfaceUsage_ConnectKeyword_3_0_1_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_InterfaceUsage_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__.equals(syntax))
+				emit_InterfaceUsage_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ItemDefinition_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__.equals(syntax))
+				emit_ItemDefinition_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ItemUsage_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__.equals(syntax))
+				emit_ItemUsage_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_MembershipImport_AsteriskKeyword_4_0_q.equals(syntax))
+				emit_MembershipImport_AsteriskKeyword_4_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_NamespaceImport_AsteriskKeyword_5_0_q.equals(syntax))
+				emit_NamespaceImport_AsteriskKeyword_5_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_PartDefinition_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__.equals(syntax))
+				emit_PartDefinition_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_PartUsage_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__.equals(syntax))
+				emit_PartUsage_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_PortDefinition_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__.equals(syntax))
+				emit_PortDefinition_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_PortUsage_PortKeyword_2_q.equals(syntax))
+				emit_PortUsage_PortKeyword_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_PortUsage_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__.equals(syntax))
+				emit_PortUsage_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_TextualRepresentation_RepKeyword_0_0_q.equals(syntax))
+				emit_TextualRepresentation_RepKeyword_0_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -162,7 +194,21 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 
 	 * </pre>
 	 */
-	protected void emit_ActionUsage_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_ActionUsage_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     memberElement=QualifiedName (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_AliasElement_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -174,11 +220,14 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'attribute' 'def' (ambiguity) (rule start)
 	 *     declaredName=Name (ambiguity) (rule end)
+	 *     isAbstract?='abstract' 'attribute' 'def' (ambiguity) (rule end)
+	 *     isVariation?='variation' 'attribute' 'def' (ambiguity) (rule end)
 	 *     superclassifiers+=FeatureChainName (ambiguity) (rule end)
+	 *     visibility=VisibilityIndicator 'attribute' 'def' (ambiguity) (rule end)
 	 
 	 * </pre>
 	 */
-	protected void emit_AttributeDefinition_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_AttributeDefinition_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -189,7 +238,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'attribute' (ambiguity) (rule start)
-	 *     Multiplicity+=DECIMAL_VALUE ']' (ambiguity) (rule end)
+	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     isNonunique?='nonunique' (ambiguity) (rule end)
@@ -199,24 +248,26 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureChainName (ambiguity) (rule end)
 	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     visibility=VisibilityIndicator 'attribute' (ambiguity) (rule end)
 	 
 	 * </pre>
 	 */
-	protected void emit_AttributeUsage_SemicolonKeyword_2_0_or___LeftCurlyBracketKeyword_2_1_0_RightCurlyBracketKeyword_2_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_AttributeUsage_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * <pre>
 	 * Ambiguous syntax:
-	 *     'doc'?
+	 *     'comment'?
 	 *
 	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) 'locale' locale=STRING_VALUE
 	 *     (rule start) (ambiguity) body=REGULAR_COMMENT
 	 
 	 * </pre>
 	 */
-	protected void emit_Comment_DocKeyword_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Comment_CommentKeyword_0_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -228,11 +279,50 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'connection' 'def' (ambiguity) (rule start)
 	 *     declaredName=Name (ambiguity) (rule end)
+	 *     isAbstract?='abstract' 'connection' 'def' (ambiguity) (rule end)
+	 *     isIndividual?='individual' 'connection' 'def' (ambiguity) (rule end)
+	 *     isVariation?='variation' 'connection' 'def' (ambiguity) (rule end)
 	 *     superclassifiers+=FeatureChainName (ambiguity) (rule end)
+	 *     visibility=VisibilityIndicator 'connection' 'def' (ambiguity) (rule end)
 	 
 	 * </pre>
 	 */
-	protected void emit_ConnectionDefinition_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_ConnectionDefinition_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ('connection' 'connect') | 'connect'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) '(' connectorPart+=ConnectorEnd
+	 *     (rule start) (ambiguity) connectorPart+=ConnectorEnd
+	 *     direction=FeatureDirection (ambiguity) '(' connectorPart+=ConnectorEnd
+	 *     direction=FeatureDirection (ambiguity) connectorPart+=ConnectorEnd
+	 *     isAbstract?='abstract' (ambiguity) '(' connectorPart+=ConnectorEnd
+	 *     isAbstract?='abstract' (ambiguity) connectorPart+=ConnectorEnd
+	 *     isDerived?='derived' (ambiguity) '(' connectorPart+=ConnectorEnd
+	 *     isDerived?='derived' (ambiguity) connectorPart+=ConnectorEnd
+	 *     isEnd?='end' (ambiguity) '(' connectorPart+=ConnectorEnd
+	 *     isEnd?='end' (ambiguity) connectorPart+=ConnectorEnd
+	 *     isIndividual?='individual' (ambiguity) '(' connectorPart+=ConnectorEnd
+	 *     isIndividual?='individual' (ambiguity) connectorPart+=ConnectorEnd
+	 *     isReadOnly?='readonly' (ambiguity) '(' connectorPart+=ConnectorEnd
+	 *     isReadOnly?='readonly' (ambiguity) connectorPart+=ConnectorEnd
+	 *     isReference?='ref' (ambiguity) '(' connectorPart+=ConnectorEnd
+	 *     isReference?='ref' (ambiguity) connectorPart+=ConnectorEnd
+	 *     isVariation?='variation' (ambiguity) '(' connectorPart+=ConnectorEnd
+	 *     isVariation?='variation' (ambiguity) connectorPart+=ConnectorEnd
+	 *     portionKind=PortionKind (ambiguity) '(' connectorPart+=ConnectorEnd
+	 *     portionKind=PortionKind (ambiguity) connectorPart+=ConnectorEnd
+	 *     visibility=VisibilityIndicator (ambiguity) '(' connectorPart+=ConnectorEnd
+	 *     visibility=VisibilityIndicator (ambiguity) connectorPart+=ConnectorEnd
+	 
+	 * </pre>
+	 */
+	protected void emit_ConnectionUsage_ConnectKeyword_2_1_0_or___ConnectionKeyword_2_0_0_ConnectKeyword_2_0_3_0__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -243,9 +333,9 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'connection' (ambiguity) (rule start)
-	 *     Multiplicity+=DECIMAL_VALUE ']' (ambiguity) (rule end)
-	 *     connectorEnd+=FeatureChainName ')' (ambiguity) (rule end)
-	 *     connectorEnd+=FeatureChainName (ambiguity) (rule end)
+	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     connectorPart+=ConnectorEnd ')' (ambiguity) (rule end)
+	 *     connectorPart+=ConnectorEnd (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     direction=FeatureDirection 'connection' (ambiguity) (rule end)
@@ -264,10 +354,11 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureChainName (ambiguity) (rule end)
 	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     visibility=VisibilityIndicator 'connection' (ambiguity) (rule end)
 	 
 	 * </pre>
 	 */
-	protected void emit_ConnectionUsage_SemicolonKeyword_1_0_or___LeftCurlyBracketKeyword_1_1_0_RightCurlyBracketKeyword_1_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_ConnectionUsage_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -279,16 +370,141 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'attribute' 'def' (ambiguity) superclassifiers+=FeatureChainName
 	 *     (rule start) 'connection' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     (rule start) 'enum' 'def' (ambiguity) superclassifiers+=FeatureChainName
 	 *     (rule start) 'flow' 'def' (ambiguity) superclassifiers+=FeatureChainName
 	 *     (rule start) 'interface' 'def' (ambiguity) superclassifiers+=FeatureChainName
 	 *     (rule start) 'item' 'def' (ambiguity) superclassifiers+=FeatureChainName
 	 *     (rule start) 'part' 'def' (ambiguity) superclassifiers+=FeatureChainName
 	 *     (rule start) 'port' 'def' (ambiguity) superclassifiers+=FeatureChainName
 	 *     declaredName=Name (ambiguity) superclassifiers+=FeatureChainName
+	 *     isAbstract?='abstract' 'attribute' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     isAbstract?='abstract' 'connection' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     isAbstract?='abstract' 'flow' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     isAbstract?='abstract' 'interface' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     isAbstract?='abstract' 'item' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     isAbstract?='abstract' 'part' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     isAbstract?='abstract' 'port' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     isIndividual?='individual' 'connection' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     isIndividual?='individual' 'flow' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     isIndividual?='individual' 'interface' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     isIndividual?='individual' 'item' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     isIndividual?='individual' 'part' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     isVariation?='variation' 'attribute' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     isVariation?='variation' 'connection' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     isVariation?='variation' 'flow' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     isVariation?='variation' 'interface' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     isVariation?='variation' 'item' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     isVariation?='variation' 'part' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     isVariation?='variation' 'port' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'attribute' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'connection' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'flow' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'interface' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'item' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'part' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'port' 'def' (ambiguity) superclassifiers+=FeatureChainName
 	 
 	 * </pre>
 	 */
 	protected void emit_DefinitionDeclaration_ColonGreaterThanSignKeyword_1_0_1_or_ColonKeyword_1_0_0_or_SpecializesKeyword_1_0_2(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     'enum'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) '=' valuePart+=Expression
+	 *     (rule start) (ambiguity) '[' Multiplicity+=MultiplicityExpression
+	 *     (rule start) (ambiguity) '{' elements+=UsageBodyElement
+	 *     (rule start) (ambiguity) (':' | ('defined' 'by')) typings+=FeatureChainName
+	 *     (rule start) (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
+	 *     (rule start) (ambiguity) (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
+	 *     (rule start) (ambiguity) (':&gt;&gt;' | 'redefines') redefinitions+=FeatureChainName
+	 *     (rule start) (ambiguity) (';' | ('{' '}')) (rule start)
+	 *     (rule start) (ambiguity) ('=&gt;' | 'crosses') crosses+=FeatureChainName
+	 *     (rule start) (ambiguity) declaredName=Name
+	 *     (rule start) (ambiguity) isDefault?='default'
+	 *     (rule start) (ambiguity) isInitial?=':='
+	 *     (rule start) (ambiguity) isNonunique?='nonunique'
+	 *     (rule start) (ambiguity) isOrdered?='ordered'
+	 
+	 * </pre>
+	 */
+	protected void emit_EnumeratedValue_EnumKeyword_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'enum'? (ambiguity) (rule start)
+	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     crosses+=FeatureChainName (ambiguity) (rule end)
+	 *     declaredName=Name (ambiguity) (rule end)
+	 *     isNonunique?='nonunique' (ambiguity) (rule end)
+	 *     isOrdered?='ordered' (ambiguity) (rule end)
+	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
+	 *     references+=FeatureChainName (ambiguity) (rule end)
+	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
+	 *     typings+=FeatureChainName (ambiguity) (rule end)
+	 *     valuePart+=Expression (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_EnumeratedValue_SemicolonKeyword_2_0_or___LeftCurlyBracketKeyword_2_1_0_RightCurlyBracketKeyword_2_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'enum' 'def' (ambiguity) (rule start)
+	 *     declaredName=Name (ambiguity) (rule end)
+	 *     superclassifiers+=FeatureChainName (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_EnumerationDefinition_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'enum' (ambiguity) (rule start)
+	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     crosses+=FeatureChainName (ambiguity) (rule end)
+	 *     declaredName=Name (ambiguity) (rule end)
+	 *     direction=FeatureDirection 'enum' (ambiguity) (rule end)
+	 *     isAbstract?='abstract' 'enum' (ambiguity) (rule end)
+	 *     isDerived?='derived' 'enum' (ambiguity) (rule end)
+	 *     isEnd?='end' 'enum' (ambiguity) (rule end)
+	 *     isNonunique?='nonunique' (ambiguity) (rule end)
+	 *     isOrdered?='ordered' (ambiguity) (rule end)
+	 *     isReadOnly?='readonly' 'enum' (ambiguity) (rule end)
+	 *     isReference?='ref' 'enum' (ambiguity) (rule end)
+	 *     isVariation?='variation' 'enum' (ambiguity) (rule end)
+	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
+	 *     references+=FeatureChainName (ambiguity) (rule end)
+	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
+	 *     typings+=FeatureChainName (ambiguity) (rule end)
+	 *     valuePart+=Expression (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_EnumerationUsage_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -300,75 +516,90 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'attribute' (ambiguity) references+=FeatureChainName
 	 *     (rule start) 'connection' (ambiguity) references+=FeatureChainName
+	 *     (rule start) 'enum' (ambiguity) references+=FeatureChainName
+	 *     (rule start) 'enum'? (ambiguity) references+=FeatureChainName
 	 *     (rule start) 'flow' (ambiguity) references+=FeatureChainName
 	 *     (rule start) 'interface' (ambiguity) references+=FeatureChainName
 	 *     (rule start) 'item' (ambiguity) references+=FeatureChainName
 	 *     (rule start) 'part' (ambiguity) references+=FeatureChainName
 	 *     (rule start) 'port'? (ambiguity) references+=FeatureChainName
-	 *     (rule start) (ambiguity) references+=FeatureChainName
-	 *     Multiplicity+=DECIMAL_VALUE ']' (ambiguity) references+=FeatureChainName
+	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) references+=FeatureChainName
 	 *     crosses+=FeatureChainName (ambiguity) references+=FeatureChainName
 	 *     declaredName=Name (ambiguity) references+=FeatureChainName
 	 *     direction=FeatureDirection 'connection' (ambiguity) references+=FeatureChainName
+	 *     direction=FeatureDirection 'enum' (ambiguity) references+=FeatureChainName
 	 *     direction=FeatureDirection 'flow' (ambiguity) references+=FeatureChainName
 	 *     direction=FeatureDirection 'interface' (ambiguity) references+=FeatureChainName
+	 *     direction=FeatureDirection 'item' (ambiguity) references+=FeatureChainName
 	 *     direction=FeatureDirection 'part' (ambiguity) references+=FeatureChainName
 	 *     direction=FeatureDirection 'port'? (ambiguity) references+=FeatureChainName
-	 *     direction=FeatureDirection (ambiguity) references+=FeatureChainName
 	 *     isAbstract?='abstract' 'connection' (ambiguity) references+=FeatureChainName
+	 *     isAbstract?='abstract' 'enum' (ambiguity) references+=FeatureChainName
 	 *     isAbstract?='abstract' 'flow' (ambiguity) references+=FeatureChainName
 	 *     isAbstract?='abstract' 'interface' (ambiguity) references+=FeatureChainName
+	 *     isAbstract?='abstract' 'item' (ambiguity) references+=FeatureChainName
 	 *     isAbstract?='abstract' 'part' (ambiguity) references+=FeatureChainName
 	 *     isAbstract?='abstract' 'port'? (ambiguity) references+=FeatureChainName
-	 *     isAbstract?='abstract' (ambiguity) references+=FeatureChainName
 	 *     isDerived?='derived' 'connection' (ambiguity) references+=FeatureChainName
+	 *     isDerived?='derived' 'enum' (ambiguity) references+=FeatureChainName
 	 *     isDerived?='derived' 'flow' (ambiguity) references+=FeatureChainName
 	 *     isDerived?='derived' 'interface' (ambiguity) references+=FeatureChainName
+	 *     isDerived?='derived' 'item' (ambiguity) references+=FeatureChainName
 	 *     isDerived?='derived' 'part' (ambiguity) references+=FeatureChainName
 	 *     isDerived?='derived' 'port'? (ambiguity) references+=FeatureChainName
-	 *     isDerived?='derived' (ambiguity) references+=FeatureChainName
 	 *     isEnd?='end' 'connection' (ambiguity) references+=FeatureChainName
+	 *     isEnd?='end' 'enum' (ambiguity) references+=FeatureChainName
 	 *     isEnd?='end' 'flow' (ambiguity) references+=FeatureChainName
 	 *     isEnd?='end' 'interface' (ambiguity) references+=FeatureChainName
+	 *     isEnd?='end' 'item' (ambiguity) references+=FeatureChainName
 	 *     isEnd?='end' 'part' (ambiguity) references+=FeatureChainName
 	 *     isEnd?='end' 'port'? (ambiguity) references+=FeatureChainName
-	 *     isEnd?='end' (ambiguity) references+=FeatureChainName
 	 *     isIndividual?='individual' 'connection' (ambiguity) references+=FeatureChainName
 	 *     isIndividual?='individual' 'flow' (ambiguity) references+=FeatureChainName
 	 *     isIndividual?='individual' 'interface' (ambiguity) references+=FeatureChainName
+	 *     isIndividual?='individual' 'item' (ambiguity) references+=FeatureChainName
 	 *     isIndividual?='individual' 'part' (ambiguity) references+=FeatureChainName
 	 *     isIndividual?='individual' 'port'? (ambiguity) references+=FeatureChainName
-	 *     isIndividual?='individual' (ambiguity) references+=FeatureChainName
 	 *     isNonunique?='nonunique' (ambiguity) references+=FeatureChainName
 	 *     isOrdered?='ordered' (ambiguity) references+=FeatureChainName
 	 *     isReadOnly?='readonly' 'connection' (ambiguity) references+=FeatureChainName
+	 *     isReadOnly?='readonly' 'enum' (ambiguity) references+=FeatureChainName
 	 *     isReadOnly?='readonly' 'flow' (ambiguity) references+=FeatureChainName
 	 *     isReadOnly?='readonly' 'interface' (ambiguity) references+=FeatureChainName
+	 *     isReadOnly?='readonly' 'item' (ambiguity) references+=FeatureChainName
 	 *     isReadOnly?='readonly' 'part' (ambiguity) references+=FeatureChainName
 	 *     isReadOnly?='readonly' 'port'? (ambiguity) references+=FeatureChainName
-	 *     isReadOnly?='readonly' (ambiguity) references+=FeatureChainName
 	 *     isReference?='ref' 'connection' (ambiguity) references+=FeatureChainName
+	 *     isReference?='ref' 'enum' (ambiguity) references+=FeatureChainName
 	 *     isReference?='ref' 'flow' (ambiguity) references+=FeatureChainName
 	 *     isReference?='ref' 'interface' (ambiguity) references+=FeatureChainName
+	 *     isReference?='ref' 'item' (ambiguity) references+=FeatureChainName
 	 *     isReference?='ref' 'part' (ambiguity) references+=FeatureChainName
 	 *     isReference?='ref' 'port'? (ambiguity) references+=FeatureChainName
-	 *     isReference?='ref' (ambiguity) references+=FeatureChainName
 	 *     isVariation?='variation' 'connection' (ambiguity) references+=FeatureChainName
+	 *     isVariation?='variation' 'enum' (ambiguity) references+=FeatureChainName
 	 *     isVariation?='variation' 'flow' (ambiguity) references+=FeatureChainName
 	 *     isVariation?='variation' 'interface' (ambiguity) references+=FeatureChainName
+	 *     isVariation?='variation' 'item' (ambiguity) references+=FeatureChainName
 	 *     isVariation?='variation' 'part' (ambiguity) references+=FeatureChainName
 	 *     isVariation?='variation' 'port'? (ambiguity) references+=FeatureChainName
-	 *     isVariation?='variation' (ambiguity) references+=FeatureChainName
 	 *     portionKind=PortionKind 'connection' (ambiguity) references+=FeatureChainName
 	 *     portionKind=PortionKind 'flow' (ambiguity) references+=FeatureChainName
 	 *     portionKind=PortionKind 'interface' (ambiguity) references+=FeatureChainName
+	 *     portionKind=PortionKind 'item' (ambiguity) references+=FeatureChainName
 	 *     portionKind=PortionKind 'part' (ambiguity) references+=FeatureChainName
 	 *     portionKind=PortionKind 'port'? (ambiguity) references+=FeatureChainName
-	 *     portionKind=PortionKind (ambiguity) references+=FeatureChainName
 	 *     redefinitions+=FeatureChainName (ambiguity) references+=FeatureChainName
 	 *     references+=FeatureChainName (ambiguity) references+=FeatureChainName
 	 *     subsetting+=FeatureChainName (ambiguity) references+=FeatureChainName
 	 *     typings+=FeatureChainName (ambiguity) references+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'attribute' (ambiguity) references+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'connection' (ambiguity) references+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'flow' (ambiguity) references+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'interface' (ambiguity) references+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'item' (ambiguity) references+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'part' (ambiguity) references+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'port'? (ambiguity) references+=FeatureChainName
 	 
 	 * </pre>
 	 */
@@ -384,75 +615,90 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'attribute' (ambiguity) redefinitions+=FeatureChainName
 	 *     (rule start) 'connection' (ambiguity) redefinitions+=FeatureChainName
+	 *     (rule start) 'enum' (ambiguity) redefinitions+=FeatureChainName
+	 *     (rule start) 'enum'? (ambiguity) redefinitions+=FeatureChainName
 	 *     (rule start) 'flow' (ambiguity) redefinitions+=FeatureChainName
 	 *     (rule start) 'interface' (ambiguity) redefinitions+=FeatureChainName
 	 *     (rule start) 'item' (ambiguity) redefinitions+=FeatureChainName
 	 *     (rule start) 'part' (ambiguity) redefinitions+=FeatureChainName
 	 *     (rule start) 'port'? (ambiguity) redefinitions+=FeatureChainName
-	 *     (rule start) (ambiguity) redefinitions+=FeatureChainName
-	 *     Multiplicity+=DECIMAL_VALUE ']' (ambiguity) redefinitions+=FeatureChainName
+	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) redefinitions+=FeatureChainName
 	 *     crosses+=FeatureChainName (ambiguity) redefinitions+=FeatureChainName
 	 *     declaredName=Name (ambiguity) redefinitions+=FeatureChainName
 	 *     direction=FeatureDirection 'connection' (ambiguity) redefinitions+=FeatureChainName
+	 *     direction=FeatureDirection 'enum' (ambiguity) redefinitions+=FeatureChainName
 	 *     direction=FeatureDirection 'flow' (ambiguity) redefinitions+=FeatureChainName
 	 *     direction=FeatureDirection 'interface' (ambiguity) redefinitions+=FeatureChainName
+	 *     direction=FeatureDirection 'item' (ambiguity) redefinitions+=FeatureChainName
 	 *     direction=FeatureDirection 'part' (ambiguity) redefinitions+=FeatureChainName
 	 *     direction=FeatureDirection 'port'? (ambiguity) redefinitions+=FeatureChainName
-	 *     direction=FeatureDirection (ambiguity) redefinitions+=FeatureChainName
 	 *     isAbstract?='abstract' 'connection' (ambiguity) redefinitions+=FeatureChainName
+	 *     isAbstract?='abstract' 'enum' (ambiguity) redefinitions+=FeatureChainName
 	 *     isAbstract?='abstract' 'flow' (ambiguity) redefinitions+=FeatureChainName
 	 *     isAbstract?='abstract' 'interface' (ambiguity) redefinitions+=FeatureChainName
+	 *     isAbstract?='abstract' 'item' (ambiguity) redefinitions+=FeatureChainName
 	 *     isAbstract?='abstract' 'part' (ambiguity) redefinitions+=FeatureChainName
 	 *     isAbstract?='abstract' 'port'? (ambiguity) redefinitions+=FeatureChainName
-	 *     isAbstract?='abstract' (ambiguity) redefinitions+=FeatureChainName
 	 *     isDerived?='derived' 'connection' (ambiguity) redefinitions+=FeatureChainName
+	 *     isDerived?='derived' 'enum' (ambiguity) redefinitions+=FeatureChainName
 	 *     isDerived?='derived' 'flow' (ambiguity) redefinitions+=FeatureChainName
 	 *     isDerived?='derived' 'interface' (ambiguity) redefinitions+=FeatureChainName
+	 *     isDerived?='derived' 'item' (ambiguity) redefinitions+=FeatureChainName
 	 *     isDerived?='derived' 'part' (ambiguity) redefinitions+=FeatureChainName
 	 *     isDerived?='derived' 'port'? (ambiguity) redefinitions+=FeatureChainName
-	 *     isDerived?='derived' (ambiguity) redefinitions+=FeatureChainName
 	 *     isEnd?='end' 'connection' (ambiguity) redefinitions+=FeatureChainName
+	 *     isEnd?='end' 'enum' (ambiguity) redefinitions+=FeatureChainName
 	 *     isEnd?='end' 'flow' (ambiguity) redefinitions+=FeatureChainName
 	 *     isEnd?='end' 'interface' (ambiguity) redefinitions+=FeatureChainName
+	 *     isEnd?='end' 'item' (ambiguity) redefinitions+=FeatureChainName
 	 *     isEnd?='end' 'part' (ambiguity) redefinitions+=FeatureChainName
 	 *     isEnd?='end' 'port'? (ambiguity) redefinitions+=FeatureChainName
-	 *     isEnd?='end' (ambiguity) redefinitions+=FeatureChainName
 	 *     isIndividual?='individual' 'connection' (ambiguity) redefinitions+=FeatureChainName
 	 *     isIndividual?='individual' 'flow' (ambiguity) redefinitions+=FeatureChainName
 	 *     isIndividual?='individual' 'interface' (ambiguity) redefinitions+=FeatureChainName
+	 *     isIndividual?='individual' 'item' (ambiguity) redefinitions+=FeatureChainName
 	 *     isIndividual?='individual' 'part' (ambiguity) redefinitions+=FeatureChainName
 	 *     isIndividual?='individual' 'port'? (ambiguity) redefinitions+=FeatureChainName
-	 *     isIndividual?='individual' (ambiguity) redefinitions+=FeatureChainName
 	 *     isNonunique?='nonunique' (ambiguity) redefinitions+=FeatureChainName
 	 *     isOrdered?='ordered' (ambiguity) redefinitions+=FeatureChainName
 	 *     isReadOnly?='readonly' 'connection' (ambiguity) redefinitions+=FeatureChainName
+	 *     isReadOnly?='readonly' 'enum' (ambiguity) redefinitions+=FeatureChainName
 	 *     isReadOnly?='readonly' 'flow' (ambiguity) redefinitions+=FeatureChainName
 	 *     isReadOnly?='readonly' 'interface' (ambiguity) redefinitions+=FeatureChainName
+	 *     isReadOnly?='readonly' 'item' (ambiguity) redefinitions+=FeatureChainName
 	 *     isReadOnly?='readonly' 'part' (ambiguity) redefinitions+=FeatureChainName
 	 *     isReadOnly?='readonly' 'port'? (ambiguity) redefinitions+=FeatureChainName
-	 *     isReadOnly?='readonly' (ambiguity) redefinitions+=FeatureChainName
 	 *     isReference?='ref' 'connection' (ambiguity) redefinitions+=FeatureChainName
+	 *     isReference?='ref' 'enum' (ambiguity) redefinitions+=FeatureChainName
 	 *     isReference?='ref' 'flow' (ambiguity) redefinitions+=FeatureChainName
 	 *     isReference?='ref' 'interface' (ambiguity) redefinitions+=FeatureChainName
+	 *     isReference?='ref' 'item' (ambiguity) redefinitions+=FeatureChainName
 	 *     isReference?='ref' 'part' (ambiguity) redefinitions+=FeatureChainName
 	 *     isReference?='ref' 'port'? (ambiguity) redefinitions+=FeatureChainName
-	 *     isReference?='ref' (ambiguity) redefinitions+=FeatureChainName
 	 *     isVariation?='variation' 'connection' (ambiguity) redefinitions+=FeatureChainName
+	 *     isVariation?='variation' 'enum' (ambiguity) redefinitions+=FeatureChainName
 	 *     isVariation?='variation' 'flow' (ambiguity) redefinitions+=FeatureChainName
 	 *     isVariation?='variation' 'interface' (ambiguity) redefinitions+=FeatureChainName
+	 *     isVariation?='variation' 'item' (ambiguity) redefinitions+=FeatureChainName
 	 *     isVariation?='variation' 'part' (ambiguity) redefinitions+=FeatureChainName
 	 *     isVariation?='variation' 'port'? (ambiguity) redefinitions+=FeatureChainName
-	 *     isVariation?='variation' (ambiguity) redefinitions+=FeatureChainName
 	 *     portionKind=PortionKind 'connection' (ambiguity) redefinitions+=FeatureChainName
 	 *     portionKind=PortionKind 'flow' (ambiguity) redefinitions+=FeatureChainName
 	 *     portionKind=PortionKind 'interface' (ambiguity) redefinitions+=FeatureChainName
+	 *     portionKind=PortionKind 'item' (ambiguity) redefinitions+=FeatureChainName
 	 *     portionKind=PortionKind 'part' (ambiguity) redefinitions+=FeatureChainName
 	 *     portionKind=PortionKind 'port'? (ambiguity) redefinitions+=FeatureChainName
-	 *     portionKind=PortionKind (ambiguity) redefinitions+=FeatureChainName
 	 *     redefinitions+=FeatureChainName (ambiguity) redefinitions+=FeatureChainName
 	 *     references+=FeatureChainName (ambiguity) redefinitions+=FeatureChainName
 	 *     subsetting+=FeatureChainName (ambiguity) redefinitions+=FeatureChainName
 	 *     typings+=FeatureChainName (ambiguity) redefinitions+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'attribute' (ambiguity) redefinitions+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'connection' (ambiguity) redefinitions+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'flow' (ambiguity) redefinitions+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'interface' (ambiguity) redefinitions+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'item' (ambiguity) redefinitions+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'part' (ambiguity) redefinitions+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'port'? (ambiguity) redefinitions+=FeatureChainName
 	 
 	 * </pre>
 	 */
@@ -468,75 +714,90 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'attribute' (ambiguity) subsetting+=FeatureChainName
 	 *     (rule start) 'connection' (ambiguity) subsetting+=FeatureChainName
+	 *     (rule start) 'enum' (ambiguity) subsetting+=FeatureChainName
+	 *     (rule start) 'enum'? (ambiguity) subsetting+=FeatureChainName
 	 *     (rule start) 'flow' (ambiguity) subsetting+=FeatureChainName
 	 *     (rule start) 'interface' (ambiguity) subsetting+=FeatureChainName
 	 *     (rule start) 'item' (ambiguity) subsetting+=FeatureChainName
 	 *     (rule start) 'part' (ambiguity) subsetting+=FeatureChainName
 	 *     (rule start) 'port'? (ambiguity) subsetting+=FeatureChainName
-	 *     (rule start) (ambiguity) subsetting+=FeatureChainName
-	 *     Multiplicity+=DECIMAL_VALUE ']' (ambiguity) subsetting+=FeatureChainName
+	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) subsetting+=FeatureChainName
 	 *     crosses+=FeatureChainName (ambiguity) subsetting+=FeatureChainName
 	 *     declaredName=Name (ambiguity) subsetting+=FeatureChainName
 	 *     direction=FeatureDirection 'connection' (ambiguity) subsetting+=FeatureChainName
+	 *     direction=FeatureDirection 'enum' (ambiguity) subsetting+=FeatureChainName
 	 *     direction=FeatureDirection 'flow' (ambiguity) subsetting+=FeatureChainName
 	 *     direction=FeatureDirection 'interface' (ambiguity) subsetting+=FeatureChainName
+	 *     direction=FeatureDirection 'item' (ambiguity) subsetting+=FeatureChainName
 	 *     direction=FeatureDirection 'part' (ambiguity) subsetting+=FeatureChainName
 	 *     direction=FeatureDirection 'port'? (ambiguity) subsetting+=FeatureChainName
-	 *     direction=FeatureDirection (ambiguity) subsetting+=FeatureChainName
 	 *     isAbstract?='abstract' 'connection' (ambiguity) subsetting+=FeatureChainName
+	 *     isAbstract?='abstract' 'enum' (ambiguity) subsetting+=FeatureChainName
 	 *     isAbstract?='abstract' 'flow' (ambiguity) subsetting+=FeatureChainName
 	 *     isAbstract?='abstract' 'interface' (ambiguity) subsetting+=FeatureChainName
+	 *     isAbstract?='abstract' 'item' (ambiguity) subsetting+=FeatureChainName
 	 *     isAbstract?='abstract' 'part' (ambiguity) subsetting+=FeatureChainName
 	 *     isAbstract?='abstract' 'port'? (ambiguity) subsetting+=FeatureChainName
-	 *     isAbstract?='abstract' (ambiguity) subsetting+=FeatureChainName
 	 *     isDerived?='derived' 'connection' (ambiguity) subsetting+=FeatureChainName
+	 *     isDerived?='derived' 'enum' (ambiguity) subsetting+=FeatureChainName
 	 *     isDerived?='derived' 'flow' (ambiguity) subsetting+=FeatureChainName
 	 *     isDerived?='derived' 'interface' (ambiguity) subsetting+=FeatureChainName
+	 *     isDerived?='derived' 'item' (ambiguity) subsetting+=FeatureChainName
 	 *     isDerived?='derived' 'part' (ambiguity) subsetting+=FeatureChainName
 	 *     isDerived?='derived' 'port'? (ambiguity) subsetting+=FeatureChainName
-	 *     isDerived?='derived' (ambiguity) subsetting+=FeatureChainName
 	 *     isEnd?='end' 'connection' (ambiguity) subsetting+=FeatureChainName
+	 *     isEnd?='end' 'enum' (ambiguity) subsetting+=FeatureChainName
 	 *     isEnd?='end' 'flow' (ambiguity) subsetting+=FeatureChainName
 	 *     isEnd?='end' 'interface' (ambiguity) subsetting+=FeatureChainName
+	 *     isEnd?='end' 'item' (ambiguity) subsetting+=FeatureChainName
 	 *     isEnd?='end' 'part' (ambiguity) subsetting+=FeatureChainName
 	 *     isEnd?='end' 'port'? (ambiguity) subsetting+=FeatureChainName
-	 *     isEnd?='end' (ambiguity) subsetting+=FeatureChainName
 	 *     isIndividual?='individual' 'connection' (ambiguity) subsetting+=FeatureChainName
 	 *     isIndividual?='individual' 'flow' (ambiguity) subsetting+=FeatureChainName
 	 *     isIndividual?='individual' 'interface' (ambiguity) subsetting+=FeatureChainName
+	 *     isIndividual?='individual' 'item' (ambiguity) subsetting+=FeatureChainName
 	 *     isIndividual?='individual' 'part' (ambiguity) subsetting+=FeatureChainName
 	 *     isIndividual?='individual' 'port'? (ambiguity) subsetting+=FeatureChainName
-	 *     isIndividual?='individual' (ambiguity) subsetting+=FeatureChainName
 	 *     isNonunique?='nonunique' (ambiguity) subsetting+=FeatureChainName
 	 *     isOrdered?='ordered' (ambiguity) subsetting+=FeatureChainName
 	 *     isReadOnly?='readonly' 'connection' (ambiguity) subsetting+=FeatureChainName
+	 *     isReadOnly?='readonly' 'enum' (ambiguity) subsetting+=FeatureChainName
 	 *     isReadOnly?='readonly' 'flow' (ambiguity) subsetting+=FeatureChainName
 	 *     isReadOnly?='readonly' 'interface' (ambiguity) subsetting+=FeatureChainName
+	 *     isReadOnly?='readonly' 'item' (ambiguity) subsetting+=FeatureChainName
 	 *     isReadOnly?='readonly' 'part' (ambiguity) subsetting+=FeatureChainName
 	 *     isReadOnly?='readonly' 'port'? (ambiguity) subsetting+=FeatureChainName
-	 *     isReadOnly?='readonly' (ambiguity) subsetting+=FeatureChainName
 	 *     isReference?='ref' 'connection' (ambiguity) subsetting+=FeatureChainName
+	 *     isReference?='ref' 'enum' (ambiguity) subsetting+=FeatureChainName
 	 *     isReference?='ref' 'flow' (ambiguity) subsetting+=FeatureChainName
 	 *     isReference?='ref' 'interface' (ambiguity) subsetting+=FeatureChainName
+	 *     isReference?='ref' 'item' (ambiguity) subsetting+=FeatureChainName
 	 *     isReference?='ref' 'part' (ambiguity) subsetting+=FeatureChainName
 	 *     isReference?='ref' 'port'? (ambiguity) subsetting+=FeatureChainName
-	 *     isReference?='ref' (ambiguity) subsetting+=FeatureChainName
 	 *     isVariation?='variation' 'connection' (ambiguity) subsetting+=FeatureChainName
+	 *     isVariation?='variation' 'enum' (ambiguity) subsetting+=FeatureChainName
 	 *     isVariation?='variation' 'flow' (ambiguity) subsetting+=FeatureChainName
 	 *     isVariation?='variation' 'interface' (ambiguity) subsetting+=FeatureChainName
+	 *     isVariation?='variation' 'item' (ambiguity) subsetting+=FeatureChainName
 	 *     isVariation?='variation' 'part' (ambiguity) subsetting+=FeatureChainName
 	 *     isVariation?='variation' 'port'? (ambiguity) subsetting+=FeatureChainName
-	 *     isVariation?='variation' (ambiguity) subsetting+=FeatureChainName
 	 *     portionKind=PortionKind 'connection' (ambiguity) subsetting+=FeatureChainName
 	 *     portionKind=PortionKind 'flow' (ambiguity) subsetting+=FeatureChainName
 	 *     portionKind=PortionKind 'interface' (ambiguity) subsetting+=FeatureChainName
+	 *     portionKind=PortionKind 'item' (ambiguity) subsetting+=FeatureChainName
 	 *     portionKind=PortionKind 'part' (ambiguity) subsetting+=FeatureChainName
 	 *     portionKind=PortionKind 'port'? (ambiguity) subsetting+=FeatureChainName
-	 *     portionKind=PortionKind (ambiguity) subsetting+=FeatureChainName
 	 *     redefinitions+=FeatureChainName (ambiguity) subsetting+=FeatureChainName
 	 *     references+=FeatureChainName (ambiguity) subsetting+=FeatureChainName
 	 *     subsetting+=FeatureChainName (ambiguity) subsetting+=FeatureChainName
 	 *     typings+=FeatureChainName (ambiguity) subsetting+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'attribute' (ambiguity) subsetting+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'connection' (ambiguity) subsetting+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'flow' (ambiguity) subsetting+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'interface' (ambiguity) subsetting+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'item' (ambiguity) subsetting+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'part' (ambiguity) subsetting+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'port'? (ambiguity) subsetting+=FeatureChainName
 	 
 	 * </pre>
 	 */
@@ -552,75 +813,90 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'attribute' (ambiguity) typings+=FeatureChainName
 	 *     (rule start) 'connection' (ambiguity) typings+=FeatureChainName
+	 *     (rule start) 'enum' (ambiguity) typings+=FeatureChainName
+	 *     (rule start) 'enum'? (ambiguity) typings+=FeatureChainName
 	 *     (rule start) 'flow' (ambiguity) typings+=FeatureChainName
 	 *     (rule start) 'interface' (ambiguity) typings+=FeatureChainName
 	 *     (rule start) 'item' (ambiguity) typings+=FeatureChainName
 	 *     (rule start) 'part' (ambiguity) typings+=FeatureChainName
 	 *     (rule start) 'port'? (ambiguity) typings+=FeatureChainName
-	 *     (rule start) (ambiguity) typings+=FeatureChainName
-	 *     Multiplicity+=DECIMAL_VALUE ']' (ambiguity) typings+=FeatureChainName
+	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) typings+=FeatureChainName
 	 *     crosses+=FeatureChainName (ambiguity) typings+=FeatureChainName
 	 *     declaredName=Name (ambiguity) typings+=FeatureChainName
 	 *     direction=FeatureDirection 'connection' (ambiguity) typings+=FeatureChainName
+	 *     direction=FeatureDirection 'enum' (ambiguity) typings+=FeatureChainName
 	 *     direction=FeatureDirection 'flow' (ambiguity) typings+=FeatureChainName
 	 *     direction=FeatureDirection 'interface' (ambiguity) typings+=FeatureChainName
+	 *     direction=FeatureDirection 'item' (ambiguity) typings+=FeatureChainName
 	 *     direction=FeatureDirection 'part' (ambiguity) typings+=FeatureChainName
 	 *     direction=FeatureDirection 'port'? (ambiguity) typings+=FeatureChainName
-	 *     direction=FeatureDirection (ambiguity) typings+=FeatureChainName
 	 *     isAbstract?='abstract' 'connection' (ambiguity) typings+=FeatureChainName
+	 *     isAbstract?='abstract' 'enum' (ambiguity) typings+=FeatureChainName
 	 *     isAbstract?='abstract' 'flow' (ambiguity) typings+=FeatureChainName
 	 *     isAbstract?='abstract' 'interface' (ambiguity) typings+=FeatureChainName
+	 *     isAbstract?='abstract' 'item' (ambiguity) typings+=FeatureChainName
 	 *     isAbstract?='abstract' 'part' (ambiguity) typings+=FeatureChainName
 	 *     isAbstract?='abstract' 'port'? (ambiguity) typings+=FeatureChainName
-	 *     isAbstract?='abstract' (ambiguity) typings+=FeatureChainName
 	 *     isDerived?='derived' 'connection' (ambiguity) typings+=FeatureChainName
+	 *     isDerived?='derived' 'enum' (ambiguity) typings+=FeatureChainName
 	 *     isDerived?='derived' 'flow' (ambiguity) typings+=FeatureChainName
 	 *     isDerived?='derived' 'interface' (ambiguity) typings+=FeatureChainName
+	 *     isDerived?='derived' 'item' (ambiguity) typings+=FeatureChainName
 	 *     isDerived?='derived' 'part' (ambiguity) typings+=FeatureChainName
 	 *     isDerived?='derived' 'port'? (ambiguity) typings+=FeatureChainName
-	 *     isDerived?='derived' (ambiguity) typings+=FeatureChainName
 	 *     isEnd?='end' 'connection' (ambiguity) typings+=FeatureChainName
+	 *     isEnd?='end' 'enum' (ambiguity) typings+=FeatureChainName
 	 *     isEnd?='end' 'flow' (ambiguity) typings+=FeatureChainName
 	 *     isEnd?='end' 'interface' (ambiguity) typings+=FeatureChainName
+	 *     isEnd?='end' 'item' (ambiguity) typings+=FeatureChainName
 	 *     isEnd?='end' 'part' (ambiguity) typings+=FeatureChainName
 	 *     isEnd?='end' 'port'? (ambiguity) typings+=FeatureChainName
-	 *     isEnd?='end' (ambiguity) typings+=FeatureChainName
 	 *     isIndividual?='individual' 'connection' (ambiguity) typings+=FeatureChainName
 	 *     isIndividual?='individual' 'flow' (ambiguity) typings+=FeatureChainName
 	 *     isIndividual?='individual' 'interface' (ambiguity) typings+=FeatureChainName
+	 *     isIndividual?='individual' 'item' (ambiguity) typings+=FeatureChainName
 	 *     isIndividual?='individual' 'part' (ambiguity) typings+=FeatureChainName
 	 *     isIndividual?='individual' 'port'? (ambiguity) typings+=FeatureChainName
-	 *     isIndividual?='individual' (ambiguity) typings+=FeatureChainName
 	 *     isNonunique?='nonunique' (ambiguity) typings+=FeatureChainName
 	 *     isOrdered?='ordered' (ambiguity) typings+=FeatureChainName
 	 *     isReadOnly?='readonly' 'connection' (ambiguity) typings+=FeatureChainName
+	 *     isReadOnly?='readonly' 'enum' (ambiguity) typings+=FeatureChainName
 	 *     isReadOnly?='readonly' 'flow' (ambiguity) typings+=FeatureChainName
 	 *     isReadOnly?='readonly' 'interface' (ambiguity) typings+=FeatureChainName
+	 *     isReadOnly?='readonly' 'item' (ambiguity) typings+=FeatureChainName
 	 *     isReadOnly?='readonly' 'part' (ambiguity) typings+=FeatureChainName
 	 *     isReadOnly?='readonly' 'port'? (ambiguity) typings+=FeatureChainName
-	 *     isReadOnly?='readonly' (ambiguity) typings+=FeatureChainName
 	 *     isReference?='ref' 'connection' (ambiguity) typings+=FeatureChainName
+	 *     isReference?='ref' 'enum' (ambiguity) typings+=FeatureChainName
 	 *     isReference?='ref' 'flow' (ambiguity) typings+=FeatureChainName
 	 *     isReference?='ref' 'interface' (ambiguity) typings+=FeatureChainName
+	 *     isReference?='ref' 'item' (ambiguity) typings+=FeatureChainName
 	 *     isReference?='ref' 'part' (ambiguity) typings+=FeatureChainName
 	 *     isReference?='ref' 'port'? (ambiguity) typings+=FeatureChainName
-	 *     isReference?='ref' (ambiguity) typings+=FeatureChainName
 	 *     isVariation?='variation' 'connection' (ambiguity) typings+=FeatureChainName
+	 *     isVariation?='variation' 'enum' (ambiguity) typings+=FeatureChainName
 	 *     isVariation?='variation' 'flow' (ambiguity) typings+=FeatureChainName
 	 *     isVariation?='variation' 'interface' (ambiguity) typings+=FeatureChainName
+	 *     isVariation?='variation' 'item' (ambiguity) typings+=FeatureChainName
 	 *     isVariation?='variation' 'part' (ambiguity) typings+=FeatureChainName
 	 *     isVariation?='variation' 'port'? (ambiguity) typings+=FeatureChainName
-	 *     isVariation?='variation' (ambiguity) typings+=FeatureChainName
 	 *     portionKind=PortionKind 'connection' (ambiguity) typings+=FeatureChainName
 	 *     portionKind=PortionKind 'flow' (ambiguity) typings+=FeatureChainName
 	 *     portionKind=PortionKind 'interface' (ambiguity) typings+=FeatureChainName
+	 *     portionKind=PortionKind 'item' (ambiguity) typings+=FeatureChainName
 	 *     portionKind=PortionKind 'part' (ambiguity) typings+=FeatureChainName
 	 *     portionKind=PortionKind 'port'? (ambiguity) typings+=FeatureChainName
-	 *     portionKind=PortionKind (ambiguity) typings+=FeatureChainName
 	 *     redefinitions+=FeatureChainName (ambiguity) typings+=FeatureChainName
 	 *     references+=FeatureChainName (ambiguity) typings+=FeatureChainName
 	 *     subsetting+=FeatureChainName (ambiguity) typings+=FeatureChainName
 	 *     typings+=FeatureChainName (ambiguity) typings+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'attribute' (ambiguity) typings+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'connection' (ambiguity) typings+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'flow' (ambiguity) typings+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'interface' (ambiguity) typings+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'item' (ambiguity) typings+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'part' (ambiguity) typings+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'port'? (ambiguity) typings+=FeatureChainName
 	 
 	 * </pre>
 	 */
@@ -636,75 +912,90 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'attribute' (ambiguity) crosses+=FeatureChainName
 	 *     (rule start) 'connection' (ambiguity) crosses+=FeatureChainName
+	 *     (rule start) 'enum' (ambiguity) crosses+=FeatureChainName
+	 *     (rule start) 'enum'? (ambiguity) crosses+=FeatureChainName
 	 *     (rule start) 'flow' (ambiguity) crosses+=FeatureChainName
 	 *     (rule start) 'interface' (ambiguity) crosses+=FeatureChainName
 	 *     (rule start) 'item' (ambiguity) crosses+=FeatureChainName
 	 *     (rule start) 'part' (ambiguity) crosses+=FeatureChainName
 	 *     (rule start) 'port'? (ambiguity) crosses+=FeatureChainName
-	 *     (rule start) (ambiguity) crosses+=FeatureChainName
-	 *     Multiplicity+=DECIMAL_VALUE ']' (ambiguity) crosses+=FeatureChainName
+	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) crosses+=FeatureChainName
 	 *     crosses+=FeatureChainName (ambiguity) crosses+=FeatureChainName
 	 *     declaredName=Name (ambiguity) crosses+=FeatureChainName
 	 *     direction=FeatureDirection 'connection' (ambiguity) crosses+=FeatureChainName
+	 *     direction=FeatureDirection 'enum' (ambiguity) crosses+=FeatureChainName
 	 *     direction=FeatureDirection 'flow' (ambiguity) crosses+=FeatureChainName
 	 *     direction=FeatureDirection 'interface' (ambiguity) crosses+=FeatureChainName
+	 *     direction=FeatureDirection 'item' (ambiguity) crosses+=FeatureChainName
 	 *     direction=FeatureDirection 'part' (ambiguity) crosses+=FeatureChainName
 	 *     direction=FeatureDirection 'port'? (ambiguity) crosses+=FeatureChainName
-	 *     direction=FeatureDirection (ambiguity) crosses+=FeatureChainName
 	 *     isAbstract?='abstract' 'connection' (ambiguity) crosses+=FeatureChainName
+	 *     isAbstract?='abstract' 'enum' (ambiguity) crosses+=FeatureChainName
 	 *     isAbstract?='abstract' 'flow' (ambiguity) crosses+=FeatureChainName
 	 *     isAbstract?='abstract' 'interface' (ambiguity) crosses+=FeatureChainName
+	 *     isAbstract?='abstract' 'item' (ambiguity) crosses+=FeatureChainName
 	 *     isAbstract?='abstract' 'part' (ambiguity) crosses+=FeatureChainName
 	 *     isAbstract?='abstract' 'port'? (ambiguity) crosses+=FeatureChainName
-	 *     isAbstract?='abstract' (ambiguity) crosses+=FeatureChainName
 	 *     isDerived?='derived' 'connection' (ambiguity) crosses+=FeatureChainName
+	 *     isDerived?='derived' 'enum' (ambiguity) crosses+=FeatureChainName
 	 *     isDerived?='derived' 'flow' (ambiguity) crosses+=FeatureChainName
 	 *     isDerived?='derived' 'interface' (ambiguity) crosses+=FeatureChainName
+	 *     isDerived?='derived' 'item' (ambiguity) crosses+=FeatureChainName
 	 *     isDerived?='derived' 'part' (ambiguity) crosses+=FeatureChainName
 	 *     isDerived?='derived' 'port'? (ambiguity) crosses+=FeatureChainName
-	 *     isDerived?='derived' (ambiguity) crosses+=FeatureChainName
 	 *     isEnd?='end' 'connection' (ambiguity) crosses+=FeatureChainName
+	 *     isEnd?='end' 'enum' (ambiguity) crosses+=FeatureChainName
 	 *     isEnd?='end' 'flow' (ambiguity) crosses+=FeatureChainName
 	 *     isEnd?='end' 'interface' (ambiguity) crosses+=FeatureChainName
+	 *     isEnd?='end' 'item' (ambiguity) crosses+=FeatureChainName
 	 *     isEnd?='end' 'part' (ambiguity) crosses+=FeatureChainName
 	 *     isEnd?='end' 'port'? (ambiguity) crosses+=FeatureChainName
-	 *     isEnd?='end' (ambiguity) crosses+=FeatureChainName
 	 *     isIndividual?='individual' 'connection' (ambiguity) crosses+=FeatureChainName
 	 *     isIndividual?='individual' 'flow' (ambiguity) crosses+=FeatureChainName
 	 *     isIndividual?='individual' 'interface' (ambiguity) crosses+=FeatureChainName
+	 *     isIndividual?='individual' 'item' (ambiguity) crosses+=FeatureChainName
 	 *     isIndividual?='individual' 'part' (ambiguity) crosses+=FeatureChainName
 	 *     isIndividual?='individual' 'port'? (ambiguity) crosses+=FeatureChainName
-	 *     isIndividual?='individual' (ambiguity) crosses+=FeatureChainName
 	 *     isNonunique?='nonunique' (ambiguity) crosses+=FeatureChainName
 	 *     isOrdered?='ordered' (ambiguity) crosses+=FeatureChainName
 	 *     isReadOnly?='readonly' 'connection' (ambiguity) crosses+=FeatureChainName
+	 *     isReadOnly?='readonly' 'enum' (ambiguity) crosses+=FeatureChainName
 	 *     isReadOnly?='readonly' 'flow' (ambiguity) crosses+=FeatureChainName
 	 *     isReadOnly?='readonly' 'interface' (ambiguity) crosses+=FeatureChainName
+	 *     isReadOnly?='readonly' 'item' (ambiguity) crosses+=FeatureChainName
 	 *     isReadOnly?='readonly' 'part' (ambiguity) crosses+=FeatureChainName
 	 *     isReadOnly?='readonly' 'port'? (ambiguity) crosses+=FeatureChainName
-	 *     isReadOnly?='readonly' (ambiguity) crosses+=FeatureChainName
 	 *     isReference?='ref' 'connection' (ambiguity) crosses+=FeatureChainName
+	 *     isReference?='ref' 'enum' (ambiguity) crosses+=FeatureChainName
 	 *     isReference?='ref' 'flow' (ambiguity) crosses+=FeatureChainName
 	 *     isReference?='ref' 'interface' (ambiguity) crosses+=FeatureChainName
+	 *     isReference?='ref' 'item' (ambiguity) crosses+=FeatureChainName
 	 *     isReference?='ref' 'part' (ambiguity) crosses+=FeatureChainName
 	 *     isReference?='ref' 'port'? (ambiguity) crosses+=FeatureChainName
-	 *     isReference?='ref' (ambiguity) crosses+=FeatureChainName
 	 *     isVariation?='variation' 'connection' (ambiguity) crosses+=FeatureChainName
+	 *     isVariation?='variation' 'enum' (ambiguity) crosses+=FeatureChainName
 	 *     isVariation?='variation' 'flow' (ambiguity) crosses+=FeatureChainName
 	 *     isVariation?='variation' 'interface' (ambiguity) crosses+=FeatureChainName
+	 *     isVariation?='variation' 'item' (ambiguity) crosses+=FeatureChainName
 	 *     isVariation?='variation' 'part' (ambiguity) crosses+=FeatureChainName
 	 *     isVariation?='variation' 'port'? (ambiguity) crosses+=FeatureChainName
-	 *     isVariation?='variation' (ambiguity) crosses+=FeatureChainName
 	 *     portionKind=PortionKind 'connection' (ambiguity) crosses+=FeatureChainName
 	 *     portionKind=PortionKind 'flow' (ambiguity) crosses+=FeatureChainName
 	 *     portionKind=PortionKind 'interface' (ambiguity) crosses+=FeatureChainName
+	 *     portionKind=PortionKind 'item' (ambiguity) crosses+=FeatureChainName
 	 *     portionKind=PortionKind 'part' (ambiguity) crosses+=FeatureChainName
 	 *     portionKind=PortionKind 'port'? (ambiguity) crosses+=FeatureChainName
-	 *     portionKind=PortionKind (ambiguity) crosses+=FeatureChainName
 	 *     redefinitions+=FeatureChainName (ambiguity) crosses+=FeatureChainName
 	 *     references+=FeatureChainName (ambiguity) crosses+=FeatureChainName
 	 *     subsetting+=FeatureChainName (ambiguity) crosses+=FeatureChainName
 	 *     typings+=FeatureChainName (ambiguity) crosses+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'attribute' (ambiguity) crosses+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'connection' (ambiguity) crosses+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'flow' (ambiguity) crosses+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'interface' (ambiguity) crosses+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'item' (ambiguity) crosses+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'part' (ambiguity) crosses+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'port'? (ambiguity) crosses+=FeatureChainName
 	 
 	 * </pre>
 	 */
@@ -734,11 +1025,15 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'flow' 'def' (ambiguity) (rule start)
 	 *     declaredName=Name (ambiguity) (rule end)
+	 *     isAbstract?='abstract' 'flow' 'def' (ambiguity) (rule end)
+	 *     isIndividual?='individual' 'flow' 'def' (ambiguity) (rule end)
+	 *     isVariation?='variation' 'flow' 'def' (ambiguity) (rule end)
 	 *     superclassifiers+=FeatureChainName (ambiguity) (rule end)
+	 *     visibility=VisibilityIndicator 'flow' 'def' (ambiguity) (rule end)
 	 
 	 * </pre>
 	 */
-	protected void emit_FlowConnectionDefinition_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_FlowConnectionDefinition_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -750,7 +1045,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'flow' (ambiguity) FlowEnd+=FeatureChainName
 	 *     ItemFeature+=Name (ambiguity) FlowEnd+=FeatureChainName
-	 *     Multiplicity+=DECIMAL_VALUE ']' (ambiguity) FlowEnd+=FeatureChainName
+	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) FlowEnd+=FeatureChainName
 	 *     crosses+=FeatureChainName (ambiguity) FlowEnd+=FeatureChainName
 	 *     declaredName=Name (ambiguity) FlowEnd+=FeatureChainName
 	 *     direction=FeatureDirection 'flow' (ambiguity) FlowEnd+=FeatureChainName
@@ -769,10 +1064,11 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     subsetting+=FeatureChainName (ambiguity) FlowEnd+=FeatureChainName
 	 *     typings+=FeatureChainName (ambiguity) FlowEnd+=FeatureChainName
 	 *     valuePart+=Expression (ambiguity) FlowEnd+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'flow' (ambiguity) FlowEnd+=FeatureChainName
 	 
 	 * </pre>
 	 */
-	protected void emit_FlowConnectionUsage_FromKeyword_5_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_FlowConnectionUsage_FromKeyword_6_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -785,7 +1081,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) 'flow' (ambiguity) (rule start)
 	 *     FlowEnd+=FeatureChainName (ambiguity) (rule end)
 	 *     ItemFeature+=Name (ambiguity) (rule end)
-	 *     Multiplicity+=DECIMAL_VALUE ']' (ambiguity) (rule end)
+	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     direction=FeatureDirection 'flow' (ambiguity) (rule end)
@@ -804,10 +1100,11 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureChainName (ambiguity) (rule end)
 	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     visibility=VisibilityIndicator 'flow' (ambiguity) (rule end)
 	 
 	 * </pre>
 	 */
-	protected void emit_FlowConnectionUsage_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_FlowConnectionUsage_SemicolonKeyword_7_0_or___LeftCurlyBracketKeyword_7_1_0_RightCurlyBracketKeyword_7_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -819,11 +1116,50 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'interface' 'def' (ambiguity) (rule start)
 	 *     declaredName=Name (ambiguity) (rule end)
+	 *     isAbstract?='abstract' 'interface' 'def' (ambiguity) (rule end)
+	 *     isIndividual?='individual' 'interface' 'def' (ambiguity) (rule end)
+	 *     isVariation?='variation' 'interface' 'def' (ambiguity) (rule end)
 	 *     superclassifiers+=FeatureChainName (ambiguity) (rule end)
+	 *     visibility=VisibilityIndicator 'interface' 'def' (ambiguity) (rule end)
 	 
 	 * </pre>
 	 */
-	protected void emit_InterfaceDefinition_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_InterfaceDefinition_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     'connect'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'interface' (ambiguity) '(' InterfaceEnd+=FeatureChainName
+	 *     (rule start) 'interface' (ambiguity) InterfaceEnd+=FeatureChainName
+	 *     direction=FeatureDirection 'interface' (ambiguity) '(' InterfaceEnd+=FeatureChainName
+	 *     direction=FeatureDirection 'interface' (ambiguity) InterfaceEnd+=FeatureChainName
+	 *     isAbstract?='abstract' 'interface' (ambiguity) '(' InterfaceEnd+=FeatureChainName
+	 *     isAbstract?='abstract' 'interface' (ambiguity) InterfaceEnd+=FeatureChainName
+	 *     isDerived?='derived' 'interface' (ambiguity) '(' InterfaceEnd+=FeatureChainName
+	 *     isDerived?='derived' 'interface' (ambiguity) InterfaceEnd+=FeatureChainName
+	 *     isEnd?='end' 'interface' (ambiguity) '(' InterfaceEnd+=FeatureChainName
+	 *     isEnd?='end' 'interface' (ambiguity) InterfaceEnd+=FeatureChainName
+	 *     isIndividual?='individual' 'interface' (ambiguity) '(' InterfaceEnd+=FeatureChainName
+	 *     isIndividual?='individual' 'interface' (ambiguity) InterfaceEnd+=FeatureChainName
+	 *     isReadOnly?='readonly' 'interface' (ambiguity) '(' InterfaceEnd+=FeatureChainName
+	 *     isReadOnly?='readonly' 'interface' (ambiguity) InterfaceEnd+=FeatureChainName
+	 *     isReference?='ref' 'interface' (ambiguity) '(' InterfaceEnd+=FeatureChainName
+	 *     isReference?='ref' 'interface' (ambiguity) InterfaceEnd+=FeatureChainName
+	 *     isVariation?='variation' 'interface' (ambiguity) '(' InterfaceEnd+=FeatureChainName
+	 *     isVariation?='variation' 'interface' (ambiguity) InterfaceEnd+=FeatureChainName
+	 *     portionKind=PortionKind 'interface' (ambiguity) '(' InterfaceEnd+=FeatureChainName
+	 *     portionKind=PortionKind 'interface' (ambiguity) InterfaceEnd+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'interface' (ambiguity) '(' InterfaceEnd+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'interface' (ambiguity) InterfaceEnd+=FeatureChainName
+	 
+	 * </pre>
+	 */
+	protected void emit_InterfaceUsage_ConnectKeyword_3_0_1_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -836,7 +1172,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) 'interface' (ambiguity) (rule start)
 	 *     InterfaceEnd+=FeatureChainName ')' (ambiguity) (rule end)
 	 *     InterfaceEnd+=FeatureChainName (ambiguity) (rule end)
-	 *     Multiplicity+=DECIMAL_VALUE ']' (ambiguity) (rule end)
+	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     direction=FeatureDirection 'interface' (ambiguity) (rule end)
@@ -854,10 +1190,11 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureChainName (ambiguity) (rule end)
+	 *     visibility=VisibilityIndicator 'interface' (ambiguity) (rule end)
 	 
 	 * </pre>
 	 */
-	protected void emit_InterfaceUsage_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_InterfaceUsage_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -869,11 +1206,15 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'item' 'def' (ambiguity) (rule start)
 	 *     declaredName=Name (ambiguity) (rule end)
+	 *     isAbstract?='abstract' 'item' 'def' (ambiguity) (rule end)
+	 *     isIndividual?='individual' 'item' 'def' (ambiguity) (rule end)
+	 *     isVariation?='variation' 'item' 'def' (ambiguity) (rule end)
 	 *     superclassifiers+=FeatureChainName (ambiguity) (rule end)
+	 *     visibility=VisibilityIndicator 'item' 'def' (ambiguity) (rule end)
 	 
 	 * </pre>
 	 */
-	protected void emit_ItemDefinition_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_ItemDefinition_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -884,20 +1225,44 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'item' (ambiguity) (rule start)
-	 *     Multiplicity+=DECIMAL_VALUE ']' (ambiguity) (rule end)
+	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
+	 *     direction=FeatureDirection 'item' (ambiguity) (rule end)
+	 *     isAbstract?='abstract' 'item' (ambiguity) (rule end)
+	 *     isDerived?='derived' 'item' (ambiguity) (rule end)
+	 *     isEnd?='end' 'item' (ambiguity) (rule end)
+	 *     isIndividual?='individual' 'item' (ambiguity) (rule end)
 	 *     isNonunique?='nonunique' (ambiguity) (rule end)
 	 *     isOrdered?='ordered' (ambiguity) (rule end)
+	 *     isReadOnly?='readonly' 'item' (ambiguity) (rule end)
+	 *     isReference?='ref' 'item' (ambiguity) (rule end)
+	 *     isVariation?='variation' 'item' (ambiguity) (rule end)
+	 *     portionKind=PortionKind 'item' (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureChainName (ambiguity) (rule end)
 	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     visibility=VisibilityIndicator 'item' (ambiguity) (rule end)
 	 
 	 * </pre>
 	 */
-	protected void emit_ItemUsage_SemicolonKeyword_2_0_or___LeftCurlyBracketKeyword_2_1_0_RightCurlyBracketKeyword_2_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_ItemUsage_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     '*'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     declaredName=QualifiedName (ambiguity) ';' (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_MembershipImport_AsteriskKeyword_4_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -911,7 +1276,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 
 	 * </pre>
 	 */
-	protected void emit_NamespaceImport_AsteriskKeyword_4_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_NamespaceImport_AsteriskKeyword_5_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -923,11 +1288,15 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'part' 'def' (ambiguity) (rule start)
 	 *     declaredName=Name (ambiguity) (rule end)
+	 *     isAbstract?='abstract' 'part' 'def' (ambiguity) (rule end)
+	 *     isIndividual?='individual' 'part' 'def' (ambiguity) (rule end)
+	 *     isVariation?='variation' 'part' 'def' (ambiguity) (rule end)
 	 *     superclassifiers+=FeatureChainName (ambiguity) (rule end)
+	 *     visibility=VisibilityIndicator 'part' 'def' (ambiguity) (rule end)
 	 
 	 * </pre>
 	 */
-	protected void emit_PartDefinition_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_PartDefinition_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -938,7 +1307,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'part' (ambiguity) (rule start)
-	 *     Multiplicity+=DECIMAL_VALUE ']' (ambiguity) (rule end)
+	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     direction=FeatureDirection 'part' (ambiguity) (rule end)
@@ -957,10 +1326,11 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureChainName (ambiguity) (rule end)
 	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     visibility=VisibilityIndicator 'part' (ambiguity) (rule end)
 	 
 	 * </pre>
 	 */
-	protected void emit_PartUsage_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_PartUsage_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -972,11 +1342,14 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'port' 'def' (ambiguity) (rule start)
 	 *     declaredName=Name (ambiguity) (rule end)
+	 *     isAbstract?='abstract' 'port' 'def' (ambiguity) (rule end)
+	 *     isVariation?='variation' 'port' 'def' (ambiguity) (rule end)
 	 *     superclassifiers+=FeatureChainName (ambiguity) (rule end)
+	 *     visibility=VisibilityIndicator 'port' 'def' (ambiguity) (rule end)
 	 
 	 * </pre>
 	 */
-	protected void emit_PortDefinition_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_PortDefinition_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -987,8 +1360,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) '=' valuePart+=Expression
-	 *     (rule start) (ambiguity) '[' Multiplicity+=DECIMAL_VALUE
-	 *     (rule start) (ambiguity) '{' elements+=BaseElement
+	 *     (rule start) (ambiguity) '[' Multiplicity+=MultiplicityExpression
+	 *     (rule start) (ambiguity) '{' elements+=UsageBodyElement
 	 *     (rule start) (ambiguity) (':' | ('defined' 'by')) typings+=FeatureChainName
 	 *     (rule start) (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
 	 *     (rule start) (ambiguity) (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
@@ -1001,8 +1374,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) (ambiguity) isNonunique?='nonunique'
 	 *     (rule start) (ambiguity) isOrdered?='ordered'
 	 *     direction=FeatureDirection (ambiguity) '=' valuePart+=Expression
-	 *     direction=FeatureDirection (ambiguity) '[' Multiplicity+=DECIMAL_VALUE
-	 *     direction=FeatureDirection (ambiguity) '{' elements+=BaseElement
+	 *     direction=FeatureDirection (ambiguity) '[' Multiplicity+=MultiplicityExpression
+	 *     direction=FeatureDirection (ambiguity) '{' elements+=UsageBodyElement
 	 *     direction=FeatureDirection (ambiguity) (':' | ('defined' 'by')) typings+=FeatureChainName
 	 *     direction=FeatureDirection (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
 	 *     direction=FeatureDirection (ambiguity) (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
@@ -1015,8 +1388,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     direction=FeatureDirection (ambiguity) isNonunique?='nonunique'
 	 *     direction=FeatureDirection (ambiguity) isOrdered?='ordered'
 	 *     isAbstract?='abstract' (ambiguity) '=' valuePart+=Expression
-	 *     isAbstract?='abstract' (ambiguity) '[' Multiplicity+=DECIMAL_VALUE
-	 *     isAbstract?='abstract' (ambiguity) '{' elements+=BaseElement
+	 *     isAbstract?='abstract' (ambiguity) '[' Multiplicity+=MultiplicityExpression
+	 *     isAbstract?='abstract' (ambiguity) '{' elements+=UsageBodyElement
 	 *     isAbstract?='abstract' (ambiguity) (':' | ('defined' 'by')) typings+=FeatureChainName
 	 *     isAbstract?='abstract' (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
 	 *     isAbstract?='abstract' (ambiguity) (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
@@ -1029,8 +1402,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isAbstract?='abstract' (ambiguity) isNonunique?='nonunique'
 	 *     isAbstract?='abstract' (ambiguity) isOrdered?='ordered'
 	 *     isDerived?='derived' (ambiguity) '=' valuePart+=Expression
-	 *     isDerived?='derived' (ambiguity) '[' Multiplicity+=DECIMAL_VALUE
-	 *     isDerived?='derived' (ambiguity) '{' elements+=BaseElement
+	 *     isDerived?='derived' (ambiguity) '[' Multiplicity+=MultiplicityExpression
+	 *     isDerived?='derived' (ambiguity) '{' elements+=UsageBodyElement
 	 *     isDerived?='derived' (ambiguity) (':' | ('defined' 'by')) typings+=FeatureChainName
 	 *     isDerived?='derived' (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
 	 *     isDerived?='derived' (ambiguity) (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
@@ -1043,8 +1416,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isDerived?='derived' (ambiguity) isNonunique?='nonunique'
 	 *     isDerived?='derived' (ambiguity) isOrdered?='ordered'
 	 *     isEnd?='end' (ambiguity) '=' valuePart+=Expression
-	 *     isEnd?='end' (ambiguity) '[' Multiplicity+=DECIMAL_VALUE
-	 *     isEnd?='end' (ambiguity) '{' elements+=BaseElement
+	 *     isEnd?='end' (ambiguity) '[' Multiplicity+=MultiplicityExpression
+	 *     isEnd?='end' (ambiguity) '{' elements+=UsageBodyElement
 	 *     isEnd?='end' (ambiguity) (':' | ('defined' 'by')) typings+=FeatureChainName
 	 *     isEnd?='end' (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
 	 *     isEnd?='end' (ambiguity) (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
@@ -1057,8 +1430,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isEnd?='end' (ambiguity) isNonunique?='nonunique'
 	 *     isEnd?='end' (ambiguity) isOrdered?='ordered'
 	 *     isIndividual?='individual' (ambiguity) '=' valuePart+=Expression
-	 *     isIndividual?='individual' (ambiguity) '[' Multiplicity+=DECIMAL_VALUE
-	 *     isIndividual?='individual' (ambiguity) '{' elements+=BaseElement
+	 *     isIndividual?='individual' (ambiguity) '[' Multiplicity+=MultiplicityExpression
+	 *     isIndividual?='individual' (ambiguity) '{' elements+=UsageBodyElement
 	 *     isIndividual?='individual' (ambiguity) (':' | ('defined' 'by')) typings+=FeatureChainName
 	 *     isIndividual?='individual' (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
 	 *     isIndividual?='individual' (ambiguity) (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
@@ -1071,8 +1444,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isIndividual?='individual' (ambiguity) isNonunique?='nonunique'
 	 *     isIndividual?='individual' (ambiguity) isOrdered?='ordered'
 	 *     isReadOnly?='readonly' (ambiguity) '=' valuePart+=Expression
-	 *     isReadOnly?='readonly' (ambiguity) '[' Multiplicity+=DECIMAL_VALUE
-	 *     isReadOnly?='readonly' (ambiguity) '{' elements+=BaseElement
+	 *     isReadOnly?='readonly' (ambiguity) '[' Multiplicity+=MultiplicityExpression
+	 *     isReadOnly?='readonly' (ambiguity) '{' elements+=UsageBodyElement
 	 *     isReadOnly?='readonly' (ambiguity) (':' | ('defined' 'by')) typings+=FeatureChainName
 	 *     isReadOnly?='readonly' (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
 	 *     isReadOnly?='readonly' (ambiguity) (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
@@ -1085,8 +1458,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isReadOnly?='readonly' (ambiguity) isNonunique?='nonunique'
 	 *     isReadOnly?='readonly' (ambiguity) isOrdered?='ordered'
 	 *     isReference?='ref' (ambiguity) '=' valuePart+=Expression
-	 *     isReference?='ref' (ambiguity) '[' Multiplicity+=DECIMAL_VALUE
-	 *     isReference?='ref' (ambiguity) '{' elements+=BaseElement
+	 *     isReference?='ref' (ambiguity) '[' Multiplicity+=MultiplicityExpression
+	 *     isReference?='ref' (ambiguity) '{' elements+=UsageBodyElement
 	 *     isReference?='ref' (ambiguity) (':' | ('defined' 'by')) typings+=FeatureChainName
 	 *     isReference?='ref' (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
 	 *     isReference?='ref' (ambiguity) (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
@@ -1099,8 +1472,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isReference?='ref' (ambiguity) isNonunique?='nonunique'
 	 *     isReference?='ref' (ambiguity) isOrdered?='ordered'
 	 *     isVariation?='variation' (ambiguity) '=' valuePart+=Expression
-	 *     isVariation?='variation' (ambiguity) '[' Multiplicity+=DECIMAL_VALUE
-	 *     isVariation?='variation' (ambiguity) '{' elements+=BaseElement
+	 *     isVariation?='variation' (ambiguity) '[' Multiplicity+=MultiplicityExpression
+	 *     isVariation?='variation' (ambiguity) '{' elements+=UsageBodyElement
 	 *     isVariation?='variation' (ambiguity) (':' | ('defined' 'by')) typings+=FeatureChainName
 	 *     isVariation?='variation' (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
 	 *     isVariation?='variation' (ambiguity) (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
@@ -1113,8 +1486,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariation?='variation' (ambiguity) isNonunique?='nonunique'
 	 *     isVariation?='variation' (ambiguity) isOrdered?='ordered'
 	 *     portionKind=PortionKind (ambiguity) '=' valuePart+=Expression
-	 *     portionKind=PortionKind (ambiguity) '[' Multiplicity+=DECIMAL_VALUE
-	 *     portionKind=PortionKind (ambiguity) '{' elements+=BaseElement
+	 *     portionKind=PortionKind (ambiguity) '[' Multiplicity+=MultiplicityExpression
+	 *     portionKind=PortionKind (ambiguity) '{' elements+=UsageBodyElement
 	 *     portionKind=PortionKind (ambiguity) (':' | ('defined' 'by')) typings+=FeatureChainName
 	 *     portionKind=PortionKind (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
 	 *     portionKind=PortionKind (ambiguity) (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
@@ -1126,10 +1499,24 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     portionKind=PortionKind (ambiguity) isInitial?=':='
 	 *     portionKind=PortionKind (ambiguity) isNonunique?='nonunique'
 	 *     portionKind=PortionKind (ambiguity) isOrdered?='ordered'
+	 *     visibility=VisibilityIndicator (ambiguity) '=' valuePart+=Expression
+	 *     visibility=VisibilityIndicator (ambiguity) '[' Multiplicity+=MultiplicityExpression
+	 *     visibility=VisibilityIndicator (ambiguity) '{' elements+=UsageBodyElement
+	 *     visibility=VisibilityIndicator (ambiguity) (':' | ('defined' 'by')) typings+=FeatureChainName
+	 *     visibility=VisibilityIndicator (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
+	 *     visibility=VisibilityIndicator (ambiguity) (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
+	 *     visibility=VisibilityIndicator (ambiguity) (':&gt;&gt;' | 'redefines') redefinitions+=FeatureChainName
+	 *     visibility=VisibilityIndicator (ambiguity) (';' | ('{' '}')) (rule end)
+	 *     visibility=VisibilityIndicator (ambiguity) ('=&gt;' | 'crosses') crosses+=FeatureChainName
+	 *     visibility=VisibilityIndicator (ambiguity) declaredName=Name
+	 *     visibility=VisibilityIndicator (ambiguity) isDefault?='default'
+	 *     visibility=VisibilityIndicator (ambiguity) isInitial?=':='
+	 *     visibility=VisibilityIndicator (ambiguity) isNonunique?='nonunique'
+	 *     visibility=VisibilityIndicator (ambiguity) isOrdered?='ordered'
 	 
 	 * </pre>
 	 */
-	protected void emit_PortUsage_PortKeyword_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_PortUsage_PortKeyword_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -1140,7 +1527,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'port'? (ambiguity) (rule start)
-	 *     Multiplicity+=DECIMAL_VALUE ']' (ambiguity) (rule end)
+	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     direction=FeatureDirection 'port'? (ambiguity) (rule end)
@@ -1159,43 +1546,25 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureChainName (ambiguity) (rule end)
 	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     visibility=VisibilityIndicator 'port'? (ambiguity) (rule end)
 	 
 	 * </pre>
 	 */
-	protected void emit_PortUsage_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_PortUsage_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * <pre>
 	 * Ambiguous syntax:
-	 *     ';' | ('{' '}')
+	 *     'rep'?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) (rule start)
-	 *     Multiplicity+=DECIMAL_VALUE ']' (ambiguity) (rule end)
-	 *     crosses+=FeatureChainName (ambiguity) (rule end)
-	 *     declaredName=Name (ambiguity) (rule end)
-	 *     direction=FeatureDirection (ambiguity) (rule end)
-	 *     isAbstract?='abstract' (ambiguity) (rule end)
-	 *     isDerived?='derived' (ambiguity) (rule end)
-	 *     isEnd?='end' (ambiguity) (rule end)
-	 *     isIndividual?='individual' (ambiguity) (rule end)
-	 *     isNonunique?='nonunique' (ambiguity) (rule end)
-	 *     isOrdered?='ordered' (ambiguity) (rule end)
-	 *     isReadOnly?='readonly' (ambiguity) (rule end)
-	 *     isReference?='ref' (ambiguity) (rule end)
-	 *     isVariation?='variation' (ambiguity) (rule end)
-	 *     portionKind=PortionKind (ambiguity) (rule end)
-	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
-	 *     references+=FeatureChainName (ambiguity) (rule end)
-	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
-	 *     typings+=FeatureChainName (ambiguity) (rule end)
-	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     (rule start) (ambiguity) 'language' language=STRING_VALUE
 	 
 	 * </pre>
 	 */
-	protected void emit_ReferenceUsage_SemicolonKeyword_2_0_or___LeftCurlyBracketKeyword_2_1_0_RightCurlyBracketKeyword_2_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_TextualRepresentation_RepKeyword_0_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

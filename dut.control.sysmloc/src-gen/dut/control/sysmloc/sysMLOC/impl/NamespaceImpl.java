@@ -3,6 +3,7 @@
  */
 package dut.control.sysmloc.sysMLOC.impl;
 
+import dut.control.sysmloc.sysMLOC.CodeAnnotation;
 import dut.control.sysmloc.sysMLOC.Namespace;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 
@@ -28,6 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.NamespaceImpl#getIntro <em>Intro</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.NamespaceImpl#getPackages <em>Packages</em>}</li>
  * </ul>
  *
@@ -35,6 +37,16 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class NamespaceImpl extends MinimalEObjectImpl.Container implements Namespace
 {
+  /**
+   * The cached value of the '{@link #getIntro() <em>Intro</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getIntro()
+   * @generated
+   * @ordered
+   */
+  protected EList<CodeAnnotation> intro;
+
   /**
    * The cached value of the '{@link #getPackages() <em>Packages</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -72,6 +84,21 @@ public class NamespaceImpl extends MinimalEObjectImpl.Container implements Names
    * @generated
    */
   @Override
+  public EList<CodeAnnotation> getIntro()
+  {
+    if (intro == null)
+    {
+      intro = new EObjectContainmentEList<CodeAnnotation>(CodeAnnotation.class, this, SysMLOCPackage.NAMESPACE__INTRO);
+    }
+    return intro;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<dut.control.sysmloc.sysMLOC.Package> getPackages()
   {
     if (packages == null)
@@ -91,6 +118,8 @@ public class NamespaceImpl extends MinimalEObjectImpl.Container implements Names
   {
     switch (featureID)
     {
+      case SysMLOCPackage.NAMESPACE__INTRO:
+        return ((InternalEList<?>)getIntro()).basicRemove(otherEnd, msgs);
       case SysMLOCPackage.NAMESPACE__PACKAGES:
         return ((InternalEList<?>)getPackages()).basicRemove(otherEnd, msgs);
     }
@@ -107,6 +136,8 @@ public class NamespaceImpl extends MinimalEObjectImpl.Container implements Names
   {
     switch (featureID)
     {
+      case SysMLOCPackage.NAMESPACE__INTRO:
+        return getIntro();
       case SysMLOCPackage.NAMESPACE__PACKAGES:
         return getPackages();
     }
@@ -124,6 +155,10 @@ public class NamespaceImpl extends MinimalEObjectImpl.Container implements Names
   {
     switch (featureID)
     {
+      case SysMLOCPackage.NAMESPACE__INTRO:
+        getIntro().clear();
+        getIntro().addAll((Collection<? extends CodeAnnotation>)newValue);
+        return;
       case SysMLOCPackage.NAMESPACE__PACKAGES:
         getPackages().clear();
         getPackages().addAll((Collection<? extends dut.control.sysmloc.sysMLOC.Package>)newValue);
@@ -142,6 +177,9 @@ public class NamespaceImpl extends MinimalEObjectImpl.Container implements Names
   {
     switch (featureID)
     {
+      case SysMLOCPackage.NAMESPACE__INTRO:
+        getIntro().clear();
+        return;
       case SysMLOCPackage.NAMESPACE__PACKAGES:
         getPackages().clear();
         return;
@@ -159,6 +197,8 @@ public class NamespaceImpl extends MinimalEObjectImpl.Container implements Names
   {
     switch (featureID)
     {
+      case SysMLOCPackage.NAMESPACE__INTRO:
+        return intro != null && !intro.isEmpty();
       case SysMLOCPackage.NAMESPACE__PACKAGES:
         return packages != null && !packages.isEmpty();
     }

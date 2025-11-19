@@ -14,6 +14,6 @@ package dut.control.sysmloc.sysMLOC;
  * @model
  * @generated
  */
-public interface PartUsage extends StructureUsageElement, OccurrenceUsagePrefix, BasicUsagePrefix, RefPrefix, Usage, UsageDeclaration, FeatureDeclaration, FeatureSpecializationPart, FeatureSpecialization, MultiplicityPart, FeatureValue
+public interface PartUsage extends StructureUsageElement, MemberPrefix, OccurrenceUsagePrefix, BasicUsagePrefix, RefPrefix, Usage, UsageDeclaration, FeatureDeclaration, FeatureSpecializationPart, FeatureSpecialization, MultiplicityPart, FeatureValue
 {
 } // PartUsage

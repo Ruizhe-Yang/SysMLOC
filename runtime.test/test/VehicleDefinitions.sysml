@@ -29,11 +29,11 @@ package VehicleDefinitions {
 	}
 	
 	/* PORT DEFINITIONS */
-	
+
 	port def DriveIF { 
 		in driveTorque :> ISQ::torque;
 	}
-	
+
 	port def AxleMountIF { 
 		out transferredTorque :> ISQ::torque;
 	}

@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface ActionUsage extends BehaviorUsageElement, OccurrenceUsagePrefix, BasicUsagePrefix, RefPrefix
+public interface ActionUsage extends BehaviorUsageElement, MemberPrefix, OccurrenceUsagePrefix, BasicUsagePrefix, RefPrefix
 {
   /**
    * Returns the value of the '<em><b>Declared Name</b></em>' attribute.
@@ -48,7 +48,7 @@ public interface ActionUsage extends BehaviorUsageElement, OccurrenceUsagePrefix
 
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
-   * The list contents are of type {@link dut.control.sysmloc.sysMLOC.BaseElement}.
+   * The list contents are of type {@link dut.control.sysmloc.sysMLOC.UsageBodyElement}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Elements</em>' containment reference list.
@@ -56,6 +56,6 @@ public interface ActionUsage extends BehaviorUsageElement, OccurrenceUsagePrefix
    * @model containment="true"
    * @generated
    */
-  EList<BaseElement> getElements();
+  EList<UsageBodyElement> getElements();
 
 } // ActionUsage

@@ -21,11 +21,11 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface PortDefinition extends DefinitionElement, DefinitionDeclaration
+public interface PortDefinition extends DefinitionElement, MemberPrefix, DefinitionPrefix, BasicDefinitionPrefix, DefinitionDeclaration
 {
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
-   * The list contents are of type {@link dut.control.sysmloc.sysMLOC.BaseElement}.
+   * The list contents are of type {@link dut.control.sysmloc.sysMLOC.DefinitionBodyElement}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Elements</em>' containment reference list.
@@ -33,6 +33,6 @@ public interface PortDefinition extends DefinitionElement, DefinitionDeclaration
    * @model containment="true"
    * @generated
    */
-  EList<BaseElement> getElements();
+  EList<DefinitionBodyElement> getElements();
 
 } // PortDefinition

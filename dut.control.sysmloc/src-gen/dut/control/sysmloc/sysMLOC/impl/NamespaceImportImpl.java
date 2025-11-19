@@ -6,6 +6,7 @@ package dut.control.sysmloc.sysMLOC.impl;
 import dut.control.sysmloc.sysMLOC.NamespaceImport;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 import dut.control.sysmloc.sysMLOC.VisibilityIndicator;
+import dut.control.sysmloc.sysMLOC.isImportAllFragment;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -21,6 +22,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.NamespaceImportImpl#isIsImportAll <em>Is Import All</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.NamespaceImportImpl#getVisibility <em>Visibility</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.NamespaceImportImpl#getDeclaredName <em>Declared Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.NamespaceImportImpl#isIsRecursive <em>Is Recursive</em>}</li>
@@ -30,6 +32,26 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class NamespaceImportImpl extends ImportElementImpl implements NamespaceImport
 {
+  /**
+   * The default value of the '{@link #isIsImportAll() <em>Is Import All</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsImportAll()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_IMPORT_ALL_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsImportAll() <em>Is Import All</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsImportAll()
+   * @generated
+   * @ordered
+   */
+  protected boolean isImportAll = IS_IMPORT_ALL_EDEFAULT;
+
   /**
    * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -117,6 +139,31 @@ public class NamespaceImportImpl extends ImportElementImpl implements NamespaceI
    * @generated
    */
   @Override
+  public boolean isIsImportAll()
+  {
+    return isImportAll;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsImportAll(boolean newIsImportAll)
+  {
+    boolean oldIsImportAll = isImportAll;
+    isImportAll = newIsImportAll;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.NAMESPACE_IMPORT__IS_IMPORT_ALL, oldIsImportAll, isImportAll));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public VisibilityIndicator getVisibility()
   {
     return visibility;
@@ -196,6 +243,8 @@ public class NamespaceImportImpl extends ImportElementImpl implements NamespaceI
   {
     switch (featureID)
     {
+      case SysMLOCPackage.NAMESPACE_IMPORT__IS_IMPORT_ALL:
+        return isIsImportAll();
       case SysMLOCPackage.NAMESPACE_IMPORT__VISIBILITY:
         return getVisibility();
       case SysMLOCPackage.NAMESPACE_IMPORT__DECLARED_NAME:
@@ -216,6 +265,9 @@ public class NamespaceImportImpl extends ImportElementImpl implements NamespaceI
   {
     switch (featureID)
     {
+      case SysMLOCPackage.NAMESPACE_IMPORT__IS_IMPORT_ALL:
+        setIsImportAll((Boolean)newValue);
+        return;
       case SysMLOCPackage.NAMESPACE_IMPORT__VISIBILITY:
         setVisibility((VisibilityIndicator)newValue);
         return;
@@ -239,6 +291,9 @@ public class NamespaceImportImpl extends ImportElementImpl implements NamespaceI
   {
     switch (featureID)
     {
+      case SysMLOCPackage.NAMESPACE_IMPORT__IS_IMPORT_ALL:
+        setIsImportAll(IS_IMPORT_ALL_EDEFAULT);
+        return;
       case SysMLOCPackage.NAMESPACE_IMPORT__VISIBILITY:
         setVisibility(VISIBILITY_EDEFAULT);
         return;
@@ -262,6 +317,8 @@ public class NamespaceImportImpl extends ImportElementImpl implements NamespaceI
   {
     switch (featureID)
     {
+      case SysMLOCPackage.NAMESPACE_IMPORT__IS_IMPORT_ALL:
+        return isImportAll != IS_IMPORT_ALL_EDEFAULT;
       case SysMLOCPackage.NAMESPACE_IMPORT__VISIBILITY:
         return visibility != VISIBILITY_EDEFAULT;
       case SysMLOCPackage.NAMESPACE_IMPORT__DECLARED_NAME:
@@ -278,12 +335,52 @@ public class NamespaceImportImpl extends ImportElementImpl implements NamespaceI
    * @generated
    */
   @Override
+  public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == isImportAllFragment.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.NAMESPACE_IMPORT__IS_IMPORT_ALL: return SysMLOCPackage.IS_IMPORT_ALL_FRAGMENT__IS_IMPORT_ALL;
+        default: return -1;
+      }
+    }
+    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == isImportAllFragment.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.IS_IMPORT_ALL_FRAGMENT__IS_IMPORT_ALL: return SysMLOCPackage.NAMESPACE_IMPORT__IS_IMPORT_ALL;
+        default: return -1;
+      }
+    }
+    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public String toString()
   {
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (visibility: ");
+    result.append(" (isImportAll: ");
+    result.append(isImportAll);
+    result.append(", visibility: ");
     result.append(visibility);
     result.append(", declaredName: ");
     result.append(declaredName);

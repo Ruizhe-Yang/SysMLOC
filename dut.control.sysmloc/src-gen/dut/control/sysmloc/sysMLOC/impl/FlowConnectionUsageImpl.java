@@ -3,7 +3,6 @@
  */
 package dut.control.sysmloc.sysMLOC.impl;
 
-import dut.control.sysmloc.sysMLOC.BaseElement;
 import dut.control.sysmloc.sysMLOC.BasicUsagePrefix;
 import dut.control.sysmloc.sysMLOC.FeatureDeclaration;
 import dut.control.sysmloc.sysMLOC.FeatureDirection;
@@ -11,12 +10,15 @@ import dut.control.sysmloc.sysMLOC.FeatureSpecialization;
 import dut.control.sysmloc.sysMLOC.FeatureSpecializationPart;
 import dut.control.sysmloc.sysMLOC.FeatureValue;
 import dut.control.sysmloc.sysMLOC.FlowConnectionUsage;
+import dut.control.sysmloc.sysMLOC.MemberPrefix;
 import dut.control.sysmloc.sysMLOC.MultiplicityPart;
 import dut.control.sysmloc.sysMLOC.OccurrenceUsagePrefix;
 import dut.control.sysmloc.sysMLOC.PortionKind;
 import dut.control.sysmloc.sysMLOC.RefPrefix;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
+import dut.control.sysmloc.sysMLOC.UsageBodyElement;
 import dut.control.sysmloc.sysMLOC.UsageDeclaration;
+import dut.control.sysmloc.sysMLOC.VisibilityIndicator;
 
 import java.util.Collection;
 
@@ -42,6 +44,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowConnectionUsageImpl#getVisibility <em>Visibility</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowConnectionUsageImpl#getDirection <em>Direction</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowConnectionUsageImpl#isIsAbstract <em>Is Abstract</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowConnectionUsageImpl#isIsVariation <em>Is Variation</em>}</li>
@@ -72,6 +75,26 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class FlowConnectionUsageImpl extends StructureUsageElementImpl implements FlowConnectionUsage
 {
+  /**
+   * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVisibility()
+   * @generated
+   * @ordered
+   */
+  protected static final VisibilityIndicator VISIBILITY_EDEFAULT = VisibilityIndicator.PUBLIC;
+
+  /**
+   * The cached value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVisibility()
+   * @generated
+   * @ordered
+   */
+  protected VisibilityIndicator visibility = VISIBILITY_EDEFAULT;
+
   /**
    * The default value of the '{@link #getDirection() <em>Direction</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -310,7 +333,7 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
    * @generated
    * @ordered
    */
-  protected EList<Integer> multiplicity;
+  protected EList<String> multiplicity;
 
   /**
    * The default value of the '{@link #isIsOrdered() <em>Is Ordered</em>}' attribute.
@@ -450,7 +473,7 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
    * @generated
    * @ordered
    */
-  protected EList<BaseElement> elements;
+  protected EList<UsageBodyElement> elements;
 
   /**
    * <!-- begin-user-doc -->
@@ -471,6 +494,31 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
   protected EClass eStaticClass()
   {
     return SysMLOCPackage.Literals.FLOW_CONNECTION_USAGE;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public VisibilityIndicator getVisibility()
+  {
+    return visibility;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setVisibility(VisibilityIndicator newVisibility)
+  {
+    VisibilityIndicator oldVisibility = visibility;
+    visibility = newVisibility == null ? VISIBILITY_EDEFAULT : newVisibility;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.FLOW_CONNECTION_USAGE__VISIBILITY, oldVisibility, visibility));
   }
 
   /**
@@ -779,11 +827,11 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
    * @generated
    */
   @Override
-  public EList<Integer> getMultiplicity()
+  public EList<String> getMultiplicity()
   {
     if (multiplicity == null)
     {
-      multiplicity = new EDataTypeEList<Integer>(Integer.class, this, SysMLOCPackage.FLOW_CONNECTION_USAGE__MULTIPLICITY);
+      multiplicity = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.FLOW_CONNECTION_USAGE__MULTIPLICITY);
     }
     return multiplicity;
   }
@@ -964,11 +1012,11 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
    * @generated
    */
   @Override
-  public EList<BaseElement> getElements()
+  public EList<UsageBodyElement> getElements()
   {
     if (elements == null)
     {
-      elements = new EObjectContainmentEList<BaseElement>(BaseElement.class, this, SysMLOCPackage.FLOW_CONNECTION_USAGE__ELEMENTS);
+      elements = new EObjectContainmentEList<UsageBodyElement>(UsageBodyElement.class, this, SysMLOCPackage.FLOW_CONNECTION_USAGE__ELEMENTS);
     }
     return elements;
   }
@@ -999,6 +1047,8 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
   {
     switch (featureID)
     {
+      case SysMLOCPackage.FLOW_CONNECTION_USAGE__VISIBILITY:
+        return getVisibility();
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__DIRECTION:
         return getDirection();
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_ABSTRACT:
@@ -1062,6 +1112,9 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
   {
     switch (featureID)
     {
+      case SysMLOCPackage.FLOW_CONNECTION_USAGE__VISIBILITY:
+        setVisibility((VisibilityIndicator)newValue);
+        return;
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__DIRECTION:
         setDirection((FeatureDirection)newValue);
         return;
@@ -1111,7 +1164,7 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
         return;
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__MULTIPLICITY:
         getMultiplicity().clear();
-        getMultiplicity().addAll((Collection<? extends Integer>)newValue);
+        getMultiplicity().addAll((Collection<? extends String>)newValue);
         return;
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_ORDERED:
         setIsOrdered((Boolean)newValue);
@@ -1142,7 +1195,7 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
         return;
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__ELEMENTS:
         getElements().clear();
-        getElements().addAll((Collection<? extends BaseElement>)newValue);
+        getElements().addAll((Collection<? extends UsageBodyElement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -1158,6 +1211,9 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
   {
     switch (featureID)
     {
+      case SysMLOCPackage.FLOW_CONNECTION_USAGE__VISIBILITY:
+        setVisibility(VISIBILITY_EDEFAULT);
+        return;
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__DIRECTION:
         setDirection(DIRECTION_EDEFAULT);
         return;
@@ -1244,6 +1300,8 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
   {
     switch (featureID)
     {
+      case SysMLOCPackage.FLOW_CONNECTION_USAGE__VISIBILITY:
+        return visibility != VISIBILITY_EDEFAULT;
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__DIRECTION:
         return direction != DIRECTION_EDEFAULT;
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_ABSTRACT:
@@ -1304,6 +1362,14 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
   {
+    if (baseClass == MemberPrefix.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.FLOW_CONNECTION_USAGE__VISIBILITY: return SysMLOCPackage.MEMBER_PREFIX__VISIBILITY;
+        default: return -1;
+      }
+    }
     if (baseClass == RefPrefix.class)
     {
       switch (derivedFeatureID)
@@ -1399,6 +1465,14 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
   {
+    if (baseClass == MemberPrefix.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.MEMBER_PREFIX__VISIBILITY: return SysMLOCPackage.FLOW_CONNECTION_USAGE__VISIBILITY;
+        default: return -1;
+      }
+    }
     if (baseClass == RefPrefix.class)
     {
       switch (baseFeatureID)
@@ -1497,7 +1571,9 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (direction: ");
+    result.append(" (visibility: ");
+    result.append(visibility);
+    result.append(", direction: ");
     result.append(direction);
     result.append(", isAbstract: ");
     result.append(isAbstract);

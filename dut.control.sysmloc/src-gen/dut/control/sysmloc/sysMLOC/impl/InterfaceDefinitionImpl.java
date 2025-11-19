@@ -3,10 +3,14 @@
  */
 package dut.control.sysmloc.sysMLOC.impl;
 
-import dut.control.sysmloc.sysMLOC.BaseElement;
+import dut.control.sysmloc.sysMLOC.BasicDefinitionPrefix;
+import dut.control.sysmloc.sysMLOC.DefinitionBodyElement;
 import dut.control.sysmloc.sysMLOC.DefinitionDeclaration;
 import dut.control.sysmloc.sysMLOC.InterfaceDefinition;
+import dut.control.sysmloc.sysMLOC.MemberPrefix;
+import dut.control.sysmloc.sysMLOC.OccurrenceDefinitionPrefix;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
+import dut.control.sysmloc.sysMLOC.VisibilityIndicator;
 
 import java.util.Collection;
 
@@ -32,6 +36,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.InterfaceDefinitionImpl#getVisibility <em>Visibility</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.InterfaceDefinitionImpl#isIsAbstract <em>Is Abstract</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.InterfaceDefinitionImpl#isIsVariation <em>Is Variation</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.InterfaceDefinitionImpl#isIsIndividual <em>Is Individual</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.InterfaceDefinitionImpl#getDeclaredName <em>Declared Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.InterfaceDefinitionImpl#getSuperclassifiers <em>Superclassifiers</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.InterfaceDefinitionImpl#getElements <em>Elements</em>}</li>
@@ -41,6 +49,86 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class InterfaceDefinitionImpl extends DefinitionElementImpl implements InterfaceDefinition
 {
+  /**
+   * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVisibility()
+   * @generated
+   * @ordered
+   */
+  protected static final VisibilityIndicator VISIBILITY_EDEFAULT = VisibilityIndicator.PUBLIC;
+
+  /**
+   * The cached value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVisibility()
+   * @generated
+   * @ordered
+   */
+  protected VisibilityIndicator visibility = VISIBILITY_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsAbstract() <em>Is Abstract</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAbstract()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_ABSTRACT_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsAbstract() <em>Is Abstract</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAbstract()
+   * @generated
+   * @ordered
+   */
+  protected boolean isAbstract = IS_ABSTRACT_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsVariation() <em>Is Variation</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsVariation()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_VARIATION_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsVariation() <em>Is Variation</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsVariation()
+   * @generated
+   * @ordered
+   */
+  protected boolean isVariation = IS_VARIATION_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsIndividual() <em>Is Individual</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsIndividual()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_INDIVIDUAL_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsIndividual() <em>Is Individual</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsIndividual()
+   * @generated
+   * @ordered
+   */
+  protected boolean isIndividual = IS_INDIVIDUAL_EDEFAULT;
+
   /**
    * The default value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -79,7 +167,7 @@ public class InterfaceDefinitionImpl extends DefinitionElementImpl implements In
    * @generated
    * @ordered
    */
-  protected EList<BaseElement> elements;
+  protected EList<DefinitionBodyElement> elements;
 
   /**
    * <!-- begin-user-doc -->
@@ -100,6 +188,106 @@ public class InterfaceDefinitionImpl extends DefinitionElementImpl implements In
   protected EClass eStaticClass()
   {
     return SysMLOCPackage.Literals.INTERFACE_DEFINITION;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public VisibilityIndicator getVisibility()
+  {
+    return visibility;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setVisibility(VisibilityIndicator newVisibility)
+  {
+    VisibilityIndicator oldVisibility = visibility;
+    visibility = newVisibility == null ? VISIBILITY_EDEFAULT : newVisibility;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.INTERFACE_DEFINITION__VISIBILITY, oldVisibility, visibility));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsAbstract()
+  {
+    return isAbstract;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsAbstract(boolean newIsAbstract)
+  {
+    boolean oldIsAbstract = isAbstract;
+    isAbstract = newIsAbstract;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.INTERFACE_DEFINITION__IS_ABSTRACT, oldIsAbstract, isAbstract));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsVariation()
+  {
+    return isVariation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsVariation(boolean newIsVariation)
+  {
+    boolean oldIsVariation = isVariation;
+    isVariation = newIsVariation;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.INTERFACE_DEFINITION__IS_VARIATION, oldIsVariation, isVariation));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsIndividual()
+  {
+    return isIndividual;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsIndividual(boolean newIsIndividual)
+  {
+    boolean oldIsIndividual = isIndividual;
+    isIndividual = newIsIndividual;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.INTERFACE_DEFINITION__IS_INDIVIDUAL, oldIsIndividual, isIndividual));
   }
 
   /**
@@ -148,11 +336,11 @@ public class InterfaceDefinitionImpl extends DefinitionElementImpl implements In
    * @generated
    */
   @Override
-  public EList<BaseElement> getElements()
+  public EList<DefinitionBodyElement> getElements()
   {
     if (elements == null)
     {
-      elements = new EObjectContainmentEList<BaseElement>(BaseElement.class, this, SysMLOCPackage.INTERFACE_DEFINITION__ELEMENTS);
+      elements = new EObjectContainmentEList<DefinitionBodyElement>(DefinitionBodyElement.class, this, SysMLOCPackage.INTERFACE_DEFINITION__ELEMENTS);
     }
     return elements;
   }
@@ -183,6 +371,14 @@ public class InterfaceDefinitionImpl extends DefinitionElementImpl implements In
   {
     switch (featureID)
     {
+      case SysMLOCPackage.INTERFACE_DEFINITION__VISIBILITY:
+        return getVisibility();
+      case SysMLOCPackage.INTERFACE_DEFINITION__IS_ABSTRACT:
+        return isIsAbstract();
+      case SysMLOCPackage.INTERFACE_DEFINITION__IS_VARIATION:
+        return isIsVariation();
+      case SysMLOCPackage.INTERFACE_DEFINITION__IS_INDIVIDUAL:
+        return isIsIndividual();
       case SysMLOCPackage.INTERFACE_DEFINITION__DECLARED_NAME:
         return getDeclaredName();
       case SysMLOCPackage.INTERFACE_DEFINITION__SUPERCLASSIFIERS:
@@ -204,6 +400,18 @@ public class InterfaceDefinitionImpl extends DefinitionElementImpl implements In
   {
     switch (featureID)
     {
+      case SysMLOCPackage.INTERFACE_DEFINITION__VISIBILITY:
+        setVisibility((VisibilityIndicator)newValue);
+        return;
+      case SysMLOCPackage.INTERFACE_DEFINITION__IS_ABSTRACT:
+        setIsAbstract((Boolean)newValue);
+        return;
+      case SysMLOCPackage.INTERFACE_DEFINITION__IS_VARIATION:
+        setIsVariation((Boolean)newValue);
+        return;
+      case SysMLOCPackage.INTERFACE_DEFINITION__IS_INDIVIDUAL:
+        setIsIndividual((Boolean)newValue);
+        return;
       case SysMLOCPackage.INTERFACE_DEFINITION__DECLARED_NAME:
         setDeclaredName((String)newValue);
         return;
@@ -213,7 +421,7 @@ public class InterfaceDefinitionImpl extends DefinitionElementImpl implements In
         return;
       case SysMLOCPackage.INTERFACE_DEFINITION__ELEMENTS:
         getElements().clear();
-        getElements().addAll((Collection<? extends BaseElement>)newValue);
+        getElements().addAll((Collection<? extends DefinitionBodyElement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -229,6 +437,18 @@ public class InterfaceDefinitionImpl extends DefinitionElementImpl implements In
   {
     switch (featureID)
     {
+      case SysMLOCPackage.INTERFACE_DEFINITION__VISIBILITY:
+        setVisibility(VISIBILITY_EDEFAULT);
+        return;
+      case SysMLOCPackage.INTERFACE_DEFINITION__IS_ABSTRACT:
+        setIsAbstract(IS_ABSTRACT_EDEFAULT);
+        return;
+      case SysMLOCPackage.INTERFACE_DEFINITION__IS_VARIATION:
+        setIsVariation(IS_VARIATION_EDEFAULT);
+        return;
+      case SysMLOCPackage.INTERFACE_DEFINITION__IS_INDIVIDUAL:
+        setIsIndividual(IS_INDIVIDUAL_EDEFAULT);
+        return;
       case SysMLOCPackage.INTERFACE_DEFINITION__DECLARED_NAME:
         setDeclaredName(DECLARED_NAME_EDEFAULT);
         return;
@@ -252,6 +472,14 @@ public class InterfaceDefinitionImpl extends DefinitionElementImpl implements In
   {
     switch (featureID)
     {
+      case SysMLOCPackage.INTERFACE_DEFINITION__VISIBILITY:
+        return visibility != VISIBILITY_EDEFAULT;
+      case SysMLOCPackage.INTERFACE_DEFINITION__IS_ABSTRACT:
+        return isAbstract != IS_ABSTRACT_EDEFAULT;
+      case SysMLOCPackage.INTERFACE_DEFINITION__IS_VARIATION:
+        return isVariation != IS_VARIATION_EDEFAULT;
+      case SysMLOCPackage.INTERFACE_DEFINITION__IS_INDIVIDUAL:
+        return isIndividual != IS_INDIVIDUAL_EDEFAULT;
       case SysMLOCPackage.INTERFACE_DEFINITION__DECLARED_NAME:
         return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
       case SysMLOCPackage.INTERFACE_DEFINITION__SUPERCLASSIFIERS:
@@ -270,6 +498,31 @@ public class InterfaceDefinitionImpl extends DefinitionElementImpl implements In
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
   {
+    if (baseClass == MemberPrefix.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.INTERFACE_DEFINITION__VISIBILITY: return SysMLOCPackage.MEMBER_PREFIX__VISIBILITY;
+        default: return -1;
+      }
+    }
+    if (baseClass == BasicDefinitionPrefix.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.INTERFACE_DEFINITION__IS_ABSTRACT: return SysMLOCPackage.BASIC_DEFINITION_PREFIX__IS_ABSTRACT;
+        case SysMLOCPackage.INTERFACE_DEFINITION__IS_VARIATION: return SysMLOCPackage.BASIC_DEFINITION_PREFIX__IS_VARIATION;
+        default: return -1;
+      }
+    }
+    if (baseClass == OccurrenceDefinitionPrefix.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.INTERFACE_DEFINITION__IS_INDIVIDUAL: return SysMLOCPackage.OCCURRENCE_DEFINITION_PREFIX__IS_INDIVIDUAL;
+        default: return -1;
+      }
+    }
     if (baseClass == DefinitionDeclaration.class)
     {
       switch (derivedFeatureID)
@@ -290,6 +543,31 @@ public class InterfaceDefinitionImpl extends DefinitionElementImpl implements In
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
   {
+    if (baseClass == MemberPrefix.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.MEMBER_PREFIX__VISIBILITY: return SysMLOCPackage.INTERFACE_DEFINITION__VISIBILITY;
+        default: return -1;
+      }
+    }
+    if (baseClass == BasicDefinitionPrefix.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.BASIC_DEFINITION_PREFIX__IS_ABSTRACT: return SysMLOCPackage.INTERFACE_DEFINITION__IS_ABSTRACT;
+        case SysMLOCPackage.BASIC_DEFINITION_PREFIX__IS_VARIATION: return SysMLOCPackage.INTERFACE_DEFINITION__IS_VARIATION;
+        default: return -1;
+      }
+    }
+    if (baseClass == OccurrenceDefinitionPrefix.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.OCCURRENCE_DEFINITION_PREFIX__IS_INDIVIDUAL: return SysMLOCPackage.INTERFACE_DEFINITION__IS_INDIVIDUAL;
+        default: return -1;
+      }
+    }
     if (baseClass == DefinitionDeclaration.class)
     {
       switch (baseFeatureID)
@@ -313,7 +591,15 @@ public class InterfaceDefinitionImpl extends DefinitionElementImpl implements In
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (declaredName: ");
+    result.append(" (visibility: ");
+    result.append(visibility);
+    result.append(", isAbstract: ");
+    result.append(isAbstract);
+    result.append(", isVariation: ");
+    result.append(isVariation);
+    result.append(", isIndividual: ");
+    result.append(isIndividual);
+    result.append(", declaredName: ");
     result.append(declaredName);
     result.append(", superclassifiers: ");
     result.append(superclassifiers);

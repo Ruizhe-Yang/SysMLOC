@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <packages declaredName="'Vehicle Decomposition'">
+    <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9; * Example from the SysML 1.6 spec, subclause 8.4.5 Constraining Decomposition.&#xD;&#xA;&#x9; */"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="chs">
+        <typings>'Chassis Assembly'</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="rb">
+          <redefinitions>'Chassis Assembly'::rb</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:PartUsage">
+          <redefinitions>w</redefinitions>
+          <elements xsi:type="sysMLOC:PartUsage">
+            <redefinitions>lb</redefinitions>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="eng">
+        <typings>Engine</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="cyl">
+          <redefinitions>Engine::cyl</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PortUsage" isReference="true" declaredName="cylinderBR">
+        <Multiplicity>*</Multiplicity>
+        <valuePart>eng.cyl</valuePart>
+      </elements>
+      <elements xsi:type="sysMLOC:PortUsage" isReference="true" declaredName="rollBarBR">
+        <Multiplicity>*</Multiplicity>
+        <valuePart>chs.rb</valuePart>
+      </elements>
+      <elements xsi:type="sysMLOC:PortUsage" isReference="true" declaredName="lugBoltBR">
+        <Multiplicity>24</Multiplicity>
+        <Multiplicity>32</Multiplicity>
+        <valuePart>chs.w.lb</valuePart>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="'Chassis Assembly'">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="w">
+        <typings>Wheel</typings>
+        <Multiplicity>4</Multiplicity>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="rb">
+        <typings>RollBar</typings>
+        <Multiplicity>0</Multiplicity>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Wheel">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="lb">
+        <typings>LugBolt</typings>
+        <Multiplicity>6</Multiplicity>
+        <Multiplicity>10</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="LugBolt"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="RollBar"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="HeavyRollBar">
+      <superclassifiers>RollBar</superclassifiers>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="LightRollBar">
+      <superclassifiers>RollBar</superclassifiers>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Engine">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="cyl">
+        <typings>Cylinder</typings>
+        <Multiplicity>4</Multiplicity>
+        <Multiplicity>8</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Cylinder"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="'Vehicle Model 1'">
+      <superclassifiers>Vehicle</superclassifiers>
+      <elements xsi:type="sysMLOC:PortUsage" isReference="true">
+        <redefinitions>cylinderBR</redefinitions>
+        <Multiplicity>4</Multiplicity>
+      </elements>
+      <elements xsi:type="sysMLOC:PortUsage" isReference="true">
+        <typings>LightRollBar</typings>
+        <redefinitions>rollBarBR</redefinitions>
+        <Multiplicity>*</Multiplicity>
+      </elements>
+      <elements xsi:type="sysMLOC:PortUsage" isReference="true">
+        <redefinitions>lugBoltBR</redefinitions>
+        <Multiplicity>24</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="'Vehicle Model 2'">
+      <superclassifiers>Vehicle</superclassifiers>
+      <elements xsi:type="sysMLOC:PortUsage" isReference="true">
+        <redefinitions>cylinderBR</redefinitions>
+        <Multiplicity>6</Multiplicity>
+        <Multiplicity>8</Multiplicity>
+      </elements>
+      <elements xsi:type="sysMLOC:PortUsage" isReference="true">
+        <redefinitions>rollBarBR</redefinitions>
+        <Multiplicity>0</Multiplicity>
+      </elements>
+      <elements xsi:type="sysMLOC:PortUsage" isReference="true">
+        <redefinitions>lugBoltBR</redefinitions>
+        <Multiplicity>24</Multiplicity>
+        <Multiplicity>28</Multiplicity>
+      </elements>
+      <elements xsi:type="sysMLOC:CodeAnnotation" body="// 6..7 per wheel&#xD;&#xA;"/>
+    </elements>
+  </packages>
+</sysMLOC:Namespace>

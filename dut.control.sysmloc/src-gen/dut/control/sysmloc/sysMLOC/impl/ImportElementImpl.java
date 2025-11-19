@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ImportElementImpl extends BaseElementImpl implements ImportElement
+public class ImportElementImpl extends PackageBodyElementImpl implements ImportElement
 {
   /**
    * <!-- begin-user-doc -->

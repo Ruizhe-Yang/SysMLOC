@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
   <packages declaredName="VehicleUsages">
-    <elements xsi:type="sysMLOC:Comment" body="/*&#xD;&#xA;&#x9; * Example usages of elements from the vehicle definitions model.&#xD;&#xA;&#x9; */"/>
+    <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9; * Example usages of elements from the vehicle definitions model.&#xD;&#xA;&#x9; */"/>
     <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="ScalarFunctions"/>
     <elements xsi:type="sysMLOC:NamespaceImport" declaredName="VehicleDefinitions"/>
     <elements xsi:type="sysMLOC:Comment" body="/* VALUES */"/>
     <elements xsi:type="sysMLOC:Comment" body="/* PARTS */"/>
     <elements xsi:type="sysMLOC:PartUsage" declaredName="narrowRimWheel">
       <typings>Wheel</typings>
-      <elements xsi:type="sysMLOC:Comment" body="/* Narrow-rim wheel configuration with 4 to 5 lugbolts. */"/>
+      <elements xsi:type="sysMLOC:Documentation" body="/* Narrow-rim wheel configuration with 4 to 5 lugbolts. */"/>
       <elements xsi:type="sysMLOC:PartUsage" declaredName="lugbolt">
         <typings>Lugbolt</typings>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:PartUsage" declaredName="wideRimWheel">
       <typings>Wheel</typings>
-      <elements xsi:type="sysMLOC:Comment" body="/* Wide-rim wheel configuration with 4 to 6 lugbolts. */"/>
+      <elements xsi:type="sysMLOC:Documentation" body="/* Wide-rim wheel configuration with 4 to 6 lugbolts. */"/>
       <elements xsi:type="sysMLOC:PartUsage" declaredName="lugbolt">
         <typings>Lugbolt</typings>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle_C1">
       <typings>Vehicle</typings>
-      <elements xsi:type="sysMLOC:Comment" body="/* Basic Vehicle configuration showing a part hierarchy. */"/>
+      <elements xsi:type="sysMLOC:Documentation" body="/* Basic Vehicle configuration showing a part hierarchy. */"/>
       <elements xsi:type="sysMLOC:PartUsage" declaredName="frontAxleAssembly">
         <typings>AxleAssembly</typings>
         <elements xsi:type="sysMLOC:PartUsage" declaredName="frontWheel">
@@ -62,7 +62,7 @@
     </elements>
     <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle_C2">
       <subsetting>vehicle_C1</subsetting>
-      <elements xsi:type="sysMLOC:Comment" body="/* Specialized configuration with part-specific ports. */"/>
+      <elements xsi:type="sysMLOC:Documentation" body="/* Specialized configuration with part-specific ports. */"/>
       <elements xsi:type="sysMLOC:PartUsage">
         <redefinitions>frontAxleAssembly</redefinitions>
         <elements xsi:type="sysMLOC:PartUsage" declaredName="leftFrontWheel">
@@ -108,7 +108,7 @@
     </elements>
     <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle_C3">
       <subsetting>vehicle_C2</subsetting>
-      <elements xsi:type="sysMLOC:Comment" body="/* Further specialized configuration with a connection to a deeply-nested port. */"/>
+      <elements xsi:type="sysMLOC:Documentation" body="/* Further specialized configuration with a connection to a deeply-nested port. */"/>
       <elements xsi:type="sysMLOC:PartUsage" declaredName="transmission">
         <typings>Transmission</typings>
         <elements xsi:type="sysMLOC:PortUsage" declaredName="drive">

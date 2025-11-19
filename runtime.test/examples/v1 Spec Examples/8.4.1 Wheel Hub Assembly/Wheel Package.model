@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <packages declaredName="'Wheel Package'">
+    <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9; * Example from the SysML 1.6 spec, subclause 8.4.1 Wheel Hub Assembly.&#xD;&#xA;&#x9; */"/>
+    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="ISQ"/>
+    <elements xsi:type="sysMLOC:PortUsage" declaredName="pressure">
+      <valuePart>force / length^2</valuePart>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="WheelHubAssembly">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="wheel">
+        <typings>WheelAssembly</typings>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="lugBoltJoints">
+        <typings>LugBoltJoint</typings>
+        <Multiplicity>5</Multiplicity>
+        <elements xsi:type="sysMLOC:PortUsage" isReference="true">
+          <subsetting>hub.h</subsetting>
+          <redefinitions>threadedHole</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:PortUsage" isReference="true">
+          <subsetting>wheel.w.mountingHoles</subsetting>
+          <redefinitions>mountingHole</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="hub">
+        <typings>Hub</typings>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="WheelAssembly">
+      <elements xsi:type="sysMLOC:PortUsage" declaredName="inflationPressure">
+        <subsetting>pressure</subsetting>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="t">
+        <typings>Tire</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="bead">
+          <redefinitions>Tire::bead</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="w">
+        <typings>Wheel</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="rim">
+          <redefinitions>Wheel::rim</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:ConnectionUsage">
+        <typings>PressureSeat</typings>
+        <connectorEnd>t.bead</connectorEnd>
+        <connectorEnd>w.rim</connectorEnd>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Tire">
+      <elements xsi:type="sysMLOC:PortUsage" declaredName="tireSpecification">
+        <typings>ScalarValues::String</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="bead">
+        <typings>TireBead</typings>
+        <Multiplicity>2</Multiplicity>
+      </elements>
+      <elements xsi:type="sysMLOC:ActionUsage" declaredName="mountTire"/>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="TireBead"/>
+    <elements xsi:type="sysMLOC:ConnectionDefinition" declaredName="PressureSeat">
+      <elements xsi:type="sysMLOC:PortUsage" isEnd="true">
+        <typings>TireBead</typings>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+      <elements xsi:type="sysMLOC:PortUsage" isEnd="true">
+        <typings>TireMountingRim</typings>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Wheel">
+      <elements xsi:type="sysMLOC:PortUsage" declaredName="diameter">
+        <subsetting>length</subsetting>
+      </elements>
+      <elements xsi:type="sysMLOC:PortUsage" declaredName="width">
+        <subsetting>length</subsetting>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="rim">
+        <typings>TireMountingRim</typings>
+        <Multiplicity>2</Multiplicity>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="v">
+        <typings>InflationValve</typings>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="weight">
+        <typings>BalanceWeight</typings>
+        <Multiplicity>0</Multiplicity>
+        <Multiplicity>6</Multiplicity>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="mountingHoles">
+        <typings>LugBoltMountingHole</typings>
+        <Multiplicity>5</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:ConnectionDefinition" declaredName="BandMount">
+      <elements xsi:type="sysMLOC:PortUsage" isEnd="true">
+        <typings>Wheel</typings>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+      <elements xsi:type="sysMLOC:PortUsage" isEnd="true">
+        <typings>WirelessTirePressureMonitor</typings>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="WirelessTirePressureMonitor">
+      <elements xsi:type="sysMLOC:ActionUsage" declaredName="transmitPressure"/>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="TireMountingRim"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="InflationValve"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="BalanceWeight"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="LugBoltMountingHole">
+      <elements xsi:type="sysMLOC:PortUsage" declaredName="lugBoltSize">
+        <subsetting>length</subsetting>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="LugBoltJoint">
+      <elements xsi:type="sysMLOC:PortUsage" declaredName="torque">
+        <subsetting>ISQ::torque</subsetting>
+      </elements>
+      <elements xsi:type="sysMLOC:PortUsage" declaredName="boltTension">
+        <subsetting>force</subsetting>
+      </elements>
+      <elements xsi:type="sysMLOC:PortUsage" isReference="true" declaredName="mountingHole">
+        <typings>LugBoltMountingHole</typings>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+      <elements xsi:type="sysMLOC:PortUsage" isReference="true" declaredName="threadedHole">
+        <typings>LugBoltThreadableHole</typings>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Hub">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="h">
+        <typings>LugBoltThreadableHole</typings>
+        <Multiplicity>5</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="LugBoltThreadableHole">
+      <elements xsi:type="sysMLOC:PortUsage" declaredName="lugBoltSize">
+        <subsetting>length</subsetting>
+      </elements>
+      <elements xsi:type="sysMLOC:PortUsage" declaredName="threadSize">
+        <subsetting>length</subsetting>
+      </elements>
+    </elements>
+  </packages>
+</sysMLOC:Namespace>

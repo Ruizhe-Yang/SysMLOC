@@ -42,13 +42,40 @@ public interface SysMLOCFactory extends EFactory
   Package createPackage();
 
   /**
-   * Returns a new object of class '<em>Base Element</em>'.
+   * Returns a new object of class '<em>Package Body Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Base Element</em>'.
+   * @return a new object of class '<em>Package Body Element</em>'.
    * @generated
    */
-  BaseElement createBaseElement();
+  PackageBodyElement createPackageBodyElement();
+
+  /**
+   * Returns a new object of class '<em>Definition Body Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Definition Body Element</em>'.
+   * @generated
+   */
+  DefinitionBodyElement createDefinitionBodyElement();
+
+  /**
+   * Returns a new object of class '<em>Usage Body Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Usage Body Element</em>'.
+   * @generated
+   */
+  UsageBodyElement createUsageBodyElement();
+
+  /**
+   * Returns a new object of class '<em>Enumeration Body Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Enumeration Body Element</em>'.
+   * @generated
+   */
+  EnumerationBodyElement createEnumerationBodyElement();
 
   /**
    * Returns a new object of class '<em>Annotating Element</em>'.
@@ -123,6 +150,15 @@ public interface SysMLOCFactory extends EFactory
   BehaviorUsageElement createBehaviorUsageElement();
 
   /**
+   * Returns a new object of class '<em>Enumeration Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Enumeration Element</em>'.
+   * @generated
+   */
+  EnumerationElement createEnumerationElement();
+
+  /**
    * Returns a new object of class '<em>Namespace Import</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -130,6 +166,24 @@ public interface SysMLOCFactory extends EFactory
    * @generated
    */
   NamespaceImport createNamespaceImport();
+
+  /**
+   * Returns a new object of class '<em>Membership Import</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Membership Import</em>'.
+   * @generated
+   */
+  MembershipImport createMembershipImport();
+
+  /**
+   * Returns a new object of class '<em>Code Annotation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Code Annotation</em>'.
+   * @generated
+   */
+  CodeAnnotation createCodeAnnotation();
 
   /**
    * Returns a new object of class '<em>Comment</em>'.
@@ -141,13 +195,22 @@ public interface SysMLOCFactory extends EFactory
   Comment createComment();
 
   /**
-   * Returns a new object of class '<em>Reference Usage</em>'.
+   * Returns a new object of class '<em>Documentation</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Reference Usage</em>'.
+   * @return a new object of class '<em>Documentation</em>'.
    * @generated
    */
-  ReferenceUsage createReferenceUsage();
+  Documentation createDocumentation();
+
+  /**
+   * Returns a new object of class '<em>Textual Representation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Textual Representation</em>'.
+   * @generated
+   */
+  TextualRepresentation createTextualRepresentation();
 
   /**
    * Returns a new object of class '<em>Attribute Definition</em>'.
@@ -166,6 +229,33 @@ public interface SysMLOCFactory extends EFactory
    * @generated
    */
   AttributeUsage createAttributeUsage();
+
+  /**
+   * Returns a new object of class '<em>Enumeration Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Enumeration Definition</em>'.
+   * @generated
+   */
+  EnumerationDefinition createEnumerationDefinition();
+
+  /**
+   * Returns a new object of class '<em>Enumerated Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Enumerated Value</em>'.
+   * @generated
+   */
+  EnumeratedValue createEnumeratedValue();
+
+  /**
+   * Returns a new object of class '<em>Enumeration Usage</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Enumeration Usage</em>'.
+   * @generated
+   */
+  EnumerationUsage createEnumerationUsage();
 
   /**
    * Returns a new object of class '<em>Item Definition</em>'.
@@ -285,6 +375,87 @@ public interface SysMLOCFactory extends EFactory
   ActionUsage createActionUsage();
 
   /**
+   * Returns a new object of class '<em>Alias Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Alias Element</em>'.
+   * @generated
+   */
+  AliasElement createAliasElement();
+
+  /**
+   * Returns a new object of class '<em>is Import All Fragment</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>is Import All Fragment</em>'.
+   * @generated
+   */
+  isImportAllFragment createisImportAllFragment();
+
+  /**
+   * Returns a new object of class '<em>Member Prefix</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Member Prefix</em>'.
+   * @generated
+   */
+  MemberPrefix createMemberPrefix();
+
+  /**
+   * Returns a new object of class '<em>Definition Prefix</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Definition Prefix</em>'.
+   * @generated
+   */
+  DefinitionPrefix createDefinitionPrefix();
+
+  /**
+   * Returns a new object of class '<em>Occurrence Definition Prefix</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Occurrence Definition Prefix</em>'.
+   * @generated
+   */
+  OccurrenceDefinitionPrefix createOccurrenceDefinitionPrefix();
+
+  /**
+   * Returns a new object of class '<em>Basic Definition Prefix</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Basic Definition Prefix</em>'.
+   * @generated
+   */
+  BasicDefinitionPrefix createBasicDefinitionPrefix();
+
+  /**
+   * Returns a new object of class '<em>Usage Prefix</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Usage Prefix</em>'.
+   * @generated
+   */
+  UsagePrefix createUsagePrefix();
+
+  /**
+   * Returns a new object of class '<em>Unextended Usage Prefix</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Unextended Usage Prefix</em>'.
+   * @generated
+   */
+  UnextendedUsagePrefix createUnextendedUsagePrefix();
+
+  /**
+   * Returns a new object of class '<em>End Usage Prefix</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>End Usage Prefix</em>'.
+   * @generated
+   */
+  EndUsagePrefix createEndUsagePrefix();
+
+  /**
    * Returns a new object of class '<em>Occurrence Usage Prefix</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -382,6 +553,15 @@ public interface SysMLOCFactory extends EFactory
    * @generated
    */
   FeatureSpecializationPart createFeatureSpecializationPart();
+
+  /**
+   * Returns a new object of class '<em>Identification</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Identification</em>'.
+   * @generated
+   */
+  Identification createIdentification();
 
   /**
    * Returns a new object of class '<em>Multiplicity Part</em>'.

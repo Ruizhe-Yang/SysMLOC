@@ -4,13 +4,15 @@
 package dut.control.sysmloc.sysMLOC.impl;
 
 import dut.control.sysmloc.sysMLOC.ActionUsage;
-import dut.control.sysmloc.sysMLOC.BaseElement;
 import dut.control.sysmloc.sysMLOC.BasicUsagePrefix;
 import dut.control.sysmloc.sysMLOC.FeatureDirection;
+import dut.control.sysmloc.sysMLOC.MemberPrefix;
 import dut.control.sysmloc.sysMLOC.OccurrenceUsagePrefix;
 import dut.control.sysmloc.sysMLOC.PortionKind;
 import dut.control.sysmloc.sysMLOC.RefPrefix;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
+import dut.control.sysmloc.sysMLOC.UsageBodyElement;
+import dut.control.sysmloc.sysMLOC.VisibilityIndicator;
 
 import java.util.Collection;
 
@@ -35,6 +37,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ActionUsageImpl#getVisibility <em>Visibility</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ActionUsageImpl#getDirection <em>Direction</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ActionUsageImpl#isIsAbstract <em>Is Abstract</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ActionUsageImpl#isIsVariation <em>Is Variation</em>}</li>
@@ -52,6 +55,26 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class ActionUsageImpl extends BehaviorUsageElementImpl implements ActionUsage
 {
+  /**
+   * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVisibility()
+   * @generated
+   * @ordered
+   */
+  protected static final VisibilityIndicator VISIBILITY_EDEFAULT = VisibilityIndicator.PUBLIC;
+
+  /**
+   * The cached value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVisibility()
+   * @generated
+   * @ordered
+   */
+  protected VisibilityIndicator visibility = VISIBILITY_EDEFAULT;
+
   /**
    * The default value of the '{@link #getDirection() <em>Direction</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -260,7 +283,7 @@ public class ActionUsageImpl extends BehaviorUsageElementImpl implements ActionU
    * @generated
    * @ordered
    */
-  protected EList<BaseElement> elements;
+  protected EList<UsageBodyElement> elements;
 
   /**
    * <!-- begin-user-doc -->
@@ -281,6 +304,31 @@ public class ActionUsageImpl extends BehaviorUsageElementImpl implements ActionU
   protected EClass eStaticClass()
   {
     return SysMLOCPackage.Literals.ACTION_USAGE;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public VisibilityIndicator getVisibility()
+  {
+    return visibility;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setVisibility(VisibilityIndicator newVisibility)
+  {
+    VisibilityIndicator oldVisibility = visibility;
+    visibility = newVisibility == null ? VISIBILITY_EDEFAULT : newVisibility;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ACTION_USAGE__VISIBILITY, oldVisibility, visibility));
   }
 
   /**
@@ -539,11 +587,11 @@ public class ActionUsageImpl extends BehaviorUsageElementImpl implements ActionU
    * @generated
    */
   @Override
-  public EList<BaseElement> getElements()
+  public EList<UsageBodyElement> getElements()
   {
     if (elements == null)
     {
-      elements = new EObjectContainmentEList<BaseElement>(BaseElement.class, this, SysMLOCPackage.ACTION_USAGE__ELEMENTS);
+      elements = new EObjectContainmentEList<UsageBodyElement>(UsageBodyElement.class, this, SysMLOCPackage.ACTION_USAGE__ELEMENTS);
     }
     return elements;
   }
@@ -574,6 +622,8 @@ public class ActionUsageImpl extends BehaviorUsageElementImpl implements ActionU
   {
     switch (featureID)
     {
+      case SysMLOCPackage.ACTION_USAGE__VISIBILITY:
+        return getVisibility();
       case SysMLOCPackage.ACTION_USAGE__DIRECTION:
         return getDirection();
       case SysMLOCPackage.ACTION_USAGE__IS_ABSTRACT:
@@ -611,6 +661,9 @@ public class ActionUsageImpl extends BehaviorUsageElementImpl implements ActionU
   {
     switch (featureID)
     {
+      case SysMLOCPackage.ACTION_USAGE__VISIBILITY:
+        setVisibility((VisibilityIndicator)newValue);
+        return;
       case SysMLOCPackage.ACTION_USAGE__DIRECTION:
         setDirection((FeatureDirection)newValue);
         return;
@@ -643,7 +696,7 @@ public class ActionUsageImpl extends BehaviorUsageElementImpl implements ActionU
         return;
       case SysMLOCPackage.ACTION_USAGE__ELEMENTS:
         getElements().clear();
-        getElements().addAll((Collection<? extends BaseElement>)newValue);
+        getElements().addAll((Collection<? extends UsageBodyElement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -659,6 +712,9 @@ public class ActionUsageImpl extends BehaviorUsageElementImpl implements ActionU
   {
     switch (featureID)
     {
+      case SysMLOCPackage.ACTION_USAGE__VISIBILITY:
+        setVisibility(VISIBILITY_EDEFAULT);
+        return;
       case SysMLOCPackage.ACTION_USAGE__DIRECTION:
         setDirection(DIRECTION_EDEFAULT);
         return;
@@ -706,6 +762,8 @@ public class ActionUsageImpl extends BehaviorUsageElementImpl implements ActionU
   {
     switch (featureID)
     {
+      case SysMLOCPackage.ACTION_USAGE__VISIBILITY:
+        return visibility != VISIBILITY_EDEFAULT;
       case SysMLOCPackage.ACTION_USAGE__DIRECTION:
         return direction != DIRECTION_EDEFAULT;
       case SysMLOCPackage.ACTION_USAGE__IS_ABSTRACT:
@@ -740,6 +798,14 @@ public class ActionUsageImpl extends BehaviorUsageElementImpl implements ActionU
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
   {
+    if (baseClass == MemberPrefix.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.ACTION_USAGE__VISIBILITY: return SysMLOCPackage.MEMBER_PREFIX__VISIBILITY;
+        default: return -1;
+      }
+    }
     if (baseClass == RefPrefix.class)
     {
       switch (derivedFeatureID)
@@ -781,6 +847,14 @@ public class ActionUsageImpl extends BehaviorUsageElementImpl implements ActionU
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
   {
+    if (baseClass == MemberPrefix.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.MEMBER_PREFIX__VISIBILITY: return SysMLOCPackage.ACTION_USAGE__VISIBILITY;
+        default: return -1;
+      }
+    }
     if (baseClass == RefPrefix.class)
     {
       switch (baseFeatureID)
@@ -825,7 +899,9 @@ public class ActionUsageImpl extends BehaviorUsageElementImpl implements ActionU
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (direction: ");
+    result.append(" (visibility: ");
+    result.append(visibility);
+    result.append(", direction: ");
     result.append(direction);
     result.append(", isAbstract: ");
     result.append(isAbstract);

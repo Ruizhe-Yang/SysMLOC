@@ -4,13 +4,20 @@
 package dut.control.sysmloc.sysMLOC.impl;
 
 import dut.control.sysmloc.sysMLOC.Comment;
+import dut.control.sysmloc.sysMLOC.Identification;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,6 +27,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommentImpl#getDeclaredShortName <em>Declared Short Name</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommentImpl#getDeclaredName <em>Declared Name</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommentImpl#getAnnotatedElement <em>Annotated Element</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommentImpl#getLocale <em>Locale</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommentImpl#getBody <em>Body</em>}</li>
  * </ul>
  *
@@ -27,6 +38,76 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class CommentImpl extends AnnotatingElementImpl implements Comment
 {
+  /**
+   * The default value of the '{@link #getDeclaredShortName() <em>Declared Short Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredShortName()
+   * @generated
+   * @ordered
+   */
+  protected static final String DECLARED_SHORT_NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDeclaredShortName() <em>Declared Short Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredShortName()
+   * @generated
+   * @ordered
+   */
+  protected String declaredShortName = DECLARED_SHORT_NAME_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredName()
+   * @generated
+   * @ordered
+   */
+  protected static final String DECLARED_NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredName()
+   * @generated
+   * @ordered
+   */
+  protected String declaredName = DECLARED_NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getAnnotatedElement() <em>Annotated Element</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAnnotatedElement()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> annotatedElement;
+
+  /**
+   * The default value of the '{@link #getLocale() <em>Locale</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLocale()
+   * @generated
+   * @ordered
+   */
+  protected static final String LOCALE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getLocale() <em>Locale</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLocale()
+   * @generated
+   * @ordered
+   */
+  protected String locale = LOCALE_EDEFAULT;
+
   /**
    * The default value of the '{@link #getBody() <em>Body</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -74,6 +155,96 @@ public class CommentImpl extends AnnotatingElementImpl implements Comment
    * @generated
    */
   @Override
+  public String getDeclaredShortName()
+  {
+    return declaredShortName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDeclaredShortName(String newDeclaredShortName)
+  {
+    String oldDeclaredShortName = declaredShortName;
+    declaredShortName = newDeclaredShortName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.COMMENT__DECLARED_SHORT_NAME, oldDeclaredShortName, declaredShortName));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getDeclaredName()
+  {
+    return declaredName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDeclaredName(String newDeclaredName)
+  {
+    String oldDeclaredName = declaredName;
+    declaredName = newDeclaredName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.COMMENT__DECLARED_NAME, oldDeclaredName, declaredName));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<String> getAnnotatedElement()
+  {
+    if (annotatedElement == null)
+    {
+      annotatedElement = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.COMMENT__ANNOTATED_ELEMENT);
+    }
+    return annotatedElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getLocale()
+  {
+    return locale;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setLocale(String newLocale)
+  {
+    String oldLocale = locale;
+    locale = newLocale;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.COMMENT__LOCALE, oldLocale, locale));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public String getBody()
   {
     return body;
@@ -103,6 +274,14 @@ public class CommentImpl extends AnnotatingElementImpl implements Comment
   {
     switch (featureID)
     {
+      case SysMLOCPackage.COMMENT__DECLARED_SHORT_NAME:
+        return getDeclaredShortName();
+      case SysMLOCPackage.COMMENT__DECLARED_NAME:
+        return getDeclaredName();
+      case SysMLOCPackage.COMMENT__ANNOTATED_ELEMENT:
+        return getAnnotatedElement();
+      case SysMLOCPackage.COMMENT__LOCALE:
+        return getLocale();
       case SysMLOCPackage.COMMENT__BODY:
         return getBody();
     }
@@ -114,11 +293,25 @@ public class CommentImpl extends AnnotatingElementImpl implements Comment
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
+      case SysMLOCPackage.COMMENT__DECLARED_SHORT_NAME:
+        setDeclaredShortName((String)newValue);
+        return;
+      case SysMLOCPackage.COMMENT__DECLARED_NAME:
+        setDeclaredName((String)newValue);
+        return;
+      case SysMLOCPackage.COMMENT__ANNOTATED_ELEMENT:
+        getAnnotatedElement().clear();
+        getAnnotatedElement().addAll((Collection<? extends String>)newValue);
+        return;
+      case SysMLOCPackage.COMMENT__LOCALE:
+        setLocale((String)newValue);
+        return;
       case SysMLOCPackage.COMMENT__BODY:
         setBody((String)newValue);
         return;
@@ -136,6 +329,18 @@ public class CommentImpl extends AnnotatingElementImpl implements Comment
   {
     switch (featureID)
     {
+      case SysMLOCPackage.COMMENT__DECLARED_SHORT_NAME:
+        setDeclaredShortName(DECLARED_SHORT_NAME_EDEFAULT);
+        return;
+      case SysMLOCPackage.COMMENT__DECLARED_NAME:
+        setDeclaredName(DECLARED_NAME_EDEFAULT);
+        return;
+      case SysMLOCPackage.COMMENT__ANNOTATED_ELEMENT:
+        getAnnotatedElement().clear();
+        return;
+      case SysMLOCPackage.COMMENT__LOCALE:
+        setLocale(LOCALE_EDEFAULT);
+        return;
       case SysMLOCPackage.COMMENT__BODY:
         setBody(BODY_EDEFAULT);
         return;
@@ -153,10 +358,58 @@ public class CommentImpl extends AnnotatingElementImpl implements Comment
   {
     switch (featureID)
     {
+      case SysMLOCPackage.COMMENT__DECLARED_SHORT_NAME:
+        return DECLARED_SHORT_NAME_EDEFAULT == null ? declaredShortName != null : !DECLARED_SHORT_NAME_EDEFAULT.equals(declaredShortName);
+      case SysMLOCPackage.COMMENT__DECLARED_NAME:
+        return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
+      case SysMLOCPackage.COMMENT__ANNOTATED_ELEMENT:
+        return annotatedElement != null && !annotatedElement.isEmpty();
+      case SysMLOCPackage.COMMENT__LOCALE:
+        return LOCALE_EDEFAULT == null ? locale != null : !LOCALE_EDEFAULT.equals(locale);
       case SysMLOCPackage.COMMENT__BODY:
         return BODY_EDEFAULT == null ? body != null : !BODY_EDEFAULT.equals(body);
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == Identification.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.COMMENT__DECLARED_SHORT_NAME: return SysMLOCPackage.IDENTIFICATION__DECLARED_SHORT_NAME;
+        case SysMLOCPackage.COMMENT__DECLARED_NAME: return SysMLOCPackage.IDENTIFICATION__DECLARED_NAME;
+        default: return -1;
+      }
+    }
+    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == Identification.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.IDENTIFICATION__DECLARED_SHORT_NAME: return SysMLOCPackage.COMMENT__DECLARED_SHORT_NAME;
+        case SysMLOCPackage.IDENTIFICATION__DECLARED_NAME: return SysMLOCPackage.COMMENT__DECLARED_NAME;
+        default: return -1;
+      }
+    }
+    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
   }
 
   /**
@@ -170,7 +423,15 @@ public class CommentImpl extends AnnotatingElementImpl implements Comment
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (body: ");
+    result.append(" (declaredShortName: ");
+    result.append(declaredShortName);
+    result.append(", declaredName: ");
+    result.append(declaredName);
+    result.append(", annotatedElement: ");
+    result.append(annotatedElement);
+    result.append(", locale: ");
+    result.append(locale);
+    result.append(", body: ");
     result.append(body);
     result.append(')');
     return result.toString();

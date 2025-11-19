@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <packages declaredName="Camera">
+    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="'Action Decomposition'"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Camera"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="FocusingSubsystem"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="ImagingSubsystem"/>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="camera">
+      <typings>Camera</typings>
+      <elements xsi:type="sysMLOC:ItemUsage" isReference="true" declaredName="scene">
+        <typings>Scene</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="photos">
+        <typings>Picture</typings>
+        <Multiplicity>*</Multiplicity>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="autoFocus">
+        <elements xsi:type="sysMLOC:ItemUsage" isReference="true" declaredName="scene">
+          <typings>Scene</typings>
+          <valuePart>camera::scene</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" direction="out" isReference="true" declaredName="realImage">
+          <typings>Image</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:FlowConnectionUsage">
+        <FlowEnd>autoFocus.realImage</FlowEnd>
+        <FlowEnd>imager.focusedImage</FlowEnd>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="imager">
+        <elements xsi:type="sysMLOC:ItemUsage" declaredName="focusedImage">
+          <typings>Image</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" direction="out" declaredName="photo">
+          <typings>Picture</typings>
+          <subsetting>photos</subsetting>
+        </elements>
+      </elements>
+    </elements>
+  </packages>
+</sysMLOC:Namespace>

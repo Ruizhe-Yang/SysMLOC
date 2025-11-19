@@ -23,7 +23,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface FlowConnectionUsage extends StructureUsageElement, OccurrenceUsagePrefix, BasicUsagePrefix, RefPrefix, UsageDeclaration, FeatureDeclaration, FeatureSpecializationPart, FeatureSpecialization, MultiplicityPart, FeatureValue
+public interface FlowConnectionUsage extends StructureUsageElement, MemberPrefix, OccurrenceUsagePrefix, BasicUsagePrefix, RefPrefix, UsageDeclaration, FeatureDeclaration, FeatureSpecializationPart, FeatureSpecialization, MultiplicityPart, FeatureValue
 {
   /**
    * Returns the value of the '<em><b>Item Feature</b></em>' attribute list.
@@ -51,7 +51,7 @@ public interface FlowConnectionUsage extends StructureUsageElement, OccurrenceUs
 
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
-   * The list contents are of type {@link dut.control.sysmloc.sysMLOC.BaseElement}.
+   * The list contents are of type {@link dut.control.sysmloc.sysMLOC.UsageBodyElement}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Elements</em>' containment reference list.
@@ -59,6 +59,6 @@ public interface FlowConnectionUsage extends StructureUsageElement, OccurrenceUs
    * @model containment="true"
    * @generated
    */
-  EList<BaseElement> getElements();
+  EList<UsageBodyElement> getElements();
 
 } // FlowConnectionUsage

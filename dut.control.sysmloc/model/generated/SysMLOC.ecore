@@ -2,84 +2,121 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="sysMLOC" nsURI="http://www.control.dut/sysmloc/SysMLOC" nsPrefix="sysMLOC">
   <eClassifiers xsi:type="ecore:EClass" name="Namespace">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="intro" upperBound="-1"
+        eType="#//CodeAnnotation" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="packages" upperBound="-1"
         eType="#//Package" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Package" eSuperTypes="#//BaseElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Package" eSuperTypes="#//PackageBodyElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="declaredName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="#//BaseElement" containment="true"/>
+        eType="#//PackageBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BaseElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AnnotatingElement" eSuperTypes="#//BaseElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ImportElement" eSuperTypes="#//BaseElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="DefinitionElement" eSuperTypes="#//BaseElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="UsageElement" eSuperTypes="#//BaseElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PackageBodyElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DefinitionBodyElement" eSuperTypes="#//UsageBodyElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UsageBodyElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EnumerationBodyElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AnnotatingElement" eSuperTypes="#//PackageBodyElement #//DefinitionBodyElement #//EnumerationBodyElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ImportElement" eSuperTypes="#//PackageBodyElement #//DefinitionBodyElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DefinitionElement" eSuperTypes="#//PackageBodyElement #//DefinitionBodyElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UsageElement" eSuperTypes="#//PackageBodyElement #//DefinitionBodyElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="NonOccurrenceUsageElement" eSuperTypes="#//UsageElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="OccurrenceUsageElement" eSuperTypes="#//UsageElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="StructureUsageElement" eSuperTypes="#//OccurrenceUsageElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="BehaviorUsageElement" eSuperTypes="#//OccurrenceUsageElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="NamespaceImport" eSuperTypes="#//ImportElement">
+  <eClassifiers xsi:type="ecore:EClass" name="EnumerationElement" eSuperTypes="#//EnumerationBodyElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NamespaceImport" eSuperTypes="#//ImportElement #//isImportAllFragment">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibility" eType="#//VisibilityIndicator"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="declaredName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isRecursive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Comment" eSuperTypes="#//AnnotatingElement">
+  <eClassifiers xsi:type="ecore:EClass" name="MembershipImport" eSuperTypes="#//ImportElement #//isImportAllFragment">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibility" eType="#//VisibilityIndicator"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="declaredName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isRecursive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CodeAnnotation" eSuperTypes="#//PackageBodyElement #//DefinitionBodyElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="body" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ReferenceUsage" eSuperTypes="#//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//Usage #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//MultiplicityPart #//FeatureValue"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AttributeDefinition" eSuperTypes="#//DefinitionElement #//DefinitionDeclaration">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="#//BaseElement" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Comment" eSuperTypes="#//AnnotatingElement #//Identification">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="annotatedElement" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="locale" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="body" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AttributeUsage" eSuperTypes="#//NonOccurrenceUsageElement #//Usage #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//MultiplicityPart #//FeatureValue"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ItemDefinition" eSuperTypes="#//DefinitionElement #//DefinitionDeclaration">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="#//BaseElement" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Documentation" eSuperTypes="#//AnnotatingElement #//Identification">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="locale" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="body" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ItemUsage" eSuperTypes="#//StructureUsageElement #//Usage #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//MultiplicityPart #//FeatureValue"/>
-  <eClassifiers xsi:type="ecore:EClass" name="PartDefinition" eSuperTypes="#//DefinitionElement #//DefinitionDeclaration">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="#//BaseElement" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TextualRepresentation" eSuperTypes="#//AnnotatingElement #//Identification">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="body" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PartUsage" eSuperTypes="#//StructureUsageElement #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//Usage #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//MultiplicityPart #//FeatureValue"/>
-  <eClassifiers xsi:type="ecore:EClass" name="PortDefinition" eSuperTypes="#//DefinitionElement #//DefinitionDeclaration">
+  <eClassifiers xsi:type="ecore:EClass" name="AttributeDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//DefinitionPrefix #//BasicDefinitionPrefix #//DefinitionDeclaration">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="#//BaseElement" containment="true"/>
+        eType="#//DefinitionBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PortUsage" eSuperTypes="#//StructureUsageElement #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//Usage #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//MultiplicityPart #//FeatureValue"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ConnectionDefinition" eSuperTypes="#//DefinitionElement #//DefinitionDeclaration">
+  <eClassifiers xsi:type="ecore:EClass" name="AttributeUsage" eSuperTypes="#//NonOccurrenceUsageElement #//MemberPrefix #//Usage #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//MultiplicityPart #//FeatureValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EnumerationDefinition" eSuperTypes="#//DefinitionElement #//DefinitionDeclaration">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="#//BaseElement" containment="true"/>
+        eType="#//EnumerationBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ConnectionUsage" eSuperTypes="#//StructureUsageElement #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//MultiplicityPart #//FeatureValue #//ConnectorPart">
+  <eClassifiers xsi:type="ecore:EClass" name="EnumeratedValue" eSuperTypes="#//EnumerationElement #//Usage #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//MultiplicityPart #//FeatureValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EnumerationUsage" eSuperTypes="#//NonOccurrenceUsageElement #//UsagePrefix #//UnextendedUsagePrefix #//EndUsagePrefix #//BasicUsagePrefix #//RefPrefix #//Usage #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//MultiplicityPart #//FeatureValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ItemDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//OccurrenceDefinitionPrefix #//BasicDefinitionPrefix #//DefinitionDeclaration">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="#//BaseElement" containment="true"/>
+        eType="#//DefinitionBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InterfaceDefinition" eSuperTypes="#//DefinitionElement #//DefinitionDeclaration">
+  <eClassifiers xsi:type="ecore:EClass" name="ItemUsage" eSuperTypes="#//StructureUsageElement #//MemberPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//Usage #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//MultiplicityPart #//FeatureValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PartDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//OccurrenceDefinitionPrefix #//BasicDefinitionPrefix #//DefinitionDeclaration">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="#//BaseElement" containment="true"/>
+        eType="#//DefinitionBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InterfaceUsage" eSuperTypes="#//StructureUsageElement #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//MultiplicityPart #//InterfacePart">
+  <eClassifiers xsi:type="ecore:EClass" name="PartUsage" eSuperTypes="#//StructureUsageElement #//MemberPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//Usage #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//MultiplicityPart #//FeatureValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PortDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//DefinitionPrefix #//BasicDefinitionPrefix #//DefinitionDeclaration">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="#//BaseElement" containment="true"/>
+        eType="#//DefinitionBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FlowConnectionDefinition" eSuperTypes="#//DefinitionElement #//DefinitionDeclaration">
+  <eClassifiers xsi:type="ecore:EClass" name="PortUsage" eSuperTypes="#//StructureUsageElement #//MemberPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//Usage #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//MultiplicityPart #//FeatureValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ConnectionDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//OccurrenceDefinitionPrefix #//BasicDefinitionPrefix #//DefinitionDeclaration">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="#//BaseElement" containment="true"/>
+        eType="#//DefinitionBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FlowConnectionUsage" eSuperTypes="#//StructureUsageElement #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//MultiplicityPart #//FeatureValue">
+  <eClassifiers xsi:type="ecore:EClass" name="ConnectionUsage" eSuperTypes="#//StructureUsageElement #//MemberPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//MultiplicityPart #//FeatureValue #//ConnectorPart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//UsageBodyElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InterfaceDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//OccurrenceDefinitionPrefix #//BasicDefinitionPrefix #//DefinitionDeclaration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//DefinitionBodyElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InterfaceUsage" eSuperTypes="#//StructureUsageElement #//MemberPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//MultiplicityPart #//InterfacePart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//UsageBodyElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FlowConnectionDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//OccurrenceDefinitionPrefix #//BasicDefinitionPrefix #//DefinitionDeclaration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//DefinitionBodyElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FlowConnectionUsage" eSuperTypes="#//StructureUsageElement #//MemberPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//MultiplicityPart #//FeatureValue">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ItemFeature" unique="false"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="FlowEnd" unique="false"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="#//BaseElement" containment="true"/>
+        eType="#//UsageBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ActionUsage" eSuperTypes="#//BehaviorUsageElement #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix">
+  <eClassifiers xsi:type="ecore:EClass" name="ActionUsage" eSuperTypes="#//BehaviorUsageElement #//MemberPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="declaredName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="#//BaseElement" containment="true"/>
+        eType="#//UsageBodyElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AliasElement" eSuperTypes="#//PackageBodyElement #//DefinitionBodyElement #//MemberPrefix">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="memberShortName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="memberName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="memberElement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//AnnotatingElement" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="VisibilityIndicator">
     <eLiterals name="public" literal="public"/>
@@ -94,6 +131,25 @@
   <eClassifiers xsi:type="ecore:EEnum" name="PortionKind">
     <eLiterals name="snapshot" literal="snapshot"/>
     <eLiterals name="timeslice" value="1" literal="timeslice"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="isImportAllFragment">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isImportAll" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MemberPrefix">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibility" eType="#//VisibilityIndicator"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DefinitionPrefix" eSuperTypes="#//BasicDefinitionPrefix"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OccurrenceDefinitionPrefix" eSuperTypes="#//BasicDefinitionPrefix">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isIndividual" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BasicDefinitionPrefix">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isAbstract" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isVariation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UsagePrefix" eSuperTypes="#//UnextendedUsagePrefix #//EndUsagePrefix #//BasicUsagePrefix #//RefPrefix"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UnextendedUsagePrefix" eSuperTypes="#//EndUsagePrefix #//BasicUsagePrefix #//RefPrefix"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EndUsagePrefix">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isEnd" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OccurrenceUsagePrefix" eSuperTypes="#//BasicUsagePrefix #//RefPrefix">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isEnd" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -111,7 +167,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isReference" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConnectorPart">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="connectorEnd" unique="false"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="connectorPart" unique="false"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InterfacePart">
@@ -125,7 +181,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Usage" eSuperTypes="#//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//MultiplicityPart #//FeatureValue">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="#//BaseElement" containment="true"/>
+        eType="#//UsageBodyElement" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UsageDeclaration" eSuperTypes="#//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//MultiplicityPart"/>
   <eClassifiers xsi:type="ecore:EClass" name="FeatureValue">
@@ -138,9 +194,13 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="declaredName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FeatureSpecializationPart" eSuperTypes="#//FeatureSpecialization #//MultiplicityPart"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Identification">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="declaredShortName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="declaredName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MultiplicityPart">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Multiplicity" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isOrdered" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isNonunique" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>

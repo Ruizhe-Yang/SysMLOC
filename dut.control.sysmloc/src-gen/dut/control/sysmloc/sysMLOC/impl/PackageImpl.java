@@ -3,7 +3,7 @@
  */
 package dut.control.sysmloc.sysMLOC.impl;
 
-import dut.control.sysmloc.sysMLOC.BaseElement;
+import dut.control.sysmloc.sysMLOC.PackageBodyElement;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 
 import java.util.Collection;
@@ -35,7 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class PackageImpl extends BaseElementImpl implements dut.control.sysmloc.sysMLOC.Package
+public class PackageImpl extends PackageBodyElementImpl implements dut.control.sysmloc.sysMLOC.Package
 {
   /**
    * The default value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
@@ -65,7 +65,7 @@ public class PackageImpl extends BaseElementImpl implements dut.control.sysmloc.
    * @generated
    * @ordered
    */
-  protected EList<BaseElement> elements;
+  protected EList<PackageBodyElement> elements;
 
   /**
    * <!-- begin-user-doc -->
@@ -119,11 +119,11 @@ public class PackageImpl extends BaseElementImpl implements dut.control.sysmloc.
    * @generated
    */
   @Override
-  public EList<BaseElement> getElements()
+  public EList<PackageBodyElement> getElements()
   {
     if (elements == null)
     {
-      elements = new EObjectContainmentEList<BaseElement>(BaseElement.class, this, SysMLOCPackage.PACKAGE__ELEMENTS);
+      elements = new EObjectContainmentEList<PackageBodyElement>(PackageBodyElement.class, this, SysMLOCPackage.PACKAGE__ELEMENTS);
     }
     return elements;
   }
@@ -178,7 +178,7 @@ public class PackageImpl extends BaseElementImpl implements dut.control.sysmloc.
         return;
       case SysMLOCPackage.PACKAGE__ELEMENTS:
         getElements().clear();
-        getElements().addAll((Collection<? extends BaseElement>)newValue);
+        getElements().addAll((Collection<? extends PackageBodyElement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

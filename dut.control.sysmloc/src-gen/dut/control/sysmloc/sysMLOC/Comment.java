@@ -3,6 +3,7 @@
  */
 package dut.control.sysmloc.sysMLOC;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,6 +14,8 @@ package dut.control.sysmloc.sysMLOC;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.Comment#getAnnotatedElement <em>Annotated Element</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.Comment#getLocale <em>Locale</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.Comment#getBody <em>Body</em>}</li>
  * </ul>
  *
@@ -20,8 +23,42 @@ package dut.control.sysmloc.sysMLOC;
  * @model
  * @generated
  */
-public interface Comment extends AnnotatingElement
+public interface Comment extends AnnotatingElement, Identification
 {
+  /**
+   * Returns the value of the '<em><b>Annotated Element</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Annotated Element</em>' attribute list.
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getComment_AnnotatedElement()
+   * @model unique="false"
+   * @generated
+   */
+  EList<String> getAnnotatedElement();
+
+  /**
+   * Returns the value of the '<em><b>Locale</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Locale</em>' attribute.
+   * @see #setLocale(String)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getComment_Locale()
+   * @model
+   * @generated
+   */
+  String getLocale();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.Comment#getLocale <em>Locale</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Locale</em>' attribute.
+   * @see #getLocale()
+   * @generated
+   */
+  void setLocale(String value);
+
   /**
    * Returns the value of the '<em><b>Body</b></em>' attribute.
    * <!-- begin-user-doc -->

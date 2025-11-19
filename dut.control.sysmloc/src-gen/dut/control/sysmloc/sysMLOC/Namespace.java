@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.Namespace#getIntro <em>Intro</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.Namespace#getPackages <em>Packages</em>}</li>
  * </ul>
  *
@@ -25,6 +26,18 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Namespace extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Intro</b></em>' containment reference list.
+   * The list contents are of type {@link dut.control.sysmloc.sysMLOC.CodeAnnotation}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Intro</em>' containment reference list.
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getNamespace_Intro()
+   * @model containment="true"
+   * @generated
+   */
+  EList<CodeAnnotation> getIntro();
+
   /**
    * Returns the value of the '<em><b>Packages</b></em>' containment reference list.
    * The list contents are of type {@link dut.control.sysmloc.sysMLOC.Package}.
