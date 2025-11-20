@@ -210,6 +210,18 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//DefinitionBodyElement
 		public RuleCall getDefinitionBodyElementParserRuleCall() { return cDefinitionBodyElementParserRuleCall; }
 	}
+	public class InterBodyElementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.InterBodyElement");
+		private final RuleCall cUsageBodyElementParserRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//InterBodyElement:
+		//    UsageBodyElement
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//UsageBodyElement
+		public RuleCall getUsageBodyElementParserRuleCall() { return cUsageBodyElementParserRuleCall; }
+	}
 	public class EnumerationBodyElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.EnumerationBodyElement");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -1763,31 +1775,30 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cUsageDeclarationParserRuleCall_3_0_0 = (RuleCall)cGroup_3_0.eContents().get(0);
 		private final Group cGroup_3_0_1 = (Group)cGroup_3_0.eContents().get(1);
 		private final Keyword cConnectKeyword_3_0_1_0 = (Keyword)cGroup_3_0_1.eContents().get(0);
-		private final RuleCall cInterfacePartParserRuleCall_3_0_1_1 = (RuleCall)cGroup_3_0_1.eContents().get(1);
-		private final RuleCall cInterfacePartParserRuleCall_3_1 = (RuleCall)cAlternatives_3.eContents().get(1);
+		private final RuleCall cConnectorPartParserRuleCall_3_0_1_1 = (RuleCall)cGroup_3_0_1.eContents().get(1);
+		private final RuleCall cConnectorPartParserRuleCall_3_1 = (RuleCall)cAlternatives_3.eContents().get(1);
 		private final Alternatives cAlternatives_4 = (Alternatives)cGroup.eContents().get(4);
 		private final Keyword cSemicolonKeyword_4_0 = (Keyword)cAlternatives_4.eContents().get(0);
 		private final Group cGroup_4_1 = (Group)cAlternatives_4.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_4_1_0 = (Keyword)cGroup_4_1.eContents().get(0);
 		private final Assignment cElementsAssignment_4_1_1 = (Assignment)cGroup_4_1.eContents().get(1);
-		private final RuleCall cElementsUsageBodyElementParserRuleCall_4_1_1_0 = (RuleCall)cElementsAssignment_4_1_1.eContents().get(0);
+		private final RuleCall cElementsInterBodyElementParserRuleCall_4_1_1_0 = (RuleCall)cElementsAssignment_4_1_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4_1_2 = (Keyword)cGroup_4_1.eContents().get(2);
 		
-		////InterfaceBody:
-		////    InterfaceEnd | BaseElement
-		////;
-		////
-		////InterfaceEnd returns PortUsage:
-		////    isEnd ?= 'end' Usage
-		////;
 		//InterfaceUsage:
-		//    MemberPrefix OccurrenceUsagePrefix 'interface' (UsageDeclaration? ('connect' InterfacePart )? | InterfacePart)
-		//    (';' | '{' (elements+=UsageBodyElement)* '}')
+		//    MemberPrefix
+		//    OccurrenceUsagePrefix
+		//    'interface'
+		//    (UsageDeclaration? ('connect' ConnectorPart )? | ConnectorPart)
+		//    (';' | '{' (elements+=InterBodyElement)* '}')
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//MemberPrefix OccurrenceUsagePrefix 'interface' (UsageDeclaration? ('connect' InterfacePart )? | InterfacePart)
-		//(';' | '{' (elements+=UsageBodyElement)* '}')
+		//MemberPrefix
+		//OccurrenceUsagePrefix
+		//'interface'
+		//(UsageDeclaration? ('connect' ConnectorPart )? | ConnectorPart)
+		//(';' | '{' (elements+=InterBodyElement)* '}')
 		public Group getGroup() { return cGroup; }
 		
 		//MemberPrefix
@@ -1799,44 +1810,44 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//'interface'
 		public Keyword getInterfaceKeyword_2() { return cInterfaceKeyword_2; }
 		
-		//(UsageDeclaration? ('connect' InterfacePart )? | InterfacePart)
+		//(UsageDeclaration? ('connect' ConnectorPart )? | ConnectorPart)
 		public Alternatives getAlternatives_3() { return cAlternatives_3; }
 		
-		//UsageDeclaration? ('connect' InterfacePart )?
+		//UsageDeclaration? ('connect' ConnectorPart )?
 		public Group getGroup_3_0() { return cGroup_3_0; }
 		
 		//UsageDeclaration?
 		public RuleCall getUsageDeclarationParserRuleCall_3_0_0() { return cUsageDeclarationParserRuleCall_3_0_0; }
 		
-		//('connect' InterfacePart )?
+		//('connect' ConnectorPart )?
 		public Group getGroup_3_0_1() { return cGroup_3_0_1; }
 		
 		//'connect'
 		public Keyword getConnectKeyword_3_0_1_0() { return cConnectKeyword_3_0_1_0; }
 		
-		//InterfacePart
-		public RuleCall getInterfacePartParserRuleCall_3_0_1_1() { return cInterfacePartParserRuleCall_3_0_1_1; }
+		//ConnectorPart
+		public RuleCall getConnectorPartParserRuleCall_3_0_1_1() { return cConnectorPartParserRuleCall_3_0_1_1; }
 		
-		//InterfacePart
-		public RuleCall getInterfacePartParserRuleCall_3_1() { return cInterfacePartParserRuleCall_3_1; }
+		//ConnectorPart
+		public RuleCall getConnectorPartParserRuleCall_3_1() { return cConnectorPartParserRuleCall_3_1; }
 		
-		//(';' | '{' (elements+=UsageBodyElement)* '}')
+		//(';' | '{' (elements+=InterBodyElement)* '}')
 		public Alternatives getAlternatives_4() { return cAlternatives_4; }
 		
 		//';'
 		public Keyword getSemicolonKeyword_4_0() { return cSemicolonKeyword_4_0; }
 		
-		//'{' (elements+=UsageBodyElement)* '}'
+		//'{' (elements+=InterBodyElement)* '}'
 		public Group getGroup_4_1() { return cGroup_4_1; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_4_1_0() { return cLeftCurlyBracketKeyword_4_1_0; }
 		
-		//(elements+=UsageBodyElement)*
+		//(elements+=InterBodyElement)*
 		public Assignment getElementsAssignment_4_1_1() { return cElementsAssignment_4_1_1; }
 		
-		//UsageBodyElement
-		public RuleCall getElementsUsageBodyElementParserRuleCall_4_1_1_0() { return cElementsUsageBodyElementParserRuleCall_4_1_1_0; }
+		//InterBodyElement
+		public RuleCall getElementsInterBodyElementParserRuleCall_4_1_1_0() { return cElementsInterBodyElementParserRuleCall_4_1_1_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_4_1_2() { return cRightCurlyBracketKeyword_4_1_2; }
@@ -1931,7 +1942,9 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Keyword cRightCurlyBracketKeyword_7_1_2 = (Keyword)cGroup_7_1.eContents().get(2);
 		
 		//FlowConnectionUsage:
-		//    MemberPrefix OccurrenceUsagePrefix 'flow'
+		//    MemberPrefix
+		//    OccurrenceUsagePrefix
+		//    'flow'
 		//    UsageDeclaration? FeatureValue?
 		//    ( 'of' ItemFeature += Name )?
 		//    ( 'from'? FlowEnd += FeatureChainName 'to' FlowEnd += FeatureChainName )?
@@ -1939,7 +1952,9 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//MemberPrefix OccurrenceUsagePrefix 'flow'
+		//MemberPrefix
+		//OccurrenceUsagePrefix
+		//'flow'
 		//UsageDeclaration? FeatureValue?
 		//( 'of' ItemFeature += Name )?
 		//( 'from'? FlowEnd += FeatureChainName 'to' FlowEnd += FeatureChainName )?
@@ -2168,6 +2183,86 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_6_1_2() { return cRightCurlyBracketKeyword_6_1_2; }
+	}
+	public class ConnectorEndElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.ConnectorEnd");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cGroup.eContents().get(0);
+		private final Keyword cLeftSquareBracketKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final Assignment cMultiplicityAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cMultiplicityMultiplicityExpressionParserRuleCall_0_1_0 = (RuleCall)cMultiplicityAssignment_0_1.eContents().get(0);
+		private final Keyword cFullStopFullStopKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
+		private final Assignment cMultiplicityAssignment_0_3 = (Assignment)cGroup_0.eContents().get(3);
+		private final RuleCall cMultiplicityMultiplicityExpressionParserRuleCall_0_3_0 = (RuleCall)cMultiplicityAssignment_0_3.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_0_4 = (Keyword)cGroup_0.eContents().get(4);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Assignment cDelcaredNameAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
+		private final RuleCall cDelcaredNameNameParserRuleCall_1_0_0 = (RuleCall)cDelcaredNameAssignment_1_0.eContents().get(0);
+		private final Alternatives cAlternatives_1_1 = (Alternatives)cGroup_1.eContents().get(1);
+		private final Keyword cColonColonGreaterThanSignKeyword_1_1_0 = (Keyword)cAlternatives_1_1.eContents().get(0);
+		private final Keyword cReferencesKeyword_1_1_1 = (Keyword)cAlternatives_1_1.eContents().get(1);
+		private final Assignment cRefElementAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cRefElementFeatureChainNameParserRuleCall_2_0 = (RuleCall)cRefElementAssignment_2.eContents().get(0);
+		
+		//ConnectorEnd:
+		//    ('[' Multiplicity+=MultiplicityExpression '..' Multiplicity+=MultiplicityExpression ']')?
+		//    ( delcaredName = Name ('::>' | 'references') )?
+		//    refElement = FeatureChainName
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//('[' Multiplicity+=MultiplicityExpression '..' Multiplicity+=MultiplicityExpression ']')?
+		//( delcaredName = Name ('::>' | 'references') )?
+		//refElement = FeatureChainName
+		public Group getGroup() { return cGroup; }
+		
+		//('[' Multiplicity+=MultiplicityExpression '..' Multiplicity+=MultiplicityExpression ']')?
+		public Group getGroup_0() { return cGroup_0; }
+		
+		//'['
+		public Keyword getLeftSquareBracketKeyword_0_0() { return cLeftSquareBracketKeyword_0_0; }
+		
+		//Multiplicity+=MultiplicityExpression
+		public Assignment getMultiplicityAssignment_0_1() { return cMultiplicityAssignment_0_1; }
+		
+		//MultiplicityExpression
+		public RuleCall getMultiplicityMultiplicityExpressionParserRuleCall_0_1_0() { return cMultiplicityMultiplicityExpressionParserRuleCall_0_1_0; }
+		
+		//'..'
+		public Keyword getFullStopFullStopKeyword_0_2() { return cFullStopFullStopKeyword_0_2; }
+		
+		//Multiplicity+=MultiplicityExpression
+		public Assignment getMultiplicityAssignment_0_3() { return cMultiplicityAssignment_0_3; }
+		
+		//MultiplicityExpression
+		public RuleCall getMultiplicityMultiplicityExpressionParserRuleCall_0_3_0() { return cMultiplicityMultiplicityExpressionParserRuleCall_0_3_0; }
+		
+		//']'
+		public Keyword getRightSquareBracketKeyword_0_4() { return cRightSquareBracketKeyword_0_4; }
+		
+		//( delcaredName = Name ('::>' | 'references') )?
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//delcaredName = Name
+		public Assignment getDelcaredNameAssignment_1_0() { return cDelcaredNameAssignment_1_0; }
+		
+		//Name
+		public RuleCall getDelcaredNameNameParserRuleCall_1_0_0() { return cDelcaredNameNameParserRuleCall_1_0_0; }
+		
+		//('::>' | 'references')
+		public Alternatives getAlternatives_1_1() { return cAlternatives_1_1; }
+		
+		//'::>'
+		public Keyword getColonColonGreaterThanSignKeyword_1_1_0() { return cColonColonGreaterThanSignKeyword_1_1_0; }
+		
+		//'references'
+		public Keyword getReferencesKeyword_1_1_1() { return cReferencesKeyword_1_1_1; }
+		
+		//refElement = FeatureChainName
+		public Assignment getRefElementAssignment_2() { return cRefElementAssignment_2; }
+		
+		//FeatureChainName
+		public RuleCall getRefElementFeatureChainNameParserRuleCall_2_0() { return cRefElementFeatureChainNameParserRuleCall_2_0; }
 	}
 	public class IsImportAllFragmentElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.isImportAllFragment");
@@ -2491,16 +2586,16 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Keyword cRightParenthesisKeyword_1_5 = (Keyword)cGroup_1.eContents().get(5);
 		
 		//fragment ConnectorPart:
-		//    connectorPart += ConnectorEnd 'to' connectorPart += ConnectorEnd
-		//    | '(' connectorPart += ConnectorEnd ','  connectorPart += ConnectorEnd (',' connectorPart += ConnectorEnd)* ')'
+		//    (connectorPart += ConnectorEnd 'to' connectorPart += ConnectorEnd)
+		//    | ('(' connectorPart += ConnectorEnd ','  connectorPart += ConnectorEnd (',' connectorPart += ConnectorEnd)* ')')
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//connectorPart += ConnectorEnd 'to' connectorPart += ConnectorEnd
-		//| '(' connectorPart += ConnectorEnd ','  connectorPart += ConnectorEnd (',' connectorPart += ConnectorEnd)* ')'
+		//(connectorPart += ConnectorEnd 'to' connectorPart += ConnectorEnd)
+		//| ('(' connectorPart += ConnectorEnd ','  connectorPart += ConnectorEnd (',' connectorPart += ConnectorEnd)* ')')
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//connectorPart += ConnectorEnd 'to' connectorPart += ConnectorEnd
+		//(connectorPart += ConnectorEnd 'to' connectorPart += ConnectorEnd)
 		public Group getGroup_0() { return cGroup_0; }
 		
 		//connectorPart += ConnectorEnd
@@ -2518,7 +2613,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//ConnectorEnd
 		public RuleCall getConnectorPartConnectorEndParserRuleCall_0_2_0() { return cConnectorPartConnectorEndParserRuleCall_0_2_0; }
 		
-		//'(' connectorPart += ConnectorEnd ','  connectorPart += ConnectorEnd (',' connectorPart += ConnectorEnd)* ')'
+		//('(' connectorPart += ConnectorEnd ','  connectorPart += ConnectorEnd (',' connectorPart += ConnectorEnd)* ')')
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//'('
@@ -2550,92 +2645,6 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		
 		//ConnectorEnd
 		public RuleCall getConnectorPartConnectorEndParserRuleCall_1_4_1_0() { return cConnectorPartConnectorEndParserRuleCall_1_4_1_0; }
-		
-		//')'
-		public Keyword getRightParenthesisKeyword_1_5() { return cRightParenthesisKeyword_1_5; }
-	}
-	public class InterfacePartElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.InterfacePart");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Assignment cInterfaceEndAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
-		private final RuleCall cInterfaceEndFeatureChainNameParserRuleCall_0_0_0 = (RuleCall)cInterfaceEndAssignment_0_0.eContents().get(0);
-		private final Keyword cToKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
-		private final Assignment cInterfaceEndAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
-		private final RuleCall cInterfaceEndFeatureChainNameParserRuleCall_0_2_0 = (RuleCall)cInterfaceEndAssignment_0_2.eContents().get(0);
-		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Keyword cLeftParenthesisKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final Assignment cInterfaceEndAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cInterfaceEndFeatureChainNameParserRuleCall_1_1_0 = (RuleCall)cInterfaceEndAssignment_1_1.eContents().get(0);
-		private final Keyword cCommaKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
-		private final Assignment cInterfaceEndAssignment_1_3 = (Assignment)cGroup_1.eContents().get(3);
-		private final RuleCall cInterfaceEndFeatureChainNameParserRuleCall_1_3_0 = (RuleCall)cInterfaceEndAssignment_1_3.eContents().get(0);
-		private final Group cGroup_1_4 = (Group)cGroup_1.eContents().get(4);
-		private final Keyword cCommaKeyword_1_4_0 = (Keyword)cGroup_1_4.eContents().get(0);
-		private final Assignment cInterfaceEndAssignment_1_4_1 = (Assignment)cGroup_1_4.eContents().get(1);
-		private final RuleCall cInterfaceEndFeatureChainNameParserRuleCall_1_4_1_0 = (RuleCall)cInterfaceEndAssignment_1_4_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_1_5 = (Keyword)cGroup_1.eContents().get(5);
-		
-		//fragment InterfacePart:
-		//    InterfaceEnd += FeatureChainName 'to' InterfaceEnd += FeatureChainName
-		//    | '(' InterfaceEnd += FeatureChainName ','  InterfaceEnd += FeatureChainName (',' InterfaceEnd += FeatureChainName)* ')'
-		//;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//InterfaceEnd += FeatureChainName 'to' InterfaceEnd += FeatureChainName
-		//| '(' InterfaceEnd += FeatureChainName ','  InterfaceEnd += FeatureChainName (',' InterfaceEnd += FeatureChainName)* ')'
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//InterfaceEnd += FeatureChainName 'to' InterfaceEnd += FeatureChainName
-		public Group getGroup_0() { return cGroup_0; }
-		
-		//InterfaceEnd += FeatureChainName
-		public Assignment getInterfaceEndAssignment_0_0() { return cInterfaceEndAssignment_0_0; }
-		
-		//FeatureChainName
-		public RuleCall getInterfaceEndFeatureChainNameParserRuleCall_0_0_0() { return cInterfaceEndFeatureChainNameParserRuleCall_0_0_0; }
-		
-		//'to'
-		public Keyword getToKeyword_0_1() { return cToKeyword_0_1; }
-		
-		//InterfaceEnd += FeatureChainName
-		public Assignment getInterfaceEndAssignment_0_2() { return cInterfaceEndAssignment_0_2; }
-		
-		//FeatureChainName
-		public RuleCall getInterfaceEndFeatureChainNameParserRuleCall_0_2_0() { return cInterfaceEndFeatureChainNameParserRuleCall_0_2_0; }
-		
-		//'(' InterfaceEnd += FeatureChainName ','  InterfaceEnd += FeatureChainName (',' InterfaceEnd += FeatureChainName)* ')'
-		public Group getGroup_1() { return cGroup_1; }
-		
-		//'('
-		public Keyword getLeftParenthesisKeyword_1_0() { return cLeftParenthesisKeyword_1_0; }
-		
-		//InterfaceEnd += FeatureChainName
-		public Assignment getInterfaceEndAssignment_1_1() { return cInterfaceEndAssignment_1_1; }
-		
-		//FeatureChainName
-		public RuleCall getInterfaceEndFeatureChainNameParserRuleCall_1_1_0() { return cInterfaceEndFeatureChainNameParserRuleCall_1_1_0; }
-		
-		//','
-		public Keyword getCommaKeyword_1_2() { return cCommaKeyword_1_2; }
-		
-		//InterfaceEnd += FeatureChainName
-		public Assignment getInterfaceEndAssignment_1_3() { return cInterfaceEndAssignment_1_3; }
-		
-		//FeatureChainName
-		public RuleCall getInterfaceEndFeatureChainNameParserRuleCall_1_3_0() { return cInterfaceEndFeatureChainNameParserRuleCall_1_3_0; }
-		
-		//(',' InterfaceEnd += FeatureChainName)*
-		public Group getGroup_1_4() { return cGroup_1_4; }
-		
-		//','
-		public Keyword getCommaKeyword_1_4_0() { return cCommaKeyword_1_4_0; }
-		
-		//InterfaceEnd += FeatureChainName
-		public Assignment getInterfaceEndAssignment_1_4_1() { return cInterfaceEndAssignment_1_4_1; }
-		
-		//FeatureChainName
-		public RuleCall getInterfaceEndFeatureChainNameParserRuleCall_1_4_1_0() { return cInterfaceEndFeatureChainNameParserRuleCall_1_4_1_0; }
 		
 		//')'
 		public Keyword getRightParenthesisKeyword_1_5() { return cRightParenthesisKeyword_1_5; }
@@ -3355,77 +3364,18 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//FeatureChainName
 		public RuleCall getRedefinitionsFeatureChainNameParserRuleCall_4_2_1_0() { return cRedefinitionsFeatureChainNameParserRuleCall_4_2_1_0; }
 	}
-	public class ConnectorEndElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.ConnectorEnd");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cGroup.eContents().get(0);
-		private final Keyword cLeftSquareBracketKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
-		private final RuleCall cMultiplicityExpressionParserRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
-		private final Keyword cFullStopFullStopKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
-		private final RuleCall cMultiplicityExpressionParserRuleCall_0_3 = (RuleCall)cGroup_0.eContents().get(3);
-		private final Keyword cRightSquareBracketKeyword_0_4 = (Keyword)cGroup_0.eContents().get(4);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final RuleCall cNameParserRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
-		private final Alternatives cAlternatives_1_1 = (Alternatives)cGroup_1.eContents().get(1);
-		private final Keyword cColonColonGreaterThanSignKeyword_1_1_0 = (Keyword)cAlternatives_1_1.eContents().get(0);
-		private final Keyword cReferencesKeyword_1_1_1 = (Keyword)cAlternatives_1_1.eContents().get(1);
-		private final RuleCall cFeatureChainNameParserRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
-		
-		//// TODO --------------------------------- Terminal Level ---------------------------------//
-		//ConnectorEnd:
-		//    ('[' MultiplicityExpression '..' MultiplicityExpression ']')?
-		//    ( Name ('::>' | 'references') )?
-		//    FeatureChainName
-		//;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//('[' MultiplicityExpression '..' MultiplicityExpression ']')?
-		//( Name ('::>' | 'references') )?
-		//FeatureChainName
-		public Group getGroup() { return cGroup; }
-		
-		//('[' MultiplicityExpression '..' MultiplicityExpression ']')?
-		public Group getGroup_0() { return cGroup_0; }
-		
-		//'['
-		public Keyword getLeftSquareBracketKeyword_0_0() { return cLeftSquareBracketKeyword_0_0; }
-		
-		//MultiplicityExpression
-		public RuleCall getMultiplicityExpressionParserRuleCall_0_1() { return cMultiplicityExpressionParserRuleCall_0_1; }
-		
-		//'..'
-		public Keyword getFullStopFullStopKeyword_0_2() { return cFullStopFullStopKeyword_0_2; }
-		
-		//MultiplicityExpression
-		public RuleCall getMultiplicityExpressionParserRuleCall_0_3() { return cMultiplicityExpressionParserRuleCall_0_3; }
-		
-		//']'
-		public Keyword getRightSquareBracketKeyword_0_4() { return cRightSquareBracketKeyword_0_4; }
-		
-		//( Name ('::>' | 'references') )?
-		public Group getGroup_1() { return cGroup_1; }
-		
-		//Name
-		public RuleCall getNameParserRuleCall_1_0() { return cNameParserRuleCall_1_0; }
-		
-		//('::>' | 'references')
-		public Alternatives getAlternatives_1_1() { return cAlternatives_1_1; }
-		
-		//'::>'
-		public Keyword getColonColonGreaterThanSignKeyword_1_1_0() { return cColonColonGreaterThanSignKeyword_1_1_0; }
-		
-		//'references'
-		public Keyword getReferencesKeyword_1_1_1() { return cReferencesKeyword_1_1_1; }
-		
-		//FeatureChainName
-		public RuleCall getFeatureChainNameParserRuleCall_2() { return cFeatureChainNameParserRuleCall_2; }
-	}
 	public class MultiplicityExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.MultiplicityExpression");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cLiteralExpressionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cFeatureReferenceExpressionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
+		//// TODO --------------------------------- Terminal Level ---------------------------------//
+		////ConnectorEnd:
+		////    ('[' MultiplicityExpression '..' MultiplicityExpression ']')?
+		////    ( Name ('::>' | 'references') )?
+		////    FeatureChainName
+		////;
 		//MultiplicityExpression:
 		//    LiteralExpression | FeatureReferenceExpression
 		//;
@@ -3910,6 +3860,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	private final PackageBodyElementElements pPackageBodyElement;
 	private final DefinitionBodyElementElements pDefinitionBodyElement;
 	private final UsageBodyElementElements pUsageBodyElement;
+	private final InterBodyElementElements pInterBodyElement;
 	private final EnumerationBodyElementElements pEnumerationBodyElement;
 	private final AnnotatingElementElements pAnnotatingElement;
 	private final ImportElementElements pImportElement;
@@ -3945,6 +3896,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	private final FlowConnectionUsageElements pFlowConnectionUsage;
 	private final ActionUsageElements pActionUsage;
 	private final AliasElementElements pAliasElement;
+	private final ConnectorEndElements pConnectorEnd;
 	private final VisibilityIndicatorElements eVisibilityIndicator;
 	private final FeatureDirectionElements eFeatureDirection;
 	private final PortionKindElements ePortionKind;
@@ -3960,7 +3912,6 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	private final RefPrefixElements pRefPrefix;
 	private final BasicUsagePrefixElements pBasicUsagePrefix;
 	private final ConnectorPartElements pConnectorPart;
-	private final InterfacePartElements pInterfacePart;
 	private final DefinitionDeclarationElements pDefinitionDeclaration;
 	private final UsageElements pUsage;
 	private final UsageDeclarationElements pUsageDeclaration;
@@ -3970,7 +3921,6 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	private final IdentificationElements pIdentification;
 	private final MultiplicityPartElements pMultiplicityPart;
 	private final FeatureSpecializationElements pFeatureSpecialization;
-	private final ConnectorEndElements pConnectorEnd;
 	private final MultiplicityExpressionElements pMultiplicityExpression;
 	private final LiteralExpressionElements pLiteralExpression;
 	private final LiteralBooleanElements pLiteralBoolean;
@@ -4008,6 +3958,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		this.pPackageBodyElement = new PackageBodyElementElements();
 		this.pDefinitionBodyElement = new DefinitionBodyElementElements();
 		this.pUsageBodyElement = new UsageBodyElementElements();
+		this.pInterBodyElement = new InterBodyElementElements();
 		this.pEnumerationBodyElement = new EnumerationBodyElementElements();
 		this.pAnnotatingElement = new AnnotatingElementElements();
 		this.pImportElement = new ImportElementElements();
@@ -4043,6 +3994,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		this.pFlowConnectionUsage = new FlowConnectionUsageElements();
 		this.pActionUsage = new ActionUsageElements();
 		this.pAliasElement = new AliasElementElements();
+		this.pConnectorEnd = new ConnectorEndElements();
 		this.eVisibilityIndicator = new VisibilityIndicatorElements();
 		this.eFeatureDirection = new FeatureDirectionElements();
 		this.ePortionKind = new PortionKindElements();
@@ -4058,7 +4010,6 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		this.pRefPrefix = new RefPrefixElements();
 		this.pBasicUsagePrefix = new BasicUsagePrefixElements();
 		this.pConnectorPart = new ConnectorPartElements();
-		this.pInterfacePart = new InterfacePartElements();
 		this.pDefinitionDeclaration = new DefinitionDeclarationElements();
 		this.pUsage = new UsageElements();
 		this.pUsageDeclaration = new UsageDeclarationElements();
@@ -4068,7 +4019,6 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		this.pIdentification = new IdentificationElements();
 		this.pMultiplicityPart = new MultiplicityPartElements();
 		this.pFeatureSpecialization = new FeatureSpecializationElements();
-		this.pConnectorEnd = new ConnectorEndElements();
 		this.pMultiplicityExpression = new MultiplicityExpressionElements();
 		this.pLiteralExpression = new LiteralExpressionElements();
 		this.pLiteralBoolean = new LiteralBooleanElements();
@@ -4189,6 +4139,17 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	
 	public ParserRule getUsageBodyElementRule() {
 		return getUsageBodyElementAccess().getRule();
+	}
+	
+	//InterBodyElement:
+	//    UsageBodyElement
+	//;
+	public InterBodyElementElements getInterBodyElementAccess() {
+		return pInterBodyElement;
+	}
+	
+	public ParserRule getInterBodyElementRule() {
+		return getInterBodyElementAccess().getRule();
 	}
 	
 	//EnumerationBodyElement:
@@ -4625,16 +4586,12 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		return getInterfaceDefinitionAccess().getRule();
 	}
 	
-	////InterfaceBody:
-	////    InterfaceEnd | BaseElement
-	////;
-	////
-	////InterfaceEnd returns PortUsage:
-	////    isEnd ?= 'end' Usage
-	////;
 	//InterfaceUsage:
-	//    MemberPrefix OccurrenceUsagePrefix 'interface' (UsageDeclaration? ('connect' InterfacePart )? | InterfacePart)
-	//    (';' | '{' (elements+=UsageBodyElement)* '}')
+	//    MemberPrefix
+	//    OccurrenceUsagePrefix
+	//    'interface'
+	//    (UsageDeclaration? ('connect' ConnectorPart )? | ConnectorPart)
+	//    (';' | '{' (elements+=InterBodyElement)* '}')
 	//;
 	public InterfaceUsageElements getInterfaceUsageAccess() {
 		return pInterfaceUsage;
@@ -4657,7 +4614,9 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//FlowConnectionUsage:
-	//    MemberPrefix OccurrenceUsagePrefix 'flow'
+	//    MemberPrefix
+	//    OccurrenceUsagePrefix
+	//    'flow'
 	//    UsageDeclaration? FeatureValue?
 	//    ( 'of' ItemFeature += Name )?
 	//    ( 'from'? FlowEnd += FeatureChainName 'to' FlowEnd += FeatureChainName )?
@@ -4694,6 +4653,19 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	
 	public ParserRule getAliasElementRule() {
 		return getAliasElementAccess().getRule();
+	}
+	
+	//ConnectorEnd:
+	//    ('[' Multiplicity+=MultiplicityExpression '..' Multiplicity+=MultiplicityExpression ']')?
+	//    ( delcaredName = Name ('::>' | 'references') )?
+	//    refElement = FeatureChainName
+	//;
+	public ConnectorEndElements getConnectorEndAccess() {
+		return pConnectorEnd;
+	}
+	
+	public ParserRule getConnectorEndRule() {
+		return getConnectorEndAccess().getRule();
 	}
 	
 	//// TODO --------------------------------- Enum Level ---------------------------------//
@@ -4869,8 +4841,8 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//fragment ConnectorPart:
-	//    connectorPart += ConnectorEnd 'to' connectorPart += ConnectorEnd
-	//    | '(' connectorPart += ConnectorEnd ','  connectorPart += ConnectorEnd (',' connectorPart += ConnectorEnd)* ')'
+	//    (connectorPart += ConnectorEnd 'to' connectorPart += ConnectorEnd)
+	//    | ('(' connectorPart += ConnectorEnd ','  connectorPart += ConnectorEnd (',' connectorPart += ConnectorEnd)* ')')
 	//;
 	public ConnectorPartElements getConnectorPartAccess() {
 		return pConnectorPart;
@@ -4878,18 +4850,6 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	
 	public ParserRule getConnectorPartRule() {
 		return getConnectorPartAccess().getRule();
-	}
-	
-	//fragment InterfacePart:
-	//    InterfaceEnd += FeatureChainName 'to' InterfaceEnd += FeatureChainName
-	//    | '(' InterfaceEnd += FeatureChainName ','  InterfaceEnd += FeatureChainName (',' InterfaceEnd += FeatureChainName)* ')'
-	//;
-	public InterfacePartElements getInterfacePartAccess() {
-		return pInterfacePart;
-	}
-	
-	public ParserRule getInterfacePartRule() {
-		return getInterfacePartAccess().getRule();
 	}
 	
 	//fragment DefinitionDeclaration:
@@ -5008,19 +4968,11 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//// TODO --------------------------------- Terminal Level ---------------------------------//
-	//ConnectorEnd:
-	//    ('[' MultiplicityExpression '..' MultiplicityExpression ']')?
-	//    ( Name ('::>' | 'references') )?
-	//    FeatureChainName
-	//;
-	public ConnectorEndElements getConnectorEndAccess() {
-		return pConnectorEnd;
-	}
-	
-	public ParserRule getConnectorEndRule() {
-		return getConnectorEndAccess().getRule();
-	}
-	
+	////ConnectorEnd:
+	////    ('[' MultiplicityExpression '..' MultiplicityExpression ']')?
+	////    ( Name ('::>' | 'references') )?
+	////    FeatureChainName
+	////;
 	//MultiplicityExpression:
 	//    LiteralExpression | FeatureReferenceExpression
 	//;

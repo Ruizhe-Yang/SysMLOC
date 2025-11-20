@@ -152,6 +152,25 @@ public interface SysMLOCPackage extends EPackage
   int PACKAGE_FEATURE_COUNT = PACKAGE_BODY_ELEMENT_FEATURE_COUNT + 2;
 
   /**
+   * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.InterBodyElementImpl <em>Inter Body Element</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.sysmloc.sysMLOC.impl.InterBodyElementImpl
+   * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getInterBodyElement()
+   * @generated
+   */
+  int INTER_BODY_ELEMENT = 5;
+
+  /**
+   * The number of structural features of the '<em>Inter Body Element</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTER_BODY_ELEMENT_FEATURE_COUNT = 0;
+
+  /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.UsageBodyElementImpl <em>Usage Body Element</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -168,7 +187,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USAGE_BODY_ELEMENT_FEATURE_COUNT = 0;
+  int USAGE_BODY_ELEMENT_FEATURE_COUNT = INTER_BODY_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.DefinitionBodyElementImpl <em>Definition Body Element</em>}' class.
@@ -197,7 +216,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getEnumerationBodyElement()
    * @generated
    */
-  int ENUMERATION_BODY_ELEMENT = 5;
+  int ENUMERATION_BODY_ELEMENT = 6;
 
   /**
    * The number of structural features of the '<em>Enumeration Body Element</em>' class.
@@ -216,7 +235,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getAnnotatingElement()
    * @generated
    */
-  int ANNOTATING_ELEMENT = 6;
+  int ANNOTATING_ELEMENT = 7;
 
   /**
    * The number of structural features of the '<em>Annotating Element</em>' class.
@@ -235,7 +254,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getImportElement()
    * @generated
    */
-  int IMPORT_ELEMENT = 7;
+  int IMPORT_ELEMENT = 8;
 
   /**
    * The number of structural features of the '<em>Import Element</em>' class.
@@ -254,7 +273,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getDefinitionElement()
    * @generated
    */
-  int DEFINITION_ELEMENT = 8;
+  int DEFINITION_ELEMENT = 9;
 
   /**
    * The number of structural features of the '<em>Definition Element</em>' class.
@@ -273,7 +292,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getUsageElement()
    * @generated
    */
-  int USAGE_ELEMENT = 9;
+  int USAGE_ELEMENT = 10;
 
   /**
    * The number of structural features of the '<em>Usage Element</em>' class.
@@ -292,7 +311,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getNonOccurrenceUsageElement()
    * @generated
    */
-  int NON_OCCURRENCE_USAGE_ELEMENT = 10;
+  int NON_OCCURRENCE_USAGE_ELEMENT = 11;
 
   /**
    * The number of structural features of the '<em>Non Occurrence Usage Element</em>' class.
@@ -311,7 +330,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getOccurrenceUsageElement()
    * @generated
    */
-  int OCCURRENCE_USAGE_ELEMENT = 11;
+  int OCCURRENCE_USAGE_ELEMENT = 12;
 
   /**
    * The number of structural features of the '<em>Occurrence Usage Element</em>' class.
@@ -330,7 +349,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getStructureUsageElement()
    * @generated
    */
-  int STRUCTURE_USAGE_ELEMENT = 12;
+  int STRUCTURE_USAGE_ELEMENT = 13;
 
   /**
    * The number of structural features of the '<em>Structure Usage Element</em>' class.
@@ -349,7 +368,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getBehaviorUsageElement()
    * @generated
    */
-  int BEHAVIOR_USAGE_ELEMENT = 13;
+  int BEHAVIOR_USAGE_ELEMENT = 14;
 
   /**
    * The number of structural features of the '<em>Behavior Usage Element</em>' class.
@@ -368,7 +387,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getEnumerationElement()
    * @generated
    */
-  int ENUMERATION_ELEMENT = 14;
+  int ENUMERATION_ELEMENT = 15;
 
   /**
    * The number of structural features of the '<em>Enumeration Element</em>' class.
@@ -387,7 +406,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getNamespaceImport()
    * @generated
    */
-  int NAMESPACE_IMPORT = 15;
+  int NAMESPACE_IMPORT = 16;
 
   /**
    * The feature id for the '<em><b>Is Import All</b></em>' attribute.
@@ -442,7 +461,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getMembershipImport()
    * @generated
    */
-  int MEMBERSHIP_IMPORT = 16;
+  int MEMBERSHIP_IMPORT = 17;
 
   /**
    * The feature id for the '<em><b>Is Import All</b></em>' attribute.
@@ -497,7 +516,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getCodeAnnotation()
    * @generated
    */
-  int CODE_ANNOTATION = 17;
+  int CODE_ANNOTATION = 18;
 
   /**
    * The feature id for the '<em><b>Body</b></em>' attribute.
@@ -525,7 +544,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getComment()
    * @generated
    */
-  int COMMENT = 18;
+  int COMMENT = 19;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -589,7 +608,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getDocumentation()
    * @generated
    */
-  int DOCUMENTATION = 19;
+  int DOCUMENTATION = 20;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -644,7 +663,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getTextualRepresentation()
    * @generated
    */
-  int TEXTUAL_REPRESENTATION = 20;
+  int TEXTUAL_REPRESENTATION = 21;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -699,7 +718,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getAttributeDefinition()
    * @generated
    */
-  int ATTRIBUTE_DEFINITION = 21;
+  int ATTRIBUTE_DEFINITION = 22;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -772,7 +791,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getAttributeUsage()
    * @generated
    */
-  int ATTRIBUTE_USAGE = 22;
+  int ATTRIBUTE_USAGE = 23;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -917,7 +936,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getEnumerationDefinition()
    * @generated
    */
-  int ENUMERATION_DEFINITION = 23;
+  int ENUMERATION_DEFINITION = 24;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -963,7 +982,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getEnumeratedValue()
    * @generated
    */
-  int ENUMERATED_VALUE = 24;
+  int ENUMERATED_VALUE = 25;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -1099,7 +1118,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getEnumerationUsage()
    * @generated
    */
-  int ENUMERATION_USAGE = 25;
+  int ENUMERATION_USAGE = 26;
 
   /**
    * The feature id for the '<em><b>Is End</b></em>' attribute.
@@ -1298,7 +1317,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getItemDefinition()
    * @generated
    */
-  int ITEM_DEFINITION = 26;
+  int ITEM_DEFINITION = 27;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -1380,7 +1399,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getItemUsage()
    * @generated
    */
-  int ITEM_USAGE = 27;
+  int ITEM_USAGE = 28;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -1606,7 +1625,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getPartDefinition()
    * @generated
    */
-  int PART_DEFINITION = 28;
+  int PART_DEFINITION = 29;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -1688,7 +1707,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getPartUsage()
    * @generated
    */
-  int PART_USAGE = 29;
+  int PART_USAGE = 30;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -1914,7 +1933,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getPortDefinition()
    * @generated
    */
-  int PORT_DEFINITION = 30;
+  int PORT_DEFINITION = 31;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -1987,7 +2006,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getPortUsage()
    * @generated
    */
-  int PORT_USAGE = 31;
+  int PORT_USAGE = 32;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -2213,7 +2232,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getConnectionDefinition()
    * @generated
    */
-  int CONNECTION_DEFINITION = 32;
+  int CONNECTION_DEFINITION = 33;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -2295,7 +2314,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getConnectionUsage()
    * @generated
    */
-  int CONNECTION_USAGE = 33;
+  int CONNECTION_USAGE = 34;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -2496,7 +2515,7 @@ public interface SysMLOCPackage extends EPackage
   int CONNECTION_USAGE__VALUE_PART = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 21;
 
   /**
-   * The feature id for the '<em><b>Connector Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Connector Part</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -2530,7 +2549,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getInterfaceDefinition()
    * @generated
    */
-  int INTERFACE_DEFINITION = 34;
+  int INTERFACE_DEFINITION = 35;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -2612,7 +2631,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getInterfaceUsage()
    * @generated
    */
-  int INTERFACE_USAGE = 35;
+  int INTERFACE_USAGE = 36;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -2786,13 +2805,13 @@ public interface SysMLOCPackage extends EPackage
   int INTERFACE_USAGE__DECLARED_NAME = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 18;
 
   /**
-   * The feature id for the '<em><b>Interface End</b></em>' attribute list.
+   * The feature id for the '<em><b>Connector Part</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INTERFACE_USAGE__INTERFACE_END = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 19;
+  int INTERFACE_USAGE__CONNECTOR_PART = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -2820,7 +2839,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getFlowConnectionDefinition()
    * @generated
    */
-  int FLOW_CONNECTION_DEFINITION = 36;
+  int FLOW_CONNECTION_DEFINITION = 37;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -2902,7 +2921,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getFlowConnectionUsage()
    * @generated
    */
-  int FLOW_CONNECTION_USAGE = 37;
+  int FLOW_CONNECTION_USAGE = 38;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -3146,7 +3165,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getActionUsage()
    * @generated
    */
-  int ACTION_USAGE = 38;
+  int ACTION_USAGE = 39;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -3273,7 +3292,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getAliasElement()
    * @generated
    */
-  int ALIAS_ELEMENT = 39;
+  int ALIAS_ELEMENT = 40;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -3330,6 +3349,52 @@ public interface SysMLOCPackage extends EPackage
   int ALIAS_ELEMENT_FEATURE_COUNT = PACKAGE_BODY_ELEMENT_FEATURE_COUNT + 5;
 
   /**
+   * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.ConnectorEndImpl <em>Connector End</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.sysmloc.sysMLOC.impl.ConnectorEndImpl
+   * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getConnectorEnd()
+   * @generated
+   */
+  int CONNECTOR_END = 41;
+
+  /**
+   * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONNECTOR_END__MULTIPLICITY = 0;
+
+  /**
+   * The feature id for the '<em><b>Delcared Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONNECTOR_END__DELCARED_NAME = 1;
+
+  /**
+   * The feature id for the '<em><b>Ref Element</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONNECTOR_END__REF_ELEMENT = 2;
+
+  /**
+   * The number of structural features of the '<em>Connector End</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONNECTOR_END_FEATURE_COUNT = 3;
+
+  /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.isImportAllFragmentImpl <em>is Import All Fragment</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3337,7 +3402,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getisImportAllFragment()
    * @generated
    */
-  int IS_IMPORT_ALL_FRAGMENT = 40;
+  int IS_IMPORT_ALL_FRAGMENT = 42;
 
   /**
    * The feature id for the '<em><b>Is Import All</b></em>' attribute.
@@ -3365,7 +3430,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getMemberPrefix()
    * @generated
    */
-  int MEMBER_PREFIX = 41;
+  int MEMBER_PREFIX = 43;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -3393,7 +3458,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getBasicDefinitionPrefix()
    * @generated
    */
-  int BASIC_DEFINITION_PREFIX = 44;
+  int BASIC_DEFINITION_PREFIX = 46;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -3430,7 +3495,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getDefinitionPrefix()
    * @generated
    */
-  int DEFINITION_PREFIX = 42;
+  int DEFINITION_PREFIX = 44;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -3467,7 +3532,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getOccurrenceDefinitionPrefix()
    * @generated
    */
-  int OCCURRENCE_DEFINITION_PREFIX = 43;
+  int OCCURRENCE_DEFINITION_PREFIX = 45;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -3513,7 +3578,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getEndUsagePrefix()
    * @generated
    */
-  int END_USAGE_PREFIX = 47;
+  int END_USAGE_PREFIX = 49;
 
   /**
    * The feature id for the '<em><b>Is End</b></em>' attribute.
@@ -3541,7 +3606,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getUnextendedUsagePrefix()
    * @generated
    */
-  int UNEXTENDED_USAGE_PREFIX = 46;
+  int UNEXTENDED_USAGE_PREFIX = 48;
 
   /**
    * The feature id for the '<em><b>Is End</b></em>' attribute.
@@ -3623,7 +3688,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getUsagePrefix()
    * @generated
    */
-  int USAGE_PREFIX = 45;
+  int USAGE_PREFIX = 47;
 
   /**
    * The feature id for the '<em><b>Is End</b></em>' attribute.
@@ -3705,7 +3770,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getRefPrefix()
    * @generated
    */
-  int REF_PREFIX = 49;
+  int REF_PREFIX = 51;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -3769,7 +3834,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getBasicUsagePrefix()
    * @generated
    */
-  int BASIC_USAGE_PREFIX = 50;
+  int BASIC_USAGE_PREFIX = 52;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -3842,7 +3907,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getOccurrenceUsagePrefix()
    * @generated
    */
-  int OCCURRENCE_USAGE_PREFIX = 48;
+  int OCCURRENCE_USAGE_PREFIX = 50;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -3942,10 +4007,10 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getConnectorPart()
    * @generated
    */
-  int CONNECTOR_PART = 51;
+  int CONNECTOR_PART = 53;
 
   /**
-   * The feature id for the '<em><b>Connector Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Connector Part</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -3963,34 +4028,6 @@ public interface SysMLOCPackage extends EPackage
   int CONNECTOR_PART_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.InterfacePartImpl <em>Interface Part</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.sysmloc.sysMLOC.impl.InterfacePartImpl
-   * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getInterfacePart()
-   * @generated
-   */
-  int INTERFACE_PART = 52;
-
-  /**
-   * The feature id for the '<em><b>Interface End</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTERFACE_PART__INTERFACE_END = 0;
-
-  /**
-   * The number of structural features of the '<em>Interface Part</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTERFACE_PART_FEATURE_COUNT = 1;
-
-  /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.DefinitionDeclarationImpl <em>Definition Declaration</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3998,7 +4035,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getDefinitionDeclaration()
    * @generated
    */
-  int DEFINITION_DECLARATION = 53;
+  int DEFINITION_DECLARATION = 54;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -4035,7 +4072,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getFeatureSpecialization()
    * @generated
    */
-  int FEATURE_SPECIALIZATION = 61;
+  int FEATURE_SPECIALIZATION = 62;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -4099,7 +4136,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getFeatureSpecializationPart()
    * @generated
    */
-  int FEATURE_SPECIALIZATION_PART = 58;
+  int FEATURE_SPECIALIZATION_PART = 59;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -4190,7 +4227,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getFeatureDeclaration()
    * @generated
    */
-  int FEATURE_DECLARATION = 57;
+  int FEATURE_DECLARATION = 58;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -4290,7 +4327,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getUsageDeclaration()
    * @generated
    */
-  int USAGE_DECLARATION = 55;
+  int USAGE_DECLARATION = 56;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -4390,7 +4427,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getUsage()
    * @generated
    */
-  int USAGE = 54;
+  int USAGE = 55;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -4526,7 +4563,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getFeatureValue()
    * @generated
    */
-  int FEATURE_VALUE = 56;
+  int FEATURE_VALUE = 57;
 
   /**
    * The feature id for the '<em><b>Is Initial</b></em>' attribute.
@@ -4572,7 +4609,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getIdentification()
    * @generated
    */
-  int IDENTIFICATION = 59;
+  int IDENTIFICATION = 60;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -4609,7 +4646,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getMultiplicityPart()
    * @generated
    */
-  int MULTIPLICITY_PART = 60;
+  int MULTIPLICITY_PART = 61;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -4655,7 +4692,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getVisibilityIndicator()
    * @generated
    */
-  int VISIBILITY_INDICATOR = 62;
+  int VISIBILITY_INDICATOR = 63;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.FeatureDirection <em>Feature Direction</em>}' enum.
@@ -4665,7 +4702,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getFeatureDirection()
    * @generated
    */
-  int FEATURE_DIRECTION = 63;
+  int FEATURE_DIRECTION = 64;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.PortionKind <em>Portion Kind</em>}' enum.
@@ -4675,7 +4712,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getPortionKind()
    * @generated
    */
-  int PORTION_KIND = 64;
+  int PORTION_KIND = 65;
 
 
   /**
@@ -4771,6 +4808,16 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    */
   EClass getUsageBodyElement();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.InterBodyElement <em>Inter Body Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Inter Body Element</em>'.
+   * @see dut.control.sysmloc.sysMLOC.InterBodyElement
+   * @generated
+   */
+  EClass getInterBodyElement();
 
   /**
    * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.EnumerationBodyElement <em>Enumeration Body Element</em>}'.
@@ -5486,6 +5533,49 @@ public interface SysMLOCPackage extends EPackage
   EReference getAliasElement_Elements();
 
   /**
+   * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.ConnectorEnd <em>Connector End</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Connector End</em>'.
+   * @see dut.control.sysmloc.sysMLOC.ConnectorEnd
+   * @generated
+   */
+  EClass getConnectorEnd();
+
+  /**
+   * Returns the meta object for the attribute list '{@link dut.control.sysmloc.sysMLOC.ConnectorEnd#getMultiplicity <em>Multiplicity</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Multiplicity</em>'.
+   * @see dut.control.sysmloc.sysMLOC.ConnectorEnd#getMultiplicity()
+   * @see #getConnectorEnd()
+   * @generated
+   */
+  EAttribute getConnectorEnd_Multiplicity();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.sysmloc.sysMLOC.ConnectorEnd#getDelcaredName <em>Delcared Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Delcared Name</em>'.
+   * @see dut.control.sysmloc.sysMLOC.ConnectorEnd#getDelcaredName()
+   * @see #getConnectorEnd()
+   * @generated
+   */
+  EAttribute getConnectorEnd_DelcaredName();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.sysmloc.sysMLOC.ConnectorEnd#getRefElement <em>Ref Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Ref Element</em>'.
+   * @see dut.control.sysmloc.sysMLOC.ConnectorEnd#getRefElement()
+   * @see #getConnectorEnd()
+   * @generated
+   */
+  EAttribute getConnectorEnd_RefElement();
+
+  /**
    * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.isImportAllFragment <em>is Import All Fragment</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -5771,36 +5861,15 @@ public interface SysMLOCPackage extends EPackage
   EClass getConnectorPart();
 
   /**
-   * Returns the meta object for the attribute list '{@link dut.control.sysmloc.sysMLOC.ConnectorPart#getConnectorPart <em>Connector Part</em>}'.
+   * Returns the meta object for the containment reference list '{@link dut.control.sysmloc.sysMLOC.ConnectorPart#getConnectorPart <em>Connector Part</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Connector Part</em>'.
+   * @return the meta object for the containment reference list '<em>Connector Part</em>'.
    * @see dut.control.sysmloc.sysMLOC.ConnectorPart#getConnectorPart()
    * @see #getConnectorPart()
    * @generated
    */
-  EAttribute getConnectorPart_ConnectorPart();
-
-  /**
-   * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.InterfacePart <em>Interface Part</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Interface Part</em>'.
-   * @see dut.control.sysmloc.sysMLOC.InterfacePart
-   * @generated
-   */
-  EClass getInterfacePart();
-
-  /**
-   * Returns the meta object for the attribute list '{@link dut.control.sysmloc.sysMLOC.InterfacePart#getInterfaceEnd <em>Interface End</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Interface End</em>'.
-   * @see dut.control.sysmloc.sysMLOC.InterfacePart#getInterfaceEnd()
-   * @see #getInterfacePart()
-   * @generated
-   */
-  EAttribute getInterfacePart_InterfaceEnd();
+  EReference getConnectorPart_ConnectorPart();
 
   /**
    * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.DefinitionDeclaration <em>Definition Declaration</em>}'.
@@ -6213,6 +6282,16 @@ public interface SysMLOCPackage extends EPackage
      * @generated
      */
     EClass USAGE_BODY_ELEMENT = eINSTANCE.getUsageBodyElement();
+
+    /**
+     * The meta object literal for the '{@link dut.control.sysmloc.sysMLOC.impl.InterBodyElementImpl <em>Inter Body Element</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.sysmloc.sysMLOC.impl.InterBodyElementImpl
+     * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getInterBodyElement()
+     * @generated
+     */
+    EClass INTER_BODY_ELEMENT = eINSTANCE.getInterBodyElement();
 
     /**
      * The meta object literal for the '{@link dut.control.sysmloc.sysMLOC.impl.EnumerationBodyElementImpl <em>Enumeration Body Element</em>}' class.
@@ -6829,6 +6908,40 @@ public interface SysMLOCPackage extends EPackage
     EReference ALIAS_ELEMENT__ELEMENTS = eINSTANCE.getAliasElement_Elements();
 
     /**
+     * The meta object literal for the '{@link dut.control.sysmloc.sysMLOC.impl.ConnectorEndImpl <em>Connector End</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.sysmloc.sysMLOC.impl.ConnectorEndImpl
+     * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getConnectorEnd()
+     * @generated
+     */
+    EClass CONNECTOR_END = eINSTANCE.getConnectorEnd();
+
+    /**
+     * The meta object literal for the '<em><b>Multiplicity</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONNECTOR_END__MULTIPLICITY = eINSTANCE.getConnectorEnd_Multiplicity();
+
+    /**
+     * The meta object literal for the '<em><b>Delcared Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONNECTOR_END__DELCARED_NAME = eINSTANCE.getConnectorEnd_DelcaredName();
+
+    /**
+     * The meta object literal for the '<em><b>Ref Element</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONNECTOR_END__REF_ELEMENT = eINSTANCE.getConnectorEnd_RefElement();
+
+    /**
      * The meta object literal for the '{@link dut.control.sysmloc.sysMLOC.impl.isImportAllFragmentImpl <em>is Import All Fragment</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -7069,30 +7182,12 @@ public interface SysMLOCPackage extends EPackage
     EClass CONNECTOR_PART = eINSTANCE.getConnectorPart();
 
     /**
-     * The meta object literal for the '<em><b>Connector Part</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Connector Part</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CONNECTOR_PART__CONNECTOR_PART = eINSTANCE.getConnectorPart_ConnectorPart();
-
-    /**
-     * The meta object literal for the '{@link dut.control.sysmloc.sysMLOC.impl.InterfacePartImpl <em>Interface Part</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dut.control.sysmloc.sysMLOC.impl.InterfacePartImpl
-     * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getInterfacePart()
-     * @generated
-     */
-    EClass INTERFACE_PART = eINSTANCE.getInterfacePart();
-
-    /**
-     * The meta object literal for the '<em><b>Interface End</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute INTERFACE_PART__INTERFACE_END = eINSTANCE.getInterfacePart_InterfaceEnd();
+    EReference CONNECTOR_PART__CONNECTOR_PART = eINSTANCE.getConnectorPart_ConnectorPart();
 
     /**
      * The meta object literal for the '{@link dut.control.sysmloc.sysMLOC.impl.DefinitionDeclarationImpl <em>Definition Declaration</em>}' class.

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <packages declaredName="'Interface Example'">
+    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="'Port Example'"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle"/>
+    <elements xsi:type="sysMLOC:InterfaceDefinition" declaredName="FuelInterface">
+      <elements xsi:type="sysMLOC:PortUsage" isEnd="true" declaredName="supplierPort">
+        <typings>FuelOutPort</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:PortUsage" isEnd="true" declaredName="consumerPort">
+        <typings>FuelInPort</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle">
+      <typings>Vehicle</typings>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="tankAssy">
+        <typings>FuelTankAssembly</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="eng">
+        <typings>Engine</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:InterfaceUsage">
+        <typings>FuelInterface</typings>
+        <connectorPart delcaredName="supplierPort" refElement="tankAssy.fuelTankPort"/>
+        <connectorPart delcaredName="consumerPort" refElement="eng.engineFuelPort"/>
+      </elements>
+    </elements>
+  </packages>
+</sysMLOC:Namespace>

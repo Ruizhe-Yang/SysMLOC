@@ -31,6 +31,7 @@
     <genClasses ecoreClass="SysMLOC.ecore#//PackageBodyElement"/>
     <genClasses ecoreClass="SysMLOC.ecore#//DefinitionBodyElement"/>
     <genClasses ecoreClass="SysMLOC.ecore#//UsageBodyElement"/>
+    <genClasses ecoreClass="SysMLOC.ecore#//InterBodyElement"/>
     <genClasses ecoreClass="SysMLOC.ecore#//EnumerationBodyElement"/>
     <genClasses ecoreClass="SysMLOC.ecore#//AnnotatingElement"/>
     <genClasses ecoreClass="SysMLOC.ecore#//ImportElement"/>
@@ -118,6 +119,11 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//AliasElement/memberElement"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//AliasElement/elements"/>
     </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//ConnectorEnd">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//ConnectorEnd/Multiplicity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//ConnectorEnd/delcaredName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//ConnectorEnd/refElement"/>
+    </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//isImportAllFragment">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//isImportAllFragment/isImportAll"/>
     </genClasses>
@@ -153,10 +159,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//BasicUsagePrefix/isReference"/>
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//ConnectorPart">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//ConnectorPart/connectorPart"/>
-    </genClasses>
-    <genClasses ecoreClass="SysMLOC.ecore#//InterfacePart">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//InterfacePart/InterfaceEnd"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//ConnectorPart/connectorPart"/>
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//DefinitionDeclaration">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//DefinitionDeclaration/declaredName"/>

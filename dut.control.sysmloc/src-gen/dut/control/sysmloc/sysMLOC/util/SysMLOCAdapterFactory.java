@@ -15,6 +15,7 @@ import dut.control.sysmloc.sysMLOC.CodeAnnotation;
 import dut.control.sysmloc.sysMLOC.Comment;
 import dut.control.sysmloc.sysMLOC.ConnectionDefinition;
 import dut.control.sysmloc.sysMLOC.ConnectionUsage;
+import dut.control.sysmloc.sysMLOC.ConnectorEnd;
 import dut.control.sysmloc.sysMLOC.ConnectorPart;
 import dut.control.sysmloc.sysMLOC.DefinitionBodyElement;
 import dut.control.sysmloc.sysMLOC.DefinitionDeclaration;
@@ -35,8 +36,8 @@ import dut.control.sysmloc.sysMLOC.FlowConnectionDefinition;
 import dut.control.sysmloc.sysMLOC.FlowConnectionUsage;
 import dut.control.sysmloc.sysMLOC.Identification;
 import dut.control.sysmloc.sysMLOC.ImportElement;
+import dut.control.sysmloc.sysMLOC.InterBodyElement;
 import dut.control.sysmloc.sysMLOC.InterfaceDefinition;
-import dut.control.sysmloc.sysMLOC.InterfacePart;
 import dut.control.sysmloc.sysMLOC.InterfaceUsage;
 import dut.control.sysmloc.sysMLOC.ItemDefinition;
 import dut.control.sysmloc.sysMLOC.ItemUsage;
@@ -160,6 +161,11 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
       public Adapter caseUsageBodyElement(UsageBodyElement object)
       {
         return createUsageBodyElementAdapter();
+      }
+      @Override
+      public Adapter caseInterBodyElement(InterBodyElement object)
+      {
+        return createInterBodyElementAdapter();
       }
       @Override
       public Adapter caseEnumerationBodyElement(EnumerationBodyElement object)
@@ -337,6 +343,11 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
         return createAliasElementAdapter();
       }
       @Override
+      public Adapter caseConnectorEnd(ConnectorEnd object)
+      {
+        return createConnectorEndAdapter();
+      }
+      @Override
       public Adapter caseisImportAllFragment(isImportAllFragment object)
       {
         return createisImportAllFragmentAdapter();
@@ -395,11 +406,6 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
       public Adapter caseConnectorPart(ConnectorPart object)
       {
         return createConnectorPartAdapter();
-      }
-      @Override
-      public Adapter caseInterfacePart(InterfacePart object)
-      {
-        return createInterfacePartAdapter();
       }
       @Override
       public Adapter caseDefinitionDeclaration(DefinitionDeclaration object)
@@ -539,6 +545,21 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createUsageBodyElementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.InterBodyElement <em>Inter Body Element</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.sysmloc.sysMLOC.InterBodyElement
+   * @generated
+   */
+  public Adapter createInterBodyElementAdapter()
   {
     return null;
   }
@@ -1069,6 +1090,21 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.ConnectorEnd <em>Connector End</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.sysmloc.sysMLOC.ConnectorEnd
+   * @generated
+   */
+  public Adapter createConnectorEndAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.isImportAllFragment <em>is Import All Fragment</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1244,21 +1280,6 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createConnectorPartAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.InterfacePart <em>Interface Part</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see dut.control.sysmloc.sysMLOC.InterfacePart
-   * @generated
-   */
-  public Adapter createInterfacePartAdapter()
   {
     return null;
   }

@@ -3,18 +3,23 @@
  */
 package dut.control.sysmloc.sysMLOC.impl;
 
+import dut.control.sysmloc.sysMLOC.ConnectorEnd;
 import dut.control.sysmloc.sysMLOC.ConnectorPart;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,14 +37,14 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
 public class ConnectorPartImpl extends MinimalEObjectImpl.Container implements ConnectorPart
 {
   /**
-   * The cached value of the '{@link #getConnectorPart() <em>Connector Part</em>}' attribute list.
+   * The cached value of the '{@link #getConnectorPart() <em>Connector Part</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getConnectorPart()
    * @generated
    * @ordered
    */
-  protected EList<String> connectorPart;
+  protected EList<ConnectorEnd> connectorPart;
 
   /**
    * <!-- begin-user-doc -->
@@ -68,13 +73,29 @@ public class ConnectorPartImpl extends MinimalEObjectImpl.Container implements C
    * @generated
    */
   @Override
-  public EList<String> getConnectorPart()
+  public EList<ConnectorEnd> getConnectorPart()
   {
     if (connectorPart == null)
     {
-      connectorPart = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.CONNECTOR_PART__CONNECTOR_PART);
+      connectorPart = new EObjectContainmentEList<ConnectorEnd>(ConnectorEnd.class, this, SysMLOCPackage.CONNECTOR_PART__CONNECTOR_PART);
     }
     return connectorPart;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case SysMLOCPackage.CONNECTOR_PART__CONNECTOR_PART:
+        return ((InternalEList<?>)getConnectorPart()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -106,7 +127,7 @@ public class ConnectorPartImpl extends MinimalEObjectImpl.Container implements C
     {
       case SysMLOCPackage.CONNECTOR_PART__CONNECTOR_PART:
         getConnectorPart().clear();
-        getConnectorPart().addAll((Collection<? extends String>)newValue);
+        getConnectorPart().addAll((Collection<? extends ConnectorEnd>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -143,23 +164,6 @@ public class ConnectorPartImpl extends MinimalEObjectImpl.Container implements C
         return connectorPart != null && !connectorPart.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (connectorPart: ");
-    result.append(connectorPart);
-    result.append(')');
-    return result.toString();
   }
 
 } //ConnectorPartImpl

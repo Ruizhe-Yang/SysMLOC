@@ -13,6 +13,7 @@ import dut.control.sysmloc.sysMLOC.CodeAnnotation;
 import dut.control.sysmloc.sysMLOC.Comment;
 import dut.control.sysmloc.sysMLOC.ConnectionDefinition;
 import dut.control.sysmloc.sysMLOC.ConnectionUsage;
+import dut.control.sysmloc.sysMLOC.ConnectorEnd;
 import dut.control.sysmloc.sysMLOC.Documentation;
 import dut.control.sysmloc.sysMLOC.EnumeratedValue;
 import dut.control.sysmloc.sysMLOC.EnumerationDefinition;
@@ -79,6 +80,9 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 			case SysMLOCPackage.CONNECTION_USAGE:
 				sequence_BasicUsagePrefix_ConnectionUsage_ConnectorPart_FeatureDeclaration_FeatureSpecialization_FeatureValue_MemberPrefix_MultiplicityPart_OccurrenceUsagePrefix_RefPrefix(context, (ConnectionUsage) semanticObject); 
 				return; 
+			case SysMLOCPackage.CONNECTOR_END:
+				sequence_ConnectorEnd(context, (ConnectorEnd) semanticObject); 
+				return; 
 			case SysMLOCPackage.DOCUMENTATION:
 				sequence_Documentation_Identification(context, (Documentation) semanticObject); 
 				return; 
@@ -101,7 +105,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 				sequence_BasicDefinitionPrefix_DefinitionDeclaration_InterfaceDefinition_MemberPrefix_OccurrenceDefinitionPrefix(context, (InterfaceDefinition) semanticObject); 
 				return; 
 			case SysMLOCPackage.INTERFACE_USAGE:
-				sequence_BasicUsagePrefix_FeatureDeclaration_FeatureSpecialization_InterfacePart_InterfaceUsage_MemberPrefix_MultiplicityPart_OccurrenceUsagePrefix_RefPrefix(context, (InterfaceUsage) semanticObject); 
+				sequence_BasicUsagePrefix_ConnectorPart_FeatureDeclaration_FeatureSpecialization_InterfaceUsage_MemberPrefix_MultiplicityPart_OccurrenceUsagePrefix_RefPrefix(context, (InterfaceUsage) semanticObject); 
 				return; 
 			case SysMLOCPackage.ITEM_DEFINITION:
 				sequence_BasicDefinitionPrefix_DefinitionDeclaration_ItemDefinition_MemberPrefix_OccurrenceDefinitionPrefix(context, (ItemDefinition) semanticObject); 
@@ -147,6 +151,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     PackageBodyElement returns ActionUsage
 	 *     DefinitionBodyElement returns ActionUsage
 	 *     UsageBodyElement returns ActionUsage
+	 *     InterBodyElement returns ActionUsage
 	 *     UsageElement returns ActionUsage
 	 *     OccurrenceUsageElement returns ActionUsage
 	 *     BehaviorUsageElement returns ActionUsage
@@ -183,6 +188,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     PackageBodyElement returns AliasElement
 	 *     DefinitionBodyElement returns AliasElement
 	 *     UsageBodyElement returns AliasElement
+	 *     InterBodyElement returns AliasElement
 	 *     AliasElement returns AliasElement
 	 *
 	 * Constraint:
@@ -200,6 +206,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     PackageBodyElement returns AttributeDefinition
 	 *     DefinitionBodyElement returns AttributeDefinition
 	 *     UsageBodyElement returns AttributeDefinition
+	 *     InterBodyElement returns AttributeDefinition
 	 *     DefinitionElement returns AttributeDefinition
 	 *     AttributeDefinition returns AttributeDefinition
 	 *
@@ -224,6 +231,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     PackageBodyElement returns AttributeUsage
 	 *     DefinitionBodyElement returns AttributeUsage
 	 *     UsageBodyElement returns AttributeUsage
+	 *     InterBodyElement returns AttributeUsage
 	 *     UsageElement returns AttributeUsage
 	 *     NonOccurrenceUsageElement returns AttributeUsage
 	 *     AttributeUsage returns AttributeUsage
@@ -273,6 +281,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     PackageBodyElement returns ConnectionDefinition
 	 *     DefinitionBodyElement returns ConnectionDefinition
 	 *     UsageBodyElement returns ConnectionDefinition
+	 *     InterBodyElement returns ConnectionDefinition
 	 *     DefinitionElement returns ConnectionDefinition
 	 *     ConnectionDefinition returns ConnectionDefinition
 	 *
@@ -298,6 +307,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     PackageBodyElement returns FlowConnectionDefinition
 	 *     DefinitionBodyElement returns FlowConnectionDefinition
 	 *     UsageBodyElement returns FlowConnectionDefinition
+	 *     InterBodyElement returns FlowConnectionDefinition
 	 *     DefinitionElement returns FlowConnectionDefinition
 	 *     FlowConnectionDefinition returns FlowConnectionDefinition
 	 *
@@ -323,6 +333,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     PackageBodyElement returns InterfaceDefinition
 	 *     DefinitionBodyElement returns InterfaceDefinition
 	 *     UsageBodyElement returns InterfaceDefinition
+	 *     InterBodyElement returns InterfaceDefinition
 	 *     DefinitionElement returns InterfaceDefinition
 	 *     InterfaceDefinition returns InterfaceDefinition
 	 *
@@ -348,6 +359,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     PackageBodyElement returns ItemDefinition
 	 *     DefinitionBodyElement returns ItemDefinition
 	 *     UsageBodyElement returns ItemDefinition
+	 *     InterBodyElement returns ItemDefinition
 	 *     DefinitionElement returns ItemDefinition
 	 *     ItemDefinition returns ItemDefinition
 	 *
@@ -373,6 +385,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     PackageBodyElement returns PartDefinition
 	 *     DefinitionBodyElement returns PartDefinition
 	 *     UsageBodyElement returns PartDefinition
+	 *     InterBodyElement returns PartDefinition
 	 *     DefinitionElement returns PartDefinition
 	 *     PartDefinition returns PartDefinition
 	 *
@@ -398,6 +411,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     PackageBodyElement returns PortDefinition
 	 *     DefinitionBodyElement returns PortDefinition
 	 *     UsageBodyElement returns PortDefinition
+	 *     InterBodyElement returns PortDefinition
 	 *     DefinitionElement returns PortDefinition
 	 *     PortDefinition returns PortDefinition
 	 *
@@ -422,6 +436,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     PackageBodyElement returns ConnectionUsage
 	 *     DefinitionBodyElement returns ConnectionUsage
 	 *     UsageBodyElement returns ConnectionUsage
+	 *     InterBodyElement returns ConnectionUsage
 	 *     UsageElement returns ConnectionUsage
 	 *     OccurrenceUsageElement returns ConnectionUsage
 	 *     StructureUsageElement returns ConnectionUsage
@@ -485,9 +500,76 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     PackageBodyElement returns InterfaceUsage
+	 *     DefinitionBodyElement returns InterfaceUsage
+	 *     UsageBodyElement returns InterfaceUsage
+	 *     InterBodyElement returns InterfaceUsage
+	 *     UsageElement returns InterfaceUsage
+	 *     OccurrenceUsageElement returns InterfaceUsage
+	 *     StructureUsageElement returns InterfaceUsage
+	 *     InterfaceUsage returns InterfaceUsage
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         (
+	 *             isEnd?='end' | 
+	 *             (
+	 *                 direction=FeatureDirection? 
+	 *                 (isAbstract?='abstract' | isVariation?='variation')? 
+	 *                 isReadOnly?='readonly'? 
+	 *                 isDerived?='derived'? 
+	 *                 isReference?='ref'? 
+	 *                 isIndividual?='individual'? 
+	 *                 portionKind=PortionKind?
+	 *             )
+	 *         )? 
+	 *         declaredName=Name? 
+	 *         (
+	 *             Multiplicity+=MultiplicityExpression | 
+	 *             (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression) | 
+	 *             (
+	 *                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
+	 *             )
+	 *         )? 
+	 *         (
+	 *             (
+	 *                 (typings+=FeatureChainName typings+=FeatureChainName*) | 
+	 *                 (subsetting+=FeatureChainName subsetting+=FeatureChainName*) | 
+	 *                 (references+=FeatureChainName references+=FeatureChainName*) | 
+	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
+	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
+	 *             ) 
+	 *             (
+	 *                 Multiplicity+=MultiplicityExpression | 
+	 *                 (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression) | 
+	 *                 (
+	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
+	 *                 )
+	 *             )?
+	 *         )* 
+	 *         (
+	 *             (connectorPart+=ConnectorEnd connectorPart+=ConnectorEnd) | 
+	 *             (connectorPart+=ConnectorEnd connectorPart+=ConnectorEnd connectorPart+=ConnectorEnd*)
+	 *         )? 
+	 *         elements+=InterBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_BasicUsagePrefix_ConnectorPart_FeatureDeclaration_FeatureSpecialization_InterfaceUsage_MemberPrefix_MultiplicityPart_OccurrenceUsagePrefix_RefPrefix(ISerializationContext context, InterfaceUsage semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     PackageBodyElement returns EnumerationUsage
 	 *     DefinitionBodyElement returns EnumerationUsage
 	 *     UsageBodyElement returns EnumerationUsage
+	 *     InterBodyElement returns EnumerationUsage
 	 *     UsageElement returns EnumerationUsage
 	 *     NonOccurrenceUsageElement returns EnumerationUsage
 	 *     EnumerationUsage returns EnumerationUsage
@@ -546,6 +628,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     PackageBodyElement returns FlowConnectionUsage
 	 *     DefinitionBodyElement returns FlowConnectionUsage
 	 *     UsageBodyElement returns FlowConnectionUsage
+	 *     InterBodyElement returns FlowConnectionUsage
 	 *     UsageElement returns FlowConnectionUsage
 	 *     OccurrenceUsageElement returns FlowConnectionUsage
 	 *     StructureUsageElement returns FlowConnectionUsage
@@ -610,6 +693,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     PackageBodyElement returns ItemUsage
 	 *     DefinitionBodyElement returns ItemUsage
 	 *     UsageBodyElement returns ItemUsage
+	 *     InterBodyElement returns ItemUsage
 	 *     UsageElement returns ItemUsage
 	 *     OccurrenceUsageElement returns ItemUsage
 	 *     StructureUsageElement returns ItemUsage
@@ -672,6 +756,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     PackageBodyElement returns PartUsage
 	 *     DefinitionBodyElement returns PartUsage
 	 *     UsageBodyElement returns PartUsage
+	 *     InterBodyElement returns PartUsage
 	 *     UsageElement returns PartUsage
 	 *     OccurrenceUsageElement returns PartUsage
 	 *     StructureUsageElement returns PartUsage
@@ -734,6 +819,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     PackageBodyElement returns PortUsage
 	 *     DefinitionBodyElement returns PortUsage
 	 *     UsageBodyElement returns PortUsage
+	 *     InterBodyElement returns PortUsage
 	 *     UsageElement returns PortUsage
 	 *     OccurrenceUsageElement returns PortUsage
 	 *     StructureUsageElement returns PortUsage
@@ -793,74 +879,10 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     PackageBodyElement returns InterfaceUsage
-	 *     DefinitionBodyElement returns InterfaceUsage
-	 *     UsageBodyElement returns InterfaceUsage
-	 *     UsageElement returns InterfaceUsage
-	 *     OccurrenceUsageElement returns InterfaceUsage
-	 *     StructureUsageElement returns InterfaceUsage
-	 *     InterfaceUsage returns InterfaceUsage
-	 *
-	 * Constraint:
-	 *     (
-	 *         visibility=VisibilityIndicator? 
-	 *         (
-	 *             isEnd?='end' | 
-	 *             (
-	 *                 direction=FeatureDirection? 
-	 *                 (isAbstract?='abstract' | isVariation?='variation')? 
-	 *                 isReadOnly?='readonly'? 
-	 *                 isDerived?='derived'? 
-	 *                 isReference?='ref'? 
-	 *                 isIndividual?='individual'? 
-	 *                 portionKind=PortionKind?
-	 *             )
-	 *         )? 
-	 *         declaredName=Name? 
-	 *         (
-	 *             Multiplicity+=MultiplicityExpression | 
-	 *             (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression) | 
-	 *             (
-	 *                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
-	 *             )
-	 *         )? 
-	 *         (
-	 *             (
-	 *                 (typings+=FeatureChainName typings+=FeatureChainName*) | 
-	 *                 (subsetting+=FeatureChainName subsetting+=FeatureChainName*) | 
-	 *                 (references+=FeatureChainName references+=FeatureChainName*) | 
-	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
-	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
-	 *             ) 
-	 *             (
-	 *                 Multiplicity+=MultiplicityExpression | 
-	 *                 (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression) | 
-	 *                 (
-	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
-	 *                 )
-	 *             )?
-	 *         )* 
-	 *         (
-	 *             (InterfaceEnd+=FeatureChainName InterfaceEnd+=FeatureChainName) | 
-	 *             (InterfaceEnd+=FeatureChainName InterfaceEnd+=FeatureChainName InterfaceEnd+=FeatureChainName*)
-	 *         )? 
-	 *         elements+=UsageBodyElement*
-	 *     )
-	 * </pre>
-	 */
-	protected void sequence_BasicUsagePrefix_FeatureDeclaration_FeatureSpecialization_InterfacePart_InterfaceUsage_MemberPrefix_MultiplicityPart_OccurrenceUsagePrefix_RefPrefix(ISerializationContext context, InterfaceUsage semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
 	 *     PackageBodyElement returns CodeAnnotation
 	 *     DefinitionBodyElement returns CodeAnnotation
 	 *     UsageBodyElement returns CodeAnnotation
+	 *     InterBodyElement returns CodeAnnotation
 	 *     CodeAnnotation returns CodeAnnotation
 	 *
 	 * Constraint:
@@ -878,6 +900,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     PackageBodyElement returns Comment
 	 *     DefinitionBodyElement returns Comment
 	 *     UsageBodyElement returns Comment
+	 *     InterBodyElement returns Comment
 	 *     EnumerationBodyElement returns Comment
 	 *     AnnotatingElement returns Comment
 	 *     Comment returns Comment
@@ -899,9 +922,24 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     ConnectorEnd returns ConnectorEnd
+	 *
+	 * Constraint:
+	 *     ((Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression)? delcaredName=Name? refElement=FeatureChainName)
+	 * </pre>
+	 */
+	protected void sequence_ConnectorEnd(ISerializationContext context, ConnectorEnd semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     PackageBodyElement returns EnumerationDefinition
 	 *     DefinitionBodyElement returns EnumerationDefinition
 	 *     UsageBodyElement returns EnumerationDefinition
+	 *     InterBodyElement returns EnumerationDefinition
 	 *     DefinitionElement returns EnumerationDefinition
 	 *     EnumerationDefinition returns EnumerationDefinition
 	 *
@@ -920,6 +958,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     PackageBodyElement returns Documentation
 	 *     DefinitionBodyElement returns Documentation
 	 *     UsageBodyElement returns Documentation
+	 *     InterBodyElement returns Documentation
 	 *     EnumerationBodyElement returns Documentation
 	 *     AnnotatingElement returns Documentation
 	 *     Documentation returns Documentation
@@ -984,6 +1023,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     PackageBodyElement returns TextualRepresentation
 	 *     DefinitionBodyElement returns TextualRepresentation
 	 *     UsageBodyElement returns TextualRepresentation
+	 *     InterBodyElement returns TextualRepresentation
 	 *     EnumerationBodyElement returns TextualRepresentation
 	 *     AnnotatingElement returns TextualRepresentation
 	 *     TextualRepresentation returns TextualRepresentation
@@ -1003,6 +1043,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     PackageBodyElement returns MembershipImport
 	 *     DefinitionBodyElement returns MembershipImport
 	 *     UsageBodyElement returns MembershipImport
+	 *     InterBodyElement returns MembershipImport
 	 *     ImportElement returns MembershipImport
 	 *     MembershipImport returns MembershipImport
 	 *
@@ -1021,6 +1062,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     PackageBodyElement returns NamespaceImport
 	 *     DefinitionBodyElement returns NamespaceImport
 	 *     UsageBodyElement returns NamespaceImport
+	 *     InterBodyElement returns NamespaceImport
 	 *     ImportElement returns NamespaceImport
 	 *     NamespaceImport returns NamespaceImport
 	 *

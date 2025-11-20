@@ -48,8 +48,8 @@
         </elements>
         <elements xsi:type="sysMLOC:ConnectionUsage">
           <typings>PressureSeat</typings>
-          <connectorPart>bead ::> t.bead</connectorPart>
-          <connectorPart>mountingRim references w.rim</connectorPart>
+          <connectorPart delcaredName="bead" refElement="t.bead"/>
+          <connectorPart delcaredName="mountingRim" refElement="w.rim"/>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:PartUsage" declaredName="lugBoltJoints">
@@ -66,8 +66,8 @@
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:ConnectionUsage">
-        <connectorPart>lugBoltJoints</connectorPart>
-        <connectorPart>wheel.w.mountingHoles</connectorPart>
+        <connectorPart refElement="lugBoltJoints"/>
+        <connectorPart refElement="wheel.w.mountingHoles"/>
       </elements>
       <elements xsi:type="sysMLOC:CodeAnnotation" body="// connect lugBoltJoints to hub.h[1];&#xD;&#xA;"/>
     </elements>

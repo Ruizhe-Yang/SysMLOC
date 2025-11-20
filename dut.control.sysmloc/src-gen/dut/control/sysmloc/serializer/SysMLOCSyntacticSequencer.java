@@ -30,6 +30,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_ConnectionDefinition_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__;
 	protected AbstractElementAlias match_ConnectionUsage_ConnectKeyword_2_1_0_or___ConnectionKeyword_2_0_0_ConnectKeyword_2_0_3_0__;
 	protected AbstractElementAlias match_ConnectionUsage_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__;
+	protected AbstractElementAlias match_ConnectorEnd_ColonColonGreaterThanSignKeyword_1_1_0_or_ReferencesKeyword_1_1_1;
 	protected AbstractElementAlias match_DefinitionDeclaration_ColonGreaterThanSignKeyword_1_0_1_or_ColonKeyword_1_0_0_or_SpecializesKeyword_1_0_2;
 	protected AbstractElementAlias match_EnumeratedValue_EnumKeyword_0_q;
 	protected AbstractElementAlias match_EnumeratedValue_SemicolonKeyword_2_0_or___LeftCurlyBracketKeyword_2_1_0_RightCurlyBracketKeyword_2_1_2__;
@@ -69,6 +70,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_ConnectionDefinition_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getConnectionDefinitionAccess().getLeftCurlyBracketKeyword_5_1_0()), new TokenAlias(false, false, grammarAccess.getConnectionDefinitionAccess().getRightCurlyBracketKeyword_5_1_2())), new TokenAlias(false, false, grammarAccess.getConnectionDefinitionAccess().getSemicolonKeyword_5_0()));
 		match_ConnectionUsage_ConnectKeyword_2_1_0_or___ConnectionKeyword_2_0_0_ConnectKeyword_2_0_3_0__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getConnectionUsageAccess().getConnectionKeyword_2_0_0()), new TokenAlias(false, false, grammarAccess.getConnectionUsageAccess().getConnectKeyword_2_0_3_0())), new TokenAlias(false, false, grammarAccess.getConnectionUsageAccess().getConnectKeyword_2_1_0()));
 		match_ConnectionUsage_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getConnectionUsageAccess().getLeftCurlyBracketKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getConnectionUsageAccess().getRightCurlyBracketKeyword_3_1_2())), new TokenAlias(false, false, grammarAccess.getConnectionUsageAccess().getSemicolonKeyword_3_0()));
+		match_ConnectorEnd_ColonColonGreaterThanSignKeyword_1_1_0_or_ReferencesKeyword_1_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getConnectorEndAccess().getColonColonGreaterThanSignKeyword_1_1_0()), new TokenAlias(false, false, grammarAccess.getConnectorEndAccess().getReferencesKeyword_1_1_1()));
 		match_DefinitionDeclaration_ColonGreaterThanSignKeyword_1_0_1_or_ColonKeyword_1_0_0_or_SpecializesKeyword_1_0_2 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getDefinitionDeclarationAccess().getColonGreaterThanSignKeyword_1_0_1()), new TokenAlias(false, false, grammarAccess.getDefinitionDeclarationAccess().getColonKeyword_1_0_0()), new TokenAlias(false, false, grammarAccess.getDefinitionDeclarationAccess().getSpecializesKeyword_1_0_2()));
 		match_EnumeratedValue_EnumKeyword_0_q = new TokenAlias(false, true, grammarAccess.getEnumeratedValueAccess().getEnumKeyword_0());
 		match_EnumeratedValue_SemicolonKeyword_2_0_or___LeftCurlyBracketKeyword_2_1_0_RightCurlyBracketKeyword_2_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getEnumeratedValueAccess().getLeftCurlyBracketKeyword_2_1_0()), new TokenAlias(false, false, grammarAccess.getEnumeratedValueAccess().getRightCurlyBracketKeyword_2_1_2())), new TokenAlias(false, false, grammarAccess.getEnumeratedValueAccess().getSemicolonKeyword_2_0()));
@@ -126,6 +128,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_ConnectionUsage_ConnectKeyword_2_1_0_or___ConnectionKeyword_2_0_0_ConnectKeyword_2_0_3_0__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_ConnectionUsage_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__.equals(syntax))
 				emit_ConnectionUsage_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ConnectorEnd_ColonColonGreaterThanSignKeyword_1_1_0_or_ReferencesKeyword_1_1_1.equals(syntax))
+				emit_ConnectorEnd_ColonColonGreaterThanSignKeyword_1_1_0_or_ReferencesKeyword_1_1_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_DefinitionDeclaration_ColonGreaterThanSignKeyword_1_0_1_or_ColonKeyword_1_0_0_or_SpecializesKeyword_1_0_2.equals(syntax))
 				emit_DefinitionDeclaration_ColonGreaterThanSignKeyword_1_0_1_or_ColonKeyword_1_0_0_or_SpecializesKeyword_1_0_2(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_EnumeratedValue_EnumKeyword_0_q.equals(syntax))
@@ -359,6 +363,20 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * </pre>
 	 */
 	protected void emit_ConnectionUsage_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     '::&gt;' | 'references'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     delcaredName=Name (ambiguity) refElement=FeatureChainName
+	 
+	 * </pre>
+	 */
+	protected void emit_ConnectorEnd_ColonColonGreaterThanSignKeyword_1_1_0_or_ReferencesKeyword_1_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -1134,28 +1152,28 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     'connect'?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) 'interface' (ambiguity) '(' InterfaceEnd+=FeatureChainName
-	 *     (rule start) 'interface' (ambiguity) InterfaceEnd+=FeatureChainName
-	 *     direction=FeatureDirection 'interface' (ambiguity) '(' InterfaceEnd+=FeatureChainName
-	 *     direction=FeatureDirection 'interface' (ambiguity) InterfaceEnd+=FeatureChainName
-	 *     isAbstract?='abstract' 'interface' (ambiguity) '(' InterfaceEnd+=FeatureChainName
-	 *     isAbstract?='abstract' 'interface' (ambiguity) InterfaceEnd+=FeatureChainName
-	 *     isDerived?='derived' 'interface' (ambiguity) '(' InterfaceEnd+=FeatureChainName
-	 *     isDerived?='derived' 'interface' (ambiguity) InterfaceEnd+=FeatureChainName
-	 *     isEnd?='end' 'interface' (ambiguity) '(' InterfaceEnd+=FeatureChainName
-	 *     isEnd?='end' 'interface' (ambiguity) InterfaceEnd+=FeatureChainName
-	 *     isIndividual?='individual' 'interface' (ambiguity) '(' InterfaceEnd+=FeatureChainName
-	 *     isIndividual?='individual' 'interface' (ambiguity) InterfaceEnd+=FeatureChainName
-	 *     isReadOnly?='readonly' 'interface' (ambiguity) '(' InterfaceEnd+=FeatureChainName
-	 *     isReadOnly?='readonly' 'interface' (ambiguity) InterfaceEnd+=FeatureChainName
-	 *     isReference?='ref' 'interface' (ambiguity) '(' InterfaceEnd+=FeatureChainName
-	 *     isReference?='ref' 'interface' (ambiguity) InterfaceEnd+=FeatureChainName
-	 *     isVariation?='variation' 'interface' (ambiguity) '(' InterfaceEnd+=FeatureChainName
-	 *     isVariation?='variation' 'interface' (ambiguity) InterfaceEnd+=FeatureChainName
-	 *     portionKind=PortionKind 'interface' (ambiguity) '(' InterfaceEnd+=FeatureChainName
-	 *     portionKind=PortionKind 'interface' (ambiguity) InterfaceEnd+=FeatureChainName
-	 *     visibility=VisibilityIndicator 'interface' (ambiguity) '(' InterfaceEnd+=FeatureChainName
-	 *     visibility=VisibilityIndicator 'interface' (ambiguity) InterfaceEnd+=FeatureChainName
+	 *     (rule start) 'interface' (ambiguity) '(' connectorPart+=ConnectorEnd
+	 *     (rule start) 'interface' (ambiguity) connectorPart+=ConnectorEnd
+	 *     direction=FeatureDirection 'interface' (ambiguity) '(' connectorPart+=ConnectorEnd
+	 *     direction=FeatureDirection 'interface' (ambiguity) connectorPart+=ConnectorEnd
+	 *     isAbstract?='abstract' 'interface' (ambiguity) '(' connectorPart+=ConnectorEnd
+	 *     isAbstract?='abstract' 'interface' (ambiguity) connectorPart+=ConnectorEnd
+	 *     isDerived?='derived' 'interface' (ambiguity) '(' connectorPart+=ConnectorEnd
+	 *     isDerived?='derived' 'interface' (ambiguity) connectorPart+=ConnectorEnd
+	 *     isEnd?='end' 'interface' (ambiguity) '(' connectorPart+=ConnectorEnd
+	 *     isEnd?='end' 'interface' (ambiguity) connectorPart+=ConnectorEnd
+	 *     isIndividual?='individual' 'interface' (ambiguity) '(' connectorPart+=ConnectorEnd
+	 *     isIndividual?='individual' 'interface' (ambiguity) connectorPart+=ConnectorEnd
+	 *     isReadOnly?='readonly' 'interface' (ambiguity) '(' connectorPart+=ConnectorEnd
+	 *     isReadOnly?='readonly' 'interface' (ambiguity) connectorPart+=ConnectorEnd
+	 *     isReference?='ref' 'interface' (ambiguity) '(' connectorPart+=ConnectorEnd
+	 *     isReference?='ref' 'interface' (ambiguity) connectorPart+=ConnectorEnd
+	 *     isVariation?='variation' 'interface' (ambiguity) '(' connectorPart+=ConnectorEnd
+	 *     isVariation?='variation' 'interface' (ambiguity) connectorPart+=ConnectorEnd
+	 *     portionKind=PortionKind 'interface' (ambiguity) '(' connectorPart+=ConnectorEnd
+	 *     portionKind=PortionKind 'interface' (ambiguity) connectorPart+=ConnectorEnd
+	 *     visibility=VisibilityIndicator 'interface' (ambiguity) '(' connectorPart+=ConnectorEnd
+	 *     visibility=VisibilityIndicator 'interface' (ambiguity) connectorPart+=ConnectorEnd
 	 
 	 * </pre>
 	 */
@@ -1170,9 +1188,9 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'interface' (ambiguity) (rule start)
-	 *     InterfaceEnd+=FeatureChainName ')' (ambiguity) (rule end)
-	 *     InterfaceEnd+=FeatureChainName (ambiguity) (rule end)
 	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     connectorPart+=ConnectorEnd ')' (ambiguity) (rule end)
+	 *     connectorPart+=ConnectorEnd (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     direction=FeatureDirection 'interface' (ambiguity) (rule end)

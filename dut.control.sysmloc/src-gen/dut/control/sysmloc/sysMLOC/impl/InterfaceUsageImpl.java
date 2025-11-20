@@ -4,11 +4,13 @@
 package dut.control.sysmloc.sysMLOC.impl;
 
 import dut.control.sysmloc.sysMLOC.BasicUsagePrefix;
+import dut.control.sysmloc.sysMLOC.ConnectorEnd;
+import dut.control.sysmloc.sysMLOC.ConnectorPart;
 import dut.control.sysmloc.sysMLOC.FeatureDeclaration;
 import dut.control.sysmloc.sysMLOC.FeatureDirection;
 import dut.control.sysmloc.sysMLOC.FeatureSpecialization;
 import dut.control.sysmloc.sysMLOC.FeatureSpecializationPart;
-import dut.control.sysmloc.sysMLOC.InterfacePart;
+import dut.control.sysmloc.sysMLOC.InterBodyElement;
 import dut.control.sysmloc.sysMLOC.InterfaceUsage;
 import dut.control.sysmloc.sysMLOC.MemberPrefix;
 import dut.control.sysmloc.sysMLOC.MultiplicityPart;
@@ -16,7 +18,6 @@ import dut.control.sysmloc.sysMLOC.OccurrenceUsagePrefix;
 import dut.control.sysmloc.sysMLOC.PortionKind;
 import dut.control.sysmloc.sysMLOC.RefPrefix;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
-import dut.control.sysmloc.sysMLOC.UsageBodyElement;
 import dut.control.sysmloc.sysMLOC.UsageDeclaration;
 import dut.control.sysmloc.sysMLOC.VisibilityIndicator;
 
@@ -63,7 +64,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.InterfaceUsageImpl#isIsOrdered <em>Is Ordered</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.InterfaceUsageImpl#isIsNonunique <em>Is Nonunique</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.InterfaceUsageImpl#getDeclaredName <em>Declared Name</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.InterfaceUsageImpl#getInterfaceEnd <em>Interface End</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.InterfaceUsageImpl#getConnectorPart <em>Connector Part</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.InterfaceUsageImpl#getElements <em>Elements</em>}</li>
  * </ul>
  *
@@ -392,14 +393,14 @@ public class InterfaceUsageImpl extends StructureUsageElementImpl implements Int
   protected String declaredName = DECLARED_NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getInterfaceEnd() <em>Interface End</em>}' attribute list.
+   * The cached value of the '{@link #getConnectorPart() <em>Connector Part</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getInterfaceEnd()
+   * @see #getConnectorPart()
    * @generated
    * @ordered
    */
-  protected EList<String> interfaceEnd;
+  protected EList<ConnectorEnd> connectorPart;
 
   /**
    * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
@@ -409,7 +410,7 @@ public class InterfaceUsageImpl extends StructureUsageElementImpl implements Int
    * @generated
    * @ordered
    */
-  protected EList<UsageBodyElement> elements;
+  protected EList<InterBodyElement> elements;
 
   /**
    * <!-- begin-user-doc -->
@@ -853,13 +854,13 @@ public class InterfaceUsageImpl extends StructureUsageElementImpl implements Int
    * @generated
    */
   @Override
-  public EList<String> getInterfaceEnd()
+  public EList<ConnectorEnd> getConnectorPart()
   {
-    if (interfaceEnd == null)
+    if (connectorPart == null)
     {
-      interfaceEnd = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.INTERFACE_USAGE__INTERFACE_END);
+      connectorPart = new EObjectContainmentEList<ConnectorEnd>(ConnectorEnd.class, this, SysMLOCPackage.INTERFACE_USAGE__CONNECTOR_PART);
     }
-    return interfaceEnd;
+    return connectorPart;
   }
 
   /**
@@ -868,11 +869,11 @@ public class InterfaceUsageImpl extends StructureUsageElementImpl implements Int
    * @generated
    */
   @Override
-  public EList<UsageBodyElement> getElements()
+  public EList<InterBodyElement> getElements()
   {
     if (elements == null)
     {
-      elements = new EObjectContainmentEList<UsageBodyElement>(UsageBodyElement.class, this, SysMLOCPackage.INTERFACE_USAGE__ELEMENTS);
+      elements = new EObjectContainmentEList<InterBodyElement>(InterBodyElement.class, this, SysMLOCPackage.INTERFACE_USAGE__ELEMENTS);
     }
     return elements;
   }
@@ -887,6 +888,8 @@ public class InterfaceUsageImpl extends StructureUsageElementImpl implements Int
   {
     switch (featureID)
     {
+      case SysMLOCPackage.INTERFACE_USAGE__CONNECTOR_PART:
+        return ((InternalEList<?>)getConnectorPart()).basicRemove(otherEnd, msgs);
       case SysMLOCPackage.INTERFACE_USAGE__ELEMENTS:
         return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
     }
@@ -941,8 +944,8 @@ public class InterfaceUsageImpl extends StructureUsageElementImpl implements Int
         return isIsNonunique();
       case SysMLOCPackage.INTERFACE_USAGE__DECLARED_NAME:
         return getDeclaredName();
-      case SysMLOCPackage.INTERFACE_USAGE__INTERFACE_END:
-        return getInterfaceEnd();
+      case SysMLOCPackage.INTERFACE_USAGE__CONNECTOR_PART:
+        return getConnectorPart();
       case SysMLOCPackage.INTERFACE_USAGE__ELEMENTS:
         return getElements();
     }
@@ -1023,13 +1026,13 @@ public class InterfaceUsageImpl extends StructureUsageElementImpl implements Int
       case SysMLOCPackage.INTERFACE_USAGE__DECLARED_NAME:
         setDeclaredName((String)newValue);
         return;
-      case SysMLOCPackage.INTERFACE_USAGE__INTERFACE_END:
-        getInterfaceEnd().clear();
-        getInterfaceEnd().addAll((Collection<? extends String>)newValue);
+      case SysMLOCPackage.INTERFACE_USAGE__CONNECTOR_PART:
+        getConnectorPart().clear();
+        getConnectorPart().addAll((Collection<? extends ConnectorEnd>)newValue);
         return;
       case SysMLOCPackage.INTERFACE_USAGE__ELEMENTS:
         getElements().clear();
-        getElements().addAll((Collection<? extends UsageBodyElement>)newValue);
+        getElements().addAll((Collection<? extends InterBodyElement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -1102,8 +1105,8 @@ public class InterfaceUsageImpl extends StructureUsageElementImpl implements Int
       case SysMLOCPackage.INTERFACE_USAGE__DECLARED_NAME:
         setDeclaredName(DECLARED_NAME_EDEFAULT);
         return;
-      case SysMLOCPackage.INTERFACE_USAGE__INTERFACE_END:
-        getInterfaceEnd().clear();
+      case SysMLOCPackage.INTERFACE_USAGE__CONNECTOR_PART:
+        getConnectorPart().clear();
         return;
       case SysMLOCPackage.INTERFACE_USAGE__ELEMENTS:
         getElements().clear();
@@ -1160,8 +1163,8 @@ public class InterfaceUsageImpl extends StructureUsageElementImpl implements Int
         return isNonunique != IS_NONUNIQUE_EDEFAULT;
       case SysMLOCPackage.INTERFACE_USAGE__DECLARED_NAME:
         return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
-      case SysMLOCPackage.INTERFACE_USAGE__INTERFACE_END:
-        return interfaceEnd != null && !interfaceEnd.isEmpty();
+      case SysMLOCPackage.INTERFACE_USAGE__CONNECTOR_PART:
+        return connectorPart != null && !connectorPart.isEmpty();
       case SysMLOCPackage.INTERFACE_USAGE__ELEMENTS:
         return elements != null && !elements.isEmpty();
     }
@@ -1258,11 +1261,11 @@ public class InterfaceUsageImpl extends StructureUsageElementImpl implements Int
         default: return -1;
       }
     }
-    if (baseClass == InterfacePart.class)
+    if (baseClass == ConnectorPart.class)
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.INTERFACE_USAGE__INTERFACE_END: return SysMLOCPackage.INTERFACE_PART__INTERFACE_END;
+        case SysMLOCPackage.INTERFACE_USAGE__CONNECTOR_PART: return SysMLOCPackage.CONNECTOR_PART__CONNECTOR_PART;
         default: return -1;
       }
     }
@@ -1359,11 +1362,11 @@ public class InterfaceUsageImpl extends StructureUsageElementImpl implements Int
         default: return -1;
       }
     }
-    if (baseClass == InterfacePart.class)
+    if (baseClass == ConnectorPart.class)
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.INTERFACE_PART__INTERFACE_END: return SysMLOCPackage.INTERFACE_USAGE__INTERFACE_END;
+        case SysMLOCPackage.CONNECTOR_PART__CONNECTOR_PART: return SysMLOCPackage.INTERFACE_USAGE__CONNECTOR_PART;
         default: return -1;
       }
     }
@@ -1419,8 +1422,6 @@ public class InterfaceUsageImpl extends StructureUsageElementImpl implements Int
     result.append(isNonunique);
     result.append(", declaredName: ");
     result.append(declaredName);
-    result.append(", InterfaceEnd: ");
-    result.append(interfaceEnd);
     result.append(')');
     return result.toString();
   }

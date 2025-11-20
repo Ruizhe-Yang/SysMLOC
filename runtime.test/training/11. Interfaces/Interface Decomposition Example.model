@@ -28,12 +28,12 @@
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:ConnectionUsage">
-        <connectorPart>suppliedBy.hot</connectorPart>
-        <connectorPart>deliveredTo.hot</connectorPart>
+        <connectorPart refElement="suppliedBy.hot"/>
+        <connectorPart refElement="deliveredTo.hot"/>
       </elements>
       <elements xsi:type="sysMLOC:ConnectionUsage">
-        <connectorPart>suppliedBy.cold</connectorPart>
-        <connectorPart>deliveredTo.cold</connectorPart>
+        <connectorPart refElement="suppliedBy.cold"/>
+        <connectorPart refElement="deliveredTo.cold"/>
       </elements>
     </elements>
   </packages>

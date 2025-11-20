@@ -15,6 +15,7 @@ import dut.control.sysmloc.sysMLOC.CodeAnnotation;
 import dut.control.sysmloc.sysMLOC.Comment;
 import dut.control.sysmloc.sysMLOC.ConnectionDefinition;
 import dut.control.sysmloc.sysMLOC.ConnectionUsage;
+import dut.control.sysmloc.sysMLOC.ConnectorEnd;
 import dut.control.sysmloc.sysMLOC.ConnectorPart;
 import dut.control.sysmloc.sysMLOC.DefinitionBodyElement;
 import dut.control.sysmloc.sysMLOC.DefinitionDeclaration;
@@ -36,8 +37,8 @@ import dut.control.sysmloc.sysMLOC.FlowConnectionDefinition;
 import dut.control.sysmloc.sysMLOC.FlowConnectionUsage;
 import dut.control.sysmloc.sysMLOC.Identification;
 import dut.control.sysmloc.sysMLOC.ImportElement;
+import dut.control.sysmloc.sysMLOC.InterBodyElement;
 import dut.control.sysmloc.sysMLOC.InterfaceDefinition;
-import dut.control.sysmloc.sysMLOC.InterfacePart;
 import dut.control.sysmloc.sysMLOC.InterfaceUsage;
 import dut.control.sysmloc.sysMLOC.ItemDefinition;
 import dut.control.sysmloc.sysMLOC.ItemUsage;
@@ -136,6 +137,7 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
       case SysMLOCPackage.PACKAGE_BODY_ELEMENT: return createPackageBodyElement();
       case SysMLOCPackage.DEFINITION_BODY_ELEMENT: return createDefinitionBodyElement();
       case SysMLOCPackage.USAGE_BODY_ELEMENT: return createUsageBodyElement();
+      case SysMLOCPackage.INTER_BODY_ELEMENT: return createInterBodyElement();
       case SysMLOCPackage.ENUMERATION_BODY_ELEMENT: return createEnumerationBodyElement();
       case SysMLOCPackage.ANNOTATING_ELEMENT: return createAnnotatingElement();
       case SysMLOCPackage.IMPORT_ELEMENT: return createImportElement();
@@ -171,6 +173,7 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
       case SysMLOCPackage.FLOW_CONNECTION_USAGE: return createFlowConnectionUsage();
       case SysMLOCPackage.ACTION_USAGE: return createActionUsage();
       case SysMLOCPackage.ALIAS_ELEMENT: return createAliasElement();
+      case SysMLOCPackage.CONNECTOR_END: return createConnectorEnd();
       case SysMLOCPackage.IS_IMPORT_ALL_FRAGMENT: return createisImportAllFragment();
       case SysMLOCPackage.MEMBER_PREFIX: return createMemberPrefix();
       case SysMLOCPackage.DEFINITION_PREFIX: return createDefinitionPrefix();
@@ -183,7 +186,6 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
       case SysMLOCPackage.REF_PREFIX: return createRefPrefix();
       case SysMLOCPackage.BASIC_USAGE_PREFIX: return createBasicUsagePrefix();
       case SysMLOCPackage.CONNECTOR_PART: return createConnectorPart();
-      case SysMLOCPackage.INTERFACE_PART: return createInterfacePart();
       case SysMLOCPackage.DEFINITION_DECLARATION: return createDefinitionDeclaration();
       case SysMLOCPackage.USAGE: return createUsage();
       case SysMLOCPackage.USAGE_DECLARATION: return createUsageDeclaration();
@@ -298,6 +300,18 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
   {
     UsageBodyElementImpl usageBodyElement = new UsageBodyElementImpl();
     return usageBodyElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public InterBodyElement createInterBodyElement()
+  {
+    InterBodyElementImpl interBodyElement = new InterBodyElementImpl();
+    return interBodyElement;
   }
 
   /**
@@ -726,6 +740,18 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
    * @generated
    */
   @Override
+  public ConnectorEnd createConnectorEnd()
+  {
+    ConnectorEndImpl connectorEnd = new ConnectorEndImpl();
+    return connectorEnd;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public isImportAllFragment createisImportAllFragment()
   {
     isImportAllFragmentImpl isImportAllFragment = new isImportAllFragmentImpl();
@@ -862,18 +888,6 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
   {
     ConnectorPartImpl connectorPart = new ConnectorPartImpl();
     return connectorPart;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public InterfacePart createInterfacePart()
-  {
-    InterfacePartImpl interfacePart = new InterfacePartImpl();
-    return interfacePart;
   }
 
   /**

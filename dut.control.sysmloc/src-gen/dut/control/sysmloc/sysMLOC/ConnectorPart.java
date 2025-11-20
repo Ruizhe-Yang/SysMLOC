@@ -26,15 +26,15 @@ import org.eclipse.emf.ecore.EObject;
 public interface ConnectorPart extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Connector Part</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Connector Part</b></em>' containment reference list.
+   * The list contents are of type {@link dut.control.sysmloc.sysMLOC.ConnectorEnd}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Connector Part</em>' attribute list.
+   * @return the value of the '<em>Connector Part</em>' containment reference list.
    * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getConnectorPart_ConnectorPart()
-   * @model unique="false"
+   * @model containment="true"
    * @generated
    */
-  EList<String> getConnectorPart();
+  EList<ConnectorEnd> getConnectorPart();
 
 } // ConnectorPart

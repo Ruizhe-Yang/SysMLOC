@@ -3,26 +3,28 @@
  */
 package dut.control.sysmloc.sysMLOC.impl;
 
+import dut.control.sysmloc.sysMLOC.InterBodyElement;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
-import dut.control.sysmloc.sysMLOC.UsageBodyElement;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Usage Body Element</b></em>'.
+ * An implementation of the model object '<em><b>Inter Body Element</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class UsageBodyElementImpl extends InterBodyElementImpl implements UsageBodyElement
+public class InterBodyElementImpl extends MinimalEObjectImpl.Container implements InterBodyElement
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected UsageBodyElementImpl()
+  protected InterBodyElementImpl()
   {
     super();
   }
@@ -35,7 +37,7 @@ public class UsageBodyElementImpl extends InterBodyElementImpl implements UsageB
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.USAGE_BODY_ELEMENT;
+    return SysMLOCPackage.Literals.INTER_BODY_ELEMENT;
   }
 
-} //UsageBodyElementImpl
+} //InterBodyElementImpl

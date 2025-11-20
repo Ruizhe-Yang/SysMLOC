@@ -15,6 +15,7 @@ import dut.control.sysmloc.sysMLOC.CodeAnnotation;
 import dut.control.sysmloc.sysMLOC.Comment;
 import dut.control.sysmloc.sysMLOC.ConnectionDefinition;
 import dut.control.sysmloc.sysMLOC.ConnectionUsage;
+import dut.control.sysmloc.sysMLOC.ConnectorEnd;
 import dut.control.sysmloc.sysMLOC.ConnectorPart;
 import dut.control.sysmloc.sysMLOC.DefinitionBodyElement;
 import dut.control.sysmloc.sysMLOC.DefinitionDeclaration;
@@ -36,8 +37,8 @@ import dut.control.sysmloc.sysMLOC.FlowConnectionDefinition;
 import dut.control.sysmloc.sysMLOC.FlowConnectionUsage;
 import dut.control.sysmloc.sysMLOC.Identification;
 import dut.control.sysmloc.sysMLOC.ImportElement;
+import dut.control.sysmloc.sysMLOC.InterBodyElement;
 import dut.control.sysmloc.sysMLOC.InterfaceDefinition;
-import dut.control.sysmloc.sysMLOC.InterfacePart;
 import dut.control.sysmloc.sysMLOC.InterfaceUsage;
 import dut.control.sysmloc.sysMLOC.ItemDefinition;
 import dut.control.sysmloc.sysMLOC.ItemUsage;
@@ -120,6 +121,13 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   private EClass usageBodyElementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass interBodyElementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -371,6 +379,13 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass connectorEndEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass isImportAllFragmentEClass = null;
 
   /**
@@ -449,13 +464,6 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   private EClass connectorPartEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass interfacePartEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -700,6 +708,17 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   public EClass getUsageBodyElement()
   {
     return usageBodyElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getInterBodyElement()
+  {
+    return interBodyElementEClass;
   }
 
   /**
@@ -1456,6 +1475,50 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   @Override
+  public EClass getConnectorEnd()
+  {
+    return connectorEndEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getConnectorEnd_Multiplicity()
+  {
+    return (EAttribute)connectorEndEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getConnectorEnd_DelcaredName()
+  {
+    return (EAttribute)connectorEndEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getConnectorEnd_RefElement()
+  {
+    return (EAttribute)connectorEndEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getisImportAllFragment()
   {
     return isImportAllFragmentEClass;
@@ -1753,31 +1816,9 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   @Override
-  public EAttribute getConnectorPart_ConnectorPart()
+  public EReference getConnectorPart_ConnectorPart()
   {
-    return (EAttribute)connectorPartEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getInterfacePart()
-  {
-    return interfacePartEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getInterfacePart_InterfaceEnd()
-  {
-    return (EAttribute)interfacePartEClass.getEStructuralFeatures().get(0);
+    return (EReference)connectorPartEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2144,6 +2185,8 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
 
     usageBodyElementEClass = createEClass(USAGE_BODY_ELEMENT);
 
+    interBodyElementEClass = createEClass(INTER_BODY_ELEMENT);
+
     enumerationBodyElementEClass = createEClass(ENUMERATION_BODY_ELEMENT);
 
     annotatingElementEClass = createEClass(ANNOTATING_ELEMENT);
@@ -2247,6 +2290,11 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
     createEAttribute(aliasElementEClass, ALIAS_ELEMENT__MEMBER_ELEMENT);
     createEReference(aliasElementEClass, ALIAS_ELEMENT__ELEMENTS);
 
+    connectorEndEClass = createEClass(CONNECTOR_END);
+    createEAttribute(connectorEndEClass, CONNECTOR_END__MULTIPLICITY);
+    createEAttribute(connectorEndEClass, CONNECTOR_END__DELCARED_NAME);
+    createEAttribute(connectorEndEClass, CONNECTOR_END__REF_ELEMENT);
+
     isImportAllFragmentEClass = createEClass(IS_IMPORT_ALL_FRAGMENT);
     createEAttribute(isImportAllFragmentEClass, IS_IMPORT_ALL_FRAGMENT__IS_IMPORT_ALL);
 
@@ -2285,10 +2333,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
     createEAttribute(basicUsagePrefixEClass, BASIC_USAGE_PREFIX__IS_REFERENCE);
 
     connectorPartEClass = createEClass(CONNECTOR_PART);
-    createEAttribute(connectorPartEClass, CONNECTOR_PART__CONNECTOR_PART);
-
-    interfacePartEClass = createEClass(INTERFACE_PART);
-    createEAttribute(interfacePartEClass, INTERFACE_PART__INTERFACE_END);
+    createEReference(connectorPartEClass, CONNECTOR_PART__CONNECTOR_PART);
 
     definitionDeclarationEClass = createEClass(DEFINITION_DECLARATION);
     createEAttribute(definitionDeclarationEClass, DEFINITION_DECLARATION__DECLARED_NAME);
@@ -2362,6 +2407,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
     // Add supertypes to classes
     packageEClass.getESuperTypes().add(this.getPackageBodyElement());
     definitionBodyElementEClass.getESuperTypes().add(this.getUsageBodyElement());
+    usageBodyElementEClass.getESuperTypes().add(this.getInterBodyElement());
     annotatingElementEClass.getESuperTypes().add(this.getPackageBodyElement());
     annotatingElementEClass.getESuperTypes().add(this.getDefinitionBodyElement());
     annotatingElementEClass.getESuperTypes().add(this.getEnumerationBodyElement());
@@ -2508,7 +2554,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
     interfaceUsageEClass.getESuperTypes().add(this.getFeatureSpecializationPart());
     interfaceUsageEClass.getESuperTypes().add(this.getFeatureSpecialization());
     interfaceUsageEClass.getESuperTypes().add(this.getMultiplicityPart());
-    interfaceUsageEClass.getESuperTypes().add(this.getInterfacePart());
+    interfaceUsageEClass.getESuperTypes().add(this.getConnectorPart());
     flowConnectionDefinitionEClass.getESuperTypes().add(this.getDefinitionElement());
     flowConnectionDefinitionEClass.getESuperTypes().add(this.getMemberPrefix());
     flowConnectionDefinitionEClass.getESuperTypes().add(this.getOccurrenceDefinitionPrefix());
@@ -2575,6 +2621,8 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
     initEClass(definitionBodyElementEClass, DefinitionBodyElement.class, "DefinitionBodyElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(usageBodyElementEClass, UsageBodyElement.class, "UsageBodyElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(interBodyElementEClass, InterBodyElement.class, "InterBodyElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(enumerationBodyElementEClass, EnumerationBodyElement.class, "EnumerationBodyElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2659,7 +2707,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
     initEReference(getInterfaceDefinition_Elements(), this.getDefinitionBodyElement(), null, "elements", null, 0, -1, InterfaceDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(interfaceUsageEClass, InterfaceUsage.class, "InterfaceUsage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getInterfaceUsage_Elements(), this.getUsageBodyElement(), null, "elements", null, 0, -1, InterfaceUsage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInterfaceUsage_Elements(), this.getInterBodyElement(), null, "elements", null, 0, -1, InterfaceUsage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(flowConnectionDefinitionEClass, FlowConnectionDefinition.class, "FlowConnectionDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getFlowConnectionDefinition_Elements(), this.getDefinitionBodyElement(), null, "elements", null, 0, -1, FlowConnectionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2678,6 +2726,11 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
     initEAttribute(getAliasElement_MemberName(), ecorePackage.getEString(), "memberName", null, 0, 1, AliasElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAliasElement_MemberElement(), ecorePackage.getEString(), "memberElement", null, 0, 1, AliasElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAliasElement_Elements(), this.getAnnotatingElement(), null, "elements", null, 0, -1, AliasElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(connectorEndEClass, ConnectorEnd.class, "ConnectorEnd", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getConnectorEnd_Multiplicity(), ecorePackage.getEString(), "Multiplicity", null, 0, -1, ConnectorEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getConnectorEnd_DelcaredName(), ecorePackage.getEString(), "delcaredName", null, 0, 1, ConnectorEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getConnectorEnd_RefElement(), ecorePackage.getEString(), "refElement", null, 0, 1, ConnectorEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(isImportAllFragmentEClass, isImportAllFragment.class, "isImportAllFragment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getisImportAllFragment_IsImportAll(), ecorePackage.getEBoolean(), "isImportAll", null, 0, 1, isImportAllFragment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2717,10 +2770,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
     initEAttribute(getBasicUsagePrefix_IsReference(), ecorePackage.getEBoolean(), "isReference", null, 0, 1, BasicUsagePrefix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(connectorPartEClass, ConnectorPart.class, "ConnectorPart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getConnectorPart_ConnectorPart(), ecorePackage.getEString(), "connectorPart", null, 0, -1, ConnectorPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(interfacePartEClass, InterfacePart.class, "InterfacePart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getInterfacePart_InterfaceEnd(), ecorePackage.getEString(), "InterfaceEnd", null, 0, -1, InterfacePart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getConnectorPart_ConnectorPart(), this.getConnectorEnd(), null, "connectorPart", null, 0, -1, ConnectorPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(definitionDeclarationEClass, DefinitionDeclaration.class, "DefinitionDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDefinitionDeclaration_DeclaredName(), ecorePackage.getEString(), "declaredName", null, 0, 1, DefinitionDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

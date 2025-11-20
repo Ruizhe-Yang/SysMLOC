@@ -42,10 +42,20 @@ UsageBodyElement:
 	DefinitionBodyElement
 ;
 
+InterfaceBodyElement:
+	UsageBodyElement
+;
+
 EnumerationBodyElement:
 	AnnotatingElement
 	| EnumerationElement
 ;
+
+ActionBodyElement:
+	ImportElement
+	| AliasElement
+;
+
 // TODO --------------------------------- Abstract Level ---------------------------------//
 // Annotating
 
@@ -78,7 +88,7 @@ DefinitionElement:
 	| InterfaceDefinition
 //	| AllocationDefinition
 	| PortDefinition
-//	| ActionDefinition
+	| ActionDefinition
 //	| CalculationDefinition
 //	| StateDefinition
 //	| ConstraintDefinition
@@ -105,7 +115,7 @@ NonOccurrenceUsageElement:
 //	ReferenceUsage
 	AttributeUsage
 	| EnumerationUsage
-//	| BindingConnectorAsUsage
+	| BindingConnectorAsUsage
 //	| SuccessionAsUsage
 //	| ExtendedUsage
 	
@@ -222,6 +232,13 @@ EnumerationUsage:
 	(';' | '{' (elements+=UsageBodyElement)* '}')
 ;
 
+BindingConnectorAsUsage:
+	UsagePrefix 
+	( 'binding' UsageDeclaration? )?
+	'bind' ConnectorPart '=' ConnectorPart
+	(';' | '{' (elements+=DefinitionBodyElement)* '}')
+;
+
 ItemDefinition:
     MemberPrefix OccurrenceDefinitionPrefix 'item' 'def' DefinitionDeclaration 
     (';' | '{' (elements+=DefinitionBodyElement)* '}')
@@ -271,17 +288,12 @@ InterfaceDefinition:
 	(';' | '{' (elements += DefinitionBodyElement)* '}')
 ;
 
-//InterfaceBody:
-//	InterfaceEnd | BaseElement
-//;
-//
-//InterfaceEnd returns PortUsage:
-//	isEnd ?= 'end' Usage
-//;
-
 InterfaceUsage:
-	MemberPrefix OccurrenceUsagePrefix 'interface' (UsageDeclaration? ('connect' InterfacePart )? | InterfacePart) 
-	(';' | '{' (elements+=UsageBodyElement)* '}')
+	MemberPrefix
+	OccurrenceUsagePrefix
+	'interface' 
+	(UsageDeclaration? ('connect' ConnectorPart )? | ConnectorPart) 
+	(';' | '{' (elements+=InterfaceBodyElement)* '}')
 ;
 
 FlowConnectionDefinition:
@@ -290,11 +302,18 @@ FlowConnectionDefinition:
 ;
 
 FlowConnectionUsage:
-	MemberPrefix OccurrenceUsagePrefix 'flow' 
+	MemberPrefix
+	OccurrenceUsagePrefix
+	'flow' 
 	UsageDeclaration? FeatureValue?
 	( 'of' ItemFeature += Name )?
     ( 'from'? FlowEnd += FeatureChainName 'to' FlowEnd += FeatureChainName )?
     (';' | '{' (elements+=UsageBodyElement)* '}')
+;
+
+ActionDefinition:
+	OccurrenceDefinitionPrefix 'action' 'def' DefinitionDeclaration
+	(';' | '{' (elements+=ActionBodyElement)* '}')
 ;
 
 ActionUsage:
@@ -307,6 +326,13 @@ AliasElement:
 	'for' memberElement = QualifiedName
 	(';' | '{' (elements+=AnnotatingElement)* '}')
 ;
+
+ConnectorEnd:
+	('[' Multiplicity+=MultiplicityExpression '..' Multiplicity+=MultiplicityExpression ']')?
+	( delcaredName = Name ('::>' | 'references') )?
+	refElement = FeatureChainName
+;
+
 // TODO --------------------------------- Enum Level ---------------------------------//
 
 // enum
@@ -385,13 +411,8 @@ fragment BasicUsagePrefix:
 ;
 
 fragment ConnectorPart:
-	connectorPart += ConnectorEnd 'to' connectorPart += ConnectorEnd 
-	| '(' connectorPart += ConnectorEnd ','  connectorPart += ConnectorEnd (',' connectorPart += ConnectorEnd)* ')'
-;
-
-fragment InterfacePart:
-	InterfaceEnd += FeatureChainName 'to' InterfaceEnd += FeatureChainName 
-	| '(' InterfaceEnd += FeatureChainName ','  InterfaceEnd += FeatureChainName (',' InterfaceEnd += FeatureChainName)* ')'
+	(connectorPart += ConnectorEnd 'to' connectorPart += ConnectorEnd)
+	| ('(' connectorPart += ConnectorEnd ','  connectorPart += ConnectorEnd (',' connectorPart += ConnectorEnd)* ')')
 ;
 
 fragment DefinitionDeclaration:
@@ -448,11 +469,11 @@ fragment FeatureSpecialization:
 
 // TODO --------------------------------- Terminal Level ---------------------------------//
 
-ConnectorEnd:
-	('[' MultiplicityExpression '..' MultiplicityExpression ']')?
-	( Name ('::>' | 'references') )?
-	FeatureChainName
-;
+//ConnectorEnd:
+//	('[' MultiplicityExpression '..' MultiplicityExpression ']')?
+//	( Name ('::>' | 'references') )?
+//	FeatureChainName
+//;
 
 MultiplicityExpression:
 	LiteralExpression | FeatureReferenceExpression

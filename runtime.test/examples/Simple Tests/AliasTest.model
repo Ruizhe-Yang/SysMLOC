@@ -22,12 +22,12 @@
       <elements xsi:type="sysMLOC:AliasElement" memberName="pd1" memberElement="pdest"/>
     </elements>
     <elements xsi:type="sysMLOC:ConnectionUsage">
-      <connectorPart>p1.po1</connectorPart>
-      <connectorPart>p2.pdest</connectorPart>
+      <connectorPart refElement="p1.po1"/>
+      <connectorPart refElement="p2.pdest"/>
     </elements>
     <elements xsi:type="sysMLOC:ConnectionUsage">
-      <connectorPart>p1.po1</connectorPart>
-      <connectorPart>p2.pd1</connectorPart>
+      <connectorPart refElement="p1.po1"/>
+      <connectorPart refElement="p2.pd1"/>
     </elements>
   </packages>
 </sysMLOC:Namespace>

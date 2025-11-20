@@ -69,6 +69,15 @@ public interface SysMLOCFactory extends EFactory
   UsageBodyElement createUsageBodyElement();
 
   /**
+   * Returns a new object of class '<em>Inter Body Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Inter Body Element</em>'.
+   * @generated
+   */
+  InterBodyElement createInterBodyElement();
+
+  /**
    * Returns a new object of class '<em>Enumeration Body Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -384,6 +393,15 @@ public interface SysMLOCFactory extends EFactory
   AliasElement createAliasElement();
 
   /**
+   * Returns a new object of class '<em>Connector End</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Connector End</em>'.
+   * @generated
+   */
+  ConnectorEnd createConnectorEnd();
+
+  /**
    * Returns a new object of class '<em>is Import All Fragment</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -490,15 +508,6 @@ public interface SysMLOCFactory extends EFactory
    * @generated
    */
   ConnectorPart createConnectorPart();
-
-  /**
-   * Returns a new object of class '<em>Interface Part</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Interface Part</em>'.
-   * @generated
-   */
-  InterfacePart createInterfacePart();
 
   /**
    * Returns a new object of class '<em>Definition Declaration</em>'.

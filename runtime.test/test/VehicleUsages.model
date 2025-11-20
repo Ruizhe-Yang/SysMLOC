@@ -75,13 +75,13 @@
         </elements>
         <elements xsi:type="sysMLOC:InterfaceUsage" declaredName="leftFrontMount">
           <typings>Mounting</typings>
-          <InterfaceEnd>frontAxle.leftMountingPoint</InterfaceEnd>
-          <InterfaceEnd>leftFrontWheel.hub</InterfaceEnd>
+          <connectorPart refElement="frontAxle.leftMountingPoint"/>
+          <connectorPart refElement="leftFrontWheel.hub"/>
         </elements>
         <elements xsi:type="sysMLOC:InterfaceUsage" declaredName="rightFrontMount">
           <typings>Mounting</typings>
-          <InterfaceEnd>frontAxle.rightMountingPoint</InterfaceEnd>
-          <InterfaceEnd>rightFrontWheel.hub</InterfaceEnd>
+          <connectorPart refElement="frontAxle.rightMountingPoint"/>
+          <connectorPart refElement="rightFrontWheel.hub"/>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:PartUsage" declaredName="rearAxleAssembly">
@@ -96,13 +96,13 @@
         </elements>
         <elements xsi:type="sysMLOC:InterfaceUsage" declaredName="leftRearMount">
           <typings>Mounting</typings>
-          <InterfaceEnd>rearAxle.leftMountingPoint</InterfaceEnd>
-          <InterfaceEnd>leftRearWheel.hub</InterfaceEnd>
+          <connectorPart refElement="rearAxle.leftMountingPoint"/>
+          <connectorPart refElement="leftRearWheel.hub"/>
         </elements>
         <elements xsi:type="sysMLOC:InterfaceUsage" declaredName="rightRearMount">
           <typings>Mounting</typings>
-          <InterfaceEnd>rearAxle.rightMountingPoint</InterfaceEnd>
-          <InterfaceEnd>rightRearWheel.hub</InterfaceEnd>
+          <connectorPart refElement="rearAxle.rightMountingPoint"/>
+          <connectorPart refElement="rightRearWheel.hub"/>
         </elements>
       </elements>
     </elements>
@@ -125,8 +125,8 @@
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:InterfaceUsage" declaredName="driveShaft">
-        <InterfaceEnd>transDrive</InterfaceEnd>
-        <InterfaceEnd>axleDrive</InterfaceEnd>
+        <connectorPart refElement="transDrive"/>
+        <connectorPart refElement="axleDrive"/>
         <elements xsi:type="sysMLOC:FlowConnectionUsage">
           <FlowEnd>transDrive.driveTorque</FlowEnd>
           <FlowEnd>axleDrive.driveTorque</FlowEnd>

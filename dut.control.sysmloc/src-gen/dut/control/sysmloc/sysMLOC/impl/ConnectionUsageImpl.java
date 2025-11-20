@@ -5,6 +5,7 @@ package dut.control.sysmloc.sysMLOC.impl;
 
 import dut.control.sysmloc.sysMLOC.BasicUsagePrefix;
 import dut.control.sysmloc.sysMLOC.ConnectionUsage;
+import dut.control.sysmloc.sysMLOC.ConnectorEnd;
 import dut.control.sysmloc.sysMLOC.ConnectorPart;
 import dut.control.sysmloc.sysMLOC.FeatureDeclaration;
 import dut.control.sysmloc.sysMLOC.FeatureDirection;
@@ -446,14 +447,14 @@ public class ConnectionUsageImpl extends StructureUsageElementImpl implements Co
   protected EList<String> valuePart;
 
   /**
-   * The cached value of the '{@link #getConnectorPart() <em>Connector Part</em>}' attribute list.
+   * The cached value of the '{@link #getConnectorPart() <em>Connector Part</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getConnectorPart()
    * @generated
    * @ordered
    */
-  protected EList<String> connectorPart;
+  protected EList<ConnectorEnd> connectorPart;
 
   /**
    * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
@@ -972,11 +973,11 @@ public class ConnectionUsageImpl extends StructureUsageElementImpl implements Co
    * @generated
    */
   @Override
-  public EList<String> getConnectorPart()
+  public EList<ConnectorEnd> getConnectorPart()
   {
     if (connectorPart == null)
     {
-      connectorPart = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.CONNECTION_USAGE__CONNECTOR_PART);
+      connectorPart = new EObjectContainmentEList<ConnectorEnd>(ConnectorEnd.class, this, SysMLOCPackage.CONNECTION_USAGE__CONNECTOR_PART);
     }
     return connectorPart;
   }
@@ -1006,6 +1007,8 @@ public class ConnectionUsageImpl extends StructureUsageElementImpl implements Co
   {
     switch (featureID)
     {
+      case SysMLOCPackage.CONNECTION_USAGE__CONNECTOR_PART:
+        return ((InternalEList<?>)getConnectorPart()).basicRemove(otherEnd, msgs);
       case SysMLOCPackage.CONNECTION_USAGE__ELEMENTS:
         return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
     }
@@ -1160,7 +1163,7 @@ public class ConnectionUsageImpl extends StructureUsageElementImpl implements Co
         return;
       case SysMLOCPackage.CONNECTION_USAGE__CONNECTOR_PART:
         getConnectorPart().clear();
-        getConnectorPart().addAll((Collection<? extends String>)newValue);
+        getConnectorPart().addAll((Collection<? extends ConnectorEnd>)newValue);
         return;
       case SysMLOCPackage.CONNECTION_USAGE__ELEMENTS:
         getElements().clear();
@@ -1595,8 +1598,6 @@ public class ConnectionUsageImpl extends StructureUsageElementImpl implements Co
     result.append(isDefault);
     result.append(", valuePart: ");
     result.append(valuePart);
-    result.append(", connectorPart: ");
-    result.append(connectorPart);
     result.append(')');
     return result.toString();
   }

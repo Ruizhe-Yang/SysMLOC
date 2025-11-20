@@ -15,6 +15,7 @@ import dut.control.sysmloc.sysMLOC.CodeAnnotation;
 import dut.control.sysmloc.sysMLOC.Comment;
 import dut.control.sysmloc.sysMLOC.ConnectionDefinition;
 import dut.control.sysmloc.sysMLOC.ConnectionUsage;
+import dut.control.sysmloc.sysMLOC.ConnectorEnd;
 import dut.control.sysmloc.sysMLOC.ConnectorPart;
 import dut.control.sysmloc.sysMLOC.DefinitionBodyElement;
 import dut.control.sysmloc.sysMLOC.DefinitionDeclaration;
@@ -35,8 +36,8 @@ import dut.control.sysmloc.sysMLOC.FlowConnectionDefinition;
 import dut.control.sysmloc.sysMLOC.FlowConnectionUsage;
 import dut.control.sysmloc.sysMLOC.Identification;
 import dut.control.sysmloc.sysMLOC.ImportElement;
+import dut.control.sysmloc.sysMLOC.InterBodyElement;
 import dut.control.sysmloc.sysMLOC.InterfaceDefinition;
-import dut.control.sysmloc.sysMLOC.InterfacePart;
 import dut.control.sysmloc.sysMLOC.InterfaceUsage;
 import dut.control.sysmloc.sysMLOC.ItemDefinition;
 import dut.control.sysmloc.sysMLOC.ItemUsage;
@@ -161,6 +162,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         DefinitionBodyElement definitionBodyElement = (DefinitionBodyElement)theEObject;
         T result = caseDefinitionBodyElement(definitionBodyElement);
         if (result == null) result = caseUsageBodyElement(definitionBodyElement);
+        if (result == null) result = caseInterBodyElement(definitionBodyElement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -168,6 +170,14 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         UsageBodyElement usageBodyElement = (UsageBodyElement)theEObject;
         T result = caseUsageBodyElement(usageBodyElement);
+        if (result == null) result = caseInterBodyElement(usageBodyElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SysMLOCPackage.INTER_BODY_ELEMENT:
+      {
+        InterBodyElement interBodyElement = (InterBodyElement)theEObject;
+        T result = caseInterBodyElement(interBodyElement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -186,6 +196,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseDefinitionBodyElement(annotatingElement);
         if (result == null) result = caseEnumerationBodyElement(annotatingElement);
         if (result == null) result = caseUsageBodyElement(annotatingElement);
+        if (result == null) result = caseInterBodyElement(annotatingElement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -196,6 +207,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = casePackageBodyElement(importElement);
         if (result == null) result = caseDefinitionBodyElement(importElement);
         if (result == null) result = caseUsageBodyElement(importElement);
+        if (result == null) result = caseInterBodyElement(importElement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -206,6 +218,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = casePackageBodyElement(definitionElement);
         if (result == null) result = caseDefinitionBodyElement(definitionElement);
         if (result == null) result = caseUsageBodyElement(definitionElement);
+        if (result == null) result = caseInterBodyElement(definitionElement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -216,6 +229,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = casePackageBodyElement(usageElement);
         if (result == null) result = caseDefinitionBodyElement(usageElement);
         if (result == null) result = caseUsageBodyElement(usageElement);
+        if (result == null) result = caseInterBodyElement(usageElement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -227,6 +241,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = casePackageBodyElement(nonOccurrenceUsageElement);
         if (result == null) result = caseDefinitionBodyElement(nonOccurrenceUsageElement);
         if (result == null) result = caseUsageBodyElement(nonOccurrenceUsageElement);
+        if (result == null) result = caseInterBodyElement(nonOccurrenceUsageElement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -238,6 +253,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = casePackageBodyElement(occurrenceUsageElement);
         if (result == null) result = caseDefinitionBodyElement(occurrenceUsageElement);
         if (result == null) result = caseUsageBodyElement(occurrenceUsageElement);
+        if (result == null) result = caseInterBodyElement(occurrenceUsageElement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -250,6 +266,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = casePackageBodyElement(structureUsageElement);
         if (result == null) result = caseDefinitionBodyElement(structureUsageElement);
         if (result == null) result = caseUsageBodyElement(structureUsageElement);
+        if (result == null) result = caseInterBodyElement(structureUsageElement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -262,6 +279,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = casePackageBodyElement(behaviorUsageElement);
         if (result == null) result = caseDefinitionBodyElement(behaviorUsageElement);
         if (result == null) result = caseUsageBodyElement(behaviorUsageElement);
+        if (result == null) result = caseInterBodyElement(behaviorUsageElement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -282,6 +300,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = casePackageBodyElement(namespaceImport);
         if (result == null) result = caseDefinitionBodyElement(namespaceImport);
         if (result == null) result = caseUsageBodyElement(namespaceImport);
+        if (result == null) result = caseInterBodyElement(namespaceImport);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -294,6 +313,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = casePackageBodyElement(membershipImport);
         if (result == null) result = caseDefinitionBodyElement(membershipImport);
         if (result == null) result = caseUsageBodyElement(membershipImport);
+        if (result == null) result = caseInterBodyElement(membershipImport);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -304,6 +324,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = casePackageBodyElement(codeAnnotation);
         if (result == null) result = caseDefinitionBodyElement(codeAnnotation);
         if (result == null) result = caseUsageBodyElement(codeAnnotation);
+        if (result == null) result = caseInterBodyElement(codeAnnotation);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -317,6 +338,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseDefinitionBodyElement(comment);
         if (result == null) result = caseEnumerationBodyElement(comment);
         if (result == null) result = caseUsageBodyElement(comment);
+        if (result == null) result = caseInterBodyElement(comment);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -330,6 +352,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseDefinitionBodyElement(documentation);
         if (result == null) result = caseEnumerationBodyElement(documentation);
         if (result == null) result = caseUsageBodyElement(documentation);
+        if (result == null) result = caseInterBodyElement(documentation);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -343,6 +366,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseDefinitionBodyElement(textualRepresentation);
         if (result == null) result = caseEnumerationBodyElement(textualRepresentation);
         if (result == null) result = caseUsageBodyElement(textualRepresentation);
+        if (result == null) result = caseInterBodyElement(textualRepresentation);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -358,6 +382,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseDefinitionBodyElement(attributeDefinition);
         if (result == null) result = caseBasicDefinitionPrefix(attributeDefinition);
         if (result == null) result = caseUsageBodyElement(attributeDefinition);
+        if (result == null) result = caseInterBodyElement(attributeDefinition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -376,6 +401,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseFeatureDeclaration(attributeUsage);
         if (result == null) result = caseUsageBodyElement(attributeUsage);
         if (result == null) result = caseFeatureSpecializationPart(attributeUsage);
+        if (result == null) result = caseInterBodyElement(attributeUsage);
         if (result == null) result = caseFeatureSpecialization(attributeUsage);
         if (result == null) result = caseMultiplicityPart(attributeUsage);
         if (result == null) result = defaultCase(theEObject);
@@ -390,6 +416,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = casePackageBodyElement(enumerationDefinition);
         if (result == null) result = caseDefinitionBodyElement(enumerationDefinition);
         if (result == null) result = caseUsageBodyElement(enumerationDefinition);
+        if (result == null) result = caseInterBodyElement(enumerationDefinition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -428,6 +455,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseUsageBodyElement(enumerationUsage);
         if (result == null) result = caseRefPrefix(enumerationUsage);
         if (result == null) result = caseFeatureSpecializationPart(enumerationUsage);
+        if (result == null) result = caseInterBodyElement(enumerationUsage);
         if (result == null) result = caseFeatureSpecialization(enumerationUsage);
         if (result == null) result = caseMultiplicityPart(enumerationUsage);
         if (result == null) result = defaultCase(theEObject);
@@ -445,6 +473,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseDefinitionBodyElement(itemDefinition);
         if (result == null) result = caseBasicDefinitionPrefix(itemDefinition);
         if (result == null) result = caseUsageBodyElement(itemDefinition);
+        if (result == null) result = caseInterBodyElement(itemDefinition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -469,6 +498,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseUsageBodyElement(itemUsage);
         if (result == null) result = caseFeatureSpecialization(itemUsage);
         if (result == null) result = caseMultiplicityPart(itemUsage);
+        if (result == null) result = caseInterBodyElement(itemUsage);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -484,6 +514,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseDefinitionBodyElement(partDefinition);
         if (result == null) result = caseBasicDefinitionPrefix(partDefinition);
         if (result == null) result = caseUsageBodyElement(partDefinition);
+        if (result == null) result = caseInterBodyElement(partDefinition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -508,6 +539,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseUsageBodyElement(partUsage);
         if (result == null) result = caseFeatureSpecialization(partUsage);
         if (result == null) result = caseMultiplicityPart(partUsage);
+        if (result == null) result = caseInterBodyElement(partUsage);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -523,6 +555,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseDefinitionBodyElement(portDefinition);
         if (result == null) result = caseBasicDefinitionPrefix(portDefinition);
         if (result == null) result = caseUsageBodyElement(portDefinition);
+        if (result == null) result = caseInterBodyElement(portDefinition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -547,6 +580,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseUsageBodyElement(portUsage);
         if (result == null) result = caseFeatureSpecialization(portUsage);
         if (result == null) result = caseMultiplicityPart(portUsage);
+        if (result == null) result = caseInterBodyElement(portUsage);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -562,6 +596,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseDefinitionBodyElement(connectionDefinition);
         if (result == null) result = caseBasicDefinitionPrefix(connectionDefinition);
         if (result == null) result = caseUsageBodyElement(connectionDefinition);
+        if (result == null) result = caseInterBodyElement(connectionDefinition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -586,6 +621,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseFeatureSpecialization(connectionUsage);
         if (result == null) result = caseMultiplicityPart(connectionUsage);
         if (result == null) result = caseUsageBodyElement(connectionUsage);
+        if (result == null) result = caseInterBodyElement(connectionUsage);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -601,6 +637,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseDefinitionBodyElement(interfaceDefinition);
         if (result == null) result = caseBasicDefinitionPrefix(interfaceDefinition);
         if (result == null) result = caseUsageBodyElement(interfaceDefinition);
+        if (result == null) result = caseInterBodyElement(interfaceDefinition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -612,7 +649,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseMemberPrefix(interfaceUsage);
         if (result == null) result = caseOccurrenceUsagePrefix(interfaceUsage);
         if (result == null) result = caseUsageDeclaration(interfaceUsage);
-        if (result == null) result = caseInterfacePart(interfaceUsage);
+        if (result == null) result = caseConnectorPart(interfaceUsage);
         if (result == null) result = caseOccurrenceUsageElement(interfaceUsage);
         if (result == null) result = caseBasicUsagePrefix(interfaceUsage);
         if (result == null) result = caseFeatureDeclaration(interfaceUsage);
@@ -624,6 +661,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseFeatureSpecialization(interfaceUsage);
         if (result == null) result = caseMultiplicityPart(interfaceUsage);
         if (result == null) result = caseUsageBodyElement(interfaceUsage);
+        if (result == null) result = caseInterBodyElement(interfaceUsage);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -639,6 +677,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseDefinitionBodyElement(flowConnectionDefinition);
         if (result == null) result = caseBasicDefinitionPrefix(flowConnectionDefinition);
         if (result == null) result = caseUsageBodyElement(flowConnectionDefinition);
+        if (result == null) result = caseInterBodyElement(flowConnectionDefinition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -662,6 +701,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseFeatureSpecialization(flowConnectionUsage);
         if (result == null) result = caseMultiplicityPart(flowConnectionUsage);
         if (result == null) result = caseUsageBodyElement(flowConnectionUsage);
+        if (result == null) result = caseInterBodyElement(flowConnectionUsage);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -679,6 +719,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = casePackageBodyElement(actionUsage);
         if (result == null) result = caseDefinitionBodyElement(actionUsage);
         if (result == null) result = caseUsageBodyElement(actionUsage);
+        if (result == null) result = caseInterBodyElement(actionUsage);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -690,6 +731,14 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseDefinitionBodyElement(aliasElement);
         if (result == null) result = caseMemberPrefix(aliasElement);
         if (result == null) result = caseUsageBodyElement(aliasElement);
+        if (result == null) result = caseInterBodyElement(aliasElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SysMLOCPackage.CONNECTOR_END:
+      {
+        ConnectorEnd connectorEnd = (ConnectorEnd)theEObject;
+        T result = caseConnectorEnd(connectorEnd);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -786,13 +835,6 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         ConnectorPart connectorPart = (ConnectorPart)theEObject;
         T result = caseConnectorPart(connectorPart);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case SysMLOCPackage.INTERFACE_PART:
-      {
-        InterfacePart interfacePart = (InterfacePart)theEObject;
-        T result = caseInterfacePart(interfacePart);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -954,6 +996,22 @@ public class SysMLOCSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseUsageBodyElement(UsageBodyElement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Inter Body Element</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Inter Body Element</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInterBodyElement(InterBodyElement object)
   {
     return null;
   }
@@ -1519,6 +1577,22 @@ public class SysMLOCSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Connector End</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Connector End</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseConnectorEnd(ConnectorEnd object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>is Import All Fragment</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1706,22 +1780,6 @@ public class SysMLOCSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseConnectorPart(ConnectorPart object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Interface Part</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Interface Part</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseInterfacePart(InterfacePart object)
   {
     return null;
   }
