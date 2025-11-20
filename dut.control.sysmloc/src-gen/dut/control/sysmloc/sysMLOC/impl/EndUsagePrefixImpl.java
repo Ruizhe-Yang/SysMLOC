@@ -66,7 +66,7 @@ public class EndUsagePrefixImpl extends MinimalEObjectImpl.Container implements 
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.END_USAGE_PREFIX;
+    return SysMLOCPackage.eINSTANCE.getEndUsagePrefix();
   }
 
   /**

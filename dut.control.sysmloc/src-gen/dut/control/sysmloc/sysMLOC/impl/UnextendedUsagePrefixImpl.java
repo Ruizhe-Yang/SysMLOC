@@ -43,7 +43,7 @@ public class UnextendedUsagePrefixImpl extends EndUsagePrefixImpl implements Une
    * @generated
    * @ordered
    */
-  protected static final FeatureDirection DIRECTION_EDEFAULT = FeatureDirection.IN;
+  protected static final FeatureDirection DIRECTION_EDEFAULT = FeatureDirection.INOUT;
 
   /**
    * The cached value of the '{@link #getDirection() <em>Direction</em>}' attribute.
@@ -173,7 +173,7 @@ public class UnextendedUsagePrefixImpl extends EndUsagePrefixImpl implements Une
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.UNEXTENDED_USAGE_PREFIX;
+    return SysMLOCPackage.eINSTANCE.getUnextendedUsagePrefix();
   }
 
   /**

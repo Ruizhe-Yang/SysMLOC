@@ -35,7 +35,7 @@ public class DefinitionElementImpl extends PackageBodyElementImpl implements Def
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.DEFINITION_ELEMENT;
+    return SysMLOCPackage.eINSTANCE.getDefinitionElement();
   }
 
 } //DefinitionElementImpl

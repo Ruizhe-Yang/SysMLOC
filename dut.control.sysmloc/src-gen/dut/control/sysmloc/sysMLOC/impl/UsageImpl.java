@@ -6,23 +6,18 @@ package dut.control.sysmloc.sysMLOC.impl;
 import dut.control.sysmloc.sysMLOC.FeatureValue;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 import dut.control.sysmloc.sysMLOC.Usage;
-import dut.control.sysmloc.sysMLOC.UsageBodyElement;
 
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,7 +30,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.UsageImpl#isIsInitial <em>Is Initial</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.UsageImpl#isIsDefault <em>Is Default</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.UsageImpl#getValuePart <em>Value Part</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.UsageImpl#getElements <em>Elements</em>}</li>
  * </ul>
  *
  * @generated
@@ -93,16 +87,6 @@ public class UsageImpl extends UsageDeclarationImpl implements Usage
   protected EList<String> valuePart;
 
   /**
-   * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getElements()
-   * @generated
-   * @ordered
-   */
-  protected EList<UsageBodyElement> elements;
-
-  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -120,7 +104,7 @@ public class UsageImpl extends UsageDeclarationImpl implements Usage
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.USAGE;
+    return SysMLOCPackage.eINSTANCE.getUsage();
   }
 
   /**
@@ -194,37 +178,6 @@ public class UsageImpl extends UsageDeclarationImpl implements Usage
    * @generated
    */
   @Override
-  public EList<UsageBodyElement> getElements()
-  {
-    if (elements == null)
-    {
-      elements = new EObjectContainmentEList<UsageBodyElement>(UsageBodyElement.class, this, SysMLOCPackage.USAGE__ELEMENTS);
-    }
-    return elements;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case SysMLOCPackage.USAGE__ELEMENTS:
-        return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
@@ -235,8 +188,6 @@ public class UsageImpl extends UsageDeclarationImpl implements Usage
         return isIsDefault();
       case SysMLOCPackage.USAGE__VALUE_PART:
         return getValuePart();
-      case SysMLOCPackage.USAGE__ELEMENTS:
-        return getElements();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -262,10 +213,6 @@ public class UsageImpl extends UsageDeclarationImpl implements Usage
         getValuePart().clear();
         getValuePart().addAll((Collection<? extends String>)newValue);
         return;
-      case SysMLOCPackage.USAGE__ELEMENTS:
-        getElements().clear();
-        getElements().addAll((Collection<? extends UsageBodyElement>)newValue);
-        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -289,9 +236,6 @@ public class UsageImpl extends UsageDeclarationImpl implements Usage
       case SysMLOCPackage.USAGE__VALUE_PART:
         getValuePart().clear();
         return;
-      case SysMLOCPackage.USAGE__ELEMENTS:
-        getElements().clear();
-        return;
     }
     super.eUnset(featureID);
   }
@@ -312,8 +256,6 @@ public class UsageImpl extends UsageDeclarationImpl implements Usage
         return isDefault != IS_DEFAULT_EDEFAULT;
       case SysMLOCPackage.USAGE__VALUE_PART:
         return valuePart != null && !valuePart.isEmpty();
-      case SysMLOCPackage.USAGE__ELEMENTS:
-        return elements != null && !elements.isEmpty();
     }
     return super.eIsSet(featureID);
   }

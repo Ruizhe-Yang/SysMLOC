@@ -65,7 +65,7 @@ public class OccurrenceDefinitionPrefixImpl extends BasicDefinitionPrefixImpl im
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.OCCURRENCE_DEFINITION_PREFIX;
+    return SysMLOCPackage.eINSTANCE.getOccurrenceDefinitionPrefix();
   }
 
   /**

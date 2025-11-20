@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class StructureUsageElementImpl extends OccurrenceUsageElementImpl implements StructureUsageElement
+public class StructureUsageElementImpl extends ActionBodyElementImpl implements StructureUsageElement
 {
   /**
    * <!-- begin-user-doc -->
@@ -35,7 +35,7 @@ public class StructureUsageElementImpl extends OccurrenceUsageElementImpl implem
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.STRUCTURE_USAGE_ELEMENT;
+    return SysMLOCPackage.eINSTANCE.getStructureUsageElement();
   }
 
 } //StructureUsageElementImpl

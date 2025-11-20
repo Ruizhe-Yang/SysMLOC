@@ -65,7 +65,7 @@ public class FeatureDeclarationImpl extends FeatureSpecializationPartImpl implem
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.FEATURE_DECLARATION;
+    return SysMLOCPackage.eINSTANCE.getFeatureDeclaration();
   }
 
   /**

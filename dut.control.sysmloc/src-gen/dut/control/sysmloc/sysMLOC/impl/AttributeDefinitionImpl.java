@@ -166,7 +166,7 @@ public class AttributeDefinitionImpl extends DefinitionElementImpl implements At
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.ATTRIBUTE_DEFINITION;
+    return SysMLOCPackage.eINSTANCE.getAttributeDefinition();
   }
 
   /**

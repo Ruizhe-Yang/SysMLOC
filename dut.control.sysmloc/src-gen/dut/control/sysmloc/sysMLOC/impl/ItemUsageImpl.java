@@ -102,7 +102,7 @@ public class ItemUsageImpl extends StructureUsageElementImpl implements ItemUsag
    * @generated
    * @ordered
    */
-  protected static final FeatureDirection DIRECTION_EDEFAULT = FeatureDirection.IN;
+  protected static final FeatureDirection DIRECTION_EDEFAULT = FeatureDirection.INOUT;
 
   /**
    * The cached value of the '{@link #getDirection() <em>Direction</em>}' attribute.
@@ -472,7 +472,7 @@ public class ItemUsageImpl extends StructureUsageElementImpl implements ItemUsag
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.ITEM_USAGE;
+    return SysMLOCPackage.eINSTANCE.getItemUsage();
   }
 
   /**
@@ -1385,7 +1385,6 @@ public class ItemUsageImpl extends StructureUsageElementImpl implements ItemUsag
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.ITEM_USAGE__ELEMENTS: return SysMLOCPackage.USAGE__ELEMENTS;
         default: return -1;
       }
     }
@@ -1496,7 +1495,6 @@ public class ItemUsageImpl extends StructureUsageElementImpl implements ItemUsag
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.USAGE__ELEMENTS: return SysMLOCPackage.ITEM_USAGE__ELEMENTS;
         default: return -1;
       }
     }

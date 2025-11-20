@@ -19,10 +19,10 @@
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:InterfaceDefinition" declaredName="I">
-      <elements xsi:type="sysMLOC:PortUsage" isEnd="true" declaredName="p1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="p1" isEnd="true">
         <typings>P</typings>
       </elements>
-      <elements xsi:type="sysMLOC:PortUsage" isEnd="true" declaredName="p2">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="p2" isEnd="true">
         <typings>~P</typings>
       </elements>
     </elements>

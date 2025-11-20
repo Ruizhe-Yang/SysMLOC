@@ -67,7 +67,7 @@ public class MemberPrefixImpl extends MinimalEObjectImpl.Container implements Me
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.MEMBER_PREFIX;
+    return SysMLOCPackage.eINSTANCE.getMemberPrefix();
   }
 
   /**

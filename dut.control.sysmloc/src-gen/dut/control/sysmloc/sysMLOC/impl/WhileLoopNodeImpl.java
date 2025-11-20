@@ -3,28 +3,26 @@
  */
 package dut.control.sysmloc.sysMLOC.impl;
 
-import dut.control.sysmloc.sysMLOC.InterBodyElement;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
+import dut.control.sysmloc.sysMLOC.WhileLoopNode;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Inter Body Element</b></em>'.
+ * An implementation of the model object '<em><b>While Loop Node</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class InterBodyElementImpl extends MinimalEObjectImpl.Container implements InterBodyElement
+public class WhileLoopNodeImpl extends MemberPrefixImpl implements WhileLoopNode
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected InterBodyElementImpl()
+  protected WhileLoopNodeImpl()
   {
     super();
   }
@@ -37,7 +35,7 @@ public class InterBodyElementImpl extends MinimalEObjectImpl.Container implement
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.INTER_BODY_ELEMENT;
+    return SysMLOCPackage.eINSTANCE.getWhileLoopNode();
   }
 
-} //InterBodyElementImpl
+} //WhileLoopNodeImpl

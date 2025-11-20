@@ -37,7 +37,7 @@ public class EnumerationBodyElementImpl extends MinimalEObjectImpl.Container imp
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.ENUMERATION_BODY_ELEMENT;
+    return SysMLOCPackage.eINSTANCE.getEnumerationBodyElement();
   }
 
 } //EnumerationBodyElementImpl

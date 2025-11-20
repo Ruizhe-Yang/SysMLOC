@@ -103,7 +103,7 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
    * @generated
    * @ordered
    */
-  protected static final FeatureDirection DIRECTION_EDEFAULT = FeatureDirection.IN;
+  protected static final FeatureDirection DIRECTION_EDEFAULT = FeatureDirection.INOUT;
 
   /**
    * The cached value of the '{@link #getDirection() <em>Direction</em>}' attribute.
@@ -493,7 +493,7 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.FLOW_CONNECTION_USAGE;
+    return SysMLOCPackage.eINSTANCE.getFlowConnectionUsage();
   }
 
   /**

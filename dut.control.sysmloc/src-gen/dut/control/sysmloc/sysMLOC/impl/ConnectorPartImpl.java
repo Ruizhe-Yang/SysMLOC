@@ -64,7 +64,7 @@ public class ConnectorPartImpl extends MinimalEObjectImpl.Container implements C
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.CONNECTOR_PART;
+    return SysMLOCPackage.eINSTANCE.getConnectorPart();
   }
 
   /**

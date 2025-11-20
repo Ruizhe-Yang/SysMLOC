@@ -278,7 +278,7 @@ public class AttributeUsageImpl extends NonOccurrenceUsageElementImpl implements
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.ATTRIBUTE_USAGE;
+    return SysMLOCPackage.eINSTANCE.getAttributeUsage();
   }
 
   /**
@@ -846,7 +846,6 @@ public class AttributeUsageImpl extends NonOccurrenceUsageElementImpl implements
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.ATTRIBUTE_USAGE__ELEMENTS: return SysMLOCPackage.USAGE__ELEMENTS;
         default: return -1;
       }
     }
@@ -927,7 +926,6 @@ public class AttributeUsageImpl extends NonOccurrenceUsageElementImpl implements
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.USAGE__ELEMENTS: return SysMLOCPackage.ATTRIBUTE_USAGE__ELEMENTS;
         default: return -1;
       }
     }

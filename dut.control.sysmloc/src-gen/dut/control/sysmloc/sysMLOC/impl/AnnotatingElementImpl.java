@@ -35,7 +35,7 @@ public class AnnotatingElementImpl extends PackageBodyElementImpl implements Ann
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.ANNOTATING_ELEMENT;
+    return SysMLOCPackage.eINSTANCE.getAnnotatingElement();
   }
 
 } //AnnotatingElementImpl

@@ -35,7 +35,7 @@ public class UsageElementImpl extends PackageBodyElementImpl implements UsageEle
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.USAGE_ELEMENT;
+    return SysMLOCPackage.eINSTANCE.getUsageElement();
   }
 
 } //UsageElementImpl

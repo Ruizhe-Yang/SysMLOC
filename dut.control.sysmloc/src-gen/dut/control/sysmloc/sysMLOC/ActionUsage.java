@@ -14,7 +14,6 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.ActionUsage#getDeclaredName <em>Declared Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.ActionUsage#getElements <em>Elements</em>}</li>
  * </ul>
  *
@@ -22,33 +21,11 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface ActionUsage extends BehaviorUsageElement, MemberPrefix, OccurrenceUsagePrefix, BasicUsagePrefix, RefPrefix
+public interface ActionUsage extends BehaviorUsageElement, MemberPrefix, OccurrenceUsagePrefix, BasicUsagePrefix, RefPrefix, ActionUsageDeclaration, UsageDeclaration, FeatureDeclaration, FeatureSpecializationPart, FeatureSpecialization, MultiplicityPart, FeatureValue
 {
   /**
-   * Returns the value of the '<em><b>Declared Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Declared Name</em>' attribute.
-   * @see #setDeclaredName(String)
-   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getActionUsage_DeclaredName()
-   * @model
-   * @generated
-   */
-  String getDeclaredName();
-
-  /**
-   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.ActionUsage#getDeclaredName <em>Declared Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Declared Name</em>' attribute.
-   * @see #getDeclaredName()
-   * @generated
-   */
-  void setDeclaredName(String value);
-
-  /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
-   * The list contents are of type {@link dut.control.sysmloc.sysMLOC.UsageBodyElement}.
+   * The list contents are of type {@link dut.control.sysmloc.sysMLOC.ActionBodyElement}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Elements</em>' containment reference list.
@@ -56,6 +33,6 @@ public interface ActionUsage extends BehaviorUsageElement, MemberPrefix, Occurre
    * @model containment="true"
    * @generated
    */
-  EList<UsageBodyElement> getElements();
+  EList<ActionBodyElement> getElements();
 
 } // ActionUsage

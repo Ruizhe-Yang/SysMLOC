@@ -166,7 +166,7 @@ public class PortDefinitionImpl extends DefinitionElementImpl implements PortDef
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.PORT_DEFINITION;
+    return SysMLOCPackage.eINSTANCE.getPortDefinition();
   }
 
   /**

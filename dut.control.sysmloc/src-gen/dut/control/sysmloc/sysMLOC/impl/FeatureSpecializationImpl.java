@@ -103,7 +103,7 @@ public class FeatureSpecializationImpl extends MinimalEObjectImpl.Container impl
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.FEATURE_SPECIALIZATION;
+    return SysMLOCPackage.eINSTANCE.getFeatureSpecialization();
   }
 
   /**

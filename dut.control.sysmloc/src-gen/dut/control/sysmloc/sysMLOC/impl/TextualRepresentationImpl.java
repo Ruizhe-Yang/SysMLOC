@@ -129,7 +129,7 @@ public class TextualRepresentationImpl extends AnnotatingElementImpl implements 
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.TEXTUAL_REPRESENTATION;
+    return SysMLOCPackage.eINSTANCE.getTextualRepresentation();
   }
 
   /**

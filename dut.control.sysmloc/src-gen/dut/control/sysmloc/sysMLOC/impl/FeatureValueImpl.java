@@ -104,7 +104,7 @@ public class FeatureValueImpl extends MinimalEObjectImpl.Container implements Fe
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.FEATURE_VALUE;
+    return SysMLOCPackage.eINSTANCE.getFeatureValue();
   }
 
   /**

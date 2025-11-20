@@ -12,11 +12,11 @@
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="LugBoltThreadableHole"/>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="LugBoltJoint"/>
     <elements xsi:type="sysMLOC:ConnectionDefinition" declaredName="PressureSeat">
-      <elements xsi:type="sysMLOC:PortUsage" isEnd="true" declaredName="bead">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="bead" isEnd="true">
         <typings>TireBead</typings>
         <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:PortUsage" isEnd="true" declaredName="mountingRim">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="mountingRim" isEnd="true">
         <typings>TireMountingRim</typings>
         <Multiplicity>1</Multiplicity>
       </elements>
@@ -71,6 +71,5 @@
       </elements>
       <elements xsi:type="sysMLOC:CodeAnnotation" body="// connect lugBoltJoints to hub.h[1];&#xD;&#xA;"/>
     </elements>
-    <elements xsi:type="sysMLOC:PortUsage"/>
   </packages>
 </sysMLOC:Namespace>

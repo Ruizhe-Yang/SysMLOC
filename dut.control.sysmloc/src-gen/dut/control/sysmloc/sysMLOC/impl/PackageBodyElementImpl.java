@@ -37,7 +37,7 @@ public class PackageBodyElementImpl extends MinimalEObjectImpl.Container impleme
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.PACKAGE_BODY_ELEMENT;
+    return SysMLOCPackage.eINSTANCE.getPackageBodyElement();
   }
 
 } //PackageBodyElementImpl

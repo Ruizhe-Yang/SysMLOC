@@ -15,7 +15,7 @@
         <Multiplicity>*</Multiplicity>
       </elements>
       <elements xsi:type="sysMLOC:PartUsage" declaredName="autoFocus">
-        <elements xsi:type="sysMLOC:ItemUsage" isReference="true" declaredName="scene">
+        <elements xsi:type="sysMLOC:ItemUsage" direction="in" isReference="true" declaredName="scene">
           <typings>Scene</typings>
           <valuePart>camera::scene</valuePart>
         </elements>
@@ -28,7 +28,7 @@
         <FlowEnd>imager.focusedImage</FlowEnd>
       </elements>
       <elements xsi:type="sysMLOC:PartUsage" declaredName="imager">
-        <elements xsi:type="sysMLOC:ItemUsage" declaredName="focusedImage">
+        <elements xsi:type="sysMLOC:ItemUsage" direction="in" declaredName="focusedImage">
           <typings>Image</typings>
         </elements>
         <elements xsi:type="sysMLOC:ItemUsage" direction="out" declaredName="photo">

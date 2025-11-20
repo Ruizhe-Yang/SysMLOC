@@ -102,7 +102,7 @@ public class PortUsageImpl extends StructureUsageElementImpl implements PortUsag
    * @generated
    * @ordered
    */
-  protected static final FeatureDirection DIRECTION_EDEFAULT = FeatureDirection.IN;
+  protected static final FeatureDirection DIRECTION_EDEFAULT = FeatureDirection.INOUT;
 
   /**
    * The cached value of the '{@link #getDirection() <em>Direction</em>}' attribute.
@@ -472,7 +472,7 @@ public class PortUsageImpl extends StructureUsageElementImpl implements PortUsag
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.PORT_USAGE;
+    return SysMLOCPackage.eINSTANCE.getPortUsage();
   }
 
   /**
@@ -1385,7 +1385,6 @@ public class PortUsageImpl extends StructureUsageElementImpl implements PortUsag
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.PORT_USAGE__ELEMENTS: return SysMLOCPackage.USAGE__ELEMENTS;
         default: return -1;
       }
     }
@@ -1496,7 +1495,6 @@ public class PortUsageImpl extends StructureUsageElementImpl implements PortUsag
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.USAGE__ELEMENTS: return SysMLOCPackage.PORT_USAGE__ELEMENTS;
         default: return -1;
       }
     }

@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class BehaviorUsageElementImpl extends OccurrenceUsageElementImpl implements BehaviorUsageElement
+public class BehaviorUsageElementImpl extends ActionBodyElementImpl implements BehaviorUsageElement
 {
   /**
    * <!-- begin-user-doc -->
@@ -35,7 +35,7 @@ public class BehaviorUsageElementImpl extends OccurrenceUsageElementImpl impleme
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.BEHAVIOR_USAGE_ELEMENT;
+    return SysMLOCPackage.eINSTANCE.getBehaviorUsageElement();
   }
 
 } //BehaviorUsageElementImpl

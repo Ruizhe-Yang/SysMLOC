@@ -25,7 +25,7 @@ public interface InterfaceUsage extends StructureUsageElement, MemberPrefix, Occ
 {
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
-   * The list contents are of type {@link dut.control.sysmloc.sysMLOC.InterBodyElement}.
+   * The list contents are of type {@link dut.control.sysmloc.sysMLOC.InterfaceBodyElement}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Elements</em>' containment reference list.
@@ -33,6 +33,6 @@ public interface InterfaceUsage extends StructureUsageElement, MemberPrefix, Occ
    * @model containment="true"
    * @generated
    */
-  EList<InterBodyElement> getElements();
+  EList<InterfaceBodyElement> getElements();
 
 } // InterfaceUsage

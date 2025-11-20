@@ -108,7 +108,7 @@ public class OccurrenceUsagePrefixImpl extends BasicUsagePrefixImpl implements O
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.OCCURRENCE_USAGE_PREFIX;
+    return SysMLOCPackage.eINSTANCE.getOccurrenceUsagePrefix();
   }
 
   /**

@@ -187,7 +187,7 @@ public class PartDefinitionImpl extends DefinitionElementImpl implements PartDef
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.PART_DEFINITION;
+    return SysMLOCPackage.eINSTANCE.getPartDefinition();
   }
 
   /**

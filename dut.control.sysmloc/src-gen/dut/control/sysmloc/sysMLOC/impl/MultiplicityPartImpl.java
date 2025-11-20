@@ -104,7 +104,7 @@ public class MultiplicityPartImpl extends MinimalEObjectImpl.Container implement
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.MULTIPLICITY_PART;
+    return SysMLOCPackage.eINSTANCE.getMultiplicityPart();
   }
 
   /**

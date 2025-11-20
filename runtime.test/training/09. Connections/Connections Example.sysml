@@ -37,6 +37,6 @@ package 'Connections Example' {
 		}
 		connect lugBoltJoints to wheel.w.mountingHoles;
 		// connect lugBoltJoints to hub.h[1];
-	};
+	}
 	
 }

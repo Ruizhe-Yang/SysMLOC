@@ -102,7 +102,7 @@ public class PartUsageImpl extends StructureUsageElementImpl implements PartUsag
    * @generated
    * @ordered
    */
-  protected static final FeatureDirection DIRECTION_EDEFAULT = FeatureDirection.IN;
+  protected static final FeatureDirection DIRECTION_EDEFAULT = FeatureDirection.INOUT;
 
   /**
    * The cached value of the '{@link #getDirection() <em>Direction</em>}' attribute.
@@ -472,7 +472,7 @@ public class PartUsageImpl extends StructureUsageElementImpl implements PartUsag
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.PART_USAGE;
+    return SysMLOCPackage.eINSTANCE.getPartUsage();
   }
 
   /**
@@ -1385,7 +1385,6 @@ public class PartUsageImpl extends StructureUsageElementImpl implements PartUsag
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.PART_USAGE__ELEMENTS: return SysMLOCPackage.USAGE__ELEMENTS;
         default: return -1;
       }
     }
@@ -1496,7 +1495,6 @@ public class PartUsageImpl extends StructureUsageElementImpl implements PartUsag
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.USAGE__ELEMENTS: return SysMLOCPackage.PART_USAGE__ELEMENTS;
         default: return -1;
       }
     }

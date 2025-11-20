@@ -30,25 +30,25 @@
       <elements xsi:type="sysMLOC:Package" declaredName="Port_Definitions">
         <elements xsi:type="sysMLOC:PortDefinition" declaredName="EntryWay_to_Classroom">
           <elements xsi:type="sysMLOC:CodeAnnotation" body="//flow properties&#xD;&#xA;"/>
-          <elements xsi:type="sysMLOC:PortUsage" isReference="true" declaredName="student">
+          <elements xsi:type="sysMLOC:ReferenceUsage" direction="in" declaredName="student">
             <typings>Student</typings>
           </elements>
-          <elements xsi:type="sysMLOC:PortUsage" isReference="true" declaredName="teacher">
+          <elements xsi:type="sysMLOC:ReferenceUsage" direction="in" declaredName="teacher">
             <typings>Teacher</typings>
           </elements>
-          <elements xsi:type="sysMLOC:PortUsage" isReference="true" declaredName="furniture">
+          <elements xsi:type="sysMLOC:ReferenceUsage" direction="in" declaredName="furniture">
             <typings>Furniture</typings>
           </elements>
-          <elements xsi:type="sysMLOC:PortUsage" isReference="true" declaredName="air">
+          <elements xsi:type="sysMLOC:ReferenceUsage" direction="in" declaredName="air">
             <typings>Air</typings>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:PortDefinition" declaredName="EntryWay_to_Storageroom">
           <elements xsi:type="sysMLOC:CodeAnnotation" body="//flow properties&#xD;&#xA;"/>
-          <elements xsi:type="sysMLOC:PortUsage" isReference="true" declaredName="furniture">
+          <elements xsi:type="sysMLOC:ReferenceUsage" direction="in" declaredName="furniture">
             <typings>Furniture</typings>
           </elements>
-          <elements xsi:type="sysMLOC:PortUsage" isReference="true" declaredName="air">
+          <elements xsi:type="sysMLOC:ReferenceUsage" direction="in" declaredName="air">
             <typings>Air</typings>
           </elements>
         </elements>

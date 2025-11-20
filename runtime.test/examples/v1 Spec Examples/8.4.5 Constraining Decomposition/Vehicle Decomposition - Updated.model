@@ -72,7 +72,7 @@
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:CodeAnnotation" body="// Constrains total number of lugbolts.&#xD;&#xA;"/>
-      <elements xsi:type="sysMLOC:PortUsage" isReference="true" declaredName="lugBolts">
+      <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="lugBolts">
         <Multiplicity>24</Multiplicity>
         <valuePart>chs.w.lb</valuePart>
       </elements>

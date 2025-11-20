@@ -24,7 +24,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface AliasElement extends PackageBodyElement, DefinitionBodyElement, MemberPrefix
+public interface AliasElement extends PackageBodyElement, DefinitionBodyElement, ActionBodyElement, MemberPrefix
 {
   /**
    * Returns the value of the '<em><b>Member Short Name</b></em>' attribute.

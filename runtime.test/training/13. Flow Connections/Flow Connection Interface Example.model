@@ -4,10 +4,10 @@
     <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="'Port Example'"/>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle"/>
     <elements xsi:type="sysMLOC:InterfaceDefinition" declaredName="FuelInterface">
-      <elements xsi:type="sysMLOC:PortUsage" isEnd="true" declaredName="supplierPort">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="supplierPort" isEnd="true">
         <typings>FuelOutPort</typings>
       </elements>
-      <elements xsi:type="sysMLOC:PortUsage" isEnd="true" declaredName="consumerPort">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="consumerPort" isEnd="true">
         <typings>FuelInPort</typings>
       </elements>
       <elements xsi:type="sysMLOC:FlowConnectionUsage">

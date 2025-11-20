@@ -35,7 +35,7 @@ public class EnumerationElementImpl extends EnumerationBodyElementImpl implement
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.ENUMERATION_ELEMENT;
+    return SysMLOCPackage.eINSTANCE.getEnumerationElement();
   }
 
 } //EnumerationElementImpl

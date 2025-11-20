@@ -104,7 +104,7 @@ public class FeatureSpecializationPartImpl extends FeatureSpecializationImpl imp
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.FEATURE_SPECIALIZATION_PART;
+    return SysMLOCPackage.eINSTANCE.getFeatureSpecializationPart();
   }
 
   /**

@@ -10,7 +10,7 @@ import dut.control.sysmloc.sysMLOC.FeatureDeclaration;
 import dut.control.sysmloc.sysMLOC.FeatureDirection;
 import dut.control.sysmloc.sysMLOC.FeatureSpecialization;
 import dut.control.sysmloc.sysMLOC.FeatureSpecializationPart;
-import dut.control.sysmloc.sysMLOC.InterBodyElement;
+import dut.control.sysmloc.sysMLOC.InterfaceBodyElement;
 import dut.control.sysmloc.sysMLOC.InterfaceUsage;
 import dut.control.sysmloc.sysMLOC.MemberPrefix;
 import dut.control.sysmloc.sysMLOC.MultiplicityPart;
@@ -100,7 +100,7 @@ public class InterfaceUsageImpl extends StructureUsageElementImpl implements Int
    * @generated
    * @ordered
    */
-  protected static final FeatureDirection DIRECTION_EDEFAULT = FeatureDirection.IN;
+  protected static final FeatureDirection DIRECTION_EDEFAULT = FeatureDirection.INOUT;
 
   /**
    * The cached value of the '{@link #getDirection() <em>Direction</em>}' attribute.
@@ -410,7 +410,7 @@ public class InterfaceUsageImpl extends StructureUsageElementImpl implements Int
    * @generated
    * @ordered
    */
-  protected EList<InterBodyElement> elements;
+  protected EList<InterfaceBodyElement> elements;
 
   /**
    * <!-- begin-user-doc -->
@@ -430,7 +430,7 @@ public class InterfaceUsageImpl extends StructureUsageElementImpl implements Int
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.INTERFACE_USAGE;
+    return SysMLOCPackage.eINSTANCE.getInterfaceUsage();
   }
 
   /**
@@ -869,11 +869,11 @@ public class InterfaceUsageImpl extends StructureUsageElementImpl implements Int
    * @generated
    */
   @Override
-  public EList<InterBodyElement> getElements()
+  public EList<InterfaceBodyElement> getElements()
   {
     if (elements == null)
     {
-      elements = new EObjectContainmentEList<InterBodyElement>(InterBodyElement.class, this, SysMLOCPackage.INTERFACE_USAGE__ELEMENTS);
+      elements = new EObjectContainmentEList<InterfaceBodyElement>(InterfaceBodyElement.class, this, SysMLOCPackage.INTERFACE_USAGE__ELEMENTS);
     }
     return elements;
   }
@@ -1032,7 +1032,7 @@ public class InterfaceUsageImpl extends StructureUsageElementImpl implements Int
         return;
       case SysMLOCPackage.INTERFACE_USAGE__ELEMENTS:
         getElements().clear();
-        getElements().addAll((Collection<? extends InterBodyElement>)newValue);
+        getElements().addAll((Collection<? extends InterfaceBodyElement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

@@ -14,6 +14,6 @@ package dut.control.sysmloc.sysMLOC;
  * @model
  * @generated
  */
-public interface UsageBodyElement extends InterBodyElement
+public interface UsageBodyElement extends InterfaceBodyElement
 {
 } // UsageBodyElement

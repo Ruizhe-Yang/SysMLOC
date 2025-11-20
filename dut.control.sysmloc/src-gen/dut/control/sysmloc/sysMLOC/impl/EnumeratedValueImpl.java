@@ -8,11 +8,13 @@ import dut.control.sysmloc.sysMLOC.FeatureDeclaration;
 import dut.control.sysmloc.sysMLOC.FeatureSpecialization;
 import dut.control.sysmloc.sysMLOC.FeatureSpecializationPart;
 import dut.control.sysmloc.sysMLOC.FeatureValue;
+import dut.control.sysmloc.sysMLOC.MemberPrefix;
 import dut.control.sysmloc.sysMLOC.MultiplicityPart;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 import dut.control.sysmloc.sysMLOC.Usage;
 import dut.control.sysmloc.sysMLOC.UsageBodyElement;
 import dut.control.sysmloc.sysMLOC.UsageDeclaration;
+import dut.control.sysmloc.sysMLOC.VisibilityIndicator;
 
 import java.util.Collection;
 
@@ -38,6 +40,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EnumeratedValueImpl#getVisibility <em>Visibility</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EnumeratedValueImpl#getTypings <em>Typings</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EnumeratedValueImpl#getSubsetting <em>Subsetting</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EnumeratedValueImpl#getReferences <em>References</em>}</li>
@@ -57,6 +60,26 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class EnumeratedValueImpl extends EnumerationElementImpl implements EnumeratedValue
 {
+  /**
+   * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVisibility()
+   * @generated
+   * @ordered
+   */
+  protected static final VisibilityIndicator VISIBILITY_EDEFAULT = VisibilityIndicator.PUBLIC;
+
+  /**
+   * The cached value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVisibility()
+   * @generated
+   * @ordered
+   */
+  protected VisibilityIndicator visibility = VISIBILITY_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getTypings() <em>Typings</em>}' attribute list.
    * <!-- begin-user-doc -->
@@ -255,7 +278,32 @@ public class EnumeratedValueImpl extends EnumerationElementImpl implements Enume
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.ENUMERATED_VALUE;
+    return SysMLOCPackage.eINSTANCE.getEnumeratedValue();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public VisibilityIndicator getVisibility()
+  {
+    return visibility;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setVisibility(VisibilityIndicator newVisibility)
+  {
+    VisibilityIndicator oldVisibility = visibility;
+    visibility = newVisibility == null ? VISIBILITY_EDEFAULT : newVisibility;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ENUMERATED_VALUE__VISIBILITY, oldVisibility, visibility));
   }
 
   /**
@@ -529,6 +577,8 @@ public class EnumeratedValueImpl extends EnumerationElementImpl implements Enume
   {
     switch (featureID)
     {
+      case SysMLOCPackage.ENUMERATED_VALUE__VISIBILITY:
+        return getVisibility();
       case SysMLOCPackage.ENUMERATED_VALUE__TYPINGS:
         return getTypings();
       case SysMLOCPackage.ENUMERATED_VALUE__SUBSETTING:
@@ -570,6 +620,9 @@ public class EnumeratedValueImpl extends EnumerationElementImpl implements Enume
   {
     switch (featureID)
     {
+      case SysMLOCPackage.ENUMERATED_VALUE__VISIBILITY:
+        setVisibility((VisibilityIndicator)newValue);
+        return;
       case SysMLOCPackage.ENUMERATED_VALUE__TYPINGS:
         getTypings().clear();
         getTypings().addAll((Collection<? extends String>)newValue);
@@ -631,6 +684,9 @@ public class EnumeratedValueImpl extends EnumerationElementImpl implements Enume
   {
     switch (featureID)
     {
+      case SysMLOCPackage.ENUMERATED_VALUE__VISIBILITY:
+        setVisibility(VISIBILITY_EDEFAULT);
+        return;
       case SysMLOCPackage.ENUMERATED_VALUE__TYPINGS:
         getTypings().clear();
         return;
@@ -684,6 +740,8 @@ public class EnumeratedValueImpl extends EnumerationElementImpl implements Enume
   {
     switch (featureID)
     {
+      case SysMLOCPackage.ENUMERATED_VALUE__VISIBILITY:
+        return visibility != VISIBILITY_EDEFAULT;
       case SysMLOCPackage.ENUMERATED_VALUE__TYPINGS:
         return typings != null && !typings.isEmpty();
       case SysMLOCPackage.ENUMERATED_VALUE__SUBSETTING:
@@ -722,6 +780,14 @@ public class EnumeratedValueImpl extends EnumerationElementImpl implements Enume
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
   {
+    if (baseClass == MemberPrefix.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.ENUMERATED_VALUE__VISIBILITY: return SysMLOCPackage.MEMBER_PREFIX__VISIBILITY;
+        default: return -1;
+      }
+    }
     if (baseClass == FeatureSpecialization.class)
     {
       switch (derivedFeatureID)
@@ -780,7 +846,6 @@ public class EnumeratedValueImpl extends EnumerationElementImpl implements Enume
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.ENUMERATED_VALUE__ELEMENTS: return SysMLOCPackage.USAGE__ELEMENTS;
         default: return -1;
       }
     }
@@ -795,6 +860,14 @@ public class EnumeratedValueImpl extends EnumerationElementImpl implements Enume
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
   {
+    if (baseClass == MemberPrefix.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.MEMBER_PREFIX__VISIBILITY: return SysMLOCPackage.ENUMERATED_VALUE__VISIBILITY;
+        default: return -1;
+      }
+    }
     if (baseClass == FeatureSpecialization.class)
     {
       switch (baseFeatureID)
@@ -853,7 +926,6 @@ public class EnumeratedValueImpl extends EnumerationElementImpl implements Enume
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.USAGE__ELEMENTS: return SysMLOCPackage.ENUMERATED_VALUE__ELEMENTS;
         default: return -1;
       }
     }
@@ -871,7 +943,9 @@ public class EnumeratedValueImpl extends EnumerationElementImpl implements Enume
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (typings: ");
+    result.append(" (visibility: ");
+    result.append(visibility);
+    result.append(", typings: ");
     result.append(typings);
     result.append(", subsetting: ");
     result.append(subsetting);

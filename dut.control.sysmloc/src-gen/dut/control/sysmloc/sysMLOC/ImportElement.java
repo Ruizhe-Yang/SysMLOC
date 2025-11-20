@@ -14,6 +14,6 @@ package dut.control.sysmloc.sysMLOC;
  * @model
  * @generated
  */
-public interface ImportElement extends PackageBodyElement, DefinitionBodyElement
+public interface ImportElement extends PackageBodyElement, DefinitionBodyElement, ActionBodyElement
 {
 } // ImportElement

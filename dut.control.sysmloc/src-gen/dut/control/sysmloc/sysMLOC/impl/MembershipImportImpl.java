@@ -130,7 +130,7 @@ public class MembershipImportImpl extends ImportElementImpl implements Membershi
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.MEMBERSHIP_IMPORT;
+    return SysMLOCPackage.eINSTANCE.getMembershipImport();
   }
 
   /**

@@ -35,7 +35,7 @@ public class ImportElementImpl extends PackageBodyElementImpl implements ImportE
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.IMPORT_ELEMENT;
+    return SysMLOCPackage.eINSTANCE.getImportElement();
   }
 
 } //ImportElementImpl

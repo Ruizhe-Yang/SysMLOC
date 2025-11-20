@@ -69,13 +69,13 @@ public interface SysMLOCFactory extends EFactory
   UsageBodyElement createUsageBodyElement();
 
   /**
-   * Returns a new object of class '<em>Inter Body Element</em>'.
+   * Returns a new object of class '<em>Interface Body Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Inter Body Element</em>'.
+   * @return a new object of class '<em>Interface Body Element</em>'.
    * @generated
    */
-  InterBodyElement createInterBodyElement();
+  InterfaceBodyElement createInterfaceBodyElement();
 
   /**
    * Returns a new object of class '<em>Enumeration Body Element</em>'.
@@ -85,6 +85,15 @@ public interface SysMLOCFactory extends EFactory
    * @generated
    */
   EnumerationBodyElement createEnumerationBodyElement();
+
+  /**
+   * Returns a new object of class '<em>Action Body Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Action Body Element</em>'.
+   * @generated
+   */
+  ActionBodyElement createActionBodyElement();
 
   /**
    * Returns a new object of class '<em>Annotating Element</em>'.
@@ -168,6 +177,15 @@ public interface SysMLOCFactory extends EFactory
   EnumerationElement createEnumerationElement();
 
   /**
+   * Returns a new object of class '<em>Action Node Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Action Node Element</em>'.
+   * @generated
+   */
+  ActionNodeElement createActionNodeElement();
+
+  /**
    * Returns a new object of class '<em>Namespace Import</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -222,6 +240,24 @@ public interface SysMLOCFactory extends EFactory
   TextualRepresentation createTextualRepresentation();
 
   /**
+   * Returns a new object of class '<em>Default Reference Usage</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Default Reference Usage</em>'.
+   * @generated
+   */
+  DefaultReferenceUsage createDefaultReferenceUsage();
+
+  /**
+   * Returns a new object of class '<em>Reference Usage</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Reference Usage</em>'.
+   * @generated
+   */
+  ReferenceUsage createReferenceUsage();
+
+  /**
    * Returns a new object of class '<em>Attribute Definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -265,6 +301,24 @@ public interface SysMLOCFactory extends EFactory
    * @generated
    */
   EnumerationUsage createEnumerationUsage();
+
+  /**
+   * Returns a new object of class '<em>Binding Connector As Usage</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Binding Connector As Usage</em>'.
+   * @generated
+   */
+  BindingConnectorAsUsage createBindingConnectorAsUsage();
+
+  /**
+   * Returns a new object of class '<em>Succession As Usage</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Succession As Usage</em>'.
+   * @generated
+   */
+  SuccessionAsUsage createSuccessionAsUsage();
 
   /**
    * Returns a new object of class '<em>Item Definition</em>'.
@@ -375,6 +429,24 @@ public interface SysMLOCFactory extends EFactory
   FlowConnectionUsage createFlowConnectionUsage();
 
   /**
+   * Returns a new object of class '<em>Succession Flow Connection Usage</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Succession Flow Connection Usage</em>'.
+   * @generated
+   */
+  SuccessionFlowConnectionUsage createSuccessionFlowConnectionUsage();
+
+  /**
+   * Returns a new object of class '<em>Action Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Action Definition</em>'.
+   * @generated
+   */
+  ActionDefinition createActionDefinition();
+
+  /**
    * Returns a new object of class '<em>Action Usage</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -400,6 +472,96 @@ public interface SysMLOCFactory extends EFactory
    * @generated
    */
   ConnectorEnd createConnectorEnd();
+
+  /**
+   * Returns a new object of class '<em>Empty Succession</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Empty Succession</em>'.
+   * @generated
+   */
+  EmptySuccession createEmptySuccession();
+
+  /**
+   * Returns a new object of class '<em>Send Node</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Send Node</em>'.
+   * @generated
+   */
+  SendNode createSendNode();
+
+  /**
+   * Returns a new object of class '<em>Accept Node</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Accept Node</em>'.
+   * @generated
+   */
+  AcceptNode createAcceptNode();
+
+  /**
+   * Returns a new object of class '<em>Assignment Node</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Assignment Node</em>'.
+   * @generated
+   */
+  AssignmentNode createAssignmentNode();
+
+  /**
+   * Returns a new object of class '<em>If Node</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>If Node</em>'.
+   * @generated
+   */
+  IfNode createIfNode();
+
+  /**
+   * Returns a new object of class '<em>While Loop Node</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>While Loop Node</em>'.
+   * @generated
+   */
+  WhileLoopNode createWhileLoopNode();
+
+  /**
+   * Returns a new object of class '<em>For Loop Node</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>For Loop Node</em>'.
+   * @generated
+   */
+  ForLoopNode createForLoopNode();
+
+  /**
+   * Returns a new object of class '<em>Terminate Node</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Terminate Node</em>'.
+   * @generated
+   */
+  TerminateNode createTerminateNode();
+
+  /**
+   * Returns a new object of class '<em>Control Node</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Control Node</em>'.
+   * @generated
+   */
+  ControlNode createControlNode();
+
+  /**
+   * Returns a new object of class '<em>Value Part</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Value Part</em>'.
+   * @generated
+   */
+  ValuePart createValuePart();
 
   /**
    * Returns a new object of class '<em>is Import All Fragment</em>'.
@@ -519,6 +681,24 @@ public interface SysMLOCFactory extends EFactory
   DefinitionDeclaration createDefinitionDeclaration();
 
   /**
+   * Returns a new object of class '<em>Action Usage Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Action Usage Declaration</em>'.
+   * @generated
+   */
+  ActionUsageDeclaration createActionUsageDeclaration();
+
+  /**
+   * Returns a new object of class '<em>Action Node Usage Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Action Node Usage Declaration</em>'.
+   * @generated
+   */
+  ActionNodeUsageDeclaration createActionNodeUsageDeclaration();
+
+  /**
    * Returns a new object of class '<em>Usage</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -562,6 +742,24 @@ public interface SysMLOCFactory extends EFactory
    * @generated
    */
   FeatureSpecializationPart createFeatureSpecializationPart();
+
+  /**
+   * Returns a new object of class '<em>Accept Node Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Accept Node Declaration</em>'.
+   * @generated
+   */
+  AcceptNodeDeclaration createAcceptNodeDeclaration();
+
+  /**
+   * Returns a new object of class '<em>Assignment Node Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Assignment Node Declaration</em>'.
+   * @generated
+   */
+  AssignmentNodeDeclaration createAssignmentNodeDeclaration();
 
   /**
    * Returns a new object of class '<em>Identification</em>'.

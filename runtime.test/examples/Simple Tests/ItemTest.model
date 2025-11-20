@@ -18,13 +18,13 @@
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:PartDefinition" visibility="private" declaredName="C">
-      <elements xsi:type="sysMLOC:PortUsage" visibility="private" isReference="true" declaredName="y">
+      <elements xsi:type="sysMLOC:ReferenceUsage" visibility="private" direction="in" declaredName="y">
         <typings>A</typings>
         <typings>B</typings>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:PortDefinition" declaredName="P">
-      <elements xsi:type="sysMLOC:ItemUsage" declaredName="a1">
+      <elements xsi:type="sysMLOC:ItemUsage" direction="in" declaredName="a1">
         <typings>A</typings>
       </elements>
       <elements xsi:type="sysMLOC:ItemUsage" direction="out" declaredName="a2">

@@ -3,81 +3,28 @@
  */
 package dut.control.sysmloc.sysMLOC.impl;
 
-import dut.control.sysmloc.sysMLOC.ActionUsage;
-import dut.control.sysmloc.sysMLOC.AliasElement;
-import dut.control.sysmloc.sysMLOC.AnnotatingElement;
-import dut.control.sysmloc.sysMLOC.AttributeDefinition;
-import dut.control.sysmloc.sysMLOC.AttributeUsage;
-import dut.control.sysmloc.sysMLOC.BasicDefinitionPrefix;
-import dut.control.sysmloc.sysMLOC.BasicUsagePrefix;
-import dut.control.sysmloc.sysMLOC.BehaviorUsageElement;
-import dut.control.sysmloc.sysMLOC.CodeAnnotation;
-import dut.control.sysmloc.sysMLOC.Comment;
-import dut.control.sysmloc.sysMLOC.ConnectionDefinition;
-import dut.control.sysmloc.sysMLOC.ConnectionUsage;
-import dut.control.sysmloc.sysMLOC.ConnectorEnd;
-import dut.control.sysmloc.sysMLOC.ConnectorPart;
-import dut.control.sysmloc.sysMLOC.DefinitionBodyElement;
-import dut.control.sysmloc.sysMLOC.DefinitionDeclaration;
-import dut.control.sysmloc.sysMLOC.DefinitionElement;
-import dut.control.sysmloc.sysMLOC.DefinitionPrefix;
-import dut.control.sysmloc.sysMLOC.Documentation;
-import dut.control.sysmloc.sysMLOC.EndUsagePrefix;
-import dut.control.sysmloc.sysMLOC.EnumeratedValue;
-import dut.control.sysmloc.sysMLOC.EnumerationBodyElement;
-import dut.control.sysmloc.sysMLOC.EnumerationDefinition;
-import dut.control.sysmloc.sysMLOC.EnumerationElement;
-import dut.control.sysmloc.sysMLOC.EnumerationUsage;
-import dut.control.sysmloc.sysMLOC.FeatureDeclaration;
-import dut.control.sysmloc.sysMLOC.FeatureDirection;
-import dut.control.sysmloc.sysMLOC.FeatureSpecialization;
-import dut.control.sysmloc.sysMLOC.FeatureSpecializationPart;
-import dut.control.sysmloc.sysMLOC.FeatureValue;
-import dut.control.sysmloc.sysMLOC.FlowConnectionDefinition;
-import dut.control.sysmloc.sysMLOC.FlowConnectionUsage;
-import dut.control.sysmloc.sysMLOC.Identification;
-import dut.control.sysmloc.sysMLOC.ImportElement;
-import dut.control.sysmloc.sysMLOC.InterBodyElement;
-import dut.control.sysmloc.sysMLOC.InterfaceDefinition;
-import dut.control.sysmloc.sysMLOC.InterfaceUsage;
-import dut.control.sysmloc.sysMLOC.ItemDefinition;
-import dut.control.sysmloc.sysMLOC.ItemUsage;
-import dut.control.sysmloc.sysMLOC.MemberPrefix;
-import dut.control.sysmloc.sysMLOC.MembershipImport;
-import dut.control.sysmloc.sysMLOC.MultiplicityPart;
-import dut.control.sysmloc.sysMLOC.Namespace;
-import dut.control.sysmloc.sysMLOC.NamespaceImport;
-import dut.control.sysmloc.sysMLOC.NonOccurrenceUsageElement;
-import dut.control.sysmloc.sysMLOC.OccurrenceDefinitionPrefix;
-import dut.control.sysmloc.sysMLOC.OccurrenceUsageElement;
-import dut.control.sysmloc.sysMLOC.OccurrenceUsagePrefix;
-import dut.control.sysmloc.sysMLOC.PackageBodyElement;
-import dut.control.sysmloc.sysMLOC.PartDefinition;
-import dut.control.sysmloc.sysMLOC.PartUsage;
-import dut.control.sysmloc.sysMLOC.PortDefinition;
-import dut.control.sysmloc.sysMLOC.PortUsage;
-import dut.control.sysmloc.sysMLOC.PortionKind;
-import dut.control.sysmloc.sysMLOC.RefPrefix;
-import dut.control.sysmloc.sysMLOC.StructureUsageElement;
 import dut.control.sysmloc.sysMLOC.SysMLOCFactory;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
-import dut.control.sysmloc.sysMLOC.TextualRepresentation;
-import dut.control.sysmloc.sysMLOC.UnextendedUsagePrefix;
-import dut.control.sysmloc.sysMLOC.Usage;
-import dut.control.sysmloc.sysMLOC.UsageBodyElement;
-import dut.control.sysmloc.sysMLOC.UsageDeclaration;
-import dut.control.sysmloc.sysMLOC.UsageElement;
-import dut.control.sysmloc.sysMLOC.UsagePrefix;
-import dut.control.sysmloc.sysMLOC.VisibilityIndicator;
-import dut.control.sysmloc.sysMLOC.isImportAllFragment;
+
+import java.io.IOException;
+
+import java.net.URL;
+
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.common.util.WrappedException;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import org.eclipse.emf.ecore.resource.Resource;
+
+import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -87,6 +34,13 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  */
 public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
 {
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected String packageFilename = "sysMLOC.loadinitialization_ecore";
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -127,7 +81,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass interBodyElementEClass = null;
+  private EClass interfaceBodyElementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -135,6 +89,13 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   private EClass enumerationBodyElementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass actionBodyElementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -204,6 +165,13 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass actionNodeElementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass namespaceImportEClass = null;
 
   /**
@@ -246,6 +214,20 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass defaultReferenceUsageEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass referenceUsageEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass attributeDefinitionEClass = null;
 
   /**
@@ -275,6 +257,20 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   private EClass enumerationUsageEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass bindingConnectorAsUsageEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass successionAsUsageEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -365,6 +361,20 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass successionFlowConnectionUsageEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass actionDefinitionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass actionUsageEClass = null;
 
   /**
@@ -380,6 +390,76 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   private EClass connectorEndEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass emptySuccessionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass sendNodeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass acceptNodeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass assignmentNodeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass ifNodeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass whileLoopNodeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass forLoopNodeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass terminateNodeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass controlNodeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass valuePartEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -477,6 +557,20 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass actionUsageDeclarationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass actionNodeUsageDeclarationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass usageEClass = null;
 
   /**
@@ -506,6 +600,20 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   private EClass featureSpecializationPartEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass acceptNodeDeclarationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass assignmentNodeDeclarationEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -583,8 +691,6 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #eNS_URI
-   * @see #createPackageContents()
-   * @see #initializePackageContents()
    * @generated
    */
   public static SysMLOCPackage init()
@@ -597,11 +703,11 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
 
     isInited = true;
 
-    // Create package meta-data objects
-    theSysMLOCPackage.createPackageContents();
+    // Load packages
+    theSysMLOCPackage.loadPackage();
 
-    // Initialize created meta-data
-    theSysMLOCPackage.initializePackageContents();
+    // Fix loaded packages
+    theSysMLOCPackage.fixPackageContents();
 
     // Mark meta-data to indicate it can't be changed
     theSysMLOCPackage.freeze();
@@ -619,6 +725,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getNamespace()
   {
+    if (namespaceEClass == null)
+    {
+      namespaceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(0);
+    }
     return namespaceEClass;
   }
 
@@ -630,7 +740,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EReference getNamespace_Intro()
   {
-    return (EReference)namespaceEClass.getEStructuralFeatures().get(0);
+        return (EReference)getNamespace().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -641,7 +751,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EReference getNamespace_Packages()
   {
-    return (EReference)namespaceEClass.getEStructuralFeatures().get(1);
+        return (EReference)getNamespace().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -652,6 +762,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getPackage()
   {
+    if (packageEClass == null)
+    {
+      packageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(1);
+    }
     return packageEClass;
   }
 
@@ -663,7 +777,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getPackage_DeclaredName()
   {
-    return (EAttribute)packageEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getPackage().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -674,7 +788,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EReference getPackage_Elements()
   {
-    return (EReference)packageEClass.getEStructuralFeatures().get(1);
+        return (EReference)getPackage().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -685,6 +799,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getPackageBodyElement()
   {
+    if (packageBodyElementEClass == null)
+    {
+      packageBodyElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(2);
+    }
     return packageBodyElementEClass;
   }
 
@@ -696,6 +814,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getDefinitionBodyElement()
   {
+    if (definitionBodyElementEClass == null)
+    {
+      definitionBodyElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(3);
+    }
     return definitionBodyElementEClass;
   }
 
@@ -707,6 +829,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getUsageBodyElement()
   {
+    if (usageBodyElementEClass == null)
+    {
+      usageBodyElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(4);
+    }
     return usageBodyElementEClass;
   }
 
@@ -716,9 +842,13 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   @Override
-  public EClass getInterBodyElement()
+  public EClass getInterfaceBodyElement()
   {
-    return interBodyElementEClass;
+    if (interfaceBodyElementEClass == null)
+    {
+      interfaceBodyElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(5);
+    }
+    return interfaceBodyElementEClass;
   }
 
   /**
@@ -729,7 +859,26 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getEnumerationBodyElement()
   {
+    if (enumerationBodyElementEClass == null)
+    {
+      enumerationBodyElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(6);
+    }
     return enumerationBodyElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getActionBodyElement()
+  {
+    if (actionBodyElementEClass == null)
+    {
+      actionBodyElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(7);
+    }
+    return actionBodyElementEClass;
   }
 
   /**
@@ -740,6 +889,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getAnnotatingElement()
   {
+    if (annotatingElementEClass == null)
+    {
+      annotatingElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(8);
+    }
     return annotatingElementEClass;
   }
 
@@ -751,6 +904,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getImportElement()
   {
+    if (importElementEClass == null)
+    {
+      importElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(9);
+    }
     return importElementEClass;
   }
 
@@ -762,6 +919,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getDefinitionElement()
   {
+    if (definitionElementEClass == null)
+    {
+      definitionElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(10);
+    }
     return definitionElementEClass;
   }
 
@@ -773,6 +934,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getUsageElement()
   {
+    if (usageElementEClass == null)
+    {
+      usageElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(11);
+    }
     return usageElementEClass;
   }
 
@@ -784,6 +949,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getNonOccurrenceUsageElement()
   {
+    if (nonOccurrenceUsageElementEClass == null)
+    {
+      nonOccurrenceUsageElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(12);
+    }
     return nonOccurrenceUsageElementEClass;
   }
 
@@ -795,6 +964,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getOccurrenceUsageElement()
   {
+    if (occurrenceUsageElementEClass == null)
+    {
+      occurrenceUsageElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(13);
+    }
     return occurrenceUsageElementEClass;
   }
 
@@ -806,6 +979,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getStructureUsageElement()
   {
+    if (structureUsageElementEClass == null)
+    {
+      structureUsageElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(14);
+    }
     return structureUsageElementEClass;
   }
 
@@ -817,6 +994,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getBehaviorUsageElement()
   {
+    if (behaviorUsageElementEClass == null)
+    {
+      behaviorUsageElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(15);
+    }
     return behaviorUsageElementEClass;
   }
 
@@ -828,7 +1009,26 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getEnumerationElement()
   {
+    if (enumerationElementEClass == null)
+    {
+      enumerationElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(16);
+    }
     return enumerationElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getActionNodeElement()
+  {
+    if (actionNodeElementEClass == null)
+    {
+      actionNodeElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(17);
+    }
+    return actionNodeElementEClass;
   }
 
   /**
@@ -839,6 +1039,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getNamespaceImport()
   {
+    if (namespaceImportEClass == null)
+    {
+      namespaceImportEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(18);
+    }
     return namespaceImportEClass;
   }
 
@@ -850,7 +1054,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getNamespaceImport_Visibility()
   {
-    return (EAttribute)namespaceImportEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getNamespaceImport().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -861,7 +1065,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getNamespaceImport_DeclaredName()
   {
-    return (EAttribute)namespaceImportEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getNamespaceImport().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -872,7 +1076,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getNamespaceImport_IsRecursive()
   {
-    return (EAttribute)namespaceImportEClass.getEStructuralFeatures().get(2);
+        return (EAttribute)getNamespaceImport().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -883,6 +1087,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getMembershipImport()
   {
+    if (membershipImportEClass == null)
+    {
+      membershipImportEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(19);
+    }
     return membershipImportEClass;
   }
 
@@ -894,7 +1102,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getMembershipImport_Visibility()
   {
-    return (EAttribute)membershipImportEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getMembershipImport().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -905,7 +1113,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getMembershipImport_DeclaredName()
   {
-    return (EAttribute)membershipImportEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getMembershipImport().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -916,7 +1124,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getMembershipImport_IsRecursive()
   {
-    return (EAttribute)membershipImportEClass.getEStructuralFeatures().get(2);
+        return (EAttribute)getMembershipImport().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -927,6 +1135,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getCodeAnnotation()
   {
+    if (codeAnnotationEClass == null)
+    {
+      codeAnnotationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(20);
+    }
     return codeAnnotationEClass;
   }
 
@@ -938,7 +1150,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getCodeAnnotation_Body()
   {
-    return (EAttribute)codeAnnotationEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getCodeAnnotation().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -949,6 +1161,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getComment()
   {
+    if (commentEClass == null)
+    {
+      commentEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(21);
+    }
     return commentEClass;
   }
 
@@ -960,7 +1176,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getComment_AnnotatedElement()
   {
-    return (EAttribute)commentEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getComment().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -971,7 +1187,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getComment_Locale()
   {
-    return (EAttribute)commentEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getComment().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -982,7 +1198,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getComment_Body()
   {
-    return (EAttribute)commentEClass.getEStructuralFeatures().get(2);
+        return (EAttribute)getComment().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -993,6 +1209,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getDocumentation()
   {
+    if (documentationEClass == null)
+    {
+      documentationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(22);
+    }
     return documentationEClass;
   }
 
@@ -1004,7 +1224,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getDocumentation_Locale()
   {
-    return (EAttribute)documentationEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getDocumentation().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1015,7 +1235,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getDocumentation_Body()
   {
-    return (EAttribute)documentationEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getDocumentation().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1026,6 +1246,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getTextualRepresentation()
   {
+    if (textualRepresentationEClass == null)
+    {
+      textualRepresentationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(23);
+    }
     return textualRepresentationEClass;
   }
 
@@ -1037,7 +1261,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getTextualRepresentation_Language()
   {
-    return (EAttribute)textualRepresentationEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getTextualRepresentation().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1048,7 +1272,70 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getTextualRepresentation_Body()
   {
-    return (EAttribute)textualRepresentationEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getTextualRepresentation().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getDefaultReferenceUsage()
+  {
+    if (defaultReferenceUsageEClass == null)
+    {
+      defaultReferenceUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(24);
+    }
+    return defaultReferenceUsageEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getDefaultReferenceUsage_IsEnd()
+  {
+        return (EAttribute)getDefaultReferenceUsage().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getDefaultReferenceUsage_Elements()
+  {
+        return (EReference)getDefaultReferenceUsage().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getReferenceUsage()
+  {
+    if (referenceUsageEClass == null)
+    {
+      referenceUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(25);
+    }
+    return referenceUsageEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getReferenceUsage_Elements()
+  {
+        return (EReference)getReferenceUsage().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1059,6 +1346,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getAttributeDefinition()
   {
+    if (attributeDefinitionEClass == null)
+    {
+      attributeDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(26);
+    }
     return attributeDefinitionEClass;
   }
 
@@ -1070,7 +1361,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EReference getAttributeDefinition_Elements()
   {
-    return (EReference)attributeDefinitionEClass.getEStructuralFeatures().get(0);
+        return (EReference)getAttributeDefinition().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1081,7 +1372,22 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getAttributeUsage()
   {
+    if (attributeUsageEClass == null)
+    {
+      attributeUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(27);
+    }
     return attributeUsageEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getAttributeUsage_Elements()
+  {
+        return (EReference)getAttributeUsage().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1092,6 +1398,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getEnumerationDefinition()
   {
+    if (enumerationDefinitionEClass == null)
+    {
+      enumerationDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(28);
+    }
     return enumerationDefinitionEClass;
   }
 
@@ -1103,7 +1413,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EReference getEnumerationDefinition_Elements()
   {
-    return (EReference)enumerationDefinitionEClass.getEStructuralFeatures().get(0);
+        return (EReference)getEnumerationDefinition().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1114,7 +1424,22 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getEnumeratedValue()
   {
+    if (enumeratedValueEClass == null)
+    {
+      enumeratedValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(29);
+    }
     return enumeratedValueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getEnumeratedValue_Elements()
+  {
+        return (EReference)getEnumeratedValue().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1125,7 +1450,96 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getEnumerationUsage()
   {
+    if (enumerationUsageEClass == null)
+    {
+      enumerationUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(30);
+    }
     return enumerationUsageEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getEnumerationUsage_Elements()
+  {
+        return (EReference)getEnumerationUsage().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getBindingConnectorAsUsage()
+  {
+    if (bindingConnectorAsUsageEClass == null)
+    {
+      bindingConnectorAsUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(31);
+    }
+    return bindingConnectorAsUsageEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getBindingConnectorAsUsage_ConnectorPart()
+  {
+        return (EReference)getBindingConnectorAsUsage().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getBindingConnectorAsUsage_Elements()
+  {
+        return (EReference)getBindingConnectorAsUsage().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSuccessionAsUsage()
+  {
+    if (successionAsUsageEClass == null)
+    {
+      successionAsUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(32);
+    }
+    return successionAsUsageEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSuccessionAsUsage_ConnectorPart()
+  {
+        return (EReference)getSuccessionAsUsage().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSuccessionAsUsage_Elements()
+  {
+        return (EReference)getSuccessionAsUsage().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1136,6 +1550,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getItemDefinition()
   {
+    if (itemDefinitionEClass == null)
+    {
+      itemDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(33);
+    }
     return itemDefinitionEClass;
   }
 
@@ -1147,7 +1565,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EReference getItemDefinition_Elements()
   {
-    return (EReference)itemDefinitionEClass.getEStructuralFeatures().get(0);
+        return (EReference)getItemDefinition().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1158,7 +1576,22 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getItemUsage()
   {
+    if (itemUsageEClass == null)
+    {
+      itemUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(34);
+    }
     return itemUsageEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getItemUsage_Elements()
+  {
+        return (EReference)getItemUsage().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1169,6 +1602,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getPartDefinition()
   {
+    if (partDefinitionEClass == null)
+    {
+      partDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(35);
+    }
     return partDefinitionEClass;
   }
 
@@ -1180,7 +1617,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EReference getPartDefinition_Elements()
   {
-    return (EReference)partDefinitionEClass.getEStructuralFeatures().get(0);
+        return (EReference)getPartDefinition().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1191,7 +1628,22 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getPartUsage()
   {
+    if (partUsageEClass == null)
+    {
+      partUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(36);
+    }
     return partUsageEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getPartUsage_Elements()
+  {
+        return (EReference)getPartUsage().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1202,6 +1654,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getPortDefinition()
   {
+    if (portDefinitionEClass == null)
+    {
+      portDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(37);
+    }
     return portDefinitionEClass;
   }
 
@@ -1213,7 +1669,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EReference getPortDefinition_Elements()
   {
-    return (EReference)portDefinitionEClass.getEStructuralFeatures().get(0);
+        return (EReference)getPortDefinition().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1224,7 +1680,22 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getPortUsage()
   {
+    if (portUsageEClass == null)
+    {
+      portUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(38);
+    }
     return portUsageEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getPortUsage_Elements()
+  {
+        return (EReference)getPortUsage().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1235,6 +1706,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getConnectionDefinition()
   {
+    if (connectionDefinitionEClass == null)
+    {
+      connectionDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(39);
+    }
     return connectionDefinitionEClass;
   }
 
@@ -1246,7 +1721,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EReference getConnectionDefinition_Elements()
   {
-    return (EReference)connectionDefinitionEClass.getEStructuralFeatures().get(0);
+        return (EReference)getConnectionDefinition().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1257,6 +1732,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getConnectionUsage()
   {
+    if (connectionUsageEClass == null)
+    {
+      connectionUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(40);
+    }
     return connectionUsageEClass;
   }
 
@@ -1268,7 +1747,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EReference getConnectionUsage_Elements()
   {
-    return (EReference)connectionUsageEClass.getEStructuralFeatures().get(0);
+        return (EReference)getConnectionUsage().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1279,6 +1758,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getInterfaceDefinition()
   {
+    if (interfaceDefinitionEClass == null)
+    {
+      interfaceDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(41);
+    }
     return interfaceDefinitionEClass;
   }
 
@@ -1290,7 +1773,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EReference getInterfaceDefinition_Elements()
   {
-    return (EReference)interfaceDefinitionEClass.getEStructuralFeatures().get(0);
+        return (EReference)getInterfaceDefinition().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1301,6 +1784,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getInterfaceUsage()
   {
+    if (interfaceUsageEClass == null)
+    {
+      interfaceUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(42);
+    }
     return interfaceUsageEClass;
   }
 
@@ -1312,7 +1799,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EReference getInterfaceUsage_Elements()
   {
-    return (EReference)interfaceUsageEClass.getEStructuralFeatures().get(0);
+        return (EReference)getInterfaceUsage().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1323,6 +1810,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getFlowConnectionDefinition()
   {
+    if (flowConnectionDefinitionEClass == null)
+    {
+      flowConnectionDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(43);
+    }
     return flowConnectionDefinitionEClass;
   }
 
@@ -1334,7 +1825,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EReference getFlowConnectionDefinition_Elements()
   {
-    return (EReference)flowConnectionDefinitionEClass.getEStructuralFeatures().get(0);
+        return (EReference)getFlowConnectionDefinition().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1345,6 +1836,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getFlowConnectionUsage()
   {
+    if (flowConnectionUsageEClass == null)
+    {
+      flowConnectionUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(44);
+    }
     return flowConnectionUsageEClass;
   }
 
@@ -1356,7 +1851,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getFlowConnectionUsage_ItemFeature()
   {
-    return (EAttribute)flowConnectionUsageEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getFlowConnectionUsage().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1367,7 +1862,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getFlowConnectionUsage_FlowEnd()
   {
-    return (EAttribute)flowConnectionUsageEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getFlowConnectionUsage().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1378,7 +1873,81 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EReference getFlowConnectionUsage_Elements()
   {
-    return (EReference)flowConnectionUsageEClass.getEStructuralFeatures().get(2);
+        return (EReference)getFlowConnectionUsage().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSuccessionFlowConnectionUsage()
+  {
+    if (successionFlowConnectionUsageEClass == null)
+    {
+      successionFlowConnectionUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(45);
+    }
+    return successionFlowConnectionUsageEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSuccessionFlowConnectionUsage_ItemFeature()
+  {
+        return (EAttribute)getSuccessionFlowConnectionUsage().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSuccessionFlowConnectionUsage_FlowEnd()
+  {
+        return (EAttribute)getSuccessionFlowConnectionUsage().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSuccessionFlowConnectionUsage_Elements()
+  {
+        return (EReference)getSuccessionFlowConnectionUsage().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getActionDefinition()
+  {
+    if (actionDefinitionEClass == null)
+    {
+      actionDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(46);
+    }
+    return actionDefinitionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getActionDefinition_Elements()
+  {
+        return (EReference)getActionDefinition().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1389,18 +1958,11 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getActionUsage()
   {
+    if (actionUsageEClass == null)
+    {
+      actionUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(47);
+    }
     return actionUsageEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getActionUsage_DeclaredName()
-  {
-    return (EAttribute)actionUsageEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1411,7 +1973,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EReference getActionUsage_Elements()
   {
-    return (EReference)actionUsageEClass.getEStructuralFeatures().get(1);
+        return (EReference)getActionUsage().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1422,6 +1984,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getAliasElement()
   {
+    if (aliasElementEClass == null)
+    {
+      aliasElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(48);
+    }
     return aliasElementEClass;
   }
 
@@ -1433,7 +1999,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getAliasElement_MemberShortName()
   {
-    return (EAttribute)aliasElementEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getAliasElement().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1444,7 +2010,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getAliasElement_MemberName()
   {
-    return (EAttribute)aliasElementEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getAliasElement().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1455,7 +2021,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getAliasElement_MemberElement()
   {
-    return (EAttribute)aliasElementEClass.getEStructuralFeatures().get(2);
+        return (EAttribute)getAliasElement().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1466,7 +2032,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EReference getAliasElement_Elements()
   {
-    return (EReference)aliasElementEClass.getEStructuralFeatures().get(3);
+        return (EReference)getAliasElement().getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1477,6 +2043,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getConnectorEnd()
   {
+    if (connectorEndEClass == null)
+    {
+      connectorEndEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(49);
+    }
     return connectorEndEClass;
   }
 
@@ -1488,7 +2058,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getConnectorEnd_Multiplicity()
   {
-    return (EAttribute)connectorEndEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getConnectorEnd().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1499,7 +2069,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getConnectorEnd_DelcaredName()
   {
-    return (EAttribute)connectorEndEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getConnectorEnd().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1510,7 +2080,201 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getConnectorEnd_RefElement()
   {
-    return (EAttribute)connectorEndEClass.getEStructuralFeatures().get(2);
+        return (EAttribute)getConnectorEnd().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getEmptySuccession()
+  {
+    if (emptySuccessionEClass == null)
+    {
+      emptySuccessionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(50);
+    }
+    return emptySuccessionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getEmptySuccession_Multiplicity()
+  {
+        return (EAttribute)getEmptySuccession().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSendNode()
+  {
+    if (sendNodeEClass == null)
+    {
+      sendNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(51);
+    }
+    return sendNodeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getAcceptNode()
+  {
+    if (acceptNodeEClass == null)
+    {
+      acceptNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(52);
+    }
+    return acceptNodeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getAcceptNode_Elements()
+  {
+        return (EReference)getAcceptNode().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getAssignmentNode()
+  {
+    if (assignmentNodeEClass == null)
+    {
+      assignmentNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(53);
+    }
+    return assignmentNodeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getAssignmentNode_Elements()
+  {
+        return (EReference)getAssignmentNode().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getIfNode()
+  {
+    if (ifNodeEClass == null)
+    {
+      ifNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(54);
+    }
+    return ifNodeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getIfNode_ExpressionParameter()
+  {
+        return (EAttribute)getIfNode().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getWhileLoopNode()
+  {
+    if (whileLoopNodeEClass == null)
+    {
+      whileLoopNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(55);
+    }
+    return whileLoopNodeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getForLoopNode()
+  {
+    if (forLoopNodeEClass == null)
+    {
+      forLoopNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(56);
+    }
+    return forLoopNodeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getTerminateNode()
+  {
+    if (terminateNodeEClass == null)
+    {
+      terminateNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(57);
+    }
+    return terminateNodeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getControlNode()
+  {
+    if (controlNodeEClass == null)
+    {
+      controlNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(58);
+    }
+    return controlNodeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getValuePart()
+  {
+    if (valuePartEClass == null)
+    {
+      valuePartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(62);
+    }
+    return valuePartEClass;
   }
 
   /**
@@ -1521,6 +2285,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getisImportAllFragment()
   {
+    if (isImportAllFragmentEClass == null)
+    {
+      isImportAllFragmentEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(63);
+    }
     return isImportAllFragmentEClass;
   }
 
@@ -1532,7 +2300,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getisImportAllFragment_IsImportAll()
   {
-    return (EAttribute)isImportAllFragmentEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getisImportAllFragment().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1543,6 +2311,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getMemberPrefix()
   {
+    if (memberPrefixEClass == null)
+    {
+      memberPrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(64);
+    }
     return memberPrefixEClass;
   }
 
@@ -1554,7 +2326,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getMemberPrefix_Visibility()
   {
-    return (EAttribute)memberPrefixEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getMemberPrefix().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1565,6 +2337,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getDefinitionPrefix()
   {
+    if (definitionPrefixEClass == null)
+    {
+      definitionPrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(65);
+    }
     return definitionPrefixEClass;
   }
 
@@ -1576,6 +2352,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getOccurrenceDefinitionPrefix()
   {
+    if (occurrenceDefinitionPrefixEClass == null)
+    {
+      occurrenceDefinitionPrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(66);
+    }
     return occurrenceDefinitionPrefixEClass;
   }
 
@@ -1587,7 +2367,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getOccurrenceDefinitionPrefix_IsIndividual()
   {
-    return (EAttribute)occurrenceDefinitionPrefixEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getOccurrenceDefinitionPrefix().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1598,6 +2378,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getBasicDefinitionPrefix()
   {
+    if (basicDefinitionPrefixEClass == null)
+    {
+      basicDefinitionPrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(67);
+    }
     return basicDefinitionPrefixEClass;
   }
 
@@ -1609,7 +2393,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getBasicDefinitionPrefix_IsAbstract()
   {
-    return (EAttribute)basicDefinitionPrefixEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getBasicDefinitionPrefix().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1620,7 +2404,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getBasicDefinitionPrefix_IsVariation()
   {
-    return (EAttribute)basicDefinitionPrefixEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getBasicDefinitionPrefix().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1631,6 +2415,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getUsagePrefix()
   {
+    if (usagePrefixEClass == null)
+    {
+      usagePrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(68);
+    }
     return usagePrefixEClass;
   }
 
@@ -1642,6 +2430,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getUnextendedUsagePrefix()
   {
+    if (unextendedUsagePrefixEClass == null)
+    {
+      unextendedUsagePrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(69);
+    }
     return unextendedUsagePrefixEClass;
   }
 
@@ -1653,6 +2445,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getEndUsagePrefix()
   {
+    if (endUsagePrefixEClass == null)
+    {
+      endUsagePrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(70);
+    }
     return endUsagePrefixEClass;
   }
 
@@ -1664,7 +2460,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getEndUsagePrefix_IsEnd()
   {
-    return (EAttribute)endUsagePrefixEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getEndUsagePrefix().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1675,6 +2471,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getOccurrenceUsagePrefix()
   {
+    if (occurrenceUsagePrefixEClass == null)
+    {
+      occurrenceUsagePrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(71);
+    }
     return occurrenceUsagePrefixEClass;
   }
 
@@ -1686,7 +2486,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getOccurrenceUsagePrefix_IsEnd()
   {
-    return (EAttribute)occurrenceUsagePrefixEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getOccurrenceUsagePrefix().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1697,7 +2497,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getOccurrenceUsagePrefix_IsIndividual()
   {
-    return (EAttribute)occurrenceUsagePrefixEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getOccurrenceUsagePrefix().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1708,7 +2508,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getOccurrenceUsagePrefix_PortionKind()
   {
-    return (EAttribute)occurrenceUsagePrefixEClass.getEStructuralFeatures().get(2);
+        return (EAttribute)getOccurrenceUsagePrefix().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1719,6 +2519,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getRefPrefix()
   {
+    if (refPrefixEClass == null)
+    {
+      refPrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(72);
+    }
     return refPrefixEClass;
   }
 
@@ -1730,7 +2534,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getRefPrefix_Direction()
   {
-    return (EAttribute)refPrefixEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getRefPrefix().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1741,7 +2545,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getRefPrefix_IsAbstract()
   {
-    return (EAttribute)refPrefixEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getRefPrefix().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1752,7 +2556,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getRefPrefix_IsVariation()
   {
-    return (EAttribute)refPrefixEClass.getEStructuralFeatures().get(2);
+        return (EAttribute)getRefPrefix().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1763,7 +2567,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getRefPrefix_IsReadOnly()
   {
-    return (EAttribute)refPrefixEClass.getEStructuralFeatures().get(3);
+        return (EAttribute)getRefPrefix().getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1774,7 +2578,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getRefPrefix_IsDerived()
   {
-    return (EAttribute)refPrefixEClass.getEStructuralFeatures().get(4);
+        return (EAttribute)getRefPrefix().getEStructuralFeatures().get(4);
   }
 
   /**
@@ -1785,6 +2589,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getBasicUsagePrefix()
   {
+    if (basicUsagePrefixEClass == null)
+    {
+      basicUsagePrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(73);
+    }
     return basicUsagePrefixEClass;
   }
 
@@ -1796,7 +2604,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getBasicUsagePrefix_IsReference()
   {
-    return (EAttribute)basicUsagePrefixEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getBasicUsagePrefix().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1807,6 +2615,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getConnectorPart()
   {
+    if (connectorPartEClass == null)
+    {
+      connectorPartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(74);
+    }
     return connectorPartEClass;
   }
 
@@ -1818,7 +2630,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EReference getConnectorPart_ConnectorPart()
   {
-    return (EReference)connectorPartEClass.getEStructuralFeatures().get(0);
+        return (EReference)getConnectorPart().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1829,6 +2641,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getDefinitionDeclaration()
   {
+    if (definitionDeclarationEClass == null)
+    {
+      definitionDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(75);
+    }
     return definitionDeclarationEClass;
   }
 
@@ -1840,7 +2656,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getDefinitionDeclaration_DeclaredName()
   {
-    return (EAttribute)definitionDeclarationEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getDefinitionDeclaration().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1851,7 +2667,37 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getDefinitionDeclaration_Superclassifiers()
   {
-    return (EAttribute)definitionDeclarationEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getDefinitionDeclaration().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getActionUsageDeclaration()
+  {
+    if (actionUsageDeclarationEClass == null)
+    {
+      actionUsageDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(76);
+    }
+    return actionUsageDeclarationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getActionNodeUsageDeclaration()
+  {
+    if (actionNodeUsageDeclarationEClass == null)
+    {
+      actionNodeUsageDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(77);
+    }
+    return actionNodeUsageDeclarationEClass;
   }
 
   /**
@@ -1862,18 +2708,11 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getUsage()
   {
+    if (usageEClass == null)
+    {
+      usageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(78);
+    }
     return usageEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getUsage_Elements()
-  {
-    return (EReference)usageEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1884,6 +2723,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getUsageDeclaration()
   {
+    if (usageDeclarationEClass == null)
+    {
+      usageDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(79);
+    }
     return usageDeclarationEClass;
   }
 
@@ -1895,6 +2738,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getFeatureValue()
   {
+    if (featureValueEClass == null)
+    {
+      featureValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(80);
+    }
     return featureValueEClass;
   }
 
@@ -1906,7 +2753,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getFeatureValue_IsInitial()
   {
-    return (EAttribute)featureValueEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getFeatureValue().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1917,7 +2764,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getFeatureValue_IsDefault()
   {
-    return (EAttribute)featureValueEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getFeatureValue().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1928,7 +2775,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getFeatureValue_ValuePart()
   {
-    return (EAttribute)featureValueEClass.getEStructuralFeatures().get(2);
+        return (EAttribute)getFeatureValue().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1939,6 +2786,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getFeatureDeclaration()
   {
+    if (featureDeclarationEClass == null)
+    {
+      featureDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(81);
+    }
     return featureDeclarationEClass;
   }
 
@@ -1950,7 +2801,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getFeatureDeclaration_DeclaredName()
   {
-    return (EAttribute)featureDeclarationEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getFeatureDeclaration().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1961,7 +2812,41 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getFeatureSpecializationPart()
   {
+    if (featureSpecializationPartEClass == null)
+    {
+      featureSpecializationPartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(82);
+    }
     return featureSpecializationPartEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getAcceptNodeDeclaration()
+  {
+    if (acceptNodeDeclarationEClass == null)
+    {
+      acceptNodeDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(83);
+    }
+    return acceptNodeDeclarationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getAssignmentNodeDeclaration()
+  {
+    if (assignmentNodeDeclarationEClass == null)
+    {
+      assignmentNodeDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(84);
+    }
+    return assignmentNodeDeclarationEClass;
   }
 
   /**
@@ -1972,6 +2857,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getIdentification()
   {
+    if (identificationEClass == null)
+    {
+      identificationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(85);
+    }
     return identificationEClass;
   }
 
@@ -1983,7 +2872,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getIdentification_DeclaredShortName()
   {
-    return (EAttribute)identificationEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getIdentification().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1994,7 +2883,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getIdentification_DeclaredName()
   {
-    return (EAttribute)identificationEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getIdentification().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2005,6 +2894,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getMultiplicityPart()
   {
+    if (multiplicityPartEClass == null)
+    {
+      multiplicityPartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(86);
+    }
     return multiplicityPartEClass;
   }
 
@@ -2016,7 +2909,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getMultiplicityPart_Multiplicity()
   {
-    return (EAttribute)multiplicityPartEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getMultiplicityPart().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2027,7 +2920,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getMultiplicityPart_IsOrdered()
   {
-    return (EAttribute)multiplicityPartEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getMultiplicityPart().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2038,7 +2931,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getMultiplicityPart_IsNonunique()
   {
-    return (EAttribute)multiplicityPartEClass.getEStructuralFeatures().get(2);
+        return (EAttribute)getMultiplicityPart().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -2049,6 +2942,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EClass getFeatureSpecialization()
   {
+    if (featureSpecializationEClass == null)
+    {
+      featureSpecializationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(87);
+    }
     return featureSpecializationEClass;
   }
 
@@ -2060,7 +2957,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getFeatureSpecialization_Typings()
   {
-    return (EAttribute)featureSpecializationEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getFeatureSpecialization().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2071,7 +2968,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getFeatureSpecialization_Subsetting()
   {
-    return (EAttribute)featureSpecializationEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getFeatureSpecialization().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2082,7 +2979,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getFeatureSpecialization_References()
   {
-    return (EAttribute)featureSpecializationEClass.getEStructuralFeatures().get(2);
+        return (EAttribute)getFeatureSpecialization().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -2093,7 +2990,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getFeatureSpecialization_Crosses()
   {
-    return (EAttribute)featureSpecializationEClass.getEStructuralFeatures().get(3);
+        return (EAttribute)getFeatureSpecialization().getEStructuralFeatures().get(3);
   }
 
   /**
@@ -2104,7 +3001,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EAttribute getFeatureSpecialization_Redefinitions()
   {
-    return (EAttribute)featureSpecializationEClass.getEStructuralFeatures().get(4);
+        return (EAttribute)getFeatureSpecialization().getEStructuralFeatures().get(4);
   }
 
   /**
@@ -2115,6 +3012,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EEnum getVisibilityIndicator()
   {
+    if (visibilityIndicatorEEnum == null)
+    {
+      visibilityIndicatorEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(59);
+    }
     return visibilityIndicatorEEnum;
   }
 
@@ -2126,6 +3027,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EEnum getFeatureDirection()
   {
+    if (featureDirectionEEnum == null)
+    {
+      featureDirectionEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(60);
+    }
     return featureDirectionEEnum;
   }
 
@@ -2137,6 +3042,10 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EEnum getPortionKind()
   {
+    if (portionKindEEnum == null)
+    {
+      portionKindEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(61);
+    }
     return portionKindEEnum;
   }
 
@@ -2156,674 +3065,73 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private boolean isCreated = false;
+  private boolean isLoaded = false;
 
   /**
-   * Creates the meta-model objects for the package.  This method is
-   * guarded to have no affect on any invocation but its first.
+   * Loads the package and any sub-packages from their serialized form.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  public void createPackageContents()
+  public void loadPackage()
   {
-    if (isCreated) return;
-    isCreated = true;
-
-    // Create classes and their features
-    namespaceEClass = createEClass(NAMESPACE);
-    createEReference(namespaceEClass, NAMESPACE__INTRO);
-    createEReference(namespaceEClass, NAMESPACE__PACKAGES);
-
-    packageEClass = createEClass(PACKAGE);
-    createEAttribute(packageEClass, PACKAGE__DECLARED_NAME);
-    createEReference(packageEClass, PACKAGE__ELEMENTS);
-
-    packageBodyElementEClass = createEClass(PACKAGE_BODY_ELEMENT);
-
-    definitionBodyElementEClass = createEClass(DEFINITION_BODY_ELEMENT);
-
-    usageBodyElementEClass = createEClass(USAGE_BODY_ELEMENT);
-
-    interBodyElementEClass = createEClass(INTER_BODY_ELEMENT);
-
-    enumerationBodyElementEClass = createEClass(ENUMERATION_BODY_ELEMENT);
-
-    annotatingElementEClass = createEClass(ANNOTATING_ELEMENT);
-
-    importElementEClass = createEClass(IMPORT_ELEMENT);
-
-    definitionElementEClass = createEClass(DEFINITION_ELEMENT);
-
-    usageElementEClass = createEClass(USAGE_ELEMENT);
-
-    nonOccurrenceUsageElementEClass = createEClass(NON_OCCURRENCE_USAGE_ELEMENT);
-
-    occurrenceUsageElementEClass = createEClass(OCCURRENCE_USAGE_ELEMENT);
-
-    structureUsageElementEClass = createEClass(STRUCTURE_USAGE_ELEMENT);
-
-    behaviorUsageElementEClass = createEClass(BEHAVIOR_USAGE_ELEMENT);
-
-    enumerationElementEClass = createEClass(ENUMERATION_ELEMENT);
-
-    namespaceImportEClass = createEClass(NAMESPACE_IMPORT);
-    createEAttribute(namespaceImportEClass, NAMESPACE_IMPORT__VISIBILITY);
-    createEAttribute(namespaceImportEClass, NAMESPACE_IMPORT__DECLARED_NAME);
-    createEAttribute(namespaceImportEClass, NAMESPACE_IMPORT__IS_RECURSIVE);
-
-    membershipImportEClass = createEClass(MEMBERSHIP_IMPORT);
-    createEAttribute(membershipImportEClass, MEMBERSHIP_IMPORT__VISIBILITY);
-    createEAttribute(membershipImportEClass, MEMBERSHIP_IMPORT__DECLARED_NAME);
-    createEAttribute(membershipImportEClass, MEMBERSHIP_IMPORT__IS_RECURSIVE);
-
-    codeAnnotationEClass = createEClass(CODE_ANNOTATION);
-    createEAttribute(codeAnnotationEClass, CODE_ANNOTATION__BODY);
-
-    commentEClass = createEClass(COMMENT);
-    createEAttribute(commentEClass, COMMENT__ANNOTATED_ELEMENT);
-    createEAttribute(commentEClass, COMMENT__LOCALE);
-    createEAttribute(commentEClass, COMMENT__BODY);
-
-    documentationEClass = createEClass(DOCUMENTATION);
-    createEAttribute(documentationEClass, DOCUMENTATION__LOCALE);
-    createEAttribute(documentationEClass, DOCUMENTATION__BODY);
-
-    textualRepresentationEClass = createEClass(TEXTUAL_REPRESENTATION);
-    createEAttribute(textualRepresentationEClass, TEXTUAL_REPRESENTATION__LANGUAGE);
-    createEAttribute(textualRepresentationEClass, TEXTUAL_REPRESENTATION__BODY);
-
-    attributeDefinitionEClass = createEClass(ATTRIBUTE_DEFINITION);
-    createEReference(attributeDefinitionEClass, ATTRIBUTE_DEFINITION__ELEMENTS);
-
-    attributeUsageEClass = createEClass(ATTRIBUTE_USAGE);
-
-    enumerationDefinitionEClass = createEClass(ENUMERATION_DEFINITION);
-    createEReference(enumerationDefinitionEClass, ENUMERATION_DEFINITION__ELEMENTS);
-
-    enumeratedValueEClass = createEClass(ENUMERATED_VALUE);
-
-    enumerationUsageEClass = createEClass(ENUMERATION_USAGE);
-
-    itemDefinitionEClass = createEClass(ITEM_DEFINITION);
-    createEReference(itemDefinitionEClass, ITEM_DEFINITION__ELEMENTS);
-
-    itemUsageEClass = createEClass(ITEM_USAGE);
-
-    partDefinitionEClass = createEClass(PART_DEFINITION);
-    createEReference(partDefinitionEClass, PART_DEFINITION__ELEMENTS);
-
-    partUsageEClass = createEClass(PART_USAGE);
-
-    portDefinitionEClass = createEClass(PORT_DEFINITION);
-    createEReference(portDefinitionEClass, PORT_DEFINITION__ELEMENTS);
-
-    portUsageEClass = createEClass(PORT_USAGE);
-
-    connectionDefinitionEClass = createEClass(CONNECTION_DEFINITION);
-    createEReference(connectionDefinitionEClass, CONNECTION_DEFINITION__ELEMENTS);
-
-    connectionUsageEClass = createEClass(CONNECTION_USAGE);
-    createEReference(connectionUsageEClass, CONNECTION_USAGE__ELEMENTS);
-
-    interfaceDefinitionEClass = createEClass(INTERFACE_DEFINITION);
-    createEReference(interfaceDefinitionEClass, INTERFACE_DEFINITION__ELEMENTS);
-
-    interfaceUsageEClass = createEClass(INTERFACE_USAGE);
-    createEReference(interfaceUsageEClass, INTERFACE_USAGE__ELEMENTS);
-
-    flowConnectionDefinitionEClass = createEClass(FLOW_CONNECTION_DEFINITION);
-    createEReference(flowConnectionDefinitionEClass, FLOW_CONNECTION_DEFINITION__ELEMENTS);
-
-    flowConnectionUsageEClass = createEClass(FLOW_CONNECTION_USAGE);
-    createEAttribute(flowConnectionUsageEClass, FLOW_CONNECTION_USAGE__ITEM_FEATURE);
-    createEAttribute(flowConnectionUsageEClass, FLOW_CONNECTION_USAGE__FLOW_END);
-    createEReference(flowConnectionUsageEClass, FLOW_CONNECTION_USAGE__ELEMENTS);
-
-    actionUsageEClass = createEClass(ACTION_USAGE);
-    createEAttribute(actionUsageEClass, ACTION_USAGE__DECLARED_NAME);
-    createEReference(actionUsageEClass, ACTION_USAGE__ELEMENTS);
-
-    aliasElementEClass = createEClass(ALIAS_ELEMENT);
-    createEAttribute(aliasElementEClass, ALIAS_ELEMENT__MEMBER_SHORT_NAME);
-    createEAttribute(aliasElementEClass, ALIAS_ELEMENT__MEMBER_NAME);
-    createEAttribute(aliasElementEClass, ALIAS_ELEMENT__MEMBER_ELEMENT);
-    createEReference(aliasElementEClass, ALIAS_ELEMENT__ELEMENTS);
-
-    connectorEndEClass = createEClass(CONNECTOR_END);
-    createEAttribute(connectorEndEClass, CONNECTOR_END__MULTIPLICITY);
-    createEAttribute(connectorEndEClass, CONNECTOR_END__DELCARED_NAME);
-    createEAttribute(connectorEndEClass, CONNECTOR_END__REF_ELEMENT);
-
-    isImportAllFragmentEClass = createEClass(IS_IMPORT_ALL_FRAGMENT);
-    createEAttribute(isImportAllFragmentEClass, IS_IMPORT_ALL_FRAGMENT__IS_IMPORT_ALL);
-
-    memberPrefixEClass = createEClass(MEMBER_PREFIX);
-    createEAttribute(memberPrefixEClass, MEMBER_PREFIX__VISIBILITY);
-
-    definitionPrefixEClass = createEClass(DEFINITION_PREFIX);
-
-    occurrenceDefinitionPrefixEClass = createEClass(OCCURRENCE_DEFINITION_PREFIX);
-    createEAttribute(occurrenceDefinitionPrefixEClass, OCCURRENCE_DEFINITION_PREFIX__IS_INDIVIDUAL);
-
-    basicDefinitionPrefixEClass = createEClass(BASIC_DEFINITION_PREFIX);
-    createEAttribute(basicDefinitionPrefixEClass, BASIC_DEFINITION_PREFIX__IS_ABSTRACT);
-    createEAttribute(basicDefinitionPrefixEClass, BASIC_DEFINITION_PREFIX__IS_VARIATION);
-
-    usagePrefixEClass = createEClass(USAGE_PREFIX);
-
-    unextendedUsagePrefixEClass = createEClass(UNEXTENDED_USAGE_PREFIX);
-
-    endUsagePrefixEClass = createEClass(END_USAGE_PREFIX);
-    createEAttribute(endUsagePrefixEClass, END_USAGE_PREFIX__IS_END);
-
-    occurrenceUsagePrefixEClass = createEClass(OCCURRENCE_USAGE_PREFIX);
-    createEAttribute(occurrenceUsagePrefixEClass, OCCURRENCE_USAGE_PREFIX__IS_END);
-    createEAttribute(occurrenceUsagePrefixEClass, OCCURRENCE_USAGE_PREFIX__IS_INDIVIDUAL);
-    createEAttribute(occurrenceUsagePrefixEClass, OCCURRENCE_USAGE_PREFIX__PORTION_KIND);
-
-    refPrefixEClass = createEClass(REF_PREFIX);
-    createEAttribute(refPrefixEClass, REF_PREFIX__DIRECTION);
-    createEAttribute(refPrefixEClass, REF_PREFIX__IS_ABSTRACT);
-    createEAttribute(refPrefixEClass, REF_PREFIX__IS_VARIATION);
-    createEAttribute(refPrefixEClass, REF_PREFIX__IS_READ_ONLY);
-    createEAttribute(refPrefixEClass, REF_PREFIX__IS_DERIVED);
-
-    basicUsagePrefixEClass = createEClass(BASIC_USAGE_PREFIX);
-    createEAttribute(basicUsagePrefixEClass, BASIC_USAGE_PREFIX__IS_REFERENCE);
-
-    connectorPartEClass = createEClass(CONNECTOR_PART);
-    createEReference(connectorPartEClass, CONNECTOR_PART__CONNECTOR_PART);
-
-    definitionDeclarationEClass = createEClass(DEFINITION_DECLARATION);
-    createEAttribute(definitionDeclarationEClass, DEFINITION_DECLARATION__DECLARED_NAME);
-    createEAttribute(definitionDeclarationEClass, DEFINITION_DECLARATION__SUPERCLASSIFIERS);
-
-    usageEClass = createEClass(USAGE);
-    createEReference(usageEClass, USAGE__ELEMENTS);
-
-    usageDeclarationEClass = createEClass(USAGE_DECLARATION);
-
-    featureValueEClass = createEClass(FEATURE_VALUE);
-    createEAttribute(featureValueEClass, FEATURE_VALUE__IS_INITIAL);
-    createEAttribute(featureValueEClass, FEATURE_VALUE__IS_DEFAULT);
-    createEAttribute(featureValueEClass, FEATURE_VALUE__VALUE_PART);
-
-    featureDeclarationEClass = createEClass(FEATURE_DECLARATION);
-    createEAttribute(featureDeclarationEClass, FEATURE_DECLARATION__DECLARED_NAME);
-
-    featureSpecializationPartEClass = createEClass(FEATURE_SPECIALIZATION_PART);
-
-    identificationEClass = createEClass(IDENTIFICATION);
-    createEAttribute(identificationEClass, IDENTIFICATION__DECLARED_SHORT_NAME);
-    createEAttribute(identificationEClass, IDENTIFICATION__DECLARED_NAME);
-
-    multiplicityPartEClass = createEClass(MULTIPLICITY_PART);
-    createEAttribute(multiplicityPartEClass, MULTIPLICITY_PART__MULTIPLICITY);
-    createEAttribute(multiplicityPartEClass, MULTIPLICITY_PART__IS_ORDERED);
-    createEAttribute(multiplicityPartEClass, MULTIPLICITY_PART__IS_NONUNIQUE);
-
-    featureSpecializationEClass = createEClass(FEATURE_SPECIALIZATION);
-    createEAttribute(featureSpecializationEClass, FEATURE_SPECIALIZATION__TYPINGS);
-    createEAttribute(featureSpecializationEClass, FEATURE_SPECIALIZATION__SUBSETTING);
-    createEAttribute(featureSpecializationEClass, FEATURE_SPECIALIZATION__REFERENCES);
-    createEAttribute(featureSpecializationEClass, FEATURE_SPECIALIZATION__CROSSES);
-    createEAttribute(featureSpecializationEClass, FEATURE_SPECIALIZATION__REDEFINITIONS);
-
-    // Create enums
-    visibilityIndicatorEEnum = createEEnum(VISIBILITY_INDICATOR);
-    featureDirectionEEnum = createEEnum(FEATURE_DIRECTION);
-    portionKindEEnum = createEEnum(PORTION_KIND);
+    if (isLoaded) return;
+    isLoaded = true;
+
+    URL url = getClass().getResource(packageFilename);
+    if (url == null)
+    {
+      throw new RuntimeException("Missing serialized package: " + packageFilename);
+    }
+    URI uri = URI.createURI(url.toString());
+    Resource resource = new EcoreResourceFactoryImpl().createResource(uri);
+    try
+    {
+      resource.load(null);
+    }
+    catch (IOException exception)
+    {
+      throw new WrappedException(exception);
+    }
+    initializeFromLoadedEPackage(this, (EPackage)resource.getContents().get(0));
+    createResource(eNS_URI);
+  }
+
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private boolean isFixed = false;
+
+  /**
+   * Fixes up the loaded package, to make it appear as if it had been programmatically built.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void fixPackageContents()
+  {
+    if (isFixed) return;
+    isFixed = true;
+    fixEClassifiers();
   }
 
   /**
+   * Sets the instance class on the given classifier.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private boolean isInitialized = false;
-
-  /**
-   * Complete the initialization of the package and its meta-model.  This
-   * method is guarded to have no affect on any invocation but its first.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void initializePackageContents()
+  @Override
+  protected void fixInstanceClass(EClassifier eClassifier)
   {
-    if (isInitialized) return;
-    isInitialized = true;
-
-    // Initialize package
-    setName(eNAME);
-    setNsPrefix(eNS_PREFIX);
-    setNsURI(eNS_URI);
-
-    // Create type parameters
-
-    // Set bounds for type parameters
-
-    // Add supertypes to classes
-    packageEClass.getESuperTypes().add(this.getPackageBodyElement());
-    definitionBodyElementEClass.getESuperTypes().add(this.getUsageBodyElement());
-    usageBodyElementEClass.getESuperTypes().add(this.getInterBodyElement());
-    annotatingElementEClass.getESuperTypes().add(this.getPackageBodyElement());
-    annotatingElementEClass.getESuperTypes().add(this.getDefinitionBodyElement());
-    annotatingElementEClass.getESuperTypes().add(this.getEnumerationBodyElement());
-    importElementEClass.getESuperTypes().add(this.getPackageBodyElement());
-    importElementEClass.getESuperTypes().add(this.getDefinitionBodyElement());
-    definitionElementEClass.getESuperTypes().add(this.getPackageBodyElement());
-    definitionElementEClass.getESuperTypes().add(this.getDefinitionBodyElement());
-    usageElementEClass.getESuperTypes().add(this.getPackageBodyElement());
-    usageElementEClass.getESuperTypes().add(this.getDefinitionBodyElement());
-    nonOccurrenceUsageElementEClass.getESuperTypes().add(this.getUsageElement());
-    occurrenceUsageElementEClass.getESuperTypes().add(this.getUsageElement());
-    structureUsageElementEClass.getESuperTypes().add(this.getOccurrenceUsageElement());
-    behaviorUsageElementEClass.getESuperTypes().add(this.getOccurrenceUsageElement());
-    enumerationElementEClass.getESuperTypes().add(this.getEnumerationBodyElement());
-    namespaceImportEClass.getESuperTypes().add(this.getImportElement());
-    namespaceImportEClass.getESuperTypes().add(this.getisImportAllFragment());
-    membershipImportEClass.getESuperTypes().add(this.getImportElement());
-    membershipImportEClass.getESuperTypes().add(this.getisImportAllFragment());
-    codeAnnotationEClass.getESuperTypes().add(this.getPackageBodyElement());
-    codeAnnotationEClass.getESuperTypes().add(this.getDefinitionBodyElement());
-    commentEClass.getESuperTypes().add(this.getAnnotatingElement());
-    commentEClass.getESuperTypes().add(this.getIdentification());
-    documentationEClass.getESuperTypes().add(this.getAnnotatingElement());
-    documentationEClass.getESuperTypes().add(this.getIdentification());
-    textualRepresentationEClass.getESuperTypes().add(this.getAnnotatingElement());
-    textualRepresentationEClass.getESuperTypes().add(this.getIdentification());
-    attributeDefinitionEClass.getESuperTypes().add(this.getDefinitionElement());
-    attributeDefinitionEClass.getESuperTypes().add(this.getMemberPrefix());
-    attributeDefinitionEClass.getESuperTypes().add(this.getDefinitionPrefix());
-    attributeDefinitionEClass.getESuperTypes().add(this.getBasicDefinitionPrefix());
-    attributeDefinitionEClass.getESuperTypes().add(this.getDefinitionDeclaration());
-    attributeUsageEClass.getESuperTypes().add(this.getNonOccurrenceUsageElement());
-    attributeUsageEClass.getESuperTypes().add(this.getMemberPrefix());
-    attributeUsageEClass.getESuperTypes().add(this.getUsage());
-    attributeUsageEClass.getESuperTypes().add(this.getUsageDeclaration());
-    attributeUsageEClass.getESuperTypes().add(this.getFeatureDeclaration());
-    attributeUsageEClass.getESuperTypes().add(this.getFeatureSpecializationPart());
-    attributeUsageEClass.getESuperTypes().add(this.getFeatureSpecialization());
-    attributeUsageEClass.getESuperTypes().add(this.getMultiplicityPart());
-    attributeUsageEClass.getESuperTypes().add(this.getFeatureValue());
-    enumerationDefinitionEClass.getESuperTypes().add(this.getDefinitionElement());
-    enumerationDefinitionEClass.getESuperTypes().add(this.getDefinitionDeclaration());
-    enumeratedValueEClass.getESuperTypes().add(this.getEnumerationElement());
-    enumeratedValueEClass.getESuperTypes().add(this.getUsage());
-    enumeratedValueEClass.getESuperTypes().add(this.getUsageDeclaration());
-    enumeratedValueEClass.getESuperTypes().add(this.getFeatureDeclaration());
-    enumeratedValueEClass.getESuperTypes().add(this.getFeatureSpecializationPart());
-    enumeratedValueEClass.getESuperTypes().add(this.getFeatureSpecialization());
-    enumeratedValueEClass.getESuperTypes().add(this.getMultiplicityPart());
-    enumeratedValueEClass.getESuperTypes().add(this.getFeatureValue());
-    enumerationUsageEClass.getESuperTypes().add(this.getNonOccurrenceUsageElement());
-    enumerationUsageEClass.getESuperTypes().add(this.getUsagePrefix());
-    enumerationUsageEClass.getESuperTypes().add(this.getUnextendedUsagePrefix());
-    enumerationUsageEClass.getESuperTypes().add(this.getEndUsagePrefix());
-    enumerationUsageEClass.getESuperTypes().add(this.getBasicUsagePrefix());
-    enumerationUsageEClass.getESuperTypes().add(this.getRefPrefix());
-    enumerationUsageEClass.getESuperTypes().add(this.getUsage());
-    enumerationUsageEClass.getESuperTypes().add(this.getUsageDeclaration());
-    enumerationUsageEClass.getESuperTypes().add(this.getFeatureDeclaration());
-    enumerationUsageEClass.getESuperTypes().add(this.getFeatureSpecializationPart());
-    enumerationUsageEClass.getESuperTypes().add(this.getFeatureSpecialization());
-    enumerationUsageEClass.getESuperTypes().add(this.getMultiplicityPart());
-    enumerationUsageEClass.getESuperTypes().add(this.getFeatureValue());
-    itemDefinitionEClass.getESuperTypes().add(this.getDefinitionElement());
-    itemDefinitionEClass.getESuperTypes().add(this.getMemberPrefix());
-    itemDefinitionEClass.getESuperTypes().add(this.getOccurrenceDefinitionPrefix());
-    itemDefinitionEClass.getESuperTypes().add(this.getBasicDefinitionPrefix());
-    itemDefinitionEClass.getESuperTypes().add(this.getDefinitionDeclaration());
-    itemUsageEClass.getESuperTypes().add(this.getStructureUsageElement());
-    itemUsageEClass.getESuperTypes().add(this.getMemberPrefix());
-    itemUsageEClass.getESuperTypes().add(this.getOccurrenceUsagePrefix());
-    itemUsageEClass.getESuperTypes().add(this.getBasicUsagePrefix());
-    itemUsageEClass.getESuperTypes().add(this.getRefPrefix());
-    itemUsageEClass.getESuperTypes().add(this.getUsage());
-    itemUsageEClass.getESuperTypes().add(this.getUsageDeclaration());
-    itemUsageEClass.getESuperTypes().add(this.getFeatureDeclaration());
-    itemUsageEClass.getESuperTypes().add(this.getFeatureSpecializationPart());
-    itemUsageEClass.getESuperTypes().add(this.getFeatureSpecialization());
-    itemUsageEClass.getESuperTypes().add(this.getMultiplicityPart());
-    itemUsageEClass.getESuperTypes().add(this.getFeatureValue());
-    partDefinitionEClass.getESuperTypes().add(this.getDefinitionElement());
-    partDefinitionEClass.getESuperTypes().add(this.getMemberPrefix());
-    partDefinitionEClass.getESuperTypes().add(this.getOccurrenceDefinitionPrefix());
-    partDefinitionEClass.getESuperTypes().add(this.getBasicDefinitionPrefix());
-    partDefinitionEClass.getESuperTypes().add(this.getDefinitionDeclaration());
-    partUsageEClass.getESuperTypes().add(this.getStructureUsageElement());
-    partUsageEClass.getESuperTypes().add(this.getMemberPrefix());
-    partUsageEClass.getESuperTypes().add(this.getOccurrenceUsagePrefix());
-    partUsageEClass.getESuperTypes().add(this.getBasicUsagePrefix());
-    partUsageEClass.getESuperTypes().add(this.getRefPrefix());
-    partUsageEClass.getESuperTypes().add(this.getUsage());
-    partUsageEClass.getESuperTypes().add(this.getUsageDeclaration());
-    partUsageEClass.getESuperTypes().add(this.getFeatureDeclaration());
-    partUsageEClass.getESuperTypes().add(this.getFeatureSpecializationPart());
-    partUsageEClass.getESuperTypes().add(this.getFeatureSpecialization());
-    partUsageEClass.getESuperTypes().add(this.getMultiplicityPart());
-    partUsageEClass.getESuperTypes().add(this.getFeatureValue());
-    portDefinitionEClass.getESuperTypes().add(this.getDefinitionElement());
-    portDefinitionEClass.getESuperTypes().add(this.getMemberPrefix());
-    portDefinitionEClass.getESuperTypes().add(this.getDefinitionPrefix());
-    portDefinitionEClass.getESuperTypes().add(this.getBasicDefinitionPrefix());
-    portDefinitionEClass.getESuperTypes().add(this.getDefinitionDeclaration());
-    portUsageEClass.getESuperTypes().add(this.getStructureUsageElement());
-    portUsageEClass.getESuperTypes().add(this.getMemberPrefix());
-    portUsageEClass.getESuperTypes().add(this.getOccurrenceUsagePrefix());
-    portUsageEClass.getESuperTypes().add(this.getBasicUsagePrefix());
-    portUsageEClass.getESuperTypes().add(this.getRefPrefix());
-    portUsageEClass.getESuperTypes().add(this.getUsage());
-    portUsageEClass.getESuperTypes().add(this.getUsageDeclaration());
-    portUsageEClass.getESuperTypes().add(this.getFeatureDeclaration());
-    portUsageEClass.getESuperTypes().add(this.getFeatureSpecializationPart());
-    portUsageEClass.getESuperTypes().add(this.getFeatureSpecialization());
-    portUsageEClass.getESuperTypes().add(this.getMultiplicityPart());
-    portUsageEClass.getESuperTypes().add(this.getFeatureValue());
-    connectionDefinitionEClass.getESuperTypes().add(this.getDefinitionElement());
-    connectionDefinitionEClass.getESuperTypes().add(this.getMemberPrefix());
-    connectionDefinitionEClass.getESuperTypes().add(this.getOccurrenceDefinitionPrefix());
-    connectionDefinitionEClass.getESuperTypes().add(this.getBasicDefinitionPrefix());
-    connectionDefinitionEClass.getESuperTypes().add(this.getDefinitionDeclaration());
-    connectionUsageEClass.getESuperTypes().add(this.getStructureUsageElement());
-    connectionUsageEClass.getESuperTypes().add(this.getMemberPrefix());
-    connectionUsageEClass.getESuperTypes().add(this.getOccurrenceUsagePrefix());
-    connectionUsageEClass.getESuperTypes().add(this.getBasicUsagePrefix());
-    connectionUsageEClass.getESuperTypes().add(this.getRefPrefix());
-    connectionUsageEClass.getESuperTypes().add(this.getUsageDeclaration());
-    connectionUsageEClass.getESuperTypes().add(this.getFeatureDeclaration());
-    connectionUsageEClass.getESuperTypes().add(this.getFeatureSpecializationPart());
-    connectionUsageEClass.getESuperTypes().add(this.getFeatureSpecialization());
-    connectionUsageEClass.getESuperTypes().add(this.getMultiplicityPart());
-    connectionUsageEClass.getESuperTypes().add(this.getFeatureValue());
-    connectionUsageEClass.getESuperTypes().add(this.getConnectorPart());
-    interfaceDefinitionEClass.getESuperTypes().add(this.getDefinitionElement());
-    interfaceDefinitionEClass.getESuperTypes().add(this.getMemberPrefix());
-    interfaceDefinitionEClass.getESuperTypes().add(this.getOccurrenceDefinitionPrefix());
-    interfaceDefinitionEClass.getESuperTypes().add(this.getBasicDefinitionPrefix());
-    interfaceDefinitionEClass.getESuperTypes().add(this.getDefinitionDeclaration());
-    interfaceUsageEClass.getESuperTypes().add(this.getStructureUsageElement());
-    interfaceUsageEClass.getESuperTypes().add(this.getMemberPrefix());
-    interfaceUsageEClass.getESuperTypes().add(this.getOccurrenceUsagePrefix());
-    interfaceUsageEClass.getESuperTypes().add(this.getBasicUsagePrefix());
-    interfaceUsageEClass.getESuperTypes().add(this.getRefPrefix());
-    interfaceUsageEClass.getESuperTypes().add(this.getUsageDeclaration());
-    interfaceUsageEClass.getESuperTypes().add(this.getFeatureDeclaration());
-    interfaceUsageEClass.getESuperTypes().add(this.getFeatureSpecializationPart());
-    interfaceUsageEClass.getESuperTypes().add(this.getFeatureSpecialization());
-    interfaceUsageEClass.getESuperTypes().add(this.getMultiplicityPart());
-    interfaceUsageEClass.getESuperTypes().add(this.getConnectorPart());
-    flowConnectionDefinitionEClass.getESuperTypes().add(this.getDefinitionElement());
-    flowConnectionDefinitionEClass.getESuperTypes().add(this.getMemberPrefix());
-    flowConnectionDefinitionEClass.getESuperTypes().add(this.getOccurrenceDefinitionPrefix());
-    flowConnectionDefinitionEClass.getESuperTypes().add(this.getBasicDefinitionPrefix());
-    flowConnectionDefinitionEClass.getESuperTypes().add(this.getDefinitionDeclaration());
-    flowConnectionUsageEClass.getESuperTypes().add(this.getStructureUsageElement());
-    flowConnectionUsageEClass.getESuperTypes().add(this.getMemberPrefix());
-    flowConnectionUsageEClass.getESuperTypes().add(this.getOccurrenceUsagePrefix());
-    flowConnectionUsageEClass.getESuperTypes().add(this.getBasicUsagePrefix());
-    flowConnectionUsageEClass.getESuperTypes().add(this.getRefPrefix());
-    flowConnectionUsageEClass.getESuperTypes().add(this.getUsageDeclaration());
-    flowConnectionUsageEClass.getESuperTypes().add(this.getFeatureDeclaration());
-    flowConnectionUsageEClass.getESuperTypes().add(this.getFeatureSpecializationPart());
-    flowConnectionUsageEClass.getESuperTypes().add(this.getFeatureSpecialization());
-    flowConnectionUsageEClass.getESuperTypes().add(this.getMultiplicityPart());
-    flowConnectionUsageEClass.getESuperTypes().add(this.getFeatureValue());
-    actionUsageEClass.getESuperTypes().add(this.getBehaviorUsageElement());
-    actionUsageEClass.getESuperTypes().add(this.getMemberPrefix());
-    actionUsageEClass.getESuperTypes().add(this.getOccurrenceUsagePrefix());
-    actionUsageEClass.getESuperTypes().add(this.getBasicUsagePrefix());
-    actionUsageEClass.getESuperTypes().add(this.getRefPrefix());
-    aliasElementEClass.getESuperTypes().add(this.getPackageBodyElement());
-    aliasElementEClass.getESuperTypes().add(this.getDefinitionBodyElement());
-    aliasElementEClass.getESuperTypes().add(this.getMemberPrefix());
-    definitionPrefixEClass.getESuperTypes().add(this.getBasicDefinitionPrefix());
-    occurrenceDefinitionPrefixEClass.getESuperTypes().add(this.getBasicDefinitionPrefix());
-    usagePrefixEClass.getESuperTypes().add(this.getUnextendedUsagePrefix());
-    usagePrefixEClass.getESuperTypes().add(this.getEndUsagePrefix());
-    usagePrefixEClass.getESuperTypes().add(this.getBasicUsagePrefix());
-    usagePrefixEClass.getESuperTypes().add(this.getRefPrefix());
-    unextendedUsagePrefixEClass.getESuperTypes().add(this.getEndUsagePrefix());
-    unextendedUsagePrefixEClass.getESuperTypes().add(this.getBasicUsagePrefix());
-    unextendedUsagePrefixEClass.getESuperTypes().add(this.getRefPrefix());
-    occurrenceUsagePrefixEClass.getESuperTypes().add(this.getBasicUsagePrefix());
-    occurrenceUsagePrefixEClass.getESuperTypes().add(this.getRefPrefix());
-    basicUsagePrefixEClass.getESuperTypes().add(this.getRefPrefix());
-    usageEClass.getESuperTypes().add(this.getUsageDeclaration());
-    usageEClass.getESuperTypes().add(this.getFeatureDeclaration());
-    usageEClass.getESuperTypes().add(this.getFeatureSpecializationPart());
-    usageEClass.getESuperTypes().add(this.getFeatureSpecialization());
-    usageEClass.getESuperTypes().add(this.getMultiplicityPart());
-    usageEClass.getESuperTypes().add(this.getFeatureValue());
-    usageDeclarationEClass.getESuperTypes().add(this.getFeatureDeclaration());
-    usageDeclarationEClass.getESuperTypes().add(this.getFeatureSpecializationPart());
-    usageDeclarationEClass.getESuperTypes().add(this.getFeatureSpecialization());
-    usageDeclarationEClass.getESuperTypes().add(this.getMultiplicityPart());
-    featureDeclarationEClass.getESuperTypes().add(this.getFeatureSpecializationPart());
-    featureDeclarationEClass.getESuperTypes().add(this.getFeatureSpecialization());
-    featureDeclarationEClass.getESuperTypes().add(this.getMultiplicityPart());
-    featureSpecializationPartEClass.getESuperTypes().add(this.getFeatureSpecialization());
-    featureSpecializationPartEClass.getESuperTypes().add(this.getMultiplicityPart());
-
-    // Initialize classes and features; add operations and parameters
-    initEClass(namespaceEClass, Namespace.class, "Namespace", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getNamespace_Intro(), this.getCodeAnnotation(), null, "intro", null, 0, -1, Namespace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getNamespace_Packages(), this.getPackage(), null, "packages", null, 0, -1, Namespace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(packageEClass, dut.control.sysmloc.sysMLOC.Package.class, "Package", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getPackage_DeclaredName(), ecorePackage.getEString(), "declaredName", null, 0, 1, dut.control.sysmloc.sysMLOC.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPackage_Elements(), this.getPackageBodyElement(), null, "elements", null, 0, -1, dut.control.sysmloc.sysMLOC.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(packageBodyElementEClass, PackageBodyElement.class, "PackageBodyElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(definitionBodyElementEClass, DefinitionBodyElement.class, "DefinitionBodyElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(usageBodyElementEClass, UsageBodyElement.class, "UsageBodyElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(interBodyElementEClass, InterBodyElement.class, "InterBodyElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(enumerationBodyElementEClass, EnumerationBodyElement.class, "EnumerationBodyElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(annotatingElementEClass, AnnotatingElement.class, "AnnotatingElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(importElementEClass, ImportElement.class, "ImportElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(definitionElementEClass, DefinitionElement.class, "DefinitionElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(usageElementEClass, UsageElement.class, "UsageElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(nonOccurrenceUsageElementEClass, NonOccurrenceUsageElement.class, "NonOccurrenceUsageElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(occurrenceUsageElementEClass, OccurrenceUsageElement.class, "OccurrenceUsageElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(structureUsageElementEClass, StructureUsageElement.class, "StructureUsageElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(behaviorUsageElementEClass, BehaviorUsageElement.class, "BehaviorUsageElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(enumerationElementEClass, EnumerationElement.class, "EnumerationElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(namespaceImportEClass, NamespaceImport.class, "NamespaceImport", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getNamespaceImport_Visibility(), this.getVisibilityIndicator(), "visibility", null, 0, 1, NamespaceImport.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getNamespaceImport_DeclaredName(), ecorePackage.getEString(), "declaredName", null, 0, 1, NamespaceImport.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getNamespaceImport_IsRecursive(), ecorePackage.getEBoolean(), "isRecursive", null, 0, 1, NamespaceImport.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(membershipImportEClass, MembershipImport.class, "MembershipImport", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getMembershipImport_Visibility(), this.getVisibilityIndicator(), "visibility", null, 0, 1, MembershipImport.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getMembershipImport_DeclaredName(), ecorePackage.getEString(), "declaredName", null, 0, 1, MembershipImport.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getMembershipImport_IsRecursive(), ecorePackage.getEBoolean(), "isRecursive", null, 0, 1, MembershipImport.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(codeAnnotationEClass, CodeAnnotation.class, "CodeAnnotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getCodeAnnotation_Body(), ecorePackage.getEString(), "body", null, 0, 1, CodeAnnotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(commentEClass, Comment.class, "Comment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getComment_AnnotatedElement(), ecorePackage.getEString(), "annotatedElement", null, 0, -1, Comment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getComment_Locale(), ecorePackage.getEString(), "locale", null, 0, 1, Comment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getComment_Body(), ecorePackage.getEString(), "body", null, 0, 1, Comment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(documentationEClass, Documentation.class, "Documentation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDocumentation_Locale(), ecorePackage.getEString(), "locale", null, 0, 1, Documentation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDocumentation_Body(), ecorePackage.getEString(), "body", null, 0, 1, Documentation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(textualRepresentationEClass, TextualRepresentation.class, "TextualRepresentation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getTextualRepresentation_Language(), ecorePackage.getEString(), "language", null, 0, 1, TextualRepresentation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getTextualRepresentation_Body(), ecorePackage.getEString(), "body", null, 0, 1, TextualRepresentation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(attributeDefinitionEClass, AttributeDefinition.class, "AttributeDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAttributeDefinition_Elements(), this.getDefinitionBodyElement(), null, "elements", null, 0, -1, AttributeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(attributeUsageEClass, AttributeUsage.class, "AttributeUsage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(enumerationDefinitionEClass, EnumerationDefinition.class, "EnumerationDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getEnumerationDefinition_Elements(), this.getEnumerationBodyElement(), null, "elements", null, 0, -1, EnumerationDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(enumeratedValueEClass, EnumeratedValue.class, "EnumeratedValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(enumerationUsageEClass, EnumerationUsage.class, "EnumerationUsage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(itemDefinitionEClass, ItemDefinition.class, "ItemDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getItemDefinition_Elements(), this.getDefinitionBodyElement(), null, "elements", null, 0, -1, ItemDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(itemUsageEClass, ItemUsage.class, "ItemUsage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(partDefinitionEClass, PartDefinition.class, "PartDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getPartDefinition_Elements(), this.getDefinitionBodyElement(), null, "elements", null, 0, -1, PartDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(partUsageEClass, PartUsage.class, "PartUsage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(portDefinitionEClass, PortDefinition.class, "PortDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getPortDefinition_Elements(), this.getDefinitionBodyElement(), null, "elements", null, 0, -1, PortDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(portUsageEClass, PortUsage.class, "PortUsage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(connectionDefinitionEClass, ConnectionDefinition.class, "ConnectionDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getConnectionDefinition_Elements(), this.getDefinitionBodyElement(), null, "elements", null, 0, -1, ConnectionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(connectionUsageEClass, ConnectionUsage.class, "ConnectionUsage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getConnectionUsage_Elements(), this.getUsageBodyElement(), null, "elements", null, 0, -1, ConnectionUsage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(interfaceDefinitionEClass, InterfaceDefinition.class, "InterfaceDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getInterfaceDefinition_Elements(), this.getDefinitionBodyElement(), null, "elements", null, 0, -1, InterfaceDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(interfaceUsageEClass, InterfaceUsage.class, "InterfaceUsage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getInterfaceUsage_Elements(), this.getInterBodyElement(), null, "elements", null, 0, -1, InterfaceUsage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(flowConnectionDefinitionEClass, FlowConnectionDefinition.class, "FlowConnectionDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getFlowConnectionDefinition_Elements(), this.getDefinitionBodyElement(), null, "elements", null, 0, -1, FlowConnectionDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(flowConnectionUsageEClass, FlowConnectionUsage.class, "FlowConnectionUsage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getFlowConnectionUsage_ItemFeature(), ecorePackage.getEString(), "ItemFeature", null, 0, -1, FlowConnectionUsage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getFlowConnectionUsage_FlowEnd(), ecorePackage.getEString(), "FlowEnd", null, 0, -1, FlowConnectionUsage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFlowConnectionUsage_Elements(), this.getUsageBodyElement(), null, "elements", null, 0, -1, FlowConnectionUsage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(actionUsageEClass, ActionUsage.class, "ActionUsage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getActionUsage_DeclaredName(), ecorePackage.getEString(), "declaredName", null, 0, 1, ActionUsage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getActionUsage_Elements(), this.getUsageBodyElement(), null, "elements", null, 0, -1, ActionUsage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(aliasElementEClass, AliasElement.class, "AliasElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAliasElement_MemberShortName(), ecorePackage.getEString(), "memberShortName", null, 0, 1, AliasElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getAliasElement_MemberName(), ecorePackage.getEString(), "memberName", null, 0, 1, AliasElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getAliasElement_MemberElement(), ecorePackage.getEString(), "memberElement", null, 0, 1, AliasElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAliasElement_Elements(), this.getAnnotatingElement(), null, "elements", null, 0, -1, AliasElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(connectorEndEClass, ConnectorEnd.class, "ConnectorEnd", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getConnectorEnd_Multiplicity(), ecorePackage.getEString(), "Multiplicity", null, 0, -1, ConnectorEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getConnectorEnd_DelcaredName(), ecorePackage.getEString(), "delcaredName", null, 0, 1, ConnectorEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getConnectorEnd_RefElement(), ecorePackage.getEString(), "refElement", null, 0, 1, ConnectorEnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(isImportAllFragmentEClass, isImportAllFragment.class, "isImportAllFragment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getisImportAllFragment_IsImportAll(), ecorePackage.getEBoolean(), "isImportAll", null, 0, 1, isImportAllFragment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(memberPrefixEClass, MemberPrefix.class, "MemberPrefix", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getMemberPrefix_Visibility(), this.getVisibilityIndicator(), "visibility", null, 0, 1, MemberPrefix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(definitionPrefixEClass, DefinitionPrefix.class, "DefinitionPrefix", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(occurrenceDefinitionPrefixEClass, OccurrenceDefinitionPrefix.class, "OccurrenceDefinitionPrefix", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getOccurrenceDefinitionPrefix_IsIndividual(), ecorePackage.getEBoolean(), "isIndividual", null, 0, 1, OccurrenceDefinitionPrefix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(basicDefinitionPrefixEClass, BasicDefinitionPrefix.class, "BasicDefinitionPrefix", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getBasicDefinitionPrefix_IsAbstract(), ecorePackage.getEBoolean(), "isAbstract", null, 0, 1, BasicDefinitionPrefix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getBasicDefinitionPrefix_IsVariation(), ecorePackage.getEBoolean(), "isVariation", null, 0, 1, BasicDefinitionPrefix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(usagePrefixEClass, UsagePrefix.class, "UsagePrefix", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(unextendedUsagePrefixEClass, UnextendedUsagePrefix.class, "UnextendedUsagePrefix", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(endUsagePrefixEClass, EndUsagePrefix.class, "EndUsagePrefix", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getEndUsagePrefix_IsEnd(), ecorePackage.getEBoolean(), "isEnd", null, 0, 1, EndUsagePrefix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(occurrenceUsagePrefixEClass, OccurrenceUsagePrefix.class, "OccurrenceUsagePrefix", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getOccurrenceUsagePrefix_IsEnd(), ecorePackage.getEBoolean(), "isEnd", null, 0, 1, OccurrenceUsagePrefix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getOccurrenceUsagePrefix_IsIndividual(), ecorePackage.getEBoolean(), "isIndividual", null, 0, 1, OccurrenceUsagePrefix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getOccurrenceUsagePrefix_PortionKind(), this.getPortionKind(), "portionKind", null, 0, 1, OccurrenceUsagePrefix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(refPrefixEClass, RefPrefix.class, "RefPrefix", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getRefPrefix_Direction(), this.getFeatureDirection(), "direction", null, 0, 1, RefPrefix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRefPrefix_IsAbstract(), ecorePackage.getEBoolean(), "isAbstract", null, 0, 1, RefPrefix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRefPrefix_IsVariation(), ecorePackage.getEBoolean(), "isVariation", null, 0, 1, RefPrefix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRefPrefix_IsReadOnly(), ecorePackage.getEBoolean(), "isReadOnly", null, 0, 1, RefPrefix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRefPrefix_IsDerived(), ecorePackage.getEBoolean(), "isDerived", null, 0, 1, RefPrefix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(basicUsagePrefixEClass, BasicUsagePrefix.class, "BasicUsagePrefix", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getBasicUsagePrefix_IsReference(), ecorePackage.getEBoolean(), "isReference", null, 0, 1, BasicUsagePrefix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(connectorPartEClass, ConnectorPart.class, "ConnectorPart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getConnectorPart_ConnectorPart(), this.getConnectorEnd(), null, "connectorPart", null, 0, -1, ConnectorPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(definitionDeclarationEClass, DefinitionDeclaration.class, "DefinitionDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDefinitionDeclaration_DeclaredName(), ecorePackage.getEString(), "declaredName", null, 0, 1, DefinitionDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDefinitionDeclaration_Superclassifiers(), ecorePackage.getEString(), "superclassifiers", null, 0, -1, DefinitionDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(usageEClass, Usage.class, "Usage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getUsage_Elements(), this.getUsageBodyElement(), null, "elements", null, 0, -1, Usage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(usageDeclarationEClass, UsageDeclaration.class, "UsageDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(featureValueEClass, FeatureValue.class, "FeatureValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getFeatureValue_IsInitial(), ecorePackage.getEBoolean(), "isInitial", null, 0, 1, FeatureValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getFeatureValue_IsDefault(), ecorePackage.getEBoolean(), "isDefault", null, 0, 1, FeatureValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getFeatureValue_ValuePart(), ecorePackage.getEString(), "valuePart", null, 0, -1, FeatureValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(featureDeclarationEClass, FeatureDeclaration.class, "FeatureDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getFeatureDeclaration_DeclaredName(), ecorePackage.getEString(), "declaredName", null, 0, 1, FeatureDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(featureSpecializationPartEClass, FeatureSpecializationPart.class, "FeatureSpecializationPart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(identificationEClass, Identification.class, "Identification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getIdentification_DeclaredShortName(), ecorePackage.getEString(), "declaredShortName", null, 0, 1, Identification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getIdentification_DeclaredName(), ecorePackage.getEString(), "declaredName", null, 0, 1, Identification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(multiplicityPartEClass, MultiplicityPart.class, "MultiplicityPart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getMultiplicityPart_Multiplicity(), ecorePackage.getEString(), "Multiplicity", null, 0, -1, MultiplicityPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getMultiplicityPart_IsOrdered(), ecorePackage.getEBoolean(), "isOrdered", null, 0, 1, MultiplicityPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getMultiplicityPart_IsNonunique(), ecorePackage.getEBoolean(), "isNonunique", null, 0, 1, MultiplicityPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(featureSpecializationEClass, FeatureSpecialization.class, "FeatureSpecialization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getFeatureSpecialization_Typings(), ecorePackage.getEString(), "typings", null, 0, -1, FeatureSpecialization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getFeatureSpecialization_Subsetting(), ecorePackage.getEString(), "subsetting", null, 0, -1, FeatureSpecialization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getFeatureSpecialization_References(), ecorePackage.getEString(), "references", null, 0, -1, FeatureSpecialization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getFeatureSpecialization_Crosses(), ecorePackage.getEString(), "crosses", null, 0, -1, FeatureSpecialization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getFeatureSpecialization_Redefinitions(), ecorePackage.getEString(), "redefinitions", null, 0, -1, FeatureSpecialization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    // Initialize enums and add enum literals
-    initEEnum(visibilityIndicatorEEnum, VisibilityIndicator.class, "VisibilityIndicator");
-    addEEnumLiteral(visibilityIndicatorEEnum, VisibilityIndicator.PUBLIC);
-    addEEnumLiteral(visibilityIndicatorEEnum, VisibilityIndicator.PRIVATE);
-    addEEnumLiteral(visibilityIndicatorEEnum, VisibilityIndicator.PROTECTED);
-
-    initEEnum(featureDirectionEEnum, FeatureDirection.class, "FeatureDirection");
-    addEEnumLiteral(featureDirectionEEnum, FeatureDirection.IN);
-    addEEnumLiteral(featureDirectionEEnum, FeatureDirection.OUT);
-    addEEnumLiteral(featureDirectionEEnum, FeatureDirection.INOUT);
-
-    initEEnum(portionKindEEnum, PortionKind.class, "PortionKind");
-    addEEnumLiteral(portionKindEEnum, PortionKind.SNAPSHOT);
-    addEEnumLiteral(portionKindEEnum, PortionKind.TIMESLICE);
-
-    // Create resource
-    createResource(eNS_URI);
+    if (eClassifier.getInstanceClassName() == null)
+    {
+      eClassifier.setInstanceClassName("dut.control.sysmloc.sysMLOC." + eClassifier.getName());
+      setGeneratedClassName(eClassifier);
+    }
   }
 
 } //SysMLOCPackageImpl

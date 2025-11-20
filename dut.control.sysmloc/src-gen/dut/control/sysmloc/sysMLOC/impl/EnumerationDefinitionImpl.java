@@ -6,7 +6,9 @@ package dut.control.sysmloc.sysMLOC.impl;
 import dut.control.sysmloc.sysMLOC.DefinitionDeclaration;
 import dut.control.sysmloc.sysMLOC.EnumerationBodyElement;
 import dut.control.sysmloc.sysMLOC.EnumerationDefinition;
+import dut.control.sysmloc.sysMLOC.MemberPrefix;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
+import dut.control.sysmloc.sysMLOC.VisibilityIndicator;
 
 import java.util.Collection;
 
@@ -32,6 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EnumerationDefinitionImpl#getVisibility <em>Visibility</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EnumerationDefinitionImpl#getDeclaredName <em>Declared Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EnumerationDefinitionImpl#getSuperclassifiers <em>Superclassifiers</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EnumerationDefinitionImpl#getElements <em>Elements</em>}</li>
@@ -41,6 +44,26 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class EnumerationDefinitionImpl extends DefinitionElementImpl implements EnumerationDefinition
 {
+  /**
+   * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVisibility()
+   * @generated
+   * @ordered
+   */
+  protected static final VisibilityIndicator VISIBILITY_EDEFAULT = VisibilityIndicator.PUBLIC;
+
+  /**
+   * The cached value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVisibility()
+   * @generated
+   * @ordered
+   */
+  protected VisibilityIndicator visibility = VISIBILITY_EDEFAULT;
+
   /**
    * The default value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -99,7 +122,32 @@ public class EnumerationDefinitionImpl extends DefinitionElementImpl implements 
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.ENUMERATION_DEFINITION;
+    return SysMLOCPackage.eINSTANCE.getEnumerationDefinition();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public VisibilityIndicator getVisibility()
+  {
+    return visibility;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setVisibility(VisibilityIndicator newVisibility)
+  {
+    VisibilityIndicator oldVisibility = visibility;
+    visibility = newVisibility == null ? VISIBILITY_EDEFAULT : newVisibility;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ENUMERATION_DEFINITION__VISIBILITY, oldVisibility, visibility));
   }
 
   /**
@@ -183,6 +231,8 @@ public class EnumerationDefinitionImpl extends DefinitionElementImpl implements 
   {
     switch (featureID)
     {
+      case SysMLOCPackage.ENUMERATION_DEFINITION__VISIBILITY:
+        return getVisibility();
       case SysMLOCPackage.ENUMERATION_DEFINITION__DECLARED_NAME:
         return getDeclaredName();
       case SysMLOCPackage.ENUMERATION_DEFINITION__SUPERCLASSIFIERS:
@@ -204,6 +254,9 @@ public class EnumerationDefinitionImpl extends DefinitionElementImpl implements 
   {
     switch (featureID)
     {
+      case SysMLOCPackage.ENUMERATION_DEFINITION__VISIBILITY:
+        setVisibility((VisibilityIndicator)newValue);
+        return;
       case SysMLOCPackage.ENUMERATION_DEFINITION__DECLARED_NAME:
         setDeclaredName((String)newValue);
         return;
@@ -229,6 +282,9 @@ public class EnumerationDefinitionImpl extends DefinitionElementImpl implements 
   {
     switch (featureID)
     {
+      case SysMLOCPackage.ENUMERATION_DEFINITION__VISIBILITY:
+        setVisibility(VISIBILITY_EDEFAULT);
+        return;
       case SysMLOCPackage.ENUMERATION_DEFINITION__DECLARED_NAME:
         setDeclaredName(DECLARED_NAME_EDEFAULT);
         return;
@@ -252,6 +308,8 @@ public class EnumerationDefinitionImpl extends DefinitionElementImpl implements 
   {
     switch (featureID)
     {
+      case SysMLOCPackage.ENUMERATION_DEFINITION__VISIBILITY:
+        return visibility != VISIBILITY_EDEFAULT;
       case SysMLOCPackage.ENUMERATION_DEFINITION__DECLARED_NAME:
         return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
       case SysMLOCPackage.ENUMERATION_DEFINITION__SUPERCLASSIFIERS:
@@ -270,6 +328,14 @@ public class EnumerationDefinitionImpl extends DefinitionElementImpl implements 
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
   {
+    if (baseClass == MemberPrefix.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.ENUMERATION_DEFINITION__VISIBILITY: return SysMLOCPackage.MEMBER_PREFIX__VISIBILITY;
+        default: return -1;
+      }
+    }
     if (baseClass == DefinitionDeclaration.class)
     {
       switch (derivedFeatureID)
@@ -290,6 +356,14 @@ public class EnumerationDefinitionImpl extends DefinitionElementImpl implements 
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
   {
+    if (baseClass == MemberPrefix.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.MEMBER_PREFIX__VISIBILITY: return SysMLOCPackage.ENUMERATION_DEFINITION__VISIBILITY;
+        default: return -1;
+      }
+    }
     if (baseClass == DefinitionDeclaration.class)
     {
       switch (baseFeatureID)
@@ -313,7 +387,9 @@ public class EnumerationDefinitionImpl extends DefinitionElementImpl implements 
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (declaredName: ");
+    result.append(" (visibility: ");
+    result.append(visibility);
+    result.append(", declaredName: ");
     result.append(declaredName);
     result.append(", superclassifiers: ");
     result.append(superclassifiers);

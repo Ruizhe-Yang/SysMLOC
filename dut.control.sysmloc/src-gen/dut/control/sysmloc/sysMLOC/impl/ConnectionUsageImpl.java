@@ -104,7 +104,7 @@ public class ConnectionUsageImpl extends StructureUsageElementImpl implements Co
    * @generated
    * @ordered
    */
-  protected static final FeatureDirection DIRECTION_EDEFAULT = FeatureDirection.IN;
+  protected static final FeatureDirection DIRECTION_EDEFAULT = FeatureDirection.INOUT;
 
   /**
    * The cached value of the '{@link #getDirection() <em>Direction</em>}' attribute.
@@ -484,7 +484,7 @@ public class ConnectionUsageImpl extends StructureUsageElementImpl implements Co
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.CONNECTION_USAGE;
+    return SysMLOCPackage.eINSTANCE.getConnectionUsage();
   }
 
   /**

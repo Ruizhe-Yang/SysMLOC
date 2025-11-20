@@ -87,7 +87,7 @@ public class IdentificationImpl extends MinimalEObjectImpl.Container implements 
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.IDENTIFICATION;
+    return SysMLOCPackage.eINSTANCE.getIdentification();
   }
 
   /**

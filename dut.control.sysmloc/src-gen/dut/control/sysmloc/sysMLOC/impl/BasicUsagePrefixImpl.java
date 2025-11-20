@@ -65,7 +65,7 @@ public class BasicUsagePrefixImpl extends RefPrefixImpl implements BasicUsagePre
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.BASIC_USAGE_PREFIX;
+    return SysMLOCPackage.eINSTANCE.getBasicUsagePrefix();
   }
 
   /**

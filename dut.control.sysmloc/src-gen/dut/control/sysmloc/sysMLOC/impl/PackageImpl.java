@@ -85,7 +85,7 @@ public class PackageImpl extends PackageBodyElementImpl implements dut.control.s
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.PACKAGE;
+    return SysMLOCPackage.eINSTANCE.getPackage();
   }
 
   /**

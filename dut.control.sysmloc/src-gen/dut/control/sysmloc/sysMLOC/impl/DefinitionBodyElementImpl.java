@@ -35,7 +35,7 @@ public class DefinitionBodyElementImpl extends UsageBodyElementImpl implements D
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.DEFINITION_BODY_ELEMENT;
+    return SysMLOCPackage.eINSTANCE.getDefinitionBodyElement();
   }
 
 } //DefinitionBodyElementImpl

@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class UsageBodyElementImpl extends InterBodyElementImpl implements UsageBodyElement
+public class UsageBodyElementImpl extends InterfaceBodyElementImpl implements UsageBodyElement
 {
   /**
    * <!-- begin-user-doc -->
@@ -35,7 +35,7 @@ public class UsageBodyElementImpl extends InterBodyElementImpl implements UsageB
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.USAGE_BODY_ELEMENT;
+    return SysMLOCPackage.eINSTANCE.getUsageBodyElement();
   }
 
 } //UsageBodyElementImpl

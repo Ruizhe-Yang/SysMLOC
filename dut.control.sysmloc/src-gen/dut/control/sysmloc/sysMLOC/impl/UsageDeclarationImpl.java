@@ -35,7 +35,7 @@ public class UsageDeclarationImpl extends FeatureDeclarationImpl implements Usag
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.USAGE_DECLARATION;
+    return SysMLOCPackage.eINSTANCE.getUsageDeclaration();
   }
 
 } //UsageDeclarationImpl

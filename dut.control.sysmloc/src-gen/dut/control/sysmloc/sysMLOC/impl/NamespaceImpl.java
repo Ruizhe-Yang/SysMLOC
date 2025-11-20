@@ -75,7 +75,7 @@ public class NamespaceImpl extends MinimalEObjectImpl.Container implements Names
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.NAMESPACE;
+    return SysMLOCPackage.eINSTANCE.getNamespace();
   }
 
   /**

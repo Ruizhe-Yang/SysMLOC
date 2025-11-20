@@ -65,7 +65,7 @@ public class CodeAnnotationImpl extends PackageBodyElementImpl implements CodeAn
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.CODE_ANNOTATION;
+    return SysMLOCPackage.eINSTANCE.getCodeAnnotation();
   }
 
   /**

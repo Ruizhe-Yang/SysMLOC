@@ -21,6 +21,16 @@ import org.eclipse.emf.common.util.Enumerator;
 public enum FeatureDirection implements Enumerator
 {
   /**
+   * The '<em><b>Inout</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #INOUT_VALUE
+   * @generated
+   * @ordered
+   */
+  INOUT(0, "inout", "inout"),
+
+  /**
    * The '<em><b>In</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -28,7 +38,7 @@ public enum FeatureDirection implements Enumerator
    * @generated
    * @ordered
    */
-  IN(0, "in", "in"),
+  IN(1, "in", "in"),
 
   /**
    * The '<em><b>Out</b></em>' literal object.
@@ -38,39 +48,7 @@ public enum FeatureDirection implements Enumerator
    * @generated
    * @ordered
    */
-  OUT(1, "out", "out"),
-
-  /**
-   * The '<em><b>Inout</b></em>' literal object.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #INOUT_VALUE
-   * @generated
-   * @ordered
-   */
-  INOUT(2, "inout", "inout");
-
-  /**
-   * The '<em><b>In</b></em>' literal value.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #IN
-   * @model name="in"
-   * @generated
-   * @ordered
-   */
-  public static final int IN_VALUE = 0;
-
-  /**
-   * The '<em><b>Out</b></em>' literal value.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #OUT
-   * @model name="out"
-   * @generated
-   * @ordered
-   */
-  public static final int OUT_VALUE = 1;
+  OUT(2, "out", "out");
 
   /**
    * The '<em><b>Inout</b></em>' literal value.
@@ -81,7 +59,29 @@ public enum FeatureDirection implements Enumerator
    * @generated
    * @ordered
    */
-  public static final int INOUT_VALUE = 2;
+  public static final int INOUT_VALUE = 0;
+
+  /**
+   * The '<em><b>In</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #IN
+   * @model name="in"
+   * @generated
+   * @ordered
+   */
+  public static final int IN_VALUE = 1;
+
+  /**
+   * The '<em><b>Out</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #OUT
+   * @model name="out"
+   * @generated
+   * @ordered
+   */
+  public static final int OUT_VALUE = 2;
 
   /**
    * An array of all the '<em><b>Feature Direction</b></em>' enumerators.
@@ -92,9 +92,9 @@ public enum FeatureDirection implements Enumerator
   private static final FeatureDirection[] VALUES_ARRAY =
     new FeatureDirection[]
     {
+      INOUT,
       IN,
       OUT,
-      INOUT,
     };
 
   /**
@@ -159,9 +159,9 @@ public enum FeatureDirection implements Enumerator
   {
     switch (value)
     {
+      case INOUT_VALUE: return INOUT;
       case IN_VALUE: return IN;
       case OUT_VALUE: return OUT;
-      case INOUT_VALUE: return INOUT;
     }
     return null;
   }

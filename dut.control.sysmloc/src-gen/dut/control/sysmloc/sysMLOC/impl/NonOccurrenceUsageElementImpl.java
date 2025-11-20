@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class NonOccurrenceUsageElementImpl extends UsageElementImpl implements NonOccurrenceUsageElement
+public class NonOccurrenceUsageElementImpl extends ActionBodyElementImpl implements NonOccurrenceUsageElement
 {
   /**
    * <!-- begin-user-doc -->
@@ -35,7 +35,7 @@ public class NonOccurrenceUsageElementImpl extends UsageElementImpl implements N
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.NON_OCCURRENCE_USAGE_ELEMENT;
+    return SysMLOCPackage.eINSTANCE.getNonOccurrenceUsageElement();
   }
 
 } //NonOccurrenceUsageElementImpl

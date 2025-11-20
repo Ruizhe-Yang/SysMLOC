@@ -87,7 +87,7 @@ public class BasicDefinitionPrefixImpl extends MinimalEObjectImpl.Container impl
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.BASIC_DEFINITION_PREFIX;
+    return SysMLOCPackage.eINSTANCE.getBasicDefinitionPrefix();
   }
 
   /**

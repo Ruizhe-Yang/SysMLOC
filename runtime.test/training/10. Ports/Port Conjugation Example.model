@@ -10,7 +10,7 @@
       <elements xsi:type="sysMLOC:ItemUsage" direction="out" declaredName="fuelSupply">
         <typings>Fuel</typings>
       </elements>
-      <elements xsi:type="sysMLOC:ItemUsage" declaredName="fuelReturn">
+      <elements xsi:type="sysMLOC:ItemUsage" direction="in" declaredName="fuelReturn">
         <typings>Fuel</typings>
       </elements>
     </elements>

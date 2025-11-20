@@ -23,15 +23,15 @@
           <redefinitions>Engine::cyl</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:PortUsage" isReference="true" declaredName="cylinderBR">
+      <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="cylinderBR">
         <Multiplicity>*</Multiplicity>
         <valuePart>eng.cyl</valuePart>
       </elements>
-      <elements xsi:type="sysMLOC:PortUsage" isReference="true" declaredName="rollBarBR">
+      <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="rollBarBR">
         <Multiplicity>*</Multiplicity>
         <valuePart>chs.rb</valuePart>
       </elements>
-      <elements xsi:type="sysMLOC:PortUsage" isReference="true" declaredName="lugBoltBR">
+      <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="lugBoltBR">
         <Multiplicity>24</Multiplicity>
         <Multiplicity>32</Multiplicity>
         <valuePart>chs.w.lb</valuePart>
@@ -73,32 +73,32 @@
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Cylinder"/>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="'Vehicle Model 1'">
       <superclassifiers>Vehicle</superclassifiers>
-      <elements xsi:type="sysMLOC:PortUsage" isReference="true">
+      <elements xsi:type="sysMLOC:ReferenceUsage">
         <redefinitions>cylinderBR</redefinitions>
         <Multiplicity>4</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:PortUsage" isReference="true">
+      <elements xsi:type="sysMLOC:ReferenceUsage">
         <typings>LightRollBar</typings>
         <redefinitions>rollBarBR</redefinitions>
         <Multiplicity>*</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:PortUsage" isReference="true">
+      <elements xsi:type="sysMLOC:ReferenceUsage">
         <redefinitions>lugBoltBR</redefinitions>
         <Multiplicity>24</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="'Vehicle Model 2'">
       <superclassifiers>Vehicle</superclassifiers>
-      <elements xsi:type="sysMLOC:PortUsage" isReference="true">
+      <elements xsi:type="sysMLOC:ReferenceUsage">
         <redefinitions>cylinderBR</redefinitions>
         <Multiplicity>6</Multiplicity>
         <Multiplicity>8</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:PortUsage" isReference="true">
+      <elements xsi:type="sysMLOC:ReferenceUsage">
         <redefinitions>rollBarBR</redefinitions>
         <Multiplicity>0</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:PortUsage" isReference="true">
+      <elements xsi:type="sysMLOC:ReferenceUsage">
         <redefinitions>lugBoltBR</redefinitions>
         <Multiplicity>24</Multiplicity>
         <Multiplicity>28</Multiplicity>

@@ -35,7 +35,7 @@ public class DefinitionPrefixImpl extends BasicDefinitionPrefixImpl implements D
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.DEFINITION_PREFIX;
+    return SysMLOCPackage.eINSTANCE.getDefinitionPrefix();
   }
 
 } //DefinitionPrefixImpl

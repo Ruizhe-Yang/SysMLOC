@@ -10,7 +10,7 @@
       <elements xsi:type="sysMLOC:ItemUsage" direction="out" declaredName="fuelSupply">
         <typings>Fuel</typings>
       </elements>
-      <elements xsi:type="sysMLOC:ItemUsage" declaredName="fuelReturn">
+      <elements xsi:type="sysMLOC:ItemUsage" direction="in" declaredName="fuelReturn">
         <typings>Fuel</typings>
       </elements>
     </elements>
@@ -18,7 +18,7 @@
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="temperature">
         <typings>Temp</typings>
       </elements>
-      <elements xsi:type="sysMLOC:ItemUsage" declaredName="fuelSupply">
+      <elements xsi:type="sysMLOC:ItemUsage" direction="in" declaredName="fuelSupply">
         <typings>Fuel</typings>
       </elements>
       <elements xsi:type="sysMLOC:ItemUsage" direction="out" declaredName="fuelReturn">

@@ -187,7 +187,7 @@ public class InterfaceDefinitionImpl extends DefinitionElementImpl implements In
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.INTERFACE_DEFINITION;
+    return SysMLOCPackage.eINSTANCE.getInterfaceDefinition();
   }
 
   /**

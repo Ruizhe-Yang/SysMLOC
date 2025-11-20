@@ -187,7 +187,7 @@ public class FlowConnectionDefinitionImpl extends DefinitionElementImpl implemen
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.FLOW_CONNECTION_DEFINITION;
+    return SysMLOCPackage.eINSTANCE.getFlowConnectionDefinition();
   }
 
   /**

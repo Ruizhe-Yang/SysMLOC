@@ -52,8 +52,19 @@ EnumerationBodyElement:
 ;
 
 ActionBodyElement:
-	ImportElement
+	AnnotatingElement
+	| ImportElement
 	| AliasElement
+	| DefinitionElement
+//	| VariantUsageMember
+	| NonOccurrenceUsageElement
+//	| (EmptySuccession? StructureUsageMember)
+	| StructureUsageElement
+//	| (InitialNodeMember TargetSuccessionMember*)
+//	| (EmptySuccession? (BehaviorUsageElement | ActionNodeMember) TargetSuccessionMember*)
+	| BehaviorUsageElement
+	| ActionNodeElement
+//	| GuardedSuccessionMember
 ;
 
 // TODO --------------------------------- Abstract Level ---------------------------------//
@@ -112,17 +123,19 @@ UsageElement:
 ;
 
 NonOccurrenceUsageElement:
-//	ReferenceUsage
-	AttributeUsage
+	DefaultReferenceUsage
+	| ReferenceUsage
+	| AttributeUsage
 	| EnumerationUsage
 	| BindingConnectorAsUsage
-//	| SuccessionAsUsage
+	| SuccessionAsUsage
 //	| ExtendedUsage
 	
 ;
 
 OccurrenceUsageElement: 
-	StructureUsageElement | BehaviorUsageElement
+	StructureUsageElement 
+	| BehaviorUsageElement
 ;
 
 StructureUsageElement:
@@ -140,7 +153,7 @@ StructureUsageElement:
 //	| AllocationUsage
 //	| Message
 	| FlowConnectionUsage
-//	| SuccessionFlowConnectionUsage
+	| SuccessionFlowConnectionUsage
 ;
 //
 BehaviorUsageElement:
@@ -164,6 +177,17 @@ BehaviorUsageElement:
 
 EnumerationElement:
 	EnumeratedValue
+;
+
+ActionNodeElement:
+	SendNode
+//	| AcceptNode 
+//	| AssignmentNode 
+//	| IfNode 
+//	| WhileLoopNode 
+//	| ForLoopNode
+//	| TerminateNode
+//	| ControlNode
 ;
 
 // TODO --------------------------------- Instance Level ---------------------------------//
@@ -200,11 +224,23 @@ TextualRepresentation:
     body = REGULAR_COMMENT
 ;
 
+DefaultReferenceUsage:
+    MemberPrefix
+    ( isEnd ?= 'end' )?
+    RefPrefix
+    UsageDeclaration
+    ValuePart?
+     (';' | '{' (elements+=UsageBodyElement)* '}')
+;
 
-//ReferenceUsage:
-//    OccurrenceUsagePrefix Usage (';' | '{' (elements+=GenericElement)* '}')
-//;
-    
+ReferenceUsage:
+    MemberPrefix
+    ( EndUsagePrefix | RefPrefix) 
+    'ref'
+    Usage
+     (';' | '{' (elements+=UsageBodyElement)* '}')
+;
+
 AttributeDefinition:
 	MemberPrefix DefinitionPrefix 'attribute' 'def' DefinitionDeclaration 
 	(';' | '{' (elements+=DefinitionBodyElement)* '}')
@@ -216,26 +252,39 @@ AttributeUsage:
 ;
 
 EnumerationDefinition:
+	MemberPrefix
 //	DefinitionExtensionKeyword*
 	'enum' 'def' DefinitionDeclaration
 	(';' | '{' (elements+=EnumerationBodyElement)* '}')
 ;
 
 EnumeratedValue:
+	MemberPrefix
 //	UsageExtensionKeyword*
 	'enum'? Usage
 	(';' | '{' (elements+=UsageBodyElement)* '}')
 ;
 
 EnumerationUsage:
+	MemberPrefix
 	UsagePrefix 'enum' Usage
 	(';' | '{' (elements+=UsageBodyElement)* '}')
 ;
 
 BindingConnectorAsUsage:
+	MemberPrefix
 	UsagePrefix 
 	( 'binding' UsageDeclaration? )?
-	'bind' ConnectorPart '=' ConnectorPart
+	'bind' connectorPart += ConnectorEnd '=' connectorPart += ConnectorEnd
+	(';' | '{' (elements+=DefinitionBodyElement)* '}')
+;
+
+SuccessionAsUsage:
+	MemberPrefix
+	UsagePrefix
+	( 'succession' UsageDeclaration? )? 
+	'first' connectorPart += ConnectorEnd
+	'then' connectorPart += ConnectorEnd
 	(';' | '{' (elements+=DefinitionBodyElement)* '}')
 ;
 
@@ -265,7 +314,7 @@ PortDefinition:
 ;
 
 PortUsage:
-    MemberPrefix OccurrenceUsagePrefix 'port'? Usage 
+    MemberPrefix OccurrenceUsagePrefix 'port' Usage 
     (';' | '{' (elements+=UsageBodyElement)* '}')
 ;
 
@@ -277,9 +326,8 @@ ConnectionDefinition:
 ConnectionUsage:
 	MemberPrefix 
 	OccurrenceUsagePrefix
-	('connection' UsageDeclaration? FeatureValue? 
-		( 'connect' ConnectorPart)?
-	| 'connect' ConnectorPart) 
+	('connection' UsageDeclaration? FeatureValue? ('connect' ConnectorPart)?
+	 | 'connect' ConnectorPart) 
 	(';' | '{' (elements+=UsageBodyElement)* '}')
 ;
 
@@ -297,7 +345,10 @@ InterfaceUsage:
 ;
 
 FlowConnectionDefinition:
-	MemberPrefix OccurrenceDefinitionPrefix 'flow' 'def' DefinitionDeclaration 
+	MemberPrefix 
+	OccurrenceDefinitionPrefix 
+	'flow' 'def' 
+	DefinitionDeclaration 
 	(';' | '{' (elements+=DefinitionBodyElement)* '}')
 ;
 
@@ -311,14 +362,24 @@ FlowConnectionUsage:
     (';' | '{' (elements+=UsageBodyElement)* '}')
 ;
 
+SuccessionFlowConnectionUsage:
+	MemberPrefix
+	OccurrenceUsagePrefix
+	'succession' 'flow'
+	UsageDeclaration? FeatureValue?
+	( 'of' ItemFeature += Name )?
+    ( 'from'? FlowEnd += FeatureChainName 'to' FlowEnd += FeatureChainName )?
+    (';' | '{' (elements+=DefinitionBodyElement)* '}')
+;
+
 ActionDefinition:
 	OccurrenceDefinitionPrefix 'action' 'def' DefinitionDeclaration
 	(';' | '{' (elements+=ActionBodyElement)* '}')
 ;
 
 ActionUsage:
-    MemberPrefix OccurrenceUsagePrefix 'action' declaredName=QualifiedName 
-    (';' | '{' (elements+=UsageBodyElement)* '}')
+    MemberPrefix OccurrenceUsagePrefix 'action' ActionUsageDeclaration 
+    (';' | '{' (elements+=ActionBodyElement)* '}')
 ;
 
 AliasElement:
@@ -333,16 +394,78 @@ ConnectorEnd:
 	refElement = FeatureChainName
 ;
 
+EmptySuccession:
+	{EmptySuccession} 
+	'then' 
+	('[' Multiplicity+=MultiplicityExpression '..' Multiplicity+=MultiplicityExpression ']')?
+//	ownedRelationship += EmptyTargetEndMember
+;
+
+SendNode:
+	MemberPrefix
+	OccurrenceUsagePrefix
+	ActionNodeUsageDeclaration?
+	'send'
+//	( ActionBody
+//	| ( => 
+//		( ownedRelationship += NodeParameterMember SenderReceiverPart?
+//	    | ownedRelationship += EmptyParameterMember SenderReceiverPart
+//	    )
+//	    ActionBody
+//	  )
+//	)
+;
+
+AcceptNode:
+	MemberPrefix
+	OccurrenceUsagePrefix
+	AcceptNodeDeclaration
+	(';' | '{' (elements+=ActionBodyElement)* '}')
+; 
+
+AssignmentNode:
+	MemberPrefix
+	OccurrenceUsagePrefix
+	AssignmentNodeDeclaration
+	(';' | '{' (elements+=ActionBodyElement)* '}')
+; 
+
+IfNode:
+	MemberPrefix
+//	ActionNodePrefix
+	'if'
+	ExpressionParameter = Expression
+//	ownedRelationship += ActionBodyParameterMember
+//	( 'else' ownedRelationship += ( ActionBodyParameterMember | IfNodeParameterMember ) )?
+	
+; 
+
+WhileLoopNode:
+	MemberPrefix
+; 
+
+ForLoopNode:
+	MemberPrefix
+;
+
+TerminateNode:
+	MemberPrefix
+;
+
+ControlNode:
+	MemberPrefix
+;
+	
 // TODO --------------------------------- Enum Level ---------------------------------//
 
 // enum
 
 enum VisibilityIndicator:
-	public = 'public' | private = 'private'| protected = 'protected'
+	public = 'public' | private = 'private' | protected = 'protected'
 ;
 
 enum FeatureDirection:
-	in = 'in' | out = 'out' | inout = 'inout'
+	inout = 'inout' | in = 'in' | out = 'out' 
 ;
 
 enum PortionKind:
@@ -350,6 +473,10 @@ enum PortionKind:
 ;
 
 // TODO --------------------------------- Fragment Level ---------------------------------//
+
+fragment ValuePart:
+	FeatureValue
+;
 
 fragment isImportAllFragment:
 	isImportAll ?= 'all'
@@ -419,6 +546,14 @@ fragment DefinitionDeclaration:
 	(declaredName = Name)? ((':'|':>'|'specializes') superclassifiers+=FeatureChainName (',' superclassifiers+=FeatureChainName)*)?
 ;
 
+fragment ActionUsageDeclaration:
+	UsageDeclaration? FeatureValue?
+;
+
+fragment ActionNodeUsageDeclaration:
+	'action' UsageDeclaration?
+;
+
 fragment Usage:
 	UsageDeclaration? FeatureValue?
 ;
@@ -445,15 +580,29 @@ fragment FeatureSpecializationPart:
 	| MultiplicityPart FeatureSpecialization*
 ;
 
+fragment AcceptNodeDeclaration:
+	ActionNodeUsageDeclaration? 'accept' AcceptParameterPart
+;
+
+fragment AcceptParameterPart:
+	'null'
+//	ownedRelationship += PayloadParameterMember
+//	( 'via' ownedRelationship += NodeParameterMember )?
+;
+
+fragment AssignmentNodeDeclaration:
+	ActionNodeUsageDeclaration? 'assign' 
+//	ownedRelationship += AssignmentTargetMember
+//	ownedRelationship += FeatureChainMember ':=' 
+//	ownedRelationship += NodeParameterMember
+;
+
 fragment Identification:
 	'<' declaredShortName = Name '>' ( declaredName = Name )?
 	| declaredName = Name
 ;
 
 fragment MultiplicityPart:
-//	( '[' Multiplicity += DECIMAL_VALUE ']' | '[' Multiplicity += DECIMAL_VALUE '..' Multiplicity += DECIMAL_VALUE ']')
-//	| (( '[' Multiplicity += DECIMAL_VALUE ']' | '[' Multiplicity += DECIMAL_VALUE '..' Multiplicity += DECIMAL_VALUE ']')?
-//	  ( isOrdered ?= 'ordered' isNonunique ?= 'nonunique'? | isNonunique ?= 'nonunique' isOrdered ?= 'ordered'? ))
 	( '[' Multiplicity += MultiplicityExpression ']' | '[' Multiplicity += MultiplicityExpression '..' Multiplicity += MultiplicityExpression ']')
 	| (( '[' Multiplicity += MultiplicityExpression ']' | '[' Multiplicity += MultiplicityExpression '..' Multiplicity += MultiplicityExpression ']')?
 	  ( isOrdered ?= 'ordered' isNonunique ?= 'nonunique'? | isNonunique ?= 'nonunique' isOrdered ?= 'ordered'? ))

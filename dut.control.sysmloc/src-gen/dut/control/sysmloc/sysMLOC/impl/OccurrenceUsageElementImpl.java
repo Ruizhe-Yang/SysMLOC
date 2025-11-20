@@ -35,7 +35,7 @@ public class OccurrenceUsageElementImpl extends UsageElementImpl implements Occu
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.OCCURRENCE_USAGE_ELEMENT;
+    return SysMLOCPackage.eINSTANCE.getOccurrenceUsageElement();
   }
 
 } //OccurrenceUsageElementImpl

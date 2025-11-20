@@ -35,7 +35,7 @@ public class UsagePrefixImpl extends UnextendedUsagePrefixImpl implements UsageP
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.USAGE_PREFIX;
+    return SysMLOCPackage.eINSTANCE.getUsagePrefix();
   }
 
 } //UsagePrefixImpl

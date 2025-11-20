@@ -4,7 +4,7 @@
     <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="'Port Example'"/>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle"/>
     <elements xsi:type="sysMLOC:FlowConnectionDefinition" declaredName="FuelFlow">
-      <elements xsi:type="sysMLOC:PortUsage" isReference="true">
+      <elements xsi:type="sysMLOC:ReferenceUsage">
         <typings>Fuel</typings>
         <redefinitions>payload</redefinitions>
       </elements>

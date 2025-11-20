@@ -129,7 +129,7 @@ public class DocumentationImpl extends AnnotatingElementImpl implements Document
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.DOCUMENTATION;
+    return SysMLOCPackage.eINSTANCE.getDocumentation();
   }
 
   /**

@@ -41,7 +41,7 @@ public class RefPrefixImpl extends MinimalEObjectImpl.Container implements RefPr
    * @generated
    * @ordered
    */
-  protected static final FeatureDirection DIRECTION_EDEFAULT = FeatureDirection.IN;
+  protected static final FeatureDirection DIRECTION_EDEFAULT = FeatureDirection.INOUT;
 
   /**
    * The cached value of the '{@link #getDirection() <em>Direction</em>}' attribute.
@@ -151,7 +151,7 @@ public class RefPrefixImpl extends MinimalEObjectImpl.Container implements RefPr
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.REF_PREFIX;
+    return SysMLOCPackage.eINSTANCE.getRefPrefix();
   }
 
   /**

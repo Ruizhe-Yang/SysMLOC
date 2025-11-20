@@ -66,7 +66,7 @@ public class isImportAllFragmentImpl extends MinimalEObjectImpl.Container implem
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.IS_IMPORT_ALL_FRAGMENT;
+    return SysMLOCPackage.eINSTANCE.getisImportAllFragment();
   }
 
   /**

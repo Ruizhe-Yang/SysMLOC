@@ -146,7 +146,7 @@ public class CommentImpl extends AnnotatingElementImpl implements Comment
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.COMMENT;
+    return SysMLOCPackage.eINSTANCE.getComment();
   }
 
   /**

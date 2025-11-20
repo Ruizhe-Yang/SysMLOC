@@ -6,7 +6,7 @@
     <elements xsi:type="sysMLOC:PortDefinition" declaredName="Faucet"/>
     <elements xsi:type="sysMLOC:PortDefinition" declaredName="FaucetInlet"/>
     <elements xsi:type="sysMLOC:InterfaceDefinition" declaredName="WaterDelivery">
-      <elements xsi:type="sysMLOC:PortUsage" isEnd="true" declaredName="suppliedBy">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="suppliedBy" isEnd="true">
         <typings>SpigotBank</typings>
         <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:PortUsage" declaredName="hot">
@@ -16,7 +16,7 @@
           <typings>Spigot</typings>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:PortUsage" isEnd="true" declaredName="deliveredTo">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="deliveredTo" isEnd="true">
         <typings>Faucet</typings>
         <Multiplicity>1</Multiplicity>
         <Multiplicity>*</Multiplicity>

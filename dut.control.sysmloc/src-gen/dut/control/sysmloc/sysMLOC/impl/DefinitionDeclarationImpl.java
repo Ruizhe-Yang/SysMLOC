@@ -83,7 +83,7 @@ public class DefinitionDeclarationImpl extends MinimalEObjectImpl.Container impl
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.DEFINITION_DECLARATION;
+    return SysMLOCPackage.eINSTANCE.getDefinitionDeclaration();
   }
 
   /**

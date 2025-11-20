@@ -104,7 +104,7 @@ public class ConnectorEndImpl extends MinimalEObjectImpl.Container implements Co
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.CONNECTOR_END;
+    return SysMLOCPackage.eINSTANCE.getConnectorEnd();
   }
 
   /**

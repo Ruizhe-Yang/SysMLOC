@@ -187,7 +187,7 @@ public class ConnectionDefinitionImpl extends DefinitionElementImpl implements C
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.CONNECTION_DEFINITION;
+    return SysMLOCPackage.eINSTANCE.getConnectionDefinition();
   }
 
   /**

@@ -187,7 +187,7 @@ public class ItemDefinitionImpl extends DefinitionElementImpl implements ItemDef
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.ITEM_DEFINITION;
+    return SysMLOCPackage.eINSTANCE.getItemDefinition();
   }
 
   /**

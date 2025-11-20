@@ -130,7 +130,7 @@ public class NamespaceImportImpl extends ImportElementImpl implements NamespaceI
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.Literals.NAMESPACE_IMPORT;
+    return SysMLOCPackage.eINSTANCE.getNamespaceImport();
   }
 
   /**
