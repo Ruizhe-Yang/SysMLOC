@@ -115,7 +115,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//    | AnnotatingElement
 		//    | DefinitionElement
 		//    | UsageElement
-		////    | ElementFilterMember
+		////  | ElementFilterMember
 		//    | AliasElement
 		//    | ImportElement
 		//    | CodeAnnotation
@@ -126,7 +126,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//    | AnnotatingElement
 		//    | DefinitionElement
 		//    | UsageElement
-		////    | ElementFilterMember
+		////  | ElementFilterMember
 		//    | AliasElement
 		//    | ImportElement
 		//    | CodeAnnotation
@@ -5192,7 +5192,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	//    | AnnotatingElement
 	//    | DefinitionElement
 	//    | UsageElement
-	////    | ElementFilterMember
+	////  | ElementFilterMember
 	//    | AliasElement
 	//    | ImportElement
 	//    | CodeAnnotation

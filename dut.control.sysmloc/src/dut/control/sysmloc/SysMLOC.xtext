@@ -16,14 +16,14 @@ Package:
     '{' (elements+=PackageBodyElement)* '}'
 ;
 
-// TODO --------------------------------- Root Level ---------------------------------//
+// TODO --------------------------------- Body Level ---------------------------------//
 
 PackageBodyElement:
     Package
     | AnnotatingElement 
     | DefinitionElement
     | UsageElement
-//    | ElementFilterMember
+//  | ElementFilterMember
     | AliasElement
     | ImportElement
     | CodeAnnotation
@@ -71,7 +71,7 @@ ActionBodyElement:
 // Annotating
 
 AnnotatingElement:
-	Comment 
+	Comment
 	| Documentation
 	| TextualRepresentation
 //	| MetadataUsage
