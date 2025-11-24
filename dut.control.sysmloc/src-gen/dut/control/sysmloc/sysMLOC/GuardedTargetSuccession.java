@@ -9,11 +9,39 @@ package dut.control.sysmloc.sysMLOC;
  * A representation of the model object '<em><b>Guarded Target Succession</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.GuardedTargetSuccession#getConditionalExpression <em>Conditional Expression</em>}</li>
+ * </ul>
  *
  * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getGuardedTargetSuccession()
  * @model
  * @generated
  */
-public interface GuardedTargetSuccession extends GuardExpression, TransitionSuccession
+public interface GuardedTargetSuccession extends TransitionSuccession
 {
+  /**
+   * Returns the value of the '<em><b>Conditional Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Conditional Expression</em>' attribute.
+   * @see #setConditionalExpression(String)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getGuardedTargetSuccession_ConditionalExpression()
+   * @model
+   * @generated
+   */
+  String getConditionalExpression();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.GuardedTargetSuccession#getConditionalExpression <em>Conditional Expression</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Conditional Expression</em>' attribute.
+   * @see #getConditionalExpression()
+   * @generated
+   */
+  void setConditionalExpression(String value);
+
 } // GuardedTargetSuccession

@@ -7,7 +7,6 @@ import dut.control.sysmloc.sysMLOC.ConnectorEnd;
 import dut.control.sysmloc.sysMLOC.FeatureDeclaration;
 import dut.control.sysmloc.sysMLOC.FeatureSpecialization;
 import dut.control.sysmloc.sysMLOC.FeatureSpecializationPart;
-import dut.control.sysmloc.sysMLOC.GuardExpression;
 import dut.control.sysmloc.sysMLOC.GuardedSuccessionElement;
 import dut.control.sysmloc.sysMLOC.MultiplicityPart;
 import dut.control.sysmloc.sysMLOC.MultiplicityRange;
@@ -49,9 +48,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.GuardedSuccessionElementImpl#isIsOrdered <em>Is Ordered</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.GuardedSuccessionElementImpl#isIsNonunique <em>Is Nonunique</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.GuardedSuccessionElementImpl#getDeclaredName <em>Declared Name</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.GuardedSuccessionElementImpl#getConditionalExpression <em>Conditional Expression</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.GuardedSuccessionElementImpl#getTransitionSuccessionElement <em>Transition Succession Element</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.GuardedSuccessionElementImpl#getMemberElement <em>Member Element</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.GuardedSuccessionElementImpl#getConditionalExpression <em>Conditional Expression</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.GuardedSuccessionElementImpl#getElements <em>Elements</em>}</li>
  * </ul>
  *
@@ -180,26 +179,6 @@ public class GuardedSuccessionElementImpl extends GuardedSuccessionNodeElementIm
   protected String declaredName = DECLARED_NAME_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getConditionalExpression() <em>Conditional Expression</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getConditionalExpression()
-   * @generated
-   * @ordered
-   */
-  protected static final String CONDITIONAL_EXPRESSION_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getConditionalExpression() <em>Conditional Expression</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getConditionalExpression()
-   * @generated
-   * @ordered
-   */
-  protected String conditionalExpression = CONDITIONAL_EXPRESSION_EDEFAULT;
-
-  /**
    * The cached value of the '{@link #getTransitionSuccessionElement() <em>Transition Succession Element</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -228,6 +207,26 @@ public class GuardedSuccessionElementImpl extends GuardedSuccessionNodeElementIm
    * @ordered
    */
   protected String memberElement = MEMBER_ELEMENT_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getConditionalExpression() <em>Conditional Expression</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getConditionalExpression()
+   * @generated
+   * @ordered
+   */
+  protected static final String CONDITIONAL_EXPRESSION_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getConditionalExpression() <em>Conditional Expression</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getConditionalExpression()
+   * @generated
+   * @ordered
+   */
+  protected String conditionalExpression = CONDITIONAL_EXPRESSION_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
@@ -431,31 +430,6 @@ public class GuardedSuccessionElementImpl extends GuardedSuccessionNodeElementIm
    * @generated
    */
   @Override
-  public String getConditionalExpression()
-  {
-    return conditionalExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setConditionalExpression(String newConditionalExpression)
-  {
-    String oldConditionalExpression = conditionalExpression;
-    conditionalExpression = newConditionalExpression;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__CONDITIONAL_EXPRESSION, oldConditionalExpression, conditionalExpression));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EList<ConnectorEnd> getTransitionSuccessionElement()
   {
     if (transitionSuccessionElement == null)
@@ -488,6 +462,31 @@ public class GuardedSuccessionElementImpl extends GuardedSuccessionNodeElementIm
     memberElement = newMemberElement;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__MEMBER_ELEMENT, oldMemberElement, memberElement));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getConditionalExpression()
+  {
+    return conditionalExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setConditionalExpression(String newConditionalExpression)
+  {
+    String oldConditionalExpression = conditionalExpression;
+    conditionalExpression = newConditionalExpression;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__CONDITIONAL_EXPRESSION, oldConditionalExpression, conditionalExpression));
   }
 
   /**
@@ -551,12 +550,12 @@ public class GuardedSuccessionElementImpl extends GuardedSuccessionNodeElementIm
         return isIsNonunique();
       case SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__DECLARED_NAME:
         return getDeclaredName();
-      case SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__CONDITIONAL_EXPRESSION:
-        return getConditionalExpression();
       case SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__TRANSITION_SUCCESSION_ELEMENT:
         return getTransitionSuccessionElement();
       case SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__MEMBER_ELEMENT:
         return getMemberElement();
+      case SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__CONDITIONAL_EXPRESSION:
+        return getConditionalExpression();
       case SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__ELEMENTS:
         return getElements();
     }
@@ -607,15 +606,15 @@ public class GuardedSuccessionElementImpl extends GuardedSuccessionNodeElementIm
       case SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__DECLARED_NAME:
         setDeclaredName((String)newValue);
         return;
-      case SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__CONDITIONAL_EXPRESSION:
-        setConditionalExpression((String)newValue);
-        return;
       case SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__TRANSITION_SUCCESSION_ELEMENT:
         getTransitionSuccessionElement().clear();
         getTransitionSuccessionElement().addAll((Collection<? extends ConnectorEnd>)newValue);
         return;
       case SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__MEMBER_ELEMENT:
         setMemberElement((String)newValue);
+        return;
+      case SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__CONDITIONAL_EXPRESSION:
+        setConditionalExpression((String)newValue);
         return;
       case SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__ELEMENTS:
         getElements().clear();
@@ -662,14 +661,14 @@ public class GuardedSuccessionElementImpl extends GuardedSuccessionNodeElementIm
       case SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__DECLARED_NAME:
         setDeclaredName(DECLARED_NAME_EDEFAULT);
         return;
-      case SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__CONDITIONAL_EXPRESSION:
-        setConditionalExpression(CONDITIONAL_EXPRESSION_EDEFAULT);
-        return;
       case SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__TRANSITION_SUCCESSION_ELEMENT:
         getTransitionSuccessionElement().clear();
         return;
       case SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__MEMBER_ELEMENT:
         setMemberElement(MEMBER_ELEMENT_EDEFAULT);
+        return;
+      case SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__CONDITIONAL_EXPRESSION:
+        setConditionalExpression(CONDITIONAL_EXPRESSION_EDEFAULT);
         return;
       case SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__ELEMENTS:
         getElements().clear();
@@ -706,12 +705,12 @@ public class GuardedSuccessionElementImpl extends GuardedSuccessionNodeElementIm
         return isNonunique != IS_NONUNIQUE_EDEFAULT;
       case SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__DECLARED_NAME:
         return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
-      case SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__CONDITIONAL_EXPRESSION:
-        return CONDITIONAL_EXPRESSION_EDEFAULT == null ? conditionalExpression != null : !CONDITIONAL_EXPRESSION_EDEFAULT.equals(conditionalExpression);
       case SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__TRANSITION_SUCCESSION_ELEMENT:
         return transitionSuccessionElement != null && !transitionSuccessionElement.isEmpty();
       case SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__MEMBER_ELEMENT:
         return MEMBER_ELEMENT_EDEFAULT == null ? memberElement != null : !MEMBER_ELEMENT_EDEFAULT.equals(memberElement);
+      case SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__CONDITIONAL_EXPRESSION:
+        return CONDITIONAL_EXPRESSION_EDEFAULT == null ? conditionalExpression != null : !CONDITIONAL_EXPRESSION_EDEFAULT.equals(conditionalExpression);
       case SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__ELEMENTS:
         return elements != null && !elements.isEmpty();
     }
@@ -774,14 +773,6 @@ public class GuardedSuccessionElementImpl extends GuardedSuccessionNodeElementIm
     {
       switch (derivedFeatureID)
       {
-        default: return -1;
-      }
-    }
-    if (baseClass == GuardExpression.class)
-    {
-      switch (derivedFeatureID)
-      {
-        case SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__CONDITIONAL_EXPRESSION: return SysMLOCPackage.GUARD_EXPRESSION__CONDITIONAL_EXPRESSION;
         default: return -1;
       }
     }
@@ -855,14 +846,6 @@ public class GuardedSuccessionElementImpl extends GuardedSuccessionNodeElementIm
         default: return -1;
       }
     }
-    if (baseClass == GuardExpression.class)
-    {
-      switch (baseFeatureID)
-      {
-        case SysMLOCPackage.GUARD_EXPRESSION__CONDITIONAL_EXPRESSION: return SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__CONDITIONAL_EXPRESSION;
-        default: return -1;
-      }
-    }
     if (baseClass == TransitionSuccession.class)
     {
       switch (baseFeatureID)
@@ -903,10 +886,10 @@ public class GuardedSuccessionElementImpl extends GuardedSuccessionNodeElementIm
     result.append(isNonunique);
     result.append(", declaredName: ");
     result.append(declaredName);
-    result.append(", ConditionalExpression: ");
-    result.append(conditionalExpression);
     result.append(", memberElement: ");
     result.append(memberElement);
+    result.append(", ConditionalExpression: ");
+    result.append(conditionalExpression);
     result.append(')');
     return result.toString();
   }

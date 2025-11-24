@@ -205,6 +205,7 @@
     <genClasses ecoreClass="SysMLOC.ecore#//TerminateNode"/>
     <genClasses ecoreClass="SysMLOC.ecore#//GuardedSuccessionElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//GuardedSuccessionElement/memberElement"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//GuardedSuccessionElement/ConditionalExpression"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//GuardedSuccessionElement/elements"/>
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//TargetSuccessionElement">
@@ -296,7 +297,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//TransitionSuccession/transitionSuccessionElement"/>
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//TargetSuccession"/>
-    <genClasses ecoreClass="SysMLOC.ecore#//GuardedTargetSuccession"/>
+    <genClasses ecoreClass="SysMLOC.ecore#//GuardedTargetSuccession">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//GuardedTargetSuccession/ConditionalExpression"/>
+    </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//DefaultTargetSuccession"/>
     <genClasses ecoreClass="SysMLOC.ecore#//ReferenceSubsetting">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//ReferenceSubsetting/refElement"/>

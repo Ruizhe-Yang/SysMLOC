@@ -151,7 +151,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 				sequence_ControlNodePrefix_EmptySuccessionPrefix_FeatureDeclaration_FeatureSpecialization_ForkNode_MemberPrefix_MultiplicityPart_MultiplicityRange_RefPrefix(context, (ForkNode) semanticObject); 
 				return; 
 			case SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT:
-				sequence_FeatureDeclaration_FeatureSpecialization_GuardExpression_GuardedSuccessionElement_MultiplicityPart_MultiplicityRange_TransitionSuccession(context, (GuardedSuccessionElement) semanticObject); 
+				sequence_FeatureDeclaration_FeatureSpecialization_GuardedSuccessionElement_MultiplicityPart_MultiplicityRange_TransitionSuccession(context, (GuardedSuccessionElement) semanticObject); 
 				return; 
 			case SysMLOCPackage.IF_NODE:
 				sequence_BasicUsagePrefix_EmptySuccessionPrefix_FeatureDeclaration_FeatureSpecialization_IfNode_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_RefPrefix(context, (IfNode) semanticObject); 
@@ -217,7 +217,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 				sequence_BasicUsagePrefix_EmptySuccessionPrefix_FeatureDeclaration_FeatureSpecialization_FeatureValue_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_RefPrefix_SuccessionFlowConnectionUsage(context, (SuccessionFlowConnectionUsage) semanticObject); 
 				return; 
 			case SysMLOCPackage.TARGET_SUCCESSION_ELEMENT:
-				sequence_GuardExpression_MemberPrefix_MultiplicityRange_TargetSuccessionElement_TransitionSuccession(context, (TargetSuccessionElement) semanticObject); 
+				sequence_GuardedTargetSuccession_MemberPrefix_MultiplicityRange_TargetSuccessionElement_TransitionSuccession(context, (TargetSuccessionElement) semanticObject); 
 				return; 
 			case SysMLOCPackage.TERMINATE_NODE:
 				sequence_MemberPrefix(context, (TerminateNode) semanticObject); 
@@ -1154,6 +1154,8 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     ActionBodyElement returns IfNode
+	 *     ActionNodeElement returns IfNode
 	 *     IfNode returns IfNode
 	 *
 	 * Constraint:
@@ -1842,7 +1844,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     )
 	 * </pre>
 	 */
-	protected void sequence_FeatureDeclaration_FeatureSpecialization_GuardExpression_GuardedSuccessionElement_MultiplicityPart_MultiplicityRange_TransitionSuccession(ISerializationContext context, GuardedSuccessionElement semanticObject) {
+	protected void sequence_FeatureDeclaration_FeatureSpecialization_GuardedSuccessionElement_MultiplicityPart_MultiplicityRange_TransitionSuccession(ISerializationContext context, GuardedSuccessionElement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1919,7 +1921,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     )
 	 * </pre>
 	 */
-	protected void sequence_GuardExpression_MemberPrefix_MultiplicityRange_TargetSuccessionElement_TransitionSuccession(ISerializationContext context, TargetSuccessionElement semanticObject) {
+	protected void sequence_GuardedTargetSuccession_MemberPrefix_MultiplicityRange_TargetSuccessionElement_TransitionSuccession(ISerializationContext context, TargetSuccessionElement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

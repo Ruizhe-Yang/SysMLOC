@@ -2708,9 +2708,20 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   @Override
+  public EAttribute getGuardedSuccessionElement_ConditionalExpression()
+  {
+        return (EAttribute)getGuardedSuccessionElement().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EReference getGuardedSuccessionElement_Elements()
   {
-        return (EReference)getGuardedSuccessionElement().getEStructuralFeatures().get(1);
+        return (EReference)getGuardedSuccessionElement().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -3613,6 +3624,17 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
       guardedTargetSuccessionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(105);
     }
     return guardedTargetSuccessionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getGuardedTargetSuccession_ConditionalExpression()
+  {
+        return (EAttribute)getGuardedTargetSuccession().getEStructuralFeatures().get(0);
   }
 
   /**

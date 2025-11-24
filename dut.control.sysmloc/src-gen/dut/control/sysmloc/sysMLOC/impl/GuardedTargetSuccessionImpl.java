@@ -3,22 +3,14 @@
  */
 package dut.control.sysmloc.sysMLOC.impl;
 
-import dut.control.sysmloc.sysMLOC.ConnectorEnd;
 import dut.control.sysmloc.sysMLOC.GuardedTargetSuccession;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
-import dut.control.sysmloc.sysMLOC.TransitionSuccession;
 
-import java.util.Collection;
-
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,22 +20,32 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.GuardedTargetSuccessionImpl#getTransitionSuccessionElement <em>Transition Succession Element</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.GuardedTargetSuccessionImpl#getConditionalExpression <em>Conditional Expression</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class GuardedTargetSuccessionImpl extends GuardExpressionImpl implements GuardedTargetSuccession
+public class GuardedTargetSuccessionImpl extends TransitionSuccessionImpl implements GuardedTargetSuccession
 {
   /**
-   * The cached value of the '{@link #getTransitionSuccessionElement() <em>Transition Succession Element</em>}' containment reference list.
+   * The default value of the '{@link #getConditionalExpression() <em>Conditional Expression</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTransitionSuccessionElement()
+   * @see #getConditionalExpression()
    * @generated
    * @ordered
    */
-  protected EList<ConnectorEnd> transitionSuccessionElement;
+  protected static final String CONDITIONAL_EXPRESSION_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getConditionalExpression() <em>Conditional Expression</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getConditionalExpression()
+   * @generated
+   * @ordered
+   */
+  protected String conditionalExpression = CONDITIONAL_EXPRESSION_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -72,13 +74,9 @@ public class GuardedTargetSuccessionImpl extends GuardExpressionImpl implements 
    * @generated
    */
   @Override
-  public EList<ConnectorEnd> getTransitionSuccessionElement()
+  public String getConditionalExpression()
   {
-    if (transitionSuccessionElement == null)
-    {
-      transitionSuccessionElement = new EObjectContainmentEList<ConnectorEnd>(ConnectorEnd.class, this, SysMLOCPackage.GUARDED_TARGET_SUCCESSION__TRANSITION_SUCCESSION_ELEMENT);
-    }
-    return transitionSuccessionElement;
+    return conditionalExpression;
   }
 
   /**
@@ -87,14 +85,12 @@ public class GuardedTargetSuccessionImpl extends GuardExpressionImpl implements 
    * @generated
    */
   @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  public void setConditionalExpression(String newConditionalExpression)
   {
-    switch (featureID)
-    {
-      case SysMLOCPackage.GUARDED_TARGET_SUCCESSION__TRANSITION_SUCCESSION_ELEMENT:
-        return ((InternalEList<?>)getTransitionSuccessionElement()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+    String oldConditionalExpression = conditionalExpression;
+    conditionalExpression = newConditionalExpression;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.GUARDED_TARGET_SUCCESSION__CONDITIONAL_EXPRESSION, oldConditionalExpression, conditionalExpression));
   }
 
   /**
@@ -107,8 +103,8 @@ public class GuardedTargetSuccessionImpl extends GuardExpressionImpl implements 
   {
     switch (featureID)
     {
-      case SysMLOCPackage.GUARDED_TARGET_SUCCESSION__TRANSITION_SUCCESSION_ELEMENT:
-        return getTransitionSuccessionElement();
+      case SysMLOCPackage.GUARDED_TARGET_SUCCESSION__CONDITIONAL_EXPRESSION:
+        return getConditionalExpression();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -118,15 +114,13 @@ public class GuardedTargetSuccessionImpl extends GuardExpressionImpl implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case SysMLOCPackage.GUARDED_TARGET_SUCCESSION__TRANSITION_SUCCESSION_ELEMENT:
-        getTransitionSuccessionElement().clear();
-        getTransitionSuccessionElement().addAll((Collection<? extends ConnectorEnd>)newValue);
+      case SysMLOCPackage.GUARDED_TARGET_SUCCESSION__CONDITIONAL_EXPRESSION:
+        setConditionalExpression((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -142,8 +136,8 @@ public class GuardedTargetSuccessionImpl extends GuardExpressionImpl implements 
   {
     switch (featureID)
     {
-      case SysMLOCPackage.GUARDED_TARGET_SUCCESSION__TRANSITION_SUCCESSION_ELEMENT:
-        getTransitionSuccessionElement().clear();
+      case SysMLOCPackage.GUARDED_TARGET_SUCCESSION__CONDITIONAL_EXPRESSION:
+        setConditionalExpression(CONDITIONAL_EXPRESSION_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -159,8 +153,8 @@ public class GuardedTargetSuccessionImpl extends GuardExpressionImpl implements 
   {
     switch (featureID)
     {
-      case SysMLOCPackage.GUARDED_TARGET_SUCCESSION__TRANSITION_SUCCESSION_ELEMENT:
-        return transitionSuccessionElement != null && !transitionSuccessionElement.isEmpty();
+      case SysMLOCPackage.GUARDED_TARGET_SUCCESSION__CONDITIONAL_EXPRESSION:
+        return CONDITIONAL_EXPRESSION_EDEFAULT == null ? conditionalExpression != null : !CONDITIONAL_EXPRESSION_EDEFAULT.equals(conditionalExpression);
     }
     return super.eIsSet(featureID);
   }
@@ -171,36 +165,15 @@ public class GuardedTargetSuccessionImpl extends GuardExpressionImpl implements 
    * @generated
    */
   @Override
-  public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
+  public String toString()
   {
-    if (baseClass == TransitionSuccession.class)
-    {
-      switch (derivedFeatureID)
-      {
-        case SysMLOCPackage.GUARDED_TARGET_SUCCESSION__TRANSITION_SUCCESSION_ELEMENT: return SysMLOCPackage.TRANSITION_SUCCESSION__TRANSITION_SUCCESSION_ELEMENT;
-        default: return -1;
-      }
-    }
-    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-  }
+    if (eIsProxy()) return super.toString();
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
-  {
-    if (baseClass == TransitionSuccession.class)
-    {
-      switch (baseFeatureID)
-      {
-        case SysMLOCPackage.TRANSITION_SUCCESSION__TRANSITION_SUCCESSION_ELEMENT: return SysMLOCPackage.GUARDED_TARGET_SUCCESSION__TRANSITION_SUCCESSION_ELEMENT;
-        default: return -1;
-      }
-    }
-    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (ConditionalExpression: ");
+    result.append(conditionalExpression);
+    result.append(')');
+    return result.toString();
   }
 
 } //GuardedTargetSuccessionImpl

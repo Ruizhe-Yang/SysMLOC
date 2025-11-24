@@ -60,7 +60,7 @@ ActionBodyElement:
 	| NonOccurrenceUsageElement
 	| StructureUsageElement
 	| InitialNodeElement
-	| BehaviorUsageElement
+	| BehaviorUsageElement 
 	| ActionNodeElement
 	| TargetSuccessionNodeElement
 	| GuardedSuccessionNodeElement
@@ -193,7 +193,7 @@ ActionNodeElement:
 	SendNode
 //	| AcceptNode 
 //	| AssignmentNode 
-//	| IfNode 
+	| IfNode 
 	| WhileLoopNode 
 //	| ForLoopNode
 //	| TerminateNode
@@ -476,7 +476,7 @@ IfNode:
 	'if'
 	ifConditionExpression = Expression
 	('action' actionParameterEnd+=ActionParameterEnd )?
-	(';' | '{' (elements+=ActionBodyElement)* '}')
+	'{' (elements+=ActionBodyElement)* '}'
 //	( 'else' 
 //		(('action' actionParameterEnd+=ActionParameterEnd )? '{' (elements+=ActionBodyElement)* '}')
 //		| (elseNode+=IfNode))?
@@ -538,7 +538,8 @@ GuardedSuccessionElement:
 	( 'succession' UsageDeclaration )?
 	'first'
 	memberElement = FeatureChainName
-	GuardExpression
+//	GuardExpression
+	'if' ConditionalExpression=Expression
 	'then'
 	TransitionSuccession
 	(';' | '{' (elements+=UsageBodyElement)* '}')
@@ -551,6 +552,9 @@ TargetSuccessionElement:
 	| DefaultTargetSuccession
 	)
 	(';' | '{' (elements+=UsageBodyElement)* '}')
+//	MemberPrefix
+//	((( TargetSuccession | DefaultTargetSuccession) (';' | '{' (elements+=UsageBodyElement)* '}'))
+//	| GuardedTargetSuccession ';')
 ;
 
 // TODO --------------------------------- Enum Level ---------------------------------//
@@ -736,7 +740,9 @@ fragment TargetSuccession:
 ;
 
 fragment GuardedTargetSuccession:
-	GuardExpression 'then' TransitionSuccession
+//	GuardExpression
+	'if' ConditionalExpression=Expression 
+	'then' TransitionSuccession
 ;
 
 fragment DefaultTargetSuccession:

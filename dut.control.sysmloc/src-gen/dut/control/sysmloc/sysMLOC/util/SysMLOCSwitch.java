@@ -1158,9 +1158,11 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         IfNode ifNode = (IfNode)theEObject;
         T result = caseIfNode(ifNode);
+        if (result == null) result = caseActionNodeElement(ifNode);
         if (result == null) result = caseEmptySuccessionPrefix(ifNode);
         if (result == null) result = caseMemberPrefix(ifNode);
         if (result == null) result = caseActionNodePrefix(ifNode);
+        if (result == null) result = caseActionBodyElement(ifNode);
         if (result == null) result = caseOccurrenceUsagePrefix(ifNode);
         if (result == null) result = caseActionNodeUsageDeclaration(ifNode);
         if (result == null) result = caseBasicUsagePrefix(ifNode);
@@ -1307,7 +1309,6 @@ public class SysMLOCSwitch<T> extends Switch<T>
         T result = caseGuardedSuccessionElement(guardedSuccessionElement);
         if (result == null) result = caseGuardedSuccessionNodeElement(guardedSuccessionElement);
         if (result == null) result = caseUsageDeclaration(guardedSuccessionElement);
-        if (result == null) result = caseGuardExpression(guardedSuccessionElement);
         if (result == null) result = caseTransitionSuccession(guardedSuccessionElement);
         if (result == null) result = caseActionBodyElement(guardedSuccessionElement);
         if (result == null) result = caseFeatureDeclaration(guardedSuccessionElement);
@@ -1330,7 +1331,6 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseActionBodyElement(targetSuccessionElement);
         if (result == null) result = caseMultiplicityRange(targetSuccessionElement);
         if (result == null) result = caseTransitionSuccession(targetSuccessionElement);
-        if (result == null) result = caseGuardExpression(targetSuccessionElement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1617,7 +1617,6 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         GuardedTargetSuccession guardedTargetSuccession = (GuardedTargetSuccession)theEObject;
         T result = caseGuardedTargetSuccession(guardedTargetSuccession);
-        if (result == null) result = caseGuardExpression(guardedTargetSuccession);
         if (result == null) result = caseTransitionSuccession(guardedTargetSuccession);
         if (result == null) result = defaultCase(theEObject);
         return result;

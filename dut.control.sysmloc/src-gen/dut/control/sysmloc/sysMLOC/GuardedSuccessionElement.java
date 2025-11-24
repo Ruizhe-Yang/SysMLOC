@@ -15,6 +15,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.GuardedSuccessionElement#getMemberElement <em>Member Element</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.GuardedSuccessionElement#getConditionalExpression <em>Conditional Expression</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.GuardedSuccessionElement#getElements <em>Elements</em>}</li>
  * </ul>
  *
@@ -22,7 +23,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface GuardedSuccessionElement extends GuardedSuccessionNodeElement, UsageDeclaration, FeatureDeclaration, FeatureSpecializationPart, FeatureSpecialization, MultiplicityPart, MultiplicityRange, GuardExpression, TransitionSuccession
+public interface GuardedSuccessionElement extends GuardedSuccessionNodeElement, UsageDeclaration, FeatureDeclaration, FeatureSpecializationPart, FeatureSpecialization, MultiplicityPart, MultiplicityRange, TransitionSuccession
 {
   /**
    * Returns the value of the '<em><b>Member Element</b></em>' attribute.
@@ -45,6 +46,28 @@ public interface GuardedSuccessionElement extends GuardedSuccessionNodeElement, 
    * @generated
    */
   void setMemberElement(String value);
+
+  /**
+   * Returns the value of the '<em><b>Conditional Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Conditional Expression</em>' attribute.
+   * @see #setConditionalExpression(String)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getGuardedSuccessionElement_ConditionalExpression()
+   * @model
+   * @generated
+   */
+  String getConditionalExpression();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.GuardedSuccessionElement#getConditionalExpression <em>Conditional Expression</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Conditional Expression</em>' attribute.
+   * @see #getConditionalExpression()
+   * @generated
+   */
+  void setConditionalExpression(String value);
 
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.

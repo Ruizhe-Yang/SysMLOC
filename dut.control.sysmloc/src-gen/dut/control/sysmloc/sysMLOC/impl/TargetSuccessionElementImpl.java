@@ -5,7 +5,6 @@ package dut.control.sysmloc.sysMLOC.impl;
 
 import dut.control.sysmloc.sysMLOC.ConnectorEnd;
 import dut.control.sysmloc.sysMLOC.DefaultTargetSuccession;
-import dut.control.sysmloc.sysMLOC.GuardExpression;
 import dut.control.sysmloc.sysMLOC.GuardedTargetSuccession;
 import dut.control.sysmloc.sysMLOC.MemberPrefix;
 import dut.control.sysmloc.sysMLOC.MultiplicityRange;
@@ -404,18 +403,11 @@ public class TargetSuccessionElementImpl extends TargetSuccessionNodeElementImpl
         default: return -1;
       }
     }
-    if (baseClass == GuardExpression.class)
-    {
-      switch (derivedFeatureID)
-      {
-        case SysMLOCPackage.TARGET_SUCCESSION_ELEMENT__CONDITIONAL_EXPRESSION: return SysMLOCPackage.GUARD_EXPRESSION__CONDITIONAL_EXPRESSION;
-        default: return -1;
-      }
-    }
     if (baseClass == GuardedTargetSuccession.class)
     {
       switch (derivedFeatureID)
       {
+        case SysMLOCPackage.TARGET_SUCCESSION_ELEMENT__CONDITIONAL_EXPRESSION: return SysMLOCPackage.GUARDED_TARGET_SUCCESSION__CONDITIONAL_EXPRESSION;
         default: return -1;
       }
     }
@@ -468,18 +460,11 @@ public class TargetSuccessionElementImpl extends TargetSuccessionNodeElementImpl
         default: return -1;
       }
     }
-    if (baseClass == GuardExpression.class)
-    {
-      switch (baseFeatureID)
-      {
-        case SysMLOCPackage.GUARD_EXPRESSION__CONDITIONAL_EXPRESSION: return SysMLOCPackage.TARGET_SUCCESSION_ELEMENT__CONDITIONAL_EXPRESSION;
-        default: return -1;
-      }
-    }
     if (baseClass == GuardedTargetSuccession.class)
     {
       switch (baseFeatureID)
       {
+        case SysMLOCPackage.GUARDED_TARGET_SUCCESSION__CONDITIONAL_EXPRESSION: return SysMLOCPackage.TARGET_SUCCESSION_ELEMENT__CONDITIONAL_EXPRESSION;
         default: return -1;
       }
     }

@@ -5978,7 +5978,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_NODE__IS_THEN = EMPTY_SUCCESSION_PREFIX__IS_THEN;
+  int IF_NODE__IS_THEN = ACTION_NODE_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Then Multiplicity</b></em>' attribute list.
@@ -5987,7 +5987,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_NODE__THEN_MULTIPLICITY = EMPTY_SUCCESSION_PREFIX__THEN_MULTIPLICITY;
+  int IF_NODE__THEN_MULTIPLICITY = ACTION_NODE_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -5996,7 +5996,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_NODE__VISIBILITY = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 0;
+  int IF_NODE__VISIBILITY = ACTION_NODE_ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -6005,7 +6005,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_NODE__DIRECTION = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 1;
+  int IF_NODE__DIRECTION = ACTION_NODE_ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -6014,7 +6014,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_NODE__IS_ABSTRACT = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 2;
+  int IF_NODE__IS_ABSTRACT = ACTION_NODE_ELEMENT_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -6023,7 +6023,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_NODE__IS_VARIATION = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 3;
+  int IF_NODE__IS_VARIATION = ACTION_NODE_ELEMENT_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Is Read Only</b></em>' attribute.
@@ -6032,7 +6032,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_NODE__IS_READ_ONLY = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 4;
+  int IF_NODE__IS_READ_ONLY = ACTION_NODE_ELEMENT_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Is Derived</b></em>' attribute.
@@ -6041,7 +6041,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_NODE__IS_DERIVED = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 5;
+  int IF_NODE__IS_DERIVED = ACTION_NODE_ELEMENT_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Is Reference</b></em>' attribute.
@@ -6050,7 +6050,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_NODE__IS_REFERENCE = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 6;
+  int IF_NODE__IS_REFERENCE = ACTION_NODE_ELEMENT_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Is End</b></em>' attribute.
@@ -6059,7 +6059,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_NODE__IS_END = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 7;
+  int IF_NODE__IS_END = ACTION_NODE_ELEMENT_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -6068,7 +6068,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_NODE__IS_INDIVIDUAL = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 8;
+  int IF_NODE__IS_INDIVIDUAL = ACTION_NODE_ELEMENT_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Portion Kind</b></em>' attribute.
@@ -6077,7 +6077,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_NODE__PORTION_KIND = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 9;
+  int IF_NODE__PORTION_KIND = ACTION_NODE_ELEMENT_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -6086,7 +6086,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_NODE__TYPINGS = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 10;
+  int IF_NODE__TYPINGS = ACTION_NODE_ELEMENT_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
@@ -6095,7 +6095,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_NODE__SUBSETTING = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 11;
+  int IF_NODE__SUBSETTING = ACTION_NODE_ELEMENT_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute list.
@@ -6104,7 +6104,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_NODE__REFERENCES = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 12;
+  int IF_NODE__REFERENCES = ACTION_NODE_ELEMENT_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Crosses</b></em>' attribute list.
@@ -6113,7 +6113,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_NODE__CROSSES = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 13;
+  int IF_NODE__CROSSES = ACTION_NODE_ELEMENT_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
@@ -6122,7 +6122,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_NODE__REDEFINITIONS = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 14;
+  int IF_NODE__REDEFINITIONS = ACTION_NODE_ELEMENT_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -6131,7 +6131,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_NODE__MULTIPLICITY = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 15;
+  int IF_NODE__MULTIPLICITY = ACTION_NODE_ELEMENT_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
@@ -6140,7 +6140,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_NODE__IS_ORDERED = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 16;
+  int IF_NODE__IS_ORDERED = ACTION_NODE_ELEMENT_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
@@ -6149,7 +6149,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_NODE__IS_NONUNIQUE = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 17;
+  int IF_NODE__IS_NONUNIQUE = ACTION_NODE_ELEMENT_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -6158,7 +6158,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_NODE__DECLARED_NAME = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 18;
+  int IF_NODE__DECLARED_NAME = ACTION_NODE_ELEMENT_FEATURE_COUNT + 20;
 
   /**
    * The feature id for the '<em><b>If Condition Expression</b></em>' attribute.
@@ -6167,7 +6167,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_NODE__IF_CONDITION_EXPRESSION = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 19;
+  int IF_NODE__IF_CONDITION_EXPRESSION = ACTION_NODE_ELEMENT_FEATURE_COUNT + 21;
 
   /**
    * The feature id for the '<em><b>Action Parameter End</b></em>' containment reference list.
@@ -6176,7 +6176,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_NODE__ACTION_PARAMETER_END = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 20;
+  int IF_NODE__ACTION_PARAMETER_END = ACTION_NODE_ELEMENT_FEATURE_COUNT + 22;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -6185,7 +6185,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_NODE__ELEMENTS = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 21;
+  int IF_NODE__ELEMENTS = ACTION_NODE_ELEMENT_FEATURE_COUNT + 23;
 
   /**
    * The number of structural features of the '<em>If Node</em>' class.
@@ -6194,7 +6194,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_NODE_FEATURE_COUNT = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 22;
+  int IF_NODE_FEATURE_COUNT = ACTION_NODE_ELEMENT_FEATURE_COUNT + 24;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.WhileLoopNodeImpl <em>While Loop Node</em>}' class.
@@ -7867,22 +7867,13 @@ public interface SysMLOCPackage extends EPackage
   int GUARDED_SUCCESSION_ELEMENT__DECLARED_NAME = GUARDED_SUCCESSION_NODE_ELEMENT_FEATURE_COUNT + 8;
 
   /**
-   * The feature id for the '<em><b>Conditional Expression</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GUARDED_SUCCESSION_ELEMENT__CONDITIONAL_EXPRESSION = GUARDED_SUCCESSION_NODE_ELEMENT_FEATURE_COUNT + 9;
-
-  /**
    * The feature id for the '<em><b>Transition Succession Element</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GUARDED_SUCCESSION_ELEMENT__TRANSITION_SUCCESSION_ELEMENT = GUARDED_SUCCESSION_NODE_ELEMENT_FEATURE_COUNT + 10;
+  int GUARDED_SUCCESSION_ELEMENT__TRANSITION_SUCCESSION_ELEMENT = GUARDED_SUCCESSION_NODE_ELEMENT_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Member Element</b></em>' attribute.
@@ -7891,7 +7882,16 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GUARDED_SUCCESSION_ELEMENT__MEMBER_ELEMENT = GUARDED_SUCCESSION_NODE_ELEMENT_FEATURE_COUNT + 11;
+  int GUARDED_SUCCESSION_ELEMENT__MEMBER_ELEMENT = GUARDED_SUCCESSION_NODE_ELEMENT_FEATURE_COUNT + 10;
+
+  /**
+   * The feature id for the '<em><b>Conditional Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GUARDED_SUCCESSION_ELEMENT__CONDITIONAL_EXPRESSION = GUARDED_SUCCESSION_NODE_ELEMENT_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -9450,22 +9450,22 @@ public interface SysMLOCPackage extends EPackage
   int GUARDED_TARGET_SUCCESSION = 102;
 
   /**
-   * The feature id for the '<em><b>Conditional Expression</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GUARDED_TARGET_SUCCESSION__CONDITIONAL_EXPRESSION = GUARD_EXPRESSION__CONDITIONAL_EXPRESSION;
-
-  /**
    * The feature id for the '<em><b>Transition Succession Element</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GUARDED_TARGET_SUCCESSION__TRANSITION_SUCCESSION_ELEMENT = GUARD_EXPRESSION_FEATURE_COUNT + 0;
+  int GUARDED_TARGET_SUCCESSION__TRANSITION_SUCCESSION_ELEMENT = TRANSITION_SUCCESSION__TRANSITION_SUCCESSION_ELEMENT;
+
+  /**
+   * The feature id for the '<em><b>Conditional Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GUARDED_TARGET_SUCCESSION__CONDITIONAL_EXPRESSION = TRANSITION_SUCCESSION_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Guarded Target Succession</em>' class.
@@ -9474,7 +9474,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GUARDED_TARGET_SUCCESSION_FEATURE_COUNT = GUARD_EXPRESSION_FEATURE_COUNT + 1;
+  int GUARDED_TARGET_SUCCESSION_FEATURE_COUNT = TRANSITION_SUCCESSION_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.DefaultTargetSuccessionImpl <em>Default Target Succession</em>}' class.
@@ -11308,6 +11308,17 @@ public interface SysMLOCPackage extends EPackage
   EAttribute getGuardedSuccessionElement_MemberElement();
 
   /**
+   * Returns the meta object for the attribute '{@link dut.control.sysmloc.sysMLOC.GuardedSuccessionElement#getConditionalExpression <em>Conditional Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Conditional Expression</em>'.
+   * @see dut.control.sysmloc.sysMLOC.GuardedSuccessionElement#getConditionalExpression()
+   * @see #getGuardedSuccessionElement()
+   * @generated
+   */
+  EAttribute getGuardedSuccessionElement_ConditionalExpression();
+
+  /**
    * Returns the meta object for the containment reference list '{@link dut.control.sysmloc.sysMLOC.GuardedSuccessionElement#getElements <em>Elements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -12054,6 +12065,17 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    */
   EClass getGuardedTargetSuccession();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.sysmloc.sysMLOC.GuardedTargetSuccession#getConditionalExpression <em>Conditional Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Conditional Expression</em>'.
+   * @see dut.control.sysmloc.sysMLOC.GuardedTargetSuccession#getConditionalExpression()
+   * @see #getGuardedTargetSuccession()
+   * @generated
+   */
+  EAttribute getGuardedTargetSuccession_ConditionalExpression();
 
   /**
    * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.DefaultTargetSuccession <em>Default Target Succession</em>}'.
