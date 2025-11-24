@@ -4,20 +4,14 @@
 package dut.control.sysmloc.sysMLOC.impl;
 
 import dut.control.sysmloc.sysMLOC.ConnectorEnd;
+import dut.control.sysmloc.sysMLOC.ReferenceSubsetting;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,24 +21,33 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ConnectorEndImpl#getMultiplicity <em>Multiplicity</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ConnectorEndImpl#getDelcaredName <em>Delcared Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ConnectorEndImpl#getRefElement <em>Ref Element</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ConnectorEndImpl#getDelcaredName <em>Delcared Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ConnectorEndImpl extends MinimalEObjectImpl.Container implements ConnectorEnd
+public class ConnectorEndImpl extends MultiplicityRangeImpl implements ConnectorEnd
 {
   /**
-   * The cached value of the '{@link #getMultiplicity() <em>Multiplicity</em>}' attribute list.
+   * The default value of the '{@link #getRefElement() <em>Ref Element</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMultiplicity()
+   * @see #getRefElement()
    * @generated
    * @ordered
    */
-  protected EList<String> multiplicity;
+  protected static final String REF_ELEMENT_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getRefElement() <em>Ref Element</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRefElement()
+   * @generated
+   * @ordered
+   */
+  protected String refElement = REF_ELEMENT_EDEFAULT;
 
   /**
    * The default value of the '{@link #getDelcaredName() <em>Delcared Name</em>}' attribute.
@@ -67,26 +70,6 @@ public class ConnectorEndImpl extends MinimalEObjectImpl.Container implements Co
   protected String delcaredName = DELCARED_NAME_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getRefElement() <em>Ref Element</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getRefElement()
-   * @generated
-   * @ordered
-   */
-  protected static final String REF_ELEMENT_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getRefElement() <em>Ref Element</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getRefElement()
-   * @generated
-   * @ordered
-   */
-  protected String refElement = REF_ELEMENT_EDEFAULT;
-
-  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -105,46 +88,6 @@ public class ConnectorEndImpl extends MinimalEObjectImpl.Container implements Co
   protected EClass eStaticClass()
   {
     return SysMLOCPackage.eINSTANCE.getConnectorEnd();
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EList<String> getMultiplicity()
-  {
-    if (multiplicity == null)
-    {
-      multiplicity = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.CONNECTOR_END__MULTIPLICITY);
-    }
-    return multiplicity;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getDelcaredName()
-  {
-    return delcaredName;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setDelcaredName(String newDelcaredName)
-  {
-    String oldDelcaredName = delcaredName;
-    delcaredName = newDelcaredName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.CONNECTOR_END__DELCARED_NAME, oldDelcaredName, delcaredName));
   }
 
   /**
@@ -178,16 +121,39 @@ public class ConnectorEndImpl extends MinimalEObjectImpl.Container implements Co
    * @generated
    */
   @Override
+  public String getDelcaredName()
+  {
+    return delcaredName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDelcaredName(String newDelcaredName)
+  {
+    String oldDelcaredName = delcaredName;
+    delcaredName = newDelcaredName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.CONNECTOR_END__DELCARED_NAME, oldDelcaredName, delcaredName));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
-      case SysMLOCPackage.CONNECTOR_END__MULTIPLICITY:
-        return getMultiplicity();
-      case SysMLOCPackage.CONNECTOR_END__DELCARED_NAME:
-        return getDelcaredName();
       case SysMLOCPackage.CONNECTOR_END__REF_ELEMENT:
         return getRefElement();
+      case SysMLOCPackage.CONNECTOR_END__DELCARED_NAME:
+        return getDelcaredName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -197,21 +163,16 @@ public class ConnectorEndImpl extends MinimalEObjectImpl.Container implements Co
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case SysMLOCPackage.CONNECTOR_END__MULTIPLICITY:
-        getMultiplicity().clear();
-        getMultiplicity().addAll((Collection<? extends String>)newValue);
+      case SysMLOCPackage.CONNECTOR_END__REF_ELEMENT:
+        setRefElement((String)newValue);
         return;
       case SysMLOCPackage.CONNECTOR_END__DELCARED_NAME:
         setDelcaredName((String)newValue);
-        return;
-      case SysMLOCPackage.CONNECTOR_END__REF_ELEMENT:
-        setRefElement((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -227,14 +188,11 @@ public class ConnectorEndImpl extends MinimalEObjectImpl.Container implements Co
   {
     switch (featureID)
     {
-      case SysMLOCPackage.CONNECTOR_END__MULTIPLICITY:
-        getMultiplicity().clear();
+      case SysMLOCPackage.CONNECTOR_END__REF_ELEMENT:
+        setRefElement(REF_ELEMENT_EDEFAULT);
         return;
       case SysMLOCPackage.CONNECTOR_END__DELCARED_NAME:
         setDelcaredName(DELCARED_NAME_EDEFAULT);
-        return;
-      case SysMLOCPackage.CONNECTOR_END__REF_ELEMENT:
-        setRefElement(REF_ELEMENT_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -250,14 +208,50 @@ public class ConnectorEndImpl extends MinimalEObjectImpl.Container implements Co
   {
     switch (featureID)
     {
-      case SysMLOCPackage.CONNECTOR_END__MULTIPLICITY:
-        return multiplicity != null && !multiplicity.isEmpty();
-      case SysMLOCPackage.CONNECTOR_END__DELCARED_NAME:
-        return DELCARED_NAME_EDEFAULT == null ? delcaredName != null : !DELCARED_NAME_EDEFAULT.equals(delcaredName);
       case SysMLOCPackage.CONNECTOR_END__REF_ELEMENT:
         return REF_ELEMENT_EDEFAULT == null ? refElement != null : !REF_ELEMENT_EDEFAULT.equals(refElement);
+      case SysMLOCPackage.CONNECTOR_END__DELCARED_NAME:
+        return DELCARED_NAME_EDEFAULT == null ? delcaredName != null : !DELCARED_NAME_EDEFAULT.equals(delcaredName);
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == ReferenceSubsetting.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.CONNECTOR_END__REF_ELEMENT: return SysMLOCPackage.REFERENCE_SUBSETTING__REF_ELEMENT;
+        default: return -1;
+      }
+    }
+    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == ReferenceSubsetting.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.REFERENCE_SUBSETTING__REF_ELEMENT: return SysMLOCPackage.CONNECTOR_END__REF_ELEMENT;
+        default: return -1;
+      }
+    }
+    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
   }
 
   /**
@@ -271,12 +265,10 @@ public class ConnectorEndImpl extends MinimalEObjectImpl.Container implements Co
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (Multiplicity: ");
-    result.append(multiplicity);
+    result.append(" (refElement: ");
+    result.append(refElement);
     result.append(", delcaredName: ");
     result.append(delcaredName);
-    result.append(", refElement: ");
-    result.append(refElement);
     result.append(')');
     return result.toString();
   }

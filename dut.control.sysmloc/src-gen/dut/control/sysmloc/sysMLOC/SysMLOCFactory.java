@@ -96,6 +96,24 @@ public interface SysMLOCFactory extends EFactory
   ActionBodyElement createActionBodyElement();
 
   /**
+   * Returns a new object of class '<em>Annotating Body Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Annotating Body Element</em>'.
+   * @generated
+   */
+  AnnotatingBodyElement createAnnotatingBodyElement();
+
+  /**
+   * Returns a new object of class '<em>Action Node Body Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Action Node Body Element</em>'.
+   * @generated
+   */
+  ActionNodeBodyElement createActionNodeBodyElement();
+
+  /**
    * Returns a new object of class '<em>Annotating Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -177,6 +195,15 @@ public interface SysMLOCFactory extends EFactory
   EnumerationElement createEnumerationElement();
 
   /**
+   * Returns a new object of class '<em>Initial Node Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Initial Node Element</em>'.
+   * @generated
+   */
+  InitialNodeElement createInitialNodeElement();
+
+  /**
    * Returns a new object of class '<em>Action Node Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -184,6 +211,24 @@ public interface SysMLOCFactory extends EFactory
    * @generated
    */
   ActionNodeElement createActionNodeElement();
+
+  /**
+   * Returns a new object of class '<em>Guarded Succession Node Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Guarded Succession Node Element</em>'.
+   * @generated
+   */
+  GuardedSuccessionNodeElement createGuardedSuccessionNodeElement();
+
+  /**
+   * Returns a new object of class '<em>Target Succession Node Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Target Succession Node Element</em>'.
+   * @generated
+   */
+  TargetSuccessionNodeElement createTargetSuccessionNodeElement();
 
   /**
    * Returns a new object of class '<em>Namespace Import</em>'.
@@ -456,6 +501,15 @@ public interface SysMLOCFactory extends EFactory
   ActionUsage createActionUsage();
 
   /**
+   * Returns a new object of class '<em>Perform Action Usage</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Perform Action Usage</em>'.
+   * @generated
+   */
+  PerformActionUsage createPerformActionUsage();
+
+  /**
    * Returns a new object of class '<em>Alias Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -474,13 +528,13 @@ public interface SysMLOCFactory extends EFactory
   ConnectorEnd createConnectorEnd();
 
   /**
-   * Returns a new object of class '<em>Empty Succession</em>'.
+   * Returns a new object of class '<em>Initial Node</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Empty Succession</em>'.
+   * @return a new object of class '<em>Initial Node</em>'.
    * @generated
    */
-  EmptySuccession createEmptySuccession();
+  InitialNode createInitialNode();
 
   /**
    * Returns a new object of class '<em>Send Node</em>'.
@@ -528,6 +582,51 @@ public interface SysMLOCFactory extends EFactory
   WhileLoopNode createWhileLoopNode();
 
   /**
+   * Returns a new object of class '<em>Merge Node</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Merge Node</em>'.
+   * @generated
+   */
+  MergeNode createMergeNode();
+
+  /**
+   * Returns a new object of class '<em>Decision Node</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Decision Node</em>'.
+   * @generated
+   */
+  DecisionNode createDecisionNode();
+
+  /**
+   * Returns a new object of class '<em>Join Node</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Join Node</em>'.
+   * @generated
+   */
+  JoinNode createJoinNode();
+
+  /**
+   * Returns a new object of class '<em>Fork Node</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Fork Node</em>'.
+   * @generated
+   */
+  ForkNode createForkNode();
+
+  /**
+   * Returns a new object of class '<em>Action Parameter End</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Action Parameter End</em>'.
+   * @generated
+   */
+  ActionParameterEnd createActionParameterEnd();
+
+  /**
    * Returns a new object of class '<em>For Loop Node</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -546,13 +645,40 @@ public interface SysMLOCFactory extends EFactory
   TerminateNode createTerminateNode();
 
   /**
-   * Returns a new object of class '<em>Control Node</em>'.
+   * Returns a new object of class '<em>Guarded Succession Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Control Node</em>'.
+   * @return a new object of class '<em>Guarded Succession Element</em>'.
    * @generated
    */
-  ControlNode createControlNode();
+  GuardedSuccessionElement createGuardedSuccessionElement();
+
+  /**
+   * Returns a new object of class '<em>Target Succession Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Target Succession Element</em>'.
+   * @generated
+   */
+  TargetSuccessionElement createTargetSuccessionElement();
+
+  /**
+   * Returns a new object of class '<em>Empty Succession Prefix</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Empty Succession Prefix</em>'.
+   * @generated
+   */
+  EmptySuccessionPrefix createEmptySuccessionPrefix();
+
+  /**
+   * Returns a new object of class '<em>Multiplicity Range</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Multiplicity Range</em>'.
+   * @generated
+   */
+  MultiplicityRange createMultiplicityRange();
 
   /**
    * Returns a new object of class '<em>Value Part</em>'.
@@ -787,6 +913,78 @@ public interface SysMLOCFactory extends EFactory
    * @generated
    */
   FeatureSpecialization createFeatureSpecialization();
+
+  /**
+   * Returns a new object of class '<em>Guard Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Guard Expression</em>'.
+   * @generated
+   */
+  GuardExpression createGuardExpression();
+
+  /**
+   * Returns a new object of class '<em>Transition Succession</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Transition Succession</em>'.
+   * @generated
+   */
+  TransitionSuccession createTransitionSuccession();
+
+  /**
+   * Returns a new object of class '<em>Target Succession</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Target Succession</em>'.
+   * @generated
+   */
+  TargetSuccession createTargetSuccession();
+
+  /**
+   * Returns a new object of class '<em>Guarded Target Succession</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Guarded Target Succession</em>'.
+   * @generated
+   */
+  GuardedTargetSuccession createGuardedTargetSuccession();
+
+  /**
+   * Returns a new object of class '<em>Default Target Succession</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Default Target Succession</em>'.
+   * @generated
+   */
+  DefaultTargetSuccession createDefaultTargetSuccession();
+
+  /**
+   * Returns a new object of class '<em>Reference Subsetting</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Reference Subsetting</em>'.
+   * @generated
+   */
+  ReferenceSubsetting createReferenceSubsetting();
+
+  /**
+   * Returns a new object of class '<em>Action Node Prefix</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Action Node Prefix</em>'.
+   * @generated
+   */
+  ActionNodePrefix createActionNodePrefix();
+
+  /**
+   * Returns a new object of class '<em>Control Node Prefix</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Control Node Prefix</em>'.
+   * @generated
+   */
+  ControlNodePrefix createControlNodePrefix();
 
   /**
    * Returns the package supported by this factory.

@@ -48,8 +48,8 @@
         </elements>
         <elements xsi:type="sysMLOC:ConnectionUsage">
           <typings>PressureSeat</typings>
-          <connectorPart delcaredName="bead" refElement="t.bead"/>
-          <connectorPart delcaredName="mountingRim" refElement="w.rim"/>
+          <connectorPart refElement="t.bead" delcaredName="bead"/>
+          <connectorPart refElement="w.rim" delcaredName="mountingRim"/>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:PartUsage" declaredName="lugBoltJoints">

@@ -4,16 +4,23 @@
 package dut.control.sysmloc.sysMLOC.impl;
 
 import dut.control.sysmloc.sysMLOC.AttributeUsage;
+import dut.control.sysmloc.sysMLOC.BasicUsagePrefix;
+import dut.control.sysmloc.sysMLOC.EndUsagePrefix;
 import dut.control.sysmloc.sysMLOC.FeatureDeclaration;
+import dut.control.sysmloc.sysMLOC.FeatureDirection;
 import dut.control.sysmloc.sysMLOC.FeatureSpecialization;
 import dut.control.sysmloc.sysMLOC.FeatureSpecializationPart;
 import dut.control.sysmloc.sysMLOC.FeatureValue;
 import dut.control.sysmloc.sysMLOC.MemberPrefix;
 import dut.control.sysmloc.sysMLOC.MultiplicityPart;
+import dut.control.sysmloc.sysMLOC.MultiplicityRange;
+import dut.control.sysmloc.sysMLOC.RefPrefix;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
+import dut.control.sysmloc.sysMLOC.UnextendedUsagePrefix;
 import dut.control.sysmloc.sysMLOC.Usage;
 import dut.control.sysmloc.sysMLOC.UsageBodyElement;
 import dut.control.sysmloc.sysMLOC.UsageDeclaration;
+import dut.control.sysmloc.sysMLOC.UsagePrefix;
 import dut.control.sysmloc.sysMLOC.VisibilityIndicator;
 
 import java.util.Collection;
@@ -41,6 +48,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AttributeUsageImpl#getVisibility <em>Visibility</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AttributeUsageImpl#isIsEnd <em>Is End</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AttributeUsageImpl#getDirection <em>Direction</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AttributeUsageImpl#isIsAbstract <em>Is Abstract</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AttributeUsageImpl#isIsVariation <em>Is Variation</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AttributeUsageImpl#isIsReadOnly <em>Is Read Only</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AttributeUsageImpl#isIsDerived <em>Is Derived</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AttributeUsageImpl#isIsReference <em>Is Reference</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AttributeUsageImpl#getTypings <em>Typings</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AttributeUsageImpl#getSubsetting <em>Subsetting</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AttributeUsageImpl#getReferences <em>References</em>}</li>
@@ -79,6 +93,146 @@ public class AttributeUsageImpl extends NonOccurrenceUsageElementImpl implements
    * @ordered
    */
   protected VisibilityIndicator visibility = VISIBILITY_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsEnd() <em>Is End</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsEnd()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_END_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsEnd() <em>Is End</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsEnd()
+   * @generated
+   * @ordered
+   */
+  protected boolean isEnd = IS_END_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getDirection() <em>Direction</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDirection()
+   * @generated
+   * @ordered
+   */
+  protected static final FeatureDirection DIRECTION_EDEFAULT = FeatureDirection.INOUT;
+
+  /**
+   * The cached value of the '{@link #getDirection() <em>Direction</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDirection()
+   * @generated
+   * @ordered
+   */
+  protected FeatureDirection direction = DIRECTION_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsAbstract() <em>Is Abstract</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAbstract()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_ABSTRACT_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsAbstract() <em>Is Abstract</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAbstract()
+   * @generated
+   * @ordered
+   */
+  protected boolean isAbstract = IS_ABSTRACT_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsVariation() <em>Is Variation</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsVariation()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_VARIATION_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsVariation() <em>Is Variation</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsVariation()
+   * @generated
+   * @ordered
+   */
+  protected boolean isVariation = IS_VARIATION_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsReadOnly() <em>Is Read Only</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsReadOnly()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_READ_ONLY_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsReadOnly() <em>Is Read Only</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsReadOnly()
+   * @generated
+   * @ordered
+   */
+  protected boolean isReadOnly = IS_READ_ONLY_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsDerived() <em>Is Derived</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsDerived()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_DERIVED_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsDerived() <em>Is Derived</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsDerived()
+   * @generated
+   * @ordered
+   */
+  protected boolean isDerived = IS_DERIVED_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsReference() <em>Is Reference</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsReference()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_REFERENCE_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsReference() <em>Is Reference</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsReference()
+   * @generated
+   * @ordered
+   */
+  protected boolean isReference = IS_REFERENCE_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getTypings() <em>Typings</em>}' attribute list.
@@ -304,6 +458,181 @@ public class AttributeUsageImpl extends NonOccurrenceUsageElementImpl implements
     visibility = newVisibility == null ? VISIBILITY_EDEFAULT : newVisibility;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ATTRIBUTE_USAGE__VISIBILITY, oldVisibility, visibility));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsEnd()
+  {
+    return isEnd;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsEnd(boolean newIsEnd)
+  {
+    boolean oldIsEnd = isEnd;
+    isEnd = newIsEnd;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ATTRIBUTE_USAGE__IS_END, oldIsEnd, isEnd));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public FeatureDirection getDirection()
+  {
+    return direction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDirection(FeatureDirection newDirection)
+  {
+    FeatureDirection oldDirection = direction;
+    direction = newDirection == null ? DIRECTION_EDEFAULT : newDirection;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ATTRIBUTE_USAGE__DIRECTION, oldDirection, direction));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsAbstract()
+  {
+    return isAbstract;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsAbstract(boolean newIsAbstract)
+  {
+    boolean oldIsAbstract = isAbstract;
+    isAbstract = newIsAbstract;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ATTRIBUTE_USAGE__IS_ABSTRACT, oldIsAbstract, isAbstract));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsVariation()
+  {
+    return isVariation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsVariation(boolean newIsVariation)
+  {
+    boolean oldIsVariation = isVariation;
+    isVariation = newIsVariation;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ATTRIBUTE_USAGE__IS_VARIATION, oldIsVariation, isVariation));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsReadOnly()
+  {
+    return isReadOnly;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsReadOnly(boolean newIsReadOnly)
+  {
+    boolean oldIsReadOnly = isReadOnly;
+    isReadOnly = newIsReadOnly;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ATTRIBUTE_USAGE__IS_READ_ONLY, oldIsReadOnly, isReadOnly));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsDerived()
+  {
+    return isDerived;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsDerived(boolean newIsDerived)
+  {
+    boolean oldIsDerived = isDerived;
+    isDerived = newIsDerived;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ATTRIBUTE_USAGE__IS_DERIVED, oldIsDerived, isDerived));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsReference()
+  {
+    return isReference;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsReference(boolean newIsReference)
+  {
+    boolean oldIsReference = isReference;
+    isReference = newIsReference;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ATTRIBUTE_USAGE__IS_REFERENCE, oldIsReference, isReference));
   }
 
   /**
@@ -579,6 +908,20 @@ public class AttributeUsageImpl extends NonOccurrenceUsageElementImpl implements
     {
       case SysMLOCPackage.ATTRIBUTE_USAGE__VISIBILITY:
         return getVisibility();
+      case SysMLOCPackage.ATTRIBUTE_USAGE__IS_END:
+        return isIsEnd();
+      case SysMLOCPackage.ATTRIBUTE_USAGE__DIRECTION:
+        return getDirection();
+      case SysMLOCPackage.ATTRIBUTE_USAGE__IS_ABSTRACT:
+        return isIsAbstract();
+      case SysMLOCPackage.ATTRIBUTE_USAGE__IS_VARIATION:
+        return isIsVariation();
+      case SysMLOCPackage.ATTRIBUTE_USAGE__IS_READ_ONLY:
+        return isIsReadOnly();
+      case SysMLOCPackage.ATTRIBUTE_USAGE__IS_DERIVED:
+        return isIsDerived();
+      case SysMLOCPackage.ATTRIBUTE_USAGE__IS_REFERENCE:
+        return isIsReference();
       case SysMLOCPackage.ATTRIBUTE_USAGE__TYPINGS:
         return getTypings();
       case SysMLOCPackage.ATTRIBUTE_USAGE__SUBSETTING:
@@ -622,6 +965,27 @@ public class AttributeUsageImpl extends NonOccurrenceUsageElementImpl implements
     {
       case SysMLOCPackage.ATTRIBUTE_USAGE__VISIBILITY:
         setVisibility((VisibilityIndicator)newValue);
+        return;
+      case SysMLOCPackage.ATTRIBUTE_USAGE__IS_END:
+        setIsEnd((Boolean)newValue);
+        return;
+      case SysMLOCPackage.ATTRIBUTE_USAGE__DIRECTION:
+        setDirection((FeatureDirection)newValue);
+        return;
+      case SysMLOCPackage.ATTRIBUTE_USAGE__IS_ABSTRACT:
+        setIsAbstract((Boolean)newValue);
+        return;
+      case SysMLOCPackage.ATTRIBUTE_USAGE__IS_VARIATION:
+        setIsVariation((Boolean)newValue);
+        return;
+      case SysMLOCPackage.ATTRIBUTE_USAGE__IS_READ_ONLY:
+        setIsReadOnly((Boolean)newValue);
+        return;
+      case SysMLOCPackage.ATTRIBUTE_USAGE__IS_DERIVED:
+        setIsDerived((Boolean)newValue);
+        return;
+      case SysMLOCPackage.ATTRIBUTE_USAGE__IS_REFERENCE:
+        setIsReference((Boolean)newValue);
         return;
       case SysMLOCPackage.ATTRIBUTE_USAGE__TYPINGS:
         getTypings().clear();
@@ -687,6 +1051,27 @@ public class AttributeUsageImpl extends NonOccurrenceUsageElementImpl implements
       case SysMLOCPackage.ATTRIBUTE_USAGE__VISIBILITY:
         setVisibility(VISIBILITY_EDEFAULT);
         return;
+      case SysMLOCPackage.ATTRIBUTE_USAGE__IS_END:
+        setIsEnd(IS_END_EDEFAULT);
+        return;
+      case SysMLOCPackage.ATTRIBUTE_USAGE__DIRECTION:
+        setDirection(DIRECTION_EDEFAULT);
+        return;
+      case SysMLOCPackage.ATTRIBUTE_USAGE__IS_ABSTRACT:
+        setIsAbstract(IS_ABSTRACT_EDEFAULT);
+        return;
+      case SysMLOCPackage.ATTRIBUTE_USAGE__IS_VARIATION:
+        setIsVariation(IS_VARIATION_EDEFAULT);
+        return;
+      case SysMLOCPackage.ATTRIBUTE_USAGE__IS_READ_ONLY:
+        setIsReadOnly(IS_READ_ONLY_EDEFAULT);
+        return;
+      case SysMLOCPackage.ATTRIBUTE_USAGE__IS_DERIVED:
+        setIsDerived(IS_DERIVED_EDEFAULT);
+        return;
+      case SysMLOCPackage.ATTRIBUTE_USAGE__IS_REFERENCE:
+        setIsReference(IS_REFERENCE_EDEFAULT);
+        return;
       case SysMLOCPackage.ATTRIBUTE_USAGE__TYPINGS:
         getTypings().clear();
         return;
@@ -742,6 +1127,20 @@ public class AttributeUsageImpl extends NonOccurrenceUsageElementImpl implements
     {
       case SysMLOCPackage.ATTRIBUTE_USAGE__VISIBILITY:
         return visibility != VISIBILITY_EDEFAULT;
+      case SysMLOCPackage.ATTRIBUTE_USAGE__IS_END:
+        return isEnd != IS_END_EDEFAULT;
+      case SysMLOCPackage.ATTRIBUTE_USAGE__DIRECTION:
+        return direction != DIRECTION_EDEFAULT;
+      case SysMLOCPackage.ATTRIBUTE_USAGE__IS_ABSTRACT:
+        return isAbstract != IS_ABSTRACT_EDEFAULT;
+      case SysMLOCPackage.ATTRIBUTE_USAGE__IS_VARIATION:
+        return isVariation != IS_VARIATION_EDEFAULT;
+      case SysMLOCPackage.ATTRIBUTE_USAGE__IS_READ_ONLY:
+        return isReadOnly != IS_READ_ONLY_EDEFAULT;
+      case SysMLOCPackage.ATTRIBUTE_USAGE__IS_DERIVED:
+        return isDerived != IS_DERIVED_EDEFAULT;
+      case SysMLOCPackage.ATTRIBUTE_USAGE__IS_REFERENCE:
+        return isReference != IS_REFERENCE_EDEFAULT;
       case SysMLOCPackage.ATTRIBUTE_USAGE__TYPINGS:
         return typings != null && !typings.isEmpty();
       case SysMLOCPackage.ATTRIBUTE_USAGE__SUBSETTING:
@@ -788,6 +1187,48 @@ public class AttributeUsageImpl extends NonOccurrenceUsageElementImpl implements
         default: return -1;
       }
     }
+    if (baseClass == EndUsagePrefix.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.ATTRIBUTE_USAGE__IS_END: return SysMLOCPackage.END_USAGE_PREFIX__IS_END;
+        default: return -1;
+      }
+    }
+    if (baseClass == RefPrefix.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.ATTRIBUTE_USAGE__DIRECTION: return SysMLOCPackage.REF_PREFIX__DIRECTION;
+        case SysMLOCPackage.ATTRIBUTE_USAGE__IS_ABSTRACT: return SysMLOCPackage.REF_PREFIX__IS_ABSTRACT;
+        case SysMLOCPackage.ATTRIBUTE_USAGE__IS_VARIATION: return SysMLOCPackage.REF_PREFIX__IS_VARIATION;
+        case SysMLOCPackage.ATTRIBUTE_USAGE__IS_READ_ONLY: return SysMLOCPackage.REF_PREFIX__IS_READ_ONLY;
+        case SysMLOCPackage.ATTRIBUTE_USAGE__IS_DERIVED: return SysMLOCPackage.REF_PREFIX__IS_DERIVED;
+        default: return -1;
+      }
+    }
+    if (baseClass == BasicUsagePrefix.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.ATTRIBUTE_USAGE__IS_REFERENCE: return SysMLOCPackage.BASIC_USAGE_PREFIX__IS_REFERENCE;
+        default: return -1;
+      }
+    }
+    if (baseClass == UnextendedUsagePrefix.class)
+    {
+      switch (derivedFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    if (baseClass == UsagePrefix.class)
+    {
+      switch (derivedFeatureID)
+      {
+        default: return -1;
+      }
+    }
     if (baseClass == FeatureSpecialization.class)
     {
       switch (derivedFeatureID)
@@ -800,11 +1241,18 @@ public class AttributeUsageImpl extends NonOccurrenceUsageElementImpl implements
         default: return -1;
       }
     }
+    if (baseClass == MultiplicityRange.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.ATTRIBUTE_USAGE__MULTIPLICITY: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTIPLICITY;
+        default: return -1;
+      }
+    }
     if (baseClass == MultiplicityPart.class)
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.ATTRIBUTE_USAGE__MULTIPLICITY: return SysMLOCPackage.MULTIPLICITY_PART__MULTIPLICITY;
         case SysMLOCPackage.ATTRIBUTE_USAGE__IS_ORDERED: return SysMLOCPackage.MULTIPLICITY_PART__IS_ORDERED;
         case SysMLOCPackage.ATTRIBUTE_USAGE__IS_NONUNIQUE: return SysMLOCPackage.MULTIPLICITY_PART__IS_NONUNIQUE;
         default: return -1;
@@ -868,6 +1316,48 @@ public class AttributeUsageImpl extends NonOccurrenceUsageElementImpl implements
         default: return -1;
       }
     }
+    if (baseClass == EndUsagePrefix.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.END_USAGE_PREFIX__IS_END: return SysMLOCPackage.ATTRIBUTE_USAGE__IS_END;
+        default: return -1;
+      }
+    }
+    if (baseClass == RefPrefix.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.REF_PREFIX__DIRECTION: return SysMLOCPackage.ATTRIBUTE_USAGE__DIRECTION;
+        case SysMLOCPackage.REF_PREFIX__IS_ABSTRACT: return SysMLOCPackage.ATTRIBUTE_USAGE__IS_ABSTRACT;
+        case SysMLOCPackage.REF_PREFIX__IS_VARIATION: return SysMLOCPackage.ATTRIBUTE_USAGE__IS_VARIATION;
+        case SysMLOCPackage.REF_PREFIX__IS_READ_ONLY: return SysMLOCPackage.ATTRIBUTE_USAGE__IS_READ_ONLY;
+        case SysMLOCPackage.REF_PREFIX__IS_DERIVED: return SysMLOCPackage.ATTRIBUTE_USAGE__IS_DERIVED;
+        default: return -1;
+      }
+    }
+    if (baseClass == BasicUsagePrefix.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.BASIC_USAGE_PREFIX__IS_REFERENCE: return SysMLOCPackage.ATTRIBUTE_USAGE__IS_REFERENCE;
+        default: return -1;
+      }
+    }
+    if (baseClass == UnextendedUsagePrefix.class)
+    {
+      switch (baseFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    if (baseClass == UsagePrefix.class)
+    {
+      switch (baseFeatureID)
+      {
+        default: return -1;
+      }
+    }
     if (baseClass == FeatureSpecialization.class)
     {
       switch (baseFeatureID)
@@ -880,11 +1370,18 @@ public class AttributeUsageImpl extends NonOccurrenceUsageElementImpl implements
         default: return -1;
       }
     }
+    if (baseClass == MultiplicityRange.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTIPLICITY: return SysMLOCPackage.ATTRIBUTE_USAGE__MULTIPLICITY;
+        default: return -1;
+      }
+    }
     if (baseClass == MultiplicityPart.class)
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.MULTIPLICITY_PART__MULTIPLICITY: return SysMLOCPackage.ATTRIBUTE_USAGE__MULTIPLICITY;
         case SysMLOCPackage.MULTIPLICITY_PART__IS_ORDERED: return SysMLOCPackage.ATTRIBUTE_USAGE__IS_ORDERED;
         case SysMLOCPackage.MULTIPLICITY_PART__IS_NONUNIQUE: return SysMLOCPackage.ATTRIBUTE_USAGE__IS_NONUNIQUE;
         default: return -1;
@@ -945,6 +1442,20 @@ public class AttributeUsageImpl extends NonOccurrenceUsageElementImpl implements
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (visibility: ");
     result.append(visibility);
+    result.append(", isEnd: ");
+    result.append(isEnd);
+    result.append(", direction: ");
+    result.append(direction);
+    result.append(", isAbstract: ");
+    result.append(isAbstract);
+    result.append(", isVariation: ");
+    result.append(isVariation);
+    result.append(", isReadOnly: ");
+    result.append(isReadOnly);
+    result.append(", isDerived: ");
+    result.append(isDerived);
+    result.append(", isReference: ");
+    result.append(isReference);
     result.append(", typings: ");
     result.append(typings);
     result.append(", subsetting: ");

@@ -9,21 +9,21 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Empty Succession</b></em>'.
+ * A representation of the model object '<em><b>Multiplicity Range</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.EmptySuccession#getMultiplicity <em>Multiplicity</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.MultiplicityRange#getMultiplicity <em>Multiplicity</em>}</li>
  * </ul>
  *
- * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getEmptySuccession()
+ * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getMultiplicityRange()
  * @model
  * @generated
  */
-public interface EmptySuccession extends EObject
+public interface MultiplicityRange extends EObject
 {
   /**
    * Returns the value of the '<em><b>Multiplicity</b></em>' attribute list.
@@ -31,10 +31,10 @@ public interface EmptySuccession extends EObject
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Multiplicity</em>' attribute list.
-   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getEmptySuccession_Multiplicity()
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getMultiplicityRange_Multiplicity()
    * @model unique="false"
    * @generated
    */
   EList<String> getMultiplicity();
 
-} // EmptySuccession
+} // MultiplicityRange

@@ -13,6 +13,7 @@ import dut.control.sysmloc.sysMLOC.FeatureSpecializationPart;
 import dut.control.sysmloc.sysMLOC.FeatureValue;
 import dut.control.sysmloc.sysMLOC.MemberPrefix;
 import dut.control.sysmloc.sysMLOC.MultiplicityPart;
+import dut.control.sysmloc.sysMLOC.MultiplicityRange;
 import dut.control.sysmloc.sysMLOC.RefPrefix;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 import dut.control.sysmloc.sysMLOC.UnextendedUsagePrefix;
@@ -1240,11 +1241,18 @@ public class EnumerationUsageImpl extends NonOccurrenceUsageElementImpl implemen
         default: return -1;
       }
     }
+    if (baseClass == MultiplicityRange.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.ENUMERATION_USAGE__MULTIPLICITY: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTIPLICITY;
+        default: return -1;
+      }
+    }
     if (baseClass == MultiplicityPart.class)
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.ENUMERATION_USAGE__MULTIPLICITY: return SysMLOCPackage.MULTIPLICITY_PART__MULTIPLICITY;
         case SysMLOCPackage.ENUMERATION_USAGE__IS_ORDERED: return SysMLOCPackage.MULTIPLICITY_PART__IS_ORDERED;
         case SysMLOCPackage.ENUMERATION_USAGE__IS_NONUNIQUE: return SysMLOCPackage.MULTIPLICITY_PART__IS_NONUNIQUE;
         default: return -1;
@@ -1362,11 +1370,18 @@ public class EnumerationUsageImpl extends NonOccurrenceUsageElementImpl implemen
         default: return -1;
       }
     }
+    if (baseClass == MultiplicityRange.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTIPLICITY: return SysMLOCPackage.ENUMERATION_USAGE__MULTIPLICITY;
+        default: return -1;
+      }
+    }
     if (baseClass == MultiplicityPart.class)
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.MULTIPLICITY_PART__MULTIPLICITY: return SysMLOCPackage.ENUMERATION_USAGE__MULTIPLICITY;
         case SysMLOCPackage.MULTIPLICITY_PART__IS_ORDERED: return SysMLOCPackage.ENUMERATION_USAGE__IS_ORDERED;
         case SysMLOCPackage.MULTIPLICITY_PART__IS_NONUNIQUE: return SysMLOCPackage.ENUMERATION_USAGE__IS_NONUNIQUE;
         default: return -1;

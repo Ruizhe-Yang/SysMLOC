@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface SuccessionAsUsage extends NonOccurrenceUsageElement, MemberPrefix, UsagePrefix, UnextendedUsagePrefix, EndUsagePrefix, BasicUsagePrefix, RefPrefix, UsageDeclaration, FeatureDeclaration, FeatureSpecializationPart, FeatureSpecialization, MultiplicityPart
+public interface SuccessionAsUsage extends NonOccurrenceUsageElement, MemberPrefix, UsagePrefix, UnextendedUsagePrefix, EndUsagePrefix, BasicUsagePrefix, RefPrefix, UsageDeclaration, FeatureDeclaration, FeatureSpecializationPart, FeatureSpecialization, MultiplicityPart, MultiplicityRange
 {
   /**
    * Returns the value of the '<em><b>Connector Part</b></em>' containment reference list.

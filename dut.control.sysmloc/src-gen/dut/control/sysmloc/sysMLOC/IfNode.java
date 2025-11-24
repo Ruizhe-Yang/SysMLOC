@@ -3,6 +3,7 @@
  */
 package dut.control.sysmloc.sysMLOC;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,35 +14,61 @@ package dut.control.sysmloc.sysMLOC;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.IfNode#getExpressionParameter <em>Expression Parameter</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.IfNode#getIfConditionExpression <em>If Condition Expression</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.IfNode#getActionParameterEnd <em>Action Parameter End</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.IfNode#getElements <em>Elements</em>}</li>
  * </ul>
  *
  * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getIfNode()
  * @model
  * @generated
  */
-public interface IfNode extends MemberPrefix
+public interface IfNode extends EmptySuccessionPrefix, MemberPrefix, ActionNodePrefix, OccurrenceUsagePrefix, BasicUsagePrefix, RefPrefix, ActionNodeUsageDeclaration, UsageDeclaration, FeatureDeclaration, FeatureSpecializationPart, FeatureSpecialization, MultiplicityPart, MultiplicityRange
 {
   /**
-   * Returns the value of the '<em><b>Expression Parameter</b></em>' attribute.
+   * Returns the value of the '<em><b>If Condition Expression</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Expression Parameter</em>' attribute.
-   * @see #setExpressionParameter(String)
-   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getIfNode_ExpressionParameter()
+   * @return the value of the '<em>If Condition Expression</em>' attribute.
+   * @see #setIfConditionExpression(String)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getIfNode_IfConditionExpression()
    * @model
    * @generated
    */
-  String getExpressionParameter();
+  String getIfConditionExpression();
 
   /**
-   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.IfNode#getExpressionParameter <em>Expression Parameter</em>}' attribute.
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.IfNode#getIfConditionExpression <em>If Condition Expression</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Expression Parameter</em>' attribute.
-   * @see #getExpressionParameter()
+   * @param value the new value of the '<em>If Condition Expression</em>' attribute.
+   * @see #getIfConditionExpression()
    * @generated
    */
-  void setExpressionParameter(String value);
+  void setIfConditionExpression(String value);
+
+  /**
+   * Returns the value of the '<em><b>Action Parameter End</b></em>' containment reference list.
+   * The list contents are of type {@link dut.control.sysmloc.sysMLOC.ActionParameterEnd}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Action Parameter End</em>' containment reference list.
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getIfNode_ActionParameterEnd()
+   * @model containment="true"
+   * @generated
+   */
+  EList<ActionParameterEnd> getActionParameterEnd();
+
+  /**
+   * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
+   * The list contents are of type {@link dut.control.sysmloc.sysMLOC.ActionBodyElement}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Elements</em>' containment reference list.
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getIfNode_Elements()
+   * @model containment="true"
+   * @generated
+   */
+  EList<ActionBodyElement> getElements();
 
 } // IfNode

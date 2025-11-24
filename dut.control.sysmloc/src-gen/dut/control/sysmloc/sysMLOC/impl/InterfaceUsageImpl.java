@@ -6,6 +6,7 @@ package dut.control.sysmloc.sysMLOC.impl;
 import dut.control.sysmloc.sysMLOC.BasicUsagePrefix;
 import dut.control.sysmloc.sysMLOC.ConnectorEnd;
 import dut.control.sysmloc.sysMLOC.ConnectorPart;
+import dut.control.sysmloc.sysMLOC.EmptySuccessionPrefix;
 import dut.control.sysmloc.sysMLOC.FeatureDeclaration;
 import dut.control.sysmloc.sysMLOC.FeatureDirection;
 import dut.control.sysmloc.sysMLOC.FeatureSpecialization;
@@ -14,6 +15,7 @@ import dut.control.sysmloc.sysMLOC.InterfaceBodyElement;
 import dut.control.sysmloc.sysMLOC.InterfaceUsage;
 import dut.control.sysmloc.sysMLOC.MemberPrefix;
 import dut.control.sysmloc.sysMLOC.MultiplicityPart;
+import dut.control.sysmloc.sysMLOC.MultiplicityRange;
 import dut.control.sysmloc.sysMLOC.OccurrenceUsagePrefix;
 import dut.control.sysmloc.sysMLOC.PortionKind;
 import dut.control.sysmloc.sysMLOC.RefPrefix;
@@ -45,6 +47,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.InterfaceUsageImpl#isIsThen <em>Is Then</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.InterfaceUsageImpl#getThenMultiplicity <em>Then Multiplicity</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.InterfaceUsageImpl#getVisibility <em>Visibility</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.InterfaceUsageImpl#getDirection <em>Direction</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.InterfaceUsageImpl#isIsAbstract <em>Is Abstract</em>}</li>
@@ -72,6 +76,36 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class InterfaceUsageImpl extends StructureUsageElementImpl implements InterfaceUsage
 {
+  /**
+   * The default value of the '{@link #isIsThen() <em>Is Then</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsThen()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_THEN_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsThen() <em>Is Then</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsThen()
+   * @generated
+   * @ordered
+   */
+  protected boolean isThen = IS_THEN_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getThenMultiplicity() <em>Then Multiplicity</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getThenMultiplicity()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> thenMultiplicity;
+
   /**
    * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -431,6 +465,46 @@ public class InterfaceUsageImpl extends StructureUsageElementImpl implements Int
   protected EClass eStaticClass()
   {
     return SysMLOCPackage.eINSTANCE.getInterfaceUsage();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsThen()
+  {
+    return isThen;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsThen(boolean newIsThen)
+  {
+    boolean oldIsThen = isThen;
+    isThen = newIsThen;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.INTERFACE_USAGE__IS_THEN, oldIsThen, isThen));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<String> getThenMultiplicity()
+  {
+    if (thenMultiplicity == null)
+    {
+      thenMultiplicity = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.INTERFACE_USAGE__THEN_MULTIPLICITY);
+    }
+    return thenMultiplicity;
   }
 
   /**
@@ -906,6 +980,10 @@ public class InterfaceUsageImpl extends StructureUsageElementImpl implements Int
   {
     switch (featureID)
     {
+      case SysMLOCPackage.INTERFACE_USAGE__IS_THEN:
+        return isIsThen();
+      case SysMLOCPackage.INTERFACE_USAGE__THEN_MULTIPLICITY:
+        return getThenMultiplicity();
       case SysMLOCPackage.INTERFACE_USAGE__VISIBILITY:
         return getVisibility();
       case SysMLOCPackage.INTERFACE_USAGE__DIRECTION:
@@ -963,6 +1041,13 @@ public class InterfaceUsageImpl extends StructureUsageElementImpl implements Int
   {
     switch (featureID)
     {
+      case SysMLOCPackage.INTERFACE_USAGE__IS_THEN:
+        setIsThen((Boolean)newValue);
+        return;
+      case SysMLOCPackage.INTERFACE_USAGE__THEN_MULTIPLICITY:
+        getThenMultiplicity().clear();
+        getThenMultiplicity().addAll((Collection<? extends String>)newValue);
+        return;
       case SysMLOCPackage.INTERFACE_USAGE__VISIBILITY:
         setVisibility((VisibilityIndicator)newValue);
         return;
@@ -1048,6 +1133,12 @@ public class InterfaceUsageImpl extends StructureUsageElementImpl implements Int
   {
     switch (featureID)
     {
+      case SysMLOCPackage.INTERFACE_USAGE__IS_THEN:
+        setIsThen(IS_THEN_EDEFAULT);
+        return;
+      case SysMLOCPackage.INTERFACE_USAGE__THEN_MULTIPLICITY:
+        getThenMultiplicity().clear();
+        return;
       case SysMLOCPackage.INTERFACE_USAGE__VISIBILITY:
         setVisibility(VISIBILITY_EDEFAULT);
         return;
@@ -1125,6 +1216,10 @@ public class InterfaceUsageImpl extends StructureUsageElementImpl implements Int
   {
     switch (featureID)
     {
+      case SysMLOCPackage.INTERFACE_USAGE__IS_THEN:
+        return isThen != IS_THEN_EDEFAULT;
+      case SysMLOCPackage.INTERFACE_USAGE__THEN_MULTIPLICITY:
+        return thenMultiplicity != null && !thenMultiplicity.isEmpty();
       case SysMLOCPackage.INTERFACE_USAGE__VISIBILITY:
         return visibility != VISIBILITY_EDEFAULT;
       case SysMLOCPackage.INTERFACE_USAGE__DIRECTION:
@@ -1179,6 +1274,15 @@ public class InterfaceUsageImpl extends StructureUsageElementImpl implements Int
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
   {
+    if (baseClass == EmptySuccessionPrefix.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.INTERFACE_USAGE__IS_THEN: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__IS_THEN;
+        case SysMLOCPackage.INTERFACE_USAGE__THEN_MULTIPLICITY: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTIPLICITY;
+        default: return -1;
+      }
+    }
     if (baseClass == MemberPrefix.class)
     {
       switch (derivedFeatureID)
@@ -1229,11 +1333,18 @@ public class InterfaceUsageImpl extends StructureUsageElementImpl implements Int
         default: return -1;
       }
     }
+    if (baseClass == MultiplicityRange.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.INTERFACE_USAGE__MULTIPLICITY: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTIPLICITY;
+        default: return -1;
+      }
+    }
     if (baseClass == MultiplicityPart.class)
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.INTERFACE_USAGE__MULTIPLICITY: return SysMLOCPackage.MULTIPLICITY_PART__MULTIPLICITY;
         case SysMLOCPackage.INTERFACE_USAGE__IS_ORDERED: return SysMLOCPackage.MULTIPLICITY_PART__IS_ORDERED;
         case SysMLOCPackage.INTERFACE_USAGE__IS_NONUNIQUE: return SysMLOCPackage.MULTIPLICITY_PART__IS_NONUNIQUE;
         default: return -1;
@@ -1280,6 +1391,15 @@ public class InterfaceUsageImpl extends StructureUsageElementImpl implements Int
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
   {
+    if (baseClass == EmptySuccessionPrefix.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__IS_THEN: return SysMLOCPackage.INTERFACE_USAGE__IS_THEN;
+        case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTIPLICITY: return SysMLOCPackage.INTERFACE_USAGE__THEN_MULTIPLICITY;
+        default: return -1;
+      }
+    }
     if (baseClass == MemberPrefix.class)
     {
       switch (baseFeatureID)
@@ -1330,11 +1450,18 @@ public class InterfaceUsageImpl extends StructureUsageElementImpl implements Int
         default: return -1;
       }
     }
+    if (baseClass == MultiplicityRange.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTIPLICITY: return SysMLOCPackage.INTERFACE_USAGE__MULTIPLICITY;
+        default: return -1;
+      }
+    }
     if (baseClass == MultiplicityPart.class)
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.MULTIPLICITY_PART__MULTIPLICITY: return SysMLOCPackage.INTERFACE_USAGE__MULTIPLICITY;
         case SysMLOCPackage.MULTIPLICITY_PART__IS_ORDERED: return SysMLOCPackage.INTERFACE_USAGE__IS_ORDERED;
         case SysMLOCPackage.MULTIPLICITY_PART__IS_NONUNIQUE: return SysMLOCPackage.INTERFACE_USAGE__IS_NONUNIQUE;
         default: return -1;
@@ -1384,7 +1511,11 @@ public class InterfaceUsageImpl extends StructureUsageElementImpl implements Int
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (visibility: ");
+    result.append(" (isThen: ");
+    result.append(isThen);
+    result.append(", ThenMultiplicity: ");
+    result.append(thenMultiplicity);
+    result.append(", visibility: ");
     result.append(visibility);
     result.append(", direction: ");
     result.append(direction);

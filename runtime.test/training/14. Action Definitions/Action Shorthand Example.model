@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <packages declaredName="'Action Shorthand Example'">
+    <elements xsi:type="sysMLOC:ItemDefinition" declaredName="Scene"/>
+    <elements xsi:type="sysMLOC:ItemDefinition" declaredName="Image"/>
+    <elements xsi:type="sysMLOC:ItemDefinition" declaredName="Picture"/>
+    <elements xsi:type="sysMLOC:ActionDefinition" declaredName="Focus">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="scene">
+        <typings>Scene</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="image">
+        <typings>Image</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:ActionDefinition" declaredName="Shoot">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="image">
+        <typings>Image</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="picture">
+        <typings>Picture</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:ActionDefinition" declaredName="TakePicture">
+      <elements xsi:type="sysMLOC:ItemUsage" direction="in" declaredName="scene">
+        <typings>Scene</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:ItemUsage" direction="out" declaredName="picture">
+        <typings>Picture</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:ActionUsage" declaredName="focus">
+        <typings>Focus</typings>
+        <elements xsi:type="sysMLOC:ItemUsage" direction="in" declaredName="scene">
+          <valuePart>TakePicture::scene</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" direction="out" declaredName="image"/>
+      </elements>
+      <elements xsi:type="sysMLOC:FlowConnectionUsage">
+        <FlowEnd>focus.image</FlowEnd>
+        <FlowEnd>shoot.image</FlowEnd>
+      </elements>
+      <elements xsi:type="sysMLOC:ActionUsage" isThen="true" declaredName="shoot">
+        <typings>Shoot</typings>
+        <elements xsi:type="sysMLOC:ItemUsage" direction="in"/>
+        <elements xsi:type="sysMLOC:ItemUsage" direction="out" declaredName="picture">
+          <valuePart>TakePicture::picture</valuePart>
+        </elements>
+      </elements>
+    </elements>
+  </packages>
+</sysMLOC:Namespace>

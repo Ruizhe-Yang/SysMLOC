@@ -3,17 +3,95 @@
  */
 package dut.control.sysmloc.sysMLOC;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>While Loop Node</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.WhileLoopNode#getWhileConditionExpression <em>While Condition Expression</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.WhileLoopNode#getActionParameterEnd <em>Action Parameter End</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.WhileLoopNode#getElements <em>Elements</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.WhileLoopNode#getUntilConditionExpression <em>Until Condition Expression</em>}</li>
+ * </ul>
  *
  * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getWhileLoopNode()
  * @model
  * @generated
  */
-public interface WhileLoopNode extends MemberPrefix
+public interface WhileLoopNode extends ActionNodeElement, EmptySuccessionPrefix, MemberPrefix, ActionNodePrefix, OccurrenceUsagePrefix, BasicUsagePrefix, RefPrefix, ActionNodeUsageDeclaration, UsageDeclaration, FeatureDeclaration, FeatureSpecializationPart, FeatureSpecialization, MultiplicityPart, MultiplicityRange
 {
+  /**
+   * Returns the value of the '<em><b>While Condition Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>While Condition Expression</em>' attribute.
+   * @see #setWhileConditionExpression(String)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getWhileLoopNode_WhileConditionExpression()
+   * @model
+   * @generated
+   */
+  String getWhileConditionExpression();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.WhileLoopNode#getWhileConditionExpression <em>While Condition Expression</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>While Condition Expression</em>' attribute.
+   * @see #getWhileConditionExpression()
+   * @generated
+   */
+  void setWhileConditionExpression(String value);
+
+  /**
+   * Returns the value of the '<em><b>Action Parameter End</b></em>' containment reference list.
+   * The list contents are of type {@link dut.control.sysmloc.sysMLOC.ActionParameterEnd}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Action Parameter End</em>' containment reference list.
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getWhileLoopNode_ActionParameterEnd()
+   * @model containment="true"
+   * @generated
+   */
+  EList<ActionParameterEnd> getActionParameterEnd();
+
+  /**
+   * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
+   * The list contents are of type {@link dut.control.sysmloc.sysMLOC.ActionBodyElement}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Elements</em>' containment reference list.
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getWhileLoopNode_Elements()
+   * @model containment="true"
+   * @generated
+   */
+  EList<ActionBodyElement> getElements();
+
+  /**
+   * Returns the value of the '<em><b>Until Condition Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Until Condition Expression</em>' attribute.
+   * @see #setUntilConditionExpression(String)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getWhileLoopNode_UntilConditionExpression()
+   * @model
+   * @generated
+   */
+  String getUntilConditionExpression();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.WhileLoopNode#getUntilConditionExpression <em>Until Condition Expression</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Until Condition Expression</em>' attribute.
+   * @see #getUntilConditionExpression()
+   * @generated
+   */
+  void setUntilConditionExpression(String value);
+
 } // WhileLoopNode

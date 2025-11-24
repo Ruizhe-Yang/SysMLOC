@@ -12,12 +12,15 @@ import dut.control.sysmloc.sysMLOC.FeatureDeclaration;
 import dut.control.sysmloc.sysMLOC.FeatureDirection;
 import dut.control.sysmloc.sysMLOC.FeatureSpecialization;
 import dut.control.sysmloc.sysMLOC.FeatureSpecializationPart;
+import dut.control.sysmloc.sysMLOC.MemberPrefix;
 import dut.control.sysmloc.sysMLOC.MultiplicityPart;
+import dut.control.sysmloc.sysMLOC.MultiplicityRange;
 import dut.control.sysmloc.sysMLOC.OccurrenceUsagePrefix;
 import dut.control.sysmloc.sysMLOC.PortionKind;
 import dut.control.sysmloc.sysMLOC.RefPrefix;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 import dut.control.sysmloc.sysMLOC.UsageDeclaration;
+import dut.control.sysmloc.sysMLOC.VisibilityIndicator;
 
 import java.util.Collection;
 
@@ -43,6 +46,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AssignmentNodeImpl#getVisibility <em>Visibility</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AssignmentNodeImpl#getDirection <em>Direction</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AssignmentNodeImpl#isIsAbstract <em>Is Abstract</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AssignmentNodeImpl#isIsVariation <em>Is Variation</em>}</li>
@@ -66,8 +70,28 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class AssignmentNodeImpl extends MemberPrefixImpl implements AssignmentNode
+public class AssignmentNodeImpl extends EmptySuccessionPrefixImpl implements AssignmentNode
 {
+  /**
+   * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVisibility()
+   * @generated
+   * @ordered
+   */
+  protected static final VisibilityIndicator VISIBILITY_EDEFAULT = VisibilityIndicator.PUBLIC;
+
+  /**
+   * The cached value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVisibility()
+   * @generated
+   * @ordered
+   */
+  protected VisibilityIndicator visibility = VISIBILITY_EDEFAULT;
+
   /**
    * The default value of the '{@link #getDirection() <em>Direction</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -397,6 +421,31 @@ public class AssignmentNodeImpl extends MemberPrefixImpl implements AssignmentNo
   protected EClass eStaticClass()
   {
     return SysMLOCPackage.eINSTANCE.getAssignmentNode();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public VisibilityIndicator getVisibility()
+  {
+    return visibility;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setVisibility(VisibilityIndicator newVisibility)
+  {
+    VisibilityIndicator oldVisibility = visibility;
+    visibility = newVisibility == null ? VISIBILITY_EDEFAULT : newVisibility;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ASSIGNMENT_NODE__VISIBILITY, oldVisibility, visibility));
   }
 
   /**
@@ -830,6 +879,8 @@ public class AssignmentNodeImpl extends MemberPrefixImpl implements AssignmentNo
   {
     switch (featureID)
     {
+      case SysMLOCPackage.ASSIGNMENT_NODE__VISIBILITY:
+        return getVisibility();
       case SysMLOCPackage.ASSIGNMENT_NODE__DIRECTION:
         return getDirection();
       case SysMLOCPackage.ASSIGNMENT_NODE__IS_ABSTRACT:
@@ -883,6 +934,9 @@ public class AssignmentNodeImpl extends MemberPrefixImpl implements AssignmentNo
   {
     switch (featureID)
     {
+      case SysMLOCPackage.ASSIGNMENT_NODE__VISIBILITY:
+        setVisibility((VisibilityIndicator)newValue);
+        return;
       case SysMLOCPackage.ASSIGNMENT_NODE__DIRECTION:
         setDirection((FeatureDirection)newValue);
         return;
@@ -961,6 +1015,9 @@ public class AssignmentNodeImpl extends MemberPrefixImpl implements AssignmentNo
   {
     switch (featureID)
     {
+      case SysMLOCPackage.ASSIGNMENT_NODE__VISIBILITY:
+        setVisibility(VISIBILITY_EDEFAULT);
+        return;
       case SysMLOCPackage.ASSIGNMENT_NODE__DIRECTION:
         setDirection(DIRECTION_EDEFAULT);
         return;
@@ -1032,6 +1089,8 @@ public class AssignmentNodeImpl extends MemberPrefixImpl implements AssignmentNo
   {
     switch (featureID)
     {
+      case SysMLOCPackage.ASSIGNMENT_NODE__VISIBILITY:
+        return visibility != VISIBILITY_EDEFAULT;
       case SysMLOCPackage.ASSIGNMENT_NODE__DIRECTION:
         return direction != DIRECTION_EDEFAULT;
       case SysMLOCPackage.ASSIGNMENT_NODE__IS_ABSTRACT:
@@ -1082,6 +1141,14 @@ public class AssignmentNodeImpl extends MemberPrefixImpl implements AssignmentNo
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
   {
+    if (baseClass == MemberPrefix.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.ASSIGNMENT_NODE__VISIBILITY: return SysMLOCPackage.MEMBER_PREFIX__VISIBILITY;
+        default: return -1;
+      }
+    }
     if (baseClass == RefPrefix.class)
     {
       switch (derivedFeatureID)
@@ -1124,11 +1191,18 @@ public class AssignmentNodeImpl extends MemberPrefixImpl implements AssignmentNo
         default: return -1;
       }
     }
+    if (baseClass == MultiplicityRange.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.ASSIGNMENT_NODE__MULTIPLICITY: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTIPLICITY;
+        default: return -1;
+      }
+    }
     if (baseClass == MultiplicityPart.class)
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.ASSIGNMENT_NODE__MULTIPLICITY: return SysMLOCPackage.MULTIPLICITY_PART__MULTIPLICITY;
         case SysMLOCPackage.ASSIGNMENT_NODE__IS_ORDERED: return SysMLOCPackage.MULTIPLICITY_PART__IS_ORDERED;
         case SysMLOCPackage.ASSIGNMENT_NODE__IS_NONUNIQUE: return SysMLOCPackage.MULTIPLICITY_PART__IS_NONUNIQUE;
         default: return -1;
@@ -1181,6 +1255,14 @@ public class AssignmentNodeImpl extends MemberPrefixImpl implements AssignmentNo
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
   {
+    if (baseClass == MemberPrefix.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.MEMBER_PREFIX__VISIBILITY: return SysMLOCPackage.ASSIGNMENT_NODE__VISIBILITY;
+        default: return -1;
+      }
+    }
     if (baseClass == RefPrefix.class)
     {
       switch (baseFeatureID)
@@ -1223,11 +1305,18 @@ public class AssignmentNodeImpl extends MemberPrefixImpl implements AssignmentNo
         default: return -1;
       }
     }
+    if (baseClass == MultiplicityRange.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTIPLICITY: return SysMLOCPackage.ASSIGNMENT_NODE__MULTIPLICITY;
+        default: return -1;
+      }
+    }
     if (baseClass == MultiplicityPart.class)
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.MULTIPLICITY_PART__MULTIPLICITY: return SysMLOCPackage.ASSIGNMENT_NODE__MULTIPLICITY;
         case SysMLOCPackage.MULTIPLICITY_PART__IS_ORDERED: return SysMLOCPackage.ASSIGNMENT_NODE__IS_ORDERED;
         case SysMLOCPackage.MULTIPLICITY_PART__IS_NONUNIQUE: return SysMLOCPackage.ASSIGNMENT_NODE__IS_NONUNIQUE;
         default: return -1;
@@ -1283,7 +1372,9 @@ public class AssignmentNodeImpl extends MemberPrefixImpl implements AssignmentNo
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (direction: ");
+    result.append(" (visibility: ");
+    result.append(visibility);
+    result.append(", direction: ");
     result.append(direction);
     result.append(", isAbstract: ");
     result.append(isAbstract);

@@ -7,6 +7,7 @@ import com.google.inject.Inject;
 import dut.control.sysmloc.services.SysMLOCGrammarAccess;
 import dut.control.sysmloc.sysMLOC.AcceptNode;
 import dut.control.sysmloc.sysMLOC.ActionDefinition;
+import dut.control.sysmloc.sysMLOC.ActionParameterEnd;
 import dut.control.sysmloc.sysMLOC.ActionUsage;
 import dut.control.sysmloc.sysMLOC.AliasElement;
 import dut.control.sysmloc.sysMLOC.AssignmentNode;
@@ -18,26 +19,31 @@ import dut.control.sysmloc.sysMLOC.Comment;
 import dut.control.sysmloc.sysMLOC.ConnectionDefinition;
 import dut.control.sysmloc.sysMLOC.ConnectionUsage;
 import dut.control.sysmloc.sysMLOC.ConnectorEnd;
-import dut.control.sysmloc.sysMLOC.ControlNode;
+import dut.control.sysmloc.sysMLOC.DecisionNode;
 import dut.control.sysmloc.sysMLOC.DefaultReferenceUsage;
 import dut.control.sysmloc.sysMLOC.Documentation;
-import dut.control.sysmloc.sysMLOC.EmptySuccession;
 import dut.control.sysmloc.sysMLOC.EnumeratedValue;
 import dut.control.sysmloc.sysMLOC.EnumerationDefinition;
 import dut.control.sysmloc.sysMLOC.EnumerationUsage;
 import dut.control.sysmloc.sysMLOC.FlowConnectionDefinition;
 import dut.control.sysmloc.sysMLOC.FlowConnectionUsage;
 import dut.control.sysmloc.sysMLOC.ForLoopNode;
+import dut.control.sysmloc.sysMLOC.ForkNode;
+import dut.control.sysmloc.sysMLOC.GuardedSuccessionElement;
 import dut.control.sysmloc.sysMLOC.IfNode;
+import dut.control.sysmloc.sysMLOC.InitialNode;
 import dut.control.sysmloc.sysMLOC.InterfaceDefinition;
 import dut.control.sysmloc.sysMLOC.InterfaceUsage;
 import dut.control.sysmloc.sysMLOC.ItemDefinition;
 import dut.control.sysmloc.sysMLOC.ItemUsage;
+import dut.control.sysmloc.sysMLOC.JoinNode;
 import dut.control.sysmloc.sysMLOC.MembershipImport;
+import dut.control.sysmloc.sysMLOC.MergeNode;
 import dut.control.sysmloc.sysMLOC.Namespace;
 import dut.control.sysmloc.sysMLOC.NamespaceImport;
 import dut.control.sysmloc.sysMLOC.PartDefinition;
 import dut.control.sysmloc.sysMLOC.PartUsage;
+import dut.control.sysmloc.sysMLOC.PerformActionUsage;
 import dut.control.sysmloc.sysMLOC.PortDefinition;
 import dut.control.sysmloc.sysMLOC.PortUsage;
 import dut.control.sysmloc.sysMLOC.ReferenceUsage;
@@ -45,6 +51,7 @@ import dut.control.sysmloc.sysMLOC.SendNode;
 import dut.control.sysmloc.sysMLOC.SuccessionAsUsage;
 import dut.control.sysmloc.sysMLOC.SuccessionFlowConnectionUsage;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
+import dut.control.sysmloc.sysMLOC.TargetSuccessionElement;
 import dut.control.sysmloc.sysMLOC.TerminateNode;
 import dut.control.sysmloc.sysMLOC.TextualRepresentation;
 import dut.control.sysmloc.sysMLOC.WhileLoopNode;
@@ -72,28 +79,31 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 		if (epackage == SysMLOCPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
 			case SysMLOCPackage.ACCEPT_NODE:
-				sequence_AcceptNode_BasicUsagePrefix_FeatureDeclaration_FeatureSpecialization_MemberPrefix_MultiplicityPart_OccurrenceUsagePrefix_RefPrefix(context, (AcceptNode) semanticObject); 
+				sequence_AcceptNode_BasicUsagePrefix_EmptySuccessionPrefix_FeatureDeclaration_FeatureSpecialization_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_RefPrefix(context, (AcceptNode) semanticObject); 
 				return; 
 			case SysMLOCPackage.ACTION_DEFINITION:
 				sequence_ActionDefinition_BasicDefinitionPrefix_DefinitionDeclaration_OccurrenceDefinitionPrefix(context, (ActionDefinition) semanticObject); 
 				return; 
+			case SysMLOCPackage.ACTION_PARAMETER_END:
+				sequence_FeatureDeclaration_FeatureSpecialization_MultiplicityPart_MultiplicityRange(context, (ActionParameterEnd) semanticObject); 
+				return; 
 			case SysMLOCPackage.ACTION_USAGE:
-				sequence_ActionUsage_BasicUsagePrefix_FeatureDeclaration_FeatureSpecialization_FeatureValue_MemberPrefix_MultiplicityPart_OccurrenceUsagePrefix_RefPrefix(context, (ActionUsage) semanticObject); 
+				sequence_ActionUsage_BasicUsagePrefix_EmptySuccessionPrefix_FeatureDeclaration_FeatureSpecialization_FeatureValue_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_RefPrefix(context, (ActionUsage) semanticObject); 
 				return; 
 			case SysMLOCPackage.ALIAS_ELEMENT:
 				sequence_AliasElement_MemberPrefix(context, (AliasElement) semanticObject); 
 				return; 
 			case SysMLOCPackage.ASSIGNMENT_NODE:
-				sequence_AssignmentNode_BasicUsagePrefix_FeatureDeclaration_FeatureSpecialization_MemberPrefix_MultiplicityPart_OccurrenceUsagePrefix_RefPrefix(context, (AssignmentNode) semanticObject); 
+				sequence_AssignmentNode_BasicUsagePrefix_EmptySuccessionPrefix_FeatureDeclaration_FeatureSpecialization_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_RefPrefix(context, (AssignmentNode) semanticObject); 
 				return; 
 			case SysMLOCPackage.ATTRIBUTE_DEFINITION:
 				sequence_AttributeDefinition_BasicDefinitionPrefix_DefinitionDeclaration_MemberPrefix(context, (AttributeDefinition) semanticObject); 
 				return; 
 			case SysMLOCPackage.ATTRIBUTE_USAGE:
-				sequence_AttributeUsage_FeatureDeclaration_FeatureSpecialization_FeatureValue_MemberPrefix_MultiplicityPart(context, (AttributeUsage) semanticObject); 
+				sequence_AttributeUsage_BasicUsagePrefix_EndUsagePrefix_FeatureDeclaration_FeatureSpecialization_FeatureValue_MemberPrefix_MultiplicityPart_MultiplicityRange_RefPrefix(context, (AttributeUsage) semanticObject); 
 				return; 
 			case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE:
-				sequence_BasicUsagePrefix_BindingConnectorAsUsage_EndUsagePrefix_FeatureDeclaration_FeatureSpecialization_MemberPrefix_MultiplicityPart_RefPrefix(context, (BindingConnectorAsUsage) semanticObject); 
+				sequence_BasicUsagePrefix_BindingConnectorAsUsage_EndUsagePrefix_FeatureDeclaration_FeatureSpecialization_MemberPrefix_MultiplicityPart_MultiplicityRange_RefPrefix(context, (BindingConnectorAsUsage) semanticObject); 
 				return; 
 			case SysMLOCPackage.CODE_ANNOTATION:
 				sequence_CodeAnnotation(context, (CodeAnnotation) semanticObject); 
@@ -105,58 +115,70 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 				sequence_BasicDefinitionPrefix_ConnectionDefinition_DefinitionDeclaration_MemberPrefix_OccurrenceDefinitionPrefix(context, (ConnectionDefinition) semanticObject); 
 				return; 
 			case SysMLOCPackage.CONNECTION_USAGE:
-				sequence_BasicUsagePrefix_ConnectionUsage_ConnectorPart_FeatureDeclaration_FeatureSpecialization_FeatureValue_MemberPrefix_MultiplicityPart_OccurrenceUsagePrefix_RefPrefix(context, (ConnectionUsage) semanticObject); 
+				sequence_BasicUsagePrefix_ConnectionUsage_ConnectorPart_EmptySuccessionPrefix_FeatureDeclaration_FeatureSpecialization_FeatureValue_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_RefPrefix(context, (ConnectionUsage) semanticObject); 
 				return; 
 			case SysMLOCPackage.CONNECTOR_END:
-				sequence_ConnectorEnd(context, (ConnectorEnd) semanticObject); 
+				sequence_ConnectorEnd_MultiplicityRange_ReferenceSubsetting(context, (ConnectorEnd) semanticObject); 
 				return; 
-			case SysMLOCPackage.CONTROL_NODE:
-				sequence_MemberPrefix(context, (ControlNode) semanticObject); 
+			case SysMLOCPackage.DECISION_NODE:
+				sequence_ControlNodePrefix_DecisionNode_EmptySuccessionPrefix_FeatureDeclaration_FeatureSpecialization_MemberPrefix_MultiplicityPart_MultiplicityRange_RefPrefix(context, (DecisionNode) semanticObject); 
 				return; 
 			case SysMLOCPackage.DEFAULT_REFERENCE_USAGE:
-				sequence_DefaultReferenceUsage_FeatureDeclaration_FeatureSpecialization_FeatureValue_MemberPrefix_MultiplicityPart_RefPrefix(context, (DefaultReferenceUsage) semanticObject); 
+				sequence_DefaultReferenceUsage_FeatureDeclaration_FeatureSpecialization_FeatureValue_MemberPrefix_MultiplicityPart_MultiplicityRange_RefPrefix(context, (DefaultReferenceUsage) semanticObject); 
 				return; 
 			case SysMLOCPackage.DOCUMENTATION:
 				sequence_Documentation_Identification(context, (Documentation) semanticObject); 
 				return; 
-			case SysMLOCPackage.EMPTY_SUCCESSION:
-				sequence_EmptySuccession(context, (EmptySuccession) semanticObject); 
-				return; 
 			case SysMLOCPackage.ENUMERATED_VALUE:
-				sequence_EnumeratedValue_FeatureDeclaration_FeatureSpecialization_FeatureValue_MemberPrefix_MultiplicityPart(context, (EnumeratedValue) semanticObject); 
+				sequence_EnumeratedValue_FeatureDeclaration_FeatureSpecialization_FeatureValue_MemberPrefix_MultiplicityPart_MultiplicityRange(context, (EnumeratedValue) semanticObject); 
 				return; 
 			case SysMLOCPackage.ENUMERATION_DEFINITION:
 				sequence_DefinitionDeclaration_EnumerationDefinition_MemberPrefix(context, (EnumerationDefinition) semanticObject); 
 				return; 
 			case SysMLOCPackage.ENUMERATION_USAGE:
-				sequence_BasicUsagePrefix_EndUsagePrefix_EnumerationUsage_FeatureDeclaration_FeatureSpecialization_FeatureValue_MemberPrefix_MultiplicityPart_RefPrefix(context, (EnumerationUsage) semanticObject); 
+				sequence_BasicUsagePrefix_EndUsagePrefix_EnumerationUsage_FeatureDeclaration_FeatureSpecialization_FeatureValue_MemberPrefix_MultiplicityPart_MultiplicityRange_RefPrefix(context, (EnumerationUsage) semanticObject); 
 				return; 
 			case SysMLOCPackage.FLOW_CONNECTION_DEFINITION:
 				sequence_BasicDefinitionPrefix_DefinitionDeclaration_FlowConnectionDefinition_MemberPrefix_OccurrenceDefinitionPrefix(context, (FlowConnectionDefinition) semanticObject); 
 				return; 
 			case SysMLOCPackage.FLOW_CONNECTION_USAGE:
-				sequence_BasicUsagePrefix_FeatureDeclaration_FeatureSpecialization_FeatureValue_FlowConnectionUsage_MemberPrefix_MultiplicityPart_OccurrenceUsagePrefix_RefPrefix(context, (FlowConnectionUsage) semanticObject); 
+				sequence_BasicUsagePrefix_EmptySuccessionPrefix_FeatureDeclaration_FeatureSpecialization_FeatureValue_FlowConnectionUsage_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_RefPrefix(context, (FlowConnectionUsage) semanticObject); 
 				return; 
 			case SysMLOCPackage.FOR_LOOP_NODE:
 				sequence_MemberPrefix(context, (ForLoopNode) semanticObject); 
 				return; 
+			case SysMLOCPackage.FORK_NODE:
+				sequence_ControlNodePrefix_EmptySuccessionPrefix_FeatureDeclaration_FeatureSpecialization_ForkNode_MemberPrefix_MultiplicityPart_MultiplicityRange_RefPrefix(context, (ForkNode) semanticObject); 
+				return; 
+			case SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT:
+				sequence_FeatureDeclaration_FeatureSpecialization_GuardExpression_GuardedSuccessionElement_MultiplicityPart_MultiplicityRange_TransitionSuccession(context, (GuardedSuccessionElement) semanticObject); 
+				return; 
 			case SysMLOCPackage.IF_NODE:
-				sequence_IfNode_MemberPrefix(context, (IfNode) semanticObject); 
+				sequence_BasicUsagePrefix_EmptySuccessionPrefix_FeatureDeclaration_FeatureSpecialization_IfNode_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_RefPrefix(context, (IfNode) semanticObject); 
+				return; 
+			case SysMLOCPackage.INITIAL_NODE:
+				sequence_InitialNode_MemberPrefix(context, (InitialNode) semanticObject); 
 				return; 
 			case SysMLOCPackage.INTERFACE_DEFINITION:
 				sequence_BasicDefinitionPrefix_DefinitionDeclaration_InterfaceDefinition_MemberPrefix_OccurrenceDefinitionPrefix(context, (InterfaceDefinition) semanticObject); 
 				return; 
 			case SysMLOCPackage.INTERFACE_USAGE:
-				sequence_BasicUsagePrefix_ConnectorPart_FeatureDeclaration_FeatureSpecialization_InterfaceUsage_MemberPrefix_MultiplicityPart_OccurrenceUsagePrefix_RefPrefix(context, (InterfaceUsage) semanticObject); 
+				sequence_BasicUsagePrefix_ConnectorPart_EmptySuccessionPrefix_FeatureDeclaration_FeatureSpecialization_InterfaceUsage_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_RefPrefix(context, (InterfaceUsage) semanticObject); 
 				return; 
 			case SysMLOCPackage.ITEM_DEFINITION:
 				sequence_BasicDefinitionPrefix_DefinitionDeclaration_ItemDefinition_MemberPrefix_OccurrenceDefinitionPrefix(context, (ItemDefinition) semanticObject); 
 				return; 
 			case SysMLOCPackage.ITEM_USAGE:
-				sequence_BasicUsagePrefix_FeatureDeclaration_FeatureSpecialization_FeatureValue_ItemUsage_MemberPrefix_MultiplicityPart_OccurrenceUsagePrefix_RefPrefix(context, (ItemUsage) semanticObject); 
+				sequence_BasicUsagePrefix_EmptySuccessionPrefix_FeatureDeclaration_FeatureSpecialization_FeatureValue_ItemUsage_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_RefPrefix(context, (ItemUsage) semanticObject); 
+				return; 
+			case SysMLOCPackage.JOIN_NODE:
+				sequence_ControlNodePrefix_EmptySuccessionPrefix_FeatureDeclaration_FeatureSpecialization_JoinNode_MemberPrefix_MultiplicityPart_MultiplicityRange_RefPrefix(context, (JoinNode) semanticObject); 
 				return; 
 			case SysMLOCPackage.MEMBERSHIP_IMPORT:
 				sequence_MembershipImport_isImportAllFragment(context, (MembershipImport) semanticObject); 
+				return; 
+			case SysMLOCPackage.MERGE_NODE:
+				sequence_ControlNodePrefix_EmptySuccessionPrefix_FeatureDeclaration_FeatureSpecialization_MemberPrefix_MergeNode_MultiplicityPart_MultiplicityRange_RefPrefix(context, (MergeNode) semanticObject); 
 				return; 
 			case SysMLOCPackage.NAMESPACE:
 				sequence_Namespace(context, (Namespace) semanticObject); 
@@ -171,25 +193,31 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 				sequence_BasicDefinitionPrefix_DefinitionDeclaration_MemberPrefix_OccurrenceDefinitionPrefix_PartDefinition(context, (PartDefinition) semanticObject); 
 				return; 
 			case SysMLOCPackage.PART_USAGE:
-				sequence_BasicUsagePrefix_FeatureDeclaration_FeatureSpecialization_FeatureValue_MemberPrefix_MultiplicityPart_OccurrenceUsagePrefix_PartUsage_RefPrefix(context, (PartUsage) semanticObject); 
+				sequence_BasicUsagePrefix_EmptySuccessionPrefix_FeatureDeclaration_FeatureSpecialization_FeatureValue_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_PartUsage_RefPrefix(context, (PartUsage) semanticObject); 
+				return; 
+			case SysMLOCPackage.PERFORM_ACTION_USAGE:
+				sequence_BasicUsagePrefix_EmptySuccessionPrefix_FeatureDeclaration_FeatureSpecialization_FeatureValue_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_PerformActionUsage_RefPrefix_ReferenceSubsetting(context, (PerformActionUsage) semanticObject); 
 				return; 
 			case SysMLOCPackage.PORT_DEFINITION:
 				sequence_BasicDefinitionPrefix_DefinitionDeclaration_MemberPrefix_PortDefinition(context, (PortDefinition) semanticObject); 
 				return; 
 			case SysMLOCPackage.PORT_USAGE:
-				sequence_BasicUsagePrefix_FeatureDeclaration_FeatureSpecialization_FeatureValue_MemberPrefix_MultiplicityPart_OccurrenceUsagePrefix_PortUsage_RefPrefix(context, (PortUsage) semanticObject); 
+				sequence_BasicUsagePrefix_EmptySuccessionPrefix_FeatureDeclaration_FeatureSpecialization_FeatureValue_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_PortUsage_RefPrefix(context, (PortUsage) semanticObject); 
 				return; 
 			case SysMLOCPackage.REFERENCE_USAGE:
-				sequence_EndUsagePrefix_FeatureDeclaration_FeatureSpecialization_FeatureValue_MemberPrefix_MultiplicityPart_RefPrefix_ReferenceUsage(context, (ReferenceUsage) semanticObject); 
+				sequence_EndUsagePrefix_FeatureDeclaration_FeatureSpecialization_FeatureValue_MemberPrefix_MultiplicityPart_MultiplicityRange_RefPrefix_ReferenceUsage(context, (ReferenceUsage) semanticObject); 
 				return; 
 			case SysMLOCPackage.SEND_NODE:
-				sequence_BasicUsagePrefix_FeatureDeclaration_FeatureSpecialization_MemberPrefix_MultiplicityPart_OccurrenceUsagePrefix_RefPrefix(context, (SendNode) semanticObject); 
+				sequence_BasicUsagePrefix_EmptySuccessionPrefix_FeatureDeclaration_FeatureSpecialization_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_RefPrefix(context, (SendNode) semanticObject); 
 				return; 
 			case SysMLOCPackage.SUCCESSION_AS_USAGE:
-				sequence_BasicUsagePrefix_EndUsagePrefix_FeatureDeclaration_FeatureSpecialization_MemberPrefix_MultiplicityPart_RefPrefix_SuccessionAsUsage(context, (SuccessionAsUsage) semanticObject); 
+				sequence_BasicUsagePrefix_EndUsagePrefix_FeatureDeclaration_FeatureSpecialization_MemberPrefix_MultiplicityPart_MultiplicityRange_RefPrefix_SuccessionAsUsage(context, (SuccessionAsUsage) semanticObject); 
 				return; 
 			case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE:
-				sequence_BasicUsagePrefix_FeatureDeclaration_FeatureSpecialization_FeatureValue_MemberPrefix_MultiplicityPart_OccurrenceUsagePrefix_RefPrefix_SuccessionFlowConnectionUsage(context, (SuccessionFlowConnectionUsage) semanticObject); 
+				sequence_BasicUsagePrefix_EmptySuccessionPrefix_FeatureDeclaration_FeatureSpecialization_FeatureValue_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_RefPrefix_SuccessionFlowConnectionUsage(context, (SuccessionFlowConnectionUsage) semanticObject); 
+				return; 
+			case SysMLOCPackage.TARGET_SUCCESSION_ELEMENT:
+				sequence_GuardExpression_MemberPrefix_MultiplicityRange_TargetSuccessionElement_TransitionSuccession(context, (TargetSuccessionElement) semanticObject); 
 				return; 
 			case SysMLOCPackage.TERMINATE_NODE:
 				sequence_MemberPrefix(context, (TerminateNode) semanticObject); 
@@ -198,7 +226,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 				sequence_Identification_TextualRepresentation(context, (TextualRepresentation) semanticObject); 
 				return; 
 			case SysMLOCPackage.WHILE_LOOP_NODE:
-				sequence_MemberPrefix(context, (WhileLoopNode) semanticObject); 
+				sequence_BasicUsagePrefix_EmptySuccessionPrefix_FeatureDeclaration_FeatureSpecialization_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_RefPrefix_WhileLoopNode(context, (WhileLoopNode) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -212,6 +240,8 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *
 	 * Constraint:
 	 *     (
+	 *         isThen?='then'? 
+	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         (
 	 *             isEnd?='end' | 
@@ -226,14 +256,8 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             )
 	 *         )? 
 	 *         declaredName=Name? 
-	 *         (
-	 *             Multiplicity+=MultiplicityExpression | 
-	 *             (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression) | 
-	 *             (
-	 *                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
-	 *             )
-	 *         )? 
+	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
 	 *                 (typings+=FeatureChainName typings+=FeatureChainName*) | 
@@ -242,20 +266,14 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (
-	 *                 Multiplicity+=MultiplicityExpression | 
-	 *                 (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression) | 
-	 *                 (
-	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
-	 *                 )
-	 *             )?
+	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         elements+=ActionBodyElement*
 	 *     )
 	 * </pre>
 	 */
-	protected void sequence_AcceptNode_BasicUsagePrefix_FeatureDeclaration_FeatureSpecialization_MemberPrefix_MultiplicityPart_OccurrenceUsagePrefix_RefPrefix(ISerializationContext context, AcceptNode semanticObject) {
+	protected void sequence_AcceptNode_BasicUsagePrefix_EmptySuccessionPrefix_FeatureDeclaration_FeatureSpecialization_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_RefPrefix(ISerializationContext context, AcceptNode semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -301,6 +319,8 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *
 	 * Constraint:
 	 *     (
+	 *         isThen?='then'? 
+	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         (
 	 *             isEnd?='end' | 
@@ -315,14 +335,8 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             )
 	 *         )? 
 	 *         declaredName=Name? 
-	 *         (
-	 *             Multiplicity+=MultiplicityExpression | 
-	 *             (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression) | 
-	 *             (
-	 *                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
-	 *             )
-	 *         )? 
+	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
 	 *                 (typings+=FeatureChainName typings+=FeatureChainName*) | 
@@ -331,21 +345,15 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (
-	 *                 Multiplicity+=MultiplicityExpression | 
-	 *                 (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression) | 
-	 *                 (
-	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
-	 *                 )
-	 *             )?
+	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
 	 *         elements+=ActionBodyElement*
 	 *     )
 	 * </pre>
 	 */
-	protected void sequence_ActionUsage_BasicUsagePrefix_FeatureDeclaration_FeatureSpecialization_FeatureValue_MemberPrefix_MultiplicityPart_OccurrenceUsagePrefix_RefPrefix(ISerializationContext context, ActionUsage semanticObject) {
+	protected void sequence_ActionUsage_BasicUsagePrefix_EmptySuccessionPrefix_FeatureDeclaration_FeatureSpecialization_FeatureValue_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_RefPrefix(ISerializationContext context, ActionUsage semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -361,7 +369,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     AliasElement returns AliasElement
 	 *
 	 * Constraint:
-	 *     (visibility=VisibilityIndicator? memberShortName=Name? memberName=Name? memberElement=QualifiedName elements+=AnnotatingElement*)
+	 *     (visibility=VisibilityIndicator? memberShortName=Name? memberName=Name? memberElement=QualifiedName elements+=AnnotatingBodyElement*)
 	 * </pre>
 	 */
 	protected void sequence_AliasElement_MemberPrefix(ISerializationContext context, AliasElement semanticObject) {
@@ -376,6 +384,8 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *
 	 * Constraint:
 	 *     (
+	 *         isThen?='then'? 
+	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         (
 	 *             isEnd?='end' | 
@@ -390,14 +400,8 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             )
 	 *         )? 
 	 *         declaredName=Name? 
-	 *         (
-	 *             Multiplicity+=MultiplicityExpression | 
-	 *             (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression) | 
-	 *             (
-	 *                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
-	 *             )
-	 *         )? 
+	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
 	 *                 (typings+=FeatureChainName typings+=FeatureChainName*) | 
@@ -406,20 +410,14 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (
-	 *                 Multiplicity+=MultiplicityExpression | 
-	 *                 (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression) | 
-	 *                 (
-	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
-	 *                 )
-	 *             )?
+	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         elements+=ActionBodyElement*
 	 *     )
 	 * </pre>
 	 */
-	protected void sequence_AssignmentNode_BasicUsagePrefix_FeatureDeclaration_FeatureSpecialization_MemberPrefix_MultiplicityPart_OccurrenceUsagePrefix_RefPrefix(ISerializationContext context, AssignmentNode semanticObject) {
+	protected void sequence_AssignmentNode_BasicUsagePrefix_EmptySuccessionPrefix_FeatureDeclaration_FeatureSpecialization_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_RefPrefix(ISerializationContext context, AssignmentNode semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -465,15 +463,19 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         visibility=VisibilityIndicator? 
-	 *         declaredName=Name? 
 	 *         (
-	 *             Multiplicity+=MultiplicityExpression | 
-	 *             (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression) | 
+	 *             isEnd?='end' | 
 	 *             (
-	 *                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
+	 *                 direction=FeatureDirection? 
+	 *                 (isAbstract?='abstract' | isVariation?='variation')? 
+	 *                 isReadOnly?='readonly'? 
+	 *                 isDerived?='derived'? 
+	 *                 isReference?='ref'?
 	 *             )
 	 *         )? 
+	 *         declaredName=Name? 
+	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
 	 *                 (typings+=FeatureChainName typings+=FeatureChainName*) | 
@@ -482,21 +484,15 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (
-	 *                 Multiplicity+=MultiplicityExpression | 
-	 *                 (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression) | 
-	 *                 (
-	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
-	 *                 )
-	 *             )?
+	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
 	 *         elements+=UsageBodyElement*
 	 *     )
 	 * </pre>
 	 */
-	protected void sequence_AttributeUsage_FeatureDeclaration_FeatureSpecialization_FeatureValue_MemberPrefix_MultiplicityPart(ISerializationContext context, AttributeUsage semanticObject) {
+	protected void sequence_AttributeUsage_BasicUsagePrefix_EndUsagePrefix_FeatureDeclaration_FeatureSpecialization_FeatureValue_MemberPrefix_MultiplicityPart_MultiplicityRange_RefPrefix(ISerializationContext context, AttributeUsage semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -688,14 +684,8 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             )
 	 *         )? 
 	 *         declaredName=Name? 
-	 *         (
-	 *             Multiplicity+=MultiplicityExpression | 
-	 *             (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression) | 
-	 *             (
-	 *                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
-	 *             )
-	 *         )? 
+	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
 	 *                 (typings+=FeatureChainName typings+=FeatureChainName*) | 
@@ -704,14 +694,8 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (
-	 *                 Multiplicity+=MultiplicityExpression | 
-	 *                 (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression) | 
-	 *                 (
-	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
-	 *                 )
-	 *             )?
+	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         connectorPart+=ConnectorEnd 
 	 *         connectorPart+=ConnectorEnd 
@@ -719,7 +703,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     )
 	 * </pre>
 	 */
-	protected void sequence_BasicUsagePrefix_BindingConnectorAsUsage_EndUsagePrefix_FeatureDeclaration_FeatureSpecialization_MemberPrefix_MultiplicityPart_RefPrefix(ISerializationContext context, BindingConnectorAsUsage semanticObject) {
+	protected void sequence_BasicUsagePrefix_BindingConnectorAsUsage_EndUsagePrefix_FeatureDeclaration_FeatureSpecialization_MemberPrefix_MultiplicityPart_MultiplicityRange_RefPrefix(ISerializationContext context, BindingConnectorAsUsage semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -739,6 +723,8 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *
 	 * Constraint:
 	 *     (
+	 *         isThen?='then'? 
+	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         (
 	 *             isEnd?='end' | 
@@ -753,14 +739,8 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             )
 	 *         )? 
 	 *         declaredName=Name? 
-	 *         (
-	 *             Multiplicity+=MultiplicityExpression | 
-	 *             (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression) | 
-	 *             (
-	 *                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
-	 *             )
-	 *         )? 
+	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
 	 *                 (typings+=FeatureChainName typings+=FeatureChainName*) | 
@@ -769,14 +749,8 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (
-	 *                 Multiplicity+=MultiplicityExpression | 
-	 *                 (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression) | 
-	 *                 (
-	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
-	 *                 )
-	 *             )?
+	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
 	 *         (
@@ -787,7 +761,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     )
 	 * </pre>
 	 */
-	protected void sequence_BasicUsagePrefix_ConnectionUsage_ConnectorPart_FeatureDeclaration_FeatureSpecialization_FeatureValue_MemberPrefix_MultiplicityPart_OccurrenceUsagePrefix_RefPrefix(ISerializationContext context, ConnectionUsage semanticObject) {
+	protected void sequence_BasicUsagePrefix_ConnectionUsage_ConnectorPart_EmptySuccessionPrefix_FeatureDeclaration_FeatureSpecialization_FeatureValue_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_RefPrefix(ISerializationContext context, ConnectionUsage semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -807,6 +781,8 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *
 	 * Constraint:
 	 *     (
+	 *         isThen?='then'? 
+	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         (
 	 *             isEnd?='end' | 
@@ -821,14 +797,8 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             )
 	 *         )? 
 	 *         declaredName=Name? 
-	 *         (
-	 *             Multiplicity+=MultiplicityExpression | 
-	 *             (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression) | 
-	 *             (
-	 *                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
-	 *             )
-	 *         )? 
+	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
 	 *                 (typings+=FeatureChainName typings+=FeatureChainName*) | 
@@ -837,14 +807,8 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (
-	 *                 Multiplicity+=MultiplicityExpression | 
-	 *                 (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression) | 
-	 *                 (
-	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
-	 *                 )
-	 *             )?
+	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         (
 	 *             (connectorPart+=ConnectorEnd connectorPart+=ConnectorEnd) | 
@@ -854,7 +818,478 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     )
 	 * </pre>
 	 */
-	protected void sequence_BasicUsagePrefix_ConnectorPart_FeatureDeclaration_FeatureSpecialization_InterfaceUsage_MemberPrefix_MultiplicityPart_OccurrenceUsagePrefix_RefPrefix(ISerializationContext context, InterfaceUsage semanticObject) {
+	protected void sequence_BasicUsagePrefix_ConnectorPart_EmptySuccessionPrefix_FeatureDeclaration_FeatureSpecialization_InterfaceUsage_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_RefPrefix(ISerializationContext context, InterfaceUsage semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     PackageBodyElement returns FlowConnectionUsage
+	 *     DefinitionBodyElement returns FlowConnectionUsage
+	 *     UsageBodyElement returns FlowConnectionUsage
+	 *     InterfaceBodyElement returns FlowConnectionUsage
+	 *     ActionBodyElement returns FlowConnectionUsage
+	 *     UsageElement returns FlowConnectionUsage
+	 *     OccurrenceUsageElement returns FlowConnectionUsage
+	 *     StructureUsageElement returns FlowConnectionUsage
+	 *     FlowConnectionUsage returns FlowConnectionUsage
+	 *
+	 * Constraint:
+	 *     (
+	 *         isThen?='then'? 
+	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         visibility=VisibilityIndicator? 
+	 *         (
+	 *             isEnd?='end' | 
+	 *             (
+	 *                 direction=FeatureDirection? 
+	 *                 (isAbstract?='abstract' | isVariation?='variation')? 
+	 *                 isReadOnly?='readonly'? 
+	 *                 isDerived?='derived'? 
+	 *                 isReference?='ref'? 
+	 *                 isIndividual?='individual'? 
+	 *                 portionKind=PortionKind?
+	 *             )
+	 *         )? 
+	 *         declaredName=Name? 
+	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
+	 *         (
+	 *             (
+	 *                 (typings+=FeatureChainName typings+=FeatureChainName*) | 
+	 *                 (subsetting+=FeatureChainName subsetting+=FeatureChainName*) | 
+	 *                 (references+=FeatureChainName references+=FeatureChainName*) | 
+	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
+	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
+	 *             ) 
+	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	 *         )* 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *         ItemFeature+=Name? 
+	 *         (FlowEnd+=FeatureChainName FlowEnd+=FeatureChainName)? 
+	 *         elements+=UsageBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_BasicUsagePrefix_EmptySuccessionPrefix_FeatureDeclaration_FeatureSpecialization_FeatureValue_FlowConnectionUsage_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_RefPrefix(ISerializationContext context, FlowConnectionUsage semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     PackageBodyElement returns ItemUsage
+	 *     DefinitionBodyElement returns ItemUsage
+	 *     UsageBodyElement returns ItemUsage
+	 *     InterfaceBodyElement returns ItemUsage
+	 *     ActionBodyElement returns ItemUsage
+	 *     UsageElement returns ItemUsage
+	 *     OccurrenceUsageElement returns ItemUsage
+	 *     StructureUsageElement returns ItemUsage
+	 *     ItemUsage returns ItemUsage
+	 *
+	 * Constraint:
+	 *     (
+	 *         isThen?='then'? 
+	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         visibility=VisibilityIndicator? 
+	 *         (
+	 *             isEnd?='end' | 
+	 *             (
+	 *                 direction=FeatureDirection? 
+	 *                 (isAbstract?='abstract' | isVariation?='variation')? 
+	 *                 isReadOnly?='readonly'? 
+	 *                 isDerived?='derived'? 
+	 *                 isReference?='ref'? 
+	 *                 isIndividual?='individual'? 
+	 *                 portionKind=PortionKind?
+	 *             )
+	 *         )? 
+	 *         declaredName=Name? 
+	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
+	 *         (
+	 *             (
+	 *                 (typings+=FeatureChainName typings+=FeatureChainName*) | 
+	 *                 (subsetting+=FeatureChainName subsetting+=FeatureChainName*) | 
+	 *                 (references+=FeatureChainName references+=FeatureChainName*) | 
+	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
+	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
+	 *             ) 
+	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	 *         )* 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *         elements+=UsageBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_BasicUsagePrefix_EmptySuccessionPrefix_FeatureDeclaration_FeatureSpecialization_FeatureValue_ItemUsage_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_RefPrefix(ISerializationContext context, ItemUsage semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     PackageBodyElement returns PartUsage
+	 *     DefinitionBodyElement returns PartUsage
+	 *     UsageBodyElement returns PartUsage
+	 *     InterfaceBodyElement returns PartUsage
+	 *     ActionBodyElement returns PartUsage
+	 *     UsageElement returns PartUsage
+	 *     OccurrenceUsageElement returns PartUsage
+	 *     StructureUsageElement returns PartUsage
+	 *     PartUsage returns PartUsage
+	 *
+	 * Constraint:
+	 *     (
+	 *         isThen?='then'? 
+	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         visibility=VisibilityIndicator? 
+	 *         (
+	 *             isEnd?='end' | 
+	 *             (
+	 *                 direction=FeatureDirection? 
+	 *                 (isAbstract?='abstract' | isVariation?='variation')? 
+	 *                 isReadOnly?='readonly'? 
+	 *                 isDerived?='derived'? 
+	 *                 isReference?='ref'? 
+	 *                 isIndividual?='individual'? 
+	 *                 portionKind=PortionKind?
+	 *             )
+	 *         )? 
+	 *         declaredName=Name? 
+	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
+	 *         (
+	 *             (
+	 *                 (typings+=FeatureChainName typings+=FeatureChainName*) | 
+	 *                 (subsetting+=FeatureChainName subsetting+=FeatureChainName*) | 
+	 *                 (references+=FeatureChainName references+=FeatureChainName*) | 
+	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
+	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
+	 *             ) 
+	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	 *         )* 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *         elements+=UsageBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_BasicUsagePrefix_EmptySuccessionPrefix_FeatureDeclaration_FeatureSpecialization_FeatureValue_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_PartUsage_RefPrefix(ISerializationContext context, PartUsage semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     PackageBodyElement returns PerformActionUsage
+	 *     DefinitionBodyElement returns PerformActionUsage
+	 *     UsageBodyElement returns PerformActionUsage
+	 *     InterfaceBodyElement returns PerformActionUsage
+	 *     ActionBodyElement returns PerformActionUsage
+	 *     UsageElement returns PerformActionUsage
+	 *     OccurrenceUsageElement returns PerformActionUsage
+	 *     BehaviorUsageElement returns PerformActionUsage
+	 *     PerformActionUsage returns PerformActionUsage
+	 *
+	 * Constraint:
+	 *     (
+	 *         isThen?='then'? 
+	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         visibility=VisibilityIndicator? 
+	 *         (
+	 *             isEnd?='end' | 
+	 *             (
+	 *                 direction=FeatureDirection? 
+	 *                 (isAbstract?='abstract' | isVariation?='variation')? 
+	 *                 isReadOnly?='readonly'? 
+	 *                 isDerived?='derived'? 
+	 *                 isReference?='ref'? 
+	 *                 isIndividual?='individual'? 
+	 *                 portionKind=PortionKind?
+	 *             )
+	 *         )? 
+	 *         (declaredName=Name | refElement=FeatureChainName)? 
+	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
+	 *         (
+	 *             (
+	 *                 (typings+=FeatureChainName typings+=FeatureChainName*) | 
+	 *                 (subsetting+=FeatureChainName subsetting+=FeatureChainName*) | 
+	 *                 (references+=FeatureChainName references+=FeatureChainName*) | 
+	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
+	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
+	 *             ) 
+	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	 *         )* 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *         elements+=ActionBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_BasicUsagePrefix_EmptySuccessionPrefix_FeatureDeclaration_FeatureSpecialization_FeatureValue_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_PerformActionUsage_RefPrefix_ReferenceSubsetting(ISerializationContext context, PerformActionUsage semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     PackageBodyElement returns PortUsage
+	 *     DefinitionBodyElement returns PortUsage
+	 *     UsageBodyElement returns PortUsage
+	 *     InterfaceBodyElement returns PortUsage
+	 *     ActionBodyElement returns PortUsage
+	 *     UsageElement returns PortUsage
+	 *     OccurrenceUsageElement returns PortUsage
+	 *     StructureUsageElement returns PortUsage
+	 *     PortUsage returns PortUsage
+	 *
+	 * Constraint:
+	 *     (
+	 *         isThen?='then'? 
+	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         visibility=VisibilityIndicator? 
+	 *         (
+	 *             isEnd?='end' | 
+	 *             (
+	 *                 direction=FeatureDirection? 
+	 *                 (isAbstract?='abstract' | isVariation?='variation')? 
+	 *                 isReadOnly?='readonly'? 
+	 *                 isDerived?='derived'? 
+	 *                 isReference?='ref'? 
+	 *                 isIndividual?='individual'? 
+	 *                 portionKind=PortionKind?
+	 *             )
+	 *         )? 
+	 *         declaredName=Name? 
+	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
+	 *         (
+	 *             (
+	 *                 (typings+=FeatureChainName typings+=FeatureChainName*) | 
+	 *                 (subsetting+=FeatureChainName subsetting+=FeatureChainName*) | 
+	 *                 (references+=FeatureChainName references+=FeatureChainName*) | 
+	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
+	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
+	 *             ) 
+	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	 *         )* 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *         elements+=UsageBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_BasicUsagePrefix_EmptySuccessionPrefix_FeatureDeclaration_FeatureSpecialization_FeatureValue_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_PortUsage_RefPrefix(ISerializationContext context, PortUsage semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     PackageBodyElement returns SuccessionFlowConnectionUsage
+	 *     DefinitionBodyElement returns SuccessionFlowConnectionUsage
+	 *     UsageBodyElement returns SuccessionFlowConnectionUsage
+	 *     InterfaceBodyElement returns SuccessionFlowConnectionUsage
+	 *     ActionBodyElement returns SuccessionFlowConnectionUsage
+	 *     UsageElement returns SuccessionFlowConnectionUsage
+	 *     OccurrenceUsageElement returns SuccessionFlowConnectionUsage
+	 *     StructureUsageElement returns SuccessionFlowConnectionUsage
+	 *     SuccessionFlowConnectionUsage returns SuccessionFlowConnectionUsage
+	 *
+	 * Constraint:
+	 *     (
+	 *         isThen?='then'? 
+	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         visibility=VisibilityIndicator? 
+	 *         (
+	 *             isEnd?='end' | 
+	 *             (
+	 *                 direction=FeatureDirection? 
+	 *                 (isAbstract?='abstract' | isVariation?='variation')? 
+	 *                 isReadOnly?='readonly'? 
+	 *                 isDerived?='derived'? 
+	 *                 isReference?='ref'? 
+	 *                 isIndividual?='individual'? 
+	 *                 portionKind=PortionKind?
+	 *             )
+	 *         )? 
+	 *         declaredName=Name? 
+	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
+	 *         (
+	 *             (
+	 *                 (typings+=FeatureChainName typings+=FeatureChainName*) | 
+	 *                 (subsetting+=FeatureChainName subsetting+=FeatureChainName*) | 
+	 *                 (references+=FeatureChainName references+=FeatureChainName*) | 
+	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
+	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
+	 *             ) 
+	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	 *         )* 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *         ItemFeature+=Name? 
+	 *         (FlowEnd+=FeatureChainName FlowEnd+=FeatureChainName)? 
+	 *         elements+=DefinitionBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_BasicUsagePrefix_EmptySuccessionPrefix_FeatureDeclaration_FeatureSpecialization_FeatureValue_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_RefPrefix_SuccessionFlowConnectionUsage(ISerializationContext context, SuccessionFlowConnectionUsage semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     IfNode returns IfNode
+	 *
+	 * Constraint:
+	 *     (
+	 *         isThen?='then'? 
+	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         visibility=VisibilityIndicator? 
+	 *         (
+	 *             isEnd?='end' | 
+	 *             (
+	 *                 direction=FeatureDirection? 
+	 *                 (isAbstract?='abstract' | isVariation?='variation')? 
+	 *                 isReadOnly?='readonly'? 
+	 *                 isDerived?='derived'? 
+	 *                 isReference?='ref'? 
+	 *                 isIndividual?='individual'? 
+	 *                 portionKind=PortionKind?
+	 *             )
+	 *         )? 
+	 *         declaredName=Name? 
+	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
+	 *         (
+	 *             (
+	 *                 (typings+=FeatureChainName typings+=FeatureChainName*) | 
+	 *                 (subsetting+=FeatureChainName subsetting+=FeatureChainName*) | 
+	 *                 (references+=FeatureChainName references+=FeatureChainName*) | 
+	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
+	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
+	 *             ) 
+	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	 *         )* 
+	 *         ifConditionExpression=Expression 
+	 *         actionParameterEnd+=ActionParameterEnd? 
+	 *         elements+=ActionBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_BasicUsagePrefix_EmptySuccessionPrefix_FeatureDeclaration_FeatureSpecialization_IfNode_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_RefPrefix(ISerializationContext context, IfNode semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     ActionBodyElement returns SendNode
+	 *     ActionNodeElement returns SendNode
+	 *     SendNode returns SendNode
+	 *
+	 * Constraint:
+	 *     (
+	 *         isThen?='then'? 
+	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         visibility=VisibilityIndicator? 
+	 *         (
+	 *             isEnd?='end' | 
+	 *             (
+	 *                 direction=FeatureDirection? 
+	 *                 (isAbstract?='abstract' | isVariation?='variation')? 
+	 *                 isReadOnly?='readonly'? 
+	 *                 isDerived?='derived'? 
+	 *                 isReference?='ref'? 
+	 *                 isIndividual?='individual'? 
+	 *                 portionKind=PortionKind?
+	 *             )
+	 *         )? 
+	 *         declaredName=Name? 
+	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
+	 *         (
+	 *             (
+	 *                 (typings+=FeatureChainName typings+=FeatureChainName*) | 
+	 *                 (subsetting+=FeatureChainName subsetting+=FeatureChainName*) | 
+	 *                 (references+=FeatureChainName references+=FeatureChainName*) | 
+	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
+	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
+	 *             ) 
+	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	 *         )*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_BasicUsagePrefix_EmptySuccessionPrefix_FeatureDeclaration_FeatureSpecialization_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_RefPrefix(ISerializationContext context, SendNode semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     ActionBodyElement returns WhileLoopNode
+	 *     ActionNodeElement returns WhileLoopNode
+	 *     WhileLoopNode returns WhileLoopNode
+	 *
+	 * Constraint:
+	 *     (
+	 *         isThen?='then'? 
+	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         visibility=VisibilityIndicator? 
+	 *         (
+	 *             isEnd?='end' | 
+	 *             (
+	 *                 direction=FeatureDirection? 
+	 *                 (isAbstract?='abstract' | isVariation?='variation')? 
+	 *                 isReadOnly?='readonly'? 
+	 *                 isDerived?='derived'? 
+	 *                 isReference?='ref'? 
+	 *                 isIndividual?='individual'? 
+	 *                 portionKind=PortionKind?
+	 *             )
+	 *         )? 
+	 *         declaredName=Name? 
+	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
+	 *         (
+	 *             (
+	 *                 (typings+=FeatureChainName typings+=FeatureChainName*) | 
+	 *                 (subsetting+=FeatureChainName subsetting+=FeatureChainName*) | 
+	 *                 (references+=FeatureChainName references+=FeatureChainName*) | 
+	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
+	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
+	 *             ) 
+	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	 *         )* 
+	 *         whileConditionExpression=Expression? 
+	 *         actionParameterEnd+=ActionParameterEnd? 
+	 *         elements+=ActionBodyElement* 
+	 *         untilConditionExpression=Expression?
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_BasicUsagePrefix_EmptySuccessionPrefix_FeatureDeclaration_FeatureSpecialization_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_RefPrefix_WhileLoopNode(ISerializationContext context, WhileLoopNode semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -885,14 +1320,8 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             )
 	 *         )? 
 	 *         declaredName=Name? 
-	 *         (
-	 *             Multiplicity+=MultiplicityExpression | 
-	 *             (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression) | 
-	 *             (
-	 *                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
-	 *             )
-	 *         )? 
+	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
 	 *                 (typings+=FeatureChainName typings+=FeatureChainName*) | 
@@ -901,21 +1330,15 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (
-	 *                 Multiplicity+=MultiplicityExpression | 
-	 *                 (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression) | 
-	 *                 (
-	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
-	 *                 )
-	 *             )?
+	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
 	 *         elements+=UsageBodyElement*
 	 *     )
 	 * </pre>
 	 */
-	protected void sequence_BasicUsagePrefix_EndUsagePrefix_EnumerationUsage_FeatureDeclaration_FeatureSpecialization_FeatureValue_MemberPrefix_MultiplicityPart_RefPrefix(ISerializationContext context, EnumerationUsage semanticObject) {
+	protected void sequence_BasicUsagePrefix_EndUsagePrefix_EnumerationUsage_FeatureDeclaration_FeatureSpecialization_FeatureValue_MemberPrefix_MultiplicityPart_MultiplicityRange_RefPrefix(ISerializationContext context, EnumerationUsage semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -946,14 +1369,8 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             )
 	 *         )? 
 	 *         declaredName=Name? 
-	 *         (
-	 *             Multiplicity+=MultiplicityExpression | 
-	 *             (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression) | 
-	 *             (
-	 *                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
-	 *             )
-	 *         )? 
+	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
 	 *                 (typings+=FeatureChainName typings+=FeatureChainName*) | 
@@ -962,14 +1379,8 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (
-	 *                 Multiplicity+=MultiplicityExpression | 
-	 *                 (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression) | 
-	 *                 (
-	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
-	 *                 )
-	 *             )?
+	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         connectorPart+=ConnectorEnd 
 	 *         connectorPart+=ConnectorEnd 
@@ -977,387 +1388,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     )
 	 * </pre>
 	 */
-	protected void sequence_BasicUsagePrefix_EndUsagePrefix_FeatureDeclaration_FeatureSpecialization_MemberPrefix_MultiplicityPart_RefPrefix_SuccessionAsUsage(ISerializationContext context, SuccessionAsUsage semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     PackageBodyElement returns FlowConnectionUsage
-	 *     DefinitionBodyElement returns FlowConnectionUsage
-	 *     UsageBodyElement returns FlowConnectionUsage
-	 *     InterfaceBodyElement returns FlowConnectionUsage
-	 *     ActionBodyElement returns FlowConnectionUsage
-	 *     UsageElement returns FlowConnectionUsage
-	 *     OccurrenceUsageElement returns FlowConnectionUsage
-	 *     StructureUsageElement returns FlowConnectionUsage
-	 *     FlowConnectionUsage returns FlowConnectionUsage
-	 *
-	 * Constraint:
-	 *     (
-	 *         visibility=VisibilityIndicator? 
-	 *         (
-	 *             isEnd?='end' | 
-	 *             (
-	 *                 direction=FeatureDirection? 
-	 *                 (isAbstract?='abstract' | isVariation?='variation')? 
-	 *                 isReadOnly?='readonly'? 
-	 *                 isDerived?='derived'? 
-	 *                 isReference?='ref'? 
-	 *                 isIndividual?='individual'? 
-	 *                 portionKind=PortionKind?
-	 *             )
-	 *         )? 
-	 *         declaredName=Name? 
-	 *         (
-	 *             Multiplicity+=MultiplicityExpression | 
-	 *             (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression) | 
-	 *             (
-	 *                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
-	 *             )
-	 *         )? 
-	 *         (
-	 *             (
-	 *                 (typings+=FeatureChainName typings+=FeatureChainName*) | 
-	 *                 (subsetting+=FeatureChainName subsetting+=FeatureChainName*) | 
-	 *                 (references+=FeatureChainName references+=FeatureChainName*) | 
-	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
-	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
-	 *             ) 
-	 *             (
-	 *                 Multiplicity+=MultiplicityExpression | 
-	 *                 (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression) | 
-	 *                 (
-	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
-	 *                 )
-	 *             )?
-	 *         )* 
-	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
-	 *         ItemFeature+=Name? 
-	 *         (FlowEnd+=FeatureChainName FlowEnd+=FeatureChainName)? 
-	 *         elements+=UsageBodyElement*
-	 *     )
-	 * </pre>
-	 */
-	protected void sequence_BasicUsagePrefix_FeatureDeclaration_FeatureSpecialization_FeatureValue_FlowConnectionUsage_MemberPrefix_MultiplicityPart_OccurrenceUsagePrefix_RefPrefix(ISerializationContext context, FlowConnectionUsage semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     PackageBodyElement returns ItemUsage
-	 *     DefinitionBodyElement returns ItemUsage
-	 *     UsageBodyElement returns ItemUsage
-	 *     InterfaceBodyElement returns ItemUsage
-	 *     ActionBodyElement returns ItemUsage
-	 *     UsageElement returns ItemUsage
-	 *     OccurrenceUsageElement returns ItemUsage
-	 *     StructureUsageElement returns ItemUsage
-	 *     ItemUsage returns ItemUsage
-	 *
-	 * Constraint:
-	 *     (
-	 *         visibility=VisibilityIndicator? 
-	 *         (
-	 *             isEnd?='end' | 
-	 *             (
-	 *                 direction=FeatureDirection? 
-	 *                 (isAbstract?='abstract' | isVariation?='variation')? 
-	 *                 isReadOnly?='readonly'? 
-	 *                 isDerived?='derived'? 
-	 *                 isReference?='ref'? 
-	 *                 isIndividual?='individual'? 
-	 *                 portionKind=PortionKind?
-	 *             )
-	 *         )? 
-	 *         declaredName=Name? 
-	 *         (
-	 *             Multiplicity+=MultiplicityExpression | 
-	 *             (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression) | 
-	 *             (
-	 *                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
-	 *             )
-	 *         )? 
-	 *         (
-	 *             (
-	 *                 (typings+=FeatureChainName typings+=FeatureChainName*) | 
-	 *                 (subsetting+=FeatureChainName subsetting+=FeatureChainName*) | 
-	 *                 (references+=FeatureChainName references+=FeatureChainName*) | 
-	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
-	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
-	 *             ) 
-	 *             (
-	 *                 Multiplicity+=MultiplicityExpression | 
-	 *                 (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression) | 
-	 *                 (
-	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
-	 *                 )
-	 *             )?
-	 *         )* 
-	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
-	 *         elements+=UsageBodyElement*
-	 *     )
-	 * </pre>
-	 */
-	protected void sequence_BasicUsagePrefix_FeatureDeclaration_FeatureSpecialization_FeatureValue_ItemUsage_MemberPrefix_MultiplicityPart_OccurrenceUsagePrefix_RefPrefix(ISerializationContext context, ItemUsage semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     PackageBodyElement returns PartUsage
-	 *     DefinitionBodyElement returns PartUsage
-	 *     UsageBodyElement returns PartUsage
-	 *     InterfaceBodyElement returns PartUsage
-	 *     ActionBodyElement returns PartUsage
-	 *     UsageElement returns PartUsage
-	 *     OccurrenceUsageElement returns PartUsage
-	 *     StructureUsageElement returns PartUsage
-	 *     PartUsage returns PartUsage
-	 *
-	 * Constraint:
-	 *     (
-	 *         visibility=VisibilityIndicator? 
-	 *         (
-	 *             isEnd?='end' | 
-	 *             (
-	 *                 direction=FeatureDirection? 
-	 *                 (isAbstract?='abstract' | isVariation?='variation')? 
-	 *                 isReadOnly?='readonly'? 
-	 *                 isDerived?='derived'? 
-	 *                 isReference?='ref'? 
-	 *                 isIndividual?='individual'? 
-	 *                 portionKind=PortionKind?
-	 *             )
-	 *         )? 
-	 *         declaredName=Name? 
-	 *         (
-	 *             Multiplicity+=MultiplicityExpression | 
-	 *             (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression) | 
-	 *             (
-	 *                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
-	 *             )
-	 *         )? 
-	 *         (
-	 *             (
-	 *                 (typings+=FeatureChainName typings+=FeatureChainName*) | 
-	 *                 (subsetting+=FeatureChainName subsetting+=FeatureChainName*) | 
-	 *                 (references+=FeatureChainName references+=FeatureChainName*) | 
-	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
-	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
-	 *             ) 
-	 *             (
-	 *                 Multiplicity+=MultiplicityExpression | 
-	 *                 (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression) | 
-	 *                 (
-	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
-	 *                 )
-	 *             )?
-	 *         )* 
-	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
-	 *         elements+=UsageBodyElement*
-	 *     )
-	 * </pre>
-	 */
-	protected void sequence_BasicUsagePrefix_FeatureDeclaration_FeatureSpecialization_FeatureValue_MemberPrefix_MultiplicityPart_OccurrenceUsagePrefix_PartUsage_RefPrefix(ISerializationContext context, PartUsage semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     PackageBodyElement returns PortUsage
-	 *     DefinitionBodyElement returns PortUsage
-	 *     UsageBodyElement returns PortUsage
-	 *     InterfaceBodyElement returns PortUsage
-	 *     ActionBodyElement returns PortUsage
-	 *     UsageElement returns PortUsage
-	 *     OccurrenceUsageElement returns PortUsage
-	 *     StructureUsageElement returns PortUsage
-	 *     PortUsage returns PortUsage
-	 *
-	 * Constraint:
-	 *     (
-	 *         visibility=VisibilityIndicator? 
-	 *         (
-	 *             isEnd?='end' | 
-	 *             (
-	 *                 direction=FeatureDirection? 
-	 *                 (isAbstract?='abstract' | isVariation?='variation')? 
-	 *                 isReadOnly?='readonly'? 
-	 *                 isDerived?='derived'? 
-	 *                 isReference?='ref'? 
-	 *                 isIndividual?='individual'? 
-	 *                 portionKind=PortionKind?
-	 *             )
-	 *         )? 
-	 *         declaredName=Name? 
-	 *         (
-	 *             Multiplicity+=MultiplicityExpression | 
-	 *             (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression) | 
-	 *             (
-	 *                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
-	 *             )
-	 *         )? 
-	 *         (
-	 *             (
-	 *                 (typings+=FeatureChainName typings+=FeatureChainName*) | 
-	 *                 (subsetting+=FeatureChainName subsetting+=FeatureChainName*) | 
-	 *                 (references+=FeatureChainName references+=FeatureChainName*) | 
-	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
-	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
-	 *             ) 
-	 *             (
-	 *                 Multiplicity+=MultiplicityExpression | 
-	 *                 (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression) | 
-	 *                 (
-	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
-	 *                 )
-	 *             )?
-	 *         )* 
-	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
-	 *         elements+=UsageBodyElement*
-	 *     )
-	 * </pre>
-	 */
-	protected void sequence_BasicUsagePrefix_FeatureDeclaration_FeatureSpecialization_FeatureValue_MemberPrefix_MultiplicityPart_OccurrenceUsagePrefix_PortUsage_RefPrefix(ISerializationContext context, PortUsage semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     PackageBodyElement returns SuccessionFlowConnectionUsage
-	 *     DefinitionBodyElement returns SuccessionFlowConnectionUsage
-	 *     UsageBodyElement returns SuccessionFlowConnectionUsage
-	 *     InterfaceBodyElement returns SuccessionFlowConnectionUsage
-	 *     ActionBodyElement returns SuccessionFlowConnectionUsage
-	 *     UsageElement returns SuccessionFlowConnectionUsage
-	 *     OccurrenceUsageElement returns SuccessionFlowConnectionUsage
-	 *     StructureUsageElement returns SuccessionFlowConnectionUsage
-	 *     SuccessionFlowConnectionUsage returns SuccessionFlowConnectionUsage
-	 *
-	 * Constraint:
-	 *     (
-	 *         visibility=VisibilityIndicator? 
-	 *         (
-	 *             isEnd?='end' | 
-	 *             (
-	 *                 direction=FeatureDirection? 
-	 *                 (isAbstract?='abstract' | isVariation?='variation')? 
-	 *                 isReadOnly?='readonly'? 
-	 *                 isDerived?='derived'? 
-	 *                 isReference?='ref'? 
-	 *                 isIndividual?='individual'? 
-	 *                 portionKind=PortionKind?
-	 *             )
-	 *         )? 
-	 *         declaredName=Name? 
-	 *         (
-	 *             Multiplicity+=MultiplicityExpression | 
-	 *             (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression) | 
-	 *             (
-	 *                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
-	 *             )
-	 *         )? 
-	 *         (
-	 *             (
-	 *                 (typings+=FeatureChainName typings+=FeatureChainName*) | 
-	 *                 (subsetting+=FeatureChainName subsetting+=FeatureChainName*) | 
-	 *                 (references+=FeatureChainName references+=FeatureChainName*) | 
-	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
-	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
-	 *             ) 
-	 *             (
-	 *                 Multiplicity+=MultiplicityExpression | 
-	 *                 (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression) | 
-	 *                 (
-	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
-	 *                 )
-	 *             )?
-	 *         )* 
-	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
-	 *         ItemFeature+=Name? 
-	 *         (FlowEnd+=FeatureChainName FlowEnd+=FeatureChainName)? 
-	 *         elements+=DefinitionBodyElement*
-	 *     )
-	 * </pre>
-	 */
-	protected void sequence_BasicUsagePrefix_FeatureDeclaration_FeatureSpecialization_FeatureValue_MemberPrefix_MultiplicityPart_OccurrenceUsagePrefix_RefPrefix_SuccessionFlowConnectionUsage(ISerializationContext context, SuccessionFlowConnectionUsage semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ActionBodyElement returns SendNode
-	 *     ActionNodeElement returns SendNode
-	 *     SendNode returns SendNode
-	 *
-	 * Constraint:
-	 *     (
-	 *         visibility=VisibilityIndicator? 
-	 *         (
-	 *             isEnd?='end' | 
-	 *             (
-	 *                 direction=FeatureDirection? 
-	 *                 (isAbstract?='abstract' | isVariation?='variation')? 
-	 *                 isReadOnly?='readonly'? 
-	 *                 isDerived?='derived'? 
-	 *                 isReference?='ref'? 
-	 *                 isIndividual?='individual'? 
-	 *                 portionKind=PortionKind?
-	 *             )
-	 *         )? 
-	 *         declaredName=Name? 
-	 *         (
-	 *             Multiplicity+=MultiplicityExpression | 
-	 *             (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression) | 
-	 *             (
-	 *                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
-	 *             )
-	 *         )? 
-	 *         (
-	 *             (
-	 *                 (typings+=FeatureChainName typings+=FeatureChainName*) | 
-	 *                 (subsetting+=FeatureChainName subsetting+=FeatureChainName*) | 
-	 *                 (references+=FeatureChainName references+=FeatureChainName*) | 
-	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
-	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
-	 *             ) 
-	 *             (
-	 *                 Multiplicity+=MultiplicityExpression | 
-	 *                 (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression) | 
-	 *                 (
-	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
-	 *                 )
-	 *             )?
-	 *         )*
-	 *     )
-	 * </pre>
-	 */
-	protected void sequence_BasicUsagePrefix_FeatureDeclaration_FeatureSpecialization_MemberPrefix_MultiplicityPart_OccurrenceUsagePrefix_RefPrefix(ISerializationContext context, SendNode semanticObject) {
+	protected void sequence_BasicUsagePrefix_EndUsagePrefix_FeatureDeclaration_FeatureSpecialization_MemberPrefix_MultiplicityPart_MultiplicityRange_RefPrefix_SuccessionAsUsage(ISerializationContext context, SuccessionAsUsage semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1389,6 +1420,8 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     InterfaceBodyElement returns Comment
 	 *     EnumerationBodyElement returns Comment
 	 *     ActionBodyElement returns Comment
+	 *     AnnotatingBodyElement returns Comment
+	 *     ActionNodeBodyElement returns Comment
 	 *     AnnotatingElement returns Comment
 	 *     Comment returns Comment
 	 *
@@ -1412,10 +1445,178 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     ConnectorEnd returns ConnectorEnd
 	 *
 	 * Constraint:
-	 *     ((Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression)? delcaredName=Name? refElement=FeatureChainName)
+	 *     (
+	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         delcaredName=Name? 
+	 *         refElement=FeatureChainName
+	 *     )
 	 * </pre>
 	 */
-	protected void sequence_ConnectorEnd(ISerializationContext context, ConnectorEnd semanticObject) {
+	protected void sequence_ConnectorEnd_MultiplicityRange_ReferenceSubsetting(ISerializationContext context, ConnectorEnd semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     ActionBodyElement returns DecisionNode
+	 *     ActionNodeElement returns DecisionNode
+	 *     DecisionNode returns DecisionNode
+	 *
+	 * Constraint:
+	 *     (
+	 *         isThen?='then'? 
+	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         visibility=VisibilityIndicator? 
+	 *         direction=FeatureDirection? 
+	 *         (isAbstract?='abstract' | isVariation?='variation')? 
+	 *         isReadOnly?='readonly'? 
+	 *         isDerived?='derived'? 
+	 *         isIndividual?='individual'? 
+	 *         portionKind=PortionKind? 
+	 *         declaredName=Name? 
+	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
+	 *         (
+	 *             (
+	 *                 (typings+=FeatureChainName typings+=FeatureChainName*) | 
+	 *                 (subsetting+=FeatureChainName subsetting+=FeatureChainName*) | 
+	 *                 (references+=FeatureChainName references+=FeatureChainName*) | 
+	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
+	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
+	 *             ) 
+	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	 *         )* 
+	 *         elements+=ActionNodeBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_ControlNodePrefix_DecisionNode_EmptySuccessionPrefix_FeatureDeclaration_FeatureSpecialization_MemberPrefix_MultiplicityPart_MultiplicityRange_RefPrefix(ISerializationContext context, DecisionNode semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     ActionBodyElement returns ForkNode
+	 *     ActionNodeElement returns ForkNode
+	 *     ForkNode returns ForkNode
+	 *
+	 * Constraint:
+	 *     (
+	 *         isThen?='then'? 
+	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         visibility=VisibilityIndicator? 
+	 *         direction=FeatureDirection? 
+	 *         (isAbstract?='abstract' | isVariation?='variation')? 
+	 *         isReadOnly?='readonly'? 
+	 *         isDerived?='derived'? 
+	 *         isIndividual?='individual'? 
+	 *         portionKind=PortionKind? 
+	 *         declaredName=Name? 
+	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
+	 *         (
+	 *             (
+	 *                 (typings+=FeatureChainName typings+=FeatureChainName*) | 
+	 *                 (subsetting+=FeatureChainName subsetting+=FeatureChainName*) | 
+	 *                 (references+=FeatureChainName references+=FeatureChainName*) | 
+	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
+	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
+	 *             ) 
+	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	 *         )* 
+	 *         elements+=ActionNodeBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_ControlNodePrefix_EmptySuccessionPrefix_FeatureDeclaration_FeatureSpecialization_ForkNode_MemberPrefix_MultiplicityPart_MultiplicityRange_RefPrefix(ISerializationContext context, ForkNode semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     ActionBodyElement returns JoinNode
+	 *     ActionNodeElement returns JoinNode
+	 *     JoinNode returns JoinNode
+	 *
+	 * Constraint:
+	 *     (
+	 *         isThen?='then'? 
+	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         visibility=VisibilityIndicator? 
+	 *         direction=FeatureDirection? 
+	 *         (isAbstract?='abstract' | isVariation?='variation')? 
+	 *         isReadOnly?='readonly'? 
+	 *         isDerived?='derived'? 
+	 *         isIndividual?='individual'? 
+	 *         portionKind=PortionKind? 
+	 *         declaredName=Name? 
+	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
+	 *         (
+	 *             (
+	 *                 (typings+=FeatureChainName typings+=FeatureChainName*) | 
+	 *                 (subsetting+=FeatureChainName subsetting+=FeatureChainName*) | 
+	 *                 (references+=FeatureChainName references+=FeatureChainName*) | 
+	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
+	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
+	 *             ) 
+	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	 *         )* 
+	 *         elements+=ActionNodeBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_ControlNodePrefix_EmptySuccessionPrefix_FeatureDeclaration_FeatureSpecialization_JoinNode_MemberPrefix_MultiplicityPart_MultiplicityRange_RefPrefix(ISerializationContext context, JoinNode semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     ActionBodyElement returns MergeNode
+	 *     ActionNodeElement returns MergeNode
+	 *     MergeNode returns MergeNode
+	 *
+	 * Constraint:
+	 *     (
+	 *         isThen?='then'? 
+	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         visibility=VisibilityIndicator? 
+	 *         direction=FeatureDirection? 
+	 *         (isAbstract?='abstract' | isVariation?='variation')? 
+	 *         isReadOnly?='readonly'? 
+	 *         isDerived?='derived'? 
+	 *         isIndividual?='individual'? 
+	 *         portionKind=PortionKind? 
+	 *         declaredName=Name? 
+	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
+	 *         (
+	 *             (
+	 *                 (typings+=FeatureChainName typings+=FeatureChainName*) | 
+	 *                 (subsetting+=FeatureChainName subsetting+=FeatureChainName*) | 
+	 *                 (references+=FeatureChainName references+=FeatureChainName*) | 
+	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
+	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
+	 *             ) 
+	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	 *         )* 
+	 *         elements+=ActionNodeBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_ControlNodePrefix_EmptySuccessionPrefix_FeatureDeclaration_FeatureSpecialization_MemberPrefix_MergeNode_MultiplicityPart_MultiplicityRange_RefPrefix(ISerializationContext context, MergeNode semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1441,36 +1642,15 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         isReadOnly?='readonly'? 
 	 *         isDerived?='derived'? 
 	 *         (
-	 *             declaredName=Name | 
-	 *             (
-	 *                 declaredName=Name 
-	 *                 (
-	 *                     (typings+=FeatureChainName typings+=FeatureChainName*) | 
-	 *                     (subsetting+=FeatureChainName subsetting+=FeatureChainName*) | 
-	 *                     (references+=FeatureChainName references+=FeatureChainName*) | 
-	 *                     (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
-	 *                     (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
-	 *                 )*
-	 *             ) | 
 	 *             (
 	 *                 (
 	 *                     declaredName=Name | 
+	 *                     (declaredName=Name (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))?) | 
 	 *                     (
-	 *                         declaredName=Name 
 	 *                         (
-	 *                             (typings+=FeatureChainName typings+=FeatureChainName*) | 
-	 *                             (subsetting+=FeatureChainName subsetting+=FeatureChainName*) | 
-	 *                             (references+=FeatureChainName references+=FeatureChainName*) | 
-	 *                             (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
-	 *                             (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
-	 *                         )*
-	 *                     )
-	 *                 ) 
-	 *                 (
-	 *                     Multiplicity+=MultiplicityExpression | 
-	 *                     (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression) | 
-	 *                     (
-	 *                         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *                             declaredName=Name | 
+	 *                             (declaredName=Name (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))?)
+	 *                         ) 
 	 *                         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
 	 *                     )
 	 *                 ) 
@@ -1481,23 +1661,23 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                         (references+=FeatureChainName references+=FeatureChainName*) | 
 	 *                         (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                         (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
-	 *                     )* 
+	 *                     ) 
+	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *                     (
-	 *                         Multiplicity+=MultiplicityExpression | 
-	 *                         (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression) | 
-	 *                         (
-	 *                             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *                             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
-	 *                         )
-	 *                     )
-	 *                 )* 
+	 *                         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *                         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
+	 *                     )?
+	 *                 )+ 
+	 *                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))?
+	 *             ) | 
+	 *             declaredName=Name | 
+	 *             (declaredName=Name (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))?) | 
+	 *             (
 	 *                 (
-	 *                     (typings+=FeatureChainName typings+=FeatureChainName*) | 
-	 *                     (subsetting+=FeatureChainName subsetting+=FeatureChainName*) | 
-	 *                     (references+=FeatureChainName references+=FeatureChainName*) | 
-	 *                     (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
-	 *                     (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
-	 *                 )*
+	 *                     declaredName=Name | 
+	 *                     (declaredName=Name (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))?)
+	 *                 ) 
+	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
 	 *             )
 	 *         )? 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
@@ -1505,7 +1685,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     )
 	 * </pre>
 	 */
-	protected void sequence_DefaultReferenceUsage_FeatureDeclaration_FeatureSpecialization_FeatureValue_MemberPrefix_MultiplicityPart_RefPrefix(ISerializationContext context, DefaultReferenceUsage semanticObject) {
+	protected void sequence_DefaultReferenceUsage_FeatureDeclaration_FeatureSpecialization_FeatureValue_MemberPrefix_MultiplicityPart_MultiplicityRange_RefPrefix(ISerializationContext context, DefaultReferenceUsage semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1544,6 +1724,8 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     InterfaceBodyElement returns Documentation
 	 *     EnumerationBodyElement returns Documentation
 	 *     ActionBodyElement returns Documentation
+	 *     AnnotatingBodyElement returns Documentation
+	 *     ActionNodeBodyElement returns Documentation
 	 *     AnnotatingElement returns Documentation
 	 *     Documentation returns Documentation
 	 *
@@ -1552,20 +1734,6 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * </pre>
 	 */
 	protected void sequence_Documentation_Identification(ISerializationContext context, Documentation semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     EmptySuccession returns EmptySuccession
-	 *
-	 * Constraint:
-	 *     (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression)?
-	 * </pre>
-	 */
-	protected void sequence_EmptySuccession(ISerializationContext context, EmptySuccession semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1587,14 +1755,8 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         visibility=VisibilityIndicator? 
 	 *         (isEnd?='end' | (direction=FeatureDirection? (isAbstract?='abstract' | isVariation?='variation')? isReadOnly?='readonly'? isDerived?='derived'?))? 
 	 *         declaredName=Name? 
-	 *         (
-	 *             Multiplicity+=MultiplicityExpression | 
-	 *             (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression) | 
-	 *             (
-	 *                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
-	 *             )
-	 *         )? 
+	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
 	 *                 (typings+=FeatureChainName typings+=FeatureChainName*) | 
@@ -1603,21 +1765,15 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (
-	 *                 Multiplicity+=MultiplicityExpression | 
-	 *                 (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression) | 
-	 *                 (
-	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
-	 *                 )
-	 *             )?
+	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
 	 *         elements+=UsageBodyElement*
 	 *     )
 	 * </pre>
 	 */
-	protected void sequence_EndUsagePrefix_FeatureDeclaration_FeatureSpecialization_FeatureValue_MemberPrefix_MultiplicityPart_RefPrefix_ReferenceUsage(ISerializationContext context, ReferenceUsage semanticObject) {
+	protected void sequence_EndUsagePrefix_FeatureDeclaration_FeatureSpecialization_FeatureValue_MemberPrefix_MultiplicityPart_MultiplicityRange_RefPrefix_ReferenceUsage(ISerializationContext context, ReferenceUsage semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1633,14 +1789,8 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     (
 	 *         visibility=VisibilityIndicator? 
 	 *         declaredName=Name? 
-	 *         (
-	 *             Multiplicity+=MultiplicityExpression | 
-	 *             (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression) | 
-	 *             (
-	 *                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
-	 *             )
-	 *         )? 
+	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
 	 *                 (typings+=FeatureChainName typings+=FeatureChainName*) | 
@@ -1649,21 +1799,127 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (
-	 *                 Multiplicity+=MultiplicityExpression | 
-	 *                 (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression) | 
-	 *                 (
-	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
-	 *                 )
-	 *             )?
+	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
 	 *         elements+=UsageBodyElement*
 	 *     )
 	 * </pre>
 	 */
-	protected void sequence_EnumeratedValue_FeatureDeclaration_FeatureSpecialization_FeatureValue_MemberPrefix_MultiplicityPart(ISerializationContext context, EnumeratedValue semanticObject) {
+	protected void sequence_EnumeratedValue_FeatureDeclaration_FeatureSpecialization_FeatureValue_MemberPrefix_MultiplicityPart_MultiplicityRange(ISerializationContext context, EnumeratedValue semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     ActionBodyElement returns GuardedSuccessionElement
+	 *     GuardedSuccessionNodeElement returns GuardedSuccessionElement
+	 *     GuardedSuccessionElement returns GuardedSuccessionElement
+	 *
+	 * Constraint:
+	 *     (
+	 *         declaredName=Name? 
+	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
+	 *         (
+	 *             (
+	 *                 (typings+=FeatureChainName typings+=FeatureChainName*) | 
+	 *                 (subsetting+=FeatureChainName subsetting+=FeatureChainName*) | 
+	 *                 (references+=FeatureChainName references+=FeatureChainName*) | 
+	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
+	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
+	 *             ) 
+	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	 *         )* 
+	 *         memberElement=FeatureChainName 
+	 *         ConditionalExpression=Expression 
+	 *         transitionSuccessionElement+=ConnectorEnd 
+	 *         elements+=UsageBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_FeatureDeclaration_FeatureSpecialization_GuardExpression_GuardedSuccessionElement_MultiplicityPart_MultiplicityRange_TransitionSuccession(ISerializationContext context, GuardedSuccessionElement semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     ActionParameterEnd returns ActionParameterEnd
+	 *
+	 * Constraint:
+	 *     (
+	 *         declaredName=Name | 
+	 *         (declaredName=Name (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))?) | 
+	 *         (
+	 *             (
+	 *                 declaredName=Name | 
+	 *                 (declaredName=Name (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))?)
+	 *             ) 
+	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
+	 *         ) | 
+	 *         (
+	 *             (
+	 *                 declaredName=Name | 
+	 *                 (declaredName=Name (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))?) | 
+	 *                 (
+	 *                     (
+	 *                         declaredName=Name | 
+	 *                         (declaredName=Name (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))?)
+	 *                     ) 
+	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
+	 *                 )
+	 *             ) 
+	 *             (
+	 *                 (
+	 *                     (typings+=FeatureChainName typings+=FeatureChainName*) | 
+	 *                     (subsetting+=FeatureChainName subsetting+=FeatureChainName*) | 
+	 *                     (references+=FeatureChainName references+=FeatureChainName*) | 
+	 *                     (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
+	 *                     (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
+	 *                 ) 
+	 *                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *                 (
+	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
+	 *                 )?
+	 *             )+ 
+	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))?
+	 *         )
+	 *     )?
+	 * </pre>
+	 */
+	protected void sequence_FeatureDeclaration_FeatureSpecialization_MultiplicityPart_MultiplicityRange(ISerializationContext context, ActionParameterEnd semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     ActionBodyElement returns TargetSuccessionElement
+	 *     TargetSuccessionNodeElement returns TargetSuccessionElement
+	 *     TargetSuccessionElement returns TargetSuccessionElement
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         (
+	 *             Multiplicity+=MultiplicityExpression | 
+	 *             (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression) | 
+	 *             ConditionalExpression=Expression
+	 *         )? 
+	 *         transitionSuccessionElement+=ConnectorEnd 
+	 *         elements+=UsageBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_GuardExpression_MemberPrefix_MultiplicityRange_TargetSuccessionElement_TransitionSuccession(ISerializationContext context, TargetSuccessionElement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1677,6 +1933,8 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     InterfaceBodyElement returns TextualRepresentation
 	 *     EnumerationBodyElement returns TextualRepresentation
 	 *     ActionBodyElement returns TextualRepresentation
+	 *     AnnotatingBodyElement returns TextualRepresentation
+	 *     ActionNodeBodyElement returns TextualRepresentation
 	 *     AnnotatingElement returns TextualRepresentation
 	 *     TextualRepresentation returns TextualRepresentation
 	 *
@@ -1692,27 +1950,15 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     IfNode returns IfNode
+	 *     ActionBodyElement returns InitialNode
+	 *     InitialNodeElement returns InitialNode
+	 *     InitialNode returns InitialNode
 	 *
 	 * Constraint:
-	 *     (visibility=VisibilityIndicator? ExpressionParameter=Expression)
+	 *     (visibility=VisibilityIndicator? memberElement=QualifiedName elements+=ActionNodeBodyElement*)
 	 * </pre>
 	 */
-	protected void sequence_IfNode_MemberPrefix(ISerializationContext context, IfNode semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ControlNode returns ControlNode
-	 *
-	 * Constraint:
-	 *     visibility=VisibilityIndicator?
-	 * </pre>
-	 */
-	protected void sequence_MemberPrefix(ISerializationContext context, ControlNode semanticObject) {
+	protected void sequence_InitialNode_MemberPrefix(ISerializationContext context, InitialNode semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1741,20 +1987,6 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * </pre>
 	 */
 	protected void sequence_MemberPrefix(ISerializationContext context, TerminateNode semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     WhileLoopNode returns WhileLoopNode
-	 *
-	 * Constraint:
-	 *     visibility=VisibilityIndicator?
-	 * </pre>
-	 */
-	protected void sequence_MemberPrefix(ISerializationContext context, WhileLoopNode semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

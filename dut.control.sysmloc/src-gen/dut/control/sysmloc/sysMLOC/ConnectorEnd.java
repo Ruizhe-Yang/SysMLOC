@@ -3,9 +3,6 @@
  */
 package dut.control.sysmloc.sysMLOC;
 
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -16,29 +13,15 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.ConnectorEnd#getMultiplicity <em>Multiplicity</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.ConnectorEnd#getDelcaredName <em>Delcared Name</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.ConnectorEnd#getRefElement <em>Ref Element</em>}</li>
  * </ul>
  *
  * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getConnectorEnd()
  * @model
  * @generated
  */
-public interface ConnectorEnd extends EObject
+public interface ConnectorEnd extends MultiplicityRange, ReferenceSubsetting
 {
-  /**
-   * Returns the value of the '<em><b>Multiplicity</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Multiplicity</em>' attribute list.
-   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getConnectorEnd_Multiplicity()
-   * @model unique="false"
-   * @generated
-   */
-  EList<String> getMultiplicity();
-
   /**
    * Returns the value of the '<em><b>Delcared Name</b></em>' attribute.
    * <!-- begin-user-doc -->
@@ -60,27 +43,5 @@ public interface ConnectorEnd extends EObject
    * @generated
    */
   void setDelcaredName(String value);
-
-  /**
-   * Returns the value of the '<em><b>Ref Element</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Ref Element</em>' attribute.
-   * @see #setRefElement(String)
-   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getConnectorEnd_RefElement()
-   * @model
-   * @generated
-   */
-  String getRefElement();
-
-  /**
-   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.ConnectorEnd#getRefElement <em>Ref Element</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Ref Element</em>' attribute.
-   * @see #getRefElement()
-   * @generated
-   */
-  void setRefElement(String value);
 
 } // ConnectorEnd

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <packages declaredName="'Merge Example'">
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Scene"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Image"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Picture"/>
+    <elements xsi:type="sysMLOC:ActionDefinition" declaredName="Focus">
+      <elements xsi:type="sysMLOC:ItemUsage" direction="in" declaredName="scene">
+        <typings>Scene</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:ItemUsage" direction="out" declaredName="image">
+        <typings>Image</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:ActionDefinition" declaredName="Shoot">
+      <elements xsi:type="sysMLOC:ItemUsage" direction="in" declaredName="image">
+        <typings>Image</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:ItemUsage" direction="out" declaredName="picture">
+        <typings>Picture</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:ActionDefinition" declaredName="Display">
+      <elements xsi:type="sysMLOC:ItemUsage" direction="in" declaredName="picture">
+        <typings>Picture</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:ActionDefinition" declaredName="TakePicture"/>
+    <elements xsi:type="sysMLOC:ActionUsage" declaredName="takePicture">
+      <typings>TakePicture</typings>
+      <elements xsi:type="sysMLOC:InitialNode" memberElement="start"/>
+      <elements xsi:type="sysMLOC:MergeNode" isThen="true" declaredName="continue"/>
+      <elements xsi:type="sysMLOC:ActionUsage" isThen="true" declaredName="trigger">
+        <elements xsi:type="sysMLOC:ItemUsage" direction="out" declaredName="scene">
+          <typings>Scene</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:FlowConnectionUsage">
+        <FlowEnd>trigger.scene</FlowEnd>
+        <FlowEnd>focus.scene</FlowEnd>
+      </elements>
+      <elements xsi:type="sysMLOC:ActionUsage" isThen="true" declaredName="focus">
+        <typings>Focus</typings>
+        <elements xsi:type="sysMLOC:ItemUsage" direction="in" declaredName="scene"/>
+        <elements xsi:type="sysMLOC:ItemUsage" direction="out" declaredName="image"/>
+      </elements>
+      <elements xsi:type="sysMLOC:FlowConnectionUsage">
+        <FlowEnd>focus.image</FlowEnd>
+        <FlowEnd>shoot.image</FlowEnd>
+      </elements>
+      <elements xsi:type="sysMLOC:ActionUsage" isThen="true" declaredName="shoot">
+        <typings>Shoot</typings>
+        <elements xsi:type="sysMLOC:ItemUsage" direction="in" declaredName="image"/>
+        <elements xsi:type="sysMLOC:ItemUsage" direction="out" declaredName="picture"/>
+      </elements>
+      <elements xsi:type="sysMLOC:FlowConnectionUsage">
+        <FlowEnd>shoot.picture</FlowEnd>
+        <FlowEnd>display.picture</FlowEnd>
+      </elements>
+      <elements xsi:type="sysMLOC:ActionUsage" isThen="true" declaredName="display">
+        <typings>Display</typings>
+        <elements xsi:type="sysMLOC:ItemUsage" direction="in" declaredName="picture"/>
+      </elements>
+      <elements xsi:type="sysMLOC:TargetSuccessionElement">
+        <transitionSuccessionElement refElement="continue"/>
+      </elements>
+    </elements>
+  </packages>
+</sysMLOC:Namespace>

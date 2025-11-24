@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <packages declaredName="'Action Performance Example'">
+    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="'Action Decomposition'"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Camera"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="AutoFocus"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Imager"/>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="camera">
+      <typings>Camera</typings>
+      <elements xsi:type="sysMLOC:PerformActionUsage" isOrdered="true" declaredName="takePhoto">
+        <references>takePicture</references>
+        <Multiplicity>*</Multiplicity>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="f">
+        <typings>AutoFocus</typings>
+        <elements xsi:type="sysMLOC:PerformActionUsage" refElement="takePhoto.focus"/>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="i">
+        <typings>Imager</typings>
+        <elements xsi:type="sysMLOC:PerformActionUsage" refElement="takePhoto.shoot"/>
+      </elements>
+    </elements>
+  </packages>
+</sysMLOC:Namespace>

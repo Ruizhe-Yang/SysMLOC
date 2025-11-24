@@ -5,7 +5,7 @@ package dut.control.sysmloc.sysMLOC.impl;
 
 import dut.control.sysmloc.sysMLOC.ActionBodyElement;
 import dut.control.sysmloc.sysMLOC.AliasElement;
-import dut.control.sysmloc.sysMLOC.AnnotatingElement;
+import dut.control.sysmloc.sysMLOC.AnnotatingBodyElement;
 import dut.control.sysmloc.sysMLOC.DefinitionBodyElement;
 import dut.control.sysmloc.sysMLOC.InterfaceBodyElement;
 import dut.control.sysmloc.sysMLOC.MemberPrefix;
@@ -135,7 +135,7 @@ public class AliasElementImpl extends PackageBodyElementImpl implements AliasEle
    * @generated
    * @ordered
    */
-  protected EList<AnnotatingElement> elements;
+  protected EList<AnnotatingBodyElement> elements;
 
   /**
    * <!-- begin-user-doc -->
@@ -264,11 +264,11 @@ public class AliasElementImpl extends PackageBodyElementImpl implements AliasEle
    * @generated
    */
   @Override
-  public EList<AnnotatingElement> getElements()
+  public EList<AnnotatingBodyElement> getElements()
   {
     if (elements == null)
     {
-      elements = new EObjectContainmentEList<AnnotatingElement>(AnnotatingElement.class, this, SysMLOCPackage.ALIAS_ELEMENT__ELEMENTS);
+      elements = new EObjectContainmentEList<AnnotatingBodyElement>(AnnotatingBodyElement.class, this, SysMLOCPackage.ALIAS_ELEMENT__ELEMENTS);
     }
     return elements;
   }
@@ -338,7 +338,7 @@ public class AliasElementImpl extends PackageBodyElementImpl implements AliasEle
         return;
       case SysMLOCPackage.ALIAS_ELEMENT__ELEMENTS:
         getElements().clear();
-        getElements().addAll((Collection<? extends AnnotatingElement>)newValue);
+        getElements().addAll((Collection<? extends AnnotatingBodyElement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

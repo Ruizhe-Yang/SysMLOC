@@ -14,6 +14,6 @@ package dut.control.sysmloc.sysMLOC;
  * @model
  * @generated
  */
-public interface UsageDeclaration extends FeatureDeclaration, FeatureSpecializationPart, FeatureSpecialization, MultiplicityPart
+public interface UsageDeclaration extends FeatureDeclaration, FeatureSpecializationPart, FeatureSpecialization, MultiplicityPart, MultiplicityRange
 {
 } // UsageDeclaration

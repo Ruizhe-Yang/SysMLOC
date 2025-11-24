@@ -3,26 +3,26 @@
  */
 package dut.control.sysmloc.sysMLOC.impl;
 
-import dut.control.sysmloc.sysMLOC.ControlNode;
+import dut.control.sysmloc.sysMLOC.InitialNodeElement;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Control Node</b></em>'.
+ * An implementation of the model object '<em><b>Initial Node Element</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class ControlNodeImpl extends MemberPrefixImpl implements ControlNode
+public class InitialNodeElementImpl extends ActionBodyElementImpl implements InitialNodeElement
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ControlNodeImpl()
+  protected InitialNodeElementImpl()
   {
     super();
   }
@@ -35,7 +35,7 @@ public class ControlNodeImpl extends MemberPrefixImpl implements ControlNode
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.eINSTANCE.getControlNode();
+    return SysMLOCPackage.eINSTANCE.getInitialNodeElement();
   }
 
-} //ControlNodeImpl
+} //InitialNodeElementImpl

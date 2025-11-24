@@ -3,7 +3,7 @@
  */
 package dut.control.sysmloc.sysMLOC.impl;
 
-import dut.control.sysmloc.sysMLOC.EmptySuccession;
+import dut.control.sysmloc.sysMLOC.MultiplicityRange;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 
 import java.util.Collection;
@@ -18,18 +18,18 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Empty Succession</b></em>'.
+ * An implementation of the model object '<em><b>Multiplicity Range</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EmptySuccessionImpl#getMultiplicity <em>Multiplicity</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.MultiplicityRangeImpl#getMultiplicity <em>Multiplicity</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class EmptySuccessionImpl extends MinimalEObjectImpl.Container implements EmptySuccession
+public class MultiplicityRangeImpl extends MinimalEObjectImpl.Container implements MultiplicityRange
 {
   /**
    * The cached value of the '{@link #getMultiplicity() <em>Multiplicity</em>}' attribute list.
@@ -46,7 +46,7 @@ public class EmptySuccessionImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  protected EmptySuccessionImpl()
+  protected MultiplicityRangeImpl()
   {
     super();
   }
@@ -59,7 +59,7 @@ public class EmptySuccessionImpl extends MinimalEObjectImpl.Container implements
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.eINSTANCE.getEmptySuccession();
+    return SysMLOCPackage.eINSTANCE.getMultiplicityRange();
   }
 
   /**
@@ -72,7 +72,7 @@ public class EmptySuccessionImpl extends MinimalEObjectImpl.Container implements
   {
     if (multiplicity == null)
     {
-      multiplicity = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.EMPTY_SUCCESSION__MULTIPLICITY);
+      multiplicity = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.MULTIPLICITY_RANGE__MULTIPLICITY);
     }
     return multiplicity;
   }
@@ -87,7 +87,7 @@ public class EmptySuccessionImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case SysMLOCPackage.EMPTY_SUCCESSION__MULTIPLICITY:
+      case SysMLOCPackage.MULTIPLICITY_RANGE__MULTIPLICITY:
         return getMultiplicity();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -104,7 +104,7 @@ public class EmptySuccessionImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case SysMLOCPackage.EMPTY_SUCCESSION__MULTIPLICITY:
+      case SysMLOCPackage.MULTIPLICITY_RANGE__MULTIPLICITY:
         getMultiplicity().clear();
         getMultiplicity().addAll((Collection<? extends String>)newValue);
         return;
@@ -122,7 +122,7 @@ public class EmptySuccessionImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case SysMLOCPackage.EMPTY_SUCCESSION__MULTIPLICITY:
+      case SysMLOCPackage.MULTIPLICITY_RANGE__MULTIPLICITY:
         getMultiplicity().clear();
         return;
     }
@@ -139,7 +139,7 @@ public class EmptySuccessionImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case SysMLOCPackage.EMPTY_SUCCESSION__MULTIPLICITY:
+      case SysMLOCPackage.MULTIPLICITY_RANGE__MULTIPLICITY:
         return multiplicity != null && !multiplicity.isEmpty();
     }
     return super.eIsSet(featureID);
@@ -162,4 +162,4 @@ public class EmptySuccessionImpl extends MinimalEObjectImpl.Container implements
     return result.toString();
   }
 
-} //EmptySuccessionImpl
+} //MultiplicityRangeImpl

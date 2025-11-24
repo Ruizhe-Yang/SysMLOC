@@ -6,18 +6,11 @@ package dut.control.sysmloc.sysMLOC.impl;
 import dut.control.sysmloc.sysMLOC.MultiplicityPart;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,25 +20,14 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.MultiplicityPartImpl#getMultiplicity <em>Multiplicity</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.MultiplicityPartImpl#isIsOrdered <em>Is Ordered</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.MultiplicityPartImpl#isIsNonunique <em>Is Nonunique</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class MultiplicityPartImpl extends MinimalEObjectImpl.Container implements MultiplicityPart
+public class MultiplicityPartImpl extends MultiplicityRangeImpl implements MultiplicityPart
 {
-  /**
-   * The cached value of the '{@link #getMultiplicity() <em>Multiplicity</em>}' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMultiplicity()
-   * @generated
-   * @ordered
-   */
-  protected EList<String> multiplicity;
-
   /**
    * The default value of the '{@link #isIsOrdered() <em>Is Ordered</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -113,21 +95,6 @@ public class MultiplicityPartImpl extends MinimalEObjectImpl.Container implement
    * @generated
    */
   @Override
-  public EList<String> getMultiplicity()
-  {
-    if (multiplicity == null)
-    {
-      multiplicity = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.MULTIPLICITY_PART__MULTIPLICITY);
-    }
-    return multiplicity;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public boolean isIsOrdered()
   {
     return isOrdered;
@@ -182,8 +149,6 @@ public class MultiplicityPartImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case SysMLOCPackage.MULTIPLICITY_PART__MULTIPLICITY:
-        return getMultiplicity();
       case SysMLOCPackage.MULTIPLICITY_PART__IS_ORDERED:
         return isIsOrdered();
       case SysMLOCPackage.MULTIPLICITY_PART__IS_NONUNIQUE:
@@ -197,16 +162,11 @@ public class MultiplicityPartImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case SysMLOCPackage.MULTIPLICITY_PART__MULTIPLICITY:
-        getMultiplicity().clear();
-        getMultiplicity().addAll((Collection<? extends String>)newValue);
-        return;
       case SysMLOCPackage.MULTIPLICITY_PART__IS_ORDERED:
         setIsOrdered((Boolean)newValue);
         return;
@@ -227,9 +187,6 @@ public class MultiplicityPartImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case SysMLOCPackage.MULTIPLICITY_PART__MULTIPLICITY:
-        getMultiplicity().clear();
-        return;
       case SysMLOCPackage.MULTIPLICITY_PART__IS_ORDERED:
         setIsOrdered(IS_ORDERED_EDEFAULT);
         return;
@@ -250,8 +207,6 @@ public class MultiplicityPartImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
-      case SysMLOCPackage.MULTIPLICITY_PART__MULTIPLICITY:
-        return multiplicity != null && !multiplicity.isEmpty();
       case SysMLOCPackage.MULTIPLICITY_PART__IS_ORDERED:
         return isOrdered != IS_ORDERED_EDEFAULT;
       case SysMLOCPackage.MULTIPLICITY_PART__IS_NONUNIQUE:
@@ -271,9 +226,7 @@ public class MultiplicityPartImpl extends MinimalEObjectImpl.Container implement
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (Multiplicity: ");
-    result.append(multiplicity);
-    result.append(", isOrdered: ");
+    result.append(" (isOrdered: ");
     result.append(isOrdered);
     result.append(", isNonunique: ");
     result.append(isNonunique);

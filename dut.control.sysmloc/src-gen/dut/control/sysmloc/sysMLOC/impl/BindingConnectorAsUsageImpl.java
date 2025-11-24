@@ -14,6 +14,7 @@ import dut.control.sysmloc.sysMLOC.FeatureSpecialization;
 import dut.control.sysmloc.sysMLOC.FeatureSpecializationPart;
 import dut.control.sysmloc.sysMLOC.MemberPrefix;
 import dut.control.sysmloc.sysMLOC.MultiplicityPart;
+import dut.control.sysmloc.sysMLOC.MultiplicityRange;
 import dut.control.sysmloc.sysMLOC.RefPrefix;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 import dut.control.sysmloc.sysMLOC.UnextendedUsagePrefix;
@@ -1129,11 +1130,18 @@ public class BindingConnectorAsUsageImpl extends NonOccurrenceUsageElementImpl i
         default: return -1;
       }
     }
+    if (baseClass == MultiplicityRange.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__MULTIPLICITY: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTIPLICITY;
+        default: return -1;
+      }
+    }
     if (baseClass == MultiplicityPart.class)
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__MULTIPLICITY: return SysMLOCPackage.MULTIPLICITY_PART__MULTIPLICITY;
         case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__IS_ORDERED: return SysMLOCPackage.MULTIPLICITY_PART__IS_ORDERED;
         case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__IS_NONUNIQUE: return SysMLOCPackage.MULTIPLICITY_PART__IS_NONUNIQUE;
         default: return -1;
@@ -1234,11 +1242,18 @@ public class BindingConnectorAsUsageImpl extends NonOccurrenceUsageElementImpl i
         default: return -1;
       }
     }
+    if (baseClass == MultiplicityRange.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTIPLICITY: return SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__MULTIPLICITY;
+        default: return -1;
+      }
+    }
     if (baseClass == MultiplicityPart.class)
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.MULTIPLICITY_PART__MULTIPLICITY: return SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__MULTIPLICITY;
         case SysMLOCPackage.MULTIPLICITY_PART__IS_ORDERED: return SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__IS_ORDERED;
         case SysMLOCPackage.MULTIPLICITY_PART__IS_NONUNIQUE: return SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__IS_NONUNIQUE;
         default: return -1;

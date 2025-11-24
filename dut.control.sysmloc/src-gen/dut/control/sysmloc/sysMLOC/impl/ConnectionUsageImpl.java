@@ -7,6 +7,7 @@ import dut.control.sysmloc.sysMLOC.BasicUsagePrefix;
 import dut.control.sysmloc.sysMLOC.ConnectionUsage;
 import dut.control.sysmloc.sysMLOC.ConnectorEnd;
 import dut.control.sysmloc.sysMLOC.ConnectorPart;
+import dut.control.sysmloc.sysMLOC.EmptySuccessionPrefix;
 import dut.control.sysmloc.sysMLOC.FeatureDeclaration;
 import dut.control.sysmloc.sysMLOC.FeatureDirection;
 import dut.control.sysmloc.sysMLOC.FeatureSpecialization;
@@ -14,6 +15,7 @@ import dut.control.sysmloc.sysMLOC.FeatureSpecializationPart;
 import dut.control.sysmloc.sysMLOC.FeatureValue;
 import dut.control.sysmloc.sysMLOC.MemberPrefix;
 import dut.control.sysmloc.sysMLOC.MultiplicityPart;
+import dut.control.sysmloc.sysMLOC.MultiplicityRange;
 import dut.control.sysmloc.sysMLOC.OccurrenceUsagePrefix;
 import dut.control.sysmloc.sysMLOC.PortionKind;
 import dut.control.sysmloc.sysMLOC.RefPrefix;
@@ -46,6 +48,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ConnectionUsageImpl#isIsThen <em>Is Then</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ConnectionUsageImpl#getThenMultiplicity <em>Then Multiplicity</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ConnectionUsageImpl#getVisibility <em>Visibility</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ConnectionUsageImpl#getDirection <em>Direction</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ConnectionUsageImpl#isIsAbstract <em>Is Abstract</em>}</li>
@@ -76,6 +80,36 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class ConnectionUsageImpl extends StructureUsageElementImpl implements ConnectionUsage
 {
+  /**
+   * The default value of the '{@link #isIsThen() <em>Is Then</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsThen()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_THEN_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsThen() <em>Is Then</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsThen()
+   * @generated
+   * @ordered
+   */
+  protected boolean isThen = IS_THEN_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getThenMultiplicity() <em>Then Multiplicity</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getThenMultiplicity()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> thenMultiplicity;
+
   /**
    * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -485,6 +519,46 @@ public class ConnectionUsageImpl extends StructureUsageElementImpl implements Co
   protected EClass eStaticClass()
   {
     return SysMLOCPackage.eINSTANCE.getConnectionUsage();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsThen()
+  {
+    return isThen;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsThen(boolean newIsThen)
+  {
+    boolean oldIsThen = isThen;
+    isThen = newIsThen;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.CONNECTION_USAGE__IS_THEN, oldIsThen, isThen));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<String> getThenMultiplicity()
+  {
+    if (thenMultiplicity == null)
+    {
+      thenMultiplicity = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.CONNECTION_USAGE__THEN_MULTIPLICITY);
+    }
+    return thenMultiplicity;
   }
 
   /**
@@ -1025,6 +1099,10 @@ public class ConnectionUsageImpl extends StructureUsageElementImpl implements Co
   {
     switch (featureID)
     {
+      case SysMLOCPackage.CONNECTION_USAGE__IS_THEN:
+        return isIsThen();
+      case SysMLOCPackage.CONNECTION_USAGE__THEN_MULTIPLICITY:
+        return getThenMultiplicity();
       case SysMLOCPackage.CONNECTION_USAGE__VISIBILITY:
         return getVisibility();
       case SysMLOCPackage.CONNECTION_USAGE__DIRECTION:
@@ -1088,6 +1166,13 @@ public class ConnectionUsageImpl extends StructureUsageElementImpl implements Co
   {
     switch (featureID)
     {
+      case SysMLOCPackage.CONNECTION_USAGE__IS_THEN:
+        setIsThen((Boolean)newValue);
+        return;
+      case SysMLOCPackage.CONNECTION_USAGE__THEN_MULTIPLICITY:
+        getThenMultiplicity().clear();
+        getThenMultiplicity().addAll((Collection<? extends String>)newValue);
+        return;
       case SysMLOCPackage.CONNECTION_USAGE__VISIBILITY:
         setVisibility((VisibilityIndicator)newValue);
         return;
@@ -1183,6 +1268,12 @@ public class ConnectionUsageImpl extends StructureUsageElementImpl implements Co
   {
     switch (featureID)
     {
+      case SysMLOCPackage.CONNECTION_USAGE__IS_THEN:
+        setIsThen(IS_THEN_EDEFAULT);
+        return;
+      case SysMLOCPackage.CONNECTION_USAGE__THEN_MULTIPLICITY:
+        getThenMultiplicity().clear();
+        return;
       case SysMLOCPackage.CONNECTION_USAGE__VISIBILITY:
         setVisibility(VISIBILITY_EDEFAULT);
         return;
@@ -1269,6 +1360,10 @@ public class ConnectionUsageImpl extends StructureUsageElementImpl implements Co
   {
     switch (featureID)
     {
+      case SysMLOCPackage.CONNECTION_USAGE__IS_THEN:
+        return isThen != IS_THEN_EDEFAULT;
+      case SysMLOCPackage.CONNECTION_USAGE__THEN_MULTIPLICITY:
+        return thenMultiplicity != null && !thenMultiplicity.isEmpty();
       case SysMLOCPackage.CONNECTION_USAGE__VISIBILITY:
         return visibility != VISIBILITY_EDEFAULT;
       case SysMLOCPackage.CONNECTION_USAGE__DIRECTION:
@@ -1329,6 +1424,15 @@ public class ConnectionUsageImpl extends StructureUsageElementImpl implements Co
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
   {
+    if (baseClass == EmptySuccessionPrefix.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.CONNECTION_USAGE__IS_THEN: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__IS_THEN;
+        case SysMLOCPackage.CONNECTION_USAGE__THEN_MULTIPLICITY: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTIPLICITY;
+        default: return -1;
+      }
+    }
     if (baseClass == MemberPrefix.class)
     {
       switch (derivedFeatureID)
@@ -1379,11 +1483,18 @@ public class ConnectionUsageImpl extends StructureUsageElementImpl implements Co
         default: return -1;
       }
     }
+    if (baseClass == MultiplicityRange.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.CONNECTION_USAGE__MULTIPLICITY: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTIPLICITY;
+        default: return -1;
+      }
+    }
     if (baseClass == MultiplicityPart.class)
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.CONNECTION_USAGE__MULTIPLICITY: return SysMLOCPackage.MULTIPLICITY_PART__MULTIPLICITY;
         case SysMLOCPackage.CONNECTION_USAGE__IS_ORDERED: return SysMLOCPackage.MULTIPLICITY_PART__IS_ORDERED;
         case SysMLOCPackage.CONNECTION_USAGE__IS_NONUNIQUE: return SysMLOCPackage.MULTIPLICITY_PART__IS_NONUNIQUE;
         default: return -1;
@@ -1440,6 +1551,15 @@ public class ConnectionUsageImpl extends StructureUsageElementImpl implements Co
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
   {
+    if (baseClass == EmptySuccessionPrefix.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__IS_THEN: return SysMLOCPackage.CONNECTION_USAGE__IS_THEN;
+        case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTIPLICITY: return SysMLOCPackage.CONNECTION_USAGE__THEN_MULTIPLICITY;
+        default: return -1;
+      }
+    }
     if (baseClass == MemberPrefix.class)
     {
       switch (baseFeatureID)
@@ -1490,11 +1610,18 @@ public class ConnectionUsageImpl extends StructureUsageElementImpl implements Co
         default: return -1;
       }
     }
+    if (baseClass == MultiplicityRange.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTIPLICITY: return SysMLOCPackage.CONNECTION_USAGE__MULTIPLICITY;
+        default: return -1;
+      }
+    }
     if (baseClass == MultiplicityPart.class)
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.MULTIPLICITY_PART__MULTIPLICITY: return SysMLOCPackage.CONNECTION_USAGE__MULTIPLICITY;
         case SysMLOCPackage.MULTIPLICITY_PART__IS_ORDERED: return SysMLOCPackage.CONNECTION_USAGE__IS_ORDERED;
         case SysMLOCPackage.MULTIPLICITY_PART__IS_NONUNIQUE: return SysMLOCPackage.CONNECTION_USAGE__IS_NONUNIQUE;
         default: return -1;
@@ -1554,7 +1681,11 @@ public class ConnectionUsageImpl extends StructureUsageElementImpl implements Co
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (visibility: ");
+    result.append(" (isThen: ");
+    result.append(isThen);
+    result.append(", ThenMultiplicity: ");
+    result.append(thenMultiplicity);
+    result.append(", visibility: ");
     result.append(visibility);
     result.append(", direction: ");
     result.append(direction);

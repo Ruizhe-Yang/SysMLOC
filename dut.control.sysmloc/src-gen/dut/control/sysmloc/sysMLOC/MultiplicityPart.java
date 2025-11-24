@@ -3,9 +3,6 @@
  */
 package dut.control.sysmloc.sysMLOC;
 
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -16,7 +13,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.MultiplicityPart#getMultiplicity <em>Multiplicity</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.MultiplicityPart#isIsOrdered <em>Is Ordered</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.MultiplicityPart#isIsNonunique <em>Is Nonunique</em>}</li>
  * </ul>
@@ -25,20 +21,8 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface MultiplicityPart extends EObject
+public interface MultiplicityPart extends MultiplicityRange
 {
-  /**
-   * Returns the value of the '<em><b>Multiplicity</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Multiplicity</em>' attribute list.
-   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getMultiplicityPart_Multiplicity()
-   * @model unique="false"
-   * @generated
-   */
-  EList<String> getMultiplicity();
-
   /**
    * Returns the value of the '<em><b>Is Ordered</b></em>' attribute.
    * <!-- begin-user-doc -->

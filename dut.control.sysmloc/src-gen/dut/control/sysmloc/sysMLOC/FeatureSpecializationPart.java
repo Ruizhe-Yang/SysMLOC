@@ -14,6 +14,6 @@ package dut.control.sysmloc.sysMLOC;
  * @model
  * @generated
  */
-public interface FeatureSpecializationPart extends FeatureSpecialization, MultiplicityPart
+public interface FeatureSpecializationPart extends FeatureSpecialization, MultiplicityPart, MultiplicityRange
 {
 } // FeatureSpecializationPart

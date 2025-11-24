@@ -94,7 +94,7 @@ public interface AliasElement extends PackageBodyElement, DefinitionBodyElement,
 
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
-   * The list contents are of type {@link dut.control.sysmloc.sysMLOC.AnnotatingElement}.
+   * The list contents are of type {@link dut.control.sysmloc.sysMLOC.AnnotatingBodyElement}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Elements</em>' containment reference list.
@@ -102,6 +102,6 @@ public interface AliasElement extends PackageBodyElement, DefinitionBodyElement,
    * @model containment="true"
    * @generated
    */
-  EList<AnnotatingElement> getElements();
+  EList<AnnotatingBodyElement> getElements();
 
 } // AliasElement

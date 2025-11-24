@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface DefaultReferenceUsage extends NonOccurrenceUsageElement, MemberPrefix, RefPrefix, UsageDeclaration, FeatureDeclaration, FeatureSpecializationPart, FeatureSpecialization, MultiplicityPart, ValuePart, FeatureValue
+public interface DefaultReferenceUsage extends NonOccurrenceUsageElement, MemberPrefix, RefPrefix, UsageDeclaration, FeatureDeclaration, FeatureSpecializationPart, FeatureSpecialization, MultiplicityPart, MultiplicityRange, ValuePart, FeatureValue
 {
   /**
    * Returns the value of the '<em><b>Is End</b></em>' attribute.

@@ -21,8 +21,8 @@
       </elements>
       <elements xsi:type="sysMLOC:InterfaceUsage">
         <typings>FuelInterface</typings>
-        <connectorPart delcaredName="supplierPort" refElement="tankAssy.fuelTankPort"/>
-        <connectorPart delcaredName="consumerPort" refElement="eng.engineFuelPort"/>
+        <connectorPart refElement="tankAssy.fuelTankPort" delcaredName="supplierPort"/>
+        <connectorPart refElement="eng.engineFuelPort" delcaredName="consumerPort"/>
       </elements>
     </elements>
   </packages>
