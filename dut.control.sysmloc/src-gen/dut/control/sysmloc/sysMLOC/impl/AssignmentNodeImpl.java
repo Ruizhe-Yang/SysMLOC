@@ -8,6 +8,7 @@ import dut.control.sysmloc.sysMLOC.ActionNodeUsageDeclaration;
 import dut.control.sysmloc.sysMLOC.AssignmentNode;
 import dut.control.sysmloc.sysMLOC.AssignmentNodeDeclaration;
 import dut.control.sysmloc.sysMLOC.BasicUsagePrefix;
+import dut.control.sysmloc.sysMLOC.EmptySuccessionPrefix;
 import dut.control.sysmloc.sysMLOC.FeatureDeclaration;
 import dut.control.sysmloc.sysMLOC.FeatureDirection;
 import dut.control.sysmloc.sysMLOC.FeatureSpecialization;
@@ -46,6 +47,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AssignmentNodeImpl#isIsThen <em>Is Then</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AssignmentNodeImpl#getThenMultiplicity <em>Then Multiplicity</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AssignmentNodeImpl#getVisibility <em>Visibility</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AssignmentNodeImpl#getDirection <em>Direction</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AssignmentNodeImpl#isIsAbstract <em>Is Abstract</em>}</li>
@@ -65,13 +68,46 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AssignmentNodeImpl#isIsOrdered <em>Is Ordered</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AssignmentNodeImpl#isIsNonunique <em>Is Nonunique</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AssignmentNodeImpl#getDeclaredName <em>Declared Name</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AssignmentNodeImpl#getTargetParameter <em>Target Parameter</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AssignmentNodeImpl#getFeatureChain <em>Feature Chain</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AssignmentNodeImpl#getNodeParameter <em>Node Parameter</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AssignmentNodeImpl#getElements <em>Elements</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class AssignmentNodeImpl extends EmptySuccessionPrefixImpl implements AssignmentNode
+public class AssignmentNodeImpl extends ActionNodeElementImpl implements AssignmentNode
 {
+  /**
+   * The default value of the '{@link #isIsThen() <em>Is Then</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsThen()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_THEN_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsThen() <em>Is Then</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsThen()
+   * @generated
+   * @ordered
+   */
+  protected boolean isThen = IS_THEN_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getThenMultiplicity() <em>Then Multiplicity</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getThenMultiplicity()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> thenMultiplicity;
+
   /**
    * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -393,6 +429,66 @@ public class AssignmentNodeImpl extends EmptySuccessionPrefixImpl implements Ass
   protected String declaredName = DECLARED_NAME_EDEFAULT;
 
   /**
+   * The default value of the '{@link #getTargetParameter() <em>Target Parameter</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTargetParameter()
+   * @generated
+   * @ordered
+   */
+  protected static final String TARGET_PARAMETER_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getTargetParameter() <em>Target Parameter</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTargetParameter()
+   * @generated
+   * @ordered
+   */
+  protected String targetParameter = TARGET_PARAMETER_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getFeatureChain() <em>Feature Chain</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFeatureChain()
+   * @generated
+   * @ordered
+   */
+  protected static final String FEATURE_CHAIN_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getFeatureChain() <em>Feature Chain</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFeatureChain()
+   * @generated
+   * @ordered
+   */
+  protected String featureChain = FEATURE_CHAIN_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getNodeParameter() <em>Node Parameter</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getNodeParameter()
+   * @generated
+   * @ordered
+   */
+  protected static final String NODE_PARAMETER_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getNodeParameter() <em>Node Parameter</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getNodeParameter()
+   * @generated
+   * @ordered
+   */
+  protected String nodeParameter = NODE_PARAMETER_EDEFAULT;
+
+  /**
    * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -421,6 +517,46 @@ public class AssignmentNodeImpl extends EmptySuccessionPrefixImpl implements Ass
   protected EClass eStaticClass()
   {
     return SysMLOCPackage.eINSTANCE.getAssignmentNode();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsThen()
+  {
+    return isThen;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsThen(boolean newIsThen)
+  {
+    boolean oldIsThen = isThen;
+    isThen = newIsThen;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ASSIGNMENT_NODE__IS_THEN, oldIsThen, isThen));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<String> getThenMultiplicity()
+  {
+    if (thenMultiplicity == null)
+    {
+      thenMultiplicity = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.ASSIGNMENT_NODE__THEN_MULTIPLICITY);
+    }
+    return thenMultiplicity;
   }
 
   /**
@@ -844,6 +980,81 @@ public class AssignmentNodeImpl extends EmptySuccessionPrefixImpl implements Ass
    * @generated
    */
   @Override
+  public String getTargetParameter()
+  {
+    return targetParameter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setTargetParameter(String newTargetParameter)
+  {
+    String oldTargetParameter = targetParameter;
+    targetParameter = newTargetParameter;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ASSIGNMENT_NODE__TARGET_PARAMETER, oldTargetParameter, targetParameter));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getFeatureChain()
+  {
+    return featureChain;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setFeatureChain(String newFeatureChain)
+  {
+    String oldFeatureChain = featureChain;
+    featureChain = newFeatureChain;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ASSIGNMENT_NODE__FEATURE_CHAIN, oldFeatureChain, featureChain));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getNodeParameter()
+  {
+    return nodeParameter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setNodeParameter(String newNodeParameter)
+  {
+    String oldNodeParameter = nodeParameter;
+    nodeParameter = newNodeParameter;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ASSIGNMENT_NODE__NODE_PARAMETER, oldNodeParameter, nodeParameter));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<ActionBodyElement> getElements()
   {
     if (elements == null)
@@ -879,6 +1090,10 @@ public class AssignmentNodeImpl extends EmptySuccessionPrefixImpl implements Ass
   {
     switch (featureID)
     {
+      case SysMLOCPackage.ASSIGNMENT_NODE__IS_THEN:
+        return isIsThen();
+      case SysMLOCPackage.ASSIGNMENT_NODE__THEN_MULTIPLICITY:
+        return getThenMultiplicity();
       case SysMLOCPackage.ASSIGNMENT_NODE__VISIBILITY:
         return getVisibility();
       case SysMLOCPackage.ASSIGNMENT_NODE__DIRECTION:
@@ -917,6 +1132,12 @@ public class AssignmentNodeImpl extends EmptySuccessionPrefixImpl implements Ass
         return isIsNonunique();
       case SysMLOCPackage.ASSIGNMENT_NODE__DECLARED_NAME:
         return getDeclaredName();
+      case SysMLOCPackage.ASSIGNMENT_NODE__TARGET_PARAMETER:
+        return getTargetParameter();
+      case SysMLOCPackage.ASSIGNMENT_NODE__FEATURE_CHAIN:
+        return getFeatureChain();
+      case SysMLOCPackage.ASSIGNMENT_NODE__NODE_PARAMETER:
+        return getNodeParameter();
       case SysMLOCPackage.ASSIGNMENT_NODE__ELEMENTS:
         return getElements();
     }
@@ -934,6 +1155,13 @@ public class AssignmentNodeImpl extends EmptySuccessionPrefixImpl implements Ass
   {
     switch (featureID)
     {
+      case SysMLOCPackage.ASSIGNMENT_NODE__IS_THEN:
+        setIsThen((Boolean)newValue);
+        return;
+      case SysMLOCPackage.ASSIGNMENT_NODE__THEN_MULTIPLICITY:
+        getThenMultiplicity().clear();
+        getThenMultiplicity().addAll((Collection<? extends String>)newValue);
+        return;
       case SysMLOCPackage.ASSIGNMENT_NODE__VISIBILITY:
         setVisibility((VisibilityIndicator)newValue);
         return;
@@ -997,6 +1225,15 @@ public class AssignmentNodeImpl extends EmptySuccessionPrefixImpl implements Ass
       case SysMLOCPackage.ASSIGNMENT_NODE__DECLARED_NAME:
         setDeclaredName((String)newValue);
         return;
+      case SysMLOCPackage.ASSIGNMENT_NODE__TARGET_PARAMETER:
+        setTargetParameter((String)newValue);
+        return;
+      case SysMLOCPackage.ASSIGNMENT_NODE__FEATURE_CHAIN:
+        setFeatureChain((String)newValue);
+        return;
+      case SysMLOCPackage.ASSIGNMENT_NODE__NODE_PARAMETER:
+        setNodeParameter((String)newValue);
+        return;
       case SysMLOCPackage.ASSIGNMENT_NODE__ELEMENTS:
         getElements().clear();
         getElements().addAll((Collection<? extends ActionBodyElement>)newValue);
@@ -1015,6 +1252,12 @@ public class AssignmentNodeImpl extends EmptySuccessionPrefixImpl implements Ass
   {
     switch (featureID)
     {
+      case SysMLOCPackage.ASSIGNMENT_NODE__IS_THEN:
+        setIsThen(IS_THEN_EDEFAULT);
+        return;
+      case SysMLOCPackage.ASSIGNMENT_NODE__THEN_MULTIPLICITY:
+        getThenMultiplicity().clear();
+        return;
       case SysMLOCPackage.ASSIGNMENT_NODE__VISIBILITY:
         setVisibility(VISIBILITY_EDEFAULT);
         return;
@@ -1072,6 +1315,15 @@ public class AssignmentNodeImpl extends EmptySuccessionPrefixImpl implements Ass
       case SysMLOCPackage.ASSIGNMENT_NODE__DECLARED_NAME:
         setDeclaredName(DECLARED_NAME_EDEFAULT);
         return;
+      case SysMLOCPackage.ASSIGNMENT_NODE__TARGET_PARAMETER:
+        setTargetParameter(TARGET_PARAMETER_EDEFAULT);
+        return;
+      case SysMLOCPackage.ASSIGNMENT_NODE__FEATURE_CHAIN:
+        setFeatureChain(FEATURE_CHAIN_EDEFAULT);
+        return;
+      case SysMLOCPackage.ASSIGNMENT_NODE__NODE_PARAMETER:
+        setNodeParameter(NODE_PARAMETER_EDEFAULT);
+        return;
       case SysMLOCPackage.ASSIGNMENT_NODE__ELEMENTS:
         getElements().clear();
         return;
@@ -1089,6 +1341,10 @@ public class AssignmentNodeImpl extends EmptySuccessionPrefixImpl implements Ass
   {
     switch (featureID)
     {
+      case SysMLOCPackage.ASSIGNMENT_NODE__IS_THEN:
+        return isThen != IS_THEN_EDEFAULT;
+      case SysMLOCPackage.ASSIGNMENT_NODE__THEN_MULTIPLICITY:
+        return thenMultiplicity != null && !thenMultiplicity.isEmpty();
       case SysMLOCPackage.ASSIGNMENT_NODE__VISIBILITY:
         return visibility != VISIBILITY_EDEFAULT;
       case SysMLOCPackage.ASSIGNMENT_NODE__DIRECTION:
@@ -1127,6 +1383,12 @@ public class AssignmentNodeImpl extends EmptySuccessionPrefixImpl implements Ass
         return isNonunique != IS_NONUNIQUE_EDEFAULT;
       case SysMLOCPackage.ASSIGNMENT_NODE__DECLARED_NAME:
         return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
+      case SysMLOCPackage.ASSIGNMENT_NODE__TARGET_PARAMETER:
+        return TARGET_PARAMETER_EDEFAULT == null ? targetParameter != null : !TARGET_PARAMETER_EDEFAULT.equals(targetParameter);
+      case SysMLOCPackage.ASSIGNMENT_NODE__FEATURE_CHAIN:
+        return FEATURE_CHAIN_EDEFAULT == null ? featureChain != null : !FEATURE_CHAIN_EDEFAULT.equals(featureChain);
+      case SysMLOCPackage.ASSIGNMENT_NODE__NODE_PARAMETER:
+        return NODE_PARAMETER_EDEFAULT == null ? nodeParameter != null : !NODE_PARAMETER_EDEFAULT.equals(nodeParameter);
       case SysMLOCPackage.ASSIGNMENT_NODE__ELEMENTS:
         return elements != null && !elements.isEmpty();
     }
@@ -1141,6 +1403,15 @@ public class AssignmentNodeImpl extends EmptySuccessionPrefixImpl implements Ass
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
   {
+    if (baseClass == EmptySuccessionPrefix.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.ASSIGNMENT_NODE__IS_THEN: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__IS_THEN;
+        case SysMLOCPackage.ASSIGNMENT_NODE__THEN_MULTIPLICITY: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTIPLICITY;
+        default: return -1;
+      }
+    }
     if (baseClass == MemberPrefix.class)
     {
       switch (derivedFeatureID)
@@ -1241,6 +1512,9 @@ public class AssignmentNodeImpl extends EmptySuccessionPrefixImpl implements Ass
     {
       switch (derivedFeatureID)
       {
+        case SysMLOCPackage.ASSIGNMENT_NODE__TARGET_PARAMETER: return SysMLOCPackage.ASSIGNMENT_NODE_DECLARATION__TARGET_PARAMETER;
+        case SysMLOCPackage.ASSIGNMENT_NODE__FEATURE_CHAIN: return SysMLOCPackage.ASSIGNMENT_NODE_DECLARATION__FEATURE_CHAIN;
+        case SysMLOCPackage.ASSIGNMENT_NODE__NODE_PARAMETER: return SysMLOCPackage.ASSIGNMENT_NODE_DECLARATION__NODE_PARAMETER;
         default: return -1;
       }
     }
@@ -1255,6 +1529,15 @@ public class AssignmentNodeImpl extends EmptySuccessionPrefixImpl implements Ass
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
   {
+    if (baseClass == EmptySuccessionPrefix.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__IS_THEN: return SysMLOCPackage.ASSIGNMENT_NODE__IS_THEN;
+        case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTIPLICITY: return SysMLOCPackage.ASSIGNMENT_NODE__THEN_MULTIPLICITY;
+        default: return -1;
+      }
+    }
     if (baseClass == MemberPrefix.class)
     {
       switch (baseFeatureID)
@@ -1355,6 +1638,9 @@ public class AssignmentNodeImpl extends EmptySuccessionPrefixImpl implements Ass
     {
       switch (baseFeatureID)
       {
+        case SysMLOCPackage.ASSIGNMENT_NODE_DECLARATION__TARGET_PARAMETER: return SysMLOCPackage.ASSIGNMENT_NODE__TARGET_PARAMETER;
+        case SysMLOCPackage.ASSIGNMENT_NODE_DECLARATION__FEATURE_CHAIN: return SysMLOCPackage.ASSIGNMENT_NODE__FEATURE_CHAIN;
+        case SysMLOCPackage.ASSIGNMENT_NODE_DECLARATION__NODE_PARAMETER: return SysMLOCPackage.ASSIGNMENT_NODE__NODE_PARAMETER;
         default: return -1;
       }
     }
@@ -1372,7 +1658,11 @@ public class AssignmentNodeImpl extends EmptySuccessionPrefixImpl implements Ass
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (visibility: ");
+    result.append(" (isThen: ");
+    result.append(isThen);
+    result.append(", ThenMultiplicity: ");
+    result.append(thenMultiplicity);
+    result.append(", visibility: ");
     result.append(visibility);
     result.append(", direction: ");
     result.append(direction);
@@ -1410,6 +1700,12 @@ public class AssignmentNodeImpl extends EmptySuccessionPrefixImpl implements Ass
     result.append(isNonunique);
     result.append(", declaredName: ");
     result.append(declaredName);
+    result.append(", targetParameter: ");
+    result.append(targetParameter);
+    result.append(", featureChain: ");
+    result.append(featureChain);
+    result.append(", NodeParameter: ");
+    result.append(nodeParameter);
     result.append(')');
     return result.toString();
   }

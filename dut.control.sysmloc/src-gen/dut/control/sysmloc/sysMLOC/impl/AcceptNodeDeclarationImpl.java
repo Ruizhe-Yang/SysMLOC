@@ -4,19 +4,71 @@
 package dut.control.sysmloc.sysMLOC.impl;
 
 import dut.control.sysmloc.sysMLOC.AcceptNodeDeclaration;
+import dut.control.sysmloc.sysMLOC.AcceptParameterPart;
+import dut.control.sysmloc.sysMLOC.PayloadParameter;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Accept Node Declaration</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeDeclarationImpl#getAcceptParameter <em>Accept Parameter</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeDeclarationImpl#getViaNodeParameter <em>Via Node Parameter</em>}</li>
+ * </ul>
  *
  * @generated
  */
 public class AcceptNodeDeclarationImpl extends ActionNodeUsageDeclarationImpl implements AcceptNodeDeclaration
 {
+  /**
+   * The cached value of the '{@link #getAcceptParameter() <em>Accept Parameter</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAcceptParameter()
+   * @generated
+   * @ordered
+   */
+  protected EList<PayloadParameter> acceptParameter;
+
+  /**
+   * The default value of the '{@link #getViaNodeParameter() <em>Via Node Parameter</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getViaNodeParameter()
+   * @generated
+   * @ordered
+   */
+  protected static final String VIA_NODE_PARAMETER_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getViaNodeParameter() <em>Via Node Parameter</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getViaNodeParameter()
+   * @generated
+   * @ordered
+   */
+  protected String viaNodeParameter = VIA_NODE_PARAMETER_EDEFAULT;
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -36,6 +88,197 @@ public class AcceptNodeDeclarationImpl extends ActionNodeUsageDeclarationImpl im
   protected EClass eStaticClass()
   {
     return SysMLOCPackage.eINSTANCE.getAcceptNodeDeclaration();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<PayloadParameter> getAcceptParameter()
+  {
+    if (acceptParameter == null)
+    {
+      acceptParameter = new EObjectContainmentEList<PayloadParameter>(PayloadParameter.class, this, SysMLOCPackage.ACCEPT_NODE_DECLARATION__ACCEPT_PARAMETER);
+    }
+    return acceptParameter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getViaNodeParameter()
+  {
+    return viaNodeParameter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setViaNodeParameter(String newViaNodeParameter)
+  {
+    String oldViaNodeParameter = viaNodeParameter;
+    viaNodeParameter = newViaNodeParameter;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ACCEPT_NODE_DECLARATION__VIA_NODE_PARAMETER, oldViaNodeParameter, viaNodeParameter));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case SysMLOCPackage.ACCEPT_NODE_DECLARATION__ACCEPT_PARAMETER:
+        return ((InternalEList<?>)getAcceptParameter()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object eGet(int featureID, boolean resolve, boolean coreType)
+  {
+    switch (featureID)
+    {
+      case SysMLOCPackage.ACCEPT_NODE_DECLARATION__ACCEPT_PARAMETER:
+        return getAcceptParameter();
+      case SysMLOCPackage.ACCEPT_NODE_DECLARATION__VIA_NODE_PARAMETER:
+        return getViaNodeParameter();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @SuppressWarnings("unchecked")
+  @Override
+  public void eSet(int featureID, Object newValue)
+  {
+    switch (featureID)
+    {
+      case SysMLOCPackage.ACCEPT_NODE_DECLARATION__ACCEPT_PARAMETER:
+        getAcceptParameter().clear();
+        getAcceptParameter().addAll((Collection<? extends PayloadParameter>)newValue);
+        return;
+      case SysMLOCPackage.ACCEPT_NODE_DECLARATION__VIA_NODE_PARAMETER:
+        setViaNodeParameter((String)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eUnset(int featureID)
+  {
+    switch (featureID)
+    {
+      case SysMLOCPackage.ACCEPT_NODE_DECLARATION__ACCEPT_PARAMETER:
+        getAcceptParameter().clear();
+        return;
+      case SysMLOCPackage.ACCEPT_NODE_DECLARATION__VIA_NODE_PARAMETER:
+        setViaNodeParameter(VIA_NODE_PARAMETER_EDEFAULT);
+        return;
+    }
+    super.eUnset(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean eIsSet(int featureID)
+  {
+    switch (featureID)
+    {
+      case SysMLOCPackage.ACCEPT_NODE_DECLARATION__ACCEPT_PARAMETER:
+        return acceptParameter != null && !acceptParameter.isEmpty();
+      case SysMLOCPackage.ACCEPT_NODE_DECLARATION__VIA_NODE_PARAMETER:
+        return VIA_NODE_PARAMETER_EDEFAULT == null ? viaNodeParameter != null : !VIA_NODE_PARAMETER_EDEFAULT.equals(viaNodeParameter);
+    }
+    return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == AcceptParameterPart.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.ACCEPT_NODE_DECLARATION__ACCEPT_PARAMETER: return SysMLOCPackage.ACCEPT_PARAMETER_PART__ACCEPT_PARAMETER;
+        case SysMLOCPackage.ACCEPT_NODE_DECLARATION__VIA_NODE_PARAMETER: return SysMLOCPackage.ACCEPT_PARAMETER_PART__VIA_NODE_PARAMETER;
+        default: return -1;
+      }
+    }
+    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == AcceptParameterPart.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.ACCEPT_PARAMETER_PART__ACCEPT_PARAMETER: return SysMLOCPackage.ACCEPT_NODE_DECLARATION__ACCEPT_PARAMETER;
+        case SysMLOCPackage.ACCEPT_PARAMETER_PART__VIA_NODE_PARAMETER: return SysMLOCPackage.ACCEPT_NODE_DECLARATION__VIA_NODE_PARAMETER;
+        default: return -1;
+      }
+    }
+    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (ViaNodeParameter: ");
+    result.append(viaNodeParameter);
+    result.append(')');
+    return result.toString();
   }
 
 } //AcceptNodeDeclarationImpl

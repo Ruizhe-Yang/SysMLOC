@@ -6,17 +6,89 @@ package dut.control.sysmloc.sysMLOC.impl;
 import dut.control.sysmloc.sysMLOC.AssignmentNodeDeclaration;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 
+import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Assignment Node Declaration</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AssignmentNodeDeclarationImpl#getTargetParameter <em>Target Parameter</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AssignmentNodeDeclarationImpl#getFeatureChain <em>Feature Chain</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AssignmentNodeDeclarationImpl#getNodeParameter <em>Node Parameter</em>}</li>
+ * </ul>
  *
  * @generated
  */
 public class AssignmentNodeDeclarationImpl extends ActionNodeUsageDeclarationImpl implements AssignmentNodeDeclaration
 {
+  /**
+   * The default value of the '{@link #getTargetParameter() <em>Target Parameter</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTargetParameter()
+   * @generated
+   * @ordered
+   */
+  protected static final String TARGET_PARAMETER_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getTargetParameter() <em>Target Parameter</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTargetParameter()
+   * @generated
+   * @ordered
+   */
+  protected String targetParameter = TARGET_PARAMETER_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getFeatureChain() <em>Feature Chain</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFeatureChain()
+   * @generated
+   * @ordered
+   */
+  protected static final String FEATURE_CHAIN_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getFeatureChain() <em>Feature Chain</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFeatureChain()
+   * @generated
+   * @ordered
+   */
+  protected String featureChain = FEATURE_CHAIN_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getNodeParameter() <em>Node Parameter</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getNodeParameter()
+   * @generated
+   * @ordered
+   */
+  protected static final String NODE_PARAMETER_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getNodeParameter() <em>Node Parameter</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getNodeParameter()
+   * @generated
+   * @ordered
+   */
+  protected String nodeParameter = NODE_PARAMETER_EDEFAULT;
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -36,6 +108,188 @@ public class AssignmentNodeDeclarationImpl extends ActionNodeUsageDeclarationImp
   protected EClass eStaticClass()
   {
     return SysMLOCPackage.eINSTANCE.getAssignmentNodeDeclaration();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getTargetParameter()
+  {
+    return targetParameter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setTargetParameter(String newTargetParameter)
+  {
+    String oldTargetParameter = targetParameter;
+    targetParameter = newTargetParameter;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ASSIGNMENT_NODE_DECLARATION__TARGET_PARAMETER, oldTargetParameter, targetParameter));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getFeatureChain()
+  {
+    return featureChain;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setFeatureChain(String newFeatureChain)
+  {
+    String oldFeatureChain = featureChain;
+    featureChain = newFeatureChain;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ASSIGNMENT_NODE_DECLARATION__FEATURE_CHAIN, oldFeatureChain, featureChain));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getNodeParameter()
+  {
+    return nodeParameter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setNodeParameter(String newNodeParameter)
+  {
+    String oldNodeParameter = nodeParameter;
+    nodeParameter = newNodeParameter;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ASSIGNMENT_NODE_DECLARATION__NODE_PARAMETER, oldNodeParameter, nodeParameter));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object eGet(int featureID, boolean resolve, boolean coreType)
+  {
+    switch (featureID)
+    {
+      case SysMLOCPackage.ASSIGNMENT_NODE_DECLARATION__TARGET_PARAMETER:
+        return getTargetParameter();
+      case SysMLOCPackage.ASSIGNMENT_NODE_DECLARATION__FEATURE_CHAIN:
+        return getFeatureChain();
+      case SysMLOCPackage.ASSIGNMENT_NODE_DECLARATION__NODE_PARAMETER:
+        return getNodeParameter();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eSet(int featureID, Object newValue)
+  {
+    switch (featureID)
+    {
+      case SysMLOCPackage.ASSIGNMENT_NODE_DECLARATION__TARGET_PARAMETER:
+        setTargetParameter((String)newValue);
+        return;
+      case SysMLOCPackage.ASSIGNMENT_NODE_DECLARATION__FEATURE_CHAIN:
+        setFeatureChain((String)newValue);
+        return;
+      case SysMLOCPackage.ASSIGNMENT_NODE_DECLARATION__NODE_PARAMETER:
+        setNodeParameter((String)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eUnset(int featureID)
+  {
+    switch (featureID)
+    {
+      case SysMLOCPackage.ASSIGNMENT_NODE_DECLARATION__TARGET_PARAMETER:
+        setTargetParameter(TARGET_PARAMETER_EDEFAULT);
+        return;
+      case SysMLOCPackage.ASSIGNMENT_NODE_DECLARATION__FEATURE_CHAIN:
+        setFeatureChain(FEATURE_CHAIN_EDEFAULT);
+        return;
+      case SysMLOCPackage.ASSIGNMENT_NODE_DECLARATION__NODE_PARAMETER:
+        setNodeParameter(NODE_PARAMETER_EDEFAULT);
+        return;
+    }
+    super.eUnset(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean eIsSet(int featureID)
+  {
+    switch (featureID)
+    {
+      case SysMLOCPackage.ASSIGNMENT_NODE_DECLARATION__TARGET_PARAMETER:
+        return TARGET_PARAMETER_EDEFAULT == null ? targetParameter != null : !TARGET_PARAMETER_EDEFAULT.equals(targetParameter);
+      case SysMLOCPackage.ASSIGNMENT_NODE_DECLARATION__FEATURE_CHAIN:
+        return FEATURE_CHAIN_EDEFAULT == null ? featureChain != null : !FEATURE_CHAIN_EDEFAULT.equals(featureChain);
+      case SysMLOCPackage.ASSIGNMENT_NODE_DECLARATION__NODE_PARAMETER:
+        return NODE_PARAMETER_EDEFAULT == null ? nodeParameter != null : !NODE_PARAMETER_EDEFAULT.equals(nodeParameter);
+    }
+    return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (targetParameter: ");
+    result.append(targetParameter);
+    result.append(", featureChain: ");
+    result.append(featureChain);
+    result.append(", NodeParameter: ");
+    result.append(nodeParameter);
+    result.append(')');
+    return result.toString();
   }
 
 } //AssignmentNodeDeclarationImpl

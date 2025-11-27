@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <packages declaredName="CarWithEnvelopingShape">
+    <elements xsi:type="sysMLOC:MembershipImport" visibility="private" declaredName="ShapeItems::Box"/>
+    <elements xsi:type="sysMLOC:MembershipImport" visibility="private" declaredName="SI::mm"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Car">
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * Example car with simple enveloping shape that is a solid box&#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:ItemUsage" declaredName="boundingBox">
+        <typings>Box</typings>
+        <subsetting>boundingShapes</subsetting>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <redefinitions>length</redefinitions>
+          <valuePart>4800 [mm]</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <redefinitions>width</redefinitions>
+          <valuePart>1840 [mm]</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <redefinitions>height</redefinitions>
+          <valuePart>1350 [mm]</valuePart>
+        </elements>
+      </elements>
+    </elements>
+  </packages>
+</sysMLOC:Namespace>

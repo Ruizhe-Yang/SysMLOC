@@ -9,6 +9,14 @@ package dut.control.sysmloc.sysMLOC;
  * A representation of the model object '<em><b>Assignment Node Declaration</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.AssignmentNodeDeclaration#getTargetParameter <em>Target Parameter</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.AssignmentNodeDeclaration#getFeatureChain <em>Feature Chain</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.AssignmentNodeDeclaration#getNodeParameter <em>Node Parameter</em>}</li>
+ * </ul>
  *
  * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getAssignmentNodeDeclaration()
  * @model
@@ -16,4 +24,70 @@ package dut.control.sysmloc.sysMLOC;
  */
 public interface AssignmentNodeDeclaration extends ActionNodeUsageDeclaration
 {
+  /**
+   * Returns the value of the '<em><b>Target Parameter</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Target Parameter</em>' attribute.
+   * @see #setTargetParameter(String)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getAssignmentNodeDeclaration_TargetParameter()
+   * @model
+   * @generated
+   */
+  String getTargetParameter();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.AssignmentNodeDeclaration#getTargetParameter <em>Target Parameter</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Target Parameter</em>' attribute.
+   * @see #getTargetParameter()
+   * @generated
+   */
+  void setTargetParameter(String value);
+
+  /**
+   * Returns the value of the '<em><b>Feature Chain</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Feature Chain</em>' attribute.
+   * @see #setFeatureChain(String)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getAssignmentNodeDeclaration_FeatureChain()
+   * @model
+   * @generated
+   */
+  String getFeatureChain();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.AssignmentNodeDeclaration#getFeatureChain <em>Feature Chain</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Feature Chain</em>' attribute.
+   * @see #getFeatureChain()
+   * @generated
+   */
+  void setFeatureChain(String value);
+
+  /**
+   * Returns the value of the '<em><b>Node Parameter</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Node Parameter</em>' attribute.
+   * @see #setNodeParameter(String)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getAssignmentNodeDeclaration_NodeParameter()
+   * @model
+   * @generated
+   */
+  String getNodeParameter();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.AssignmentNodeDeclaration#getNodeParameter <em>Node Parameter</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Node Parameter</em>' attribute.
+   * @see #getNodeParameter()
+   * @generated
+   */
+  void setNodeParameter(String value);
+
 } // AssignmentNodeDeclaration

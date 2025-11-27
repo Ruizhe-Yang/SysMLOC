@@ -14,6 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.EnumeratedValue#getUsageExtension <em>Usage Extension</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.EnumeratedValue#getElements <em>Elements</em>}</li>
  * </ul>
  *
@@ -23,6 +24,18 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface EnumeratedValue extends EnumerationElement, MemberPrefix, Usage, UsageDeclaration, FeatureDeclaration, FeatureSpecializationPart, FeatureSpecialization, MultiplicityPart, MultiplicityRange, FeatureValue
 {
+  /**
+   * Returns the value of the '<em><b>Usage Extension</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Usage Extension</em>' attribute list.
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getEnumeratedValue_UsageExtension()
+   * @model unique="false"
+   * @generated
+   */
+  EList<String> getUsageExtension();
+
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
    * The list contents are of type {@link dut.control.sysmloc.sysMLOC.UsageBodyElement}.

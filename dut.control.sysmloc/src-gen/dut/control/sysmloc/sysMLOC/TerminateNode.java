@@ -14,6 +14,6 @@ package dut.control.sysmloc.sysMLOC;
  * @model
  * @generated
  */
-public interface TerminateNode extends MemberPrefix
+public interface TerminateNode extends EmptySuccessionPrefix, MemberPrefix, ActionNodePrefix, OccurrenceUsagePrefix, BasicUsagePrefix, RefPrefix, ActionNodeUsageDeclaration, UsageDeclaration, FeatureDeclaration, FeatureSpecializationPart, FeatureSpecialization, MultiplicityPart, MultiplicityRange
 {
 } // TerminateNode

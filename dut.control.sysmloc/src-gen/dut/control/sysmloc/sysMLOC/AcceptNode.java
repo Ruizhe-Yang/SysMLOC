@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface AcceptNode extends EmptySuccessionPrefix, MemberPrefix, OccurrenceUsagePrefix, BasicUsagePrefix, RefPrefix, AcceptNodeDeclaration, ActionNodeUsageDeclaration, UsageDeclaration, FeatureDeclaration, FeatureSpecializationPart, FeatureSpecialization, MultiplicityPart, MultiplicityRange
+public interface AcceptNode extends ActionNodeElement, EmptySuccessionPrefix, MemberPrefix, OccurrenceUsagePrefix, BasicUsagePrefix, RefPrefix, AcceptNodeDeclaration, ActionNodeUsageDeclaration, UsageDeclaration, FeatureDeclaration, FeatureSpecializationPart, FeatureSpecialization, MultiplicityPart, MultiplicityRange, AcceptParameterPart
 {
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.

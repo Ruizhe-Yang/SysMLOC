@@ -5,6 +5,8 @@ package dut.control.sysmloc.sysMLOC;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.ecore.EObject;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>If Node</b></em>'.
@@ -17,13 +19,14 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.IfNode#getIfConditionExpression <em>If Condition Expression</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.IfNode#getActionParameterEnd <em>Action Parameter End</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.IfNode#getElements <em>Elements</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.IfNode#getElseNode <em>Else Node</em>}</li>
  * </ul>
  *
  * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getIfNode()
  * @model
  * @generated
  */
-public interface IfNode extends ActionNodeElement, EmptySuccessionPrefix, MemberPrefix, ActionNodePrefix, OccurrenceUsagePrefix, BasicUsagePrefix, RefPrefix, ActionNodeUsageDeclaration, UsageDeclaration, FeatureDeclaration, FeatureSpecializationPart, FeatureSpecialization, MultiplicityPart, MultiplicityRange
+public interface IfNode extends ActionNodeElement, EmptySuccessionPrefix, MemberPrefix, ActionNodePrefix, OccurrenceUsagePrefix, BasicUsagePrefix, RefPrefix, ActionNodeUsageDeclaration, UsageDeclaration, FeatureDeclaration, FeatureSpecializationPart, FeatureSpecialization, MultiplicityPart, MultiplicityRange, TransitionSuccession
 {
   /**
    * Returns the value of the '<em><b>If Condition Expression</b></em>' attribute.
@@ -61,7 +64,7 @@ public interface IfNode extends ActionNodeElement, EmptySuccessionPrefix, Member
 
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
-   * The list contents are of type {@link dut.control.sysmloc.sysMLOC.ActionBodyElement}.
+   * The list contents are of type {@link org.eclipse.emf.ecore.EObject}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Elements</em>' containment reference list.
@@ -69,6 +72,18 @@ public interface IfNode extends ActionNodeElement, EmptySuccessionPrefix, Member
    * @model containment="true"
    * @generated
    */
-  EList<ActionBodyElement> getElements();
+  EList<EObject> getElements();
+
+  /**
+   * Returns the value of the '<em><b>Else Node</b></em>' containment reference list.
+   * The list contents are of type {@link dut.control.sysmloc.sysMLOC.IfNode}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Else Node</em>' containment reference list.
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getIfNode_ElseNode()
+   * @model containment="true"
+   * @generated
+   */
+  EList<IfNode> getElseNode();
 
 } // IfNode

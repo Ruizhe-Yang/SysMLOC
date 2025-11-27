@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <packages declaredName="VehicleUsages">
+    <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9; * Example usages of elements from the vehicle definitions model.&#xD;&#xA;&#x9; */"/>
+    <elements xsi:type="sysMLOC:MembershipImport" visibility="private" declaredName="SI::N"/>
+    <elements xsi:type="sysMLOC:MembershipImport" visibility="private" declaredName="SI::m"/>
+    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="ScalarFunctions"/>
+    <elements xsi:type="sysMLOC:NamespaceImport" declaredName="VehicleDefinitions"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* VALUES */"/>
+    <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="T1">
+      <valuePart>10.0 [N * m]</valuePart>
+    </elements>
+    <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="T2">
+      <valuePart>20.0 [N * m]</valuePart>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* PARTS */"/>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="narrowRimWheel">
+      <typings>Wheel</typings>
+      <elements xsi:type="sysMLOC:Documentation" body="/* Narrow-rim wheel configuration with 4 to 5 lugbolts. */"/>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="lugbolt">
+        <typings>Lugbolt</typings>
+        <Multiplicity>4</Multiplicity>
+        <Multiplicity>5</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="wideRimWheel">
+      <typings>Wheel</typings>
+      <elements xsi:type="sysMLOC:Documentation" body="/* Wide-rim wheel configuration with 4 to 6 lugbolts. */"/>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="lugbolt">
+        <typings>Lugbolt</typings>
+        <Multiplicity>4</Multiplicity>
+        <Multiplicity>6</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle_C1">
+      <typings>Vehicle</typings>
+      <elements xsi:type="sysMLOC:Documentation" body="/* Basic Vehicle configuration showing a part hierarchy. */"/>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="frontAxleAssembly">
+        <typings>AxleAssembly</typings>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="frontWheel">
+          <subsetting>narrowRimWheel</subsetting>
+          <Multiplicity>2</Multiplicity>
+          <elements xsi:type="sysMLOC:PartUsage">
+            <redefinitions>lugbolt</redefinitions>
+            <Multiplicity>4</Multiplicity>
+            <elements xsi:type="sysMLOC:AttributeUsage">
+              <redefinitions>tighteningTorque</redefinitions>
+              <valuePart>T1</valuePart>
+            </elements>
+          </elements>
+        </elements>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="frontAxle">
+          <typings>Axle</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="rearAxleAssembly">
+        <typings>AxleAssembly</typings>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="rearWheel">
+          <subsetting>wideRimWheel</subsetting>
+          <Multiplicity>2</Multiplicity>
+          <elements xsi:type="sysMLOC:PartUsage">
+            <redefinitions>lugbolt</redefinitions>
+            <Multiplicity>6</Multiplicity>
+            <elements xsi:type="sysMLOC:AttributeUsage">
+              <redefinitions>tighteningTorque</redefinitions>
+              <valuePart>T2</valuePart>
+            </elements>
+          </elements>
+        </elements>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="rearAxle">
+          <typings>Axle</typings>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle_C2">
+      <subsetting>vehicle_C1</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/* Specialized configuration with part-specific ports. */"/>
+      <elements xsi:type="sysMLOC:PartUsage">
+        <redefinitions>frontAxleAssembly</redefinitions>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="leftFrontWheel">
+          <subsetting>frontWheel</subsetting>
+          <valuePart>frontWheel#(1)</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="rightFrontWheel">
+          <subsetting>frontWheel</subsetting>
+          <valuePart>frontWheel#(2)</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:InterfaceUsage" declaredName="leftFrontMount">
+          <typings>Mounting</typings>
+          <connectorPart refElement="frontAxle.leftMountingPoint"/>
+          <connectorPart refElement="leftFrontWheel.hub"/>
+        </elements>
+        <elements xsi:type="sysMLOC:InterfaceUsage" declaredName="rightFrontMount">
+          <typings>Mounting</typings>
+          <connectorPart refElement="frontAxle.rightMountingPoint"/>
+          <connectorPart refElement="rightFrontWheel.hub"/>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="rearAxleAssembly">
+        <redefinitions>vehicle_C1::rearAxleAssembly</redefinitions>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="leftRearWheel">
+          <subsetting>rearWheel</subsetting>
+          <valuePart>rearWheel#(1)</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="rightRearWheel">
+          <subsetting>rearWheel</subsetting>
+          <valuePart>rearWheel#(2)</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:InterfaceUsage" declaredName="leftRearMount">
+          <typings>Mounting</typings>
+          <connectorPart refElement="rearAxle.leftMountingPoint"/>
+          <connectorPart refElement="leftRearWheel.hub"/>
+        </elements>
+        <elements xsi:type="sysMLOC:InterfaceUsage" declaredName="rightRearMount">
+          <typings>Mounting</typings>
+          <connectorPart refElement="rearAxle.rightMountingPoint"/>
+          <connectorPart refElement="rightRearWheel.hub"/>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle_C3">
+      <subsetting>vehicle_C2</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/* Further specialized configuration with a connection to a deeply-nested port. */"/>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="transmission">
+        <typings>Transmission</typings>
+        <elements xsi:type="sysMLOC:PortUsage" declaredName="drive">
+          <typings>~DriveIF</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage">
+        <redefinitions>rearAxleAssembly</redefinitions>
+        <elements xsi:type="sysMLOC:PartUsage">
+          <redefinitions>rearAxle</redefinitions>
+          <elements xsi:type="sysMLOC:PortUsage" declaredName="drive">
+            <typings>DriveIF</typings>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:InterfaceUsage" declaredName="driveShaft">
+        <connectorPart refElement="transmission.drive" delcaredName="transDrive"/>
+        <connectorPart refElement="rearAxleAssembly.rearAxle.drive" delcaredName="axleDrive"/>
+        <elements xsi:type="sysMLOC:FlowConnectionUsage">
+          <FlowEnd>transDrive.driveTorque</FlowEnd>
+          <FlowEnd>axleDrive.driveTorque</FlowEnd>
+        </elements>
+      </elements>
+    </elements>
+  </packages>
+</sysMLOC:Namespace>

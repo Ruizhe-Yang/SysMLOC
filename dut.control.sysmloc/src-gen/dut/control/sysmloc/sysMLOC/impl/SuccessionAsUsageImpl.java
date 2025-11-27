@@ -54,6 +54,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionAsUsageImpl#isIsReadOnly <em>Is Read Only</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionAsUsageImpl#isIsDerived <em>Is Derived</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionAsUsageImpl#isIsReference <em>Is Reference</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionAsUsageImpl#getUsageExtension <em>Usage Extension</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionAsUsageImpl#getTypings <em>Typings</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionAsUsageImpl#getSubsetting <em>Subsetting</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionAsUsageImpl#getReferences <em>References</em>}</li>
@@ -230,6 +231,16 @@ public class SuccessionAsUsageImpl extends NonOccurrenceUsageElementImpl impleme
    * @ordered
    */
   protected boolean isReference = IS_REFERENCE_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getUsageExtension() <em>Usage Extension</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getUsageExtension()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> usageExtension;
 
   /**
    * The cached value of the '{@link #getTypings() <em>Typings</em>}' attribute list.
@@ -598,6 +609,21 @@ public class SuccessionAsUsageImpl extends NonOccurrenceUsageElementImpl impleme
    * @generated
    */
   @Override
+  public EList<String> getUsageExtension()
+  {
+    if (usageExtension == null)
+    {
+      usageExtension = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.SUCCESSION_AS_USAGE__USAGE_EXTENSION);
+    }
+    return usageExtension;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<String> getTypings()
   {
     if (typings == null)
@@ -831,6 +857,8 @@ public class SuccessionAsUsageImpl extends NonOccurrenceUsageElementImpl impleme
         return isIsDerived();
       case SysMLOCPackage.SUCCESSION_AS_USAGE__IS_REFERENCE:
         return isIsReference();
+      case SysMLOCPackage.SUCCESSION_AS_USAGE__USAGE_EXTENSION:
+        return getUsageExtension();
       case SysMLOCPackage.SUCCESSION_AS_USAGE__TYPINGS:
         return getTypings();
       case SysMLOCPackage.SUCCESSION_AS_USAGE__SUBSETTING:
@@ -891,6 +919,10 @@ public class SuccessionAsUsageImpl extends NonOccurrenceUsageElementImpl impleme
         return;
       case SysMLOCPackage.SUCCESSION_AS_USAGE__IS_REFERENCE:
         setIsReference((Boolean)newValue);
+        return;
+      case SysMLOCPackage.SUCCESSION_AS_USAGE__USAGE_EXTENSION:
+        getUsageExtension().clear();
+        getUsageExtension().addAll((Collection<? extends String>)newValue);
         return;
       case SysMLOCPackage.SUCCESSION_AS_USAGE__TYPINGS:
         getTypings().clear();
@@ -971,6 +1003,9 @@ public class SuccessionAsUsageImpl extends NonOccurrenceUsageElementImpl impleme
       case SysMLOCPackage.SUCCESSION_AS_USAGE__IS_REFERENCE:
         setIsReference(IS_REFERENCE_EDEFAULT);
         return;
+      case SysMLOCPackage.SUCCESSION_AS_USAGE__USAGE_EXTENSION:
+        getUsageExtension().clear();
+        return;
       case SysMLOCPackage.SUCCESSION_AS_USAGE__TYPINGS:
         getTypings().clear();
         return;
@@ -1034,6 +1069,8 @@ public class SuccessionAsUsageImpl extends NonOccurrenceUsageElementImpl impleme
         return isDerived != IS_DERIVED_EDEFAULT;
       case SysMLOCPackage.SUCCESSION_AS_USAGE__IS_REFERENCE:
         return isReference != IS_REFERENCE_EDEFAULT;
+      case SysMLOCPackage.SUCCESSION_AS_USAGE__USAGE_EXTENSION:
+        return usageExtension != null && !usageExtension.isEmpty();
       case SysMLOCPackage.SUCCESSION_AS_USAGE__TYPINGS:
         return typings != null && !typings.isEmpty();
       case SysMLOCPackage.SUCCESSION_AS_USAGE__SUBSETTING:
@@ -1115,6 +1152,7 @@ public class SuccessionAsUsageImpl extends NonOccurrenceUsageElementImpl impleme
     {
       switch (derivedFeatureID)
       {
+        case SysMLOCPackage.SUCCESSION_AS_USAGE__USAGE_EXTENSION: return SysMLOCPackage.USAGE_PREFIX__USAGE_EXTENSION;
         default: return -1;
       }
     }
@@ -1227,6 +1265,7 @@ public class SuccessionAsUsageImpl extends NonOccurrenceUsageElementImpl impleme
     {
       switch (baseFeatureID)
       {
+        case SysMLOCPackage.USAGE_PREFIX__USAGE_EXTENSION: return SysMLOCPackage.SUCCESSION_AS_USAGE__USAGE_EXTENSION;
         default: return -1;
       }
     }
@@ -1311,6 +1350,8 @@ public class SuccessionAsUsageImpl extends NonOccurrenceUsageElementImpl impleme
     result.append(isDerived);
     result.append(", isReference: ");
     result.append(isReference);
+    result.append(", UsageExtension: ");
+    result.append(usageExtension);
     result.append(", typings: ");
     result.append(typings);
     result.append(", subsetting: ");

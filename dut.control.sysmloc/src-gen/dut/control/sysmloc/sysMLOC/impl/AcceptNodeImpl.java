@@ -5,9 +5,11 @@ package dut.control.sysmloc.sysMLOC.impl;
 
 import dut.control.sysmloc.sysMLOC.AcceptNode;
 import dut.control.sysmloc.sysMLOC.AcceptNodeDeclaration;
+import dut.control.sysmloc.sysMLOC.AcceptParameterPart;
 import dut.control.sysmloc.sysMLOC.ActionBodyElement;
 import dut.control.sysmloc.sysMLOC.ActionNodeUsageDeclaration;
 import dut.control.sysmloc.sysMLOC.BasicUsagePrefix;
+import dut.control.sysmloc.sysMLOC.EmptySuccessionPrefix;
 import dut.control.sysmloc.sysMLOC.FeatureDeclaration;
 import dut.control.sysmloc.sysMLOC.FeatureDirection;
 import dut.control.sysmloc.sysMLOC.FeatureSpecialization;
@@ -16,6 +18,7 @@ import dut.control.sysmloc.sysMLOC.MemberPrefix;
 import dut.control.sysmloc.sysMLOC.MultiplicityPart;
 import dut.control.sysmloc.sysMLOC.MultiplicityRange;
 import dut.control.sysmloc.sysMLOC.OccurrenceUsagePrefix;
+import dut.control.sysmloc.sysMLOC.PayloadParameter;
 import dut.control.sysmloc.sysMLOC.PortionKind;
 import dut.control.sysmloc.sysMLOC.RefPrefix;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
@@ -46,6 +49,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeImpl#isIsThen <em>Is Then</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeImpl#getThenMultiplicity <em>Then Multiplicity</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeImpl#getVisibility <em>Visibility</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeImpl#getDirection <em>Direction</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeImpl#isIsAbstract <em>Is Abstract</em>}</li>
@@ -65,13 +70,45 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeImpl#isIsOrdered <em>Is Ordered</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeImpl#isIsNonunique <em>Is Nonunique</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeImpl#getDeclaredName <em>Declared Name</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeImpl#getAcceptParameter <em>Accept Parameter</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeImpl#getViaNodeParameter <em>Via Node Parameter</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeImpl#getElements <em>Elements</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class AcceptNodeImpl extends EmptySuccessionPrefixImpl implements AcceptNode
+public class AcceptNodeImpl extends ActionNodeElementImpl implements AcceptNode
 {
+  /**
+   * The default value of the '{@link #isIsThen() <em>Is Then</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsThen()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_THEN_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsThen() <em>Is Then</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsThen()
+   * @generated
+   * @ordered
+   */
+  protected boolean isThen = IS_THEN_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getThenMultiplicity() <em>Then Multiplicity</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getThenMultiplicity()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> thenMultiplicity;
+
   /**
    * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -393,6 +430,36 @@ public class AcceptNodeImpl extends EmptySuccessionPrefixImpl implements AcceptN
   protected String declaredName = DECLARED_NAME_EDEFAULT;
 
   /**
+   * The cached value of the '{@link #getAcceptParameter() <em>Accept Parameter</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAcceptParameter()
+   * @generated
+   * @ordered
+   */
+  protected EList<PayloadParameter> acceptParameter;
+
+  /**
+   * The default value of the '{@link #getViaNodeParameter() <em>Via Node Parameter</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getViaNodeParameter()
+   * @generated
+   * @ordered
+   */
+  protected static final String VIA_NODE_PARAMETER_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getViaNodeParameter() <em>Via Node Parameter</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getViaNodeParameter()
+   * @generated
+   * @ordered
+   */
+  protected String viaNodeParameter = VIA_NODE_PARAMETER_EDEFAULT;
+
+  /**
    * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -421,6 +488,46 @@ public class AcceptNodeImpl extends EmptySuccessionPrefixImpl implements AcceptN
   protected EClass eStaticClass()
   {
     return SysMLOCPackage.eINSTANCE.getAcceptNode();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsThen()
+  {
+    return isThen;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsThen(boolean newIsThen)
+  {
+    boolean oldIsThen = isThen;
+    isThen = newIsThen;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ACCEPT_NODE__IS_THEN, oldIsThen, isThen));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<String> getThenMultiplicity()
+  {
+    if (thenMultiplicity == null)
+    {
+      thenMultiplicity = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.ACCEPT_NODE__THEN_MULTIPLICITY);
+    }
+    return thenMultiplicity;
   }
 
   /**
@@ -844,6 +951,46 @@ public class AcceptNodeImpl extends EmptySuccessionPrefixImpl implements AcceptN
    * @generated
    */
   @Override
+  public EList<PayloadParameter> getAcceptParameter()
+  {
+    if (acceptParameter == null)
+    {
+      acceptParameter = new EObjectContainmentEList<PayloadParameter>(PayloadParameter.class, this, SysMLOCPackage.ACCEPT_NODE__ACCEPT_PARAMETER);
+    }
+    return acceptParameter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getViaNodeParameter()
+  {
+    return viaNodeParameter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setViaNodeParameter(String newViaNodeParameter)
+  {
+    String oldViaNodeParameter = viaNodeParameter;
+    viaNodeParameter = newViaNodeParameter;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ACCEPT_NODE__VIA_NODE_PARAMETER, oldViaNodeParameter, viaNodeParameter));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<ActionBodyElement> getElements()
   {
     if (elements == null)
@@ -863,6 +1010,8 @@ public class AcceptNodeImpl extends EmptySuccessionPrefixImpl implements AcceptN
   {
     switch (featureID)
     {
+      case SysMLOCPackage.ACCEPT_NODE__ACCEPT_PARAMETER:
+        return ((InternalEList<?>)getAcceptParameter()).basicRemove(otherEnd, msgs);
       case SysMLOCPackage.ACCEPT_NODE__ELEMENTS:
         return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
     }
@@ -879,6 +1028,10 @@ public class AcceptNodeImpl extends EmptySuccessionPrefixImpl implements AcceptN
   {
     switch (featureID)
     {
+      case SysMLOCPackage.ACCEPT_NODE__IS_THEN:
+        return isIsThen();
+      case SysMLOCPackage.ACCEPT_NODE__THEN_MULTIPLICITY:
+        return getThenMultiplicity();
       case SysMLOCPackage.ACCEPT_NODE__VISIBILITY:
         return getVisibility();
       case SysMLOCPackage.ACCEPT_NODE__DIRECTION:
@@ -917,6 +1070,10 @@ public class AcceptNodeImpl extends EmptySuccessionPrefixImpl implements AcceptN
         return isIsNonunique();
       case SysMLOCPackage.ACCEPT_NODE__DECLARED_NAME:
         return getDeclaredName();
+      case SysMLOCPackage.ACCEPT_NODE__ACCEPT_PARAMETER:
+        return getAcceptParameter();
+      case SysMLOCPackage.ACCEPT_NODE__VIA_NODE_PARAMETER:
+        return getViaNodeParameter();
       case SysMLOCPackage.ACCEPT_NODE__ELEMENTS:
         return getElements();
     }
@@ -934,6 +1091,13 @@ public class AcceptNodeImpl extends EmptySuccessionPrefixImpl implements AcceptN
   {
     switch (featureID)
     {
+      case SysMLOCPackage.ACCEPT_NODE__IS_THEN:
+        setIsThen((Boolean)newValue);
+        return;
+      case SysMLOCPackage.ACCEPT_NODE__THEN_MULTIPLICITY:
+        getThenMultiplicity().clear();
+        getThenMultiplicity().addAll((Collection<? extends String>)newValue);
+        return;
       case SysMLOCPackage.ACCEPT_NODE__VISIBILITY:
         setVisibility((VisibilityIndicator)newValue);
         return;
@@ -997,6 +1161,13 @@ public class AcceptNodeImpl extends EmptySuccessionPrefixImpl implements AcceptN
       case SysMLOCPackage.ACCEPT_NODE__DECLARED_NAME:
         setDeclaredName((String)newValue);
         return;
+      case SysMLOCPackage.ACCEPT_NODE__ACCEPT_PARAMETER:
+        getAcceptParameter().clear();
+        getAcceptParameter().addAll((Collection<? extends PayloadParameter>)newValue);
+        return;
+      case SysMLOCPackage.ACCEPT_NODE__VIA_NODE_PARAMETER:
+        setViaNodeParameter((String)newValue);
+        return;
       case SysMLOCPackage.ACCEPT_NODE__ELEMENTS:
         getElements().clear();
         getElements().addAll((Collection<? extends ActionBodyElement>)newValue);
@@ -1015,6 +1186,12 @@ public class AcceptNodeImpl extends EmptySuccessionPrefixImpl implements AcceptN
   {
     switch (featureID)
     {
+      case SysMLOCPackage.ACCEPT_NODE__IS_THEN:
+        setIsThen(IS_THEN_EDEFAULT);
+        return;
+      case SysMLOCPackage.ACCEPT_NODE__THEN_MULTIPLICITY:
+        getThenMultiplicity().clear();
+        return;
       case SysMLOCPackage.ACCEPT_NODE__VISIBILITY:
         setVisibility(VISIBILITY_EDEFAULT);
         return;
@@ -1072,6 +1249,12 @@ public class AcceptNodeImpl extends EmptySuccessionPrefixImpl implements AcceptN
       case SysMLOCPackage.ACCEPT_NODE__DECLARED_NAME:
         setDeclaredName(DECLARED_NAME_EDEFAULT);
         return;
+      case SysMLOCPackage.ACCEPT_NODE__ACCEPT_PARAMETER:
+        getAcceptParameter().clear();
+        return;
+      case SysMLOCPackage.ACCEPT_NODE__VIA_NODE_PARAMETER:
+        setViaNodeParameter(VIA_NODE_PARAMETER_EDEFAULT);
+        return;
       case SysMLOCPackage.ACCEPT_NODE__ELEMENTS:
         getElements().clear();
         return;
@@ -1089,6 +1272,10 @@ public class AcceptNodeImpl extends EmptySuccessionPrefixImpl implements AcceptN
   {
     switch (featureID)
     {
+      case SysMLOCPackage.ACCEPT_NODE__IS_THEN:
+        return isThen != IS_THEN_EDEFAULT;
+      case SysMLOCPackage.ACCEPT_NODE__THEN_MULTIPLICITY:
+        return thenMultiplicity != null && !thenMultiplicity.isEmpty();
       case SysMLOCPackage.ACCEPT_NODE__VISIBILITY:
         return visibility != VISIBILITY_EDEFAULT;
       case SysMLOCPackage.ACCEPT_NODE__DIRECTION:
@@ -1127,6 +1314,10 @@ public class AcceptNodeImpl extends EmptySuccessionPrefixImpl implements AcceptN
         return isNonunique != IS_NONUNIQUE_EDEFAULT;
       case SysMLOCPackage.ACCEPT_NODE__DECLARED_NAME:
         return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
+      case SysMLOCPackage.ACCEPT_NODE__ACCEPT_PARAMETER:
+        return acceptParameter != null && !acceptParameter.isEmpty();
+      case SysMLOCPackage.ACCEPT_NODE__VIA_NODE_PARAMETER:
+        return VIA_NODE_PARAMETER_EDEFAULT == null ? viaNodeParameter != null : !VIA_NODE_PARAMETER_EDEFAULT.equals(viaNodeParameter);
       case SysMLOCPackage.ACCEPT_NODE__ELEMENTS:
         return elements != null && !elements.isEmpty();
     }
@@ -1141,6 +1332,15 @@ public class AcceptNodeImpl extends EmptySuccessionPrefixImpl implements AcceptN
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
   {
+    if (baseClass == EmptySuccessionPrefix.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.ACCEPT_NODE__IS_THEN: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__IS_THEN;
+        case SysMLOCPackage.ACCEPT_NODE__THEN_MULTIPLICITY: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTIPLICITY;
+        default: return -1;
+      }
+    }
     if (baseClass == MemberPrefix.class)
     {
       switch (derivedFeatureID)
@@ -1237,6 +1437,15 @@ public class AcceptNodeImpl extends EmptySuccessionPrefixImpl implements AcceptN
         default: return -1;
       }
     }
+    if (baseClass == AcceptParameterPart.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.ACCEPT_NODE__ACCEPT_PARAMETER: return SysMLOCPackage.ACCEPT_PARAMETER_PART__ACCEPT_PARAMETER;
+        case SysMLOCPackage.ACCEPT_NODE__VIA_NODE_PARAMETER: return SysMLOCPackage.ACCEPT_PARAMETER_PART__VIA_NODE_PARAMETER;
+        default: return -1;
+      }
+    }
     if (baseClass == AcceptNodeDeclaration.class)
     {
       switch (derivedFeatureID)
@@ -1255,6 +1464,15 @@ public class AcceptNodeImpl extends EmptySuccessionPrefixImpl implements AcceptN
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
   {
+    if (baseClass == EmptySuccessionPrefix.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__IS_THEN: return SysMLOCPackage.ACCEPT_NODE__IS_THEN;
+        case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTIPLICITY: return SysMLOCPackage.ACCEPT_NODE__THEN_MULTIPLICITY;
+        default: return -1;
+      }
+    }
     if (baseClass == MemberPrefix.class)
     {
       switch (baseFeatureID)
@@ -1351,6 +1569,15 @@ public class AcceptNodeImpl extends EmptySuccessionPrefixImpl implements AcceptN
         default: return -1;
       }
     }
+    if (baseClass == AcceptParameterPart.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.ACCEPT_PARAMETER_PART__ACCEPT_PARAMETER: return SysMLOCPackage.ACCEPT_NODE__ACCEPT_PARAMETER;
+        case SysMLOCPackage.ACCEPT_PARAMETER_PART__VIA_NODE_PARAMETER: return SysMLOCPackage.ACCEPT_NODE__VIA_NODE_PARAMETER;
+        default: return -1;
+      }
+    }
     if (baseClass == AcceptNodeDeclaration.class)
     {
       switch (baseFeatureID)
@@ -1372,7 +1599,11 @@ public class AcceptNodeImpl extends EmptySuccessionPrefixImpl implements AcceptN
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (visibility: ");
+    result.append(" (isThen: ");
+    result.append(isThen);
+    result.append(", ThenMultiplicity: ");
+    result.append(thenMultiplicity);
+    result.append(", visibility: ");
     result.append(visibility);
     result.append(", direction: ");
     result.append(direction);
@@ -1410,6 +1641,8 @@ public class AcceptNodeImpl extends EmptySuccessionPrefixImpl implements AcceptN
     result.append(isNonunique);
     result.append(", declaredName: ");
     result.append(declaredName);
+    result.append(", ViaNodeParameter: ");
+    result.append(viaNodeParameter);
     result.append(')');
     return result.toString();
   }

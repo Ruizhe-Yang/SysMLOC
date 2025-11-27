@@ -14,6 +14,6 @@ package dut.control.sysmloc.sysMLOC;
  * @model
  * @generated
  */
-public interface AcceptNodeDeclaration extends ActionNodeUsageDeclaration
+public interface AcceptNodeDeclaration extends ActionNodeUsageDeclaration, AcceptParameterPart
 {
 } // AcceptNodeDeclaration

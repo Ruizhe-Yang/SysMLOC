@@ -54,6 +54,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EnumeratedValueImpl#isIsInitial <em>Is Initial</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EnumeratedValueImpl#isIsDefault <em>Is Default</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EnumeratedValueImpl#getValuePart <em>Value Part</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EnumeratedValueImpl#getUsageExtension <em>Usage Extension</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EnumeratedValueImpl#getElements <em>Elements</em>}</li>
  * </ul>
  *
@@ -250,6 +251,16 @@ public class EnumeratedValueImpl extends EnumerationElementImpl implements Enume
    * @ordered
    */
   protected EList<String> valuePart;
+
+  /**
+   * The cached value of the '{@link #getUsageExtension() <em>Usage Extension</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getUsageExtension()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> usageExtension;
 
   /**
    * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
@@ -543,6 +554,21 @@ public class EnumeratedValueImpl extends EnumerationElementImpl implements Enume
    * @generated
    */
   @Override
+  public EList<String> getUsageExtension()
+  {
+    if (usageExtension == null)
+    {
+      usageExtension = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.ENUMERATED_VALUE__USAGE_EXTENSION);
+    }
+    return usageExtension;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<UsageBodyElement> getElements()
   {
     if (elements == null)
@@ -604,6 +630,8 @@ public class EnumeratedValueImpl extends EnumerationElementImpl implements Enume
         return isIsDefault();
       case SysMLOCPackage.ENUMERATED_VALUE__VALUE_PART:
         return getValuePart();
+      case SysMLOCPackage.ENUMERATED_VALUE__USAGE_EXTENSION:
+        return getUsageExtension();
       case SysMLOCPackage.ENUMERATED_VALUE__ELEMENTS:
         return getElements();
     }
@@ -667,6 +695,10 @@ public class EnumeratedValueImpl extends EnumerationElementImpl implements Enume
         getValuePart().clear();
         getValuePart().addAll((Collection<? extends String>)newValue);
         return;
+      case SysMLOCPackage.ENUMERATED_VALUE__USAGE_EXTENSION:
+        getUsageExtension().clear();
+        getUsageExtension().addAll((Collection<? extends String>)newValue);
+        return;
       case SysMLOCPackage.ENUMERATED_VALUE__ELEMENTS:
         getElements().clear();
         getElements().addAll((Collection<? extends UsageBodyElement>)newValue);
@@ -724,6 +756,9 @@ public class EnumeratedValueImpl extends EnumerationElementImpl implements Enume
       case SysMLOCPackage.ENUMERATED_VALUE__VALUE_PART:
         getValuePart().clear();
         return;
+      case SysMLOCPackage.ENUMERATED_VALUE__USAGE_EXTENSION:
+        getUsageExtension().clear();
+        return;
       case SysMLOCPackage.ENUMERATED_VALUE__ELEMENTS:
         getElements().clear();
         return;
@@ -767,6 +802,8 @@ public class EnumeratedValueImpl extends EnumerationElementImpl implements Enume
         return isDefault != IS_DEFAULT_EDEFAULT;
       case SysMLOCPackage.ENUMERATED_VALUE__VALUE_PART:
         return valuePart != null && !valuePart.isEmpty();
+      case SysMLOCPackage.ENUMERATED_VALUE__USAGE_EXTENSION:
+        return usageExtension != null && !usageExtension.isEmpty();
       case SysMLOCPackage.ENUMERATED_VALUE__ELEMENTS:
         return elements != null && !elements.isEmpty();
     }
@@ -984,6 +1021,8 @@ public class EnumeratedValueImpl extends EnumerationElementImpl implements Enume
     result.append(isDefault);
     result.append(", valuePart: ");
     result.append(valuePart);
+    result.append(", UsageExtension: ");
+    result.append(usageExtension);
     result.append(')');
     return result.toString();
   }

@@ -5,6 +5,7 @@ package dut.control.sysmloc.sysMLOC.impl;
 
 import dut.control.sysmloc.sysMLOC.AcceptNode;
 import dut.control.sysmloc.sysMLOC.AcceptNodeDeclaration;
+import dut.control.sysmloc.sysMLOC.AcceptParameterPart;
 import dut.control.sysmloc.sysMLOC.ActionBodyElement;
 import dut.control.sysmloc.sysMLOC.ActionDefinition;
 import dut.control.sysmloc.sysMLOC.ActionNodeBodyElement;
@@ -55,6 +56,7 @@ import dut.control.sysmloc.sysMLOC.FeatureValue;
 import dut.control.sysmloc.sysMLOC.FlowConnectionDefinition;
 import dut.control.sysmloc.sysMLOC.FlowConnectionUsage;
 import dut.control.sysmloc.sysMLOC.ForLoopNode;
+import dut.control.sysmloc.sysMLOC.ForVariableParameter;
 import dut.control.sysmloc.sysMLOC.ForkNode;
 import dut.control.sysmloc.sysMLOC.GuardExpression;
 import dut.control.sysmloc.sysMLOC.GuardedSuccessionElement;
@@ -85,6 +87,9 @@ import dut.control.sysmloc.sysMLOC.OccurrenceUsagePrefix;
 import dut.control.sysmloc.sysMLOC.PackageBodyElement;
 import dut.control.sysmloc.sysMLOC.PartDefinition;
 import dut.control.sysmloc.sysMLOC.PartUsage;
+import dut.control.sysmloc.sysMLOC.PayloadFeature;
+import dut.control.sysmloc.sysMLOC.PayloadFeatureSpecializationPart;
+import dut.control.sysmloc.sysMLOC.PayloadParameter;
 import dut.control.sysmloc.sysMLOC.PerformActionUsage;
 import dut.control.sysmloc.sysMLOC.PortDefinition;
 import dut.control.sysmloc.sysMLOC.PortUsage;
@@ -104,6 +109,8 @@ import dut.control.sysmloc.sysMLOC.TargetSuccessionNodeElement;
 import dut.control.sysmloc.sysMLOC.TerminateNode;
 import dut.control.sysmloc.sysMLOC.TextualRepresentation;
 import dut.control.sysmloc.sysMLOC.TransitionSuccession;
+import dut.control.sysmloc.sysMLOC.TriggerKind;
+import dut.control.sysmloc.sysMLOC.TriggerValuePart;
 import dut.control.sysmloc.sysMLOC.UnextendedUsagePrefix;
 import dut.control.sysmloc.sysMLOC.Usage;
 import dut.control.sysmloc.sysMLOC.UsageBodyElement;
@@ -113,7 +120,6 @@ import dut.control.sysmloc.sysMLOC.UsagePrefix;
 import dut.control.sysmloc.sysMLOC.ValuePart;
 import dut.control.sysmloc.sysMLOC.VisibilityIndicator;
 import dut.control.sysmloc.sysMLOC.WhileLoopNode;
-import dut.control.sysmloc.sysMLOC.isImportAllFragment;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -235,6 +241,7 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
       case SysMLOCPackage.INITIAL_NODE: return createInitialNode();
       case SysMLOCPackage.SEND_NODE: return createSendNode();
       case SysMLOCPackage.ACCEPT_NODE: return createAcceptNode();
+      case SysMLOCPackage.PAYLOAD_PARAMETER: return createPayloadParameter();
       case SysMLOCPackage.ASSIGNMENT_NODE: return createAssignmentNode();
       case SysMLOCPackage.IF_NODE: return createIfNode();
       case SysMLOCPackage.WHILE_LOOP_NODE: return createWhileLoopNode();
@@ -244,13 +251,13 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
       case SysMLOCPackage.FORK_NODE: return createForkNode();
       case SysMLOCPackage.ACTION_PARAMETER_END: return createActionParameterEnd();
       case SysMLOCPackage.FOR_LOOP_NODE: return createForLoopNode();
+      case SysMLOCPackage.FOR_VARIABLE_PARAMETER: return createForVariableParameter();
       case SysMLOCPackage.TERMINATE_NODE: return createTerminateNode();
       case SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT: return createGuardedSuccessionElement();
       case SysMLOCPackage.TARGET_SUCCESSION_ELEMENT: return createTargetSuccessionElement();
       case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX: return createEmptySuccessionPrefix();
       case SysMLOCPackage.MULTIPLICITY_RANGE: return createMultiplicityRange();
       case SysMLOCPackage.VALUE_PART: return createValuePart();
-      case SysMLOCPackage.IS_IMPORT_ALL_FRAGMENT: return createisImportAllFragment();
       case SysMLOCPackage.MEMBER_PREFIX: return createMemberPrefix();
       case SysMLOCPackage.DEFINITION_PREFIX: return createDefinitionPrefix();
       case SysMLOCPackage.OCCURRENCE_DEFINITION_PREFIX: return createOccurrenceDefinitionPrefix();
@@ -271,6 +278,10 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
       case SysMLOCPackage.FEATURE_DECLARATION: return createFeatureDeclaration();
       case SysMLOCPackage.FEATURE_SPECIALIZATION_PART: return createFeatureSpecializationPart();
       case SysMLOCPackage.ACCEPT_NODE_DECLARATION: return createAcceptNodeDeclaration();
+      case SysMLOCPackage.ACCEPT_PARAMETER_PART: return createAcceptParameterPart();
+      case SysMLOCPackage.PAYLOAD_FEATURE: return createPayloadFeature();
+      case SysMLOCPackage.PAYLOAD_FEATURE_SPECIALIZATION_PART: return createPayloadFeatureSpecializationPart();
+      case SysMLOCPackage.TRIGGER_VALUE_PART: return createTriggerValuePart();
       case SysMLOCPackage.ASSIGNMENT_NODE_DECLARATION: return createAssignmentNodeDeclaration();
       case SysMLOCPackage.IDENTIFICATION: return createIdentification();
       case SysMLOCPackage.MULTIPLICITY_PART: return createMultiplicityPart();
@@ -304,6 +315,8 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
         return createFeatureDirectionFromString(eDataType, initialValue);
       case SysMLOCPackage.PORTION_KIND:
         return createPortionKindFromString(eDataType, initialValue);
+      case SysMLOCPackage.TRIGGER_KIND:
+        return createTriggerKindFromString(eDataType, initialValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -325,6 +338,8 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
         return convertFeatureDirectionToString(eDataType, instanceValue);
       case SysMLOCPackage.PORTION_KIND:
         return convertPortionKindToString(eDataType, instanceValue);
+      case SysMLOCPackage.TRIGGER_KIND:
+        return convertTriggerKindToString(eDataType, instanceValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -1044,6 +1059,18 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
    * @generated
    */
   @Override
+  public PayloadParameter createPayloadParameter()
+  {
+    PayloadParameterImpl payloadParameter = new PayloadParameterImpl();
+    return payloadParameter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public AssignmentNode createAssignmentNode()
   {
     AssignmentNodeImpl assignmentNode = new AssignmentNodeImpl();
@@ -1152,6 +1179,18 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
    * @generated
    */
   @Override
+  public ForVariableParameter createForVariableParameter()
+  {
+    ForVariableParameterImpl forVariableParameter = new ForVariableParameterImpl();
+    return forVariableParameter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public TerminateNode createTerminateNode()
   {
     TerminateNodeImpl terminateNode = new TerminateNodeImpl();
@@ -1216,18 +1255,6 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
   {
     ValuePartImpl valuePart = new ValuePartImpl();
     return valuePart;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public isImportAllFragment createisImportAllFragment()
-  {
-    isImportAllFragmentImpl isImportAllFragment = new isImportAllFragmentImpl();
-    return isImportAllFragment;
   }
 
   /**
@@ -1476,6 +1503,54 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
    * @generated
    */
   @Override
+  public AcceptParameterPart createAcceptParameterPart()
+  {
+    AcceptParameterPartImpl acceptParameterPart = new AcceptParameterPartImpl();
+    return acceptParameterPart;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PayloadFeature createPayloadFeature()
+  {
+    PayloadFeatureImpl payloadFeature = new PayloadFeatureImpl();
+    return payloadFeature;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PayloadFeatureSpecializationPart createPayloadFeatureSpecializationPart()
+  {
+    PayloadFeatureSpecializationPartImpl payloadFeatureSpecializationPart = new PayloadFeatureSpecializationPartImpl();
+    return payloadFeatureSpecializationPart;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TriggerValuePart createTriggerValuePart()
+  {
+    TriggerValuePartImpl triggerValuePart = new TriggerValuePartImpl();
+    return triggerValuePart;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public AssignmentNodeDeclaration createAssignmentNodeDeclaration()
   {
     AssignmentNodeDeclarationImpl assignmentNodeDeclaration = new AssignmentNodeDeclarationImpl();
@@ -1676,6 +1751,28 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
    * @generated
    */
   public String convertPortionKindToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TriggerKind createTriggerKindFromString(EDataType eDataType, String initialValue)
+  {
+    TriggerKind result = TriggerKind.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertTriggerKindToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

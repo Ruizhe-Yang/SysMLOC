@@ -5,18 +5,112 @@ package dut.control.sysmloc.sysMLOC.impl;
 
 import dut.control.sysmloc.sysMLOC.ImportElement;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
+import dut.control.sysmloc.sysMLOC.VisibilityIndicator;
+
+import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Import Element</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ImportElementImpl#getVisibility <em>Visibility</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ImportElementImpl#isIsImportAll <em>Is Import All</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ImportElementImpl#getDeclaredName <em>Declared Name</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ImportElementImpl#isIsRecursive <em>Is Recursive</em>}</li>
+ * </ul>
  *
  * @generated
  */
 public class ImportElementImpl extends PackageBodyElementImpl implements ImportElement
 {
+  /**
+   * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVisibility()
+   * @generated
+   * @ordered
+   */
+  protected static final VisibilityIndicator VISIBILITY_EDEFAULT = VisibilityIndicator.PUBLIC;
+
+  /**
+   * The cached value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVisibility()
+   * @generated
+   * @ordered
+   */
+  protected VisibilityIndicator visibility = VISIBILITY_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsImportAll() <em>Is Import All</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsImportAll()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_IMPORT_ALL_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsImportAll() <em>Is Import All</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsImportAll()
+   * @generated
+   * @ordered
+   */
+  protected boolean isImportAll = IS_IMPORT_ALL_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredName()
+   * @generated
+   * @ordered
+   */
+  protected static final String DECLARED_NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredName()
+   * @generated
+   * @ordered
+   */
+  protected String declaredName = DECLARED_NAME_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsRecursive() <em>Is Recursive</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsRecursive()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_RECURSIVE_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsRecursive() <em>Is Recursive</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsRecursive()
+   * @generated
+   * @ordered
+   */
+  protected boolean isRecursive = IS_RECURSIVE_EDEFAULT;
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -36,6 +130,225 @@ public class ImportElementImpl extends PackageBodyElementImpl implements ImportE
   protected EClass eStaticClass()
   {
     return SysMLOCPackage.eINSTANCE.getImportElement();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public VisibilityIndicator getVisibility()
+  {
+    return visibility;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setVisibility(VisibilityIndicator newVisibility)
+  {
+    VisibilityIndicator oldVisibility = visibility;
+    visibility = newVisibility == null ? VISIBILITY_EDEFAULT : newVisibility;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.IMPORT_ELEMENT__VISIBILITY, oldVisibility, visibility));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsImportAll()
+  {
+    return isImportAll;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsImportAll(boolean newIsImportAll)
+  {
+    boolean oldIsImportAll = isImportAll;
+    isImportAll = newIsImportAll;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.IMPORT_ELEMENT__IS_IMPORT_ALL, oldIsImportAll, isImportAll));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getDeclaredName()
+  {
+    return declaredName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDeclaredName(String newDeclaredName)
+  {
+    String oldDeclaredName = declaredName;
+    declaredName = newDeclaredName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.IMPORT_ELEMENT__DECLARED_NAME, oldDeclaredName, declaredName));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsRecursive()
+  {
+    return isRecursive;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsRecursive(boolean newIsRecursive)
+  {
+    boolean oldIsRecursive = isRecursive;
+    isRecursive = newIsRecursive;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.IMPORT_ELEMENT__IS_RECURSIVE, oldIsRecursive, isRecursive));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object eGet(int featureID, boolean resolve, boolean coreType)
+  {
+    switch (featureID)
+    {
+      case SysMLOCPackage.IMPORT_ELEMENT__VISIBILITY:
+        return getVisibility();
+      case SysMLOCPackage.IMPORT_ELEMENT__IS_IMPORT_ALL:
+        return isIsImportAll();
+      case SysMLOCPackage.IMPORT_ELEMENT__DECLARED_NAME:
+        return getDeclaredName();
+      case SysMLOCPackage.IMPORT_ELEMENT__IS_RECURSIVE:
+        return isIsRecursive();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eSet(int featureID, Object newValue)
+  {
+    switch (featureID)
+    {
+      case SysMLOCPackage.IMPORT_ELEMENT__VISIBILITY:
+        setVisibility((VisibilityIndicator)newValue);
+        return;
+      case SysMLOCPackage.IMPORT_ELEMENT__IS_IMPORT_ALL:
+        setIsImportAll((Boolean)newValue);
+        return;
+      case SysMLOCPackage.IMPORT_ELEMENT__DECLARED_NAME:
+        setDeclaredName((String)newValue);
+        return;
+      case SysMLOCPackage.IMPORT_ELEMENT__IS_RECURSIVE:
+        setIsRecursive((Boolean)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eUnset(int featureID)
+  {
+    switch (featureID)
+    {
+      case SysMLOCPackage.IMPORT_ELEMENT__VISIBILITY:
+        setVisibility(VISIBILITY_EDEFAULT);
+        return;
+      case SysMLOCPackage.IMPORT_ELEMENT__IS_IMPORT_ALL:
+        setIsImportAll(IS_IMPORT_ALL_EDEFAULT);
+        return;
+      case SysMLOCPackage.IMPORT_ELEMENT__DECLARED_NAME:
+        setDeclaredName(DECLARED_NAME_EDEFAULT);
+        return;
+      case SysMLOCPackage.IMPORT_ELEMENT__IS_RECURSIVE:
+        setIsRecursive(IS_RECURSIVE_EDEFAULT);
+        return;
+    }
+    super.eUnset(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean eIsSet(int featureID)
+  {
+    switch (featureID)
+    {
+      case SysMLOCPackage.IMPORT_ELEMENT__VISIBILITY:
+        return visibility != VISIBILITY_EDEFAULT;
+      case SysMLOCPackage.IMPORT_ELEMENT__IS_IMPORT_ALL:
+        return isImportAll != IS_IMPORT_ALL_EDEFAULT;
+      case SysMLOCPackage.IMPORT_ELEMENT__DECLARED_NAME:
+        return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
+      case SysMLOCPackage.IMPORT_ELEMENT__IS_RECURSIVE:
+        return isRecursive != IS_RECURSIVE_EDEFAULT;
+    }
+    return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (visibility: ");
+    result.append(visibility);
+    result.append(", isImportAll: ");
+    result.append(isImportAll);
+    result.append(", declaredName: ");
+    result.append(declaredName);
+    result.append(", isRecursive: ");
+    result.append(isRecursive);
+    result.append(')');
+    return result.toString();
   }
 
 } //ImportElementImpl

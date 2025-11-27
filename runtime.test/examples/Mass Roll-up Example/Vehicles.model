@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <packages declaredName="VehicleMasses">
+    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="ScalarValues"/>
+    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="MassRollup"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="CarPart">
+      <superclassifiers>MassedThing</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="serialNumber">
+        <typings>String</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="car">
+      <typings>CarPart</typings>
+      <subsetting>compositeThing</subsetting>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="vin">
+        <redefinitions>serialNumber</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="carParts">
+        <typings>CarPart</typings>
+        <redefinitions>subcomponents</redefinitions>
+        <Multiplicity>*</Multiplicity>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="engine">
+        <subsetting>simpleThing</subsetting>
+        <subsetting>carParts</subsetting>
+        <elements xsi:type="sysMLOC:CodeAnnotation" body="//...&#xD;&#xA;"/>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="transmission">
+        <subsetting>simpleThing</subsetting>
+        <subsetting>carParts</subsetting>
+        <elements xsi:type="sysMLOC:CodeAnnotation" body="//...&#xD;&#xA;"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:CodeAnnotation" body="// Example usage&#xD;&#xA;"/>
+    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="SI"/>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="c">
+      <subsetting>car</subsetting>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <redefinitions>mass</redefinitions>
+        <valuePart>1000 [kg]</valuePart>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage">
+        <redefinitions>engine</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <redefinitions>mass</redefinitions>
+          <valuePart>100 [kg]</valuePart>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage">
+        <redefinitions>transmission</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <redefinitions>mass</redefinitions>
+          <valuePart>50 [kg]</valuePart>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:CodeAnnotation" body="// c.totalMass --> 1150.0 [kg]&#xD;&#xA;"/>
+  </packages>
+</sysMLOC:Namespace>

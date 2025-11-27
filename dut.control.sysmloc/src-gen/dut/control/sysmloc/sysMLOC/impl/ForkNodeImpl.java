@@ -54,6 +54,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ForkNodeImpl#isIsDerived <em>Is Derived</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ForkNodeImpl#isIsIndividual <em>Is Individual</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ForkNodeImpl#getPortionKind <em>Portion Kind</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ForkNodeImpl#getUsageExtension <em>Usage Extension</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ForkNodeImpl#getTypings <em>Typings</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ForkNodeImpl#getSubsetting <em>Subsetting</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ForkNodeImpl#getReferences <em>References</em>}</li>
@@ -259,6 +260,16 @@ public class ForkNodeImpl extends ActionNodeElementImpl implements ForkNode
    * @ordered
    */
   protected PortionKind portionKind = PORTION_KIND_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getUsageExtension() <em>Usage Extension</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getUsageExtension()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> usageExtension;
 
   /**
    * The cached value of the '{@link #getTypings() <em>Typings</em>}' attribute list.
@@ -657,6 +668,21 @@ public class ForkNodeImpl extends ActionNodeElementImpl implements ForkNode
    * @generated
    */
   @Override
+  public EList<String> getUsageExtension()
+  {
+    if (usageExtension == null)
+    {
+      usageExtension = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.FORK_NODE__USAGE_EXTENSION);
+    }
+    return usageExtension;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<String> getTypings()
   {
     if (typings == null)
@@ -877,6 +903,8 @@ public class ForkNodeImpl extends ActionNodeElementImpl implements ForkNode
         return isIsIndividual();
       case SysMLOCPackage.FORK_NODE__PORTION_KIND:
         return getPortionKind();
+      case SysMLOCPackage.FORK_NODE__USAGE_EXTENSION:
+        return getUsageExtension();
       case SysMLOCPackage.FORK_NODE__TYPINGS:
         return getTypings();
       case SysMLOCPackage.FORK_NODE__SUBSETTING:
@@ -942,6 +970,10 @@ public class ForkNodeImpl extends ActionNodeElementImpl implements ForkNode
         return;
       case SysMLOCPackage.FORK_NODE__PORTION_KIND:
         setPortionKind((PortionKind)newValue);
+        return;
+      case SysMLOCPackage.FORK_NODE__USAGE_EXTENSION:
+        getUsageExtension().clear();
+        getUsageExtension().addAll((Collection<? extends String>)newValue);
         return;
       case SysMLOCPackage.FORK_NODE__TYPINGS:
         getTypings().clear();
@@ -1024,6 +1056,9 @@ public class ForkNodeImpl extends ActionNodeElementImpl implements ForkNode
       case SysMLOCPackage.FORK_NODE__PORTION_KIND:
         setPortionKind(PORTION_KIND_EDEFAULT);
         return;
+      case SysMLOCPackage.FORK_NODE__USAGE_EXTENSION:
+        getUsageExtension().clear();
+        return;
       case SysMLOCPackage.FORK_NODE__TYPINGS:
         getTypings().clear();
         return;
@@ -1088,6 +1123,8 @@ public class ForkNodeImpl extends ActionNodeElementImpl implements ForkNode
         return isIndividual != IS_INDIVIDUAL_EDEFAULT;
       case SysMLOCPackage.FORK_NODE__PORTION_KIND:
         return portionKind != PORTION_KIND_EDEFAULT;
+      case SysMLOCPackage.FORK_NODE__USAGE_EXTENSION:
+        return usageExtension != null && !usageExtension.isEmpty();
       case SysMLOCPackage.FORK_NODE__TYPINGS:
         return typings != null && !typings.isEmpty();
       case SysMLOCPackage.FORK_NODE__SUBSETTING:
@@ -1155,6 +1192,7 @@ public class ForkNodeImpl extends ActionNodeElementImpl implements ForkNode
       {
         case SysMLOCPackage.FORK_NODE__IS_INDIVIDUAL: return SysMLOCPackage.CONTROL_NODE_PREFIX__IS_INDIVIDUAL;
         case SysMLOCPackage.FORK_NODE__PORTION_KIND: return SysMLOCPackage.CONTROL_NODE_PREFIX__PORTION_KIND;
+        case SysMLOCPackage.FORK_NODE__USAGE_EXTENSION: return SysMLOCPackage.CONTROL_NODE_PREFIX__USAGE_EXTENSION;
         default: return -1;
       }
     }
@@ -1255,6 +1293,7 @@ public class ForkNodeImpl extends ActionNodeElementImpl implements ForkNode
       {
         case SysMLOCPackage.CONTROL_NODE_PREFIX__IS_INDIVIDUAL: return SysMLOCPackage.FORK_NODE__IS_INDIVIDUAL;
         case SysMLOCPackage.CONTROL_NODE_PREFIX__PORTION_KIND: return SysMLOCPackage.FORK_NODE__PORTION_KIND;
+        case SysMLOCPackage.CONTROL_NODE_PREFIX__USAGE_EXTENSION: return SysMLOCPackage.FORK_NODE__USAGE_EXTENSION;
         default: return -1;
       }
     }
@@ -1343,6 +1382,8 @@ public class ForkNodeImpl extends ActionNodeElementImpl implements ForkNode
     result.append(isIndividual);
     result.append(", portionKind: ");
     result.append(portionKind);
+    result.append(", UsageExtension: ");
+    result.append(usageExtension);
     result.append(", typings: ");
     result.append(typings);
     result.append(", subsetting: ");

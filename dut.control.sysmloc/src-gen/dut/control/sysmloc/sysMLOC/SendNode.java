@@ -3,12 +3,22 @@
  */
 package dut.control.sysmloc.sysMLOC;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Send Node</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.SendNode#isSendNodeParameter <em>Send Node Parameter</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.SendNode#getViaNodeParameter <em>Via Node Parameter</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.SendNode#getToNodeParameter <em>To Node Parameter</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.SendNode#getElements <em>Elements</em>}</li>
+ * </ul>
  *
  * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getSendNode()
  * @model
@@ -16,4 +26,82 @@ package dut.control.sysmloc.sysMLOC;
  */
 public interface SendNode extends ActionNodeElement, EmptySuccessionPrefix, MemberPrefix, OccurrenceUsagePrefix, BasicUsagePrefix, RefPrefix, ActionNodeUsageDeclaration, UsageDeclaration, FeatureDeclaration, FeatureSpecializationPart, FeatureSpecialization, MultiplicityPart, MultiplicityRange
 {
+  /**
+   * Returns the value of the '<em><b>Send Node Parameter</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Send Node Parameter</em>' attribute.
+   * @see #setSendNodeParameter(boolean)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getSendNode_SendNodeParameter()
+   * @model
+   * @generated
+   */
+  boolean isSendNodeParameter();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.SendNode#isSendNodeParameter <em>Send Node Parameter</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Send Node Parameter</em>' attribute.
+   * @see #isSendNodeParameter()
+   * @generated
+   */
+  void setSendNodeParameter(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Via Node Parameter</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Via Node Parameter</em>' attribute.
+   * @see #setViaNodeParameter(String)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getSendNode_ViaNodeParameter()
+   * @model
+   * @generated
+   */
+  String getViaNodeParameter();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.SendNode#getViaNodeParameter <em>Via Node Parameter</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Via Node Parameter</em>' attribute.
+   * @see #getViaNodeParameter()
+   * @generated
+   */
+  void setViaNodeParameter(String value);
+
+  /**
+   * Returns the value of the '<em><b>To Node Parameter</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>To Node Parameter</em>' attribute.
+   * @see #setToNodeParameter(String)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getSendNode_ToNodeParameter()
+   * @model
+   * @generated
+   */
+  String getToNodeParameter();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.SendNode#getToNodeParameter <em>To Node Parameter</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>To Node Parameter</em>' attribute.
+   * @see #getToNodeParameter()
+   * @generated
+   */
+  void setToNodeParameter(String value);
+
+  /**
+   * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
+   * The list contents are of type {@link dut.control.sysmloc.sysMLOC.ActionBodyElement}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Elements</em>' containment reference list.
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getSendNode_Elements()
+   * @model containment="true"
+   * @generated
+   */
+  EList<ActionBodyElement> getElements();
+
 } // SendNode

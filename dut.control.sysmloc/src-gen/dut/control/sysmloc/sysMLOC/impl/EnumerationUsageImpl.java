@@ -55,6 +55,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EnumerationUsageImpl#isIsReadOnly <em>Is Read Only</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EnumerationUsageImpl#isIsDerived <em>Is Derived</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EnumerationUsageImpl#isIsReference <em>Is Reference</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EnumerationUsageImpl#getUsageExtension <em>Usage Extension</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EnumerationUsageImpl#getTypings <em>Typings</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EnumerationUsageImpl#getSubsetting <em>Subsetting</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EnumerationUsageImpl#getReferences <em>References</em>}</li>
@@ -233,6 +234,16 @@ public class EnumerationUsageImpl extends NonOccurrenceUsageElementImpl implemen
    * @ordered
    */
   protected boolean isReference = IS_REFERENCE_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getUsageExtension() <em>Usage Extension</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getUsageExtension()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> usageExtension;
 
   /**
    * The cached value of the '{@link #getTypings() <em>Typings</em>}' attribute list.
@@ -641,6 +652,21 @@ public class EnumerationUsageImpl extends NonOccurrenceUsageElementImpl implemen
    * @generated
    */
   @Override
+  public EList<String> getUsageExtension()
+  {
+    if (usageExtension == null)
+    {
+      usageExtension = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.ENUMERATION_USAGE__USAGE_EXTENSION);
+    }
+    return usageExtension;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<String> getTypings()
   {
     if (typings == null)
@@ -922,6 +948,8 @@ public class EnumerationUsageImpl extends NonOccurrenceUsageElementImpl implemen
         return isIsDerived();
       case SysMLOCPackage.ENUMERATION_USAGE__IS_REFERENCE:
         return isIsReference();
+      case SysMLOCPackage.ENUMERATION_USAGE__USAGE_EXTENSION:
+        return getUsageExtension();
       case SysMLOCPackage.ENUMERATION_USAGE__TYPINGS:
         return getTypings();
       case SysMLOCPackage.ENUMERATION_USAGE__SUBSETTING:
@@ -986,6 +1014,10 @@ public class EnumerationUsageImpl extends NonOccurrenceUsageElementImpl implemen
         return;
       case SysMLOCPackage.ENUMERATION_USAGE__IS_REFERENCE:
         setIsReference((Boolean)newValue);
+        return;
+      case SysMLOCPackage.ENUMERATION_USAGE__USAGE_EXTENSION:
+        getUsageExtension().clear();
+        getUsageExtension().addAll((Collection<? extends String>)newValue);
         return;
       case SysMLOCPackage.ENUMERATION_USAGE__TYPINGS:
         getTypings().clear();
@@ -1072,6 +1104,9 @@ public class EnumerationUsageImpl extends NonOccurrenceUsageElementImpl implemen
       case SysMLOCPackage.ENUMERATION_USAGE__IS_REFERENCE:
         setIsReference(IS_REFERENCE_EDEFAULT);
         return;
+      case SysMLOCPackage.ENUMERATION_USAGE__USAGE_EXTENSION:
+        getUsageExtension().clear();
+        return;
       case SysMLOCPackage.ENUMERATION_USAGE__TYPINGS:
         getTypings().clear();
         return;
@@ -1141,6 +1176,8 @@ public class EnumerationUsageImpl extends NonOccurrenceUsageElementImpl implemen
         return isDerived != IS_DERIVED_EDEFAULT;
       case SysMLOCPackage.ENUMERATION_USAGE__IS_REFERENCE:
         return isReference != IS_REFERENCE_EDEFAULT;
+      case SysMLOCPackage.ENUMERATION_USAGE__USAGE_EXTENSION:
+        return usageExtension != null && !usageExtension.isEmpty();
       case SysMLOCPackage.ENUMERATION_USAGE__TYPINGS:
         return typings != null && !typings.isEmpty();
       case SysMLOCPackage.ENUMERATION_USAGE__SUBSETTING:
@@ -1226,6 +1263,7 @@ public class EnumerationUsageImpl extends NonOccurrenceUsageElementImpl implemen
     {
       switch (derivedFeatureID)
       {
+        case SysMLOCPackage.ENUMERATION_USAGE__USAGE_EXTENSION: return SysMLOCPackage.USAGE_PREFIX__USAGE_EXTENSION;
         default: return -1;
       }
     }
@@ -1355,6 +1393,7 @@ public class EnumerationUsageImpl extends NonOccurrenceUsageElementImpl implemen
     {
       switch (baseFeatureID)
       {
+        case SysMLOCPackage.USAGE_PREFIX__USAGE_EXTENSION: return SysMLOCPackage.ENUMERATION_USAGE__USAGE_EXTENSION;
         default: return -1;
       }
     }
@@ -1456,6 +1495,8 @@ public class EnumerationUsageImpl extends NonOccurrenceUsageElementImpl implemen
     result.append(isDerived);
     result.append(", isReference: ");
     result.append(isReference);
+    result.append(", UsageExtension: ");
+    result.append(usageExtension);
     result.append(", typings: ");
     result.append(typings);
     result.append(", subsetting: ");

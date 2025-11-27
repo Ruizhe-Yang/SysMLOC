@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <packages declaredName="'Decision Example'">
+    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="ScalarValues"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="BatteryCharged"/>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="battery"/>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="powerSystem"/>
+    <elements xsi:type="sysMLOC:ActionDefinition" declaredName="MonitorBattery">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="charge">
+        <typings>Real</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:ActionDefinition" declaredName="AddCharge">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="charge">
+        <typings>Real</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:ActionDefinition" declaredName="EndCharging"/>
+    <elements xsi:type="sysMLOC:ActionDefinition" declaredName="ChargeBattery">
+      <elements xsi:type="sysMLOC:InitialNode" memberElement="start"/>
+      <elements xsi:type="sysMLOC:MergeNode" isThen="true" declaredName="continueCharging"/>
+      <elements xsi:type="sysMLOC:ActionUsage" isThen="true" declaredName="monitor">
+        <typings>MonitorBattery</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="batteryCharge">
+          <typings>Real</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:DecisionNode" isThen="true"/>
+      <elements xsi:type="sysMLOC:IfNode" ifConditionExpression="monitor.batteryCharge &lt; 100">
+        <transitionSuccessionElement refElement="addCharge"/>
+      </elements>
+      <elements xsi:type="sysMLOC:IfNode" ifConditionExpression="monitor.batteryCharge >= 100">
+        <transitionSuccessionElement refElement="endCharging"/>
+      </elements>
+      <elements xsi:type="sysMLOC:ActionUsage" declaredName="addCharge">
+        <typings>AddCharge</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="charge">
+          <valuePart>monitor.batteryCharge</valuePart>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:TargetSuccessionElement">
+        <transitionSuccessionElement refElement="continueCharging"/>
+      </elements>
+      <elements xsi:type="sysMLOC:ActionUsage" declaredName="endCharging">
+        <typings>EndCharging</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:TargetSuccessionElement">
+        <transitionSuccessionElement refElement="done"/>
+      </elements>
+    </elements>
+  </packages>
+</sysMLOC:Namespace>

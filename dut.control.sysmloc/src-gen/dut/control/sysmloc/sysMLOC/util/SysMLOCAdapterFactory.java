@@ -5,6 +5,7 @@ package dut.control.sysmloc.sysMLOC.util;
 
 import dut.control.sysmloc.sysMLOC.AcceptNode;
 import dut.control.sysmloc.sysMLOC.AcceptNodeDeclaration;
+import dut.control.sysmloc.sysMLOC.AcceptParameterPart;
 import dut.control.sysmloc.sysMLOC.ActionBodyElement;
 import dut.control.sysmloc.sysMLOC.ActionDefinition;
 import dut.control.sysmloc.sysMLOC.ActionNodeBodyElement;
@@ -54,6 +55,7 @@ import dut.control.sysmloc.sysMLOC.FeatureValue;
 import dut.control.sysmloc.sysMLOC.FlowConnectionDefinition;
 import dut.control.sysmloc.sysMLOC.FlowConnectionUsage;
 import dut.control.sysmloc.sysMLOC.ForLoopNode;
+import dut.control.sysmloc.sysMLOC.ForVariableParameter;
 import dut.control.sysmloc.sysMLOC.ForkNode;
 import dut.control.sysmloc.sysMLOC.GuardExpression;
 import dut.control.sysmloc.sysMLOC.GuardedSuccessionElement;
@@ -84,6 +86,9 @@ import dut.control.sysmloc.sysMLOC.OccurrenceUsagePrefix;
 import dut.control.sysmloc.sysMLOC.PackageBodyElement;
 import dut.control.sysmloc.sysMLOC.PartDefinition;
 import dut.control.sysmloc.sysMLOC.PartUsage;
+import dut.control.sysmloc.sysMLOC.PayloadFeature;
+import dut.control.sysmloc.sysMLOC.PayloadFeatureSpecializationPart;
+import dut.control.sysmloc.sysMLOC.PayloadParameter;
 import dut.control.sysmloc.sysMLOC.PerformActionUsage;
 import dut.control.sysmloc.sysMLOC.PortDefinition;
 import dut.control.sysmloc.sysMLOC.PortUsage;
@@ -101,6 +106,7 @@ import dut.control.sysmloc.sysMLOC.TargetSuccessionNodeElement;
 import dut.control.sysmloc.sysMLOC.TerminateNode;
 import dut.control.sysmloc.sysMLOC.TextualRepresentation;
 import dut.control.sysmloc.sysMLOC.TransitionSuccession;
+import dut.control.sysmloc.sysMLOC.TriggerValuePart;
 import dut.control.sysmloc.sysMLOC.UnextendedUsagePrefix;
 import dut.control.sysmloc.sysMLOC.Usage;
 import dut.control.sysmloc.sysMLOC.UsageBodyElement;
@@ -109,7 +115,6 @@ import dut.control.sysmloc.sysMLOC.UsageElement;
 import dut.control.sysmloc.sysMLOC.UsagePrefix;
 import dut.control.sysmloc.sysMLOC.ValuePart;
 import dut.control.sysmloc.sysMLOC.WhileLoopNode;
-import dut.control.sysmloc.sysMLOC.isImportAllFragment;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -477,6 +482,11 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
         return createAcceptNodeAdapter();
       }
       @Override
+      public Adapter casePayloadParameter(PayloadParameter object)
+      {
+        return createPayloadParameterAdapter();
+      }
+      @Override
       public Adapter caseAssignmentNode(AssignmentNode object)
       {
         return createAssignmentNodeAdapter();
@@ -522,6 +532,11 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
         return createForLoopNodeAdapter();
       }
       @Override
+      public Adapter caseForVariableParameter(ForVariableParameter object)
+      {
+        return createForVariableParameterAdapter();
+      }
+      @Override
       public Adapter caseTerminateNode(TerminateNode object)
       {
         return createTerminateNodeAdapter();
@@ -550,11 +565,6 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
       public Adapter caseValuePart(ValuePart object)
       {
         return createValuePartAdapter();
-      }
-      @Override
-      public Adapter caseisImportAllFragment(isImportAllFragment object)
-      {
-        return createisImportAllFragmentAdapter();
       }
       @Override
       public Adapter caseMemberPrefix(MemberPrefix object)
@@ -655,6 +665,26 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
       public Adapter caseAcceptNodeDeclaration(AcceptNodeDeclaration object)
       {
         return createAcceptNodeDeclarationAdapter();
+      }
+      @Override
+      public Adapter caseAcceptParameterPart(AcceptParameterPart object)
+      {
+        return createAcceptParameterPartAdapter();
+      }
+      @Override
+      public Adapter casePayloadFeature(PayloadFeature object)
+      {
+        return createPayloadFeatureAdapter();
+      }
+      @Override
+      public Adapter casePayloadFeatureSpecializationPart(PayloadFeatureSpecializationPart object)
+      {
+        return createPayloadFeatureSpecializationPartAdapter();
+      }
+      @Override
+      public Adapter caseTriggerValuePart(TriggerValuePart object)
+      {
+        return createTriggerValuePartAdapter();
       }
       @Override
       public Adapter caseAssignmentNodeDeclaration(AssignmentNodeDeclaration object)
@@ -1624,6 +1654,21 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.PayloadParameter <em>Payload Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.sysmloc.sysMLOC.PayloadParameter
+   * @generated
+   */
+  public Adapter createPayloadParameterAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.AssignmentNode <em>Assignment Node</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1759,6 +1804,21 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.ForVariableParameter <em>For Variable Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.sysmloc.sysMLOC.ForVariableParameter
+   * @generated
+   */
+  public Adapter createForVariableParameterAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.TerminateNode <em>Terminate Node</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1844,21 +1904,6 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createValuePartAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.isImportAllFragment <em>is Import All Fragment</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see dut.control.sysmloc.sysMLOC.isImportAllFragment
-   * @generated
-   */
-  public Adapter createisImportAllFragmentAdapter()
   {
     return null;
   }
@@ -2159,6 +2204,66 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAcceptNodeDeclarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.AcceptParameterPart <em>Accept Parameter Part</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.sysmloc.sysMLOC.AcceptParameterPart
+   * @generated
+   */
+  public Adapter createAcceptParameterPartAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.PayloadFeature <em>Payload Feature</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.sysmloc.sysMLOC.PayloadFeature
+   * @generated
+   */
+  public Adapter createPayloadFeatureAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.PayloadFeatureSpecializationPart <em>Payload Feature Specialization Part</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.sysmloc.sysMLOC.PayloadFeatureSpecializationPart
+   * @generated
+   */
+  public Adapter createPayloadFeatureSpecializationPartAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.TriggerValuePart <em>Trigger Value Part</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.sysmloc.sysMLOC.TriggerValuePart
+   * @generated
+   */
+  public Adapter createTriggerValuePartAdapter()
   {
     return null;
   }

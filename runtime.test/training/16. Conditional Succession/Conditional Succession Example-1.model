@@ -43,7 +43,7 @@
         </elements>
         <elements xsi:type="sysMLOC:ItemUsage" direction="out" declaredName="image"/>
       </elements>
-      <elements xsi:type="sysMLOC:GuardedSuccessionElement" ConditionalExpression="focus.image.isWellFocused" memberElement="focus">
+      <elements xsi:type="sysMLOC:GuardedSuccessionElement" memberElement="focus" ConditionalExpression="focus.image.isWellFocused">
         <transitionSuccessionElement refElement="shoot"/>
       </elements>
       <elements xsi:type="sysMLOC:FlowConnectionUsage">

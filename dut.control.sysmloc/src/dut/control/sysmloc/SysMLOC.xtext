@@ -62,8 +62,9 @@ ActionBodyElement:
 	| InitialNodeElement
 	| BehaviorUsageElement 
 	| ActionNodeElement
-	| TargetSuccessionNodeElement
 	| GuardedSuccessionNodeElement
+	| TargetSuccessionNodeElement
+
 ;
 
 AnnotatingBodyElement:
@@ -86,7 +87,7 @@ AnnotatingElement:
 // Importing
 
 ImportElement:
-	NamespaceImport
+	=> NamespaceImport
 	| MembershipImport
 ;
 
@@ -191,11 +192,11 @@ InitialNodeElement:
 
 ActionNodeElement:
 	SendNode
-//	| AcceptNode 
-//	| AssignmentNode 
+	| AcceptNode
+	| AssignmentNode 
 	| IfNode 
 	| WhileLoopNode 
-//	| ForLoopNode
+	| ForLoopNode
 //	| TerminateNode
 	| MergeNode
 	| DecisionNode
@@ -213,11 +214,11 @@ TargetSuccessionNodeElement:
 
 // TODO --------------------------------- Instance Level ---------------------------------//
 NamespaceImport:
-    visibility=VisibilityIndicator isImportAllFragment? 'import' declaredName=QualifiedName '::' ( '*' | isRecursive ?= '**' )? ';'
+    visibility=VisibilityIndicator 'import' (isImportAll?='all')? declaredName=QualifiedName '::' ( '*' | isRecursive ?= '**' )? ';'
 ;
 
 MembershipImport:
-	visibility=VisibilityIndicator isImportAllFragment? 'import' declaredName=QualifiedName ( '*' | isRecursive ?= '**' )? ';'
+	visibility=VisibilityIndicator 'import' (isImportAll?='all')? declaredName=QualifiedName ( '*' | isRecursive ?= '**' )? ';'
 ;
     
 CodeAnnotation:
@@ -281,7 +282,7 @@ EnumerationDefinition:
 
 EnumeratedValue:
 	MemberPrefix
-//	UsageExtensionKeyword*
+	('#' UsageExtension += QualifiedName)*
 	'enum'? Usage
 	(';' | '{' (elements+=UsageBodyElement)* '}')
 ;
@@ -443,14 +444,10 @@ SendNode:
 	OccurrenceUsagePrefix
 	ActionNodeUsageDeclaration?
 	'send'
-//	( ActionBody
-//	| ( => 
-//		( ownedRelationship += NodeParameterMember SenderReceiverPart?
-//	    | ownedRelationship += EmptyParameterMember SenderReceiverPart
-//	    )
-//	    ActionBody
-//	  )
-//	)
+	sendNodeParameter?=Expression
+	('via' viaNodeParameter=Expression)?
+	('to' toNodeParameter=Expression)?
+	(';' | '{' (elements+=ActionBodyElement)* '}')
 ;
 
 AcceptNode:
@@ -460,6 +457,11 @@ AcceptNode:
 	AcceptNodeDeclaration
 	(';' | '{' (elements+=ActionBodyElement)* '}')
 ; 
+
+PayloadParameter:
+	PayloadFeature 
+	| Identification? PayloadFeatureSpecializationPart? TriggerValuePart
+;
 
 AssignmentNode:
 	EmptySuccessionPrefix
@@ -475,11 +477,11 @@ IfNode:
 	ActionNodePrefix
 	'if'
 	ifConditionExpression = Expression
-	('action' actionParameterEnd+=ActionParameterEnd )?
-	'{' (elements+=ActionBodyElement)* '}'
-//	( 'else' 
-//		(('action' actionParameterEnd+=ActionParameterEnd )? '{' (elements+=ActionBodyElement)* '}')
-//		| (elseNode+=IfNode))?
+	(('action' actionParameterEnd+=ActionParameterEnd )? '{' (elements+=ActionBodyElement)* '}'
+	| 'then' TransitionSuccession (';' | '{' (elements+=UsageBodyElement)* '}'))
+	( 'else' 
+		(('action' actionParameterEnd+=ActionParameterEnd )? '{' (elements+=ActionBodyElement)* '}'
+		| elseNode+=IfNode))?
 ; 
 
 WhileLoopNode:
@@ -488,7 +490,7 @@ WhileLoopNode:
 	ActionNodePrefix
 	('while' whileConditionExpression = Expression | 'loop' )
 	('action' actionParameterEnd+=ActionParameterEnd )?
-	('{' (elements+=ActionBodyElement)* '}')
+	'{' (elements+=ActionBodyElement)* '}'
 	( 'until' untilConditionExpression = Expression ';' )?
 ; 
 
@@ -520,17 +522,28 @@ ForkNode:
 	(';' | '{' (elements+=ActionNodeBodyElement)* '}')
 ;
 
-
 ActionParameterEnd:
 	UsageDeclaration
 ;
 
 ForLoopNode:
-	MemberPrefix
+	EmptySuccessionPrefix
+	MemberPrefix 
+	ActionNodePrefix
+	'for' ForVariableParameter=ForVariableParameter
+	'in' NodeParameter=Expression
+	('action' actionParameterEnd+=ActionParameterEnd )?
+	'{' (elements+=ActionBodyElement)* '}'
+;
+
+ForVariableParameter:
+	UsageDeclaration
 ;
 
 TerminateNode:
+	EmptySuccessionPrefix
 	MemberPrefix
+	ActionNodePrefix
 ;
 
 
@@ -548,7 +561,7 @@ GuardedSuccessionElement:
 TargetSuccessionElement:
 	MemberPrefix
 	( TargetSuccession
-	| GuardedTargetSuccession 
+//	| GuardedTargetSuccession 
 	| DefaultTargetSuccession
 	)
 	(';' | '{' (elements+=UsageBodyElement)* '}')
@@ -556,6 +569,7 @@ TargetSuccessionElement:
 //	((( TargetSuccession | DefaultTargetSuccession) (';' | '{' (elements+=UsageBodyElement)* '}'))
 //	| GuardedTargetSuccession ';')
 ;
+
 
 // TODO --------------------------------- Enum Level ---------------------------------//
 
@@ -573,6 +587,10 @@ enum PortionKind:
 	snapshot = 'snapshot' | timeslice = 'timeslice'
 ;
 
+enum TriggerKind:
+	at='at' | after='after'| when='when'
+;
+
 // TODO --------------------------------- Fragment Level ---------------------------------//
 
 fragment EmptySuccessionPrefix:
@@ -586,10 +604,6 @@ fragment MultiplicityRange:
 
 fragment ValuePart:
 	FeatureValue
-;
-
-fragment isImportAllFragment:
-	isImportAll ?= 'all'
 ;
 
 fragment MemberPrefix:
@@ -616,7 +630,7 @@ fragment BasicDefinitionPrefix:
 
 fragment UsagePrefix:
 	UnextendedUsagePrefix
-//	UsageExtensionKeyword*	
+	('#' UsageExtension += QualifiedName)*
 ;
 
 fragment UnextendedUsagePrefix:
@@ -695,16 +709,33 @@ fragment AcceptNodeDeclaration:
 ;
 
 fragment AcceptParameterPart:
-	'null'
-//	ownedRelationship += PayloadParameterMember
-//	( 'via' ownedRelationship += NodeParameterMember )?
+	AcceptParameter+=PayloadParameter
+	('via' ViaNodeParameter=Expression)?
+;
+
+
+fragment PayloadFeature:
+//	Identification? PayloadFeatureSpecializationPart? TriggerValuePart
+	Identification? PayloadFeatureSpecializationPart ValuePart?
+	// Warning
+//	| Identification? ValuePart MultiplicityRange?
+//	| => MultiplicityRange ValuePart
+;
+
+fragment PayloadFeatureSpecializationPart:
+	FeatureSpecializationPart
+;
+
+fragment TriggerValuePart:
+	triggerkind=TriggerKind
+	triggerExpression=Expression
 ;
 
 fragment AssignmentNodeDeclaration:
 	ActionNodeUsageDeclaration? 'assign' 
-//	ownedRelationship += AssignmentTargetMember
-//	ownedRelationship += FeatureChainMember ':=' 
-//	ownedRelationship += NodeParameterMember
+	targetParameter=TargetExpression?
+	featureChain=FeatureChainName ':=' 
+	NodeParameter=Expression
 ;
 
 fragment Identification:
@@ -718,7 +749,7 @@ fragment MultiplicityPart:
 ;
 
 fragment FeatureSpecialization:
-	(':'|'defined' 'by') typings+=FeatureChainName (',' typings+=FeatureChainName)*
+	(':'|'defined' 'by') typings+=FeatureTypingName (',' typings+=FeatureTypingName)*
 	| (':>'|'specializes'|'subsets') subsetting+=FeatureChainName (',' subsetting+=FeatureChainName)*
 	| ('::>'|'references')  references+=FeatureChainName (',' references+=FeatureChainName)*
 	| ('=>'|'crosses') crosses+=FeatureChainName (',' crosses+=FeatureChainName)*
@@ -762,7 +793,7 @@ fragment ControlNodePrefix:
 	  RefPrefix
 	  ( isIndividual ?= 'individual' )?
 	  ( portionKind = PortionKind )?
-//	  UsageExtensionKeyword*
+	  ('#' UsageExtension += QualifiedName)*
 ;
 
 // TODO --------------------------------- Terminal Level ---------------------------------//
@@ -772,6 +803,204 @@ fragment ControlNodePrefix:
 //	( Name ('::>' | 'references') )?
 //	FeatureChainName
 //;
+
+/* NAMES */
+
+Name:
+	ID | UNRESTRICTED_NAME
+;
+
+//QualifiedName:
+//	Name ('::' Name)*
+//;
+
+Qualification :
+	( Name '::' )+
+;
+
+QualifiedName:
+	Qualification? Name
+;
+
+FeatureChainName:
+	'USELESS'? 
+//	'~'?
+	QualifiedName ('.' Name)*
+;
+
+FeatureTypingName:
+	FeatureChainName | '~' QualifiedName
+;
+
+//ExpressionName:
+//	FeatureChainName | RealValue
+//;
+
+//Expression:
+//	OPERATOR* ExpressionName (OPERATOR ExpressionName?)* | '(' SequenceExpression ')' | '(' ')'
+//;
+Expression:
+	OwnedExpression
+;
+
+OwnedExpression:
+	ConditionalExpression
+;
+
+ConditionalExpression:
+	NullCoalescingExpression
+	| 'if' NullCoalescingExpression '?' OwnedExpression 'else' OwnedExpression
+;
+
+NullCoalescingExpression:
+	ImpliesExpression ('??' ImpliesExpression)*
+;
+
+ImpliesExpression:
+	OrExpression ('implies' OrExpression)*
+;
+
+OrExpression:
+	XorExpression ('|' XorExpression | 'or' XorExpression)*
+;
+
+XorExpression:
+	AndExpression ('xor' AndExpression)*
+;
+
+AndExpression:
+	EqualityExpression ('&' EqualityExpression | 'and' EqualityExpression)*
+;
+
+EqualityExpression:
+	ClassificationExpression (('==' | '!=' | '===' | '!==') ClassificationExpression)*
+;
+
+ClassificationExpression:
+	RelationalExpression (('hastype' | 'istype' | '@') ReferenceTypingName | 'as' ReferenceTypingName)?
+	| ('hastype' | 'istype' | '@') ReferenceTypingName
+	| MetadataReferenceName '@@' ReferenceTypingName
+	| 'as' ReferenceTypingName
+	| MetadataReferenceName 'meta' ReferenceTypingName
+;
+
+ReferenceTypingName:
+	QualifiedName
+;
+
+MetadataReferenceName:
+	QualifiedName
+;
+
+RelationalExpression:
+	RangeExpression (('<' | '>' | '<=' | '>=') RangeExpression)*
+;
+
+RangeExpression:
+	AdditiveExpression ('..' AdditiveExpression)?
+;
+
+AdditiveExpression:
+	MultiplicativeExpression (('+'|'-') MultiplicativeExpression)*
+;
+
+MultiplicativeExpression:
+	ExponentiationExpression (('*' | '/' | '%') ExponentiationExpression)*
+;
+
+ExponentiationExpression:
+	UnaryExpression (('**' | '^') ExponentiationExpression)?
+;
+
+UnaryExpression:
+	('+' | '-' | '~' | 'not') ExtentExpression
+	| ExtentExpression
+;
+
+ExtentExpression:
+	'all' ReferenceTypingName
+	| PrimaryExpression
+;
+
+PrimaryExpression:
+	BaseExpression
+	('.' FeatureChainName)?
+	(	( '#' '(' SequenceExpression ')'
+		| '[' SequenceExpression ']'
+		| '->' ReferenceTypingName (BodyExpression | FunctionReferenceExpression | ArgumentList)
+		| '.' BodyExpression
+		| '.?' BodyExpression
+		)
+		('.' FeatureChainName)?	
+	)*
+;
+
+BaseExpression:
+	  NullExpression
+	| LiteralExpression 
+	| FeatureReferenceExpression 
+	| MetadataAccessExpression
+	| InvocationExpression 
+	| BodyExpression
+	| '(' SequenceExpression ')'
+;
+
+
+FunctionReferenceExpression:
+	QualifiedName
+;
+
+ArgumentList:
+	'(' ( PositionalArgumentList | NamedArgumentList )? ')'
+;
+
+PositionalArgumentList:
+	ArgumentValue (',' ArgumentValue)*
+;
+
+NamedArgumentList:
+	NamedArgument (',' NamedArgument)*
+;
+
+ArgumentValue:
+	OwnedExpression
+;
+
+NamedArgument:
+	QualifiedName '=' ArgumentValue
+;
+
+NullExpression:
+	'null' 
+	| '(' ')' 
+;
+
+MetadataAccessExpression:
+	QualifiedName '.' 'metadata'
+;
+
+InvocationExpression:
+	(QualifiedName | FeatureChainName) ArgumentList
+;
+
+BodyExpression:
+	'{'
+	('in' Name FeatureSpecializationName* ';')*
+	OwnedExpression
+	'}'
+;
+
+FeatureSpecializationName:
+	(':'|'defined' 'by') FeatureTypingName (',' FeatureTypingName)*
+	| (':>'|'specializes'|'subsets') FeatureChainName (',' FeatureChainName)*
+	| ('::>'|'references') FeatureChainName (',' FeatureChainName)*
+	| ('=>'|'crosses') FeatureChainName (',' FeatureChainName)*
+	| (':>>'|'redefines') FeatureChainName (',' FeatureChainName)*
+;
+
+SequenceExpression:
+	OwnedExpression (',' SequenceExpression)?
+;
 
 MultiplicityExpression:
 	LiteralExpression | FeatureReferenceExpression
@@ -816,47 +1045,25 @@ LiteralInfinity:
 FeatureReferenceExpression:
 	QualifiedName
 ;
-/* NAMES */
 
-Name:
-	ID | UNRESTRICTED_NAME
-;
-
-QualifiedName:
-	Name ('::' Name)*
-;
-
-FeatureChainName:
-	'~'? QualifiedName ('.' Name)*
-;
-
-ExpressionName:
-	FeatureChainName | RealValue
-;
-
-Expression:
-	OPERATOR* ExpressionName (OPERATOR ExpressionName?)* | '(' SequenceExpression ')' | '(' ')'
-;
-
-//Expression:
-//	ConditionalExpression
-//;
-//
-//ConditionalExpression:
-//	NullCoalescingExpression 
-//	| 'if' NullCoalescingExpression '?' OwnedExpressionReference
-//;
-
-SequenceExpression:
-	Expression (',' Expression)*
+TargetExpression:
+	BaseExpression
+	('.' FeatureChainName)?
+	(	( '#' '(' SequenceExpression ')'
+		| '[' SequenceExpression ']'
+		| '->' ReferenceTypingName (BodyExpression | FunctionReferenceExpression | ArgumentList)
+		| '.' BodyExpression
+		| '.?' BodyExpression
+		)
+	)*
 ;
 
 /* TERMINALS */
 
-terminal OPERATOR:
-	'if' | '??' | 'implies' | '|' | 'or' | 'xor' | '&' | 'and' | '==' | '!=' | '===' | '!==' | 'hastype' | 'istype' | '@'|
-	'@@' | 'as' | 'meta' | '<' | '>' | '<=' | '>=' | '+' | '-' | '*' | '/' | '%' | '..' | '**' | '^' | '~' | 'not' |
-	'true' | 'false';
+//terminal OPERATOR:
+//	'if' | '??' | 'implies' | '|' | 'or' | 'xor' | '&' | 'and' | '==' | '!=' | '===' | '!==' | 'hastype' | 'istype' | '@'|
+//	'@@' | 'as' | 'meta' | '<' | '>' | '<=' | '>=' | '+' | '-' | '*' | '/' | '%' | '..' | '**' | '^' | '~' | 'not' |
+//	'true' | 'false';
 	
 terminal DECIMAL_VALUE returns Ecore::EInt:
 	'0'..'9' ('0'..'9')*;

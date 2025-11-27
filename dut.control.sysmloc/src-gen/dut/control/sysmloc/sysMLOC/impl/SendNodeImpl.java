@@ -3,6 +3,7 @@
  */
 package dut.control.sysmloc.sysMLOC.impl;
 
+import dut.control.sysmloc.sysMLOC.ActionBodyElement;
 import dut.control.sysmloc.sysMLOC.ActionNodeUsageDeclaration;
 import dut.control.sysmloc.sysMLOC.BasicUsagePrefix;
 import dut.control.sysmloc.sysMLOC.EmptySuccessionPrefix;
@@ -24,14 +25,18 @@ import dut.control.sysmloc.sysMLOC.VisibilityIndicator;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -62,6 +67,10 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SendNodeImpl#isIsOrdered <em>Is Ordered</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SendNodeImpl#isIsNonunique <em>Is Nonunique</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SendNodeImpl#getDeclaredName <em>Declared Name</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SendNodeImpl#isSendNodeParameter <em>Send Node Parameter</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SendNodeImpl#getViaNodeParameter <em>Via Node Parameter</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SendNodeImpl#getToNodeParameter <em>To Node Parameter</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SendNodeImpl#getElements <em>Elements</em>}</li>
  * </ul>
  *
  * @generated
@@ -417,6 +426,76 @@ public class SendNodeImpl extends ActionNodeElementImpl implements SendNode
    * @ordered
    */
   protected String declaredName = DECLARED_NAME_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isSendNodeParameter() <em>Send Node Parameter</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isSendNodeParameter()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean SEND_NODE_PARAMETER_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isSendNodeParameter() <em>Send Node Parameter</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isSendNodeParameter()
+   * @generated
+   * @ordered
+   */
+  protected boolean sendNodeParameter = SEND_NODE_PARAMETER_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getViaNodeParameter() <em>Via Node Parameter</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getViaNodeParameter()
+   * @generated
+   * @ordered
+   */
+  protected static final String VIA_NODE_PARAMETER_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getViaNodeParameter() <em>Via Node Parameter</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getViaNodeParameter()
+   * @generated
+   * @ordered
+   */
+  protected String viaNodeParameter = VIA_NODE_PARAMETER_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getToNodeParameter() <em>To Node Parameter</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getToNodeParameter()
+   * @generated
+   * @ordered
+   */
+  protected static final String TO_NODE_PARAMETER_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getToNodeParameter() <em>To Node Parameter</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getToNodeParameter()
+   * @generated
+   * @ordered
+   */
+  protected String toNodeParameter = TO_NODE_PARAMETER_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getElements()
+   * @generated
+   * @ordered
+   */
+  protected EList<ActionBodyElement> elements;
 
   /**
    * <!-- begin-user-doc -->
@@ -900,6 +979,112 @@ public class SendNodeImpl extends ActionNodeElementImpl implements SendNode
    * @generated
    */
   @Override
+  public boolean isSendNodeParameter()
+  {
+    return sendNodeParameter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setSendNodeParameter(boolean newSendNodeParameter)
+  {
+    boolean oldSendNodeParameter = sendNodeParameter;
+    sendNodeParameter = newSendNodeParameter;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SEND_NODE__SEND_NODE_PARAMETER, oldSendNodeParameter, sendNodeParameter));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getViaNodeParameter()
+  {
+    return viaNodeParameter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setViaNodeParameter(String newViaNodeParameter)
+  {
+    String oldViaNodeParameter = viaNodeParameter;
+    viaNodeParameter = newViaNodeParameter;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SEND_NODE__VIA_NODE_PARAMETER, oldViaNodeParameter, viaNodeParameter));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getToNodeParameter()
+  {
+    return toNodeParameter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setToNodeParameter(String newToNodeParameter)
+  {
+    String oldToNodeParameter = toNodeParameter;
+    toNodeParameter = newToNodeParameter;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SEND_NODE__TO_NODE_PARAMETER, oldToNodeParameter, toNodeParameter));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<ActionBodyElement> getElements()
+  {
+    if (elements == null)
+    {
+      elements = new EObjectContainmentEList<ActionBodyElement>(ActionBodyElement.class, this, SysMLOCPackage.SEND_NODE__ELEMENTS);
+    }
+    return elements;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case SysMLOCPackage.SEND_NODE__ELEMENTS:
+        return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
@@ -946,6 +1131,14 @@ public class SendNodeImpl extends ActionNodeElementImpl implements SendNode
         return isIsNonunique();
       case SysMLOCPackage.SEND_NODE__DECLARED_NAME:
         return getDeclaredName();
+      case SysMLOCPackage.SEND_NODE__SEND_NODE_PARAMETER:
+        return isSendNodeParameter();
+      case SysMLOCPackage.SEND_NODE__VIA_NODE_PARAMETER:
+        return getViaNodeParameter();
+      case SysMLOCPackage.SEND_NODE__TO_NODE_PARAMETER:
+        return getToNodeParameter();
+      case SysMLOCPackage.SEND_NODE__ELEMENTS:
+        return getElements();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -1031,6 +1224,19 @@ public class SendNodeImpl extends ActionNodeElementImpl implements SendNode
       case SysMLOCPackage.SEND_NODE__DECLARED_NAME:
         setDeclaredName((String)newValue);
         return;
+      case SysMLOCPackage.SEND_NODE__SEND_NODE_PARAMETER:
+        setSendNodeParameter((Boolean)newValue);
+        return;
+      case SysMLOCPackage.SEND_NODE__VIA_NODE_PARAMETER:
+        setViaNodeParameter((String)newValue);
+        return;
+      case SysMLOCPackage.SEND_NODE__TO_NODE_PARAMETER:
+        setToNodeParameter((String)newValue);
+        return;
+      case SysMLOCPackage.SEND_NODE__ELEMENTS:
+        getElements().clear();
+        getElements().addAll((Collection<? extends ActionBodyElement>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -1108,6 +1314,18 @@ public class SendNodeImpl extends ActionNodeElementImpl implements SendNode
       case SysMLOCPackage.SEND_NODE__DECLARED_NAME:
         setDeclaredName(DECLARED_NAME_EDEFAULT);
         return;
+      case SysMLOCPackage.SEND_NODE__SEND_NODE_PARAMETER:
+        setSendNodeParameter(SEND_NODE_PARAMETER_EDEFAULT);
+        return;
+      case SysMLOCPackage.SEND_NODE__VIA_NODE_PARAMETER:
+        setViaNodeParameter(VIA_NODE_PARAMETER_EDEFAULT);
+        return;
+      case SysMLOCPackage.SEND_NODE__TO_NODE_PARAMETER:
+        setToNodeParameter(TO_NODE_PARAMETER_EDEFAULT);
+        return;
+      case SysMLOCPackage.SEND_NODE__ELEMENTS:
+        getElements().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -1164,6 +1382,14 @@ public class SendNodeImpl extends ActionNodeElementImpl implements SendNode
         return isNonunique != IS_NONUNIQUE_EDEFAULT;
       case SysMLOCPackage.SEND_NODE__DECLARED_NAME:
         return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
+      case SysMLOCPackage.SEND_NODE__SEND_NODE_PARAMETER:
+        return sendNodeParameter != SEND_NODE_PARAMETER_EDEFAULT;
+      case SysMLOCPackage.SEND_NODE__VIA_NODE_PARAMETER:
+        return VIA_NODE_PARAMETER_EDEFAULT == null ? viaNodeParameter != null : !VIA_NODE_PARAMETER_EDEFAULT.equals(viaNodeParameter);
+      case SysMLOCPackage.SEND_NODE__TO_NODE_PARAMETER:
+        return TO_NODE_PARAMETER_EDEFAULT == null ? toNodeParameter != null : !TO_NODE_PARAMETER_EDEFAULT.equals(toNodeParameter);
+      case SysMLOCPackage.SEND_NODE__ELEMENTS:
+        return elements != null && !elements.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -1453,6 +1679,12 @@ public class SendNodeImpl extends ActionNodeElementImpl implements SendNode
     result.append(isNonunique);
     result.append(", declaredName: ");
     result.append(declaredName);
+    result.append(", sendNodeParameter: ");
+    result.append(sendNodeParameter);
+    result.append(", viaNodeParameter: ");
+    result.append(viaNodeParameter);
+    result.append(", toNodeParameter: ");
+    result.append(toNodeParameter);
     result.append(')');
     return result.toString();
   }

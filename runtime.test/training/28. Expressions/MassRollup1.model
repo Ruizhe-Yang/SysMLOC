@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <packages declaredName="MassRollup1">
+    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="NumericalFunctions"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="MassedThing">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="simpleMass">
+        <subsetting>ISQ::mass</subsetting>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="totalMass">
+        <subsetting>ISQ::mass</subsetting>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="simpleThing">
+      <typings>MassedThing</typings>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>totalMass</redefinitions>
+        <valuePart>simpleMass</valuePart>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="compositeThing">
+      <typings>MassedThing</typings>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="subcomponents">
+        <typings>MassedThing</typings>
+        <Multiplicity>*</Multiplicity>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>totalMass</redefinitions>
+        <valuePart>simpleMass + sum(subcomponents.totalMass)</valuePart>
+      </elements>
+    </elements>
+  </packages>
+</sysMLOC:Namespace>

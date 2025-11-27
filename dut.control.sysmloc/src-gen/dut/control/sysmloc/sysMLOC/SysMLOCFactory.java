@@ -555,6 +555,15 @@ public interface SysMLOCFactory extends EFactory
   AcceptNode createAcceptNode();
 
   /**
+   * Returns a new object of class '<em>Payload Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Payload Parameter</em>'.
+   * @generated
+   */
+  PayloadParameter createPayloadParameter();
+
+  /**
    * Returns a new object of class '<em>Assignment Node</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -636,6 +645,15 @@ public interface SysMLOCFactory extends EFactory
   ForLoopNode createForLoopNode();
 
   /**
+   * Returns a new object of class '<em>For Variable Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>For Variable Parameter</em>'.
+   * @generated
+   */
+  ForVariableParameter createForVariableParameter();
+
+  /**
    * Returns a new object of class '<em>Terminate Node</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -688,15 +706,6 @@ public interface SysMLOCFactory extends EFactory
    * @generated
    */
   ValuePart createValuePart();
-
-  /**
-   * Returns a new object of class '<em>is Import All Fragment</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>is Import All Fragment</em>'.
-   * @generated
-   */
-  isImportAllFragment createisImportAllFragment();
 
   /**
    * Returns a new object of class '<em>Member Prefix</em>'.
@@ -877,6 +886,42 @@ public interface SysMLOCFactory extends EFactory
    * @generated
    */
   AcceptNodeDeclaration createAcceptNodeDeclaration();
+
+  /**
+   * Returns a new object of class '<em>Accept Parameter Part</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Accept Parameter Part</em>'.
+   * @generated
+   */
+  AcceptParameterPart createAcceptParameterPart();
+
+  /**
+   * Returns a new object of class '<em>Payload Feature</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Payload Feature</em>'.
+   * @generated
+   */
+  PayloadFeature createPayloadFeature();
+
+  /**
+   * Returns a new object of class '<em>Payload Feature Specialization Part</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Payload Feature Specialization Part</em>'.
+   * @generated
+   */
+  PayloadFeatureSpecializationPart createPayloadFeatureSpecializationPart();
+
+  /**
+   * Returns a new object of class '<em>Trigger Value Part</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Trigger Value Part</em>'.
+   * @generated
+   */
+  TriggerValuePart createTriggerValuePart();
 
   /**
    * Returns a new object of class '<em>Assignment Node Declaration</em>'.

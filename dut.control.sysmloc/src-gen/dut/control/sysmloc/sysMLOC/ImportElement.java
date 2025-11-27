@@ -9,6 +9,15 @@ package dut.control.sysmloc.sysMLOC;
  * A representation of the model object '<em><b>Import Element</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.ImportElement#getVisibility <em>Visibility</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.ImportElement#isIsImportAll <em>Is Import All</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.ImportElement#getDeclaredName <em>Declared Name</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.ImportElement#isIsRecursive <em>Is Recursive</em>}</li>
+ * </ul>
  *
  * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getImportElement()
  * @model
@@ -16,4 +25,95 @@ package dut.control.sysmloc.sysMLOC;
  */
 public interface ImportElement extends PackageBodyElement, DefinitionBodyElement, ActionBodyElement
 {
+  /**
+   * Returns the value of the '<em><b>Visibility</b></em>' attribute.
+   * The literals are from the enumeration {@link dut.control.sysmloc.sysMLOC.VisibilityIndicator}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Visibility</em>' attribute.
+   * @see dut.control.sysmloc.sysMLOC.VisibilityIndicator
+   * @see #setVisibility(VisibilityIndicator)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getImportElement_Visibility()
+   * @model
+   * @generated
+   */
+  VisibilityIndicator getVisibility();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.ImportElement#getVisibility <em>Visibility</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Visibility</em>' attribute.
+   * @see dut.control.sysmloc.sysMLOC.VisibilityIndicator
+   * @see #getVisibility()
+   * @generated
+   */
+  void setVisibility(VisibilityIndicator value);
+
+  /**
+   * Returns the value of the '<em><b>Is Import All</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Is Import All</em>' attribute.
+   * @see #setIsImportAll(boolean)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getImportElement_IsImportAll()
+   * @model
+   * @generated
+   */
+  boolean isIsImportAll();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.ImportElement#isIsImportAll <em>Is Import All</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Is Import All</em>' attribute.
+   * @see #isIsImportAll()
+   * @generated
+   */
+  void setIsImportAll(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Declared Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Declared Name</em>' attribute.
+   * @see #setDeclaredName(String)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getImportElement_DeclaredName()
+   * @model
+   * @generated
+   */
+  String getDeclaredName();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.ImportElement#getDeclaredName <em>Declared Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Declared Name</em>' attribute.
+   * @see #getDeclaredName()
+   * @generated
+   */
+  void setDeclaredName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Is Recursive</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Is Recursive</em>' attribute.
+   * @see #setIsRecursive(boolean)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getImportElement_IsRecursive()
+   * @model
+   * @generated
+   */
+  boolean isIsRecursive();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.ImportElement#isIsRecursive <em>Is Recursive</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Is Recursive</em>' attribute.
+   * @see #isIsRecursive()
+   * @generated
+   */
+  void setIsRecursive(boolean value);
+
 } // ImportElement

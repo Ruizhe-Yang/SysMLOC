@@ -54,6 +54,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.MergeNodeImpl#isIsDerived <em>Is Derived</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.MergeNodeImpl#isIsIndividual <em>Is Individual</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.MergeNodeImpl#getPortionKind <em>Portion Kind</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.MergeNodeImpl#getUsageExtension <em>Usage Extension</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.MergeNodeImpl#getTypings <em>Typings</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.MergeNodeImpl#getSubsetting <em>Subsetting</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.MergeNodeImpl#getReferences <em>References</em>}</li>
@@ -259,6 +260,16 @@ public class MergeNodeImpl extends ActionNodeElementImpl implements MergeNode
    * @ordered
    */
   protected PortionKind portionKind = PORTION_KIND_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getUsageExtension() <em>Usage Extension</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getUsageExtension()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> usageExtension;
 
   /**
    * The cached value of the '{@link #getTypings() <em>Typings</em>}' attribute list.
@@ -657,6 +668,21 @@ public class MergeNodeImpl extends ActionNodeElementImpl implements MergeNode
    * @generated
    */
   @Override
+  public EList<String> getUsageExtension()
+  {
+    if (usageExtension == null)
+    {
+      usageExtension = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.MERGE_NODE__USAGE_EXTENSION);
+    }
+    return usageExtension;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<String> getTypings()
   {
     if (typings == null)
@@ -877,6 +903,8 @@ public class MergeNodeImpl extends ActionNodeElementImpl implements MergeNode
         return isIsIndividual();
       case SysMLOCPackage.MERGE_NODE__PORTION_KIND:
         return getPortionKind();
+      case SysMLOCPackage.MERGE_NODE__USAGE_EXTENSION:
+        return getUsageExtension();
       case SysMLOCPackage.MERGE_NODE__TYPINGS:
         return getTypings();
       case SysMLOCPackage.MERGE_NODE__SUBSETTING:
@@ -942,6 +970,10 @@ public class MergeNodeImpl extends ActionNodeElementImpl implements MergeNode
         return;
       case SysMLOCPackage.MERGE_NODE__PORTION_KIND:
         setPortionKind((PortionKind)newValue);
+        return;
+      case SysMLOCPackage.MERGE_NODE__USAGE_EXTENSION:
+        getUsageExtension().clear();
+        getUsageExtension().addAll((Collection<? extends String>)newValue);
         return;
       case SysMLOCPackage.MERGE_NODE__TYPINGS:
         getTypings().clear();
@@ -1024,6 +1056,9 @@ public class MergeNodeImpl extends ActionNodeElementImpl implements MergeNode
       case SysMLOCPackage.MERGE_NODE__PORTION_KIND:
         setPortionKind(PORTION_KIND_EDEFAULT);
         return;
+      case SysMLOCPackage.MERGE_NODE__USAGE_EXTENSION:
+        getUsageExtension().clear();
+        return;
       case SysMLOCPackage.MERGE_NODE__TYPINGS:
         getTypings().clear();
         return;
@@ -1088,6 +1123,8 @@ public class MergeNodeImpl extends ActionNodeElementImpl implements MergeNode
         return isIndividual != IS_INDIVIDUAL_EDEFAULT;
       case SysMLOCPackage.MERGE_NODE__PORTION_KIND:
         return portionKind != PORTION_KIND_EDEFAULT;
+      case SysMLOCPackage.MERGE_NODE__USAGE_EXTENSION:
+        return usageExtension != null && !usageExtension.isEmpty();
       case SysMLOCPackage.MERGE_NODE__TYPINGS:
         return typings != null && !typings.isEmpty();
       case SysMLOCPackage.MERGE_NODE__SUBSETTING:
@@ -1155,6 +1192,7 @@ public class MergeNodeImpl extends ActionNodeElementImpl implements MergeNode
       {
         case SysMLOCPackage.MERGE_NODE__IS_INDIVIDUAL: return SysMLOCPackage.CONTROL_NODE_PREFIX__IS_INDIVIDUAL;
         case SysMLOCPackage.MERGE_NODE__PORTION_KIND: return SysMLOCPackage.CONTROL_NODE_PREFIX__PORTION_KIND;
+        case SysMLOCPackage.MERGE_NODE__USAGE_EXTENSION: return SysMLOCPackage.CONTROL_NODE_PREFIX__USAGE_EXTENSION;
         default: return -1;
       }
     }
@@ -1255,6 +1293,7 @@ public class MergeNodeImpl extends ActionNodeElementImpl implements MergeNode
       {
         case SysMLOCPackage.CONTROL_NODE_PREFIX__IS_INDIVIDUAL: return SysMLOCPackage.MERGE_NODE__IS_INDIVIDUAL;
         case SysMLOCPackage.CONTROL_NODE_PREFIX__PORTION_KIND: return SysMLOCPackage.MERGE_NODE__PORTION_KIND;
+        case SysMLOCPackage.CONTROL_NODE_PREFIX__USAGE_EXTENSION: return SysMLOCPackage.MERGE_NODE__USAGE_EXTENSION;
         default: return -1;
       }
     }
@@ -1343,6 +1382,8 @@ public class MergeNodeImpl extends ActionNodeElementImpl implements MergeNode
     result.append(isIndividual);
     result.append(", portionKind: ");
     result.append(portionKind);
+    result.append(", UsageExtension: ");
+    result.append(usageExtension);
     result.append(", typings: ");
     result.append(typings);
     result.append(", subsetting: ");

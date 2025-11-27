@@ -3,17 +3,95 @@
  */
 package dut.control.sysmloc.sysMLOC;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>For Loop Node</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.ForLoopNode#getForVariableParameter <em>For Variable Parameter</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.ForLoopNode#getNodeParameter <em>Node Parameter</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.ForLoopNode#getActionParameterEnd <em>Action Parameter End</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.ForLoopNode#getElements <em>Elements</em>}</li>
+ * </ul>
  *
  * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getForLoopNode()
  * @model
  * @generated
  */
-public interface ForLoopNode extends MemberPrefix
+public interface ForLoopNode extends ActionNodeElement, EmptySuccessionPrefix, MemberPrefix, ActionNodePrefix, OccurrenceUsagePrefix, BasicUsagePrefix, RefPrefix, ActionNodeUsageDeclaration, UsageDeclaration, FeatureDeclaration, FeatureSpecializationPart, FeatureSpecialization, MultiplicityPart, MultiplicityRange
 {
+  /**
+   * Returns the value of the '<em><b>For Variable Parameter</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>For Variable Parameter</em>' containment reference.
+   * @see #setForVariableParameter(ForVariableParameter)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getForLoopNode_ForVariableParameter()
+   * @model containment="true"
+   * @generated
+   */
+  ForVariableParameter getForVariableParameter();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.ForLoopNode#getForVariableParameter <em>For Variable Parameter</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>For Variable Parameter</em>' containment reference.
+   * @see #getForVariableParameter()
+   * @generated
+   */
+  void setForVariableParameter(ForVariableParameter value);
+
+  /**
+   * Returns the value of the '<em><b>Node Parameter</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Node Parameter</em>' attribute.
+   * @see #setNodeParameter(String)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getForLoopNode_NodeParameter()
+   * @model
+   * @generated
+   */
+  String getNodeParameter();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.ForLoopNode#getNodeParameter <em>Node Parameter</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Node Parameter</em>' attribute.
+   * @see #getNodeParameter()
+   * @generated
+   */
+  void setNodeParameter(String value);
+
+  /**
+   * Returns the value of the '<em><b>Action Parameter End</b></em>' containment reference list.
+   * The list contents are of type {@link dut.control.sysmloc.sysMLOC.ActionParameterEnd}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Action Parameter End</em>' containment reference list.
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getForLoopNode_ActionParameterEnd()
+   * @model containment="true"
+   * @generated
+   */
+  EList<ActionParameterEnd> getActionParameterEnd();
+
+  /**
+   * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
+   * The list contents are of type {@link dut.control.sysmloc.sysMLOC.ActionBodyElement}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Elements</em>' containment reference list.
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getForLoopNode_Elements()
+   * @model containment="true"
+   * @generated
+   */
+  EList<ActionBodyElement> getElements();
+
 } // ForLoopNode

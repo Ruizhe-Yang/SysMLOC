@@ -7,11 +7,17 @@ import dut.control.sysmloc.sysMLOC.ControlNodePrefix;
 import dut.control.sysmloc.sysMLOC.PortionKind;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,6 +29,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ControlNodePrefixImpl#isIsIndividual <em>Is Individual</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ControlNodePrefixImpl#getPortionKind <em>Portion Kind</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ControlNodePrefixImpl#getUsageExtension <em>Usage Extension</em>}</li>
  * </ul>
  *
  * @generated
@@ -68,6 +75,16 @@ public class ControlNodePrefixImpl extends RefPrefixImpl implements ControlNodeP
    * @ordered
    */
   protected PortionKind portionKind = PORTION_KIND_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getUsageExtension() <em>Usage Extension</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getUsageExtension()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> usageExtension;
 
   /**
    * <!-- begin-user-doc -->
@@ -146,6 +163,21 @@ public class ControlNodePrefixImpl extends RefPrefixImpl implements ControlNodeP
    * @generated
    */
   @Override
+  public EList<String> getUsageExtension()
+  {
+    if (usageExtension == null)
+    {
+      usageExtension = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.CONTROL_NODE_PREFIX__USAGE_EXTENSION);
+    }
+    return usageExtension;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
@@ -154,6 +186,8 @@ public class ControlNodePrefixImpl extends RefPrefixImpl implements ControlNodeP
         return isIsIndividual();
       case SysMLOCPackage.CONTROL_NODE_PREFIX__PORTION_KIND:
         return getPortionKind();
+      case SysMLOCPackage.CONTROL_NODE_PREFIX__USAGE_EXTENSION:
+        return getUsageExtension();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -163,6 +197,7 @@ public class ControlNodePrefixImpl extends RefPrefixImpl implements ControlNodeP
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -173,6 +208,10 @@ public class ControlNodePrefixImpl extends RefPrefixImpl implements ControlNodeP
         return;
       case SysMLOCPackage.CONTROL_NODE_PREFIX__PORTION_KIND:
         setPortionKind((PortionKind)newValue);
+        return;
+      case SysMLOCPackage.CONTROL_NODE_PREFIX__USAGE_EXTENSION:
+        getUsageExtension().clear();
+        getUsageExtension().addAll((Collection<? extends String>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -194,6 +233,9 @@ public class ControlNodePrefixImpl extends RefPrefixImpl implements ControlNodeP
       case SysMLOCPackage.CONTROL_NODE_PREFIX__PORTION_KIND:
         setPortionKind(PORTION_KIND_EDEFAULT);
         return;
+      case SysMLOCPackage.CONTROL_NODE_PREFIX__USAGE_EXTENSION:
+        getUsageExtension().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -212,6 +254,8 @@ public class ControlNodePrefixImpl extends RefPrefixImpl implements ControlNodeP
         return isIndividual != IS_INDIVIDUAL_EDEFAULT;
       case SysMLOCPackage.CONTROL_NODE_PREFIX__PORTION_KIND:
         return portionKind != PORTION_KIND_EDEFAULT;
+      case SysMLOCPackage.CONTROL_NODE_PREFIX__USAGE_EXTENSION:
+        return usageExtension != null && !usageExtension.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -231,6 +275,8 @@ public class ControlNodePrefixImpl extends RefPrefixImpl implements ControlNodeP
     result.append(isIndividual);
     result.append(", portionKind: ");
     result.append(portionKind);
+    result.append(", UsageExtension: ");
+    result.append(usageExtension);
     result.append(')');
     return result.toString();
   }

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <packages declaredName="'Individuals and Snapshots Example'">
+    <elements xsi:type="sysMLOC:NamespaceImport" declaredName="'Part Definition Example'"/>
+    <elements xsi:type="sysMLOC:PartDefinition" isIndividual="true" declaredName="Vehicle_1">
+      <superclassifiers>Vehicle</superclassifiers>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle_1_t0">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <redefinitions>mass</redefinitions>
+          <valuePart>2000.0</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <redefinitions>status</redefinitions>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <redefinitions>gearSetting</redefinitions>
+            <valuePart>0</valuePart>
+          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <redefinitions>acceleratorPosition</redefinitions>
+            <valuePart>0.0</valuePart>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle_1_t1">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <redefinitions>mass</redefinitions>
+          <valuePart>1500.0</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <redefinitions>status</redefinitions>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <redefinitions>gearSetting</redefinitions>
+            <valuePart>2</valuePart>
+          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <redefinitions>acceleratorPosition</redefinitions>
+            <valuePart>0.5</valuePart>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:SuccessionAsUsage">
+        <connectorPart refElement="vehicle_1_t0"/>
+        <connectorPart refElement="vehicle_1_t1"/>
+      </elements>
+    </elements>
+  </packages>
+</sysMLOC:Namespace>

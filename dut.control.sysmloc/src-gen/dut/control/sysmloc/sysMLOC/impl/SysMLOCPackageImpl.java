@@ -459,6 +459,13 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass payloadParameterEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass assignmentNodeEClass = null;
 
   /**
@@ -522,6 +529,13 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass forVariableParameterEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass terminateNodeEClass = null;
 
   /**
@@ -558,13 +572,6 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   private EClass valuePartEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass isImportAllFragmentEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -711,6 +718,34 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass acceptParameterPartEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass payloadFeatureEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass payloadFeatureSpecializationPartEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass triggerValuePartEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass assignmentNodeDeclarationEClass = null;
 
   /**
@@ -810,6 +845,13 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   private EEnum portionKindEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum triggerKindEEnum = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -1101,6 +1143,50 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   @Override
+  public EAttribute getImportElement_Visibility()
+  {
+        return (EAttribute)getImportElement().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getImportElement_IsImportAll()
+  {
+        return (EAttribute)getImportElement().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getImportElement_DeclaredName()
+  {
+        return (EAttribute)getImportElement().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getImportElement_IsRecursive()
+  {
+        return (EAttribute)getImportElement().getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getDefinitionElement()
   {
     if (definitionElementEClass == null)
@@ -1281,39 +1367,6 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   @Override
-  public EAttribute getNamespaceImport_Visibility()
-  {
-        return (EAttribute)getNamespaceImport().getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getNamespaceImport_DeclaredName()
-  {
-        return (EAttribute)getNamespaceImport().getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getNamespaceImport_IsRecursive()
-  {
-        return (EAttribute)getNamespaceImport().getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EClass getMembershipImport()
   {
     if (membershipImportEClass == null)
@@ -1321,39 +1374,6 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
       membershipImportEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(24);
     }
     return membershipImportEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getMembershipImport_Visibility()
-  {
-        return (EAttribute)getMembershipImport().getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getMembershipImport_DeclaredName()
-  {
-        return (EAttribute)getMembershipImport().getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getMembershipImport_IsRecursive()
-  {
-        return (EAttribute)getMembershipImport().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1666,9 +1686,20 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   @Override
+  public EAttribute getEnumeratedValue_UsageExtension()
+  {
+        return (EAttribute)getEnumeratedValue().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EReference getEnumeratedValue_Elements()
   {
-        return (EReference)getEnumeratedValue().getEStructuralFeatures().get(0);
+        return (EReference)getEnumeratedValue().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2374,6 +2405,50 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   @Override
+  public EAttribute getSendNode_SendNodeParameter()
+  {
+        return (EAttribute)getSendNode().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSendNode_ViaNodeParameter()
+  {
+        return (EAttribute)getSendNode().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSendNode_ToNodeParameter()
+  {
+        return (EAttribute)getSendNode().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSendNode_Elements()
+  {
+        return (EReference)getSendNode().getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getAcceptNode()
   {
     if (acceptNodeEClass == null)
@@ -2400,11 +2475,26 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   @Override
+  public EClass getPayloadParameter()
+  {
+    if (payloadParameterEClass == null)
+    {
+      payloadParameterEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(59);
+    }
+    return payloadParameterEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getAssignmentNode()
   {
     if (assignmentNodeEClass == null)
     {
-      assignmentNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(59);
+      assignmentNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(60);
     }
     return assignmentNodeEClass;
   }
@@ -2430,7 +2520,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (ifNodeEClass == null)
     {
-      ifNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(60);
+      ifNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(61);
     }
     return ifNodeEClass;
   }
@@ -2474,11 +2564,22 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   @Override
+  public EReference getIfNode_ElseNode()
+  {
+        return (EReference)getIfNode().getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getWhileLoopNode()
   {
     if (whileLoopNodeEClass == null)
     {
-      whileLoopNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(61);
+      whileLoopNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(62);
     }
     return whileLoopNodeEClass;
   }
@@ -2537,7 +2638,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (mergeNodeEClass == null)
     {
-      mergeNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(62);
+      mergeNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(63);
     }
     return mergeNodeEClass;
   }
@@ -2563,7 +2664,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (decisionNodeEClass == null)
     {
-      decisionNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(63);
+      decisionNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(64);
     }
     return decisionNodeEClass;
   }
@@ -2589,7 +2690,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (joinNodeEClass == null)
     {
-      joinNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(64);
+      joinNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(65);
     }
     return joinNodeEClass;
   }
@@ -2615,7 +2716,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (forkNodeEClass == null)
     {
-      forkNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(65);
+      forkNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(66);
     }
     return forkNodeEClass;
   }
@@ -2641,7 +2742,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (actionParameterEndEClass == null)
     {
-      actionParameterEndEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(66);
+      actionParameterEndEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(67);
     }
     return actionParameterEndEClass;
   }
@@ -2656,9 +2757,68 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (forLoopNodeEClass == null)
     {
-      forLoopNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(67);
+      forLoopNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(68);
     }
     return forLoopNodeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getForLoopNode_ForVariableParameter()
+  {
+        return (EReference)getForLoopNode().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getForLoopNode_NodeParameter()
+  {
+        return (EAttribute)getForLoopNode().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getForLoopNode_ActionParameterEnd()
+  {
+        return (EReference)getForLoopNode().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getForLoopNode_Elements()
+  {
+        return (EReference)getForLoopNode().getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getForVariableParameter()
+  {
+    if (forVariableParameterEClass == null)
+    {
+      forVariableParameterEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(69);
+    }
+    return forVariableParameterEClass;
   }
 
   /**
@@ -2671,7 +2831,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (terminateNodeEClass == null)
     {
-      terminateNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(68);
+      terminateNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(70);
     }
     return terminateNodeEClass;
   }
@@ -2686,7 +2846,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (guardedSuccessionElementEClass == null)
     {
-      guardedSuccessionElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(69);
+      guardedSuccessionElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(71);
     }
     return guardedSuccessionElementEClass;
   }
@@ -2734,7 +2894,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (targetSuccessionElementEClass == null)
     {
-      targetSuccessionElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(70);
+      targetSuccessionElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(72);
     }
     return targetSuccessionElementEClass;
   }
@@ -2760,7 +2920,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (emptySuccessionPrefixEClass == null)
     {
-      emptySuccessionPrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(74);
+      emptySuccessionPrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(77);
     }
     return emptySuccessionPrefixEClass;
   }
@@ -2797,7 +2957,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (multiplicityRangeEClass == null)
     {
-      multiplicityRangeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(75);
+      multiplicityRangeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(78);
     }
     return multiplicityRangeEClass;
   }
@@ -2823,35 +2983,9 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (valuePartEClass == null)
     {
-      valuePartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(76);
+      valuePartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(79);
     }
     return valuePartEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getisImportAllFragment()
-  {
-    if (isImportAllFragmentEClass == null)
-    {
-      isImportAllFragmentEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(77);
-    }
-    return isImportAllFragmentEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getisImportAllFragment_IsImportAll()
-  {
-        return (EAttribute)getisImportAllFragment().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2864,7 +2998,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (memberPrefixEClass == null)
     {
-      memberPrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(78);
+      memberPrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(80);
     }
     return memberPrefixEClass;
   }
@@ -2890,7 +3024,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (definitionPrefixEClass == null)
     {
-      definitionPrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(79);
+      definitionPrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(81);
     }
     return definitionPrefixEClass;
   }
@@ -2905,7 +3039,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (occurrenceDefinitionPrefixEClass == null)
     {
-      occurrenceDefinitionPrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(80);
+      occurrenceDefinitionPrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(82);
     }
     return occurrenceDefinitionPrefixEClass;
   }
@@ -2931,7 +3065,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (basicDefinitionPrefixEClass == null)
     {
-      basicDefinitionPrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(81);
+      basicDefinitionPrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(83);
     }
     return basicDefinitionPrefixEClass;
   }
@@ -2968,9 +3102,20 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (usagePrefixEClass == null)
     {
-      usagePrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(82);
+      usagePrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(84);
     }
     return usagePrefixEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getUsagePrefix_UsageExtension()
+  {
+        return (EAttribute)getUsagePrefix().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2983,7 +3128,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (unextendedUsagePrefixEClass == null)
     {
-      unextendedUsagePrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(83);
+      unextendedUsagePrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(85);
     }
     return unextendedUsagePrefixEClass;
   }
@@ -2998,7 +3143,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (endUsagePrefixEClass == null)
     {
-      endUsagePrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(84);
+      endUsagePrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(86);
     }
     return endUsagePrefixEClass;
   }
@@ -3024,7 +3169,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (occurrenceUsagePrefixEClass == null)
     {
-      occurrenceUsagePrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(85);
+      occurrenceUsagePrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(87);
     }
     return occurrenceUsagePrefixEClass;
   }
@@ -3072,7 +3217,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (refPrefixEClass == null)
     {
-      refPrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(86);
+      refPrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(88);
     }
     return refPrefixEClass;
   }
@@ -3142,7 +3287,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (basicUsagePrefixEClass == null)
     {
-      basicUsagePrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(87);
+      basicUsagePrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(89);
     }
     return basicUsagePrefixEClass;
   }
@@ -3168,7 +3313,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (connectorPartEClass == null)
     {
-      connectorPartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(88);
+      connectorPartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(90);
     }
     return connectorPartEClass;
   }
@@ -3194,7 +3339,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (definitionDeclarationEClass == null)
     {
-      definitionDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(89);
+      definitionDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(91);
     }
     return definitionDeclarationEClass;
   }
@@ -3231,7 +3376,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (actionUsageDeclarationEClass == null)
     {
-      actionUsageDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(90);
+      actionUsageDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(92);
     }
     return actionUsageDeclarationEClass;
   }
@@ -3246,7 +3391,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (actionNodeUsageDeclarationEClass == null)
     {
-      actionNodeUsageDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(91);
+      actionNodeUsageDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(93);
     }
     return actionNodeUsageDeclarationEClass;
   }
@@ -3261,7 +3406,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (usageEClass == null)
     {
-      usageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(92);
+      usageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(94);
     }
     return usageEClass;
   }
@@ -3276,7 +3421,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (usageDeclarationEClass == null)
     {
-      usageDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(93);
+      usageDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(95);
     }
     return usageDeclarationEClass;
   }
@@ -3291,7 +3436,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (featureValueEClass == null)
     {
-      featureValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(94);
+      featureValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(96);
     }
     return featureValueEClass;
   }
@@ -3339,7 +3484,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (featureDeclarationEClass == null)
     {
-      featureDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(95);
+      featureDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(97);
     }
     return featureDeclarationEClass;
   }
@@ -3365,7 +3510,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (featureSpecializationPartEClass == null)
     {
-      featureSpecializationPartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(96);
+      featureSpecializationPartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(98);
     }
     return featureSpecializationPartEClass;
   }
@@ -3380,9 +3525,113 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (acceptNodeDeclarationEClass == null)
     {
-      acceptNodeDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(97);
+      acceptNodeDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(99);
     }
     return acceptNodeDeclarationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getAcceptParameterPart()
+  {
+    if (acceptParameterPartEClass == null)
+    {
+      acceptParameterPartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(100);
+    }
+    return acceptParameterPartEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getAcceptParameterPart_AcceptParameter()
+  {
+        return (EReference)getAcceptParameterPart().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getAcceptParameterPart_ViaNodeParameter()
+  {
+        return (EAttribute)getAcceptParameterPart().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getPayloadFeature()
+  {
+    if (payloadFeatureEClass == null)
+    {
+      payloadFeatureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(101);
+    }
+    return payloadFeatureEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getPayloadFeatureSpecializationPart()
+  {
+    if (payloadFeatureSpecializationPartEClass == null)
+    {
+      payloadFeatureSpecializationPartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(102);
+    }
+    return payloadFeatureSpecializationPartEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getTriggerValuePart()
+  {
+    if (triggerValuePartEClass == null)
+    {
+      triggerValuePartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(103);
+    }
+    return triggerValuePartEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTriggerValuePart_Triggerkind()
+  {
+        return (EAttribute)getTriggerValuePart().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTriggerValuePart_TriggerExpression()
+  {
+        return (EAttribute)getTriggerValuePart().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -3395,9 +3644,42 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (assignmentNodeDeclarationEClass == null)
     {
-      assignmentNodeDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(98);
+      assignmentNodeDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(104);
     }
     return assignmentNodeDeclarationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getAssignmentNodeDeclaration_TargetParameter()
+  {
+        return (EAttribute)getAssignmentNodeDeclaration().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getAssignmentNodeDeclaration_FeatureChain()
+  {
+        return (EAttribute)getAssignmentNodeDeclaration().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getAssignmentNodeDeclaration_NodeParameter()
+  {
+        return (EAttribute)getAssignmentNodeDeclaration().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -3410,7 +3692,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (identificationEClass == null)
     {
-      identificationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(99);
+      identificationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(105);
     }
     return identificationEClass;
   }
@@ -3447,7 +3729,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (multiplicityPartEClass == null)
     {
-      multiplicityPartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(100);
+      multiplicityPartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(106);
     }
     return multiplicityPartEClass;
   }
@@ -3484,7 +3766,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (featureSpecializationEClass == null)
     {
-      featureSpecializationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(101);
+      featureSpecializationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(107);
     }
     return featureSpecializationEClass;
   }
@@ -3554,7 +3836,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (guardExpressionEClass == null)
     {
-      guardExpressionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(102);
+      guardExpressionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(108);
     }
     return guardExpressionEClass;
   }
@@ -3580,7 +3862,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (transitionSuccessionEClass == null)
     {
-      transitionSuccessionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(103);
+      transitionSuccessionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(109);
     }
     return transitionSuccessionEClass;
   }
@@ -3606,7 +3888,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (targetSuccessionEClass == null)
     {
-      targetSuccessionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(104);
+      targetSuccessionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(110);
     }
     return targetSuccessionEClass;
   }
@@ -3621,7 +3903,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (guardedTargetSuccessionEClass == null)
     {
-      guardedTargetSuccessionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(105);
+      guardedTargetSuccessionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(111);
     }
     return guardedTargetSuccessionEClass;
   }
@@ -3647,7 +3929,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (defaultTargetSuccessionEClass == null)
     {
-      defaultTargetSuccessionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(106);
+      defaultTargetSuccessionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(112);
     }
     return defaultTargetSuccessionEClass;
   }
@@ -3662,7 +3944,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (referenceSubsettingEClass == null)
     {
-      referenceSubsettingEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(107);
+      referenceSubsettingEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(113);
     }
     return referenceSubsettingEClass;
   }
@@ -3688,7 +3970,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (actionNodePrefixEClass == null)
     {
-      actionNodePrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(108);
+      actionNodePrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(114);
     }
     return actionNodePrefixEClass;
   }
@@ -3703,7 +3985,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (controlNodePrefixEClass == null)
     {
-      controlNodePrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(109);
+      controlNodePrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(115);
     }
     return controlNodePrefixEClass;
   }
@@ -3736,11 +4018,22 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   @Override
+  public EAttribute getControlNodePrefix_UsageExtension()
+  {
+        return (EAttribute)getControlNodePrefix().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EEnum getVisibilityIndicator()
   {
     if (visibilityIndicatorEEnum == null)
     {
-      visibilityIndicatorEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(71);
+      visibilityIndicatorEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(73);
     }
     return visibilityIndicatorEEnum;
   }
@@ -3755,7 +4048,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (featureDirectionEEnum == null)
     {
-      featureDirectionEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(72);
+      featureDirectionEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(74);
     }
     return featureDirectionEEnum;
   }
@@ -3770,9 +4063,24 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (portionKindEEnum == null)
     {
-      portionKindEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(73);
+      portionKindEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(75);
     }
     return portionKindEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EEnum getTriggerKind()
+  {
+    if (triggerKindEEnum == null)
+    {
+      triggerKindEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(76);
+    }
+    return triggerKindEEnum;
   }
 
   /**

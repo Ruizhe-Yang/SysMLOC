@@ -54,6 +54,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.BindingConnectorAsUsageImpl#isIsReadOnly <em>Is Read Only</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.BindingConnectorAsUsageImpl#isIsDerived <em>Is Derived</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.BindingConnectorAsUsageImpl#isIsReference <em>Is Reference</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.BindingConnectorAsUsageImpl#getUsageExtension <em>Usage Extension</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.BindingConnectorAsUsageImpl#getTypings <em>Typings</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.BindingConnectorAsUsageImpl#getSubsetting <em>Subsetting</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.BindingConnectorAsUsageImpl#getReferences <em>References</em>}</li>
@@ -230,6 +231,16 @@ public class BindingConnectorAsUsageImpl extends NonOccurrenceUsageElementImpl i
    * @ordered
    */
   protected boolean isReference = IS_REFERENCE_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getUsageExtension() <em>Usage Extension</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getUsageExtension()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> usageExtension;
 
   /**
    * The cached value of the '{@link #getTypings() <em>Typings</em>}' attribute list.
@@ -598,6 +609,21 @@ public class BindingConnectorAsUsageImpl extends NonOccurrenceUsageElementImpl i
    * @generated
    */
   @Override
+  public EList<String> getUsageExtension()
+  {
+    if (usageExtension == null)
+    {
+      usageExtension = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__USAGE_EXTENSION);
+    }
+    return usageExtension;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<String> getTypings()
   {
     if (typings == null)
@@ -831,6 +857,8 @@ public class BindingConnectorAsUsageImpl extends NonOccurrenceUsageElementImpl i
         return isIsDerived();
       case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__IS_REFERENCE:
         return isIsReference();
+      case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__USAGE_EXTENSION:
+        return getUsageExtension();
       case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__TYPINGS:
         return getTypings();
       case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__SUBSETTING:
@@ -891,6 +919,10 @@ public class BindingConnectorAsUsageImpl extends NonOccurrenceUsageElementImpl i
         return;
       case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__IS_REFERENCE:
         setIsReference((Boolean)newValue);
+        return;
+      case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__USAGE_EXTENSION:
+        getUsageExtension().clear();
+        getUsageExtension().addAll((Collection<? extends String>)newValue);
         return;
       case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__TYPINGS:
         getTypings().clear();
@@ -971,6 +1003,9 @@ public class BindingConnectorAsUsageImpl extends NonOccurrenceUsageElementImpl i
       case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__IS_REFERENCE:
         setIsReference(IS_REFERENCE_EDEFAULT);
         return;
+      case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__USAGE_EXTENSION:
+        getUsageExtension().clear();
+        return;
       case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__TYPINGS:
         getTypings().clear();
         return;
@@ -1034,6 +1069,8 @@ public class BindingConnectorAsUsageImpl extends NonOccurrenceUsageElementImpl i
         return isDerived != IS_DERIVED_EDEFAULT;
       case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__IS_REFERENCE:
         return isReference != IS_REFERENCE_EDEFAULT;
+      case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__USAGE_EXTENSION:
+        return usageExtension != null && !usageExtension.isEmpty();
       case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__TYPINGS:
         return typings != null && !typings.isEmpty();
       case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__SUBSETTING:
@@ -1115,6 +1152,7 @@ public class BindingConnectorAsUsageImpl extends NonOccurrenceUsageElementImpl i
     {
       switch (derivedFeatureID)
       {
+        case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__USAGE_EXTENSION: return SysMLOCPackage.USAGE_PREFIX__USAGE_EXTENSION;
         default: return -1;
       }
     }
@@ -1227,6 +1265,7 @@ public class BindingConnectorAsUsageImpl extends NonOccurrenceUsageElementImpl i
     {
       switch (baseFeatureID)
       {
+        case SysMLOCPackage.USAGE_PREFIX__USAGE_EXTENSION: return SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__USAGE_EXTENSION;
         default: return -1;
       }
     }
@@ -1311,6 +1350,8 @@ public class BindingConnectorAsUsageImpl extends NonOccurrenceUsageElementImpl i
     result.append(isDerived);
     result.append(", isReference: ");
     result.append(isReference);
+    result.append(", UsageExtension: ");
+    result.append(usageExtension);
     result.append(", typings: ");
     result.append(typings);
     result.append(", subsetting: ");

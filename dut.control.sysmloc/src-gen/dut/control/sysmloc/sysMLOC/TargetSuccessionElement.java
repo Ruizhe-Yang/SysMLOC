@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface TargetSuccessionElement extends TargetSuccessionNodeElement, MemberPrefix, TargetSuccession, MultiplicityRange, TransitionSuccession, GuardedTargetSuccession, DefaultTargetSuccession
+public interface TargetSuccessionElement extends TargetSuccessionNodeElement, MemberPrefix, TargetSuccession, MultiplicityRange, TransitionSuccession, DefaultTargetSuccession
 {
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.

@@ -5,7 +5,6 @@ package dut.control.sysmloc.sysMLOC.impl;
 
 import dut.control.sysmloc.sysMLOC.ConnectorEnd;
 import dut.control.sysmloc.sysMLOC.DefaultTargetSuccession;
-import dut.control.sysmloc.sysMLOC.GuardedTargetSuccession;
 import dut.control.sysmloc.sysMLOC.MemberPrefix;
 import dut.control.sysmloc.sysMLOC.MultiplicityRange;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
@@ -42,7 +41,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.TargetSuccessionElementImpl#getVisibility <em>Visibility</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.TargetSuccessionElementImpl#getMultiplicity <em>Multiplicity</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.TargetSuccessionElementImpl#getTransitionSuccessionElement <em>Transition Succession Element</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.TargetSuccessionElementImpl#getConditionalExpression <em>Conditional Expression</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.TargetSuccessionElementImpl#getElements <em>Elements</em>}</li>
  * </ul>
  *
@@ -89,26 +87,6 @@ public class TargetSuccessionElementImpl extends TargetSuccessionNodeElementImpl
    * @ordered
    */
   protected EList<ConnectorEnd> transitionSuccessionElement;
-
-  /**
-   * The default value of the '{@link #getConditionalExpression() <em>Conditional Expression</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getConditionalExpression()
-   * @generated
-   * @ordered
-   */
-  protected static final String CONDITIONAL_EXPRESSION_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getConditionalExpression() <em>Conditional Expression</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getConditionalExpression()
-   * @generated
-   * @ordered
-   */
-  protected String conditionalExpression = CONDITIONAL_EXPRESSION_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
@@ -202,31 +180,6 @@ public class TargetSuccessionElementImpl extends TargetSuccessionNodeElementImpl
    * @generated
    */
   @Override
-  public String getConditionalExpression()
-  {
-    return conditionalExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setConditionalExpression(String newConditionalExpression)
-  {
-    String oldConditionalExpression = conditionalExpression;
-    conditionalExpression = newConditionalExpression;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.TARGET_SUCCESSION_ELEMENT__CONDITIONAL_EXPRESSION, oldConditionalExpression, conditionalExpression));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EList<UsageBodyElement> getElements()
   {
     if (elements == null)
@@ -270,8 +223,6 @@ public class TargetSuccessionElementImpl extends TargetSuccessionNodeElementImpl
         return getMultiplicity();
       case SysMLOCPackage.TARGET_SUCCESSION_ELEMENT__TRANSITION_SUCCESSION_ELEMENT:
         return getTransitionSuccessionElement();
-      case SysMLOCPackage.TARGET_SUCCESSION_ELEMENT__CONDITIONAL_EXPRESSION:
-        return getConditionalExpression();
       case SysMLOCPackage.TARGET_SUCCESSION_ELEMENT__ELEMENTS:
         return getElements();
     }
@@ -300,9 +251,6 @@ public class TargetSuccessionElementImpl extends TargetSuccessionNodeElementImpl
         getTransitionSuccessionElement().clear();
         getTransitionSuccessionElement().addAll((Collection<? extends ConnectorEnd>)newValue);
         return;
-      case SysMLOCPackage.TARGET_SUCCESSION_ELEMENT__CONDITIONAL_EXPRESSION:
-        setConditionalExpression((String)newValue);
-        return;
       case SysMLOCPackage.TARGET_SUCCESSION_ELEMENT__ELEMENTS:
         getElements().clear();
         getElements().addAll((Collection<? extends UsageBodyElement>)newValue);
@@ -330,9 +278,6 @@ public class TargetSuccessionElementImpl extends TargetSuccessionNodeElementImpl
       case SysMLOCPackage.TARGET_SUCCESSION_ELEMENT__TRANSITION_SUCCESSION_ELEMENT:
         getTransitionSuccessionElement().clear();
         return;
-      case SysMLOCPackage.TARGET_SUCCESSION_ELEMENT__CONDITIONAL_EXPRESSION:
-        setConditionalExpression(CONDITIONAL_EXPRESSION_EDEFAULT);
-        return;
       case SysMLOCPackage.TARGET_SUCCESSION_ELEMENT__ELEMENTS:
         getElements().clear();
         return;
@@ -356,8 +301,6 @@ public class TargetSuccessionElementImpl extends TargetSuccessionNodeElementImpl
         return multiplicity != null && !multiplicity.isEmpty();
       case SysMLOCPackage.TARGET_SUCCESSION_ELEMENT__TRANSITION_SUCCESSION_ELEMENT:
         return transitionSuccessionElement != null && !transitionSuccessionElement.isEmpty();
-      case SysMLOCPackage.TARGET_SUCCESSION_ELEMENT__CONDITIONAL_EXPRESSION:
-        return CONDITIONAL_EXPRESSION_EDEFAULT == null ? conditionalExpression != null : !CONDITIONAL_EXPRESSION_EDEFAULT.equals(conditionalExpression);
       case SysMLOCPackage.TARGET_SUCCESSION_ELEMENT__ELEMENTS:
         return elements != null && !elements.isEmpty();
     }
@@ -400,14 +343,6 @@ public class TargetSuccessionElementImpl extends TargetSuccessionNodeElementImpl
     {
       switch (derivedFeatureID)
       {
-        default: return -1;
-      }
-    }
-    if (baseClass == GuardedTargetSuccession.class)
-    {
-      switch (derivedFeatureID)
-      {
-        case SysMLOCPackage.TARGET_SUCCESSION_ELEMENT__CONDITIONAL_EXPRESSION: return SysMLOCPackage.GUARDED_TARGET_SUCCESSION__CONDITIONAL_EXPRESSION;
         default: return -1;
       }
     }
@@ -460,14 +395,6 @@ public class TargetSuccessionElementImpl extends TargetSuccessionNodeElementImpl
         default: return -1;
       }
     }
-    if (baseClass == GuardedTargetSuccession.class)
-    {
-      switch (baseFeatureID)
-      {
-        case SysMLOCPackage.GUARDED_TARGET_SUCCESSION__CONDITIONAL_EXPRESSION: return SysMLOCPackage.TARGET_SUCCESSION_ELEMENT__CONDITIONAL_EXPRESSION;
-        default: return -1;
-      }
-    }
     if (baseClass == DefaultTargetSuccession.class)
     {
       switch (baseFeatureID)
@@ -493,8 +420,6 @@ public class TargetSuccessionElementImpl extends TargetSuccessionNodeElementImpl
     result.append(visibility);
     result.append(", Multiplicity: ");
     result.append(multiplicity);
-    result.append(", ConditionalExpression: ");
-    result.append(conditionalExpression);
     result.append(')');
     return result.toString();
   }

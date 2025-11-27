@@ -314,13 +314,49 @@ public interface SysMLOCPackage extends EPackage
   int IMPORT_ELEMENT = 11;
 
   /**
+   * The feature id for the '<em><b>Visibility</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT_ELEMENT__VISIBILITY = PACKAGE_BODY_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Is Import All</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT_ELEMENT__IS_IMPORT_ALL = PACKAGE_BODY_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Declared Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT_ELEMENT__DECLARED_NAME = PACKAGE_BODY_ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Is Recursive</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT_ELEMENT__IS_RECURSIVE = PACKAGE_BODY_ELEMENT_FEATURE_COUNT + 3;
+
+  /**
    * The number of structural features of the '<em>Import Element</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IMPORT_ELEMENT_FEATURE_COUNT = PACKAGE_BODY_ELEMENT_FEATURE_COUNT + 0;
+  int IMPORT_ELEMENT_FEATURE_COUNT = PACKAGE_BODY_ELEMENT_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.DefinitionElementImpl <em>Definition Element</em>}' class.
@@ -542,22 +578,22 @@ public interface SysMLOCPackage extends EPackage
   int NAMESPACE_IMPORT = 23;
 
   /**
-   * The feature id for the '<em><b>Is Import All</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NAMESPACE_IMPORT__IS_IMPORT_ALL = IMPORT_ELEMENT_FEATURE_COUNT + 0;
-
-  /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NAMESPACE_IMPORT__VISIBILITY = IMPORT_ELEMENT_FEATURE_COUNT + 1;
+  int NAMESPACE_IMPORT__VISIBILITY = IMPORT_ELEMENT__VISIBILITY;
+
+  /**
+   * The feature id for the '<em><b>Is Import All</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAMESPACE_IMPORT__IS_IMPORT_ALL = IMPORT_ELEMENT__IS_IMPORT_ALL;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -566,7 +602,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NAMESPACE_IMPORT__DECLARED_NAME = IMPORT_ELEMENT_FEATURE_COUNT + 2;
+  int NAMESPACE_IMPORT__DECLARED_NAME = IMPORT_ELEMENT__DECLARED_NAME;
 
   /**
    * The feature id for the '<em><b>Is Recursive</b></em>' attribute.
@@ -575,7 +611,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NAMESPACE_IMPORT__IS_RECURSIVE = IMPORT_ELEMENT_FEATURE_COUNT + 3;
+  int NAMESPACE_IMPORT__IS_RECURSIVE = IMPORT_ELEMENT__IS_RECURSIVE;
 
   /**
    * The number of structural features of the '<em>Namespace Import</em>' class.
@@ -584,7 +620,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NAMESPACE_IMPORT_FEATURE_COUNT = IMPORT_ELEMENT_FEATURE_COUNT + 4;
+  int NAMESPACE_IMPORT_FEATURE_COUNT = IMPORT_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.MembershipImportImpl <em>Membership Import</em>}' class.
@@ -597,22 +633,22 @@ public interface SysMLOCPackage extends EPackage
   int MEMBERSHIP_IMPORT = 24;
 
   /**
-   * The feature id for the '<em><b>Is Import All</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MEMBERSHIP_IMPORT__IS_IMPORT_ALL = IMPORT_ELEMENT_FEATURE_COUNT + 0;
-
-  /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MEMBERSHIP_IMPORT__VISIBILITY = IMPORT_ELEMENT_FEATURE_COUNT + 1;
+  int MEMBERSHIP_IMPORT__VISIBILITY = IMPORT_ELEMENT__VISIBILITY;
+
+  /**
+   * The feature id for the '<em><b>Is Import All</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MEMBERSHIP_IMPORT__IS_IMPORT_ALL = IMPORT_ELEMENT__IS_IMPORT_ALL;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -621,7 +657,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MEMBERSHIP_IMPORT__DECLARED_NAME = IMPORT_ELEMENT_FEATURE_COUNT + 2;
+  int MEMBERSHIP_IMPORT__DECLARED_NAME = IMPORT_ELEMENT__DECLARED_NAME;
 
   /**
    * The feature id for the '<em><b>Is Recursive</b></em>' attribute.
@@ -630,7 +666,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MEMBERSHIP_IMPORT__IS_RECURSIVE = IMPORT_ELEMENT_FEATURE_COUNT + 3;
+  int MEMBERSHIP_IMPORT__IS_RECURSIVE = IMPORT_ELEMENT__IS_RECURSIVE;
 
   /**
    * The number of structural features of the '<em>Membership Import</em>' class.
@@ -639,7 +675,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MEMBERSHIP_IMPORT_FEATURE_COUNT = IMPORT_ELEMENT_FEATURE_COUNT + 4;
+  int MEMBERSHIP_IMPORT_FEATURE_COUNT = IMPORT_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.CodeAnnotationImpl <em>Code Annotation</em>}' class.
@@ -1397,13 +1433,22 @@ public interface SysMLOCPackage extends EPackage
   int ATTRIBUTE_USAGE__IS_REFERENCE = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 7;
 
   /**
+   * The feature id for the '<em><b>Usage Extension</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATTRIBUTE_USAGE__USAGE_EXTENSION = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 8;
+
+  /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_USAGE__TYPINGS = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 8;
+  int ATTRIBUTE_USAGE__TYPINGS = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
@@ -1412,7 +1457,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_USAGE__SUBSETTING = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 9;
+  int ATTRIBUTE_USAGE__SUBSETTING = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute list.
@@ -1421,7 +1466,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_USAGE__REFERENCES = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 10;
+  int ATTRIBUTE_USAGE__REFERENCES = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Crosses</b></em>' attribute list.
@@ -1430,7 +1475,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_USAGE__CROSSES = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 11;
+  int ATTRIBUTE_USAGE__CROSSES = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
@@ -1439,7 +1484,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_USAGE__REDEFINITIONS = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 12;
+  int ATTRIBUTE_USAGE__REDEFINITIONS = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -1448,7 +1493,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_USAGE__MULTIPLICITY = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 13;
+  int ATTRIBUTE_USAGE__MULTIPLICITY = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
@@ -1457,7 +1502,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_USAGE__IS_ORDERED = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 14;
+  int ATTRIBUTE_USAGE__IS_ORDERED = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
@@ -1466,7 +1511,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_USAGE__IS_NONUNIQUE = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 15;
+  int ATTRIBUTE_USAGE__IS_NONUNIQUE = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -1475,7 +1520,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_USAGE__DECLARED_NAME = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 16;
+  int ATTRIBUTE_USAGE__DECLARED_NAME = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>Is Initial</b></em>' attribute.
@@ -1484,7 +1529,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_USAGE__IS_INITIAL = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 17;
+  int ATTRIBUTE_USAGE__IS_INITIAL = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>Is Default</b></em>' attribute.
@@ -1493,7 +1538,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_USAGE__IS_DEFAULT = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 18;
+  int ATTRIBUTE_USAGE__IS_DEFAULT = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Value Part</b></em>' attribute list.
@@ -1502,7 +1547,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_USAGE__VALUE_PART = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 19;
+  int ATTRIBUTE_USAGE__VALUE_PART = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 20;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -1511,7 +1556,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_USAGE__ELEMENTS = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 20;
+  int ATTRIBUTE_USAGE__ELEMENTS = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 21;
 
   /**
    * The number of structural features of the '<em>Attribute Usage</em>' class.
@@ -1520,7 +1565,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_USAGE_FEATURE_COUNT = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 21;
+  int ATTRIBUTE_USAGE_FEATURE_COUNT = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 22;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.EnumerationDefinitionImpl <em>Enumeration Definition</em>}' class.
@@ -1705,13 +1750,22 @@ public interface SysMLOCPackage extends EPackage
   int ENUMERATED_VALUE__VALUE_PART = ENUMERATION_ELEMENT_FEATURE_COUNT + 12;
 
   /**
+   * The feature id for the '<em><b>Usage Extension</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENUMERATED_VALUE__USAGE_EXTENSION = ENUMERATION_ELEMENT_FEATURE_COUNT + 13;
+
+  /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ENUMERATED_VALUE__ELEMENTS = ENUMERATION_ELEMENT_FEATURE_COUNT + 13;
+  int ENUMERATED_VALUE__ELEMENTS = ENUMERATION_ELEMENT_FEATURE_COUNT + 14;
 
   /**
    * The number of structural features of the '<em>Enumerated Value</em>' class.
@@ -1720,7 +1774,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENUMERATED_VALUE_FEATURE_COUNT = ENUMERATION_ELEMENT_FEATURE_COUNT + 14;
+  int ENUMERATED_VALUE_FEATURE_COUNT = ENUMERATION_ELEMENT_FEATURE_COUNT + 15;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.EnumerationUsageImpl <em>Enumeration Usage</em>}' class.
@@ -1805,13 +1859,22 @@ public interface SysMLOCPackage extends EPackage
   int ENUMERATION_USAGE__IS_REFERENCE = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 7;
 
   /**
+   * The feature id for the '<em><b>Usage Extension</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENUMERATION_USAGE__USAGE_EXTENSION = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 8;
+
+  /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ENUMERATION_USAGE__TYPINGS = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 8;
+  int ENUMERATION_USAGE__TYPINGS = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
@@ -1820,7 +1883,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENUMERATION_USAGE__SUBSETTING = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 9;
+  int ENUMERATION_USAGE__SUBSETTING = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute list.
@@ -1829,7 +1892,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENUMERATION_USAGE__REFERENCES = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 10;
+  int ENUMERATION_USAGE__REFERENCES = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Crosses</b></em>' attribute list.
@@ -1838,7 +1901,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENUMERATION_USAGE__CROSSES = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 11;
+  int ENUMERATION_USAGE__CROSSES = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
@@ -1847,7 +1910,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENUMERATION_USAGE__REDEFINITIONS = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 12;
+  int ENUMERATION_USAGE__REDEFINITIONS = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -1856,7 +1919,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENUMERATION_USAGE__MULTIPLICITY = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 13;
+  int ENUMERATION_USAGE__MULTIPLICITY = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
@@ -1865,7 +1928,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENUMERATION_USAGE__IS_ORDERED = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 14;
+  int ENUMERATION_USAGE__IS_ORDERED = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
@@ -1874,7 +1937,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENUMERATION_USAGE__IS_NONUNIQUE = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 15;
+  int ENUMERATION_USAGE__IS_NONUNIQUE = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -1883,7 +1946,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENUMERATION_USAGE__DECLARED_NAME = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 16;
+  int ENUMERATION_USAGE__DECLARED_NAME = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>Is Initial</b></em>' attribute.
@@ -1892,7 +1955,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENUMERATION_USAGE__IS_INITIAL = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 17;
+  int ENUMERATION_USAGE__IS_INITIAL = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>Is Default</b></em>' attribute.
@@ -1901,7 +1964,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENUMERATION_USAGE__IS_DEFAULT = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 18;
+  int ENUMERATION_USAGE__IS_DEFAULT = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Value Part</b></em>' attribute list.
@@ -1910,7 +1973,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENUMERATION_USAGE__VALUE_PART = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 19;
+  int ENUMERATION_USAGE__VALUE_PART = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 20;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -1919,7 +1982,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENUMERATION_USAGE__ELEMENTS = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 20;
+  int ENUMERATION_USAGE__ELEMENTS = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 21;
 
   /**
    * The number of structural features of the '<em>Enumeration Usage</em>' class.
@@ -1928,7 +1991,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENUMERATION_USAGE_FEATURE_COUNT = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 21;
+  int ENUMERATION_USAGE_FEATURE_COUNT = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 22;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.BindingConnectorAsUsageImpl <em>Binding Connector As Usage</em>}' class.
@@ -2013,13 +2076,22 @@ public interface SysMLOCPackage extends EPackage
   int BINDING_CONNECTOR_AS_USAGE__IS_REFERENCE = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 7;
 
   /**
+   * The feature id for the '<em><b>Usage Extension</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BINDING_CONNECTOR_AS_USAGE__USAGE_EXTENSION = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 8;
+
+  /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BINDING_CONNECTOR_AS_USAGE__TYPINGS = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 8;
+  int BINDING_CONNECTOR_AS_USAGE__TYPINGS = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
@@ -2028,7 +2100,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BINDING_CONNECTOR_AS_USAGE__SUBSETTING = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 9;
+  int BINDING_CONNECTOR_AS_USAGE__SUBSETTING = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute list.
@@ -2037,7 +2109,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BINDING_CONNECTOR_AS_USAGE__REFERENCES = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 10;
+  int BINDING_CONNECTOR_AS_USAGE__REFERENCES = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Crosses</b></em>' attribute list.
@@ -2046,7 +2118,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BINDING_CONNECTOR_AS_USAGE__CROSSES = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 11;
+  int BINDING_CONNECTOR_AS_USAGE__CROSSES = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
@@ -2055,7 +2127,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BINDING_CONNECTOR_AS_USAGE__REDEFINITIONS = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 12;
+  int BINDING_CONNECTOR_AS_USAGE__REDEFINITIONS = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -2064,7 +2136,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BINDING_CONNECTOR_AS_USAGE__MULTIPLICITY = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 13;
+  int BINDING_CONNECTOR_AS_USAGE__MULTIPLICITY = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
@@ -2073,7 +2145,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BINDING_CONNECTOR_AS_USAGE__IS_ORDERED = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 14;
+  int BINDING_CONNECTOR_AS_USAGE__IS_ORDERED = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
@@ -2082,7 +2154,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BINDING_CONNECTOR_AS_USAGE__IS_NONUNIQUE = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 15;
+  int BINDING_CONNECTOR_AS_USAGE__IS_NONUNIQUE = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -2091,7 +2163,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BINDING_CONNECTOR_AS_USAGE__DECLARED_NAME = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 16;
+  int BINDING_CONNECTOR_AS_USAGE__DECLARED_NAME = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>Connector Part</b></em>' containment reference list.
@@ -2100,7 +2172,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BINDING_CONNECTOR_AS_USAGE__CONNECTOR_PART = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 17;
+  int BINDING_CONNECTOR_AS_USAGE__CONNECTOR_PART = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -2109,7 +2181,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BINDING_CONNECTOR_AS_USAGE__ELEMENTS = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 18;
+  int BINDING_CONNECTOR_AS_USAGE__ELEMENTS = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 19;
 
   /**
    * The number of structural features of the '<em>Binding Connector As Usage</em>' class.
@@ -2118,7 +2190,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BINDING_CONNECTOR_AS_USAGE_FEATURE_COUNT = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 19;
+  int BINDING_CONNECTOR_AS_USAGE_FEATURE_COUNT = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 20;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.SuccessionAsUsageImpl <em>Succession As Usage</em>}' class.
@@ -2203,13 +2275,22 @@ public interface SysMLOCPackage extends EPackage
   int SUCCESSION_AS_USAGE__IS_REFERENCE = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 7;
 
   /**
+   * The feature id for the '<em><b>Usage Extension</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUCCESSION_AS_USAGE__USAGE_EXTENSION = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 8;
+
+  /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SUCCESSION_AS_USAGE__TYPINGS = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 8;
+  int SUCCESSION_AS_USAGE__TYPINGS = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
@@ -2218,7 +2299,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUCCESSION_AS_USAGE__SUBSETTING = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 9;
+  int SUCCESSION_AS_USAGE__SUBSETTING = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute list.
@@ -2227,7 +2308,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUCCESSION_AS_USAGE__REFERENCES = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 10;
+  int SUCCESSION_AS_USAGE__REFERENCES = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Crosses</b></em>' attribute list.
@@ -2236,7 +2317,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUCCESSION_AS_USAGE__CROSSES = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 11;
+  int SUCCESSION_AS_USAGE__CROSSES = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
@@ -2245,7 +2326,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUCCESSION_AS_USAGE__REDEFINITIONS = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 12;
+  int SUCCESSION_AS_USAGE__REDEFINITIONS = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -2254,7 +2335,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUCCESSION_AS_USAGE__MULTIPLICITY = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 13;
+  int SUCCESSION_AS_USAGE__MULTIPLICITY = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
@@ -2263,7 +2344,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUCCESSION_AS_USAGE__IS_ORDERED = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 14;
+  int SUCCESSION_AS_USAGE__IS_ORDERED = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
@@ -2272,7 +2353,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUCCESSION_AS_USAGE__IS_NONUNIQUE = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 15;
+  int SUCCESSION_AS_USAGE__IS_NONUNIQUE = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -2281,7 +2362,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUCCESSION_AS_USAGE__DECLARED_NAME = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 16;
+  int SUCCESSION_AS_USAGE__DECLARED_NAME = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>Connector Part</b></em>' containment reference list.
@@ -2290,7 +2371,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUCCESSION_AS_USAGE__CONNECTOR_PART = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 17;
+  int SUCCESSION_AS_USAGE__CONNECTOR_PART = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -2299,7 +2380,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUCCESSION_AS_USAGE__ELEMENTS = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 18;
+  int SUCCESSION_AS_USAGE__ELEMENTS = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 19;
 
   /**
    * The number of structural features of the '<em>Succession As Usage</em>' class.
@@ -2308,7 +2389,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUCCESSION_AS_USAGE_FEATURE_COUNT = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 19;
+  int SUCCESSION_AS_USAGE_FEATURE_COUNT = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 20;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.ItemDefinitionImpl <em>Item Definition</em>}' class.
@@ -5170,7 +5251,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getMultiplicityRange()
    * @generated
    */
-  int MULTIPLICITY_RANGE = 72;
+  int MULTIPLICITY_RANGE = 74;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -5482,50 +5563,49 @@ public interface SysMLOCPackage extends EPackage
   int SEND_NODE__DECLARED_NAME = ACTION_NODE_ELEMENT_FEATURE_COUNT + 20;
 
   /**
+   * The feature id for the '<em><b>Send Node Parameter</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SEND_NODE__SEND_NODE_PARAMETER = ACTION_NODE_ELEMENT_FEATURE_COUNT + 21;
+
+  /**
+   * The feature id for the '<em><b>Via Node Parameter</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SEND_NODE__VIA_NODE_PARAMETER = ACTION_NODE_ELEMENT_FEATURE_COUNT + 22;
+
+  /**
+   * The feature id for the '<em><b>To Node Parameter</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SEND_NODE__TO_NODE_PARAMETER = ACTION_NODE_ELEMENT_FEATURE_COUNT + 23;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SEND_NODE__ELEMENTS = ACTION_NODE_ELEMENT_FEATURE_COUNT + 24;
+
+  /**
    * The number of structural features of the '<em>Send Node</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SEND_NODE_FEATURE_COUNT = ACTION_NODE_ELEMENT_FEATURE_COUNT + 21;
-
-  /**
-   * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.EmptySuccessionPrefixImpl <em>Empty Succession Prefix</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.sysmloc.sysMLOC.impl.EmptySuccessionPrefixImpl
-   * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getEmptySuccessionPrefix()
-   * @generated
-   */
-  int EMPTY_SUCCESSION_PREFIX = 71;
-
-  /**
-   * The feature id for the '<em><b>Is Then</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EMPTY_SUCCESSION_PREFIX__IS_THEN = 0;
-
-  /**
-   * The feature id for the '<em><b>Then Multiplicity</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EMPTY_SUCCESSION_PREFIX__THEN_MULTIPLICITY = 1;
-
-  /**
-   * The number of structural features of the '<em>Empty Succession Prefix</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT = 2;
+  int SEND_NODE_FEATURE_COUNT = ACTION_NODE_ELEMENT_FEATURE_COUNT + 25;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeImpl <em>Accept Node</em>}' class.
@@ -5544,7 +5624,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCEPT_NODE__IS_THEN = EMPTY_SUCCESSION_PREFIX__IS_THEN;
+  int ACCEPT_NODE__IS_THEN = ACTION_NODE_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Then Multiplicity</b></em>' attribute list.
@@ -5553,7 +5633,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCEPT_NODE__THEN_MULTIPLICITY = EMPTY_SUCCESSION_PREFIX__THEN_MULTIPLICITY;
+  int ACCEPT_NODE__THEN_MULTIPLICITY = ACTION_NODE_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -5562,7 +5642,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCEPT_NODE__VISIBILITY = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 0;
+  int ACCEPT_NODE__VISIBILITY = ACTION_NODE_ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -5571,7 +5651,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCEPT_NODE__DIRECTION = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 1;
+  int ACCEPT_NODE__DIRECTION = ACTION_NODE_ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -5580,7 +5660,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCEPT_NODE__IS_ABSTRACT = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 2;
+  int ACCEPT_NODE__IS_ABSTRACT = ACTION_NODE_ELEMENT_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -5589,7 +5669,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCEPT_NODE__IS_VARIATION = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 3;
+  int ACCEPT_NODE__IS_VARIATION = ACTION_NODE_ELEMENT_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Is Read Only</b></em>' attribute.
@@ -5598,7 +5678,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCEPT_NODE__IS_READ_ONLY = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 4;
+  int ACCEPT_NODE__IS_READ_ONLY = ACTION_NODE_ELEMENT_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Is Derived</b></em>' attribute.
@@ -5607,7 +5687,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCEPT_NODE__IS_DERIVED = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 5;
+  int ACCEPT_NODE__IS_DERIVED = ACTION_NODE_ELEMENT_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Is Reference</b></em>' attribute.
@@ -5616,7 +5696,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCEPT_NODE__IS_REFERENCE = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 6;
+  int ACCEPT_NODE__IS_REFERENCE = ACTION_NODE_ELEMENT_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Is End</b></em>' attribute.
@@ -5625,7 +5705,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCEPT_NODE__IS_END = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 7;
+  int ACCEPT_NODE__IS_END = ACTION_NODE_ELEMENT_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -5634,7 +5714,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCEPT_NODE__IS_INDIVIDUAL = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 8;
+  int ACCEPT_NODE__IS_INDIVIDUAL = ACTION_NODE_ELEMENT_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Portion Kind</b></em>' attribute.
@@ -5643,7 +5723,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCEPT_NODE__PORTION_KIND = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 9;
+  int ACCEPT_NODE__PORTION_KIND = ACTION_NODE_ELEMENT_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -5652,7 +5732,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCEPT_NODE__TYPINGS = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 10;
+  int ACCEPT_NODE__TYPINGS = ACTION_NODE_ELEMENT_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
@@ -5661,7 +5741,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCEPT_NODE__SUBSETTING = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 11;
+  int ACCEPT_NODE__SUBSETTING = ACTION_NODE_ELEMENT_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute list.
@@ -5670,7 +5750,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCEPT_NODE__REFERENCES = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 12;
+  int ACCEPT_NODE__REFERENCES = ACTION_NODE_ELEMENT_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Crosses</b></em>' attribute list.
@@ -5679,7 +5759,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCEPT_NODE__CROSSES = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 13;
+  int ACCEPT_NODE__CROSSES = ACTION_NODE_ELEMENT_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
@@ -5688,7 +5768,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCEPT_NODE__REDEFINITIONS = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 14;
+  int ACCEPT_NODE__REDEFINITIONS = ACTION_NODE_ELEMENT_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -5697,7 +5777,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCEPT_NODE__MULTIPLICITY = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 15;
+  int ACCEPT_NODE__MULTIPLICITY = ACTION_NODE_ELEMENT_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
@@ -5706,7 +5786,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCEPT_NODE__IS_ORDERED = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 16;
+  int ACCEPT_NODE__IS_ORDERED = ACTION_NODE_ELEMENT_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
@@ -5715,7 +5795,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCEPT_NODE__IS_NONUNIQUE = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 17;
+  int ACCEPT_NODE__IS_NONUNIQUE = ACTION_NODE_ELEMENT_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -5724,7 +5804,25 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCEPT_NODE__DECLARED_NAME = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 18;
+  int ACCEPT_NODE__DECLARED_NAME = ACTION_NODE_ELEMENT_FEATURE_COUNT + 20;
+
+  /**
+   * The feature id for the '<em><b>Accept Parameter</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACCEPT_NODE__ACCEPT_PARAMETER = ACTION_NODE_ELEMENT_FEATURE_COUNT + 21;
+
+  /**
+   * The feature id for the '<em><b>Via Node Parameter</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACCEPT_NODE__VIA_NODE_PARAMETER = ACTION_NODE_ELEMENT_FEATURE_COUNT + 22;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -5733,7 +5831,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCEPT_NODE__ELEMENTS = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 19;
+  int ACCEPT_NODE__ELEMENTS = ACTION_NODE_ELEMENT_FEATURE_COUNT + 23;
 
   /**
    * The number of structural features of the '<em>Accept Node</em>' class.
@@ -5742,7 +5840,334 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACCEPT_NODE_FEATURE_COUNT = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 20;
+  int ACCEPT_NODE_FEATURE_COUNT = ACTION_NODE_ELEMENT_FEATURE_COUNT + 24;
+
+  /**
+   * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.IdentificationImpl <em>Identification</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.sysmloc.sysMLOC.impl.IdentificationImpl
+   * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getIdentification()
+   * @generated
+   */
+  int IDENTIFICATION = 101;
+
+  /**
+   * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IDENTIFICATION__DECLARED_SHORT_NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Declared Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IDENTIFICATION__DECLARED_NAME = 1;
+
+  /**
+   * The number of structural features of the '<em>Identification</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IDENTIFICATION_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.PayloadFeatureImpl <em>Payload Feature</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.sysmloc.sysMLOC.impl.PayloadFeatureImpl
+   * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getPayloadFeature()
+   * @generated
+   */
+  int PAYLOAD_FEATURE = 97;
+
+  /**
+   * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAYLOAD_FEATURE__DECLARED_SHORT_NAME = IDENTIFICATION__DECLARED_SHORT_NAME;
+
+  /**
+   * The feature id for the '<em><b>Declared Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAYLOAD_FEATURE__DECLARED_NAME = IDENTIFICATION__DECLARED_NAME;
+
+  /**
+   * The feature id for the '<em><b>Typings</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAYLOAD_FEATURE__TYPINGS = IDENTIFICATION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAYLOAD_FEATURE__SUBSETTING = IDENTIFICATION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>References</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAYLOAD_FEATURE__REFERENCES = IDENTIFICATION_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Crosses</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAYLOAD_FEATURE__CROSSES = IDENTIFICATION_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAYLOAD_FEATURE__REDEFINITIONS = IDENTIFICATION_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAYLOAD_FEATURE__MULTIPLICITY = IDENTIFICATION_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAYLOAD_FEATURE__IS_ORDERED = IDENTIFICATION_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAYLOAD_FEATURE__IS_NONUNIQUE = IDENTIFICATION_FEATURE_COUNT + 7;
+
+  /**
+   * The feature id for the '<em><b>Is Initial</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAYLOAD_FEATURE__IS_INITIAL = IDENTIFICATION_FEATURE_COUNT + 8;
+
+  /**
+   * The feature id for the '<em><b>Is Default</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAYLOAD_FEATURE__IS_DEFAULT = IDENTIFICATION_FEATURE_COUNT + 9;
+
+  /**
+   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAYLOAD_FEATURE__VALUE_PART = IDENTIFICATION_FEATURE_COUNT + 10;
+
+  /**
+   * The number of structural features of the '<em>Payload Feature</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAYLOAD_FEATURE_FEATURE_COUNT = IDENTIFICATION_FEATURE_COUNT + 11;
+
+  /**
+   * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.PayloadParameterImpl <em>Payload Parameter</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.sysmloc.sysMLOC.impl.PayloadParameterImpl
+   * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getPayloadParameter()
+   * @generated
+   */
+  int PAYLOAD_PARAMETER = 59;
+
+  /**
+   * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAYLOAD_PARAMETER__DECLARED_SHORT_NAME = PAYLOAD_FEATURE__DECLARED_SHORT_NAME;
+
+  /**
+   * The feature id for the '<em><b>Declared Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAYLOAD_PARAMETER__DECLARED_NAME = PAYLOAD_FEATURE__DECLARED_NAME;
+
+  /**
+   * The feature id for the '<em><b>Typings</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAYLOAD_PARAMETER__TYPINGS = PAYLOAD_FEATURE__TYPINGS;
+
+  /**
+   * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAYLOAD_PARAMETER__SUBSETTING = PAYLOAD_FEATURE__SUBSETTING;
+
+  /**
+   * The feature id for the '<em><b>References</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAYLOAD_PARAMETER__REFERENCES = PAYLOAD_FEATURE__REFERENCES;
+
+  /**
+   * The feature id for the '<em><b>Crosses</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAYLOAD_PARAMETER__CROSSES = PAYLOAD_FEATURE__CROSSES;
+
+  /**
+   * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAYLOAD_PARAMETER__REDEFINITIONS = PAYLOAD_FEATURE__REDEFINITIONS;
+
+  /**
+   * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAYLOAD_PARAMETER__MULTIPLICITY = PAYLOAD_FEATURE__MULTIPLICITY;
+
+  /**
+   * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAYLOAD_PARAMETER__IS_ORDERED = PAYLOAD_FEATURE__IS_ORDERED;
+
+  /**
+   * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAYLOAD_PARAMETER__IS_NONUNIQUE = PAYLOAD_FEATURE__IS_NONUNIQUE;
+
+  /**
+   * The feature id for the '<em><b>Is Initial</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAYLOAD_PARAMETER__IS_INITIAL = PAYLOAD_FEATURE__IS_INITIAL;
+
+  /**
+   * The feature id for the '<em><b>Is Default</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAYLOAD_PARAMETER__IS_DEFAULT = PAYLOAD_FEATURE__IS_DEFAULT;
+
+  /**
+   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAYLOAD_PARAMETER__VALUE_PART = PAYLOAD_FEATURE__VALUE_PART;
+
+  /**
+   * The feature id for the '<em><b>Triggerkind</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAYLOAD_PARAMETER__TRIGGERKIND = PAYLOAD_FEATURE_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Trigger Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAYLOAD_PARAMETER__TRIGGER_EXPRESSION = PAYLOAD_FEATURE_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Payload Parameter</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAYLOAD_PARAMETER_FEATURE_COUNT = PAYLOAD_FEATURE_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.AssignmentNodeImpl <em>Assignment Node</em>}' class.
@@ -5752,7 +6177,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getAssignmentNode()
    * @generated
    */
-  int ASSIGNMENT_NODE = 59;
+  int ASSIGNMENT_NODE = 60;
 
   /**
    * The feature id for the '<em><b>Is Then</b></em>' attribute.
@@ -5761,7 +6186,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSIGNMENT_NODE__IS_THEN = EMPTY_SUCCESSION_PREFIX__IS_THEN;
+  int ASSIGNMENT_NODE__IS_THEN = ACTION_NODE_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Then Multiplicity</b></em>' attribute list.
@@ -5770,7 +6195,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSIGNMENT_NODE__THEN_MULTIPLICITY = EMPTY_SUCCESSION_PREFIX__THEN_MULTIPLICITY;
+  int ASSIGNMENT_NODE__THEN_MULTIPLICITY = ACTION_NODE_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -5779,7 +6204,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSIGNMENT_NODE__VISIBILITY = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 0;
+  int ASSIGNMENT_NODE__VISIBILITY = ACTION_NODE_ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -5788,7 +6213,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSIGNMENT_NODE__DIRECTION = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 1;
+  int ASSIGNMENT_NODE__DIRECTION = ACTION_NODE_ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -5797,7 +6222,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSIGNMENT_NODE__IS_ABSTRACT = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 2;
+  int ASSIGNMENT_NODE__IS_ABSTRACT = ACTION_NODE_ELEMENT_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -5806,7 +6231,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSIGNMENT_NODE__IS_VARIATION = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 3;
+  int ASSIGNMENT_NODE__IS_VARIATION = ACTION_NODE_ELEMENT_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Is Read Only</b></em>' attribute.
@@ -5815,7 +6240,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSIGNMENT_NODE__IS_READ_ONLY = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 4;
+  int ASSIGNMENT_NODE__IS_READ_ONLY = ACTION_NODE_ELEMENT_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Is Derived</b></em>' attribute.
@@ -5824,7 +6249,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSIGNMENT_NODE__IS_DERIVED = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 5;
+  int ASSIGNMENT_NODE__IS_DERIVED = ACTION_NODE_ELEMENT_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Is Reference</b></em>' attribute.
@@ -5833,7 +6258,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSIGNMENT_NODE__IS_REFERENCE = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 6;
+  int ASSIGNMENT_NODE__IS_REFERENCE = ACTION_NODE_ELEMENT_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Is End</b></em>' attribute.
@@ -5842,7 +6267,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSIGNMENT_NODE__IS_END = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 7;
+  int ASSIGNMENT_NODE__IS_END = ACTION_NODE_ELEMENT_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -5851,7 +6276,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSIGNMENT_NODE__IS_INDIVIDUAL = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 8;
+  int ASSIGNMENT_NODE__IS_INDIVIDUAL = ACTION_NODE_ELEMENT_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Portion Kind</b></em>' attribute.
@@ -5860,7 +6285,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSIGNMENT_NODE__PORTION_KIND = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 9;
+  int ASSIGNMENT_NODE__PORTION_KIND = ACTION_NODE_ELEMENT_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -5869,7 +6294,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSIGNMENT_NODE__TYPINGS = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 10;
+  int ASSIGNMENT_NODE__TYPINGS = ACTION_NODE_ELEMENT_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
@@ -5878,7 +6303,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSIGNMENT_NODE__SUBSETTING = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 11;
+  int ASSIGNMENT_NODE__SUBSETTING = ACTION_NODE_ELEMENT_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute list.
@@ -5887,7 +6312,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSIGNMENT_NODE__REFERENCES = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 12;
+  int ASSIGNMENT_NODE__REFERENCES = ACTION_NODE_ELEMENT_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Crosses</b></em>' attribute list.
@@ -5896,7 +6321,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSIGNMENT_NODE__CROSSES = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 13;
+  int ASSIGNMENT_NODE__CROSSES = ACTION_NODE_ELEMENT_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
@@ -5905,7 +6330,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSIGNMENT_NODE__REDEFINITIONS = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 14;
+  int ASSIGNMENT_NODE__REDEFINITIONS = ACTION_NODE_ELEMENT_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -5914,7 +6339,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSIGNMENT_NODE__MULTIPLICITY = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 15;
+  int ASSIGNMENT_NODE__MULTIPLICITY = ACTION_NODE_ELEMENT_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
@@ -5923,7 +6348,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSIGNMENT_NODE__IS_ORDERED = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 16;
+  int ASSIGNMENT_NODE__IS_ORDERED = ACTION_NODE_ELEMENT_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
@@ -5932,7 +6357,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSIGNMENT_NODE__IS_NONUNIQUE = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 17;
+  int ASSIGNMENT_NODE__IS_NONUNIQUE = ACTION_NODE_ELEMENT_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -5941,7 +6366,34 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSIGNMENT_NODE__DECLARED_NAME = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 18;
+  int ASSIGNMENT_NODE__DECLARED_NAME = ACTION_NODE_ELEMENT_FEATURE_COUNT + 20;
+
+  /**
+   * The feature id for the '<em><b>Target Parameter</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSIGNMENT_NODE__TARGET_PARAMETER = ACTION_NODE_ELEMENT_FEATURE_COUNT + 21;
+
+  /**
+   * The feature id for the '<em><b>Feature Chain</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSIGNMENT_NODE__FEATURE_CHAIN = ACTION_NODE_ELEMENT_FEATURE_COUNT + 22;
+
+  /**
+   * The feature id for the '<em><b>Node Parameter</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSIGNMENT_NODE__NODE_PARAMETER = ACTION_NODE_ELEMENT_FEATURE_COUNT + 23;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -5950,7 +6402,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSIGNMENT_NODE__ELEMENTS = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 19;
+  int ASSIGNMENT_NODE__ELEMENTS = ACTION_NODE_ELEMENT_FEATURE_COUNT + 24;
 
   /**
    * The number of structural features of the '<em>Assignment Node</em>' class.
@@ -5959,7 +6411,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSIGNMENT_NODE_FEATURE_COUNT = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 20;
+  int ASSIGNMENT_NODE_FEATURE_COUNT = ACTION_NODE_ELEMENT_FEATURE_COUNT + 25;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl <em>If Node</em>}' class.
@@ -5969,7 +6421,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getIfNode()
    * @generated
    */
-  int IF_NODE = 60;
+  int IF_NODE = 61;
 
   /**
    * The feature id for the '<em><b>Is Then</b></em>' attribute.
@@ -6161,13 +6613,22 @@ public interface SysMLOCPackage extends EPackage
   int IF_NODE__DECLARED_NAME = ACTION_NODE_ELEMENT_FEATURE_COUNT + 20;
 
   /**
+   * The feature id for the '<em><b>Transition Succession Element</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_NODE__TRANSITION_SUCCESSION_ELEMENT = ACTION_NODE_ELEMENT_FEATURE_COUNT + 21;
+
+  /**
    * The feature id for the '<em><b>If Condition Expression</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IF_NODE__IF_CONDITION_EXPRESSION = ACTION_NODE_ELEMENT_FEATURE_COUNT + 21;
+  int IF_NODE__IF_CONDITION_EXPRESSION = ACTION_NODE_ELEMENT_FEATURE_COUNT + 22;
 
   /**
    * The feature id for the '<em><b>Action Parameter End</b></em>' containment reference list.
@@ -6176,7 +6637,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_NODE__ACTION_PARAMETER_END = ACTION_NODE_ELEMENT_FEATURE_COUNT + 22;
+  int IF_NODE__ACTION_PARAMETER_END = ACTION_NODE_ELEMENT_FEATURE_COUNT + 23;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -6185,7 +6646,16 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_NODE__ELEMENTS = ACTION_NODE_ELEMENT_FEATURE_COUNT + 23;
+  int IF_NODE__ELEMENTS = ACTION_NODE_ELEMENT_FEATURE_COUNT + 24;
+
+  /**
+   * The feature id for the '<em><b>Else Node</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_NODE__ELSE_NODE = ACTION_NODE_ELEMENT_FEATURE_COUNT + 25;
 
   /**
    * The number of structural features of the '<em>If Node</em>' class.
@@ -6194,7 +6664,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_NODE_FEATURE_COUNT = ACTION_NODE_ELEMENT_FEATURE_COUNT + 24;
+  int IF_NODE_FEATURE_COUNT = ACTION_NODE_ELEMENT_FEATURE_COUNT + 26;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.WhileLoopNodeImpl <em>While Loop Node</em>}' class.
@@ -6204,7 +6674,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getWhileLoopNode()
    * @generated
    */
-  int WHILE_LOOP_NODE = 61;
+  int WHILE_LOOP_NODE = 62;
 
   /**
    * The feature id for the '<em><b>Is Then</b></em>' attribute.
@@ -6448,7 +6918,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getMergeNode()
    * @generated
    */
-  int MERGE_NODE = 62;
+  int MERGE_NODE = 63;
 
   /**
    * The feature id for the '<em><b>Is Then</b></em>' attribute.
@@ -6541,13 +7011,22 @@ public interface SysMLOCPackage extends EPackage
   int MERGE_NODE__PORTION_KIND = ACTION_NODE_ELEMENT_FEATURE_COUNT + 9;
 
   /**
+   * The feature id for the '<em><b>Usage Extension</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MERGE_NODE__USAGE_EXTENSION = ACTION_NODE_ELEMENT_FEATURE_COUNT + 10;
+
+  /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MERGE_NODE__TYPINGS = ACTION_NODE_ELEMENT_FEATURE_COUNT + 10;
+  int MERGE_NODE__TYPINGS = ACTION_NODE_ELEMENT_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
@@ -6556,7 +7035,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MERGE_NODE__SUBSETTING = ACTION_NODE_ELEMENT_FEATURE_COUNT + 11;
+  int MERGE_NODE__SUBSETTING = ACTION_NODE_ELEMENT_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute list.
@@ -6565,7 +7044,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MERGE_NODE__REFERENCES = ACTION_NODE_ELEMENT_FEATURE_COUNT + 12;
+  int MERGE_NODE__REFERENCES = ACTION_NODE_ELEMENT_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>Crosses</b></em>' attribute list.
@@ -6574,7 +7053,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MERGE_NODE__CROSSES = ACTION_NODE_ELEMENT_FEATURE_COUNT + 13;
+  int MERGE_NODE__CROSSES = ACTION_NODE_ELEMENT_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
@@ -6583,7 +7062,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MERGE_NODE__REDEFINITIONS = ACTION_NODE_ELEMENT_FEATURE_COUNT + 14;
+  int MERGE_NODE__REDEFINITIONS = ACTION_NODE_ELEMENT_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -6592,7 +7071,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MERGE_NODE__MULTIPLICITY = ACTION_NODE_ELEMENT_FEATURE_COUNT + 15;
+  int MERGE_NODE__MULTIPLICITY = ACTION_NODE_ELEMENT_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
@@ -6601,7 +7080,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MERGE_NODE__IS_ORDERED = ACTION_NODE_ELEMENT_FEATURE_COUNT + 16;
+  int MERGE_NODE__IS_ORDERED = ACTION_NODE_ELEMENT_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
@@ -6610,7 +7089,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MERGE_NODE__IS_NONUNIQUE = ACTION_NODE_ELEMENT_FEATURE_COUNT + 17;
+  int MERGE_NODE__IS_NONUNIQUE = ACTION_NODE_ELEMENT_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -6619,7 +7098,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MERGE_NODE__DECLARED_NAME = ACTION_NODE_ELEMENT_FEATURE_COUNT + 18;
+  int MERGE_NODE__DECLARED_NAME = ACTION_NODE_ELEMENT_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -6628,7 +7107,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MERGE_NODE__ELEMENTS = ACTION_NODE_ELEMENT_FEATURE_COUNT + 19;
+  int MERGE_NODE__ELEMENTS = ACTION_NODE_ELEMENT_FEATURE_COUNT + 20;
 
   /**
    * The number of structural features of the '<em>Merge Node</em>' class.
@@ -6637,7 +7116,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MERGE_NODE_FEATURE_COUNT = ACTION_NODE_ELEMENT_FEATURE_COUNT + 20;
+  int MERGE_NODE_FEATURE_COUNT = ACTION_NODE_ELEMENT_FEATURE_COUNT + 21;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.DecisionNodeImpl <em>Decision Node</em>}' class.
@@ -6647,7 +7126,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getDecisionNode()
    * @generated
    */
-  int DECISION_NODE = 63;
+  int DECISION_NODE = 64;
 
   /**
    * The feature id for the '<em><b>Is Then</b></em>' attribute.
@@ -6740,13 +7219,22 @@ public interface SysMLOCPackage extends EPackage
   int DECISION_NODE__PORTION_KIND = ACTION_NODE_ELEMENT_FEATURE_COUNT + 9;
 
   /**
+   * The feature id for the '<em><b>Usage Extension</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECISION_NODE__USAGE_EXTENSION = ACTION_NODE_ELEMENT_FEATURE_COUNT + 10;
+
+  /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DECISION_NODE__TYPINGS = ACTION_NODE_ELEMENT_FEATURE_COUNT + 10;
+  int DECISION_NODE__TYPINGS = ACTION_NODE_ELEMENT_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
@@ -6755,7 +7243,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DECISION_NODE__SUBSETTING = ACTION_NODE_ELEMENT_FEATURE_COUNT + 11;
+  int DECISION_NODE__SUBSETTING = ACTION_NODE_ELEMENT_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute list.
@@ -6764,7 +7252,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DECISION_NODE__REFERENCES = ACTION_NODE_ELEMENT_FEATURE_COUNT + 12;
+  int DECISION_NODE__REFERENCES = ACTION_NODE_ELEMENT_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>Crosses</b></em>' attribute list.
@@ -6773,7 +7261,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DECISION_NODE__CROSSES = ACTION_NODE_ELEMENT_FEATURE_COUNT + 13;
+  int DECISION_NODE__CROSSES = ACTION_NODE_ELEMENT_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
@@ -6782,7 +7270,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DECISION_NODE__REDEFINITIONS = ACTION_NODE_ELEMENT_FEATURE_COUNT + 14;
+  int DECISION_NODE__REDEFINITIONS = ACTION_NODE_ELEMENT_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -6791,7 +7279,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DECISION_NODE__MULTIPLICITY = ACTION_NODE_ELEMENT_FEATURE_COUNT + 15;
+  int DECISION_NODE__MULTIPLICITY = ACTION_NODE_ELEMENT_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
@@ -6800,7 +7288,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DECISION_NODE__IS_ORDERED = ACTION_NODE_ELEMENT_FEATURE_COUNT + 16;
+  int DECISION_NODE__IS_ORDERED = ACTION_NODE_ELEMENT_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
@@ -6809,7 +7297,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DECISION_NODE__IS_NONUNIQUE = ACTION_NODE_ELEMENT_FEATURE_COUNT + 17;
+  int DECISION_NODE__IS_NONUNIQUE = ACTION_NODE_ELEMENT_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -6818,7 +7306,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DECISION_NODE__DECLARED_NAME = ACTION_NODE_ELEMENT_FEATURE_COUNT + 18;
+  int DECISION_NODE__DECLARED_NAME = ACTION_NODE_ELEMENT_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -6827,7 +7315,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DECISION_NODE__ELEMENTS = ACTION_NODE_ELEMENT_FEATURE_COUNT + 19;
+  int DECISION_NODE__ELEMENTS = ACTION_NODE_ELEMENT_FEATURE_COUNT + 20;
 
   /**
    * The number of structural features of the '<em>Decision Node</em>' class.
@@ -6836,7 +7324,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DECISION_NODE_FEATURE_COUNT = ACTION_NODE_ELEMENT_FEATURE_COUNT + 20;
+  int DECISION_NODE_FEATURE_COUNT = ACTION_NODE_ELEMENT_FEATURE_COUNT + 21;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.JoinNodeImpl <em>Join Node</em>}' class.
@@ -6846,7 +7334,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getJoinNode()
    * @generated
    */
-  int JOIN_NODE = 64;
+  int JOIN_NODE = 65;
 
   /**
    * The feature id for the '<em><b>Is Then</b></em>' attribute.
@@ -6939,13 +7427,22 @@ public interface SysMLOCPackage extends EPackage
   int JOIN_NODE__PORTION_KIND = ACTION_NODE_ELEMENT_FEATURE_COUNT + 9;
 
   /**
+   * The feature id for the '<em><b>Usage Extension</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int JOIN_NODE__USAGE_EXTENSION = ACTION_NODE_ELEMENT_FEATURE_COUNT + 10;
+
+  /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int JOIN_NODE__TYPINGS = ACTION_NODE_ELEMENT_FEATURE_COUNT + 10;
+  int JOIN_NODE__TYPINGS = ACTION_NODE_ELEMENT_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
@@ -6954,7 +7451,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int JOIN_NODE__SUBSETTING = ACTION_NODE_ELEMENT_FEATURE_COUNT + 11;
+  int JOIN_NODE__SUBSETTING = ACTION_NODE_ELEMENT_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute list.
@@ -6963,7 +7460,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int JOIN_NODE__REFERENCES = ACTION_NODE_ELEMENT_FEATURE_COUNT + 12;
+  int JOIN_NODE__REFERENCES = ACTION_NODE_ELEMENT_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>Crosses</b></em>' attribute list.
@@ -6972,7 +7469,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int JOIN_NODE__CROSSES = ACTION_NODE_ELEMENT_FEATURE_COUNT + 13;
+  int JOIN_NODE__CROSSES = ACTION_NODE_ELEMENT_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
@@ -6981,7 +7478,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int JOIN_NODE__REDEFINITIONS = ACTION_NODE_ELEMENT_FEATURE_COUNT + 14;
+  int JOIN_NODE__REDEFINITIONS = ACTION_NODE_ELEMENT_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -6990,7 +7487,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int JOIN_NODE__MULTIPLICITY = ACTION_NODE_ELEMENT_FEATURE_COUNT + 15;
+  int JOIN_NODE__MULTIPLICITY = ACTION_NODE_ELEMENT_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
@@ -6999,7 +7496,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int JOIN_NODE__IS_ORDERED = ACTION_NODE_ELEMENT_FEATURE_COUNT + 16;
+  int JOIN_NODE__IS_ORDERED = ACTION_NODE_ELEMENT_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
@@ -7008,7 +7505,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int JOIN_NODE__IS_NONUNIQUE = ACTION_NODE_ELEMENT_FEATURE_COUNT + 17;
+  int JOIN_NODE__IS_NONUNIQUE = ACTION_NODE_ELEMENT_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -7017,7 +7514,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int JOIN_NODE__DECLARED_NAME = ACTION_NODE_ELEMENT_FEATURE_COUNT + 18;
+  int JOIN_NODE__DECLARED_NAME = ACTION_NODE_ELEMENT_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -7026,7 +7523,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int JOIN_NODE__ELEMENTS = ACTION_NODE_ELEMENT_FEATURE_COUNT + 19;
+  int JOIN_NODE__ELEMENTS = ACTION_NODE_ELEMENT_FEATURE_COUNT + 20;
 
   /**
    * The number of structural features of the '<em>Join Node</em>' class.
@@ -7035,7 +7532,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int JOIN_NODE_FEATURE_COUNT = ACTION_NODE_ELEMENT_FEATURE_COUNT + 20;
+  int JOIN_NODE_FEATURE_COUNT = ACTION_NODE_ELEMENT_FEATURE_COUNT + 21;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.ForkNodeImpl <em>Fork Node</em>}' class.
@@ -7045,7 +7542,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getForkNode()
    * @generated
    */
-  int FORK_NODE = 65;
+  int FORK_NODE = 66;
 
   /**
    * The feature id for the '<em><b>Is Then</b></em>' attribute.
@@ -7138,13 +7635,22 @@ public interface SysMLOCPackage extends EPackage
   int FORK_NODE__PORTION_KIND = ACTION_NODE_ELEMENT_FEATURE_COUNT + 9;
 
   /**
+   * The feature id for the '<em><b>Usage Extension</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORK_NODE__USAGE_EXTENSION = ACTION_NODE_ELEMENT_FEATURE_COUNT + 10;
+
+  /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FORK_NODE__TYPINGS = ACTION_NODE_ELEMENT_FEATURE_COUNT + 10;
+  int FORK_NODE__TYPINGS = ACTION_NODE_ELEMENT_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
@@ -7153,7 +7659,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORK_NODE__SUBSETTING = ACTION_NODE_ELEMENT_FEATURE_COUNT + 11;
+  int FORK_NODE__SUBSETTING = ACTION_NODE_ELEMENT_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute list.
@@ -7162,7 +7668,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORK_NODE__REFERENCES = ACTION_NODE_ELEMENT_FEATURE_COUNT + 12;
+  int FORK_NODE__REFERENCES = ACTION_NODE_ELEMENT_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>Crosses</b></em>' attribute list.
@@ -7171,7 +7677,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORK_NODE__CROSSES = ACTION_NODE_ELEMENT_FEATURE_COUNT + 13;
+  int FORK_NODE__CROSSES = ACTION_NODE_ELEMENT_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
@@ -7180,7 +7686,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORK_NODE__REDEFINITIONS = ACTION_NODE_ELEMENT_FEATURE_COUNT + 14;
+  int FORK_NODE__REDEFINITIONS = ACTION_NODE_ELEMENT_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -7189,7 +7695,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORK_NODE__MULTIPLICITY = ACTION_NODE_ELEMENT_FEATURE_COUNT + 15;
+  int FORK_NODE__MULTIPLICITY = ACTION_NODE_ELEMENT_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
@@ -7198,7 +7704,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORK_NODE__IS_ORDERED = ACTION_NODE_ELEMENT_FEATURE_COUNT + 16;
+  int FORK_NODE__IS_ORDERED = ACTION_NODE_ELEMENT_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
@@ -7207,7 +7713,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORK_NODE__IS_NONUNIQUE = ACTION_NODE_ELEMENT_FEATURE_COUNT + 17;
+  int FORK_NODE__IS_NONUNIQUE = ACTION_NODE_ELEMENT_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -7216,7 +7722,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORK_NODE__DECLARED_NAME = ACTION_NODE_ELEMENT_FEATURE_COUNT + 18;
+  int FORK_NODE__DECLARED_NAME = ACTION_NODE_ELEMENT_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -7225,7 +7731,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORK_NODE__ELEMENTS = ACTION_NODE_ELEMENT_FEATURE_COUNT + 19;
+  int FORK_NODE__ELEMENTS = ACTION_NODE_ELEMENT_FEATURE_COUNT + 20;
 
   /**
    * The number of structural features of the '<em>Fork Node</em>' class.
@@ -7234,7 +7740,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORK_NODE_FEATURE_COUNT = ACTION_NODE_ELEMENT_FEATURE_COUNT + 20;
+  int FORK_NODE_FEATURE_COUNT = ACTION_NODE_ELEMENT_FEATURE_COUNT + 21;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.FeatureSpecializationImpl <em>Feature Specialization</em>}' class.
@@ -7244,7 +7750,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getFeatureSpecialization()
    * @generated
    */
-  int FEATURE_SPECIALIZATION = 98;
+  int FEATURE_SPECIALIZATION = 103;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -7308,7 +7814,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getFeatureSpecializationPart()
    * @generated
    */
-  int FEATURE_SPECIALIZATION_PART = 93;
+  int FEATURE_SPECIALIZATION_PART = 94;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -7399,7 +7905,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getFeatureDeclaration()
    * @generated
    */
-  int FEATURE_DECLARATION = 92;
+  int FEATURE_DECLARATION = 93;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -7499,7 +8005,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getUsageDeclaration()
    * @generated
    */
-  int USAGE_DECLARATION = 90;
+  int USAGE_DECLARATION = 91;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -7599,7 +8105,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getActionParameterEnd()
    * @generated
    */
-  int ACTION_PARAMETER_END = 66;
+  int ACTION_PARAMETER_END = 67;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -7692,34 +8198,6 @@ public interface SysMLOCPackage extends EPackage
   int ACTION_PARAMETER_END_FEATURE_COUNT = USAGE_DECLARATION_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.MemberPrefixImpl <em>Member Prefix</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.sysmloc.sysMLOC.impl.MemberPrefixImpl
-   * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getMemberPrefix()
-   * @generated
-   */
-  int MEMBER_PREFIX = 75;
-
-  /**
-   * The feature id for the '<em><b>Visibility</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MEMBER_PREFIX__VISIBILITY = 0;
-
-  /**
-   * The number of structural features of the '<em>Member Prefix</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MEMBER_PREFIX_FEATURE_COUNT = 1;
-
-  /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.ForLoopNodeImpl <em>For Loop Node</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -7727,7 +8205,25 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getForLoopNode()
    * @generated
    */
-  int FOR_LOOP_NODE = 67;
+  int FOR_LOOP_NODE = 68;
+
+  /**
+   * The feature id for the '<em><b>Is Then</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_LOOP_NODE__IS_THEN = ACTION_NODE_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Then Multiplicity</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_LOOP_NODE__THEN_MULTIPLICITY = ACTION_NODE_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -7736,7 +8232,205 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FOR_LOOP_NODE__VISIBILITY = MEMBER_PREFIX__VISIBILITY;
+  int FOR_LOOP_NODE__VISIBILITY = ACTION_NODE_ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Direction</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_LOOP_NODE__DIRECTION = ACTION_NODE_ELEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_LOOP_NODE__IS_ABSTRACT = ACTION_NODE_ELEMENT_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Is Variation</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_LOOP_NODE__IS_VARIATION = ACTION_NODE_ELEMENT_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Is Read Only</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_LOOP_NODE__IS_READ_ONLY = ACTION_NODE_ELEMENT_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Is Derived</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_LOOP_NODE__IS_DERIVED = ACTION_NODE_ELEMENT_FEATURE_COUNT + 7;
+
+  /**
+   * The feature id for the '<em><b>Is Reference</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_LOOP_NODE__IS_REFERENCE = ACTION_NODE_ELEMENT_FEATURE_COUNT + 8;
+
+  /**
+   * The feature id for the '<em><b>Is End</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_LOOP_NODE__IS_END = ACTION_NODE_ELEMENT_FEATURE_COUNT + 9;
+
+  /**
+   * The feature id for the '<em><b>Is Individual</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_LOOP_NODE__IS_INDIVIDUAL = ACTION_NODE_ELEMENT_FEATURE_COUNT + 10;
+
+  /**
+   * The feature id for the '<em><b>Portion Kind</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_LOOP_NODE__PORTION_KIND = ACTION_NODE_ELEMENT_FEATURE_COUNT + 11;
+
+  /**
+   * The feature id for the '<em><b>Typings</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_LOOP_NODE__TYPINGS = ACTION_NODE_ELEMENT_FEATURE_COUNT + 12;
+
+  /**
+   * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_LOOP_NODE__SUBSETTING = ACTION_NODE_ELEMENT_FEATURE_COUNT + 13;
+
+  /**
+   * The feature id for the '<em><b>References</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_LOOP_NODE__REFERENCES = ACTION_NODE_ELEMENT_FEATURE_COUNT + 14;
+
+  /**
+   * The feature id for the '<em><b>Crosses</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_LOOP_NODE__CROSSES = ACTION_NODE_ELEMENT_FEATURE_COUNT + 15;
+
+  /**
+   * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_LOOP_NODE__REDEFINITIONS = ACTION_NODE_ELEMENT_FEATURE_COUNT + 16;
+
+  /**
+   * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_LOOP_NODE__MULTIPLICITY = ACTION_NODE_ELEMENT_FEATURE_COUNT + 17;
+
+  /**
+   * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_LOOP_NODE__IS_ORDERED = ACTION_NODE_ELEMENT_FEATURE_COUNT + 18;
+
+  /**
+   * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_LOOP_NODE__IS_NONUNIQUE = ACTION_NODE_ELEMENT_FEATURE_COUNT + 19;
+
+  /**
+   * The feature id for the '<em><b>Declared Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_LOOP_NODE__DECLARED_NAME = ACTION_NODE_ELEMENT_FEATURE_COUNT + 20;
+
+  /**
+   * The feature id for the '<em><b>For Variable Parameter</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_LOOP_NODE__FOR_VARIABLE_PARAMETER = ACTION_NODE_ELEMENT_FEATURE_COUNT + 21;
+
+  /**
+   * The feature id for the '<em><b>Node Parameter</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_LOOP_NODE__NODE_PARAMETER = ACTION_NODE_ELEMENT_FEATURE_COUNT + 22;
+
+  /**
+   * The feature id for the '<em><b>Action Parameter End</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_LOOP_NODE__ACTION_PARAMETER_END = ACTION_NODE_ELEMENT_FEATURE_COUNT + 23;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_LOOP_NODE__ELEMENTS = ACTION_NODE_ELEMENT_FEATURE_COUNT + 24;
 
   /**
    * The number of structural features of the '<em>For Loop Node</em>' class.
@@ -7745,7 +8439,144 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FOR_LOOP_NODE_FEATURE_COUNT = MEMBER_PREFIX_FEATURE_COUNT + 0;
+  int FOR_LOOP_NODE_FEATURE_COUNT = ACTION_NODE_ELEMENT_FEATURE_COUNT + 25;
+
+  /**
+   * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.ForVariableParameterImpl <em>For Variable Parameter</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.sysmloc.sysMLOC.impl.ForVariableParameterImpl
+   * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getForVariableParameter()
+   * @generated
+   */
+  int FOR_VARIABLE_PARAMETER = 69;
+
+  /**
+   * The feature id for the '<em><b>Typings</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_VARIABLE_PARAMETER__TYPINGS = USAGE_DECLARATION__TYPINGS;
+
+  /**
+   * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_VARIABLE_PARAMETER__SUBSETTING = USAGE_DECLARATION__SUBSETTING;
+
+  /**
+   * The feature id for the '<em><b>References</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_VARIABLE_PARAMETER__REFERENCES = USAGE_DECLARATION__REFERENCES;
+
+  /**
+   * The feature id for the '<em><b>Crosses</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_VARIABLE_PARAMETER__CROSSES = USAGE_DECLARATION__CROSSES;
+
+  /**
+   * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_VARIABLE_PARAMETER__REDEFINITIONS = USAGE_DECLARATION__REDEFINITIONS;
+
+  /**
+   * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_VARIABLE_PARAMETER__MULTIPLICITY = USAGE_DECLARATION__MULTIPLICITY;
+
+  /**
+   * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_VARIABLE_PARAMETER__IS_ORDERED = USAGE_DECLARATION__IS_ORDERED;
+
+  /**
+   * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_VARIABLE_PARAMETER__IS_NONUNIQUE = USAGE_DECLARATION__IS_NONUNIQUE;
+
+  /**
+   * The feature id for the '<em><b>Declared Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_VARIABLE_PARAMETER__DECLARED_NAME = USAGE_DECLARATION__DECLARED_NAME;
+
+  /**
+   * The number of structural features of the '<em>For Variable Parameter</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOR_VARIABLE_PARAMETER_FEATURE_COUNT = USAGE_DECLARATION_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.EmptySuccessionPrefixImpl <em>Empty Succession Prefix</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.sysmloc.sysMLOC.impl.EmptySuccessionPrefixImpl
+   * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getEmptySuccessionPrefix()
+   * @generated
+   */
+  int EMPTY_SUCCESSION_PREFIX = 73;
+
+  /**
+   * The feature id for the '<em><b>Is Then</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EMPTY_SUCCESSION_PREFIX__IS_THEN = 0;
+
+  /**
+   * The feature id for the '<em><b>Then Multiplicity</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EMPTY_SUCCESSION_PREFIX__THEN_MULTIPLICITY = 1;
+
+  /**
+   * The number of structural features of the '<em>Empty Succession Prefix</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.TerminateNodeImpl <em>Terminate Node</em>}' class.
@@ -7755,7 +8586,25 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getTerminateNode()
    * @generated
    */
-  int TERMINATE_NODE = 68;
+  int TERMINATE_NODE = 70;
+
+  /**
+   * The feature id for the '<em><b>Is Then</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERMINATE_NODE__IS_THEN = EMPTY_SUCCESSION_PREFIX__IS_THEN;
+
+  /**
+   * The feature id for the '<em><b>Then Multiplicity</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERMINATE_NODE__THEN_MULTIPLICITY = EMPTY_SUCCESSION_PREFIX__THEN_MULTIPLICITY;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -7764,7 +8613,169 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TERMINATE_NODE__VISIBILITY = MEMBER_PREFIX__VISIBILITY;
+  int TERMINATE_NODE__VISIBILITY = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Direction</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERMINATE_NODE__DIRECTION = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERMINATE_NODE__IS_ABSTRACT = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Is Variation</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERMINATE_NODE__IS_VARIATION = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Is Read Only</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERMINATE_NODE__IS_READ_ONLY = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Is Derived</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERMINATE_NODE__IS_DERIVED = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Is Reference</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERMINATE_NODE__IS_REFERENCE = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Is End</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERMINATE_NODE__IS_END = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 7;
+
+  /**
+   * The feature id for the '<em><b>Is Individual</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERMINATE_NODE__IS_INDIVIDUAL = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 8;
+
+  /**
+   * The feature id for the '<em><b>Portion Kind</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERMINATE_NODE__PORTION_KIND = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 9;
+
+  /**
+   * The feature id for the '<em><b>Typings</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERMINATE_NODE__TYPINGS = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 10;
+
+  /**
+   * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERMINATE_NODE__SUBSETTING = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 11;
+
+  /**
+   * The feature id for the '<em><b>References</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERMINATE_NODE__REFERENCES = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 12;
+
+  /**
+   * The feature id for the '<em><b>Crosses</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERMINATE_NODE__CROSSES = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 13;
+
+  /**
+   * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERMINATE_NODE__REDEFINITIONS = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 14;
+
+  /**
+   * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERMINATE_NODE__MULTIPLICITY = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 15;
+
+  /**
+   * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERMINATE_NODE__IS_ORDERED = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 16;
+
+  /**
+   * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERMINATE_NODE__IS_NONUNIQUE = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 17;
+
+  /**
+   * The feature id for the '<em><b>Declared Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERMINATE_NODE__DECLARED_NAME = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 18;
 
   /**
    * The number of structural features of the '<em>Terminate Node</em>' class.
@@ -7773,7 +8784,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TERMINATE_NODE_FEATURE_COUNT = MEMBER_PREFIX_FEATURE_COUNT + 0;
+  int TERMINATE_NODE_FEATURE_COUNT = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 19;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.GuardedSuccessionElementImpl <em>Guarded Succession Element</em>}' class.
@@ -7783,7 +8794,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getGuardedSuccessionElement()
    * @generated
    */
-  int GUARDED_SUCCESSION_ELEMENT = 69;
+  int GUARDED_SUCCESSION_ELEMENT = 71;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -7919,7 +8930,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getTargetSuccessionElement()
    * @generated
    */
-  int TARGET_SUCCESSION_ELEMENT = 70;
+  int TARGET_SUCCESSION_ELEMENT = 72;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -7949,22 +8960,13 @@ public interface SysMLOCPackage extends EPackage
   int TARGET_SUCCESSION_ELEMENT__TRANSITION_SUCCESSION_ELEMENT = TARGET_SUCCESSION_NODE_ELEMENT_FEATURE_COUNT + 2;
 
   /**
-   * The feature id for the '<em><b>Conditional Expression</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TARGET_SUCCESSION_ELEMENT__CONDITIONAL_EXPRESSION = TARGET_SUCCESSION_NODE_ELEMENT_FEATURE_COUNT + 3;
-
-  /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TARGET_SUCCESSION_ELEMENT__ELEMENTS = TARGET_SUCCESSION_NODE_ELEMENT_FEATURE_COUNT + 4;
+  int TARGET_SUCCESSION_ELEMENT__ELEMENTS = TARGET_SUCCESSION_NODE_ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Target Succession Element</em>' class.
@@ -7973,7 +8975,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TARGET_SUCCESSION_ELEMENT_FEATURE_COUNT = TARGET_SUCCESSION_NODE_ELEMENT_FEATURE_COUNT + 5;
+  int TARGET_SUCCESSION_ELEMENT_FEATURE_COUNT = TARGET_SUCCESSION_NODE_ELEMENT_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.FeatureValueImpl <em>Feature Value</em>}' class.
@@ -7983,7 +8985,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getFeatureValue()
    * @generated
    */
-  int FEATURE_VALUE = 91;
+  int FEATURE_VALUE = 92;
 
   /**
    * The feature id for the '<em><b>Is Initial</b></em>' attribute.
@@ -8029,7 +9031,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getValuePart()
    * @generated
    */
-  int VALUE_PART = 73;
+  int VALUE_PART = 75;
 
   /**
    * The feature id for the '<em><b>Is Initial</b></em>' attribute.
@@ -8068,32 +9070,32 @@ public interface SysMLOCPackage extends EPackage
   int VALUE_PART_FEATURE_COUNT = FEATURE_VALUE_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.isImportAllFragmentImpl <em>is Import All Fragment</em>}' class.
+   * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.MemberPrefixImpl <em>Member Prefix</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see dut.control.sysmloc.sysMLOC.impl.isImportAllFragmentImpl
-   * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getisImportAllFragment()
+   * @see dut.control.sysmloc.sysMLOC.impl.MemberPrefixImpl
+   * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getMemberPrefix()
    * @generated
    */
-  int IS_IMPORT_ALL_FRAGMENT = 74;
+  int MEMBER_PREFIX = 76;
 
   /**
-   * The feature id for the '<em><b>Is Import All</b></em>' attribute.
+   * The feature id for the '<em><b>Visibility</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IS_IMPORT_ALL_FRAGMENT__IS_IMPORT_ALL = 0;
+  int MEMBER_PREFIX__VISIBILITY = 0;
 
   /**
-   * The number of structural features of the '<em>is Import All Fragment</em>' class.
+   * The number of structural features of the '<em>Member Prefix</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IS_IMPORT_ALL_FRAGMENT_FEATURE_COUNT = 1;
+  int MEMBER_PREFIX_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.BasicDefinitionPrefixImpl <em>Basic Definition Prefix</em>}' class.
@@ -8103,7 +9105,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getBasicDefinitionPrefix()
    * @generated
    */
-  int BASIC_DEFINITION_PREFIX = 78;
+  int BASIC_DEFINITION_PREFIX = 79;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -8140,7 +9142,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getDefinitionPrefix()
    * @generated
    */
-  int DEFINITION_PREFIX = 76;
+  int DEFINITION_PREFIX = 77;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -8177,7 +9179,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getOccurrenceDefinitionPrefix()
    * @generated
    */
-  int OCCURRENCE_DEFINITION_PREFIX = 77;
+  int OCCURRENCE_DEFINITION_PREFIX = 78;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -8223,7 +9225,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getEndUsagePrefix()
    * @generated
    */
-  int END_USAGE_PREFIX = 81;
+  int END_USAGE_PREFIX = 82;
 
   /**
    * The feature id for the '<em><b>Is End</b></em>' attribute.
@@ -8251,7 +9253,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getUnextendedUsagePrefix()
    * @generated
    */
-  int UNEXTENDED_USAGE_PREFIX = 80;
+  int UNEXTENDED_USAGE_PREFIX = 81;
 
   /**
    * The feature id for the '<em><b>Is End</b></em>' attribute.
@@ -8333,7 +9335,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getUsagePrefix()
    * @generated
    */
-  int USAGE_PREFIX = 79;
+  int USAGE_PREFIX = 80;
 
   /**
    * The feature id for the '<em><b>Is End</b></em>' attribute.
@@ -8399,13 +9401,22 @@ public interface SysMLOCPackage extends EPackage
   int USAGE_PREFIX__IS_REFERENCE = UNEXTENDED_USAGE_PREFIX__IS_REFERENCE;
 
   /**
+   * The feature id for the '<em><b>Usage Extension</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int USAGE_PREFIX__USAGE_EXTENSION = UNEXTENDED_USAGE_PREFIX_FEATURE_COUNT + 0;
+
+  /**
    * The number of structural features of the '<em>Usage Prefix</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int USAGE_PREFIX_FEATURE_COUNT = UNEXTENDED_USAGE_PREFIX_FEATURE_COUNT + 0;
+  int USAGE_PREFIX_FEATURE_COUNT = UNEXTENDED_USAGE_PREFIX_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.RefPrefixImpl <em>Ref Prefix</em>}' class.
@@ -8415,7 +9426,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getRefPrefix()
    * @generated
    */
-  int REF_PREFIX = 83;
+  int REF_PREFIX = 84;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -8479,7 +9490,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getBasicUsagePrefix()
    * @generated
    */
-  int BASIC_USAGE_PREFIX = 84;
+  int BASIC_USAGE_PREFIX = 85;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -8552,7 +9563,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getOccurrenceUsagePrefix()
    * @generated
    */
-  int OCCURRENCE_USAGE_PREFIX = 82;
+  int OCCURRENCE_USAGE_PREFIX = 83;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -8652,7 +9663,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getConnectorPart()
    * @generated
    */
-  int CONNECTOR_PART = 85;
+  int CONNECTOR_PART = 86;
 
   /**
    * The feature id for the '<em><b>Connector Part</b></em>' containment reference list.
@@ -8680,7 +9691,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getDefinitionDeclaration()
    * @generated
    */
-  int DEFINITION_DECLARATION = 86;
+  int DEFINITION_DECLARATION = 87;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -8717,7 +9728,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getActionUsageDeclaration()
    * @generated
    */
-  int ACTION_USAGE_DECLARATION = 87;
+  int ACTION_USAGE_DECLARATION = 88;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -8844,7 +9855,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getActionNodeUsageDeclaration()
    * @generated
    */
-  int ACTION_NODE_USAGE_DECLARATION = 88;
+  int ACTION_NODE_USAGE_DECLARATION = 89;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -8944,7 +9955,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getUsage()
    * @generated
    */
-  int USAGE = 89;
+  int USAGE = 90;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -9071,7 +10082,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getAcceptNodeDeclaration()
    * @generated
    */
-  int ACCEPT_NODE_DECLARATION = 94;
+  int ACCEPT_NODE_DECLARATION = 95;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -9155,13 +10166,196 @@ public interface SysMLOCPackage extends EPackage
   int ACCEPT_NODE_DECLARATION__DECLARED_NAME = ACTION_NODE_USAGE_DECLARATION__DECLARED_NAME;
 
   /**
+   * The feature id for the '<em><b>Accept Parameter</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACCEPT_NODE_DECLARATION__ACCEPT_PARAMETER = ACTION_NODE_USAGE_DECLARATION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Via Node Parameter</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACCEPT_NODE_DECLARATION__VIA_NODE_PARAMETER = ACTION_NODE_USAGE_DECLARATION_FEATURE_COUNT + 1;
+
+  /**
    * The number of structural features of the '<em>Accept Node Declaration</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ACCEPT_NODE_DECLARATION_FEATURE_COUNT = ACTION_NODE_USAGE_DECLARATION_FEATURE_COUNT + 0;
+  int ACCEPT_NODE_DECLARATION_FEATURE_COUNT = ACTION_NODE_USAGE_DECLARATION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.AcceptParameterPartImpl <em>Accept Parameter Part</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.sysmloc.sysMLOC.impl.AcceptParameterPartImpl
+   * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getAcceptParameterPart()
+   * @generated
+   */
+  int ACCEPT_PARAMETER_PART = 96;
+
+  /**
+   * The feature id for the '<em><b>Accept Parameter</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACCEPT_PARAMETER_PART__ACCEPT_PARAMETER = 0;
+
+  /**
+   * The feature id for the '<em><b>Via Node Parameter</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACCEPT_PARAMETER_PART__VIA_NODE_PARAMETER = 1;
+
+  /**
+   * The number of structural features of the '<em>Accept Parameter Part</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACCEPT_PARAMETER_PART_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.PayloadFeatureSpecializationPartImpl <em>Payload Feature Specialization Part</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.sysmloc.sysMLOC.impl.PayloadFeatureSpecializationPartImpl
+   * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getPayloadFeatureSpecializationPart()
+   * @generated
+   */
+  int PAYLOAD_FEATURE_SPECIALIZATION_PART = 98;
+
+  /**
+   * The feature id for the '<em><b>Typings</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAYLOAD_FEATURE_SPECIALIZATION_PART__TYPINGS = FEATURE_SPECIALIZATION_PART__TYPINGS;
+
+  /**
+   * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAYLOAD_FEATURE_SPECIALIZATION_PART__SUBSETTING = FEATURE_SPECIALIZATION_PART__SUBSETTING;
+
+  /**
+   * The feature id for the '<em><b>References</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAYLOAD_FEATURE_SPECIALIZATION_PART__REFERENCES = FEATURE_SPECIALIZATION_PART__REFERENCES;
+
+  /**
+   * The feature id for the '<em><b>Crosses</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAYLOAD_FEATURE_SPECIALIZATION_PART__CROSSES = FEATURE_SPECIALIZATION_PART__CROSSES;
+
+  /**
+   * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAYLOAD_FEATURE_SPECIALIZATION_PART__REDEFINITIONS = FEATURE_SPECIALIZATION_PART__REDEFINITIONS;
+
+  /**
+   * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAYLOAD_FEATURE_SPECIALIZATION_PART__MULTIPLICITY = FEATURE_SPECIALIZATION_PART__MULTIPLICITY;
+
+  /**
+   * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAYLOAD_FEATURE_SPECIALIZATION_PART__IS_ORDERED = FEATURE_SPECIALIZATION_PART__IS_ORDERED;
+
+  /**
+   * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAYLOAD_FEATURE_SPECIALIZATION_PART__IS_NONUNIQUE = FEATURE_SPECIALIZATION_PART__IS_NONUNIQUE;
+
+  /**
+   * The number of structural features of the '<em>Payload Feature Specialization Part</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAYLOAD_FEATURE_SPECIALIZATION_PART_FEATURE_COUNT = FEATURE_SPECIALIZATION_PART_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.TriggerValuePartImpl <em>Trigger Value Part</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.sysmloc.sysMLOC.impl.TriggerValuePartImpl
+   * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getTriggerValuePart()
+   * @generated
+   */
+  int TRIGGER_VALUE_PART = 99;
+
+  /**
+   * The feature id for the '<em><b>Triggerkind</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRIGGER_VALUE_PART__TRIGGERKIND = 0;
+
+  /**
+   * The feature id for the '<em><b>Trigger Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRIGGER_VALUE_PART__TRIGGER_EXPRESSION = 1;
+
+  /**
+   * The number of structural features of the '<em>Trigger Value Part</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRIGGER_VALUE_PART_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.AssignmentNodeDeclarationImpl <em>Assignment Node Declaration</em>}' class.
@@ -9171,7 +10365,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getAssignmentNodeDeclaration()
    * @generated
    */
-  int ASSIGNMENT_NODE_DECLARATION = 95;
+  int ASSIGNMENT_NODE_DECLARATION = 100;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -9255,50 +10449,40 @@ public interface SysMLOCPackage extends EPackage
   int ASSIGNMENT_NODE_DECLARATION__DECLARED_NAME = ACTION_NODE_USAGE_DECLARATION__DECLARED_NAME;
 
   /**
+   * The feature id for the '<em><b>Target Parameter</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSIGNMENT_NODE_DECLARATION__TARGET_PARAMETER = ACTION_NODE_USAGE_DECLARATION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Feature Chain</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSIGNMENT_NODE_DECLARATION__FEATURE_CHAIN = ACTION_NODE_USAGE_DECLARATION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Node Parameter</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSIGNMENT_NODE_DECLARATION__NODE_PARAMETER = ACTION_NODE_USAGE_DECLARATION_FEATURE_COUNT + 2;
+
+  /**
    * The number of structural features of the '<em>Assignment Node Declaration</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ASSIGNMENT_NODE_DECLARATION_FEATURE_COUNT = ACTION_NODE_USAGE_DECLARATION_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.IdentificationImpl <em>Identification</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.sysmloc.sysMLOC.impl.IdentificationImpl
-   * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getIdentification()
-   * @generated
-   */
-  int IDENTIFICATION = 96;
-
-  /**
-   * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IDENTIFICATION__DECLARED_SHORT_NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Declared Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IDENTIFICATION__DECLARED_NAME = 1;
-
-  /**
-   * The number of structural features of the '<em>Identification</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IDENTIFICATION_FEATURE_COUNT = 2;
+  int ASSIGNMENT_NODE_DECLARATION_FEATURE_COUNT = ACTION_NODE_USAGE_DECLARATION_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.MultiplicityPartImpl <em>Multiplicity Part</em>}' class.
@@ -9308,7 +10492,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getMultiplicityPart()
    * @generated
    */
-  int MULTIPLICITY_PART = 97;
+  int MULTIPLICITY_PART = 102;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -9354,7 +10538,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getGuardExpression()
    * @generated
    */
-  int GUARD_EXPRESSION = 99;
+  int GUARD_EXPRESSION = 104;
 
   /**
    * The feature id for the '<em><b>Conditional Expression</b></em>' attribute.
@@ -9382,7 +10566,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getTransitionSuccession()
    * @generated
    */
-  int TRANSITION_SUCCESSION = 100;
+  int TRANSITION_SUCCESSION = 105;
 
   /**
    * The feature id for the '<em><b>Transition Succession Element</b></em>' containment reference list.
@@ -9410,7 +10594,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getTargetSuccession()
    * @generated
    */
-  int TARGET_SUCCESSION = 101;
+  int TARGET_SUCCESSION = 106;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -9447,7 +10631,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getGuardedTargetSuccession()
    * @generated
    */
-  int GUARDED_TARGET_SUCCESSION = 102;
+  int GUARDED_TARGET_SUCCESSION = 107;
 
   /**
    * The feature id for the '<em><b>Transition Succession Element</b></em>' containment reference list.
@@ -9484,7 +10668,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getDefaultTargetSuccession()
    * @generated
    */
-  int DEFAULT_TARGET_SUCCESSION = 103;
+  int DEFAULT_TARGET_SUCCESSION = 108;
 
   /**
    * The feature id for the '<em><b>Transition Succession Element</b></em>' containment reference list.
@@ -9512,7 +10696,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getReferenceSubsetting()
    * @generated
    */
-  int REFERENCE_SUBSETTING = 104;
+  int REFERENCE_SUBSETTING = 109;
 
   /**
    * The feature id for the '<em><b>Ref Element</b></em>' attribute.
@@ -9540,7 +10724,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getActionNodePrefix()
    * @generated
    */
-  int ACTION_NODE_PREFIX = 105;
+  int ACTION_NODE_PREFIX = 110;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -9721,7 +10905,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getControlNodePrefix()
    * @generated
    */
-  int CONTROL_NODE_PREFIX = 106;
+  int CONTROL_NODE_PREFIX = 111;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -9787,13 +10971,22 @@ public interface SysMLOCPackage extends EPackage
   int CONTROL_NODE_PREFIX__PORTION_KIND = REF_PREFIX_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Usage Extension</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTROL_NODE_PREFIX__USAGE_EXTENSION = REF_PREFIX_FEATURE_COUNT + 2;
+
+  /**
    * The number of structural features of the '<em>Control Node Prefix</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONTROL_NODE_PREFIX_FEATURE_COUNT = REF_PREFIX_FEATURE_COUNT + 2;
+  int CONTROL_NODE_PREFIX_FEATURE_COUNT = REF_PREFIX_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.VisibilityIndicator <em>Visibility Indicator</em>}' enum.
@@ -9803,7 +10996,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getVisibilityIndicator()
    * @generated
    */
-  int VISIBILITY_INDICATOR = 107;
+  int VISIBILITY_INDICATOR = 112;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.FeatureDirection <em>Feature Direction</em>}' enum.
@@ -9813,7 +11006,7 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getFeatureDirection()
    * @generated
    */
-  int FEATURE_DIRECTION = 108;
+  int FEATURE_DIRECTION = 113;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.PortionKind <em>Portion Kind</em>}' enum.
@@ -9823,7 +11016,17 @@ public interface SysMLOCPackage extends EPackage
    * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getPortionKind()
    * @generated
    */
-  int PORTION_KIND = 109;
+  int PORTION_KIND = 114;
+
+  /**
+   * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.TriggerKind <em>Trigger Kind</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.sysmloc.sysMLOC.TriggerKind
+   * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getTriggerKind()
+   * @generated
+   */
+  int TRIGGER_KIND = 115;
 
 
   /**
@@ -9991,6 +11194,50 @@ public interface SysMLOCPackage extends EPackage
   EClass getImportElement();
 
   /**
+   * Returns the meta object for the attribute '{@link dut.control.sysmloc.sysMLOC.ImportElement#getVisibility <em>Visibility</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Visibility</em>'.
+   * @see dut.control.sysmloc.sysMLOC.ImportElement#getVisibility()
+   * @see #getImportElement()
+   * @generated
+   */
+  EAttribute getImportElement_Visibility();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.sysmloc.sysMLOC.ImportElement#isIsImportAll <em>Is Import All</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Import All</em>'.
+   * @see dut.control.sysmloc.sysMLOC.ImportElement#isIsImportAll()
+   * @see #getImportElement()
+   * @generated
+   */
+  EAttribute getImportElement_IsImportAll();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.sysmloc.sysMLOC.ImportElement#getDeclaredName <em>Declared Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Declared Name</em>'.
+   * @see dut.control.sysmloc.sysMLOC.ImportElement#getDeclaredName()
+   * @see #getImportElement()
+   * @generated
+   */
+  EAttribute getImportElement_DeclaredName();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.sysmloc.sysMLOC.ImportElement#isIsRecursive <em>Is Recursive</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Recursive</em>'.
+   * @see dut.control.sysmloc.sysMLOC.ImportElement#isIsRecursive()
+   * @see #getImportElement()
+   * @generated
+   */
+  EAttribute getImportElement_IsRecursive();
+
+  /**
    * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.DefinitionElement <em>Definition Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -10111,39 +11358,6 @@ public interface SysMLOCPackage extends EPackage
   EClass getNamespaceImport();
 
   /**
-   * Returns the meta object for the attribute '{@link dut.control.sysmloc.sysMLOC.NamespaceImport#getVisibility <em>Visibility</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Visibility</em>'.
-   * @see dut.control.sysmloc.sysMLOC.NamespaceImport#getVisibility()
-   * @see #getNamespaceImport()
-   * @generated
-   */
-  EAttribute getNamespaceImport_Visibility();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.sysmloc.sysMLOC.NamespaceImport#getDeclaredName <em>Declared Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Declared Name</em>'.
-   * @see dut.control.sysmloc.sysMLOC.NamespaceImport#getDeclaredName()
-   * @see #getNamespaceImport()
-   * @generated
-   */
-  EAttribute getNamespaceImport_DeclaredName();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.sysmloc.sysMLOC.NamespaceImport#isIsRecursive <em>Is Recursive</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Is Recursive</em>'.
-   * @see dut.control.sysmloc.sysMLOC.NamespaceImport#isIsRecursive()
-   * @see #getNamespaceImport()
-   * @generated
-   */
-  EAttribute getNamespaceImport_IsRecursive();
-
-  /**
    * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.MembershipImport <em>Membership Import</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -10152,39 +11366,6 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    */
   EClass getMembershipImport();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.sysmloc.sysMLOC.MembershipImport#getVisibility <em>Visibility</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Visibility</em>'.
-   * @see dut.control.sysmloc.sysMLOC.MembershipImport#getVisibility()
-   * @see #getMembershipImport()
-   * @generated
-   */
-  EAttribute getMembershipImport_Visibility();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.sysmloc.sysMLOC.MembershipImport#getDeclaredName <em>Declared Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Declared Name</em>'.
-   * @see dut.control.sysmloc.sysMLOC.MembershipImport#getDeclaredName()
-   * @see #getMembershipImport()
-   * @generated
-   */
-  EAttribute getMembershipImport_DeclaredName();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.sysmloc.sysMLOC.MembershipImport#isIsRecursive <em>Is Recursive</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Is Recursive</em>'.
-   * @see dut.control.sysmloc.sysMLOC.MembershipImport#isIsRecursive()
-   * @see #getMembershipImport()
-   * @generated
-   */
-  EAttribute getMembershipImport_IsRecursive();
 
   /**
    * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.CodeAnnotation <em>Code Annotation</em>}'.
@@ -10439,6 +11620,17 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    */
   EClass getEnumeratedValue();
+
+  /**
+   * Returns the meta object for the attribute list '{@link dut.control.sysmloc.sysMLOC.EnumeratedValue#getUsageExtension <em>Usage Extension</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Usage Extension</em>'.
+   * @see dut.control.sysmloc.sysMLOC.EnumeratedValue#getUsageExtension()
+   * @see #getEnumeratedValue()
+   * @generated
+   */
+  EAttribute getEnumeratedValue_UsageExtension();
 
   /**
    * Returns the meta object for the containment reference list '{@link dut.control.sysmloc.sysMLOC.EnumeratedValue#getElements <em>Elements</em>}'.
@@ -11034,6 +12226,50 @@ public interface SysMLOCPackage extends EPackage
   EClass getSendNode();
 
   /**
+   * Returns the meta object for the attribute '{@link dut.control.sysmloc.sysMLOC.SendNode#isSendNodeParameter <em>Send Node Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Send Node Parameter</em>'.
+   * @see dut.control.sysmloc.sysMLOC.SendNode#isSendNodeParameter()
+   * @see #getSendNode()
+   * @generated
+   */
+  EAttribute getSendNode_SendNodeParameter();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.sysmloc.sysMLOC.SendNode#getViaNodeParameter <em>Via Node Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Via Node Parameter</em>'.
+   * @see dut.control.sysmloc.sysMLOC.SendNode#getViaNodeParameter()
+   * @see #getSendNode()
+   * @generated
+   */
+  EAttribute getSendNode_ViaNodeParameter();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.sysmloc.sysMLOC.SendNode#getToNodeParameter <em>To Node Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>To Node Parameter</em>'.
+   * @see dut.control.sysmloc.sysMLOC.SendNode#getToNodeParameter()
+   * @see #getSendNode()
+   * @generated
+   */
+  EAttribute getSendNode_ToNodeParameter();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.sysmloc.sysMLOC.SendNode#getElements <em>Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see dut.control.sysmloc.sysMLOC.SendNode#getElements()
+   * @see #getSendNode()
+   * @generated
+   */
+  EReference getSendNode_Elements();
+
+  /**
    * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.AcceptNode <em>Accept Node</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -11053,6 +12289,16 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    */
   EReference getAcceptNode_Elements();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.PayloadParameter <em>Payload Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Payload Parameter</em>'.
+   * @see dut.control.sysmloc.sysMLOC.PayloadParameter
+   * @generated
+   */
+  EClass getPayloadParameter();
 
   /**
    * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.AssignmentNode <em>Assignment Node</em>}'.
@@ -11117,6 +12363,17 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    */
   EReference getIfNode_Elements();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.sysmloc.sysMLOC.IfNode#getElseNode <em>Else Node</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Else Node</em>'.
+   * @see dut.control.sysmloc.sysMLOC.IfNode#getElseNode()
+   * @see #getIfNode()
+   * @generated
+   */
+  EReference getIfNode_ElseNode();
 
   /**
    * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.WhileLoopNode <em>While Loop Node</em>}'.
@@ -11277,6 +12534,60 @@ public interface SysMLOCPackage extends EPackage
   EClass getForLoopNode();
 
   /**
+   * Returns the meta object for the containment reference '{@link dut.control.sysmloc.sysMLOC.ForLoopNode#getForVariableParameter <em>For Variable Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>For Variable Parameter</em>'.
+   * @see dut.control.sysmloc.sysMLOC.ForLoopNode#getForVariableParameter()
+   * @see #getForLoopNode()
+   * @generated
+   */
+  EReference getForLoopNode_ForVariableParameter();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.sysmloc.sysMLOC.ForLoopNode#getNodeParameter <em>Node Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Node Parameter</em>'.
+   * @see dut.control.sysmloc.sysMLOC.ForLoopNode#getNodeParameter()
+   * @see #getForLoopNode()
+   * @generated
+   */
+  EAttribute getForLoopNode_NodeParameter();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.sysmloc.sysMLOC.ForLoopNode#getActionParameterEnd <em>Action Parameter End</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Action Parameter End</em>'.
+   * @see dut.control.sysmloc.sysMLOC.ForLoopNode#getActionParameterEnd()
+   * @see #getForLoopNode()
+   * @generated
+   */
+  EReference getForLoopNode_ActionParameterEnd();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.sysmloc.sysMLOC.ForLoopNode#getElements <em>Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see dut.control.sysmloc.sysMLOC.ForLoopNode#getElements()
+   * @see #getForLoopNode()
+   * @generated
+   */
+  EReference getForLoopNode_Elements();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.ForVariableParameter <em>For Variable Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>For Variable Parameter</em>'.
+   * @see dut.control.sysmloc.sysMLOC.ForVariableParameter
+   * @generated
+   */
+  EClass getForVariableParameter();
+
+  /**
    * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.TerminateNode <em>Terminate Node</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -11414,27 +12725,6 @@ public interface SysMLOCPackage extends EPackage
   EClass getValuePart();
 
   /**
-   * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.isImportAllFragment <em>is Import All Fragment</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>is Import All Fragment</em>'.
-   * @see dut.control.sysmloc.sysMLOC.isImportAllFragment
-   * @generated
-   */
-  EClass getisImportAllFragment();
-
-  /**
-   * Returns the meta object for the attribute '{@link dut.control.sysmloc.sysMLOC.isImportAllFragment#isIsImportAll <em>Is Import All</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Is Import All</em>'.
-   * @see dut.control.sysmloc.sysMLOC.isImportAllFragment#isIsImportAll()
-   * @see #getisImportAllFragment()
-   * @generated
-   */
-  EAttribute getisImportAllFragment_IsImportAll();
-
-  /**
    * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.MemberPrefix <em>Member Prefix</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -11527,6 +12817,17 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    */
   EClass getUsagePrefix();
+
+  /**
+   * Returns the meta object for the attribute list '{@link dut.control.sysmloc.sysMLOC.UsagePrefix#getUsageExtension <em>Usage Extension</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Usage Extension</em>'.
+   * @see dut.control.sysmloc.sysMLOC.UsagePrefix#getUsageExtension()
+   * @see #getUsagePrefix()
+   * @generated
+   */
+  EAttribute getUsagePrefix_UsageExtension();
 
   /**
    * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.UnextendedUsagePrefix <em>Unextended Usage Prefix</em>}'.
@@ -11866,6 +13167,90 @@ public interface SysMLOCPackage extends EPackage
   EClass getAcceptNodeDeclaration();
 
   /**
+   * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.AcceptParameterPart <em>Accept Parameter Part</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Accept Parameter Part</em>'.
+   * @see dut.control.sysmloc.sysMLOC.AcceptParameterPart
+   * @generated
+   */
+  EClass getAcceptParameterPart();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.sysmloc.sysMLOC.AcceptParameterPart#getAcceptParameter <em>Accept Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Accept Parameter</em>'.
+   * @see dut.control.sysmloc.sysMLOC.AcceptParameterPart#getAcceptParameter()
+   * @see #getAcceptParameterPart()
+   * @generated
+   */
+  EReference getAcceptParameterPart_AcceptParameter();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.sysmloc.sysMLOC.AcceptParameterPart#getViaNodeParameter <em>Via Node Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Via Node Parameter</em>'.
+   * @see dut.control.sysmloc.sysMLOC.AcceptParameterPart#getViaNodeParameter()
+   * @see #getAcceptParameterPart()
+   * @generated
+   */
+  EAttribute getAcceptParameterPart_ViaNodeParameter();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.PayloadFeature <em>Payload Feature</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Payload Feature</em>'.
+   * @see dut.control.sysmloc.sysMLOC.PayloadFeature
+   * @generated
+   */
+  EClass getPayloadFeature();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.PayloadFeatureSpecializationPart <em>Payload Feature Specialization Part</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Payload Feature Specialization Part</em>'.
+   * @see dut.control.sysmloc.sysMLOC.PayloadFeatureSpecializationPart
+   * @generated
+   */
+  EClass getPayloadFeatureSpecializationPart();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.TriggerValuePart <em>Trigger Value Part</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Trigger Value Part</em>'.
+   * @see dut.control.sysmloc.sysMLOC.TriggerValuePart
+   * @generated
+   */
+  EClass getTriggerValuePart();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.sysmloc.sysMLOC.TriggerValuePart#getTriggerkind <em>Triggerkind</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Triggerkind</em>'.
+   * @see dut.control.sysmloc.sysMLOC.TriggerValuePart#getTriggerkind()
+   * @see #getTriggerValuePart()
+   * @generated
+   */
+  EAttribute getTriggerValuePart_Triggerkind();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.sysmloc.sysMLOC.TriggerValuePart#getTriggerExpression <em>Trigger Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Trigger Expression</em>'.
+   * @see dut.control.sysmloc.sysMLOC.TriggerValuePart#getTriggerExpression()
+   * @see #getTriggerValuePart()
+   * @generated
+   */
+  EAttribute getTriggerValuePart_TriggerExpression();
+
+  /**
    * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.AssignmentNodeDeclaration <em>Assignment Node Declaration</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -11874,6 +13259,39 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    */
   EClass getAssignmentNodeDeclaration();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.sysmloc.sysMLOC.AssignmentNodeDeclaration#getTargetParameter <em>Target Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Target Parameter</em>'.
+   * @see dut.control.sysmloc.sysMLOC.AssignmentNodeDeclaration#getTargetParameter()
+   * @see #getAssignmentNodeDeclaration()
+   * @generated
+   */
+  EAttribute getAssignmentNodeDeclaration_TargetParameter();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.sysmloc.sysMLOC.AssignmentNodeDeclaration#getFeatureChain <em>Feature Chain</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Feature Chain</em>'.
+   * @see dut.control.sysmloc.sysMLOC.AssignmentNodeDeclaration#getFeatureChain()
+   * @see #getAssignmentNodeDeclaration()
+   * @generated
+   */
+  EAttribute getAssignmentNodeDeclaration_FeatureChain();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.sysmloc.sysMLOC.AssignmentNodeDeclaration#getNodeParameter <em>Node Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Node Parameter</em>'.
+   * @see dut.control.sysmloc.sysMLOC.AssignmentNodeDeclaration#getNodeParameter()
+   * @see #getAssignmentNodeDeclaration()
+   * @generated
+   */
+  EAttribute getAssignmentNodeDeclaration_NodeParameter();
 
   /**
    * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.Identification <em>Identification</em>}'.
@@ -12151,6 +13569,17 @@ public interface SysMLOCPackage extends EPackage
   EAttribute getControlNodePrefix_PortionKind();
 
   /**
+   * Returns the meta object for the attribute list '{@link dut.control.sysmloc.sysMLOC.ControlNodePrefix#getUsageExtension <em>Usage Extension</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Usage Extension</em>'.
+   * @see dut.control.sysmloc.sysMLOC.ControlNodePrefix#getUsageExtension()
+   * @see #getControlNodePrefix()
+   * @generated
+   */
+  EAttribute getControlNodePrefix_UsageExtension();
+
+  /**
    * Returns the meta object for enum '{@link dut.control.sysmloc.sysMLOC.VisibilityIndicator <em>Visibility Indicator</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -12179,6 +13608,16 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    */
   EEnum getPortionKind();
+
+  /**
+   * Returns the meta object for enum '{@link dut.control.sysmloc.sysMLOC.TriggerKind <em>Trigger Kind</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Trigger Kind</em>'.
+   * @see dut.control.sysmloc.sysMLOC.TriggerKind
+   * @generated
+   */
+  EEnum getTriggerKind();
 
   /**
    * Returns the factory that creates the instances of the model.

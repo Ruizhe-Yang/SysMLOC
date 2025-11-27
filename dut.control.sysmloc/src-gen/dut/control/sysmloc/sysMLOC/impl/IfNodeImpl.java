@@ -3,11 +3,11 @@
  */
 package dut.control.sysmloc.sysMLOC.impl;
 
-import dut.control.sysmloc.sysMLOC.ActionBodyElement;
 import dut.control.sysmloc.sysMLOC.ActionNodePrefix;
 import dut.control.sysmloc.sysMLOC.ActionNodeUsageDeclaration;
 import dut.control.sysmloc.sysMLOC.ActionParameterEnd;
 import dut.control.sysmloc.sysMLOC.BasicUsagePrefix;
+import dut.control.sysmloc.sysMLOC.ConnectorEnd;
 import dut.control.sysmloc.sysMLOC.EmptySuccessionPrefix;
 import dut.control.sysmloc.sysMLOC.FeatureDeclaration;
 import dut.control.sysmloc.sysMLOC.FeatureDirection;
@@ -21,6 +21,7 @@ import dut.control.sysmloc.sysMLOC.OccurrenceUsagePrefix;
 import dut.control.sysmloc.sysMLOC.PortionKind;
 import dut.control.sysmloc.sysMLOC.RefPrefix;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
+import dut.control.sysmloc.sysMLOC.TransitionSuccession;
 import dut.control.sysmloc.sysMLOC.UsageDeclaration;
 import dut.control.sysmloc.sysMLOC.VisibilityIndicator;
 
@@ -32,6 +33,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -69,9 +71,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#isIsOrdered <em>Is Ordered</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#isIsNonunique <em>Is Nonunique</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#getDeclaredName <em>Declared Name</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#getTransitionSuccessionElement <em>Transition Succession Element</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#getIfConditionExpression <em>If Condition Expression</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#getActionParameterEnd <em>Action Parameter End</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#getElements <em>Elements</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#getElseNode <em>Else Node</em>}</li>
  * </ul>
  *
  * @generated
@@ -429,6 +433,16 @@ public class IfNodeImpl extends ActionNodeElementImpl implements IfNode
   protected String declaredName = DECLARED_NAME_EDEFAULT;
 
   /**
+   * The cached value of the '{@link #getTransitionSuccessionElement() <em>Transition Succession Element</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTransitionSuccessionElement()
+   * @generated
+   * @ordered
+   */
+  protected EList<ConnectorEnd> transitionSuccessionElement;
+
+  /**
    * The default value of the '{@link #getIfConditionExpression() <em>If Condition Expression</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -466,7 +480,17 @@ public class IfNodeImpl extends ActionNodeElementImpl implements IfNode
    * @generated
    * @ordered
    */
-  protected EList<ActionBodyElement> elements;
+  protected EList<EObject> elements;
+
+  /**
+   * The cached value of the '{@link #getElseNode() <em>Else Node</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getElseNode()
+   * @generated
+   * @ordered
+   */
+  protected EList<IfNode> elseNode;
 
   /**
    * <!-- begin-user-doc -->
@@ -950,6 +974,21 @@ public class IfNodeImpl extends ActionNodeElementImpl implements IfNode
    * @generated
    */
   @Override
+  public EList<ConnectorEnd> getTransitionSuccessionElement()
+  {
+    if (transitionSuccessionElement == null)
+    {
+      transitionSuccessionElement = new EObjectContainmentEList<ConnectorEnd>(ConnectorEnd.class, this, SysMLOCPackage.IF_NODE__TRANSITION_SUCCESSION_ELEMENT);
+    }
+    return transitionSuccessionElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public String getIfConditionExpression()
   {
     return ifConditionExpression;
@@ -990,13 +1029,28 @@ public class IfNodeImpl extends ActionNodeElementImpl implements IfNode
    * @generated
    */
   @Override
-  public EList<ActionBodyElement> getElements()
+  public EList<EObject> getElements()
   {
     if (elements == null)
     {
-      elements = new EObjectContainmentEList<ActionBodyElement>(ActionBodyElement.class, this, SysMLOCPackage.IF_NODE__ELEMENTS);
+      elements = new EObjectContainmentEList<EObject>(EObject.class, this, SysMLOCPackage.IF_NODE__ELEMENTS);
     }
     return elements;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<IfNode> getElseNode()
+  {
+    if (elseNode == null)
+    {
+      elseNode = new EObjectContainmentEList<IfNode>(IfNode.class, this, SysMLOCPackage.IF_NODE__ELSE_NODE);
+    }
+    return elseNode;
   }
 
   /**
@@ -1009,10 +1063,14 @@ public class IfNodeImpl extends ActionNodeElementImpl implements IfNode
   {
     switch (featureID)
     {
+      case SysMLOCPackage.IF_NODE__TRANSITION_SUCCESSION_ELEMENT:
+        return ((InternalEList<?>)getTransitionSuccessionElement()).basicRemove(otherEnd, msgs);
       case SysMLOCPackage.IF_NODE__ACTION_PARAMETER_END:
         return ((InternalEList<?>)getActionParameterEnd()).basicRemove(otherEnd, msgs);
       case SysMLOCPackage.IF_NODE__ELEMENTS:
         return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
+      case SysMLOCPackage.IF_NODE__ELSE_NODE:
+        return ((InternalEList<?>)getElseNode()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -1069,12 +1127,16 @@ public class IfNodeImpl extends ActionNodeElementImpl implements IfNode
         return isIsNonunique();
       case SysMLOCPackage.IF_NODE__DECLARED_NAME:
         return getDeclaredName();
+      case SysMLOCPackage.IF_NODE__TRANSITION_SUCCESSION_ELEMENT:
+        return getTransitionSuccessionElement();
       case SysMLOCPackage.IF_NODE__IF_CONDITION_EXPRESSION:
         return getIfConditionExpression();
       case SysMLOCPackage.IF_NODE__ACTION_PARAMETER_END:
         return getActionParameterEnd();
       case SysMLOCPackage.IF_NODE__ELEMENTS:
         return getElements();
+      case SysMLOCPackage.IF_NODE__ELSE_NODE:
+        return getElseNode();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -1160,6 +1222,10 @@ public class IfNodeImpl extends ActionNodeElementImpl implements IfNode
       case SysMLOCPackage.IF_NODE__DECLARED_NAME:
         setDeclaredName((String)newValue);
         return;
+      case SysMLOCPackage.IF_NODE__TRANSITION_SUCCESSION_ELEMENT:
+        getTransitionSuccessionElement().clear();
+        getTransitionSuccessionElement().addAll((Collection<? extends ConnectorEnd>)newValue);
+        return;
       case SysMLOCPackage.IF_NODE__IF_CONDITION_EXPRESSION:
         setIfConditionExpression((String)newValue);
         return;
@@ -1169,7 +1235,11 @@ public class IfNodeImpl extends ActionNodeElementImpl implements IfNode
         return;
       case SysMLOCPackage.IF_NODE__ELEMENTS:
         getElements().clear();
-        getElements().addAll((Collection<? extends ActionBodyElement>)newValue);
+        getElements().addAll((Collection<? extends EObject>)newValue);
+        return;
+      case SysMLOCPackage.IF_NODE__ELSE_NODE:
+        getElseNode().clear();
+        getElseNode().addAll((Collection<? extends IfNode>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -1248,6 +1318,9 @@ public class IfNodeImpl extends ActionNodeElementImpl implements IfNode
       case SysMLOCPackage.IF_NODE__DECLARED_NAME:
         setDeclaredName(DECLARED_NAME_EDEFAULT);
         return;
+      case SysMLOCPackage.IF_NODE__TRANSITION_SUCCESSION_ELEMENT:
+        getTransitionSuccessionElement().clear();
+        return;
       case SysMLOCPackage.IF_NODE__IF_CONDITION_EXPRESSION:
         setIfConditionExpression(IF_CONDITION_EXPRESSION_EDEFAULT);
         return;
@@ -1256,6 +1329,9 @@ public class IfNodeImpl extends ActionNodeElementImpl implements IfNode
         return;
       case SysMLOCPackage.IF_NODE__ELEMENTS:
         getElements().clear();
+        return;
+      case SysMLOCPackage.IF_NODE__ELSE_NODE:
+        getElseNode().clear();
         return;
     }
     super.eUnset(featureID);
@@ -1313,12 +1389,16 @@ public class IfNodeImpl extends ActionNodeElementImpl implements IfNode
         return isNonunique != IS_NONUNIQUE_EDEFAULT;
       case SysMLOCPackage.IF_NODE__DECLARED_NAME:
         return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
+      case SysMLOCPackage.IF_NODE__TRANSITION_SUCCESSION_ELEMENT:
+        return transitionSuccessionElement != null && !transitionSuccessionElement.isEmpty();
       case SysMLOCPackage.IF_NODE__IF_CONDITION_EXPRESSION:
         return IF_CONDITION_EXPRESSION_EDEFAULT == null ? ifConditionExpression != null : !IF_CONDITION_EXPRESSION_EDEFAULT.equals(ifConditionExpression);
       case SysMLOCPackage.IF_NODE__ACTION_PARAMETER_END:
         return actionParameterEnd != null && !actionParameterEnd.isEmpty();
       case SysMLOCPackage.IF_NODE__ELEMENTS:
         return elements != null && !elements.isEmpty();
+      case SysMLOCPackage.IF_NODE__ELSE_NODE:
+        return elseNode != null && !elseNode.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -1443,6 +1523,14 @@ public class IfNodeImpl extends ActionNodeElementImpl implements IfNode
         default: return -1;
       }
     }
+    if (baseClass == TransitionSuccession.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.IF_NODE__TRANSITION_SUCCESSION_ELEMENT: return SysMLOCPackage.TRANSITION_SUCCESSION__TRANSITION_SUCCESSION_ELEMENT;
+        default: return -1;
+      }
+    }
     return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
   }
 
@@ -1563,6 +1651,14 @@ public class IfNodeImpl extends ActionNodeElementImpl implements IfNode
     {
       switch (baseFeatureID)
       {
+        default: return -1;
+      }
+    }
+    if (baseClass == TransitionSuccession.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.TRANSITION_SUCCESSION__TRANSITION_SUCCESSION_ELEMENT: return SysMLOCPackage.IF_NODE__TRANSITION_SUCCESSION_ELEMENT;
         default: return -1;
       }
     }

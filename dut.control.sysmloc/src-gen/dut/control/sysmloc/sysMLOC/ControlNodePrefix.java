@@ -3,6 +3,7 @@
  */
 package dut.control.sysmloc.sysMLOC;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,6 +16,7 @@ package dut.control.sysmloc.sysMLOC;
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.ControlNodePrefix#isIsIndividual <em>Is Individual</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.ControlNodePrefix#getPortionKind <em>Portion Kind</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.ControlNodePrefix#getUsageExtension <em>Usage Extension</em>}</li>
  * </ul>
  *
  * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getControlNodePrefix()
@@ -69,5 +71,17 @@ public interface ControlNodePrefix extends RefPrefix
    * @generated
    */
   void setPortionKind(PortionKind value);
+
+  /**
+   * Returns the value of the '<em><b>Usage Extension</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Usage Extension</em>' attribute list.
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getControlNodePrefix_UsageExtension()
+   * @model unique="false"
+   * @generated
+   */
+  EList<String> getUsageExtension();
 
 } // ControlNodePrefix
