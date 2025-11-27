@@ -3,17 +3,59 @@
  */
 package dut.control.sysmloc.sysMLOC;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Terminate Node</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.TerminateNode#isNodeParameter <em>Node Parameter</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.TerminateNode#getElements <em>Elements</em>}</li>
+ * </ul>
  *
  * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getTerminateNode()
  * @model
  * @generated
  */
-public interface TerminateNode extends EmptySuccessionPrefix, MemberPrefix, ActionNodePrefix, OccurrenceUsagePrefix, BasicUsagePrefix, RefPrefix, ActionNodeUsageDeclaration, UsageDeclaration, FeatureDeclaration, FeatureSpecializationPart, FeatureSpecialization, MultiplicityPart, MultiplicityRange
+public interface TerminateNode extends ActionNodeElement, EmptySuccessionPrefix, MemberPrefix, OccurrenceUsagePrefix, BasicUsagePrefix, RefPrefix, ActionNodeUsageDeclaration, UsageDeclaration, FeatureDeclaration, FeatureSpecializationPart, FeatureSpecialization, MultiplicityPart, MultiplicityRange
 {
+  /**
+   * Returns the value of the '<em><b>Node Parameter</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Node Parameter</em>' attribute.
+   * @see #setNodeParameter(boolean)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getTerminateNode_NodeParameter()
+   * @model
+   * @generated
+   */
+  boolean isNodeParameter();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.TerminateNode#isNodeParameter <em>Node Parameter</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Node Parameter</em>' attribute.
+   * @see #isNodeParameter()
+   * @generated
+   */
+  void setNodeParameter(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
+   * The list contents are of type {@link dut.control.sysmloc.sysMLOC.ActionBodyElement}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Elements</em>' containment reference list.
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getTerminateNode_Elements()
+   * @model containment="true"
+   * @generated
+   */
+  EList<ActionBodyElement> getElements();
+
 } // TerminateNode

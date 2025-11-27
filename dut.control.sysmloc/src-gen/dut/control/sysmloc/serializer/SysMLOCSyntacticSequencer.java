@@ -79,6 +79,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_SuccessionFlowConnectionUsage_FromKeyword_8_0_q;
 	protected AbstractElementAlias match_SuccessionFlowConnectionUsage_SemicolonKeyword_9_0_or___LeftCurlyBracketKeyword_9_1_0_RightCurlyBracketKeyword_9_1_2__;
 	protected AbstractElementAlias match_TargetSuccessionElement_SemicolonKeyword_2_0_or___LeftCurlyBracketKeyword_2_1_0_RightCurlyBracketKeyword_2_1_2__;
+	protected AbstractElementAlias match_TerminateNode_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__;
 	protected AbstractElementAlias match_TextualRepresentation_RepKeyword_0_0_q;
 	
 	@Inject
@@ -141,6 +142,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_SuccessionFlowConnectionUsage_FromKeyword_8_0_q = new TokenAlias(false, true, grammarAccess.getSuccessionFlowConnectionUsageAccess().getFromKeyword_8_0());
 		match_SuccessionFlowConnectionUsage_SemicolonKeyword_9_0_or___LeftCurlyBracketKeyword_9_1_0_RightCurlyBracketKeyword_9_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getSuccessionFlowConnectionUsageAccess().getLeftCurlyBracketKeyword_9_1_0()), new TokenAlias(false, false, grammarAccess.getSuccessionFlowConnectionUsageAccess().getRightCurlyBracketKeyword_9_1_2())), new TokenAlias(false, false, grammarAccess.getSuccessionFlowConnectionUsageAccess().getSemicolonKeyword_9_0()));
 		match_TargetSuccessionElement_SemicolonKeyword_2_0_or___LeftCurlyBracketKeyword_2_1_0_RightCurlyBracketKeyword_2_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getTargetSuccessionElementAccess().getLeftCurlyBracketKeyword_2_1_0()), new TokenAlias(false, false, grammarAccess.getTargetSuccessionElementAccess().getRightCurlyBracketKeyword_2_1_2())), new TokenAlias(false, false, grammarAccess.getTargetSuccessionElementAccess().getSemicolonKeyword_2_0()));
+		match_TerminateNode_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getTerminateNodeAccess().getLeftCurlyBracketKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getTerminateNodeAccess().getRightCurlyBracketKeyword_6_1_2())), new TokenAlias(false, false, grammarAccess.getTerminateNodeAccess().getSemicolonKeyword_6_0()));
 		match_TextualRepresentation_RepKeyword_0_0_q = new TokenAlias(false, true, grammarAccess.getTextualRepresentationAccess().getRepKeyword_0_0());
 	}
 	
@@ -282,6 +284,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_SuccessionFlowConnectionUsage_SemicolonKeyword_9_0_or___LeftCurlyBracketKeyword_9_1_0_RightCurlyBracketKeyword_9_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_TargetSuccessionElement_SemicolonKeyword_2_0_or___LeftCurlyBracketKeyword_2_1_0_RightCurlyBracketKeyword_2_1_2__.equals(syntax))
 				emit_TargetSuccessionElement_SemicolonKeyword_2_0_or___LeftCurlyBracketKeyword_2_1_0_RightCurlyBracketKeyword_2_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_TerminateNode_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__.equals(syntax))
+				emit_TerminateNode_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_TextualRepresentation_RepKeyword_0_0_q.equals(syntax))
 				emit_TextualRepresentation_RepKeyword_0_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
@@ -2869,6 +2873,20 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * </pre>
 	 */
 	protected void emit_TargetSuccessionElement_SemicolonKeyword_2_0_or___LeftCurlyBracketKeyword_2_1_0_RightCurlyBracketKeyword_2_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     NodeParameter?=Expression (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_TerminateNode_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

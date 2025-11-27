@@ -730,10 +730,11 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cIfNodeParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		private final RuleCall cWhileLoopNodeParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		private final RuleCall cForLoopNodeParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
-		private final RuleCall cMergeNodeParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
-		private final RuleCall cDecisionNodeParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
-		private final RuleCall cJoinNodeParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
-		private final RuleCall cForkNodeParserRuleCall_9 = (RuleCall)cAlternatives.eContents().get(9);
+		private final RuleCall cTerminateNodeParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
+		private final RuleCall cMergeNodeParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
+		private final RuleCall cDecisionNodeParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
+		private final RuleCall cJoinNodeParserRuleCall_9 = (RuleCall)cAlternatives.eContents().get(9);
+		private final RuleCall cForkNodeParserRuleCall_10 = (RuleCall)cAlternatives.eContents().get(10);
 		
 		//ActionNodeElement:
 		//    SendNode
@@ -742,7 +743,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//    | IfNode
 		//    | WhileLoopNode
 		//    | ForLoopNode
-		////    | TerminateNode
+		//    | TerminateNode
 		//    | MergeNode
 		//    | DecisionNode
 		//    | JoinNode
@@ -750,17 +751,17 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//    SendNode
-		//    | AcceptNode
-		//    | AssignmentNode
-		//    | IfNode
-		//    | WhileLoopNode
-		//    | ForLoopNode
-		////    | TerminateNode
-		//    | MergeNode
-		//    | DecisionNode
-		//    | JoinNode
-		//    | ForkNode
+		//SendNode
+		//| AcceptNode
+		//| AssignmentNode
+		//| IfNode
+		//| WhileLoopNode
+		//| ForLoopNode
+		//| TerminateNode
+		//| MergeNode
+		//| DecisionNode
+		//| JoinNode
+		//| ForkNode
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//SendNode
@@ -781,17 +782,20 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//ForLoopNode
 		public RuleCall getForLoopNodeParserRuleCall_5() { return cForLoopNodeParserRuleCall_5; }
 		
+		//TerminateNode
+		public RuleCall getTerminateNodeParserRuleCall_6() { return cTerminateNodeParserRuleCall_6; }
+		
 		//MergeNode
-		public RuleCall getMergeNodeParserRuleCall_6() { return cMergeNodeParserRuleCall_6; }
+		public RuleCall getMergeNodeParserRuleCall_7() { return cMergeNodeParserRuleCall_7; }
 		
 		//DecisionNode
-		public RuleCall getDecisionNodeParserRuleCall_7() { return cDecisionNodeParserRuleCall_7; }
+		public RuleCall getDecisionNodeParserRuleCall_8() { return cDecisionNodeParserRuleCall_8; }
 		
 		//JoinNode
-		public RuleCall getJoinNodeParserRuleCall_8() { return cJoinNodeParserRuleCall_8; }
+		public RuleCall getJoinNodeParserRuleCall_9() { return cJoinNodeParserRuleCall_9; }
 		
 		//ForkNode
-		public RuleCall getForkNodeParserRuleCall_9() { return cForkNodeParserRuleCall_9; }
+		public RuleCall getForkNodeParserRuleCall_10() { return cForkNodeParserRuleCall_10; }
 	}
 	public class GuardedSuccessionNodeElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.GuardedSuccessionNodeElement");
@@ -4215,18 +4219,37 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final RuleCall cEmptySuccessionPrefixParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final RuleCall cMemberPrefixParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final RuleCall cActionNodePrefixParserRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final RuleCall cOccurrenceUsagePrefixParserRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final RuleCall cActionNodeUsageDeclarationParserRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+		private final Keyword cTerminateKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cNodeParameterAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cNodeParameterExpressionParserRuleCall_5_0 = (RuleCall)cNodeParameterAssignment_5.eContents().get(0);
+		private final Alternatives cAlternatives_6 = (Alternatives)cGroup.eContents().get(6);
+		private final Keyword cSemicolonKeyword_6_0 = (Keyword)cAlternatives_6.eContents().get(0);
+		private final Group cGroup_6_1 = (Group)cAlternatives_6.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_6_1_0 = (Keyword)cGroup_6_1.eContents().get(0);
+		private final Assignment cElementsAssignment_6_1_1 = (Assignment)cGroup_6_1.eContents().get(1);
+		private final RuleCall cElementsActionBodyElementParserRuleCall_6_1_1_0 = (RuleCall)cElementsAssignment_6_1_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6_1_2 = (Keyword)cGroup_6_1.eContents().get(2);
 		
 		//TerminateNode:
 		//    EmptySuccessionPrefix
 		//    MemberPrefix
-		//    ActionNodePrefix
+		//    OccurrenceUsagePrefix
+		//    ActionNodeUsageDeclaration?
+		//    'terminate'
+		//    NodeParameter?=Expression
+		//    (';' | '{' (elements+=ActionBodyElement)* '}')
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//EmptySuccessionPrefix
 		//MemberPrefix
-		//ActionNodePrefix
+		//OccurrenceUsagePrefix
+		//ActionNodeUsageDeclaration?
+		//'terminate'
+		//NodeParameter?=Expression
+		//(';' | '{' (elements+=ActionBodyElement)* '}')
 		public Group getGroup() { return cGroup; }
 		
 		//EmptySuccessionPrefix
@@ -4235,8 +4258,41 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//MemberPrefix
 		public RuleCall getMemberPrefixParserRuleCall_1() { return cMemberPrefixParserRuleCall_1; }
 		
-		//ActionNodePrefix
-		public RuleCall getActionNodePrefixParserRuleCall_2() { return cActionNodePrefixParserRuleCall_2; }
+		//OccurrenceUsagePrefix
+		public RuleCall getOccurrenceUsagePrefixParserRuleCall_2() { return cOccurrenceUsagePrefixParserRuleCall_2; }
+		
+		//ActionNodeUsageDeclaration?
+		public RuleCall getActionNodeUsageDeclarationParserRuleCall_3() { return cActionNodeUsageDeclarationParserRuleCall_3; }
+		
+		//'terminate'
+		public Keyword getTerminateKeyword_4() { return cTerminateKeyword_4; }
+		
+		//NodeParameter?=Expression
+		public Assignment getNodeParameterAssignment_5() { return cNodeParameterAssignment_5; }
+		
+		//Expression
+		public RuleCall getNodeParameterExpressionParserRuleCall_5_0() { return cNodeParameterExpressionParserRuleCall_5_0; }
+		
+		//(';' | '{' (elements+=ActionBodyElement)* '}')
+		public Alternatives getAlternatives_6() { return cAlternatives_6; }
+		
+		//';'
+		public Keyword getSemicolonKeyword_6_0() { return cSemicolonKeyword_6_0; }
+		
+		//'{' (elements+=ActionBodyElement)* '}'
+		public Group getGroup_6_1() { return cGroup_6_1; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_6_1_0() { return cLeftCurlyBracketKeyword_6_1_0; }
+		
+		//(elements+=ActionBodyElement)*
+		public Assignment getElementsAssignment_6_1_1() { return cElementsAssignment_6_1_1; }
+		
+		//ActionBodyElement
+		public RuleCall getElementsActionBodyElementParserRuleCall_6_1_1_0() { return cElementsActionBodyElementParserRuleCall_6_1_1_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_6_1_2() { return cRightCurlyBracketKeyword_6_1_2; }
 	}
 	public class GuardedSuccessionElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.GuardedSuccessionElement");
@@ -8742,7 +8798,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	//    | IfNode
 	//    | WhileLoopNode
 	//    | ForLoopNode
-	////    | TerminateNode
+	//    | TerminateNode
 	//    | MergeNode
 	//    | DecisionNode
 	//    | JoinNode
@@ -9438,7 +9494,11 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	//TerminateNode:
 	//    EmptySuccessionPrefix
 	//    MemberPrefix
-	//    ActionNodePrefix
+	//    OccurrenceUsagePrefix
+	//    ActionNodeUsageDeclaration?
+	//    'terminate'
+	//    NodeParameter?=Expression
+	//    (';' | '{' (elements+=ActionBodyElement)* '}')
 	//;
 	public TerminateNodeElements getTerminateNodeAccess() {
 		return pTerminateNode;

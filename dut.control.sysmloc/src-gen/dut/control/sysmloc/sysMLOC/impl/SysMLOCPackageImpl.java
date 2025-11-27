@@ -2842,6 +2842,28 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   @Override
+  public EAttribute getTerminateNode_NodeParameter()
+  {
+        return (EAttribute)getTerminateNode().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getTerminateNode_Elements()
+  {
+        return (EReference)getTerminateNode().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getGuardedSuccessionElement()
   {
     if (guardedSuccessionElementEClass == null)

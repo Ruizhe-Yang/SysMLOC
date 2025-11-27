@@ -1352,11 +1352,12 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         TerminateNode terminateNode = (TerminateNode)theEObject;
         T result = caseTerminateNode(terminateNode);
+        if (result == null) result = caseActionNodeElement(terminateNode);
         if (result == null) result = caseEmptySuccessionPrefix(terminateNode);
         if (result == null) result = caseMemberPrefix(terminateNode);
-        if (result == null) result = caseActionNodePrefix(terminateNode);
         if (result == null) result = caseOccurrenceUsagePrefix(terminateNode);
         if (result == null) result = caseActionNodeUsageDeclaration(terminateNode);
+        if (result == null) result = caseActionBodyElement(terminateNode);
         if (result == null) result = caseBasicUsagePrefix(terminateNode);
         if (result == null) result = caseUsageDeclaration(terminateNode);
         if (result == null) result = caseRefPrefix(terminateNode);

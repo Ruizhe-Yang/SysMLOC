@@ -91,6 +91,7 @@ public class SysMLOCParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getDecisionNodeAccess().getAlternatives_5(), "rule__DecisionNode__Alternatives_5");
 			builder.put(grammarAccess.getJoinNodeAccess().getAlternatives_5(), "rule__JoinNode__Alternatives_5");
 			builder.put(grammarAccess.getForkNodeAccess().getAlternatives_5(), "rule__ForkNode__Alternatives_5");
+			builder.put(grammarAccess.getTerminateNodeAccess().getAlternatives_6(), "rule__TerminateNode__Alternatives_6");
 			builder.put(grammarAccess.getGuardedSuccessionElementAccess().getAlternatives_7(), "rule__GuardedSuccessionElement__Alternatives_7");
 			builder.put(grammarAccess.getTargetSuccessionElementAccess().getAlternatives_1(), "rule__TargetSuccessionElement__Alternatives_1");
 			builder.put(grammarAccess.getTargetSuccessionElementAccess().getAlternatives_2(), "rule__TargetSuccessionElement__Alternatives_2");
@@ -271,6 +272,7 @@ public class SysMLOCParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getForLoopNodeAccess().getGroup(), "rule__ForLoopNode__Group__0");
 			builder.put(grammarAccess.getForLoopNodeAccess().getGroup_7(), "rule__ForLoopNode__Group_7__0");
 			builder.put(grammarAccess.getTerminateNodeAccess().getGroup(), "rule__TerminateNode__Group__0");
+			builder.put(grammarAccess.getTerminateNodeAccess().getGroup_6_1(), "rule__TerminateNode__Group_6_1__0");
 			builder.put(grammarAccess.getGuardedSuccessionElementAccess().getGroup(), "rule__GuardedSuccessionElement__Group__0");
 			builder.put(grammarAccess.getGuardedSuccessionElementAccess().getGroup_0(), "rule__GuardedSuccessionElement__Group_0__0");
 			builder.put(grammarAccess.getGuardedSuccessionElementAccess().getGroup_7_1(), "rule__GuardedSuccessionElement__Group_7_1__0");
@@ -501,6 +503,8 @@ public class SysMLOCParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getForLoopNodeAccess().getNodeParameterAssignment_6(), "rule__ForLoopNode__NodeParameterAssignment_6");
 			builder.put(grammarAccess.getForLoopNodeAccess().getActionParameterEndAssignment_7_1(), "rule__ForLoopNode__ActionParameterEndAssignment_7_1");
 			builder.put(grammarAccess.getForLoopNodeAccess().getElementsAssignment_9(), "rule__ForLoopNode__ElementsAssignment_9");
+			builder.put(grammarAccess.getTerminateNodeAccess().getNodeParameterAssignment_5(), "rule__TerminateNode__NodeParameterAssignment_5");
+			builder.put(grammarAccess.getTerminateNodeAccess().getElementsAssignment_6_1_1(), "rule__TerminateNode__ElementsAssignment_6_1_1");
 			builder.put(grammarAccess.getGuardedSuccessionElementAccess().getMemberElementAssignment_2(), "rule__GuardedSuccessionElement__MemberElementAssignment_2");
 			builder.put(grammarAccess.getGuardedSuccessionElementAccess().getConditionalExpressionAssignment_4(), "rule__GuardedSuccessionElement__ConditionalExpressionAssignment_4");
 			builder.put(grammarAccess.getGuardedSuccessionElementAccess().getElementsAssignment_7_1_1(), "rule__GuardedSuccessionElement__ElementsAssignment_7_1_1");

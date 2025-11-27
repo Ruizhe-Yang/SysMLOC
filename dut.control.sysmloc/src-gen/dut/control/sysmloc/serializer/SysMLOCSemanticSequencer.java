@@ -228,7 +228,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 				sequence_MemberPrefix_MultiplicityRange_TargetSuccessionElement_TransitionSuccession(context, (TargetSuccessionElement) semanticObject); 
 				return; 
 			case SysMLOCPackage.TERMINATE_NODE:
-				sequence_BasicUsagePrefix_EmptySuccessionPrefix_FeatureDeclaration_FeatureSpecialization_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_RefPrefix(context, (TerminateNode) semanticObject); 
+				sequence_BasicUsagePrefix_EmptySuccessionPrefix_FeatureDeclaration_FeatureSpecialization_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_RefPrefix_TerminateNode(context, (TerminateNode) semanticObject); 
 				return; 
 			case SysMLOCPackage.TEXTUAL_REPRESENTATION:
 				sequence_Identification_TextualRepresentation(context, (TextualRepresentation) semanticObject); 
@@ -1325,6 +1325,8 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     ActionBodyElement returns TerminateNode
+	 *     ActionNodeElement returns TerminateNode
 	 *     TerminateNode returns TerminateNode
 	 *
 	 * Constraint:
@@ -1357,11 +1359,13 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             ) 
 	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
-	 *         )*
+	 *         )* 
+	 *         NodeParameter?=Expression 
+	 *         elements+=ActionBodyElement*
 	 *     )
 	 * </pre>
 	 */
-	protected void sequence_BasicUsagePrefix_EmptySuccessionPrefix_FeatureDeclaration_FeatureSpecialization_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_RefPrefix(ISerializationContext context, TerminateNode semanticObject) {
+	protected void sequence_BasicUsagePrefix_EmptySuccessionPrefix_FeatureDeclaration_FeatureSpecialization_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_RefPrefix_TerminateNode(ISerializationContext context, TerminateNode semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

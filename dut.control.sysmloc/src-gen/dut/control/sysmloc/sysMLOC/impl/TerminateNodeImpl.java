@@ -3,9 +3,10 @@
  */
 package dut.control.sysmloc.sysMLOC.impl;
 
-import dut.control.sysmloc.sysMLOC.ActionNodePrefix;
+import dut.control.sysmloc.sysMLOC.ActionBodyElement;
 import dut.control.sysmloc.sysMLOC.ActionNodeUsageDeclaration;
 import dut.control.sysmloc.sysMLOC.BasicUsagePrefix;
+import dut.control.sysmloc.sysMLOC.EmptySuccessionPrefix;
 import dut.control.sysmloc.sysMLOC.FeatureDeclaration;
 import dut.control.sysmloc.sysMLOC.FeatureDirection;
 import dut.control.sysmloc.sysMLOC.FeatureSpecialization;
@@ -24,14 +25,18 @@ import dut.control.sysmloc.sysMLOC.VisibilityIndicator;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,6 +46,8 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.TerminateNodeImpl#isIsThen <em>Is Then</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.TerminateNodeImpl#getThenMultiplicity <em>Then Multiplicity</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.TerminateNodeImpl#getVisibility <em>Visibility</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.TerminateNodeImpl#getDirection <em>Direction</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.TerminateNodeImpl#isIsAbstract <em>Is Abstract</em>}</li>
@@ -60,12 +67,44 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.TerminateNodeImpl#isIsOrdered <em>Is Ordered</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.TerminateNodeImpl#isIsNonunique <em>Is Nonunique</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.TerminateNodeImpl#getDeclaredName <em>Declared Name</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.TerminateNodeImpl#isNodeParameter <em>Node Parameter</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.TerminateNodeImpl#getElements <em>Elements</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class TerminateNodeImpl extends EmptySuccessionPrefixImpl implements TerminateNode
+public class TerminateNodeImpl extends ActionNodeElementImpl implements TerminateNode
 {
+  /**
+   * The default value of the '{@link #isIsThen() <em>Is Then</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsThen()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_THEN_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsThen() <em>Is Then</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsThen()
+   * @generated
+   * @ordered
+   */
+  protected boolean isThen = IS_THEN_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getThenMultiplicity() <em>Then Multiplicity</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getThenMultiplicity()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> thenMultiplicity;
+
   /**
    * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -387,6 +426,36 @@ public class TerminateNodeImpl extends EmptySuccessionPrefixImpl implements Term
   protected String declaredName = DECLARED_NAME_EDEFAULT;
 
   /**
+   * The default value of the '{@link #isNodeParameter() <em>Node Parameter</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isNodeParameter()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean NODE_PARAMETER_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isNodeParameter() <em>Node Parameter</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isNodeParameter()
+   * @generated
+   * @ordered
+   */
+  protected boolean nodeParameter = NODE_PARAMETER_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getElements()
+   * @generated
+   * @ordered
+   */
+  protected EList<ActionBodyElement> elements;
+
+  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -405,6 +474,46 @@ public class TerminateNodeImpl extends EmptySuccessionPrefixImpl implements Term
   protected EClass eStaticClass()
   {
     return SysMLOCPackage.eINSTANCE.getTerminateNode();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsThen()
+  {
+    return isThen;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsThen(boolean newIsThen)
+  {
+    boolean oldIsThen = isThen;
+    isThen = newIsThen;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.TERMINATE_NODE__IS_THEN, oldIsThen, isThen));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<String> getThenMultiplicity()
+  {
+    if (thenMultiplicity == null)
+    {
+      thenMultiplicity = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.TERMINATE_NODE__THEN_MULTIPLICITY);
+    }
+    return thenMultiplicity;
   }
 
   /**
@@ -828,10 +937,70 @@ public class TerminateNodeImpl extends EmptySuccessionPrefixImpl implements Term
    * @generated
    */
   @Override
+  public boolean isNodeParameter()
+  {
+    return nodeParameter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setNodeParameter(boolean newNodeParameter)
+  {
+    boolean oldNodeParameter = nodeParameter;
+    nodeParameter = newNodeParameter;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.TERMINATE_NODE__NODE_PARAMETER, oldNodeParameter, nodeParameter));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<ActionBodyElement> getElements()
+  {
+    if (elements == null)
+    {
+      elements = new EObjectContainmentEList<ActionBodyElement>(ActionBodyElement.class, this, SysMLOCPackage.TERMINATE_NODE__ELEMENTS);
+    }
+    return elements;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case SysMLOCPackage.TERMINATE_NODE__ELEMENTS:
+        return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
+      case SysMLOCPackage.TERMINATE_NODE__IS_THEN:
+        return isIsThen();
+      case SysMLOCPackage.TERMINATE_NODE__THEN_MULTIPLICITY:
+        return getThenMultiplicity();
       case SysMLOCPackage.TERMINATE_NODE__VISIBILITY:
         return getVisibility();
       case SysMLOCPackage.TERMINATE_NODE__DIRECTION:
@@ -870,6 +1039,10 @@ public class TerminateNodeImpl extends EmptySuccessionPrefixImpl implements Term
         return isIsNonunique();
       case SysMLOCPackage.TERMINATE_NODE__DECLARED_NAME:
         return getDeclaredName();
+      case SysMLOCPackage.TERMINATE_NODE__NODE_PARAMETER:
+        return isNodeParameter();
+      case SysMLOCPackage.TERMINATE_NODE__ELEMENTS:
+        return getElements();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -885,6 +1058,13 @@ public class TerminateNodeImpl extends EmptySuccessionPrefixImpl implements Term
   {
     switch (featureID)
     {
+      case SysMLOCPackage.TERMINATE_NODE__IS_THEN:
+        setIsThen((Boolean)newValue);
+        return;
+      case SysMLOCPackage.TERMINATE_NODE__THEN_MULTIPLICITY:
+        getThenMultiplicity().clear();
+        getThenMultiplicity().addAll((Collection<? extends String>)newValue);
+        return;
       case SysMLOCPackage.TERMINATE_NODE__VISIBILITY:
         setVisibility((VisibilityIndicator)newValue);
         return;
@@ -948,6 +1128,13 @@ public class TerminateNodeImpl extends EmptySuccessionPrefixImpl implements Term
       case SysMLOCPackage.TERMINATE_NODE__DECLARED_NAME:
         setDeclaredName((String)newValue);
         return;
+      case SysMLOCPackage.TERMINATE_NODE__NODE_PARAMETER:
+        setNodeParameter((Boolean)newValue);
+        return;
+      case SysMLOCPackage.TERMINATE_NODE__ELEMENTS:
+        getElements().clear();
+        getElements().addAll((Collection<? extends ActionBodyElement>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -962,6 +1149,12 @@ public class TerminateNodeImpl extends EmptySuccessionPrefixImpl implements Term
   {
     switch (featureID)
     {
+      case SysMLOCPackage.TERMINATE_NODE__IS_THEN:
+        setIsThen(IS_THEN_EDEFAULT);
+        return;
+      case SysMLOCPackage.TERMINATE_NODE__THEN_MULTIPLICITY:
+        getThenMultiplicity().clear();
+        return;
       case SysMLOCPackage.TERMINATE_NODE__VISIBILITY:
         setVisibility(VISIBILITY_EDEFAULT);
         return;
@@ -1019,6 +1212,12 @@ public class TerminateNodeImpl extends EmptySuccessionPrefixImpl implements Term
       case SysMLOCPackage.TERMINATE_NODE__DECLARED_NAME:
         setDeclaredName(DECLARED_NAME_EDEFAULT);
         return;
+      case SysMLOCPackage.TERMINATE_NODE__NODE_PARAMETER:
+        setNodeParameter(NODE_PARAMETER_EDEFAULT);
+        return;
+      case SysMLOCPackage.TERMINATE_NODE__ELEMENTS:
+        getElements().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -1033,6 +1232,10 @@ public class TerminateNodeImpl extends EmptySuccessionPrefixImpl implements Term
   {
     switch (featureID)
     {
+      case SysMLOCPackage.TERMINATE_NODE__IS_THEN:
+        return isThen != IS_THEN_EDEFAULT;
+      case SysMLOCPackage.TERMINATE_NODE__THEN_MULTIPLICITY:
+        return thenMultiplicity != null && !thenMultiplicity.isEmpty();
       case SysMLOCPackage.TERMINATE_NODE__VISIBILITY:
         return visibility != VISIBILITY_EDEFAULT;
       case SysMLOCPackage.TERMINATE_NODE__DIRECTION:
@@ -1071,6 +1274,10 @@ public class TerminateNodeImpl extends EmptySuccessionPrefixImpl implements Term
         return isNonunique != IS_NONUNIQUE_EDEFAULT;
       case SysMLOCPackage.TERMINATE_NODE__DECLARED_NAME:
         return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
+      case SysMLOCPackage.TERMINATE_NODE__NODE_PARAMETER:
+        return nodeParameter != NODE_PARAMETER_EDEFAULT;
+      case SysMLOCPackage.TERMINATE_NODE__ELEMENTS:
+        return elements != null && !elements.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -1083,6 +1290,15 @@ public class TerminateNodeImpl extends EmptySuccessionPrefixImpl implements Term
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
   {
+    if (baseClass == EmptySuccessionPrefix.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.TERMINATE_NODE__IS_THEN: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__IS_THEN;
+        case SysMLOCPackage.TERMINATE_NODE__THEN_MULTIPLICITY: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTIPLICITY;
+        default: return -1;
+      }
+    }
     if (baseClass == MemberPrefix.class)
     {
       switch (derivedFeatureID)
@@ -1179,13 +1395,6 @@ public class TerminateNodeImpl extends EmptySuccessionPrefixImpl implements Term
         default: return -1;
       }
     }
-    if (baseClass == ActionNodePrefix.class)
-    {
-      switch (derivedFeatureID)
-      {
-        default: return -1;
-      }
-    }
     return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
   }
 
@@ -1197,6 +1406,15 @@ public class TerminateNodeImpl extends EmptySuccessionPrefixImpl implements Term
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
   {
+    if (baseClass == EmptySuccessionPrefix.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__IS_THEN: return SysMLOCPackage.TERMINATE_NODE__IS_THEN;
+        case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTIPLICITY: return SysMLOCPackage.TERMINATE_NODE__THEN_MULTIPLICITY;
+        default: return -1;
+      }
+    }
     if (baseClass == MemberPrefix.class)
     {
       switch (baseFeatureID)
@@ -1293,13 +1511,6 @@ public class TerminateNodeImpl extends EmptySuccessionPrefixImpl implements Term
         default: return -1;
       }
     }
-    if (baseClass == ActionNodePrefix.class)
-    {
-      switch (baseFeatureID)
-      {
-        default: return -1;
-      }
-    }
     return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
   }
 
@@ -1314,7 +1525,11 @@ public class TerminateNodeImpl extends EmptySuccessionPrefixImpl implements Term
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (visibility: ");
+    result.append(" (isThen: ");
+    result.append(isThen);
+    result.append(", ThenMultiplicity: ");
+    result.append(thenMultiplicity);
+    result.append(", visibility: ");
     result.append(visibility);
     result.append(", direction: ");
     result.append(direction);
@@ -1352,6 +1567,8 @@ public class TerminateNodeImpl extends EmptySuccessionPrefixImpl implements Term
     result.append(isNonunique);
     result.append(", declaredName: ");
     result.append(declaredName);
+    result.append(", NodeParameter: ");
+    result.append(nodeParameter);
     result.append(')');
     return result.toString();
   }

@@ -218,7 +218,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//ForLoopNode/elements"/>
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//ForVariableParameter"/>
-    <genClasses ecoreClass="SysMLOC.ecore#//TerminateNode"/>
+    <genClasses ecoreClass="SysMLOC.ecore#//TerminateNode">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//TerminateNode/NodeParameter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//TerminateNode/elements"/>
+    </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//GuardedSuccessionElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//GuardedSuccessionElement/memberElement"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//GuardedSuccessionElement/ConditionalExpression"/>

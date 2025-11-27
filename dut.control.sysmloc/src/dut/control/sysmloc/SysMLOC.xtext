@@ -197,7 +197,7 @@ ActionNodeElement:
 	| IfNode 
 	| WhileLoopNode 
 	| ForLoopNode
-//	| TerminateNode
+	| TerminateNode
 	| MergeNode
 	| DecisionNode
 	| JoinNode
@@ -543,7 +543,11 @@ ForVariableParameter:
 TerminateNode:
 	EmptySuccessionPrefix
 	MemberPrefix
-	ActionNodePrefix
+	OccurrenceUsagePrefix
+	ActionNodeUsageDeclaration?
+	'terminate'
+	NodeParameter?=Expression
+	(';' | '{' (elements+=ActionBodyElement)* '}')
 ;
 
 

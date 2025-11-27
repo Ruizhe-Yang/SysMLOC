@@ -250,7 +250,11 @@
         eType="#//ActionBodyElement" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ForVariableParameter" eSuperTypes="#//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//MultiplicityPart #//MultiplicityRange"/>
-  <eClassifiers xsi:type="ecore:EClass" name="TerminateNode" eSuperTypes="#//EmptySuccessionPrefix #//MemberPrefix #//ActionNodePrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//ActionNodeUsageDeclaration #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//MultiplicityPart #//MultiplicityRange"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TerminateNode" eSuperTypes="#//ActionNodeElement #//EmptySuccessionPrefix #//MemberPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//ActionNodeUsageDeclaration #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//MultiplicityPart #//MultiplicityRange">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="NodeParameter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//ActionBodyElement" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GuardedSuccessionElement" eSuperTypes="#//GuardedSuccessionNodeElement #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//MultiplicityPart #//MultiplicityRange #//TransitionSuccession">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="memberElement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ConditionalExpression"

@@ -8542,43 +8542,6 @@ public interface SysMLOCPackage extends EPackage
   int FOR_VARIABLE_PARAMETER_FEATURE_COUNT = USAGE_DECLARATION_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.EmptySuccessionPrefixImpl <em>Empty Succession Prefix</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.sysmloc.sysMLOC.impl.EmptySuccessionPrefixImpl
-   * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getEmptySuccessionPrefix()
-   * @generated
-   */
-  int EMPTY_SUCCESSION_PREFIX = 73;
-
-  /**
-   * The feature id for the '<em><b>Is Then</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EMPTY_SUCCESSION_PREFIX__IS_THEN = 0;
-
-  /**
-   * The feature id for the '<em><b>Then Multiplicity</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EMPTY_SUCCESSION_PREFIX__THEN_MULTIPLICITY = 1;
-
-  /**
-   * The number of structural features of the '<em>Empty Succession Prefix</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT = 2;
-
-  /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.TerminateNodeImpl <em>Terminate Node</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -8595,7 +8558,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TERMINATE_NODE__IS_THEN = EMPTY_SUCCESSION_PREFIX__IS_THEN;
+  int TERMINATE_NODE__IS_THEN = ACTION_NODE_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Then Multiplicity</b></em>' attribute list.
@@ -8604,7 +8567,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TERMINATE_NODE__THEN_MULTIPLICITY = EMPTY_SUCCESSION_PREFIX__THEN_MULTIPLICITY;
+  int TERMINATE_NODE__THEN_MULTIPLICITY = ACTION_NODE_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -8613,7 +8576,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TERMINATE_NODE__VISIBILITY = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 0;
+  int TERMINATE_NODE__VISIBILITY = ACTION_NODE_ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -8622,7 +8585,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TERMINATE_NODE__DIRECTION = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 1;
+  int TERMINATE_NODE__DIRECTION = ACTION_NODE_ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -8631,7 +8594,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TERMINATE_NODE__IS_ABSTRACT = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 2;
+  int TERMINATE_NODE__IS_ABSTRACT = ACTION_NODE_ELEMENT_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -8640,7 +8603,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TERMINATE_NODE__IS_VARIATION = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 3;
+  int TERMINATE_NODE__IS_VARIATION = ACTION_NODE_ELEMENT_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Is Read Only</b></em>' attribute.
@@ -8649,7 +8612,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TERMINATE_NODE__IS_READ_ONLY = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 4;
+  int TERMINATE_NODE__IS_READ_ONLY = ACTION_NODE_ELEMENT_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Is Derived</b></em>' attribute.
@@ -8658,7 +8621,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TERMINATE_NODE__IS_DERIVED = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 5;
+  int TERMINATE_NODE__IS_DERIVED = ACTION_NODE_ELEMENT_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Is Reference</b></em>' attribute.
@@ -8667,7 +8630,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TERMINATE_NODE__IS_REFERENCE = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 6;
+  int TERMINATE_NODE__IS_REFERENCE = ACTION_NODE_ELEMENT_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Is End</b></em>' attribute.
@@ -8676,7 +8639,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TERMINATE_NODE__IS_END = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 7;
+  int TERMINATE_NODE__IS_END = ACTION_NODE_ELEMENT_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -8685,7 +8648,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TERMINATE_NODE__IS_INDIVIDUAL = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 8;
+  int TERMINATE_NODE__IS_INDIVIDUAL = ACTION_NODE_ELEMENT_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Portion Kind</b></em>' attribute.
@@ -8694,7 +8657,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TERMINATE_NODE__PORTION_KIND = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 9;
+  int TERMINATE_NODE__PORTION_KIND = ACTION_NODE_ELEMENT_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -8703,7 +8666,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TERMINATE_NODE__TYPINGS = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 10;
+  int TERMINATE_NODE__TYPINGS = ACTION_NODE_ELEMENT_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
@@ -8712,7 +8675,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TERMINATE_NODE__SUBSETTING = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 11;
+  int TERMINATE_NODE__SUBSETTING = ACTION_NODE_ELEMENT_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute list.
@@ -8721,7 +8684,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TERMINATE_NODE__REFERENCES = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 12;
+  int TERMINATE_NODE__REFERENCES = ACTION_NODE_ELEMENT_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Crosses</b></em>' attribute list.
@@ -8730,7 +8693,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TERMINATE_NODE__CROSSES = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 13;
+  int TERMINATE_NODE__CROSSES = ACTION_NODE_ELEMENT_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
@@ -8739,7 +8702,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TERMINATE_NODE__REDEFINITIONS = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 14;
+  int TERMINATE_NODE__REDEFINITIONS = ACTION_NODE_ELEMENT_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -8748,7 +8711,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TERMINATE_NODE__MULTIPLICITY = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 15;
+  int TERMINATE_NODE__MULTIPLICITY = ACTION_NODE_ELEMENT_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
@@ -8757,7 +8720,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TERMINATE_NODE__IS_ORDERED = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 16;
+  int TERMINATE_NODE__IS_ORDERED = ACTION_NODE_ELEMENT_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
@@ -8766,7 +8729,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TERMINATE_NODE__IS_NONUNIQUE = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 17;
+  int TERMINATE_NODE__IS_NONUNIQUE = ACTION_NODE_ELEMENT_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -8775,7 +8738,25 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TERMINATE_NODE__DECLARED_NAME = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 18;
+  int TERMINATE_NODE__DECLARED_NAME = ACTION_NODE_ELEMENT_FEATURE_COUNT + 20;
+
+  /**
+   * The feature id for the '<em><b>Node Parameter</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERMINATE_NODE__NODE_PARAMETER = ACTION_NODE_ELEMENT_FEATURE_COUNT + 21;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERMINATE_NODE__ELEMENTS = ACTION_NODE_ELEMENT_FEATURE_COUNT + 22;
 
   /**
    * The number of structural features of the '<em>Terminate Node</em>' class.
@@ -8784,7 +8765,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TERMINATE_NODE_FEATURE_COUNT = EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT + 19;
+  int TERMINATE_NODE_FEATURE_COUNT = ACTION_NODE_ELEMENT_FEATURE_COUNT + 23;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.GuardedSuccessionElementImpl <em>Guarded Succession Element</em>}' class.
@@ -8976,6 +8957,43 @@ public interface SysMLOCPackage extends EPackage
    * @ordered
    */
   int TARGET_SUCCESSION_ELEMENT_FEATURE_COUNT = TARGET_SUCCESSION_NODE_ELEMENT_FEATURE_COUNT + 4;
+
+  /**
+   * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.EmptySuccessionPrefixImpl <em>Empty Succession Prefix</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.sysmloc.sysMLOC.impl.EmptySuccessionPrefixImpl
+   * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getEmptySuccessionPrefix()
+   * @generated
+   */
+  int EMPTY_SUCCESSION_PREFIX = 73;
+
+  /**
+   * The feature id for the '<em><b>Is Then</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EMPTY_SUCCESSION_PREFIX__IS_THEN = 0;
+
+  /**
+   * The feature id for the '<em><b>Then Multiplicity</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EMPTY_SUCCESSION_PREFIX__THEN_MULTIPLICITY = 1;
+
+  /**
+   * The number of structural features of the '<em>Empty Succession Prefix</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EMPTY_SUCCESSION_PREFIX_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.FeatureValueImpl <em>Feature Value</em>}' class.
@@ -12596,6 +12614,28 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    */
   EClass getTerminateNode();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.sysmloc.sysMLOC.TerminateNode#isNodeParameter <em>Node Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Node Parameter</em>'.
+   * @see dut.control.sysmloc.sysMLOC.TerminateNode#isNodeParameter()
+   * @see #getTerminateNode()
+   * @generated
+   */
+  EAttribute getTerminateNode_NodeParameter();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.sysmloc.sysMLOC.TerminateNode#getElements <em>Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see dut.control.sysmloc.sysMLOC.TerminateNode#getElements()
+   * @see #getTerminateNode()
+   * @generated
+   */
+  EReference getTerminateNode_Elements();
 
   /**
    * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.GuardedSuccessionElement <em>Guarded Succession Element</em>}'.
