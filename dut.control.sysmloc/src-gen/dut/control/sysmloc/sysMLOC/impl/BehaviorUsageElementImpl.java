@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class BehaviorUsageElementImpl extends ActionBodyElementImpl implements BehaviorUsageElement
+public class BehaviorUsageElementImpl extends OccurrenceUsageElementImpl implements BehaviorUsageElement
 {
   /**
    * <!-- begin-user-doc -->

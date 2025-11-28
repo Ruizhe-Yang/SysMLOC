@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class CodeAnnotationImpl extends PackageBodyElementImpl implements CodeAnnotation
+public class CodeAnnotationImpl extends GeneralBodyElementsImpl implements CodeAnnotation
 {
   /**
    * The default value of the '{@link #getBody() <em>Body</em>}' attribute.

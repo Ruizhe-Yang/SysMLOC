@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class UsageElementImpl extends PackageBodyElementImpl implements UsageElement
+public class UsageElementImpl extends GeneralBodyElementsImpl implements UsageElement
 {
   /**
    * <!-- begin-user-doc -->

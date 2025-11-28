@@ -39,7 +39,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class InitialNodeImpl extends InitialNodeElementImpl implements InitialNode
+public class InitialNodeImpl extends ActionBodyElementImpl implements InitialNode
 {
   /**
    * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.

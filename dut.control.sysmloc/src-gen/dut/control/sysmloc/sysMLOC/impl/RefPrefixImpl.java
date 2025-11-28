@@ -12,7 +12,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,15 +22,13 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.RefPrefixImpl#getDirection <em>Direction</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.RefPrefixImpl#isIsAbstract <em>Is Abstract</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.RefPrefixImpl#isIsVariation <em>Is Variation</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.RefPrefixImpl#isIsReadOnly <em>Is Read Only</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.RefPrefixImpl#isIsDerived <em>Is Derived</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class RefPrefixImpl extends MinimalEObjectImpl.Container implements RefPrefix
+public class RefPrefixImpl extends BasicDefinitionPrefixImpl implements RefPrefix
 {
   /**
    * The default value of the '{@link #getDirection() <em>Direction</em>}' attribute.
@@ -52,46 +49,6 @@ public class RefPrefixImpl extends MinimalEObjectImpl.Container implements RefPr
    * @ordered
    */
   protected FeatureDirection direction = DIRECTION_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #isIsAbstract() <em>Is Abstract</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isIsAbstract()
-   * @generated
-   * @ordered
-   */
-  protected static final boolean IS_ABSTRACT_EDEFAULT = false;
-
-  /**
-   * The cached value of the '{@link #isIsAbstract() <em>Is Abstract</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isIsAbstract()
-   * @generated
-   * @ordered
-   */
-  protected boolean isAbstract = IS_ABSTRACT_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #isIsVariation() <em>Is Variation</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isIsVariation()
-   * @generated
-   * @ordered
-   */
-  protected static final boolean IS_VARIATION_EDEFAULT = false;
-
-  /**
-   * The cached value of the '{@link #isIsVariation() <em>Is Variation</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isIsVariation()
-   * @generated
-   * @ordered
-   */
-  protected boolean isVariation = IS_VARIATION_EDEFAULT;
 
   /**
    * The default value of the '{@link #isIsReadOnly() <em>Is Read Only</em>}' attribute.
@@ -185,56 +142,6 @@ public class RefPrefixImpl extends MinimalEObjectImpl.Container implements RefPr
    * @generated
    */
   @Override
-  public boolean isIsAbstract()
-  {
-    return isAbstract;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setIsAbstract(boolean newIsAbstract)
-  {
-    boolean oldIsAbstract = isAbstract;
-    isAbstract = newIsAbstract;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.REF_PREFIX__IS_ABSTRACT, oldIsAbstract, isAbstract));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public boolean isIsVariation()
-  {
-    return isVariation;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setIsVariation(boolean newIsVariation)
-  {
-    boolean oldIsVariation = isVariation;
-    isVariation = newIsVariation;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.REF_PREFIX__IS_VARIATION, oldIsVariation, isVariation));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public boolean isIsReadOnly()
   {
     return isReadOnly;
@@ -291,10 +198,6 @@ public class RefPrefixImpl extends MinimalEObjectImpl.Container implements RefPr
     {
       case SysMLOCPackage.REF_PREFIX__DIRECTION:
         return getDirection();
-      case SysMLOCPackage.REF_PREFIX__IS_ABSTRACT:
-        return isIsAbstract();
-      case SysMLOCPackage.REF_PREFIX__IS_VARIATION:
-        return isIsVariation();
       case SysMLOCPackage.REF_PREFIX__IS_READ_ONLY:
         return isIsReadOnly();
       case SysMLOCPackage.REF_PREFIX__IS_DERIVED:
@@ -315,12 +218,6 @@ public class RefPrefixImpl extends MinimalEObjectImpl.Container implements RefPr
     {
       case SysMLOCPackage.REF_PREFIX__DIRECTION:
         setDirection((FeatureDirection)newValue);
-        return;
-      case SysMLOCPackage.REF_PREFIX__IS_ABSTRACT:
-        setIsAbstract((Boolean)newValue);
-        return;
-      case SysMLOCPackage.REF_PREFIX__IS_VARIATION:
-        setIsVariation((Boolean)newValue);
         return;
       case SysMLOCPackage.REF_PREFIX__IS_READ_ONLY:
         setIsReadOnly((Boolean)newValue);
@@ -345,12 +242,6 @@ public class RefPrefixImpl extends MinimalEObjectImpl.Container implements RefPr
       case SysMLOCPackage.REF_PREFIX__DIRECTION:
         setDirection(DIRECTION_EDEFAULT);
         return;
-      case SysMLOCPackage.REF_PREFIX__IS_ABSTRACT:
-        setIsAbstract(IS_ABSTRACT_EDEFAULT);
-        return;
-      case SysMLOCPackage.REF_PREFIX__IS_VARIATION:
-        setIsVariation(IS_VARIATION_EDEFAULT);
-        return;
       case SysMLOCPackage.REF_PREFIX__IS_READ_ONLY:
         setIsReadOnly(IS_READ_ONLY_EDEFAULT);
         return;
@@ -373,10 +264,6 @@ public class RefPrefixImpl extends MinimalEObjectImpl.Container implements RefPr
     {
       case SysMLOCPackage.REF_PREFIX__DIRECTION:
         return direction != DIRECTION_EDEFAULT;
-      case SysMLOCPackage.REF_PREFIX__IS_ABSTRACT:
-        return isAbstract != IS_ABSTRACT_EDEFAULT;
-      case SysMLOCPackage.REF_PREFIX__IS_VARIATION:
-        return isVariation != IS_VARIATION_EDEFAULT;
       case SysMLOCPackage.REF_PREFIX__IS_READ_ONLY:
         return isReadOnly != IS_READ_ONLY_EDEFAULT;
       case SysMLOCPackage.REF_PREFIX__IS_DERIVED:
@@ -398,10 +285,6 @@ public class RefPrefixImpl extends MinimalEObjectImpl.Container implements RefPr
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (direction: ");
     result.append(direction);
-    result.append(", isAbstract: ");
-    result.append(isAbstract);
-    result.append(", isVariation: ");
-    result.append(isVariation);
     result.append(", isReadOnly: ");
     result.append(isReadOnly);
     result.append(", isDerived: ");

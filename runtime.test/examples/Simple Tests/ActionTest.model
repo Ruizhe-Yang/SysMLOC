@@ -20,7 +20,7 @@
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="S"/>
     <elements xsi:type="sysMLOC:ActionUsage" declaredName="a1">
       <elements xsi:type="sysMLOC:InitialNode" memberElement="start"/>
-      <elements xsi:type="sysMLOC:MergeNode" isThen="true" declaredName="m"/>
+      <elements xsi:type="sysMLOC:CommonNode" isThen="true" declaredName="m"/>
       <elements xsi:type="sysMLOC:AcceptNode" isThen="true">
         <acceptParameter payloadFeatureElement="S"/>
       </elements>
@@ -34,7 +34,7 @@
       <elements xsi:type="sysMLOC:AcceptNode" isThen="true">
         <acceptParameter triggerkind="when" triggerExpression="b.f"/>
       </elements>
-      <elements xsi:type="sysMLOC:DecisionNode" isThen="true"/>
+      <elements xsi:type="sysMLOC:CommonNode" isThen="true" nodeKind="decide"/>
       <elements xsi:type="sysMLOC:IfNode" ifConditionExpression="true">
         <transitionSuccessionElement refElement="m"/>
       </elements>

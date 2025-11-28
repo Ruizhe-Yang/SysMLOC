@@ -24,7 +24,7 @@
     </elements>
     <elements xsi:type="sysMLOC:ActionDefinition" declaredName="Brake">
       <elements xsi:type="sysMLOC:ActionUsage" declaredName="TurnOn"/>
-      <elements xsi:type="sysMLOC:ForkNode" isThen="true"/>
+      <elements xsi:type="sysMLOC:CommonNode" isThen="true" nodeKind="fork"/>
       <elements xsi:type="sysMLOC:TargetSuccessionElement">
         <transitionSuccessionElement refElement="monitorBrakePedal"/>
       </elements>
@@ -64,7 +64,7 @@
       <elements xsi:type="sysMLOC:TargetSuccessionElement">
         <transitionSuccessionElement refElement="joinNode"/>
       </elements>
-      <elements xsi:type="sysMLOC:JoinNode" declaredName="joinNode"/>
+      <elements xsi:type="sysMLOC:CommonNode" declaredName="joinNode" nodeKind="join"/>
       <elements xsi:type="sysMLOC:TargetSuccessionElement">
         <transitionSuccessionElement refElement="done"/>
       </elements>

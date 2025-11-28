@@ -18,24 +18,23 @@ Package:
 
 // TODO --------------------------------- Body Level ---------------------------------//
 
-PackageBodyElement:
-    Package
-    | AnnotatingElement 
-    | DefinitionElement
-    | UsageElement
-//  | ElementFilterMember
-    | AliasElement
-    | ImportElement
-    | CodeAnnotation
-;
-
-DefinitionBodyElement:
+GeneralBodyElements:
 	AnnotatingElement
     | ImportElement
     | DefinitionElement
     | UsageElement
     | AliasElement
     | CodeAnnotation
+;
+
+PackageBodyElement:
+    Package
+    | GeneralBodyElements
+//  | ElementFilterMember
+;
+
+DefinitionBodyElement:
+	GeneralBodyElements
 ;
 
 UsageBodyElement:
@@ -48,23 +47,16 @@ InterfaceBodyElement:
 
 EnumerationBodyElement:
 	AnnotatingElement
-	| EnumerationElement
+	| EnumeratedValue
 ;
 
 ActionBodyElement:
-	AnnotatingElement
-	| ImportElement
-	| AliasElement
-	| DefinitionElement
+	GeneralBodyElements
 //	| VariantUsageMember
-	| NonOccurrenceUsageElement
-	| StructureUsageElement
-	| InitialNodeElement
-	| BehaviorUsageElement 
+	| InitialNode 
 	| ActionNodeElement
-	| GuardedSuccessionNodeElement
-	| TargetSuccessionNodeElement
-    | CodeAnnotation
+	| GuardedSuccessionElement
+	| TargetSuccessionElement
 ;
 
 CalculationBodyElement:
@@ -72,19 +64,12 @@ CalculationBodyElement:
 ;
 
 StateBodyElement:
-	AnnotatingElement
-	| ImportElement
-	| AliasElement
-	| DefinitionElement
+	GeneralBodyElements
 //	| VariantUsageMember
-	| NonOccurrenceUsageElement
-	| StructureUsageElement
-	| BehaviorUsageElement
-	| TransitionUsageElement
-	| EntryActionNodeElement
-	| DoActionNodeElement
-	| ExitActionNodeElement
-    | CodeAnnotation
+	| TransitionUsage
+	| EntryAction
+	| DoActionNode
+	| ExitActionNode
 ;
 
 AnnotatingBodyElement:
@@ -205,13 +190,13 @@ BehaviorUsageElement:
 //	| SatisfyRequirementUsage
 ;
 
-EnumerationElement:
-	EnumeratedValue
-;
+//EnumerationElement:
+//	EnumeratedValue
+//;
 
-InitialNodeElement:
-	InitialNode
-;
+//InitialNodeElement:
+//	InitialNode
+//;
 
 ActionNodeElement:
 	SendNode
@@ -221,35 +206,36 @@ ActionNodeElement:
 	| WhileLoopNode 
 	| ForLoopNode
 	| TerminateNode
-	| MergeNode
-	| DecisionNode
-	| JoinNode
-	| ForkNode
+	| CommonNode
+//	| MergeNode
+//	| DecisionNode
+//	| JoinNode
+//	| ForkNode
 ;
 
-GuardedSuccessionNodeElement:
-	GuardedSuccessionElement
-;
-
-TargetSuccessionNodeElement:
-	TargetSuccessionElement
-;
-
-TransitionUsageElement:
-	TransitionUsage
-;
-
-EntryActionNodeElement:
-	EntryAction
-;
-
-DoActionNodeElement:
-	DoActionNode
-;
-
-ExitActionNodeElement:
-	ExitActionNode
-;
+//GuardedSuccessionNodeElement:
+//	GuardedSuccessionElement
+//;
+//
+//TargetSuccessionNodeElement:
+//	TargetSuccessionElement
+//;
+//
+//TransitionUsageElement:
+//	TransitionUsage
+//;
+//
+//EntryActionNodeElement:
+//	EntryAction
+//;
+//
+//DoActionNodeElement:
+//	DoActionNode
+//;
+//
+//ExitActionNodeElement:
+//	ExitActionNode
+//;
 
 // TODO --------------------------------- Instance Level ---------------------------------//
 NamespaceImport:
@@ -727,33 +713,44 @@ WhileLoopNode:
 	( 'until' untilConditionExpression = Expression ';' )?
 ; 
 
-MergeNode:
+CommonNode:
 	EmptySuccessionPrefix
 	MemberPrefix
-	ControlNodePrefix 'merge' UsageDeclaration?
+	ControlNodePrefix nodeKind=CommonNodeKind UsageDeclaration?
 	(';' | '{' (elements+=ActionNodeBodyElement)* '}')
 ;
 
-DecisionNode:
-	EmptySuccessionPrefix
-	MemberPrefix
-	ControlNodePrefix 'decide' UsageDeclaration?
-	(';' | '{' (elements+=ActionNodeBodyElement)* '}')
+enum CommonNodeKind:
+	merge='merge' | decide = 'decide' | join = 'join' | fork = 'fork'
 ;
 
-JoinNode:
-	EmptySuccessionPrefix
-	MemberPrefix
-	ControlNodePrefix 'join' UsageDeclaration?
-	(';' | '{' (elements+=ActionNodeBodyElement)* '}')
-;
-
-ForkNode:
-	EmptySuccessionPrefix
-	MemberPrefix
-	ControlNodePrefix 'fork' UsageDeclaration?
-	(';' | '{' (elements+=ActionNodeBodyElement)* '}')
-;
+//MergeNode:
+//	EmptySuccessionPrefix
+//	MemberPrefix
+//	ControlNodePrefix 'merge' UsageDeclaration?
+//	(';' | '{' (elements+=ActionNodeBodyElement)* '}')
+//;
+//
+//DecisionNode:
+//	EmptySuccessionPrefix
+//	MemberPrefix
+//	ControlNodePrefix 'decide' UsageDeclaration?
+//	(';' | '{' (elements+=ActionNodeBodyElement)* '}')
+//;
+//
+//JoinNode:
+//	EmptySuccessionPrefix
+//	MemberPrefix
+//	ControlNodePrefix 'join' UsageDeclaration?
+//	(';' | '{' (elements+=ActionNodeBodyElement)* '}')
+//;
+//
+//ForkNode:
+//	EmptySuccessionPrefix
+//	MemberPrefix
+//	ControlNodePrefix 'fork' UsageDeclaration?
+//	(';' | '{' (elements+=ActionNodeBodyElement)* '}')
+//;
 
 ActionParameterEnd:
 	UsageDeclaration
@@ -883,8 +880,7 @@ fragment BasicDefinitionPrefix:
 ;
 
 fragment UsagePrefix:
-	UnextendedUsagePrefix
-	UsageExtensionKeyword*
+	UnextendedUsagePrefix UsageExtensionKeyword*
 ;
 
 fragment UnextendedUsagePrefix:
@@ -905,7 +901,8 @@ fragment OccurrenceUsagePrefix:
 
 fragment RefPrefix:
     ( direction = FeatureDirection )?
-    ( isAbstract ?= 'abstract' | isVariation ?= 'variation')?
+//    ( isAbstract ?= 'abstract' | isVariation ?= 'variation')?
+	BasicDefinitionPrefix?
     ( isReadOnly ?= 'readonly' )?
     ( isDerived ?= 'derived' )?
 ;
@@ -1026,11 +1023,31 @@ fragment MultiplicityPart:
 ;
 
 fragment FeatureSpecialization:
-	(':'|'defined' 'by') typings+=FeatureTypingName (',' typings+=FeatureTypingName)*
-	| (':>'|'specializes'|'subsets') subsetting+=FeatureChainName (',' subsetting+=FeatureChainName)*
-	| ('::>'|'references')  references+=FeatureChainName (',' references+=FeatureChainName)*
-	| ('=>'|'crosses') crosses+=FeatureChainName (',' crosses+=FeatureChainName)*
-	| (':>>'|'redefines') redefinitions+=FeatureChainName (',' redefinitions+=FeatureChainName)*
+	(':'|'defined' 'by') TypingFeatureTyping
+	| (':>'|'specializes'|'subsets') SubsettingFeatureChain
+	| ('::>'|'references')  ReferenceFeatureChain
+	| ('=>'|'crosses') CrossFeatureChain
+	| (':>>'|'redefines') RedefinitionFeatureChain
+;
+
+fragment TypingFeatureTyping:
+	typings+=FeatureTypingName (',' typings+=FeatureTypingName)*
+;
+
+fragment SubsettingFeatureChain:
+	subsetting+=FeatureChainName (',' subsetting+=FeatureChainName)*
+;
+
+fragment ReferenceFeatureChain:
+	references+=FeatureChainName (',' references+=FeatureChainName)*
+;
+
+fragment CrossFeatureChain:
+	crosses+=FeatureChainName (',' crosses+=FeatureChainName)*
+;
+
+fragment RedefinitionFeatureChain:
+	redefinitions+=FeatureChainName (',' redefinitions+=FeatureChainName)*
 ;
 
 fragment TransitionSuccession:

@@ -41,7 +41,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class ExitActionNodeImpl extends ExitActionNodeElementImpl implements ExitActionNode
+public class ExitActionNodeImpl extends StateBodyElementImpl implements ExitActionNode
 {
   /**
    * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.

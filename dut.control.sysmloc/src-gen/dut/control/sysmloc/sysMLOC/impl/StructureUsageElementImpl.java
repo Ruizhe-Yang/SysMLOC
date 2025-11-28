@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class StructureUsageElementImpl extends ActionBodyElementImpl implements StructureUsageElement
+public class StructureUsageElementImpl extends OccurrenceUsageElementImpl implements StructureUsageElement
 {
   /**
    * <!-- begin-user-doc -->

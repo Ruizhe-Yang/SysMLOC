@@ -20,7 +20,7 @@ package dut.control.sysmloc.sysMLOC;
  * @model
  * @generated
  */
-public interface PayloadParameter extends PayloadFeature, Identification, PayloadFeatureSpecializationPart, FeatureSpecialization, MultiplicityPart, MultiplicityRange, ValuePart, FeatureValue, TriggerValuePart
+public interface PayloadParameter extends PayloadFeature, Identification, PayloadFeatureSpecializationPart, FeatureSpecialization, TypingFeatureTyping, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, MultiplicityPart, MultiplicityRange, ValuePart, FeatureValue, TriggerValuePart
 {
   /**
    * Returns the value of the '<em><b>Via Node Parameter</b></em>' attribute.

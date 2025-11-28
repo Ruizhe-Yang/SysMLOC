@@ -4,8 +4,11 @@
 package dut.control.sysmloc.sysMLOC.impl;
 
 import dut.control.sysmloc.sysMLOC.ActionNodeBodyElement;
+import dut.control.sysmloc.sysMLOC.BasicDefinitionPrefix;
+import dut.control.sysmloc.sysMLOC.CommonNode;
+import dut.control.sysmloc.sysMLOC.CommonNodeKind;
 import dut.control.sysmloc.sysMLOC.ControlNodePrefix;
-import dut.control.sysmloc.sysMLOC.DecisionNode;
+import dut.control.sysmloc.sysMLOC.CrossFeatureChain;
 import dut.control.sysmloc.sysMLOC.EmptySuccessionPrefix;
 import dut.control.sysmloc.sysMLOC.FeatureDeclaration;
 import dut.control.sysmloc.sysMLOC.FeatureDirection;
@@ -15,8 +18,12 @@ import dut.control.sysmloc.sysMLOC.MemberPrefix;
 import dut.control.sysmloc.sysMLOC.MultiplicityPart;
 import dut.control.sysmloc.sysMLOC.MultiplicityRange;
 import dut.control.sysmloc.sysMLOC.PortionKind;
+import dut.control.sysmloc.sysMLOC.RedefinitionFeatureChain;
 import dut.control.sysmloc.sysMLOC.RefPrefix;
+import dut.control.sysmloc.sysMLOC.ReferenceFeatureChain;
+import dut.control.sysmloc.sysMLOC.SubsettingFeatureChain;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
+import dut.control.sysmloc.sysMLOC.TypingFeatureTyping;
 import dut.control.sysmloc.sysMLOC.UsageDeclaration;
 import dut.control.sysmloc.sysMLOC.UsageExtensionKeyword;
 import dut.control.sysmloc.sysMLOC.VisibilityIndicator;
@@ -39,38 +46,39 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Decision Node</b></em>'.
+ * An implementation of the model object '<em><b>Common Node</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DecisionNodeImpl#isIsThen <em>Is Then</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DecisionNodeImpl#getThenMultiplicity <em>Then Multiplicity</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DecisionNodeImpl#getVisibility <em>Visibility</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DecisionNodeImpl#getDirection <em>Direction</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DecisionNodeImpl#isIsAbstract <em>Is Abstract</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DecisionNodeImpl#isIsVariation <em>Is Variation</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DecisionNodeImpl#isIsReadOnly <em>Is Read Only</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DecisionNodeImpl#isIsDerived <em>Is Derived</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DecisionNodeImpl#getUsageExtension <em>Usage Extension</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DecisionNodeImpl#isIsIndividual <em>Is Individual</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DecisionNodeImpl#getPortionKind <em>Portion Kind</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DecisionNodeImpl#getTypings <em>Typings</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DecisionNodeImpl#getSubsetting <em>Subsetting</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DecisionNodeImpl#getReferences <em>References</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DecisionNodeImpl#getCrosses <em>Crosses</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DecisionNodeImpl#getRedefinitions <em>Redefinitions</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DecisionNodeImpl#getMultiplicity <em>Multiplicity</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DecisionNodeImpl#isIsOrdered <em>Is Ordered</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DecisionNodeImpl#isIsNonunique <em>Is Nonunique</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DecisionNodeImpl#getDeclaredName <em>Declared Name</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DecisionNodeImpl#getElements <em>Elements</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#isIsThen <em>Is Then</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#getThenMultiplicity <em>Then Multiplicity</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#getVisibility <em>Visibility</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#isIsAbstract <em>Is Abstract</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#isIsVariation <em>Is Variation</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#getDirection <em>Direction</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#isIsReadOnly <em>Is Read Only</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#isIsDerived <em>Is Derived</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#getUsageExtension <em>Usage Extension</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#isIsIndividual <em>Is Individual</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#getPortionKind <em>Portion Kind</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#getTypings <em>Typings</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#getSubsetting <em>Subsetting</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#getReferences <em>References</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#getCrosses <em>Crosses</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#getRedefinitions <em>Redefinitions</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#getMultiplicity <em>Multiplicity</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#isIsOrdered <em>Is Ordered</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#isIsNonunique <em>Is Nonunique</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#getDeclaredName <em>Declared Name</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#getNodeKind <em>Node Kind</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#getElements <em>Elements</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionNode
+public class CommonNodeImpl extends ActionNodeElementImpl implements CommonNode
 {
   /**
    * The default value of the '{@link #isIsThen() <em>Is Then</em>}' attribute.
@@ -123,26 +131,6 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
   protected VisibilityIndicator visibility = VISIBILITY_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getDirection() <em>Direction</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDirection()
-   * @generated
-   * @ordered
-   */
-  protected static final FeatureDirection DIRECTION_EDEFAULT = FeatureDirection.NULL;
-
-  /**
-   * The cached value of the '{@link #getDirection() <em>Direction</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDirection()
-   * @generated
-   * @ordered
-   */
-  protected FeatureDirection direction = DIRECTION_EDEFAULT;
-
-  /**
    * The default value of the '{@link #isIsAbstract() <em>Is Abstract</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -181,6 +169,26 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
    * @ordered
    */
   protected boolean isVariation = IS_VARIATION_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getDirection() <em>Direction</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDirection()
+   * @generated
+   * @ordered
+   */
+  protected static final FeatureDirection DIRECTION_EDEFAULT = FeatureDirection.NULL;
+
+  /**
+   * The cached value of the '{@link #getDirection() <em>Direction</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDirection()
+   * @generated
+   * @ordered
+   */
+  protected FeatureDirection direction = DIRECTION_EDEFAULT;
 
   /**
    * The default value of the '{@link #isIsReadOnly() <em>Is Read Only</em>}' attribute.
@@ -393,6 +401,26 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
   protected String declaredName = DECLARED_NAME_EDEFAULT;
 
   /**
+   * The default value of the '{@link #getNodeKind() <em>Node Kind</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getNodeKind()
+   * @generated
+   * @ordered
+   */
+  protected static final CommonNodeKind NODE_KIND_EDEFAULT = CommonNodeKind.MERGE;
+
+  /**
+   * The cached value of the '{@link #getNodeKind() <em>Node Kind</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getNodeKind()
+   * @generated
+   * @ordered
+   */
+  protected CommonNodeKind nodeKind = NODE_KIND_EDEFAULT;
+
+  /**
    * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -407,7 +435,7 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
    * <!-- end-user-doc -->
    * @generated
    */
-  protected DecisionNodeImpl()
+  protected CommonNodeImpl()
   {
     super();
   }
@@ -420,7 +448,7 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.eINSTANCE.getDecisionNode();
+    return SysMLOCPackage.eINSTANCE.getCommonNode();
   }
 
   /**
@@ -445,7 +473,7 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
     boolean oldIsThen = isThen;
     isThen = newIsThen;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.DECISION_NODE__IS_THEN, oldIsThen, isThen));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.COMMON_NODE__IS_THEN, oldIsThen, isThen));
   }
 
   /**
@@ -458,7 +486,7 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
   {
     if (thenMultiplicity == null)
     {
-      thenMultiplicity = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.DECISION_NODE__THEN_MULTIPLICITY);
+      thenMultiplicity = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.COMMON_NODE__THEN_MULTIPLICITY);
     }
     return thenMultiplicity;
   }
@@ -485,32 +513,7 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
     VisibilityIndicator oldVisibility = visibility;
     visibility = newVisibility == null ? VISIBILITY_EDEFAULT : newVisibility;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.DECISION_NODE__VISIBILITY, oldVisibility, visibility));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public FeatureDirection getDirection()
-  {
-    return direction;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setDirection(FeatureDirection newDirection)
-  {
-    FeatureDirection oldDirection = direction;
-    direction = newDirection == null ? DIRECTION_EDEFAULT : newDirection;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.DECISION_NODE__DIRECTION, oldDirection, direction));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.COMMON_NODE__VISIBILITY, oldVisibility, visibility));
   }
 
   /**
@@ -535,7 +538,7 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
     boolean oldIsAbstract = isAbstract;
     isAbstract = newIsAbstract;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.DECISION_NODE__IS_ABSTRACT, oldIsAbstract, isAbstract));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.COMMON_NODE__IS_ABSTRACT, oldIsAbstract, isAbstract));
   }
 
   /**
@@ -560,7 +563,32 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
     boolean oldIsVariation = isVariation;
     isVariation = newIsVariation;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.DECISION_NODE__IS_VARIATION, oldIsVariation, isVariation));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.COMMON_NODE__IS_VARIATION, oldIsVariation, isVariation));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public FeatureDirection getDirection()
+  {
+    return direction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDirection(FeatureDirection newDirection)
+  {
+    FeatureDirection oldDirection = direction;
+    direction = newDirection == null ? DIRECTION_EDEFAULT : newDirection;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.COMMON_NODE__DIRECTION, oldDirection, direction));
   }
 
   /**
@@ -585,7 +613,7 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
     boolean oldIsReadOnly = isReadOnly;
     isReadOnly = newIsReadOnly;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.DECISION_NODE__IS_READ_ONLY, oldIsReadOnly, isReadOnly));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.COMMON_NODE__IS_READ_ONLY, oldIsReadOnly, isReadOnly));
   }
 
   /**
@@ -610,7 +638,7 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
     boolean oldIsDerived = isDerived;
     isDerived = newIsDerived;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.DECISION_NODE__IS_DERIVED, oldIsDerived, isDerived));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.COMMON_NODE__IS_DERIVED, oldIsDerived, isDerived));
   }
 
   /**
@@ -623,7 +651,7 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
   {
     if (usageExtension == null)
     {
-      usageExtension = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.DECISION_NODE__USAGE_EXTENSION);
+      usageExtension = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.COMMON_NODE__USAGE_EXTENSION);
     }
     return usageExtension;
   }
@@ -650,7 +678,7 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
     boolean oldIsIndividual = isIndividual;
     isIndividual = newIsIndividual;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.DECISION_NODE__IS_INDIVIDUAL, oldIsIndividual, isIndividual));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.COMMON_NODE__IS_INDIVIDUAL, oldIsIndividual, isIndividual));
   }
 
   /**
@@ -675,7 +703,7 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
     PortionKind oldPortionKind = portionKind;
     portionKind = newPortionKind == null ? PORTION_KIND_EDEFAULT : newPortionKind;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.DECISION_NODE__PORTION_KIND, oldPortionKind, portionKind));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.COMMON_NODE__PORTION_KIND, oldPortionKind, portionKind));
   }
 
   /**
@@ -688,7 +716,7 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
   {
     if (typings == null)
     {
-      typings = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.DECISION_NODE__TYPINGS);
+      typings = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.COMMON_NODE__TYPINGS);
     }
     return typings;
   }
@@ -703,7 +731,7 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
   {
     if (subsetting == null)
     {
-      subsetting = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.DECISION_NODE__SUBSETTING);
+      subsetting = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.COMMON_NODE__SUBSETTING);
     }
     return subsetting;
   }
@@ -718,7 +746,7 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
   {
     if (references == null)
     {
-      references = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.DECISION_NODE__REFERENCES);
+      references = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.COMMON_NODE__REFERENCES);
     }
     return references;
   }
@@ -733,7 +761,7 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
   {
     if (crosses == null)
     {
-      crosses = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.DECISION_NODE__CROSSES);
+      crosses = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.COMMON_NODE__CROSSES);
     }
     return crosses;
   }
@@ -748,7 +776,7 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
   {
     if (redefinitions == null)
     {
-      redefinitions = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.DECISION_NODE__REDEFINITIONS);
+      redefinitions = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.COMMON_NODE__REDEFINITIONS);
     }
     return redefinitions;
   }
@@ -763,7 +791,7 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
   {
     if (multiplicity == null)
     {
-      multiplicity = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.DECISION_NODE__MULTIPLICITY);
+      multiplicity = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.COMMON_NODE__MULTIPLICITY);
     }
     return multiplicity;
   }
@@ -790,7 +818,7 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
     boolean oldIsOrdered = isOrdered;
     isOrdered = newIsOrdered;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.DECISION_NODE__IS_ORDERED, oldIsOrdered, isOrdered));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.COMMON_NODE__IS_ORDERED, oldIsOrdered, isOrdered));
   }
 
   /**
@@ -815,7 +843,7 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
     boolean oldIsNonunique = isNonunique;
     isNonunique = newIsNonunique;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.DECISION_NODE__IS_NONUNIQUE, oldIsNonunique, isNonunique));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.COMMON_NODE__IS_NONUNIQUE, oldIsNonunique, isNonunique));
   }
 
   /**
@@ -840,7 +868,32 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
     String oldDeclaredName = declaredName;
     declaredName = newDeclaredName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.DECISION_NODE__DECLARED_NAME, oldDeclaredName, declaredName));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.COMMON_NODE__DECLARED_NAME, oldDeclaredName, declaredName));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public CommonNodeKind getNodeKind()
+  {
+    return nodeKind;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setNodeKind(CommonNodeKind newNodeKind)
+  {
+    CommonNodeKind oldNodeKind = nodeKind;
+    nodeKind = newNodeKind == null ? NODE_KIND_EDEFAULT : newNodeKind;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.COMMON_NODE__NODE_KIND, oldNodeKind, nodeKind));
   }
 
   /**
@@ -853,7 +906,7 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
   {
     if (elements == null)
     {
-      elements = new EObjectContainmentEList<ActionNodeBodyElement>(ActionNodeBodyElement.class, this, SysMLOCPackage.DECISION_NODE__ELEMENTS);
+      elements = new EObjectContainmentEList<ActionNodeBodyElement>(ActionNodeBodyElement.class, this, SysMLOCPackage.COMMON_NODE__ELEMENTS);
     }
     return elements;
   }
@@ -868,7 +921,7 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
   {
     switch (featureID)
     {
-      case SysMLOCPackage.DECISION_NODE__ELEMENTS:
+      case SysMLOCPackage.COMMON_NODE__ELEMENTS:
         return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -884,47 +937,49 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
   {
     switch (featureID)
     {
-      case SysMLOCPackage.DECISION_NODE__IS_THEN:
+      case SysMLOCPackage.COMMON_NODE__IS_THEN:
         return isIsThen();
-      case SysMLOCPackage.DECISION_NODE__THEN_MULTIPLICITY:
+      case SysMLOCPackage.COMMON_NODE__THEN_MULTIPLICITY:
         return getThenMultiplicity();
-      case SysMLOCPackage.DECISION_NODE__VISIBILITY:
+      case SysMLOCPackage.COMMON_NODE__VISIBILITY:
         return getVisibility();
-      case SysMLOCPackage.DECISION_NODE__DIRECTION:
-        return getDirection();
-      case SysMLOCPackage.DECISION_NODE__IS_ABSTRACT:
+      case SysMLOCPackage.COMMON_NODE__IS_ABSTRACT:
         return isIsAbstract();
-      case SysMLOCPackage.DECISION_NODE__IS_VARIATION:
+      case SysMLOCPackage.COMMON_NODE__IS_VARIATION:
         return isIsVariation();
-      case SysMLOCPackage.DECISION_NODE__IS_READ_ONLY:
+      case SysMLOCPackage.COMMON_NODE__DIRECTION:
+        return getDirection();
+      case SysMLOCPackage.COMMON_NODE__IS_READ_ONLY:
         return isIsReadOnly();
-      case SysMLOCPackage.DECISION_NODE__IS_DERIVED:
+      case SysMLOCPackage.COMMON_NODE__IS_DERIVED:
         return isIsDerived();
-      case SysMLOCPackage.DECISION_NODE__USAGE_EXTENSION:
+      case SysMLOCPackage.COMMON_NODE__USAGE_EXTENSION:
         return getUsageExtension();
-      case SysMLOCPackage.DECISION_NODE__IS_INDIVIDUAL:
+      case SysMLOCPackage.COMMON_NODE__IS_INDIVIDUAL:
         return isIsIndividual();
-      case SysMLOCPackage.DECISION_NODE__PORTION_KIND:
+      case SysMLOCPackage.COMMON_NODE__PORTION_KIND:
         return getPortionKind();
-      case SysMLOCPackage.DECISION_NODE__TYPINGS:
+      case SysMLOCPackage.COMMON_NODE__TYPINGS:
         return getTypings();
-      case SysMLOCPackage.DECISION_NODE__SUBSETTING:
+      case SysMLOCPackage.COMMON_NODE__SUBSETTING:
         return getSubsetting();
-      case SysMLOCPackage.DECISION_NODE__REFERENCES:
+      case SysMLOCPackage.COMMON_NODE__REFERENCES:
         return getReferences();
-      case SysMLOCPackage.DECISION_NODE__CROSSES:
+      case SysMLOCPackage.COMMON_NODE__CROSSES:
         return getCrosses();
-      case SysMLOCPackage.DECISION_NODE__REDEFINITIONS:
+      case SysMLOCPackage.COMMON_NODE__REDEFINITIONS:
         return getRedefinitions();
-      case SysMLOCPackage.DECISION_NODE__MULTIPLICITY:
+      case SysMLOCPackage.COMMON_NODE__MULTIPLICITY:
         return getMultiplicity();
-      case SysMLOCPackage.DECISION_NODE__IS_ORDERED:
+      case SysMLOCPackage.COMMON_NODE__IS_ORDERED:
         return isIsOrdered();
-      case SysMLOCPackage.DECISION_NODE__IS_NONUNIQUE:
+      case SysMLOCPackage.COMMON_NODE__IS_NONUNIQUE:
         return isIsNonunique();
-      case SysMLOCPackage.DECISION_NODE__DECLARED_NAME:
+      case SysMLOCPackage.COMMON_NODE__DECLARED_NAME:
         return getDeclaredName();
-      case SysMLOCPackage.DECISION_NODE__ELEMENTS:
+      case SysMLOCPackage.COMMON_NODE__NODE_KIND:
+        return getNodeKind();
+      case SysMLOCPackage.COMMON_NODE__ELEMENTS:
         return getElements();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -941,75 +996,78 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
   {
     switch (featureID)
     {
-      case SysMLOCPackage.DECISION_NODE__IS_THEN:
+      case SysMLOCPackage.COMMON_NODE__IS_THEN:
         setIsThen((Boolean)newValue);
         return;
-      case SysMLOCPackage.DECISION_NODE__THEN_MULTIPLICITY:
+      case SysMLOCPackage.COMMON_NODE__THEN_MULTIPLICITY:
         getThenMultiplicity().clear();
         getThenMultiplicity().addAll((Collection<? extends String>)newValue);
         return;
-      case SysMLOCPackage.DECISION_NODE__VISIBILITY:
+      case SysMLOCPackage.COMMON_NODE__VISIBILITY:
         setVisibility((VisibilityIndicator)newValue);
         return;
-      case SysMLOCPackage.DECISION_NODE__DIRECTION:
-        setDirection((FeatureDirection)newValue);
-        return;
-      case SysMLOCPackage.DECISION_NODE__IS_ABSTRACT:
+      case SysMLOCPackage.COMMON_NODE__IS_ABSTRACT:
         setIsAbstract((Boolean)newValue);
         return;
-      case SysMLOCPackage.DECISION_NODE__IS_VARIATION:
+      case SysMLOCPackage.COMMON_NODE__IS_VARIATION:
         setIsVariation((Boolean)newValue);
         return;
-      case SysMLOCPackage.DECISION_NODE__IS_READ_ONLY:
+      case SysMLOCPackage.COMMON_NODE__DIRECTION:
+        setDirection((FeatureDirection)newValue);
+        return;
+      case SysMLOCPackage.COMMON_NODE__IS_READ_ONLY:
         setIsReadOnly((Boolean)newValue);
         return;
-      case SysMLOCPackage.DECISION_NODE__IS_DERIVED:
+      case SysMLOCPackage.COMMON_NODE__IS_DERIVED:
         setIsDerived((Boolean)newValue);
         return;
-      case SysMLOCPackage.DECISION_NODE__USAGE_EXTENSION:
+      case SysMLOCPackage.COMMON_NODE__USAGE_EXTENSION:
         getUsageExtension().clear();
         getUsageExtension().addAll((Collection<? extends String>)newValue);
         return;
-      case SysMLOCPackage.DECISION_NODE__IS_INDIVIDUAL:
+      case SysMLOCPackage.COMMON_NODE__IS_INDIVIDUAL:
         setIsIndividual((Boolean)newValue);
         return;
-      case SysMLOCPackage.DECISION_NODE__PORTION_KIND:
+      case SysMLOCPackage.COMMON_NODE__PORTION_KIND:
         setPortionKind((PortionKind)newValue);
         return;
-      case SysMLOCPackage.DECISION_NODE__TYPINGS:
+      case SysMLOCPackage.COMMON_NODE__TYPINGS:
         getTypings().clear();
         getTypings().addAll((Collection<? extends String>)newValue);
         return;
-      case SysMLOCPackage.DECISION_NODE__SUBSETTING:
+      case SysMLOCPackage.COMMON_NODE__SUBSETTING:
         getSubsetting().clear();
         getSubsetting().addAll((Collection<? extends String>)newValue);
         return;
-      case SysMLOCPackage.DECISION_NODE__REFERENCES:
+      case SysMLOCPackage.COMMON_NODE__REFERENCES:
         getReferences().clear();
         getReferences().addAll((Collection<? extends String>)newValue);
         return;
-      case SysMLOCPackage.DECISION_NODE__CROSSES:
+      case SysMLOCPackage.COMMON_NODE__CROSSES:
         getCrosses().clear();
         getCrosses().addAll((Collection<? extends String>)newValue);
         return;
-      case SysMLOCPackage.DECISION_NODE__REDEFINITIONS:
+      case SysMLOCPackage.COMMON_NODE__REDEFINITIONS:
         getRedefinitions().clear();
         getRedefinitions().addAll((Collection<? extends String>)newValue);
         return;
-      case SysMLOCPackage.DECISION_NODE__MULTIPLICITY:
+      case SysMLOCPackage.COMMON_NODE__MULTIPLICITY:
         getMultiplicity().clear();
         getMultiplicity().addAll((Collection<? extends String>)newValue);
         return;
-      case SysMLOCPackage.DECISION_NODE__IS_ORDERED:
+      case SysMLOCPackage.COMMON_NODE__IS_ORDERED:
         setIsOrdered((Boolean)newValue);
         return;
-      case SysMLOCPackage.DECISION_NODE__IS_NONUNIQUE:
+      case SysMLOCPackage.COMMON_NODE__IS_NONUNIQUE:
         setIsNonunique((Boolean)newValue);
         return;
-      case SysMLOCPackage.DECISION_NODE__DECLARED_NAME:
+      case SysMLOCPackage.COMMON_NODE__DECLARED_NAME:
         setDeclaredName((String)newValue);
         return;
-      case SysMLOCPackage.DECISION_NODE__ELEMENTS:
+      case SysMLOCPackage.COMMON_NODE__NODE_KIND:
+        setNodeKind((CommonNodeKind)newValue);
+        return;
+      case SysMLOCPackage.COMMON_NODE__ELEMENTS:
         getElements().clear();
         getElements().addAll((Collection<? extends ActionNodeBodyElement>)newValue);
         return;
@@ -1027,67 +1085,70 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
   {
     switch (featureID)
     {
-      case SysMLOCPackage.DECISION_NODE__IS_THEN:
+      case SysMLOCPackage.COMMON_NODE__IS_THEN:
         setIsThen(IS_THEN_EDEFAULT);
         return;
-      case SysMLOCPackage.DECISION_NODE__THEN_MULTIPLICITY:
+      case SysMLOCPackage.COMMON_NODE__THEN_MULTIPLICITY:
         getThenMultiplicity().clear();
         return;
-      case SysMLOCPackage.DECISION_NODE__VISIBILITY:
+      case SysMLOCPackage.COMMON_NODE__VISIBILITY:
         setVisibility(VISIBILITY_EDEFAULT);
         return;
-      case SysMLOCPackage.DECISION_NODE__DIRECTION:
-        setDirection(DIRECTION_EDEFAULT);
-        return;
-      case SysMLOCPackage.DECISION_NODE__IS_ABSTRACT:
+      case SysMLOCPackage.COMMON_NODE__IS_ABSTRACT:
         setIsAbstract(IS_ABSTRACT_EDEFAULT);
         return;
-      case SysMLOCPackage.DECISION_NODE__IS_VARIATION:
+      case SysMLOCPackage.COMMON_NODE__IS_VARIATION:
         setIsVariation(IS_VARIATION_EDEFAULT);
         return;
-      case SysMLOCPackage.DECISION_NODE__IS_READ_ONLY:
+      case SysMLOCPackage.COMMON_NODE__DIRECTION:
+        setDirection(DIRECTION_EDEFAULT);
+        return;
+      case SysMLOCPackage.COMMON_NODE__IS_READ_ONLY:
         setIsReadOnly(IS_READ_ONLY_EDEFAULT);
         return;
-      case SysMLOCPackage.DECISION_NODE__IS_DERIVED:
+      case SysMLOCPackage.COMMON_NODE__IS_DERIVED:
         setIsDerived(IS_DERIVED_EDEFAULT);
         return;
-      case SysMLOCPackage.DECISION_NODE__USAGE_EXTENSION:
+      case SysMLOCPackage.COMMON_NODE__USAGE_EXTENSION:
         getUsageExtension().clear();
         return;
-      case SysMLOCPackage.DECISION_NODE__IS_INDIVIDUAL:
+      case SysMLOCPackage.COMMON_NODE__IS_INDIVIDUAL:
         setIsIndividual(IS_INDIVIDUAL_EDEFAULT);
         return;
-      case SysMLOCPackage.DECISION_NODE__PORTION_KIND:
+      case SysMLOCPackage.COMMON_NODE__PORTION_KIND:
         setPortionKind(PORTION_KIND_EDEFAULT);
         return;
-      case SysMLOCPackage.DECISION_NODE__TYPINGS:
+      case SysMLOCPackage.COMMON_NODE__TYPINGS:
         getTypings().clear();
         return;
-      case SysMLOCPackage.DECISION_NODE__SUBSETTING:
+      case SysMLOCPackage.COMMON_NODE__SUBSETTING:
         getSubsetting().clear();
         return;
-      case SysMLOCPackage.DECISION_NODE__REFERENCES:
+      case SysMLOCPackage.COMMON_NODE__REFERENCES:
         getReferences().clear();
         return;
-      case SysMLOCPackage.DECISION_NODE__CROSSES:
+      case SysMLOCPackage.COMMON_NODE__CROSSES:
         getCrosses().clear();
         return;
-      case SysMLOCPackage.DECISION_NODE__REDEFINITIONS:
+      case SysMLOCPackage.COMMON_NODE__REDEFINITIONS:
         getRedefinitions().clear();
         return;
-      case SysMLOCPackage.DECISION_NODE__MULTIPLICITY:
+      case SysMLOCPackage.COMMON_NODE__MULTIPLICITY:
         getMultiplicity().clear();
         return;
-      case SysMLOCPackage.DECISION_NODE__IS_ORDERED:
+      case SysMLOCPackage.COMMON_NODE__IS_ORDERED:
         setIsOrdered(IS_ORDERED_EDEFAULT);
         return;
-      case SysMLOCPackage.DECISION_NODE__IS_NONUNIQUE:
+      case SysMLOCPackage.COMMON_NODE__IS_NONUNIQUE:
         setIsNonunique(IS_NONUNIQUE_EDEFAULT);
         return;
-      case SysMLOCPackage.DECISION_NODE__DECLARED_NAME:
+      case SysMLOCPackage.COMMON_NODE__DECLARED_NAME:
         setDeclaredName(DECLARED_NAME_EDEFAULT);
         return;
-      case SysMLOCPackage.DECISION_NODE__ELEMENTS:
+      case SysMLOCPackage.COMMON_NODE__NODE_KIND:
+        setNodeKind(NODE_KIND_EDEFAULT);
+        return;
+      case SysMLOCPackage.COMMON_NODE__ELEMENTS:
         getElements().clear();
         return;
     }
@@ -1104,47 +1165,49 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
   {
     switch (featureID)
     {
-      case SysMLOCPackage.DECISION_NODE__IS_THEN:
+      case SysMLOCPackage.COMMON_NODE__IS_THEN:
         return isThen != IS_THEN_EDEFAULT;
-      case SysMLOCPackage.DECISION_NODE__THEN_MULTIPLICITY:
+      case SysMLOCPackage.COMMON_NODE__THEN_MULTIPLICITY:
         return thenMultiplicity != null && !thenMultiplicity.isEmpty();
-      case SysMLOCPackage.DECISION_NODE__VISIBILITY:
+      case SysMLOCPackage.COMMON_NODE__VISIBILITY:
         return visibility != VISIBILITY_EDEFAULT;
-      case SysMLOCPackage.DECISION_NODE__DIRECTION:
-        return direction != DIRECTION_EDEFAULT;
-      case SysMLOCPackage.DECISION_NODE__IS_ABSTRACT:
+      case SysMLOCPackage.COMMON_NODE__IS_ABSTRACT:
         return isAbstract != IS_ABSTRACT_EDEFAULT;
-      case SysMLOCPackage.DECISION_NODE__IS_VARIATION:
+      case SysMLOCPackage.COMMON_NODE__IS_VARIATION:
         return isVariation != IS_VARIATION_EDEFAULT;
-      case SysMLOCPackage.DECISION_NODE__IS_READ_ONLY:
+      case SysMLOCPackage.COMMON_NODE__DIRECTION:
+        return direction != DIRECTION_EDEFAULT;
+      case SysMLOCPackage.COMMON_NODE__IS_READ_ONLY:
         return isReadOnly != IS_READ_ONLY_EDEFAULT;
-      case SysMLOCPackage.DECISION_NODE__IS_DERIVED:
+      case SysMLOCPackage.COMMON_NODE__IS_DERIVED:
         return isDerived != IS_DERIVED_EDEFAULT;
-      case SysMLOCPackage.DECISION_NODE__USAGE_EXTENSION:
+      case SysMLOCPackage.COMMON_NODE__USAGE_EXTENSION:
         return usageExtension != null && !usageExtension.isEmpty();
-      case SysMLOCPackage.DECISION_NODE__IS_INDIVIDUAL:
+      case SysMLOCPackage.COMMON_NODE__IS_INDIVIDUAL:
         return isIndividual != IS_INDIVIDUAL_EDEFAULT;
-      case SysMLOCPackage.DECISION_NODE__PORTION_KIND:
+      case SysMLOCPackage.COMMON_NODE__PORTION_KIND:
         return portionKind != PORTION_KIND_EDEFAULT;
-      case SysMLOCPackage.DECISION_NODE__TYPINGS:
+      case SysMLOCPackage.COMMON_NODE__TYPINGS:
         return typings != null && !typings.isEmpty();
-      case SysMLOCPackage.DECISION_NODE__SUBSETTING:
+      case SysMLOCPackage.COMMON_NODE__SUBSETTING:
         return subsetting != null && !subsetting.isEmpty();
-      case SysMLOCPackage.DECISION_NODE__REFERENCES:
+      case SysMLOCPackage.COMMON_NODE__REFERENCES:
         return references != null && !references.isEmpty();
-      case SysMLOCPackage.DECISION_NODE__CROSSES:
+      case SysMLOCPackage.COMMON_NODE__CROSSES:
         return crosses != null && !crosses.isEmpty();
-      case SysMLOCPackage.DECISION_NODE__REDEFINITIONS:
+      case SysMLOCPackage.COMMON_NODE__REDEFINITIONS:
         return redefinitions != null && !redefinitions.isEmpty();
-      case SysMLOCPackage.DECISION_NODE__MULTIPLICITY:
+      case SysMLOCPackage.COMMON_NODE__MULTIPLICITY:
         return multiplicity != null && !multiplicity.isEmpty();
-      case SysMLOCPackage.DECISION_NODE__IS_ORDERED:
+      case SysMLOCPackage.COMMON_NODE__IS_ORDERED:
         return isOrdered != IS_ORDERED_EDEFAULT;
-      case SysMLOCPackage.DECISION_NODE__IS_NONUNIQUE:
+      case SysMLOCPackage.COMMON_NODE__IS_NONUNIQUE:
         return isNonunique != IS_NONUNIQUE_EDEFAULT;
-      case SysMLOCPackage.DECISION_NODE__DECLARED_NAME:
+      case SysMLOCPackage.COMMON_NODE__DECLARED_NAME:
         return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
-      case SysMLOCPackage.DECISION_NODE__ELEMENTS:
+      case SysMLOCPackage.COMMON_NODE__NODE_KIND:
+        return nodeKind != NODE_KIND_EDEFAULT;
+      case SysMLOCPackage.COMMON_NODE__ELEMENTS:
         return elements != null && !elements.isEmpty();
     }
     return super.eIsSet(featureID);
@@ -1162,8 +1225,8 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.DECISION_NODE__IS_THEN: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__IS_THEN;
-        case SysMLOCPackage.DECISION_NODE__THEN_MULTIPLICITY: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTIPLICITY;
+        case SysMLOCPackage.COMMON_NODE__IS_THEN: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__IS_THEN;
+        case SysMLOCPackage.COMMON_NODE__THEN_MULTIPLICITY: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTIPLICITY;
         default: return -1;
       }
     }
@@ -1171,7 +1234,16 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.DECISION_NODE__VISIBILITY: return SysMLOCPackage.MEMBER_PREFIX__VISIBILITY;
+        case SysMLOCPackage.COMMON_NODE__VISIBILITY: return SysMLOCPackage.MEMBER_PREFIX__VISIBILITY;
+        default: return -1;
+      }
+    }
+    if (baseClass == BasicDefinitionPrefix.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.COMMON_NODE__IS_ABSTRACT: return SysMLOCPackage.BASIC_DEFINITION_PREFIX__IS_ABSTRACT;
+        case SysMLOCPackage.COMMON_NODE__IS_VARIATION: return SysMLOCPackage.BASIC_DEFINITION_PREFIX__IS_VARIATION;
         default: return -1;
       }
     }
@@ -1179,11 +1251,9 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.DECISION_NODE__DIRECTION: return SysMLOCPackage.REF_PREFIX__DIRECTION;
-        case SysMLOCPackage.DECISION_NODE__IS_ABSTRACT: return SysMLOCPackage.REF_PREFIX__IS_ABSTRACT;
-        case SysMLOCPackage.DECISION_NODE__IS_VARIATION: return SysMLOCPackage.REF_PREFIX__IS_VARIATION;
-        case SysMLOCPackage.DECISION_NODE__IS_READ_ONLY: return SysMLOCPackage.REF_PREFIX__IS_READ_ONLY;
-        case SysMLOCPackage.DECISION_NODE__IS_DERIVED: return SysMLOCPackage.REF_PREFIX__IS_DERIVED;
+        case SysMLOCPackage.COMMON_NODE__DIRECTION: return SysMLOCPackage.REF_PREFIX__DIRECTION;
+        case SysMLOCPackage.COMMON_NODE__IS_READ_ONLY: return SysMLOCPackage.REF_PREFIX__IS_READ_ONLY;
+        case SysMLOCPackage.COMMON_NODE__IS_DERIVED: return SysMLOCPackage.REF_PREFIX__IS_DERIVED;
         default: return -1;
       }
     }
@@ -1191,7 +1261,7 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.DECISION_NODE__USAGE_EXTENSION: return SysMLOCPackage.USAGE_EXTENSION_KEYWORD__USAGE_EXTENSION;
+        case SysMLOCPackage.COMMON_NODE__USAGE_EXTENSION: return SysMLOCPackage.USAGE_EXTENSION_KEYWORD__USAGE_EXTENSION;
         default: return -1;
       }
     }
@@ -1199,8 +1269,48 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.DECISION_NODE__IS_INDIVIDUAL: return SysMLOCPackage.CONTROL_NODE_PREFIX__IS_INDIVIDUAL;
-        case SysMLOCPackage.DECISION_NODE__PORTION_KIND: return SysMLOCPackage.CONTROL_NODE_PREFIX__PORTION_KIND;
+        case SysMLOCPackage.COMMON_NODE__IS_INDIVIDUAL: return SysMLOCPackage.CONTROL_NODE_PREFIX__IS_INDIVIDUAL;
+        case SysMLOCPackage.COMMON_NODE__PORTION_KIND: return SysMLOCPackage.CONTROL_NODE_PREFIX__PORTION_KIND;
+        default: return -1;
+      }
+    }
+    if (baseClass == TypingFeatureTyping.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.COMMON_NODE__TYPINGS: return SysMLOCPackage.TYPING_FEATURE_TYPING__TYPINGS;
+        default: return -1;
+      }
+    }
+    if (baseClass == SubsettingFeatureChain.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.COMMON_NODE__SUBSETTING: return SysMLOCPackage.SUBSETTING_FEATURE_CHAIN__SUBSETTING;
+        default: return -1;
+      }
+    }
+    if (baseClass == ReferenceFeatureChain.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.COMMON_NODE__REFERENCES: return SysMLOCPackage.REFERENCE_FEATURE_CHAIN__REFERENCES;
+        default: return -1;
+      }
+    }
+    if (baseClass == CrossFeatureChain.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.COMMON_NODE__CROSSES: return SysMLOCPackage.CROSS_FEATURE_CHAIN__CROSSES;
+        default: return -1;
+      }
+    }
+    if (baseClass == RedefinitionFeatureChain.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.COMMON_NODE__REDEFINITIONS: return SysMLOCPackage.REDEFINITION_FEATURE_CHAIN__REDEFINITIONS;
         default: return -1;
       }
     }
@@ -1208,11 +1318,6 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.DECISION_NODE__TYPINGS: return SysMLOCPackage.FEATURE_SPECIALIZATION__TYPINGS;
-        case SysMLOCPackage.DECISION_NODE__SUBSETTING: return SysMLOCPackage.FEATURE_SPECIALIZATION__SUBSETTING;
-        case SysMLOCPackage.DECISION_NODE__REFERENCES: return SysMLOCPackage.FEATURE_SPECIALIZATION__REFERENCES;
-        case SysMLOCPackage.DECISION_NODE__CROSSES: return SysMLOCPackage.FEATURE_SPECIALIZATION__CROSSES;
-        case SysMLOCPackage.DECISION_NODE__REDEFINITIONS: return SysMLOCPackage.FEATURE_SPECIALIZATION__REDEFINITIONS;
         default: return -1;
       }
     }
@@ -1220,7 +1325,7 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.DECISION_NODE__MULTIPLICITY: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTIPLICITY;
+        case SysMLOCPackage.COMMON_NODE__MULTIPLICITY: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTIPLICITY;
         default: return -1;
       }
     }
@@ -1228,8 +1333,8 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.DECISION_NODE__IS_ORDERED: return SysMLOCPackage.MULTIPLICITY_PART__IS_ORDERED;
-        case SysMLOCPackage.DECISION_NODE__IS_NONUNIQUE: return SysMLOCPackage.MULTIPLICITY_PART__IS_NONUNIQUE;
+        case SysMLOCPackage.COMMON_NODE__IS_ORDERED: return SysMLOCPackage.MULTIPLICITY_PART__IS_ORDERED;
+        case SysMLOCPackage.COMMON_NODE__IS_NONUNIQUE: return SysMLOCPackage.MULTIPLICITY_PART__IS_NONUNIQUE;
         default: return -1;
       }
     }
@@ -1244,7 +1349,7 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.DECISION_NODE__DECLARED_NAME: return SysMLOCPackage.FEATURE_DECLARATION__DECLARED_NAME;
+        case SysMLOCPackage.COMMON_NODE__DECLARED_NAME: return SysMLOCPackage.FEATURE_DECLARATION__DECLARED_NAME;
         default: return -1;
       }
     }
@@ -1270,8 +1375,8 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__IS_THEN: return SysMLOCPackage.DECISION_NODE__IS_THEN;
-        case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTIPLICITY: return SysMLOCPackage.DECISION_NODE__THEN_MULTIPLICITY;
+        case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__IS_THEN: return SysMLOCPackage.COMMON_NODE__IS_THEN;
+        case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTIPLICITY: return SysMLOCPackage.COMMON_NODE__THEN_MULTIPLICITY;
         default: return -1;
       }
     }
@@ -1279,7 +1384,16 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.MEMBER_PREFIX__VISIBILITY: return SysMLOCPackage.DECISION_NODE__VISIBILITY;
+        case SysMLOCPackage.MEMBER_PREFIX__VISIBILITY: return SysMLOCPackage.COMMON_NODE__VISIBILITY;
+        default: return -1;
+      }
+    }
+    if (baseClass == BasicDefinitionPrefix.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.BASIC_DEFINITION_PREFIX__IS_ABSTRACT: return SysMLOCPackage.COMMON_NODE__IS_ABSTRACT;
+        case SysMLOCPackage.BASIC_DEFINITION_PREFIX__IS_VARIATION: return SysMLOCPackage.COMMON_NODE__IS_VARIATION;
         default: return -1;
       }
     }
@@ -1287,11 +1401,9 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.REF_PREFIX__DIRECTION: return SysMLOCPackage.DECISION_NODE__DIRECTION;
-        case SysMLOCPackage.REF_PREFIX__IS_ABSTRACT: return SysMLOCPackage.DECISION_NODE__IS_ABSTRACT;
-        case SysMLOCPackage.REF_PREFIX__IS_VARIATION: return SysMLOCPackage.DECISION_NODE__IS_VARIATION;
-        case SysMLOCPackage.REF_PREFIX__IS_READ_ONLY: return SysMLOCPackage.DECISION_NODE__IS_READ_ONLY;
-        case SysMLOCPackage.REF_PREFIX__IS_DERIVED: return SysMLOCPackage.DECISION_NODE__IS_DERIVED;
+        case SysMLOCPackage.REF_PREFIX__DIRECTION: return SysMLOCPackage.COMMON_NODE__DIRECTION;
+        case SysMLOCPackage.REF_PREFIX__IS_READ_ONLY: return SysMLOCPackage.COMMON_NODE__IS_READ_ONLY;
+        case SysMLOCPackage.REF_PREFIX__IS_DERIVED: return SysMLOCPackage.COMMON_NODE__IS_DERIVED;
         default: return -1;
       }
     }
@@ -1299,7 +1411,7 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.USAGE_EXTENSION_KEYWORD__USAGE_EXTENSION: return SysMLOCPackage.DECISION_NODE__USAGE_EXTENSION;
+        case SysMLOCPackage.USAGE_EXTENSION_KEYWORD__USAGE_EXTENSION: return SysMLOCPackage.COMMON_NODE__USAGE_EXTENSION;
         default: return -1;
       }
     }
@@ -1307,8 +1419,48 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.CONTROL_NODE_PREFIX__IS_INDIVIDUAL: return SysMLOCPackage.DECISION_NODE__IS_INDIVIDUAL;
-        case SysMLOCPackage.CONTROL_NODE_PREFIX__PORTION_KIND: return SysMLOCPackage.DECISION_NODE__PORTION_KIND;
+        case SysMLOCPackage.CONTROL_NODE_PREFIX__IS_INDIVIDUAL: return SysMLOCPackage.COMMON_NODE__IS_INDIVIDUAL;
+        case SysMLOCPackage.CONTROL_NODE_PREFIX__PORTION_KIND: return SysMLOCPackage.COMMON_NODE__PORTION_KIND;
+        default: return -1;
+      }
+    }
+    if (baseClass == TypingFeatureTyping.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.TYPING_FEATURE_TYPING__TYPINGS: return SysMLOCPackage.COMMON_NODE__TYPINGS;
+        default: return -1;
+      }
+    }
+    if (baseClass == SubsettingFeatureChain.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.SUBSETTING_FEATURE_CHAIN__SUBSETTING: return SysMLOCPackage.COMMON_NODE__SUBSETTING;
+        default: return -1;
+      }
+    }
+    if (baseClass == ReferenceFeatureChain.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.REFERENCE_FEATURE_CHAIN__REFERENCES: return SysMLOCPackage.COMMON_NODE__REFERENCES;
+        default: return -1;
+      }
+    }
+    if (baseClass == CrossFeatureChain.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.CROSS_FEATURE_CHAIN__CROSSES: return SysMLOCPackage.COMMON_NODE__CROSSES;
+        default: return -1;
+      }
+    }
+    if (baseClass == RedefinitionFeatureChain.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.REDEFINITION_FEATURE_CHAIN__REDEFINITIONS: return SysMLOCPackage.COMMON_NODE__REDEFINITIONS;
         default: return -1;
       }
     }
@@ -1316,11 +1468,6 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.FEATURE_SPECIALIZATION__TYPINGS: return SysMLOCPackage.DECISION_NODE__TYPINGS;
-        case SysMLOCPackage.FEATURE_SPECIALIZATION__SUBSETTING: return SysMLOCPackage.DECISION_NODE__SUBSETTING;
-        case SysMLOCPackage.FEATURE_SPECIALIZATION__REFERENCES: return SysMLOCPackage.DECISION_NODE__REFERENCES;
-        case SysMLOCPackage.FEATURE_SPECIALIZATION__CROSSES: return SysMLOCPackage.DECISION_NODE__CROSSES;
-        case SysMLOCPackage.FEATURE_SPECIALIZATION__REDEFINITIONS: return SysMLOCPackage.DECISION_NODE__REDEFINITIONS;
         default: return -1;
       }
     }
@@ -1328,7 +1475,7 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTIPLICITY: return SysMLOCPackage.DECISION_NODE__MULTIPLICITY;
+        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTIPLICITY: return SysMLOCPackage.COMMON_NODE__MULTIPLICITY;
         default: return -1;
       }
     }
@@ -1336,8 +1483,8 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.MULTIPLICITY_PART__IS_ORDERED: return SysMLOCPackage.DECISION_NODE__IS_ORDERED;
-        case SysMLOCPackage.MULTIPLICITY_PART__IS_NONUNIQUE: return SysMLOCPackage.DECISION_NODE__IS_NONUNIQUE;
+        case SysMLOCPackage.MULTIPLICITY_PART__IS_ORDERED: return SysMLOCPackage.COMMON_NODE__IS_ORDERED;
+        case SysMLOCPackage.MULTIPLICITY_PART__IS_NONUNIQUE: return SysMLOCPackage.COMMON_NODE__IS_NONUNIQUE;
         default: return -1;
       }
     }
@@ -1352,7 +1499,7 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.FEATURE_DECLARATION__DECLARED_NAME: return SysMLOCPackage.DECISION_NODE__DECLARED_NAME;
+        case SysMLOCPackage.FEATURE_DECLARATION__DECLARED_NAME: return SysMLOCPackage.COMMON_NODE__DECLARED_NAME;
         default: return -1;
       }
     }
@@ -1383,12 +1530,12 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
     result.append(thenMultiplicity);
     result.append(", visibility: ");
     result.append(visibility);
-    result.append(", direction: ");
-    result.append(direction);
     result.append(", isAbstract: ");
     result.append(isAbstract);
     result.append(", isVariation: ");
     result.append(isVariation);
+    result.append(", direction: ");
+    result.append(direction);
     result.append(", isReadOnly: ");
     result.append(isReadOnly);
     result.append(", isDerived: ");
@@ -1417,8 +1564,10 @@ public class DecisionNodeImpl extends ActionNodeElementImpl implements DecisionN
     result.append(isNonunique);
     result.append(", declaredName: ");
     result.append(declaredName);
+    result.append(", nodeKind: ");
+    result.append(nodeKind);
     result.append(')');
     return result.toString();
   }
 
-} //DecisionNodeImpl
+} //CommonNodeImpl

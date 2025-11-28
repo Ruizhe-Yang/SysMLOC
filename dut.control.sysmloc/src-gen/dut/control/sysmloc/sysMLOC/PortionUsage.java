@@ -23,7 +23,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface PortionUsage extends StructureUsageElement, EmptySuccessionPrefix, MemberPrefix, isReturnPrefix, BasicUsagePrefix, RefPrefix, UsageExtensionKeyword, Usage, UsageDeclaration, FeatureDeclaration, FeatureSpecializationPart, FeatureSpecialization, MultiplicityPart, MultiplicityRange, FeatureValue
+public interface PortionUsage extends StructureUsageElement, EmptySuccessionPrefix, MemberPrefix, isReturnPrefix, BasicUsagePrefix, RefPrefix, BasicDefinitionPrefix, UsageExtensionKeyword, Usage, UsageDeclaration, FeatureDeclaration, FeatureSpecializationPart, FeatureSpecialization, TypingFeatureTyping, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, MultiplicityPart, MultiplicityRange, FeatureValue
 {
   /**
    * Returns the value of the '<em><b>Is Individual</b></em>' attribute.

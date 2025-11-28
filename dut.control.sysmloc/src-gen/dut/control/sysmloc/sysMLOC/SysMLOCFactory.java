@@ -42,6 +42,15 @@ public interface SysMLOCFactory extends EFactory
   Package createPackage();
 
   /**
+   * Returns a new object of class '<em>General Body Elements</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>General Body Elements</em>'.
+   * @generated
+   */
+  GeneralBodyElements createGeneralBodyElements();
+
+  /**
    * Returns a new object of class '<em>Package Body Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -204,24 +213,6 @@ public interface SysMLOCFactory extends EFactory
   BehaviorUsageElement createBehaviorUsageElement();
 
   /**
-   * Returns a new object of class '<em>Enumeration Element</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Enumeration Element</em>'.
-   * @generated
-   */
-  EnumerationElement createEnumerationElement();
-
-  /**
-   * Returns a new object of class '<em>Initial Node Element</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Initial Node Element</em>'.
-   * @generated
-   */
-  InitialNodeElement createInitialNodeElement();
-
-  /**
    * Returns a new object of class '<em>Action Node Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -229,60 +220,6 @@ public interface SysMLOCFactory extends EFactory
    * @generated
    */
   ActionNodeElement createActionNodeElement();
-
-  /**
-   * Returns a new object of class '<em>Guarded Succession Node Element</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Guarded Succession Node Element</em>'.
-   * @generated
-   */
-  GuardedSuccessionNodeElement createGuardedSuccessionNodeElement();
-
-  /**
-   * Returns a new object of class '<em>Target Succession Node Element</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Target Succession Node Element</em>'.
-   * @generated
-   */
-  TargetSuccessionNodeElement createTargetSuccessionNodeElement();
-
-  /**
-   * Returns a new object of class '<em>Transition Usage Element</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Transition Usage Element</em>'.
-   * @generated
-   */
-  TransitionUsageElement createTransitionUsageElement();
-
-  /**
-   * Returns a new object of class '<em>Entry Action Node Element</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Entry Action Node Element</em>'.
-   * @generated
-   */
-  EntryActionNodeElement createEntryActionNodeElement();
-
-  /**
-   * Returns a new object of class '<em>Do Action Node Element</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Do Action Node Element</em>'.
-   * @generated
-   */
-  DoActionNodeElement createDoActionNodeElement();
-
-  /**
-   * Returns a new object of class '<em>Exit Action Node Element</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Exit Action Node Element</em>'.
-   * @generated
-   */
-  ExitActionNodeElement createExitActionNodeElement();
 
   /**
    * Returns a new object of class '<em>Namespace Import</em>'.
@@ -807,40 +744,13 @@ public interface SysMLOCFactory extends EFactory
   WhileLoopNode createWhileLoopNode();
 
   /**
-   * Returns a new object of class '<em>Merge Node</em>'.
+   * Returns a new object of class '<em>Common Node</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Merge Node</em>'.
+   * @return a new object of class '<em>Common Node</em>'.
    * @generated
    */
-  MergeNode createMergeNode();
-
-  /**
-   * Returns a new object of class '<em>Decision Node</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Decision Node</em>'.
-   * @generated
-   */
-  DecisionNode createDecisionNode();
-
-  /**
-   * Returns a new object of class '<em>Join Node</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Join Node</em>'.
-   * @generated
-   */
-  JoinNode createJoinNode();
-
-  /**
-   * Returns a new object of class '<em>Fork Node</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Fork Node</em>'.
-   * @generated
-   */
-  ForkNode createForkNode();
+  CommonNode createCommonNode();
 
   /**
    * Returns a new object of class '<em>Action Parameter End</em>'.
@@ -1264,6 +1174,51 @@ public interface SysMLOCFactory extends EFactory
    * @generated
    */
   FeatureSpecialization createFeatureSpecialization();
+
+  /**
+   * Returns a new object of class '<em>Typing Feature Typing</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Typing Feature Typing</em>'.
+   * @generated
+   */
+  TypingFeatureTyping createTypingFeatureTyping();
+
+  /**
+   * Returns a new object of class '<em>Subsetting Feature Chain</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Subsetting Feature Chain</em>'.
+   * @generated
+   */
+  SubsettingFeatureChain createSubsettingFeatureChain();
+
+  /**
+   * Returns a new object of class '<em>Reference Feature Chain</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Reference Feature Chain</em>'.
+   * @generated
+   */
+  ReferenceFeatureChain createReferenceFeatureChain();
+
+  /**
+   * Returns a new object of class '<em>Cross Feature Chain</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Cross Feature Chain</em>'.
+   * @generated
+   */
+  CrossFeatureChain createCrossFeatureChain();
+
+  /**
+   * Returns a new object of class '<em>Redefinition Feature Chain</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Redefinition Feature Chain</em>'.
+   * @generated
+   */
+  RedefinitionFeatureChain createRedefinitionFeatureChain();
 
   /**
    * Returns a new object of class '<em>Transition Succession</em>'.

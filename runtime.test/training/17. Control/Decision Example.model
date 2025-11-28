@@ -18,14 +18,14 @@
     <elements xsi:type="sysMLOC:ActionDefinition" declaredName="EndCharging"/>
     <elements xsi:type="sysMLOC:ActionDefinition" declaredName="ChargeBattery">
       <elements xsi:type="sysMLOC:InitialNode" memberElement="start"/>
-      <elements xsi:type="sysMLOC:MergeNode" isThen="true" declaredName="continueCharging"/>
+      <elements xsi:type="sysMLOC:CommonNode" isThen="true" declaredName="continueCharging"/>
       <elements xsi:type="sysMLOC:ActionUsage" isThen="true" declaredName="monitor">
         <typings>MonitorBattery</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="batteryCharge">
           <typings>Real</typings>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:DecisionNode" isThen="true"/>
+      <elements xsi:type="sysMLOC:CommonNode" isThen="true" nodeKind="decide"/>
       <elements xsi:type="sysMLOC:IfNode" ifConditionExpression="monitor.batteryCharge &lt; 100">
         <transitionSuccessionElement refElement="addCharge"/>
       </elements>

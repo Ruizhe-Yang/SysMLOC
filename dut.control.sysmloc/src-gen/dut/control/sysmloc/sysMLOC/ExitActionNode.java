@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface ExitActionNode extends ExitActionNodeElement, MemberPrefix, PerformedActionParameterPart
+public interface ExitActionNode extends StateBodyElement, MemberPrefix, PerformedActionParameterPart
 {
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.

@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class ImportElementImpl extends PackageBodyElementImpl implements ImportElement
+public class ImportElementImpl extends GeneralBodyElementsImpl implements ImportElement
 {
   /**
    * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.

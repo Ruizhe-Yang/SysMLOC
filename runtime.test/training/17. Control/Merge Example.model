@@ -29,7 +29,7 @@
     <elements xsi:type="sysMLOC:ActionUsage" declaredName="takePicture">
       <typings>TakePicture</typings>
       <elements xsi:type="sysMLOC:InitialNode" memberElement="start"/>
-      <elements xsi:type="sysMLOC:MergeNode" isThen="true" declaredName="continue"/>
+      <elements xsi:type="sysMLOC:CommonNode" isThen="true" declaredName="continue"/>
       <elements xsi:type="sysMLOC:ActionUsage" isThen="true" declaredName="trigger">
         <elements xsi:type="sysMLOC:ItemUsage" direction="out" declaredName="scene">
           <typings>Scene</typings>

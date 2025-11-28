@@ -3,7 +3,9 @@
  */
 package dut.control.sysmloc.sysMLOC.impl;
 
+import dut.control.sysmloc.sysMLOC.BasicDefinitionPrefix;
 import dut.control.sysmloc.sysMLOC.BasicUsagePrefix;
+import dut.control.sysmloc.sysMLOC.CrossFeatureChain;
 import dut.control.sysmloc.sysMLOC.EmptySuccessionPrefix;
 import dut.control.sysmloc.sysMLOC.FeatureDeclaration;
 import dut.control.sysmloc.sysMLOC.FeatureDirection;
@@ -15,8 +17,12 @@ import dut.control.sysmloc.sysMLOC.MultiplicityPart;
 import dut.control.sysmloc.sysMLOC.MultiplicityRange;
 import dut.control.sysmloc.sysMLOC.PortionKind;
 import dut.control.sysmloc.sysMLOC.PortionUsage;
+import dut.control.sysmloc.sysMLOC.RedefinitionFeatureChain;
 import dut.control.sysmloc.sysMLOC.RefPrefix;
+import dut.control.sysmloc.sysMLOC.ReferenceFeatureChain;
+import dut.control.sysmloc.sysMLOC.SubsettingFeatureChain;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
+import dut.control.sysmloc.sysMLOC.TypingFeatureTyping;
 import dut.control.sysmloc.sysMLOC.Usage;
 import dut.control.sysmloc.sysMLOC.UsageBodyElement;
 import dut.control.sysmloc.sysMLOC.UsageDeclaration;
@@ -52,9 +58,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PortionUsageImpl#getThenMultiplicity <em>Then Multiplicity</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PortionUsageImpl#getVisibility <em>Visibility</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PortionUsageImpl#isIsReturn <em>Is Return</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PortionUsageImpl#getDirection <em>Direction</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PortionUsageImpl#isIsAbstract <em>Is Abstract</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PortionUsageImpl#isIsVariation <em>Is Variation</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PortionUsageImpl#getDirection <em>Direction</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PortionUsageImpl#isIsReadOnly <em>Is Read Only</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PortionUsageImpl#isIsDerived <em>Is Derived</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PortionUsageImpl#isIsReference <em>Is Reference</em>}</li>
@@ -151,26 +157,6 @@ public class PortionUsageImpl extends StructureUsageElementImpl implements Porti
   protected boolean isReturn = IS_RETURN_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getDirection() <em>Direction</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDirection()
-   * @generated
-   * @ordered
-   */
-  protected static final FeatureDirection DIRECTION_EDEFAULT = FeatureDirection.NULL;
-
-  /**
-   * The cached value of the '{@link #getDirection() <em>Direction</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDirection()
-   * @generated
-   * @ordered
-   */
-  protected FeatureDirection direction = DIRECTION_EDEFAULT;
-
-  /**
    * The default value of the '{@link #isIsAbstract() <em>Is Abstract</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -209,6 +195,26 @@ public class PortionUsageImpl extends StructureUsageElementImpl implements Porti
    * @ordered
    */
   protected boolean isVariation = IS_VARIATION_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getDirection() <em>Direction</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDirection()
+   * @generated
+   * @ordered
+   */
+  protected static final FeatureDirection DIRECTION_EDEFAULT = FeatureDirection.NULL;
+
+  /**
+   * The cached value of the '{@link #getDirection() <em>Direction</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDirection()
+   * @generated
+   * @ordered
+   */
+  protected FeatureDirection direction = DIRECTION_EDEFAULT;
 
   /**
    * The default value of the '{@link #isIsReadOnly() <em>Is Read Only</em>}' attribute.
@@ -617,31 +623,6 @@ public class PortionUsageImpl extends StructureUsageElementImpl implements Porti
    * @generated
    */
   @Override
-  public FeatureDirection getDirection()
-  {
-    return direction;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setDirection(FeatureDirection newDirection)
-  {
-    FeatureDirection oldDirection = direction;
-    direction = newDirection == null ? DIRECTION_EDEFAULT : newDirection;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.PORTION_USAGE__DIRECTION, oldDirection, direction));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public boolean isIsAbstract()
   {
     return isAbstract;
@@ -684,6 +665,31 @@ public class PortionUsageImpl extends StructureUsageElementImpl implements Porti
     isVariation = newIsVariation;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.PORTION_USAGE__IS_VARIATION, oldIsVariation, isVariation));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public FeatureDirection getDirection()
+  {
+    return direction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDirection(FeatureDirection newDirection)
+  {
+    FeatureDirection oldDirection = direction;
+    direction = newDirection == null ? DIRECTION_EDEFAULT : newDirection;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.PORTION_USAGE__DIRECTION, oldDirection, direction));
   }
 
   /**
@@ -1105,12 +1111,12 @@ public class PortionUsageImpl extends StructureUsageElementImpl implements Porti
         return getVisibility();
       case SysMLOCPackage.PORTION_USAGE__IS_RETURN:
         return isIsReturn();
-      case SysMLOCPackage.PORTION_USAGE__DIRECTION:
-        return getDirection();
       case SysMLOCPackage.PORTION_USAGE__IS_ABSTRACT:
         return isIsAbstract();
       case SysMLOCPackage.PORTION_USAGE__IS_VARIATION:
         return isIsVariation();
+      case SysMLOCPackage.PORTION_USAGE__DIRECTION:
+        return getDirection();
       case SysMLOCPackage.PORTION_USAGE__IS_READ_ONLY:
         return isIsReadOnly();
       case SysMLOCPackage.PORTION_USAGE__IS_DERIVED:
@@ -1177,14 +1183,14 @@ public class PortionUsageImpl extends StructureUsageElementImpl implements Porti
       case SysMLOCPackage.PORTION_USAGE__IS_RETURN:
         setIsReturn((Boolean)newValue);
         return;
-      case SysMLOCPackage.PORTION_USAGE__DIRECTION:
-        setDirection((FeatureDirection)newValue);
-        return;
       case SysMLOCPackage.PORTION_USAGE__IS_ABSTRACT:
         setIsAbstract((Boolean)newValue);
         return;
       case SysMLOCPackage.PORTION_USAGE__IS_VARIATION:
         setIsVariation((Boolean)newValue);
+        return;
+      case SysMLOCPackage.PORTION_USAGE__DIRECTION:
+        setDirection((FeatureDirection)newValue);
         return;
       case SysMLOCPackage.PORTION_USAGE__IS_READ_ONLY:
         setIsReadOnly((Boolean)newValue);
@@ -1278,14 +1284,14 @@ public class PortionUsageImpl extends StructureUsageElementImpl implements Porti
       case SysMLOCPackage.PORTION_USAGE__IS_RETURN:
         setIsReturn(IS_RETURN_EDEFAULT);
         return;
-      case SysMLOCPackage.PORTION_USAGE__DIRECTION:
-        setDirection(DIRECTION_EDEFAULT);
-        return;
       case SysMLOCPackage.PORTION_USAGE__IS_ABSTRACT:
         setIsAbstract(IS_ABSTRACT_EDEFAULT);
         return;
       case SysMLOCPackage.PORTION_USAGE__IS_VARIATION:
         setIsVariation(IS_VARIATION_EDEFAULT);
+        return;
+      case SysMLOCPackage.PORTION_USAGE__DIRECTION:
+        setDirection(DIRECTION_EDEFAULT);
         return;
       case SysMLOCPackage.PORTION_USAGE__IS_READ_ONLY:
         setIsReadOnly(IS_READ_ONLY_EDEFAULT);
@@ -1366,12 +1372,12 @@ public class PortionUsageImpl extends StructureUsageElementImpl implements Porti
         return visibility != VISIBILITY_EDEFAULT;
       case SysMLOCPackage.PORTION_USAGE__IS_RETURN:
         return isReturn != IS_RETURN_EDEFAULT;
-      case SysMLOCPackage.PORTION_USAGE__DIRECTION:
-        return direction != DIRECTION_EDEFAULT;
       case SysMLOCPackage.PORTION_USAGE__IS_ABSTRACT:
         return isAbstract != IS_ABSTRACT_EDEFAULT;
       case SysMLOCPackage.PORTION_USAGE__IS_VARIATION:
         return isVariation != IS_VARIATION_EDEFAULT;
+      case SysMLOCPackage.PORTION_USAGE__DIRECTION:
+        return direction != DIRECTION_EDEFAULT;
       case SysMLOCPackage.PORTION_USAGE__IS_READ_ONLY:
         return isReadOnly != IS_READ_ONLY_EDEFAULT;
       case SysMLOCPackage.PORTION_USAGE__IS_DERIVED:
@@ -1447,13 +1453,20 @@ public class PortionUsageImpl extends StructureUsageElementImpl implements Porti
         default: return -1;
       }
     }
+    if (baseClass == BasicDefinitionPrefix.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.PORTION_USAGE__IS_ABSTRACT: return SysMLOCPackage.BASIC_DEFINITION_PREFIX__IS_ABSTRACT;
+        case SysMLOCPackage.PORTION_USAGE__IS_VARIATION: return SysMLOCPackage.BASIC_DEFINITION_PREFIX__IS_VARIATION;
+        default: return -1;
+      }
+    }
     if (baseClass == RefPrefix.class)
     {
       switch (derivedFeatureID)
       {
         case SysMLOCPackage.PORTION_USAGE__DIRECTION: return SysMLOCPackage.REF_PREFIX__DIRECTION;
-        case SysMLOCPackage.PORTION_USAGE__IS_ABSTRACT: return SysMLOCPackage.REF_PREFIX__IS_ABSTRACT;
-        case SysMLOCPackage.PORTION_USAGE__IS_VARIATION: return SysMLOCPackage.REF_PREFIX__IS_VARIATION;
         case SysMLOCPackage.PORTION_USAGE__IS_READ_ONLY: return SysMLOCPackage.REF_PREFIX__IS_READ_ONLY;
         case SysMLOCPackage.PORTION_USAGE__IS_DERIVED: return SysMLOCPackage.REF_PREFIX__IS_DERIVED;
         default: return -1;
@@ -1475,15 +1488,50 @@ public class PortionUsageImpl extends StructureUsageElementImpl implements Porti
         default: return -1;
       }
     }
+    if (baseClass == TypingFeatureTyping.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.PORTION_USAGE__TYPINGS: return SysMLOCPackage.TYPING_FEATURE_TYPING__TYPINGS;
+        default: return -1;
+      }
+    }
+    if (baseClass == SubsettingFeatureChain.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.PORTION_USAGE__SUBSETTING: return SysMLOCPackage.SUBSETTING_FEATURE_CHAIN__SUBSETTING;
+        default: return -1;
+      }
+    }
+    if (baseClass == ReferenceFeatureChain.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.PORTION_USAGE__REFERENCES: return SysMLOCPackage.REFERENCE_FEATURE_CHAIN__REFERENCES;
+        default: return -1;
+      }
+    }
+    if (baseClass == CrossFeatureChain.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.PORTION_USAGE__CROSSES: return SysMLOCPackage.CROSS_FEATURE_CHAIN__CROSSES;
+        default: return -1;
+      }
+    }
+    if (baseClass == RedefinitionFeatureChain.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.PORTION_USAGE__REDEFINITIONS: return SysMLOCPackage.REDEFINITION_FEATURE_CHAIN__REDEFINITIONS;
+        default: return -1;
+      }
+    }
     if (baseClass == FeatureSpecialization.class)
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.PORTION_USAGE__TYPINGS: return SysMLOCPackage.FEATURE_SPECIALIZATION__TYPINGS;
-        case SysMLOCPackage.PORTION_USAGE__SUBSETTING: return SysMLOCPackage.FEATURE_SPECIALIZATION__SUBSETTING;
-        case SysMLOCPackage.PORTION_USAGE__REFERENCES: return SysMLOCPackage.FEATURE_SPECIALIZATION__REFERENCES;
-        case SysMLOCPackage.PORTION_USAGE__CROSSES: return SysMLOCPackage.FEATURE_SPECIALIZATION__CROSSES;
-        case SysMLOCPackage.PORTION_USAGE__REDEFINITIONS: return SysMLOCPackage.FEATURE_SPECIALIZATION__REDEFINITIONS;
         default: return -1;
       }
     }
@@ -1579,13 +1627,20 @@ public class PortionUsageImpl extends StructureUsageElementImpl implements Porti
         default: return -1;
       }
     }
+    if (baseClass == BasicDefinitionPrefix.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.BASIC_DEFINITION_PREFIX__IS_ABSTRACT: return SysMLOCPackage.PORTION_USAGE__IS_ABSTRACT;
+        case SysMLOCPackage.BASIC_DEFINITION_PREFIX__IS_VARIATION: return SysMLOCPackage.PORTION_USAGE__IS_VARIATION;
+        default: return -1;
+      }
+    }
     if (baseClass == RefPrefix.class)
     {
       switch (baseFeatureID)
       {
         case SysMLOCPackage.REF_PREFIX__DIRECTION: return SysMLOCPackage.PORTION_USAGE__DIRECTION;
-        case SysMLOCPackage.REF_PREFIX__IS_ABSTRACT: return SysMLOCPackage.PORTION_USAGE__IS_ABSTRACT;
-        case SysMLOCPackage.REF_PREFIX__IS_VARIATION: return SysMLOCPackage.PORTION_USAGE__IS_VARIATION;
         case SysMLOCPackage.REF_PREFIX__IS_READ_ONLY: return SysMLOCPackage.PORTION_USAGE__IS_READ_ONLY;
         case SysMLOCPackage.REF_PREFIX__IS_DERIVED: return SysMLOCPackage.PORTION_USAGE__IS_DERIVED;
         default: return -1;
@@ -1607,15 +1662,50 @@ public class PortionUsageImpl extends StructureUsageElementImpl implements Porti
         default: return -1;
       }
     }
+    if (baseClass == TypingFeatureTyping.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.TYPING_FEATURE_TYPING__TYPINGS: return SysMLOCPackage.PORTION_USAGE__TYPINGS;
+        default: return -1;
+      }
+    }
+    if (baseClass == SubsettingFeatureChain.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.SUBSETTING_FEATURE_CHAIN__SUBSETTING: return SysMLOCPackage.PORTION_USAGE__SUBSETTING;
+        default: return -1;
+      }
+    }
+    if (baseClass == ReferenceFeatureChain.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.REFERENCE_FEATURE_CHAIN__REFERENCES: return SysMLOCPackage.PORTION_USAGE__REFERENCES;
+        default: return -1;
+      }
+    }
+    if (baseClass == CrossFeatureChain.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.CROSS_FEATURE_CHAIN__CROSSES: return SysMLOCPackage.PORTION_USAGE__CROSSES;
+        default: return -1;
+      }
+    }
+    if (baseClass == RedefinitionFeatureChain.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.REDEFINITION_FEATURE_CHAIN__REDEFINITIONS: return SysMLOCPackage.PORTION_USAGE__REDEFINITIONS;
+        default: return -1;
+      }
+    }
     if (baseClass == FeatureSpecialization.class)
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.FEATURE_SPECIALIZATION__TYPINGS: return SysMLOCPackage.PORTION_USAGE__TYPINGS;
-        case SysMLOCPackage.FEATURE_SPECIALIZATION__SUBSETTING: return SysMLOCPackage.PORTION_USAGE__SUBSETTING;
-        case SysMLOCPackage.FEATURE_SPECIALIZATION__REFERENCES: return SysMLOCPackage.PORTION_USAGE__REFERENCES;
-        case SysMLOCPackage.FEATURE_SPECIALIZATION__CROSSES: return SysMLOCPackage.PORTION_USAGE__CROSSES;
-        case SysMLOCPackage.FEATURE_SPECIALIZATION__REDEFINITIONS: return SysMLOCPackage.PORTION_USAGE__REDEFINITIONS;
         default: return -1;
       }
     }
@@ -1697,12 +1787,12 @@ public class PortionUsageImpl extends StructureUsageElementImpl implements Porti
     result.append(visibility);
     result.append(", isReturn: ");
     result.append(isReturn);
-    result.append(", direction: ");
-    result.append(direction);
     result.append(", isAbstract: ");
     result.append(isAbstract);
     result.append(", isVariation: ");
     result.append(isVariation);
+    result.append(", direction: ");
+    result.append(direction);
     result.append(", isReadOnly: ");
     result.append(isReadOnly);
     result.append(", isDerived: ");

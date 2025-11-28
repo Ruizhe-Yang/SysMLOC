@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class NonOccurrenceUsageElementImpl extends ActionBodyElementImpl implements NonOccurrenceUsageElement
+public class NonOccurrenceUsageElementImpl extends UsageElementImpl implements NonOccurrenceUsageElement
 {
   /**
    * <!-- begin-user-doc -->

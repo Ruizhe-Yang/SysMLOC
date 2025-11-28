@@ -110,7 +110,7 @@
               <valuePart>request.topic</valuePart>
             </elements>
           </elements>
-          <elements xsi:type="sysMLOC:MergeNode" isThen="true" declaredName="continuePublishing"/>
+          <elements xsi:type="sysMLOC:CommonNode" isThen="true" declaredName="continuePublishing"/>
           <elements xsi:type="sysMLOC:ActionUsage" isThen="true" declaredName="publishing">
             <elements xsi:type="sysMLOC:ReferenceUsage" direction="in" declaredName="request">
               <typings>Publish</typings>
@@ -125,7 +125,7 @@
               <valuePart>request.publication</valuePart>
             </elements>
           </elements>
-          <elements xsi:type="sysMLOC:DecisionNode" isThen="true"/>
+          <elements xsi:type="sysMLOC:CommonNode" isThen="true" nodeKind="decide"/>
           <elements xsi:type="sysMLOC:IfNode" ifConditionExpression="publishing.topic == subscribing.topic">
             <transitionSuccessionElement refElement="delivering"/>
           </elements>

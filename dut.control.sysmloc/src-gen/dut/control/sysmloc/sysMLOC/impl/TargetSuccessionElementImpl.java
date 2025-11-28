@@ -46,7 +46,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class TargetSuccessionElementImpl extends TargetSuccessionNodeElementImpl implements TargetSuccessionElement
+public class TargetSuccessionElementImpl extends ActionBodyElementImpl implements TargetSuccessionElement
 {
   /**
    * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.

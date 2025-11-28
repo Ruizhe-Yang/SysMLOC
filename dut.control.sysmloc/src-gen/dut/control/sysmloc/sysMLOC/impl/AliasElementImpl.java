@@ -3,16 +3,10 @@
  */
 package dut.control.sysmloc.sysMLOC.impl;
 
-import dut.control.sysmloc.sysMLOC.ActionBodyElement;
 import dut.control.sysmloc.sysMLOC.AliasElement;
 import dut.control.sysmloc.sysMLOC.AnnotatingBodyElement;
-import dut.control.sysmloc.sysMLOC.CalculationBodyElement;
-import dut.control.sysmloc.sysMLOC.DefinitionBodyElement;
-import dut.control.sysmloc.sysMLOC.InterfaceBodyElement;
 import dut.control.sysmloc.sysMLOC.MemberPrefix;
-import dut.control.sysmloc.sysMLOC.StateBodyElement;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
-import dut.control.sysmloc.sysMLOC.UsageBodyElement;
 import dut.control.sysmloc.sysMLOC.VisibilityIndicator;
 
 import java.util.Collection;
@@ -47,7 +41,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class AliasElementImpl extends PackageBodyElementImpl implements AliasElement
+public class AliasElementImpl extends GeneralBodyElementsImpl implements AliasElement
 {
   /**
    * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
@@ -407,48 +401,6 @@ public class AliasElementImpl extends PackageBodyElementImpl implements AliasEle
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
   {
-    if (baseClass == InterfaceBodyElement.class)
-    {
-      switch (derivedFeatureID)
-      {
-        default: return -1;
-      }
-    }
-    if (baseClass == UsageBodyElement.class)
-    {
-      switch (derivedFeatureID)
-      {
-        default: return -1;
-      }
-    }
-    if (baseClass == DefinitionBodyElement.class)
-    {
-      switch (derivedFeatureID)
-      {
-        default: return -1;
-      }
-    }
-    if (baseClass == CalculationBodyElement.class)
-    {
-      switch (derivedFeatureID)
-      {
-        default: return -1;
-      }
-    }
-    if (baseClass == ActionBodyElement.class)
-    {
-      switch (derivedFeatureID)
-      {
-        default: return -1;
-      }
-    }
-    if (baseClass == StateBodyElement.class)
-    {
-      switch (derivedFeatureID)
-      {
-        default: return -1;
-      }
-    }
     if (baseClass == MemberPrefix.class)
     {
       switch (derivedFeatureID)
@@ -468,48 +420,6 @@ public class AliasElementImpl extends PackageBodyElementImpl implements AliasEle
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
   {
-    if (baseClass == InterfaceBodyElement.class)
-    {
-      switch (baseFeatureID)
-      {
-        default: return -1;
-      }
-    }
-    if (baseClass == UsageBodyElement.class)
-    {
-      switch (baseFeatureID)
-      {
-        default: return -1;
-      }
-    }
-    if (baseClass == DefinitionBodyElement.class)
-    {
-      switch (baseFeatureID)
-      {
-        default: return -1;
-      }
-    }
-    if (baseClass == CalculationBodyElement.class)
-    {
-      switch (baseFeatureID)
-      {
-        default: return -1;
-      }
-    }
-    if (baseClass == ActionBodyElement.class)
-    {
-      switch (baseFeatureID)
-      {
-        default: return -1;
-      }
-    }
-    if (baseClass == StateBodyElement.class)
-    {
-      switch (baseFeatureID)
-      {
-        default: return -1;
-      }
-    }
     if (baseClass == MemberPrefix.class)
     {
       switch (baseFeatureID)

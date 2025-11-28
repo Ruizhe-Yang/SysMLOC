@@ -3,26 +3,26 @@
  */
 package dut.control.sysmloc.sysMLOC.impl;
 
-import dut.control.sysmloc.sysMLOC.EnumerationElement;
+import dut.control.sysmloc.sysMLOC.GeneralBodyElements;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Enumeration Element</b></em>'.
+ * An implementation of the model object '<em><b>General Body Elements</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class EnumerationElementImpl extends EnumerationBodyElementImpl implements EnumerationElement
+public class GeneralBodyElementsImpl extends PackageBodyElementImpl implements GeneralBodyElements
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected EnumerationElementImpl()
+  protected GeneralBodyElementsImpl()
   {
     super();
   }
@@ -35,7 +35,7 @@ public class EnumerationElementImpl extends EnumerationBodyElementImpl implement
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.eINSTANCE.getEnumerationElement();
+    return SysMLOCPackage.eINSTANCE.getGeneralBodyElements();
   }
 
-} //EnumerationElementImpl
+} //GeneralBodyElementsImpl

@@ -6,6 +6,7 @@ package dut.control.sysmloc.sysMLOC.impl;
 import dut.control.sysmloc.sysMLOC.AcceptParameterPart;
 import dut.control.sysmloc.sysMLOC.ActionBodyElement;
 import dut.control.sysmloc.sysMLOC.ConnectorEnd;
+import dut.control.sysmloc.sysMLOC.CrossFeatureChain;
 import dut.control.sysmloc.sysMLOC.EmptySuccessionPrefix;
 import dut.control.sysmloc.sysMLOC.FeatureDeclaration;
 import dut.control.sysmloc.sysMLOC.FeatureSpecialization;
@@ -16,9 +17,13 @@ import dut.control.sysmloc.sysMLOC.MultiplicityRange;
 import dut.control.sysmloc.sysMLOC.PayloadParameter;
 import dut.control.sysmloc.sysMLOC.PerformedActionParameterPart;
 import dut.control.sysmloc.sysMLOC.PerformedActionUsage;
+import dut.control.sysmloc.sysMLOC.RedefinitionFeatureChain;
+import dut.control.sysmloc.sysMLOC.ReferenceFeatureChain;
+import dut.control.sysmloc.sysMLOC.SubsettingFeatureChain;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 import dut.control.sysmloc.sysMLOC.TransitionSuccession;
 import dut.control.sysmloc.sysMLOC.TransitionUsage;
+import dut.control.sysmloc.sysMLOC.TypingFeatureTyping;
 import dut.control.sysmloc.sysMLOC.UsageDeclaration;
 import dut.control.sysmloc.sysMLOC.VisibilityIndicator;
 import dut.control.sysmloc.sysMLOC.isReturnPrefix;
@@ -70,7 +75,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class TransitionUsageImpl extends TransitionUsageElementImpl implements TransitionUsage
+public class TransitionUsageImpl extends StateBodyElementImpl implements TransitionUsage
 {
   /**
    * The default value of the '{@link #isIsThen() <em>Is Then</em>}' attribute.
@@ -1041,15 +1046,50 @@ public class TransitionUsageImpl extends TransitionUsageElementImpl implements T
         default: return -1;
       }
     }
+    if (baseClass == TypingFeatureTyping.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.TRANSITION_USAGE__TYPINGS: return SysMLOCPackage.TYPING_FEATURE_TYPING__TYPINGS;
+        default: return -1;
+      }
+    }
+    if (baseClass == SubsettingFeatureChain.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.TRANSITION_USAGE__SUBSETTING: return SysMLOCPackage.SUBSETTING_FEATURE_CHAIN__SUBSETTING;
+        default: return -1;
+      }
+    }
+    if (baseClass == ReferenceFeatureChain.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.TRANSITION_USAGE__REFERENCES: return SysMLOCPackage.REFERENCE_FEATURE_CHAIN__REFERENCES;
+        default: return -1;
+      }
+    }
+    if (baseClass == CrossFeatureChain.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.TRANSITION_USAGE__CROSSES: return SysMLOCPackage.CROSS_FEATURE_CHAIN__CROSSES;
+        default: return -1;
+      }
+    }
+    if (baseClass == RedefinitionFeatureChain.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.TRANSITION_USAGE__REDEFINITIONS: return SysMLOCPackage.REDEFINITION_FEATURE_CHAIN__REDEFINITIONS;
+        default: return -1;
+      }
+    }
     if (baseClass == FeatureSpecialization.class)
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.TRANSITION_USAGE__TYPINGS: return SysMLOCPackage.FEATURE_SPECIALIZATION__TYPINGS;
-        case SysMLOCPackage.TRANSITION_USAGE__SUBSETTING: return SysMLOCPackage.FEATURE_SPECIALIZATION__SUBSETTING;
-        case SysMLOCPackage.TRANSITION_USAGE__REFERENCES: return SysMLOCPackage.FEATURE_SPECIALIZATION__REFERENCES;
-        case SysMLOCPackage.TRANSITION_USAGE__CROSSES: return SysMLOCPackage.FEATURE_SPECIALIZATION__CROSSES;
-        case SysMLOCPackage.TRANSITION_USAGE__REDEFINITIONS: return SysMLOCPackage.FEATURE_SPECIALIZATION__REDEFINITIONS;
         default: return -1;
       }
     }
@@ -1152,15 +1192,50 @@ public class TransitionUsageImpl extends TransitionUsageElementImpl implements T
         default: return -1;
       }
     }
+    if (baseClass == TypingFeatureTyping.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.TYPING_FEATURE_TYPING__TYPINGS: return SysMLOCPackage.TRANSITION_USAGE__TYPINGS;
+        default: return -1;
+      }
+    }
+    if (baseClass == SubsettingFeatureChain.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.SUBSETTING_FEATURE_CHAIN__SUBSETTING: return SysMLOCPackage.TRANSITION_USAGE__SUBSETTING;
+        default: return -1;
+      }
+    }
+    if (baseClass == ReferenceFeatureChain.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.REFERENCE_FEATURE_CHAIN__REFERENCES: return SysMLOCPackage.TRANSITION_USAGE__REFERENCES;
+        default: return -1;
+      }
+    }
+    if (baseClass == CrossFeatureChain.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.CROSS_FEATURE_CHAIN__CROSSES: return SysMLOCPackage.TRANSITION_USAGE__CROSSES;
+        default: return -1;
+      }
+    }
+    if (baseClass == RedefinitionFeatureChain.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.REDEFINITION_FEATURE_CHAIN__REDEFINITIONS: return SysMLOCPackage.TRANSITION_USAGE__REDEFINITIONS;
+        default: return -1;
+      }
+    }
     if (baseClass == FeatureSpecialization.class)
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.FEATURE_SPECIALIZATION__TYPINGS: return SysMLOCPackage.TRANSITION_USAGE__TYPINGS;
-        case SysMLOCPackage.FEATURE_SPECIALIZATION__SUBSETTING: return SysMLOCPackage.TRANSITION_USAGE__SUBSETTING;
-        case SysMLOCPackage.FEATURE_SPECIALIZATION__REFERENCES: return SysMLOCPackage.TRANSITION_USAGE__REFERENCES;
-        case SysMLOCPackage.FEATURE_SPECIALIZATION__CROSSES: return SysMLOCPackage.TRANSITION_USAGE__CROSSES;
-        case SysMLOCPackage.FEATURE_SPECIALIZATION__REDEFINITIONS: return SysMLOCPackage.TRANSITION_USAGE__REDEFINITIONS;
         default: return -1;
       }
     }

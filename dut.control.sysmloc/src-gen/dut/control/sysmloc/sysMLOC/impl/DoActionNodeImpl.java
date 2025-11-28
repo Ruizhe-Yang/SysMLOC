@@ -41,7 +41,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class DoActionNodeImpl extends DoActionNodeElementImpl implements DoActionNode
+public class DoActionNodeImpl extends StateBodyElementImpl implements DoActionNode
 {
   /**
    * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.

@@ -23,7 +23,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface GuardedSuccessionElement extends GuardedSuccessionNodeElement, UsageDeclaration, FeatureDeclaration, FeatureSpecializationPart, FeatureSpecialization, MultiplicityPart, MultiplicityRange, TransitionSuccession
+public interface GuardedSuccessionElement extends ActionBodyElement, UsageDeclaration, FeatureDeclaration, FeatureSpecializationPart, FeatureSpecialization, TypingFeatureTyping, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, MultiplicityPart, MultiplicityRange, TransitionSuccession
 {
   /**
    * Returns the value of the '<em><b>Member Element</b></em>' attribute.

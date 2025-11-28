@@ -41,7 +41,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class EntryActionImpl extends EntryActionNodeElementImpl implements EntryAction
+public class EntryActionImpl extends StateBodyElementImpl implements EntryAction
 {
   /**
    * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.

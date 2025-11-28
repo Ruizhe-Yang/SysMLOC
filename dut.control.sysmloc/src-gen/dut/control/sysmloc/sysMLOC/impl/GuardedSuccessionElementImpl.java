@@ -4,14 +4,19 @@
 package dut.control.sysmloc.sysMLOC.impl;
 
 import dut.control.sysmloc.sysMLOC.ConnectorEnd;
+import dut.control.sysmloc.sysMLOC.CrossFeatureChain;
 import dut.control.sysmloc.sysMLOC.FeatureDeclaration;
 import dut.control.sysmloc.sysMLOC.FeatureSpecialization;
 import dut.control.sysmloc.sysMLOC.FeatureSpecializationPart;
 import dut.control.sysmloc.sysMLOC.GuardedSuccessionElement;
 import dut.control.sysmloc.sysMLOC.MultiplicityPart;
 import dut.control.sysmloc.sysMLOC.MultiplicityRange;
+import dut.control.sysmloc.sysMLOC.RedefinitionFeatureChain;
+import dut.control.sysmloc.sysMLOC.ReferenceFeatureChain;
+import dut.control.sysmloc.sysMLOC.SubsettingFeatureChain;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 import dut.control.sysmloc.sysMLOC.TransitionSuccession;
+import dut.control.sysmloc.sysMLOC.TypingFeatureTyping;
 import dut.control.sysmloc.sysMLOC.UsageBodyElement;
 import dut.control.sysmloc.sysMLOC.UsageDeclaration;
 
@@ -56,7 +61,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class GuardedSuccessionElementImpl extends GuardedSuccessionNodeElementImpl implements GuardedSuccessionElement
+public class GuardedSuccessionElementImpl extends ActionBodyElementImpl implements GuardedSuccessionElement
 {
   /**
    * The cached value of the '{@link #getTypings() <em>Typings</em>}' attribute list.
@@ -725,15 +730,50 @@ public class GuardedSuccessionElementImpl extends GuardedSuccessionNodeElementIm
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
   {
+    if (baseClass == TypingFeatureTyping.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__TYPINGS: return SysMLOCPackage.TYPING_FEATURE_TYPING__TYPINGS;
+        default: return -1;
+      }
+    }
+    if (baseClass == SubsettingFeatureChain.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__SUBSETTING: return SysMLOCPackage.SUBSETTING_FEATURE_CHAIN__SUBSETTING;
+        default: return -1;
+      }
+    }
+    if (baseClass == ReferenceFeatureChain.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__REFERENCES: return SysMLOCPackage.REFERENCE_FEATURE_CHAIN__REFERENCES;
+        default: return -1;
+      }
+    }
+    if (baseClass == CrossFeatureChain.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__CROSSES: return SysMLOCPackage.CROSS_FEATURE_CHAIN__CROSSES;
+        default: return -1;
+      }
+    }
+    if (baseClass == RedefinitionFeatureChain.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__REDEFINITIONS: return SysMLOCPackage.REDEFINITION_FEATURE_CHAIN__REDEFINITIONS;
+        default: return -1;
+      }
+    }
     if (baseClass == FeatureSpecialization.class)
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__TYPINGS: return SysMLOCPackage.FEATURE_SPECIALIZATION__TYPINGS;
-        case SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__SUBSETTING: return SysMLOCPackage.FEATURE_SPECIALIZATION__SUBSETTING;
-        case SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__REFERENCES: return SysMLOCPackage.FEATURE_SPECIALIZATION__REFERENCES;
-        case SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__CROSSES: return SysMLOCPackage.FEATURE_SPECIALIZATION__CROSSES;
-        case SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__REDEFINITIONS: return SysMLOCPackage.FEATURE_SPECIALIZATION__REDEFINITIONS;
         default: return -1;
       }
     }
@@ -795,15 +835,50 @@ public class GuardedSuccessionElementImpl extends GuardedSuccessionNodeElementIm
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
   {
+    if (baseClass == TypingFeatureTyping.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.TYPING_FEATURE_TYPING__TYPINGS: return SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__TYPINGS;
+        default: return -1;
+      }
+    }
+    if (baseClass == SubsettingFeatureChain.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.SUBSETTING_FEATURE_CHAIN__SUBSETTING: return SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__SUBSETTING;
+        default: return -1;
+      }
+    }
+    if (baseClass == ReferenceFeatureChain.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.REFERENCE_FEATURE_CHAIN__REFERENCES: return SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__REFERENCES;
+        default: return -1;
+      }
+    }
+    if (baseClass == CrossFeatureChain.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.CROSS_FEATURE_CHAIN__CROSSES: return SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__CROSSES;
+        default: return -1;
+      }
+    }
+    if (baseClass == RedefinitionFeatureChain.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.REDEFINITION_FEATURE_CHAIN__REDEFINITIONS: return SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__REDEFINITIONS;
+        default: return -1;
+      }
+    }
     if (baseClass == FeatureSpecialization.class)
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.FEATURE_SPECIALIZATION__TYPINGS: return SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__TYPINGS;
-        case SysMLOCPackage.FEATURE_SPECIALIZATION__SUBSETTING: return SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__SUBSETTING;
-        case SysMLOCPackage.FEATURE_SPECIALIZATION__REFERENCES: return SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__REFERENCES;
-        case SysMLOCPackage.FEATURE_SPECIALIZATION__CROSSES: return SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__CROSSES;
-        case SysMLOCPackage.FEATURE_SPECIALIZATION__REDEFINITIONS: return SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT__REDEFINITIONS;
         default: return -1;
       }
     }

@@ -20,7 +20,7 @@ package dut.control.sysmloc.sysMLOC;
  * @model
  * @generated
  */
-public interface FeatureDeclaration extends FeatureSpecializationPart, FeatureSpecialization, MultiplicityPart, MultiplicityRange
+public interface FeatureDeclaration extends FeatureSpecializationPart, FeatureSpecialization, TypingFeatureTyping, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, MultiplicityPart, MultiplicityRange
 {
   /**
    * Returns the value of the '<em><b>Declared Name</b></em>' attribute.

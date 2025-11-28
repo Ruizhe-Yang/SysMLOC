@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class AnnotatingElementImpl extends PackageBodyElementImpl implements AnnotatingElement
+public class AnnotatingElementImpl extends GeneralBodyElementsImpl implements AnnotatingElement
 {
   /**
    * <!-- begin-user-doc -->

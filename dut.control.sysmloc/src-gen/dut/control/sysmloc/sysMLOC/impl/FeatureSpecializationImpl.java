@@ -3,7 +3,11 @@
  */
 package dut.control.sysmloc.sysMLOC.impl;
 
+import dut.control.sysmloc.sysMLOC.CrossFeatureChain;
 import dut.control.sysmloc.sysMLOC.FeatureSpecialization;
+import dut.control.sysmloc.sysMLOC.RedefinitionFeatureChain;
+import dut.control.sysmloc.sysMLOC.ReferenceFeatureChain;
+import dut.control.sysmloc.sysMLOC.SubsettingFeatureChain;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 
 import java.util.Collection;
@@ -11,8 +15,6 @@ import java.util.Collection;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
 
@@ -24,7 +26,6 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FeatureSpecializationImpl#getTypings <em>Typings</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FeatureSpecializationImpl#getSubsetting <em>Subsetting</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FeatureSpecializationImpl#getReferences <em>References</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FeatureSpecializationImpl#getCrosses <em>Crosses</em>}</li>
@@ -33,18 +34,8 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  *
  * @generated
  */
-public class FeatureSpecializationImpl extends MinimalEObjectImpl.Container implements FeatureSpecialization
+public class FeatureSpecializationImpl extends TypingFeatureTypingImpl implements FeatureSpecialization
 {
-  /**
-   * The cached value of the '{@link #getTypings() <em>Typings</em>}' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getTypings()
-   * @generated
-   * @ordered
-   */
-  protected EList<String> typings;
-
   /**
    * The cached value of the '{@link #getSubsetting() <em>Subsetting</em>}' attribute list.
    * <!-- begin-user-doc -->
@@ -104,21 +95,6 @@ public class FeatureSpecializationImpl extends MinimalEObjectImpl.Container impl
   protected EClass eStaticClass()
   {
     return SysMLOCPackage.eINSTANCE.getFeatureSpecialization();
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EList<String> getTypings()
-  {
-    if (typings == null)
-    {
-      typings = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.FEATURE_SPECIALIZATION__TYPINGS);
-    }
-    return typings;
   }
 
   /**
@@ -191,8 +167,6 @@ public class FeatureSpecializationImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case SysMLOCPackage.FEATURE_SPECIALIZATION__TYPINGS:
-        return getTypings();
       case SysMLOCPackage.FEATURE_SPECIALIZATION__SUBSETTING:
         return getSubsetting();
       case SysMLOCPackage.FEATURE_SPECIALIZATION__REFERENCES:
@@ -216,10 +190,6 @@ public class FeatureSpecializationImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case SysMLOCPackage.FEATURE_SPECIALIZATION__TYPINGS:
-        getTypings().clear();
-        getTypings().addAll((Collection<? extends String>)newValue);
-        return;
       case SysMLOCPackage.FEATURE_SPECIALIZATION__SUBSETTING:
         getSubsetting().clear();
         getSubsetting().addAll((Collection<? extends String>)newValue);
@@ -250,9 +220,6 @@ public class FeatureSpecializationImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case SysMLOCPackage.FEATURE_SPECIALIZATION__TYPINGS:
-        getTypings().clear();
-        return;
       case SysMLOCPackage.FEATURE_SPECIALIZATION__SUBSETTING:
         getSubsetting().clear();
         return;
@@ -279,8 +246,6 @@ public class FeatureSpecializationImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case SysMLOCPackage.FEATURE_SPECIALIZATION__TYPINGS:
-        return typings != null && !typings.isEmpty();
       case SysMLOCPackage.FEATURE_SPECIALIZATION__SUBSETTING:
         return subsetting != null && !subsetting.isEmpty();
       case SysMLOCPackage.FEATURE_SPECIALIZATION__REFERENCES:
@@ -299,14 +264,98 @@ public class FeatureSpecializationImpl extends MinimalEObjectImpl.Container impl
    * @generated
    */
   @Override
+  public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == SubsettingFeatureChain.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.FEATURE_SPECIALIZATION__SUBSETTING: return SysMLOCPackage.SUBSETTING_FEATURE_CHAIN__SUBSETTING;
+        default: return -1;
+      }
+    }
+    if (baseClass == ReferenceFeatureChain.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.FEATURE_SPECIALIZATION__REFERENCES: return SysMLOCPackage.REFERENCE_FEATURE_CHAIN__REFERENCES;
+        default: return -1;
+      }
+    }
+    if (baseClass == CrossFeatureChain.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.FEATURE_SPECIALIZATION__CROSSES: return SysMLOCPackage.CROSS_FEATURE_CHAIN__CROSSES;
+        default: return -1;
+      }
+    }
+    if (baseClass == RedefinitionFeatureChain.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.FEATURE_SPECIALIZATION__REDEFINITIONS: return SysMLOCPackage.REDEFINITION_FEATURE_CHAIN__REDEFINITIONS;
+        default: return -1;
+      }
+    }
+    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == SubsettingFeatureChain.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.SUBSETTING_FEATURE_CHAIN__SUBSETTING: return SysMLOCPackage.FEATURE_SPECIALIZATION__SUBSETTING;
+        default: return -1;
+      }
+    }
+    if (baseClass == ReferenceFeatureChain.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.REFERENCE_FEATURE_CHAIN__REFERENCES: return SysMLOCPackage.FEATURE_SPECIALIZATION__REFERENCES;
+        default: return -1;
+      }
+    }
+    if (baseClass == CrossFeatureChain.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.CROSS_FEATURE_CHAIN__CROSSES: return SysMLOCPackage.FEATURE_SPECIALIZATION__CROSSES;
+        default: return -1;
+      }
+    }
+    if (baseClass == RedefinitionFeatureChain.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.REDEFINITION_FEATURE_CHAIN__REDEFINITIONS: return SysMLOCPackage.FEATURE_SPECIALIZATION__REDEFINITIONS;
+        default: return -1;
+      }
+    }
+    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public String toString()
   {
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (typings: ");
-    result.append(typings);
-    result.append(", subsetting: ");
+    result.append(" (subsetting: ");
     result.append(subsetting);
     result.append(", references: ");
     result.append(references);

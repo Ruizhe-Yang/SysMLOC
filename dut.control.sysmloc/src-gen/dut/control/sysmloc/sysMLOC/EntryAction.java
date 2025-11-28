@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface EntryAction extends EntryActionNodeElement, MemberPrefix, PerformedActionParameterPart
+public interface EntryAction extends StateBodyElement, MemberPrefix, PerformedActionParameterPart
 {
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
