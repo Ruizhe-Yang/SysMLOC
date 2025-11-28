@@ -19,6 +19,7 @@ import dut.control.sysmloc.sysMLOC.MultiplicityRange;
 import dut.control.sysmloc.sysMLOC.OccurrenceUsagePrefix;
 import dut.control.sysmloc.sysMLOC.PortionKind;
 import dut.control.sysmloc.sysMLOC.RefPrefix;
+import dut.control.sysmloc.sysMLOC.ResultExpression;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 import dut.control.sysmloc.sysMLOC.UsageDeclaration;
 import dut.control.sysmloc.sysMLOC.ValuePart;
@@ -75,6 +76,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ConstraintUsageImpl#isIsDefault <em>Is Default</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ConstraintUsageImpl#getValuePart <em>Value Part</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ConstraintUsageImpl#getElements <em>Elements</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ConstraintUsageImpl#getResultExpressionParameter <em>Result Expression Parameter</em>}</li>
  * </ul>
  *
  * @generated
@@ -510,6 +512,16 @@ public class ConstraintUsageImpl extends BehaviorUsageElementImpl implements Con
    * @ordered
    */
   protected EList<CalculationBodyElement> elements;
+
+  /**
+   * The cached value of the '{@link #getResultExpressionParameter() <em>Result Expression Parameter</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getResultExpressionParameter()
+   * @generated
+   * @ordered
+   */
+  protected EList<ResultExpression> resultExpressionParameter;
 
   /**
    * <!-- begin-user-doc -->
@@ -1098,12 +1110,29 @@ public class ConstraintUsageImpl extends BehaviorUsageElementImpl implements Con
    * @generated
    */
   @Override
+  public EList<ResultExpression> getResultExpressionParameter()
+  {
+    if (resultExpressionParameter == null)
+    {
+      resultExpressionParameter = new EObjectContainmentEList<ResultExpression>(ResultExpression.class, this, SysMLOCPackage.CONSTRAINT_USAGE__RESULT_EXPRESSION_PARAMETER);
+    }
+    return resultExpressionParameter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
       case SysMLOCPackage.CONSTRAINT_USAGE__ELEMENTS:
         return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
+      case SysMLOCPackage.CONSTRAINT_USAGE__RESULT_EXPRESSION_PARAMETER:
+        return ((InternalEList<?>)getResultExpressionParameter()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -1170,6 +1199,8 @@ public class ConstraintUsageImpl extends BehaviorUsageElementImpl implements Con
         return getValuePart();
       case SysMLOCPackage.CONSTRAINT_USAGE__ELEMENTS:
         return getElements();
+      case SysMLOCPackage.CONSTRAINT_USAGE__RESULT_EXPRESSION_PARAMETER:
+        return getResultExpressionParameter();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -1272,6 +1303,10 @@ public class ConstraintUsageImpl extends BehaviorUsageElementImpl implements Con
         getElements().clear();
         getElements().addAll((Collection<? extends CalculationBodyElement>)newValue);
         return;
+      case SysMLOCPackage.CONSTRAINT_USAGE__RESULT_EXPRESSION_PARAMETER:
+        getResultExpressionParameter().clear();
+        getResultExpressionParameter().addAll((Collection<? extends ResultExpression>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -1364,6 +1399,9 @@ public class ConstraintUsageImpl extends BehaviorUsageElementImpl implements Con
       case SysMLOCPackage.CONSTRAINT_USAGE__ELEMENTS:
         getElements().clear();
         return;
+      case SysMLOCPackage.CONSTRAINT_USAGE__RESULT_EXPRESSION_PARAMETER:
+        getResultExpressionParameter().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -1430,6 +1468,8 @@ public class ConstraintUsageImpl extends BehaviorUsageElementImpl implements Con
         return valuePart != null && !valuePart.isEmpty();
       case SysMLOCPackage.CONSTRAINT_USAGE__ELEMENTS:
         return elements != null && !elements.isEmpty();
+      case SysMLOCPackage.CONSTRAINT_USAGE__RESULT_EXPRESSION_PARAMETER:
+        return resultExpressionParameter != null && !resultExpressionParameter.isEmpty();
     }
     return super.eIsSet(featureID);
   }

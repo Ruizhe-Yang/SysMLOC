@@ -49,7 +49,6 @@ InterfaceBodyElement:
 EnumerationBodyElement:
 	AnnotatingElement
 	| EnumerationElement
-	| CodeAnnotation
 ;
 
 ActionBodyElement:
@@ -90,12 +89,12 @@ StateBodyElement:
 
 AnnotatingBodyElement:
 	AnnotatingElement
-    | CodeAnnotation
+	| CodeAnnotation
 ;
 
 ActionNodeBodyElement:
 	AnnotatingElement
-    | CodeAnnotation
+	| CodeAnnotation
 ;
 
 // TODO --------------------------------- Abstract Level ---------------------------------//

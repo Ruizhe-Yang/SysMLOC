@@ -16,6 +16,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.AssertConstraintUsage#isIsNegated <em>Is Negated</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.AssertConstraintUsage#getElements <em>Elements</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.AssertConstraintUsage#getResultExpressionParameter <em>Result Expression Parameter</em>}</li>
  * </ul>
  *
  * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getAssertConstraintUsage()
@@ -57,5 +58,17 @@ public interface AssertConstraintUsage extends BehaviorUsageElement, EmptySucces
    * @generated
    */
   EList<CalculationBodyElement> getElements();
+
+  /**
+   * Returns the value of the '<em><b>Result Expression Parameter</b></em>' containment reference list.
+   * The list contents are of type {@link dut.control.sysmloc.sysMLOC.ResultExpression}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Result Expression Parameter</em>' containment reference list.
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getAssertConstraintUsage_ResultExpressionParameter()
+   * @model containment="true"
+   * @generated
+   */
+  EList<ResultExpression> getResultExpressionParameter();
 
 } // AssertConstraintUsage

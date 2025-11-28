@@ -7032,13 +7032,22 @@ public interface SysMLOCPackage extends EPackage
   int CALCULATION_DEFINITION__ELEMENTS = DEFINITION_ELEMENT_FEATURE_COUNT + 6;
 
   /**
+   * The feature id for the '<em><b>Result Expression Parameter</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CALCULATION_DEFINITION__RESULT_EXPRESSION_PARAMETER = DEFINITION_ELEMENT_FEATURE_COUNT + 7;
+
+  /**
    * The number of structural features of the '<em>Calculation Definition</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CALCULATION_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENT_FEATURE_COUNT + 7;
+  int CALCULATION_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENT_FEATURE_COUNT + 8;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.CalculationUsageImpl <em>Calculation Usage</em>}' class.
@@ -7285,13 +7294,22 @@ public interface SysMLOCPackage extends EPackage
   int CALCULATION_USAGE__ELEMENTS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 25;
 
   /**
+   * The feature id for the '<em><b>Result Expression Parameter</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CALCULATION_USAGE__RESULT_EXPRESSION_PARAMETER = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 26;
+
+  /**
    * The number of structural features of the '<em>Calculation Usage</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CALCULATION_USAGE_FEATURE_COUNT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 26;
+  int CALCULATION_USAGE_FEATURE_COUNT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 27;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.StateDefinitionImpl <em>State Definition</em>}' class.
@@ -7720,13 +7738,22 @@ public interface SysMLOCPackage extends EPackage
   int CONSTRAINT_DEFINITION__ELEMENTS = DEFINITION_ELEMENT_FEATURE_COUNT + 6;
 
   /**
+   * The feature id for the '<em><b>Result Expression Parameter</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONSTRAINT_DEFINITION__RESULT_EXPRESSION_PARAMETER = DEFINITION_ELEMENT_FEATURE_COUNT + 7;
+
+  /**
    * The number of structural features of the '<em>Constraint Definition</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONSTRAINT_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENT_FEATURE_COUNT + 7;
+  int CONSTRAINT_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENT_FEATURE_COUNT + 8;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.ConstraintUsageImpl <em>Constraint Usage</em>}' class.
@@ -7973,13 +8000,22 @@ public interface SysMLOCPackage extends EPackage
   int CONSTRAINT_USAGE__ELEMENTS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 25;
 
   /**
+   * The feature id for the '<em><b>Result Expression Parameter</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONSTRAINT_USAGE__RESULT_EXPRESSION_PARAMETER = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 26;
+
+  /**
    * The number of structural features of the '<em>Constraint Usage</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONSTRAINT_USAGE_FEATURE_COUNT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 26;
+  int CONSTRAINT_USAGE_FEATURE_COUNT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 27;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.TransitionUsageImpl <em>Transition Usage</em>}' class.
@@ -9039,13 +9075,22 @@ public interface SysMLOCPackage extends EPackage
   int ASSERT_CONSTRAINT_USAGE__ELEMENTS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 27;
 
   /**
+   * The feature id for the '<em><b>Result Expression Parameter</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSERT_CONSTRAINT_USAGE__RESULT_EXPRESSION_PARAMETER = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 28;
+
+  /**
    * The number of structural features of the '<em>Assert Constraint Usage</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ASSERT_CONSTRAINT_USAGE_FEATURE_COUNT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 28;
+  int ASSERT_CONSTRAINT_USAGE_FEATURE_COUNT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 29;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.MemberPrefixImpl <em>Member Prefix</em>}' class.
@@ -17460,6 +17505,17 @@ public interface SysMLOCPackage extends EPackage
   EReference getCalculationDefinition_Elements();
 
   /**
+   * Returns the meta object for the containment reference list '{@link dut.control.sysmloc.sysMLOC.CalculationDefinition#getResultExpressionParameter <em>Result Expression Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Result Expression Parameter</em>'.
+   * @see dut.control.sysmloc.sysMLOC.CalculationDefinition#getResultExpressionParameter()
+   * @see #getCalculationDefinition()
+   * @generated
+   */
+  EReference getCalculationDefinition_ResultExpressionParameter();
+
+  /**
    * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.CalculationUsage <em>Calculation Usage</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -17479,6 +17535,17 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    */
   EReference getCalculationUsage_Elements();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.sysmloc.sysMLOC.CalculationUsage#getResultExpressionParameter <em>Result Expression Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Result Expression Parameter</em>'.
+   * @see dut.control.sysmloc.sysMLOC.CalculationUsage#getResultExpressionParameter()
+   * @see #getCalculationUsage()
+   * @generated
+   */
+  EReference getCalculationUsage_ResultExpressionParameter();
 
   /**
    * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.StateDefinition <em>State Definition</em>}'.
@@ -17566,6 +17633,17 @@ public interface SysMLOCPackage extends EPackage
   EReference getConstraintDefinition_Elements();
 
   /**
+   * Returns the meta object for the containment reference list '{@link dut.control.sysmloc.sysMLOC.ConstraintDefinition#getResultExpressionParameter <em>Result Expression Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Result Expression Parameter</em>'.
+   * @see dut.control.sysmloc.sysMLOC.ConstraintDefinition#getResultExpressionParameter()
+   * @see #getConstraintDefinition()
+   * @generated
+   */
+  EReference getConstraintDefinition_ResultExpressionParameter();
+
+  /**
    * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.ConstraintUsage <em>Constraint Usage</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -17585,6 +17663,17 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    */
   EReference getConstraintUsage_Elements();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.sysmloc.sysMLOC.ConstraintUsage#getResultExpressionParameter <em>Result Expression Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Result Expression Parameter</em>'.
+   * @see dut.control.sysmloc.sysMLOC.ConstraintUsage#getResultExpressionParameter()
+   * @see #getConstraintUsage()
+   * @generated
+   */
+  EReference getConstraintUsage_ResultExpressionParameter();
 
   /**
    * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.TransitionUsage <em>Transition Usage</em>}'.
@@ -17713,6 +17802,17 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    */
   EReference getAssertConstraintUsage_Elements();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.sysmloc.sysMLOC.AssertConstraintUsage#getResultExpressionParameter <em>Result Expression Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Result Expression Parameter</em>'.
+   * @see dut.control.sysmloc.sysMLOC.AssertConstraintUsage#getResultExpressionParameter()
+   * @see #getAssertConstraintUsage()
+   * @generated
+   */
+  EReference getAssertConstraintUsage_ResultExpressionParameter();
 
   /**
    * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.ResultExpression <em>Result Expression</em>}'.

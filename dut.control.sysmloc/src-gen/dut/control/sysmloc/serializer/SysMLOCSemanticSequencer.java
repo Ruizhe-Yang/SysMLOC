@@ -684,7 +684,8 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             ) | 
 	 *             refElement=FeatureChainName
 	 *         )? 
-	 *         elements+=CalculationBodyElement*
+	 *         elements+=CalculationBodyElement* 
+	 *         resultExpressionParameter+=ResultExpression?
 	 *     )
 	 * </pre>
 	 */
@@ -877,7 +878,8 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         isIndividual?='individual'? 
 	 *         declaredName=Name? 
 	 *         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
-	 *         elements+=CalculationBodyElement*
+	 *         elements+=CalculationBodyElement* 
+	 *         resultExpressionParameter+=ResultExpression?
 	 *     )
 	 * </pre>
 	 */
@@ -935,7 +937,8 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         isIndividual?='individual'? 
 	 *         declaredName=Name? 
 	 *         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
-	 *         elements+=CalculationBodyElement*
+	 *         elements+=CalculationBodyElement* 
+	 *         resultExpressionParameter+=ResultExpression?
 	 *     )
 	 * </pre>
 	 */
@@ -1279,7 +1282,8 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
-	 *         elements+=CalculationBodyElement*
+	 *         elements+=CalculationBodyElement* 
+	 *         resultExpressionParameter+=ResultExpression?
 	 *     )
 	 * </pre>
 	 */
@@ -1457,7 +1461,8 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
-	 *         elements+=CalculationBodyElement*
+	 *         elements+=CalculationBodyElement* 
+	 *         resultExpressionParameter+=ResultExpression?
 	 *     )
 	 * </pre>
 	 */
@@ -2575,7 +2580,6 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     DefinitionBodyElement returns CodeAnnotation
 	 *     UsageBodyElement returns CodeAnnotation
 	 *     InterfaceBodyElement returns CodeAnnotation
-	 *     EnumerationBodyElement returns CodeAnnotation
 	 *     ActionBodyElement returns CodeAnnotation
 	 *     CalculationBodyElement returns CodeAnnotation
 	 *     StateBodyElement returns CodeAnnotation

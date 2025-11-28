@@ -20,6 +20,7 @@ import dut.control.sysmloc.sysMLOC.OccurrenceUsagePrefix;
 import dut.control.sysmloc.sysMLOC.PortionKind;
 import dut.control.sysmloc.sysMLOC.RefPrefix;
 import dut.control.sysmloc.sysMLOC.ReferenceSubsetting;
+import dut.control.sysmloc.sysMLOC.ResultExpression;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 import dut.control.sysmloc.sysMLOC.UsageDeclaration;
 import dut.control.sysmloc.sysMLOC.ValuePart;
@@ -78,6 +79,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AssertConstraintUsageImpl#getValuePart <em>Value Part</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AssertConstraintUsageImpl#isIsNegated <em>Is Negated</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AssertConstraintUsageImpl#getElements <em>Elements</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AssertConstraintUsageImpl#getResultExpressionParameter <em>Result Expression Parameter</em>}</li>
  * </ul>
  *
  * @generated
@@ -553,6 +555,16 @@ public class AssertConstraintUsageImpl extends BehaviorUsageElementImpl implemen
    * @ordered
    */
   protected EList<CalculationBodyElement> elements;
+
+  /**
+   * The cached value of the '{@link #getResultExpressionParameter() <em>Result Expression Parameter</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getResultExpressionParameter()
+   * @generated
+   * @ordered
+   */
+  protected EList<ResultExpression> resultExpressionParameter;
 
   /**
    * <!-- begin-user-doc -->
@@ -1191,12 +1203,29 @@ public class AssertConstraintUsageImpl extends BehaviorUsageElementImpl implemen
    * @generated
    */
   @Override
+  public EList<ResultExpression> getResultExpressionParameter()
+  {
+    if (resultExpressionParameter == null)
+    {
+      resultExpressionParameter = new EObjectContainmentEList<ResultExpression>(ResultExpression.class, this, SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__RESULT_EXPRESSION_PARAMETER);
+    }
+    return resultExpressionParameter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
       case SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__ELEMENTS:
         return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
+      case SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__RESULT_EXPRESSION_PARAMETER:
+        return ((InternalEList<?>)getResultExpressionParameter()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -1267,6 +1296,8 @@ public class AssertConstraintUsageImpl extends BehaviorUsageElementImpl implemen
         return isIsNegated();
       case SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__ELEMENTS:
         return getElements();
+      case SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__RESULT_EXPRESSION_PARAMETER:
+        return getResultExpressionParameter();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -1375,6 +1406,10 @@ public class AssertConstraintUsageImpl extends BehaviorUsageElementImpl implemen
         getElements().clear();
         getElements().addAll((Collection<? extends CalculationBodyElement>)newValue);
         return;
+      case SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__RESULT_EXPRESSION_PARAMETER:
+        getResultExpressionParameter().clear();
+        getResultExpressionParameter().addAll((Collection<? extends ResultExpression>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -1473,6 +1508,9 @@ public class AssertConstraintUsageImpl extends BehaviorUsageElementImpl implemen
       case SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__ELEMENTS:
         getElements().clear();
         return;
+      case SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__RESULT_EXPRESSION_PARAMETER:
+        getResultExpressionParameter().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -1543,6 +1581,8 @@ public class AssertConstraintUsageImpl extends BehaviorUsageElementImpl implemen
         return isNegated != IS_NEGATED_EDEFAULT;
       case SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__ELEMENTS:
         return elements != null && !elements.isEmpty();
+      case SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__RESULT_EXPRESSION_PARAMETER:
+        return resultExpressionParameter != null && !resultExpressionParameter.isEmpty();
     }
     return super.eIsSet(featureID);
   }

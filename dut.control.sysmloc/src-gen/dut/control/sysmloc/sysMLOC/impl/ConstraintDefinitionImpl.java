@@ -9,6 +9,7 @@ import dut.control.sysmloc.sysMLOC.ConstraintDefinition;
 import dut.control.sysmloc.sysMLOC.DefinitionDeclaration;
 import dut.control.sysmloc.sysMLOC.MemberPrefix;
 import dut.control.sysmloc.sysMLOC.OccurrenceDefinitionPrefix;
+import dut.control.sysmloc.sysMLOC.ResultExpression;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 import dut.control.sysmloc.sysMLOC.VisibilityIndicator;
 
@@ -43,6 +44,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ConstraintDefinitionImpl#getDeclaredName <em>Declared Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ConstraintDefinitionImpl#getSuperclassifiers <em>Superclassifiers</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ConstraintDefinitionImpl#getElements <em>Elements</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ConstraintDefinitionImpl#getResultExpressionParameter <em>Result Expression Parameter</em>}</li>
  * </ul>
  *
  * @generated
@@ -168,6 +170,16 @@ public class ConstraintDefinitionImpl extends DefinitionElementImpl implements C
    * @ordered
    */
   protected EList<CalculationBodyElement> elements;
+
+  /**
+   * The cached value of the '{@link #getResultExpressionParameter() <em>Result Expression Parameter</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getResultExpressionParameter()
+   * @generated
+   * @ordered
+   */
+  protected EList<ResultExpression> resultExpressionParameter;
 
   /**
    * <!-- begin-user-doc -->
@@ -351,12 +363,29 @@ public class ConstraintDefinitionImpl extends DefinitionElementImpl implements C
    * @generated
    */
   @Override
+  public EList<ResultExpression> getResultExpressionParameter()
+  {
+    if (resultExpressionParameter == null)
+    {
+      resultExpressionParameter = new EObjectContainmentEList<ResultExpression>(ResultExpression.class, this, SysMLOCPackage.CONSTRAINT_DEFINITION__RESULT_EXPRESSION_PARAMETER);
+    }
+    return resultExpressionParameter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
       case SysMLOCPackage.CONSTRAINT_DEFINITION__ELEMENTS:
         return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
+      case SysMLOCPackage.CONSTRAINT_DEFINITION__RESULT_EXPRESSION_PARAMETER:
+        return ((InternalEList<?>)getResultExpressionParameter()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -385,6 +414,8 @@ public class ConstraintDefinitionImpl extends DefinitionElementImpl implements C
         return getSuperclassifiers();
       case SysMLOCPackage.CONSTRAINT_DEFINITION__ELEMENTS:
         return getElements();
+      case SysMLOCPackage.CONSTRAINT_DEFINITION__RESULT_EXPRESSION_PARAMETER:
+        return getResultExpressionParameter();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -423,6 +454,10 @@ public class ConstraintDefinitionImpl extends DefinitionElementImpl implements C
         getElements().clear();
         getElements().addAll((Collection<? extends CalculationBodyElement>)newValue);
         return;
+      case SysMLOCPackage.CONSTRAINT_DEFINITION__RESULT_EXPRESSION_PARAMETER:
+        getResultExpressionParameter().clear();
+        getResultExpressionParameter().addAll((Collection<? extends ResultExpression>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -458,6 +493,9 @@ public class ConstraintDefinitionImpl extends DefinitionElementImpl implements C
       case SysMLOCPackage.CONSTRAINT_DEFINITION__ELEMENTS:
         getElements().clear();
         return;
+      case SysMLOCPackage.CONSTRAINT_DEFINITION__RESULT_EXPRESSION_PARAMETER:
+        getResultExpressionParameter().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -486,6 +524,8 @@ public class ConstraintDefinitionImpl extends DefinitionElementImpl implements C
         return superclassifiers != null && !superclassifiers.isEmpty();
       case SysMLOCPackage.CONSTRAINT_DEFINITION__ELEMENTS:
         return elements != null && !elements.isEmpty();
+      case SysMLOCPackage.CONSTRAINT_DEFINITION__RESULT_EXPRESSION_PARAMETER:
+        return resultExpressionParameter != null && !resultExpressionParameter.isEmpty();
     }
     return super.eIsSet(featureID);
   }

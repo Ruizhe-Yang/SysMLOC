@@ -423,15 +423,6 @@ ruleEnumerationBodyElement returns [EObject current=null]
 			$current = $this_EnumerationElement_1.current;
 			afterParserOrEnumRuleCall();
 		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getEnumerationBodyElementAccess().getCodeAnnotationParserRuleCall_2());
-		}
-		this_CodeAnnotation_2=ruleCodeAnnotation
-		{
-			$current = $this_CodeAnnotation_2.current;
-			afterParserOrEnumRuleCall();
-		}
 	)
 ;
 
@@ -6206,9 +6197,28 @@ ruleCalculationDefinition returns [EObject current=null]
 						)
 					)
 				)*
-				otherlv_8='}'
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getCalculationDefinitionAccess().getResultExpressionParameterResultExpressionParserRuleCall_5_1_2_0());
+						}
+						lv_resultExpressionParameter_8_0=ruleResultExpression
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getCalculationDefinitionRule());
+							}
+							add(
+								$current,
+								"resultExpressionParameter",
+								lv_resultExpressionParameter_8_0,
+								"dut.control.sysmloc.SysMLOC.ResultExpression");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)?
+				otherlv_9='}'
 				{
-					newLeafNode(otherlv_8, grammarAccess.getCalculationDefinitionAccess().getRightCurlyBracketKeyword_5_1_2());
+					newLeafNode(otherlv_9, grammarAccess.getCalculationDefinitionAccess().getRightCurlyBracketKeyword_5_1_3());
 				}
 			)
 		)
@@ -6328,9 +6338,28 @@ ruleCalculationUsage returns [EObject current=null]
 						)
 					)
 				)*
-				otherlv_9='}'
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getCalculationUsageAccess().getResultExpressionParameterResultExpressionParserRuleCall_6_1_2_0());
+						}
+						lv_resultExpressionParameter_9_0=ruleResultExpression
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getCalculationUsageRule());
+							}
+							add(
+								$current,
+								"resultExpressionParameter",
+								lv_resultExpressionParameter_9_0,
+								"dut.control.sysmloc.SysMLOC.ResultExpression");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)?
+				otherlv_10='}'
 				{
-					newLeafNode(otherlv_9, grammarAccess.getCalculationUsageAccess().getRightCurlyBracketKeyword_6_1_2());
+					newLeafNode(otherlv_10, grammarAccess.getCalculationUsageAccess().getRightCurlyBracketKeyword_6_1_3());
 				}
 			)
 		)
@@ -6670,9 +6699,28 @@ ruleConstraintDefinition returns [EObject current=null]
 						)
 					)
 				)*
-				otherlv_8='}'
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getConstraintDefinitionAccess().getResultExpressionParameterResultExpressionParserRuleCall_5_1_2_0());
+						}
+						lv_resultExpressionParameter_8_0=ruleResultExpression
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getConstraintDefinitionRule());
+							}
+							add(
+								$current,
+								"resultExpressionParameter",
+								lv_resultExpressionParameter_8_0,
+								"dut.control.sysmloc.SysMLOC.ResultExpression");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)?
+				otherlv_9='}'
 				{
-					newLeafNode(otherlv_8, grammarAccess.getConstraintDefinitionAccess().getRightCurlyBracketKeyword_5_1_2());
+					newLeafNode(otherlv_9, grammarAccess.getConstraintDefinitionAccess().getRightCurlyBracketKeyword_5_1_3());
 				}
 			)
 		)
@@ -6792,9 +6840,28 @@ ruleConstraintUsage returns [EObject current=null]
 						)
 					)
 				)*
-				otherlv_9='}'
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getConstraintUsageAccess().getResultExpressionParameterResultExpressionParserRuleCall_6_1_2_0());
+						}
+						lv_resultExpressionParameter_9_0=ruleResultExpression
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getConstraintUsageRule());
+							}
+							add(
+								$current,
+								"resultExpressionParameter",
+								lv_resultExpressionParameter_9_0,
+								"dut.control.sysmloc.SysMLOC.ResultExpression");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)?
+				otherlv_10='}'
 				{
-					newLeafNode(otherlv_9, grammarAccess.getConstraintUsageAccess().getRightCurlyBracketKeyword_6_1_2());
+					newLeafNode(otherlv_10, grammarAccess.getConstraintUsageAccess().getRightCurlyBracketKeyword_6_1_3());
 				}
 			)
 		)
@@ -7703,9 +7770,77 @@ ruleAssertConstraintUsage returns [EObject current=null]
 						)
 					)
 				)*
-				otherlv_13='}'
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getAssertConstraintUsageAccess().getResultExpressionParameterResultExpressionParserRuleCall_7_1_2_0());
+						}
+						lv_resultExpressionParameter_13_0=ruleResultExpression
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getAssertConstraintUsageRule());
+							}
+							add(
+								$current,
+								"resultExpressionParameter",
+								lv_resultExpressionParameter_13_0,
+								"dut.control.sysmloc.SysMLOC.ResultExpression");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)?
+				otherlv_14='}'
 				{
-					newLeafNode(otherlv_13, grammarAccess.getAssertConstraintUsageAccess().getRightCurlyBracketKeyword_7_1_2());
+					newLeafNode(otherlv_14, grammarAccess.getAssertConstraintUsageAccess().getRightCurlyBracketKeyword_7_1_3());
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleResultExpression
+entryRuleResultExpression returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getResultExpressionRule()); }
+	iv_ruleResultExpression=ruleResultExpression
+	{ $current=$iv_ruleResultExpression.current; }
+	EOF;
+
+// Rule ResultExpression
+ruleResultExpression returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			if ($current==null) {
+				$current = createModelElement(grammarAccess.getResultExpressionRule());
+			}
+			newCompositeNode(grammarAccess.getResultExpressionAccess().getMemberPrefixParserRuleCall_0());
+		}
+		this_MemberPrefix_0=ruleMemberPrefix[$current]
+		{
+			$current = $this_MemberPrefix_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getResultExpressionAccess().getResultExpressionExpressionParserRuleCall_1_0());
+				}
+				lv_resultExpression_1_0=ruleExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getResultExpressionRule());
+					}
+					set(
+						$current,
+						"resultExpression",
+						lv_resultExpression_1_0,
+						"dut.control.sysmloc.SysMLOC.Expression");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)

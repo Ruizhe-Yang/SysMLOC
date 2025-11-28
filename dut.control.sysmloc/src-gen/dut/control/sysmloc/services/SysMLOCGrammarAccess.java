@@ -228,18 +228,15 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cAnnotatingElementParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cEnumerationElementParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cCodeAnnotationParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//EnumerationBodyElement:
 		//    AnnotatingElement
 		//    | EnumerationElement
-		//    | CodeAnnotation
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//AnnotatingElement
 		//| EnumerationElement
-		//| CodeAnnotation
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//AnnotatingElement
@@ -247,9 +244,6 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		
 		//EnumerationElement
 		public RuleCall getEnumerationElementParserRuleCall_1() { return cEnumerationElementParserRuleCall_1; }
-		
-		//CodeAnnotation
-		public RuleCall getCodeAnnotationParserRuleCall_2() { return cCodeAnnotationParserRuleCall_2; }
 	}
 	public class ActionBodyElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.ActionBodyElement");
@@ -3907,18 +3901,20 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Group cGroup_5_1_1 = (Group)cGroup_5_1.eContents().get(1);
 		private final Assignment cElementsAssignment_5_1_1_0 = (Assignment)cGroup_5_1_1.eContents().get(0);
 		private final RuleCall cElementsCalculationBodyElementParserRuleCall_5_1_1_0_0 = (RuleCall)cElementsAssignment_5_1_1_0.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5_1_2 = (Keyword)cGroup_5_1.eContents().get(2);
+		private final Assignment cResultExpressionParameterAssignment_5_1_2 = (Assignment)cGroup_5_1.eContents().get(2);
+		private final RuleCall cResultExpressionParameterResultExpressionParserRuleCall_5_1_2_0 = (RuleCall)cResultExpressionParameterAssignment_5_1_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5_1_3 = (Keyword)cGroup_5_1.eContents().get(3);
 		
 		//CalculationDefinition:
 		//    MemberPrefix
 		//    OccurrenceDefinitionPrefix 'calc' 'def' DefinitionDeclaration
-		//    (';' | '{' => ( elements+=CalculationBodyElement )*  '}')
+		//    (';' | '{' => ( elements+=CalculationBodyElement )* (resultExpressionParameter+=ResultExpression)? '}')
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//MemberPrefix
 		//OccurrenceDefinitionPrefix 'calc' 'def' DefinitionDeclaration
-		//(';' | '{' => ( elements+=CalculationBodyElement )*  '}')
+		//(';' | '{' => ( elements+=CalculationBodyElement )* (resultExpressionParameter+=ResultExpression)? '}')
 		public Group getGroup() { return cGroup; }
 		
 		//MemberPrefix
@@ -3936,13 +3932,13 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//DefinitionDeclaration
 		public RuleCall getDefinitionDeclarationParserRuleCall_4() { return cDefinitionDeclarationParserRuleCall_4; }
 		
-		//(';' | '{' => ( elements+=CalculationBodyElement )*  '}')
+		//(';' | '{' => ( elements+=CalculationBodyElement )* (resultExpressionParameter+=ResultExpression)? '}')
 		public Alternatives getAlternatives_5() { return cAlternatives_5; }
 		
 		//';'
 		public Keyword getSemicolonKeyword_5_0() { return cSemicolonKeyword_5_0; }
 		
-		//'{' => ( elements+=CalculationBodyElement )*  '}'
+		//'{' => ( elements+=CalculationBodyElement )* (resultExpressionParameter+=ResultExpression)? '}'
 		public Group getGroup_5_1() { return cGroup_5_1; }
 		
 		//'{'
@@ -3957,8 +3953,14 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//CalculationBodyElement
 		public RuleCall getElementsCalculationBodyElementParserRuleCall_5_1_1_0_0() { return cElementsCalculationBodyElementParserRuleCall_5_1_1_0_0; }
 		
+		//(resultExpressionParameter+=ResultExpression)?
+		public Assignment getResultExpressionParameterAssignment_5_1_2() { return cResultExpressionParameterAssignment_5_1_2; }
+		
+		//ResultExpression
+		public RuleCall getResultExpressionParameterResultExpressionParserRuleCall_5_1_2_0() { return cResultExpressionParameterResultExpressionParserRuleCall_5_1_2_0; }
+		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_5_1_2() { return cRightCurlyBracketKeyword_5_1_2; }
+		public Keyword getRightCurlyBracketKeyword_5_1_3() { return cRightCurlyBracketKeyword_5_1_3; }
 	}
 	public class CalculationUsageElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.CalculationUsage");
@@ -3976,20 +3978,22 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Group cGroup_6_1_1 = (Group)cGroup_6_1.eContents().get(1);
 		private final Assignment cElementsAssignment_6_1_1_0 = (Assignment)cGroup_6_1_1.eContents().get(0);
 		private final RuleCall cElementsCalculationBodyElementParserRuleCall_6_1_1_0_0 = (RuleCall)cElementsAssignment_6_1_1_0.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6_1_2 = (Keyword)cGroup_6_1.eContents().get(2);
+		private final Assignment cResultExpressionParameterAssignment_6_1_2 = (Assignment)cGroup_6_1.eContents().get(2);
+		private final RuleCall cResultExpressionParameterResultExpressionParserRuleCall_6_1_2_0 = (RuleCall)cResultExpressionParameterAssignment_6_1_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6_1_3 = (Keyword)cGroup_6_1.eContents().get(3);
 		
 		//CalculationUsage:
 		//    EmptySuccessionPrefix
 		//    MemberPrefix isReturnPrefix
 		//    OccurrenceUsagePrefix 'calc' ActionUsageDeclaration
-		//    (';' | '{' => ( elements+=CalculationBodyElement )*'}')
+		//    (';' | '{' => ( elements+=CalculationBodyElement )* (resultExpressionParameter+=ResultExpression)? '}')
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//EmptySuccessionPrefix
 		//MemberPrefix isReturnPrefix
 		//OccurrenceUsagePrefix 'calc' ActionUsageDeclaration
-		//(';' | '{' => ( elements+=CalculationBodyElement )*'}')
+		//(';' | '{' => ( elements+=CalculationBodyElement )* (resultExpressionParameter+=ResultExpression)? '}')
 		public Group getGroup() { return cGroup; }
 		
 		//EmptySuccessionPrefix
@@ -4010,13 +4014,13 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//ActionUsageDeclaration
 		public RuleCall getActionUsageDeclarationParserRuleCall_5() { return cActionUsageDeclarationParserRuleCall_5; }
 		
-		//(';' | '{' => ( elements+=CalculationBodyElement )*'}')
+		//(';' | '{' => ( elements+=CalculationBodyElement )* (resultExpressionParameter+=ResultExpression)? '}')
 		public Alternatives getAlternatives_6() { return cAlternatives_6; }
 		
 		//';'
 		public Keyword getSemicolonKeyword_6_0() { return cSemicolonKeyword_6_0; }
 		
-		//'{' => ( elements+=CalculationBodyElement )*'}'
+		//'{' => ( elements+=CalculationBodyElement )* (resultExpressionParameter+=ResultExpression)? '}'
 		public Group getGroup_6_1() { return cGroup_6_1; }
 		
 		//'{'
@@ -4031,8 +4035,14 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//CalculationBodyElement
 		public RuleCall getElementsCalculationBodyElementParserRuleCall_6_1_1_0_0() { return cElementsCalculationBodyElementParserRuleCall_6_1_1_0_0; }
 		
+		//(resultExpressionParameter+=ResultExpression)?
+		public Assignment getResultExpressionParameterAssignment_6_1_2() { return cResultExpressionParameterAssignment_6_1_2; }
+		
+		//ResultExpression
+		public RuleCall getResultExpressionParameterResultExpressionParserRuleCall_6_1_2_0() { return cResultExpressionParameterResultExpressionParserRuleCall_6_1_2_0; }
+		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_6_1_2() { return cRightCurlyBracketKeyword_6_1_2; }
+		public Keyword getRightCurlyBracketKeyword_6_1_3() { return cRightCurlyBracketKeyword_6_1_3; }
 	}
 	public class StateDefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.StateDefinition");
@@ -4209,14 +4219,16 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Group cGroup_5_1_1 = (Group)cGroup_5_1.eContents().get(1);
 		private final Assignment cElementsAssignment_5_1_1_0 = (Assignment)cGroup_5_1_1.eContents().get(0);
 		private final RuleCall cElementsCalculationBodyElementParserRuleCall_5_1_1_0_0 = (RuleCall)cElementsAssignment_5_1_1_0.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5_1_2 = (Keyword)cGroup_5_1.eContents().get(2);
+		private final Assignment cResultExpressionParameterAssignment_5_1_2 = (Assignment)cGroup_5_1.eContents().get(2);
+		private final RuleCall cResultExpressionParameterResultExpressionParserRuleCall_5_1_2_0 = (RuleCall)cResultExpressionParameterAssignment_5_1_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5_1_3 = (Keyword)cGroup_5_1.eContents().get(3);
 		
 		//ConstraintDefinition:
 		//    MemberPrefix
 		//    OccurrenceDefinitionPrefix
 		//    'constraint' 'def'
 		//    DefinitionDeclaration
-		//    (';' | '{' => ( elements+=CalculationBodyElement )* '}')
+		//    (';' | '{' => ( elements+=CalculationBodyElement )* (resultExpressionParameter+=ResultExpression)? '}')
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -4224,7 +4236,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//OccurrenceDefinitionPrefix
 		//'constraint' 'def'
 		//DefinitionDeclaration
-		//(';' | '{' => ( elements+=CalculationBodyElement )* '}')
+		//(';' | '{' => ( elements+=CalculationBodyElement )* (resultExpressionParameter+=ResultExpression)? '}')
 		public Group getGroup() { return cGroup; }
 		
 		//MemberPrefix
@@ -4242,13 +4254,13 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//DefinitionDeclaration
 		public RuleCall getDefinitionDeclarationParserRuleCall_4() { return cDefinitionDeclarationParserRuleCall_4; }
 		
-		//(';' | '{' => ( elements+=CalculationBodyElement )* '}')
+		//(';' | '{' => ( elements+=CalculationBodyElement )* (resultExpressionParameter+=ResultExpression)? '}')
 		public Alternatives getAlternatives_5() { return cAlternatives_5; }
 		
 		//';'
 		public Keyword getSemicolonKeyword_5_0() { return cSemicolonKeyword_5_0; }
 		
-		//'{' => ( elements+=CalculationBodyElement )* '}'
+		//'{' => ( elements+=CalculationBodyElement )* (resultExpressionParameter+=ResultExpression)? '}'
 		public Group getGroup_5_1() { return cGroup_5_1; }
 		
 		//'{'
@@ -4263,8 +4275,14 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//CalculationBodyElement
 		public RuleCall getElementsCalculationBodyElementParserRuleCall_5_1_1_0_0() { return cElementsCalculationBodyElementParserRuleCall_5_1_1_0_0; }
 		
+		//(resultExpressionParameter+=ResultExpression)?
+		public Assignment getResultExpressionParameterAssignment_5_1_2() { return cResultExpressionParameterAssignment_5_1_2; }
+		
+		//ResultExpression
+		public RuleCall getResultExpressionParameterResultExpressionParserRuleCall_5_1_2_0() { return cResultExpressionParameterResultExpressionParserRuleCall_5_1_2_0; }
+		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_5_1_2() { return cRightCurlyBracketKeyword_5_1_2; }
+		public Keyword getRightCurlyBracketKeyword_5_1_3() { return cRightCurlyBracketKeyword_5_1_3; }
 	}
 	public class ConstraintUsageElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.ConstraintUsage");
@@ -4282,7 +4300,9 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Group cGroup_6_1_1 = (Group)cGroup_6_1.eContents().get(1);
 		private final Assignment cElementsAssignment_6_1_1_0 = (Assignment)cGroup_6_1_1.eContents().get(0);
 		private final RuleCall cElementsCalculationBodyElementParserRuleCall_6_1_1_0_0 = (RuleCall)cElementsAssignment_6_1_1_0.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6_1_2 = (Keyword)cGroup_6_1.eContents().get(2);
+		private final Assignment cResultExpressionParameterAssignment_6_1_2 = (Assignment)cGroup_6_1.eContents().get(2);
+		private final RuleCall cResultExpressionParameterResultExpressionParserRuleCall_6_1_2_0 = (RuleCall)cResultExpressionParameterAssignment_6_1_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6_1_3 = (Keyword)cGroup_6_1.eContents().get(3);
 		
 		//ConstraintUsage:
 		//    EmptySuccessionPrefix
@@ -4291,7 +4311,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//    OccurrenceUsagePrefix
 		//    'constraint'
 		//    ConstraintUsageDeclaration
-		//    (';' | '{' => ( elements+=CalculationBodyElement )*'}')
+		//    (';' | '{' => ( elements+=CalculationBodyElement )* (resultExpressionParameter+=ResultExpression)? '}')
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -4301,7 +4321,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//OccurrenceUsagePrefix
 		//'constraint'
 		//ConstraintUsageDeclaration
-		//(';' | '{' => ( elements+=CalculationBodyElement )*'}')
+		//(';' | '{' => ( elements+=CalculationBodyElement )* (resultExpressionParameter+=ResultExpression)? '}')
 		public Group getGroup() { return cGroup; }
 		
 		//EmptySuccessionPrefix
@@ -4322,13 +4342,13 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//ConstraintUsageDeclaration
 		public RuleCall getConstraintUsageDeclarationParserRuleCall_5() { return cConstraintUsageDeclarationParserRuleCall_5; }
 		
-		//(';' | '{' => ( elements+=CalculationBodyElement )*'}')
+		//(';' | '{' => ( elements+=CalculationBodyElement )* (resultExpressionParameter+=ResultExpression)? '}')
 		public Alternatives getAlternatives_6() { return cAlternatives_6; }
 		
 		//';'
 		public Keyword getSemicolonKeyword_6_0() { return cSemicolonKeyword_6_0; }
 		
-		//'{' => ( elements+=CalculationBodyElement )*'}'
+		//'{' => ( elements+=CalculationBodyElement )* (resultExpressionParameter+=ResultExpression)? '}'
 		public Group getGroup_6_1() { return cGroup_6_1; }
 		
 		//'{'
@@ -4343,8 +4363,14 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//CalculationBodyElement
 		public RuleCall getElementsCalculationBodyElementParserRuleCall_6_1_1_0_0() { return cElementsCalculationBodyElementParserRuleCall_6_1_1_0_0; }
 		
+		//(resultExpressionParameter+=ResultExpression)?
+		public Assignment getResultExpressionParameterAssignment_6_1_2() { return cResultExpressionParameterAssignment_6_1_2; }
+		
+		//ResultExpression
+		public RuleCall getResultExpressionParameterResultExpressionParserRuleCall_6_1_2_0() { return cResultExpressionParameterResultExpressionParserRuleCall_6_1_2_0; }
+		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_6_1_2() { return cRightCurlyBracketKeyword_6_1_2; }
+		public Keyword getRightCurlyBracketKeyword_6_1_3() { return cRightCurlyBracketKeyword_6_1_3; }
 	}
 	public class TransitionUsageElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.TransitionUsage");
@@ -4921,7 +4947,9 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Group cGroup_7_1_1 = (Group)cGroup_7_1.eContents().get(1);
 		private final Assignment cElementsAssignment_7_1_1_0 = (Assignment)cGroup_7_1_1.eContents().get(0);
 		private final RuleCall cElementsCalculationBodyElementParserRuleCall_7_1_1_0_0 = (RuleCall)cElementsAssignment_7_1_1_0.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_7_1_2 = (Keyword)cGroup_7_1.eContents().get(2);
+		private final Assignment cResultExpressionParameterAssignment_7_1_2 = (Assignment)cGroup_7_1.eContents().get(2);
+		private final RuleCall cResultExpressionParameterResultExpressionParserRuleCall_7_1_2_0 = (RuleCall)cResultExpressionParameterAssignment_7_1_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_7_1_3 = (Keyword)cGroup_7_1.eContents().get(3);
 		
 		//AssertConstraintUsage:
 		//    EmptySuccessionPrefix
@@ -4931,7 +4959,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//    'assert'
 		//    ( isNegated ?= 'not' )?
 		//    ( ReferenceSubsetting FeatureSpecializationPart? | 'constraint' ConstraintUsageDeclaration)
-		//    (';' | '{' => ( elements+=CalculationBodyElement )*  '}')
+		//    (';' | '{' => ( elements+=CalculationBodyElement )* (resultExpressionParameter+=ResultExpression)? '}')
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -4942,7 +4970,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//'assert'
 		//( isNegated ?= 'not' )?
 		//( ReferenceSubsetting FeatureSpecializationPart? | 'constraint' ConstraintUsageDeclaration)
-		//(';' | '{' => ( elements+=CalculationBodyElement )*  '}')
+		//(';' | '{' => ( elements+=CalculationBodyElement )* (resultExpressionParameter+=ResultExpression)? '}')
 		public Group getGroup() { return cGroup; }
 		
 		//EmptySuccessionPrefix
@@ -4987,13 +5015,13 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//ConstraintUsageDeclaration
 		public RuleCall getConstraintUsageDeclarationParserRuleCall_6_1_1() { return cConstraintUsageDeclarationParserRuleCall_6_1_1; }
 		
-		//(';' | '{' => ( elements+=CalculationBodyElement )*  '}')
+		//(';' | '{' => ( elements+=CalculationBodyElement )* (resultExpressionParameter+=ResultExpression)? '}')
 		public Alternatives getAlternatives_7() { return cAlternatives_7; }
 		
 		//';'
 		public Keyword getSemicolonKeyword_7_0() { return cSemicolonKeyword_7_0; }
 		
-		//'{' => ( elements+=CalculationBodyElement )*  '}'
+		//'{' => ( elements+=CalculationBodyElement )* (resultExpressionParameter+=ResultExpression)? '}'
 		public Group getGroup_7_1() { return cGroup_7_1; }
 		
 		//'{'
@@ -5008,8 +5036,14 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//CalculationBodyElement
 		public RuleCall getElementsCalculationBodyElementParserRuleCall_7_1_1_0_0() { return cElementsCalculationBodyElementParserRuleCall_7_1_1_0_0; }
 		
+		//(resultExpressionParameter+=ResultExpression)?
+		public Assignment getResultExpressionParameterAssignment_7_1_2() { return cResultExpressionParameterAssignment_7_1_2; }
+		
+		//ResultExpression
+		public RuleCall getResultExpressionParameterResultExpressionParserRuleCall_7_1_2_0() { return cResultExpressionParameterResultExpressionParserRuleCall_7_1_2_0; }
+		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_7_1_2() { return cRightCurlyBracketKeyword_7_1_2; }
+		public Keyword getRightCurlyBracketKeyword_7_1_3() { return cRightCurlyBracketKeyword_7_1_3; }
 	}
 	public class ResultExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.ResultExpression");
@@ -11096,7 +11130,6 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	//EnumerationBodyElement:
 	//    AnnotatingElement
 	//    | EnumerationElement
-	//    | CodeAnnotation
 	//;
 	public EnumerationBodyElementElements getEnumerationBodyElementAccess() {
 		return pEnumerationBodyElement;
@@ -12008,7 +12041,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	//CalculationDefinition:
 	//    MemberPrefix
 	//    OccurrenceDefinitionPrefix 'calc' 'def' DefinitionDeclaration
-	//    (';' | '{' => ( elements+=CalculationBodyElement )*  '}')
+	//    (';' | '{' => ( elements+=CalculationBodyElement )* (resultExpressionParameter+=ResultExpression)? '}')
 	//;
 	public CalculationDefinitionElements getCalculationDefinitionAccess() {
 		return pCalculationDefinition;
@@ -12022,7 +12055,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	//    EmptySuccessionPrefix
 	//    MemberPrefix isReturnPrefix
 	//    OccurrenceUsagePrefix 'calc' ActionUsageDeclaration
-	//    (';' | '{' => ( elements+=CalculationBodyElement )*'}')
+	//    (';' | '{' => ( elements+=CalculationBodyElement )* (resultExpressionParameter+=ResultExpression)? '}')
 	//;
 	public CalculationUsageElements getCalculationUsageAccess() {
 		return pCalculationUsage;
@@ -12069,7 +12102,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	//    OccurrenceDefinitionPrefix
 	//    'constraint' 'def'
 	//    DefinitionDeclaration
-	//    (';' | '{' => ( elements+=CalculationBodyElement )* '}')
+	//    (';' | '{' => ( elements+=CalculationBodyElement )* (resultExpressionParameter+=ResultExpression)? '}')
 	//;
 	public ConstraintDefinitionElements getConstraintDefinitionAccess() {
 		return pConstraintDefinition;
@@ -12086,7 +12119,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	//    OccurrenceUsagePrefix
 	//    'constraint'
 	//    ConstraintUsageDeclaration
-	//    (';' | '{' => ( elements+=CalculationBodyElement )*'}')
+	//    (';' | '{' => ( elements+=CalculationBodyElement )* (resultExpressionParameter+=ResultExpression)? '}')
 	//;
 	public ConstraintUsageElements getConstraintUsageAccess() {
 		return pConstraintUsage;
@@ -12173,7 +12206,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	//    'assert'
 	//    ( isNegated ?= 'not' )?
 	//    ( ReferenceSubsetting FeatureSpecializationPart? | 'constraint' ConstraintUsageDeclaration)
-	//    (';' | '{' => ( elements+=CalculationBodyElement )*  '}')
+	//    (';' | '{' => ( elements+=CalculationBodyElement )* (resultExpressionParameter+=ResultExpression)? '}')
 	//;
 	public AssertConstraintUsageElements getAssertConstraintUsageAccess() {
 		return pAssertConstraintUsage;

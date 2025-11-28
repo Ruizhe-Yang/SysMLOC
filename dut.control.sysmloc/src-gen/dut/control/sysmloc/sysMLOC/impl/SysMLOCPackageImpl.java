@@ -2829,6 +2829,17 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   @Override
+  public EReference getCalculationDefinition_ResultExpressionParameter()
+  {
+        return (EReference)getCalculationDefinition().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getCalculationUsage()
   {
     if (calculationUsageEClass == null)
@@ -2847,6 +2858,17 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   public EReference getCalculationUsage_Elements()
   {
         return (EReference)getCalculationUsage().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getCalculationUsage_ResultExpressionParameter()
+  {
+        return (EReference)getCalculationUsage().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2955,6 +2977,17 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   @Override
+  public EReference getConstraintDefinition_ResultExpressionParameter()
+  {
+        return (EReference)getConstraintDefinition().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getConstraintUsage()
   {
     if (constraintUsageEClass == null)
@@ -2973,6 +3006,17 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   public EReference getConstraintUsage_Elements()
   {
         return (EReference)getConstraintUsage().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getConstraintUsage_ResultExpressionParameter()
+  {
+        return (EReference)getConstraintUsage().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -3121,6 +3165,17 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   public EReference getAssertConstraintUsage_Elements()
   {
         return (EReference)getAssertConstraintUsage().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getAssertConstraintUsage_ResultExpressionParameter()
+  {
+        return (EReference)getAssertConstraintUsage().getEStructuralFeatures().get(2);
   }
 
   /**

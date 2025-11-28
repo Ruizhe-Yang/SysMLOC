@@ -536,7 +536,6 @@ public class SysMLOCSwitch<T> extends Switch<T>
         T result = caseCodeAnnotation(codeAnnotation);
         if (result == null) result = casePackageBodyElement(codeAnnotation);
         if (result == null) result = caseDefinitionBodyElement(codeAnnotation);
-        if (result == null) result = caseEnumerationBodyElement(codeAnnotation);
         if (result == null) result = caseActionBodyElement(codeAnnotation);
         if (result == null) result = caseStateBodyElement(codeAnnotation);
         if (result == null) result = caseAnnotatingBodyElement(codeAnnotation);

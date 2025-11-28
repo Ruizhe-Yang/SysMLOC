@@ -46,7 +46,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="ExitActionNodeElement" eSuperTypes="#//StateBodyElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="NamespaceImport" eSuperTypes="#//ImportElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="MembershipImport" eSuperTypes="#//ImportElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="CodeAnnotation" eSuperTypes="#//PackageBodyElement #//DefinitionBodyElement #//EnumerationBodyElement #//ActionBodyElement #//StateBodyElement #//AnnotatingBodyElement #//ActionNodeBodyElement">
+  <eClassifiers xsi:type="ecore:EClass" name="CodeAnnotation" eSuperTypes="#//PackageBodyElement #//DefinitionBodyElement #//ActionBodyElement #//StateBodyElement #//AnnotatingBodyElement #//ActionNodeBodyElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="body" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Comment" eSuperTypes="#//AnnotatingElement #//Identification">
@@ -206,10 +206,14 @@
   <eClassifiers xsi:type="ecore:EClass" name="CalculationDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//OccurrenceDefinitionPrefix #//BasicDefinitionPrefix #//DefinitionDeclaration">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//CalculationBodyElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resultExpressionParameter"
+        upperBound="-1" eType="#//ResultExpression" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CalculationUsage" eSuperTypes="#//BehaviorUsageElement #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//ActionUsageDeclaration #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//MultiplicityPart #//MultiplicityRange #//FeatureValue">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//CalculationBodyElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resultExpressionParameter"
+        upperBound="-1" eType="#//ResultExpression" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StateDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//OccurrenceDefinitionPrefix #//BasicDefinitionPrefix #//DefinitionDeclaration">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isParallel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -224,10 +228,14 @@
   <eClassifiers xsi:type="ecore:EClass" name="ConstraintDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//OccurrenceDefinitionPrefix #//BasicDefinitionPrefix #//DefinitionDeclaration">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//CalculationBodyElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resultExpressionParameter"
+        upperBound="-1" eType="#//ResultExpression" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConstraintUsage" eSuperTypes="#//BehaviorUsageElement #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//ConstraintUsageDeclaration #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//MultiplicityPart #//MultiplicityRange #//ValuePart #//FeatureValue">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//CalculationBodyElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resultExpressionParameter"
+        upperBound="-1" eType="#//ResultExpression" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TransitionUsage" eSuperTypes="#//TransitionUsageElement #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//MultiplicityPart #//MultiplicityRange #//AcceptParameterPart #//PerformedActionParameterPart #//TransitionSuccession">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="transitionSourceElement"
@@ -250,6 +258,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isNegated" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//CalculationBodyElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resultExpressionParameter"
+        upperBound="-1" eType="#//ResultExpression" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ResultExpression" eSuperTypes="#//MemberPrefix">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="resultExpression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

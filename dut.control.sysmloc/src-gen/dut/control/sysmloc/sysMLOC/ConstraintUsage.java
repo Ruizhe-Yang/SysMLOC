@@ -15,6 +15,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.ConstraintUsage#getElements <em>Elements</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.ConstraintUsage#getResultExpressionParameter <em>Result Expression Parameter</em>}</li>
  * </ul>
  *
  * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getConstraintUsage()
@@ -34,5 +35,17 @@ public interface ConstraintUsage extends BehaviorUsageElement, EmptySuccessionPr
    * @generated
    */
   EList<CalculationBodyElement> getElements();
+
+  /**
+   * Returns the value of the '<em><b>Result Expression Parameter</b></em>' containment reference list.
+   * The list contents are of type {@link dut.control.sysmloc.sysMLOC.ResultExpression}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Result Expression Parameter</em>' containment reference list.
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getConstraintUsage_ResultExpressionParameter()
+   * @model containment="true"
+   * @generated
+   */
+  EList<ResultExpression> getResultExpressionParameter();
 
 } // ConstraintUsage

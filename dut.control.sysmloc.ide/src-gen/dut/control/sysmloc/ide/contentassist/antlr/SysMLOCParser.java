@@ -587,13 +587,17 @@ public class SysMLOCParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getActionDefinitionAccess().getElementsAssignment_5_1_1(), "rule__ActionDefinition__ElementsAssignment_5_1_1");
 			builder.put(grammarAccess.getActionUsageAccess().getElementsAssignment_6_1_1(), "rule__ActionUsage__ElementsAssignment_6_1_1");
 			builder.put(grammarAccess.getCalculationDefinitionAccess().getElementsAssignment_5_1_1_0(), "rule__CalculationDefinition__ElementsAssignment_5_1_1_0");
+			builder.put(grammarAccess.getCalculationDefinitionAccess().getResultExpressionParameterAssignment_5_1_2(), "rule__CalculationDefinition__ResultExpressionParameterAssignment_5_1_2");
 			builder.put(grammarAccess.getCalculationUsageAccess().getElementsAssignment_6_1_1_0(), "rule__CalculationUsage__ElementsAssignment_6_1_1_0");
+			builder.put(grammarAccess.getCalculationUsageAccess().getResultExpressionParameterAssignment_6_1_2(), "rule__CalculationUsage__ResultExpressionParameterAssignment_6_1_2");
 			builder.put(grammarAccess.getStateDefinitionAccess().getIsParallelAssignment_5_1_0(), "rule__StateDefinition__IsParallelAssignment_5_1_0");
 			builder.put(grammarAccess.getStateDefinitionAccess().getElementsAssignment_5_1_2(), "rule__StateDefinition__ElementsAssignment_5_1_2");
 			builder.put(grammarAccess.getStateUsageAccess().getIsParallelAssignment_6_1_0(), "rule__StateUsage__IsParallelAssignment_6_1_0");
 			builder.put(grammarAccess.getStateUsageAccess().getElementsAssignment_6_1_2(), "rule__StateUsage__ElementsAssignment_6_1_2");
 			builder.put(grammarAccess.getConstraintDefinitionAccess().getElementsAssignment_5_1_1_0(), "rule__ConstraintDefinition__ElementsAssignment_5_1_1_0");
+			builder.put(grammarAccess.getConstraintDefinitionAccess().getResultExpressionParameterAssignment_5_1_2(), "rule__ConstraintDefinition__ResultExpressionParameterAssignment_5_1_2");
 			builder.put(grammarAccess.getConstraintUsageAccess().getElementsAssignment_6_1_1_0(), "rule__ConstraintUsage__ElementsAssignment_6_1_1_0");
+			builder.put(grammarAccess.getConstraintUsageAccess().getResultExpressionParameterAssignment_6_1_2(), "rule__ConstraintUsage__ResultExpressionParameterAssignment_6_1_2");
 			builder.put(grammarAccess.getTransitionUsageAccess().getTransitionSourceElementAssignment_3_0_2(), "rule__TransitionUsage__TransitionSourceElementAssignment_3_0_2");
 			builder.put(grammarAccess.getTransitionUsageAccess().getConditionalExpressionAssignment_3_0_4_1(), "rule__TransitionUsage__ConditionalExpressionAssignment_3_0_4_1");
 			builder.put(grammarAccess.getTransitionUsageAccess().getElementsAssignment_3_0_5_2_1(), "rule__TransitionUsage__ElementsAssignment_3_0_5_2_1");
@@ -607,6 +611,7 @@ public class SysMLOCParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getExhibitStateUsageAccess().getElementsAssignment_7_1_2(), "rule__ExhibitStateUsage__ElementsAssignment_7_1_2");
 			builder.put(grammarAccess.getAssertConstraintUsageAccess().getIsNegatedAssignment_5(), "rule__AssertConstraintUsage__IsNegatedAssignment_5");
 			builder.put(grammarAccess.getAssertConstraintUsageAccess().getElementsAssignment_7_1_1_0(), "rule__AssertConstraintUsage__ElementsAssignment_7_1_1_0");
+			builder.put(grammarAccess.getAssertConstraintUsageAccess().getResultExpressionParameterAssignment_7_1_2(), "rule__AssertConstraintUsage__ResultExpressionParameterAssignment_7_1_2");
 			builder.put(grammarAccess.getResultExpressionAccess().getResultExpressionAssignment_1(), "rule__ResultExpression__ResultExpressionAssignment_1");
 			builder.put(grammarAccess.getAliasElementAccess().getMemberShortNameAssignment_2_1(), "rule__AliasElement__MemberShortNameAssignment_2_1");
 			builder.put(grammarAccess.getAliasElementAccess().getMemberNameAssignment_3(), "rule__AliasElement__MemberNameAssignment_3");

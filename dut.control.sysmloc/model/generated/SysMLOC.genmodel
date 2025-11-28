@@ -193,9 +193,11 @@
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//CalculationDefinition">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//CalculationDefinition/elements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//CalculationDefinition/resultExpressionParameter"/>
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//CalculationUsage">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//CalculationUsage/elements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//CalculationUsage/resultExpressionParameter"/>
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//StateDefinition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//StateDefinition/isParallel"/>
@@ -207,9 +209,11 @@
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//ConstraintDefinition">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//ConstraintDefinition/elements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//ConstraintDefinition/resultExpressionParameter"/>
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//ConstraintUsage">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//ConstraintUsage/elements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//ConstraintUsage/resultExpressionParameter"/>
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//TransitionUsage">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//TransitionUsage/transitionSourceElement"/>
@@ -226,6 +230,7 @@
     <genClasses ecoreClass="SysMLOC.ecore#//AssertConstraintUsage">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//AssertConstraintUsage/isNegated"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//AssertConstraintUsage/elements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//AssertConstraintUsage/resultExpressionParameter"/>
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//ResultExpression">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//ResultExpression/resultExpression"/>
