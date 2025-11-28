@@ -43,7 +43,7 @@ public class UnextendedUsagePrefixImpl extends EndUsagePrefixImpl implements Une
    * @generated
    * @ordered
    */
-  protected static final FeatureDirection DIRECTION_EDEFAULT = FeatureDirection.INOUT;
+  protected static final FeatureDirection DIRECTION_EDEFAULT = FeatureDirection.NULL;
 
   /**
    * The cached value of the '{@link #getDirection() <em>Direction</em>}' attribute.

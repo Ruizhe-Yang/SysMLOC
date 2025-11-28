@@ -888,7 +888,7 @@ public class GuardedSuccessionElementImpl extends GuardedSuccessionNodeElementIm
     result.append(declaredName);
     result.append(", memberElement: ");
     result.append(memberElement);
-    result.append(", ConditionalExpression: ");
+    result.append(", conditionalExpression: ");
     result.append(conditionalExpression);
     result.append(')');
     return result.toString();

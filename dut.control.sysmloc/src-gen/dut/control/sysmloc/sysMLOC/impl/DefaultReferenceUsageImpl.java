@@ -77,7 +77,7 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
    * @generated
    * @ordered
    */
-  protected static final VisibilityIndicator VISIBILITY_EDEFAULT = VisibilityIndicator.PUBLIC;
+  protected static final VisibilityIndicator VISIBILITY_EDEFAULT = VisibilityIndicator.NULL;
 
   /**
    * The cached value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
@@ -97,7 +97,7 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
    * @generated
    * @ordered
    */
-  protected static final FeatureDirection DIRECTION_EDEFAULT = FeatureDirection.INOUT;
+  protected static final FeatureDirection DIRECTION_EDEFAULT = FeatureDirection.NULL;
 
   /**
    * The cached value of the '{@link #getDirection() <em>Direction</em>}' attribute.

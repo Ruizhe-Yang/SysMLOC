@@ -23,7 +23,7 @@ package dut.control.sysmloc.sysMLOC;
  * @model
  * @generated
  */
-public interface ImportElement extends PackageBodyElement, DefinitionBodyElement, ActionBodyElement
+public interface ImportElement extends PackageBodyElement, DefinitionBodyElement, ActionBodyElement, StateBodyElement
 {
   /**
    * Returns the value of the '<em><b>Visibility</b></em>' attribute.

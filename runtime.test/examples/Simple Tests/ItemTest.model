@@ -4,7 +4,7 @@
     <elements xsi:type="sysMLOC:ItemUsage" declaredName="f">
       <typings>A</typings>
     </elements>
-    <elements xsi:type="sysMLOC:ItemDefinition" declaredName="A">
+    <elements xsi:type="sysMLOC:ItemDefinition" visibility="public" declaredName="A">
       <elements xsi:type="sysMLOC:ItemUsage" declaredName="b">
         <typings>B</typings>
       </elements>
@@ -13,7 +13,7 @@
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:ItemDefinition" isAbstract="true" declaredName="B">
-      <elements xsi:type="sysMLOC:PartUsage" isAbstract="true" declaredName="a">
+      <elements xsi:type="sysMLOC:PartUsage" visibility="public" isAbstract="true" declaredName="a">
         <typings>A</typings>
       </elements>
     </elements>

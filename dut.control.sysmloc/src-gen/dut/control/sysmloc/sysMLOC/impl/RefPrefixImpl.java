@@ -41,7 +41,7 @@ public class RefPrefixImpl extends MinimalEObjectImpl.Container implements RefPr
    * @generated
    * @ordered
    */
-  protected static final FeatureDirection DIRECTION_EDEFAULT = FeatureDirection.INOUT;
+  protected static final FeatureDirection DIRECTION_EDEFAULT = FeatureDirection.NULL;
 
   /**
    * The cached value of the '{@link #getDirection() <em>Direction</em>}' attribute.

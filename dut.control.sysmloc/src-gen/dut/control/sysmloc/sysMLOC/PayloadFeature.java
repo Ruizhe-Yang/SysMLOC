@@ -9,11 +9,39 @@ package dut.control.sysmloc.sysMLOC;
  * A representation of the model object '<em><b>Payload Feature</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.PayloadFeature#getPayloadFeatureElement <em>Payload Feature Element</em>}</li>
+ * </ul>
  *
  * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getPayloadFeature()
  * @model
  * @generated
  */
-public interface PayloadFeature extends Identification, PayloadFeatureSpecializationPart, FeatureSpecializationPart, ValuePart
+public interface PayloadFeature extends Identification, PayloadFeatureSpecializationPart, FeatureSpecialization, MultiplicityPart, MultiplicityRange, ValuePart
 {
+  /**
+   * Returns the value of the '<em><b>Payload Feature Element</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Payload Feature Element</em>' attribute.
+   * @see #setPayloadFeatureElement(String)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getPayloadFeature_PayloadFeatureElement()
+   * @model
+   * @generated
+   */
+  String getPayloadFeatureElement();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.PayloadFeature#getPayloadFeatureElement <em>Payload Feature Element</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Payload Feature Element</em>' attribute.
+   * @see #getPayloadFeatureElement()
+   * @generated
+   */
+  void setPayloadFeatureElement(String value);
+
 } // PayloadFeature

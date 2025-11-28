@@ -21,6 +21,16 @@ import org.eclipse.emf.common.util.Enumerator;
 public enum FeatureDirection implements Enumerator
 {
   /**
+   * The '<em><b>Null</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #NULL_VALUE
+   * @generated
+   * @ordered
+   */
+  NULL(0, "null", "NULLFeature"),
+
+  /**
    * The '<em><b>Inout</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -28,7 +38,7 @@ public enum FeatureDirection implements Enumerator
    * @generated
    * @ordered
    */
-  INOUT(0, "inout", "inout"),
+  INOUT(1, "inout", "inout"),
 
   /**
    * The '<em><b>In</b></em>' literal object.
@@ -38,7 +48,7 @@ public enum FeatureDirection implements Enumerator
    * @generated
    * @ordered
    */
-  IN(1, "in", "in"),
+  IN(2, "in", "in"),
 
   /**
    * The '<em><b>Out</b></em>' literal object.
@@ -48,7 +58,18 @@ public enum FeatureDirection implements Enumerator
    * @generated
    * @ordered
    */
-  OUT(2, "out", "out");
+  OUT(3, "out", "out");
+
+  /**
+   * The '<em><b>Null</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #NULL
+   * @model name="null" literal="NULLFeature"
+   * @generated
+   * @ordered
+   */
+  public static final int NULL_VALUE = 0;
 
   /**
    * The '<em><b>Inout</b></em>' literal value.
@@ -59,7 +80,7 @@ public enum FeatureDirection implements Enumerator
    * @generated
    * @ordered
    */
-  public static final int INOUT_VALUE = 0;
+  public static final int INOUT_VALUE = 1;
 
   /**
    * The '<em><b>In</b></em>' literal value.
@@ -70,7 +91,7 @@ public enum FeatureDirection implements Enumerator
    * @generated
    * @ordered
    */
-  public static final int IN_VALUE = 1;
+  public static final int IN_VALUE = 2;
 
   /**
    * The '<em><b>Out</b></em>' literal value.
@@ -81,7 +102,7 @@ public enum FeatureDirection implements Enumerator
    * @generated
    * @ordered
    */
-  public static final int OUT_VALUE = 2;
+  public static final int OUT_VALUE = 3;
 
   /**
    * An array of all the '<em><b>Feature Direction</b></em>' enumerators.
@@ -92,6 +113,7 @@ public enum FeatureDirection implements Enumerator
   private static final FeatureDirection[] VALUES_ARRAY =
     new FeatureDirection[]
     {
+      NULL,
       INOUT,
       IN,
       OUT,
@@ -159,6 +181,7 @@ public enum FeatureDirection implements Enumerator
   {
     switch (value)
     {
+      case NULL_VALUE: return NULL;
       case INOUT_VALUE: return INOUT;
       case IN_VALUE: return IN;
       case OUT_VALUE: return OUT;

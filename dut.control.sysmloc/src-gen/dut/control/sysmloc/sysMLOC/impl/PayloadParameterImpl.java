@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PayloadParameterImpl#getTriggerkind <em>Triggerkind</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PayloadParameterImpl#getTriggerExpression <em>Trigger Expression</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PayloadParameterImpl#getViaNodeParameter <em>Via Node Parameter</em>}</li>
  * </ul>
  *
  * @generated
@@ -38,7 +39,7 @@ public class PayloadParameterImpl extends PayloadFeatureImpl implements PayloadP
    * @generated
    * @ordered
    */
-  protected static final TriggerKind TRIGGERKIND_EDEFAULT = TriggerKind.AT;
+  protected static final TriggerKind TRIGGERKIND_EDEFAULT = TriggerKind.NULL;
 
   /**
    * The cached value of the '{@link #getTriggerkind() <em>Triggerkind</em>}' attribute.
@@ -69,6 +70,26 @@ public class PayloadParameterImpl extends PayloadFeatureImpl implements PayloadP
    * @ordered
    */
   protected String triggerExpression = TRIGGER_EXPRESSION_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getViaNodeParameter() <em>Via Node Parameter</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getViaNodeParameter()
+   * @generated
+   * @ordered
+   */
+  protected static final String VIA_NODE_PARAMETER_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getViaNodeParameter() <em>Via Node Parameter</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getViaNodeParameter()
+   * @generated
+   * @ordered
+   */
+  protected String viaNodeParameter = VIA_NODE_PARAMETER_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -147,6 +168,31 @@ public class PayloadParameterImpl extends PayloadFeatureImpl implements PayloadP
    * @generated
    */
   @Override
+  public String getViaNodeParameter()
+  {
+    return viaNodeParameter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setViaNodeParameter(String newViaNodeParameter)
+  {
+    String oldViaNodeParameter = viaNodeParameter;
+    viaNodeParameter = newViaNodeParameter;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.PAYLOAD_PARAMETER__VIA_NODE_PARAMETER, oldViaNodeParameter, viaNodeParameter));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
@@ -155,6 +201,8 @@ public class PayloadParameterImpl extends PayloadFeatureImpl implements PayloadP
         return getTriggerkind();
       case SysMLOCPackage.PAYLOAD_PARAMETER__TRIGGER_EXPRESSION:
         return getTriggerExpression();
+      case SysMLOCPackage.PAYLOAD_PARAMETER__VIA_NODE_PARAMETER:
+        return getViaNodeParameter();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -174,6 +222,9 @@ public class PayloadParameterImpl extends PayloadFeatureImpl implements PayloadP
         return;
       case SysMLOCPackage.PAYLOAD_PARAMETER__TRIGGER_EXPRESSION:
         setTriggerExpression((String)newValue);
+        return;
+      case SysMLOCPackage.PAYLOAD_PARAMETER__VIA_NODE_PARAMETER:
+        setViaNodeParameter((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -195,6 +246,9 @@ public class PayloadParameterImpl extends PayloadFeatureImpl implements PayloadP
       case SysMLOCPackage.PAYLOAD_PARAMETER__TRIGGER_EXPRESSION:
         setTriggerExpression(TRIGGER_EXPRESSION_EDEFAULT);
         return;
+      case SysMLOCPackage.PAYLOAD_PARAMETER__VIA_NODE_PARAMETER:
+        setViaNodeParameter(VIA_NODE_PARAMETER_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -213,6 +267,8 @@ public class PayloadParameterImpl extends PayloadFeatureImpl implements PayloadP
         return triggerkind != TRIGGERKIND_EDEFAULT;
       case SysMLOCPackage.PAYLOAD_PARAMETER__TRIGGER_EXPRESSION:
         return TRIGGER_EXPRESSION_EDEFAULT == null ? triggerExpression != null : !TRIGGER_EXPRESSION_EDEFAULT.equals(triggerExpression);
+      case SysMLOCPackage.PAYLOAD_PARAMETER__VIA_NODE_PARAMETER:
+        return VIA_NODE_PARAMETER_EDEFAULT == null ? viaNodeParameter != null : !VIA_NODE_PARAMETER_EDEFAULT.equals(viaNodeParameter);
     }
     return super.eIsSet(featureID);
   }
@@ -272,6 +328,8 @@ public class PayloadParameterImpl extends PayloadFeatureImpl implements PayloadP
     result.append(triggerkind);
     result.append(", triggerExpression: ");
     result.append(triggerExpression);
+    result.append(", viaNodeParameter: ");
+    result.append(viaNodeParameter);
     result.append(')');
     return result.toString();
   }

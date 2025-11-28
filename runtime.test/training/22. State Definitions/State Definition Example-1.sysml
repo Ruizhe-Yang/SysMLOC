@@ -5,13 +5,14 @@ package 'State Definition Example-1' {
 	attribute def VehicleOffSignal;
 		
 	state def VehicleStates {
-		entry; then off;
+		entry; 
+		then off;
 		
 		state off;
 		
 		transition off_to_starting
 			first off
-			accept VehicleStartSignal 
+			accept VehicleStartSignal
 			then starting;
 			
 		state starting;

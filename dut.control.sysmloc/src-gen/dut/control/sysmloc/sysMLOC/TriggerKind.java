@@ -21,6 +21,16 @@ import org.eclipse.emf.common.util.Enumerator;
 public enum TriggerKind implements Enumerator
 {
   /**
+   * The '<em><b>Null</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #NULL_VALUE
+   * @generated
+   * @ordered
+   */
+  NULL(0, "null", "NULLTrigger"),
+
+  /**
    * The '<em><b>At</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -28,7 +38,7 @@ public enum TriggerKind implements Enumerator
    * @generated
    * @ordered
    */
-  AT(0, "at", "at"),
+  AT(1, "at", "at"),
 
   /**
    * The '<em><b>After</b></em>' literal object.
@@ -38,7 +48,7 @@ public enum TriggerKind implements Enumerator
    * @generated
    * @ordered
    */
-  AFTER(1, "after", "after"),
+  AFTER(2, "after", "after"),
 
   /**
    * The '<em><b>When</b></em>' literal object.
@@ -48,7 +58,18 @@ public enum TriggerKind implements Enumerator
    * @generated
    * @ordered
    */
-  WHEN(2, "when", "when");
+  WHEN(3, "when", "when");
+
+  /**
+   * The '<em><b>Null</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #NULL
+   * @model name="null" literal="NULLTrigger"
+   * @generated
+   * @ordered
+   */
+  public static final int NULL_VALUE = 0;
 
   /**
    * The '<em><b>At</b></em>' literal value.
@@ -59,7 +80,7 @@ public enum TriggerKind implements Enumerator
    * @generated
    * @ordered
    */
-  public static final int AT_VALUE = 0;
+  public static final int AT_VALUE = 1;
 
   /**
    * The '<em><b>After</b></em>' literal value.
@@ -70,7 +91,7 @@ public enum TriggerKind implements Enumerator
    * @generated
    * @ordered
    */
-  public static final int AFTER_VALUE = 1;
+  public static final int AFTER_VALUE = 2;
 
   /**
    * The '<em><b>When</b></em>' literal value.
@@ -81,7 +102,7 @@ public enum TriggerKind implements Enumerator
    * @generated
    * @ordered
    */
-  public static final int WHEN_VALUE = 2;
+  public static final int WHEN_VALUE = 3;
 
   /**
    * An array of all the '<em><b>Trigger Kind</b></em>' enumerators.
@@ -92,6 +113,7 @@ public enum TriggerKind implements Enumerator
   private static final TriggerKind[] VALUES_ARRAY =
     new TriggerKind[]
     {
+      NULL,
       AT,
       AFTER,
       WHEN,
@@ -159,6 +181,7 @@ public enum TriggerKind implements Enumerator
   {
     switch (value)
     {
+      case NULL_VALUE: return NULL;
       case AT_VALUE: return AT;
       case AFTER_VALUE: return AFTER;
       case WHEN_VALUE: return WHEN;

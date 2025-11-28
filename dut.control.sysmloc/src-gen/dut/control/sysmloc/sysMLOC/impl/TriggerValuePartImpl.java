@@ -38,7 +38,7 @@ public class TriggerValuePartImpl extends MinimalEObjectImpl.Container implement
    * @generated
    * @ordered
    */
-  protected static final TriggerKind TRIGGERKIND_EDEFAULT = TriggerKind.AT;
+  protected static final TriggerKind TRIGGERKIND_EDEFAULT = TriggerKind.NULL;
 
   /**
    * The cached value of the '{@link #getTriggerkind() <em>Triggerkind</em>}' attribute.

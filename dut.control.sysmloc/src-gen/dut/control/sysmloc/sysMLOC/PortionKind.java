@@ -21,6 +21,16 @@ import org.eclipse.emf.common.util.Enumerator;
 public enum PortionKind implements Enumerator
 {
   /**
+   * The '<em><b>Null</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #NULL_VALUE
+   * @generated
+   * @ordered
+   */
+  NULL(0, "null", "NULLPortion"),
+
+  /**
    * The '<em><b>Snapshot</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -28,7 +38,7 @@ public enum PortionKind implements Enumerator
    * @generated
    * @ordered
    */
-  SNAPSHOT(0, "snapshot", "snapshot"),
+  SNAPSHOT(1, "snapshot", "snapshot"),
 
   /**
    * The '<em><b>Timeslice</b></em>' literal object.
@@ -38,7 +48,18 @@ public enum PortionKind implements Enumerator
    * @generated
    * @ordered
    */
-  TIMESLICE(1, "timeslice", "timeslice");
+  TIMESLICE(2, "timeslice", "timeslice");
+
+  /**
+   * The '<em><b>Null</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #NULL
+   * @model name="null" literal="NULLPortion"
+   * @generated
+   * @ordered
+   */
+  public static final int NULL_VALUE = 0;
 
   /**
    * The '<em><b>Snapshot</b></em>' literal value.
@@ -49,7 +70,7 @@ public enum PortionKind implements Enumerator
    * @generated
    * @ordered
    */
-  public static final int SNAPSHOT_VALUE = 0;
+  public static final int SNAPSHOT_VALUE = 1;
 
   /**
    * The '<em><b>Timeslice</b></em>' literal value.
@@ -60,7 +81,7 @@ public enum PortionKind implements Enumerator
    * @generated
    * @ordered
    */
-  public static final int TIMESLICE_VALUE = 1;
+  public static final int TIMESLICE_VALUE = 2;
 
   /**
    * An array of all the '<em><b>Portion Kind</b></em>' enumerators.
@@ -71,6 +92,7 @@ public enum PortionKind implements Enumerator
   private static final PortionKind[] VALUES_ARRAY =
     new PortionKind[]
     {
+      NULL,
       SNAPSHOT,
       TIMESLICE,
     };
@@ -137,6 +159,7 @@ public enum PortionKind implements Enumerator
   {
     switch (value)
     {
+      case NULL_VALUE: return NULL;
       case SNAPSHOT_VALUE: return SNAPSHOT;
       case TIMESLICE_VALUE: return TIMESLICE;
     }

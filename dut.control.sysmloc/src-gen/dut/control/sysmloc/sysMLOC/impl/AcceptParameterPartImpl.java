@@ -9,7 +9,6 @@ import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -17,7 +16,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -32,7 +30,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptParameterPartImpl#getAcceptParameter <em>Accept Parameter</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptParameterPartImpl#getViaNodeParameter <em>Via Node Parameter</em>}</li>
  * </ul>
  *
  * @generated
@@ -48,26 +45,6 @@ public class AcceptParameterPartImpl extends MinimalEObjectImpl.Container implem
    * @ordered
    */
   protected EList<PayloadParameter> acceptParameter;
-
-  /**
-   * The default value of the '{@link #getViaNodeParameter() <em>Via Node Parameter</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getViaNodeParameter()
-   * @generated
-   * @ordered
-   */
-  protected static final String VIA_NODE_PARAMETER_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getViaNodeParameter() <em>Via Node Parameter</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getViaNodeParameter()
-   * @generated
-   * @ordered
-   */
-  protected String viaNodeParameter = VIA_NODE_PARAMETER_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -111,31 +88,6 @@ public class AcceptParameterPartImpl extends MinimalEObjectImpl.Container implem
    * @generated
    */
   @Override
-  public String getViaNodeParameter()
-  {
-    return viaNodeParameter;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setViaNodeParameter(String newViaNodeParameter)
-  {
-    String oldViaNodeParameter = viaNodeParameter;
-    viaNodeParameter = newViaNodeParameter;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ACCEPT_PARAMETER_PART__VIA_NODE_PARAMETER, oldViaNodeParameter, viaNodeParameter));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -158,8 +110,6 @@ public class AcceptParameterPartImpl extends MinimalEObjectImpl.Container implem
     {
       case SysMLOCPackage.ACCEPT_PARAMETER_PART__ACCEPT_PARAMETER:
         return getAcceptParameter();
-      case SysMLOCPackage.ACCEPT_PARAMETER_PART__VIA_NODE_PARAMETER:
-        return getViaNodeParameter();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -179,9 +129,6 @@ public class AcceptParameterPartImpl extends MinimalEObjectImpl.Container implem
         getAcceptParameter().clear();
         getAcceptParameter().addAll((Collection<? extends PayloadParameter>)newValue);
         return;
-      case SysMLOCPackage.ACCEPT_PARAMETER_PART__VIA_NODE_PARAMETER:
-        setViaNodeParameter((String)newValue);
-        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -199,9 +146,6 @@ public class AcceptParameterPartImpl extends MinimalEObjectImpl.Container implem
       case SysMLOCPackage.ACCEPT_PARAMETER_PART__ACCEPT_PARAMETER:
         getAcceptParameter().clear();
         return;
-      case SysMLOCPackage.ACCEPT_PARAMETER_PART__VIA_NODE_PARAMETER:
-        setViaNodeParameter(VIA_NODE_PARAMETER_EDEFAULT);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -218,27 +162,8 @@ public class AcceptParameterPartImpl extends MinimalEObjectImpl.Container implem
     {
       case SysMLOCPackage.ACCEPT_PARAMETER_PART__ACCEPT_PARAMETER:
         return acceptParameter != null && !acceptParameter.isEmpty();
-      case SysMLOCPackage.ACCEPT_PARAMETER_PART__VIA_NODE_PARAMETER:
-        return VIA_NODE_PARAMETER_EDEFAULT == null ? viaNodeParameter != null : !VIA_NODE_PARAMETER_EDEFAULT.equals(viaNodeParameter);
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (ViaNodeParameter: ");
-    result.append(viaNodeParameter);
-    result.append(')');
-    return result.toString();
   }
 
 } //AcceptParameterPartImpl

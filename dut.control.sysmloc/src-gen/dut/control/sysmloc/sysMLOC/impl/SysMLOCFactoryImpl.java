@@ -3,6 +3,7 @@
  */
 package dut.control.sysmloc.sysMLOC.impl;
 
+import dut.control.sysmloc.sysMLOC.AcceptActionUsage;
 import dut.control.sysmloc.sysMLOC.AcceptNode;
 import dut.control.sysmloc.sysMLOC.AcceptNodeDeclaration;
 import dut.control.sysmloc.sysMLOC.AcceptParameterPart;
@@ -18,6 +19,7 @@ import dut.control.sysmloc.sysMLOC.ActionUsageDeclaration;
 import dut.control.sysmloc.sysMLOC.AliasElement;
 import dut.control.sysmloc.sysMLOC.AnnotatingBodyElement;
 import dut.control.sysmloc.sysMLOC.AnnotatingElement;
+import dut.control.sysmloc.sysMLOC.AssignmentActionUsage;
 import dut.control.sysmloc.sysMLOC.AssignmentNode;
 import dut.control.sysmloc.sysMLOC.AssignmentNodeDeclaration;
 import dut.control.sysmloc.sysMLOC.AttributeDefinition;
@@ -40,14 +42,21 @@ import dut.control.sysmloc.sysMLOC.DefinitionBodyElement;
 import dut.control.sysmloc.sysMLOC.DefinitionDeclaration;
 import dut.control.sysmloc.sysMLOC.DefinitionElement;
 import dut.control.sysmloc.sysMLOC.DefinitionPrefix;
+import dut.control.sysmloc.sysMLOC.DoActionNode;
+import dut.control.sysmloc.sysMLOC.DoActionNodeElement;
 import dut.control.sysmloc.sysMLOC.Documentation;
 import dut.control.sysmloc.sysMLOC.EmptySuccessionPrefix;
 import dut.control.sysmloc.sysMLOC.EndUsagePrefix;
+import dut.control.sysmloc.sysMLOC.EntryAction;
+import dut.control.sysmloc.sysMLOC.EntryActionNodeElement;
 import dut.control.sysmloc.sysMLOC.EnumeratedValue;
 import dut.control.sysmloc.sysMLOC.EnumerationBodyElement;
 import dut.control.sysmloc.sysMLOC.EnumerationDefinition;
 import dut.control.sysmloc.sysMLOC.EnumerationElement;
 import dut.control.sysmloc.sysMLOC.EnumerationUsage;
+import dut.control.sysmloc.sysMLOC.ExhibitStateUsage;
+import dut.control.sysmloc.sysMLOC.ExitActionNode;
+import dut.control.sysmloc.sysMLOC.ExitActionNodeElement;
 import dut.control.sysmloc.sysMLOC.FeatureDeclaration;
 import dut.control.sysmloc.sysMLOC.FeatureDirection;
 import dut.control.sysmloc.sysMLOC.FeatureSpecialization;
@@ -58,10 +67,8 @@ import dut.control.sysmloc.sysMLOC.FlowConnectionUsage;
 import dut.control.sysmloc.sysMLOC.ForLoopNode;
 import dut.control.sysmloc.sysMLOC.ForVariableParameter;
 import dut.control.sysmloc.sysMLOC.ForkNode;
-import dut.control.sysmloc.sysMLOC.GuardExpression;
 import dut.control.sysmloc.sysMLOC.GuardedSuccessionElement;
 import dut.control.sysmloc.sysMLOC.GuardedSuccessionNodeElement;
-import dut.control.sysmloc.sysMLOC.GuardedTargetSuccession;
 import dut.control.sysmloc.sysMLOC.Identification;
 import dut.control.sysmloc.sysMLOC.IfNode;
 import dut.control.sysmloc.sysMLOC.ImportElement;
@@ -91,13 +98,21 @@ import dut.control.sysmloc.sysMLOC.PayloadFeature;
 import dut.control.sysmloc.sysMLOC.PayloadFeatureSpecializationPart;
 import dut.control.sysmloc.sysMLOC.PayloadParameter;
 import dut.control.sysmloc.sysMLOC.PerformActionUsage;
+import dut.control.sysmloc.sysMLOC.PerformActionUsageDeclaration;
+import dut.control.sysmloc.sysMLOC.PerformedActionParameterPart;
+import dut.control.sysmloc.sysMLOC.PerformedActionUsage;
 import dut.control.sysmloc.sysMLOC.PortDefinition;
 import dut.control.sysmloc.sysMLOC.PortUsage;
 import dut.control.sysmloc.sysMLOC.PortionKind;
 import dut.control.sysmloc.sysMLOC.RefPrefix;
 import dut.control.sysmloc.sysMLOC.ReferenceSubsetting;
 import dut.control.sysmloc.sysMLOC.ReferenceUsage;
+import dut.control.sysmloc.sysMLOC.SendActionUsage;
 import dut.control.sysmloc.sysMLOC.SendNode;
+import dut.control.sysmloc.sysMLOC.SendNodeDeclaration;
+import dut.control.sysmloc.sysMLOC.StateBodyElement;
+import dut.control.sysmloc.sysMLOC.StateDefinition;
+import dut.control.sysmloc.sysMLOC.StateUsage;
 import dut.control.sysmloc.sysMLOC.StructureUsageElement;
 import dut.control.sysmloc.sysMLOC.SuccessionAsUsage;
 import dut.control.sysmloc.sysMLOC.SuccessionFlowConnectionUsage;
@@ -109,6 +124,8 @@ import dut.control.sysmloc.sysMLOC.TargetSuccessionNodeElement;
 import dut.control.sysmloc.sysMLOC.TerminateNode;
 import dut.control.sysmloc.sysMLOC.TextualRepresentation;
 import dut.control.sysmloc.sysMLOC.TransitionSuccession;
+import dut.control.sysmloc.sysMLOC.TransitionUsage;
+import dut.control.sysmloc.sysMLOC.TransitionUsageElement;
 import dut.control.sysmloc.sysMLOC.TriggerKind;
 import dut.control.sysmloc.sysMLOC.TriggerValuePart;
 import dut.control.sysmloc.sysMLOC.UnextendedUsagePrefix;
@@ -190,6 +207,7 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
       case SysMLOCPackage.INTERFACE_BODY_ELEMENT: return createInterfaceBodyElement();
       case SysMLOCPackage.ENUMERATION_BODY_ELEMENT: return createEnumerationBodyElement();
       case SysMLOCPackage.ACTION_BODY_ELEMENT: return createActionBodyElement();
+      case SysMLOCPackage.STATE_BODY_ELEMENT: return createStateBodyElement();
       case SysMLOCPackage.ANNOTATING_BODY_ELEMENT: return createAnnotatingBodyElement();
       case SysMLOCPackage.ACTION_NODE_BODY_ELEMENT: return createActionNodeBodyElement();
       case SysMLOCPackage.ANNOTATING_ELEMENT: return createAnnotatingElement();
@@ -205,6 +223,10 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
       case SysMLOCPackage.ACTION_NODE_ELEMENT: return createActionNodeElement();
       case SysMLOCPackage.GUARDED_SUCCESSION_NODE_ELEMENT: return createGuardedSuccessionNodeElement();
       case SysMLOCPackage.TARGET_SUCCESSION_NODE_ELEMENT: return createTargetSuccessionNodeElement();
+      case SysMLOCPackage.TRANSITION_USAGE_ELEMENT: return createTransitionUsageElement();
+      case SysMLOCPackage.ENTRY_ACTION_NODE_ELEMENT: return createEntryActionNodeElement();
+      case SysMLOCPackage.DO_ACTION_NODE_ELEMENT: return createDoActionNodeElement();
+      case SysMLOCPackage.EXIT_ACTION_NODE_ELEMENT: return createExitActionNodeElement();
       case SysMLOCPackage.NAMESPACE_IMPORT: return createNamespaceImport();
       case SysMLOCPackage.MEMBERSHIP_IMPORT: return createMembershipImport();
       case SysMLOCPackage.CODE_ANNOTATION: return createCodeAnnotation();
@@ -235,7 +257,11 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
       case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE: return createSuccessionFlowConnectionUsage();
       case SysMLOCPackage.ACTION_DEFINITION: return createActionDefinition();
       case SysMLOCPackage.ACTION_USAGE: return createActionUsage();
+      case SysMLOCPackage.STATE_DEFINITION: return createStateDefinition();
+      case SysMLOCPackage.STATE_USAGE: return createStateUsage();
+      case SysMLOCPackage.TRANSITION_USAGE: return createTransitionUsage();
       case SysMLOCPackage.PERFORM_ACTION_USAGE: return createPerformActionUsage();
+      case SysMLOCPackage.EXHIBIT_STATE_USAGE: return createExhibitStateUsage();
       case SysMLOCPackage.ALIAS_ELEMENT: return createAliasElement();
       case SysMLOCPackage.CONNECTOR_END: return createConnectorEnd();
       case SysMLOCPackage.INITIAL_NODE: return createInitialNode();
@@ -255,6 +281,11 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
       case SysMLOCPackage.TERMINATE_NODE: return createTerminateNode();
       case SysMLOCPackage.GUARDED_SUCCESSION_ELEMENT: return createGuardedSuccessionElement();
       case SysMLOCPackage.TARGET_SUCCESSION_ELEMENT: return createTargetSuccessionElement();
+      case SysMLOCPackage.ENTRY_ACTION: return createEntryAction();
+      case SysMLOCPackage.DO_ACTION_NODE: return createDoActionNode();
+      case SysMLOCPackage.EXIT_ACTION_NODE: return createExitActionNode();
+      case SysMLOCPackage.PERFORMED_ACTION_PARAMETER_PART: return createPerformedActionParameterPart();
+      case SysMLOCPackage.PERFORMED_ACTION_USAGE: return createPerformedActionUsage();
       case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX: return createEmptySuccessionPrefix();
       case SysMLOCPackage.MULTIPLICITY_RANGE: return createMultiplicityRange();
       case SysMLOCPackage.VALUE_PART: return createValuePart();
@@ -277,23 +308,26 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
       case SysMLOCPackage.FEATURE_VALUE: return createFeatureValue();
       case SysMLOCPackage.FEATURE_DECLARATION: return createFeatureDeclaration();
       case SysMLOCPackage.FEATURE_SPECIALIZATION_PART: return createFeatureSpecializationPart();
+      case SysMLOCPackage.PERFORM_ACTION_USAGE_DECLARATION: return createPerformActionUsageDeclaration();
       case SysMLOCPackage.ACCEPT_NODE_DECLARATION: return createAcceptNodeDeclaration();
       case SysMLOCPackage.ACCEPT_PARAMETER_PART: return createAcceptParameterPart();
       case SysMLOCPackage.PAYLOAD_FEATURE: return createPayloadFeature();
       case SysMLOCPackage.PAYLOAD_FEATURE_SPECIALIZATION_PART: return createPayloadFeatureSpecializationPart();
       case SysMLOCPackage.TRIGGER_VALUE_PART: return createTriggerValuePart();
+      case SysMLOCPackage.SEND_NODE_DECLARATION: return createSendNodeDeclaration();
       case SysMLOCPackage.ASSIGNMENT_NODE_DECLARATION: return createAssignmentNodeDeclaration();
       case SysMLOCPackage.IDENTIFICATION: return createIdentification();
       case SysMLOCPackage.MULTIPLICITY_PART: return createMultiplicityPart();
       case SysMLOCPackage.FEATURE_SPECIALIZATION: return createFeatureSpecialization();
-      case SysMLOCPackage.GUARD_EXPRESSION: return createGuardExpression();
       case SysMLOCPackage.TRANSITION_SUCCESSION: return createTransitionSuccession();
       case SysMLOCPackage.TARGET_SUCCESSION: return createTargetSuccession();
-      case SysMLOCPackage.GUARDED_TARGET_SUCCESSION: return createGuardedTargetSuccession();
       case SysMLOCPackage.DEFAULT_TARGET_SUCCESSION: return createDefaultTargetSuccession();
       case SysMLOCPackage.REFERENCE_SUBSETTING: return createReferenceSubsetting();
       case SysMLOCPackage.ACTION_NODE_PREFIX: return createActionNodePrefix();
       case SysMLOCPackage.CONTROL_NODE_PREFIX: return createControlNodePrefix();
+      case SysMLOCPackage.ACCEPT_ACTION_USAGE: return createAcceptActionUsage();
+      case SysMLOCPackage.SEND_ACTION_USAGE: return createSendActionUsage();
+      case SysMLOCPackage.ASSIGNMENT_ACTION_USAGE: return createAssignmentActionUsage();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -439,6 +473,18 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
   {
     ActionBodyElementImpl actionBodyElement = new ActionBodyElementImpl();
     return actionBodyElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public StateBodyElement createStateBodyElement()
+  {
+    StateBodyElementImpl stateBodyElement = new StateBodyElementImpl();
+    return stateBodyElement;
   }
 
   /**
@@ -619,6 +665,54 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
   {
     TargetSuccessionNodeElementImpl targetSuccessionNodeElement = new TargetSuccessionNodeElementImpl();
     return targetSuccessionNodeElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TransitionUsageElement createTransitionUsageElement()
+  {
+    TransitionUsageElementImpl transitionUsageElement = new TransitionUsageElementImpl();
+    return transitionUsageElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EntryActionNodeElement createEntryActionNodeElement()
+  {
+    EntryActionNodeElementImpl entryActionNodeElement = new EntryActionNodeElementImpl();
+    return entryActionNodeElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public DoActionNodeElement createDoActionNodeElement()
+  {
+    DoActionNodeElementImpl doActionNodeElement = new DoActionNodeElementImpl();
+    return doActionNodeElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ExitActionNodeElement createExitActionNodeElement()
+  {
+    ExitActionNodeElementImpl exitActionNodeElement = new ExitActionNodeElementImpl();
+    return exitActionNodeElement;
   }
 
   /**
@@ -987,10 +1081,58 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
    * @generated
    */
   @Override
+  public StateDefinition createStateDefinition()
+  {
+    StateDefinitionImpl stateDefinition = new StateDefinitionImpl();
+    return stateDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public StateUsage createStateUsage()
+  {
+    StateUsageImpl stateUsage = new StateUsageImpl();
+    return stateUsage;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TransitionUsage createTransitionUsage()
+  {
+    TransitionUsageImpl transitionUsage = new TransitionUsageImpl();
+    return transitionUsage;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public PerformActionUsage createPerformActionUsage()
   {
     PerformActionUsageImpl performActionUsage = new PerformActionUsageImpl();
     return performActionUsage;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ExhibitStateUsage createExhibitStateUsage()
+  {
+    ExhibitStateUsageImpl exhibitStateUsage = new ExhibitStateUsageImpl();
+    return exhibitStateUsage;
   }
 
   /**
@@ -1219,6 +1361,66 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
   {
     TargetSuccessionElementImpl targetSuccessionElement = new TargetSuccessionElementImpl();
     return targetSuccessionElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EntryAction createEntryAction()
+  {
+    EntryActionImpl entryAction = new EntryActionImpl();
+    return entryAction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public DoActionNode createDoActionNode()
+  {
+    DoActionNodeImpl doActionNode = new DoActionNodeImpl();
+    return doActionNode;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ExitActionNode createExitActionNode()
+  {
+    ExitActionNodeImpl exitActionNode = new ExitActionNodeImpl();
+    return exitActionNode;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PerformedActionParameterPart createPerformedActionParameterPart()
+  {
+    PerformedActionParameterPartImpl performedActionParameterPart = new PerformedActionParameterPartImpl();
+    return performedActionParameterPart;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PerformedActionUsage createPerformedActionUsage()
+  {
+    PerformedActionUsageImpl performedActionUsage = new PerformedActionUsageImpl();
+    return performedActionUsage;
   }
 
   /**
@@ -1491,6 +1693,18 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
    * @generated
    */
   @Override
+  public PerformActionUsageDeclaration createPerformActionUsageDeclaration()
+  {
+    PerformActionUsageDeclarationImpl performActionUsageDeclaration = new PerformActionUsageDeclarationImpl();
+    return performActionUsageDeclaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public AcceptNodeDeclaration createAcceptNodeDeclaration()
   {
     AcceptNodeDeclarationImpl acceptNodeDeclaration = new AcceptNodeDeclarationImpl();
@@ -1551,6 +1765,18 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
    * @generated
    */
   @Override
+  public SendNodeDeclaration createSendNodeDeclaration()
+  {
+    SendNodeDeclarationImpl sendNodeDeclaration = new SendNodeDeclarationImpl();
+    return sendNodeDeclaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public AssignmentNodeDeclaration createAssignmentNodeDeclaration()
   {
     AssignmentNodeDeclarationImpl assignmentNodeDeclaration = new AssignmentNodeDeclarationImpl();
@@ -1599,18 +1825,6 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
    * @generated
    */
   @Override
-  public GuardExpression createGuardExpression()
-  {
-    GuardExpressionImpl guardExpression = new GuardExpressionImpl();
-    return guardExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public TransitionSuccession createTransitionSuccession()
   {
     TransitionSuccessionImpl transitionSuccession = new TransitionSuccessionImpl();
@@ -1627,18 +1841,6 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
   {
     TargetSuccessionImpl targetSuccession = new TargetSuccessionImpl();
     return targetSuccession;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public GuardedTargetSuccession createGuardedTargetSuccession()
-  {
-    GuardedTargetSuccessionImpl guardedTargetSuccession = new GuardedTargetSuccessionImpl();
-    return guardedTargetSuccession;
   }
 
   /**
@@ -1687,6 +1889,42 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
   {
     ControlNodePrefixImpl controlNodePrefix = new ControlNodePrefixImpl();
     return controlNodePrefix;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public AcceptActionUsage createAcceptActionUsage()
+  {
+    AcceptActionUsageImpl acceptActionUsage = new AcceptActionUsageImpl();
+    return acceptActionUsage;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SendActionUsage createSendActionUsage()
+  {
+    SendActionUsageImpl sendActionUsage = new SendActionUsageImpl();
+    return sendActionUsage;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public AssignmentActionUsage createAssignmentActionUsage()
+  {
+    AssignmentActionUsageImpl assignmentActionUsage = new AssignmentActionUsageImpl();
+    return assignmentActionUsage;
   }
 
   /**

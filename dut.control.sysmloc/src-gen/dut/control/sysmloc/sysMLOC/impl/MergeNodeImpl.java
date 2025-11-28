@@ -109,7 +109,7 @@ public class MergeNodeImpl extends ActionNodeElementImpl implements MergeNode
    * @generated
    * @ordered
    */
-  protected static final VisibilityIndicator VISIBILITY_EDEFAULT = VisibilityIndicator.PUBLIC;
+  protected static final VisibilityIndicator VISIBILITY_EDEFAULT = VisibilityIndicator.NULL;
 
   /**
    * The cached value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
@@ -129,7 +129,7 @@ public class MergeNodeImpl extends ActionNodeElementImpl implements MergeNode
    * @generated
    * @ordered
    */
-  protected static final FeatureDirection DIRECTION_EDEFAULT = FeatureDirection.INOUT;
+  protected static final FeatureDirection DIRECTION_EDEFAULT = FeatureDirection.NULL;
 
   /**
    * The cached value of the '{@link #getDirection() <em>Direction</em>}' attribute.
@@ -249,7 +249,7 @@ public class MergeNodeImpl extends ActionNodeElementImpl implements MergeNode
    * @generated
    * @ordered
    */
-  protected static final PortionKind PORTION_KIND_EDEFAULT = PortionKind.SNAPSHOT;
+  protected static final PortionKind PORTION_KIND_EDEFAULT = PortionKind.NULL;
 
   /**
    * The cached value of the '{@link #getPortionKind() <em>Portion Kind</em>}' attribute.

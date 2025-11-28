@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface PerformActionUsage extends BehaviorUsageElement, EmptySuccessionPrefix, MemberPrefix, OccurrenceUsagePrefix, BasicUsagePrefix, RefPrefix, ReferenceSubsetting, FeatureSpecializationPart, FeatureSpecialization, MultiplicityPart, MultiplicityRange, UsageDeclaration, FeatureDeclaration, ValuePart, FeatureValue
+public interface PerformActionUsage extends BehaviorUsageElement, EmptySuccessionPrefix, MemberPrefix, OccurrenceUsagePrefix, BasicUsagePrefix, RefPrefix, ReferenceSubsetting, FeatureSpecializationPart, FeatureSpecialization, MultiplicityPart, MultiplicityRange, UsageDeclaration, FeatureDeclaration, ValuePart, FeatureValue, PerformedActionUsage
 {
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.

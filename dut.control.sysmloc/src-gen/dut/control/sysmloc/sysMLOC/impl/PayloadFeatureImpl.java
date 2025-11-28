@@ -4,7 +4,6 @@
 package dut.control.sysmloc.sysMLOC.impl;
 
 import dut.control.sysmloc.sysMLOC.FeatureSpecialization;
-import dut.control.sysmloc.sysMLOC.FeatureSpecializationPart;
 import dut.control.sysmloc.sysMLOC.FeatureValue;
 import dut.control.sysmloc.sysMLOC.MultiplicityPart;
 import dut.control.sysmloc.sysMLOC.MultiplicityRange;
@@ -44,6 +43,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PayloadFeatureImpl#isIsInitial <em>Is Initial</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PayloadFeatureImpl#isIsDefault <em>Is Default</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PayloadFeatureImpl#getValuePart <em>Value Part</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PayloadFeatureImpl#getPayloadFeatureElement <em>Payload Feature Element</em>}</li>
  * </ul>
  *
  * @generated
@@ -199,6 +199,26 @@ public class PayloadFeatureImpl extends IdentificationImpl implements PayloadFea
    * @ordered
    */
   protected EList<String> valuePart;
+
+  /**
+   * The default value of the '{@link #getPayloadFeatureElement() <em>Payload Feature Element</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPayloadFeatureElement()
+   * @generated
+   * @ordered
+   */
+  protected static final String PAYLOAD_FEATURE_ELEMENT_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getPayloadFeatureElement() <em>Payload Feature Element</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPayloadFeatureElement()
+   * @generated
+   * @ordered
+   */
+  protected String payloadFeatureElement = PAYLOAD_FEATURE_ELEMENT_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -432,6 +452,31 @@ public class PayloadFeatureImpl extends IdentificationImpl implements PayloadFea
    * @generated
    */
   @Override
+  public String getPayloadFeatureElement()
+  {
+    return payloadFeatureElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setPayloadFeatureElement(String newPayloadFeatureElement)
+  {
+    String oldPayloadFeatureElement = payloadFeatureElement;
+    payloadFeatureElement = newPayloadFeatureElement;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.PAYLOAD_FEATURE__PAYLOAD_FEATURE_ELEMENT, oldPayloadFeatureElement, payloadFeatureElement));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
@@ -458,6 +503,8 @@ public class PayloadFeatureImpl extends IdentificationImpl implements PayloadFea
         return isIsDefault();
       case SysMLOCPackage.PAYLOAD_FEATURE__VALUE_PART:
         return getValuePart();
+      case SysMLOCPackage.PAYLOAD_FEATURE__PAYLOAD_FEATURE_ELEMENT:
+        return getPayloadFeatureElement();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -513,6 +560,9 @@ public class PayloadFeatureImpl extends IdentificationImpl implements PayloadFea
         getValuePart().clear();
         getValuePart().addAll((Collection<? extends String>)newValue);
         return;
+      case SysMLOCPackage.PAYLOAD_FEATURE__PAYLOAD_FEATURE_ELEMENT:
+        setPayloadFeatureElement((String)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -560,6 +610,9 @@ public class PayloadFeatureImpl extends IdentificationImpl implements PayloadFea
       case SysMLOCPackage.PAYLOAD_FEATURE__VALUE_PART:
         getValuePart().clear();
         return;
+      case SysMLOCPackage.PAYLOAD_FEATURE__PAYLOAD_FEATURE_ELEMENT:
+        setPayloadFeatureElement(PAYLOAD_FEATURE_ELEMENT_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -596,6 +649,8 @@ public class PayloadFeatureImpl extends IdentificationImpl implements PayloadFea
         return isDefault != IS_DEFAULT_EDEFAULT;
       case SysMLOCPackage.PAYLOAD_FEATURE__VALUE_PART:
         return valuePart != null && !valuePart.isEmpty();
+      case SysMLOCPackage.PAYLOAD_FEATURE__PAYLOAD_FEATURE_ELEMENT:
+        return PAYLOAD_FEATURE_ELEMENT_EDEFAULT == null ? payloadFeatureElement != null : !PAYLOAD_FEATURE_ELEMENT_EDEFAULT.equals(payloadFeatureElement);
     }
     return super.eIsSet(featureID);
   }
@@ -634,13 +689,6 @@ public class PayloadFeatureImpl extends IdentificationImpl implements PayloadFea
       {
         case SysMLOCPackage.PAYLOAD_FEATURE__IS_ORDERED: return SysMLOCPackage.MULTIPLICITY_PART__IS_ORDERED;
         case SysMLOCPackage.PAYLOAD_FEATURE__IS_NONUNIQUE: return SysMLOCPackage.MULTIPLICITY_PART__IS_NONUNIQUE;
-        default: return -1;
-      }
-    }
-    if (baseClass == FeatureSpecializationPart.class)
-    {
-      switch (derivedFeatureID)
-      {
         default: return -1;
       }
     }
@@ -708,13 +756,6 @@ public class PayloadFeatureImpl extends IdentificationImpl implements PayloadFea
         default: return -1;
       }
     }
-    if (baseClass == FeatureSpecializationPart.class)
-    {
-      switch (baseFeatureID)
-      {
-        default: return -1;
-      }
-    }
     if (baseClass == PayloadFeatureSpecializationPart.class)
     {
       switch (baseFeatureID)
@@ -775,6 +816,8 @@ public class PayloadFeatureImpl extends IdentificationImpl implements PayloadFea
     result.append(isDefault);
     result.append(", valuePart: ");
     result.append(valuePart);
+    result.append(", payloadFeatureElement: ");
+    result.append(payloadFeatureElement);
     result.append(')');
     return result.toString();
   }

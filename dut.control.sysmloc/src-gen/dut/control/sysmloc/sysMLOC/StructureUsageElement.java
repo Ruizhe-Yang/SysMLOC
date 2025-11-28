@@ -14,6 +14,6 @@ package dut.control.sysmloc.sysMLOC;
  * @model
  * @generated
  */
-public interface StructureUsageElement extends ActionBodyElement, OccurrenceUsageElement
+public interface StructureUsageElement extends ActionBodyElement, StateBodyElement, OccurrenceUsageElement
 {
 } // StructureUsageElement

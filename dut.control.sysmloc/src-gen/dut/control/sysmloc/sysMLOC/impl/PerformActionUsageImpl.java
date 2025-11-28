@@ -3,7 +3,11 @@
  */
 package dut.control.sysmloc.sysMLOC.impl;
 
+import dut.control.sysmloc.sysMLOC.AcceptNodeDeclaration;
+import dut.control.sysmloc.sysMLOC.AcceptParameterPart;
 import dut.control.sysmloc.sysMLOC.ActionBodyElement;
+import dut.control.sysmloc.sysMLOC.ActionNodeUsageDeclaration;
+import dut.control.sysmloc.sysMLOC.AssignmentNodeDeclaration;
 import dut.control.sysmloc.sysMLOC.BasicUsagePrefix;
 import dut.control.sysmloc.sysMLOC.EmptySuccessionPrefix;
 import dut.control.sysmloc.sysMLOC.FeatureDeclaration;
@@ -15,10 +19,14 @@ import dut.control.sysmloc.sysMLOC.MemberPrefix;
 import dut.control.sysmloc.sysMLOC.MultiplicityPart;
 import dut.control.sysmloc.sysMLOC.MultiplicityRange;
 import dut.control.sysmloc.sysMLOC.OccurrenceUsagePrefix;
+import dut.control.sysmloc.sysMLOC.PayloadParameter;
 import dut.control.sysmloc.sysMLOC.PerformActionUsage;
+import dut.control.sysmloc.sysMLOC.PerformActionUsageDeclaration;
+import dut.control.sysmloc.sysMLOC.PerformedActionUsage;
 import dut.control.sysmloc.sysMLOC.PortionKind;
 import dut.control.sysmloc.sysMLOC.RefPrefix;
 import dut.control.sysmloc.sysMLOC.ReferenceSubsetting;
+import dut.control.sysmloc.sysMLOC.SendNodeDeclaration;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 import dut.control.sysmloc.sysMLOC.UsageDeclaration;
 import dut.control.sysmloc.sysMLOC.ValuePart;
@@ -73,6 +81,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PerformActionUsageImpl#isIsInitial <em>Is Initial</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PerformActionUsageImpl#isIsDefault <em>Is Default</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PerformActionUsageImpl#getValuePart <em>Value Part</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PerformActionUsageImpl#getReferencedFeature <em>Referenced Feature</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PerformActionUsageImpl#getAcceptParameter <em>Accept Parameter</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PerformActionUsageImpl#isSendNodeParameter <em>Send Node Parameter</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PerformActionUsageImpl#getViaNodeParameter <em>Via Node Parameter</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PerformActionUsageImpl#getToNodeParameter <em>To Node Parameter</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PerformActionUsageImpl#getTargetParameter <em>Target Parameter</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PerformActionUsageImpl#getFeatureChain <em>Feature Chain</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PerformActionUsageImpl#getNodeParameter <em>Node Parameter</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PerformActionUsageImpl#getElements <em>Elements</em>}</li>
  * </ul>
  *
@@ -118,7 +134,7 @@ public class PerformActionUsageImpl extends BehaviorUsageElementImpl implements 
    * @generated
    * @ordered
    */
-  protected static final VisibilityIndicator VISIBILITY_EDEFAULT = VisibilityIndicator.PUBLIC;
+  protected static final VisibilityIndicator VISIBILITY_EDEFAULT = VisibilityIndicator.NULL;
 
   /**
    * The cached value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
@@ -138,7 +154,7 @@ public class PerformActionUsageImpl extends BehaviorUsageElementImpl implements 
    * @generated
    * @ordered
    */
-  protected static final FeatureDirection DIRECTION_EDEFAULT = FeatureDirection.INOUT;
+  protected static final FeatureDirection DIRECTION_EDEFAULT = FeatureDirection.NULL;
 
   /**
    * The cached value of the '{@link #getDirection() <em>Direction</em>}' attribute.
@@ -298,7 +314,7 @@ public class PerformActionUsageImpl extends BehaviorUsageElementImpl implements 
    * @generated
    * @ordered
    */
-  protected static final PortionKind PORTION_KIND_EDEFAULT = PortionKind.SNAPSHOT;
+  protected static final PortionKind PORTION_KIND_EDEFAULT = PortionKind.NULL;
 
   /**
    * The cached value of the '{@link #getPortionKind() <em>Portion Kind</em>}' attribute.
@@ -499,6 +515,156 @@ public class PerformActionUsageImpl extends BehaviorUsageElementImpl implements 
    * @ordered
    */
   protected EList<String> valuePart;
+
+  /**
+   * The default value of the '{@link #getReferencedFeature() <em>Referenced Feature</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getReferencedFeature()
+   * @generated
+   * @ordered
+   */
+  protected static final String REFERENCED_FEATURE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getReferencedFeature() <em>Referenced Feature</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getReferencedFeature()
+   * @generated
+   * @ordered
+   */
+  protected String referencedFeature = REFERENCED_FEATURE_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getAcceptParameter() <em>Accept Parameter</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAcceptParameter()
+   * @generated
+   * @ordered
+   */
+  protected EList<PayloadParameter> acceptParameter;
+
+  /**
+   * The default value of the '{@link #isSendNodeParameter() <em>Send Node Parameter</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isSendNodeParameter()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean SEND_NODE_PARAMETER_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isSendNodeParameter() <em>Send Node Parameter</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isSendNodeParameter()
+   * @generated
+   * @ordered
+   */
+  protected boolean sendNodeParameter = SEND_NODE_PARAMETER_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getViaNodeParameter() <em>Via Node Parameter</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getViaNodeParameter()
+   * @generated
+   * @ordered
+   */
+  protected static final String VIA_NODE_PARAMETER_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getViaNodeParameter() <em>Via Node Parameter</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getViaNodeParameter()
+   * @generated
+   * @ordered
+   */
+  protected String viaNodeParameter = VIA_NODE_PARAMETER_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getToNodeParameter() <em>To Node Parameter</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getToNodeParameter()
+   * @generated
+   * @ordered
+   */
+  protected static final String TO_NODE_PARAMETER_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getToNodeParameter() <em>To Node Parameter</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getToNodeParameter()
+   * @generated
+   * @ordered
+   */
+  protected String toNodeParameter = TO_NODE_PARAMETER_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getTargetParameter() <em>Target Parameter</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTargetParameter()
+   * @generated
+   * @ordered
+   */
+  protected static final String TARGET_PARAMETER_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getTargetParameter() <em>Target Parameter</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTargetParameter()
+   * @generated
+   * @ordered
+   */
+  protected String targetParameter = TARGET_PARAMETER_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getFeatureChain() <em>Feature Chain</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFeatureChain()
+   * @generated
+   * @ordered
+   */
+  protected static final String FEATURE_CHAIN_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getFeatureChain() <em>Feature Chain</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFeatureChain()
+   * @generated
+   * @ordered
+   */
+  protected String featureChain = FEATURE_CHAIN_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getNodeParameter() <em>Node Parameter</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getNodeParameter()
+   * @generated
+   * @ordered
+   */
+  protected static final String NODE_PARAMETER_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getNodeParameter() <em>Node Parameter</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getNodeParameter()
+   * @generated
+   * @ordered
+   */
+  protected String nodeParameter = NODE_PARAMETER_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
@@ -1082,6 +1248,196 @@ public class PerformActionUsageImpl extends BehaviorUsageElementImpl implements 
    * @generated
    */
   @Override
+  public String getReferencedFeature()
+  {
+    return referencedFeature;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setReferencedFeature(String newReferencedFeature)
+  {
+    String oldReferencedFeature = referencedFeature;
+    referencedFeature = newReferencedFeature;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.PERFORM_ACTION_USAGE__REFERENCED_FEATURE, oldReferencedFeature, referencedFeature));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<PayloadParameter> getAcceptParameter()
+  {
+    if (acceptParameter == null)
+    {
+      acceptParameter = new EObjectContainmentEList<PayloadParameter>(PayloadParameter.class, this, SysMLOCPackage.PERFORM_ACTION_USAGE__ACCEPT_PARAMETER);
+    }
+    return acceptParameter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isSendNodeParameter()
+  {
+    return sendNodeParameter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setSendNodeParameter(boolean newSendNodeParameter)
+  {
+    boolean oldSendNodeParameter = sendNodeParameter;
+    sendNodeParameter = newSendNodeParameter;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.PERFORM_ACTION_USAGE__SEND_NODE_PARAMETER, oldSendNodeParameter, sendNodeParameter));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getViaNodeParameter()
+  {
+    return viaNodeParameter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setViaNodeParameter(String newViaNodeParameter)
+  {
+    String oldViaNodeParameter = viaNodeParameter;
+    viaNodeParameter = newViaNodeParameter;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.PERFORM_ACTION_USAGE__VIA_NODE_PARAMETER, oldViaNodeParameter, viaNodeParameter));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getToNodeParameter()
+  {
+    return toNodeParameter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setToNodeParameter(String newToNodeParameter)
+  {
+    String oldToNodeParameter = toNodeParameter;
+    toNodeParameter = newToNodeParameter;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.PERFORM_ACTION_USAGE__TO_NODE_PARAMETER, oldToNodeParameter, toNodeParameter));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getTargetParameter()
+  {
+    return targetParameter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setTargetParameter(String newTargetParameter)
+  {
+    String oldTargetParameter = targetParameter;
+    targetParameter = newTargetParameter;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.PERFORM_ACTION_USAGE__TARGET_PARAMETER, oldTargetParameter, targetParameter));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getFeatureChain()
+  {
+    return featureChain;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setFeatureChain(String newFeatureChain)
+  {
+    String oldFeatureChain = featureChain;
+    featureChain = newFeatureChain;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.PERFORM_ACTION_USAGE__FEATURE_CHAIN, oldFeatureChain, featureChain));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getNodeParameter()
+  {
+    return nodeParameter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setNodeParameter(String newNodeParameter)
+  {
+    String oldNodeParameter = nodeParameter;
+    nodeParameter = newNodeParameter;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.PERFORM_ACTION_USAGE__NODE_PARAMETER, oldNodeParameter, nodeParameter));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<ActionBodyElement> getElements()
   {
     if (elements == null)
@@ -1101,6 +1457,8 @@ public class PerformActionUsageImpl extends BehaviorUsageElementImpl implements 
   {
     switch (featureID)
     {
+      case SysMLOCPackage.PERFORM_ACTION_USAGE__ACCEPT_PARAMETER:
+        return ((InternalEList<?>)getAcceptParameter()).basicRemove(otherEnd, msgs);
       case SysMLOCPackage.PERFORM_ACTION_USAGE__ELEMENTS:
         return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
     }
@@ -1167,6 +1525,22 @@ public class PerformActionUsageImpl extends BehaviorUsageElementImpl implements 
         return isIsDefault();
       case SysMLOCPackage.PERFORM_ACTION_USAGE__VALUE_PART:
         return getValuePart();
+      case SysMLOCPackage.PERFORM_ACTION_USAGE__REFERENCED_FEATURE:
+        return getReferencedFeature();
+      case SysMLOCPackage.PERFORM_ACTION_USAGE__ACCEPT_PARAMETER:
+        return getAcceptParameter();
+      case SysMLOCPackage.PERFORM_ACTION_USAGE__SEND_NODE_PARAMETER:
+        return isSendNodeParameter();
+      case SysMLOCPackage.PERFORM_ACTION_USAGE__VIA_NODE_PARAMETER:
+        return getViaNodeParameter();
+      case SysMLOCPackage.PERFORM_ACTION_USAGE__TO_NODE_PARAMETER:
+        return getToNodeParameter();
+      case SysMLOCPackage.PERFORM_ACTION_USAGE__TARGET_PARAMETER:
+        return getTargetParameter();
+      case SysMLOCPackage.PERFORM_ACTION_USAGE__FEATURE_CHAIN:
+        return getFeatureChain();
+      case SysMLOCPackage.PERFORM_ACTION_USAGE__NODE_PARAMETER:
+        return getNodeParameter();
       case SysMLOCPackage.PERFORM_ACTION_USAGE__ELEMENTS:
         return getElements();
     }
@@ -1267,6 +1641,31 @@ public class PerformActionUsageImpl extends BehaviorUsageElementImpl implements 
         getValuePart().clear();
         getValuePart().addAll((Collection<? extends String>)newValue);
         return;
+      case SysMLOCPackage.PERFORM_ACTION_USAGE__REFERENCED_FEATURE:
+        setReferencedFeature((String)newValue);
+        return;
+      case SysMLOCPackage.PERFORM_ACTION_USAGE__ACCEPT_PARAMETER:
+        getAcceptParameter().clear();
+        getAcceptParameter().addAll((Collection<? extends PayloadParameter>)newValue);
+        return;
+      case SysMLOCPackage.PERFORM_ACTION_USAGE__SEND_NODE_PARAMETER:
+        setSendNodeParameter((Boolean)newValue);
+        return;
+      case SysMLOCPackage.PERFORM_ACTION_USAGE__VIA_NODE_PARAMETER:
+        setViaNodeParameter((String)newValue);
+        return;
+      case SysMLOCPackage.PERFORM_ACTION_USAGE__TO_NODE_PARAMETER:
+        setToNodeParameter((String)newValue);
+        return;
+      case SysMLOCPackage.PERFORM_ACTION_USAGE__TARGET_PARAMETER:
+        setTargetParameter((String)newValue);
+        return;
+      case SysMLOCPackage.PERFORM_ACTION_USAGE__FEATURE_CHAIN:
+        setFeatureChain((String)newValue);
+        return;
+      case SysMLOCPackage.PERFORM_ACTION_USAGE__NODE_PARAMETER:
+        setNodeParameter((String)newValue);
+        return;
       case SysMLOCPackage.PERFORM_ACTION_USAGE__ELEMENTS:
         getElements().clear();
         getElements().addAll((Collection<? extends ActionBodyElement>)newValue);
@@ -1360,6 +1759,30 @@ public class PerformActionUsageImpl extends BehaviorUsageElementImpl implements 
       case SysMLOCPackage.PERFORM_ACTION_USAGE__VALUE_PART:
         getValuePart().clear();
         return;
+      case SysMLOCPackage.PERFORM_ACTION_USAGE__REFERENCED_FEATURE:
+        setReferencedFeature(REFERENCED_FEATURE_EDEFAULT);
+        return;
+      case SysMLOCPackage.PERFORM_ACTION_USAGE__ACCEPT_PARAMETER:
+        getAcceptParameter().clear();
+        return;
+      case SysMLOCPackage.PERFORM_ACTION_USAGE__SEND_NODE_PARAMETER:
+        setSendNodeParameter(SEND_NODE_PARAMETER_EDEFAULT);
+        return;
+      case SysMLOCPackage.PERFORM_ACTION_USAGE__VIA_NODE_PARAMETER:
+        setViaNodeParameter(VIA_NODE_PARAMETER_EDEFAULT);
+        return;
+      case SysMLOCPackage.PERFORM_ACTION_USAGE__TO_NODE_PARAMETER:
+        setToNodeParameter(TO_NODE_PARAMETER_EDEFAULT);
+        return;
+      case SysMLOCPackage.PERFORM_ACTION_USAGE__TARGET_PARAMETER:
+        setTargetParameter(TARGET_PARAMETER_EDEFAULT);
+        return;
+      case SysMLOCPackage.PERFORM_ACTION_USAGE__FEATURE_CHAIN:
+        setFeatureChain(FEATURE_CHAIN_EDEFAULT);
+        return;
+      case SysMLOCPackage.PERFORM_ACTION_USAGE__NODE_PARAMETER:
+        setNodeParameter(NODE_PARAMETER_EDEFAULT);
+        return;
       case SysMLOCPackage.PERFORM_ACTION_USAGE__ELEMENTS:
         getElements().clear();
         return;
@@ -1427,6 +1850,22 @@ public class PerformActionUsageImpl extends BehaviorUsageElementImpl implements 
         return isDefault != IS_DEFAULT_EDEFAULT;
       case SysMLOCPackage.PERFORM_ACTION_USAGE__VALUE_PART:
         return valuePart != null && !valuePart.isEmpty();
+      case SysMLOCPackage.PERFORM_ACTION_USAGE__REFERENCED_FEATURE:
+        return REFERENCED_FEATURE_EDEFAULT == null ? referencedFeature != null : !REFERENCED_FEATURE_EDEFAULT.equals(referencedFeature);
+      case SysMLOCPackage.PERFORM_ACTION_USAGE__ACCEPT_PARAMETER:
+        return acceptParameter != null && !acceptParameter.isEmpty();
+      case SysMLOCPackage.PERFORM_ACTION_USAGE__SEND_NODE_PARAMETER:
+        return sendNodeParameter != SEND_NODE_PARAMETER_EDEFAULT;
+      case SysMLOCPackage.PERFORM_ACTION_USAGE__VIA_NODE_PARAMETER:
+        return VIA_NODE_PARAMETER_EDEFAULT == null ? viaNodeParameter != null : !VIA_NODE_PARAMETER_EDEFAULT.equals(viaNodeParameter);
+      case SysMLOCPackage.PERFORM_ACTION_USAGE__TO_NODE_PARAMETER:
+        return TO_NODE_PARAMETER_EDEFAULT == null ? toNodeParameter != null : !TO_NODE_PARAMETER_EDEFAULT.equals(toNodeParameter);
+      case SysMLOCPackage.PERFORM_ACTION_USAGE__TARGET_PARAMETER:
+        return TARGET_PARAMETER_EDEFAULT == null ? targetParameter != null : !TARGET_PARAMETER_EDEFAULT.equals(targetParameter);
+      case SysMLOCPackage.PERFORM_ACTION_USAGE__FEATURE_CHAIN:
+        return FEATURE_CHAIN_EDEFAULT == null ? featureChain != null : !FEATURE_CHAIN_EDEFAULT.equals(featureChain);
+      case SysMLOCPackage.PERFORM_ACTION_USAGE__NODE_PARAMETER:
+        return NODE_PARAMETER_EDEFAULT == null ? nodeParameter != null : !NODE_PARAMETER_EDEFAULT.equals(nodeParameter);
       case SysMLOCPackage.PERFORM_ACTION_USAGE__ELEMENTS:
         return elements != null && !elements.isEmpty();
     }
@@ -1558,6 +1997,63 @@ public class PerformActionUsageImpl extends BehaviorUsageElementImpl implements 
       }
     }
     if (baseClass == ValuePart.class)
+    {
+      switch (derivedFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    if (baseClass == PerformActionUsageDeclaration.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.PERFORM_ACTION_USAGE__REFERENCED_FEATURE: return SysMLOCPackage.PERFORM_ACTION_USAGE_DECLARATION__REFERENCED_FEATURE;
+        default: return -1;
+      }
+    }
+    if (baseClass == ActionNodeUsageDeclaration.class)
+    {
+      switch (derivedFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    if (baseClass == AcceptParameterPart.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.PERFORM_ACTION_USAGE__ACCEPT_PARAMETER: return SysMLOCPackage.ACCEPT_PARAMETER_PART__ACCEPT_PARAMETER;
+        default: return -1;
+      }
+    }
+    if (baseClass == AcceptNodeDeclaration.class)
+    {
+      switch (derivedFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    if (baseClass == SendNodeDeclaration.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.PERFORM_ACTION_USAGE__SEND_NODE_PARAMETER: return SysMLOCPackage.SEND_NODE_DECLARATION__SEND_NODE_PARAMETER;
+        case SysMLOCPackage.PERFORM_ACTION_USAGE__VIA_NODE_PARAMETER: return SysMLOCPackage.SEND_NODE_DECLARATION__VIA_NODE_PARAMETER;
+        case SysMLOCPackage.PERFORM_ACTION_USAGE__TO_NODE_PARAMETER: return SysMLOCPackage.SEND_NODE_DECLARATION__TO_NODE_PARAMETER;
+        default: return -1;
+      }
+    }
+    if (baseClass == AssignmentNodeDeclaration.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.PERFORM_ACTION_USAGE__TARGET_PARAMETER: return SysMLOCPackage.ASSIGNMENT_NODE_DECLARATION__TARGET_PARAMETER;
+        case SysMLOCPackage.PERFORM_ACTION_USAGE__FEATURE_CHAIN: return SysMLOCPackage.ASSIGNMENT_NODE_DECLARATION__FEATURE_CHAIN;
+        case SysMLOCPackage.PERFORM_ACTION_USAGE__NODE_PARAMETER: return SysMLOCPackage.ASSIGNMENT_NODE_DECLARATION__NODE_PARAMETER;
+        default: return -1;
+      }
+    }
+    if (baseClass == PerformedActionUsage.class)
     {
       switch (derivedFeatureID)
       {
@@ -1698,6 +2194,63 @@ public class PerformActionUsageImpl extends BehaviorUsageElementImpl implements 
         default: return -1;
       }
     }
+    if (baseClass == PerformActionUsageDeclaration.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.PERFORM_ACTION_USAGE_DECLARATION__REFERENCED_FEATURE: return SysMLOCPackage.PERFORM_ACTION_USAGE__REFERENCED_FEATURE;
+        default: return -1;
+      }
+    }
+    if (baseClass == ActionNodeUsageDeclaration.class)
+    {
+      switch (baseFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    if (baseClass == AcceptParameterPart.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.ACCEPT_PARAMETER_PART__ACCEPT_PARAMETER: return SysMLOCPackage.PERFORM_ACTION_USAGE__ACCEPT_PARAMETER;
+        default: return -1;
+      }
+    }
+    if (baseClass == AcceptNodeDeclaration.class)
+    {
+      switch (baseFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    if (baseClass == SendNodeDeclaration.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.SEND_NODE_DECLARATION__SEND_NODE_PARAMETER: return SysMLOCPackage.PERFORM_ACTION_USAGE__SEND_NODE_PARAMETER;
+        case SysMLOCPackage.SEND_NODE_DECLARATION__VIA_NODE_PARAMETER: return SysMLOCPackage.PERFORM_ACTION_USAGE__VIA_NODE_PARAMETER;
+        case SysMLOCPackage.SEND_NODE_DECLARATION__TO_NODE_PARAMETER: return SysMLOCPackage.PERFORM_ACTION_USAGE__TO_NODE_PARAMETER;
+        default: return -1;
+      }
+    }
+    if (baseClass == AssignmentNodeDeclaration.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.ASSIGNMENT_NODE_DECLARATION__TARGET_PARAMETER: return SysMLOCPackage.PERFORM_ACTION_USAGE__TARGET_PARAMETER;
+        case SysMLOCPackage.ASSIGNMENT_NODE_DECLARATION__FEATURE_CHAIN: return SysMLOCPackage.PERFORM_ACTION_USAGE__FEATURE_CHAIN;
+        case SysMLOCPackage.ASSIGNMENT_NODE_DECLARATION__NODE_PARAMETER: return SysMLOCPackage.PERFORM_ACTION_USAGE__NODE_PARAMETER;
+        default: return -1;
+      }
+    }
+    if (baseClass == PerformedActionUsage.class)
+    {
+      switch (baseFeatureID)
+      {
+        default: return -1;
+      }
+    }
     return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
   }
 
@@ -1762,6 +2315,20 @@ public class PerformActionUsageImpl extends BehaviorUsageElementImpl implements 
     result.append(isDefault);
     result.append(", valuePart: ");
     result.append(valuePart);
+    result.append(", referencedFeature: ");
+    result.append(referencedFeature);
+    result.append(", sendNodeParameter: ");
+    result.append(sendNodeParameter);
+    result.append(", viaNodeParameter: ");
+    result.append(viaNodeParameter);
+    result.append(", toNodeParameter: ");
+    result.append(toNodeParameter);
+    result.append(", targetParameter: ");
+    result.append(targetParameter);
+    result.append(", featureChain: ");
+    result.append(featureChain);
+    result.append(", NodeParameter: ");
+    result.append(nodeParameter);
     result.append(')');
     return result.toString();
   }

@@ -57,7 +57,7 @@ public class ItemDefinitionImpl extends DefinitionElementImpl implements ItemDef
    * @generated
    * @ordered
    */
-  protected static final VisibilityIndicator VISIBILITY_EDEFAULT = VisibilityIndicator.PUBLIC;
+  protected static final VisibilityIndicator VISIBILITY_EDEFAULT = VisibilityIndicator.NULL;
 
   /**
    * The cached value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.

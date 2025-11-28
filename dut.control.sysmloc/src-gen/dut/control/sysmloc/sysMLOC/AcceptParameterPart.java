@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.AcceptParameterPart#getAcceptParameter <em>Accept Parameter</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.AcceptParameterPart#getViaNodeParameter <em>Via Node Parameter</em>}</li>
  * </ul>
  *
  * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getAcceptParameterPart()
@@ -37,27 +36,5 @@ public interface AcceptParameterPart extends EObject
    * @generated
    */
   EList<PayloadParameter> getAcceptParameter();
-
-  /**
-   * Returns the value of the '<em><b>Via Node Parameter</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Via Node Parameter</em>' attribute.
-   * @see #setViaNodeParameter(String)
-   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getAcceptParameterPart_ViaNodeParameter()
-   * @model
-   * @generated
-   */
-  String getViaNodeParameter();
-
-  /**
-   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.AcceptParameterPart#getViaNodeParameter <em>Via Node Parameter</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Via Node Parameter</em>' attribute.
-   * @see #getViaNodeParameter()
-   * @generated
-   */
-  void setViaNodeParameter(String value);
 
 } // AcceptParameterPart

@@ -3,20 +3,90 @@
  */
 package dut.control.sysmloc.sysMLOC.impl;
 
+import dut.control.sysmloc.sysMLOC.MultiplicityPart;
+import dut.control.sysmloc.sysMLOC.MultiplicityRange;
 import dut.control.sysmloc.sysMLOC.PayloadFeatureSpecializationPart;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Payload Feature Specialization Part</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PayloadFeatureSpecializationPartImpl#getMultiplicity <em>Multiplicity</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PayloadFeatureSpecializationPartImpl#isIsOrdered <em>Is Ordered</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PayloadFeatureSpecializationPartImpl#isIsNonunique <em>Is Nonunique</em>}</li>
+ * </ul>
  *
  * @generated
  */
-public class PayloadFeatureSpecializationPartImpl extends FeatureSpecializationPartImpl implements PayloadFeatureSpecializationPart
+public class PayloadFeatureSpecializationPartImpl extends FeatureSpecializationImpl implements PayloadFeatureSpecializationPart
 {
+  /**
+   * The cached value of the '{@link #getMultiplicity() <em>Multiplicity</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMultiplicity()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> multiplicity;
+
+  /**
+   * The default value of the '{@link #isIsOrdered() <em>Is Ordered</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsOrdered()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_ORDERED_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsOrdered() <em>Is Ordered</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsOrdered()
+   * @generated
+   * @ordered
+   */
+  protected boolean isOrdered = IS_ORDERED_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsNonunique() <em>Is Nonunique</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsNonunique()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_NONUNIQUE_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsNonunique() <em>Is Nonunique</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsNonunique()
+   * @generated
+   * @ordered
+   */
+  protected boolean isNonunique = IS_NONUNIQUE_EDEFAULT;
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -36,6 +106,236 @@ public class PayloadFeatureSpecializationPartImpl extends FeatureSpecializationP
   protected EClass eStaticClass()
   {
     return SysMLOCPackage.eINSTANCE.getPayloadFeatureSpecializationPart();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<String> getMultiplicity()
+  {
+    if (multiplicity == null)
+    {
+      multiplicity = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.PAYLOAD_FEATURE_SPECIALIZATION_PART__MULTIPLICITY);
+    }
+    return multiplicity;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsOrdered()
+  {
+    return isOrdered;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsOrdered(boolean newIsOrdered)
+  {
+    boolean oldIsOrdered = isOrdered;
+    isOrdered = newIsOrdered;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.PAYLOAD_FEATURE_SPECIALIZATION_PART__IS_ORDERED, oldIsOrdered, isOrdered));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsNonunique()
+  {
+    return isNonunique;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsNonunique(boolean newIsNonunique)
+  {
+    boolean oldIsNonunique = isNonunique;
+    isNonunique = newIsNonunique;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.PAYLOAD_FEATURE_SPECIALIZATION_PART__IS_NONUNIQUE, oldIsNonunique, isNonunique));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object eGet(int featureID, boolean resolve, boolean coreType)
+  {
+    switch (featureID)
+    {
+      case SysMLOCPackage.PAYLOAD_FEATURE_SPECIALIZATION_PART__MULTIPLICITY:
+        return getMultiplicity();
+      case SysMLOCPackage.PAYLOAD_FEATURE_SPECIALIZATION_PART__IS_ORDERED:
+        return isIsOrdered();
+      case SysMLOCPackage.PAYLOAD_FEATURE_SPECIALIZATION_PART__IS_NONUNIQUE:
+        return isIsNonunique();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @SuppressWarnings("unchecked")
+  @Override
+  public void eSet(int featureID, Object newValue)
+  {
+    switch (featureID)
+    {
+      case SysMLOCPackage.PAYLOAD_FEATURE_SPECIALIZATION_PART__MULTIPLICITY:
+        getMultiplicity().clear();
+        getMultiplicity().addAll((Collection<? extends String>)newValue);
+        return;
+      case SysMLOCPackage.PAYLOAD_FEATURE_SPECIALIZATION_PART__IS_ORDERED:
+        setIsOrdered((Boolean)newValue);
+        return;
+      case SysMLOCPackage.PAYLOAD_FEATURE_SPECIALIZATION_PART__IS_NONUNIQUE:
+        setIsNonunique((Boolean)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eUnset(int featureID)
+  {
+    switch (featureID)
+    {
+      case SysMLOCPackage.PAYLOAD_FEATURE_SPECIALIZATION_PART__MULTIPLICITY:
+        getMultiplicity().clear();
+        return;
+      case SysMLOCPackage.PAYLOAD_FEATURE_SPECIALIZATION_PART__IS_ORDERED:
+        setIsOrdered(IS_ORDERED_EDEFAULT);
+        return;
+      case SysMLOCPackage.PAYLOAD_FEATURE_SPECIALIZATION_PART__IS_NONUNIQUE:
+        setIsNonunique(IS_NONUNIQUE_EDEFAULT);
+        return;
+    }
+    super.eUnset(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean eIsSet(int featureID)
+  {
+    switch (featureID)
+    {
+      case SysMLOCPackage.PAYLOAD_FEATURE_SPECIALIZATION_PART__MULTIPLICITY:
+        return multiplicity != null && !multiplicity.isEmpty();
+      case SysMLOCPackage.PAYLOAD_FEATURE_SPECIALIZATION_PART__IS_ORDERED:
+        return isOrdered != IS_ORDERED_EDEFAULT;
+      case SysMLOCPackage.PAYLOAD_FEATURE_SPECIALIZATION_PART__IS_NONUNIQUE:
+        return isNonunique != IS_NONUNIQUE_EDEFAULT;
+    }
+    return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == MultiplicityRange.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.PAYLOAD_FEATURE_SPECIALIZATION_PART__MULTIPLICITY: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTIPLICITY;
+        default: return -1;
+      }
+    }
+    if (baseClass == MultiplicityPart.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.PAYLOAD_FEATURE_SPECIALIZATION_PART__IS_ORDERED: return SysMLOCPackage.MULTIPLICITY_PART__IS_ORDERED;
+        case SysMLOCPackage.PAYLOAD_FEATURE_SPECIALIZATION_PART__IS_NONUNIQUE: return SysMLOCPackage.MULTIPLICITY_PART__IS_NONUNIQUE;
+        default: return -1;
+      }
+    }
+    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == MultiplicityRange.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTIPLICITY: return SysMLOCPackage.PAYLOAD_FEATURE_SPECIALIZATION_PART__MULTIPLICITY;
+        default: return -1;
+      }
+    }
+    if (baseClass == MultiplicityPart.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.MULTIPLICITY_PART__IS_ORDERED: return SysMLOCPackage.PAYLOAD_FEATURE_SPECIALIZATION_PART__IS_ORDERED;
+        case SysMLOCPackage.MULTIPLICITY_PART__IS_NONUNIQUE: return SysMLOCPackage.PAYLOAD_FEATURE_SPECIALIZATION_PART__IS_NONUNIQUE;
+        default: return -1;
+      }
+    }
+    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (Multiplicity: ");
+    result.append(multiplicity);
+    result.append(", isOrdered: ");
+    result.append(isOrdered);
+    result.append(", isNonunique: ");
+    result.append(isNonunique);
+    result.append(')');
+    return result.toString();
   }
 
 } //PayloadFeatureSpecializationPartImpl

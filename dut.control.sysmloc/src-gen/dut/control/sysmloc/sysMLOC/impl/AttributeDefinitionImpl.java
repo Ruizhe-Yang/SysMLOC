@@ -56,7 +56,7 @@ public class AttributeDefinitionImpl extends DefinitionElementImpl implements At
    * @generated
    * @ordered
    */
-  protected static final VisibilityIndicator VISIBILITY_EDEFAULT = VisibilityIndicator.PUBLIC;
+  protected static final VisibilityIndicator VISIBILITY_EDEFAULT = VisibilityIndicator.NULL;
 
   /**
    * The cached value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.

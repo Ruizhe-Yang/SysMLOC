@@ -9,11 +9,39 @@ package dut.control.sysmloc.sysMLOC;
  * A representation of the model object '<em><b>Payload Parameter</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.PayloadParameter#getViaNodeParameter <em>Via Node Parameter</em>}</li>
+ * </ul>
  *
  * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getPayloadParameter()
  * @model
  * @generated
  */
-public interface PayloadParameter extends PayloadFeature, Identification, PayloadFeatureSpecializationPart, FeatureSpecializationPart, FeatureSpecialization, MultiplicityPart, MultiplicityRange, ValuePart, FeatureValue, TriggerValuePart
+public interface PayloadParameter extends PayloadFeature, Identification, PayloadFeatureSpecializationPart, FeatureSpecialization, MultiplicityPart, MultiplicityRange, ValuePart, FeatureValue, TriggerValuePart
 {
+  /**
+   * Returns the value of the '<em><b>Via Node Parameter</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Via Node Parameter</em>' attribute.
+   * @see #setViaNodeParameter(String)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getPayloadParameter_ViaNodeParameter()
+   * @model
+   * @generated
+   */
+  String getViaNodeParameter();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.PayloadParameter#getViaNodeParameter <em>Via Node Parameter</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Via Node Parameter</em>' attribute.
+   * @see #getViaNodeParameter()
+   * @generated
+   */
+  void setViaNodeParameter(String value);
+
 } // PayloadParameter

@@ -21,6 +21,16 @@ import org.eclipse.emf.common.util.Enumerator;
 public enum VisibilityIndicator implements Enumerator
 {
   /**
+   * The '<em><b>Null</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #NULL_VALUE
+   * @generated
+   * @ordered
+   */
+  NULL(0, "null", "NULLVisibility"),
+
+  /**
    * The '<em><b>Public</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -28,7 +38,7 @@ public enum VisibilityIndicator implements Enumerator
    * @generated
    * @ordered
    */
-  PUBLIC(0, "public", "public"),
+  PUBLIC(1, "public", "public"),
 
   /**
    * The '<em><b>Private</b></em>' literal object.
@@ -38,7 +48,7 @@ public enum VisibilityIndicator implements Enumerator
    * @generated
    * @ordered
    */
-  PRIVATE(1, "private", "private"),
+  PRIVATE(2, "private", "private"),
 
   /**
    * The '<em><b>Protected</b></em>' literal object.
@@ -48,7 +58,18 @@ public enum VisibilityIndicator implements Enumerator
    * @generated
    * @ordered
    */
-  PROTECTED(2, "protected", "protected");
+  PROTECTED(3, "protected", "protected");
+
+  /**
+   * The '<em><b>Null</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #NULL
+   * @model name="null" literal="NULLVisibility"
+   * @generated
+   * @ordered
+   */
+  public static final int NULL_VALUE = 0;
 
   /**
    * The '<em><b>Public</b></em>' literal value.
@@ -59,7 +80,7 @@ public enum VisibilityIndicator implements Enumerator
    * @generated
    * @ordered
    */
-  public static final int PUBLIC_VALUE = 0;
+  public static final int PUBLIC_VALUE = 1;
 
   /**
    * The '<em><b>Private</b></em>' literal value.
@@ -70,7 +91,7 @@ public enum VisibilityIndicator implements Enumerator
    * @generated
    * @ordered
    */
-  public static final int PRIVATE_VALUE = 1;
+  public static final int PRIVATE_VALUE = 2;
 
   /**
    * The '<em><b>Protected</b></em>' literal value.
@@ -81,7 +102,7 @@ public enum VisibilityIndicator implements Enumerator
    * @generated
    * @ordered
    */
-  public static final int PROTECTED_VALUE = 2;
+  public static final int PROTECTED_VALUE = 3;
 
   /**
    * An array of all the '<em><b>Visibility Indicator</b></em>' enumerators.
@@ -92,6 +113,7 @@ public enum VisibilityIndicator implements Enumerator
   private static final VisibilityIndicator[] VALUES_ARRAY =
     new VisibilityIndicator[]
     {
+      NULL,
       PUBLIC,
       PRIVATE,
       PROTECTED,
@@ -159,6 +181,7 @@ public enum VisibilityIndicator implements Enumerator
   {
     switch (value)
     {
+      case NULL_VALUE: return NULL;
       case PUBLIC_VALUE: return PUBLIC;
       case PRIVATE_VALUE: return PRIVATE;
       case PROTECTED_VALUE: return PROTECTED;

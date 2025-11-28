@@ -14,6 +14,6 @@ package dut.control.sysmloc.sysMLOC;
  * @model
  * @generated
  */
-public interface PayloadFeatureSpecializationPart extends FeatureSpecializationPart
+public interface PayloadFeatureSpecializationPart extends FeatureSpecialization, MultiplicityPart, MultiplicityRange
 {
 } // PayloadFeatureSpecializationPart

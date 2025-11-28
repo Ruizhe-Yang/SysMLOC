@@ -10,7 +10,7 @@
     <elements xsi:type="sysMLOC:PartUsage" declaredName="x">
       <typings>P1::A</typings>
     </elements>
-    <elements xsi:type="sysMLOC:NamespaceImport" declaredName="P2"/>
+    <elements xsi:type="sysMLOC:NamespaceImport" visibility="public" declaredName="P2"/>
     <elements xsi:type="sysMLOC:CodeAnnotation" body="// This should fail.&#xD;&#xA;"/>
     <elements xsi:type="sysMLOC:CodeAnnotation" body="// A is not visible, because the import in P2 is private.&#xD;&#xA;"/>
     <elements xsi:type="sysMLOC:CodeAnnotation" body="// part y: A;&#xD;&#xA;"/>
@@ -25,7 +25,7 @@
       <typings>B</typings>
     </elements>
     <elements xsi:type="sysMLOC:Package" declaredName="P4">
-      <elements xsi:type="sysMLOC:NamespaceImport" isImportAll="true" declaredName="P2"/>
+      <elements xsi:type="sysMLOC:NamespaceImport" visibility="public" isImportAll="true" declaredName="P2"/>
       <elements xsi:type="sysMLOC:CodeAnnotation" body="// This should not fail because &quot;import all&quot; overrides private import.&#xD;&#xA;"/>
       <elements xsi:type="sysMLOC:PartUsage" declaredName="z1">
         <typings>A</typings>

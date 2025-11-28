@@ -67,6 +67,32 @@ ActionBodyElement:
 
 ;
 
+StateBodyElement:
+	AnnotatingElement
+	| ImportElement
+	| AliasElement
+	| DefinitionElement
+//	| VariantUsageMember
+	| NonOccurrenceUsageElement
+	| StructureUsageElement
+	| BehaviorUsageElement
+	| TransitionUsageElement
+	| EntryActionNodeElement
+	| DoActionNodeElement
+	| ExitActionNodeElement
+	
+//	| ( ownedRelationship += EmptySuccessionMember )?
+//	  ownedRelationship += StructureUsageMember
+//	| ( ownedRelationship += EmptySuccessionMember )?
+//	  ownedRelationship += BehaviorUsageMember
+//	  ( ownedRelationship += TargetTransitionUsageMember )*
+//	| ownedRelationship += TransitionUsageMember
+//	| ownedRelationship += EntryActionMember
+//	  ( ownedRelationship += EntryTransitionMember )*
+//	| ownedRelationship += DoActionMember
+//	| ownedRelationship += ExitActionMember	
+;
+
 AnnotatingBodyElement:
 	AnnotatingElement
 ;
@@ -108,7 +134,7 @@ DefinitionElement:
 	| PortDefinition
 	| ActionDefinition
 //	| CalculationDefinition
-//	| StateDefinition
+	| StateDefinition
 //	| ConstraintDefinition
 //	| RequirementDefinition
 //	| ConcernDefinition
@@ -166,7 +192,7 @@ StructureUsageElement:
 BehaviorUsageElement:
 	ActionUsage
 //	| CalculationUsage
-//	| StateUsage
+	| StateUsage
 //	| ConstraintUsage
 //	| RequirementUsage
 //	| ConcernUsage
@@ -176,7 +202,7 @@ BehaviorUsageElement:
 //	| UseCaseUsage
 //	| ViewpointUsage
 	| PerformActionUsage
-//	| ExhibitStateUsage
+	| ExhibitStateUsage
 //	| IncludeUseCaseUsage
 //	| AssertConstraintUsage
 //	| SatisfyRequirementUsage
@@ -210,6 +236,22 @@ GuardedSuccessionNodeElement:
 
 TargetSuccessionNodeElement:
 	TargetSuccessionElement
+;
+
+TransitionUsageElement:
+	TransitionUsage
+;
+
+EntryActionNodeElement:
+	EntryAction
+;
+
+DoActionNodeElement:
+	DoActionNode
+;
+
+ExitActionNodeElement:
+	ExitActionNode
 ;
 
 // TODO --------------------------------- Instance Level ---------------------------------//
@@ -412,6 +454,53 @@ ActionUsage:
     (';' | '{' (elements+=ActionBodyElement)* '}')
 ;
 
+StateDefinition:
+	MemberPrefix 
+	OccurrenceDefinitionPrefix 
+	'state' 'def'
+	DefinitionDeclaration
+	(';' | ( isParallel ?= 'parallel' )? '{' (elements += StateBodyElement)* '}')
+;
+
+StateUsage:
+	EmptySuccessionPrefix
+	MemberPrefix
+	OccurrenceUsagePrefix
+	'state'
+	ActionUsageDeclaration
+	(';' | ( isParallel ?= 'parallel' )? '{' (elements += StateBodyElement)* '}')
+;
+
+TransitionUsage:
+	EmptySuccessionPrefix
+	MemberPrefix
+			
+//	'transition'
+//	( UsageDeclaration? 'first' )? 
+//	transitionSourceElement=FeatureChainName
+//	('accept' AcceptParameterPart)?
+//	('if' conditionalExpression=Expression)?
+////	('do' PerformedActionParameterPart=PerformedActionUsage ( '{' elements+=ActionBodyElement* '}' )?)?
+//	('do' PerformedActionParameterPart ( '{' elements+=ActionBodyElement* '}' )?)?
+
+	(	
+		'transition'
+		( UsageDeclaration? 'first' )? 
+		( transitionSourceElement=FeatureChainName)?
+		('accept' AcceptParameterPart)?
+		('if' conditionalExpression=Expression)?
+		('do' PerformedActionParameterPart ( '{' elements+=ActionBodyElement* '}' )?)?
+	|	'accept' AcceptParameterPart
+		('if' conditionalExpression=Expression)?
+		('do' PerformedActionParameterPart ( '{' elements+=ActionBodyElement* '}' )?)?
+	| 	'if' conditionalExpression=Expression
+		('do' PerformedActionParameterPart ( '{' elements+=ActionBodyElement* '}' )?)?
+	)?
+	
+	'then' TransitionSuccession
+	(';' | '{' (elements+=ActionBodyElement)* '}')
+;
+
 PerformActionUsage:
 	EmptySuccessionPrefix
 	MemberPrefix
@@ -419,6 +508,15 @@ PerformActionUsage:
 	( ReferenceSubsetting FeatureSpecializationPart? | 'action' UsageDeclaration? )
     ValuePart?
 	(';' | '{' (elements+=ActionBodyElement)* '}')
+;
+
+ExhibitStateUsage:
+	EmptySuccessionPrefix
+	MemberPrefix
+	OccurrenceUsagePrefix 'exhibit'
+	( ReferenceSubsetting FeatureSpecializationPart? | 'state' UsageDeclaration? )
+    ValuePart?
+	(';' | ( isParallel ?= 'parallel' )? '{' (elements+=StateBodyElement)* '}')
 ;
 
 AliasElement:
@@ -454,13 +552,15 @@ AcceptNode:
 	EmptySuccessionPrefix
 	MemberPrefix
 	OccurrenceUsagePrefix
-	AcceptNodeDeclaration
+	ActionNodeUsageDeclaration? 
+	'accept' 
+	AcceptParameterPart
 	(';' | '{' (elements+=ActionBodyElement)* '}')
 ; 
 
 PayloadParameter:
-	PayloadFeature 
-	| Identification? PayloadFeatureSpecializationPart? TriggerValuePart
+	( PayloadFeature | Identification? PayloadFeatureSpecializationPart? TriggerValuePart)
+	('via' viaNodeParameter=Expression)?
 ;
 
 AssignmentNode:
@@ -555,8 +655,7 @@ GuardedSuccessionElement:
 	( 'succession' UsageDeclaration )?
 	'first'
 	memberElement = FeatureChainName
-//	GuardExpression
-	'if' ConditionalExpression=Expression
+	'if' conditionalExpression=Expression
 	'then'
 	TransitionSuccession
 	(';' | '{' (elements+=UsageBodyElement)* '}')
@@ -575,24 +674,57 @@ TargetSuccessionElement:
 ;
 
 
+EntryAction:
+	MemberPrefix
+	'entry'
+	PerformedActionParameterPart?
+	( ';' | '{' elements+=ActionBodyElement* '}' )
+//	( ownedRelationship += EntryTransitionMember )*
+;
+
+DoActionNode:
+	MemberPrefix
+	'do'
+	PerformedActionParameterPart?
+	( ';' | '{' elements+=ActionBodyElement* '}' )
+;
+
+ExitActionNode:
+	MemberPrefix
+	'exit'
+	PerformedActionParameterPart?
+	( ';' | '{' elements+=ActionBodyElement* '}' )
+;
+
+fragment PerformedActionParameterPart:
+	performedActionParameterPart+=PerformedActionUsage 
+;
+
+PerformedActionUsage:
+	{PerformActionUsage} PerformActionUsageDeclaration
+	| {AcceptActionUsage} AcceptNodeDeclaration
+	| {SendActionUsage} SendNodeDeclaration
+	| {AssignmentActionUsage} AssignmentNodeDeclaration
+;
+
 // TODO --------------------------------- Enum Level ---------------------------------//
 
 // enum
 
 enum VisibilityIndicator:
-	public = 'public' | private = 'private' | protected = 'protected'
+	null='NULLVisibility' | public = 'public' | private = 'private' | protected = 'protected'
 ;
 
 enum FeatureDirection:
-	inout = 'inout' | in = 'in' | out = 'out' 
+	null='NULLFeature' | inout = 'inout' | in = 'in' | out = 'out' 
 ;
 
 enum PortionKind:
-	snapshot = 'snapshot' | timeslice = 'timeslice'
+	null='NULLPortion' | snapshot = 'snapshot' | timeslice = 'timeslice'
 ;
 
 enum TriggerKind:
-	at='at' | after='after'| when='when'
+	null='NULLTrigger' | at='at' | after='after'| when='when'
 ;
 
 // TODO --------------------------------- Fragment Level ---------------------------------//
@@ -708,31 +840,46 @@ fragment FeatureSpecializationPart:
 	| MultiplicityPart FeatureSpecialization*
 ;
 
+fragment PerformActionUsageDeclaration:
+	( referencedFeature=FeatureChainName FeatureSpecializationPart?
+	| 'action' UsageDeclaration?)
+	ValuePart?
+;
+
 fragment AcceptNodeDeclaration:
 	ActionNodeUsageDeclaration? 'accept' AcceptParameterPart
 ;
 
 fragment AcceptParameterPart:
-	AcceptParameter+=PayloadParameter
-	('via' ViaNodeParameter=Expression)?
+	acceptParameter+=PayloadParameter
 ;
-
 
 fragment PayloadFeature:
 //	Identification? PayloadFeatureSpecializationPart? TriggerValuePart
 	Identification? PayloadFeatureSpecializationPart ValuePart?
 	// Warning
-//	| Identification? ValuePart MultiplicityRange?
-//	| => MultiplicityRange ValuePart
+	| Identification? ValuePart
+	| payloadFeatureElement=FeatureChainName MultiplicityRange?
+	| MultiplicityRange payloadFeatureElement=FeatureChainName
 ;
 
 fragment PayloadFeatureSpecializationPart:
-	FeatureSpecializationPart
+	( -> FeatureSpecialization )+ MultiplicityPart? FeatureSpecialization*
+	| MultiplicityPart FeatureSpecialization+
 ;
 
 fragment TriggerValuePart:
 	triggerkind=TriggerKind
 	triggerExpression=Expression
+;
+
+
+fragment SendNodeDeclaration:
+	ActionNodeUsageDeclaration?
+	'send'
+	sendNodeParameter?=Expression
+	('via' viaNodeParameter=Expression)?
+	('to' toNodeParameter=Expression)?
 ;
 
 fragment AssignmentNodeDeclaration:
@@ -760,10 +907,6 @@ fragment FeatureSpecialization:
 	| (':>>'|'redefines') redefinitions+=FeatureChainName (',' redefinitions+=FeatureChainName)*
 ;
 
-fragment GuardExpression:
-	'if' ConditionalExpression=Expression
-;
-
 fragment TransitionSuccession:
 	transitionSuccessionElement += ConnectorEnd
 ;
@@ -774,11 +917,10 @@ fragment TargetSuccession:
 	TransitionSuccession
 ;
 
-fragment GuardedTargetSuccession:
-//	GuardExpression
-	'if' ConditionalExpression=Expression 
-	'then' TransitionSuccession
-;
+//fragment GuardedTargetSuccession:
+//	'if' ConditionalExpression=Expression 
+//	'then' TransitionSuccession
+//;
 
 fragment DefaultTargetSuccession:
 	'else' TransitionSuccession
@@ -800,7 +942,7 @@ fragment ControlNodePrefix:
 	  ('#' UsageExtension += QualifiedName)*
 ;
 
-// TODO --------------------------------- Terminal Level ---------------------------------//
+// TODO --------------------------------- Text Level ---------------------------------//
 
 //ConnectorEnd:
 //	('[' MultiplicityExpression '..' MultiplicityExpression ']')?
@@ -984,7 +1126,8 @@ MetadataAccessExpression:
 ;
 
 InvocationExpression:
-	(QualifiedName | FeatureChainName) ArgumentList
+//	(QualifiedName | FeatureChainName) ArgumentList
+	FeatureChainName ArgumentList
 ;
 
 BodyExpression:
@@ -1062,12 +1205,9 @@ TargetExpression:
 	)*
 ;
 
-/* TERMINALS */
+// TODO --------------------------------- Terminal Level ---------------------------------//
 
-//terminal OPERATOR:
-//	'if' | '??' | 'implies' | '|' | 'or' | 'xor' | '&' | 'and' | '==' | '!=' | '===' | '!==' | 'hastype' | 'istype' | '@'|
-//	'@@' | 'as' | 'meta' | '<' | '>' | '<=' | '>=' | '+' | '-' | '*' | '/' | '%' | '..' | '**' | '^' | '~' | 'not' |
-//	'true' | 'false';
+/* TERMINALS */
 	
 terminal DECIMAL_VALUE returns Ecore::EInt:
 	'0'..'9' ('0'..'9')*;

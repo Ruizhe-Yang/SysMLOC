@@ -78,7 +78,7 @@ public class OccurrenceUsagePrefixImpl extends BasicUsagePrefixImpl implements O
    * @generated
    * @ordered
    */
-  protected static final PortionKind PORTION_KIND_EDEFAULT = PortionKind.SNAPSHOT;
+  protected static final PortionKind PORTION_KIND_EDEFAULT = PortionKind.NULL;
 
   /**
    * The cached value of the '{@link #getPortionKind() <em>Portion Kind</em>}' attribute.

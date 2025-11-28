@@ -30,9 +30,9 @@
     <elements xsi:type="sysMLOC:ActionUsage" declaredName="takePicture">
       <typings>TakePicture</typings>
       <elements xsi:type="sysMLOC:AcceptNode" declaredName="trigger">
-        <AcceptParameter declaredName="scene">
+        <acceptParameter declaredName="scene">
           <typings>Scene</typings>
-        </AcceptParameter>
+        </acceptParameter>
       </elements>
       <elements xsi:type="sysMLOC:ActionUsage" isThen="true" declaredName="focus">
         <typings>Focus</typings>

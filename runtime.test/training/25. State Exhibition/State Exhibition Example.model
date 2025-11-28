@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <packages declaredName="'State Exhibition Example'">
+    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="'Transition Actions'"/>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle">
+      <typings>Vehicle</typings>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicleController">
+        <typings>VehicleController</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:ExhibitStateUsage" refElement="vehicleStates">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="operatingVehicle">
+          <valuePart>vehicle</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="controller">
+          <valuePart>vehicleController</valuePart>
+        </elements>
+      </elements>
+    </elements>
+  </packages>
+</sysMLOC:Namespace>

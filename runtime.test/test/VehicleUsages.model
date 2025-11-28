@@ -3,7 +3,7 @@
   <packages declaredName="VehicleUsages">
     <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9; * Example usages of elements from the vehicle definitions model.&#xD;&#xA;&#x9; */"/>
     <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="ScalarFunctions"/>
-    <elements xsi:type="sysMLOC:NamespaceImport" declaredName="VehicleDefinitions"/>
+    <elements xsi:type="sysMLOC:NamespaceImport" visibility="public" declaredName="VehicleDefinitions"/>
     <elements xsi:type="sysMLOC:Comment" body="/* VALUES */"/>
     <elements xsi:type="sysMLOC:Comment" body="/* PARTS */"/>
     <elements xsi:type="sysMLOC:PartUsage" declaredName="narrowRimWheel">

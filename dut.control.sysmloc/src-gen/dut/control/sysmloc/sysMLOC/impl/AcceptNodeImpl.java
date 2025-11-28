@@ -4,7 +4,6 @@
 package dut.control.sysmloc.sysMLOC.impl;
 
 import dut.control.sysmloc.sysMLOC.AcceptNode;
-import dut.control.sysmloc.sysMLOC.AcceptNodeDeclaration;
 import dut.control.sysmloc.sysMLOC.AcceptParameterPart;
 import dut.control.sysmloc.sysMLOC.ActionBodyElement;
 import dut.control.sysmloc.sysMLOC.ActionNodeUsageDeclaration;
@@ -71,7 +70,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeImpl#isIsNonunique <em>Is Nonunique</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeImpl#getDeclaredName <em>Declared Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeImpl#getAcceptParameter <em>Accept Parameter</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeImpl#getViaNodeParameter <em>Via Node Parameter</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeImpl#getElements <em>Elements</em>}</li>
  * </ul>
  *
@@ -117,7 +115,7 @@ public class AcceptNodeImpl extends ActionNodeElementImpl implements AcceptNode
    * @generated
    * @ordered
    */
-  protected static final VisibilityIndicator VISIBILITY_EDEFAULT = VisibilityIndicator.PUBLIC;
+  protected static final VisibilityIndicator VISIBILITY_EDEFAULT = VisibilityIndicator.NULL;
 
   /**
    * The cached value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
@@ -137,7 +135,7 @@ public class AcceptNodeImpl extends ActionNodeElementImpl implements AcceptNode
    * @generated
    * @ordered
    */
-  protected static final FeatureDirection DIRECTION_EDEFAULT = FeatureDirection.INOUT;
+  protected static final FeatureDirection DIRECTION_EDEFAULT = FeatureDirection.NULL;
 
   /**
    * The cached value of the '{@link #getDirection() <em>Direction</em>}' attribute.
@@ -297,7 +295,7 @@ public class AcceptNodeImpl extends ActionNodeElementImpl implements AcceptNode
    * @generated
    * @ordered
    */
-  protected static final PortionKind PORTION_KIND_EDEFAULT = PortionKind.SNAPSHOT;
+  protected static final PortionKind PORTION_KIND_EDEFAULT = PortionKind.NULL;
 
   /**
    * The cached value of the '{@link #getPortionKind() <em>Portion Kind</em>}' attribute.
@@ -438,26 +436,6 @@ public class AcceptNodeImpl extends ActionNodeElementImpl implements AcceptNode
    * @ordered
    */
   protected EList<PayloadParameter> acceptParameter;
-
-  /**
-   * The default value of the '{@link #getViaNodeParameter() <em>Via Node Parameter</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getViaNodeParameter()
-   * @generated
-   * @ordered
-   */
-  protected static final String VIA_NODE_PARAMETER_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getViaNodeParameter() <em>Via Node Parameter</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getViaNodeParameter()
-   * @generated
-   * @ordered
-   */
-  protected String viaNodeParameter = VIA_NODE_PARAMETER_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
@@ -966,31 +944,6 @@ public class AcceptNodeImpl extends ActionNodeElementImpl implements AcceptNode
    * @generated
    */
   @Override
-  public String getViaNodeParameter()
-  {
-    return viaNodeParameter;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setViaNodeParameter(String newViaNodeParameter)
-  {
-    String oldViaNodeParameter = viaNodeParameter;
-    viaNodeParameter = newViaNodeParameter;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ACCEPT_NODE__VIA_NODE_PARAMETER, oldViaNodeParameter, viaNodeParameter));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EList<ActionBodyElement> getElements()
   {
     if (elements == null)
@@ -1072,8 +1025,6 @@ public class AcceptNodeImpl extends ActionNodeElementImpl implements AcceptNode
         return getDeclaredName();
       case SysMLOCPackage.ACCEPT_NODE__ACCEPT_PARAMETER:
         return getAcceptParameter();
-      case SysMLOCPackage.ACCEPT_NODE__VIA_NODE_PARAMETER:
-        return getViaNodeParameter();
       case SysMLOCPackage.ACCEPT_NODE__ELEMENTS:
         return getElements();
     }
@@ -1165,9 +1116,6 @@ public class AcceptNodeImpl extends ActionNodeElementImpl implements AcceptNode
         getAcceptParameter().clear();
         getAcceptParameter().addAll((Collection<? extends PayloadParameter>)newValue);
         return;
-      case SysMLOCPackage.ACCEPT_NODE__VIA_NODE_PARAMETER:
-        setViaNodeParameter((String)newValue);
-        return;
       case SysMLOCPackage.ACCEPT_NODE__ELEMENTS:
         getElements().clear();
         getElements().addAll((Collection<? extends ActionBodyElement>)newValue);
@@ -1252,9 +1200,6 @@ public class AcceptNodeImpl extends ActionNodeElementImpl implements AcceptNode
       case SysMLOCPackage.ACCEPT_NODE__ACCEPT_PARAMETER:
         getAcceptParameter().clear();
         return;
-      case SysMLOCPackage.ACCEPT_NODE__VIA_NODE_PARAMETER:
-        setViaNodeParameter(VIA_NODE_PARAMETER_EDEFAULT);
-        return;
       case SysMLOCPackage.ACCEPT_NODE__ELEMENTS:
         getElements().clear();
         return;
@@ -1316,8 +1261,6 @@ public class AcceptNodeImpl extends ActionNodeElementImpl implements AcceptNode
         return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
       case SysMLOCPackage.ACCEPT_NODE__ACCEPT_PARAMETER:
         return acceptParameter != null && !acceptParameter.isEmpty();
-      case SysMLOCPackage.ACCEPT_NODE__VIA_NODE_PARAMETER:
-        return VIA_NODE_PARAMETER_EDEFAULT == null ? viaNodeParameter != null : !VIA_NODE_PARAMETER_EDEFAULT.equals(viaNodeParameter);
       case SysMLOCPackage.ACCEPT_NODE__ELEMENTS:
         return elements != null && !elements.isEmpty();
     }
@@ -1442,14 +1385,6 @@ public class AcceptNodeImpl extends ActionNodeElementImpl implements AcceptNode
       switch (derivedFeatureID)
       {
         case SysMLOCPackage.ACCEPT_NODE__ACCEPT_PARAMETER: return SysMLOCPackage.ACCEPT_PARAMETER_PART__ACCEPT_PARAMETER;
-        case SysMLOCPackage.ACCEPT_NODE__VIA_NODE_PARAMETER: return SysMLOCPackage.ACCEPT_PARAMETER_PART__VIA_NODE_PARAMETER;
-        default: return -1;
-      }
-    }
-    if (baseClass == AcceptNodeDeclaration.class)
-    {
-      switch (derivedFeatureID)
-      {
         default: return -1;
       }
     }
@@ -1574,14 +1509,6 @@ public class AcceptNodeImpl extends ActionNodeElementImpl implements AcceptNode
       switch (baseFeatureID)
       {
         case SysMLOCPackage.ACCEPT_PARAMETER_PART__ACCEPT_PARAMETER: return SysMLOCPackage.ACCEPT_NODE__ACCEPT_PARAMETER;
-        case SysMLOCPackage.ACCEPT_PARAMETER_PART__VIA_NODE_PARAMETER: return SysMLOCPackage.ACCEPT_NODE__VIA_NODE_PARAMETER;
-        default: return -1;
-      }
-    }
-    if (baseClass == AcceptNodeDeclaration.class)
-    {
-      switch (baseFeatureID)
-      {
         default: return -1;
       }
     }
@@ -1641,8 +1568,6 @@ public class AcceptNodeImpl extends ActionNodeElementImpl implements AcceptNode
     result.append(isNonunique);
     result.append(", declaredName: ");
     result.append(declaredName);
-    result.append(", ViaNodeParameter: ");
-    result.append(viaNodeParameter);
     result.append(')');
     return result.toString();
   }

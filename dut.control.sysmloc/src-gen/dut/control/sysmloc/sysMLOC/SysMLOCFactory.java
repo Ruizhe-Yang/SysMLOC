@@ -96,6 +96,15 @@ public interface SysMLOCFactory extends EFactory
   ActionBodyElement createActionBodyElement();
 
   /**
+   * Returns a new object of class '<em>State Body Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>State Body Element</em>'.
+   * @generated
+   */
+  StateBodyElement createStateBodyElement();
+
+  /**
    * Returns a new object of class '<em>Annotating Body Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -229,6 +238,42 @@ public interface SysMLOCFactory extends EFactory
    * @generated
    */
   TargetSuccessionNodeElement createTargetSuccessionNodeElement();
+
+  /**
+   * Returns a new object of class '<em>Transition Usage Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Transition Usage Element</em>'.
+   * @generated
+   */
+  TransitionUsageElement createTransitionUsageElement();
+
+  /**
+   * Returns a new object of class '<em>Entry Action Node Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Entry Action Node Element</em>'.
+   * @generated
+   */
+  EntryActionNodeElement createEntryActionNodeElement();
+
+  /**
+   * Returns a new object of class '<em>Do Action Node Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Do Action Node Element</em>'.
+   * @generated
+   */
+  DoActionNodeElement createDoActionNodeElement();
+
+  /**
+   * Returns a new object of class '<em>Exit Action Node Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Exit Action Node Element</em>'.
+   * @generated
+   */
+  ExitActionNodeElement createExitActionNodeElement();
 
   /**
    * Returns a new object of class '<em>Namespace Import</em>'.
@@ -501,6 +546,33 @@ public interface SysMLOCFactory extends EFactory
   ActionUsage createActionUsage();
 
   /**
+   * Returns a new object of class '<em>State Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>State Definition</em>'.
+   * @generated
+   */
+  StateDefinition createStateDefinition();
+
+  /**
+   * Returns a new object of class '<em>State Usage</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>State Usage</em>'.
+   * @generated
+   */
+  StateUsage createStateUsage();
+
+  /**
+   * Returns a new object of class '<em>Transition Usage</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Transition Usage</em>'.
+   * @generated
+   */
+  TransitionUsage createTransitionUsage();
+
+  /**
    * Returns a new object of class '<em>Perform Action Usage</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -508,6 +580,15 @@ public interface SysMLOCFactory extends EFactory
    * @generated
    */
   PerformActionUsage createPerformActionUsage();
+
+  /**
+   * Returns a new object of class '<em>Exhibit State Usage</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Exhibit State Usage</em>'.
+   * @generated
+   */
+  ExhibitStateUsage createExhibitStateUsage();
 
   /**
    * Returns a new object of class '<em>Alias Element</em>'.
@@ -679,6 +760,51 @@ public interface SysMLOCFactory extends EFactory
    * @generated
    */
   TargetSuccessionElement createTargetSuccessionElement();
+
+  /**
+   * Returns a new object of class '<em>Entry Action</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Entry Action</em>'.
+   * @generated
+   */
+  EntryAction createEntryAction();
+
+  /**
+   * Returns a new object of class '<em>Do Action Node</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Do Action Node</em>'.
+   * @generated
+   */
+  DoActionNode createDoActionNode();
+
+  /**
+   * Returns a new object of class '<em>Exit Action Node</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Exit Action Node</em>'.
+   * @generated
+   */
+  ExitActionNode createExitActionNode();
+
+  /**
+   * Returns a new object of class '<em>Performed Action Parameter Part</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Performed Action Parameter Part</em>'.
+   * @generated
+   */
+  PerformedActionParameterPart createPerformedActionParameterPart();
+
+  /**
+   * Returns a new object of class '<em>Performed Action Usage</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Performed Action Usage</em>'.
+   * @generated
+   */
+  PerformedActionUsage createPerformedActionUsage();
 
   /**
    * Returns a new object of class '<em>Empty Succession Prefix</em>'.
@@ -879,6 +1005,15 @@ public interface SysMLOCFactory extends EFactory
   FeatureSpecializationPart createFeatureSpecializationPart();
 
   /**
+   * Returns a new object of class '<em>Perform Action Usage Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Perform Action Usage Declaration</em>'.
+   * @generated
+   */
+  PerformActionUsageDeclaration createPerformActionUsageDeclaration();
+
+  /**
    * Returns a new object of class '<em>Accept Node Declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -924,6 +1059,15 @@ public interface SysMLOCFactory extends EFactory
   TriggerValuePart createTriggerValuePart();
 
   /**
+   * Returns a new object of class '<em>Send Node Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Send Node Declaration</em>'.
+   * @generated
+   */
+  SendNodeDeclaration createSendNodeDeclaration();
+
+  /**
    * Returns a new object of class '<em>Assignment Node Declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -960,15 +1104,6 @@ public interface SysMLOCFactory extends EFactory
   FeatureSpecialization createFeatureSpecialization();
 
   /**
-   * Returns a new object of class '<em>Guard Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Guard Expression</em>'.
-   * @generated
-   */
-  GuardExpression createGuardExpression();
-
-  /**
    * Returns a new object of class '<em>Transition Succession</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -985,15 +1120,6 @@ public interface SysMLOCFactory extends EFactory
    * @generated
    */
   TargetSuccession createTargetSuccession();
-
-  /**
-   * Returns a new object of class '<em>Guarded Target Succession</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Guarded Target Succession</em>'.
-   * @generated
-   */
-  GuardedTargetSuccession createGuardedTargetSuccession();
 
   /**
    * Returns a new object of class '<em>Default Target Succession</em>'.
@@ -1030,6 +1156,33 @@ public interface SysMLOCFactory extends EFactory
    * @generated
    */
   ControlNodePrefix createControlNodePrefix();
+
+  /**
+   * Returns a new object of class '<em>Accept Action Usage</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Accept Action Usage</em>'.
+   * @generated
+   */
+  AcceptActionUsage createAcceptActionUsage();
+
+  /**
+   * Returns a new object of class '<em>Send Action Usage</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Send Action Usage</em>'.
+   * @generated
+   */
+  SendActionUsage createSendActionUsage();
+
+  /**
+   * Returns a new object of class '<em>Assignment Action Usage</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Assignment Action Usage</em>'.
+   * @generated
+   */
+  AssignmentActionUsage createAssignmentActionUsage();
 
   /**
    * Returns the package supported by this factory.
