@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <packages declaredName="Dynamics">
+    <elements xsi:type="sysMLOC:MembershipImport" visibility="private" declaredName="ScalarValues::Real"/>
+    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="ISQ"/>
+    <elements xsi:type="sysMLOC:CodeAnnotation" body="// Function definitions&#xD;&#xA;"/>
+    <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="Power">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="whlpwr">
+        <typings>PowerValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="Cd">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="Cf">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="tm">
+        <typings>MassValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="v">
+        <typings>SpeedValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="tp">
+        <typings>PowerValue</typings>
+        <valuePart>whlpwr - Cd * v - Cf * tm * v</valuePart>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="Acceleration">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="dt">
+        <typings>TimeValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="tm">
+        <typings>MassValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="tp">
+        <typings>PowerValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="a">
+        <typings>AccelerationValue</typings>
+        <valuePart>tp * dt * tp</valuePart>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="Velocity">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="dt">
+        <typings>TimeValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="v0">
+        <typings>SpeedValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="a">
+        <typings>AccelerationValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="v">
+        <typings>SpeedValue</typings>
+        <valuePart>v0 + a * dt</valuePart>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="Position">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="dt">
+        <typings>TimeValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x0">
+        <typings>LengthValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="v">
+        <typings>SpeedValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="x">
+        <typings>LengthValue</typings>
+        <valuePart>x0 + v * dt</valuePart>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:CodeAnnotation" body="// Analysis action def&#xD;&#xA;"/>
+    <elements xsi:type="sysMLOC:ActionDefinition" declaredName="StraightLineVehicleDynamics">
+      <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="dt">
+        <typings>TimeValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="whlpwr">
+        <typings>PowerValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="Cd">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="Cf">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="tm">
+        <typings>MassValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="v_in">
+        <typings>SpeedValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="x_in">
+        <typings>LengthValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" direction="out" declaredName="a_out">
+        <typings>AccelerationValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" direction="out" declaredName="v_out">
+        <typings>SpeedValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" direction="out" declaredName="x_out">
+        <typings>LengthValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AssertConstraintUsage">
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="tp">
+          <typings>PowerValue</typings>
+        </elements>
+        <resultExpressionParameter resultExpression="tp == Power(whlpwr, Cd, Cf, tm, v_in) &amp; a_out == Acceleration(dt, tm, tp) &amp; v_out == Velocity(dt, v_in, a_out) &amp; x_out == Position(dt, x_in, v_in)"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:CodeAnnotation" body="// Analysis actions&#xD;&#xA;"/>
+    <elements xsi:type="sysMLOC:ActionUsage" declaredName="dyn1">
+      <typings>StraightLineVehicleDynamics</typings>
+      <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="dt">
+        <typings>TimeValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="whlpwr">
+        <typings>PowerValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="Cd">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="Cf">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="tm">
+        <typings>MassValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="v_in">
+        <typings>SpeedValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="x_in">
+        <typings>LengthValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="tp">
+        <typings>PowerValue</typings>
+        <valuePart>Power(whlpwr, Cd, Cf, tm, v_in)</valuePart>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" direction="out">
+        <typings>AccelerationValue</typings>
+        <redefinitions>a_out</redefinitions>
+        <valuePart>Acceleration(dt, tm, tp)</valuePart>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" direction="out">
+        <typings>SpeedValue</typings>
+        <redefinitions>v_out</redefinitions>
+        <valuePart>Velocity(dt, v_in, a_out)</valuePart>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" direction="out">
+        <typings>LengthValue</typings>
+        <redefinitions>x_out</redefinitions>
+        <valuePart>Position(dt, x_in, v_in)</valuePart>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:ActionUsage" declaredName="dyn2">
+      <typings>StraightLineVehicleDynamics</typings>
+      <elements xsi:type="sysMLOC:CalculationUsage" declaredName="acc">
+        <typings>Acceleration</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="dt">
+          <valuePart>dyn2::dt</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="tm">
+          <valuePart>dyn2::tm</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="tp">
+          <valuePart>Power(whlpwr, Cd, Cf, tm, v_in)</valuePart>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:BindingConnectorAsUsage">
+        <connectorPart refElement="a_out"/>
+        <connectorPart refElement="acc.a"/>
+      </elements>
+      <elements xsi:type="sysMLOC:CalculationUsage" declaredName="vel">
+        <typings>Velocity</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="dt">
+          <valuePart>dyn2::dt</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="v0">
+          <valuePart>dyn2::v_in</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="a">
+          <valuePart>acc.a</valuePart>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:BindingConnectorAsUsage">
+        <connectorPart refElement="v_out"/>
+        <connectorPart refElement="vel.v"/>
+      </elements>
+      <elements xsi:type="sysMLOC:CalculationUsage" declaredName="pos">
+        <typings>Position</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="dt">
+          <valuePart>dyn2::dt</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x0">
+          <valuePart>dyn2::x_in</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="v0">
+          <valuePart>vel.v</valuePart>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:BindingConnectorAsUsage">
+        <connectorPart refElement="x_out"/>
+        <connectorPart refElement="pos.x"/>
+      </elements>
+    </elements>
+  </packages>
+</sysMLOC:Namespace>

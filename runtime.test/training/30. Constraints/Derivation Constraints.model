@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <packages declaredName="'Derivation Constraints'">
+    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="SI"/>
+    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="'Constraints Example-1'"/>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle1">
+      <typings>Vehicle</typings>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="totalMass">
+        <typings>MassValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AssertConstraintUsage">
+        <resultExpressionParameter resultExpression="totalMass == chassisMass + engine.mass + transmission.mass"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle2">
+      <typings>Vehicle</typings>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="totalMass">
+        <typings>MassValue</typings>
+        <valuePart>chassisMass + engine.mass + transmission.mass</valuePart>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:ConstraintDefinition" declaredName="Dynamics">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="mass">
+        <typings>MassValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="initialSpeed">
+        <typings>SpeedValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="finalSpeed">
+        <typings>SpeedValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="deltaT">
+        <typings>TimeValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="force">
+        <typings>ForceValue</typings>
+      </elements>
+      <resultExpressionParameter resultExpression="force * deltaT == mass * (finalSpeed - initialSpeed) and mass > 0[kg]"/>
+    </elements>
+  </packages>
+</sysMLOC:Namespace>

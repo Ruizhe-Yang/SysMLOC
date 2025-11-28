@@ -7,8 +7,10 @@ import dut.control.sysmloc.sysMLOC.ActionBodyElement;
 import dut.control.sysmloc.sysMLOC.ActionDefinition;
 import dut.control.sysmloc.sysMLOC.BasicDefinitionPrefix;
 import dut.control.sysmloc.sysMLOC.DefinitionDeclaration;
+import dut.control.sysmloc.sysMLOC.MemberPrefix;
 import dut.control.sysmloc.sysMLOC.OccurrenceDefinitionPrefix;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
+import dut.control.sysmloc.sysMLOC.VisibilityIndicator;
 
 import java.util.Collection;
 
@@ -34,6 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ActionDefinitionImpl#getVisibility <em>Visibility</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ActionDefinitionImpl#isIsAbstract <em>Is Abstract</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ActionDefinitionImpl#isIsVariation <em>Is Variation</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ActionDefinitionImpl#isIsIndividual <em>Is Individual</em>}</li>
@@ -46,6 +49,26 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class ActionDefinitionImpl extends DefinitionElementImpl implements ActionDefinition
 {
+  /**
+   * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVisibility()
+   * @generated
+   * @ordered
+   */
+  protected static final VisibilityIndicator VISIBILITY_EDEFAULT = VisibilityIndicator.NULL;
+
+  /**
+   * The cached value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVisibility()
+   * @generated
+   * @ordered
+   */
+  protected VisibilityIndicator visibility = VISIBILITY_EDEFAULT;
+
   /**
    * The default value of the '{@link #isIsAbstract() <em>Is Abstract</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -165,6 +188,31 @@ public class ActionDefinitionImpl extends DefinitionElementImpl implements Actio
   protected EClass eStaticClass()
   {
     return SysMLOCPackage.eINSTANCE.getActionDefinition();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public VisibilityIndicator getVisibility()
+  {
+    return visibility;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setVisibility(VisibilityIndicator newVisibility)
+  {
+    VisibilityIndicator oldVisibility = visibility;
+    visibility = newVisibility == null ? VISIBILITY_EDEFAULT : newVisibility;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ACTION_DEFINITION__VISIBILITY, oldVisibility, visibility));
   }
 
   /**
@@ -323,6 +371,8 @@ public class ActionDefinitionImpl extends DefinitionElementImpl implements Actio
   {
     switch (featureID)
     {
+      case SysMLOCPackage.ACTION_DEFINITION__VISIBILITY:
+        return getVisibility();
       case SysMLOCPackage.ACTION_DEFINITION__IS_ABSTRACT:
         return isIsAbstract();
       case SysMLOCPackage.ACTION_DEFINITION__IS_VARIATION:
@@ -350,6 +400,9 @@ public class ActionDefinitionImpl extends DefinitionElementImpl implements Actio
   {
     switch (featureID)
     {
+      case SysMLOCPackage.ACTION_DEFINITION__VISIBILITY:
+        setVisibility((VisibilityIndicator)newValue);
+        return;
       case SysMLOCPackage.ACTION_DEFINITION__IS_ABSTRACT:
         setIsAbstract((Boolean)newValue);
         return;
@@ -384,6 +437,9 @@ public class ActionDefinitionImpl extends DefinitionElementImpl implements Actio
   {
     switch (featureID)
     {
+      case SysMLOCPackage.ACTION_DEFINITION__VISIBILITY:
+        setVisibility(VISIBILITY_EDEFAULT);
+        return;
       case SysMLOCPackage.ACTION_DEFINITION__IS_ABSTRACT:
         setIsAbstract(IS_ABSTRACT_EDEFAULT);
         return;
@@ -416,6 +472,8 @@ public class ActionDefinitionImpl extends DefinitionElementImpl implements Actio
   {
     switch (featureID)
     {
+      case SysMLOCPackage.ACTION_DEFINITION__VISIBILITY:
+        return visibility != VISIBILITY_EDEFAULT;
       case SysMLOCPackage.ACTION_DEFINITION__IS_ABSTRACT:
         return isAbstract != IS_ABSTRACT_EDEFAULT;
       case SysMLOCPackage.ACTION_DEFINITION__IS_VARIATION:
@@ -440,6 +498,14 @@ public class ActionDefinitionImpl extends DefinitionElementImpl implements Actio
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
   {
+    if (baseClass == MemberPrefix.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.ACTION_DEFINITION__VISIBILITY: return SysMLOCPackage.MEMBER_PREFIX__VISIBILITY;
+        default: return -1;
+      }
+    }
     if (baseClass == BasicDefinitionPrefix.class)
     {
       switch (derivedFeatureID)
@@ -477,6 +543,14 @@ public class ActionDefinitionImpl extends DefinitionElementImpl implements Actio
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
   {
+    if (baseClass == MemberPrefix.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.MEMBER_PREFIX__VISIBILITY: return SysMLOCPackage.ACTION_DEFINITION__VISIBILITY;
+        default: return -1;
+      }
+    }
     if (baseClass == BasicDefinitionPrefix.class)
     {
       switch (baseFeatureID)
@@ -517,7 +591,9 @@ public class ActionDefinitionImpl extends DefinitionElementImpl implements Actio
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (isAbstract: ");
+    result.append(" (visibility: ");
+    result.append(visibility);
+    result.append(", isAbstract: ");
     result.append(isAbstract);
     result.append(", isVariation: ");
     result.append(isVariation);

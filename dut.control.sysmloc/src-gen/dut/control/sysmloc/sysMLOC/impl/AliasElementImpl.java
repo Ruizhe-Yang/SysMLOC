@@ -6,6 +6,7 @@ package dut.control.sysmloc.sysMLOC.impl;
 import dut.control.sysmloc.sysMLOC.ActionBodyElement;
 import dut.control.sysmloc.sysMLOC.AliasElement;
 import dut.control.sysmloc.sysMLOC.AnnotatingBodyElement;
+import dut.control.sysmloc.sysMLOC.CalculationBodyElement;
 import dut.control.sysmloc.sysMLOC.DefinitionBodyElement;
 import dut.control.sysmloc.sysMLOC.InterfaceBodyElement;
 import dut.control.sysmloc.sysMLOC.MemberPrefix;
@@ -427,6 +428,13 @@ public class AliasElementImpl extends PackageBodyElementImpl implements AliasEle
         default: return -1;
       }
     }
+    if (baseClass == CalculationBodyElement.class)
+    {
+      switch (derivedFeatureID)
+      {
+        default: return -1;
+      }
+    }
     if (baseClass == ActionBodyElement.class)
     {
       switch (derivedFeatureID)
@@ -475,6 +483,13 @@ public class AliasElementImpl extends PackageBodyElementImpl implements AliasEle
       }
     }
     if (baseClass == DefinitionBodyElement.class)
+    {
+      switch (baseFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    if (baseClass == CalculationBodyElement.class)
     {
       switch (baseFeatureID)
       {

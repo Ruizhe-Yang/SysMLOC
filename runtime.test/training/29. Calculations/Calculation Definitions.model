@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <packages declaredName="'Calculation Definitions'">
+    <elements xsi:type="sysMLOC:MembershipImport" visibility="private" declaredName="ScalarValues::Real"/>
+    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="ISQ"/>
+    <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="Power">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="whlpwr">
+        <typings>PowerValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="Cd">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="Cf">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="tm">
+        <typings>MassValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="v">
+        <typings>SpeedValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="drag">
+        <valuePart>Cd * v</valuePart>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="friction">
+        <valuePart>Cf * tm * v</valuePart>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+        <typings>PowerValue</typings>
+        <valuePart>whlpwr - drag - friction</valuePart>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="Acceleration">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="tp">
+        <typings>PowerValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="tm">
+        <typings>MassValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="v">
+        <typings>SpeedValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+        <typings>AccelerationValue</typings>
+        <valuePart>tp / (tm * v)</valuePart>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="Velocity">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="dt">
+        <typings>TimeValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="v0">
+        <typings>SpeedValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="a">
+        <typings>AccelerationValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+        <typings>SpeedValue</typings>
+        <valuePart>v0 + a * dt</valuePart>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="Position">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="dt">
+        <typings>TimeValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x0">
+        <typings>LengthValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="v">
+        <typings>SpeedValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+        <typings>LengthValue</typings>
+        <valuePart>x0 + v * dt</valuePart>
+      </elements>
+    </elements>
+  </packages>
+</sysMLOC:Namespace>

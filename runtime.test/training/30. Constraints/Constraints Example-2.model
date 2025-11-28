@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <packages declaredName="'Constraints Example-2'">
+    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="ISQ"/>
+    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="SI"/>
+    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="NumericalFunctions"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Engine"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Transmission"/>
+    <elements xsi:type="sysMLOC:ConstraintDefinition" declaredName="MassConstraint">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="partMasses">
+        <typings>MassValue</typings>
+        <Multiplicity>0</Multiplicity>
+        <Multiplicity>*</Multiplicity>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="massLimit">
+        <typings>MassValue</typings>
+      </elements>
+      <resultExpressionParameter resultExpression="sum(partMasses) &lt;= massLimit"/>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle">
+      <elements xsi:type="sysMLOC:ConstraintUsage" declaredName="massConstraint">
+        <typings>MassConstraint</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <redefinitions>partMasses</redefinitions>
+          <valuePart>(chassisMass, engine.mass, transmission.mass)</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <redefinitions>massLimit</redefinitions>
+          <valuePart>2500[kg]</valuePart>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="chassisMass">
+        <typings>MassValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="engine">
+        <typings>Engine</typings>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass">
+          <typings>MassValue</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="transmission">
+        <typings>Engine</typings>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass">
+          <typings>MassValue</typings>
+        </elements>
+      </elements>
+    </elements>
+  </packages>
+</sysMLOC:Namespace>

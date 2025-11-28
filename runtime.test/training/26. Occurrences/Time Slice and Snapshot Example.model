@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <packages declaredName="'Time Slice and Snapshot Example'">
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="Date"/>
+    <elements xsi:type="sysMLOC:ItemDefinition" declaredName="Person"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle">
+      <elements xsi:type="sysMLOC:PortionUsage" declaredName="assembly" portionKind="timeslice"/>
+      <elements xsi:type="sysMLOC:SuccessionAsUsage">
+        <connectorPart refElement="assembly"/>
+        <connectorPart refElement="delivery"/>
+      </elements>
+      <elements xsi:type="sysMLOC:PortionUsage" declaredName="delivery" portionKind="snapshot">
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="deliveryDate">
+          <typings>Date</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PortionUsage" isThen="true" isOrdered="true" declaredName="ownership" portionKind="timeslice">
+        <Multiplicity>0</Multiplicity>
+        <Multiplicity>*</Multiplicity>
+        <elements xsi:type="sysMLOC:PortionUsage" declaredName="sale" portionKind="snapshot">
+          <valuePart>start</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isReference="true" declaredName="owner">
+          <typings>Person</typings>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:PortionUsage" declaredName="driven" portionKind="timeslice">
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+          <elements xsi:type="sysMLOC:ItemUsage" isReference="true" declaredName="driver">
+            <typings>Person</typings>
+            <Multiplicity>1</Multiplicity>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PortionUsage" declaredName="junked" portionKind="snapshot">
+        <valuePart>done</valuePart>
+      </elements>
+    </elements>
+  </packages>
+</sysMLOC:Namespace>

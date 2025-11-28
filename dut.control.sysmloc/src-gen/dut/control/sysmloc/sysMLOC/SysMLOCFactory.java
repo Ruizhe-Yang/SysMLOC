@@ -96,6 +96,15 @@ public interface SysMLOCFactory extends EFactory
   ActionBodyElement createActionBodyElement();
 
   /**
+   * Returns a new object of class '<em>Calculation Body Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Calculation Body Element</em>'.
+   * @generated
+   */
+  CalculationBodyElement createCalculationBodyElement();
+
+  /**
    * Returns a new object of class '<em>State Body Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -411,6 +420,60 @@ public interface SysMLOCFactory extends EFactory
   SuccessionAsUsage createSuccessionAsUsage();
 
   /**
+   * Returns a new object of class '<em>Occurrence Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Occurrence Definition</em>'.
+   * @generated
+   */
+  OccurrenceDefinition createOccurrenceDefinition();
+
+  /**
+   * Returns a new object of class '<em>Occurrence Usage</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Occurrence Usage</em>'.
+   * @generated
+   */
+  OccurrenceUsage createOccurrenceUsage();
+
+  /**
+   * Returns a new object of class '<em>Portion Usage</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Portion Usage</em>'.
+   * @generated
+   */
+  PortionUsage createPortionUsage();
+
+  /**
+   * Returns a new object of class '<em>Event Occurrence Usage</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Event Occurrence Usage</em>'.
+   * @generated
+   */
+  EventOccurrenceUsage createEventOccurrenceUsage();
+
+  /**
+   * Returns a new object of class '<em>Individual Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Individual Definition</em>'.
+   * @generated
+   */
+  IndividualDefinition createIndividualDefinition();
+
+  /**
+   * Returns a new object of class '<em>Individual Usage</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Individual Usage</em>'.
+   * @generated
+   */
+  IndividualUsage createIndividualUsage();
+
+  /**
    * Returns a new object of class '<em>Item Definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -501,6 +564,15 @@ public interface SysMLOCFactory extends EFactory
   InterfaceUsage createInterfaceUsage();
 
   /**
+   * Returns a new object of class '<em>Message</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Message</em>'.
+   * @generated
+   */
+  Message createMessage();
+
+  /**
    * Returns a new object of class '<em>Flow Connection Definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -517,6 +589,15 @@ public interface SysMLOCFactory extends EFactory
    * @generated
    */
   FlowConnectionUsage createFlowConnectionUsage();
+
+  /**
+   * Returns a new object of class '<em>Item Feature Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Item Feature Parameter</em>'.
+   * @generated
+   */
+  ItemFeatureParameter createItemFeatureParameter();
 
   /**
    * Returns a new object of class '<em>Succession Flow Connection Usage</em>'.
@@ -546,6 +627,24 @@ public interface SysMLOCFactory extends EFactory
   ActionUsage createActionUsage();
 
   /**
+   * Returns a new object of class '<em>Calculation Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Calculation Definition</em>'.
+   * @generated
+   */
+  CalculationDefinition createCalculationDefinition();
+
+  /**
+   * Returns a new object of class '<em>Calculation Usage</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Calculation Usage</em>'.
+   * @generated
+   */
+  CalculationUsage createCalculationUsage();
+
+  /**
    * Returns a new object of class '<em>State Definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -562,6 +661,24 @@ public interface SysMLOCFactory extends EFactory
    * @generated
    */
   StateUsage createStateUsage();
+
+  /**
+   * Returns a new object of class '<em>Constraint Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Constraint Definition</em>'.
+   * @generated
+   */
+  ConstraintDefinition createConstraintDefinition();
+
+  /**
+   * Returns a new object of class '<em>Constraint Usage</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Constraint Usage</em>'.
+   * @generated
+   */
+  ConstraintUsage createConstraintUsage();
 
   /**
    * Returns a new object of class '<em>Transition Usage</em>'.
@@ -589,6 +706,24 @@ public interface SysMLOCFactory extends EFactory
    * @generated
    */
   ExhibitStateUsage createExhibitStateUsage();
+
+  /**
+   * Returns a new object of class '<em>Assert Constraint Usage</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Assert Constraint Usage</em>'.
+   * @generated
+   */
+  AssertConstraintUsage createAssertConstraintUsage();
+
+  /**
+   * Returns a new object of class '<em>Result Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Result Expression</em>'.
+   * @generated
+   */
+  ResultExpression createResultExpression();
 
   /**
    * Returns a new object of class '<em>Alias Element</em>'.
@@ -789,15 +924,6 @@ public interface SysMLOCFactory extends EFactory
   ExitActionNode createExitActionNode();
 
   /**
-   * Returns a new object of class '<em>Performed Action Parameter Part</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Performed Action Parameter Part</em>'.
-   * @generated
-   */
-  PerformedActionParameterPart createPerformedActionParameterPart();
-
-  /**
    * Returns a new object of class '<em>Performed Action Usage</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -805,6 +931,15 @@ public interface SysMLOCFactory extends EFactory
    * @generated
    */
   PerformedActionUsage createPerformedActionUsage();
+
+  /**
+   * Returns a new object of class '<em>Usage Extension Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Usage Extension Keyword</em>'.
+   * @generated
+   */
+  UsageExtensionKeyword createUsageExtensionKeyword();
 
   /**
    * Returns a new object of class '<em>Empty Succession Prefix</em>'.
@@ -841,6 +976,15 @@ public interface SysMLOCFactory extends EFactory
    * @generated
    */
   MemberPrefix createMemberPrefix();
+
+  /**
+   * Returns a new object of class '<em>is Return Prefix</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>is Return Prefix</em>'.
+   * @generated
+   */
+  isReturnPrefix createisReturnPrefix();
 
   /**
    * Returns a new object of class '<em>Definition Prefix</em>'.
@@ -951,6 +1095,15 @@ public interface SysMLOCFactory extends EFactory
   ActionUsageDeclaration createActionUsageDeclaration();
 
   /**
+   * Returns a new object of class '<em>Constraint Usage Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Constraint Usage Declaration</em>'.
+   * @generated
+   */
+  ConstraintUsageDeclaration createConstraintUsageDeclaration();
+
+  /**
    * Returns a new object of class '<em>Action Node Usage Declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1030,6 +1183,15 @@ public interface SysMLOCFactory extends EFactory
    * @generated
    */
   AcceptParameterPart createAcceptParameterPart();
+
+  /**
+   * Returns a new object of class '<em>Item Feature Parameter Part</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Item Feature Parameter Part</em>'.
+   * @generated
+   */
+  ItemFeatureParameterPart createItemFeatureParameterPart();
 
   /**
    * Returns a new object of class '<em>Payload Feature</em>'.
@@ -1156,6 +1318,15 @@ public interface SysMLOCFactory extends EFactory
    * @generated
    */
   ControlNodePrefix createControlNodePrefix();
+
+  /**
+   * Returns a new object of class '<em>Performed Action Parameter Part</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Performed Action Parameter Part</em>'.
+   * @generated
+   */
+  PerformedActionParameterPart createPerformedActionParameterPart();
 
   /**
    * Returns a new object of class '<em>Accept Action Usage</em>'.

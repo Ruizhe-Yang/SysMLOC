@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <packages declaredName="ServerSequenceRealization_2">
+    <elements xsi:type="sysMLOC:MembershipImport" visibility="private" declaredName="ScalarValues::String"/>
+    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="ServerSequenceModel"/>
+    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="Configuration"/>
+    <elements xsi:type="sysMLOC:Package" declaredName="Configuration">
+      <elements xsi:type="sysMLOC:PortDefinition" declaredName="PublicationPort"/>
+      <elements xsi:type="sysMLOC:PortDefinition" declaredName="SubscriptionPort"/>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="producer_2">
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="someTopic">
+          <typings>String</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" visibility="private" declaredName="somePublication"/>
+        <elements xsi:type="sysMLOC:PortUsage" declaredName="publicationPort">
+          <typings>~PublicationPort</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:PerformActionUsage" declaredName="producerBehavior">
+          <elements xsi:type="sysMLOC:SendNode" declaredName="publish" sendNodeParameter="true" viaNodeParameter="publicationPort"/>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:InterfaceUsage">
+        <connectorPart refElement="producer_2.publicationPort"/>
+        <connectorPart refElement="server_2.publicationPort"/>
+        <elements xsi:type="sysMLOC:BindingConnectorAsUsage">
+          <connectorPart refElement="source.outgoingTransfersFromSelf"/>
+          <connectorPart refElement="target.incomingTransfersToSelf"/>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="server_2">
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:PortUsage" declaredName="publicationPort">
+          <typings>PublicationPort</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:PortUsage" declaredName="subscriptionPort">
+          <typings>SubscriptionPort</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:ExhibitStateUsage" declaredName="serverBehavior">
+          <elements xsi:type="sysMLOC:EntryAction"/>
+          <elements xsi:type="sysMLOC:TransitionUsage">
+            <transitionSuccessionElement refElement="waitForSubscription"/>
+          </elements>
+          <elements xsi:type="sysMLOC:StateUsage" declaredName="waitForSubscription"/>
+          <elements xsi:type="sysMLOC:TransitionUsage" declaredName="subscribing" transitionSourceElement="waitForSubscription">
+            <acceptParameter declaredName="sub" viaNodeParameter="subscriptionPort">
+              <typings>Subscribe</typings>
+            </acceptParameter>
+            <transitionSuccessionElement refElement="waitForPublication"/>
+          </elements>
+          <elements xsi:type="sysMLOC:StateUsage" declaredName="waitForPublication"/>
+          <elements xsi:type="sysMLOC:TransitionUsage" declaredName="delivering" transitionSourceElement="waitForPublication" conditionalExpression="pub.topic == subscribing.sub.topic">
+            <acceptParameter declaredName="pub" viaNodeParameter="publicationPort">
+              <typings>Publish</typings>
+            </acceptParameter>
+            <performedActionParameterPart xsi:type="sysMLOC:SendActionUsage" sendNodeParameter="true" toNodeParameter="subscribing.sub.subscriber"/>
+            <transitionSuccessionElement refElement="waitForPublication"/>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:InterfaceUsage">
+        <connectorPart refElement="consumer_2.subscriptionPort"/>
+        <connectorPart refElement="server_2.subscriptionPort"/>
+        <elements xsi:type="sysMLOC:BindingConnectorAsUsage">
+          <connectorPart refElement="source.outgoingTransfersFromSelf"/>
+          <connectorPart refElement="target.incomingTransfersToSelf"/>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="consumer_2">
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="myTopic">
+          <typings>String</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:PortUsage" declaredName="subscriptionPort">
+          <typings>~SubscriptionPort</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:PerformActionUsage" declaredName="consumerBehavior">
+          <elements xsi:type="sysMLOC:SendNode" declaredName="subscribe" sendNodeParameter="true" toNodeParameter="server_2"/>
+          <elements xsi:type="sysMLOC:AcceptNode" isThen="true" declaredName="delivery">
+            <acceptParameter payloadFeatureElement="Deliver" viaNodeParameter="consumer_2"/>
+          </elements>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="realization_2">
+      <typings>PubSubSequence</typings>
+      <elements xsi:type="sysMLOC:PartUsage">
+        <subsetting>producer_2</subsetting>
+        <redefinitions>producer</redefinitions>
+        <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="producerBehavior.publish">
+          <redefinitions>publish_source_event</redefinitions>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage">
+        <subsetting>server_2</subsetting>
+        <redefinitions>server</redefinitions>
+        <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="serverBehavior.subscribing.accepter">
+          <redefinitions>subscribe_target_event</redefinitions>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="serverBehavior.delivering.accepter">
+          <redefinitions>publish_target_event</redefinitions>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="serverBehavior.delivering.effect">
+          <redefinitions>deliver_source_event</redefinitions>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage">
+        <subsetting>consumer_2</subsetting>
+        <redefinitions>consumer</redefinitions>
+        <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="consumerBehavior.subscribe">
+          <redefinitions>subscribe_source_event</redefinitions>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="consumerBehavior.delivery">
+          <redefinitions>deliver_target_event</redefinitions>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:Message">
+        <typings>Transfers::MessageTransfer</typings>
+        <redefinitions>publish_message</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isEnd="true">
+          <redefinitions>source</redefinitions>
+          <valuePart>producer.publicationPort</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isEnd="true">
+          <redefinitions>target</redefinitions>
+          <valuePart>server.publicationPort</valuePart>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:Message">
+        <typings>Transfers::MessageTransfer</typings>
+        <redefinitions>subscribe_message</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isEnd="true">
+          <redefinitions>source</redefinitions>
+          <valuePart>consumer.subscriptionPort</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isEnd="true">
+          <redefinitions>target</redefinitions>
+          <valuePart>server.subscriptionPort</valuePart>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:Message">
+        <typings>Transfers::MessageTransfer</typings>
+        <redefinitions>deliver_message</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isEnd="true">
+          <redefinitions>source</redefinitions>
+          <valuePart>server</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isEnd="true">
+          <redefinitions>target</redefinitions>
+          <valuePart>consumer</valuePart>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:Comment" body="/* Binding sent/accept messages to specification model messages. */"/>
+      <elements xsi:type="sysMLOC:Comment" body="/* Sends */"/>
+      <elements xsi:type="sysMLOC:BindingConnectorAsUsage">
+        <connectorPart refElement="producer_2.producerBehavior.publish.sentMessage"/>
+        <connectorPart refElement="publish_message"/>
+      </elements>
+      <elements xsi:type="sysMLOC:BindingConnectorAsUsage">
+        <connectorPart refElement="consumer_2.consumerBehavior.subscribe.sentMessage"/>
+        <connectorPart refElement="subscribe_message"/>
+      </elements>
+      <elements xsi:type="sysMLOC:BindingConnectorAsUsage">
+        <connectorPart refElement="server_2.serverBehavior.delivering.effect.sentMessage"/>
+        <connectorPart refElement="deliver_message"/>
+      </elements>
+      <elements xsi:type="sysMLOC:Comment" body="/* Accepts */"/>
+      <elements xsi:type="sysMLOC:BindingConnectorAsUsage">
+        <connectorPart refElement="consumer_2.consumerBehavior.delivery.acceptedMessage"/>
+        <connectorPart refElement="subscribe_message"/>
+      </elements>
+      <elements xsi:type="sysMLOC:BindingConnectorAsUsage">
+        <connectorPart refElement="server_2.serverBehavior.subscribing.accepter.acceptedMessage"/>
+        <connectorPart refElement="subscribe_message"/>
+      </elements>
+      <elements xsi:type="sysMLOC:BindingConnectorAsUsage">
+        <connectorPart refElement="server_2.serverBehavior.delivering.accepter.acceptedMessage"/>
+        <connectorPart refElement="publish_message"/>
+      </elements>
+    </elements>
+  </packages>
+</sysMLOC:Namespace>

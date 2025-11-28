@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface DecisionNode extends ActionNodeElement, EmptySuccessionPrefix, MemberPrefix, ControlNodePrefix, RefPrefix, UsageDeclaration, FeatureDeclaration, FeatureSpecializationPart, FeatureSpecialization, MultiplicityPart, MultiplicityRange
+public interface DecisionNode extends ActionNodeElement, EmptySuccessionPrefix, MemberPrefix, ControlNodePrefix, RefPrefix, UsageExtensionKeyword, UsageDeclaration, FeatureDeclaration, FeatureSpecializationPart, FeatureSpecialization, MultiplicityPart, MultiplicityRange
 {
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.

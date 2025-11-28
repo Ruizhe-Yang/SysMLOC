@@ -21,6 +21,7 @@ import dut.control.sysmloc.sysMLOC.TransitionSuccession;
 import dut.control.sysmloc.sysMLOC.TransitionUsage;
 import dut.control.sysmloc.sysMLOC.UsageDeclaration;
 import dut.control.sysmloc.sysMLOC.VisibilityIndicator;
+import dut.control.sysmloc.sysMLOC.isReturnPrefix;
 
 import java.util.Collection;
 
@@ -49,6 +50,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.TransitionUsageImpl#isIsThen <em>Is Then</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.TransitionUsageImpl#getThenMultiplicity <em>Then Multiplicity</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.TransitionUsageImpl#getVisibility <em>Visibility</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.TransitionUsageImpl#isIsReturn <em>Is Return</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.TransitionUsageImpl#getTypings <em>Typings</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.TransitionUsageImpl#getSubsetting <em>Subsetting</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.TransitionUsageImpl#getReferences <em>References</em>}</li>
@@ -119,6 +121,26 @@ public class TransitionUsageImpl extends TransitionUsageElementImpl implements T
    * @ordered
    */
   protected VisibilityIndicator visibility = VISIBILITY_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsReturn() <em>Is Return</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsReturn()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_RETURN_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsReturn() <em>Is Return</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsReturn()
+   * @generated
+   * @ordered
+   */
+  protected boolean isReturn = IS_RETURN_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getTypings() <em>Typings</em>}' attribute list.
@@ -404,6 +426,31 @@ public class TransitionUsageImpl extends TransitionUsageElementImpl implements T
     visibility = newVisibility == null ? VISIBILITY_EDEFAULT : newVisibility;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.TRANSITION_USAGE__VISIBILITY, oldVisibility, visibility));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsReturn()
+  {
+    return isReturn;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsReturn(boolean newIsReturn)
+  {
+    boolean oldIsReturn = isReturn;
+    isReturn = newIsReturn;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.TRANSITION_USAGE__IS_RETURN, oldIsReturn, isReturn));
   }
 
   /**
@@ -719,6 +766,8 @@ public class TransitionUsageImpl extends TransitionUsageElementImpl implements T
         return getThenMultiplicity();
       case SysMLOCPackage.TRANSITION_USAGE__VISIBILITY:
         return getVisibility();
+      case SysMLOCPackage.TRANSITION_USAGE__IS_RETURN:
+        return isIsReturn();
       case SysMLOCPackage.TRANSITION_USAGE__TYPINGS:
         return getTypings();
       case SysMLOCPackage.TRANSITION_USAGE__SUBSETTING:
@@ -773,6 +822,9 @@ public class TransitionUsageImpl extends TransitionUsageElementImpl implements T
         return;
       case SysMLOCPackage.TRANSITION_USAGE__VISIBILITY:
         setVisibility((VisibilityIndicator)newValue);
+        return;
+      case SysMLOCPackage.TRANSITION_USAGE__IS_RETURN:
+        setIsReturn((Boolean)newValue);
         return;
       case SysMLOCPackage.TRANSITION_USAGE__TYPINGS:
         getTypings().clear();
@@ -852,6 +904,9 @@ public class TransitionUsageImpl extends TransitionUsageElementImpl implements T
       case SysMLOCPackage.TRANSITION_USAGE__VISIBILITY:
         setVisibility(VISIBILITY_EDEFAULT);
         return;
+      case SysMLOCPackage.TRANSITION_USAGE__IS_RETURN:
+        setIsReturn(IS_RETURN_EDEFAULT);
+        return;
       case SysMLOCPackage.TRANSITION_USAGE__TYPINGS:
         getTypings().clear();
         return;
@@ -917,6 +972,8 @@ public class TransitionUsageImpl extends TransitionUsageElementImpl implements T
         return thenMultiplicity != null && !thenMultiplicity.isEmpty();
       case SysMLOCPackage.TRANSITION_USAGE__VISIBILITY:
         return visibility != VISIBILITY_EDEFAULT;
+      case SysMLOCPackage.TRANSITION_USAGE__IS_RETURN:
+        return isReturn != IS_RETURN_EDEFAULT;
       case SysMLOCPackage.TRANSITION_USAGE__TYPINGS:
         return typings != null && !typings.isEmpty();
       case SysMLOCPackage.TRANSITION_USAGE__SUBSETTING:
@@ -973,6 +1030,14 @@ public class TransitionUsageImpl extends TransitionUsageElementImpl implements T
       switch (derivedFeatureID)
       {
         case SysMLOCPackage.TRANSITION_USAGE__VISIBILITY: return SysMLOCPackage.MEMBER_PREFIX__VISIBILITY;
+        default: return -1;
+      }
+    }
+    if (baseClass == isReturnPrefix.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.TRANSITION_USAGE__IS_RETURN: return SysMLOCPackage.IS_RETURN_PREFIX__IS_RETURN;
         default: return -1;
       }
     }
@@ -1079,6 +1144,14 @@ public class TransitionUsageImpl extends TransitionUsageElementImpl implements T
         default: return -1;
       }
     }
+    if (baseClass == isReturnPrefix.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.IS_RETURN_PREFIX__IS_RETURN: return SysMLOCPackage.TRANSITION_USAGE__IS_RETURN;
+        default: return -1;
+      }
+    }
     if (baseClass == FeatureSpecialization.class)
     {
       switch (baseFeatureID)
@@ -1174,6 +1247,8 @@ public class TransitionUsageImpl extends TransitionUsageElementImpl implements T
     result.append(thenMultiplicity);
     result.append(", visibility: ");
     result.append(visibility);
+    result.append(", isReturn: ");
+    result.append(isReturn);
     result.append(", typings: ");
     result.append(typings);
     result.append(", subsetting: ");

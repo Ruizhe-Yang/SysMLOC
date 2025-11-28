@@ -19,6 +19,7 @@ import dut.control.sysmloc.sysMLOC.Usage;
 import dut.control.sysmloc.sysMLOC.UsageBodyElement;
 import dut.control.sysmloc.sysMLOC.UsageDeclaration;
 import dut.control.sysmloc.sysMLOC.VisibilityIndicator;
+import dut.control.sysmloc.sysMLOC.isReturnPrefix;
 
 import java.util.Collection;
 
@@ -45,6 +46,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ReferenceUsageImpl#getVisibility <em>Visibility</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ReferenceUsageImpl#isIsReturn <em>Is Return</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ReferenceUsageImpl#isIsEnd <em>Is End</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ReferenceUsageImpl#getDirection <em>Direction</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ReferenceUsageImpl#isIsAbstract <em>Is Abstract</em>}</li>
@@ -89,6 +91,26 @@ public class ReferenceUsageImpl extends NonOccurrenceUsageElementImpl implements
    * @ordered
    */
   protected VisibilityIndicator visibility = VISIBILITY_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsReturn() <em>Is Return</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsReturn()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_RETURN_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsReturn() <em>Is Return</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsReturn()
+   * @generated
+   * @ordered
+   */
+  protected boolean isReturn = IS_RETURN_EDEFAULT;
 
   /**
    * The default value of the '{@link #isIsEnd() <em>Is End</em>}' attribute.
@@ -434,6 +456,31 @@ public class ReferenceUsageImpl extends NonOccurrenceUsageElementImpl implements
     visibility = newVisibility == null ? VISIBILITY_EDEFAULT : newVisibility;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.REFERENCE_USAGE__VISIBILITY, oldVisibility, visibility));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsReturn()
+  {
+    return isReturn;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsReturn(boolean newIsReturn)
+  {
+    boolean oldIsReturn = isReturn;
+    isReturn = newIsReturn;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.REFERENCE_USAGE__IS_RETURN, oldIsReturn, isReturn));
   }
 
   /**
@@ -859,6 +906,8 @@ public class ReferenceUsageImpl extends NonOccurrenceUsageElementImpl implements
     {
       case SysMLOCPackage.REFERENCE_USAGE__VISIBILITY:
         return getVisibility();
+      case SysMLOCPackage.REFERENCE_USAGE__IS_RETURN:
+        return isIsReturn();
       case SysMLOCPackage.REFERENCE_USAGE__IS_END:
         return isIsEnd();
       case SysMLOCPackage.REFERENCE_USAGE__DIRECTION:
@@ -914,6 +963,9 @@ public class ReferenceUsageImpl extends NonOccurrenceUsageElementImpl implements
     {
       case SysMLOCPackage.REFERENCE_USAGE__VISIBILITY:
         setVisibility((VisibilityIndicator)newValue);
+        return;
+      case SysMLOCPackage.REFERENCE_USAGE__IS_RETURN:
+        setIsReturn((Boolean)newValue);
         return;
       case SysMLOCPackage.REFERENCE_USAGE__IS_END:
         setIsEnd((Boolean)newValue);
@@ -997,6 +1049,9 @@ public class ReferenceUsageImpl extends NonOccurrenceUsageElementImpl implements
       case SysMLOCPackage.REFERENCE_USAGE__VISIBILITY:
         setVisibility(VISIBILITY_EDEFAULT);
         return;
+      case SysMLOCPackage.REFERENCE_USAGE__IS_RETURN:
+        setIsReturn(IS_RETURN_EDEFAULT);
+        return;
       case SysMLOCPackage.REFERENCE_USAGE__IS_END:
         setIsEnd(IS_END_EDEFAULT);
         return;
@@ -1070,6 +1125,8 @@ public class ReferenceUsageImpl extends NonOccurrenceUsageElementImpl implements
     {
       case SysMLOCPackage.REFERENCE_USAGE__VISIBILITY:
         return visibility != VISIBILITY_EDEFAULT;
+      case SysMLOCPackage.REFERENCE_USAGE__IS_RETURN:
+        return isReturn != IS_RETURN_EDEFAULT;
       case SysMLOCPackage.REFERENCE_USAGE__IS_END:
         return isEnd != IS_END_EDEFAULT;
       case SysMLOCPackage.REFERENCE_USAGE__DIRECTION:
@@ -1125,6 +1182,14 @@ public class ReferenceUsageImpl extends NonOccurrenceUsageElementImpl implements
       switch (derivedFeatureID)
       {
         case SysMLOCPackage.REFERENCE_USAGE__VISIBILITY: return SysMLOCPackage.MEMBER_PREFIX__VISIBILITY;
+        default: return -1;
+      }
+    }
+    if (baseClass == isReturnPrefix.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.REFERENCE_USAGE__IS_RETURN: return SysMLOCPackage.IS_RETURN_PREFIX__IS_RETURN;
         default: return -1;
       }
     }
@@ -1235,6 +1300,14 @@ public class ReferenceUsageImpl extends NonOccurrenceUsageElementImpl implements
         default: return -1;
       }
     }
+    if (baseClass == isReturnPrefix.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.IS_RETURN_PREFIX__IS_RETURN: return SysMLOCPackage.REFERENCE_USAGE__IS_RETURN;
+        default: return -1;
+      }
+    }
     if (baseClass == EndUsagePrefix.class)
     {
       switch (baseFeatureID)
@@ -1339,6 +1412,8 @@ public class ReferenceUsageImpl extends NonOccurrenceUsageElementImpl implements
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (visibility: ");
     result.append(visibility);
+    result.append(", isReturn: ");
+    result.append(isReturn);
     result.append(", isEnd: ");
     result.append(isEnd);
     result.append(", direction: ");

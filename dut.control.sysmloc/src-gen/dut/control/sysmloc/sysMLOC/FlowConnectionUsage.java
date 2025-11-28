@@ -14,7 +14,6 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.FlowConnectionUsage#getItemFeature <em>Item Feature</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.FlowConnectionUsage#getFlowEnd <em>Flow End</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.FlowConnectionUsage#getElements <em>Elements</em>}</li>
  * </ul>
@@ -23,20 +22,8 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface FlowConnectionUsage extends StructureUsageElement, EmptySuccessionPrefix, MemberPrefix, OccurrenceUsagePrefix, BasicUsagePrefix, RefPrefix, UsageDeclaration, FeatureDeclaration, FeatureSpecializationPart, FeatureSpecialization, MultiplicityPart, MultiplicityRange, FeatureValue
+public interface FlowConnectionUsage extends StructureUsageElement, EmptySuccessionPrefix, MemberPrefix, isReturnPrefix, OccurrenceUsagePrefix, BasicUsagePrefix, RefPrefix, UsageDeclaration, FeatureDeclaration, FeatureSpecializationPart, FeatureSpecialization, MultiplicityPart, MultiplicityRange, FeatureValue, ItemFeatureParameterPart
 {
-  /**
-   * Returns the value of the '<em><b>Item Feature</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Item Feature</em>' attribute list.
-   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getFlowConnectionUsage_ItemFeature()
-   * @model unique="false"
-   * @generated
-   */
-  EList<String> getItemFeature();
-
   /**
    * Returns the value of the '<em><b>Flow End</b></em>' attribute list.
    * The list contents are of type {@link java.lang.String}.

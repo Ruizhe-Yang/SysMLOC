@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <packages declaredName="ParameterTest">
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="A">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="x">
+        <typings>ScalarValues::String</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="y">
+        <typings>A</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="a">
+      <typings>A</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="F">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="p">
+        <typings>A</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="q">
+        <typings>ScalarValues::Integer</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+        <typings>ScalarValues::Integer</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="f">
+      <valuePart>F(a, 2)</valuePart>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="g">
+      <valuePart>F(q = 1, p = a)</valuePart>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="b">
+      <valuePart>A(y=a, x=&quot;&quot;)</valuePart>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="c">
+      <valuePart>A(&quot;test2&quot;)</valuePart>
+    </elements>
+  </packages>
+</sysMLOC:Namespace>

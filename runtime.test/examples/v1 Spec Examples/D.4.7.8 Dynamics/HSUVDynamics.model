@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <packages declaredName="HSUVDynamics">
+    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="ScalarValues"/>
+    <elements xsi:type="sysMLOC:MembershipImport" visibility="private" declaredName="SequenceFunctions::size"/>
+    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="ControlFunctions"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="Horsepwr">
+      <superclassifiers>Real</superclassifiers>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="Weight">
+      <superclassifiers>Real</superclassifiers>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="Accel">
+      <superclassifiers>Real</superclassifiers>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="Vel">
+      <superclassifiers>Real</superclassifiers>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="Dist">
+      <superclassifiers>Real</superclassifiers>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="Time">
+      <superclassifiers>Real</superclassifiers>
+    </elements>
+    <elements xsi:type="sysMLOC:ConstraintDefinition" declaredName="PowerEquation">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="whlpwr">
+        <typings>Horsepwr</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="Cd">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="Cf">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="tw">
+        <typings>Weight</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="tp">
+        <typings>Horsepwr</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="v">
+        <typings>Vel</typings>
+      </elements>
+      <resultExpressionParameter resultExpression="tp == whlpwr - Cd * v - Cf * tw * v"/>
+    </elements>
+    <elements xsi:type="sysMLOC:ConstraintDefinition" declaredName="PositionEquation">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="dt">
+        <typings>Time</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" isOrdered="true" declaredName="v">
+        <typings>Vel</typings>
+        <Multiplicity>0</Multiplicity>
+        <Multiplicity>*</Multiplicity>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" isOrdered="true" declaredName="x">
+        <typings>Dist</typings>
+        <Multiplicity>0</Multiplicity>
+        <Multiplicity>*</Multiplicity>
+      </elements>
+      <resultExpressionParameter resultExpression="(1..size(x)-1)->forAll {in n : Natural; x#(n + 1) == x#(n) + v#(n) * (5280/3600) * dt}"/>
+    </elements>
+    <elements xsi:type="sysMLOC:ConstraintDefinition" declaredName="VelocityEquation">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="dt">
+        <typings>Time</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" isOrdered="true" declaredName="v">
+        <typings>Vel</typings>
+        <Multiplicity>0</Multiplicity>
+        <Multiplicity>*</Multiplicity>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="a">
+        <typings>Accel</typings>
+      </elements>
+      <resultExpressionParameter resultExpression="(1..size(v)-1)->forAll {in n: Natural; v#(n + 1) == v#(n) + a * 32 * (3600/5280) * dt}"/>
+    </elements>
+    <elements xsi:type="sysMLOC:ConstraintDefinition" declaredName="AccelerationEquation">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="tw">
+        <typings>Weight</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="dt">
+        <typings>Time</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="tp">
+        <typings>Horsepwr</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="a">
+        <typings>Accel</typings>
+      </elements>
+      <resultExpressionParameter resultExpression="a == (550/32) * tp * dt * tw"/>
+    </elements>
+    <elements xsi:type="sysMLOC:ConstraintDefinition" declaredName="StraightLineVehicleDynamics">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="dt">
+        <typings>Time</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="whlpwr">
+        <typings>Horsepwr</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="Cd">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="Cf">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="tw">
+        <typings>Weight</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="a">
+        <typings>Accel</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" isOrdered="true" declaredName="v">
+        <typings>Vel</typings>
+        <Multiplicity>0</Multiplicity>
+        <Multiplicity>*</Multiplicity>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" isOrdered="true" declaredName="x">
+        <typings>Dist</typings>
+        <Multiplicity>0</Multiplicity>
+        <Multiplicity>*</Multiplicity>
+      </elements>
+      <elements xsi:type="sysMLOC:ConstraintUsage" declaredName="pwr">
+        <typings>PowerEquation</typings>
+        <elements xsi:type="sysMLOC:AttributeUsage">
+          <redefinitions>whlpwr</redefinitions>
+          <valuePart>StraightLineVehicleDynamics::whlpwr</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage">
+          <redefinitions>Cd</redefinitions>
+          <valuePart>StraightLineVehicleDynamics::Cd</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage">
+          <redefinitions>Cf</redefinitions>
+          <valuePart>StraightLineVehicleDynamics::Cf</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage">
+          <redefinitions>tw</redefinitions>
+          <valuePart>StraightLineVehicleDynamics::tw</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage">
+          <redefinitions>v</redefinitions>
+          <valuePart>vel.v</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage">
+          <redefinitions>tp</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:ConstraintUsage" declaredName="acc">
+        <typings>AccelerationEquation</typings>
+        <elements xsi:type="sysMLOC:AttributeUsage">
+          <redefinitions>tp</redefinitions>
+          <valuePart>pwr.tp</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage">
+          <redefinitions>tw</redefinitions>
+          <valuePart>StraightLineVehicleDynamics::tw</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage">
+          <redefinitions>dt</redefinitions>
+          <valuePart>StraightLineVehicleDynamics::dt</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage">
+          <redefinitions>a</redefinitions>
+          <valuePart>StraightLineVehicleDynamics::a</valuePart>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:ConstraintUsage" declaredName="vel">
+        <typings>VelocityEquation</typings>
+        <elements xsi:type="sysMLOC:AttributeUsage">
+          <redefinitions>a</redefinitions>
+          <valuePart>acc.a</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage">
+          <redefinitions>v</redefinitions>
+          <valuePart>StraightLineVehicleDynamics::v</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage">
+          <redefinitions>dt</redefinitions>
+          <valuePart>StraightLineVehicleDynamics::dt</valuePart>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:ConstraintUsage" declaredName="pos">
+        <typings>PositionEquation</typings>
+        <elements xsi:type="sysMLOC:AttributeUsage">
+          <redefinitions>v</redefinitions>
+          <valuePart>vel.v</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage">
+          <redefinitions>x</redefinitions>
+          <valuePart>StraightLineVehicleDynamics::x</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage">
+          <redefinitions>dt</redefinitions>
+          <valuePart>StraightLineVehicleDynamics::dt</valuePart>
+        </elements>
+      </elements>
+    </elements>
+  </packages>
+</sysMLOC:Namespace>

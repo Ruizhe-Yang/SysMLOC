@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <packages declaredName="'Calculation Usages-2'">
+    <elements xsi:type="sysMLOC:MembershipImport" visibility="private" declaredName="ScalarValues::Real"/>
+    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="ISQ"/>
+    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="'Calculation Definitions'"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="DynamicState">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="v">
+        <typings>SpeedValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="x">
+        <typings>LengthValue</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="VehicleDynamics">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="C_d">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="C_f">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="wheelPower">
+        <typings>PowerValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass">
+        <typings>MassValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:CalculationUsage" declaredName="updateState">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="delta_t">
+          <typings>TimeValue</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="currState">
+          <typings>DynamicState</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="totalPower">
+          <typings>PowerValue</typings>
+          <valuePart>Power(wheelPower, C_d, C_f, mass, currState.v)</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage" isReturn="true" declaredName="newState">
+          <typings>DynamicState</typings>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <redefinitions>v</redefinitions>
+            <valuePart>Velocity(delta_t, currState.v, Acceleration(totalPower, mass, currState.v))</valuePart>
+          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <redefinitions>x</redefinitions>
+            <valuePart>Position(delta_t, currState.x, currState.v)</valuePart>
+          </elements>
+        </elements>
+      </elements>
+    </elements>
+  </packages>
+</sysMLOC:Namespace>

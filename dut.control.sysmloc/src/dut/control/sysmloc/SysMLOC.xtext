@@ -34,8 +34,8 @@ DefinitionBodyElement:
     | ImportElement
     | DefinitionElement
     | UsageElement
-    | CodeAnnotation
     | AliasElement
+    | CodeAnnotation
 ;
 
 UsageBodyElement:
@@ -49,6 +49,7 @@ InterfaceBodyElement:
 EnumerationBodyElement:
 	AnnotatingElement
 	| EnumerationElement
+	| CodeAnnotation
 ;
 
 ActionBodyElement:
@@ -64,7 +65,11 @@ ActionBodyElement:
 	| ActionNodeElement
 	| GuardedSuccessionNodeElement
 	| TargetSuccessionNodeElement
+    | CodeAnnotation
+;
 
+CalculationBodyElement:
+	ActionBodyElement
 ;
 
 StateBodyElement:
@@ -80,26 +85,19 @@ StateBodyElement:
 	| EntryActionNodeElement
 	| DoActionNodeElement
 	| ExitActionNodeElement
-	
-//	| ( ownedRelationship += EmptySuccessionMember )?
-//	  ownedRelationship += StructureUsageMember
-//	| ( ownedRelationship += EmptySuccessionMember )?
-//	  ownedRelationship += BehaviorUsageMember
-//	  ( ownedRelationship += TargetTransitionUsageMember )*
-//	| ownedRelationship += TransitionUsageMember
-//	| ownedRelationship += EntryActionMember
-//	  ( ownedRelationship += EntryTransitionMember )*
-//	| ownedRelationship += DoActionMember
-//	| ownedRelationship += ExitActionMember	
+    | CodeAnnotation
 ;
 
 AnnotatingBodyElement:
 	AnnotatingElement
+    | CodeAnnotation
 ;
 
 ActionNodeBodyElement:
 	AnnotatingElement
+    | CodeAnnotation
 ;
+
 // TODO --------------------------------- Abstract Level ---------------------------------//
 // Annotating
 
@@ -122,8 +120,8 @@ ImportElement:
 DefinitionElement:
 	AttributeDefinition
 	| EnumerationDefinition
-//	| OccurrenceDefinition
-//	| IndividualDefinition
+	| OccurrenceDefinition
+	| IndividualDefinition
 	| ItemDefinition
 //	| MetadataDefinition
 	| PartDefinition
@@ -133,9 +131,9 @@ DefinitionElement:
 //	| AllocationDefinition
 	| PortDefinition
 	| ActionDefinition
-//	| CalculationDefinition
+	| CalculationDefinition
 	| StateDefinition
-//	| ConstraintDefinition
+	| ConstraintDefinition
 //	| RequirementDefinition
 //	| ConcernDefinition
 //	| CaseDefinition
@@ -172,11 +170,11 @@ OccurrenceUsageElement:
 ;
 
 StructureUsageElement:
-//	OccurrenceUsage
-//	| IndividualUsage
-//	| PortionUsage
-//	| EventOccurrenceUsage
-	ItemUsage
+	OccurrenceUsage
+	| IndividualUsage
+	| PortionUsage
+	| EventOccurrenceUsage
+	| ItemUsage
 	| PartUsage
 //	| ViewUsage
 //	| RenderingUsage
@@ -184,16 +182,16 @@ StructureUsageElement:
 	| ConnectionUsage
 	| InterfaceUsage
 //	| AllocationUsage
-//	| Message
+	| Message
 	| FlowConnectionUsage
 	| SuccessionFlowConnectionUsage
 ;
-//
+
 BehaviorUsageElement:
 	ActionUsage
-//	| CalculationUsage
+	| CalculationUsage
 	| StateUsage
-//	| ConstraintUsage
+	| ConstraintUsage
 //	| RequirementUsage
 //	| ConcernUsage
 //	| CaseUsage
@@ -204,7 +202,7 @@ BehaviorUsageElement:
 	| PerformActionUsage
 	| ExhibitStateUsage
 //	| IncludeUseCaseUsage
-//	| AssertConstraintUsage
+	| AssertConstraintUsage
 //	| SatisfyRequirementUsage
 ;
 
@@ -290,6 +288,7 @@ TextualRepresentation:
 
 DefaultReferenceUsage:
     MemberPrefix
+    isReturnPrefix
     ( isEnd ?= 'end' )?
     RefPrefix
     UsageDeclaration
@@ -299,6 +298,7 @@ DefaultReferenceUsage:
 
 ReferenceUsage:
     MemberPrefix
+    isReturnPrefix
     ( EndUsagePrefix | RefPrefix) 
     'ref'
     Usage
@@ -311,7 +311,9 @@ AttributeDefinition:
 ;
 
 AttributeUsage:
-    MemberPrefix UsagePrefix 'attribute' Usage 
+    MemberPrefix
+    isReturnPrefix
+    UsagePrefix 'attribute' Usage 
     (';' | '{' (elements+=UsageBodyElement)* '}')
 ;
 
@@ -324,19 +326,21 @@ EnumerationDefinition:
 
 EnumeratedValue:
 	MemberPrefix
-	('#' UsageExtension += QualifiedName)*
+	UsageExtensionKeyword*
 	'enum'? Usage
 	(';' | '{' (elements+=UsageBodyElement)* '}')
 ;
 
 EnumerationUsage:
 	MemberPrefix
+	isReturnPrefix
 	UsagePrefix 'enum' Usage
 	(';' | '{' (elements+=UsageBodyElement)* '}')
 ;
 
 BindingConnectorAsUsage:
 	MemberPrefix
+	isReturnPrefix
 	UsagePrefix 
 	( 'binding' UsageDeclaration? )?
 	'bind' connectorPart += ConnectorEnd '=' connectorPart += ConnectorEnd
@@ -345,11 +349,66 @@ BindingConnectorAsUsage:
 
 SuccessionAsUsage:
 	MemberPrefix
+	isReturnPrefix
 	UsagePrefix
 	( 'succession' UsageDeclaration? )? 
 	'first' connectorPart += ConnectorEnd
 	'then' connectorPart += ConnectorEnd
 	(';' | '{' (elements+=DefinitionBodyElement)* '}')
+;
+
+
+OccurrenceDefinition:
+	MemberPrefix OccurrenceDefinitionPrefix 'occurrence' 'def' DefinitionDeclaration 
+	(';' | '{' (elements+=DefinitionBodyElement)* '}')
+;
+
+OccurrenceUsage:
+	EmptySuccessionPrefix
+    MemberPrefix
+    isReturnPrefix
+    OccurrenceUsagePrefix 'occurrence' Usage 
+    (';' | '{' (elements+=UsageBodyElement)* '}')
+;
+
+PortionUsage:
+	EmptySuccessionPrefix
+	MemberPrefix 
+	isReturnPrefix
+	BasicUsagePrefix ( isIndividual ?= 'individual' )? portionKind = PortionKind
+	UsageExtensionKeyword*
+	Usage
+	(';' | '{' (elements+=UsageBodyElement)* '}')
+;
+
+EventOccurrenceUsage:
+	EmptySuccessionPrefix
+    MemberPrefix isReturnPrefix
+    OccurrenceUsagePrefix 'event'
+    ( ReferenceSubsetting FeatureSpecializationPart? | 'occurrence' UsageDeclaration? )
+    ValuePart? 
+    (';' | '{' (elements+=UsageBodyElement)* '}')
+;
+
+IndividualDefinition:
+	MemberPrefix
+	BasicDefinitionPrefix? 
+	isIndividual ?= 'individual' 
+	UsageExtensionKeyword*
+	'def' 
+	DefinitionDeclaration
+	(';' | '{' (elements+=DefinitionBodyElement)* '}')
+;
+
+IndividualUsage:
+	EmptySuccessionPrefix
+	MemberPrefix
+	isReturnPrefix
+	BasicUsagePrefix 
+	isIndividual ?= 'individual' 
+	UsageExtensionKeyword* 
+	Usage
+	(';' | '{' (elements+=UsageBodyElement)* '}')
 ;
 
 ItemDefinition:
@@ -359,7 +418,8 @@ ItemDefinition:
 
 ItemUsage:
 	EmptySuccessionPrefix
-    MemberPrefix OccurrenceUsagePrefix 'item' Usage 
+    MemberPrefix isReturnPrefix
+    OccurrenceUsagePrefix 'item' Usage 
     (';' | '{' (elements+=UsageBodyElement)* '}')
 ;
 
@@ -370,7 +430,8 @@ PartDefinition:
 
 PartUsage:
 	EmptySuccessionPrefix
-    MemberPrefix OccurrenceUsagePrefix 'part' Usage 
+    MemberPrefix isReturnPrefix
+    OccurrenceUsagePrefix 'part' Usage 
     (';' | '{' (elements+=UsageBodyElement)* '}')
 ;
 
@@ -381,7 +442,8 @@ PortDefinition:
 
 PortUsage:
 	EmptySuccessionPrefix
-    MemberPrefix OccurrenceUsagePrefix 'port' Usage 
+    MemberPrefix isReturnPrefix
+    OccurrenceUsagePrefix 'port' Usage 
     (';' | '{' (elements+=UsageBodyElement)* '}')
 ;
 
@@ -393,6 +455,7 @@ ConnectionDefinition:
 ConnectionUsage:
 	EmptySuccessionPrefix
 	MemberPrefix 
+	isReturnPrefix
 	OccurrenceUsagePrefix
 	('connection' UsageDeclaration? FeatureValue? ('connect' ConnectorPart)?
 	 | 'connect' ConnectorPart) 
@@ -407,10 +470,22 @@ InterfaceDefinition:
 InterfaceUsage:
 	EmptySuccessionPrefix
 	MemberPrefix
+	isReturnPrefix
 	OccurrenceUsagePrefix
 	'interface' 
 	(UsageDeclaration? ('connect' ConnectorPart )? | ConnectorPart) 
 	(';' | '{' (elements+=InterfaceBodyElement)* '}')
+;
+
+Message:
+	EmptySuccessionPrefix
+	MemberPrefix
+	isReturnPrefix
+	OccurrenceUsagePrefix 'message' 
+	UsageDeclaration? ValuePart?
+	( 'of' ItemFeatureParameterPart )?
+    ( 'from'? FlowEnd += FeatureChainName 'to' FlowEnd += FeatureChainName )?
+	(';' | '{' (elements+=UsageBodyElement)* '}')
 ;
 
 FlowConnectionDefinition:
@@ -424,34 +499,55 @@ FlowConnectionDefinition:
 FlowConnectionUsage:
 	EmptySuccessionPrefix
 	MemberPrefix
+	isReturnPrefix
 	OccurrenceUsagePrefix
 	'flow' 
 	UsageDeclaration? FeatureValue?
-	( 'of' ItemFeature += Name )?
+	( 'of' ItemFeatureParameterPart )?
     ( 'from'? FlowEnd += FeatureChainName 'to' FlowEnd += FeatureChainName )?
     (';' | '{' (elements+=UsageBodyElement)* '}')
+;
+
+ItemFeatureParameter:
+	PayloadFeature
 ;
 
 SuccessionFlowConnectionUsage:
 	EmptySuccessionPrefix
 	MemberPrefix
+	isReturnPrefix
 	OccurrenceUsagePrefix
 	'succession' 'flow'
 	UsageDeclaration? FeatureValue?
-	( 'of' ItemFeature += Name )?
+	( 'of' ItemFeatureParameterPart )?
     ( 'from'? FlowEnd += FeatureChainName 'to' FlowEnd += FeatureChainName )?
     (';' | '{' (elements+=DefinitionBodyElement)* '}')
 ;
 
 ActionDefinition:
+	MemberPrefix
 	OccurrenceDefinitionPrefix 'action' 'def' DefinitionDeclaration
 	(';' | '{' (elements+=ActionBodyElement)* '}')
 ;
 
 ActionUsage:
 	EmptySuccessionPrefix
-    MemberPrefix OccurrenceUsagePrefix 'action' ActionUsageDeclaration 
+    MemberPrefix isReturnPrefix 
+    OccurrenceUsagePrefix 'action' ActionUsageDeclaration 
     (';' | '{' (elements+=ActionBodyElement)* '}')
+;
+
+CalculationDefinition:
+	MemberPrefix
+	OccurrenceDefinitionPrefix 'calc' 'def' DefinitionDeclaration
+	(';' | '{' => ( elements+=CalculationBodyElement )* (resultExpressionParameter+=ResultExpression)? '}')  
+;
+
+CalculationUsage:
+	EmptySuccessionPrefix
+    MemberPrefix isReturnPrefix 
+    OccurrenceUsagePrefix 'calc' ActionUsageDeclaration 
+	(';' | '{' => ( elements+=CalculationBodyElement )* (resultExpressionParameter+=ResultExpression)? '}')  
 ;
 
 StateDefinition:
@@ -465,15 +561,36 @@ StateDefinition:
 StateUsage:
 	EmptySuccessionPrefix
 	MemberPrefix
+	isReturnPrefix
 	OccurrenceUsagePrefix
 	'state'
 	ActionUsageDeclaration
 	(';' | ( isParallel ?= 'parallel' )? '{' (elements += StateBodyElement)* '}')
 ;
 
+ConstraintDefinition:
+	MemberPrefix 
+	OccurrenceDefinitionPrefix 
+	'constraint' 'def' 
+	DefinitionDeclaration
+	(';' | '{' => ( elements+=CalculationBodyElement )* (resultExpressionParameter+=ResultExpression)? '}')  
+;
+
+ConstraintUsage:
+	EmptySuccessionPrefix
+	MemberPrefix
+	isReturnPrefix
+	OccurrenceUsagePrefix
+	'constraint'
+	ConstraintUsageDeclaration
+	(';' | '{' => ( elements+=CalculationBodyElement )* (resultExpressionParameter+=ResultExpression)? '}')  
+;
+
+
 TransitionUsage:
 	EmptySuccessionPrefix
 	MemberPrefix
+	isReturnPrefix
 			
 //	'transition'
 //	( UsageDeclaration? 'first' )? 
@@ -504,6 +621,7 @@ TransitionUsage:
 PerformActionUsage:
 	EmptySuccessionPrefix
 	MemberPrefix
+	isReturnPrefix
 	OccurrenceUsagePrefix 'perform' 
 	( ReferenceSubsetting FeatureSpecializationPart? | 'action' UsageDeclaration? )
     ValuePart?
@@ -513,10 +631,26 @@ PerformActionUsage:
 ExhibitStateUsage:
 	EmptySuccessionPrefix
 	MemberPrefix
+	isReturnPrefix
 	OccurrenceUsagePrefix 'exhibit'
 	( ReferenceSubsetting FeatureSpecializationPart? | 'state' UsageDeclaration? )
     ValuePart?
 	(';' | ( isParallel ?= 'parallel' )? '{' (elements+=StateBodyElement)* '}')
+;
+
+AssertConstraintUsage:
+	EmptySuccessionPrefix
+	MemberPrefix
+	isReturnPrefix
+	OccurrenceUsagePrefix
+	'assert' 
+	( isNegated ?= 'not' )?
+	( ReferenceSubsetting FeatureSpecializationPart? | 'constraint' ConstraintUsageDeclaration)
+	(';' | '{' => ( elements+=CalculationBodyElement )* (resultExpressionParameter+=ResultExpression)? '}')  
+;
+
+ResultExpression:
+	MemberPrefix resultExpression=Expression
 ;
 
 AliasElement:
@@ -696,9 +830,6 @@ ExitActionNode:
 	( ';' | '{' elements+=ActionBodyElement* '}' )
 ;
 
-fragment PerformedActionParameterPart:
-	performedActionParameterPart+=PerformedActionUsage 
-;
 
 PerformedActionUsage:
 	{PerformActionUsage} PerformActionUsageDeclaration
@@ -707,30 +838,14 @@ PerformedActionUsage:
 	| {AssignmentActionUsage} AssignmentNodeDeclaration
 ;
 
-// TODO --------------------------------- Enum Level ---------------------------------//
-
-// enum
-
-enum VisibilityIndicator:
-	null='NULLVisibility' | public = 'public' | private = 'private' | protected = 'protected'
-;
-
-enum FeatureDirection:
-	null='NULLFeature' | inout = 'inout' | in = 'in' | out = 'out' 
-;
-
-enum PortionKind:
-	null='NULLPortion' | snapshot = 'snapshot' | timeslice = 'timeslice'
-;
-
-enum TriggerKind:
-	null='NULLTrigger' | at='at' | after='after'| when='when'
-;
-
 // TODO --------------------------------- Fragment Level ---------------------------------//
 
+fragment UsageExtensionKeyword:
+	'#' UsageExtension += QualifiedName
+;
+
 fragment EmptySuccessionPrefix:
-	(isThen ?= 'then')? 
+	( isThen ?= 'then' )?
 	( '[' ThenMultiplicity += MultiplicityExpression ']' | '[' ThenMultiplicity += MultiplicityExpression '..' ThenMultiplicity += MultiplicityExpression ']')?
 ;
 
@@ -744,6 +859,10 @@ fragment ValuePart:
 
 fragment MemberPrefix:
 	( visibility = VisibilityIndicator )?
+;
+
+fragment isReturnPrefix:
+	( isReturn ?= 'return' )?
 ;
 
 fragment DefinitionPrefix:
@@ -766,7 +885,7 @@ fragment BasicDefinitionPrefix:
 
 fragment UsagePrefix:
 	UnextendedUsagePrefix
-	('#' UsageExtension += QualifiedName)*
+	UsageExtensionKeyword*
 ;
 
 fragment UnextendedUsagePrefix:
@@ -808,6 +927,10 @@ fragment DefinitionDeclaration:
 
 fragment ActionUsageDeclaration:
 	UsageDeclaration? FeatureValue?
+;
+
+fragment ConstraintUsageDeclaration:
+	UsageDeclaration? ValuePart?
 ;
 
 fragment ActionNodeUsageDeclaration:
@@ -852,6 +975,10 @@ fragment AcceptNodeDeclaration:
 
 fragment AcceptParameterPart:
 	acceptParameter+=PayloadParameter
+;
+
+fragment ItemFeatureParameterPart:
+	itemFeatureParameter+=ItemFeatureParameter
 ;
 
 fragment PayloadFeature:
@@ -939,7 +1066,11 @@ fragment ControlNodePrefix:
 	  RefPrefix
 	  ( isIndividual ?= 'individual' )?
 	  ( portionKind = PortionKind )?
-	  ('#' UsageExtension += QualifiedName)*
+	  UsageExtensionKeyword*
+;
+
+fragment PerformedActionParameterPart:
+	performedActionParameterPart+=PerformedActionUsage 
 ;
 
 // TODO --------------------------------- Text Level ---------------------------------//
@@ -1203,6 +1334,26 @@ TargetExpression:
 		| '.?' BodyExpression
 		)
 	)*
+;
+
+// TODO --------------------------------- Enum Level ---------------------------------//
+
+// enum
+
+enum VisibilityIndicator:
+	null='NULLVisibility' | public = 'public' | private = 'private' | protected = 'protected'
+;
+
+enum FeatureDirection:
+	null='NULLFeature' | inout = 'inout' | in = 'in' | out = 'out' 
+;
+
+enum PortionKind:
+	null='NULLPortion' | snapshot = 'snapshot' | timeslice = 'timeslice'
+;
+
+enum TriggerKind:
+	null='NULLTrigger' | at='at' | after='after'| when='when'
 ;
 
 // TODO --------------------------------- Terminal Level ---------------------------------//

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <packages declaredName="CalculationExample">
+    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="ISQ"/>
+    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="NumericalFunctions"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="VehiclePart">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="m">
+        <typings>MassValue</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle">
+      <superclassifiers>VehiclePart</superclassifiers>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle">
+      <typings>Vehicle</typings>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="eng">
+        <typings>VehiclePart</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="trans">
+        <typings>VehiclePart</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <references>m</references>
+        <valuePart>ms.totalMass</valuePart>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="MassSum">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="partMasses">
+        <typings>MassValue</typings>
+        <Multiplicity>0</Multiplicity>
+        <Multiplicity>*</Multiplicity>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="totalMass">
+        <typings>MassValue</typings>
+        <valuePart>sum(partMasses)</valuePart>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:CalculationUsage" declaredName="ms">
+      <typings>MassSum</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="partMasses">
+        <valuePart>(vehicle.eng.m, vehicle.trans.m)</valuePart>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="totalMass"/>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicles">
+      <Multiplicity>*</Multiplicity>
+      <valuePart>(vehicle, vehicle)</valuePart>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="masses1">
+      <Multiplicity>*</Multiplicity>
+      <valuePart>(vehicles as VehiclePart).m</valuePart>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="masses2">
+      <Multiplicity>*</Multiplicity>
+      <valuePart>(vehicles as vehicle).m</valuePart>
+    </elements>
+  </packages>
+</sysMLOC:Namespace>

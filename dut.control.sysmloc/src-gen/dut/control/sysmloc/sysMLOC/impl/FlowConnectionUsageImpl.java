@@ -11,6 +11,8 @@ import dut.control.sysmloc.sysMLOC.FeatureSpecialization;
 import dut.control.sysmloc.sysMLOC.FeatureSpecializationPart;
 import dut.control.sysmloc.sysMLOC.FeatureValue;
 import dut.control.sysmloc.sysMLOC.FlowConnectionUsage;
+import dut.control.sysmloc.sysMLOC.ItemFeatureParameter;
+import dut.control.sysmloc.sysMLOC.ItemFeatureParameterPart;
 import dut.control.sysmloc.sysMLOC.MemberPrefix;
 import dut.control.sysmloc.sysMLOC.MultiplicityPart;
 import dut.control.sysmloc.sysMLOC.MultiplicityRange;
@@ -21,6 +23,7 @@ import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 import dut.control.sysmloc.sysMLOC.UsageBodyElement;
 import dut.control.sysmloc.sysMLOC.UsageDeclaration;
 import dut.control.sysmloc.sysMLOC.VisibilityIndicator;
+import dut.control.sysmloc.sysMLOC.isReturnPrefix;
 
 import java.util.Collection;
 
@@ -49,6 +52,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowConnectionUsageImpl#isIsThen <em>Is Then</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowConnectionUsageImpl#getThenMultiplicity <em>Then Multiplicity</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowConnectionUsageImpl#getVisibility <em>Visibility</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowConnectionUsageImpl#isIsReturn <em>Is Return</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowConnectionUsageImpl#getDirection <em>Direction</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowConnectionUsageImpl#isIsAbstract <em>Is Abstract</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowConnectionUsageImpl#isIsVariation <em>Is Variation</em>}</li>
@@ -70,7 +74,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowConnectionUsageImpl#isIsInitial <em>Is Initial</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowConnectionUsageImpl#isIsDefault <em>Is Default</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowConnectionUsageImpl#getValuePart <em>Value Part</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowConnectionUsageImpl#getItemFeature <em>Item Feature</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowConnectionUsageImpl#getItemFeatureParameter <em>Item Feature Parameter</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowConnectionUsageImpl#getFlowEnd <em>Flow End</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowConnectionUsageImpl#getElements <em>Elements</em>}</li>
  * </ul>
@@ -128,6 +132,26 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
    * @ordered
    */
   protected VisibilityIndicator visibility = VISIBILITY_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsReturn() <em>Is Return</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsReturn()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_RETURN_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsReturn() <em>Is Return</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsReturn()
+   * @generated
+   * @ordered
+   */
+  protected boolean isReturn = IS_RETURN_EDEFAULT;
 
   /**
    * The default value of the '{@link #getDirection() <em>Direction</em>}' attribute.
@@ -480,14 +504,14 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
   protected EList<String> valuePart;
 
   /**
-   * The cached value of the '{@link #getItemFeature() <em>Item Feature</em>}' attribute list.
+   * The cached value of the '{@link #getItemFeatureParameter() <em>Item Feature Parameter</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getItemFeature()
+   * @see #getItemFeatureParameter()
    * @generated
    * @ordered
    */
-  protected EList<String> itemFeature;
+  protected EList<ItemFeatureParameter> itemFeatureParameter;
 
   /**
    * The cached value of the '{@link #getFlowEnd() <em>Flow End</em>}' attribute list.
@@ -593,6 +617,31 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
     visibility = newVisibility == null ? VISIBILITY_EDEFAULT : newVisibility;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.FLOW_CONNECTION_USAGE__VISIBILITY, oldVisibility, visibility));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsReturn()
+  {
+    return isReturn;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsReturn(boolean newIsReturn)
+  {
+    boolean oldIsReturn = isReturn;
+    isReturn = newIsReturn;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_RETURN, oldIsReturn, isReturn));
   }
 
   /**
@@ -1056,13 +1105,13 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
    * @generated
    */
   @Override
-  public EList<String> getItemFeature()
+  public EList<ItemFeatureParameter> getItemFeatureParameter()
   {
-    if (itemFeature == null)
+    if (itemFeatureParameter == null)
     {
-      itemFeature = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.FLOW_CONNECTION_USAGE__ITEM_FEATURE);
+      itemFeatureParameter = new EObjectContainmentEList<ItemFeatureParameter>(ItemFeatureParameter.class, this, SysMLOCPackage.FLOW_CONNECTION_USAGE__ITEM_FEATURE_PARAMETER);
     }
-    return itemFeature;
+    return itemFeatureParameter;
   }
 
   /**
@@ -1105,6 +1154,8 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
   {
     switch (featureID)
     {
+      case SysMLOCPackage.FLOW_CONNECTION_USAGE__ITEM_FEATURE_PARAMETER:
+        return ((InternalEList<?>)getItemFeatureParameter()).basicRemove(otherEnd, msgs);
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__ELEMENTS:
         return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
     }
@@ -1127,6 +1178,8 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
         return getThenMultiplicity();
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__VISIBILITY:
         return getVisibility();
+      case SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_RETURN:
+        return isIsReturn();
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__DIRECTION:
         return getDirection();
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_ABSTRACT:
@@ -1169,8 +1222,8 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
         return isIsDefault();
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__VALUE_PART:
         return getValuePart();
-      case SysMLOCPackage.FLOW_CONNECTION_USAGE__ITEM_FEATURE:
-        return getItemFeature();
+      case SysMLOCPackage.FLOW_CONNECTION_USAGE__ITEM_FEATURE_PARAMETER:
+        return getItemFeatureParameter();
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__FLOW_END:
         return getFlowEnd();
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__ELEMENTS:
@@ -1199,6 +1252,9 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
         return;
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__VISIBILITY:
         setVisibility((VisibilityIndicator)newValue);
+        return;
+      case SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_RETURN:
+        setIsReturn((Boolean)newValue);
         return;
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__DIRECTION:
         setDirection((FeatureDirection)newValue);
@@ -1270,9 +1326,9 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
         getValuePart().clear();
         getValuePart().addAll((Collection<? extends String>)newValue);
         return;
-      case SysMLOCPackage.FLOW_CONNECTION_USAGE__ITEM_FEATURE:
-        getItemFeature().clear();
-        getItemFeature().addAll((Collection<? extends String>)newValue);
+      case SysMLOCPackage.FLOW_CONNECTION_USAGE__ITEM_FEATURE_PARAMETER:
+        getItemFeatureParameter().clear();
+        getItemFeatureParameter().addAll((Collection<? extends ItemFeatureParameter>)newValue);
         return;
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__FLOW_END:
         getFlowEnd().clear();
@@ -1304,6 +1360,9 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
         return;
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__VISIBILITY:
         setVisibility(VISIBILITY_EDEFAULT);
+        return;
+      case SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_RETURN:
+        setIsReturn(IS_RETURN_EDEFAULT);
         return;
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__DIRECTION:
         setDirection(DIRECTION_EDEFAULT);
@@ -1368,8 +1427,8 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__VALUE_PART:
         getValuePart().clear();
         return;
-      case SysMLOCPackage.FLOW_CONNECTION_USAGE__ITEM_FEATURE:
-        getItemFeature().clear();
+      case SysMLOCPackage.FLOW_CONNECTION_USAGE__ITEM_FEATURE_PARAMETER:
+        getItemFeatureParameter().clear();
         return;
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__FLOW_END:
         getFlowEnd().clear();
@@ -1397,6 +1456,8 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
         return thenMultiplicity != null && !thenMultiplicity.isEmpty();
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__VISIBILITY:
         return visibility != VISIBILITY_EDEFAULT;
+      case SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_RETURN:
+        return isReturn != IS_RETURN_EDEFAULT;
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__DIRECTION:
         return direction != DIRECTION_EDEFAULT;
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_ABSTRACT:
@@ -1439,8 +1500,8 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
         return isDefault != IS_DEFAULT_EDEFAULT;
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__VALUE_PART:
         return valuePart != null && !valuePart.isEmpty();
-      case SysMLOCPackage.FLOW_CONNECTION_USAGE__ITEM_FEATURE:
-        return itemFeature != null && !itemFeature.isEmpty();
+      case SysMLOCPackage.FLOW_CONNECTION_USAGE__ITEM_FEATURE_PARAMETER:
+        return itemFeatureParameter != null && !itemFeatureParameter.isEmpty();
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__FLOW_END:
         return flowEnd != null && !flowEnd.isEmpty();
       case SysMLOCPackage.FLOW_CONNECTION_USAGE__ELEMENTS:
@@ -1471,6 +1532,14 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
       switch (derivedFeatureID)
       {
         case SysMLOCPackage.FLOW_CONNECTION_USAGE__VISIBILITY: return SysMLOCPackage.MEMBER_PREFIX__VISIBILITY;
+        default: return -1;
+      }
+    }
+    if (baseClass == isReturnPrefix.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_RETURN: return SysMLOCPackage.IS_RETURN_PREFIX__IS_RETURN;
         default: return -1;
       }
     }
@@ -1565,6 +1634,14 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
         default: return -1;
       }
     }
+    if (baseClass == ItemFeatureParameterPart.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.FLOW_CONNECTION_USAGE__ITEM_FEATURE_PARAMETER: return SysMLOCPackage.ITEM_FEATURE_PARAMETER_PART__ITEM_FEATURE_PARAMETER;
+        default: return -1;
+      }
+    }
     return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
   }
 
@@ -1590,6 +1667,14 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
       switch (baseFeatureID)
       {
         case SysMLOCPackage.MEMBER_PREFIX__VISIBILITY: return SysMLOCPackage.FLOW_CONNECTION_USAGE__VISIBILITY;
+        default: return -1;
+      }
+    }
+    if (baseClass == isReturnPrefix.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.IS_RETURN_PREFIX__IS_RETURN: return SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_RETURN;
         default: return -1;
       }
     }
@@ -1684,6 +1769,14 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
         default: return -1;
       }
     }
+    if (baseClass == ItemFeatureParameterPart.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.ITEM_FEATURE_PARAMETER_PART__ITEM_FEATURE_PARAMETER: return SysMLOCPackage.FLOW_CONNECTION_USAGE__ITEM_FEATURE_PARAMETER;
+        default: return -1;
+      }
+    }
     return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
   }
 
@@ -1704,6 +1797,8 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
     result.append(thenMultiplicity);
     result.append(", visibility: ");
     result.append(visibility);
+    result.append(", isReturn: ");
+    result.append(isReturn);
     result.append(", direction: ");
     result.append(direction);
     result.append(", isAbstract: ");
@@ -1746,8 +1841,6 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
     result.append(isDefault);
     result.append(", valuePart: ");
     result.append(valuePart);
-    result.append(", ItemFeature: ");
-    result.append(itemFeature);
     result.append(", FlowEnd: ");
     result.append(flowEnd);
     result.append(')');

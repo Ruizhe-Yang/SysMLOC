@@ -4,6 +4,7 @@
 package dut.control.sysmloc.sysMLOC.impl;
 
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
+import dut.control.sysmloc.sysMLOC.UsageExtensionKeyword;
 import dut.control.sysmloc.sysMLOC.UsagePrefix;
 
 import java.util.Collection;
@@ -141,6 +142,44 @@ public class UsagePrefixImpl extends UnextendedUsagePrefixImpl implements UsageP
         return usageExtension != null && !usageExtension.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == UsageExtensionKeyword.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.USAGE_PREFIX__USAGE_EXTENSION: return SysMLOCPackage.USAGE_EXTENSION_KEYWORD__USAGE_EXTENSION;
+        default: return -1;
+      }
+    }
+    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == UsageExtensionKeyword.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.USAGE_EXTENSION_KEYWORD__USAGE_EXTENSION: return SysMLOCPackage.USAGE_PREFIX__USAGE_EXTENSION;
+        default: return -1;
+      }
+    }
+    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
   }
 
   /**

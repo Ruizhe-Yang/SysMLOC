@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <packages declaredName="'Calculation Usages-1'">
+    <elements xsi:type="sysMLOC:MembershipImport" visibility="private" declaredName="ScalarValues::Real"/>
+    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="ISQ"/>
+    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="'Calculation Definitions'"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="VehicleDynamics">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="C_d">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="C_f">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="wheelPower">
+        <typings>PowerValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass">
+        <typings>MassValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:ActionUsage" declaredName="straightLineDynamics">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="delta_t">
+          <typings>TimeValue</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="v_in">
+          <typings>SpeedValue</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x_in">
+          <typings>LengthValue</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="v_out">
+          <typings>SpeedValue</typings>
+          <valuePart>vel.v</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="x_out">
+          <typings>LengthValue</typings>
+          <valuePart>pos.x</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:CalculationUsage" declaredName="acc">
+          <typings>Acceleration</typings>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="tp">
+            <valuePart>Power(wheelPower, C_d, C_f, mass, v_in)</valuePart>
+          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="tm">
+            <valuePart>mass</valuePart>
+          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="v">
+            <valuePart>v_in</valuePart>
+          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="a"/>
+        </elements>
+        <elements xsi:type="sysMLOC:CalculationUsage" declaredName="vel">
+          <typings>Velocity</typings>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="dt">
+            <valuePart>delta_t</valuePart>
+          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="v0">
+            <valuePart>v_in</valuePart>
+          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="a">
+            <valuePart>acc.a</valuePart>
+          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="v"/>
+        </elements>
+        <elements xsi:type="sysMLOC:CalculationUsage" declaredName="pos">
+          <typings>Position</typings>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="dt">
+            <valuePart>delta_t</valuePart>
+          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x0">
+            <valuePart>x_in</valuePart>
+          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="v0">
+            <valuePart>vel.v</valuePart>
+          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="x"/>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="aaa"/>
+        </elements>
+      </elements>
+    </elements>
+  </packages>
+</sysMLOC:Namespace>

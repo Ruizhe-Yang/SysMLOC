@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <packages declaredName="VehicleIndividuals">
+    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="VehicleUsages"/>
+    <elements xsi:type="sysMLOC:MembershipImport" visibility="private" declaredName="Time::DateTime"/>
+    <elements xsi:type="sysMLOC:MembershipImport" visibility="private" declaredName="SI::kg"/>
+    <elements xsi:type="sysMLOC:Package" declaredName="IndividualDefinitions">
+      <elements xsi:type="sysMLOC:PartDefinition" isIndividual="true" declaredName="Vehicle1">
+        <superclassifiers>Vehicle</superclassifiers>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * This is an individual Vehicle with a mass of 1800 kg.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="sysMLOC:AttributeUsage">
+          <redefinitions>mass</redefinitions>
+          <valuePart>1800 [kg]</valuePart>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartDefinition" isIndividual="true" declaredName="Vehicle2">
+        <superclassifiers>Vehicle</superclassifiers>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * This is an individual Vehicle with a mass of 1700 kg.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="sysMLOC:AttributeUsage">
+          <redefinitions>mass</redefinitions>
+          <valuePart>1700 [kg]</valuePart>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartDefinition" isIndividual="true" declaredName="AxleAssembly1">
+        <superclassifiers>AxleAssembly</superclassifiers>
+      </elements>
+      <elements xsi:type="sysMLOC:PartDefinition" isIndividual="true" declaredName="Wheel1">
+        <superclassifiers>Wheel</superclassifiers>
+      </elements>
+      <elements xsi:type="sysMLOC:PartDefinition" isIndividual="true" declaredName="Wheel2">
+        <superclassifiers>Wheel</superclassifiers>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Package" declaredName="IndividualSnapshots">
+      <elements xsi:type="sysMLOC:NamespaceImport" visibility="public" declaredName="IndividualDefinitions"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="t0">
+        <typings>DateTime</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="t1">
+        <typings>DateTime</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" portionKind="snapshot" declaredName="vehicle1_t0">
+        <typings>Vehicle1</typings>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * This is a snapshot of Vehicle1 at time t0;&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="sysMLOC:CodeAnnotation" body="// Note: Timestamping of snapshots is not yet formalized.&#xD;&#xA;"/>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="t">
+          <valuePart>t0</valuePart>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" portionKind="timeslice" declaredName="vehicle1_t0_t1">
+        <typings>Vehicle1</typings>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * This is a time slice of Vehicle1 starting at snapshot vehicle1_t0 &#xD;&#xA;&#x9;&#x9;&#x9; * (time t0) and ending at time t1.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="sysMLOC:PortionUsage" portionKind="snapshot">
+          <redefinitions>start</redefinitions>
+          <valuePart>vehicle1_t0</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:PortionUsage" portionKind="snapshot">
+          <redefinitions>done</redefinitions>
+          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="t">
+            <valuePart>t1</valuePart>
+          </elements>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Package" declaredName="IndividualConfigurations">
+      <elements xsi:type="sysMLOC:NamespaceImport" visibility="public" declaredName="IndividualSnapshots"/>
+      <elements xsi:type="sysMLOC:PartUsage" isIndividual="true" declaredName="vehicle1_C2">
+        <typings>Vehicle1</typings>
+        <subsetting>vehicle_C2</subsetting>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * This asserts that for some portion of its lifetime, Vehicle1 conforms&#xD;&#xA;&#x9;&#x9;&#x9; * to the configuration vehicle_C2;&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" portionKind="snapshot" declaredName="vehicle1_C2_t0">
+        <typings>Vehicle1</typings>
+        <subsetting>vehicle1_C2</subsetting>
+        <subsetting>vehicle1_t0</subsetting>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * This is a snapshot of Vehicle1 in configuration vehicle1_C2 at time t0.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="sysMLOC:PortionUsage" declaredName="axleAssembly1_t0" portionKind="snapshot">
+          <typings>AxleAssembly1</typings>
+          <redefinitions>frontAxleAssembly</redefinitions>
+          <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9;&#x9; * frontAxleAssembly is a feature of vehicle1_C2.&#xD;&#xA;&#x9;&#x9;&#x9;&#x9; */"/>
+          <elements xsi:type="sysMLOC:PortionUsage" declaredName="leftFrontWheel_t0" portionKind="snapshot">
+            <typings>Wheel1</typings>
+            <redefinitions>leftFrontWheel</redefinitions>
+            <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * This asserts that Wheel1 is the leftFrontWheel of vehicle_C2_t0&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * (leftFrontWheel is a feature of vehicle_C2::frontAxleAssembly).&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; */"/>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" portionKind="snapshot" declaredName="vehicle1_C2_t1">
+        <typings>Vehicle1</typings>
+        <subsetting>vehicle1_C2</subsetting>
+        <subsetting>vehicle1_t0_t1.done</subsetting>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * This is a snapshot of Vehicle1 in configuration vehicle_C2 at time t1.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="sysMLOC:PortionUsage" declaredName="axleAssembly1_t1" portionKind="snapshot">
+          <typings>AxleAssembly1</typings>
+          <redefinitions>frontAxleAssembly</redefinitions>
+          <elements xsi:type="sysMLOC:PortionUsage" declaredName="rightFrontWheel_t1" portionKind="snapshot">
+            <typings>Wheel1</typings>
+            <redefinitions>rightFrontWheel</redefinitions>
+            <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * This asserts that Wheel1 is the rightFrontWheel of vehicle_C2_t1.&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; */"/>
+          </elements>
+        </elements>
+      </elements>
+    </elements>
+  </packages>
+</sysMLOC:Namespace>

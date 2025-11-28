@@ -15,6 +15,7 @@ import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 import dut.control.sysmloc.sysMLOC.Usage;
 import dut.control.sysmloc.sysMLOC.UsageBodyElement;
 import dut.control.sysmloc.sysMLOC.UsageDeclaration;
+import dut.control.sysmloc.sysMLOC.UsageExtensionKeyword;
 import dut.control.sysmloc.sysMLOC.VisibilityIndicator;
 
 import java.util.Collection;
@@ -42,6 +43,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EnumeratedValueImpl#getVisibility <em>Visibility</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EnumeratedValueImpl#getUsageExtension <em>Usage Extension</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EnumeratedValueImpl#getTypings <em>Typings</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EnumeratedValueImpl#getSubsetting <em>Subsetting</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EnumeratedValueImpl#getReferences <em>References</em>}</li>
@@ -54,7 +56,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EnumeratedValueImpl#isIsInitial <em>Is Initial</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EnumeratedValueImpl#isIsDefault <em>Is Default</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EnumeratedValueImpl#getValuePart <em>Value Part</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EnumeratedValueImpl#getUsageExtension <em>Usage Extension</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EnumeratedValueImpl#getElements <em>Elements</em>}</li>
  * </ul>
  *
@@ -81,6 +82,16 @@ public class EnumeratedValueImpl extends EnumerationElementImpl implements Enume
    * @ordered
    */
   protected VisibilityIndicator visibility = VISIBILITY_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getUsageExtension() <em>Usage Extension</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getUsageExtension()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> usageExtension;
 
   /**
    * The cached value of the '{@link #getTypings() <em>Typings</em>}' attribute list.
@@ -253,16 +264,6 @@ public class EnumeratedValueImpl extends EnumerationElementImpl implements Enume
   protected EList<String> valuePart;
 
   /**
-   * The cached value of the '{@link #getUsageExtension() <em>Usage Extension</em>}' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getUsageExtension()
-   * @generated
-   * @ordered
-   */
-  protected EList<String> usageExtension;
-
-  /**
    * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -316,6 +317,21 @@ public class EnumeratedValueImpl extends EnumerationElementImpl implements Enume
     visibility = newVisibility == null ? VISIBILITY_EDEFAULT : newVisibility;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ENUMERATED_VALUE__VISIBILITY, oldVisibility, visibility));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<String> getUsageExtension()
+  {
+    if (usageExtension == null)
+    {
+      usageExtension = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.ENUMERATED_VALUE__USAGE_EXTENSION);
+    }
+    return usageExtension;
   }
 
   /**
@@ -554,21 +570,6 @@ public class EnumeratedValueImpl extends EnumerationElementImpl implements Enume
    * @generated
    */
   @Override
-  public EList<String> getUsageExtension()
-  {
-    if (usageExtension == null)
-    {
-      usageExtension = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.ENUMERATED_VALUE__USAGE_EXTENSION);
-    }
-    return usageExtension;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EList<UsageBodyElement> getElements()
   {
     if (elements == null)
@@ -606,6 +607,8 @@ public class EnumeratedValueImpl extends EnumerationElementImpl implements Enume
     {
       case SysMLOCPackage.ENUMERATED_VALUE__VISIBILITY:
         return getVisibility();
+      case SysMLOCPackage.ENUMERATED_VALUE__USAGE_EXTENSION:
+        return getUsageExtension();
       case SysMLOCPackage.ENUMERATED_VALUE__TYPINGS:
         return getTypings();
       case SysMLOCPackage.ENUMERATED_VALUE__SUBSETTING:
@@ -630,8 +633,6 @@ public class EnumeratedValueImpl extends EnumerationElementImpl implements Enume
         return isIsDefault();
       case SysMLOCPackage.ENUMERATED_VALUE__VALUE_PART:
         return getValuePart();
-      case SysMLOCPackage.ENUMERATED_VALUE__USAGE_EXTENSION:
-        return getUsageExtension();
       case SysMLOCPackage.ENUMERATED_VALUE__ELEMENTS:
         return getElements();
     }
@@ -651,6 +652,10 @@ public class EnumeratedValueImpl extends EnumerationElementImpl implements Enume
     {
       case SysMLOCPackage.ENUMERATED_VALUE__VISIBILITY:
         setVisibility((VisibilityIndicator)newValue);
+        return;
+      case SysMLOCPackage.ENUMERATED_VALUE__USAGE_EXTENSION:
+        getUsageExtension().clear();
+        getUsageExtension().addAll((Collection<? extends String>)newValue);
         return;
       case SysMLOCPackage.ENUMERATED_VALUE__TYPINGS:
         getTypings().clear();
@@ -695,10 +700,6 @@ public class EnumeratedValueImpl extends EnumerationElementImpl implements Enume
         getValuePart().clear();
         getValuePart().addAll((Collection<? extends String>)newValue);
         return;
-      case SysMLOCPackage.ENUMERATED_VALUE__USAGE_EXTENSION:
-        getUsageExtension().clear();
-        getUsageExtension().addAll((Collection<? extends String>)newValue);
-        return;
       case SysMLOCPackage.ENUMERATED_VALUE__ELEMENTS:
         getElements().clear();
         getElements().addAll((Collection<? extends UsageBodyElement>)newValue);
@@ -719,6 +720,9 @@ public class EnumeratedValueImpl extends EnumerationElementImpl implements Enume
     {
       case SysMLOCPackage.ENUMERATED_VALUE__VISIBILITY:
         setVisibility(VISIBILITY_EDEFAULT);
+        return;
+      case SysMLOCPackage.ENUMERATED_VALUE__USAGE_EXTENSION:
+        getUsageExtension().clear();
         return;
       case SysMLOCPackage.ENUMERATED_VALUE__TYPINGS:
         getTypings().clear();
@@ -756,9 +760,6 @@ public class EnumeratedValueImpl extends EnumerationElementImpl implements Enume
       case SysMLOCPackage.ENUMERATED_VALUE__VALUE_PART:
         getValuePart().clear();
         return;
-      case SysMLOCPackage.ENUMERATED_VALUE__USAGE_EXTENSION:
-        getUsageExtension().clear();
-        return;
       case SysMLOCPackage.ENUMERATED_VALUE__ELEMENTS:
         getElements().clear();
         return;
@@ -778,6 +779,8 @@ public class EnumeratedValueImpl extends EnumerationElementImpl implements Enume
     {
       case SysMLOCPackage.ENUMERATED_VALUE__VISIBILITY:
         return visibility != VISIBILITY_EDEFAULT;
+      case SysMLOCPackage.ENUMERATED_VALUE__USAGE_EXTENSION:
+        return usageExtension != null && !usageExtension.isEmpty();
       case SysMLOCPackage.ENUMERATED_VALUE__TYPINGS:
         return typings != null && !typings.isEmpty();
       case SysMLOCPackage.ENUMERATED_VALUE__SUBSETTING:
@@ -802,8 +805,6 @@ public class EnumeratedValueImpl extends EnumerationElementImpl implements Enume
         return isDefault != IS_DEFAULT_EDEFAULT;
       case SysMLOCPackage.ENUMERATED_VALUE__VALUE_PART:
         return valuePart != null && !valuePart.isEmpty();
-      case SysMLOCPackage.ENUMERATED_VALUE__USAGE_EXTENSION:
-        return usageExtension != null && !usageExtension.isEmpty();
       case SysMLOCPackage.ENUMERATED_VALUE__ELEMENTS:
         return elements != null && !elements.isEmpty();
     }
@@ -823,6 +824,14 @@ public class EnumeratedValueImpl extends EnumerationElementImpl implements Enume
       switch (derivedFeatureID)
       {
         case SysMLOCPackage.ENUMERATED_VALUE__VISIBILITY: return SysMLOCPackage.MEMBER_PREFIX__VISIBILITY;
+        default: return -1;
+      }
+    }
+    if (baseClass == UsageExtensionKeyword.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.ENUMERATED_VALUE__USAGE_EXTENSION: return SysMLOCPackage.USAGE_EXTENSION_KEYWORD__USAGE_EXTENSION;
         default: return -1;
       }
     }
@@ -913,6 +922,14 @@ public class EnumeratedValueImpl extends EnumerationElementImpl implements Enume
         default: return -1;
       }
     }
+    if (baseClass == UsageExtensionKeyword.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.USAGE_EXTENSION_KEYWORD__USAGE_EXTENSION: return SysMLOCPackage.ENUMERATED_VALUE__USAGE_EXTENSION;
+        default: return -1;
+      }
+    }
     if (baseClass == FeatureSpecialization.class)
     {
       switch (baseFeatureID)
@@ -997,6 +1014,8 @@ public class EnumeratedValueImpl extends EnumerationElementImpl implements Enume
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (visibility: ");
     result.append(visibility);
+    result.append(", UsageExtension: ");
+    result.append(usageExtension);
     result.append(", typings: ");
     result.append(typings);
     result.append(", subsetting: ");
@@ -1021,8 +1040,6 @@ public class EnumeratedValueImpl extends EnumerationElementImpl implements Enume
     result.append(isDefault);
     result.append(", valuePart: ");
     result.append(valuePart);
-    result.append(", UsageExtension: ");
-    result.append(usageExtension);
     result.append(')');
     return result.toString();
   }

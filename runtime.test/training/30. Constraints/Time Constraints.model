@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <packages declaredName="'Time Constraints'">
+    <elements xsi:type="sysMLOC:MembershipImport" visibility="private" declaredName="ISQ::TemperatureValue"/>
+    <elements xsi:type="sysMLOC:MembershipImport" visibility="private" declaredName="ISQ::DurationValue"/>
+    <elements xsi:type="sysMLOC:MembershipImport" visibility="private" declaredName="Time::TimeInstantValue"/>
+    <elements xsi:type="sysMLOC:MembershipImport" visibility="private" declaredName="Time::TimeOf"/>
+    <elements xsi:type="sysMLOC:MembershipImport" visibility="private" declaredName="Time::DurationOf"/>
+    <elements xsi:type="sysMLOC:MembershipImport" visibility="private" declaredName="SI::h"/>
+    <elements xsi:type="sysMLOC:MembershipImport" visibility="private" declaredName="SI::s"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MaintenanceDone"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="maintenanceTime">
+        <typings>TimeInstantValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="maintenanceInterval">
+        <typings>DurationValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="maxTemperature">
+        <typings>TemperatureValue</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:StateUsage" declaredName="healthStates">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="vehicle">
+        <typings>Vehicle</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:EntryAction"/>
+      <elements xsi:type="sysMLOC:TransitionUsage">
+        <transitionSuccessionElement refElement="normal"/>
+      </elements>
+      <elements xsi:type="sysMLOC:StateUsage" declaredName="normal"/>
+      <elements xsi:type="sysMLOC:TransitionUsage">
+        <acceptParameter triggerkind="at" triggerExpression="vehicle.maintenanceTime"/>
+        <transitionSuccessionElement refElement="maintenance"/>
+      </elements>
+      <elements xsi:type="sysMLOC:StateUsage" declaredName="maintenance">
+        <elements xsi:type="sysMLOC:AssertConstraintUsage">
+          <resultExpressionParameter resultExpression="TimeOf(maintenance) > vehicle.maintenanceTime"/>
+        </elements>
+        <elements xsi:type="sysMLOC:AssertConstraintUsage">
+          <resultExpressionParameter resultExpression="TimeOf(maintenance) - TimeOf(normal.done) &lt; 2 [s]"/>
+        </elements>
+        <elements xsi:type="sysMLOC:EntryAction">
+          <performedActionParameterPart xsi:type="sysMLOC:AssignmentActionUsage" featureChain="vehicle.maintenanceTime" NodeParameter="vehicle.maintenanceTime + vehicle.maintenanceInterval"/>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:TransitionUsage">
+        <acceptParameter payloadFeatureElement="MaintenanceDone"/>
+        <transitionSuccessionElement refElement="normal"/>
+      </elements>
+      <elements xsi:type="sysMLOC:ConstraintUsage">
+        <resultExpressionParameter resultExpression="DurationOf(maintenance) &lt;= 48 [h]"/>
+      </elements>
+    </elements>
+  </packages>
+</sysMLOC:Namespace>

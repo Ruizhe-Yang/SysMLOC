@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface EnumerationUsage extends NonOccurrenceUsageElement, MemberPrefix, UsagePrefix, UnextendedUsagePrefix, EndUsagePrefix, BasicUsagePrefix, RefPrefix, Usage, UsageDeclaration, FeatureDeclaration, FeatureSpecializationPart, FeatureSpecialization, MultiplicityPart, MultiplicityRange, FeatureValue
+public interface EnumerationUsage extends NonOccurrenceUsageElement, MemberPrefix, isReturnPrefix, UsagePrefix, UnextendedUsagePrefix, EndUsagePrefix, BasicUsagePrefix, RefPrefix, UsageExtensionKeyword, Usage, UsageDeclaration, FeatureDeclaration, FeatureSpecializationPart, FeatureSpecialization, MultiplicityPart, MultiplicityRange, FeatureValue
 {
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.

@@ -12,12 +12,12 @@
         <typings>Engine</typings>
       </elements>
       <elements xsi:type="sysMLOC:FlowConnectionUsage">
-        <ItemFeature>Fuel</ItemFeature>
+        <itemFeatureParameter payloadFeatureElement="Fuel"/>
         <FlowEnd>tankAssy.fuelTankPort.fuelSupply</FlowEnd>
         <FlowEnd>eng.engineFuelPort.fuelSupply</FlowEnd>
       </elements>
       <elements xsi:type="sysMLOC:FlowConnectionUsage">
-        <ItemFeature>Fuel</ItemFeature>
+        <itemFeatureParameter payloadFeatureElement="Fuel"/>
         <FlowEnd>eng.engineFuelPort.fuelReturn</FlowEnd>
         <FlowEnd>tankAssy.fuelTankPort.fuelReturn</FlowEnd>
       </elements>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <packages declaredName="'Interaction Example-1'">
+    <elements xsi:type="sysMLOC:NamespaceImport" visibility="public" declaredName="'Event Occurrence Example'"/>
+    <elements xsi:type="sysMLOC:ItemDefinition" declaredName="SetSpeed"/>
+    <elements xsi:type="sysMLOC:ItemDefinition" declaredName="SensedSpeed"/>
+    <elements xsi:type="sysMLOC:ItemDefinition" declaredName="FuelCommand"/>
+    <elements xsi:type="sysMLOC:OccurrenceDefinition" declaredName="CruiseControlInteraction">
+      <elements xsi:type="sysMLOC:PartUsage" isReference="true">
+        <redefinitions>driver</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" isReference="true">
+        <redefinitions>vehicle</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:Message" declaredName="setSpeedMessage">
+        <itemFeatureParameter payloadFeatureElement="SetSpeed"/>
+        <FlowEnd>driver.setSpeedSent</FlowEnd>
+        <FlowEnd>vehicle.cruiseController.setSpeedReceived</FlowEnd>
+      </elements>
+      <elements xsi:type="sysMLOC:Message" declaredName="sensedSpeedMessage">
+        <itemFeatureParameter payloadFeatureElement="SensedSpeed"/>
+        <FlowEnd>vehicle.speedometer.sensedSpeedSent</FlowEnd>
+        <FlowEnd>vehicle.cruiseController.sensedSpeedReceived</FlowEnd>
+      </elements>
+      <elements xsi:type="sysMLOC:Message" declaredName="fuelCommandMessage">
+        <itemFeatureParameter payloadFeatureElement="FuelCommand"/>
+        <FlowEnd>vehicle.cruiseController.fuelCommandSent</FlowEnd>
+        <FlowEnd>vehicle.engine.fuelCommandReceived</FlowEnd>
+      </elements>
+      <elements xsi:type="sysMLOC:SuccessionAsUsage">
+        <connectorPart refElement="setSpeedMessage"/>
+        <connectorPart refElement="sensedSpeedMessage"/>
+      </elements>
+    </elements>
+  </packages>
+</sysMLOC:Namespace>

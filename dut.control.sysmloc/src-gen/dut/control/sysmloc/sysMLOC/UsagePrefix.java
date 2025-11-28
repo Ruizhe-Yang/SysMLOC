@@ -3,36 +3,17 @@
  */
 package dut.control.sysmloc.sysMLOC;
 
-import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Usage Prefix</b></em>'.
  * <!-- end-user-doc -->
  *
- * <p>
- * The following features are supported:
- * </p>
- * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.UsagePrefix#getUsageExtension <em>Usage Extension</em>}</li>
- * </ul>
  *
  * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getUsagePrefix()
  * @model
  * @generated
  */
-public interface UsagePrefix extends UnextendedUsagePrefix, EndUsagePrefix, BasicUsagePrefix, RefPrefix
+public interface UsagePrefix extends UnextendedUsagePrefix, EndUsagePrefix, BasicUsagePrefix, RefPrefix, UsageExtensionKeyword
 {
-  /**
-   * Returns the value of the '<em><b>Usage Extension</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Usage Extension</em>' attribute list.
-   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getUsagePrefix_UsageExtension()
-   * @model unique="false"
-   * @generated
-   */
-  EList<String> getUsageExtension();
-
 } // UsagePrefix

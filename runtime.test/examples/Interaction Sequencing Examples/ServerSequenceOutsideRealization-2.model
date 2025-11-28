@@ -109,7 +109,7 @@
         <subsetting>consumer_2</subsetting>
         <redefinitions>consumer</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="message">
+      <elements xsi:type="sysMLOC:Message">
         <typings>Transfers::MessageTransfer</typings>
         <redefinitions>publish_message</redefinitions>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" isEnd="true">
@@ -121,7 +121,7 @@
           <valuePart>server.publicationPort</valuePart>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="message">
+      <elements xsi:type="sysMLOC:Message">
         <typings>Transfers::MessageTransfer</typings>
         <redefinitions>subscribe_message</redefinitions>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" isEnd="true">
@@ -133,7 +133,7 @@
           <valuePart>server.subscriptionPort</valuePart>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="message">
+      <elements xsi:type="sysMLOC:Message">
         <typings>Transfers::MessageTransfer</typings>
         <redefinitions>deliver_message</redefinitions>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" isEnd="true">

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <packages declaredName="ConstraintTest">
+    <elements xsi:type="sysMLOC:MembershipImport" visibility="private" declaredName="ISQ::MassValue"/>
+    <elements xsi:type="sysMLOC:MembershipImport" visibility="private" declaredName="SI::kg"/>
+    <elements xsi:type="sysMLOC:MembershipImport" visibility="private" declaredName="NumericalFunctions::sum"/>
+    <elements xsi:type="sysMLOC:ConstraintDefinition" declaredName="MassAnalysis">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="totalMass">
+        <typings>MassValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="componentMasses">
+        <typings>MassValue</typings>
+        <Multiplicity>0</Multiplicity>
+        <Multiplicity>*</Multiplicity>
+      </elements>
+      <resultExpressionParameter resultExpression="totalMass == sum(componentMasses)"/>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Component">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass">
+        <typings>MassValue</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle">
+      <typings>Component</typings>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="engine">
+        <typings>Component</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="frontAxleAssembly">
+        <typings>Component</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="rearAxleAssembly">
+        <typings>Component</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle1a">
+      <subsetting>vehicle</subsetting>
+      <elements xsi:type="sysMLOC:AssertConstraintUsage" declaredName="massAnalysis">
+        <typings>MassAnalysis</typings>
+        <elements xsi:type="sysMLOC:AttributeUsage">
+          <redefinitions>totalMass</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage">
+          <redefinitions>componentMasses</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:BindingConnectorAsUsage">
+        <connectorPart refElement="massAnalysis.totalMass"/>
+        <connectorPart refElement="mass"/>
+      </elements>
+      <elements xsi:type="sysMLOC:BindingConnectorAsUsage">
+        <connectorPart refElement="massAnalysis.componentMasses"/>
+        <connectorPart refElement="engine.mass"/>
+      </elements>
+      <elements xsi:type="sysMLOC:BindingConnectorAsUsage">
+        <connectorPart refElement="massAnalysis.componentMasses"/>
+        <connectorPart refElement="frontAxleAssembly.mass"/>
+      </elements>
+      <elements xsi:type="sysMLOC:BindingConnectorAsUsage">
+        <connectorPart refElement="massAnalysis.componentMasses"/>
+        <connectorPart refElement="rearAxleAssembly.mass"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle1b">
+      <subsetting>vehicle</subsetting>
+      <elements xsi:type="sysMLOC:AssertConstraintUsage" declaredName="massAnalysis">
+        <typings>MassAnalysis</typings>
+        <elements xsi:type="sysMLOC:AttributeUsage">
+          <redefinitions>totalMass</redefinitions>
+          <valuePart>mass</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage">
+          <redefinitions>componentMasses</redefinitions>
+          <valuePart>(engine.mass, frontAxleAssembly.mass, rearAxleAssembly.mass)</valuePart>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:ConstraintDefinition" declaredName="MassAnalysis2">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="totalMass">
+        <typings>MassValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="componentMasses">
+        <typings>MassValue</typings>
+        <Multiplicity>0</Multiplicity>
+        <Multiplicity>*</Multiplicity>
+      </elements>
+      <resultExpressionParameter resultExpression="totalMass == sum(componentMasses)"/>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle2a">
+      <subsetting>vehicle</subsetting>
+      <elements xsi:type="sysMLOC:AssertConstraintUsage" declaredName="massConstraint">
+        <typings>MassAnalysis2</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:BindingConnectorAsUsage">
+        <connectorPart refElement="massConstraint.totalMass"/>
+        <connectorPart refElement="mass"/>
+      </elements>
+      <elements xsi:type="sysMLOC:BindingConnectorAsUsage">
+        <connectorPart refElement="massConstraint.componentMasses"/>
+        <connectorPart refElement="engine.mass"/>
+      </elements>
+      <elements xsi:type="sysMLOC:BindingConnectorAsUsage">
+        <connectorPart refElement="massConstraint.componentMasses"/>
+        <connectorPart refElement="frontAxleAssembly.mass"/>
+      </elements>
+      <elements xsi:type="sysMLOC:BindingConnectorAsUsage">
+        <connectorPart refElement="massConstraint.componentMasses"/>
+        <connectorPart refElement="rearAxleAssembly.mass"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle2b">
+      <subsetting>vehicle</subsetting>
+      <elements xsi:type="sysMLOC:AssertConstraintUsage" declaredName="massAnalysis2">
+        <typings>MassAnalysis2</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="totalMass">
+          <valuePart>mass</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="componentMasses">
+          <valuePart>(engine.mass, frontAxleAssembly.mass, rearAxleAssembly.mass)</valuePart>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:ConstraintDefinition" declaredName="MassAnalysis3">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="totalMass">
+        <typings>MassValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="componentMasses">
+        <typings>MassValue</typings>
+        <Multiplicity>0</Multiplicity>
+        <Multiplicity>*</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:ConstraintUsage" declaredName="massAnalysis3">
+      <typings>MassAnalysis3</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="totalMass">
+        <typings>MassValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="componentMasses">
+        <typings>MassValue</typings>
+        <Multiplicity>0</Multiplicity>
+        <Multiplicity>*</Multiplicity>
+      </elements>
+      <resultExpressionParameter resultExpression="totalMass == sum(componentMasses)"/>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle3">
+      <subsetting>vehicle</subsetting>
+      <elements xsi:type="sysMLOC:AssertConstraintUsage" refElement="massAnalysis3">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="totalMass">
+          <valuePart>mass</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="componentMasses">
+          <valuePart>(engine.mass, frontAxleAssembly.mass, rearAxleAssembly.mass)</valuePart>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle4">
+      <subsetting>vehicle</subsetting>
+      <elements xsi:type="sysMLOC:AssertConstraintUsage">
+        <resultExpressionParameter resultExpression="mass == engine.mass + frontAxleAssembly.mass + rearAxleAssembly.mass"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:ConstraintUsage" declaredName="massLimitation">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="mass">
+        <typings>MassValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="massLimit">
+        <typings>MassValue</typings>
+      </elements>
+      <resultExpressionParameter resultExpression="mass &lt; massLimit"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AssertConstraintUsage" refElement="massLimitation" isNegated="true">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <redefinitions>mass</redefinitions>
+        <valuePart>vehicle3.mass</valuePart>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <redefinitions>massLimit</redefinitions>
+        <valuePart>vehicle4.mass</valuePart>
+      </elements>
+    </elements>
+  </packages>
+</sysMLOC:Namespace>

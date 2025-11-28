@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <packages declaredName="'Individuals and Time Slices'">
+    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="'Individuals and Snapshots Example'"/>
+    <elements xsi:type="sysMLOC:ItemDefinition" isIndividual="true" declaredName="Alice">
+      <superclassifiers>Person</superclassifiers>
+    </elements>
+    <elements xsi:type="sysMLOC:ItemDefinition" isIndividual="true" declaredName="Bob">
+      <superclassifiers>Person</superclassifiers>
+    </elements>
+    <elements xsi:type="sysMLOC:IndividualUsage" isIndividual="true">
+      <typings>Vehicle_1</typings>
+      <elements xsi:type="sysMLOC:PortionUsage" declaredName="aliceDriving" portionKind="timeslice">
+        <elements xsi:type="sysMLOC:ItemUsage" isReference="true" isIndividual="true">
+          <typings>Alice</typings>
+          <redefinitions>driver</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:PortionUsage" portionKind="snapshot">
+          <redefinitions>start</redefinitions>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <redefinitions>mass</redefinitions>
+            <valuePart>2000.0</valuePart>
+          </elements>
+        </elements>
+        <elements xsi:type="sysMLOC:PortionUsage" portionKind="snapshot">
+          <redefinitions>done</redefinitions>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <redefinitions>mass</redefinitions>
+            <valuePart>1500.0</valuePart>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PortionUsage" isThen="true" declaredName="bobDriving" portionKind="timeslice">
+        <elements xsi:type="sysMLOC:ItemUsage" isReference="true" isIndividual="true">
+          <typings>Bob</typings>
+          <redefinitions>driver</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+  </packages>
+</sysMLOC:Namespace>
