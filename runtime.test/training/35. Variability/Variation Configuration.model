@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
   <packages declaredName="'Variation Configuration'">
-    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="'Variation Usages'"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="'Variation Usages'" isNamespace="true"/>
     <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle4Cyl">
       <subsetting>vehicleFamily</subsetting>
       <elements xsi:type="sysMLOC:PartUsage">

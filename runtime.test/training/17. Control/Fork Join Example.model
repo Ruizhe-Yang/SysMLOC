@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
   <packages declaredName="'Fork Join Example'">
-    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="ScalarValues"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues" isNamespace="true"/>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="TurnKeyToOn"/>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="BrakePressure"/>
     <elements xsi:type="sysMLOC:ActionDefinition" declaredName="MonitorBrakePedal">
@@ -25,28 +25,28 @@
     <elements xsi:type="sysMLOC:ActionDefinition" declaredName="Brake">
       <elements xsi:type="sysMLOC:ActionUsage" declaredName="TurnOn"/>
       <elements xsi:type="sysMLOC:CommonNode" isThen="true" nodeKind="fork"/>
-      <elements xsi:type="sysMLOC:TargetSuccessionElement">
-        <transitionSuccessionElement refElement="monitorBrakePedal"/>
+      <elements xsi:type="sysMLOC:ThenNode">
+        <thenElement refElement="monitorBrakePedal"/>
       </elements>
-      <elements xsi:type="sysMLOC:TargetSuccessionElement">
-        <transitionSuccessionElement refElement="monitorTraction"/>
+      <elements xsi:type="sysMLOC:ThenNode">
+        <thenElement refElement="monitorTraction"/>
       </elements>
-      <elements xsi:type="sysMLOC:TargetSuccessionElement">
-        <transitionSuccessionElement refElement="braking"/>
+      <elements xsi:type="sysMLOC:ThenNode">
+        <thenElement refElement="braking"/>
       </elements>
       <elements xsi:type="sysMLOC:ActionUsage" declaredName="monitorBrakePedal">
         <typings>MonitorBrakePedal</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="brakePressure"/>
       </elements>
-      <elements xsi:type="sysMLOC:TargetSuccessionElement">
-        <transitionSuccessionElement refElement="joinNode"/>
+      <elements xsi:type="sysMLOC:ThenNode">
+        <thenElement refElement="joinNode"/>
       </elements>
       <elements xsi:type="sysMLOC:ActionUsage" declaredName="monitorTraction">
         <typings>MonitorTraction</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="modulationFrequency"/>
       </elements>
-      <elements xsi:type="sysMLOC:TargetSuccessionElement">
-        <transitionSuccessionElement refElement="joinNode"/>
+      <elements xsi:type="sysMLOC:ThenNode">
+        <thenElement refElement="joinNode"/>
       </elements>
       <elements xsi:type="sysMLOC:FlowConnectionUsage">
         <FlowEnd>monitorBrakePedal.brakePressure</FlowEnd>
@@ -61,12 +61,12 @@
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="brakePressure"/>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="modulationFrequency"/>
       </elements>
-      <elements xsi:type="sysMLOC:TargetSuccessionElement">
-        <transitionSuccessionElement refElement="joinNode"/>
+      <elements xsi:type="sysMLOC:ThenNode">
+        <thenElement refElement="joinNode"/>
       </elements>
       <elements xsi:type="sysMLOC:CommonNode" declaredName="joinNode" nodeKind="join"/>
-      <elements xsi:type="sysMLOC:TargetSuccessionElement">
-        <transitionSuccessionElement refElement="done"/>
+      <elements xsi:type="sysMLOC:ThenNode">
+        <thenElement refElement="done"/>
       </elements>
     </elements>
   </packages>

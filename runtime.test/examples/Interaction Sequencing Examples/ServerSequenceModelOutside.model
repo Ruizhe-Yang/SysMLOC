@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
   <packages declaredName="ServerSequenceModelOutside">
-    <elements xsi:type="sysMLOC:NamespaceImport" visibility="public" declaredName="ServerSequenceModel"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="ServerSequenceModel" isNamespace="true"/>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="PubSubSequenceOutside">
       <superclassifiers>PubSubSequence</superclassifiers>
       <elements xsi:type="sysMLOC:PartUsage">

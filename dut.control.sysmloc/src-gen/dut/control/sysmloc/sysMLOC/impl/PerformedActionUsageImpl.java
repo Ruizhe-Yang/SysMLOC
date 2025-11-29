@@ -36,7 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PerformedActionUsageImpl#getAcceptParameter <em>Accept Parameter</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PerformedActionUsageImpl#isSendNodeParameter <em>Send Node Parameter</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PerformedActionUsageImpl#getSendNodeParameter <em>Send Node Parameter</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PerformedActionUsageImpl#getViaNodeParameter <em>Via Node Parameter</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PerformedActionUsageImpl#getToNodeParameter <em>To Node Parameter</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PerformedActionUsageImpl#getTargetParameter <em>Target Parameter</em>}</li>
@@ -59,24 +59,24 @@ public class PerformedActionUsageImpl extends PerformActionUsageDeclarationImpl 
   protected EList<PayloadParameter> acceptParameter;
 
   /**
-   * The default value of the '{@link #isSendNodeParameter() <em>Send Node Parameter</em>}' attribute.
+   * The default value of the '{@link #getSendNodeParameter() <em>Send Node Parameter</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isSendNodeParameter()
+   * @see #getSendNodeParameter()
    * @generated
    * @ordered
    */
-  protected static final boolean SEND_NODE_PARAMETER_EDEFAULT = false;
+  protected static final String SEND_NODE_PARAMETER_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #isSendNodeParameter() <em>Send Node Parameter</em>}' attribute.
+   * The cached value of the '{@link #getSendNodeParameter() <em>Send Node Parameter</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isSendNodeParameter()
+   * @see #getSendNodeParameter()
    * @generated
    * @ordered
    */
-  protected boolean sendNodeParameter = SEND_NODE_PARAMETER_EDEFAULT;
+  protected String sendNodeParameter = SEND_NODE_PARAMETER_EDEFAULT;
 
   /**
    * The default value of the '{@link #getViaNodeParameter() <em>Via Node Parameter</em>}' attribute.
@@ -220,7 +220,7 @@ public class PerformedActionUsageImpl extends PerformActionUsageDeclarationImpl 
    * @generated
    */
   @Override
-  public boolean isSendNodeParameter()
+  public String getSendNodeParameter()
   {
     return sendNodeParameter;
   }
@@ -231,9 +231,9 @@ public class PerformedActionUsageImpl extends PerformActionUsageDeclarationImpl 
    * @generated
    */
   @Override
-  public void setSendNodeParameter(boolean newSendNodeParameter)
+  public void setSendNodeParameter(String newSendNodeParameter)
   {
-    boolean oldSendNodeParameter = sendNodeParameter;
+    String oldSendNodeParameter = sendNodeParameter;
     sendNodeParameter = newSendNodeParameter;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.PERFORMED_ACTION_USAGE__SEND_NODE_PARAMETER, oldSendNodeParameter, sendNodeParameter));
@@ -393,7 +393,7 @@ public class PerformedActionUsageImpl extends PerformActionUsageDeclarationImpl 
       case SysMLOCPackage.PERFORMED_ACTION_USAGE__ACCEPT_PARAMETER:
         return getAcceptParameter();
       case SysMLOCPackage.PERFORMED_ACTION_USAGE__SEND_NODE_PARAMETER:
-        return isSendNodeParameter();
+        return getSendNodeParameter();
       case SysMLOCPackage.PERFORMED_ACTION_USAGE__VIA_NODE_PARAMETER:
         return getViaNodeParameter();
       case SysMLOCPackage.PERFORMED_ACTION_USAGE__TO_NODE_PARAMETER:
@@ -424,7 +424,7 @@ public class PerformedActionUsageImpl extends PerformActionUsageDeclarationImpl 
         getAcceptParameter().addAll((Collection<? extends PayloadParameter>)newValue);
         return;
       case SysMLOCPackage.PERFORMED_ACTION_USAGE__SEND_NODE_PARAMETER:
-        setSendNodeParameter((Boolean)newValue);
+        setSendNodeParameter((String)newValue);
         return;
       case SysMLOCPackage.PERFORMED_ACTION_USAGE__VIA_NODE_PARAMETER:
         setViaNodeParameter((String)newValue);
@@ -493,7 +493,7 @@ public class PerformedActionUsageImpl extends PerformActionUsageDeclarationImpl 
       case SysMLOCPackage.PERFORMED_ACTION_USAGE__ACCEPT_PARAMETER:
         return acceptParameter != null && !acceptParameter.isEmpty();
       case SysMLOCPackage.PERFORMED_ACTION_USAGE__SEND_NODE_PARAMETER:
-        return sendNodeParameter != SEND_NODE_PARAMETER_EDEFAULT;
+        return SEND_NODE_PARAMETER_EDEFAULT == null ? sendNodeParameter != null : !SEND_NODE_PARAMETER_EDEFAULT.equals(sendNodeParameter);
       case SysMLOCPackage.PERFORMED_ACTION_USAGE__VIA_NODE_PARAMETER:
         return VIA_NODE_PARAMETER_EDEFAULT == null ? viaNodeParameter != null : !VIA_NODE_PARAMETER_EDEFAULT.equals(viaNodeParameter);
       case SysMLOCPackage.PERFORMED_ACTION_USAGE__TO_NODE_PARAMETER:

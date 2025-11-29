@@ -3,6 +3,7 @@
  */
 package dut.control.sysmloc.sysMLOC;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,6 +15,6 @@ package dut.control.sysmloc.sysMLOC;
  * @model
  * @generated
  */
-public interface UsageBodyElement extends InterfaceBodyElement
+public interface UsageBodyElement extends EObject
 {
 } // UsageBodyElement

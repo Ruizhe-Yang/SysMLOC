@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
   <packages declaredName="'Car Mass Rollup Example 1'">
-    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="ScalarValues"/>
-    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="MassRollup1"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="MassRollup1" isNamespace="true"/>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="CarPart">
       <superclassifiers>MassedThing</superclassifiers>
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="serialNumber">
@@ -32,7 +32,7 @@
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CodeAnnotation" body="// Example usage&#xD;&#xA;"/>
-    <elements xsi:type="sysMLOC:MembershipImport" visibility="private" declaredName="SI::kg"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="SI::kg"/>
     <elements xsi:type="sysMLOC:PartUsage" declaredName="c">
       <subsetting>car</subsetting>
       <elements xsi:type="sysMLOC:AttributeUsage">

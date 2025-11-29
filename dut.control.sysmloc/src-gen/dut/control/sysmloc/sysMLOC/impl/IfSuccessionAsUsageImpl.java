@@ -3,26 +3,26 @@
  */
 package dut.control.sysmloc.sysMLOC.impl;
 
-import dut.control.sysmloc.sysMLOC.NamespaceImport;
+import dut.control.sysmloc.sysMLOC.IfSuccessionAsUsage;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Namespace Import</b></em>'.
+ * An implementation of the model object '<em><b>If Succession As Usage</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class NamespaceImportImpl extends ImportElementImpl implements NamespaceImport
+public class IfSuccessionAsUsageImpl extends UsageDeclarationImpl implements IfSuccessionAsUsage
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected NamespaceImportImpl()
+  protected IfSuccessionAsUsageImpl()
   {
     super();
   }
@@ -35,7 +35,7 @@ public class NamespaceImportImpl extends ImportElementImpl implements NamespaceI
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.eINSTANCE.getNamespaceImport();
+    return SysMLOCPackage.eINSTANCE.getIfSuccessionAsUsage();
   }
 
-} //NamespaceImportImpl
+} //IfSuccessionAsUsageImpl

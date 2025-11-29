@@ -5,12 +5,12 @@
       <elements xsi:type="sysMLOC:PartDefinition" declaredName="A"/>
     </elements>
     <elements xsi:type="sysMLOC:Package" declaredName="P2">
-      <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="P1"/>
+      <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="P1" isNamespace="true"/>
     </elements>
     <elements xsi:type="sysMLOC:PartUsage" declaredName="x">
       <typings>P1::A</typings>
     </elements>
-    <elements xsi:type="sysMLOC:NamespaceImport" visibility="public" declaredName="P2"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="P2" isNamespace="true"/>
     <elements xsi:type="sysMLOC:CodeAnnotation" body="// This should fail.&#xD;&#xA;"/>
     <elements xsi:type="sysMLOC:CodeAnnotation" body="// A is not visible, because the import in P2 is private.&#xD;&#xA;"/>
     <elements xsi:type="sysMLOC:CodeAnnotation" body="// part y: A;&#xD;&#xA;"/>
@@ -18,14 +18,14 @@
     <elements xsi:type="sysMLOC:Package" declaredName="P3">
       <elements xsi:type="sysMLOC:PartDefinition" declaredName="B"/>
     </elements>
-    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="P3"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="P3" isNamespace="true"/>
     <elements xsi:type="sysMLOC:CodeAnnotation" body="// This should not fail.&#xD;&#xA;"/>
     <elements xsi:type="sysMLOC:CodeAnnotation" body="// Private import only restricts visibility outside the package.&#xD;&#xA;"/>
     <elements xsi:type="sysMLOC:PartUsage" declaredName="z">
       <typings>B</typings>
     </elements>
     <elements xsi:type="sysMLOC:Package" declaredName="P4">
-      <elements xsi:type="sysMLOC:NamespaceImport" visibility="public" isImportAll="true" declaredName="P2"/>
+      <elements xsi:type="sysMLOC:ImportElement" visibility="public" isImportAll="true" declaredName="P2" isNamespace="true"/>
       <elements xsi:type="sysMLOC:CodeAnnotation" body="// This should not fail because &quot;import all&quot; overrides private import.&#xD;&#xA;"/>
       <elements xsi:type="sysMLOC:PartUsage" declaredName="z1">
         <typings>A</typings>

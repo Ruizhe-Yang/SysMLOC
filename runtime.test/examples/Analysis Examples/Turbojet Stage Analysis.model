@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
   <packages declaredName="'Turbojet Stage Analysis'">
-    <elements xsi:type="sysMLOC:MembershipImport" visibility="private" declaredName="Quantities::ScalarQuantityValue"/>
-    <elements xsi:type="sysMLOC:MembershipImport" visibility="private" declaredName="MeasurementReferences::DimensionOneValue"/>
-    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="ISQ"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Quantities::ScalarQuantityValue"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="MeasurementReferences::DimensionOneValue"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ISQ" isNamespace="true"/>
     <elements xsi:type="sysMLOC:Package" declaredName="'Thermodynamic Functions'">
       <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="'Ideal Gas Law'">
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="rho"/>
@@ -111,7 +111,7 @@
     </elements>
     <elements xsi:type="sysMLOC:Package" declaredName="'Low-Pressure Compressor Analysis'">
       <elements xsi:type="sysMLOC:PartUsage" declaredName="'Analysis Context'">
-        <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="'Thermodynamic Functions'"/>
+        <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="'Thermodynamic Functions'" isNamespace="true"/>
         <elements xsi:type="sysMLOC:PartUsage" declaredName="'Inlet Gas'">
           <typings>'Thermodynamics Structure'::'Moving Ideal Gas Parcel'</typings>
           <elements xsi:type="sysMLOC:CodeAnnotation" body="// Explicit binding notation&#xD;&#xA;"/>

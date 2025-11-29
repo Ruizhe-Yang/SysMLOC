@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
   <packages declaredName="CalculationExample">
-    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="ISQ"/>
-    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="NumericalFunctions"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ISQ" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="NumericalFunctions" isNamespace="true"/>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="VehiclePart">
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="m">
         <typings>MassValue</typings>

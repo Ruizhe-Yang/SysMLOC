@@ -15,7 +15,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.ForLoopNode#getForVariableParameter <em>For Variable Parameter</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.ForLoopNode#getNodeParameter <em>Node Parameter</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.ForLoopNode#getForNodeParameter <em>For Node Parameter</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.ForLoopNode#getActionParameterEnd <em>Action Parameter End</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.ForLoopNode#getElements <em>Elements</em>}</li>
  * </ul>
@@ -49,26 +49,26 @@ public interface ForLoopNode extends ActionNodeElement, EmptySuccessionPrefix, M
   void setForVariableParameter(ForVariableParameter value);
 
   /**
-   * Returns the value of the '<em><b>Node Parameter</b></em>' attribute.
+   * Returns the value of the '<em><b>For Node Parameter</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Node Parameter</em>' attribute.
-   * @see #setNodeParameter(String)
-   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getForLoopNode_NodeParameter()
+   * @return the value of the '<em>For Node Parameter</em>' attribute.
+   * @see #setForNodeParameter(String)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getForLoopNode_ForNodeParameter()
    * @model
    * @generated
    */
-  String getNodeParameter();
+  String getForNodeParameter();
 
   /**
-   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.ForLoopNode#getNodeParameter <em>Node Parameter</em>}' attribute.
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.ForLoopNode#getForNodeParameter <em>For Node Parameter</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Node Parameter</em>' attribute.
-   * @see #getNodeParameter()
+   * @param value the new value of the '<em>For Node Parameter</em>' attribute.
+   * @see #getForNodeParameter()
    * @generated
    */
-  void setNodeParameter(String value);
+  void setForNodeParameter(String value);
 
   /**
    * Returns the value of the '<em><b>Action Parameter End</b></em>' containment reference list.

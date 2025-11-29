@@ -14,6 +14,6 @@ package dut.control.sysmloc.sysMLOC;
  * @model
  * @generated
  */
-public interface GeneralBodyElements extends PackageBodyElement, DefinitionBodyElement, ActionBodyElement, StateBodyElement
+public interface GeneralBodyElements extends PackageBodyElement, DefinitionBodyElement, UsageBodyElement, InterfaceBodyElement, ActionBodyElement, StateBodyElement
 {
 } // GeneralBodyElements

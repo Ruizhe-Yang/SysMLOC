@@ -3,8 +3,8 @@
   <intro body="// SysML v2 Interpretation of the SysML v1 Room Connection Example&#xD;&#xA;"/>
   <packages declaredName="RoomModel">
     <elements xsi:type="sysMLOC:Package" declaredName="RoomDefinitionModelLibrary">
-      <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="Port_Definitions"/>
-      <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="Flow_Definitions"/>
+      <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Port_Definitions" isNamespace="true"/>
+      <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Flow_Definitions" isNamespace="true"/>
       <elements xsi:type="sysMLOC:Package" declaredName="Part_Definitions">
         <elements xsi:type="sysMLOC:CodeAnnotation" body="// Rooms&#xD;&#xA;"/>
         <elements xsi:type="sysMLOC:PartDefinition" declaredName="Classroom">
@@ -63,10 +63,10 @@
     </elements>
     <elements xsi:type="sysMLOC:Package" declaredName="Room_Configuration">
       <elements xsi:type="sysMLOC:CodeAnnotation" body="// defining the parts and their interconnection in context &#xD;&#xA;"/>
-      <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="RoomDefinitionModelLibrary"/>
-      <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="RoomDefinitionModelLibrary::Part_Definitions"/>
-      <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="RoomDefinitionModelLibrary::Port_Definitions"/>
-      <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="RoomDefinitionModelLibrary::Flow_Definitions"/>
+      <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="RoomDefinitionModelLibrary" isNamespace="true"/>
+      <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="RoomDefinitionModelLibrary::Part_Definitions" isNamespace="true"/>
+      <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="RoomDefinitionModelLibrary::Port_Definitions" isNamespace="true"/>
+      <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="RoomDefinitionModelLibrary::Flow_Definitions" isNamespace="true"/>
       <elements xsi:type="sysMLOC:PartUsage" declaredName="roomContext">
         <elements xsi:type="sysMLOC:PartUsage" declaredName="c">
           <typings>Classroom</typings>

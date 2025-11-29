@@ -11,6 +11,7 @@ import dut.control.sysmloc.sysMLOC.EmptySuccessionPrefix;
 import dut.control.sysmloc.sysMLOC.FeatureDeclaration;
 import dut.control.sysmloc.sysMLOC.FeatureSpecialization;
 import dut.control.sysmloc.sysMLOC.FeatureSpecializationPart;
+import dut.control.sysmloc.sysMLOC.GeneralUsagePrefix;
 import dut.control.sysmloc.sysMLOC.MemberPrefix;
 import dut.control.sysmloc.sysMLOC.MultiplicityPart;
 import dut.control.sysmloc.sysMLOC.MultiplicityRange;
@@ -1046,6 +1047,13 @@ public class TransitionUsageImpl extends StateBodyElementImpl implements Transit
         default: return -1;
       }
     }
+    if (baseClass == GeneralUsagePrefix.class)
+    {
+      switch (derivedFeatureID)
+      {
+        default: return -1;
+      }
+    }
     if (baseClass == TypingFeatureTyping.class)
     {
       switch (derivedFeatureID)
@@ -1189,6 +1197,13 @@ public class TransitionUsageImpl extends StateBodyElementImpl implements Transit
       switch (baseFeatureID)
       {
         case SysMLOCPackage.IS_RETURN_PREFIX__IS_RETURN: return SysMLOCPackage.TRANSITION_USAGE__IS_RETURN;
+        default: return -1;
+      }
+    }
+    if (baseClass == GeneralUsagePrefix.class)
+    {
+      switch (baseFeatureID)
+      {
         default: return -1;
       }
     }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
   <packages declaredName="ServerSequenceOutsideRealization_2">
-    <elements xsi:type="sysMLOC:MembershipImport" visibility="private" declaredName="ScalarValues::String"/>
-    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="ServerSequenceModelOutside"/>
-    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="Configuration"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues::String"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ServerSequenceModelOutside" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Configuration" isNamespace="true"/>
     <elements xsi:type="sysMLOC:Package" declaredName="Configuration">
       <elements xsi:type="sysMLOC:PortDefinition" declaredName="PublicationPort"/>
       <elements xsi:type="sysMLOC:PortDefinition" declaredName="SubscriptionPort"/>
@@ -62,7 +62,7 @@
             <acceptParameter declaredName="pub" viaNodeParameter="publicationPort">
               <typings>Publish</typings>
             </acceptParameter>
-            <performedActionParameterPart xsi:type="sysMLOC:SendActionUsage" sendNodeParameter="true" toNodeParameter="subscribing.sub.subscriber"/>
+            <performedActionParameterPart xsi:type="sysMLOC:SendActionUsage" sendNodeParameter="Deliver(pub.publication)" toNodeParameter="subscribing.sub.subscriber"/>
             <transitionSuccessionElement refElement="waitForPublication"/>
           </elements>
         </elements>

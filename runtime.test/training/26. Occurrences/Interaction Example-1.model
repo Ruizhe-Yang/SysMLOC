@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
   <packages declaredName="'Interaction Example-1'">
-    <elements xsi:type="sysMLOC:NamespaceImport" visibility="public" declaredName="'Event Occurrence Example'"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="'Event Occurrence Example'" isNamespace="true"/>
     <elements xsi:type="sysMLOC:ItemDefinition" declaredName="SetSpeed"/>
     <elements xsi:type="sysMLOC:ItemDefinition" declaredName="SensedSpeed"/>
     <elements xsi:type="sysMLOC:ItemDefinition" declaredName="FuelCommand"/>

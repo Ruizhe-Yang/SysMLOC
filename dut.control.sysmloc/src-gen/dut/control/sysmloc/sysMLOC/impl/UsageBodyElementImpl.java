@@ -8,6 +8,8 @@ import dut.control.sysmloc.sysMLOC.UsageBodyElement;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Usage Body Element</b></em>'.
@@ -15,7 +17,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class UsageBodyElementImpl extends InterfaceBodyElementImpl implements UsageBodyElement
+public class UsageBodyElementImpl extends MinimalEObjectImpl.Container implements UsageBodyElement
 {
   /**
    * <!-- begin-user-doc -->

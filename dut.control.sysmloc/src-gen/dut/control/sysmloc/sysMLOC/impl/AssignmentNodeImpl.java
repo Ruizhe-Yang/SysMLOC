@@ -6,7 +6,6 @@ package dut.control.sysmloc.sysMLOC.impl;
 import dut.control.sysmloc.sysMLOC.ActionBodyElement;
 import dut.control.sysmloc.sysMLOC.ActionNodeUsageDeclaration;
 import dut.control.sysmloc.sysMLOC.AssignmentNode;
-import dut.control.sysmloc.sysMLOC.AssignmentNodeDeclaration;
 import dut.control.sysmloc.sysMLOC.BasicDefinitionPrefix;
 import dut.control.sysmloc.sysMLOC.BasicUsagePrefix;
 import dut.control.sysmloc.sysMLOC.CrossFeatureChain;
@@ -1556,16 +1555,6 @@ public class AssignmentNodeImpl extends ActionNodeElementImpl implements Assignm
         default: return -1;
       }
     }
-    if (baseClass == AssignmentNodeDeclaration.class)
-    {
-      switch (derivedFeatureID)
-      {
-        case SysMLOCPackage.ASSIGNMENT_NODE__TARGET_PARAMETER: return SysMLOCPackage.ASSIGNMENT_NODE_DECLARATION__TARGET_PARAMETER;
-        case SysMLOCPackage.ASSIGNMENT_NODE__FEATURE_CHAIN: return SysMLOCPackage.ASSIGNMENT_NODE_DECLARATION__FEATURE_CHAIN;
-        case SysMLOCPackage.ASSIGNMENT_NODE__NODE_PARAMETER: return SysMLOCPackage.ASSIGNMENT_NODE_DECLARATION__NODE_PARAMETER;
-        default: return -1;
-      }
-    }
     return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
   }
 
@@ -1721,16 +1710,6 @@ public class AssignmentNodeImpl extends ActionNodeElementImpl implements Assignm
     {
       switch (baseFeatureID)
       {
-        default: return -1;
-      }
-    }
-    if (baseClass == AssignmentNodeDeclaration.class)
-    {
-      switch (baseFeatureID)
-      {
-        case SysMLOCPackage.ASSIGNMENT_NODE_DECLARATION__TARGET_PARAMETER: return SysMLOCPackage.ASSIGNMENT_NODE__TARGET_PARAMETER;
-        case SysMLOCPackage.ASSIGNMENT_NODE_DECLARATION__FEATURE_CHAIN: return SysMLOCPackage.ASSIGNMENT_NODE__FEATURE_CHAIN;
-        case SysMLOCPackage.ASSIGNMENT_NODE_DECLARATION__NODE_PARAMETER: return SysMLOCPackage.ASSIGNMENT_NODE__NODE_PARAMETER;
         default: return -1;
       }
     }

@@ -37,7 +37,7 @@
       <elements xsi:type="sysMLOC:StateUsage" declaredName="starting"/>
       <elements xsi:type="sysMLOC:TransitionUsage" conditionalExpression="operatingVehicle.brakePedalDepressed">
         <acceptParameter payloadFeatureElement="VehicleOnSignal"/>
-        <performedActionParameterPart xsi:type="sysMLOC:SendActionUsage" sendNodeParameter="true" toNodeParameter="controller"/>
+        <performedActionParameterPart xsi:type="sysMLOC:SendActionUsage" sendNodeParameter="ControllerStartSignal()" toNodeParameter="controller"/>
         <transitionSuccessionElement refElement="on"/>
       </elements>
       <elements xsi:type="sysMLOC:StateUsage" declaredName="on">

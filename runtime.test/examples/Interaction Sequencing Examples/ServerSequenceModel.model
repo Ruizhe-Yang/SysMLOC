@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
   <packages declaredName="ServerSequenceModel">
-    <elements xsi:type="sysMLOC:MembershipImport" visibility="private" declaredName="ScalarValues::String"/>
-    <elements xsi:type="sysMLOC:NamespaceImport" visibility="public" declaredName="SignalDefinitions"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues::String"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="SignalDefinitions" isNamespace="true"/>
     <elements xsi:type="sysMLOC:Package" declaredName="SignalDefinitions">
       <elements xsi:type="sysMLOC:ItemDefinition" declaredName="Subscribe">
         <elements xsi:type="sysMLOC:AttributeUsage" declaredName="topic">

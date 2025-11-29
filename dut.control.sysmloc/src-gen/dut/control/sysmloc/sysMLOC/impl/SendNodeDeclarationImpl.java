@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SendNodeDeclarationImpl#isSendNodeParameter <em>Send Node Parameter</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SendNodeDeclarationImpl#getSendNodeParameter <em>Send Node Parameter</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SendNodeDeclarationImpl#getViaNodeParameter <em>Via Node Parameter</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SendNodeDeclarationImpl#getToNodeParameter <em>To Node Parameter</em>}</li>
  * </ul>
@@ -30,24 +30,24 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class SendNodeDeclarationImpl extends ActionNodeUsageDeclarationImpl implements SendNodeDeclaration
 {
   /**
-   * The default value of the '{@link #isSendNodeParameter() <em>Send Node Parameter</em>}' attribute.
+   * The default value of the '{@link #getSendNodeParameter() <em>Send Node Parameter</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isSendNodeParameter()
+   * @see #getSendNodeParameter()
    * @generated
    * @ordered
    */
-  protected static final boolean SEND_NODE_PARAMETER_EDEFAULT = false;
+  protected static final String SEND_NODE_PARAMETER_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #isSendNodeParameter() <em>Send Node Parameter</em>}' attribute.
+   * The cached value of the '{@link #getSendNodeParameter() <em>Send Node Parameter</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isSendNodeParameter()
+   * @see #getSendNodeParameter()
    * @generated
    * @ordered
    */
-  protected boolean sendNodeParameter = SEND_NODE_PARAMETER_EDEFAULT;
+  protected String sendNodeParameter = SEND_NODE_PARAMETER_EDEFAULT;
 
   /**
    * The default value of the '{@link #getViaNodeParameter() <em>Via Node Parameter</em>}' attribute.
@@ -116,7 +116,7 @@ public class SendNodeDeclarationImpl extends ActionNodeUsageDeclarationImpl impl
    * @generated
    */
   @Override
-  public boolean isSendNodeParameter()
+  public String getSendNodeParameter()
   {
     return sendNodeParameter;
   }
@@ -127,9 +127,9 @@ public class SendNodeDeclarationImpl extends ActionNodeUsageDeclarationImpl impl
    * @generated
    */
   @Override
-  public void setSendNodeParameter(boolean newSendNodeParameter)
+  public void setSendNodeParameter(String newSendNodeParameter)
   {
-    boolean oldSendNodeParameter = sendNodeParameter;
+    String oldSendNodeParameter = sendNodeParameter;
     sendNodeParameter = newSendNodeParameter;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SEND_NODE_DECLARATION__SEND_NODE_PARAMETER, oldSendNodeParameter, sendNodeParameter));
@@ -196,7 +196,7 @@ public class SendNodeDeclarationImpl extends ActionNodeUsageDeclarationImpl impl
     switch (featureID)
     {
       case SysMLOCPackage.SEND_NODE_DECLARATION__SEND_NODE_PARAMETER:
-        return isSendNodeParameter();
+        return getSendNodeParameter();
       case SysMLOCPackage.SEND_NODE_DECLARATION__VIA_NODE_PARAMETER:
         return getViaNodeParameter();
       case SysMLOCPackage.SEND_NODE_DECLARATION__TO_NODE_PARAMETER:
@@ -216,7 +216,7 @@ public class SendNodeDeclarationImpl extends ActionNodeUsageDeclarationImpl impl
     switch (featureID)
     {
       case SysMLOCPackage.SEND_NODE_DECLARATION__SEND_NODE_PARAMETER:
-        setSendNodeParameter((Boolean)newValue);
+        setSendNodeParameter((String)newValue);
         return;
       case SysMLOCPackage.SEND_NODE_DECLARATION__VIA_NODE_PARAMETER:
         setViaNodeParameter((String)newValue);
@@ -262,7 +262,7 @@ public class SendNodeDeclarationImpl extends ActionNodeUsageDeclarationImpl impl
     switch (featureID)
     {
       case SysMLOCPackage.SEND_NODE_DECLARATION__SEND_NODE_PARAMETER:
-        return sendNodeParameter != SEND_NODE_PARAMETER_EDEFAULT;
+        return SEND_NODE_PARAMETER_EDEFAULT == null ? sendNodeParameter != null : !SEND_NODE_PARAMETER_EDEFAULT.equals(sendNodeParameter);
       case SysMLOCPackage.SEND_NODE_DECLARATION__VIA_NODE_PARAMETER:
         return VIA_NODE_PARAMETER_EDEFAULT == null ? viaNodeParameter != null : !VIA_NODE_PARAMETER_EDEFAULT.equals(viaNodeParameter);
       case SysMLOCPackage.SEND_NODE_DECLARATION__TO_NODE_PARAMETER:

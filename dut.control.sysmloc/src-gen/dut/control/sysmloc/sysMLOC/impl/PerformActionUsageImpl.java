@@ -17,6 +17,7 @@ import dut.control.sysmloc.sysMLOC.FeatureDirection;
 import dut.control.sysmloc.sysMLOC.FeatureSpecialization;
 import dut.control.sysmloc.sysMLOC.FeatureSpecializationPart;
 import dut.control.sysmloc.sysMLOC.FeatureValue;
+import dut.control.sysmloc.sysMLOC.GeneralUsagePrefix;
 import dut.control.sysmloc.sysMLOC.MemberPrefix;
 import dut.control.sysmloc.sysMLOC.MultiplicityPart;
 import dut.control.sysmloc.sysMLOC.MultiplicityRange;
@@ -91,7 +92,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PerformActionUsageImpl#getValuePart <em>Value Part</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PerformActionUsageImpl#getReferencedFeature <em>Referenced Feature</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PerformActionUsageImpl#getAcceptParameter <em>Accept Parameter</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PerformActionUsageImpl#isSendNodeParameter <em>Send Node Parameter</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PerformActionUsageImpl#getSendNodeParameter <em>Send Node Parameter</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PerformActionUsageImpl#getViaNodeParameter <em>Via Node Parameter</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PerformActionUsageImpl#getToNodeParameter <em>To Node Parameter</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PerformActionUsageImpl#getTargetParameter <em>Target Parameter</em>}</li>
@@ -575,24 +576,24 @@ public class PerformActionUsageImpl extends BehaviorUsageElementImpl implements 
   protected EList<PayloadParameter> acceptParameter;
 
   /**
-   * The default value of the '{@link #isSendNodeParameter() <em>Send Node Parameter</em>}' attribute.
+   * The default value of the '{@link #getSendNodeParameter() <em>Send Node Parameter</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isSendNodeParameter()
+   * @see #getSendNodeParameter()
    * @generated
    * @ordered
    */
-  protected static final boolean SEND_NODE_PARAMETER_EDEFAULT = false;
+  protected static final String SEND_NODE_PARAMETER_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #isSendNodeParameter() <em>Send Node Parameter</em>}' attribute.
+   * The cached value of the '{@link #getSendNodeParameter() <em>Send Node Parameter</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isSendNodeParameter()
+   * @see #getSendNodeParameter()
    * @generated
    * @ordered
    */
-  protected boolean sendNodeParameter = SEND_NODE_PARAMETER_EDEFAULT;
+  protected String sendNodeParameter = SEND_NODE_PARAMETER_EDEFAULT;
 
   /**
    * The default value of the '{@link #getViaNodeParameter() <em>Via Node Parameter</em>}' attribute.
@@ -1341,7 +1342,7 @@ public class PerformActionUsageImpl extends BehaviorUsageElementImpl implements 
    * @generated
    */
   @Override
-  public boolean isSendNodeParameter()
+  public String getSendNodeParameter()
   {
     return sendNodeParameter;
   }
@@ -1352,9 +1353,9 @@ public class PerformActionUsageImpl extends BehaviorUsageElementImpl implements 
    * @generated
    */
   @Override
-  public void setSendNodeParameter(boolean newSendNodeParameter)
+  public void setSendNodeParameter(String newSendNodeParameter)
   {
-    boolean oldSendNodeParameter = sendNodeParameter;
+    String oldSendNodeParameter = sendNodeParameter;
     sendNodeParameter = newSendNodeParameter;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.PERFORM_ACTION_USAGE__SEND_NODE_PARAMETER, oldSendNodeParameter, sendNodeParameter));
@@ -1585,7 +1586,7 @@ public class PerformActionUsageImpl extends BehaviorUsageElementImpl implements 
       case SysMLOCPackage.PERFORM_ACTION_USAGE__ACCEPT_PARAMETER:
         return getAcceptParameter();
       case SysMLOCPackage.PERFORM_ACTION_USAGE__SEND_NODE_PARAMETER:
-        return isSendNodeParameter();
+        return getSendNodeParameter();
       case SysMLOCPackage.PERFORM_ACTION_USAGE__VIA_NODE_PARAMETER:
         return getViaNodeParameter();
       case SysMLOCPackage.PERFORM_ACTION_USAGE__TO_NODE_PARAMETER:
@@ -1707,7 +1708,7 @@ public class PerformActionUsageImpl extends BehaviorUsageElementImpl implements 
         getAcceptParameter().addAll((Collection<? extends PayloadParameter>)newValue);
         return;
       case SysMLOCPackage.PERFORM_ACTION_USAGE__SEND_NODE_PARAMETER:
-        setSendNodeParameter((Boolean)newValue);
+        setSendNodeParameter((String)newValue);
         return;
       case SysMLOCPackage.PERFORM_ACTION_USAGE__VIA_NODE_PARAMETER:
         setViaNodeParameter((String)newValue);
@@ -1918,7 +1919,7 @@ public class PerformActionUsageImpl extends BehaviorUsageElementImpl implements 
       case SysMLOCPackage.PERFORM_ACTION_USAGE__ACCEPT_PARAMETER:
         return acceptParameter != null && !acceptParameter.isEmpty();
       case SysMLOCPackage.PERFORM_ACTION_USAGE__SEND_NODE_PARAMETER:
-        return sendNodeParameter != SEND_NODE_PARAMETER_EDEFAULT;
+        return SEND_NODE_PARAMETER_EDEFAULT == null ? sendNodeParameter != null : !SEND_NODE_PARAMETER_EDEFAULT.equals(sendNodeParameter);
       case SysMLOCPackage.PERFORM_ACTION_USAGE__VIA_NODE_PARAMETER:
         return VIA_NODE_PARAMETER_EDEFAULT == null ? viaNodeParameter != null : !VIA_NODE_PARAMETER_EDEFAULT.equals(viaNodeParameter);
       case SysMLOCPackage.PERFORM_ACTION_USAGE__TO_NODE_PARAMETER:
@@ -1965,6 +1966,13 @@ public class PerformActionUsageImpl extends BehaviorUsageElementImpl implements 
       switch (derivedFeatureID)
       {
         case SysMLOCPackage.PERFORM_ACTION_USAGE__IS_RETURN: return SysMLOCPackage.IS_RETURN_PREFIX__IS_RETURN;
+        default: return -1;
+      }
+    }
+    if (baseClass == GeneralUsagePrefix.class)
+    {
+      switch (derivedFeatureID)
+      {
         default: return -1;
       }
     }
@@ -2206,6 +2214,13 @@ public class PerformActionUsageImpl extends BehaviorUsageElementImpl implements 
       switch (baseFeatureID)
       {
         case SysMLOCPackage.IS_RETURN_PREFIX__IS_RETURN: return SysMLOCPackage.PERFORM_ACTION_USAGE__IS_RETURN;
+        default: return -1;
+      }
+    }
+    if (baseClass == GeneralUsagePrefix.class)
+    {
+      switch (baseFeatureID)
+      {
         default: return -1;
       }
     }

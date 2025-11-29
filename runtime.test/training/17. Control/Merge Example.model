@@ -61,8 +61,8 @@
         <typings>Display</typings>
         <elements xsi:type="sysMLOC:ItemUsage" direction="in" declaredName="picture"/>
       </elements>
-      <elements xsi:type="sysMLOC:TargetSuccessionElement">
-        <transitionSuccessionElement refElement="continue"/>
+      <elements xsi:type="sysMLOC:ThenNode">
+        <thenElement refElement="continue"/>
       </elements>
     </elements>
   </packages>

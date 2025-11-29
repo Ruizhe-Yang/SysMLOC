@@ -3,36 +3,17 @@
  */
 package dut.control.sysmloc.sysMLOC;
 
-import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Target Succession Element</b></em>'.
  * <!-- end-user-doc -->
  *
- * <p>
- * The following features are supported:
- * </p>
- * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.TargetSuccessionElement#getElements <em>Elements</em>}</li>
- * </ul>
  *
  * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getTargetSuccessionElement()
  * @model
  * @generated
  */
-public interface TargetSuccessionElement extends ActionBodyElement, MemberPrefix, TargetSuccession, MultiplicityRange, TransitionSuccession, DefaultTargetSuccession
+public interface TargetSuccessionElement extends MultiplicityRange
 {
-  /**
-   * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
-   * The list contents are of type {@link dut.control.sysmloc.sysMLOC.UsageBodyElement}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Elements</em>' containment reference list.
-   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getTargetSuccessionElement_Elements()
-   * @model containment="true"
-   * @generated
-   */
-  EList<UsageBodyElement> getElements();
-
 } // TargetSuccessionElement

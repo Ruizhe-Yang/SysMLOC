@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
   <packages declaredName="'For Loop Example'">
-    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="SequenceFunctions"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="SequenceFunctions" isNamespace="true"/>
     <elements xsi:type="sysMLOC:ActionDefinition" declaredName="StraightLineDynamics">
       <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="power">
         <typings>ISQ::PowerValue</typings>
@@ -53,8 +53,8 @@
       <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="speed" isInitial="true">
         <valuePart>initialSpeed</valuePart>
       </elements>
-      <elements xsi:type="sysMLOC:ForLoopNode" NodeParameter="1..powerProfile->size()">
-        <ForVariableParameter declaredName="i"/>
+      <elements xsi:type="sysMLOC:ForLoopNode" forNodeParameter="1..powerProfile->size()">
+        <forVariableParameter declaredName="i"/>
         <elements xsi:type="sysMLOC:PerformActionUsage" declaredName="dynamics">
           <typings>StraightLineDynamics</typings>
           <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="power">

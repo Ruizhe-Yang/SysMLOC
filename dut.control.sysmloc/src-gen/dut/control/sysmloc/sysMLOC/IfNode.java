@@ -16,10 +16,13 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.IfNode#isIsSuccession <em>Is Succession</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.IfNode#getSuccessionElement <em>Succession Element</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.IfNode#isIsFirst <em>Is First</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.IfNode#getFirstElement <em>First Element</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.IfNode#getIfConditionExpression <em>If Condition Expression</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.IfNode#getActionParameterEnd <em>Action Parameter End</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.IfNode#getElements <em>Elements</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.IfNode#getElseNode <em>Else Node</em>}</li>
  * </ul>
  *
  * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getIfNode()
@@ -28,6 +31,84 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface IfNode extends ActionNodeElement, EmptySuccessionPrefix, MemberPrefix, ActionNodePrefix, OccurrenceUsagePrefix, BasicUsagePrefix, RefPrefix, BasicDefinitionPrefix, ActionNodeUsageDeclaration, UsageDeclaration, FeatureDeclaration, FeatureSpecializationPart, FeatureSpecialization, TypingFeatureTyping, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, MultiplicityPart, MultiplicityRange, TransitionSuccession
 {
+  /**
+   * Returns the value of the '<em><b>Is Succession</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Is Succession</em>' attribute.
+   * @see #setIsSuccession(boolean)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getIfNode_IsSuccession()
+   * @model
+   * @generated
+   */
+  boolean isIsSuccession();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.IfNode#isIsSuccession <em>Is Succession</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Is Succession</em>' attribute.
+   * @see #isIsSuccession()
+   * @generated
+   */
+  void setIsSuccession(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Succession Element</b></em>' containment reference list.
+   * The list contents are of type {@link dut.control.sysmloc.sysMLOC.IfSuccessionAsUsage}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Succession Element</em>' containment reference list.
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getIfNode_SuccessionElement()
+   * @model containment="true"
+   * @generated
+   */
+  EList<IfSuccessionAsUsage> getSuccessionElement();
+
+  /**
+   * Returns the value of the '<em><b>Is First</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Is First</em>' attribute.
+   * @see #setIsFirst(boolean)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getIfNode_IsFirst()
+   * @model
+   * @generated
+   */
+  boolean isIsFirst();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.IfNode#isIsFirst <em>Is First</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Is First</em>' attribute.
+   * @see #isIsFirst()
+   * @generated
+   */
+  void setIsFirst(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>First Element</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>First Element</em>' attribute.
+   * @see #setFirstElement(String)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getIfNode_FirstElement()
+   * @model
+   * @generated
+   */
+  String getFirstElement();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.IfNode#getFirstElement <em>First Element</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>First Element</em>' attribute.
+   * @see #getFirstElement()
+   * @generated
+   */
+  void setFirstElement(String value);
+
   /**
    * Returns the value of the '<em><b>If Condition Expression</b></em>' attribute.
    * <!-- begin-user-doc -->
@@ -73,17 +154,5 @@ public interface IfNode extends ActionNodeElement, EmptySuccessionPrefix, Member
    * @generated
    */
   EList<EObject> getElements();
-
-  /**
-   * Returns the value of the '<em><b>Else Node</b></em>' containment reference list.
-   * The list contents are of type {@link dut.control.sysmloc.sysMLOC.IfNode}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Else Node</em>' containment reference list.
-   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getIfNode_ElseNode()
-   * @model containment="true"
-   * @generated
-   */
-  EList<IfNode> getElseNode();
 
 } // IfNode

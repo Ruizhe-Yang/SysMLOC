@@ -12,6 +12,7 @@ import dut.control.sysmloc.sysMLOC.FeatureDirection;
 import dut.control.sysmloc.sysMLOC.FeatureSpecialization;
 import dut.control.sysmloc.sysMLOC.FeatureSpecializationPart;
 import dut.control.sysmloc.sysMLOC.FeatureValue;
+import dut.control.sysmloc.sysMLOC.GeneralUsagePrefix;
 import dut.control.sysmloc.sysMLOC.MemberPrefix;
 import dut.control.sysmloc.sysMLOC.MultiplicityPart;
 import dut.control.sysmloc.sysMLOC.MultiplicityRange;
@@ -1453,6 +1454,13 @@ public class PortionUsageImpl extends StructureUsageElementImpl implements Porti
         default: return -1;
       }
     }
+    if (baseClass == GeneralUsagePrefix.class)
+    {
+      switch (derivedFeatureID)
+      {
+        default: return -1;
+      }
+    }
     if (baseClass == BasicDefinitionPrefix.class)
     {
       switch (derivedFeatureID)
@@ -1624,6 +1632,13 @@ public class PortionUsageImpl extends StructureUsageElementImpl implements Porti
       switch (baseFeatureID)
       {
         case SysMLOCPackage.IS_RETURN_PREFIX__IS_RETURN: return SysMLOCPackage.PORTION_USAGE__IS_RETURN;
+        default: return -1;
+      }
+    }
+    if (baseClass == GeneralUsagePrefix.class)
+    {
+      switch (baseFeatureID)
+      {
         default: return -1;
       }
     }

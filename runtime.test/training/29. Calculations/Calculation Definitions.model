@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
   <packages declaredName="'Calculation Definitions'">
-    <elements xsi:type="sysMLOC:MembershipImport" visibility="private" declaredName="ScalarValues::Real"/>
-    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="ISQ"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues::Real"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ISQ" isNamespace="true"/>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="Power">
       <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="whlpwr">
         <typings>PowerValue</typings>

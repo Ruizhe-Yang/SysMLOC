@@ -16,6 +16,7 @@ package dut.control.sysmloc.sysMLOC;
  *   <li>{@link dut.control.sysmloc.sysMLOC.ImportElement#getVisibility <em>Visibility</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.ImportElement#isIsImportAll <em>Is Import All</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.ImportElement#getDeclaredName <em>Declared Name</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.ImportElement#isIsNamespace <em>Is Namespace</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.ImportElement#isIsRecursive <em>Is Recursive</em>}</li>
  * </ul>
  *
@@ -93,6 +94,28 @@ public interface ImportElement extends GeneralBodyElements
    * @generated
    */
   void setDeclaredName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Is Namespace</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Is Namespace</em>' attribute.
+   * @see #setIsNamespace(boolean)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getImportElement_IsNamespace()
+   * @model
+   * @generated
+   */
+  boolean isIsNamespace();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.ImportElement#isIsNamespace <em>Is Namespace</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Is Namespace</em>' attribute.
+   * @see #isIsNamespace()
+   * @generated
+   */
+  void setIsNamespace(boolean value);
 
   /**
    * Returns the value of the '<em><b>Is Recursive</b></em>' attribute.

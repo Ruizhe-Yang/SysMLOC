@@ -12,6 +12,7 @@ import dut.control.sysmloc.sysMLOC.FeatureDirection;
 import dut.control.sysmloc.sysMLOC.FeatureSpecialization;
 import dut.control.sysmloc.sysMLOC.FeatureSpecializationPart;
 import dut.control.sysmloc.sysMLOC.FeatureValue;
+import dut.control.sysmloc.sysMLOC.GeneralUsagePrefix;
 import dut.control.sysmloc.sysMLOC.IndividualUsage;
 import dut.control.sysmloc.sysMLOC.MemberPrefix;
 import dut.control.sysmloc.sysMLOC.MultiplicityPart;
@@ -1396,6 +1397,13 @@ public class IndividualUsageImpl extends StructureUsageElementImpl implements In
         default: return -1;
       }
     }
+    if (baseClass == GeneralUsagePrefix.class)
+    {
+      switch (derivedFeatureID)
+      {
+        default: return -1;
+      }
+    }
     if (baseClass == BasicDefinitionPrefix.class)
     {
       switch (derivedFeatureID)
@@ -1567,6 +1575,13 @@ public class IndividualUsageImpl extends StructureUsageElementImpl implements In
       switch (baseFeatureID)
       {
         case SysMLOCPackage.IS_RETURN_PREFIX__IS_RETURN: return SysMLOCPackage.INDIVIDUAL_USAGE__IS_RETURN;
+        default: return -1;
+      }
+    }
+    if (baseClass == GeneralUsagePrefix.class)
+    {
+      switch (baseFeatureID)
+      {
         default: return -1;
       }
     }

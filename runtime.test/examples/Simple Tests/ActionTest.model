@@ -38,8 +38,8 @@
       <elements xsi:type="sysMLOC:IfNode" ifConditionExpression="true">
         <transitionSuccessionElement refElement="m"/>
       </elements>
-      <elements xsi:type="sysMLOC:TargetSuccessionElement">
-        <transitionSuccessionElement refElement="done"/>
+      <elements xsi:type="sysMLOC:ElseNode">
+        <elseEnd refElement="done"/>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:ActionUsage" declaredName="b">

@@ -14,6 +14,9 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.AssignmentNode#getTargetParameter <em>Target Parameter</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.AssignmentNode#getFeatureChain <em>Feature Chain</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.AssignmentNode#getNodeParameter <em>Node Parameter</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.AssignmentNode#getElements <em>Elements</em>}</li>
  * </ul>
  *
@@ -21,8 +24,74 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface AssignmentNode extends ActionNodeElement, EmptySuccessionPrefix, MemberPrefix, OccurrenceUsagePrefix, BasicUsagePrefix, RefPrefix, BasicDefinitionPrefix, AssignmentNodeDeclaration, ActionNodeUsageDeclaration, UsageDeclaration, FeatureDeclaration, FeatureSpecializationPart, FeatureSpecialization, TypingFeatureTyping, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, MultiplicityPart, MultiplicityRange
+public interface AssignmentNode extends ActionNodeElement, EmptySuccessionPrefix, MemberPrefix, OccurrenceUsagePrefix, BasicUsagePrefix, RefPrefix, BasicDefinitionPrefix, ActionNodeUsageDeclaration, UsageDeclaration, FeatureDeclaration, FeatureSpecializationPart, FeatureSpecialization, TypingFeatureTyping, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, MultiplicityPart, MultiplicityRange
 {
+  /**
+   * Returns the value of the '<em><b>Target Parameter</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Target Parameter</em>' attribute.
+   * @see #setTargetParameter(String)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getAssignmentNode_TargetParameter()
+   * @model
+   * @generated
+   */
+  String getTargetParameter();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.AssignmentNode#getTargetParameter <em>Target Parameter</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Target Parameter</em>' attribute.
+   * @see #getTargetParameter()
+   * @generated
+   */
+  void setTargetParameter(String value);
+
+  /**
+   * Returns the value of the '<em><b>Feature Chain</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Feature Chain</em>' attribute.
+   * @see #setFeatureChain(String)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getAssignmentNode_FeatureChain()
+   * @model
+   * @generated
+   */
+  String getFeatureChain();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.AssignmentNode#getFeatureChain <em>Feature Chain</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Feature Chain</em>' attribute.
+   * @see #getFeatureChain()
+   * @generated
+   */
+  void setFeatureChain(String value);
+
+  /**
+   * Returns the value of the '<em><b>Node Parameter</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Node Parameter</em>' attribute.
+   * @see #setNodeParameter(String)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getAssignmentNode_NodeParameter()
+   * @model
+   * @generated
+   */
+  String getNodeParameter();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.AssignmentNode#getNodeParameter <em>Node Parameter</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Node Parameter</em>' attribute.
+   * @see #getNodeParameter()
+   * @generated
+   */
+  void setNodeParameter(String value);
+
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
    * The list contents are of type {@link dut.control.sysmloc.sysMLOC.ActionBodyElement}.

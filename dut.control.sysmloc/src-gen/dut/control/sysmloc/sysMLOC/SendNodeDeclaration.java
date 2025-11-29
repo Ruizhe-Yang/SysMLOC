@@ -13,7 +13,7 @@ package dut.control.sysmloc.sysMLOC;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.SendNodeDeclaration#isSendNodeParameter <em>Send Node Parameter</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.SendNodeDeclaration#getSendNodeParameter <em>Send Node Parameter</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.SendNodeDeclaration#getViaNodeParameter <em>Via Node Parameter</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.SendNodeDeclaration#getToNodeParameter <em>To Node Parameter</em>}</li>
  * </ul>
@@ -29,22 +29,22 @@ public interface SendNodeDeclaration extends ActionNodeUsageDeclaration
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Send Node Parameter</em>' attribute.
-   * @see #setSendNodeParameter(boolean)
+   * @see #setSendNodeParameter(String)
    * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getSendNodeDeclaration_SendNodeParameter()
    * @model
    * @generated
    */
-  boolean isSendNodeParameter();
+  String getSendNodeParameter();
 
   /**
-   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.SendNodeDeclaration#isSendNodeParameter <em>Send Node Parameter</em>}' attribute.
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.SendNodeDeclaration#getSendNodeParameter <em>Send Node Parameter</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Send Node Parameter</em>' attribute.
-   * @see #isSendNodeParameter()
+   * @see #getSendNodeParameter()
    * @generated
    */
-  void setSendNodeParameter(boolean value);
+  void setSendNodeParameter(String value);
 
   /**
    * Returns the value of the '<em><b>Via Node Parameter</b></em>' attribute.

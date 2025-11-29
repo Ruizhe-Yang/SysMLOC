@@ -6,7 +6,6 @@ import org.eclipse.xtext.xtext.generator.model.project.*
 var rootPath = ".."
 
 Workflow {
-	
 	component = XtextGenerator {
 		configuration = {
 			project = StandardProjectConfig {
@@ -33,7 +32,6 @@ Workflow {
 		language = StandardLanguage {
 			name = "dut.control.sysmloc.SysMLOC"
 			fileExtensions = "sysml"
-
 			serializer = {
 				generateStub = false
 			}
@@ -54,4 +52,5 @@ Workflow {
 			}
 		}
 	}
+
 }

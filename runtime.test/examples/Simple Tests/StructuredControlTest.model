@@ -28,10 +28,10 @@
       <elements xsi:type="sysMLOC:WhileLoopNode" untilConditionExpression="b">
         <elements xsi:type="sysMLOC:AssignmentNode" featureChain="i" NodeParameter="i - 1"/>
       </elements>
-      <elements xsi:type="sysMLOC:ForLoopNode" NodeParameter="(1, 2, 3)">
-        <ForVariableParameter declaredName="n">
+      <elements xsi:type="sysMLOC:ForLoopNode" forNodeParameter="(1, 2, 3)">
+        <forVariableParameter declaredName="n">
           <typings>ScalarValues::Integer</typings>
-        </ForVariableParameter>
+        </forVariableParameter>
         <elements xsi:type="sysMLOC:AssignmentNode" featureChain="i" NodeParameter="i * n"/>
       </elements>
     </elements>

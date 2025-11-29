@@ -13,6 +13,7 @@ import dut.control.sysmloc.sysMLOC.FeatureSpecialization;
 import dut.control.sysmloc.sysMLOC.FeatureSpecializationPart;
 import dut.control.sysmloc.sysMLOC.FeatureValue;
 import dut.control.sysmloc.sysMLOC.FlowConnectionUsage;
+import dut.control.sysmloc.sysMLOC.GeneralUsagePrefix;
 import dut.control.sysmloc.sysMLOC.ItemFeatureParameter;
 import dut.control.sysmloc.sysMLOC.ItemFeatureParameterPart;
 import dut.control.sysmloc.sysMLOC.MemberPrefix;
@@ -1549,6 +1550,13 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
         default: return -1;
       }
     }
+    if (baseClass == GeneralUsagePrefix.class)
+    {
+      switch (derivedFeatureID)
+      {
+        default: return -1;
+      }
+    }
     if (baseClass == BasicDefinitionPrefix.class)
     {
       switch (derivedFeatureID)
@@ -1723,6 +1731,13 @@ public class FlowConnectionUsageImpl extends StructureUsageElementImpl implement
       switch (baseFeatureID)
       {
         case SysMLOCPackage.IS_RETURN_PREFIX__IS_RETURN: return SysMLOCPackage.FLOW_CONNECTION_USAGE__IS_RETURN;
+        default: return -1;
+      }
+    }
+    if (baseClass == GeneralUsagePrefix.class)
+    {
+      switch (baseFeatureID)
+      {
         default: return -1;
       }
     }

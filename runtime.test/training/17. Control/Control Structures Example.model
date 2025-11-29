@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
   <packages declaredName="'Control Structures Example'">
-    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="ScalarValues"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues" isNamespace="true"/>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="BatteryCharged"/>
     <elements xsi:type="sysMLOC:PartUsage" declaredName="battery"/>
     <elements xsi:type="sysMLOC:PartUsage" declaredName="powerSystem"/>
@@ -35,8 +35,8 @@
       <elements xsi:type="sysMLOC:ActionUsage" isThen="true" declaredName="endCharging">
         <typings>EndCharging</typings>
       </elements>
-      <elements xsi:type="sysMLOC:TargetSuccessionElement">
-        <transitionSuccessionElement refElement="done"/>
+      <elements xsi:type="sysMLOC:ThenNode">
+        <thenElement refElement="done"/>
       </elements>
     </elements>
   </packages>

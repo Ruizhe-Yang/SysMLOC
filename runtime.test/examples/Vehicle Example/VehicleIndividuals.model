@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
   <packages declaredName="VehicleIndividuals">
-    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="VehicleUsages"/>
-    <elements xsi:type="sysMLOC:MembershipImport" visibility="private" declaredName="Time::DateTime"/>
-    <elements xsi:type="sysMLOC:MembershipImport" visibility="private" declaredName="SI::kg"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="VehicleUsages" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Time::DateTime"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="SI::kg"/>
     <elements xsi:type="sysMLOC:Package" declaredName="IndividualDefinitions">
       <elements xsi:type="sysMLOC:PartDefinition" isIndividual="true" declaredName="Vehicle1">
         <superclassifiers>Vehicle</superclassifiers>
@@ -32,7 +32,7 @@
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:Package" declaredName="IndividualSnapshots">
-      <elements xsi:type="sysMLOC:NamespaceImport" visibility="public" declaredName="IndividualDefinitions"/>
+      <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="IndividualDefinitions" isNamespace="true"/>
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="t0">
         <typings>DateTime</typings>
       </elements>
@@ -63,7 +63,7 @@
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:Package" declaredName="IndividualConfigurations">
-      <elements xsi:type="sysMLOC:NamespaceImport" visibility="public" declaredName="IndividualSnapshots"/>
+      <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="IndividualSnapshots" isNamespace="true"/>
       <elements xsi:type="sysMLOC:PartUsage" isIndividual="true" declaredName="vehicle1_C2">
         <typings>Vehicle1</typings>
         <subsetting>vehicle_C2</subsetting>

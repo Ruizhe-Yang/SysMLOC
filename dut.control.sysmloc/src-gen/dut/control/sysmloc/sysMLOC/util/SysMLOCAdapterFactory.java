@@ -45,13 +45,13 @@ import dut.control.sysmloc.sysMLOC.ConstraintUsageDeclaration;
 import dut.control.sysmloc.sysMLOC.ControlNodePrefix;
 import dut.control.sysmloc.sysMLOC.CrossFeatureChain;
 import dut.control.sysmloc.sysMLOC.DefaultReferenceUsage;
-import dut.control.sysmloc.sysMLOC.DefaultTargetSuccession;
 import dut.control.sysmloc.sysMLOC.DefinitionBodyElement;
 import dut.control.sysmloc.sysMLOC.DefinitionDeclaration;
 import dut.control.sysmloc.sysMLOC.DefinitionElement;
 import dut.control.sysmloc.sysMLOC.DefinitionPrefix;
 import dut.control.sysmloc.sysMLOC.DoActionNode;
 import dut.control.sysmloc.sysMLOC.Documentation;
+import dut.control.sysmloc.sysMLOC.ElseNode;
 import dut.control.sysmloc.sysMLOC.EmptySuccessionPrefix;
 import dut.control.sysmloc.sysMLOC.EndUsagePrefix;
 import dut.control.sysmloc.sysMLOC.EntryAction;
@@ -71,9 +71,10 @@ import dut.control.sysmloc.sysMLOC.FlowConnectionUsage;
 import dut.control.sysmloc.sysMLOC.ForLoopNode;
 import dut.control.sysmloc.sysMLOC.ForVariableParameter;
 import dut.control.sysmloc.sysMLOC.GeneralBodyElements;
-import dut.control.sysmloc.sysMLOC.GuardedSuccessionElement;
+import dut.control.sysmloc.sysMLOC.GeneralUsagePrefix;
 import dut.control.sysmloc.sysMLOC.Identification;
 import dut.control.sysmloc.sysMLOC.IfNode;
+import dut.control.sysmloc.sysMLOC.IfSuccessionAsUsage;
 import dut.control.sysmloc.sysMLOC.ImportElement;
 import dut.control.sysmloc.sysMLOC.IndividualDefinition;
 import dut.control.sysmloc.sysMLOC.IndividualUsage;
@@ -86,12 +87,10 @@ import dut.control.sysmloc.sysMLOC.ItemFeatureParameter;
 import dut.control.sysmloc.sysMLOC.ItemFeatureParameterPart;
 import dut.control.sysmloc.sysMLOC.ItemUsage;
 import dut.control.sysmloc.sysMLOC.MemberPrefix;
-import dut.control.sysmloc.sysMLOC.MembershipImport;
 import dut.control.sysmloc.sysMLOC.Message;
 import dut.control.sysmloc.sysMLOC.MultiplicityPart;
 import dut.control.sysmloc.sysMLOC.MultiplicityRange;
 import dut.control.sysmloc.sysMLOC.Namespace;
-import dut.control.sysmloc.sysMLOC.NamespaceImport;
 import dut.control.sysmloc.sysMLOC.NonOccurrenceUsageElement;
 import dut.control.sysmloc.sysMLOC.OccurrenceDefinition;
 import dut.control.sysmloc.sysMLOC.OccurrenceDefinitionPrefix;
@@ -128,10 +127,10 @@ import dut.control.sysmloc.sysMLOC.SubsettingFeatureChain;
 import dut.control.sysmloc.sysMLOC.SuccessionAsUsage;
 import dut.control.sysmloc.sysMLOC.SuccessionFlowConnectionUsage;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
-import dut.control.sysmloc.sysMLOC.TargetSuccession;
 import dut.control.sysmloc.sysMLOC.TargetSuccessionElement;
 import dut.control.sysmloc.sysMLOC.TerminateNode;
 import dut.control.sysmloc.sysMLOC.TextualRepresentation;
+import dut.control.sysmloc.sysMLOC.ThenNode;
 import dut.control.sysmloc.sysMLOC.TransitionSuccession;
 import dut.control.sysmloc.sysMLOC.TransitionUsage;
 import dut.control.sysmloc.sysMLOC.TriggerValuePart;
@@ -223,11 +222,6 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
         return createNamespaceAdapter();
       }
       @Override
-      public Adapter casePackage(dut.control.sysmloc.sysMLOC.Package object)
-      {
-        return createPackageAdapter();
-      }
-      @Override
       public Adapter caseGeneralBodyElements(GeneralBodyElements object)
       {
         return createGeneralBodyElementsAdapter();
@@ -288,11 +282,6 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
         return createAnnotatingElementAdapter();
       }
       @Override
-      public Adapter caseImportElement(ImportElement object)
-      {
-        return createImportElementAdapter();
-      }
-      @Override
       public Adapter caseDefinitionElement(DefinitionElement object)
       {
         return createDefinitionElementAdapter();
@@ -328,14 +317,14 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
         return createActionNodeElementAdapter();
       }
       @Override
-      public Adapter caseNamespaceImport(NamespaceImport object)
+      public Adapter casePackage(dut.control.sysmloc.sysMLOC.Package object)
       {
-        return createNamespaceImportAdapter();
+        return createPackageAdapter();
       }
       @Override
-      public Adapter caseMembershipImport(MembershipImport object)
+      public Adapter caseImportElement(ImportElement object)
       {
-        return createMembershipImportAdapter();
+        return createImportElementAdapter();
       }
       @Override
       public Adapter caseCodeAnnotation(CodeAnnotation object)
@@ -498,11 +487,6 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
         return createFlowConnectionUsageAdapter();
       }
       @Override
-      public Adapter caseItemFeatureParameter(ItemFeatureParameter object)
-      {
-        return createItemFeatureParameterAdapter();
-      }
-      @Override
       public Adapter caseSuccessionFlowConnectionUsage(SuccessionFlowConnectionUsage object)
       {
         return createSuccessionFlowConnectionUsageAdapter();
@@ -578,11 +562,6 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
         return createAliasElementAdapter();
       }
       @Override
-      public Adapter caseConnectorEnd(ConnectorEnd object)
-      {
-        return createConnectorEndAdapter();
-      }
-      @Override
       public Adapter caseInitialNode(InitialNode object)
       {
         return createInitialNodeAdapter();
@@ -596,11 +575,6 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
       public Adapter caseAcceptNode(AcceptNode object)
       {
         return createAcceptNodeAdapter();
-      }
-      @Override
-      public Adapter casePayloadParameter(PayloadParameter object)
-      {
-        return createPayloadParameterAdapter();
       }
       @Override
       public Adapter caseAssignmentNode(AssignmentNode object)
@@ -618,24 +592,9 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
         return createWhileLoopNodeAdapter();
       }
       @Override
-      public Adapter caseCommonNode(CommonNode object)
-      {
-        return createCommonNodeAdapter();
-      }
-      @Override
-      public Adapter caseActionParameterEnd(ActionParameterEnd object)
-      {
-        return createActionParameterEndAdapter();
-      }
-      @Override
       public Adapter caseForLoopNode(ForLoopNode object)
       {
         return createForLoopNodeAdapter();
-      }
-      @Override
-      public Adapter caseForVariableParameter(ForVariableParameter object)
-      {
-        return createForVariableParameterAdapter();
       }
       @Override
       public Adapter caseTerminateNode(TerminateNode object)
@@ -643,14 +602,19 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
         return createTerminateNodeAdapter();
       }
       @Override
-      public Adapter caseGuardedSuccessionElement(GuardedSuccessionElement object)
+      public Adapter caseCommonNode(CommonNode object)
       {
-        return createGuardedSuccessionElementAdapter();
+        return createCommonNodeAdapter();
       }
       @Override
-      public Adapter caseTargetSuccessionElement(TargetSuccessionElement object)
+      public Adapter caseThenNode(ThenNode object)
       {
-        return createTargetSuccessionElementAdapter();
+        return createThenNodeAdapter();
+      }
+      @Override
+      public Adapter caseElseNode(ElseNode object)
+      {
+        return createElseNodeAdapter();
       }
       @Override
       public Adapter caseEntryAction(EntryAction object)
@@ -668,9 +632,49 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
         return createExitActionNodeAdapter();
       }
       @Override
+      public Adapter caseActionParameterEnd(ActionParameterEnd object)
+      {
+        return createActionParameterEndAdapter();
+      }
+      @Override
+      public Adapter caseForVariableParameter(ForVariableParameter object)
+      {
+        return createForVariableParameterAdapter();
+      }
+      @Override
+      public Adapter casePayloadParameter(PayloadParameter object)
+      {
+        return createPayloadParameterAdapter();
+      }
+      @Override
+      public Adapter caseConnectorEnd(ConnectorEnd object)
+      {
+        return createConnectorEndAdapter();
+      }
+      @Override
       public Adapter casePerformedActionUsage(PerformedActionUsage object)
       {
         return createPerformedActionUsageAdapter();
+      }
+      @Override
+      public Adapter caseItemFeatureParameter(ItemFeatureParameter object)
+      {
+        return createItemFeatureParameterAdapter();
+      }
+      @Override
+      public Adapter caseIfSuccessionAsUsage(IfSuccessionAsUsage object)
+      {
+        return createIfSuccessionAsUsageAdapter();
+      }
+      @Override
+      public Adapter caseTargetSuccessionElement(TargetSuccessionElement object)
+      {
+        return createTargetSuccessionElementAdapter();
+      }
+      @Override
+      public Adapter caseGeneralUsagePrefix(GeneralUsagePrefix object)
+      {
+        return createGeneralUsagePrefixAdapter();
       }
       @Override
       public Adapter caseUsageExtensionKeyword(UsageExtensionKeyword object)
@@ -888,16 +892,6 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
         return createTransitionSuccessionAdapter();
       }
       @Override
-      public Adapter caseTargetSuccession(TargetSuccession object)
-      {
-        return createTargetSuccessionAdapter();
-      }
-      @Override
-      public Adapter caseDefaultTargetSuccession(DefaultTargetSuccession object)
-      {
-        return createDefaultTargetSuccessionAdapter();
-      }
-      @Override
       public Adapter caseReferenceSubsetting(ReferenceSubsetting object)
       {
         return createReferenceSubsettingAdapter();
@@ -965,21 +959,6 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createNamespaceAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.Package <em>Package</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see dut.control.sysmloc.sysMLOC.Package
-   * @generated
-   */
-  public Adapter createPackageAdapter()
   {
     return null;
   }
@@ -1165,21 +1144,6 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.ImportElement <em>Import Element</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see dut.control.sysmloc.sysMLOC.ImportElement
-   * @generated
-   */
-  public Adapter createImportElementAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.DefinitionElement <em>Definition Element</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1285,31 +1249,31 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.NamespaceImport <em>Namespace Import</em>}'.
+   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.Package <em>Package</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see dut.control.sysmloc.sysMLOC.NamespaceImport
+   * @see dut.control.sysmloc.sysMLOC.Package
    * @generated
    */
-  public Adapter createNamespaceImportAdapter()
+  public Adapter createPackageAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.MembershipImport <em>Membership Import</em>}'.
+   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.ImportElement <em>Import Element</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see dut.control.sysmloc.sysMLOC.MembershipImport
+   * @see dut.control.sysmloc.sysMLOC.ImportElement
    * @generated
    */
-  public Adapter createMembershipImportAdapter()
+  public Adapter createImportElementAdapter()
   {
     return null;
   }
@@ -1795,21 +1759,6 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.ItemFeatureParameter <em>Item Feature Parameter</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see dut.control.sysmloc.sysMLOC.ItemFeatureParameter
-   * @generated
-   */
-  public Adapter createItemFeatureParameterAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.SuccessionFlowConnectionUsage <em>Succession Flow Connection Usage</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -2035,21 +1984,6 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.ConnectorEnd <em>Connector End</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see dut.control.sysmloc.sysMLOC.ConnectorEnd
-   * @generated
-   */
-  public Adapter createConnectorEndAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.InitialNode <em>Initial Node</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -2090,21 +2024,6 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAcceptNodeAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.PayloadParameter <em>Payload Parameter</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see dut.control.sysmloc.sysMLOC.PayloadParameter
-   * @generated
-   */
-  public Adapter createPayloadParameterAdapter()
   {
     return null;
   }
@@ -2155,36 +2074,6 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.CommonNode <em>Common Node</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see dut.control.sysmloc.sysMLOC.CommonNode
-   * @generated
-   */
-  public Adapter createCommonNodeAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.ActionParameterEnd <em>Action Parameter End</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see dut.control.sysmloc.sysMLOC.ActionParameterEnd
-   * @generated
-   */
-  public Adapter createActionParameterEndAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.ForLoopNode <em>For Loop Node</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -2195,21 +2084,6 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createForLoopNodeAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.ForVariableParameter <em>For Variable Parameter</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see dut.control.sysmloc.sysMLOC.ForVariableParameter
-   * @generated
-   */
-  public Adapter createForVariableParameterAdapter()
   {
     return null;
   }
@@ -2230,31 +2104,46 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.GuardedSuccessionElement <em>Guarded Succession Element</em>}'.
+   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.CommonNode <em>Common Node</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see dut.control.sysmloc.sysMLOC.GuardedSuccessionElement
+   * @see dut.control.sysmloc.sysMLOC.CommonNode
    * @generated
    */
-  public Adapter createGuardedSuccessionElementAdapter()
+  public Adapter createCommonNodeAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.TargetSuccessionElement <em>Target Succession Element</em>}'.
+   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.ThenNode <em>Then Node</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see dut.control.sysmloc.sysMLOC.TargetSuccessionElement
+   * @see dut.control.sysmloc.sysMLOC.ThenNode
    * @generated
    */
-  public Adapter createTargetSuccessionElementAdapter()
+  public Adapter createThenNodeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.ElseNode <em>Else Node</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.sysmloc.sysMLOC.ElseNode
+   * @generated
+   */
+  public Adapter createElseNodeAdapter()
   {
     return null;
   }
@@ -2305,6 +2194,66 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.ActionParameterEnd <em>Action Parameter End</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.sysmloc.sysMLOC.ActionParameterEnd
+   * @generated
+   */
+  public Adapter createActionParameterEndAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.ForVariableParameter <em>For Variable Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.sysmloc.sysMLOC.ForVariableParameter
+   * @generated
+   */
+  public Adapter createForVariableParameterAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.PayloadParameter <em>Payload Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.sysmloc.sysMLOC.PayloadParameter
+   * @generated
+   */
+  public Adapter createPayloadParameterAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.ConnectorEnd <em>Connector End</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.sysmloc.sysMLOC.ConnectorEnd
+   * @generated
+   */
+  public Adapter createConnectorEndAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.PerformedActionUsage <em>Performed Action Usage</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -2315,6 +2264,66 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createPerformedActionUsageAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.ItemFeatureParameter <em>Item Feature Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.sysmloc.sysMLOC.ItemFeatureParameter
+   * @generated
+   */
+  public Adapter createItemFeatureParameterAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.IfSuccessionAsUsage <em>If Succession As Usage</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.sysmloc.sysMLOC.IfSuccessionAsUsage
+   * @generated
+   */
+  public Adapter createIfSuccessionAsUsageAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.TargetSuccessionElement <em>Target Succession Element</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.sysmloc.sysMLOC.TargetSuccessionElement
+   * @generated
+   */
+  public Adapter createTargetSuccessionElementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.GeneralUsagePrefix <em>General Usage Prefix</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.sysmloc.sysMLOC.GeneralUsagePrefix
+   * @generated
+   */
+  public Adapter createGeneralUsagePrefixAdapter()
   {
     return null;
   }
@@ -2960,36 +2969,6 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createTransitionSuccessionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.TargetSuccession <em>Target Succession</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see dut.control.sysmloc.sysMLOC.TargetSuccession
-   * @generated
-   */
-  public Adapter createTargetSuccessionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.DefaultTargetSuccession <em>Default Target Succession</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see dut.control.sysmloc.sysMLOC.DefaultTargetSuccession
-   * @generated
-   */
-  public Adapter createDefaultTargetSuccessionAdapter()
   {
     return null;
   }

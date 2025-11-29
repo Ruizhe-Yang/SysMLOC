@@ -33,15 +33,6 @@ public interface SysMLOCFactory extends EFactory
   Namespace createNamespace();
 
   /**
-   * Returns a new object of class '<em>Package</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Package</em>'.
-   * @generated
-   */
-  Package createPackage();
-
-  /**
    * Returns a new object of class '<em>General Body Elements</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -150,15 +141,6 @@ public interface SysMLOCFactory extends EFactory
   AnnotatingElement createAnnotatingElement();
 
   /**
-   * Returns a new object of class '<em>Import Element</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Import Element</em>'.
-   * @generated
-   */
-  ImportElement createImportElement();
-
-  /**
    * Returns a new object of class '<em>Definition Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -222,22 +204,22 @@ public interface SysMLOCFactory extends EFactory
   ActionNodeElement createActionNodeElement();
 
   /**
-   * Returns a new object of class '<em>Namespace Import</em>'.
+   * Returns a new object of class '<em>Package</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Namespace Import</em>'.
+   * @return a new object of class '<em>Package</em>'.
    * @generated
    */
-  NamespaceImport createNamespaceImport();
+  Package createPackage();
 
   /**
-   * Returns a new object of class '<em>Membership Import</em>'.
+   * Returns a new object of class '<em>Import Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Membership Import</em>'.
+   * @return a new object of class '<em>Import Element</em>'.
    * @generated
    */
-  MembershipImport createMembershipImport();
+  ImportElement createImportElement();
 
   /**
    * Returns a new object of class '<em>Code Annotation</em>'.
@@ -528,15 +510,6 @@ public interface SysMLOCFactory extends EFactory
   FlowConnectionUsage createFlowConnectionUsage();
 
   /**
-   * Returns a new object of class '<em>Item Feature Parameter</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Item Feature Parameter</em>'.
-   * @generated
-   */
-  ItemFeatureParameter createItemFeatureParameter();
-
-  /**
    * Returns a new object of class '<em>Succession Flow Connection Usage</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -672,15 +645,6 @@ public interface SysMLOCFactory extends EFactory
   AliasElement createAliasElement();
 
   /**
-   * Returns a new object of class '<em>Connector End</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Connector End</em>'.
-   * @generated
-   */
-  ConnectorEnd createConnectorEnd();
-
-  /**
    * Returns a new object of class '<em>Initial Node</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -706,15 +670,6 @@ public interface SysMLOCFactory extends EFactory
    * @generated
    */
   AcceptNode createAcceptNode();
-
-  /**
-   * Returns a new object of class '<em>Payload Parameter</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Payload Parameter</em>'.
-   * @generated
-   */
-  PayloadParameter createPayloadParameter();
 
   /**
    * Returns a new object of class '<em>Assignment Node</em>'.
@@ -744,24 +699,6 @@ public interface SysMLOCFactory extends EFactory
   WhileLoopNode createWhileLoopNode();
 
   /**
-   * Returns a new object of class '<em>Common Node</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Common Node</em>'.
-   * @generated
-   */
-  CommonNode createCommonNode();
-
-  /**
-   * Returns a new object of class '<em>Action Parameter End</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Action Parameter End</em>'.
-   * @generated
-   */
-  ActionParameterEnd createActionParameterEnd();
-
-  /**
    * Returns a new object of class '<em>For Loop Node</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -769,15 +706,6 @@ public interface SysMLOCFactory extends EFactory
    * @generated
    */
   ForLoopNode createForLoopNode();
-
-  /**
-   * Returns a new object of class '<em>For Variable Parameter</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>For Variable Parameter</em>'.
-   * @generated
-   */
-  ForVariableParameter createForVariableParameter();
 
   /**
    * Returns a new object of class '<em>Terminate Node</em>'.
@@ -789,22 +717,31 @@ public interface SysMLOCFactory extends EFactory
   TerminateNode createTerminateNode();
 
   /**
-   * Returns a new object of class '<em>Guarded Succession Element</em>'.
+   * Returns a new object of class '<em>Common Node</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Guarded Succession Element</em>'.
+   * @return a new object of class '<em>Common Node</em>'.
    * @generated
    */
-  GuardedSuccessionElement createGuardedSuccessionElement();
+  CommonNode createCommonNode();
 
   /**
-   * Returns a new object of class '<em>Target Succession Element</em>'.
+   * Returns a new object of class '<em>Then Node</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Target Succession Element</em>'.
+   * @return a new object of class '<em>Then Node</em>'.
    * @generated
    */
-  TargetSuccessionElement createTargetSuccessionElement();
+  ThenNode createThenNode();
+
+  /**
+   * Returns a new object of class '<em>Else Node</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Else Node</em>'.
+   * @generated
+   */
+  ElseNode createElseNode();
 
   /**
    * Returns a new object of class '<em>Entry Action</em>'.
@@ -834,6 +771,42 @@ public interface SysMLOCFactory extends EFactory
   ExitActionNode createExitActionNode();
 
   /**
+   * Returns a new object of class '<em>Action Parameter End</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Action Parameter End</em>'.
+   * @generated
+   */
+  ActionParameterEnd createActionParameterEnd();
+
+  /**
+   * Returns a new object of class '<em>For Variable Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>For Variable Parameter</em>'.
+   * @generated
+   */
+  ForVariableParameter createForVariableParameter();
+
+  /**
+   * Returns a new object of class '<em>Payload Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Payload Parameter</em>'.
+   * @generated
+   */
+  PayloadParameter createPayloadParameter();
+
+  /**
+   * Returns a new object of class '<em>Connector End</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Connector End</em>'.
+   * @generated
+   */
+  ConnectorEnd createConnectorEnd();
+
+  /**
    * Returns a new object of class '<em>Performed Action Usage</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -841,6 +814,42 @@ public interface SysMLOCFactory extends EFactory
    * @generated
    */
   PerformedActionUsage createPerformedActionUsage();
+
+  /**
+   * Returns a new object of class '<em>Item Feature Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Item Feature Parameter</em>'.
+   * @generated
+   */
+  ItemFeatureParameter createItemFeatureParameter();
+
+  /**
+   * Returns a new object of class '<em>If Succession As Usage</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>If Succession As Usage</em>'.
+   * @generated
+   */
+  IfSuccessionAsUsage createIfSuccessionAsUsage();
+
+  /**
+   * Returns a new object of class '<em>Target Succession Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Target Succession Element</em>'.
+   * @generated
+   */
+  TargetSuccessionElement createTargetSuccessionElement();
+
+  /**
+   * Returns a new object of class '<em>General Usage Prefix</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>General Usage Prefix</em>'.
+   * @generated
+   */
+  GeneralUsagePrefix createGeneralUsagePrefix();
 
   /**
    * Returns a new object of class '<em>Usage Extension Keyword</em>'.
@@ -1228,24 +1237,6 @@ public interface SysMLOCFactory extends EFactory
    * @generated
    */
   TransitionSuccession createTransitionSuccession();
-
-  /**
-   * Returns a new object of class '<em>Target Succession</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Target Succession</em>'.
-   * @generated
-   */
-  TargetSuccession createTargetSuccession();
-
-  /**
-   * Returns a new object of class '<em>Default Target Succession</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Default Target Succession</em>'.
-   * @generated
-   */
-  DefaultTargetSuccession createDefaultTargetSuccession();
 
   /**
    * Returns a new object of class '<em>Reference Subsetting</em>'.

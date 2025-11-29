@@ -6,7 +6,7 @@
       <elements xsi:type="sysMLOC:AliasElement" memberName="Car" memberElement="Vehicle"/>
     </elements>
     <elements xsi:type="sysMLOC:Package" declaredName="Usages">
-      <elements xsi:type="sysMLOC:MembershipImport" visibility="private" declaredName="Definitions::Car"/>
+      <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Definitions::Car"/>
       <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle">
         <typings>Car</typings>
       </elements>

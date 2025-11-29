@@ -2,11 +2,11 @@
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
   <packages declaredName="VehicleDefinitions">
     <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9; * Example vehicle definitions model.&#xD;&#xA;&#x9; */"/>
-    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="ScalarValues"/>
-    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="Quantities"/>
-    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="MeasurementReferences"/>
-    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="ISQ"/>
-    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="SI"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Quantities" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="MeasurementReferences" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ISQ" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="SI" isNamespace="true"/>
     <elements xsi:type="sysMLOC:Comment" body="/* PART DEFINITIONS */"/>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle">
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass">

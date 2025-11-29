@@ -77,7 +77,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ForLoopNodeImpl#isIsNonunique <em>Is Nonunique</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ForLoopNodeImpl#getDeclaredName <em>Declared Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ForLoopNodeImpl#getForVariableParameter <em>For Variable Parameter</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ForLoopNodeImpl#getNodeParameter <em>Node Parameter</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ForLoopNodeImpl#getForNodeParameter <em>For Node Parameter</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ForLoopNodeImpl#getActionParameterEnd <em>Action Parameter End</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ForLoopNodeImpl#getElements <em>Elements</em>}</li>
  * </ul>
@@ -447,24 +447,24 @@ public class ForLoopNodeImpl extends ActionNodeElementImpl implements ForLoopNod
   protected ForVariableParameter forVariableParameter;
 
   /**
-   * The default value of the '{@link #getNodeParameter() <em>Node Parameter</em>}' attribute.
+   * The default value of the '{@link #getForNodeParameter() <em>For Node Parameter</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getNodeParameter()
+   * @see #getForNodeParameter()
    * @generated
    * @ordered
    */
-  protected static final String NODE_PARAMETER_EDEFAULT = null;
+  protected static final String FOR_NODE_PARAMETER_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getNodeParameter() <em>Node Parameter</em>}' attribute.
+   * The cached value of the '{@link #getForNodeParameter() <em>For Node Parameter</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getNodeParameter()
+   * @see #getForNodeParameter()
    * @generated
    * @ordered
    */
-  protected String nodeParameter = NODE_PARAMETER_EDEFAULT;
+  protected String forNodeParameter = FOR_NODE_PARAMETER_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getActionParameterEnd() <em>Action Parameter End</em>}' containment reference list.
@@ -1018,9 +1018,9 @@ public class ForLoopNodeImpl extends ActionNodeElementImpl implements ForLoopNod
    * @generated
    */
   @Override
-  public String getNodeParameter()
+  public String getForNodeParameter()
   {
-    return nodeParameter;
+    return forNodeParameter;
   }
 
   /**
@@ -1029,12 +1029,12 @@ public class ForLoopNodeImpl extends ActionNodeElementImpl implements ForLoopNod
    * @generated
    */
   @Override
-  public void setNodeParameter(String newNodeParameter)
+  public void setForNodeParameter(String newForNodeParameter)
   {
-    String oldNodeParameter = nodeParameter;
-    nodeParameter = newNodeParameter;
+    String oldForNodeParameter = forNodeParameter;
+    forNodeParameter = newForNodeParameter;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.FOR_LOOP_NODE__NODE_PARAMETER, oldNodeParameter, nodeParameter));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.FOR_LOOP_NODE__FOR_NODE_PARAMETER, oldForNodeParameter, forNodeParameter));
   }
 
   /**
@@ -1141,8 +1141,8 @@ public class ForLoopNodeImpl extends ActionNodeElementImpl implements ForLoopNod
         return getDeclaredName();
       case SysMLOCPackage.FOR_LOOP_NODE__FOR_VARIABLE_PARAMETER:
         return getForVariableParameter();
-      case SysMLOCPackage.FOR_LOOP_NODE__NODE_PARAMETER:
-        return getNodeParameter();
+      case SysMLOCPackage.FOR_LOOP_NODE__FOR_NODE_PARAMETER:
+        return getForNodeParameter();
       case SysMLOCPackage.FOR_LOOP_NODE__ACTION_PARAMETER_END:
         return getActionParameterEnd();
       case SysMLOCPackage.FOR_LOOP_NODE__ELEMENTS:
@@ -1235,8 +1235,8 @@ public class ForLoopNodeImpl extends ActionNodeElementImpl implements ForLoopNod
       case SysMLOCPackage.FOR_LOOP_NODE__FOR_VARIABLE_PARAMETER:
         setForVariableParameter((ForVariableParameter)newValue);
         return;
-      case SysMLOCPackage.FOR_LOOP_NODE__NODE_PARAMETER:
-        setNodeParameter((String)newValue);
+      case SysMLOCPackage.FOR_LOOP_NODE__FOR_NODE_PARAMETER:
+        setForNodeParameter((String)newValue);
         return;
       case SysMLOCPackage.FOR_LOOP_NODE__ACTION_PARAMETER_END:
         getActionParameterEnd().clear();
@@ -1326,8 +1326,8 @@ public class ForLoopNodeImpl extends ActionNodeElementImpl implements ForLoopNod
       case SysMLOCPackage.FOR_LOOP_NODE__FOR_VARIABLE_PARAMETER:
         setForVariableParameter((ForVariableParameter)null);
         return;
-      case SysMLOCPackage.FOR_LOOP_NODE__NODE_PARAMETER:
-        setNodeParameter(NODE_PARAMETER_EDEFAULT);
+      case SysMLOCPackage.FOR_LOOP_NODE__FOR_NODE_PARAMETER:
+        setForNodeParameter(FOR_NODE_PARAMETER_EDEFAULT);
         return;
       case SysMLOCPackage.FOR_LOOP_NODE__ACTION_PARAMETER_END:
         getActionParameterEnd().clear();
@@ -1393,8 +1393,8 @@ public class ForLoopNodeImpl extends ActionNodeElementImpl implements ForLoopNod
         return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
       case SysMLOCPackage.FOR_LOOP_NODE__FOR_VARIABLE_PARAMETER:
         return forVariableParameter != null;
-      case SysMLOCPackage.FOR_LOOP_NODE__NODE_PARAMETER:
-        return NODE_PARAMETER_EDEFAULT == null ? nodeParameter != null : !NODE_PARAMETER_EDEFAULT.equals(nodeParameter);
+      case SysMLOCPackage.FOR_LOOP_NODE__FOR_NODE_PARAMETER:
+        return FOR_NODE_PARAMETER_EDEFAULT == null ? forNodeParameter != null : !FOR_NODE_PARAMETER_EDEFAULT.equals(forNodeParameter);
       case SysMLOCPackage.FOR_LOOP_NODE__ACTION_PARAMETER_END:
         return actionParameterEnd != null && !actionParameterEnd.isEmpty();
       case SysMLOCPackage.FOR_LOOP_NODE__ELEMENTS:
@@ -1786,8 +1786,8 @@ public class ForLoopNodeImpl extends ActionNodeElementImpl implements ForLoopNod
     result.append(isNonunique);
     result.append(", declaredName: ");
     result.append(declaredName);
-    result.append(", NodeParameter: ");
-    result.append(nodeParameter);
+    result.append(", forNodeParameter: ");
+    result.append(forNodeParameter);
     result.append(')');
     return result.toString();
   }

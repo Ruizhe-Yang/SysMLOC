@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
   <packages declaredName="'Time Constraints'">
-    <elements xsi:type="sysMLOC:MembershipImport" visibility="private" declaredName="ISQ::TemperatureValue"/>
-    <elements xsi:type="sysMLOC:MembershipImport" visibility="private" declaredName="ISQ::DurationValue"/>
-    <elements xsi:type="sysMLOC:MembershipImport" visibility="private" declaredName="Time::TimeInstantValue"/>
-    <elements xsi:type="sysMLOC:MembershipImport" visibility="private" declaredName="Time::TimeOf"/>
-    <elements xsi:type="sysMLOC:MembershipImport" visibility="private" declaredName="Time::DurationOf"/>
-    <elements xsi:type="sysMLOC:MembershipImport" visibility="private" declaredName="SI::h"/>
-    <elements xsi:type="sysMLOC:MembershipImport" visibility="private" declaredName="SI::s"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ISQ::TemperatureValue"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ISQ::DurationValue"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Time::TimeInstantValue"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Time::TimeOf"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Time::DurationOf"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="SI::h"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="SI::s"/>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MaintenanceDone"/>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle">
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="maintenanceTime">

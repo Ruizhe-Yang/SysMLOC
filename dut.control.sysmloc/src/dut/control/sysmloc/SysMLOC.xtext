@@ -1,7 +1,10 @@
+//grammar dut.control.sysmloc.expr.SysEXPR with org.eclipse.xtext.common.Terminals
 //grammar dut.control.sysmloc.SysMLOC hidden(WS, ML_NOTE, SL_NOTE)
 grammar dut.control.sysmloc.SysMLOC hidden(WS)
+//grammar dut.control.sysmloc.SysMLOC with dut.control.sysmloc.expr.SysEXPR
 
 import "http://www.eclipse.org/emf/2002/Ecore" as Ecore
+//import "http://www.control.dut/sysmloc/expr/SysEXPR" as EXPR
 
 generate sysMLOC "http://www.control.dut/sysmloc/SysMLOC"
  
@@ -10,14 +13,7 @@ Namespace:
 	(packages+=Package)*
 ;
 
-Package:
-    'package' 
-    declaredName=QualifiedName 
-    '{' (elements+=PackageBodyElement)* '}'
-;
-
 // TODO --------------------------------- Body Level ---------------------------------//
-
 GeneralBodyElements:
 	AnnotatingElement
     | ImportElement
@@ -38,11 +34,11 @@ DefinitionBodyElement:
 ;
 
 UsageBodyElement:
-	DefinitionBodyElement
+	GeneralBodyElements
 ;
 
 InterfaceBodyElement:
-	UsageBodyElement
+	GeneralBodyElements
 ;
 
 EnumerationBodyElement:
@@ -53,10 +49,7 @@ EnumerationBodyElement:
 ActionBodyElement:
 	GeneralBodyElements
 //	| VariantUsageMember
-	| InitialNode 
 	| ActionNodeElement
-	| GuardedSuccessionElement
-	| TargetSuccessionElement
 ;
 
 CalculationBodyElement:
@@ -92,13 +85,6 @@ AnnotatingElement:
 //	| MetadataUsage
 ;
 
-// Importing
-
-ImportElement:
-	=> NamespaceImport
-	| MembershipImport
-;
-
 // Definitions
 
 DefinitionElement:
@@ -131,7 +117,6 @@ DefinitionElement:
 ;
 
 // Usages
-
 UsageElement:
 	NonOccurrenceUsageElement 
 	| OccurrenceUsageElement
@@ -145,7 +130,6 @@ NonOccurrenceUsageElement:
 	| BindingConnectorAsUsage
 	| SuccessionAsUsage
 //	| ExtendedUsage
-	
 ;
 
 OccurrenceUsageElement:
@@ -190,16 +174,10 @@ BehaviorUsageElement:
 //	| SatisfyRequirementUsage
 ;
 
-//EnumerationElement:
-//	EnumeratedValue
-//;
-
-//InitialNodeElement:
-//	InitialNode
-//;
-
 ActionNodeElement:
-	SendNode
+	InitialNode
+	// Warning
+	| SendNode
 	| AcceptNode
 	| AssignmentNode 
 	| IfNode 
@@ -207,43 +185,22 @@ ActionNodeElement:
 	| ForLoopNode
 	| TerminateNode
 	| CommonNode
-//	| MergeNode
-//	| DecisionNode
-//	| JoinNode
-//	| ForkNode
+	| ThenNode
+	| ElseNode 
 ;
-
-//GuardedSuccessionNodeElement:
-//	GuardedSuccessionElement
-//;
-//
-//TargetSuccessionNodeElement:
-//	TargetSuccessionElement
-//;
-//
-//TransitionUsageElement:
-//	TransitionUsage
-//;
-//
-//EntryActionNodeElement:
-//	EntryAction
-//;
-//
-//DoActionNodeElement:
-//	DoActionNode
-//;
-//
-//ExitActionNodeElement:
-//	ExitActionNode
-//;
 
 // TODO --------------------------------- Instance Level ---------------------------------//
-NamespaceImport:
-    visibility=VisibilityIndicator 'import' (isImportAll?='all')? declaredName=QualifiedName '::' ( '*' | isRecursive ?= '**' )? ';'
+Package:
+    'package' 
+    declaredName=QualifiedName 
+    '{' (elements+=PackageBodyElement)* '}'
 ;
 
-MembershipImport:
-	visibility=VisibilityIndicator 'import' (isImportAll?='all')? declaredName=QualifiedName ( '*' | isRecursive ?= '**' )? ';'
+ImportElement:
+	visibility=VisibilityIndicator 
+    'import' (isImportAll?='all')? 
+    declaredName=QualifiedName (isNamespace?='::')? ( '*' | isRecursive ?= '**' )? 
+    ';'
 ;
     
 CodeAnnotation:
@@ -278,7 +235,7 @@ DefaultReferenceUsage:
     RefPrefix
     UsageDeclaration
     ValuePart?
-     (';' | '{' (elements+=UsageBodyElement)* '}')
+    ( ';' | '{' (elements+=UsageBodyElement)* '}' )
 ;
 
 ReferenceUsage:
@@ -287,19 +244,19 @@ ReferenceUsage:
     ( EndUsagePrefix | RefPrefix) 
     'ref'
     Usage
-     (';' | '{' (elements+=UsageBodyElement)* '}')
+    ( ';' | '{' (elements+=UsageBodyElement)* '}' )
 ;
 
 AttributeDefinition:
 	MemberPrefix DefinitionPrefix 'attribute' 'def' DefinitionDeclaration 
-	(';' | '{' (elements+=DefinitionBodyElement)* '}')
+	( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
 ;
 
 AttributeUsage:
     MemberPrefix
     isReturnPrefix
     UsagePrefix 'attribute' Usage 
-    (';' | '{' (elements+=UsageBodyElement)* '}')
+    ( ';' | '{' (elements+=UsageBodyElement)* '}' )
 ;
 
 EnumerationDefinition:
@@ -313,14 +270,14 @@ EnumeratedValue:
 	MemberPrefix
 	UsageExtensionKeyword*
 	'enum'? Usage
-	(';' | '{' (elements+=UsageBodyElement)* '}')
+	( ';' | '{' (elements+=UsageBodyElement)* '}' )
 ;
 
 EnumerationUsage:
 	MemberPrefix
 	isReturnPrefix
 	UsagePrefix 'enum' Usage
-	(';' | '{' (elements+=UsageBodyElement)* '}')
+	( ';' | '{' (elements+=UsageBodyElement)* '}' )
 ;
 
 BindingConnectorAsUsage:
@@ -329,7 +286,7 @@ BindingConnectorAsUsage:
 	UsagePrefix 
 	( 'binding' UsageDeclaration? )?
 	'bind' connectorPart += ConnectorEnd '=' connectorPart += ConnectorEnd
-	(';' | '{' (elements+=DefinitionBodyElement)* '}')
+	( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
 ;
 
 SuccessionAsUsage:
@@ -339,40 +296,34 @@ SuccessionAsUsage:
 	( 'succession' UsageDeclaration? )? 
 	'first' connectorPart += ConnectorEnd
 	'then' connectorPart += ConnectorEnd
-	(';' | '{' (elements+=DefinitionBodyElement)* '}')
+	( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
 ;
-
 
 OccurrenceDefinition:
 	MemberPrefix OccurrenceDefinitionPrefix 'occurrence' 'def' DefinitionDeclaration 
-	(';' | '{' (elements+=DefinitionBodyElement)* '}')
+	( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
 ;
 
 OccurrenceUsage:
-	EmptySuccessionPrefix
-    MemberPrefix
-    isReturnPrefix
+	GeneralUsagePrefix
     OccurrenceUsagePrefix 'occurrence' Usage 
-    (';' | '{' (elements+=UsageBodyElement)* '}')
+    ( ';' | '{' (elements+=UsageBodyElement)* '}' )
 ;
 
 PortionUsage:
-	EmptySuccessionPrefix
-	MemberPrefix 
-	isReturnPrefix
+	GeneralUsagePrefix
 	BasicUsagePrefix ( isIndividual ?= 'individual' )? portionKind = PortionKind
 	UsageExtensionKeyword*
 	Usage
-	(';' | '{' (elements+=UsageBodyElement)* '}')
+	( ';' | '{' (elements+=UsageBodyElement)* '}' )
 ;
 
 EventOccurrenceUsage:
-	EmptySuccessionPrefix
-    MemberPrefix isReturnPrefix
+	GeneralUsagePrefix
     OccurrenceUsagePrefix 'event'
     ( ReferenceSubsetting FeatureSpecializationPart? | 'occurrence' UsageDeclaration? )
     ValuePart? 
-    (';' | '{' (elements+=UsageBodyElement)* '}')
+    ( ';' | '{' (elements+=UsageBodyElement)* '}' )
 ;
 
 IndividualDefinition:
@@ -382,80 +333,71 @@ IndividualDefinition:
 	UsageExtensionKeyword*
 	'def' 
 	DefinitionDeclaration
-	(';' | '{' (elements+=DefinitionBodyElement)* '}')
+	( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
 ;
 
 IndividualUsage:
-	EmptySuccessionPrefix
-	MemberPrefix
-	isReturnPrefix
+	GeneralUsagePrefix
 	BasicUsagePrefix 
 	isIndividual ?= 'individual' 
 	UsageExtensionKeyword* 
 	Usage
-	(';' | '{' (elements+=UsageBodyElement)* '}')
+	( ';' | '{' (elements+=UsageBodyElement)* '}' )
 ;
 
 ItemDefinition:
     MemberPrefix OccurrenceDefinitionPrefix 'item' 'def' DefinitionDeclaration 
-    (';' | '{' (elements+=DefinitionBodyElement)* '}')
+    ( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
 ;
 
 ItemUsage:
-	EmptySuccessionPrefix
-    MemberPrefix isReturnPrefix
+	GeneralUsagePrefix
     OccurrenceUsagePrefix 'item' Usage 
-    (';' | '{' (elements+=UsageBodyElement)* '}')
+    ( ';' | '{' (elements+=UsageBodyElement)* '}' )
 ;
 
 PartDefinition:
     MemberPrefix OccurrenceDefinitionPrefix 'part' 'def' DefinitionDeclaration 
-    (';' | '{' (elements+=DefinitionBodyElement)* '}')
+    ( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
 ;
 
 PartUsage:
-	EmptySuccessionPrefix
-    MemberPrefix isReturnPrefix
+	GeneralUsagePrefix
     OccurrenceUsagePrefix 'part' Usage 
-    (';' | '{' (elements+=UsageBodyElement)* '}')
+    ( ';' | '{' (elements+=UsageBodyElement)* '}' )
 ;
 
 PortDefinition:
     MemberPrefix DefinitionPrefix 'port' 'def' DefinitionDeclaration 
-    (';' | '{' (elements+=DefinitionBodyElement)* '}')
+    ( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
 ;
 
 PortUsage:
-	EmptySuccessionPrefix
-    MemberPrefix isReturnPrefix
+	GeneralUsagePrefix
     OccurrenceUsagePrefix 'port' Usage 
-    (';' | '{' (elements+=UsageBodyElement)* '}')
+    ( ';' | '{' (elements+=UsageBodyElement)* '}' )
 ;
 
 ConnectionDefinition:
 	MemberPrefix OccurrenceDefinitionPrefix 'connection' 'def' DefinitionDeclaration 
-	(';' | '{' (elements+=DefinitionBodyElement)* '}')
+	( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
 ;
 
 ConnectionUsage:
-	EmptySuccessionPrefix
-	MemberPrefix 
-	isReturnPrefix
+	GeneralUsagePrefix
 	OccurrenceUsagePrefix
 	('connection' UsageDeclaration? FeatureValue? ('connect' ConnectorPart)?
 	 | 'connect' ConnectorPart) 
-	(';' | '{' (elements+=UsageBodyElement)* '}')
+	( ';' | '{' (elements+=UsageBodyElement)* '}' )
 ;
 
 InterfaceDefinition:
 	MemberPrefix OccurrenceDefinitionPrefix 'interface' 'def' DefinitionDeclaration 
-	(';' | '{' (elements += DefinitionBodyElement)* '}')
+	( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
 ;
 
 InterfaceUsage:
-	EmptySuccessionPrefix
-	MemberPrefix
-	isReturnPrefix
+	GeneralUsagePrefix
 	OccurrenceUsagePrefix
 	'interface' 
 	(UsageDeclaration? ('connect' ConnectorPart )? | ConnectorPart) 
@@ -463,14 +405,12 @@ InterfaceUsage:
 ;
 
 Message:
-	EmptySuccessionPrefix
-	MemberPrefix
-	isReturnPrefix
+	GeneralUsagePrefix
 	OccurrenceUsagePrefix 'message' 
 	UsageDeclaration? ValuePart?
 	( 'of' ItemFeatureParameterPart )?
     ( 'from'? FlowEnd += FeatureChainName 'to' FlowEnd += FeatureChainName )?
-	(';' | '{' (elements+=UsageBodyElement)* '}')
+	( ';' | '{' (elements+=UsageBodyElement)* '}' )
 ;
 
 FlowConnectionDefinition:
@@ -478,48 +418,41 @@ FlowConnectionDefinition:
 	OccurrenceDefinitionPrefix 
 	'flow' 'def' 
 	DefinitionDeclaration 
-	(';' | '{' (elements+=DefinitionBodyElement)* '}')
+	( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
 ;
 
 FlowConnectionUsage:
-	EmptySuccessionPrefix
-	MemberPrefix
-	isReturnPrefix
+	GeneralUsagePrefix
 	OccurrenceUsagePrefix
 	'flow' 
 	UsageDeclaration? FeatureValue?
 	( 'of' ItemFeatureParameterPart )?
     ( 'from'? FlowEnd += FeatureChainName 'to' FlowEnd += FeatureChainName )?
-    (';' | '{' (elements+=UsageBodyElement)* '}')
+    ( ';' | '{' (elements+=UsageBodyElement)* '}' )
 ;
 
-ItemFeatureParameter:
-	PayloadFeature
-;
+
 
 SuccessionFlowConnectionUsage:
-	EmptySuccessionPrefix
-	MemberPrefix
-	isReturnPrefix
+	GeneralUsagePrefix
 	OccurrenceUsagePrefix
 	'succession' 'flow'
 	UsageDeclaration? FeatureValue?
 	( 'of' ItemFeatureParameterPart )?
     ( 'from'? FlowEnd += FeatureChainName 'to' FlowEnd += FeatureChainName )?
-    (';' | '{' (elements+=DefinitionBodyElement)* '}')
+    ( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
 ;
 
 ActionDefinition:
 	MemberPrefix
 	OccurrenceDefinitionPrefix 'action' 'def' DefinitionDeclaration
-	(';' | '{' (elements+=ActionBodyElement)* '}')
+	( ';' | '{' (elements+=ActionBodyElement)* '}' )
 ;
 
 ActionUsage:
-	EmptySuccessionPrefix
-    MemberPrefix isReturnPrefix 
+	GeneralUsagePrefix
     OccurrenceUsagePrefix 'action' ActionUsageDeclaration 
-    (';' | '{' (elements+=ActionBodyElement)* '}')
+    ( ';' | '{' (elements+=ActionBodyElement)* '}' )
 ;
 
 CalculationDefinition:
@@ -529,8 +462,7 @@ CalculationDefinition:
 ;
 
 CalculationUsage:
-	EmptySuccessionPrefix
-    MemberPrefix isReturnPrefix 
+	GeneralUsagePrefix
     OccurrenceUsagePrefix 'calc' ActionUsageDeclaration 
 	(';' | '{' => ( elements+=CalculationBodyElement )* (resultExpressionParameter+=ResultExpression)? '}')  
 ;
@@ -544,9 +476,7 @@ StateDefinition:
 ;
 
 StateUsage:
-	EmptySuccessionPrefix
-	MemberPrefix
-	isReturnPrefix
+	GeneralUsagePrefix
 	OccurrenceUsagePrefix
 	'state'
 	ActionUsageDeclaration
@@ -562,31 +492,16 @@ ConstraintDefinition:
 ;
 
 ConstraintUsage:
-	EmptySuccessionPrefix
-	MemberPrefix
-	isReturnPrefix
+	GeneralUsagePrefix
 	OccurrenceUsagePrefix
 	'constraint'
 	ConstraintUsageDeclaration
 	(';' | '{' => ( elements+=CalculationBodyElement )* (resultExpressionParameter+=ResultExpression)? '}')  
 ;
 
-
 TransitionUsage:
-	EmptySuccessionPrefix
-	MemberPrefix
-	isReturnPrefix
-			
-//	'transition'
-//	( UsageDeclaration? 'first' )? 
-//	transitionSourceElement=FeatureChainName
-//	('accept' AcceptParameterPart)?
-//	('if' conditionalExpression=Expression)?
-////	('do' PerformedActionParameterPart=PerformedActionUsage ( '{' elements+=ActionBodyElement* '}' )?)?
-//	('do' PerformedActionParameterPart ( '{' elements+=ActionBodyElement* '}' )?)?
-
-	(	
-		'transition'
+	GeneralUsagePrefix
+	(	'transition'
 		( UsageDeclaration? 'first' )? 
 		( transitionSourceElement=FeatureChainName)?
 		('accept' AcceptParameterPart)?
@@ -598,25 +513,20 @@ TransitionUsage:
 	| 	'if' conditionalExpression=Expression
 		('do' PerformedActionParameterPart ( '{' elements+=ActionBodyElement* '}' )?)?
 	)?
-	
 	'then' TransitionSuccession
-	(';' | '{' (elements+=ActionBodyElement)* '}')
+	( ';' | '{' (elements+=ActionBodyElement)* '}' )
 ;
 
 PerformActionUsage:
-	EmptySuccessionPrefix
-	MemberPrefix
-	isReturnPrefix
+	GeneralUsagePrefix
 	OccurrenceUsagePrefix 'perform' 
 	( ReferenceSubsetting FeatureSpecializationPart? | 'action' UsageDeclaration? )
     ValuePart?
-	(';' | '{' (elements+=ActionBodyElement)* '}')
+	( ';' | '{' (elements+=ActionBodyElement)* '}' )
 ;
 
 ExhibitStateUsage:
-	EmptySuccessionPrefix
-	MemberPrefix
-	isReturnPrefix
+	GeneralUsagePrefix
 	OccurrenceUsagePrefix 'exhibit'
 	( ReferenceSubsetting FeatureSpecializationPart? | 'state' UsageDeclaration? )
     ValuePart?
@@ -624,9 +534,7 @@ ExhibitStateUsage:
 ;
 
 AssertConstraintUsage:
-	EmptySuccessionPrefix
-	MemberPrefix
-	isReturnPrefix
+	GeneralUsagePrefix
 	OccurrenceUsagePrefix
 	'assert' 
 	( isNegated ?= 'not' )?
@@ -644,12 +552,6 @@ AliasElement:
 	(';' | '{' (elements+=AnnotatingBodyElement)* '}')
 ;
 
-ConnectorEnd:
-	MultiplicityRange?
-	( delcaredName = Name ('::>' | 'references') )?
-	ReferenceSubsetting
-;
-
 InitialNode:
 	MemberPrefix 'first' memberElement = QualifiedName
 	(';' | '{' (elements+=ActionNodeBodyElement)* '}')
@@ -664,7 +566,7 @@ SendNode:
 	sendNodeParameter?=Expression
 	('via' viaNodeParameter=Expression)?
 	('to' toNodeParameter=Expression)?
-	(';' | '{' (elements+=ActionBodyElement)* '}')
+	( ';' | '{' (elements+=ActionBodyElement)* '}' )
 ;
 
 AcceptNode:
@@ -674,33 +576,32 @@ AcceptNode:
 	ActionNodeUsageDeclaration? 
 	'accept' 
 	AcceptParameterPart
-	(';' | '{' (elements+=ActionBodyElement)* '}')
+	( ';' | '{' (elements+=ActionBodyElement)* '}' )
 ; 
-
-PayloadParameter:
-	( PayloadFeature | Identification? PayloadFeatureSpecializationPart? TriggerValuePart)
-	('via' viaNodeParameter=Expression)?
-;
 
 AssignmentNode:
 	EmptySuccessionPrefix
 	MemberPrefix
 	OccurrenceUsagePrefix
-	AssignmentNodeDeclaration
-	(';' | '{' (elements+=ActionBodyElement)* '}')
+	ActionNodeUsageDeclaration? 
+	'assign' 
+	targetParameter=TargetExpression?
+	featureChain=FeatureChainName 
+	':=' NodeParameter=Expression
+	( ';' | '{' (elements+=ActionBodyElement)* '}' )
 ; 
 
 IfNode:
 	EmptySuccessionPrefix
 	MemberPrefix
 	ActionNodePrefix
-	'if'
-	ifConditionExpression = Expression
-	(('action' actionParameterEnd+=ActionParameterEnd )? '{' (elements+=ActionBodyElement)* '}'
-	| 'then' TransitionSuccession (';' | '{' (elements+=UsageBodyElement)* '}'))
-	( 'else' 
-		(('action' actionParameterEnd+=ActionParameterEnd )? '{' (elements+=ActionBodyElement)* '}'
-		| elseNode+=IfNode))?
+	// GuardedSuccession
+	( isSuccession?='succession' successionElement+=IfSuccessionAsUsage)?
+	( isFirst?='first' firstElement=FeatureChainName)?
+	//
+	'if' ifConditionExpression = Expression
+	(	('action' actionParameterEnd+=ActionParameterEnd )? '{' (elements+=ActionBodyElement)* '}'
+	| 	'then' TransitionSuccession ( ';' | '{' (elements+=UsageBodyElement)* '}' ))
 ; 
 
 WhileLoopNode:
@@ -713,61 +614,14 @@ WhileLoopNode:
 	( 'until' untilConditionExpression = Expression ';' )?
 ; 
 
-CommonNode:
-	EmptySuccessionPrefix
-	MemberPrefix
-	ControlNodePrefix nodeKind=CommonNodeKind UsageDeclaration?
-	(';' | '{' (elements+=ActionNodeBodyElement)* '}')
-;
-
-enum CommonNodeKind:
-	merge='merge' | decide = 'decide' | join = 'join' | fork = 'fork'
-;
-
-//MergeNode:
-//	EmptySuccessionPrefix
-//	MemberPrefix
-//	ControlNodePrefix 'merge' UsageDeclaration?
-//	(';' | '{' (elements+=ActionNodeBodyElement)* '}')
-//;
-//
-//DecisionNode:
-//	EmptySuccessionPrefix
-//	MemberPrefix
-//	ControlNodePrefix 'decide' UsageDeclaration?
-//	(';' | '{' (elements+=ActionNodeBodyElement)* '}')
-//;
-//
-//JoinNode:
-//	EmptySuccessionPrefix
-//	MemberPrefix
-//	ControlNodePrefix 'join' UsageDeclaration?
-//	(';' | '{' (elements+=ActionNodeBodyElement)* '}')
-//;
-//
-//ForkNode:
-//	EmptySuccessionPrefix
-//	MemberPrefix
-//	ControlNodePrefix 'fork' UsageDeclaration?
-//	(';' | '{' (elements+=ActionNodeBodyElement)* '}')
-//;
-
-ActionParameterEnd:
-	UsageDeclaration
-;
-
 ForLoopNode:
 	EmptySuccessionPrefix
 	MemberPrefix 
 	ActionNodePrefix
-	'for' ForVariableParameter=ForVariableParameter
-	'in' NodeParameter=Expression
+	'for' forVariableParameter=ForVariableParameter
+	'in' forNodeParameter=Expression
 	('action' actionParameterEnd+=ActionParameterEnd )?
 	'{' (elements+=ActionBodyElement)* '}'
-;
-
-ForVariableParameter:
-	UsageDeclaration
 ;
 
 TerminateNode:
@@ -777,38 +631,41 @@ TerminateNode:
 	ActionNodeUsageDeclaration?
 	'terminate'
 	NodeParameter?=Expression
-	(';' | '{' (elements+=ActionBodyElement)* '}')
+	( ';' | '{' (elements+=ActionBodyElement)* '}' )
 ;
 
-
-GuardedSuccessionElement:
-	( 'succession' UsageDeclaration )?
-	'first'
-	memberElement = FeatureChainName
-	'if' conditionalExpression=Expression
-	'then'
-	TransitionSuccession
-	(';' | '{' (elements+=UsageBodyElement)* '}')
-;
-
-TargetSuccessionElement:
+CommonNode:
+	EmptySuccessionPrefix
 	MemberPrefix
-	( TargetSuccession
-//	| GuardedTargetSuccession 
-	| DefaultTargetSuccession
-	)
-	(';' | '{' (elements+=UsageBodyElement)* '}')
-//	MemberPrefix
-//	((( TargetSuccession | DefaultTargetSuccession) (';' | '{' (elements+=UsageBodyElement)* '}'))
-//	| GuardedTargetSuccession ';')
+	ControlNodePrefix 
+	nodeKind=CommonNodeKind 
+	UsageDeclaration?
+	(';' | '{' (elements+=ActionNodeBodyElement)* '}')
 ;
 
+ThenNode: // TransitionSuccession
+	MemberPrefix
+	MultiplicityRange?
+	'then'
+	thenElement += ConnectorEnd
+	( ';' | '{' (elements+=UsageBodyElement)* '}' )
+;
+
+ElseNode: // DefaultTransitionSuccession and IfElse
+	EmptySuccessionPrefix
+	MemberPrefix
+	ActionNodePrefix
+	'else' 
+	(('action' actionParameterEnd+=ActionParameterEnd) 
+	| elseEnd += ConnectorEnd)
+	( ';' | '{' (elements+=ActionBodyElement)* '}' )
+;
 
 EntryAction:
 	MemberPrefix
 	'entry'
 	PerformedActionParameterPart?
-	( ';' | '{' elements+=ActionBodyElement* '}' )
+	( ';' | '{' (elements+=ActionBodyElement)* '}' )
 //	( ownedRelationship += EntryTransitionMember )*
 ;
 
@@ -816,16 +673,36 @@ DoActionNode:
 	MemberPrefix
 	'do'
 	PerformedActionParameterPart?
-	( ';' | '{' elements+=ActionBodyElement* '}' )
+	( ';' | '{' (elements+=ActionBodyElement)* '}' )
 ;
 
 ExitActionNode:
 	MemberPrefix
 	'exit'
 	PerformedActionParameterPart?
-	( ';' | '{' elements+=ActionBodyElement* '}' )
+	( ';' | '{' (elements+=ActionBodyElement)* '}' )
 ;
 
+// TODO --------------------------------- Secondary Instance Level ---------------------------------//
+
+ActionParameterEnd:
+	UsageDeclaration
+;
+
+ForVariableParameter:
+	UsageDeclaration
+;
+
+PayloadParameter:
+	( PayloadFeature | Identification? PayloadFeatureSpecializationPart? TriggerValuePart)
+	('via' viaNodeParameter=Expression)?
+;
+
+ConnectorEnd:
+	MultiplicityRange?
+	( delcaredName = Name ('::>' | 'references') )?
+	ReferenceSubsetting
+;
 
 PerformedActionUsage:
 	{PerformActionUsage} PerformActionUsageDeclaration
@@ -834,7 +711,22 @@ PerformedActionUsage:
 	| {AssignmentActionUsage} AssignmentNodeDeclaration
 ;
 
+ItemFeatureParameter:
+	PayloadFeature
+;
+
+IfSuccessionAsUsage:
+	UsageDeclaration
+;
+
+TargetSuccessionElement:
+	MultiplicityRange
+;
+
 // TODO --------------------------------- Fragment Level ---------------------------------//
+fragment GeneralUsagePrefix:
+	EmptySuccessionPrefix MemberPrefix isReturnPrefix
+;
 
 fragment UsageExtensionKeyword:
 	'#' UsageExtension += QualifiedName
@@ -1000,7 +892,7 @@ fragment TriggerValuePart:
 fragment SendNodeDeclaration:
 	ActionNodeUsageDeclaration?
 	'send'
-	sendNodeParameter?=Expression
+	sendNodeParameter=Expression
 	('via' viaNodeParameter=Expression)?
 	('to' toNodeParameter=Expression)?
 ;
@@ -1054,20 +946,20 @@ fragment TransitionSuccession:
 	transitionSuccessionElement += ConnectorEnd
 ;
 
-fragment TargetSuccession:
-	MultiplicityRange?
-	'then'
-	TransitionSuccession
-;
-
+//fragment TargetSuccession:
+//	MultiplicityRange?
+//	'then'
+//	TransitionSuccession
+//;
+//
 //fragment GuardedTargetSuccession:
 //	'if' ConditionalExpression=Expression 
 //	'then' TransitionSuccession
 //;
-
-fragment DefaultTargetSuccession:
-	'else' TransitionSuccession
-;
+//
+//fragment DefaultTargetSuccession:
+//	'else' TransitionSuccession
+//;
 
 fragment ReferenceSubsetting:
 	refElement = FeatureChainName
@@ -1089,16 +981,33 @@ fragment PerformedActionParameterPart:
 	performedActionParameterPart+=PerformedActionUsage 
 ;
 
-// TODO --------------------------------- Text Level ---------------------------------//
+// TODO --------------------------------- Enum Level ---------------------------------//
 
-//ConnectorEnd:
-//	('[' MultiplicityExpression '..' MultiplicityExpression ']')?
-//	( Name ('::>' | 'references') )?
-//	FeatureChainName
-//;
+// enum
+
+enum VisibilityIndicator:
+	null='NULLVisibility' | public = 'public' | private = 'private' | protected = 'protected'
+;
+
+enum FeatureDirection:
+	null='NULLFeature' | inout = 'inout' | in = 'in' | out = 'out' 
+;
+
+enum PortionKind:
+	null='NULLPortion' | snapshot = 'snapshot' | timeslice = 'timeslice'
+;
+
+enum TriggerKind:
+	null='NULLTrigger' | at='at' | after='after'| when='when'
+;
+
+enum CommonNodeKind:
+	merge='merge' | decide = 'decide' | join = 'join' | fork = 'fork'
+;
+
+// TODO --------------------------------- String Level ---------------------------------//
 
 /* NAMES */
-
 Name:
 	ID | UNRESTRICTED_NAME
 ;
@@ -1202,7 +1111,7 @@ MultiplicativeExpression:
 ;
 
 ExponentiationExpression:
-	UnaryExpression (('**' | '^') ExponentiationExpression)?
+	UnaryExpression (('**' | '^') UnaryExpression)?
 ;
 
 UnaryExpression:
@@ -1237,7 +1146,6 @@ BaseExpression:
 	| BodyExpression
 	| '(' SequenceExpression ')'
 ;
-
 
 FunctionReferenceExpression:
 	QualifiedName
@@ -1352,30 +1260,7 @@ TargetExpression:
 	)*
 ;
 
-// TODO --------------------------------- Enum Level ---------------------------------//
-
-// enum
-
-enum VisibilityIndicator:
-	null='NULLVisibility' | public = 'public' | private = 'private' | protected = 'protected'
-;
-
-enum FeatureDirection:
-	null='NULLFeature' | inout = 'inout' | in = 'in' | out = 'out' 
-;
-
-enum PortionKind:
-	null='NULLPortion' | snapshot = 'snapshot' | timeslice = 'timeslice'
-;
-
-enum TriggerKind:
-	null='NULLTrigger' | at='at' | after='after'| when='when'
-;
-
 // TODO --------------------------------- Terminal Level ---------------------------------//
-
-/* TERMINALS */
-	
 terminal DECIMAL_VALUE returns Ecore::EInt:
 	'0'..'9' ('0'..'9')*;
 
@@ -1399,6 +1284,7 @@ terminal ML_NOTE:
 
 terminal SL_NOTE:
 	'//' (!('\n' | '\r') !('\n' | '\r')*)? ('\r'? '\n')?;
-
+	
 terminal WS:
 	(' ' | '\t' | '\r' | '\n')+;
+	

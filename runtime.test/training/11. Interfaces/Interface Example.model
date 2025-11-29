@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
   <packages declaredName="'Interface Example'">
-    <elements xsi:type="sysMLOC:NamespaceImport" visibility="private" declaredName="'Port Example'"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="'Port Example'" isNamespace="true"/>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle"/>
     <elements xsi:type="sysMLOC:InterfaceDefinition" declaredName="FuelInterface">
       <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="supplierPort" isEnd="true">

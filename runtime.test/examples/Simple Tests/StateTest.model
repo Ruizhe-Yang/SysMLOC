@@ -25,7 +25,7 @@
       </elements>
       <elements xsi:type="sysMLOC:StateUsage" declaredName="S2">
         <elements xsi:type="sysMLOC:DoActionNode">
-          <performedActionParameterPart xsi:type="sysMLOC:SendActionUsage" sendNodeParameter="true" toNodeParameter="p"/>
+          <performedActionParameterPart xsi:type="sysMLOC:SendActionUsage" sendNodeParameter="Sig(T.s.x)" toNodeParameter="p"/>
         </elements>
         <elements xsi:type="sysMLOC:StateUsage" declaredName="S3"/>
       </elements>
@@ -44,7 +44,7 @@
         <acceptParameter declaredName="s" viaNodeParameter="p">
           <typings>Sig</typings>
         </acceptParameter>
-        <performedActionParameterPart xsi:type="sysMLOC:SendActionUsage" sendNodeParameter="true" toNodeParameter="p"/>
+        <performedActionParameterPart xsi:type="sysMLOC:SendActionUsage" sendNodeParameter="s" toNodeParameter="p"/>
         <transitionSuccessionElement refElement="S1"/>
       </elements>
       <elements xsi:type="sysMLOC:ExitActionNode">
