@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
-  <packages declaredName="'Parts Example-1'">
+  <elements xsi:type="sysMLOC:Package" declaredName="'Parts Example-1'">
     <elements xsi:type="sysMLOC:CodeAnnotation" body="// Definitions&#xD;&#xA;"/>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle">
       <elements xsi:type="sysMLOC:PartUsage" declaredName="eng">
@@ -36,5 +36,5 @@
         </elements>
       </elements>
     </elements>
-  </packages>
+  </elements>
 </sysMLOC:Namespace>

@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Package extends PackageBodyElement
+public interface Package extends DefinitionElement, PrefixMetadata
 {
   /**
    * Returns the value of the '<em><b>Declared Name</b></em>' attribute.

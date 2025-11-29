@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
-  <packages declaredName="EnumerationTest">
+  <elements xsi:type="sysMLOC:Package" declaredName="EnumerationTest">
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="Color">
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="val">
         <typings>ScalarValues::Natural</typings>
@@ -66,5 +66,5 @@
       <typings>SizeChoice</typings>
       <valuePart>60.0</valuePart>
     </elements>
-  </packages>
+  </elements>
 </sysMLOC:Namespace>

@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.MemberPrefix#getVisibility <em>Visibility</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.MemberPrefix#isIsVariant <em>Is Variant</em>}</li>
  * </ul>
  *
  * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getMemberPrefix()
@@ -47,5 +48,27 @@ public interface MemberPrefix extends EObject
    * @generated
    */
   void setVisibility(VisibilityIndicator value);
+
+  /**
+   * Returns the value of the '<em><b>Is Variant</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Is Variant</em>' attribute.
+   * @see #setIsVariant(boolean)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getMemberPrefix_IsVariant()
+   * @model
+   * @generated
+   */
+  boolean isIsVariant();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.MemberPrefix#isIsVariant <em>Is Variant</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Is Variant</em>' attribute.
+   * @see #isIsVariant()
+   * @generated
+   */
+  void setIsVariant(boolean value);
 
 } // MemberPrefix

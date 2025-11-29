@@ -3,14 +3,29 @@
  */
 package dut.control.sysmloc.sysMLOC.impl;
 
+import dut.control.sysmloc.sysMLOC.CrossFeatureChain;
 import dut.control.sysmloc.sysMLOC.FeatureDeclaration;
+import dut.control.sysmloc.sysMLOC.FeatureSpecialization;
+import dut.control.sysmloc.sysMLOC.FeatureSpecializationPart;
+import dut.control.sysmloc.sysMLOC.MultiplicityPart;
+import dut.control.sysmloc.sysMLOC.MultiplicityRange;
+import dut.control.sysmloc.sysMLOC.RedefinitionFeatureChain;
+import dut.control.sysmloc.sysMLOC.ReferenceFeatureChain;
+import dut.control.sysmloc.sysMLOC.SubsettingFeatureChain;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
+import dut.control.sysmloc.sysMLOC.TypingFeatureTyping;
+
+import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,32 +35,119 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FeatureDeclarationImpl#getDeclaredName <em>Declared Name</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FeatureDeclarationImpl#getTypings <em>Typings</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FeatureDeclarationImpl#getSubsetting <em>Subsetting</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FeatureDeclarationImpl#getReferences <em>References</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FeatureDeclarationImpl#getCrosses <em>Crosses</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FeatureDeclarationImpl#getRedefinitions <em>Redefinitions</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FeatureDeclarationImpl#getMultiplicity <em>Multiplicity</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FeatureDeclarationImpl#isIsOrdered <em>Is Ordered</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FeatureDeclarationImpl#isIsNonunique <em>Is Nonunique</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class FeatureDeclarationImpl extends FeatureSpecializationPartImpl implements FeatureDeclaration
+public class FeatureDeclarationImpl extends IdentificationImpl implements FeatureDeclaration
 {
   /**
-   * The default value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
+   * The cached value of the '{@link #getTypings() <em>Typings</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDeclaredName()
+   * @see #getTypings()
    * @generated
    * @ordered
    */
-  protected static final String DECLARED_NAME_EDEFAULT = null;
+  protected EList<String> typings;
 
   /**
-   * The cached value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
+   * The cached value of the '{@link #getSubsetting() <em>Subsetting</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDeclaredName()
+   * @see #getSubsetting()
    * @generated
    * @ordered
    */
-  protected String declaredName = DECLARED_NAME_EDEFAULT;
+  protected EList<String> subsetting;
+
+  /**
+   * The cached value of the '{@link #getReferences() <em>References</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getReferences()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> references;
+
+  /**
+   * The cached value of the '{@link #getCrosses() <em>Crosses</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCrosses()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> crosses;
+
+  /**
+   * The cached value of the '{@link #getRedefinitions() <em>Redefinitions</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRedefinitions()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> redefinitions;
+
+  /**
+   * The cached value of the '{@link #getMultiplicity() <em>Multiplicity</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMultiplicity()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> multiplicity;
+
+  /**
+   * The default value of the '{@link #isIsOrdered() <em>Is Ordered</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsOrdered()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_ORDERED_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsOrdered() <em>Is Ordered</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsOrdered()
+   * @generated
+   * @ordered
+   */
+  protected boolean isOrdered = IS_ORDERED_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsNonunique() <em>Is Nonunique</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsNonunique()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_NONUNIQUE_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsNonunique() <em>Is Nonunique</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsNonunique()
+   * @generated
+   * @ordered
+   */
+  protected boolean isNonunique = IS_NONUNIQUE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -74,9 +176,13 @@ public class FeatureDeclarationImpl extends FeatureSpecializationPartImpl implem
    * @generated
    */
   @Override
-  public String getDeclaredName()
+  public EList<String> getTypings()
   {
-    return declaredName;
+    if (typings == null)
+    {
+      typings = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.FEATURE_DECLARATION__TYPINGS);
+    }
+    return typings;
   }
 
   /**
@@ -85,12 +191,123 @@ public class FeatureDeclarationImpl extends FeatureSpecializationPartImpl implem
    * @generated
    */
   @Override
-  public void setDeclaredName(String newDeclaredName)
+  public EList<String> getSubsetting()
   {
-    String oldDeclaredName = declaredName;
-    declaredName = newDeclaredName;
+    if (subsetting == null)
+    {
+      subsetting = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.FEATURE_DECLARATION__SUBSETTING);
+    }
+    return subsetting;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<String> getReferences()
+  {
+    if (references == null)
+    {
+      references = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.FEATURE_DECLARATION__REFERENCES);
+    }
+    return references;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<String> getCrosses()
+  {
+    if (crosses == null)
+    {
+      crosses = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.FEATURE_DECLARATION__CROSSES);
+    }
+    return crosses;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<String> getRedefinitions()
+  {
+    if (redefinitions == null)
+    {
+      redefinitions = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.FEATURE_DECLARATION__REDEFINITIONS);
+    }
+    return redefinitions;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<String> getMultiplicity()
+  {
+    if (multiplicity == null)
+    {
+      multiplicity = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.FEATURE_DECLARATION__MULTIPLICITY);
+    }
+    return multiplicity;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsOrdered()
+  {
+    return isOrdered;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsOrdered(boolean newIsOrdered)
+  {
+    boolean oldIsOrdered = isOrdered;
+    isOrdered = newIsOrdered;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.FEATURE_DECLARATION__DECLARED_NAME, oldDeclaredName, declaredName));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.FEATURE_DECLARATION__IS_ORDERED, oldIsOrdered, isOrdered));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsNonunique()
+  {
+    return isNonunique;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsNonunique(boolean newIsNonunique)
+  {
+    boolean oldIsNonunique = isNonunique;
+    isNonunique = newIsNonunique;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.FEATURE_DECLARATION__IS_NONUNIQUE, oldIsNonunique, isNonunique));
   }
 
   /**
@@ -103,8 +320,22 @@ public class FeatureDeclarationImpl extends FeatureSpecializationPartImpl implem
   {
     switch (featureID)
     {
-      case SysMLOCPackage.FEATURE_DECLARATION__DECLARED_NAME:
-        return getDeclaredName();
+      case SysMLOCPackage.FEATURE_DECLARATION__TYPINGS:
+        return getTypings();
+      case SysMLOCPackage.FEATURE_DECLARATION__SUBSETTING:
+        return getSubsetting();
+      case SysMLOCPackage.FEATURE_DECLARATION__REFERENCES:
+        return getReferences();
+      case SysMLOCPackage.FEATURE_DECLARATION__CROSSES:
+        return getCrosses();
+      case SysMLOCPackage.FEATURE_DECLARATION__REDEFINITIONS:
+        return getRedefinitions();
+      case SysMLOCPackage.FEATURE_DECLARATION__MULTIPLICITY:
+        return getMultiplicity();
+      case SysMLOCPackage.FEATURE_DECLARATION__IS_ORDERED:
+        return isIsOrdered();
+      case SysMLOCPackage.FEATURE_DECLARATION__IS_NONUNIQUE:
+        return isIsNonunique();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -114,13 +345,41 @@ public class FeatureDeclarationImpl extends FeatureSpecializationPartImpl implem
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case SysMLOCPackage.FEATURE_DECLARATION__DECLARED_NAME:
-        setDeclaredName((String)newValue);
+      case SysMLOCPackage.FEATURE_DECLARATION__TYPINGS:
+        getTypings().clear();
+        getTypings().addAll((Collection<? extends String>)newValue);
+        return;
+      case SysMLOCPackage.FEATURE_DECLARATION__SUBSETTING:
+        getSubsetting().clear();
+        getSubsetting().addAll((Collection<? extends String>)newValue);
+        return;
+      case SysMLOCPackage.FEATURE_DECLARATION__REFERENCES:
+        getReferences().clear();
+        getReferences().addAll((Collection<? extends String>)newValue);
+        return;
+      case SysMLOCPackage.FEATURE_DECLARATION__CROSSES:
+        getCrosses().clear();
+        getCrosses().addAll((Collection<? extends String>)newValue);
+        return;
+      case SysMLOCPackage.FEATURE_DECLARATION__REDEFINITIONS:
+        getRedefinitions().clear();
+        getRedefinitions().addAll((Collection<? extends String>)newValue);
+        return;
+      case SysMLOCPackage.FEATURE_DECLARATION__MULTIPLICITY:
+        getMultiplicity().clear();
+        getMultiplicity().addAll((Collection<? extends String>)newValue);
+        return;
+      case SysMLOCPackage.FEATURE_DECLARATION__IS_ORDERED:
+        setIsOrdered((Boolean)newValue);
+        return;
+      case SysMLOCPackage.FEATURE_DECLARATION__IS_NONUNIQUE:
+        setIsNonunique((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -136,8 +395,29 @@ public class FeatureDeclarationImpl extends FeatureSpecializationPartImpl implem
   {
     switch (featureID)
     {
-      case SysMLOCPackage.FEATURE_DECLARATION__DECLARED_NAME:
-        setDeclaredName(DECLARED_NAME_EDEFAULT);
+      case SysMLOCPackage.FEATURE_DECLARATION__TYPINGS:
+        getTypings().clear();
+        return;
+      case SysMLOCPackage.FEATURE_DECLARATION__SUBSETTING:
+        getSubsetting().clear();
+        return;
+      case SysMLOCPackage.FEATURE_DECLARATION__REFERENCES:
+        getReferences().clear();
+        return;
+      case SysMLOCPackage.FEATURE_DECLARATION__CROSSES:
+        getCrosses().clear();
+        return;
+      case SysMLOCPackage.FEATURE_DECLARATION__REDEFINITIONS:
+        getRedefinitions().clear();
+        return;
+      case SysMLOCPackage.FEATURE_DECLARATION__MULTIPLICITY:
+        getMultiplicity().clear();
+        return;
+      case SysMLOCPackage.FEATURE_DECLARATION__IS_ORDERED:
+        setIsOrdered(IS_ORDERED_EDEFAULT);
+        return;
+      case SysMLOCPackage.FEATURE_DECLARATION__IS_NONUNIQUE:
+        setIsNonunique(IS_NONUNIQUE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -153,10 +433,188 @@ public class FeatureDeclarationImpl extends FeatureSpecializationPartImpl implem
   {
     switch (featureID)
     {
-      case SysMLOCPackage.FEATURE_DECLARATION__DECLARED_NAME:
-        return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
+      case SysMLOCPackage.FEATURE_DECLARATION__TYPINGS:
+        return typings != null && !typings.isEmpty();
+      case SysMLOCPackage.FEATURE_DECLARATION__SUBSETTING:
+        return subsetting != null && !subsetting.isEmpty();
+      case SysMLOCPackage.FEATURE_DECLARATION__REFERENCES:
+        return references != null && !references.isEmpty();
+      case SysMLOCPackage.FEATURE_DECLARATION__CROSSES:
+        return crosses != null && !crosses.isEmpty();
+      case SysMLOCPackage.FEATURE_DECLARATION__REDEFINITIONS:
+        return redefinitions != null && !redefinitions.isEmpty();
+      case SysMLOCPackage.FEATURE_DECLARATION__MULTIPLICITY:
+        return multiplicity != null && !multiplicity.isEmpty();
+      case SysMLOCPackage.FEATURE_DECLARATION__IS_ORDERED:
+        return isOrdered != IS_ORDERED_EDEFAULT;
+      case SysMLOCPackage.FEATURE_DECLARATION__IS_NONUNIQUE:
+        return isNonunique != IS_NONUNIQUE_EDEFAULT;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == TypingFeatureTyping.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.FEATURE_DECLARATION__TYPINGS: return SysMLOCPackage.TYPING_FEATURE_TYPING__TYPINGS;
+        default: return -1;
+      }
+    }
+    if (baseClass == SubsettingFeatureChain.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.FEATURE_DECLARATION__SUBSETTING: return SysMLOCPackage.SUBSETTING_FEATURE_CHAIN__SUBSETTING;
+        default: return -1;
+      }
+    }
+    if (baseClass == ReferenceFeatureChain.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.FEATURE_DECLARATION__REFERENCES: return SysMLOCPackage.REFERENCE_FEATURE_CHAIN__REFERENCES;
+        default: return -1;
+      }
+    }
+    if (baseClass == CrossFeatureChain.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.FEATURE_DECLARATION__CROSSES: return SysMLOCPackage.CROSS_FEATURE_CHAIN__CROSSES;
+        default: return -1;
+      }
+    }
+    if (baseClass == RedefinitionFeatureChain.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.FEATURE_DECLARATION__REDEFINITIONS: return SysMLOCPackage.REDEFINITION_FEATURE_CHAIN__REDEFINITIONS;
+        default: return -1;
+      }
+    }
+    if (baseClass == FeatureSpecialization.class)
+    {
+      switch (derivedFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    if (baseClass == MultiplicityRange.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.FEATURE_DECLARATION__MULTIPLICITY: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTIPLICITY;
+        default: return -1;
+      }
+    }
+    if (baseClass == MultiplicityPart.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.FEATURE_DECLARATION__IS_ORDERED: return SysMLOCPackage.MULTIPLICITY_PART__IS_ORDERED;
+        case SysMLOCPackage.FEATURE_DECLARATION__IS_NONUNIQUE: return SysMLOCPackage.MULTIPLICITY_PART__IS_NONUNIQUE;
+        default: return -1;
+      }
+    }
+    if (baseClass == FeatureSpecializationPart.class)
+    {
+      switch (derivedFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == TypingFeatureTyping.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.TYPING_FEATURE_TYPING__TYPINGS: return SysMLOCPackage.FEATURE_DECLARATION__TYPINGS;
+        default: return -1;
+      }
+    }
+    if (baseClass == SubsettingFeatureChain.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.SUBSETTING_FEATURE_CHAIN__SUBSETTING: return SysMLOCPackage.FEATURE_DECLARATION__SUBSETTING;
+        default: return -1;
+      }
+    }
+    if (baseClass == ReferenceFeatureChain.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.REFERENCE_FEATURE_CHAIN__REFERENCES: return SysMLOCPackage.FEATURE_DECLARATION__REFERENCES;
+        default: return -1;
+      }
+    }
+    if (baseClass == CrossFeatureChain.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.CROSS_FEATURE_CHAIN__CROSSES: return SysMLOCPackage.FEATURE_DECLARATION__CROSSES;
+        default: return -1;
+      }
+    }
+    if (baseClass == RedefinitionFeatureChain.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.REDEFINITION_FEATURE_CHAIN__REDEFINITIONS: return SysMLOCPackage.FEATURE_DECLARATION__REDEFINITIONS;
+        default: return -1;
+      }
+    }
+    if (baseClass == FeatureSpecialization.class)
+    {
+      switch (baseFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    if (baseClass == MultiplicityRange.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTIPLICITY: return SysMLOCPackage.FEATURE_DECLARATION__MULTIPLICITY;
+        default: return -1;
+      }
+    }
+    if (baseClass == MultiplicityPart.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.MULTIPLICITY_PART__IS_ORDERED: return SysMLOCPackage.FEATURE_DECLARATION__IS_ORDERED;
+        case SysMLOCPackage.MULTIPLICITY_PART__IS_NONUNIQUE: return SysMLOCPackage.FEATURE_DECLARATION__IS_NONUNIQUE;
+        default: return -1;
+      }
+    }
+    if (baseClass == FeatureSpecializationPart.class)
+    {
+      switch (baseFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
   }
 
   /**
@@ -170,8 +628,22 @@ public class FeatureDeclarationImpl extends FeatureSpecializationPartImpl implem
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (declaredName: ");
-    result.append(declaredName);
+    result.append(" (typings: ");
+    result.append(typings);
+    result.append(", subsetting: ");
+    result.append(subsetting);
+    result.append(", references: ");
+    result.append(references);
+    result.append(", crosses: ");
+    result.append(crosses);
+    result.append(", redefinitions: ");
+    result.append(redefinitions);
+    result.append(", Multiplicity: ");
+    result.append(multiplicity);
+    result.append(", isOrdered: ");
+    result.append(isOrdered);
+    result.append(", isNonunique: ");
+    result.append(isNonunique);
     result.append(')');
     return result.toString();
   }

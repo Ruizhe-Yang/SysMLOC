@@ -14,6 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.DefaultReferenceUsage#getVisibility <em>Visibility</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.DefaultReferenceUsage#isIsEnd <em>Is End</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.DefaultReferenceUsage#getElements <em>Elements</em>}</li>
  * </ul>
@@ -22,8 +23,33 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface DefaultReferenceUsage extends NonOccurrenceUsageElement, MemberPrefix, isReturnPrefix, RefPrefix, BasicDefinitionPrefix, UsageDeclaration, FeatureDeclaration, FeatureSpecializationPart, FeatureSpecialization, TypingFeatureTyping, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, MultiplicityPart, MultiplicityRange, ValuePart, FeatureValue
+public interface DefaultReferenceUsage extends NonOccurrenceUsageElement, isReturnPrefix, RefPrefix, BasicDefinitionPrefix, UsageDeclaration, FeatureDeclaration, Identification, FeatureSpecializationPart, FeatureSpecialization, TypingFeatureTyping, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, MultiplicityPart, MultiplicityRange, ValuePart, FeatureValue
 {
+  /**
+   * Returns the value of the '<em><b>Visibility</b></em>' attribute.
+   * The literals are from the enumeration {@link dut.control.sysmloc.sysMLOC.VisibilityIndicator}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Visibility</em>' attribute.
+   * @see dut.control.sysmloc.sysMLOC.VisibilityIndicator
+   * @see #setVisibility(VisibilityIndicator)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getDefaultReferenceUsage_Visibility()
+   * @model
+   * @generated
+   */
+  VisibilityIndicator getVisibility();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.DefaultReferenceUsage#getVisibility <em>Visibility</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Visibility</em>' attribute.
+   * @see dut.control.sysmloc.sysMLOC.VisibilityIndicator
+   * @see #getVisibility()
+   * @generated
+   */
+  void setVisibility(VisibilityIndicator value);
+
   /**
    * Returns the value of the '<em><b>Is End</b></em>' attribute.
    * <!-- begin-user-doc -->

@@ -8,14 +8,9 @@ import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
 
@@ -27,34 +22,13 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DefinitionDeclarationImpl#getDeclaredName <em>Declared Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DefinitionDeclarationImpl#getSuperclassifiers <em>Superclassifiers</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class DefinitionDeclarationImpl extends MinimalEObjectImpl.Container implements DefinitionDeclaration
+public class DefinitionDeclarationImpl extends IdentificationImpl implements DefinitionDeclaration
 {
-  /**
-   * The default value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDeclaredName()
-   * @generated
-   * @ordered
-   */
-  protected static final String DECLARED_NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDeclaredName()
-   * @generated
-   * @ordered
-   */
-  protected String declaredName = DECLARED_NAME_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getSuperclassifiers() <em>Superclassifiers</em>}' attribute list.
    * <!-- begin-user-doc -->
@@ -92,31 +66,6 @@ public class DefinitionDeclarationImpl extends MinimalEObjectImpl.Container impl
    * @generated
    */
   @Override
-  public String getDeclaredName()
-  {
-    return declaredName;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setDeclaredName(String newDeclaredName)
-  {
-    String oldDeclaredName = declaredName;
-    declaredName = newDeclaredName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.DEFINITION_DECLARATION__DECLARED_NAME, oldDeclaredName, declaredName));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EList<String> getSuperclassifiers()
   {
     if (superclassifiers == null)
@@ -136,8 +85,6 @@ public class DefinitionDeclarationImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case SysMLOCPackage.DEFINITION_DECLARATION__DECLARED_NAME:
-        return getDeclaredName();
       case SysMLOCPackage.DEFINITION_DECLARATION__SUPERCLASSIFIERS:
         return getSuperclassifiers();
     }
@@ -155,9 +102,6 @@ public class DefinitionDeclarationImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case SysMLOCPackage.DEFINITION_DECLARATION__DECLARED_NAME:
-        setDeclaredName((String)newValue);
-        return;
       case SysMLOCPackage.DEFINITION_DECLARATION__SUPERCLASSIFIERS:
         getSuperclassifiers().clear();
         getSuperclassifiers().addAll((Collection<? extends String>)newValue);
@@ -176,9 +120,6 @@ public class DefinitionDeclarationImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case SysMLOCPackage.DEFINITION_DECLARATION__DECLARED_NAME:
-        setDeclaredName(DECLARED_NAME_EDEFAULT);
-        return;
       case SysMLOCPackage.DEFINITION_DECLARATION__SUPERCLASSIFIERS:
         getSuperclassifiers().clear();
         return;
@@ -196,8 +137,6 @@ public class DefinitionDeclarationImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case SysMLOCPackage.DEFINITION_DECLARATION__DECLARED_NAME:
-        return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
       case SysMLOCPackage.DEFINITION_DECLARATION__SUPERCLASSIFIERS:
         return superclassifiers != null && !superclassifiers.isEmpty();
     }
@@ -215,9 +154,7 @@ public class DefinitionDeclarationImpl extends MinimalEObjectImpl.Container impl
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (declaredName: ");
-    result.append(declaredName);
-    result.append(", superclassifiers: ");
+    result.append(" (superclassifiers: ");
     result.append(superclassifiers);
     result.append(')');
     return result.toString();

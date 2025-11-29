@@ -20,7 +20,7 @@ package dut.control.sysmloc.sysMLOC;
  * @model
  * @generated
  */
-public interface CodeAnnotation extends GeneralBodyElements, AnnotatingBodyElement, ActionNodeBodyElement
+public interface CodeAnnotation extends GeneralBodyElements, AnnotatingBodyElement, ActionNodeBodyElement, MetadataBodyElement, RelationshipBodyElement
 {
   /**
    * Returns the value of the '<em><b>Body</b></em>' attribute.

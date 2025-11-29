@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
-  <packages declaredName="'Time Slice and Snapshot Example'">
+  <elements xsi:type="sysMLOC:Package" declaredName="'Time Slice and Snapshot Example'">
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="Date"/>
     <elements xsi:type="sysMLOC:ItemDefinition" declaredName="Person"/>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle">
@@ -14,7 +14,7 @@
           <typings>Date</typings>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:PortionUsage" isThen="true" isOrdered="true" declaredName="ownership" portionKind="timeslice">
+      <elements xsi:type="sysMLOC:PortionUsage" isThen="true" declaredName="ownership" isOrdered="true" portionKind="timeslice">
         <Multiplicity>0</Multiplicity>
         <Multiplicity>*</Multiplicity>
         <elements xsi:type="sysMLOC:PortionUsage" declaredName="sale" portionKind="snapshot">
@@ -37,5 +37,5 @@
         <valuePart>done</valuePart>
       </elements>
     </elements>
-  </packages>
+  </elements>
 </sysMLOC:Namespace>

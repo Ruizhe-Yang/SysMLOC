@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
-  <packages declaredName="'Opaque Action Example'">
+  <elements xsi:type="sysMLOC:Package" declaredName="'Opaque Action Example'">
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Sensor">
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="ready">
         <typings>ScalarValues::Boolean</typings>
@@ -13,5 +13,5 @@
       </elements>
       <elements xsi:type="sysMLOC:TextualRepresentation" language="&quot;Alf&quot;" body="/* &#xD;&#xA;&#x9;&#x9;&#x9; * for (sensor in sensors) {&#xD;&#xA;&#x9;&#x9;&#x9; *     if (sensor.ready) {&#xD;&#xA;&#x9;&#x9;&#x9; *         Update(sensor);&#xD;&#xA;&#x9;&#x9;&#x9; *     }&#xD;&#xA;&#x9;&#x9;&#x9; * }&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
     </elements>
-  </packages>
+  </elements>
 </sysMLOC:Namespace>

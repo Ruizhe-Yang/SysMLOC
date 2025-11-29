@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
-  <packages declaredName="'Wheel Package'">
+  <elements xsi:type="sysMLOC:Package" declaredName="'Wheel Package'">
     <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9; * Example from the SysML 1.6 spec, subclause 8.4.1 Wheel Hub Assembly.&#xD;&#xA;&#x9; */"/>
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ISQ" isNamespace="true"/>
     <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="pressure">
@@ -149,5 +149,5 @@
         <subsetting>length</subsetting>
       </elements>
     </elements>
-  </packages>
+  </elements>
 </sysMLOC:Namespace>

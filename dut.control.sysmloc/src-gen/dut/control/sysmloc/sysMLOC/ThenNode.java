@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface ThenNode extends ActionNodeElement, MemberPrefix, MultiplicityRange
+public interface ThenNode extends ActionNodeElements, MemberPrefix, MultiplicityRange
 {
   /**
    * Returns the value of the '<em><b>Then Element</b></em>' containment reference list.

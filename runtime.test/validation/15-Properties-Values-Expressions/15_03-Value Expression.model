@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="'15_03-Value Expression'">
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="SI" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="USCustomaryUnits" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle_1">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass">
+        <typings>MassValue</typings>
+        <valuePart>1200 [kg]</valuePart>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="length">
+        <typings>LengthValue</typings>
+        <valuePart>4.82 [m]</valuePart>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="leftFrontWheel">
+        <typings>Wheel</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="rightFrontWheel">
+        <typings>Wheel</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Wheel">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="hubDiameter">
+        <typings>LengthValue</typings>
+        <valuePart>18 ['in']</valuePart>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="width">
+        <typings>LengthValue</typings>
+        <valuePart>245 [mm]</valuePart>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="outerDiameter">
+        <typings>LengthValue</typings>
+        <valuePart>(hubDiameter + 2 * tire.height) [mm]</valuePart>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;         * This binds 'outDiameter' to the result of a computed attribute.&#xA;&#x9;         * There is no need to mark it as &quot;derived&quot;.&#xA;&#x9;         */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="tire">
+        <typings>Tire</typings>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Tire">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="profileDepth" isDefault="true">
+        <typings>LengthValue</typings>
+        <valuePart>6.0 [mm]</valuePart>
+      </elements>
+      <elements xsi:type="sysMLOC:ConstraintUsage" declaredName="hasLegalProfileDepth">
+        <resultExpressionParameter resultExpression="profileDepth >= 3.5 [mm]"/>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="height">
+        <typings>LengthValue</typings>
+        <valuePart>45 [mm]</valuePart>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

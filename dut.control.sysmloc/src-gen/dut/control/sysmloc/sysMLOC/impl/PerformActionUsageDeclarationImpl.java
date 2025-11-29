@@ -5,6 +5,7 @@ package dut.control.sysmloc.sysMLOC.impl;
 
 import dut.control.sysmloc.sysMLOC.FeatureDeclaration;
 import dut.control.sysmloc.sysMLOC.FeatureValue;
+import dut.control.sysmloc.sysMLOC.Identification;
 import dut.control.sysmloc.sysMLOC.PerformActionUsageDeclaration;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 import dut.control.sysmloc.sysMLOC.UsageDeclaration;
@@ -30,6 +31,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PerformActionUsageDeclarationImpl#getDeclaredShortName <em>Declared Short Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PerformActionUsageDeclarationImpl#getDeclaredName <em>Declared Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PerformActionUsageDeclarationImpl#isIsInitial <em>Is Initial</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PerformActionUsageDeclarationImpl#isIsDefault <em>Is Default</em>}</li>
@@ -41,6 +43,26 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  */
 public class PerformActionUsageDeclarationImpl extends FeatureSpecializationPartImpl implements PerformActionUsageDeclaration
 {
+  /**
+   * The default value of the '{@link #getDeclaredShortName() <em>Declared Short Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredShortName()
+   * @generated
+   * @ordered
+   */
+  protected static final String DECLARED_SHORT_NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDeclaredShortName() <em>Declared Short Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredShortName()
+   * @generated
+   * @ordered
+   */
+  protected String declaredShortName = DECLARED_SHORT_NAME_EDEFAULT;
+
   /**
    * The default value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -150,6 +172,31 @@ public class PerformActionUsageDeclarationImpl extends FeatureSpecializationPart
   protected EClass eStaticClass()
   {
     return SysMLOCPackage.eINSTANCE.getPerformActionUsageDeclaration();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getDeclaredShortName()
+  {
+    return declaredShortName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDeclaredShortName(String newDeclaredShortName)
+  {
+    String oldDeclaredShortName = declaredShortName;
+    declaredShortName = newDeclaredShortName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.PERFORM_ACTION_USAGE_DECLARATION__DECLARED_SHORT_NAME, oldDeclaredShortName, declaredShortName));
   }
 
   /**
@@ -277,6 +324,8 @@ public class PerformActionUsageDeclarationImpl extends FeatureSpecializationPart
   {
     switch (featureID)
     {
+      case SysMLOCPackage.PERFORM_ACTION_USAGE_DECLARATION__DECLARED_SHORT_NAME:
+        return getDeclaredShortName();
       case SysMLOCPackage.PERFORM_ACTION_USAGE_DECLARATION__DECLARED_NAME:
         return getDeclaredName();
       case SysMLOCPackage.PERFORM_ACTION_USAGE_DECLARATION__IS_INITIAL:
@@ -302,6 +351,9 @@ public class PerformActionUsageDeclarationImpl extends FeatureSpecializationPart
   {
     switch (featureID)
     {
+      case SysMLOCPackage.PERFORM_ACTION_USAGE_DECLARATION__DECLARED_SHORT_NAME:
+        setDeclaredShortName((String)newValue);
+        return;
       case SysMLOCPackage.PERFORM_ACTION_USAGE_DECLARATION__DECLARED_NAME:
         setDeclaredName((String)newValue);
         return;
@@ -332,6 +384,9 @@ public class PerformActionUsageDeclarationImpl extends FeatureSpecializationPart
   {
     switch (featureID)
     {
+      case SysMLOCPackage.PERFORM_ACTION_USAGE_DECLARATION__DECLARED_SHORT_NAME:
+        setDeclaredShortName(DECLARED_SHORT_NAME_EDEFAULT);
+        return;
       case SysMLOCPackage.PERFORM_ACTION_USAGE_DECLARATION__DECLARED_NAME:
         setDeclaredName(DECLARED_NAME_EDEFAULT);
         return;
@@ -361,6 +416,8 @@ public class PerformActionUsageDeclarationImpl extends FeatureSpecializationPart
   {
     switch (featureID)
     {
+      case SysMLOCPackage.PERFORM_ACTION_USAGE_DECLARATION__DECLARED_SHORT_NAME:
+        return DECLARED_SHORT_NAME_EDEFAULT == null ? declaredShortName != null : !DECLARED_SHORT_NAME_EDEFAULT.equals(declaredShortName);
       case SysMLOCPackage.PERFORM_ACTION_USAGE_DECLARATION__DECLARED_NAME:
         return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
       case SysMLOCPackage.PERFORM_ACTION_USAGE_DECLARATION__IS_INITIAL:
@@ -383,11 +440,19 @@ public class PerformActionUsageDeclarationImpl extends FeatureSpecializationPart
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
   {
+    if (baseClass == Identification.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.PERFORM_ACTION_USAGE_DECLARATION__DECLARED_SHORT_NAME: return SysMLOCPackage.IDENTIFICATION__DECLARED_SHORT_NAME;
+        case SysMLOCPackage.PERFORM_ACTION_USAGE_DECLARATION__DECLARED_NAME: return SysMLOCPackage.IDENTIFICATION__DECLARED_NAME;
+        default: return -1;
+      }
+    }
     if (baseClass == FeatureDeclaration.class)
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.PERFORM_ACTION_USAGE_DECLARATION__DECLARED_NAME: return SysMLOCPackage.FEATURE_DECLARATION__DECLARED_NAME;
         default: return -1;
       }
     }
@@ -426,11 +491,19 @@ public class PerformActionUsageDeclarationImpl extends FeatureSpecializationPart
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
   {
+    if (baseClass == Identification.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.IDENTIFICATION__DECLARED_SHORT_NAME: return SysMLOCPackage.PERFORM_ACTION_USAGE_DECLARATION__DECLARED_SHORT_NAME;
+        case SysMLOCPackage.IDENTIFICATION__DECLARED_NAME: return SysMLOCPackage.PERFORM_ACTION_USAGE_DECLARATION__DECLARED_NAME;
+        default: return -1;
+      }
+    }
     if (baseClass == FeatureDeclaration.class)
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.FEATURE_DECLARATION__DECLARED_NAME: return SysMLOCPackage.PERFORM_ACTION_USAGE_DECLARATION__DECLARED_NAME;
         default: return -1;
       }
     }
@@ -472,7 +545,9 @@ public class PerformActionUsageDeclarationImpl extends FeatureSpecializationPart
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (declaredName: ");
+    result.append(" (declaredShortName: ");
+    result.append(declaredShortName);
+    result.append(", declaredName: ");
     result.append(declaredName);
     result.append(", isInitial: ");
     result.append(isInitial);

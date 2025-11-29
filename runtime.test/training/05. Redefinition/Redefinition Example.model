@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
-  <packages declaredName="'Redefinition Example'">
+  <elements xsi:type="sysMLOC:Package" declaredName="'Redefinition Example'">
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle">
       <elements xsi:type="sysMLOC:PartUsage" declaredName="eng">
         <typings>Engine</typings>
@@ -42,5 +42,5 @@
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Cylinder"/>
-  </packages>
+  </elements>
 </sysMLOC:Namespace>

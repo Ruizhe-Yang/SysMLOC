@@ -1,6 +1,6 @@
 //grammar dut.control.sysmloc.expr.SysEXPR with org.eclipse.xtext.common.Terminals
 //grammar dut.control.sysmloc.SysMLOC hidden(WS, ML_NOTE, SL_NOTE)
-grammar dut.control.sysmloc.SysMLOC hidden(WS)
+grammar dut.control.sysmloc.SysMLOC hidden(WS, ML_NOTE)
 //grammar dut.control.sysmloc.SysMLOC with dut.control.sysmloc.expr.SysEXPR
 
 import "http://www.eclipse.org/emf/2002/Ecore" as Ecore
@@ -9,8 +9,8 @@ import "http://www.eclipse.org/emf/2002/Ecore" as Ecore
 generate sysMLOC "http://www.control.dut/sysmloc/SysMLOC"
  
 Namespace:
-	(intro+=CodeAnnotation)?
-	(packages+=Package)*
+	(elements+=GeneralBodyElements)*
+	
 ;
 
 // TODO --------------------------------- Body Level ---------------------------------//
@@ -21,12 +21,12 @@ GeneralBodyElements:
     | UsageElement
     | AliasElement
     | CodeAnnotation
+    | ReferenceVariantUsage
 ;
 
 PackageBodyElement:
-    Package
-    | GeneralBodyElements
-//  | ElementFilterMember
+    GeneralBodyElements
+  | ElementFilterElement
 ;
 
 DefinitionBodyElement:
@@ -46,25 +46,6 @@ EnumerationBodyElement:
 	| EnumeratedValue
 ;
 
-ActionBodyElement:
-	GeneralBodyElements
-//	| VariantUsageMember
-	| ActionNodeElement
-;
-
-CalculationBodyElement:
-	ActionBodyElement
-;
-
-StateBodyElement:
-	GeneralBodyElements
-//	| VariantUsageMember
-	| TransitionUsage
-	| EntryAction
-	| DoActionNode
-	| ExitActionNode
-;
-
 AnnotatingBodyElement:
 	AnnotatingElement
 	| CodeAnnotation
@@ -75,6 +56,59 @@ ActionNodeBodyElement:
 	| CodeAnnotation
 ;
 
+ActionBodyElement:
+	GeneralBodyElements
+	| ActionNodeElements
+;
+
+CalculationBodyElement:
+	ActionBodyElement
+;
+
+StateBodyElement:
+	GeneralBodyElements
+	| StateNodeElements
+;
+
+RequirementBodyElement:
+	GeneralBodyElements
+	| RequirementNodeElements
+;
+
+CaseBodyElement:
+	CalculationBodyElement
+	| SubjectUsage
+	| ActorUsage
+	| ObjectiveRequirementUsage
+;
+
+MetadataBodyElement:
+	DefinitionElement
+//	| MetadataBodyUsage
+	| AliasElement
+	| ImportElement
+	| CodeAnnotation
+;
+
+ViewDefinitionBodyElement:
+	DefinitionBodyElement
+	| ElementFilterElement
+	| ViewRenderingUsage
+;
+
+ViewBodyElement:
+	DefinitionBodyElement
+	| ElementFilterElement
+	| ExposeElement
+	| ViewRenderingUsage
+;
+
+RelationshipBodyElement:
+	AnnotatingElement
+	| CodeAnnotation
+;
+
+
 // TODO --------------------------------- Abstract Level ---------------------------------//
 // Annotating
 
@@ -82,13 +116,16 @@ AnnotatingElement:
 	Comment
 	| Documentation
 	| TextualRepresentation
-//	| MetadataUsage
+	| MetadataUsage
 ;
 
 // Definitions
 
 DefinitionElement:
-	AttributeDefinition
+	Package
+	| LibraryPackage
+	| Dependency
+	| AttributeDefinition
 	| EnumerationDefinition
 	| OccurrenceDefinition
 	| IndividualDefinition
@@ -98,21 +135,21 @@ DefinitionElement:
 	| ConnectionDefinition
 	| FlowConnectionDefinition
 	| InterfaceDefinition
-//	| AllocationDefinition
+	| AllocationDefinition
 	| PortDefinition
 	| ActionDefinition
 	| CalculationDefinition
 	| StateDefinition
 	| ConstraintDefinition
-//	| RequirementDefinition
-//	| ConcernDefinition
-//	| CaseDefinition
-//	| AnalysisCaseDefinition
-//	| VerificationCaseDefinition
-//	| UseCaseDefinition
-//	| ViewDefinition
-//	| ViewpointDefinition
-//	| RenderingDefinition
+	| RequirementDefinition
+	| ConcernDefinition
+	| CaseDefinition
+	| AnalysisCaseDefinition
+	| VerificationCaseDefinition
+	| UseCaseDefinition
+	| ViewDefinition
+	| ViewpointDefinition
+	| RenderingDefinition
 //	| ExtendedDefinition
 ;
 
@@ -144,12 +181,12 @@ StructureUsageElement:
 	| EventOccurrenceUsage
 	| ItemUsage
 	| PartUsage
-//	| ViewUsage
-//	| RenderingUsage
+	| ViewUsage
+	| RenderingUsage
 	| PortUsage
 	| ConnectionUsage
 	| InterfaceUsage
-//	| AllocationUsage
+	| AllocationUsage
 	| Message
 	| FlowConnectionUsage
 	| SuccessionFlowConnectionUsage
@@ -160,23 +197,22 @@ BehaviorUsageElement:
 	| CalculationUsage
 	| StateUsage
 	| ConstraintUsage
-//	| RequirementUsage
-//	| ConcernUsage
-//	| CaseUsage
-//	| AnalysisCaseUsage
-//	| VerificationCaseUsage
-//	| UseCaseUsage
-//	| ViewpointUsage
+	| RequirementUsage
+	| ConcernUsage
+	| CaseUsage
+	| AnalysisCaseUsage
+	| VerificationCaseUsage
+	| UseCaseUsage
+	| ViewpointUsage
 	| PerformActionUsage
 	| ExhibitStateUsage
-//	| IncludeUseCaseUsage
+	| IncludeUseCaseUsage
 	| AssertConstraintUsage
-//	| SatisfyRequirementUsage
+	| SatisfyRequirementUsage
 ;
 
-ActionNodeElement:
+ActionNodeElements:
 	InitialNode
-	// Warning
 	| SendNode
 	| AcceptNode
 	| AssignmentNode 
@@ -189,20 +225,47 @@ ActionNodeElement:
 	| ElseNode 
 ;
 
+StateNodeElements:
+	TransitionUsage
+	| EntryActionNode
+	| DoActionNode
+	| ExitActionNode
+;
+
+RequirementNodeElements:
+	SubjectUsage
+	| RequirementConstraintUsage
+	| FramedConcernUsage
+	| RequirementVerificationUsage
+	| ActorUsage
+	| StakeholderUsage
+;
+
 // TODO --------------------------------- Instance Level ---------------------------------//
+
 Package:
+    PrefixMetadata*
     'package' 
     declaredName=QualifiedName 
-    '{' (elements+=PackageBodyElement)* '}'
+    ( ';' | '{' (elements+=PackageBodyElement)* '}')
 ;
 
 ImportElement:
 	visibility=VisibilityIndicator 
     'import' (isImportAll?='all')? 
-    declaredName=QualifiedName (isNamespace?='::')? ( '*' | isRecursive ?= '**' )? 
+    declaredName=QualifiedName (isNamespace?='::' '*')? ( '::' isRecursive ?= '**' )? 
+//	 declaredName=QualifiedName (isNamespace?='::' )? ( '*' | isRecursive ?= '**' )?  
     ';'
 ;
-    
+
+ExposeElement:
+	'expose'
+	declaredName=QualifiedName (isNamespace?='::' '*')? ( '::' isRecursive ?= '**' )?  
+//	 declaredName=QualifiedName (isNamespace?='::' )? ( '*' | isRecursive ?= '**' )?  
+	( '[' filterPackageExpression+=Expression ']')*
+	(';' | '{' ( elements+=RelationshipBodyElement )* '}')
+;
+
 CodeAnnotation:
     body=SL_NOTE | body=ML_NOTE
 ;
@@ -228,14 +291,45 @@ TextualRepresentation:
     body = REGULAR_COMMENT
 ;
 
+MetadataUsage:
+	UsageExtensionKeyword*
+	('metadata' | '@')
+	( Identification? (':' | 'defined' 'by'))?
+	metadataTyping=QualifiedName
+	( 'about' annotatedElement+=QualifiedName ( ',' annotatedElement+=QualifiedName)* )?
+	( ';' | '{' (elements+=MetadataBodyElement)* '}' )
+;
+
+MetadataBodyUsage:
+	'ref'? ( ':>>' | 'redefines' )?
+	redefinition = FeatureChainName
+	FeatureSpecializationPart? ValuePart?
+	( ';' | '{' (elements+=MetadataBodyElement)* '}' )
+;
+
+ElementFilterElement:
+	MemberPrefix
+	'filter'
+	filterExpression=Expression
+	';'
+;
+
 DefaultReferenceUsage:
-    MemberPrefix
+    ( visibility = VisibilityIndicator )?
     isReturnPrefix
     ( isEnd ?= 'end' )?
     RefPrefix
     UsageDeclaration
     ValuePart?
     ( ';' | '{' (elements+=UsageBodyElement)* '}' )
+;
+
+ReferenceVariantUsage:
+	( visibility = VisibilityIndicator )?
+	'variant'
+	ReferenceSubsetting
+	FeatureSpecialization*
+	( ';' | '{' (elements+=UsageBodyElement)* '}' )
 ;
 
 ReferenceUsage:
@@ -245,6 +339,25 @@ ReferenceUsage:
     'ref'
     Usage
     ( ';' | '{' (elements+=UsageBodyElement)* '}' )
+;
+
+LibraryPackage:
+	( isStandard ?= 'standard' )? 
+	isLibrary?='library'
+	PrefixMetadata*
+	'package'
+	Identification?
+	( ';' | '{' (elements+=PackageBodyElement)* '}')
+;
+
+Dependency:
+	PrefixMetadata*
+	'dependency'
+	( Identification? 'from' )?
+	client+=QualifiedName ( ',' client+=QualifiedName )*
+	'to'
+	supplier+=QualifiedName ( ',' supplier+=QualifiedName )*
+	(';' | '{' ( elements+=AnnotatingElement )* '}')
 ;
 
 AttributeDefinition:
@@ -401,7 +514,7 @@ InterfaceUsage:
 	OccurrenceUsagePrefix
 	'interface' 
 	(UsageDeclaration? ('connect' ConnectorPart )? | ConnectorPart) 
-	(';' | '{' (elements+=InterfaceBodyElement)* '}')
+	( ';' | '{' (elements+=InterfaceBodyElement)* '}')
 ;
 
 Message:
@@ -431,8 +544,6 @@ FlowConnectionUsage:
     ( ';' | '{' (elements+=UsageBodyElement)* '}' )
 ;
 
-
-
 SuccessionFlowConnectionUsage:
 	GeneralUsagePrefix
 	OccurrenceUsagePrefix
@@ -441,6 +552,22 @@ SuccessionFlowConnectionUsage:
 	( 'of' ItemFeatureParameterPart )?
     ( 'from'? FlowEnd += FeatureChainName 'to' FlowEnd += FeatureChainName )?
     ( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
+;
+
+AllocationDefinition:
+	MemberPrefix
+	OccurrenceDefinitionPrefix
+	'allocation' 'def'
+	DefinitionDeclaration
+	( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
+;
+
+AllocationUsage:
+	GeneralUsagePrefix
+	OccurrenceUsagePrefix
+	( 'allocation' UsageDeclaration? ('allocate' ConnectorPart)?
+	| 'allocate' ConnectorPart)
+	( ';' | '{' (elements+=UsageBodyElement)* '}' )
 ;
 
 ActionDefinition:
@@ -517,9 +644,154 @@ TransitionUsage:
 	( ';' | '{' (elements+=ActionBodyElement)* '}' )
 ;
 
+RequirementDefinition:
+	MemberPrefix
+	OccurrenceDefinitionPrefix
+	'requirement' 'def'
+	DefinitionDeclaration
+	(';' | '{' => (elements+=RequirementBodyElement)* '}')
+;
+
+RequirementUsage:
+	GeneralUsagePrefix
+	OccurrenceUsagePrefix
+	'requirement'
+	ConstraintUsageDeclaration
+	(';' | '{' => (elements+=RequirementBodyElement)* '}')
+;
+
+ConcernDefinition:
+	MemberPrefix
+	OccurrenceDefinitionPrefix
+	'concern' 'def'
+	DefinitionDeclaration
+	(';' | '{' => (elements+=RequirementBodyElement)* '}')
+;
+
+ConcernUsage:
+	GeneralUsagePrefix
+	OccurrenceUsagePrefix
+	'concern'
+	ConstraintUsageDeclaration
+	(';' | '{' => (elements+=RequirementBodyElement)* '}')
+;
+
+CaseDefinition:
+	MemberPrefix
+	OccurrenceDefinitionPrefix
+	'case' 'def'
+	DefinitionDeclaration
+	(';' | '{' => (elements+=CaseBodyElement)* (resultExpressionParameter+=ResultExpression)? '}')
+;
+
+CaseUsage:
+	GeneralUsagePrefix
+	OccurrenceUsagePrefix
+	'case'
+	ActionUsageDeclaration
+	(';' | '{' => (elements+=CaseBodyElement)* (resultExpressionParameter+=ResultExpression)? '}')
+;
+
+AnalysisCaseDefinition:
+	MemberPrefix
+	OccurrenceDefinitionPrefix 
+	'analysis' 'def' 
+	DefinitionDeclaration
+	(';' | '{' => (elements+=CaseBodyElement)* (resultExpressionParameter+=ResultExpression)? '}')
+;
+
+AnalysisCaseUsage:
+	GeneralUsagePrefix
+	OccurrenceUsagePrefix
+	'analysis'
+	ActionUsageDeclaration
+	(';' | '{' => (elements+=CaseBodyElement)* (resultExpressionParameter+=ResultExpression)? '}')
+;
+
+VerificationCaseDefinition:
+	MemberPrefix
+	OccurrenceDefinitionPrefix
+	'verification' 'def'
+	DefinitionDeclaration
+	(';' | '{' => (elements+=CaseBodyElement)* (resultExpressionParameter+=ResultExpression)? '}')
+;
+
+VerificationCaseUsage:
+	GeneralUsagePrefix
+	OccurrenceUsagePrefix
+	'verification'
+	ActionUsageDeclaration
+	(';' | '{' => (elements+=CaseBodyElement)* (resultExpressionParameter+=ResultExpression)? '}')
+;
+
+UseCaseDefinition:
+	MemberPrefix
+	OccurrenceDefinitionPrefix
+	'use' 'case' 'def'
+	DefinitionDeclaration
+	(';' | '{' => (elements+=CaseBodyElement)* (resultExpressionParameter+=ResultExpression)? '}')
+;
+
+UseCaseUsage:
+	GeneralUsagePrefix
+	OccurrenceUsagePrefix
+	'use' 'case'
+	ActionUsageDeclaration
+	(';' | '{' => (elements+=CaseBodyElement)* (resultExpressionParameter+=ResultExpression)? '}')
+;
+
+ViewDefinition:
+	MemberPrefix
+	OccurrenceDefinitionPrefix
+	'view' 'def'
+	DefinitionDeclaration
+	( ';' | '{' (elements+=ViewDefinitionBodyElement)* '}' )
+;
+
+ViewUsage:
+	GeneralUsagePrefix
+	OccurrenceUsagePrefix
+	'view'
+	UsageDeclaration? ValuePart?
+	(';' | '{' elements+=ViewBodyElement* '}')
+;
+
+ViewpointDefinition:
+	MemberPrefix
+	OccurrenceDefinitionPrefix
+	'viewpoint' 'def'
+	DefinitionDeclaration
+	(';' | '{' => (elements+=RequirementBodyElement)* '}')
+;
+
+ViewpointUsage:
+	GeneralUsagePrefix
+	OccurrenceUsagePrefix
+	'viewpoint'
+	ConstraintUsageDeclaration
+	(';' | '{' => (elements+=RequirementBodyElement)* '}')
+;
+
+RenderingDefinition:
+	MemberPrefix
+	OccurrenceDefinitionPrefix
+	'rendering' 'def'
+	DefinitionDeclaration
+	( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
+;
+
+RenderingUsage:
+	GeneralUsagePrefix
+	OccurrenceUsagePrefix
+	'rendering'
+	Usage
+	( ';' | '{' (elements+=UsageBodyElement)* '}' )
+;
+
 PerformActionUsage:
 	GeneralUsagePrefix
-	OccurrenceUsagePrefix 'perform' 
+	OccurrenceUsagePrefix 
+	'perform' 
 	( ReferenceSubsetting FeatureSpecializationPart? | 'action' UsageDeclaration? )
     ValuePart?
 	( ';' | '{' (elements+=ActionBodyElement)* '}' )
@@ -527,10 +799,20 @@ PerformActionUsage:
 
 ExhibitStateUsage:
 	GeneralUsagePrefix
-	OccurrenceUsagePrefix 'exhibit'
+	OccurrenceUsagePrefix 
+	'exhibit'
 	( ReferenceSubsetting FeatureSpecializationPart? | 'state' UsageDeclaration? )
     ValuePart?
 	(';' | ( isParallel ?= 'parallel' )? '{' (elements+=StateBodyElement)* '}')
+;
+
+IncludeUseCaseUsage:
+	GeneralUsagePrefix
+	OccurrenceUsagePrefix 'include' 
+   	( ReferenceSubsetting FeatureSpecializationPart?
+   	| 'use' 'case' UsageDeclaration? )
+    ValuePart?
+	(';' | '{' => (elements+=CaseBodyElement)* (resultExpressionParameter+=ResultExpression)? '}')
 ;
 
 AssertConstraintUsage:
@@ -542,9 +824,19 @@ AssertConstraintUsage:
 	(';' | '{' => ( elements+=CalculationBodyElement )* (resultExpressionParameter+=ResultExpression)? '}')  
 ;
 
-ResultExpression:
-	MemberPrefix resultExpression=Expression
+SatisfyRequirementUsage:
+	GeneralUsagePrefix
+	OccurrenceUsagePrefix
+	'assert'? ( isNegated ?= 'not' )? 
+	'satisfy' 
+	( ReferenceSubsetting FeatureSpecializationPart?
+	| 'requirement' UsageDeclaration? 
+	)
+	ValuePart?
+	( 'by' satisfactionParameter=FeatureChainName )?
+	(';' | '{' => (elements+=RequirementBodyElement)* '}')
 ;
+
 
 AliasElement:
 	MemberPrefix 'alias' ( '<' memberShortName = Name '>' )? ( memberName = Name )? 
@@ -661,7 +953,7 @@ ElseNode: // DefaultTransitionSuccession and IfElse
 	( ';' | '{' (elements+=ActionBodyElement)* '}' )
 ;
 
-EntryAction:
+EntryActionNode:
 	MemberPrefix
 	'entry'
 	PerformedActionParameterPart?
@@ -683,7 +975,74 @@ ExitActionNode:
 	( ';' | '{' (elements+=ActionBodyElement)* '}' )
 ;
 
+SubjectUsage:
+	MemberPrefix
+	'subject'
+	UsageExtensionKeyword*
+	Usage
+	( ';' | '{' (elements+=UsageBodyElement)* '}' )
+;
+
+RequirementConstraintUsage:
+	MemberPrefix
+	kind = RequirementConstraintKind
+	( ReferenceSubsetting FeatureSpecialization*
+	| ( UsageExtensionKeyword* 'constraint' | UsageExtensionKeyword+ ) ConstraintUsageDeclaration)
+	(';' | '{' => ( elements+=CalculationBodyElement )* (resultExpressionParameter+=ResultExpression)? '}')  
+;
+
+FramedConcernUsage:
+	MemberPrefix
+	'frame'
+	( ReferenceSubsetting FeatureSpecialization* (';' | '{' => (elements+=RequirementBodyElement)* '}')
+	| ( UsageExtensionKeyword* 'concern' | UsageExtensionKeyword+ ) ConstraintUsageDeclaration 
+		(';' | '{' => ( elements+=CalculationBodyElement )* (resultExpressionParameter+=ResultExpression)? '}') )
+;
+
+RequirementVerificationUsage:
+	MemberPrefix 
+	'verify'
+	( ReferenceSubsetting FeatureSpecialization* (';' | '{' => (elements+=RequirementBodyElement)* '}')
+	| ( UsageExtensionKeyword* 'requirement' | UsageExtensionKeyword+ ) ConstraintUsageDeclaration 
+		(';' | '{' => ( elements+=CalculationBodyElement )* (resultExpressionParameter+=ResultExpression)? '}') )
+;
+
+ActorUsage:
+	MemberPrefix
+	'actor' 
+	UsageExtensionKeyword* 
+	Usage
+	( ';' | '{' (elements+=UsageBodyElement)* '}' )
+;
+
+StakeholderUsage:
+	MemberPrefix
+	'stakeholder'
+	UsageExtensionKeyword* 
+	Usage
+	( ';' | '{' (elements+=UsageBodyElement)* '}' )
+;
+
+ObjectiveRequirementUsage:
+	MemberPrefix
+	'objective'
+	UsageExtensionKeyword*
+	ConstraintUsageDeclaration
+	(';' | '{' => (elements+=RequirementBodyElement)* '}')
+;
+
+ViewRenderingUsage:
+	MemberPrefix 'render'
+	( ReferenceSubsetting FeatureSpecialization* 
+	| ( UsageExtensionKeyword* 'rendering' | UsageExtensionKeyword+ ) Usage)
+	( ';' | '{' (elements+=UsageBodyElement)* '}' )
+;
+
 // TODO --------------------------------- Secondary Instance Level ---------------------------------//
+
+ResultExpression:
+	MemberPrefix resultExpression=Expression
+;
 
 ActionParameterEnd:
 	UsageDeclaration
@@ -719,17 +1078,22 @@ IfSuccessionAsUsage:
 	UsageDeclaration
 ;
 
-TargetSuccessionElement:
-	MultiplicityRange
-;
-
 // TODO --------------------------------- Fragment Level ---------------------------------//
+
 fragment GeneralUsagePrefix:
 	EmptySuccessionPrefix MemberPrefix isReturnPrefix
 ;
 
+fragment PrefixMetadata:
+	'#' prefixMetadataExtension += QualifiedName
+;
+
 fragment UsageExtensionKeyword:
-	'#' UsageExtension += QualifiedName
+	PrefixMetadata
+;
+
+fragment DefinitionExtensionKeyword:
+	PrefixMetadata
 ;
 
 fragment EmptySuccessionPrefix:
@@ -747,6 +1111,7 @@ fragment ValuePart:
 
 fragment MemberPrefix:
 	( visibility = VisibilityIndicator )?
+	( isVariant ?= 'variant')?
 ;
 
 fragment isReturnPrefix:
@@ -755,7 +1120,7 @@ fragment isReturnPrefix:
 
 fragment DefinitionPrefix:
 	BasicDefinitionPrefix? 
-	//DefinitionExtensionKeyword*
+	DefinitionExtensionKeyword*
 ;
 
 fragment OccurrenceDefinitionPrefix:
@@ -810,7 +1175,7 @@ fragment ConnectorPart:
 ;
 
 fragment DefinitionDeclaration:
-	(declaredName = Name)? ((':'|':>'|'specializes') superclassifiers+=FeatureChainName (',' superclassifiers+=FeatureChainName)*)?
+	Identification? ((':'|':>'|'specializes') superclassifiers+=FeatureChainName (',' superclassifiers+=FeatureChainName)*)?
 ;
 
 fragment ActionUsageDeclaration:
@@ -842,7 +1207,7 @@ fragment FeatureValue:
 ;
 
 fragment FeatureDeclaration:
-	  declaredName = Name FeatureSpecializationPart?
+	  Identification FeatureSpecializationPart?
 	| FeatureSpecializationPart
 ;
 
@@ -1005,6 +1370,10 @@ enum CommonNodeKind:
 	merge='merge' | decide = 'decide' | join = 'join' | fork = 'fork'
 ;
 
+enum RequirementConstraintKind:
+	assumption = 'assume' | requirement = 'require'
+;
+
 // TODO --------------------------------- String Level ---------------------------------//
 
 /* NAMES */
@@ -1042,7 +1411,7 @@ FeatureTypingName:
 //	OPERATOR* ExpressionName (OPERATOR ExpressionName?)* | '(' SequenceExpression ')' | '(' ')'
 //;
 Expression:
-	OwnedExpression
+	SL_NOTE? OwnedExpression SL_NOTE?
 ;
 
 OwnedExpression:
@@ -1138,7 +1507,7 @@ PrimaryExpression:
 ;
 
 BaseExpression:
-	  NullExpression
+	NullExpression
 	| LiteralExpression 
 	| FeatureReferenceExpression 
 	| MetadataAccessExpression

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
-  <packages declaredName="'State Actions'">
+  <elements xsi:type="sysMLOC:Package" declaredName="'State Actions'">
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="VehicleStartSignal"/>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="VehicleOnSignal"/>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="VehicleOffSignal"/>
@@ -20,7 +20,7 @@
       <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="operatingVehicle">
         <typings>Vehicle</typings>
       </elements>
-      <elements xsi:type="sysMLOC:EntryAction"/>
+      <elements xsi:type="sysMLOC:EntryActionNode"/>
       <elements xsi:type="sysMLOC:TransitionUsage">
         <transitionSuccessionElement refElement="off"/>
       </elements>
@@ -35,7 +35,7 @@
         <transitionSuccessionElement refElement="on"/>
       </elements>
       <elements xsi:type="sysMLOC:StateUsage" declaredName="on">
-        <elements xsi:type="sysMLOC:EntryAction">
+        <elements xsi:type="sysMLOC:EntryActionNode">
           <performedActionParameterPart xsi:type="sysMLOC:PerformActionUsage" referencedFeature="performSelfTest"/>
           <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="vehicle">
             <valuePart>operatingVehicle</valuePart>
@@ -55,5 +55,5 @@
         <transitionSuccessionElement refElement="off"/>
       </elements>
     </elements>
-  </packages>
+  </elements>
 </sysMLOC:Namespace>

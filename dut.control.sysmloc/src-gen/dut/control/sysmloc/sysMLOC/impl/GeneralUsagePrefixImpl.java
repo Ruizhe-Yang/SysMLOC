@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.GeneralUsagePrefixImpl#getVisibility <em>Visibility</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.GeneralUsagePrefixImpl#isIsVariant <em>Is Variant</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.GeneralUsagePrefixImpl#isIsReturn <em>Is Return</em>}</li>
  * </ul>
  *
@@ -50,6 +51,26 @@ public class GeneralUsagePrefixImpl extends EmptySuccessionPrefixImpl implements
    * @ordered
    */
   protected VisibilityIndicator visibility = VISIBILITY_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsVariant() <em>Is Variant</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsVariant()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_VARIANT_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsVariant() <em>Is Variant</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsVariant()
+   * @generated
+   * @ordered
+   */
+  protected boolean isVariant = IS_VARIANT_EDEFAULT;
 
   /**
    * The default value of the '{@link #isIsReturn() <em>Is Return</em>}' attribute.
@@ -123,6 +144,31 @@ public class GeneralUsagePrefixImpl extends EmptySuccessionPrefixImpl implements
    * @generated
    */
   @Override
+  public boolean isIsVariant()
+  {
+    return isVariant;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsVariant(boolean newIsVariant)
+  {
+    boolean oldIsVariant = isVariant;
+    isVariant = newIsVariant;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.GENERAL_USAGE_PREFIX__IS_VARIANT, oldIsVariant, isVariant));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public boolean isIsReturn()
   {
     return isReturn;
@@ -154,6 +200,8 @@ public class GeneralUsagePrefixImpl extends EmptySuccessionPrefixImpl implements
     {
       case SysMLOCPackage.GENERAL_USAGE_PREFIX__VISIBILITY:
         return getVisibility();
+      case SysMLOCPackage.GENERAL_USAGE_PREFIX__IS_VARIANT:
+        return isIsVariant();
       case SysMLOCPackage.GENERAL_USAGE_PREFIX__IS_RETURN:
         return isIsReturn();
     }
@@ -172,6 +220,9 @@ public class GeneralUsagePrefixImpl extends EmptySuccessionPrefixImpl implements
     {
       case SysMLOCPackage.GENERAL_USAGE_PREFIX__VISIBILITY:
         setVisibility((VisibilityIndicator)newValue);
+        return;
+      case SysMLOCPackage.GENERAL_USAGE_PREFIX__IS_VARIANT:
+        setIsVariant((Boolean)newValue);
         return;
       case SysMLOCPackage.GENERAL_USAGE_PREFIX__IS_RETURN:
         setIsReturn((Boolean)newValue);
@@ -193,6 +244,9 @@ public class GeneralUsagePrefixImpl extends EmptySuccessionPrefixImpl implements
       case SysMLOCPackage.GENERAL_USAGE_PREFIX__VISIBILITY:
         setVisibility(VISIBILITY_EDEFAULT);
         return;
+      case SysMLOCPackage.GENERAL_USAGE_PREFIX__IS_VARIANT:
+        setIsVariant(IS_VARIANT_EDEFAULT);
+        return;
       case SysMLOCPackage.GENERAL_USAGE_PREFIX__IS_RETURN:
         setIsReturn(IS_RETURN_EDEFAULT);
         return;
@@ -212,6 +266,8 @@ public class GeneralUsagePrefixImpl extends EmptySuccessionPrefixImpl implements
     {
       case SysMLOCPackage.GENERAL_USAGE_PREFIX__VISIBILITY:
         return visibility != VISIBILITY_EDEFAULT;
+      case SysMLOCPackage.GENERAL_USAGE_PREFIX__IS_VARIANT:
+        return isVariant != IS_VARIANT_EDEFAULT;
       case SysMLOCPackage.GENERAL_USAGE_PREFIX__IS_RETURN:
         return isReturn != IS_RETURN_EDEFAULT;
     }
@@ -231,6 +287,7 @@ public class GeneralUsagePrefixImpl extends EmptySuccessionPrefixImpl implements
       switch (derivedFeatureID)
       {
         case SysMLOCPackage.GENERAL_USAGE_PREFIX__VISIBILITY: return SysMLOCPackage.MEMBER_PREFIX__VISIBILITY;
+        case SysMLOCPackage.GENERAL_USAGE_PREFIX__IS_VARIANT: return SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT;
         default: return -1;
       }
     }
@@ -258,6 +315,7 @@ public class GeneralUsagePrefixImpl extends EmptySuccessionPrefixImpl implements
       switch (baseFeatureID)
       {
         case SysMLOCPackage.MEMBER_PREFIX__VISIBILITY: return SysMLOCPackage.GENERAL_USAGE_PREFIX__VISIBILITY;
+        case SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT: return SysMLOCPackage.GENERAL_USAGE_PREFIX__IS_VARIANT;
         default: return -1;
       }
     }
@@ -285,6 +343,8 @@ public class GeneralUsagePrefixImpl extends EmptySuccessionPrefixImpl implements
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (visibility: ");
     result.append(visibility);
+    result.append(", isVariant: ");
+    result.append(isVariant);
     result.append(", isReturn: ");
     result.append(isReturn);
     result.append(')');

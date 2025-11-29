@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="'15_04-Logical Expressions'">
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Engine"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="'4CylEngine'">
+      <superclassifiers>Engine</superclassifiers>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="'6CylEngine'">
+      <superclassifiers>Engine</superclassifiers>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Transmission"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="ManualTransmission">
+      <superclassifiers>Transmission</superclassifiers>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="AutomaticTransmission">
+      <superclassifiers>Transmission</superclassifiers>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="isHighPerformance">
+        <typings>Boolean</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="engine">
+        <typings>Engine</typings>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="transmission">
+        <typings>Transmission</typings>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+      <elements xsi:type="sysMLOC:AssertConstraintUsage">
+        <resultExpressionParameter resultExpression="if isHighPerformance? engine istype '6CylEngine' else engine istype '4CylEngine'"/>
+      </elements>
+      <elements xsi:type="sysMLOC:AssertConstraintUsage">
+        <resultExpressionParameter resultExpression="(engine istype '4CylEngine' and transmission istype ManualTransmission ) xor (engine istype '6CylEngine' and transmission istype AutomaticTransmission )"/>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

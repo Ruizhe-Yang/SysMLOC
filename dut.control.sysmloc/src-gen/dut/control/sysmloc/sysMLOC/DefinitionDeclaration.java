@@ -5,8 +5,6 @@ package dut.control.sysmloc.sysMLOC;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Definition Declaration</b></em>'.
@@ -16,7 +14,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.DefinitionDeclaration#getDeclaredName <em>Declared Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.DefinitionDeclaration#getSuperclassifiers <em>Superclassifiers</em>}</li>
  * </ul>
  *
@@ -24,30 +21,8 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface DefinitionDeclaration extends EObject
+public interface DefinitionDeclaration extends Identification
 {
-  /**
-   * Returns the value of the '<em><b>Declared Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Declared Name</em>' attribute.
-   * @see #setDeclaredName(String)
-   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getDefinitionDeclaration_DeclaredName()
-   * @model
-   * @generated
-   */
-  String getDeclaredName();
-
-  /**
-   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.DefinitionDeclaration#getDeclaredName <em>Declared Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Declared Name</em>' attribute.
-   * @see #getDeclaredName()
-   * @generated
-   */
-  void setDeclaredName(String value);
-
   /**
    * Returns the value of the '<em><b>Superclassifiers</b></em>' attribute list.
    * The list contents are of type {@link java.lang.String}.

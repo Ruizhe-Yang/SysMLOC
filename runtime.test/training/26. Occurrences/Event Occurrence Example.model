@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
-  <packages declaredName="'Event Occurrence Example'">
+  <elements xsi:type="sysMLOC:Package" declaredName="'Event Occurrence Example'">
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Driver"/>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="CruiseController"/>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Speedometer"/>
@@ -27,5 +27,5 @@
         <elements xsi:type="sysMLOC:EventOccurrenceUsage" declaredName="fuelCommandReceived"/>
       </elements>
     </elements>
-  </packages>
+  </elements>
 </sysMLOC:Namespace>

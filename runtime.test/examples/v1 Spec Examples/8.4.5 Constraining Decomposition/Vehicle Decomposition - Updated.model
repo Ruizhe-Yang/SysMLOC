@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
-  <packages declaredName="'Vehicle Decomposition - Updated'">
+  <elements xsi:type="sysMLOC:Package" declaredName="'Vehicle Decomposition - Updated'">
     <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9; * Example from the SysML 1.6 spec, subclause 8.4.5 Constraining Decomposition,&#xD;&#xA;&#x9; * updated for usage-focused approach.&#xD;&#xA;&#x9; */"/>
     <elements xsi:type="sysMLOC:CodeAnnotation" body="// Blocks&#xD;&#xA;"/>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle"/>
@@ -104,5 +104,5 @@
         </elements>
       </elements>
     </elements>
-  </packages>
+  </elements>
 </sysMLOC:Namespace>

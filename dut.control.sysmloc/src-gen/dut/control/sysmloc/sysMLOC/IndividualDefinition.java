@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface IndividualDefinition extends DefinitionElement, MemberPrefix, BasicDefinitionPrefix, UsageExtensionKeyword, DefinitionDeclaration
+public interface IndividualDefinition extends DefinitionElement, MemberPrefix, BasicDefinitionPrefix, UsageExtensionKeyword, PrefixMetadata, DefinitionDeclaration, Identification
 {
   /**
    * Returns the value of the '<em><b>Is Individual</b></em>' attribute.

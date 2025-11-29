@@ -3,6 +3,7 @@
  */
 package dut.control.sysmloc.sysMLOC.impl;
 
+import dut.control.sysmloc.sysMLOC.PrefixMetadata;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 import dut.control.sysmloc.sysMLOC.UsageExtensionKeyword;
 import dut.control.sysmloc.sysMLOC.UsagePrefix;
@@ -23,7 +24,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.UsagePrefixImpl#getUsageExtension <em>Usage Extension</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.UsagePrefixImpl#getPrefixMetadataExtension <em>Prefix Metadata Extension</em>}</li>
  * </ul>
  *
  * @generated
@@ -31,14 +32,14 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
 public class UsagePrefixImpl extends UnextendedUsagePrefixImpl implements UsagePrefix
 {
   /**
-   * The cached value of the '{@link #getUsageExtension() <em>Usage Extension</em>}' attribute list.
+   * The cached value of the '{@link #getPrefixMetadataExtension() <em>Prefix Metadata Extension</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getUsageExtension()
+   * @see #getPrefixMetadataExtension()
    * @generated
    * @ordered
    */
-  protected EList<String> usageExtension;
+  protected EList<String> prefixMetadataExtension;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,13 +68,13 @@ public class UsagePrefixImpl extends UnextendedUsagePrefixImpl implements UsageP
    * @generated
    */
   @Override
-  public EList<String> getUsageExtension()
+  public EList<String> getPrefixMetadataExtension()
   {
-    if (usageExtension == null)
+    if (prefixMetadataExtension == null)
     {
-      usageExtension = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.USAGE_PREFIX__USAGE_EXTENSION);
+      prefixMetadataExtension = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.USAGE_PREFIX__PREFIX_METADATA_EXTENSION);
     }
-    return usageExtension;
+    return prefixMetadataExtension;
   }
 
   /**
@@ -86,8 +87,8 @@ public class UsagePrefixImpl extends UnextendedUsagePrefixImpl implements UsageP
   {
     switch (featureID)
     {
-      case SysMLOCPackage.USAGE_PREFIX__USAGE_EXTENSION:
-        return getUsageExtension();
+      case SysMLOCPackage.USAGE_PREFIX__PREFIX_METADATA_EXTENSION:
+        return getPrefixMetadataExtension();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -103,9 +104,9 @@ public class UsagePrefixImpl extends UnextendedUsagePrefixImpl implements UsageP
   {
     switch (featureID)
     {
-      case SysMLOCPackage.USAGE_PREFIX__USAGE_EXTENSION:
-        getUsageExtension().clear();
-        getUsageExtension().addAll((Collection<? extends String>)newValue);
+      case SysMLOCPackage.USAGE_PREFIX__PREFIX_METADATA_EXTENSION:
+        getPrefixMetadataExtension().clear();
+        getPrefixMetadataExtension().addAll((Collection<? extends String>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -121,8 +122,8 @@ public class UsagePrefixImpl extends UnextendedUsagePrefixImpl implements UsageP
   {
     switch (featureID)
     {
-      case SysMLOCPackage.USAGE_PREFIX__USAGE_EXTENSION:
-        getUsageExtension().clear();
+      case SysMLOCPackage.USAGE_PREFIX__PREFIX_METADATA_EXTENSION:
+        getPrefixMetadataExtension().clear();
         return;
     }
     super.eUnset(featureID);
@@ -138,8 +139,8 @@ public class UsagePrefixImpl extends UnextendedUsagePrefixImpl implements UsageP
   {
     switch (featureID)
     {
-      case SysMLOCPackage.USAGE_PREFIX__USAGE_EXTENSION:
-        return usageExtension != null && !usageExtension.isEmpty();
+      case SysMLOCPackage.USAGE_PREFIX__PREFIX_METADATA_EXTENSION:
+        return prefixMetadataExtension != null && !prefixMetadataExtension.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -152,11 +153,18 @@ public class UsagePrefixImpl extends UnextendedUsagePrefixImpl implements UsageP
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
   {
+    if (baseClass == PrefixMetadata.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.USAGE_PREFIX__PREFIX_METADATA_EXTENSION: return SysMLOCPackage.PREFIX_METADATA__PREFIX_METADATA_EXTENSION;
+        default: return -1;
+      }
+    }
     if (baseClass == UsageExtensionKeyword.class)
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.USAGE_PREFIX__USAGE_EXTENSION: return SysMLOCPackage.USAGE_EXTENSION_KEYWORD__USAGE_EXTENSION;
         default: return -1;
       }
     }
@@ -171,11 +179,18 @@ public class UsagePrefixImpl extends UnextendedUsagePrefixImpl implements UsageP
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
   {
+    if (baseClass == PrefixMetadata.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.PREFIX_METADATA__PREFIX_METADATA_EXTENSION: return SysMLOCPackage.USAGE_PREFIX__PREFIX_METADATA_EXTENSION;
+        default: return -1;
+      }
+    }
     if (baseClass == UsageExtensionKeyword.class)
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.USAGE_EXTENSION_KEYWORD__USAGE_EXTENSION: return SysMLOCPackage.USAGE_PREFIX__USAGE_EXTENSION;
         default: return -1;
       }
     }
@@ -193,8 +208,8 @@ public class UsagePrefixImpl extends UnextendedUsagePrefixImpl implements UsageP
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (UsageExtension: ");
-    result.append(usageExtension);
+    result.append(" (prefixMetadataExtension: ");
+    result.append(prefixMetadataExtension);
     result.append(')');
     return result.toString();
   }

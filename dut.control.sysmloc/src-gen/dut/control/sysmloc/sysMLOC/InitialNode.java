@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface InitialNode extends ActionNodeElement, MemberPrefix
+public interface InitialNode extends ActionNodeElements, MemberPrefix
 {
   /**
    * Returns the value of the '<em><b>Member Element</b></em>' attribute.

@@ -16,6 +16,7 @@ import dut.control.sysmloc.sysMLOC.FeatureSpecialization;
 import dut.control.sysmloc.sysMLOC.FeatureSpecializationPart;
 import dut.control.sysmloc.sysMLOC.FeatureValue;
 import dut.control.sysmloc.sysMLOC.GeneralUsagePrefix;
+import dut.control.sysmloc.sysMLOC.Identification;
 import dut.control.sysmloc.sysMLOC.MemberPrefix;
 import dut.control.sysmloc.sysMLOC.MultiplicityPart;
 import dut.control.sysmloc.sysMLOC.MultiplicityRange;
@@ -59,6 +60,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ConnectionUsageImpl#isIsThen <em>Is Then</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ConnectionUsageImpl#getThenMultiplicity <em>Then Multiplicity</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ConnectionUsageImpl#getVisibility <em>Visibility</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ConnectionUsageImpl#isIsVariant <em>Is Variant</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ConnectionUsageImpl#isIsReturn <em>Is Return</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ConnectionUsageImpl#isIsAbstract <em>Is Abstract</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ConnectionUsageImpl#isIsVariation <em>Is Variation</em>}</li>
@@ -69,6 +71,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ConnectionUsageImpl#isIsEnd <em>Is End</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ConnectionUsageImpl#isIsIndividual <em>Is Individual</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ConnectionUsageImpl#getPortionKind <em>Portion Kind</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ConnectionUsageImpl#getDeclaredShortName <em>Declared Short Name</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ConnectionUsageImpl#getDeclaredName <em>Declared Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ConnectionUsageImpl#getTypings <em>Typings</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ConnectionUsageImpl#getSubsetting <em>Subsetting</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ConnectionUsageImpl#getReferences <em>References</em>}</li>
@@ -77,7 +81,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ConnectionUsageImpl#getMultiplicity <em>Multiplicity</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ConnectionUsageImpl#isIsOrdered <em>Is Ordered</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ConnectionUsageImpl#isIsNonunique <em>Is Nonunique</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ConnectionUsageImpl#getDeclaredName <em>Declared Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ConnectionUsageImpl#isIsInitial <em>Is Initial</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ConnectionUsageImpl#isIsDefault <em>Is Default</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ConnectionUsageImpl#getValuePart <em>Value Part</em>}</li>
@@ -138,6 +141,26 @@ public class ConnectionUsageImpl extends StructureUsageElementImpl implements Co
    * @ordered
    */
   protected VisibilityIndicator visibility = VISIBILITY_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsVariant() <em>Is Variant</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsVariant()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_VARIANT_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsVariant() <em>Is Variant</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsVariant()
+   * @generated
+   * @ordered
+   */
+  protected boolean isVariant = IS_VARIANT_EDEFAULT;
 
   /**
    * The default value of the '{@link #isIsReturn() <em>Is Return</em>}' attribute.
@@ -340,6 +363,46 @@ public class ConnectionUsageImpl extends StructureUsageElementImpl implements Co
   protected PortionKind portionKind = PORTION_KIND_EDEFAULT;
 
   /**
+   * The default value of the '{@link #getDeclaredShortName() <em>Declared Short Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredShortName()
+   * @generated
+   * @ordered
+   */
+  protected static final String DECLARED_SHORT_NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDeclaredShortName() <em>Declared Short Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredShortName()
+   * @generated
+   * @ordered
+   */
+  protected String declaredShortName = DECLARED_SHORT_NAME_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredName()
+   * @generated
+   * @ordered
+   */
+  protected static final String DECLARED_NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredName()
+   * @generated
+   * @ordered
+   */
+  protected String declaredName = DECLARED_NAME_EDEFAULT;
+
+  /**
    * The cached value of the '{@link #getTypings() <em>Typings</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -438,26 +501,6 @@ public class ConnectionUsageImpl extends StructureUsageElementImpl implements Co
    * @ordered
    */
   protected boolean isNonunique = IS_NONUNIQUE_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDeclaredName()
-   * @generated
-   * @ordered
-   */
-  protected static final String DECLARED_NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDeclaredName()
-   * @generated
-   * @ordered
-   */
-  protected String declaredName = DECLARED_NAME_EDEFAULT;
 
   /**
    * The default value of the '{@link #isIsInitial() <em>Is Initial</em>}' attribute.
@@ -613,6 +656,31 @@ public class ConnectionUsageImpl extends StructureUsageElementImpl implements Co
     visibility = newVisibility == null ? VISIBILITY_EDEFAULT : newVisibility;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.CONNECTION_USAGE__VISIBILITY, oldVisibility, visibility));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsVariant()
+  {
+    return isVariant;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsVariant(boolean newIsVariant)
+  {
+    boolean oldIsVariant = isVariant;
+    isVariant = newIsVariant;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.CONNECTION_USAGE__IS_VARIANT, oldIsVariant, isVariant));
   }
 
   /**
@@ -871,6 +939,56 @@ public class ConnectionUsageImpl extends StructureUsageElementImpl implements Co
    * @generated
    */
   @Override
+  public String getDeclaredShortName()
+  {
+    return declaredShortName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDeclaredShortName(String newDeclaredShortName)
+  {
+    String oldDeclaredShortName = declaredShortName;
+    declaredShortName = newDeclaredShortName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.CONNECTION_USAGE__DECLARED_SHORT_NAME, oldDeclaredShortName, declaredShortName));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getDeclaredName()
+  {
+    return declaredName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDeclaredName(String newDeclaredName)
+  {
+    String oldDeclaredName = declaredName;
+    declaredName = newDeclaredName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.CONNECTION_USAGE__DECLARED_NAME, oldDeclaredName, declaredName));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<String> getTypings()
   {
     if (typings == null)
@@ -1011,31 +1129,6 @@ public class ConnectionUsageImpl extends StructureUsageElementImpl implements Co
    * @generated
    */
   @Override
-  public String getDeclaredName()
-  {
-    return declaredName;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setDeclaredName(String newDeclaredName)
-  {
-    String oldDeclaredName = declaredName;
-    declaredName = newDeclaredName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.CONNECTION_USAGE__DECLARED_NAME, oldDeclaredName, declaredName));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public boolean isIsInitial()
   {
     return isInitial;
@@ -1159,6 +1252,8 @@ public class ConnectionUsageImpl extends StructureUsageElementImpl implements Co
         return getThenMultiplicity();
       case SysMLOCPackage.CONNECTION_USAGE__VISIBILITY:
         return getVisibility();
+      case SysMLOCPackage.CONNECTION_USAGE__IS_VARIANT:
+        return isIsVariant();
       case SysMLOCPackage.CONNECTION_USAGE__IS_RETURN:
         return isIsReturn();
       case SysMLOCPackage.CONNECTION_USAGE__IS_ABSTRACT:
@@ -1179,6 +1274,10 @@ public class ConnectionUsageImpl extends StructureUsageElementImpl implements Co
         return isIsIndividual();
       case SysMLOCPackage.CONNECTION_USAGE__PORTION_KIND:
         return getPortionKind();
+      case SysMLOCPackage.CONNECTION_USAGE__DECLARED_SHORT_NAME:
+        return getDeclaredShortName();
+      case SysMLOCPackage.CONNECTION_USAGE__DECLARED_NAME:
+        return getDeclaredName();
       case SysMLOCPackage.CONNECTION_USAGE__TYPINGS:
         return getTypings();
       case SysMLOCPackage.CONNECTION_USAGE__SUBSETTING:
@@ -1195,8 +1294,6 @@ public class ConnectionUsageImpl extends StructureUsageElementImpl implements Co
         return isIsOrdered();
       case SysMLOCPackage.CONNECTION_USAGE__IS_NONUNIQUE:
         return isIsNonunique();
-      case SysMLOCPackage.CONNECTION_USAGE__DECLARED_NAME:
-        return getDeclaredName();
       case SysMLOCPackage.CONNECTION_USAGE__IS_INITIAL:
         return isIsInitial();
       case SysMLOCPackage.CONNECTION_USAGE__IS_DEFAULT:
@@ -1232,6 +1329,9 @@ public class ConnectionUsageImpl extends StructureUsageElementImpl implements Co
       case SysMLOCPackage.CONNECTION_USAGE__VISIBILITY:
         setVisibility((VisibilityIndicator)newValue);
         return;
+      case SysMLOCPackage.CONNECTION_USAGE__IS_VARIANT:
+        setIsVariant((Boolean)newValue);
+        return;
       case SysMLOCPackage.CONNECTION_USAGE__IS_RETURN:
         setIsReturn((Boolean)newValue);
         return;
@@ -1262,6 +1362,12 @@ public class ConnectionUsageImpl extends StructureUsageElementImpl implements Co
       case SysMLOCPackage.CONNECTION_USAGE__PORTION_KIND:
         setPortionKind((PortionKind)newValue);
         return;
+      case SysMLOCPackage.CONNECTION_USAGE__DECLARED_SHORT_NAME:
+        setDeclaredShortName((String)newValue);
+        return;
+      case SysMLOCPackage.CONNECTION_USAGE__DECLARED_NAME:
+        setDeclaredName((String)newValue);
+        return;
       case SysMLOCPackage.CONNECTION_USAGE__TYPINGS:
         getTypings().clear();
         getTypings().addAll((Collection<? extends String>)newValue);
@@ -1291,9 +1397,6 @@ public class ConnectionUsageImpl extends StructureUsageElementImpl implements Co
         return;
       case SysMLOCPackage.CONNECTION_USAGE__IS_NONUNIQUE:
         setIsNonunique((Boolean)newValue);
-        return;
-      case SysMLOCPackage.CONNECTION_USAGE__DECLARED_NAME:
-        setDeclaredName((String)newValue);
         return;
       case SysMLOCPackage.CONNECTION_USAGE__IS_INITIAL:
         setIsInitial((Boolean)newValue);
@@ -1336,6 +1439,9 @@ public class ConnectionUsageImpl extends StructureUsageElementImpl implements Co
       case SysMLOCPackage.CONNECTION_USAGE__VISIBILITY:
         setVisibility(VISIBILITY_EDEFAULT);
         return;
+      case SysMLOCPackage.CONNECTION_USAGE__IS_VARIANT:
+        setIsVariant(IS_VARIANT_EDEFAULT);
+        return;
       case SysMLOCPackage.CONNECTION_USAGE__IS_RETURN:
         setIsReturn(IS_RETURN_EDEFAULT);
         return;
@@ -1366,6 +1472,12 @@ public class ConnectionUsageImpl extends StructureUsageElementImpl implements Co
       case SysMLOCPackage.CONNECTION_USAGE__PORTION_KIND:
         setPortionKind(PORTION_KIND_EDEFAULT);
         return;
+      case SysMLOCPackage.CONNECTION_USAGE__DECLARED_SHORT_NAME:
+        setDeclaredShortName(DECLARED_SHORT_NAME_EDEFAULT);
+        return;
+      case SysMLOCPackage.CONNECTION_USAGE__DECLARED_NAME:
+        setDeclaredName(DECLARED_NAME_EDEFAULT);
+        return;
       case SysMLOCPackage.CONNECTION_USAGE__TYPINGS:
         getTypings().clear();
         return;
@@ -1389,9 +1501,6 @@ public class ConnectionUsageImpl extends StructureUsageElementImpl implements Co
         return;
       case SysMLOCPackage.CONNECTION_USAGE__IS_NONUNIQUE:
         setIsNonunique(IS_NONUNIQUE_EDEFAULT);
-        return;
-      case SysMLOCPackage.CONNECTION_USAGE__DECLARED_NAME:
-        setDeclaredName(DECLARED_NAME_EDEFAULT);
         return;
       case SysMLOCPackage.CONNECTION_USAGE__IS_INITIAL:
         setIsInitial(IS_INITIAL_EDEFAULT);
@@ -1428,6 +1537,8 @@ public class ConnectionUsageImpl extends StructureUsageElementImpl implements Co
         return thenMultiplicity != null && !thenMultiplicity.isEmpty();
       case SysMLOCPackage.CONNECTION_USAGE__VISIBILITY:
         return visibility != VISIBILITY_EDEFAULT;
+      case SysMLOCPackage.CONNECTION_USAGE__IS_VARIANT:
+        return isVariant != IS_VARIANT_EDEFAULT;
       case SysMLOCPackage.CONNECTION_USAGE__IS_RETURN:
         return isReturn != IS_RETURN_EDEFAULT;
       case SysMLOCPackage.CONNECTION_USAGE__IS_ABSTRACT:
@@ -1448,6 +1559,10 @@ public class ConnectionUsageImpl extends StructureUsageElementImpl implements Co
         return isIndividual != IS_INDIVIDUAL_EDEFAULT;
       case SysMLOCPackage.CONNECTION_USAGE__PORTION_KIND:
         return portionKind != PORTION_KIND_EDEFAULT;
+      case SysMLOCPackage.CONNECTION_USAGE__DECLARED_SHORT_NAME:
+        return DECLARED_SHORT_NAME_EDEFAULT == null ? declaredShortName != null : !DECLARED_SHORT_NAME_EDEFAULT.equals(declaredShortName);
+      case SysMLOCPackage.CONNECTION_USAGE__DECLARED_NAME:
+        return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
       case SysMLOCPackage.CONNECTION_USAGE__TYPINGS:
         return typings != null && !typings.isEmpty();
       case SysMLOCPackage.CONNECTION_USAGE__SUBSETTING:
@@ -1464,8 +1579,6 @@ public class ConnectionUsageImpl extends StructureUsageElementImpl implements Co
         return isOrdered != IS_ORDERED_EDEFAULT;
       case SysMLOCPackage.CONNECTION_USAGE__IS_NONUNIQUE:
         return isNonunique != IS_NONUNIQUE_EDEFAULT;
-      case SysMLOCPackage.CONNECTION_USAGE__DECLARED_NAME:
-        return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
       case SysMLOCPackage.CONNECTION_USAGE__IS_INITIAL:
         return isInitial != IS_INITIAL_EDEFAULT;
       case SysMLOCPackage.CONNECTION_USAGE__IS_DEFAULT:
@@ -1502,6 +1615,7 @@ public class ConnectionUsageImpl extends StructureUsageElementImpl implements Co
       switch (derivedFeatureID)
       {
         case SysMLOCPackage.CONNECTION_USAGE__VISIBILITY: return SysMLOCPackage.MEMBER_PREFIX__VISIBILITY;
+        case SysMLOCPackage.CONNECTION_USAGE__IS_VARIANT: return SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT;
         default: return -1;
       }
     }
@@ -1554,6 +1668,15 @@ public class ConnectionUsageImpl extends StructureUsageElementImpl implements Co
         case SysMLOCPackage.CONNECTION_USAGE__IS_END: return SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_END;
         case SysMLOCPackage.CONNECTION_USAGE__IS_INDIVIDUAL: return SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_INDIVIDUAL;
         case SysMLOCPackage.CONNECTION_USAGE__PORTION_KIND: return SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__PORTION_KIND;
+        default: return -1;
+      }
+    }
+    if (baseClass == Identification.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.CONNECTION_USAGE__DECLARED_SHORT_NAME: return SysMLOCPackage.IDENTIFICATION__DECLARED_SHORT_NAME;
+        case SysMLOCPackage.CONNECTION_USAGE__DECLARED_NAME: return SysMLOCPackage.IDENTIFICATION__DECLARED_NAME;
         default: return -1;
       }
     }
@@ -1632,7 +1755,6 @@ public class ConnectionUsageImpl extends StructureUsageElementImpl implements Co
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.CONNECTION_USAGE__DECLARED_NAME: return SysMLOCPackage.FEATURE_DECLARATION__DECLARED_NAME;
         default: return -1;
       }
     }
@@ -1686,6 +1808,7 @@ public class ConnectionUsageImpl extends StructureUsageElementImpl implements Co
       switch (baseFeatureID)
       {
         case SysMLOCPackage.MEMBER_PREFIX__VISIBILITY: return SysMLOCPackage.CONNECTION_USAGE__VISIBILITY;
+        case SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT: return SysMLOCPackage.CONNECTION_USAGE__IS_VARIANT;
         default: return -1;
       }
     }
@@ -1738,6 +1861,15 @@ public class ConnectionUsageImpl extends StructureUsageElementImpl implements Co
         case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_END: return SysMLOCPackage.CONNECTION_USAGE__IS_END;
         case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_INDIVIDUAL: return SysMLOCPackage.CONNECTION_USAGE__IS_INDIVIDUAL;
         case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__PORTION_KIND: return SysMLOCPackage.CONNECTION_USAGE__PORTION_KIND;
+        default: return -1;
+      }
+    }
+    if (baseClass == Identification.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.IDENTIFICATION__DECLARED_SHORT_NAME: return SysMLOCPackage.CONNECTION_USAGE__DECLARED_SHORT_NAME;
+        case SysMLOCPackage.IDENTIFICATION__DECLARED_NAME: return SysMLOCPackage.CONNECTION_USAGE__DECLARED_NAME;
         default: return -1;
       }
     }
@@ -1816,7 +1948,6 @@ public class ConnectionUsageImpl extends StructureUsageElementImpl implements Co
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.FEATURE_DECLARATION__DECLARED_NAME: return SysMLOCPackage.CONNECTION_USAGE__DECLARED_NAME;
         default: return -1;
       }
     }
@@ -1865,6 +1996,8 @@ public class ConnectionUsageImpl extends StructureUsageElementImpl implements Co
     result.append(thenMultiplicity);
     result.append(", visibility: ");
     result.append(visibility);
+    result.append(", isVariant: ");
+    result.append(isVariant);
     result.append(", isReturn: ");
     result.append(isReturn);
     result.append(", isAbstract: ");
@@ -1885,6 +2018,10 @@ public class ConnectionUsageImpl extends StructureUsageElementImpl implements Co
     result.append(isIndividual);
     result.append(", portionKind: ");
     result.append(portionKind);
+    result.append(", declaredShortName: ");
+    result.append(declaredShortName);
+    result.append(", declaredName: ");
+    result.append(declaredName);
     result.append(", typings: ");
     result.append(typings);
     result.append(", subsetting: ");
@@ -1901,8 +2038,6 @@ public class ConnectionUsageImpl extends StructureUsageElementImpl implements Co
     result.append(isOrdered);
     result.append(", isNonunique: ");
     result.append(isNonunique);
-    result.append(", declaredName: ");
-    result.append(declaredName);
     result.append(", isInitial: ");
     result.append(isInitial);
     result.append(", isDefault: ");

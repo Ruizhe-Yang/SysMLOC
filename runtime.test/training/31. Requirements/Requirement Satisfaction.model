@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="'Requirement Satisfaction'">
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="'Requirement Definitions'" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="'Requirement Groups'" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ActionUsage" declaredName="'provide power'">
+      <elements xsi:type="sysMLOC:ActionUsage" declaredName="'generate torque'"/>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle_c1">
+      <typings>Vehicle</typings>
+      <elements xsi:type="sysMLOC:PerformActionUsage" refElement="'provide power'"/>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="engine_v1">
+        <typings>Engine</typings>
+        <elements xsi:type="sysMLOC:PortUsage">
+          <redefinitions>clutchPort</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:PerformActionUsage" refElement="'provide power'.'generate torque'">
+          <redefinitions>generateTorque</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="'Vehicle c1 Design Context'">
+      <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="vehicle_design">
+        <subsetting>vehicle_c1</subsetting>
+      </elements>
+      <elements xsi:type="sysMLOC:SatisfyRequirementUsage" refElement="vehicleSpecification" satisfactionParameter="vehicle_design"/>
+      <elements xsi:type="sysMLOC:SatisfyRequirementUsage" refElement="engineSpecification" satisfactionParameter="vehicle_design.engine_v1"/>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
-  <packages declaredName="AssignmentTest">
+  <elements xsi:type="sysMLOC:Package" declaredName="AssignmentTest">
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Counter">
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="count" isInitial="true">
         <typings>ScalarValues::Integer</typings>
@@ -19,7 +19,7 @@
       <elements xsi:type="sysMLOC:PartUsage" declaredName="counter">
         <typings>Counter</typings>
       </elements>
-      <elements xsi:type="sysMLOC:EntryAction">
+      <elements xsi:type="sysMLOC:EntryActionNode">
         <performedActionParameterPart xsi:type="sysMLOC:AssignmentActionUsage" featureChain="counter.count" NodeParameter="0"/>
       </elements>
       <elements xsi:type="sysMLOC:StateUsage" isThen="true" declaredName="wait"/>
@@ -65,5 +65,5 @@
       <elements xsi:type="sysMLOC:AssignmentNode" featureChain="counting.counter.count" NodeParameter="counting.counter.count + 1"/>
       <elements xsi:type="sysMLOC:AssignmentNode" featureChain="counting.counter.count" NodeParameter="Increment(counting.counter).count"/>
     </elements>
-  </packages>
+  </elements>
 </sysMLOC:Namespace>

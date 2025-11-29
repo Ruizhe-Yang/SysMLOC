@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
-  <packages declaredName="'Time Constraints'">
+  <elements xsi:type="sysMLOC:Package" declaredName="'Time Constraints'">
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ISQ::TemperatureValue"/>
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ISQ::DurationValue"/>
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Time::TimeInstantValue"/>
@@ -24,7 +24,7 @@
       <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="vehicle">
         <typings>Vehicle</typings>
       </elements>
-      <elements xsi:type="sysMLOC:EntryAction"/>
+      <elements xsi:type="sysMLOC:EntryActionNode"/>
       <elements xsi:type="sysMLOC:TransitionUsage">
         <transitionSuccessionElement refElement="normal"/>
       </elements>
@@ -40,7 +40,7 @@
         <elements xsi:type="sysMLOC:AssertConstraintUsage">
           <resultExpressionParameter resultExpression="TimeOf(maintenance) - TimeOf(normal.done) &lt; 2 [s]"/>
         </elements>
-        <elements xsi:type="sysMLOC:EntryAction">
+        <elements xsi:type="sysMLOC:EntryActionNode">
           <performedActionParameterPart xsi:type="sysMLOC:AssignmentActionUsage" featureChain="vehicle.maintenanceTime" NodeParameter="vehicle.maintenanceTime + vehicle.maintenanceInterval"/>
         </elements>
       </elements>
@@ -52,5 +52,5 @@
         <resultExpressionParameter resultExpression="DurationOf(maintenance) &lt;= 48 [h]"/>
       </elements>
     </elements>
-  </packages>
+  </elements>
 </sysMLOC:Namespace>

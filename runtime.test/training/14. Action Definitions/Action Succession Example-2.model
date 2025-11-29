@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
-  <packages declaredName="'Action Definition Example'">
+  <elements xsi:type="sysMLOC:Package" declaredName="'Action Definition Example'">
     <elements xsi:type="sysMLOC:ItemDefinition" declaredName="Scene"/>
     <elements xsi:type="sysMLOC:ItemDefinition" declaredName="Image"/>
     <elements xsi:type="sysMLOC:ItemDefinition" declaredName="Picture"/>
@@ -50,5 +50,5 @@
         <connectorPart refElement="picture"/>
       </elements>
     </elements>
-  </packages>
+  </elements>
 </sysMLOC:Namespace>

@@ -5,6 +5,7 @@ package dut.control.sysmloc.sysMLOC.impl;
 
 import dut.control.sysmloc.sysMLOC.BasicDefinitionPrefix;
 import dut.control.sysmloc.sysMLOC.DefinitionDeclaration;
+import dut.control.sysmloc.sysMLOC.Identification;
 import dut.control.sysmloc.sysMLOC.MemberPrefix;
 import dut.control.sysmloc.sysMLOC.OccurrenceDefinitionPrefix;
 import dut.control.sysmloc.sysMLOC.StateBodyElement;
@@ -37,9 +38,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.StateDefinitionImpl#getVisibility <em>Visibility</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.StateDefinitionImpl#isIsVariant <em>Is Variant</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.StateDefinitionImpl#isIsAbstract <em>Is Abstract</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.StateDefinitionImpl#isIsVariation <em>Is Variation</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.StateDefinitionImpl#isIsIndividual <em>Is Individual</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.StateDefinitionImpl#getDeclaredShortName <em>Declared Short Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.StateDefinitionImpl#getDeclaredName <em>Declared Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.StateDefinitionImpl#getSuperclassifiers <em>Superclassifiers</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.StateDefinitionImpl#isIsParallel <em>Is Parallel</em>}</li>
@@ -69,6 +72,26 @@ public class StateDefinitionImpl extends DefinitionElementImpl implements StateD
    * @ordered
    */
   protected VisibilityIndicator visibility = VISIBILITY_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsVariant() <em>Is Variant</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsVariant()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_VARIANT_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsVariant() <em>Is Variant</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsVariant()
+   * @generated
+   * @ordered
+   */
+  protected boolean isVariant = IS_VARIANT_EDEFAULT;
 
   /**
    * The default value of the '{@link #isIsAbstract() <em>Is Abstract</em>}' attribute.
@@ -129,6 +152,26 @@ public class StateDefinitionImpl extends DefinitionElementImpl implements StateD
    * @ordered
    */
   protected boolean isIndividual = IS_INDIVIDUAL_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getDeclaredShortName() <em>Declared Short Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredShortName()
+   * @generated
+   * @ordered
+   */
+  protected static final String DECLARED_SHORT_NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDeclaredShortName() <em>Declared Short Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredShortName()
+   * @generated
+   * @ordered
+   */
+  protected String declaredShortName = DECLARED_SHORT_NAME_EDEFAULT;
 
   /**
    * The default value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
@@ -242,6 +285,31 @@ public class StateDefinitionImpl extends DefinitionElementImpl implements StateD
    * @generated
    */
   @Override
+  public boolean isIsVariant()
+  {
+    return isVariant;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsVariant(boolean newIsVariant)
+  {
+    boolean oldIsVariant = isVariant;
+    isVariant = newIsVariant;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.STATE_DEFINITION__IS_VARIANT, oldIsVariant, isVariant));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public boolean isIsAbstract()
   {
     return isAbstract;
@@ -309,6 +377,31 @@ public class StateDefinitionImpl extends DefinitionElementImpl implements StateD
     isIndividual = newIsIndividual;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.STATE_DEFINITION__IS_INDIVIDUAL, oldIsIndividual, isIndividual));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getDeclaredShortName()
+  {
+    return declaredShortName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDeclaredShortName(String newDeclaredShortName)
+  {
+    String oldDeclaredShortName = declaredShortName;
+    declaredShortName = newDeclaredShortName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.STATE_DEFINITION__DECLARED_SHORT_NAME, oldDeclaredShortName, declaredShortName));
   }
 
   /**
@@ -419,12 +512,16 @@ public class StateDefinitionImpl extends DefinitionElementImpl implements StateD
     {
       case SysMLOCPackage.STATE_DEFINITION__VISIBILITY:
         return getVisibility();
+      case SysMLOCPackage.STATE_DEFINITION__IS_VARIANT:
+        return isIsVariant();
       case SysMLOCPackage.STATE_DEFINITION__IS_ABSTRACT:
         return isIsAbstract();
       case SysMLOCPackage.STATE_DEFINITION__IS_VARIATION:
         return isIsVariation();
       case SysMLOCPackage.STATE_DEFINITION__IS_INDIVIDUAL:
         return isIsIndividual();
+      case SysMLOCPackage.STATE_DEFINITION__DECLARED_SHORT_NAME:
+        return getDeclaredShortName();
       case SysMLOCPackage.STATE_DEFINITION__DECLARED_NAME:
         return getDeclaredName();
       case SysMLOCPackage.STATE_DEFINITION__SUPERCLASSIFIERS:
@@ -451,6 +548,9 @@ public class StateDefinitionImpl extends DefinitionElementImpl implements StateD
       case SysMLOCPackage.STATE_DEFINITION__VISIBILITY:
         setVisibility((VisibilityIndicator)newValue);
         return;
+      case SysMLOCPackage.STATE_DEFINITION__IS_VARIANT:
+        setIsVariant((Boolean)newValue);
+        return;
       case SysMLOCPackage.STATE_DEFINITION__IS_ABSTRACT:
         setIsAbstract((Boolean)newValue);
         return;
@@ -459,6 +559,9 @@ public class StateDefinitionImpl extends DefinitionElementImpl implements StateD
         return;
       case SysMLOCPackage.STATE_DEFINITION__IS_INDIVIDUAL:
         setIsIndividual((Boolean)newValue);
+        return;
+      case SysMLOCPackage.STATE_DEFINITION__DECLARED_SHORT_NAME:
+        setDeclaredShortName((String)newValue);
         return;
       case SysMLOCPackage.STATE_DEFINITION__DECLARED_NAME:
         setDeclaredName((String)newValue);
@@ -491,6 +594,9 @@ public class StateDefinitionImpl extends DefinitionElementImpl implements StateD
       case SysMLOCPackage.STATE_DEFINITION__VISIBILITY:
         setVisibility(VISIBILITY_EDEFAULT);
         return;
+      case SysMLOCPackage.STATE_DEFINITION__IS_VARIANT:
+        setIsVariant(IS_VARIANT_EDEFAULT);
+        return;
       case SysMLOCPackage.STATE_DEFINITION__IS_ABSTRACT:
         setIsAbstract(IS_ABSTRACT_EDEFAULT);
         return;
@@ -499,6 +605,9 @@ public class StateDefinitionImpl extends DefinitionElementImpl implements StateD
         return;
       case SysMLOCPackage.STATE_DEFINITION__IS_INDIVIDUAL:
         setIsIndividual(IS_INDIVIDUAL_EDEFAULT);
+        return;
+      case SysMLOCPackage.STATE_DEFINITION__DECLARED_SHORT_NAME:
+        setDeclaredShortName(DECLARED_SHORT_NAME_EDEFAULT);
         return;
       case SysMLOCPackage.STATE_DEFINITION__DECLARED_NAME:
         setDeclaredName(DECLARED_NAME_EDEFAULT);
@@ -528,12 +637,16 @@ public class StateDefinitionImpl extends DefinitionElementImpl implements StateD
     {
       case SysMLOCPackage.STATE_DEFINITION__VISIBILITY:
         return visibility != VISIBILITY_EDEFAULT;
+      case SysMLOCPackage.STATE_DEFINITION__IS_VARIANT:
+        return isVariant != IS_VARIANT_EDEFAULT;
       case SysMLOCPackage.STATE_DEFINITION__IS_ABSTRACT:
         return isAbstract != IS_ABSTRACT_EDEFAULT;
       case SysMLOCPackage.STATE_DEFINITION__IS_VARIATION:
         return isVariation != IS_VARIATION_EDEFAULT;
       case SysMLOCPackage.STATE_DEFINITION__IS_INDIVIDUAL:
         return isIndividual != IS_INDIVIDUAL_EDEFAULT;
+      case SysMLOCPackage.STATE_DEFINITION__DECLARED_SHORT_NAME:
+        return DECLARED_SHORT_NAME_EDEFAULT == null ? declaredShortName != null : !DECLARED_SHORT_NAME_EDEFAULT.equals(declaredShortName);
       case SysMLOCPackage.STATE_DEFINITION__DECLARED_NAME:
         return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
       case SysMLOCPackage.STATE_DEFINITION__SUPERCLASSIFIERS:
@@ -559,6 +672,7 @@ public class StateDefinitionImpl extends DefinitionElementImpl implements StateD
       switch (derivedFeatureID)
       {
         case SysMLOCPackage.STATE_DEFINITION__VISIBILITY: return SysMLOCPackage.MEMBER_PREFIX__VISIBILITY;
+        case SysMLOCPackage.STATE_DEFINITION__IS_VARIANT: return SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT;
         default: return -1;
       }
     }
@@ -579,11 +693,19 @@ public class StateDefinitionImpl extends DefinitionElementImpl implements StateD
         default: return -1;
       }
     }
+    if (baseClass == Identification.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.STATE_DEFINITION__DECLARED_SHORT_NAME: return SysMLOCPackage.IDENTIFICATION__DECLARED_SHORT_NAME;
+        case SysMLOCPackage.STATE_DEFINITION__DECLARED_NAME: return SysMLOCPackage.IDENTIFICATION__DECLARED_NAME;
+        default: return -1;
+      }
+    }
     if (baseClass == DefinitionDeclaration.class)
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.STATE_DEFINITION__DECLARED_NAME: return SysMLOCPackage.DEFINITION_DECLARATION__DECLARED_NAME;
         case SysMLOCPackage.STATE_DEFINITION__SUPERCLASSIFIERS: return SysMLOCPackage.DEFINITION_DECLARATION__SUPERCLASSIFIERS;
         default: return -1;
       }
@@ -604,6 +726,7 @@ public class StateDefinitionImpl extends DefinitionElementImpl implements StateD
       switch (baseFeatureID)
       {
         case SysMLOCPackage.MEMBER_PREFIX__VISIBILITY: return SysMLOCPackage.STATE_DEFINITION__VISIBILITY;
+        case SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT: return SysMLOCPackage.STATE_DEFINITION__IS_VARIANT;
         default: return -1;
       }
     }
@@ -624,11 +747,19 @@ public class StateDefinitionImpl extends DefinitionElementImpl implements StateD
         default: return -1;
       }
     }
+    if (baseClass == Identification.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.IDENTIFICATION__DECLARED_SHORT_NAME: return SysMLOCPackage.STATE_DEFINITION__DECLARED_SHORT_NAME;
+        case SysMLOCPackage.IDENTIFICATION__DECLARED_NAME: return SysMLOCPackage.STATE_DEFINITION__DECLARED_NAME;
+        default: return -1;
+      }
+    }
     if (baseClass == DefinitionDeclaration.class)
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.DEFINITION_DECLARATION__DECLARED_NAME: return SysMLOCPackage.STATE_DEFINITION__DECLARED_NAME;
         case SysMLOCPackage.DEFINITION_DECLARATION__SUPERCLASSIFIERS: return SysMLOCPackage.STATE_DEFINITION__SUPERCLASSIFIERS;
         default: return -1;
       }
@@ -649,12 +780,16 @@ public class StateDefinitionImpl extends DefinitionElementImpl implements StateD
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (visibility: ");
     result.append(visibility);
+    result.append(", isVariant: ");
+    result.append(isVariant);
     result.append(", isAbstract: ");
     result.append(isAbstract);
     result.append(", isVariation: ");
     result.append(isVariation);
     result.append(", isIndividual: ");
     result.append(isIndividual);
+    result.append(", declaredShortName: ");
+    result.append(declaredShortName);
     result.append(", declaredName: ");
     result.append(declaredName);
     result.append(", superclassifiers: ");

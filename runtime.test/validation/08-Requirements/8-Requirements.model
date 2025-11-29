@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="'8-Requirements'">
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues::Real"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ISQ" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="SI" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="'Vehicle Usages'" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="'Vehicle Requirements'" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:Package" declaredName="'Vehicle Definitions'">
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle">
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass">
+          <typings>MassValue</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="fuelLevel">
+          <typings>Real</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="fuelTankCapacity">
+          <typings>Real</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="Engine">
+        <elements xsi:type="sysMLOC:PortUsage" declaredName="drivePwrPort">
+          <typings>DrivePwrPort</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:PerformActionUsage" declaredName="'generate torque'">
+          <typings>'Generate Torque'</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="Transmission">
+        <elements xsi:type="sysMLOC:PortUsage" declaredName="clutchPort">
+          <typings>ClutchPort</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PortDefinition" declaredName="DrivePwrPort"/>
+      <elements xsi:type="sysMLOC:PortDefinition" declaredName="ClutchPort"/>
+      <elements xsi:type="sysMLOC:InterfaceDefinition" declaredName="EngineToTransmissionInterface">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="drivePwrPort" isEnd="true">
+          <typings>DrivePwrPort</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="clutchPort" isEnd="true">
+          <typings>ClutchPort</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:ActionDefinition" declaredName="'Generate Torque'"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Package" declaredName="'Vehicle Usages'">
+      <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="'Vehicle Definitions'" isNamespace="true"/>
+      <elements xsi:type="sysMLOC:ActionUsage" declaredName="'provide power'">
+        <elements xsi:type="sysMLOC:ActionUsage" declaredName="'generate torque'">
+          <elements xsi:type="sysMLOC:Comment" body="/* ... */"/>
+        </elements>
+        <elements xsi:type="sysMLOC:CodeAnnotation" body="//...&#xA;"/>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle1_c1">
+        <typings>Vehicle</typings>
+        <elements xsi:type="sysMLOC:AttributeUsage">
+          <redefinitions>mass</redefinitions>
+          <valuePart>2000 [kg]</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:PerformActionUsage" refElement="'provide power'"/>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="engine_v1">
+          <typings>Engine</typings>
+          <elements xsi:type="sysMLOC:PortUsage">
+            <redefinitions>drivePwrPort</redefinitions>
+          </elements>
+          <elements xsi:type="sysMLOC:PerformActionUsage" refElement="'provide power'.'generate torque'">
+            <redefinitions>'generate torque'</redefinitions>
+          </elements>
+        </elements>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="transmission">
+          <typings>Transmission</typings>
+          <elements xsi:type="sysMLOC:PortUsage">
+            <redefinitions>clutchPort</redefinitions>
+          </elements>
+        </elements>
+        <elements xsi:type="sysMLOC:InterfaceUsage" declaredName="engineToTransmission">
+          <typings>EngineToTransmissionInterface</typings>
+          <connectorPart refElement="engine_v1.drivePwrPort"/>
+          <connectorPart refElement="transmission.clutchPort"/>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle1_c2">
+        <typings>Vehicle</typings>
+        <elements xsi:type="sysMLOC:AttributeUsage">
+          <redefinitions>mass</redefinitions>
+          <valuePart>2500 [kg]</valuePart>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Package" declaredName="'Vehicle Requirements'">
+      <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="'Vehicle Definitions'" isNamespace="true"/>
+      <elements xsi:type="sysMLOC:RequirementDefinition" declaredShortName="'1'" declaredName="MassLimitationRequirement">
+        <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9; * The optional requirement ID  of this requirement ('1') is given after the keyword &quot;id&quot; (using name syntax).&#xA;&#x9;&#x9;&#x9; * Every requirement is parameterized by a &quot;subject&quot;. The &quot;subject&quot; of this requirement is implicitly &quot;Anything&quot;.&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="sysMLOC:CodeAnnotation" body="// The requirement text is given by the documentation in the requirement def body.&#xA;"/>
+        <elements xsi:type="sysMLOC:Documentation" body="/* The actual mass shall be less than or equal to the required mass. */"/>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="massActual">
+          <typings>MassValue</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="massReqd">
+          <typings>MassValue</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:RequirementConstraintUsage" kind="require">
+          <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9;&#x9; * A constraint can be used to formalize a requirement.&#xA;&#x9;&#x9;&#x9;&#x9; */"/>
+          <resultExpressionParameter resultExpression="massActual &lt;= massReqd"/>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:RequirementDefinition" declaredShortName="'2'" declaredName="ReliabilityRequirement"/>
+      <elements xsi:type="sysMLOC:RequirementUsage" declaredShortName="'1.1'" declaredName="vehicleMass1">
+        <typings>MassLimitationRequirement</typings>
+        <elements xsi:type="sysMLOC:Documentation" body="/* The vehicle mass shall be less than or equal to 2000 kg when the fuel tank is full. */"/>
+        <elements xsi:type="sysMLOC:SubjectUsage" declaredName="vehicle">
+          <typings>Vehicle</typings>
+          <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9;&#x9; * The subject of this requirement is redefined to be a &quot;Vehicle&quot;.&#xA;&#x9;&#x9;&#x9;&#x9; */"/>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage">
+          <typings>MassValue</typings>
+          <redefinitions>massActual</redefinitions>
+          <valuePart>vehicle.mass</valuePart>
+          <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9;&#x9; * This redefinition binds the vehicle mass to the actual mass.&#xA;&#x9;&#x9;&#x9;&#x9; */"/>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage">
+          <redefinitions>massReqd</redefinitions>
+          <valuePart>2000 [kg]</valuePart>
+          <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9;&#x9; * This redefinition sets the required mass to 2000 kg.&#xA;&#x9;&#x9;&#x9;&#x9; */"/>
+        </elements>
+        <elements xsi:type="sysMLOC:RequirementConstraintUsage" declaredName="fuelConstraint">
+          <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9;&#x9; * A constraint can also be used to specify an assumption.&#xA;&#x9;&#x9;&#x9;&#x9; */"/>
+          <elements xsi:type="sysMLOC:Documentation" body="/* full fuel tank */"/>
+          <resultExpressionParameter resultExpression="vehicle.fuelLevel >= vehicle.fuelTankCapacity"/>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:RequirementUsage" declaredShortName="'2.1'" declaredName="vehicleMass2">
+        <typings>MassLimitationRequirement</typings>
+        <elements xsi:type="sysMLOC:Documentation" body="/* The vehicle mass shall be less than or equal to 2500 kg when the fuel tank is empty. */"/>
+        <elements xsi:type="sysMLOC:SubjectUsage" declaredName="vehicle">
+          <typings>Vehicle</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage">
+          <typings>MassValue</typings>
+          <redefinitions>massActual</redefinitions>
+          <valuePart>vehicle.mass</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage">
+          <redefinitions>massReqd</redefinitions>
+          <valuePart>2500 [kg]</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:RequirementConstraintUsage" declaredName="fuelConstraint">
+          <elements xsi:type="sysMLOC:Documentation" body="/* empty fuel tank */"/>
+          <resultExpressionParameter resultExpression="vehicle.fuelLevel == 0.0"/>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:RequirementUsage" declaredShortName="'2.2'" declaredName="vehicleReliability2">
+        <typings>ReliabilityRequirement</typings>
+        <elements xsi:type="sysMLOC:SubjectUsage" declaredName="vehicle">
+          <typings>Vehicle</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:RequirementUsage" declaredShortName="'3.1'" declaredName="drivePowerInterface">
+        <elements xsi:type="sysMLOC:Documentation" body="/* The engine shall transfer its generated torque to the transmission via the clutch interface. */"/>
+        <elements xsi:type="sysMLOC:SubjectUsage" declaredName="drivePwrPort">
+          <typings>DrivePwrPort</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:RequirementUsage" declaredShortName="'3.2'" declaredName="torqueGeneration">
+        <elements xsi:type="sysMLOC:Documentation" body="/* The engine shall generate torque as a function of RPM as shown in Table 1. */"/>
+        <elements xsi:type="sysMLOC:SubjectUsage" declaredName="generateTorque">
+          <typings>'Generate Torque'</typings>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="'vehicle1_c1 Specification Context'">
+      <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="'vehicle1-c1 Specification'" isNamespace="true"/>
+      <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="'engine-v1 Specification'" isNamespace="true"/>
+      <elements xsi:type="sysMLOC:RequirementUsage" declaredName="'vehicle1-c1 Specification'">
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * This models a &quot;requirement group&quot; as a requirement that references other requirements.&#xA;&#x9;&#x9; */"/>
+        <elements xsi:type="sysMLOC:SubjectUsage" declaredName="vehicle">
+          <typings>Vehicle</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:RequirementUsage">
+          <references>vehicleMass1</references>
+          <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9;&#x9; * This is a reference to a requirement defined outside the group.&#xA;&#x9;&#x9;&#x9;&#x9; * By default, the subject of the requirement is bound to that of the group.&#xA;&#x9;&#x9;&#x9;&#x9; */"/>
+        </elements>
+        <elements xsi:type="sysMLOC:CodeAnnotation" body="// ...&#xA;"/>
+      </elements>
+      <elements xsi:type="sysMLOC:RequirementUsage" declaredName="'engine-v1 Specification'">
+        <elements xsi:type="sysMLOC:SubjectUsage" declaredName="engine">
+          <typings>Engine</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:Comment" body="/* &#xA;&#x9;&#x9;&#x9; * Here the subjects of the referenced requirements are defined to be specific properties of the&#xA;&#x9;&#x9;&#x9; * subject of the group.&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="sysMLOC:RequirementConstraintUsage" refElement="torqueGeneration" kind="require">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in">
+            <redefinitions>generateTorque</redefinitions>
+            <valuePart>engine.'generate torque'</valuePart>
+          </elements>
+        </elements>
+        <elements xsi:type="sysMLOC:RequirementConstraintUsage" refElement="drivePowerInterface" kind="require">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in">
+            <redefinitions>drivePwrPort</redefinitions>
+            <valuePart>engine.drivePwrPort</valuePart>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:SatisfyRequirementUsage" refElement="'vehicle1-c1 Specification'" satisfactionParameter="vehicle1_c1">
+        <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9; * This asserts that if the assumptions of 'vehicle1-c1 Specification' are true with 'vehicle_c1' as&#xA;&#x9;&#x9;&#x9; * the subject, then the required constraints are also true.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:SatisfyRequirementUsage" refElement="'engine-v1 Specification'" satisfactionParameter="vehicle1_c1.engine_v1"/>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="'vehicle1_c2 Specification Context'">
+      <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="'vehicle1-c2 Specification'" isNamespace="true"/>
+      <elements xsi:type="sysMLOC:RequirementUsage" declaredName="'vehicle1-c2 Specification'">
+        <elements xsi:type="sysMLOC:SubjectUsage" declaredName="vehicle">
+          <typings>Vehicle</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:RequirementConstraintUsage" refElement="vehicleMass2" kind="require"/>
+        <elements xsi:type="sysMLOC:RequirementConstraintUsage" refElement="vehicleReliability2" kind="require"/>
+      </elements>
+      <elements xsi:type="sysMLOC:SatisfyRequirementUsage" refElement="'vehicle1-c2 Specification'" satisfactionParameter="vehicle1_c2"/>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

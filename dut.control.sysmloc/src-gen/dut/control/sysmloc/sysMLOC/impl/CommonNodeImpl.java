@@ -14,10 +14,12 @@ import dut.control.sysmloc.sysMLOC.FeatureDeclaration;
 import dut.control.sysmloc.sysMLOC.FeatureDirection;
 import dut.control.sysmloc.sysMLOC.FeatureSpecialization;
 import dut.control.sysmloc.sysMLOC.FeatureSpecializationPart;
+import dut.control.sysmloc.sysMLOC.Identification;
 import dut.control.sysmloc.sysMLOC.MemberPrefix;
 import dut.control.sysmloc.sysMLOC.MultiplicityPart;
 import dut.control.sysmloc.sysMLOC.MultiplicityRange;
 import dut.control.sysmloc.sysMLOC.PortionKind;
+import dut.control.sysmloc.sysMLOC.PrefixMetadata;
 import dut.control.sysmloc.sysMLOC.RedefinitionFeatureChain;
 import dut.control.sysmloc.sysMLOC.RefPrefix;
 import dut.control.sysmloc.sysMLOC.ReferenceFeatureChain;
@@ -55,14 +57,17 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#isIsThen <em>Is Then</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#getThenMultiplicity <em>Then Multiplicity</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#getVisibility <em>Visibility</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#isIsVariant <em>Is Variant</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#isIsAbstract <em>Is Abstract</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#isIsVariation <em>Is Variation</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#getDirection <em>Direction</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#isIsReadOnly <em>Is Read Only</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#isIsDerived <em>Is Derived</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#getUsageExtension <em>Usage Extension</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#getPrefixMetadataExtension <em>Prefix Metadata Extension</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#isIsIndividual <em>Is Individual</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#getPortionKind <em>Portion Kind</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#getDeclaredShortName <em>Declared Short Name</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#getDeclaredName <em>Declared Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#getTypings <em>Typings</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#getSubsetting <em>Subsetting</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#getReferences <em>References</em>}</li>
@@ -71,14 +76,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#getMultiplicity <em>Multiplicity</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#isIsOrdered <em>Is Ordered</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#isIsNonunique <em>Is Nonunique</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#getDeclaredName <em>Declared Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#getNodeKind <em>Node Kind</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CommonNodeImpl#getElements <em>Elements</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class CommonNodeImpl extends ActionNodeElementImpl implements CommonNode
+public class CommonNodeImpl extends ActionNodeElementsImpl implements CommonNode
 {
   /**
    * The default value of the '{@link #isIsThen() <em>Is Then</em>}' attribute.
@@ -129,6 +133,26 @@ public class CommonNodeImpl extends ActionNodeElementImpl implements CommonNode
    * @ordered
    */
   protected VisibilityIndicator visibility = VISIBILITY_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsVariant() <em>Is Variant</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsVariant()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_VARIANT_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsVariant() <em>Is Variant</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsVariant()
+   * @generated
+   * @ordered
+   */
+  protected boolean isVariant = IS_VARIANT_EDEFAULT;
 
   /**
    * The default value of the '{@link #isIsAbstract() <em>Is Abstract</em>}' attribute.
@@ -231,14 +255,14 @@ public class CommonNodeImpl extends ActionNodeElementImpl implements CommonNode
   protected boolean isDerived = IS_DERIVED_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getUsageExtension() <em>Usage Extension</em>}' attribute list.
+   * The cached value of the '{@link #getPrefixMetadataExtension() <em>Prefix Metadata Extension</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getUsageExtension()
+   * @see #getPrefixMetadataExtension()
    * @generated
    * @ordered
    */
-  protected EList<String> usageExtension;
+  protected EList<String> prefixMetadataExtension;
 
   /**
    * The default value of the '{@link #isIsIndividual() <em>Is Individual</em>}' attribute.
@@ -279,6 +303,46 @@ public class CommonNodeImpl extends ActionNodeElementImpl implements CommonNode
    * @ordered
    */
   protected PortionKind portionKind = PORTION_KIND_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getDeclaredShortName() <em>Declared Short Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredShortName()
+   * @generated
+   * @ordered
+   */
+  protected static final String DECLARED_SHORT_NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDeclaredShortName() <em>Declared Short Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredShortName()
+   * @generated
+   * @ordered
+   */
+  protected String declaredShortName = DECLARED_SHORT_NAME_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredName()
+   * @generated
+   * @ordered
+   */
+  protected static final String DECLARED_NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredName()
+   * @generated
+   * @ordered
+   */
+  protected String declaredName = DECLARED_NAME_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getTypings() <em>Typings</em>}' attribute list.
@@ -379,26 +443,6 @@ public class CommonNodeImpl extends ActionNodeElementImpl implements CommonNode
    * @ordered
    */
   protected boolean isNonunique = IS_NONUNIQUE_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDeclaredName()
-   * @generated
-   * @ordered
-   */
-  protected static final String DECLARED_NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDeclaredName()
-   * @generated
-   * @ordered
-   */
-  protected String declaredName = DECLARED_NAME_EDEFAULT;
 
   /**
    * The default value of the '{@link #getNodeKind() <em>Node Kind</em>}' attribute.
@@ -514,6 +558,31 @@ public class CommonNodeImpl extends ActionNodeElementImpl implements CommonNode
     visibility = newVisibility == null ? VISIBILITY_EDEFAULT : newVisibility;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.COMMON_NODE__VISIBILITY, oldVisibility, visibility));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsVariant()
+  {
+    return isVariant;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsVariant(boolean newIsVariant)
+  {
+    boolean oldIsVariant = isVariant;
+    isVariant = newIsVariant;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.COMMON_NODE__IS_VARIANT, oldIsVariant, isVariant));
   }
 
   /**
@@ -647,13 +716,13 @@ public class CommonNodeImpl extends ActionNodeElementImpl implements CommonNode
    * @generated
    */
   @Override
-  public EList<String> getUsageExtension()
+  public EList<String> getPrefixMetadataExtension()
   {
-    if (usageExtension == null)
+    if (prefixMetadataExtension == null)
     {
-      usageExtension = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.COMMON_NODE__USAGE_EXTENSION);
+      prefixMetadataExtension = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.COMMON_NODE__PREFIX_METADATA_EXTENSION);
     }
-    return usageExtension;
+    return prefixMetadataExtension;
   }
 
   /**
@@ -704,6 +773,56 @@ public class CommonNodeImpl extends ActionNodeElementImpl implements CommonNode
     portionKind = newPortionKind == null ? PORTION_KIND_EDEFAULT : newPortionKind;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.COMMON_NODE__PORTION_KIND, oldPortionKind, portionKind));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getDeclaredShortName()
+  {
+    return declaredShortName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDeclaredShortName(String newDeclaredShortName)
+  {
+    String oldDeclaredShortName = declaredShortName;
+    declaredShortName = newDeclaredShortName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.COMMON_NODE__DECLARED_SHORT_NAME, oldDeclaredShortName, declaredShortName));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getDeclaredName()
+  {
+    return declaredName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDeclaredName(String newDeclaredName)
+  {
+    String oldDeclaredName = declaredName;
+    declaredName = newDeclaredName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.COMMON_NODE__DECLARED_NAME, oldDeclaredName, declaredName));
   }
 
   /**
@@ -852,31 +971,6 @@ public class CommonNodeImpl extends ActionNodeElementImpl implements CommonNode
    * @generated
    */
   @Override
-  public String getDeclaredName()
-  {
-    return declaredName;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setDeclaredName(String newDeclaredName)
-  {
-    String oldDeclaredName = declaredName;
-    declaredName = newDeclaredName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.COMMON_NODE__DECLARED_NAME, oldDeclaredName, declaredName));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public CommonNodeKind getNodeKind()
   {
     return nodeKind;
@@ -943,6 +1037,8 @@ public class CommonNodeImpl extends ActionNodeElementImpl implements CommonNode
         return getThenMultiplicity();
       case SysMLOCPackage.COMMON_NODE__VISIBILITY:
         return getVisibility();
+      case SysMLOCPackage.COMMON_NODE__IS_VARIANT:
+        return isIsVariant();
       case SysMLOCPackage.COMMON_NODE__IS_ABSTRACT:
         return isIsAbstract();
       case SysMLOCPackage.COMMON_NODE__IS_VARIATION:
@@ -953,12 +1049,16 @@ public class CommonNodeImpl extends ActionNodeElementImpl implements CommonNode
         return isIsReadOnly();
       case SysMLOCPackage.COMMON_NODE__IS_DERIVED:
         return isIsDerived();
-      case SysMLOCPackage.COMMON_NODE__USAGE_EXTENSION:
-        return getUsageExtension();
+      case SysMLOCPackage.COMMON_NODE__PREFIX_METADATA_EXTENSION:
+        return getPrefixMetadataExtension();
       case SysMLOCPackage.COMMON_NODE__IS_INDIVIDUAL:
         return isIsIndividual();
       case SysMLOCPackage.COMMON_NODE__PORTION_KIND:
         return getPortionKind();
+      case SysMLOCPackage.COMMON_NODE__DECLARED_SHORT_NAME:
+        return getDeclaredShortName();
+      case SysMLOCPackage.COMMON_NODE__DECLARED_NAME:
+        return getDeclaredName();
       case SysMLOCPackage.COMMON_NODE__TYPINGS:
         return getTypings();
       case SysMLOCPackage.COMMON_NODE__SUBSETTING:
@@ -975,8 +1075,6 @@ public class CommonNodeImpl extends ActionNodeElementImpl implements CommonNode
         return isIsOrdered();
       case SysMLOCPackage.COMMON_NODE__IS_NONUNIQUE:
         return isIsNonunique();
-      case SysMLOCPackage.COMMON_NODE__DECLARED_NAME:
-        return getDeclaredName();
       case SysMLOCPackage.COMMON_NODE__NODE_KIND:
         return getNodeKind();
       case SysMLOCPackage.COMMON_NODE__ELEMENTS:
@@ -1006,6 +1104,9 @@ public class CommonNodeImpl extends ActionNodeElementImpl implements CommonNode
       case SysMLOCPackage.COMMON_NODE__VISIBILITY:
         setVisibility((VisibilityIndicator)newValue);
         return;
+      case SysMLOCPackage.COMMON_NODE__IS_VARIANT:
+        setIsVariant((Boolean)newValue);
+        return;
       case SysMLOCPackage.COMMON_NODE__IS_ABSTRACT:
         setIsAbstract((Boolean)newValue);
         return;
@@ -1021,15 +1122,21 @@ public class CommonNodeImpl extends ActionNodeElementImpl implements CommonNode
       case SysMLOCPackage.COMMON_NODE__IS_DERIVED:
         setIsDerived((Boolean)newValue);
         return;
-      case SysMLOCPackage.COMMON_NODE__USAGE_EXTENSION:
-        getUsageExtension().clear();
-        getUsageExtension().addAll((Collection<? extends String>)newValue);
+      case SysMLOCPackage.COMMON_NODE__PREFIX_METADATA_EXTENSION:
+        getPrefixMetadataExtension().clear();
+        getPrefixMetadataExtension().addAll((Collection<? extends String>)newValue);
         return;
       case SysMLOCPackage.COMMON_NODE__IS_INDIVIDUAL:
         setIsIndividual((Boolean)newValue);
         return;
       case SysMLOCPackage.COMMON_NODE__PORTION_KIND:
         setPortionKind((PortionKind)newValue);
+        return;
+      case SysMLOCPackage.COMMON_NODE__DECLARED_SHORT_NAME:
+        setDeclaredShortName((String)newValue);
+        return;
+      case SysMLOCPackage.COMMON_NODE__DECLARED_NAME:
+        setDeclaredName((String)newValue);
         return;
       case SysMLOCPackage.COMMON_NODE__TYPINGS:
         getTypings().clear();
@@ -1061,9 +1168,6 @@ public class CommonNodeImpl extends ActionNodeElementImpl implements CommonNode
       case SysMLOCPackage.COMMON_NODE__IS_NONUNIQUE:
         setIsNonunique((Boolean)newValue);
         return;
-      case SysMLOCPackage.COMMON_NODE__DECLARED_NAME:
-        setDeclaredName((String)newValue);
-        return;
       case SysMLOCPackage.COMMON_NODE__NODE_KIND:
         setNodeKind((CommonNodeKind)newValue);
         return;
@@ -1094,6 +1198,9 @@ public class CommonNodeImpl extends ActionNodeElementImpl implements CommonNode
       case SysMLOCPackage.COMMON_NODE__VISIBILITY:
         setVisibility(VISIBILITY_EDEFAULT);
         return;
+      case SysMLOCPackage.COMMON_NODE__IS_VARIANT:
+        setIsVariant(IS_VARIANT_EDEFAULT);
+        return;
       case SysMLOCPackage.COMMON_NODE__IS_ABSTRACT:
         setIsAbstract(IS_ABSTRACT_EDEFAULT);
         return;
@@ -1109,14 +1216,20 @@ public class CommonNodeImpl extends ActionNodeElementImpl implements CommonNode
       case SysMLOCPackage.COMMON_NODE__IS_DERIVED:
         setIsDerived(IS_DERIVED_EDEFAULT);
         return;
-      case SysMLOCPackage.COMMON_NODE__USAGE_EXTENSION:
-        getUsageExtension().clear();
+      case SysMLOCPackage.COMMON_NODE__PREFIX_METADATA_EXTENSION:
+        getPrefixMetadataExtension().clear();
         return;
       case SysMLOCPackage.COMMON_NODE__IS_INDIVIDUAL:
         setIsIndividual(IS_INDIVIDUAL_EDEFAULT);
         return;
       case SysMLOCPackage.COMMON_NODE__PORTION_KIND:
         setPortionKind(PORTION_KIND_EDEFAULT);
+        return;
+      case SysMLOCPackage.COMMON_NODE__DECLARED_SHORT_NAME:
+        setDeclaredShortName(DECLARED_SHORT_NAME_EDEFAULT);
+        return;
+      case SysMLOCPackage.COMMON_NODE__DECLARED_NAME:
+        setDeclaredName(DECLARED_NAME_EDEFAULT);
         return;
       case SysMLOCPackage.COMMON_NODE__TYPINGS:
         getTypings().clear();
@@ -1141,9 +1254,6 @@ public class CommonNodeImpl extends ActionNodeElementImpl implements CommonNode
         return;
       case SysMLOCPackage.COMMON_NODE__IS_NONUNIQUE:
         setIsNonunique(IS_NONUNIQUE_EDEFAULT);
-        return;
-      case SysMLOCPackage.COMMON_NODE__DECLARED_NAME:
-        setDeclaredName(DECLARED_NAME_EDEFAULT);
         return;
       case SysMLOCPackage.COMMON_NODE__NODE_KIND:
         setNodeKind(NODE_KIND_EDEFAULT);
@@ -1171,6 +1281,8 @@ public class CommonNodeImpl extends ActionNodeElementImpl implements CommonNode
         return thenMultiplicity != null && !thenMultiplicity.isEmpty();
       case SysMLOCPackage.COMMON_NODE__VISIBILITY:
         return visibility != VISIBILITY_EDEFAULT;
+      case SysMLOCPackage.COMMON_NODE__IS_VARIANT:
+        return isVariant != IS_VARIANT_EDEFAULT;
       case SysMLOCPackage.COMMON_NODE__IS_ABSTRACT:
         return isAbstract != IS_ABSTRACT_EDEFAULT;
       case SysMLOCPackage.COMMON_NODE__IS_VARIATION:
@@ -1181,12 +1293,16 @@ public class CommonNodeImpl extends ActionNodeElementImpl implements CommonNode
         return isReadOnly != IS_READ_ONLY_EDEFAULT;
       case SysMLOCPackage.COMMON_NODE__IS_DERIVED:
         return isDerived != IS_DERIVED_EDEFAULT;
-      case SysMLOCPackage.COMMON_NODE__USAGE_EXTENSION:
-        return usageExtension != null && !usageExtension.isEmpty();
+      case SysMLOCPackage.COMMON_NODE__PREFIX_METADATA_EXTENSION:
+        return prefixMetadataExtension != null && !prefixMetadataExtension.isEmpty();
       case SysMLOCPackage.COMMON_NODE__IS_INDIVIDUAL:
         return isIndividual != IS_INDIVIDUAL_EDEFAULT;
       case SysMLOCPackage.COMMON_NODE__PORTION_KIND:
         return portionKind != PORTION_KIND_EDEFAULT;
+      case SysMLOCPackage.COMMON_NODE__DECLARED_SHORT_NAME:
+        return DECLARED_SHORT_NAME_EDEFAULT == null ? declaredShortName != null : !DECLARED_SHORT_NAME_EDEFAULT.equals(declaredShortName);
+      case SysMLOCPackage.COMMON_NODE__DECLARED_NAME:
+        return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
       case SysMLOCPackage.COMMON_NODE__TYPINGS:
         return typings != null && !typings.isEmpty();
       case SysMLOCPackage.COMMON_NODE__SUBSETTING:
@@ -1203,8 +1319,6 @@ public class CommonNodeImpl extends ActionNodeElementImpl implements CommonNode
         return isOrdered != IS_ORDERED_EDEFAULT;
       case SysMLOCPackage.COMMON_NODE__IS_NONUNIQUE:
         return isNonunique != IS_NONUNIQUE_EDEFAULT;
-      case SysMLOCPackage.COMMON_NODE__DECLARED_NAME:
-        return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
       case SysMLOCPackage.COMMON_NODE__NODE_KIND:
         return nodeKind != NODE_KIND_EDEFAULT;
       case SysMLOCPackage.COMMON_NODE__ELEMENTS:
@@ -1235,6 +1349,7 @@ public class CommonNodeImpl extends ActionNodeElementImpl implements CommonNode
       switch (derivedFeatureID)
       {
         case SysMLOCPackage.COMMON_NODE__VISIBILITY: return SysMLOCPackage.MEMBER_PREFIX__VISIBILITY;
+        case SysMLOCPackage.COMMON_NODE__IS_VARIANT: return SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT;
         default: return -1;
       }
     }
@@ -1257,11 +1372,18 @@ public class CommonNodeImpl extends ActionNodeElementImpl implements CommonNode
         default: return -1;
       }
     }
+    if (baseClass == PrefixMetadata.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.COMMON_NODE__PREFIX_METADATA_EXTENSION: return SysMLOCPackage.PREFIX_METADATA__PREFIX_METADATA_EXTENSION;
+        default: return -1;
+      }
+    }
     if (baseClass == UsageExtensionKeyword.class)
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.COMMON_NODE__USAGE_EXTENSION: return SysMLOCPackage.USAGE_EXTENSION_KEYWORD__USAGE_EXTENSION;
         default: return -1;
       }
     }
@@ -1271,6 +1393,15 @@ public class CommonNodeImpl extends ActionNodeElementImpl implements CommonNode
       {
         case SysMLOCPackage.COMMON_NODE__IS_INDIVIDUAL: return SysMLOCPackage.CONTROL_NODE_PREFIX__IS_INDIVIDUAL;
         case SysMLOCPackage.COMMON_NODE__PORTION_KIND: return SysMLOCPackage.CONTROL_NODE_PREFIX__PORTION_KIND;
+        default: return -1;
+      }
+    }
+    if (baseClass == Identification.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.COMMON_NODE__DECLARED_SHORT_NAME: return SysMLOCPackage.IDENTIFICATION__DECLARED_SHORT_NAME;
+        case SysMLOCPackage.COMMON_NODE__DECLARED_NAME: return SysMLOCPackage.IDENTIFICATION__DECLARED_NAME;
         default: return -1;
       }
     }
@@ -1349,7 +1480,6 @@ public class CommonNodeImpl extends ActionNodeElementImpl implements CommonNode
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.COMMON_NODE__DECLARED_NAME: return SysMLOCPackage.FEATURE_DECLARATION__DECLARED_NAME;
         default: return -1;
       }
     }
@@ -1385,6 +1515,7 @@ public class CommonNodeImpl extends ActionNodeElementImpl implements CommonNode
       switch (baseFeatureID)
       {
         case SysMLOCPackage.MEMBER_PREFIX__VISIBILITY: return SysMLOCPackage.COMMON_NODE__VISIBILITY;
+        case SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT: return SysMLOCPackage.COMMON_NODE__IS_VARIANT;
         default: return -1;
       }
     }
@@ -1407,11 +1538,18 @@ public class CommonNodeImpl extends ActionNodeElementImpl implements CommonNode
         default: return -1;
       }
     }
+    if (baseClass == PrefixMetadata.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.PREFIX_METADATA__PREFIX_METADATA_EXTENSION: return SysMLOCPackage.COMMON_NODE__PREFIX_METADATA_EXTENSION;
+        default: return -1;
+      }
+    }
     if (baseClass == UsageExtensionKeyword.class)
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.USAGE_EXTENSION_KEYWORD__USAGE_EXTENSION: return SysMLOCPackage.COMMON_NODE__USAGE_EXTENSION;
         default: return -1;
       }
     }
@@ -1421,6 +1559,15 @@ public class CommonNodeImpl extends ActionNodeElementImpl implements CommonNode
       {
         case SysMLOCPackage.CONTROL_NODE_PREFIX__IS_INDIVIDUAL: return SysMLOCPackage.COMMON_NODE__IS_INDIVIDUAL;
         case SysMLOCPackage.CONTROL_NODE_PREFIX__PORTION_KIND: return SysMLOCPackage.COMMON_NODE__PORTION_KIND;
+        default: return -1;
+      }
+    }
+    if (baseClass == Identification.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.IDENTIFICATION__DECLARED_SHORT_NAME: return SysMLOCPackage.COMMON_NODE__DECLARED_SHORT_NAME;
+        case SysMLOCPackage.IDENTIFICATION__DECLARED_NAME: return SysMLOCPackage.COMMON_NODE__DECLARED_NAME;
         default: return -1;
       }
     }
@@ -1499,7 +1646,6 @@ public class CommonNodeImpl extends ActionNodeElementImpl implements CommonNode
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.FEATURE_DECLARATION__DECLARED_NAME: return SysMLOCPackage.COMMON_NODE__DECLARED_NAME;
         default: return -1;
       }
     }
@@ -1530,6 +1676,8 @@ public class CommonNodeImpl extends ActionNodeElementImpl implements CommonNode
     result.append(thenMultiplicity);
     result.append(", visibility: ");
     result.append(visibility);
+    result.append(", isVariant: ");
+    result.append(isVariant);
     result.append(", isAbstract: ");
     result.append(isAbstract);
     result.append(", isVariation: ");
@@ -1540,12 +1688,16 @@ public class CommonNodeImpl extends ActionNodeElementImpl implements CommonNode
     result.append(isReadOnly);
     result.append(", isDerived: ");
     result.append(isDerived);
-    result.append(", UsageExtension: ");
-    result.append(usageExtension);
+    result.append(", prefixMetadataExtension: ");
+    result.append(prefixMetadataExtension);
     result.append(", isIndividual: ");
     result.append(isIndividual);
     result.append(", portionKind: ");
     result.append(portionKind);
+    result.append(", declaredShortName: ");
+    result.append(declaredShortName);
+    result.append(", declaredName: ");
+    result.append(declaredName);
     result.append(", typings: ");
     result.append(typings);
     result.append(", subsetting: ");
@@ -1562,8 +1714,6 @@ public class CommonNodeImpl extends ActionNodeElementImpl implements CommonNode
     result.append(isOrdered);
     result.append(", isNonunique: ");
     result.append(isNonunique);
-    result.append(", declaredName: ");
-    result.append(declaredName);
     result.append(", nodeKind: ");
     result.append(nodeKind);
     result.append(')');

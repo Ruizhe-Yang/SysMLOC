@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
-  <packages declaredName="ServerSequenceRealization_2">
+  <elements xsi:type="sysMLOC:Package" declaredName="ServerSequenceRealization_2">
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues::String"/>
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ServerSequenceModel" isNamespace="true"/>
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Configuration" isNamespace="true"/>
@@ -37,7 +37,7 @@
           <typings>SubscriptionPort</typings>
         </elements>
         <elements xsi:type="sysMLOC:ExhibitStateUsage" declaredName="serverBehavior">
-          <elements xsi:type="sysMLOC:EntryAction"/>
+          <elements xsi:type="sysMLOC:EntryActionNode"/>
           <elements xsi:type="sysMLOC:TransitionUsage">
             <transitionSuccessionElement refElement="waitForSubscription"/>
           </elements>
@@ -184,5 +184,5 @@
         <connectorPart refElement="publish_message"/>
       </elements>
     </elements>
-  </packages>
+  </elements>
 </sysMLOC:Namespace>

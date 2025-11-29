@@ -35,9 +35,12 @@
       <genEnumLiterals ecoreEnumLiteral="SysMLOC.ecore#//CommonNodeKind/join"/>
       <genEnumLiterals ecoreEnumLiteral="SysMLOC.ecore#//CommonNodeKind/fork"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SysMLOC.ecore#//RequirementConstraintKind">
+      <genEnumLiterals ecoreEnumLiteral="SysMLOC.ecore#//RequirementConstraintKind/assumption"/>
+      <genEnumLiterals ecoreEnumLiteral="SysMLOC.ecore#//RequirementConstraintKind/requirement"/>
+    </genEnums>
     <genClasses ecoreClass="SysMLOC.ecore#//Namespace">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//Namespace/intro"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//Namespace/packages"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//Namespace/elements"/>
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//GeneralBodyElements"/>
     <genClasses ecoreClass="SysMLOC.ecore#//PackageBodyElement"/>
@@ -45,11 +48,17 @@
     <genClasses ecoreClass="SysMLOC.ecore#//UsageBodyElement"/>
     <genClasses ecoreClass="SysMLOC.ecore#//InterfaceBodyElement"/>
     <genClasses ecoreClass="SysMLOC.ecore#//EnumerationBodyElement"/>
+    <genClasses ecoreClass="SysMLOC.ecore#//AnnotatingBodyElement"/>
+    <genClasses ecoreClass="SysMLOC.ecore#//ActionNodeBodyElement"/>
     <genClasses ecoreClass="SysMLOC.ecore#//ActionBodyElement"/>
     <genClasses ecoreClass="SysMLOC.ecore#//CalculationBodyElement"/>
     <genClasses ecoreClass="SysMLOC.ecore#//StateBodyElement"/>
-    <genClasses ecoreClass="SysMLOC.ecore#//AnnotatingBodyElement"/>
-    <genClasses ecoreClass="SysMLOC.ecore#//ActionNodeBodyElement"/>
+    <genClasses ecoreClass="SysMLOC.ecore#//RequirementBodyElement"/>
+    <genClasses ecoreClass="SysMLOC.ecore#//CaseBodyElement"/>
+    <genClasses ecoreClass="SysMLOC.ecore#//MetadataBodyElement"/>
+    <genClasses ecoreClass="SysMLOC.ecore#//ViewDefinitionBodyElement"/>
+    <genClasses ecoreClass="SysMLOC.ecore#//ViewBodyElement"/>
+    <genClasses ecoreClass="SysMLOC.ecore#//RelationshipBodyElement"/>
     <genClasses ecoreClass="SysMLOC.ecore#//AnnotatingElement"/>
     <genClasses ecoreClass="SysMLOC.ecore#//DefinitionElement"/>
     <genClasses ecoreClass="SysMLOC.ecore#//UsageElement"/>
@@ -57,7 +66,9 @@
     <genClasses ecoreClass="SysMLOC.ecore#//OccurrenceUsageElement"/>
     <genClasses ecoreClass="SysMLOC.ecore#//StructureUsageElement"/>
     <genClasses ecoreClass="SysMLOC.ecore#//BehaviorUsageElement"/>
-    <genClasses ecoreClass="SysMLOC.ecore#//ActionNodeElement"/>
+    <genClasses ecoreClass="SysMLOC.ecore#//ActionNodeElements"/>
+    <genClasses ecoreClass="SysMLOC.ecore#//StateNodeElements"/>
+    <genClasses ecoreClass="SysMLOC.ecore#//RequirementNodeElements"/>
     <genClasses ecoreClass="SysMLOC.ecore#//Package">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//Package/declaredName"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//Package/elements"/>
@@ -68,6 +79,13 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//ImportElement/declaredName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//ImportElement/isNamespace"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//ImportElement/isRecursive"/>
+    </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//ExposeElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//ExposeElement/declaredName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//ExposeElement/isNamespace"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//ExposeElement/isRecursive"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//ExposeElement/filterPackageExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//ExposeElement/elements"/>
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//CodeAnnotation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//CodeAnnotation/body"/>
@@ -85,12 +103,39 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//TextualRepresentation/language"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//TextualRepresentation/body"/>
     </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//MetadataUsage">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//MetadataUsage/metadataTyping"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//MetadataUsage/annotatedElement"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//MetadataUsage/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//MetadataBodyUsage">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//MetadataBodyUsage/redefinition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//MetadataBodyUsage/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//ElementFilterElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//ElementFilterElement/filterExpression"/>
+    </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//DefaultReferenceUsage">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//DefaultReferenceUsage/visibility"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//DefaultReferenceUsage/isEnd"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//DefaultReferenceUsage/elements"/>
     </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//ReferenceVariantUsage">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//ReferenceVariantUsage/visibility"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//ReferenceVariantUsage/elements"/>
+    </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//ReferenceUsage">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//ReferenceUsage/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//LibraryPackage">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//LibraryPackage/isStandard"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//LibraryPackage/isLibrary"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//LibraryPackage/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//Dependency">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//Dependency/client"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//Dependency/supplier"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//Dependency/elements"/>
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//AttributeDefinition">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//AttributeDefinition/elements"/>
@@ -182,6 +227,12 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//SuccessionFlowConnectionUsage/FlowEnd"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//SuccessionFlowConnectionUsage/elements"/>
     </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//AllocationDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//AllocationDefinition/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//AllocationUsage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//AllocationUsage/elements"/>
+    </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//ActionDefinition">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//ActionDefinition/elements"/>
     </genClasses>
@@ -217,6 +268,68 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//TransitionUsage/conditionalExpression"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//TransitionUsage/elements"/>
     </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//RequirementDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//RequirementDefinition/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//RequirementUsage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//RequirementUsage/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//ConcernDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//ConcernDefinition/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//ConcernUsage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//ConcernUsage/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//CaseDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//CaseDefinition/elements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//CaseDefinition/resultExpressionParameter"/>
+    </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//CaseUsage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//CaseUsage/elements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//CaseUsage/resultExpressionParameter"/>
+    </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//AnalysisCaseDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//AnalysisCaseDefinition/elements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//AnalysisCaseDefinition/resultExpressionParameter"/>
+    </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//AnalysisCaseUsage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//AnalysisCaseUsage/elements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//AnalysisCaseUsage/resultExpressionParameter"/>
+    </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//VerificationCaseDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//VerificationCaseDefinition/elements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//VerificationCaseDefinition/resultExpressionParameter"/>
+    </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//VerificationCaseUsage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//VerificationCaseUsage/elements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//VerificationCaseUsage/resultExpressionParameter"/>
+    </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//UseCaseDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//UseCaseDefinition/elements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//UseCaseDefinition/resultExpressionParameter"/>
+    </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//UseCaseUsage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//UseCaseUsage/elements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//UseCaseUsage/resultExpressionParameter"/>
+    </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//ViewDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//ViewDefinition/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//ViewUsage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//ViewUsage/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//ViewpointDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//ViewpointDefinition/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//ViewpointUsage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//ViewpointUsage/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//RenderingDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//RenderingDefinition/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//RenderingUsage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//RenderingUsage/elements"/>
+    </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//PerformActionUsage">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//PerformActionUsage/elements"/>
     </genClasses>
@@ -224,13 +337,19 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//ExhibitStateUsage/isParallel"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//ExhibitStateUsage/elements"/>
     </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//IncludeUseCaseUsage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//IncludeUseCaseUsage/elements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//IncludeUseCaseUsage/resultExpressionParameter"/>
+    </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//AssertConstraintUsage">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//AssertConstraintUsage/isNegated"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//AssertConstraintUsage/elements"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//AssertConstraintUsage/resultExpressionParameter"/>
     </genClasses>
-    <genClasses ecoreClass="SysMLOC.ecore#//ResultExpression">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//ResultExpression/resultExpression"/>
+    <genClasses ecoreClass="SysMLOC.ecore#//SatisfyRequirementUsage">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//SatisfyRequirementUsage/isNegated"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//SatisfyRequirementUsage/satisfactionParameter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//SatisfyRequirementUsage/elements"/>
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//AliasElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//AliasElement/memberShortName"/>
@@ -295,14 +414,45 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//ElseNode/elseEnd"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//ElseNode/elements"/>
     </genClasses>
-    <genClasses ecoreClass="SysMLOC.ecore#//EntryAction">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//EntryAction/elements"/>
+    <genClasses ecoreClass="SysMLOC.ecore#//EntryActionNode">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//EntryActionNode/elements"/>
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//DoActionNode">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//DoActionNode/elements"/>
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//ExitActionNode">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//ExitActionNode/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//SubjectUsage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//SubjectUsage/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//RequirementConstraintUsage">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//RequirementConstraintUsage/kind"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//RequirementConstraintUsage/elements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//RequirementConstraintUsage/resultExpressionParameter"/>
+    </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//FramedConcernUsage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//FramedConcernUsage/elements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//FramedConcernUsage/resultExpressionParameter"/>
+    </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//RequirementVerificationUsage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//RequirementVerificationUsage/elements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//RequirementVerificationUsage/resultExpressionParameter"/>
+    </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//ActorUsage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//ActorUsage/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//StakeholderUsage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//StakeholderUsage/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//ObjectiveRequirementUsage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//ObjectiveRequirementUsage/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//ViewRenderingUsage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//ViewRenderingUsage/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//ResultExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//ResultExpression/resultExpression"/>
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//ActionParameterEnd"/>
     <genClasses ecoreClass="SysMLOC.ecore#//ForVariableParameter"/>
@@ -315,11 +465,12 @@
     <genClasses ecoreClass="SysMLOC.ecore#//PerformedActionUsage"/>
     <genClasses ecoreClass="SysMLOC.ecore#//ItemFeatureParameter"/>
     <genClasses ecoreClass="SysMLOC.ecore#//IfSuccessionAsUsage"/>
-    <genClasses ecoreClass="SysMLOC.ecore#//TargetSuccessionElement"/>
     <genClasses ecoreClass="SysMLOC.ecore#//GeneralUsagePrefix"/>
-    <genClasses ecoreClass="SysMLOC.ecore#//UsageExtensionKeyword">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//UsageExtensionKeyword/UsageExtension"/>
+    <genClasses ecoreClass="SysMLOC.ecore#//PrefixMetadata">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//PrefixMetadata/prefixMetadataExtension"/>
     </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//UsageExtensionKeyword"/>
+    <genClasses ecoreClass="SysMLOC.ecore#//DefinitionExtensionKeyword"/>
     <genClasses ecoreClass="SysMLOC.ecore#//EmptySuccessionPrefix">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//EmptySuccessionPrefix/isThen"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//EmptySuccessionPrefix/ThenMultiplicity"/>
@@ -330,6 +481,7 @@
     <genClasses ecoreClass="SysMLOC.ecore#//ValuePart"/>
     <genClasses ecoreClass="SysMLOC.ecore#//MemberPrefix">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//MemberPrefix/visibility"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//MemberPrefix/isVariant"/>
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//isReturnPrefix">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//isReturnPrefix/isReturn"/>
@@ -364,7 +516,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//ConnectorPart/connectorPart"/>
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//DefinitionDeclaration">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//DefinitionDeclaration/declaredName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//DefinitionDeclaration/superclassifiers"/>
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//ActionUsageDeclaration"/>
@@ -377,9 +528,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//FeatureValue/isDefault"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//FeatureValue/valuePart"/>
     </genClasses>
-    <genClasses ecoreClass="SysMLOC.ecore#//FeatureDeclaration">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//FeatureDeclaration/declaredName"/>
-    </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//FeatureDeclaration"/>
     <genClasses ecoreClass="SysMLOC.ecore#//FeatureSpecializationPart"/>
     <genClasses ecoreClass="SysMLOC.ecore#//PerformActionUsageDeclaration">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//PerformActionUsageDeclaration/referencedFeature"/>

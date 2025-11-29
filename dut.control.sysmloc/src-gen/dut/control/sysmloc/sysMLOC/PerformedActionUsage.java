@@ -14,6 +14,6 @@ package dut.control.sysmloc.sysMLOC;
  * @model
  * @generated
  */
-public interface PerformedActionUsage extends PerformActionUsageDeclaration, FeatureSpecializationPart, FeatureSpecialization, TypingFeatureTyping, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, MultiplicityPart, MultiplicityRange, UsageDeclaration, FeatureDeclaration, ValuePart, FeatureValue, AcceptNodeDeclaration, ActionNodeUsageDeclaration, AcceptParameterPart, SendNodeDeclaration, AssignmentNodeDeclaration
+public interface PerformedActionUsage extends PerformActionUsageDeclaration, FeatureSpecializationPart, FeatureSpecialization, TypingFeatureTyping, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, MultiplicityPart, MultiplicityRange, UsageDeclaration, FeatureDeclaration, Identification, ValuePart, FeatureValue, AcceptNodeDeclaration, ActionNodeUsageDeclaration, AcceptParameterPart, SendNodeDeclaration, AssignmentNodeDeclaration
 {
 } // PerformedActionUsage

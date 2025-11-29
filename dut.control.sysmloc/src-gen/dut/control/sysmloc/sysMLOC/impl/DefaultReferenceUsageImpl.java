@@ -11,7 +11,7 @@ import dut.control.sysmloc.sysMLOC.FeatureDirection;
 import dut.control.sysmloc.sysMLOC.FeatureSpecialization;
 import dut.control.sysmloc.sysMLOC.FeatureSpecializationPart;
 import dut.control.sysmloc.sysMLOC.FeatureValue;
-import dut.control.sysmloc.sysMLOC.MemberPrefix;
+import dut.control.sysmloc.sysMLOC.Identification;
 import dut.control.sysmloc.sysMLOC.MultiplicityPart;
 import dut.control.sysmloc.sysMLOC.MultiplicityRange;
 import dut.control.sysmloc.sysMLOC.RedefinitionFeatureChain;
@@ -50,13 +50,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DefaultReferenceUsageImpl#getVisibility <em>Visibility</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DefaultReferenceUsageImpl#isIsReturn <em>Is Return</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DefaultReferenceUsageImpl#isIsAbstract <em>Is Abstract</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DefaultReferenceUsageImpl#isIsVariation <em>Is Variation</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DefaultReferenceUsageImpl#getDirection <em>Direction</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DefaultReferenceUsageImpl#isIsReadOnly <em>Is Read Only</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DefaultReferenceUsageImpl#isIsDerived <em>Is Derived</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DefaultReferenceUsageImpl#getDeclaredShortName <em>Declared Short Name</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DefaultReferenceUsageImpl#getDeclaredName <em>Declared Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DefaultReferenceUsageImpl#getTypings <em>Typings</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DefaultReferenceUsageImpl#getSubsetting <em>Subsetting</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DefaultReferenceUsageImpl#getReferences <em>References</em>}</li>
@@ -65,10 +66,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DefaultReferenceUsageImpl#getMultiplicity <em>Multiplicity</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DefaultReferenceUsageImpl#isIsOrdered <em>Is Ordered</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DefaultReferenceUsageImpl#isIsNonunique <em>Is Nonunique</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DefaultReferenceUsageImpl#getDeclaredName <em>Declared Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DefaultReferenceUsageImpl#isIsInitial <em>Is Initial</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DefaultReferenceUsageImpl#isIsDefault <em>Is Default</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DefaultReferenceUsageImpl#getValuePart <em>Value Part</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DefaultReferenceUsageImpl#getVisibility <em>Visibility</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DefaultReferenceUsageImpl#isIsEnd <em>Is End</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DefaultReferenceUsageImpl#getElements <em>Elements</em>}</li>
  * </ul>
@@ -77,26 +78,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl implements DefaultReferenceUsage
 {
-  /**
-   * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getVisibility()
-   * @generated
-   * @ordered
-   */
-  protected static final VisibilityIndicator VISIBILITY_EDEFAULT = VisibilityIndicator.NULL;
-
-  /**
-   * The cached value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getVisibility()
-   * @generated
-   * @ordered
-   */
-  protected VisibilityIndicator visibility = VISIBILITY_EDEFAULT;
-
   /**
    * The default value of the '{@link #isIsReturn() <em>Is Return</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -218,6 +199,46 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
   protected boolean isDerived = IS_DERIVED_EDEFAULT;
 
   /**
+   * The default value of the '{@link #getDeclaredShortName() <em>Declared Short Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredShortName()
+   * @generated
+   * @ordered
+   */
+  protected static final String DECLARED_SHORT_NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDeclaredShortName() <em>Declared Short Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredShortName()
+   * @generated
+   * @ordered
+   */
+  protected String declaredShortName = DECLARED_SHORT_NAME_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredName()
+   * @generated
+   * @ordered
+   */
+  protected static final String DECLARED_NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredName()
+   * @generated
+   * @ordered
+   */
+  protected String declaredName = DECLARED_NAME_EDEFAULT;
+
+  /**
    * The cached value of the '{@link #getTypings() <em>Typings</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -318,26 +339,6 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
   protected boolean isNonunique = IS_NONUNIQUE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDeclaredName()
-   * @generated
-   * @ordered
-   */
-  protected static final String DECLARED_NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDeclaredName()
-   * @generated
-   * @ordered
-   */
-  protected String declaredName = DECLARED_NAME_EDEFAULT;
-
-  /**
    * The default value of the '{@link #isIsInitial() <em>Is Initial</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -388,6 +389,26 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
   protected EList<String> valuePart;
 
   /**
+   * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVisibility()
+   * @generated
+   * @ordered
+   */
+  protected static final VisibilityIndicator VISIBILITY_EDEFAULT = VisibilityIndicator.NULL;
+
+  /**
+   * The cached value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVisibility()
+   * @generated
+   * @ordered
+   */
+  protected VisibilityIndicator visibility = VISIBILITY_EDEFAULT;
+
+  /**
    * The default value of the '{@link #isIsEnd() <em>Is End</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -436,31 +457,6 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
   protected EClass eStaticClass()
   {
     return SysMLOCPackage.eINSTANCE.getDefaultReferenceUsage();
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public VisibilityIndicator getVisibility()
-  {
-    return visibility;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setVisibility(VisibilityIndicator newVisibility)
-  {
-    VisibilityIndicator oldVisibility = visibility;
-    visibility = newVisibility == null ? VISIBILITY_EDEFAULT : newVisibility;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.DEFAULT_REFERENCE_USAGE__VISIBILITY, oldVisibility, visibility));
   }
 
   /**
@@ -619,6 +615,56 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
    * @generated
    */
   @Override
+  public String getDeclaredShortName()
+  {
+    return declaredShortName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDeclaredShortName(String newDeclaredShortName)
+  {
+    String oldDeclaredShortName = declaredShortName;
+    declaredShortName = newDeclaredShortName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.DEFAULT_REFERENCE_USAGE__DECLARED_SHORT_NAME, oldDeclaredShortName, declaredShortName));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getDeclaredName()
+  {
+    return declaredName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDeclaredName(String newDeclaredName)
+  {
+    String oldDeclaredName = declaredName;
+    declaredName = newDeclaredName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.DEFAULT_REFERENCE_USAGE__DECLARED_NAME, oldDeclaredName, declaredName));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<String> getTypings()
   {
     if (typings == null)
@@ -759,31 +805,6 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
    * @generated
    */
   @Override
-  public String getDeclaredName()
-  {
-    return declaredName;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setDeclaredName(String newDeclaredName)
-  {
-    String oldDeclaredName = declaredName;
-    declaredName = newDeclaredName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.DEFAULT_REFERENCE_USAGE__DECLARED_NAME, oldDeclaredName, declaredName));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public boolean isIsInitial()
   {
     return isInitial;
@@ -841,6 +862,31 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
       valuePart = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.DEFAULT_REFERENCE_USAGE__VALUE_PART);
     }
     return valuePart;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public VisibilityIndicator getVisibility()
+  {
+    return visibility;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setVisibility(VisibilityIndicator newVisibility)
+  {
+    VisibilityIndicator oldVisibility = visibility;
+    visibility = newVisibility == null ? VISIBILITY_EDEFAULT : newVisibility;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.DEFAULT_REFERENCE_USAGE__VISIBILITY, oldVisibility, visibility));
   }
 
   /**
@@ -909,8 +955,6 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
   {
     switch (featureID)
     {
-      case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__VISIBILITY:
-        return getVisibility();
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__IS_RETURN:
         return isIsReturn();
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__IS_ABSTRACT:
@@ -923,6 +967,10 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
         return isIsReadOnly();
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__IS_DERIVED:
         return isIsDerived();
+      case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__DECLARED_SHORT_NAME:
+        return getDeclaredShortName();
+      case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__DECLARED_NAME:
+        return getDeclaredName();
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__TYPINGS:
         return getTypings();
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__SUBSETTING:
@@ -939,14 +987,14 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
         return isIsOrdered();
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__IS_NONUNIQUE:
         return isIsNonunique();
-      case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__DECLARED_NAME:
-        return getDeclaredName();
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__IS_INITIAL:
         return isIsInitial();
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__IS_DEFAULT:
         return isIsDefault();
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__VALUE_PART:
         return getValuePart();
+      case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__VISIBILITY:
+        return getVisibility();
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__IS_END:
         return isIsEnd();
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__ELEMENTS:
@@ -966,9 +1014,6 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
   {
     switch (featureID)
     {
-      case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__VISIBILITY:
-        setVisibility((VisibilityIndicator)newValue);
-        return;
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__IS_RETURN:
         setIsReturn((Boolean)newValue);
         return;
@@ -986,6 +1031,12 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
         return;
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__IS_DERIVED:
         setIsDerived((Boolean)newValue);
+        return;
+      case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__DECLARED_SHORT_NAME:
+        setDeclaredShortName((String)newValue);
+        return;
+      case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__DECLARED_NAME:
+        setDeclaredName((String)newValue);
         return;
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__TYPINGS:
         getTypings().clear();
@@ -1017,9 +1068,6 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__IS_NONUNIQUE:
         setIsNonunique((Boolean)newValue);
         return;
-      case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__DECLARED_NAME:
-        setDeclaredName((String)newValue);
-        return;
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__IS_INITIAL:
         setIsInitial((Boolean)newValue);
         return;
@@ -1029,6 +1077,9 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__VALUE_PART:
         getValuePart().clear();
         getValuePart().addAll((Collection<? extends String>)newValue);
+        return;
+      case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__VISIBILITY:
+        setVisibility((VisibilityIndicator)newValue);
         return;
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__IS_END:
         setIsEnd((Boolean)newValue);
@@ -1051,9 +1102,6 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
   {
     switch (featureID)
     {
-      case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__VISIBILITY:
-        setVisibility(VISIBILITY_EDEFAULT);
-        return;
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__IS_RETURN:
         setIsReturn(IS_RETURN_EDEFAULT);
         return;
@@ -1071,6 +1119,12 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
         return;
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__IS_DERIVED:
         setIsDerived(IS_DERIVED_EDEFAULT);
+        return;
+      case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__DECLARED_SHORT_NAME:
+        setDeclaredShortName(DECLARED_SHORT_NAME_EDEFAULT);
+        return;
+      case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__DECLARED_NAME:
+        setDeclaredName(DECLARED_NAME_EDEFAULT);
         return;
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__TYPINGS:
         getTypings().clear();
@@ -1096,9 +1150,6 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__IS_NONUNIQUE:
         setIsNonunique(IS_NONUNIQUE_EDEFAULT);
         return;
-      case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__DECLARED_NAME:
-        setDeclaredName(DECLARED_NAME_EDEFAULT);
-        return;
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__IS_INITIAL:
         setIsInitial(IS_INITIAL_EDEFAULT);
         return;
@@ -1107,6 +1158,9 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
         return;
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__VALUE_PART:
         getValuePart().clear();
+        return;
+      case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__VISIBILITY:
+        setVisibility(VISIBILITY_EDEFAULT);
         return;
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__IS_END:
         setIsEnd(IS_END_EDEFAULT);
@@ -1128,8 +1182,6 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
   {
     switch (featureID)
     {
-      case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__VISIBILITY:
-        return visibility != VISIBILITY_EDEFAULT;
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__IS_RETURN:
         return isReturn != IS_RETURN_EDEFAULT;
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__IS_ABSTRACT:
@@ -1142,6 +1194,10 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
         return isReadOnly != IS_READ_ONLY_EDEFAULT;
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__IS_DERIVED:
         return isDerived != IS_DERIVED_EDEFAULT;
+      case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__DECLARED_SHORT_NAME:
+        return DECLARED_SHORT_NAME_EDEFAULT == null ? declaredShortName != null : !DECLARED_SHORT_NAME_EDEFAULT.equals(declaredShortName);
+      case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__DECLARED_NAME:
+        return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__TYPINGS:
         return typings != null && !typings.isEmpty();
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__SUBSETTING:
@@ -1158,14 +1214,14 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
         return isOrdered != IS_ORDERED_EDEFAULT;
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__IS_NONUNIQUE:
         return isNonunique != IS_NONUNIQUE_EDEFAULT;
-      case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__DECLARED_NAME:
-        return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__IS_INITIAL:
         return isInitial != IS_INITIAL_EDEFAULT;
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__IS_DEFAULT:
         return isDefault != IS_DEFAULT_EDEFAULT;
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__VALUE_PART:
         return valuePart != null && !valuePart.isEmpty();
+      case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__VISIBILITY:
+        return visibility != VISIBILITY_EDEFAULT;
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__IS_END:
         return isEnd != IS_END_EDEFAULT;
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__ELEMENTS:
@@ -1182,14 +1238,6 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
   {
-    if (baseClass == MemberPrefix.class)
-    {
-      switch (derivedFeatureID)
-      {
-        case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__VISIBILITY: return SysMLOCPackage.MEMBER_PREFIX__VISIBILITY;
-        default: return -1;
-      }
-    }
     if (baseClass == isReturnPrefix.class)
     {
       switch (derivedFeatureID)
@@ -1214,6 +1262,15 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
         case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__DIRECTION: return SysMLOCPackage.REF_PREFIX__DIRECTION;
         case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__IS_READ_ONLY: return SysMLOCPackage.REF_PREFIX__IS_READ_ONLY;
         case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__IS_DERIVED: return SysMLOCPackage.REF_PREFIX__IS_DERIVED;
+        default: return -1;
+      }
+    }
+    if (baseClass == Identification.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__DECLARED_SHORT_NAME: return SysMLOCPackage.IDENTIFICATION__DECLARED_SHORT_NAME;
+        case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__DECLARED_NAME: return SysMLOCPackage.IDENTIFICATION__DECLARED_NAME;
         default: return -1;
       }
     }
@@ -1292,7 +1349,6 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__DECLARED_NAME: return SysMLOCPackage.FEATURE_DECLARATION__DECLARED_NAME;
         default: return -1;
       }
     }
@@ -1331,14 +1387,6 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
   {
-    if (baseClass == MemberPrefix.class)
-    {
-      switch (baseFeatureID)
-      {
-        case SysMLOCPackage.MEMBER_PREFIX__VISIBILITY: return SysMLOCPackage.DEFAULT_REFERENCE_USAGE__VISIBILITY;
-        default: return -1;
-      }
-    }
     if (baseClass == isReturnPrefix.class)
     {
       switch (baseFeatureID)
@@ -1363,6 +1411,15 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
         case SysMLOCPackage.REF_PREFIX__DIRECTION: return SysMLOCPackage.DEFAULT_REFERENCE_USAGE__DIRECTION;
         case SysMLOCPackage.REF_PREFIX__IS_READ_ONLY: return SysMLOCPackage.DEFAULT_REFERENCE_USAGE__IS_READ_ONLY;
         case SysMLOCPackage.REF_PREFIX__IS_DERIVED: return SysMLOCPackage.DEFAULT_REFERENCE_USAGE__IS_DERIVED;
+        default: return -1;
+      }
+    }
+    if (baseClass == Identification.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.IDENTIFICATION__DECLARED_SHORT_NAME: return SysMLOCPackage.DEFAULT_REFERENCE_USAGE__DECLARED_SHORT_NAME;
+        case SysMLOCPackage.IDENTIFICATION__DECLARED_NAME: return SysMLOCPackage.DEFAULT_REFERENCE_USAGE__DECLARED_NAME;
         default: return -1;
       }
     }
@@ -1441,7 +1498,6 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.FEATURE_DECLARATION__DECLARED_NAME: return SysMLOCPackage.DEFAULT_REFERENCE_USAGE__DECLARED_NAME;
         default: return -1;
       }
     }
@@ -1483,9 +1539,7 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (visibility: ");
-    result.append(visibility);
-    result.append(", isReturn: ");
+    result.append(" (isReturn: ");
     result.append(isReturn);
     result.append(", isAbstract: ");
     result.append(isAbstract);
@@ -1497,6 +1551,10 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
     result.append(isReadOnly);
     result.append(", isDerived: ");
     result.append(isDerived);
+    result.append(", declaredShortName: ");
+    result.append(declaredShortName);
+    result.append(", declaredName: ");
+    result.append(declaredName);
     result.append(", typings: ");
     result.append(typings);
     result.append(", subsetting: ");
@@ -1513,14 +1571,14 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
     result.append(isOrdered);
     result.append(", isNonunique: ");
     result.append(isNonunique);
-    result.append(", declaredName: ");
-    result.append(declaredName);
     result.append(", isInitial: ");
     result.append(isInitial);
     result.append(", isDefault: ");
     result.append(isDefault);
     result.append(", valuePart: ");
     result.append(valuePart);
+    result.append(", visibility: ");
+    result.append(visibility);
     result.append(", isEnd: ");
     result.append(isEnd);
     result.append(')');

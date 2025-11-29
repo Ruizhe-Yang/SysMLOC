@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
-  <packages declaredName="ConnectionTest">
+  <elements xsi:type="sysMLOC:Package" declaredName="ConnectionTest">
     <elements xsi:type="sysMLOC:PartUsage" declaredName="p">
       <elements xsi:type="sysMLOC:PartUsage" declaredName="x">
         <elements xsi:type="sysMLOC:PartUsage" declaredName="x1"/>
@@ -70,5 +70,5 @@
       <FlowEnd>p</FlowEnd>
       <FlowEnd>p</FlowEnd>
     </elements>
-  </packages>
+  </elements>
 </sysMLOC:Namespace>

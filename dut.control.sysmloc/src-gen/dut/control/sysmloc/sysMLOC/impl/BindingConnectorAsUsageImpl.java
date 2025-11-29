@@ -14,9 +14,11 @@ import dut.control.sysmloc.sysMLOC.FeatureDeclaration;
 import dut.control.sysmloc.sysMLOC.FeatureDirection;
 import dut.control.sysmloc.sysMLOC.FeatureSpecialization;
 import dut.control.sysmloc.sysMLOC.FeatureSpecializationPart;
+import dut.control.sysmloc.sysMLOC.Identification;
 import dut.control.sysmloc.sysMLOC.MemberPrefix;
 import dut.control.sysmloc.sysMLOC.MultiplicityPart;
 import dut.control.sysmloc.sysMLOC.MultiplicityRange;
+import dut.control.sysmloc.sysMLOC.PrefixMetadata;
 import dut.control.sysmloc.sysMLOC.RedefinitionFeatureChain;
 import dut.control.sysmloc.sysMLOC.RefPrefix;
 import dut.control.sysmloc.sysMLOC.ReferenceFeatureChain;
@@ -55,6 +57,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.BindingConnectorAsUsageImpl#getVisibility <em>Visibility</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.BindingConnectorAsUsageImpl#isIsVariant <em>Is Variant</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.BindingConnectorAsUsageImpl#isIsReturn <em>Is Return</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.BindingConnectorAsUsageImpl#isIsEnd <em>Is End</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.BindingConnectorAsUsageImpl#isIsAbstract <em>Is Abstract</em>}</li>
@@ -63,7 +66,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.BindingConnectorAsUsageImpl#isIsReadOnly <em>Is Read Only</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.BindingConnectorAsUsageImpl#isIsDerived <em>Is Derived</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.BindingConnectorAsUsageImpl#isIsReference <em>Is Reference</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.BindingConnectorAsUsageImpl#getUsageExtension <em>Usage Extension</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.BindingConnectorAsUsageImpl#getPrefixMetadataExtension <em>Prefix Metadata Extension</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.BindingConnectorAsUsageImpl#getDeclaredShortName <em>Declared Short Name</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.BindingConnectorAsUsageImpl#getDeclaredName <em>Declared Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.BindingConnectorAsUsageImpl#getTypings <em>Typings</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.BindingConnectorAsUsageImpl#getSubsetting <em>Subsetting</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.BindingConnectorAsUsageImpl#getReferences <em>References</em>}</li>
@@ -72,7 +77,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.BindingConnectorAsUsageImpl#getMultiplicity <em>Multiplicity</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.BindingConnectorAsUsageImpl#isIsOrdered <em>Is Ordered</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.BindingConnectorAsUsageImpl#isIsNonunique <em>Is Nonunique</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.BindingConnectorAsUsageImpl#getDeclaredName <em>Declared Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.BindingConnectorAsUsageImpl#getConnectorPart <em>Connector Part</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.BindingConnectorAsUsageImpl#getElements <em>Elements</em>}</li>
  * </ul>
@@ -100,6 +104,26 @@ public class BindingConnectorAsUsageImpl extends NonOccurrenceUsageElementImpl i
    * @ordered
    */
   protected VisibilityIndicator visibility = VISIBILITY_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsVariant() <em>Is Variant</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsVariant()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_VARIANT_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsVariant() <em>Is Variant</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsVariant()
+   * @generated
+   * @ordered
+   */
+  protected boolean isVariant = IS_VARIANT_EDEFAULT;
 
   /**
    * The default value of the '{@link #isIsReturn() <em>Is Return</em>}' attribute.
@@ -262,14 +286,54 @@ public class BindingConnectorAsUsageImpl extends NonOccurrenceUsageElementImpl i
   protected boolean isReference = IS_REFERENCE_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getUsageExtension() <em>Usage Extension</em>}' attribute list.
+   * The cached value of the '{@link #getPrefixMetadataExtension() <em>Prefix Metadata Extension</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getUsageExtension()
+   * @see #getPrefixMetadataExtension()
    * @generated
    * @ordered
    */
-  protected EList<String> usageExtension;
+  protected EList<String> prefixMetadataExtension;
+
+  /**
+   * The default value of the '{@link #getDeclaredShortName() <em>Declared Short Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredShortName()
+   * @generated
+   * @ordered
+   */
+  protected static final String DECLARED_SHORT_NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDeclaredShortName() <em>Declared Short Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredShortName()
+   * @generated
+   * @ordered
+   */
+  protected String declaredShortName = DECLARED_SHORT_NAME_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredName()
+   * @generated
+   * @ordered
+   */
+  protected static final String DECLARED_NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredName()
+   * @generated
+   * @ordered
+   */
+  protected String declaredName = DECLARED_NAME_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getTypings() <em>Typings</em>}' attribute list.
@@ -372,26 +436,6 @@ public class BindingConnectorAsUsageImpl extends NonOccurrenceUsageElementImpl i
   protected boolean isNonunique = IS_NONUNIQUE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDeclaredName()
-   * @generated
-   * @ordered
-   */
-  protected static final String DECLARED_NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDeclaredName()
-   * @generated
-   * @ordered
-   */
-  protected String declaredName = DECLARED_NAME_EDEFAULT;
-
-  /**
    * The cached value of the '{@link #getConnectorPart() <em>Connector Part</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -455,6 +499,31 @@ public class BindingConnectorAsUsageImpl extends NonOccurrenceUsageElementImpl i
     visibility = newVisibility == null ? VISIBILITY_EDEFAULT : newVisibility;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__VISIBILITY, oldVisibility, visibility));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsVariant()
+  {
+    return isVariant;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsVariant(boolean newIsVariant)
+  {
+    boolean oldIsVariant = isVariant;
+    isVariant = newIsVariant;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__IS_VARIANT, oldIsVariant, isVariant));
   }
 
   /**
@@ -663,13 +732,63 @@ public class BindingConnectorAsUsageImpl extends NonOccurrenceUsageElementImpl i
    * @generated
    */
   @Override
-  public EList<String> getUsageExtension()
+  public EList<String> getPrefixMetadataExtension()
   {
-    if (usageExtension == null)
+    if (prefixMetadataExtension == null)
     {
-      usageExtension = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__USAGE_EXTENSION);
+      prefixMetadataExtension = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__PREFIX_METADATA_EXTENSION);
     }
-    return usageExtension;
+    return prefixMetadataExtension;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getDeclaredShortName()
+  {
+    return declaredShortName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDeclaredShortName(String newDeclaredShortName)
+  {
+    String oldDeclaredShortName = declaredShortName;
+    declaredShortName = newDeclaredShortName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__DECLARED_SHORT_NAME, oldDeclaredShortName, declaredShortName));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getDeclaredName()
+  {
+    return declaredName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDeclaredName(String newDeclaredName)
+  {
+    String oldDeclaredName = declaredName;
+    declaredName = newDeclaredName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__DECLARED_NAME, oldDeclaredName, declaredName));
   }
 
   /**
@@ -818,31 +937,6 @@ public class BindingConnectorAsUsageImpl extends NonOccurrenceUsageElementImpl i
    * @generated
    */
   @Override
-  public String getDeclaredName()
-  {
-    return declaredName;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setDeclaredName(String newDeclaredName)
-  {
-    String oldDeclaredName = declaredName;
-    declaredName = newDeclaredName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__DECLARED_NAME, oldDeclaredName, declaredName));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EList<ConnectorEnd> getConnectorPart()
   {
     if (connectorPart == null)
@@ -897,6 +991,8 @@ public class BindingConnectorAsUsageImpl extends NonOccurrenceUsageElementImpl i
     {
       case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__VISIBILITY:
         return getVisibility();
+      case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__IS_VARIANT:
+        return isIsVariant();
       case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__IS_RETURN:
         return isIsReturn();
       case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__IS_END:
@@ -913,8 +1009,12 @@ public class BindingConnectorAsUsageImpl extends NonOccurrenceUsageElementImpl i
         return isIsDerived();
       case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__IS_REFERENCE:
         return isIsReference();
-      case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__USAGE_EXTENSION:
-        return getUsageExtension();
+      case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__PREFIX_METADATA_EXTENSION:
+        return getPrefixMetadataExtension();
+      case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__DECLARED_SHORT_NAME:
+        return getDeclaredShortName();
+      case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__DECLARED_NAME:
+        return getDeclaredName();
       case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__TYPINGS:
         return getTypings();
       case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__SUBSETTING:
@@ -931,8 +1031,6 @@ public class BindingConnectorAsUsageImpl extends NonOccurrenceUsageElementImpl i
         return isIsOrdered();
       case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__IS_NONUNIQUE:
         return isIsNonunique();
-      case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__DECLARED_NAME:
-        return getDeclaredName();
       case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__CONNECTOR_PART:
         return getConnectorPart();
       case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__ELEMENTS:
@@ -954,6 +1052,9 @@ public class BindingConnectorAsUsageImpl extends NonOccurrenceUsageElementImpl i
     {
       case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__VISIBILITY:
         setVisibility((VisibilityIndicator)newValue);
+        return;
+      case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__IS_VARIANT:
+        setIsVariant((Boolean)newValue);
         return;
       case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__IS_RETURN:
         setIsReturn((Boolean)newValue);
@@ -979,9 +1080,15 @@ public class BindingConnectorAsUsageImpl extends NonOccurrenceUsageElementImpl i
       case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__IS_REFERENCE:
         setIsReference((Boolean)newValue);
         return;
-      case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__USAGE_EXTENSION:
-        getUsageExtension().clear();
-        getUsageExtension().addAll((Collection<? extends String>)newValue);
+      case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__PREFIX_METADATA_EXTENSION:
+        getPrefixMetadataExtension().clear();
+        getPrefixMetadataExtension().addAll((Collection<? extends String>)newValue);
+        return;
+      case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__DECLARED_SHORT_NAME:
+        setDeclaredShortName((String)newValue);
+        return;
+      case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__DECLARED_NAME:
+        setDeclaredName((String)newValue);
         return;
       case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__TYPINGS:
         getTypings().clear();
@@ -1013,9 +1120,6 @@ public class BindingConnectorAsUsageImpl extends NonOccurrenceUsageElementImpl i
       case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__IS_NONUNIQUE:
         setIsNonunique((Boolean)newValue);
         return;
-      case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__DECLARED_NAME:
-        setDeclaredName((String)newValue);
-        return;
       case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__CONNECTOR_PART:
         getConnectorPart().clear();
         getConnectorPart().addAll((Collection<? extends ConnectorEnd>)newValue);
@@ -1041,6 +1145,9 @@ public class BindingConnectorAsUsageImpl extends NonOccurrenceUsageElementImpl i
       case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__VISIBILITY:
         setVisibility(VISIBILITY_EDEFAULT);
         return;
+      case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__IS_VARIANT:
+        setIsVariant(IS_VARIANT_EDEFAULT);
+        return;
       case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__IS_RETURN:
         setIsReturn(IS_RETURN_EDEFAULT);
         return;
@@ -1065,8 +1172,14 @@ public class BindingConnectorAsUsageImpl extends NonOccurrenceUsageElementImpl i
       case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__IS_REFERENCE:
         setIsReference(IS_REFERENCE_EDEFAULT);
         return;
-      case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__USAGE_EXTENSION:
-        getUsageExtension().clear();
+      case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__PREFIX_METADATA_EXTENSION:
+        getPrefixMetadataExtension().clear();
+        return;
+      case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__DECLARED_SHORT_NAME:
+        setDeclaredShortName(DECLARED_SHORT_NAME_EDEFAULT);
+        return;
+      case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__DECLARED_NAME:
+        setDeclaredName(DECLARED_NAME_EDEFAULT);
         return;
       case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__TYPINGS:
         getTypings().clear();
@@ -1092,9 +1205,6 @@ public class BindingConnectorAsUsageImpl extends NonOccurrenceUsageElementImpl i
       case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__IS_NONUNIQUE:
         setIsNonunique(IS_NONUNIQUE_EDEFAULT);
         return;
-      case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__DECLARED_NAME:
-        setDeclaredName(DECLARED_NAME_EDEFAULT);
-        return;
       case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__CONNECTOR_PART:
         getConnectorPart().clear();
         return;
@@ -1117,6 +1227,8 @@ public class BindingConnectorAsUsageImpl extends NonOccurrenceUsageElementImpl i
     {
       case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__VISIBILITY:
         return visibility != VISIBILITY_EDEFAULT;
+      case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__IS_VARIANT:
+        return isVariant != IS_VARIANT_EDEFAULT;
       case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__IS_RETURN:
         return isReturn != IS_RETURN_EDEFAULT;
       case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__IS_END:
@@ -1133,8 +1245,12 @@ public class BindingConnectorAsUsageImpl extends NonOccurrenceUsageElementImpl i
         return isDerived != IS_DERIVED_EDEFAULT;
       case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__IS_REFERENCE:
         return isReference != IS_REFERENCE_EDEFAULT;
-      case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__USAGE_EXTENSION:
-        return usageExtension != null && !usageExtension.isEmpty();
+      case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__PREFIX_METADATA_EXTENSION:
+        return prefixMetadataExtension != null && !prefixMetadataExtension.isEmpty();
+      case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__DECLARED_SHORT_NAME:
+        return DECLARED_SHORT_NAME_EDEFAULT == null ? declaredShortName != null : !DECLARED_SHORT_NAME_EDEFAULT.equals(declaredShortName);
+      case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__DECLARED_NAME:
+        return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
       case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__TYPINGS:
         return typings != null && !typings.isEmpty();
       case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__SUBSETTING:
@@ -1151,8 +1267,6 @@ public class BindingConnectorAsUsageImpl extends NonOccurrenceUsageElementImpl i
         return isOrdered != IS_ORDERED_EDEFAULT;
       case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__IS_NONUNIQUE:
         return isNonunique != IS_NONUNIQUE_EDEFAULT;
-      case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__DECLARED_NAME:
-        return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
       case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__CONNECTOR_PART:
         return connectorPart != null && !connectorPart.isEmpty();
       case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__ELEMENTS:
@@ -1174,6 +1288,7 @@ public class BindingConnectorAsUsageImpl extends NonOccurrenceUsageElementImpl i
       switch (derivedFeatureID)
       {
         case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__VISIBILITY: return SysMLOCPackage.MEMBER_PREFIX__VISIBILITY;
+        case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__IS_VARIANT: return SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT;
         default: return -1;
       }
     }
@@ -1227,11 +1342,18 @@ public class BindingConnectorAsUsageImpl extends NonOccurrenceUsageElementImpl i
         default: return -1;
       }
     }
+    if (baseClass == PrefixMetadata.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__PREFIX_METADATA_EXTENSION: return SysMLOCPackage.PREFIX_METADATA__PREFIX_METADATA_EXTENSION;
+        default: return -1;
+      }
+    }
     if (baseClass == UsageExtensionKeyword.class)
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__USAGE_EXTENSION: return SysMLOCPackage.USAGE_EXTENSION_KEYWORD__USAGE_EXTENSION;
         default: return -1;
       }
     }
@@ -1239,6 +1361,15 @@ public class BindingConnectorAsUsageImpl extends NonOccurrenceUsageElementImpl i
     {
       switch (derivedFeatureID)
       {
+        default: return -1;
+      }
+    }
+    if (baseClass == Identification.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__DECLARED_SHORT_NAME: return SysMLOCPackage.IDENTIFICATION__DECLARED_SHORT_NAME;
+        case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__DECLARED_NAME: return SysMLOCPackage.IDENTIFICATION__DECLARED_NAME;
         default: return -1;
       }
     }
@@ -1317,7 +1448,6 @@ public class BindingConnectorAsUsageImpl extends NonOccurrenceUsageElementImpl i
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__DECLARED_NAME: return SysMLOCPackage.FEATURE_DECLARATION__DECLARED_NAME;
         default: return -1;
       }
     }
@@ -1344,6 +1474,7 @@ public class BindingConnectorAsUsageImpl extends NonOccurrenceUsageElementImpl i
       switch (baseFeatureID)
       {
         case SysMLOCPackage.MEMBER_PREFIX__VISIBILITY: return SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__VISIBILITY;
+        case SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT: return SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__IS_VARIANT;
         default: return -1;
       }
     }
@@ -1397,11 +1528,18 @@ public class BindingConnectorAsUsageImpl extends NonOccurrenceUsageElementImpl i
         default: return -1;
       }
     }
+    if (baseClass == PrefixMetadata.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.PREFIX_METADATA__PREFIX_METADATA_EXTENSION: return SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__PREFIX_METADATA_EXTENSION;
+        default: return -1;
+      }
+    }
     if (baseClass == UsageExtensionKeyword.class)
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.USAGE_EXTENSION_KEYWORD__USAGE_EXTENSION: return SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__USAGE_EXTENSION;
         default: return -1;
       }
     }
@@ -1409,6 +1547,15 @@ public class BindingConnectorAsUsageImpl extends NonOccurrenceUsageElementImpl i
     {
       switch (baseFeatureID)
       {
+        default: return -1;
+      }
+    }
+    if (baseClass == Identification.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.IDENTIFICATION__DECLARED_SHORT_NAME: return SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__DECLARED_SHORT_NAME;
+        case SysMLOCPackage.IDENTIFICATION__DECLARED_NAME: return SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__DECLARED_NAME;
         default: return -1;
       }
     }
@@ -1487,7 +1634,6 @@ public class BindingConnectorAsUsageImpl extends NonOccurrenceUsageElementImpl i
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.FEATURE_DECLARATION__DECLARED_NAME: return SysMLOCPackage.BINDING_CONNECTOR_AS_USAGE__DECLARED_NAME;
         default: return -1;
       }
     }
@@ -1514,6 +1660,8 @@ public class BindingConnectorAsUsageImpl extends NonOccurrenceUsageElementImpl i
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (visibility: ");
     result.append(visibility);
+    result.append(", isVariant: ");
+    result.append(isVariant);
     result.append(", isReturn: ");
     result.append(isReturn);
     result.append(", isEnd: ");
@@ -1530,8 +1678,12 @@ public class BindingConnectorAsUsageImpl extends NonOccurrenceUsageElementImpl i
     result.append(isDerived);
     result.append(", isReference: ");
     result.append(isReference);
-    result.append(", UsageExtension: ");
-    result.append(usageExtension);
+    result.append(", prefixMetadataExtension: ");
+    result.append(prefixMetadataExtension);
+    result.append(", declaredShortName: ");
+    result.append(declaredShortName);
+    result.append(", declaredName: ");
+    result.append(declaredName);
     result.append(", typings: ");
     result.append(typings);
     result.append(", subsetting: ");
@@ -1548,8 +1700,6 @@ public class BindingConnectorAsUsageImpl extends NonOccurrenceUsageElementImpl i
     result.append(isOrdered);
     result.append(", isNonunique: ");
     result.append(isNonunique);
-    result.append(", declaredName: ");
-    result.append(declaredName);
     result.append(')');
     return result.toString();
   }

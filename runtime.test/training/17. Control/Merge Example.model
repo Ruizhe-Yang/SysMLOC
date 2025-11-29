@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
-  <packages declaredName="'Merge Example'">
+  <elements xsi:type="sysMLOC:Package" declaredName="'Merge Example'">
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Scene"/>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Image"/>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Picture"/>
@@ -65,5 +65,5 @@
         <thenElement refElement="continue"/>
       </elements>
     </elements>
-  </packages>
+  </elements>
 </sysMLOC:Namespace>

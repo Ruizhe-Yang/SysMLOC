@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface ActionDefinition extends DefinitionElement, MemberPrefix, OccurrenceDefinitionPrefix, BasicDefinitionPrefix, DefinitionDeclaration
+public interface ActionDefinition extends DefinitionElement, MemberPrefix, OccurrenceDefinitionPrefix, BasicDefinitionPrefix, DefinitionDeclaration, Identification
 {
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.

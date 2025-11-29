@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
-  <packages declaredName="'Car Mass Rollup Example 1'">
+  <elements xsi:type="sysMLOC:Package" declaredName="'Car Mass Rollup Example 1'">
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues" isNamespace="true"/>
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="MassRollup1" isNamespace="true"/>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="CarPart">
@@ -55,5 +55,5 @@
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CodeAnnotation" body="// c::totalMass --> 1150.0[kg]&#xD;&#xA;"/>
-  </packages>
+  </elements>
 </sysMLOC:Namespace>

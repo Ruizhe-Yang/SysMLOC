@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="'2c-Parts Interconnection-Multiple Decompositions'">
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="A1"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="B11">
+      <elements xsi:type="sysMLOC:PortUsage" declaredName="pe"/>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="B12">
+      <elements xsi:type="sysMLOC:PortUsage" declaredName="pf"/>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="B21">
+      <elements xsi:type="sysMLOC:PortUsage" declaredName="pg"/>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="B22">
+      <elements xsi:type="sysMLOC:PortUsage" declaredName="ph"/>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="C1">
+      <elements xsi:type="sysMLOC:PortUsage" declaredName="pa"/>
+      <elements xsi:type="sysMLOC:PortUsage" declaredName="pb"/>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="C2">
+      <elements xsi:type="sysMLOC:PortUsage" declaredName="pc"/>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="C3">
+      <elements xsi:type="sysMLOC:PortUsage" declaredName="pd"/>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="C4"/>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="a11">
+      <typings>A1</typings>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9; * Decomposition 1 - Subsystems b11, b12&#xA;&#x9; */"/>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="b11">
+        <typings>B11</typings>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="c1">
+          <typings>C1</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="c2">
+          <typings>C2</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:ConnectionUsage">
+          <connectorPart refElement="c1.pa"/>
+          <connectorPart refElement="c2.pc"/>
+        </elements>
+        <elements xsi:type="sysMLOC:PortUsage">
+          <redefinitions>pe</redefinitions>
+          <valuePart>c1.pb</valuePart>
+          <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9;&#x9; * This combines the definition of a port with a binding&#xA;&#x9;&#x9;&#x9;&#x9; * connector. (It is the same notation used to bind a&#xA;&#x9;&#x9;&#x9;&#x9; * attribute to a attribute property or a reference to a reference&#xA;&#x9;&#x9;&#x9;&#x9; * property.)&#xA;&#x9;&#x9;&#x9;&#x9; */"/>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="b12">
+        <typings>B12</typings>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="c3">
+          <typings>C3</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="c4">
+          <typings>C4</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:PortUsage">
+          <redefinitions>pf</redefinitions>
+          <valuePart>c3.pd</valuePart>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:ConnectionUsage">
+        <connectorPart refElement="b11.pe"/>
+        <connectorPart refElement="b12.pf"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="a12">
+      <typings>A1</typings>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Decomposition 2 - Assemblies b21, b22&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="b21">
+        <typings>B21</typings>
+        <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9; * The c-level entities are already composite parts within&#xA;&#x9;&#x9;&#x9; * a11, so they cannot also be composite parts within a12.&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="c1">
+          <typings>C1</typings>
+          <valuePart>a11.b11.c1</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="c3">
+          <typings>C3</typings>
+          <valuePart>a11.b12.c3</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:ConnectionUsage">
+          <connectorPart refElement="c1.pb"/>
+          <connectorPart refElement="c3.pd"/>
+        </elements>
+        <elements xsi:type="sysMLOC:PortUsage">
+          <redefinitions>pg</redefinitions>
+          <valuePart>c1.pa</valuePart>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="b22">
+        <typings>B22</typings>
+        <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="c2">
+          <typings>C2</typings>
+          <valuePart>a11.b11.c2</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="c4">
+          <typings>C4</typings>
+          <valuePart>a11.b12.c4</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:PortUsage">
+          <redefinitions>ph</redefinitions>
+          <valuePart>c2.pc</valuePart>
+        </elements>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

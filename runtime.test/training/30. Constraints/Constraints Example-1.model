@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
-  <packages declaredName="'Constraints Example-1'">
+  <elements xsi:type="sysMLOC:Package" declaredName="'Constraints Example-1'">
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ISQ" isNamespace="true"/>
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="SI" isNamespace="true"/>
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="NumericalFunctions" isNamespace="true"/>
@@ -43,5 +43,5 @@
         </elements>
       </elements>
     </elements>
-  </packages>
+  </elements>
 </sysMLOC:Namespace>

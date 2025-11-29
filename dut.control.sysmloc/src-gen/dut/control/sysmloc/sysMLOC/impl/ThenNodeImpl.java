@@ -36,6 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ThenNodeImpl#getVisibility <em>Visibility</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ThenNodeImpl#isIsVariant <em>Is Variant</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ThenNodeImpl#getMultiplicity <em>Multiplicity</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ThenNodeImpl#getThenElement <em>Then Element</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ThenNodeImpl#getElements <em>Elements</em>}</li>
@@ -43,7 +44,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class ThenNodeImpl extends ActionNodeElementImpl implements ThenNode
+public class ThenNodeImpl extends ActionNodeElementsImpl implements ThenNode
 {
   /**
    * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
@@ -64,6 +65,26 @@ public class ThenNodeImpl extends ActionNodeElementImpl implements ThenNode
    * @ordered
    */
   protected VisibilityIndicator visibility = VISIBILITY_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsVariant() <em>Is Variant</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsVariant()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_VARIANT_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsVariant() <em>Is Variant</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsVariant()
+   * @generated
+   * @ordered
+   */
+  protected boolean isVariant = IS_VARIANT_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getMultiplicity() <em>Multiplicity</em>}' attribute list.
@@ -147,6 +168,31 @@ public class ThenNodeImpl extends ActionNodeElementImpl implements ThenNode
    * @generated
    */
   @Override
+  public boolean isIsVariant()
+  {
+    return isVariant;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsVariant(boolean newIsVariant)
+  {
+    boolean oldIsVariant = isVariant;
+    isVariant = newIsVariant;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.THEN_NODE__IS_VARIANT, oldIsVariant, isVariant));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<String> getMultiplicity()
   {
     if (multiplicity == null)
@@ -216,6 +262,8 @@ public class ThenNodeImpl extends ActionNodeElementImpl implements ThenNode
     {
       case SysMLOCPackage.THEN_NODE__VISIBILITY:
         return getVisibility();
+      case SysMLOCPackage.THEN_NODE__IS_VARIANT:
+        return isIsVariant();
       case SysMLOCPackage.THEN_NODE__MULTIPLICITY:
         return getMultiplicity();
       case SysMLOCPackage.THEN_NODE__THEN_ELEMENT:
@@ -239,6 +287,9 @@ public class ThenNodeImpl extends ActionNodeElementImpl implements ThenNode
     {
       case SysMLOCPackage.THEN_NODE__VISIBILITY:
         setVisibility((VisibilityIndicator)newValue);
+        return;
+      case SysMLOCPackage.THEN_NODE__IS_VARIANT:
+        setIsVariant((Boolean)newValue);
         return;
       case SysMLOCPackage.THEN_NODE__MULTIPLICITY:
         getMultiplicity().clear();
@@ -269,6 +320,9 @@ public class ThenNodeImpl extends ActionNodeElementImpl implements ThenNode
       case SysMLOCPackage.THEN_NODE__VISIBILITY:
         setVisibility(VISIBILITY_EDEFAULT);
         return;
+      case SysMLOCPackage.THEN_NODE__IS_VARIANT:
+        setIsVariant(IS_VARIANT_EDEFAULT);
+        return;
       case SysMLOCPackage.THEN_NODE__MULTIPLICITY:
         getMultiplicity().clear();
         return;
@@ -294,6 +348,8 @@ public class ThenNodeImpl extends ActionNodeElementImpl implements ThenNode
     {
       case SysMLOCPackage.THEN_NODE__VISIBILITY:
         return visibility != VISIBILITY_EDEFAULT;
+      case SysMLOCPackage.THEN_NODE__IS_VARIANT:
+        return isVariant != IS_VARIANT_EDEFAULT;
       case SysMLOCPackage.THEN_NODE__MULTIPLICITY:
         return multiplicity != null && !multiplicity.isEmpty();
       case SysMLOCPackage.THEN_NODE__THEN_ELEMENT:
@@ -317,6 +373,7 @@ public class ThenNodeImpl extends ActionNodeElementImpl implements ThenNode
       switch (derivedFeatureID)
       {
         case SysMLOCPackage.THEN_NODE__VISIBILITY: return SysMLOCPackage.MEMBER_PREFIX__VISIBILITY;
+        case SysMLOCPackage.THEN_NODE__IS_VARIANT: return SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT;
         default: return -1;
       }
     }
@@ -344,6 +401,7 @@ public class ThenNodeImpl extends ActionNodeElementImpl implements ThenNode
       switch (baseFeatureID)
       {
         case SysMLOCPackage.MEMBER_PREFIX__VISIBILITY: return SysMLOCPackage.THEN_NODE__VISIBILITY;
+        case SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT: return SysMLOCPackage.THEN_NODE__IS_VARIANT;
         default: return -1;
       }
     }
@@ -371,6 +429,8 @@ public class ThenNodeImpl extends ActionNodeElementImpl implements ThenNode
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (visibility: ");
     result.append(visibility);
+    result.append(", isVariant: ");
+    result.append(isVariant);
     result.append(", Multiplicity: ");
     result.append(multiplicity);
     result.append(')');

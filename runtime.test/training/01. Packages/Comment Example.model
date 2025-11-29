@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
-  <packages declaredName="'Comment Example'">
+  <elements xsi:type="sysMLOC:Package" declaredName="'Comment Example'">
     <elements xsi:type="sysMLOC:Comment" body="/* This is a comment, which is a part of the model, &#xD;&#xA;&#x9; * annotating (by default) it's owning namespace. */"/>
     <elements xsi:type="sysMLOC:Comment" declaredName="Comment1" body="/* This is a named comment. */"/>
     <elements xsi:type="sysMLOC:Comment" body="/* This is an unnamed comment, annotating an &#xD;&#xA;&#x9; * explicitly specified element. &#xD;&#xA;&#x9; */">
@@ -13,5 +13,5 @@
     <elements xsi:type="sysMLOC:CodeAnnotation" body="// This is a note. It is in the text, but not part &#xD;&#xA;"/>
     <elements xsi:type="sysMLOC:CodeAnnotation" body="// of the model.&#xD;&#xA;"/>
     <elements xsi:type="sysMLOC:AliasElement" memberName="Torque" memberElement="ISQ::TorqueValue"/>
-  </packages>
+  </elements>
 </sysMLOC:Namespace>

@@ -16,6 +16,7 @@ import dut.control.sysmloc.sysMLOC.FeatureSpecialization;
 import dut.control.sysmloc.sysMLOC.FeatureSpecializationPart;
 import dut.control.sysmloc.sysMLOC.FeatureValue;
 import dut.control.sysmloc.sysMLOC.GeneralUsagePrefix;
+import dut.control.sysmloc.sysMLOC.Identification;
 import dut.control.sysmloc.sysMLOC.MemberPrefix;
 import dut.control.sysmloc.sysMLOC.MultiplicityPart;
 import dut.control.sysmloc.sysMLOC.MultiplicityRange;
@@ -61,6 +62,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AssertConstraintUsageImpl#isIsThen <em>Is Then</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AssertConstraintUsageImpl#getThenMultiplicity <em>Then Multiplicity</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AssertConstraintUsageImpl#getVisibility <em>Visibility</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AssertConstraintUsageImpl#isIsVariant <em>Is Variant</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AssertConstraintUsageImpl#isIsReturn <em>Is Return</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AssertConstraintUsageImpl#isIsAbstract <em>Is Abstract</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AssertConstraintUsageImpl#isIsVariation <em>Is Variation</em>}</li>
@@ -80,6 +82,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AssertConstraintUsageImpl#getMultiplicity <em>Multiplicity</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AssertConstraintUsageImpl#isIsOrdered <em>Is Ordered</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AssertConstraintUsageImpl#isIsNonunique <em>Is Nonunique</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AssertConstraintUsageImpl#getDeclaredShortName <em>Declared Short Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AssertConstraintUsageImpl#getDeclaredName <em>Declared Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AssertConstraintUsageImpl#isIsInitial <em>Is Initial</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AssertConstraintUsageImpl#isIsDefault <em>Is Default</em>}</li>
@@ -142,6 +145,26 @@ public class AssertConstraintUsageImpl extends BehaviorUsageElementImpl implemen
    * @ordered
    */
   protected VisibilityIndicator visibility = VISIBILITY_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsVariant() <em>Is Variant</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsVariant()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_VARIANT_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsVariant() <em>Is Variant</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsVariant()
+   * @generated
+   * @ordered
+   */
+  protected boolean isVariant = IS_VARIANT_EDEFAULT;
 
   /**
    * The default value of the '{@link #isIsReturn() <em>Is Return</em>}' attribute.
@@ -464,6 +487,26 @@ public class AssertConstraintUsageImpl extends BehaviorUsageElementImpl implemen
   protected boolean isNonunique = IS_NONUNIQUE_EDEFAULT;
 
   /**
+   * The default value of the '{@link #getDeclaredShortName() <em>Declared Short Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredShortName()
+   * @generated
+   * @ordered
+   */
+  protected static final String DECLARED_SHORT_NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDeclaredShortName() <em>Declared Short Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredShortName()
+   * @generated
+   * @ordered
+   */
+  protected String declaredShortName = DECLARED_SHORT_NAME_EDEFAULT;
+
+  /**
    * The default value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -657,6 +700,31 @@ public class AssertConstraintUsageImpl extends BehaviorUsageElementImpl implemen
     visibility = newVisibility == null ? VISIBILITY_EDEFAULT : newVisibility;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__VISIBILITY, oldVisibility, visibility));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsVariant()
+  {
+    return isVariant;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsVariant(boolean newIsVariant)
+  {
+    boolean oldIsVariant = isVariant;
+    isVariant = newIsVariant;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__IS_VARIANT, oldIsVariant, isVariant));
   }
 
   /**
@@ -1080,6 +1148,31 @@ public class AssertConstraintUsageImpl extends BehaviorUsageElementImpl implemen
    * @generated
    */
   @Override
+  public String getDeclaredShortName()
+  {
+    return declaredShortName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDeclaredShortName(String newDeclaredShortName)
+  {
+    String oldDeclaredShortName = declaredShortName;
+    declaredShortName = newDeclaredShortName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__DECLARED_SHORT_NAME, oldDeclaredShortName, declaredShortName));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public String getDeclaredName()
   {
     return declaredName;
@@ -1253,6 +1346,8 @@ public class AssertConstraintUsageImpl extends BehaviorUsageElementImpl implemen
         return getThenMultiplicity();
       case SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__VISIBILITY:
         return getVisibility();
+      case SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__IS_VARIANT:
+        return isIsVariant();
       case SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__IS_RETURN:
         return isIsReturn();
       case SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__IS_ABSTRACT:
@@ -1291,6 +1386,8 @@ public class AssertConstraintUsageImpl extends BehaviorUsageElementImpl implemen
         return isIsOrdered();
       case SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__IS_NONUNIQUE:
         return isIsNonunique();
+      case SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__DECLARED_SHORT_NAME:
+        return getDeclaredShortName();
       case SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__DECLARED_NAME:
         return getDeclaredName();
       case SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__IS_INITIAL:
@@ -1329,6 +1426,9 @@ public class AssertConstraintUsageImpl extends BehaviorUsageElementImpl implemen
         return;
       case SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__VISIBILITY:
         setVisibility((VisibilityIndicator)newValue);
+        return;
+      case SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__IS_VARIANT:
+        setIsVariant((Boolean)newValue);
         return;
       case SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__IS_RETURN:
         setIsReturn((Boolean)newValue);
@@ -1393,6 +1493,9 @@ public class AssertConstraintUsageImpl extends BehaviorUsageElementImpl implemen
       case SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__IS_NONUNIQUE:
         setIsNonunique((Boolean)newValue);
         return;
+      case SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__DECLARED_SHORT_NAME:
+        setDeclaredShortName((String)newValue);
+        return;
       case SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__DECLARED_NAME:
         setDeclaredName((String)newValue);
         return;
@@ -1439,6 +1542,9 @@ public class AssertConstraintUsageImpl extends BehaviorUsageElementImpl implemen
         return;
       case SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__VISIBILITY:
         setVisibility(VISIBILITY_EDEFAULT);
+        return;
+      case SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__IS_VARIANT:
+        setIsVariant(IS_VARIANT_EDEFAULT);
         return;
       case SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__IS_RETURN:
         setIsReturn(IS_RETURN_EDEFAULT);
@@ -1497,6 +1603,9 @@ public class AssertConstraintUsageImpl extends BehaviorUsageElementImpl implemen
       case SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__IS_NONUNIQUE:
         setIsNonunique(IS_NONUNIQUE_EDEFAULT);
         return;
+      case SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__DECLARED_SHORT_NAME:
+        setDeclaredShortName(DECLARED_SHORT_NAME_EDEFAULT);
+        return;
       case SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__DECLARED_NAME:
         setDeclaredName(DECLARED_NAME_EDEFAULT);
         return;
@@ -1538,6 +1647,8 @@ public class AssertConstraintUsageImpl extends BehaviorUsageElementImpl implemen
         return thenMultiplicity != null && !thenMultiplicity.isEmpty();
       case SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__VISIBILITY:
         return visibility != VISIBILITY_EDEFAULT;
+      case SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__IS_VARIANT:
+        return isVariant != IS_VARIANT_EDEFAULT;
       case SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__IS_RETURN:
         return isReturn != IS_RETURN_EDEFAULT;
       case SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__IS_ABSTRACT:
@@ -1576,6 +1687,8 @@ public class AssertConstraintUsageImpl extends BehaviorUsageElementImpl implemen
         return isOrdered != IS_ORDERED_EDEFAULT;
       case SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__IS_NONUNIQUE:
         return isNonunique != IS_NONUNIQUE_EDEFAULT;
+      case SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__DECLARED_SHORT_NAME:
+        return DECLARED_SHORT_NAME_EDEFAULT == null ? declaredShortName != null : !DECLARED_SHORT_NAME_EDEFAULT.equals(declaredShortName);
       case SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__DECLARED_NAME:
         return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
       case SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__IS_INITIAL:
@@ -1616,6 +1729,7 @@ public class AssertConstraintUsageImpl extends BehaviorUsageElementImpl implemen
       switch (derivedFeatureID)
       {
         case SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__VISIBILITY: return SysMLOCPackage.MEMBER_PREFIX__VISIBILITY;
+        case SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__IS_VARIANT: return SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT;
         default: return -1;
       }
     }
@@ -1750,11 +1864,19 @@ public class AssertConstraintUsageImpl extends BehaviorUsageElementImpl implemen
         default: return -1;
       }
     }
+    if (baseClass == Identification.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__DECLARED_SHORT_NAME: return SysMLOCPackage.IDENTIFICATION__DECLARED_SHORT_NAME;
+        case SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__DECLARED_NAME: return SysMLOCPackage.IDENTIFICATION__DECLARED_NAME;
+        default: return -1;
+      }
+    }
     if (baseClass == FeatureDeclaration.class)
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__DECLARED_NAME: return SysMLOCPackage.FEATURE_DECLARATION__DECLARED_NAME;
         default: return -1;
       }
     }
@@ -1814,6 +1936,7 @@ public class AssertConstraintUsageImpl extends BehaviorUsageElementImpl implemen
       switch (baseFeatureID)
       {
         case SysMLOCPackage.MEMBER_PREFIX__VISIBILITY: return SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__VISIBILITY;
+        case SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT: return SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__IS_VARIANT;
         default: return -1;
       }
     }
@@ -1948,11 +2071,19 @@ public class AssertConstraintUsageImpl extends BehaviorUsageElementImpl implemen
         default: return -1;
       }
     }
+    if (baseClass == Identification.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.IDENTIFICATION__DECLARED_SHORT_NAME: return SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__DECLARED_SHORT_NAME;
+        case SysMLOCPackage.IDENTIFICATION__DECLARED_NAME: return SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__DECLARED_NAME;
+        default: return -1;
+      }
+    }
     if (baseClass == FeatureDeclaration.class)
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.FEATURE_DECLARATION__DECLARED_NAME: return SysMLOCPackage.ASSERT_CONSTRAINT_USAGE__DECLARED_NAME;
         default: return -1;
       }
     }
@@ -2007,6 +2138,8 @@ public class AssertConstraintUsageImpl extends BehaviorUsageElementImpl implemen
     result.append(thenMultiplicity);
     result.append(", visibility: ");
     result.append(visibility);
+    result.append(", isVariant: ");
+    result.append(isVariant);
     result.append(", isReturn: ");
     result.append(isReturn);
     result.append(", isAbstract: ");
@@ -2045,6 +2178,8 @@ public class AssertConstraintUsageImpl extends BehaviorUsageElementImpl implemen
     result.append(isOrdered);
     result.append(", isNonunique: ");
     result.append(isNonunique);
+    result.append(", declaredShortName: ");
+    result.append(declaredShortName);
     result.append(", declaredName: ");
     result.append(declaredName);
     result.append(", isInitial: ");

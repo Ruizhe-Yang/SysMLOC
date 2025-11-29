@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
-  <packages declaredName="TextualRepresentationTest">
+  <elements xsi:type="sysMLOC:Package" declaredName="TextualRepresentationTest">
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues::Real"/>
     <elements xsi:type="sysMLOC:ItemDefinition" declaredName="C">
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="x">
@@ -19,5 +19,5 @@
       </elements>
       <elements xsi:type="sysMLOC:TextualRepresentation" language="&quot;alf&quot;" body="/* c.x = newX;&#xD;&#xA;&#x9;         * WriteLine(&quot;Set new x&quot;);&#xD;&#xA;&#x9;         */"/>
     </elements>
-  </packages>
+  </elements>
 </sysMLOC:Namespace>

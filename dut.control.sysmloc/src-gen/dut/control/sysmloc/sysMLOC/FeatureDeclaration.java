@@ -9,39 +9,11 @@ package dut.control.sysmloc.sysMLOC;
  * A representation of the model object '<em><b>Feature Declaration</b></em>'.
  * <!-- end-user-doc -->
  *
- * <p>
- * The following features are supported:
- * </p>
- * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.FeatureDeclaration#getDeclaredName <em>Declared Name</em>}</li>
- * </ul>
  *
  * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getFeatureDeclaration()
  * @model
  * @generated
  */
-public interface FeatureDeclaration extends FeatureSpecializationPart, FeatureSpecialization, TypingFeatureTyping, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, MultiplicityPart, MultiplicityRange
+public interface FeatureDeclaration extends Identification, FeatureSpecializationPart, FeatureSpecialization, TypingFeatureTyping, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, MultiplicityPart, MultiplicityRange
 {
-  /**
-   * Returns the value of the '<em><b>Declared Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Declared Name</em>' attribute.
-   * @see #setDeclaredName(String)
-   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getFeatureDeclaration_DeclaredName()
-   * @model
-   * @generated
-   */
-  String getDeclaredName();
-
-  /**
-   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.FeatureDeclaration#getDeclaredName <em>Declared Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Declared Name</em>' attribute.
-   * @see #getDeclaredName()
-   * @generated
-   */
-  void setDeclaredName(String value);
-
 } // FeatureDeclaration

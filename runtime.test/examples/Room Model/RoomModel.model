@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
-  <intro body="// SysML v2 Interpretation of the SysML v1 Room Connection Example&#xD;&#xA;"/>
-  <packages declaredName="RoomModel">
+  <elements xsi:type="sysMLOC:CodeAnnotation" body="// SysML v2 Interpretation of the SysML v1 Room Connection Example&#xD;&#xA;"/>
+  <elements xsi:type="sysMLOC:Package" declaredName="RoomModel">
     <elements xsi:type="sysMLOC:Package" declaredName="RoomDefinitionModelLibrary">
       <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Port_Definitions" isNamespace="true"/>
       <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Flow_Definitions" isNamespace="true"/>
@@ -104,5 +104,5 @@
         </elements>
       </elements>
     </elements>
-  </packages>
+  </elements>
 </sysMLOC:Namespace>

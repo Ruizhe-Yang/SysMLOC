@@ -9,6 +9,7 @@ import dut.control.sysmloc.sysMLOC.CrossFeatureChain;
 import dut.control.sysmloc.sysMLOC.FeatureDeclaration;
 import dut.control.sysmloc.sysMLOC.FeatureSpecialization;
 import dut.control.sysmloc.sysMLOC.FeatureSpecializationPart;
+import dut.control.sysmloc.sysMLOC.Identification;
 import dut.control.sysmloc.sysMLOC.MultiplicityPart;
 import dut.control.sysmloc.sysMLOC.MultiplicityRange;
 import dut.control.sysmloc.sysMLOC.RedefinitionFeatureChain;
@@ -38,6 +39,8 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ActionNodePrefixImpl#getDeclaredShortName <em>Declared Short Name</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ActionNodePrefixImpl#getDeclaredName <em>Declared Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ActionNodePrefixImpl#getTypings <em>Typings</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ActionNodePrefixImpl#getSubsetting <em>Subsetting</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ActionNodePrefixImpl#getReferences <em>References</em>}</li>
@@ -46,13 +49,52 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ActionNodePrefixImpl#getMultiplicity <em>Multiplicity</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ActionNodePrefixImpl#isIsOrdered <em>Is Ordered</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ActionNodePrefixImpl#isIsNonunique <em>Is Nonunique</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ActionNodePrefixImpl#getDeclaredName <em>Declared Name</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ActionNodePrefixImpl extends OccurrenceUsagePrefixImpl implements ActionNodePrefix
 {
+  /**
+   * The default value of the '{@link #getDeclaredShortName() <em>Declared Short Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredShortName()
+   * @generated
+   * @ordered
+   */
+  protected static final String DECLARED_SHORT_NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDeclaredShortName() <em>Declared Short Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredShortName()
+   * @generated
+   * @ordered
+   */
+  protected String declaredShortName = DECLARED_SHORT_NAME_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredName()
+   * @generated
+   * @ordered
+   */
+  protected static final String DECLARED_NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredName()
+   * @generated
+   * @ordered
+   */
+  protected String declaredName = DECLARED_NAME_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getTypings() <em>Typings</em>}' attribute list.
    * <!-- begin-user-doc -->
@@ -154,26 +196,6 @@ public class ActionNodePrefixImpl extends OccurrenceUsagePrefixImpl implements A
   protected boolean isNonunique = IS_NONUNIQUE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDeclaredName()
-   * @generated
-   * @ordered
-   */
-  protected static final String DECLARED_NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDeclaredName()
-   * @generated
-   * @ordered
-   */
-  protected String declaredName = DECLARED_NAME_EDEFAULT;
-
-  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -192,6 +214,56 @@ public class ActionNodePrefixImpl extends OccurrenceUsagePrefixImpl implements A
   protected EClass eStaticClass()
   {
     return SysMLOCPackage.eINSTANCE.getActionNodePrefix();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getDeclaredShortName()
+  {
+    return declaredShortName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDeclaredShortName(String newDeclaredShortName)
+  {
+    String oldDeclaredShortName = declaredShortName;
+    declaredShortName = newDeclaredShortName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ACTION_NODE_PREFIX__DECLARED_SHORT_NAME, oldDeclaredShortName, declaredShortName));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getDeclaredName()
+  {
+    return declaredName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDeclaredName(String newDeclaredName)
+  {
+    String oldDeclaredName = declaredName;
+    declaredName = newDeclaredName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ACTION_NODE_PREFIX__DECLARED_NAME, oldDeclaredName, declaredName));
   }
 
   /**
@@ -340,35 +412,14 @@ public class ActionNodePrefixImpl extends OccurrenceUsagePrefixImpl implements A
    * @generated
    */
   @Override
-  public String getDeclaredName()
-  {
-    return declaredName;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setDeclaredName(String newDeclaredName)
-  {
-    String oldDeclaredName = declaredName;
-    declaredName = newDeclaredName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ACTION_NODE_PREFIX__DECLARED_NAME, oldDeclaredName, declaredName));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
+      case SysMLOCPackage.ACTION_NODE_PREFIX__DECLARED_SHORT_NAME:
+        return getDeclaredShortName();
+      case SysMLOCPackage.ACTION_NODE_PREFIX__DECLARED_NAME:
+        return getDeclaredName();
       case SysMLOCPackage.ACTION_NODE_PREFIX__TYPINGS:
         return getTypings();
       case SysMLOCPackage.ACTION_NODE_PREFIX__SUBSETTING:
@@ -385,8 +436,6 @@ public class ActionNodePrefixImpl extends OccurrenceUsagePrefixImpl implements A
         return isIsOrdered();
       case SysMLOCPackage.ACTION_NODE_PREFIX__IS_NONUNIQUE:
         return isIsNonunique();
-      case SysMLOCPackage.ACTION_NODE_PREFIX__DECLARED_NAME:
-        return getDeclaredName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -402,6 +451,12 @@ public class ActionNodePrefixImpl extends OccurrenceUsagePrefixImpl implements A
   {
     switch (featureID)
     {
+      case SysMLOCPackage.ACTION_NODE_PREFIX__DECLARED_SHORT_NAME:
+        setDeclaredShortName((String)newValue);
+        return;
+      case SysMLOCPackage.ACTION_NODE_PREFIX__DECLARED_NAME:
+        setDeclaredName((String)newValue);
+        return;
       case SysMLOCPackage.ACTION_NODE_PREFIX__TYPINGS:
         getTypings().clear();
         getTypings().addAll((Collection<? extends String>)newValue);
@@ -432,9 +487,6 @@ public class ActionNodePrefixImpl extends OccurrenceUsagePrefixImpl implements A
       case SysMLOCPackage.ACTION_NODE_PREFIX__IS_NONUNIQUE:
         setIsNonunique((Boolean)newValue);
         return;
-      case SysMLOCPackage.ACTION_NODE_PREFIX__DECLARED_NAME:
-        setDeclaredName((String)newValue);
-        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -449,6 +501,12 @@ public class ActionNodePrefixImpl extends OccurrenceUsagePrefixImpl implements A
   {
     switch (featureID)
     {
+      case SysMLOCPackage.ACTION_NODE_PREFIX__DECLARED_SHORT_NAME:
+        setDeclaredShortName(DECLARED_SHORT_NAME_EDEFAULT);
+        return;
+      case SysMLOCPackage.ACTION_NODE_PREFIX__DECLARED_NAME:
+        setDeclaredName(DECLARED_NAME_EDEFAULT);
+        return;
       case SysMLOCPackage.ACTION_NODE_PREFIX__TYPINGS:
         getTypings().clear();
         return;
@@ -473,9 +531,6 @@ public class ActionNodePrefixImpl extends OccurrenceUsagePrefixImpl implements A
       case SysMLOCPackage.ACTION_NODE_PREFIX__IS_NONUNIQUE:
         setIsNonunique(IS_NONUNIQUE_EDEFAULT);
         return;
-      case SysMLOCPackage.ACTION_NODE_PREFIX__DECLARED_NAME:
-        setDeclaredName(DECLARED_NAME_EDEFAULT);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -490,6 +545,10 @@ public class ActionNodePrefixImpl extends OccurrenceUsagePrefixImpl implements A
   {
     switch (featureID)
     {
+      case SysMLOCPackage.ACTION_NODE_PREFIX__DECLARED_SHORT_NAME:
+        return DECLARED_SHORT_NAME_EDEFAULT == null ? declaredShortName != null : !DECLARED_SHORT_NAME_EDEFAULT.equals(declaredShortName);
+      case SysMLOCPackage.ACTION_NODE_PREFIX__DECLARED_NAME:
+        return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
       case SysMLOCPackage.ACTION_NODE_PREFIX__TYPINGS:
         return typings != null && !typings.isEmpty();
       case SysMLOCPackage.ACTION_NODE_PREFIX__SUBSETTING:
@@ -506,8 +565,6 @@ public class ActionNodePrefixImpl extends OccurrenceUsagePrefixImpl implements A
         return isOrdered != IS_ORDERED_EDEFAULT;
       case SysMLOCPackage.ACTION_NODE_PREFIX__IS_NONUNIQUE:
         return isNonunique != IS_NONUNIQUE_EDEFAULT;
-      case SysMLOCPackage.ACTION_NODE_PREFIX__DECLARED_NAME:
-        return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
     }
     return super.eIsSet(featureID);
   }
@@ -520,6 +577,15 @@ public class ActionNodePrefixImpl extends OccurrenceUsagePrefixImpl implements A
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
   {
+    if (baseClass == Identification.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.ACTION_NODE_PREFIX__DECLARED_SHORT_NAME: return SysMLOCPackage.IDENTIFICATION__DECLARED_SHORT_NAME;
+        case SysMLOCPackage.ACTION_NODE_PREFIX__DECLARED_NAME: return SysMLOCPackage.IDENTIFICATION__DECLARED_NAME;
+        default: return -1;
+      }
+    }
     if (baseClass == TypingFeatureTyping.class)
     {
       switch (derivedFeatureID)
@@ -595,7 +661,6 @@ public class ActionNodePrefixImpl extends OccurrenceUsagePrefixImpl implements A
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.ACTION_NODE_PREFIX__DECLARED_NAME: return SysMLOCPackage.FEATURE_DECLARATION__DECLARED_NAME;
         default: return -1;
       }
     }
@@ -624,6 +689,15 @@ public class ActionNodePrefixImpl extends OccurrenceUsagePrefixImpl implements A
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
   {
+    if (baseClass == Identification.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.IDENTIFICATION__DECLARED_SHORT_NAME: return SysMLOCPackage.ACTION_NODE_PREFIX__DECLARED_SHORT_NAME;
+        case SysMLOCPackage.IDENTIFICATION__DECLARED_NAME: return SysMLOCPackage.ACTION_NODE_PREFIX__DECLARED_NAME;
+        default: return -1;
+      }
+    }
     if (baseClass == TypingFeatureTyping.class)
     {
       switch (baseFeatureID)
@@ -699,7 +773,6 @@ public class ActionNodePrefixImpl extends OccurrenceUsagePrefixImpl implements A
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.FEATURE_DECLARATION__DECLARED_NAME: return SysMLOCPackage.ACTION_NODE_PREFIX__DECLARED_NAME;
         default: return -1;
       }
     }
@@ -731,7 +804,11 @@ public class ActionNodePrefixImpl extends OccurrenceUsagePrefixImpl implements A
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (typings: ");
+    result.append(" (declaredShortName: ");
+    result.append(declaredShortName);
+    result.append(", declaredName: ");
+    result.append(declaredName);
+    result.append(", typings: ");
     result.append(typings);
     result.append(", subsetting: ");
     result.append(subsetting);
@@ -747,8 +824,6 @@ public class ActionNodePrefixImpl extends OccurrenceUsagePrefixImpl implements A
     result.append(isOrdered);
     result.append(", isNonunique: ");
     result.append(isNonunique);
-    result.append(", declaredName: ");
-    result.append(declaredName);
     result.append(')');
     return result.toString();
   }

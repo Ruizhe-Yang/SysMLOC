@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
-  <packages declaredName="StateTest">
+  <elements xsi:type="sysMLOC:Package" declaredName="StateTest">
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="Sig">
       <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="x"/>
     </elements>
@@ -11,7 +11,7 @@
       <elements xsi:type="sysMLOC:DoActionNode">
         <performedActionParameterPart xsi:type="sysMLOC:PerformActionUsage" declaredName="A"/>
       </elements>
-      <elements xsi:type="sysMLOC:EntryAction"/>
+      <elements xsi:type="sysMLOC:EntryActionNode"/>
       <elements xsi:type="sysMLOC:TransitionUsage">
         <transitionSuccessionElement refElement="S1"/>
       </elements>
@@ -69,5 +69,5 @@
         </performedActionParameterPart>
       </elements>
     </elements>
-  </packages>
+  </elements>
 </sysMLOC:Namespace>

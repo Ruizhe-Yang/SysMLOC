@@ -2,43 +2,58 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="sysMLOC" nsURI="http://www.control.dut/sysmloc/SysMLOC" nsPrefix="sysMLOC">
   <eClassifiers xsi:type="ecore:EClass" name="Namespace">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="intro" upperBound="-1"
-        eType="#//CodeAnnotation" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="packages" upperBound="-1"
-        eType="#//Package" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//GeneralBodyElements" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GeneralBodyElements" eSuperTypes="#//PackageBodyElement #//DefinitionBodyElement #//UsageBodyElement #//InterfaceBodyElement #//ActionBodyElement #//StateBodyElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GeneralBodyElements" eSuperTypes="#//PackageBodyElement #//DefinitionBodyElement #//UsageBodyElement #//InterfaceBodyElement #//ActionBodyElement #//StateBodyElement #//RequirementBodyElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="PackageBodyElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="DefinitionBodyElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DefinitionBodyElement" eSuperTypes="#//ViewDefinitionBodyElement #//ViewBodyElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="UsageBodyElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="InterfaceBodyElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="EnumerationBodyElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ActionBodyElement" eSuperTypes="#//CalculationBodyElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="CalculationBodyElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="StateBodyElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotatingBodyElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="ActionNodeBodyElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AnnotatingElement" eSuperTypes="#//GeneralBodyElements #//EnumerationBodyElement #//AnnotatingBodyElement #//ActionNodeBodyElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="DefinitionElement" eSuperTypes="#//GeneralBodyElements"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ActionBodyElement" eSuperTypes="#//CalculationBodyElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CalculationBodyElement" eSuperTypes="#//CaseBodyElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StateBodyElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RequirementBodyElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CaseBodyElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MetadataBodyElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ViewDefinitionBodyElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ViewBodyElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RelationshipBodyElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AnnotatingElement" eSuperTypes="#//GeneralBodyElements #//EnumerationBodyElement #//AnnotatingBodyElement #//ActionNodeBodyElement #//RelationshipBodyElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DefinitionElement" eSuperTypes="#//GeneralBodyElements #//MetadataBodyElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="UsageElement" eSuperTypes="#//GeneralBodyElements"/>
   <eClassifiers xsi:type="ecore:EClass" name="NonOccurrenceUsageElement" eSuperTypes="#//UsageElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="OccurrenceUsageElement" eSuperTypes="#//UsageElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="StructureUsageElement" eSuperTypes="#//OccurrenceUsageElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="BehaviorUsageElement" eSuperTypes="#//OccurrenceUsageElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ActionNodeElement" eSuperTypes="#//ActionBodyElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Package" eSuperTypes="#//PackageBodyElement">
+  <eClassifiers xsi:type="ecore:EClass" name="ActionNodeElements" eSuperTypes="#//ActionBodyElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StateNodeElements" eSuperTypes="#//StateBodyElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RequirementNodeElements" eSuperTypes="#//RequirementBodyElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Package" eSuperTypes="#//DefinitionElement #//PrefixMetadata">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="declaredName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//PackageBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ImportElement" eSuperTypes="#//GeneralBodyElements">
+  <eClassifiers xsi:type="ecore:EClass" name="ImportElement" eSuperTypes="#//GeneralBodyElements #//MetadataBodyElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibility" eType="#//VisibilityIndicator"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isImportAll" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="declaredName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isNamespace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isRecursive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CodeAnnotation" eSuperTypes="#//GeneralBodyElements #//AnnotatingBodyElement #//ActionNodeBodyElement">
+  <eClassifiers xsi:type="ecore:EClass" name="ExposeElement" eSuperTypes="#//ViewBodyElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="declaredName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isNamespace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isRecursive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="filterPackageExpression"
+        unique="false" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//RelationshipBodyElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CodeAnnotation" eSuperTypes="#//GeneralBodyElements #//AnnotatingBodyElement #//ActionNodeBodyElement #//MetadataBodyElement #//RelationshipBodyElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="body" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Comment" eSuperTypes="#//AnnotatingElement #//Identification">
@@ -55,180 +70,223 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="body" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DefaultReferenceUsage" eSuperTypes="#//NonOccurrenceUsageElement #//MemberPrefix #//isReturnPrefix #//RefPrefix #//BasicDefinitionPrefix #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//ValuePart #//FeatureValue">
+  <eClassifiers xsi:type="ecore:EClass" name="MetadataUsage" eSuperTypes="#//AnnotatingElement #//UsageExtensionKeyword #//PrefixMetadata #//Identification">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="metadataTyping" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="annotatedElement" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//MetadataBodyElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MetadataBodyUsage" eSuperTypes="#//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//ValuePart #//FeatureValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="redefinition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//MetadataBodyElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ElementFilterElement" eSuperTypes="#//PackageBodyElement #//ViewDefinitionBodyElement #//ViewBodyElement #//MemberPrefix">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="filterExpression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DefaultReferenceUsage" eSuperTypes="#//NonOccurrenceUsageElement #//isReturnPrefix #//RefPrefix #//BasicDefinitionPrefix #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//ValuePart #//FeatureValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibility" eType="#//VisibilityIndicator"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isEnd" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//UsageBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ReferenceUsage" eSuperTypes="#//NonOccurrenceUsageElement #//MemberPrefix #//isReturnPrefix #//EndUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//Usage #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//FeatureValue">
+  <eClassifiers xsi:type="ecore:EClass" name="ReferenceVariantUsage" eSuperTypes="#//GeneralBodyElements #//ReferenceSubsetting #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibility" eType="#//VisibilityIndicator"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//UsageBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AttributeDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//DefinitionPrefix #//BasicDefinitionPrefix #//DefinitionDeclaration">
+  <eClassifiers xsi:type="ecore:EClass" name="ReferenceUsage" eSuperTypes="#//NonOccurrenceUsageElement #//MemberPrefix #//isReturnPrefix #//EndUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//Usage #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//FeatureValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//UsageBodyElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LibraryPackage" eSuperTypes="#//DefinitionElement #//PrefixMetadata #//Identification">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isStandard" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isLibrary" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//PackageBodyElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Dependency" eSuperTypes="#//DefinitionElement #//PrefixMetadata #//Identification">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="client" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="supplier" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//AnnotatingElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AttributeDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//DefinitionPrefix #//BasicDefinitionPrefix #//DefinitionExtensionKeyword #//PrefixMetadata #//DefinitionDeclaration #//Identification">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//DefinitionBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AttributeUsage" eSuperTypes="#//NonOccurrenceUsageElement #//MemberPrefix #//isReturnPrefix #//UsagePrefix #//UnextendedUsagePrefix #//EndUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//UsageExtensionKeyword #//Usage #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//FeatureValue">
+  <eClassifiers xsi:type="ecore:EClass" name="AttributeUsage" eSuperTypes="#//NonOccurrenceUsageElement #//MemberPrefix #//isReturnPrefix #//UsagePrefix #//UnextendedUsagePrefix #//EndUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//UsageExtensionKeyword #//PrefixMetadata #//Usage #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//FeatureValue">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//UsageBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EnumerationDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//DefinitionDeclaration">
+  <eClassifiers xsi:type="ecore:EClass" name="EnumerationDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//DefinitionDeclaration #//Identification">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//EnumerationBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EnumeratedValue" eSuperTypes="#//EnumerationBodyElement #//MemberPrefix #//UsageExtensionKeyword #//Usage #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//FeatureValue">
+  <eClassifiers xsi:type="ecore:EClass" name="EnumeratedValue" eSuperTypes="#//EnumerationBodyElement #//MemberPrefix #//UsageExtensionKeyword #//PrefixMetadata #//Usage #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//FeatureValue">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//UsageBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EnumerationUsage" eSuperTypes="#//NonOccurrenceUsageElement #//MemberPrefix #//isReturnPrefix #//UsagePrefix #//UnextendedUsagePrefix #//EndUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//UsageExtensionKeyword #//Usage #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//FeatureValue">
+  <eClassifiers xsi:type="ecore:EClass" name="EnumerationUsage" eSuperTypes="#//NonOccurrenceUsageElement #//MemberPrefix #//isReturnPrefix #//UsagePrefix #//UnextendedUsagePrefix #//EndUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//UsageExtensionKeyword #//PrefixMetadata #//Usage #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//FeatureValue">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//UsageBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BindingConnectorAsUsage" eSuperTypes="#//NonOccurrenceUsageElement #//MemberPrefix #//isReturnPrefix #//UsagePrefix #//UnextendedUsagePrefix #//EndUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//UsageExtensionKeyword #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange">
+  <eClassifiers xsi:type="ecore:EClass" name="BindingConnectorAsUsage" eSuperTypes="#//NonOccurrenceUsageElement #//MemberPrefix #//isReturnPrefix #//UsagePrefix #//UnextendedUsagePrefix #//EndUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//UsageExtensionKeyword #//PrefixMetadata #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange">
     <eStructuralFeatures xsi:type="ecore:EReference" name="connectorPart" upperBound="-1"
         eType="#//ConnectorEnd" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//DefinitionBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SuccessionAsUsage" eSuperTypes="#//NonOccurrenceUsageElement #//MemberPrefix #//isReturnPrefix #//UsagePrefix #//UnextendedUsagePrefix #//EndUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//UsageExtensionKeyword #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange">
+  <eClassifiers xsi:type="ecore:EClass" name="SuccessionAsUsage" eSuperTypes="#//NonOccurrenceUsageElement #//MemberPrefix #//isReturnPrefix #//UsagePrefix #//UnextendedUsagePrefix #//EndUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//UsageExtensionKeyword #//PrefixMetadata #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange">
     <eStructuralFeatures xsi:type="ecore:EReference" name="connectorPart" upperBound="-1"
         eType="#//ConnectorEnd" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//DefinitionBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="OccurrenceDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//OccurrenceDefinitionPrefix #//BasicDefinitionPrefix #//DefinitionDeclaration">
+  <eClassifiers xsi:type="ecore:EClass" name="OccurrenceDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//OccurrenceDefinitionPrefix #//BasicDefinitionPrefix #//DefinitionDeclaration #//Identification">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//DefinitionBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="OccurrenceUsage" eSuperTypes="#//StructureUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//Usage #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//FeatureValue">
+  <eClassifiers xsi:type="ecore:EClass" name="OccurrenceUsage" eSuperTypes="#//StructureUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//Usage #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//FeatureValue">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//UsageBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PortionUsage" eSuperTypes="#//StructureUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//UsageExtensionKeyword #//Usage #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//FeatureValue">
+  <eClassifiers xsi:type="ecore:EClass" name="PortionUsage" eSuperTypes="#//StructureUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//UsageExtensionKeyword #//PrefixMetadata #//Usage #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//FeatureValue">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isIndividual" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="portionKind" eType="#//PortionKind"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//UsageBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EventOccurrenceUsage" eSuperTypes="#//StructureUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//ReferenceSubsetting #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//UsageDeclaration #//FeatureDeclaration #//ValuePart #//FeatureValue">
+  <eClassifiers xsi:type="ecore:EClass" name="EventOccurrenceUsage" eSuperTypes="#//StructureUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//ReferenceSubsetting #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//UsageDeclaration #//FeatureDeclaration #//Identification #//ValuePart #//FeatureValue">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//UsageBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="IndividualDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//BasicDefinitionPrefix #//UsageExtensionKeyword #//DefinitionDeclaration">
+  <eClassifiers xsi:type="ecore:EClass" name="IndividualDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//BasicDefinitionPrefix #//UsageExtensionKeyword #//PrefixMetadata #//DefinitionDeclaration #//Identification">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isIndividual" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//DefinitionBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="IndividualUsage" eSuperTypes="#//StructureUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//UsageExtensionKeyword #//Usage #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//FeatureValue">
+  <eClassifiers xsi:type="ecore:EClass" name="IndividualUsage" eSuperTypes="#//StructureUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//UsageExtensionKeyword #//PrefixMetadata #//Usage #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//FeatureValue">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isIndividual" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//UsageBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ItemDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//OccurrenceDefinitionPrefix #//BasicDefinitionPrefix #//DefinitionDeclaration">
+  <eClassifiers xsi:type="ecore:EClass" name="ItemDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//OccurrenceDefinitionPrefix #//BasicDefinitionPrefix #//DefinitionDeclaration #//Identification">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//DefinitionBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ItemUsage" eSuperTypes="#//StructureUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//Usage #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//FeatureValue">
+  <eClassifiers xsi:type="ecore:EClass" name="ItemUsage" eSuperTypes="#//StructureUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//Usage #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//FeatureValue">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//UsageBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PartDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//OccurrenceDefinitionPrefix #//BasicDefinitionPrefix #//DefinitionDeclaration">
+  <eClassifiers xsi:type="ecore:EClass" name="PartDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//OccurrenceDefinitionPrefix #//BasicDefinitionPrefix #//DefinitionDeclaration #//Identification">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//DefinitionBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PartUsage" eSuperTypes="#//StructureUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//Usage #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//FeatureValue">
+  <eClassifiers xsi:type="ecore:EClass" name="PartUsage" eSuperTypes="#//StructureUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//Usage #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//FeatureValue">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//UsageBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PortDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//DefinitionPrefix #//BasicDefinitionPrefix #//DefinitionDeclaration">
+  <eClassifiers xsi:type="ecore:EClass" name="PortDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//DefinitionPrefix #//BasicDefinitionPrefix #//DefinitionExtensionKeyword #//PrefixMetadata #//DefinitionDeclaration #//Identification">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//DefinitionBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PortUsage" eSuperTypes="#//StructureUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//Usage #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//FeatureValue">
+  <eClassifiers xsi:type="ecore:EClass" name="PortUsage" eSuperTypes="#//StructureUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//Usage #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//FeatureValue">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//UsageBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ConnectionDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//OccurrenceDefinitionPrefix #//BasicDefinitionPrefix #//DefinitionDeclaration">
+  <eClassifiers xsi:type="ecore:EClass" name="ConnectionDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//OccurrenceDefinitionPrefix #//BasicDefinitionPrefix #//DefinitionDeclaration #//Identification">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//DefinitionBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ConnectionUsage" eSuperTypes="#//StructureUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//FeatureValue #//ConnectorPart">
+  <eClassifiers xsi:type="ecore:EClass" name="ConnectionUsage" eSuperTypes="#//StructureUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//FeatureValue #//ConnectorPart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//UsageBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InterfaceDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//OccurrenceDefinitionPrefix #//BasicDefinitionPrefix #//DefinitionDeclaration">
+  <eClassifiers xsi:type="ecore:EClass" name="InterfaceDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//OccurrenceDefinitionPrefix #//BasicDefinitionPrefix #//DefinitionDeclaration #//Identification">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//DefinitionBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InterfaceUsage" eSuperTypes="#//StructureUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//ConnectorPart">
+  <eClassifiers xsi:type="ecore:EClass" name="InterfaceUsage" eSuperTypes="#//StructureUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//ConnectorPart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//InterfaceBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Message" eSuperTypes="#//StructureUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//ValuePart #//FeatureValue #//ItemFeatureParameterPart">
+  <eClassifiers xsi:type="ecore:EClass" name="Message" eSuperTypes="#//StructureUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//ValuePart #//FeatureValue #//ItemFeatureParameterPart">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="FlowEnd" unique="false"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//UsageBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FlowConnectionDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//OccurrenceDefinitionPrefix #//BasicDefinitionPrefix #//DefinitionDeclaration">
+  <eClassifiers xsi:type="ecore:EClass" name="FlowConnectionDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//OccurrenceDefinitionPrefix #//BasicDefinitionPrefix #//DefinitionDeclaration #//Identification">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//DefinitionBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FlowConnectionUsage" eSuperTypes="#//StructureUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//FeatureValue #//ItemFeatureParameterPart">
+  <eClassifiers xsi:type="ecore:EClass" name="FlowConnectionUsage" eSuperTypes="#//StructureUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//FeatureValue #//ItemFeatureParameterPart">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="FlowEnd" unique="false"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//UsageBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SuccessionFlowConnectionUsage" eSuperTypes="#//StructureUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//FeatureValue #//ItemFeatureParameterPart">
+  <eClassifiers xsi:type="ecore:EClass" name="SuccessionFlowConnectionUsage" eSuperTypes="#//StructureUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//FeatureValue #//ItemFeatureParameterPart">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="FlowEnd" unique="false"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//DefinitionBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ActionDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//OccurrenceDefinitionPrefix #//BasicDefinitionPrefix #//DefinitionDeclaration">
+  <eClassifiers xsi:type="ecore:EClass" name="AllocationDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//OccurrenceDefinitionPrefix #//BasicDefinitionPrefix #//DefinitionDeclaration #//Identification">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//DefinitionBodyElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AllocationUsage" eSuperTypes="#//StructureUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//ConnectorPart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//UsageBodyElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActionDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//OccurrenceDefinitionPrefix #//BasicDefinitionPrefix #//DefinitionDeclaration #//Identification">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//ActionBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ActionUsage" eSuperTypes="#//BehaviorUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//ActionUsageDeclaration #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//FeatureValue">
+  <eClassifiers xsi:type="ecore:EClass" name="ActionUsage" eSuperTypes="#//BehaviorUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//ActionUsageDeclaration #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//FeatureValue">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//ActionBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CalculationDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//OccurrenceDefinitionPrefix #//BasicDefinitionPrefix #//DefinitionDeclaration">
+  <eClassifiers xsi:type="ecore:EClass" name="CalculationDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//OccurrenceDefinitionPrefix #//BasicDefinitionPrefix #//DefinitionDeclaration #//Identification">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//CalculationBodyElement" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="resultExpressionParameter"
         upperBound="-1" eType="#//ResultExpression" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CalculationUsage" eSuperTypes="#//BehaviorUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//ActionUsageDeclaration #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//FeatureValue">
+  <eClassifiers xsi:type="ecore:EClass" name="CalculationUsage" eSuperTypes="#//BehaviorUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//ActionUsageDeclaration #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//FeatureValue">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//CalculationBodyElement" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="resultExpressionParameter"
         upperBound="-1" eType="#//ResultExpression" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="StateDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//OccurrenceDefinitionPrefix #//BasicDefinitionPrefix #//DefinitionDeclaration">
+  <eClassifiers xsi:type="ecore:EClass" name="StateDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//OccurrenceDefinitionPrefix #//BasicDefinitionPrefix #//DefinitionDeclaration #//Identification">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isParallel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//StateBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="StateUsage" eSuperTypes="#//BehaviorUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//ActionUsageDeclaration #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//FeatureValue">
+  <eClassifiers xsi:type="ecore:EClass" name="StateUsage" eSuperTypes="#//BehaviorUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//ActionUsageDeclaration #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//FeatureValue">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isParallel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//StateBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ConstraintDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//OccurrenceDefinitionPrefix #//BasicDefinitionPrefix #//DefinitionDeclaration">
+  <eClassifiers xsi:type="ecore:EClass" name="ConstraintDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//OccurrenceDefinitionPrefix #//BasicDefinitionPrefix #//DefinitionDeclaration #//Identification">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//CalculationBodyElement" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="resultExpressionParameter"
         upperBound="-1" eType="#//ResultExpression" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ConstraintUsage" eSuperTypes="#//BehaviorUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//ConstraintUsageDeclaration #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//ValuePart #//FeatureValue">
+  <eClassifiers xsi:type="ecore:EClass" name="ConstraintUsage" eSuperTypes="#//BehaviorUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//ConstraintUsageDeclaration #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//ValuePart #//FeatureValue">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//CalculationBodyElement" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="resultExpressionParameter"
         upperBound="-1" eType="#//ResultExpression" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TransitionUsage" eSuperTypes="#//StateBodyElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//AcceptParameterPart #//PerformedActionParameterPart #//TransitionSuccession">
+  <eClassifiers xsi:type="ecore:EClass" name="TransitionUsage" eSuperTypes="#//StateNodeElements #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//AcceptParameterPart #//PerformedActionParameterPart #//TransitionSuccession">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="transitionSourceElement"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="conditionalExpression"
@@ -236,56 +294,154 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//ActionBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PerformActionUsage" eSuperTypes="#//BehaviorUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//ReferenceSubsetting #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//UsageDeclaration #//FeatureDeclaration #//ValuePart #//FeatureValue #//PerformedActionUsage">
+  <eClassifiers xsi:type="ecore:EClass" name="RequirementDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//OccurrenceDefinitionPrefix #//BasicDefinitionPrefix #//DefinitionDeclaration #//Identification">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//RequirementBodyElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RequirementUsage" eSuperTypes="#//BehaviorUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//ConstraintUsageDeclaration #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//ValuePart #//FeatureValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//RequirementBodyElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConcernDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//OccurrenceDefinitionPrefix #//BasicDefinitionPrefix #//DefinitionDeclaration #//Identification">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//RequirementBodyElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConcernUsage" eSuperTypes="#//BehaviorUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//ConstraintUsageDeclaration #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//ValuePart #//FeatureValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//RequirementBodyElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CaseDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//OccurrenceDefinitionPrefix #//BasicDefinitionPrefix #//DefinitionDeclaration #//Identification">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//CaseBodyElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resultExpressionParameter"
+        upperBound="-1" eType="#//ResultExpression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CaseUsage" eSuperTypes="#//BehaviorUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//ActionUsageDeclaration #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//FeatureValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//CaseBodyElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resultExpressionParameter"
+        upperBound="-1" eType="#//ResultExpression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AnalysisCaseDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//OccurrenceDefinitionPrefix #//BasicDefinitionPrefix #//DefinitionDeclaration #//Identification">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//CaseBodyElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resultExpressionParameter"
+        upperBound="-1" eType="#//ResultExpression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AnalysisCaseUsage" eSuperTypes="#//BehaviorUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//ActionUsageDeclaration #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//FeatureValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//CaseBodyElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resultExpressionParameter"
+        upperBound="-1" eType="#//ResultExpression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VerificationCaseDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//OccurrenceDefinitionPrefix #//BasicDefinitionPrefix #//DefinitionDeclaration #//Identification">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//CaseBodyElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resultExpressionParameter"
+        upperBound="-1" eType="#//ResultExpression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VerificationCaseUsage" eSuperTypes="#//BehaviorUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//ActionUsageDeclaration #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//FeatureValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//CaseBodyElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resultExpressionParameter"
+        upperBound="-1" eType="#//ResultExpression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UseCaseDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//OccurrenceDefinitionPrefix #//BasicDefinitionPrefix #//DefinitionDeclaration #//Identification">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//CaseBodyElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resultExpressionParameter"
+        upperBound="-1" eType="#//ResultExpression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UseCaseUsage" eSuperTypes="#//BehaviorUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//ActionUsageDeclaration #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//FeatureValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//CaseBodyElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resultExpressionParameter"
+        upperBound="-1" eType="#//ResultExpression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ViewDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//OccurrenceDefinitionPrefix #//BasicDefinitionPrefix #//DefinitionDeclaration #//Identification">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//ViewDefinitionBodyElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ViewUsage" eSuperTypes="#//StructureUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//ValuePart #//FeatureValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//ViewBodyElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ViewpointDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//OccurrenceDefinitionPrefix #//BasicDefinitionPrefix #//DefinitionDeclaration #//Identification">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//RequirementBodyElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ViewpointUsage" eSuperTypes="#//BehaviorUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//ConstraintUsageDeclaration #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//ValuePart #//FeatureValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//RequirementBodyElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RenderingDefinition" eSuperTypes="#//DefinitionElement #//MemberPrefix #//OccurrenceDefinitionPrefix #//BasicDefinitionPrefix #//DefinitionDeclaration #//Identification">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//DefinitionBodyElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RenderingUsage" eSuperTypes="#//StructureUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//Usage #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//FeatureValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//UsageBodyElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PerformActionUsage" eSuperTypes="#//BehaviorUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//ReferenceSubsetting #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//UsageDeclaration #//FeatureDeclaration #//Identification #//ValuePart #//FeatureValue #//PerformedActionUsage">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//ActionBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ExhibitStateUsage" eSuperTypes="#//BehaviorUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//ReferenceSubsetting #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//UsageDeclaration #//FeatureDeclaration #//ValuePart #//FeatureValue">
+  <eClassifiers xsi:type="ecore:EClass" name="ExhibitStateUsage" eSuperTypes="#//BehaviorUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//ReferenceSubsetting #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//UsageDeclaration #//FeatureDeclaration #//Identification #//ValuePart #//FeatureValue">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isParallel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//StateBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AssertConstraintUsage" eSuperTypes="#//BehaviorUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//ReferenceSubsetting #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//ConstraintUsageDeclaration #//UsageDeclaration #//FeatureDeclaration #//ValuePart #//FeatureValue">
+  <eClassifiers xsi:type="ecore:EClass" name="IncludeUseCaseUsage" eSuperTypes="#//BehaviorUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//ReferenceSubsetting #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//UsageDeclaration #//FeatureDeclaration #//Identification #//ValuePart #//FeatureValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//CaseBodyElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resultExpressionParameter"
+        upperBound="-1" eType="#//ResultExpression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AssertConstraintUsage" eSuperTypes="#//BehaviorUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//ReferenceSubsetting #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//ConstraintUsageDeclaration #//UsageDeclaration #//FeatureDeclaration #//Identification #//ValuePart #//FeatureValue">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isNegated" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//CalculationBodyElement" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="resultExpressionParameter"
         upperBound="-1" eType="#//ResultExpression" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ResultExpression" eSuperTypes="#//MemberPrefix">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="resultExpression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SatisfyRequirementUsage" eSuperTypes="#//BehaviorUsageElement #//GeneralUsagePrefix #//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//ReferenceSubsetting #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//UsageDeclaration #//FeatureDeclaration #//Identification #//ValuePart #//FeatureValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isNegated" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="satisfactionParameter"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//RequirementBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AliasElement" eSuperTypes="#//GeneralBodyElements #//MemberPrefix">
+  <eClassifiers xsi:type="ecore:EClass" name="AliasElement" eSuperTypes="#//GeneralBodyElements #//MetadataBodyElement #//MemberPrefix">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="memberShortName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="memberName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="memberElement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//AnnotatingBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InitialNode" eSuperTypes="#//ActionNodeElement #//MemberPrefix">
+  <eClassifiers xsi:type="ecore:EClass" name="InitialNode" eSuperTypes="#//ActionNodeElements #//MemberPrefix">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="memberElement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//ActionNodeBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SendNode" eSuperTypes="#//ActionNodeElement #//EmptySuccessionPrefix #//MemberPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//ActionNodeUsageDeclaration #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange">
+  <eClassifiers xsi:type="ecore:EClass" name="SendNode" eSuperTypes="#//ActionNodeElements #//EmptySuccessionPrefix #//MemberPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//ActionNodeUsageDeclaration #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sendNodeParameter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="viaNodeParameter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="toNodeParameter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//ActionBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AcceptNode" eSuperTypes="#//ActionNodeElement #//EmptySuccessionPrefix #//MemberPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//ActionNodeUsageDeclaration #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//AcceptParameterPart">
+  <eClassifiers xsi:type="ecore:EClass" name="AcceptNode" eSuperTypes="#//ActionNodeElements #//EmptySuccessionPrefix #//MemberPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//ActionNodeUsageDeclaration #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//AcceptParameterPart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//ActionBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AssignmentNode" eSuperTypes="#//ActionNodeElement #//EmptySuccessionPrefix #//MemberPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//ActionNodeUsageDeclaration #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange">
+  <eClassifiers xsi:type="ecore:EClass" name="AssignmentNode" eSuperTypes="#//ActionNodeElements #//EmptySuccessionPrefix #//MemberPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//ActionNodeUsageDeclaration #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetParameter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="featureChain" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="NodeParameter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//ActionBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="IfNode" eSuperTypes="#//ActionNodeElement #//EmptySuccessionPrefix #//MemberPrefix #//ActionNodePrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//ActionNodeUsageDeclaration #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//TransitionSuccession">
+  <eClassifiers xsi:type="ecore:EClass" name="IfNode" eSuperTypes="#//ActionNodeElements #//EmptySuccessionPrefix #//MemberPrefix #//ActionNodePrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//ActionNodeUsageDeclaration #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//TransitionSuccession">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isSuccession" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="successionElement" upperBound="-1"
         eType="#//IfSuccessionAsUsage" containment="true"/>
@@ -298,7 +454,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="WhileLoopNode" eSuperTypes="#//ActionNodeElement #//EmptySuccessionPrefix #//MemberPrefix #//ActionNodePrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//ActionNodeUsageDeclaration #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange">
+  <eClassifiers xsi:type="ecore:EClass" name="WhileLoopNode" eSuperTypes="#//ActionNodeElements #//EmptySuccessionPrefix #//MemberPrefix #//ActionNodePrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//ActionNodeUsageDeclaration #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="whileConditionExpression"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="actionParameterEnd" upperBound="-1"
@@ -308,7 +464,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="untilConditionExpression"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ForLoopNode" eSuperTypes="#//ActionNodeElement #//EmptySuccessionPrefix #//MemberPrefix #//ActionNodePrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//ActionNodeUsageDeclaration #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange">
+  <eClassifiers xsi:type="ecore:EClass" name="ForLoopNode" eSuperTypes="#//ActionNodeElements #//EmptySuccessionPrefix #//MemberPrefix #//ActionNodePrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//ActionNodeUsageDeclaration #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange">
     <eStructuralFeatures xsi:type="ecore:EReference" name="forVariableParameter" eType="#//ForVariableParameter"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="forNodeParameter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -317,23 +473,23 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//ActionBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TerminateNode" eSuperTypes="#//ActionNodeElement #//EmptySuccessionPrefix #//MemberPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//ActionNodeUsageDeclaration #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange">
+  <eClassifiers xsi:type="ecore:EClass" name="TerminateNode" eSuperTypes="#//ActionNodeElements #//EmptySuccessionPrefix #//MemberPrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//ActionNodeUsageDeclaration #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="NodeParameter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//ActionBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CommonNode" eSuperTypes="#//ActionNodeElement #//EmptySuccessionPrefix #//MemberPrefix #//ControlNodePrefix #//RefPrefix #//BasicDefinitionPrefix #//UsageExtensionKeyword #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange">
+  <eClassifiers xsi:type="ecore:EClass" name="CommonNode" eSuperTypes="#//ActionNodeElements #//EmptySuccessionPrefix #//MemberPrefix #//ControlNodePrefix #//RefPrefix #//BasicDefinitionPrefix #//UsageExtensionKeyword #//PrefixMetadata #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nodeKind" eType="#//CommonNodeKind"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//ActionNodeBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ThenNode" eSuperTypes="#//ActionNodeElement #//MemberPrefix #//MultiplicityRange">
+  <eClassifiers xsi:type="ecore:EClass" name="ThenNode" eSuperTypes="#//ActionNodeElements #//MemberPrefix #//MultiplicityRange">
     <eStructuralFeatures xsi:type="ecore:EReference" name="thenElement" upperBound="-1"
         eType="#//ConnectorEnd" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//UsageBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ElseNode" eSuperTypes="#//ActionNodeElement #//EmptySuccessionPrefix #//MemberPrefix #//ActionNodePrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//ActionNodeUsageDeclaration #//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange">
+  <eClassifiers xsi:type="ecore:EClass" name="ElseNode" eSuperTypes="#//ActionNodeElements #//EmptySuccessionPrefix #//MemberPrefix #//ActionNodePrefix #//OccurrenceUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//ActionNodeUsageDeclaration #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange">
     <eStructuralFeatures xsi:type="ecore:EReference" name="actionParameterEnd" upperBound="-1"
         eType="#//ActionParameterEnd" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elseEnd" upperBound="-1"
@@ -341,35 +497,78 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//ActionBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EntryAction" eSuperTypes="#//StateBodyElement #//MemberPrefix #//PerformedActionParameterPart">
+  <eClassifiers xsi:type="ecore:EClass" name="EntryActionNode" eSuperTypes="#//StateNodeElements #//MemberPrefix #//PerformedActionParameterPart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//ActionBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DoActionNode" eSuperTypes="#//StateBodyElement #//MemberPrefix #//PerformedActionParameterPart">
+  <eClassifiers xsi:type="ecore:EClass" name="DoActionNode" eSuperTypes="#//StateNodeElements #//MemberPrefix #//PerformedActionParameterPart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//ActionBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ExitActionNode" eSuperTypes="#//StateBodyElement #//MemberPrefix #//PerformedActionParameterPart">
+  <eClassifiers xsi:type="ecore:EClass" name="ExitActionNode" eSuperTypes="#//StateNodeElements #//MemberPrefix #//PerformedActionParameterPart">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//ActionBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ActionParameterEnd" eSuperTypes="#//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ForVariableParameter" eSuperTypes="#//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SubjectUsage" eSuperTypes="#//CaseBodyElement #//RequirementNodeElements #//MemberPrefix #//UsageExtensionKeyword #//PrefixMetadata #//Usage #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//FeatureValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//UsageBodyElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RequirementConstraintUsage" eSuperTypes="#//RequirementNodeElements #//MemberPrefix #//ReferenceSubsetting #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//UsageExtensionKeyword #//PrefixMetadata #//ConstraintUsageDeclaration #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//MultiplicityPart #//MultiplicityRange #//ValuePart #//FeatureValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//RequirementConstraintKind"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//CalculationBodyElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resultExpressionParameter"
+        upperBound="-1" eType="#//ResultExpression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FramedConcernUsage" eSuperTypes="#//RequirementNodeElements #//MemberPrefix #//ReferenceSubsetting #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//UsageExtensionKeyword #//PrefixMetadata #//ConstraintUsageDeclaration #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//MultiplicityPart #//MultiplicityRange #//ValuePart #//FeatureValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resultExpressionParameter"
+        upperBound="-1" eType="#//ResultExpression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RequirementVerificationUsage" eSuperTypes="#//RequirementNodeElements #//MemberPrefix #//ReferenceSubsetting #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//UsageExtensionKeyword #//PrefixMetadata #//ConstraintUsageDeclaration #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//MultiplicityPart #//MultiplicityRange #//ValuePart #//FeatureValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resultExpressionParameter"
+        upperBound="-1" eType="#//ResultExpression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActorUsage" eSuperTypes="#//CaseBodyElement #//RequirementNodeElements #//MemberPrefix #//UsageExtensionKeyword #//PrefixMetadata #//Usage #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//FeatureValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//UsageBodyElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StakeholderUsage" eSuperTypes="#//RequirementNodeElements #//MemberPrefix #//UsageExtensionKeyword #//PrefixMetadata #//Usage #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//FeatureValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//UsageBodyElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ObjectiveRequirementUsage" eSuperTypes="#//CaseBodyElement #//MemberPrefix #//UsageExtensionKeyword #//PrefixMetadata #//ConstraintUsageDeclaration #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//ValuePart #//FeatureValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//RequirementBodyElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ViewRenderingUsage" eSuperTypes="#//ViewDefinitionBodyElement #//ViewBodyElement #//MemberPrefix #//ReferenceSubsetting #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//UsageExtensionKeyword #//PrefixMetadata #//Usage #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//MultiplicityPart #//MultiplicityRange #//FeatureValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//UsageBodyElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ResultExpression" eSuperTypes="#//MemberPrefix">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="resultExpression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActionParameterEnd" eSuperTypes="#//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ForVariableParameter" eSuperTypes="#//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange"/>
   <eClassifiers xsi:type="ecore:EClass" name="PayloadParameter" eSuperTypes="#//PayloadFeature #//Identification #//PayloadFeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//ValuePart #//FeatureValue #//TriggerValuePart">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="viaNodeParameter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConnectorEnd" eSuperTypes="#//MultiplicityRange #//ReferenceSubsetting">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="delcaredName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PerformedActionUsage" eSuperTypes="#//PerformActionUsageDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//UsageDeclaration #//FeatureDeclaration #//ValuePart #//FeatureValue #//AcceptNodeDeclaration #//ActionNodeUsageDeclaration #//AcceptParameterPart #//SendNodeDeclaration #//AssignmentNodeDeclaration"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PerformedActionUsage" eSuperTypes="#//PerformActionUsageDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//UsageDeclaration #//FeatureDeclaration #//Identification #//ValuePart #//FeatureValue #//AcceptNodeDeclaration #//ActionNodeUsageDeclaration #//AcceptParameterPart #//SendNodeDeclaration #//AssignmentNodeDeclaration"/>
   <eClassifiers xsi:type="ecore:EClass" name="ItemFeatureParameter" eSuperTypes="#//PayloadFeature #//Identification #//PayloadFeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//ValuePart #//FeatureValue"/>
-  <eClassifiers xsi:type="ecore:EClass" name="IfSuccessionAsUsage" eSuperTypes="#//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange"/>
-  <eClassifiers xsi:type="ecore:EClass" name="TargetSuccessionElement" eSuperTypes="#//MultiplicityRange"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IfSuccessionAsUsage" eSuperTypes="#//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange"/>
   <eClassifiers xsi:type="ecore:EClass" name="GeneralUsagePrefix" eSuperTypes="#//EmptySuccessionPrefix #//MemberPrefix #//isReturnPrefix"/>
-  <eClassifiers xsi:type="ecore:EClass" name="UsageExtensionKeyword">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="UsageExtension" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PrefixMetadata">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prefixMetadataExtension"
+        unique="false" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UsageExtensionKeyword" eSuperTypes="#//PrefixMetadata"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DefinitionExtensionKeyword" eSuperTypes="#//PrefixMetadata"/>
   <eClassifiers xsi:type="ecore:EClass" name="EmptySuccessionPrefix">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isThen" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ThenMultiplicity" unique="false"
@@ -382,11 +581,12 @@
   <eClassifiers xsi:type="ecore:EClass" name="ValuePart" eSuperTypes="#//FeatureValue"/>
   <eClassifiers xsi:type="ecore:EClass" name="MemberPrefix">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibility" eType="#//VisibilityIndicator"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isVariant" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="isReturnPrefix">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isReturn" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DefinitionPrefix" eSuperTypes="#//BasicDefinitionPrefix"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DefinitionPrefix" eSuperTypes="#//BasicDefinitionPrefix #//DefinitionExtensionKeyword"/>
   <eClassifiers xsi:type="ecore:EClass" name="OccurrenceDefinitionPrefix" eSuperTypes="#//BasicDefinitionPrefix">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isIndividual" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
@@ -416,25 +616,22 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="connectorPart" upperBound="-1"
         eType="#//ConnectorEnd" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DefinitionDeclaration">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="declaredName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DefinitionDeclaration" eSuperTypes="#//Identification">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="superclassifiers" unique="false"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ActionUsageDeclaration" eSuperTypes="#//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//FeatureValue"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ConstraintUsageDeclaration" eSuperTypes="#//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//ValuePart"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ActionNodeUsageDeclaration" eSuperTypes="#//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Usage" eSuperTypes="#//UsageDeclaration #//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//FeatureValue"/>
-  <eClassifiers xsi:type="ecore:EClass" name="UsageDeclaration" eSuperTypes="#//FeatureDeclaration #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ActionUsageDeclaration" eSuperTypes="#//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//FeatureValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ConstraintUsageDeclaration" eSuperTypes="#//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//ValuePart"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ActionNodeUsageDeclaration" eSuperTypes="#//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Usage" eSuperTypes="#//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//FeatureValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UsageDeclaration" eSuperTypes="#//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange"/>
   <eClassifiers xsi:type="ecore:EClass" name="FeatureValue">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isInitial" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isDefault" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="valuePart" unique="false"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FeatureDeclaration" eSuperTypes="#//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="declaredName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FeatureDeclaration" eSuperTypes="#//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange"/>
   <eClassifiers xsi:type="ecore:EClass" name="FeatureSpecializationPart" eSuperTypes="#//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange"/>
   <eClassifiers xsi:type="ecore:EClass" name="PerformActionUsageDeclaration" eSuperTypes="#//FeatureSpecializationPart #//UsageDeclaration #//ValuePart">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="referencedFeature" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -540,6 +737,10 @@
     <eLiterals name="decide" value="1" literal="decide"/>
     <eLiterals name="join" value="2" literal="join"/>
     <eLiterals name="fork" value="3" literal="fork"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RequirementConstraintKind">
+    <eLiterals name="assumption" literal="assume"/>
+    <eLiterals name="requirement" value="1" literal="require"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AcceptActionUsage" eSuperTypes="#//PerformedActionUsage"/>
   <eClassifiers xsi:type="ecore:EClass" name="SendActionUsage" eSuperTypes="#//PerformedActionUsage"/>

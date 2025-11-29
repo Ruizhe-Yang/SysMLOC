@@ -5,6 +5,7 @@ package dut.control.sysmloc.sysMLOC.impl;
 
 import dut.control.sysmloc.sysMLOC.ControlNodePrefix;
 import dut.control.sysmloc.sysMLOC.PortionKind;
+import dut.control.sysmloc.sysMLOC.PrefixMetadata;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 import dut.control.sysmloc.sysMLOC.UsageExtensionKeyword;
 
@@ -28,7 +29,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ControlNodePrefixImpl#getUsageExtension <em>Usage Extension</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ControlNodePrefixImpl#getPrefixMetadataExtension <em>Prefix Metadata Extension</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ControlNodePrefixImpl#isIsIndividual <em>Is Individual</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ControlNodePrefixImpl#getPortionKind <em>Portion Kind</em>}</li>
  * </ul>
@@ -38,14 +39,14 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
 public class ControlNodePrefixImpl extends RefPrefixImpl implements ControlNodePrefix
 {
   /**
-   * The cached value of the '{@link #getUsageExtension() <em>Usage Extension</em>}' attribute list.
+   * The cached value of the '{@link #getPrefixMetadataExtension() <em>Prefix Metadata Extension</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getUsageExtension()
+   * @see #getPrefixMetadataExtension()
    * @generated
    * @ordered
    */
-  protected EList<String> usageExtension;
+  protected EList<String> prefixMetadataExtension;
 
   /**
    * The default value of the '{@link #isIsIndividual() <em>Is Individual</em>}' attribute.
@@ -114,13 +115,13 @@ public class ControlNodePrefixImpl extends RefPrefixImpl implements ControlNodeP
    * @generated
    */
   @Override
-  public EList<String> getUsageExtension()
+  public EList<String> getPrefixMetadataExtension()
   {
-    if (usageExtension == null)
+    if (prefixMetadataExtension == null)
     {
-      usageExtension = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.CONTROL_NODE_PREFIX__USAGE_EXTENSION);
+      prefixMetadataExtension = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.CONTROL_NODE_PREFIX__PREFIX_METADATA_EXTENSION);
     }
-    return usageExtension;
+    return prefixMetadataExtension;
   }
 
   /**
@@ -183,8 +184,8 @@ public class ControlNodePrefixImpl extends RefPrefixImpl implements ControlNodeP
   {
     switch (featureID)
     {
-      case SysMLOCPackage.CONTROL_NODE_PREFIX__USAGE_EXTENSION:
-        return getUsageExtension();
+      case SysMLOCPackage.CONTROL_NODE_PREFIX__PREFIX_METADATA_EXTENSION:
+        return getPrefixMetadataExtension();
       case SysMLOCPackage.CONTROL_NODE_PREFIX__IS_INDIVIDUAL:
         return isIsIndividual();
       case SysMLOCPackage.CONTROL_NODE_PREFIX__PORTION_KIND:
@@ -204,9 +205,9 @@ public class ControlNodePrefixImpl extends RefPrefixImpl implements ControlNodeP
   {
     switch (featureID)
     {
-      case SysMLOCPackage.CONTROL_NODE_PREFIX__USAGE_EXTENSION:
-        getUsageExtension().clear();
-        getUsageExtension().addAll((Collection<? extends String>)newValue);
+      case SysMLOCPackage.CONTROL_NODE_PREFIX__PREFIX_METADATA_EXTENSION:
+        getPrefixMetadataExtension().clear();
+        getPrefixMetadataExtension().addAll((Collection<? extends String>)newValue);
         return;
       case SysMLOCPackage.CONTROL_NODE_PREFIX__IS_INDIVIDUAL:
         setIsIndividual((Boolean)newValue);
@@ -228,8 +229,8 @@ public class ControlNodePrefixImpl extends RefPrefixImpl implements ControlNodeP
   {
     switch (featureID)
     {
-      case SysMLOCPackage.CONTROL_NODE_PREFIX__USAGE_EXTENSION:
-        getUsageExtension().clear();
+      case SysMLOCPackage.CONTROL_NODE_PREFIX__PREFIX_METADATA_EXTENSION:
+        getPrefixMetadataExtension().clear();
         return;
       case SysMLOCPackage.CONTROL_NODE_PREFIX__IS_INDIVIDUAL:
         setIsIndividual(IS_INDIVIDUAL_EDEFAULT);
@@ -251,8 +252,8 @@ public class ControlNodePrefixImpl extends RefPrefixImpl implements ControlNodeP
   {
     switch (featureID)
     {
-      case SysMLOCPackage.CONTROL_NODE_PREFIX__USAGE_EXTENSION:
-        return usageExtension != null && !usageExtension.isEmpty();
+      case SysMLOCPackage.CONTROL_NODE_PREFIX__PREFIX_METADATA_EXTENSION:
+        return prefixMetadataExtension != null && !prefixMetadataExtension.isEmpty();
       case SysMLOCPackage.CONTROL_NODE_PREFIX__IS_INDIVIDUAL:
         return isIndividual != IS_INDIVIDUAL_EDEFAULT;
       case SysMLOCPackage.CONTROL_NODE_PREFIX__PORTION_KIND:
@@ -269,11 +270,18 @@ public class ControlNodePrefixImpl extends RefPrefixImpl implements ControlNodeP
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
   {
+    if (baseClass == PrefixMetadata.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.CONTROL_NODE_PREFIX__PREFIX_METADATA_EXTENSION: return SysMLOCPackage.PREFIX_METADATA__PREFIX_METADATA_EXTENSION;
+        default: return -1;
+      }
+    }
     if (baseClass == UsageExtensionKeyword.class)
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.CONTROL_NODE_PREFIX__USAGE_EXTENSION: return SysMLOCPackage.USAGE_EXTENSION_KEYWORD__USAGE_EXTENSION;
         default: return -1;
       }
     }
@@ -288,11 +296,18 @@ public class ControlNodePrefixImpl extends RefPrefixImpl implements ControlNodeP
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
   {
+    if (baseClass == PrefixMetadata.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.PREFIX_METADATA__PREFIX_METADATA_EXTENSION: return SysMLOCPackage.CONTROL_NODE_PREFIX__PREFIX_METADATA_EXTENSION;
+        default: return -1;
+      }
+    }
     if (baseClass == UsageExtensionKeyword.class)
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.USAGE_EXTENSION_KEYWORD__USAGE_EXTENSION: return SysMLOCPackage.CONTROL_NODE_PREFIX__USAGE_EXTENSION;
         default: return -1;
       }
     }
@@ -310,8 +325,8 @@ public class ControlNodePrefixImpl extends RefPrefixImpl implements ControlNodeP
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (UsageExtension: ");
-    result.append(usageExtension);
+    result.append(" (prefixMetadataExtension: ");
+    result.append(prefixMetadataExtension);
     result.append(", isIndividual: ");
     result.append(isIndividual);
     result.append(", portionKind: ");

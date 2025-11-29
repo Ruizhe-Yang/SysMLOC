@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.MemberPrefixImpl#getVisibility <em>Visibility</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.MemberPrefixImpl#isIsVariant <em>Is Variant</em>}</li>
  * </ul>
  *
  * @generated
@@ -48,6 +49,26 @@ public class MemberPrefixImpl extends MinimalEObjectImpl.Container implements Me
    * @ordered
    */
   protected VisibilityIndicator visibility = VISIBILITY_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsVariant() <em>Is Variant</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsVariant()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_VARIANT_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsVariant() <em>Is Variant</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsVariant()
+   * @generated
+   * @ordered
+   */
+  protected boolean isVariant = IS_VARIANT_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -101,12 +122,39 @@ public class MemberPrefixImpl extends MinimalEObjectImpl.Container implements Me
    * @generated
    */
   @Override
+  public boolean isIsVariant()
+  {
+    return isVariant;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsVariant(boolean newIsVariant)
+  {
+    boolean oldIsVariant = isVariant;
+    isVariant = newIsVariant;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT, oldIsVariant, isVariant));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
       case SysMLOCPackage.MEMBER_PREFIX__VISIBILITY:
         return getVisibility();
+      case SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT:
+        return isIsVariant();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -123,6 +171,9 @@ public class MemberPrefixImpl extends MinimalEObjectImpl.Container implements Me
     {
       case SysMLOCPackage.MEMBER_PREFIX__VISIBILITY:
         setVisibility((VisibilityIndicator)newValue);
+        return;
+      case SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT:
+        setIsVariant((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -141,6 +192,9 @@ public class MemberPrefixImpl extends MinimalEObjectImpl.Container implements Me
       case SysMLOCPackage.MEMBER_PREFIX__VISIBILITY:
         setVisibility(VISIBILITY_EDEFAULT);
         return;
+      case SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT:
+        setIsVariant(IS_VARIANT_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -157,6 +211,8 @@ public class MemberPrefixImpl extends MinimalEObjectImpl.Container implements Me
     {
       case SysMLOCPackage.MEMBER_PREFIX__VISIBILITY:
         return visibility != VISIBILITY_EDEFAULT;
+      case SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT:
+        return isVariant != IS_VARIANT_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -174,6 +230,8 @@ public class MemberPrefixImpl extends MinimalEObjectImpl.Container implements Me
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (visibility: ");
     result.append(visibility);
+    result.append(", isVariant: ");
+    result.append(isVariant);
     result.append(')');
     return result.toString();
   }

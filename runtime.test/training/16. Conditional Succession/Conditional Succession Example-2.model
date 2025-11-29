@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
-  <packages declaredName="'Conditional Succession Example-2'">
+  <elements xsi:type="sysMLOC:Package" declaredName="'Conditional Succession Example-2'">
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Scene"/>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Image">
       <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="isWellFocused">
@@ -58,5 +58,5 @@
         </elements>
       </elements>
     </elements>
-  </packages>
+  </elements>
 </sysMLOC:Namespace>

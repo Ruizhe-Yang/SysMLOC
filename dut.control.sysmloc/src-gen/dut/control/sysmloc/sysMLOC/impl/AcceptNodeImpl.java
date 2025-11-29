@@ -15,6 +15,7 @@ import dut.control.sysmloc.sysMLOC.FeatureDeclaration;
 import dut.control.sysmloc.sysMLOC.FeatureDirection;
 import dut.control.sysmloc.sysMLOC.FeatureSpecialization;
 import dut.control.sysmloc.sysMLOC.FeatureSpecializationPart;
+import dut.control.sysmloc.sysMLOC.Identification;
 import dut.control.sysmloc.sysMLOC.MemberPrefix;
 import dut.control.sysmloc.sysMLOC.MultiplicityPart;
 import dut.control.sysmloc.sysMLOC.MultiplicityRange;
@@ -57,6 +58,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeImpl#isIsThen <em>Is Then</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeImpl#getThenMultiplicity <em>Then Multiplicity</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeImpl#getVisibility <em>Visibility</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeImpl#isIsVariant <em>Is Variant</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeImpl#isIsAbstract <em>Is Abstract</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeImpl#isIsVariation <em>Is Variation</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeImpl#getDirection <em>Direction</em>}</li>
@@ -66,6 +68,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeImpl#isIsEnd <em>Is End</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeImpl#isIsIndividual <em>Is Individual</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeImpl#getPortionKind <em>Portion Kind</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeImpl#getDeclaredShortName <em>Declared Short Name</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeImpl#getDeclaredName <em>Declared Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeImpl#getTypings <em>Typings</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeImpl#getSubsetting <em>Subsetting</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeImpl#getReferences <em>References</em>}</li>
@@ -74,14 +78,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeImpl#getMultiplicity <em>Multiplicity</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeImpl#isIsOrdered <em>Is Ordered</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeImpl#isIsNonunique <em>Is Nonunique</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeImpl#getDeclaredName <em>Declared Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeImpl#getAcceptParameter <em>Accept Parameter</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeImpl#getElements <em>Elements</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class AcceptNodeImpl extends ActionNodeElementImpl implements AcceptNode
+public class AcceptNodeImpl extends ActionNodeElementsImpl implements AcceptNode
 {
   /**
    * The default value of the '{@link #isIsThen() <em>Is Then</em>}' attribute.
@@ -132,6 +135,26 @@ public class AcceptNodeImpl extends ActionNodeElementImpl implements AcceptNode
    * @ordered
    */
   protected VisibilityIndicator visibility = VISIBILITY_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsVariant() <em>Is Variant</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsVariant()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_VARIANT_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsVariant() <em>Is Variant</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsVariant()
+   * @generated
+   * @ordered
+   */
+  protected boolean isVariant = IS_VARIANT_EDEFAULT;
 
   /**
    * The default value of the '{@link #isIsAbstract() <em>Is Abstract</em>}' attribute.
@@ -314,6 +337,46 @@ public class AcceptNodeImpl extends ActionNodeElementImpl implements AcceptNode
   protected PortionKind portionKind = PORTION_KIND_EDEFAULT;
 
   /**
+   * The default value of the '{@link #getDeclaredShortName() <em>Declared Short Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredShortName()
+   * @generated
+   * @ordered
+   */
+  protected static final String DECLARED_SHORT_NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDeclaredShortName() <em>Declared Short Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredShortName()
+   * @generated
+   * @ordered
+   */
+  protected String declaredShortName = DECLARED_SHORT_NAME_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredName()
+   * @generated
+   * @ordered
+   */
+  protected static final String DECLARED_NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredName()
+   * @generated
+   * @ordered
+   */
+  protected String declaredName = DECLARED_NAME_EDEFAULT;
+
+  /**
    * The cached value of the '{@link #getTypings() <em>Typings</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -412,26 +475,6 @@ public class AcceptNodeImpl extends ActionNodeElementImpl implements AcceptNode
    * @ordered
    */
   protected boolean isNonunique = IS_NONUNIQUE_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDeclaredName()
-   * @generated
-   * @ordered
-   */
-  protected static final String DECLARED_NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDeclaredName()
-   * @generated
-   * @ordered
-   */
-  protected String declaredName = DECLARED_NAME_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getAcceptParameter() <em>Accept Parameter</em>}' containment reference list.
@@ -537,6 +580,31 @@ public class AcceptNodeImpl extends ActionNodeElementImpl implements AcceptNode
     visibility = newVisibility == null ? VISIBILITY_EDEFAULT : newVisibility;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ACCEPT_NODE__VISIBILITY, oldVisibility, visibility));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsVariant()
+  {
+    return isVariant;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsVariant(boolean newIsVariant)
+  {
+    boolean oldIsVariant = isVariant;
+    isVariant = newIsVariant;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ACCEPT_NODE__IS_VARIANT, oldIsVariant, isVariant));
   }
 
   /**
@@ -770,6 +838,56 @@ public class AcceptNodeImpl extends ActionNodeElementImpl implements AcceptNode
    * @generated
    */
   @Override
+  public String getDeclaredShortName()
+  {
+    return declaredShortName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDeclaredShortName(String newDeclaredShortName)
+  {
+    String oldDeclaredShortName = declaredShortName;
+    declaredShortName = newDeclaredShortName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ACCEPT_NODE__DECLARED_SHORT_NAME, oldDeclaredShortName, declaredShortName));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getDeclaredName()
+  {
+    return declaredName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDeclaredName(String newDeclaredName)
+  {
+    String oldDeclaredName = declaredName;
+    declaredName = newDeclaredName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ACCEPT_NODE__DECLARED_NAME, oldDeclaredName, declaredName));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<String> getTypings()
   {
     if (typings == null)
@@ -910,31 +1028,6 @@ public class AcceptNodeImpl extends ActionNodeElementImpl implements AcceptNode
    * @generated
    */
   @Override
-  public String getDeclaredName()
-  {
-    return declaredName;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setDeclaredName(String newDeclaredName)
-  {
-    String oldDeclaredName = declaredName;
-    declaredName = newDeclaredName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ACCEPT_NODE__DECLARED_NAME, oldDeclaredName, declaredName));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EList<PayloadParameter> getAcceptParameter()
   {
     if (acceptParameter == null)
@@ -993,6 +1086,8 @@ public class AcceptNodeImpl extends ActionNodeElementImpl implements AcceptNode
         return getThenMultiplicity();
       case SysMLOCPackage.ACCEPT_NODE__VISIBILITY:
         return getVisibility();
+      case SysMLOCPackage.ACCEPT_NODE__IS_VARIANT:
+        return isIsVariant();
       case SysMLOCPackage.ACCEPT_NODE__IS_ABSTRACT:
         return isIsAbstract();
       case SysMLOCPackage.ACCEPT_NODE__IS_VARIATION:
@@ -1011,6 +1106,10 @@ public class AcceptNodeImpl extends ActionNodeElementImpl implements AcceptNode
         return isIsIndividual();
       case SysMLOCPackage.ACCEPT_NODE__PORTION_KIND:
         return getPortionKind();
+      case SysMLOCPackage.ACCEPT_NODE__DECLARED_SHORT_NAME:
+        return getDeclaredShortName();
+      case SysMLOCPackage.ACCEPT_NODE__DECLARED_NAME:
+        return getDeclaredName();
       case SysMLOCPackage.ACCEPT_NODE__TYPINGS:
         return getTypings();
       case SysMLOCPackage.ACCEPT_NODE__SUBSETTING:
@@ -1027,8 +1126,6 @@ public class AcceptNodeImpl extends ActionNodeElementImpl implements AcceptNode
         return isIsOrdered();
       case SysMLOCPackage.ACCEPT_NODE__IS_NONUNIQUE:
         return isIsNonunique();
-      case SysMLOCPackage.ACCEPT_NODE__DECLARED_NAME:
-        return getDeclaredName();
       case SysMLOCPackage.ACCEPT_NODE__ACCEPT_PARAMETER:
         return getAcceptParameter();
       case SysMLOCPackage.ACCEPT_NODE__ELEMENTS:
@@ -1058,6 +1155,9 @@ public class AcceptNodeImpl extends ActionNodeElementImpl implements AcceptNode
       case SysMLOCPackage.ACCEPT_NODE__VISIBILITY:
         setVisibility((VisibilityIndicator)newValue);
         return;
+      case SysMLOCPackage.ACCEPT_NODE__IS_VARIANT:
+        setIsVariant((Boolean)newValue);
+        return;
       case SysMLOCPackage.ACCEPT_NODE__IS_ABSTRACT:
         setIsAbstract((Boolean)newValue);
         return;
@@ -1084,6 +1184,12 @@ public class AcceptNodeImpl extends ActionNodeElementImpl implements AcceptNode
         return;
       case SysMLOCPackage.ACCEPT_NODE__PORTION_KIND:
         setPortionKind((PortionKind)newValue);
+        return;
+      case SysMLOCPackage.ACCEPT_NODE__DECLARED_SHORT_NAME:
+        setDeclaredShortName((String)newValue);
+        return;
+      case SysMLOCPackage.ACCEPT_NODE__DECLARED_NAME:
+        setDeclaredName((String)newValue);
         return;
       case SysMLOCPackage.ACCEPT_NODE__TYPINGS:
         getTypings().clear();
@@ -1114,9 +1220,6 @@ public class AcceptNodeImpl extends ActionNodeElementImpl implements AcceptNode
         return;
       case SysMLOCPackage.ACCEPT_NODE__IS_NONUNIQUE:
         setIsNonunique((Boolean)newValue);
-        return;
-      case SysMLOCPackage.ACCEPT_NODE__DECLARED_NAME:
-        setDeclaredName((String)newValue);
         return;
       case SysMLOCPackage.ACCEPT_NODE__ACCEPT_PARAMETER:
         getAcceptParameter().clear();
@@ -1149,6 +1252,9 @@ public class AcceptNodeImpl extends ActionNodeElementImpl implements AcceptNode
       case SysMLOCPackage.ACCEPT_NODE__VISIBILITY:
         setVisibility(VISIBILITY_EDEFAULT);
         return;
+      case SysMLOCPackage.ACCEPT_NODE__IS_VARIANT:
+        setIsVariant(IS_VARIANT_EDEFAULT);
+        return;
       case SysMLOCPackage.ACCEPT_NODE__IS_ABSTRACT:
         setIsAbstract(IS_ABSTRACT_EDEFAULT);
         return;
@@ -1176,6 +1282,12 @@ public class AcceptNodeImpl extends ActionNodeElementImpl implements AcceptNode
       case SysMLOCPackage.ACCEPT_NODE__PORTION_KIND:
         setPortionKind(PORTION_KIND_EDEFAULT);
         return;
+      case SysMLOCPackage.ACCEPT_NODE__DECLARED_SHORT_NAME:
+        setDeclaredShortName(DECLARED_SHORT_NAME_EDEFAULT);
+        return;
+      case SysMLOCPackage.ACCEPT_NODE__DECLARED_NAME:
+        setDeclaredName(DECLARED_NAME_EDEFAULT);
+        return;
       case SysMLOCPackage.ACCEPT_NODE__TYPINGS:
         getTypings().clear();
         return;
@@ -1199,9 +1311,6 @@ public class AcceptNodeImpl extends ActionNodeElementImpl implements AcceptNode
         return;
       case SysMLOCPackage.ACCEPT_NODE__IS_NONUNIQUE:
         setIsNonunique(IS_NONUNIQUE_EDEFAULT);
-        return;
-      case SysMLOCPackage.ACCEPT_NODE__DECLARED_NAME:
-        setDeclaredName(DECLARED_NAME_EDEFAULT);
         return;
       case SysMLOCPackage.ACCEPT_NODE__ACCEPT_PARAMETER:
         getAcceptParameter().clear();
@@ -1229,6 +1338,8 @@ public class AcceptNodeImpl extends ActionNodeElementImpl implements AcceptNode
         return thenMultiplicity != null && !thenMultiplicity.isEmpty();
       case SysMLOCPackage.ACCEPT_NODE__VISIBILITY:
         return visibility != VISIBILITY_EDEFAULT;
+      case SysMLOCPackage.ACCEPT_NODE__IS_VARIANT:
+        return isVariant != IS_VARIANT_EDEFAULT;
       case SysMLOCPackage.ACCEPT_NODE__IS_ABSTRACT:
         return isAbstract != IS_ABSTRACT_EDEFAULT;
       case SysMLOCPackage.ACCEPT_NODE__IS_VARIATION:
@@ -1247,6 +1358,10 @@ public class AcceptNodeImpl extends ActionNodeElementImpl implements AcceptNode
         return isIndividual != IS_INDIVIDUAL_EDEFAULT;
       case SysMLOCPackage.ACCEPT_NODE__PORTION_KIND:
         return portionKind != PORTION_KIND_EDEFAULT;
+      case SysMLOCPackage.ACCEPT_NODE__DECLARED_SHORT_NAME:
+        return DECLARED_SHORT_NAME_EDEFAULT == null ? declaredShortName != null : !DECLARED_SHORT_NAME_EDEFAULT.equals(declaredShortName);
+      case SysMLOCPackage.ACCEPT_NODE__DECLARED_NAME:
+        return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
       case SysMLOCPackage.ACCEPT_NODE__TYPINGS:
         return typings != null && !typings.isEmpty();
       case SysMLOCPackage.ACCEPT_NODE__SUBSETTING:
@@ -1263,8 +1378,6 @@ public class AcceptNodeImpl extends ActionNodeElementImpl implements AcceptNode
         return isOrdered != IS_ORDERED_EDEFAULT;
       case SysMLOCPackage.ACCEPT_NODE__IS_NONUNIQUE:
         return isNonunique != IS_NONUNIQUE_EDEFAULT;
-      case SysMLOCPackage.ACCEPT_NODE__DECLARED_NAME:
-        return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
       case SysMLOCPackage.ACCEPT_NODE__ACCEPT_PARAMETER:
         return acceptParameter != null && !acceptParameter.isEmpty();
       case SysMLOCPackage.ACCEPT_NODE__ELEMENTS:
@@ -1295,6 +1408,7 @@ public class AcceptNodeImpl extends ActionNodeElementImpl implements AcceptNode
       switch (derivedFeatureID)
       {
         case SysMLOCPackage.ACCEPT_NODE__VISIBILITY: return SysMLOCPackage.MEMBER_PREFIX__VISIBILITY;
+        case SysMLOCPackage.ACCEPT_NODE__IS_VARIANT: return SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT;
         default: return -1;
       }
     }
@@ -1332,6 +1446,15 @@ public class AcceptNodeImpl extends ActionNodeElementImpl implements AcceptNode
         case SysMLOCPackage.ACCEPT_NODE__IS_END: return SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_END;
         case SysMLOCPackage.ACCEPT_NODE__IS_INDIVIDUAL: return SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_INDIVIDUAL;
         case SysMLOCPackage.ACCEPT_NODE__PORTION_KIND: return SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__PORTION_KIND;
+        default: return -1;
+      }
+    }
+    if (baseClass == Identification.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.ACCEPT_NODE__DECLARED_SHORT_NAME: return SysMLOCPackage.IDENTIFICATION__DECLARED_SHORT_NAME;
+        case SysMLOCPackage.ACCEPT_NODE__DECLARED_NAME: return SysMLOCPackage.IDENTIFICATION__DECLARED_NAME;
         default: return -1;
       }
     }
@@ -1410,7 +1533,6 @@ public class AcceptNodeImpl extends ActionNodeElementImpl implements AcceptNode
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.ACCEPT_NODE__DECLARED_NAME: return SysMLOCPackage.FEATURE_DECLARATION__DECLARED_NAME;
         default: return -1;
       }
     }
@@ -1461,6 +1583,7 @@ public class AcceptNodeImpl extends ActionNodeElementImpl implements AcceptNode
       switch (baseFeatureID)
       {
         case SysMLOCPackage.MEMBER_PREFIX__VISIBILITY: return SysMLOCPackage.ACCEPT_NODE__VISIBILITY;
+        case SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT: return SysMLOCPackage.ACCEPT_NODE__IS_VARIANT;
         default: return -1;
       }
     }
@@ -1498,6 +1621,15 @@ public class AcceptNodeImpl extends ActionNodeElementImpl implements AcceptNode
         case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_END: return SysMLOCPackage.ACCEPT_NODE__IS_END;
         case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_INDIVIDUAL: return SysMLOCPackage.ACCEPT_NODE__IS_INDIVIDUAL;
         case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__PORTION_KIND: return SysMLOCPackage.ACCEPT_NODE__PORTION_KIND;
+        default: return -1;
+      }
+    }
+    if (baseClass == Identification.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.IDENTIFICATION__DECLARED_SHORT_NAME: return SysMLOCPackage.ACCEPT_NODE__DECLARED_SHORT_NAME;
+        case SysMLOCPackage.IDENTIFICATION__DECLARED_NAME: return SysMLOCPackage.ACCEPT_NODE__DECLARED_NAME;
         default: return -1;
       }
     }
@@ -1576,7 +1708,6 @@ public class AcceptNodeImpl extends ActionNodeElementImpl implements AcceptNode
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.FEATURE_DECLARATION__DECLARED_NAME: return SysMLOCPackage.ACCEPT_NODE__DECLARED_NAME;
         default: return -1;
       }
     }
@@ -1622,6 +1753,8 @@ public class AcceptNodeImpl extends ActionNodeElementImpl implements AcceptNode
     result.append(thenMultiplicity);
     result.append(", visibility: ");
     result.append(visibility);
+    result.append(", isVariant: ");
+    result.append(isVariant);
     result.append(", isAbstract: ");
     result.append(isAbstract);
     result.append(", isVariation: ");
@@ -1640,6 +1773,10 @@ public class AcceptNodeImpl extends ActionNodeElementImpl implements AcceptNode
     result.append(isIndividual);
     result.append(", portionKind: ");
     result.append(portionKind);
+    result.append(", declaredShortName: ");
+    result.append(declaredShortName);
+    result.append(", declaredName: ");
+    result.append(declaredName);
     result.append(", typings: ");
     result.append(typings);
     result.append(", subsetting: ");
@@ -1656,8 +1793,6 @@ public class AcceptNodeImpl extends ActionNodeElementImpl implements AcceptNode
     result.append(isOrdered);
     result.append(", isNonunique: ");
     result.append(isNonunique);
-    result.append(", declaredName: ");
-    result.append(declaredName);
     result.append(')');
     return result.toString();
   }

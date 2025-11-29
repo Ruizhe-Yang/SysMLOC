@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="HSUVRequirements">
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Requirements" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:RequirementUsage" declaredShortName="'UR1.1'" declaredName="Load">
+      <typings>FunctionalRequirementCheck</typings>
+      <elements xsi:type="sysMLOC:CodeAnnotation" body="// The following requirements are composite sub-requirements.&#xD;&#xA;"/>
+      <elements xsi:type="sysMLOC:RequirementUsage" declaredName="Passengers"/>
+      <elements xsi:type="sysMLOC:RequirementUsage" declaredName="FuelCapacity"/>
+      <elements xsi:type="sysMLOC:RequirementUsage" declaredName="Cargo"/>
+    </elements>
+    <elements xsi:type="sysMLOC:RequirementUsage" declaredShortName="'UR1.2'" declaredName="EcoFriendliness">
+      <typings>PerformanceRequirementCheck</typings>
+      <elements xsi:type="sysMLOC:RequirementUsage" declaredShortName="'URI1.2.1'" declaredName="Emissions">
+        <typings>PerformanceRequirementCheck</typings>
+        <elements xsi:type="sysMLOC:Comment" body="/* The car shall meet 2010 Kyoto Accord emissions standards. */"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:RequirementUsage" declaredShortName="'UR1.3'" declaredName="Performance">
+      <typings>PerformanceRequirementCheck</typings>
+      <elements xsi:type="sysMLOC:RequirementUsage" declaredName="Acceleration"/>
+      <elements xsi:type="sysMLOC:RequirementUsage" declaredShortName="'UR1.3.1'" declaredName="FuelEconomy">
+        <typings>PerformanceRequirementCheck</typings>
+        <elements xsi:type="sysMLOC:Comment" body="/* User shall obtain fuel economy better than that provided by&#xD;&#xA;&#x9;&#x9;&#x9; * 95% of cars built in 2004.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:RequirementUsage" declaredName="Braking"/>
+      <elements xsi:type="sysMLOC:RequirementUsage" declaredName="Range"/>
+      <elements xsi:type="sysMLOC:RequirementUsage" declaredName="Power"/>
+    </elements>
+    <elements xsi:type="sysMLOC:RequirementUsage" declaredShortName="'UR1.4'" declaredName="Ergonomics"/>
+    <elements xsi:type="sysMLOC:CodeAnnotation" body="// Syntactically, should this be explicitly marked as a &quot;group&quot;?&#xD;&#xA;"/>
+    <elements xsi:type="sysMLOC:RequirementUsage" declaredName="HybridSUVSpec">
+      <elements xsi:type="sysMLOC:CodeAnnotation" body="// The following requirements are required by reference.&#xD;&#xA;"/>
+      <elements xsi:type="sysMLOC:RequirementConstraintUsage" refElement="Load" kind="require"/>
+      <elements xsi:type="sysMLOC:RequirementConstraintUsage" refElement="EcoFriendliness" kind="require"/>
+      <elements xsi:type="sysMLOC:RequirementConstraintUsage" refElement="Performance" kind="require"/>
+      <elements xsi:type="sysMLOC:RequirementConstraintUsage" refElement="Ergonomics" kind="require"/>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

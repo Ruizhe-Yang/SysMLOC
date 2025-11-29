@@ -6,41 +6,17 @@ package dut.control.sysmloc.sysMLOC.impl;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 import dut.control.sysmloc.sysMLOC.UsageExtensionKeyword;
 
-import java.util.Collection;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Usage Extension Keyword</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * The following features are implemented:
- * </p>
- * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.UsageExtensionKeywordImpl#getUsageExtension <em>Usage Extension</em>}</li>
- * </ul>
  *
  * @generated
  */
-public class UsageExtensionKeywordImpl extends MinimalEObjectImpl.Container implements UsageExtensionKeyword
+public class UsageExtensionKeywordImpl extends PrefixMetadataImpl implements UsageExtensionKeyword
 {
-  /**
-   * The cached value of the '{@link #getUsageExtension() <em>Usage Extension</em>}' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getUsageExtension()
-   * @generated
-   * @ordered
-   */
-  protected EList<String> usageExtension;
-
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -60,106 +36,6 @@ public class UsageExtensionKeywordImpl extends MinimalEObjectImpl.Container impl
   protected EClass eStaticClass()
   {
     return SysMLOCPackage.eINSTANCE.getUsageExtensionKeyword();
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EList<String> getUsageExtension()
-  {
-    if (usageExtension == null)
-    {
-      usageExtension = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.USAGE_EXTENSION_KEYWORD__USAGE_EXTENSION);
-    }
-    return usageExtension;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Object eGet(int featureID, boolean resolve, boolean coreType)
-  {
-    switch (featureID)
-    {
-      case SysMLOCPackage.USAGE_EXTENSION_KEYWORD__USAGE_EXTENSION:
-        return getUsageExtension();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @SuppressWarnings("unchecked")
-  @Override
-  public void eSet(int featureID, Object newValue)
-  {
-    switch (featureID)
-    {
-      case SysMLOCPackage.USAGE_EXTENSION_KEYWORD__USAGE_EXTENSION:
-        getUsageExtension().clear();
-        getUsageExtension().addAll((Collection<? extends String>)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void eUnset(int featureID)
-  {
-    switch (featureID)
-    {
-      case SysMLOCPackage.USAGE_EXTENSION_KEYWORD__USAGE_EXTENSION:
-        getUsageExtension().clear();
-        return;
-    }
-    super.eUnset(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public boolean eIsSet(int featureID)
-  {
-    switch (featureID)
-    {
-      case SysMLOCPackage.USAGE_EXTENSION_KEYWORD__USAGE_EXTENSION:
-        return usageExtension != null && !usageExtension.isEmpty();
-    }
-    return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (UsageExtension: ");
-    result.append(usageExtension);
-    result.append(')');
-    return result.toString();
   }
 
 } //UsageExtensionKeywordImpl

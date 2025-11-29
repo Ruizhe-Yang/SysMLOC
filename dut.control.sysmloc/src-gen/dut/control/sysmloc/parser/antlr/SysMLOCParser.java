@@ -16,7 +16,7 @@ public class SysMLOCParser extends AbstractAntlrParser {
 
 	@Override
 	protected void setInitialHiddenTokens(XtextTokenStream tokenStream) {
-		tokenStream.setInitialHiddenTokens("RULE_WS");
+		tokenStream.setInitialHiddenTokens("RULE_WS", "RULE_ML_NOTE");
 	}
 	
 

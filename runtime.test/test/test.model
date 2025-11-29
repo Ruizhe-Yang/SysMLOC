@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
-  <packages declaredName="VehicleDefinitions">
+  <elements xsi:type="sysMLOC:Package" declaredName="VehicleDefinitions">
     <elements xsi:type="sysMLOC:PartUsage" declaredName="a">
       <typings>aa</typings>
       <typings>bb</typings>
@@ -22,5 +22,5 @@
       <Multiplicity>0</Multiplicity>
       <valuePart>(aaaa)</valuePart>
     </elements>
-  </packages>
+  </elements>
 </sysMLOC:Namespace>

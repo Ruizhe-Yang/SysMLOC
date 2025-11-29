@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
-  <packages declaredName="'Subsetting Example'">
+  <elements xsi:type="sysMLOC:Package" declaredName="'Subsetting Example'">
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle">
       <elements xsi:type="sysMLOC:PartUsage" declaredName="parts">
         <typings>VehiclePart</typings>
@@ -30,5 +30,5 @@
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Wheel">
       <superclassifiers>VehiclePart</superclassifiers>
     </elements>
-  </packages>
+  </elements>
 </sysMLOC:Namespace>

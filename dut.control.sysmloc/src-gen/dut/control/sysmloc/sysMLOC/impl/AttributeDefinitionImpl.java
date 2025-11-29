@@ -7,8 +7,11 @@ import dut.control.sysmloc.sysMLOC.AttributeDefinition;
 import dut.control.sysmloc.sysMLOC.BasicDefinitionPrefix;
 import dut.control.sysmloc.sysMLOC.DefinitionBodyElement;
 import dut.control.sysmloc.sysMLOC.DefinitionDeclaration;
+import dut.control.sysmloc.sysMLOC.DefinitionExtensionKeyword;
 import dut.control.sysmloc.sysMLOC.DefinitionPrefix;
+import dut.control.sysmloc.sysMLOC.Identification;
 import dut.control.sysmloc.sysMLOC.MemberPrefix;
+import dut.control.sysmloc.sysMLOC.PrefixMetadata;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 import dut.control.sysmloc.sysMLOC.VisibilityIndicator;
 
@@ -37,8 +40,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AttributeDefinitionImpl#getVisibility <em>Visibility</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AttributeDefinitionImpl#isIsVariant <em>Is Variant</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AttributeDefinitionImpl#isIsAbstract <em>Is Abstract</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AttributeDefinitionImpl#isIsVariation <em>Is Variation</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AttributeDefinitionImpl#getPrefixMetadataExtension <em>Prefix Metadata Extension</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AttributeDefinitionImpl#getDeclaredShortName <em>Declared Short Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AttributeDefinitionImpl#getDeclaredName <em>Declared Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AttributeDefinitionImpl#getSuperclassifiers <em>Superclassifiers</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AttributeDefinitionImpl#getElements <em>Elements</em>}</li>
@@ -67,6 +73,26 @@ public class AttributeDefinitionImpl extends DefinitionElementImpl implements At
    * @ordered
    */
   protected VisibilityIndicator visibility = VISIBILITY_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsVariant() <em>Is Variant</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsVariant()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_VARIANT_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsVariant() <em>Is Variant</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsVariant()
+   * @generated
+   * @ordered
+   */
+  protected boolean isVariant = IS_VARIANT_EDEFAULT;
 
   /**
    * The default value of the '{@link #isIsAbstract() <em>Is Abstract</em>}' attribute.
@@ -107,6 +133,36 @@ public class AttributeDefinitionImpl extends DefinitionElementImpl implements At
    * @ordered
    */
   protected boolean isVariation = IS_VARIATION_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getPrefixMetadataExtension() <em>Prefix Metadata Extension</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPrefixMetadataExtension()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> prefixMetadataExtension;
+
+  /**
+   * The default value of the '{@link #getDeclaredShortName() <em>Declared Short Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredShortName()
+   * @generated
+   * @ordered
+   */
+  protected static final String DECLARED_SHORT_NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDeclaredShortName() <em>Declared Short Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredShortName()
+   * @generated
+   * @ordered
+   */
+  protected String declaredShortName = DECLARED_SHORT_NAME_EDEFAULT;
 
   /**
    * The default value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
@@ -200,6 +256,31 @@ public class AttributeDefinitionImpl extends DefinitionElementImpl implements At
    * @generated
    */
   @Override
+  public boolean isIsVariant()
+  {
+    return isVariant;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsVariant(boolean newIsVariant)
+  {
+    boolean oldIsVariant = isVariant;
+    isVariant = newIsVariant;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ATTRIBUTE_DEFINITION__IS_VARIANT, oldIsVariant, isVariant));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public boolean isIsAbstract()
   {
     return isAbstract;
@@ -242,6 +323,46 @@ public class AttributeDefinitionImpl extends DefinitionElementImpl implements At
     isVariation = newIsVariation;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ATTRIBUTE_DEFINITION__IS_VARIATION, oldIsVariation, isVariation));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<String> getPrefixMetadataExtension()
+  {
+    if (prefixMetadataExtension == null)
+    {
+      prefixMetadataExtension = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.ATTRIBUTE_DEFINITION__PREFIX_METADATA_EXTENSION);
+    }
+    return prefixMetadataExtension;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getDeclaredShortName()
+  {
+    return declaredShortName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDeclaredShortName(String newDeclaredShortName)
+  {
+    String oldDeclaredShortName = declaredShortName;
+    declaredShortName = newDeclaredShortName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ATTRIBUTE_DEFINITION__DECLARED_SHORT_NAME, oldDeclaredShortName, declaredShortName));
   }
 
   /**
@@ -327,10 +448,16 @@ public class AttributeDefinitionImpl extends DefinitionElementImpl implements At
     {
       case SysMLOCPackage.ATTRIBUTE_DEFINITION__VISIBILITY:
         return getVisibility();
+      case SysMLOCPackage.ATTRIBUTE_DEFINITION__IS_VARIANT:
+        return isIsVariant();
       case SysMLOCPackage.ATTRIBUTE_DEFINITION__IS_ABSTRACT:
         return isIsAbstract();
       case SysMLOCPackage.ATTRIBUTE_DEFINITION__IS_VARIATION:
         return isIsVariation();
+      case SysMLOCPackage.ATTRIBUTE_DEFINITION__PREFIX_METADATA_EXTENSION:
+        return getPrefixMetadataExtension();
+      case SysMLOCPackage.ATTRIBUTE_DEFINITION__DECLARED_SHORT_NAME:
+        return getDeclaredShortName();
       case SysMLOCPackage.ATTRIBUTE_DEFINITION__DECLARED_NAME:
         return getDeclaredName();
       case SysMLOCPackage.ATTRIBUTE_DEFINITION__SUPERCLASSIFIERS:
@@ -355,11 +482,21 @@ public class AttributeDefinitionImpl extends DefinitionElementImpl implements At
       case SysMLOCPackage.ATTRIBUTE_DEFINITION__VISIBILITY:
         setVisibility((VisibilityIndicator)newValue);
         return;
+      case SysMLOCPackage.ATTRIBUTE_DEFINITION__IS_VARIANT:
+        setIsVariant((Boolean)newValue);
+        return;
       case SysMLOCPackage.ATTRIBUTE_DEFINITION__IS_ABSTRACT:
         setIsAbstract((Boolean)newValue);
         return;
       case SysMLOCPackage.ATTRIBUTE_DEFINITION__IS_VARIATION:
         setIsVariation((Boolean)newValue);
+        return;
+      case SysMLOCPackage.ATTRIBUTE_DEFINITION__PREFIX_METADATA_EXTENSION:
+        getPrefixMetadataExtension().clear();
+        getPrefixMetadataExtension().addAll((Collection<? extends String>)newValue);
+        return;
+      case SysMLOCPackage.ATTRIBUTE_DEFINITION__DECLARED_SHORT_NAME:
+        setDeclaredShortName((String)newValue);
         return;
       case SysMLOCPackage.ATTRIBUTE_DEFINITION__DECLARED_NAME:
         setDeclaredName((String)newValue);
@@ -389,11 +526,20 @@ public class AttributeDefinitionImpl extends DefinitionElementImpl implements At
       case SysMLOCPackage.ATTRIBUTE_DEFINITION__VISIBILITY:
         setVisibility(VISIBILITY_EDEFAULT);
         return;
+      case SysMLOCPackage.ATTRIBUTE_DEFINITION__IS_VARIANT:
+        setIsVariant(IS_VARIANT_EDEFAULT);
+        return;
       case SysMLOCPackage.ATTRIBUTE_DEFINITION__IS_ABSTRACT:
         setIsAbstract(IS_ABSTRACT_EDEFAULT);
         return;
       case SysMLOCPackage.ATTRIBUTE_DEFINITION__IS_VARIATION:
         setIsVariation(IS_VARIATION_EDEFAULT);
+        return;
+      case SysMLOCPackage.ATTRIBUTE_DEFINITION__PREFIX_METADATA_EXTENSION:
+        getPrefixMetadataExtension().clear();
+        return;
+      case SysMLOCPackage.ATTRIBUTE_DEFINITION__DECLARED_SHORT_NAME:
+        setDeclaredShortName(DECLARED_SHORT_NAME_EDEFAULT);
         return;
       case SysMLOCPackage.ATTRIBUTE_DEFINITION__DECLARED_NAME:
         setDeclaredName(DECLARED_NAME_EDEFAULT);
@@ -420,10 +566,16 @@ public class AttributeDefinitionImpl extends DefinitionElementImpl implements At
     {
       case SysMLOCPackage.ATTRIBUTE_DEFINITION__VISIBILITY:
         return visibility != VISIBILITY_EDEFAULT;
+      case SysMLOCPackage.ATTRIBUTE_DEFINITION__IS_VARIANT:
+        return isVariant != IS_VARIANT_EDEFAULT;
       case SysMLOCPackage.ATTRIBUTE_DEFINITION__IS_ABSTRACT:
         return isAbstract != IS_ABSTRACT_EDEFAULT;
       case SysMLOCPackage.ATTRIBUTE_DEFINITION__IS_VARIATION:
         return isVariation != IS_VARIATION_EDEFAULT;
+      case SysMLOCPackage.ATTRIBUTE_DEFINITION__PREFIX_METADATA_EXTENSION:
+        return prefixMetadataExtension != null && !prefixMetadataExtension.isEmpty();
+      case SysMLOCPackage.ATTRIBUTE_DEFINITION__DECLARED_SHORT_NAME:
+        return DECLARED_SHORT_NAME_EDEFAULT == null ? declaredShortName != null : !DECLARED_SHORT_NAME_EDEFAULT.equals(declaredShortName);
       case SysMLOCPackage.ATTRIBUTE_DEFINITION__DECLARED_NAME:
         return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
       case SysMLOCPackage.ATTRIBUTE_DEFINITION__SUPERCLASSIFIERS:
@@ -447,6 +599,7 @@ public class AttributeDefinitionImpl extends DefinitionElementImpl implements At
       switch (derivedFeatureID)
       {
         case SysMLOCPackage.ATTRIBUTE_DEFINITION__VISIBILITY: return SysMLOCPackage.MEMBER_PREFIX__VISIBILITY;
+        case SysMLOCPackage.ATTRIBUTE_DEFINITION__IS_VARIANT: return SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT;
         default: return -1;
       }
     }
@@ -459,6 +612,21 @@ public class AttributeDefinitionImpl extends DefinitionElementImpl implements At
         default: return -1;
       }
     }
+    if (baseClass == PrefixMetadata.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.ATTRIBUTE_DEFINITION__PREFIX_METADATA_EXTENSION: return SysMLOCPackage.PREFIX_METADATA__PREFIX_METADATA_EXTENSION;
+        default: return -1;
+      }
+    }
+    if (baseClass == DefinitionExtensionKeyword.class)
+    {
+      switch (derivedFeatureID)
+      {
+        default: return -1;
+      }
+    }
     if (baseClass == DefinitionPrefix.class)
     {
       switch (derivedFeatureID)
@@ -466,11 +634,19 @@ public class AttributeDefinitionImpl extends DefinitionElementImpl implements At
         default: return -1;
       }
     }
+    if (baseClass == Identification.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.ATTRIBUTE_DEFINITION__DECLARED_SHORT_NAME: return SysMLOCPackage.IDENTIFICATION__DECLARED_SHORT_NAME;
+        case SysMLOCPackage.ATTRIBUTE_DEFINITION__DECLARED_NAME: return SysMLOCPackage.IDENTIFICATION__DECLARED_NAME;
+        default: return -1;
+      }
+    }
     if (baseClass == DefinitionDeclaration.class)
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.ATTRIBUTE_DEFINITION__DECLARED_NAME: return SysMLOCPackage.DEFINITION_DECLARATION__DECLARED_NAME;
         case SysMLOCPackage.ATTRIBUTE_DEFINITION__SUPERCLASSIFIERS: return SysMLOCPackage.DEFINITION_DECLARATION__SUPERCLASSIFIERS;
         default: return -1;
       }
@@ -491,6 +667,7 @@ public class AttributeDefinitionImpl extends DefinitionElementImpl implements At
       switch (baseFeatureID)
       {
         case SysMLOCPackage.MEMBER_PREFIX__VISIBILITY: return SysMLOCPackage.ATTRIBUTE_DEFINITION__VISIBILITY;
+        case SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT: return SysMLOCPackage.ATTRIBUTE_DEFINITION__IS_VARIANT;
         default: return -1;
       }
     }
@@ -503,6 +680,21 @@ public class AttributeDefinitionImpl extends DefinitionElementImpl implements At
         default: return -1;
       }
     }
+    if (baseClass == PrefixMetadata.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.PREFIX_METADATA__PREFIX_METADATA_EXTENSION: return SysMLOCPackage.ATTRIBUTE_DEFINITION__PREFIX_METADATA_EXTENSION;
+        default: return -1;
+      }
+    }
+    if (baseClass == DefinitionExtensionKeyword.class)
+    {
+      switch (baseFeatureID)
+      {
+        default: return -1;
+      }
+    }
     if (baseClass == DefinitionPrefix.class)
     {
       switch (baseFeatureID)
@@ -510,11 +702,19 @@ public class AttributeDefinitionImpl extends DefinitionElementImpl implements At
         default: return -1;
       }
     }
+    if (baseClass == Identification.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.IDENTIFICATION__DECLARED_SHORT_NAME: return SysMLOCPackage.ATTRIBUTE_DEFINITION__DECLARED_SHORT_NAME;
+        case SysMLOCPackage.IDENTIFICATION__DECLARED_NAME: return SysMLOCPackage.ATTRIBUTE_DEFINITION__DECLARED_NAME;
+        default: return -1;
+      }
+    }
     if (baseClass == DefinitionDeclaration.class)
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.DEFINITION_DECLARATION__DECLARED_NAME: return SysMLOCPackage.ATTRIBUTE_DEFINITION__DECLARED_NAME;
         case SysMLOCPackage.DEFINITION_DECLARATION__SUPERCLASSIFIERS: return SysMLOCPackage.ATTRIBUTE_DEFINITION__SUPERCLASSIFIERS;
         default: return -1;
       }
@@ -535,10 +735,16 @@ public class AttributeDefinitionImpl extends DefinitionElementImpl implements At
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (visibility: ");
     result.append(visibility);
+    result.append(", isVariant: ");
+    result.append(isVariant);
     result.append(", isAbstract: ");
     result.append(isAbstract);
     result.append(", isVariation: ");
     result.append(isVariation);
+    result.append(", prefixMetadataExtension: ");
+    result.append(prefixMetadataExtension);
+    result.append(", declaredShortName: ");
+    result.append(declaredShortName);
     result.append(", declaredName: ");
     result.append(declaredName);
     result.append(", superclassifiers: ");

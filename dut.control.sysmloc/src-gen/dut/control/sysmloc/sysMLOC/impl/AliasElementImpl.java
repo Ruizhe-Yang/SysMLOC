@@ -6,6 +6,7 @@ package dut.control.sysmloc.sysMLOC.impl;
 import dut.control.sysmloc.sysMLOC.AliasElement;
 import dut.control.sysmloc.sysMLOC.AnnotatingBodyElement;
 import dut.control.sysmloc.sysMLOC.MemberPrefix;
+import dut.control.sysmloc.sysMLOC.MetadataBodyElement;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 import dut.control.sysmloc.sysMLOC.VisibilityIndicator;
 
@@ -33,6 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AliasElementImpl#getVisibility <em>Visibility</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AliasElementImpl#isIsVariant <em>Is Variant</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AliasElementImpl#getMemberShortName <em>Member Short Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AliasElementImpl#getMemberName <em>Member Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AliasElementImpl#getMemberElement <em>Member Element</em>}</li>
@@ -62,6 +64,26 @@ public class AliasElementImpl extends GeneralBodyElementsImpl implements AliasEl
    * @ordered
    */
   protected VisibilityIndicator visibility = VISIBILITY_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsVariant() <em>Is Variant</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsVariant()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_VARIANT_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsVariant() <em>Is Variant</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsVariant()
+   * @generated
+   * @ordered
+   */
+  protected boolean isVariant = IS_VARIANT_EDEFAULT;
 
   /**
    * The default value of the '{@link #getMemberShortName() <em>Member Short Name</em>}' attribute.
@@ -185,6 +207,31 @@ public class AliasElementImpl extends GeneralBodyElementsImpl implements AliasEl
    * @generated
    */
   @Override
+  public boolean isIsVariant()
+  {
+    return isVariant;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsVariant(boolean newIsVariant)
+  {
+    boolean oldIsVariant = isVariant;
+    isVariant = newIsVariant;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ALIAS_ELEMENT__IS_VARIANT, oldIsVariant, isVariant));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public String getMemberShortName()
   {
     return memberShortName;
@@ -297,6 +344,8 @@ public class AliasElementImpl extends GeneralBodyElementsImpl implements AliasEl
     {
       case SysMLOCPackage.ALIAS_ELEMENT__VISIBILITY:
         return getVisibility();
+      case SysMLOCPackage.ALIAS_ELEMENT__IS_VARIANT:
+        return isIsVariant();
       case SysMLOCPackage.ALIAS_ELEMENT__MEMBER_SHORT_NAME:
         return getMemberShortName();
       case SysMLOCPackage.ALIAS_ELEMENT__MEMBER_NAME:
@@ -322,6 +371,9 @@ public class AliasElementImpl extends GeneralBodyElementsImpl implements AliasEl
     {
       case SysMLOCPackage.ALIAS_ELEMENT__VISIBILITY:
         setVisibility((VisibilityIndicator)newValue);
+        return;
+      case SysMLOCPackage.ALIAS_ELEMENT__IS_VARIANT:
+        setIsVariant((Boolean)newValue);
         return;
       case SysMLOCPackage.ALIAS_ELEMENT__MEMBER_SHORT_NAME:
         setMemberShortName((String)newValue);
@@ -353,6 +405,9 @@ public class AliasElementImpl extends GeneralBodyElementsImpl implements AliasEl
       case SysMLOCPackage.ALIAS_ELEMENT__VISIBILITY:
         setVisibility(VISIBILITY_EDEFAULT);
         return;
+      case SysMLOCPackage.ALIAS_ELEMENT__IS_VARIANT:
+        setIsVariant(IS_VARIANT_EDEFAULT);
+        return;
       case SysMLOCPackage.ALIAS_ELEMENT__MEMBER_SHORT_NAME:
         setMemberShortName(MEMBER_SHORT_NAME_EDEFAULT);
         return;
@@ -381,6 +436,8 @@ public class AliasElementImpl extends GeneralBodyElementsImpl implements AliasEl
     {
       case SysMLOCPackage.ALIAS_ELEMENT__VISIBILITY:
         return visibility != VISIBILITY_EDEFAULT;
+      case SysMLOCPackage.ALIAS_ELEMENT__IS_VARIANT:
+        return isVariant != IS_VARIANT_EDEFAULT;
       case SysMLOCPackage.ALIAS_ELEMENT__MEMBER_SHORT_NAME:
         return MEMBER_SHORT_NAME_EDEFAULT == null ? memberShortName != null : !MEMBER_SHORT_NAME_EDEFAULT.equals(memberShortName);
       case SysMLOCPackage.ALIAS_ELEMENT__MEMBER_NAME:
@@ -401,11 +458,19 @@ public class AliasElementImpl extends GeneralBodyElementsImpl implements AliasEl
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
   {
+    if (baseClass == MetadataBodyElement.class)
+    {
+      switch (derivedFeatureID)
+      {
+        default: return -1;
+      }
+    }
     if (baseClass == MemberPrefix.class)
     {
       switch (derivedFeatureID)
       {
         case SysMLOCPackage.ALIAS_ELEMENT__VISIBILITY: return SysMLOCPackage.MEMBER_PREFIX__VISIBILITY;
+        case SysMLOCPackage.ALIAS_ELEMENT__IS_VARIANT: return SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT;
         default: return -1;
       }
     }
@@ -420,11 +485,19 @@ public class AliasElementImpl extends GeneralBodyElementsImpl implements AliasEl
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
   {
+    if (baseClass == MetadataBodyElement.class)
+    {
+      switch (baseFeatureID)
+      {
+        default: return -1;
+      }
+    }
     if (baseClass == MemberPrefix.class)
     {
       switch (baseFeatureID)
       {
         case SysMLOCPackage.MEMBER_PREFIX__VISIBILITY: return SysMLOCPackage.ALIAS_ELEMENT__VISIBILITY;
+        case SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT: return SysMLOCPackage.ALIAS_ELEMENT__IS_VARIANT;
         default: return -1;
       }
     }
@@ -444,6 +517,8 @@ public class AliasElementImpl extends GeneralBodyElementsImpl implements AliasEl
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (visibility: ");
     result.append(visibility);
+    result.append(", isVariant: ");
+    result.append(isVariant);
     result.append(", memberShortName: ");
     result.append(memberShortName);
     result.append(", memberName: ");

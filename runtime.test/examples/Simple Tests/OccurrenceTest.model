@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
-  <packages declaredName="OccurrenceTest">
+  <elements xsi:type="sysMLOC:Package" declaredName="OccurrenceTest">
     <elements xsi:type="sysMLOC:OccurrenceDefinition" declaredName="Occ">
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="a"/>
       <elements xsi:type="sysMLOC:OccurrenceUsage" isReference="true" declaredName="occ1">
@@ -42,5 +42,5 @@
     <elements xsi:type="sysMLOC:OccurrenceUsage" declaredName="o1">
       <elements xsi:type="sysMLOC:OccurrenceUsage" declaredName="o2"/>
     </elements>
-  </packages>
+  </elements>
 </sysMLOC:Namespace>

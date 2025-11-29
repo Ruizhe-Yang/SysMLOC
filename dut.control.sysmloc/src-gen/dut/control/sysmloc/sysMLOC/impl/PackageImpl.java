@@ -4,6 +4,7 @@
 package dut.control.sysmloc.sysMLOC.impl;
 
 import dut.control.sysmloc.sysMLOC.PackageBodyElement;
+import dut.control.sysmloc.sysMLOC.PrefixMetadata;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 
 import java.util.Collection;
@@ -18,6 +19,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -29,14 +31,25 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PackageImpl#getPrefixMetadataExtension <em>Prefix Metadata Extension</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PackageImpl#getDeclaredName <em>Declared Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PackageImpl#getElements <em>Elements</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class PackageImpl extends PackageBodyElementImpl implements dut.control.sysmloc.sysMLOC.Package
+public class PackageImpl extends DefinitionElementImpl implements dut.control.sysmloc.sysMLOC.Package
 {
+  /**
+   * The cached value of the '{@link #getPrefixMetadataExtension() <em>Prefix Metadata Extension</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPrefixMetadataExtension()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> prefixMetadataExtension;
+
   /**
    * The default value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -86,6 +99,21 @@ public class PackageImpl extends PackageBodyElementImpl implements dut.control.s
   protected EClass eStaticClass()
   {
     return SysMLOCPackage.eINSTANCE.getPackage();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<String> getPrefixMetadataExtension()
+  {
+    if (prefixMetadataExtension == null)
+    {
+      prefixMetadataExtension = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.PACKAGE__PREFIX_METADATA_EXTENSION);
+    }
+    return prefixMetadataExtension;
   }
 
   /**
@@ -154,6 +182,8 @@ public class PackageImpl extends PackageBodyElementImpl implements dut.control.s
   {
     switch (featureID)
     {
+      case SysMLOCPackage.PACKAGE__PREFIX_METADATA_EXTENSION:
+        return getPrefixMetadataExtension();
       case SysMLOCPackage.PACKAGE__DECLARED_NAME:
         return getDeclaredName();
       case SysMLOCPackage.PACKAGE__ELEMENTS:
@@ -173,6 +203,10 @@ public class PackageImpl extends PackageBodyElementImpl implements dut.control.s
   {
     switch (featureID)
     {
+      case SysMLOCPackage.PACKAGE__PREFIX_METADATA_EXTENSION:
+        getPrefixMetadataExtension().clear();
+        getPrefixMetadataExtension().addAll((Collection<? extends String>)newValue);
+        return;
       case SysMLOCPackage.PACKAGE__DECLARED_NAME:
         setDeclaredName((String)newValue);
         return;
@@ -194,6 +228,9 @@ public class PackageImpl extends PackageBodyElementImpl implements dut.control.s
   {
     switch (featureID)
     {
+      case SysMLOCPackage.PACKAGE__PREFIX_METADATA_EXTENSION:
+        getPrefixMetadataExtension().clear();
+        return;
       case SysMLOCPackage.PACKAGE__DECLARED_NAME:
         setDeclaredName(DECLARED_NAME_EDEFAULT);
         return;
@@ -214,6 +251,8 @@ public class PackageImpl extends PackageBodyElementImpl implements dut.control.s
   {
     switch (featureID)
     {
+      case SysMLOCPackage.PACKAGE__PREFIX_METADATA_EXTENSION:
+        return prefixMetadataExtension != null && !prefixMetadataExtension.isEmpty();
       case SysMLOCPackage.PACKAGE__DECLARED_NAME:
         return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
       case SysMLOCPackage.PACKAGE__ELEMENTS:
@@ -228,12 +267,52 @@ public class PackageImpl extends PackageBodyElementImpl implements dut.control.s
    * @generated
    */
   @Override
+  public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == PrefixMetadata.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.PACKAGE__PREFIX_METADATA_EXTENSION: return SysMLOCPackage.PREFIX_METADATA__PREFIX_METADATA_EXTENSION;
+        default: return -1;
+      }
+    }
+    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == PrefixMetadata.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.PREFIX_METADATA__PREFIX_METADATA_EXTENSION: return SysMLOCPackage.PACKAGE__PREFIX_METADATA_EXTENSION;
+        default: return -1;
+      }
+    }
+    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public String toString()
   {
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (declaredName: ");
+    result.append(" (prefixMetadataExtension: ");
+    result.append(prefixMetadataExtension);
+    result.append(", declaredName: ");
     result.append(declaredName);
     result.append(')');
     return result.toString();

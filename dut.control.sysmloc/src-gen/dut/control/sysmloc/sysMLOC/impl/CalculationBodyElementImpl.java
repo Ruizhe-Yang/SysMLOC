@@ -8,8 +8,6 @@ import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Calculation Body Element</b></em>'.
@@ -17,7 +15,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class CalculationBodyElementImpl extends MinimalEObjectImpl.Container implements CalculationBodyElement
+public class CalculationBodyElementImpl extends CaseBodyElementImpl implements CalculationBodyElement
 {
   /**
    * <!-- begin-user-doc -->

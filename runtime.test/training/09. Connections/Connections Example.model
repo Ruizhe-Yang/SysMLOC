@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
-  <packages declaredName="'Connections Example'">
+  <elements xsi:type="sysMLOC:Package" declaredName="'Connections Example'">
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="WheelHubAssembly"/>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="WheelAssembly"/>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Tire"/>
@@ -71,5 +71,5 @@
       </elements>
       <elements xsi:type="sysMLOC:CodeAnnotation" body="// connect lugBoltJoints to hub.h[1];&#xD;&#xA;"/>
     </elements>
-  </packages>
+  </elements>
 </sysMLOC:Namespace>

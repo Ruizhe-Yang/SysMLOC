@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
-  <packages declaredName="HSUVDynamics">
+  <elements xsi:type="sysMLOC:Package" declaredName="HSUVDynamics">
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues" isNamespace="true"/>
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="SequenceFunctions::size"/>
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ControlFunctions" isNamespace="true"/>
@@ -47,12 +47,12 @@
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="dt">
         <typings>Time</typings>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" isOrdered="true" declaredName="v">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="v" isOrdered="true">
         <typings>Vel</typings>
         <Multiplicity>0</Multiplicity>
         <Multiplicity>*</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" isOrdered="true" declaredName="x">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="x" isOrdered="true">
         <typings>Dist</typings>
         <Multiplicity>0</Multiplicity>
         <Multiplicity>*</Multiplicity>
@@ -63,7 +63,7 @@
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="dt">
         <typings>Time</typings>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" isOrdered="true" declaredName="v">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="v" isOrdered="true">
         <typings>Vel</typings>
         <Multiplicity>0</Multiplicity>
         <Multiplicity>*</Multiplicity>
@@ -107,12 +107,12 @@
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="a">
         <typings>Accel</typings>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" isOrdered="true" declaredName="v">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="v" isOrdered="true">
         <typings>Vel</typings>
         <Multiplicity>0</Multiplicity>
         <Multiplicity>*</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" isOrdered="true" declaredName="x">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="x" isOrdered="true">
         <typings>Dist</typings>
         <Multiplicity>0</Multiplicity>
         <Multiplicity>*</Multiplicity>
@@ -193,5 +193,5 @@
         </elements>
       </elements>
     </elements>
-  </packages>
+  </elements>
 </sysMLOC:Namespace>

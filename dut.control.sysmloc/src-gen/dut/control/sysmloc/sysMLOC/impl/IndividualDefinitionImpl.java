@@ -6,8 +6,10 @@ package dut.control.sysmloc.sysMLOC.impl;
 import dut.control.sysmloc.sysMLOC.BasicDefinitionPrefix;
 import dut.control.sysmloc.sysMLOC.DefinitionBodyElement;
 import dut.control.sysmloc.sysMLOC.DefinitionDeclaration;
+import dut.control.sysmloc.sysMLOC.Identification;
 import dut.control.sysmloc.sysMLOC.IndividualDefinition;
 import dut.control.sysmloc.sysMLOC.MemberPrefix;
+import dut.control.sysmloc.sysMLOC.PrefixMetadata;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 import dut.control.sysmloc.sysMLOC.UsageExtensionKeyword;
 import dut.control.sysmloc.sysMLOC.VisibilityIndicator;
@@ -37,9 +39,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IndividualDefinitionImpl#getVisibility <em>Visibility</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IndividualDefinitionImpl#isIsVariant <em>Is Variant</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IndividualDefinitionImpl#isIsAbstract <em>Is Abstract</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IndividualDefinitionImpl#isIsVariation <em>Is Variation</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IndividualDefinitionImpl#getUsageExtension <em>Usage Extension</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IndividualDefinitionImpl#getPrefixMetadataExtension <em>Prefix Metadata Extension</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IndividualDefinitionImpl#getDeclaredShortName <em>Declared Short Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IndividualDefinitionImpl#getDeclaredName <em>Declared Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IndividualDefinitionImpl#getSuperclassifiers <em>Superclassifiers</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IndividualDefinitionImpl#isIsIndividual <em>Is Individual</em>}</li>
@@ -69,6 +73,26 @@ public class IndividualDefinitionImpl extends DefinitionElementImpl implements I
    * @ordered
    */
   protected VisibilityIndicator visibility = VISIBILITY_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsVariant() <em>Is Variant</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsVariant()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_VARIANT_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsVariant() <em>Is Variant</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsVariant()
+   * @generated
+   * @ordered
+   */
+  protected boolean isVariant = IS_VARIANT_EDEFAULT;
 
   /**
    * The default value of the '{@link #isIsAbstract() <em>Is Abstract</em>}' attribute.
@@ -111,14 +135,34 @@ public class IndividualDefinitionImpl extends DefinitionElementImpl implements I
   protected boolean isVariation = IS_VARIATION_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getUsageExtension() <em>Usage Extension</em>}' attribute list.
+   * The cached value of the '{@link #getPrefixMetadataExtension() <em>Prefix Metadata Extension</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getUsageExtension()
+   * @see #getPrefixMetadataExtension()
    * @generated
    * @ordered
    */
-  protected EList<String> usageExtension;
+  protected EList<String> prefixMetadataExtension;
+
+  /**
+   * The default value of the '{@link #getDeclaredShortName() <em>Declared Short Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredShortName()
+   * @generated
+   * @ordered
+   */
+  protected static final String DECLARED_SHORT_NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDeclaredShortName() <em>Declared Short Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredShortName()
+   * @generated
+   * @ordered
+   */
+  protected String declaredShortName = DECLARED_SHORT_NAME_EDEFAULT;
 
   /**
    * The default value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
@@ -232,6 +276,31 @@ public class IndividualDefinitionImpl extends DefinitionElementImpl implements I
    * @generated
    */
   @Override
+  public boolean isIsVariant()
+  {
+    return isVariant;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsVariant(boolean newIsVariant)
+  {
+    boolean oldIsVariant = isVariant;
+    isVariant = newIsVariant;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.INDIVIDUAL_DEFINITION__IS_VARIANT, oldIsVariant, isVariant));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public boolean isIsAbstract()
   {
     return isAbstract;
@@ -282,13 +351,38 @@ public class IndividualDefinitionImpl extends DefinitionElementImpl implements I
    * @generated
    */
   @Override
-  public EList<String> getUsageExtension()
+  public EList<String> getPrefixMetadataExtension()
   {
-    if (usageExtension == null)
+    if (prefixMetadataExtension == null)
     {
-      usageExtension = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.INDIVIDUAL_DEFINITION__USAGE_EXTENSION);
+      prefixMetadataExtension = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.INDIVIDUAL_DEFINITION__PREFIX_METADATA_EXTENSION);
     }
-    return usageExtension;
+    return prefixMetadataExtension;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getDeclaredShortName()
+  {
+    return declaredShortName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDeclaredShortName(String newDeclaredShortName)
+  {
+    String oldDeclaredShortName = declaredShortName;
+    declaredShortName = newDeclaredShortName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.INDIVIDUAL_DEFINITION__DECLARED_SHORT_NAME, oldDeclaredShortName, declaredShortName));
   }
 
   /**
@@ -399,12 +493,16 @@ public class IndividualDefinitionImpl extends DefinitionElementImpl implements I
     {
       case SysMLOCPackage.INDIVIDUAL_DEFINITION__VISIBILITY:
         return getVisibility();
+      case SysMLOCPackage.INDIVIDUAL_DEFINITION__IS_VARIANT:
+        return isIsVariant();
       case SysMLOCPackage.INDIVIDUAL_DEFINITION__IS_ABSTRACT:
         return isIsAbstract();
       case SysMLOCPackage.INDIVIDUAL_DEFINITION__IS_VARIATION:
         return isIsVariation();
-      case SysMLOCPackage.INDIVIDUAL_DEFINITION__USAGE_EXTENSION:
-        return getUsageExtension();
+      case SysMLOCPackage.INDIVIDUAL_DEFINITION__PREFIX_METADATA_EXTENSION:
+        return getPrefixMetadataExtension();
+      case SysMLOCPackage.INDIVIDUAL_DEFINITION__DECLARED_SHORT_NAME:
+        return getDeclaredShortName();
       case SysMLOCPackage.INDIVIDUAL_DEFINITION__DECLARED_NAME:
         return getDeclaredName();
       case SysMLOCPackage.INDIVIDUAL_DEFINITION__SUPERCLASSIFIERS:
@@ -431,15 +529,21 @@ public class IndividualDefinitionImpl extends DefinitionElementImpl implements I
       case SysMLOCPackage.INDIVIDUAL_DEFINITION__VISIBILITY:
         setVisibility((VisibilityIndicator)newValue);
         return;
+      case SysMLOCPackage.INDIVIDUAL_DEFINITION__IS_VARIANT:
+        setIsVariant((Boolean)newValue);
+        return;
       case SysMLOCPackage.INDIVIDUAL_DEFINITION__IS_ABSTRACT:
         setIsAbstract((Boolean)newValue);
         return;
       case SysMLOCPackage.INDIVIDUAL_DEFINITION__IS_VARIATION:
         setIsVariation((Boolean)newValue);
         return;
-      case SysMLOCPackage.INDIVIDUAL_DEFINITION__USAGE_EXTENSION:
-        getUsageExtension().clear();
-        getUsageExtension().addAll((Collection<? extends String>)newValue);
+      case SysMLOCPackage.INDIVIDUAL_DEFINITION__PREFIX_METADATA_EXTENSION:
+        getPrefixMetadataExtension().clear();
+        getPrefixMetadataExtension().addAll((Collection<? extends String>)newValue);
+        return;
+      case SysMLOCPackage.INDIVIDUAL_DEFINITION__DECLARED_SHORT_NAME:
+        setDeclaredShortName((String)newValue);
         return;
       case SysMLOCPackage.INDIVIDUAL_DEFINITION__DECLARED_NAME:
         setDeclaredName((String)newValue);
@@ -472,14 +576,20 @@ public class IndividualDefinitionImpl extends DefinitionElementImpl implements I
       case SysMLOCPackage.INDIVIDUAL_DEFINITION__VISIBILITY:
         setVisibility(VISIBILITY_EDEFAULT);
         return;
+      case SysMLOCPackage.INDIVIDUAL_DEFINITION__IS_VARIANT:
+        setIsVariant(IS_VARIANT_EDEFAULT);
+        return;
       case SysMLOCPackage.INDIVIDUAL_DEFINITION__IS_ABSTRACT:
         setIsAbstract(IS_ABSTRACT_EDEFAULT);
         return;
       case SysMLOCPackage.INDIVIDUAL_DEFINITION__IS_VARIATION:
         setIsVariation(IS_VARIATION_EDEFAULT);
         return;
-      case SysMLOCPackage.INDIVIDUAL_DEFINITION__USAGE_EXTENSION:
-        getUsageExtension().clear();
+      case SysMLOCPackage.INDIVIDUAL_DEFINITION__PREFIX_METADATA_EXTENSION:
+        getPrefixMetadataExtension().clear();
+        return;
+      case SysMLOCPackage.INDIVIDUAL_DEFINITION__DECLARED_SHORT_NAME:
+        setDeclaredShortName(DECLARED_SHORT_NAME_EDEFAULT);
         return;
       case SysMLOCPackage.INDIVIDUAL_DEFINITION__DECLARED_NAME:
         setDeclaredName(DECLARED_NAME_EDEFAULT);
@@ -509,12 +619,16 @@ public class IndividualDefinitionImpl extends DefinitionElementImpl implements I
     {
       case SysMLOCPackage.INDIVIDUAL_DEFINITION__VISIBILITY:
         return visibility != VISIBILITY_EDEFAULT;
+      case SysMLOCPackage.INDIVIDUAL_DEFINITION__IS_VARIANT:
+        return isVariant != IS_VARIANT_EDEFAULT;
       case SysMLOCPackage.INDIVIDUAL_DEFINITION__IS_ABSTRACT:
         return isAbstract != IS_ABSTRACT_EDEFAULT;
       case SysMLOCPackage.INDIVIDUAL_DEFINITION__IS_VARIATION:
         return isVariation != IS_VARIATION_EDEFAULT;
-      case SysMLOCPackage.INDIVIDUAL_DEFINITION__USAGE_EXTENSION:
-        return usageExtension != null && !usageExtension.isEmpty();
+      case SysMLOCPackage.INDIVIDUAL_DEFINITION__PREFIX_METADATA_EXTENSION:
+        return prefixMetadataExtension != null && !prefixMetadataExtension.isEmpty();
+      case SysMLOCPackage.INDIVIDUAL_DEFINITION__DECLARED_SHORT_NAME:
+        return DECLARED_SHORT_NAME_EDEFAULT == null ? declaredShortName != null : !DECLARED_SHORT_NAME_EDEFAULT.equals(declaredShortName);
       case SysMLOCPackage.INDIVIDUAL_DEFINITION__DECLARED_NAME:
         return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
       case SysMLOCPackage.INDIVIDUAL_DEFINITION__SUPERCLASSIFIERS:
@@ -540,6 +654,7 @@ public class IndividualDefinitionImpl extends DefinitionElementImpl implements I
       switch (derivedFeatureID)
       {
         case SysMLOCPackage.INDIVIDUAL_DEFINITION__VISIBILITY: return SysMLOCPackage.MEMBER_PREFIX__VISIBILITY;
+        case SysMLOCPackage.INDIVIDUAL_DEFINITION__IS_VARIANT: return SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT;
         default: return -1;
       }
     }
@@ -552,11 +667,27 @@ public class IndividualDefinitionImpl extends DefinitionElementImpl implements I
         default: return -1;
       }
     }
+    if (baseClass == PrefixMetadata.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.INDIVIDUAL_DEFINITION__PREFIX_METADATA_EXTENSION: return SysMLOCPackage.PREFIX_METADATA__PREFIX_METADATA_EXTENSION;
+        default: return -1;
+      }
+    }
     if (baseClass == UsageExtensionKeyword.class)
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.INDIVIDUAL_DEFINITION__USAGE_EXTENSION: return SysMLOCPackage.USAGE_EXTENSION_KEYWORD__USAGE_EXTENSION;
+        default: return -1;
+      }
+    }
+    if (baseClass == Identification.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.INDIVIDUAL_DEFINITION__DECLARED_SHORT_NAME: return SysMLOCPackage.IDENTIFICATION__DECLARED_SHORT_NAME;
+        case SysMLOCPackage.INDIVIDUAL_DEFINITION__DECLARED_NAME: return SysMLOCPackage.IDENTIFICATION__DECLARED_NAME;
         default: return -1;
       }
     }
@@ -564,7 +695,6 @@ public class IndividualDefinitionImpl extends DefinitionElementImpl implements I
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.INDIVIDUAL_DEFINITION__DECLARED_NAME: return SysMLOCPackage.DEFINITION_DECLARATION__DECLARED_NAME;
         case SysMLOCPackage.INDIVIDUAL_DEFINITION__SUPERCLASSIFIERS: return SysMLOCPackage.DEFINITION_DECLARATION__SUPERCLASSIFIERS;
         default: return -1;
       }
@@ -585,6 +715,7 @@ public class IndividualDefinitionImpl extends DefinitionElementImpl implements I
       switch (baseFeatureID)
       {
         case SysMLOCPackage.MEMBER_PREFIX__VISIBILITY: return SysMLOCPackage.INDIVIDUAL_DEFINITION__VISIBILITY;
+        case SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT: return SysMLOCPackage.INDIVIDUAL_DEFINITION__IS_VARIANT;
         default: return -1;
       }
     }
@@ -597,11 +728,27 @@ public class IndividualDefinitionImpl extends DefinitionElementImpl implements I
         default: return -1;
       }
     }
+    if (baseClass == PrefixMetadata.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.PREFIX_METADATA__PREFIX_METADATA_EXTENSION: return SysMLOCPackage.INDIVIDUAL_DEFINITION__PREFIX_METADATA_EXTENSION;
+        default: return -1;
+      }
+    }
     if (baseClass == UsageExtensionKeyword.class)
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.USAGE_EXTENSION_KEYWORD__USAGE_EXTENSION: return SysMLOCPackage.INDIVIDUAL_DEFINITION__USAGE_EXTENSION;
+        default: return -1;
+      }
+    }
+    if (baseClass == Identification.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.IDENTIFICATION__DECLARED_SHORT_NAME: return SysMLOCPackage.INDIVIDUAL_DEFINITION__DECLARED_SHORT_NAME;
+        case SysMLOCPackage.IDENTIFICATION__DECLARED_NAME: return SysMLOCPackage.INDIVIDUAL_DEFINITION__DECLARED_NAME;
         default: return -1;
       }
     }
@@ -609,7 +756,6 @@ public class IndividualDefinitionImpl extends DefinitionElementImpl implements I
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.DEFINITION_DECLARATION__DECLARED_NAME: return SysMLOCPackage.INDIVIDUAL_DEFINITION__DECLARED_NAME;
         case SysMLOCPackage.DEFINITION_DECLARATION__SUPERCLASSIFIERS: return SysMLOCPackage.INDIVIDUAL_DEFINITION__SUPERCLASSIFIERS;
         default: return -1;
       }
@@ -630,12 +776,16 @@ public class IndividualDefinitionImpl extends DefinitionElementImpl implements I
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (visibility: ");
     result.append(visibility);
+    result.append(", isVariant: ");
+    result.append(isVariant);
     result.append(", isAbstract: ");
     result.append(isAbstract);
     result.append(", isVariation: ");
     result.append(isVariation);
-    result.append(", UsageExtension: ");
-    result.append(usageExtension);
+    result.append(", prefixMetadataExtension: ");
+    result.append(prefixMetadataExtension);
+    result.append(", declaredShortName: ");
+    result.append(declaredShortName);
     result.append(", declaredName: ");
     result.append(declaredName);
     result.append(", superclassifiers: ");

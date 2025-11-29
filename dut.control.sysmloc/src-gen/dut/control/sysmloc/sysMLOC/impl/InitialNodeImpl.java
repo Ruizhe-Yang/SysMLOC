@@ -33,13 +33,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.InitialNodeImpl#getVisibility <em>Visibility</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.InitialNodeImpl#isIsVariant <em>Is Variant</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.InitialNodeImpl#getMemberElement <em>Member Element</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.InitialNodeImpl#getElements <em>Elements</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class InitialNodeImpl extends ActionNodeElementImpl implements InitialNode
+public class InitialNodeImpl extends ActionNodeElementsImpl implements InitialNode
 {
   /**
    * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
@@ -60,6 +61,26 @@ public class InitialNodeImpl extends ActionNodeElementImpl implements InitialNod
    * @ordered
    */
   protected VisibilityIndicator visibility = VISIBILITY_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsVariant() <em>Is Variant</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsVariant()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_VARIANT_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsVariant() <em>Is Variant</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsVariant()
+   * @generated
+   * @ordered
+   */
+  protected boolean isVariant = IS_VARIANT_EDEFAULT;
 
   /**
    * The default value of the '{@link #getMemberElement() <em>Member Element</em>}' attribute.
@@ -143,6 +164,31 @@ public class InitialNodeImpl extends ActionNodeElementImpl implements InitialNod
    * @generated
    */
   @Override
+  public boolean isIsVariant()
+  {
+    return isVariant;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsVariant(boolean newIsVariant)
+  {
+    boolean oldIsVariant = isVariant;
+    isVariant = newIsVariant;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.INITIAL_NODE__IS_VARIANT, oldIsVariant, isVariant));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public String getMemberElement()
   {
     return memberElement;
@@ -205,6 +251,8 @@ public class InitialNodeImpl extends ActionNodeElementImpl implements InitialNod
     {
       case SysMLOCPackage.INITIAL_NODE__VISIBILITY:
         return getVisibility();
+      case SysMLOCPackage.INITIAL_NODE__IS_VARIANT:
+        return isIsVariant();
       case SysMLOCPackage.INITIAL_NODE__MEMBER_ELEMENT:
         return getMemberElement();
       case SysMLOCPackage.INITIAL_NODE__ELEMENTS:
@@ -226,6 +274,9 @@ public class InitialNodeImpl extends ActionNodeElementImpl implements InitialNod
     {
       case SysMLOCPackage.INITIAL_NODE__VISIBILITY:
         setVisibility((VisibilityIndicator)newValue);
+        return;
+      case SysMLOCPackage.INITIAL_NODE__IS_VARIANT:
+        setIsVariant((Boolean)newValue);
         return;
       case SysMLOCPackage.INITIAL_NODE__MEMBER_ELEMENT:
         setMemberElement((String)newValue);
@@ -251,6 +302,9 @@ public class InitialNodeImpl extends ActionNodeElementImpl implements InitialNod
       case SysMLOCPackage.INITIAL_NODE__VISIBILITY:
         setVisibility(VISIBILITY_EDEFAULT);
         return;
+      case SysMLOCPackage.INITIAL_NODE__IS_VARIANT:
+        setIsVariant(IS_VARIANT_EDEFAULT);
+        return;
       case SysMLOCPackage.INITIAL_NODE__MEMBER_ELEMENT:
         setMemberElement(MEMBER_ELEMENT_EDEFAULT);
         return;
@@ -273,6 +327,8 @@ public class InitialNodeImpl extends ActionNodeElementImpl implements InitialNod
     {
       case SysMLOCPackage.INITIAL_NODE__VISIBILITY:
         return visibility != VISIBILITY_EDEFAULT;
+      case SysMLOCPackage.INITIAL_NODE__IS_VARIANT:
+        return isVariant != IS_VARIANT_EDEFAULT;
       case SysMLOCPackage.INITIAL_NODE__MEMBER_ELEMENT:
         return MEMBER_ELEMENT_EDEFAULT == null ? memberElement != null : !MEMBER_ELEMENT_EDEFAULT.equals(memberElement);
       case SysMLOCPackage.INITIAL_NODE__ELEMENTS:
@@ -294,6 +350,7 @@ public class InitialNodeImpl extends ActionNodeElementImpl implements InitialNod
       switch (derivedFeatureID)
       {
         case SysMLOCPackage.INITIAL_NODE__VISIBILITY: return SysMLOCPackage.MEMBER_PREFIX__VISIBILITY;
+        case SysMLOCPackage.INITIAL_NODE__IS_VARIANT: return SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT;
         default: return -1;
       }
     }
@@ -313,6 +370,7 @@ public class InitialNodeImpl extends ActionNodeElementImpl implements InitialNod
       switch (baseFeatureID)
       {
         case SysMLOCPackage.MEMBER_PREFIX__VISIBILITY: return SysMLOCPackage.INITIAL_NODE__VISIBILITY;
+        case SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT: return SysMLOCPackage.INITIAL_NODE__IS_VARIANT;
         default: return -1;
       }
     }
@@ -332,6 +390,8 @@ public class InitialNodeImpl extends ActionNodeElementImpl implements InitialNod
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (visibility: ");
     result.append(visibility);
+    result.append(", isVariant: ");
+    result.append(isVariant);
     result.append(", memberElement: ");
     result.append(memberElement);
     result.append(')');

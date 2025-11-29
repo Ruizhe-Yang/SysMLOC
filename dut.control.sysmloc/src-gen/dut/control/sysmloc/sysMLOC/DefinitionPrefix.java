@@ -14,6 +14,6 @@ package dut.control.sysmloc.sysMLOC;
  * @model
  * @generated
  */
-public interface DefinitionPrefix extends BasicDefinitionPrefix
+public interface DefinitionPrefix extends BasicDefinitionPrefix, DefinitionExtensionKeyword
 {
 } // DefinitionPrefix
