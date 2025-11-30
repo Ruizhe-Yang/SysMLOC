@@ -4,14 +4,25 @@
 package dut.control.sysmloc.sysMLOC.impl;
 
 import dut.control.sysmloc.sysMLOC.ImportElement;
+import dut.control.sysmloc.sysMLOC.RelationshipBodyElement;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 import dut.control.sysmloc.sysMLOC.VisibilityIndicator;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,6 +37,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ImportElementImpl#getDeclaredName <em>Declared Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ImportElementImpl#isIsNamespace <em>Is Namespace</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ImportElementImpl#isIsRecursive <em>Is Recursive</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ImportElementImpl#getFilterPackageExpression <em>Filter Package Expression</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ImportElementImpl#getElements <em>Elements</em>}</li>
  * </ul>
  *
  * @generated
@@ -131,6 +144,26 @@ public class ImportElementImpl extends GeneralBodyElementsImpl implements Import
    * @ordered
    */
   protected boolean isRecursive = IS_RECURSIVE_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getFilterPackageExpression() <em>Filter Package Expression</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFilterPackageExpression()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> filterPackageExpression;
+
+  /**
+   * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getElements()
+   * @generated
+   * @ordered
+   */
+  protected EList<RelationshipBodyElement> elements;
 
   /**
    * <!-- begin-user-doc -->
@@ -284,6 +317,52 @@ public class ImportElementImpl extends GeneralBodyElementsImpl implements Import
    * @generated
    */
   @Override
+  public EList<String> getFilterPackageExpression()
+  {
+    if (filterPackageExpression == null)
+    {
+      filterPackageExpression = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.IMPORT_ELEMENT__FILTER_PACKAGE_EXPRESSION);
+    }
+    return filterPackageExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<RelationshipBodyElement> getElements()
+  {
+    if (elements == null)
+    {
+      elements = new EObjectContainmentEList<RelationshipBodyElement>(RelationshipBodyElement.class, this, SysMLOCPackage.IMPORT_ELEMENT__ELEMENTS);
+    }
+    return elements;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case SysMLOCPackage.IMPORT_ELEMENT__ELEMENTS:
+        return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
@@ -298,6 +377,10 @@ public class ImportElementImpl extends GeneralBodyElementsImpl implements Import
         return isIsNamespace();
       case SysMLOCPackage.IMPORT_ELEMENT__IS_RECURSIVE:
         return isIsRecursive();
+      case SysMLOCPackage.IMPORT_ELEMENT__FILTER_PACKAGE_EXPRESSION:
+        return getFilterPackageExpression();
+      case SysMLOCPackage.IMPORT_ELEMENT__ELEMENTS:
+        return getElements();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -307,6 +390,7 @@ public class ImportElementImpl extends GeneralBodyElementsImpl implements Import
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -326,6 +410,14 @@ public class ImportElementImpl extends GeneralBodyElementsImpl implements Import
         return;
       case SysMLOCPackage.IMPORT_ELEMENT__IS_RECURSIVE:
         setIsRecursive((Boolean)newValue);
+        return;
+      case SysMLOCPackage.IMPORT_ELEMENT__FILTER_PACKAGE_EXPRESSION:
+        getFilterPackageExpression().clear();
+        getFilterPackageExpression().addAll((Collection<? extends String>)newValue);
+        return;
+      case SysMLOCPackage.IMPORT_ELEMENT__ELEMENTS:
+        getElements().clear();
+        getElements().addAll((Collection<? extends RelationshipBodyElement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -356,6 +448,12 @@ public class ImportElementImpl extends GeneralBodyElementsImpl implements Import
       case SysMLOCPackage.IMPORT_ELEMENT__IS_RECURSIVE:
         setIsRecursive(IS_RECURSIVE_EDEFAULT);
         return;
+      case SysMLOCPackage.IMPORT_ELEMENT__FILTER_PACKAGE_EXPRESSION:
+        getFilterPackageExpression().clear();
+        return;
+      case SysMLOCPackage.IMPORT_ELEMENT__ELEMENTS:
+        getElements().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -380,6 +478,10 @@ public class ImportElementImpl extends GeneralBodyElementsImpl implements Import
         return isNamespace != IS_NAMESPACE_EDEFAULT;
       case SysMLOCPackage.IMPORT_ELEMENT__IS_RECURSIVE:
         return isRecursive != IS_RECURSIVE_EDEFAULT;
+      case SysMLOCPackage.IMPORT_ELEMENT__FILTER_PACKAGE_EXPRESSION:
+        return filterPackageExpression != null && !filterPackageExpression.isEmpty();
+      case SysMLOCPackage.IMPORT_ELEMENT__ELEMENTS:
+        return elements != null && !elements.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -405,6 +507,8 @@ public class ImportElementImpl extends GeneralBodyElementsImpl implements Import
     result.append(isNamespace);
     result.append(", isRecursive: ");
     result.append(isRecursive);
+    result.append(", filterPackageExpression: ");
+    result.append(filterPackageExpression);
     result.append(')');
     return result.toString();
   }

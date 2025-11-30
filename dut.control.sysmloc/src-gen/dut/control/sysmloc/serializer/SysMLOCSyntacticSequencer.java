@@ -79,7 +79,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_FlowUsage_SemicolonKeyword_7_0_or___LeftCurlyBracketKeyword_7_1_0_RightCurlyBracketKeyword_7_1_2__;
 	protected AbstractElementAlias match_FramedConcernUsage_SemicolonKeyword_2_0_2_0_or___LeftCurlyBracketKeyword_2_0_2_1_0_RightCurlyBracketKeyword_2_0_2_1_2__;
 	protected AbstractElementAlias match_FramedConcernUsage_SemicolonKeyword_2_1_2_0_or___LeftCurlyBracketKeyword_2_1_2_1_0_RightCurlyBracketKeyword_2_1_2_1_3__;
-	protected AbstractElementAlias match_IfNode_SemicolonKeyword_7_1_2_0_or___LeftCurlyBracketKeyword_7_1_2_1_0_RightCurlyBracketKeyword_7_1_2_1_2__;
+	protected AbstractElementAlias match_IfNode_SemicolonKeyword_8_1_2_0_or___LeftCurlyBracketKeyword_8_1_2_1_0_RightCurlyBracketKeyword_8_1_2_1_2__;
+	protected AbstractElementAlias match_ImportElement_SemicolonKeyword_7_0_or___LeftCurlyBracketKeyword_7_1_0_RightCurlyBracketKeyword_7_1_2__;
 	protected AbstractElementAlias match_IncludeUseCaseUsage_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_3__;
 	protected AbstractElementAlias match_IndividualDefinition_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__;
 	protected AbstractElementAlias match_IndividualUsage_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__;
@@ -211,12 +212,13 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_FlowUsage_SemicolonKeyword_7_0_or___LeftCurlyBracketKeyword_7_1_0_RightCurlyBracketKeyword_7_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getFlowUsageAccess().getLeftCurlyBracketKeyword_7_1_0()), new TokenAlias(false, false, grammarAccess.getFlowUsageAccess().getRightCurlyBracketKeyword_7_1_2())), new TokenAlias(false, false, grammarAccess.getFlowUsageAccess().getSemicolonKeyword_7_0()));
 		match_FramedConcernUsage_SemicolonKeyword_2_0_2_0_or___LeftCurlyBracketKeyword_2_0_2_1_0_RightCurlyBracketKeyword_2_0_2_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getFramedConcernUsageAccess().getLeftCurlyBracketKeyword_2_0_2_1_0()), new TokenAlias(false, false, grammarAccess.getFramedConcernUsageAccess().getRightCurlyBracketKeyword_2_0_2_1_2())), new TokenAlias(false, false, grammarAccess.getFramedConcernUsageAccess().getSemicolonKeyword_2_0_2_0()));
 		match_FramedConcernUsage_SemicolonKeyword_2_1_2_0_or___LeftCurlyBracketKeyword_2_1_2_1_0_RightCurlyBracketKeyword_2_1_2_1_3__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getFramedConcernUsageAccess().getLeftCurlyBracketKeyword_2_1_2_1_0()), new TokenAlias(false, false, grammarAccess.getFramedConcernUsageAccess().getRightCurlyBracketKeyword_2_1_2_1_3())), new TokenAlias(false, false, grammarAccess.getFramedConcernUsageAccess().getSemicolonKeyword_2_1_2_0()));
-		match_IfNode_SemicolonKeyword_7_1_2_0_or___LeftCurlyBracketKeyword_7_1_2_1_0_RightCurlyBracketKeyword_7_1_2_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getIfNodeAccess().getLeftCurlyBracketKeyword_7_1_2_1_0()), new TokenAlias(false, false, grammarAccess.getIfNodeAccess().getRightCurlyBracketKeyword_7_1_2_1_2())), new TokenAlias(false, false, grammarAccess.getIfNodeAccess().getSemicolonKeyword_7_1_2_0()));
+		match_IfNode_SemicolonKeyword_8_1_2_0_or___LeftCurlyBracketKeyword_8_1_2_1_0_RightCurlyBracketKeyword_8_1_2_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getIfNodeAccess().getLeftCurlyBracketKeyword_8_1_2_1_0()), new TokenAlias(false, false, grammarAccess.getIfNodeAccess().getRightCurlyBracketKeyword_8_1_2_1_2())), new TokenAlias(false, false, grammarAccess.getIfNodeAccess().getSemicolonKeyword_8_1_2_0()));
+		match_ImportElement_SemicolonKeyword_7_0_or___LeftCurlyBracketKeyword_7_1_0_RightCurlyBracketKeyword_7_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getImportElementAccess().getLeftCurlyBracketKeyword_7_1_0()), new TokenAlias(false, false, grammarAccess.getImportElementAccess().getRightCurlyBracketKeyword_7_1_2())), new TokenAlias(false, false, grammarAccess.getImportElementAccess().getSemicolonKeyword_7_0()));
 		match_IncludeUseCaseUsage_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_3__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getIncludeUseCaseUsageAccess().getLeftCurlyBracketKeyword_5_1_0()), new TokenAlias(false, false, grammarAccess.getIncludeUseCaseUsageAccess().getRightCurlyBracketKeyword_5_1_3())), new TokenAlias(false, false, grammarAccess.getIncludeUseCaseUsageAccess().getSemicolonKeyword_5_0()));
-		match_IndividualDefinition_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getIndividualDefinitionAccess().getLeftCurlyBracketKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getIndividualDefinitionAccess().getRightCurlyBracketKeyword_6_1_2())), new TokenAlias(false, false, grammarAccess.getIndividualDefinitionAccess().getSemicolonKeyword_6_0()));
 	}
 	
 	private void init1() {
+		match_IndividualDefinition_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getIndividualDefinitionAccess().getLeftCurlyBracketKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getIndividualDefinitionAccess().getRightCurlyBracketKeyword_6_1_2())), new TokenAlias(false, false, grammarAccess.getIndividualDefinitionAccess().getSemicolonKeyword_6_0()));
 		match_IndividualUsage_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getIndividualUsageAccess().getLeftCurlyBracketKeyword_5_1_0()), new TokenAlias(false, false, grammarAccess.getIndividualUsageAccess().getRightCurlyBracketKeyword_5_1_2())), new TokenAlias(false, false, grammarAccess.getIndividualUsageAccess().getSemicolonKeyword_5_0()));
 		match_InitialNode_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getInitialNodeAccess().getLeftCurlyBracketKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getInitialNodeAccess().getRightCurlyBracketKeyword_3_1_2())), new TokenAlias(false, false, grammarAccess.getInitialNodeAccess().getSemicolonKeyword_3_0()));
 		match_InterfaceDefinition_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getInterfaceDefinitionAccess().getLeftCurlyBracketKeyword_5_1_0()), new TokenAlias(false, false, grammarAccess.getInterfaceDefinitionAccess().getRightCurlyBracketKeyword_5_1_2())), new TokenAlias(false, false, grammarAccess.getInterfaceDefinitionAccess().getSemicolonKeyword_5_0()));
@@ -276,10 +278,10 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_VerificationCaseUsage_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_3__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getVerificationCaseUsageAccess().getLeftCurlyBracketKeyword_4_1_0()), new TokenAlias(false, false, grammarAccess.getVerificationCaseUsageAccess().getRightCurlyBracketKeyword_4_1_3())), new TokenAlias(false, false, grammarAccess.getVerificationCaseUsageAccess().getSemicolonKeyword_4_0()));
 		match_ViewDefinition_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getViewDefinitionAccess().getLeftCurlyBracketKeyword_5_1_0()), new TokenAlias(false, false, grammarAccess.getViewDefinitionAccess().getRightCurlyBracketKeyword_5_1_2())), new TokenAlias(false, false, grammarAccess.getViewDefinitionAccess().getSemicolonKeyword_5_0()));
 		match_ViewRenderingUsage_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getViewRenderingUsageAccess().getLeftCurlyBracketKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getViewRenderingUsageAccess().getRightCurlyBracketKeyword_3_1_2())), new TokenAlias(false, false, grammarAccess.getViewRenderingUsageAccess().getSemicolonKeyword_3_0()));
-		match_ViewUsage_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getViewUsageAccess().getLeftCurlyBracketKeyword_5_1_0()), new TokenAlias(false, false, grammarAccess.getViewUsageAccess().getRightCurlyBracketKeyword_5_1_2())), new TokenAlias(false, false, grammarAccess.getViewUsageAccess().getSemicolonKeyword_5_0()));
 	}
 	
 	private void init2() {
+		match_ViewUsage_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getViewUsageAccess().getLeftCurlyBracketKeyword_5_1_0()), new TokenAlias(false, false, grammarAccess.getViewUsageAccess().getRightCurlyBracketKeyword_5_1_2())), new TokenAlias(false, false, grammarAccess.getViewUsageAccess().getSemicolonKeyword_5_0()));
 		match_ViewpointDefinition_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getViewpointDefinitionAccess().getLeftCurlyBracketKeyword_5_1_0()), new TokenAlias(false, false, grammarAccess.getViewpointDefinitionAccess().getRightCurlyBracketKeyword_5_1_2())), new TokenAlias(false, false, grammarAccess.getViewpointDefinitionAccess().getSemicolonKeyword_5_0()));
 		match_ViewpointUsage_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getViewpointUsageAccess().getLeftCurlyBracketKeyword_4_1_0()), new TokenAlias(false, false, grammarAccess.getViewpointUsageAccess().getRightCurlyBracketKeyword_4_1_2())), new TokenAlias(false, false, grammarAccess.getViewpointUsageAccess().getSemicolonKeyword_4_0()));
 	}
@@ -293,7 +295,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Expression:
-	 * 	SL_NOTE? OwnedExpression SL_NOTE?
+	 * 	OwnedExpression 
 	 * ;
 	 */
 	protected String getExpressionToken(EObject semanticObject, RuleCall ruleCall, INode node) {
@@ -422,8 +424,10 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_FramedConcernUsage_SemicolonKeyword_2_0_2_0_or___LeftCurlyBracketKeyword_2_0_2_1_0_RightCurlyBracketKeyword_2_0_2_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_FramedConcernUsage_SemicolonKeyword_2_1_2_0_or___LeftCurlyBracketKeyword_2_1_2_1_0_RightCurlyBracketKeyword_2_1_2_1_3__.equals(syntax))
 				emit_FramedConcernUsage_SemicolonKeyword_2_1_2_0_or___LeftCurlyBracketKeyword_2_1_2_1_0_RightCurlyBracketKeyword_2_1_2_1_3__(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_IfNode_SemicolonKeyword_7_1_2_0_or___LeftCurlyBracketKeyword_7_1_2_1_0_RightCurlyBracketKeyword_7_1_2_1_2__.equals(syntax))
-				emit_IfNode_SemicolonKeyword_7_1_2_0_or___LeftCurlyBracketKeyword_7_1_2_1_0_RightCurlyBracketKeyword_7_1_2_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_IfNode_SemicolonKeyword_8_1_2_0_or___LeftCurlyBracketKeyword_8_1_2_1_0_RightCurlyBracketKeyword_8_1_2_1_2__.equals(syntax))
+				emit_IfNode_SemicolonKeyword_8_1_2_0_or___LeftCurlyBracketKeyword_8_1_2_1_0_RightCurlyBracketKeyword_8_1_2_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ImportElement_SemicolonKeyword_7_0_or___LeftCurlyBracketKeyword_7_1_0_RightCurlyBracketKeyword_7_1_2__.equals(syntax))
+				emit_ImportElement_SemicolonKeyword_7_0_or___LeftCurlyBracketKeyword_7_1_0_RightCurlyBracketKeyword_7_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_IncludeUseCaseUsage_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_3__.equals(syntax))
 				emit_IncludeUseCaseUsage_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_3__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_IndividualDefinition_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__.equals(syntax))
@@ -1627,8 +1631,32 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ';' | ('{' '}')
 	 *
 	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'else' (ambiguity) (rule start)
+	 *     Multiplicity+=MultiplicityExpression ']' 'else' (ambiguity) (rule end)
+	 *     ThenMultiplicity+=MultiplicityExpression ']' 'else' (ambiguity) (rule end)
 	 *     actionParameterEnd+=ActionParameterEnd (ambiguity) (rule end)
+	 *     crosses+=FeatureChainName 'else' (ambiguity) (rule end)
+	 *     declaredName=Name 'else' (ambiguity) (rule end)
+	 *     declaredShortName=Name '&gt;' 'else' (ambiguity) (rule end)
+	 *     direction=FeatureDirection 'else' (ambiguity) (rule end)
 	 *     elseEnd+=ConnectorEnd (ambiguity) (rule end)
+	 *     isAbstract?='abstract' 'else' (ambiguity) (rule end)
+	 *     isDerived?='derived' 'else' (ambiguity) (rule end)
+	 *     isEnd?='end' 'else' (ambiguity) (rule end)
+	 *     isIndividual?='individual' 'else' (ambiguity) (rule end)
+	 *     isNonunique?='nonunique' 'else' (ambiguity) (rule end)
+	 *     isOrdered?='ordered' 'else' (ambiguity) (rule end)
+	 *     isReadOnly?='readonly' 'else' (ambiguity) (rule end)
+	 *     isReference?='ref' 'else' (ambiguity) (rule end)
+	 *     isThen?='then' 'else' (ambiguity) (rule end)
+	 *     isVariant?='variant' 'else' (ambiguity) (rule end)
+	 *     isVariation?='variation' 'else' (ambiguity) (rule end)
+	 *     portionKind=PortionKind 'else' (ambiguity) (rule end)
+	 *     redefinitions+=FeatureChainName 'else' (ambiguity) (rule end)
+	 *     references+=FeatureChainName 'else' (ambiguity) (rule end)
+	 *     subsetting+=FeatureChainName 'else' (ambiguity) (rule end)
+	 *     typings+=FeatureTypingName 'else' (ambiguity) (rule end)
+	 *     visibility=VisibilityIndicator 'else' (ambiguity) (rule end)
 	 
 	 * </pre>
 	 */
@@ -4934,7 +4962,24 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 
 	 * </pre>
 	 */
-	protected void emit_IfNode_SemicolonKeyword_7_1_2_0_or___LeftCurlyBracketKeyword_7_1_2_1_0_RightCurlyBracketKeyword_7_1_2_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_IfNode_SemicolonKeyword_8_1_2_0_or___LeftCurlyBracketKeyword_8_1_2_1_0_RightCurlyBracketKeyword_8_1_2_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     declaredName=QualifiedName (ambiguity) (rule end)
+	 *     filterPackageExpression+=Expression ']' (ambiguity) (rule end)
+	 *     isNamespace?='::' '*' (ambiguity) (rule end)
+	 *     isRecursive?='**' (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_ImportElement_SemicolonKeyword_7_0_or___LeftCurlyBracketKeyword_7_1_0_RightCurlyBracketKeyword_7_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

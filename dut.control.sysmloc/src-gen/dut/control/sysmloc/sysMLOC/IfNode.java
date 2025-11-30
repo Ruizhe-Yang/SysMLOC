@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link dut.control.sysmloc.sysMLOC.IfNode#getSuccessionElement <em>Succession Element</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.IfNode#isIsFirst <em>Is First</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.IfNode#getFirstElement <em>First Element</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.IfNode#isIsElseIf <em>Is Else If</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.IfNode#getIfConditionExpression <em>If Condition Expression</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.IfNode#getActionParameterEnd <em>Action Parameter End</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.IfNode#getElements <em>Elements</em>}</li>
@@ -108,6 +109,28 @@ public interface IfNode extends ActionNodeElements, EmptySuccessionPrefix, Membe
    * @generated
    */
   void setFirstElement(String value);
+
+  /**
+   * Returns the value of the '<em><b>Is Else If</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Is Else If</em>' attribute.
+   * @see #setIsElseIf(boolean)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getIfNode_IsElseIf()
+   * @model
+   * @generated
+   */
+  boolean isIsElseIf();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.IfNode#isIsElseIf <em>Is Else If</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Is Else If</em>' attribute.
+   * @see #isIsElseIf()
+   * @generated
+   */
+  void setIsElseIf(boolean value);
 
   /**
    * Returns the value of the '<em><b>If Condition Expression</b></em>' attribute.

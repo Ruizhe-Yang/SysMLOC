@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="'7b-Variant Configurations'">
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="RequirementsModel" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="DesignModel" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="VariantDefinitions" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ControlFunctions::forAll"/>
+    <elements xsi:type="sysMLOC:Package" declaredName="RequirementsModel">
+      <elements xsi:type="sysMLOC:RequirementDefinition" declaredName="EnginePerformanceRequirement"/>
+      <elements xsi:type="sysMLOC:RequirementUsage" declaredName="highPerformanceRequirement">
+        <typings>EnginePerformanceRequirement</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:RequirementUsage" declaredName="normalPerformanceRequirement">
+        <typings>EnginePerformanceRequirement</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Package" declaredName="DesignModel">
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle"/>
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="Engine"/>
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="Transmission"/>
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="Clutch"/>
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="Driveshaft"/>
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="RearAxleAssembly"/>
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="Wheel"/>
+      <elements xsi:type="sysMLOC:PortDefinition" declaredName="FuelCmdPort"/>
+      <elements xsi:type="sysMLOC:PortDefinition" declaredName="ClutchPort"/>
+      <elements xsi:type="sysMLOC:PortDefinition" declaredName="ShaftPort_b"/>
+      <elements xsi:type="sysMLOC:PortDefinition" declaredName="ShaftPort_c"/>
+      <elements xsi:type="sysMLOC:PortDefinition" declaredName="ShaftPort_d"/>
+      <elements xsi:type="sysMLOC:PortDefinition" declaredName="VehicleToRoadPort"/>
+      <elements xsi:type="sysMLOC:PortDefinition" declaredName="WheelToRoadPort"/>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle">
+        <typings>Vehicle</typings>
+        <elements xsi:type="sysMLOC:PortUsage" declaredName="fuelCmdPort"/>
+        <elements xsi:type="sysMLOC:BindingConnectorAsUsage">
+          <connectorPart refElement="fuelCmdPort"/>
+          <connectorPart refElement="engine.fuelCmdPort"/>
+        </elements>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="engine">
+          <typings>Engine</typings>
+          <Multiplicity>1</Multiplicity>
+          <elements xsi:type="sysMLOC:PortUsage" declaredName="fuelCmdPort">
+            <typings>FuelCmdPort</typings>
+          </elements>
+        </elements>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="transmission">
+          <typings>Transmission</typings>
+          <Multiplicity>1</Multiplicity>
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="clutch">
+            <typings>Clutch</typings>
+            <Multiplicity>1</Multiplicity>
+            <elements xsi:type="sysMLOC:PortUsage" declaredName="clutchPort">
+              <typings>ClutchPort</typings>
+            </elements>
+          </elements>
+        </elements>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="driveshaft">
+          <typings>Driveshaft</typings>
+          <Multiplicity>1</Multiplicity>
+          <elements xsi:type="sysMLOC:PortUsage" declaredName="shaftPort_b">
+            <typings>ShaftPort_b</typings>
+          </elements>
+          <elements xsi:type="sysMLOC:PortUsage" declaredName="shaftPort_c">
+            <typings>ShaftPort_c</typings>
+          </elements>
+        </elements>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="rearAxleAssembly">
+          <typings>RearAxleAssembly</typings>
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="rearWheels">
+            <typings>Wheel</typings>
+            <Multiplicity>2</Multiplicity>
+            <elements xsi:type="sysMLOC:PortUsage" declaredName="wheelToRoadPort">
+              <typings>WheelToRoadPort</typings>
+            </elements>
+          </elements>
+        </elements>
+        <elements xsi:type="sysMLOC:PortUsage" declaredName="vehicleToRoadPort">
+          <typings>VehicleToRoadPort</typings>
+          <elements xsi:type="sysMLOC:PortUsage" declaredName="wheelToRoadPort">
+            <typings>WheelToRoadPort</typings>
+            <Multiplicity>2</Multiplicity>
+          </elements>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Package" declaredName="VariantDefinitions">
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="'4CylEngine'">
+        <superclassifiers>Engine</superclassifiers>
+      </elements>
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="'6CylEngine'">
+        <superclassifiers>Engine</superclassifiers>
+      </elements>
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="ManualTransmission">
+        <superclassifiers>Transmission</superclassifiers>
+      </elements>
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="AutomaticTransmission">
+        <superclassifiers>Transmission</superclassifiers>
+      </elements>
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="ManualClutch">
+        <superclassifiers>Clutch</superclassifiers>
+      </elements>
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="AutomaticClutch">
+        <superclassifiers>Clutch</superclassifiers>
+      </elements>
+      <elements xsi:type="sysMLOC:PortDefinition" declaredName="ManualClutchPort">
+        <superclassifiers>ClutchPort</superclassifiers>
+      </elements>
+      <elements xsi:type="sysMLOC:PortDefinition" declaredName="AutomaticClutchPort">
+        <superclassifiers>ClutchPort</superclassifiers>
+      </elements>
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="NarrowRimWheel">
+        <superclassifiers>Wheel</superclassifiers>
+      </elements>
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="WideRimWheel">
+        <superclassifiers>Wheel</superclassifiers>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Package" declaredName="VariabilityModel">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="anyVehicleConfig">
+        <subsetting>vehicle</subsetting>
+        <elements xsi:type="sysMLOC:RequirementUsage" isVariation="true" declaredName="engineRqtChoice">
+          <typings>EnginePerformanceRequirement</typings>
+          <elements xsi:type="sysMLOC:ReferenceVariantUsage" refElement="highPerformanceRequirement"/>
+          <elements xsi:type="sysMLOC:ReferenceVariantUsage" refElement="normalPerformanceRequirement"/>
+        </elements>
+        <elements xsi:type="sysMLOC:PartUsage" isVariation="true" declaredName="engineChoice">
+          <redefinitions>engine</redefinitions>
+          <elements xsi:type="sysMLOC:PartUsage" isVariant="true" declaredName="'4cylEngine'">
+            <typings>'4CylEngine'</typings>
+          </elements>
+          <elements xsi:type="sysMLOC:PartUsage" isVariant="true" declaredName="'6cylEngine'">
+            <typings>'6CylEngine'</typings>
+          </elements>
+        </elements>
+        <elements xsi:type="sysMLOC:SatisfyRequirementUsage" refElement="engineRqtChoice" satisfactionParameter="engineChoice"/>
+        <elements xsi:type="sysMLOC:AssertConstraintUsage" declaredName="'engine choice constraint'">
+          <resultExpressionParameter resultExpression="if engineRqtChoice == engineRqtChoice::highPerformanceRequirement? engineChoice == engineChoice::'6cylEngine' else engineChoice == engineChoice::'4cylEngine'"/>
+        </elements>
+        <elements xsi:type="sysMLOC:PartUsage" isVariation="true" declaredName="transmissionChoice">
+          <redefinitions>transmission</redefinitions>
+          <elements xsi:type="sysMLOC:PartUsage" isVariant="true" declaredName="manualTransmission">
+            <typings>ManualTransmission</typings>
+            <elements xsi:type="sysMLOC:PartUsage">
+              <typings>ManualClutch</typings>
+              <redefinitions>clutch</redefinitions>
+              <elements xsi:type="sysMLOC:PortUsage">
+                <typings>ManualClutchPort</typings>
+                <redefinitions>clutchPort</redefinitions>
+              </elements>
+            </elements>
+          </elements>
+          <elements xsi:type="sysMLOC:PartUsage" isVariant="true" declaredName="automaticTransmission">
+            <typings>AutomaticTransmission</typings>
+            <elements xsi:type="sysMLOC:PartUsage">
+              <typings>AutomaticClutch</typings>
+              <redefinitions>clutch</redefinitions>
+              <elements xsi:type="sysMLOC:PortUsage">
+                <typings>AutomaticClutchPort</typings>
+                <redefinitions>clutchPort</redefinitions>
+              </elements>
+            </elements>
+          </elements>
+        </elements>
+        <elements xsi:type="sysMLOC:AssertConstraintUsage" declaredName="'engine-transmission selection constraint'">
+          <resultExpressionParameter resultExpression="(engineChoice == engineChoice::'4cylEngine' and transmissionChoice == transmissionChoice::manualTransmission) xor (engineChoice == engineChoice::'6cylEngine' and transmissionChoice == transmissionChoice::automaticTransmission)"/>
+        </elements>
+        <elements xsi:type="sysMLOC:PartUsage">
+          <redefinitions>rearAxleAssembly</redefinitions>
+          <elements xsi:type="sysMLOC:PartUsage" isVariation="true" declaredName="rearWheelChoice">
+            <redefinitions>rearWheels</redefinitions>
+            <elements xsi:type="sysMLOC:PartUsage" isVariant="true" declaredName="narrowRimWheel">
+              <typings>NarrowRimWheel</typings>
+            </elements>
+            <elements xsi:type="sysMLOC:PartUsage" isVariant="true" declaredName="wideRimWheel">
+              <typings>WideRimWheel</typings>
+            </elements>
+          </elements>
+          <elements xsi:type="sysMLOC:AssertConstraintUsage" declaredName="'engine-wheel selection constraint'">
+            <resultExpressionParameter resultExpression="(engineChoice == engineChoice::'4cylEngine' and rearWheelChoice->forAll {in ref w; w == rearWheelChoice::narrowRimWheel} ) xor (engineChoice == engineChoice::'6cylEngine' and rearWheelChoice->forAll {in ref w; w == rearWheelChoice::wideRimWheel} )"/>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" isVariation="true" declaredName="vehicleChoice">
+        <subsetting>anyVehicleConfig</subsetting>
+        <elements xsi:type="sysMLOC:PartUsage" isVariant="true" declaredName="vehicle_c1"/>
+        <elements xsi:type="sysMLOC:PartUsage" isVariant="true" declaredName="vehicle_c2"/>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

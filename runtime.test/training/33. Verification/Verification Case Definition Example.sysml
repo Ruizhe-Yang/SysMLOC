@@ -33,9 +33,8 @@ package 'Verification Case Definition Example' {
 		
 		action evaluateData {
 			in massProcessed :> ISQ::mass = processData.massProcessed;
-			out verdict : VerdictKind = 
-				// Check that 'testVehicle' statisfies 'vehicleMassRequirement' if its mass equals 'massProcessed'.
-				PassIf(vehicleMassRequirement(vehicle = testVehicle(mass = massProcessed)));
+			// Check that 'testVehicle' statisfies 'vehicleMassRequirement' if its mass equals 'massProcessed'.
+			out verdict : VerdictKind = PassIf(vehicleMassRequirement(vehicle = testVehicle(mass = massProcessed)));
 		}
 		
 		return verdict : VerdictKind = evaluateData.verdict;

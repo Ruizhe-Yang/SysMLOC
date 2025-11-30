@@ -86,6 +86,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#getSuccessionElement <em>Succession Element</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#isIsFirst <em>Is First</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#getFirstElement <em>First Element</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#isIsElseIf <em>Is Else If</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#getIfConditionExpression <em>If Condition Expression</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#getActionParameterEnd <em>Action Parameter End</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#getElements <em>Elements</em>}</li>
@@ -564,6 +565,26 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
    * @ordered
    */
   protected String firstElement = FIRST_ELEMENT_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsElseIf() <em>Is Else If</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsElseIf()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_ELSE_IF_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsElseIf() <em>Is Else If</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsElseIf()
+   * @generated
+   * @ordered
+   */
+  protected boolean isElseIf = IS_ELSE_IF_EDEFAULT;
 
   /**
    * The default value of the '{@link #getIfConditionExpression() <em>If Condition Expression</em>}' attribute.
@@ -1242,6 +1263,31 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
    * @generated
    */
   @Override
+  public boolean isIsElseIf()
+  {
+    return isElseIf;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsElseIf(boolean newIsElseIf)
+  {
+    boolean oldIsElseIf = isElseIf;
+    isElseIf = newIsElseIf;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.IF_NODE__IS_ELSE_IF, oldIsElseIf, isElseIf));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public String getIfConditionExpression()
   {
     return ifConditionExpression;
@@ -1379,6 +1425,8 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
         return isIsFirst();
       case SysMLOCPackage.IF_NODE__FIRST_ELEMENT:
         return getFirstElement();
+      case SysMLOCPackage.IF_NODE__IS_ELSE_IF:
+        return isIsElseIf();
       case SysMLOCPackage.IF_NODE__IF_CONDITION_EXPRESSION:
         return getIfConditionExpression();
       case SysMLOCPackage.IF_NODE__ACTION_PARAMETER_END:
@@ -1493,6 +1541,9 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
       case SysMLOCPackage.IF_NODE__FIRST_ELEMENT:
         setFirstElement((String)newValue);
         return;
+      case SysMLOCPackage.IF_NODE__IS_ELSE_IF:
+        setIsElseIf((Boolean)newValue);
+        return;
       case SysMLOCPackage.IF_NODE__IF_CONDITION_EXPRESSION:
         setIfConditionExpression((String)newValue);
         return;
@@ -1602,6 +1653,9 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
       case SysMLOCPackage.IF_NODE__FIRST_ELEMENT:
         setFirstElement(FIRST_ELEMENT_EDEFAULT);
         return;
+      case SysMLOCPackage.IF_NODE__IS_ELSE_IF:
+        setIsElseIf(IS_ELSE_IF_EDEFAULT);
+        return;
       case SysMLOCPackage.IF_NODE__IF_CONDITION_EXPRESSION:
         setIfConditionExpression(IF_CONDITION_EXPRESSION_EDEFAULT);
         return;
@@ -1681,6 +1735,8 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
         return isFirst != IS_FIRST_EDEFAULT;
       case SysMLOCPackage.IF_NODE__FIRST_ELEMENT:
         return FIRST_ELEMENT_EDEFAULT == null ? firstElement != null : !FIRST_ELEMENT_EDEFAULT.equals(firstElement);
+      case SysMLOCPackage.IF_NODE__IS_ELSE_IF:
+        return isElseIf != IS_ELSE_IF_EDEFAULT;
       case SysMLOCPackage.IF_NODE__IF_CONDITION_EXPRESSION:
         return IF_CONDITION_EXPRESSION_EDEFAULT == null ? ifConditionExpression != null : !IF_CONDITION_EXPRESSION_EDEFAULT.equals(ifConditionExpression);
       case SysMLOCPackage.IF_NODE__ACTION_PARAMETER_END:
@@ -2118,6 +2174,8 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
     result.append(isFirst);
     result.append(", firstElement: ");
     result.append(firstElement);
+    result.append(", isElseIf: ");
+    result.append(isElseIf);
     result.append(", ifConditionExpression: ");
     result.append(ifConditionExpression);
     result.append(')');

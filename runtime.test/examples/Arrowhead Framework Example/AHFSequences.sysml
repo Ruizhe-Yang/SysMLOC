@@ -73,9 +73,9 @@ package AHFNorwaySequences {
 			from mqttsf.send_returnallitems to apscf.receive_returnallitems;
 		}
 
-		
+		// port reference
 		interface APIS_transfer_interface : Interfaces::Interface connect (
-			tlu ::> AHFNorway_LocalCloudDD.TellUConsumer.apisp.APIS_HTTP, // port reference
+			tlu ::> AHFNorway_LocalCloudDD.TellUConsumer.apisp.APIS_HTTP, 
 		    apsph ::> AHFNorway_LocalCloudDD.APISProducer.tellu.APIS_HTTP, 
 			apspm ::> AHFNorway_LocalCloudDD.APISProducer.apisc.APIS_MQTT,
 			apsc ::> AHFNorway_LocalCloudDD.APISConsumer.apisp.APIS_MQTT,

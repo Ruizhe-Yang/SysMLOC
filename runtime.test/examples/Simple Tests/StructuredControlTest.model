@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
-  <packages declaredName="StructuredControlTest">
+  <elements xsi:type="sysMLOC:Package" declaredName="StructuredControlTest">
     <elements xsi:type="sysMLOC:ActionUsage">
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="i" isInitial="true">
         <typings>ScalarValues::Integer</typings>
@@ -11,10 +11,12 @@
       </elements>
       <elements xsi:type="sysMLOC:IfNode" ifConditionExpression="i &lt; 0">
         <elements xsi:type="sysMLOC:AssignmentNode" featureChain="i" NodeParameter="0"/>
-        <elseNode ifConditionExpression="i == 0">
-          <elements xsi:type="sysMLOC:AssignmentNode" featureChain="i" NodeParameter="1"/>
-          <elements xsi:type="sysMLOC:AssignmentNode" featureChain="i" NodeParameter="i + 1"/>
-        </elseNode>
+      </elements>
+      <elements xsi:type="sysMLOC:IfNode" isElseIf="true" ifConditionExpression="i == 0">
+        <elements xsi:type="sysMLOC:AssignmentNode" featureChain="i" NodeParameter="1"/>
+      </elements>
+      <elements xsi:type="sysMLOC:ElseNode">
+        <elements xsi:type="sysMLOC:AssignmentNode" featureChain="i" NodeParameter="i + 1"/>
       </elements>
       <elements xsi:type="sysMLOC:IfNode" ifConditionExpression="i > 0">
         <elements xsi:type="sysMLOC:AssignmentNode" featureChain="i" NodeParameter="i + 1"/>
@@ -35,5 +37,5 @@
         <elements xsi:type="sysMLOC:AssignmentNode" featureChain="i" NodeParameter="i * n"/>
       </elements>
     </elements>
-  </packages>
+  </elements>
 </sysMLOC:Namespace>

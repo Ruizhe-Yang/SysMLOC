@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="'15.10-Primitive Data Types'">
+    <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9; * Primitive data types are defined in normative model libraries.&#xA;&#x9; * Any more specialized data types can be declared in user-defined &#xA;&#x9; * model libraries or models as needed.&#xA;&#x9; */"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues::Integer">
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9; * The unqualified Integer is signed, in line with integer numbers in mathematics.&#xA;&#x9; */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues::Natural"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="UnsignedInteger">
+      <superclassifiers>Natural</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/* Mathematically, unsigned integers are just natural numbers (non-negative integers). */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues::Real">
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9; * The unqualified Real is signed, in line with real numbers in mathematics.&#xA;&#x9; */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="UnsignedReal">
+      <superclassifiers>Real</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Example of restriction of the base Real datatype.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="x">
+        <typings>Real</typings>
+        <redefinitions>self</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AssertConstraintUsage">
+        <resultExpressionParameter resultExpression="x >= 0.0"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues::String">
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * String attributes are sequences of characters.&#xA;&#x9;&#x9; */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues::Boolean">
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Boolean type has two legal attributes: true, false.&#xA;&#x9;&#x9; */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Time::DateTime"/>
+    <elements xsi:type="sysMLOC:EnumerationDefinition" declaredName="ConditionColor">
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Enumerations are defined as an implicit restriction of the extent of the&#xA;&#x9;&#x9; * enumeration type to the listed enumeration values.&#xA;&#x9;&#x9; * Note: Enumerations are currently limited to attributes.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="red"/>
+      <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="yellow"/>
+      <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="green"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ConditionLevel">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="associatedColor">
+        <typings>ConditionColor</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:EnumerationDefinition" declaredName="SeverityEnum">
+      <superclassifiers>ConditionLevel</superclassifiers>
+      <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="danger">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <redefinitions>associatedColor</redefinitions>
+          <valuePart>ConditionColor::red</valuePart>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="warning">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <redefinitions>associatedColor</redefinitions>
+          <valuePart>ConditionColor::yellow</valuePart>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="normal">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <redefinitions>associatedColor</redefinitions>
+          <valuePart>ConditionColor::green</valuePart>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="Diameter">
+      <superclassifiers>ISQ::LengthValue</superclassifiers>
+    </elements>
+    <elements xsi:type="sysMLOC:EnumerationDefinition" declaredName="DiameterChoice">
+      <superclassifiers>Diameter</superclassifiers>
+      <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="small">
+        <valuePart>60 [SI::mm]</valuePart>
+      </elements>
+      <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="medium">
+        <valuePart>70 [SI::mm]</valuePart>
+      </elements>
+      <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="large">
+        <valuePart>80 [SI::mm]</valuePart>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="aperatureDiameter">
+      <typings>DiameterChoice</typings>
+      <valuePart>DiameterChoice::small</valuePart>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

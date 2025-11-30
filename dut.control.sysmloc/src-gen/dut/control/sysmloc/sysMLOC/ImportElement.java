@@ -3,6 +3,7 @@
  */
 package dut.control.sysmloc.sysMLOC;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,6 +19,8 @@ package dut.control.sysmloc.sysMLOC;
  *   <li>{@link dut.control.sysmloc.sysMLOC.ImportElement#getDeclaredName <em>Declared Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.ImportElement#isIsNamespace <em>Is Namespace</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.ImportElement#isIsRecursive <em>Is Recursive</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.ImportElement#getFilterPackageExpression <em>Filter Package Expression</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.ImportElement#getElements <em>Elements</em>}</li>
  * </ul>
  *
  * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getImportElement()
@@ -138,5 +141,29 @@ public interface ImportElement extends GeneralBodyElements
    * @generated
    */
   void setIsRecursive(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Filter Package Expression</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Filter Package Expression</em>' attribute list.
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getImportElement_FilterPackageExpression()
+   * @model unique="false"
+   * @generated
+   */
+  EList<String> getFilterPackageExpression();
+
+  /**
+   * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
+   * The list contents are of type {@link dut.control.sysmloc.sysMLOC.RelationshipBodyElement}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Elements</em>' containment reference list.
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getImportElement_Elements()
+   * @model containment="true"
+   * @generated
+   */
+  EList<RelationshipBodyElement> getElements();
 
 } // ImportElement

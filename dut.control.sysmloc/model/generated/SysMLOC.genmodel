@@ -78,6 +78,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//ImportElement/declaredName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//ImportElement/isNamespace"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//ImportElement/isRecursive"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//ImportElement/filterPackageExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//ImportElement/elements"/>
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//ExposeElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//ExposeElement/declaredName"/>
@@ -383,6 +385,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//IfNode/successionElement"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//IfNode/isFirst"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//IfNode/firstElement"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//IfNode/isElseIf"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//IfNode/ifConditionExpression"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//IfNode/actionParameterEnd"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//IfNode/elements"/>

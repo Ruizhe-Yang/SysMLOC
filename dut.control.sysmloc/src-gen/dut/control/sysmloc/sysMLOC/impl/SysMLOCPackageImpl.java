@@ -1988,6 +1988,28 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   @Override
+  public EAttribute getImportElement_FilterPackageExpression()
+  {
+        return (EAttribute)getImportElement().getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getImportElement_Elements()
+  {
+        return (EReference)getImportElement().getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getExposeElement()
   {
     if (exposeElementEClass == null)
@@ -4776,7 +4798,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   @Override
-  public EAttribute getIfNode_IfConditionExpression()
+  public EAttribute getIfNode_IsElseIf()
   {
         return (EAttribute)getIfNode().getEStructuralFeatures().get(4);
   }
@@ -4787,9 +4809,20 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   @Override
+  public EAttribute getIfNode_IfConditionExpression()
+  {
+        return (EAttribute)getIfNode().getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EReference getIfNode_ActionParameterEnd()
   {
-        return (EReference)getIfNode().getEStructuralFeatures().get(5);
+        return (EReference)getIfNode().getEStructuralFeatures().get(6);
   }
 
   /**
@@ -4800,7 +4833,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   @Override
   public EReference getIfNode_Elements()
   {
-        return (EReference)getIfNode().getEStructuralFeatures().get(6);
+        return (EReference)getIfNode().getEStructuralFeatures().get(7);
   }
 
   /**

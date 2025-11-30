@@ -1782,7 +1782,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
-	 *         (actionParameterEnd+=ActionParameterEnd | elseEnd+=ConnectorEnd) 
+	 *         (actionParameterEnd+=ActionParameterEnd | elseEnd+=ConnectorEnd)? 
 	 *         elements+=ActionBodyElement*
 	 *     )
 	 * </pre>
@@ -3215,6 +3215,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         )* 
 	 *         (isSuccession?='succession' successionElement+=IfSuccessionAsUsage)? 
 	 *         (isFirst?='first' firstElement=FeatureChainName)? 
+	 *         isElseIf?='else'? 
 	 *         ifConditionExpression=Expression 
 	 *         (
 	 *             (actionParameterEnd+=ActionParameterEnd? elements+=ActionBodyElement*) | 
@@ -5730,7 +5731,15 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     ImportElement returns ImportElement
 	 *
 	 * Constraint:
-	 *     (visibility=VisibilityIndicator isImportAll?='all'? declaredName=QualifiedName isNamespace?='::'? isRecursive?='**'?)
+	 *     (
+	 *         visibility=VisibilityIndicator 
+	 *         isImportAll?='all'? 
+	 *         declaredName=QualifiedName 
+	 *         isNamespace?='::'? 
+	 *         isRecursive?='**'? 
+	 *         filterPackageExpression+=Expression* 
+	 *         elements+=RelationshipBodyElement*
+	 *     )
 	 * </pre>
 	 */
 	protected void sequence_ImportElement(ISerializationContext context, ImportElement semanticObject) {

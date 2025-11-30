@@ -682,13 +682,31 @@ public interface SysMLOCPackage extends EPackage
   int IMPORT_ELEMENT__IS_RECURSIVE = GENERAL_BODY_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
+   * The feature id for the '<em><b>Filter Package Expression</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT_ELEMENT__FILTER_PACKAGE_EXPRESSION = GENERAL_BODY_ELEMENTS_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT_ELEMENT__ELEMENTS = GENERAL_BODY_ELEMENTS_FEATURE_COUNT + 6;
+
+  /**
    * The number of structural features of the '<em>Import Element</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IMPORT_ELEMENT_FEATURE_COUNT = GENERAL_BODY_ELEMENTS_FEATURE_COUNT + 5;
+  int IMPORT_ELEMENT_FEATURE_COUNT = GENERAL_BODY_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.ExposeElementImpl <em>Expose Element</em>}' class.
@@ -15532,13 +15550,22 @@ public interface SysMLOCPackage extends EPackage
   int IF_NODE__FIRST_ELEMENT = ACTION_NODE_ELEMENTS_FEATURE_COUNT + 27;
 
   /**
+   * The feature id for the '<em><b>Is Else If</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_NODE__IS_ELSE_IF = ACTION_NODE_ELEMENTS_FEATURE_COUNT + 28;
+
+  /**
    * The feature id for the '<em><b>If Condition Expression</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IF_NODE__IF_CONDITION_EXPRESSION = ACTION_NODE_ELEMENTS_FEATURE_COUNT + 28;
+  int IF_NODE__IF_CONDITION_EXPRESSION = ACTION_NODE_ELEMENTS_FEATURE_COUNT + 29;
 
   /**
    * The feature id for the '<em><b>Action Parameter End</b></em>' containment reference list.
@@ -15547,7 +15574,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_NODE__ACTION_PARAMETER_END = ACTION_NODE_ELEMENTS_FEATURE_COUNT + 29;
+  int IF_NODE__ACTION_PARAMETER_END = ACTION_NODE_ELEMENTS_FEATURE_COUNT + 30;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -15556,7 +15583,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_NODE__ELEMENTS = ACTION_NODE_ELEMENTS_FEATURE_COUNT + 30;
+  int IF_NODE__ELEMENTS = ACTION_NODE_ELEMENTS_FEATURE_COUNT + 31;
 
   /**
    * The number of structural features of the '<em>If Node</em>' class.
@@ -15565,7 +15592,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IF_NODE_FEATURE_COUNT = ACTION_NODE_ELEMENTS_FEATURE_COUNT + 31;
+  int IF_NODE_FEATURE_COUNT = ACTION_NODE_ELEMENTS_FEATURE_COUNT + 32;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.WhileLoopNodeImpl <em>While Loop Node</em>}' class.
@@ -23861,6 +23888,28 @@ public interface SysMLOCPackage extends EPackage
   EAttribute getImportElement_IsRecursive();
 
   /**
+   * Returns the meta object for the attribute list '{@link dut.control.sysmloc.sysMLOC.ImportElement#getFilterPackageExpression <em>Filter Package Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Filter Package Expression</em>'.
+   * @see dut.control.sysmloc.sysMLOC.ImportElement#getFilterPackageExpression()
+   * @see #getImportElement()
+   * @generated
+   */
+  EAttribute getImportElement_FilterPackageExpression();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.sysmloc.sysMLOC.ImportElement#getElements <em>Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see dut.control.sysmloc.sysMLOC.ImportElement#getElements()
+   * @see #getImportElement()
+   * @generated
+   */
+  EReference getImportElement_Elements();
+
+  /**
    * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.ExposeElement <em>Expose Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -26242,6 +26291,17 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    */
   EAttribute getIfNode_FirstElement();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.sysmloc.sysMLOC.IfNode#isIsElseIf <em>Is Else If</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Else If</em>'.
+   * @see dut.control.sysmloc.sysMLOC.IfNode#isIsElseIf()
+   * @see #getIfNode()
+   * @generated
+   */
+  EAttribute getIfNode_IsElseIf();
 
   /**
    * Returns the meta object for the attribute '{@link dut.control.sysmloc.sysMLOC.IfNode#getIfConditionExpression <em>If Condition Expression</em>}'.
