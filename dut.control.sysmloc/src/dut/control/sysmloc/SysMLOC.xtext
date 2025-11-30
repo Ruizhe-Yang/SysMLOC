@@ -43,6 +43,7 @@ InterfaceBodyElement:
 
 EnumerationBodyElement:
 	AnnotatingElement
+	| CodeAnnotation
 	| EnumeratedValue
 ;
 
@@ -82,13 +83,14 @@ CaseBodyElement:
 	| ObjectiveRequirementUsage
 ;
 
-MetadataBodyElement:
-	DefinitionElement
-//	| MetadataBodyUsage
-	| AliasElement
-	| ImportElement
-	| CodeAnnotation
-;
+//MetadataBodyElement:
+//	DefinitionElement
+////	| MetadataBodyUsage
+//	| NonOccurrenceUsageElement
+//	| AliasElement
+//	| ImportElement
+//	| CodeAnnotation
+//;
 
 ViewDefinitionBodyElement:
 	DefinitionBodyElement
@@ -130,10 +132,10 @@ DefinitionElement:
 	| OccurrenceDefinition
 	| IndividualDefinition
 	| ItemDefinition
-//	| MetadataDefinition
+	| MetadataDefinition
 	| PartDefinition
 	| ConnectionDefinition
-	| FlowConnectionDefinition
+	| FlowDefinition
 	| InterfaceDefinition
 	| AllocationDefinition
 	| PortDefinition
@@ -150,7 +152,7 @@ DefinitionElement:
 	| ViewDefinition
 	| ViewpointDefinition
 	| RenderingDefinition
-//	| ExtendedDefinition
+	| ExtendedDefinition
 ;
 
 // Usages
@@ -160,13 +162,13 @@ UsageElement:
 ;
 
 NonOccurrenceUsageElement:
+//	CompositeReferenceUsage
 	DefaultReferenceUsage
 	| ReferenceUsage
 	| AttributeUsage
 	| EnumerationUsage
 	| BindingConnectorAsUsage
 	| SuccessionAsUsage
-//	| ExtendedUsage
 ;
 
 OccurrenceUsageElement:
@@ -188,8 +190,8 @@ StructureUsageElement:
 	| InterfaceUsage
 	| AllocationUsage
 	| Message
-	| FlowConnectionUsage
-	| SuccessionFlowConnectionUsage
+	| FlowUsage
+	| SuccessionFlowUsage
 ;
 
 BehaviorUsageElement:
@@ -291,21 +293,18 @@ TextualRepresentation:
     body = REGULAR_COMMENT
 ;
 
-MetadataUsage:
+MetadataUsage: 
 	UsageExtensionKeyword*
 	('metadata' | '@')
 	( Identification? (':' | 'defined' 'by'))?
 	metadataTyping=QualifiedName
 	( 'about' annotatedElement+=QualifiedName ( ',' annotatedElement+=QualifiedName)* )?
-	( ';' | '{' (elements+=MetadataBodyElement)* '}' )
+//	( ';' | '{' (elements+=MetadataBodyElement)* '}' ) // exceeding 65535 bytes
+	( ';' | '{' (elements+=GeneralBodyElements)* '}' )
+	
 ;
 
-MetadataBodyUsage:
-	'ref'? ( ':>>' | 'redefines' )?
-	redefinition = FeatureChainName
-	FeatureSpecializationPart? ValuePart?
-	( ';' | '{' (elements+=MetadataBodyElement)* '}' )
-;
+
 
 ElementFilterElement:
 	MemberPrefix
@@ -324,6 +323,25 @@ DefaultReferenceUsage:
     ( ';' | '{' (elements+=UsageBodyElement)* '}' )
 ;
 
+//ExtendedUsage:
+//	GeneralUsagePrefix
+//	UnextendedUsagePrefix
+//	UsageExtensionKeyword+ 
+//	Usage
+//	( ';' | '{' (elements+=UsageBodyElement)* '}' )
+//;
+//
+//CompositeReferenceUsage:
+//    GeneralUsagePrefix
+//    ( isEnd ?= 'end' )?
+//    RefPrefix
+//	( isReference ?= 'ref' )?
+////	UsageDeclaration
+//    ( UsageDeclaration | UsageExtensionKeyword+ UsageDeclaration?)
+//   	ValuePart?
+//    ( ';' | '{' (elements+=UsageBodyElement)* '}' )
+//;
+
 ReferenceVariantUsage:
 	( visibility = VisibilityIndicator )?
 	'variant'
@@ -340,6 +358,8 @@ ReferenceUsage:
     Usage
     ( ';' | '{' (elements+=UsageBodyElement)* '}' )
 ;
+
+
 
 LibraryPackage:
 	( isStandard ?= 'standard' )? 
@@ -469,6 +489,15 @@ ItemUsage:
     ( ';' | '{' (elements+=UsageBodyElement)* '}' )
 ;
 
+MetadataDefinition:
+	MemberPrefix
+	( isAbstract ?= 'abstract')? 
+	DefinitionExtensionKeyword*
+	'metadata' 'def'
+	DefinitionDeclaration
+	( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
+;
+
 PartDefinition:
     MemberPrefix OccurrenceDefinitionPrefix 'part' 'def' DefinitionDeclaration 
     ( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
@@ -526,7 +555,7 @@ Message:
 	( ';' | '{' (elements+=UsageBodyElement)* '}' )
 ;
 
-FlowConnectionDefinition:
+FlowDefinition:
 	MemberPrefix 
 	OccurrenceDefinitionPrefix 
 	'flow' 'def' 
@@ -534,7 +563,7 @@ FlowConnectionDefinition:
 	( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
 ;
 
-FlowConnectionUsage:
+FlowUsage:
 	GeneralUsagePrefix
 	OccurrenceUsagePrefix
 	'flow' 
@@ -544,7 +573,7 @@ FlowConnectionUsage:
     ( ';' | '{' (elements+=UsageBodyElement)* '}' )
 ;
 
-SuccessionFlowConnectionUsage:
+SuccessionFlowUsage:
 	GeneralUsagePrefix
 	OccurrenceUsagePrefix
 	'succession' 'flow'
@@ -787,6 +816,25 @@ RenderingUsage:
 	Usage
 	( ';' | '{' (elements+=UsageBodyElement)* '}' )
 ;
+
+ExtendedDefinition:
+	MemberPrefix
+	BasicDefinitionPrefix?
+	'#' prefixMetadataExtension+=QualifiedName
+	PrefixMetadata*
+	'def'
+	DefinitionDeclaration
+	( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
+;
+
+//ExtendedUsage:
+//	GeneralUsagePrefix
+//	UnextendedUsagePrefix
+//	'#' prefixMetadataExtension+=QualifiedName
+//	UsageExtensionKeyword*
+//	Usage
+//	( ';' | '{' (elements+=UsageBodyElement)* '}' )
+//;
 
 PerformActionUsage:
 	GeneralUsagePrefix
@@ -1381,10 +1429,6 @@ Name:
 	ID | UNRESTRICTED_NAME
 ;
 
-//QualifiedName:
-//	Name ('::' Name)*
-//;
-
 Qualification :
 	( Name '::' )+
 ;
@@ -1395,7 +1439,6 @@ QualifiedName:
 
 FeatureChainName:
 	'USELESS'? 
-//	'~'?
 	QualifiedName ('.' Name)*
 ;
 
@@ -1403,13 +1446,6 @@ FeatureTypingName:
 	FeatureChainName | '~' QualifiedName
 ;
 
-//ExpressionName:
-//	FeatureChainName | RealValue
-//;
-
-//Expression:
-//	OPERATOR* ExpressionName (OPERATOR ExpressionName?)* | '(' SequenceExpression ')' | '(' ')'
-//;
 Expression:
 	SL_NOTE? OwnedExpression SL_NOTE?
 ;

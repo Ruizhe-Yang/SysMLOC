@@ -76,12 +76,13 @@ import dut.control.sysmloc.sysMLOC.EventOccurrenceUsage;
 import dut.control.sysmloc.sysMLOC.ExhibitStateUsage;
 import dut.control.sysmloc.sysMLOC.ExitActionNode;
 import dut.control.sysmloc.sysMLOC.ExposeElement;
+import dut.control.sysmloc.sysMLOC.ExtendedDefinition;
 import dut.control.sysmloc.sysMLOC.FeatureDeclaration;
 import dut.control.sysmloc.sysMLOC.FeatureSpecialization;
 import dut.control.sysmloc.sysMLOC.FeatureSpecializationPart;
 import dut.control.sysmloc.sysMLOC.FeatureValue;
-import dut.control.sysmloc.sysMLOC.FlowConnectionDefinition;
-import dut.control.sysmloc.sysMLOC.FlowConnectionUsage;
+import dut.control.sysmloc.sysMLOC.FlowDefinition;
+import dut.control.sysmloc.sysMLOC.FlowUsage;
 import dut.control.sysmloc.sysMLOC.ForLoopNode;
 import dut.control.sysmloc.sysMLOC.ForVariableParameter;
 import dut.control.sysmloc.sysMLOC.FramedConcernUsage;
@@ -105,8 +106,7 @@ import dut.control.sysmloc.sysMLOC.ItemUsage;
 import dut.control.sysmloc.sysMLOC.LibraryPackage;
 import dut.control.sysmloc.sysMLOC.MemberPrefix;
 import dut.control.sysmloc.sysMLOC.Message;
-import dut.control.sysmloc.sysMLOC.MetadataBodyElement;
-import dut.control.sysmloc.sysMLOC.MetadataBodyUsage;
+import dut.control.sysmloc.sysMLOC.MetadataDefinition;
 import dut.control.sysmloc.sysMLOC.MetadataUsage;
 import dut.control.sysmloc.sysMLOC.MultiplicityPart;
 import dut.control.sysmloc.sysMLOC.MultiplicityRange;
@@ -161,7 +161,7 @@ import dut.control.sysmloc.sysMLOC.StructureUsageElement;
 import dut.control.sysmloc.sysMLOC.SubjectUsage;
 import dut.control.sysmloc.sysMLOC.SubsettingFeatureChain;
 import dut.control.sysmloc.sysMLOC.SuccessionAsUsage;
-import dut.control.sysmloc.sysMLOC.SuccessionFlowConnectionUsage;
+import dut.control.sysmloc.sysMLOC.SuccessionFlowUsage;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 import dut.control.sysmloc.sysMLOC.TerminateNode;
 import dut.control.sysmloc.sysMLOC.TextualRepresentation;
@@ -333,11 +333,6 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
         return createCaseBodyElementAdapter();
       }
       @Override
-      public Adapter caseMetadataBodyElement(MetadataBodyElement object)
-      {
-        return createMetadataBodyElementAdapter();
-      }
-      @Override
       public Adapter caseViewDefinitionBodyElement(ViewDefinitionBodyElement object)
       {
         return createViewDefinitionBodyElementAdapter();
@@ -441,11 +436,6 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
       public Adapter caseMetadataUsage(MetadataUsage object)
       {
         return createMetadataUsageAdapter();
-      }
-      @Override
-      public Adapter caseMetadataBodyUsage(MetadataBodyUsage object)
-      {
-        return createMetadataBodyUsageAdapter();
       }
       @Override
       public Adapter caseElementFilterElement(ElementFilterElement object)
@@ -553,6 +543,11 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
         return createItemUsageAdapter();
       }
       @Override
+      public Adapter caseMetadataDefinition(MetadataDefinition object)
+      {
+        return createMetadataDefinitionAdapter();
+      }
+      @Override
       public Adapter casePartDefinition(PartDefinition object)
       {
         return createPartDefinitionAdapter();
@@ -598,19 +593,19 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
         return createMessageAdapter();
       }
       @Override
-      public Adapter caseFlowConnectionDefinition(FlowConnectionDefinition object)
+      public Adapter caseFlowDefinition(FlowDefinition object)
       {
-        return createFlowConnectionDefinitionAdapter();
+        return createFlowDefinitionAdapter();
       }
       @Override
-      public Adapter caseFlowConnectionUsage(FlowConnectionUsage object)
+      public Adapter caseFlowUsage(FlowUsage object)
       {
-        return createFlowConnectionUsageAdapter();
+        return createFlowUsageAdapter();
       }
       @Override
-      public Adapter caseSuccessionFlowConnectionUsage(SuccessionFlowConnectionUsage object)
+      public Adapter caseSuccessionFlowUsage(SuccessionFlowUsage object)
       {
-        return createSuccessionFlowConnectionUsageAdapter();
+        return createSuccessionFlowUsageAdapter();
       }
       @Override
       public Adapter caseAllocationDefinition(AllocationDefinition object)
@@ -756,6 +751,11 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
       public Adapter caseRenderingUsage(RenderingUsage object)
       {
         return createRenderingUsageAdapter();
+      }
+      @Override
+      public Adapter caseExtendedDefinition(ExtendedDefinition object)
+      {
+        return createExtendedDefinitionAdapter();
       }
       @Override
       public Adapter casePerformActionUsage(PerformActionUsage object)
@@ -1435,21 +1435,6 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.MetadataBodyElement <em>Metadata Body Element</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see dut.control.sysmloc.sysMLOC.MetadataBodyElement
-   * @generated
-   */
-  public Adapter createMetadataBodyElementAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.ViewDefinitionBodyElement <em>View Definition Body Element</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1760,21 +1745,6 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createMetadataUsageAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.MetadataBodyUsage <em>Metadata Body Usage</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see dut.control.sysmloc.sysMLOC.MetadataBodyUsage
-   * @generated
-   */
-  public Adapter createMetadataBodyUsageAdapter()
   {
     return null;
   }
@@ -2095,6 +2065,21 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.MetadataDefinition <em>Metadata Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.sysmloc.sysMLOC.MetadataDefinition
+   * @generated
+   */
+  public Adapter createMetadataDefinitionAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.PartDefinition <em>Part Definition</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -2230,46 +2215,46 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.FlowConnectionDefinition <em>Flow Connection Definition</em>}'.
+   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.FlowDefinition <em>Flow Definition</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see dut.control.sysmloc.sysMLOC.FlowConnectionDefinition
+   * @see dut.control.sysmloc.sysMLOC.FlowDefinition
    * @generated
    */
-  public Adapter createFlowConnectionDefinitionAdapter()
+  public Adapter createFlowDefinitionAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.FlowConnectionUsage <em>Flow Connection Usage</em>}'.
+   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.FlowUsage <em>Flow Usage</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see dut.control.sysmloc.sysMLOC.FlowConnectionUsage
+   * @see dut.control.sysmloc.sysMLOC.FlowUsage
    * @generated
    */
-  public Adapter createFlowConnectionUsageAdapter()
+  public Adapter createFlowUsageAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.SuccessionFlowConnectionUsage <em>Succession Flow Connection Usage</em>}'.
+   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.SuccessionFlowUsage <em>Succession Flow Usage</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see dut.control.sysmloc.sysMLOC.SuccessionFlowConnectionUsage
+   * @see dut.control.sysmloc.sysMLOC.SuccessionFlowUsage
    * @generated
    */
-  public Adapter createSuccessionFlowConnectionUsageAdapter()
+  public Adapter createSuccessionFlowUsageAdapter()
   {
     return null;
   }
@@ -2705,6 +2690,21 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createRenderingUsageAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.ExtendedDefinition <em>Extended Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.sysmloc.sysMLOC.ExtendedDefinition
+   * @generated
+   */
+  public Adapter createExtendedDefinitionAdapter()
   {
     return null;
   }

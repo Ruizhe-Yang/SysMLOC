@@ -23,7 +23,7 @@
           <typings>Image</typings>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:FlowConnectionUsage">
+      <elements xsi:type="sysMLOC:FlowUsage">
         <FlowEnd>autoFocus.realImage</FlowEnd>
         <FlowEnd>imager.focusedImage</FlowEnd>
       </elements>

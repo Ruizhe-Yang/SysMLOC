@@ -50,8 +50,9 @@ import dut.control.sysmloc.sysMLOC.EventOccurrenceUsage;
 import dut.control.sysmloc.sysMLOC.ExhibitStateUsage;
 import dut.control.sysmloc.sysMLOC.ExitActionNode;
 import dut.control.sysmloc.sysMLOC.ExposeElement;
-import dut.control.sysmloc.sysMLOC.FlowConnectionDefinition;
-import dut.control.sysmloc.sysMLOC.FlowConnectionUsage;
+import dut.control.sysmloc.sysMLOC.ExtendedDefinition;
+import dut.control.sysmloc.sysMLOC.FlowDefinition;
+import dut.control.sysmloc.sysMLOC.FlowUsage;
 import dut.control.sysmloc.sysMLOC.ForLoopNode;
 import dut.control.sysmloc.sysMLOC.ForVariableParameter;
 import dut.control.sysmloc.sysMLOC.FramedConcernUsage;
@@ -69,7 +70,7 @@ import dut.control.sysmloc.sysMLOC.ItemFeatureParameter;
 import dut.control.sysmloc.sysMLOC.ItemUsage;
 import dut.control.sysmloc.sysMLOC.LibraryPackage;
 import dut.control.sysmloc.sysMLOC.Message;
-import dut.control.sysmloc.sysMLOC.MetadataBodyUsage;
+import dut.control.sysmloc.sysMLOC.MetadataDefinition;
 import dut.control.sysmloc.sysMLOC.MetadataUsage;
 import dut.control.sysmloc.sysMLOC.Namespace;
 import dut.control.sysmloc.sysMLOC.ObjectiveRequirementUsage;
@@ -99,7 +100,7 @@ import dut.control.sysmloc.sysMLOC.StateDefinition;
 import dut.control.sysmloc.sysMLOC.StateUsage;
 import dut.control.sysmloc.sysMLOC.SubjectUsage;
 import dut.control.sysmloc.sysMLOC.SuccessionAsUsage;
-import dut.control.sysmloc.sysMLOC.SuccessionFlowConnectionUsage;
+import dut.control.sysmloc.sysMLOC.SuccessionFlowUsage;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 import dut.control.sysmloc.sysMLOC.TerminateNode;
 import dut.control.sysmloc.sysMLOC.TextualRepresentation;
@@ -273,11 +274,14 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 			case SysMLOCPackage.EXPOSE_ELEMENT:
 				sequence_ExposeElement(context, (ExposeElement) semanticObject); 
 				return; 
-			case SysMLOCPackage.FLOW_CONNECTION_DEFINITION:
-				sequence_BasicDefinitionPrefix_DefinitionDeclaration_FlowConnectionDefinition_Identification_MemberPrefix_OccurrenceDefinitionPrefix(context, (FlowConnectionDefinition) semanticObject); 
+			case SysMLOCPackage.EXTENDED_DEFINITION:
+				sequence_BasicDefinitionPrefix_DefinitionDeclaration_ExtendedDefinition_Identification_MemberPrefix_PrefixMetadata(context, (ExtendedDefinition) semanticObject); 
 				return; 
-			case SysMLOCPackage.FLOW_CONNECTION_USAGE:
-				sequence_BasicDefinitionPrefix_BasicUsagePrefix_CrossFeatureChain_EmptySuccessionPrefix_FeatureValue_FlowConnectionUsage_Identification_ItemFeatureParameterPart_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_RedefinitionFeatureChain_RefPrefix_ReferenceFeatureChain_SubsettingFeatureChain_TypingFeatureTyping_isReturnPrefix(context, (FlowConnectionUsage) semanticObject); 
+			case SysMLOCPackage.FLOW_DEFINITION:
+				sequence_BasicDefinitionPrefix_DefinitionDeclaration_FlowDefinition_Identification_MemberPrefix_OccurrenceDefinitionPrefix(context, (FlowDefinition) semanticObject); 
+				return; 
+			case SysMLOCPackage.FLOW_USAGE:
+				sequence_BasicDefinitionPrefix_BasicUsagePrefix_CrossFeatureChain_EmptySuccessionPrefix_FeatureValue_FlowUsage_Identification_ItemFeatureParameterPart_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_RedefinitionFeatureChain_RefPrefix_ReferenceFeatureChain_SubsettingFeatureChain_TypingFeatureTyping_isReturnPrefix(context, (FlowUsage) semanticObject); 
 				return; 
 			case SysMLOCPackage.FOR_LOOP_NODE:
 				sequence_BasicDefinitionPrefix_BasicUsagePrefix_CrossFeatureChain_EmptySuccessionPrefix_ForLoopNode_Identification_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_RedefinitionFeatureChain_RefPrefix_ReferenceFeatureChain_SubsettingFeatureChain_TypingFeatureTyping(context, (ForLoopNode) semanticObject); 
@@ -330,8 +334,8 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 			case SysMLOCPackage.MESSAGE:
 				sequence_BasicDefinitionPrefix_BasicUsagePrefix_CrossFeatureChain_EmptySuccessionPrefix_FeatureValue_Identification_ItemFeatureParameterPart_MemberPrefix_Message_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_RedefinitionFeatureChain_RefPrefix_ReferenceFeatureChain_SubsettingFeatureChain_TypingFeatureTyping_isReturnPrefix(context, (Message) semanticObject); 
 				return; 
-			case SysMLOCPackage.METADATA_BODY_USAGE:
-				sequence_CrossFeatureChain_FeatureValue_MetadataBodyUsage_MultiplicityPart_MultiplicityRange_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_TypingFeatureTyping(context, (MetadataBodyUsage) semanticObject); 
+			case SysMLOCPackage.METADATA_DEFINITION:
+				sequence_DefinitionDeclaration_Identification_MemberPrefix_MetadataDefinition_PrefixMetadata(context, (MetadataDefinition) semanticObject); 
 				return; 
 			case SysMLOCPackage.METADATA_USAGE:
 				sequence_Identification_MetadataUsage_PrefixMetadata(context, (MetadataUsage) semanticObject); 
@@ -445,8 +449,8 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 			case SysMLOCPackage.SUCCESSION_AS_USAGE:
 				sequence_BasicDefinitionPrefix_BasicUsagePrefix_CrossFeatureChain_EndUsagePrefix_Identification_MemberPrefix_MultiplicityPart_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_RefPrefix_ReferenceFeatureChain_SubsettingFeatureChain_SuccessionAsUsage_TypingFeatureTyping_isReturnPrefix(context, (SuccessionAsUsage) semanticObject); 
 				return; 
-			case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE:
-				sequence_BasicDefinitionPrefix_BasicUsagePrefix_CrossFeatureChain_EmptySuccessionPrefix_FeatureValue_Identification_ItemFeatureParameterPart_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_RedefinitionFeatureChain_RefPrefix_ReferenceFeatureChain_SubsettingFeatureChain_SuccessionFlowConnectionUsage_TypingFeatureTyping_isReturnPrefix(context, (SuccessionFlowConnectionUsage) semanticObject); 
+			case SysMLOCPackage.SUCCESSION_FLOW_USAGE:
+				sequence_BasicDefinitionPrefix_BasicUsagePrefix_CrossFeatureChain_EmptySuccessionPrefix_FeatureValue_Identification_ItemFeatureParameterPart_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_RedefinitionFeatureChain_RefPrefix_ReferenceFeatureChain_SubsettingFeatureChain_SuccessionFlowUsage_TypingFeatureTyping_isReturnPrefix(context, (SuccessionFlowUsage) semanticObject); 
 				return; 
 			case SysMLOCPackage.TERMINATE_NODE:
 				sequence_BasicDefinitionPrefix_BasicUsagePrefix_CrossFeatureChain_EmptySuccessionPrefix_Identification_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_RedefinitionFeatureChain_RefPrefix_ReferenceFeatureChain_SubsettingFeatureChain_TerminateNode_TypingFeatureTyping(context, (TerminateNode) semanticObject); 
@@ -638,7 +642,6 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     StateBodyElement returns ActionDefinition
 	 *     RequirementBodyElement returns ActionDefinition
 	 *     CaseBodyElement returns ActionDefinition
-	 *     MetadataBodyElement returns ActionDefinition
 	 *     ViewDefinitionBodyElement returns ActionDefinition
 	 *     ViewBodyElement returns ActionDefinition
 	 *     DefinitionElement returns ActionDefinition
@@ -774,7 +777,6 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     StateBodyElement returns AliasElement
 	 *     RequirementBodyElement returns AliasElement
 	 *     CaseBodyElement returns AliasElement
-	 *     MetadataBodyElement returns AliasElement
 	 *     ViewDefinitionBodyElement returns AliasElement
 	 *     ViewBodyElement returns AliasElement
 	 *     AliasElement returns AliasElement
@@ -808,7 +810,6 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     StateBodyElement returns AllocationDefinition
 	 *     RequirementBodyElement returns AllocationDefinition
 	 *     CaseBodyElement returns AllocationDefinition
-	 *     MetadataBodyElement returns AllocationDefinition
 	 *     ViewDefinitionBodyElement returns AllocationDefinition
 	 *     ViewBodyElement returns AllocationDefinition
 	 *     DefinitionElement returns AllocationDefinition
@@ -910,7 +911,6 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     StateBodyElement returns AnalysisCaseDefinition
 	 *     RequirementBodyElement returns AnalysisCaseDefinition
 	 *     CaseBodyElement returns AnalysisCaseDefinition
-	 *     MetadataBodyElement returns AnalysisCaseDefinition
 	 *     ViewDefinitionBodyElement returns AnalysisCaseDefinition
 	 *     ViewBodyElement returns AnalysisCaseDefinition
 	 *     DefinitionElement returns AnalysisCaseDefinition
@@ -1212,7 +1212,6 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     StateBodyElement returns AttributeDefinition
 	 *     RequirementBodyElement returns AttributeDefinition
 	 *     CaseBodyElement returns AttributeDefinition
-	 *     MetadataBodyElement returns AttributeDefinition
 	 *     ViewDefinitionBodyElement returns AttributeDefinition
 	 *     ViewBodyElement returns AttributeDefinition
 	 *     DefinitionElement returns AttributeDefinition
@@ -1923,22 +1922,22 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     GeneralBodyElements returns FlowConnectionUsage
-	 *     PackageBodyElement returns FlowConnectionUsage
-	 *     DefinitionBodyElement returns FlowConnectionUsage
-	 *     UsageBodyElement returns FlowConnectionUsage
-	 *     InterfaceBodyElement returns FlowConnectionUsage
-	 *     ActionBodyElement returns FlowConnectionUsage
-	 *     CalculationBodyElement returns FlowConnectionUsage
-	 *     StateBodyElement returns FlowConnectionUsage
-	 *     RequirementBodyElement returns FlowConnectionUsage
-	 *     CaseBodyElement returns FlowConnectionUsage
-	 *     ViewDefinitionBodyElement returns FlowConnectionUsage
-	 *     ViewBodyElement returns FlowConnectionUsage
-	 *     UsageElement returns FlowConnectionUsage
-	 *     OccurrenceUsageElement returns FlowConnectionUsage
-	 *     StructureUsageElement returns FlowConnectionUsage
-	 *     FlowConnectionUsage returns FlowConnectionUsage
+	 *     GeneralBodyElements returns FlowUsage
+	 *     PackageBodyElement returns FlowUsage
+	 *     DefinitionBodyElement returns FlowUsage
+	 *     UsageBodyElement returns FlowUsage
+	 *     InterfaceBodyElement returns FlowUsage
+	 *     ActionBodyElement returns FlowUsage
+	 *     CalculationBodyElement returns FlowUsage
+	 *     StateBodyElement returns FlowUsage
+	 *     RequirementBodyElement returns FlowUsage
+	 *     CaseBodyElement returns FlowUsage
+	 *     ViewDefinitionBodyElement returns FlowUsage
+	 *     ViewBodyElement returns FlowUsage
+	 *     UsageElement returns FlowUsage
+	 *     OccurrenceUsageElement returns FlowUsage
+	 *     StructureUsageElement returns FlowUsage
+	 *     FlowUsage returns FlowUsage
 	 *
 	 * Constraint:
 	 *     (
@@ -1980,7 +1979,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     )
 	 * </pre>
 	 */
-	protected void sequence_BasicDefinitionPrefix_BasicUsagePrefix_CrossFeatureChain_EmptySuccessionPrefix_FeatureValue_FlowConnectionUsage_Identification_ItemFeatureParameterPart_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_RedefinitionFeatureChain_RefPrefix_ReferenceFeatureChain_SubsettingFeatureChain_TypingFeatureTyping_isReturnPrefix(ISerializationContext context, FlowConnectionUsage semanticObject) {
+	protected void sequence_BasicDefinitionPrefix_BasicUsagePrefix_CrossFeatureChain_EmptySuccessionPrefix_FeatureValue_FlowUsage_Identification_ItemFeatureParameterPart_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_RedefinitionFeatureChain_RefPrefix_ReferenceFeatureChain_SubsettingFeatureChain_TypingFeatureTyping_isReturnPrefix(ISerializationContext context, FlowUsage semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -2175,22 +2174,22 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     GeneralBodyElements returns SuccessionFlowConnectionUsage
-	 *     PackageBodyElement returns SuccessionFlowConnectionUsage
-	 *     DefinitionBodyElement returns SuccessionFlowConnectionUsage
-	 *     UsageBodyElement returns SuccessionFlowConnectionUsage
-	 *     InterfaceBodyElement returns SuccessionFlowConnectionUsage
-	 *     ActionBodyElement returns SuccessionFlowConnectionUsage
-	 *     CalculationBodyElement returns SuccessionFlowConnectionUsage
-	 *     StateBodyElement returns SuccessionFlowConnectionUsage
-	 *     RequirementBodyElement returns SuccessionFlowConnectionUsage
-	 *     CaseBodyElement returns SuccessionFlowConnectionUsage
-	 *     ViewDefinitionBodyElement returns SuccessionFlowConnectionUsage
-	 *     ViewBodyElement returns SuccessionFlowConnectionUsage
-	 *     UsageElement returns SuccessionFlowConnectionUsage
-	 *     OccurrenceUsageElement returns SuccessionFlowConnectionUsage
-	 *     StructureUsageElement returns SuccessionFlowConnectionUsage
-	 *     SuccessionFlowConnectionUsage returns SuccessionFlowConnectionUsage
+	 *     GeneralBodyElements returns SuccessionFlowUsage
+	 *     PackageBodyElement returns SuccessionFlowUsage
+	 *     DefinitionBodyElement returns SuccessionFlowUsage
+	 *     UsageBodyElement returns SuccessionFlowUsage
+	 *     InterfaceBodyElement returns SuccessionFlowUsage
+	 *     ActionBodyElement returns SuccessionFlowUsage
+	 *     CalculationBodyElement returns SuccessionFlowUsage
+	 *     StateBodyElement returns SuccessionFlowUsage
+	 *     RequirementBodyElement returns SuccessionFlowUsage
+	 *     CaseBodyElement returns SuccessionFlowUsage
+	 *     ViewDefinitionBodyElement returns SuccessionFlowUsage
+	 *     ViewBodyElement returns SuccessionFlowUsage
+	 *     UsageElement returns SuccessionFlowUsage
+	 *     OccurrenceUsageElement returns SuccessionFlowUsage
+	 *     StructureUsageElement returns SuccessionFlowUsage
+	 *     SuccessionFlowUsage returns SuccessionFlowUsage
 	 *
 	 * Constraint:
 	 *     (
@@ -2232,7 +2231,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     )
 	 * </pre>
 	 */
-	protected void sequence_BasicDefinitionPrefix_BasicUsagePrefix_CrossFeatureChain_EmptySuccessionPrefix_FeatureValue_Identification_ItemFeatureParameterPart_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_RedefinitionFeatureChain_RefPrefix_ReferenceFeatureChain_SubsettingFeatureChain_SuccessionFlowConnectionUsage_TypingFeatureTyping_isReturnPrefix(ISerializationContext context, SuccessionFlowConnectionUsage semanticObject) {
+	protected void sequence_BasicDefinitionPrefix_BasicUsagePrefix_CrossFeatureChain_EmptySuccessionPrefix_FeatureValue_Identification_ItemFeatureParameterPart_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_RedefinitionFeatureChain_RefPrefix_ReferenceFeatureChain_SubsettingFeatureChain_SuccessionFlowUsage_TypingFeatureTyping_isReturnPrefix(ISerializationContext context, SuccessionFlowUsage semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -3518,7 +3517,6 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     StateBodyElement returns CalculationDefinition
 	 *     RequirementBodyElement returns CalculationDefinition
 	 *     CaseBodyElement returns CalculationDefinition
-	 *     MetadataBodyElement returns CalculationDefinition
 	 *     ViewDefinitionBodyElement returns CalculationDefinition
 	 *     ViewBodyElement returns CalculationDefinition
 	 *     DefinitionElement returns CalculationDefinition
@@ -3555,7 +3553,6 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     StateBodyElement returns CaseDefinition
 	 *     RequirementBodyElement returns CaseDefinition
 	 *     CaseBodyElement returns CaseDefinition
-	 *     MetadataBodyElement returns CaseDefinition
 	 *     ViewDefinitionBodyElement returns CaseDefinition
 	 *     ViewBodyElement returns CaseDefinition
 	 *     DefinitionElement returns CaseDefinition
@@ -3638,7 +3635,6 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     StateBodyElement returns ConcernDefinition
 	 *     RequirementBodyElement returns ConcernDefinition
 	 *     CaseBodyElement returns ConcernDefinition
-	 *     MetadataBodyElement returns ConcernDefinition
 	 *     ViewDefinitionBodyElement returns ConcernDefinition
 	 *     ViewBodyElement returns ConcernDefinition
 	 *     DefinitionElement returns ConcernDefinition
@@ -3674,7 +3670,6 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     StateBodyElement returns ConnectionDefinition
 	 *     RequirementBodyElement returns ConnectionDefinition
 	 *     CaseBodyElement returns ConnectionDefinition
-	 *     MetadataBodyElement returns ConnectionDefinition
 	 *     ViewDefinitionBodyElement returns ConnectionDefinition
 	 *     ViewBodyElement returns ConnectionDefinition
 	 *     DefinitionElement returns ConnectionDefinition
@@ -3710,7 +3705,6 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     StateBodyElement returns ConstraintDefinition
 	 *     RequirementBodyElement returns ConstraintDefinition
 	 *     CaseBodyElement returns ConstraintDefinition
-	 *     MetadataBodyElement returns ConstraintDefinition
 	 *     ViewDefinitionBodyElement returns ConstraintDefinition
 	 *     ViewBodyElement returns ConstraintDefinition
 	 *     DefinitionElement returns ConstraintDefinition
@@ -3879,21 +3873,56 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     GeneralBodyElements returns FlowConnectionDefinition
-	 *     PackageBodyElement returns FlowConnectionDefinition
-	 *     DefinitionBodyElement returns FlowConnectionDefinition
-	 *     UsageBodyElement returns FlowConnectionDefinition
-	 *     InterfaceBodyElement returns FlowConnectionDefinition
-	 *     ActionBodyElement returns FlowConnectionDefinition
-	 *     CalculationBodyElement returns FlowConnectionDefinition
-	 *     StateBodyElement returns FlowConnectionDefinition
-	 *     RequirementBodyElement returns FlowConnectionDefinition
-	 *     CaseBodyElement returns FlowConnectionDefinition
-	 *     MetadataBodyElement returns FlowConnectionDefinition
-	 *     ViewDefinitionBodyElement returns FlowConnectionDefinition
-	 *     ViewBodyElement returns FlowConnectionDefinition
-	 *     DefinitionElement returns FlowConnectionDefinition
-	 *     FlowConnectionDefinition returns FlowConnectionDefinition
+	 *     GeneralBodyElements returns ExtendedDefinition
+	 *     PackageBodyElement returns ExtendedDefinition
+	 *     DefinitionBodyElement returns ExtendedDefinition
+	 *     UsageBodyElement returns ExtendedDefinition
+	 *     InterfaceBodyElement returns ExtendedDefinition
+	 *     ActionBodyElement returns ExtendedDefinition
+	 *     CalculationBodyElement returns ExtendedDefinition
+	 *     StateBodyElement returns ExtendedDefinition
+	 *     RequirementBodyElement returns ExtendedDefinition
+	 *     CaseBodyElement returns ExtendedDefinition
+	 *     ViewDefinitionBodyElement returns ExtendedDefinition
+	 *     ViewBodyElement returns ExtendedDefinition
+	 *     DefinitionElement returns ExtendedDefinition
+	 *     ExtendedDefinition returns ExtendedDefinition
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
+	 *         (isAbstract?='abstract' | isVariation?='variation')? 
+	 *         prefixMetadataExtension+=QualifiedName 
+	 *         prefixMetadataExtension+=QualifiedName* 
+	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
+	 *         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
+	 *         elements+=DefinitionBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_BasicDefinitionPrefix_DefinitionDeclaration_ExtendedDefinition_Identification_MemberPrefix_PrefixMetadata(ISerializationContext context, ExtendedDefinition semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GeneralBodyElements returns FlowDefinition
+	 *     PackageBodyElement returns FlowDefinition
+	 *     DefinitionBodyElement returns FlowDefinition
+	 *     UsageBodyElement returns FlowDefinition
+	 *     InterfaceBodyElement returns FlowDefinition
+	 *     ActionBodyElement returns FlowDefinition
+	 *     CalculationBodyElement returns FlowDefinition
+	 *     StateBodyElement returns FlowDefinition
+	 *     RequirementBodyElement returns FlowDefinition
+	 *     CaseBodyElement returns FlowDefinition
+	 *     ViewDefinitionBodyElement returns FlowDefinition
+	 *     ViewBodyElement returns FlowDefinition
+	 *     DefinitionElement returns FlowDefinition
+	 *     FlowDefinition returns FlowDefinition
 	 *
 	 * Constraint:
 	 *     (
@@ -3907,7 +3936,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     )
 	 * </pre>
 	 */
-	protected void sequence_BasicDefinitionPrefix_DefinitionDeclaration_FlowConnectionDefinition_Identification_MemberPrefix_OccurrenceDefinitionPrefix(ISerializationContext context, FlowConnectionDefinition semanticObject) {
+	protected void sequence_BasicDefinitionPrefix_DefinitionDeclaration_FlowDefinition_Identification_MemberPrefix_OccurrenceDefinitionPrefix(ISerializationContext context, FlowDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -3925,7 +3954,6 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     StateBodyElement returns IndividualDefinition
 	 *     RequirementBodyElement returns IndividualDefinition
 	 *     CaseBodyElement returns IndividualDefinition
-	 *     MetadataBodyElement returns IndividualDefinition
 	 *     ViewDefinitionBodyElement returns IndividualDefinition
 	 *     ViewBodyElement returns IndividualDefinition
 	 *     DefinitionElement returns IndividualDefinition
@@ -3962,7 +3990,6 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     StateBodyElement returns InterfaceDefinition
 	 *     RequirementBodyElement returns InterfaceDefinition
 	 *     CaseBodyElement returns InterfaceDefinition
-	 *     MetadataBodyElement returns InterfaceDefinition
 	 *     ViewDefinitionBodyElement returns InterfaceDefinition
 	 *     ViewBodyElement returns InterfaceDefinition
 	 *     DefinitionElement returns InterfaceDefinition
@@ -3998,7 +4025,6 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     StateBodyElement returns ItemDefinition
 	 *     RequirementBodyElement returns ItemDefinition
 	 *     CaseBodyElement returns ItemDefinition
-	 *     MetadataBodyElement returns ItemDefinition
 	 *     ViewDefinitionBodyElement returns ItemDefinition
 	 *     ViewBodyElement returns ItemDefinition
 	 *     DefinitionElement returns ItemDefinition
@@ -4034,7 +4060,6 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     StateBodyElement returns PartDefinition
 	 *     RequirementBodyElement returns PartDefinition
 	 *     CaseBodyElement returns PartDefinition
-	 *     MetadataBodyElement returns PartDefinition
 	 *     ViewDefinitionBodyElement returns PartDefinition
 	 *     ViewBodyElement returns PartDefinition
 	 *     DefinitionElement returns PartDefinition
@@ -4070,7 +4095,6 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     StateBodyElement returns RenderingDefinition
 	 *     RequirementBodyElement returns RenderingDefinition
 	 *     CaseBodyElement returns RenderingDefinition
-	 *     MetadataBodyElement returns RenderingDefinition
 	 *     ViewDefinitionBodyElement returns RenderingDefinition
 	 *     ViewBodyElement returns RenderingDefinition
 	 *     DefinitionElement returns RenderingDefinition
@@ -4106,7 +4130,6 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     StateBodyElement returns RequirementDefinition
 	 *     RequirementBodyElement returns RequirementDefinition
 	 *     CaseBodyElement returns RequirementDefinition
-	 *     MetadataBodyElement returns RequirementDefinition
 	 *     ViewDefinitionBodyElement returns RequirementDefinition
 	 *     ViewBodyElement returns RequirementDefinition
 	 *     DefinitionElement returns RequirementDefinition
@@ -4142,7 +4165,6 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     StateBodyElement returns StateDefinition
 	 *     RequirementBodyElement returns StateDefinition
 	 *     CaseBodyElement returns StateDefinition
-	 *     MetadataBodyElement returns StateDefinition
 	 *     ViewDefinitionBodyElement returns StateDefinition
 	 *     ViewBodyElement returns StateDefinition
 	 *     DefinitionElement returns StateDefinition
@@ -4179,7 +4201,6 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     StateBodyElement returns UseCaseDefinition
 	 *     RequirementBodyElement returns UseCaseDefinition
 	 *     CaseBodyElement returns UseCaseDefinition
-	 *     MetadataBodyElement returns UseCaseDefinition
 	 *     ViewDefinitionBodyElement returns UseCaseDefinition
 	 *     ViewBodyElement returns UseCaseDefinition
 	 *     DefinitionElement returns UseCaseDefinition
@@ -4216,7 +4237,6 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     StateBodyElement returns VerificationCaseDefinition
 	 *     RequirementBodyElement returns VerificationCaseDefinition
 	 *     CaseBodyElement returns VerificationCaseDefinition
-	 *     MetadataBodyElement returns VerificationCaseDefinition
 	 *     ViewDefinitionBodyElement returns VerificationCaseDefinition
 	 *     ViewBodyElement returns VerificationCaseDefinition
 	 *     DefinitionElement returns VerificationCaseDefinition
@@ -4253,7 +4273,6 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     StateBodyElement returns ViewDefinition
 	 *     RequirementBodyElement returns ViewDefinition
 	 *     CaseBodyElement returns ViewDefinition
-	 *     MetadataBodyElement returns ViewDefinition
 	 *     ViewDefinitionBodyElement returns ViewDefinition
 	 *     ViewBodyElement returns ViewDefinition
 	 *     DefinitionElement returns ViewDefinition
@@ -4289,7 +4308,6 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     StateBodyElement returns ViewpointDefinition
 	 *     RequirementBodyElement returns ViewpointDefinition
 	 *     CaseBodyElement returns ViewpointDefinition
-	 *     MetadataBodyElement returns ViewpointDefinition
 	 *     ViewDefinitionBodyElement returns ViewpointDefinition
 	 *     ViewBodyElement returns ViewpointDefinition
 	 *     DefinitionElement returns ViewpointDefinition
@@ -4325,7 +4343,6 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     StateBodyElement returns OccurrenceDefinition
 	 *     RequirementBodyElement returns OccurrenceDefinition
 	 *     CaseBodyElement returns OccurrenceDefinition
-	 *     MetadataBodyElement returns OccurrenceDefinition
 	 *     ViewDefinitionBodyElement returns OccurrenceDefinition
 	 *     ViewBodyElement returns OccurrenceDefinition
 	 *     DefinitionElement returns OccurrenceDefinition
@@ -4361,7 +4378,6 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     StateBodyElement returns PortDefinition
 	 *     RequirementBodyElement returns PortDefinition
 	 *     CaseBodyElement returns PortDefinition
-	 *     MetadataBodyElement returns PortDefinition
 	 *     ViewDefinitionBodyElement returns PortDefinition
 	 *     ViewBodyElement returns PortDefinition
 	 *     DefinitionElement returns PortDefinition
@@ -4392,6 +4408,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     DefinitionBodyElement returns CodeAnnotation
 	 *     UsageBodyElement returns CodeAnnotation
 	 *     InterfaceBodyElement returns CodeAnnotation
+	 *     EnumerationBodyElement returns CodeAnnotation
 	 *     AnnotatingBodyElement returns CodeAnnotation
 	 *     ActionNodeBodyElement returns CodeAnnotation
 	 *     ActionBodyElement returns CodeAnnotation
@@ -4399,7 +4416,6 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     StateBodyElement returns CodeAnnotation
 	 *     RequirementBodyElement returns CodeAnnotation
 	 *     CaseBodyElement returns CodeAnnotation
-	 *     MetadataBodyElement returns CodeAnnotation
 	 *     ViewDefinitionBodyElement returns CodeAnnotation
 	 *     ViewBodyElement returns CodeAnnotation
 	 *     RelationshipBodyElement returns CodeAnnotation
@@ -5111,37 +5127,6 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     MetadataBodyUsage returns MetadataBodyUsage
-	 *
-	 * Constraint:
-	 *     (
-	 *         redefinition=FeatureChainName 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
-	 *         (
-	 *             (
-	 *                 (typings+=FeatureTypingName typings+=FeatureTypingName*) | 
-	 *                 (subsetting+=FeatureChainName subsetting+=FeatureChainName*) | 
-	 *                 (references+=FeatureChainName references+=FeatureChainName*) | 
-	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
-	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
-	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
-	 *         )* 
-	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
-	 *         elements+=MetadataBodyElement*
-	 *     )
-	 * </pre>
-	 */
-	protected void sequence_CrossFeatureChain_FeatureValue_MetadataBodyUsage_MultiplicityPart_MultiplicityRange_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_TypingFeatureTyping(ISerializationContext context, MetadataBodyUsage semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
 	 *     PerformedActionUsage returns SendActionUsage
 	 *
 	 * Constraint:
@@ -5425,7 +5410,6 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     StateBodyElement returns EnumerationDefinition
 	 *     RequirementBodyElement returns EnumerationDefinition
 	 *     CaseBodyElement returns EnumerationDefinition
-	 *     MetadataBodyElement returns EnumerationDefinition
 	 *     ViewDefinitionBodyElement returns EnumerationDefinition
 	 *     ViewBodyElement returns EnumerationDefinition
 	 *     DefinitionElement returns EnumerationDefinition
@@ -5449,6 +5433,41 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     GeneralBodyElements returns MetadataDefinition
+	 *     PackageBodyElement returns MetadataDefinition
+	 *     DefinitionBodyElement returns MetadataDefinition
+	 *     UsageBodyElement returns MetadataDefinition
+	 *     InterfaceBodyElement returns MetadataDefinition
+	 *     ActionBodyElement returns MetadataDefinition
+	 *     CalculationBodyElement returns MetadataDefinition
+	 *     StateBodyElement returns MetadataDefinition
+	 *     RequirementBodyElement returns MetadataDefinition
+	 *     CaseBodyElement returns MetadataDefinition
+	 *     ViewDefinitionBodyElement returns MetadataDefinition
+	 *     ViewBodyElement returns MetadataDefinition
+	 *     DefinitionElement returns MetadataDefinition
+	 *     MetadataDefinition returns MetadataDefinition
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
+	 *         isAbstract?='abstract'? 
+	 *         prefixMetadataExtension+=QualifiedName* 
+	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
+	 *         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
+	 *         elements+=DefinitionBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_DefinitionDeclaration_Identification_MemberPrefix_MetadataDefinition_PrefixMetadata(ISerializationContext context, MetadataDefinition semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     GeneralBodyElements returns Dependency
 	 *     PackageBodyElement returns Dependency
 	 *     DefinitionBodyElement returns Dependency
@@ -5459,7 +5478,6 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     StateBodyElement returns Dependency
 	 *     RequirementBodyElement returns Dependency
 	 *     CaseBodyElement returns Dependency
-	 *     MetadataBodyElement returns Dependency
 	 *     ViewDefinitionBodyElement returns Dependency
 	 *     ViewBodyElement returns Dependency
 	 *     DefinitionElement returns Dependency
@@ -5606,7 +5624,6 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     StateBodyElement returns LibraryPackage
 	 *     RequirementBodyElement returns LibraryPackage
 	 *     CaseBodyElement returns LibraryPackage
-	 *     MetadataBodyElement returns LibraryPackage
 	 *     ViewDefinitionBodyElement returns LibraryPackage
 	 *     ViewBodyElement returns LibraryPackage
 	 *     DefinitionElement returns LibraryPackage
@@ -5655,7 +5672,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         metadataTyping=QualifiedName 
 	 *         (annotatedElement+=QualifiedName annotatedElement+=QualifiedName*)? 
-	 *         elements+=MetadataBodyElement*
+	 *         elements+=GeneralBodyElements*
 	 *     )
 	 * </pre>
 	 */
@@ -5708,7 +5725,6 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     StateBodyElement returns ImportElement
 	 *     RequirementBodyElement returns ImportElement
 	 *     CaseBodyElement returns ImportElement
-	 *     MetadataBodyElement returns ImportElement
 	 *     ViewDefinitionBodyElement returns ImportElement
 	 *     ViewBodyElement returns ImportElement
 	 *     ImportElement returns ImportElement
@@ -5805,7 +5821,6 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     StateBodyElement returns Package
 	 *     RequirementBodyElement returns Package
 	 *     CaseBodyElement returns Package
-	 *     MetadataBodyElement returns Package
 	 *     ViewDefinitionBodyElement returns Package
 	 *     ViewBodyElement returns Package
 	 *     DefinitionElement returns Package

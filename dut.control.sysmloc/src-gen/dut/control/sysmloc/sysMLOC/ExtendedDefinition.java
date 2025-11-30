@@ -7,21 +7,21 @@ import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Flow Connection Definition</b></em>'.
+ * A representation of the model object '<em><b>Extended Definition</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.FlowConnectionDefinition#getElements <em>Elements</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.ExtendedDefinition#getElements <em>Elements</em>}</li>
  * </ul>
  *
- * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getFlowConnectionDefinition()
+ * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getExtendedDefinition()
  * @model
  * @generated
  */
-public interface FlowConnectionDefinition extends DefinitionElement, MemberPrefix, OccurrenceDefinitionPrefix, BasicDefinitionPrefix, DefinitionDeclaration, Identification
+public interface ExtendedDefinition extends DefinitionElement, MemberPrefix, BasicDefinitionPrefix, PrefixMetadata, DefinitionDeclaration, Identification
 {
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
@@ -29,10 +29,10 @@ public interface FlowConnectionDefinition extends DefinitionElement, MemberPrefi
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Elements</em>' containment reference list.
-   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getFlowConnectionDefinition_Elements()
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getExtendedDefinition_Elements()
    * @model containment="true"
    * @generated
    */
   EList<DefinitionBodyElement> getElements();
 
-} // FlowConnectionDefinition
+} // ExtendedDefinition

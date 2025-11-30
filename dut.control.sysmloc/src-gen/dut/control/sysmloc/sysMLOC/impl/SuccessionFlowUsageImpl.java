@@ -26,7 +26,7 @@ import dut.control.sysmloc.sysMLOC.RedefinitionFeatureChain;
 import dut.control.sysmloc.sysMLOC.RefPrefix;
 import dut.control.sysmloc.sysMLOC.ReferenceFeatureChain;
 import dut.control.sysmloc.sysMLOC.SubsettingFeatureChain;
-import dut.control.sysmloc.sysMLOC.SuccessionFlowConnectionUsage;
+import dut.control.sysmloc.sysMLOC.SuccessionFlowUsage;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 import dut.control.sysmloc.sysMLOC.TypingFeatureTyping;
 import dut.control.sysmloc.sysMLOC.UsageDeclaration;
@@ -51,47 +51,47 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Succession Flow Connection Usage</b></em>'.
+ * An implementation of the model object '<em><b>Succession Flow Usage</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowConnectionUsageImpl#isIsThen <em>Is Then</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowConnectionUsageImpl#getThenMultiplicity <em>Then Multiplicity</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowConnectionUsageImpl#getVisibility <em>Visibility</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowConnectionUsageImpl#isIsVariant <em>Is Variant</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowConnectionUsageImpl#isIsReturn <em>Is Return</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowConnectionUsageImpl#isIsAbstract <em>Is Abstract</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowConnectionUsageImpl#isIsVariation <em>Is Variation</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowConnectionUsageImpl#getDirection <em>Direction</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowConnectionUsageImpl#isIsReadOnly <em>Is Read Only</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowConnectionUsageImpl#isIsDerived <em>Is Derived</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowConnectionUsageImpl#isIsReference <em>Is Reference</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowConnectionUsageImpl#isIsEnd <em>Is End</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowConnectionUsageImpl#isIsIndividual <em>Is Individual</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowConnectionUsageImpl#getPortionKind <em>Portion Kind</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowConnectionUsageImpl#getDeclaredShortName <em>Declared Short Name</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowConnectionUsageImpl#getDeclaredName <em>Declared Name</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowConnectionUsageImpl#getTypings <em>Typings</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowConnectionUsageImpl#getSubsetting <em>Subsetting</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowConnectionUsageImpl#getReferences <em>References</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowConnectionUsageImpl#getCrosses <em>Crosses</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowConnectionUsageImpl#getRedefinitions <em>Redefinitions</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowConnectionUsageImpl#getMultiplicity <em>Multiplicity</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowConnectionUsageImpl#isIsOrdered <em>Is Ordered</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowConnectionUsageImpl#isIsNonunique <em>Is Nonunique</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowConnectionUsageImpl#isIsInitial <em>Is Initial</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowConnectionUsageImpl#isIsDefault <em>Is Default</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowConnectionUsageImpl#getValuePart <em>Value Part</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowConnectionUsageImpl#getItemFeatureParameter <em>Item Feature Parameter</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowConnectionUsageImpl#getFlowEnd <em>Flow End</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowConnectionUsageImpl#getElements <em>Elements</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowUsageImpl#isIsThen <em>Is Then</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowUsageImpl#getThenMultiplicity <em>Then Multiplicity</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowUsageImpl#getVisibility <em>Visibility</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowUsageImpl#isIsVariant <em>Is Variant</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowUsageImpl#isIsReturn <em>Is Return</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowUsageImpl#isIsAbstract <em>Is Abstract</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowUsageImpl#isIsVariation <em>Is Variation</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowUsageImpl#getDirection <em>Direction</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowUsageImpl#isIsReadOnly <em>Is Read Only</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowUsageImpl#isIsDerived <em>Is Derived</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowUsageImpl#isIsReference <em>Is Reference</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowUsageImpl#isIsEnd <em>Is End</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowUsageImpl#isIsIndividual <em>Is Individual</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowUsageImpl#getPortionKind <em>Portion Kind</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowUsageImpl#getDeclaredShortName <em>Declared Short Name</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowUsageImpl#getDeclaredName <em>Declared Name</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowUsageImpl#getTypings <em>Typings</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowUsageImpl#getSubsetting <em>Subsetting</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowUsageImpl#getReferences <em>References</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowUsageImpl#getCrosses <em>Crosses</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowUsageImpl#getRedefinitions <em>Redefinitions</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowUsageImpl#getMultiplicity <em>Multiplicity</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowUsageImpl#isIsOrdered <em>Is Ordered</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowUsageImpl#isIsNonunique <em>Is Nonunique</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowUsageImpl#isIsInitial <em>Is Initial</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowUsageImpl#isIsDefault <em>Is Default</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowUsageImpl#getValuePart <em>Value Part</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowUsageImpl#getItemFeatureParameter <em>Item Feature Parameter</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowUsageImpl#getFlowEnd <em>Flow End</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowUsageImpl#getElements <em>Elements</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl implements SuccessionFlowConnectionUsage
+public class SuccessionFlowUsageImpl extends StructureUsageElementImpl implements SuccessionFlowUsage
 {
   /**
    * The default value of the '{@link #isIsThen() <em>Is Then</em>}' attribute.
@@ -588,7 +588,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
    * <!-- end-user-doc -->
    * @generated
    */
-  protected SuccessionFlowConnectionUsageImpl()
+  protected SuccessionFlowUsageImpl()
   {
     super();
   }
@@ -601,7 +601,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.eINSTANCE.getSuccessionFlowConnectionUsage();
+    return SysMLOCPackage.eINSTANCE.getSuccessionFlowUsage();
   }
 
   /**
@@ -626,7 +626,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     boolean oldIsThen = isThen;
     isThen = newIsThen;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_THEN, oldIsThen, isThen));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_THEN, oldIsThen, isThen));
   }
 
   /**
@@ -639,7 +639,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
   {
     if (thenMultiplicity == null)
     {
-      thenMultiplicity = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__THEN_MULTIPLICITY);
+      thenMultiplicity = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.SUCCESSION_FLOW_USAGE__THEN_MULTIPLICITY);
     }
     return thenMultiplicity;
   }
@@ -666,7 +666,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     VisibilityIndicator oldVisibility = visibility;
     visibility = newVisibility == null ? VISIBILITY_EDEFAULT : newVisibility;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__VISIBILITY, oldVisibility, visibility));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SUCCESSION_FLOW_USAGE__VISIBILITY, oldVisibility, visibility));
   }
 
   /**
@@ -691,7 +691,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     boolean oldIsVariant = isVariant;
     isVariant = newIsVariant;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_VARIANT, oldIsVariant, isVariant));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_VARIANT, oldIsVariant, isVariant));
   }
 
   /**
@@ -716,7 +716,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     boolean oldIsReturn = isReturn;
     isReturn = newIsReturn;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_RETURN, oldIsReturn, isReturn));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_RETURN, oldIsReturn, isReturn));
   }
 
   /**
@@ -741,7 +741,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     boolean oldIsAbstract = isAbstract;
     isAbstract = newIsAbstract;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_ABSTRACT, oldIsAbstract, isAbstract));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_ABSTRACT, oldIsAbstract, isAbstract));
   }
 
   /**
@@ -766,7 +766,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     boolean oldIsVariation = isVariation;
     isVariation = newIsVariation;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_VARIATION, oldIsVariation, isVariation));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_VARIATION, oldIsVariation, isVariation));
   }
 
   /**
@@ -791,7 +791,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     FeatureDirection oldDirection = direction;
     direction = newDirection == null ? DIRECTION_EDEFAULT : newDirection;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__DIRECTION, oldDirection, direction));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SUCCESSION_FLOW_USAGE__DIRECTION, oldDirection, direction));
   }
 
   /**
@@ -816,7 +816,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     boolean oldIsReadOnly = isReadOnly;
     isReadOnly = newIsReadOnly;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_READ_ONLY, oldIsReadOnly, isReadOnly));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_READ_ONLY, oldIsReadOnly, isReadOnly));
   }
 
   /**
@@ -841,7 +841,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     boolean oldIsDerived = isDerived;
     isDerived = newIsDerived;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_DERIVED, oldIsDerived, isDerived));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_DERIVED, oldIsDerived, isDerived));
   }
 
   /**
@@ -866,7 +866,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     boolean oldIsReference = isReference;
     isReference = newIsReference;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_REFERENCE, oldIsReference, isReference));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_REFERENCE, oldIsReference, isReference));
   }
 
   /**
@@ -891,7 +891,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     boolean oldIsEnd = isEnd;
     isEnd = newIsEnd;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_END, oldIsEnd, isEnd));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_END, oldIsEnd, isEnd));
   }
 
   /**
@@ -916,7 +916,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     boolean oldIsIndividual = isIndividual;
     isIndividual = newIsIndividual;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_INDIVIDUAL, oldIsIndividual, isIndividual));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_INDIVIDUAL, oldIsIndividual, isIndividual));
   }
 
   /**
@@ -941,7 +941,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     PortionKind oldPortionKind = portionKind;
     portionKind = newPortionKind == null ? PORTION_KIND_EDEFAULT : newPortionKind;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__PORTION_KIND, oldPortionKind, portionKind));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SUCCESSION_FLOW_USAGE__PORTION_KIND, oldPortionKind, portionKind));
   }
 
   /**
@@ -966,7 +966,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     String oldDeclaredShortName = declaredShortName;
     declaredShortName = newDeclaredShortName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__DECLARED_SHORT_NAME, oldDeclaredShortName, declaredShortName));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SUCCESSION_FLOW_USAGE__DECLARED_SHORT_NAME, oldDeclaredShortName, declaredShortName));
   }
 
   /**
@@ -991,7 +991,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     String oldDeclaredName = declaredName;
     declaredName = newDeclaredName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__DECLARED_NAME, oldDeclaredName, declaredName));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SUCCESSION_FLOW_USAGE__DECLARED_NAME, oldDeclaredName, declaredName));
   }
 
   /**
@@ -1004,7 +1004,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
   {
     if (typings == null)
     {
-      typings = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__TYPINGS);
+      typings = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.SUCCESSION_FLOW_USAGE__TYPINGS);
     }
     return typings;
   }
@@ -1019,7 +1019,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
   {
     if (subsetting == null)
     {
-      subsetting = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__SUBSETTING);
+      subsetting = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.SUCCESSION_FLOW_USAGE__SUBSETTING);
     }
     return subsetting;
   }
@@ -1034,7 +1034,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
   {
     if (references == null)
     {
-      references = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__REFERENCES);
+      references = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.SUCCESSION_FLOW_USAGE__REFERENCES);
     }
     return references;
   }
@@ -1049,7 +1049,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
   {
     if (crosses == null)
     {
-      crosses = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__CROSSES);
+      crosses = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.SUCCESSION_FLOW_USAGE__CROSSES);
     }
     return crosses;
   }
@@ -1064,7 +1064,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
   {
     if (redefinitions == null)
     {
-      redefinitions = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__REDEFINITIONS);
+      redefinitions = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.SUCCESSION_FLOW_USAGE__REDEFINITIONS);
     }
     return redefinitions;
   }
@@ -1079,7 +1079,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
   {
     if (multiplicity == null)
     {
-      multiplicity = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__MULTIPLICITY);
+      multiplicity = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.SUCCESSION_FLOW_USAGE__MULTIPLICITY);
     }
     return multiplicity;
   }
@@ -1106,7 +1106,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     boolean oldIsOrdered = isOrdered;
     isOrdered = newIsOrdered;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_ORDERED, oldIsOrdered, isOrdered));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_ORDERED, oldIsOrdered, isOrdered));
   }
 
   /**
@@ -1131,7 +1131,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     boolean oldIsNonunique = isNonunique;
     isNonunique = newIsNonunique;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_NONUNIQUE, oldIsNonunique, isNonunique));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_NONUNIQUE, oldIsNonunique, isNonunique));
   }
 
   /**
@@ -1156,7 +1156,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     boolean oldIsInitial = isInitial;
     isInitial = newIsInitial;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_INITIAL, oldIsInitial, isInitial));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_INITIAL, oldIsInitial, isInitial));
   }
 
   /**
@@ -1181,7 +1181,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     boolean oldIsDefault = isDefault;
     isDefault = newIsDefault;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_DEFAULT, oldIsDefault, isDefault));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_DEFAULT, oldIsDefault, isDefault));
   }
 
   /**
@@ -1194,7 +1194,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
   {
     if (valuePart == null)
     {
-      valuePart = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__VALUE_PART);
+      valuePart = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.SUCCESSION_FLOW_USAGE__VALUE_PART);
     }
     return valuePart;
   }
@@ -1209,7 +1209,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
   {
     if (itemFeatureParameter == null)
     {
-      itemFeatureParameter = new EObjectContainmentEList<ItemFeatureParameter>(ItemFeatureParameter.class, this, SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__ITEM_FEATURE_PARAMETER);
+      itemFeatureParameter = new EObjectContainmentEList<ItemFeatureParameter>(ItemFeatureParameter.class, this, SysMLOCPackage.SUCCESSION_FLOW_USAGE__ITEM_FEATURE_PARAMETER);
     }
     return itemFeatureParameter;
   }
@@ -1224,7 +1224,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
   {
     if (flowEnd == null)
     {
-      flowEnd = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__FLOW_END);
+      flowEnd = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.SUCCESSION_FLOW_USAGE__FLOW_END);
     }
     return flowEnd;
   }
@@ -1239,7 +1239,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
   {
     if (elements == null)
     {
-      elements = new EObjectContainmentEList<DefinitionBodyElement>(DefinitionBodyElement.class, this, SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__ELEMENTS);
+      elements = new EObjectContainmentEList<DefinitionBodyElement>(DefinitionBodyElement.class, this, SysMLOCPackage.SUCCESSION_FLOW_USAGE__ELEMENTS);
     }
     return elements;
   }
@@ -1254,9 +1254,9 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
   {
     switch (featureID)
     {
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__ITEM_FEATURE_PARAMETER:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__ITEM_FEATURE_PARAMETER:
         return ((InternalEList<?>)getItemFeatureParameter()).basicRemove(otherEnd, msgs);
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__ELEMENTS:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__ELEMENTS:
         return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -1272,65 +1272,65 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
   {
     switch (featureID)
     {
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_THEN:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_THEN:
         return isIsThen();
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__THEN_MULTIPLICITY:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__THEN_MULTIPLICITY:
         return getThenMultiplicity();
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__VISIBILITY:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__VISIBILITY:
         return getVisibility();
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_VARIANT:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_VARIANT:
         return isIsVariant();
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_RETURN:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_RETURN:
         return isIsReturn();
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_ABSTRACT:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_ABSTRACT:
         return isIsAbstract();
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_VARIATION:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_VARIATION:
         return isIsVariation();
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__DIRECTION:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__DIRECTION:
         return getDirection();
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_READ_ONLY:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_READ_ONLY:
         return isIsReadOnly();
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_DERIVED:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_DERIVED:
         return isIsDerived();
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_REFERENCE:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_REFERENCE:
         return isIsReference();
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_END:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_END:
         return isIsEnd();
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_INDIVIDUAL:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_INDIVIDUAL:
         return isIsIndividual();
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__PORTION_KIND:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__PORTION_KIND:
         return getPortionKind();
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__DECLARED_SHORT_NAME:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__DECLARED_SHORT_NAME:
         return getDeclaredShortName();
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__DECLARED_NAME:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__DECLARED_NAME:
         return getDeclaredName();
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__TYPINGS:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__TYPINGS:
         return getTypings();
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__SUBSETTING:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__SUBSETTING:
         return getSubsetting();
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__REFERENCES:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__REFERENCES:
         return getReferences();
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__CROSSES:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__CROSSES:
         return getCrosses();
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__REDEFINITIONS:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__REDEFINITIONS:
         return getRedefinitions();
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__MULTIPLICITY:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__MULTIPLICITY:
         return getMultiplicity();
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_ORDERED:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_ORDERED:
         return isIsOrdered();
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_NONUNIQUE:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_NONUNIQUE:
         return isIsNonunique();
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_INITIAL:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_INITIAL:
         return isIsInitial();
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_DEFAULT:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_DEFAULT:
         return isIsDefault();
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__VALUE_PART:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__VALUE_PART:
         return getValuePart();
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__ITEM_FEATURE_PARAMETER:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__ITEM_FEATURE_PARAMETER:
         return getItemFeatureParameter();
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__FLOW_END:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__FLOW_END:
         return getFlowEnd();
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__ELEMENTS:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__ELEMENTS:
         return getElements();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -1347,104 +1347,104 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
   {
     switch (featureID)
     {
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_THEN:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_THEN:
         setIsThen((Boolean)newValue);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__THEN_MULTIPLICITY:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__THEN_MULTIPLICITY:
         getThenMultiplicity().clear();
         getThenMultiplicity().addAll((Collection<? extends String>)newValue);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__VISIBILITY:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__VISIBILITY:
         setVisibility((VisibilityIndicator)newValue);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_VARIANT:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_VARIANT:
         setIsVariant((Boolean)newValue);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_RETURN:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_RETURN:
         setIsReturn((Boolean)newValue);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_ABSTRACT:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_ABSTRACT:
         setIsAbstract((Boolean)newValue);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_VARIATION:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_VARIATION:
         setIsVariation((Boolean)newValue);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__DIRECTION:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__DIRECTION:
         setDirection((FeatureDirection)newValue);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_READ_ONLY:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_READ_ONLY:
         setIsReadOnly((Boolean)newValue);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_DERIVED:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_DERIVED:
         setIsDerived((Boolean)newValue);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_REFERENCE:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_REFERENCE:
         setIsReference((Boolean)newValue);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_END:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_END:
         setIsEnd((Boolean)newValue);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_INDIVIDUAL:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_INDIVIDUAL:
         setIsIndividual((Boolean)newValue);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__PORTION_KIND:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__PORTION_KIND:
         setPortionKind((PortionKind)newValue);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__DECLARED_SHORT_NAME:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__DECLARED_SHORT_NAME:
         setDeclaredShortName((String)newValue);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__DECLARED_NAME:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__DECLARED_NAME:
         setDeclaredName((String)newValue);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__TYPINGS:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__TYPINGS:
         getTypings().clear();
         getTypings().addAll((Collection<? extends String>)newValue);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__SUBSETTING:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__SUBSETTING:
         getSubsetting().clear();
         getSubsetting().addAll((Collection<? extends String>)newValue);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__REFERENCES:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__REFERENCES:
         getReferences().clear();
         getReferences().addAll((Collection<? extends String>)newValue);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__CROSSES:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__CROSSES:
         getCrosses().clear();
         getCrosses().addAll((Collection<? extends String>)newValue);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__REDEFINITIONS:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__REDEFINITIONS:
         getRedefinitions().clear();
         getRedefinitions().addAll((Collection<? extends String>)newValue);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__MULTIPLICITY:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__MULTIPLICITY:
         getMultiplicity().clear();
         getMultiplicity().addAll((Collection<? extends String>)newValue);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_ORDERED:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_ORDERED:
         setIsOrdered((Boolean)newValue);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_NONUNIQUE:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_NONUNIQUE:
         setIsNonunique((Boolean)newValue);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_INITIAL:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_INITIAL:
         setIsInitial((Boolean)newValue);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_DEFAULT:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_DEFAULT:
         setIsDefault((Boolean)newValue);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__VALUE_PART:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__VALUE_PART:
         getValuePart().clear();
         getValuePart().addAll((Collection<? extends String>)newValue);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__ITEM_FEATURE_PARAMETER:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__ITEM_FEATURE_PARAMETER:
         getItemFeatureParameter().clear();
         getItemFeatureParameter().addAll((Collection<? extends ItemFeatureParameter>)newValue);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__FLOW_END:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__FLOW_END:
         getFlowEnd().clear();
         getFlowEnd().addAll((Collection<? extends String>)newValue);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__ELEMENTS:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__ELEMENTS:
         getElements().clear();
         getElements().addAll((Collection<? extends DefinitionBodyElement>)newValue);
         return;
@@ -1462,94 +1462,94 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
   {
     switch (featureID)
     {
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_THEN:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_THEN:
         setIsThen(IS_THEN_EDEFAULT);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__THEN_MULTIPLICITY:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__THEN_MULTIPLICITY:
         getThenMultiplicity().clear();
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__VISIBILITY:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__VISIBILITY:
         setVisibility(VISIBILITY_EDEFAULT);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_VARIANT:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_VARIANT:
         setIsVariant(IS_VARIANT_EDEFAULT);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_RETURN:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_RETURN:
         setIsReturn(IS_RETURN_EDEFAULT);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_ABSTRACT:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_ABSTRACT:
         setIsAbstract(IS_ABSTRACT_EDEFAULT);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_VARIATION:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_VARIATION:
         setIsVariation(IS_VARIATION_EDEFAULT);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__DIRECTION:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__DIRECTION:
         setDirection(DIRECTION_EDEFAULT);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_READ_ONLY:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_READ_ONLY:
         setIsReadOnly(IS_READ_ONLY_EDEFAULT);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_DERIVED:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_DERIVED:
         setIsDerived(IS_DERIVED_EDEFAULT);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_REFERENCE:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_REFERENCE:
         setIsReference(IS_REFERENCE_EDEFAULT);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_END:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_END:
         setIsEnd(IS_END_EDEFAULT);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_INDIVIDUAL:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_INDIVIDUAL:
         setIsIndividual(IS_INDIVIDUAL_EDEFAULT);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__PORTION_KIND:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__PORTION_KIND:
         setPortionKind(PORTION_KIND_EDEFAULT);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__DECLARED_SHORT_NAME:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__DECLARED_SHORT_NAME:
         setDeclaredShortName(DECLARED_SHORT_NAME_EDEFAULT);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__DECLARED_NAME:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__DECLARED_NAME:
         setDeclaredName(DECLARED_NAME_EDEFAULT);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__TYPINGS:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__TYPINGS:
         getTypings().clear();
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__SUBSETTING:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__SUBSETTING:
         getSubsetting().clear();
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__REFERENCES:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__REFERENCES:
         getReferences().clear();
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__CROSSES:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__CROSSES:
         getCrosses().clear();
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__REDEFINITIONS:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__REDEFINITIONS:
         getRedefinitions().clear();
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__MULTIPLICITY:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__MULTIPLICITY:
         getMultiplicity().clear();
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_ORDERED:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_ORDERED:
         setIsOrdered(IS_ORDERED_EDEFAULT);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_NONUNIQUE:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_NONUNIQUE:
         setIsNonunique(IS_NONUNIQUE_EDEFAULT);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_INITIAL:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_INITIAL:
         setIsInitial(IS_INITIAL_EDEFAULT);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_DEFAULT:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_DEFAULT:
         setIsDefault(IS_DEFAULT_EDEFAULT);
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__VALUE_PART:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__VALUE_PART:
         getValuePart().clear();
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__ITEM_FEATURE_PARAMETER:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__ITEM_FEATURE_PARAMETER:
         getItemFeatureParameter().clear();
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__FLOW_END:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__FLOW_END:
         getFlowEnd().clear();
         return;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__ELEMENTS:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__ELEMENTS:
         getElements().clear();
         return;
     }
@@ -1566,65 +1566,65 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
   {
     switch (featureID)
     {
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_THEN:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_THEN:
         return isThen != IS_THEN_EDEFAULT;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__THEN_MULTIPLICITY:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__THEN_MULTIPLICITY:
         return thenMultiplicity != null && !thenMultiplicity.isEmpty();
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__VISIBILITY:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__VISIBILITY:
         return visibility != VISIBILITY_EDEFAULT;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_VARIANT:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_VARIANT:
         return isVariant != IS_VARIANT_EDEFAULT;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_RETURN:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_RETURN:
         return isReturn != IS_RETURN_EDEFAULT;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_ABSTRACT:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_ABSTRACT:
         return isAbstract != IS_ABSTRACT_EDEFAULT;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_VARIATION:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_VARIATION:
         return isVariation != IS_VARIATION_EDEFAULT;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__DIRECTION:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__DIRECTION:
         return direction != DIRECTION_EDEFAULT;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_READ_ONLY:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_READ_ONLY:
         return isReadOnly != IS_READ_ONLY_EDEFAULT;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_DERIVED:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_DERIVED:
         return isDerived != IS_DERIVED_EDEFAULT;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_REFERENCE:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_REFERENCE:
         return isReference != IS_REFERENCE_EDEFAULT;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_END:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_END:
         return isEnd != IS_END_EDEFAULT;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_INDIVIDUAL:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_INDIVIDUAL:
         return isIndividual != IS_INDIVIDUAL_EDEFAULT;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__PORTION_KIND:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__PORTION_KIND:
         return portionKind != PORTION_KIND_EDEFAULT;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__DECLARED_SHORT_NAME:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__DECLARED_SHORT_NAME:
         return DECLARED_SHORT_NAME_EDEFAULT == null ? declaredShortName != null : !DECLARED_SHORT_NAME_EDEFAULT.equals(declaredShortName);
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__DECLARED_NAME:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__DECLARED_NAME:
         return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__TYPINGS:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__TYPINGS:
         return typings != null && !typings.isEmpty();
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__SUBSETTING:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__SUBSETTING:
         return subsetting != null && !subsetting.isEmpty();
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__REFERENCES:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__REFERENCES:
         return references != null && !references.isEmpty();
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__CROSSES:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__CROSSES:
         return crosses != null && !crosses.isEmpty();
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__REDEFINITIONS:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__REDEFINITIONS:
         return redefinitions != null && !redefinitions.isEmpty();
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__MULTIPLICITY:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__MULTIPLICITY:
         return multiplicity != null && !multiplicity.isEmpty();
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_ORDERED:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_ORDERED:
         return isOrdered != IS_ORDERED_EDEFAULT;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_NONUNIQUE:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_NONUNIQUE:
         return isNonunique != IS_NONUNIQUE_EDEFAULT;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_INITIAL:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_INITIAL:
         return isInitial != IS_INITIAL_EDEFAULT;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_DEFAULT:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_DEFAULT:
         return isDefault != IS_DEFAULT_EDEFAULT;
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__VALUE_PART:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__VALUE_PART:
         return valuePart != null && !valuePart.isEmpty();
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__ITEM_FEATURE_PARAMETER:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__ITEM_FEATURE_PARAMETER:
         return itemFeatureParameter != null && !itemFeatureParameter.isEmpty();
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__FLOW_END:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__FLOW_END:
         return flowEnd != null && !flowEnd.isEmpty();
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__ELEMENTS:
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE__ELEMENTS:
         return elements != null && !elements.isEmpty();
     }
     return super.eIsSet(featureID);
@@ -1642,8 +1642,8 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_THEN: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__IS_THEN;
-        case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__THEN_MULTIPLICITY: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTIPLICITY;
+        case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_THEN: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__IS_THEN;
+        case SysMLOCPackage.SUCCESSION_FLOW_USAGE__THEN_MULTIPLICITY: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTIPLICITY;
         default: return -1;
       }
     }
@@ -1651,8 +1651,8 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__VISIBILITY: return SysMLOCPackage.MEMBER_PREFIX__VISIBILITY;
-        case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_VARIANT: return SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT;
+        case SysMLOCPackage.SUCCESSION_FLOW_USAGE__VISIBILITY: return SysMLOCPackage.MEMBER_PREFIX__VISIBILITY;
+        case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_VARIANT: return SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT;
         default: return -1;
       }
     }
@@ -1660,7 +1660,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_RETURN: return SysMLOCPackage.IS_RETURN_PREFIX__IS_RETURN;
+        case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_RETURN: return SysMLOCPackage.IS_RETURN_PREFIX__IS_RETURN;
         default: return -1;
       }
     }
@@ -1675,8 +1675,8 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_ABSTRACT: return SysMLOCPackage.BASIC_DEFINITION_PREFIX__IS_ABSTRACT;
-        case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_VARIATION: return SysMLOCPackage.BASIC_DEFINITION_PREFIX__IS_VARIATION;
+        case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_ABSTRACT: return SysMLOCPackage.BASIC_DEFINITION_PREFIX__IS_ABSTRACT;
+        case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_VARIATION: return SysMLOCPackage.BASIC_DEFINITION_PREFIX__IS_VARIATION;
         default: return -1;
       }
     }
@@ -1684,9 +1684,9 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__DIRECTION: return SysMLOCPackage.REF_PREFIX__DIRECTION;
-        case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_READ_ONLY: return SysMLOCPackage.REF_PREFIX__IS_READ_ONLY;
-        case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_DERIVED: return SysMLOCPackage.REF_PREFIX__IS_DERIVED;
+        case SysMLOCPackage.SUCCESSION_FLOW_USAGE__DIRECTION: return SysMLOCPackage.REF_PREFIX__DIRECTION;
+        case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_READ_ONLY: return SysMLOCPackage.REF_PREFIX__IS_READ_ONLY;
+        case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_DERIVED: return SysMLOCPackage.REF_PREFIX__IS_DERIVED;
         default: return -1;
       }
     }
@@ -1694,7 +1694,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_REFERENCE: return SysMLOCPackage.BASIC_USAGE_PREFIX__IS_REFERENCE;
+        case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_REFERENCE: return SysMLOCPackage.BASIC_USAGE_PREFIX__IS_REFERENCE;
         default: return -1;
       }
     }
@@ -1702,9 +1702,9 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_END: return SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_END;
-        case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_INDIVIDUAL: return SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_INDIVIDUAL;
-        case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__PORTION_KIND: return SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__PORTION_KIND;
+        case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_END: return SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_END;
+        case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_INDIVIDUAL: return SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_INDIVIDUAL;
+        case SysMLOCPackage.SUCCESSION_FLOW_USAGE__PORTION_KIND: return SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__PORTION_KIND;
         default: return -1;
       }
     }
@@ -1712,8 +1712,8 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__DECLARED_SHORT_NAME: return SysMLOCPackage.IDENTIFICATION__DECLARED_SHORT_NAME;
-        case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__DECLARED_NAME: return SysMLOCPackage.IDENTIFICATION__DECLARED_NAME;
+        case SysMLOCPackage.SUCCESSION_FLOW_USAGE__DECLARED_SHORT_NAME: return SysMLOCPackage.IDENTIFICATION__DECLARED_SHORT_NAME;
+        case SysMLOCPackage.SUCCESSION_FLOW_USAGE__DECLARED_NAME: return SysMLOCPackage.IDENTIFICATION__DECLARED_NAME;
         default: return -1;
       }
     }
@@ -1721,7 +1721,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__TYPINGS: return SysMLOCPackage.TYPING_FEATURE_TYPING__TYPINGS;
+        case SysMLOCPackage.SUCCESSION_FLOW_USAGE__TYPINGS: return SysMLOCPackage.TYPING_FEATURE_TYPING__TYPINGS;
         default: return -1;
       }
     }
@@ -1729,7 +1729,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__SUBSETTING: return SysMLOCPackage.SUBSETTING_FEATURE_CHAIN__SUBSETTING;
+        case SysMLOCPackage.SUCCESSION_FLOW_USAGE__SUBSETTING: return SysMLOCPackage.SUBSETTING_FEATURE_CHAIN__SUBSETTING;
         default: return -1;
       }
     }
@@ -1737,7 +1737,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__REFERENCES: return SysMLOCPackage.REFERENCE_FEATURE_CHAIN__REFERENCES;
+        case SysMLOCPackage.SUCCESSION_FLOW_USAGE__REFERENCES: return SysMLOCPackage.REFERENCE_FEATURE_CHAIN__REFERENCES;
         default: return -1;
       }
     }
@@ -1745,7 +1745,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__CROSSES: return SysMLOCPackage.CROSS_FEATURE_CHAIN__CROSSES;
+        case SysMLOCPackage.SUCCESSION_FLOW_USAGE__CROSSES: return SysMLOCPackage.CROSS_FEATURE_CHAIN__CROSSES;
         default: return -1;
       }
     }
@@ -1753,7 +1753,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__REDEFINITIONS: return SysMLOCPackage.REDEFINITION_FEATURE_CHAIN__REDEFINITIONS;
+        case SysMLOCPackage.SUCCESSION_FLOW_USAGE__REDEFINITIONS: return SysMLOCPackage.REDEFINITION_FEATURE_CHAIN__REDEFINITIONS;
         default: return -1;
       }
     }
@@ -1768,7 +1768,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__MULTIPLICITY: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTIPLICITY;
+        case SysMLOCPackage.SUCCESSION_FLOW_USAGE__MULTIPLICITY: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTIPLICITY;
         default: return -1;
       }
     }
@@ -1776,8 +1776,8 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_ORDERED: return SysMLOCPackage.MULTIPLICITY_PART__IS_ORDERED;
-        case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_NONUNIQUE: return SysMLOCPackage.MULTIPLICITY_PART__IS_NONUNIQUE;
+        case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_ORDERED: return SysMLOCPackage.MULTIPLICITY_PART__IS_ORDERED;
+        case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_NONUNIQUE: return SysMLOCPackage.MULTIPLICITY_PART__IS_NONUNIQUE;
         default: return -1;
       }
     }
@@ -1806,9 +1806,9 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_INITIAL: return SysMLOCPackage.FEATURE_VALUE__IS_INITIAL;
-        case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_DEFAULT: return SysMLOCPackage.FEATURE_VALUE__IS_DEFAULT;
-        case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__VALUE_PART: return SysMLOCPackage.FEATURE_VALUE__VALUE_PART;
+        case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_INITIAL: return SysMLOCPackage.FEATURE_VALUE__IS_INITIAL;
+        case SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_DEFAULT: return SysMLOCPackage.FEATURE_VALUE__IS_DEFAULT;
+        case SysMLOCPackage.SUCCESSION_FLOW_USAGE__VALUE_PART: return SysMLOCPackage.FEATURE_VALUE__VALUE_PART;
         default: return -1;
       }
     }
@@ -1816,7 +1816,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__ITEM_FEATURE_PARAMETER: return SysMLOCPackage.ITEM_FEATURE_PARAMETER_PART__ITEM_FEATURE_PARAMETER;
+        case SysMLOCPackage.SUCCESSION_FLOW_USAGE__ITEM_FEATURE_PARAMETER: return SysMLOCPackage.ITEM_FEATURE_PARAMETER_PART__ITEM_FEATURE_PARAMETER;
         default: return -1;
       }
     }
@@ -1835,8 +1835,8 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__IS_THEN: return SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_THEN;
-        case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTIPLICITY: return SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__THEN_MULTIPLICITY;
+        case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__IS_THEN: return SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_THEN;
+        case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTIPLICITY: return SysMLOCPackage.SUCCESSION_FLOW_USAGE__THEN_MULTIPLICITY;
         default: return -1;
       }
     }
@@ -1844,8 +1844,8 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.MEMBER_PREFIX__VISIBILITY: return SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__VISIBILITY;
-        case SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT: return SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_VARIANT;
+        case SysMLOCPackage.MEMBER_PREFIX__VISIBILITY: return SysMLOCPackage.SUCCESSION_FLOW_USAGE__VISIBILITY;
+        case SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT: return SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_VARIANT;
         default: return -1;
       }
     }
@@ -1853,7 +1853,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.IS_RETURN_PREFIX__IS_RETURN: return SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_RETURN;
+        case SysMLOCPackage.IS_RETURN_PREFIX__IS_RETURN: return SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_RETURN;
         default: return -1;
       }
     }
@@ -1868,8 +1868,8 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.BASIC_DEFINITION_PREFIX__IS_ABSTRACT: return SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_ABSTRACT;
-        case SysMLOCPackage.BASIC_DEFINITION_PREFIX__IS_VARIATION: return SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_VARIATION;
+        case SysMLOCPackage.BASIC_DEFINITION_PREFIX__IS_ABSTRACT: return SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_ABSTRACT;
+        case SysMLOCPackage.BASIC_DEFINITION_PREFIX__IS_VARIATION: return SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_VARIATION;
         default: return -1;
       }
     }
@@ -1877,9 +1877,9 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.REF_PREFIX__DIRECTION: return SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__DIRECTION;
-        case SysMLOCPackage.REF_PREFIX__IS_READ_ONLY: return SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_READ_ONLY;
-        case SysMLOCPackage.REF_PREFIX__IS_DERIVED: return SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_DERIVED;
+        case SysMLOCPackage.REF_PREFIX__DIRECTION: return SysMLOCPackage.SUCCESSION_FLOW_USAGE__DIRECTION;
+        case SysMLOCPackage.REF_PREFIX__IS_READ_ONLY: return SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_READ_ONLY;
+        case SysMLOCPackage.REF_PREFIX__IS_DERIVED: return SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_DERIVED;
         default: return -1;
       }
     }
@@ -1887,7 +1887,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.BASIC_USAGE_PREFIX__IS_REFERENCE: return SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_REFERENCE;
+        case SysMLOCPackage.BASIC_USAGE_PREFIX__IS_REFERENCE: return SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_REFERENCE;
         default: return -1;
       }
     }
@@ -1895,9 +1895,9 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_END: return SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_END;
-        case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_INDIVIDUAL: return SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_INDIVIDUAL;
-        case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__PORTION_KIND: return SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__PORTION_KIND;
+        case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_END: return SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_END;
+        case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_INDIVIDUAL: return SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_INDIVIDUAL;
+        case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__PORTION_KIND: return SysMLOCPackage.SUCCESSION_FLOW_USAGE__PORTION_KIND;
         default: return -1;
       }
     }
@@ -1905,8 +1905,8 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.IDENTIFICATION__DECLARED_SHORT_NAME: return SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__DECLARED_SHORT_NAME;
-        case SysMLOCPackage.IDENTIFICATION__DECLARED_NAME: return SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__DECLARED_NAME;
+        case SysMLOCPackage.IDENTIFICATION__DECLARED_SHORT_NAME: return SysMLOCPackage.SUCCESSION_FLOW_USAGE__DECLARED_SHORT_NAME;
+        case SysMLOCPackage.IDENTIFICATION__DECLARED_NAME: return SysMLOCPackage.SUCCESSION_FLOW_USAGE__DECLARED_NAME;
         default: return -1;
       }
     }
@@ -1914,7 +1914,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.TYPING_FEATURE_TYPING__TYPINGS: return SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__TYPINGS;
+        case SysMLOCPackage.TYPING_FEATURE_TYPING__TYPINGS: return SysMLOCPackage.SUCCESSION_FLOW_USAGE__TYPINGS;
         default: return -1;
       }
     }
@@ -1922,7 +1922,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.SUBSETTING_FEATURE_CHAIN__SUBSETTING: return SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__SUBSETTING;
+        case SysMLOCPackage.SUBSETTING_FEATURE_CHAIN__SUBSETTING: return SysMLOCPackage.SUCCESSION_FLOW_USAGE__SUBSETTING;
         default: return -1;
       }
     }
@@ -1930,7 +1930,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.REFERENCE_FEATURE_CHAIN__REFERENCES: return SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__REFERENCES;
+        case SysMLOCPackage.REFERENCE_FEATURE_CHAIN__REFERENCES: return SysMLOCPackage.SUCCESSION_FLOW_USAGE__REFERENCES;
         default: return -1;
       }
     }
@@ -1938,7 +1938,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.CROSS_FEATURE_CHAIN__CROSSES: return SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__CROSSES;
+        case SysMLOCPackage.CROSS_FEATURE_CHAIN__CROSSES: return SysMLOCPackage.SUCCESSION_FLOW_USAGE__CROSSES;
         default: return -1;
       }
     }
@@ -1946,7 +1946,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.REDEFINITION_FEATURE_CHAIN__REDEFINITIONS: return SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__REDEFINITIONS;
+        case SysMLOCPackage.REDEFINITION_FEATURE_CHAIN__REDEFINITIONS: return SysMLOCPackage.SUCCESSION_FLOW_USAGE__REDEFINITIONS;
         default: return -1;
       }
     }
@@ -1961,7 +1961,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTIPLICITY: return SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__MULTIPLICITY;
+        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTIPLICITY: return SysMLOCPackage.SUCCESSION_FLOW_USAGE__MULTIPLICITY;
         default: return -1;
       }
     }
@@ -1969,8 +1969,8 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.MULTIPLICITY_PART__IS_ORDERED: return SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_ORDERED;
-        case SysMLOCPackage.MULTIPLICITY_PART__IS_NONUNIQUE: return SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_NONUNIQUE;
+        case SysMLOCPackage.MULTIPLICITY_PART__IS_ORDERED: return SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_ORDERED;
+        case SysMLOCPackage.MULTIPLICITY_PART__IS_NONUNIQUE: return SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_NONUNIQUE;
         default: return -1;
       }
     }
@@ -1999,9 +1999,9 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.FEATURE_VALUE__IS_INITIAL: return SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_INITIAL;
-        case SysMLOCPackage.FEATURE_VALUE__IS_DEFAULT: return SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__IS_DEFAULT;
-        case SysMLOCPackage.FEATURE_VALUE__VALUE_PART: return SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__VALUE_PART;
+        case SysMLOCPackage.FEATURE_VALUE__IS_INITIAL: return SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_INITIAL;
+        case SysMLOCPackage.FEATURE_VALUE__IS_DEFAULT: return SysMLOCPackage.SUCCESSION_FLOW_USAGE__IS_DEFAULT;
+        case SysMLOCPackage.FEATURE_VALUE__VALUE_PART: return SysMLOCPackage.SUCCESSION_FLOW_USAGE__VALUE_PART;
         default: return -1;
       }
     }
@@ -2009,7 +2009,7 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.ITEM_FEATURE_PARAMETER_PART__ITEM_FEATURE_PARAMETER: return SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE__ITEM_FEATURE_PARAMETER;
+        case SysMLOCPackage.ITEM_FEATURE_PARAMETER_PART__ITEM_FEATURE_PARAMETER: return SysMLOCPackage.SUCCESSION_FLOW_USAGE__ITEM_FEATURE_PARAMETER;
         default: return -1;
       }
     }
@@ -2087,4 +2087,4 @@ public class SuccessionFlowConnectionUsageImpl extends StructureUsageElementImpl
     return result.toString();
   }
 
-} //SuccessionFlowConnectionUsageImpl
+} //SuccessionFlowUsageImpl

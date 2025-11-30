@@ -49,7 +49,7 @@
         <elements xsi:type="sysMLOC:PartUsage" declaredName="storageTank">
           <typings>StorageTank</typings>
         </elements>
-        <elements xsi:type="sysMLOC:FlowConnectionUsage">
+        <elements xsi:type="sysMLOC:FlowUsage">
           <itemFeatureParameter declaredName="fuel">
             <typings>Fuel</typings>
           </itemFeatureParameter>
@@ -69,7 +69,7 @@
             </elements>
           </elements>
         </elements>
-        <elements xsi:type="sysMLOC:FlowConnectionUsage">
+        <elements xsi:type="sysMLOC:FlowUsage">
           <itemFeatureParameter declaredName="fuel">
             <typings>Fuel</typings>
           </itemFeatureParameter>
@@ -78,7 +78,7 @@
         </elements>
         <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle">
           <typings>Vehicle</typings>
-          <elements xsi:type="sysMLOC:FlowConnectionUsage">
+          <elements xsi:type="sysMLOC:FlowUsage">
             <FlowEnd>fuelInPort.fuel</FlowEnd>
             <FlowEnd>fuelTank.fuel</FlowEnd>
             <elements xsi:type="sysMLOC:Comment" body="/* &#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * Note: The semantics of flowing to a &quot;stored item&quot; is tentative.&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; */"/>

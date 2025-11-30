@@ -150,15 +150,6 @@ public interface SysMLOCFactory extends EFactory
   CaseBodyElement createCaseBodyElement();
 
   /**
-   * Returns a new object of class '<em>Metadata Body Element</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Metadata Body Element</em>'.
-   * @generated
-   */
-  MetadataBodyElement createMetadataBodyElement();
-
-  /**
    * Returns a new object of class '<em>View Definition Body Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -346,15 +337,6 @@ public interface SysMLOCFactory extends EFactory
    * @generated
    */
   MetadataUsage createMetadataUsage();
-
-  /**
-   * Returns a new object of class '<em>Metadata Body Usage</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Metadata Body Usage</em>'.
-   * @generated
-   */
-  MetadataBodyUsage createMetadataBodyUsage();
 
   /**
    * Returns a new object of class '<em>Element Filter Element</em>'.
@@ -546,6 +528,15 @@ public interface SysMLOCFactory extends EFactory
   ItemUsage createItemUsage();
 
   /**
+   * Returns a new object of class '<em>Metadata Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Metadata Definition</em>'.
+   * @generated
+   */
+  MetadataDefinition createMetadataDefinition();
+
+  /**
    * Returns a new object of class '<em>Part Definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -627,31 +618,31 @@ public interface SysMLOCFactory extends EFactory
   Message createMessage();
 
   /**
-   * Returns a new object of class '<em>Flow Connection Definition</em>'.
+   * Returns a new object of class '<em>Flow Definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Flow Connection Definition</em>'.
+   * @return a new object of class '<em>Flow Definition</em>'.
    * @generated
    */
-  FlowConnectionDefinition createFlowConnectionDefinition();
+  FlowDefinition createFlowDefinition();
 
   /**
-   * Returns a new object of class '<em>Flow Connection Usage</em>'.
+   * Returns a new object of class '<em>Flow Usage</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Flow Connection Usage</em>'.
+   * @return a new object of class '<em>Flow Usage</em>'.
    * @generated
    */
-  FlowConnectionUsage createFlowConnectionUsage();
+  FlowUsage createFlowUsage();
 
   /**
-   * Returns a new object of class '<em>Succession Flow Connection Usage</em>'.
+   * Returns a new object of class '<em>Succession Flow Usage</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Succession Flow Connection Usage</em>'.
+   * @return a new object of class '<em>Succession Flow Usage</em>'.
    * @generated
    */
-  SuccessionFlowConnectionUsage createSuccessionFlowConnectionUsage();
+  SuccessionFlowUsage createSuccessionFlowUsage();
 
   /**
    * Returns a new object of class '<em>Allocation Definition</em>'.
@@ -913,6 +904,15 @@ public interface SysMLOCFactory extends EFactory
    * @generated
    */
   RenderingUsage createRenderingUsage();
+
+  /**
+   * Returns a new object of class '<em>Extended Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Extended Definition</em>'.
+   * @generated
+   */
+  ExtendedDefinition createExtendedDefinition();
 
   /**
    * Returns a new object of class '<em>Perform Action Usage</em>'.

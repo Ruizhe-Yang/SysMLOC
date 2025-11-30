@@ -17,7 +17,7 @@
         <typings>Focus</typings>
         <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:FlowConnectionUsage">
+      <elements xsi:type="sysMLOC:FlowUsage">
         <FlowEnd>focus.xrsl</FlowEnd>
         <FlowEnd>shoot.xsf</FlowEnd>
       </elements>

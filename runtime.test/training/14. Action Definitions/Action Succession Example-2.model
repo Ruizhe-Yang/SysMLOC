@@ -36,7 +36,7 @@
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="scene"/>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="image"/>
       </elements>
-      <elements xsi:type="sysMLOC:SuccessionFlowConnectionUsage">
+      <elements xsi:type="sysMLOC:SuccessionFlowUsage">
         <FlowEnd>focus.image</FlowEnd>
         <FlowEnd>shoot.image</FlowEnd>
       </elements>

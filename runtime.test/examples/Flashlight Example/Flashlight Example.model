@@ -27,7 +27,7 @@
       <elements xsi:type="sysMLOC:InterfaceUsage" declaredName="userToFlashlight">
         <connectorPart refElement="user.onOffCmdPort"/>
         <connectorPart refElement="flashlight.onOffCmdPort"/>
-        <elements xsi:type="sysMLOC:FlowConnectionUsage" isReference="true">
+        <elements xsi:type="sysMLOC:FlowUsage" isReference="true">
           <references>illuminateRegion.onOffCmdFlow</references>
           <FlowEnd>source.onOffCmd</FlowEnd>
           <FlowEnd>target.onOffCmd</FlowEnd>
@@ -66,7 +66,7 @@
           <typings>OnOffCmd</typings>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:SuccessionFlowConnectionUsage" declaredName="onOffCmdFlow">
+      <elements xsi:type="sysMLOC:SuccessionFlowUsage" declaredName="onOffCmdFlow">
         <FlowEnd>sendOnOffCmd.onOffCmd</FlowEnd>
         <FlowEnd>produceDirectedLight.onOffCmd</FlowEnd>
       </elements>
@@ -76,7 +76,7 @@
           <typings>Light</typings>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:SuccessionFlowConnectionUsage" declaredName="lightFlow">
+      <elements xsi:type="sysMLOC:SuccessionFlowUsage" declaredName="lightFlow">
         <FlowEnd>produceDirectedLight.light</FlowEnd>
         <FlowEnd>reflectLight.light</FlowEnd>
       </elements>

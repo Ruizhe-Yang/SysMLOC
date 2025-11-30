@@ -48,11 +48,11 @@
       <elements xsi:type="sysMLOC:ThenNode">
         <thenElement refElement="joinNode"/>
       </elements>
-      <elements xsi:type="sysMLOC:FlowConnectionUsage">
+      <elements xsi:type="sysMLOC:FlowUsage">
         <FlowEnd>monitorBrakePedal.brakePressure</FlowEnd>
         <FlowEnd>braking.brakePressure</FlowEnd>
       </elements>
-      <elements xsi:type="sysMLOC:FlowConnectionUsage">
+      <elements xsi:type="sysMLOC:FlowUsage">
         <FlowEnd>monitorTraction.modulationFrequency</FlowEnd>
         <FlowEnd>braking.modulationFrequency</FlowEnd>
       </elements>

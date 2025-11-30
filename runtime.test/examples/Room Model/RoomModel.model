@@ -78,27 +78,27 @@
           <typings>Hallway</typings>
         </elements>
         <elements xsi:type="sysMLOC:CodeAnnotation" body="//  Connectors and item flows between hallway and classroom&#xD;&#xA;"/>
-        <elements xsi:type="sysMLOC:FlowConnectionUsage" declaredName="HallToClassroom_Air">
+        <elements xsi:type="sysMLOC:FlowUsage" declaredName="HallToClassroom_Air">
           <FlowEnd>h.hallExit_to_Classroom.air</FlowEnd>
           <FlowEnd>c.classEntry.air</FlowEnd>
         </elements>
-        <elements xsi:type="sysMLOC:FlowConnectionUsage" declaredName="HallToClassroom_Furniture">
+        <elements xsi:type="sysMLOC:FlowUsage" declaredName="HallToClassroom_Furniture">
           <FlowEnd>h.hallExit_to_Classroom.furniture</FlowEnd>
           <FlowEnd>c.classEntry.furniture</FlowEnd>
         </elements>
-        <elements xsi:type="sysMLOC:FlowConnectionUsage" declaredName="HallToClassroom_Student">
+        <elements xsi:type="sysMLOC:FlowUsage" declaredName="HallToClassroom_Student">
           <FlowEnd>h.hallExit_to_Classroom.student</FlowEnd>
           <FlowEnd>c.classEntry.student</FlowEnd>
         </elements>
-        <elements xsi:type="sysMLOC:FlowConnectionUsage" declaredName="HallToClassroom_Teacher">
+        <elements xsi:type="sysMLOC:FlowUsage" declaredName="HallToClassroom_Teacher">
           <FlowEnd>h.hallExit_to_Classroom.teacher</FlowEnd>
           <FlowEnd>c.classEntry.teacher</FlowEnd>
         </elements>
-        <elements xsi:type="sysMLOC:FlowConnectionUsage" declaredName="HallToStorageroom_Air">
+        <elements xsi:type="sysMLOC:FlowUsage" declaredName="HallToStorageroom_Air">
           <FlowEnd>h.hallExit_to_Storageroom.air</FlowEnd>
           <FlowEnd>s.storageEntry.air</FlowEnd>
         </elements>
-        <elements xsi:type="sysMLOC:FlowConnectionUsage" declaredName="HallToStorageroom_Furniture">
+        <elements xsi:type="sysMLOC:FlowUsage" declaredName="HallToStorageroom_Furniture">
           <FlowEnd>h.hallExit_to_Storageroom.furniture</FlowEnd>
           <FlowEnd>s.storageEntry.furniture</FlowEnd>
         </elements>

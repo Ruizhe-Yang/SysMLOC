@@ -3,8 +3,8 @@
  */
 package dut.control.sysmloc.sysMLOC.impl;
 
+import dut.control.sysmloc.sysMLOC.GeneralBodyElements;
 import dut.control.sysmloc.sysMLOC.Identification;
-import dut.control.sysmloc.sysMLOC.MetadataBodyElement;
 import dut.control.sysmloc.sysMLOC.MetadataUsage;
 import dut.control.sysmloc.sysMLOC.PrefixMetadata;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
@@ -134,7 +134,7 @@ public class MetadataUsageImpl extends AnnotatingElementImpl implements Metadata
    * @generated
    * @ordered
    */
-  protected EList<MetadataBodyElement> elements;
+  protected EList<GeneralBodyElements> elements;
 
   /**
    * <!-- begin-user-doc -->
@@ -268,11 +268,11 @@ public class MetadataUsageImpl extends AnnotatingElementImpl implements Metadata
    * @generated
    */
   @Override
-  public EList<MetadataBodyElement> getElements()
+  public EList<GeneralBodyElements> getElements()
   {
     if (elements == null)
     {
-      elements = new EObjectContainmentEList<MetadataBodyElement>(MetadataBodyElement.class, this, SysMLOCPackage.METADATA_USAGE__ELEMENTS);
+      elements = new EObjectContainmentEList<GeneralBodyElements>(GeneralBodyElements.class, this, SysMLOCPackage.METADATA_USAGE__ELEMENTS);
     }
     return elements;
   }
@@ -349,7 +349,7 @@ public class MetadataUsageImpl extends AnnotatingElementImpl implements Metadata
         return;
       case SysMLOCPackage.METADATA_USAGE__ELEMENTS:
         getElements().clear();
-        getElements().addAll((Collection<? extends MetadataBodyElement>)newValue);
+        getElements().addAll((Collection<? extends GeneralBodyElements>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

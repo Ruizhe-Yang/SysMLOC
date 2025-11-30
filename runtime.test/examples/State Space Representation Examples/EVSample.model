@@ -286,11 +286,11 @@
           </elements>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:FlowConnectionUsage">
+      <elements xsi:type="sysMLOC:FlowUsage">
         <FlowEnd>battery.batteryBehavior.output.voltage</FlowEnd>
         <FlowEnd>motor.motorBehavior.input.voltage</FlowEnd>
       </elements>
-      <elements xsi:type="sysMLOC:FlowConnectionUsage">
+      <elements xsi:type="sysMLOC:FlowUsage">
         <FlowEnd>motor.motorBehavior.output.current</FlowEnd>
         <FlowEnd>battery.batteryBehavior.input.current</FlowEnd>
       </elements>
@@ -318,11 +318,11 @@
           </elements>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:FlowConnectionUsage">
+      <elements xsi:type="sysMLOC:FlowUsage">
         <FlowEnd>motor.motorBehavior.output.torque</FlowEnd>
         <FlowEnd>tire.tireBehavior.input.torque</FlowEnd>
       </elements>
-      <elements xsi:type="sysMLOC:FlowConnectionUsage">
+      <elements xsi:type="sysMLOC:FlowUsage">
         <FlowEnd>vehicleBehavior.output.accel</FlowEnd>
         <FlowEnd>tire.tireBehavior.input.accel</FlowEnd>
       </elements>
@@ -346,11 +346,11 @@
           </elements>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:FlowConnectionUsage">
+      <elements xsi:type="sysMLOC:FlowUsage">
         <FlowEnd>tire.tireBehavior.output.outTorque</FlowEnd>
         <FlowEnd>motor.motorBehavior.input.friction</FlowEnd>
       </elements>
-      <elements xsi:type="sysMLOC:FlowConnectionUsage">
+      <elements xsi:type="sysMLOC:FlowUsage">
         <FlowEnd>tire.tireBehavior.output.force</FlowEnd>
         <FlowEnd>vehicleBehavior.input.force</FlowEnd>
       </elements>

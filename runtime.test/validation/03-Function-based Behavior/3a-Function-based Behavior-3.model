@@ -86,7 +86,7 @@
                 <typings>Torque</typings>
               </elements>
             </elements>
-            <elements xsi:type="sysMLOC:FlowConnectionUsage">
+            <elements xsi:type="sysMLOC:FlowUsage">
               <FlowEnd>'generate torque'.engineTorque</FlowEnd>
               <FlowEnd>'amplify torque'.engineTorque</FlowEnd>
             </elements>
@@ -99,7 +99,7 @@
                 <typings>Torque</typings>
               </elements>
             </elements>
-            <elements xsi:type="sysMLOC:FlowConnectionUsage">
+            <elements xsi:type="sysMLOC:FlowUsage">
               <FlowEnd>'amplify torque'.transmissionTorque</FlowEnd>
               <FlowEnd>'transfer torque'.transmissionTorque</FlowEnd>
             </elements>
@@ -112,7 +112,7 @@
                 <typings>Torque</typings>
               </elements>
             </elements>
-            <elements xsi:type="sysMLOC:FlowConnectionUsage">
+            <elements xsi:type="sysMLOC:FlowUsage">
               <FlowEnd>'transfer torque'.driveshaftTorque</FlowEnd>
               <FlowEnd>'distribute torque'.driveshaftTorque</FlowEnd>
             </elements>

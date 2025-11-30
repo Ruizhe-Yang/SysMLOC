@@ -127,7 +127,7 @@
       <elements xsi:type="sysMLOC:InterfaceUsage" declaredName="driveShaft">
         <connectorPart refElement="transDrive"/>
         <connectorPart refElement="axleDrive"/>
-        <elements xsi:type="sysMLOC:FlowConnectionUsage">
+        <elements xsi:type="sysMLOC:FlowUsage">
           <FlowEnd>transDrive.driveTorque</FlowEnd>
           <FlowEnd>axleDrive.driveTorque</FlowEnd>
         </elements>

@@ -3,7 +3,7 @@
   <elements xsi:type="sysMLOC:Package" declaredName="'Flow Connection Definition Example'">
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="'Port Example'" isNamespace="true"/>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle"/>
-    <elements xsi:type="sysMLOC:FlowConnectionDefinition" declaredName="FuelFlow">
+    <elements xsi:type="sysMLOC:FlowDefinition" declaredName="FuelFlow">
       <elements xsi:type="sysMLOC:ReferenceUsage">
         <typings>Fuel</typings>
         <redefinitions>payload</redefinitions>
@@ -23,7 +23,7 @@
       <elements xsi:type="sysMLOC:PartUsage" declaredName="eng">
         <typings>Engine</typings>
       </elements>
-      <elements xsi:type="sysMLOC:FlowConnectionUsage">
+      <elements xsi:type="sysMLOC:FlowUsage">
         <typings>FuelFlow</typings>
         <FlowEnd>tankAssy.fuelTankPort.fuelSupply</FlowEnd>
         <FlowEnd>eng.engineFuelPort.fuelSupply</FlowEnd>

@@ -77,13 +77,14 @@ import dut.control.sysmloc.sysMLOC.EventOccurrenceUsage;
 import dut.control.sysmloc.sysMLOC.ExhibitStateUsage;
 import dut.control.sysmloc.sysMLOC.ExitActionNode;
 import dut.control.sysmloc.sysMLOC.ExposeElement;
+import dut.control.sysmloc.sysMLOC.ExtendedDefinition;
 import dut.control.sysmloc.sysMLOC.FeatureDeclaration;
 import dut.control.sysmloc.sysMLOC.FeatureDirection;
 import dut.control.sysmloc.sysMLOC.FeatureSpecialization;
 import dut.control.sysmloc.sysMLOC.FeatureSpecializationPart;
 import dut.control.sysmloc.sysMLOC.FeatureValue;
-import dut.control.sysmloc.sysMLOC.FlowConnectionDefinition;
-import dut.control.sysmloc.sysMLOC.FlowConnectionUsage;
+import dut.control.sysmloc.sysMLOC.FlowDefinition;
+import dut.control.sysmloc.sysMLOC.FlowUsage;
 import dut.control.sysmloc.sysMLOC.ForLoopNode;
 import dut.control.sysmloc.sysMLOC.ForVariableParameter;
 import dut.control.sysmloc.sysMLOC.FramedConcernUsage;
@@ -107,8 +108,7 @@ import dut.control.sysmloc.sysMLOC.ItemUsage;
 import dut.control.sysmloc.sysMLOC.LibraryPackage;
 import dut.control.sysmloc.sysMLOC.MemberPrefix;
 import dut.control.sysmloc.sysMLOC.Message;
-import dut.control.sysmloc.sysMLOC.MetadataBodyElement;
-import dut.control.sysmloc.sysMLOC.MetadataBodyUsage;
+import dut.control.sysmloc.sysMLOC.MetadataDefinition;
 import dut.control.sysmloc.sysMLOC.MetadataUsage;
 import dut.control.sysmloc.sysMLOC.MultiplicityPart;
 import dut.control.sysmloc.sysMLOC.MultiplicityRange;
@@ -165,7 +165,7 @@ import dut.control.sysmloc.sysMLOC.StructureUsageElement;
 import dut.control.sysmloc.sysMLOC.SubjectUsage;
 import dut.control.sysmloc.sysMLOC.SubsettingFeatureChain;
 import dut.control.sysmloc.sysMLOC.SuccessionAsUsage;
-import dut.control.sysmloc.sysMLOC.SuccessionFlowConnectionUsage;
+import dut.control.sysmloc.sysMLOC.SuccessionFlowUsage;
 import dut.control.sysmloc.sysMLOC.SysMLOCFactory;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 import dut.control.sysmloc.sysMLOC.TerminateNode;
@@ -274,7 +274,6 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
       case SysMLOCPackage.STATE_BODY_ELEMENT: return createStateBodyElement();
       case SysMLOCPackage.REQUIREMENT_BODY_ELEMENT: return createRequirementBodyElement();
       case SysMLOCPackage.CASE_BODY_ELEMENT: return createCaseBodyElement();
-      case SysMLOCPackage.METADATA_BODY_ELEMENT: return createMetadataBodyElement();
       case SysMLOCPackage.VIEW_DEFINITION_BODY_ELEMENT: return createViewDefinitionBodyElement();
       case SysMLOCPackage.VIEW_BODY_ELEMENT: return createViewBodyElement();
       case SysMLOCPackage.RELATIONSHIP_BODY_ELEMENT: return createRelationshipBodyElement();
@@ -296,7 +295,6 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
       case SysMLOCPackage.DOCUMENTATION: return createDocumentation();
       case SysMLOCPackage.TEXTUAL_REPRESENTATION: return createTextualRepresentation();
       case SysMLOCPackage.METADATA_USAGE: return createMetadataUsage();
-      case SysMLOCPackage.METADATA_BODY_USAGE: return createMetadataBodyUsage();
       case SysMLOCPackage.ELEMENT_FILTER_ELEMENT: return createElementFilterElement();
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE: return createDefaultReferenceUsage();
       case SysMLOCPackage.REFERENCE_VARIANT_USAGE: return createReferenceVariantUsage();
@@ -318,6 +316,7 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
       case SysMLOCPackage.INDIVIDUAL_USAGE: return createIndividualUsage();
       case SysMLOCPackage.ITEM_DEFINITION: return createItemDefinition();
       case SysMLOCPackage.ITEM_USAGE: return createItemUsage();
+      case SysMLOCPackage.METADATA_DEFINITION: return createMetadataDefinition();
       case SysMLOCPackage.PART_DEFINITION: return createPartDefinition();
       case SysMLOCPackage.PART_USAGE: return createPartUsage();
       case SysMLOCPackage.PORT_DEFINITION: return createPortDefinition();
@@ -327,9 +326,9 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
       case SysMLOCPackage.INTERFACE_DEFINITION: return createInterfaceDefinition();
       case SysMLOCPackage.INTERFACE_USAGE: return createInterfaceUsage();
       case SysMLOCPackage.MESSAGE: return createMessage();
-      case SysMLOCPackage.FLOW_CONNECTION_DEFINITION: return createFlowConnectionDefinition();
-      case SysMLOCPackage.FLOW_CONNECTION_USAGE: return createFlowConnectionUsage();
-      case SysMLOCPackage.SUCCESSION_FLOW_CONNECTION_USAGE: return createSuccessionFlowConnectionUsage();
+      case SysMLOCPackage.FLOW_DEFINITION: return createFlowDefinition();
+      case SysMLOCPackage.FLOW_USAGE: return createFlowUsage();
+      case SysMLOCPackage.SUCCESSION_FLOW_USAGE: return createSuccessionFlowUsage();
       case SysMLOCPackage.ALLOCATION_DEFINITION: return createAllocationDefinition();
       case SysMLOCPackage.ALLOCATION_USAGE: return createAllocationUsage();
       case SysMLOCPackage.ACTION_DEFINITION: return createActionDefinition();
@@ -359,6 +358,7 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
       case SysMLOCPackage.VIEWPOINT_USAGE: return createViewpointUsage();
       case SysMLOCPackage.RENDERING_DEFINITION: return createRenderingDefinition();
       case SysMLOCPackage.RENDERING_USAGE: return createRenderingUsage();
+      case SysMLOCPackage.EXTENDED_DEFINITION: return createExtendedDefinition();
       case SysMLOCPackage.PERFORM_ACTION_USAGE: return createPerformActionUsage();
       case SysMLOCPackage.EXHIBIT_STATE_USAGE: return createExhibitStateUsage();
       case SysMLOCPackage.INCLUDE_USE_CASE_USAGE: return createIncludeUseCaseUsage();
@@ -681,18 +681,6 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
    * @generated
    */
   @Override
-  public MetadataBodyElement createMetadataBodyElement()
-  {
-    MetadataBodyElementImpl metadataBodyElement = new MetadataBodyElementImpl();
-    return metadataBodyElement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public ViewDefinitionBodyElement createViewDefinitionBodyElement()
   {
     ViewDefinitionBodyElementImpl viewDefinitionBodyElement = new ViewDefinitionBodyElementImpl();
@@ -937,18 +925,6 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
   {
     MetadataUsageImpl metadataUsage = new MetadataUsageImpl();
     return metadataUsage;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public MetadataBodyUsage createMetadataBodyUsage()
-  {
-    MetadataBodyUsageImpl metadataBodyUsage = new MetadataBodyUsageImpl();
-    return metadataBodyUsage;
   }
 
   /**
@@ -1209,6 +1185,18 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
    * @generated
    */
   @Override
+  public MetadataDefinition createMetadataDefinition()
+  {
+    MetadataDefinitionImpl metadataDefinition = new MetadataDefinitionImpl();
+    return metadataDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public PartDefinition createPartDefinition()
   {
     PartDefinitionImpl partDefinition = new PartDefinitionImpl();
@@ -1317,10 +1305,10 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
    * @generated
    */
   @Override
-  public FlowConnectionDefinition createFlowConnectionDefinition()
+  public FlowDefinition createFlowDefinition()
   {
-    FlowConnectionDefinitionImpl flowConnectionDefinition = new FlowConnectionDefinitionImpl();
-    return flowConnectionDefinition;
+    FlowDefinitionImpl flowDefinition = new FlowDefinitionImpl();
+    return flowDefinition;
   }
 
   /**
@@ -1329,10 +1317,10 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
    * @generated
    */
   @Override
-  public FlowConnectionUsage createFlowConnectionUsage()
+  public FlowUsage createFlowUsage()
   {
-    FlowConnectionUsageImpl flowConnectionUsage = new FlowConnectionUsageImpl();
-    return flowConnectionUsage;
+    FlowUsageImpl flowUsage = new FlowUsageImpl();
+    return flowUsage;
   }
 
   /**
@@ -1341,10 +1329,10 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
    * @generated
    */
   @Override
-  public SuccessionFlowConnectionUsage createSuccessionFlowConnectionUsage()
+  public SuccessionFlowUsage createSuccessionFlowUsage()
   {
-    SuccessionFlowConnectionUsageImpl successionFlowConnectionUsage = new SuccessionFlowConnectionUsageImpl();
-    return successionFlowConnectionUsage;
+    SuccessionFlowUsageImpl successionFlowUsage = new SuccessionFlowUsageImpl();
+    return successionFlowUsage;
   }
 
   /**
@@ -1693,6 +1681,18 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
   {
     RenderingUsageImpl renderingUsage = new RenderingUsageImpl();
     return renderingUsage;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ExtendedDefinition createExtendedDefinition()
+  {
+    ExtendedDefinitionImpl extendedDefinition = new ExtendedDefinitionImpl();
+    return extendedDefinition;
   }
 
   /**

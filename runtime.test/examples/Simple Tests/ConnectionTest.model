@@ -64,7 +64,7 @@
         <references>d2</references>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:FlowConnectionDefinition" isAbstract="true" declaredName="F"/>
+    <elements xsi:type="sysMLOC:FlowDefinition" isAbstract="true" declaredName="F"/>
     <elements xsi:type="sysMLOC:Message">
       <typings>F</typings>
       <FlowEnd>p</FlowEnd>

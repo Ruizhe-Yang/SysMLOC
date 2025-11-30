@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="IssueMetadataExample">
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ModelingMetadata::Issue"/>
+    <elements xsi:type="sysMLOC:CodeAnnotation" body="//Example: the following identifies an issue with the interface&#xD;&#xA;"/>
+    <elements xsi:type="sysMLOC:MetadataUsage" declaredName="InterfaceCompatibilityIssue" metadataTyping="Issue">
+      <annotatedElement>engineToTransmissionInterface</annotatedElement>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="text">
+        <valuePart>&quot;This issue is about the interface compatability between the engine and transmission.&quot; + &quot;The interface def includes an end defined by a ClutchPort.&quot; + &quot;However, the interface usage connects the transmission port that is defined by ~DrivePwrPort.&quot; + &quot;This should have surfaced a compatibility issue, since the interface is not really compatible with its definition&quot;</valuePart>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:InterfaceDefinition" declaredName="EngineToTransmissionInterface">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="p1" isEnd="true">
+        <typings>DrivePwrPort</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="p2" isEnd="true">
+        <typings>ClutchPort</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PortDefinition" declaredName="DrivePwrPort"/>
+    <elements xsi:type="sysMLOC:PortDefinition" declaredName="ClutchPort"/>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="engine">
+      <elements xsi:type="sysMLOC:PortUsage" declaredName="drivePwrPort">
+        <typings>DrivePwrPort</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="transmission">
+      <elements xsi:type="sysMLOC:PortUsage" declaredName="clutchPort">
+        <typings>~DrivePwrPort</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:InterfaceUsage" declaredName="engineToTransmissionInterface">
+      <typings>EngineToTransmissionInterface</typings>
+      <connectorPart refElement="engine.drivePwrPort"/>
+      <connectorPart refElement="transmission.clutchPort"/>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

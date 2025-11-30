@@ -13,7 +13,7 @@
     <elements xsi:type="sysMLOC:InterfaceUsage" declaredName="driverToVehicleInterface">
       <connectorPart refElement="driver_b.setSpeedPort"/>
       <connectorPart refElement="vehicle_b.setSpeedPort"/>
-      <elements xsi:type="sysMLOC:FlowConnectionUsage" declaredName="setSpeedFlow">
+      <elements xsi:type="sysMLOC:FlowUsage" declaredName="setSpeedFlow">
         <itemFeatureParameter payloadFeatureElement="SetSpeed"/>
         <FlowEnd>driver_b.setSpeedPort.setSpeed</FlowEnd>
         <FlowEnd>vehicle_b.setSpeedPort.setSpeed</FlowEnd>
@@ -48,7 +48,7 @@
           </elements>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:FlowConnectionUsage" declaredName="sensedSpeedFlow">
+      <elements xsi:type="sysMLOC:FlowUsage" declaredName="sensedSpeedFlow">
         <itemFeatureParameter payloadFeatureElement="SensedSpeed"/>
         <FlowEnd>speedometer_b.sensedSpeedPort.sensedSpeed</FlowEnd>
         <FlowEnd>cruiseController_b.sensedSpeedPort.sensedSpeed</FlowEnd>
@@ -61,7 +61,7 @@
           </elements>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:FlowConnectionUsage" declaredName="fuelCommandFlow">
+      <elements xsi:type="sysMLOC:FlowUsage" declaredName="fuelCommandFlow">
         <itemFeatureParameter payloadFeatureElement="FuelCommand"/>
         <FlowEnd>cruiseController_b.fuelCommandPort.fuelCommand</FlowEnd>
         <FlowEnd>engine_b.fuelCommandPort.fuelCommand</FlowEnd>

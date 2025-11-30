@@ -6,7 +6,7 @@ package dut.control.sysmloc.sysMLOC.impl;
 import dut.control.sysmloc.sysMLOC.BasicDefinitionPrefix;
 import dut.control.sysmloc.sysMLOC.DefinitionBodyElement;
 import dut.control.sysmloc.sysMLOC.DefinitionDeclaration;
-import dut.control.sysmloc.sysMLOC.FlowConnectionDefinition;
+import dut.control.sysmloc.sysMLOC.FlowDefinition;
 import dut.control.sysmloc.sysMLOC.Identification;
 import dut.control.sysmloc.sysMLOC.MemberPrefix;
 import dut.control.sysmloc.sysMLOC.OccurrenceDefinitionPrefix;
@@ -31,26 +31,26 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Flow Connection Definition</b></em>'.
+ * An implementation of the model object '<em><b>Flow Definition</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowConnectionDefinitionImpl#getVisibility <em>Visibility</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowConnectionDefinitionImpl#isIsVariant <em>Is Variant</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowConnectionDefinitionImpl#isIsAbstract <em>Is Abstract</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowConnectionDefinitionImpl#isIsVariation <em>Is Variation</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowConnectionDefinitionImpl#isIsIndividual <em>Is Individual</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowConnectionDefinitionImpl#getDeclaredShortName <em>Declared Short Name</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowConnectionDefinitionImpl#getDeclaredName <em>Declared Name</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowConnectionDefinitionImpl#getSuperclassifiers <em>Superclassifiers</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowConnectionDefinitionImpl#getElements <em>Elements</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowDefinitionImpl#getVisibility <em>Visibility</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowDefinitionImpl#isIsVariant <em>Is Variant</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowDefinitionImpl#isIsAbstract <em>Is Abstract</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowDefinitionImpl#isIsVariation <em>Is Variation</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowDefinitionImpl#isIsIndividual <em>Is Individual</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowDefinitionImpl#getDeclaredShortName <em>Declared Short Name</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowDefinitionImpl#getDeclaredName <em>Declared Name</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowDefinitionImpl#getSuperclassifiers <em>Superclassifiers</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FlowDefinitionImpl#getElements <em>Elements</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class FlowConnectionDefinitionImpl extends DefinitionElementImpl implements FlowConnectionDefinition
+public class FlowDefinitionImpl extends DefinitionElementImpl implements FlowDefinition
 {
   /**
    * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
@@ -217,7 +217,7 @@ public class FlowConnectionDefinitionImpl extends DefinitionElementImpl implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  protected FlowConnectionDefinitionImpl()
+  protected FlowDefinitionImpl()
   {
     super();
   }
@@ -230,7 +230,7 @@ public class FlowConnectionDefinitionImpl extends DefinitionElementImpl implemen
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.eINSTANCE.getFlowConnectionDefinition();
+    return SysMLOCPackage.eINSTANCE.getFlowDefinition();
   }
 
   /**
@@ -255,7 +255,7 @@ public class FlowConnectionDefinitionImpl extends DefinitionElementImpl implemen
     VisibilityIndicator oldVisibility = visibility;
     visibility = newVisibility == null ? VISIBILITY_EDEFAULT : newVisibility;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.FLOW_CONNECTION_DEFINITION__VISIBILITY, oldVisibility, visibility));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.FLOW_DEFINITION__VISIBILITY, oldVisibility, visibility));
   }
 
   /**
@@ -280,7 +280,7 @@ public class FlowConnectionDefinitionImpl extends DefinitionElementImpl implemen
     boolean oldIsVariant = isVariant;
     isVariant = newIsVariant;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.FLOW_CONNECTION_DEFINITION__IS_VARIANT, oldIsVariant, isVariant));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.FLOW_DEFINITION__IS_VARIANT, oldIsVariant, isVariant));
   }
 
   /**
@@ -305,7 +305,7 @@ public class FlowConnectionDefinitionImpl extends DefinitionElementImpl implemen
     boolean oldIsAbstract = isAbstract;
     isAbstract = newIsAbstract;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.FLOW_CONNECTION_DEFINITION__IS_ABSTRACT, oldIsAbstract, isAbstract));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.FLOW_DEFINITION__IS_ABSTRACT, oldIsAbstract, isAbstract));
   }
 
   /**
@@ -330,7 +330,7 @@ public class FlowConnectionDefinitionImpl extends DefinitionElementImpl implemen
     boolean oldIsVariation = isVariation;
     isVariation = newIsVariation;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.FLOW_CONNECTION_DEFINITION__IS_VARIATION, oldIsVariation, isVariation));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.FLOW_DEFINITION__IS_VARIATION, oldIsVariation, isVariation));
   }
 
   /**
@@ -355,7 +355,7 @@ public class FlowConnectionDefinitionImpl extends DefinitionElementImpl implemen
     boolean oldIsIndividual = isIndividual;
     isIndividual = newIsIndividual;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.FLOW_CONNECTION_DEFINITION__IS_INDIVIDUAL, oldIsIndividual, isIndividual));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.FLOW_DEFINITION__IS_INDIVIDUAL, oldIsIndividual, isIndividual));
   }
 
   /**
@@ -380,7 +380,7 @@ public class FlowConnectionDefinitionImpl extends DefinitionElementImpl implemen
     String oldDeclaredShortName = declaredShortName;
     declaredShortName = newDeclaredShortName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.FLOW_CONNECTION_DEFINITION__DECLARED_SHORT_NAME, oldDeclaredShortName, declaredShortName));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.FLOW_DEFINITION__DECLARED_SHORT_NAME, oldDeclaredShortName, declaredShortName));
   }
 
   /**
@@ -405,7 +405,7 @@ public class FlowConnectionDefinitionImpl extends DefinitionElementImpl implemen
     String oldDeclaredName = declaredName;
     declaredName = newDeclaredName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.FLOW_CONNECTION_DEFINITION__DECLARED_NAME, oldDeclaredName, declaredName));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.FLOW_DEFINITION__DECLARED_NAME, oldDeclaredName, declaredName));
   }
 
   /**
@@ -418,7 +418,7 @@ public class FlowConnectionDefinitionImpl extends DefinitionElementImpl implemen
   {
     if (superclassifiers == null)
     {
-      superclassifiers = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.FLOW_CONNECTION_DEFINITION__SUPERCLASSIFIERS);
+      superclassifiers = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.FLOW_DEFINITION__SUPERCLASSIFIERS);
     }
     return superclassifiers;
   }
@@ -433,7 +433,7 @@ public class FlowConnectionDefinitionImpl extends DefinitionElementImpl implemen
   {
     if (elements == null)
     {
-      elements = new EObjectContainmentEList<DefinitionBodyElement>(DefinitionBodyElement.class, this, SysMLOCPackage.FLOW_CONNECTION_DEFINITION__ELEMENTS);
+      elements = new EObjectContainmentEList<DefinitionBodyElement>(DefinitionBodyElement.class, this, SysMLOCPackage.FLOW_DEFINITION__ELEMENTS);
     }
     return elements;
   }
@@ -448,7 +448,7 @@ public class FlowConnectionDefinitionImpl extends DefinitionElementImpl implemen
   {
     switch (featureID)
     {
-      case SysMLOCPackage.FLOW_CONNECTION_DEFINITION__ELEMENTS:
+      case SysMLOCPackage.FLOW_DEFINITION__ELEMENTS:
         return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -464,23 +464,23 @@ public class FlowConnectionDefinitionImpl extends DefinitionElementImpl implemen
   {
     switch (featureID)
     {
-      case SysMLOCPackage.FLOW_CONNECTION_DEFINITION__VISIBILITY:
+      case SysMLOCPackage.FLOW_DEFINITION__VISIBILITY:
         return getVisibility();
-      case SysMLOCPackage.FLOW_CONNECTION_DEFINITION__IS_VARIANT:
+      case SysMLOCPackage.FLOW_DEFINITION__IS_VARIANT:
         return isIsVariant();
-      case SysMLOCPackage.FLOW_CONNECTION_DEFINITION__IS_ABSTRACT:
+      case SysMLOCPackage.FLOW_DEFINITION__IS_ABSTRACT:
         return isIsAbstract();
-      case SysMLOCPackage.FLOW_CONNECTION_DEFINITION__IS_VARIATION:
+      case SysMLOCPackage.FLOW_DEFINITION__IS_VARIATION:
         return isIsVariation();
-      case SysMLOCPackage.FLOW_CONNECTION_DEFINITION__IS_INDIVIDUAL:
+      case SysMLOCPackage.FLOW_DEFINITION__IS_INDIVIDUAL:
         return isIsIndividual();
-      case SysMLOCPackage.FLOW_CONNECTION_DEFINITION__DECLARED_SHORT_NAME:
+      case SysMLOCPackage.FLOW_DEFINITION__DECLARED_SHORT_NAME:
         return getDeclaredShortName();
-      case SysMLOCPackage.FLOW_CONNECTION_DEFINITION__DECLARED_NAME:
+      case SysMLOCPackage.FLOW_DEFINITION__DECLARED_NAME:
         return getDeclaredName();
-      case SysMLOCPackage.FLOW_CONNECTION_DEFINITION__SUPERCLASSIFIERS:
+      case SysMLOCPackage.FLOW_DEFINITION__SUPERCLASSIFIERS:
         return getSuperclassifiers();
-      case SysMLOCPackage.FLOW_CONNECTION_DEFINITION__ELEMENTS:
+      case SysMLOCPackage.FLOW_DEFINITION__ELEMENTS:
         return getElements();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -497,32 +497,32 @@ public class FlowConnectionDefinitionImpl extends DefinitionElementImpl implemen
   {
     switch (featureID)
     {
-      case SysMLOCPackage.FLOW_CONNECTION_DEFINITION__VISIBILITY:
+      case SysMLOCPackage.FLOW_DEFINITION__VISIBILITY:
         setVisibility((VisibilityIndicator)newValue);
         return;
-      case SysMLOCPackage.FLOW_CONNECTION_DEFINITION__IS_VARIANT:
+      case SysMLOCPackage.FLOW_DEFINITION__IS_VARIANT:
         setIsVariant((Boolean)newValue);
         return;
-      case SysMLOCPackage.FLOW_CONNECTION_DEFINITION__IS_ABSTRACT:
+      case SysMLOCPackage.FLOW_DEFINITION__IS_ABSTRACT:
         setIsAbstract((Boolean)newValue);
         return;
-      case SysMLOCPackage.FLOW_CONNECTION_DEFINITION__IS_VARIATION:
+      case SysMLOCPackage.FLOW_DEFINITION__IS_VARIATION:
         setIsVariation((Boolean)newValue);
         return;
-      case SysMLOCPackage.FLOW_CONNECTION_DEFINITION__IS_INDIVIDUAL:
+      case SysMLOCPackage.FLOW_DEFINITION__IS_INDIVIDUAL:
         setIsIndividual((Boolean)newValue);
         return;
-      case SysMLOCPackage.FLOW_CONNECTION_DEFINITION__DECLARED_SHORT_NAME:
+      case SysMLOCPackage.FLOW_DEFINITION__DECLARED_SHORT_NAME:
         setDeclaredShortName((String)newValue);
         return;
-      case SysMLOCPackage.FLOW_CONNECTION_DEFINITION__DECLARED_NAME:
+      case SysMLOCPackage.FLOW_DEFINITION__DECLARED_NAME:
         setDeclaredName((String)newValue);
         return;
-      case SysMLOCPackage.FLOW_CONNECTION_DEFINITION__SUPERCLASSIFIERS:
+      case SysMLOCPackage.FLOW_DEFINITION__SUPERCLASSIFIERS:
         getSuperclassifiers().clear();
         getSuperclassifiers().addAll((Collection<? extends String>)newValue);
         return;
-      case SysMLOCPackage.FLOW_CONNECTION_DEFINITION__ELEMENTS:
+      case SysMLOCPackage.FLOW_DEFINITION__ELEMENTS:
         getElements().clear();
         getElements().addAll((Collection<? extends DefinitionBodyElement>)newValue);
         return;
@@ -540,31 +540,31 @@ public class FlowConnectionDefinitionImpl extends DefinitionElementImpl implemen
   {
     switch (featureID)
     {
-      case SysMLOCPackage.FLOW_CONNECTION_DEFINITION__VISIBILITY:
+      case SysMLOCPackage.FLOW_DEFINITION__VISIBILITY:
         setVisibility(VISIBILITY_EDEFAULT);
         return;
-      case SysMLOCPackage.FLOW_CONNECTION_DEFINITION__IS_VARIANT:
+      case SysMLOCPackage.FLOW_DEFINITION__IS_VARIANT:
         setIsVariant(IS_VARIANT_EDEFAULT);
         return;
-      case SysMLOCPackage.FLOW_CONNECTION_DEFINITION__IS_ABSTRACT:
+      case SysMLOCPackage.FLOW_DEFINITION__IS_ABSTRACT:
         setIsAbstract(IS_ABSTRACT_EDEFAULT);
         return;
-      case SysMLOCPackage.FLOW_CONNECTION_DEFINITION__IS_VARIATION:
+      case SysMLOCPackage.FLOW_DEFINITION__IS_VARIATION:
         setIsVariation(IS_VARIATION_EDEFAULT);
         return;
-      case SysMLOCPackage.FLOW_CONNECTION_DEFINITION__IS_INDIVIDUAL:
+      case SysMLOCPackage.FLOW_DEFINITION__IS_INDIVIDUAL:
         setIsIndividual(IS_INDIVIDUAL_EDEFAULT);
         return;
-      case SysMLOCPackage.FLOW_CONNECTION_DEFINITION__DECLARED_SHORT_NAME:
+      case SysMLOCPackage.FLOW_DEFINITION__DECLARED_SHORT_NAME:
         setDeclaredShortName(DECLARED_SHORT_NAME_EDEFAULT);
         return;
-      case SysMLOCPackage.FLOW_CONNECTION_DEFINITION__DECLARED_NAME:
+      case SysMLOCPackage.FLOW_DEFINITION__DECLARED_NAME:
         setDeclaredName(DECLARED_NAME_EDEFAULT);
         return;
-      case SysMLOCPackage.FLOW_CONNECTION_DEFINITION__SUPERCLASSIFIERS:
+      case SysMLOCPackage.FLOW_DEFINITION__SUPERCLASSIFIERS:
         getSuperclassifiers().clear();
         return;
-      case SysMLOCPackage.FLOW_CONNECTION_DEFINITION__ELEMENTS:
+      case SysMLOCPackage.FLOW_DEFINITION__ELEMENTS:
         getElements().clear();
         return;
     }
@@ -581,23 +581,23 @@ public class FlowConnectionDefinitionImpl extends DefinitionElementImpl implemen
   {
     switch (featureID)
     {
-      case SysMLOCPackage.FLOW_CONNECTION_DEFINITION__VISIBILITY:
+      case SysMLOCPackage.FLOW_DEFINITION__VISIBILITY:
         return visibility != VISIBILITY_EDEFAULT;
-      case SysMLOCPackage.FLOW_CONNECTION_DEFINITION__IS_VARIANT:
+      case SysMLOCPackage.FLOW_DEFINITION__IS_VARIANT:
         return isVariant != IS_VARIANT_EDEFAULT;
-      case SysMLOCPackage.FLOW_CONNECTION_DEFINITION__IS_ABSTRACT:
+      case SysMLOCPackage.FLOW_DEFINITION__IS_ABSTRACT:
         return isAbstract != IS_ABSTRACT_EDEFAULT;
-      case SysMLOCPackage.FLOW_CONNECTION_DEFINITION__IS_VARIATION:
+      case SysMLOCPackage.FLOW_DEFINITION__IS_VARIATION:
         return isVariation != IS_VARIATION_EDEFAULT;
-      case SysMLOCPackage.FLOW_CONNECTION_DEFINITION__IS_INDIVIDUAL:
+      case SysMLOCPackage.FLOW_DEFINITION__IS_INDIVIDUAL:
         return isIndividual != IS_INDIVIDUAL_EDEFAULT;
-      case SysMLOCPackage.FLOW_CONNECTION_DEFINITION__DECLARED_SHORT_NAME:
+      case SysMLOCPackage.FLOW_DEFINITION__DECLARED_SHORT_NAME:
         return DECLARED_SHORT_NAME_EDEFAULT == null ? declaredShortName != null : !DECLARED_SHORT_NAME_EDEFAULT.equals(declaredShortName);
-      case SysMLOCPackage.FLOW_CONNECTION_DEFINITION__DECLARED_NAME:
+      case SysMLOCPackage.FLOW_DEFINITION__DECLARED_NAME:
         return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
-      case SysMLOCPackage.FLOW_CONNECTION_DEFINITION__SUPERCLASSIFIERS:
+      case SysMLOCPackage.FLOW_DEFINITION__SUPERCLASSIFIERS:
         return superclassifiers != null && !superclassifiers.isEmpty();
-      case SysMLOCPackage.FLOW_CONNECTION_DEFINITION__ELEMENTS:
+      case SysMLOCPackage.FLOW_DEFINITION__ELEMENTS:
         return elements != null && !elements.isEmpty();
     }
     return super.eIsSet(featureID);
@@ -615,8 +615,8 @@ public class FlowConnectionDefinitionImpl extends DefinitionElementImpl implemen
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.FLOW_CONNECTION_DEFINITION__VISIBILITY: return SysMLOCPackage.MEMBER_PREFIX__VISIBILITY;
-        case SysMLOCPackage.FLOW_CONNECTION_DEFINITION__IS_VARIANT: return SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT;
+        case SysMLOCPackage.FLOW_DEFINITION__VISIBILITY: return SysMLOCPackage.MEMBER_PREFIX__VISIBILITY;
+        case SysMLOCPackage.FLOW_DEFINITION__IS_VARIANT: return SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT;
         default: return -1;
       }
     }
@@ -624,8 +624,8 @@ public class FlowConnectionDefinitionImpl extends DefinitionElementImpl implemen
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.FLOW_CONNECTION_DEFINITION__IS_ABSTRACT: return SysMLOCPackage.BASIC_DEFINITION_PREFIX__IS_ABSTRACT;
-        case SysMLOCPackage.FLOW_CONNECTION_DEFINITION__IS_VARIATION: return SysMLOCPackage.BASIC_DEFINITION_PREFIX__IS_VARIATION;
+        case SysMLOCPackage.FLOW_DEFINITION__IS_ABSTRACT: return SysMLOCPackage.BASIC_DEFINITION_PREFIX__IS_ABSTRACT;
+        case SysMLOCPackage.FLOW_DEFINITION__IS_VARIATION: return SysMLOCPackage.BASIC_DEFINITION_PREFIX__IS_VARIATION;
         default: return -1;
       }
     }
@@ -633,7 +633,7 @@ public class FlowConnectionDefinitionImpl extends DefinitionElementImpl implemen
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.FLOW_CONNECTION_DEFINITION__IS_INDIVIDUAL: return SysMLOCPackage.OCCURRENCE_DEFINITION_PREFIX__IS_INDIVIDUAL;
+        case SysMLOCPackage.FLOW_DEFINITION__IS_INDIVIDUAL: return SysMLOCPackage.OCCURRENCE_DEFINITION_PREFIX__IS_INDIVIDUAL;
         default: return -1;
       }
     }
@@ -641,8 +641,8 @@ public class FlowConnectionDefinitionImpl extends DefinitionElementImpl implemen
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.FLOW_CONNECTION_DEFINITION__DECLARED_SHORT_NAME: return SysMLOCPackage.IDENTIFICATION__DECLARED_SHORT_NAME;
-        case SysMLOCPackage.FLOW_CONNECTION_DEFINITION__DECLARED_NAME: return SysMLOCPackage.IDENTIFICATION__DECLARED_NAME;
+        case SysMLOCPackage.FLOW_DEFINITION__DECLARED_SHORT_NAME: return SysMLOCPackage.IDENTIFICATION__DECLARED_SHORT_NAME;
+        case SysMLOCPackage.FLOW_DEFINITION__DECLARED_NAME: return SysMLOCPackage.IDENTIFICATION__DECLARED_NAME;
         default: return -1;
       }
     }
@@ -650,7 +650,7 @@ public class FlowConnectionDefinitionImpl extends DefinitionElementImpl implemen
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.FLOW_CONNECTION_DEFINITION__SUPERCLASSIFIERS: return SysMLOCPackage.DEFINITION_DECLARATION__SUPERCLASSIFIERS;
+        case SysMLOCPackage.FLOW_DEFINITION__SUPERCLASSIFIERS: return SysMLOCPackage.DEFINITION_DECLARATION__SUPERCLASSIFIERS;
         default: return -1;
       }
     }
@@ -669,8 +669,8 @@ public class FlowConnectionDefinitionImpl extends DefinitionElementImpl implemen
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.MEMBER_PREFIX__VISIBILITY: return SysMLOCPackage.FLOW_CONNECTION_DEFINITION__VISIBILITY;
-        case SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT: return SysMLOCPackage.FLOW_CONNECTION_DEFINITION__IS_VARIANT;
+        case SysMLOCPackage.MEMBER_PREFIX__VISIBILITY: return SysMLOCPackage.FLOW_DEFINITION__VISIBILITY;
+        case SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT: return SysMLOCPackage.FLOW_DEFINITION__IS_VARIANT;
         default: return -1;
       }
     }
@@ -678,8 +678,8 @@ public class FlowConnectionDefinitionImpl extends DefinitionElementImpl implemen
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.BASIC_DEFINITION_PREFIX__IS_ABSTRACT: return SysMLOCPackage.FLOW_CONNECTION_DEFINITION__IS_ABSTRACT;
-        case SysMLOCPackage.BASIC_DEFINITION_PREFIX__IS_VARIATION: return SysMLOCPackage.FLOW_CONNECTION_DEFINITION__IS_VARIATION;
+        case SysMLOCPackage.BASIC_DEFINITION_PREFIX__IS_ABSTRACT: return SysMLOCPackage.FLOW_DEFINITION__IS_ABSTRACT;
+        case SysMLOCPackage.BASIC_DEFINITION_PREFIX__IS_VARIATION: return SysMLOCPackage.FLOW_DEFINITION__IS_VARIATION;
         default: return -1;
       }
     }
@@ -687,7 +687,7 @@ public class FlowConnectionDefinitionImpl extends DefinitionElementImpl implemen
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.OCCURRENCE_DEFINITION_PREFIX__IS_INDIVIDUAL: return SysMLOCPackage.FLOW_CONNECTION_DEFINITION__IS_INDIVIDUAL;
+        case SysMLOCPackage.OCCURRENCE_DEFINITION_PREFIX__IS_INDIVIDUAL: return SysMLOCPackage.FLOW_DEFINITION__IS_INDIVIDUAL;
         default: return -1;
       }
     }
@@ -695,8 +695,8 @@ public class FlowConnectionDefinitionImpl extends DefinitionElementImpl implemen
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.IDENTIFICATION__DECLARED_SHORT_NAME: return SysMLOCPackage.FLOW_CONNECTION_DEFINITION__DECLARED_SHORT_NAME;
-        case SysMLOCPackage.IDENTIFICATION__DECLARED_NAME: return SysMLOCPackage.FLOW_CONNECTION_DEFINITION__DECLARED_NAME;
+        case SysMLOCPackage.IDENTIFICATION__DECLARED_SHORT_NAME: return SysMLOCPackage.FLOW_DEFINITION__DECLARED_SHORT_NAME;
+        case SysMLOCPackage.IDENTIFICATION__DECLARED_NAME: return SysMLOCPackage.FLOW_DEFINITION__DECLARED_NAME;
         default: return -1;
       }
     }
@@ -704,7 +704,7 @@ public class FlowConnectionDefinitionImpl extends DefinitionElementImpl implemen
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.DEFINITION_DECLARATION__SUPERCLASSIFIERS: return SysMLOCPackage.FLOW_CONNECTION_DEFINITION__SUPERCLASSIFIERS;
+        case SysMLOCPackage.DEFINITION_DECLARATION__SUPERCLASSIFIERS: return SysMLOCPackage.FLOW_DEFINITION__SUPERCLASSIFIERS;
         default: return -1;
       }
     }
@@ -742,4 +742,4 @@ public class FlowConnectionDefinitionImpl extends DefinitionElementImpl implemen
     return result.toString();
   }
 
-} //FlowConnectionDefinitionImpl
+} //FlowDefinitionImpl

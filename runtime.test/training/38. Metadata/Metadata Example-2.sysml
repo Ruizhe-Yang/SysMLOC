@@ -6,6 +6,7 @@ package 'Metadata Example-2' {
 		metadata ToolExecution {
 			toolName = "ModelCenter";
 			uri = "aserv://localhost/Vehicle/Equation1";
+			:>> a :a=a;
 		}
 			
 		in dt : ISQ::TimeValue             { @ToolVariable { name = "deltaT"; } }

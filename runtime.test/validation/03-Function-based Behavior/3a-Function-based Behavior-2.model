@@ -77,21 +77,21 @@
             <valuePart>'provide power'::fuelCmd</valuePart>
           </elements>
         </elements>
-        <elements xsi:type="sysMLOC:FlowConnectionUsage">
+        <elements xsi:type="sysMLOC:FlowUsage">
           <FlowEnd>'generate torque'.engineTorque</FlowEnd>
           <FlowEnd>'amplify torque'.engineTorque</FlowEnd>
         </elements>
         <elements xsi:type="sysMLOC:ActionUsage" declaredName="'amplify torque'">
           <typings>'Amplify Torque'</typings>
         </elements>
-        <elements xsi:type="sysMLOC:FlowConnectionUsage">
+        <elements xsi:type="sysMLOC:FlowUsage">
           <FlowEnd>'amplify torque'.transmissionTorque</FlowEnd>
           <FlowEnd>'transfer torque'.transmissionTorque</FlowEnd>
         </elements>
         <elements xsi:type="sysMLOC:ActionUsage" declaredName="'transfer torque'">
           <typings>'Transfer Torque'</typings>
         </elements>
-        <elements xsi:type="sysMLOC:FlowConnectionUsage">
+        <elements xsi:type="sysMLOC:FlowUsage">
           <FlowEnd>'transfer torque'.driveshaftTorque</FlowEnd>
           <FlowEnd>'distribute torque'.driveShaftTorque</FlowEnd>
         </elements>

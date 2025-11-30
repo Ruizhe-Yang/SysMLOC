@@ -6,7 +6,6 @@ package dut.control.sysmloc.sysMLOC.impl;
 import dut.control.sysmloc.sysMLOC.AliasElement;
 import dut.control.sysmloc.sysMLOC.AnnotatingBodyElement;
 import dut.control.sysmloc.sysMLOC.MemberPrefix;
-import dut.control.sysmloc.sysMLOC.MetadataBodyElement;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 import dut.control.sysmloc.sysMLOC.VisibilityIndicator;
 
@@ -458,13 +457,6 @@ public class AliasElementImpl extends GeneralBodyElementsImpl implements AliasEl
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
   {
-    if (baseClass == MetadataBodyElement.class)
-    {
-      switch (derivedFeatureID)
-      {
-        default: return -1;
-      }
-    }
     if (baseClass == MemberPrefix.class)
     {
       switch (derivedFeatureID)
@@ -485,13 +477,6 @@ public class AliasElementImpl extends GeneralBodyElementsImpl implements AliasEl
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
   {
-    if (baseClass == MetadataBodyElement.class)
-    {
-      switch (baseFeatureID)
-      {
-        default: return -1;
-      }
-    }
     if (baseClass == MemberPrefix.class)
     {
       switch (baseFeatureID)

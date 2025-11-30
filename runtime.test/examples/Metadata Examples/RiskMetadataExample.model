@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="RiskMetadataExample">
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="RiskMetadata" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="RiskLevelEnum" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="engine4cyl">
+      <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="Risk">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="totalRisk">
+          <valuePart>high</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="technicalRisk">
+          <valuePart>medium</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="scheduleRisk">
+          <valuePart>medium</valuePart>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="Risk">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="totalRisk">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="probability">
+            <valuePart>0.3</valuePart>
+          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="impact">
+            <valuePart>0.7</valuePart>
+          </elements>
+        </elements>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

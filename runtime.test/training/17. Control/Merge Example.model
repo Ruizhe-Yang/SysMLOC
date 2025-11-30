@@ -35,7 +35,7 @@
           <typings>Scene</typings>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:FlowConnectionUsage">
+      <elements xsi:type="sysMLOC:FlowUsage">
         <FlowEnd>trigger.scene</FlowEnd>
         <FlowEnd>focus.scene</FlowEnd>
       </elements>
@@ -44,7 +44,7 @@
         <elements xsi:type="sysMLOC:ItemUsage" direction="in" declaredName="scene"/>
         <elements xsi:type="sysMLOC:ItemUsage" direction="out" declaredName="image"/>
       </elements>
-      <elements xsi:type="sysMLOC:FlowConnectionUsage">
+      <elements xsi:type="sysMLOC:FlowUsage">
         <FlowEnd>focus.image</FlowEnd>
         <FlowEnd>shoot.image</FlowEnd>
       </elements>
@@ -53,7 +53,7 @@
         <elements xsi:type="sysMLOC:ItemUsage" direction="in" declaredName="image"/>
         <elements xsi:type="sysMLOC:ItemUsage" direction="out" declaredName="picture"/>
       </elements>
-      <elements xsi:type="sysMLOC:FlowConnectionUsage">
+      <elements xsi:type="sysMLOC:FlowUsage">
         <FlowEnd>shoot.picture</FlowEnd>
         <FlowEnd>display.picture</FlowEnd>
       </elements>

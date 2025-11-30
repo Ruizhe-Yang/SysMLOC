@@ -61,7 +61,7 @@ public interface MetadataUsage extends AnnotatingElement, UsageExtensionKeyword,
 
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
-   * The list contents are of type {@link dut.control.sysmloc.sysMLOC.MetadataBodyElement}.
+   * The list contents are of type {@link dut.control.sysmloc.sysMLOC.GeneralBodyElements}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Elements</em>' containment reference list.
@@ -69,6 +69,6 @@ public interface MetadataUsage extends AnnotatingElement, UsageExtensionKeyword,
    * @model containment="true"
    * @generated
    */
-  EList<MetadataBodyElement> getElements();
+  EList<GeneralBodyElements> getElements();
 
 } // MetadataUsage

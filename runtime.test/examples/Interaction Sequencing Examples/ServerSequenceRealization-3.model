@@ -55,7 +55,7 @@
             </elements>
           </elements>
         </elements>
-        <elements xsi:type="sysMLOC:FlowConnectionUsage" declaredName="publish_request">
+        <elements xsi:type="sysMLOC:FlowUsage" declaredName="publish_request">
           <FlowEnd>producerBehavior.publish.request</FlowEnd>
           <FlowEnd>publicationPort.publish</FlowEnd>
         </elements>
@@ -64,7 +64,7 @@
         <typings>PublicationInterface</typings>
         <connectorPart refElement="producer_3.publicationPort"/>
         <connectorPart refElement="server_3.publicationPort"/>
-        <elements xsi:type="sysMLOC:FlowConnectionUsage" declaredName="publish_request">
+        <elements xsi:type="sysMLOC:FlowUsage" declaredName="publish_request">
           <FlowEnd>publication_interface.source.publish</FlowEnd>
           <FlowEnd>publication_interface.target.publish</FlowEnd>
         </elements>
@@ -86,15 +86,15 @@
             <redefinitions>deliver</redefinitions>
           </elements>
         </elements>
-        <elements xsi:type="sysMLOC:FlowConnectionUsage" declaredName="subscribe_request">
+        <elements xsi:type="sysMLOC:FlowUsage" declaredName="subscribe_request">
           <FlowEnd>subscriptionPort.subscribe</FlowEnd>
           <FlowEnd>serverBehavior.subscribing.request</FlowEnd>
         </elements>
-        <elements xsi:type="sysMLOC:FlowConnectionUsage" declaredName="publish_request">
+        <elements xsi:type="sysMLOC:FlowUsage" declaredName="publish_request">
           <FlowEnd>publicationPort.publish</FlowEnd>
           <FlowEnd>serverBehavior.publishing.request</FlowEnd>
         </elements>
-        <elements xsi:type="sysMLOC:FlowConnectionUsage" declaredName="deliver_response">
+        <elements xsi:type="sysMLOC:FlowUsage" declaredName="deliver_response">
           <FlowEnd>serverBehavior.delivering.response</FlowEnd>
           <FlowEnd>subscriptionPort.deliver</FlowEnd>
         </elements>
@@ -156,11 +156,11 @@
         <typings>SubscriptionInterface</typings>
         <connectorPart refElement="consumer_3.subscriptionPort"/>
         <connectorPart refElement="server_3.subscriptionPort"/>
-        <elements xsi:type="sysMLOC:FlowConnectionUsage" declaredName="subscribe_request">
+        <elements xsi:type="sysMLOC:FlowUsage" declaredName="subscribe_request">
           <FlowEnd>subscription_interface.source.subscribe</FlowEnd>
           <FlowEnd>subscription_interface.target.subscribe</FlowEnd>
         </elements>
-        <elements xsi:type="sysMLOC:FlowConnectionUsage" declaredName="deliver_response">
+        <elements xsi:type="sysMLOC:FlowUsage" declaredName="deliver_response">
           <FlowEnd>subscription_interface.target.deliver</FlowEnd>
           <FlowEnd>subscription_interface.source.deliver</FlowEnd>
         </elements>
@@ -179,11 +179,11 @@
             <redefinitions>deliver</redefinitions>
           </elements>
         </elements>
-        <elements xsi:type="sysMLOC:FlowConnectionUsage" declaredName="subscribe_request">
+        <elements xsi:type="sysMLOC:FlowUsage" declaredName="subscribe_request">
           <FlowEnd>consumerBehavior.subscribe.request</FlowEnd>
           <FlowEnd>subscriptionPort.subscribe</FlowEnd>
         </elements>
-        <elements xsi:type="sysMLOC:FlowConnectionUsage" declaredName="deliver_response">
+        <elements xsi:type="sysMLOC:FlowUsage" declaredName="deliver_response">
           <FlowEnd>subscriptionPort.deliver</FlowEnd>
           <FlowEnd>consumerBehavior.delivery.response</FlowEnd>
         </elements>
@@ -240,7 +240,7 @@
           <Multiplicity>1</Multiplicity>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:FlowConnectionUsage">
+      <elements xsi:type="sysMLOC:FlowUsage">
         <redefinitions>publish_message</redefinitions>
         <FlowEnd>producer.producerBehavior.publish.request</FlowEnd>
         <FlowEnd>server.serverBehavior.publishing.request</FlowEnd>
@@ -254,7 +254,7 @@
           <Multiplicity>1</Multiplicity>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:FlowConnectionUsage">
+      <elements xsi:type="sysMLOC:FlowUsage">
         <redefinitions>subscribe_message</redefinitions>
         <FlowEnd>consumer.consumerBehavior.subscribe.request</FlowEnd>
         <FlowEnd>server.serverBehavior.subscribing.request</FlowEnd>
@@ -268,7 +268,7 @@
           <Multiplicity>1</Multiplicity>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:FlowConnectionUsage">
+      <elements xsi:type="sysMLOC:FlowUsage">
         <redefinitions>deliver_message</redefinitions>
         <FlowEnd>server.serverBehavior.delivering.response</FlowEnd>
         <FlowEnd>consumer.consumerBehavior.delivery.response</FlowEnd>

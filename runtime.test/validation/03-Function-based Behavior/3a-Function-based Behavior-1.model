@@ -81,7 +81,7 @@
           <typings>'Generate Torque'</typings>
           <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9;&#x9; * An action usage inherits parameters from its definition.&#xA;&#x9;&#x9;&#x9;&#x9; * They act as its &quot;pins&quot;.&#xA;&#x9;&#x9;&#x9;&#x9; */"/>
         </elements>
-        <elements xsi:type="sysMLOC:FlowConnectionUsage">
+        <elements xsi:type="sysMLOC:FlowUsage">
           <FlowEnd>'generate torque'.engineTorque</FlowEnd>
           <FlowEnd>'amplify torque'.engineTorque</FlowEnd>
           <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9;&#x9; * A flow is a connection between two actions that streams items from&#xA;&#x9;&#x9;&#x9;&#x9; * an output parameter of one action to an input parameter of the other.&#xA;&#x9;&#x9;&#x9;&#x9; * Note that streaming is a property of the connection, not the&#xA;&#x9;&#x9;&#x9;&#x9; * actions or their parameters.&#xA;&#x9;&#x9;&#x9;&#x9; */"/>
@@ -89,14 +89,14 @@
         <elements xsi:type="sysMLOC:ActionUsage" declaredName="'amplify torque'">
           <typings>'Amplify Torque'</typings>
         </elements>
-        <elements xsi:type="sysMLOC:FlowConnectionUsage">
+        <elements xsi:type="sysMLOC:FlowUsage">
           <FlowEnd>'amplify torque'.transmissionTorque</FlowEnd>
           <FlowEnd>'transfer torque'.transmissionTorque</FlowEnd>
         </elements>
         <elements xsi:type="sysMLOC:ActionUsage" declaredName="'transfer torque'">
           <typings>'Transfer Torque'</typings>
         </elements>
-        <elements xsi:type="sysMLOC:FlowConnectionUsage">
+        <elements xsi:type="sysMLOC:FlowUsage">
           <FlowEnd>'transfer torque'.driveshaftTorque</FlowEnd>
           <FlowEnd>'distribute torque'.driveShaftTorque</FlowEnd>
         </elements>
