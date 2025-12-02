@@ -20,7 +20,7 @@ package dut.control.sysmloc.sysMLOC;
  * @model
  * @generated
  */
-public interface OccurrenceDefinitionPrefix extends BasicDefinitionPrefix
+public interface OccurrenceDefinitionPrefix extends BasicDefinitionPrefix, DefinitionExtensionKeyword
 {
   /**
    * Returns the value of the '<em><b>Is Individual</b></em>' attribute.

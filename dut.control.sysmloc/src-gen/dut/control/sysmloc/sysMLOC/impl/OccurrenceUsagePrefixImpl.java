@@ -5,13 +5,21 @@ package dut.control.sysmloc.sysMLOC.impl;
 
 import dut.control.sysmloc.sysMLOC.OccurrenceUsagePrefix;
 import dut.control.sysmloc.sysMLOC.PortionKind;
+import dut.control.sysmloc.sysMLOC.PrefixMetadata;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
+import dut.control.sysmloc.sysMLOC.UsageExtensionKeyword;
+
+import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,6 +29,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.OccurrenceUsagePrefixImpl#getPrefixMetadataExtension <em>Prefix Metadata Extension</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.OccurrenceUsagePrefixImpl#isIsEnd <em>Is End</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.OccurrenceUsagePrefixImpl#isIsIndividual <em>Is Individual</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.OccurrenceUsagePrefixImpl#getPortionKind <em>Portion Kind</em>}</li>
@@ -30,6 +39,16 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class OccurrenceUsagePrefixImpl extends BasicUsagePrefixImpl implements OccurrenceUsagePrefix
 {
+  /**
+   * The cached value of the '{@link #getPrefixMetadataExtension() <em>Prefix Metadata Extension</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPrefixMetadataExtension()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> prefixMetadataExtension;
+
   /**
    * The default value of the '{@link #isIsEnd() <em>Is End</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -117,6 +136,21 @@ public class OccurrenceUsagePrefixImpl extends BasicUsagePrefixImpl implements O
    * @generated
    */
   @Override
+  public EList<String> getPrefixMetadataExtension()
+  {
+    if (prefixMetadataExtension == null)
+    {
+      prefixMetadataExtension = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__PREFIX_METADATA_EXTENSION);
+    }
+    return prefixMetadataExtension;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public boolean isIsEnd()
   {
     return isEnd;
@@ -196,6 +230,8 @@ public class OccurrenceUsagePrefixImpl extends BasicUsagePrefixImpl implements O
   {
     switch (featureID)
     {
+      case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__PREFIX_METADATA_EXTENSION:
+        return getPrefixMetadataExtension();
       case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_END:
         return isIsEnd();
       case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_INDIVIDUAL:
@@ -211,11 +247,16 @@ public class OccurrenceUsagePrefixImpl extends BasicUsagePrefixImpl implements O
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
+      case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__PREFIX_METADATA_EXTENSION:
+        getPrefixMetadataExtension().clear();
+        getPrefixMetadataExtension().addAll((Collection<? extends String>)newValue);
+        return;
       case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_END:
         setIsEnd((Boolean)newValue);
         return;
@@ -239,6 +280,9 @@ public class OccurrenceUsagePrefixImpl extends BasicUsagePrefixImpl implements O
   {
     switch (featureID)
     {
+      case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__PREFIX_METADATA_EXTENSION:
+        getPrefixMetadataExtension().clear();
+        return;
       case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_END:
         setIsEnd(IS_END_EDEFAULT);
         return;
@@ -262,6 +306,8 @@ public class OccurrenceUsagePrefixImpl extends BasicUsagePrefixImpl implements O
   {
     switch (featureID)
     {
+      case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__PREFIX_METADATA_EXTENSION:
+        return prefixMetadataExtension != null && !prefixMetadataExtension.isEmpty();
       case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_END:
         return isEnd != IS_END_EDEFAULT;
       case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_INDIVIDUAL:
@@ -278,12 +324,66 @@ public class OccurrenceUsagePrefixImpl extends BasicUsagePrefixImpl implements O
    * @generated
    */
   @Override
+  public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == PrefixMetadata.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__PREFIX_METADATA_EXTENSION: return SysMLOCPackage.PREFIX_METADATA__PREFIX_METADATA_EXTENSION;
+        default: return -1;
+      }
+    }
+    if (baseClass == UsageExtensionKeyword.class)
+    {
+      switch (derivedFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == PrefixMetadata.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.PREFIX_METADATA__PREFIX_METADATA_EXTENSION: return SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__PREFIX_METADATA_EXTENSION;
+        default: return -1;
+      }
+    }
+    if (baseClass == UsageExtensionKeyword.class)
+    {
+      switch (baseFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public String toString()
   {
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (isEnd: ");
+    result.append(" (prefixMetadataExtension: ");
+    result.append(prefixMetadataExtension);
+    result.append(", isEnd: ");
     result.append(isEnd);
     result.append(", isIndividual: ");
     result.append(isIndividual);

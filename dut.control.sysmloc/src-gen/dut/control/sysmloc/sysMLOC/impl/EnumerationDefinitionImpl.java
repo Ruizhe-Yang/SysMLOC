@@ -4,10 +4,12 @@
 package dut.control.sysmloc.sysMLOC.impl;
 
 import dut.control.sysmloc.sysMLOC.DefinitionDeclaration;
+import dut.control.sysmloc.sysMLOC.DefinitionExtensionKeyword;
 import dut.control.sysmloc.sysMLOC.EnumerationBodyElement;
 import dut.control.sysmloc.sysMLOC.EnumerationDefinition;
 import dut.control.sysmloc.sysMLOC.Identification;
 import dut.control.sysmloc.sysMLOC.MemberPrefix;
+import dut.control.sysmloc.sysMLOC.PrefixMetadata;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 import dut.control.sysmloc.sysMLOC.VisibilityIndicator;
 
@@ -37,6 +39,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EnumerationDefinitionImpl#getVisibility <em>Visibility</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EnumerationDefinitionImpl#isIsVariant <em>Is Variant</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EnumerationDefinitionImpl#getPrefixMetadataExtension <em>Prefix Metadata Extension</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EnumerationDefinitionImpl#getDeclaredShortName <em>Declared Short Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EnumerationDefinitionImpl#getDeclaredName <em>Declared Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EnumerationDefinitionImpl#getSuperclassifiers <em>Superclassifiers</em>}</li>
@@ -86,6 +89,16 @@ public class EnumerationDefinitionImpl extends DefinitionElementImpl implements 
    * @ordered
    */
   protected boolean isVariant = IS_VARIANT_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getPrefixMetadataExtension() <em>Prefix Metadata Extension</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPrefixMetadataExtension()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> prefixMetadataExtension;
 
   /**
    * The default value of the '{@link #getDeclaredShortName() <em>Declared Short Name</em>}' attribute.
@@ -224,6 +237,21 @@ public class EnumerationDefinitionImpl extends DefinitionElementImpl implements 
    * @generated
    */
   @Override
+  public EList<String> getPrefixMetadataExtension()
+  {
+    if (prefixMetadataExtension == null)
+    {
+      prefixMetadataExtension = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.ENUMERATION_DEFINITION__PREFIX_METADATA_EXTENSION);
+    }
+    return prefixMetadataExtension;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public String getDeclaredShortName()
   {
     return declaredShortName;
@@ -328,6 +356,8 @@ public class EnumerationDefinitionImpl extends DefinitionElementImpl implements 
         return getVisibility();
       case SysMLOCPackage.ENUMERATION_DEFINITION__IS_VARIANT:
         return isIsVariant();
+      case SysMLOCPackage.ENUMERATION_DEFINITION__PREFIX_METADATA_EXTENSION:
+        return getPrefixMetadataExtension();
       case SysMLOCPackage.ENUMERATION_DEFINITION__DECLARED_SHORT_NAME:
         return getDeclaredShortName();
       case SysMLOCPackage.ENUMERATION_DEFINITION__DECLARED_NAME:
@@ -356,6 +386,10 @@ public class EnumerationDefinitionImpl extends DefinitionElementImpl implements 
         return;
       case SysMLOCPackage.ENUMERATION_DEFINITION__IS_VARIANT:
         setIsVariant((Boolean)newValue);
+        return;
+      case SysMLOCPackage.ENUMERATION_DEFINITION__PREFIX_METADATA_EXTENSION:
+        getPrefixMetadataExtension().clear();
+        getPrefixMetadataExtension().addAll((Collection<? extends String>)newValue);
         return;
       case SysMLOCPackage.ENUMERATION_DEFINITION__DECLARED_SHORT_NAME:
         setDeclaredShortName((String)newValue);
@@ -391,6 +425,9 @@ public class EnumerationDefinitionImpl extends DefinitionElementImpl implements 
       case SysMLOCPackage.ENUMERATION_DEFINITION__IS_VARIANT:
         setIsVariant(IS_VARIANT_EDEFAULT);
         return;
+      case SysMLOCPackage.ENUMERATION_DEFINITION__PREFIX_METADATA_EXTENSION:
+        getPrefixMetadataExtension().clear();
+        return;
       case SysMLOCPackage.ENUMERATION_DEFINITION__DECLARED_SHORT_NAME:
         setDeclaredShortName(DECLARED_SHORT_NAME_EDEFAULT);
         return;
@@ -421,6 +458,8 @@ public class EnumerationDefinitionImpl extends DefinitionElementImpl implements 
         return visibility != VISIBILITY_EDEFAULT;
       case SysMLOCPackage.ENUMERATION_DEFINITION__IS_VARIANT:
         return isVariant != IS_VARIANT_EDEFAULT;
+      case SysMLOCPackage.ENUMERATION_DEFINITION__PREFIX_METADATA_EXTENSION:
+        return prefixMetadataExtension != null && !prefixMetadataExtension.isEmpty();
       case SysMLOCPackage.ENUMERATION_DEFINITION__DECLARED_SHORT_NAME:
         return DECLARED_SHORT_NAME_EDEFAULT == null ? declaredShortName != null : !DECLARED_SHORT_NAME_EDEFAULT.equals(declaredShortName);
       case SysMLOCPackage.ENUMERATION_DEFINITION__DECLARED_NAME:
@@ -447,6 +486,21 @@ public class EnumerationDefinitionImpl extends DefinitionElementImpl implements 
       {
         case SysMLOCPackage.ENUMERATION_DEFINITION__VISIBILITY: return SysMLOCPackage.MEMBER_PREFIX__VISIBILITY;
         case SysMLOCPackage.ENUMERATION_DEFINITION__IS_VARIANT: return SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT;
+        default: return -1;
+      }
+    }
+    if (baseClass == PrefixMetadata.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.ENUMERATION_DEFINITION__PREFIX_METADATA_EXTENSION: return SysMLOCPackage.PREFIX_METADATA__PREFIX_METADATA_EXTENSION;
+        default: return -1;
+      }
+    }
+    if (baseClass == DefinitionExtensionKeyword.class)
+    {
+      switch (derivedFeatureID)
+      {
         default: return -1;
       }
     }
@@ -487,6 +541,21 @@ public class EnumerationDefinitionImpl extends DefinitionElementImpl implements 
         default: return -1;
       }
     }
+    if (baseClass == PrefixMetadata.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.PREFIX_METADATA__PREFIX_METADATA_EXTENSION: return SysMLOCPackage.ENUMERATION_DEFINITION__PREFIX_METADATA_EXTENSION;
+        default: return -1;
+      }
+    }
+    if (baseClass == DefinitionExtensionKeyword.class)
+    {
+      switch (baseFeatureID)
+      {
+        default: return -1;
+      }
+    }
     if (baseClass == Identification.class)
     {
       switch (baseFeatureID)
@@ -522,6 +591,8 @@ public class EnumerationDefinitionImpl extends DefinitionElementImpl implements 
     result.append(visibility);
     result.append(", isVariant: ");
     result.append(isVariant);
+    result.append(", prefixMetadataExtension: ");
+    result.append(prefixMetadataExtension);
     result.append(", declaredShortName: ");
     result.append(declaredShortName);
     result.append(", declaredName: ");

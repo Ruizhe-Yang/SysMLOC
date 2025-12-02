@@ -78,6 +78,7 @@ import dut.control.sysmloc.sysMLOC.ExhibitStateUsage;
 import dut.control.sysmloc.sysMLOC.ExitActionNode;
 import dut.control.sysmloc.sysMLOC.ExposeElement;
 import dut.control.sysmloc.sysMLOC.ExtendedDefinition;
+import dut.control.sysmloc.sysMLOC.ExtendedUsage;
 import dut.control.sysmloc.sysMLOC.FeatureDeclaration;
 import dut.control.sysmloc.sysMLOC.FeatureDirection;
 import dut.control.sysmloc.sysMLOC.FeatureSpecialization;
@@ -297,6 +298,7 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
       case SysMLOCPackage.METADATA_USAGE: return createMetadataUsage();
       case SysMLOCPackage.ELEMENT_FILTER_ELEMENT: return createElementFilterElement();
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE: return createDefaultReferenceUsage();
+      case SysMLOCPackage.EXTENDED_USAGE: return createExtendedUsage();
       case SysMLOCPackage.REFERENCE_VARIANT_USAGE: return createReferenceVariantUsage();
       case SysMLOCPackage.REFERENCE_USAGE: return createReferenceUsage();
       case SysMLOCPackage.LIBRARY_PACKAGE: return createLibraryPackage();
@@ -949,6 +951,18 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
   {
     DefaultReferenceUsageImpl defaultReferenceUsage = new DefaultReferenceUsageImpl();
     return defaultReferenceUsage;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ExtendedUsage createExtendedUsage()
+  {
+    ExtendedUsageImpl extendedUsage = new ExtendedUsageImpl();
+    return extendedUsage;
   }
 
   /**

@@ -357,6 +357,15 @@ public interface SysMLOCFactory extends EFactory
   DefaultReferenceUsage createDefaultReferenceUsage();
 
   /**
+   * Returns a new object of class '<em>Extended Usage</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Extended Usage</em>'.
+   * @generated
+   */
+  ExtendedUsage createExtendedUsage();
+
+  /**
    * Returns a new object of class '<em>Reference Variant Usage</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

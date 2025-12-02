@@ -23,7 +23,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface SatisfyRequirementUsage extends BehaviorUsageElement, GeneralUsagePrefix, EmptySuccessionPrefix, MemberPrefix, isReturnPrefix, OccurrenceUsagePrefix, BasicUsagePrefix, RefPrefix, BasicDefinitionPrefix, ReferenceSubsetting, FeatureSpecializationPart, FeatureSpecialization, TypingFeatureTyping, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, MultiplicityPart, MultiplicityRange, UsageDeclaration, FeatureDeclaration, Identification, ValuePart, FeatureValue
+public interface SatisfyRequirementUsage extends BehaviorUsageElement, GeneralUsagePrefix, EmptySuccessionPrefix, MemberPrefix, isReturnPrefix, OccurrenceUsagePrefix, BasicUsagePrefix, RefPrefix, BasicDefinitionPrefix, UsageExtensionKeyword, PrefixMetadata, ReferenceSubsetting, FeatureSpecializationPart, FeatureSpecialization, TypingFeatureTyping, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, MultiplicityPart, MultiplicityRange, UsageDeclaration, FeatureDeclaration, Identification, ValuePart, FeatureValue
 {
   /**
    * Returns the value of the '<em><b>Is Negated</b></em>' attribute.

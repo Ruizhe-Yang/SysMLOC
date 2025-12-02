@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface StateDefinition extends DefinitionElement, MemberPrefix, OccurrenceDefinitionPrefix, BasicDefinitionPrefix, DefinitionDeclaration, Identification
+public interface StateDefinition extends DefinitionElement, MemberPrefix, OccurrenceDefinitionPrefix, BasicDefinitionPrefix, DefinitionExtensionKeyword, PrefixMetadata, DefinitionDeclaration, Identification
 {
   /**
    * Returns the value of the '<em><b>Is Parallel</b></em>' attribute.

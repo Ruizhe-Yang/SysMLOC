@@ -169,6 +169,7 @@ NonOccurrenceUsageElement:
 	| EnumerationUsage
 	| BindingConnectorAsUsage
 	| SuccessionAsUsage
+	| ExtendedUsage
 ;
 
 OccurrenceUsageElement:
@@ -296,7 +297,7 @@ TextualRepresentation:
 
 MetadataUsage: 
 	UsageExtensionKeyword*
-	('metadata' | '@')
+	( 'metadata' | '@' )
 	( Identification? (':' | 'defined' 'by'))?
 	metadataTyping=QualifiedName
 	( 'about' annotatedElement+=QualifiedName ( ',' annotatedElement+=QualifiedName)* )?
@@ -322,14 +323,14 @@ DefaultReferenceUsage:
     ( ';' | '{' (elements+=UsageBodyElement)* '}' )
 ;
 
-//ExtendedUsage:
-//	GeneralUsagePrefix
-//	UnextendedUsagePrefix
-//	UsageExtensionKeyword+ 
-//	Usage
-//	( ';' | '{' (elements+=UsageBodyElement)* '}' )
-//;
-//
+ExtendedUsage:
+	GeneralUsagePrefix
+	UnextendedUsagePrefix
+	UsageExtensionKeyword+ 
+	Usage
+	( ';' | '{' (elements+=UsageBodyElement)* '}' )
+;
+
 //CompositeReferenceUsage:
 //    GeneralUsagePrefix
 //    ( isEnd ?= 'end' )?
@@ -357,8 +358,6 @@ ReferenceUsage:
     Usage
     ( ';' | '{' (elements+=UsageBodyElement)* '}' )
 ;
-
-
 
 LibraryPackage:
 	( isStandard ?= 'standard' )? 
@@ -397,7 +396,7 @@ AttributeUsage:
 
 EnumerationDefinition:
 	MemberPrefix
-//	DefinitionExtensionKeyword*
+	DefinitionExtensionKeyword*
 	'enum' 'def' 
 	DefinitionDeclaration
 	(';' | '{' (elements+=EnumerationBodyElement)* '}')
@@ -527,7 +526,7 @@ PartDefinition:
 
 PartUsage:
 	GeneralUsagePrefix
-    OccurrenceUsagePrefix 
+    OccurrenceUsagePrefix
     'part' 
     Usage 
     ( ';' | '{' (elements+=UsageBodyElement)* '}' )
@@ -864,7 +863,6 @@ RenderingUsage:
 ExtendedDefinition:
 	MemberPrefix
 	BasicDefinitionPrefix?
-//	'#' prefixMetadataExtension+=QualifiedName
 	PrefixMetadata+
 	'def'
 	DefinitionDeclaration
@@ -1183,8 +1181,14 @@ fragment GeneralUsagePrefix:
 ;
 
 fragment PrefixMetadata:
-	'#' prefixMetadataExtension += QualifiedName
+//	'#' prefixMetadataExtension += QualifiedName
+//	prefixMetadataExtension += PrefixMetadataName
+	prefixMetadataExtension += PREFIXNAME_
 ;
+
+//PrefixMetadataName:
+//	'#' Qualification
+//;
 
 fragment UsageExtensionKeyword:
 	PrefixMetadata
@@ -1224,7 +1228,7 @@ fragment DefinitionPrefix:
 fragment OccurrenceDefinitionPrefix:
 	BasicDefinitionPrefix?
 	( isIndividual ?= 'individual' )?
-//	DefinitionExtensionKeyword*
+	DefinitionExtensionKeyword*
 ;
 
 fragment BasicDefinitionPrefix:
@@ -1251,13 +1255,13 @@ fragment OccurrenceUsagePrefix:
 	( isEnd ?= 'end'
 	| BasicUsagePrefix
 	  ( isIndividual ?= 'individual' )?
-	  ( portionKind = PortionKind )? )
-//	UsageExtensionKeyword*
+	  ( portionKind = PortionKind )? 
+	)
+	UsageExtensionKeyword*
 ;
 
 fragment RefPrefix:
     ( direction = FeatureDirection )?
-//    ( isAbstract ?= 'abstract' | isVariation ?= 'variation')?
 	BasicDefinitionPrefix?
     ( isReadOnly ?= 'readonly' )?
     ( isDerived ?= 'derived' )?
@@ -1476,6 +1480,7 @@ enum RequirementConstraintKind:
 // TODO --------------------------------- String Level ---------------------------------//
 
 /* NAMES */
+
 Name:
 	ID | UNRESTRICTED_NAME
 ;
@@ -1655,8 +1660,13 @@ InvocationExpression:
 BodyExpression:
 	'{' 
 		('in' Name FeatureSpecializationName* ';')*
+		// False Grammar (to avoid the usage of '( bodyExpressions += CalculationBodyElement)*')
+		// In OMG's tools, BodyExpression was rewritten as a nested format, but in this tool it is treated as a string, which cannot meet all the needs. This time, the original syntax is retained.
 		('in' 'ref' Name FeatureSpecializationName* ';')*
 		('private' FeatureChainName ':' QualifiedName '=' OwnedExpression ';')*
+		('private' 'attribute' FeatureChainName '=' OwnedExpression ';')?
+		('private' 'attribute' FeatureChainName ':' QualifiedName '{' (':>>' FeatureChainName '=' OwnedExpression ';')* '}')?
+		//
 		OwnedExpression
 	'}'
 //	( bodyExpressions += CalculationBodyElement)*
@@ -1719,7 +1729,10 @@ FeatureReferenceExpression:
 ;
 
 // TODO --------------------------------- Terminal Level ---------------------------------//
-	
+
+terminal PREFIXNAME_:
+	'#' ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
+
 terminal DECIMAL_VALUE returns Ecore::EInt:
 	'0'..'9' ('0'..'9')*;
 

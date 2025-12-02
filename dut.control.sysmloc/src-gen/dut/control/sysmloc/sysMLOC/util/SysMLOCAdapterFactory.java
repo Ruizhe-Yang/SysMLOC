@@ -77,6 +77,7 @@ import dut.control.sysmloc.sysMLOC.ExhibitStateUsage;
 import dut.control.sysmloc.sysMLOC.ExitActionNode;
 import dut.control.sysmloc.sysMLOC.ExposeElement;
 import dut.control.sysmloc.sysMLOC.ExtendedDefinition;
+import dut.control.sysmloc.sysMLOC.ExtendedUsage;
 import dut.control.sysmloc.sysMLOC.FeatureDeclaration;
 import dut.control.sysmloc.sysMLOC.FeatureSpecialization;
 import dut.control.sysmloc.sysMLOC.FeatureSpecializationPart;
@@ -446,6 +447,11 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
       public Adapter caseDefaultReferenceUsage(DefaultReferenceUsage object)
       {
         return createDefaultReferenceUsageAdapter();
+      }
+      @Override
+      public Adapter caseExtendedUsage(ExtendedUsage object)
+      {
+        return createExtendedUsageAdapter();
       }
       @Override
       public Adapter caseReferenceVariantUsage(ReferenceVariantUsage object)
@@ -1775,6 +1781,21 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDefaultReferenceUsageAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.ExtendedUsage <em>Extended Usage</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.sysmloc.sysMLOC.ExtendedUsage
+   * @generated
+   */
+  public Adapter createExtendedUsageAdapter()
   {
     return null;
   }

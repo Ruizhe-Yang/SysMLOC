@@ -22,6 +22,7 @@ import dut.control.sysmloc.sysMLOC.MultiplicityRange;
 import dut.control.sysmloc.sysMLOC.OccurrenceUsagePrefix;
 import dut.control.sysmloc.sysMLOC.PayloadParameter;
 import dut.control.sysmloc.sysMLOC.PortionKind;
+import dut.control.sysmloc.sysMLOC.PrefixMetadata;
 import dut.control.sysmloc.sysMLOC.RedefinitionFeatureChain;
 import dut.control.sysmloc.sysMLOC.RefPrefix;
 import dut.control.sysmloc.sysMLOC.ReferenceFeatureChain;
@@ -29,6 +30,7 @@ import dut.control.sysmloc.sysMLOC.SubsettingFeatureChain;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 import dut.control.sysmloc.sysMLOC.TypingFeatureTyping;
 import dut.control.sysmloc.sysMLOC.UsageDeclaration;
+import dut.control.sysmloc.sysMLOC.UsageExtensionKeyword;
 import dut.control.sysmloc.sysMLOC.VisibilityIndicator;
 
 import java.util.Collection;
@@ -65,6 +67,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeImpl#isIsReadOnly <em>Is Read Only</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeImpl#isIsDerived <em>Is Derived</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeImpl#isIsReference <em>Is Reference</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeImpl#getPrefixMetadataExtension <em>Prefix Metadata Extension</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeImpl#isIsEnd <em>Is End</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeImpl#isIsIndividual <em>Is Individual</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AcceptNodeImpl#getPortionKind <em>Portion Kind</em>}</li>
@@ -275,6 +278,16 @@ public class AcceptNodeImpl extends ActionNodeElementsImpl implements AcceptNode
    * @ordered
    */
   protected boolean isReference = IS_REFERENCE_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getPrefixMetadataExtension() <em>Prefix Metadata Extension</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPrefixMetadataExtension()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> prefixMetadataExtension;
 
   /**
    * The default value of the '{@link #isIsEnd() <em>Is End</em>}' attribute.
@@ -763,6 +776,21 @@ public class AcceptNodeImpl extends ActionNodeElementsImpl implements AcceptNode
    * @generated
    */
   @Override
+  public EList<String> getPrefixMetadataExtension()
+  {
+    if (prefixMetadataExtension == null)
+    {
+      prefixMetadataExtension = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.ACCEPT_NODE__PREFIX_METADATA_EXTENSION);
+    }
+    return prefixMetadataExtension;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public boolean isIsEnd()
   {
     return isEnd;
@@ -1100,6 +1128,8 @@ public class AcceptNodeImpl extends ActionNodeElementsImpl implements AcceptNode
         return isIsDerived();
       case SysMLOCPackage.ACCEPT_NODE__IS_REFERENCE:
         return isIsReference();
+      case SysMLOCPackage.ACCEPT_NODE__PREFIX_METADATA_EXTENSION:
+        return getPrefixMetadataExtension();
       case SysMLOCPackage.ACCEPT_NODE__IS_END:
         return isIsEnd();
       case SysMLOCPackage.ACCEPT_NODE__IS_INDIVIDUAL:
@@ -1175,6 +1205,10 @@ public class AcceptNodeImpl extends ActionNodeElementsImpl implements AcceptNode
         return;
       case SysMLOCPackage.ACCEPT_NODE__IS_REFERENCE:
         setIsReference((Boolean)newValue);
+        return;
+      case SysMLOCPackage.ACCEPT_NODE__PREFIX_METADATA_EXTENSION:
+        getPrefixMetadataExtension().clear();
+        getPrefixMetadataExtension().addAll((Collection<? extends String>)newValue);
         return;
       case SysMLOCPackage.ACCEPT_NODE__IS_END:
         setIsEnd((Boolean)newValue);
@@ -1273,6 +1307,9 @@ public class AcceptNodeImpl extends ActionNodeElementsImpl implements AcceptNode
       case SysMLOCPackage.ACCEPT_NODE__IS_REFERENCE:
         setIsReference(IS_REFERENCE_EDEFAULT);
         return;
+      case SysMLOCPackage.ACCEPT_NODE__PREFIX_METADATA_EXTENSION:
+        getPrefixMetadataExtension().clear();
+        return;
       case SysMLOCPackage.ACCEPT_NODE__IS_END:
         setIsEnd(IS_END_EDEFAULT);
         return;
@@ -1352,6 +1389,8 @@ public class AcceptNodeImpl extends ActionNodeElementsImpl implements AcceptNode
         return isDerived != IS_DERIVED_EDEFAULT;
       case SysMLOCPackage.ACCEPT_NODE__IS_REFERENCE:
         return isReference != IS_REFERENCE_EDEFAULT;
+      case SysMLOCPackage.ACCEPT_NODE__PREFIX_METADATA_EXTENSION:
+        return prefixMetadataExtension != null && !prefixMetadataExtension.isEmpty();
       case SysMLOCPackage.ACCEPT_NODE__IS_END:
         return isEnd != IS_END_EDEFAULT;
       case SysMLOCPackage.ACCEPT_NODE__IS_INDIVIDUAL:
@@ -1436,6 +1475,21 @@ public class AcceptNodeImpl extends ActionNodeElementsImpl implements AcceptNode
       switch (derivedFeatureID)
       {
         case SysMLOCPackage.ACCEPT_NODE__IS_REFERENCE: return SysMLOCPackage.BASIC_USAGE_PREFIX__IS_REFERENCE;
+        default: return -1;
+      }
+    }
+    if (baseClass == PrefixMetadata.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.ACCEPT_NODE__PREFIX_METADATA_EXTENSION: return SysMLOCPackage.PREFIX_METADATA__PREFIX_METADATA_EXTENSION;
+        default: return -1;
+      }
+    }
+    if (baseClass == UsageExtensionKeyword.class)
+    {
+      switch (derivedFeatureID)
+      {
         default: return -1;
       }
     }
@@ -1614,6 +1668,21 @@ public class AcceptNodeImpl extends ActionNodeElementsImpl implements AcceptNode
         default: return -1;
       }
     }
+    if (baseClass == PrefixMetadata.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.PREFIX_METADATA__PREFIX_METADATA_EXTENSION: return SysMLOCPackage.ACCEPT_NODE__PREFIX_METADATA_EXTENSION;
+        default: return -1;
+      }
+    }
+    if (baseClass == UsageExtensionKeyword.class)
+    {
+      switch (baseFeatureID)
+      {
+        default: return -1;
+      }
+    }
     if (baseClass == OccurrenceUsagePrefix.class)
     {
       switch (baseFeatureID)
@@ -1767,6 +1836,8 @@ public class AcceptNodeImpl extends ActionNodeElementsImpl implements AcceptNode
     result.append(isDerived);
     result.append(", isReference: ");
     result.append(isReference);
+    result.append(", prefixMetadataExtension: ");
+    result.append(prefixMetadataExtension);
     result.append(", isEnd: ");
     result.append(isEnd);
     result.append(", isIndividual: ");

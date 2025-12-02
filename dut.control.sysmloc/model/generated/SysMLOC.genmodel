@@ -117,6 +117,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//DefaultReferenceUsage/isEnd"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//DefaultReferenceUsage/elements"/>
     </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//ExtendedUsage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//ExtendedUsage/elements"/>
+    </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//ReferenceVariantUsage">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//ReferenceVariantUsage/visibility"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//ReferenceVariantUsage/elements"/>

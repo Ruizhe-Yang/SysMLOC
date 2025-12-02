@@ -3,14 +3,22 @@
  */
 package dut.control.sysmloc.sysMLOC.impl;
 
+import dut.control.sysmloc.sysMLOC.DefinitionExtensionKeyword;
 import dut.control.sysmloc.sysMLOC.OccurrenceDefinitionPrefix;
+import dut.control.sysmloc.sysMLOC.PrefixMetadata;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,6 +28,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.OccurrenceDefinitionPrefixImpl#getPrefixMetadataExtension <em>Prefix Metadata Extension</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.OccurrenceDefinitionPrefixImpl#isIsIndividual <em>Is Individual</em>}</li>
  * </ul>
  *
@@ -27,6 +36,16 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class OccurrenceDefinitionPrefixImpl extends BasicDefinitionPrefixImpl implements OccurrenceDefinitionPrefix
 {
+  /**
+   * The cached value of the '{@link #getPrefixMetadataExtension() <em>Prefix Metadata Extension</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPrefixMetadataExtension()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> prefixMetadataExtension;
+
   /**
    * The default value of the '{@link #isIsIndividual() <em>Is Individual</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -74,6 +93,21 @@ public class OccurrenceDefinitionPrefixImpl extends BasicDefinitionPrefixImpl im
    * @generated
    */
   @Override
+  public EList<String> getPrefixMetadataExtension()
+  {
+    if (prefixMetadataExtension == null)
+    {
+      prefixMetadataExtension = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.OCCURRENCE_DEFINITION_PREFIX__PREFIX_METADATA_EXTENSION);
+    }
+    return prefixMetadataExtension;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public boolean isIsIndividual()
   {
     return isIndividual;
@@ -103,6 +137,8 @@ public class OccurrenceDefinitionPrefixImpl extends BasicDefinitionPrefixImpl im
   {
     switch (featureID)
     {
+      case SysMLOCPackage.OCCURRENCE_DEFINITION_PREFIX__PREFIX_METADATA_EXTENSION:
+        return getPrefixMetadataExtension();
       case SysMLOCPackage.OCCURRENCE_DEFINITION_PREFIX__IS_INDIVIDUAL:
         return isIsIndividual();
     }
@@ -114,11 +150,16 @@ public class OccurrenceDefinitionPrefixImpl extends BasicDefinitionPrefixImpl im
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
+      case SysMLOCPackage.OCCURRENCE_DEFINITION_PREFIX__PREFIX_METADATA_EXTENSION:
+        getPrefixMetadataExtension().clear();
+        getPrefixMetadataExtension().addAll((Collection<? extends String>)newValue);
+        return;
       case SysMLOCPackage.OCCURRENCE_DEFINITION_PREFIX__IS_INDIVIDUAL:
         setIsIndividual((Boolean)newValue);
         return;
@@ -136,6 +177,9 @@ public class OccurrenceDefinitionPrefixImpl extends BasicDefinitionPrefixImpl im
   {
     switch (featureID)
     {
+      case SysMLOCPackage.OCCURRENCE_DEFINITION_PREFIX__PREFIX_METADATA_EXTENSION:
+        getPrefixMetadataExtension().clear();
+        return;
       case SysMLOCPackage.OCCURRENCE_DEFINITION_PREFIX__IS_INDIVIDUAL:
         setIsIndividual(IS_INDIVIDUAL_EDEFAULT);
         return;
@@ -153,10 +197,64 @@ public class OccurrenceDefinitionPrefixImpl extends BasicDefinitionPrefixImpl im
   {
     switch (featureID)
     {
+      case SysMLOCPackage.OCCURRENCE_DEFINITION_PREFIX__PREFIX_METADATA_EXTENSION:
+        return prefixMetadataExtension != null && !prefixMetadataExtension.isEmpty();
       case SysMLOCPackage.OCCURRENCE_DEFINITION_PREFIX__IS_INDIVIDUAL:
         return isIndividual != IS_INDIVIDUAL_EDEFAULT;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == PrefixMetadata.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.OCCURRENCE_DEFINITION_PREFIX__PREFIX_METADATA_EXTENSION: return SysMLOCPackage.PREFIX_METADATA__PREFIX_METADATA_EXTENSION;
+        default: return -1;
+      }
+    }
+    if (baseClass == DefinitionExtensionKeyword.class)
+    {
+      switch (derivedFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == PrefixMetadata.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.PREFIX_METADATA__PREFIX_METADATA_EXTENSION: return SysMLOCPackage.OCCURRENCE_DEFINITION_PREFIX__PREFIX_METADATA_EXTENSION;
+        default: return -1;
+      }
+    }
+    if (baseClass == DefinitionExtensionKeyword.class)
+    {
+      switch (baseFeatureID)
+      {
+        default: return -1;
+      }
+    }
+    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
   }
 
   /**
@@ -170,7 +268,9 @@ public class OccurrenceDefinitionPrefixImpl extends BasicDefinitionPrefixImpl im
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (isIndividual: ");
+    result.append(" (prefixMetadataExtension: ");
+    result.append(prefixMetadataExtension);
+    result.append(", isIndividual: ");
     result.append(isIndividual);
     result.append(')');
     return result.toString();

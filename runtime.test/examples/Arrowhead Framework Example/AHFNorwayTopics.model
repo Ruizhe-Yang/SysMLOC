@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="AHFNorway">
+    <elements xsi:type="sysMLOC:Documentation" body="/* This is the Norwegian use-case for Arrowhead Framework */"/>
+    <elements xsi:type="sysMLOC:CodeAnnotation" body="// The use-case is for Productive4.0 and Arrowhead Tools&#xD;&#xA;"/>
+    <elements xsi:type="sysMLOC:CodeAnnotation" body="// The system is taken from a chemical factory&#xD;&#xA;"/>
+    <elements xsi:type="sysMLOC:CodeAnnotation" body="// This is focusing on the monitoring of products when delivered&#xD;&#xA;"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="AHFProfileLib" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="AHFProfileMetadata" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="AHFCoreLib" isRecursive="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ExtendedDefinition" declaredName="APISService">
+      <prefixMetadataExtension>#service</prefixMetadataExtension>
+      <elements xsi:type="sysMLOC:Documentation" body="/* Service design */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>serviceDefinition</redefinitions>
+        <valuePart>&quot;APISPullService&quot;</valuePart>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>intrfce_protocol</redefinitions>
+        <valuePart>&quot;{JSON}&quot;</valuePart>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>serviceURL</redefinitions>
+        <valuePart>&quot;pull&quot;</valuePart>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PortDefinition" declaredName="APIS_DD">
+      <prefixMetadataExtension>#servicedd</prefixMetadataExtension>
+      <superclassifiers>APISService</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/* Service design description with nested protocol-specific ports */"/>
+      <elements xsi:type="sysMLOC:PortUsage" declaredName="APIS_HTTP">
+        <prefixMetadataExtension>#idd</prefixMetadataExtension>
+        <elements xsi:type="sysMLOC:CodeAnnotation" body="// the asynch implementation of synchronous remote calls&#xD;&#xA;"/>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="cll">
+          <typings>CallGiveItems</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="retrn">
+          <typings>ResultGiveItems</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PortUsage" declaredName="APIS_MQTT">
+        <prefixMetadataExtension>#idd</prefixMetadataExtension>
+        <elements xsi:type="sysMLOC:CodeAnnotation" body="// GetAllItems functionality&#xD;&#xA;"/>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="pub">
+          <typings>Publish</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="retall">
+          <typings>Return_AllItems</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="subscr">
+          <typings>Subscribe</typings>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:CodeAnnotation" body="// Asynchronous signals&#xD;&#xA;"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="Publish">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="nametopic">
+        <typings>String</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="Subscribe">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="nametopic">
+        <typings>String</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="Return_AllItems">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="itms">
+        <typings>String</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="Subscribe_giveItems">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="itms">
+        <typings>String</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="Return_Ack">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="ack">
+        <typings>Boolean</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:CodeAnnotation" body="// Signals for implementing the remote procedure call by asynch signals&#xD;&#xA;"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CallGiveItems">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="itms">
+        <typings>String</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ResultGiveItems">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="ack">
+        <typings>Boolean</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:ExtendedUsage" declaredName="AHFNorway_LocalCloudDD">
+      <prefixMetadataExtension>#clouddd</prefixMetadataExtension>
+      <subsetting>ArrowheadCore</subsetting>
+      <elements xsi:type="sysMLOC:ExtendedUsage" declaredName="TellUConsumer">
+        <prefixMetadataExtension>#systemdd</prefixMetadataExtension>
+        <elements xsi:type="sysMLOC:ExtendedUsage" declaredName="serviceDiscovery">
+          <prefixMetadataExtension>#servicedd</prefixMetadataExtension>
+          <typings>~ServiceDiscoveryDD</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:CodeAnnotation" body="// communicating with ServiceRegistry&#xD;&#xA;"/>
+        <elements xsi:type="sysMLOC:ExtendedUsage" declaredName="apisp">
+          <prefixMetadataExtension>#servicedd</prefixMetadataExtension>
+          <typings>APIS_DD</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage">
+          <redefinitions>systemname</redefinitions>
+          <valuePart>&quot;UngerApisClient&quot;</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage">
+          <redefinitions>address</redefinitions>
+          <valuePart>&quot;Unger_network_ip&quot;</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage">
+          <redefinitions>portno</redefinitions>
+          <valuePart>0</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:CodeAnnotation" body="// We want an operation call to GiveItems, and actually sending the payload&#xD;&#xA;"/>
+        <elements xsi:type="sysMLOC:CodeAnnotation" body="// Call apisp::APIS_HTTP::giveItems(in allitems: String = &quot;All the items&quot;, out ackback:Boolean);&#xD;&#xA;"/>
+        <elements xsi:type="sysMLOC:StateUsage" declaredName="TellUbehavior">
+          <elements xsi:type="sysMLOC:EntryActionNode">
+            <performedActionParameterPart xsi:type="sysMLOC:SendActionUsage" sendNodeParameter="CallGiveItems(&quot;All the items&quot;)" viaNodeParameter="apisp.APIS_HTTP"/>
+          </elements>
+          <elements xsi:type="sysMLOC:TransitionUsage">
+            <transitionSuccessionElement refElement="Wait"/>
+          </elements>
+          <elements xsi:type="sysMLOC:CodeAnnotation" body="// Here do whatever about the result rs.ret &#xD;&#xA;"/>
+          <elements xsi:type="sysMLOC:StateUsage" declaredName="Wait"/>
+          <elements xsi:type="sysMLOC:TransitionUsage">
+            <acceptParameter declaredName="rs">
+              <typings>ResultGiveItems</typings>
+            </acceptParameter>
+            <transitionSuccessionElement refElement="Wait"/>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:ExtendedUsage" declaredName="APISProducer">
+        <prefixMetadataExtension>#systemdd</prefixMetadataExtension>
+        <elements xsi:type="sysMLOC:ExtendedUsage" declaredName="serviceDiscovery">
+          <prefixMetadataExtension>#servicedd</prefixMetadataExtension>
+          <typings>~ServiceDiscoveryDD</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:CodeAnnotation" body="// communicating with ServiceRegistry&#xD;&#xA;"/>
+        <elements xsi:type="sysMLOC:ExtendedUsage" declaredName="tellu">
+          <prefixMetadataExtension>#servicedd</prefixMetadataExtension>
+          <typings>~APIS_DD</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:CodeAnnotation" body="// providing the APISService&#xD;&#xA;"/>
+        <elements xsi:type="sysMLOC:ExtendedUsage" declaredName="apisc">
+          <prefixMetadataExtension>#servicedd</prefixMetadataExtension>
+          <typings>APIS_DD</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:CodeAnnotation" body="// talking to APISConsumer&#xD;&#xA;"/>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <redefinitions>systemname</redefinitions>
+          <valuePart>&quot;PrediktorApisServer&quot;</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <redefinitions>address</redefinitions>
+          <valuePart>&quot;Prediktor_network_ip&quot;</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <redefinitions>portno</redefinitions>
+          <valuePart>6565</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="x">
+          <typings>Boolean</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:ActionUsage" declaredName="giveItems">
+          <subsetting>ServiceMethod</subsetting>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="itms">
+            <typings>String</typings>
+          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="ack">
+            <typings>Boolean</typings>
+          </elements>
+          <elements xsi:type="sysMLOC:Comment" body="/* Forward itms and return an ack */"/>
+          <elements xsi:type="sysMLOC:InitialNode" memberElement="start"/>
+          <elements xsi:type="sysMLOC:SendNode" isThen="true" sendNodeParameter="true" viaNodeParameter="apisc.APIS_MQTT"/>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="success">
+            <valuePart>true</valuePart>
+          </elements>
+          <elements xsi:type="sysMLOC:BindingConnectorAsUsage">
+            <connectorPart refElement="ack"/>
+            <connectorPart refElement="success"/>
+          </elements>
+        </elements>
+        <elements xsi:type="sysMLOC:StateUsage" declaredName="APISPbehavior">
+          <elements xsi:type="sysMLOC:EntryActionNode">
+            <performedActionParameterPart xsi:type="sysMLOC:SendActionUsage" sendNodeParameter="Publish(&quot;Return_AllItems&quot;)" viaNodeParameter="apisc.APIS_MQTT"/>
+          </elements>
+          <elements xsi:type="sysMLOC:TransitionUsage">
+            <transitionSuccessionElement refElement="WaitOnData"/>
+          </elements>
+          <elements xsi:type="sysMLOC:StateUsage" declaredName="WaitOnData"/>
+          <elements xsi:type="sysMLOC:TransitionUsage">
+            <acceptParameter declaredName="cl" viaNodeParameter="tellu.APIS_HTTP">
+              <typings>CallGiveItems</typings>
+            </acceptParameter>
+            <performedActionParameterPart xsi:type="sysMLOC:PerformActionUsage"/>
+            <transitionSuccessionElement refElement="WaitOnData"/>
+            <elements xsi:type="sysMLOC:InitialNode" memberElement="start"/>
+            <elements xsi:type="sysMLOC:ActionUsage" isThen="true" declaredName="giveItems">
+              <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="itms">
+                <valuePart>cl.itms</valuePart>
+              </elements>
+              <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="ack">
+                <valuePart>x</valuePart>
+              </elements>
+            </elements>
+            <elements xsi:type="sysMLOC:SendNode" isThen="true" sendNodeParameter="true" viaNodeParameter="tellu.APIS_HTTP"/>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:ExtendedUsage" declaredName="APISConsumer">
+        <prefixMetadataExtension>#systemdd</prefixMetadataExtension>
+        <elements xsi:type="sysMLOC:ExtendedUsage" declaredName="serviceDiscovery">
+          <prefixMetadataExtension>#servicedd</prefixMetadataExtension>
+          <typings>~ServiceDiscovery</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:CodeAnnotation" body="// communicating with ServiceRegistry&#xD;&#xA;"/>
+        <elements xsi:type="sysMLOC:ExtendedUsage" declaredName="apisp">
+          <prefixMetadataExtension>#servicedd</prefixMetadataExtension>
+          <typings>~APIS_DD</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <redefinitions>systemname</redefinitions>
+          <valuePart>&quot;TellUClient&quot;</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <redefinitions>address</redefinitions>
+          <valuePart>&quot;Prediktor_network_ip&quot;</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <redefinitions>portno</redefinitions>
+          <valuePart>1</valuePart>
+        </elements>
+        <elements xsi:type="sysMLOC:CodeAnnotation" body="// Now sending signal to the remote behavior through the port functionality&#xD;&#xA;"/>
+        <elements xsi:type="sysMLOC:StateUsage" declaredName="MQTT_APISP">
+          <elements xsi:type="sysMLOC:EntryActionNode">
+            <performedActionParameterPart xsi:type="sysMLOC:SendActionUsage" sendNodeParameter="Subscribe(&quot;Return_AllItems&quot;)" viaNodeParameter="apisp.APIS_MQTT"/>
+          </elements>
+          <elements xsi:type="sysMLOC:TransitionUsage">
+            <transitionSuccessionElement refElement="Idle"/>
+          </elements>
+          <elements xsi:type="sysMLOC:StateUsage" declaredName="Idle"/>
+          <elements xsi:type="sysMLOC:CodeAnnotation" body="// Get the stuff and do something with them&#xD;&#xA;"/>
+          <elements xsi:type="sysMLOC:TransitionUsage">
+            <acceptParameter payloadFeatureElement="Return_AllItems" viaNodeParameter="apisp.APIS_MQTT"/>
+            <transitionSuccessionElement refElement="Idle"/>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="MQTTServer">
+        <elements xsi:type="sysMLOC:PortUsage" declaredName="getTopic">
+          <typings>~APIS_DD</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:PortUsage" declaredName="giveTopic">
+          <typings>APIS_DD</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:StateUsage" declaredName="Serve">
+          <elements xsi:type="sysMLOC:EntryActionNode"/>
+          <elements xsi:type="sysMLOC:TransitionUsage">
+            <transitionSuccessionElement refElement="Publ"/>
+          </elements>
+          <elements xsi:type="sysMLOC:CodeAnnotation" body="// store information about who will provide &quot;Publish::nametopic&quot;&#xD;&#xA;"/>
+          <elements xsi:type="sysMLOC:StateUsage" declaredName="Publ"/>
+          <elements xsi:type="sysMLOC:TransitionUsage">
+            <acceptParameter declaredName="pub" viaNodeParameter="getTopic.APIS_MQTT">
+              <typings>Publish</typings>
+            </acceptParameter>
+            <transitionSuccessionElement refElement="Subsr"/>
+          </elements>
+          <elements xsi:type="sysMLOC:CodeAnnotation" body="// store information about who want to receive &quot;Subscribe::nametopic&quot;&#xD;&#xA;"/>
+          <elements xsi:type="sysMLOC:StateUsage" declaredName="Subsr"/>
+          <elements xsi:type="sysMLOC:TransitionUsage">
+            <acceptParameter payloadFeatureElement="Subscribe" viaNodeParameter="giveTopic.APIS_MQTT"/>
+            <transitionSuccessionElement refElement="Idle"/>
+          </elements>
+          <elements xsi:type="sysMLOC:StateUsage" declaredName="Idle"/>
+          <elements xsi:type="sysMLOC:TransitionUsage">
+            <acceptParameter declaredName="retrnall" viaNodeParameter="getTopic.APIS_MQTT">
+              <typings>Return_AllItems</typings>
+            </acceptParameter>
+            <performedActionParameterPart xsi:type="sysMLOC:SendActionUsage" sendNodeParameter="retrnall" viaNodeParameter="giveTopic.APIS_MQTT"/>
+            <transitionSuccessionElement refElement="Idle"/>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:ConnectionUsage">
+        <connectorPart refElement="APISProducer.apisc"/>
+        <connectorPart refElement="MQTTServer.getTopic"/>
+      </elements>
+      <elements xsi:type="sysMLOC:ConnectionUsage">
+        <connectorPart refElement="MQTTServer.giveTopic"/>
+        <connectorPart refElement="APISConsumer.apisp"/>
+      </elements>
+      <elements xsi:type="sysMLOC:ConnectionUsage">
+        <connectorPart refElement="TellUConsumer.apisp"/>
+        <connectorPart refElement="APISProducer.tellu"/>
+      </elements>
+      <elements xsi:type="sysMLOC:CodeAnnotation" body="// Then we need to connect the application systems to the mandatory systems&#xD;&#xA;"/>
+      <elements xsi:type="sysMLOC:ConnectionUsage">
+        <connectorPart refElement="APISProducer.serviceDiscovery"/>
+        <connectorPart refElement="service_registry.serviceDiscovery"/>
+      </elements>
+      <elements xsi:type="sysMLOC:ConnectionUsage">
+        <connectorPart refElement="TellUConsumer.serviceDiscovery"/>
+        <connectorPart refElement="service_registry.serviceDiscovery"/>
+      </elements>
+      <elements xsi:type="sysMLOC:ConnectionUsage">
+        <connectorPart refElement="APISConsumer.serviceDiscovery"/>
+        <connectorPart refElement="service_registry.serviceDiscovery"/>
+      </elements>
+      <elements xsi:type="sysMLOC:CodeAnnotation" body="// Same procedure for the other mandatory services&#xD;&#xA;"/>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

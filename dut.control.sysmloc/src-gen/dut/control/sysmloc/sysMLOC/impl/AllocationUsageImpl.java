@@ -21,6 +21,7 @@ import dut.control.sysmloc.sysMLOC.MultiplicityPart;
 import dut.control.sysmloc.sysMLOC.MultiplicityRange;
 import dut.control.sysmloc.sysMLOC.OccurrenceUsagePrefix;
 import dut.control.sysmloc.sysMLOC.PortionKind;
+import dut.control.sysmloc.sysMLOC.PrefixMetadata;
 import dut.control.sysmloc.sysMLOC.RedefinitionFeatureChain;
 import dut.control.sysmloc.sysMLOC.RefPrefix;
 import dut.control.sysmloc.sysMLOC.ReferenceFeatureChain;
@@ -29,6 +30,7 @@ import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 import dut.control.sysmloc.sysMLOC.TypingFeatureTyping;
 import dut.control.sysmloc.sysMLOC.UsageBodyElement;
 import dut.control.sysmloc.sysMLOC.UsageDeclaration;
+import dut.control.sysmloc.sysMLOC.UsageExtensionKeyword;
 import dut.control.sysmloc.sysMLOC.VisibilityIndicator;
 import dut.control.sysmloc.sysMLOC.isReturnPrefix;
 
@@ -67,6 +69,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AllocationUsageImpl#isIsReadOnly <em>Is Read Only</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AllocationUsageImpl#isIsDerived <em>Is Derived</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AllocationUsageImpl#isIsReference <em>Is Reference</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AllocationUsageImpl#getPrefixMetadataExtension <em>Prefix Metadata Extension</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AllocationUsageImpl#isIsEnd <em>Is End</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AllocationUsageImpl#isIsIndividual <em>Is Individual</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AllocationUsageImpl#getPortionKind <em>Portion Kind</em>}</li>
@@ -297,6 +300,16 @@ public class AllocationUsageImpl extends StructureUsageElementImpl implements Al
    * @ordered
    */
   protected boolean isReference = IS_REFERENCE_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getPrefixMetadataExtension() <em>Prefix Metadata Extension</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPrefixMetadataExtension()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> prefixMetadataExtension;
 
   /**
    * The default value of the '{@link #isIsEnd() <em>Is End</em>}' attribute.
@@ -810,6 +823,21 @@ public class AllocationUsageImpl extends StructureUsageElementImpl implements Al
    * @generated
    */
   @Override
+  public EList<String> getPrefixMetadataExtension()
+  {
+    if (prefixMetadataExtension == null)
+    {
+      prefixMetadataExtension = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.ALLOCATION_USAGE__PREFIX_METADATA_EXTENSION);
+    }
+    return prefixMetadataExtension;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public boolean isIsEnd()
   {
     return isEnd;
@@ -1149,6 +1177,8 @@ public class AllocationUsageImpl extends StructureUsageElementImpl implements Al
         return isIsDerived();
       case SysMLOCPackage.ALLOCATION_USAGE__IS_REFERENCE:
         return isIsReference();
+      case SysMLOCPackage.ALLOCATION_USAGE__PREFIX_METADATA_EXTENSION:
+        return getPrefixMetadataExtension();
       case SysMLOCPackage.ALLOCATION_USAGE__IS_END:
         return isIsEnd();
       case SysMLOCPackage.ALLOCATION_USAGE__IS_INDIVIDUAL:
@@ -1227,6 +1257,10 @@ public class AllocationUsageImpl extends StructureUsageElementImpl implements Al
         return;
       case SysMLOCPackage.ALLOCATION_USAGE__IS_REFERENCE:
         setIsReference((Boolean)newValue);
+        return;
+      case SysMLOCPackage.ALLOCATION_USAGE__PREFIX_METADATA_EXTENSION:
+        getPrefixMetadataExtension().clear();
+        getPrefixMetadataExtension().addAll((Collection<? extends String>)newValue);
         return;
       case SysMLOCPackage.ALLOCATION_USAGE__IS_END:
         setIsEnd((Boolean)newValue);
@@ -1328,6 +1362,9 @@ public class AllocationUsageImpl extends StructureUsageElementImpl implements Al
       case SysMLOCPackage.ALLOCATION_USAGE__IS_REFERENCE:
         setIsReference(IS_REFERENCE_EDEFAULT);
         return;
+      case SysMLOCPackage.ALLOCATION_USAGE__PREFIX_METADATA_EXTENSION:
+        getPrefixMetadataExtension().clear();
+        return;
       case SysMLOCPackage.ALLOCATION_USAGE__IS_END:
         setIsEnd(IS_END_EDEFAULT);
         return;
@@ -1409,6 +1446,8 @@ public class AllocationUsageImpl extends StructureUsageElementImpl implements Al
         return isDerived != IS_DERIVED_EDEFAULT;
       case SysMLOCPackage.ALLOCATION_USAGE__IS_REFERENCE:
         return isReference != IS_REFERENCE_EDEFAULT;
+      case SysMLOCPackage.ALLOCATION_USAGE__PREFIX_METADATA_EXTENSION:
+        return prefixMetadataExtension != null && !prefixMetadataExtension.isEmpty();
       case SysMLOCPackage.ALLOCATION_USAGE__IS_END:
         return isEnd != IS_END_EDEFAULT;
       case SysMLOCPackage.ALLOCATION_USAGE__IS_INDIVIDUAL:
@@ -1508,6 +1547,21 @@ public class AllocationUsageImpl extends StructureUsageElementImpl implements Al
       switch (derivedFeatureID)
       {
         case SysMLOCPackage.ALLOCATION_USAGE__IS_REFERENCE: return SysMLOCPackage.BASIC_USAGE_PREFIX__IS_REFERENCE;
+        default: return -1;
+      }
+    }
+    if (baseClass == PrefixMetadata.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.ALLOCATION_USAGE__PREFIX_METADATA_EXTENSION: return SysMLOCPackage.PREFIX_METADATA__PREFIX_METADATA_EXTENSION;
+        default: return -1;
+      }
+    }
+    if (baseClass == UsageExtensionKeyword.class)
+    {
+      switch (derivedFeatureID)
+      {
         default: return -1;
       }
     }
@@ -1694,6 +1748,21 @@ public class AllocationUsageImpl extends StructureUsageElementImpl implements Al
         default: return -1;
       }
     }
+    if (baseClass == PrefixMetadata.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.PREFIX_METADATA__PREFIX_METADATA_EXTENSION: return SysMLOCPackage.ALLOCATION_USAGE__PREFIX_METADATA_EXTENSION;
+        default: return -1;
+      }
+    }
+    if (baseClass == UsageExtensionKeyword.class)
+    {
+      switch (baseFeatureID)
+      {
+        default: return -1;
+      }
+    }
     if (baseClass == OccurrenceUsagePrefix.class)
     {
       switch (baseFeatureID)
@@ -1842,6 +1911,8 @@ public class AllocationUsageImpl extends StructureUsageElementImpl implements Al
     result.append(isDerived);
     result.append(", isReference: ");
     result.append(isReference);
+    result.append(", prefixMetadataExtension: ");
+    result.append(prefixMetadataExtension);
     result.append(", isEnd: ");
     result.append(isEnd);
     result.append(", isIndividual: ");

@@ -6,10 +6,12 @@ package dut.control.sysmloc.sysMLOC.impl;
 import dut.control.sysmloc.sysMLOC.BasicDefinitionPrefix;
 import dut.control.sysmloc.sysMLOC.DefinitionBodyElement;
 import dut.control.sysmloc.sysMLOC.DefinitionDeclaration;
+import dut.control.sysmloc.sysMLOC.DefinitionExtensionKeyword;
 import dut.control.sysmloc.sysMLOC.Identification;
 import dut.control.sysmloc.sysMLOC.ItemDefinition;
 import dut.control.sysmloc.sysMLOC.MemberPrefix;
 import dut.control.sysmloc.sysMLOC.OccurrenceDefinitionPrefix;
+import dut.control.sysmloc.sysMLOC.PrefixMetadata;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 import dut.control.sysmloc.sysMLOC.VisibilityIndicator;
 
@@ -41,6 +43,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ItemDefinitionImpl#isIsVariant <em>Is Variant</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ItemDefinitionImpl#isIsAbstract <em>Is Abstract</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ItemDefinitionImpl#isIsVariation <em>Is Variation</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ItemDefinitionImpl#getPrefixMetadataExtension <em>Prefix Metadata Extension</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ItemDefinitionImpl#isIsIndividual <em>Is Individual</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ItemDefinitionImpl#getDeclaredShortName <em>Declared Short Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ItemDefinitionImpl#getDeclaredName <em>Declared Name</em>}</li>
@@ -131,6 +134,16 @@ public class ItemDefinitionImpl extends DefinitionElementImpl implements ItemDef
    * @ordered
    */
   protected boolean isVariation = IS_VARIATION_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getPrefixMetadataExtension() <em>Prefix Metadata Extension</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPrefixMetadataExtension()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> prefixMetadataExtension;
 
   /**
    * The default value of the '{@link #isIsIndividual() <em>Is Individual</em>}' attribute.
@@ -339,6 +352,21 @@ public class ItemDefinitionImpl extends DefinitionElementImpl implements ItemDef
    * @generated
    */
   @Override
+  public EList<String> getPrefixMetadataExtension()
+  {
+    if (prefixMetadataExtension == null)
+    {
+      prefixMetadataExtension = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.ITEM_DEFINITION__PREFIX_METADATA_EXTENSION);
+    }
+    return prefixMetadataExtension;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public boolean isIsIndividual()
   {
     return isIndividual;
@@ -472,6 +500,8 @@ public class ItemDefinitionImpl extends DefinitionElementImpl implements ItemDef
         return isIsAbstract();
       case SysMLOCPackage.ITEM_DEFINITION__IS_VARIATION:
         return isIsVariation();
+      case SysMLOCPackage.ITEM_DEFINITION__PREFIX_METADATA_EXTENSION:
+        return getPrefixMetadataExtension();
       case SysMLOCPackage.ITEM_DEFINITION__IS_INDIVIDUAL:
         return isIsIndividual();
       case SysMLOCPackage.ITEM_DEFINITION__DECLARED_SHORT_NAME:
@@ -508,6 +538,10 @@ public class ItemDefinitionImpl extends DefinitionElementImpl implements ItemDef
         return;
       case SysMLOCPackage.ITEM_DEFINITION__IS_VARIATION:
         setIsVariation((Boolean)newValue);
+        return;
+      case SysMLOCPackage.ITEM_DEFINITION__PREFIX_METADATA_EXTENSION:
+        getPrefixMetadataExtension().clear();
+        getPrefixMetadataExtension().addAll((Collection<? extends String>)newValue);
         return;
       case SysMLOCPackage.ITEM_DEFINITION__IS_INDIVIDUAL:
         setIsIndividual((Boolean)newValue);
@@ -552,6 +586,9 @@ public class ItemDefinitionImpl extends DefinitionElementImpl implements ItemDef
       case SysMLOCPackage.ITEM_DEFINITION__IS_VARIATION:
         setIsVariation(IS_VARIATION_EDEFAULT);
         return;
+      case SysMLOCPackage.ITEM_DEFINITION__PREFIX_METADATA_EXTENSION:
+        getPrefixMetadataExtension().clear();
+        return;
       case SysMLOCPackage.ITEM_DEFINITION__IS_INDIVIDUAL:
         setIsIndividual(IS_INDIVIDUAL_EDEFAULT);
         return;
@@ -589,6 +626,8 @@ public class ItemDefinitionImpl extends DefinitionElementImpl implements ItemDef
         return isAbstract != IS_ABSTRACT_EDEFAULT;
       case SysMLOCPackage.ITEM_DEFINITION__IS_VARIATION:
         return isVariation != IS_VARIATION_EDEFAULT;
+      case SysMLOCPackage.ITEM_DEFINITION__PREFIX_METADATA_EXTENSION:
+        return prefixMetadataExtension != null && !prefixMetadataExtension.isEmpty();
       case SysMLOCPackage.ITEM_DEFINITION__IS_INDIVIDUAL:
         return isIndividual != IS_INDIVIDUAL_EDEFAULT;
       case SysMLOCPackage.ITEM_DEFINITION__DECLARED_SHORT_NAME:
@@ -626,6 +665,21 @@ public class ItemDefinitionImpl extends DefinitionElementImpl implements ItemDef
       {
         case SysMLOCPackage.ITEM_DEFINITION__IS_ABSTRACT: return SysMLOCPackage.BASIC_DEFINITION_PREFIX__IS_ABSTRACT;
         case SysMLOCPackage.ITEM_DEFINITION__IS_VARIATION: return SysMLOCPackage.BASIC_DEFINITION_PREFIX__IS_VARIATION;
+        default: return -1;
+      }
+    }
+    if (baseClass == PrefixMetadata.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.ITEM_DEFINITION__PREFIX_METADATA_EXTENSION: return SysMLOCPackage.PREFIX_METADATA__PREFIX_METADATA_EXTENSION;
+        default: return -1;
+      }
+    }
+    if (baseClass == DefinitionExtensionKeyword.class)
+    {
+      switch (derivedFeatureID)
+      {
         default: return -1;
       }
     }
@@ -683,6 +737,21 @@ public class ItemDefinitionImpl extends DefinitionElementImpl implements ItemDef
         default: return -1;
       }
     }
+    if (baseClass == PrefixMetadata.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.PREFIX_METADATA__PREFIX_METADATA_EXTENSION: return SysMLOCPackage.ITEM_DEFINITION__PREFIX_METADATA_EXTENSION;
+        default: return -1;
+      }
+    }
+    if (baseClass == DefinitionExtensionKeyword.class)
+    {
+      switch (baseFeatureID)
+      {
+        default: return -1;
+      }
+    }
     if (baseClass == OccurrenceDefinitionPrefix.class)
     {
       switch (baseFeatureID)
@@ -730,6 +799,8 @@ public class ItemDefinitionImpl extends DefinitionElementImpl implements ItemDef
     result.append(isAbstract);
     result.append(", isVariation: ");
     result.append(isVariation);
+    result.append(", prefixMetadataExtension: ");
+    result.append(prefixMetadataExtension);
     result.append(", isIndividual: ");
     result.append(isIndividual);
     result.append(", declaredShortName: ");

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:CodeAnnotation" body="// /** Mandatory Services and Systems */&#xD;&#xA;"/>
+  <elements xsi:type="sysMLOC:LibraryPackage" declaredName="AHFCoreLib" isLibrary="true">
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="AHFProfileLib" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="AHFProfileMetadata" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:PortDefinition" declaredName="ServiceDiscovery">
+      <prefixMetadataExtension>#service</prefixMetadataExtension>
+      <elements xsi:type="sysMLOC:CodeAnnotation" body="// The functionalities as Requests (Operations) cannot be defined yet&#xD;&#xA;"/>
+      <elements xsi:type="sysMLOC:CodeAnnotation" body="// We could consider using flows to designate the functionalities&#xD;&#xA;"/>
+    </elements>
+    <elements xsi:type="sysMLOC:PortDefinition" declaredName="ServiceDiscoveryDD">
+      <prefixMetadataExtension>#service</prefixMetadataExtension>
+      <superclassifiers>ServiceDiscovery</superclassifiers>
+    </elements>
+    <elements xsi:type="sysMLOC:PortDefinition" declaredName="Authorisation">
+      <prefixMetadataExtension>#service</prefixMetadataExtension>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="publickey">
+        <typings>String</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:CodeAnnotation" body="// just as examples&#xD;&#xA;"/>
+    </elements>
+    <elements xsi:type="sysMLOC:PortDefinition" declaredName="AuthorisationDD">
+      <prefixMetadataExtension>#service</prefixMetadataExtension>
+      <superclassifiers>Authorisation</superclassifiers>
+    </elements>
+    <elements xsi:type="sysMLOC:ExtendedUsage" declaredName="ArrowheadCore">
+      <prefixMetadataExtension>#clouddd</prefixMetadataExtension>
+      <elements xsi:type="sysMLOC:CodeAnnotation" body="// /** Design Level */&#xD;&#xA;"/>
+      <elements xsi:type="sysMLOC:CodeAnnotation" body="// First the system definitions (SysD) of core systems&#xD;&#xA;"/>
+      <elements xsi:type="sysMLOC:ExtendedUsage" declaredName="service_registry">
+        <prefixMetadataExtension>#system</prefixMetadataExtension>
+        <elements xsi:type="sysMLOC:ExtendedUsage" declaredName="serviceDiscovery">
+          <prefixMetadataExtension>#service</prefixMetadataExtension>
+          <typings>ServiceDiscovery</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:ExtendedUsage" declaredName="authorization">
+        <prefixMetadataExtension>#system</prefixMetadataExtension>
+        <elements xsi:type="sysMLOC:ExtendedUsage" declaredName="authorisation">
+          <prefixMetadataExtension>#service</prefixMetadataExtension>
+          <typings>Authorisation</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="protocol">
+          <typings>String</typings>
+          <valuePart>&quot;HTTP&quot;</valuePart>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:ExtendedUsage" declaredName="orchestrationDesign">
+        <prefixMetadataExtension>#system</prefixMetadataExtension>
+      </elements>
+      <elements xsi:type="sysMLOC:CodeAnnotation" body="// just indicated for now&#xD;&#xA;"/>
+      <elements xsi:type="sysMLOC:CodeAnnotation" body="// /** Design Description level */&#x9;&#x9;&#xD;&#xA;"/>
+      <elements xsi:type="sysMLOC:ExtendedUsage" declaredName="service_registry_DD">
+        <prefixMetadataExtension>#systemdd</prefixMetadataExtension>
+        <subsetting>service_registry</subsetting>
+        <elements xsi:type="sysMLOC:ExtendedUsage">
+          <prefixMetadataExtension>#servicedd</prefixMetadataExtension>
+          <typings>ServiceDiscoveryDD</typings>
+          <redefinitions>serviceDiscovery</redefinitions>
+          <elements xsi:type="sysMLOC:ExtendedUsage" declaredName="serviceDiscovery_HTTP">
+            <prefixMetadataExtension>#idd</prefixMetadataExtension>
+          </elements>
+          <elements xsi:type="sysMLOC:CodeAnnotation" body="// nested port for HTTP protocol&#xD;&#xA;"/>
+          <elements xsi:type="sysMLOC:CodeAnnotation" body="// here we refer the functionalities like operation Register etc.&#xD;&#xA;"/>
+          <elements xsi:type="sysMLOC:ExtendedUsage" declaredName="serviceDiscovery_MQTT">
+            <prefixMetadataExtension>#idd</prefixMetadataExtension>
+          </elements>
+          <elements xsi:type="sysMLOC:CodeAnnotation" body="// nested port for MQTT protocol&#xD;&#xA;"/>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:ExtendedUsage" declaredName="authorization_DD">
+        <prefixMetadataExtension>#systemdd</prefixMetadataExtension>
+        <subsetting>authorization</subsetting>
+        <elements xsi:type="sysMLOC:ExtendedUsage">
+          <prefixMetadataExtension>#servicedd</prefixMetadataExtension>
+          <redefinitions>authorisation</redefinitions>
+          <elements xsi:type="sysMLOC:ExtendedUsage" declaredName="authorisation_HTTP">
+            <prefixMetadataExtension>#idd</prefixMetadataExtension>
+          </elements>
+          <elements xsi:type="sysMLOC:CodeAnnotation" body="// nested port for HTTP protocol&#xD;&#xA;"/>
+          <elements xsi:type="sysMLOC:ExtendedUsage" declaredName="authorisation_MQTT">
+            <prefixMetadataExtension>#idd</prefixMetadataExtension>
+          </elements>
+          <elements xsi:type="sysMLOC:CodeAnnotation" body="// nested port for MQTT protocol&#xD;&#xA;"/>
+        </elements>
+        <elements xsi:type="sysMLOC:ActionUsage" declaredName="Echo_behavior">
+          <subsetting>ServiceMethod</subsetting>
+        </elements>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

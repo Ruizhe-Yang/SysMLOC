@@ -22,7 +22,7 @@ package dut.control.sysmloc.sysMLOC;
  * @model
  * @generated
  */
-public interface OccurrenceUsagePrefix extends BasicUsagePrefix, RefPrefix, BasicDefinitionPrefix
+public interface OccurrenceUsagePrefix extends BasicUsagePrefix, RefPrefix, BasicDefinitionPrefix, UsageExtensionKeyword
 {
   /**
    * Returns the value of the '<em><b>Is End</b></em>' attribute.
