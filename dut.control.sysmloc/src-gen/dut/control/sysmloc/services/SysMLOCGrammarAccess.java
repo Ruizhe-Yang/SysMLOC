@@ -2788,12 +2788,18 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Keyword cRightCurlyBracketKeyword_5_1_2 = (Keyword)cGroup_5_1.eContents().get(2);
 		
 		//OccurrenceDefinition:
-		//    MemberPrefix OccurrenceDefinitionPrefix 'occurrence' 'def' DefinitionDeclaration
+		//    MemberPrefix
+		//    OccurrenceDefinitionPrefix
+		//    'occurrence' 'def'
+		//    DefinitionDeclaration
 		//    ( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//MemberPrefix OccurrenceDefinitionPrefix 'occurrence' 'def' DefinitionDeclaration
+		//MemberPrefix
+		//OccurrenceDefinitionPrefix
+		//'occurrence' 'def'
+		//DefinitionDeclaration
 		//( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
 		public Group getGroup() { return cGroup; }
 		
@@ -2850,13 +2856,17 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		
 		//OccurrenceUsage:
 		//    GeneralUsagePrefix
-		//    OccurrenceUsagePrefix 'occurrence' Usage
+		//    OccurrenceUsagePrefix
+		//    'occurrence'
+		//    Usage
 		//    ( ';' | '{' (elements+=UsageBodyElement)* '}' )
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//GeneralUsagePrefix
-		//OccurrenceUsagePrefix 'occurrence' Usage
+		//OccurrenceUsagePrefix
+		//'occurrence'
+		//Usage
 		//( ';' | '{' (elements+=UsageBodyElement)* '}' )
 		public Group getGroup() { return cGroup; }
 		
@@ -2914,7 +2924,8 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		
 		//PortionUsage:
 		//    GeneralUsagePrefix
-		//    BasicUsagePrefix ( isIndividual ?= 'individual' )? portionKind = PortionKind
+		//    BasicUsagePrefix ( isIndividual ?= 'individual' )?
+		//    portionKind = PortionKind
 		//    UsageExtensionKeyword*
 		//    Usage
 		//    ( ';' | '{' (elements+=UsageBodyElement)* '}' )
@@ -2922,7 +2933,8 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		@Override public ParserRule getRule() { return rule; }
 		
 		//GeneralUsagePrefix
-		//BasicUsagePrefix ( isIndividual ?= 'individual' )? portionKind = PortionKind
+		//BasicUsagePrefix ( isIndividual ?= 'individual' )?
+		//portionKind = PortionKind
 		//UsageExtensionKeyword*
 		//Usage
 		//( ';' | '{' (elements+=UsageBodyElement)* '}' )
@@ -3236,12 +3248,18 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Keyword cRightCurlyBracketKeyword_5_1_2 = (Keyword)cGroup_5_1.eContents().get(2);
 		
 		//ItemDefinition:
-		//    MemberPrefix OccurrenceDefinitionPrefix 'item' 'def' DefinitionDeclaration
+		//    MemberPrefix
+		//    OccurrenceDefinitionPrefix
+		//    'item' 'def'
+		//    DefinitionDeclaration
 		//    ( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//MemberPrefix OccurrenceDefinitionPrefix 'item' 'def' DefinitionDeclaration
+		//MemberPrefix
+		//OccurrenceDefinitionPrefix
+		//'item' 'def'
+		//DefinitionDeclaration
 		//( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
 		public Group getGroup() { return cGroup; }
 		
@@ -3436,12 +3454,18 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Keyword cRightCurlyBracketKeyword_5_1_2 = (Keyword)cGroup_5_1.eContents().get(2);
 		
 		//PartDefinition:
-		//    MemberPrefix OccurrenceDefinitionPrefix 'part' 'def' DefinitionDeclaration
+		//    MemberPrefix
+		//    OccurrenceDefinitionPrefix
+		//    'part' 'def'
+		//    DefinitionDeclaration
 		//    ( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//MemberPrefix OccurrenceDefinitionPrefix 'part' 'def' DefinitionDeclaration
+		//MemberPrefix
+		//OccurrenceDefinitionPrefix
+		//'part' 'def'
+		//DefinitionDeclaration
 		//( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
 		public Group getGroup() { return cGroup; }
 		
@@ -3498,13 +3522,17 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		
 		//PartUsage:
 		//    GeneralUsagePrefix
-		//    OccurrenceUsagePrefix 'part' Usage
+		//    OccurrenceUsagePrefix
+		//    'part'
+		//    Usage
 		//    ( ';' | '{' (elements+=UsageBodyElement)* '}' )
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//GeneralUsagePrefix
-		//OccurrenceUsagePrefix 'part' Usage
+		//OccurrenceUsagePrefix
+		//'part'
+		//Usage
 		//( ';' | '{' (elements+=UsageBodyElement)* '}' )
 		public Group getGroup() { return cGroup; }
 		
@@ -3558,12 +3586,18 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Keyword cRightCurlyBracketKeyword_5_1_2 = (Keyword)cGroup_5_1.eContents().get(2);
 		
 		//PortDefinition:
-		//    MemberPrefix DefinitionPrefix 'port' 'def' DefinitionDeclaration
+		//    MemberPrefix
+		//    DefinitionPrefix
+		//    'port' 'def'
+		//    DefinitionDeclaration
 		//    ( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//MemberPrefix DefinitionPrefix 'port' 'def' DefinitionDeclaration
+		//MemberPrefix
+		//DefinitionPrefix
+		//'port' 'def'
+		//DefinitionDeclaration
 		//( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
 		public Group getGroup() { return cGroup; }
 		
@@ -3620,13 +3654,17 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		
 		//PortUsage:
 		//    GeneralUsagePrefix
-		//    OccurrenceUsagePrefix 'port' Usage
+		//    OccurrenceUsagePrefix
+		//    'port'
+		//    Usage
 		//    ( ';' | '{' (elements+=UsageBodyElement)* '}' )
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//GeneralUsagePrefix
-		//OccurrenceUsagePrefix 'port' Usage
+		//OccurrenceUsagePrefix
+		//'port'
+		//Usage
 		//( ';' | '{' (elements+=UsageBodyElement)* '}' )
 		public Group getGroup() { return cGroup; }
 		
@@ -3680,12 +3718,18 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Keyword cRightCurlyBracketKeyword_5_1_2 = (Keyword)cGroup_5_1.eContents().get(2);
 		
 		//ConnectionDefinition:
-		//    MemberPrefix OccurrenceDefinitionPrefix 'connection' 'def' DefinitionDeclaration
+		//    MemberPrefix
+		//    OccurrenceDefinitionPrefix
+		//    'connection' 'def'
+		//    DefinitionDeclaration
 		//    ( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//MemberPrefix OccurrenceDefinitionPrefix 'connection' 'def' DefinitionDeclaration
+		//MemberPrefix
+		//OccurrenceDefinitionPrefix
+		//'connection' 'def'
+		//DefinitionDeclaration
 		//( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
 		public Group getGroup() { return cGroup; }
 		
@@ -3843,12 +3887,18 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Keyword cRightCurlyBracketKeyword_5_1_2 = (Keyword)cGroup_5_1.eContents().get(2);
 		
 		//InterfaceDefinition:
-		//    MemberPrefix OccurrenceDefinitionPrefix 'interface' 'def' DefinitionDeclaration
+		//    MemberPrefix
+		//    OccurrenceDefinitionPrefix
+		//    'interface' 'def'
+		//    DefinitionDeclaration
 		//    ( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//MemberPrefix OccurrenceDefinitionPrefix 'interface' 'def' DefinitionDeclaration
+		//MemberPrefix
+		//OccurrenceDefinitionPrefix
+		//'interface' 'def'
+		//DefinitionDeclaration
 		//( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
 		public Group getGroup() { return cGroup; }
 		
@@ -3913,7 +3963,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//    GeneralUsagePrefix
 		//    OccurrenceUsagePrefix
 		//    'interface'
-		//    (UsageDeclaration? ('connect' ConnectorPart )? | ConnectorPart)
+		//    ( UsageDeclaration? ('connect' ConnectorPart )? | ConnectorPart)
 		//    ( ';' | '{' (elements+=InterfaceBodyElement)* '}')
 		//;
 		@Override public ParserRule getRule() { return rule; }
@@ -3921,7 +3971,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//GeneralUsagePrefix
 		//OccurrenceUsagePrefix
 		//'interface'
-		//(UsageDeclaration? ('connect' ConnectorPart )? | ConnectorPart)
+		//( UsageDeclaration? ('connect' ConnectorPart )? | ConnectorPart)
 		//( ';' | '{' (elements+=InterfaceBodyElement)* '}')
 		public Group getGroup() { return cGroup; }
 		
@@ -3934,7 +3984,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//'interface'
 		public Keyword getInterfaceKeyword_2() { return cInterfaceKeyword_2; }
 		
-		//(UsageDeclaration? ('connect' ConnectorPart )? | ConnectorPart)
+		//( UsageDeclaration? ('connect' ConnectorPart )? | ConnectorPart)
 		public Alternatives getAlternatives_3() { return cAlternatives_3; }
 		
 		//UsageDeclaration? ('connect' ConnectorPart )?
@@ -4004,7 +4054,8 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		
 		//Message:
 		//    GeneralUsagePrefix
-		//    OccurrenceUsagePrefix 'message'
+		//    OccurrenceUsagePrefix
+		//    'message'
 		//    UsageDeclaration? ValuePart?
 		//    ( 'of' ItemFeatureParameterPart )?
 		//    ( 'from'? FlowEnd += FeatureChainName 'to' FlowEnd += FeatureChainName )?
@@ -4013,7 +4064,8 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		@Override public ParserRule getRule() { return rule; }
 		
 		//GeneralUsagePrefix
-		//OccurrenceUsagePrefix 'message'
+		//OccurrenceUsagePrefix
+		//'message'
 		//UsageDeclaration? ValuePart?
 		//( 'of' ItemFeatureParameterPart )?
 		//( 'from'? FlowEnd += FeatureChainName 'to' FlowEnd += FeatureChainName )?
@@ -4565,13 +4617,17 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		
 		//ActionDefinition:
 		//    MemberPrefix
-		//    OccurrenceDefinitionPrefix 'action' 'def' DefinitionDeclaration
+		//    OccurrenceDefinitionPrefix
+		//    'action' 'def'
+		//    DefinitionDeclaration
 		//    ( ';' | '{' (elements+=ActionBodyElement)* '}' )
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//MemberPrefix
-		//OccurrenceDefinitionPrefix 'action' 'def' DefinitionDeclaration
+		//OccurrenceDefinitionPrefix
+		//'action' 'def'
+		//DefinitionDeclaration
 		//( ';' | '{' (elements+=ActionBodyElement)* '}' )
 		public Group getGroup() { return cGroup; }
 		
@@ -4628,13 +4684,17 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		
 		//ActionUsage:
 		//    GeneralUsagePrefix
-		//    OccurrenceUsagePrefix 'action' ActionUsageDeclaration
+		//    OccurrenceUsagePrefix
+		//    'action'
+		//    ActionUsageDeclaration
 		//    ( ';' | '{' (elements+=ActionBodyElement)* '}' )
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//GeneralUsagePrefix
-		//OccurrenceUsagePrefix 'action' ActionUsageDeclaration
+		//OccurrenceUsagePrefix
+		//'action'
+		//ActionUsageDeclaration
 		//( ';' | '{' (elements+=ActionBodyElement)* '}' )
 		public Group getGroup() { return cGroup; }
 		
@@ -4692,13 +4752,17 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		
 		//CalculationDefinition:
 		//    MemberPrefix
-		//    OccurrenceDefinitionPrefix 'calc' 'def' DefinitionDeclaration
+		//    OccurrenceDefinitionPrefix
+		//    'calc' 'def'
+		//    DefinitionDeclaration
 		//    (';' | '{' => ( elements+=CalculationBodyElement )* (resultExpressionParameter+=ResultExpression)? '}')
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//MemberPrefix
-		//OccurrenceDefinitionPrefix 'calc' 'def' DefinitionDeclaration
+		//OccurrenceDefinitionPrefix
+		//'calc' 'def'
+		//DefinitionDeclaration
 		//(';' | '{' => ( elements+=CalculationBodyElement )* (resultExpressionParameter+=ResultExpression)? '}')
 		public Group getGroup() { return cGroup; }
 		
@@ -4767,13 +4831,17 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		
 		//CalculationUsage:
 		//    GeneralUsagePrefix
-		//    OccurrenceUsagePrefix 'calc' ActionUsageDeclaration
+		//    OccurrenceUsagePrefix
+		//    'calc'
+		//    ActionUsageDeclaration
 		//    (';' | '{' => ( elements+=CalculationBodyElement )* (resultExpressionParameter+=ResultExpression)? '}')
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//GeneralUsagePrefix
-		//OccurrenceUsagePrefix 'calc' ActionUsageDeclaration
+		//OccurrenceUsagePrefix
+		//'calc'
+		//ActionUsageDeclaration
 		//(';' | '{' => ( elements+=CalculationBodyElement )* (resultExpressionParameter+=ResultExpression)? '}')
 		public Group getGroup() { return cGroup; }
 		
@@ -7058,7 +7126,8 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		
 		//IncludeUseCaseUsage:
 		//    GeneralUsagePrefix
-		//    OccurrenceUsagePrefix 'include'
+		//    OccurrenceUsagePrefix
+		//    'include'
 		//       ( ReferenceSubsetting FeatureSpecializationPart?
 		//       | 'use' 'case' UsageDeclaration? )
 		//    ValuePart?
@@ -7067,7 +7136,8 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		@Override public ParserRule getRule() { return rule; }
 		
 		//GeneralUsagePrefix
-		//OccurrenceUsagePrefix 'include'
+		//OccurrenceUsagePrefix
+		//'include'
 		//   ( ReferenceSubsetting FeatureSpecializationPart?
 		//   | 'use' 'case' UsageDeclaration? )
 		//ValuePart?
@@ -7411,13 +7481,17 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Keyword cRightCurlyBracketKeyword_6_1_2 = (Keyword)cGroup_6_1.eContents().get(2);
 		
 		//AliasElement:
-		//    MemberPrefix 'alias' ( '<' memberShortName = Name '>' )? ( memberName = Name )?
+		//    MemberPrefix
+		//    'alias'
+		//    ( '<' memberShortName = Name '>' )? ( memberName = Name )?
 		//    'for' memberElement = QualifiedName
 		//    (';' | '{' (elements+=AnnotatingBodyElement)* '}')
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//MemberPrefix 'alias' ( '<' memberShortName = Name '>' )? ( memberName = Name )?
+		//MemberPrefix
+		//'alias'
+		//( '<' memberShortName = Name '>' )? ( memberName = Name )?
 		//'for' memberElement = QualifiedName
 		//(';' | '{' (elements+=AnnotatingBodyElement)* '}')
 		public Group getGroup() { return cGroup; }
@@ -7495,12 +7569,16 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Keyword cRightCurlyBracketKeyword_3_1_2 = (Keyword)cGroup_3_1.eContents().get(2);
 		
 		//InitialNode:
-		//    MemberPrefix 'first' memberElement = QualifiedName
+		//    MemberPrefix
+		//    'first'
+		//    memberElement = QualifiedName
 		//    (';' | '{' (elements+=ActionNodeBodyElement)* '}')
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//MemberPrefix 'first' memberElement = QualifiedName
+		//MemberPrefix
+		//'first'
+		//memberElement = QualifiedName
 		//(';' | '{' (elements+=ActionNodeBodyElement)* '}')
 		public Group getGroup() { return cGroup; }
 		
@@ -10037,25 +10115,19 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		
 		//fragment OccurrenceDefinitionPrefix:
 		//    BasicDefinitionPrefix?
-		//    ( isIndividual ?= 'individual'
-		////        ownedRelationship += LifeClassMembership
-		//    )?
+		//    ( isIndividual ?= 'individual' )?
 		////    DefinitionExtensionKeyword*
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//    BasicDefinitionPrefix?
-		//    ( isIndividual ?= 'individual'
-		////        ownedRelationship += LifeClassMembership
-		//    )?
+		//BasicDefinitionPrefix?
+		//( isIndividual ?= 'individual' )?
 		public Group getGroup() { return cGroup; }
 		
 		//BasicDefinitionPrefix?
 		public RuleCall getBasicDefinitionPrefixParserRuleCall_0() { return cBasicDefinitionPrefixParserRuleCall_0; }
 		
-		//    ( isIndividual ?= 'individual'
-		////        ownedRelationship += LifeClassMembership
-		//    )?
+		//( isIndividual ?= 'individual' )?
 		public Assignment getIsIndividualAssignment_1() { return cIsIndividualAssignment_1; }
 		
 		//'individual'
@@ -12602,6 +12674,148 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//FeatureChainName
 		public RuleCall getFeatureChainNameParserRuleCall_2_1_1() { return cFeatureChainNameParserRuleCall_2_1_1; }
 	}
+	public class TargetExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.TargetExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cBaseExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cFullStopKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final RuleCall cFeatureChainNameParserRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
+		private final Group cGroup_2_0 = (Group)cAlternatives_2.eContents().get(0);
+		private final Keyword cNumberSignKeyword_2_0_0 = (Keyword)cGroup_2_0.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_2_0_1 = (Keyword)cGroup_2_0.eContents().get(1);
+		private final RuleCall cSequenceExpressionParserRuleCall_2_0_2 = (RuleCall)cGroup_2_0.eContents().get(2);
+		private final Keyword cRightParenthesisKeyword_2_0_3 = (Keyword)cGroup_2_0.eContents().get(3);
+		private final Group cGroup_2_1 = (Group)cAlternatives_2.eContents().get(1);
+		private final Keyword cLeftSquareBracketKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
+		private final RuleCall cSequenceExpressionParserRuleCall_2_1_1 = (RuleCall)cGroup_2_1.eContents().get(1);
+		private final Keyword cRightSquareBracketKeyword_2_1_2 = (Keyword)cGroup_2_1.eContents().get(2);
+		private final Group cGroup_2_2 = (Group)cAlternatives_2.eContents().get(2);
+		private final Keyword cHyphenMinusGreaterThanSignKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
+		private final RuleCall cReferenceTypingNameParserRuleCall_2_2_1 = (RuleCall)cGroup_2_2.eContents().get(1);
+		private final Alternatives cAlternatives_2_2_2 = (Alternatives)cGroup_2_2.eContents().get(2);
+		private final RuleCall cBodyExpressionParserRuleCall_2_2_2_0 = (RuleCall)cAlternatives_2_2_2.eContents().get(0);
+		private final RuleCall cFunctionReferenceExpressionParserRuleCall_2_2_2_1 = (RuleCall)cAlternatives_2_2_2.eContents().get(1);
+		private final RuleCall cArgumentListParserRuleCall_2_2_2_2 = (RuleCall)cAlternatives_2_2_2.eContents().get(2);
+		private final Group cGroup_2_3 = (Group)cAlternatives_2.eContents().get(3);
+		private final Keyword cFullStopKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
+		private final RuleCall cBodyExpressionParserRuleCall_2_3_1 = (RuleCall)cGroup_2_3.eContents().get(1);
+		private final Group cGroup_2_4 = (Group)cAlternatives_2.eContents().get(4);
+		private final Keyword cFullStopQuestionMarkKeyword_2_4_0 = (Keyword)cGroup_2_4.eContents().get(0);
+		private final RuleCall cBodyExpressionParserRuleCall_2_4_1 = (RuleCall)cGroup_2_4.eContents().get(1);
+		
+		//TargetExpression:
+		//    BaseExpression
+		//    ('.' FeatureChainName)?
+		//    (    ( '#' '(' SequenceExpression ')'
+		//        | '[' SequenceExpression ']'
+		//        | '->' ReferenceTypingName (BodyExpression | FunctionReferenceExpression | ArgumentList)
+		//        | '.' BodyExpression
+		//        | '.?' BodyExpression
+		//        )
+		//    )*
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//BaseExpression
+		//('.' FeatureChainName)?
+		//(    ( '#' '(' SequenceExpression ')'
+		//    | '[' SequenceExpression ']'
+		//    | '->' ReferenceTypingName (BodyExpression | FunctionReferenceExpression | ArgumentList)
+		//    | '.' BodyExpression
+		//    | '.?' BodyExpression
+		//    )
+		//)*
+		public Group getGroup() { return cGroup; }
+		
+		//BaseExpression
+		public RuleCall getBaseExpressionParserRuleCall_0() { return cBaseExpressionParserRuleCall_0; }
+		
+		//('.' FeatureChainName)?
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//'.'
+		public Keyword getFullStopKeyword_1_0() { return cFullStopKeyword_1_0; }
+		
+		//FeatureChainName
+		public RuleCall getFeatureChainNameParserRuleCall_1_1() { return cFeatureChainNameParserRuleCall_1_1; }
+		
+		//(    ( '#' '(' SequenceExpression ')'
+		//    | '[' SequenceExpression ']'
+		//    | '->' ReferenceTypingName (BodyExpression | FunctionReferenceExpression | ArgumentList)
+		//    | '.' BodyExpression
+		//    | '.?' BodyExpression
+		//    )
+		//)*
+		public Alternatives getAlternatives_2() { return cAlternatives_2; }
+		
+		//'#' '(' SequenceExpression ')'
+		public Group getGroup_2_0() { return cGroup_2_0; }
+		
+		//'#'
+		public Keyword getNumberSignKeyword_2_0_0() { return cNumberSignKeyword_2_0_0; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_2_0_1() { return cLeftParenthesisKeyword_2_0_1; }
+		
+		//SequenceExpression
+		public RuleCall getSequenceExpressionParserRuleCall_2_0_2() { return cSequenceExpressionParserRuleCall_2_0_2; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_2_0_3() { return cRightParenthesisKeyword_2_0_3; }
+		
+		//'[' SequenceExpression ']'
+		public Group getGroup_2_1() { return cGroup_2_1; }
+		
+		//'['
+		public Keyword getLeftSquareBracketKeyword_2_1_0() { return cLeftSquareBracketKeyword_2_1_0; }
+		
+		//SequenceExpression
+		public RuleCall getSequenceExpressionParserRuleCall_2_1_1() { return cSequenceExpressionParserRuleCall_2_1_1; }
+		
+		//']'
+		public Keyword getRightSquareBracketKeyword_2_1_2() { return cRightSquareBracketKeyword_2_1_2; }
+		
+		//'->' ReferenceTypingName (BodyExpression | FunctionReferenceExpression | ArgumentList)
+		public Group getGroup_2_2() { return cGroup_2_2; }
+		
+		//'->'
+		public Keyword getHyphenMinusGreaterThanSignKeyword_2_2_0() { return cHyphenMinusGreaterThanSignKeyword_2_2_0; }
+		
+		//ReferenceTypingName
+		public RuleCall getReferenceTypingNameParserRuleCall_2_2_1() { return cReferenceTypingNameParserRuleCall_2_2_1; }
+		
+		//(BodyExpression | FunctionReferenceExpression | ArgumentList)
+		public Alternatives getAlternatives_2_2_2() { return cAlternatives_2_2_2; }
+		
+		//BodyExpression
+		public RuleCall getBodyExpressionParserRuleCall_2_2_2_0() { return cBodyExpressionParserRuleCall_2_2_2_0; }
+		
+		//FunctionReferenceExpression
+		public RuleCall getFunctionReferenceExpressionParserRuleCall_2_2_2_1() { return cFunctionReferenceExpressionParserRuleCall_2_2_2_1; }
+		
+		//ArgumentList
+		public RuleCall getArgumentListParserRuleCall_2_2_2_2() { return cArgumentListParserRuleCall_2_2_2_2; }
+		
+		//'.' BodyExpression
+		public Group getGroup_2_3() { return cGroup_2_3; }
+		
+		//'.'
+		public Keyword getFullStopKeyword_2_3_0() { return cFullStopKeyword_2_3_0; }
+		
+		//BodyExpression
+		public RuleCall getBodyExpressionParserRuleCall_2_3_1() { return cBodyExpressionParserRuleCall_2_3_1; }
+		
+		//'.?' BodyExpression
+		public Group getGroup_2_4() { return cGroup_2_4; }
+		
+		//'.?'
+		public Keyword getFullStopQuestionMarkKeyword_2_4_0() { return cFullStopQuestionMarkKeyword_2_4_0; }
+		
+		//BodyExpression
+		public RuleCall getBodyExpressionParserRuleCall_2_4_1() { return cBodyExpressionParserRuleCall_2_4_1; }
+	}
 	public class BaseExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.BaseExpression");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -13403,148 +13617,6 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//QualifiedName
 		public RuleCall getQualifiedNameParserRuleCall() { return cQualifiedNameParserRuleCall; }
 	}
-	public class TargetExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.TargetExpression");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cBaseExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Keyword cFullStopKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final RuleCall cFeatureChainNameParserRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
-		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
-		private final Group cGroup_2_0 = (Group)cAlternatives_2.eContents().get(0);
-		private final Keyword cNumberSignKeyword_2_0_0 = (Keyword)cGroup_2_0.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_2_0_1 = (Keyword)cGroup_2_0.eContents().get(1);
-		private final RuleCall cSequenceExpressionParserRuleCall_2_0_2 = (RuleCall)cGroup_2_0.eContents().get(2);
-		private final Keyword cRightParenthesisKeyword_2_0_3 = (Keyword)cGroup_2_0.eContents().get(3);
-		private final Group cGroup_2_1 = (Group)cAlternatives_2.eContents().get(1);
-		private final Keyword cLeftSquareBracketKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
-		private final RuleCall cSequenceExpressionParserRuleCall_2_1_1 = (RuleCall)cGroup_2_1.eContents().get(1);
-		private final Keyword cRightSquareBracketKeyword_2_1_2 = (Keyword)cGroup_2_1.eContents().get(2);
-		private final Group cGroup_2_2 = (Group)cAlternatives_2.eContents().get(2);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
-		private final RuleCall cReferenceTypingNameParserRuleCall_2_2_1 = (RuleCall)cGroup_2_2.eContents().get(1);
-		private final Alternatives cAlternatives_2_2_2 = (Alternatives)cGroup_2_2.eContents().get(2);
-		private final RuleCall cBodyExpressionParserRuleCall_2_2_2_0 = (RuleCall)cAlternatives_2_2_2.eContents().get(0);
-		private final RuleCall cFunctionReferenceExpressionParserRuleCall_2_2_2_1 = (RuleCall)cAlternatives_2_2_2.eContents().get(1);
-		private final RuleCall cArgumentListParserRuleCall_2_2_2_2 = (RuleCall)cAlternatives_2_2_2.eContents().get(2);
-		private final Group cGroup_2_3 = (Group)cAlternatives_2.eContents().get(3);
-		private final Keyword cFullStopKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
-		private final RuleCall cBodyExpressionParserRuleCall_2_3_1 = (RuleCall)cGroup_2_3.eContents().get(1);
-		private final Group cGroup_2_4 = (Group)cAlternatives_2.eContents().get(4);
-		private final Keyword cFullStopQuestionMarkKeyword_2_4_0 = (Keyword)cGroup_2_4.eContents().get(0);
-		private final RuleCall cBodyExpressionParserRuleCall_2_4_1 = (RuleCall)cGroup_2_4.eContents().get(1);
-		
-		//TargetExpression:
-		//    BaseExpression
-		//    ('.' FeatureChainName)?
-		//    (    ( '#' '(' SequenceExpression ')'
-		//        | '[' SequenceExpression ']'
-		//        | '->' ReferenceTypingName (BodyExpression | FunctionReferenceExpression | ArgumentList)
-		//        | '.' BodyExpression
-		//        | '.?' BodyExpression
-		//        )
-		//    )*
-		//;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//BaseExpression
-		//('.' FeatureChainName)?
-		//(    ( '#' '(' SequenceExpression ')'
-		//    | '[' SequenceExpression ']'
-		//    | '->' ReferenceTypingName (BodyExpression | FunctionReferenceExpression | ArgumentList)
-		//    | '.' BodyExpression
-		//    | '.?' BodyExpression
-		//    )
-		//)*
-		public Group getGroup() { return cGroup; }
-		
-		//BaseExpression
-		public RuleCall getBaseExpressionParserRuleCall_0() { return cBaseExpressionParserRuleCall_0; }
-		
-		//('.' FeatureChainName)?
-		public Group getGroup_1() { return cGroup_1; }
-		
-		//'.'
-		public Keyword getFullStopKeyword_1_0() { return cFullStopKeyword_1_0; }
-		
-		//FeatureChainName
-		public RuleCall getFeatureChainNameParserRuleCall_1_1() { return cFeatureChainNameParserRuleCall_1_1; }
-		
-		//(    ( '#' '(' SequenceExpression ')'
-		//    | '[' SequenceExpression ']'
-		//    | '->' ReferenceTypingName (BodyExpression | FunctionReferenceExpression | ArgumentList)
-		//    | '.' BodyExpression
-		//    | '.?' BodyExpression
-		//    )
-		//)*
-		public Alternatives getAlternatives_2() { return cAlternatives_2; }
-		
-		//'#' '(' SequenceExpression ')'
-		public Group getGroup_2_0() { return cGroup_2_0; }
-		
-		//'#'
-		public Keyword getNumberSignKeyword_2_0_0() { return cNumberSignKeyword_2_0_0; }
-		
-		//'('
-		public Keyword getLeftParenthesisKeyword_2_0_1() { return cLeftParenthesisKeyword_2_0_1; }
-		
-		//SequenceExpression
-		public RuleCall getSequenceExpressionParserRuleCall_2_0_2() { return cSequenceExpressionParserRuleCall_2_0_2; }
-		
-		//')'
-		public Keyword getRightParenthesisKeyword_2_0_3() { return cRightParenthesisKeyword_2_0_3; }
-		
-		//'[' SequenceExpression ']'
-		public Group getGroup_2_1() { return cGroup_2_1; }
-		
-		//'['
-		public Keyword getLeftSquareBracketKeyword_2_1_0() { return cLeftSquareBracketKeyword_2_1_0; }
-		
-		//SequenceExpression
-		public RuleCall getSequenceExpressionParserRuleCall_2_1_1() { return cSequenceExpressionParserRuleCall_2_1_1; }
-		
-		//']'
-		public Keyword getRightSquareBracketKeyword_2_1_2() { return cRightSquareBracketKeyword_2_1_2; }
-		
-		//'->' ReferenceTypingName (BodyExpression | FunctionReferenceExpression | ArgumentList)
-		public Group getGroup_2_2() { return cGroup_2_2; }
-		
-		//'->'
-		public Keyword getHyphenMinusGreaterThanSignKeyword_2_2_0() { return cHyphenMinusGreaterThanSignKeyword_2_2_0; }
-		
-		//ReferenceTypingName
-		public RuleCall getReferenceTypingNameParserRuleCall_2_2_1() { return cReferenceTypingNameParserRuleCall_2_2_1; }
-		
-		//(BodyExpression | FunctionReferenceExpression | ArgumentList)
-		public Alternatives getAlternatives_2_2_2() { return cAlternatives_2_2_2; }
-		
-		//BodyExpression
-		public RuleCall getBodyExpressionParserRuleCall_2_2_2_0() { return cBodyExpressionParserRuleCall_2_2_2_0; }
-		
-		//FunctionReferenceExpression
-		public RuleCall getFunctionReferenceExpressionParserRuleCall_2_2_2_1() { return cFunctionReferenceExpressionParserRuleCall_2_2_2_1; }
-		
-		//ArgumentList
-		public RuleCall getArgumentListParserRuleCall_2_2_2_2() { return cArgumentListParserRuleCall_2_2_2_2; }
-		
-		//'.' BodyExpression
-		public Group getGroup_2_3() { return cGroup_2_3; }
-		
-		//'.'
-		public Keyword getFullStopKeyword_2_3_0() { return cFullStopKeyword_2_3_0; }
-		
-		//BodyExpression
-		public RuleCall getBodyExpressionParserRuleCall_2_3_1() { return cBodyExpressionParserRuleCall_2_3_1; }
-		
-		//'.?' BodyExpression
-		public Group getGroup_2_4() { return cGroup_2_4; }
-		
-		//'.?'
-		public Keyword getFullStopQuestionMarkKeyword_2_4_0() { return cFullStopQuestionMarkKeyword_2_4_0; }
-		
-		//BodyExpression
-		public RuleCall getBodyExpressionParserRuleCall_2_4_1() { return cBodyExpressionParserRuleCall_2_4_1; }
-	}
 	
 	public class VisibilityIndicatorElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.VisibilityIndicator");
@@ -14005,6 +14077,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	private final UnaryExpressionElements pUnaryExpression;
 	private final ExtentExpressionElements pExtentExpression;
 	private final PrimaryExpressionElements pPrimaryExpression;
+	private final TargetExpressionElements pTargetExpression;
 	private final BaseExpressionElements pBaseExpression;
 	private final FunctionReferenceExpressionElements pFunctionReferenceExpression;
 	private final ArgumentListElements pArgumentList;
@@ -14028,7 +14101,6 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	private final RealValueElements pRealValue;
 	private final LiteralInfinityElements pLiteralInfinity;
 	private final FeatureReferenceExpressionElements pFeatureReferenceExpression;
-	private final TargetExpressionElements pTargetExpression;
 	private final TerminalRule tDECIMAL_VALUE;
 	private final TerminalRule tEXP_VALUE;
 	private final TerminalRule tID;
@@ -14260,6 +14332,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		this.pUnaryExpression = new UnaryExpressionElements();
 		this.pExtentExpression = new ExtentExpressionElements();
 		this.pPrimaryExpression = new PrimaryExpressionElements();
+		this.pTargetExpression = new TargetExpressionElements();
 		this.pBaseExpression = new BaseExpressionElements();
 		this.pFunctionReferenceExpression = new FunctionReferenceExpressionElements();
 		this.pArgumentList = new ArgumentListElements();
@@ -14283,7 +14356,6 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		this.pRealValue = new RealValueElements();
 		this.pLiteralInfinity = new LiteralInfinityElements();
 		this.pFeatureReferenceExpression = new FeatureReferenceExpressionElements();
-		this.pTargetExpression = new TargetExpressionElements();
 		this.tDECIMAL_VALUE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.DECIMAL_VALUE");
 		this.tEXP_VALUE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.EXP_VALUE");
 		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.ID");
@@ -15068,7 +15140,10 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//OccurrenceDefinition:
-	//    MemberPrefix OccurrenceDefinitionPrefix 'occurrence' 'def' DefinitionDeclaration
+	//    MemberPrefix
+	//    OccurrenceDefinitionPrefix
+	//    'occurrence' 'def'
+	//    DefinitionDeclaration
 	//    ( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
 	//;
 	public OccurrenceDefinitionElements getOccurrenceDefinitionAccess() {
@@ -15081,7 +15156,9 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	
 	//OccurrenceUsage:
 	//    GeneralUsagePrefix
-	//    OccurrenceUsagePrefix 'occurrence' Usage
+	//    OccurrenceUsagePrefix
+	//    'occurrence'
+	//    Usage
 	//    ( ';' | '{' (elements+=UsageBodyElement)* '}' )
 	//;
 	public OccurrenceUsageElements getOccurrenceUsageAccess() {
@@ -15094,7 +15171,8 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	
 	//PortionUsage:
 	//    GeneralUsagePrefix
-	//    BasicUsagePrefix ( isIndividual ?= 'individual' )? portionKind = PortionKind
+	//    BasicUsagePrefix ( isIndividual ?= 'individual' )?
+	//    portionKind = PortionKind
 	//    UsageExtensionKeyword*
 	//    Usage
 	//    ( ';' | '{' (elements+=UsageBodyElement)* '}' )
@@ -15156,7 +15234,10 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//ItemDefinition:
-	//    MemberPrefix OccurrenceDefinitionPrefix 'item' 'def' DefinitionDeclaration
+	//    MemberPrefix
+	//    OccurrenceDefinitionPrefix
+	//    'item' 'def'
+	//    DefinitionDeclaration
 	//    ( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
 	//;
 	public ItemDefinitionElements getItemDefinitionAccess() {
@@ -15197,7 +15278,10 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//PartDefinition:
-	//    MemberPrefix OccurrenceDefinitionPrefix 'part' 'def' DefinitionDeclaration
+	//    MemberPrefix
+	//    OccurrenceDefinitionPrefix
+	//    'part' 'def'
+	//    DefinitionDeclaration
 	//    ( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
 	//;
 	public PartDefinitionElements getPartDefinitionAccess() {
@@ -15210,7 +15294,9 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	
 	//PartUsage:
 	//    GeneralUsagePrefix
-	//    OccurrenceUsagePrefix 'part' Usage
+	//    OccurrenceUsagePrefix
+	//    'part'
+	//    Usage
 	//    ( ';' | '{' (elements+=UsageBodyElement)* '}' )
 	//;
 	public PartUsageElements getPartUsageAccess() {
@@ -15222,7 +15308,10 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//PortDefinition:
-	//    MemberPrefix DefinitionPrefix 'port' 'def' DefinitionDeclaration
+	//    MemberPrefix
+	//    DefinitionPrefix
+	//    'port' 'def'
+	//    DefinitionDeclaration
 	//    ( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
 	//;
 	public PortDefinitionElements getPortDefinitionAccess() {
@@ -15235,7 +15324,9 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	
 	//PortUsage:
 	//    GeneralUsagePrefix
-	//    OccurrenceUsagePrefix 'port' Usage
+	//    OccurrenceUsagePrefix
+	//    'port'
+	//    Usage
 	//    ( ';' | '{' (elements+=UsageBodyElement)* '}' )
 	//;
 	public PortUsageElements getPortUsageAccess() {
@@ -15247,7 +15338,10 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//ConnectionDefinition:
-	//    MemberPrefix OccurrenceDefinitionPrefix 'connection' 'def' DefinitionDeclaration
+	//    MemberPrefix
+	//    OccurrenceDefinitionPrefix
+	//    'connection' 'def'
+	//    DefinitionDeclaration
 	//    ( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
 	//;
 	public ConnectionDefinitionElements getConnectionDefinitionAccess() {
@@ -15274,7 +15368,10 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//InterfaceDefinition:
-	//    MemberPrefix OccurrenceDefinitionPrefix 'interface' 'def' DefinitionDeclaration
+	//    MemberPrefix
+	//    OccurrenceDefinitionPrefix
+	//    'interface' 'def'
+	//    DefinitionDeclaration
 	//    ( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
 	//;
 	public InterfaceDefinitionElements getInterfaceDefinitionAccess() {
@@ -15289,7 +15386,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	//    GeneralUsagePrefix
 	//    OccurrenceUsagePrefix
 	//    'interface'
-	//    (UsageDeclaration? ('connect' ConnectorPart )? | ConnectorPart)
+	//    ( UsageDeclaration? ('connect' ConnectorPart )? | ConnectorPart)
 	//    ( ';' | '{' (elements+=InterfaceBodyElement)* '}')
 	//;
 	public InterfaceUsageElements getInterfaceUsageAccess() {
@@ -15302,7 +15399,8 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	
 	//Message:
 	//    GeneralUsagePrefix
-	//    OccurrenceUsagePrefix 'message'
+	//    OccurrenceUsagePrefix
+	//    'message'
 	//    UsageDeclaration? ValuePart?
 	//    ( 'of' ItemFeatureParameterPart )?
 	//    ( 'from'? FlowEnd += FeatureChainName 'to' FlowEnd += FeatureChainName )?
@@ -15397,7 +15495,9 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	
 	//ActionDefinition:
 	//    MemberPrefix
-	//    OccurrenceDefinitionPrefix 'action' 'def' DefinitionDeclaration
+	//    OccurrenceDefinitionPrefix
+	//    'action' 'def'
+	//    DefinitionDeclaration
 	//    ( ';' | '{' (elements+=ActionBodyElement)* '}' )
 	//;
 	public ActionDefinitionElements getActionDefinitionAccess() {
@@ -15410,7 +15510,9 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	
 	//ActionUsage:
 	//    GeneralUsagePrefix
-	//    OccurrenceUsagePrefix 'action' ActionUsageDeclaration
+	//    OccurrenceUsagePrefix
+	//    'action'
+	//    ActionUsageDeclaration
 	//    ( ';' | '{' (elements+=ActionBodyElement)* '}' )
 	//;
 	public ActionUsageElements getActionUsageAccess() {
@@ -15423,7 +15525,9 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	
 	//CalculationDefinition:
 	//    MemberPrefix
-	//    OccurrenceDefinitionPrefix 'calc' 'def' DefinitionDeclaration
+	//    OccurrenceDefinitionPrefix
+	//    'calc' 'def'
+	//    DefinitionDeclaration
 	//    (';' | '{' => ( elements+=CalculationBodyElement )* (resultExpressionParameter+=ResultExpression)? '}')
 	//;
 	public CalculationDefinitionElements getCalculationDefinitionAccess() {
@@ -15436,7 +15540,9 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	
 	//CalculationUsage:
 	//    GeneralUsagePrefix
-	//    OccurrenceUsagePrefix 'calc' ActionUsageDeclaration
+	//    OccurrenceUsagePrefix
+	//    'calc'
+	//    ActionUsageDeclaration
 	//    (';' | '{' => ( elements+=CalculationBodyElement )* (resultExpressionParameter+=ResultExpression)? '}')
 	//;
 	public CalculationUsageElements getCalculationUsageAccess() {
@@ -15861,7 +15967,8 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	
 	//IncludeUseCaseUsage:
 	//    GeneralUsagePrefix
-	//    OccurrenceUsagePrefix 'include'
+	//    OccurrenceUsagePrefix
+	//    'include'
 	//       ( ReferenceSubsetting FeatureSpecializationPart?
 	//       | 'use' 'case' UsageDeclaration? )
 	//    ValuePart?
@@ -15912,7 +16019,9 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//AliasElement:
-	//    MemberPrefix 'alias' ( '<' memberShortName = Name '>' )? ( memberName = Name )?
+	//    MemberPrefix
+	//    'alias'
+	//    ( '<' memberShortName = Name '>' )? ( memberName = Name )?
 	//    'for' memberElement = QualifiedName
 	//    (';' | '{' (elements+=AnnotatingBodyElement)* '}')
 	//;
@@ -15925,7 +16034,9 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//InitialNode:
-	//    MemberPrefix 'first' memberElement = QualifiedName
+	//    MemberPrefix
+	//    'first'
+	//    memberElement = QualifiedName
 	//    (';' | '{' (elements+=ActionNodeBodyElement)* '}')
 	//;
 	public InitialNodeElements getInitialNodeAccess() {
@@ -16484,9 +16595,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	
 	//fragment OccurrenceDefinitionPrefix:
 	//    BasicDefinitionPrefix?
-	//    ( isIndividual ?= 'individual'
-	////        ownedRelationship += LifeClassMembership
-	//    )?
+	//    ( isIndividual ?= 'individual' )?
 	////    DefinitionExtensionKeyword*
 	//;
 	public OccurrenceDefinitionPrefixElements getOccurrenceDefinitionPrefixAccess() {
@@ -17346,6 +17455,25 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		return getPrimaryExpressionAccess().getRule();
 	}
 	
+	//TargetExpression:
+	//    BaseExpression
+	//    ('.' FeatureChainName)?
+	//    (    ( '#' '(' SequenceExpression ')'
+	//        | '[' SequenceExpression ']'
+	//        | '->' ReferenceTypingName (BodyExpression | FunctionReferenceExpression | ArgumentList)
+	//        | '.' BodyExpression
+	//        | '.?' BodyExpression
+	//        )
+	//    )*
+	//;
+	public TargetExpressionElements getTargetExpressionAccess() {
+		return pTargetExpression;
+	}
+	
+	public ParserRule getTargetExpressionRule() {
+		return getTargetExpressionAccess().getRule();
+	}
+	
 	//BaseExpression:
 	//    NullExpression
 	//    | LiteralExpression
@@ -17618,25 +17746,6 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	
 	public ParserRule getFeatureReferenceExpressionRule() {
 		return getFeatureReferenceExpressionAccess().getRule();
-	}
-	
-	//TargetExpression:
-	//    BaseExpression
-	//    ('.' FeatureChainName)?
-	//    (    ( '#' '(' SequenceExpression ')'
-	//        | '[' SequenceExpression ']'
-	//        | '->' ReferenceTypingName (BodyExpression | FunctionReferenceExpression | ArgumentList)
-	//        | '.' BodyExpression
-	//        | '.?' BodyExpression
-	//        )
-	//    )*
-	//;
-	public TargetExpressionElements getTargetExpressionAccess() {
-		return pTargetExpression;
-	}
-	
-	public ParserRule getTargetExpressionRule() {
-		return getTargetExpressionAccess().getRule();
 	}
 	
 	//// TODO --------------------------------- Terminal Level ---------------------------------//

@@ -432,19 +432,25 @@ SuccessionAsUsage:
 ;
 
 OccurrenceDefinition:
-	MemberPrefix OccurrenceDefinitionPrefix 'occurrence' 'def' DefinitionDeclaration 
+	MemberPrefix 
+	OccurrenceDefinitionPrefix 
+	'occurrence' 'def' 
+	DefinitionDeclaration 
 	( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
 ;
 
 OccurrenceUsage:
 	GeneralUsagePrefix
-    OccurrenceUsagePrefix 'occurrence' Usage 
+    OccurrenceUsagePrefix 
+    'occurrence' 
+    Usage 
     ( ';' | '{' (elements+=UsageBodyElement)* '}' )
 ;
 
 PortionUsage:
 	GeneralUsagePrefix
-	BasicUsagePrefix ( isIndividual ?= 'individual' )? portionKind = PortionKind
+	BasicUsagePrefix ( isIndividual ?= 'individual' )? 
+	portionKind = PortionKind
 	UsageExtensionKeyword*
 	Usage
 	( ';' | '{' (elements+=UsageBodyElement)* '}' )
@@ -478,7 +484,10 @@ IndividualUsage:
 ;
 
 ItemDefinition:
-    MemberPrefix OccurrenceDefinitionPrefix 'item' 'def' DefinitionDeclaration 
+    MemberPrefix 
+    OccurrenceDefinitionPrefix 
+    'item' 'def' 
+    DefinitionDeclaration 
     ( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
 ;
 
@@ -498,29 +507,42 @@ MetadataDefinition:
 ;
 
 PartDefinition:
-    MemberPrefix OccurrenceDefinitionPrefix 'part' 'def' DefinitionDeclaration 
+    MemberPrefix 
+    OccurrenceDefinitionPrefix 
+    'part' 'def' 
+    DefinitionDeclaration 
     ( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
 ;
 
 PartUsage:
 	GeneralUsagePrefix
-    OccurrenceUsagePrefix 'part' Usage 
+    OccurrenceUsagePrefix 
+    'part' 
+    Usage 
     ( ';' | '{' (elements+=UsageBodyElement)* '}' )
 ;
 
 PortDefinition:
-    MemberPrefix DefinitionPrefix 'port' 'def' DefinitionDeclaration 
+    MemberPrefix 
+    DefinitionPrefix 
+    'port' 'def' 
+    DefinitionDeclaration 
     ( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
 ;
 
 PortUsage:
 	GeneralUsagePrefix
-    OccurrenceUsagePrefix 'port' Usage 
+    OccurrenceUsagePrefix 
+    'port' 
+    Usage 
     ( ';' | '{' (elements+=UsageBodyElement)* '}' )
 ;
 
 ConnectionDefinition:
-	MemberPrefix OccurrenceDefinitionPrefix 'connection' 'def' DefinitionDeclaration 
+	MemberPrefix 
+	OccurrenceDefinitionPrefix 
+	'connection' 'def' 
+	DefinitionDeclaration 
 	( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
 ;
 
@@ -533,7 +555,10 @@ ConnectionUsage:
 ;
 
 InterfaceDefinition:
-	MemberPrefix OccurrenceDefinitionPrefix 'interface' 'def' DefinitionDeclaration 
+	MemberPrefix 
+	OccurrenceDefinitionPrefix 
+	'interface' 'def' 
+	DefinitionDeclaration 
 	( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
 ;
 
@@ -541,13 +566,14 @@ InterfaceUsage:
 	GeneralUsagePrefix
 	OccurrenceUsagePrefix
 	'interface' 
-	(UsageDeclaration? ('connect' ConnectorPart )? | ConnectorPart) 
+	( UsageDeclaration? ('connect' ConnectorPart )? | ConnectorPart) 
 	( ';' | '{' (elements+=InterfaceBodyElement)* '}')
 ;
 
 Message:
 	GeneralUsagePrefix
-	OccurrenceUsagePrefix 'message' 
+	OccurrenceUsagePrefix 
+	'message' 
 	UsageDeclaration? ValuePart?
 	( 'of' ItemFeatureParameterPart )?
     ( 'from'? FlowEnd += FeatureChainName 'to' FlowEnd += FeatureChainName )?
@@ -600,25 +626,33 @@ AllocationUsage:
 
 ActionDefinition:
 	MemberPrefix
-	OccurrenceDefinitionPrefix 'action' 'def' DefinitionDeclaration
+	OccurrenceDefinitionPrefix 
+	'action' 'def' 
+	DefinitionDeclaration
 	( ';' | '{' (elements+=ActionBodyElement)* '}' )
 ;
 
 ActionUsage:
 	GeneralUsagePrefix
-    OccurrenceUsagePrefix 'action' ActionUsageDeclaration 
+    OccurrenceUsagePrefix 
+    'action' 
+    ActionUsageDeclaration 
     ( ';' | '{' (elements+=ActionBodyElement)* '}' )
 ;
 
 CalculationDefinition:
 	MemberPrefix
-	OccurrenceDefinitionPrefix 'calc' 'def' DefinitionDeclaration
+	OccurrenceDefinitionPrefix 
+	'calc' 'def' 
+	DefinitionDeclaration
 	(';' | '{' => ( elements+=CalculationBodyElement )* (resultExpressionParameter+=ResultExpression)? '}')  
 ;
 
 CalculationUsage:
 	GeneralUsagePrefix
-    OccurrenceUsagePrefix 'calc' ActionUsageDeclaration 
+    OccurrenceUsagePrefix 
+    'calc' 
+    ActionUsageDeclaration 
 	(';' | '{' => ( elements+=CalculationBodyElement )* (resultExpressionParameter+=ResultExpression)? '}')  
 ;
 
@@ -855,7 +889,8 @@ ExhibitStateUsage:
 
 IncludeUseCaseUsage:
 	GeneralUsagePrefix
-	OccurrenceUsagePrefix 'include' 
+	OccurrenceUsagePrefix 
+	'include' 
    	( ReferenceSubsetting FeatureSpecializationPart?
    	| 'use' 'case' UsageDeclaration? )
     ValuePart?
@@ -886,13 +921,17 @@ SatisfyRequirementUsage:
 
 
 AliasElement:
-	MemberPrefix 'alias' ( '<' memberShortName = Name '>' )? ( memberName = Name )? 
+	MemberPrefix 
+	'alias' 
+	( '<' memberShortName = Name '>' )? ( memberName = Name )? 
 	'for' memberElement = QualifiedName
 	(';' | '{' (elements+=AnnotatingBodyElement)* '}')
 ;
 
 InitialNode:
-	MemberPrefix 'first' memberElement = QualifiedName
+	MemberPrefix 
+	'first' 
+	memberElement = QualifiedName
 	(';' | '{' (elements+=ActionNodeBodyElement)* '}')
 ;
 
@@ -1173,9 +1212,7 @@ fragment DefinitionPrefix:
 
 fragment OccurrenceDefinitionPrefix:
 	BasicDefinitionPrefix?
-	( isIndividual ?= 'individual' 
-//		ownedRelationship += LifeClassMembership
-	)?
+	( isIndividual ?= 'individual' )?
 //	DefinitionExtensionKeyword*
 ;
 
@@ -1543,6 +1580,18 @@ PrimaryExpression:
 	)*
 ;
 
+TargetExpression:
+	BaseExpression
+	('.' FeatureChainName)?
+	(	( '#' '(' SequenceExpression ')'
+		| '[' SequenceExpression ']'
+		| '->' ReferenceTypingName (BodyExpression | FunctionReferenceExpression | ArgumentList)
+		| '.' BodyExpression
+		| '.?' BodyExpression
+		)
+	)*
+;
+
 BaseExpression:
 	NullExpression
 	| LiteralExpression 
@@ -1654,18 +1703,6 @@ LiteralInfinity:
 
 FeatureReferenceExpression:
 	QualifiedName
-;
-
-TargetExpression:
-	BaseExpression
-	('.' FeatureChainName)?
-	(	( '#' '(' SequenceExpression ')'
-		| '[' SequenceExpression ']'
-		| '->' ReferenceTypingName (BodyExpression | FunctionReferenceExpression | ArgumentList)
-		| '.' BodyExpression
-		| '.?' BodyExpression
-		)
-	)*
 ;
 
 // TODO --------------------------------- Terminal Level ---------------------------------//

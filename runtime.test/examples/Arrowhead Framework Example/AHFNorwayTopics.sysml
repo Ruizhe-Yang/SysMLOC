@@ -59,9 +59,9 @@ package AHFNorway {
 			state TellUbehavior{
 				entry send CallGiveItems("All the items") via apisp.APIS_HTTP;
 				then Wait;
+				// Here do whatever about the result rs.ret 
 				state Wait;
 					accept rs:ResultGiveItems
-					// Here do whatever about the result rs.ret 
 				then Wait;
 			}
 						
@@ -113,8 +113,9 @@ package AHFNorway {
 				entry send Subscribe("Return_AllItems") via apisp.APIS_MQTT; 
 				then Idle;		
 				state Idle;
-					accept Return_AllItems via apisp.APIS_MQTT
 					// Get the stuff and do something with them
+					accept Return_AllItems via apisp.APIS_MQTT
+					
 					then Idle;
 			}
 		}
@@ -126,14 +127,15 @@ package AHFNorway {
  			state Serve{				
  				entry;
  				then Publ;
+ 				// store information about who will provide "Publish::nametopic"
  				state Publ;
  					accept pub:Publish via getTopic.APIS_MQTT
- 					// store information about who will provide "Publish::nametopic"
+ 					
  				then Subsr;
- 				
+ 				// store information about who want to receive "Subscribe::nametopic"
  				state Subsr;
  					accept Subscribe via giveTopic.APIS_MQTT
- 					// store information about who want to receive "Subscribe::nametopic"
+ 					
  				then Idle;
  				
  				state Idle;
