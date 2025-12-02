@@ -466,7 +466,8 @@ PortionUsage:
 
 EventOccurrenceUsage:
 	GeneralUsagePrefix
-    OccurrenceUsagePrefix 'event'
+    OccurrenceUsagePrefix 
+    'event'
     ( ReferenceSubsetting FeatureSpecializationPart? | 'occurrence' UsageDeclaration? )
     ValuePart? 
     ( ';' | '{' (elements+=UsageBodyElement)* '}' )
@@ -501,7 +502,9 @@ ItemDefinition:
 
 ItemUsage:
 	GeneralUsagePrefix
-    OccurrenceUsagePrefix 'item' Usage 
+    OccurrenceUsagePrefix 
+    'item' 
+    Usage 
     ( ';' | '{' (elements+=UsageBodyElement)* '}' )
 ;
 
@@ -1245,10 +1248,11 @@ fragment EndUsagePrefix:
 ;
 
 fragment OccurrenceUsagePrefix:
-	isEnd ?= 'end'
+	( isEnd ?= 'end'
 	| BasicUsagePrefix
 	  ( isIndividual ?= 'individual' )?
-	  ( portionKind = PortionKind )?
+	  ( portionKind = PortionKind )? )
+//	UsageExtensionKeyword*
 ;
 
 fragment RefPrefix:

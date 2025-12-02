@@ -2339,14 +2339,18 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//AttributeUsage:
 		//    MemberPrefix
 		//    isReturnPrefix
-		//    UsagePrefix 'attribute' Usage
+		//    UsagePrefix
+		//    'attribute'
+		//    Usage
 		//    ( ';' | '{' (elements+=UsageBodyElement)* '}' )
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//MemberPrefix
 		//isReturnPrefix
-		//UsagePrefix 'attribute' Usage
+		//UsagePrefix
+		//'attribute'
+		//Usage
 		//( ';' | '{' (elements+=UsageBodyElement)* '}' )
 		public Group getGroup() { return cGroup; }
 		
@@ -3021,7 +3025,8 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		
 		//EventOccurrenceUsage:
 		//    GeneralUsagePrefix
-		//    OccurrenceUsagePrefix 'event'
+		//    OccurrenceUsagePrefix
+		//    'event'
 		//    ( ReferenceSubsetting FeatureSpecializationPart? | 'occurrence' UsageDeclaration? )
 		//    ValuePart?
 		//    ( ';' | '{' (elements+=UsageBodyElement)* '}' )
@@ -3029,7 +3034,8 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		@Override public ParserRule getRule() { return rule; }
 		
 		//GeneralUsagePrefix
-		//OccurrenceUsagePrefix 'event'
+		//OccurrenceUsagePrefix
+		//'event'
 		//( ReferenceSubsetting FeatureSpecializationPart? | 'occurrence' UsageDeclaration? )
 		//ValuePart?
 		//( ';' | '{' (elements+=UsageBodyElement)* '}' )
@@ -3328,13 +3334,17 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		
 		//ItemUsage:
 		//    GeneralUsagePrefix
-		//    OccurrenceUsagePrefix 'item' Usage
+		//    OccurrenceUsagePrefix
+		//    'item'
+		//    Usage
 		//    ( ';' | '{' (elements+=UsageBodyElement)* '}' )
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//GeneralUsagePrefix
-		//OccurrenceUsagePrefix 'item' Usage
+		//OccurrenceUsagePrefix
+		//'item'
+		//Usage
 		//( ';' | '{' (elements+=UsageBodyElement)* '}' )
 		public Group getGroup() { return cGroup; }
 		
@@ -10237,17 +10247,18 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cPortionKindPortionKindEnumRuleCall_1_2_0 = (RuleCall)cPortionKindAssignment_1_2.eContents().get(0);
 		
 		//fragment OccurrenceUsagePrefix:
-		//    isEnd ?= 'end'
+		//    ( isEnd ?= 'end'
 		//    | BasicUsagePrefix
 		//      ( isIndividual ?= 'individual' )?
-		//      ( portionKind = PortionKind )?
+		//      ( portionKind = PortionKind )? )
+		////    UsageExtensionKeyword*
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//isEnd ?= 'end'
+		//( isEnd ?= 'end'
 		//| BasicUsagePrefix
 		//  ( isIndividual ?= 'individual' )?
-		//  ( portionKind = PortionKind )?
+		//  ( portionKind = PortionKind )? )
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//isEnd ?= 'end'
@@ -15058,7 +15069,9 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	//AttributeUsage:
 	//    MemberPrefix
 	//    isReturnPrefix
-	//    UsagePrefix 'attribute' Usage
+	//    UsagePrefix
+	//    'attribute'
+	//    Usage
 	//    ( ';' | '{' (elements+=UsageBodyElement)* '}' )
 	//;
 	public AttributeUsageElements getAttributeUsageAccess() {
@@ -15196,7 +15209,8 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	
 	//EventOccurrenceUsage:
 	//    GeneralUsagePrefix
-	//    OccurrenceUsagePrefix 'event'
+	//    OccurrenceUsagePrefix
+	//    'event'
 	//    ( ReferenceSubsetting FeatureSpecializationPart? | 'occurrence' UsageDeclaration? )
 	//    ValuePart?
 	//    ( ';' | '{' (elements+=UsageBodyElement)* '}' )
@@ -15259,7 +15273,9 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	
 	//ItemUsage:
 	//    GeneralUsagePrefix
-	//    OccurrenceUsagePrefix 'item' Usage
+	//    OccurrenceUsagePrefix
+	//    'item'
+	//    Usage
 	//    ( ';' | '{' (elements+=UsageBodyElement)* '}' )
 	//;
 	public ItemUsageElements getItemUsageAccess() {
@@ -16664,10 +16680,11 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//fragment OccurrenceUsagePrefix:
-	//    isEnd ?= 'end'
+	//    ( isEnd ?= 'end'
 	//    | BasicUsagePrefix
 	//      ( isIndividual ?= 'individual' )?
-	//      ( portionKind = PortionKind )?
+	//      ( portionKind = PortionKind )? )
+	////    UsageExtensionKeyword*
 	//;
 	public OccurrenceUsagePrefixElements getOccurrenceUsagePrefixAccess() {
 		return pOccurrenceUsagePrefix;
