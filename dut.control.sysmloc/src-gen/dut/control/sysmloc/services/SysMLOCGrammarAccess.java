@@ -2072,7 +2072,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		
 		//LibraryPackage:
 		//    ( isStandard ?= 'standard' )?
-		//    isLibrary?='library'
+		//    isLibrary ?= 'library'
 		//    PrefixMetadata*
 		//    'package'
 		//    Identification?
@@ -2081,7 +2081,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		@Override public ParserRule getRule() { return rule; }
 		
 		//( isStandard ?= 'standard' )?
-		//isLibrary?='library'
+		//isLibrary ?= 'library'
 		//PrefixMetadata*
 		//'package'
 		//Identification?
@@ -2094,7 +2094,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//'standard'
 		public Keyword getIsStandardStandardKeyword_0_0() { return cIsStandardStandardKeyword_0_0; }
 		
-		//isLibrary?='library'
+		//isLibrary ?= 'library'
 		public Assignment getIsLibraryAssignment_1() { return cIsLibraryAssignment_1; }
 		
 		//'library'
@@ -2271,12 +2271,16 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Keyword cRightCurlyBracketKeyword_5_1_2 = (Keyword)cGroup_5_1.eContents().get(2);
 		
 		//AttributeDefinition:
-		//    MemberPrefix DefinitionPrefix 'attribute' 'def' DefinitionDeclaration
+		//    MemberPrefix DefinitionPrefix
+		//    'attribute' 'def'
+		//    DefinitionDeclaration
 		//    ( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//MemberPrefix DefinitionPrefix 'attribute' 'def' DefinitionDeclaration
+		//MemberPrefix DefinitionPrefix
+		//'attribute' 'def'
+		//DefinitionDeclaration
 		//( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
 		public Group getGroup() { return cGroup; }
 		
@@ -2400,14 +2404,16 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//EnumerationDefinition:
 		//    MemberPrefix
 		////    DefinitionExtensionKeyword*
-		//    'enum' 'def' DefinitionDeclaration
+		//    'enum' 'def'
+		//    DefinitionDeclaration
 		//    (';' | '{' (elements+=EnumerationBodyElement)* '}')
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//    MemberPrefix
 		////    DefinitionExtensionKeyword*
-		//    'enum' 'def' DefinitionDeclaration
+		//    'enum' 'def'
+		//    DefinitionDeclaration
 		//    (';' | '{' (elements+=EnumerationBodyElement)* '}')
 		public Group getGroup() { return cGroup; }
 		
@@ -2463,14 +2469,16 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//EnumeratedValue:
 		//    MemberPrefix
 		//    UsageExtensionKeyword*
-		//    'enum'? Usage
+		//    'enum'?
+		//    Usage
 		//    ( ';' | '{' (elements+=UsageBodyElement)* '}' )
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//MemberPrefix
 		//UsageExtensionKeyword*
-		//'enum'? Usage
+		//'enum'?
+		//Usage
 		//( ';' | '{' (elements+=UsageBodyElement)* '}' )
 		public Group getGroup() { return cGroup; }
 		
@@ -2526,14 +2534,18 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//EnumerationUsage:
 		//    MemberPrefix
 		//    isReturnPrefix
-		//    UsagePrefix 'enum' Usage
+		//    UsagePrefix
+		//    'enum'
+		//    Usage
 		//    ( ';' | '{' (elements+=UsageBodyElement)* '}' )
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//MemberPrefix
 		//isReturnPrefix
-		//UsagePrefix 'enum' Usage
+		//UsagePrefix
+		//'enum'
+		//Usage
 		//( ';' | '{' (elements+=UsageBodyElement)* '}' )
 		public Group getGroup() { return cGroup; }
 		
@@ -6815,38 +6827,35 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final RuleCall cMemberPrefixParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final RuleCall cBasicDefinitionPrefixParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final Keyword cNumberSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cPrefixMetadataExtensionAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cPrefixMetadataExtensionQualifiedNameParserRuleCall_3_0 = (RuleCall)cPrefixMetadataExtensionAssignment_3.eContents().get(0);
-		private final RuleCall cPrefixMetadataParserRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
-		private final Keyword cDefKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final RuleCall cDefinitionDeclarationParserRuleCall_6 = (RuleCall)cGroup.eContents().get(6);
-		private final Alternatives cAlternatives_7 = (Alternatives)cGroup.eContents().get(7);
-		private final Keyword cSemicolonKeyword_7_0 = (Keyword)cAlternatives_7.eContents().get(0);
-		private final Group cGroup_7_1 = (Group)cAlternatives_7.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_7_1_0 = (Keyword)cGroup_7_1.eContents().get(0);
-		private final Assignment cElementsAssignment_7_1_1 = (Assignment)cGroup_7_1.eContents().get(1);
-		private final RuleCall cElementsDefinitionBodyElementParserRuleCall_7_1_1_0 = (RuleCall)cElementsAssignment_7_1_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_7_1_2 = (Keyword)cGroup_7_1.eContents().get(2);
+		private final RuleCall cPrefixMetadataParserRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Keyword cDefKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final RuleCall cDefinitionDeclarationParserRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
+		private final Alternatives cAlternatives_5 = (Alternatives)cGroup.eContents().get(5);
+		private final Keyword cSemicolonKeyword_5_0 = (Keyword)cAlternatives_5.eContents().get(0);
+		private final Group cGroup_5_1 = (Group)cAlternatives_5.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_5_1_0 = (Keyword)cGroup_5_1.eContents().get(0);
+		private final Assignment cElementsAssignment_5_1_1 = (Assignment)cGroup_5_1.eContents().get(1);
+		private final RuleCall cElementsDefinitionBodyElementParserRuleCall_5_1_1_0 = (RuleCall)cElementsAssignment_5_1_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5_1_2 = (Keyword)cGroup_5_1.eContents().get(2);
 		
 		//ExtendedDefinition:
 		//    MemberPrefix
 		//    BasicDefinitionPrefix?
-		//    '#' prefixMetadataExtension+=QualifiedName
-		//    PrefixMetadata*
+		////    '#' prefixMetadataExtension+=QualifiedName
+		//    PrefixMetadata+
 		//    'def'
 		//    DefinitionDeclaration
 		//    ( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//MemberPrefix
-		//BasicDefinitionPrefix?
-		//'#' prefixMetadataExtension+=QualifiedName
-		//PrefixMetadata*
-		//'def'
-		//DefinitionDeclaration
-		//( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
+		//    MemberPrefix
+		//    BasicDefinitionPrefix?
+		////    '#' prefixMetadataExtension+=QualifiedName
+		//    PrefixMetadata+
+		//    'def'
+		//    DefinitionDeclaration
+		//    ( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
 		public Group getGroup() { return cGroup; }
 		
 		//MemberPrefix
@@ -6855,44 +6864,36 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//BasicDefinitionPrefix?
 		public RuleCall getBasicDefinitionPrefixParserRuleCall_1() { return cBasicDefinitionPrefixParserRuleCall_1; }
 		
-		//'#'
-		public Keyword getNumberSignKeyword_2() { return cNumberSignKeyword_2; }
-		
-		//prefixMetadataExtension+=QualifiedName
-		public Assignment getPrefixMetadataExtensionAssignment_3() { return cPrefixMetadataExtensionAssignment_3; }
-		
-		//QualifiedName
-		public RuleCall getPrefixMetadataExtensionQualifiedNameParserRuleCall_3_0() { return cPrefixMetadataExtensionQualifiedNameParserRuleCall_3_0; }
-		
-		//PrefixMetadata*
-		public RuleCall getPrefixMetadataParserRuleCall_4() { return cPrefixMetadataParserRuleCall_4; }
+		////    '#' prefixMetadataExtension+=QualifiedName
+		//    PrefixMetadata+
+		public RuleCall getPrefixMetadataParserRuleCall_2() { return cPrefixMetadataParserRuleCall_2; }
 		
 		//'def'
-		public Keyword getDefKeyword_5() { return cDefKeyword_5; }
+		public Keyword getDefKeyword_3() { return cDefKeyword_3; }
 		
 		//DefinitionDeclaration
-		public RuleCall getDefinitionDeclarationParserRuleCall_6() { return cDefinitionDeclarationParserRuleCall_6; }
+		public RuleCall getDefinitionDeclarationParserRuleCall_4() { return cDefinitionDeclarationParserRuleCall_4; }
 		
 		//( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
-		public Alternatives getAlternatives_7() { return cAlternatives_7; }
+		public Alternatives getAlternatives_5() { return cAlternatives_5; }
 		
 		//';'
-		public Keyword getSemicolonKeyword_7_0() { return cSemicolonKeyword_7_0; }
+		public Keyword getSemicolonKeyword_5_0() { return cSemicolonKeyword_5_0; }
 		
 		//'{' (elements+=DefinitionBodyElement)* '}'
-		public Group getGroup_7_1() { return cGroup_7_1; }
+		public Group getGroup_5_1() { return cGroup_5_1; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_7_1_0() { return cLeftCurlyBracketKeyword_7_1_0; }
+		public Keyword getLeftCurlyBracketKeyword_5_1_0() { return cLeftCurlyBracketKeyword_5_1_0; }
 		
 		//(elements+=DefinitionBodyElement)*
-		public Assignment getElementsAssignment_7_1_1() { return cElementsAssignment_7_1_1; }
+		public Assignment getElementsAssignment_5_1_1() { return cElementsAssignment_5_1_1; }
 		
 		//DefinitionBodyElement
-		public RuleCall getElementsDefinitionBodyElementParserRuleCall_7_1_1_0() { return cElementsDefinitionBodyElementParserRuleCall_7_1_1_0; }
+		public RuleCall getElementsDefinitionBodyElementParserRuleCall_5_1_1_0() { return cElementsDefinitionBodyElementParserRuleCall_5_1_1_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_7_1_2() { return cRightCurlyBracketKeyword_7_1_2; }
+		public Keyword getRightCurlyBracketKeyword_5_1_2() { return cRightCurlyBracketKeyword_5_1_2; }
 	}
 	public class PerformActionUsageElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.PerformActionUsage");
@@ -10170,11 +10171,13 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cUsageExtensionKeywordParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		
 		//fragment UsagePrefix:
-		//    UnextendedUsagePrefix UsageExtensionKeyword*
+		//    UnextendedUsagePrefix
+		//    UsageExtensionKeyword*
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//UnextendedUsagePrefix UsageExtensionKeyword*
+		//UnextendedUsagePrefix
+		//UsageExtensionKeyword*
 		public Group getGroup() { return cGroup; }
 		
 		//UnextendedUsagePrefix
@@ -15007,7 +15010,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	
 	//LibraryPackage:
 	//    ( isStandard ?= 'standard' )?
-	//    isLibrary?='library'
+	//    isLibrary ?= 'library'
 	//    PrefixMetadata*
 	//    'package'
 	//    Identification?
@@ -15039,7 +15042,9 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//AttributeDefinition:
-	//    MemberPrefix DefinitionPrefix 'attribute' 'def' DefinitionDeclaration
+	//    MemberPrefix DefinitionPrefix
+	//    'attribute' 'def'
+	//    DefinitionDeclaration
 	//    ( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
 	//;
 	public AttributeDefinitionElements getAttributeDefinitionAccess() {
@@ -15067,7 +15072,8 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	//EnumerationDefinition:
 	//    MemberPrefix
 	////    DefinitionExtensionKeyword*
-	//    'enum' 'def' DefinitionDeclaration
+	//    'enum' 'def'
+	//    DefinitionDeclaration
 	//    (';' | '{' (elements+=EnumerationBodyElement)* '}')
 	//;
 	public EnumerationDefinitionElements getEnumerationDefinitionAccess() {
@@ -15081,7 +15087,8 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	//EnumeratedValue:
 	//    MemberPrefix
 	//    UsageExtensionKeyword*
-	//    'enum'? Usage
+	//    'enum'?
+	//    Usage
 	//    ( ';' | '{' (elements+=UsageBodyElement)* '}' )
 	//;
 	public EnumeratedValueElements getEnumeratedValueAccess() {
@@ -15095,7 +15102,9 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	//EnumerationUsage:
 	//    MemberPrefix
 	//    isReturnPrefix
-	//    UsagePrefix 'enum' Usage
+	//    UsagePrefix
+	//    'enum'
+	//    Usage
 	//    ( ';' | '{' (elements+=UsageBodyElement)* '}' )
 	//;
 	public EnumerationUsageElements getEnumerationUsageAccess() {
@@ -15911,8 +15920,8 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	//ExtendedDefinition:
 	//    MemberPrefix
 	//    BasicDefinitionPrefix?
-	//    '#' prefixMetadataExtension+=QualifiedName
-	//    PrefixMetadata*
+	////    '#' prefixMetadataExtension+=QualifiedName
+	//    PrefixMetadata+
 	//    'def'
 	//    DefinitionDeclaration
 	//    ( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
@@ -16619,7 +16628,8 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//fragment UsagePrefix:
-	//    UnextendedUsagePrefix UsageExtensionKeyword*
+	//    UnextendedUsagePrefix
+	//    UsageExtensionKeyword*
 	//;
 	public UsagePrefixElements getUsagePrefixAccess() {
 		return pUsagePrefix;

@@ -10173,74 +10173,51 @@ ruleExtendedDefinition returns [EObject current=null]
 				afterParserOrEnumRuleCall();
 			}
 		)?
-		otherlv_2='#'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getExtendedDefinitionAccess().getNumberSignKeyword_2());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getExtendedDefinitionAccess().getPrefixMetadataExtensionQualifiedNameParserRuleCall_3_0());
-				}
-				lv_prefixMetadataExtension_3_0=ruleQualifiedName
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getExtendedDefinitionRule());
-					}
-					add(
-						$current,
-						"prefixMetadataExtension",
-						lv_prefixMetadataExtension_3_0,
-						"dut.control.sysmloc.SysMLOC.QualifiedName");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
 		(
 			{
 				if ($current==null) {
 					$current = createModelElement(grammarAccess.getExtendedDefinitionRule());
 				}
-				newCompositeNode(grammarAccess.getExtendedDefinitionAccess().getPrefixMetadataParserRuleCall_4());
+				newCompositeNode(grammarAccess.getExtendedDefinitionAccess().getPrefixMetadataParserRuleCall_2());
 			}
-			this_PrefixMetadata_4=rulePrefixMetadata[$current]
+			this_PrefixMetadata_2=rulePrefixMetadata[$current]
 			{
-				$current = $this_PrefixMetadata_4.current;
+				$current = $this_PrefixMetadata_2.current;
 				afterParserOrEnumRuleCall();
 			}
-		)*
-		otherlv_5='def'
+		)+
+		otherlv_3='def'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getExtendedDefinitionAccess().getDefKeyword_5());
+			newLeafNode(otherlv_3, grammarAccess.getExtendedDefinitionAccess().getDefKeyword_3());
 		}
 		{
 			if ($current==null) {
 				$current = createModelElement(grammarAccess.getExtendedDefinitionRule());
 			}
-			newCompositeNode(grammarAccess.getExtendedDefinitionAccess().getDefinitionDeclarationParserRuleCall_6());
+			newCompositeNode(grammarAccess.getExtendedDefinitionAccess().getDefinitionDeclarationParserRuleCall_4());
 		}
-		this_DefinitionDeclaration_6=ruleDefinitionDeclaration[$current]
+		this_DefinitionDeclaration_4=ruleDefinitionDeclaration[$current]
 		{
-			$current = $this_DefinitionDeclaration_6.current;
+			$current = $this_DefinitionDeclaration_4.current;
 			afterParserOrEnumRuleCall();
 		}
 		(
-			otherlv_7=';'
+			otherlv_5=';'
 			{
-				newLeafNode(otherlv_7, grammarAccess.getExtendedDefinitionAccess().getSemicolonKeyword_7_0());
+				newLeafNode(otherlv_5, grammarAccess.getExtendedDefinitionAccess().getSemicolonKeyword_5_0());
 			}
 			    |
 			(
-				otherlv_8='{'
+				otherlv_6='{'
 				{
-					newLeafNode(otherlv_8, grammarAccess.getExtendedDefinitionAccess().getLeftCurlyBracketKeyword_7_1_0());
+					newLeafNode(otherlv_6, grammarAccess.getExtendedDefinitionAccess().getLeftCurlyBracketKeyword_5_1_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getExtendedDefinitionAccess().getElementsDefinitionBodyElementParserRuleCall_7_1_1_0());
+							newCompositeNode(grammarAccess.getExtendedDefinitionAccess().getElementsDefinitionBodyElementParserRuleCall_5_1_1_0());
 						}
-						lv_elements_9_0=ruleDefinitionBodyElement
+						lv_elements_7_0=ruleDefinitionBodyElement
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getExtendedDefinitionRule());
@@ -10248,15 +10225,15 @@ ruleExtendedDefinition returns [EObject current=null]
 							add(
 								$current,
 								"elements",
-								lv_elements_9_0,
+								lv_elements_7_0,
 								"dut.control.sysmloc.SysMLOC.DefinitionBodyElement");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)*
-				otherlv_10='}'
+				otherlv_8='}'
 				{
-					newLeafNode(otherlv_10, grammarAccess.getExtendedDefinitionAccess().getRightCurlyBracketKeyword_7_1_2());
+					newLeafNode(otherlv_8, grammarAccess.getExtendedDefinitionAccess().getRightCurlyBracketKeyword_5_1_2());
 				}
 			)
 		)

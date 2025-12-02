@@ -128,7 +128,7 @@ public class SysMLOCParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getViewpointUsageAccess().getAlternatives_4(), "rule__ViewpointUsage__Alternatives_4");
 			builder.put(grammarAccess.getRenderingDefinitionAccess().getAlternatives_5(), "rule__RenderingDefinition__Alternatives_5");
 			builder.put(grammarAccess.getRenderingUsageAccess().getAlternatives_4(), "rule__RenderingUsage__Alternatives_4");
-			builder.put(grammarAccess.getExtendedDefinitionAccess().getAlternatives_7(), "rule__ExtendedDefinition__Alternatives_7");
+			builder.put(grammarAccess.getExtendedDefinitionAccess().getAlternatives_5(), "rule__ExtendedDefinition__Alternatives_5");
 			builder.put(grammarAccess.getPerformActionUsageAccess().getAlternatives_3(), "rule__PerformActionUsage__Alternatives_3");
 			builder.put(grammarAccess.getPerformActionUsageAccess().getAlternatives_5(), "rule__PerformActionUsage__Alternatives_5");
 			builder.put(grammarAccess.getExhibitStateUsageAccess().getAlternatives_3(), "rule__ExhibitStateUsage__Alternatives_3");
@@ -445,7 +445,7 @@ public class SysMLOCParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getRenderingUsageAccess().getGroup(), "rule__RenderingUsage__Group__0");
 			builder.put(grammarAccess.getRenderingUsageAccess().getGroup_4_1(), "rule__RenderingUsage__Group_4_1__0");
 			builder.put(grammarAccess.getExtendedDefinitionAccess().getGroup(), "rule__ExtendedDefinition__Group__0");
-			builder.put(grammarAccess.getExtendedDefinitionAccess().getGroup_7_1(), "rule__ExtendedDefinition__Group_7_1__0");
+			builder.put(grammarAccess.getExtendedDefinitionAccess().getGroup_5_1(), "rule__ExtendedDefinition__Group_5_1__0");
 			builder.put(grammarAccess.getPerformActionUsageAccess().getGroup(), "rule__PerformActionUsage__Group__0");
 			builder.put(grammarAccess.getPerformActionUsageAccess().getGroup_3_0(), "rule__PerformActionUsage__Group_3_0__0");
 			builder.put(grammarAccess.getPerformActionUsageAccess().getGroup_3_1(), "rule__PerformActionUsage__Group_3_1__0");
@@ -843,8 +843,7 @@ public class SysMLOCParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getViewpointUsageAccess().getElementsAssignment_4_1_1_0(), "rule__ViewpointUsage__ElementsAssignment_4_1_1_0");
 			builder.put(grammarAccess.getRenderingDefinitionAccess().getElementsAssignment_5_1_1(), "rule__RenderingDefinition__ElementsAssignment_5_1_1");
 			builder.put(grammarAccess.getRenderingUsageAccess().getElementsAssignment_4_1_1(), "rule__RenderingUsage__ElementsAssignment_4_1_1");
-			builder.put(grammarAccess.getExtendedDefinitionAccess().getPrefixMetadataExtensionAssignment_3(), "rule__ExtendedDefinition__PrefixMetadataExtensionAssignment_3");
-			builder.put(grammarAccess.getExtendedDefinitionAccess().getElementsAssignment_7_1_1(), "rule__ExtendedDefinition__ElementsAssignment_7_1_1");
+			builder.put(grammarAccess.getExtendedDefinitionAccess().getElementsAssignment_5_1_1(), "rule__ExtendedDefinition__ElementsAssignment_5_1_1");
 			builder.put(grammarAccess.getPerformActionUsageAccess().getElementsAssignment_5_1_1(), "rule__PerformActionUsage__ElementsAssignment_5_1_1");
 			builder.put(grammarAccess.getExhibitStateUsageAccess().getIsParallelAssignment_5_1_0(), "rule__ExhibitStateUsage__IsParallelAssignment_5_1_0");
 			builder.put(grammarAccess.getExhibitStateUsageAccess().getElementsAssignment_5_1_2(), "rule__ExhibitStateUsage__ElementsAssignment_5_1_2");

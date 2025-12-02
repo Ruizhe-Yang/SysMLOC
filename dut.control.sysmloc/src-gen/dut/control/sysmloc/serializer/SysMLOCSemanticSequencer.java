@@ -3894,8 +3894,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         (isAbstract?='abstract' | isVariation?='variation')? 
-	 *         prefixMetadataExtension+=QualifiedName 
-	 *         prefixMetadataExtension+=QualifiedName* 
+	 *         prefixMetadataExtension+=QualifiedName+ 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	 *         elements+=DefinitionBodyElement*

@@ -362,7 +362,7 @@ ReferenceUsage:
 
 LibraryPackage:
 	( isStandard ?= 'standard' )? 
-	isLibrary?='library'
+	isLibrary ?= 'library'
 	PrefixMetadata*
 	'package'
 	Identification?
@@ -380,35 +380,43 @@ Dependency:
 ;
 
 AttributeDefinition:
-	MemberPrefix DefinitionPrefix 'attribute' 'def' DefinitionDeclaration 
+	MemberPrefix DefinitionPrefix 
+	'attribute' 'def' 
+	DefinitionDeclaration 
 	( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
 ;
 
 AttributeUsage:
     MemberPrefix
     isReturnPrefix
-    UsagePrefix 'attribute' Usage 
+    UsagePrefix 
+    'attribute' 
+    Usage 
     ( ';' | '{' (elements+=UsageBodyElement)* '}' )
 ;
 
 EnumerationDefinition:
 	MemberPrefix
 //	DefinitionExtensionKeyword*
-	'enum' 'def' DefinitionDeclaration
+	'enum' 'def' 
+	DefinitionDeclaration
 	(';' | '{' (elements+=EnumerationBodyElement)* '}')
 ;
 
 EnumeratedValue:
 	MemberPrefix
 	UsageExtensionKeyword*
-	'enum'? Usage
+	'enum'? 
+	Usage
 	( ';' | '{' (elements+=UsageBodyElement)* '}' )
 ;
 
 EnumerationUsage:
 	MemberPrefix
 	isReturnPrefix
-	UsagePrefix 'enum' Usage
+	UsagePrefix 
+	'enum' 
+	Usage
 	( ';' | '{' (elements+=UsageBodyElement)* '}' )
 ;
 
@@ -853,8 +861,8 @@ RenderingUsage:
 ExtendedDefinition:
 	MemberPrefix
 	BasicDefinitionPrefix?
-	'#' prefixMetadataExtension+=QualifiedName
-	PrefixMetadata*
+//	'#' prefixMetadataExtension+=QualifiedName
+	PrefixMetadata+
 	'def'
 	DefinitionDeclaration
 	( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
@@ -1222,7 +1230,8 @@ fragment BasicDefinitionPrefix:
 ;
 
 fragment UsagePrefix:
-	UnextendedUsagePrefix UsageExtensionKeyword*
+	UnextendedUsagePrefix 
+	UsageExtensionKeyword*
 ;
 
 fragment UnextendedUsagePrefix:
