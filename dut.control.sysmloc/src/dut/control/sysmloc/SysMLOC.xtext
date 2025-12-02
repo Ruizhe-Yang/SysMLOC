@@ -10,7 +10,6 @@ generate sysMLOC "http://www.control.dut/sysmloc/SysMLOC"
  
 Namespace:
 	(elements+=GeneralBodyElements)*
-	
 ;
 
 // TODO --------------------------------- Body Level ---------------------------------//
