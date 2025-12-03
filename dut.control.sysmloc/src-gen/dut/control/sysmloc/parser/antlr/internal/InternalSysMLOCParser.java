@@ -23,7 +23,7 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_SL_NOTE", "RULE_ML_NOTE", "RULE_STRING_VALUE", "RULE_REGULAR_COMMENT", "RULE_PREFIXNAME_", "RULE_ID", "RULE_UNRESTRICTED_NAME", "RULE_DECIMAL_VALUE", "RULE_EXP_VALUE", "RULE_WS", "'package'", "';'", "'{'", "'}'", "'import'", "'all'", "'::'", "'*'", "'**'", "'['", "']'", "'expose'", "'comment'", "'about'", "','", "'locale'", "'doc'", "'rep'", "'language'", "'metadata'", "'@'", "':'", "'defined'", "'by'", "'filter'", "'end'", "'variant'", "'ref'", "'standard'", "'library'", "'dependency'", "'from'", "'to'", "'attribute'", "'def'", "'enum'", "'binding'", "'bind'", "'='", "'succession'", "'first'", "'then'", "'occurrence'", "'individual'", "'event'", "'item'", "'abstract'", "'part'", "'port'", "'connection'", "'connect'", "'interface'", "'message'", "'of'", "'flow'", "'allocation'", "'allocate'", "'action'", "'calc'", "'state'", "'parallel'", "'constraint'", "'transition'", "'accept'", "'if'", "'do'", "'requirement'", "'concern'", "'case'", "'analysis'", "'verification'", "'use'", "'view'", "'viewpoint'", "'rendering'", "'perform'", "'exhibit'", "'include'", "'assert'", "'not'", "'satisfy'", "'alias'", "'<'", "'>'", "'for'", "'send'", "'via'", "'assign'", "':='", "'else'", "'while'", "'loop'", "'until'", "'in'", "'terminate'", "'entry'", "'exit'", "'subject'", "'frame'", "'verify'", "'actor'", "'stakeholder'", "'objective'", "'render'", "'::>'", "'references'", "'..'", "'return'", "'variation'", "'readonly'", "'derived'", "'('", "')'", "':>'", "'specializes'", "'default'", "'ordered'", "'nonunique'", "'subsets'", "'=>'", "'crosses'", "':>>'", "'redefines'", "'USELESS'", "'.'", "'~'", "'?'", "'??'", "'implies'", "'|'", "'or'", "'xor'", "'&'", "'and'", "'=='", "'!='", "'==='", "'!=='", "'hastype'", "'istype'", "'as'", "'@@'", "'meta'", "'<='", "'>='", "'+'", "'-'", "'/'", "'%'", "'^'", "'#'", "'->'", "'.?'", "'null'", "'new'", "'private'", "'true'", "'false'", "'NULLVisibility'", "'public'", "'protected'", "'NULLFeature'", "'inout'", "'out'", "'NULLPortion'", "'snapshot'", "'timeslice'", "'NULLTrigger'", "'at'", "'after'", "'when'", "'merge'", "'decide'", "'join'", "'fork'", "'assume'", "'require'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_SL_NOTE", "RULE_ML_NOTE", "RULE_STRING_VALUE", "RULE_REGULAR_COMMENT", "RULE_PREFIXNAME_TEXT", "RULE_ID", "RULE_UNRESTRICTED_NAME", "RULE_DECIMAL_VALUE", "RULE_EXP_VALUE", "RULE_WS", "'package'", "';'", "'{'", "'}'", "'import'", "'all'", "'::'", "'*'", "'**'", "'['", "']'", "'expose'", "'comment'", "'about'", "','", "'locale'", "'doc'", "'rep'", "'language'", "'metadata'", "'@'", "':'", "'defined'", "'by'", "'filter'", "'end'", "'variant'", "'ref'", "'standard'", "'library'", "'dependency'", "'from'", "'to'", "'attribute'", "'def'", "'enum'", "'binding'", "'bind'", "'='", "'succession'", "'first'", "'then'", "'occurrence'", "'individual'", "'event'", "'item'", "'abstract'", "'part'", "'port'", "'connection'", "'connect'", "'interface'", "'message'", "'of'", "'flow'", "'allocation'", "'allocate'", "'action'", "'calc'", "'state'", "'parallel'", "'constraint'", "'transition'", "'accept'", "'if'", "'do'", "'requirement'", "'concern'", "'case'", "'analysis'", "'verification'", "'use'", "'view'", "'viewpoint'", "'rendering'", "'perform'", "'exhibit'", "'include'", "'assert'", "'not'", "'satisfy'", "'alias'", "'<'", "'>'", "'for'", "'send'", "'via'", "'assign'", "':='", "'else'", "'while'", "'loop'", "'until'", "'in'", "'terminate'", "'entry'", "'exit'", "'subject'", "'frame'", "'verify'", "'actor'", "'stakeholder'", "'objective'", "'render'", "'::>'", "'references'", "'..'", "'return'", "'variation'", "'readonly'", "'derived'", "'('", "')'", "':>'", "'specializes'", "'default'", "'ordered'", "'nonunique'", "'subsets'", "'=>'", "'crosses'", "':>>'", "'redefines'", "'USELESS'", "'.'", "'~'", "'?'", "'??'", "'implies'", "'|'", "'or'", "'xor'", "'&'", "'and'", "'=='", "'!='", "'==='", "'!=='", "'hastype'", "'istype'", "'as'", "'@@'", "'meta'", "'<='", "'>='", "'+'", "'-'", "'/'", "'%'", "'^'", "'#'", "'->'", "'.?'", "'null'", "'new'", "'private'", "'true'", "'false'", "'NULLVisibility'", "'public'", "'protected'", "'NULLFeature'", "'inout'", "'out'", "'NULLPortion'", "'snapshot'", "'timeslice'", "'NULLTrigger'", "'at'", "'after'", "'when'", "'merge'", "'decide'", "'join'", "'fork'", "'assume'", "'require'"
     };
     public static final int T__144=144;
     public static final int T__143=143;
@@ -55,6 +55,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
     public static final int RULE_ID=9;
     public static final int T__131=131;
     public static final int T__130=130;
+    public static final int RULE_PREFIXNAME_TEXT=8;
     public static final int T__66=66;
     public static final int T__67=67;
     public static final int T__129=129;
@@ -151,7 +152,6 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
     public static final int T__112=112;
     public static final int T__108=108;
     public static final int T__107=107;
-    public static final int RULE_PREFIXNAME_=8;
     public static final int T__109=109;
     public static final int T__104=104;
     public static final int T__103=103;
@@ -694,7 +694,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
             case RULE_SL_NOTE:
             case RULE_ML_NOTE:
             case RULE_REGULAR_COMMENT:
-            case RULE_PREFIXNAME_:
+            case RULE_PREFIXNAME_TEXT:
             case RULE_ID:
             case RULE_UNRESTRICTED_NAME:
             case 14:
@@ -788,7 +788,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     int LA3_6 = input.LA(3);
 
-                    if ( ((LA3_6>=RULE_PREFIXNAME_ && LA3_6<=RULE_UNRESTRICTED_NAME)||LA3_6==33||LA3_6==39||LA3_6==41||LA3_6==47||(LA3_6>=49 && LA3_6<=51)||(LA3_6>=53 && LA3_6<=54)||(LA3_6>=56 && LA3_6<=66)||(LA3_6>=68 && LA3_6<=73)||LA3_6==75||(LA3_6>=80 && LA3_6<=95)||LA3_6==107||(LA3_6>=121 && LA3_6<=124)||LA3_6==137||(LA3_6>=175 && LA3_6<=180)) ) {
+                    if ( ((LA3_6>=RULE_PREFIXNAME_TEXT && LA3_6<=RULE_UNRESTRICTED_NAME)||LA3_6==33||LA3_6==39||LA3_6==41||LA3_6==47||(LA3_6>=49 && LA3_6<=51)||(LA3_6>=53 && LA3_6<=54)||(LA3_6>=56 && LA3_6<=66)||(LA3_6>=68 && LA3_6<=73)||LA3_6==75||(LA3_6>=80 && LA3_6<=95)||LA3_6==107||(LA3_6>=121 && LA3_6<=124)||LA3_6==137||(LA3_6>=175 && LA3_6<=180)) ) {
                         alt3=1;
                     }
                     else if ( (LA3_6==38) ) {
@@ -803,7 +803,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     }
                     }
                     break;
-                case RULE_PREFIXNAME_:
+                case RULE_PREFIXNAME_TEXT:
                 case RULE_ID:
                 case RULE_UNRESTRICTED_NAME:
                 case 18:
@@ -902,7 +902,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     int LA3_6 = input.LA(3);
 
-                    if ( ((LA3_6>=RULE_PREFIXNAME_ && LA3_6<=RULE_UNRESTRICTED_NAME)||LA3_6==33||LA3_6==39||LA3_6==41||LA3_6==47||(LA3_6>=49 && LA3_6<=51)||(LA3_6>=53 && LA3_6<=54)||(LA3_6>=56 && LA3_6<=66)||(LA3_6>=68 && LA3_6<=73)||LA3_6==75||(LA3_6>=80 && LA3_6<=95)||LA3_6==107||(LA3_6>=121 && LA3_6<=124)||LA3_6==137||(LA3_6>=175 && LA3_6<=180)) ) {
+                    if ( ((LA3_6>=RULE_PREFIXNAME_TEXT && LA3_6<=RULE_UNRESTRICTED_NAME)||LA3_6==33||LA3_6==39||LA3_6==41||LA3_6==47||(LA3_6>=49 && LA3_6<=51)||(LA3_6>=53 && LA3_6<=54)||(LA3_6>=56 && LA3_6<=66)||(LA3_6>=68 && LA3_6<=73)||LA3_6==75||(LA3_6>=80 && LA3_6<=95)||LA3_6==107||(LA3_6>=121 && LA3_6<=124)||LA3_6==137||(LA3_6>=175 && LA3_6<=180)) ) {
                         alt3=1;
                     }
                     else if ( (LA3_6==38) ) {
@@ -917,7 +917,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     }
                     }
                     break;
-                case RULE_PREFIXNAME_:
+                case RULE_PREFIXNAME_TEXT:
                 case RULE_ID:
                 case RULE_UNRESTRICTED_NAME:
                 case 18:
@@ -1016,7 +1016,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     int LA3_6 = input.LA(3);
 
-                    if ( ((LA3_6>=RULE_PREFIXNAME_ && LA3_6<=RULE_UNRESTRICTED_NAME)||LA3_6==33||LA3_6==39||LA3_6==41||LA3_6==47||(LA3_6>=49 && LA3_6<=51)||(LA3_6>=53 && LA3_6<=54)||(LA3_6>=56 && LA3_6<=66)||(LA3_6>=68 && LA3_6<=73)||LA3_6==75||(LA3_6>=80 && LA3_6<=95)||LA3_6==107||(LA3_6>=121 && LA3_6<=124)||LA3_6==137||(LA3_6>=175 && LA3_6<=180)) ) {
+                    if ( ((LA3_6>=RULE_PREFIXNAME_TEXT && LA3_6<=RULE_UNRESTRICTED_NAME)||LA3_6==33||LA3_6==39||LA3_6==41||LA3_6==47||(LA3_6>=49 && LA3_6<=51)||(LA3_6>=53 && LA3_6<=54)||(LA3_6>=56 && LA3_6<=66)||(LA3_6>=68 && LA3_6<=73)||LA3_6==75||(LA3_6>=80 && LA3_6<=95)||LA3_6==107||(LA3_6>=121 && LA3_6<=124)||LA3_6==137||(LA3_6>=175 && LA3_6<=180)) ) {
                         alt3=1;
                     }
                     else if ( (LA3_6==38) ) {
@@ -1031,7 +1031,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     }
                     }
                     break;
-                case RULE_PREFIXNAME_:
+                case RULE_PREFIXNAME_TEXT:
                 case RULE_ID:
                 case RULE_UNRESTRICTED_NAME:
                 case 18:
@@ -1130,7 +1130,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     int LA3_6 = input.LA(3);
 
-                    if ( ((LA3_6>=RULE_PREFIXNAME_ && LA3_6<=RULE_UNRESTRICTED_NAME)||LA3_6==33||LA3_6==39||LA3_6==41||LA3_6==47||(LA3_6>=49 && LA3_6<=51)||(LA3_6>=53 && LA3_6<=54)||(LA3_6>=56 && LA3_6<=66)||(LA3_6>=68 && LA3_6<=73)||LA3_6==75||(LA3_6>=80 && LA3_6<=95)||LA3_6==107||(LA3_6>=121 && LA3_6<=124)||LA3_6==137||(LA3_6>=175 && LA3_6<=180)) ) {
+                    if ( ((LA3_6>=RULE_PREFIXNAME_TEXT && LA3_6<=RULE_UNRESTRICTED_NAME)||LA3_6==33||LA3_6==39||LA3_6==41||LA3_6==47||(LA3_6>=49 && LA3_6<=51)||(LA3_6>=53 && LA3_6<=54)||(LA3_6>=56 && LA3_6<=66)||(LA3_6>=68 && LA3_6<=73)||LA3_6==75||(LA3_6>=80 && LA3_6<=95)||LA3_6==107||(LA3_6>=121 && LA3_6<=124)||LA3_6==137||(LA3_6>=175 && LA3_6<=180)) ) {
                         alt3=1;
                     }
                     else if ( (LA3_6==38) ) {
@@ -1145,7 +1145,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     }
                     }
                     break;
-                case RULE_PREFIXNAME_:
+                case RULE_PREFIXNAME_TEXT:
                 case RULE_ID:
                 case RULE_UNRESTRICTED_NAME:
                 case 18:
@@ -1241,7 +1241,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                 {
                 int LA3_6 = input.LA(2);
 
-                if ( ((LA3_6>=RULE_PREFIXNAME_ && LA3_6<=RULE_UNRESTRICTED_NAME)||LA3_6==33||LA3_6==39||LA3_6==41||LA3_6==47||(LA3_6>=49 && LA3_6<=51)||(LA3_6>=53 && LA3_6<=54)||(LA3_6>=56 && LA3_6<=66)||(LA3_6>=68 && LA3_6<=73)||LA3_6==75||(LA3_6>=80 && LA3_6<=95)||LA3_6==107||(LA3_6>=121 && LA3_6<=124)||LA3_6==137||(LA3_6>=175 && LA3_6<=180)) ) {
+                if ( ((LA3_6>=RULE_PREFIXNAME_TEXT && LA3_6<=RULE_UNRESTRICTED_NAME)||LA3_6==33||LA3_6==39||LA3_6==41||LA3_6==47||(LA3_6>=49 && LA3_6<=51)||(LA3_6>=53 && LA3_6<=54)||(LA3_6>=56 && LA3_6<=66)||(LA3_6>=68 && LA3_6<=73)||LA3_6==75||(LA3_6>=80 && LA3_6<=95)||LA3_6==107||(LA3_6>=121 && LA3_6<=124)||LA3_6==137||(LA3_6>=175 && LA3_6<=180)) ) {
                     alt3=1;
                 }
                 else if ( (LA3_6==38) ) {
@@ -1828,7 +1828,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
             int alt5=2;
             int LA5_0 = input.LA(1);
 
-            if ( ((LA5_0>=RULE_REGULAR_COMMENT && LA5_0<=RULE_PREFIXNAME_)||LA5_0==26||(LA5_0>=29 && LA5_0<=34)) ) {
+            if ( ((LA5_0>=RULE_REGULAR_COMMENT && LA5_0<=RULE_PREFIXNAME_TEXT)||LA5_0==26||(LA5_0>=29 && LA5_0<=34)) ) {
                 alt5=1;
             }
             else if ( ((LA5_0>=RULE_SL_NOTE && LA5_0<=RULE_ML_NOTE)) ) {
@@ -1971,7 +1971,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
             int alt6=2;
             int LA6_0 = input.LA(1);
 
-            if ( ((LA6_0>=RULE_REGULAR_COMMENT && LA6_0<=RULE_PREFIXNAME_)||LA6_0==26||(LA6_0>=29 && LA6_0<=34)) ) {
+            if ( ((LA6_0>=RULE_REGULAR_COMMENT && LA6_0<=RULE_PREFIXNAME_TEXT)||LA6_0==26||(LA6_0>=29 && LA6_0<=34)) ) {
                 alt6=1;
             }
             else if ( ((LA6_0>=RULE_SL_NOTE && LA6_0<=RULE_ML_NOTE)) ) {
@@ -2466,7 +2466,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
             case RULE_SL_NOTE:
             case RULE_ML_NOTE:
             case RULE_REGULAR_COMMENT:
-            case RULE_PREFIXNAME_:
+            case RULE_PREFIXNAME_TEXT:
             case RULE_ID:
             case RULE_UNRESTRICTED_NAME:
             case 14:
@@ -2560,7 +2560,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     int LA9_6 = input.LA(3);
 
-                    if ( ((LA9_6>=RULE_PREFIXNAME_ && LA9_6<=RULE_UNRESTRICTED_NAME)||LA9_6==33||LA9_6==39||LA9_6==41||LA9_6==47||(LA9_6>=49 && LA9_6<=51)||(LA9_6>=53 && LA9_6<=54)||(LA9_6>=56 && LA9_6<=66)||(LA9_6>=68 && LA9_6<=73)||LA9_6==75||(LA9_6>=80 && LA9_6<=95)||LA9_6==107||(LA9_6>=121 && LA9_6<=124)||LA9_6==137||(LA9_6>=175 && LA9_6<=180)) ) {
+                    if ( ((LA9_6>=RULE_PREFIXNAME_TEXT && LA9_6<=RULE_UNRESTRICTED_NAME)||LA9_6==33||LA9_6==39||LA9_6==41||LA9_6==47||(LA9_6>=49 && LA9_6<=51)||(LA9_6>=53 && LA9_6<=54)||(LA9_6>=56 && LA9_6<=66)||(LA9_6>=68 && LA9_6<=73)||LA9_6==75||(LA9_6>=80 && LA9_6<=95)||LA9_6==107||(LA9_6>=121 && LA9_6<=124)||LA9_6==137||(LA9_6>=175 && LA9_6<=180)) ) {
                         alt9=1;
                     }
                     else if ( ((LA9_6>=111 && LA9_6<=115)||(LA9_6>=189 && LA9_6<=190)) ) {
@@ -2575,7 +2575,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     }
                     }
                     break;
-                case RULE_PREFIXNAME_:
+                case RULE_PREFIXNAME_TEXT:
                 case RULE_ID:
                 case RULE_UNRESTRICTED_NAME:
                 case 18:
@@ -2680,7 +2680,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     int LA9_6 = input.LA(3);
 
-                    if ( ((LA9_6>=RULE_PREFIXNAME_ && LA9_6<=RULE_UNRESTRICTED_NAME)||LA9_6==33||LA9_6==39||LA9_6==41||LA9_6==47||(LA9_6>=49 && LA9_6<=51)||(LA9_6>=53 && LA9_6<=54)||(LA9_6>=56 && LA9_6<=66)||(LA9_6>=68 && LA9_6<=73)||LA9_6==75||(LA9_6>=80 && LA9_6<=95)||LA9_6==107||(LA9_6>=121 && LA9_6<=124)||LA9_6==137||(LA9_6>=175 && LA9_6<=180)) ) {
+                    if ( ((LA9_6>=RULE_PREFIXNAME_TEXT && LA9_6<=RULE_UNRESTRICTED_NAME)||LA9_6==33||LA9_6==39||LA9_6==41||LA9_6==47||(LA9_6>=49 && LA9_6<=51)||(LA9_6>=53 && LA9_6<=54)||(LA9_6>=56 && LA9_6<=66)||(LA9_6>=68 && LA9_6<=73)||LA9_6==75||(LA9_6>=80 && LA9_6<=95)||LA9_6==107||(LA9_6>=121 && LA9_6<=124)||LA9_6==137||(LA9_6>=175 && LA9_6<=180)) ) {
                         alt9=1;
                     }
                     else if ( ((LA9_6>=111 && LA9_6<=115)||(LA9_6>=189 && LA9_6<=190)) ) {
@@ -2695,7 +2695,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     }
                     }
                     break;
-                case RULE_PREFIXNAME_:
+                case RULE_PREFIXNAME_TEXT:
                 case RULE_ID:
                 case RULE_UNRESTRICTED_NAME:
                 case 18:
@@ -2800,7 +2800,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     int LA9_6 = input.LA(3);
 
-                    if ( ((LA9_6>=RULE_PREFIXNAME_ && LA9_6<=RULE_UNRESTRICTED_NAME)||LA9_6==33||LA9_6==39||LA9_6==41||LA9_6==47||(LA9_6>=49 && LA9_6<=51)||(LA9_6>=53 && LA9_6<=54)||(LA9_6>=56 && LA9_6<=66)||(LA9_6>=68 && LA9_6<=73)||LA9_6==75||(LA9_6>=80 && LA9_6<=95)||LA9_6==107||(LA9_6>=121 && LA9_6<=124)||LA9_6==137||(LA9_6>=175 && LA9_6<=180)) ) {
+                    if ( ((LA9_6>=RULE_PREFIXNAME_TEXT && LA9_6<=RULE_UNRESTRICTED_NAME)||LA9_6==33||LA9_6==39||LA9_6==41||LA9_6==47||(LA9_6>=49 && LA9_6<=51)||(LA9_6>=53 && LA9_6<=54)||(LA9_6>=56 && LA9_6<=66)||(LA9_6>=68 && LA9_6<=73)||LA9_6==75||(LA9_6>=80 && LA9_6<=95)||LA9_6==107||(LA9_6>=121 && LA9_6<=124)||LA9_6==137||(LA9_6>=175 && LA9_6<=180)) ) {
                         alt9=1;
                     }
                     else if ( ((LA9_6>=111 && LA9_6<=115)||(LA9_6>=189 && LA9_6<=190)) ) {
@@ -2815,7 +2815,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     }
                     }
                     break;
-                case RULE_PREFIXNAME_:
+                case RULE_PREFIXNAME_TEXT:
                 case RULE_ID:
                 case RULE_UNRESTRICTED_NAME:
                 case 18:
@@ -2920,7 +2920,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     int LA9_6 = input.LA(3);
 
-                    if ( ((LA9_6>=RULE_PREFIXNAME_ && LA9_6<=RULE_UNRESTRICTED_NAME)||LA9_6==33||LA9_6==39||LA9_6==41||LA9_6==47||(LA9_6>=49 && LA9_6<=51)||(LA9_6>=53 && LA9_6<=54)||(LA9_6>=56 && LA9_6<=66)||(LA9_6>=68 && LA9_6<=73)||LA9_6==75||(LA9_6>=80 && LA9_6<=95)||LA9_6==107||(LA9_6>=121 && LA9_6<=124)||LA9_6==137||(LA9_6>=175 && LA9_6<=180)) ) {
+                    if ( ((LA9_6>=RULE_PREFIXNAME_TEXT && LA9_6<=RULE_UNRESTRICTED_NAME)||LA9_6==33||LA9_6==39||LA9_6==41||LA9_6==47||(LA9_6>=49 && LA9_6<=51)||(LA9_6>=53 && LA9_6<=54)||(LA9_6>=56 && LA9_6<=66)||(LA9_6>=68 && LA9_6<=73)||LA9_6==75||(LA9_6>=80 && LA9_6<=95)||LA9_6==107||(LA9_6>=121 && LA9_6<=124)||LA9_6==137||(LA9_6>=175 && LA9_6<=180)) ) {
                         alt9=1;
                     }
                     else if ( ((LA9_6>=111 && LA9_6<=115)||(LA9_6>=189 && LA9_6<=190)) ) {
@@ -2935,7 +2935,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     }
                     }
                     break;
-                case RULE_PREFIXNAME_:
+                case RULE_PREFIXNAME_TEXT:
                 case RULE_ID:
                 case RULE_UNRESTRICTED_NAME:
                 case 18:
@@ -3037,7 +3037,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                 {
                 int LA9_6 = input.LA(2);
 
-                if ( ((LA9_6>=RULE_PREFIXNAME_ && LA9_6<=RULE_UNRESTRICTED_NAME)||LA9_6==33||LA9_6==39||LA9_6==41||LA9_6==47||(LA9_6>=49 && LA9_6<=51)||(LA9_6>=53 && LA9_6<=54)||(LA9_6>=56 && LA9_6<=66)||(LA9_6>=68 && LA9_6<=73)||LA9_6==75||(LA9_6>=80 && LA9_6<=95)||LA9_6==107||(LA9_6>=121 && LA9_6<=124)||LA9_6==137||(LA9_6>=175 && LA9_6<=180)) ) {
+                if ( ((LA9_6>=RULE_PREFIXNAME_TEXT && LA9_6<=RULE_UNRESTRICTED_NAME)||LA9_6==33||LA9_6==39||LA9_6==41||LA9_6==47||(LA9_6>=49 && LA9_6<=51)||(LA9_6>=53 && LA9_6<=54)||(LA9_6>=56 && LA9_6<=66)||(LA9_6>=68 && LA9_6<=73)||LA9_6==75||(LA9_6>=80 && LA9_6<=95)||LA9_6==107||(LA9_6>=121 && LA9_6<=124)||LA9_6==137||(LA9_6>=175 && LA9_6<=180)) ) {
                     alt9=1;
                 }
                 else if ( ((LA9_6>=111 && LA9_6<=115)||(LA9_6>=189 && LA9_6<=190)) ) {
@@ -3382,7 +3382,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
             case RULE_SL_NOTE:
             case RULE_ML_NOTE:
             case RULE_REGULAR_COMMENT:
-            case RULE_PREFIXNAME_:
+            case RULE_PREFIXNAME_TEXT:
             case RULE_ID:
             case RULE_UNRESTRICTED_NAME:
             case 14:
@@ -3475,7 +3475,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                 case 40:
                     {
                     switch ( input.LA(3) ) {
-                    case RULE_PREFIXNAME_:
+                    case RULE_PREFIXNAME_TEXT:
                     case RULE_ID:
                     case RULE_UNRESTRICTED_NAME:
                     case 33:
@@ -3557,7 +3557,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case RULE_PREFIXNAME_:
+                case RULE_PREFIXNAME_TEXT:
                 case RULE_ID:
                 case RULE_UNRESTRICTED_NAME:
                 case 18:
@@ -3660,7 +3660,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                 case 40:
                     {
                     switch ( input.LA(3) ) {
-                    case RULE_PREFIXNAME_:
+                    case RULE_PREFIXNAME_TEXT:
                     case RULE_ID:
                     case RULE_UNRESTRICTED_NAME:
                     case 33:
@@ -3742,7 +3742,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case RULE_PREFIXNAME_:
+                case RULE_PREFIXNAME_TEXT:
                 case RULE_ID:
                 case RULE_UNRESTRICTED_NAME:
                 case 18:
@@ -3845,7 +3845,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                 case 40:
                     {
                     switch ( input.LA(3) ) {
-                    case RULE_PREFIXNAME_:
+                    case RULE_PREFIXNAME_TEXT:
                     case RULE_ID:
                     case RULE_UNRESTRICTED_NAME:
                     case 33:
@@ -3927,7 +3927,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case RULE_PREFIXNAME_:
+                case RULE_PREFIXNAME_TEXT:
                 case RULE_ID:
                 case RULE_UNRESTRICTED_NAME:
                 case 18:
@@ -4030,7 +4030,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                 case 40:
                     {
                     switch ( input.LA(3) ) {
-                    case RULE_PREFIXNAME_:
+                    case RULE_PREFIXNAME_TEXT:
                     case RULE_ID:
                     case RULE_UNRESTRICTED_NAME:
                     case 33:
@@ -4112,7 +4112,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case RULE_PREFIXNAME_:
+                case RULE_PREFIXNAME_TEXT:
                 case RULE_ID:
                 case RULE_UNRESTRICTED_NAME:
                 case 18:
@@ -4212,7 +4212,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
             case 40:
                 {
                 switch ( input.LA(2) ) {
-                case RULE_PREFIXNAME_:
+                case RULE_PREFIXNAME_TEXT:
                 case RULE_ID:
                 case RULE_UNRESTRICTED_NAME:
                 case 33:
@@ -4641,7 +4641,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
             int alt13=2;
             int LA13_0 = input.LA(1);
 
-            if ( ((LA13_0>=RULE_REGULAR_COMMENT && LA13_0<=RULE_PREFIXNAME_)||LA13_0==26||(LA13_0>=29 && LA13_0<=34)) ) {
+            if ( ((LA13_0>=RULE_REGULAR_COMMENT && LA13_0<=RULE_PREFIXNAME_TEXT)||LA13_0==26||(LA13_0>=29 && LA13_0<=34)) ) {
                 alt13=1;
             }
             else if ( ((LA13_0>=RULE_SL_NOTE && LA13_0<=RULE_ML_NOTE)) ) {
@@ -4805,7 +4805,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                 alt14=3;
                 }
                 break;
-            case RULE_PREFIXNAME_:
+            case RULE_PREFIXNAME_TEXT:
             case 33:
             case 34:
                 {
@@ -7942,7 +7942,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                 int alt24=2;
                 int LA24_0 = input.LA(1);
 
-                if ( (LA24_0==RULE_PREFIXNAME_) ) {
+                if ( (LA24_0==RULE_PREFIXNAME_TEXT) ) {
                     alt24=1;
                 }
 
@@ -8563,7 +8563,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                         int alt31=2;
                         int LA31_0 = input.LA(1);
 
-                        if ( ((LA31_0>=RULE_SL_NOTE && LA31_0<=RULE_ML_NOTE)||(LA31_0>=RULE_REGULAR_COMMENT && LA31_0<=RULE_PREFIXNAME_)||LA31_0==26||(LA31_0>=29 && LA31_0<=34)) ) {
+                        if ( ((LA31_0>=RULE_SL_NOTE && LA31_0<=RULE_ML_NOTE)||(LA31_0>=RULE_REGULAR_COMMENT && LA31_0<=RULE_PREFIXNAME_TEXT)||LA31_0==26||(LA31_0>=29 && LA31_0<=34)) ) {
                             alt31=1;
                         }
 
@@ -8983,7 +8983,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                         int alt36=2;
                         int LA36_0 = input.LA(1);
 
-                        if ( ((LA36_0>=RULE_SL_NOTE && LA36_0<=RULE_ML_NOTE)||(LA36_0>=RULE_REGULAR_COMMENT && LA36_0<=RULE_PREFIXNAME_)||LA36_0==26||(LA36_0>=29 && LA36_0<=34)) ) {
+                        if ( ((LA36_0>=RULE_SL_NOTE && LA36_0<=RULE_ML_NOTE)||(LA36_0>=RULE_REGULAR_COMMENT && LA36_0<=RULE_PREFIXNAME_TEXT)||LA36_0==26||(LA36_0>=29 && LA36_0<=34)) ) {
                             alt36=1;
                         }
 
@@ -10101,7 +10101,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                 int alt48=2;
                 int LA48_0 = input.LA(1);
 
-                if ( (LA48_0==RULE_PREFIXNAME_) ) {
+                if ( (LA48_0==RULE_PREFIXNAME_TEXT) ) {
                     alt48=1;
                 }
 
@@ -11256,7 +11256,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                 int alt62=2;
                 int LA62_0 = input.LA(1);
 
-                if ( (LA62_0==RULE_PREFIXNAME_) ) {
+                if ( (LA62_0==RULE_PREFIXNAME_TEXT) ) {
                     alt62=1;
                 }
 
@@ -11884,7 +11884,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
             if ( (LA69_0==39) ) {
                 alt69=1;
             }
-            else if ( ((LA69_0>=RULE_PREFIXNAME_ && LA69_0<=RULE_UNRESTRICTED_NAME)||LA69_0==23||(LA69_0>=35 && LA69_0<=36)||LA69_0==41||LA69_0==47||(LA69_0>=49 && LA69_0<=51)||(LA69_0>=53 && LA69_0<=54)||(LA69_0>=56 && LA69_0<=66)||(LA69_0>=68 && LA69_0<=73)||LA69_0==75||(LA69_0>=77 && LA69_0<=78)||(LA69_0>=80 && LA69_0<=94)||LA69_0==96||(LA69_0>=98 && LA69_0<=99)||LA69_0==101||(LA69_0>=103 && LA69_0<=105)||(LA69_0>=107 && LA69_0<=108)||(LA69_0>=118 && LA69_0<=119)||(LA69_0>=122 && LA69_0<=124)||(LA69_0>=127 && LA69_0<=128)||(LA69_0>=130 && LA69_0<=136)||(LA69_0>=175 && LA69_0<=180)||(LA69_0>=185 && LA69_0<=188)) ) {
+            else if ( ((LA69_0>=RULE_PREFIXNAME_TEXT && LA69_0<=RULE_UNRESTRICTED_NAME)||LA69_0==23||(LA69_0>=35 && LA69_0<=36)||LA69_0==41||LA69_0==47||(LA69_0>=49 && LA69_0<=51)||(LA69_0>=53 && LA69_0<=54)||(LA69_0>=56 && LA69_0<=66)||(LA69_0>=68 && LA69_0<=73)||LA69_0==75||(LA69_0>=77 && LA69_0<=78)||(LA69_0>=80 && LA69_0<=94)||LA69_0==96||(LA69_0>=98 && LA69_0<=99)||LA69_0==101||(LA69_0>=103 && LA69_0<=105)||(LA69_0>=107 && LA69_0<=108)||(LA69_0>=118 && LA69_0<=119)||(LA69_0>=122 && LA69_0<=124)||(LA69_0>=127 && LA69_0<=128)||(LA69_0>=130 && LA69_0<=136)||(LA69_0>=175 && LA69_0<=180)||(LA69_0>=185 && LA69_0<=188)) ) {
                 alt69=2;
             }
             else {
@@ -12244,7 +12244,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                 int alt73=2;
                 int LA73_0 = input.LA(1);
 
-                if ( (LA73_0==RULE_PREFIXNAME_) ) {
+                if ( (LA73_0==RULE_PREFIXNAME_TEXT) ) {
                     alt73=1;
                 }
 
@@ -12541,7 +12541,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                 int alt77=2;
                 int LA77_0 = input.LA(1);
 
-                if ( (LA77_0==RULE_PREFIXNAME_) ) {
+                if ( (LA77_0==RULE_PREFIXNAME_TEXT) ) {
                     alt77=1;
                 }
 
@@ -12919,7 +12919,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                         int alt82=2;
                         int LA82_0 = input.LA(1);
 
-                        if ( ((LA82_0>=RULE_REGULAR_COMMENT && LA82_0<=RULE_PREFIXNAME_)||LA82_0==26||(LA82_0>=29 && LA82_0<=34)) ) {
+                        if ( ((LA82_0>=RULE_REGULAR_COMMENT && LA82_0<=RULE_PREFIXNAME_TEXT)||LA82_0==26||(LA82_0>=29 && LA82_0<=34)) ) {
                             alt82=1;
                         }
 
@@ -13657,7 +13657,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                 int alt88=2;
                 int LA88_0 = input.LA(1);
 
-                if ( (LA88_0==RULE_PREFIXNAME_) ) {
+                if ( (LA88_0==RULE_PREFIXNAME_TEXT) ) {
                     alt88=1;
                 }
 
@@ -13952,7 +13952,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                 int alt91=2;
                 int LA91_0 = input.LA(1);
 
-                if ( (LA91_0==RULE_PREFIXNAME_) ) {
+                if ( (LA91_0==RULE_PREFIXNAME_TEXT) ) {
                     alt91=1;
                 }
 
@@ -15992,7 +15992,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                 int alt110=2;
                 int LA110_0 = input.LA(1);
 
-                if ( (LA110_0==RULE_PREFIXNAME_) ) {
+                if ( (LA110_0==RULE_PREFIXNAME_TEXT) ) {
                     alt110=1;
                 }
 
@@ -16771,7 +16771,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                 int alt120=2;
                 int LA120_0 = input.LA(1);
 
-                if ( (LA120_0==RULE_PREFIXNAME_) ) {
+                if ( (LA120_0==RULE_PREFIXNAME_TEXT) ) {
                     alt120=1;
                 }
 
@@ -17107,7 +17107,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                 int alt123=2;
                 int LA123_0 = input.LA(1);
 
-                if ( (LA123_0==RULE_PREFIXNAME_) ) {
+                if ( (LA123_0==RULE_PREFIXNAME_TEXT) ) {
                     alt123=1;
                 }
 
@@ -17966,7 +17966,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                 int alt131=2;
                 int LA131_0 = input.LA(1);
 
-                if ( (LA131_0==RULE_PREFIXNAME_) ) {
+                if ( (LA131_0==RULE_PREFIXNAME_TEXT) ) {
                     alt131=1;
                 }
 
@@ -23890,7 +23890,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     int alt192=2;
                     int LA192_0 = input.LA(1);
 
-                    if ( (LA192_0==RULE_STRING_VALUE||(LA192_0>=RULE_PREFIXNAME_ && LA192_0<=RULE_EXP_VALUE)||(LA192_0>=15 && LA192_0<=16)||LA192_0==19||LA192_0==21||LA192_0==23||(LA192_0>=33 && LA192_0<=36)||(LA192_0>=38 && LA192_0<=41)||LA192_0==47||(LA192_0>=49 && LA192_0<=66)||(LA192_0>=59 && LA192_0<=63)||LA192_0==65||(LA192_0>=68 && LA192_0<=73)||(LA192_0>=75 && LA192_0<=94)||(LA192_0>=95 && LA192_0<=96)||(LA192_0>=98 && LA192_0<=99)||(LA192_0>=101 && LA192_0<=105)||(LA192_0>=107 && LA192_0<=119)||(LA192_0>=121 && LA192_0<=125)||(LA192_0>=127 && LA192_0<=139)||(LA192_0>=152 && LA192_0<=154)||(LA192_0>=159 && LA192_0<=160)||(LA192_0>=167 && LA192_0<=180)||(LA192_0>=185 && LA192_0<=190)) ) {
+                    if ( (LA192_0==RULE_STRING_VALUE||(LA192_0>=RULE_PREFIXNAME_TEXT && LA192_0<=RULE_EXP_VALUE)||(LA192_0>=15 && LA192_0<=16)||LA192_0==19||LA192_0==21||LA192_0==23||(LA192_0>=33 && LA192_0<=36)||(LA192_0>=38 && LA192_0<=41)||LA192_0==47||(LA192_0>=49 && LA192_0<=66)||(LA192_0>=59 && LA192_0<=63)||LA192_0==65||(LA192_0>=68 && LA192_0<=73)||(LA192_0>=75 && LA192_0<=94)||(LA192_0>=95 && LA192_0<=96)||(LA192_0>=98 && LA192_0<=99)||(LA192_0>=101 && LA192_0<=105)||(LA192_0>=107 && LA192_0<=119)||(LA192_0>=121 && LA192_0<=125)||(LA192_0>=127 && LA192_0<=139)||(LA192_0>=152 && LA192_0<=154)||(LA192_0>=159 && LA192_0<=160)||(LA192_0>=167 && LA192_0<=180)||(LA192_0>=185 && LA192_0<=190)) ) {
                         alt192=1;
                     }
                     switch (alt192) {
@@ -24203,7 +24203,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     int alt195=2;
                     int LA195_0 = input.LA(1);
 
-                    if ( (LA195_0==RULE_STRING_VALUE||(LA195_0>=RULE_PREFIXNAME_ && LA195_0<=RULE_EXP_VALUE)||(LA195_0>=15 && LA195_0<=16)||LA195_0==19||LA195_0==21||LA195_0==23||(LA195_0>=33 && LA195_0<=36)||(LA195_0>=38 && LA195_0<=41)||LA195_0==47||(LA195_0>=49 && LA195_0<=66)||(LA195_0>=59 && LA195_0<=63)||LA195_0==65||(LA195_0>=68 && LA195_0<=73)||(LA195_0>=75 && LA195_0<=94)||(LA195_0>=95 && LA195_0<=96)||(LA195_0>=98 && LA195_0<=99)||(LA195_0>=101 && LA195_0<=105)||(LA195_0>=107 && LA195_0<=119)||(LA195_0>=121 && LA195_0<=125)||(LA195_0>=127 && LA195_0<=139)||(LA195_0>=152 && LA195_0<=154)||(LA195_0>=159 && LA195_0<=160)||(LA195_0>=167 && LA195_0<=180)||(LA195_0>=185 && LA195_0<=190)) ) {
+                    if ( (LA195_0==RULE_STRING_VALUE||(LA195_0>=RULE_PREFIXNAME_TEXT && LA195_0<=RULE_EXP_VALUE)||(LA195_0>=15 && LA195_0<=16)||LA195_0==19||LA195_0==21||LA195_0==23||(LA195_0>=33 && LA195_0<=36)||(LA195_0>=38 && LA195_0<=41)||LA195_0==47||(LA195_0>=49 && LA195_0<=66)||(LA195_0>=59 && LA195_0<=63)||LA195_0==65||(LA195_0>=68 && LA195_0<=73)||(LA195_0>=75 && LA195_0<=94)||(LA195_0>=95 && LA195_0<=96)||(LA195_0>=98 && LA195_0<=99)||(LA195_0>=101 && LA195_0<=105)||(LA195_0>=107 && LA195_0<=119)||(LA195_0>=121 && LA195_0<=125)||(LA195_0>=127 && LA195_0<=139)||(LA195_0>=152 && LA195_0<=154)||(LA195_0>=159 && LA195_0<=160)||(LA195_0>=167 && LA195_0<=180)||(LA195_0>=185 && LA195_0<=190)) ) {
                         alt195=1;
                     }
                     switch (alt195) {
@@ -25136,7 +25136,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     int alt204=2;
                     int LA204_0 = input.LA(1);
 
-                    if ( (LA204_0==RULE_STRING_VALUE||(LA204_0>=RULE_PREFIXNAME_ && LA204_0<=RULE_EXP_VALUE)||(LA204_0>=15 && LA204_0<=16)||LA204_0==19||LA204_0==21||LA204_0==23||(LA204_0>=33 && LA204_0<=36)||(LA204_0>=38 && LA204_0<=41)||LA204_0==47||(LA204_0>=49 && LA204_0<=66)||(LA204_0>=59 && LA204_0<=63)||LA204_0==65||(LA204_0>=68 && LA204_0<=73)||(LA204_0>=75 && LA204_0<=94)||(LA204_0>=95 && LA204_0<=96)||(LA204_0>=98 && LA204_0<=99)||(LA204_0>=101 && LA204_0<=105)||(LA204_0>=107 && LA204_0<=119)||(LA204_0>=121 && LA204_0<=125)||(LA204_0>=127 && LA204_0<=139)||(LA204_0>=152 && LA204_0<=154)||(LA204_0>=159 && LA204_0<=160)||(LA204_0>=167 && LA204_0<=180)||(LA204_0>=185 && LA204_0<=190)) ) {
+                    if ( (LA204_0==RULE_STRING_VALUE||(LA204_0>=RULE_PREFIXNAME_TEXT && LA204_0<=RULE_EXP_VALUE)||(LA204_0>=15 && LA204_0<=16)||LA204_0==19||LA204_0==21||LA204_0==23||(LA204_0>=33 && LA204_0<=36)||(LA204_0>=38 && LA204_0<=41)||LA204_0==47||(LA204_0>=49 && LA204_0<=66)||(LA204_0>=59 && LA204_0<=63)||LA204_0==65||(LA204_0>=68 && LA204_0<=73)||(LA204_0>=75 && LA204_0<=94)||(LA204_0>=95 && LA204_0<=96)||(LA204_0>=98 && LA204_0<=99)||(LA204_0>=101 && LA204_0<=105)||(LA204_0>=107 && LA204_0<=119)||(LA204_0>=121 && LA204_0<=125)||(LA204_0>=127 && LA204_0<=139)||(LA204_0>=152 && LA204_0<=154)||(LA204_0>=159 && LA204_0<=160)||(LA204_0>=167 && LA204_0<=180)||(LA204_0>=185 && LA204_0<=190)) ) {
                         alt204=1;
                     }
                     switch (alt204) {
@@ -25449,7 +25449,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     int alt207=2;
                     int LA207_0 = input.LA(1);
 
-                    if ( (LA207_0==RULE_STRING_VALUE||(LA207_0>=RULE_PREFIXNAME_ && LA207_0<=RULE_EXP_VALUE)||(LA207_0>=15 && LA207_0<=16)||LA207_0==19||LA207_0==21||LA207_0==23||(LA207_0>=33 && LA207_0<=36)||(LA207_0>=38 && LA207_0<=41)||LA207_0==47||(LA207_0>=49 && LA207_0<=66)||(LA207_0>=59 && LA207_0<=63)||LA207_0==65||(LA207_0>=68 && LA207_0<=73)||(LA207_0>=75 && LA207_0<=94)||(LA207_0>=95 && LA207_0<=96)||(LA207_0>=98 && LA207_0<=99)||(LA207_0>=101 && LA207_0<=105)||(LA207_0>=107 && LA207_0<=119)||(LA207_0>=121 && LA207_0<=125)||(LA207_0>=127 && LA207_0<=139)||(LA207_0>=152 && LA207_0<=154)||(LA207_0>=159 && LA207_0<=160)||(LA207_0>=167 && LA207_0<=180)||(LA207_0>=185 && LA207_0<=190)) ) {
+                    if ( (LA207_0==RULE_STRING_VALUE||(LA207_0>=RULE_PREFIXNAME_TEXT && LA207_0<=RULE_EXP_VALUE)||(LA207_0>=15 && LA207_0<=16)||LA207_0==19||LA207_0==21||LA207_0==23||(LA207_0>=33 && LA207_0<=36)||(LA207_0>=38 && LA207_0<=41)||LA207_0==47||(LA207_0>=49 && LA207_0<=66)||(LA207_0>=59 && LA207_0<=63)||LA207_0==65||(LA207_0>=68 && LA207_0<=73)||(LA207_0>=75 && LA207_0<=94)||(LA207_0>=95 && LA207_0<=96)||(LA207_0>=98 && LA207_0<=99)||(LA207_0>=101 && LA207_0<=105)||(LA207_0>=107 && LA207_0<=119)||(LA207_0>=121 && LA207_0<=125)||(LA207_0>=127 && LA207_0<=139)||(LA207_0>=152 && LA207_0<=154)||(LA207_0>=159 && LA207_0<=160)||(LA207_0>=167 && LA207_0<=180)||(LA207_0>=185 && LA207_0<=190)) ) {
                         alt207=1;
                     }
                     switch (alt207) {
@@ -27932,7 +27932,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     int alt236=2;
                     int LA236_0 = input.LA(1);
 
-                    if ( (LA236_0==RULE_STRING_VALUE||(LA236_0>=RULE_PREFIXNAME_ && LA236_0<=RULE_EXP_VALUE)||(LA236_0>=15 && LA236_0<=16)||LA236_0==19||LA236_0==21||LA236_0==23||(LA236_0>=33 && LA236_0<=36)||(LA236_0>=38 && LA236_0<=41)||LA236_0==47||(LA236_0>=49 && LA236_0<=66)||(LA236_0>=59 && LA236_0<=63)||LA236_0==65||(LA236_0>=68 && LA236_0<=73)||(LA236_0>=75 && LA236_0<=94)||(LA236_0>=95 && LA236_0<=96)||(LA236_0>=98 && LA236_0<=99)||(LA236_0>=101 && LA236_0<=105)||(LA236_0>=107 && LA236_0<=119)||(LA236_0>=121 && LA236_0<=125)||(LA236_0>=127 && LA236_0<=139)||(LA236_0>=152 && LA236_0<=154)||(LA236_0>=159 && LA236_0<=160)||(LA236_0>=167 && LA236_0<=180)||(LA236_0>=185 && LA236_0<=190)) ) {
+                    if ( (LA236_0==RULE_STRING_VALUE||(LA236_0>=RULE_PREFIXNAME_TEXT && LA236_0<=RULE_EXP_VALUE)||(LA236_0>=15 && LA236_0<=16)||LA236_0==19||LA236_0==21||LA236_0==23||(LA236_0>=33 && LA236_0<=36)||(LA236_0>=38 && LA236_0<=41)||LA236_0==47||(LA236_0>=49 && LA236_0<=66)||(LA236_0>=59 && LA236_0<=63)||LA236_0==65||(LA236_0>=68 && LA236_0<=73)||(LA236_0>=75 && LA236_0<=94)||(LA236_0>=95 && LA236_0<=96)||(LA236_0>=98 && LA236_0<=99)||(LA236_0>=101 && LA236_0<=105)||(LA236_0>=107 && LA236_0<=119)||(LA236_0>=121 && LA236_0<=125)||(LA236_0>=127 && LA236_0<=139)||(LA236_0>=152 && LA236_0<=154)||(LA236_0>=159 && LA236_0<=160)||(LA236_0>=167 && LA236_0<=180)||(LA236_0>=185 && LA236_0<=190)) ) {
                         alt236=1;
                     }
                     switch (alt236) {
@@ -28245,7 +28245,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     int alt239=2;
                     int LA239_0 = input.LA(1);
 
-                    if ( (LA239_0==RULE_STRING_VALUE||(LA239_0>=RULE_PREFIXNAME_ && LA239_0<=RULE_EXP_VALUE)||(LA239_0>=15 && LA239_0<=16)||LA239_0==19||LA239_0==21||LA239_0==23||(LA239_0>=33 && LA239_0<=36)||(LA239_0>=38 && LA239_0<=41)||LA239_0==47||(LA239_0>=49 && LA239_0<=66)||(LA239_0>=59 && LA239_0<=63)||LA239_0==65||(LA239_0>=68 && LA239_0<=73)||(LA239_0>=75 && LA239_0<=94)||(LA239_0>=95 && LA239_0<=96)||(LA239_0>=98 && LA239_0<=99)||(LA239_0>=101 && LA239_0<=105)||(LA239_0>=107 && LA239_0<=119)||(LA239_0>=121 && LA239_0<=125)||(LA239_0>=127 && LA239_0<=139)||(LA239_0>=152 && LA239_0<=154)||(LA239_0>=159 && LA239_0<=160)||(LA239_0>=167 && LA239_0<=180)||(LA239_0>=185 && LA239_0<=190)) ) {
+                    if ( (LA239_0==RULE_STRING_VALUE||(LA239_0>=RULE_PREFIXNAME_TEXT && LA239_0<=RULE_EXP_VALUE)||(LA239_0>=15 && LA239_0<=16)||LA239_0==19||LA239_0==21||LA239_0==23||(LA239_0>=33 && LA239_0<=36)||(LA239_0>=38 && LA239_0<=41)||LA239_0==47||(LA239_0>=49 && LA239_0<=66)||(LA239_0>=59 && LA239_0<=63)||LA239_0==65||(LA239_0>=68 && LA239_0<=73)||(LA239_0>=75 && LA239_0<=94)||(LA239_0>=95 && LA239_0<=96)||(LA239_0>=98 && LA239_0<=99)||(LA239_0>=101 && LA239_0<=105)||(LA239_0>=107 && LA239_0<=119)||(LA239_0>=121 && LA239_0<=125)||(LA239_0>=127 && LA239_0<=139)||(LA239_0>=152 && LA239_0<=154)||(LA239_0>=159 && LA239_0<=160)||(LA239_0>=167 && LA239_0<=180)||(LA239_0>=185 && LA239_0<=190)) ) {
                         alt239=1;
                     }
                     switch (alt239) {
@@ -28565,7 +28565,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     int alt242=2;
                     int LA242_0 = input.LA(1);
 
-                    if ( (LA242_0==RULE_STRING_VALUE||(LA242_0>=RULE_PREFIXNAME_ && LA242_0<=RULE_EXP_VALUE)||(LA242_0>=15 && LA242_0<=16)||LA242_0==19||LA242_0==21||LA242_0==23||(LA242_0>=33 && LA242_0<=36)||(LA242_0>=38 && LA242_0<=41)||LA242_0==47||(LA242_0>=49 && LA242_0<=66)||(LA242_0>=59 && LA242_0<=63)||LA242_0==65||(LA242_0>=68 && LA242_0<=73)||(LA242_0>=75 && LA242_0<=94)||(LA242_0>=95 && LA242_0<=96)||(LA242_0>=98 && LA242_0<=99)||(LA242_0>=101 && LA242_0<=105)||(LA242_0>=107 && LA242_0<=119)||(LA242_0>=121 && LA242_0<=125)||(LA242_0>=127 && LA242_0<=139)||(LA242_0>=152 && LA242_0<=154)||(LA242_0>=159 && LA242_0<=160)||(LA242_0>=167 && LA242_0<=180)||(LA242_0>=185 && LA242_0<=190)) ) {
+                    if ( (LA242_0==RULE_STRING_VALUE||(LA242_0>=RULE_PREFIXNAME_TEXT && LA242_0<=RULE_EXP_VALUE)||(LA242_0>=15 && LA242_0<=16)||LA242_0==19||LA242_0==21||LA242_0==23||(LA242_0>=33 && LA242_0<=36)||(LA242_0>=38 && LA242_0<=41)||LA242_0==47||(LA242_0>=49 && LA242_0<=66)||(LA242_0>=59 && LA242_0<=63)||LA242_0==65||(LA242_0>=68 && LA242_0<=73)||(LA242_0>=75 && LA242_0<=94)||(LA242_0>=95 && LA242_0<=96)||(LA242_0>=98 && LA242_0<=99)||(LA242_0>=101 && LA242_0<=105)||(LA242_0>=107 && LA242_0<=119)||(LA242_0>=121 && LA242_0<=125)||(LA242_0>=127 && LA242_0<=139)||(LA242_0>=152 && LA242_0<=154)||(LA242_0>=159 && LA242_0<=160)||(LA242_0>=167 && LA242_0<=180)||(LA242_0>=185 && LA242_0<=190)) ) {
                         alt242=1;
                     }
                     switch (alt242) {
@@ -28878,7 +28878,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     int alt245=2;
                     int LA245_0 = input.LA(1);
 
-                    if ( (LA245_0==RULE_STRING_VALUE||(LA245_0>=RULE_PREFIXNAME_ && LA245_0<=RULE_EXP_VALUE)||(LA245_0>=15 && LA245_0<=16)||LA245_0==19||LA245_0==21||LA245_0==23||(LA245_0>=33 && LA245_0<=36)||(LA245_0>=38 && LA245_0<=41)||LA245_0==47||(LA245_0>=49 && LA245_0<=66)||(LA245_0>=59 && LA245_0<=63)||LA245_0==65||(LA245_0>=68 && LA245_0<=73)||(LA245_0>=75 && LA245_0<=94)||(LA245_0>=95 && LA245_0<=96)||(LA245_0>=98 && LA245_0<=99)||(LA245_0>=101 && LA245_0<=105)||(LA245_0>=107 && LA245_0<=119)||(LA245_0>=121 && LA245_0<=125)||(LA245_0>=127 && LA245_0<=139)||(LA245_0>=152 && LA245_0<=154)||(LA245_0>=159 && LA245_0<=160)||(LA245_0>=167 && LA245_0<=180)||(LA245_0>=185 && LA245_0<=190)) ) {
+                    if ( (LA245_0==RULE_STRING_VALUE||(LA245_0>=RULE_PREFIXNAME_TEXT && LA245_0<=RULE_EXP_VALUE)||(LA245_0>=15 && LA245_0<=16)||LA245_0==19||LA245_0==21||LA245_0==23||(LA245_0>=33 && LA245_0<=36)||(LA245_0>=38 && LA245_0<=41)||LA245_0==47||(LA245_0>=49 && LA245_0<=66)||(LA245_0>=59 && LA245_0<=63)||LA245_0==65||(LA245_0>=68 && LA245_0<=73)||(LA245_0>=75 && LA245_0<=94)||(LA245_0>=95 && LA245_0<=96)||(LA245_0>=98 && LA245_0<=99)||(LA245_0>=101 && LA245_0<=105)||(LA245_0>=107 && LA245_0<=119)||(LA245_0>=121 && LA245_0<=125)||(LA245_0>=127 && LA245_0<=139)||(LA245_0>=152 && LA245_0<=154)||(LA245_0>=159 && LA245_0<=160)||(LA245_0>=167 && LA245_0<=180)||(LA245_0>=185 && LA245_0<=190)) ) {
                         alt245=1;
                     }
                     switch (alt245) {
@@ -29198,7 +29198,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     int alt248=2;
                     int LA248_0 = input.LA(1);
 
-                    if ( (LA248_0==RULE_STRING_VALUE||(LA248_0>=RULE_PREFIXNAME_ && LA248_0<=RULE_EXP_VALUE)||(LA248_0>=15 && LA248_0<=16)||LA248_0==19||LA248_0==21||LA248_0==23||(LA248_0>=33 && LA248_0<=36)||(LA248_0>=38 && LA248_0<=41)||LA248_0==47||(LA248_0>=49 && LA248_0<=66)||(LA248_0>=59 && LA248_0<=63)||LA248_0==65||(LA248_0>=68 && LA248_0<=73)||(LA248_0>=75 && LA248_0<=94)||(LA248_0>=95 && LA248_0<=96)||(LA248_0>=98 && LA248_0<=99)||(LA248_0>=101 && LA248_0<=105)||(LA248_0>=107 && LA248_0<=119)||(LA248_0>=121 && LA248_0<=125)||(LA248_0>=127 && LA248_0<=139)||(LA248_0>=152 && LA248_0<=154)||(LA248_0>=159 && LA248_0<=160)||(LA248_0>=167 && LA248_0<=180)||(LA248_0>=185 && LA248_0<=190)) ) {
+                    if ( (LA248_0==RULE_STRING_VALUE||(LA248_0>=RULE_PREFIXNAME_TEXT && LA248_0<=RULE_EXP_VALUE)||(LA248_0>=15 && LA248_0<=16)||LA248_0==19||LA248_0==21||LA248_0==23||(LA248_0>=33 && LA248_0<=36)||(LA248_0>=38 && LA248_0<=41)||LA248_0==47||(LA248_0>=49 && LA248_0<=66)||(LA248_0>=59 && LA248_0<=63)||LA248_0==65||(LA248_0>=68 && LA248_0<=73)||(LA248_0>=75 && LA248_0<=94)||(LA248_0>=95 && LA248_0<=96)||(LA248_0>=98 && LA248_0<=99)||(LA248_0>=101 && LA248_0<=105)||(LA248_0>=107 && LA248_0<=119)||(LA248_0>=121 && LA248_0<=125)||(LA248_0>=127 && LA248_0<=139)||(LA248_0>=152 && LA248_0<=154)||(LA248_0>=159 && LA248_0<=160)||(LA248_0>=167 && LA248_0<=180)||(LA248_0>=185 && LA248_0<=190)) ) {
                         alt248=1;
                     }
                     switch (alt248) {
@@ -29511,7 +29511,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     int alt251=2;
                     int LA251_0 = input.LA(1);
 
-                    if ( (LA251_0==RULE_STRING_VALUE||(LA251_0>=RULE_PREFIXNAME_ && LA251_0<=RULE_EXP_VALUE)||(LA251_0>=15 && LA251_0<=16)||LA251_0==19||LA251_0==21||LA251_0==23||(LA251_0>=33 && LA251_0<=36)||(LA251_0>=38 && LA251_0<=41)||LA251_0==47||(LA251_0>=49 && LA251_0<=66)||(LA251_0>=59 && LA251_0<=63)||LA251_0==65||(LA251_0>=68 && LA251_0<=73)||(LA251_0>=75 && LA251_0<=94)||(LA251_0>=95 && LA251_0<=96)||(LA251_0>=98 && LA251_0<=99)||(LA251_0>=101 && LA251_0<=105)||(LA251_0>=107 && LA251_0<=119)||(LA251_0>=121 && LA251_0<=125)||(LA251_0>=127 && LA251_0<=139)||(LA251_0>=152 && LA251_0<=154)||(LA251_0>=159 && LA251_0<=160)||(LA251_0>=167 && LA251_0<=180)||(LA251_0>=185 && LA251_0<=190)) ) {
+                    if ( (LA251_0==RULE_STRING_VALUE||(LA251_0>=RULE_PREFIXNAME_TEXT && LA251_0<=RULE_EXP_VALUE)||(LA251_0>=15 && LA251_0<=16)||LA251_0==19||LA251_0==21||LA251_0==23||(LA251_0>=33 && LA251_0<=36)||(LA251_0>=38 && LA251_0<=41)||LA251_0==47||(LA251_0>=49 && LA251_0<=66)||(LA251_0>=59 && LA251_0<=63)||LA251_0==65||(LA251_0>=68 && LA251_0<=73)||(LA251_0>=75 && LA251_0<=94)||(LA251_0>=95 && LA251_0<=96)||(LA251_0>=98 && LA251_0<=99)||(LA251_0>=101 && LA251_0<=105)||(LA251_0>=107 && LA251_0<=119)||(LA251_0>=121 && LA251_0<=125)||(LA251_0>=127 && LA251_0<=139)||(LA251_0>=152 && LA251_0<=154)||(LA251_0>=159 && LA251_0<=160)||(LA251_0>=167 && LA251_0<=180)||(LA251_0>=185 && LA251_0<=190)) ) {
                         alt251=1;
                     }
                     switch (alt251) {
@@ -29838,7 +29838,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     int alt254=2;
                     int LA254_0 = input.LA(1);
 
-                    if ( (LA254_0==RULE_STRING_VALUE||(LA254_0>=RULE_PREFIXNAME_ && LA254_0<=RULE_EXP_VALUE)||(LA254_0>=15 && LA254_0<=16)||LA254_0==19||LA254_0==21||LA254_0==23||(LA254_0>=33 && LA254_0<=36)||(LA254_0>=38 && LA254_0<=41)||LA254_0==47||(LA254_0>=49 && LA254_0<=66)||(LA254_0>=59 && LA254_0<=63)||LA254_0==65||(LA254_0>=68 && LA254_0<=73)||(LA254_0>=75 && LA254_0<=94)||(LA254_0>=95 && LA254_0<=96)||(LA254_0>=98 && LA254_0<=99)||(LA254_0>=101 && LA254_0<=105)||(LA254_0>=107 && LA254_0<=119)||(LA254_0>=121 && LA254_0<=125)||(LA254_0>=127 && LA254_0<=139)||(LA254_0>=152 && LA254_0<=154)||(LA254_0>=159 && LA254_0<=160)||(LA254_0>=167 && LA254_0<=180)||(LA254_0>=185 && LA254_0<=190)) ) {
+                    if ( (LA254_0==RULE_STRING_VALUE||(LA254_0>=RULE_PREFIXNAME_TEXT && LA254_0<=RULE_EXP_VALUE)||(LA254_0>=15 && LA254_0<=16)||LA254_0==19||LA254_0==21||LA254_0==23||(LA254_0>=33 && LA254_0<=36)||(LA254_0>=38 && LA254_0<=41)||LA254_0==47||(LA254_0>=49 && LA254_0<=66)||(LA254_0>=59 && LA254_0<=63)||LA254_0==65||(LA254_0>=68 && LA254_0<=73)||(LA254_0>=75 && LA254_0<=94)||(LA254_0>=95 && LA254_0<=96)||(LA254_0>=98 && LA254_0<=99)||(LA254_0>=101 && LA254_0<=105)||(LA254_0>=107 && LA254_0<=119)||(LA254_0>=121 && LA254_0<=125)||(LA254_0>=127 && LA254_0<=139)||(LA254_0>=152 && LA254_0<=154)||(LA254_0>=159 && LA254_0<=160)||(LA254_0>=167 && LA254_0<=180)||(LA254_0>=185 && LA254_0<=190)) ) {
                         alt254=1;
                     }
                     switch (alt254) {
@@ -30158,7 +30158,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     int alt257=2;
                     int LA257_0 = input.LA(1);
 
-                    if ( (LA257_0==RULE_STRING_VALUE||(LA257_0>=RULE_PREFIXNAME_ && LA257_0<=RULE_EXP_VALUE)||(LA257_0>=15 && LA257_0<=16)||LA257_0==19||LA257_0==21||LA257_0==23||(LA257_0>=33 && LA257_0<=36)||(LA257_0>=38 && LA257_0<=41)||LA257_0==47||(LA257_0>=49 && LA257_0<=66)||(LA257_0>=59 && LA257_0<=63)||LA257_0==65||(LA257_0>=68 && LA257_0<=73)||(LA257_0>=75 && LA257_0<=94)||(LA257_0>=95 && LA257_0<=96)||(LA257_0>=98 && LA257_0<=99)||(LA257_0>=101 && LA257_0<=105)||(LA257_0>=107 && LA257_0<=119)||(LA257_0>=121 && LA257_0<=125)||(LA257_0>=127 && LA257_0<=139)||(LA257_0>=152 && LA257_0<=154)||(LA257_0>=159 && LA257_0<=160)||(LA257_0>=167 && LA257_0<=180)||(LA257_0>=185 && LA257_0<=190)) ) {
+                    if ( (LA257_0==RULE_STRING_VALUE||(LA257_0>=RULE_PREFIXNAME_TEXT && LA257_0<=RULE_EXP_VALUE)||(LA257_0>=15 && LA257_0<=16)||LA257_0==19||LA257_0==21||LA257_0==23||(LA257_0>=33 && LA257_0<=36)||(LA257_0>=38 && LA257_0<=41)||LA257_0==47||(LA257_0>=49 && LA257_0<=66)||(LA257_0>=59 && LA257_0<=63)||LA257_0==65||(LA257_0>=68 && LA257_0<=73)||(LA257_0>=75 && LA257_0<=94)||(LA257_0>=95 && LA257_0<=96)||(LA257_0>=98 && LA257_0<=99)||(LA257_0>=101 && LA257_0<=105)||(LA257_0>=107 && LA257_0<=119)||(LA257_0>=121 && LA257_0<=125)||(LA257_0>=127 && LA257_0<=139)||(LA257_0>=152 && LA257_0<=154)||(LA257_0>=159 && LA257_0<=160)||(LA257_0>=167 && LA257_0<=180)||(LA257_0>=185 && LA257_0<=190)) ) {
                         alt257=1;
                     }
                     switch (alt257) {
@@ -32037,7 +32037,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                 int alt274=2;
                 int LA274_0 = input.LA(1);
 
-                if ( (LA274_0==RULE_PREFIXNAME_) ) {
+                if ( (LA274_0==RULE_PREFIXNAME_TEXT) ) {
                     alt274=1;
                 }
 
@@ -33543,7 +33543,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     int alt295=2;
                     int LA295_0 = input.LA(1);
 
-                    if ( (LA295_0==RULE_STRING_VALUE||(LA295_0>=RULE_PREFIXNAME_ && LA295_0<=RULE_EXP_VALUE)||(LA295_0>=15 && LA295_0<=16)||LA295_0==19||LA295_0==21||LA295_0==23||(LA295_0>=33 && LA295_0<=36)||(LA295_0>=38 && LA295_0<=41)||LA295_0==47||(LA295_0>=49 && LA295_0<=66)||(LA295_0>=59 && LA295_0<=63)||LA295_0==65||(LA295_0>=68 && LA295_0<=73)||(LA295_0>=75 && LA295_0<=94)||(LA295_0>=95 && LA295_0<=96)||(LA295_0>=98 && LA295_0<=99)||(LA295_0>=101 && LA295_0<=105)||(LA295_0>=107 && LA295_0<=119)||(LA295_0>=121 && LA295_0<=125)||(LA295_0>=127 && LA295_0<=139)||(LA295_0>=152 && LA295_0<=154)||(LA295_0>=159 && LA295_0<=160)||(LA295_0>=167 && LA295_0<=180)||(LA295_0>=185 && LA295_0<=190)) ) {
+                    if ( (LA295_0==RULE_STRING_VALUE||(LA295_0>=RULE_PREFIXNAME_TEXT && LA295_0<=RULE_EXP_VALUE)||(LA295_0>=15 && LA295_0<=16)||LA295_0==19||LA295_0==21||LA295_0==23||(LA295_0>=33 && LA295_0<=36)||(LA295_0>=38 && LA295_0<=41)||LA295_0==47||(LA295_0>=49 && LA295_0<=66)||(LA295_0>=59 && LA295_0<=63)||LA295_0==65||(LA295_0>=68 && LA295_0<=73)||(LA295_0>=75 && LA295_0<=94)||(LA295_0>=95 && LA295_0<=96)||(LA295_0>=98 && LA295_0<=99)||(LA295_0>=101 && LA295_0<=105)||(LA295_0>=107 && LA295_0<=119)||(LA295_0>=121 && LA295_0<=125)||(LA295_0>=127 && LA295_0<=139)||(LA295_0>=152 && LA295_0<=154)||(LA295_0>=159 && LA295_0<=160)||(LA295_0>=167 && LA295_0<=180)||(LA295_0>=185 && LA295_0<=190)) ) {
                         alt295=1;
                     }
                     switch (alt295) {
@@ -34005,7 +34005,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     int alt301=2;
                     int LA301_0 = input.LA(1);
 
-                    if ( (LA301_0==RULE_STRING_VALUE||(LA301_0>=RULE_PREFIXNAME_ && LA301_0<=RULE_EXP_VALUE)||(LA301_0>=15 && LA301_0<=16)||LA301_0==19||LA301_0==21||LA301_0==23||(LA301_0>=33 && LA301_0<=36)||(LA301_0>=38 && LA301_0<=41)||LA301_0==47||(LA301_0>=49 && LA301_0<=66)||(LA301_0>=59 && LA301_0<=63)||LA301_0==65||(LA301_0>=68 && LA301_0<=73)||(LA301_0>=75 && LA301_0<=94)||(LA301_0>=95 && LA301_0<=96)||(LA301_0>=98 && LA301_0<=99)||(LA301_0>=101 && LA301_0<=105)||(LA301_0>=107 && LA301_0<=119)||(LA301_0>=121 && LA301_0<=125)||(LA301_0>=127 && LA301_0<=139)||(LA301_0>=152 && LA301_0<=154)||(LA301_0>=159 && LA301_0<=160)||(LA301_0>=167 && LA301_0<=180)||(LA301_0>=185 && LA301_0<=190)) ) {
+                    if ( (LA301_0==RULE_STRING_VALUE||(LA301_0>=RULE_PREFIXNAME_TEXT && LA301_0<=RULE_EXP_VALUE)||(LA301_0>=15 && LA301_0<=16)||LA301_0==19||LA301_0==21||LA301_0==23||(LA301_0>=33 && LA301_0<=36)||(LA301_0>=38 && LA301_0<=41)||LA301_0==47||(LA301_0>=49 && LA301_0<=66)||(LA301_0>=59 && LA301_0<=63)||LA301_0==65||(LA301_0>=68 && LA301_0<=73)||(LA301_0>=75 && LA301_0<=94)||(LA301_0>=95 && LA301_0<=96)||(LA301_0>=98 && LA301_0<=99)||(LA301_0>=101 && LA301_0<=105)||(LA301_0>=107 && LA301_0<=119)||(LA301_0>=121 && LA301_0<=125)||(LA301_0>=127 && LA301_0<=139)||(LA301_0>=152 && LA301_0<=154)||(LA301_0>=159 && LA301_0<=160)||(LA301_0>=167 && LA301_0<=180)||(LA301_0>=185 && LA301_0<=190)) ) {
                         alt301=1;
                     }
                     switch (alt301) {
@@ -34937,7 +34937,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                         int alt314=2;
                         int LA314_0 = input.LA(1);
 
-                        if ( ((LA314_0>=RULE_SL_NOTE && LA314_0<=RULE_ML_NOTE)||(LA314_0>=RULE_REGULAR_COMMENT && LA314_0<=RULE_PREFIXNAME_)||LA314_0==26||(LA314_0>=29 && LA314_0<=34)) ) {
+                        if ( ((LA314_0>=RULE_SL_NOTE && LA314_0<=RULE_ML_NOTE)||(LA314_0>=RULE_REGULAR_COMMENT && LA314_0<=RULE_PREFIXNAME_TEXT)||LA314_0==26||(LA314_0>=29 && LA314_0<=34)) ) {
                             alt314=1;
                         }
 
@@ -35197,7 +35197,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                         int alt316=2;
                         int LA316_0 = input.LA(1);
 
-                        if ( ((LA316_0>=RULE_SL_NOTE && LA316_0<=RULE_ML_NOTE)||(LA316_0>=RULE_REGULAR_COMMENT && LA316_0<=RULE_PREFIXNAME_)||LA316_0==26||(LA316_0>=29 && LA316_0<=34)) ) {
+                        if ( ((LA316_0>=RULE_SL_NOTE && LA316_0<=RULE_ML_NOTE)||(LA316_0>=RULE_REGULAR_COMMENT && LA316_0<=RULE_PREFIXNAME_TEXT)||LA316_0==26||(LA316_0>=29 && LA316_0<=34)) ) {
                             alt316=1;
                         }
 
@@ -38581,7 +38581,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                         int alt348=2;
                         int LA348_0 = input.LA(1);
 
-                        if ( ((LA348_0>=RULE_SL_NOTE && LA348_0<=RULE_ML_NOTE)||(LA348_0>=RULE_REGULAR_COMMENT && LA348_0<=RULE_PREFIXNAME_)||LA348_0==26||(LA348_0>=29 && LA348_0<=34)) ) {
+                        if ( ((LA348_0>=RULE_SL_NOTE && LA348_0<=RULE_ML_NOTE)||(LA348_0>=RULE_REGULAR_COMMENT && LA348_0<=RULE_PREFIXNAME_TEXT)||LA348_0==26||(LA348_0>=29 && LA348_0<=34)) ) {
                             alt348=1;
                         }
 
@@ -40225,7 +40225,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                 int alt365=2;
                 int LA365_0 = input.LA(1);
 
-                if ( (LA365_0==RULE_PREFIXNAME_) ) {
+                if ( (LA365_0==RULE_PREFIXNAME_TEXT) ) {
                     alt365=1;
                 }
 
@@ -40554,7 +40554,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
             if ( ((LA372_0>=RULE_ID && LA372_0<=RULE_UNRESTRICTED_NAME)||LA372_0==137) ) {
                 alt372=1;
             }
-            else if ( (LA372_0==RULE_PREFIXNAME_||LA372_0==75) ) {
+            else if ( (LA372_0==RULE_PREFIXNAME_TEXT||LA372_0==75) ) {
                 alt372=2;
             }
             else {
@@ -40661,7 +40661,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                                 int alt369=2;
                                 int LA369_0 = input.LA(1);
 
-                                if ( (LA369_0==RULE_PREFIXNAME_) ) {
+                                if ( (LA369_0==RULE_PREFIXNAME_TEXT) ) {
                                     alt369=1;
                                 }
 
@@ -40720,7 +40720,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                                 int alt370=2;
                                 int LA370_0 = input.LA(1);
 
-                                if ( (LA370_0==RULE_PREFIXNAME_) ) {
+                                if ( (LA370_0==RULE_PREFIXNAME_TEXT) ) {
                                     alt370=1;
                                 }
 
@@ -40895,7 +40895,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     int alt374=2;
                     int LA374_0 = input.LA(1);
 
-                    if ( (LA374_0==RULE_STRING_VALUE||(LA374_0>=RULE_PREFIXNAME_ && LA374_0<=RULE_EXP_VALUE)||(LA374_0>=15 && LA374_0<=16)||LA374_0==19||LA374_0==21||LA374_0==23||(LA374_0>=33 && LA374_0<=36)||(LA374_0>=38 && LA374_0<=41)||LA374_0==47||(LA374_0>=49 && LA374_0<=66)||(LA374_0>=59 && LA374_0<=63)||LA374_0==65||(LA374_0>=68 && LA374_0<=73)||(LA374_0>=75 && LA374_0<=94)||(LA374_0>=95 && LA374_0<=96)||(LA374_0>=98 && LA374_0<=99)||(LA374_0>=101 && LA374_0<=105)||(LA374_0>=107 && LA374_0<=119)||(LA374_0>=121 && LA374_0<=125)||(LA374_0>=127 && LA374_0<=139)||(LA374_0>=152 && LA374_0<=154)||(LA374_0>=159 && LA374_0<=160)||(LA374_0>=167 && LA374_0<=180)||(LA374_0>=185 && LA374_0<=190)) ) {
+                    if ( (LA374_0==RULE_STRING_VALUE||(LA374_0>=RULE_PREFIXNAME_TEXT && LA374_0<=RULE_EXP_VALUE)||(LA374_0>=15 && LA374_0<=16)||LA374_0==19||LA374_0==21||LA374_0==23||(LA374_0>=33 && LA374_0<=36)||(LA374_0>=38 && LA374_0<=41)||LA374_0==47||(LA374_0>=49 && LA374_0<=66)||(LA374_0>=59 && LA374_0<=63)||LA374_0==65||(LA374_0>=68 && LA374_0<=73)||(LA374_0>=75 && LA374_0<=94)||(LA374_0>=95 && LA374_0<=96)||(LA374_0>=98 && LA374_0<=99)||(LA374_0>=101 && LA374_0<=105)||(LA374_0>=107 && LA374_0<=119)||(LA374_0>=121 && LA374_0<=125)||(LA374_0>=127 && LA374_0<=139)||(LA374_0>=152 && LA374_0<=154)||(LA374_0>=159 && LA374_0<=160)||(LA374_0>=167 && LA374_0<=180)||(LA374_0>=185 && LA374_0<=190)) ) {
                         alt374=1;
                     }
                     switch (alt374) {
@@ -41090,7 +41090,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
             if ( ((LA385_0>=RULE_ID && LA385_0<=RULE_UNRESTRICTED_NAME)||LA385_0==137) ) {
                 alt385=1;
             }
-            else if ( (LA385_0==RULE_PREFIXNAME_||LA385_0==81) ) {
+            else if ( (LA385_0==RULE_PREFIXNAME_TEXT||LA385_0==81) ) {
                 alt385=2;
             }
             else {
@@ -41307,7 +41307,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                                 int alt379=2;
                                 int LA379_0 = input.LA(1);
 
-                                if ( (LA379_0==RULE_PREFIXNAME_) ) {
+                                if ( (LA379_0==RULE_PREFIXNAME_TEXT) ) {
                                     alt379=1;
                                 }
 
@@ -41366,7 +41366,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                                 int alt380=2;
                                 int LA380_0 = input.LA(1);
 
-                                if ( (LA380_0==RULE_PREFIXNAME_) ) {
+                                if ( (LA380_0==RULE_PREFIXNAME_TEXT) ) {
                                     alt380=1;
                                 }
 
@@ -41532,7 +41532,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                             int alt383=2;
                             int LA383_0 = input.LA(1);
 
-                            if ( (LA383_0==RULE_STRING_VALUE||(LA383_0>=RULE_PREFIXNAME_ && LA383_0<=RULE_EXP_VALUE)||(LA383_0>=15 && LA383_0<=16)||LA383_0==19||LA383_0==21||LA383_0==23||(LA383_0>=33 && LA383_0<=36)||(LA383_0>=38 && LA383_0<=41)||LA383_0==47||(LA383_0>=49 && LA383_0<=66)||(LA383_0>=59 && LA383_0<=63)||LA383_0==65||(LA383_0>=68 && LA383_0<=73)||(LA383_0>=75 && LA383_0<=94)||(LA383_0>=95 && LA383_0<=96)||(LA383_0>=98 && LA383_0<=99)||(LA383_0>=101 && LA383_0<=105)||(LA383_0>=107 && LA383_0<=119)||(LA383_0>=121 && LA383_0<=125)||(LA383_0>=127 && LA383_0<=139)||(LA383_0>=152 && LA383_0<=154)||(LA383_0>=159 && LA383_0<=160)||(LA383_0>=167 && LA383_0<=180)||(LA383_0>=185 && LA383_0<=190)) ) {
+                            if ( (LA383_0==RULE_STRING_VALUE||(LA383_0>=RULE_PREFIXNAME_TEXT && LA383_0<=RULE_EXP_VALUE)||(LA383_0>=15 && LA383_0<=16)||LA383_0==19||LA383_0==21||LA383_0==23||(LA383_0>=33 && LA383_0<=36)||(LA383_0>=38 && LA383_0<=41)||LA383_0==47||(LA383_0>=49 && LA383_0<=66)||(LA383_0>=59 && LA383_0<=63)||LA383_0==65||(LA383_0>=68 && LA383_0<=73)||(LA383_0>=75 && LA383_0<=94)||(LA383_0>=95 && LA383_0<=96)||(LA383_0>=98 && LA383_0<=99)||(LA383_0>=101 && LA383_0<=105)||(LA383_0>=107 && LA383_0<=119)||(LA383_0>=121 && LA383_0<=125)||(LA383_0>=127 && LA383_0<=139)||(LA383_0>=152 && LA383_0<=154)||(LA383_0>=159 && LA383_0<=160)||(LA383_0>=167 && LA383_0<=180)||(LA383_0>=185 && LA383_0<=190)) ) {
                                 alt383=1;
                             }
                             switch (alt383) {
@@ -41736,7 +41736,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
             if ( ((LA395_0>=RULE_ID && LA395_0<=RULE_UNRESTRICTED_NAME)||LA395_0==137) ) {
                 alt395=1;
             }
-            else if ( (LA395_0==RULE_PREFIXNAME_||LA395_0==80) ) {
+            else if ( (LA395_0==RULE_PREFIXNAME_TEXT||LA395_0==80) ) {
                 alt395=2;
             }
             else {
@@ -41953,7 +41953,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                                 int alt389=2;
                                 int LA389_0 = input.LA(1);
 
-                                if ( (LA389_0==RULE_PREFIXNAME_) ) {
+                                if ( (LA389_0==RULE_PREFIXNAME_TEXT) ) {
                                     alt389=1;
                                 }
 
@@ -42012,7 +42012,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                                 int alt390=2;
                                 int LA390_0 = input.LA(1);
 
-                                if ( (LA390_0==RULE_PREFIXNAME_) ) {
+                                if ( (LA390_0==RULE_PREFIXNAME_TEXT) ) {
                                     alt390=1;
                                 }
 
@@ -42178,7 +42178,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                             int alt393=2;
                             int LA393_0 = input.LA(1);
 
-                            if ( (LA393_0==RULE_STRING_VALUE||(LA393_0>=RULE_PREFIXNAME_ && LA393_0<=RULE_EXP_VALUE)||(LA393_0>=15 && LA393_0<=16)||LA393_0==19||LA393_0==21||LA393_0==23||(LA393_0>=33 && LA393_0<=36)||(LA393_0>=38 && LA393_0<=41)||LA393_0==47||(LA393_0>=49 && LA393_0<=66)||(LA393_0>=59 && LA393_0<=63)||LA393_0==65||(LA393_0>=68 && LA393_0<=73)||(LA393_0>=75 && LA393_0<=94)||(LA393_0>=95 && LA393_0<=96)||(LA393_0>=98 && LA393_0<=99)||(LA393_0>=101 && LA393_0<=105)||(LA393_0>=107 && LA393_0<=119)||(LA393_0>=121 && LA393_0<=125)||(LA393_0>=127 && LA393_0<=139)||(LA393_0>=152 && LA393_0<=154)||(LA393_0>=159 && LA393_0<=160)||(LA393_0>=167 && LA393_0<=180)||(LA393_0>=185 && LA393_0<=190)) ) {
+                            if ( (LA393_0==RULE_STRING_VALUE||(LA393_0>=RULE_PREFIXNAME_TEXT && LA393_0<=RULE_EXP_VALUE)||(LA393_0>=15 && LA393_0<=16)||LA393_0==19||LA393_0==21||LA393_0==23||(LA393_0>=33 && LA393_0<=36)||(LA393_0>=38 && LA393_0<=41)||LA393_0==47||(LA393_0>=49 && LA393_0<=66)||(LA393_0>=59 && LA393_0<=63)||LA393_0==65||(LA393_0>=68 && LA393_0<=73)||(LA393_0>=75 && LA393_0<=94)||(LA393_0>=95 && LA393_0<=96)||(LA393_0>=98 && LA393_0<=99)||(LA393_0>=101 && LA393_0<=105)||(LA393_0>=107 && LA393_0<=119)||(LA393_0>=121 && LA393_0<=125)||(LA393_0>=127 && LA393_0<=139)||(LA393_0>=152 && LA393_0<=154)||(LA393_0>=159 && LA393_0<=160)||(LA393_0>=167 && LA393_0<=180)||(LA393_0>=185 && LA393_0<=190)) ) {
                                 alt393=1;
                             }
                             switch (alt393) {
@@ -42367,7 +42367,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                 int alt396=2;
                 int LA396_0 = input.LA(1);
 
-                if ( (LA396_0==RULE_PREFIXNAME_) ) {
+                if ( (LA396_0==RULE_PREFIXNAME_TEXT) ) {
                     alt396=1;
                 }
 
@@ -42656,7 +42656,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                 int alt399=2;
                 int LA399_0 = input.LA(1);
 
-                if ( (LA399_0==RULE_PREFIXNAME_) ) {
+                if ( (LA399_0==RULE_PREFIXNAME_TEXT) ) {
                     alt399=1;
                 }
 
@@ -42945,7 +42945,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                 int alt402=2;
                 int LA402_0 = input.LA(1);
 
-                if ( (LA402_0==RULE_PREFIXNAME_) ) {
+                if ( (LA402_0==RULE_PREFIXNAME_TEXT) ) {
                     alt402=1;
                 }
 
@@ -43242,7 +43242,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
             if ( ((LA409_0>=RULE_ID && LA409_0<=RULE_UNRESTRICTED_NAME)||LA409_0==137) ) {
                 alt409=1;
             }
-            else if ( (LA409_0==RULE_PREFIXNAME_||LA409_0==88) ) {
+            else if ( (LA409_0==RULE_PREFIXNAME_TEXT||LA409_0==88) ) {
                 alt409=2;
             }
             else {
@@ -43349,7 +43349,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                                 int alt406=2;
                                 int LA406_0 = input.LA(1);
 
-                                if ( (LA406_0==RULE_PREFIXNAME_) ) {
+                                if ( (LA406_0==RULE_PREFIXNAME_TEXT) ) {
                                     alt406=1;
                                 }
 
@@ -43408,7 +43408,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                                 int alt407=2;
                                 int LA407_0 = input.LA(1);
 
-                                if ( (LA407_0==RULE_PREFIXNAME_) ) {
+                                if ( (LA407_0==RULE_PREFIXNAME_TEXT) ) {
                                     alt407=1;
                                 }
 
@@ -45040,7 +45040,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePrefixMetadata"
-    // InternalSysMLOC.g:14843:1: rulePrefixMetadata[EObject in_current] returns [EObject current=in_current] : ( (lv_prefixMetadataExtension_0_0= RULE_PREFIXNAME_ ) ) ;
+    // InternalSysMLOC.g:14843:1: rulePrefixMetadata[EObject in_current] returns [EObject current=in_current] : ( (lv_prefixMetadataExtension_0_0= RULE_PREFIXNAME_TEXT ) ) ;
     public final EObject rulePrefixMetadata(EObject in_current) throws RecognitionException {
         EObject current = in_current;
 
@@ -45050,19 +45050,19 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSysMLOC.g:14849:2: ( ( (lv_prefixMetadataExtension_0_0= RULE_PREFIXNAME_ ) ) )
-            // InternalSysMLOC.g:14850:2: ( (lv_prefixMetadataExtension_0_0= RULE_PREFIXNAME_ ) )
+            // InternalSysMLOC.g:14849:2: ( ( (lv_prefixMetadataExtension_0_0= RULE_PREFIXNAME_TEXT ) ) )
+            // InternalSysMLOC.g:14850:2: ( (lv_prefixMetadataExtension_0_0= RULE_PREFIXNAME_TEXT ) )
             {
-            // InternalSysMLOC.g:14850:2: ( (lv_prefixMetadataExtension_0_0= RULE_PREFIXNAME_ ) )
-            // InternalSysMLOC.g:14851:3: (lv_prefixMetadataExtension_0_0= RULE_PREFIXNAME_ )
+            // InternalSysMLOC.g:14850:2: ( (lv_prefixMetadataExtension_0_0= RULE_PREFIXNAME_TEXT ) )
+            // InternalSysMLOC.g:14851:3: (lv_prefixMetadataExtension_0_0= RULE_PREFIXNAME_TEXT )
             {
-            // InternalSysMLOC.g:14851:3: (lv_prefixMetadataExtension_0_0= RULE_PREFIXNAME_ )
-            // InternalSysMLOC.g:14852:4: lv_prefixMetadataExtension_0_0= RULE_PREFIXNAME_
+            // InternalSysMLOC.g:14851:3: (lv_prefixMetadataExtension_0_0= RULE_PREFIXNAME_TEXT )
+            // InternalSysMLOC.g:14852:4: lv_prefixMetadataExtension_0_0= RULE_PREFIXNAME_TEXT
             {
-            lv_prefixMetadataExtension_0_0=(Token)match(input,RULE_PREFIXNAME_,FOLLOW_2); if (state.failed) return current;
+            lv_prefixMetadataExtension_0_0=(Token)match(input,RULE_PREFIXNAME_TEXT,FOLLOW_2); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-              				newLeafNode(lv_prefixMetadataExtension_0_0, grammarAccess.getPrefixMetadataAccess().getPrefixMetadataExtensionPREFIXNAME_TerminalRuleCall_0());
+              				newLeafNode(lv_prefixMetadataExtension_0_0, grammarAccess.getPrefixMetadataAccess().getPrefixMetadataExtensionPREFIXNAME_TEXTTerminalRuleCall_0());
               			
             }
             if ( state.backtracking==0 ) {
@@ -45074,7 +45074,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
               					current,
               					"prefixMetadataExtension",
               					lv_prefixMetadataExtension_0_0,
-              					"dut.control.sysmloc.SysMLOC.PREFIXNAME_");
+              					"dut.control.sysmloc.SysMLOC.PREFIXNAME_TEXT");
               			
             }
 
@@ -45991,7 +45991,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                 int alt427=2;
                 int LA427_0 = input.LA(1);
 
-                if ( (LA427_0==RULE_PREFIXNAME_) ) {
+                if ( (LA427_0==RULE_PREFIXNAME_TEXT) ) {
                     alt427=1;
                 }
 
@@ -46152,7 +46152,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                 int alt430=2;
                 int LA430_0 = input.LA(1);
 
-                if ( (LA430_0==RULE_PREFIXNAME_) ) {
+                if ( (LA430_0==RULE_PREFIXNAME_TEXT) ) {
                     alt430=1;
                 }
 
@@ -46379,7 +46379,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                 int alt432=2;
                 int LA432_0 = input.LA(1);
 
-                if ( (LA432_0==RULE_PREFIXNAME_) ) {
+                if ( (LA432_0==RULE_PREFIXNAME_TEXT) ) {
                     alt432=1;
                 }
 
@@ -46464,7 +46464,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
             if ( (LA433_0==39) ) {
                 alt433=1;
             }
-            else if ( ((LA433_0>=RULE_PREFIXNAME_ && LA433_0<=RULE_UNRESTRICTED_NAME)||LA433_0==23||(LA433_0>=35 && LA433_0<=36)||LA433_0==41||LA433_0==47||(LA433_0>=49 && LA433_0<=51)||(LA433_0>=53 && LA433_0<=54)||(LA433_0>=56 && LA433_0<=66)||(LA433_0>=68 && LA433_0<=73)||LA433_0==75||(LA433_0>=77 && LA433_0<=78)||(LA433_0>=80 && LA433_0<=94)||LA433_0==96||(LA433_0>=98 && LA433_0<=99)||LA433_0==101||(LA433_0>=103 && LA433_0<=105)||(LA433_0>=107 && LA433_0<=108)||(LA433_0>=118 && LA433_0<=119)||(LA433_0>=122 && LA433_0<=124)||(LA433_0>=127 && LA433_0<=128)||(LA433_0>=130 && LA433_0<=136)||(LA433_0>=175 && LA433_0<=180)||(LA433_0>=185 && LA433_0<=188)) ) {
+            else if ( ((LA433_0>=RULE_PREFIXNAME_TEXT && LA433_0<=RULE_UNRESTRICTED_NAME)||LA433_0==23||(LA433_0>=35 && LA433_0<=36)||LA433_0==41||LA433_0==47||(LA433_0>=49 && LA433_0<=51)||(LA433_0>=53 && LA433_0<=54)||(LA433_0>=56 && LA433_0<=66)||(LA433_0>=68 && LA433_0<=73)||LA433_0==75||(LA433_0>=77 && LA433_0<=78)||(LA433_0>=80 && LA433_0<=94)||LA433_0==96||(LA433_0>=98 && LA433_0<=99)||LA433_0==101||(LA433_0>=103 && LA433_0<=105)||(LA433_0>=107 && LA433_0<=108)||(LA433_0>=118 && LA433_0<=119)||(LA433_0>=122 && LA433_0<=124)||(LA433_0>=127 && LA433_0<=128)||(LA433_0>=130 && LA433_0<=136)||(LA433_0>=175 && LA433_0<=180)||(LA433_0>=185 && LA433_0<=188)) ) {
                 alt433=2;
             }
             else {
@@ -46641,7 +46641,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
             if ( (LA436_0==39) ) {
                 alt436=1;
             }
-            else if ( ((LA436_0>=RULE_PREFIXNAME_ && LA436_0<=RULE_UNRESTRICTED_NAME)||LA436_0==23||(LA436_0>=35 && LA436_0<=36)||LA436_0==41||LA436_0==47||(LA436_0>=49 && LA436_0<=51)||(LA436_0>=53 && LA436_0<=54)||(LA436_0>=56 && LA436_0<=66)||(LA436_0>=68 && LA436_0<=73)||LA436_0==75||(LA436_0>=77 && LA436_0<=78)||(LA436_0>=80 && LA436_0<=94)||LA436_0==96||(LA436_0>=98 && LA436_0<=99)||LA436_0==101||(LA436_0>=103 && LA436_0<=105)||(LA436_0>=107 && LA436_0<=108)||(LA436_0>=118 && LA436_0<=119)||(LA436_0>=122 && LA436_0<=124)||(LA436_0>=127 && LA436_0<=128)||(LA436_0>=130 && LA436_0<=136)||(LA436_0>=175 && LA436_0<=180)||(LA436_0>=185 && LA436_0<=188)) ) {
+            else if ( ((LA436_0>=RULE_PREFIXNAME_TEXT && LA436_0<=RULE_UNRESTRICTED_NAME)||LA436_0==23||(LA436_0>=35 && LA436_0<=36)||LA436_0==41||LA436_0==47||(LA436_0>=49 && LA436_0<=51)||(LA436_0>=53 && LA436_0<=54)||(LA436_0>=56 && LA436_0<=66)||(LA436_0>=68 && LA436_0<=73)||LA436_0==75||(LA436_0>=77 && LA436_0<=78)||(LA436_0>=80 && LA436_0<=94)||LA436_0==96||(LA436_0>=98 && LA436_0<=99)||LA436_0==101||(LA436_0>=103 && LA436_0<=105)||(LA436_0>=107 && LA436_0<=108)||(LA436_0>=118 && LA436_0<=119)||(LA436_0>=122 && LA436_0<=124)||(LA436_0>=127 && LA436_0<=128)||(LA436_0>=130 && LA436_0<=136)||(LA436_0>=175 && LA436_0<=180)||(LA436_0>=185 && LA436_0<=188)) ) {
                 alt436=2;
             }
             else {
@@ -46807,7 +46807,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                 int alt437=2;
                 int LA437_0 = input.LA(1);
 
-                if ( (LA437_0==RULE_PREFIXNAME_) ) {
+                if ( (LA437_0==RULE_PREFIXNAME_TEXT) ) {
                     alt437=1;
                 }
 
@@ -52768,7 +52768,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                 int alt506=2;
                 int LA506_0 = input.LA(1);
 
-                if ( (LA506_0==RULE_PREFIXNAME_) ) {
+                if ( (LA506_0==RULE_PREFIXNAME_TEXT) ) {
                     alt506=1;
                 }
 
@@ -69363,7 +69363,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
                         else if ( (LA191_0==32) && (synpred1_InternalSysMLOC())) {s = 36;}
 
-                        else if ( (LA191_0==RULE_PREFIXNAME_) && (synpred1_InternalSysMLOC())) {s = 37;}
+                        else if ( (LA191_0==RULE_PREFIXNAME_TEXT) && (synpred1_InternalSysMLOC())) {s = 37;}
 
                         else if ( (LA191_0==33) && (synpred1_InternalSysMLOC())) {s = 38;}
 
@@ -69763,7 +69763,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
                         else if ( (LA194_0==32) && (synpred2_InternalSysMLOC())) {s = 36;}
 
-                        else if ( (LA194_0==RULE_PREFIXNAME_) && (synpred2_InternalSysMLOC())) {s = 37;}
+                        else if ( (LA194_0==RULE_PREFIXNAME_TEXT) && (synpred2_InternalSysMLOC())) {s = 37;}
 
                         else if ( (LA194_0==33) && (synpred2_InternalSysMLOC())) {s = 38;}
 
@@ -70163,7 +70163,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
                         else if ( (LA203_0==32) && (synpred3_InternalSysMLOC())) {s = 36;}
 
-                        else if ( (LA203_0==RULE_PREFIXNAME_) && (synpred3_InternalSysMLOC())) {s = 37;}
+                        else if ( (LA203_0==RULE_PREFIXNAME_TEXT) && (synpred3_InternalSysMLOC())) {s = 37;}
 
                         else if ( (LA203_0==33) && (synpred3_InternalSysMLOC())) {s = 38;}
 
@@ -70563,7 +70563,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
                         else if ( (LA206_0==32) && (synpred4_InternalSysMLOC())) {s = 36;}
 
-                        else if ( (LA206_0==RULE_PREFIXNAME_) && (synpred4_InternalSysMLOC())) {s = 37;}
+                        else if ( (LA206_0==RULE_PREFIXNAME_TEXT) && (synpred4_InternalSysMLOC())) {s = 37;}
 
                         else if ( (LA206_0==33) && (synpred4_InternalSysMLOC())) {s = 38;}
 
@@ -71057,7 +71057,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
                         else if ( (LA227_0==32) && (synpred5_InternalSysMLOC())) {s = 7;}
 
-                        else if ( (LA227_0==RULE_PREFIXNAME_) && (synpred5_InternalSysMLOC())) {s = 8;}
+                        else if ( (LA227_0==RULE_PREFIXNAME_TEXT) && (synpred5_InternalSysMLOC())) {s = 8;}
 
                         else if ( (LA227_0==33) && (synpred5_InternalSysMLOC())) {s = 9;}
 
@@ -71295,7 +71295,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
                         else if ( (LA229_0==32) && (synpred6_InternalSysMLOC())) {s = 7;}
 
-                        else if ( (LA229_0==RULE_PREFIXNAME_) && (synpred6_InternalSysMLOC())) {s = 8;}
+                        else if ( (LA229_0==RULE_PREFIXNAME_TEXT) && (synpred6_InternalSysMLOC())) {s = 8;}
 
                         else if ( (LA229_0==33) && (synpred6_InternalSysMLOC())) {s = 9;}
 
@@ -71533,7 +71533,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
                         else if ( (LA231_0==32) && (synpred7_InternalSysMLOC())) {s = 7;}
 
-                        else if ( (LA231_0==RULE_PREFIXNAME_) && (synpred7_InternalSysMLOC())) {s = 8;}
+                        else if ( (LA231_0==RULE_PREFIXNAME_TEXT) && (synpred7_InternalSysMLOC())) {s = 8;}
 
                         else if ( (LA231_0==33) && (synpred7_InternalSysMLOC())) {s = 9;}
 
@@ -71771,7 +71771,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
                         else if ( (LA233_0==32) && (synpred8_InternalSysMLOC())) {s = 7;}
 
-                        else if ( (LA233_0==RULE_PREFIXNAME_) && (synpred8_InternalSysMLOC())) {s = 8;}
+                        else if ( (LA233_0==RULE_PREFIXNAME_TEXT) && (synpred8_InternalSysMLOC())) {s = 8;}
 
                         else if ( (LA233_0==33) && (synpred8_InternalSysMLOC())) {s = 9;}
 
@@ -72171,7 +72171,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
                         else if ( (LA235_0==32) && (synpred9_InternalSysMLOC())) {s = 36;}
 
-                        else if ( (LA235_0==RULE_PREFIXNAME_) && (synpred9_InternalSysMLOC())) {s = 37;}
+                        else if ( (LA235_0==RULE_PREFIXNAME_TEXT) && (synpred9_InternalSysMLOC())) {s = 37;}
 
                         else if ( (LA235_0==33) && (synpred9_InternalSysMLOC())) {s = 38;}
 
@@ -72577,7 +72577,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
                         else if ( (LA238_0==32) && (synpred10_InternalSysMLOC())) {s = 36;}
 
-                        else if ( (LA238_0==RULE_PREFIXNAME_) && (synpred10_InternalSysMLOC())) {s = 37;}
+                        else if ( (LA238_0==RULE_PREFIXNAME_TEXT) && (synpred10_InternalSysMLOC())) {s = 37;}
 
                         else if ( (LA238_0==33) && (synpred10_InternalSysMLOC())) {s = 38;}
 
@@ -72983,7 +72983,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
                         else if ( (LA241_0==32) && (synpred11_InternalSysMLOC())) {s = 36;}
 
-                        else if ( (LA241_0==RULE_PREFIXNAME_) && (synpred11_InternalSysMLOC())) {s = 37;}
+                        else if ( (LA241_0==RULE_PREFIXNAME_TEXT) && (synpred11_InternalSysMLOC())) {s = 37;}
 
                         else if ( (LA241_0==33) && (synpred11_InternalSysMLOC())) {s = 38;}
 
@@ -73389,7 +73389,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
                         else if ( (LA244_0==32) && (synpred12_InternalSysMLOC())) {s = 36;}
 
-                        else if ( (LA244_0==RULE_PREFIXNAME_) && (synpred12_InternalSysMLOC())) {s = 37;}
+                        else if ( (LA244_0==RULE_PREFIXNAME_TEXT) && (synpred12_InternalSysMLOC())) {s = 37;}
 
                         else if ( (LA244_0==33) && (synpred12_InternalSysMLOC())) {s = 38;}
 
@@ -73795,7 +73795,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
                         else if ( (LA247_0==32) && (synpred13_InternalSysMLOC())) {s = 36;}
 
-                        else if ( (LA247_0==RULE_PREFIXNAME_) && (synpred13_InternalSysMLOC())) {s = 37;}
+                        else if ( (LA247_0==RULE_PREFIXNAME_TEXT) && (synpred13_InternalSysMLOC())) {s = 37;}
 
                         else if ( (LA247_0==33) && (synpred13_InternalSysMLOC())) {s = 38;}
 
@@ -74201,7 +74201,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
                         else if ( (LA250_0==32) && (synpred14_InternalSysMLOC())) {s = 36;}
 
-                        else if ( (LA250_0==RULE_PREFIXNAME_) && (synpred14_InternalSysMLOC())) {s = 37;}
+                        else if ( (LA250_0==RULE_PREFIXNAME_TEXT) && (synpred14_InternalSysMLOC())) {s = 37;}
 
                         else if ( (LA250_0==33) && (synpred14_InternalSysMLOC())) {s = 38;}
 
@@ -74607,7 +74607,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
                         else if ( (LA253_0==32) && (synpred15_InternalSysMLOC())) {s = 36;}
 
-                        else if ( (LA253_0==RULE_PREFIXNAME_) && (synpred15_InternalSysMLOC())) {s = 37;}
+                        else if ( (LA253_0==RULE_PREFIXNAME_TEXT) && (synpred15_InternalSysMLOC())) {s = 37;}
 
                         else if ( (LA253_0==33) && (synpred15_InternalSysMLOC())) {s = 38;}
 
@@ -75013,7 +75013,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
                         else if ( (LA256_0==32) && (synpred16_InternalSysMLOC())) {s = 36;}
 
-                        else if ( (LA256_0==RULE_PREFIXNAME_) && (synpred16_InternalSysMLOC())) {s = 37;}
+                        else if ( (LA256_0==RULE_PREFIXNAME_TEXT) && (synpred16_InternalSysMLOC())) {s = 37;}
 
                         else if ( (LA256_0==33) && (synpred16_InternalSysMLOC())) {s = 38;}
 
@@ -75399,7 +75399,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
                         else if ( (LA265_0==32) && (synpred17_InternalSysMLOC())) {s = 7;}
 
-                        else if ( (LA265_0==RULE_PREFIXNAME_) && (synpred17_InternalSysMLOC())) {s = 8;}
+                        else if ( (LA265_0==RULE_PREFIXNAME_TEXT) && (synpred17_InternalSysMLOC())) {s = 8;}
 
                         else if ( (LA265_0==33) && (synpred17_InternalSysMLOC())) {s = 9;}
 
@@ -75637,7 +75637,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
                         else if ( (LA267_0==32) && (synpred18_InternalSysMLOC())) {s = 7;}
 
-                        else if ( (LA267_0==RULE_PREFIXNAME_) && (synpred18_InternalSysMLOC())) {s = 8;}
+                        else if ( (LA267_0==RULE_PREFIXNAME_TEXT) && (synpred18_InternalSysMLOC())) {s = 8;}
 
                         else if ( (LA267_0==33) && (synpred18_InternalSysMLOC())) {s = 9;}
 
@@ -75895,7 +75895,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
                         else if ( (LA294_0==32) && (synpred19_InternalSysMLOC())) {s = 36;}
 
-                        else if ( (LA294_0==RULE_PREFIXNAME_) && (synpred19_InternalSysMLOC())) {s = 37;}
+                        else if ( (LA294_0==RULE_PREFIXNAME_TEXT) && (synpred19_InternalSysMLOC())) {s = 37;}
 
                         else if ( (LA294_0==33) && (synpred19_InternalSysMLOC())) {s = 38;}
 
@@ -76301,7 +76301,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
                         else if ( (LA300_0==32) && (synpred20_InternalSysMLOC())) {s = 36;}
 
-                        else if ( (LA300_0==RULE_PREFIXNAME_) && (synpred20_InternalSysMLOC())) {s = 37;}
+                        else if ( (LA300_0==RULE_PREFIXNAME_TEXT) && (synpred20_InternalSysMLOC())) {s = 37;}
 
                         else if ( (LA300_0==33) && (synpred20_InternalSysMLOC())) {s = 38;}
 
@@ -76681,7 +76681,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
                         else if ( (LA310_0==32) && (synpred21_InternalSysMLOC())) {s = 7;}
 
-                        else if ( (LA310_0==RULE_PREFIXNAME_) && (synpred21_InternalSysMLOC())) {s = 8;}
+                        else if ( (LA310_0==RULE_PREFIXNAME_TEXT) && (synpred21_InternalSysMLOC())) {s = 8;}
 
                         else if ( (LA310_0==33) && (synpred21_InternalSysMLOC())) {s = 9;}
 
@@ -77026,7 +77026,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
                         else if ( (LA373_0==32) && (synpred22_InternalSysMLOC())) {s = 36;}
 
-                        else if ( (LA373_0==RULE_PREFIXNAME_) && (synpred22_InternalSysMLOC())) {s = 37;}
+                        else if ( (LA373_0==RULE_PREFIXNAME_TEXT) && (synpred22_InternalSysMLOC())) {s = 37;}
 
                         else if ( (LA373_0==33) && (synpred22_InternalSysMLOC())) {s = 38;}
 
@@ -77406,7 +77406,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
                         else if ( (LA377_0==32) && (synpred23_InternalSysMLOC())) {s = 7;}
 
-                        else if ( (LA377_0==RULE_PREFIXNAME_) && (synpred23_InternalSysMLOC())) {s = 8;}
+                        else if ( (LA377_0==RULE_PREFIXNAME_TEXT) && (synpred23_InternalSysMLOC())) {s = 8;}
 
                         else if ( (LA377_0==33) && (synpred23_InternalSysMLOC())) {s = 9;}
 
@@ -77691,7 +77691,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
                         else if ( (LA382_0==32) && (synpred24_InternalSysMLOC())) {s = 36;}
 
-                        else if ( (LA382_0==RULE_PREFIXNAME_) && (synpred24_InternalSysMLOC())) {s = 37;}
+                        else if ( (LA382_0==RULE_PREFIXNAME_TEXT) && (synpred24_InternalSysMLOC())) {s = 37;}
 
                         else if ( (LA382_0==33) && (synpred24_InternalSysMLOC())) {s = 38;}
 
@@ -78071,7 +78071,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
                         else if ( (LA387_0==32) && (synpred25_InternalSysMLOC())) {s = 7;}
 
-                        else if ( (LA387_0==RULE_PREFIXNAME_) && (synpred25_InternalSysMLOC())) {s = 8;}
+                        else if ( (LA387_0==RULE_PREFIXNAME_TEXT) && (synpred25_InternalSysMLOC())) {s = 8;}
 
                         else if ( (LA387_0==33) && (synpred25_InternalSysMLOC())) {s = 9;}
 
@@ -78356,7 +78356,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
                         else if ( (LA392_0==32) && (synpred26_InternalSysMLOC())) {s = 36;}
 
-                        else if ( (LA392_0==RULE_PREFIXNAME_) && (synpred26_InternalSysMLOC())) {s = 37;}
+                        else if ( (LA392_0==RULE_PREFIXNAME_TEXT) && (synpred26_InternalSysMLOC())) {s = 37;}
 
                         else if ( (LA392_0==33) && (synpred26_InternalSysMLOC())) {s = 38;}
 
@@ -78736,7 +78736,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
                         else if ( (LA403_0==32) && (synpred27_InternalSysMLOC())) {s = 7;}
 
-                        else if ( (LA403_0==RULE_PREFIXNAME_) && (synpred27_InternalSysMLOC())) {s = 8;}
+                        else if ( (LA403_0==RULE_PREFIXNAME_TEXT) && (synpred27_InternalSysMLOC())) {s = 8;}
 
                         else if ( (LA403_0==33) && (synpred27_InternalSysMLOC())) {s = 9;}
 

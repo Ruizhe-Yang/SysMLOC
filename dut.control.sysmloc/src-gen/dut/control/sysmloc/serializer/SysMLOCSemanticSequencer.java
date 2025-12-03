@@ -1067,7 +1067,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 portionKind=PortionKind?
 	 *             )
 	 *         )? 
-	 *         prefixMetadataExtension+=PREFIXNAME_? 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -1118,7 +1118,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//                 portionKind=PortionKind?
 	//             )
 	//         )? 
-	//         prefixMetadataExtension+=PREFIXNAME_* 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	//         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	//         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -1241,7 +1241,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         isVariant?='variant'? 
 	 *         (isAbstract?='abstract' | isVariation?='variation')? 
 	 *         isIndividual?='individual'? 
-	 *         prefixMetadataExtension+=PREFIXNAME_? 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	 *         elements+=ActionBodyElement*
@@ -1266,7 +1266,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//         isVariant?='variant'? 
 	//         (isAbstract?='abstract' | isVariation?='variation')? 
 	//         isIndividual?='individual'? 
-	//         prefixMetadataExtension+=PREFIXNAME_* 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	//         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	//         elements+=ActionBodyElement*
@@ -1313,7 +1313,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 portionKind=PortionKind?
 	 *             )
 	 *         )? 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -1350,7 +1350,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     (
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -1431,7 +1431,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         isVariant?='variant'? 
 	 *         (isAbstract?='abstract' | isVariation?='variation')? 
 	 *         isIndividual?='individual'? 
-	 *         prefixMetadataExtension+=PREFIXNAME_? 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	 *         elements+=DefinitionBodyElement*
@@ -1456,7 +1456,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//         isVariant?='variant'? 
 	//         (isAbstract?='abstract' | isVariation?='variation')? 
 	//         isIndividual?='individual'? 
-	//         prefixMetadataExtension+=PREFIXNAME_* 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	//         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	//         elements+=DefinitionBodyElement*
@@ -1503,7 +1503,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 portionKind=PortionKind?
 	 *             )
 	 *         )? 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -1554,7 +1554,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         isVariant?='variant'? 
 	 *         (isAbstract?='abstract' | isVariation?='variation')? 
 	 *         isIndividual?='individual'? 
-	 *         prefixMetadataExtension+=PREFIXNAME_? 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	 *         elements+=CaseBodyElement* 
@@ -1580,7 +1580,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//         isVariant?='variant'? 
 	//         (isAbstract?='abstract' | isVariation?='variation')? 
 	//         isIndividual?='individual'? 
-	//         prefixMetadataExtension+=PREFIXNAME_* 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	//         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	//         elements+=CaseBodyElement* 
@@ -1628,7 +1628,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 portionKind=PortionKind?
 	 *             )
 	 *         )? 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -1689,7 +1689,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 portionKind=PortionKind?
 	 *             )
 	 *         )? 
-	 *         prefixMetadataExtension+=PREFIXNAME_? 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
 	 *         isNegated?='not'? 
 	 *         (
 	 *             (
@@ -1796,7 +1796,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//                 portionKind=PortionKind?
 	//             )
 	//         )? 
-	//         prefixMetadataExtension+=PREFIXNAME_* 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	//         isNegated?='not'? 
 	//         (
 	//             (
@@ -1927,7 +1927,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 portionKind=PortionKind?
 	 *             )
 	 *         )? 
-	 *         prefixMetadataExtension+=PREFIXNAME_? 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -1980,7 +1980,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//                 portionKind=PortionKind?
 	//             )
 	//         )? 
-	//         prefixMetadataExtension+=PREFIXNAME_* 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	//         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	//         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -2025,7 +2025,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         (isAbstract?='abstract' | isVariation?='variation')? 
-	 *         prefixMetadataExtension+=PREFIXNAME_? 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	 *         elements+=DefinitionBodyElement*
@@ -2049,7 +2049,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//         visibility=VisibilityIndicator? 
 	//         isVariant?='variant'? 
 	//         (isAbstract?='abstract' | isVariation?='variation')? 
-	//         prefixMetadataExtension+=PREFIXNAME_* 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	//         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	//         elements+=DefinitionBodyElement*
@@ -2091,7 +2091,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 isReference?='ref'?
 	 *             )
 	 *         )? 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -2147,7 +2147,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 isReference?='ref'?
 	 *             )
 	 *         )? 
-	 *         prefixMetadataExtension+=PREFIXNAME_? 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -2197,7 +2197,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//                 isReference?='ref'?
 	//             )
 	//         )? 
-	//         prefixMetadataExtension+=PREFIXNAME_* 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	//         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	//         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -2258,7 +2258,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 portionKind=PortionKind?
 	 *             )
 	 *         )? 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -2323,7 +2323,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 portionKind=PortionKind?
 	 *             )
 	 *         )? 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -2388,7 +2388,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 portionKind=PortionKind?
 	 *             )
 	 *         )? 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -2452,7 +2452,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 portionKind=PortionKind?
 	 *             )
 	 *         )? 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -2520,7 +2520,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 portionKind=PortionKind?
 	 *             )
 	 *         )? 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -2587,7 +2587,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 portionKind=PortionKind?
 	 *             )
 	 *         )? 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -2640,7 +2640,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 portionKind=PortionKind?
 	 *             )
 	 *         )? 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -2701,7 +2701,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 isReference?='ref'?
 	 *             )
 	 *         )? 
-	 *         prefixMetadataExtension+=PREFIXNAME_+ 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT+ 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -2765,7 +2765,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 portionKind=PortionKind?
 	 *             )
 	 *         )? 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name | refElement=FeatureChainName)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -2829,7 +2829,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 portionKind=PortionKind?
 	 *             )
 	 *         )? 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name | refElement=FeatureChainName)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -2894,7 +2894,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 portionKind=PortionKind?
 	 *             )
 	 *         )? 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -2960,7 +2960,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 portionKind=PortionKind?
 	 *             )
 	 *         )? 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name | refElement=FeatureChainName)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -3019,7 +3019,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         isDerived?='derived'? 
 	 *         isReference?='ref'? 
 	 *         isIndividual?='individual' 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -3083,7 +3083,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 portionKind=PortionKind?
 	 *             )
 	 *         )? 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -3149,7 +3149,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 portionKind=PortionKind?
 	 *             )
 	 *         )? 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -3215,7 +3215,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 portionKind=PortionKind?
 	 *             )
 	 *         )? 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -3279,7 +3279,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 portionKind=PortionKind?
 	 *             )
 	 *         )? 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -3343,7 +3343,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 portionKind=PortionKind?
 	 *             )
 	 *         )? 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name | refElement=FeatureChainName)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -3407,7 +3407,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 portionKind=PortionKind?
 	 *             )
 	 *         )? 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -3471,7 +3471,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 portionKind=PortionKind?
 	 *             )
 	 *         )? 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         isNegated?='not'? 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name | refElement=FeatureChainName)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
@@ -3537,7 +3537,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 portionKind=PortionKind?
 	 *             )
 	 *         )? 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -3601,7 +3601,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 portionKind=PortionKind?
 	 *             )
 	 *         )? 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -3665,7 +3665,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 portionKind=PortionKind?
 	 *             )
 	 *         )? 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -3726,7 +3726,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 portionKind=PortionKind?
 	 *             )
 	 *         )? 
-	 *         prefixMetadataExtension+=PREFIXNAME_? 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -3781,7 +3781,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//                 portionKind=PortionKind?
 	//             )
 	//         )? 
-	//         prefixMetadataExtension+=PREFIXNAME_* 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	//         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	//         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -3842,7 +3842,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 portionKind=PortionKind?
 	 *             )
 	 *         )? 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -3907,7 +3907,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 portionKind=PortionKind?
 	 *             )
 	 *         )? 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -3971,7 +3971,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 portionKind=PortionKind?
 	 *             )
 	 *         )? 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -4035,7 +4035,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 portionKind=PortionKind?
 	 *             )
 	 *         )? 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -4094,7 +4094,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         isReference?='ref'? 
 	 *         isIndividual?='individual'? 
 	 *         portionKind=PortionKind 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -4146,7 +4146,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 portionKind=PortionKind?
 	 *             )
 	 *         )? 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -4200,7 +4200,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 portionKind=PortionKind?
 	 *             )
 	 *         )? 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -4258,7 +4258,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 portionKind=PortionKind?
 	 *             )
 	 *         )? 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -4312,7 +4312,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 portionKind=PortionKind?
 	 *             )
 	 *         )? 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -4364,7 +4364,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 portionKind=PortionKind?
 	 *             )
 	 *         )? 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -4425,7 +4425,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 isReference?='ref'?
 	 *             )
 	 *         )? 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -4481,7 +4481,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 isReference?='ref'?
 	 *             )
 	 *         )? 
-	 *         prefixMetadataExtension+=PREFIXNAME_? 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -4531,7 +4531,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//                 isReference?='ref'?
 	//             )
 	//         )? 
-	//         prefixMetadataExtension+=PREFIXNAME_* 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	//         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	//         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -4576,7 +4576,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         isVariant?='variant'? 
 	 *         (isAbstract?='abstract' | isVariation?='variation')? 
 	 *         isIndividual?='individual'? 
-	 *         prefixMetadataExtension+=PREFIXNAME_? 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	 *         elements+=CalculationBodyElement* 
@@ -4602,7 +4602,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//         isVariant?='variant'? 
 	//         (isAbstract?='abstract' | isVariation?='variation')? 
 	//         isIndividual?='individual'? 
-	//         prefixMetadataExtension+=PREFIXNAME_* 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	//         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	//         elements+=CalculationBodyElement* 
@@ -4634,7 +4634,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         isVariant?='variant'? 
 	 *         (isAbstract?='abstract' | isVariation?='variation')? 
 	 *         isIndividual?='individual'? 
-	 *         prefixMetadataExtension+=PREFIXNAME_? 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	 *         elements+=CaseBodyElement* 
@@ -4660,7 +4660,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//         isVariant?='variant'? 
 	//         (isAbstract?='abstract' | isVariation?='variation')? 
 	//         isIndividual?='individual'? 
-	//         prefixMetadataExtension+=PREFIXNAME_* 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	//         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	//         elements+=CaseBodyElement* 
@@ -4690,7 +4690,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         isDerived?='derived'? 
 	 *         isIndividual?='individual'? 
 	 *         portionKind=PortionKind? 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         nodeKind=CommonNodeKind 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
@@ -4738,7 +4738,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         isVariant?='variant'? 
 	 *         (isAbstract?='abstract' | isVariation?='variation')? 
 	 *         isIndividual?='individual'? 
-	 *         prefixMetadataExtension+=PREFIXNAME_? 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	 *         elements+=RequirementBodyElement*
@@ -4763,7 +4763,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//         isVariant?='variant'? 
 	//         (isAbstract?='abstract' | isVariation?='variation')? 
 	//         isIndividual?='individual'? 
-	//         prefixMetadataExtension+=PREFIXNAME_* 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	//         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	//         elements+=RequirementBodyElement*
@@ -4794,7 +4794,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         isVariant?='variant'? 
 	 *         (isAbstract?='abstract' | isVariation?='variation')? 
 	 *         isIndividual?='individual'? 
-	 *         prefixMetadataExtension+=PREFIXNAME_? 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	 *         elements+=DefinitionBodyElement*
@@ -4819,7 +4819,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//         isVariant?='variant'? 
 	//         (isAbstract?='abstract' | isVariation?='variation')? 
 	//         isIndividual?='individual'? 
-	//         prefixMetadataExtension+=PREFIXNAME_* 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	//         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	//         elements+=DefinitionBodyElement*
@@ -4850,7 +4850,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         isVariant?='variant'? 
 	 *         (isAbstract?='abstract' | isVariation?='variation')? 
 	 *         isIndividual?='individual'? 
-	 *         prefixMetadataExtension+=PREFIXNAME_? 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	 *         elements+=CalculationBodyElement* 
@@ -4876,7 +4876,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//         isVariant?='variant'? 
 	//         (isAbstract?='abstract' | isVariation?='variation')? 
 	//         isIndividual?='individual'? 
-	//         prefixMetadataExtension+=PREFIXNAME_* 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	//         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	//         elements+=CalculationBodyElement* 
@@ -5050,7 +5050,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         (isAbstract?='abstract' | isVariation?='variation')? 
-	 *         prefixMetadataExtension+=PREFIXNAME_+ 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT+ 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	 *         elements+=DefinitionBodyElement*
@@ -5085,7 +5085,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         isVariant?='variant'? 
 	 *         (isAbstract?='abstract' | isVariation?='variation')? 
 	 *         isIndividual?='individual'? 
-	 *         prefixMetadataExtension+=PREFIXNAME_? 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	 *         elements+=DefinitionBodyElement*
@@ -5110,7 +5110,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//         isVariant?='variant'? 
 	//         (isAbstract?='abstract' | isVariation?='variation')? 
 	//         isIndividual?='individual'? 
-	//         prefixMetadataExtension+=PREFIXNAME_* 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	//         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	//         elements+=DefinitionBodyElement*
@@ -5142,7 +5142,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         isVariant?='variant'? 
 	 *         (isAbstract?='abstract' | isVariation?='variation')? 
 	 *         isIndividual?='individual' 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	 *         elements+=DefinitionBodyElement*
@@ -5177,7 +5177,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         isVariant?='variant'? 
 	 *         (isAbstract?='abstract' | isVariation?='variation')? 
 	 *         isIndividual?='individual'? 
-	 *         prefixMetadataExtension+=PREFIXNAME_? 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	 *         elements+=DefinitionBodyElement*
@@ -5202,7 +5202,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//         isVariant?='variant'? 
 	//         (isAbstract?='abstract' | isVariation?='variation')? 
 	//         isIndividual?='individual'? 
-	//         prefixMetadataExtension+=PREFIXNAME_* 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	//         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	//         elements+=DefinitionBodyElement*
@@ -5233,7 +5233,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         isVariant?='variant'? 
 	 *         (isAbstract?='abstract' | isVariation?='variation')? 
 	 *         isIndividual?='individual'? 
-	 *         prefixMetadataExtension+=PREFIXNAME_? 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	 *         elements+=DefinitionBodyElement*
@@ -5258,7 +5258,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//         isVariant?='variant'? 
 	//         (isAbstract?='abstract' | isVariation?='variation')? 
 	//         isIndividual?='individual'? 
-	//         prefixMetadataExtension+=PREFIXNAME_* 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	//         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	//         elements+=DefinitionBodyElement*
@@ -5289,7 +5289,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         isVariant?='variant'? 
 	 *         (isAbstract?='abstract' | isVariation?='variation')? 
 	 *         isIndividual?='individual'? 
-	 *         prefixMetadataExtension+=PREFIXNAME_? 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	 *         elements+=DefinitionBodyElement*
@@ -5314,7 +5314,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//         isVariant?='variant'? 
 	//         (isAbstract?='abstract' | isVariation?='variation')? 
 	//         isIndividual?='individual'? 
-	//         prefixMetadataExtension+=PREFIXNAME_* 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	//         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	//         elements+=DefinitionBodyElement*
@@ -5345,7 +5345,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         isVariant?='variant'? 
 	 *         (isAbstract?='abstract' | isVariation?='variation')? 
 	 *         isIndividual?='individual'? 
-	 *         prefixMetadataExtension+=PREFIXNAME_? 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	 *         elements+=DefinitionBodyElement*
@@ -5370,7 +5370,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//         isVariant?='variant'? 
 	//         (isAbstract?='abstract' | isVariation?='variation')? 
 	//         isIndividual?='individual'? 
-	//         prefixMetadataExtension+=PREFIXNAME_* 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	//         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	//         elements+=DefinitionBodyElement*
@@ -5401,7 +5401,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         isVariant?='variant'? 
 	 *         (isAbstract?='abstract' | isVariation?='variation')? 
 	 *         isIndividual?='individual'? 
-	 *         prefixMetadataExtension+=PREFIXNAME_? 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	 *         elements+=RequirementBodyElement*
@@ -5426,7 +5426,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//         isVariant?='variant'? 
 	//         (isAbstract?='abstract' | isVariation?='variation')? 
 	//         isIndividual?='individual'? 
-	//         prefixMetadataExtension+=PREFIXNAME_* 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	//         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	//         elements+=RequirementBodyElement*
@@ -5457,7 +5457,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         isVariant?='variant'? 
 	 *         (isAbstract?='abstract' | isVariation?='variation')? 
 	 *         isIndividual?='individual'? 
-	 *         prefixMetadataExtension+=PREFIXNAME_? 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	 *         isParallel?='parallel'? 
@@ -5483,7 +5483,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//         isVariant?='variant'? 
 	//         (isAbstract?='abstract' | isVariation?='variation')? 
 	//         isIndividual?='individual'? 
-	//         prefixMetadataExtension+=PREFIXNAME_* 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	//         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	//         isParallel?='parallel'? 
@@ -5515,7 +5515,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         isVariant?='variant'? 
 	 *         (isAbstract?='abstract' | isVariation?='variation')? 
 	 *         isIndividual?='individual'? 
-	 *         prefixMetadataExtension+=PREFIXNAME_? 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	 *         elements+=CaseBodyElement* 
@@ -5541,7 +5541,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//         isVariant?='variant'? 
 	//         (isAbstract?='abstract' | isVariation?='variation')? 
 	//         isIndividual?='individual'? 
-	//         prefixMetadataExtension+=PREFIXNAME_* 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	//         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	//         elements+=CaseBodyElement* 
@@ -5573,7 +5573,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         isVariant?='variant'? 
 	 *         (isAbstract?='abstract' | isVariation?='variation')? 
 	 *         isIndividual?='individual'? 
-	 *         prefixMetadataExtension+=PREFIXNAME_? 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	 *         elements+=CaseBodyElement* 
@@ -5599,7 +5599,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//         isVariant?='variant'? 
 	//         (isAbstract?='abstract' | isVariation?='variation')? 
 	//         isIndividual?='individual'? 
-	//         prefixMetadataExtension+=PREFIXNAME_* 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	//         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	//         elements+=CaseBodyElement* 
@@ -5631,7 +5631,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         isVariant?='variant'? 
 	 *         (isAbstract?='abstract' | isVariation?='variation')? 
 	 *         isIndividual?='individual'? 
-	 *         prefixMetadataExtension+=PREFIXNAME_? 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	 *         elements+=ViewDefinitionBodyElement*
@@ -5656,7 +5656,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//         isVariant?='variant'? 
 	//         (isAbstract?='abstract' | isVariation?='variation')? 
 	//         isIndividual?='individual'? 
-	//         prefixMetadataExtension+=PREFIXNAME_* 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	//         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	//         elements+=ViewDefinitionBodyElement*
@@ -5687,7 +5687,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         isVariant?='variant'? 
 	 *         (isAbstract?='abstract' | isVariation?='variation')? 
 	 *         isIndividual?='individual'? 
-	 *         prefixMetadataExtension+=PREFIXNAME_? 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	 *         elements+=RequirementBodyElement*
@@ -5712,7 +5712,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//         isVariant?='variant'? 
 	//         (isAbstract?='abstract' | isVariation?='variation')? 
 	//         isIndividual?='individual'? 
-	//         prefixMetadataExtension+=PREFIXNAME_* 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	//         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	//         elements+=RequirementBodyElement*
@@ -5743,7 +5743,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         isVariant?='variant'? 
 	 *         (isAbstract?='abstract' | isVariation?='variation')? 
 	 *         isIndividual?='individual'? 
-	 *         prefixMetadataExtension+=PREFIXNAME_? 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	 *         elements+=DefinitionBodyElement*
@@ -5768,7 +5768,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//         isVariant?='variant'? 
 	//         (isAbstract?='abstract' | isVariation?='variation')? 
 	//         isIndividual?='individual'? 
-	//         prefixMetadataExtension+=PREFIXNAME_* 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	//         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	//         elements+=DefinitionBodyElement*
@@ -5798,7 +5798,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         (isAbstract?='abstract' | isVariation?='variation')? 
-	 *         prefixMetadataExtension+=PREFIXNAME_? 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	 *         elements+=DefinitionBodyElement*
@@ -5822,7 +5822,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//         visibility=VisibilityIndicator? 
 	//         isVariant?='variant'? 
 	//         (isAbstract?='abstract' | isVariation?='variation')? 
-	//         prefixMetadataExtension+=PREFIXNAME_* 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	//         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	//         elements+=DefinitionBodyElement*
@@ -5924,7 +5924,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     (
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -5964,7 +5964,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (
 	 *                 (
 	 *                     (
-	 *                         prefixMetadataExtension+=PREFIXNAME_* 
+	 *                         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *                         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *                         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -6010,7 +6010,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 )?
 	 *             ) | 
 	 *             (
-	 *                 prefixMetadataExtension+=PREFIXNAME_* 
+	 *                 prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -6038,7 +6038,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     (
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -6077,7 +6077,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         kind=RequirementConstraintKind 
 	 *         (
 	 *             (
-	 *                 prefixMetadataExtension+=PREFIXNAME_* 
+	 *                 prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -6086,7 +6086,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (
 	 *                 (
 	 *                     (
-	 *                         prefixMetadataExtension+=PREFIXNAME_* 
+	 *                         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *                         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *                         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
@@ -6133,7 +6133,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (
 	 *                 (
 	 *                     (
-	 *                         prefixMetadataExtension+=PREFIXNAME_* 
+	 *                         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *                         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *                         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -6179,7 +6179,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 )?
 	 *             ) | 
 	 *             (
-	 *                 prefixMetadataExtension+=PREFIXNAME_* 
+	 *                 prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -6210,7 +6210,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         isVariant?='variant'? 
 	 *         (
 	 *             (
-	 *                 prefixMetadataExtension+=PREFIXNAME_* 
+	 *                 prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -6219,7 +6219,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (
 	 *                 (
 	 *                     (
-	 *                         prefixMetadataExtension+=PREFIXNAME_* 
+	 *                         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *                         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *                         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
@@ -6261,7 +6261,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     (
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -6298,7 +6298,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     (
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
@@ -6849,7 +6849,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     (
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	 *         elements+=EnumerationBodyElement*
@@ -6884,7 +6884,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         isAbstract?='abstract'? 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (superclassifiers+=FeatureChainName superclassifiers+=FeatureChainName*)? 
 	 *         elements+=DefinitionBodyElement*
@@ -6915,7 +6915,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *
 	 * Constraint:
 	 *     (
-	 *         prefixMetadataExtension+=PREFIXNAME_? 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         client+=QualifiedName 
 	 *         client+=QualifiedName* 
@@ -6939,7 +6939,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//
 	// Constraint:
 	//     (
-	//         prefixMetadataExtension+=PREFIXNAME_* 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	//         client+=QualifiedName 
 	//         client+=QualifiedName* 
@@ -7083,7 +7083,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     (
 	 *         isStandard?='standard'? 
 	 *         isLibrary?='library' 
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         elements+=PackageBodyElement*
 	 *     )
@@ -7118,7 +7118,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *
 	 * Constraint:
 	 *     (
-	 *         prefixMetadataExtension+=PREFIXNAME_* 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         metadataTyping=QualifiedName 
 	 *         (annotatedElement+=QualifiedName annotatedElement+=QualifiedName*)? 
@@ -7285,7 +7285,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Package returns Package
 	 *
 	 * Constraint:
-	 *     (prefixMetadataExtension+=PREFIXNAME_* declaredName=QualifiedName elements+=PackageBodyElement*)
+	 *     (prefixMetadataExtension+=PREFIXNAME_TEXT* declaredName=QualifiedName elements+=PackageBodyElement*)
 	 * </pre>
 	 */
 	protected void sequence_Package_PrefixMetadata(ISerializationContext context, dut.control.sysmloc.sysMLOC.Package semanticObject) {

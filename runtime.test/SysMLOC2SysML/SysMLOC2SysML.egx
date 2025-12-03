@@ -1,0 +1,10 @@
+rule gen_sysmlv2 
+	transform root : Namespace{
+	template : "SysMLOC2SysML.egl"
+	target : root.getFileName()
+}
+
+operation SysMLOC!Namespace getFileName(){
+	("[EGX] SysMLOC2SysML >> gen-SysML/"+self.eContents().first().declaredName+".sysml").println();
+	return "gen-SysML/gen-"+self.eContents().first().declaredName+".sysml";
+}

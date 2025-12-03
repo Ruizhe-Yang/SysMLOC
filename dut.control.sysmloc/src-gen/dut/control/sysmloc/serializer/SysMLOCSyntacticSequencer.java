@@ -591,7 +591,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isIndividual?='individual' 'action' 'def' (ambiguity) (rule end)
 	 *     isVariant?='variant' 'action' 'def' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'action' 'def' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'action' 'def' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'action' 'def' (ambiguity) (rule end)
 	 *     superclassifiers+=FeatureChainName (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'action' 'def' (ambiguity) (rule end)
 	 
@@ -627,7 +627,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariant?='variant' 'action' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'action' (ambiguity) (rule end)
 	 *     portionKind=PortionKind 'action' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'action' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'action' (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
@@ -655,7 +655,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isNonunique?='nonunique' (ambiguity) (rule end)
 	 *     isOrdered?='ordered' (ambiguity) (rule end)
 	 *     isVariant?='variant' 'actor' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
@@ -696,7 +696,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isIndividual?='individual' 'allocation' 'def' (ambiguity) (rule end)
 	 *     isVariant?='variant' 'allocation' 'def' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'allocation' 'def' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'allocation' 'def' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'allocation' 'def' (ambiguity) (rule end)
 	 *     superclassifiers+=FeatureChainName (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'allocation' 'def' (ambiguity) (rule end)
 	 
@@ -740,8 +740,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariation?='variation' (ambiguity) connectorPart+=ConnectorEnd
 	 *     portionKind=PortionKind (ambiguity) '(' connectorPart+=ConnectorEnd
 	 *     portionKind=PortionKind (ambiguity) connectorPart+=ConnectorEnd
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) '(' connectorPart+=ConnectorEnd
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) connectorPart+=ConnectorEnd
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) '(' connectorPart+=ConnectorEnd
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) connectorPart+=ConnectorEnd
 	 *     visibility=VisibilityIndicator (ambiguity) '(' connectorPart+=ConnectorEnd
 	 *     visibility=VisibilityIndicator (ambiguity) connectorPart+=ConnectorEnd
 	 
@@ -779,7 +779,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariant?='variant' 'allocation' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'allocation' (ambiguity) (rule end)
 	 *     portionKind=PortionKind 'allocation' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'allocation' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'allocation' (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
@@ -805,7 +805,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isIndividual?='individual' 'analysis' 'def' (ambiguity) (rule end)
 	 *     isVariant?='variant' 'analysis' 'def' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'analysis' 'def' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'analysis' 'def' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'analysis' 'def' (ambiguity) (rule end)
 	 *     superclassifiers+=FeatureChainName (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'analysis' 'def' (ambiguity) (rule end)
 	 
@@ -841,7 +841,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariant?='variant' 'analysis' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'analysis' (ambiguity) (rule end)
 	 *     portionKind=PortionKind 'analysis' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'analysis' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'analysis' (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
@@ -882,7 +882,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariant?='variant' 'assert' 'constraint' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'assert' 'constraint' (ambiguity) (rule end)
 	 *     portionKind=PortionKind 'assert' 'constraint' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'assert' 'constraint' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'assert' 'constraint' (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
 	 *     refElement=FeatureChainName (ambiguity) (rule end)
 	 *     references+=FeatureChainName (ambiguity) (rule end)
@@ -923,7 +923,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isAbstract?='abstract' 'attribute' 'def' (ambiguity) (rule end)
 	 *     isVariant?='variant' 'attribute' 'def' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'attribute' 'def' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'attribute' 'def' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'attribute' 'def' (ambiguity) (rule end)
 	 *     superclassifiers+=FeatureChainName (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'attribute' 'def' (ambiguity) (rule end)
 	 
@@ -955,7 +955,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isReturn?='return' 'attribute' (ambiguity) (rule end)
 	 *     isVariant?='variant' 'attribute' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'attribute' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'attribute' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'attribute' (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
@@ -985,7 +985,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isReturn?='return' (ambiguity) 'bind' connectorPart+=ConnectorEnd
 	 *     isVariant?='variant' (ambiguity) 'bind' connectorPart+=ConnectorEnd
 	 *     isVariation?='variation' (ambiguity) 'bind' connectorPart+=ConnectorEnd
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) 'bind' connectorPart+=ConnectorEnd
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) 'bind' connectorPart+=ConnectorEnd
 	 *     visibility=VisibilityIndicator (ambiguity) 'bind' connectorPart+=ConnectorEnd
 	 
 	 * </pre>
@@ -1021,7 +1021,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isIndividual?='individual' 'calc' 'def' (ambiguity) (rule end)
 	 *     isVariant?='variant' 'calc' 'def' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'calc' 'def' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'calc' 'def' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'calc' 'def' (ambiguity) (rule end)
 	 *     superclassifiers+=FeatureChainName (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'calc' 'def' (ambiguity) (rule end)
 	 
@@ -1057,7 +1057,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariant?='variant' 'calc' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'calc' (ambiguity) (rule end)
 	 *     portionKind=PortionKind 'calc' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'calc' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'calc' (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
@@ -1084,7 +1084,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isIndividual?='individual' 'case' 'def' (ambiguity) (rule end)
 	 *     isVariant?='variant' 'case' 'def' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'case' 'def' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'case' 'def' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'case' 'def' (ambiguity) (rule end)
 	 *     superclassifiers+=FeatureChainName (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'case' 'def' (ambiguity) (rule end)
 	 
@@ -1120,7 +1120,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariant?='variant' 'case' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'case' (ambiguity) (rule end)
 	 *     portionKind=PortionKind 'case' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'case' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'case' (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
@@ -1186,7 +1186,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isIndividual?='individual' 'concern' 'def' (ambiguity) (rule end)
 	 *     isVariant?='variant' 'concern' 'def' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'concern' 'def' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'concern' 'def' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'concern' 'def' (ambiguity) (rule end)
 	 *     superclassifiers+=FeatureChainName (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'concern' 'def' (ambiguity) (rule end)
 	 
@@ -1222,7 +1222,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariant?='variant' 'concern' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'concern' (ambiguity) (rule end)
 	 *     portionKind=PortionKind 'concern' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'concern' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'concern' (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
@@ -1249,7 +1249,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isIndividual?='individual' 'connection' 'def' (ambiguity) (rule end)
 	 *     isVariant?='variant' 'connection' 'def' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'connection' 'def' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'connection' 'def' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'connection' 'def' (ambiguity) (rule end)
 	 *     superclassifiers+=FeatureChainName (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'connection' 'def' (ambiguity) (rule end)
 	 
@@ -1293,8 +1293,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariation?='variation' (ambiguity) connectorPart+=ConnectorEnd
 	 *     portionKind=PortionKind (ambiguity) '(' connectorPart+=ConnectorEnd
 	 *     portionKind=PortionKind (ambiguity) connectorPart+=ConnectorEnd
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) '(' connectorPart+=ConnectorEnd
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) connectorPart+=ConnectorEnd
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) '(' connectorPart+=ConnectorEnd
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) connectorPart+=ConnectorEnd
 	 *     visibility=VisibilityIndicator (ambiguity) '(' connectorPart+=ConnectorEnd
 	 *     visibility=VisibilityIndicator (ambiguity) connectorPart+=ConnectorEnd
 	 
@@ -1332,7 +1332,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariant?='variant' 'connection' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'connection' (ambiguity) (rule end)
 	 *     portionKind=PortionKind 'connection' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'connection' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'connection' (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
@@ -1373,7 +1373,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isIndividual?='individual' 'constraint' 'def' (ambiguity) (rule end)
 	 *     isVariant?='variant' 'constraint' 'def' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'constraint' 'def' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'constraint' 'def' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'constraint' 'def' (ambiguity) (rule end)
 	 *     superclassifiers+=FeatureChainName (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'constraint' 'def' (ambiguity) (rule end)
 	 
@@ -1409,7 +1409,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariant?='variant' 'constraint' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'constraint' (ambiguity) (rule end)
 	 *     portionKind=PortionKind 'constraint' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'constraint' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'constraint' (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
@@ -1569,31 +1569,31 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariation?='variation' 'verification' 'def' (ambiguity) superclassifiers+=FeatureChainName
 	 *     isVariation?='variation' 'view' 'def' (ambiguity) superclassifiers+=FeatureChainName
 	 *     isVariation?='variation' 'viewpoint' 'def' (ambiguity) superclassifiers+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'action' 'def' (ambiguity) superclassifiers+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'allocation' 'def' (ambiguity) superclassifiers+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'analysis' 'def' (ambiguity) superclassifiers+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'attribute' 'def' (ambiguity) superclassifiers+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'calc' 'def' (ambiguity) superclassifiers+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'case' 'def' (ambiguity) superclassifiers+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'concern' 'def' (ambiguity) superclassifiers+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'connection' 'def' (ambiguity) superclassifiers+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'constraint' 'def' (ambiguity) superclassifiers+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'def' (ambiguity) superclassifiers+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'enum' 'def' (ambiguity) superclassifiers+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'flow' 'def' (ambiguity) superclassifiers+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'interface' 'def' (ambiguity) superclassifiers+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'item' 'def' (ambiguity) superclassifiers+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'metadata' 'def' (ambiguity) superclassifiers+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'occurrence' 'def' (ambiguity) superclassifiers+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'part' 'def' (ambiguity) superclassifiers+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'port' 'def' (ambiguity) superclassifiers+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'rendering' 'def' (ambiguity) superclassifiers+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'requirement' 'def' (ambiguity) superclassifiers+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'state' 'def' (ambiguity) superclassifiers+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'use' 'case' 'def' (ambiguity) superclassifiers+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'verification' 'def' (ambiguity) superclassifiers+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'view' 'def' (ambiguity) superclassifiers+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'viewpoint' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'action' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'allocation' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'analysis' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'attribute' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'calc' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'case' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'concern' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'connection' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'constraint' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'enum' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'flow' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'interface' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'item' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'metadata' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'occurrence' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'part' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'port' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'rendering' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'requirement' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'state' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'use' 'case' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'verification' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'view' 'def' (ambiguity) superclassifiers+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'viewpoint' 'def' (ambiguity) superclassifiers+=FeatureChainName
 	 *     visibility=VisibilityIndicator 'action' 'def' (ambiguity) superclassifiers+=FeatureChainName
 	 *     visibility=VisibilityIndicator 'allocation' 'def' (ambiguity) superclassifiers+=FeatureChainName
 	 *     visibility=VisibilityIndicator 'analysis' 'def' (ambiguity) superclassifiers+=FeatureChainName
@@ -1632,7 +1632,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'dependency' (ambiguity) client+=QualifiedName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'dependency' (ambiguity) client+=QualifiedName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'dependency' (ambiguity) client+=QualifiedName
 	 
 	 * </pre>
 	 */
@@ -1698,7 +1698,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariant?='variant' 'else' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'else' (ambiguity) (rule end)
 	 *     portionKind=PortionKind 'else' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'else' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'else' (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName 'else' (ambiguity) (rule end)
 	 *     references+=FeatureChainName 'else' (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName 'else' (ambiguity) (rule end)
@@ -1764,21 +1764,21 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariant?='variant' (ambiguity) isInitial?=':='
 	 *     isVariant?='variant' (ambiguity) isNonunique?='nonunique'
 	 *     isVariant?='variant' (ambiguity) isOrdered?='ordered'
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) '&lt;' declaredShortName=Name
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) '=' valuePart+=Expression
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) '[' Multiplicity+=MultiplicityExpression
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) '{' elements+=UsageBodyElement
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) (':' | ('defined' 'by')) typings+=FeatureTypingName
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) (':&gt;&gt;' | 'redefines') redefinitions+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) (';' | ('{' '}')) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) ('=&gt;' | 'crosses') crosses+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) declaredName=Name
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) isDefault?='default'
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) isInitial?=':='
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) isNonunique?='nonunique'
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) isOrdered?='ordered'
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) '&lt;' declaredShortName=Name
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) '=' valuePart+=Expression
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) '[' Multiplicity+=MultiplicityExpression
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) '{' elements+=UsageBodyElement
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) (':' | ('defined' 'by')) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) (':&gt;&gt;' | 'redefines') redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) (';' | ('{' '}')) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) ('=&gt;' | 'crosses') crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) declaredName=Name
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) isDefault?='default'
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) isInitial?=':='
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) isNonunique?='nonunique'
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) isOrdered?='ordered'
 	 *     visibility=VisibilityIndicator (ambiguity) '&lt;' declaredShortName=Name
 	 *     visibility=VisibilityIndicator (ambiguity) '=' valuePart+=Expression
 	 *     visibility=VisibilityIndicator (ambiguity) '[' Multiplicity+=MultiplicityExpression
@@ -1815,7 +1815,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isNonunique?='nonunique' (ambiguity) (rule end)
 	 *     isOrdered?='ordered' (ambiguity) (rule end)
 	 *     isVariant?='variant' 'enum'? (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'enum'? (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'enum'? (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
@@ -1839,7 +1839,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
 	 *     isVariant?='variant' 'enum' 'def' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'enum' 'def' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'enum' 'def' (ambiguity) (rule end)
 	 *     superclassifiers+=FeatureChainName (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'enum' 'def' (ambiguity) (rule end)
 	 
@@ -1871,7 +1871,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isReturn?='return' 'enum' (ambiguity) (rule end)
 	 *     isVariant?='variant' 'enum' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'enum' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'enum' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'enum' (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
@@ -1911,7 +1911,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariant?='variant' 'event' 'occurrence' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'event' 'occurrence' (ambiguity) (rule end)
 	 *     portionKind=PortionKind 'event' 'occurrence' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'event' 'occurrence' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'event' 'occurrence' (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
 	 *     refElement=FeatureChainName (ambiguity) (rule end)
 	 *     references+=FeatureChainName (ambiguity) (rule end)
@@ -1952,7 +1952,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariant?='variant' 'exhibit' 'state' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'exhibit' 'state' (ambiguity) (rule end)
 	 *     portionKind=PortionKind 'exhibit' 'state' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'exhibit' 'state' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'exhibit' 'state' (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
 	 *     refElement=FeatureChainName (ambiguity) (rule end)
 	 *     references+=FeatureChainName (ambiguity) (rule end)
@@ -2009,7 +2009,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'def' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'def' (ambiguity) (rule end)
 	 *     superclassifiers+=FeatureChainName (ambiguity) (rule end)
 	 
 	 * </pre>
@@ -2030,7 +2030,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
 	 *     isNonunique?='nonunique' (ambiguity) (rule end)
 	 *     isOrdered?='ordered' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
@@ -2545,41 +2545,41 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     portionKind=PortionKind 'view' (ambiguity) references+=FeatureChainName
 	 *     portionKind=PortionKind 'viewpoint' (ambiguity) references+=FeatureChainName
 	 *     portionKind=PortionKind (ambiguity) references+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'action' (ambiguity) references+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'allocation' (ambiguity) references+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'analysis' (ambiguity) references+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'assert' 'constraint' (ambiguity) references+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'assert'? 'satisfy' 'requirement' (ambiguity) references+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'attribute' (ambiguity) references+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'binding' (ambiguity) references+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'calc' (ambiguity) references+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'case' (ambiguity) references+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'concern' (ambiguity) references+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'connection' (ambiguity) references+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'constraint' (ambiguity) references+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'enum' (ambiguity) references+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'enum'? (ambiguity) references+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'event' 'occurrence' (ambiguity) references+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'exhibit' 'state' (ambiguity) references+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'flow' (ambiguity) references+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'include' 'use' 'case' (ambiguity) references+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'interface' (ambiguity) references+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'item' (ambiguity) references+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'message' (ambiguity) references+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'occurrence' (ambiguity) references+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'part' (ambiguity) references+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'perform' 'action' (ambiguity) references+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'port' (ambiguity) references+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'rendering' (ambiguity) references+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'requirement' (ambiguity) references+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'state' (ambiguity) references+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'succession' 'flow' (ambiguity) references+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'succession' (ambiguity) references+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'use' 'case' (ambiguity) references+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'verification' (ambiguity) references+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'view' (ambiguity) references+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'viewpoint' (ambiguity) references+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'action' (ambiguity) references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'allocation' (ambiguity) references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'analysis' (ambiguity) references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'assert' 'constraint' (ambiguity) references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'assert'? 'satisfy' 'requirement' (ambiguity) references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'attribute' (ambiguity) references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'binding' (ambiguity) references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'calc' (ambiguity) references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'case' (ambiguity) references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'concern' (ambiguity) references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'connection' (ambiguity) references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'constraint' (ambiguity) references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'enum' (ambiguity) references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'enum'? (ambiguity) references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'event' 'occurrence' (ambiguity) references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'exhibit' 'state' (ambiguity) references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'flow' (ambiguity) references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'include' 'use' 'case' (ambiguity) references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'interface' (ambiguity) references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'item' (ambiguity) references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'message' (ambiguity) references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'occurrence' (ambiguity) references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'part' (ambiguity) references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'perform' 'action' (ambiguity) references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'port' (ambiguity) references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'rendering' (ambiguity) references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'requirement' (ambiguity) references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'state' (ambiguity) references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'succession' 'flow' (ambiguity) references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'succession' (ambiguity) references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'use' 'case' (ambiguity) references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'verification' (ambiguity) references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'view' (ambiguity) references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'viewpoint' (ambiguity) references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) references+=FeatureChainName
 	 *     redefinitions+=FeatureChainName (ambiguity) references+=FeatureChainName
 	 *     refElement=FeatureChainName (ambiguity) references+=FeatureChainName
 	 *     referencedFeature=FeatureChainName (ambiguity) references+=FeatureChainName
@@ -3139,41 +3139,41 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     portionKind=PortionKind 'view' (ambiguity) redefinitions+=FeatureChainName
 	 *     portionKind=PortionKind 'viewpoint' (ambiguity) redefinitions+=FeatureChainName
 	 *     portionKind=PortionKind (ambiguity) redefinitions+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'action' (ambiguity) redefinitions+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'allocation' (ambiguity) redefinitions+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'analysis' (ambiguity) redefinitions+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'assert' 'constraint' (ambiguity) redefinitions+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'assert'? 'satisfy' 'requirement' (ambiguity) redefinitions+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'attribute' (ambiguity) redefinitions+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'binding' (ambiguity) redefinitions+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'calc' (ambiguity) redefinitions+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'case' (ambiguity) redefinitions+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'concern' (ambiguity) redefinitions+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'connection' (ambiguity) redefinitions+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'constraint' (ambiguity) redefinitions+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'enum' (ambiguity) redefinitions+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'enum'? (ambiguity) redefinitions+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'event' 'occurrence' (ambiguity) redefinitions+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'exhibit' 'state' (ambiguity) redefinitions+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'flow' (ambiguity) redefinitions+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'include' 'use' 'case' (ambiguity) redefinitions+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'interface' (ambiguity) redefinitions+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'item' (ambiguity) redefinitions+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'message' (ambiguity) redefinitions+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'occurrence' (ambiguity) redefinitions+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'part' (ambiguity) redefinitions+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'perform' 'action' (ambiguity) redefinitions+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'port' (ambiguity) redefinitions+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'rendering' (ambiguity) redefinitions+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'requirement' (ambiguity) redefinitions+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'state' (ambiguity) redefinitions+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'succession' 'flow' (ambiguity) redefinitions+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'succession' (ambiguity) redefinitions+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'use' 'case' (ambiguity) redefinitions+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'verification' (ambiguity) redefinitions+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'view' (ambiguity) redefinitions+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'viewpoint' (ambiguity) redefinitions+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'action' (ambiguity) redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'allocation' (ambiguity) redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'analysis' (ambiguity) redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'assert' 'constraint' (ambiguity) redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'assert'? 'satisfy' 'requirement' (ambiguity) redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'attribute' (ambiguity) redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'binding' (ambiguity) redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'calc' (ambiguity) redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'case' (ambiguity) redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'concern' (ambiguity) redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'connection' (ambiguity) redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'constraint' (ambiguity) redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'enum' (ambiguity) redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'enum'? (ambiguity) redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'event' 'occurrence' (ambiguity) redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'exhibit' 'state' (ambiguity) redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'flow' (ambiguity) redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'include' 'use' 'case' (ambiguity) redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'interface' (ambiguity) redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'item' (ambiguity) redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'message' (ambiguity) redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'occurrence' (ambiguity) redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'part' (ambiguity) redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'perform' 'action' (ambiguity) redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'port' (ambiguity) redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'rendering' (ambiguity) redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'requirement' (ambiguity) redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'state' (ambiguity) redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'succession' 'flow' (ambiguity) redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'succession' (ambiguity) redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'use' 'case' (ambiguity) redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'verification' (ambiguity) redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'view' (ambiguity) redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'viewpoint' (ambiguity) redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) redefinitions+=FeatureChainName
 	 *     redefinitions+=FeatureChainName (ambiguity) redefinitions+=FeatureChainName
 	 *     refElement=FeatureChainName (ambiguity) redefinitions+=FeatureChainName
 	 *     referencedFeature=FeatureChainName (ambiguity) redefinitions+=FeatureChainName
@@ -3733,41 +3733,41 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     portionKind=PortionKind 'view' (ambiguity) subsetting+=FeatureChainName
 	 *     portionKind=PortionKind 'viewpoint' (ambiguity) subsetting+=FeatureChainName
 	 *     portionKind=PortionKind (ambiguity) subsetting+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'action' (ambiguity) subsetting+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'allocation' (ambiguity) subsetting+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'analysis' (ambiguity) subsetting+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'assert' 'constraint' (ambiguity) subsetting+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'assert'? 'satisfy' 'requirement' (ambiguity) subsetting+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'attribute' (ambiguity) subsetting+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'binding' (ambiguity) subsetting+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'calc' (ambiguity) subsetting+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'case' (ambiguity) subsetting+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'concern' (ambiguity) subsetting+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'connection' (ambiguity) subsetting+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'constraint' (ambiguity) subsetting+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'enum' (ambiguity) subsetting+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'enum'? (ambiguity) subsetting+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'event' 'occurrence' (ambiguity) subsetting+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'exhibit' 'state' (ambiguity) subsetting+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'flow' (ambiguity) subsetting+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'include' 'use' 'case' (ambiguity) subsetting+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'interface' (ambiguity) subsetting+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'item' (ambiguity) subsetting+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'message' (ambiguity) subsetting+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'occurrence' (ambiguity) subsetting+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'part' (ambiguity) subsetting+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'perform' 'action' (ambiguity) subsetting+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'port' (ambiguity) subsetting+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'rendering' (ambiguity) subsetting+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'requirement' (ambiguity) subsetting+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'state' (ambiguity) subsetting+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'succession' 'flow' (ambiguity) subsetting+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'succession' (ambiguity) subsetting+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'use' 'case' (ambiguity) subsetting+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'verification' (ambiguity) subsetting+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'view' (ambiguity) subsetting+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'viewpoint' (ambiguity) subsetting+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'action' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'allocation' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'analysis' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'assert' 'constraint' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'assert'? 'satisfy' 'requirement' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'attribute' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'binding' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'calc' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'case' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'concern' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'connection' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'constraint' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'enum' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'enum'? (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'event' 'occurrence' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'exhibit' 'state' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'flow' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'include' 'use' 'case' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'interface' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'item' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'message' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'occurrence' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'part' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'perform' 'action' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'port' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'rendering' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'requirement' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'state' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'succession' 'flow' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'succession' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'use' 'case' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'verification' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'view' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'viewpoint' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) subsetting+=FeatureChainName
 	 *     redefinitions+=FeatureChainName (ambiguity) subsetting+=FeatureChainName
 	 *     refElement=FeatureChainName (ambiguity) subsetting+=FeatureChainName
 	 *     referencedFeature=FeatureChainName (ambiguity) subsetting+=FeatureChainName
@@ -4327,41 +4327,41 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     portionKind=PortionKind 'view' (ambiguity) typings+=FeatureTypingName
 	 *     portionKind=PortionKind 'viewpoint' (ambiguity) typings+=FeatureTypingName
 	 *     portionKind=PortionKind (ambiguity) typings+=FeatureTypingName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'action' (ambiguity) typings+=FeatureTypingName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'allocation' (ambiguity) typings+=FeatureTypingName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'analysis' (ambiguity) typings+=FeatureTypingName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'assert' 'constraint' (ambiguity) typings+=FeatureTypingName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'assert'? 'satisfy' 'requirement' (ambiguity) typings+=FeatureTypingName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'attribute' (ambiguity) typings+=FeatureTypingName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'binding' (ambiguity) typings+=FeatureTypingName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'calc' (ambiguity) typings+=FeatureTypingName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'case' (ambiguity) typings+=FeatureTypingName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'concern' (ambiguity) typings+=FeatureTypingName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'connection' (ambiguity) typings+=FeatureTypingName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'constraint' (ambiguity) typings+=FeatureTypingName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'enum' (ambiguity) typings+=FeatureTypingName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'enum'? (ambiguity) typings+=FeatureTypingName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'event' 'occurrence' (ambiguity) typings+=FeatureTypingName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'exhibit' 'state' (ambiguity) typings+=FeatureTypingName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'flow' (ambiguity) typings+=FeatureTypingName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'include' 'use' 'case' (ambiguity) typings+=FeatureTypingName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'interface' (ambiguity) typings+=FeatureTypingName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'item' (ambiguity) typings+=FeatureTypingName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'message' (ambiguity) typings+=FeatureTypingName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'occurrence' (ambiguity) typings+=FeatureTypingName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'part' (ambiguity) typings+=FeatureTypingName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'perform' 'action' (ambiguity) typings+=FeatureTypingName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'port' (ambiguity) typings+=FeatureTypingName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'rendering' (ambiguity) typings+=FeatureTypingName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'requirement' (ambiguity) typings+=FeatureTypingName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'state' (ambiguity) typings+=FeatureTypingName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'succession' 'flow' (ambiguity) typings+=FeatureTypingName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'succession' (ambiguity) typings+=FeatureTypingName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'use' 'case' (ambiguity) typings+=FeatureTypingName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'verification' (ambiguity) typings+=FeatureTypingName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'view' (ambiguity) typings+=FeatureTypingName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'viewpoint' (ambiguity) typings+=FeatureTypingName
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'action' (ambiguity) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'allocation' (ambiguity) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'analysis' (ambiguity) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'assert' 'constraint' (ambiguity) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'assert'? 'satisfy' 'requirement' (ambiguity) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'attribute' (ambiguity) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'binding' (ambiguity) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'calc' (ambiguity) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'case' (ambiguity) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'concern' (ambiguity) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'connection' (ambiguity) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'constraint' (ambiguity) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'enum' (ambiguity) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'enum'? (ambiguity) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'event' 'occurrence' (ambiguity) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'exhibit' 'state' (ambiguity) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'flow' (ambiguity) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'include' 'use' 'case' (ambiguity) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'interface' (ambiguity) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'item' (ambiguity) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'message' (ambiguity) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'occurrence' (ambiguity) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'part' (ambiguity) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'perform' 'action' (ambiguity) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'port' (ambiguity) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'rendering' (ambiguity) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'requirement' (ambiguity) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'state' (ambiguity) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'succession' 'flow' (ambiguity) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'succession' (ambiguity) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'use' 'case' (ambiguity) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'verification' (ambiguity) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'view' (ambiguity) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'viewpoint' (ambiguity) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) typings+=FeatureTypingName
 	 *     redefinitions+=FeatureChainName (ambiguity) typings+=FeatureTypingName
 	 *     refElement=FeatureChainName (ambiguity) typings+=FeatureTypingName
 	 *     referencedFeature=FeatureChainName (ambiguity) typings+=FeatureTypingName
@@ -4921,41 +4921,41 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     portionKind=PortionKind 'view' (ambiguity) crosses+=FeatureChainName
 	 *     portionKind=PortionKind 'viewpoint' (ambiguity) crosses+=FeatureChainName
 	 *     portionKind=PortionKind (ambiguity) crosses+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'action' (ambiguity) crosses+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'allocation' (ambiguity) crosses+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'analysis' (ambiguity) crosses+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'assert' 'constraint' (ambiguity) crosses+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'assert'? 'satisfy' 'requirement' (ambiguity) crosses+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'attribute' (ambiguity) crosses+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'binding' (ambiguity) crosses+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'calc' (ambiguity) crosses+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'case' (ambiguity) crosses+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'concern' (ambiguity) crosses+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'connection' (ambiguity) crosses+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'constraint' (ambiguity) crosses+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'enum' (ambiguity) crosses+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'enum'? (ambiguity) crosses+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'event' 'occurrence' (ambiguity) crosses+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'exhibit' 'state' (ambiguity) crosses+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'flow' (ambiguity) crosses+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'include' 'use' 'case' (ambiguity) crosses+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'interface' (ambiguity) crosses+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'item' (ambiguity) crosses+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'message' (ambiguity) crosses+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'occurrence' (ambiguity) crosses+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'part' (ambiguity) crosses+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'perform' 'action' (ambiguity) crosses+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'port' (ambiguity) crosses+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'rendering' (ambiguity) crosses+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'requirement' (ambiguity) crosses+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'state' (ambiguity) crosses+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'succession' 'flow' (ambiguity) crosses+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'succession' (ambiguity) crosses+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'use' 'case' (ambiguity) crosses+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'verification' (ambiguity) crosses+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'view' (ambiguity) crosses+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'viewpoint' (ambiguity) crosses+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'action' (ambiguity) crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'allocation' (ambiguity) crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'analysis' (ambiguity) crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'assert' 'constraint' (ambiguity) crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'assert'? 'satisfy' 'requirement' (ambiguity) crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'attribute' (ambiguity) crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'binding' (ambiguity) crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'calc' (ambiguity) crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'case' (ambiguity) crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'concern' (ambiguity) crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'connection' (ambiguity) crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'constraint' (ambiguity) crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'enum' (ambiguity) crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'enum'? (ambiguity) crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'event' 'occurrence' (ambiguity) crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'exhibit' 'state' (ambiguity) crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'flow' (ambiguity) crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'include' 'use' 'case' (ambiguity) crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'interface' (ambiguity) crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'item' (ambiguity) crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'message' (ambiguity) crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'occurrence' (ambiguity) crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'part' (ambiguity) crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'perform' 'action' (ambiguity) crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'port' (ambiguity) crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'rendering' (ambiguity) crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'requirement' (ambiguity) crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'state' (ambiguity) crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'succession' 'flow' (ambiguity) crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'succession' (ambiguity) crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'use' 'case' (ambiguity) crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'verification' (ambiguity) crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'view' (ambiguity) crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'viewpoint' (ambiguity) crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) crosses+=FeatureChainName
 	 *     redefinitions+=FeatureChainName (ambiguity) crosses+=FeatureChainName
 	 *     refElement=FeatureChainName (ambiguity) crosses+=FeatureChainName
 	 *     referencedFeature=FeatureChainName (ambiguity) crosses+=FeatureChainName
@@ -5040,7 +5040,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isIndividual?='individual' 'flow' 'def' (ambiguity) (rule end)
 	 *     isVariant?='variant' 'flow' 'def' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'flow' 'def' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'flow' 'def' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'flow' 'def' (ambiguity) (rule end)
 	 *     superclassifiers+=FeatureChainName (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'flow' 'def' (ambiguity) (rule end)
 	 
@@ -5077,7 +5077,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariation?='variation' 'flow' (ambiguity) FlowEnd+=FeatureChainName
 	 *     itemFeatureParameter+=ItemFeatureParameter (ambiguity) FlowEnd+=FeatureChainName
 	 *     portionKind=PortionKind 'flow' (ambiguity) FlowEnd+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'flow' (ambiguity) FlowEnd+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'flow' (ambiguity) FlowEnd+=FeatureChainName
 	 *     redefinitions+=FeatureChainName (ambiguity) FlowEnd+=FeatureChainName
 	 *     references+=FeatureChainName (ambiguity) FlowEnd+=FeatureChainName
 	 *     subsetting+=FeatureChainName (ambiguity) FlowEnd+=FeatureChainName
@@ -5119,7 +5119,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariation?='variation' 'flow' (ambiguity) (rule end)
 	 *     itemFeatureParameter+=ItemFeatureParameter (ambiguity) (rule end)
 	 *     portionKind=PortionKind 'flow' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'flow' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'flow' (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
@@ -5165,7 +5165,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isNonunique?='nonunique' (ambiguity) (rule end)
 	 *     isOrdered?='ordered' (ambiguity) (rule end)
 	 *     isVariant?='variant' 'frame' 'concern' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) (rule end)
 	 *     valuePart+=Expression (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'frame' 'concern' (ambiguity) (rule end)
 	 
@@ -5232,7 +5232,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariant?='variant' 'include' 'use' 'case' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'include' 'use' 'case' (ambiguity) (rule end)
 	 *     portionKind=PortionKind 'include' 'use' 'case' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'include' 'use' 'case' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'include' 'use' 'case' (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
 	 *     refElement=FeatureChainName (ambiguity) (rule end)
 	 *     references+=FeatureChainName (ambiguity) (rule end)
@@ -5256,7 +5256,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
 	 *     isIndividual?='individual' 'def' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'def' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'def' (ambiguity) (rule end)
 	 *     superclassifiers+=FeatureChainName (ambiguity) (rule end)
 	 
 	 * </pre>
@@ -5278,7 +5278,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isIndividual?='individual' (ambiguity) (rule end)
 	 *     isNonunique?='nonunique' (ambiguity) (rule end)
 	 *     isOrdered?='ordered' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
@@ -5318,7 +5318,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isIndividual?='individual' 'interface' 'def' (ambiguity) (rule end)
 	 *     isVariant?='variant' 'interface' 'def' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'interface' 'def' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'interface' 'def' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'interface' 'def' (ambiguity) (rule end)
 	 *     superclassifiers+=FeatureChainName (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'interface' 'def' (ambiguity) (rule end)
 	 
@@ -5362,8 +5362,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariation?='variation' 'interface' (ambiguity) connectorPart+=ConnectorEnd
 	 *     portionKind=PortionKind 'interface' (ambiguity) '(' connectorPart+=ConnectorEnd
 	 *     portionKind=PortionKind 'interface' (ambiguity) connectorPart+=ConnectorEnd
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'interface' (ambiguity) '(' connectorPart+=ConnectorEnd
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'interface' (ambiguity) connectorPart+=ConnectorEnd
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'interface' (ambiguity) '(' connectorPart+=ConnectorEnd
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'interface' (ambiguity) connectorPart+=ConnectorEnd
 	 *     visibility=VisibilityIndicator 'interface' (ambiguity) '(' connectorPart+=ConnectorEnd
 	 *     visibility=VisibilityIndicator 'interface' (ambiguity) connectorPart+=ConnectorEnd
 	 
@@ -5401,7 +5401,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariant?='variant' 'interface' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'interface' (ambiguity) (rule end)
 	 *     portionKind=PortionKind 'interface' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'interface' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'interface' (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
@@ -5427,7 +5427,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isIndividual?='individual' 'item' 'def' (ambiguity) (rule end)
 	 *     isVariant?='variant' 'item' 'def' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'item' 'def' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'item' 'def' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'item' 'def' (ambiguity) (rule end)
 	 *     superclassifiers+=FeatureChainName (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'item' 'def' (ambiguity) (rule end)
 	 
@@ -5463,7 +5463,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariant?='variant' 'item' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'item' (ambiguity) (rule end)
 	 *     portionKind=PortionKind 'item' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'item' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'item' (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
@@ -5486,7 +5486,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
 	 *     isLibrary?='library' 'package' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'package' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'package' (ambiguity) (rule end)
 	 
 	 * </pre>
 	 */
@@ -5521,7 +5521,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariation?='variation' 'message' (ambiguity) FlowEnd+=FeatureChainName
 	 *     itemFeatureParameter+=ItemFeatureParameter (ambiguity) FlowEnd+=FeatureChainName
 	 *     portionKind=PortionKind 'message' (ambiguity) FlowEnd+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'message' (ambiguity) FlowEnd+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'message' (ambiguity) FlowEnd+=FeatureChainName
 	 *     redefinitions+=FeatureChainName (ambiguity) FlowEnd+=FeatureChainName
 	 *     references+=FeatureChainName (ambiguity) FlowEnd+=FeatureChainName
 	 *     subsetting+=FeatureChainName (ambiguity) FlowEnd+=FeatureChainName
@@ -5563,7 +5563,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariation?='variation' 'message' (ambiguity) (rule end)
 	 *     itemFeatureParameter+=ItemFeatureParameter (ambiguity) (rule end)
 	 *     portionKind=PortionKind 'message' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'message' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'message' (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
@@ -5588,7 +5588,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
 	 *     isAbstract?='abstract' 'metadata' 'def' (ambiguity) (rule end)
 	 *     isVariant?='variant' 'metadata' 'def' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'metadata' 'def' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'metadata' 'def' (ambiguity) (rule end)
 	 *     superclassifiers+=FeatureChainName (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'metadata' 'def' (ambiguity) (rule end)
 	 
@@ -5622,9 +5622,9 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) (ambiguity) '&lt;' declaredShortName=Name
 	 *     (rule start) (ambiguity) (':' | ('defined' 'by'))? metadataTyping=QualifiedName
 	 *     (rule start) (ambiguity) declaredName=Name
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) '&lt;' declaredShortName=Name
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) (':' | ('defined' 'by'))? metadataTyping=QualifiedName
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) declaredName=Name
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) '&lt;' declaredShortName=Name
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) (':' | ('defined' 'by'))? metadataTyping=QualifiedName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) declaredName=Name
 	 
 	 * </pre>
 	 */
@@ -5654,7 +5654,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) ('metadata' | '@') (ambiguity) metadataTyping=QualifiedName
-	 *     prefixMetadataExtension+=PREFIXNAME_ ('metadata' | '@') (ambiguity) metadataTyping=QualifiedName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT ('metadata' | '@') (ambiguity) metadataTyping=QualifiedName
 	 
 	 * </pre>
 	 */
@@ -5676,7 +5676,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isNonunique?='nonunique' (ambiguity) (rule end)
 	 *     isOrdered?='ordered' (ambiguity) (rule end)
 	 *     isVariant?='variant' 'objective' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
@@ -5703,7 +5703,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isIndividual?='individual' 'occurrence' 'def' (ambiguity) (rule end)
 	 *     isVariant?='variant' 'occurrence' 'def' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'occurrence' 'def' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'occurrence' 'def' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'occurrence' 'def' (ambiguity) (rule end)
 	 *     superclassifiers+=FeatureChainName (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'occurrence' 'def' (ambiguity) (rule end)
 	 
@@ -5739,7 +5739,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariant?='variant' 'occurrence' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'occurrence' (ambiguity) (rule end)
 	 *     portionKind=PortionKind 'occurrence' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'occurrence' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'occurrence' (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
@@ -5780,7 +5780,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isIndividual?='individual' 'part' 'def' (ambiguity) (rule end)
 	 *     isVariant?='variant' 'part' 'def' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'part' 'def' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'part' 'def' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'part' 'def' (ambiguity) (rule end)
 	 *     superclassifiers+=FeatureChainName (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'part' 'def' (ambiguity) (rule end)
 	 
@@ -5816,7 +5816,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariant?='variant' 'part' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'part' (ambiguity) (rule end)
 	 *     portionKind=PortionKind 'part' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'part' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'part' (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
@@ -5856,7 +5856,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariant?='variant' 'perform' 'action' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'perform' 'action' (ambiguity) (rule end)
 	 *     portionKind=PortionKind 'perform' 'action' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'perform' 'action' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'perform' 'action' (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
 	 *     refElement=FeatureChainName (ambiguity) (rule end)
 	 *     references+=FeatureChainName (ambiguity) (rule end)
@@ -5883,7 +5883,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isAbstract?='abstract' 'port' 'def' (ambiguity) (rule end)
 	 *     isVariant?='variant' 'port' 'def' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'port' 'def' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'port' 'def' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'port' 'def' (ambiguity) (rule end)
 	 *     superclassifiers+=FeatureChainName (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'port' 'def' (ambiguity) (rule end)
 	 
@@ -5919,7 +5919,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariant?='variant' 'port' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'port' (ambiguity) (rule end)
 	 *     portionKind=PortionKind 'port' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'port' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'port' (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
@@ -5946,7 +5946,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isNonunique?='nonunique' (ambiguity) (rule end)
 	 *     isOrdered?='ordered' (ambiguity) (rule end)
 	 *     portionKind=PortionKind (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
@@ -6025,7 +6025,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isIndividual?='individual' 'rendering' 'def' (ambiguity) (rule end)
 	 *     isVariant?='variant' 'rendering' 'def' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'rendering' 'def' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'rendering' 'def' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'rendering' 'def' (ambiguity) (rule end)
 	 *     superclassifiers+=FeatureChainName (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'rendering' 'def' (ambiguity) (rule end)
 	 
@@ -6061,7 +6061,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariant?='variant' 'rendering' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'rendering' (ambiguity) (rule end)
 	 *     portionKind=PortionKind 'rendering' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'rendering' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'rendering' (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
@@ -6088,7 +6088,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isNonunique?='nonunique' (ambiguity) (rule end)
 	 *     isOrdered?='ordered' (ambiguity) (rule end)
 	 *     kind=RequirementConstraintKind 'constraint' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
 	 *     refElement=FeatureChainName (ambiguity) (rule end)
 	 *     references+=FeatureChainName (ambiguity) (rule end)
@@ -6115,7 +6115,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isIndividual?='individual' 'requirement' 'def' (ambiguity) (rule end)
 	 *     isVariant?='variant' 'requirement' 'def' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'requirement' 'def' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'requirement' 'def' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'requirement' 'def' (ambiguity) (rule end)
 	 *     superclassifiers+=FeatureChainName (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'requirement' 'def' (ambiguity) (rule end)
 	 
@@ -6151,7 +6151,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariant?='variant' 'requirement' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'requirement' (ambiguity) (rule end)
 	 *     portionKind=PortionKind 'requirement' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'requirement' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'requirement' (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
@@ -6197,7 +6197,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isNonunique?='nonunique' (ambiguity) (rule end)
 	 *     isOrdered?='ordered' (ambiguity) (rule end)
 	 *     isVariant?='variant' 'verify' 'requirement' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) (rule end)
 	 *     valuePart+=Expression (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'verify' 'requirement' (ambiguity) (rule end)
 	 
@@ -6465,24 +6465,24 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     portionKind=PortionKind (ambiguity) 'satisfy' 'requirement' isOrdered?='ordered'
 	 *     portionKind=PortionKind (ambiguity) 'satisfy' refElement=FeatureChainName
 	 *     portionKind=PortionKind (ambiguity) isNegated?='not'
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) 'satisfy' 'requirement' '&lt;' declaredShortName=Name
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) 'satisfy' 'requirement' '=' valuePart+=Expression
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) 'satisfy' 'requirement' '[' Multiplicity+=MultiplicityExpression
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) 'satisfy' 'requirement' 'by' satisfactionParameter=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) 'satisfy' 'requirement' '{' elements+=RequirementBodyElement
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) 'satisfy' 'requirement' (':' | ('defined' 'by')) typings+=FeatureTypingName
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) 'satisfy' 'requirement' ('::&gt;' | 'references') references+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) 'satisfy' 'requirement' (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) 'satisfy' 'requirement' (':&gt;&gt;' | 'redefines') redefinitions+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) 'satisfy' 'requirement' (';' | ('{' '}')) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) 'satisfy' 'requirement' ('=&gt;' | 'crosses') crosses+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) 'satisfy' 'requirement' declaredName=Name
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) 'satisfy' 'requirement' isDefault?='default'
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) 'satisfy' 'requirement' isInitial?=':='
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) 'satisfy' 'requirement' isNonunique?='nonunique'
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) 'satisfy' 'requirement' isOrdered?='ordered'
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) 'satisfy' refElement=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) isNegated?='not'
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) 'satisfy' 'requirement' '&lt;' declaredShortName=Name
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) 'satisfy' 'requirement' '=' valuePart+=Expression
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) 'satisfy' 'requirement' '[' Multiplicity+=MultiplicityExpression
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) 'satisfy' 'requirement' 'by' satisfactionParameter=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) 'satisfy' 'requirement' '{' elements+=RequirementBodyElement
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) 'satisfy' 'requirement' (':' | ('defined' 'by')) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) 'satisfy' 'requirement' ('::&gt;' | 'references') references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) 'satisfy' 'requirement' (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) 'satisfy' 'requirement' (':&gt;&gt;' | 'redefines') redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) 'satisfy' 'requirement' (';' | ('{' '}')) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) 'satisfy' 'requirement' ('=&gt;' | 'crosses') crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) 'satisfy' 'requirement' declaredName=Name
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) 'satisfy' 'requirement' isDefault?='default'
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) 'satisfy' 'requirement' isInitial?=':='
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) 'satisfy' 'requirement' isNonunique?='nonunique'
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) 'satisfy' 'requirement' isOrdered?='ordered'
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) 'satisfy' refElement=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) isNegated?='not'
 	 *     visibility=VisibilityIndicator (ambiguity) 'satisfy' 'requirement' '&lt;' declaredShortName=Name
 	 *     visibility=VisibilityIndicator (ambiguity) 'satisfy' 'requirement' '=' valuePart+=Expression
 	 *     visibility=VisibilityIndicator (ambiguity) 'satisfy' 'requirement' '[' Multiplicity+=MultiplicityExpression
@@ -6535,7 +6535,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariant?='variant' 'assert'? 'satisfy' 'requirement' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'assert'? 'satisfy' 'requirement' (ambiguity) (rule end)
 	 *     portionKind=PortionKind 'assert'? 'satisfy' 'requirement' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'assert'? 'satisfy' 'requirement' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'assert'? 'satisfy' 'requirement' (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
 	 *     refElement=FeatureChainName (ambiguity) (rule end)
 	 *     references+=FeatureChainName (ambiguity) (rule end)
@@ -6581,7 +6581,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isNonunique?='nonunique' (ambiguity) (rule end)
 	 *     isOrdered?='ordered' (ambiguity) (rule end)
 	 *     isVariant?='variant' 'stakeholder' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
@@ -6608,7 +6608,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isIndividual?='individual' 'state' 'def' (ambiguity) (rule end)
 	 *     isVariant?='variant' 'state' 'def' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'state' 'def' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'state' 'def' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'state' 'def' (ambiguity) (rule end)
 	 *     superclassifiers+=FeatureChainName (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'state' 'def' (ambiguity) (rule end)
 	 
@@ -6644,7 +6644,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariant?='variant' 'state' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'state' (ambiguity) (rule end)
 	 *     portionKind=PortionKind 'state' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'state' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'state' (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
@@ -6672,7 +6672,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isNonunique?='nonunique' (ambiguity) (rule end)
 	 *     isOrdered?='ordered' (ambiguity) (rule end)
 	 *     isVariant?='variant' 'subject' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
@@ -6716,7 +6716,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isReturn?='return' (ambiguity) 'first' connectorPart+=ConnectorEnd
 	 *     isVariant?='variant' (ambiguity) 'first' connectorPart+=ConnectorEnd
 	 *     isVariation?='variation' (ambiguity) 'first' connectorPart+=ConnectorEnd
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) 'first' connectorPart+=ConnectorEnd
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) 'first' connectorPart+=ConnectorEnd
 	 *     visibility=VisibilityIndicator (ambiguity) 'first' connectorPart+=ConnectorEnd
 	 
 	 * </pre>
@@ -6752,7 +6752,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariation?='variation' 'succession' 'flow' (ambiguity) FlowEnd+=FeatureChainName
 	 *     itemFeatureParameter+=ItemFeatureParameter (ambiguity) FlowEnd+=FeatureChainName
 	 *     portionKind=PortionKind 'succession' 'flow' (ambiguity) FlowEnd+=FeatureChainName
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'succession' 'flow' (ambiguity) FlowEnd+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'succession' 'flow' (ambiguity) FlowEnd+=FeatureChainName
 	 *     redefinitions+=FeatureChainName (ambiguity) FlowEnd+=FeatureChainName
 	 *     references+=FeatureChainName (ambiguity) FlowEnd+=FeatureChainName
 	 *     subsetting+=FeatureChainName (ambiguity) FlowEnd+=FeatureChainName
@@ -6794,7 +6794,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariation?='variation' 'succession' 'flow' (ambiguity) (rule end)
 	 *     itemFeatureParameter+=ItemFeatureParameter (ambiguity) (rule end)
 	 *     portionKind=PortionKind 'succession' 'flow' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'succession' 'flow' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'succession' 'flow' (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
@@ -6960,7 +6960,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isIndividual?='individual' 'use' 'case' 'def' (ambiguity) (rule end)
 	 *     isVariant?='variant' 'use' 'case' 'def' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'use' 'case' 'def' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'use' 'case' 'def' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'use' 'case' 'def' (ambiguity) (rule end)
 	 *     superclassifiers+=FeatureChainName (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'use' 'case' 'def' (ambiguity) (rule end)
 	 
@@ -6996,7 +6996,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariant?='variant' 'use' 'case' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'use' 'case' (ambiguity) (rule end)
 	 *     portionKind=PortionKind 'use' 'case' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'use' 'case' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'use' 'case' (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
@@ -7023,7 +7023,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isIndividual?='individual' 'verification' 'def' (ambiguity) (rule end)
 	 *     isVariant?='variant' 'verification' 'def' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'verification' 'def' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'verification' 'def' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'verification' 'def' (ambiguity) (rule end)
 	 *     superclassifiers+=FeatureChainName (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'verification' 'def' (ambiguity) (rule end)
 	 
@@ -7059,7 +7059,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariant?='variant' 'verification' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'verification' (ambiguity) (rule end)
 	 *     portionKind=PortionKind 'verification' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'verification' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'verification' (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
@@ -7086,7 +7086,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isIndividual?='individual' 'view' 'def' (ambiguity) (rule end)
 	 *     isVariant?='variant' 'view' 'def' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'view' 'def' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'view' 'def' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'view' 'def' (ambiguity) (rule end)
 	 *     superclassifiers+=FeatureChainName (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'view' 'def' (ambiguity) (rule end)
 	 
@@ -7110,7 +7110,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isNonunique?='nonunique' (ambiguity) (rule end)
 	 *     isOrdered?='ordered' (ambiguity) (rule end)
 	 *     isVariant?='variant' 'render' 'rendering' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
 	 *     refElement=FeatureChainName (ambiguity) (rule end)
 	 *     references+=FeatureChainName (ambiguity) (rule end)
@@ -7151,7 +7151,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariant?='variant' 'view' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'view' (ambiguity) (rule end)
 	 *     portionKind=PortionKind 'view' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'view' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'view' (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
@@ -7178,7 +7178,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isIndividual?='individual' 'viewpoint' 'def' (ambiguity) (rule end)
 	 *     isVariant?='variant' 'viewpoint' 'def' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'viewpoint' 'def' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'viewpoint' 'def' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'viewpoint' 'def' (ambiguity) (rule end)
 	 *     superclassifiers+=FeatureChainName (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'viewpoint' 'def' (ambiguity) (rule end)
 	 
@@ -7214,7 +7214,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariant?='variant' 'viewpoint' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'viewpoint' (ambiguity) (rule end)
 	 *     portionKind=PortionKind 'viewpoint' (ambiguity) (rule end)
-	 *     prefixMetadataExtension+=PREFIXNAME_ 'viewpoint' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'viewpoint' (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)

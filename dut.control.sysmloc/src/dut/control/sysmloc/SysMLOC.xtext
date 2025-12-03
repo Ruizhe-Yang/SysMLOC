@@ -1182,7 +1182,7 @@ fragment GeneralUsagePrefix:
 fragment PrefixMetadata:
 //	'#' prefixMetadataExtension += QualifiedName
 //	prefixMetadataExtension += PrefixMetadataName
-	prefixMetadataExtension += PREFIXNAME_
+	prefixMetadataExtension += PREFIXNAME_TEXT
 ;
 
 //PrefixMetadataName:
@@ -1729,7 +1729,7 @@ FeatureReferenceExpression:
 
 // TODO --------------------------------- Terminal Level ---------------------------------//
 
-terminal PREFIXNAME_:
+terminal PREFIXNAME_TEXT:
 	'#' ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
 
 terminal DECIMAL_VALUE returns Ecore::EInt:

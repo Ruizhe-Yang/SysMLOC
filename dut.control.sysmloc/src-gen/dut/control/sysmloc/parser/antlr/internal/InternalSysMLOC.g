@@ -14849,9 +14849,9 @@ rulePrefixMetadata[EObject in_current]  returns [EObject current=in_current]
 }:
 	(
 		(
-			lv_prefixMetadataExtension_0_0=RULE_PREFIXNAME_
+			lv_prefixMetadataExtension_0_0=RULE_PREFIXNAME_TEXT
 			{
-				newLeafNode(lv_prefixMetadataExtension_0_0, grammarAccess.getPrefixMetadataAccess().getPrefixMetadataExtensionPREFIXNAME_TerminalRuleCall_0());
+				newLeafNode(lv_prefixMetadataExtension_0_0, grammarAccess.getPrefixMetadataAccess().getPrefixMetadataExtensionPREFIXNAME_TEXTTerminalRuleCall_0());
 			}
 			{
 				if ($current==null) {
@@ -14861,7 +14861,7 @@ rulePrefixMetadata[EObject in_current]  returns [EObject current=in_current]
 					$current,
 					"prefixMetadataExtension",
 					lv_prefixMetadataExtension_0_0,
-					"dut.control.sysmloc.SysMLOC.PREFIXNAME_");
+					"dut.control.sysmloc.SysMLOC.PREFIXNAME_TEXT");
 			}
 		)
 	)
@@ -21069,7 +21069,7 @@ ruleRequirementConstraintKind returns [Enumerator current=null]
 	)
 ;
 
-RULE_PREFIXNAME_ : '#' ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+RULE_PREFIXNAME_TEXT : '#' ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
 RULE_DECIMAL_VALUE : '0'..'9' ('0'..'9')*;
 

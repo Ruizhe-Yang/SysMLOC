@@ -1,0 +1,46 @@
+// General Functions
+operation SysMLOC!EObject isEnd(){
+	if (self.isTypeOf(SysMLOC!Documentation)){
+		return true;
+	}
+	else if (self.hasProperty("elements")){
+		return (self.elements.size() == 0);
+	}
+	else{
+		return true;
+	}
+}
+
+// Flip Functions
+operation SysMLOC!Identification Identification(){
+	if (self.declaredShortName == ""){
+		return "<"+self.declaredShortName+">"+self.declaredName;
+	}
+	else{
+		return self.declaredName;
+	}
+}
+
+operation SysMLOC!GeneralUsagePrefix GeneralUsagePrefix(){
+	return "";
+}
+
+operation SysMLOC!OccurrenceUsagePrefix OccurrenceUsagePrefix(){
+	return "";
+}
+
+operation SysMLOC!Usage Usage(){
+	return self.UsageDeclaration()+self.FeatureValue();
+}
+
+operation SysMLOC!DefinitionDeclaration DefinitionDeclaration(){
+	return self.Identification();
+}
+
+operation SysMLOC!UsageDeclaration UsageDeclaration(){
+	return self.Identification();
+}
+
+operation SysMLOC!FeatureValue FeatureValue(){
+	return "";
+}

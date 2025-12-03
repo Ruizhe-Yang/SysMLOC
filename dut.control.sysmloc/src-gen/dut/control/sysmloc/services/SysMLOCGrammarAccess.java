@@ -9912,22 +9912,22 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	public class PrefixMetadataElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.PrefixMetadata");
 		private final Assignment cPrefixMetadataExtensionAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cPrefixMetadataExtensionPREFIXNAME_TerminalRuleCall_0 = (RuleCall)cPrefixMetadataExtensionAssignment.eContents().get(0);
+		private final RuleCall cPrefixMetadataExtensionPREFIXNAME_TEXTTerminalRuleCall_0 = (RuleCall)cPrefixMetadataExtensionAssignment.eContents().get(0);
 		
 		//fragment PrefixMetadata:
 		////    '#' prefixMetadataExtension += QualifiedName
 		////    prefixMetadataExtension += PrefixMetadataName
-		//    prefixMetadataExtension += PREFIXNAME_
+		//    prefixMetadataExtension += PREFIXNAME_TEXT
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		////    '#' prefixMetadataExtension += QualifiedName
 		////    prefixMetadataExtension += PrefixMetadataName
-		//    prefixMetadataExtension += PREFIXNAME_
+		//    prefixMetadataExtension += PREFIXNAME_TEXT
 		public Assignment getPrefixMetadataExtensionAssignment() { return cPrefixMetadataExtensionAssignment; }
 		
-		//PREFIXNAME_
-		public RuleCall getPrefixMetadataExtensionPREFIXNAME_TerminalRuleCall_0() { return cPrefixMetadataExtensionPREFIXNAME_TerminalRuleCall_0; }
+		//PREFIXNAME_TEXT
+		public RuleCall getPrefixMetadataExtensionPREFIXNAME_TEXTTerminalRuleCall_0() { return cPrefixMetadataExtensionPREFIXNAME_TEXTTerminalRuleCall_0; }
 	}
 	public class UsageExtensionKeywordElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.UsageExtensionKeyword");
@@ -14291,7 +14291,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	private final RealValueElements pRealValue;
 	private final LiteralInfinityElements pLiteralInfinity;
 	private final FeatureReferenceExpressionElements pFeatureReferenceExpression;
-	private final TerminalRule tPREFIXNAME_;
+	private final TerminalRule tPREFIXNAME_TEXT;
 	private final TerminalRule tDECIMAL_VALUE;
 	private final TerminalRule tEXP_VALUE;
 	private final TerminalRule tID;
@@ -14548,7 +14548,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		this.pRealValue = new RealValueElements();
 		this.pLiteralInfinity = new LiteralInfinityElements();
 		this.pFeatureReferenceExpression = new FeatureReferenceExpressionElements();
-		this.tPREFIXNAME_ = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.PREFIXNAME_");
+		this.tPREFIXNAME_TEXT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.PREFIXNAME_TEXT");
 		this.tDECIMAL_VALUE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.DECIMAL_VALUE");
 		this.tEXP_VALUE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.EXP_VALUE");
 		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.ID");
@@ -16705,7 +16705,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	//fragment PrefixMetadata:
 	////    '#' prefixMetadataExtension += QualifiedName
 	////    prefixMetadataExtension += PrefixMetadataName
-	//    prefixMetadataExtension += PREFIXNAME_
+	//    prefixMetadataExtension += PREFIXNAME_TEXT
 	//;
 	public PrefixMetadataElements getPrefixMetadataAccess() {
 		return pPrefixMetadata;
@@ -17972,10 +17972,10 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//// TODO --------------------------------- Terminal Level ---------------------------------//
-	//terminal PREFIXNAME_:
+	//terminal PREFIXNAME_TEXT:
 	//    '#' ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
-	public TerminalRule getPREFIXNAME_Rule() {
-		return tPREFIXNAME_;
+	public TerminalRule getPREFIXNAME_TEXTRule() {
+		return tPREFIXNAME_TEXT;
 	}
 	
 	//terminal DECIMAL_VALUE returns Ecore::EInt:

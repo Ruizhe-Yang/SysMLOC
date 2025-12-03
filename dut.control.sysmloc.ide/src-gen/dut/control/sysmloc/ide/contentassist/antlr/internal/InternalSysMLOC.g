@@ -56036,9 +56036,9 @@ rule__PrefixMetadata__PrefixMetadataExtensionAssignment
 	}
 :
 	(
-		{ before(grammarAccess.getPrefixMetadataAccess().getPrefixMetadataExtensionPREFIXNAME_TerminalRuleCall_0()); }
-		RULE_PREFIXNAME_
-		{ after(grammarAccess.getPrefixMetadataAccess().getPrefixMetadataExtensionPREFIXNAME_TerminalRuleCall_0()); }
+		{ before(grammarAccess.getPrefixMetadataAccess().getPrefixMetadataExtensionPREFIXNAME_TEXTTerminalRuleCall_0()); }
+		RULE_PREFIXNAME_TEXT
+		{ after(grammarAccess.getPrefixMetadataAccess().getPrefixMetadataExtensionPREFIXNAME_TEXTTerminalRuleCall_0()); }
 	)
 ;
 finally {
@@ -57130,7 +57130,7 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-RULE_PREFIXNAME_ : '#' ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+RULE_PREFIXNAME_TEXT : '#' ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
 RULE_DECIMAL_VALUE : '0'..'9' ('0'..'9')*;
 
