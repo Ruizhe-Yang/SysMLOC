@@ -6,9 +6,8 @@
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="simpleMass">
         <subsetting>ISQ::mass</subsetting>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="totalMass" isDefault="true">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="totalMass" isDefault="true" valuePart="simpleMass">
         <subsetting>ISQ::mass</subsetting>
-        <valuePart>simpleMass</valuePart>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:PartUsage" declaredName="compositeThing">
@@ -17,9 +16,8 @@
         <typings>MassedThing</typings>
         <Multiplicity>*</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" isDefault="true">
+      <elements xsi:type="sysMLOC:AttributeUsage" isDefault="true" valuePart="simpleMass + sum(subcomponents.totalMass)">
         <redefinitions>totalMass</redefinitions>
-        <valuePart>simpleMass + sum(subcomponents.totalMass)</valuePart>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:PartUsage" declaredName="filteredMassThing">
@@ -27,9 +25,8 @@
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="minMass">
         <subsetting>ISQ::mass</subsetting>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="simpleMass + sum(subcomponents.totalMass.?{in p:>ISQ::mass; p >= minMass})">
         <redefinitions>totalMass</redefinitions>
-        <valuePart>simpleMass + sum(subcomponents.totalMass.?{in p:>ISQ::mass; p >= minMass})</valuePart>
       </elements>
     </elements>
   </elements>

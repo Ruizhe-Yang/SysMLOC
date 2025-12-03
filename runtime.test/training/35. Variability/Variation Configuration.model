@@ -4,24 +4,20 @@
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="'Variation Usages'" isNamespace="true"/>
     <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle4Cyl">
       <subsetting>vehicleFamily</subsetting>
-      <elements xsi:type="sysMLOC:PartUsage">
+      <elements xsi:type="sysMLOC:PartUsage" valuePart="engine::'4cylEngine'">
         <redefinitions>engine</redefinitions>
-        <valuePart>engine::'4cylEngine'</valuePart>
       </elements>
-      <elements xsi:type="sysMLOC:PartUsage">
+      <elements xsi:type="sysMLOC:PartUsage" valuePart="transmission::manualTransmission">
         <redefinitions>transmission</redefinitions>
-        <valuePart>transmission::manualTransmission</valuePart>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle6Cyl">
       <subsetting>vehicleFamily</subsetting>
-      <elements xsi:type="sysMLOC:PartUsage">
+      <elements xsi:type="sysMLOC:PartUsage" valuePart="engine::'6cylEngine'">
         <redefinitions>engine</redefinitions>
-        <valuePart>engine::'6cylEngine'</valuePart>
       </elements>
-      <elements xsi:type="sysMLOC:PartUsage">
+      <elements xsi:type="sysMLOC:PartUsage" valuePart="transmission::manualTransmission">
         <redefinitions>transmission</redefinitions>
-        <valuePart>transmission::manualTransmission</valuePart>
       </elements>
     </elements>
   </elements>

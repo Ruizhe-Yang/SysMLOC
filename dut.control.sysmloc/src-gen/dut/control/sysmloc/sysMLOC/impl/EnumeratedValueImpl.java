@@ -303,14 +303,24 @@ public class EnumeratedValueImpl extends EnumerationBodyElementImpl implements E
   protected boolean isDefault = IS_DEFAULT_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getValuePart() <em>Value Part</em>}' attribute list.
+   * The default value of the '{@link #getValuePart() <em>Value Part</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getValuePart()
    * @generated
    * @ordered
    */
-  protected EList<String> valuePart;
+  protected static final String VALUE_PART_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getValuePart() <em>Value Part</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getValuePart()
+   * @generated
+   * @ordered
+   */
+  protected String valuePart = VALUE_PART_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
@@ -654,13 +664,23 @@ public class EnumeratedValueImpl extends EnumerationBodyElementImpl implements E
    * @generated
    */
   @Override
-  public EList<String> getValuePart()
+  public String getValuePart()
   {
-    if (valuePart == null)
-    {
-      valuePart = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.ENUMERATED_VALUE__VALUE_PART);
-    }
     return valuePart;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setValuePart(String newValuePart)
+  {
+    String oldValuePart = valuePart;
+    valuePart = newValuePart;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ENUMERATED_VALUE__VALUE_PART, oldValuePart, valuePart));
   }
 
   /**
@@ -806,8 +826,7 @@ public class EnumeratedValueImpl extends EnumerationBodyElementImpl implements E
         setIsDefault((Boolean)newValue);
         return;
       case SysMLOCPackage.ENUMERATED_VALUE__VALUE_PART:
-        getValuePart().clear();
-        getValuePart().addAll((Collection<? extends String>)newValue);
+        setValuePart((String)newValue);
         return;
       case SysMLOCPackage.ENUMERATED_VALUE__ELEMENTS:
         getElements().clear();
@@ -873,7 +892,7 @@ public class EnumeratedValueImpl extends EnumerationBodyElementImpl implements E
         setIsDefault(IS_DEFAULT_EDEFAULT);
         return;
       case SysMLOCPackage.ENUMERATED_VALUE__VALUE_PART:
-        getValuePart().clear();
+        setValuePart(VALUE_PART_EDEFAULT);
         return;
       case SysMLOCPackage.ENUMERATED_VALUE__ELEMENTS:
         getElements().clear();
@@ -923,7 +942,7 @@ public class EnumeratedValueImpl extends EnumerationBodyElementImpl implements E
       case SysMLOCPackage.ENUMERATED_VALUE__IS_DEFAULT:
         return isDefault != IS_DEFAULT_EDEFAULT;
       case SysMLOCPackage.ENUMERATED_VALUE__VALUE_PART:
-        return valuePart != null && !valuePart.isEmpty();
+        return VALUE_PART_EDEFAULT == null ? valuePart != null : !VALUE_PART_EDEFAULT.equals(valuePart);
       case SysMLOCPackage.ENUMERATED_VALUE__ELEMENTS:
         return elements != null && !elements.isEmpty();
     }

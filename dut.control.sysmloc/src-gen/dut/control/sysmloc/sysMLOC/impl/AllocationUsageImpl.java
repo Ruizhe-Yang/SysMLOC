@@ -89,7 +89,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class AllocationUsageImpl extends StructureUsageElementImpl implements AllocationUsage
+public class AllocationUsageImpl extends StructureUsageElementsImpl implements AllocationUsage
 {
   /**
    * The default value of the '{@link #isIsThen() <em>Is Then</em>}' attribute.

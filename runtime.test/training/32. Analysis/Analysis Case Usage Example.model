@@ -9,44 +9,32 @@
         </elements>
         <elements xsi:type="sysMLOC:CodeAnnotation" body="// ...&#xD;&#xA;"/>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cityScenario">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cityScenario" valuePart="( )">
         <typings>WayPoint</typings>
         <Multiplicity>*</Multiplicity>
-        <valuePart>( )</valuePart>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="highwayScenario">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="highwayScenario" valuePart="( )">
         <typings>WayPoint</typings>
         <Multiplicity>*</Multiplicity>
-        <valuePart>( )</valuePart>
       </elements>
       <elements xsi:type="sysMLOC:AnalysisCaseUsage" declaredName="cityAnalysis">
         <typings>FuelEconomyAnalysis</typings>
-        <elements xsi:type="sysMLOC:SubjectUsage" declaredName="vehicle">
-          <valuePart>vehicle_c1</valuePart>
-        </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="scenario">
-          <valuePart>cityScenario</valuePart>
-        </elements>
+        <elements xsi:type="sysMLOC:SubjectUsage" declaredName="vehicle" valuePart="vehicle_c1"/>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="scenario" valuePart="cityScenario"/>
       </elements>
       <elements xsi:type="sysMLOC:AnalysisCaseUsage" declaredName="highwayAnalysis">
         <typings>FuelEconomyAnalysis</typings>
-        <elements xsi:type="sysMLOC:SubjectUsage" declaredName="vehicle">
-          <valuePart>vehicle_c1</valuePart>
-        </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="scenario">
-          <valuePart>highwayScenario</valuePart>
-        </elements>
+        <elements xsi:type="sysMLOC:SubjectUsage" declaredName="vehicle" valuePart="vehicle_c1"/>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="scenario" valuePart="highwayScenario"/>
       </elements>
       <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle_c1">
         <typings>Vehicle</typings>
         <elements xsi:type="sysMLOC:CodeAnnotation" body="// ...&#xD;&#xA;"/>
-        <elements xsi:type="sysMLOC:AttributeUsage">
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="cityAnalysis.fuelEconomyResult">
           <redefinitions>fuelEconomy_city</redefinitions>
-          <valuePart>cityAnalysis.fuelEconomyResult</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:AttributeUsage">
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="highwayAnalysis.fuelEconomyResult">
           <redefinitions>fuelEconomy_highway</redefinitions>
-          <valuePart>highwayAnalysis.fuelEconomyResult</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:SatisfyRequirementUsage" refElement="vehicleFuelEconomyRequirements" satisfactionParameter="vehicle_c1"/>

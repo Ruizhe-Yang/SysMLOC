@@ -22,32 +22,27 @@
     </elements>
     <elements xsi:type="sysMLOC:Package" declaredName="'Fundamental Physical Constants'">
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;     * Standard fundamental physical constants&#xA;&#x9;     * &#xA;&#x9;     * Physical constants have a standard measured attribute to a finite precision.&#xA;&#x9;     *&#xA;&#x9;     * The reference source is:&#xA;&#x9;     * CODATA - Task Group on Fundamental Physical Constants (TGFC) - 2018 CODATA recommended values&#xA;&#x9;     * See https://codata.org/initiatives/strategic-programme/fundamental-physical-constants/&#xA;&#x9;     * For the actual values see https://pml.nist.gov/cuu/Constants/ &#xA;&#x9;     */"/>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="'fine structure constant'">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="'fine structure constant'" valuePart="7.2973525693E-3[one]">
         <typings>DimensionOneValue</typings>
-        <valuePart>7.2973525693E-3[one]</valuePart>
       </elements>
       <elements xsi:type="sysMLOC:CodeAnnotation" body="// 2018 CODATA attribute 7.2973525693E-3;  uncertainty = 0.0000000011E-3&#xA;"/>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="'electron to proton mass ratio'">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="'electron to proton mass ratio'" valuePart="5.44617021487E-4[one]">
         <typings>DimensionOneValue</typings>
-        <valuePart>5.44617021487E-4[one]</valuePart>
       </elements>
       <elements xsi:type="sysMLOC:CodeAnnotation" body="// 2018 CODATA attribute 5.44617021487E-4; uncertainty = 0.00000000033E-4 &#xA;"/>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="'speed of light in vacuum'">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="'speed of light in vacuum'" valuePart="299792458[m/s]">
         <typings>SpeedValue</typings>
-        <valuePart>299792458[m/s]</valuePart>
       </elements>
       <elements xsi:type="sysMLOC:CodeAnnotation" body="// 2018 CODATA attribute 299792458 m s^-1; (exact)&#xA;"/>
     </elements>
     <elements xsi:type="sysMLOC:Package" declaredName="'Global Context'">
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="'nominal earth gravitational acceleration'">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="'nominal earth gravitational acceleration'" valuePart="9.80665['m/s&#xb2;']">
         <typings>AccelerationValue</typings>
-        <valuePart>9.80665['m/s&#xb2;']</valuePart>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:Package" declaredName="'Model X Context'">
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="'amplifier gain'">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="'amplifier gain'" valuePart="3.5[one]">
         <typings>DimensionOneValue</typings>
-        <valuePart>3.5[one]</valuePart>
       </elements>
     </elements>
   </elements>

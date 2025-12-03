@@ -132,20 +132,20 @@ ruleGeneralBodyElements returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getGeneralBodyElementsAccess().getDefinitionElementParserRuleCall_2());
+			newCompositeNode(grammarAccess.getGeneralBodyElementsAccess().getDefinitionElementsParserRuleCall_2());
 		}
-		this_DefinitionElement_2=ruleDefinitionElement
+		this_DefinitionElements_2=ruleDefinitionElements
 		{
-			$current = $this_DefinitionElement_2.current;
+			$current = $this_DefinitionElements_2.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getGeneralBodyElementsAccess().getUsageElementParserRuleCall_3());
+			newCompositeNode(grammarAccess.getGeneralBodyElementsAccess().getUsageElementsParserRuleCall_3());
 		}
-		this_UsageElement_3=ruleUsageElement
+		this_UsageElements_3=ruleUsageElements
 		{
-			$current = $this_UsageElement_3.current;
+			$current = $this_UsageElements_3.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
@@ -782,15 +782,15 @@ ruleAnnotatingElement returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleDefinitionElement
-entryRuleDefinitionElement returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getDefinitionElementRule()); }
-	iv_ruleDefinitionElement=ruleDefinitionElement
-	{ $current=$iv_ruleDefinitionElement.current; }
+// Entry rule entryRuleDefinitionElements
+entryRuleDefinitionElements returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getDefinitionElementsRule()); }
+	iv_ruleDefinitionElements=ruleDefinitionElements
+	{ $current=$iv_ruleDefinitionElements.current; }
 	EOF;
 
-// Rule DefinitionElement
-ruleDefinitionElement returns [EObject current=null]
+// Rule DefinitionElements
+ruleDefinitionElements returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -799,7 +799,7 @@ ruleDefinitionElement returns [EObject current=null]
 }:
 	(
 		{
-			newCompositeNode(grammarAccess.getDefinitionElementAccess().getPackageParserRuleCall_0());
+			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getPackageParserRuleCall_0());
 		}
 		this_Package_0=rulePackage
 		{
@@ -808,7 +808,7 @@ ruleDefinitionElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getDefinitionElementAccess().getLibraryPackageParserRuleCall_1());
+			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getLibraryPackageParserRuleCall_1());
 		}
 		this_LibraryPackage_1=ruleLibraryPackage
 		{
@@ -817,7 +817,7 @@ ruleDefinitionElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getDefinitionElementAccess().getDependencyParserRuleCall_2());
+			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getDependencyParserRuleCall_2());
 		}
 		this_Dependency_2=ruleDependency
 		{
@@ -826,7 +826,7 @@ ruleDefinitionElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getDefinitionElementAccess().getAttributeDefinitionParserRuleCall_3());
+			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getAttributeDefinitionParserRuleCall_3());
 		}
 		this_AttributeDefinition_3=ruleAttributeDefinition
 		{
@@ -835,7 +835,7 @@ ruleDefinitionElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getDefinitionElementAccess().getEnumerationDefinitionParserRuleCall_4());
+			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getEnumerationDefinitionParserRuleCall_4());
 		}
 		this_EnumerationDefinition_4=ruleEnumerationDefinition
 		{
@@ -844,7 +844,7 @@ ruleDefinitionElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getDefinitionElementAccess().getOccurrenceDefinitionParserRuleCall_5());
+			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getOccurrenceDefinitionParserRuleCall_5());
 		}
 		this_OccurrenceDefinition_5=ruleOccurrenceDefinition
 		{
@@ -853,7 +853,7 @@ ruleDefinitionElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getDefinitionElementAccess().getIndividualDefinitionParserRuleCall_6());
+			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getIndividualDefinitionParserRuleCall_6());
 		}
 		this_IndividualDefinition_6=ruleIndividualDefinition
 		{
@@ -862,7 +862,7 @@ ruleDefinitionElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getDefinitionElementAccess().getItemDefinitionParserRuleCall_7());
+			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getItemDefinitionParserRuleCall_7());
 		}
 		this_ItemDefinition_7=ruleItemDefinition
 		{
@@ -871,7 +871,7 @@ ruleDefinitionElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getDefinitionElementAccess().getMetadataDefinitionParserRuleCall_8());
+			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getMetadataDefinitionParserRuleCall_8());
 		}
 		this_MetadataDefinition_8=ruleMetadataDefinition
 		{
@@ -880,7 +880,7 @@ ruleDefinitionElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getDefinitionElementAccess().getPartDefinitionParserRuleCall_9());
+			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getPartDefinitionParserRuleCall_9());
 		}
 		this_PartDefinition_9=rulePartDefinition
 		{
@@ -889,7 +889,7 @@ ruleDefinitionElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getDefinitionElementAccess().getConnectionDefinitionParserRuleCall_10());
+			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getConnectionDefinitionParserRuleCall_10());
 		}
 		this_ConnectionDefinition_10=ruleConnectionDefinition
 		{
@@ -898,7 +898,7 @@ ruleDefinitionElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getDefinitionElementAccess().getFlowDefinitionParserRuleCall_11());
+			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getFlowDefinitionParserRuleCall_11());
 		}
 		this_FlowDefinition_11=ruleFlowDefinition
 		{
@@ -907,7 +907,7 @@ ruleDefinitionElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getDefinitionElementAccess().getInterfaceDefinitionParserRuleCall_12());
+			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getInterfaceDefinitionParserRuleCall_12());
 		}
 		this_InterfaceDefinition_12=ruleInterfaceDefinition
 		{
@@ -916,7 +916,7 @@ ruleDefinitionElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getDefinitionElementAccess().getAllocationDefinitionParserRuleCall_13());
+			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getAllocationDefinitionParserRuleCall_13());
 		}
 		this_AllocationDefinition_13=ruleAllocationDefinition
 		{
@@ -925,7 +925,7 @@ ruleDefinitionElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getDefinitionElementAccess().getPortDefinitionParserRuleCall_14());
+			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getPortDefinitionParserRuleCall_14());
 		}
 		this_PortDefinition_14=rulePortDefinition
 		{
@@ -934,7 +934,7 @@ ruleDefinitionElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getDefinitionElementAccess().getActionDefinitionParserRuleCall_15());
+			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getActionDefinitionParserRuleCall_15());
 		}
 		this_ActionDefinition_15=ruleActionDefinition
 		{
@@ -943,7 +943,7 @@ ruleDefinitionElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getDefinitionElementAccess().getCalculationDefinitionParserRuleCall_16());
+			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getCalculationDefinitionParserRuleCall_16());
 		}
 		this_CalculationDefinition_16=ruleCalculationDefinition
 		{
@@ -952,7 +952,7 @@ ruleDefinitionElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getDefinitionElementAccess().getStateDefinitionParserRuleCall_17());
+			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getStateDefinitionParserRuleCall_17());
 		}
 		this_StateDefinition_17=ruleStateDefinition
 		{
@@ -961,7 +961,7 @@ ruleDefinitionElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getDefinitionElementAccess().getConstraintDefinitionParserRuleCall_18());
+			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getConstraintDefinitionParserRuleCall_18());
 		}
 		this_ConstraintDefinition_18=ruleConstraintDefinition
 		{
@@ -970,7 +970,7 @@ ruleDefinitionElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getDefinitionElementAccess().getRequirementDefinitionParserRuleCall_19());
+			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getRequirementDefinitionParserRuleCall_19());
 		}
 		this_RequirementDefinition_19=ruleRequirementDefinition
 		{
@@ -979,7 +979,7 @@ ruleDefinitionElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getDefinitionElementAccess().getConcernDefinitionParserRuleCall_20());
+			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getConcernDefinitionParserRuleCall_20());
 		}
 		this_ConcernDefinition_20=ruleConcernDefinition
 		{
@@ -988,7 +988,7 @@ ruleDefinitionElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getDefinitionElementAccess().getCaseDefinitionParserRuleCall_21());
+			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getCaseDefinitionParserRuleCall_21());
 		}
 		this_CaseDefinition_21=ruleCaseDefinition
 		{
@@ -997,7 +997,7 @@ ruleDefinitionElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getDefinitionElementAccess().getAnalysisCaseDefinitionParserRuleCall_22());
+			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getAnalysisCaseDefinitionParserRuleCall_22());
 		}
 		this_AnalysisCaseDefinition_22=ruleAnalysisCaseDefinition
 		{
@@ -1006,7 +1006,7 @@ ruleDefinitionElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getDefinitionElementAccess().getVerificationCaseDefinitionParserRuleCall_23());
+			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getVerificationCaseDefinitionParserRuleCall_23());
 		}
 		this_VerificationCaseDefinition_23=ruleVerificationCaseDefinition
 		{
@@ -1015,7 +1015,7 @@ ruleDefinitionElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getDefinitionElementAccess().getUseCaseDefinitionParserRuleCall_24());
+			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getUseCaseDefinitionParserRuleCall_24());
 		}
 		this_UseCaseDefinition_24=ruleUseCaseDefinition
 		{
@@ -1024,7 +1024,7 @@ ruleDefinitionElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getDefinitionElementAccess().getViewDefinitionParserRuleCall_25());
+			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getViewDefinitionParserRuleCall_25());
 		}
 		this_ViewDefinition_25=ruleViewDefinition
 		{
@@ -1033,7 +1033,7 @@ ruleDefinitionElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getDefinitionElementAccess().getViewpointDefinitionParserRuleCall_26());
+			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getViewpointDefinitionParserRuleCall_26());
 		}
 		this_ViewpointDefinition_26=ruleViewpointDefinition
 		{
@@ -1042,7 +1042,7 @@ ruleDefinitionElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getDefinitionElementAccess().getRenderingDefinitionParserRuleCall_27());
+			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getRenderingDefinitionParserRuleCall_27());
 		}
 		this_RenderingDefinition_27=ruleRenderingDefinition
 		{
@@ -1051,7 +1051,7 @@ ruleDefinitionElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getDefinitionElementAccess().getExtendedDefinitionParserRuleCall_28());
+			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getExtendedDefinitionParserRuleCall_28());
 		}
 		this_ExtendedDefinition_28=ruleExtendedDefinition
 		{
@@ -1061,15 +1061,15 @@ ruleDefinitionElement returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleUsageElement
-entryRuleUsageElement returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getUsageElementRule()); }
-	iv_ruleUsageElement=ruleUsageElement
-	{ $current=$iv_ruleUsageElement.current; }
+// Entry rule entryRuleUsageElements
+entryRuleUsageElements returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getUsageElementsRule()); }
+	iv_ruleUsageElements=ruleUsageElements
+	{ $current=$iv_ruleUsageElements.current; }
 	EOF;
 
-// Rule UsageElement
-ruleUsageElement returns [EObject current=null]
+// Rule UsageElements
+ruleUsageElements returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -1078,7 +1078,7 @@ ruleUsageElement returns [EObject current=null]
 }:
 	(
 		{
-			newCompositeNode(grammarAccess.getUsageElementAccess().getNonOccurrenceUsageElementParserRuleCall_0());
+			newCompositeNode(grammarAccess.getUsageElementsAccess().getNonOccurrenceUsageElementParserRuleCall_0());
 		}
 		this_NonOccurrenceUsageElement_0=ruleNonOccurrenceUsageElement
 		{
@@ -1087,7 +1087,7 @@ ruleUsageElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getUsageElementAccess().getOccurrenceUsageElementParserRuleCall_1());
+			newCompositeNode(grammarAccess.getUsageElementsAccess().getOccurrenceUsageElementParserRuleCall_1());
 		}
 		this_OccurrenceUsageElement_1=ruleOccurrenceUsageElement
 		{
@@ -1195,34 +1195,34 @@ ruleOccurrenceUsageElement returns [EObject current=null]
 }:
 	(
 		{
-			newCompositeNode(grammarAccess.getOccurrenceUsageElementAccess().getStructureUsageElementParserRuleCall_0());
+			newCompositeNode(grammarAccess.getOccurrenceUsageElementAccess().getStructureUsageElementsParserRuleCall_0());
 		}
-		this_StructureUsageElement_0=ruleStructureUsageElement
+		this_StructureUsageElements_0=ruleStructureUsageElements
 		{
-			$current = $this_StructureUsageElement_0.current;
+			$current = $this_StructureUsageElements_0.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getOccurrenceUsageElementAccess().getBehaviorUsageElementParserRuleCall_1());
+			newCompositeNode(grammarAccess.getOccurrenceUsageElementAccess().getBehaviorUsageElementsParserRuleCall_1());
 		}
-		this_BehaviorUsageElement_1=ruleBehaviorUsageElement
+		this_BehaviorUsageElements_1=ruleBehaviorUsageElements
 		{
-			$current = $this_BehaviorUsageElement_1.current;
+			$current = $this_BehaviorUsageElements_1.current;
 			afterParserOrEnumRuleCall();
 		}
 	)
 ;
 
-// Entry rule entryRuleStructureUsageElement
-entryRuleStructureUsageElement returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getStructureUsageElementRule()); }
-	iv_ruleStructureUsageElement=ruleStructureUsageElement
-	{ $current=$iv_ruleStructureUsageElement.current; }
+// Entry rule entryRuleStructureUsageElements
+entryRuleStructureUsageElements returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getStructureUsageElementsRule()); }
+	iv_ruleStructureUsageElements=ruleStructureUsageElements
+	{ $current=$iv_ruleStructureUsageElements.current; }
 	EOF;
 
-// Rule StructureUsageElement
-ruleStructureUsageElement returns [EObject current=null]
+// Rule StructureUsageElements
+ruleStructureUsageElements returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -1231,7 +1231,7 @@ ruleStructureUsageElement returns [EObject current=null]
 }:
 	(
 		{
-			newCompositeNode(grammarAccess.getStructureUsageElementAccess().getOccurrenceUsageParserRuleCall_0());
+			newCompositeNode(grammarAccess.getStructureUsageElementsAccess().getOccurrenceUsageParserRuleCall_0());
 		}
 		this_OccurrenceUsage_0=ruleOccurrenceUsage
 		{
@@ -1240,7 +1240,7 @@ ruleStructureUsageElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getStructureUsageElementAccess().getIndividualUsageParserRuleCall_1());
+			newCompositeNode(grammarAccess.getStructureUsageElementsAccess().getIndividualUsageParserRuleCall_1());
 		}
 		this_IndividualUsage_1=ruleIndividualUsage
 		{
@@ -1249,7 +1249,7 @@ ruleStructureUsageElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getStructureUsageElementAccess().getPortionUsageParserRuleCall_2());
+			newCompositeNode(grammarAccess.getStructureUsageElementsAccess().getPortionUsageParserRuleCall_2());
 		}
 		this_PortionUsage_2=rulePortionUsage
 		{
@@ -1258,7 +1258,7 @@ ruleStructureUsageElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getStructureUsageElementAccess().getEventOccurrenceUsageParserRuleCall_3());
+			newCompositeNode(grammarAccess.getStructureUsageElementsAccess().getEventOccurrenceUsageParserRuleCall_3());
 		}
 		this_EventOccurrenceUsage_3=ruleEventOccurrenceUsage
 		{
@@ -1267,7 +1267,7 @@ ruleStructureUsageElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getStructureUsageElementAccess().getItemUsageParserRuleCall_4());
+			newCompositeNode(grammarAccess.getStructureUsageElementsAccess().getItemUsageParserRuleCall_4());
 		}
 		this_ItemUsage_4=ruleItemUsage
 		{
@@ -1276,7 +1276,7 @@ ruleStructureUsageElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getStructureUsageElementAccess().getPartUsageParserRuleCall_5());
+			newCompositeNode(grammarAccess.getStructureUsageElementsAccess().getPartUsageParserRuleCall_5());
 		}
 		this_PartUsage_5=rulePartUsage
 		{
@@ -1285,7 +1285,7 @@ ruleStructureUsageElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getStructureUsageElementAccess().getViewUsageParserRuleCall_6());
+			newCompositeNode(grammarAccess.getStructureUsageElementsAccess().getViewUsageParserRuleCall_6());
 		}
 		this_ViewUsage_6=ruleViewUsage
 		{
@@ -1294,7 +1294,7 @@ ruleStructureUsageElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getStructureUsageElementAccess().getRenderingUsageParserRuleCall_7());
+			newCompositeNode(grammarAccess.getStructureUsageElementsAccess().getRenderingUsageParserRuleCall_7());
 		}
 		this_RenderingUsage_7=ruleRenderingUsage
 		{
@@ -1303,7 +1303,7 @@ ruleStructureUsageElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getStructureUsageElementAccess().getPortUsageParserRuleCall_8());
+			newCompositeNode(grammarAccess.getStructureUsageElementsAccess().getPortUsageParserRuleCall_8());
 		}
 		this_PortUsage_8=rulePortUsage
 		{
@@ -1312,7 +1312,7 @@ ruleStructureUsageElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getStructureUsageElementAccess().getConnectionUsageParserRuleCall_9());
+			newCompositeNode(grammarAccess.getStructureUsageElementsAccess().getConnectionUsageParserRuleCall_9());
 		}
 		this_ConnectionUsage_9=ruleConnectionUsage
 		{
@@ -1321,7 +1321,7 @@ ruleStructureUsageElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getStructureUsageElementAccess().getInterfaceUsageParserRuleCall_10());
+			newCompositeNode(grammarAccess.getStructureUsageElementsAccess().getInterfaceUsageParserRuleCall_10());
 		}
 		this_InterfaceUsage_10=ruleInterfaceUsage
 		{
@@ -1330,7 +1330,7 @@ ruleStructureUsageElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getStructureUsageElementAccess().getAllocationUsageParserRuleCall_11());
+			newCompositeNode(grammarAccess.getStructureUsageElementsAccess().getAllocationUsageParserRuleCall_11());
 		}
 		this_AllocationUsage_11=ruleAllocationUsage
 		{
@@ -1339,7 +1339,7 @@ ruleStructureUsageElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getStructureUsageElementAccess().getMessageParserRuleCall_12());
+			newCompositeNode(grammarAccess.getStructureUsageElementsAccess().getMessageParserRuleCall_12());
 		}
 		this_Message_12=ruleMessage
 		{
@@ -1348,7 +1348,7 @@ ruleStructureUsageElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getStructureUsageElementAccess().getFlowUsageParserRuleCall_13());
+			newCompositeNode(grammarAccess.getStructureUsageElementsAccess().getFlowUsageParserRuleCall_13());
 		}
 		this_FlowUsage_13=ruleFlowUsage
 		{
@@ -1357,7 +1357,7 @@ ruleStructureUsageElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getStructureUsageElementAccess().getSuccessionFlowUsageParserRuleCall_14());
+			newCompositeNode(grammarAccess.getStructureUsageElementsAccess().getSuccessionFlowUsageParserRuleCall_14());
 		}
 		this_SuccessionFlowUsage_14=ruleSuccessionFlowUsage
 		{
@@ -1367,15 +1367,15 @@ ruleStructureUsageElement returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleBehaviorUsageElement
-entryRuleBehaviorUsageElement returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getBehaviorUsageElementRule()); }
-	iv_ruleBehaviorUsageElement=ruleBehaviorUsageElement
-	{ $current=$iv_ruleBehaviorUsageElement.current; }
+// Entry rule entryRuleBehaviorUsageElements
+entryRuleBehaviorUsageElements returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getBehaviorUsageElementsRule()); }
+	iv_ruleBehaviorUsageElements=ruleBehaviorUsageElements
+	{ $current=$iv_ruleBehaviorUsageElements.current; }
 	EOF;
 
-// Rule BehaviorUsageElement
-ruleBehaviorUsageElement returns [EObject current=null]
+// Rule BehaviorUsageElements
+ruleBehaviorUsageElements returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -1384,7 +1384,7 @@ ruleBehaviorUsageElement returns [EObject current=null]
 }:
 	(
 		{
-			newCompositeNode(grammarAccess.getBehaviorUsageElementAccess().getActionUsageParserRuleCall_0());
+			newCompositeNode(grammarAccess.getBehaviorUsageElementsAccess().getActionUsageParserRuleCall_0());
 		}
 		this_ActionUsage_0=ruleActionUsage
 		{
@@ -1393,7 +1393,7 @@ ruleBehaviorUsageElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getBehaviorUsageElementAccess().getCalculationUsageParserRuleCall_1());
+			newCompositeNode(grammarAccess.getBehaviorUsageElementsAccess().getCalculationUsageParserRuleCall_1());
 		}
 		this_CalculationUsage_1=ruleCalculationUsage
 		{
@@ -1402,7 +1402,7 @@ ruleBehaviorUsageElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getBehaviorUsageElementAccess().getStateUsageParserRuleCall_2());
+			newCompositeNode(grammarAccess.getBehaviorUsageElementsAccess().getStateUsageParserRuleCall_2());
 		}
 		this_StateUsage_2=ruleStateUsage
 		{
@@ -1411,7 +1411,7 @@ ruleBehaviorUsageElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getBehaviorUsageElementAccess().getConstraintUsageParserRuleCall_3());
+			newCompositeNode(grammarAccess.getBehaviorUsageElementsAccess().getConstraintUsageParserRuleCall_3());
 		}
 		this_ConstraintUsage_3=ruleConstraintUsage
 		{
@@ -1420,7 +1420,7 @@ ruleBehaviorUsageElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getBehaviorUsageElementAccess().getRequirementUsageParserRuleCall_4());
+			newCompositeNode(grammarAccess.getBehaviorUsageElementsAccess().getRequirementUsageParserRuleCall_4());
 		}
 		this_RequirementUsage_4=ruleRequirementUsage
 		{
@@ -1429,7 +1429,7 @@ ruleBehaviorUsageElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getBehaviorUsageElementAccess().getConcernUsageParserRuleCall_5());
+			newCompositeNode(grammarAccess.getBehaviorUsageElementsAccess().getConcernUsageParserRuleCall_5());
 		}
 		this_ConcernUsage_5=ruleConcernUsage
 		{
@@ -1438,7 +1438,7 @@ ruleBehaviorUsageElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getBehaviorUsageElementAccess().getCaseUsageParserRuleCall_6());
+			newCompositeNode(grammarAccess.getBehaviorUsageElementsAccess().getCaseUsageParserRuleCall_6());
 		}
 		this_CaseUsage_6=ruleCaseUsage
 		{
@@ -1447,7 +1447,7 @@ ruleBehaviorUsageElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getBehaviorUsageElementAccess().getAnalysisCaseUsageParserRuleCall_7());
+			newCompositeNode(grammarAccess.getBehaviorUsageElementsAccess().getAnalysisCaseUsageParserRuleCall_7());
 		}
 		this_AnalysisCaseUsage_7=ruleAnalysisCaseUsage
 		{
@@ -1456,7 +1456,7 @@ ruleBehaviorUsageElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getBehaviorUsageElementAccess().getVerificationCaseUsageParserRuleCall_8());
+			newCompositeNode(grammarAccess.getBehaviorUsageElementsAccess().getVerificationCaseUsageParserRuleCall_8());
 		}
 		this_VerificationCaseUsage_8=ruleVerificationCaseUsage
 		{
@@ -1465,7 +1465,7 @@ ruleBehaviorUsageElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getBehaviorUsageElementAccess().getUseCaseUsageParserRuleCall_9());
+			newCompositeNode(grammarAccess.getBehaviorUsageElementsAccess().getUseCaseUsageParserRuleCall_9());
 		}
 		this_UseCaseUsage_9=ruleUseCaseUsage
 		{
@@ -1474,7 +1474,7 @@ ruleBehaviorUsageElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getBehaviorUsageElementAccess().getViewpointUsageParserRuleCall_10());
+			newCompositeNode(grammarAccess.getBehaviorUsageElementsAccess().getViewpointUsageParserRuleCall_10());
 		}
 		this_ViewpointUsage_10=ruleViewpointUsage
 		{
@@ -1483,7 +1483,7 @@ ruleBehaviorUsageElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getBehaviorUsageElementAccess().getPerformActionUsageParserRuleCall_11());
+			newCompositeNode(grammarAccess.getBehaviorUsageElementsAccess().getPerformActionUsageParserRuleCall_11());
 		}
 		this_PerformActionUsage_11=rulePerformActionUsage
 		{
@@ -1492,7 +1492,7 @@ ruleBehaviorUsageElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getBehaviorUsageElementAccess().getExhibitStateUsageParserRuleCall_12());
+			newCompositeNode(grammarAccess.getBehaviorUsageElementsAccess().getExhibitStateUsageParserRuleCall_12());
 		}
 		this_ExhibitStateUsage_12=ruleExhibitStateUsage
 		{
@@ -1501,7 +1501,7 @@ ruleBehaviorUsageElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getBehaviorUsageElementAccess().getIncludeUseCaseUsageParserRuleCall_13());
+			newCompositeNode(grammarAccess.getBehaviorUsageElementsAccess().getIncludeUseCaseUsageParserRuleCall_13());
 		}
 		this_IncludeUseCaseUsage_13=ruleIncludeUseCaseUsage
 		{
@@ -1510,7 +1510,7 @@ ruleBehaviorUsageElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getBehaviorUsageElementAccess().getAssertConstraintUsageParserRuleCall_14());
+			newCompositeNode(grammarAccess.getBehaviorUsageElementsAccess().getAssertConstraintUsageParserRuleCall_14());
 		}
 		this_AssertConstraintUsage_14=ruleAssertConstraintUsage
 		{
@@ -1519,7 +1519,7 @@ ruleBehaviorUsageElement returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getBehaviorUsageElementAccess().getSatisfyRequirementUsageParserRuleCall_15());
+			newCompositeNode(grammarAccess.getBehaviorUsageElementsAccess().getSatisfyRequirementUsageParserRuleCall_15());
 		}
 		this_SatisfyRequirementUsage_15=ruleSatisfyRequirementUsage
 		{
@@ -16113,7 +16113,7 @@ ruleFeatureValue[EObject in_current]  returns [EObject current=in_current]
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getFeatureValueRule());
 					}
-					add(
+					set(
 						$current,
 						"valuePart",
 						lv_valuePart_5_0,

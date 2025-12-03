@@ -54,7 +54,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class StateDefinitionImpl extends DefinitionElementImpl implements StateDefinition
+public class StateDefinitionImpl extends DefinitionElementsImpl implements StateDefinition
 {
   /**
    * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.

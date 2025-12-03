@@ -28,9 +28,8 @@
       <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="a">
         <typings>AccelerationValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="v_avg">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="v_avg" valuePart="(v_i + v_f)/2">
         <typings>SpeedValue</typings>
-        <valuePart>(v_i + v_f)/2</valuePart>
       </elements>
       <resultExpressionParameter resultExpression="a == Acceleration(p, m, v_avg) and v_f == Velocity(dt, v_i, a) and x_f == Position(dt, x_i, v_avg)"/>
     </elements>
@@ -61,30 +60,14 @@
       </elements>
       <elements xsi:type="sysMLOC:AssertConstraintUsage" declaredName="dynamics">
         <typings>StraightLineDynamicsEquations</typings>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="p">
-          <valuePart>power</valuePart>
-        </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="m">
-          <valuePart>mass</valuePart>
-        </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="dt">
-          <valuePart>delta_t</valuePart>
-        </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x_i">
-          <valuePart>x_in</valuePart>
-        </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="v_i">
-          <valuePart>v_in</valuePart>
-        </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x_f">
-          <valuePart>x_out</valuePart>
-        </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="v_f">
-          <valuePart>v_out</valuePart>
-        </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="a">
-          <valuePart>a_out</valuePart>
-        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="p" valuePart="power"/>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="m" valuePart="mass"/>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="dt" valuePart="delta_t"/>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x_i" valuePart="x_in"/>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="v_i" valuePart="v_in"/>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x_f" valuePart="x_out"/>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="v_f" valuePart="v_out"/>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="a" valuePart="a_out"/>
       </elements>
     </elements>
   </elements>

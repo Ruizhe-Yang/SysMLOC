@@ -53,7 +53,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class ViewpointDefinitionImpl extends DefinitionElementImpl implements ViewpointDefinition
+public class ViewpointDefinitionImpl extends DefinitionElementsImpl implements ViewpointDefinition
 {
   /**
    * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.

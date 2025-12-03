@@ -51,9 +51,8 @@
         <typings>Real</typings>
         <redefinitions>elements</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="4">
         <redefinitions>dimensions</redefinitions>
-        <valuePart>4</valuePart>
       </elements>
     </elements>
   </elements>

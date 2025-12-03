@@ -35,22 +35,19 @@
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="SI" isNamespace="true"/>
     <elements xsi:type="sysMLOC:PartUsage" declaredName="c">
       <subsetting>car</subsetting>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1000 [kg]">
         <redefinitions>mass</redefinitions>
-        <valuePart>1000 [kg]</valuePart>
       </elements>
       <elements xsi:type="sysMLOC:PartUsage">
         <redefinitions>engine</redefinitions>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="100 [kg]">
           <redefinitions>mass</redefinitions>
-          <valuePart>100 [kg]</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:PartUsage">
         <redefinitions>transmission</redefinitions>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="50 [kg]">
           <redefinitions>mass</redefinitions>
-          <valuePart>50 [kg]</valuePart>
         </elements>
       </elements>
     </elements>

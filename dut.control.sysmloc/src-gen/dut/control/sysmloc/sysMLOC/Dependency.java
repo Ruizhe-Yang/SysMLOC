@@ -23,7 +23,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Dependency extends DefinitionElement, PrefixMetadata, Identification
+public interface Dependency extends DefinitionElements, PrefixMetadata, Identification
 {
   /**
    * Returns the value of the '<em><b>Client</b></em>' attribute list.

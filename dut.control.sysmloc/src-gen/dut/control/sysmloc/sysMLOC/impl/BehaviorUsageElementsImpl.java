@@ -3,26 +3,26 @@
  */
 package dut.control.sysmloc.sysMLOC.impl;
 
-import dut.control.sysmloc.sysMLOC.StructureUsageElement;
+import dut.control.sysmloc.sysMLOC.BehaviorUsageElements;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Structure Usage Element</b></em>'.
+ * An implementation of the model object '<em><b>Behavior Usage Elements</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class StructureUsageElementImpl extends OccurrenceUsageElementImpl implements StructureUsageElement
+public class BehaviorUsageElementsImpl extends OccurrenceUsageElementImpl implements BehaviorUsageElements
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected StructureUsageElementImpl()
+  protected BehaviorUsageElementsImpl()
   {
     super();
   }
@@ -35,7 +35,7 @@ public class StructureUsageElementImpl extends OccurrenceUsageElementImpl implem
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.eINSTANCE.getStructureUsageElement();
+    return SysMLOCPackage.eINSTANCE.getBehaviorUsageElements();
   }
 
-} //StructureUsageElementImpl
+} //BehaviorUsageElementsImpl

@@ -62,9 +62,8 @@
     </elements>
     <elements xsi:type="sysMLOC:AnalysisCaseUsage" declaredName="engineTradeStudy">
       <typings>TradeStudy</typings>
-      <elements xsi:type="sysMLOC:SubjectUsage">
+      <elements xsi:type="sysMLOC:SubjectUsage" valuePart="(engine4cyl, engine6cyl)">
         <typings>Engine</typings>
-        <valuePart>(engine4cyl, engine6cyl)</valuePart>
       </elements>
       <elements xsi:type="sysMLOC:ObjectiveRequirementUsage">
         <typings>MaximizeObjective</typings>
@@ -77,36 +76,27 @@
         </elements>
         <elements xsi:type="sysMLOC:CalculationUsage" declaredName="powerRollup">
           <typings>PowerRollup</typings>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="engine">
-            <valuePart>anEngine</valuePart>
-          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="engine" valuePart="anEngine"/>
           <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="power"/>
         </elements>
         <elements xsi:type="sysMLOC:CalculationUsage" declaredName="massRollup">
           <typings>MassRollup</typings>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="engine">
-            <valuePart>anEngine</valuePart>
-          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="engine" valuePart="anEngine"/>
           <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="mass"/>
         </elements>
         <elements xsi:type="sysMLOC:CalculationUsage" declaredName="efficiencyRollup">
           <typings>EfficiencyRollup</typings>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="engine">
-            <valuePart>anEngine</valuePart>
-          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="engine" valuePart="anEngine"/>
           <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="efficiency"/>
         </elements>
         <elements xsi:type="sysMLOC:CalculationUsage" declaredName="costRollup">
           <typings>CostRollup</typings>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="engine">
-            <valuePart>anEngine</valuePart>
-          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="engine" valuePart="anEngine"/>
           <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="cost"/>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" valuePart="EngineEvaluation( powerRollup.power, massRollup.mass, efficiencyRollup.efficiency, costRollup.cost )">
           <typings>Real</typings>
           <redefinitions>result</redefinitions>
-          <valuePart>EngineEvaluation( powerRollup.power, massRollup.mass, efficiencyRollup.efficiency, costRollup.cost )</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:PartUsage" isReturn="true">

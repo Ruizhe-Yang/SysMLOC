@@ -55,7 +55,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class CaseDefinitionImpl extends DefinitionElementImpl implements CaseDefinition
+public class CaseDefinitionImpl extends DefinitionElementsImpl implements CaseDefinition
 {
   /**
    * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.

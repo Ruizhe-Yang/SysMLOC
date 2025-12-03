@@ -14,6 +14,6 @@ package dut.control.sysmloc.sysMLOC;
  * @model
  * @generated
  */
-public interface OccurrenceUsageElement extends UsageElement
+public interface OccurrenceUsageElement extends UsageElements
 {
 } // OccurrenceUsageElement

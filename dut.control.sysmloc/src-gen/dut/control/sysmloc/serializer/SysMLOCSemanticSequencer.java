@@ -169,7 +169,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 						|| rule == grammarAccess.getCaseBodyElementRule()
 						|| rule == grammarAccess.getViewDefinitionBodyElementRule()
 						|| rule == grammarAccess.getViewBodyElementRule()
-						|| rule == grammarAccess.getDefinitionElementRule()) {
+						|| rule == grammarAccess.getDefinitionElementsRule()) {
 					sequence_ActionDefinition_BasicDefinitionPrefix_DefinitionDeclaration_Identification_MemberPrefix_OccurrenceDefinitionPrefix_PrefixMetadata(context, (ActionDefinition) semanticObject); 
 					return; 
 				}
@@ -203,7 +203,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 						|| rule == grammarAccess.getCaseBodyElementRule()
 						|| rule == grammarAccess.getViewDefinitionBodyElementRule()
 						|| rule == grammarAccess.getViewBodyElementRule()
-						|| rule == grammarAccess.getDefinitionElementRule()) {
+						|| rule == grammarAccess.getDefinitionElementsRule()) {
 					sequence_AllocationDefinition_BasicDefinitionPrefix_DefinitionDeclaration_Identification_MemberPrefix_OccurrenceDefinitionPrefix_PrefixMetadata(context, (AllocationDefinition) semanticObject); 
 					return; 
 				}
@@ -228,7 +228,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 						|| rule == grammarAccess.getCaseBodyElementRule()
 						|| rule == grammarAccess.getViewDefinitionBodyElementRule()
 						|| rule == grammarAccess.getViewBodyElementRule()
-						|| rule == grammarAccess.getDefinitionElementRule()) {
+						|| rule == grammarAccess.getDefinitionElementsRule()) {
 					sequence_AnalysisCaseDefinition_BasicDefinitionPrefix_DefinitionDeclaration_Identification_MemberPrefix_OccurrenceDefinitionPrefix_PrefixMetadata(context, (AnalysisCaseDefinition) semanticObject); 
 					return; 
 				}
@@ -256,9 +256,9 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 					sequence_AssertConstraintUsage_BasicDefinitionPrefix_BasicUsagePrefix_CrossFeatureChain_EmptySuccessionPrefix_FeatureValue_Identification_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_PrefixMetadata_RedefinitionFeatureChain_RefPrefix_ReferenceFeatureChain_ReferenceSubsetting_SubsettingFeatureChain_TypingFeatureTyping_isReturnPrefix(context, (AssertConstraintUsage) semanticObject); 
 					return; 
 				}
-				else if (rule == grammarAccess.getUsageElementRule()
+				else if (rule == grammarAccess.getUsageElementsRule()
 						|| rule == grammarAccess.getOccurrenceUsageElementRule()
-						|| rule == grammarAccess.getBehaviorUsageElementRule()
+						|| rule == grammarAccess.getBehaviorUsageElementsRule()
 						|| rule == grammarAccess.getAssertConstraintUsageRule()) {
 					sequence_AssertConstraintUsage_BasicDefinitionPrefix_BasicUsagePrefix_CrossFeatureChain_EmptySuccessionPrefix_FeatureValue_Identification_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_PrefixMetadata_RedefinitionFeatureChain_RefPrefix_ReferenceFeatureChain_ReferenceSubsetting_SubsettingFeatureChain_TypingFeatureTyping_isReturnPrefix(context, (AssertConstraintUsage) semanticObject); 
 					return; 
@@ -293,7 +293,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 						|| rule == grammarAccess.getCaseBodyElementRule()
 						|| rule == grammarAccess.getViewDefinitionBodyElementRule()
 						|| rule == grammarAccess.getViewBodyElementRule()
-						|| rule == grammarAccess.getDefinitionElementRule()) {
+						|| rule == grammarAccess.getDefinitionElementsRule()) {
 					sequence_AttributeDefinition_BasicDefinitionPrefix_DefinitionDeclaration_Identification_MemberPrefix_PrefixMetadata(context, (AttributeDefinition) semanticObject); 
 					return; 
 				}
@@ -321,7 +321,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 					sequence_BasicDefinitionPrefix_BasicUsagePrefix_BindingConnectorAsUsage_CrossFeatureChain_EndUsagePrefix_Identification_MemberPrefix_MultiplicityPart_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_RefPrefix_ReferenceFeatureChain_SubsettingFeatureChain_TypingFeatureTyping_isReturnPrefix(context, (BindingConnectorAsUsage) semanticObject); 
 					return; 
 				}
-				else if (rule == grammarAccess.getUsageElementRule()
+				else if (rule == grammarAccess.getUsageElementsRule()
 						|| rule == grammarAccess.getNonOccurrenceUsageElementRule()
 						|| rule == grammarAccess.getBindingConnectorAsUsageRule()) {
 					sequence_BasicDefinitionPrefix_BasicUsagePrefix_BindingConnectorAsUsage_CrossFeatureChain_EndUsagePrefix_Identification_MemberPrefix_MultiplicityPart_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_RefPrefix_ReferenceFeatureChain_SubsettingFeatureChain_TypingFeatureTyping_isReturnPrefix(context, (BindingConnectorAsUsage) semanticObject); 
@@ -341,7 +341,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 						|| rule == grammarAccess.getCaseBodyElementRule()
 						|| rule == grammarAccess.getViewDefinitionBodyElementRule()
 						|| rule == grammarAccess.getViewBodyElementRule()
-						|| rule == grammarAccess.getDefinitionElementRule()) {
+						|| rule == grammarAccess.getDefinitionElementsRule()) {
 					sequence_BasicDefinitionPrefix_CalculationDefinition_DefinitionDeclaration_Identification_MemberPrefix_OccurrenceDefinitionPrefix_PrefixMetadata(context, (CalculationDefinition) semanticObject); 
 					return; 
 				}
@@ -366,7 +366,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 						|| rule == grammarAccess.getCaseBodyElementRule()
 						|| rule == grammarAccess.getViewDefinitionBodyElementRule()
 						|| rule == grammarAccess.getViewBodyElementRule()
-						|| rule == grammarAccess.getDefinitionElementRule()) {
+						|| rule == grammarAccess.getDefinitionElementsRule()) {
 					sequence_BasicDefinitionPrefix_CaseDefinition_DefinitionDeclaration_Identification_MemberPrefix_OccurrenceDefinitionPrefix_PrefixMetadata(context, (CaseDefinition) semanticObject); 
 					return; 
 				}
@@ -400,7 +400,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 						|| rule == grammarAccess.getCaseBodyElementRule()
 						|| rule == grammarAccess.getViewDefinitionBodyElementRule()
 						|| rule == grammarAccess.getViewBodyElementRule()
-						|| rule == grammarAccess.getDefinitionElementRule()) {
+						|| rule == grammarAccess.getDefinitionElementsRule()) {
 					sequence_BasicDefinitionPrefix_ConcernDefinition_DefinitionDeclaration_Identification_MemberPrefix_OccurrenceDefinitionPrefix_PrefixMetadata(context, (ConcernDefinition) semanticObject); 
 					return; 
 				}
@@ -425,7 +425,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 						|| rule == grammarAccess.getCaseBodyElementRule()
 						|| rule == grammarAccess.getViewDefinitionBodyElementRule()
 						|| rule == grammarAccess.getViewBodyElementRule()
-						|| rule == grammarAccess.getDefinitionElementRule()) {
+						|| rule == grammarAccess.getDefinitionElementsRule()) {
 					sequence_BasicDefinitionPrefix_ConnectionDefinition_DefinitionDeclaration_Identification_MemberPrefix_OccurrenceDefinitionPrefix_PrefixMetadata(context, (ConnectionDefinition) semanticObject); 
 					return; 
 				}
@@ -453,7 +453,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 						|| rule == grammarAccess.getCaseBodyElementRule()
 						|| rule == grammarAccess.getViewDefinitionBodyElementRule()
 						|| rule == grammarAccess.getViewBodyElementRule()
-						|| rule == grammarAccess.getDefinitionElementRule()) {
+						|| rule == grammarAccess.getDefinitionElementsRule()) {
 					sequence_BasicDefinitionPrefix_ConstraintDefinition_DefinitionDeclaration_Identification_MemberPrefix_OccurrenceDefinitionPrefix_PrefixMetadata(context, (ConstraintDefinition) semanticObject); 
 					return; 
 				}
@@ -481,7 +481,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 						|| rule == grammarAccess.getCaseBodyElementRule()
 						|| rule == grammarAccess.getViewDefinitionBodyElementRule()
 						|| rule == grammarAccess.getViewBodyElementRule()
-						|| rule == grammarAccess.getDefinitionElementRule()) {
+						|| rule == grammarAccess.getDefinitionElementsRule()) {
 					sequence_Dependency_Identification_PrefixMetadata(context, (Dependency) semanticObject); 
 					return; 
 				}
@@ -545,7 +545,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 						|| rule == grammarAccess.getCaseBodyElementRule()
 						|| rule == grammarAccess.getViewDefinitionBodyElementRule()
 						|| rule == grammarAccess.getViewBodyElementRule()
-						|| rule == grammarAccess.getDefinitionElementRule()) {
+						|| rule == grammarAccess.getDefinitionElementsRule()) {
 					sequence_BasicDefinitionPrefix_DefinitionDeclaration_FlowDefinition_Identification_MemberPrefix_OccurrenceDefinitionPrefix_PrefixMetadata(context, (FlowDefinition) semanticObject); 
 					return; 
 				}
@@ -600,7 +600,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 						|| rule == grammarAccess.getCaseBodyElementRule()
 						|| rule == grammarAccess.getViewDefinitionBodyElementRule()
 						|| rule == grammarAccess.getViewBodyElementRule()
-						|| rule == grammarAccess.getDefinitionElementRule()) {
+						|| rule == grammarAccess.getDefinitionElementsRule()) {
 					sequence_BasicDefinitionPrefix_DefinitionDeclaration_Identification_InterfaceDefinition_MemberPrefix_OccurrenceDefinitionPrefix_PrefixMetadata(context, (InterfaceDefinition) semanticObject); 
 					return; 
 				}
@@ -625,7 +625,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 						|| rule == grammarAccess.getCaseBodyElementRule()
 						|| rule == grammarAccess.getViewDefinitionBodyElementRule()
 						|| rule == grammarAccess.getViewBodyElementRule()
-						|| rule == grammarAccess.getDefinitionElementRule()) {
+						|| rule == grammarAccess.getDefinitionElementsRule()) {
 					sequence_BasicDefinitionPrefix_DefinitionDeclaration_Identification_ItemDefinition_MemberPrefix_OccurrenceDefinitionPrefix_PrefixMetadata(context, (ItemDefinition) semanticObject); 
 					return; 
 				}
@@ -671,7 +671,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 						|| rule == grammarAccess.getCaseBodyElementRule()
 						|| rule == grammarAccess.getViewDefinitionBodyElementRule()
 						|| rule == grammarAccess.getViewBodyElementRule()
-						|| rule == grammarAccess.getDefinitionElementRule()) {
+						|| rule == grammarAccess.getDefinitionElementsRule()) {
 					sequence_BasicDefinitionPrefix_DefinitionDeclaration_Identification_MemberPrefix_OccurrenceDefinition_OccurrenceDefinitionPrefix_PrefixMetadata(context, (OccurrenceDefinition) semanticObject); 
 					return; 
 				}
@@ -699,7 +699,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 						|| rule == grammarAccess.getCaseBodyElementRule()
 						|| rule == grammarAccess.getViewDefinitionBodyElementRule()
 						|| rule == grammarAccess.getViewBodyElementRule()
-						|| rule == grammarAccess.getDefinitionElementRule()) {
+						|| rule == grammarAccess.getDefinitionElementsRule()) {
 					sequence_BasicDefinitionPrefix_DefinitionDeclaration_Identification_MemberPrefix_OccurrenceDefinitionPrefix_PartDefinition_PrefixMetadata(context, (PartDefinition) semanticObject); 
 					return; 
 				}
@@ -727,9 +727,9 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 						|| rule == grammarAccess.getCaseBodyElementRule()
 						|| rule == grammarAccess.getViewDefinitionBodyElementRule()
 						|| rule == grammarAccess.getViewBodyElementRule()
-						|| rule == grammarAccess.getUsageElementRule()
+						|| rule == grammarAccess.getUsageElementsRule()
 						|| rule == grammarAccess.getOccurrenceUsageElementRule()
-						|| rule == grammarAccess.getBehaviorUsageElementRule()
+						|| rule == grammarAccess.getBehaviorUsageElementsRule()
 						|| rule == grammarAccess.getPerformActionUsageRule()) {
 					sequence_BasicDefinitionPrefix_BasicUsagePrefix_CrossFeatureChain_EmptySuccessionPrefix_FeatureValue_Identification_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_PerformActionUsage_PrefixMetadata_RedefinitionFeatureChain_RefPrefix_ReferenceFeatureChain_ReferenceSubsetting_SubsettingFeatureChain_TypingFeatureTyping_isReturnPrefix(context, (PerformActionUsage) semanticObject); 
 					return; 
@@ -752,7 +752,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 						|| rule == grammarAccess.getCaseBodyElementRule()
 						|| rule == grammarAccess.getViewDefinitionBodyElementRule()
 						|| rule == grammarAccess.getViewBodyElementRule()
-						|| rule == grammarAccess.getDefinitionElementRule()) {
+						|| rule == grammarAccess.getDefinitionElementsRule()) {
 					sequence_BasicDefinitionPrefix_DefinitionDeclaration_Identification_MemberPrefix_PortDefinition_PrefixMetadata(context, (PortDefinition) semanticObject); 
 					return; 
 				}
@@ -786,7 +786,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 						|| rule == grammarAccess.getCaseBodyElementRule()
 						|| rule == grammarAccess.getViewDefinitionBodyElementRule()
 						|| rule == grammarAccess.getViewBodyElementRule()
-						|| rule == grammarAccess.getDefinitionElementRule()) {
+						|| rule == grammarAccess.getDefinitionElementsRule()) {
 					sequence_BasicDefinitionPrefix_DefinitionDeclaration_Identification_MemberPrefix_OccurrenceDefinitionPrefix_PrefixMetadata_RenderingDefinition(context, (RenderingDefinition) semanticObject); 
 					return; 
 				}
@@ -814,7 +814,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 						|| rule == grammarAccess.getCaseBodyElementRule()
 						|| rule == grammarAccess.getViewDefinitionBodyElementRule()
 						|| rule == grammarAccess.getViewBodyElementRule()
-						|| rule == grammarAccess.getDefinitionElementRule()) {
+						|| rule == grammarAccess.getDefinitionElementsRule()) {
 					sequence_BasicDefinitionPrefix_DefinitionDeclaration_Identification_MemberPrefix_OccurrenceDefinitionPrefix_PrefixMetadata_RequirementDefinition(context, (RequirementDefinition) semanticObject); 
 					return; 
 				}
@@ -857,7 +857,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 						|| rule == grammarAccess.getCaseBodyElementRule()
 						|| rule == grammarAccess.getViewDefinitionBodyElementRule()
 						|| rule == grammarAccess.getViewBodyElementRule()
-						|| rule == grammarAccess.getDefinitionElementRule()) {
+						|| rule == grammarAccess.getDefinitionElementsRule()) {
 					sequence_BasicDefinitionPrefix_DefinitionDeclaration_Identification_MemberPrefix_OccurrenceDefinitionPrefix_PrefixMetadata_StateDefinition(context, (StateDefinition) semanticObject); 
 					return; 
 				}
@@ -888,7 +888,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 					sequence_BasicDefinitionPrefix_BasicUsagePrefix_CrossFeatureChain_EndUsagePrefix_Identification_MemberPrefix_MultiplicityPart_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_RefPrefix_ReferenceFeatureChain_SubsettingFeatureChain_SuccessionAsUsage_TypingFeatureTyping_isReturnPrefix(context, (SuccessionAsUsage) semanticObject); 
 					return; 
 				}
-				else if (rule == grammarAccess.getUsageElementRule()
+				else if (rule == grammarAccess.getUsageElementsRule()
 						|| rule == grammarAccess.getNonOccurrenceUsageElementRule()
 						|| rule == grammarAccess.getSuccessionAsUsageRule()) {
 					sequence_BasicDefinitionPrefix_BasicUsagePrefix_CrossFeatureChain_EndUsagePrefix_Identification_MemberPrefix_MultiplicityPart_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_RefPrefix_ReferenceFeatureChain_SubsettingFeatureChain_SuccessionAsUsage_TypingFeatureTyping_isReturnPrefix(context, (SuccessionAsUsage) semanticObject); 
@@ -923,7 +923,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 						|| rule == grammarAccess.getCaseBodyElementRule()
 						|| rule == grammarAccess.getViewDefinitionBodyElementRule()
 						|| rule == grammarAccess.getViewBodyElementRule()
-						|| rule == grammarAccess.getDefinitionElementRule()) {
+						|| rule == grammarAccess.getDefinitionElementsRule()) {
 					sequence_BasicDefinitionPrefix_DefinitionDeclaration_Identification_MemberPrefix_OccurrenceDefinitionPrefix_PrefixMetadata_UseCaseDefinition(context, (UseCaseDefinition) semanticObject); 
 					return; 
 				}
@@ -948,9 +948,9 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 					sequence_BasicDefinitionPrefix_BasicUsagePrefix_CrossFeatureChain_EmptySuccessionPrefix_FeatureValue_Identification_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_PrefixMetadata_RedefinitionFeatureChain_RefPrefix_ReferenceFeatureChain_SubsettingFeatureChain_TypingFeatureTyping_UseCaseUsage_isReturnPrefix(context, (UseCaseUsage) semanticObject); 
 					return; 
 				}
-				else if (rule == grammarAccess.getUsageElementRule()
+				else if (rule == grammarAccess.getUsageElementsRule()
 						|| rule == grammarAccess.getOccurrenceUsageElementRule()
-						|| rule == grammarAccess.getBehaviorUsageElementRule()
+						|| rule == grammarAccess.getBehaviorUsageElementsRule()
 						|| rule == grammarAccess.getUseCaseUsageRule()) {
 					sequence_BasicDefinitionPrefix_BasicUsagePrefix_CrossFeatureChain_EmptySuccessionPrefix_FeatureValue_Identification_MemberPrefix_MultiplicityPart_MultiplicityRange_OccurrenceUsagePrefix_PrefixMetadata_RedefinitionFeatureChain_RefPrefix_ReferenceFeatureChain_SubsettingFeatureChain_TypingFeatureTyping_UseCaseUsage_isReturnPrefix(context, (UseCaseUsage) semanticObject); 
 					return; 
@@ -969,7 +969,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 						|| rule == grammarAccess.getCaseBodyElementRule()
 						|| rule == grammarAccess.getViewDefinitionBodyElementRule()
 						|| rule == grammarAccess.getViewBodyElementRule()
-						|| rule == grammarAccess.getDefinitionElementRule()) {
+						|| rule == grammarAccess.getDefinitionElementsRule()) {
 					sequence_BasicDefinitionPrefix_DefinitionDeclaration_Identification_MemberPrefix_OccurrenceDefinitionPrefix_PrefixMetadata_VerificationCaseDefinition(context, (VerificationCaseDefinition) semanticObject); 
 					return; 
 				}
@@ -994,7 +994,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 						|| rule == grammarAccess.getCaseBodyElementRule()
 						|| rule == grammarAccess.getViewDefinitionBodyElementRule()
 						|| rule == grammarAccess.getViewBodyElementRule()
-						|| rule == grammarAccess.getDefinitionElementRule()) {
+						|| rule == grammarAccess.getDefinitionElementsRule()) {
 					sequence_BasicDefinitionPrefix_DefinitionDeclaration_Identification_MemberPrefix_OccurrenceDefinitionPrefix_PrefixMetadata_ViewDefinition(context, (ViewDefinition) semanticObject); 
 					return; 
 				}
@@ -1022,7 +1022,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 						|| rule == grammarAccess.getCaseBodyElementRule()
 						|| rule == grammarAccess.getViewDefinitionBodyElementRule()
 						|| rule == grammarAccess.getViewBodyElementRule()
-						|| rule == grammarAccess.getDefinitionElementRule()) {
+						|| rule == grammarAccess.getDefinitionElementsRule()) {
 					sequence_BasicDefinitionPrefix_DefinitionDeclaration_Identification_MemberPrefix_OccurrenceDefinitionPrefix_PrefixMetadata_ViewpointDefinition(context, (ViewpointDefinition) semanticObject); 
 					return; 
 				}
@@ -1233,7 +1233,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns ActionDefinition
 	 *     ViewDefinitionBodyElement returns ActionDefinition
 	 *     ViewBodyElement returns ActionDefinition
-	 *     DefinitionElement returns ActionDefinition
+	 *     DefinitionElements returns ActionDefinition
 	 *
 	 * Constraint:
 	 *     (
@@ -1289,9 +1289,9 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns ActionUsage
 	 *     ViewDefinitionBodyElement returns ActionUsage
 	 *     ViewBodyElement returns ActionUsage
-	 *     UsageElement returns ActionUsage
+	 *     UsageElements returns ActionUsage
 	 *     OccurrenceUsageElement returns ActionUsage
-	 *     BehaviorUsageElement returns ActionUsage
+	 *     BehaviorUsageElements returns ActionUsage
 	 *     ActionUsage returns ActionUsage
 	 *
 	 * Constraint:
@@ -1328,7 +1328,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
-	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *         elements+=ActionBodyElement*
 	 *     )
 	 * </pre>
@@ -1365,7 +1365,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
-	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *         elements+=UsageBodyElement*
 	 *     )
 	 * </pre>
@@ -1423,7 +1423,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns AllocationDefinition
 	 *     ViewDefinitionBodyElement returns AllocationDefinition
 	 *     ViewBodyElement returns AllocationDefinition
-	 *     DefinitionElement returns AllocationDefinition
+	 *     DefinitionElements returns AllocationDefinition
 	 *
 	 * Constraint:
 	 *     (
@@ -1479,9 +1479,9 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns AllocationUsage
 	 *     ViewDefinitionBodyElement returns AllocationUsage
 	 *     ViewBodyElement returns AllocationUsage
-	 *     UsageElement returns AllocationUsage
+	 *     UsageElements returns AllocationUsage
 	 *     OccurrenceUsageElement returns AllocationUsage
-	 *     StructureUsageElement returns AllocationUsage
+	 *     StructureUsageElements returns AllocationUsage
 	 *     AllocationUsage returns AllocationUsage
 	 *
 	 * Constraint:
@@ -1546,7 +1546,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns AnalysisCaseDefinition
 	 *     ViewDefinitionBodyElement returns AnalysisCaseDefinition
 	 *     ViewBodyElement returns AnalysisCaseDefinition
-	 *     DefinitionElement returns AnalysisCaseDefinition
+	 *     DefinitionElements returns AnalysisCaseDefinition
 	 *
 	 * Constraint:
 	 *     (
@@ -1604,9 +1604,9 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns AnalysisCaseUsage
 	 *     ViewDefinitionBodyElement returns AnalysisCaseUsage
 	 *     ViewBodyElement returns AnalysisCaseUsage
-	 *     UsageElement returns AnalysisCaseUsage
+	 *     UsageElements returns AnalysisCaseUsage
 	 *     OccurrenceUsageElement returns AnalysisCaseUsage
-	 *     BehaviorUsageElement returns AnalysisCaseUsage
+	 *     BehaviorUsageElements returns AnalysisCaseUsage
 	 *     AnalysisCaseUsage returns AnalysisCaseUsage
 	 *
 	 * Constraint:
@@ -1643,7 +1643,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
-	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *         elements+=CaseBodyElement* 
 	 *         resultExpressionParameter+=ResultExpression?
 	 *     )
@@ -1701,7 +1701,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                     ) | 
 	 *                     declaredName=Name
 	 *                 )? 
-	 *                 ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)?
+	 *                 ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)?
 	 *             ) | 
 	 *             (
 	 *                 (
@@ -1714,7 +1714,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                     refElement=FeatureChainName
 	 *                 ) 
 	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?)) 
-	 *                 ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)?
+	 *                 ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)?
 	 *             ) | 
 	 *             (
 	 *                 (
@@ -1753,7 +1753,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                     )?
 	 *                 )+ 
 	 *                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *                 ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)?
+	 *                 ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)?
 	 *             ) | 
 	 *             refElement=FeatureChainName
 	 *         )? 
@@ -1772,9 +1772,9 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	// https://bugs.eclipse.org/bugs/enter_bug.cgi?product=TMF
 	//
 	// Contexts:
-	//     UsageElement returns AssertConstraintUsage
+	//     UsageElements returns AssertConstraintUsage
 	//     OccurrenceUsageElement returns AssertConstraintUsage
-	//     BehaviorUsageElement returns AssertConstraintUsage
+	//     BehaviorUsageElements returns AssertConstraintUsage
 	//     AssertConstraintUsage returns AssertConstraintUsage
 	//
 	// Constraint:
@@ -1808,7 +1808,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//                     ) | 
 	//                     declaredName=Name
 	//                 )? 
-	//                 ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)?
+	//                 ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)?
 	//             ) | 
 	//             (
 	//                 (
@@ -1821,7 +1821,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//                     refElement=FeatureChainName
 	//                 ) 
 	//                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?)) 
-	//                 ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)?
+	//                 ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)?
 	//             ) | 
 	//             (
 	//                 (
@@ -1860,7 +1860,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//                     )?
 	//                 )+ 
 	//                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	//                 ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)?
+	//                 ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)?
 	//             ) | 
 	//             refElement=FeatureChainName
 	//         )? 
@@ -2018,7 +2018,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns AttributeDefinition
 	 *     ViewDefinitionBodyElement returns AttributeDefinition
 	 *     ViewBodyElement returns AttributeDefinition
-	 *     DefinitionElement returns AttributeDefinition
+	 *     DefinitionElements returns AttributeDefinition
 	 *
 	 * Constraint:
 	 *     (
@@ -2072,7 +2072,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns AttributeUsage
 	 *     ViewDefinitionBodyElement returns AttributeUsage
 	 *     ViewBodyElement returns AttributeUsage
-	 *     UsageElement returns AttributeUsage
+	 *     UsageElements returns AttributeUsage
 	 *     NonOccurrenceUsageElement returns AttributeUsage
 	 *     AttributeUsage returns AttributeUsage
 	 *
@@ -2106,7 +2106,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
-	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *         elements+=UsageBodyElement*
 	 *     )
 	 * </pre>
@@ -2178,7 +2178,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	// https://bugs.eclipse.org/bugs/enter_bug.cgi?product=TMF
 	//
 	// Contexts:
-	//     UsageElement returns BindingConnectorAsUsage
+	//     UsageElements returns BindingConnectorAsUsage
 	//     NonOccurrenceUsageElement returns BindingConnectorAsUsage
 	//     BindingConnectorAsUsage returns BindingConnectorAsUsage
 	//
@@ -2234,9 +2234,9 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns CalculationUsage
 	 *     ViewDefinitionBodyElement returns CalculationUsage
 	 *     ViewBodyElement returns CalculationUsage
-	 *     UsageElement returns CalculationUsage
+	 *     UsageElements returns CalculationUsage
 	 *     OccurrenceUsageElement returns CalculationUsage
-	 *     BehaviorUsageElement returns CalculationUsage
+	 *     BehaviorUsageElements returns CalculationUsage
 	 *     CalculationUsage returns CalculationUsage
 	 *
 	 * Constraint:
@@ -2273,7 +2273,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
-	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *         elements+=CalculationBodyElement* 
 	 *         resultExpressionParameter+=ResultExpression?
 	 *     )
@@ -2299,9 +2299,9 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns CaseUsage
 	 *     ViewDefinitionBodyElement returns CaseUsage
 	 *     ViewBodyElement returns CaseUsage
-	 *     UsageElement returns CaseUsage
+	 *     UsageElements returns CaseUsage
 	 *     OccurrenceUsageElement returns CaseUsage
-	 *     BehaviorUsageElement returns CaseUsage
+	 *     BehaviorUsageElements returns CaseUsage
 	 *     CaseUsage returns CaseUsage
 	 *
 	 * Constraint:
@@ -2338,7 +2338,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
-	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *         elements+=CaseBodyElement* 
 	 *         resultExpressionParameter+=ResultExpression?
 	 *     )
@@ -2364,9 +2364,9 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns ConcernUsage
 	 *     ViewDefinitionBodyElement returns ConcernUsage
 	 *     ViewBodyElement returns ConcernUsage
-	 *     UsageElement returns ConcernUsage
+	 *     UsageElements returns ConcernUsage
 	 *     OccurrenceUsageElement returns ConcernUsage
-	 *     BehaviorUsageElement returns ConcernUsage
+	 *     BehaviorUsageElements returns ConcernUsage
 	 *     ConcernUsage returns ConcernUsage
 	 *
 	 * Constraint:
@@ -2403,7 +2403,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
-	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *         elements+=RequirementBodyElement*
 	 *     )
 	 * </pre>
@@ -2428,9 +2428,9 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns ConnectionUsage
 	 *     ViewDefinitionBodyElement returns ConnectionUsage
 	 *     ViewBodyElement returns ConnectionUsage
-	 *     UsageElement returns ConnectionUsage
+	 *     UsageElements returns ConnectionUsage
 	 *     OccurrenceUsageElement returns ConnectionUsage
-	 *     StructureUsageElement returns ConnectionUsage
+	 *     StructureUsageElements returns ConnectionUsage
 	 *     ConnectionUsage returns ConnectionUsage
 	 *
 	 * Constraint:
@@ -2467,7 +2467,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
-	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *         (
 	 *             (connectorPart+=ConnectorEnd connectorPart+=ConnectorEnd) | 
 	 *             (connectorPart+=ConnectorEnd connectorPart+=ConnectorEnd connectorPart+=ConnectorEnd*)
@@ -2496,9 +2496,9 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns InterfaceUsage
 	 *     ViewDefinitionBodyElement returns InterfaceUsage
 	 *     ViewBodyElement returns InterfaceUsage
-	 *     UsageElement returns InterfaceUsage
+	 *     UsageElements returns InterfaceUsage
 	 *     OccurrenceUsageElement returns InterfaceUsage
-	 *     StructureUsageElement returns InterfaceUsage
+	 *     StructureUsageElements returns InterfaceUsage
 	 *     InterfaceUsage returns InterfaceUsage
 	 *
 	 * Constraint:
@@ -2563,9 +2563,9 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns ConstraintUsage
 	 *     ViewDefinitionBodyElement returns ConstraintUsage
 	 *     ViewBodyElement returns ConstraintUsage
-	 *     UsageElement returns ConstraintUsage
+	 *     UsageElements returns ConstraintUsage
 	 *     OccurrenceUsageElement returns ConstraintUsage
-	 *     BehaviorUsageElement returns ConstraintUsage
+	 *     BehaviorUsageElements returns ConstraintUsage
 	 *     ConstraintUsage returns ConstraintUsage
 	 *
 	 * Constraint:
@@ -2602,7 +2602,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
-	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *         elements+=CalculationBodyElement* 
 	 *         resultExpressionParameter+=ResultExpression?
 	 *     )
@@ -2680,7 +2680,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns ExtendedUsage
 	 *     ViewDefinitionBodyElement returns ExtendedUsage
 	 *     ViewBodyElement returns ExtendedUsage
-	 *     UsageElement returns ExtendedUsage
+	 *     UsageElements returns ExtendedUsage
 	 *     NonOccurrenceUsageElement returns ExtendedUsage
 	 *     ExtendedUsage returns ExtendedUsage
 	 *
@@ -2716,7 +2716,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
-	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *         elements+=UsageBodyElement*
 	 *     )
 	 * </pre>
@@ -2741,9 +2741,9 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns EventOccurrenceUsage
 	 *     ViewDefinitionBodyElement returns EventOccurrenceUsage
 	 *     ViewBodyElement returns EventOccurrenceUsage
-	 *     UsageElement returns EventOccurrenceUsage
+	 *     UsageElements returns EventOccurrenceUsage
 	 *     OccurrenceUsageElement returns EventOccurrenceUsage
-	 *     StructureUsageElement returns EventOccurrenceUsage
+	 *     StructureUsageElements returns EventOccurrenceUsage
 	 *     EventOccurrenceUsage returns EventOccurrenceUsage
 	 *
 	 * Constraint:
@@ -2780,7 +2780,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
-	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *         elements+=UsageBodyElement*
 	 *     )
 	 * </pre>
@@ -2805,9 +2805,9 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns ExhibitStateUsage
 	 *     ViewDefinitionBodyElement returns ExhibitStateUsage
 	 *     ViewBodyElement returns ExhibitStateUsage
-	 *     UsageElement returns ExhibitStateUsage
+	 *     UsageElements returns ExhibitStateUsage
 	 *     OccurrenceUsageElement returns ExhibitStateUsage
-	 *     BehaviorUsageElement returns ExhibitStateUsage
+	 *     BehaviorUsageElements returns ExhibitStateUsage
 	 *     ExhibitStateUsage returns ExhibitStateUsage
 	 *
 	 * Constraint:
@@ -2844,7 +2844,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
-	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *         isParallel?='parallel'? 
 	 *         elements+=StateBodyElement*
 	 *     )
@@ -2870,9 +2870,9 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns FlowUsage
 	 *     ViewDefinitionBodyElement returns FlowUsage
 	 *     ViewBodyElement returns FlowUsage
-	 *     UsageElement returns FlowUsage
+	 *     UsageElements returns FlowUsage
 	 *     OccurrenceUsageElement returns FlowUsage
-	 *     StructureUsageElement returns FlowUsage
+	 *     StructureUsageElements returns FlowUsage
 	 *     FlowUsage returns FlowUsage
 	 *
 	 * Constraint:
@@ -2909,7 +2909,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
-	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *         itemFeatureParameter+=ItemFeatureParameter? 
 	 *         (FlowEnd+=FeatureChainName FlowEnd+=FeatureChainName)? 
 	 *         elements+=UsageBodyElement*
@@ -2936,9 +2936,9 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns IncludeUseCaseUsage
 	 *     ViewDefinitionBodyElement returns IncludeUseCaseUsage
 	 *     ViewBodyElement returns IncludeUseCaseUsage
-	 *     UsageElement returns IncludeUseCaseUsage
+	 *     UsageElements returns IncludeUseCaseUsage
 	 *     OccurrenceUsageElement returns IncludeUseCaseUsage
-	 *     BehaviorUsageElement returns IncludeUseCaseUsage
+	 *     BehaviorUsageElements returns IncludeUseCaseUsage
 	 *     IncludeUseCaseUsage returns IncludeUseCaseUsage
 	 *
 	 * Constraint:
@@ -2975,7 +2975,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
-	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *         elements+=CaseBodyElement* 
 	 *         resultExpressionParameter+=ResultExpression?
 	 *     )
@@ -3001,9 +3001,9 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns IndividualUsage
 	 *     ViewDefinitionBodyElement returns IndividualUsage
 	 *     ViewBodyElement returns IndividualUsage
-	 *     UsageElement returns IndividualUsage
+	 *     UsageElements returns IndividualUsage
 	 *     OccurrenceUsageElement returns IndividualUsage
-	 *     StructureUsageElement returns IndividualUsage
+	 *     StructureUsageElements returns IndividualUsage
 	 *     IndividualUsage returns IndividualUsage
 	 *
 	 * Constraint:
@@ -3034,7 +3034,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
-	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *         elements+=UsageBodyElement*
 	 *     )
 	 * </pre>
@@ -3059,9 +3059,9 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns Message
 	 *     ViewDefinitionBodyElement returns Message
 	 *     ViewBodyElement returns Message
-	 *     UsageElement returns Message
+	 *     UsageElements returns Message
 	 *     OccurrenceUsageElement returns Message
-	 *     StructureUsageElement returns Message
+	 *     StructureUsageElements returns Message
 	 *     Message returns Message
 	 *
 	 * Constraint:
@@ -3098,7 +3098,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
-	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *         itemFeatureParameter+=ItemFeatureParameter? 
 	 *         (FlowEnd+=FeatureChainName FlowEnd+=FeatureChainName)? 
 	 *         elements+=UsageBodyElement*
@@ -3125,9 +3125,9 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns SuccessionFlowUsage
 	 *     ViewDefinitionBodyElement returns SuccessionFlowUsage
 	 *     ViewBodyElement returns SuccessionFlowUsage
-	 *     UsageElement returns SuccessionFlowUsage
+	 *     UsageElements returns SuccessionFlowUsage
 	 *     OccurrenceUsageElement returns SuccessionFlowUsage
-	 *     StructureUsageElement returns SuccessionFlowUsage
+	 *     StructureUsageElements returns SuccessionFlowUsage
 	 *     SuccessionFlowUsage returns SuccessionFlowUsage
 	 *
 	 * Constraint:
@@ -3164,7 +3164,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
-	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *         itemFeatureParameter+=ItemFeatureParameter? 
 	 *         (FlowEnd+=FeatureChainName FlowEnd+=FeatureChainName)? 
 	 *         elements+=DefinitionBodyElement*
@@ -3191,9 +3191,9 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns ItemUsage
 	 *     ViewDefinitionBodyElement returns ItemUsage
 	 *     ViewBodyElement returns ItemUsage
-	 *     UsageElement returns ItemUsage
+	 *     UsageElements returns ItemUsage
 	 *     OccurrenceUsageElement returns ItemUsage
-	 *     StructureUsageElement returns ItemUsage
+	 *     StructureUsageElements returns ItemUsage
 	 *     ItemUsage returns ItemUsage
 	 *
 	 * Constraint:
@@ -3230,7 +3230,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
-	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *         elements+=UsageBodyElement*
 	 *     )
 	 * </pre>
@@ -3255,9 +3255,9 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns PartUsage
 	 *     ViewDefinitionBodyElement returns PartUsage
 	 *     ViewBodyElement returns PartUsage
-	 *     UsageElement returns PartUsage
+	 *     UsageElements returns PartUsage
 	 *     OccurrenceUsageElement returns PartUsage
-	 *     StructureUsageElement returns PartUsage
+	 *     StructureUsageElements returns PartUsage
 	 *     PartUsage returns PartUsage
 	 *
 	 * Constraint:
@@ -3294,7 +3294,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
-	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *         elements+=UsageBodyElement*
 	 *     )
 	 * </pre>
@@ -3319,9 +3319,9 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns PerformActionUsage
 	 *     ViewDefinitionBodyElement returns PerformActionUsage
 	 *     ViewBodyElement returns PerformActionUsage
-	 *     UsageElement returns PerformActionUsage
+	 *     UsageElements returns PerformActionUsage
 	 *     OccurrenceUsageElement returns PerformActionUsage
-	 *     BehaviorUsageElement returns PerformActionUsage
+	 *     BehaviorUsageElements returns PerformActionUsage
 	 *     PerformActionUsage returns PerformActionUsage
 	 *
 	 * Constraint:
@@ -3358,7 +3358,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
-	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *         elements+=ActionBodyElement*
 	 *     )
 	 * </pre>
@@ -3383,9 +3383,9 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns PortUsage
 	 *     ViewDefinitionBodyElement returns PortUsage
 	 *     ViewBodyElement returns PortUsage
-	 *     UsageElement returns PortUsage
+	 *     UsageElements returns PortUsage
 	 *     OccurrenceUsageElement returns PortUsage
-	 *     StructureUsageElement returns PortUsage
+	 *     StructureUsageElements returns PortUsage
 	 *     PortUsage returns PortUsage
 	 *
 	 * Constraint:
@@ -3422,7 +3422,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
-	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *         elements+=UsageBodyElement*
 	 *     )
 	 * </pre>
@@ -3447,9 +3447,9 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns SatisfyRequirementUsage
 	 *     ViewDefinitionBodyElement returns SatisfyRequirementUsage
 	 *     ViewBodyElement returns SatisfyRequirementUsage
-	 *     UsageElement returns SatisfyRequirementUsage
+	 *     UsageElements returns SatisfyRequirementUsage
 	 *     OccurrenceUsageElement returns SatisfyRequirementUsage
-	 *     BehaviorUsageElement returns SatisfyRequirementUsage
+	 *     BehaviorUsageElements returns SatisfyRequirementUsage
 	 *     SatisfyRequirementUsage returns SatisfyRequirementUsage
 	 *
 	 * Constraint:
@@ -3487,7 +3487,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
-	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *         satisfactionParameter=FeatureChainName? 
 	 *         elements+=RequirementBodyElement*
 	 *     )
@@ -3513,9 +3513,9 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns RenderingUsage
 	 *     ViewDefinitionBodyElement returns RenderingUsage
 	 *     ViewBodyElement returns RenderingUsage
-	 *     UsageElement returns RenderingUsage
+	 *     UsageElements returns RenderingUsage
 	 *     OccurrenceUsageElement returns RenderingUsage
-	 *     StructureUsageElement returns RenderingUsage
+	 *     StructureUsageElements returns RenderingUsage
 	 *     RenderingUsage returns RenderingUsage
 	 *
 	 * Constraint:
@@ -3552,7 +3552,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
-	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *         elements+=UsageBodyElement*
 	 *     )
 	 * </pre>
@@ -3577,9 +3577,9 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns RequirementUsage
 	 *     ViewDefinitionBodyElement returns RequirementUsage
 	 *     ViewBodyElement returns RequirementUsage
-	 *     UsageElement returns RequirementUsage
+	 *     UsageElements returns RequirementUsage
 	 *     OccurrenceUsageElement returns RequirementUsage
-	 *     BehaviorUsageElement returns RequirementUsage
+	 *     BehaviorUsageElements returns RequirementUsage
 	 *     RequirementUsage returns RequirementUsage
 	 *
 	 * Constraint:
@@ -3616,7 +3616,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
-	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *         elements+=RequirementBodyElement*
 	 *     )
 	 * </pre>
@@ -3641,9 +3641,9 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns StateUsage
 	 *     ViewDefinitionBodyElement returns StateUsage
 	 *     ViewBodyElement returns StateUsage
-	 *     UsageElement returns StateUsage
+	 *     UsageElements returns StateUsage
 	 *     OccurrenceUsageElement returns StateUsage
-	 *     BehaviorUsageElement returns StateUsage
+	 *     BehaviorUsageElements returns StateUsage
 	 *     StateUsage returns StateUsage
 	 *
 	 * Constraint:
@@ -3680,7 +3680,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
-	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *         isParallel?='parallel'? 
 	 *         elements+=StateBodyElement*
 	 *     )
@@ -3741,7 +3741,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
-	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *         elements+=CaseBodyElement* 
 	 *         resultExpressionParameter+=ResultExpression?
 	 *     )
@@ -3757,9 +3757,9 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	// https://bugs.eclipse.org/bugs/enter_bug.cgi?product=TMF
 	//
 	// Contexts:
-	//     UsageElement returns UseCaseUsage
+	//     UsageElements returns UseCaseUsage
 	//     OccurrenceUsageElement returns UseCaseUsage
-	//     BehaviorUsageElement returns UseCaseUsage
+	//     BehaviorUsageElements returns UseCaseUsage
 	//     UseCaseUsage returns UseCaseUsage
 	//
 	// Constraint:
@@ -3796,7 +3796,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	//             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	//         )* 
-	//         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	//         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	//         elements+=CaseBodyElement* 
 	//         resultExpressionParameter+=ResultExpression?
 	//     )
@@ -3818,9 +3818,9 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns VerificationCaseUsage
 	 *     ViewDefinitionBodyElement returns VerificationCaseUsage
 	 *     ViewBodyElement returns VerificationCaseUsage
-	 *     UsageElement returns VerificationCaseUsage
+	 *     UsageElements returns VerificationCaseUsage
 	 *     OccurrenceUsageElement returns VerificationCaseUsage
-	 *     BehaviorUsageElement returns VerificationCaseUsage
+	 *     BehaviorUsageElements returns VerificationCaseUsage
 	 *     VerificationCaseUsage returns VerificationCaseUsage
 	 *
 	 * Constraint:
@@ -3857,7 +3857,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
-	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *         elements+=CaseBodyElement* 
 	 *         resultExpressionParameter+=ResultExpression?
 	 *     )
@@ -3883,9 +3883,9 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns ViewUsage
 	 *     ViewDefinitionBodyElement returns ViewUsage
 	 *     ViewBodyElement returns ViewUsage
-	 *     UsageElement returns ViewUsage
+	 *     UsageElements returns ViewUsage
 	 *     OccurrenceUsageElement returns ViewUsage
-	 *     StructureUsageElement returns ViewUsage
+	 *     StructureUsageElements returns ViewUsage
 	 *     ViewUsage returns ViewUsage
 	 *
 	 * Constraint:
@@ -3922,7 +3922,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
-	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *         elements+=ViewBodyElement*
 	 *     )
 	 * </pre>
@@ -3947,9 +3947,9 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns ViewpointUsage
 	 *     ViewDefinitionBodyElement returns ViewpointUsage
 	 *     ViewBodyElement returns ViewpointUsage
-	 *     UsageElement returns ViewpointUsage
+	 *     UsageElements returns ViewpointUsage
 	 *     OccurrenceUsageElement returns ViewpointUsage
-	 *     BehaviorUsageElement returns ViewpointUsage
+	 *     BehaviorUsageElements returns ViewpointUsage
 	 *     ViewpointUsage returns ViewpointUsage
 	 *
 	 * Constraint:
@@ -3986,7 +3986,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
-	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *         elements+=RequirementBodyElement*
 	 *     )
 	 * </pre>
@@ -4011,9 +4011,9 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns OccurrenceUsage
 	 *     ViewDefinitionBodyElement returns OccurrenceUsage
 	 *     ViewBodyElement returns OccurrenceUsage
-	 *     UsageElement returns OccurrenceUsage
+	 *     UsageElements returns OccurrenceUsage
 	 *     OccurrenceUsageElement returns OccurrenceUsage
-	 *     StructureUsageElement returns OccurrenceUsage
+	 *     StructureUsageElements returns OccurrenceUsage
 	 *     OccurrenceUsage returns OccurrenceUsage
 	 *
 	 * Constraint:
@@ -4050,7 +4050,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
-	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *         elements+=UsageBodyElement*
 	 *     )
 	 * </pre>
@@ -4075,9 +4075,9 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns PortionUsage
 	 *     ViewDefinitionBodyElement returns PortionUsage
 	 *     ViewBodyElement returns PortionUsage
-	 *     UsageElement returns PortionUsage
+	 *     UsageElements returns PortionUsage
 	 *     OccurrenceUsageElement returns PortionUsage
-	 *     StructureUsageElement returns PortionUsage
+	 *     StructureUsageElements returns PortionUsage
 	 *     PortionUsage returns PortionUsage
 	 *
 	 * Constraint:
@@ -4109,7 +4109,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
-	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *         elements+=UsageBodyElement*
 	 *     )
 	 * </pre>
@@ -4406,7 +4406,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns EnumerationUsage
 	 *     ViewDefinitionBodyElement returns EnumerationUsage
 	 *     ViewBodyElement returns EnumerationUsage
-	 *     UsageElement returns EnumerationUsage
+	 *     UsageElements returns EnumerationUsage
 	 *     NonOccurrenceUsageElement returns EnumerationUsage
 	 *     EnumerationUsage returns EnumerationUsage
 	 *
@@ -4440,7 +4440,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
-	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *         elements+=UsageBodyElement*
 	 *     )
 	 * </pre>
@@ -4512,7 +4512,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	// https://bugs.eclipse.org/bugs/enter_bug.cgi?product=TMF
 	//
 	// Contexts:
-	//     UsageElement returns SuccessionAsUsage
+	//     UsageElements returns SuccessionAsUsage
 	//     NonOccurrenceUsageElement returns SuccessionAsUsage
 	//     SuccessionAsUsage returns SuccessionAsUsage
 	//
@@ -4568,7 +4568,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns CalculationDefinition
 	 *     ViewDefinitionBodyElement returns CalculationDefinition
 	 *     ViewBodyElement returns CalculationDefinition
-	 *     DefinitionElement returns CalculationDefinition
+	 *     DefinitionElements returns CalculationDefinition
 	 *
 	 * Constraint:
 	 *     (
@@ -4626,7 +4626,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns CaseDefinition
 	 *     ViewDefinitionBodyElement returns CaseDefinition
 	 *     ViewBodyElement returns CaseDefinition
-	 *     DefinitionElement returns CaseDefinition
+	 *     DefinitionElements returns CaseDefinition
 	 *
 	 * Constraint:
 	 *     (
@@ -4730,7 +4730,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns ConcernDefinition
 	 *     ViewDefinitionBodyElement returns ConcernDefinition
 	 *     ViewBodyElement returns ConcernDefinition
-	 *     DefinitionElement returns ConcernDefinition
+	 *     DefinitionElements returns ConcernDefinition
 	 *
 	 * Constraint:
 	 *     (
@@ -4786,7 +4786,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns ConnectionDefinition
 	 *     ViewDefinitionBodyElement returns ConnectionDefinition
 	 *     ViewBodyElement returns ConnectionDefinition
-	 *     DefinitionElement returns ConnectionDefinition
+	 *     DefinitionElements returns ConnectionDefinition
 	 *
 	 * Constraint:
 	 *     (
@@ -4842,7 +4842,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns ConstraintDefinition
 	 *     ViewDefinitionBodyElement returns ConstraintDefinition
 	 *     ViewBodyElement returns ConstraintDefinition
-	 *     DefinitionElement returns ConstraintDefinition
+	 *     DefinitionElements returns ConstraintDefinition
 	 *
 	 * Constraint:
 	 *     (
@@ -4900,7 +4900,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns DefaultReferenceUsage
 	 *     ViewDefinitionBodyElement returns DefaultReferenceUsage
 	 *     ViewBodyElement returns DefaultReferenceUsage
-	 *     UsageElement returns DefaultReferenceUsage
+	 *     UsageElements returns DefaultReferenceUsage
 	 *     NonOccurrenceUsageElement returns DefaultReferenceUsage
 	 *     DefaultReferenceUsage returns DefaultReferenceUsage
 	 *
@@ -4968,7 +4968,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             ) | 
 	 *             declaredName=Name
 	 *         )? 
-	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *         elements+=UsageBodyElement*
 	 *     )
 	 * </pre>
@@ -4993,7 +4993,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns ReferenceUsage
 	 *     ViewDefinitionBodyElement returns ReferenceUsage
 	 *     ViewBodyElement returns ReferenceUsage
-	 *     UsageElement returns ReferenceUsage
+	 *     UsageElements returns ReferenceUsage
 	 *     NonOccurrenceUsageElement returns ReferenceUsage
 	 *     ReferenceUsage returns ReferenceUsage
 	 *
@@ -5017,7 +5017,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
-	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *         elements+=UsageBodyElement*
 	 *     )
 	 * </pre>
@@ -5042,7 +5042,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns ExtendedDefinition
 	 *     ViewDefinitionBodyElement returns ExtendedDefinition
 	 *     ViewBodyElement returns ExtendedDefinition
-	 *     DefinitionElement returns ExtendedDefinition
+	 *     DefinitionElements returns ExtendedDefinition
 	 *     ExtendedDefinition returns ExtendedDefinition
 	 *
 	 * Constraint:
@@ -5077,7 +5077,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns FlowDefinition
 	 *     ViewDefinitionBodyElement returns FlowDefinition
 	 *     ViewBodyElement returns FlowDefinition
-	 *     DefinitionElement returns FlowDefinition
+	 *     DefinitionElements returns FlowDefinition
 	 *
 	 * Constraint:
 	 *     (
@@ -5133,7 +5133,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns IndividualDefinition
 	 *     ViewDefinitionBodyElement returns IndividualDefinition
 	 *     ViewBodyElement returns IndividualDefinition
-	 *     DefinitionElement returns IndividualDefinition
+	 *     DefinitionElements returns IndividualDefinition
 	 *     IndividualDefinition returns IndividualDefinition
 	 *
 	 * Constraint:
@@ -5169,7 +5169,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns InterfaceDefinition
 	 *     ViewDefinitionBodyElement returns InterfaceDefinition
 	 *     ViewBodyElement returns InterfaceDefinition
-	 *     DefinitionElement returns InterfaceDefinition
+	 *     DefinitionElements returns InterfaceDefinition
 	 *
 	 * Constraint:
 	 *     (
@@ -5225,7 +5225,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns ItemDefinition
 	 *     ViewDefinitionBodyElement returns ItemDefinition
 	 *     ViewBodyElement returns ItemDefinition
-	 *     DefinitionElement returns ItemDefinition
+	 *     DefinitionElements returns ItemDefinition
 	 *
 	 * Constraint:
 	 *     (
@@ -5281,7 +5281,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns PartDefinition
 	 *     ViewDefinitionBodyElement returns PartDefinition
 	 *     ViewBodyElement returns PartDefinition
-	 *     DefinitionElement returns PartDefinition
+	 *     DefinitionElements returns PartDefinition
 	 *
 	 * Constraint:
 	 *     (
@@ -5337,7 +5337,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns RenderingDefinition
 	 *     ViewDefinitionBodyElement returns RenderingDefinition
 	 *     ViewBodyElement returns RenderingDefinition
-	 *     DefinitionElement returns RenderingDefinition
+	 *     DefinitionElements returns RenderingDefinition
 	 *
 	 * Constraint:
 	 *     (
@@ -5393,7 +5393,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns RequirementDefinition
 	 *     ViewDefinitionBodyElement returns RequirementDefinition
 	 *     ViewBodyElement returns RequirementDefinition
-	 *     DefinitionElement returns RequirementDefinition
+	 *     DefinitionElements returns RequirementDefinition
 	 *
 	 * Constraint:
 	 *     (
@@ -5449,7 +5449,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns StateDefinition
 	 *     ViewDefinitionBodyElement returns StateDefinition
 	 *     ViewBodyElement returns StateDefinition
-	 *     DefinitionElement returns StateDefinition
+	 *     DefinitionElements returns StateDefinition
 	 *
 	 * Constraint:
 	 *     (
@@ -5507,7 +5507,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns UseCaseDefinition
 	 *     ViewDefinitionBodyElement returns UseCaseDefinition
 	 *     ViewBodyElement returns UseCaseDefinition
-	 *     DefinitionElement returns UseCaseDefinition
+	 *     DefinitionElements returns UseCaseDefinition
 	 *
 	 * Constraint:
 	 *     (
@@ -5565,7 +5565,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns VerificationCaseDefinition
 	 *     ViewDefinitionBodyElement returns VerificationCaseDefinition
 	 *     ViewBodyElement returns VerificationCaseDefinition
-	 *     DefinitionElement returns VerificationCaseDefinition
+	 *     DefinitionElements returns VerificationCaseDefinition
 	 *
 	 * Constraint:
 	 *     (
@@ -5623,7 +5623,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns ViewDefinition
 	 *     ViewDefinitionBodyElement returns ViewDefinition
 	 *     ViewBodyElement returns ViewDefinition
-	 *     DefinitionElement returns ViewDefinition
+	 *     DefinitionElements returns ViewDefinition
 	 *
 	 * Constraint:
 	 *     (
@@ -5679,7 +5679,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns ViewpointDefinition
 	 *     ViewDefinitionBodyElement returns ViewpointDefinition
 	 *     ViewBodyElement returns ViewpointDefinition
-	 *     DefinitionElement returns ViewpointDefinition
+	 *     DefinitionElements returns ViewpointDefinition
 	 *
 	 * Constraint:
 	 *     (
@@ -5735,7 +5735,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns OccurrenceDefinition
 	 *     ViewDefinitionBodyElement returns OccurrenceDefinition
 	 *     ViewBodyElement returns OccurrenceDefinition
-	 *     DefinitionElement returns OccurrenceDefinition
+	 *     DefinitionElements returns OccurrenceDefinition
 	 *
 	 * Constraint:
 	 *     (
@@ -5791,7 +5791,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns PortDefinition
 	 *     ViewDefinitionBodyElement returns PortDefinition
 	 *     ViewBodyElement returns PortDefinition
-	 *     DefinitionElement returns PortDefinition
+	 *     DefinitionElements returns PortDefinition
 	 *
 	 * Constraint:
 	 *     (
@@ -5939,7 +5939,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
-	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *         elements+=UsageBodyElement*
 	 *     )
 	 * </pre>
@@ -6003,7 +6003,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                     (
 	 *                         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *                         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
-	 *                         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *                         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *                         elements+=CalculationBodyElement* 
 	 *                         resultExpressionParameter+=ResultExpression?
 	 *                     )
@@ -6014,7 +6014,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
-	 *                 ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *                 ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *                 elements+=CalculationBodyElement* 
 	 *                 resultExpressionParameter+=ResultExpression?
 	 *             ) | 
@@ -6053,7 +6053,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
-	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *         elements+=RequirementBodyElement*
 	 *     )
 	 * </pre>
@@ -6081,7 +6081,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
-	 *                 ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)?
+	 *                 ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)?
 	 *             ) | 
 	 *             (
 	 *                 (
@@ -6104,7 +6104,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *                 )+ 
-	 *                 ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)?
+	 *                 ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)?
 	 *             ) | 
 	 *             refElement=FeatureChainName
 	 *         )? 
@@ -6172,7 +6172,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                     (
 	 *                         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *                         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
-	 *                         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *                         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *                         elements+=CalculationBodyElement* 
 	 *                         resultExpressionParameter+=ResultExpression?
 	 *                     )
@@ -6183,7 +6183,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
-	 *                 ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *                 ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *                 elements+=CalculationBodyElement* 
 	 *                 resultExpressionParameter+=ResultExpression?
 	 *             ) | 
@@ -6214,7 +6214,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
-	 *                 ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)?
+	 *                 ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)?
 	 *             ) | 
 	 *             (
 	 *                 (
@@ -6237,7 +6237,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *                 )+ 
-	 *                 ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)?
+	 *                 ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)?
 	 *             ) | 
 	 *             refElement=FeatureChainName
 	 *         )? 
@@ -6276,7 +6276,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
-	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *         elements+=UsageBodyElement*
 	 *     )
 	 * </pre>
@@ -6313,7 +6313,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
-	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)? 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *         elements+=UsageBodyElement*
 	 *     )
 	 * </pre>
@@ -6383,7 +6383,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                             ) | 
 	 *                             (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression)
 	 *                         )? 
-	 *                         (((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression) | (triggerkind=TriggerKind triggerExpression=Expression))
+	 *                         (((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression) | (triggerkind=TriggerKind triggerExpression=Expression))
 	 *                     )
 	 *                 )?
 	 *             ) | 
@@ -6404,7 +6404,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                     (declaredShortName=Name declaredName=Name?) | 
 	 *                     declaredName=Name
 	 *                 ) 
-	 *                 (((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression) | (triggerkind=TriggerKind triggerExpression=Expression))
+	 *                 (((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression) | (triggerkind=TriggerKind triggerExpression=Expression))
 	 *             ) | 
 	 *             (
 	 *                 (
@@ -6419,7 +6419,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                     (isOrdered?='ordered' isNonunique?='nonunique'?) | 
 	 *                     (
 	 *                         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?)) 
-	 *                         (((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression) | (triggerkind=TriggerKind triggerExpression=Expression))
+	 *                         (((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression) | (triggerkind=TriggerKind triggerExpression=Expression))
 	 *                     ) | 
 	 *                     (isNonunique?='nonunique' isOrdered?='ordered'?)
 	 *                 )
@@ -6447,7 +6447,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (
 	 *                 (
 	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *                     ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)?
+	 *                     ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)?
 	 *                 ) | 
 	 *                 (
 	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
@@ -6465,7 +6465,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 declaredName=Name
 	 *             )? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?)) 
-	 *             ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)?
+	 *             ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)?
 	 *         ) | 
 	 *         (
 	 *             (
@@ -6504,7 +6504,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (
 	 *                 (
 	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *                     ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)?
+	 *                     ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)?
 	 *                 ) | 
 	 *                 (
 	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
@@ -6514,7 +6514,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         ) | 
 	 *         (
 	 *             ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *             ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)?
+	 *             ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)?
 	 *         )
 	 *     )
 	 * </pre>
@@ -6545,7 +6545,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
-	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart+=Expression)?
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)?
 	 *     )
 	 * </pre>
 	 */
@@ -6842,7 +6842,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns EnumerationDefinition
 	 *     ViewDefinitionBodyElement returns EnumerationDefinition
 	 *     ViewBodyElement returns EnumerationDefinition
-	 *     DefinitionElement returns EnumerationDefinition
+	 *     DefinitionElements returns EnumerationDefinition
 	 *     EnumerationDefinition returns EnumerationDefinition
 	 *
 	 * Constraint:
@@ -6876,7 +6876,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns MetadataDefinition
 	 *     ViewDefinitionBodyElement returns MetadataDefinition
 	 *     ViewBodyElement returns MetadataDefinition
-	 *     DefinitionElement returns MetadataDefinition
+	 *     DefinitionElements returns MetadataDefinition
 	 *     MetadataDefinition returns MetadataDefinition
 	 *
 	 * Constraint:
@@ -6911,7 +6911,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns Dependency
 	 *     ViewDefinitionBodyElement returns Dependency
 	 *     ViewBodyElement returns Dependency
-	 *     DefinitionElement returns Dependency
+	 *     DefinitionElements returns Dependency
 	 *
 	 * Constraint:
 	 *     (
@@ -7076,7 +7076,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns LibraryPackage
 	 *     ViewDefinitionBodyElement returns LibraryPackage
 	 *     ViewBodyElement returns LibraryPackage
-	 *     DefinitionElement returns LibraryPackage
+	 *     DefinitionElements returns LibraryPackage
 	 *     LibraryPackage returns LibraryPackage
 	 *
 	 * Constraint:
@@ -7281,7 +7281,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns Package
 	 *     ViewDefinitionBodyElement returns Package
 	 *     ViewBodyElement returns Package
-	 *     DefinitionElement returns Package
+	 *     DefinitionElements returns Package
 	 *     Package returns Package
 	 *
 	 * Constraint:

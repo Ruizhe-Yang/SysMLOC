@@ -169,9 +169,7 @@
         <elements xsi:type="sysMLOC:PerformActionUsage" refElement="'provide power'">
           <redefinitions>VehicleA::'provide power'</redefinitions>
           <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9;&#x9; * In the context of the 'vehicle1_c1' part, the 'provide power' action&#xA;&#x9;&#x9;&#x9;&#x9; * that is enabled in 'vehicle states' gets its input from the 'fuelCmdPort'.&#xA;&#x9;&#x9;&#x9;&#x9; */"/>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="fuelCmd">
-            <valuePart>fuelCmdPort.fuelCmd</valuePart>
-          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="fuelCmd" valuePart="fuelCmdPort.fuelCmd"/>
         </elements>
         <elements xsi:type="sysMLOC:ExhibitStateUsage" refElement="'vehicle states'">
           <redefinitions>VehicleA::'vehicle states'</redefinitions>

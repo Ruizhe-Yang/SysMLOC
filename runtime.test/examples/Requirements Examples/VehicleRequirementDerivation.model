@@ -30,23 +30,20 @@
     </elements>
     <elements xsi:type="sysMLOC:RequirementUsage" declaredName="vehicleMassRequirement">
       <typings>MassRequirement</typings>
-      <elements xsi:type="sysMLOC:SubjectUsage">
+      <elements xsi:type="sysMLOC:SubjectUsage" valuePart="vehicle.mass">
         <redefinitions>mass</redefinitions>
-        <valuePart>vehicle.mass</valuePart>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:RequirementUsage" declaredName="chassisMassRequirement">
       <typings>MassRequirement</typings>
-      <elements xsi:type="sysMLOC:SubjectUsage">
+      <elements xsi:type="sysMLOC:SubjectUsage" valuePart="vehicle.chassis.mass">
         <redefinitions>mass</redefinitions>
-        <valuePart>vehicle.chassis.mass</valuePart>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:RequirementUsage" declaredName="engineMassRequirement">
       <typings>MassRequirement</typings>
-      <elements xsi:type="sysMLOC:SubjectUsage">
+      <elements xsi:type="sysMLOC:SubjectUsage" valuePart="vehicle.engine.mass">
         <redefinitions>mass</redefinitions>
-        <valuePart>vehicle.engine.mass</valuePart>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:ConnectionUsage">

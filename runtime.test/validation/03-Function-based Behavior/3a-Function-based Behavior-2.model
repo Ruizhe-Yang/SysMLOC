@@ -73,9 +73,7 @@
         <elements xsi:type="sysMLOC:ActionUsage" declaredName="'generate torque'">
           <typings>'Generate Torque'</typings>
           <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9;&#x9; * The binding connector shorthand can be used on action parameters.&#xA;&#x9;&#x9;&#x9;&#x9; */"/>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="fuelCmd">
-            <valuePart>'provide power'::fuelCmd</valuePart>
-          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="fuelCmd" valuePart="'provide power'::fuelCmd"/>
         </elements>
         <elements xsi:type="sysMLOC:FlowUsage">
           <FlowEnd>'generate torque'.engineTorque</FlowEnd>

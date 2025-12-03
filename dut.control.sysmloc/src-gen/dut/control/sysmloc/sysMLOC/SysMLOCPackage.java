@@ -410,42 +410,42 @@ public interface SysMLOCPackage extends EPackage
   int ANNOTATING_ELEMENT_FEATURE_COUNT = GENERAL_BODY_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.DefinitionElementImpl <em>Definition Element</em>}' class.
+   * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.DefinitionElementsImpl <em>Definition Elements</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see dut.control.sysmloc.sysMLOC.impl.DefinitionElementImpl
-   * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getDefinitionElement()
+   * @see dut.control.sysmloc.sysMLOC.impl.DefinitionElementsImpl
+   * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getDefinitionElements()
    * @generated
    */
-  int DEFINITION_ELEMENT = 18;
+  int DEFINITION_ELEMENTS = 18;
 
   /**
-   * The number of structural features of the '<em>Definition Element</em>' class.
+   * The number of structural features of the '<em>Definition Elements</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DEFINITION_ELEMENT_FEATURE_COUNT = GENERAL_BODY_ELEMENTS_FEATURE_COUNT + 0;
+  int DEFINITION_ELEMENTS_FEATURE_COUNT = GENERAL_BODY_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.UsageElementImpl <em>Usage Element</em>}' class.
+   * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.UsageElementsImpl <em>Usage Elements</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see dut.control.sysmloc.sysMLOC.impl.UsageElementImpl
-   * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getUsageElement()
+   * @see dut.control.sysmloc.sysMLOC.impl.UsageElementsImpl
+   * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getUsageElements()
    * @generated
    */
-  int USAGE_ELEMENT = 19;
+  int USAGE_ELEMENTS = 19;
 
   /**
-   * The number of structural features of the '<em>Usage Element</em>' class.
+   * The number of structural features of the '<em>Usage Elements</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int USAGE_ELEMENT_FEATURE_COUNT = GENERAL_BODY_ELEMENTS_FEATURE_COUNT + 0;
+  int USAGE_ELEMENTS_FEATURE_COUNT = GENERAL_BODY_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.NonOccurrenceUsageElementImpl <em>Non Occurrence Usage Element</em>}' class.
@@ -464,7 +464,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT = USAGE_ELEMENT_FEATURE_COUNT + 0;
+  int NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT = USAGE_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.OccurrenceUsageElementImpl <em>Occurrence Usage Element</em>}' class.
@@ -483,45 +483,45 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT = USAGE_ELEMENT_FEATURE_COUNT + 0;
+  int OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT = USAGE_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.StructureUsageElementImpl <em>Structure Usage Element</em>}' class.
+   * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.StructureUsageElementsImpl <em>Structure Usage Elements</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see dut.control.sysmloc.sysMLOC.impl.StructureUsageElementImpl
-   * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getStructureUsageElement()
+   * @see dut.control.sysmloc.sysMLOC.impl.StructureUsageElementsImpl
+   * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getStructureUsageElements()
    * @generated
    */
-  int STRUCTURE_USAGE_ELEMENT = 22;
+  int STRUCTURE_USAGE_ELEMENTS = 22;
 
   /**
-   * The number of structural features of the '<em>Structure Usage Element</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT = OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.BehaviorUsageElementImpl <em>Behavior Usage Element</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dut.control.sysmloc.sysMLOC.impl.BehaviorUsageElementImpl
-   * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getBehaviorUsageElement()
-   * @generated
-   */
-  int BEHAVIOR_USAGE_ELEMENT = 23;
-
-  /**
-   * The number of structural features of the '<em>Behavior Usage Element</em>' class.
+   * The number of structural features of the '<em>Structure Usage Elements</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT = OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 0;
+  int STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT = OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.BehaviorUsageElementsImpl <em>Behavior Usage Elements</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.sysmloc.sysMLOC.impl.BehaviorUsageElementsImpl
+   * @see dut.control.sysmloc.sysMLOC.impl.SysMLOCPackageImpl#getBehaviorUsageElements()
+   * @generated
+   */
+  int BEHAVIOR_USAGE_ELEMENTS = 23;
+
+  /**
+   * The number of structural features of the '<em>Behavior Usage Elements</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT = OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.ActionNodeElementsImpl <em>Action Node Elements</em>}' class.
@@ -597,7 +597,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PACKAGE__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENT_FEATURE_COUNT + 0;
+  int PACKAGE__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -606,7 +606,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PACKAGE__DECLARED_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 1;
+  int PACKAGE__DECLARED_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -615,7 +615,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PACKAGE__ELEMENTS = DEFINITION_ELEMENT_FEATURE_COUNT + 2;
+  int PACKAGE__ELEMENTS = DEFINITION_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Package</em>' class.
@@ -624,7 +624,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PACKAGE_FEATURE_COUNT = DEFINITION_ELEMENT_FEATURE_COUNT + 3;
+  int PACKAGE_FEATURE_COUNT = DEFINITION_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.ImportElementImpl <em>Import Element</em>}' class.
@@ -1266,7 +1266,7 @@ public interface SysMLOCPackage extends EPackage
   int DEFAULT_REFERENCE_USAGE__IS_DEFAULT = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 17;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1546,7 +1546,7 @@ public interface SysMLOCPackage extends EPackage
   int EXTENDED_USAGE__IS_DEFAULT = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 24;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1863,7 +1863,7 @@ public interface SysMLOCPackage extends EPackage
   int REFERENCE_USAGE__IS_DEFAULT = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 20;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1906,7 +1906,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LIBRARY_PACKAGE__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENT_FEATURE_COUNT + 0;
+  int LIBRARY_PACKAGE__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -1915,7 +1915,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LIBRARY_PACKAGE__DECLARED_SHORT_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 1;
+  int LIBRARY_PACKAGE__DECLARED_SHORT_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -1924,7 +1924,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LIBRARY_PACKAGE__DECLARED_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 2;
+  int LIBRARY_PACKAGE__DECLARED_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Standard</b></em>' attribute.
@@ -1933,7 +1933,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LIBRARY_PACKAGE__IS_STANDARD = DEFINITION_ELEMENT_FEATURE_COUNT + 3;
+  int LIBRARY_PACKAGE__IS_STANDARD = DEFINITION_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Is Library</b></em>' attribute.
@@ -1942,7 +1942,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LIBRARY_PACKAGE__IS_LIBRARY = DEFINITION_ELEMENT_FEATURE_COUNT + 4;
+  int LIBRARY_PACKAGE__IS_LIBRARY = DEFINITION_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -1951,7 +1951,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LIBRARY_PACKAGE__ELEMENTS = DEFINITION_ELEMENT_FEATURE_COUNT + 5;
+  int LIBRARY_PACKAGE__ELEMENTS = DEFINITION_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The number of structural features of the '<em>Library Package</em>' class.
@@ -1960,7 +1960,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LIBRARY_PACKAGE_FEATURE_COUNT = DEFINITION_ELEMENT_FEATURE_COUNT + 6;
+  int LIBRARY_PACKAGE_FEATURE_COUNT = DEFINITION_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.DependencyImpl <em>Dependency</em>}' class.
@@ -1979,7 +1979,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEPENDENCY__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENT_FEATURE_COUNT + 0;
+  int DEPENDENCY__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -1988,7 +1988,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEPENDENCY__DECLARED_SHORT_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 1;
+  int DEPENDENCY__DECLARED_SHORT_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -1997,7 +1997,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEPENDENCY__DECLARED_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 2;
+  int DEPENDENCY__DECLARED_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Client</b></em>' attribute list.
@@ -2006,7 +2006,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEPENDENCY__CLIENT = DEFINITION_ELEMENT_FEATURE_COUNT + 3;
+  int DEPENDENCY__CLIENT = DEFINITION_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Supplier</b></em>' attribute list.
@@ -2015,7 +2015,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEPENDENCY__SUPPLIER = DEFINITION_ELEMENT_FEATURE_COUNT + 4;
+  int DEPENDENCY__SUPPLIER = DEFINITION_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -2024,7 +2024,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEPENDENCY__ELEMENTS = DEFINITION_ELEMENT_FEATURE_COUNT + 5;
+  int DEPENDENCY__ELEMENTS = DEFINITION_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The number of structural features of the '<em>Dependency</em>' class.
@@ -2033,7 +2033,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEPENDENCY_FEATURE_COUNT = DEFINITION_ELEMENT_FEATURE_COUNT + 6;
+  int DEPENDENCY_FEATURE_COUNT = DEFINITION_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.AttributeDefinitionImpl <em>Attribute Definition</em>}' class.
@@ -2052,7 +2052,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_DEFINITION__VISIBILITY = DEFINITION_ELEMENT_FEATURE_COUNT + 0;
+  int ATTRIBUTE_DEFINITION__VISIBILITY = DEFINITION_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -2061,7 +2061,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_DEFINITION__IS_VARIANT = DEFINITION_ELEMENT_FEATURE_COUNT + 1;
+  int ATTRIBUTE_DEFINITION__IS_VARIANT = DEFINITION_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -2070,7 +2070,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENT_FEATURE_COUNT + 2;
+  int ATTRIBUTE_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -2079,7 +2079,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_DEFINITION__IS_VARIATION = DEFINITION_ELEMENT_FEATURE_COUNT + 3;
+  int ATTRIBUTE_DEFINITION__IS_VARIATION = DEFINITION_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -2088,7 +2088,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENT_FEATURE_COUNT + 4;
+  int ATTRIBUTE_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -2097,7 +2097,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 5;
+  int ATTRIBUTE_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -2106,7 +2106,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 6;
+  int ATTRIBUTE_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Superclassifiers</b></em>' attribute list.
@@ -2115,7 +2115,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENT_FEATURE_COUNT + 7;
+  int ATTRIBUTE_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -2124,7 +2124,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_DEFINITION__ELEMENTS = DEFINITION_ELEMENT_FEATURE_COUNT + 8;
+  int ATTRIBUTE_DEFINITION__ELEMENTS = DEFINITION_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The number of structural features of the '<em>Attribute Definition</em>' class.
@@ -2133,7 +2133,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENT_FEATURE_COUNT + 9;
+  int ATTRIBUTE_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.AttributeUsageImpl <em>Attribute Usage</em>}' class.
@@ -2353,7 +2353,7 @@ public interface SysMLOCPackage extends EPackage
   int ATTRIBUTE_USAGE__IS_DEFAULT = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 22;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -2396,7 +2396,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENUMERATION_DEFINITION__VISIBILITY = DEFINITION_ELEMENT_FEATURE_COUNT + 0;
+  int ENUMERATION_DEFINITION__VISIBILITY = DEFINITION_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -2405,7 +2405,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENUMERATION_DEFINITION__IS_VARIANT = DEFINITION_ELEMENT_FEATURE_COUNT + 1;
+  int ENUMERATION_DEFINITION__IS_VARIANT = DEFINITION_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -2414,7 +2414,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENUMERATION_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENT_FEATURE_COUNT + 2;
+  int ENUMERATION_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -2423,7 +2423,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENUMERATION_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 3;
+  int ENUMERATION_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -2432,7 +2432,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENUMERATION_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 4;
+  int ENUMERATION_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Superclassifiers</b></em>' attribute list.
@@ -2441,7 +2441,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENUMERATION_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENT_FEATURE_COUNT + 5;
+  int ENUMERATION_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -2450,7 +2450,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENUMERATION_DEFINITION__ELEMENTS = DEFINITION_ELEMENT_FEATURE_COUNT + 6;
+  int ENUMERATION_DEFINITION__ELEMENTS = DEFINITION_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The number of structural features of the '<em>Enumeration Definition</em>' class.
@@ -2459,7 +2459,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENUMERATION_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENT_FEATURE_COUNT + 7;
+  int ENUMERATION_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.EnumeratedValueImpl <em>Enumerated Value</em>}' class.
@@ -2607,7 +2607,7 @@ public interface SysMLOCPackage extends EPackage
   int ENUMERATED_VALUE__IS_DEFAULT = ENUMERATION_BODY_ELEMENT_FEATURE_COUNT + 14;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -2851,7 +2851,7 @@ public interface SysMLOCPackage extends EPackage
   int ENUMERATION_USAGE__IS_DEFAULT = NON_OCCURRENCE_USAGE_ELEMENT_FEATURE_COUNT + 22;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -3346,7 +3346,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OCCURRENCE_DEFINITION__VISIBILITY = DEFINITION_ELEMENT_FEATURE_COUNT + 0;
+  int OCCURRENCE_DEFINITION__VISIBILITY = DEFINITION_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -3355,7 +3355,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OCCURRENCE_DEFINITION__IS_VARIANT = DEFINITION_ELEMENT_FEATURE_COUNT + 1;
+  int OCCURRENCE_DEFINITION__IS_VARIANT = DEFINITION_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -3364,7 +3364,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OCCURRENCE_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENT_FEATURE_COUNT + 2;
+  int OCCURRENCE_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -3373,7 +3373,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OCCURRENCE_DEFINITION__IS_VARIATION = DEFINITION_ELEMENT_FEATURE_COUNT + 3;
+  int OCCURRENCE_DEFINITION__IS_VARIATION = DEFINITION_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -3382,7 +3382,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OCCURRENCE_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENT_FEATURE_COUNT + 4;
+  int OCCURRENCE_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -3391,7 +3391,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OCCURRENCE_DEFINITION__IS_INDIVIDUAL = DEFINITION_ELEMENT_FEATURE_COUNT + 5;
+  int OCCURRENCE_DEFINITION__IS_INDIVIDUAL = DEFINITION_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -3400,7 +3400,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OCCURRENCE_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 6;
+  int OCCURRENCE_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -3409,7 +3409,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OCCURRENCE_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 7;
+  int OCCURRENCE_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Superclassifiers</b></em>' attribute list.
@@ -3418,7 +3418,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OCCURRENCE_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENT_FEATURE_COUNT + 8;
+  int OCCURRENCE_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -3427,7 +3427,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OCCURRENCE_DEFINITION__ELEMENTS = DEFINITION_ELEMENT_FEATURE_COUNT + 9;
+  int OCCURRENCE_DEFINITION__ELEMENTS = DEFINITION_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The number of structural features of the '<em>Occurrence Definition</em>' class.
@@ -3436,7 +3436,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OCCURRENCE_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENT_FEATURE_COUNT + 10;
+  int OCCURRENCE_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.OccurrenceUsageImpl <em>Occurrence Usage</em>}' class.
@@ -3455,7 +3455,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OCCURRENCE_USAGE__IS_THEN = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 0;
+  int OCCURRENCE_USAGE__IS_THEN = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Then Multiplicity</b></em>' attribute list.
@@ -3464,7 +3464,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OCCURRENCE_USAGE__THEN_MULTIPLICITY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 1;
+  int OCCURRENCE_USAGE__THEN_MULTIPLICITY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -3473,7 +3473,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OCCURRENCE_USAGE__VISIBILITY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 2;
+  int OCCURRENCE_USAGE__VISIBILITY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -3482,7 +3482,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OCCURRENCE_USAGE__IS_VARIANT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 3;
+  int OCCURRENCE_USAGE__IS_VARIANT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Is Return</b></em>' attribute.
@@ -3491,7 +3491,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OCCURRENCE_USAGE__IS_RETURN = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 4;
+  int OCCURRENCE_USAGE__IS_RETURN = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -3500,7 +3500,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OCCURRENCE_USAGE__IS_ABSTRACT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 5;
+  int OCCURRENCE_USAGE__IS_ABSTRACT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -3509,7 +3509,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OCCURRENCE_USAGE__IS_VARIATION = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 6;
+  int OCCURRENCE_USAGE__IS_VARIATION = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -3518,7 +3518,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OCCURRENCE_USAGE__DIRECTION = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 7;
+  int OCCURRENCE_USAGE__DIRECTION = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Is Read Only</b></em>' attribute.
@@ -3527,7 +3527,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OCCURRENCE_USAGE__IS_READ_ONLY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 8;
+  int OCCURRENCE_USAGE__IS_READ_ONLY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Is Derived</b></em>' attribute.
@@ -3536,7 +3536,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OCCURRENCE_USAGE__IS_DERIVED = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 9;
+  int OCCURRENCE_USAGE__IS_DERIVED = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Is Reference</b></em>' attribute.
@@ -3545,7 +3545,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OCCURRENCE_USAGE__IS_REFERENCE = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 10;
+  int OCCURRENCE_USAGE__IS_REFERENCE = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -3554,7 +3554,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OCCURRENCE_USAGE__PREFIX_METADATA_EXTENSION = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 11;
+  int OCCURRENCE_USAGE__PREFIX_METADATA_EXTENSION = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Is End</b></em>' attribute.
@@ -3563,7 +3563,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OCCURRENCE_USAGE__IS_END = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 12;
+  int OCCURRENCE_USAGE__IS_END = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -3572,7 +3572,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OCCURRENCE_USAGE__IS_INDIVIDUAL = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 13;
+  int OCCURRENCE_USAGE__IS_INDIVIDUAL = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>Portion Kind</b></em>' attribute.
@@ -3581,7 +3581,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OCCURRENCE_USAGE__PORTION_KIND = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 14;
+  int OCCURRENCE_USAGE__PORTION_KIND = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -3590,7 +3590,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OCCURRENCE_USAGE__DECLARED_SHORT_NAME = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 15;
+  int OCCURRENCE_USAGE__DECLARED_SHORT_NAME = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -3599,7 +3599,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OCCURRENCE_USAGE__DECLARED_NAME = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 16;
+  int OCCURRENCE_USAGE__DECLARED_NAME = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -3608,7 +3608,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OCCURRENCE_USAGE__TYPINGS = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 17;
+  int OCCURRENCE_USAGE__TYPINGS = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
@@ -3617,7 +3617,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OCCURRENCE_USAGE__SUBSETTING = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 18;
+  int OCCURRENCE_USAGE__SUBSETTING = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute list.
@@ -3626,7 +3626,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OCCURRENCE_USAGE__REFERENCES = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 19;
+  int OCCURRENCE_USAGE__REFERENCES = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Crosses</b></em>' attribute list.
@@ -3635,7 +3635,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OCCURRENCE_USAGE__CROSSES = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 20;
+  int OCCURRENCE_USAGE__CROSSES = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 20;
 
   /**
    * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
@@ -3644,7 +3644,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OCCURRENCE_USAGE__REDEFINITIONS = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 21;
+  int OCCURRENCE_USAGE__REDEFINITIONS = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 21;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -3653,7 +3653,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OCCURRENCE_USAGE__MULTIPLICITY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 22;
+  int OCCURRENCE_USAGE__MULTIPLICITY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 22;
 
   /**
    * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
@@ -3662,7 +3662,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OCCURRENCE_USAGE__IS_ORDERED = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 23;
+  int OCCURRENCE_USAGE__IS_ORDERED = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 23;
 
   /**
    * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
@@ -3671,7 +3671,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OCCURRENCE_USAGE__IS_NONUNIQUE = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 24;
+  int OCCURRENCE_USAGE__IS_NONUNIQUE = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 24;
 
   /**
    * The feature id for the '<em><b>Is Initial</b></em>' attribute.
@@ -3680,7 +3680,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OCCURRENCE_USAGE__IS_INITIAL = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 25;
+  int OCCURRENCE_USAGE__IS_INITIAL = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 25;
 
   /**
    * The feature id for the '<em><b>Is Default</b></em>' attribute.
@@ -3689,16 +3689,16 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OCCURRENCE_USAGE__IS_DEFAULT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 26;
+  int OCCURRENCE_USAGE__IS_DEFAULT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 26;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OCCURRENCE_USAGE__VALUE_PART = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 27;
+  int OCCURRENCE_USAGE__VALUE_PART = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 27;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -3707,7 +3707,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OCCURRENCE_USAGE__ELEMENTS = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 28;
+  int OCCURRENCE_USAGE__ELEMENTS = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 28;
 
   /**
    * The number of structural features of the '<em>Occurrence Usage</em>' class.
@@ -3716,7 +3716,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OCCURRENCE_USAGE_FEATURE_COUNT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 29;
+  int OCCURRENCE_USAGE_FEATURE_COUNT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 29;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.PortionUsageImpl <em>Portion Usage</em>}' class.
@@ -3735,7 +3735,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORTION_USAGE__IS_THEN = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 0;
+  int PORTION_USAGE__IS_THEN = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Then Multiplicity</b></em>' attribute list.
@@ -3744,7 +3744,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORTION_USAGE__THEN_MULTIPLICITY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 1;
+  int PORTION_USAGE__THEN_MULTIPLICITY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -3753,7 +3753,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORTION_USAGE__VISIBILITY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 2;
+  int PORTION_USAGE__VISIBILITY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -3762,7 +3762,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORTION_USAGE__IS_VARIANT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 3;
+  int PORTION_USAGE__IS_VARIANT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Is Return</b></em>' attribute.
@@ -3771,7 +3771,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORTION_USAGE__IS_RETURN = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 4;
+  int PORTION_USAGE__IS_RETURN = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -3780,7 +3780,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORTION_USAGE__IS_ABSTRACT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 5;
+  int PORTION_USAGE__IS_ABSTRACT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -3789,7 +3789,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORTION_USAGE__IS_VARIATION = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 6;
+  int PORTION_USAGE__IS_VARIATION = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -3798,7 +3798,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORTION_USAGE__DIRECTION = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 7;
+  int PORTION_USAGE__DIRECTION = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Is Read Only</b></em>' attribute.
@@ -3807,7 +3807,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORTION_USAGE__IS_READ_ONLY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 8;
+  int PORTION_USAGE__IS_READ_ONLY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Is Derived</b></em>' attribute.
@@ -3816,7 +3816,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORTION_USAGE__IS_DERIVED = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 9;
+  int PORTION_USAGE__IS_DERIVED = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Is Reference</b></em>' attribute.
@@ -3825,7 +3825,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORTION_USAGE__IS_REFERENCE = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 10;
+  int PORTION_USAGE__IS_REFERENCE = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -3834,7 +3834,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORTION_USAGE__PREFIX_METADATA_EXTENSION = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 11;
+  int PORTION_USAGE__PREFIX_METADATA_EXTENSION = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -3843,7 +3843,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORTION_USAGE__DECLARED_SHORT_NAME = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 12;
+  int PORTION_USAGE__DECLARED_SHORT_NAME = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -3852,7 +3852,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORTION_USAGE__DECLARED_NAME = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 13;
+  int PORTION_USAGE__DECLARED_NAME = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -3861,7 +3861,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORTION_USAGE__TYPINGS = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 14;
+  int PORTION_USAGE__TYPINGS = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
@@ -3870,7 +3870,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORTION_USAGE__SUBSETTING = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 15;
+  int PORTION_USAGE__SUBSETTING = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute list.
@@ -3879,7 +3879,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORTION_USAGE__REFERENCES = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 16;
+  int PORTION_USAGE__REFERENCES = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Crosses</b></em>' attribute list.
@@ -3888,7 +3888,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORTION_USAGE__CROSSES = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 17;
+  int PORTION_USAGE__CROSSES = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
@@ -3897,7 +3897,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORTION_USAGE__REDEFINITIONS = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 18;
+  int PORTION_USAGE__REDEFINITIONS = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -3906,7 +3906,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORTION_USAGE__MULTIPLICITY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 19;
+  int PORTION_USAGE__MULTIPLICITY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
@@ -3915,7 +3915,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORTION_USAGE__IS_ORDERED = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 20;
+  int PORTION_USAGE__IS_ORDERED = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 20;
 
   /**
    * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
@@ -3924,7 +3924,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORTION_USAGE__IS_NONUNIQUE = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 21;
+  int PORTION_USAGE__IS_NONUNIQUE = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 21;
 
   /**
    * The feature id for the '<em><b>Is Initial</b></em>' attribute.
@@ -3933,7 +3933,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORTION_USAGE__IS_INITIAL = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 22;
+  int PORTION_USAGE__IS_INITIAL = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 22;
 
   /**
    * The feature id for the '<em><b>Is Default</b></em>' attribute.
@@ -3942,16 +3942,16 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORTION_USAGE__IS_DEFAULT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 23;
+  int PORTION_USAGE__IS_DEFAULT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 23;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PORTION_USAGE__VALUE_PART = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 24;
+  int PORTION_USAGE__VALUE_PART = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 24;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -3960,7 +3960,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORTION_USAGE__IS_INDIVIDUAL = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 25;
+  int PORTION_USAGE__IS_INDIVIDUAL = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 25;
 
   /**
    * The feature id for the '<em><b>Portion Kind</b></em>' attribute.
@@ -3969,7 +3969,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORTION_USAGE__PORTION_KIND = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 26;
+  int PORTION_USAGE__PORTION_KIND = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 26;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -3978,7 +3978,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORTION_USAGE__ELEMENTS = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 27;
+  int PORTION_USAGE__ELEMENTS = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 27;
 
   /**
    * The number of structural features of the '<em>Portion Usage</em>' class.
@@ -3987,7 +3987,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORTION_USAGE_FEATURE_COUNT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 28;
+  int PORTION_USAGE_FEATURE_COUNT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 28;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.EventOccurrenceUsageImpl <em>Event Occurrence Usage</em>}' class.
@@ -4006,7 +4006,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EVENT_OCCURRENCE_USAGE__IS_THEN = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 0;
+  int EVENT_OCCURRENCE_USAGE__IS_THEN = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Then Multiplicity</b></em>' attribute list.
@@ -4015,7 +4015,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EVENT_OCCURRENCE_USAGE__THEN_MULTIPLICITY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 1;
+  int EVENT_OCCURRENCE_USAGE__THEN_MULTIPLICITY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -4024,7 +4024,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EVENT_OCCURRENCE_USAGE__VISIBILITY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 2;
+  int EVENT_OCCURRENCE_USAGE__VISIBILITY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -4033,7 +4033,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EVENT_OCCURRENCE_USAGE__IS_VARIANT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 3;
+  int EVENT_OCCURRENCE_USAGE__IS_VARIANT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Is Return</b></em>' attribute.
@@ -4042,7 +4042,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EVENT_OCCURRENCE_USAGE__IS_RETURN = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 4;
+  int EVENT_OCCURRENCE_USAGE__IS_RETURN = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -4051,7 +4051,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EVENT_OCCURRENCE_USAGE__IS_ABSTRACT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 5;
+  int EVENT_OCCURRENCE_USAGE__IS_ABSTRACT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -4060,7 +4060,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EVENT_OCCURRENCE_USAGE__IS_VARIATION = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 6;
+  int EVENT_OCCURRENCE_USAGE__IS_VARIATION = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -4069,7 +4069,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EVENT_OCCURRENCE_USAGE__DIRECTION = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 7;
+  int EVENT_OCCURRENCE_USAGE__DIRECTION = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Is Read Only</b></em>' attribute.
@@ -4078,7 +4078,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EVENT_OCCURRENCE_USAGE__IS_READ_ONLY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 8;
+  int EVENT_OCCURRENCE_USAGE__IS_READ_ONLY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Is Derived</b></em>' attribute.
@@ -4087,7 +4087,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EVENT_OCCURRENCE_USAGE__IS_DERIVED = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 9;
+  int EVENT_OCCURRENCE_USAGE__IS_DERIVED = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Is Reference</b></em>' attribute.
@@ -4096,7 +4096,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EVENT_OCCURRENCE_USAGE__IS_REFERENCE = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 10;
+  int EVENT_OCCURRENCE_USAGE__IS_REFERENCE = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -4105,7 +4105,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EVENT_OCCURRENCE_USAGE__PREFIX_METADATA_EXTENSION = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 11;
+  int EVENT_OCCURRENCE_USAGE__PREFIX_METADATA_EXTENSION = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Is End</b></em>' attribute.
@@ -4114,7 +4114,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EVENT_OCCURRENCE_USAGE__IS_END = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 12;
+  int EVENT_OCCURRENCE_USAGE__IS_END = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -4123,7 +4123,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EVENT_OCCURRENCE_USAGE__IS_INDIVIDUAL = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 13;
+  int EVENT_OCCURRENCE_USAGE__IS_INDIVIDUAL = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>Portion Kind</b></em>' attribute.
@@ -4132,7 +4132,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EVENT_OCCURRENCE_USAGE__PORTION_KIND = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 14;
+  int EVENT_OCCURRENCE_USAGE__PORTION_KIND = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Ref Element</b></em>' attribute.
@@ -4141,7 +4141,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EVENT_OCCURRENCE_USAGE__REF_ELEMENT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 15;
+  int EVENT_OCCURRENCE_USAGE__REF_ELEMENT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -4150,7 +4150,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EVENT_OCCURRENCE_USAGE__TYPINGS = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 16;
+  int EVENT_OCCURRENCE_USAGE__TYPINGS = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
@@ -4159,7 +4159,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EVENT_OCCURRENCE_USAGE__SUBSETTING = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 17;
+  int EVENT_OCCURRENCE_USAGE__SUBSETTING = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute list.
@@ -4168,7 +4168,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EVENT_OCCURRENCE_USAGE__REFERENCES = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 18;
+  int EVENT_OCCURRENCE_USAGE__REFERENCES = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>Crosses</b></em>' attribute list.
@@ -4177,7 +4177,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EVENT_OCCURRENCE_USAGE__CROSSES = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 19;
+  int EVENT_OCCURRENCE_USAGE__CROSSES = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
@@ -4186,7 +4186,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EVENT_OCCURRENCE_USAGE__REDEFINITIONS = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 20;
+  int EVENT_OCCURRENCE_USAGE__REDEFINITIONS = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 20;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -4195,7 +4195,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EVENT_OCCURRENCE_USAGE__MULTIPLICITY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 21;
+  int EVENT_OCCURRENCE_USAGE__MULTIPLICITY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 21;
 
   /**
    * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
@@ -4204,7 +4204,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EVENT_OCCURRENCE_USAGE__IS_ORDERED = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 22;
+  int EVENT_OCCURRENCE_USAGE__IS_ORDERED = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 22;
 
   /**
    * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
@@ -4213,7 +4213,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EVENT_OCCURRENCE_USAGE__IS_NONUNIQUE = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 23;
+  int EVENT_OCCURRENCE_USAGE__IS_NONUNIQUE = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 23;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -4222,7 +4222,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EVENT_OCCURRENCE_USAGE__DECLARED_SHORT_NAME = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 24;
+  int EVENT_OCCURRENCE_USAGE__DECLARED_SHORT_NAME = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 24;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -4231,7 +4231,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EVENT_OCCURRENCE_USAGE__DECLARED_NAME = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 25;
+  int EVENT_OCCURRENCE_USAGE__DECLARED_NAME = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 25;
 
   /**
    * The feature id for the '<em><b>Is Initial</b></em>' attribute.
@@ -4240,7 +4240,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EVENT_OCCURRENCE_USAGE__IS_INITIAL = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 26;
+  int EVENT_OCCURRENCE_USAGE__IS_INITIAL = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 26;
 
   /**
    * The feature id for the '<em><b>Is Default</b></em>' attribute.
@@ -4249,16 +4249,16 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EVENT_OCCURRENCE_USAGE__IS_DEFAULT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 27;
+  int EVENT_OCCURRENCE_USAGE__IS_DEFAULT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 27;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EVENT_OCCURRENCE_USAGE__VALUE_PART = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 28;
+  int EVENT_OCCURRENCE_USAGE__VALUE_PART = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 28;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -4267,7 +4267,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EVENT_OCCURRENCE_USAGE__ELEMENTS = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 29;
+  int EVENT_OCCURRENCE_USAGE__ELEMENTS = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 29;
 
   /**
    * The number of structural features of the '<em>Event Occurrence Usage</em>' class.
@@ -4276,7 +4276,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EVENT_OCCURRENCE_USAGE_FEATURE_COUNT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 30;
+  int EVENT_OCCURRENCE_USAGE_FEATURE_COUNT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 30;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.IndividualDefinitionImpl <em>Individual Definition</em>}' class.
@@ -4295,7 +4295,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INDIVIDUAL_DEFINITION__VISIBILITY = DEFINITION_ELEMENT_FEATURE_COUNT + 0;
+  int INDIVIDUAL_DEFINITION__VISIBILITY = DEFINITION_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -4304,7 +4304,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INDIVIDUAL_DEFINITION__IS_VARIANT = DEFINITION_ELEMENT_FEATURE_COUNT + 1;
+  int INDIVIDUAL_DEFINITION__IS_VARIANT = DEFINITION_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -4313,7 +4313,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INDIVIDUAL_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENT_FEATURE_COUNT + 2;
+  int INDIVIDUAL_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -4322,7 +4322,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INDIVIDUAL_DEFINITION__IS_VARIATION = DEFINITION_ELEMENT_FEATURE_COUNT + 3;
+  int INDIVIDUAL_DEFINITION__IS_VARIATION = DEFINITION_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -4331,7 +4331,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INDIVIDUAL_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENT_FEATURE_COUNT + 4;
+  int INDIVIDUAL_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -4340,7 +4340,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INDIVIDUAL_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 5;
+  int INDIVIDUAL_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -4349,7 +4349,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INDIVIDUAL_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 6;
+  int INDIVIDUAL_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Superclassifiers</b></em>' attribute list.
@@ -4358,7 +4358,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INDIVIDUAL_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENT_FEATURE_COUNT + 7;
+  int INDIVIDUAL_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -4367,7 +4367,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INDIVIDUAL_DEFINITION__IS_INDIVIDUAL = DEFINITION_ELEMENT_FEATURE_COUNT + 8;
+  int INDIVIDUAL_DEFINITION__IS_INDIVIDUAL = DEFINITION_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -4376,7 +4376,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INDIVIDUAL_DEFINITION__ELEMENTS = DEFINITION_ELEMENT_FEATURE_COUNT + 9;
+  int INDIVIDUAL_DEFINITION__ELEMENTS = DEFINITION_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The number of structural features of the '<em>Individual Definition</em>' class.
@@ -4385,7 +4385,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INDIVIDUAL_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENT_FEATURE_COUNT + 10;
+  int INDIVIDUAL_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.IndividualUsageImpl <em>Individual Usage</em>}' class.
@@ -4404,7 +4404,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INDIVIDUAL_USAGE__IS_THEN = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 0;
+  int INDIVIDUAL_USAGE__IS_THEN = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Then Multiplicity</b></em>' attribute list.
@@ -4413,7 +4413,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INDIVIDUAL_USAGE__THEN_MULTIPLICITY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 1;
+  int INDIVIDUAL_USAGE__THEN_MULTIPLICITY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -4422,7 +4422,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INDIVIDUAL_USAGE__VISIBILITY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 2;
+  int INDIVIDUAL_USAGE__VISIBILITY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -4431,7 +4431,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INDIVIDUAL_USAGE__IS_VARIANT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 3;
+  int INDIVIDUAL_USAGE__IS_VARIANT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Is Return</b></em>' attribute.
@@ -4440,7 +4440,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INDIVIDUAL_USAGE__IS_RETURN = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 4;
+  int INDIVIDUAL_USAGE__IS_RETURN = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -4449,7 +4449,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INDIVIDUAL_USAGE__IS_ABSTRACT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 5;
+  int INDIVIDUAL_USAGE__IS_ABSTRACT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -4458,7 +4458,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INDIVIDUAL_USAGE__IS_VARIATION = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 6;
+  int INDIVIDUAL_USAGE__IS_VARIATION = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -4467,7 +4467,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INDIVIDUAL_USAGE__DIRECTION = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 7;
+  int INDIVIDUAL_USAGE__DIRECTION = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Is Read Only</b></em>' attribute.
@@ -4476,7 +4476,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INDIVIDUAL_USAGE__IS_READ_ONLY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 8;
+  int INDIVIDUAL_USAGE__IS_READ_ONLY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Is Derived</b></em>' attribute.
@@ -4485,7 +4485,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INDIVIDUAL_USAGE__IS_DERIVED = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 9;
+  int INDIVIDUAL_USAGE__IS_DERIVED = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Is Reference</b></em>' attribute.
@@ -4494,7 +4494,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INDIVIDUAL_USAGE__IS_REFERENCE = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 10;
+  int INDIVIDUAL_USAGE__IS_REFERENCE = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -4503,7 +4503,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INDIVIDUAL_USAGE__PREFIX_METADATA_EXTENSION = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 11;
+  int INDIVIDUAL_USAGE__PREFIX_METADATA_EXTENSION = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -4512,7 +4512,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INDIVIDUAL_USAGE__DECLARED_SHORT_NAME = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 12;
+  int INDIVIDUAL_USAGE__DECLARED_SHORT_NAME = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -4521,7 +4521,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INDIVIDUAL_USAGE__DECLARED_NAME = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 13;
+  int INDIVIDUAL_USAGE__DECLARED_NAME = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -4530,7 +4530,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INDIVIDUAL_USAGE__TYPINGS = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 14;
+  int INDIVIDUAL_USAGE__TYPINGS = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
@@ -4539,7 +4539,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INDIVIDUAL_USAGE__SUBSETTING = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 15;
+  int INDIVIDUAL_USAGE__SUBSETTING = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute list.
@@ -4548,7 +4548,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INDIVIDUAL_USAGE__REFERENCES = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 16;
+  int INDIVIDUAL_USAGE__REFERENCES = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Crosses</b></em>' attribute list.
@@ -4557,7 +4557,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INDIVIDUAL_USAGE__CROSSES = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 17;
+  int INDIVIDUAL_USAGE__CROSSES = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
@@ -4566,7 +4566,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INDIVIDUAL_USAGE__REDEFINITIONS = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 18;
+  int INDIVIDUAL_USAGE__REDEFINITIONS = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -4575,7 +4575,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INDIVIDUAL_USAGE__MULTIPLICITY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 19;
+  int INDIVIDUAL_USAGE__MULTIPLICITY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
@@ -4584,7 +4584,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INDIVIDUAL_USAGE__IS_ORDERED = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 20;
+  int INDIVIDUAL_USAGE__IS_ORDERED = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 20;
 
   /**
    * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
@@ -4593,7 +4593,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INDIVIDUAL_USAGE__IS_NONUNIQUE = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 21;
+  int INDIVIDUAL_USAGE__IS_NONUNIQUE = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 21;
 
   /**
    * The feature id for the '<em><b>Is Initial</b></em>' attribute.
@@ -4602,7 +4602,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INDIVIDUAL_USAGE__IS_INITIAL = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 22;
+  int INDIVIDUAL_USAGE__IS_INITIAL = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 22;
 
   /**
    * The feature id for the '<em><b>Is Default</b></em>' attribute.
@@ -4611,16 +4611,16 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INDIVIDUAL_USAGE__IS_DEFAULT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 23;
+  int INDIVIDUAL_USAGE__IS_DEFAULT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 23;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INDIVIDUAL_USAGE__VALUE_PART = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 24;
+  int INDIVIDUAL_USAGE__VALUE_PART = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 24;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -4629,7 +4629,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INDIVIDUAL_USAGE__IS_INDIVIDUAL = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 25;
+  int INDIVIDUAL_USAGE__IS_INDIVIDUAL = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 25;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -4638,7 +4638,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INDIVIDUAL_USAGE__ELEMENTS = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 26;
+  int INDIVIDUAL_USAGE__ELEMENTS = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 26;
 
   /**
    * The number of structural features of the '<em>Individual Usage</em>' class.
@@ -4647,7 +4647,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INDIVIDUAL_USAGE_FEATURE_COUNT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 27;
+  int INDIVIDUAL_USAGE_FEATURE_COUNT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 27;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.ItemDefinitionImpl <em>Item Definition</em>}' class.
@@ -4666,7 +4666,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ITEM_DEFINITION__VISIBILITY = DEFINITION_ELEMENT_FEATURE_COUNT + 0;
+  int ITEM_DEFINITION__VISIBILITY = DEFINITION_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -4675,7 +4675,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ITEM_DEFINITION__IS_VARIANT = DEFINITION_ELEMENT_FEATURE_COUNT + 1;
+  int ITEM_DEFINITION__IS_VARIANT = DEFINITION_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -4684,7 +4684,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ITEM_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENT_FEATURE_COUNT + 2;
+  int ITEM_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -4693,7 +4693,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ITEM_DEFINITION__IS_VARIATION = DEFINITION_ELEMENT_FEATURE_COUNT + 3;
+  int ITEM_DEFINITION__IS_VARIATION = DEFINITION_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -4702,7 +4702,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ITEM_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENT_FEATURE_COUNT + 4;
+  int ITEM_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -4711,7 +4711,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ITEM_DEFINITION__IS_INDIVIDUAL = DEFINITION_ELEMENT_FEATURE_COUNT + 5;
+  int ITEM_DEFINITION__IS_INDIVIDUAL = DEFINITION_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -4720,7 +4720,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ITEM_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 6;
+  int ITEM_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -4729,7 +4729,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ITEM_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 7;
+  int ITEM_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Superclassifiers</b></em>' attribute list.
@@ -4738,7 +4738,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ITEM_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENT_FEATURE_COUNT + 8;
+  int ITEM_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -4747,7 +4747,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ITEM_DEFINITION__ELEMENTS = DEFINITION_ELEMENT_FEATURE_COUNT + 9;
+  int ITEM_DEFINITION__ELEMENTS = DEFINITION_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The number of structural features of the '<em>Item Definition</em>' class.
@@ -4756,7 +4756,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ITEM_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENT_FEATURE_COUNT + 10;
+  int ITEM_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.ItemUsageImpl <em>Item Usage</em>}' class.
@@ -4775,7 +4775,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ITEM_USAGE__IS_THEN = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 0;
+  int ITEM_USAGE__IS_THEN = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Then Multiplicity</b></em>' attribute list.
@@ -4784,7 +4784,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ITEM_USAGE__THEN_MULTIPLICITY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 1;
+  int ITEM_USAGE__THEN_MULTIPLICITY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -4793,7 +4793,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ITEM_USAGE__VISIBILITY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 2;
+  int ITEM_USAGE__VISIBILITY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -4802,7 +4802,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ITEM_USAGE__IS_VARIANT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 3;
+  int ITEM_USAGE__IS_VARIANT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Is Return</b></em>' attribute.
@@ -4811,7 +4811,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ITEM_USAGE__IS_RETURN = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 4;
+  int ITEM_USAGE__IS_RETURN = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -4820,7 +4820,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ITEM_USAGE__IS_ABSTRACT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 5;
+  int ITEM_USAGE__IS_ABSTRACT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -4829,7 +4829,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ITEM_USAGE__IS_VARIATION = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 6;
+  int ITEM_USAGE__IS_VARIATION = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -4838,7 +4838,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ITEM_USAGE__DIRECTION = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 7;
+  int ITEM_USAGE__DIRECTION = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Is Read Only</b></em>' attribute.
@@ -4847,7 +4847,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ITEM_USAGE__IS_READ_ONLY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 8;
+  int ITEM_USAGE__IS_READ_ONLY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Is Derived</b></em>' attribute.
@@ -4856,7 +4856,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ITEM_USAGE__IS_DERIVED = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 9;
+  int ITEM_USAGE__IS_DERIVED = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Is Reference</b></em>' attribute.
@@ -4865,7 +4865,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ITEM_USAGE__IS_REFERENCE = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 10;
+  int ITEM_USAGE__IS_REFERENCE = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -4874,7 +4874,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ITEM_USAGE__PREFIX_METADATA_EXTENSION = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 11;
+  int ITEM_USAGE__PREFIX_METADATA_EXTENSION = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Is End</b></em>' attribute.
@@ -4883,7 +4883,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ITEM_USAGE__IS_END = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 12;
+  int ITEM_USAGE__IS_END = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -4892,7 +4892,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ITEM_USAGE__IS_INDIVIDUAL = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 13;
+  int ITEM_USAGE__IS_INDIVIDUAL = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>Portion Kind</b></em>' attribute.
@@ -4901,7 +4901,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ITEM_USAGE__PORTION_KIND = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 14;
+  int ITEM_USAGE__PORTION_KIND = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -4910,7 +4910,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ITEM_USAGE__DECLARED_SHORT_NAME = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 15;
+  int ITEM_USAGE__DECLARED_SHORT_NAME = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -4919,7 +4919,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ITEM_USAGE__DECLARED_NAME = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 16;
+  int ITEM_USAGE__DECLARED_NAME = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -4928,7 +4928,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ITEM_USAGE__TYPINGS = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 17;
+  int ITEM_USAGE__TYPINGS = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
@@ -4937,7 +4937,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ITEM_USAGE__SUBSETTING = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 18;
+  int ITEM_USAGE__SUBSETTING = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute list.
@@ -4946,7 +4946,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ITEM_USAGE__REFERENCES = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 19;
+  int ITEM_USAGE__REFERENCES = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Crosses</b></em>' attribute list.
@@ -4955,7 +4955,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ITEM_USAGE__CROSSES = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 20;
+  int ITEM_USAGE__CROSSES = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 20;
 
   /**
    * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
@@ -4964,7 +4964,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ITEM_USAGE__REDEFINITIONS = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 21;
+  int ITEM_USAGE__REDEFINITIONS = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 21;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -4973,7 +4973,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ITEM_USAGE__MULTIPLICITY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 22;
+  int ITEM_USAGE__MULTIPLICITY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 22;
 
   /**
    * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
@@ -4982,7 +4982,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ITEM_USAGE__IS_ORDERED = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 23;
+  int ITEM_USAGE__IS_ORDERED = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 23;
 
   /**
    * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
@@ -4991,7 +4991,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ITEM_USAGE__IS_NONUNIQUE = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 24;
+  int ITEM_USAGE__IS_NONUNIQUE = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 24;
 
   /**
    * The feature id for the '<em><b>Is Initial</b></em>' attribute.
@@ -5000,7 +5000,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ITEM_USAGE__IS_INITIAL = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 25;
+  int ITEM_USAGE__IS_INITIAL = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 25;
 
   /**
    * The feature id for the '<em><b>Is Default</b></em>' attribute.
@@ -5009,16 +5009,16 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ITEM_USAGE__IS_DEFAULT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 26;
+  int ITEM_USAGE__IS_DEFAULT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 26;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ITEM_USAGE__VALUE_PART = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 27;
+  int ITEM_USAGE__VALUE_PART = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 27;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -5027,7 +5027,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ITEM_USAGE__ELEMENTS = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 28;
+  int ITEM_USAGE__ELEMENTS = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 28;
 
   /**
    * The number of structural features of the '<em>Item Usage</em>' class.
@@ -5036,7 +5036,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ITEM_USAGE_FEATURE_COUNT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 29;
+  int ITEM_USAGE_FEATURE_COUNT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 29;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.MetadataDefinitionImpl <em>Metadata Definition</em>}' class.
@@ -5055,7 +5055,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int METADATA_DEFINITION__VISIBILITY = DEFINITION_ELEMENT_FEATURE_COUNT + 0;
+  int METADATA_DEFINITION__VISIBILITY = DEFINITION_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -5064,7 +5064,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int METADATA_DEFINITION__IS_VARIANT = DEFINITION_ELEMENT_FEATURE_COUNT + 1;
+  int METADATA_DEFINITION__IS_VARIANT = DEFINITION_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -5073,7 +5073,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int METADATA_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENT_FEATURE_COUNT + 2;
+  int METADATA_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -5082,7 +5082,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int METADATA_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 3;
+  int METADATA_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -5091,7 +5091,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int METADATA_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 4;
+  int METADATA_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Superclassifiers</b></em>' attribute list.
@@ -5100,7 +5100,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int METADATA_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENT_FEATURE_COUNT + 5;
+  int METADATA_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -5109,7 +5109,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int METADATA_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENT_FEATURE_COUNT + 6;
+  int METADATA_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -5118,7 +5118,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int METADATA_DEFINITION__ELEMENTS = DEFINITION_ELEMENT_FEATURE_COUNT + 7;
+  int METADATA_DEFINITION__ELEMENTS = DEFINITION_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The number of structural features of the '<em>Metadata Definition</em>' class.
@@ -5127,7 +5127,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int METADATA_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENT_FEATURE_COUNT + 8;
+  int METADATA_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.PartDefinitionImpl <em>Part Definition</em>}' class.
@@ -5146,7 +5146,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PART_DEFINITION__VISIBILITY = DEFINITION_ELEMENT_FEATURE_COUNT + 0;
+  int PART_DEFINITION__VISIBILITY = DEFINITION_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -5155,7 +5155,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PART_DEFINITION__IS_VARIANT = DEFINITION_ELEMENT_FEATURE_COUNT + 1;
+  int PART_DEFINITION__IS_VARIANT = DEFINITION_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -5164,7 +5164,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PART_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENT_FEATURE_COUNT + 2;
+  int PART_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -5173,7 +5173,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PART_DEFINITION__IS_VARIATION = DEFINITION_ELEMENT_FEATURE_COUNT + 3;
+  int PART_DEFINITION__IS_VARIATION = DEFINITION_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -5182,7 +5182,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PART_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENT_FEATURE_COUNT + 4;
+  int PART_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -5191,7 +5191,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PART_DEFINITION__IS_INDIVIDUAL = DEFINITION_ELEMENT_FEATURE_COUNT + 5;
+  int PART_DEFINITION__IS_INDIVIDUAL = DEFINITION_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -5200,7 +5200,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PART_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 6;
+  int PART_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -5209,7 +5209,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PART_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 7;
+  int PART_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Superclassifiers</b></em>' attribute list.
@@ -5218,7 +5218,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PART_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENT_FEATURE_COUNT + 8;
+  int PART_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -5227,7 +5227,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PART_DEFINITION__ELEMENTS = DEFINITION_ELEMENT_FEATURE_COUNT + 9;
+  int PART_DEFINITION__ELEMENTS = DEFINITION_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The number of structural features of the '<em>Part Definition</em>' class.
@@ -5236,7 +5236,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PART_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENT_FEATURE_COUNT + 10;
+  int PART_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.PartUsageImpl <em>Part Usage</em>}' class.
@@ -5255,7 +5255,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PART_USAGE__IS_THEN = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 0;
+  int PART_USAGE__IS_THEN = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Then Multiplicity</b></em>' attribute list.
@@ -5264,7 +5264,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PART_USAGE__THEN_MULTIPLICITY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 1;
+  int PART_USAGE__THEN_MULTIPLICITY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -5273,7 +5273,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PART_USAGE__VISIBILITY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 2;
+  int PART_USAGE__VISIBILITY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -5282,7 +5282,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PART_USAGE__IS_VARIANT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 3;
+  int PART_USAGE__IS_VARIANT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Is Return</b></em>' attribute.
@@ -5291,7 +5291,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PART_USAGE__IS_RETURN = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 4;
+  int PART_USAGE__IS_RETURN = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -5300,7 +5300,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PART_USAGE__IS_ABSTRACT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 5;
+  int PART_USAGE__IS_ABSTRACT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -5309,7 +5309,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PART_USAGE__IS_VARIATION = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 6;
+  int PART_USAGE__IS_VARIATION = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -5318,7 +5318,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PART_USAGE__DIRECTION = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 7;
+  int PART_USAGE__DIRECTION = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Is Read Only</b></em>' attribute.
@@ -5327,7 +5327,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PART_USAGE__IS_READ_ONLY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 8;
+  int PART_USAGE__IS_READ_ONLY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Is Derived</b></em>' attribute.
@@ -5336,7 +5336,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PART_USAGE__IS_DERIVED = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 9;
+  int PART_USAGE__IS_DERIVED = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Is Reference</b></em>' attribute.
@@ -5345,7 +5345,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PART_USAGE__IS_REFERENCE = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 10;
+  int PART_USAGE__IS_REFERENCE = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -5354,7 +5354,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PART_USAGE__PREFIX_METADATA_EXTENSION = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 11;
+  int PART_USAGE__PREFIX_METADATA_EXTENSION = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Is End</b></em>' attribute.
@@ -5363,7 +5363,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PART_USAGE__IS_END = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 12;
+  int PART_USAGE__IS_END = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -5372,7 +5372,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PART_USAGE__IS_INDIVIDUAL = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 13;
+  int PART_USAGE__IS_INDIVIDUAL = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>Portion Kind</b></em>' attribute.
@@ -5381,7 +5381,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PART_USAGE__PORTION_KIND = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 14;
+  int PART_USAGE__PORTION_KIND = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -5390,7 +5390,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PART_USAGE__DECLARED_SHORT_NAME = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 15;
+  int PART_USAGE__DECLARED_SHORT_NAME = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -5399,7 +5399,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PART_USAGE__DECLARED_NAME = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 16;
+  int PART_USAGE__DECLARED_NAME = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -5408,7 +5408,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PART_USAGE__TYPINGS = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 17;
+  int PART_USAGE__TYPINGS = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
@@ -5417,7 +5417,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PART_USAGE__SUBSETTING = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 18;
+  int PART_USAGE__SUBSETTING = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute list.
@@ -5426,7 +5426,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PART_USAGE__REFERENCES = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 19;
+  int PART_USAGE__REFERENCES = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Crosses</b></em>' attribute list.
@@ -5435,7 +5435,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PART_USAGE__CROSSES = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 20;
+  int PART_USAGE__CROSSES = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 20;
 
   /**
    * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
@@ -5444,7 +5444,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PART_USAGE__REDEFINITIONS = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 21;
+  int PART_USAGE__REDEFINITIONS = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 21;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -5453,7 +5453,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PART_USAGE__MULTIPLICITY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 22;
+  int PART_USAGE__MULTIPLICITY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 22;
 
   /**
    * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
@@ -5462,7 +5462,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PART_USAGE__IS_ORDERED = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 23;
+  int PART_USAGE__IS_ORDERED = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 23;
 
   /**
    * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
@@ -5471,7 +5471,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PART_USAGE__IS_NONUNIQUE = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 24;
+  int PART_USAGE__IS_NONUNIQUE = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 24;
 
   /**
    * The feature id for the '<em><b>Is Initial</b></em>' attribute.
@@ -5480,7 +5480,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PART_USAGE__IS_INITIAL = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 25;
+  int PART_USAGE__IS_INITIAL = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 25;
 
   /**
    * The feature id for the '<em><b>Is Default</b></em>' attribute.
@@ -5489,16 +5489,16 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PART_USAGE__IS_DEFAULT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 26;
+  int PART_USAGE__IS_DEFAULT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 26;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PART_USAGE__VALUE_PART = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 27;
+  int PART_USAGE__VALUE_PART = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 27;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -5507,7 +5507,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PART_USAGE__ELEMENTS = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 28;
+  int PART_USAGE__ELEMENTS = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 28;
 
   /**
    * The number of structural features of the '<em>Part Usage</em>' class.
@@ -5516,7 +5516,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PART_USAGE_FEATURE_COUNT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 29;
+  int PART_USAGE_FEATURE_COUNT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 29;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.PortDefinitionImpl <em>Port Definition</em>}' class.
@@ -5535,7 +5535,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_DEFINITION__VISIBILITY = DEFINITION_ELEMENT_FEATURE_COUNT + 0;
+  int PORT_DEFINITION__VISIBILITY = DEFINITION_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -5544,7 +5544,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_DEFINITION__IS_VARIANT = DEFINITION_ELEMENT_FEATURE_COUNT + 1;
+  int PORT_DEFINITION__IS_VARIANT = DEFINITION_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -5553,7 +5553,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENT_FEATURE_COUNT + 2;
+  int PORT_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -5562,7 +5562,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_DEFINITION__IS_VARIATION = DEFINITION_ELEMENT_FEATURE_COUNT + 3;
+  int PORT_DEFINITION__IS_VARIATION = DEFINITION_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -5571,7 +5571,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENT_FEATURE_COUNT + 4;
+  int PORT_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -5580,7 +5580,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 5;
+  int PORT_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -5589,7 +5589,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 6;
+  int PORT_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Superclassifiers</b></em>' attribute list.
@@ -5598,7 +5598,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENT_FEATURE_COUNT + 7;
+  int PORT_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -5607,7 +5607,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_DEFINITION__ELEMENTS = DEFINITION_ELEMENT_FEATURE_COUNT + 8;
+  int PORT_DEFINITION__ELEMENTS = DEFINITION_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The number of structural features of the '<em>Port Definition</em>' class.
@@ -5616,7 +5616,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENT_FEATURE_COUNT + 9;
+  int PORT_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.PortUsageImpl <em>Port Usage</em>}' class.
@@ -5635,7 +5635,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_USAGE__IS_THEN = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 0;
+  int PORT_USAGE__IS_THEN = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Then Multiplicity</b></em>' attribute list.
@@ -5644,7 +5644,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_USAGE__THEN_MULTIPLICITY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 1;
+  int PORT_USAGE__THEN_MULTIPLICITY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -5653,7 +5653,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_USAGE__VISIBILITY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 2;
+  int PORT_USAGE__VISIBILITY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -5662,7 +5662,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_USAGE__IS_VARIANT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 3;
+  int PORT_USAGE__IS_VARIANT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Is Return</b></em>' attribute.
@@ -5671,7 +5671,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_USAGE__IS_RETURN = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 4;
+  int PORT_USAGE__IS_RETURN = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -5680,7 +5680,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_USAGE__IS_ABSTRACT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 5;
+  int PORT_USAGE__IS_ABSTRACT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -5689,7 +5689,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_USAGE__IS_VARIATION = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 6;
+  int PORT_USAGE__IS_VARIATION = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -5698,7 +5698,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_USAGE__DIRECTION = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 7;
+  int PORT_USAGE__DIRECTION = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Is Read Only</b></em>' attribute.
@@ -5707,7 +5707,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_USAGE__IS_READ_ONLY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 8;
+  int PORT_USAGE__IS_READ_ONLY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Is Derived</b></em>' attribute.
@@ -5716,7 +5716,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_USAGE__IS_DERIVED = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 9;
+  int PORT_USAGE__IS_DERIVED = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Is Reference</b></em>' attribute.
@@ -5725,7 +5725,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_USAGE__IS_REFERENCE = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 10;
+  int PORT_USAGE__IS_REFERENCE = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -5734,7 +5734,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_USAGE__PREFIX_METADATA_EXTENSION = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 11;
+  int PORT_USAGE__PREFIX_METADATA_EXTENSION = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Is End</b></em>' attribute.
@@ -5743,7 +5743,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_USAGE__IS_END = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 12;
+  int PORT_USAGE__IS_END = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -5752,7 +5752,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_USAGE__IS_INDIVIDUAL = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 13;
+  int PORT_USAGE__IS_INDIVIDUAL = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>Portion Kind</b></em>' attribute.
@@ -5761,7 +5761,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_USAGE__PORTION_KIND = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 14;
+  int PORT_USAGE__PORTION_KIND = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -5770,7 +5770,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_USAGE__DECLARED_SHORT_NAME = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 15;
+  int PORT_USAGE__DECLARED_SHORT_NAME = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -5779,7 +5779,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_USAGE__DECLARED_NAME = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 16;
+  int PORT_USAGE__DECLARED_NAME = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -5788,7 +5788,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_USAGE__TYPINGS = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 17;
+  int PORT_USAGE__TYPINGS = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
@@ -5797,7 +5797,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_USAGE__SUBSETTING = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 18;
+  int PORT_USAGE__SUBSETTING = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute list.
@@ -5806,7 +5806,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_USAGE__REFERENCES = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 19;
+  int PORT_USAGE__REFERENCES = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Crosses</b></em>' attribute list.
@@ -5815,7 +5815,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_USAGE__CROSSES = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 20;
+  int PORT_USAGE__CROSSES = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 20;
 
   /**
    * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
@@ -5824,7 +5824,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_USAGE__REDEFINITIONS = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 21;
+  int PORT_USAGE__REDEFINITIONS = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 21;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -5833,7 +5833,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_USAGE__MULTIPLICITY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 22;
+  int PORT_USAGE__MULTIPLICITY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 22;
 
   /**
    * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
@@ -5842,7 +5842,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_USAGE__IS_ORDERED = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 23;
+  int PORT_USAGE__IS_ORDERED = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 23;
 
   /**
    * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
@@ -5851,7 +5851,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_USAGE__IS_NONUNIQUE = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 24;
+  int PORT_USAGE__IS_NONUNIQUE = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 24;
 
   /**
    * The feature id for the '<em><b>Is Initial</b></em>' attribute.
@@ -5860,7 +5860,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_USAGE__IS_INITIAL = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 25;
+  int PORT_USAGE__IS_INITIAL = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 25;
 
   /**
    * The feature id for the '<em><b>Is Default</b></em>' attribute.
@@ -5869,16 +5869,16 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_USAGE__IS_DEFAULT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 26;
+  int PORT_USAGE__IS_DEFAULT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 26;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PORT_USAGE__VALUE_PART = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 27;
+  int PORT_USAGE__VALUE_PART = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 27;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -5887,7 +5887,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_USAGE__ELEMENTS = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 28;
+  int PORT_USAGE__ELEMENTS = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 28;
 
   /**
    * The number of structural features of the '<em>Port Usage</em>' class.
@@ -5896,7 +5896,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_USAGE_FEATURE_COUNT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 29;
+  int PORT_USAGE_FEATURE_COUNT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 29;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.ConnectionDefinitionImpl <em>Connection Definition</em>}' class.
@@ -5915,7 +5915,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTION_DEFINITION__VISIBILITY = DEFINITION_ELEMENT_FEATURE_COUNT + 0;
+  int CONNECTION_DEFINITION__VISIBILITY = DEFINITION_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -5924,7 +5924,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTION_DEFINITION__IS_VARIANT = DEFINITION_ELEMENT_FEATURE_COUNT + 1;
+  int CONNECTION_DEFINITION__IS_VARIANT = DEFINITION_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -5933,7 +5933,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTION_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENT_FEATURE_COUNT + 2;
+  int CONNECTION_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -5942,7 +5942,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTION_DEFINITION__IS_VARIATION = DEFINITION_ELEMENT_FEATURE_COUNT + 3;
+  int CONNECTION_DEFINITION__IS_VARIATION = DEFINITION_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -5951,7 +5951,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTION_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENT_FEATURE_COUNT + 4;
+  int CONNECTION_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -5960,7 +5960,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTION_DEFINITION__IS_INDIVIDUAL = DEFINITION_ELEMENT_FEATURE_COUNT + 5;
+  int CONNECTION_DEFINITION__IS_INDIVIDUAL = DEFINITION_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -5969,7 +5969,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTION_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 6;
+  int CONNECTION_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -5978,7 +5978,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTION_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 7;
+  int CONNECTION_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Superclassifiers</b></em>' attribute list.
@@ -5987,7 +5987,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTION_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENT_FEATURE_COUNT + 8;
+  int CONNECTION_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -5996,7 +5996,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTION_DEFINITION__ELEMENTS = DEFINITION_ELEMENT_FEATURE_COUNT + 9;
+  int CONNECTION_DEFINITION__ELEMENTS = DEFINITION_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The number of structural features of the '<em>Connection Definition</em>' class.
@@ -6005,7 +6005,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTION_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENT_FEATURE_COUNT + 10;
+  int CONNECTION_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.ConnectionUsageImpl <em>Connection Usage</em>}' class.
@@ -6024,7 +6024,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTION_USAGE__IS_THEN = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 0;
+  int CONNECTION_USAGE__IS_THEN = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Then Multiplicity</b></em>' attribute list.
@@ -6033,7 +6033,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTION_USAGE__THEN_MULTIPLICITY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 1;
+  int CONNECTION_USAGE__THEN_MULTIPLICITY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -6042,7 +6042,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTION_USAGE__VISIBILITY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 2;
+  int CONNECTION_USAGE__VISIBILITY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -6051,7 +6051,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTION_USAGE__IS_VARIANT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 3;
+  int CONNECTION_USAGE__IS_VARIANT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Is Return</b></em>' attribute.
@@ -6060,7 +6060,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTION_USAGE__IS_RETURN = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 4;
+  int CONNECTION_USAGE__IS_RETURN = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -6069,7 +6069,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTION_USAGE__IS_ABSTRACT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 5;
+  int CONNECTION_USAGE__IS_ABSTRACT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -6078,7 +6078,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTION_USAGE__IS_VARIATION = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 6;
+  int CONNECTION_USAGE__IS_VARIATION = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -6087,7 +6087,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTION_USAGE__DIRECTION = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 7;
+  int CONNECTION_USAGE__DIRECTION = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Is Read Only</b></em>' attribute.
@@ -6096,7 +6096,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTION_USAGE__IS_READ_ONLY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 8;
+  int CONNECTION_USAGE__IS_READ_ONLY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Is Derived</b></em>' attribute.
@@ -6105,7 +6105,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTION_USAGE__IS_DERIVED = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 9;
+  int CONNECTION_USAGE__IS_DERIVED = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Is Reference</b></em>' attribute.
@@ -6114,7 +6114,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTION_USAGE__IS_REFERENCE = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 10;
+  int CONNECTION_USAGE__IS_REFERENCE = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -6123,7 +6123,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTION_USAGE__PREFIX_METADATA_EXTENSION = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 11;
+  int CONNECTION_USAGE__PREFIX_METADATA_EXTENSION = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Is End</b></em>' attribute.
@@ -6132,7 +6132,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTION_USAGE__IS_END = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 12;
+  int CONNECTION_USAGE__IS_END = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -6141,7 +6141,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTION_USAGE__IS_INDIVIDUAL = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 13;
+  int CONNECTION_USAGE__IS_INDIVIDUAL = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>Portion Kind</b></em>' attribute.
@@ -6150,7 +6150,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTION_USAGE__PORTION_KIND = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 14;
+  int CONNECTION_USAGE__PORTION_KIND = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -6159,7 +6159,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTION_USAGE__DECLARED_SHORT_NAME = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 15;
+  int CONNECTION_USAGE__DECLARED_SHORT_NAME = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -6168,7 +6168,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTION_USAGE__DECLARED_NAME = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 16;
+  int CONNECTION_USAGE__DECLARED_NAME = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -6177,7 +6177,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTION_USAGE__TYPINGS = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 17;
+  int CONNECTION_USAGE__TYPINGS = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
@@ -6186,7 +6186,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTION_USAGE__SUBSETTING = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 18;
+  int CONNECTION_USAGE__SUBSETTING = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute list.
@@ -6195,7 +6195,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTION_USAGE__REFERENCES = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 19;
+  int CONNECTION_USAGE__REFERENCES = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Crosses</b></em>' attribute list.
@@ -6204,7 +6204,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTION_USAGE__CROSSES = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 20;
+  int CONNECTION_USAGE__CROSSES = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 20;
 
   /**
    * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
@@ -6213,7 +6213,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTION_USAGE__REDEFINITIONS = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 21;
+  int CONNECTION_USAGE__REDEFINITIONS = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 21;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -6222,7 +6222,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTION_USAGE__MULTIPLICITY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 22;
+  int CONNECTION_USAGE__MULTIPLICITY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 22;
 
   /**
    * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
@@ -6231,7 +6231,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTION_USAGE__IS_ORDERED = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 23;
+  int CONNECTION_USAGE__IS_ORDERED = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 23;
 
   /**
    * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
@@ -6240,7 +6240,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTION_USAGE__IS_NONUNIQUE = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 24;
+  int CONNECTION_USAGE__IS_NONUNIQUE = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 24;
 
   /**
    * The feature id for the '<em><b>Is Initial</b></em>' attribute.
@@ -6249,7 +6249,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTION_USAGE__IS_INITIAL = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 25;
+  int CONNECTION_USAGE__IS_INITIAL = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 25;
 
   /**
    * The feature id for the '<em><b>Is Default</b></em>' attribute.
@@ -6258,16 +6258,16 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTION_USAGE__IS_DEFAULT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 26;
+  int CONNECTION_USAGE__IS_DEFAULT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 26;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONNECTION_USAGE__VALUE_PART = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 27;
+  int CONNECTION_USAGE__VALUE_PART = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 27;
 
   /**
    * The feature id for the '<em><b>Connector Part</b></em>' containment reference list.
@@ -6276,7 +6276,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTION_USAGE__CONNECTOR_PART = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 28;
+  int CONNECTION_USAGE__CONNECTOR_PART = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 28;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -6285,7 +6285,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTION_USAGE__ELEMENTS = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 29;
+  int CONNECTION_USAGE__ELEMENTS = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 29;
 
   /**
    * The number of structural features of the '<em>Connection Usage</em>' class.
@@ -6294,7 +6294,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONNECTION_USAGE_FEATURE_COUNT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 30;
+  int CONNECTION_USAGE_FEATURE_COUNT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 30;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.InterfaceDefinitionImpl <em>Interface Definition</em>}' class.
@@ -6313,7 +6313,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERFACE_DEFINITION__VISIBILITY = DEFINITION_ELEMENT_FEATURE_COUNT + 0;
+  int INTERFACE_DEFINITION__VISIBILITY = DEFINITION_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -6322,7 +6322,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERFACE_DEFINITION__IS_VARIANT = DEFINITION_ELEMENT_FEATURE_COUNT + 1;
+  int INTERFACE_DEFINITION__IS_VARIANT = DEFINITION_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -6331,7 +6331,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERFACE_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENT_FEATURE_COUNT + 2;
+  int INTERFACE_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -6340,7 +6340,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERFACE_DEFINITION__IS_VARIATION = DEFINITION_ELEMENT_FEATURE_COUNT + 3;
+  int INTERFACE_DEFINITION__IS_VARIATION = DEFINITION_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -6349,7 +6349,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERFACE_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENT_FEATURE_COUNT + 4;
+  int INTERFACE_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -6358,7 +6358,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERFACE_DEFINITION__IS_INDIVIDUAL = DEFINITION_ELEMENT_FEATURE_COUNT + 5;
+  int INTERFACE_DEFINITION__IS_INDIVIDUAL = DEFINITION_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -6367,7 +6367,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERFACE_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 6;
+  int INTERFACE_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -6376,7 +6376,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERFACE_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 7;
+  int INTERFACE_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Superclassifiers</b></em>' attribute list.
@@ -6385,7 +6385,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERFACE_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENT_FEATURE_COUNT + 8;
+  int INTERFACE_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -6394,7 +6394,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERFACE_DEFINITION__ELEMENTS = DEFINITION_ELEMENT_FEATURE_COUNT + 9;
+  int INTERFACE_DEFINITION__ELEMENTS = DEFINITION_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The number of structural features of the '<em>Interface Definition</em>' class.
@@ -6403,7 +6403,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERFACE_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENT_FEATURE_COUNT + 10;
+  int INTERFACE_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.InterfaceUsageImpl <em>Interface Usage</em>}' class.
@@ -6422,7 +6422,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERFACE_USAGE__IS_THEN = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 0;
+  int INTERFACE_USAGE__IS_THEN = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Then Multiplicity</b></em>' attribute list.
@@ -6431,7 +6431,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERFACE_USAGE__THEN_MULTIPLICITY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 1;
+  int INTERFACE_USAGE__THEN_MULTIPLICITY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -6440,7 +6440,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERFACE_USAGE__VISIBILITY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 2;
+  int INTERFACE_USAGE__VISIBILITY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -6449,7 +6449,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERFACE_USAGE__IS_VARIANT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 3;
+  int INTERFACE_USAGE__IS_VARIANT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Is Return</b></em>' attribute.
@@ -6458,7 +6458,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERFACE_USAGE__IS_RETURN = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 4;
+  int INTERFACE_USAGE__IS_RETURN = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -6467,7 +6467,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERFACE_USAGE__IS_ABSTRACT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 5;
+  int INTERFACE_USAGE__IS_ABSTRACT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -6476,7 +6476,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERFACE_USAGE__IS_VARIATION = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 6;
+  int INTERFACE_USAGE__IS_VARIATION = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -6485,7 +6485,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERFACE_USAGE__DIRECTION = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 7;
+  int INTERFACE_USAGE__DIRECTION = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Is Read Only</b></em>' attribute.
@@ -6494,7 +6494,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERFACE_USAGE__IS_READ_ONLY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 8;
+  int INTERFACE_USAGE__IS_READ_ONLY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Is Derived</b></em>' attribute.
@@ -6503,7 +6503,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERFACE_USAGE__IS_DERIVED = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 9;
+  int INTERFACE_USAGE__IS_DERIVED = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Is Reference</b></em>' attribute.
@@ -6512,7 +6512,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERFACE_USAGE__IS_REFERENCE = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 10;
+  int INTERFACE_USAGE__IS_REFERENCE = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -6521,7 +6521,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERFACE_USAGE__PREFIX_METADATA_EXTENSION = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 11;
+  int INTERFACE_USAGE__PREFIX_METADATA_EXTENSION = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Is End</b></em>' attribute.
@@ -6530,7 +6530,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERFACE_USAGE__IS_END = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 12;
+  int INTERFACE_USAGE__IS_END = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -6539,7 +6539,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERFACE_USAGE__IS_INDIVIDUAL = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 13;
+  int INTERFACE_USAGE__IS_INDIVIDUAL = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>Portion Kind</b></em>' attribute.
@@ -6548,7 +6548,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERFACE_USAGE__PORTION_KIND = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 14;
+  int INTERFACE_USAGE__PORTION_KIND = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -6557,7 +6557,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERFACE_USAGE__DECLARED_SHORT_NAME = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 15;
+  int INTERFACE_USAGE__DECLARED_SHORT_NAME = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -6566,7 +6566,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERFACE_USAGE__DECLARED_NAME = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 16;
+  int INTERFACE_USAGE__DECLARED_NAME = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -6575,7 +6575,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERFACE_USAGE__TYPINGS = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 17;
+  int INTERFACE_USAGE__TYPINGS = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
@@ -6584,7 +6584,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERFACE_USAGE__SUBSETTING = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 18;
+  int INTERFACE_USAGE__SUBSETTING = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute list.
@@ -6593,7 +6593,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERFACE_USAGE__REFERENCES = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 19;
+  int INTERFACE_USAGE__REFERENCES = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Crosses</b></em>' attribute list.
@@ -6602,7 +6602,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERFACE_USAGE__CROSSES = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 20;
+  int INTERFACE_USAGE__CROSSES = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 20;
 
   /**
    * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
@@ -6611,7 +6611,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERFACE_USAGE__REDEFINITIONS = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 21;
+  int INTERFACE_USAGE__REDEFINITIONS = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 21;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -6620,7 +6620,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERFACE_USAGE__MULTIPLICITY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 22;
+  int INTERFACE_USAGE__MULTIPLICITY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 22;
 
   /**
    * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
@@ -6629,7 +6629,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERFACE_USAGE__IS_ORDERED = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 23;
+  int INTERFACE_USAGE__IS_ORDERED = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 23;
 
   /**
    * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
@@ -6638,7 +6638,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERFACE_USAGE__IS_NONUNIQUE = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 24;
+  int INTERFACE_USAGE__IS_NONUNIQUE = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 24;
 
   /**
    * The feature id for the '<em><b>Connector Part</b></em>' containment reference list.
@@ -6647,7 +6647,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERFACE_USAGE__CONNECTOR_PART = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 25;
+  int INTERFACE_USAGE__CONNECTOR_PART = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 25;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -6656,7 +6656,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERFACE_USAGE__ELEMENTS = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 26;
+  int INTERFACE_USAGE__ELEMENTS = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 26;
 
   /**
    * The number of structural features of the '<em>Interface Usage</em>' class.
@@ -6665,7 +6665,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERFACE_USAGE_FEATURE_COUNT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 27;
+  int INTERFACE_USAGE_FEATURE_COUNT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 27;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.MessageImpl <em>Message</em>}' class.
@@ -6684,7 +6684,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MESSAGE__IS_THEN = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 0;
+  int MESSAGE__IS_THEN = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Then Multiplicity</b></em>' attribute list.
@@ -6693,7 +6693,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MESSAGE__THEN_MULTIPLICITY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 1;
+  int MESSAGE__THEN_MULTIPLICITY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -6702,7 +6702,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MESSAGE__VISIBILITY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 2;
+  int MESSAGE__VISIBILITY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -6711,7 +6711,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MESSAGE__IS_VARIANT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 3;
+  int MESSAGE__IS_VARIANT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Is Return</b></em>' attribute.
@@ -6720,7 +6720,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MESSAGE__IS_RETURN = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 4;
+  int MESSAGE__IS_RETURN = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -6729,7 +6729,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MESSAGE__IS_ABSTRACT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 5;
+  int MESSAGE__IS_ABSTRACT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -6738,7 +6738,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MESSAGE__IS_VARIATION = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 6;
+  int MESSAGE__IS_VARIATION = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -6747,7 +6747,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MESSAGE__DIRECTION = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 7;
+  int MESSAGE__DIRECTION = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Is Read Only</b></em>' attribute.
@@ -6756,7 +6756,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MESSAGE__IS_READ_ONLY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 8;
+  int MESSAGE__IS_READ_ONLY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Is Derived</b></em>' attribute.
@@ -6765,7 +6765,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MESSAGE__IS_DERIVED = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 9;
+  int MESSAGE__IS_DERIVED = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Is Reference</b></em>' attribute.
@@ -6774,7 +6774,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MESSAGE__IS_REFERENCE = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 10;
+  int MESSAGE__IS_REFERENCE = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -6783,7 +6783,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MESSAGE__PREFIX_METADATA_EXTENSION = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 11;
+  int MESSAGE__PREFIX_METADATA_EXTENSION = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Is End</b></em>' attribute.
@@ -6792,7 +6792,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MESSAGE__IS_END = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 12;
+  int MESSAGE__IS_END = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -6801,7 +6801,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MESSAGE__IS_INDIVIDUAL = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 13;
+  int MESSAGE__IS_INDIVIDUAL = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>Portion Kind</b></em>' attribute.
@@ -6810,7 +6810,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MESSAGE__PORTION_KIND = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 14;
+  int MESSAGE__PORTION_KIND = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -6819,7 +6819,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MESSAGE__DECLARED_SHORT_NAME = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 15;
+  int MESSAGE__DECLARED_SHORT_NAME = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -6828,7 +6828,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MESSAGE__DECLARED_NAME = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 16;
+  int MESSAGE__DECLARED_NAME = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -6837,7 +6837,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MESSAGE__TYPINGS = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 17;
+  int MESSAGE__TYPINGS = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
@@ -6846,7 +6846,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MESSAGE__SUBSETTING = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 18;
+  int MESSAGE__SUBSETTING = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute list.
@@ -6855,7 +6855,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MESSAGE__REFERENCES = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 19;
+  int MESSAGE__REFERENCES = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Crosses</b></em>' attribute list.
@@ -6864,7 +6864,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MESSAGE__CROSSES = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 20;
+  int MESSAGE__CROSSES = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 20;
 
   /**
    * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
@@ -6873,7 +6873,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MESSAGE__REDEFINITIONS = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 21;
+  int MESSAGE__REDEFINITIONS = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 21;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -6882,7 +6882,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MESSAGE__MULTIPLICITY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 22;
+  int MESSAGE__MULTIPLICITY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 22;
 
   /**
    * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
@@ -6891,7 +6891,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MESSAGE__IS_ORDERED = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 23;
+  int MESSAGE__IS_ORDERED = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 23;
 
   /**
    * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
@@ -6900,7 +6900,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MESSAGE__IS_NONUNIQUE = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 24;
+  int MESSAGE__IS_NONUNIQUE = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 24;
 
   /**
    * The feature id for the '<em><b>Is Initial</b></em>' attribute.
@@ -6909,7 +6909,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MESSAGE__IS_INITIAL = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 25;
+  int MESSAGE__IS_INITIAL = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 25;
 
   /**
    * The feature id for the '<em><b>Is Default</b></em>' attribute.
@@ -6918,16 +6918,16 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MESSAGE__IS_DEFAULT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 26;
+  int MESSAGE__IS_DEFAULT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 26;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MESSAGE__VALUE_PART = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 27;
+  int MESSAGE__VALUE_PART = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 27;
 
   /**
    * The feature id for the '<em><b>Item Feature Parameter</b></em>' containment reference list.
@@ -6936,7 +6936,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MESSAGE__ITEM_FEATURE_PARAMETER = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 28;
+  int MESSAGE__ITEM_FEATURE_PARAMETER = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 28;
 
   /**
    * The feature id for the '<em><b>Flow End</b></em>' attribute list.
@@ -6945,7 +6945,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MESSAGE__FLOW_END = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 29;
+  int MESSAGE__FLOW_END = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 29;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -6954,7 +6954,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MESSAGE__ELEMENTS = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 30;
+  int MESSAGE__ELEMENTS = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 30;
 
   /**
    * The number of structural features of the '<em>Message</em>' class.
@@ -6963,7 +6963,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MESSAGE_FEATURE_COUNT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 31;
+  int MESSAGE_FEATURE_COUNT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 31;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.FlowDefinitionImpl <em>Flow Definition</em>}' class.
@@ -6982,7 +6982,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_DEFINITION__VISIBILITY = DEFINITION_ELEMENT_FEATURE_COUNT + 0;
+  int FLOW_DEFINITION__VISIBILITY = DEFINITION_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -6991,7 +6991,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_DEFINITION__IS_VARIANT = DEFINITION_ELEMENT_FEATURE_COUNT + 1;
+  int FLOW_DEFINITION__IS_VARIANT = DEFINITION_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -7000,7 +7000,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENT_FEATURE_COUNT + 2;
+  int FLOW_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -7009,7 +7009,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_DEFINITION__IS_VARIATION = DEFINITION_ELEMENT_FEATURE_COUNT + 3;
+  int FLOW_DEFINITION__IS_VARIATION = DEFINITION_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -7018,7 +7018,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENT_FEATURE_COUNT + 4;
+  int FLOW_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -7027,7 +7027,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_DEFINITION__IS_INDIVIDUAL = DEFINITION_ELEMENT_FEATURE_COUNT + 5;
+  int FLOW_DEFINITION__IS_INDIVIDUAL = DEFINITION_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -7036,7 +7036,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 6;
+  int FLOW_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -7045,7 +7045,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 7;
+  int FLOW_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Superclassifiers</b></em>' attribute list.
@@ -7054,7 +7054,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENT_FEATURE_COUNT + 8;
+  int FLOW_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -7063,7 +7063,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_DEFINITION__ELEMENTS = DEFINITION_ELEMENT_FEATURE_COUNT + 9;
+  int FLOW_DEFINITION__ELEMENTS = DEFINITION_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The number of structural features of the '<em>Flow Definition</em>' class.
@@ -7072,7 +7072,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENT_FEATURE_COUNT + 10;
+  int FLOW_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.FlowUsageImpl <em>Flow Usage</em>}' class.
@@ -7091,7 +7091,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_USAGE__IS_THEN = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 0;
+  int FLOW_USAGE__IS_THEN = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Then Multiplicity</b></em>' attribute list.
@@ -7100,7 +7100,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_USAGE__THEN_MULTIPLICITY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 1;
+  int FLOW_USAGE__THEN_MULTIPLICITY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -7109,7 +7109,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_USAGE__VISIBILITY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 2;
+  int FLOW_USAGE__VISIBILITY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -7118,7 +7118,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_USAGE__IS_VARIANT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 3;
+  int FLOW_USAGE__IS_VARIANT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Is Return</b></em>' attribute.
@@ -7127,7 +7127,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_USAGE__IS_RETURN = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 4;
+  int FLOW_USAGE__IS_RETURN = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -7136,7 +7136,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_USAGE__IS_ABSTRACT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 5;
+  int FLOW_USAGE__IS_ABSTRACT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -7145,7 +7145,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_USAGE__IS_VARIATION = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 6;
+  int FLOW_USAGE__IS_VARIATION = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -7154,7 +7154,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_USAGE__DIRECTION = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 7;
+  int FLOW_USAGE__DIRECTION = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Is Read Only</b></em>' attribute.
@@ -7163,7 +7163,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_USAGE__IS_READ_ONLY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 8;
+  int FLOW_USAGE__IS_READ_ONLY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Is Derived</b></em>' attribute.
@@ -7172,7 +7172,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_USAGE__IS_DERIVED = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 9;
+  int FLOW_USAGE__IS_DERIVED = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Is Reference</b></em>' attribute.
@@ -7181,7 +7181,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_USAGE__IS_REFERENCE = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 10;
+  int FLOW_USAGE__IS_REFERENCE = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -7190,7 +7190,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_USAGE__PREFIX_METADATA_EXTENSION = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 11;
+  int FLOW_USAGE__PREFIX_METADATA_EXTENSION = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Is End</b></em>' attribute.
@@ -7199,7 +7199,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_USAGE__IS_END = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 12;
+  int FLOW_USAGE__IS_END = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -7208,7 +7208,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_USAGE__IS_INDIVIDUAL = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 13;
+  int FLOW_USAGE__IS_INDIVIDUAL = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>Portion Kind</b></em>' attribute.
@@ -7217,7 +7217,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_USAGE__PORTION_KIND = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 14;
+  int FLOW_USAGE__PORTION_KIND = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -7226,7 +7226,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_USAGE__DECLARED_SHORT_NAME = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 15;
+  int FLOW_USAGE__DECLARED_SHORT_NAME = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -7235,7 +7235,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_USAGE__DECLARED_NAME = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 16;
+  int FLOW_USAGE__DECLARED_NAME = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -7244,7 +7244,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_USAGE__TYPINGS = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 17;
+  int FLOW_USAGE__TYPINGS = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
@@ -7253,7 +7253,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_USAGE__SUBSETTING = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 18;
+  int FLOW_USAGE__SUBSETTING = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute list.
@@ -7262,7 +7262,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_USAGE__REFERENCES = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 19;
+  int FLOW_USAGE__REFERENCES = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Crosses</b></em>' attribute list.
@@ -7271,7 +7271,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_USAGE__CROSSES = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 20;
+  int FLOW_USAGE__CROSSES = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 20;
 
   /**
    * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
@@ -7280,7 +7280,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_USAGE__REDEFINITIONS = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 21;
+  int FLOW_USAGE__REDEFINITIONS = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 21;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -7289,7 +7289,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_USAGE__MULTIPLICITY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 22;
+  int FLOW_USAGE__MULTIPLICITY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 22;
 
   /**
    * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
@@ -7298,7 +7298,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_USAGE__IS_ORDERED = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 23;
+  int FLOW_USAGE__IS_ORDERED = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 23;
 
   /**
    * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
@@ -7307,7 +7307,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_USAGE__IS_NONUNIQUE = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 24;
+  int FLOW_USAGE__IS_NONUNIQUE = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 24;
 
   /**
    * The feature id for the '<em><b>Is Initial</b></em>' attribute.
@@ -7316,7 +7316,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_USAGE__IS_INITIAL = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 25;
+  int FLOW_USAGE__IS_INITIAL = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 25;
 
   /**
    * The feature id for the '<em><b>Is Default</b></em>' attribute.
@@ -7325,16 +7325,16 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_USAGE__IS_DEFAULT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 26;
+  int FLOW_USAGE__IS_DEFAULT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 26;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FLOW_USAGE__VALUE_PART = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 27;
+  int FLOW_USAGE__VALUE_PART = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 27;
 
   /**
    * The feature id for the '<em><b>Item Feature Parameter</b></em>' containment reference list.
@@ -7343,7 +7343,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_USAGE__ITEM_FEATURE_PARAMETER = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 28;
+  int FLOW_USAGE__ITEM_FEATURE_PARAMETER = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 28;
 
   /**
    * The feature id for the '<em><b>Flow End</b></em>' attribute list.
@@ -7352,7 +7352,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_USAGE__FLOW_END = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 29;
+  int FLOW_USAGE__FLOW_END = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 29;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -7361,7 +7361,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_USAGE__ELEMENTS = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 30;
+  int FLOW_USAGE__ELEMENTS = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 30;
 
   /**
    * The number of structural features of the '<em>Flow Usage</em>' class.
@@ -7370,7 +7370,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FLOW_USAGE_FEATURE_COUNT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 31;
+  int FLOW_USAGE_FEATURE_COUNT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 31;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.SuccessionFlowUsageImpl <em>Succession Flow Usage</em>}' class.
@@ -7389,7 +7389,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUCCESSION_FLOW_USAGE__IS_THEN = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 0;
+  int SUCCESSION_FLOW_USAGE__IS_THEN = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Then Multiplicity</b></em>' attribute list.
@@ -7398,7 +7398,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUCCESSION_FLOW_USAGE__THEN_MULTIPLICITY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 1;
+  int SUCCESSION_FLOW_USAGE__THEN_MULTIPLICITY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -7407,7 +7407,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUCCESSION_FLOW_USAGE__VISIBILITY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 2;
+  int SUCCESSION_FLOW_USAGE__VISIBILITY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -7416,7 +7416,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUCCESSION_FLOW_USAGE__IS_VARIANT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 3;
+  int SUCCESSION_FLOW_USAGE__IS_VARIANT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Is Return</b></em>' attribute.
@@ -7425,7 +7425,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUCCESSION_FLOW_USAGE__IS_RETURN = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 4;
+  int SUCCESSION_FLOW_USAGE__IS_RETURN = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -7434,7 +7434,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUCCESSION_FLOW_USAGE__IS_ABSTRACT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 5;
+  int SUCCESSION_FLOW_USAGE__IS_ABSTRACT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -7443,7 +7443,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUCCESSION_FLOW_USAGE__IS_VARIATION = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 6;
+  int SUCCESSION_FLOW_USAGE__IS_VARIATION = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -7452,7 +7452,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUCCESSION_FLOW_USAGE__DIRECTION = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 7;
+  int SUCCESSION_FLOW_USAGE__DIRECTION = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Is Read Only</b></em>' attribute.
@@ -7461,7 +7461,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUCCESSION_FLOW_USAGE__IS_READ_ONLY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 8;
+  int SUCCESSION_FLOW_USAGE__IS_READ_ONLY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Is Derived</b></em>' attribute.
@@ -7470,7 +7470,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUCCESSION_FLOW_USAGE__IS_DERIVED = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 9;
+  int SUCCESSION_FLOW_USAGE__IS_DERIVED = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Is Reference</b></em>' attribute.
@@ -7479,7 +7479,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUCCESSION_FLOW_USAGE__IS_REFERENCE = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 10;
+  int SUCCESSION_FLOW_USAGE__IS_REFERENCE = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -7488,7 +7488,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUCCESSION_FLOW_USAGE__PREFIX_METADATA_EXTENSION = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 11;
+  int SUCCESSION_FLOW_USAGE__PREFIX_METADATA_EXTENSION = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Is End</b></em>' attribute.
@@ -7497,7 +7497,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUCCESSION_FLOW_USAGE__IS_END = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 12;
+  int SUCCESSION_FLOW_USAGE__IS_END = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -7506,7 +7506,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUCCESSION_FLOW_USAGE__IS_INDIVIDUAL = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 13;
+  int SUCCESSION_FLOW_USAGE__IS_INDIVIDUAL = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>Portion Kind</b></em>' attribute.
@@ -7515,7 +7515,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUCCESSION_FLOW_USAGE__PORTION_KIND = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 14;
+  int SUCCESSION_FLOW_USAGE__PORTION_KIND = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -7524,7 +7524,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUCCESSION_FLOW_USAGE__DECLARED_SHORT_NAME = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 15;
+  int SUCCESSION_FLOW_USAGE__DECLARED_SHORT_NAME = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -7533,7 +7533,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUCCESSION_FLOW_USAGE__DECLARED_NAME = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 16;
+  int SUCCESSION_FLOW_USAGE__DECLARED_NAME = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -7542,7 +7542,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUCCESSION_FLOW_USAGE__TYPINGS = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 17;
+  int SUCCESSION_FLOW_USAGE__TYPINGS = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
@@ -7551,7 +7551,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUCCESSION_FLOW_USAGE__SUBSETTING = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 18;
+  int SUCCESSION_FLOW_USAGE__SUBSETTING = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute list.
@@ -7560,7 +7560,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUCCESSION_FLOW_USAGE__REFERENCES = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 19;
+  int SUCCESSION_FLOW_USAGE__REFERENCES = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Crosses</b></em>' attribute list.
@@ -7569,7 +7569,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUCCESSION_FLOW_USAGE__CROSSES = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 20;
+  int SUCCESSION_FLOW_USAGE__CROSSES = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 20;
 
   /**
    * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
@@ -7578,7 +7578,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUCCESSION_FLOW_USAGE__REDEFINITIONS = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 21;
+  int SUCCESSION_FLOW_USAGE__REDEFINITIONS = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 21;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -7587,7 +7587,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUCCESSION_FLOW_USAGE__MULTIPLICITY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 22;
+  int SUCCESSION_FLOW_USAGE__MULTIPLICITY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 22;
 
   /**
    * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
@@ -7596,7 +7596,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUCCESSION_FLOW_USAGE__IS_ORDERED = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 23;
+  int SUCCESSION_FLOW_USAGE__IS_ORDERED = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 23;
 
   /**
    * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
@@ -7605,7 +7605,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUCCESSION_FLOW_USAGE__IS_NONUNIQUE = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 24;
+  int SUCCESSION_FLOW_USAGE__IS_NONUNIQUE = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 24;
 
   /**
    * The feature id for the '<em><b>Is Initial</b></em>' attribute.
@@ -7614,7 +7614,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUCCESSION_FLOW_USAGE__IS_INITIAL = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 25;
+  int SUCCESSION_FLOW_USAGE__IS_INITIAL = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 25;
 
   /**
    * The feature id for the '<em><b>Is Default</b></em>' attribute.
@@ -7623,16 +7623,16 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUCCESSION_FLOW_USAGE__IS_DEFAULT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 26;
+  int SUCCESSION_FLOW_USAGE__IS_DEFAULT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 26;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SUCCESSION_FLOW_USAGE__VALUE_PART = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 27;
+  int SUCCESSION_FLOW_USAGE__VALUE_PART = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 27;
 
   /**
    * The feature id for the '<em><b>Item Feature Parameter</b></em>' containment reference list.
@@ -7641,7 +7641,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUCCESSION_FLOW_USAGE__ITEM_FEATURE_PARAMETER = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 28;
+  int SUCCESSION_FLOW_USAGE__ITEM_FEATURE_PARAMETER = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 28;
 
   /**
    * The feature id for the '<em><b>Flow End</b></em>' attribute list.
@@ -7650,7 +7650,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUCCESSION_FLOW_USAGE__FLOW_END = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 29;
+  int SUCCESSION_FLOW_USAGE__FLOW_END = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 29;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -7659,7 +7659,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUCCESSION_FLOW_USAGE__ELEMENTS = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 30;
+  int SUCCESSION_FLOW_USAGE__ELEMENTS = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 30;
 
   /**
    * The number of structural features of the '<em>Succession Flow Usage</em>' class.
@@ -7668,7 +7668,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUCCESSION_FLOW_USAGE_FEATURE_COUNT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 31;
+  int SUCCESSION_FLOW_USAGE_FEATURE_COUNT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 31;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.AllocationDefinitionImpl <em>Allocation Definition</em>}' class.
@@ -7687,7 +7687,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ALLOCATION_DEFINITION__VISIBILITY = DEFINITION_ELEMENT_FEATURE_COUNT + 0;
+  int ALLOCATION_DEFINITION__VISIBILITY = DEFINITION_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -7696,7 +7696,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ALLOCATION_DEFINITION__IS_VARIANT = DEFINITION_ELEMENT_FEATURE_COUNT + 1;
+  int ALLOCATION_DEFINITION__IS_VARIANT = DEFINITION_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -7705,7 +7705,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ALLOCATION_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENT_FEATURE_COUNT + 2;
+  int ALLOCATION_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -7714,7 +7714,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ALLOCATION_DEFINITION__IS_VARIATION = DEFINITION_ELEMENT_FEATURE_COUNT + 3;
+  int ALLOCATION_DEFINITION__IS_VARIATION = DEFINITION_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -7723,7 +7723,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ALLOCATION_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENT_FEATURE_COUNT + 4;
+  int ALLOCATION_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -7732,7 +7732,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ALLOCATION_DEFINITION__IS_INDIVIDUAL = DEFINITION_ELEMENT_FEATURE_COUNT + 5;
+  int ALLOCATION_DEFINITION__IS_INDIVIDUAL = DEFINITION_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -7741,7 +7741,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ALLOCATION_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 6;
+  int ALLOCATION_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -7750,7 +7750,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ALLOCATION_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 7;
+  int ALLOCATION_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Superclassifiers</b></em>' attribute list.
@@ -7759,7 +7759,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ALLOCATION_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENT_FEATURE_COUNT + 8;
+  int ALLOCATION_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -7768,7 +7768,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ALLOCATION_DEFINITION__ELEMENTS = DEFINITION_ELEMENT_FEATURE_COUNT + 9;
+  int ALLOCATION_DEFINITION__ELEMENTS = DEFINITION_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The number of structural features of the '<em>Allocation Definition</em>' class.
@@ -7777,7 +7777,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ALLOCATION_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENT_FEATURE_COUNT + 10;
+  int ALLOCATION_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.AllocationUsageImpl <em>Allocation Usage</em>}' class.
@@ -7796,7 +7796,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ALLOCATION_USAGE__IS_THEN = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 0;
+  int ALLOCATION_USAGE__IS_THEN = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Then Multiplicity</b></em>' attribute list.
@@ -7805,7 +7805,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ALLOCATION_USAGE__THEN_MULTIPLICITY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 1;
+  int ALLOCATION_USAGE__THEN_MULTIPLICITY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -7814,7 +7814,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ALLOCATION_USAGE__VISIBILITY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 2;
+  int ALLOCATION_USAGE__VISIBILITY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -7823,7 +7823,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ALLOCATION_USAGE__IS_VARIANT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 3;
+  int ALLOCATION_USAGE__IS_VARIANT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Is Return</b></em>' attribute.
@@ -7832,7 +7832,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ALLOCATION_USAGE__IS_RETURN = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 4;
+  int ALLOCATION_USAGE__IS_RETURN = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -7841,7 +7841,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ALLOCATION_USAGE__IS_ABSTRACT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 5;
+  int ALLOCATION_USAGE__IS_ABSTRACT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -7850,7 +7850,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ALLOCATION_USAGE__IS_VARIATION = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 6;
+  int ALLOCATION_USAGE__IS_VARIATION = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -7859,7 +7859,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ALLOCATION_USAGE__DIRECTION = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 7;
+  int ALLOCATION_USAGE__DIRECTION = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Is Read Only</b></em>' attribute.
@@ -7868,7 +7868,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ALLOCATION_USAGE__IS_READ_ONLY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 8;
+  int ALLOCATION_USAGE__IS_READ_ONLY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Is Derived</b></em>' attribute.
@@ -7877,7 +7877,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ALLOCATION_USAGE__IS_DERIVED = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 9;
+  int ALLOCATION_USAGE__IS_DERIVED = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Is Reference</b></em>' attribute.
@@ -7886,7 +7886,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ALLOCATION_USAGE__IS_REFERENCE = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 10;
+  int ALLOCATION_USAGE__IS_REFERENCE = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -7895,7 +7895,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ALLOCATION_USAGE__PREFIX_METADATA_EXTENSION = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 11;
+  int ALLOCATION_USAGE__PREFIX_METADATA_EXTENSION = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Is End</b></em>' attribute.
@@ -7904,7 +7904,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ALLOCATION_USAGE__IS_END = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 12;
+  int ALLOCATION_USAGE__IS_END = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -7913,7 +7913,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ALLOCATION_USAGE__IS_INDIVIDUAL = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 13;
+  int ALLOCATION_USAGE__IS_INDIVIDUAL = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>Portion Kind</b></em>' attribute.
@@ -7922,7 +7922,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ALLOCATION_USAGE__PORTION_KIND = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 14;
+  int ALLOCATION_USAGE__PORTION_KIND = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -7931,7 +7931,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ALLOCATION_USAGE__DECLARED_SHORT_NAME = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 15;
+  int ALLOCATION_USAGE__DECLARED_SHORT_NAME = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -7940,7 +7940,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ALLOCATION_USAGE__DECLARED_NAME = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 16;
+  int ALLOCATION_USAGE__DECLARED_NAME = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -7949,7 +7949,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ALLOCATION_USAGE__TYPINGS = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 17;
+  int ALLOCATION_USAGE__TYPINGS = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
@@ -7958,7 +7958,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ALLOCATION_USAGE__SUBSETTING = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 18;
+  int ALLOCATION_USAGE__SUBSETTING = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute list.
@@ -7967,7 +7967,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ALLOCATION_USAGE__REFERENCES = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 19;
+  int ALLOCATION_USAGE__REFERENCES = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Crosses</b></em>' attribute list.
@@ -7976,7 +7976,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ALLOCATION_USAGE__CROSSES = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 20;
+  int ALLOCATION_USAGE__CROSSES = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 20;
 
   /**
    * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
@@ -7985,7 +7985,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ALLOCATION_USAGE__REDEFINITIONS = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 21;
+  int ALLOCATION_USAGE__REDEFINITIONS = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 21;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -7994,7 +7994,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ALLOCATION_USAGE__MULTIPLICITY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 22;
+  int ALLOCATION_USAGE__MULTIPLICITY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 22;
 
   /**
    * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
@@ -8003,7 +8003,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ALLOCATION_USAGE__IS_ORDERED = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 23;
+  int ALLOCATION_USAGE__IS_ORDERED = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 23;
 
   /**
    * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
@@ -8012,7 +8012,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ALLOCATION_USAGE__IS_NONUNIQUE = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 24;
+  int ALLOCATION_USAGE__IS_NONUNIQUE = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 24;
 
   /**
    * The feature id for the '<em><b>Connector Part</b></em>' containment reference list.
@@ -8021,7 +8021,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ALLOCATION_USAGE__CONNECTOR_PART = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 25;
+  int ALLOCATION_USAGE__CONNECTOR_PART = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 25;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -8030,7 +8030,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ALLOCATION_USAGE__ELEMENTS = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 26;
+  int ALLOCATION_USAGE__ELEMENTS = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 26;
 
   /**
    * The number of structural features of the '<em>Allocation Usage</em>' class.
@@ -8039,7 +8039,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ALLOCATION_USAGE_FEATURE_COUNT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 27;
+  int ALLOCATION_USAGE_FEATURE_COUNT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 27;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.ActionDefinitionImpl <em>Action Definition</em>}' class.
@@ -8058,7 +8058,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_DEFINITION__VISIBILITY = DEFINITION_ELEMENT_FEATURE_COUNT + 0;
+  int ACTION_DEFINITION__VISIBILITY = DEFINITION_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -8067,7 +8067,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_DEFINITION__IS_VARIANT = DEFINITION_ELEMENT_FEATURE_COUNT + 1;
+  int ACTION_DEFINITION__IS_VARIANT = DEFINITION_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -8076,7 +8076,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENT_FEATURE_COUNT + 2;
+  int ACTION_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -8085,7 +8085,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_DEFINITION__IS_VARIATION = DEFINITION_ELEMENT_FEATURE_COUNT + 3;
+  int ACTION_DEFINITION__IS_VARIATION = DEFINITION_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -8094,7 +8094,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENT_FEATURE_COUNT + 4;
+  int ACTION_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -8103,7 +8103,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_DEFINITION__IS_INDIVIDUAL = DEFINITION_ELEMENT_FEATURE_COUNT + 5;
+  int ACTION_DEFINITION__IS_INDIVIDUAL = DEFINITION_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -8112,7 +8112,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 6;
+  int ACTION_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -8121,7 +8121,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 7;
+  int ACTION_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Superclassifiers</b></em>' attribute list.
@@ -8130,7 +8130,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENT_FEATURE_COUNT + 8;
+  int ACTION_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -8139,7 +8139,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_DEFINITION__ELEMENTS = DEFINITION_ELEMENT_FEATURE_COUNT + 9;
+  int ACTION_DEFINITION__ELEMENTS = DEFINITION_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The number of structural features of the '<em>Action Definition</em>' class.
@@ -8148,7 +8148,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENT_FEATURE_COUNT + 10;
+  int ACTION_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.ActionUsageImpl <em>Action Usage</em>}' class.
@@ -8167,7 +8167,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_USAGE__IS_THEN = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 0;
+  int ACTION_USAGE__IS_THEN = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Then Multiplicity</b></em>' attribute list.
@@ -8176,7 +8176,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_USAGE__THEN_MULTIPLICITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 1;
+  int ACTION_USAGE__THEN_MULTIPLICITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -8185,7 +8185,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_USAGE__VISIBILITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 2;
+  int ACTION_USAGE__VISIBILITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -8194,7 +8194,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_USAGE__IS_VARIANT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 3;
+  int ACTION_USAGE__IS_VARIANT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Is Return</b></em>' attribute.
@@ -8203,7 +8203,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_USAGE__IS_RETURN = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 4;
+  int ACTION_USAGE__IS_RETURN = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -8212,7 +8212,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_USAGE__IS_ABSTRACT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 5;
+  int ACTION_USAGE__IS_ABSTRACT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -8221,7 +8221,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_USAGE__IS_VARIATION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 6;
+  int ACTION_USAGE__IS_VARIATION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -8230,7 +8230,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_USAGE__DIRECTION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 7;
+  int ACTION_USAGE__DIRECTION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Is Read Only</b></em>' attribute.
@@ -8239,7 +8239,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_USAGE__IS_READ_ONLY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 8;
+  int ACTION_USAGE__IS_READ_ONLY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Is Derived</b></em>' attribute.
@@ -8248,7 +8248,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_USAGE__IS_DERIVED = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 9;
+  int ACTION_USAGE__IS_DERIVED = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Is Reference</b></em>' attribute.
@@ -8257,7 +8257,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_USAGE__IS_REFERENCE = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 10;
+  int ACTION_USAGE__IS_REFERENCE = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -8266,7 +8266,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_USAGE__PREFIX_METADATA_EXTENSION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 11;
+  int ACTION_USAGE__PREFIX_METADATA_EXTENSION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Is End</b></em>' attribute.
@@ -8275,7 +8275,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_USAGE__IS_END = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 12;
+  int ACTION_USAGE__IS_END = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -8284,7 +8284,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_USAGE__IS_INDIVIDUAL = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 13;
+  int ACTION_USAGE__IS_INDIVIDUAL = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>Portion Kind</b></em>' attribute.
@@ -8293,7 +8293,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_USAGE__PORTION_KIND = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 14;
+  int ACTION_USAGE__PORTION_KIND = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -8302,7 +8302,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_USAGE__DECLARED_SHORT_NAME = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 15;
+  int ACTION_USAGE__DECLARED_SHORT_NAME = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -8311,7 +8311,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_USAGE__DECLARED_NAME = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 16;
+  int ACTION_USAGE__DECLARED_NAME = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -8320,7 +8320,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_USAGE__TYPINGS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 17;
+  int ACTION_USAGE__TYPINGS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
@@ -8329,7 +8329,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_USAGE__SUBSETTING = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 18;
+  int ACTION_USAGE__SUBSETTING = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute list.
@@ -8338,7 +8338,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_USAGE__REFERENCES = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 19;
+  int ACTION_USAGE__REFERENCES = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Crosses</b></em>' attribute list.
@@ -8347,7 +8347,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_USAGE__CROSSES = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 20;
+  int ACTION_USAGE__CROSSES = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 20;
 
   /**
    * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
@@ -8356,7 +8356,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_USAGE__REDEFINITIONS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 21;
+  int ACTION_USAGE__REDEFINITIONS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 21;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -8365,7 +8365,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_USAGE__MULTIPLICITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 22;
+  int ACTION_USAGE__MULTIPLICITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 22;
 
   /**
    * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
@@ -8374,7 +8374,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_USAGE__IS_ORDERED = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 23;
+  int ACTION_USAGE__IS_ORDERED = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 23;
 
   /**
    * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
@@ -8383,7 +8383,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_USAGE__IS_NONUNIQUE = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 24;
+  int ACTION_USAGE__IS_NONUNIQUE = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 24;
 
   /**
    * The feature id for the '<em><b>Is Initial</b></em>' attribute.
@@ -8392,7 +8392,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_USAGE__IS_INITIAL = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 25;
+  int ACTION_USAGE__IS_INITIAL = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 25;
 
   /**
    * The feature id for the '<em><b>Is Default</b></em>' attribute.
@@ -8401,16 +8401,16 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_USAGE__IS_DEFAULT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 26;
+  int ACTION_USAGE__IS_DEFAULT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 26;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ACTION_USAGE__VALUE_PART = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 27;
+  int ACTION_USAGE__VALUE_PART = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 27;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -8419,7 +8419,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_USAGE__ELEMENTS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 28;
+  int ACTION_USAGE__ELEMENTS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 28;
 
   /**
    * The number of structural features of the '<em>Action Usage</em>' class.
@@ -8428,7 +8428,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_USAGE_FEATURE_COUNT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 29;
+  int ACTION_USAGE_FEATURE_COUNT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 29;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.CalculationDefinitionImpl <em>Calculation Definition</em>}' class.
@@ -8447,7 +8447,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALCULATION_DEFINITION__VISIBILITY = DEFINITION_ELEMENT_FEATURE_COUNT + 0;
+  int CALCULATION_DEFINITION__VISIBILITY = DEFINITION_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -8456,7 +8456,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALCULATION_DEFINITION__IS_VARIANT = DEFINITION_ELEMENT_FEATURE_COUNT + 1;
+  int CALCULATION_DEFINITION__IS_VARIANT = DEFINITION_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -8465,7 +8465,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALCULATION_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENT_FEATURE_COUNT + 2;
+  int CALCULATION_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -8474,7 +8474,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALCULATION_DEFINITION__IS_VARIATION = DEFINITION_ELEMENT_FEATURE_COUNT + 3;
+  int CALCULATION_DEFINITION__IS_VARIATION = DEFINITION_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -8483,7 +8483,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALCULATION_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENT_FEATURE_COUNT + 4;
+  int CALCULATION_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -8492,7 +8492,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALCULATION_DEFINITION__IS_INDIVIDUAL = DEFINITION_ELEMENT_FEATURE_COUNT + 5;
+  int CALCULATION_DEFINITION__IS_INDIVIDUAL = DEFINITION_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -8501,7 +8501,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALCULATION_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 6;
+  int CALCULATION_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -8510,7 +8510,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALCULATION_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 7;
+  int CALCULATION_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Superclassifiers</b></em>' attribute list.
@@ -8519,7 +8519,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALCULATION_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENT_FEATURE_COUNT + 8;
+  int CALCULATION_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -8528,7 +8528,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALCULATION_DEFINITION__ELEMENTS = DEFINITION_ELEMENT_FEATURE_COUNT + 9;
+  int CALCULATION_DEFINITION__ELEMENTS = DEFINITION_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Result Expression Parameter</b></em>' containment reference list.
@@ -8537,7 +8537,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALCULATION_DEFINITION__RESULT_EXPRESSION_PARAMETER = DEFINITION_ELEMENT_FEATURE_COUNT + 10;
+  int CALCULATION_DEFINITION__RESULT_EXPRESSION_PARAMETER = DEFINITION_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The number of structural features of the '<em>Calculation Definition</em>' class.
@@ -8546,7 +8546,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALCULATION_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENT_FEATURE_COUNT + 11;
+  int CALCULATION_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENTS_FEATURE_COUNT + 11;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.CalculationUsageImpl <em>Calculation Usage</em>}' class.
@@ -8565,7 +8565,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALCULATION_USAGE__IS_THEN = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 0;
+  int CALCULATION_USAGE__IS_THEN = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Then Multiplicity</b></em>' attribute list.
@@ -8574,7 +8574,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALCULATION_USAGE__THEN_MULTIPLICITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 1;
+  int CALCULATION_USAGE__THEN_MULTIPLICITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -8583,7 +8583,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALCULATION_USAGE__VISIBILITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 2;
+  int CALCULATION_USAGE__VISIBILITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -8592,7 +8592,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALCULATION_USAGE__IS_VARIANT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 3;
+  int CALCULATION_USAGE__IS_VARIANT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Is Return</b></em>' attribute.
@@ -8601,7 +8601,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALCULATION_USAGE__IS_RETURN = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 4;
+  int CALCULATION_USAGE__IS_RETURN = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -8610,7 +8610,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALCULATION_USAGE__IS_ABSTRACT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 5;
+  int CALCULATION_USAGE__IS_ABSTRACT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -8619,7 +8619,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALCULATION_USAGE__IS_VARIATION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 6;
+  int CALCULATION_USAGE__IS_VARIATION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -8628,7 +8628,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALCULATION_USAGE__DIRECTION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 7;
+  int CALCULATION_USAGE__DIRECTION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Is Read Only</b></em>' attribute.
@@ -8637,7 +8637,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALCULATION_USAGE__IS_READ_ONLY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 8;
+  int CALCULATION_USAGE__IS_READ_ONLY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Is Derived</b></em>' attribute.
@@ -8646,7 +8646,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALCULATION_USAGE__IS_DERIVED = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 9;
+  int CALCULATION_USAGE__IS_DERIVED = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Is Reference</b></em>' attribute.
@@ -8655,7 +8655,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALCULATION_USAGE__IS_REFERENCE = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 10;
+  int CALCULATION_USAGE__IS_REFERENCE = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -8664,7 +8664,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALCULATION_USAGE__PREFIX_METADATA_EXTENSION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 11;
+  int CALCULATION_USAGE__PREFIX_METADATA_EXTENSION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Is End</b></em>' attribute.
@@ -8673,7 +8673,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALCULATION_USAGE__IS_END = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 12;
+  int CALCULATION_USAGE__IS_END = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -8682,7 +8682,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALCULATION_USAGE__IS_INDIVIDUAL = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 13;
+  int CALCULATION_USAGE__IS_INDIVIDUAL = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>Portion Kind</b></em>' attribute.
@@ -8691,7 +8691,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALCULATION_USAGE__PORTION_KIND = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 14;
+  int CALCULATION_USAGE__PORTION_KIND = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -8700,7 +8700,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALCULATION_USAGE__DECLARED_SHORT_NAME = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 15;
+  int CALCULATION_USAGE__DECLARED_SHORT_NAME = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -8709,7 +8709,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALCULATION_USAGE__DECLARED_NAME = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 16;
+  int CALCULATION_USAGE__DECLARED_NAME = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -8718,7 +8718,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALCULATION_USAGE__TYPINGS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 17;
+  int CALCULATION_USAGE__TYPINGS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
@@ -8727,7 +8727,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALCULATION_USAGE__SUBSETTING = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 18;
+  int CALCULATION_USAGE__SUBSETTING = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute list.
@@ -8736,7 +8736,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALCULATION_USAGE__REFERENCES = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 19;
+  int CALCULATION_USAGE__REFERENCES = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Crosses</b></em>' attribute list.
@@ -8745,7 +8745,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALCULATION_USAGE__CROSSES = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 20;
+  int CALCULATION_USAGE__CROSSES = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 20;
 
   /**
    * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
@@ -8754,7 +8754,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALCULATION_USAGE__REDEFINITIONS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 21;
+  int CALCULATION_USAGE__REDEFINITIONS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 21;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -8763,7 +8763,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALCULATION_USAGE__MULTIPLICITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 22;
+  int CALCULATION_USAGE__MULTIPLICITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 22;
 
   /**
    * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
@@ -8772,7 +8772,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALCULATION_USAGE__IS_ORDERED = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 23;
+  int CALCULATION_USAGE__IS_ORDERED = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 23;
 
   /**
    * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
@@ -8781,7 +8781,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALCULATION_USAGE__IS_NONUNIQUE = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 24;
+  int CALCULATION_USAGE__IS_NONUNIQUE = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 24;
 
   /**
    * The feature id for the '<em><b>Is Initial</b></em>' attribute.
@@ -8790,7 +8790,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALCULATION_USAGE__IS_INITIAL = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 25;
+  int CALCULATION_USAGE__IS_INITIAL = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 25;
 
   /**
    * The feature id for the '<em><b>Is Default</b></em>' attribute.
@@ -8799,16 +8799,16 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALCULATION_USAGE__IS_DEFAULT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 26;
+  int CALCULATION_USAGE__IS_DEFAULT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 26;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CALCULATION_USAGE__VALUE_PART = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 27;
+  int CALCULATION_USAGE__VALUE_PART = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 27;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -8817,7 +8817,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALCULATION_USAGE__ELEMENTS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 28;
+  int CALCULATION_USAGE__ELEMENTS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 28;
 
   /**
    * The feature id for the '<em><b>Result Expression Parameter</b></em>' containment reference list.
@@ -8826,7 +8826,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALCULATION_USAGE__RESULT_EXPRESSION_PARAMETER = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 29;
+  int CALCULATION_USAGE__RESULT_EXPRESSION_PARAMETER = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 29;
 
   /**
    * The number of structural features of the '<em>Calculation Usage</em>' class.
@@ -8835,7 +8835,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CALCULATION_USAGE_FEATURE_COUNT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 30;
+  int CALCULATION_USAGE_FEATURE_COUNT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 30;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.StateDefinitionImpl <em>State Definition</em>}' class.
@@ -8854,7 +8854,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_DEFINITION__VISIBILITY = DEFINITION_ELEMENT_FEATURE_COUNT + 0;
+  int STATE_DEFINITION__VISIBILITY = DEFINITION_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -8863,7 +8863,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_DEFINITION__IS_VARIANT = DEFINITION_ELEMENT_FEATURE_COUNT + 1;
+  int STATE_DEFINITION__IS_VARIANT = DEFINITION_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -8872,7 +8872,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENT_FEATURE_COUNT + 2;
+  int STATE_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -8881,7 +8881,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_DEFINITION__IS_VARIATION = DEFINITION_ELEMENT_FEATURE_COUNT + 3;
+  int STATE_DEFINITION__IS_VARIATION = DEFINITION_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -8890,7 +8890,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENT_FEATURE_COUNT + 4;
+  int STATE_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -8899,7 +8899,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_DEFINITION__IS_INDIVIDUAL = DEFINITION_ELEMENT_FEATURE_COUNT + 5;
+  int STATE_DEFINITION__IS_INDIVIDUAL = DEFINITION_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -8908,7 +8908,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 6;
+  int STATE_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -8917,7 +8917,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 7;
+  int STATE_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Superclassifiers</b></em>' attribute list.
@@ -8926,7 +8926,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENT_FEATURE_COUNT + 8;
+  int STATE_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Is Parallel</b></em>' attribute.
@@ -8935,7 +8935,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_DEFINITION__IS_PARALLEL = DEFINITION_ELEMENT_FEATURE_COUNT + 9;
+  int STATE_DEFINITION__IS_PARALLEL = DEFINITION_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -8944,7 +8944,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_DEFINITION__ELEMENTS = DEFINITION_ELEMENT_FEATURE_COUNT + 10;
+  int STATE_DEFINITION__ELEMENTS = DEFINITION_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The number of structural features of the '<em>State Definition</em>' class.
@@ -8953,7 +8953,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENT_FEATURE_COUNT + 11;
+  int STATE_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENTS_FEATURE_COUNT + 11;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.StateUsageImpl <em>State Usage</em>}' class.
@@ -8972,7 +8972,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_USAGE__IS_THEN = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 0;
+  int STATE_USAGE__IS_THEN = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Then Multiplicity</b></em>' attribute list.
@@ -8981,7 +8981,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_USAGE__THEN_MULTIPLICITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 1;
+  int STATE_USAGE__THEN_MULTIPLICITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -8990,7 +8990,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_USAGE__VISIBILITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 2;
+  int STATE_USAGE__VISIBILITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -8999,7 +8999,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_USAGE__IS_VARIANT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 3;
+  int STATE_USAGE__IS_VARIANT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Is Return</b></em>' attribute.
@@ -9008,7 +9008,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_USAGE__IS_RETURN = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 4;
+  int STATE_USAGE__IS_RETURN = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -9017,7 +9017,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_USAGE__IS_ABSTRACT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 5;
+  int STATE_USAGE__IS_ABSTRACT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -9026,7 +9026,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_USAGE__IS_VARIATION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 6;
+  int STATE_USAGE__IS_VARIATION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -9035,7 +9035,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_USAGE__DIRECTION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 7;
+  int STATE_USAGE__DIRECTION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Is Read Only</b></em>' attribute.
@@ -9044,7 +9044,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_USAGE__IS_READ_ONLY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 8;
+  int STATE_USAGE__IS_READ_ONLY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Is Derived</b></em>' attribute.
@@ -9053,7 +9053,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_USAGE__IS_DERIVED = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 9;
+  int STATE_USAGE__IS_DERIVED = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Is Reference</b></em>' attribute.
@@ -9062,7 +9062,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_USAGE__IS_REFERENCE = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 10;
+  int STATE_USAGE__IS_REFERENCE = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -9071,7 +9071,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_USAGE__PREFIX_METADATA_EXTENSION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 11;
+  int STATE_USAGE__PREFIX_METADATA_EXTENSION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Is End</b></em>' attribute.
@@ -9080,7 +9080,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_USAGE__IS_END = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 12;
+  int STATE_USAGE__IS_END = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -9089,7 +9089,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_USAGE__IS_INDIVIDUAL = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 13;
+  int STATE_USAGE__IS_INDIVIDUAL = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>Portion Kind</b></em>' attribute.
@@ -9098,7 +9098,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_USAGE__PORTION_KIND = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 14;
+  int STATE_USAGE__PORTION_KIND = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -9107,7 +9107,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_USAGE__DECLARED_SHORT_NAME = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 15;
+  int STATE_USAGE__DECLARED_SHORT_NAME = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -9116,7 +9116,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_USAGE__DECLARED_NAME = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 16;
+  int STATE_USAGE__DECLARED_NAME = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -9125,7 +9125,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_USAGE__TYPINGS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 17;
+  int STATE_USAGE__TYPINGS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
@@ -9134,7 +9134,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_USAGE__SUBSETTING = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 18;
+  int STATE_USAGE__SUBSETTING = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute list.
@@ -9143,7 +9143,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_USAGE__REFERENCES = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 19;
+  int STATE_USAGE__REFERENCES = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Crosses</b></em>' attribute list.
@@ -9152,7 +9152,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_USAGE__CROSSES = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 20;
+  int STATE_USAGE__CROSSES = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 20;
 
   /**
    * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
@@ -9161,7 +9161,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_USAGE__REDEFINITIONS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 21;
+  int STATE_USAGE__REDEFINITIONS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 21;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -9170,7 +9170,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_USAGE__MULTIPLICITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 22;
+  int STATE_USAGE__MULTIPLICITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 22;
 
   /**
    * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
@@ -9179,7 +9179,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_USAGE__IS_ORDERED = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 23;
+  int STATE_USAGE__IS_ORDERED = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 23;
 
   /**
    * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
@@ -9188,7 +9188,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_USAGE__IS_NONUNIQUE = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 24;
+  int STATE_USAGE__IS_NONUNIQUE = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 24;
 
   /**
    * The feature id for the '<em><b>Is Initial</b></em>' attribute.
@@ -9197,7 +9197,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_USAGE__IS_INITIAL = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 25;
+  int STATE_USAGE__IS_INITIAL = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 25;
 
   /**
    * The feature id for the '<em><b>Is Default</b></em>' attribute.
@@ -9206,16 +9206,16 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_USAGE__IS_DEFAULT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 26;
+  int STATE_USAGE__IS_DEFAULT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 26;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STATE_USAGE__VALUE_PART = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 27;
+  int STATE_USAGE__VALUE_PART = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 27;
 
   /**
    * The feature id for the '<em><b>Is Parallel</b></em>' attribute.
@@ -9224,7 +9224,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_USAGE__IS_PARALLEL = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 28;
+  int STATE_USAGE__IS_PARALLEL = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 28;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -9233,7 +9233,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_USAGE__ELEMENTS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 29;
+  int STATE_USAGE__ELEMENTS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 29;
 
   /**
    * The number of structural features of the '<em>State Usage</em>' class.
@@ -9242,7 +9242,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_USAGE_FEATURE_COUNT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 30;
+  int STATE_USAGE_FEATURE_COUNT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 30;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.ConstraintDefinitionImpl <em>Constraint Definition</em>}' class.
@@ -9261,7 +9261,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_DEFINITION__VISIBILITY = DEFINITION_ELEMENT_FEATURE_COUNT + 0;
+  int CONSTRAINT_DEFINITION__VISIBILITY = DEFINITION_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -9270,7 +9270,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_DEFINITION__IS_VARIANT = DEFINITION_ELEMENT_FEATURE_COUNT + 1;
+  int CONSTRAINT_DEFINITION__IS_VARIANT = DEFINITION_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -9279,7 +9279,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENT_FEATURE_COUNT + 2;
+  int CONSTRAINT_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -9288,7 +9288,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_DEFINITION__IS_VARIATION = DEFINITION_ELEMENT_FEATURE_COUNT + 3;
+  int CONSTRAINT_DEFINITION__IS_VARIATION = DEFINITION_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -9297,7 +9297,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENT_FEATURE_COUNT + 4;
+  int CONSTRAINT_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -9306,7 +9306,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_DEFINITION__IS_INDIVIDUAL = DEFINITION_ELEMENT_FEATURE_COUNT + 5;
+  int CONSTRAINT_DEFINITION__IS_INDIVIDUAL = DEFINITION_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -9315,7 +9315,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 6;
+  int CONSTRAINT_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -9324,7 +9324,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 7;
+  int CONSTRAINT_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Superclassifiers</b></em>' attribute list.
@@ -9333,7 +9333,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENT_FEATURE_COUNT + 8;
+  int CONSTRAINT_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -9342,7 +9342,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_DEFINITION__ELEMENTS = DEFINITION_ELEMENT_FEATURE_COUNT + 9;
+  int CONSTRAINT_DEFINITION__ELEMENTS = DEFINITION_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Result Expression Parameter</b></em>' containment reference list.
@@ -9351,7 +9351,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_DEFINITION__RESULT_EXPRESSION_PARAMETER = DEFINITION_ELEMENT_FEATURE_COUNT + 10;
+  int CONSTRAINT_DEFINITION__RESULT_EXPRESSION_PARAMETER = DEFINITION_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The number of structural features of the '<em>Constraint Definition</em>' class.
@@ -9360,7 +9360,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENT_FEATURE_COUNT + 11;
+  int CONSTRAINT_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENTS_FEATURE_COUNT + 11;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.ConstraintUsageImpl <em>Constraint Usage</em>}' class.
@@ -9379,7 +9379,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_USAGE__IS_THEN = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 0;
+  int CONSTRAINT_USAGE__IS_THEN = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Then Multiplicity</b></em>' attribute list.
@@ -9388,7 +9388,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_USAGE__THEN_MULTIPLICITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 1;
+  int CONSTRAINT_USAGE__THEN_MULTIPLICITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -9397,7 +9397,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_USAGE__VISIBILITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 2;
+  int CONSTRAINT_USAGE__VISIBILITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -9406,7 +9406,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_USAGE__IS_VARIANT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 3;
+  int CONSTRAINT_USAGE__IS_VARIANT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Is Return</b></em>' attribute.
@@ -9415,7 +9415,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_USAGE__IS_RETURN = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 4;
+  int CONSTRAINT_USAGE__IS_RETURN = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -9424,7 +9424,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_USAGE__IS_ABSTRACT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 5;
+  int CONSTRAINT_USAGE__IS_ABSTRACT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -9433,7 +9433,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_USAGE__IS_VARIATION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 6;
+  int CONSTRAINT_USAGE__IS_VARIATION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -9442,7 +9442,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_USAGE__DIRECTION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 7;
+  int CONSTRAINT_USAGE__DIRECTION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Is Read Only</b></em>' attribute.
@@ -9451,7 +9451,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_USAGE__IS_READ_ONLY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 8;
+  int CONSTRAINT_USAGE__IS_READ_ONLY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Is Derived</b></em>' attribute.
@@ -9460,7 +9460,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_USAGE__IS_DERIVED = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 9;
+  int CONSTRAINT_USAGE__IS_DERIVED = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Is Reference</b></em>' attribute.
@@ -9469,7 +9469,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_USAGE__IS_REFERENCE = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 10;
+  int CONSTRAINT_USAGE__IS_REFERENCE = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -9478,7 +9478,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_USAGE__PREFIX_METADATA_EXTENSION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 11;
+  int CONSTRAINT_USAGE__PREFIX_METADATA_EXTENSION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Is End</b></em>' attribute.
@@ -9487,7 +9487,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_USAGE__IS_END = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 12;
+  int CONSTRAINT_USAGE__IS_END = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -9496,7 +9496,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_USAGE__IS_INDIVIDUAL = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 13;
+  int CONSTRAINT_USAGE__IS_INDIVIDUAL = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>Portion Kind</b></em>' attribute.
@@ -9505,7 +9505,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_USAGE__PORTION_KIND = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 14;
+  int CONSTRAINT_USAGE__PORTION_KIND = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -9514,7 +9514,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_USAGE__DECLARED_SHORT_NAME = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 15;
+  int CONSTRAINT_USAGE__DECLARED_SHORT_NAME = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -9523,7 +9523,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_USAGE__DECLARED_NAME = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 16;
+  int CONSTRAINT_USAGE__DECLARED_NAME = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -9532,7 +9532,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_USAGE__TYPINGS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 17;
+  int CONSTRAINT_USAGE__TYPINGS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
@@ -9541,7 +9541,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_USAGE__SUBSETTING = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 18;
+  int CONSTRAINT_USAGE__SUBSETTING = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute list.
@@ -9550,7 +9550,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_USAGE__REFERENCES = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 19;
+  int CONSTRAINT_USAGE__REFERENCES = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Crosses</b></em>' attribute list.
@@ -9559,7 +9559,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_USAGE__CROSSES = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 20;
+  int CONSTRAINT_USAGE__CROSSES = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 20;
 
   /**
    * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
@@ -9568,7 +9568,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_USAGE__REDEFINITIONS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 21;
+  int CONSTRAINT_USAGE__REDEFINITIONS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 21;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -9577,7 +9577,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_USAGE__MULTIPLICITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 22;
+  int CONSTRAINT_USAGE__MULTIPLICITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 22;
 
   /**
    * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
@@ -9586,7 +9586,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_USAGE__IS_ORDERED = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 23;
+  int CONSTRAINT_USAGE__IS_ORDERED = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 23;
 
   /**
    * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
@@ -9595,7 +9595,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_USAGE__IS_NONUNIQUE = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 24;
+  int CONSTRAINT_USAGE__IS_NONUNIQUE = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 24;
 
   /**
    * The feature id for the '<em><b>Is Initial</b></em>' attribute.
@@ -9604,7 +9604,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_USAGE__IS_INITIAL = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 25;
+  int CONSTRAINT_USAGE__IS_INITIAL = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 25;
 
   /**
    * The feature id for the '<em><b>Is Default</b></em>' attribute.
@@ -9613,16 +9613,16 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_USAGE__IS_DEFAULT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 26;
+  int CONSTRAINT_USAGE__IS_DEFAULT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 26;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONSTRAINT_USAGE__VALUE_PART = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 27;
+  int CONSTRAINT_USAGE__VALUE_PART = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 27;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -9631,7 +9631,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_USAGE__ELEMENTS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 28;
+  int CONSTRAINT_USAGE__ELEMENTS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 28;
 
   /**
    * The feature id for the '<em><b>Result Expression Parameter</b></em>' containment reference list.
@@ -9640,7 +9640,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_USAGE__RESULT_EXPRESSION_PARAMETER = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 29;
+  int CONSTRAINT_USAGE__RESULT_EXPRESSION_PARAMETER = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 29;
 
   /**
    * The number of structural features of the '<em>Constraint Usage</em>' class.
@@ -9649,7 +9649,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_USAGE_FEATURE_COUNT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 30;
+  int CONSTRAINT_USAGE_FEATURE_COUNT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 30;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.TransitionUsageImpl <em>Transition Usage</em>}' class.
@@ -9876,7 +9876,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_DEFINITION__VISIBILITY = DEFINITION_ELEMENT_FEATURE_COUNT + 0;
+  int REQUIREMENT_DEFINITION__VISIBILITY = DEFINITION_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -9885,7 +9885,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_DEFINITION__IS_VARIANT = DEFINITION_ELEMENT_FEATURE_COUNT + 1;
+  int REQUIREMENT_DEFINITION__IS_VARIANT = DEFINITION_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -9894,7 +9894,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENT_FEATURE_COUNT + 2;
+  int REQUIREMENT_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -9903,7 +9903,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_DEFINITION__IS_VARIATION = DEFINITION_ELEMENT_FEATURE_COUNT + 3;
+  int REQUIREMENT_DEFINITION__IS_VARIATION = DEFINITION_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -9912,7 +9912,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENT_FEATURE_COUNT + 4;
+  int REQUIREMENT_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -9921,7 +9921,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_DEFINITION__IS_INDIVIDUAL = DEFINITION_ELEMENT_FEATURE_COUNT + 5;
+  int REQUIREMENT_DEFINITION__IS_INDIVIDUAL = DEFINITION_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -9930,7 +9930,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 6;
+  int REQUIREMENT_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -9939,7 +9939,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 7;
+  int REQUIREMENT_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Superclassifiers</b></em>' attribute list.
@@ -9948,7 +9948,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENT_FEATURE_COUNT + 8;
+  int REQUIREMENT_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -9957,7 +9957,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_DEFINITION__ELEMENTS = DEFINITION_ELEMENT_FEATURE_COUNT + 9;
+  int REQUIREMENT_DEFINITION__ELEMENTS = DEFINITION_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The number of structural features of the '<em>Requirement Definition</em>' class.
@@ -9966,7 +9966,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENT_FEATURE_COUNT + 10;
+  int REQUIREMENT_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.RequirementUsageImpl <em>Requirement Usage</em>}' class.
@@ -9985,7 +9985,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_USAGE__IS_THEN = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 0;
+  int REQUIREMENT_USAGE__IS_THEN = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Then Multiplicity</b></em>' attribute list.
@@ -9994,7 +9994,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_USAGE__THEN_MULTIPLICITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 1;
+  int REQUIREMENT_USAGE__THEN_MULTIPLICITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -10003,7 +10003,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_USAGE__VISIBILITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 2;
+  int REQUIREMENT_USAGE__VISIBILITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -10012,7 +10012,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_USAGE__IS_VARIANT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 3;
+  int REQUIREMENT_USAGE__IS_VARIANT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Is Return</b></em>' attribute.
@@ -10021,7 +10021,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_USAGE__IS_RETURN = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 4;
+  int REQUIREMENT_USAGE__IS_RETURN = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -10030,7 +10030,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_USAGE__IS_ABSTRACT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 5;
+  int REQUIREMENT_USAGE__IS_ABSTRACT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -10039,7 +10039,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_USAGE__IS_VARIATION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 6;
+  int REQUIREMENT_USAGE__IS_VARIATION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -10048,7 +10048,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_USAGE__DIRECTION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 7;
+  int REQUIREMENT_USAGE__DIRECTION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Is Read Only</b></em>' attribute.
@@ -10057,7 +10057,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_USAGE__IS_READ_ONLY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 8;
+  int REQUIREMENT_USAGE__IS_READ_ONLY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Is Derived</b></em>' attribute.
@@ -10066,7 +10066,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_USAGE__IS_DERIVED = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 9;
+  int REQUIREMENT_USAGE__IS_DERIVED = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Is Reference</b></em>' attribute.
@@ -10075,7 +10075,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_USAGE__IS_REFERENCE = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 10;
+  int REQUIREMENT_USAGE__IS_REFERENCE = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -10084,7 +10084,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_USAGE__PREFIX_METADATA_EXTENSION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 11;
+  int REQUIREMENT_USAGE__PREFIX_METADATA_EXTENSION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Is End</b></em>' attribute.
@@ -10093,7 +10093,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_USAGE__IS_END = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 12;
+  int REQUIREMENT_USAGE__IS_END = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -10102,7 +10102,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_USAGE__IS_INDIVIDUAL = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 13;
+  int REQUIREMENT_USAGE__IS_INDIVIDUAL = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>Portion Kind</b></em>' attribute.
@@ -10111,7 +10111,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_USAGE__PORTION_KIND = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 14;
+  int REQUIREMENT_USAGE__PORTION_KIND = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -10120,7 +10120,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_USAGE__DECLARED_SHORT_NAME = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 15;
+  int REQUIREMENT_USAGE__DECLARED_SHORT_NAME = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -10129,7 +10129,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_USAGE__DECLARED_NAME = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 16;
+  int REQUIREMENT_USAGE__DECLARED_NAME = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -10138,7 +10138,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_USAGE__TYPINGS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 17;
+  int REQUIREMENT_USAGE__TYPINGS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
@@ -10147,7 +10147,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_USAGE__SUBSETTING = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 18;
+  int REQUIREMENT_USAGE__SUBSETTING = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute list.
@@ -10156,7 +10156,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_USAGE__REFERENCES = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 19;
+  int REQUIREMENT_USAGE__REFERENCES = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Crosses</b></em>' attribute list.
@@ -10165,7 +10165,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_USAGE__CROSSES = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 20;
+  int REQUIREMENT_USAGE__CROSSES = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 20;
 
   /**
    * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
@@ -10174,7 +10174,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_USAGE__REDEFINITIONS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 21;
+  int REQUIREMENT_USAGE__REDEFINITIONS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 21;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -10183,7 +10183,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_USAGE__MULTIPLICITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 22;
+  int REQUIREMENT_USAGE__MULTIPLICITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 22;
 
   /**
    * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
@@ -10192,7 +10192,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_USAGE__IS_ORDERED = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 23;
+  int REQUIREMENT_USAGE__IS_ORDERED = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 23;
 
   /**
    * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
@@ -10201,7 +10201,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_USAGE__IS_NONUNIQUE = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 24;
+  int REQUIREMENT_USAGE__IS_NONUNIQUE = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 24;
 
   /**
    * The feature id for the '<em><b>Is Initial</b></em>' attribute.
@@ -10210,7 +10210,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_USAGE__IS_INITIAL = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 25;
+  int REQUIREMENT_USAGE__IS_INITIAL = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 25;
 
   /**
    * The feature id for the '<em><b>Is Default</b></em>' attribute.
@@ -10219,16 +10219,16 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_USAGE__IS_DEFAULT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 26;
+  int REQUIREMENT_USAGE__IS_DEFAULT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 26;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int REQUIREMENT_USAGE__VALUE_PART = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 27;
+  int REQUIREMENT_USAGE__VALUE_PART = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 27;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -10237,7 +10237,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_USAGE__ELEMENTS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 28;
+  int REQUIREMENT_USAGE__ELEMENTS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 28;
 
   /**
    * The number of structural features of the '<em>Requirement Usage</em>' class.
@@ -10246,7 +10246,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REQUIREMENT_USAGE_FEATURE_COUNT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 29;
+  int REQUIREMENT_USAGE_FEATURE_COUNT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 29;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.ConcernDefinitionImpl <em>Concern Definition</em>}' class.
@@ -10265,7 +10265,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONCERN_DEFINITION__VISIBILITY = DEFINITION_ELEMENT_FEATURE_COUNT + 0;
+  int CONCERN_DEFINITION__VISIBILITY = DEFINITION_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -10274,7 +10274,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONCERN_DEFINITION__IS_VARIANT = DEFINITION_ELEMENT_FEATURE_COUNT + 1;
+  int CONCERN_DEFINITION__IS_VARIANT = DEFINITION_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -10283,7 +10283,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONCERN_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENT_FEATURE_COUNT + 2;
+  int CONCERN_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -10292,7 +10292,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONCERN_DEFINITION__IS_VARIATION = DEFINITION_ELEMENT_FEATURE_COUNT + 3;
+  int CONCERN_DEFINITION__IS_VARIATION = DEFINITION_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -10301,7 +10301,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONCERN_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENT_FEATURE_COUNT + 4;
+  int CONCERN_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -10310,7 +10310,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONCERN_DEFINITION__IS_INDIVIDUAL = DEFINITION_ELEMENT_FEATURE_COUNT + 5;
+  int CONCERN_DEFINITION__IS_INDIVIDUAL = DEFINITION_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -10319,7 +10319,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONCERN_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 6;
+  int CONCERN_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -10328,7 +10328,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONCERN_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 7;
+  int CONCERN_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Superclassifiers</b></em>' attribute list.
@@ -10337,7 +10337,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONCERN_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENT_FEATURE_COUNT + 8;
+  int CONCERN_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -10346,7 +10346,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONCERN_DEFINITION__ELEMENTS = DEFINITION_ELEMENT_FEATURE_COUNT + 9;
+  int CONCERN_DEFINITION__ELEMENTS = DEFINITION_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The number of structural features of the '<em>Concern Definition</em>' class.
@@ -10355,7 +10355,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONCERN_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENT_FEATURE_COUNT + 10;
+  int CONCERN_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.ConcernUsageImpl <em>Concern Usage</em>}' class.
@@ -10374,7 +10374,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONCERN_USAGE__IS_THEN = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 0;
+  int CONCERN_USAGE__IS_THEN = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Then Multiplicity</b></em>' attribute list.
@@ -10383,7 +10383,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONCERN_USAGE__THEN_MULTIPLICITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 1;
+  int CONCERN_USAGE__THEN_MULTIPLICITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -10392,7 +10392,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONCERN_USAGE__VISIBILITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 2;
+  int CONCERN_USAGE__VISIBILITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -10401,7 +10401,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONCERN_USAGE__IS_VARIANT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 3;
+  int CONCERN_USAGE__IS_VARIANT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Is Return</b></em>' attribute.
@@ -10410,7 +10410,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONCERN_USAGE__IS_RETURN = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 4;
+  int CONCERN_USAGE__IS_RETURN = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -10419,7 +10419,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONCERN_USAGE__IS_ABSTRACT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 5;
+  int CONCERN_USAGE__IS_ABSTRACT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -10428,7 +10428,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONCERN_USAGE__IS_VARIATION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 6;
+  int CONCERN_USAGE__IS_VARIATION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -10437,7 +10437,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONCERN_USAGE__DIRECTION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 7;
+  int CONCERN_USAGE__DIRECTION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Is Read Only</b></em>' attribute.
@@ -10446,7 +10446,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONCERN_USAGE__IS_READ_ONLY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 8;
+  int CONCERN_USAGE__IS_READ_ONLY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Is Derived</b></em>' attribute.
@@ -10455,7 +10455,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONCERN_USAGE__IS_DERIVED = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 9;
+  int CONCERN_USAGE__IS_DERIVED = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Is Reference</b></em>' attribute.
@@ -10464,7 +10464,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONCERN_USAGE__IS_REFERENCE = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 10;
+  int CONCERN_USAGE__IS_REFERENCE = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -10473,7 +10473,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONCERN_USAGE__PREFIX_METADATA_EXTENSION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 11;
+  int CONCERN_USAGE__PREFIX_METADATA_EXTENSION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Is End</b></em>' attribute.
@@ -10482,7 +10482,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONCERN_USAGE__IS_END = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 12;
+  int CONCERN_USAGE__IS_END = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -10491,7 +10491,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONCERN_USAGE__IS_INDIVIDUAL = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 13;
+  int CONCERN_USAGE__IS_INDIVIDUAL = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>Portion Kind</b></em>' attribute.
@@ -10500,7 +10500,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONCERN_USAGE__PORTION_KIND = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 14;
+  int CONCERN_USAGE__PORTION_KIND = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -10509,7 +10509,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONCERN_USAGE__DECLARED_SHORT_NAME = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 15;
+  int CONCERN_USAGE__DECLARED_SHORT_NAME = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -10518,7 +10518,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONCERN_USAGE__DECLARED_NAME = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 16;
+  int CONCERN_USAGE__DECLARED_NAME = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -10527,7 +10527,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONCERN_USAGE__TYPINGS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 17;
+  int CONCERN_USAGE__TYPINGS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
@@ -10536,7 +10536,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONCERN_USAGE__SUBSETTING = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 18;
+  int CONCERN_USAGE__SUBSETTING = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute list.
@@ -10545,7 +10545,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONCERN_USAGE__REFERENCES = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 19;
+  int CONCERN_USAGE__REFERENCES = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Crosses</b></em>' attribute list.
@@ -10554,7 +10554,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONCERN_USAGE__CROSSES = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 20;
+  int CONCERN_USAGE__CROSSES = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 20;
 
   /**
    * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
@@ -10563,7 +10563,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONCERN_USAGE__REDEFINITIONS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 21;
+  int CONCERN_USAGE__REDEFINITIONS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 21;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -10572,7 +10572,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONCERN_USAGE__MULTIPLICITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 22;
+  int CONCERN_USAGE__MULTIPLICITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 22;
 
   /**
    * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
@@ -10581,7 +10581,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONCERN_USAGE__IS_ORDERED = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 23;
+  int CONCERN_USAGE__IS_ORDERED = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 23;
 
   /**
    * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
@@ -10590,7 +10590,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONCERN_USAGE__IS_NONUNIQUE = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 24;
+  int CONCERN_USAGE__IS_NONUNIQUE = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 24;
 
   /**
    * The feature id for the '<em><b>Is Initial</b></em>' attribute.
@@ -10599,7 +10599,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONCERN_USAGE__IS_INITIAL = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 25;
+  int CONCERN_USAGE__IS_INITIAL = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 25;
 
   /**
    * The feature id for the '<em><b>Is Default</b></em>' attribute.
@@ -10608,16 +10608,16 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONCERN_USAGE__IS_DEFAULT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 26;
+  int CONCERN_USAGE__IS_DEFAULT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 26;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONCERN_USAGE__VALUE_PART = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 27;
+  int CONCERN_USAGE__VALUE_PART = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 27;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -10626,7 +10626,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONCERN_USAGE__ELEMENTS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 28;
+  int CONCERN_USAGE__ELEMENTS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 28;
 
   /**
    * The number of structural features of the '<em>Concern Usage</em>' class.
@@ -10635,7 +10635,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONCERN_USAGE_FEATURE_COUNT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 29;
+  int CONCERN_USAGE_FEATURE_COUNT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 29;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.CaseDefinitionImpl <em>Case Definition</em>}' class.
@@ -10654,7 +10654,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASE_DEFINITION__VISIBILITY = DEFINITION_ELEMENT_FEATURE_COUNT + 0;
+  int CASE_DEFINITION__VISIBILITY = DEFINITION_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -10663,7 +10663,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASE_DEFINITION__IS_VARIANT = DEFINITION_ELEMENT_FEATURE_COUNT + 1;
+  int CASE_DEFINITION__IS_VARIANT = DEFINITION_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -10672,7 +10672,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASE_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENT_FEATURE_COUNT + 2;
+  int CASE_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -10681,7 +10681,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASE_DEFINITION__IS_VARIATION = DEFINITION_ELEMENT_FEATURE_COUNT + 3;
+  int CASE_DEFINITION__IS_VARIATION = DEFINITION_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -10690,7 +10690,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASE_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENT_FEATURE_COUNT + 4;
+  int CASE_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -10699,7 +10699,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASE_DEFINITION__IS_INDIVIDUAL = DEFINITION_ELEMENT_FEATURE_COUNT + 5;
+  int CASE_DEFINITION__IS_INDIVIDUAL = DEFINITION_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -10708,7 +10708,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASE_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 6;
+  int CASE_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -10717,7 +10717,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASE_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 7;
+  int CASE_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Superclassifiers</b></em>' attribute list.
@@ -10726,7 +10726,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASE_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENT_FEATURE_COUNT + 8;
+  int CASE_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -10735,7 +10735,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASE_DEFINITION__ELEMENTS = DEFINITION_ELEMENT_FEATURE_COUNT + 9;
+  int CASE_DEFINITION__ELEMENTS = DEFINITION_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Result Expression Parameter</b></em>' containment reference list.
@@ -10744,7 +10744,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASE_DEFINITION__RESULT_EXPRESSION_PARAMETER = DEFINITION_ELEMENT_FEATURE_COUNT + 10;
+  int CASE_DEFINITION__RESULT_EXPRESSION_PARAMETER = DEFINITION_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The number of structural features of the '<em>Case Definition</em>' class.
@@ -10753,7 +10753,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASE_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENT_FEATURE_COUNT + 11;
+  int CASE_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENTS_FEATURE_COUNT + 11;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.CaseUsageImpl <em>Case Usage</em>}' class.
@@ -10772,7 +10772,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASE_USAGE__IS_THEN = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 0;
+  int CASE_USAGE__IS_THEN = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Then Multiplicity</b></em>' attribute list.
@@ -10781,7 +10781,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASE_USAGE__THEN_MULTIPLICITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 1;
+  int CASE_USAGE__THEN_MULTIPLICITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -10790,7 +10790,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASE_USAGE__VISIBILITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 2;
+  int CASE_USAGE__VISIBILITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -10799,7 +10799,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASE_USAGE__IS_VARIANT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 3;
+  int CASE_USAGE__IS_VARIANT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Is Return</b></em>' attribute.
@@ -10808,7 +10808,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASE_USAGE__IS_RETURN = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 4;
+  int CASE_USAGE__IS_RETURN = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -10817,7 +10817,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASE_USAGE__IS_ABSTRACT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 5;
+  int CASE_USAGE__IS_ABSTRACT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -10826,7 +10826,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASE_USAGE__IS_VARIATION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 6;
+  int CASE_USAGE__IS_VARIATION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -10835,7 +10835,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASE_USAGE__DIRECTION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 7;
+  int CASE_USAGE__DIRECTION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Is Read Only</b></em>' attribute.
@@ -10844,7 +10844,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASE_USAGE__IS_READ_ONLY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 8;
+  int CASE_USAGE__IS_READ_ONLY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Is Derived</b></em>' attribute.
@@ -10853,7 +10853,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASE_USAGE__IS_DERIVED = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 9;
+  int CASE_USAGE__IS_DERIVED = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Is Reference</b></em>' attribute.
@@ -10862,7 +10862,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASE_USAGE__IS_REFERENCE = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 10;
+  int CASE_USAGE__IS_REFERENCE = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -10871,7 +10871,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASE_USAGE__PREFIX_METADATA_EXTENSION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 11;
+  int CASE_USAGE__PREFIX_METADATA_EXTENSION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Is End</b></em>' attribute.
@@ -10880,7 +10880,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASE_USAGE__IS_END = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 12;
+  int CASE_USAGE__IS_END = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -10889,7 +10889,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASE_USAGE__IS_INDIVIDUAL = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 13;
+  int CASE_USAGE__IS_INDIVIDUAL = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>Portion Kind</b></em>' attribute.
@@ -10898,7 +10898,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASE_USAGE__PORTION_KIND = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 14;
+  int CASE_USAGE__PORTION_KIND = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -10907,7 +10907,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASE_USAGE__DECLARED_SHORT_NAME = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 15;
+  int CASE_USAGE__DECLARED_SHORT_NAME = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -10916,7 +10916,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASE_USAGE__DECLARED_NAME = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 16;
+  int CASE_USAGE__DECLARED_NAME = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -10925,7 +10925,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASE_USAGE__TYPINGS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 17;
+  int CASE_USAGE__TYPINGS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
@@ -10934,7 +10934,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASE_USAGE__SUBSETTING = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 18;
+  int CASE_USAGE__SUBSETTING = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute list.
@@ -10943,7 +10943,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASE_USAGE__REFERENCES = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 19;
+  int CASE_USAGE__REFERENCES = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Crosses</b></em>' attribute list.
@@ -10952,7 +10952,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASE_USAGE__CROSSES = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 20;
+  int CASE_USAGE__CROSSES = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 20;
 
   /**
    * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
@@ -10961,7 +10961,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASE_USAGE__REDEFINITIONS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 21;
+  int CASE_USAGE__REDEFINITIONS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 21;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -10970,7 +10970,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASE_USAGE__MULTIPLICITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 22;
+  int CASE_USAGE__MULTIPLICITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 22;
 
   /**
    * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
@@ -10979,7 +10979,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASE_USAGE__IS_ORDERED = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 23;
+  int CASE_USAGE__IS_ORDERED = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 23;
 
   /**
    * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
@@ -10988,7 +10988,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASE_USAGE__IS_NONUNIQUE = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 24;
+  int CASE_USAGE__IS_NONUNIQUE = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 24;
 
   /**
    * The feature id for the '<em><b>Is Initial</b></em>' attribute.
@@ -10997,7 +10997,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASE_USAGE__IS_INITIAL = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 25;
+  int CASE_USAGE__IS_INITIAL = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 25;
 
   /**
    * The feature id for the '<em><b>Is Default</b></em>' attribute.
@@ -11006,16 +11006,16 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASE_USAGE__IS_DEFAULT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 26;
+  int CASE_USAGE__IS_DEFAULT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 26;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CASE_USAGE__VALUE_PART = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 27;
+  int CASE_USAGE__VALUE_PART = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 27;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -11024,7 +11024,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASE_USAGE__ELEMENTS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 28;
+  int CASE_USAGE__ELEMENTS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 28;
 
   /**
    * The feature id for the '<em><b>Result Expression Parameter</b></em>' containment reference list.
@@ -11033,7 +11033,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASE_USAGE__RESULT_EXPRESSION_PARAMETER = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 29;
+  int CASE_USAGE__RESULT_EXPRESSION_PARAMETER = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 29;
 
   /**
    * The number of structural features of the '<em>Case Usage</em>' class.
@@ -11042,7 +11042,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CASE_USAGE_FEATURE_COUNT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 30;
+  int CASE_USAGE_FEATURE_COUNT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 30;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.AnalysisCaseDefinitionImpl <em>Analysis Case Definition</em>}' class.
@@ -11061,7 +11061,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANALYSIS_CASE_DEFINITION__VISIBILITY = DEFINITION_ELEMENT_FEATURE_COUNT + 0;
+  int ANALYSIS_CASE_DEFINITION__VISIBILITY = DEFINITION_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -11070,7 +11070,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANALYSIS_CASE_DEFINITION__IS_VARIANT = DEFINITION_ELEMENT_FEATURE_COUNT + 1;
+  int ANALYSIS_CASE_DEFINITION__IS_VARIANT = DEFINITION_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -11079,7 +11079,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANALYSIS_CASE_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENT_FEATURE_COUNT + 2;
+  int ANALYSIS_CASE_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -11088,7 +11088,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANALYSIS_CASE_DEFINITION__IS_VARIATION = DEFINITION_ELEMENT_FEATURE_COUNT + 3;
+  int ANALYSIS_CASE_DEFINITION__IS_VARIATION = DEFINITION_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -11097,7 +11097,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANALYSIS_CASE_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENT_FEATURE_COUNT + 4;
+  int ANALYSIS_CASE_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -11106,7 +11106,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANALYSIS_CASE_DEFINITION__IS_INDIVIDUAL = DEFINITION_ELEMENT_FEATURE_COUNT + 5;
+  int ANALYSIS_CASE_DEFINITION__IS_INDIVIDUAL = DEFINITION_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -11115,7 +11115,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANALYSIS_CASE_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 6;
+  int ANALYSIS_CASE_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -11124,7 +11124,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANALYSIS_CASE_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 7;
+  int ANALYSIS_CASE_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Superclassifiers</b></em>' attribute list.
@@ -11133,7 +11133,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANALYSIS_CASE_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENT_FEATURE_COUNT + 8;
+  int ANALYSIS_CASE_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -11142,7 +11142,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANALYSIS_CASE_DEFINITION__ELEMENTS = DEFINITION_ELEMENT_FEATURE_COUNT + 9;
+  int ANALYSIS_CASE_DEFINITION__ELEMENTS = DEFINITION_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Result Expression Parameter</b></em>' containment reference list.
@@ -11151,7 +11151,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANALYSIS_CASE_DEFINITION__RESULT_EXPRESSION_PARAMETER = DEFINITION_ELEMENT_FEATURE_COUNT + 10;
+  int ANALYSIS_CASE_DEFINITION__RESULT_EXPRESSION_PARAMETER = DEFINITION_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The number of structural features of the '<em>Analysis Case Definition</em>' class.
@@ -11160,7 +11160,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANALYSIS_CASE_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENT_FEATURE_COUNT + 11;
+  int ANALYSIS_CASE_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENTS_FEATURE_COUNT + 11;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.AnalysisCaseUsageImpl <em>Analysis Case Usage</em>}' class.
@@ -11179,7 +11179,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANALYSIS_CASE_USAGE__IS_THEN = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 0;
+  int ANALYSIS_CASE_USAGE__IS_THEN = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Then Multiplicity</b></em>' attribute list.
@@ -11188,7 +11188,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANALYSIS_CASE_USAGE__THEN_MULTIPLICITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 1;
+  int ANALYSIS_CASE_USAGE__THEN_MULTIPLICITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -11197,7 +11197,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANALYSIS_CASE_USAGE__VISIBILITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 2;
+  int ANALYSIS_CASE_USAGE__VISIBILITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -11206,7 +11206,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANALYSIS_CASE_USAGE__IS_VARIANT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 3;
+  int ANALYSIS_CASE_USAGE__IS_VARIANT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Is Return</b></em>' attribute.
@@ -11215,7 +11215,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANALYSIS_CASE_USAGE__IS_RETURN = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 4;
+  int ANALYSIS_CASE_USAGE__IS_RETURN = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -11224,7 +11224,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANALYSIS_CASE_USAGE__IS_ABSTRACT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 5;
+  int ANALYSIS_CASE_USAGE__IS_ABSTRACT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -11233,7 +11233,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANALYSIS_CASE_USAGE__IS_VARIATION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 6;
+  int ANALYSIS_CASE_USAGE__IS_VARIATION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -11242,7 +11242,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANALYSIS_CASE_USAGE__DIRECTION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 7;
+  int ANALYSIS_CASE_USAGE__DIRECTION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Is Read Only</b></em>' attribute.
@@ -11251,7 +11251,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANALYSIS_CASE_USAGE__IS_READ_ONLY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 8;
+  int ANALYSIS_CASE_USAGE__IS_READ_ONLY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Is Derived</b></em>' attribute.
@@ -11260,7 +11260,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANALYSIS_CASE_USAGE__IS_DERIVED = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 9;
+  int ANALYSIS_CASE_USAGE__IS_DERIVED = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Is Reference</b></em>' attribute.
@@ -11269,7 +11269,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANALYSIS_CASE_USAGE__IS_REFERENCE = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 10;
+  int ANALYSIS_CASE_USAGE__IS_REFERENCE = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -11278,7 +11278,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANALYSIS_CASE_USAGE__PREFIX_METADATA_EXTENSION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 11;
+  int ANALYSIS_CASE_USAGE__PREFIX_METADATA_EXTENSION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Is End</b></em>' attribute.
@@ -11287,7 +11287,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANALYSIS_CASE_USAGE__IS_END = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 12;
+  int ANALYSIS_CASE_USAGE__IS_END = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -11296,7 +11296,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANALYSIS_CASE_USAGE__IS_INDIVIDUAL = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 13;
+  int ANALYSIS_CASE_USAGE__IS_INDIVIDUAL = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>Portion Kind</b></em>' attribute.
@@ -11305,7 +11305,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANALYSIS_CASE_USAGE__PORTION_KIND = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 14;
+  int ANALYSIS_CASE_USAGE__PORTION_KIND = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -11314,7 +11314,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANALYSIS_CASE_USAGE__DECLARED_SHORT_NAME = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 15;
+  int ANALYSIS_CASE_USAGE__DECLARED_SHORT_NAME = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -11323,7 +11323,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANALYSIS_CASE_USAGE__DECLARED_NAME = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 16;
+  int ANALYSIS_CASE_USAGE__DECLARED_NAME = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -11332,7 +11332,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANALYSIS_CASE_USAGE__TYPINGS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 17;
+  int ANALYSIS_CASE_USAGE__TYPINGS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
@@ -11341,7 +11341,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANALYSIS_CASE_USAGE__SUBSETTING = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 18;
+  int ANALYSIS_CASE_USAGE__SUBSETTING = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute list.
@@ -11350,7 +11350,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANALYSIS_CASE_USAGE__REFERENCES = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 19;
+  int ANALYSIS_CASE_USAGE__REFERENCES = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Crosses</b></em>' attribute list.
@@ -11359,7 +11359,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANALYSIS_CASE_USAGE__CROSSES = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 20;
+  int ANALYSIS_CASE_USAGE__CROSSES = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 20;
 
   /**
    * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
@@ -11368,7 +11368,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANALYSIS_CASE_USAGE__REDEFINITIONS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 21;
+  int ANALYSIS_CASE_USAGE__REDEFINITIONS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 21;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -11377,7 +11377,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANALYSIS_CASE_USAGE__MULTIPLICITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 22;
+  int ANALYSIS_CASE_USAGE__MULTIPLICITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 22;
 
   /**
    * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
@@ -11386,7 +11386,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANALYSIS_CASE_USAGE__IS_ORDERED = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 23;
+  int ANALYSIS_CASE_USAGE__IS_ORDERED = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 23;
 
   /**
    * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
@@ -11395,7 +11395,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANALYSIS_CASE_USAGE__IS_NONUNIQUE = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 24;
+  int ANALYSIS_CASE_USAGE__IS_NONUNIQUE = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 24;
 
   /**
    * The feature id for the '<em><b>Is Initial</b></em>' attribute.
@@ -11404,7 +11404,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANALYSIS_CASE_USAGE__IS_INITIAL = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 25;
+  int ANALYSIS_CASE_USAGE__IS_INITIAL = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 25;
 
   /**
    * The feature id for the '<em><b>Is Default</b></em>' attribute.
@@ -11413,16 +11413,16 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANALYSIS_CASE_USAGE__IS_DEFAULT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 26;
+  int ANALYSIS_CASE_USAGE__IS_DEFAULT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 26;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ANALYSIS_CASE_USAGE__VALUE_PART = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 27;
+  int ANALYSIS_CASE_USAGE__VALUE_PART = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 27;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -11431,7 +11431,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANALYSIS_CASE_USAGE__ELEMENTS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 28;
+  int ANALYSIS_CASE_USAGE__ELEMENTS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 28;
 
   /**
    * The feature id for the '<em><b>Result Expression Parameter</b></em>' containment reference list.
@@ -11440,7 +11440,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANALYSIS_CASE_USAGE__RESULT_EXPRESSION_PARAMETER = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 29;
+  int ANALYSIS_CASE_USAGE__RESULT_EXPRESSION_PARAMETER = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 29;
 
   /**
    * The number of structural features of the '<em>Analysis Case Usage</em>' class.
@@ -11449,7 +11449,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ANALYSIS_CASE_USAGE_FEATURE_COUNT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 30;
+  int ANALYSIS_CASE_USAGE_FEATURE_COUNT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 30;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.VerificationCaseDefinitionImpl <em>Verification Case Definition</em>}' class.
@@ -11468,7 +11468,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_CASE_DEFINITION__VISIBILITY = DEFINITION_ELEMENT_FEATURE_COUNT + 0;
+  int VERIFICATION_CASE_DEFINITION__VISIBILITY = DEFINITION_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -11477,7 +11477,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_CASE_DEFINITION__IS_VARIANT = DEFINITION_ELEMENT_FEATURE_COUNT + 1;
+  int VERIFICATION_CASE_DEFINITION__IS_VARIANT = DEFINITION_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -11486,7 +11486,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_CASE_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENT_FEATURE_COUNT + 2;
+  int VERIFICATION_CASE_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -11495,7 +11495,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_CASE_DEFINITION__IS_VARIATION = DEFINITION_ELEMENT_FEATURE_COUNT + 3;
+  int VERIFICATION_CASE_DEFINITION__IS_VARIATION = DEFINITION_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -11504,7 +11504,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_CASE_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENT_FEATURE_COUNT + 4;
+  int VERIFICATION_CASE_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -11513,7 +11513,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_CASE_DEFINITION__IS_INDIVIDUAL = DEFINITION_ELEMENT_FEATURE_COUNT + 5;
+  int VERIFICATION_CASE_DEFINITION__IS_INDIVIDUAL = DEFINITION_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -11522,7 +11522,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_CASE_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 6;
+  int VERIFICATION_CASE_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -11531,7 +11531,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_CASE_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 7;
+  int VERIFICATION_CASE_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Superclassifiers</b></em>' attribute list.
@@ -11540,7 +11540,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_CASE_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENT_FEATURE_COUNT + 8;
+  int VERIFICATION_CASE_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -11549,7 +11549,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_CASE_DEFINITION__ELEMENTS = DEFINITION_ELEMENT_FEATURE_COUNT + 9;
+  int VERIFICATION_CASE_DEFINITION__ELEMENTS = DEFINITION_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Result Expression Parameter</b></em>' containment reference list.
@@ -11558,7 +11558,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_CASE_DEFINITION__RESULT_EXPRESSION_PARAMETER = DEFINITION_ELEMENT_FEATURE_COUNT + 10;
+  int VERIFICATION_CASE_DEFINITION__RESULT_EXPRESSION_PARAMETER = DEFINITION_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The number of structural features of the '<em>Verification Case Definition</em>' class.
@@ -11567,7 +11567,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_CASE_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENT_FEATURE_COUNT + 11;
+  int VERIFICATION_CASE_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENTS_FEATURE_COUNT + 11;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.VerificationCaseUsageImpl <em>Verification Case Usage</em>}' class.
@@ -11586,7 +11586,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_CASE_USAGE__IS_THEN = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 0;
+  int VERIFICATION_CASE_USAGE__IS_THEN = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Then Multiplicity</b></em>' attribute list.
@@ -11595,7 +11595,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_CASE_USAGE__THEN_MULTIPLICITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 1;
+  int VERIFICATION_CASE_USAGE__THEN_MULTIPLICITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -11604,7 +11604,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_CASE_USAGE__VISIBILITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 2;
+  int VERIFICATION_CASE_USAGE__VISIBILITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -11613,7 +11613,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_CASE_USAGE__IS_VARIANT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 3;
+  int VERIFICATION_CASE_USAGE__IS_VARIANT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Is Return</b></em>' attribute.
@@ -11622,7 +11622,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_CASE_USAGE__IS_RETURN = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 4;
+  int VERIFICATION_CASE_USAGE__IS_RETURN = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -11631,7 +11631,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_CASE_USAGE__IS_ABSTRACT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 5;
+  int VERIFICATION_CASE_USAGE__IS_ABSTRACT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -11640,7 +11640,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_CASE_USAGE__IS_VARIATION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 6;
+  int VERIFICATION_CASE_USAGE__IS_VARIATION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -11649,7 +11649,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_CASE_USAGE__DIRECTION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 7;
+  int VERIFICATION_CASE_USAGE__DIRECTION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Is Read Only</b></em>' attribute.
@@ -11658,7 +11658,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_CASE_USAGE__IS_READ_ONLY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 8;
+  int VERIFICATION_CASE_USAGE__IS_READ_ONLY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Is Derived</b></em>' attribute.
@@ -11667,7 +11667,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_CASE_USAGE__IS_DERIVED = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 9;
+  int VERIFICATION_CASE_USAGE__IS_DERIVED = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Is Reference</b></em>' attribute.
@@ -11676,7 +11676,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_CASE_USAGE__IS_REFERENCE = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 10;
+  int VERIFICATION_CASE_USAGE__IS_REFERENCE = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -11685,7 +11685,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_CASE_USAGE__PREFIX_METADATA_EXTENSION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 11;
+  int VERIFICATION_CASE_USAGE__PREFIX_METADATA_EXTENSION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Is End</b></em>' attribute.
@@ -11694,7 +11694,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_CASE_USAGE__IS_END = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 12;
+  int VERIFICATION_CASE_USAGE__IS_END = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -11703,7 +11703,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_CASE_USAGE__IS_INDIVIDUAL = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 13;
+  int VERIFICATION_CASE_USAGE__IS_INDIVIDUAL = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>Portion Kind</b></em>' attribute.
@@ -11712,7 +11712,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_CASE_USAGE__PORTION_KIND = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 14;
+  int VERIFICATION_CASE_USAGE__PORTION_KIND = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -11721,7 +11721,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_CASE_USAGE__DECLARED_SHORT_NAME = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 15;
+  int VERIFICATION_CASE_USAGE__DECLARED_SHORT_NAME = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -11730,7 +11730,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_CASE_USAGE__DECLARED_NAME = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 16;
+  int VERIFICATION_CASE_USAGE__DECLARED_NAME = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -11739,7 +11739,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_CASE_USAGE__TYPINGS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 17;
+  int VERIFICATION_CASE_USAGE__TYPINGS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
@@ -11748,7 +11748,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_CASE_USAGE__SUBSETTING = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 18;
+  int VERIFICATION_CASE_USAGE__SUBSETTING = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute list.
@@ -11757,7 +11757,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_CASE_USAGE__REFERENCES = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 19;
+  int VERIFICATION_CASE_USAGE__REFERENCES = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Crosses</b></em>' attribute list.
@@ -11766,7 +11766,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_CASE_USAGE__CROSSES = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 20;
+  int VERIFICATION_CASE_USAGE__CROSSES = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 20;
 
   /**
    * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
@@ -11775,7 +11775,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_CASE_USAGE__REDEFINITIONS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 21;
+  int VERIFICATION_CASE_USAGE__REDEFINITIONS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 21;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -11784,7 +11784,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_CASE_USAGE__MULTIPLICITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 22;
+  int VERIFICATION_CASE_USAGE__MULTIPLICITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 22;
 
   /**
    * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
@@ -11793,7 +11793,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_CASE_USAGE__IS_ORDERED = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 23;
+  int VERIFICATION_CASE_USAGE__IS_ORDERED = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 23;
 
   /**
    * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
@@ -11802,7 +11802,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_CASE_USAGE__IS_NONUNIQUE = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 24;
+  int VERIFICATION_CASE_USAGE__IS_NONUNIQUE = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 24;
 
   /**
    * The feature id for the '<em><b>Is Initial</b></em>' attribute.
@@ -11811,7 +11811,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_CASE_USAGE__IS_INITIAL = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 25;
+  int VERIFICATION_CASE_USAGE__IS_INITIAL = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 25;
 
   /**
    * The feature id for the '<em><b>Is Default</b></em>' attribute.
@@ -11820,16 +11820,16 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_CASE_USAGE__IS_DEFAULT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 26;
+  int VERIFICATION_CASE_USAGE__IS_DEFAULT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 26;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VERIFICATION_CASE_USAGE__VALUE_PART = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 27;
+  int VERIFICATION_CASE_USAGE__VALUE_PART = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 27;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -11838,7 +11838,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_CASE_USAGE__ELEMENTS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 28;
+  int VERIFICATION_CASE_USAGE__ELEMENTS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 28;
 
   /**
    * The feature id for the '<em><b>Result Expression Parameter</b></em>' containment reference list.
@@ -11847,7 +11847,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_CASE_USAGE__RESULT_EXPRESSION_PARAMETER = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 29;
+  int VERIFICATION_CASE_USAGE__RESULT_EXPRESSION_PARAMETER = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 29;
 
   /**
    * The number of structural features of the '<em>Verification Case Usage</em>' class.
@@ -11856,7 +11856,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFICATION_CASE_USAGE_FEATURE_COUNT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 30;
+  int VERIFICATION_CASE_USAGE_FEATURE_COUNT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 30;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.UseCaseDefinitionImpl <em>Use Case Definition</em>}' class.
@@ -11875,7 +11875,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CASE_DEFINITION__VISIBILITY = DEFINITION_ELEMENT_FEATURE_COUNT + 0;
+  int USE_CASE_DEFINITION__VISIBILITY = DEFINITION_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -11884,7 +11884,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CASE_DEFINITION__IS_VARIANT = DEFINITION_ELEMENT_FEATURE_COUNT + 1;
+  int USE_CASE_DEFINITION__IS_VARIANT = DEFINITION_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -11893,7 +11893,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CASE_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENT_FEATURE_COUNT + 2;
+  int USE_CASE_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -11902,7 +11902,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CASE_DEFINITION__IS_VARIATION = DEFINITION_ELEMENT_FEATURE_COUNT + 3;
+  int USE_CASE_DEFINITION__IS_VARIATION = DEFINITION_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -11911,7 +11911,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CASE_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENT_FEATURE_COUNT + 4;
+  int USE_CASE_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -11920,7 +11920,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CASE_DEFINITION__IS_INDIVIDUAL = DEFINITION_ELEMENT_FEATURE_COUNT + 5;
+  int USE_CASE_DEFINITION__IS_INDIVIDUAL = DEFINITION_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -11929,7 +11929,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CASE_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 6;
+  int USE_CASE_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -11938,7 +11938,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CASE_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 7;
+  int USE_CASE_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Superclassifiers</b></em>' attribute list.
@@ -11947,7 +11947,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CASE_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENT_FEATURE_COUNT + 8;
+  int USE_CASE_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -11956,7 +11956,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CASE_DEFINITION__ELEMENTS = DEFINITION_ELEMENT_FEATURE_COUNT + 9;
+  int USE_CASE_DEFINITION__ELEMENTS = DEFINITION_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Result Expression Parameter</b></em>' containment reference list.
@@ -11965,7 +11965,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CASE_DEFINITION__RESULT_EXPRESSION_PARAMETER = DEFINITION_ELEMENT_FEATURE_COUNT + 10;
+  int USE_CASE_DEFINITION__RESULT_EXPRESSION_PARAMETER = DEFINITION_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The number of structural features of the '<em>Use Case Definition</em>' class.
@@ -11974,7 +11974,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CASE_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENT_FEATURE_COUNT + 11;
+  int USE_CASE_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENTS_FEATURE_COUNT + 11;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.UseCaseUsageImpl <em>Use Case Usage</em>}' class.
@@ -11993,7 +11993,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CASE_USAGE__IS_THEN = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 0;
+  int USE_CASE_USAGE__IS_THEN = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Then Multiplicity</b></em>' attribute list.
@@ -12002,7 +12002,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CASE_USAGE__THEN_MULTIPLICITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 1;
+  int USE_CASE_USAGE__THEN_MULTIPLICITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -12011,7 +12011,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CASE_USAGE__VISIBILITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 2;
+  int USE_CASE_USAGE__VISIBILITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -12020,7 +12020,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CASE_USAGE__IS_VARIANT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 3;
+  int USE_CASE_USAGE__IS_VARIANT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Is Return</b></em>' attribute.
@@ -12029,7 +12029,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CASE_USAGE__IS_RETURN = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 4;
+  int USE_CASE_USAGE__IS_RETURN = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -12038,7 +12038,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CASE_USAGE__IS_ABSTRACT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 5;
+  int USE_CASE_USAGE__IS_ABSTRACT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -12047,7 +12047,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CASE_USAGE__IS_VARIATION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 6;
+  int USE_CASE_USAGE__IS_VARIATION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -12056,7 +12056,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CASE_USAGE__DIRECTION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 7;
+  int USE_CASE_USAGE__DIRECTION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Is Read Only</b></em>' attribute.
@@ -12065,7 +12065,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CASE_USAGE__IS_READ_ONLY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 8;
+  int USE_CASE_USAGE__IS_READ_ONLY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Is Derived</b></em>' attribute.
@@ -12074,7 +12074,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CASE_USAGE__IS_DERIVED = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 9;
+  int USE_CASE_USAGE__IS_DERIVED = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Is Reference</b></em>' attribute.
@@ -12083,7 +12083,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CASE_USAGE__IS_REFERENCE = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 10;
+  int USE_CASE_USAGE__IS_REFERENCE = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -12092,7 +12092,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CASE_USAGE__PREFIX_METADATA_EXTENSION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 11;
+  int USE_CASE_USAGE__PREFIX_METADATA_EXTENSION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Is End</b></em>' attribute.
@@ -12101,7 +12101,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CASE_USAGE__IS_END = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 12;
+  int USE_CASE_USAGE__IS_END = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -12110,7 +12110,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CASE_USAGE__IS_INDIVIDUAL = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 13;
+  int USE_CASE_USAGE__IS_INDIVIDUAL = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>Portion Kind</b></em>' attribute.
@@ -12119,7 +12119,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CASE_USAGE__PORTION_KIND = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 14;
+  int USE_CASE_USAGE__PORTION_KIND = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -12128,7 +12128,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CASE_USAGE__DECLARED_SHORT_NAME = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 15;
+  int USE_CASE_USAGE__DECLARED_SHORT_NAME = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -12137,7 +12137,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CASE_USAGE__DECLARED_NAME = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 16;
+  int USE_CASE_USAGE__DECLARED_NAME = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -12146,7 +12146,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CASE_USAGE__TYPINGS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 17;
+  int USE_CASE_USAGE__TYPINGS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
@@ -12155,7 +12155,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CASE_USAGE__SUBSETTING = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 18;
+  int USE_CASE_USAGE__SUBSETTING = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute list.
@@ -12164,7 +12164,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CASE_USAGE__REFERENCES = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 19;
+  int USE_CASE_USAGE__REFERENCES = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Crosses</b></em>' attribute list.
@@ -12173,7 +12173,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CASE_USAGE__CROSSES = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 20;
+  int USE_CASE_USAGE__CROSSES = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 20;
 
   /**
    * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
@@ -12182,7 +12182,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CASE_USAGE__REDEFINITIONS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 21;
+  int USE_CASE_USAGE__REDEFINITIONS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 21;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -12191,7 +12191,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CASE_USAGE__MULTIPLICITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 22;
+  int USE_CASE_USAGE__MULTIPLICITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 22;
 
   /**
    * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
@@ -12200,7 +12200,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CASE_USAGE__IS_ORDERED = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 23;
+  int USE_CASE_USAGE__IS_ORDERED = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 23;
 
   /**
    * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
@@ -12209,7 +12209,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CASE_USAGE__IS_NONUNIQUE = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 24;
+  int USE_CASE_USAGE__IS_NONUNIQUE = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 24;
 
   /**
    * The feature id for the '<em><b>Is Initial</b></em>' attribute.
@@ -12218,7 +12218,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CASE_USAGE__IS_INITIAL = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 25;
+  int USE_CASE_USAGE__IS_INITIAL = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 25;
 
   /**
    * The feature id for the '<em><b>Is Default</b></em>' attribute.
@@ -12227,16 +12227,16 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CASE_USAGE__IS_DEFAULT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 26;
+  int USE_CASE_USAGE__IS_DEFAULT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 26;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int USE_CASE_USAGE__VALUE_PART = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 27;
+  int USE_CASE_USAGE__VALUE_PART = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 27;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -12245,7 +12245,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CASE_USAGE__ELEMENTS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 28;
+  int USE_CASE_USAGE__ELEMENTS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 28;
 
   /**
    * The feature id for the '<em><b>Result Expression Parameter</b></em>' containment reference list.
@@ -12254,7 +12254,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CASE_USAGE__RESULT_EXPRESSION_PARAMETER = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 29;
+  int USE_CASE_USAGE__RESULT_EXPRESSION_PARAMETER = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 29;
 
   /**
    * The number of structural features of the '<em>Use Case Usage</em>' class.
@@ -12263,7 +12263,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int USE_CASE_USAGE_FEATURE_COUNT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 30;
+  int USE_CASE_USAGE_FEATURE_COUNT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 30;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.ViewDefinitionImpl <em>View Definition</em>}' class.
@@ -12282,7 +12282,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEW_DEFINITION__VISIBILITY = DEFINITION_ELEMENT_FEATURE_COUNT + 0;
+  int VIEW_DEFINITION__VISIBILITY = DEFINITION_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -12291,7 +12291,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEW_DEFINITION__IS_VARIANT = DEFINITION_ELEMENT_FEATURE_COUNT + 1;
+  int VIEW_DEFINITION__IS_VARIANT = DEFINITION_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -12300,7 +12300,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEW_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENT_FEATURE_COUNT + 2;
+  int VIEW_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -12309,7 +12309,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEW_DEFINITION__IS_VARIATION = DEFINITION_ELEMENT_FEATURE_COUNT + 3;
+  int VIEW_DEFINITION__IS_VARIATION = DEFINITION_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -12318,7 +12318,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEW_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENT_FEATURE_COUNT + 4;
+  int VIEW_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -12327,7 +12327,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEW_DEFINITION__IS_INDIVIDUAL = DEFINITION_ELEMENT_FEATURE_COUNT + 5;
+  int VIEW_DEFINITION__IS_INDIVIDUAL = DEFINITION_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -12336,7 +12336,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEW_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 6;
+  int VIEW_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -12345,7 +12345,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEW_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 7;
+  int VIEW_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Superclassifiers</b></em>' attribute list.
@@ -12354,7 +12354,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEW_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENT_FEATURE_COUNT + 8;
+  int VIEW_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -12363,7 +12363,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEW_DEFINITION__ELEMENTS = DEFINITION_ELEMENT_FEATURE_COUNT + 9;
+  int VIEW_DEFINITION__ELEMENTS = DEFINITION_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The number of structural features of the '<em>View Definition</em>' class.
@@ -12372,7 +12372,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEW_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENT_FEATURE_COUNT + 10;
+  int VIEW_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.ViewUsageImpl <em>View Usage</em>}' class.
@@ -12391,7 +12391,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEW_USAGE__IS_THEN = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 0;
+  int VIEW_USAGE__IS_THEN = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Then Multiplicity</b></em>' attribute list.
@@ -12400,7 +12400,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEW_USAGE__THEN_MULTIPLICITY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 1;
+  int VIEW_USAGE__THEN_MULTIPLICITY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -12409,7 +12409,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEW_USAGE__VISIBILITY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 2;
+  int VIEW_USAGE__VISIBILITY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -12418,7 +12418,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEW_USAGE__IS_VARIANT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 3;
+  int VIEW_USAGE__IS_VARIANT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Is Return</b></em>' attribute.
@@ -12427,7 +12427,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEW_USAGE__IS_RETURN = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 4;
+  int VIEW_USAGE__IS_RETURN = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -12436,7 +12436,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEW_USAGE__IS_ABSTRACT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 5;
+  int VIEW_USAGE__IS_ABSTRACT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -12445,7 +12445,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEW_USAGE__IS_VARIATION = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 6;
+  int VIEW_USAGE__IS_VARIATION = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -12454,7 +12454,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEW_USAGE__DIRECTION = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 7;
+  int VIEW_USAGE__DIRECTION = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Is Read Only</b></em>' attribute.
@@ -12463,7 +12463,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEW_USAGE__IS_READ_ONLY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 8;
+  int VIEW_USAGE__IS_READ_ONLY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Is Derived</b></em>' attribute.
@@ -12472,7 +12472,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEW_USAGE__IS_DERIVED = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 9;
+  int VIEW_USAGE__IS_DERIVED = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Is Reference</b></em>' attribute.
@@ -12481,7 +12481,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEW_USAGE__IS_REFERENCE = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 10;
+  int VIEW_USAGE__IS_REFERENCE = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -12490,7 +12490,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEW_USAGE__PREFIX_METADATA_EXTENSION = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 11;
+  int VIEW_USAGE__PREFIX_METADATA_EXTENSION = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Is End</b></em>' attribute.
@@ -12499,7 +12499,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEW_USAGE__IS_END = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 12;
+  int VIEW_USAGE__IS_END = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -12508,7 +12508,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEW_USAGE__IS_INDIVIDUAL = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 13;
+  int VIEW_USAGE__IS_INDIVIDUAL = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>Portion Kind</b></em>' attribute.
@@ -12517,7 +12517,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEW_USAGE__PORTION_KIND = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 14;
+  int VIEW_USAGE__PORTION_KIND = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -12526,7 +12526,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEW_USAGE__DECLARED_SHORT_NAME = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 15;
+  int VIEW_USAGE__DECLARED_SHORT_NAME = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -12535,7 +12535,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEW_USAGE__DECLARED_NAME = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 16;
+  int VIEW_USAGE__DECLARED_NAME = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -12544,7 +12544,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEW_USAGE__TYPINGS = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 17;
+  int VIEW_USAGE__TYPINGS = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
@@ -12553,7 +12553,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEW_USAGE__SUBSETTING = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 18;
+  int VIEW_USAGE__SUBSETTING = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute list.
@@ -12562,7 +12562,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEW_USAGE__REFERENCES = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 19;
+  int VIEW_USAGE__REFERENCES = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Crosses</b></em>' attribute list.
@@ -12571,7 +12571,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEW_USAGE__CROSSES = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 20;
+  int VIEW_USAGE__CROSSES = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 20;
 
   /**
    * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
@@ -12580,7 +12580,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEW_USAGE__REDEFINITIONS = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 21;
+  int VIEW_USAGE__REDEFINITIONS = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 21;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -12589,7 +12589,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEW_USAGE__MULTIPLICITY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 22;
+  int VIEW_USAGE__MULTIPLICITY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 22;
 
   /**
    * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
@@ -12598,7 +12598,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEW_USAGE__IS_ORDERED = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 23;
+  int VIEW_USAGE__IS_ORDERED = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 23;
 
   /**
    * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
@@ -12607,7 +12607,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEW_USAGE__IS_NONUNIQUE = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 24;
+  int VIEW_USAGE__IS_NONUNIQUE = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 24;
 
   /**
    * The feature id for the '<em><b>Is Initial</b></em>' attribute.
@@ -12616,7 +12616,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEW_USAGE__IS_INITIAL = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 25;
+  int VIEW_USAGE__IS_INITIAL = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 25;
 
   /**
    * The feature id for the '<em><b>Is Default</b></em>' attribute.
@@ -12625,16 +12625,16 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEW_USAGE__IS_DEFAULT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 26;
+  int VIEW_USAGE__IS_DEFAULT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 26;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VIEW_USAGE__VALUE_PART = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 27;
+  int VIEW_USAGE__VALUE_PART = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 27;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -12643,7 +12643,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEW_USAGE__ELEMENTS = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 28;
+  int VIEW_USAGE__ELEMENTS = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 28;
 
   /**
    * The number of structural features of the '<em>View Usage</em>' class.
@@ -12652,7 +12652,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEW_USAGE_FEATURE_COUNT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 29;
+  int VIEW_USAGE_FEATURE_COUNT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 29;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.ViewpointDefinitionImpl <em>Viewpoint Definition</em>}' class.
@@ -12671,7 +12671,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT_DEFINITION__VISIBILITY = DEFINITION_ELEMENT_FEATURE_COUNT + 0;
+  int VIEWPOINT_DEFINITION__VISIBILITY = DEFINITION_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -12680,7 +12680,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT_DEFINITION__IS_VARIANT = DEFINITION_ELEMENT_FEATURE_COUNT + 1;
+  int VIEWPOINT_DEFINITION__IS_VARIANT = DEFINITION_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -12689,7 +12689,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENT_FEATURE_COUNT + 2;
+  int VIEWPOINT_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -12698,7 +12698,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT_DEFINITION__IS_VARIATION = DEFINITION_ELEMENT_FEATURE_COUNT + 3;
+  int VIEWPOINT_DEFINITION__IS_VARIATION = DEFINITION_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -12707,7 +12707,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENT_FEATURE_COUNT + 4;
+  int VIEWPOINT_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -12716,7 +12716,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT_DEFINITION__IS_INDIVIDUAL = DEFINITION_ELEMENT_FEATURE_COUNT + 5;
+  int VIEWPOINT_DEFINITION__IS_INDIVIDUAL = DEFINITION_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -12725,7 +12725,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 6;
+  int VIEWPOINT_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -12734,7 +12734,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 7;
+  int VIEWPOINT_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Superclassifiers</b></em>' attribute list.
@@ -12743,7 +12743,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENT_FEATURE_COUNT + 8;
+  int VIEWPOINT_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -12752,7 +12752,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT_DEFINITION__ELEMENTS = DEFINITION_ELEMENT_FEATURE_COUNT + 9;
+  int VIEWPOINT_DEFINITION__ELEMENTS = DEFINITION_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The number of structural features of the '<em>Viewpoint Definition</em>' class.
@@ -12761,7 +12761,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENT_FEATURE_COUNT + 10;
+  int VIEWPOINT_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.ViewpointUsageImpl <em>Viewpoint Usage</em>}' class.
@@ -12780,7 +12780,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT_USAGE__IS_THEN = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 0;
+  int VIEWPOINT_USAGE__IS_THEN = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Then Multiplicity</b></em>' attribute list.
@@ -12789,7 +12789,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT_USAGE__THEN_MULTIPLICITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 1;
+  int VIEWPOINT_USAGE__THEN_MULTIPLICITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -12798,7 +12798,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT_USAGE__VISIBILITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 2;
+  int VIEWPOINT_USAGE__VISIBILITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -12807,7 +12807,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT_USAGE__IS_VARIANT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 3;
+  int VIEWPOINT_USAGE__IS_VARIANT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Is Return</b></em>' attribute.
@@ -12816,7 +12816,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT_USAGE__IS_RETURN = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 4;
+  int VIEWPOINT_USAGE__IS_RETURN = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -12825,7 +12825,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT_USAGE__IS_ABSTRACT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 5;
+  int VIEWPOINT_USAGE__IS_ABSTRACT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -12834,7 +12834,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT_USAGE__IS_VARIATION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 6;
+  int VIEWPOINT_USAGE__IS_VARIATION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -12843,7 +12843,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT_USAGE__DIRECTION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 7;
+  int VIEWPOINT_USAGE__DIRECTION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Is Read Only</b></em>' attribute.
@@ -12852,7 +12852,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT_USAGE__IS_READ_ONLY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 8;
+  int VIEWPOINT_USAGE__IS_READ_ONLY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Is Derived</b></em>' attribute.
@@ -12861,7 +12861,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT_USAGE__IS_DERIVED = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 9;
+  int VIEWPOINT_USAGE__IS_DERIVED = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Is Reference</b></em>' attribute.
@@ -12870,7 +12870,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT_USAGE__IS_REFERENCE = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 10;
+  int VIEWPOINT_USAGE__IS_REFERENCE = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -12879,7 +12879,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT_USAGE__PREFIX_METADATA_EXTENSION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 11;
+  int VIEWPOINT_USAGE__PREFIX_METADATA_EXTENSION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Is End</b></em>' attribute.
@@ -12888,7 +12888,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT_USAGE__IS_END = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 12;
+  int VIEWPOINT_USAGE__IS_END = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -12897,7 +12897,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT_USAGE__IS_INDIVIDUAL = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 13;
+  int VIEWPOINT_USAGE__IS_INDIVIDUAL = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>Portion Kind</b></em>' attribute.
@@ -12906,7 +12906,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT_USAGE__PORTION_KIND = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 14;
+  int VIEWPOINT_USAGE__PORTION_KIND = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -12915,7 +12915,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT_USAGE__DECLARED_SHORT_NAME = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 15;
+  int VIEWPOINT_USAGE__DECLARED_SHORT_NAME = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -12924,7 +12924,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT_USAGE__DECLARED_NAME = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 16;
+  int VIEWPOINT_USAGE__DECLARED_NAME = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -12933,7 +12933,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT_USAGE__TYPINGS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 17;
+  int VIEWPOINT_USAGE__TYPINGS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
@@ -12942,7 +12942,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT_USAGE__SUBSETTING = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 18;
+  int VIEWPOINT_USAGE__SUBSETTING = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute list.
@@ -12951,7 +12951,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT_USAGE__REFERENCES = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 19;
+  int VIEWPOINT_USAGE__REFERENCES = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Crosses</b></em>' attribute list.
@@ -12960,7 +12960,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT_USAGE__CROSSES = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 20;
+  int VIEWPOINT_USAGE__CROSSES = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 20;
 
   /**
    * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
@@ -12969,7 +12969,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT_USAGE__REDEFINITIONS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 21;
+  int VIEWPOINT_USAGE__REDEFINITIONS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 21;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -12978,7 +12978,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT_USAGE__MULTIPLICITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 22;
+  int VIEWPOINT_USAGE__MULTIPLICITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 22;
 
   /**
    * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
@@ -12987,7 +12987,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT_USAGE__IS_ORDERED = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 23;
+  int VIEWPOINT_USAGE__IS_ORDERED = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 23;
 
   /**
    * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
@@ -12996,7 +12996,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT_USAGE__IS_NONUNIQUE = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 24;
+  int VIEWPOINT_USAGE__IS_NONUNIQUE = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 24;
 
   /**
    * The feature id for the '<em><b>Is Initial</b></em>' attribute.
@@ -13005,7 +13005,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT_USAGE__IS_INITIAL = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 25;
+  int VIEWPOINT_USAGE__IS_INITIAL = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 25;
 
   /**
    * The feature id for the '<em><b>Is Default</b></em>' attribute.
@@ -13014,16 +13014,16 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT_USAGE__IS_DEFAULT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 26;
+  int VIEWPOINT_USAGE__IS_DEFAULT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 26;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VIEWPOINT_USAGE__VALUE_PART = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 27;
+  int VIEWPOINT_USAGE__VALUE_PART = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 27;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -13032,7 +13032,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT_USAGE__ELEMENTS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 28;
+  int VIEWPOINT_USAGE__ELEMENTS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 28;
 
   /**
    * The number of structural features of the '<em>Viewpoint Usage</em>' class.
@@ -13041,7 +13041,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VIEWPOINT_USAGE_FEATURE_COUNT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 29;
+  int VIEWPOINT_USAGE_FEATURE_COUNT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 29;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.RenderingDefinitionImpl <em>Rendering Definition</em>}' class.
@@ -13060,7 +13060,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RENDERING_DEFINITION__VISIBILITY = DEFINITION_ELEMENT_FEATURE_COUNT + 0;
+  int RENDERING_DEFINITION__VISIBILITY = DEFINITION_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -13069,7 +13069,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RENDERING_DEFINITION__IS_VARIANT = DEFINITION_ELEMENT_FEATURE_COUNT + 1;
+  int RENDERING_DEFINITION__IS_VARIANT = DEFINITION_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -13078,7 +13078,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RENDERING_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENT_FEATURE_COUNT + 2;
+  int RENDERING_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -13087,7 +13087,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RENDERING_DEFINITION__IS_VARIATION = DEFINITION_ELEMENT_FEATURE_COUNT + 3;
+  int RENDERING_DEFINITION__IS_VARIATION = DEFINITION_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -13096,7 +13096,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RENDERING_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENT_FEATURE_COUNT + 4;
+  int RENDERING_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -13105,7 +13105,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RENDERING_DEFINITION__IS_INDIVIDUAL = DEFINITION_ELEMENT_FEATURE_COUNT + 5;
+  int RENDERING_DEFINITION__IS_INDIVIDUAL = DEFINITION_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -13114,7 +13114,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RENDERING_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 6;
+  int RENDERING_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -13123,7 +13123,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RENDERING_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 7;
+  int RENDERING_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Superclassifiers</b></em>' attribute list.
@@ -13132,7 +13132,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RENDERING_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENT_FEATURE_COUNT + 8;
+  int RENDERING_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -13141,7 +13141,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RENDERING_DEFINITION__ELEMENTS = DEFINITION_ELEMENT_FEATURE_COUNT + 9;
+  int RENDERING_DEFINITION__ELEMENTS = DEFINITION_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The number of structural features of the '<em>Rendering Definition</em>' class.
@@ -13150,7 +13150,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RENDERING_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENT_FEATURE_COUNT + 10;
+  int RENDERING_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.RenderingUsageImpl <em>Rendering Usage</em>}' class.
@@ -13169,7 +13169,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RENDERING_USAGE__IS_THEN = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 0;
+  int RENDERING_USAGE__IS_THEN = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Then Multiplicity</b></em>' attribute list.
@@ -13178,7 +13178,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RENDERING_USAGE__THEN_MULTIPLICITY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 1;
+  int RENDERING_USAGE__THEN_MULTIPLICITY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -13187,7 +13187,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RENDERING_USAGE__VISIBILITY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 2;
+  int RENDERING_USAGE__VISIBILITY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -13196,7 +13196,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RENDERING_USAGE__IS_VARIANT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 3;
+  int RENDERING_USAGE__IS_VARIANT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Is Return</b></em>' attribute.
@@ -13205,7 +13205,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RENDERING_USAGE__IS_RETURN = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 4;
+  int RENDERING_USAGE__IS_RETURN = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -13214,7 +13214,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RENDERING_USAGE__IS_ABSTRACT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 5;
+  int RENDERING_USAGE__IS_ABSTRACT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -13223,7 +13223,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RENDERING_USAGE__IS_VARIATION = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 6;
+  int RENDERING_USAGE__IS_VARIATION = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -13232,7 +13232,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RENDERING_USAGE__DIRECTION = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 7;
+  int RENDERING_USAGE__DIRECTION = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Is Read Only</b></em>' attribute.
@@ -13241,7 +13241,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RENDERING_USAGE__IS_READ_ONLY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 8;
+  int RENDERING_USAGE__IS_READ_ONLY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Is Derived</b></em>' attribute.
@@ -13250,7 +13250,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RENDERING_USAGE__IS_DERIVED = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 9;
+  int RENDERING_USAGE__IS_DERIVED = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Is Reference</b></em>' attribute.
@@ -13259,7 +13259,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RENDERING_USAGE__IS_REFERENCE = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 10;
+  int RENDERING_USAGE__IS_REFERENCE = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -13268,7 +13268,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RENDERING_USAGE__PREFIX_METADATA_EXTENSION = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 11;
+  int RENDERING_USAGE__PREFIX_METADATA_EXTENSION = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Is End</b></em>' attribute.
@@ -13277,7 +13277,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RENDERING_USAGE__IS_END = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 12;
+  int RENDERING_USAGE__IS_END = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -13286,7 +13286,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RENDERING_USAGE__IS_INDIVIDUAL = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 13;
+  int RENDERING_USAGE__IS_INDIVIDUAL = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>Portion Kind</b></em>' attribute.
@@ -13295,7 +13295,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RENDERING_USAGE__PORTION_KIND = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 14;
+  int RENDERING_USAGE__PORTION_KIND = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -13304,7 +13304,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RENDERING_USAGE__DECLARED_SHORT_NAME = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 15;
+  int RENDERING_USAGE__DECLARED_SHORT_NAME = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -13313,7 +13313,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RENDERING_USAGE__DECLARED_NAME = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 16;
+  int RENDERING_USAGE__DECLARED_NAME = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -13322,7 +13322,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RENDERING_USAGE__TYPINGS = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 17;
+  int RENDERING_USAGE__TYPINGS = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
@@ -13331,7 +13331,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RENDERING_USAGE__SUBSETTING = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 18;
+  int RENDERING_USAGE__SUBSETTING = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute list.
@@ -13340,7 +13340,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RENDERING_USAGE__REFERENCES = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 19;
+  int RENDERING_USAGE__REFERENCES = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Crosses</b></em>' attribute list.
@@ -13349,7 +13349,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RENDERING_USAGE__CROSSES = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 20;
+  int RENDERING_USAGE__CROSSES = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 20;
 
   /**
    * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
@@ -13358,7 +13358,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RENDERING_USAGE__REDEFINITIONS = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 21;
+  int RENDERING_USAGE__REDEFINITIONS = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 21;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -13367,7 +13367,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RENDERING_USAGE__MULTIPLICITY = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 22;
+  int RENDERING_USAGE__MULTIPLICITY = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 22;
 
   /**
    * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
@@ -13376,7 +13376,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RENDERING_USAGE__IS_ORDERED = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 23;
+  int RENDERING_USAGE__IS_ORDERED = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 23;
 
   /**
    * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
@@ -13385,7 +13385,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RENDERING_USAGE__IS_NONUNIQUE = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 24;
+  int RENDERING_USAGE__IS_NONUNIQUE = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 24;
 
   /**
    * The feature id for the '<em><b>Is Initial</b></em>' attribute.
@@ -13394,7 +13394,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RENDERING_USAGE__IS_INITIAL = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 25;
+  int RENDERING_USAGE__IS_INITIAL = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 25;
 
   /**
    * The feature id for the '<em><b>Is Default</b></em>' attribute.
@@ -13403,16 +13403,16 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RENDERING_USAGE__IS_DEFAULT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 26;
+  int RENDERING_USAGE__IS_DEFAULT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 26;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RENDERING_USAGE__VALUE_PART = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 27;
+  int RENDERING_USAGE__VALUE_PART = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 27;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -13421,7 +13421,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RENDERING_USAGE__ELEMENTS = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 28;
+  int RENDERING_USAGE__ELEMENTS = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 28;
 
   /**
    * The number of structural features of the '<em>Rendering Usage</em>' class.
@@ -13430,7 +13430,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RENDERING_USAGE_FEATURE_COUNT = STRUCTURE_USAGE_ELEMENT_FEATURE_COUNT + 29;
+  int RENDERING_USAGE_FEATURE_COUNT = STRUCTURE_USAGE_ELEMENTS_FEATURE_COUNT + 29;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.ExtendedDefinitionImpl <em>Extended Definition</em>}' class.
@@ -13449,7 +13449,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXTENDED_DEFINITION__VISIBILITY = DEFINITION_ELEMENT_FEATURE_COUNT + 0;
+  int EXTENDED_DEFINITION__VISIBILITY = DEFINITION_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -13458,7 +13458,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXTENDED_DEFINITION__IS_VARIANT = DEFINITION_ELEMENT_FEATURE_COUNT + 1;
+  int EXTENDED_DEFINITION__IS_VARIANT = DEFINITION_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -13467,7 +13467,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXTENDED_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENT_FEATURE_COUNT + 2;
+  int EXTENDED_DEFINITION__IS_ABSTRACT = DEFINITION_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -13476,7 +13476,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXTENDED_DEFINITION__IS_VARIATION = DEFINITION_ELEMENT_FEATURE_COUNT + 3;
+  int EXTENDED_DEFINITION__IS_VARIATION = DEFINITION_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -13485,7 +13485,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXTENDED_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENT_FEATURE_COUNT + 4;
+  int EXTENDED_DEFINITION__PREFIX_METADATA_EXTENSION = DEFINITION_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -13494,7 +13494,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXTENDED_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 5;
+  int EXTENDED_DEFINITION__DECLARED_SHORT_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -13503,7 +13503,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXTENDED_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENT_FEATURE_COUNT + 6;
+  int EXTENDED_DEFINITION__DECLARED_NAME = DEFINITION_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Superclassifiers</b></em>' attribute list.
@@ -13512,7 +13512,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXTENDED_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENT_FEATURE_COUNT + 7;
+  int EXTENDED_DEFINITION__SUPERCLASSIFIERS = DEFINITION_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -13521,7 +13521,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXTENDED_DEFINITION__ELEMENTS = DEFINITION_ELEMENT_FEATURE_COUNT + 8;
+  int EXTENDED_DEFINITION__ELEMENTS = DEFINITION_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The number of structural features of the '<em>Extended Definition</em>' class.
@@ -13530,7 +13530,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXTENDED_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENT_FEATURE_COUNT + 9;
+  int EXTENDED_DEFINITION_FEATURE_COUNT = DEFINITION_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.PerformActionUsageImpl <em>Perform Action Usage</em>}' class.
@@ -13549,7 +13549,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERFORM_ACTION_USAGE__IS_THEN = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 0;
+  int PERFORM_ACTION_USAGE__IS_THEN = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Then Multiplicity</b></em>' attribute list.
@@ -13558,7 +13558,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERFORM_ACTION_USAGE__THEN_MULTIPLICITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 1;
+  int PERFORM_ACTION_USAGE__THEN_MULTIPLICITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -13567,7 +13567,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERFORM_ACTION_USAGE__VISIBILITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 2;
+  int PERFORM_ACTION_USAGE__VISIBILITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -13576,7 +13576,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERFORM_ACTION_USAGE__IS_VARIANT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 3;
+  int PERFORM_ACTION_USAGE__IS_VARIANT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Is Return</b></em>' attribute.
@@ -13585,7 +13585,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERFORM_ACTION_USAGE__IS_RETURN = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 4;
+  int PERFORM_ACTION_USAGE__IS_RETURN = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -13594,7 +13594,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERFORM_ACTION_USAGE__IS_ABSTRACT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 5;
+  int PERFORM_ACTION_USAGE__IS_ABSTRACT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -13603,7 +13603,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERFORM_ACTION_USAGE__IS_VARIATION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 6;
+  int PERFORM_ACTION_USAGE__IS_VARIATION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -13612,7 +13612,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERFORM_ACTION_USAGE__DIRECTION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 7;
+  int PERFORM_ACTION_USAGE__DIRECTION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Is Read Only</b></em>' attribute.
@@ -13621,7 +13621,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERFORM_ACTION_USAGE__IS_READ_ONLY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 8;
+  int PERFORM_ACTION_USAGE__IS_READ_ONLY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Is Derived</b></em>' attribute.
@@ -13630,7 +13630,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERFORM_ACTION_USAGE__IS_DERIVED = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 9;
+  int PERFORM_ACTION_USAGE__IS_DERIVED = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Is Reference</b></em>' attribute.
@@ -13639,7 +13639,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERFORM_ACTION_USAGE__IS_REFERENCE = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 10;
+  int PERFORM_ACTION_USAGE__IS_REFERENCE = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -13648,7 +13648,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERFORM_ACTION_USAGE__PREFIX_METADATA_EXTENSION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 11;
+  int PERFORM_ACTION_USAGE__PREFIX_METADATA_EXTENSION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Is End</b></em>' attribute.
@@ -13657,7 +13657,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERFORM_ACTION_USAGE__IS_END = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 12;
+  int PERFORM_ACTION_USAGE__IS_END = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -13666,7 +13666,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERFORM_ACTION_USAGE__IS_INDIVIDUAL = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 13;
+  int PERFORM_ACTION_USAGE__IS_INDIVIDUAL = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>Portion Kind</b></em>' attribute.
@@ -13675,7 +13675,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERFORM_ACTION_USAGE__PORTION_KIND = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 14;
+  int PERFORM_ACTION_USAGE__PORTION_KIND = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Ref Element</b></em>' attribute.
@@ -13684,7 +13684,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERFORM_ACTION_USAGE__REF_ELEMENT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 15;
+  int PERFORM_ACTION_USAGE__REF_ELEMENT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -13693,7 +13693,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERFORM_ACTION_USAGE__TYPINGS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 16;
+  int PERFORM_ACTION_USAGE__TYPINGS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
@@ -13702,7 +13702,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERFORM_ACTION_USAGE__SUBSETTING = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 17;
+  int PERFORM_ACTION_USAGE__SUBSETTING = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute list.
@@ -13711,7 +13711,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERFORM_ACTION_USAGE__REFERENCES = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 18;
+  int PERFORM_ACTION_USAGE__REFERENCES = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>Crosses</b></em>' attribute list.
@@ -13720,7 +13720,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERFORM_ACTION_USAGE__CROSSES = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 19;
+  int PERFORM_ACTION_USAGE__CROSSES = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
@@ -13729,7 +13729,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERFORM_ACTION_USAGE__REDEFINITIONS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 20;
+  int PERFORM_ACTION_USAGE__REDEFINITIONS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 20;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -13738,7 +13738,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERFORM_ACTION_USAGE__MULTIPLICITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 21;
+  int PERFORM_ACTION_USAGE__MULTIPLICITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 21;
 
   /**
    * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
@@ -13747,7 +13747,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERFORM_ACTION_USAGE__IS_ORDERED = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 22;
+  int PERFORM_ACTION_USAGE__IS_ORDERED = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 22;
 
   /**
    * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
@@ -13756,7 +13756,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERFORM_ACTION_USAGE__IS_NONUNIQUE = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 23;
+  int PERFORM_ACTION_USAGE__IS_NONUNIQUE = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 23;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -13765,7 +13765,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERFORM_ACTION_USAGE__DECLARED_SHORT_NAME = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 24;
+  int PERFORM_ACTION_USAGE__DECLARED_SHORT_NAME = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 24;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -13774,7 +13774,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERFORM_ACTION_USAGE__DECLARED_NAME = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 25;
+  int PERFORM_ACTION_USAGE__DECLARED_NAME = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 25;
 
   /**
    * The feature id for the '<em><b>Is Initial</b></em>' attribute.
@@ -13783,7 +13783,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERFORM_ACTION_USAGE__IS_INITIAL = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 26;
+  int PERFORM_ACTION_USAGE__IS_INITIAL = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 26;
 
   /**
    * The feature id for the '<em><b>Is Default</b></em>' attribute.
@@ -13792,16 +13792,16 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERFORM_ACTION_USAGE__IS_DEFAULT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 27;
+  int PERFORM_ACTION_USAGE__IS_DEFAULT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 27;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PERFORM_ACTION_USAGE__VALUE_PART = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 28;
+  int PERFORM_ACTION_USAGE__VALUE_PART = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 28;
 
   /**
    * The feature id for the '<em><b>Referenced Feature</b></em>' attribute.
@@ -13810,7 +13810,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERFORM_ACTION_USAGE__REFERENCED_FEATURE = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 29;
+  int PERFORM_ACTION_USAGE__REFERENCED_FEATURE = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 29;
 
   /**
    * The feature id for the '<em><b>Accept Parameter</b></em>' containment reference list.
@@ -13819,7 +13819,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERFORM_ACTION_USAGE__ACCEPT_PARAMETER = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 30;
+  int PERFORM_ACTION_USAGE__ACCEPT_PARAMETER = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 30;
 
   /**
    * The feature id for the '<em><b>Send Node Parameter</b></em>' attribute.
@@ -13828,7 +13828,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERFORM_ACTION_USAGE__SEND_NODE_PARAMETER = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 31;
+  int PERFORM_ACTION_USAGE__SEND_NODE_PARAMETER = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 31;
 
   /**
    * The feature id for the '<em><b>Via Node Parameter</b></em>' attribute.
@@ -13837,7 +13837,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERFORM_ACTION_USAGE__VIA_NODE_PARAMETER = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 32;
+  int PERFORM_ACTION_USAGE__VIA_NODE_PARAMETER = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 32;
 
   /**
    * The feature id for the '<em><b>To Node Parameter</b></em>' attribute.
@@ -13846,7 +13846,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERFORM_ACTION_USAGE__TO_NODE_PARAMETER = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 33;
+  int PERFORM_ACTION_USAGE__TO_NODE_PARAMETER = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 33;
 
   /**
    * The feature id for the '<em><b>Target Parameter</b></em>' attribute.
@@ -13855,7 +13855,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERFORM_ACTION_USAGE__TARGET_PARAMETER = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 34;
+  int PERFORM_ACTION_USAGE__TARGET_PARAMETER = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 34;
 
   /**
    * The feature id for the '<em><b>Feature Chain</b></em>' attribute.
@@ -13864,7 +13864,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERFORM_ACTION_USAGE__FEATURE_CHAIN = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 35;
+  int PERFORM_ACTION_USAGE__FEATURE_CHAIN = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 35;
 
   /**
    * The feature id for the '<em><b>Node Parameter</b></em>' attribute.
@@ -13873,7 +13873,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERFORM_ACTION_USAGE__NODE_PARAMETER = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 36;
+  int PERFORM_ACTION_USAGE__NODE_PARAMETER = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 36;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -13882,7 +13882,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERFORM_ACTION_USAGE__ELEMENTS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 37;
+  int PERFORM_ACTION_USAGE__ELEMENTS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 37;
 
   /**
    * The number of structural features of the '<em>Perform Action Usage</em>' class.
@@ -13891,7 +13891,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PERFORM_ACTION_USAGE_FEATURE_COUNT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 38;
+  int PERFORM_ACTION_USAGE_FEATURE_COUNT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 38;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.ExhibitStateUsageImpl <em>Exhibit State Usage</em>}' class.
@@ -13910,7 +13910,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXHIBIT_STATE_USAGE__IS_THEN = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 0;
+  int EXHIBIT_STATE_USAGE__IS_THEN = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Then Multiplicity</b></em>' attribute list.
@@ -13919,7 +13919,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXHIBIT_STATE_USAGE__THEN_MULTIPLICITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 1;
+  int EXHIBIT_STATE_USAGE__THEN_MULTIPLICITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -13928,7 +13928,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXHIBIT_STATE_USAGE__VISIBILITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 2;
+  int EXHIBIT_STATE_USAGE__VISIBILITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -13937,7 +13937,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXHIBIT_STATE_USAGE__IS_VARIANT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 3;
+  int EXHIBIT_STATE_USAGE__IS_VARIANT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Is Return</b></em>' attribute.
@@ -13946,7 +13946,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXHIBIT_STATE_USAGE__IS_RETURN = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 4;
+  int EXHIBIT_STATE_USAGE__IS_RETURN = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -13955,7 +13955,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXHIBIT_STATE_USAGE__IS_ABSTRACT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 5;
+  int EXHIBIT_STATE_USAGE__IS_ABSTRACT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -13964,7 +13964,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXHIBIT_STATE_USAGE__IS_VARIATION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 6;
+  int EXHIBIT_STATE_USAGE__IS_VARIATION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -13973,7 +13973,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXHIBIT_STATE_USAGE__DIRECTION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 7;
+  int EXHIBIT_STATE_USAGE__DIRECTION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Is Read Only</b></em>' attribute.
@@ -13982,7 +13982,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXHIBIT_STATE_USAGE__IS_READ_ONLY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 8;
+  int EXHIBIT_STATE_USAGE__IS_READ_ONLY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Is Derived</b></em>' attribute.
@@ -13991,7 +13991,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXHIBIT_STATE_USAGE__IS_DERIVED = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 9;
+  int EXHIBIT_STATE_USAGE__IS_DERIVED = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Is Reference</b></em>' attribute.
@@ -14000,7 +14000,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXHIBIT_STATE_USAGE__IS_REFERENCE = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 10;
+  int EXHIBIT_STATE_USAGE__IS_REFERENCE = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -14009,7 +14009,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXHIBIT_STATE_USAGE__PREFIX_METADATA_EXTENSION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 11;
+  int EXHIBIT_STATE_USAGE__PREFIX_METADATA_EXTENSION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Is End</b></em>' attribute.
@@ -14018,7 +14018,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXHIBIT_STATE_USAGE__IS_END = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 12;
+  int EXHIBIT_STATE_USAGE__IS_END = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -14027,7 +14027,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXHIBIT_STATE_USAGE__IS_INDIVIDUAL = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 13;
+  int EXHIBIT_STATE_USAGE__IS_INDIVIDUAL = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>Portion Kind</b></em>' attribute.
@@ -14036,7 +14036,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXHIBIT_STATE_USAGE__PORTION_KIND = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 14;
+  int EXHIBIT_STATE_USAGE__PORTION_KIND = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Ref Element</b></em>' attribute.
@@ -14045,7 +14045,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXHIBIT_STATE_USAGE__REF_ELEMENT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 15;
+  int EXHIBIT_STATE_USAGE__REF_ELEMENT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -14054,7 +14054,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXHIBIT_STATE_USAGE__TYPINGS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 16;
+  int EXHIBIT_STATE_USAGE__TYPINGS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
@@ -14063,7 +14063,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXHIBIT_STATE_USAGE__SUBSETTING = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 17;
+  int EXHIBIT_STATE_USAGE__SUBSETTING = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute list.
@@ -14072,7 +14072,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXHIBIT_STATE_USAGE__REFERENCES = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 18;
+  int EXHIBIT_STATE_USAGE__REFERENCES = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>Crosses</b></em>' attribute list.
@@ -14081,7 +14081,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXHIBIT_STATE_USAGE__CROSSES = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 19;
+  int EXHIBIT_STATE_USAGE__CROSSES = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
@@ -14090,7 +14090,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXHIBIT_STATE_USAGE__REDEFINITIONS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 20;
+  int EXHIBIT_STATE_USAGE__REDEFINITIONS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 20;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -14099,7 +14099,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXHIBIT_STATE_USAGE__MULTIPLICITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 21;
+  int EXHIBIT_STATE_USAGE__MULTIPLICITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 21;
 
   /**
    * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
@@ -14108,7 +14108,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXHIBIT_STATE_USAGE__IS_ORDERED = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 22;
+  int EXHIBIT_STATE_USAGE__IS_ORDERED = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 22;
 
   /**
    * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
@@ -14117,7 +14117,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXHIBIT_STATE_USAGE__IS_NONUNIQUE = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 23;
+  int EXHIBIT_STATE_USAGE__IS_NONUNIQUE = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 23;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -14126,7 +14126,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXHIBIT_STATE_USAGE__DECLARED_SHORT_NAME = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 24;
+  int EXHIBIT_STATE_USAGE__DECLARED_SHORT_NAME = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 24;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -14135,7 +14135,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXHIBIT_STATE_USAGE__DECLARED_NAME = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 25;
+  int EXHIBIT_STATE_USAGE__DECLARED_NAME = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 25;
 
   /**
    * The feature id for the '<em><b>Is Initial</b></em>' attribute.
@@ -14144,7 +14144,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXHIBIT_STATE_USAGE__IS_INITIAL = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 26;
+  int EXHIBIT_STATE_USAGE__IS_INITIAL = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 26;
 
   /**
    * The feature id for the '<em><b>Is Default</b></em>' attribute.
@@ -14153,16 +14153,16 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXHIBIT_STATE_USAGE__IS_DEFAULT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 27;
+  int EXHIBIT_STATE_USAGE__IS_DEFAULT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 27;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXHIBIT_STATE_USAGE__VALUE_PART = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 28;
+  int EXHIBIT_STATE_USAGE__VALUE_PART = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 28;
 
   /**
    * The feature id for the '<em><b>Is Parallel</b></em>' attribute.
@@ -14171,7 +14171,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXHIBIT_STATE_USAGE__IS_PARALLEL = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 29;
+  int EXHIBIT_STATE_USAGE__IS_PARALLEL = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 29;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -14180,7 +14180,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXHIBIT_STATE_USAGE__ELEMENTS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 30;
+  int EXHIBIT_STATE_USAGE__ELEMENTS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 30;
 
   /**
    * The number of structural features of the '<em>Exhibit State Usage</em>' class.
@@ -14189,7 +14189,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXHIBIT_STATE_USAGE_FEATURE_COUNT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 31;
+  int EXHIBIT_STATE_USAGE_FEATURE_COUNT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 31;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.IncludeUseCaseUsageImpl <em>Include Use Case Usage</em>}' class.
@@ -14208,7 +14208,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INCLUDE_USE_CASE_USAGE__IS_THEN = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 0;
+  int INCLUDE_USE_CASE_USAGE__IS_THEN = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Then Multiplicity</b></em>' attribute list.
@@ -14217,7 +14217,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INCLUDE_USE_CASE_USAGE__THEN_MULTIPLICITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 1;
+  int INCLUDE_USE_CASE_USAGE__THEN_MULTIPLICITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -14226,7 +14226,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INCLUDE_USE_CASE_USAGE__VISIBILITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 2;
+  int INCLUDE_USE_CASE_USAGE__VISIBILITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -14235,7 +14235,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INCLUDE_USE_CASE_USAGE__IS_VARIANT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 3;
+  int INCLUDE_USE_CASE_USAGE__IS_VARIANT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Is Return</b></em>' attribute.
@@ -14244,7 +14244,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INCLUDE_USE_CASE_USAGE__IS_RETURN = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 4;
+  int INCLUDE_USE_CASE_USAGE__IS_RETURN = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -14253,7 +14253,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INCLUDE_USE_CASE_USAGE__IS_ABSTRACT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 5;
+  int INCLUDE_USE_CASE_USAGE__IS_ABSTRACT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -14262,7 +14262,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INCLUDE_USE_CASE_USAGE__IS_VARIATION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 6;
+  int INCLUDE_USE_CASE_USAGE__IS_VARIATION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -14271,7 +14271,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INCLUDE_USE_CASE_USAGE__DIRECTION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 7;
+  int INCLUDE_USE_CASE_USAGE__DIRECTION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Is Read Only</b></em>' attribute.
@@ -14280,7 +14280,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INCLUDE_USE_CASE_USAGE__IS_READ_ONLY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 8;
+  int INCLUDE_USE_CASE_USAGE__IS_READ_ONLY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Is Derived</b></em>' attribute.
@@ -14289,7 +14289,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INCLUDE_USE_CASE_USAGE__IS_DERIVED = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 9;
+  int INCLUDE_USE_CASE_USAGE__IS_DERIVED = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Is Reference</b></em>' attribute.
@@ -14298,7 +14298,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INCLUDE_USE_CASE_USAGE__IS_REFERENCE = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 10;
+  int INCLUDE_USE_CASE_USAGE__IS_REFERENCE = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -14307,7 +14307,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INCLUDE_USE_CASE_USAGE__PREFIX_METADATA_EXTENSION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 11;
+  int INCLUDE_USE_CASE_USAGE__PREFIX_METADATA_EXTENSION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Is End</b></em>' attribute.
@@ -14316,7 +14316,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INCLUDE_USE_CASE_USAGE__IS_END = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 12;
+  int INCLUDE_USE_CASE_USAGE__IS_END = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -14325,7 +14325,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INCLUDE_USE_CASE_USAGE__IS_INDIVIDUAL = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 13;
+  int INCLUDE_USE_CASE_USAGE__IS_INDIVIDUAL = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>Portion Kind</b></em>' attribute.
@@ -14334,7 +14334,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INCLUDE_USE_CASE_USAGE__PORTION_KIND = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 14;
+  int INCLUDE_USE_CASE_USAGE__PORTION_KIND = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Ref Element</b></em>' attribute.
@@ -14343,7 +14343,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INCLUDE_USE_CASE_USAGE__REF_ELEMENT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 15;
+  int INCLUDE_USE_CASE_USAGE__REF_ELEMENT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -14352,7 +14352,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INCLUDE_USE_CASE_USAGE__TYPINGS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 16;
+  int INCLUDE_USE_CASE_USAGE__TYPINGS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
@@ -14361,7 +14361,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INCLUDE_USE_CASE_USAGE__SUBSETTING = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 17;
+  int INCLUDE_USE_CASE_USAGE__SUBSETTING = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute list.
@@ -14370,7 +14370,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INCLUDE_USE_CASE_USAGE__REFERENCES = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 18;
+  int INCLUDE_USE_CASE_USAGE__REFERENCES = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>Crosses</b></em>' attribute list.
@@ -14379,7 +14379,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INCLUDE_USE_CASE_USAGE__CROSSES = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 19;
+  int INCLUDE_USE_CASE_USAGE__CROSSES = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
@@ -14388,7 +14388,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INCLUDE_USE_CASE_USAGE__REDEFINITIONS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 20;
+  int INCLUDE_USE_CASE_USAGE__REDEFINITIONS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 20;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -14397,7 +14397,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INCLUDE_USE_CASE_USAGE__MULTIPLICITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 21;
+  int INCLUDE_USE_CASE_USAGE__MULTIPLICITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 21;
 
   /**
    * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
@@ -14406,7 +14406,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INCLUDE_USE_CASE_USAGE__IS_ORDERED = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 22;
+  int INCLUDE_USE_CASE_USAGE__IS_ORDERED = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 22;
 
   /**
    * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
@@ -14415,7 +14415,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INCLUDE_USE_CASE_USAGE__IS_NONUNIQUE = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 23;
+  int INCLUDE_USE_CASE_USAGE__IS_NONUNIQUE = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 23;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -14424,7 +14424,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INCLUDE_USE_CASE_USAGE__DECLARED_SHORT_NAME = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 24;
+  int INCLUDE_USE_CASE_USAGE__DECLARED_SHORT_NAME = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 24;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -14433,7 +14433,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INCLUDE_USE_CASE_USAGE__DECLARED_NAME = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 25;
+  int INCLUDE_USE_CASE_USAGE__DECLARED_NAME = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 25;
 
   /**
    * The feature id for the '<em><b>Is Initial</b></em>' attribute.
@@ -14442,7 +14442,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INCLUDE_USE_CASE_USAGE__IS_INITIAL = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 26;
+  int INCLUDE_USE_CASE_USAGE__IS_INITIAL = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 26;
 
   /**
    * The feature id for the '<em><b>Is Default</b></em>' attribute.
@@ -14451,16 +14451,16 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INCLUDE_USE_CASE_USAGE__IS_DEFAULT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 27;
+  int INCLUDE_USE_CASE_USAGE__IS_DEFAULT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 27;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INCLUDE_USE_CASE_USAGE__VALUE_PART = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 28;
+  int INCLUDE_USE_CASE_USAGE__VALUE_PART = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 28;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -14469,7 +14469,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INCLUDE_USE_CASE_USAGE__ELEMENTS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 29;
+  int INCLUDE_USE_CASE_USAGE__ELEMENTS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 29;
 
   /**
    * The feature id for the '<em><b>Result Expression Parameter</b></em>' containment reference list.
@@ -14478,7 +14478,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INCLUDE_USE_CASE_USAGE__RESULT_EXPRESSION_PARAMETER = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 30;
+  int INCLUDE_USE_CASE_USAGE__RESULT_EXPRESSION_PARAMETER = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 30;
 
   /**
    * The number of structural features of the '<em>Include Use Case Usage</em>' class.
@@ -14487,7 +14487,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INCLUDE_USE_CASE_USAGE_FEATURE_COUNT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 31;
+  int INCLUDE_USE_CASE_USAGE_FEATURE_COUNT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 31;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.AssertConstraintUsageImpl <em>Assert Constraint Usage</em>}' class.
@@ -14506,7 +14506,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSERT_CONSTRAINT_USAGE__IS_THEN = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 0;
+  int ASSERT_CONSTRAINT_USAGE__IS_THEN = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Then Multiplicity</b></em>' attribute list.
@@ -14515,7 +14515,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSERT_CONSTRAINT_USAGE__THEN_MULTIPLICITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 1;
+  int ASSERT_CONSTRAINT_USAGE__THEN_MULTIPLICITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -14524,7 +14524,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSERT_CONSTRAINT_USAGE__VISIBILITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 2;
+  int ASSERT_CONSTRAINT_USAGE__VISIBILITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -14533,7 +14533,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSERT_CONSTRAINT_USAGE__IS_VARIANT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 3;
+  int ASSERT_CONSTRAINT_USAGE__IS_VARIANT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Is Return</b></em>' attribute.
@@ -14542,7 +14542,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSERT_CONSTRAINT_USAGE__IS_RETURN = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 4;
+  int ASSERT_CONSTRAINT_USAGE__IS_RETURN = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -14551,7 +14551,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSERT_CONSTRAINT_USAGE__IS_ABSTRACT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 5;
+  int ASSERT_CONSTRAINT_USAGE__IS_ABSTRACT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -14560,7 +14560,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSERT_CONSTRAINT_USAGE__IS_VARIATION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 6;
+  int ASSERT_CONSTRAINT_USAGE__IS_VARIATION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -14569,7 +14569,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSERT_CONSTRAINT_USAGE__DIRECTION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 7;
+  int ASSERT_CONSTRAINT_USAGE__DIRECTION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Is Read Only</b></em>' attribute.
@@ -14578,7 +14578,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSERT_CONSTRAINT_USAGE__IS_READ_ONLY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 8;
+  int ASSERT_CONSTRAINT_USAGE__IS_READ_ONLY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Is Derived</b></em>' attribute.
@@ -14587,7 +14587,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSERT_CONSTRAINT_USAGE__IS_DERIVED = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 9;
+  int ASSERT_CONSTRAINT_USAGE__IS_DERIVED = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Is Reference</b></em>' attribute.
@@ -14596,7 +14596,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSERT_CONSTRAINT_USAGE__IS_REFERENCE = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 10;
+  int ASSERT_CONSTRAINT_USAGE__IS_REFERENCE = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -14605,7 +14605,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSERT_CONSTRAINT_USAGE__PREFIX_METADATA_EXTENSION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 11;
+  int ASSERT_CONSTRAINT_USAGE__PREFIX_METADATA_EXTENSION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Is End</b></em>' attribute.
@@ -14614,7 +14614,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSERT_CONSTRAINT_USAGE__IS_END = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 12;
+  int ASSERT_CONSTRAINT_USAGE__IS_END = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -14623,7 +14623,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSERT_CONSTRAINT_USAGE__IS_INDIVIDUAL = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 13;
+  int ASSERT_CONSTRAINT_USAGE__IS_INDIVIDUAL = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>Portion Kind</b></em>' attribute.
@@ -14632,7 +14632,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSERT_CONSTRAINT_USAGE__PORTION_KIND = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 14;
+  int ASSERT_CONSTRAINT_USAGE__PORTION_KIND = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Ref Element</b></em>' attribute.
@@ -14641,7 +14641,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSERT_CONSTRAINT_USAGE__REF_ELEMENT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 15;
+  int ASSERT_CONSTRAINT_USAGE__REF_ELEMENT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -14650,7 +14650,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSERT_CONSTRAINT_USAGE__TYPINGS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 16;
+  int ASSERT_CONSTRAINT_USAGE__TYPINGS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
@@ -14659,7 +14659,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSERT_CONSTRAINT_USAGE__SUBSETTING = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 17;
+  int ASSERT_CONSTRAINT_USAGE__SUBSETTING = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute list.
@@ -14668,7 +14668,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSERT_CONSTRAINT_USAGE__REFERENCES = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 18;
+  int ASSERT_CONSTRAINT_USAGE__REFERENCES = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>Crosses</b></em>' attribute list.
@@ -14677,7 +14677,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSERT_CONSTRAINT_USAGE__CROSSES = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 19;
+  int ASSERT_CONSTRAINT_USAGE__CROSSES = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
@@ -14686,7 +14686,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSERT_CONSTRAINT_USAGE__REDEFINITIONS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 20;
+  int ASSERT_CONSTRAINT_USAGE__REDEFINITIONS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 20;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -14695,7 +14695,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSERT_CONSTRAINT_USAGE__MULTIPLICITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 21;
+  int ASSERT_CONSTRAINT_USAGE__MULTIPLICITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 21;
 
   /**
    * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
@@ -14704,7 +14704,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSERT_CONSTRAINT_USAGE__IS_ORDERED = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 22;
+  int ASSERT_CONSTRAINT_USAGE__IS_ORDERED = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 22;
 
   /**
    * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
@@ -14713,7 +14713,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSERT_CONSTRAINT_USAGE__IS_NONUNIQUE = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 23;
+  int ASSERT_CONSTRAINT_USAGE__IS_NONUNIQUE = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 23;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -14722,7 +14722,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSERT_CONSTRAINT_USAGE__DECLARED_SHORT_NAME = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 24;
+  int ASSERT_CONSTRAINT_USAGE__DECLARED_SHORT_NAME = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 24;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -14731,7 +14731,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSERT_CONSTRAINT_USAGE__DECLARED_NAME = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 25;
+  int ASSERT_CONSTRAINT_USAGE__DECLARED_NAME = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 25;
 
   /**
    * The feature id for the '<em><b>Is Initial</b></em>' attribute.
@@ -14740,7 +14740,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSERT_CONSTRAINT_USAGE__IS_INITIAL = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 26;
+  int ASSERT_CONSTRAINT_USAGE__IS_INITIAL = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 26;
 
   /**
    * The feature id for the '<em><b>Is Default</b></em>' attribute.
@@ -14749,16 +14749,16 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSERT_CONSTRAINT_USAGE__IS_DEFAULT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 27;
+  int ASSERT_CONSTRAINT_USAGE__IS_DEFAULT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 27;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ASSERT_CONSTRAINT_USAGE__VALUE_PART = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 28;
+  int ASSERT_CONSTRAINT_USAGE__VALUE_PART = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 28;
 
   /**
    * The feature id for the '<em><b>Is Negated</b></em>' attribute.
@@ -14767,7 +14767,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSERT_CONSTRAINT_USAGE__IS_NEGATED = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 29;
+  int ASSERT_CONSTRAINT_USAGE__IS_NEGATED = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 29;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -14776,7 +14776,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSERT_CONSTRAINT_USAGE__ELEMENTS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 30;
+  int ASSERT_CONSTRAINT_USAGE__ELEMENTS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 30;
 
   /**
    * The feature id for the '<em><b>Result Expression Parameter</b></em>' containment reference list.
@@ -14785,7 +14785,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSERT_CONSTRAINT_USAGE__RESULT_EXPRESSION_PARAMETER = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 31;
+  int ASSERT_CONSTRAINT_USAGE__RESULT_EXPRESSION_PARAMETER = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 31;
 
   /**
    * The number of structural features of the '<em>Assert Constraint Usage</em>' class.
@@ -14794,7 +14794,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSERT_CONSTRAINT_USAGE_FEATURE_COUNT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 32;
+  int ASSERT_CONSTRAINT_USAGE_FEATURE_COUNT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 32;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.SatisfyRequirementUsageImpl <em>Satisfy Requirement Usage</em>}' class.
@@ -14813,7 +14813,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SATISFY_REQUIREMENT_USAGE__IS_THEN = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 0;
+  int SATISFY_REQUIREMENT_USAGE__IS_THEN = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Then Multiplicity</b></em>' attribute list.
@@ -14822,7 +14822,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SATISFY_REQUIREMENT_USAGE__THEN_MULTIPLICITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 1;
+  int SATISFY_REQUIREMENT_USAGE__THEN_MULTIPLICITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -14831,7 +14831,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SATISFY_REQUIREMENT_USAGE__VISIBILITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 2;
+  int SATISFY_REQUIREMENT_USAGE__VISIBILITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Is Variant</b></em>' attribute.
@@ -14840,7 +14840,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SATISFY_REQUIREMENT_USAGE__IS_VARIANT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 3;
+  int SATISFY_REQUIREMENT_USAGE__IS_VARIANT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Is Return</b></em>' attribute.
@@ -14849,7 +14849,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SATISFY_REQUIREMENT_USAGE__IS_RETURN = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 4;
+  int SATISFY_REQUIREMENT_USAGE__IS_RETURN = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -14858,7 +14858,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SATISFY_REQUIREMENT_USAGE__IS_ABSTRACT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 5;
+  int SATISFY_REQUIREMENT_USAGE__IS_ABSTRACT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Is Variation</b></em>' attribute.
@@ -14867,7 +14867,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SATISFY_REQUIREMENT_USAGE__IS_VARIATION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 6;
+  int SATISFY_REQUIREMENT_USAGE__IS_VARIATION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -14876,7 +14876,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SATISFY_REQUIREMENT_USAGE__DIRECTION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 7;
+  int SATISFY_REQUIREMENT_USAGE__DIRECTION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Is Read Only</b></em>' attribute.
@@ -14885,7 +14885,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SATISFY_REQUIREMENT_USAGE__IS_READ_ONLY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 8;
+  int SATISFY_REQUIREMENT_USAGE__IS_READ_ONLY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Is Derived</b></em>' attribute.
@@ -14894,7 +14894,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SATISFY_REQUIREMENT_USAGE__IS_DERIVED = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 9;
+  int SATISFY_REQUIREMENT_USAGE__IS_DERIVED = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 9;
 
   /**
    * The feature id for the '<em><b>Is Reference</b></em>' attribute.
@@ -14903,7 +14903,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SATISFY_REQUIREMENT_USAGE__IS_REFERENCE = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 10;
+  int SATISFY_REQUIREMENT_USAGE__IS_REFERENCE = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 10;
 
   /**
    * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
@@ -14912,7 +14912,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SATISFY_REQUIREMENT_USAGE__PREFIX_METADATA_EXTENSION = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 11;
+  int SATISFY_REQUIREMENT_USAGE__PREFIX_METADATA_EXTENSION = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 11;
 
   /**
    * The feature id for the '<em><b>Is End</b></em>' attribute.
@@ -14921,7 +14921,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SATISFY_REQUIREMENT_USAGE__IS_END = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 12;
+  int SATISFY_REQUIREMENT_USAGE__IS_END = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 12;
 
   /**
    * The feature id for the '<em><b>Is Individual</b></em>' attribute.
@@ -14930,7 +14930,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SATISFY_REQUIREMENT_USAGE__IS_INDIVIDUAL = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 13;
+  int SATISFY_REQUIREMENT_USAGE__IS_INDIVIDUAL = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 13;
 
   /**
    * The feature id for the '<em><b>Portion Kind</b></em>' attribute.
@@ -14939,7 +14939,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SATISFY_REQUIREMENT_USAGE__PORTION_KIND = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 14;
+  int SATISFY_REQUIREMENT_USAGE__PORTION_KIND = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 14;
 
   /**
    * The feature id for the '<em><b>Ref Element</b></em>' attribute.
@@ -14948,7 +14948,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SATISFY_REQUIREMENT_USAGE__REF_ELEMENT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 15;
+  int SATISFY_REQUIREMENT_USAGE__REF_ELEMENT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 15;
 
   /**
    * The feature id for the '<em><b>Typings</b></em>' attribute list.
@@ -14957,7 +14957,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SATISFY_REQUIREMENT_USAGE__TYPINGS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 16;
+  int SATISFY_REQUIREMENT_USAGE__TYPINGS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 16;
 
   /**
    * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
@@ -14966,7 +14966,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SATISFY_REQUIREMENT_USAGE__SUBSETTING = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 17;
+  int SATISFY_REQUIREMENT_USAGE__SUBSETTING = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 17;
 
   /**
    * The feature id for the '<em><b>References</b></em>' attribute list.
@@ -14975,7 +14975,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SATISFY_REQUIREMENT_USAGE__REFERENCES = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 18;
+  int SATISFY_REQUIREMENT_USAGE__REFERENCES = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 18;
 
   /**
    * The feature id for the '<em><b>Crosses</b></em>' attribute list.
@@ -14984,7 +14984,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SATISFY_REQUIREMENT_USAGE__CROSSES = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 19;
+  int SATISFY_REQUIREMENT_USAGE__CROSSES = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 19;
 
   /**
    * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
@@ -14993,7 +14993,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SATISFY_REQUIREMENT_USAGE__REDEFINITIONS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 20;
+  int SATISFY_REQUIREMENT_USAGE__REDEFINITIONS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 20;
 
   /**
    * The feature id for the '<em><b>Multiplicity</b></em>' attribute list.
@@ -15002,7 +15002,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SATISFY_REQUIREMENT_USAGE__MULTIPLICITY = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 21;
+  int SATISFY_REQUIREMENT_USAGE__MULTIPLICITY = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 21;
 
   /**
    * The feature id for the '<em><b>Is Ordered</b></em>' attribute.
@@ -15011,7 +15011,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SATISFY_REQUIREMENT_USAGE__IS_ORDERED = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 22;
+  int SATISFY_REQUIREMENT_USAGE__IS_ORDERED = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 22;
 
   /**
    * The feature id for the '<em><b>Is Nonunique</b></em>' attribute.
@@ -15020,7 +15020,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SATISFY_REQUIREMENT_USAGE__IS_NONUNIQUE = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 23;
+  int SATISFY_REQUIREMENT_USAGE__IS_NONUNIQUE = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 23;
 
   /**
    * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
@@ -15029,7 +15029,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SATISFY_REQUIREMENT_USAGE__DECLARED_SHORT_NAME = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 24;
+  int SATISFY_REQUIREMENT_USAGE__DECLARED_SHORT_NAME = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 24;
 
   /**
    * The feature id for the '<em><b>Declared Name</b></em>' attribute.
@@ -15038,7 +15038,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SATISFY_REQUIREMENT_USAGE__DECLARED_NAME = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 25;
+  int SATISFY_REQUIREMENT_USAGE__DECLARED_NAME = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 25;
 
   /**
    * The feature id for the '<em><b>Is Initial</b></em>' attribute.
@@ -15047,7 +15047,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SATISFY_REQUIREMENT_USAGE__IS_INITIAL = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 26;
+  int SATISFY_REQUIREMENT_USAGE__IS_INITIAL = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 26;
 
   /**
    * The feature id for the '<em><b>Is Default</b></em>' attribute.
@@ -15056,16 +15056,16 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SATISFY_REQUIREMENT_USAGE__IS_DEFAULT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 27;
+  int SATISFY_REQUIREMENT_USAGE__IS_DEFAULT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 27;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SATISFY_REQUIREMENT_USAGE__VALUE_PART = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 28;
+  int SATISFY_REQUIREMENT_USAGE__VALUE_PART = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 28;
 
   /**
    * The feature id for the '<em><b>Is Negated</b></em>' attribute.
@@ -15074,7 +15074,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SATISFY_REQUIREMENT_USAGE__IS_NEGATED = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 29;
+  int SATISFY_REQUIREMENT_USAGE__IS_NEGATED = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 29;
 
   /**
    * The feature id for the '<em><b>Satisfaction Parameter</b></em>' attribute.
@@ -15083,7 +15083,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SATISFY_REQUIREMENT_USAGE__SATISFACTION_PARAMETER = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 30;
+  int SATISFY_REQUIREMENT_USAGE__SATISFACTION_PARAMETER = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 30;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -15092,7 +15092,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SATISFY_REQUIREMENT_USAGE__ELEMENTS = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 31;
+  int SATISFY_REQUIREMENT_USAGE__ELEMENTS = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 31;
 
   /**
    * The number of structural features of the '<em>Satisfy Requirement Usage</em>' class.
@@ -15101,7 +15101,7 @@ public interface SysMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SATISFY_REQUIREMENT_USAGE_FEATURE_COUNT = BEHAVIOR_USAGE_ELEMENT_FEATURE_COUNT + 32;
+  int SATISFY_REQUIREMENT_USAGE_FEATURE_COUNT = BEHAVIOR_USAGE_ELEMENTS_FEATURE_COUNT + 32;
 
   /**
    * The meta object id for the '{@link dut.control.sysmloc.sysMLOC.impl.AliasElementImpl <em>Alias Element</em>}' class.
@@ -18009,7 +18009,7 @@ public interface SysMLOCPackage extends EPackage
   int SUBJECT_USAGE__IS_DEFAULT = CASE_BODY_ELEMENT_FEATURE_COUNT + 14;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -18190,7 +18190,7 @@ public interface SysMLOCPackage extends EPackage
   int REQUIREMENT_CONSTRAINT_USAGE__IS_DEFAULT = REQUIREMENT_NODE_ELEMENTS_FEATURE_COUNT + 15;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -18389,7 +18389,7 @@ public interface SysMLOCPackage extends EPackage
   int FRAMED_CONCERN_USAGE__IS_DEFAULT = REQUIREMENT_NODE_ELEMENTS_FEATURE_COUNT + 15;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -18579,7 +18579,7 @@ public interface SysMLOCPackage extends EPackage
   int REQUIREMENT_VERIFICATION_USAGE__IS_DEFAULT = REQUIREMENT_NODE_ELEMENTS_FEATURE_COUNT + 15;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -18760,7 +18760,7 @@ public interface SysMLOCPackage extends EPackage
   int ACTOR_USAGE__IS_DEFAULT = CASE_BODY_ELEMENT_FEATURE_COUNT + 14;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -18932,7 +18932,7 @@ public interface SysMLOCPackage extends EPackage
   int STAKEHOLDER_USAGE__IS_DEFAULT = REQUIREMENT_NODE_ELEMENTS_FEATURE_COUNT + 14;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -19104,7 +19104,7 @@ public interface SysMLOCPackage extends EPackage
   int OBJECTIVE_REQUIREMENT_USAGE__IS_DEFAULT = CASE_BODY_ELEMENT_FEATURE_COUNT + 14;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -19285,7 +19285,7 @@ public interface SysMLOCPackage extends EPackage
   int VIEW_RENDERING_USAGE__IS_DEFAULT = VIEW_DEFINITION_BODY_ELEMENT_FEATURE_COUNT + 15;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -19986,7 +19986,7 @@ public interface SysMLOCPackage extends EPackage
   int PAYLOAD_FEATURE__IS_DEFAULT = IDENTIFICATION_FEATURE_COUNT + 9;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -20131,7 +20131,7 @@ public interface SysMLOCPackage extends EPackage
   int PAYLOAD_PARAMETER__IS_DEFAULT = PAYLOAD_FEATURE__IS_DEFAULT;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -20560,7 +20560,7 @@ public interface SysMLOCPackage extends EPackage
   int PERFORM_ACTION_USAGE_DECLARATION__IS_DEFAULT = FEATURE_SPECIALIZATION_PART_FEATURE_COUNT + 3;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -20705,7 +20705,7 @@ public interface SysMLOCPackage extends EPackage
   int PERFORMED_ACTION_USAGE__IS_DEFAULT = PERFORM_ACTION_USAGE_DECLARATION__IS_DEFAULT;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -20913,7 +20913,7 @@ public interface SysMLOCPackage extends EPackage
   int ITEM_FEATURE_PARAMETER__IS_DEFAULT = PAYLOAD_FEATURE__IS_DEFAULT;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -21262,7 +21262,7 @@ public interface SysMLOCPackage extends EPackage
   int FEATURE_VALUE__IS_DEFAULT = 1;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -21308,7 +21308,7 @@ public interface SysMLOCPackage extends EPackage
   int VALUE_PART__IS_DEFAULT = FEATURE_VALUE__IS_DEFAULT;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -22131,7 +22131,7 @@ public interface SysMLOCPackage extends EPackage
   int ACTION_USAGE_DECLARATION__IS_DEFAULT = USAGE_DECLARATION_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -22267,7 +22267,7 @@ public interface SysMLOCPackage extends EPackage
   int CONSTRAINT_USAGE_DECLARATION__IS_DEFAULT = USAGE_DECLARATION_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -22512,7 +22512,7 @@ public interface SysMLOCPackage extends EPackage
   int USAGE__IS_DEFAULT = USAGE_DECLARATION_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -23754,7 +23754,7 @@ public interface SysMLOCPackage extends EPackage
   int ACCEPT_ACTION_USAGE__IS_DEFAULT = PERFORMED_ACTION_USAGE__IS_DEFAULT;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -23962,7 +23962,7 @@ public interface SysMLOCPackage extends EPackage
   int SEND_ACTION_USAGE__IS_DEFAULT = PERFORMED_ACTION_USAGE__IS_DEFAULT;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -24170,7 +24170,7 @@ public interface SysMLOCPackage extends EPackage
   int ASSIGNMENT_ACTION_USAGE__IS_DEFAULT = PERFORMED_ACTION_USAGE__IS_DEFAULT;
 
   /**
-   * The feature id for the '<em><b>Value Part</b></em>' attribute list.
+   * The feature id for the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -24512,24 +24512,24 @@ public interface SysMLOCPackage extends EPackage
   EClass getAnnotatingElement();
 
   /**
-   * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.DefinitionElement <em>Definition Element</em>}'.
+   * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.DefinitionElements <em>Definition Elements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Definition Element</em>'.
-   * @see dut.control.sysmloc.sysMLOC.DefinitionElement
+   * @return the meta object for class '<em>Definition Elements</em>'.
+   * @see dut.control.sysmloc.sysMLOC.DefinitionElements
    * @generated
    */
-  EClass getDefinitionElement();
+  EClass getDefinitionElements();
 
   /**
-   * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.UsageElement <em>Usage Element</em>}'.
+   * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.UsageElements <em>Usage Elements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Usage Element</em>'.
-   * @see dut.control.sysmloc.sysMLOC.UsageElement
+   * @return the meta object for class '<em>Usage Elements</em>'.
+   * @see dut.control.sysmloc.sysMLOC.UsageElements
    * @generated
    */
-  EClass getUsageElement();
+  EClass getUsageElements();
 
   /**
    * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.NonOccurrenceUsageElement <em>Non Occurrence Usage Element</em>}'.
@@ -24552,24 +24552,24 @@ public interface SysMLOCPackage extends EPackage
   EClass getOccurrenceUsageElement();
 
   /**
-   * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.StructureUsageElement <em>Structure Usage Element</em>}'.
+   * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.StructureUsageElements <em>Structure Usage Elements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Structure Usage Element</em>'.
-   * @see dut.control.sysmloc.sysMLOC.StructureUsageElement
+   * @return the meta object for class '<em>Structure Usage Elements</em>'.
+   * @see dut.control.sysmloc.sysMLOC.StructureUsageElements
    * @generated
    */
-  EClass getStructureUsageElement();
+  EClass getStructureUsageElements();
 
   /**
-   * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.BehaviorUsageElement <em>Behavior Usage Element</em>}'.
+   * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.BehaviorUsageElements <em>Behavior Usage Elements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Behavior Usage Element</em>'.
-   * @see dut.control.sysmloc.sysMLOC.BehaviorUsageElement
+   * @return the meta object for class '<em>Behavior Usage Elements</em>'.
+   * @see dut.control.sysmloc.sysMLOC.BehaviorUsageElements
    * @generated
    */
-  EClass getBehaviorUsageElement();
+  EClass getBehaviorUsageElements();
 
   /**
    * Returns the meta object for class '{@link dut.control.sysmloc.sysMLOC.ActionNodeElements <em>Action Node Elements</em>}'.
@@ -28306,10 +28306,10 @@ public interface SysMLOCPackage extends EPackage
   EAttribute getFeatureValue_IsDefault();
 
   /**
-   * Returns the meta object for the attribute list '{@link dut.control.sysmloc.sysMLOC.FeatureValue#getValuePart <em>Value Part</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.sysmloc.sysMLOC.FeatureValue#getValuePart <em>Value Part</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Value Part</em>'.
+   * @return the meta object for the attribute '<em>Value Part</em>'.
    * @see dut.control.sysmloc.sysMLOC.FeatureValue#getValuePart()
    * @see #getFeatureValue()
    * @generated

@@ -119,25 +119,20 @@
       </elements>
       <elements xsi:type="sysMLOC:ConstraintUsage" declaredName="pwr">
         <typings>PowerEquation</typings>
-        <elements xsi:type="sysMLOC:AttributeUsage">
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="StraightLineVehicleDynamics::whlpwr">
           <redefinitions>whlpwr</redefinitions>
-          <valuePart>StraightLineVehicleDynamics::whlpwr</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:AttributeUsage">
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="StraightLineVehicleDynamics::Cd">
           <redefinitions>Cd</redefinitions>
-          <valuePart>StraightLineVehicleDynamics::Cd</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:AttributeUsage">
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="StraightLineVehicleDynamics::Cf">
           <redefinitions>Cf</redefinitions>
-          <valuePart>StraightLineVehicleDynamics::Cf</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:AttributeUsage">
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="StraightLineVehicleDynamics::tw">
           <redefinitions>tw</redefinitions>
-          <valuePart>StraightLineVehicleDynamics::tw</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:AttributeUsage">
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="vel.v">
           <redefinitions>v</redefinitions>
-          <valuePart>vel.v</valuePart>
         </elements>
         <elements xsi:type="sysMLOC:AttributeUsage">
           <redefinitions>tp</redefinitions>
@@ -145,51 +140,41 @@
       </elements>
       <elements xsi:type="sysMLOC:ConstraintUsage" declaredName="acc">
         <typings>AccelerationEquation</typings>
-        <elements xsi:type="sysMLOC:AttributeUsage">
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="pwr.tp">
           <redefinitions>tp</redefinitions>
-          <valuePart>pwr.tp</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:AttributeUsage">
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="StraightLineVehicleDynamics::tw">
           <redefinitions>tw</redefinitions>
-          <valuePart>StraightLineVehicleDynamics::tw</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:AttributeUsage">
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="StraightLineVehicleDynamics::dt">
           <redefinitions>dt</redefinitions>
-          <valuePart>StraightLineVehicleDynamics::dt</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:AttributeUsage">
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="StraightLineVehicleDynamics::a">
           <redefinitions>a</redefinitions>
-          <valuePart>StraightLineVehicleDynamics::a</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:ConstraintUsage" declaredName="vel">
         <typings>VelocityEquation</typings>
-        <elements xsi:type="sysMLOC:AttributeUsage">
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="acc.a">
           <redefinitions>a</redefinitions>
-          <valuePart>acc.a</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:AttributeUsage">
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="StraightLineVehicleDynamics::v">
           <redefinitions>v</redefinitions>
-          <valuePart>StraightLineVehicleDynamics::v</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:AttributeUsage">
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="StraightLineVehicleDynamics::dt">
           <redefinitions>dt</redefinitions>
-          <valuePart>StraightLineVehicleDynamics::dt</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:ConstraintUsage" declaredName="pos">
         <typings>PositionEquation</typings>
-        <elements xsi:type="sysMLOC:AttributeUsage">
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="vel.v">
           <redefinitions>v</redefinitions>
-          <valuePart>vel.v</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:AttributeUsage">
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="StraightLineVehicleDynamics::x">
           <redefinitions>x</redefinitions>
-          <valuePart>StraightLineVehicleDynamics::x</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:AttributeUsage">
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="StraightLineVehicleDynamics::dt">
           <redefinitions>dt</redefinitions>
-          <valuePart>StraightLineVehicleDynamics::dt</valuePart>
         </elements>
       </elements>
     </elements>

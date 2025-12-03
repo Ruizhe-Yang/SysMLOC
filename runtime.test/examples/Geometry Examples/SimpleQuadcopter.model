@@ -17,13 +17,11 @@
       <elements xsi:type="sysMLOC:ItemUsage">
         <typings>Cylinder</typings>
         <redefinitions>shape</redefinitions>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="18 [mm]">
           <redefinitions>radius</redefinitions>
-          <valuePart>18 [mm]</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="30 [mm]">
           <redefinitions>height</redefinitions>
-          <valuePart>30 [mm]</valuePart>
         </elements>
       </elements>
     </elements>
@@ -37,17 +35,14 @@
         <elements xsi:type="sysMLOC:ItemUsage">
           <typings>Box</typings>
           <redefinitions>shape</redefinitions>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="160 [mm]">
             <redefinitions>length</redefinitions>
-            <valuePart>160 [mm]</valuePart>
           </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="15 [mm]">
             <redefinitions>width</redefinitions>
-            <valuePart>15 [mm]</valuePart>
           </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="8 [mm]">
             <redefinitions>height</redefinitions>
-            <valuePart>8 [mm]</valuePart>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:AttributeUsage">
@@ -55,9 +50,8 @@
           <elements xsi:type="sysMLOC:DefaultReferenceUsage">
             <typings>TranslationRotationSequence</typings>
             <redefinitions>transformation</redefinitions>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(Translation( (0, shape.width/2, 0)[source]))">
               <redefinitions>elements</redefinitions>
-              <valuePart>(Translation( (0, shape.width/2, 0)[source]))</valuePart>
             </elements>
           </elements>
         </elements>
@@ -65,18 +59,16 @@
       <elements xsi:type="sysMLOC:Comment" body="/* motorCutout is a construction shape: a cylinder of the same shape as the  */"/>
       <elements xsi:type="sysMLOC:PartUsage" declaredName="motorCutout">
         <typings>SpatialItem</typings>
-        <elements xsi:type="sysMLOC:ItemUsage">
+        <elements xsi:type="sysMLOC:ItemUsage" valuePart="motorShape.shape">
           <redefinitions>shape</redefinitions>
-          <valuePart>motorShape.shape</valuePart>
         </elements>
         <elements xsi:type="sysMLOC:AttributeUsage">
           <redefinitions>coordinateFrame</redefinitions>
           <elements xsi:type="sysMLOC:DefaultReferenceUsage">
             <typings>TranslationRotationSequence</typings>
             <redefinitions>transformation</redefinitions>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(Translation( (175, 0, -1)[source]))">
               <redefinitions>elements</redefinitions>
-              <valuePart>(Translation( (175, 0, -1)[source]))</valuePart>
             </elements>
           </elements>
         </elements>
@@ -85,9 +77,8 @@
       <elements xsi:type="sysMLOC:AttributeUsage">
         <subsetting>differencesOf</subsetting>
         <Multiplicity>1</Multiplicity>
-        <elements xsi:type="sysMLOC:ItemUsage">
+        <elements xsi:type="sysMLOC:ItemUsage" valuePart="(rawStrut, motorCutout)">
           <redefinitions>elements</redefinitions>
-          <valuePart>(rawStrut, motorCutout)</valuePart>
         </elements>
       </elements>
     </elements>
@@ -101,13 +92,11 @@
           <typings>Cylinder</typings>
           <redefinitions>shape</redefinitions>
           <elements xsi:type="sysMLOC:Documentation" body="/* propeller stay-out volume, without propeller shaft */"/>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="80 [mm]">
             <redefinitions>radius</redefinitions>
-            <valuePart>80 [mm]</valuePart>
           </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="6 [mm]">
             <redefinitions>height</redefinitions>
-            <valuePart>6 [mm]</valuePart>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:AttributeUsage">
@@ -115,27 +104,24 @@
           <elements xsi:type="sysMLOC:DefaultReferenceUsage">
             <typings>TranslationRotationSequence</typings>
             <redefinitions>transformation</redefinitions>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(Translation( (175, 0, 31)[source]))">
               <redefinitions>elements</redefinitions>
-              <valuePart>(Translation( (175, 0, 31)[source]))</valuePart>
             </elements>
           </elements>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:PartUsage" declaredName="motor">
         <typings>SpatialItem</typings>
-        <elements xsi:type="sysMLOC:ItemUsage">
+        <elements xsi:type="sysMLOC:ItemUsage" valuePart="motorShape.shape">
           <redefinitions>shape</redefinitions>
-          <valuePart>motorShape.shape</valuePart>
         </elements>
         <elements xsi:type="sysMLOC:AttributeUsage">
           <redefinitions>coordinateFrame</redefinitions>
           <elements xsi:type="sysMLOC:DefaultReferenceUsage">
             <typings>TranslationRotationSequence</typings>
             <redefinitions>transformation</redefinitions>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(Translation( (175, 0, 0)[source]))">
               <redefinitions>elements</redefinitions>
-              <valuePart>(Translation( (175, 0, 0)[source]))</valuePart>
             </elements>
           </elements>
         </elements>
@@ -151,13 +137,11 @@
         <elements xsi:type="sysMLOC:ItemUsage">
           <typings>Cylinder</typings>
           <redefinitions>shape</redefinitions>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="15 [mm]">
             <redefinitions>radius</redefinitions>
-            <valuePart>15 [mm]</valuePart>
           </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="24 [mm]">
             <redefinitions>height</redefinitions>
-            <valuePart>24 [mm]</valuePart>
           </elements>
         </elements>
       </elements>
@@ -168,13 +152,11 @@
         <elements xsi:type="sysMLOC:ItemUsage">
           <typings>Cone</typings>
           <redefinitions>shape</redefinitions>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="height * tan(20 * pi/180) [mm]">
             <redefinitions>radius</redefinitions>
-            <valuePart>height * tan(20 * pi/180) [mm]</valuePart>
           </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="500 [mm]">
             <redefinitions>height</redefinitions>
-            <valuePart>500 [mm]</valuePart>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:AttributeUsage">
@@ -182,9 +164,8 @@
           <elements xsi:type="sysMLOC:DefaultReferenceUsage">
             <typings>TranslationRotationSequence</typings>
             <redefinitions>transformation</redefinitions>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(Rotation( (0, 1, 0)[source], 180['&#xb0;']))">
               <redefinitions>elements</redefinitions>
-              <valuePart>(Rotation( (0, 1, 0)[source], 180['&#xb0;']))</valuePart>
             </elements>
           </elements>
         </elements>
@@ -196,9 +177,8 @@
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="datum">
         <redefinitions>coordinateFrame</redefinitions>
         <elements xsi:type="sysMLOC:Documentation" body="/* The datum is the top level coordinate frame of the system-of-interest, i.e., the quadcopter.&#xD;&#xA;                 * By convention its origin is placed at the bottom of the mainBody with the +X axis pointing in the &#xD;&#xA;                 * forward fligth (velocity) direction and the +Z axis pointing upward. The +Y axis completes the &#xD;&#xA;                 * right-handed Cartesian coordinate system.&#xD;&#xA;                 */"/>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(mm, mm, mm)">
           <redefinitions>mRefs</redefinitions>
-          <valuePart>(mm, mm, mm)</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:PartUsage" declaredName="mainBody">
@@ -209,17 +189,14 @@
           <elements xsi:type="sysMLOC:ItemUsage">
             <typings>Box</typings>
             <redefinitions>shape</redefinitions>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="160 [mm]">
               <redefinitions>length</redefinitions>
-              <valuePart>160 [mm]</valuePart>
             </elements>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="15 [mm]">
               <redefinitions>width</redefinitions>
-              <valuePart>15 [mm]</valuePart>
             </elements>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="8 [mm]">
               <redefinitions>height</redefinitions>
-              <valuePart>8 [mm]</valuePart>
             </elements>
           </elements>
           <elements xsi:type="sysMLOC:AttributeUsage">
@@ -227,9 +204,8 @@
             <elements xsi:type="sysMLOC:DefaultReferenceUsage">
               <typings>TranslationRotationSequence</typings>
               <redefinitions>transformation</redefinitions>
-              <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+              <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(Translation( (0, shape.width/2, 0)[source]))">
                 <redefinitions>elements</redefinitions>
-                <valuePart>(Translation( (0, shape.width/2, 0)[source]))</valuePart>
               </elements>
             </elements>
           </elements>
@@ -240,17 +216,14 @@
           <elements xsi:type="sysMLOC:ItemUsage">
             <typings>Box</typings>
             <redefinitions>shape</redefinitions>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="105 [mm]">
               <redefinitions>length</redefinitions>
-              <valuePart>105 [mm]</valuePart>
             </elements>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="105 [mm]">
               <redefinitions>width</redefinitions>
-              <valuePart>105 [mm]</valuePart>
             </elements>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="60 [mm]">
               <redefinitions>height</redefinitions>
-              <valuePart>60 [mm]</valuePart>
             </elements>
           </elements>
           <elements xsi:type="sysMLOC:AttributeUsage">
@@ -258,9 +231,8 @@
             <elements xsi:type="sysMLOC:DefaultReferenceUsage">
               <typings>TranslationRotationSequence</typings>
               <redefinitions>transformation</redefinitions>
-              <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+              <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(Translation( (0, -shape.length/sqrt(2), -10)[source]), Rotation((0, 0, 1)[source], 45['&#xb0;']) )">
                 <redefinitions>elements</redefinitions>
-                <valuePart>(Translation( (0, -shape.length/sqrt(2), -10)[source]), Rotation((0, 0, 1)[source], 45['&#xb0;']) )</valuePart>
               </elements>
             </elements>
           </elements>
@@ -269,9 +241,8 @@
         <elements xsi:type="sysMLOC:AttributeUsage">
           <subsetting>intersectionsOf</subsetting>
           <Multiplicity>1</Multiplicity>
-          <elements xsi:type="sysMLOC:ItemUsage">
+          <elements xsi:type="sysMLOC:ItemUsage" valuePart="(rawBody, cuttingCornersBox)">
             <redefinitions>elements</redefinitions>
-            <valuePart>(rawBody, cuttingCornersBox)</valuePart>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:CodeAnnotation" body="// Current syntax is not end-user friendly&#xD;&#xA;"/>
@@ -279,21 +250,17 @@
         <elements xsi:type="sysMLOC:CodeAnnotation" body="// item :>> shape = rawBody &amp; cuttingCornersBox;&#xD;&#xA;"/>
       </elements>
       <elements xsi:type="sysMLOC:CodeAnnotation" body="// Helper construction parameters&#xD;&#xA;"/>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="xStrut">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="xStrut" valuePart="49.60[mm]">
         <typings>LengthValue</typings>
-        <valuePart>49.60[mm]</valuePart>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="yStrut">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="yStrut" valuePart="24.65[mm]">
         <typings>LengthValue</typings>
-        <valuePart>24.65[mm]</valuePart>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="zStrut">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="zStrut" valuePart="25[mm]">
         <typings>LengthValue</typings>
-        <valuePart>25[mm]</valuePart>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="zPMAssy">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="zPMAssy" valuePart="12[mm]">
         <typings>LengthValue</typings>
-        <valuePart>12[mm]</valuePart>
       </elements>
       <elements xsi:type="sysMLOC:PartUsage" declaredName="strut1">
         <typings>Strut</typings>
@@ -302,9 +269,8 @@
           <elements xsi:type="sysMLOC:DefaultReferenceUsage">
             <typings>TranslationRotationSequence</typings>
             <redefinitions>transformation</redefinitions>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(Translation( (xStrut.num, yStrut.num, zStrut.num)[source]), Rotation((0, 0, 1)[source], 45['&#xb0;']) )">
               <redefinitions>elements</redefinitions>
-              <valuePart>(Translation( (xStrut.num, yStrut.num, zStrut.num)[source]), Rotation((0, 0, 1)[source], 45['&#xb0;']) )</valuePart>
             </elements>
           </elements>
         </elements>
@@ -316,9 +282,8 @@
           <elements xsi:type="sysMLOC:DefaultReferenceUsage">
             <typings>TranslationRotationSequence</typings>
             <redefinitions>transformation</redefinitions>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(Translation( (-xStrut.num, yStrut.num, zStrut.num)[source]), Rotation((0, 0, 1)[source], 135['&#xb0;']) )">
               <redefinitions>elements</redefinitions>
-              <valuePart>(Translation( (-xStrut.num, yStrut.num, zStrut.num)[source]), Rotation((0, 0, 1)[source], 135['&#xb0;']) )</valuePart>
             </elements>
           </elements>
         </elements>
@@ -330,9 +295,8 @@
           <elements xsi:type="sysMLOC:DefaultReferenceUsage">
             <typings>TranslationRotationSequence</typings>
             <redefinitions>transformation</redefinitions>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(Translation( (-xStrut.num, -yStrut.num, zStrut.num)[source]), Rotation((0, 0, 1)[source], 225['&#xb0;']) )">
               <redefinitions>elements</redefinitions>
-              <valuePart>(Translation( (-xStrut.num, -yStrut.num, zStrut.num)[source]), Rotation((0, 0, 1)[source], 225['&#xb0;']) )</valuePart>
             </elements>
           </elements>
         </elements>
@@ -344,9 +308,8 @@
           <elements xsi:type="sysMLOC:DefaultReferenceUsage">
             <typings>TranslationRotationSequence</typings>
             <redefinitions>transformation</redefinitions>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(Translation( (xStrut.num, -yStrut.num, zStrut.num)[source]), Rotation((0, 0, 1)[source], 315['&#xb0;']) )">
               <redefinitions>elements</redefinitions>
-              <valuePart>(Translation( (xStrut.num, -yStrut.num, zStrut.num)[source]), Rotation((0, 0, 1)[source], 315['&#xb0;']) )</valuePart>
             </elements>
           </elements>
         </elements>
@@ -358,9 +321,8 @@
           <elements xsi:type="sysMLOC:DefaultReferenceUsage">
             <typings>TranslationRotationSequence</typings>
             <redefinitions>transformation</redefinitions>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(Translation( (xStrut.num, yStrut.num, zPMAssy.num)[source]), Rotation((0, 0, 1)[source], 45['&#xb0;']) )">
               <redefinitions>elements</redefinitions>
-              <valuePart>(Translation( (xStrut.num, yStrut.num, zPMAssy.num)[source]), Rotation((0, 0, 1)[source], 45['&#xb0;']) )</valuePart>
             </elements>
           </elements>
         </elements>
@@ -372,9 +334,8 @@
           <elements xsi:type="sysMLOC:DefaultReferenceUsage">
             <typings>TranslationRotationSequence</typings>
             <redefinitions>transformation</redefinitions>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(Translation( (-xStrut.num, yStrut.num, zPMAssy.num)[source]), Rotation((0, 0, 1)[source], 135['&#xb0;']) )">
               <redefinitions>elements</redefinitions>
-              <valuePart>(Translation( (-xStrut.num, yStrut.num, zPMAssy.num)[source]), Rotation((0, 0, 1)[source], 135['&#xb0;']) )</valuePart>
             </elements>
           </elements>
         </elements>
@@ -386,9 +347,8 @@
           <elements xsi:type="sysMLOC:DefaultReferenceUsage">
             <typings>TranslationRotationSequence</typings>
             <redefinitions>transformation</redefinitions>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(Translation( (-xStrut.num, -yStrut.num, zPMAssy.num)[source]), Rotation((0, 0, 1)[source], 225['&#xb0;']) )">
               <redefinitions>elements</redefinitions>
-              <valuePart>(Translation( (-xStrut.num, -yStrut.num, zPMAssy.num)[source]), Rotation((0, 0, 1)[source], 225['&#xb0;']) )</valuePart>
             </elements>
           </elements>
         </elements>
@@ -400,9 +360,8 @@
           <elements xsi:type="sysMLOC:DefaultReferenceUsage">
             <typings>TranslationRotationSequence</typings>
             <redefinitions>transformation</redefinitions>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(Translation( (xStrut.num, -yStrut.num, zPMAssy.num)[source]), Rotation((0, 0, 1)[source], 315['&#xb0;']) )">
               <redefinitions>elements</redefinitions>
-              <valuePart>(Translation( (xStrut.num, -yStrut.num, zPMAssy.num)[source]), Rotation((0, 0, 1)[source], 315['&#xb0;']) )</valuePart>
             </elements>
           </elements>
         </elements>
@@ -415,9 +374,8 @@
           <elements xsi:type="sysMLOC:DefaultReferenceUsage">
             <typings>TranslationRotationSequence</typings>
             <redefinitions>transformation</redefinitions>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(Translation( (59, 0, 2)[source]), Rotation((0, 1, 0)[source], 50['&#xb0;']) )">
               <redefinitions>elements</redefinitions>
-              <valuePart>(Translation( (59, 0, 2)[source]), Rotation((0, 1, 0)[source], 50['&#xb0;']) )</valuePart>
             </elements>
           </elements>
         </elements>

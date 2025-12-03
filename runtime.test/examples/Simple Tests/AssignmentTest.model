@@ -2,9 +2,8 @@
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
   <elements xsi:type="sysMLOC:Package" declaredName="AssignmentTest">
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Counter">
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="count" isInitial="true">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="count" isInitial="true" valuePart="0">
         <typings>ScalarValues::Integer</typings>
-        <valuePart>0</valuePart>
       </elements>
       <elements xsi:type="sysMLOC:ActionUsage" declaredName="incr">
         <elements xsi:type="sysMLOC:AssignmentNode" featureChain="count" NodeParameter="count + 1"/>

@@ -19,9 +19,8 @@
       <elements xsi:type="sysMLOC:PartUsage" declaredName="trans">
         <typings>VehiclePart</typings>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="ms.totalMass">
         <references>m</references>
-        <valuePart>ms.totalMass</valuePart>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="MassSum">
@@ -30,29 +29,23 @@
         <Multiplicity>0</Multiplicity>
         <Multiplicity>*</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="totalMass">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="totalMass" valuePart="sum(partMasses)">
         <typings>MassValue</typings>
-        <valuePart>sum(partMasses)</valuePart>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationUsage" declaredName="ms">
       <typings>MassSum</typings>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="partMasses">
-        <valuePart>(vehicle.eng.m, vehicle.trans.m)</valuePart>
-      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="partMasses" valuePart="(vehicle.eng.m, vehicle.trans.m)"/>
       <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="totalMass"/>
     </elements>
-    <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicles">
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicles" valuePart="(vehicle, vehicle)">
       <Multiplicity>*</Multiplicity>
-      <valuePart>(vehicle, vehicle)</valuePart>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="masses1">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="masses1" valuePart="(vehicles as VehiclePart).m">
       <Multiplicity>*</Multiplicity>
-      <valuePart>(vehicles as VehiclePart).m</valuePart>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="masses2">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="masses2" valuePart="(vehicles as vehicle).m">
       <Multiplicity>*</Multiplicity>
-      <valuePart>(vehicles as vehicle).m</valuePart>
     </elements>
   </elements>
 </sysMLOC:Namespace>

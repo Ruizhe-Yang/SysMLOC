@@ -24,12 +24,10 @@
               <typings>Transmission</typings>
               <elements xsi:type="sysMLOC:Comment" body="/* Note: A part can be treated as an item. */"/>
             </elements>
-            <elements xsi:type="sysMLOC:ItemUsage" direction="out" declaredName="'vehicle assy without engine'">
+            <elements xsi:type="sysMLOC:ItemUsage" direction="out" declaredName="'vehicle assy without engine'" valuePart="'vehicle assy without transmission or engine'">
               <typings>VehicleAssembly</typings>
-              <valuePart>'vehicle assy without transmission or engine'</valuePart>
-              <elements xsi:type="sysMLOC:PartUsage" declaredName="transmission">
+              <elements xsi:type="sysMLOC:PartUsage" declaredName="transmission" valuePart="'assemble transmission into vehicle'.transmission">
                 <typings>Transmission</typings>
-                <valuePart>'assemble transmission into vehicle'.transmission</valuePart>
                 <elements xsi:type="sysMLOC:Comment" body="/* Note: An item can become a part of something else. */"/>
               </elements>
             </elements>
@@ -48,12 +46,10 @@
             <elements xsi:type="sysMLOC:ItemUsage" direction="in" declaredName="engine">
               <typings>Engine</typings>
             </elements>
-            <elements xsi:type="sysMLOC:ItemUsage" direction="out" declaredName="assembledVehicle">
+            <elements xsi:type="sysMLOC:ItemUsage" direction="out" declaredName="assembledVehicle" valuePart="'vehicle assy without engine'">
               <typings>AssembledVehicle</typings>
-              <valuePart>'vehicle assy without engine'</valuePart>
-              <elements xsi:type="sysMLOC:PartUsage" declaredName="engine">
+              <elements xsi:type="sysMLOC:PartUsage" declaredName="engine" valuePart="'assemble engine into vehicle'.engine">
                 <typings>Engine</typings>
-                <valuePart>'assemble engine into vehicle'.engine</valuePart>
               </elements>
             </elements>
           </elements>

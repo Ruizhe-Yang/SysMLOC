@@ -12,20 +12,15 @@
     </elements>
     <elements xsi:type="sysMLOC:MetadataUsage" declaredName="engineSelectionRationale" metadataTyping="Rationale">
       <annotatedElement>engine4cyl</annotatedElement>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="text">
-        <valuePart>&quot;This rationale for selecting the engine4cyl refers to the engineTradeOffAnalysis.&quot;</valuePart>
-      </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="explanation">
-        <valuePart>engineTradeOffAnalysis</valuePart>
-      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="text" valuePart="&quot;This rationale for selecting the engine4cyl refers to the engineTradeOffAnalysis.&quot;"/>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="explanation" valuePart="engineTradeOffAnalysis"/>
     </elements>
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="TradeStudies" isNamespace="true"/>
     <elements xsi:type="sysMLOC:AnalysisCaseUsage" declaredName="engineTradeOffAnalysis">
       <typings>TradeStudy</typings>
-      <elements xsi:type="sysMLOC:SubjectUsage" declaredName="alternatives">
+      <elements xsi:type="sysMLOC:SubjectUsage" declaredName="alternatives" valuePart="(engine4cyl, engine6cyl)">
         <subsetting>engine</subsetting>
         <Multiplicity>2</Multiplicity>
-        <valuePart>(engine4cyl, engine6cyl)</valuePart>
       </elements>
       <elements xsi:type="sysMLOC:Comment" body="/* ... */"/>
       <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="selectedEngine">

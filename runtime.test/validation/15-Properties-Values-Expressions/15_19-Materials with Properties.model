@@ -13,44 +13,37 @@
       <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
         <typings>QuantityPowerFactor</typings>
         <Multiplicity>1</Multiplicity>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
-          <valuePart>isq.L</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
           <redefinitions>exponent</redefinitions>
-          <valuePart>-1</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
         <typings>QuantityPowerFactor</typings>
         <Multiplicity>1</Multiplicity>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
-          <valuePart>isq.M</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
           <redefinitions>exponent</redefinitions>
-          <valuePart>1</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
         <typings>QuantityPowerFactor</typings>
         <Multiplicity>1</Multiplicity>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
-          <valuePart>isq.T</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-2">
           <redefinitions>exponent</redefinitions>
-          <valuePart>-2</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:AttributeUsage">
         <redefinitions>quantityDimension</redefinitions>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, massPF, durationPF)">
           <redefinitions>quantityPowerFactors</redefinitions>
-          <valuePart>(lengthPF, massPF, durationPF)</valuePart>
         </elements>
       </elements>
     </elements>
@@ -65,9 +58,8 @@
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'N/mm&#xb2;'" declaredName="'newton per square millimetre'">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'N/mm&#xb2;'" declaredName="'newton per square millimetre'" valuePart="N / mm^2">
       <typings>TensileStrengthUnit</typings>
-      <valuePart>N / mm^2</valuePart>
     </elements>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Substance"/>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Material">
@@ -104,23 +96,20 @@
     </elements>
     <elements xsi:type="sysMLOC:IndividualDefinition" declaredName="Iron" isIndividual="true">
       <superclassifiers>Metal</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="55.845 [Da]">
         <redefinitions>atomicMass</redefinitions>
-        <valuePart>55.845 [Da]</valuePart>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:IndividualDefinition" declaredName="Carbon" isIndividual="true">
       <superclassifiers>Metal</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="atomicMass">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="atomicMass" valuePart="12.011[Da]">
         <redefinitions>Metal::atomicMass</redefinitions>
-        <valuePart>12.011[Da]</valuePart>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:IndividualDefinition" declaredName="Manganese" isIndividual="true">
       <superclassifiers>Metal</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="atomicMass">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="atomicMass" valuePart="54.938[Da]">
         <redefinitions>Metal::atomicMass</redefinitions>
-        <valuePart>54.938[Da]</valuePart>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:IndividualDefinition" declaredName="Steel_980" isIndividual="true">
@@ -132,9 +121,8 @@
           <typings>Iron</typings>
           <redefinitions>material</redefinitions>
         </elements>
-        <elements xsi:type="sysMLOC:AttributeUsage">
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="0.9862[one]">
           <redefinitions>massFraction</redefinitions>
-          <valuePart>0.9862[one]</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="fraction2">
@@ -143,9 +131,8 @@
           <typings>Carbon</typings>
           <redefinitions>material</redefinitions>
         </elements>
-        <elements xsi:type="sysMLOC:AttributeUsage">
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="0.9862[one]">
           <redefinitions>massFraction</redefinitions>
-          <valuePart>0.9862[one]</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="fraction3">
@@ -154,14 +141,12 @@
           <typings>Manganese</typings>
           <redefinitions>material</redefinitions>
         </elements>
-        <elements xsi:type="sysMLOC:AttributeUsage">
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="0.9862[one]">
           <redefinitions>massFraction</redefinitions>
-          <valuePart>0.9862[one]</valuePart>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="tensileStrength">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="tensileStrength" valuePart="980['N/mm&#xb2;']">
         <typings>TensileStrengthValue</typings>
-        <valuePart>980['N/mm&#xb2;']</valuePart>
       </elements>
     </elements>
   </elements>

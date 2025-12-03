@@ -12,17 +12,14 @@
     <elements xsi:type="sysMLOC:ExtendedDefinition" declaredName="APISService">
       <prefixMetadataExtension>#service</prefixMetadataExtension>
       <elements xsi:type="sysMLOC:Documentation" body="/* Service design */"/>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="&quot;APISPullService&quot;">
         <redefinitions>serviceDefinition</redefinitions>
-        <valuePart>&quot;APISPullService&quot;</valuePart>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="&quot;{JSON}&quot;">
         <redefinitions>intrfce_protocol</redefinitions>
-        <valuePart>&quot;{JSON}&quot;</valuePart>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="&quot;pull&quot;">
         <redefinitions>serviceURL</redefinitions>
-        <valuePart>&quot;pull&quot;</valuePart>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:PortDefinition" declaredName="APIS_DD">
@@ -104,17 +101,14 @@
           <prefixMetadataExtension>#servicedd</prefixMetadataExtension>
           <typings>APIS_DD</typings>
         </elements>
-        <elements xsi:type="sysMLOC:AttributeUsage">
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="&quot;UngerApisClient&quot;">
           <redefinitions>systemname</redefinitions>
-          <valuePart>&quot;UngerApisClient&quot;</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:AttributeUsage">
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="&quot;Unger_network_ip&quot;">
           <redefinitions>address</redefinitions>
-          <valuePart>&quot;Unger_network_ip&quot;</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:AttributeUsage">
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="0">
           <redefinitions>portno</redefinitions>
-          <valuePart>0</valuePart>
         </elements>
         <elements xsi:type="sysMLOC:CodeAnnotation" body="// We want an operation call to GiveItems, and actually sending the payload&#xD;&#xA;"/>
         <elements xsi:type="sysMLOC:CodeAnnotation" body="// Call apisp::APIS_HTTP::giveItems(in allitems: String = &quot;All the items&quot;, out ackback:Boolean);&#xD;&#xA;"/>
@@ -152,17 +146,14 @@
           <typings>APIS_DD</typings>
         </elements>
         <elements xsi:type="sysMLOC:CodeAnnotation" body="// talking to APISConsumer&#xD;&#xA;"/>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;PrediktorApisServer&quot;">
           <redefinitions>systemname</redefinitions>
-          <valuePart>&quot;PrediktorApisServer&quot;</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;Prediktor_network_ip&quot;">
           <redefinitions>address</redefinitions>
-          <valuePart>&quot;Prediktor_network_ip&quot;</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="6565">
           <redefinitions>portno</redefinitions>
-          <valuePart>6565</valuePart>
         </elements>
         <elements xsi:type="sysMLOC:AttributeUsage" declaredName="x">
           <typings>Boolean</typings>
@@ -178,9 +169,7 @@
           <elements xsi:type="sysMLOC:Comment" body="/* Forward itms and return an ack */"/>
           <elements xsi:type="sysMLOC:InitialNode" memberElement="start"/>
           <elements xsi:type="sysMLOC:SendNode" isThen="true" sendNodeParameter="true" viaNodeParameter="apisc.APIS_MQTT"/>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="success">
-            <valuePart>true</valuePart>
-          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="success" valuePart="true"/>
           <elements xsi:type="sysMLOC:BindingConnectorAsUsage">
             <connectorPart refElement="ack"/>
             <connectorPart refElement="success"/>
@@ -202,12 +191,8 @@
             <transitionSuccessionElement refElement="WaitOnData"/>
             <elements xsi:type="sysMLOC:InitialNode" memberElement="start"/>
             <elements xsi:type="sysMLOC:ActionUsage" isThen="true" declaredName="giveItems">
-              <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="itms">
-                <valuePart>cl.itms</valuePart>
-              </elements>
-              <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="ack">
-                <valuePart>x</valuePart>
-              </elements>
+              <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="itms" valuePart="cl.itms"/>
+              <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="ack" valuePart="x"/>
             </elements>
             <elements xsi:type="sysMLOC:SendNode" isThen="true" sendNodeParameter="true" viaNodeParameter="tellu.APIS_HTTP"/>
           </elements>
@@ -224,17 +209,14 @@
           <prefixMetadataExtension>#servicedd</prefixMetadataExtension>
           <typings>~APIS_DD</typings>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;TellUClient&quot;">
           <redefinitions>systemname</redefinitions>
-          <valuePart>&quot;TellUClient&quot;</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;Prediktor_network_ip&quot;">
           <redefinitions>address</redefinitions>
-          <valuePart>&quot;Prediktor_network_ip&quot;</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
           <redefinitions>portno</redefinitions>
-          <valuePart>1</valuePart>
         </elements>
         <elements xsi:type="sysMLOC:CodeAnnotation" body="// Now sending signal to the remote behavior through the port functionality&#xD;&#xA;"/>
         <elements xsi:type="sysMLOC:StateUsage" declaredName="MQTT_APISP">

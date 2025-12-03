@@ -8,40 +8,31 @@
       <elements xsi:type="sysMLOC:InitialNode" memberElement="start"/>
       <elements xsi:type="sysMLOC:IncludeUseCaseUsage" isThen="true" declaredName="'enter vehicle'">
         <typings>'Enter Vehicle'</typings>
-        <elements xsi:type="sysMLOC:ActorUsage">
+        <elements xsi:type="sysMLOC:ActorUsage" valuePart="'provide transportation'::driver">
           <redefinitions>driver</redefinitions>
-          <valuePart>'provide transportation'::driver</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:ActorUsage">
+        <elements xsi:type="sysMLOC:ActorUsage" valuePart="'provide transportation'::passengers">
           <redefinitions>passengers</redefinitions>
-          <valuePart>'provide transportation'::passengers</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:UseCaseUsage" isThen="true" declaredName="'drive vehicle'">
-        <elements xsi:type="sysMLOC:ActorUsage" declaredName="driver">
-          <valuePart>'provide transportation'::driver</valuePart>
-        </elements>
-        <elements xsi:type="sysMLOC:ActorUsage" declaredName="environment">
-          <valuePart>'provide transportation'::environment</valuePart>
-        </elements>
+        <elements xsi:type="sysMLOC:ActorUsage" declaredName="driver" valuePart="'provide transportation'::driver"/>
+        <elements xsi:type="sysMLOC:ActorUsage" declaredName="environment" valuePart="'provide transportation'::environment"/>
         <elements xsi:type="sysMLOC:IncludeUseCaseUsage" refElement="'add fuel'">
           <Multiplicity>0</Multiplicity>
           <Multiplicity>*</Multiplicity>
-          <elements xsi:type="sysMLOC:ActorUsage">
+          <elements xsi:type="sysMLOC:ActorUsage" valuePart="driver">
             <redefinitions>fueler</redefinitions>
-            <valuePart>driver</valuePart>
           </elements>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:IncludeUseCaseUsage" isThen="true" declaredName="'exit vehicle'">
         <typings>'Exit Vehicle'</typings>
-        <elements xsi:type="sysMLOC:ActorUsage">
+        <elements xsi:type="sysMLOC:ActorUsage" valuePart="'provide transportation'::driver">
           <redefinitions>driver</redefinitions>
-          <valuePart>'provide transportation'::driver</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:ActorUsage">
+        <elements xsi:type="sysMLOC:ActorUsage" valuePart="'provide transportation'::passengers">
           <redefinitions>passengers</redefinitions>
-          <valuePart>'provide transportation'::passengers</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:ThenNode">

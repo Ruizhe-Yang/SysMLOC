@@ -6,18 +6,15 @@
       <elements xsi:type="sysMLOC:EnumerationDefinition" declaredName="ClassificationLevel">
         <prefixMetadataExtension>#Security</prefixMetadataExtension>
         <superclassifiers>ScalarValues::Natural</superclassifiers>
-        <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="uncl">
+        <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="uncl" valuePart="0">
           <typings>ClassificationLevel</typings>
-          <valuePart>0</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="conf">
+        <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="conf" valuePart="1">
           <typings>ClassificationLevel</typings>
-          <valuePart>1</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="secret">
+        <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="secret" valuePart="2">
           <prefixMetadataExtension>#Security</prefixMetadataExtension>
           <typings>ClassificationLevel</typings>
-          <valuePart>2</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="Classified">
@@ -33,16 +30,12 @@
     </elements>
     <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="x">
       <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="Classified">
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="classificationLevel">
-          <valuePart>ClassificationLevel::conf</valuePart>
-        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="classificationLevel" valuePart="ClassificationLevel::conf"/>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="y">
       <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="Classified">
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="classificationLevel">
-          <valuePart>ClassificationLevel::conf</valuePart>
-        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="classificationLevel" valuePart="ClassificationLevel::conf"/>
       </elements>
       <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="Security"/>
     </elements>
@@ -57,9 +50,7 @@
       <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="Classified">
         <prefixMetadataExtension>#Security</prefixMetadataExtension>
         <prefixMetadataExtension>#Classified</prefixMetadataExtension>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="classificationLevel">
-          <valuePart>ClassificationLevel::secret</valuePart>
-        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="classificationLevel" valuePart="ClassificationLevel::secret"/>
       </elements>
     </elements>
   </elements>

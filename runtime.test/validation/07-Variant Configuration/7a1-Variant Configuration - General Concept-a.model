@@ -96,36 +96,30 @@
     </elements>
     <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicleConfigA">
       <subsetting>anyVehicleConfig</subsetting>
-      <elements xsi:type="sysMLOC:PartUsage">
+      <elements xsi:type="sysMLOC:PartUsage" valuePart="subsystemA::subsystem1">
         <redefinitions>subsystemA</redefinitions>
-        <valuePart>subsystemA::subsystem1</valuePart>
       </elements>
-      <elements xsi:type="sysMLOC:PartUsage">
+      <elements xsi:type="sysMLOC:PartUsage" valuePart="subsystemB::subsystem3">
         <redefinitions>subsystemB</redefinitions>
-        <valuePart>subsystemB::subsystem3</valuePart>
         <elements xsi:type="sysMLOC:PartUsage">
           <redefinitions>part5</redefinitions>
-          <elements xsi:type="sysMLOC:PerformActionUsage">
+          <elements xsi:type="sysMLOC:PerformActionUsage" valuePart="doX">
             <redefinitions>doXorY</redefinitions>
-            <valuePart>doX</valuePart>
           </elements>
         </elements>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:PartUsage" declaredName="VehicleConfigB">
       <subsetting>anyVehicleConfig</subsetting>
-      <elements xsi:type="sysMLOC:PartUsage">
+      <elements xsi:type="sysMLOC:PartUsage" valuePart="subsystemA::subsystem2">
         <redefinitions>subsystemA</redefinitions>
-        <valuePart>subsystemA::subsystem2</valuePart>
       </elements>
-      <elements xsi:type="sysMLOC:PartUsage">
+      <elements xsi:type="sysMLOC:PartUsage" valuePart="subsystemB::subsystem4">
         <redefinitions>subsystemB</redefinitions>
-        <valuePart>subsystemB::subsystem4</valuePart>
         <elements xsi:type="sysMLOC:PartUsage">
           <redefinitions>part5</redefinitions>
-          <elements xsi:type="sysMLOC:PerformActionUsage">
+          <elements xsi:type="sysMLOC:PerformActionUsage" valuePart="doY">
             <redefinitions>doXorY</redefinitions>
-            <valuePart>doY</valuePart>
           </elements>
         </elements>
       </elements>

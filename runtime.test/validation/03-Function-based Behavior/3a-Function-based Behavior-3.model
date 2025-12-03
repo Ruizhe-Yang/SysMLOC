@@ -79,9 +79,7 @@
           <elements xsi:type="sysMLOC:ActionUsage" isThen="true">
             <elements xsi:type="sysMLOC:ActionUsage" declaredName="'generate torque'">
               <typings>'Generate Torque'</typings>
-              <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="fuelCmd">
-                <valuePart>'provide power'::fuelCmd</valuePart>
-              </elements>
+              <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="fuelCmd" valuePart="'provide power'::fuelCmd"/>
               <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="engineTorque">
                 <typings>Torque</typings>
               </elements>

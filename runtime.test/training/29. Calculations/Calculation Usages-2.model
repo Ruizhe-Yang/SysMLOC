@@ -32,19 +32,16 @@
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="currState">
           <typings>DynamicState</typings>
         </elements>
-        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="totalPower">
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="totalPower" valuePart="Power(wheelPower, C_d, C_f, mass, currState.v)">
           <typings>PowerValue</typings>
-          <valuePart>Power(wheelPower, C_d, C_f, mass, currState.v)</valuePart>
         </elements>
         <elements xsi:type="sysMLOC:AttributeUsage" isReturn="true" declaredName="newState">
           <typings>DynamicState</typings>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="Velocity(delta_t, currState.v, Acceleration(totalPower, mass, currState.v))">
             <redefinitions>v</redefinitions>
-            <valuePart>Velocity(delta_t, currState.v, Acceleration(totalPower, mass, currState.v))</valuePart>
           </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="Position(delta_t, currState.x, currState.v)">
             <redefinitions>x</redefinitions>
-            <valuePart>Position(delta_t, currState.x, currState.v)</valuePart>
           </elements>
         </elements>
       </elements>

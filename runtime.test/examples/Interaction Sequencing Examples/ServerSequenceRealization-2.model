@@ -123,37 +123,31 @@
       <elements xsi:type="sysMLOC:Message">
         <typings>Transfers::MessageTransfer</typings>
         <redefinitions>publish_message</redefinitions>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isEnd="true">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="producer.publicationPort" isEnd="true">
           <redefinitions>source</redefinitions>
-          <valuePart>producer.publicationPort</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isEnd="true">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="server.publicationPort" isEnd="true">
           <redefinitions>target</redefinitions>
-          <valuePart>server.publicationPort</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:Message">
         <typings>Transfers::MessageTransfer</typings>
         <redefinitions>subscribe_message</redefinitions>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isEnd="true">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="consumer.subscriptionPort" isEnd="true">
           <redefinitions>source</redefinitions>
-          <valuePart>consumer.subscriptionPort</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isEnd="true">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="server.subscriptionPort" isEnd="true">
           <redefinitions>target</redefinitions>
-          <valuePart>server.subscriptionPort</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:Message">
         <typings>Transfers::MessageTransfer</typings>
         <redefinitions>deliver_message</redefinitions>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isEnd="true">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="server" isEnd="true">
           <redefinitions>source</redefinitions>
-          <valuePart>server</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isEnd="true">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="consumer" isEnd="true">
           <redefinitions>target</redefinitions>
-          <valuePart>consumer</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:Comment" body="/* Binding sent/accept messages to specification model messages. */"/>

@@ -45,8 +45,8 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cAnnotatingElementParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cImportElementParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cDefinitionElementParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cUsageElementParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cDefinitionElementsParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cUsageElementsParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		private final RuleCall cAliasElementParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		private final RuleCall cCodeAnnotationParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
 		private final RuleCall cReferenceVariantUsageParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
@@ -55,8 +55,8 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//GeneralBodyElements:
 		//    AnnotatingElement
 		//    | ImportElement
-		//    | DefinitionElement
-		//    | UsageElement
+		//    | DefinitionElements
+		//    | UsageElements
 		//    | AliasElement
 		//    | CodeAnnotation
 		//    | ReferenceVariantUsage
@@ -65,8 +65,8 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		
 		//AnnotatingElement
 		//| ImportElement
-		//| DefinitionElement
-		//| UsageElement
+		//| DefinitionElements
+		//| UsageElements
 		//| AliasElement
 		//| CodeAnnotation
 		//| ReferenceVariantUsage
@@ -78,11 +78,11 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//ImportElement
 		public RuleCall getImportElementParserRuleCall_1() { return cImportElementParserRuleCall_1; }
 		
-		//DefinitionElement
-		public RuleCall getDefinitionElementParserRuleCall_2() { return cDefinitionElementParserRuleCall_2; }
+		//DefinitionElements
+		public RuleCall getDefinitionElementsParserRuleCall_2() { return cDefinitionElementsParserRuleCall_2; }
 		
-		//UsageElement
-		public RuleCall getUsageElementParserRuleCall_3() { return cUsageElementParserRuleCall_3; }
+		//UsageElements
+		public RuleCall getUsageElementsParserRuleCall_3() { return cUsageElementsParserRuleCall_3; }
 		
 		//AliasElement
 		public RuleCall getAliasElementParserRuleCall_4() { return cAliasElementParserRuleCall_4; }
@@ -463,8 +463,8 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//MetadataUsage
 		public RuleCall getMetadataUsageParserRuleCall_3() { return cMetadataUsageParserRuleCall_3; }
 	}
-	public class DefinitionElementElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.DefinitionElement");
+	public class DefinitionElementsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.DefinitionElements");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cPackageParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cLibraryPackageParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
@@ -497,7 +497,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cExtendedDefinitionParserRuleCall_28 = (RuleCall)cAlternatives.eContents().get(28);
 		
 		//// Definitions
-		//DefinitionElement:
+		//DefinitionElements:
 		//    Package
 		//    | LibraryPackage
 		//    | Dependency
@@ -648,14 +648,14 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//ExtendedDefinition
 		public RuleCall getExtendedDefinitionParserRuleCall_28() { return cExtendedDefinitionParserRuleCall_28; }
 	}
-	public class UsageElementElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.UsageElement");
+	public class UsageElementsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.UsageElements");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cNonOccurrenceUsageElementParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cOccurrenceUsageElementParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//// Usages
-		//UsageElement:
+		//UsageElements:
 		//    NonOccurrenceUsageElement
 		//    | OccurrenceUsageElement
 		//;
@@ -729,27 +729,27 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	public class OccurrenceUsageElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.OccurrenceUsageElement");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cStructureUsageElementParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cBehaviorUsageElementParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cStructureUsageElementsParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cBehaviorUsageElementsParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//OccurrenceUsageElement:
-		//    StructureUsageElement
-		//    | BehaviorUsageElement
+		//    StructureUsageElements
+		//    | BehaviorUsageElements
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//StructureUsageElement
-		//| BehaviorUsageElement
+		//StructureUsageElements
+		//| BehaviorUsageElements
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//StructureUsageElement
-		public RuleCall getStructureUsageElementParserRuleCall_0() { return cStructureUsageElementParserRuleCall_0; }
+		//StructureUsageElements
+		public RuleCall getStructureUsageElementsParserRuleCall_0() { return cStructureUsageElementsParserRuleCall_0; }
 		
-		//BehaviorUsageElement
-		public RuleCall getBehaviorUsageElementParserRuleCall_1() { return cBehaviorUsageElementParserRuleCall_1; }
+		//BehaviorUsageElements
+		public RuleCall getBehaviorUsageElementsParserRuleCall_1() { return cBehaviorUsageElementsParserRuleCall_1; }
 	}
-	public class StructureUsageElementElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.StructureUsageElement");
+	public class StructureUsageElementsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.StructureUsageElements");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cOccurrenceUsageParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cIndividualUsageParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
@@ -767,7 +767,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cFlowUsageParserRuleCall_13 = (RuleCall)cAlternatives.eContents().get(13);
 		private final RuleCall cSuccessionFlowUsageParserRuleCall_14 = (RuleCall)cAlternatives.eContents().get(14);
 		
-		//StructureUsageElement:
+		//StructureUsageElements:
 		//    OccurrenceUsage
 		//    | IndividualUsage
 		//    | PortionUsage
@@ -848,8 +848,8 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//SuccessionFlowUsage
 		public RuleCall getSuccessionFlowUsageParserRuleCall_14() { return cSuccessionFlowUsageParserRuleCall_14; }
 	}
-	public class BehaviorUsageElementElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.BehaviorUsageElement");
+	public class BehaviorUsageElementsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.BehaviorUsageElements");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cActionUsageParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cCalculationUsageParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
@@ -868,7 +868,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cAssertConstraintUsageParserRuleCall_14 = (RuleCall)cAlternatives.eContents().get(14);
 		private final RuleCall cSatisfyRequirementUsageParserRuleCall_15 = (RuleCall)cAlternatives.eContents().get(15);
 		
-		//BehaviorUsageElement:
+		//BehaviorUsageElements:
 		//    ActionUsage
 		//    | CalculationUsage
 		//    | StateUsage
@@ -10700,7 +10700,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//    | isInitial ?= ':='
 		//    | isDefault ?= 'default' ( '=' | isInitial ?= ':=' )?
 		//    )
-		//    valuePart += Expression
+		//    valuePart = Expression
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -10708,7 +10708,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//| isInitial ?= ':='
 		//| isDefault ?= 'default' ( '=' | isInitial ?= ':=' )?
 		//)
-		//valuePart += Expression
+		//valuePart = Expression
 		public Group getGroup() { return cGroup; }
 		
 		//( '='
@@ -10747,7 +10747,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//':='
 		public Keyword getIsInitialColonEqualsSignKeyword_0_2_1_1_0() { return cIsInitialColonEqualsSignKeyword_0_2_1_1_0; }
 		
-		//valuePart += Expression
+		//valuePart = Expression
 		public Assignment getValuePartAssignment_1() { return cValuePartAssignment_1; }
 		
 		//Expression
@@ -14068,12 +14068,12 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	private final ViewBodyElementElements pViewBodyElement;
 	private final RelationshipBodyElementElements pRelationshipBodyElement;
 	private final AnnotatingElementElements pAnnotatingElement;
-	private final DefinitionElementElements pDefinitionElement;
-	private final UsageElementElements pUsageElement;
+	private final DefinitionElementsElements pDefinitionElements;
+	private final UsageElementsElements pUsageElements;
 	private final NonOccurrenceUsageElementElements pNonOccurrenceUsageElement;
 	private final OccurrenceUsageElementElements pOccurrenceUsageElement;
-	private final StructureUsageElementElements pStructureUsageElement;
-	private final BehaviorUsageElementElements pBehaviorUsageElement;
+	private final StructureUsageElementsElements pStructureUsageElements;
+	private final BehaviorUsageElementsElements pBehaviorUsageElements;
 	private final ActionNodeElementsElements pActionNodeElements;
 	private final StateNodeElementsElements pStateNodeElements;
 	private final RequirementNodeElementsElements pRequirementNodeElements;
@@ -14325,12 +14325,12 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		this.pViewBodyElement = new ViewBodyElementElements();
 		this.pRelationshipBodyElement = new RelationshipBodyElementElements();
 		this.pAnnotatingElement = new AnnotatingElementElements();
-		this.pDefinitionElement = new DefinitionElementElements();
-		this.pUsageElement = new UsageElementElements();
+		this.pDefinitionElements = new DefinitionElementsElements();
+		this.pUsageElements = new UsageElementsElements();
 		this.pNonOccurrenceUsageElement = new NonOccurrenceUsageElementElements();
 		this.pOccurrenceUsageElement = new OccurrenceUsageElementElements();
-		this.pStructureUsageElement = new StructureUsageElementElements();
-		this.pBehaviorUsageElement = new BehaviorUsageElementElements();
+		this.pStructureUsageElements = new StructureUsageElementsElements();
+		this.pBehaviorUsageElements = new BehaviorUsageElementsElements();
 		this.pActionNodeElements = new ActionNodeElementsElements();
 		this.pStateNodeElements = new StateNodeElementsElements();
 		this.pRequirementNodeElements = new RequirementNodeElementsElements();
@@ -14598,8 +14598,8 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	//GeneralBodyElements:
 	//    AnnotatingElement
 	//    | ImportElement
-	//    | DefinitionElement
-	//    | UsageElement
+	//    | DefinitionElements
+	//    | UsageElements
 	//    | AliasElement
 	//    | CodeAnnotation
 	//    | ReferenceVariantUsage
@@ -14819,7 +14819,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//// Definitions
-	//DefinitionElement:
+	//DefinitionElements:
 	//    Package
 	//    | LibraryPackage
 	//    | Dependency
@@ -14850,25 +14850,25 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	//    | RenderingDefinition
 	//    | ExtendedDefinition
 	//;
-	public DefinitionElementElements getDefinitionElementAccess() {
-		return pDefinitionElement;
+	public DefinitionElementsElements getDefinitionElementsAccess() {
+		return pDefinitionElements;
 	}
 	
-	public ParserRule getDefinitionElementRule() {
-		return getDefinitionElementAccess().getRule();
+	public ParserRule getDefinitionElementsRule() {
+		return getDefinitionElementsAccess().getRule();
 	}
 	
 	//// Usages
-	//UsageElement:
+	//UsageElements:
 	//    NonOccurrenceUsageElement
 	//    | OccurrenceUsageElement
 	//;
-	public UsageElementElements getUsageElementAccess() {
-		return pUsageElement;
+	public UsageElementsElements getUsageElementsAccess() {
+		return pUsageElements;
 	}
 	
-	public ParserRule getUsageElementRule() {
-		return getUsageElementAccess().getRule();
+	public ParserRule getUsageElementsRule() {
+		return getUsageElementsAccess().getRule();
 	}
 	
 	//NonOccurrenceUsageElement:
@@ -14890,8 +14890,8 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//OccurrenceUsageElement:
-	//    StructureUsageElement
-	//    | BehaviorUsageElement
+	//    StructureUsageElements
+	//    | BehaviorUsageElements
 	//;
 	public OccurrenceUsageElementElements getOccurrenceUsageElementAccess() {
 		return pOccurrenceUsageElement;
@@ -14901,7 +14901,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		return getOccurrenceUsageElementAccess().getRule();
 	}
 	
-	//StructureUsageElement:
+	//StructureUsageElements:
 	//    OccurrenceUsage
 	//    | IndividualUsage
 	//    | PortionUsage
@@ -14918,15 +14918,15 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	//    | FlowUsage
 	//    | SuccessionFlowUsage
 	//;
-	public StructureUsageElementElements getStructureUsageElementAccess() {
-		return pStructureUsageElement;
+	public StructureUsageElementsElements getStructureUsageElementsAccess() {
+		return pStructureUsageElements;
 	}
 	
-	public ParserRule getStructureUsageElementRule() {
-		return getStructureUsageElementAccess().getRule();
+	public ParserRule getStructureUsageElementsRule() {
+		return getStructureUsageElementsAccess().getRule();
 	}
 	
-	//BehaviorUsageElement:
+	//BehaviorUsageElements:
 	//    ActionUsage
 	//    | CalculationUsage
 	//    | StateUsage
@@ -14944,12 +14944,12 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	//    | AssertConstraintUsage
 	//    | SatisfyRequirementUsage
 	//;
-	public BehaviorUsageElementElements getBehaviorUsageElementAccess() {
-		return pBehaviorUsageElement;
+	public BehaviorUsageElementsElements getBehaviorUsageElementsAccess() {
+		return pBehaviorUsageElements;
 	}
 	
-	public ParserRule getBehaviorUsageElementRule() {
-		return getBehaviorUsageElementAccess().getRule();
+	public ParserRule getBehaviorUsageElementsRule() {
+		return getBehaviorUsageElementsAccess().getRule();
 	}
 	
 	//ActionNodeElements:
@@ -16995,7 +16995,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	//    | isInitial ?= ':='
 	//    | isDefault ?= 'default' ( '=' | isInitial ?= ':=' )?
 	//    )
-	//    valuePart += Expression
+	//    valuePart = Expression
 	//;
 	public FeatureValueElements getFeatureValueAccess() {
 		return pFeatureValue;

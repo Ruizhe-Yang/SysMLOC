@@ -7,12 +7,8 @@
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarFunctions" isNamespace="true"/>
     <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="VehicleDefinitions" isNamespace="true"/>
     <elements xsi:type="sysMLOC:Comment" body="/* VALUES */"/>
-    <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="T1">
-      <valuePart>10.0 [N * m]</valuePart>
-    </elements>
-    <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="T2">
-      <valuePart>20.0 [N * m]</valuePart>
-    </elements>
+    <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="T1" valuePart="10.0 [N * m]"/>
+    <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="T2" valuePart="20.0 [N * m]"/>
     <elements xsi:type="sysMLOC:Comment" body="/* PARTS */"/>
     <elements xsi:type="sysMLOC:PartUsage" declaredName="narrowRimWheel">
       <typings>Wheel</typings>
@@ -43,9 +39,8 @@
           <elements xsi:type="sysMLOC:PartUsage">
             <redefinitions>lugbolt</redefinitions>
             <Multiplicity>4</Multiplicity>
-            <elements xsi:type="sysMLOC:AttributeUsage">
+            <elements xsi:type="sysMLOC:AttributeUsage" valuePart="T1">
               <redefinitions>tighteningTorque</redefinitions>
-              <valuePart>T1</valuePart>
             </elements>
           </elements>
         </elements>
@@ -61,9 +56,8 @@
           <elements xsi:type="sysMLOC:PartUsage">
             <redefinitions>lugbolt</redefinitions>
             <Multiplicity>6</Multiplicity>
-            <elements xsi:type="sysMLOC:AttributeUsage">
+            <elements xsi:type="sysMLOC:AttributeUsage" valuePart="T2">
               <redefinitions>tighteningTorque</redefinitions>
-              <valuePart>T2</valuePart>
             </elements>
           </elements>
         </elements>
@@ -77,13 +71,11 @@
       <elements xsi:type="sysMLOC:Documentation" body="/* Specialized configuration with part-specific ports. */"/>
       <elements xsi:type="sysMLOC:PartUsage">
         <redefinitions>frontAxleAssembly</redefinitions>
-        <elements xsi:type="sysMLOC:PartUsage" declaredName="leftFrontWheel">
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="leftFrontWheel" valuePart="frontWheel#(1)">
           <subsetting>frontWheel</subsetting>
-          <valuePart>frontWheel#(1)</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:PartUsage" declaredName="rightFrontWheel">
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="rightFrontWheel" valuePart="frontWheel#(2)">
           <subsetting>frontWheel</subsetting>
-          <valuePart>frontWheel#(2)</valuePart>
         </elements>
         <elements xsi:type="sysMLOC:InterfaceUsage" declaredName="leftFrontMount">
           <typings>Mounting</typings>
@@ -98,13 +90,11 @@
       </elements>
       <elements xsi:type="sysMLOC:PartUsage" declaredName="rearAxleAssembly">
         <redefinitions>vehicle_C1::rearAxleAssembly</redefinitions>
-        <elements xsi:type="sysMLOC:PartUsage" declaredName="leftRearWheel">
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="leftRearWheel" valuePart="rearWheel#(1)">
           <subsetting>rearWheel</subsetting>
-          <valuePart>rearWheel#(1)</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:PartUsage" declaredName="rightRearWheel">
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="rightRearWheel" valuePart="rearWheel#(2)">
           <subsetting>rearWheel</subsetting>
-          <valuePart>rearWheel#(2)</valuePart>
         </elements>
         <elements xsi:type="sysMLOC:InterfaceUsage" declaredName="leftRearMount">
           <typings>Mounting</typings>

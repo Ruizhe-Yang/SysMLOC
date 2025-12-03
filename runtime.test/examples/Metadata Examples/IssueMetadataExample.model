@@ -5,9 +5,7 @@
     <elements xsi:type="sysMLOC:CodeAnnotation" body="//Example: the following identifies an issue with the interface&#xD;&#xA;"/>
     <elements xsi:type="sysMLOC:MetadataUsage" declaredName="InterfaceCompatibilityIssue" metadataTyping="Issue">
       <annotatedElement>engineToTransmissionInterface</annotatedElement>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="text">
-        <valuePart>&quot;This issue is about the interface compatability between the engine and transmission.&quot; + &quot;The interface def includes an end defined by a ClutchPort.&quot; + &quot;However, the interface usage connects the transmission port that is defined by ~DrivePwrPort.&quot; + &quot;This should have surfaced a compatibility issue, since the interface is not really compatible with its definition&quot;</valuePart>
-      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="text" valuePart="&quot;This issue is about the interface compatability between the engine and transmission.&quot; + &quot;The interface def includes an end defined by a ClutchPort.&quot; + &quot;However, the interface usage connects the transmission port that is defined by ~DrivePwrPort.&quot; + &quot;This should have surfaced a compatibility issue, since the interface is not really compatible with its definition&quot;"/>
     </elements>
     <elements xsi:type="sysMLOC:InterfaceDefinition" declaredName="EngineToTransmissionInterface">
       <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="p1" isEnd="true">

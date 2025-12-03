@@ -39,17 +39,14 @@
     </elements>
     <elements xsi:type="sysMLOC:AttributeUsage" declaredName="frenchTireInfo">
       <typings>TireInfo</typings>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="&quot;Michelin&quot;">
         <redefinitions>manufacturer</redefinitions>
-        <valuePart>&quot;Michelin&quot;</valuePart>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="18.0['in']">
         <redefinitions>hubDiameter</redefinitions>
-        <valuePart>18.0['in']</valuePart>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="245">
         <redefinitions>width</redefinitions>
-        <valuePart>245</valuePart>
       </elements>
     </elements>
   </elements>

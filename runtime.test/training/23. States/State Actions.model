@@ -37,9 +37,7 @@
       <elements xsi:type="sysMLOC:StateUsage" declaredName="on">
         <elements xsi:type="sysMLOC:EntryActionNode">
           <performedActionParameterPart xsi:type="sysMLOC:PerformActionUsage" referencedFeature="performSelfTest"/>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="vehicle">
-            <valuePart>operatingVehicle</valuePart>
-          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="vehicle" valuePart="operatingVehicle"/>
         </elements>
         <elements xsi:type="sysMLOC:DoActionNode">
           <performedActionParameterPart xsi:type="sysMLOC:PerformActionUsage" declaredName="providePower"/>

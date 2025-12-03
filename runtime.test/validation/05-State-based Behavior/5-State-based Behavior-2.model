@@ -150,9 +150,7 @@
         </elements>
         <elements xsi:type="sysMLOC:PerformActionUsage" refElement="'provide power'">
           <redefinitions>VehicleA::'provide power'</redefinitions>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="fuelCmd">
-            <valuePart>fuelCmdPort.fuelCmd</valuePart>
-          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="fuelCmd" valuePart="fuelCmdPort.fuelCmd"/>
         </elements>
         <elements xsi:type="sysMLOC:ExhibitStateUsage" refElement="'vehicle states'">
           <redefinitions>VehicleA::'vehicle states'</redefinitions>

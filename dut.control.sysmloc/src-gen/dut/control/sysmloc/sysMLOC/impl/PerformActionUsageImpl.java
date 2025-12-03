@@ -109,7 +109,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class PerformActionUsageImpl extends BehaviorUsageElementImpl implements PerformActionUsage
+public class PerformActionUsageImpl extends BehaviorUsageElementsImpl implements PerformActionUsage
 {
   /**
    * The default value of the '{@link #isIsThen() <em>Is Then</em>}' attribute.
@@ -592,14 +592,24 @@ public class PerformActionUsageImpl extends BehaviorUsageElementImpl implements 
   protected boolean isDefault = IS_DEFAULT_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getValuePart() <em>Value Part</em>}' attribute list.
+   * The default value of the '{@link #getValuePart() <em>Value Part</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getValuePart()
    * @generated
    * @ordered
    */
-  protected EList<String> valuePart;
+  protected static final String VALUE_PART_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getValuePart() <em>Value Part</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getValuePart()
+   * @generated
+   * @ordered
+   */
+  protected String valuePart = VALUE_PART_EDEFAULT;
 
   /**
    * The default value of the '{@link #getReferencedFeature() <em>Referenced Feature</em>}' attribute.
@@ -1408,13 +1418,23 @@ public class PerformActionUsageImpl extends BehaviorUsageElementImpl implements 
    * @generated
    */
   @Override
-  public EList<String> getValuePart()
+  public String getValuePart()
   {
-    if (valuePart == null)
-    {
-      valuePart = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.PERFORM_ACTION_USAGE__VALUE_PART);
-    }
     return valuePart;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setValuePart(String newValuePart)
+  {
+    String oldValuePart = valuePart;
+    valuePart = newValuePart;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.PERFORM_ACTION_USAGE__VALUE_PART, oldValuePart, valuePart));
   }
 
   /**
@@ -1834,8 +1854,7 @@ public class PerformActionUsageImpl extends BehaviorUsageElementImpl implements 
         setIsDefault((Boolean)newValue);
         return;
       case SysMLOCPackage.PERFORM_ACTION_USAGE__VALUE_PART:
-        getValuePart().clear();
-        getValuePart().addAll((Collection<? extends String>)newValue);
+        setValuePart((String)newValue);
         return;
       case SysMLOCPackage.PERFORM_ACTION_USAGE__REFERENCED_FEATURE:
         setReferencedFeature((String)newValue);
@@ -1965,7 +1984,7 @@ public class PerformActionUsageImpl extends BehaviorUsageElementImpl implements 
         setIsDefault(IS_DEFAULT_EDEFAULT);
         return;
       case SysMLOCPackage.PERFORM_ACTION_USAGE__VALUE_PART:
-        getValuePart().clear();
+        setValuePart(VALUE_PART_EDEFAULT);
         return;
       case SysMLOCPackage.PERFORM_ACTION_USAGE__REFERENCED_FEATURE:
         setReferencedFeature(REFERENCED_FEATURE_EDEFAULT);
@@ -2065,7 +2084,7 @@ public class PerformActionUsageImpl extends BehaviorUsageElementImpl implements 
       case SysMLOCPackage.PERFORM_ACTION_USAGE__IS_DEFAULT:
         return isDefault != IS_DEFAULT_EDEFAULT;
       case SysMLOCPackage.PERFORM_ACTION_USAGE__VALUE_PART:
-        return valuePart != null && !valuePart.isEmpty();
+        return VALUE_PART_EDEFAULT == null ? valuePart != null : !VALUE_PART_EDEFAULT.equals(valuePart);
       case SysMLOCPackage.PERFORM_ACTION_USAGE__REFERENCED_FEATURE:
         return REFERENCED_FEATURE_EDEFAULT == null ? referencedFeature != null : !REFERENCED_FEATURE_EDEFAULT.equals(referencedFeature);
       case SysMLOCPackage.PERFORM_ACTION_USAGE__ACCEPT_PARAMETER:

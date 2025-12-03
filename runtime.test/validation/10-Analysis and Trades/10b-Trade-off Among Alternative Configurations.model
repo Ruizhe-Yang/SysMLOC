@@ -79,10 +79,9 @@
       </elements>
       <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle">
         <typings>Vehicle</typings>
-        <elements xsi:type="sysMLOC:PartUsage" declaredName="engine">
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="engine" valuePart="engineChoice::'6cylEngine'">
           <subsetting>engineChoice</subsetting>
           <Multiplicity>1</Multiplicity>
-          <valuePart>engineChoice::'6cylEngine'</valuePart>
           <elements xsi:type="sysMLOC:AssertConstraintUsage" declaredName="engineSelectionRational">
             <elements xsi:type="sysMLOC:Documentation" body="/* Selected the best engine based on the 'engineTradeStudy'. */"/>
             <resultExpressionParameter resultExpression="engine == Analysis::engineTradeStudy.selectedAlternative"/>
@@ -112,11 +111,10 @@
       </elements>
       <elements xsi:type="sysMLOC:AnalysisCaseUsage" declaredName="engineTradeStudy">
         <typings>TradeStudy</typings>
-        <elements xsi:type="sysMLOC:SubjectUsage">
+        <elements xsi:type="sysMLOC:SubjectUsage" valuePart="all engineChoice">
           <typings>Engine</typings>
           <Multiplicity>1</Multiplicity>
           <Multiplicity>*</Multiplicity>
-          <valuePart>all engineChoice</valuePart>
         </elements>
         <elements xsi:type="sysMLOC:ObjectiveRequirementUsage">
           <typings>MaximizeObjective</typings>
@@ -128,41 +126,32 @@
             <redefinitions>alternative</redefinitions>
           </elements>
           <elements xsi:type="sysMLOC:CalculationUsage" declaredName="powerRollup">
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="engine">
-              <valuePart>anEngine</valuePart>
-            </elements>
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="engine" valuePart="anEngine"/>
             <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="power">
               <subsetting>ISQ::power</subsetting>
             </elements>
           </elements>
           <elements xsi:type="sysMLOC:CalculationUsage" declaredName="massRollup">
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="engine">
-              <valuePart>anEngine</valuePart>
-            </elements>
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="engine" valuePart="anEngine"/>
             <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="mass">
               <subsetting>ISQ::mass</subsetting>
             </elements>
           </elements>
           <elements xsi:type="sysMLOC:CalculationUsage" declaredName="efficiencyRollup">
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="engine">
-              <valuePart>anEngine</valuePart>
-            </elements>
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="engine" valuePart="anEngine"/>
             <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="efficiency">
               <typings>Real</typings>
             </elements>
           </elements>
           <elements xsi:type="sysMLOC:CalculationUsage" declaredName="costRollup">
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="engine">
-              <valuePart>anEngine</valuePart>
-            </elements>
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="engine" valuePart="anEngine"/>
             <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="cost">
               <typings>Real</typings>
             </elements>
           </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" valuePart="EngineEvaluation( powerRollup.power, massRollup.mass, efficiencyRollup.efficiency, costRollup.cost )">
             <typings>Real</typings>
             <redefinitions>result</redefinitions>
-            <valuePart>EngineEvaluation( powerRollup.power, massRollup.mass, efficiencyRollup.efficiency, costRollup.cost )</valuePart>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:PartUsage" isReturn="true">

@@ -48,7 +48,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class EnumerationDefinitionImpl extends DefinitionElementImpl implements EnumerationDefinition
+public class EnumerationDefinitionImpl extends DefinitionElementsImpl implements EnumerationDefinition
 {
   /**
    * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.

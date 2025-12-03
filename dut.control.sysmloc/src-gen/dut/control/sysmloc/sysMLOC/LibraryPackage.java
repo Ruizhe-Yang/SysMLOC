@@ -23,7 +23,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface LibraryPackage extends DefinitionElement, PrefixMetadata, Identification
+public interface LibraryPackage extends DefinitionElements, PrefixMetadata, Identification
 {
   /**
    * Returns the value of the '<em><b>Is Standard</b></em>' attribute.

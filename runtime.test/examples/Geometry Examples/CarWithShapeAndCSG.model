@@ -13,15 +13,13 @@
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Car">
       <superclassifiers>SpatialItem</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * Car with simple engine&#xD;&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:ItemUsage">
+      <elements xsi:type="sysMLOC:ItemUsage" valuePart="Cuboid(4800 [mm], 1840 [mm], 1350 [mm])">
         <redefinitions>shape</redefinitions>
-        <valuePart>Cuboid(4800 [mm], 1840 [mm], 1350 [mm])</valuePart>
       </elements>
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="datum">
         <redefinitions>coordinateFrame</redefinitions>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(mm, mm, mm)">
           <redefinitions>mRefs</redefinitions>
-          <valuePart>(mm, mm, mm)</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:PartUsage" declaredName="powerSource">
@@ -30,20 +28,17 @@
         <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage">
           <redefinitions>ecf</redefinitions>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="datum.mRefs">
             <redefinitions>mRefs</redefinitions>
-            <valuePart>datum.mRefs</valuePart>
           </elements>
           <elements xsi:type="sysMLOC:DefaultReferenceUsage">
             <typings>TranslationRotationSequence</typings>
             <redefinitions>transformation</redefinitions>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="datum">
               <redefinitions>source</redefinitions>
-              <valuePart>datum</valuePart>
             </elements>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="( Translation((3800, (1840-190)/2, 40)[datum]) )">
               <redefinitions>elements</redefinitions>
-              <valuePart>( Translation((3800, (1840-190)/2, 40)[datum]) )</valuePart>
             </elements>
           </elements>
         </elements>
@@ -66,23 +61,18 @@
           <typings>Box</typings>
           <redefinitions>shape</redefinitions>
           <Multiplicity>1</Multiplicity>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="300 [mm]">
             <redefinitions>length</redefinitions>
-            <valuePart>300 [mm]</valuePart>
           </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="190 [mm]">
             <redefinitions>width</redefinitions>
-            <valuePart>190 [mm]</valuePart>
           </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="330 [mm]">
             <redefinitions>height</redefinitions>
-            <valuePart>330 [mm]</valuePart>
           </elements>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="rearCylinderSpacing">
-        <valuePart>90 [mm]</valuePart>
-      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="rearCylinderSpacing" valuePart="90 [mm]"/>
       <elements xsi:type="sysMLOC:ItemUsage" visibility="private" declaredName="cylinder1">
         <typings>SpatialItem</typings>
         <Multiplicity>1</Multiplicity>
@@ -90,13 +80,11 @@
           <typings>Cylinder</typings>
           <redefinitions>shape</redefinitions>
           <Multiplicity>1</Multiplicity>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="55 [mm]">
             <redefinitions>radius</redefinitions>
-            <valuePart>55 [mm]</valuePart>
           </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="350 [mm]">
             <redefinitions>height</redefinitions>
-            <valuePart>350 [mm]</valuePart>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:AttributeUsage">
@@ -104,20 +92,16 @@
           <elements xsi:type="sysMLOC:DefaultReferenceUsage">
             <typings>TranslationRotationSequence</typings>
             <redefinitions>transformation</redefinitions>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="ecf">
               <redefinitions>source</redefinitions>
-              <valuePart>ecf</valuePart>
             </elements>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(Translation( (rearCylinderSpacing, rawEngineBlock.shape.width/2, -10)[ecf]))">
               <redefinitions>elements</redefinitions>
-              <valuePart>(Translation( (rearCylinderSpacing, rawEngineBlock.shape.width/2, -10)[ecf]))</valuePart>
             </elements>
           </elements>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="cylinderSpacing">
-        <valuePart>2*cylinder1.shape.radius + 20 [mm]</valuePart>
-      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="cylinderSpacing" valuePart="2*cylinder1.shape.radius + 20 [mm]"/>
       <elements xsi:type="sysMLOC:ItemUsage" visibility="private" declaredName="cylinder2">
         <typings>SpatialItem</typings>
         <Multiplicity>1</Multiplicity>
@@ -125,13 +109,11 @@
           <typings>Cylinder</typings>
           <redefinitions>shape</redefinitions>
           <Multiplicity>1</Multiplicity>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="cylinder1.shape.radius">
             <redefinitions>radius</redefinitions>
-            <valuePart>cylinder1.shape.radius</valuePart>
           </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="cylinder1.shape.height">
             <redefinitions>height</redefinitions>
-            <valuePart>cylinder1.shape.height</valuePart>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:AttributeUsage">
@@ -139,13 +121,11 @@
           <elements xsi:type="sysMLOC:DefaultReferenceUsage">
             <typings>TranslationRotationSequence</typings>
             <redefinitions>transformation</redefinitions>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="ecf">
               <redefinitions>source</redefinitions>
-              <valuePart>ecf</valuePart>
             </elements>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="( Translation((rearCylinderSpacing + cylinderSpacing, rawEngineBlock.shape.width/2, -10)[ecf]) )">
               <redefinitions>elements</redefinitions>
-              <valuePart>( Translation((rearCylinderSpacing + cylinderSpacing, rawEngineBlock.shape.width/2, -10)[ecf]) )</valuePart>
             </elements>
           </elements>
         </elements>
@@ -154,9 +134,8 @@
       <elements xsi:type="sysMLOC:AttributeUsage">
         <subsetting>differencesOf</subsetting>
         <Multiplicity>1</Multiplicity>
-        <elements xsi:type="sysMLOC:ItemUsage">
+        <elements xsi:type="sysMLOC:ItemUsage" valuePart="(rawEngineBlock, cylinder1, cylinder2)">
           <redefinitions>elements</redefinitions>
-          <valuePart>(rawEngineBlock, cylinder1, cylinder2)</valuePart>
         </elements>
       </elements>
     </elements>

@@ -2,52 +2,46 @@
 [%root.lineOfCode();%]
 
 [%operation SysMLOC!EObject write(i){%]
-[%=i.Tab()%][%=self.lineOfCode()%][%if (self.isEnd()){%];
-[%}else{%]{
+[%=i.Tab()%][%=self.lineOfCode()%][%if(self.hasNonSemicolon()){} else if (self.isSemicolon()){%];[%}else{%]{
 [%for (e in self.elements){e.write(i+1);}%]
-[%=i.Tab()%]}
-[%i++;}%] 
+[%=i.Tab()%]}[%i++;}%] 
 [%}%]
 
-[%
-operation SysMLOC!Namespace lineOfCode(){%]
-[%for (e in self.elements){e.write(0);}%]
-[%}%]
+[%operation SysMLOC!Namespace lineOfCode(){%]
+[%for (e in self.elements){e.write(0);}%][%}%]
 
-[% 
-operation SysMLOC!Package lineOfCode(){%]
-package [%=self.declaredName%]
-[%}%]
+[% operation SysMLOC!Package lineOfCode(){%]
+package [%=self.declaredName%][%}%]
 
-[% 
-operation SysMLOC!Documentation lineOfCode(){%]
-doc [%=self.Identification()%] [%=self.body%]
-[%}%]
+[% operation SysMLOC!Documentation lineOfCode(){%]
+doc[%=self.Identification()%] [%=self.body%][%}%]
 
-[% 
-operation SysMLOC!PartDefinition lineOfCode(){%]
-part def [%=self.DefinitionDeclaration()%]
-[%}%]
+[% operation SysMLOC!Comment lineOfCode(){%]
+[%=self.hasComment()%][%=self.hasAbout()%][%=self.hasLocale()%][%=self.body%][%}%]
 
-[% 
-operation SysMLOC!PartUsage lineOfCode(){%]
-[%=self.GeneralUsagePrefix()%][%=self.OccurrenceUsagePrefix()%]part [%=self.Usage()%]
-[%}%]
+[% operation SysMLOC!ImportElement lineOfCode(){%]
+[%=self.hasVisibilityIndicator()%]import [%=self.hasImportAll()%][%=self.declaredName._()%][%=self.hasNamespace()%][%=self.hasRecursive()%][%}%]
 
-[% 
-operation SysMLOC!EObject lineOfCode(){%]
-// == Unfinished [%=self.type().name%] ==
-[%}%]
+[% operation SysMLOC!DefaultReferenceUsage lineOfCode(){%]
+[%=self.hasVisibilityIndicator()%][%=self.isReturnPrefix()%][%=self.hasEnd()%][%=self.RefPrefix()%][%=self.UsageDeclaration()%][%=self.ValuePart()%][%}%]
 
-[%
-operation Integer Tab(){
-	var str = "";
-	if (self == 0){
-		return str;
-	}
-	for (i in 1.to(self)){
-		str += "\t";
-	}
-	return str;
-}
-%]
+[% operation SysMLOC!AttributeUsage lineOfCode(){%]
+[%=self.MemberPrefix()%][%=self.isReturnPrefix()%][%=self.UsagePrefix()%]attribute [%=self.Usage()%][%}%]
+
+[% operation SysMLOC!PortDefinition lineOfCode(){%]
+[%=self.MemberPrefix()%][%=self.DefinitionPrefix()%]port def [%=self.DefinitionDeclaration()%][%}%]
+
+[% operation SysMLOC!PortUsage lineOfCode(){%]
+[%=self.GeneralUsagePrefix()%][%=self.OccurrenceUsagePrefix()%]port [%=self.Usage()%][%}%]
+
+[% operation SysMLOC!PartDefinition lineOfCode(){%]
+[%=self.MemberPrefix()%][%=self.OccurrenceDefinitionPrefix()%]part def [%=self.DefinitionDeclaration()%][%}%]
+
+[% operation SysMLOC!InterfaceDefinition lineOfCode(){%]
+[%=self.MemberPrefix()%][%=self.OccurrenceDefinitionPrefix()%]interface def [%=self.DefinitionDeclaration()%][%}%]
+
+[% operation SysMLOC!FlowUsage lineOfCode(){%]
+[%=self.GeneralUsagePrefix()%][%=self.OccurrenceUsagePrefix()%]flow [%=self.UsageDeclaration()%][%=self.FeatureValue()%][%=self.ItemFeatureParameterPart()%][%=self.FlowEnd()%][%}%]
+
+[% operation SysMLOC!EObject lineOfCode(){%]
+// == [%=self.type().name%] ==[%}%]

@@ -26,15 +26,11 @@
       </elements>
       <elements xsi:type="sysMLOC:RequirementUsage" declaredName="drivePowerInterface">
         <typings>DrivePowerInterface</typings>
-        <elements xsi:type="sysMLOC:SubjectUsage">
-          <valuePart>engine.clutchPort</valuePart>
-        </elements>
+        <elements xsi:type="sysMLOC:SubjectUsage" valuePart="engine.clutchPort"/>
       </elements>
       <elements xsi:type="sysMLOC:RequirementUsage" declaredName="torqueGeneration">
         <typings>TorqueGeneration</typings>
-        <elements xsi:type="sysMLOC:SubjectUsage">
-          <valuePart>engine.generateTorque</valuePart>
-        </elements>
+        <elements xsi:type="sysMLOC:SubjectUsage" valuePart="engine.generateTorque"/>
       </elements>
     </elements>
   </elements>

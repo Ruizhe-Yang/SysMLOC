@@ -52,7 +52,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class PortDefinitionImpl extends DefinitionElementImpl implements PortDefinition
+public class PortDefinitionImpl extends DefinitionElementsImpl implements PortDefinition
 {
   /**
    * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.

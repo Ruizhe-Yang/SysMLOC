@@ -3,26 +3,26 @@
  */
 package dut.control.sysmloc.sysMLOC.impl;
 
-import dut.control.sysmloc.sysMLOC.DefinitionElement;
+import dut.control.sysmloc.sysMLOC.StructureUsageElements;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Definition Element</b></em>'.
+ * An implementation of the model object '<em><b>Structure Usage Elements</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class DefinitionElementImpl extends GeneralBodyElementsImpl implements DefinitionElement
+public class StructureUsageElementsImpl extends OccurrenceUsageElementImpl implements StructureUsageElements
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected DefinitionElementImpl()
+  protected StructureUsageElementsImpl()
   {
     super();
   }
@@ -35,7 +35,7 @@ public class DefinitionElementImpl extends GeneralBodyElementsImpl implements De
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.eINSTANCE.getDefinitionElement();
+    return SysMLOCPackage.eINSTANCE.getStructureUsageElements();
   }
 
-} //DefinitionElementImpl
+} //StructureUsageElementsImpl

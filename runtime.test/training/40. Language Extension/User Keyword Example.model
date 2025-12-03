@@ -21,9 +21,8 @@
       </elements>
       <elements xsi:type="sysMLOC:ExtendedUsage" declaredName="'battery old'">
         <prefixMetadataExtension>#cause</prefixMetadataExtension>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="0.01">
           <redefinitions>probability</redefinitions>
-          <valuePart>0.01</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:SuccessionAsUsage">
@@ -44,9 +43,8 @@
       </elements>
       <elements xsi:type="sysMLOC:ExtendedUsage" declaredName="'device shutoff'">
         <prefixMetadataExtension>#failure</prefixMetadataExtension>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="LevelEnum::high">
           <redefinitions>severity</redefinitions>
-          <valuePart>LevelEnum::high</valuePart>
         </elements>
       </elements>
     </elements>

@@ -17,9 +17,7 @@
       <elements xsi:type="sysMLOC:PortionUsage" isThen="true" declaredName="ownership" isOrdered="true" portionKind="timeslice">
         <Multiplicity>0</Multiplicity>
         <Multiplicity>*</Multiplicity>
-        <elements xsi:type="sysMLOC:PortionUsage" declaredName="sale" portionKind="snapshot">
-          <valuePart>start</valuePart>
-        </elements>
+        <elements xsi:type="sysMLOC:PortionUsage" declaredName="sale" valuePart="start" portionKind="snapshot"/>
         <elements xsi:type="sysMLOC:ItemUsage" isReference="true" declaredName="owner">
           <typings>Person</typings>
           <Multiplicity>1</Multiplicity>
@@ -33,9 +31,7 @@
           </elements>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:PortionUsage" declaredName="junked" portionKind="snapshot">
-        <valuePart>done</valuePart>
-      </elements>
+      <elements xsi:type="sysMLOC:PortionUsage" declaredName="junked" valuePart="done" portionKind="snapshot"/>
     </elements>
   </elements>
 </sysMLOC:Namespace>

@@ -113,17 +113,14 @@
           </elements>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:Message">
+      <elements xsi:type="sysMLOC:Message" valuePart="driverToVehicleInterface.setSpeedFlow">
         <redefinitions>setSpeedMessage</redefinitions>
-        <valuePart>driverToVehicleInterface.setSpeedFlow</valuePart>
       </elements>
-      <elements xsi:type="sysMLOC:Message">
+      <elements xsi:type="sysMLOC:Message" valuePart="vehicle_b.sensedSpeedFlow">
         <redefinitions>sensedSpeedMessage</redefinitions>
-        <valuePart>vehicle_b.sensedSpeedFlow</valuePart>
       </elements>
-      <elements xsi:type="sysMLOC:Message">
+      <elements xsi:type="sysMLOC:Message" valuePart="vehicle_b.fuelCommandFlow">
         <redefinitions>fuelCommandMessage</redefinitions>
-        <valuePart>vehicle_b.fuelCommandFlow</valuePart>
       </elements>
     </elements>
   </elements>

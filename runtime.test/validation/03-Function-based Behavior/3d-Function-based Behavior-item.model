@@ -61,12 +61,8 @@
           <typings>Pump</typings>
           <elements xsi:type="sysMLOC:PerformActionUsage" declaredName="pumpFuel">
             <typings>PumpFuel</typings>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="fuelIn">
-              <valuePart>fuelInPort.fuel</valuePart>
-            </elements>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="fuelOut">
-              <valuePart>fuelOutPort.fuel</valuePart>
-            </elements>
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="fuelIn" valuePart="fuelInPort.fuel"/>
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="fuelOut" valuePart="fuelOutPort.fuel"/>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:FlowUsage">
@@ -89,9 +85,8 @@
             <elements xsi:type="sysMLOC:AttributeUsage" declaredName="volumeMax">
               <typings>Real</typings>
             </elements>
-            <elements xsi:type="sysMLOC:AttributeUsage" declaredName="fuelLevel">
+            <elements xsi:type="sysMLOC:AttributeUsage" declaredName="fuelLevel" valuePart="fuel.volume / volumeMax">
               <typings>Real</typings>
-              <valuePart>fuel.volume / volumeMax</valuePart>
             </elements>
             <elements xsi:type="sysMLOC:Comment" body="/* Stored Item */"/>
             <elements xsi:type="sysMLOC:ItemUsage" declaredName="fuel">

@@ -17,32 +17,27 @@
         <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="distancePF">
           <typings>QuantityPowerFactor</typings>
           <Multiplicity>1</Multiplicity>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
             <redefinitions>quantity</redefinitions>
-            <valuePart>isq.L</valuePart>
           </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
             <redefinitions>exponent</redefinitions>
-            <valuePart>1</valuePart>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="volumePF">
           <typings>QuantityPowerFactor</typings>
           <Multiplicity>1</Multiplicity>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
             <redefinitions>quantity</redefinitions>
-            <valuePart>isq.L</valuePart>
           </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-3">
             <redefinitions>exponent</redefinitions>
-            <valuePart>-3</valuePart>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:AttributeUsage">
           <redefinitions>quantityDimension</redefinitions>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(distancePF, volumePF)">
             <redefinitions>quantityPowerFactors</redefinitions>
-            <valuePart>(distancePF, volumePF)</valuePart>
           </elements>
         </elements>
       </elements>
@@ -57,13 +52,11 @@
           <redefinitions>mRef</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="gallon">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="gallon" valuePart="231.0 * 'in' ** 3">
         <typings>VolumeUnit</typings>
-        <valuePart>231.0 * 'in' ** 3</valuePart>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mpg">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mpg" valuePart="'mi' / gallon">
         <typings>DistancePerVolumeUnit</typings>
-        <valuePart>'mi' / gallon</valuePart>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:Package" declaredName="VehicleModel">
@@ -80,9 +73,8 @@
         <elements xsi:type="sysMLOC:AttributeUsage" declaredName="fuelVolume">
           <typings>VolumeValue</typings>
         </elements>
-        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="fuelLevel">
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="fuelLevel" valuePart="fuelVolume / volumeMax">
           <typings>Real</typings>
-          <valuePart>fuelVolume / volumeMax</valuePart>
         </elements>
         <elements xsi:type="sysMLOC:PortUsage" declaredName="fuelInPort">
           <typings>~FuelPort</typings>
@@ -143,9 +135,8 @@
         <elements xsi:type="sysMLOC:PartUsage" declaredName="wheel">
           <typings>Wheel</typings>
           <Multiplicity>4</Multiplicity>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="wheelDiameter">
             <redefinitions>diameter</redefinitions>
-            <valuePart>wheelDiameter</valuePart>
           </elements>
         </elements>
       </elements>
@@ -164,16 +155,14 @@
       </elements>
       <elements xsi:type="sysMLOC:RequirementUsage" declaredName="cityFuelEconomyRequirement">
         <typings>FuelEconomyRequirement</typings>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="25 [mpg]">
           <redefinitions>requiredFuelEconomy</redefinitions>
-          <valuePart>25 [mpg]</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:RequirementUsage" declaredName="highwayFuelEconomyRequirement">
         <typings>FuelEconomyRequirement</typings>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="30 [mpg]">
           <redefinitions>requiredFuelEconomy</redefinitions>
-          <valuePart>30 [mpg]</valuePart>
         </elements>
       </elements>
     </elements>
@@ -188,9 +177,8 @@
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="v">
           <typings>SpeedValue</typings>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" valuePart="p / (m * v)">
           <typings>AccelerationValue</typings>
-          <valuePart>p / (m * v)</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="Velocity">
@@ -203,9 +191,8 @@
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="dt">
           <typings>TimeValue</typings>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" valuePart="v0 + a * dt">
           <typings>SpeedValue</typings>
-          <valuePart>v0 + a * dt</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="Position">
@@ -218,9 +205,8 @@
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="dt">
           <typings>TimeValue</typings>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" valuePart="x0 + v * dt">
           <typings>LengthValue</typings>
-          <valuePart>x0 + v * dt</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:ConstraintDefinition" declaredName="StraightLineDynamicsEquations">
@@ -248,9 +234,8 @@
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="a">
           <typings>AccelerationValue</typings>
         </elements>
-        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="v_avg">
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="v_avg" valuePart="(v_i + v_f)/2">
           <typings>SpeedValue</typings>
-          <valuePart>(v_i + v_f)/2</valuePart>
         </elements>
         <resultExpressionParameter resultExpression="a == Acceleration(p, m, v_avg) &amp; v_f == Velocity(v_i, a, dt) &amp; x_f == Position(x_i, v_avg, dt)"/>
       </elements>
@@ -281,30 +266,14 @@
         </elements>
         <elements xsi:type="sysMLOC:AssertConstraintUsage" declaredName="dynamics">
           <typings>StraightLineDynamicsEquations</typings>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="p">
-            <valuePart>power</valuePart>
-          </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="m">
-            <valuePart>mass</valuePart>
-          </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="dt">
-            <valuePart>delta_t</valuePart>
-          </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x_i">
-            <valuePart>x_in</valuePart>
-          </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="v_i">
-            <valuePart>v_in</valuePart>
-          </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x_f">
-            <valuePart>x_out</valuePart>
-          </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="v_f">
-            <valuePart>v_out</valuePart>
-          </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="a">
-            <valuePart>a_out</valuePart>
-          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="p" valuePart="power"/>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="m" valuePart="mass"/>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="dt" valuePart="delta_t"/>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x_i" valuePart="x_in"/>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="v_i" valuePart="v_in"/>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x_f" valuePart="x_out"/>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="v_f" valuePart="v_out"/>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="a" valuePart="a_out"/>
         </elements>
       </elements>
     </elements>
@@ -338,9 +307,8 @@
           <typings>TimeStateRecord</typings>
           <redefinitions>samples</redefinitions>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="n">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="n" valuePart="size(samples)">
           <typings>Natural</typings>
-          <valuePart>size(samples)</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:AnalysisCaseDefinition" declaredName="FuelEconomyAnalysis">
@@ -362,9 +330,8 @@
             <resultExpressionParameter resultExpression="vehicle.wheelDiameter == 33 ['in'] &amp; vehicle.driveTrainEfficiency == 0.4"/>
           </elements>
           <elements xsi:type="sysMLOC:RequirementConstraintUsage" refElement="fuelEconomyRequirement" kind="require">
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="calculatedFuelEconomy">
               <redefinitions>actualFuelEconomy</redefinitions>
-              <valuePart>calculatedFuelEconomy</valuePart>
             </elements>
           </elements>
         </elements>
@@ -386,19 +353,16 @@
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:ActionUsage" declaredName="fuelConsumptionAnalysis">
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="power">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="power" valuePart="dynamicsAnalysis.power">
             <typings>PowerValue</typings>
             <Multiplicity>*</Multiplicity>
-            <valuePart>dynamicsAnalysis.power</valuePart>
           </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="acceleration">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="acceleration" valuePart="dynamicsAnalysis.acceleration">
             <typings>AccelerationValue</typings>
             <Multiplicity>*</Multiplicity>
-            <valuePart>dynamicsAnalysis.acceleration</valuePart>
           </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="fuelEconomy">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="fuelEconomy" valuePart="calculatedFuelEconomy">
             <typings>DistancePerVolumeValue</typings>
-            <valuePart>calculatedFuelEconomy</valuePart>
           </elements>
           <elements xsi:type="sysMLOC:Comment" body="/*&#xD;&#xA;&#x9;&#x9;         * Solve the engine equations to determine how much fuel is&#xD;&#xA;&#x9;&#x9;         * consumed. The engine RPM is a function of the speed of the&#xD;&#xA;&#x9;&#x9;         * vehicle and the gear state.&#xD;&#xA;&#x9;&#x9;         */"/>
         </elements>
@@ -412,9 +376,8 @@
         <elements xsi:type="sysMLOC:RequirementUsage" declaredName="vehicleFuelEconomyRequirement_city">
           <subsetting>cityFuelEconomyRequirement</subsetting>
           <elements xsi:type="sysMLOC:Documentation" body="/* The vehicle shall provide a fuel economy that is greater than or equal to&#xD;&#xA;&#x9;             * 25 miles per gallon for the nominal city driving scenarios.&#xD;&#xA;&#x9;             */"/>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="vehicle.fuelEconomy_city">
             <redefinitions>actualFuelEconomy</redefinitions>
-            <valuePart>vehicle.fuelEconomy_city</valuePart>
           </elements>
           <elements xsi:type="sysMLOC:RequirementConstraintUsage">
             <resultExpressionParameter resultExpression="vehicle.cargoMass == 1000 [lb]"/>
@@ -423,9 +386,8 @@
         <elements xsi:type="sysMLOC:RequirementUsage" declaredName="vehicleFuelEconomyRequirement_highway">
           <subsetting>highwayFuelEconomyRequirement</subsetting>
           <elements xsi:type="sysMLOC:Documentation" body="/* The vehicle shall provide a fuel economy that is greater than or equal to&#xD;&#xA;&#x9;             * 30 miles per gallon for the nominal highway driving scenarios.&#xD;&#xA;&#x9;             */"/>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="vehicle.fuelEconomy_highway">
             <redefinitions>actualFuelEconomy</redefinitions>
-            <valuePart>vehicle.fuelEconomy_highway</valuePart>
           </elements>
           <elements xsi:type="sysMLOC:RequirementConstraintUsage">
             <resultExpressionParameter resultExpression="vehicle.cargoMass == 1000 [lb]"/>
@@ -440,37 +402,23 @@
       </elements>
       <elements xsi:type="sysMLOC:AnalysisCaseUsage" declaredName="cityFuelEconomyAnalysis">
         <typings>FuelEconomyAnalysis</typings>
-        <elements xsi:type="sysMLOC:SubjectUsage" declaredName="vehicle">
-          <valuePart>vehicle_c1</valuePart>
-        </elements>
-        <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="scenario">
-          <valuePart>cityScenario</valuePart>
-        </elements>
-        <elements xsi:type="sysMLOC:RequirementUsage" direction="in" declaredName="fuelEconomyRequirement">
-          <valuePart>cityFuelEconomyRequirement</valuePart>
-        </elements>
+        <elements xsi:type="sysMLOC:SubjectUsage" declaredName="vehicle" valuePart="vehicle_c1"/>
+        <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="scenario" valuePart="cityScenario"/>
+        <elements xsi:type="sysMLOC:RequirementUsage" direction="in" declaredName="fuelEconomyRequirement" valuePart="cityFuelEconomyRequirement"/>
       </elements>
       <elements xsi:type="sysMLOC:AnalysisCaseUsage" declaredName="highwayFuelEconomyAnalysis">
         <typings>FuelEconomyAnalysis</typings>
-        <elements xsi:type="sysMLOC:SubjectUsage" declaredName="vehicle">
-          <valuePart>vehicle_c1</valuePart>
-        </elements>
-        <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="scenario">
-          <valuePart>highwayScenario</valuePart>
-        </elements>
-        <elements xsi:type="sysMLOC:RequirementUsage" direction="in" declaredName="fuelEconomyRequirement">
-          <valuePart>highwayFuelEconomyRequirement</valuePart>
-        </elements>
+        <elements xsi:type="sysMLOC:SubjectUsage" declaredName="vehicle" valuePart="vehicle_c1"/>
+        <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="scenario" valuePart="highwayScenario"/>
+        <elements xsi:type="sysMLOC:RequirementUsage" direction="in" declaredName="fuelEconomyRequirement" valuePart="highwayFuelEconomyRequirement"/>
       </elements>
       <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle_c1_analysized">
         <subsetting>vehicle_c1</subsetting>
-        <elements xsi:type="sysMLOC:AttributeUsage">
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="cityFuelEconomyAnalysis.calculatedFuelEconomy">
           <redefinitions>fuelEconomy_city</redefinitions>
-          <valuePart>cityFuelEconomyAnalysis.calculatedFuelEconomy</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:AttributeUsage">
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="highwayFuelEconomyAnalysis.calculatedFuelEconomy">
           <redefinitions>fuelEconomy_highway</redefinitions>
-          <valuePart>highwayFuelEconomyAnalysis.calculatedFuelEconomy</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:SatisfyRequirementUsage" refElement="vehicleFuelEconomyRequirementsGroup" satisfactionParameter="vehicle_c1_analysized"/>

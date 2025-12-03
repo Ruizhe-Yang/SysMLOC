@@ -49,7 +49,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class MetadataDefinitionImpl extends DefinitionElementImpl implements MetadataDefinition
+public class MetadataDefinitionImpl extends DefinitionElementsImpl implements MetadataDefinition
 {
   /**
    * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.

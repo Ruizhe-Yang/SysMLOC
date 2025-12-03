@@ -5,37 +5,32 @@
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Metaobjects::SemanticMetadata"/>
     <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="situation">
       <superclassifiers>SemanticMetadata</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="situations meta SysML::Usage">
         <redefinitions>baseType</redefinitions>
-        <valuePart>situations meta SysML::Usage</valuePart>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="cause">
       <superclassifiers>SemanticMetadata</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="causes meta SysML::Usage">
         <redefinitions>baseType</redefinitions>
-        <valuePart>causes meta SysML::Usage</valuePart>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="failure">
       <superclassifiers>SemanticMetadata</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="failures meta SysML::Usage">
         <redefinitions>baseType</redefinitions>
-        <valuePart>failures meta SysML::Usage</valuePart>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="causation">
       <superclassifiers>SemanticMetadata</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="causations meta SysML::Usage">
         <redefinitions>baseType</redefinitions>
-        <valuePart>causations meta SysML::Usage</valuePart>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="scenario">
       <superclassifiers>SemanticMetadata</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="scenarios meta SysML::Usage">
         <redefinitions>baseType</redefinitions>
-        <valuePart>scenarios meta SysML::Usage</valuePart>
       </elements>
     </elements>
   </elements>

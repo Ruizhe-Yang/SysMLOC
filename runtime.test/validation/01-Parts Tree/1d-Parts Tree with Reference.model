@@ -34,9 +34,8 @@
         </elements>
         <elements xsi:type="sysMLOC:PartUsage" declaredName="trailer1">
           <typings>Trailer</typings>
-          <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="trailerCoupler">
+          <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="trailerCoupler" valuePart="trailerHitch.trailerCoupler">
             <typings>TrailerCoupler</typings>
-            <valuePart>trailerHitch.trailerCoupler</valuePart>
             <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * This is a shorthand for a binding connector between the&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * 'trailerCoupler' here and the 'trailerCoupler' in 'trailerHitch'.&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * The binding connector is now contained within the 'trailer1'&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * part, though, rather than being at the system level. &#xA;&#x9;&#x9;&#x9;&#x9;&#x9; */"/>
           </elements>
         </elements>

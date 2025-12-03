@@ -3,8 +3,6 @@
  */
 package dut.control.sysmloc.sysMLOC;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -72,15 +70,25 @@ public interface FeatureValue extends EObject
   void setIsDefault(boolean value);
 
   /**
-   * Returns the value of the '<em><b>Value Part</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Value Part</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Value Part</em>' attribute list.
+   * @return the value of the '<em>Value Part</em>' attribute.
+   * @see #setValuePart(String)
    * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getFeatureValue_ValuePart()
-   * @model unique="false"
+   * @model
    * @generated
    */
-  EList<String> getValuePart();
+  String getValuePart();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.FeatureValue#getValuePart <em>Value Part</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Value Part</em>' attribute.
+   * @see #getValuePart()
+   * @generated
+   */
+  void setValuePart(String value);
 
 } // FeatureValue

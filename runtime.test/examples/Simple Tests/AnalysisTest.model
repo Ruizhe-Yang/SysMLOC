@@ -16,9 +16,7 @@
       </elements>
       <elements xsi:type="sysMLOC:ObjectiveRequirementUsage" declaredName="obj">
         <typings>AnalysisObjective</typings>
-        <elements xsi:type="sysMLOC:SubjectUsage">
-          <valuePart>result</valuePart>
-        </elements>
+        <elements xsi:type="sysMLOC:SubjectUsage" valuePart="result"/>
       </elements>
       <resultExpressionParameter resultExpression="v.m"/>
     </elements>
@@ -37,9 +35,7 @@
     <elements xsi:type="sysMLOC:PartUsage" declaredName="analysisContext">
       <elements xsi:type="sysMLOC:AnalysisCaseUsage" declaredName="analysisPlan">
         <typings>AnalysisPlan</typings>
-        <elements xsi:type="sysMLOC:SubjectUsage" declaredName="v">
-          <valuePart>vv</valuePart>
-        </elements>
+        <elements xsi:type="sysMLOC:SubjectUsage" declaredName="v" valuePart="vv"/>
       </elements>
     </elements>
   </elements>

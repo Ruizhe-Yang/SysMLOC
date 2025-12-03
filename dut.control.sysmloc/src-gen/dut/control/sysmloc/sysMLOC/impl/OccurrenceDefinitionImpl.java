@@ -53,7 +53,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class OccurrenceDefinitionImpl extends DefinitionElementImpl implements OccurrenceDefinition
+public class OccurrenceDefinitionImpl extends DefinitionElementsImpl implements OccurrenceDefinition
 {
   /**
    * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.

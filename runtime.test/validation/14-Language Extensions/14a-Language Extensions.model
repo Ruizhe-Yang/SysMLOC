@@ -21,17 +21,13 @@
     </elements>
     <elements xsi:type="sysMLOC:PartUsage" declaredName="part_X">
       <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="Classified">
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="classificationLevel">
-          <valuePart>ClassificationLevel::conf</valuePart>
-        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="classificationLevel" valuePart="ClassificationLevel::conf"/>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CodeAnnotation" body="// Alternative shorthand notation&#xA;"/>
     <elements xsi:type="sysMLOC:PartUsage" declaredName="part_Y">
       <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="Classified">
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="classificationLevel">
-          <valuePart>ClassificationLevel::conf</valuePart>
-        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="classificationLevel" valuePart="ClassificationLevel::conf"/>
       </elements>
     </elements>
   </elements>

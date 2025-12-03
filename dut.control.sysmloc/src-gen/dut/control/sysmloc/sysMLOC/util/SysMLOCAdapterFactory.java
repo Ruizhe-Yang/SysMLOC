@@ -32,7 +32,7 @@ import dut.control.sysmloc.sysMLOC.AttributeDefinition;
 import dut.control.sysmloc.sysMLOC.AttributeUsage;
 import dut.control.sysmloc.sysMLOC.BasicDefinitionPrefix;
 import dut.control.sysmloc.sysMLOC.BasicUsagePrefix;
-import dut.control.sysmloc.sysMLOC.BehaviorUsageElement;
+import dut.control.sysmloc.sysMLOC.BehaviorUsageElements;
 import dut.control.sysmloc.sysMLOC.BindingConnectorAsUsage;
 import dut.control.sysmloc.sysMLOC.CalculationBodyElement;
 import dut.control.sysmloc.sysMLOC.CalculationDefinition;
@@ -57,7 +57,7 @@ import dut.control.sysmloc.sysMLOC.CrossFeatureChain;
 import dut.control.sysmloc.sysMLOC.DefaultReferenceUsage;
 import dut.control.sysmloc.sysMLOC.DefinitionBodyElement;
 import dut.control.sysmloc.sysMLOC.DefinitionDeclaration;
-import dut.control.sysmloc.sysMLOC.DefinitionElement;
+import dut.control.sysmloc.sysMLOC.DefinitionElements;
 import dut.control.sysmloc.sysMLOC.DefinitionExtensionKeyword;
 import dut.control.sysmloc.sysMLOC.DefinitionPrefix;
 import dut.control.sysmloc.sysMLOC.Dependency;
@@ -158,7 +158,7 @@ import dut.control.sysmloc.sysMLOC.StateBodyElement;
 import dut.control.sysmloc.sysMLOC.StateDefinition;
 import dut.control.sysmloc.sysMLOC.StateNodeElements;
 import dut.control.sysmloc.sysMLOC.StateUsage;
-import dut.control.sysmloc.sysMLOC.StructureUsageElement;
+import dut.control.sysmloc.sysMLOC.StructureUsageElements;
 import dut.control.sysmloc.sysMLOC.SubjectUsage;
 import dut.control.sysmloc.sysMLOC.SubsettingFeatureChain;
 import dut.control.sysmloc.sysMLOC.SuccessionAsUsage;
@@ -175,7 +175,7 @@ import dut.control.sysmloc.sysMLOC.UnextendedUsagePrefix;
 import dut.control.sysmloc.sysMLOC.Usage;
 import dut.control.sysmloc.sysMLOC.UsageBodyElement;
 import dut.control.sysmloc.sysMLOC.UsageDeclaration;
-import dut.control.sysmloc.sysMLOC.UsageElement;
+import dut.control.sysmloc.sysMLOC.UsageElements;
 import dut.control.sysmloc.sysMLOC.UsageExtensionKeyword;
 import dut.control.sysmloc.sysMLOC.UsagePrefix;
 import dut.control.sysmloc.sysMLOC.UseCaseDefinition;
@@ -354,14 +354,14 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
         return createAnnotatingElementAdapter();
       }
       @Override
-      public Adapter caseDefinitionElement(DefinitionElement object)
+      public Adapter caseDefinitionElements(DefinitionElements object)
       {
-        return createDefinitionElementAdapter();
+        return createDefinitionElementsAdapter();
       }
       @Override
-      public Adapter caseUsageElement(UsageElement object)
+      public Adapter caseUsageElements(UsageElements object)
       {
-        return createUsageElementAdapter();
+        return createUsageElementsAdapter();
       }
       @Override
       public Adapter caseNonOccurrenceUsageElement(NonOccurrenceUsageElement object)
@@ -374,14 +374,14 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
         return createOccurrenceUsageElementAdapter();
       }
       @Override
-      public Adapter caseStructureUsageElement(StructureUsageElement object)
+      public Adapter caseStructureUsageElements(StructureUsageElements object)
       {
-        return createStructureUsageElementAdapter();
+        return createStructureUsageElementsAdapter();
       }
       @Override
-      public Adapter caseBehaviorUsageElement(BehaviorUsageElement object)
+      public Adapter caseBehaviorUsageElements(BehaviorUsageElements object)
       {
-        return createBehaviorUsageElementAdapter();
+        return createBehaviorUsageElementsAdapter();
       }
       @Override
       public Adapter caseActionNodeElements(ActionNodeElements object)
@@ -1501,31 +1501,31 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.DefinitionElement <em>Definition Element</em>}'.
+   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.DefinitionElements <em>Definition Elements</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see dut.control.sysmloc.sysMLOC.DefinitionElement
+   * @see dut.control.sysmloc.sysMLOC.DefinitionElements
    * @generated
    */
-  public Adapter createDefinitionElementAdapter()
+  public Adapter createDefinitionElementsAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.UsageElement <em>Usage Element</em>}'.
+   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.UsageElements <em>Usage Elements</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see dut.control.sysmloc.sysMLOC.UsageElement
+   * @see dut.control.sysmloc.sysMLOC.UsageElements
    * @generated
    */
-  public Adapter createUsageElementAdapter()
+  public Adapter createUsageElementsAdapter()
   {
     return null;
   }
@@ -1561,31 +1561,31 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.StructureUsageElement <em>Structure Usage Element</em>}'.
+   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.StructureUsageElements <em>Structure Usage Elements</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see dut.control.sysmloc.sysMLOC.StructureUsageElement
+   * @see dut.control.sysmloc.sysMLOC.StructureUsageElements
    * @generated
    */
-  public Adapter createStructureUsageElementAdapter()
+  public Adapter createStructureUsageElementsAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.BehaviorUsageElement <em>Behavior Usage Element</em>}'.
+   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.BehaviorUsageElements <em>Behavior Usage Elements</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see dut.control.sysmloc.sysMLOC.BehaviorUsageElement
+   * @see dut.control.sysmloc.sysMLOC.BehaviorUsageElements
    * @generated
    */
-  public Adapter createBehaviorUsageElementAdapter()
+  public Adapter createBehaviorUsageElementsAdapter()
   {
     return null;
   }

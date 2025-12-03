@@ -33,13 +33,11 @@
       <elements xsi:type="sysMLOC:InitialNode" memberElement="start"/>
       <elements xsi:type="sysMLOC:IncludeUseCaseUsage" isThen="true" refElement="'enter vehicle'">
         <elements xsi:type="sysMLOC:SubjectUsage"/>
-        <elements xsi:type="sysMLOC:ActorUsage">
+        <elements xsi:type="sysMLOC:ActorUsage" valuePart="'provide transportation'::driver">
           <redefinitions>driver</redefinitions>
-          <valuePart>'provide transportation'::driver</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:ActorUsage">
+        <elements xsi:type="sysMLOC:ActorUsage" valuePart="'provide transportation'::passengers">
           <redefinitions>passengers</redefinitions>
-          <valuePart>'provide transportation'::passengers</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:UseCaseUsage" isThen="true" declaredName="'drive vehicle'">
@@ -48,9 +46,8 @@
           <Multiplicity>*</Multiplicity>
           <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9;&#x9; * Mock-up of an extension point.&#xA;&#x9;&#x9;&#x9;&#x9; * (But reference to 'add fuel' is in the wrong direction, and it doesn't&#xA;&#x9;&#x9;&#x9;&#x9; * make the extension condition sufficient to trigger the behavior.)&#xA;&#x9;&#x9;&#x9;&#x9; */"/>
           <elements xsi:type="sysMLOC:SubjectUsage"/>
-          <elements xsi:type="sysMLOC:ActorUsage">
+          <elements xsi:type="sysMLOC:ActorUsage" valuePart="driver">
             <redefinitions>fueler</redefinitions>
-            <valuePart>driver</valuePart>
           </elements>
           <elements xsi:type="sysMLOC:ReferenceUsage">
             <redefinitions>start</redefinitions>
@@ -60,13 +57,11 @@
       </elements>
       <elements xsi:type="sysMLOC:IncludeUseCaseUsage" isThen="true" refElement="'exit vehicle'">
         <elements xsi:type="sysMLOC:SubjectUsage"/>
-        <elements xsi:type="sysMLOC:ActorUsage">
+        <elements xsi:type="sysMLOC:ActorUsage" valuePart="'provide transportation'::driver">
           <redefinitions>driver</redefinitions>
-          <valuePart>'provide transportation'::driver</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:ActorUsage">
+        <elements xsi:type="sysMLOC:ActorUsage" valuePart="'provide transportation'::passengers">
           <redefinitions>passengers</redefinitions>
-          <valuePart>'provide transportation'::passengers</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:ThenNode">

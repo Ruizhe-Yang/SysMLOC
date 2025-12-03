@@ -9,17 +9,14 @@
         <typings>Box</typings>
         <subsetting>boundingShapes</subsetting>
         <Multiplicity>1</Multiplicity>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="4800 [mm]">
           <redefinitions>length</redefinitions>
-          <valuePart>4800 [mm]</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1840 [mm]">
           <redefinitions>width</redefinitions>
-          <valuePart>1840 [mm]</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1350 [mm]">
           <redefinitions>height</redefinitions>
-          <valuePart>1350 [mm]</valuePart>
         </elements>
       </elements>
     </elements>

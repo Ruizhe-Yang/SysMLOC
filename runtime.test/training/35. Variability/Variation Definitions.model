@@ -36,12 +36,8 @@
     <elements xsi:type="sysMLOC:CodeAnnotation" body="// Variability model&#xD;&#xA;"/>
     <elements xsi:type="sysMLOC:AttributeDefinition" isVariation="true" declaredName="DiameterChoices">
       <superclassifiers>Diameter</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" isVariant="true" declaredName="diameterSmall">
-        <valuePart>70[mm]</valuePart>
-      </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" isVariant="true" declaredName="diameterLarge">
-        <valuePart>100[mm]</valuePart>
-      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" isVariant="true" declaredName="diameterSmall" valuePart="70[mm]"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" isVariant="true" declaredName="diameterLarge" valuePart="100[mm]"/>
     </elements>
     <elements xsi:type="sysMLOC:PartDefinition" isVariation="true" declaredName="EngineChoices">
       <superclassifiers>Engine</superclassifiers>

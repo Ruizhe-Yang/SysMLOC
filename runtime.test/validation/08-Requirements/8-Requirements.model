@@ -53,9 +53,8 @@
       </elements>
       <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle1_c1">
         <typings>Vehicle</typings>
-        <elements xsi:type="sysMLOC:AttributeUsage">
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="2000 [kg]">
           <redefinitions>mass</redefinitions>
-          <valuePart>2000 [kg]</valuePart>
         </elements>
         <elements xsi:type="sysMLOC:PerformActionUsage" refElement="'provide power'"/>
         <elements xsi:type="sysMLOC:PartUsage" declaredName="engine_v1">
@@ -81,9 +80,8 @@
       </elements>
       <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle1_c2">
         <typings>Vehicle</typings>
-        <elements xsi:type="sysMLOC:AttributeUsage">
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="2500 [kg]">
           <redefinitions>mass</redefinitions>
-          <valuePart>2500 [kg]</valuePart>
         </elements>
       </elements>
     </elements>
@@ -112,15 +110,13 @@
           <typings>Vehicle</typings>
           <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9;&#x9; * The subject of this requirement is redefined to be a &quot;Vehicle&quot;.&#xA;&#x9;&#x9;&#x9;&#x9; */"/>
         </elements>
-        <elements xsi:type="sysMLOC:AttributeUsage">
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="vehicle.mass">
           <typings>MassValue</typings>
           <redefinitions>massActual</redefinitions>
-          <valuePart>vehicle.mass</valuePart>
           <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9;&#x9; * This redefinition binds the vehicle mass to the actual mass.&#xA;&#x9;&#x9;&#x9;&#x9; */"/>
         </elements>
-        <elements xsi:type="sysMLOC:AttributeUsage">
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="2000 [kg]">
           <redefinitions>massReqd</redefinitions>
-          <valuePart>2000 [kg]</valuePart>
           <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9;&#x9; * This redefinition sets the required mass to 2000 kg.&#xA;&#x9;&#x9;&#x9;&#x9; */"/>
         </elements>
         <elements xsi:type="sysMLOC:RequirementConstraintUsage" declaredName="fuelConstraint">
@@ -135,14 +131,12 @@
         <elements xsi:type="sysMLOC:SubjectUsage" declaredName="vehicle">
           <typings>Vehicle</typings>
         </elements>
-        <elements xsi:type="sysMLOC:AttributeUsage">
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="vehicle.mass">
           <typings>MassValue</typings>
           <redefinitions>massActual</redefinitions>
-          <valuePart>vehicle.mass</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:AttributeUsage">
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="2500 [kg]">
           <redefinitions>massReqd</redefinitions>
-          <valuePart>2500 [kg]</valuePart>
         </elements>
         <elements xsi:type="sysMLOC:RequirementConstraintUsage" declaredName="fuelConstraint">
           <elements xsi:type="sysMLOC:Documentation" body="/* empty fuel tank */"/>
@@ -188,15 +182,13 @@
         </elements>
         <elements xsi:type="sysMLOC:Comment" body="/* &#xA;&#x9;&#x9;&#x9; * Here the subjects of the referenced requirements are defined to be specific properties of the&#xA;&#x9;&#x9;&#x9; * subject of the group.&#xA;&#x9;&#x9;&#x9; */"/>
         <elements xsi:type="sysMLOC:RequirementConstraintUsage" refElement="torqueGeneration" kind="require">
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" valuePart="engine.'generate torque'">
             <redefinitions>generateTorque</redefinitions>
-            <valuePart>engine.'generate torque'</valuePart>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:RequirementConstraintUsage" refElement="drivePowerInterface" kind="require">
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" valuePart="engine.drivePwrPort">
             <redefinitions>drivePwrPort</redefinitions>
-            <valuePart>engine.drivePwrPort</valuePart>
           </elements>
         </elements>
       </elements>

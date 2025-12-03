@@ -330,14 +330,24 @@ public class RequirementConstraintUsageImpl extends RequirementNodeElementsImpl 
   protected boolean isDefault = IS_DEFAULT_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getValuePart() <em>Value Part</em>}' attribute list.
+   * The default value of the '{@link #getValuePart() <em>Value Part</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getValuePart()
    * @generated
    * @ordered
    */
-  protected EList<String> valuePart;
+  protected static final String VALUE_PART_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getValuePart() <em>Value Part</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getValuePart()
+   * @generated
+   * @ordered
+   */
+  protected String valuePart = VALUE_PART_EDEFAULT;
 
   /**
    * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
@@ -736,13 +746,23 @@ public class RequirementConstraintUsageImpl extends RequirementNodeElementsImpl 
    * @generated
    */
   @Override
-  public EList<String> getValuePart()
+  public String getValuePart()
   {
-    if (valuePart == null)
-    {
-      valuePart = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__VALUE_PART);
-    }
     return valuePart;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setValuePart(String newValuePart)
+  {
+    String oldValuePart = valuePart;
+    valuePart = newValuePart;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__VALUE_PART, oldValuePart, valuePart));
   }
 
   /**
@@ -939,8 +959,7 @@ public class RequirementConstraintUsageImpl extends RequirementNodeElementsImpl 
         setIsDefault((Boolean)newValue);
         return;
       case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__VALUE_PART:
-        getValuePart().clear();
-        getValuePart().addAll((Collection<? extends String>)newValue);
+        setValuePart((String)newValue);
         return;
       case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__KIND:
         setKind((RequirementConstraintKind)newValue);
@@ -1016,7 +1035,7 @@ public class RequirementConstraintUsageImpl extends RequirementNodeElementsImpl 
         setIsDefault(IS_DEFAULT_EDEFAULT);
         return;
       case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__VALUE_PART:
-        getValuePart().clear();
+        setValuePart(VALUE_PART_EDEFAULT);
         return;
       case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__KIND:
         setKind(KIND_EDEFAULT);
@@ -1074,7 +1093,7 @@ public class RequirementConstraintUsageImpl extends RequirementNodeElementsImpl 
       case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__IS_DEFAULT:
         return isDefault != IS_DEFAULT_EDEFAULT;
       case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__VALUE_PART:
-        return valuePart != null && !valuePart.isEmpty();
+        return VALUE_PART_EDEFAULT == null ? valuePart != null : !VALUE_PART_EDEFAULT.equals(valuePart);
       case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__KIND:
         return kind != KIND_EDEFAULT;
       case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__ELEMENTS:

@@ -139,9 +139,8 @@
           <typings>DriveshaftInterface</typings>
           <connectorPart refElement="transmission.shaftPort_a"/>
           <connectorPart refElement="rearAxleAssembly.shaftPort_d"/>
-          <elements xsi:type="sysMLOC:ReferenceUsage">
+          <elements xsi:type="sysMLOC:ReferenceUsage" valuePart="vehicle1_c1.driveshaft">
             <redefinitions>driveshaft</redefinitions>
-            <valuePart>vehicle1_c1.driveshaft</valuePart>
             <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; * The reference property from 'DriveshaftInterface' is redefined&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; * in order to bind it to the appropriate part of 'vehicle1_c1'.&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; */"/>
           </elements>
         </elements>
@@ -195,9 +194,8 @@
             <Multiplicity>2</Multiplicity>
           </elements>
           <elements xsi:type="sysMLOC:Comment" body="/* The two rear wheels of 'rearAxleAssembly' must be given&#xA;&#x9;&#x9;&#x9;&#x9; * their own names in order to be referenced in connections.&#xA;&#x9;&#x9;&#x9;&#x9; * &#xA;&#x9;&#x9;&#x9;&#x9; * (&quot;:>&quot; is a shorthand here for &quot;subsets&quot;.)&#xA;&#x9;&#x9;&#x9;&#x9; */"/>
-          <elements xsi:type="sysMLOC:PartUsage" declaredName="leftWheel">
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="leftWheel" valuePart="rearWheel#(1)">
             <subsetting>rearWheel</subsetting>
-            <valuePart>rearWheel#(1)</valuePart>
             <elements xsi:type="sysMLOC:PortUsage" declaredName="wheelToAxlePort">
               <typings>WheelToAxlePort</typings>
             </elements>
@@ -205,9 +203,8 @@
               <typings>WheelToRoadPort</typings>
             </elements>
           </elements>
-          <elements xsi:type="sysMLOC:PartUsage" declaredName="rightWheel">
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="rightWheel" valuePart="rearWheel#(2)">
             <subsetting>rearWheel</subsetting>
-            <valuePart>rearWheel#(2)</valuePart>
             <elements xsi:type="sysMLOC:PortUsage" declaredName="wheelToAxlePort">
               <typings>WheelToAxlePort</typings>
             </elements>
@@ -226,13 +223,11 @@
         </elements>
         <elements xsi:type="sysMLOC:PortUsage" declaredName="vehicleToRoadPort">
           <redefinitions>VehicleA::vehicleToRoadPort</redefinitions>
-          <elements xsi:type="sysMLOC:PortUsage" declaredName="leftWheelToRoadPort">
+          <elements xsi:type="sysMLOC:PortUsage" declaredName="leftWheelToRoadPort" valuePart="wheelToRoadPort#(1)">
             <subsetting>wheelToRoadPort</subsetting>
-            <valuePart>wheelToRoadPort#(1)</valuePart>
           </elements>
-          <elements xsi:type="sysMLOC:PortUsage" declaredName="rightWheelToRoadPort">
+          <elements xsi:type="sysMLOC:PortUsage" declaredName="rightWheelToRoadPort" valuePart="wheelToRoadPort#(2)">
             <subsetting>wheelToRoadPort</subsetting>
-            <valuePart>wheelToRoadPort#(2)</valuePart>
           </elements>
         </elements>
       </elements>

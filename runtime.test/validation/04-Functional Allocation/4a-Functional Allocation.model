@@ -17,9 +17,7 @@
       <elements xsi:type="sysMLOC:PerformActionUsage" refElement="'provide power'">
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * This allocates the action '3a-Function-based Behavior-1'::'provide power' as an enacted &#xA;&#x9;&#x9; * performance of 'vehicle_c1_functional_allocation'.&#xA;&#x9;&#x9; */"/>
         <elements xsi:type="sysMLOC:CodeAnnotation" body="// This assigns the fuelCmdPort to provide the input to 'provide power'.&#xA;"/>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="fuelCmd">
-          <valuePart>fuelCmdPort.fuelCmd</valuePart>
-        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="fuelCmd" valuePart="fuelCmdPort.fuelCmd"/>
       </elements>
       <elements xsi:type="sysMLOC:PartUsage">
         <redefinitions>engine</redefinitions>
@@ -31,12 +29,8 @@
         </elements>
         <elements xsi:type="sysMLOC:PerformActionUsage" refElement="'provide power'.'generate torque'">
           <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9;&#x9; *  This allocates one of the sub-steps of 'provide power' to a sub-part of vehicle_c1. &#xA;&#x9;&#x9;&#x9;&#x9; */"/>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="fuelCmd">
-            <valuePart>fuelCmdPort.fuelCmd</valuePart>
-          </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="engineTorque">
-            <valuePart>drivePwrPort.engineTorque</valuePart>
-          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="fuelCmd" valuePart="fuelCmdPort.fuelCmd"/>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="engineTorque" valuePart="drivePwrPort.engineTorque"/>
         </elements>
         <elements xsi:type="sysMLOC:PortUsage">
           <redefinitions>drivePwrPort</redefinitions>
@@ -54,12 +48,8 @@
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:PerformActionUsage" refElement="'provide power'.'amplify torque'">
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="engineTorque">
-            <valuePart>clutchPort.engineTorque</valuePart>
-          </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="transmissionTorque">
-            <valuePart>shaftPort_a.transmissionTorque</valuePart>
-          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="engineTorque" valuePart="clutchPort.engineTorque"/>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="transmissionTorque" valuePart="shaftPort_a.transmissionTorque"/>
         </elements>
         <elements xsi:type="sysMLOC:PortUsage">
           <redefinitions>shaftPort_a</redefinitions>
@@ -77,12 +67,8 @@
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:PerformActionUsage" refElement="'provide power'.'transfer torque'">
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="transmissionTorque">
-            <valuePart>shaftPort_b.transmissionTorque</valuePart>
-          </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="driveshaftTorque">
-            <valuePart>shaftPort_c.driveshaftTorque</valuePart>
-          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="transmissionTorque" valuePart="shaftPort_b.transmissionTorque"/>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="driveshaftTorque" valuePart="shaftPort_c.driveshaftTorque"/>
         </elements>
         <elements xsi:type="sysMLOC:PortUsage">
           <redefinitions>shaftPort_c</redefinitions>
@@ -100,15 +86,9 @@
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:PerformActionUsage" refElement="'provide power'.'distribute torque'">
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="driveshaftTorque">
-            <valuePart>shaftPort_d.driveshaftTorque</valuePart>
-          </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="wheelTorque1">
-            <valuePart>rearAxle.leftHalfAxle.axleToWheelPort.wheelTorque</valuePart>
-          </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="wheelTorque2">
-            <valuePart>rearAxle.rightHalfAxle.axleToWheelPort.wheelTorque</valuePart>
-          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="driveshaftTorque" valuePart="shaftPort_d.driveshaftTorque"/>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="wheelTorque1" valuePart="rearAxle.leftHalfAxle.axleToWheelPort.wheelTorque"/>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="wheelTorque2" valuePart="rearAxle.rightHalfAxle.axleToWheelPort.wheelTorque"/>
         </elements>
         <elements xsi:type="sysMLOC:PartUsage">
           <redefinitions>rearAxle</redefinitions>

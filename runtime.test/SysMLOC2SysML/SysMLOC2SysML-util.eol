@@ -1,9 +1,6 @@
 // General Functions
-operation SysMLOC!EObject isEnd(){
-	if (self.isTypeOf(SysMLOC!Documentation)){
-		return true;
-	}
-	else if (self.hasProperty("elements")){
+operation SysMLOC!EObject isSemicolon(){
+	if (self.hasProperty("elements")){
 		return (self.elements.size() == 0);
 	}
 	else{
@@ -11,21 +8,78 @@ operation SysMLOC!EObject isEnd(){
 	}
 }
 
+operation SysMLOC!EObject hasNonSemicolon(){
+	if (self.isTypeOf(SysMLOC!Comment) 
+		or self.isTypeOf(SysMLOC!Documentation)
+		or self.isTypeOf(SysMLOC!TextualRepresentation)
+		or self.isTypeOf(SysMLOC!CodeAnnotation)){
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
 // Flip Functions
 operation SysMLOC!Identification Identification(){
-	if (self.declaredShortName == ""){
-		return "<"+self.declaredShortName+">"+self.declaredName;
+	if (self.declaredShortName._() != ""){
+		return "<"+self.declaredShortName+">"._()+self.declaredName._();
 	}
 	else{
-		return self.declaredName;
+		return self.declaredName._();
+	}
+}
+
+operation SysMLOC!FlowUsage ItemFeatureParameterPart(){
+	if (self.itemFeatureParameter.size() == 0){
+		return "";
+	}
+	else{
+//		PayloadFeature
+		return "";
+	}
+}
+
+operation SysMLOC!FlowUsage FlowEnd(){
+	if (self.FlowEnd.size()>0){
+		return "from"._() + self.FlowEnd.first()._() + "to"._()+self.FlowEnd.second()._();
+	}
+	else{
+		return "";
 	}
 }
 
 operation SysMLOC!GeneralUsagePrefix GeneralUsagePrefix(){
+	return self.EmptySuccessionPrefix() + self.MemberPrefix() + self.isReturnPrefix();
+}
+
+operation SysMLOC!EmptySuccessionPrefix EmptySuccessionPrefix(){
+	var str = "";
+	if (self.ThenMultiplicity.size() == 1){
+		str =  "["+self.ThenMultiplicity.first()+"]".space();
+	}
+	else if(self.ThenMultiplicity.size() == 2){
+		str =  "["+self.ThenMultiplicity.first()+".."+self.ThenMultiplicity.second()+"]".space();
+	}
+	else{
+		str =  "";
+	}
+	return self.hasThen()+str;
+}
+
+operation SysMLOC!UsagePrefix UsagePrefix(){
 	return "";
 }
 
 operation SysMLOC!OccurrenceUsagePrefix OccurrenceUsagePrefix(){
+	return self.hasEnd()+self.BasicUsagePrefix()+self.hasIndividual()+self.hasPortionKind()+self.UsageExtensionKeyword();
+}
+
+operation SysMLOC!BasicUsagePrefix BasicUsagePrefix(){
+	return self.RefPrefix()+self.hasReference();
+}
+
+operation SysMLOC!UsageExtensionKeyword UsageExtensionKeyword(){
 	return "";
 }
 
@@ -33,14 +87,295 @@ operation SysMLOC!Usage Usage(){
 	return self.UsageDeclaration()+self.FeatureValue();
 }
 
+operation SysMLOC!MemberPrefix MemberPrefix(){
+	return self.hasVisibilityIndicator()._()+self.hasVariant()._();
+}
+
+operation SysMLOC!OccurrenceDefinitionPrefix OccurrenceDefinitionPrefix(){
+	return ""._();
+}
+
+operation SysMLOC!DefinitionPrefix DefinitionPrefix(){
+	return ""._();
+}
+
+operation SysMLOC!BasicDefinitionPrefix BasicDefinitionPrefix(){
+	return ""._();
+}
+
+operation SysMLOC!RefPrefix RefPrefix(){
+	return self.hasDirection()+self.BasicDefinitionPrefix()._()+self.hasReadOnly()+self.hasDerived();
+}
+
+operation SysMLOC!ValuePart ValuePart(){
+	return ""._();
+}
+
 operation SysMLOC!DefinitionDeclaration DefinitionDeclaration(){
 	return self.Identification();
 }
 
 operation SysMLOC!UsageDeclaration UsageDeclaration(){
-	return self.Identification();
+	return self.FeatureDeclaration();
+}
+
+operation SysMLOC!FeatureDeclaration FeatureDeclaration(){
+	return self.Identification()+self.FeatureSpecializationPart();
+}
+
+operation SysMLOC!FeatureSpecializationPart FeatureSpecializationPart(){
+	return self.MultiplicityPart() + self.FeatureSpecialization();
+}
+
+operation SysMLOC!MultiplicityPart MultiplicityPart(){
+	return self.MultiplicityRange() + self.hasOrdered() + self.hasNonunique();
+}
+
+operation SysMLOC!MultiplicityRange MultiplicityRange(){
+	if (self.Multiplicity.size() == 1){
+		return "["+self.Multiplicity.first()+"]".space();
+	}
+	else if(self.Multiplicity.size() == 2){
+		return "["+self.Multiplicity.first()+".."+self.Multiplicity.second()+"]".space();
+	}
+	else{
+		return "";
+	}
+}
+
+operation SysMLOC!FeatureSpecialization FeatureSpecialization(){
+	var str = "";
+	if (self.typings.size()>0){
+		str += ":"._()+self.typings.returnCommaString();
+	}
+	if (self.subsetting.size()>0){
+		str += ":>"._()+self.subsetting.returnCommaString();
+	}
+	if (self.references.size()>0){
+		str += "::>"._()+self.references.returnCommaString();
+	}
+	if (self.crosses.size()>0){
+		str += "=>"._()+self.crosses.returnCommaString();
+	}
+	if (self.redefinitions.size()>0){
+		str += ":>>"._()+self.redefinitions.returnCommaString();
+	}
+	return str;
 }
 
 operation SysMLOC!FeatureValue FeatureValue(){
+	var str = "";
+	if (self.valuePart.notNoneString()){
+		if (self.isDefault){
+			str += "default"._();
+		}
+		if (self.isInitial){
+			str += ":="._();
+		}
+		else{
+			str += "="._();
+		}
+		return str + self.valuePart._();
+	}
+	else{
+		return "";
+	}
+}
+
+operation SysMLOC!Comment hasComment(){
+	if (self.Identification() != ""){
+		return "common"._() + self.Identification();
+	}
+	else{
+		return "";
+	}
+}
+
+operation SysMLOC!Comment hasLocale(){
+	return self.locale._();
+}
+
+operation SysMLOC!Comment hasAbout(){
+	if (self.annotatedElement.size() > 0){
+		return "about"._()+self.annotatedElement.returnCommaString();
+	}
+	else{
+		return "";
+	}
+}
+
+operation SysMLOC!EObject hasRecursive(){
+	if (self.isRecursive){
+		return "::**"._();
+	}
+	else{
+		return "";
+	}
+}
+
+operation SysMLOC!EObject hasVariant(){
+	if (self.isVariant){
+		return "variant"._();
+	}
+	else{
+		return "";
+	}
+}
+
+operation SysMLOC!EObject hasNamespace(){
+	if (self.isNamespace){
+		return "::*"._();
+	}
+	else{
+		return "";
+	}
+}
+
+operation SysMLOC!EObject hasImportAll(){
+	if (self.isImportAll){
+		return "all"._();
+	}
+	else{
+		return "";
+	}
+}
+
+operation SysMLOC!EObject hasIndividual(){
+	if (self.isIndividual){
+		return "individual"._();
+	}
+	else{
+		return "";
+	}
+}
+
+operation SysMLOC!EObject hasReadOnly(){
+	if (self.isReadOnly){
+		return "readonly"._();
+	}
+	else{
+		return "";
+	}
+}
+
+operation SysMLOC!EObject hasDerived(){
+	if (self.isDerived){
+		return "derived"._();
+	}
+	else{
+		return "";
+	}
+}
+
+operation SysMLOC!EObject hasEnd(){
+	if (self.isEnd){
+		return "end"._();
+	}
+	else{
+		return "";
+	}
+}
+
+operation SysMLOC!isReturnPrefix isReturnPrefix(){
+	if (self.isReturn){
+		return "return"._();
+	}
+	else{
+		return "";
+	}
+}
+
+operation SysMLOC!EObject hasOrdered(){
+	if (self.isOrdered){
+		return "ordered"._();
+	}
+	else{
+		return "";
+	}
+}
+
+operation SysMLOC!EObject hasNonunique(){
+	if (self.isNonunique){
+		return "nonunique"._();
+	}
+	else{
+		return "";
+	}
+}
+
+operation SysMLOC!EObject hasReference(){
+	if (self.isReference){
+		return "ref"._();
+	}
+	else{
+		return "";
+	}
+}
+
+operation SysMLOC!EObject hasThen(){
+	if (self.isThen){
+		return "then"._();
+	}
+	else{
+		return "";
+	}
+}
+
+operation SysMLOC!EObject hasVisibilityIndicator(){
+	switch (self.visibility.name){
+		case "public" : return "public"._();
+		case "private" : return "private"._();
+		case "protected" : return "protected"._();
+	}
 	return "";
+}
+
+operation SysMLOC!EObject hasPortionKind(){
+	switch (self.portionKind.name){
+		case "snapshot" : return "snapshot"._();
+		case "timeslice" : return "timeslice"._();
+	}
+	return "";
+}
+
+operation SysMLOC!EObject hasDirection(){
+	switch (self.direction.name){
+		case "inout" : return "inout"._();
+		case "in" : return "in"._();
+		case "out" : return "out"._();
+	}
+	return "";
+}
+
+operation Sequence returnCommaString(){
+	var str = "";
+	for (s in self){
+		str += s+","._();
+	}
+	return str.substring(0, str.length()-2)._();
+}
+
+// If the returned string is a string, the function itself does not add "._()".
+operation Any _(){
+	if (self.notNoneString()){
+		return self+" ";
+	}
+	else{
+		return "";
+	}
+}
+
+operation Any notNoneString(){
+	return (self.isDefined() and self != null and self != "");
+}
+
+operation Integer Tab(){
+	var str = "";
+	if (self == 0){
+		return str;
+	}
+	for (i in 1.to(self)){
+		str += "\t";
+	}
+	return str;
 }

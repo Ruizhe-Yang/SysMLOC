@@ -14,9 +14,8 @@
     </elements>
     <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle2">
       <typings>Vehicle</typings>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="totalMass">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="totalMass" valuePart="chassisMass + engine.mass + transmission.mass">
         <typings>MassValue</typings>
-        <valuePart>chassisMass + engine.mass + transmission.mass</valuePart>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:ConstraintDefinition" declaredName="Dynamics">

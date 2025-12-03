@@ -48,13 +48,11 @@
           <typings>Vehicle</typings>
         </elements>
         <elements xsi:type="sysMLOC:Documentation" body="/* The vehicle mass shall be less than or equal to 2500 kg. */"/>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="vehicle.mass">
           <redefinitions>massActual</redefinitions>
-          <valuePart>vehicle.mass</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2500 [SI::kg]">
           <redefinitions>massReqd</redefinitions>
-          <valuePart>2500 [SI::kg]</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle1_c2">
@@ -73,45 +71,39 @@
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:ActionUsage" declaredName="collectData">
-          <elements xsi:type="sysMLOC:PartUsage" direction="in" declaredName="testVehicle">
+          <elements xsi:type="sysMLOC:PartUsage" direction="in" declaredName="testVehicle" valuePart="vehicleMassTest.testVehicle">
             <typings>Vehicle</typings>
-            <valuePart>vehicleMassTest.testVehicle</valuePart>
           </elements>
           <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="massMeasured">
             <subsetting>ISQ::mass</subsetting>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:ActionUsage" declaredName="processData">
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="massMeasured">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="massMeasured" valuePart="collectData.massMeasured">
             <subsetting>ISQ::mass</subsetting>
-            <valuePart>collectData.massMeasured</valuePart>
           </elements>
           <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="massProcessed">
             <subsetting>ISQ::mass</subsetting>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:ActionUsage" declaredName="evaluateData">
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="massProcessed">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="massProcessed" valuePart="processData.massProcessed">
             <subsetting>ISQ::mass</subsetting>
-            <valuePart>processData.massProcessed</valuePart>
           </elements>
           <elements xsi:type="sysMLOC:CodeAnnotation" body="// Check that 'testVehicle' statisfies 'vehicleMassRequirement' if its mass equals 'massProcessed'.&#xA;"/>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="verdict">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="verdict" valuePart="PassIf(vehicleMassRequirement(vehicle = new testVehicle(mass = massProcessed)))">
             <typings>VerdictKind</typings>
-            <valuePart>PassIf(vehicleMassRequirement(vehicle = new testVehicle(mass = massProcessed)))</valuePart>
           </elements>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="verdict">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="verdict" valuePart="evaluateData.verdict">
           <typings>VerdictKind</typings>
-          <valuePart>evaluateData.verdict</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:PartUsage" declaredName="massVerificationSystem">
         <typings>MassVerificationSystem</typings>
         <elements xsi:type="sysMLOC:PerformActionUsage" refElement="vehicleMassTest">
-          <elements xsi:type="sysMLOC:PartUsage" direction="in">
+          <elements xsi:type="sysMLOC:PartUsage" direction="in" valuePart="vehicleUnderTest">
             <redefinitions>testVehicle</redefinitions>
-            <valuePart>vehicleUnderTest</valuePart>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:PartUsage" isReference="true" declaredName="vehicleUnderTest">
@@ -127,12 +119,9 @@
               <redefinitions>testVehicle</redefinitions>
             </elements>
             <elements xsi:type="sysMLOC:CodeAnnotation" body="// In reality, this would be some more involved process.&#xA;"/>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="measurement">
-              <valuePart>testVehicle.mass</valuePart>
-            </elements>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="measurement" valuePart="testVehicle.mass"/>
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" valuePart="measurement">
               <redefinitions>massMeasured</redefinitions>
-              <valuePart>measurement</valuePart>
             </elements>
           </elements>
         </elements>
@@ -145,9 +134,8 @@
             <typings>TestVehicle1</typings>
             <subsetting>vehicle1_c2</subsetting>
             <redefinitions>vehicleUnderTest</redefinitions>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2500 [SI::kg]">
               <redefinitions>mass</redefinitions>
-              <valuePart>2500 [SI::kg]</valuePart>
             </elements>
           </elements>
         </elements>
@@ -156,9 +144,8 @@
             <typings>TestVehicle2</typings>
             <subsetting>vehicle1_c2</subsetting>
             <redefinitions>vehicleUnderTest</redefinitions>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2500 [SI::kg]">
               <redefinitions>mass</redefinitions>
-              <valuePart>2500 [SI::kg]</valuePart>
             </elements>
           </elements>
         </elements>

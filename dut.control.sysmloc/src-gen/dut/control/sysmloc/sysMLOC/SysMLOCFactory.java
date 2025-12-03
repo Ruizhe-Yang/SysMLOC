@@ -186,22 +186,22 @@ public interface SysMLOCFactory extends EFactory
   AnnotatingElement createAnnotatingElement();
 
   /**
-   * Returns a new object of class '<em>Definition Element</em>'.
+   * Returns a new object of class '<em>Definition Elements</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Definition Element</em>'.
+   * @return a new object of class '<em>Definition Elements</em>'.
    * @generated
    */
-  DefinitionElement createDefinitionElement();
+  DefinitionElements createDefinitionElements();
 
   /**
-   * Returns a new object of class '<em>Usage Element</em>'.
+   * Returns a new object of class '<em>Usage Elements</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Usage Element</em>'.
+   * @return a new object of class '<em>Usage Elements</em>'.
    * @generated
    */
-  UsageElement createUsageElement();
+  UsageElements createUsageElements();
 
   /**
    * Returns a new object of class '<em>Non Occurrence Usage Element</em>'.
@@ -222,22 +222,22 @@ public interface SysMLOCFactory extends EFactory
   OccurrenceUsageElement createOccurrenceUsageElement();
 
   /**
-   * Returns a new object of class '<em>Structure Usage Element</em>'.
+   * Returns a new object of class '<em>Structure Usage Elements</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Structure Usage Element</em>'.
+   * @return a new object of class '<em>Structure Usage Elements</em>'.
    * @generated
    */
-  StructureUsageElement createStructureUsageElement();
+  StructureUsageElements createStructureUsageElements();
 
   /**
-   * Returns a new object of class '<em>Behavior Usage Element</em>'.
+   * Returns a new object of class '<em>Behavior Usage Elements</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Behavior Usage Element</em>'.
+   * @return a new object of class '<em>Behavior Usage Elements</em>'.
    * @generated
    */
-  BehaviorUsageElement createBehaviorUsageElement();
+  BehaviorUsageElements createBehaviorUsageElements();
 
   /**
    * Returns a new object of class '<em>Action Node Elements</em>'.

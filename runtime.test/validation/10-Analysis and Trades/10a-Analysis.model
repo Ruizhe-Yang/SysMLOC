@@ -11,10 +11,9 @@
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle">
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="sum(( vehicle.engine.mass, vehicle.transmission.mass, vehicle.frontAxleAssembly.mass, vehicle.rearAxleAssembly.mass ) )">
           <typings>MassValue</typings>
           <redefinitions>mass</redefinitions>
-          <valuePart>sum(( vehicle.engine.mass, vehicle.transmission.mass, vehicle.frontAxleAssembly.mass, vehicle.rearAxleAssembly.mass ) )</valuePart>
         </elements>
         <elements xsi:type="sysMLOC:PartUsage" declaredName="engine">
           <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="mass">
@@ -52,9 +51,7 @@
         </elements>
         <elements xsi:type="sysMLOC:ObjectiveRequirementUsage">
           <typings>MassAnalysisObjective</typings>
-          <elements xsi:type="sysMLOC:SubjectUsage">
-            <valuePart>MassAnalysisCase::result</valuePart>
-          </elements>
+          <elements xsi:type="sysMLOC:SubjectUsage" valuePart="MassAnalysisCase::result"/>
         </elements>
         <elements xsi:type="sysMLOC:CodeAnnotation" body="// Result&#xA;"/>
         <resultExpressionParameter resultExpression="vehicle.mass"/>
@@ -75,9 +72,7 @@
       <elements xsi:type="sysMLOC:PartUsage" declaredName="massAnalysisContext">
         <elements xsi:type="sysMLOC:AnalysisCaseUsage" declaredName="analysisPlan">
           <typings>AnalysisPlan</typings>
-          <elements xsi:type="sysMLOC:SubjectUsage" declaredName="vehicle">
-            <valuePart>VehicleDesignModel::vehicle</valuePart>
-          </elements>
+          <elements xsi:type="sysMLOC:SubjectUsage" declaredName="vehicle" valuePart="VehicleDesignModel::vehicle"/>
         </elements>
       </elements>
     </elements>

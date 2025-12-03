@@ -42,9 +42,8 @@
           <prefixMetadataExtension>#service</prefixMetadataExtension>
           <typings>Authorisation</typings>
         </elements>
-        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="protocol">
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="protocol" valuePart="&quot;HTTP&quot;">
           <typings>String</typings>
-          <valuePart>&quot;HTTP&quot;</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:ExtendedUsage" declaredName="orchestrationDesign">

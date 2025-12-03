@@ -10,19 +10,16 @@
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Time" isNamespace="true"/>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MissionElapsedTimeScale">
       <superclassifiers>TimeScale</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="s">
         <redefinitions>unit</redefinitions>
-        <valuePart>s</valuePart>
       </elements>
       <elements xsi:type="sysMLOC:AttributeUsage">
         <redefinitions>definitionalEpoch</redefinitions>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="0">
           <redefinitions>num</redefinitions>
-          <valuePart>0</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;time instant zero at launch&quot;">
           <redefinitions>definition</redefinitions>
-          <valuePart>&quot;time instant zero at launch&quot;</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="definitionalEpochInUTC">
@@ -33,17 +30,14 @@
       <elements xsi:type="sysMLOC:AttributeUsage">
         <typings>CoordinateFramePlacement</typings>
         <redefinitions>transformation</redefinitions>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="UTC">
           <redefinitions>source</redefinitions>
-          <valuePart>UTC</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="definitionalEpochInUTC">
           <redefinitions>origin</redefinitions>
-          <valuePart>definitionalEpochInUTC</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1 [UTC]">
           <redefinitions>basisDirections</redefinitions>
-          <valuePart>1 [UTC]</valuePart>
         </elements>
       </elements>
     </elements>
@@ -52,33 +46,29 @@
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Define mission elapsed time scale starting at given UTC date time (in microsecond resolution)&#xA;&#x9;&#x9; */"/>
       <elements xsi:type="sysMLOC:DefaultReferenceUsage">
         <redefinitions>definitionalEpochInUTC</redefinitions>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;2020-08-23T22:42:32.924534Z&quot;">
           <redefinitions>val</redefinitions>
-          <valuePart>&quot;2020-08-23T22:42:32.924534Z&quot;</valuePart>
         </elements>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MissionElapsedTimeValue">
       <superclassifiers>TimeInstantValue</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Define scalar quantity value type for mission elapsed time&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="mets">
         <redefinitions>mRef</redefinitions>
-        <valuePart>mets</valuePart>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:AttributeUsage" declaredName="spatialCF">
       <typings>CartesianSpatial3dCoordinateFrame</typings>
       <Multiplicity>1</Multiplicity>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Define Cartesian 3D coordinate systems for position and velocity&#xA;&#x9;&#x9; * Create a velocity coordinate system from the spatial coordinate system through division by second&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(m, m, m)">
         <redefinitions>mRefs</redefinitions>
-        <valuePart>(m, m, m)</valuePart>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="velocityCF">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="velocityCF" valuePart="spatialCF/s">
       <typings>CartesianVelocity3dCoordinateFrame</typings>
       <Multiplicity>1</Multiplicity>
-      <valuePart>spatialCF/s</valuePart>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="PositionAndVelocity">
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="position">
@@ -116,73 +106,60 @@
       <elements xsi:type="sysMLOC:Documentation" body="/* Example ascent profile */"/>
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="sample1">
         <typings>AscentSample</typings>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="0.0 [mets]">
           <redefinitions>domainValue</redefinitions>
-          <valuePart>0.0 [mets]</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="pv1">
           <redefinitions>rangeValue</redefinitions>
-          <valuePart>pv1</valuePart>
         </elements>
         <elements xsi:type="sysMLOC:AttributeUsage" declaredName="pv1">
           <typings>PositionAndVelocity</typings>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(0, 0, 0) [spatialCF]">
             <redefinitions>position</redefinitions>
-            <valuePart>(0, 0, 0) [spatialCF]</valuePart>
           </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(0, 0, 0) [velocityCF]">
             <redefinitions>velocity</redefinitions>
-            <valuePart>(0, 0, 0) [velocityCF]</valuePart>
           </elements>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="sample2">
         <typings>AscentSample</typings>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2.5 [mets]">
           <redefinitions>domainValue</redefinitions>
-          <valuePart>2.5 [mets]</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="pv1">
           <redefinitions>rangeValue</redefinitions>
-          <valuePart>pv1</valuePart>
         </elements>
         <elements xsi:type="sysMLOC:AttributeUsage" declaredName="pv1">
           <typings>PositionAndVelocity</typings>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(0.01, 0.03, 8.6) [spatialCF]">
             <redefinitions>position</redefinitions>
-            <valuePart>(0.01, 0.03, 8.6) [spatialCF]</valuePart>
           </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(0, 0, 5.5) [velocityCF]">
             <redefinitions>velocity</redefinitions>
-            <valuePart>(0, 0, 5.5) [velocityCF]</valuePart>
           </elements>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="sample3">
         <typings>AscentSample</typings>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="5.1 [mets]">
           <redefinitions>domainValue</redefinitions>
-          <valuePart>5.1 [mets]</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="pv1">
           <redefinitions>rangeValue</redefinitions>
-          <valuePart>pv1</valuePart>
         </elements>
         <elements xsi:type="sysMLOC:AttributeUsage" declaredName="pv1">
           <typings>PositionAndVelocity</typings>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(0.04, 0.12, 18.6) [spatialCF]">
             <redefinitions>position</redefinitions>
-            <valuePart>(0.04, 0.12, 18.6) [spatialCF]</valuePart>
           </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(0.05, 0.03, 25.3) [velocityCF]">
             <redefinitions>velocity</redefinitions>
-            <valuePart>(0.05, 0.03, 25.3) [velocityCF]</valuePart>
           </elements>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="(sample1, sample2, sample3)">
         <redefinitions>samples</redefinitions>
-        <valuePart>(sample1, sample2, sample3)</valuePart>
       </elements>
     </elements>
   </elements>

@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface MetadataDefinition extends DefinitionElement, MemberPrefix, DefinitionExtensionKeyword, PrefixMetadata, DefinitionDeclaration, Identification
+public interface MetadataDefinition extends DefinitionElements, MemberPrefix, DefinitionExtensionKeyword, PrefixMetadata, DefinitionDeclaration, Identification
 {
   /**
    * Returns the value of the '<em><b>Is Abstract</b></em>' attribute.

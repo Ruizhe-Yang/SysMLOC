@@ -17,12 +17,8 @@
         <typings>UC1</typings>
       </elements>
       <elements xsi:type="sysMLOC:IncludeUseCaseUsage" declaredName="uc2">
-        <elements xsi:type="sysMLOC:SubjectUsage">
-          <valuePart>system</valuePart>
-        </elements>
-        <elements xsi:type="sysMLOC:ActorUsage" declaredName="user">
-          <valuePart>UseSystem::user</valuePart>
-        </elements>
+        <elements xsi:type="sysMLOC:SubjectUsage" valuePart="system"/>
+        <elements xsi:type="sysMLOC:ActorUsage" declaredName="user" valuePart="UseSystem::user"/>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:UseCaseDefinition" declaredName="UC1"/>

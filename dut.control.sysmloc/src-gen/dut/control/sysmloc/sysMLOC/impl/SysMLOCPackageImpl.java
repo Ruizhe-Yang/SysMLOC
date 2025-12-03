@@ -172,14 +172,14 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass definitionElementEClass = null;
+  private EClass definitionElementsEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass usageElementEClass = null;
+  private EClass usageElementsEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -200,14 +200,14 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass structureUsageElementEClass = null;
+  private EClass structureUsageElementsEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass behaviorUsageElementEClass = null;
+  private EClass behaviorUsageElementsEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1753,13 +1753,13 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   @Override
-  public EClass getDefinitionElement()
+  public EClass getDefinitionElements()
   {
-    if (definitionElementEClass == null)
+    if (definitionElementsEClass == null)
     {
-      definitionElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(18);
+      definitionElementsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(18);
     }
-    return definitionElementEClass;
+    return definitionElementsEClass;
   }
 
   /**
@@ -1768,13 +1768,13 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   @Override
-  public EClass getUsageElement()
+  public EClass getUsageElements()
   {
-    if (usageElementEClass == null)
+    if (usageElementsEClass == null)
     {
-      usageElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(19);
+      usageElementsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(19);
     }
-    return usageElementEClass;
+    return usageElementsEClass;
   }
 
   /**
@@ -1813,13 +1813,13 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   @Override
-  public EClass getStructureUsageElement()
+  public EClass getStructureUsageElements()
   {
-    if (structureUsageElementEClass == null)
+    if (structureUsageElementsEClass == null)
     {
-      structureUsageElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(22);
+      structureUsageElementsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(22);
     }
-    return structureUsageElementEClass;
+    return structureUsageElementsEClass;
   }
 
   /**
@@ -1828,13 +1828,13 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   @Override
-  public EClass getBehaviorUsageElement()
+  public EClass getBehaviorUsageElements()
   {
-    if (behaviorUsageElementEClass == null)
+    if (behaviorUsageElementsEClass == null)
     {
-      behaviorUsageElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(23);
+      behaviorUsageElementsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(23);
     }
-    return behaviorUsageElementEClass;
+    return behaviorUsageElementsEClass;
   }
 
   /**

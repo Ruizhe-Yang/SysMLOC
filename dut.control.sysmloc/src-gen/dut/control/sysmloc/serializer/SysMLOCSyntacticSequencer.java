@@ -632,7 +632,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureTypingName (ambiguity) (rule end)
-	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'action' (ambiguity) (rule end)
 	 
 	 * </pre>
@@ -660,7 +660,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureTypingName (ambiguity) (rule end)
-	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'actor' (ambiguity) (rule end)
 	 
 	 * </pre>
@@ -846,7 +846,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureTypingName (ambiguity) (rule end)
-	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'analysis' (ambiguity) (rule end)
 	 
 	 * </pre>
@@ -888,7 +888,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureTypingName (ambiguity) (rule end)
-	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'assert' 'constraint' (ambiguity) (rule end)
 	 
 	 * </pre>
@@ -960,7 +960,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureTypingName (ambiguity) (rule end)
-	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'attribute' (ambiguity) (rule end)
 	 
 	 * </pre>
@@ -1062,7 +1062,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureTypingName (ambiguity) (rule end)
-	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'calc' (ambiguity) (rule end)
 	 
 	 * </pre>
@@ -1125,7 +1125,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureTypingName (ambiguity) (rule end)
-	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'case' (ambiguity) (rule end)
 	 
 	 * </pre>
@@ -1227,7 +1227,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureTypingName (ambiguity) (rule end)
-	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'concern' (ambiguity) (rule end)
 	 
 	 * </pre>
@@ -1337,7 +1337,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureTypingName (ambiguity) (rule end)
-	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'connection' (ambiguity) (rule end)
 	 
 	 * </pre>
@@ -1414,7 +1414,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureTypingName (ambiguity) (rule end)
-	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'constraint' (ambiguity) (rule end)
 	 
 	 * </pre>
@@ -1439,7 +1439,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureTypingName (ambiguity) (rule end)
-	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
 	 
 	 * </pre>
 	 */
@@ -1735,7 +1735,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) '&lt;' declaredShortName=Name
-	 *     (rule start) (ambiguity) '=' valuePart+=Expression
+	 *     (rule start) (ambiguity) '=' valuePart=Expression
 	 *     (rule start) (ambiguity) '[' Multiplicity+=MultiplicityExpression
 	 *     (rule start) (ambiguity) '{' elements+=UsageBodyElement
 	 *     (rule start) (ambiguity) (':' | ('defined' 'by')) typings+=FeatureTypingName
@@ -1750,7 +1750,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) (ambiguity) isNonunique?='nonunique'
 	 *     (rule start) (ambiguity) isOrdered?='ordered'
 	 *     isVariant?='variant' (ambiguity) '&lt;' declaredShortName=Name
-	 *     isVariant?='variant' (ambiguity) '=' valuePart+=Expression
+	 *     isVariant?='variant' (ambiguity) '=' valuePart=Expression
 	 *     isVariant?='variant' (ambiguity) '[' Multiplicity+=MultiplicityExpression
 	 *     isVariant?='variant' (ambiguity) '{' elements+=UsageBodyElement
 	 *     isVariant?='variant' (ambiguity) (':' | ('defined' 'by')) typings+=FeatureTypingName
@@ -1765,7 +1765,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariant?='variant' (ambiguity) isNonunique?='nonunique'
 	 *     isVariant?='variant' (ambiguity) isOrdered?='ordered'
 	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) '&lt;' declaredShortName=Name
-	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) '=' valuePart+=Expression
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) '=' valuePart=Expression
 	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) '[' Multiplicity+=MultiplicityExpression
 	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) '{' elements+=UsageBodyElement
 	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) (':' | ('defined' 'by')) typings+=FeatureTypingName
@@ -1780,7 +1780,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) isNonunique?='nonunique'
 	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) isOrdered?='ordered'
 	 *     visibility=VisibilityIndicator (ambiguity) '&lt;' declaredShortName=Name
-	 *     visibility=VisibilityIndicator (ambiguity) '=' valuePart+=Expression
+	 *     visibility=VisibilityIndicator (ambiguity) '=' valuePart=Expression
 	 *     visibility=VisibilityIndicator (ambiguity) '[' Multiplicity+=MultiplicityExpression
 	 *     visibility=VisibilityIndicator (ambiguity) '{' elements+=UsageBodyElement
 	 *     visibility=VisibilityIndicator (ambiguity) (':' | ('defined' 'by')) typings+=FeatureTypingName
@@ -1820,7 +1820,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureTypingName (ambiguity) (rule end)
-	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'enum'? (ambiguity) (rule end)
 	 
 	 * </pre>
@@ -1876,7 +1876,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureTypingName (ambiguity) (rule end)
-	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'enum' (ambiguity) (rule end)
 	 
 	 * </pre>
@@ -1917,7 +1917,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureTypingName (ambiguity) (rule end)
-	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'event' 'occurrence' (ambiguity) (rule end)
 	 
 	 * </pre>
@@ -1958,7 +1958,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureTypingName (ambiguity) (rule end)
-	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'exhibit' 'state' (ambiguity) (rule end)
 	 
 	 * </pre>
@@ -2035,7 +2035,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureTypingName (ambiguity) (rule end)
-	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
 	 
 	 * </pre>
 	 */
@@ -5019,7 +5019,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     '='?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     isDefault?='default' (ambiguity) valuePart+=Expression
+	 *     isDefault?='default' (ambiguity) valuePart=Expression
 	 
 	 * </pre>
 	 */
@@ -5082,7 +5082,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     references+=FeatureChainName (ambiguity) FlowEnd+=FeatureChainName
 	 *     subsetting+=FeatureChainName (ambiguity) FlowEnd+=FeatureChainName
 	 *     typings+=FeatureTypingName (ambiguity) FlowEnd+=FeatureChainName
-	 *     valuePart+=Expression (ambiguity) FlowEnd+=FeatureChainName
+	 *     valuePart=Expression (ambiguity) FlowEnd+=FeatureChainName
 	 *     visibility=VisibilityIndicator 'flow' (ambiguity) FlowEnd+=FeatureChainName
 	 
 	 * </pre>
@@ -5124,7 +5124,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureTypingName (ambiguity) (rule end)
-	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'flow' (ambiguity) (rule end)
 	 
 	 * </pre>
@@ -5166,7 +5166,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isOrdered?='ordered' (ambiguity) (rule end)
 	 *     isVariant?='variant' 'frame' 'concern' (ambiguity) (rule end)
 	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) (rule end)
-	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'frame' 'concern' (ambiguity) (rule end)
 	 
 	 * </pre>
@@ -5238,7 +5238,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureTypingName (ambiguity) (rule end)
-	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'include' 'use' 'case' (ambiguity) (rule end)
 	 
 	 * </pre>
@@ -5283,7 +5283,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureTypingName (ambiguity) (rule end)
-	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
 	 
 	 * </pre>
 	 */
@@ -5468,7 +5468,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureTypingName (ambiguity) (rule end)
-	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'item' (ambiguity) (rule end)
 	 
 	 * </pre>
@@ -5526,7 +5526,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     references+=FeatureChainName (ambiguity) FlowEnd+=FeatureChainName
 	 *     subsetting+=FeatureChainName (ambiguity) FlowEnd+=FeatureChainName
 	 *     typings+=FeatureTypingName (ambiguity) FlowEnd+=FeatureChainName
-	 *     valuePart+=Expression (ambiguity) FlowEnd+=FeatureChainName
+	 *     valuePart=Expression (ambiguity) FlowEnd+=FeatureChainName
 	 *     visibility=VisibilityIndicator 'message' (ambiguity) FlowEnd+=FeatureChainName
 	 
 	 * </pre>
@@ -5568,7 +5568,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureTypingName (ambiguity) (rule end)
-	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'message' (ambiguity) (rule end)
 	 
 	 * </pre>
@@ -5681,7 +5681,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureTypingName (ambiguity) (rule end)
-	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'objective' (ambiguity) (rule end)
 	 
 	 * </pre>
@@ -5744,7 +5744,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureTypingName (ambiguity) (rule end)
-	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'occurrence' (ambiguity) (rule end)
 	 
 	 * </pre>
@@ -5821,7 +5821,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureTypingName (ambiguity) (rule end)
-	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'part' (ambiguity) (rule end)
 	 
 	 * </pre>
@@ -5862,7 +5862,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureTypingName (ambiguity) (rule end)
-	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'perform' 'action' (ambiguity) (rule end)
 	 
 	 * </pre>
@@ -5924,7 +5924,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureTypingName (ambiguity) (rule end)
-	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'port' (ambiguity) (rule end)
 	 
 	 * </pre>
@@ -5951,7 +5951,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureTypingName (ambiguity) (rule end)
-	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
 	 
 	 * </pre>
 	 */
@@ -5984,7 +5984,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureTypingName (ambiguity) (rule end)
-	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'ref' (ambiguity) (rule end)
 	 
 	 * </pre>
@@ -6066,7 +6066,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureTypingName (ambiguity) (rule end)
-	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'rendering' (ambiguity) (rule end)
 	 
 	 * </pre>
@@ -6094,7 +6094,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureTypingName (ambiguity) (rule end)
-	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
 	 
 	 * </pre>
 	 */
@@ -6156,7 +6156,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureTypingName (ambiguity) (rule end)
-	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'requirement' (ambiguity) (rule end)
 	 
 	 * </pre>
@@ -6198,7 +6198,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isOrdered?='ordered' (ambiguity) (rule end)
 	 *     isVariant?='variant' 'verify' 'requirement' (ambiguity) (rule end)
 	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) (rule end)
-	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'verify' 'requirement' (ambiguity) (rule end)
 	 
 	 * </pre>
@@ -6214,7 +6214,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) 'satisfy' 'requirement' '&lt;' declaredShortName=Name
-	 *     (rule start) (ambiguity) 'satisfy' 'requirement' '=' valuePart+=Expression
+	 *     (rule start) (ambiguity) 'satisfy' 'requirement' '=' valuePart=Expression
 	 *     (rule start) (ambiguity) 'satisfy' 'requirement' '[' Multiplicity+=MultiplicityExpression
 	 *     (rule start) (ambiguity) 'satisfy' 'requirement' 'by' satisfactionParameter=FeatureChainName
 	 *     (rule start) (ambiguity) 'satisfy' 'requirement' '{' elements+=RequirementBodyElement
@@ -6232,7 +6232,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) (ambiguity) 'satisfy' refElement=FeatureChainName
 	 *     (rule start) (ambiguity) isNegated?='not'
 	 *     ThenMultiplicity+=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' '&lt;' declaredShortName=Name
-	 *     ThenMultiplicity+=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' '=' valuePart+=Expression
+	 *     ThenMultiplicity+=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' '=' valuePart=Expression
 	 *     ThenMultiplicity+=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' '[' Multiplicity+=MultiplicityExpression
 	 *     ThenMultiplicity+=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' 'by' satisfactionParameter=FeatureChainName
 	 *     ThenMultiplicity+=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' '{' elements+=RequirementBodyElement
@@ -6250,7 +6250,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ThenMultiplicity+=MultiplicityExpression ']' (ambiguity) 'satisfy' refElement=FeatureChainName
 	 *     ThenMultiplicity+=MultiplicityExpression ']' (ambiguity) isNegated?='not'
 	 *     direction=FeatureDirection (ambiguity) 'satisfy' 'requirement' '&lt;' declaredShortName=Name
-	 *     direction=FeatureDirection (ambiguity) 'satisfy' 'requirement' '=' valuePart+=Expression
+	 *     direction=FeatureDirection (ambiguity) 'satisfy' 'requirement' '=' valuePart=Expression
 	 *     direction=FeatureDirection (ambiguity) 'satisfy' 'requirement' '[' Multiplicity+=MultiplicityExpression
 	 *     direction=FeatureDirection (ambiguity) 'satisfy' 'requirement' 'by' satisfactionParameter=FeatureChainName
 	 *     direction=FeatureDirection (ambiguity) 'satisfy' 'requirement' '{' elements+=RequirementBodyElement
@@ -6268,7 +6268,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     direction=FeatureDirection (ambiguity) 'satisfy' refElement=FeatureChainName
 	 *     direction=FeatureDirection (ambiguity) isNegated?='not'
 	 *     isAbstract?='abstract' (ambiguity) 'satisfy' 'requirement' '&lt;' declaredShortName=Name
-	 *     isAbstract?='abstract' (ambiguity) 'satisfy' 'requirement' '=' valuePart+=Expression
+	 *     isAbstract?='abstract' (ambiguity) 'satisfy' 'requirement' '=' valuePart=Expression
 	 *     isAbstract?='abstract' (ambiguity) 'satisfy' 'requirement' '[' Multiplicity+=MultiplicityExpression
 	 *     isAbstract?='abstract' (ambiguity) 'satisfy' 'requirement' 'by' satisfactionParameter=FeatureChainName
 	 *     isAbstract?='abstract' (ambiguity) 'satisfy' 'requirement' '{' elements+=RequirementBodyElement
@@ -6286,7 +6286,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isAbstract?='abstract' (ambiguity) 'satisfy' refElement=FeatureChainName
 	 *     isAbstract?='abstract' (ambiguity) isNegated?='not'
 	 *     isDerived?='derived' (ambiguity) 'satisfy' 'requirement' '&lt;' declaredShortName=Name
-	 *     isDerived?='derived' (ambiguity) 'satisfy' 'requirement' '=' valuePart+=Expression
+	 *     isDerived?='derived' (ambiguity) 'satisfy' 'requirement' '=' valuePart=Expression
 	 *     isDerived?='derived' (ambiguity) 'satisfy' 'requirement' '[' Multiplicity+=MultiplicityExpression
 	 *     isDerived?='derived' (ambiguity) 'satisfy' 'requirement' 'by' satisfactionParameter=FeatureChainName
 	 *     isDerived?='derived' (ambiguity) 'satisfy' 'requirement' '{' elements+=RequirementBodyElement
@@ -6304,7 +6304,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isDerived?='derived' (ambiguity) 'satisfy' refElement=FeatureChainName
 	 *     isDerived?='derived' (ambiguity) isNegated?='not'
 	 *     isEnd?='end' (ambiguity) 'satisfy' 'requirement' '&lt;' declaredShortName=Name
-	 *     isEnd?='end' (ambiguity) 'satisfy' 'requirement' '=' valuePart+=Expression
+	 *     isEnd?='end' (ambiguity) 'satisfy' 'requirement' '=' valuePart=Expression
 	 *     isEnd?='end' (ambiguity) 'satisfy' 'requirement' '[' Multiplicity+=MultiplicityExpression
 	 *     isEnd?='end' (ambiguity) 'satisfy' 'requirement' 'by' satisfactionParameter=FeatureChainName
 	 *     isEnd?='end' (ambiguity) 'satisfy' 'requirement' '{' elements+=RequirementBodyElement
@@ -6322,7 +6322,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isEnd?='end' (ambiguity) 'satisfy' refElement=FeatureChainName
 	 *     isEnd?='end' (ambiguity) isNegated?='not'
 	 *     isIndividual?='individual' (ambiguity) 'satisfy' 'requirement' '&lt;' declaredShortName=Name
-	 *     isIndividual?='individual' (ambiguity) 'satisfy' 'requirement' '=' valuePart+=Expression
+	 *     isIndividual?='individual' (ambiguity) 'satisfy' 'requirement' '=' valuePart=Expression
 	 *     isIndividual?='individual' (ambiguity) 'satisfy' 'requirement' '[' Multiplicity+=MultiplicityExpression
 	 *     isIndividual?='individual' (ambiguity) 'satisfy' 'requirement' 'by' satisfactionParameter=FeatureChainName
 	 *     isIndividual?='individual' (ambiguity) 'satisfy' 'requirement' '{' elements+=RequirementBodyElement
@@ -6340,7 +6340,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isIndividual?='individual' (ambiguity) 'satisfy' refElement=FeatureChainName
 	 *     isIndividual?='individual' (ambiguity) isNegated?='not'
 	 *     isReadOnly?='readonly' (ambiguity) 'satisfy' 'requirement' '&lt;' declaredShortName=Name
-	 *     isReadOnly?='readonly' (ambiguity) 'satisfy' 'requirement' '=' valuePart+=Expression
+	 *     isReadOnly?='readonly' (ambiguity) 'satisfy' 'requirement' '=' valuePart=Expression
 	 *     isReadOnly?='readonly' (ambiguity) 'satisfy' 'requirement' '[' Multiplicity+=MultiplicityExpression
 	 *     isReadOnly?='readonly' (ambiguity) 'satisfy' 'requirement' 'by' satisfactionParameter=FeatureChainName
 	 *     isReadOnly?='readonly' (ambiguity) 'satisfy' 'requirement' '{' elements+=RequirementBodyElement
@@ -6358,7 +6358,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isReadOnly?='readonly' (ambiguity) 'satisfy' refElement=FeatureChainName
 	 *     isReadOnly?='readonly' (ambiguity) isNegated?='not'
 	 *     isReference?='ref' (ambiguity) 'satisfy' 'requirement' '&lt;' declaredShortName=Name
-	 *     isReference?='ref' (ambiguity) 'satisfy' 'requirement' '=' valuePart+=Expression
+	 *     isReference?='ref' (ambiguity) 'satisfy' 'requirement' '=' valuePart=Expression
 	 *     isReference?='ref' (ambiguity) 'satisfy' 'requirement' '[' Multiplicity+=MultiplicityExpression
 	 *     isReference?='ref' (ambiguity) 'satisfy' 'requirement' 'by' satisfactionParameter=FeatureChainName
 	 *     isReference?='ref' (ambiguity) 'satisfy' 'requirement' '{' elements+=RequirementBodyElement
@@ -6376,7 +6376,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isReference?='ref' (ambiguity) 'satisfy' refElement=FeatureChainName
 	 *     isReference?='ref' (ambiguity) isNegated?='not'
 	 *     isReturn?='return' (ambiguity) 'satisfy' 'requirement' '&lt;' declaredShortName=Name
-	 *     isReturn?='return' (ambiguity) 'satisfy' 'requirement' '=' valuePart+=Expression
+	 *     isReturn?='return' (ambiguity) 'satisfy' 'requirement' '=' valuePart=Expression
 	 *     isReturn?='return' (ambiguity) 'satisfy' 'requirement' '[' Multiplicity+=MultiplicityExpression
 	 *     isReturn?='return' (ambiguity) 'satisfy' 'requirement' 'by' satisfactionParameter=FeatureChainName
 	 *     isReturn?='return' (ambiguity) 'satisfy' 'requirement' '{' elements+=RequirementBodyElement
@@ -6394,7 +6394,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isReturn?='return' (ambiguity) 'satisfy' refElement=FeatureChainName
 	 *     isReturn?='return' (ambiguity) isNegated?='not'
 	 *     isThen?='then' (ambiguity) 'satisfy' 'requirement' '&lt;' declaredShortName=Name
-	 *     isThen?='then' (ambiguity) 'satisfy' 'requirement' '=' valuePart+=Expression
+	 *     isThen?='then' (ambiguity) 'satisfy' 'requirement' '=' valuePart=Expression
 	 *     isThen?='then' (ambiguity) 'satisfy' 'requirement' '[' Multiplicity+=MultiplicityExpression
 	 *     isThen?='then' (ambiguity) 'satisfy' 'requirement' 'by' satisfactionParameter=FeatureChainName
 	 *     isThen?='then' (ambiguity) 'satisfy' 'requirement' '{' elements+=RequirementBodyElement
@@ -6412,7 +6412,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isThen?='then' (ambiguity) 'satisfy' refElement=FeatureChainName
 	 *     isThen?='then' (ambiguity) isNegated?='not'
 	 *     isVariant?='variant' (ambiguity) 'satisfy' 'requirement' '&lt;' declaredShortName=Name
-	 *     isVariant?='variant' (ambiguity) 'satisfy' 'requirement' '=' valuePart+=Expression
+	 *     isVariant?='variant' (ambiguity) 'satisfy' 'requirement' '=' valuePart=Expression
 	 *     isVariant?='variant' (ambiguity) 'satisfy' 'requirement' '[' Multiplicity+=MultiplicityExpression
 	 *     isVariant?='variant' (ambiguity) 'satisfy' 'requirement' 'by' satisfactionParameter=FeatureChainName
 	 *     isVariant?='variant' (ambiguity) 'satisfy' 'requirement' '{' elements+=RequirementBodyElement
@@ -6430,7 +6430,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariant?='variant' (ambiguity) 'satisfy' refElement=FeatureChainName
 	 *     isVariant?='variant' (ambiguity) isNegated?='not'
 	 *     isVariation?='variation' (ambiguity) 'satisfy' 'requirement' '&lt;' declaredShortName=Name
-	 *     isVariation?='variation' (ambiguity) 'satisfy' 'requirement' '=' valuePart+=Expression
+	 *     isVariation?='variation' (ambiguity) 'satisfy' 'requirement' '=' valuePart=Expression
 	 *     isVariation?='variation' (ambiguity) 'satisfy' 'requirement' '[' Multiplicity+=MultiplicityExpression
 	 *     isVariation?='variation' (ambiguity) 'satisfy' 'requirement' 'by' satisfactionParameter=FeatureChainName
 	 *     isVariation?='variation' (ambiguity) 'satisfy' 'requirement' '{' elements+=RequirementBodyElement
@@ -6448,7 +6448,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariation?='variation' (ambiguity) 'satisfy' refElement=FeatureChainName
 	 *     isVariation?='variation' (ambiguity) isNegated?='not'
 	 *     portionKind=PortionKind (ambiguity) 'satisfy' 'requirement' '&lt;' declaredShortName=Name
-	 *     portionKind=PortionKind (ambiguity) 'satisfy' 'requirement' '=' valuePart+=Expression
+	 *     portionKind=PortionKind (ambiguity) 'satisfy' 'requirement' '=' valuePart=Expression
 	 *     portionKind=PortionKind (ambiguity) 'satisfy' 'requirement' '[' Multiplicity+=MultiplicityExpression
 	 *     portionKind=PortionKind (ambiguity) 'satisfy' 'requirement' 'by' satisfactionParameter=FeatureChainName
 	 *     portionKind=PortionKind (ambiguity) 'satisfy' 'requirement' '{' elements+=RequirementBodyElement
@@ -6466,7 +6466,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     portionKind=PortionKind (ambiguity) 'satisfy' refElement=FeatureChainName
 	 *     portionKind=PortionKind (ambiguity) isNegated?='not'
 	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) 'satisfy' 'requirement' '&lt;' declaredShortName=Name
-	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) 'satisfy' 'requirement' '=' valuePart+=Expression
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) 'satisfy' 'requirement' '=' valuePart=Expression
 	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) 'satisfy' 'requirement' '[' Multiplicity+=MultiplicityExpression
 	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) 'satisfy' 'requirement' 'by' satisfactionParameter=FeatureChainName
 	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) 'satisfy' 'requirement' '{' elements+=RequirementBodyElement
@@ -6484,7 +6484,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) 'satisfy' refElement=FeatureChainName
 	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) isNegated?='not'
 	 *     visibility=VisibilityIndicator (ambiguity) 'satisfy' 'requirement' '&lt;' declaredShortName=Name
-	 *     visibility=VisibilityIndicator (ambiguity) 'satisfy' 'requirement' '=' valuePart+=Expression
+	 *     visibility=VisibilityIndicator (ambiguity) 'satisfy' 'requirement' '=' valuePart=Expression
 	 *     visibility=VisibilityIndicator (ambiguity) 'satisfy' 'requirement' '[' Multiplicity+=MultiplicityExpression
 	 *     visibility=VisibilityIndicator (ambiguity) 'satisfy' 'requirement' 'by' satisfactionParameter=FeatureChainName
 	 *     visibility=VisibilityIndicator (ambiguity) 'satisfy' 'requirement' '{' elements+=RequirementBodyElement
@@ -6542,7 +6542,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     satisfactionParameter=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureTypingName (ambiguity) (rule end)
-	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'assert'? 'satisfy' 'requirement' (ambiguity) (rule end)
 	 
 	 * </pre>
@@ -6586,7 +6586,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureTypingName (ambiguity) (rule end)
-	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'stakeholder' (ambiguity) (rule end)
 	 
 	 * </pre>
@@ -6649,7 +6649,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureTypingName (ambiguity) (rule end)
-	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'state' (ambiguity) (rule end)
 	 
 	 * </pre>
@@ -6677,7 +6677,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureTypingName (ambiguity) (rule end)
-	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'subject' (ambiguity) (rule end)
 	 
 	 * </pre>
@@ -6757,7 +6757,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     references+=FeatureChainName (ambiguity) FlowEnd+=FeatureChainName
 	 *     subsetting+=FeatureChainName (ambiguity) FlowEnd+=FeatureChainName
 	 *     typings+=FeatureTypingName (ambiguity) FlowEnd+=FeatureChainName
-	 *     valuePart+=Expression (ambiguity) FlowEnd+=FeatureChainName
+	 *     valuePart=Expression (ambiguity) FlowEnd+=FeatureChainName
 	 *     visibility=VisibilityIndicator 'succession' 'flow' (ambiguity) FlowEnd+=FeatureChainName
 	 
 	 * </pre>
@@ -6799,7 +6799,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureTypingName (ambiguity) (rule end)
-	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'succession' 'flow' (ambiguity) (rule end)
 	 
 	 * </pre>
@@ -7001,7 +7001,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureTypingName (ambiguity) (rule end)
-	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'use' 'case' (ambiguity) (rule end)
 	 
 	 * </pre>
@@ -7064,7 +7064,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureTypingName (ambiguity) (rule end)
-	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'verification' (ambiguity) (rule end)
 	 
 	 * </pre>
@@ -7116,7 +7116,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureTypingName (ambiguity) (rule end)
-	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'render' 'rendering' (ambiguity) (rule end)
 	 
 	 * </pre>
@@ -7156,7 +7156,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureTypingName (ambiguity) (rule end)
-	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'view' (ambiguity) (rule end)
 	 
 	 * </pre>
@@ -7219,7 +7219,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     references+=FeatureChainName (ambiguity) (rule end)
 	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
 	 *     typings+=FeatureTypingName (ambiguity) (rule end)
-	 *     valuePart+=Expression (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
 	 *     visibility=VisibilityIndicator 'viewpoint' (ambiguity) (rule end)
 	 
 	 * </pre>

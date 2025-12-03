@@ -32,7 +32,7 @@ import dut.control.sysmloc.sysMLOC.AttributeDefinition;
 import dut.control.sysmloc.sysMLOC.AttributeUsage;
 import dut.control.sysmloc.sysMLOC.BasicDefinitionPrefix;
 import dut.control.sysmloc.sysMLOC.BasicUsagePrefix;
-import dut.control.sysmloc.sysMLOC.BehaviorUsageElement;
+import dut.control.sysmloc.sysMLOC.BehaviorUsageElements;
 import dut.control.sysmloc.sysMLOC.BindingConnectorAsUsage;
 import dut.control.sysmloc.sysMLOC.CalculationBodyElement;
 import dut.control.sysmloc.sysMLOC.CalculationDefinition;
@@ -57,7 +57,7 @@ import dut.control.sysmloc.sysMLOC.CrossFeatureChain;
 import dut.control.sysmloc.sysMLOC.DefaultReferenceUsage;
 import dut.control.sysmloc.sysMLOC.DefinitionBodyElement;
 import dut.control.sysmloc.sysMLOC.DefinitionDeclaration;
-import dut.control.sysmloc.sysMLOC.DefinitionElement;
+import dut.control.sysmloc.sysMLOC.DefinitionElements;
 import dut.control.sysmloc.sysMLOC.DefinitionExtensionKeyword;
 import dut.control.sysmloc.sysMLOC.DefinitionPrefix;
 import dut.control.sysmloc.sysMLOC.Dependency;
@@ -158,7 +158,7 @@ import dut.control.sysmloc.sysMLOC.StateBodyElement;
 import dut.control.sysmloc.sysMLOC.StateDefinition;
 import dut.control.sysmloc.sysMLOC.StateNodeElements;
 import dut.control.sysmloc.sysMLOC.StateUsage;
-import dut.control.sysmloc.sysMLOC.StructureUsageElement;
+import dut.control.sysmloc.sysMLOC.StructureUsageElements;
 import dut.control.sysmloc.sysMLOC.SubjectUsage;
 import dut.control.sysmloc.sysMLOC.SubsettingFeatureChain;
 import dut.control.sysmloc.sysMLOC.SuccessionAsUsage;
@@ -175,7 +175,7 @@ import dut.control.sysmloc.sysMLOC.UnextendedUsagePrefix;
 import dut.control.sysmloc.sysMLOC.Usage;
 import dut.control.sysmloc.sysMLOC.UsageBodyElement;
 import dut.control.sysmloc.sysMLOC.UsageDeclaration;
-import dut.control.sysmloc.sysMLOC.UsageElement;
+import dut.control.sysmloc.sysMLOC.UsageElements;
 import dut.control.sysmloc.sysMLOC.UsageExtensionKeyword;
 import dut.control.sysmloc.sysMLOC.UsagePrefix;
 import dut.control.sysmloc.sysMLOC.UseCaseDefinition;
@@ -419,41 +419,41 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SysMLOCPackage.DEFINITION_ELEMENT:
+      case SysMLOCPackage.DEFINITION_ELEMENTS:
       {
-        DefinitionElement definitionElement = (DefinitionElement)theEObject;
-        T result = caseDefinitionElement(definitionElement);
-        if (result == null) result = caseGeneralBodyElements(definitionElement);
-        if (result == null) result = casePackageBodyElement(definitionElement);
-        if (result == null) result = caseDefinitionBodyElement(definitionElement);
-        if (result == null) result = caseUsageBodyElement(definitionElement);
-        if (result == null) result = caseInterfaceBodyElement(definitionElement);
-        if (result == null) result = caseActionBodyElement(definitionElement);
-        if (result == null) result = caseStateBodyElement(definitionElement);
-        if (result == null) result = caseRequirementBodyElement(definitionElement);
-        if (result == null) result = caseViewDefinitionBodyElement(definitionElement);
-        if (result == null) result = caseViewBodyElement(definitionElement);
-        if (result == null) result = caseCalculationBodyElement(definitionElement);
-        if (result == null) result = caseCaseBodyElement(definitionElement);
+        DefinitionElements definitionElements = (DefinitionElements)theEObject;
+        T result = caseDefinitionElements(definitionElements);
+        if (result == null) result = caseGeneralBodyElements(definitionElements);
+        if (result == null) result = casePackageBodyElement(definitionElements);
+        if (result == null) result = caseDefinitionBodyElement(definitionElements);
+        if (result == null) result = caseUsageBodyElement(definitionElements);
+        if (result == null) result = caseInterfaceBodyElement(definitionElements);
+        if (result == null) result = caseActionBodyElement(definitionElements);
+        if (result == null) result = caseStateBodyElement(definitionElements);
+        if (result == null) result = caseRequirementBodyElement(definitionElements);
+        if (result == null) result = caseViewDefinitionBodyElement(definitionElements);
+        if (result == null) result = caseViewBodyElement(definitionElements);
+        if (result == null) result = caseCalculationBodyElement(definitionElements);
+        if (result == null) result = caseCaseBodyElement(definitionElements);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SysMLOCPackage.USAGE_ELEMENT:
+      case SysMLOCPackage.USAGE_ELEMENTS:
       {
-        UsageElement usageElement = (UsageElement)theEObject;
-        T result = caseUsageElement(usageElement);
-        if (result == null) result = caseGeneralBodyElements(usageElement);
-        if (result == null) result = casePackageBodyElement(usageElement);
-        if (result == null) result = caseDefinitionBodyElement(usageElement);
-        if (result == null) result = caseUsageBodyElement(usageElement);
-        if (result == null) result = caseInterfaceBodyElement(usageElement);
-        if (result == null) result = caseActionBodyElement(usageElement);
-        if (result == null) result = caseStateBodyElement(usageElement);
-        if (result == null) result = caseRequirementBodyElement(usageElement);
-        if (result == null) result = caseViewDefinitionBodyElement(usageElement);
-        if (result == null) result = caseViewBodyElement(usageElement);
-        if (result == null) result = caseCalculationBodyElement(usageElement);
-        if (result == null) result = caseCaseBodyElement(usageElement);
+        UsageElements usageElements = (UsageElements)theEObject;
+        T result = caseUsageElements(usageElements);
+        if (result == null) result = caseGeneralBodyElements(usageElements);
+        if (result == null) result = casePackageBodyElement(usageElements);
+        if (result == null) result = caseDefinitionBodyElement(usageElements);
+        if (result == null) result = caseUsageBodyElement(usageElements);
+        if (result == null) result = caseInterfaceBodyElement(usageElements);
+        if (result == null) result = caseActionBodyElement(usageElements);
+        if (result == null) result = caseStateBodyElement(usageElements);
+        if (result == null) result = caseRequirementBodyElement(usageElements);
+        if (result == null) result = caseViewDefinitionBodyElement(usageElements);
+        if (result == null) result = caseViewBodyElement(usageElements);
+        if (result == null) result = caseCalculationBodyElement(usageElements);
+        if (result == null) result = caseCaseBodyElement(usageElements);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -461,7 +461,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         NonOccurrenceUsageElement nonOccurrenceUsageElement = (NonOccurrenceUsageElement)theEObject;
         T result = caseNonOccurrenceUsageElement(nonOccurrenceUsageElement);
-        if (result == null) result = caseUsageElement(nonOccurrenceUsageElement);
+        if (result == null) result = caseUsageElements(nonOccurrenceUsageElement);
         if (result == null) result = caseGeneralBodyElements(nonOccurrenceUsageElement);
         if (result == null) result = casePackageBodyElement(nonOccurrenceUsageElement);
         if (result == null) result = caseDefinitionBodyElement(nonOccurrenceUsageElement);
@@ -481,7 +481,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         OccurrenceUsageElement occurrenceUsageElement = (OccurrenceUsageElement)theEObject;
         T result = caseOccurrenceUsageElement(occurrenceUsageElement);
-        if (result == null) result = caseUsageElement(occurrenceUsageElement);
+        if (result == null) result = caseUsageElements(occurrenceUsageElement);
         if (result == null) result = caseGeneralBodyElements(occurrenceUsageElement);
         if (result == null) result = casePackageBodyElement(occurrenceUsageElement);
         if (result == null) result = caseDefinitionBodyElement(occurrenceUsageElement);
@@ -497,45 +497,45 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SysMLOCPackage.STRUCTURE_USAGE_ELEMENT:
+      case SysMLOCPackage.STRUCTURE_USAGE_ELEMENTS:
       {
-        StructureUsageElement structureUsageElement = (StructureUsageElement)theEObject;
-        T result = caseStructureUsageElement(structureUsageElement);
-        if (result == null) result = caseOccurrenceUsageElement(structureUsageElement);
-        if (result == null) result = caseUsageElement(structureUsageElement);
-        if (result == null) result = caseGeneralBodyElements(structureUsageElement);
-        if (result == null) result = casePackageBodyElement(structureUsageElement);
-        if (result == null) result = caseDefinitionBodyElement(structureUsageElement);
-        if (result == null) result = caseUsageBodyElement(structureUsageElement);
-        if (result == null) result = caseInterfaceBodyElement(structureUsageElement);
-        if (result == null) result = caseActionBodyElement(structureUsageElement);
-        if (result == null) result = caseStateBodyElement(structureUsageElement);
-        if (result == null) result = caseRequirementBodyElement(structureUsageElement);
-        if (result == null) result = caseViewDefinitionBodyElement(structureUsageElement);
-        if (result == null) result = caseViewBodyElement(structureUsageElement);
-        if (result == null) result = caseCalculationBodyElement(structureUsageElement);
-        if (result == null) result = caseCaseBodyElement(structureUsageElement);
+        StructureUsageElements structureUsageElements = (StructureUsageElements)theEObject;
+        T result = caseStructureUsageElements(structureUsageElements);
+        if (result == null) result = caseOccurrenceUsageElement(structureUsageElements);
+        if (result == null) result = caseUsageElements(structureUsageElements);
+        if (result == null) result = caseGeneralBodyElements(structureUsageElements);
+        if (result == null) result = casePackageBodyElement(structureUsageElements);
+        if (result == null) result = caseDefinitionBodyElement(structureUsageElements);
+        if (result == null) result = caseUsageBodyElement(structureUsageElements);
+        if (result == null) result = caseInterfaceBodyElement(structureUsageElements);
+        if (result == null) result = caseActionBodyElement(structureUsageElements);
+        if (result == null) result = caseStateBodyElement(structureUsageElements);
+        if (result == null) result = caseRequirementBodyElement(structureUsageElements);
+        if (result == null) result = caseViewDefinitionBodyElement(structureUsageElements);
+        if (result == null) result = caseViewBodyElement(structureUsageElements);
+        if (result == null) result = caseCalculationBodyElement(structureUsageElements);
+        if (result == null) result = caseCaseBodyElement(structureUsageElements);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SysMLOCPackage.BEHAVIOR_USAGE_ELEMENT:
+      case SysMLOCPackage.BEHAVIOR_USAGE_ELEMENTS:
       {
-        BehaviorUsageElement behaviorUsageElement = (BehaviorUsageElement)theEObject;
-        T result = caseBehaviorUsageElement(behaviorUsageElement);
-        if (result == null) result = caseOccurrenceUsageElement(behaviorUsageElement);
-        if (result == null) result = caseUsageElement(behaviorUsageElement);
-        if (result == null) result = caseGeneralBodyElements(behaviorUsageElement);
-        if (result == null) result = casePackageBodyElement(behaviorUsageElement);
-        if (result == null) result = caseDefinitionBodyElement(behaviorUsageElement);
-        if (result == null) result = caseUsageBodyElement(behaviorUsageElement);
-        if (result == null) result = caseInterfaceBodyElement(behaviorUsageElement);
-        if (result == null) result = caseActionBodyElement(behaviorUsageElement);
-        if (result == null) result = caseStateBodyElement(behaviorUsageElement);
-        if (result == null) result = caseRequirementBodyElement(behaviorUsageElement);
-        if (result == null) result = caseViewDefinitionBodyElement(behaviorUsageElement);
-        if (result == null) result = caseViewBodyElement(behaviorUsageElement);
-        if (result == null) result = caseCalculationBodyElement(behaviorUsageElement);
-        if (result == null) result = caseCaseBodyElement(behaviorUsageElement);
+        BehaviorUsageElements behaviorUsageElements = (BehaviorUsageElements)theEObject;
+        T result = caseBehaviorUsageElements(behaviorUsageElements);
+        if (result == null) result = caseOccurrenceUsageElement(behaviorUsageElements);
+        if (result == null) result = caseUsageElements(behaviorUsageElements);
+        if (result == null) result = caseGeneralBodyElements(behaviorUsageElements);
+        if (result == null) result = casePackageBodyElement(behaviorUsageElements);
+        if (result == null) result = caseDefinitionBodyElement(behaviorUsageElements);
+        if (result == null) result = caseUsageBodyElement(behaviorUsageElements);
+        if (result == null) result = caseInterfaceBodyElement(behaviorUsageElements);
+        if (result == null) result = caseActionBodyElement(behaviorUsageElements);
+        if (result == null) result = caseStateBodyElement(behaviorUsageElements);
+        if (result == null) result = caseRequirementBodyElement(behaviorUsageElements);
+        if (result == null) result = caseViewDefinitionBodyElement(behaviorUsageElements);
+        if (result == null) result = caseViewBodyElement(behaviorUsageElements);
+        if (result == null) result = caseCalculationBodyElement(behaviorUsageElements);
+        if (result == null) result = caseCaseBodyElement(behaviorUsageElements);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -569,7 +569,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         dut.control.sysmloc.sysMLOC.Package package_ = (dut.control.sysmloc.sysMLOC.Package)theEObject;
         T result = casePackage(package_);
-        if (result == null) result = caseDefinitionElement(package_);
+        if (result == null) result = caseDefinitionElements(package_);
         if (result == null) result = casePrefixMetadata(package_);
         if (result == null) result = caseGeneralBodyElements(package_);
         if (result == null) result = casePackageBodyElement(package_);
@@ -758,7 +758,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseRefPrefix(defaultReferenceUsage);
         if (result == null) result = caseUsageDeclaration(defaultReferenceUsage);
         if (result == null) result = caseValuePart(defaultReferenceUsage);
-        if (result == null) result = caseUsageElement(defaultReferenceUsage);
+        if (result == null) result = caseUsageElements(defaultReferenceUsage);
         if (result == null) result = caseBasicDefinitionPrefix(defaultReferenceUsage);
         if (result == null) result = caseFeatureDeclaration(defaultReferenceUsage);
         if (result == null) result = caseFeatureValue(defaultReferenceUsage);
@@ -796,7 +796,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseUnextendedUsagePrefix(extendedUsage);
         if (result == null) result = caseUsageExtensionKeyword(extendedUsage);
         if (result == null) result = caseUsage(extendedUsage);
-        if (result == null) result = caseUsageElement(extendedUsage);
+        if (result == null) result = caseUsageElements(extendedUsage);
         if (result == null) result = caseEmptySuccessionPrefix(extendedUsage);
         if (result == null) result = caseMemberPrefix(extendedUsage);
         if (result == null) result = caseisReturnPrefix(extendedUsage);
@@ -869,7 +869,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseEndUsagePrefix(referenceUsage);
         if (result == null) result = caseRefPrefix(referenceUsage);
         if (result == null) result = caseUsage(referenceUsage);
-        if (result == null) result = caseUsageElement(referenceUsage);
+        if (result == null) result = caseUsageElements(referenceUsage);
         if (result == null) result = caseBasicDefinitionPrefix(referenceUsage);
         if (result == null) result = caseUsageDeclaration(referenceUsage);
         if (result == null) result = caseFeatureValue(referenceUsage);
@@ -903,7 +903,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         LibraryPackage libraryPackage = (LibraryPackage)theEObject;
         T result = caseLibraryPackage(libraryPackage);
-        if (result == null) result = caseDefinitionElement(libraryPackage);
+        if (result == null) result = caseDefinitionElements(libraryPackage);
         if (result == null) result = casePrefixMetadata(libraryPackage);
         if (result == null) result = caseIdentification(libraryPackage);
         if (result == null) result = caseGeneralBodyElements(libraryPackage);
@@ -925,7 +925,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         Dependency dependency = (Dependency)theEObject;
         T result = caseDependency(dependency);
-        if (result == null) result = caseDefinitionElement(dependency);
+        if (result == null) result = caseDefinitionElements(dependency);
         if (result == null) result = casePrefixMetadata(dependency);
         if (result == null) result = caseIdentification(dependency);
         if (result == null) result = caseGeneralBodyElements(dependency);
@@ -947,7 +947,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         AttributeDefinition attributeDefinition = (AttributeDefinition)theEObject;
         T result = caseAttributeDefinition(attributeDefinition);
-        if (result == null) result = caseDefinitionElement(attributeDefinition);
+        if (result == null) result = caseDefinitionElements(attributeDefinition);
         if (result == null) result = caseMemberPrefix(attributeDefinition);
         if (result == null) result = caseDefinitionPrefix(attributeDefinition);
         if (result == null) result = caseDefinitionDeclaration(attributeDefinition);
@@ -979,7 +979,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseisReturnPrefix(attributeUsage);
         if (result == null) result = caseUsagePrefix(attributeUsage);
         if (result == null) result = caseUsage(attributeUsage);
-        if (result == null) result = caseUsageElement(attributeUsage);
+        if (result == null) result = caseUsageElements(attributeUsage);
         if (result == null) result = caseUnextendedUsagePrefix(attributeUsage);
         if (result == null) result = caseUsageExtensionKeyword(attributeUsage);
         if (result == null) result = caseUsageDeclaration(attributeUsage);
@@ -1019,7 +1019,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         EnumerationDefinition enumerationDefinition = (EnumerationDefinition)theEObject;
         T result = caseEnumerationDefinition(enumerationDefinition);
-        if (result == null) result = caseDefinitionElement(enumerationDefinition);
+        if (result == null) result = caseDefinitionElements(enumerationDefinition);
         if (result == null) result = caseMemberPrefix(enumerationDefinition);
         if (result == null) result = caseDefinitionExtensionKeyword(enumerationDefinition);
         if (result == null) result = caseDefinitionDeclaration(enumerationDefinition);
@@ -1074,7 +1074,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseisReturnPrefix(enumerationUsage);
         if (result == null) result = caseUsagePrefix(enumerationUsage);
         if (result == null) result = caseUsage(enumerationUsage);
-        if (result == null) result = caseUsageElement(enumerationUsage);
+        if (result == null) result = caseUsageElements(enumerationUsage);
         if (result == null) result = caseUnextendedUsagePrefix(enumerationUsage);
         if (result == null) result = caseUsageExtensionKeyword(enumerationUsage);
         if (result == null) result = caseUsageDeclaration(enumerationUsage);
@@ -1119,7 +1119,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseisReturnPrefix(bindingConnectorAsUsage);
         if (result == null) result = caseUsagePrefix(bindingConnectorAsUsage);
         if (result == null) result = caseUsageDeclaration(bindingConnectorAsUsage);
-        if (result == null) result = caseUsageElement(bindingConnectorAsUsage);
+        if (result == null) result = caseUsageElements(bindingConnectorAsUsage);
         if (result == null) result = caseUnextendedUsagePrefix(bindingConnectorAsUsage);
         if (result == null) result = caseUsageExtensionKeyword(bindingConnectorAsUsage);
         if (result == null) result = caseFeatureDeclaration(bindingConnectorAsUsage);
@@ -1162,7 +1162,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseisReturnPrefix(successionAsUsage);
         if (result == null) result = caseUsagePrefix(successionAsUsage);
         if (result == null) result = caseUsageDeclaration(successionAsUsage);
-        if (result == null) result = caseUsageElement(successionAsUsage);
+        if (result == null) result = caseUsageElements(successionAsUsage);
         if (result == null) result = caseUnextendedUsagePrefix(successionAsUsage);
         if (result == null) result = caseUsageExtensionKeyword(successionAsUsage);
         if (result == null) result = caseFeatureDeclaration(successionAsUsage);
@@ -1200,7 +1200,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         OccurrenceDefinition occurrenceDefinition = (OccurrenceDefinition)theEObject;
         T result = caseOccurrenceDefinition(occurrenceDefinition);
-        if (result == null) result = caseDefinitionElement(occurrenceDefinition);
+        if (result == null) result = caseDefinitionElements(occurrenceDefinition);
         if (result == null) result = caseMemberPrefix(occurrenceDefinition);
         if (result == null) result = caseOccurrenceDefinitionPrefix(occurrenceDefinition);
         if (result == null) result = caseDefinitionDeclaration(occurrenceDefinition);
@@ -1227,7 +1227,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         OccurrenceUsage occurrenceUsage = (OccurrenceUsage)theEObject;
         T result = caseOccurrenceUsage(occurrenceUsage);
-        if (result == null) result = caseStructureUsageElement(occurrenceUsage);
+        if (result == null) result = caseStructureUsageElements(occurrenceUsage);
         if (result == null) result = caseGeneralUsagePrefix(occurrenceUsage);
         if (result == null) result = caseOccurrenceUsagePrefix(occurrenceUsage);
         if (result == null) result = caseUsage(occurrenceUsage);
@@ -1239,7 +1239,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseUsageExtensionKeyword(occurrenceUsage);
         if (result == null) result = caseUsageDeclaration(occurrenceUsage);
         if (result == null) result = caseFeatureValue(occurrenceUsage);
-        if (result == null) result = caseUsageElement(occurrenceUsage);
+        if (result == null) result = caseUsageElements(occurrenceUsage);
         if (result == null) result = caseRefPrefix(occurrenceUsage);
         if (result == null) result = casePrefixMetadata(occurrenceUsage);
         if (result == null) result = caseFeatureDeclaration(occurrenceUsage);
@@ -1273,7 +1273,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         PortionUsage portionUsage = (PortionUsage)theEObject;
         T result = casePortionUsage(portionUsage);
-        if (result == null) result = caseStructureUsageElement(portionUsage);
+        if (result == null) result = caseStructureUsageElements(portionUsage);
         if (result == null) result = caseGeneralUsagePrefix(portionUsage);
         if (result == null) result = caseBasicUsagePrefix(portionUsage);
         if (result == null) result = caseUsageExtensionKeyword(portionUsage);
@@ -1286,7 +1286,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = casePrefixMetadata(portionUsage);
         if (result == null) result = caseUsageDeclaration(portionUsage);
         if (result == null) result = caseFeatureValue(portionUsage);
-        if (result == null) result = caseUsageElement(portionUsage);
+        if (result == null) result = caseUsageElements(portionUsage);
         if (result == null) result = caseBasicDefinitionPrefix(portionUsage);
         if (result == null) result = caseFeatureDeclaration(portionUsage);
         if (result == null) result = caseGeneralBodyElements(portionUsage);
@@ -1318,7 +1318,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         EventOccurrenceUsage eventOccurrenceUsage = (EventOccurrenceUsage)theEObject;
         T result = caseEventOccurrenceUsage(eventOccurrenceUsage);
-        if (result == null) result = caseStructureUsageElement(eventOccurrenceUsage);
+        if (result == null) result = caseStructureUsageElements(eventOccurrenceUsage);
         if (result == null) result = caseGeneralUsagePrefix(eventOccurrenceUsage);
         if (result == null) result = caseOccurrenceUsagePrefix(eventOccurrenceUsage);
         if (result == null) result = caseReferenceSubsetting(eventOccurrenceUsage);
@@ -1332,7 +1332,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseUsageExtensionKeyword(eventOccurrenceUsage);
         if (result == null) result = caseFeatureDeclaration(eventOccurrenceUsage);
         if (result == null) result = caseFeatureValue(eventOccurrenceUsage);
-        if (result == null) result = caseUsageElement(eventOccurrenceUsage);
+        if (result == null) result = caseUsageElements(eventOccurrenceUsage);
         if (result == null) result = caseRefPrefix(eventOccurrenceUsage);
         if (result == null) result = casePrefixMetadata(eventOccurrenceUsage);
         if (result == null) result = caseFeatureSpecializationPart(eventOccurrenceUsage);
@@ -1365,7 +1365,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         IndividualDefinition individualDefinition = (IndividualDefinition)theEObject;
         T result = caseIndividualDefinition(individualDefinition);
-        if (result == null) result = caseDefinitionElement(individualDefinition);
+        if (result == null) result = caseDefinitionElements(individualDefinition);
         if (result == null) result = caseMemberPrefix(individualDefinition);
         if (result == null) result = caseBasicDefinitionPrefix(individualDefinition);
         if (result == null) result = caseUsageExtensionKeyword(individualDefinition);
@@ -1391,7 +1391,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         IndividualUsage individualUsage = (IndividualUsage)theEObject;
         T result = caseIndividualUsage(individualUsage);
-        if (result == null) result = caseStructureUsageElement(individualUsage);
+        if (result == null) result = caseStructureUsageElements(individualUsage);
         if (result == null) result = caseGeneralUsagePrefix(individualUsage);
         if (result == null) result = caseBasicUsagePrefix(individualUsage);
         if (result == null) result = caseUsageExtensionKeyword(individualUsage);
@@ -1404,7 +1404,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = casePrefixMetadata(individualUsage);
         if (result == null) result = caseUsageDeclaration(individualUsage);
         if (result == null) result = caseFeatureValue(individualUsage);
-        if (result == null) result = caseUsageElement(individualUsage);
+        if (result == null) result = caseUsageElements(individualUsage);
         if (result == null) result = caseBasicDefinitionPrefix(individualUsage);
         if (result == null) result = caseFeatureDeclaration(individualUsage);
         if (result == null) result = caseGeneralBodyElements(individualUsage);
@@ -1436,7 +1436,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         ItemDefinition itemDefinition = (ItemDefinition)theEObject;
         T result = caseItemDefinition(itemDefinition);
-        if (result == null) result = caseDefinitionElement(itemDefinition);
+        if (result == null) result = caseDefinitionElements(itemDefinition);
         if (result == null) result = caseMemberPrefix(itemDefinition);
         if (result == null) result = caseOccurrenceDefinitionPrefix(itemDefinition);
         if (result == null) result = caseDefinitionDeclaration(itemDefinition);
@@ -1463,7 +1463,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         ItemUsage itemUsage = (ItemUsage)theEObject;
         T result = caseItemUsage(itemUsage);
-        if (result == null) result = caseStructureUsageElement(itemUsage);
+        if (result == null) result = caseStructureUsageElements(itemUsage);
         if (result == null) result = caseGeneralUsagePrefix(itemUsage);
         if (result == null) result = caseOccurrenceUsagePrefix(itemUsage);
         if (result == null) result = caseUsage(itemUsage);
@@ -1475,7 +1475,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseUsageExtensionKeyword(itemUsage);
         if (result == null) result = caseUsageDeclaration(itemUsage);
         if (result == null) result = caseFeatureValue(itemUsage);
-        if (result == null) result = caseUsageElement(itemUsage);
+        if (result == null) result = caseUsageElements(itemUsage);
         if (result == null) result = caseRefPrefix(itemUsage);
         if (result == null) result = casePrefixMetadata(itemUsage);
         if (result == null) result = caseFeatureDeclaration(itemUsage);
@@ -1509,7 +1509,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         MetadataDefinition metadataDefinition = (MetadataDefinition)theEObject;
         T result = caseMetadataDefinition(metadataDefinition);
-        if (result == null) result = caseDefinitionElement(metadataDefinition);
+        if (result == null) result = caseDefinitionElements(metadataDefinition);
         if (result == null) result = caseMemberPrefix(metadataDefinition);
         if (result == null) result = caseDefinitionExtensionKeyword(metadataDefinition);
         if (result == null) result = caseDefinitionDeclaration(metadataDefinition);
@@ -1534,7 +1534,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         PartDefinition partDefinition = (PartDefinition)theEObject;
         T result = casePartDefinition(partDefinition);
-        if (result == null) result = caseDefinitionElement(partDefinition);
+        if (result == null) result = caseDefinitionElements(partDefinition);
         if (result == null) result = caseMemberPrefix(partDefinition);
         if (result == null) result = caseOccurrenceDefinitionPrefix(partDefinition);
         if (result == null) result = caseDefinitionDeclaration(partDefinition);
@@ -1561,7 +1561,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         PartUsage partUsage = (PartUsage)theEObject;
         T result = casePartUsage(partUsage);
-        if (result == null) result = caseStructureUsageElement(partUsage);
+        if (result == null) result = caseStructureUsageElements(partUsage);
         if (result == null) result = caseGeneralUsagePrefix(partUsage);
         if (result == null) result = caseOccurrenceUsagePrefix(partUsage);
         if (result == null) result = caseUsage(partUsage);
@@ -1573,7 +1573,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseUsageExtensionKeyword(partUsage);
         if (result == null) result = caseUsageDeclaration(partUsage);
         if (result == null) result = caseFeatureValue(partUsage);
-        if (result == null) result = caseUsageElement(partUsage);
+        if (result == null) result = caseUsageElements(partUsage);
         if (result == null) result = caseRefPrefix(partUsage);
         if (result == null) result = casePrefixMetadata(partUsage);
         if (result == null) result = caseFeatureDeclaration(partUsage);
@@ -1607,7 +1607,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         PortDefinition portDefinition = (PortDefinition)theEObject;
         T result = casePortDefinition(portDefinition);
-        if (result == null) result = caseDefinitionElement(portDefinition);
+        if (result == null) result = caseDefinitionElements(portDefinition);
         if (result == null) result = caseMemberPrefix(portDefinition);
         if (result == null) result = caseDefinitionPrefix(portDefinition);
         if (result == null) result = caseDefinitionDeclaration(portDefinition);
@@ -1634,7 +1634,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         PortUsage portUsage = (PortUsage)theEObject;
         T result = casePortUsage(portUsage);
-        if (result == null) result = caseStructureUsageElement(portUsage);
+        if (result == null) result = caseStructureUsageElements(portUsage);
         if (result == null) result = caseGeneralUsagePrefix(portUsage);
         if (result == null) result = caseOccurrenceUsagePrefix(portUsage);
         if (result == null) result = caseUsage(portUsage);
@@ -1646,7 +1646,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseUsageExtensionKeyword(portUsage);
         if (result == null) result = caseUsageDeclaration(portUsage);
         if (result == null) result = caseFeatureValue(portUsage);
-        if (result == null) result = caseUsageElement(portUsage);
+        if (result == null) result = caseUsageElements(portUsage);
         if (result == null) result = caseRefPrefix(portUsage);
         if (result == null) result = casePrefixMetadata(portUsage);
         if (result == null) result = caseFeatureDeclaration(portUsage);
@@ -1680,7 +1680,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         ConnectionDefinition connectionDefinition = (ConnectionDefinition)theEObject;
         T result = caseConnectionDefinition(connectionDefinition);
-        if (result == null) result = caseDefinitionElement(connectionDefinition);
+        if (result == null) result = caseDefinitionElements(connectionDefinition);
         if (result == null) result = caseMemberPrefix(connectionDefinition);
         if (result == null) result = caseOccurrenceDefinitionPrefix(connectionDefinition);
         if (result == null) result = caseDefinitionDeclaration(connectionDefinition);
@@ -1707,7 +1707,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         ConnectionUsage connectionUsage = (ConnectionUsage)theEObject;
         T result = caseConnectionUsage(connectionUsage);
-        if (result == null) result = caseStructureUsageElement(connectionUsage);
+        if (result == null) result = caseStructureUsageElements(connectionUsage);
         if (result == null) result = caseGeneralUsagePrefix(connectionUsage);
         if (result == null) result = caseOccurrenceUsagePrefix(connectionUsage);
         if (result == null) result = caseUsageDeclaration(connectionUsage);
@@ -1720,7 +1720,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseBasicUsagePrefix(connectionUsage);
         if (result == null) result = caseUsageExtensionKeyword(connectionUsage);
         if (result == null) result = caseFeatureDeclaration(connectionUsage);
-        if (result == null) result = caseUsageElement(connectionUsage);
+        if (result == null) result = caseUsageElements(connectionUsage);
         if (result == null) result = caseRefPrefix(connectionUsage);
         if (result == null) result = casePrefixMetadata(connectionUsage);
         if (result == null) result = caseIdentification(connectionUsage);
@@ -1753,7 +1753,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         InterfaceDefinition interfaceDefinition = (InterfaceDefinition)theEObject;
         T result = caseInterfaceDefinition(interfaceDefinition);
-        if (result == null) result = caseDefinitionElement(interfaceDefinition);
+        if (result == null) result = caseDefinitionElements(interfaceDefinition);
         if (result == null) result = caseMemberPrefix(interfaceDefinition);
         if (result == null) result = caseOccurrenceDefinitionPrefix(interfaceDefinition);
         if (result == null) result = caseDefinitionDeclaration(interfaceDefinition);
@@ -1780,7 +1780,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         InterfaceUsage interfaceUsage = (InterfaceUsage)theEObject;
         T result = caseInterfaceUsage(interfaceUsage);
-        if (result == null) result = caseStructureUsageElement(interfaceUsage);
+        if (result == null) result = caseStructureUsageElements(interfaceUsage);
         if (result == null) result = caseGeneralUsagePrefix(interfaceUsage);
         if (result == null) result = caseOccurrenceUsagePrefix(interfaceUsage);
         if (result == null) result = caseUsageDeclaration(interfaceUsage);
@@ -1792,7 +1792,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseBasicUsagePrefix(interfaceUsage);
         if (result == null) result = caseUsageExtensionKeyword(interfaceUsage);
         if (result == null) result = caseFeatureDeclaration(interfaceUsage);
-        if (result == null) result = caseUsageElement(interfaceUsage);
+        if (result == null) result = caseUsageElements(interfaceUsage);
         if (result == null) result = caseRefPrefix(interfaceUsage);
         if (result == null) result = casePrefixMetadata(interfaceUsage);
         if (result == null) result = caseIdentification(interfaceUsage);
@@ -1825,7 +1825,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         Message message = (Message)theEObject;
         T result = caseMessage(message);
-        if (result == null) result = caseStructureUsageElement(message);
+        if (result == null) result = caseStructureUsageElements(message);
         if (result == null) result = caseGeneralUsagePrefix(message);
         if (result == null) result = caseOccurrenceUsagePrefix(message);
         if (result == null) result = caseUsageDeclaration(message);
@@ -1839,7 +1839,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseUsageExtensionKeyword(message);
         if (result == null) result = caseFeatureDeclaration(message);
         if (result == null) result = caseFeatureValue(message);
-        if (result == null) result = caseUsageElement(message);
+        if (result == null) result = caseUsageElements(message);
         if (result == null) result = caseRefPrefix(message);
         if (result == null) result = casePrefixMetadata(message);
         if (result == null) result = caseIdentification(message);
@@ -1872,7 +1872,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         FlowDefinition flowDefinition = (FlowDefinition)theEObject;
         T result = caseFlowDefinition(flowDefinition);
-        if (result == null) result = caseDefinitionElement(flowDefinition);
+        if (result == null) result = caseDefinitionElements(flowDefinition);
         if (result == null) result = caseMemberPrefix(flowDefinition);
         if (result == null) result = caseOccurrenceDefinitionPrefix(flowDefinition);
         if (result == null) result = caseDefinitionDeclaration(flowDefinition);
@@ -1899,7 +1899,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         FlowUsage flowUsage = (FlowUsage)theEObject;
         T result = caseFlowUsage(flowUsage);
-        if (result == null) result = caseStructureUsageElement(flowUsage);
+        if (result == null) result = caseStructureUsageElements(flowUsage);
         if (result == null) result = caseGeneralUsagePrefix(flowUsage);
         if (result == null) result = caseOccurrenceUsagePrefix(flowUsage);
         if (result == null) result = caseUsageDeclaration(flowUsage);
@@ -1912,7 +1912,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseBasicUsagePrefix(flowUsage);
         if (result == null) result = caseUsageExtensionKeyword(flowUsage);
         if (result == null) result = caseFeatureDeclaration(flowUsage);
-        if (result == null) result = caseUsageElement(flowUsage);
+        if (result == null) result = caseUsageElements(flowUsage);
         if (result == null) result = caseRefPrefix(flowUsage);
         if (result == null) result = casePrefixMetadata(flowUsage);
         if (result == null) result = caseIdentification(flowUsage);
@@ -1945,7 +1945,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         SuccessionFlowUsage successionFlowUsage = (SuccessionFlowUsage)theEObject;
         T result = caseSuccessionFlowUsage(successionFlowUsage);
-        if (result == null) result = caseStructureUsageElement(successionFlowUsage);
+        if (result == null) result = caseStructureUsageElements(successionFlowUsage);
         if (result == null) result = caseGeneralUsagePrefix(successionFlowUsage);
         if (result == null) result = caseOccurrenceUsagePrefix(successionFlowUsage);
         if (result == null) result = caseUsageDeclaration(successionFlowUsage);
@@ -1958,7 +1958,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseBasicUsagePrefix(successionFlowUsage);
         if (result == null) result = caseUsageExtensionKeyword(successionFlowUsage);
         if (result == null) result = caseFeatureDeclaration(successionFlowUsage);
-        if (result == null) result = caseUsageElement(successionFlowUsage);
+        if (result == null) result = caseUsageElements(successionFlowUsage);
         if (result == null) result = caseRefPrefix(successionFlowUsage);
         if (result == null) result = casePrefixMetadata(successionFlowUsage);
         if (result == null) result = caseIdentification(successionFlowUsage);
@@ -1991,7 +1991,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         AllocationDefinition allocationDefinition = (AllocationDefinition)theEObject;
         T result = caseAllocationDefinition(allocationDefinition);
-        if (result == null) result = caseDefinitionElement(allocationDefinition);
+        if (result == null) result = caseDefinitionElements(allocationDefinition);
         if (result == null) result = caseMemberPrefix(allocationDefinition);
         if (result == null) result = caseOccurrenceDefinitionPrefix(allocationDefinition);
         if (result == null) result = caseDefinitionDeclaration(allocationDefinition);
@@ -2018,7 +2018,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         AllocationUsage allocationUsage = (AllocationUsage)theEObject;
         T result = caseAllocationUsage(allocationUsage);
-        if (result == null) result = caseStructureUsageElement(allocationUsage);
+        if (result == null) result = caseStructureUsageElements(allocationUsage);
         if (result == null) result = caseGeneralUsagePrefix(allocationUsage);
         if (result == null) result = caseOccurrenceUsagePrefix(allocationUsage);
         if (result == null) result = caseUsageDeclaration(allocationUsage);
@@ -2030,7 +2030,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseBasicUsagePrefix(allocationUsage);
         if (result == null) result = caseUsageExtensionKeyword(allocationUsage);
         if (result == null) result = caseFeatureDeclaration(allocationUsage);
-        if (result == null) result = caseUsageElement(allocationUsage);
+        if (result == null) result = caseUsageElements(allocationUsage);
         if (result == null) result = caseRefPrefix(allocationUsage);
         if (result == null) result = casePrefixMetadata(allocationUsage);
         if (result == null) result = caseIdentification(allocationUsage);
@@ -2063,7 +2063,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         ActionDefinition actionDefinition = (ActionDefinition)theEObject;
         T result = caseActionDefinition(actionDefinition);
-        if (result == null) result = caseDefinitionElement(actionDefinition);
+        if (result == null) result = caseDefinitionElements(actionDefinition);
         if (result == null) result = caseMemberPrefix(actionDefinition);
         if (result == null) result = caseOccurrenceDefinitionPrefix(actionDefinition);
         if (result == null) result = caseDefinitionDeclaration(actionDefinition);
@@ -2090,7 +2090,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         ActionUsage actionUsage = (ActionUsage)theEObject;
         T result = caseActionUsage(actionUsage);
-        if (result == null) result = caseBehaviorUsageElement(actionUsage);
+        if (result == null) result = caseBehaviorUsageElements(actionUsage);
         if (result == null) result = caseGeneralUsagePrefix(actionUsage);
         if (result == null) result = caseOccurrenceUsagePrefix(actionUsage);
         if (result == null) result = caseActionUsageDeclaration(actionUsage);
@@ -2102,7 +2102,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseUsageExtensionKeyword(actionUsage);
         if (result == null) result = caseUsageDeclaration(actionUsage);
         if (result == null) result = caseFeatureValue(actionUsage);
-        if (result == null) result = caseUsageElement(actionUsage);
+        if (result == null) result = caseUsageElements(actionUsage);
         if (result == null) result = caseRefPrefix(actionUsage);
         if (result == null) result = casePrefixMetadata(actionUsage);
         if (result == null) result = caseFeatureDeclaration(actionUsage);
@@ -2136,7 +2136,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         CalculationDefinition calculationDefinition = (CalculationDefinition)theEObject;
         T result = caseCalculationDefinition(calculationDefinition);
-        if (result == null) result = caseDefinitionElement(calculationDefinition);
+        if (result == null) result = caseDefinitionElements(calculationDefinition);
         if (result == null) result = caseMemberPrefix(calculationDefinition);
         if (result == null) result = caseOccurrenceDefinitionPrefix(calculationDefinition);
         if (result == null) result = caseDefinitionDeclaration(calculationDefinition);
@@ -2163,7 +2163,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         CalculationUsage calculationUsage = (CalculationUsage)theEObject;
         T result = caseCalculationUsage(calculationUsage);
-        if (result == null) result = caseBehaviorUsageElement(calculationUsage);
+        if (result == null) result = caseBehaviorUsageElements(calculationUsage);
         if (result == null) result = caseGeneralUsagePrefix(calculationUsage);
         if (result == null) result = caseOccurrenceUsagePrefix(calculationUsage);
         if (result == null) result = caseActionUsageDeclaration(calculationUsage);
@@ -2175,7 +2175,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseUsageExtensionKeyword(calculationUsage);
         if (result == null) result = caseUsageDeclaration(calculationUsage);
         if (result == null) result = caseFeatureValue(calculationUsage);
-        if (result == null) result = caseUsageElement(calculationUsage);
+        if (result == null) result = caseUsageElements(calculationUsage);
         if (result == null) result = caseRefPrefix(calculationUsage);
         if (result == null) result = casePrefixMetadata(calculationUsage);
         if (result == null) result = caseFeatureDeclaration(calculationUsage);
@@ -2209,7 +2209,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         StateDefinition stateDefinition = (StateDefinition)theEObject;
         T result = caseStateDefinition(stateDefinition);
-        if (result == null) result = caseDefinitionElement(stateDefinition);
+        if (result == null) result = caseDefinitionElements(stateDefinition);
         if (result == null) result = caseMemberPrefix(stateDefinition);
         if (result == null) result = caseOccurrenceDefinitionPrefix(stateDefinition);
         if (result == null) result = caseDefinitionDeclaration(stateDefinition);
@@ -2236,7 +2236,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         StateUsage stateUsage = (StateUsage)theEObject;
         T result = caseStateUsage(stateUsage);
-        if (result == null) result = caseBehaviorUsageElement(stateUsage);
+        if (result == null) result = caseBehaviorUsageElements(stateUsage);
         if (result == null) result = caseGeneralUsagePrefix(stateUsage);
         if (result == null) result = caseOccurrenceUsagePrefix(stateUsage);
         if (result == null) result = caseActionUsageDeclaration(stateUsage);
@@ -2248,7 +2248,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseUsageExtensionKeyword(stateUsage);
         if (result == null) result = caseUsageDeclaration(stateUsage);
         if (result == null) result = caseFeatureValue(stateUsage);
-        if (result == null) result = caseUsageElement(stateUsage);
+        if (result == null) result = caseUsageElements(stateUsage);
         if (result == null) result = caseRefPrefix(stateUsage);
         if (result == null) result = casePrefixMetadata(stateUsage);
         if (result == null) result = caseFeatureDeclaration(stateUsage);
@@ -2282,7 +2282,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         ConstraintDefinition constraintDefinition = (ConstraintDefinition)theEObject;
         T result = caseConstraintDefinition(constraintDefinition);
-        if (result == null) result = caseDefinitionElement(constraintDefinition);
+        if (result == null) result = caseDefinitionElements(constraintDefinition);
         if (result == null) result = caseMemberPrefix(constraintDefinition);
         if (result == null) result = caseOccurrenceDefinitionPrefix(constraintDefinition);
         if (result == null) result = caseDefinitionDeclaration(constraintDefinition);
@@ -2309,7 +2309,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         ConstraintUsage constraintUsage = (ConstraintUsage)theEObject;
         T result = caseConstraintUsage(constraintUsage);
-        if (result == null) result = caseBehaviorUsageElement(constraintUsage);
+        if (result == null) result = caseBehaviorUsageElements(constraintUsage);
         if (result == null) result = caseGeneralUsagePrefix(constraintUsage);
         if (result == null) result = caseOccurrenceUsagePrefix(constraintUsage);
         if (result == null) result = caseConstraintUsageDeclaration(constraintUsage);
@@ -2321,7 +2321,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseUsageExtensionKeyword(constraintUsage);
         if (result == null) result = caseUsageDeclaration(constraintUsage);
         if (result == null) result = caseValuePart(constraintUsage);
-        if (result == null) result = caseUsageElement(constraintUsage);
+        if (result == null) result = caseUsageElements(constraintUsage);
         if (result == null) result = caseRefPrefix(constraintUsage);
         if (result == null) result = casePrefixMetadata(constraintUsage);
         if (result == null) result = caseFeatureDeclaration(constraintUsage);
@@ -2384,7 +2384,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         RequirementDefinition requirementDefinition = (RequirementDefinition)theEObject;
         T result = caseRequirementDefinition(requirementDefinition);
-        if (result == null) result = caseDefinitionElement(requirementDefinition);
+        if (result == null) result = caseDefinitionElements(requirementDefinition);
         if (result == null) result = caseMemberPrefix(requirementDefinition);
         if (result == null) result = caseOccurrenceDefinitionPrefix(requirementDefinition);
         if (result == null) result = caseDefinitionDeclaration(requirementDefinition);
@@ -2411,7 +2411,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         RequirementUsage requirementUsage = (RequirementUsage)theEObject;
         T result = caseRequirementUsage(requirementUsage);
-        if (result == null) result = caseBehaviorUsageElement(requirementUsage);
+        if (result == null) result = caseBehaviorUsageElements(requirementUsage);
         if (result == null) result = caseGeneralUsagePrefix(requirementUsage);
         if (result == null) result = caseOccurrenceUsagePrefix(requirementUsage);
         if (result == null) result = caseConstraintUsageDeclaration(requirementUsage);
@@ -2423,7 +2423,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseUsageExtensionKeyword(requirementUsage);
         if (result == null) result = caseUsageDeclaration(requirementUsage);
         if (result == null) result = caseValuePart(requirementUsage);
-        if (result == null) result = caseUsageElement(requirementUsage);
+        if (result == null) result = caseUsageElements(requirementUsage);
         if (result == null) result = caseRefPrefix(requirementUsage);
         if (result == null) result = casePrefixMetadata(requirementUsage);
         if (result == null) result = caseFeatureDeclaration(requirementUsage);
@@ -2458,7 +2458,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         ConcernDefinition concernDefinition = (ConcernDefinition)theEObject;
         T result = caseConcernDefinition(concernDefinition);
-        if (result == null) result = caseDefinitionElement(concernDefinition);
+        if (result == null) result = caseDefinitionElements(concernDefinition);
         if (result == null) result = caseMemberPrefix(concernDefinition);
         if (result == null) result = caseOccurrenceDefinitionPrefix(concernDefinition);
         if (result == null) result = caseDefinitionDeclaration(concernDefinition);
@@ -2485,7 +2485,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         ConcernUsage concernUsage = (ConcernUsage)theEObject;
         T result = caseConcernUsage(concernUsage);
-        if (result == null) result = caseBehaviorUsageElement(concernUsage);
+        if (result == null) result = caseBehaviorUsageElements(concernUsage);
         if (result == null) result = caseGeneralUsagePrefix(concernUsage);
         if (result == null) result = caseOccurrenceUsagePrefix(concernUsage);
         if (result == null) result = caseConstraintUsageDeclaration(concernUsage);
@@ -2497,7 +2497,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseUsageExtensionKeyword(concernUsage);
         if (result == null) result = caseUsageDeclaration(concernUsage);
         if (result == null) result = caseValuePart(concernUsage);
-        if (result == null) result = caseUsageElement(concernUsage);
+        if (result == null) result = caseUsageElements(concernUsage);
         if (result == null) result = caseRefPrefix(concernUsage);
         if (result == null) result = casePrefixMetadata(concernUsage);
         if (result == null) result = caseFeatureDeclaration(concernUsage);
@@ -2532,7 +2532,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         CaseDefinition caseDefinition = (CaseDefinition)theEObject;
         T result = caseCaseDefinition(caseDefinition);
-        if (result == null) result = caseDefinitionElement(caseDefinition);
+        if (result == null) result = caseDefinitionElements(caseDefinition);
         if (result == null) result = caseMemberPrefix(caseDefinition);
         if (result == null) result = caseOccurrenceDefinitionPrefix(caseDefinition);
         if (result == null) result = caseDefinitionDeclaration(caseDefinition);
@@ -2559,7 +2559,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         CaseUsage caseUsage = (CaseUsage)theEObject;
         T result = caseCaseUsage(caseUsage);
-        if (result == null) result = caseBehaviorUsageElement(caseUsage);
+        if (result == null) result = caseBehaviorUsageElements(caseUsage);
         if (result == null) result = caseGeneralUsagePrefix(caseUsage);
         if (result == null) result = caseOccurrenceUsagePrefix(caseUsage);
         if (result == null) result = caseActionUsageDeclaration(caseUsage);
@@ -2571,7 +2571,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseUsageExtensionKeyword(caseUsage);
         if (result == null) result = caseUsageDeclaration(caseUsage);
         if (result == null) result = caseFeatureValue(caseUsage);
-        if (result == null) result = caseUsageElement(caseUsage);
+        if (result == null) result = caseUsageElements(caseUsage);
         if (result == null) result = caseRefPrefix(caseUsage);
         if (result == null) result = casePrefixMetadata(caseUsage);
         if (result == null) result = caseFeatureDeclaration(caseUsage);
@@ -2605,7 +2605,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         AnalysisCaseDefinition analysisCaseDefinition = (AnalysisCaseDefinition)theEObject;
         T result = caseAnalysisCaseDefinition(analysisCaseDefinition);
-        if (result == null) result = caseDefinitionElement(analysisCaseDefinition);
+        if (result == null) result = caseDefinitionElements(analysisCaseDefinition);
         if (result == null) result = caseMemberPrefix(analysisCaseDefinition);
         if (result == null) result = caseOccurrenceDefinitionPrefix(analysisCaseDefinition);
         if (result == null) result = caseDefinitionDeclaration(analysisCaseDefinition);
@@ -2632,7 +2632,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         AnalysisCaseUsage analysisCaseUsage = (AnalysisCaseUsage)theEObject;
         T result = caseAnalysisCaseUsage(analysisCaseUsage);
-        if (result == null) result = caseBehaviorUsageElement(analysisCaseUsage);
+        if (result == null) result = caseBehaviorUsageElements(analysisCaseUsage);
         if (result == null) result = caseGeneralUsagePrefix(analysisCaseUsage);
         if (result == null) result = caseOccurrenceUsagePrefix(analysisCaseUsage);
         if (result == null) result = caseActionUsageDeclaration(analysisCaseUsage);
@@ -2644,7 +2644,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseUsageExtensionKeyword(analysisCaseUsage);
         if (result == null) result = caseUsageDeclaration(analysisCaseUsage);
         if (result == null) result = caseFeatureValue(analysisCaseUsage);
-        if (result == null) result = caseUsageElement(analysisCaseUsage);
+        if (result == null) result = caseUsageElements(analysisCaseUsage);
         if (result == null) result = caseRefPrefix(analysisCaseUsage);
         if (result == null) result = casePrefixMetadata(analysisCaseUsage);
         if (result == null) result = caseFeatureDeclaration(analysisCaseUsage);
@@ -2678,7 +2678,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         VerificationCaseDefinition verificationCaseDefinition = (VerificationCaseDefinition)theEObject;
         T result = caseVerificationCaseDefinition(verificationCaseDefinition);
-        if (result == null) result = caseDefinitionElement(verificationCaseDefinition);
+        if (result == null) result = caseDefinitionElements(verificationCaseDefinition);
         if (result == null) result = caseMemberPrefix(verificationCaseDefinition);
         if (result == null) result = caseOccurrenceDefinitionPrefix(verificationCaseDefinition);
         if (result == null) result = caseDefinitionDeclaration(verificationCaseDefinition);
@@ -2705,7 +2705,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         VerificationCaseUsage verificationCaseUsage = (VerificationCaseUsage)theEObject;
         T result = caseVerificationCaseUsage(verificationCaseUsage);
-        if (result == null) result = caseBehaviorUsageElement(verificationCaseUsage);
+        if (result == null) result = caseBehaviorUsageElements(verificationCaseUsage);
         if (result == null) result = caseGeneralUsagePrefix(verificationCaseUsage);
         if (result == null) result = caseOccurrenceUsagePrefix(verificationCaseUsage);
         if (result == null) result = caseActionUsageDeclaration(verificationCaseUsage);
@@ -2717,7 +2717,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseUsageExtensionKeyword(verificationCaseUsage);
         if (result == null) result = caseUsageDeclaration(verificationCaseUsage);
         if (result == null) result = caseFeatureValue(verificationCaseUsage);
-        if (result == null) result = caseUsageElement(verificationCaseUsage);
+        if (result == null) result = caseUsageElements(verificationCaseUsage);
         if (result == null) result = caseRefPrefix(verificationCaseUsage);
         if (result == null) result = casePrefixMetadata(verificationCaseUsage);
         if (result == null) result = caseFeatureDeclaration(verificationCaseUsage);
@@ -2751,7 +2751,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         UseCaseDefinition useCaseDefinition = (UseCaseDefinition)theEObject;
         T result = caseUseCaseDefinition(useCaseDefinition);
-        if (result == null) result = caseDefinitionElement(useCaseDefinition);
+        if (result == null) result = caseDefinitionElements(useCaseDefinition);
         if (result == null) result = caseMemberPrefix(useCaseDefinition);
         if (result == null) result = caseOccurrenceDefinitionPrefix(useCaseDefinition);
         if (result == null) result = caseDefinitionDeclaration(useCaseDefinition);
@@ -2778,7 +2778,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         UseCaseUsage useCaseUsage = (UseCaseUsage)theEObject;
         T result = caseUseCaseUsage(useCaseUsage);
-        if (result == null) result = caseBehaviorUsageElement(useCaseUsage);
+        if (result == null) result = caseBehaviorUsageElements(useCaseUsage);
         if (result == null) result = caseGeneralUsagePrefix(useCaseUsage);
         if (result == null) result = caseOccurrenceUsagePrefix(useCaseUsage);
         if (result == null) result = caseActionUsageDeclaration(useCaseUsage);
@@ -2790,7 +2790,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseUsageExtensionKeyword(useCaseUsage);
         if (result == null) result = caseUsageDeclaration(useCaseUsage);
         if (result == null) result = caseFeatureValue(useCaseUsage);
-        if (result == null) result = caseUsageElement(useCaseUsage);
+        if (result == null) result = caseUsageElements(useCaseUsage);
         if (result == null) result = caseRefPrefix(useCaseUsage);
         if (result == null) result = casePrefixMetadata(useCaseUsage);
         if (result == null) result = caseFeatureDeclaration(useCaseUsage);
@@ -2824,7 +2824,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         ViewDefinition viewDefinition = (ViewDefinition)theEObject;
         T result = caseViewDefinition(viewDefinition);
-        if (result == null) result = caseDefinitionElement(viewDefinition);
+        if (result == null) result = caseDefinitionElements(viewDefinition);
         if (result == null) result = caseMemberPrefix(viewDefinition);
         if (result == null) result = caseOccurrenceDefinitionPrefix(viewDefinition);
         if (result == null) result = caseDefinitionDeclaration(viewDefinition);
@@ -2851,7 +2851,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         ViewUsage viewUsage = (ViewUsage)theEObject;
         T result = caseViewUsage(viewUsage);
-        if (result == null) result = caseStructureUsageElement(viewUsage);
+        if (result == null) result = caseStructureUsageElements(viewUsage);
         if (result == null) result = caseGeneralUsagePrefix(viewUsage);
         if (result == null) result = caseOccurrenceUsagePrefix(viewUsage);
         if (result == null) result = caseUsageDeclaration(viewUsage);
@@ -2864,7 +2864,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseUsageExtensionKeyword(viewUsage);
         if (result == null) result = caseFeatureDeclaration(viewUsage);
         if (result == null) result = caseFeatureValue(viewUsage);
-        if (result == null) result = caseUsageElement(viewUsage);
+        if (result == null) result = caseUsageElements(viewUsage);
         if (result == null) result = caseRefPrefix(viewUsage);
         if (result == null) result = casePrefixMetadata(viewUsage);
         if (result == null) result = caseIdentification(viewUsage);
@@ -2897,7 +2897,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         ViewpointDefinition viewpointDefinition = (ViewpointDefinition)theEObject;
         T result = caseViewpointDefinition(viewpointDefinition);
-        if (result == null) result = caseDefinitionElement(viewpointDefinition);
+        if (result == null) result = caseDefinitionElements(viewpointDefinition);
         if (result == null) result = caseMemberPrefix(viewpointDefinition);
         if (result == null) result = caseOccurrenceDefinitionPrefix(viewpointDefinition);
         if (result == null) result = caseDefinitionDeclaration(viewpointDefinition);
@@ -2924,7 +2924,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         ViewpointUsage viewpointUsage = (ViewpointUsage)theEObject;
         T result = caseViewpointUsage(viewpointUsage);
-        if (result == null) result = caseBehaviorUsageElement(viewpointUsage);
+        if (result == null) result = caseBehaviorUsageElements(viewpointUsage);
         if (result == null) result = caseGeneralUsagePrefix(viewpointUsage);
         if (result == null) result = caseOccurrenceUsagePrefix(viewpointUsage);
         if (result == null) result = caseConstraintUsageDeclaration(viewpointUsage);
@@ -2936,7 +2936,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseUsageExtensionKeyword(viewpointUsage);
         if (result == null) result = caseUsageDeclaration(viewpointUsage);
         if (result == null) result = caseValuePart(viewpointUsage);
-        if (result == null) result = caseUsageElement(viewpointUsage);
+        if (result == null) result = caseUsageElements(viewpointUsage);
         if (result == null) result = caseRefPrefix(viewpointUsage);
         if (result == null) result = casePrefixMetadata(viewpointUsage);
         if (result == null) result = caseFeatureDeclaration(viewpointUsage);
@@ -2971,7 +2971,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         RenderingDefinition renderingDefinition = (RenderingDefinition)theEObject;
         T result = caseRenderingDefinition(renderingDefinition);
-        if (result == null) result = caseDefinitionElement(renderingDefinition);
+        if (result == null) result = caseDefinitionElements(renderingDefinition);
         if (result == null) result = caseMemberPrefix(renderingDefinition);
         if (result == null) result = caseOccurrenceDefinitionPrefix(renderingDefinition);
         if (result == null) result = caseDefinitionDeclaration(renderingDefinition);
@@ -2998,7 +2998,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         RenderingUsage renderingUsage = (RenderingUsage)theEObject;
         T result = caseRenderingUsage(renderingUsage);
-        if (result == null) result = caseStructureUsageElement(renderingUsage);
+        if (result == null) result = caseStructureUsageElements(renderingUsage);
         if (result == null) result = caseGeneralUsagePrefix(renderingUsage);
         if (result == null) result = caseOccurrenceUsagePrefix(renderingUsage);
         if (result == null) result = caseUsage(renderingUsage);
@@ -3010,7 +3010,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseUsageExtensionKeyword(renderingUsage);
         if (result == null) result = caseUsageDeclaration(renderingUsage);
         if (result == null) result = caseFeatureValue(renderingUsage);
-        if (result == null) result = caseUsageElement(renderingUsage);
+        if (result == null) result = caseUsageElements(renderingUsage);
         if (result == null) result = caseRefPrefix(renderingUsage);
         if (result == null) result = casePrefixMetadata(renderingUsage);
         if (result == null) result = caseFeatureDeclaration(renderingUsage);
@@ -3044,7 +3044,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         ExtendedDefinition extendedDefinition = (ExtendedDefinition)theEObject;
         T result = caseExtendedDefinition(extendedDefinition);
-        if (result == null) result = caseDefinitionElement(extendedDefinition);
+        if (result == null) result = caseDefinitionElements(extendedDefinition);
         if (result == null) result = caseMemberPrefix(extendedDefinition);
         if (result == null) result = caseBasicDefinitionPrefix(extendedDefinition);
         if (result == null) result = casePrefixMetadata(extendedDefinition);
@@ -3069,7 +3069,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         PerformActionUsage performActionUsage = (PerformActionUsage)theEObject;
         T result = casePerformActionUsage(performActionUsage);
-        if (result == null) result = caseBehaviorUsageElement(performActionUsage);
+        if (result == null) result = caseBehaviorUsageElements(performActionUsage);
         if (result == null) result = caseGeneralUsagePrefix(performActionUsage);
         if (result == null) result = caseOccurrenceUsagePrefix(performActionUsage);
         if (result == null) result = caseReferenceSubsetting(performActionUsage);
@@ -3085,7 +3085,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseAcceptNodeDeclaration(performActionUsage);
         if (result == null) result = caseSendNodeDeclaration(performActionUsage);
         if (result == null) result = caseAssignmentNodeDeclaration(performActionUsage);
-        if (result == null) result = caseUsageElement(performActionUsage);
+        if (result == null) result = caseUsageElements(performActionUsage);
         if (result == null) result = caseRefPrefix(performActionUsage);
         if (result == null) result = casePrefixMetadata(performActionUsage);
         if (result == null) result = caseValuePart(performActionUsage);
@@ -3123,7 +3123,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         ExhibitStateUsage exhibitStateUsage = (ExhibitStateUsage)theEObject;
         T result = caseExhibitStateUsage(exhibitStateUsage);
-        if (result == null) result = caseBehaviorUsageElement(exhibitStateUsage);
+        if (result == null) result = caseBehaviorUsageElements(exhibitStateUsage);
         if (result == null) result = caseGeneralUsagePrefix(exhibitStateUsage);
         if (result == null) result = caseOccurrenceUsagePrefix(exhibitStateUsage);
         if (result == null) result = caseReferenceSubsetting(exhibitStateUsage);
@@ -3137,7 +3137,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseUsageExtensionKeyword(exhibitStateUsage);
         if (result == null) result = caseFeatureDeclaration(exhibitStateUsage);
         if (result == null) result = caseFeatureValue(exhibitStateUsage);
-        if (result == null) result = caseUsageElement(exhibitStateUsage);
+        if (result == null) result = caseUsageElements(exhibitStateUsage);
         if (result == null) result = caseRefPrefix(exhibitStateUsage);
         if (result == null) result = casePrefixMetadata(exhibitStateUsage);
         if (result == null) result = caseFeatureSpecializationPart(exhibitStateUsage);
@@ -3170,7 +3170,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         IncludeUseCaseUsage includeUseCaseUsage = (IncludeUseCaseUsage)theEObject;
         T result = caseIncludeUseCaseUsage(includeUseCaseUsage);
-        if (result == null) result = caseBehaviorUsageElement(includeUseCaseUsage);
+        if (result == null) result = caseBehaviorUsageElements(includeUseCaseUsage);
         if (result == null) result = caseGeneralUsagePrefix(includeUseCaseUsage);
         if (result == null) result = caseOccurrenceUsagePrefix(includeUseCaseUsage);
         if (result == null) result = caseReferenceSubsetting(includeUseCaseUsage);
@@ -3184,7 +3184,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseUsageExtensionKeyword(includeUseCaseUsage);
         if (result == null) result = caseFeatureDeclaration(includeUseCaseUsage);
         if (result == null) result = caseFeatureValue(includeUseCaseUsage);
-        if (result == null) result = caseUsageElement(includeUseCaseUsage);
+        if (result == null) result = caseUsageElements(includeUseCaseUsage);
         if (result == null) result = caseRefPrefix(includeUseCaseUsage);
         if (result == null) result = casePrefixMetadata(includeUseCaseUsage);
         if (result == null) result = caseFeatureSpecializationPart(includeUseCaseUsage);
@@ -3217,7 +3217,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         AssertConstraintUsage assertConstraintUsage = (AssertConstraintUsage)theEObject;
         T result = caseAssertConstraintUsage(assertConstraintUsage);
-        if (result == null) result = caseBehaviorUsageElement(assertConstraintUsage);
+        if (result == null) result = caseBehaviorUsageElements(assertConstraintUsage);
         if (result == null) result = caseGeneralUsagePrefix(assertConstraintUsage);
         if (result == null) result = caseOccurrenceUsagePrefix(assertConstraintUsage);
         if (result == null) result = caseReferenceSubsetting(assertConstraintUsage);
@@ -3230,7 +3230,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseUsageExtensionKeyword(assertConstraintUsage);
         if (result == null) result = caseUsageDeclaration(assertConstraintUsage);
         if (result == null) result = caseValuePart(assertConstraintUsage);
-        if (result == null) result = caseUsageElement(assertConstraintUsage);
+        if (result == null) result = caseUsageElements(assertConstraintUsage);
         if (result == null) result = caseRefPrefix(assertConstraintUsage);
         if (result == null) result = casePrefixMetadata(assertConstraintUsage);
         if (result == null) result = caseFeatureDeclaration(assertConstraintUsage);
@@ -3265,7 +3265,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
       {
         SatisfyRequirementUsage satisfyRequirementUsage = (SatisfyRequirementUsage)theEObject;
         T result = caseSatisfyRequirementUsage(satisfyRequirementUsage);
-        if (result == null) result = caseBehaviorUsageElement(satisfyRequirementUsage);
+        if (result == null) result = caseBehaviorUsageElements(satisfyRequirementUsage);
         if (result == null) result = caseGeneralUsagePrefix(satisfyRequirementUsage);
         if (result == null) result = caseOccurrenceUsagePrefix(satisfyRequirementUsage);
         if (result == null) result = caseReferenceSubsetting(satisfyRequirementUsage);
@@ -3279,7 +3279,7 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseUsageExtensionKeyword(satisfyRequirementUsage);
         if (result == null) result = caseFeatureDeclaration(satisfyRequirementUsage);
         if (result == null) result = caseFeatureValue(satisfyRequirementUsage);
-        if (result == null) result = caseUsageElement(satisfyRequirementUsage);
+        if (result == null) result = caseUsageElements(satisfyRequirementUsage);
         if (result == null) result = caseRefPrefix(satisfyRequirementUsage);
         if (result == null) result = casePrefixMetadata(satisfyRequirementUsage);
         if (result == null) result = caseFeatureSpecializationPart(satisfyRequirementUsage);
@@ -4980,33 +4980,33 @@ public class SysMLOCSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Definition Element</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Definition Elements</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Definition Element</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Definition Elements</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseDefinitionElement(DefinitionElement object)
+  public T caseDefinitionElements(DefinitionElements object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Usage Element</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Usage Elements</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Usage Element</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Usage Elements</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseUsageElement(UsageElement object)
+  public T caseUsageElements(UsageElements object)
   {
     return null;
   }
@@ -5044,33 +5044,33 @@ public class SysMLOCSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Structure Usage Element</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Structure Usage Elements</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Structure Usage Element</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Structure Usage Elements</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseStructureUsageElement(StructureUsageElement object)
+  public T caseStructureUsageElements(StructureUsageElements object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Behavior Usage Element</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Behavior Usage Elements</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Behavior Usage Element</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Behavior Usage Elements</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseBehaviorUsageElement(BehaviorUsageElement object)
+  public T caseBehaviorUsageElements(BehaviorUsageElements object)
   {
     return null;
   }

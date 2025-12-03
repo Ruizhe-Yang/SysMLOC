@@ -14,9 +14,8 @@
     </elements>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="TrafficLightGo">
       <superclassifiers>TrafficLight</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="TrafficLightColor::green">
         <redefinitions>currentColor</redefinitions>
-        <valuePart>TrafficLightColor::green</valuePart>
       </elements>
     </elements>
   </elements>

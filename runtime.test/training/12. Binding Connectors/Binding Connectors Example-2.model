@@ -20,9 +20,8 @@
         </elements>
         <elements xsi:type="sysMLOC:PartUsage" declaredName="pump">
           <typings>FuelPump</typings>
-          <elements xsi:type="sysMLOC:ItemUsage" direction="out" declaredName="pumpOut">
+          <elements xsi:type="sysMLOC:ItemUsage" direction="out" declaredName="pumpOut" valuePart="fuelTankPort.fuelSupply">
             <typings>Fuel</typings>
-            <valuePart>fuelTankPort.fuelSupply</valuePart>
           </elements>
           <elements xsi:type="sysMLOC:ItemUsage" direction="in" declaredName="pumpIn">
             <typings>Fuel</typings>
@@ -33,9 +32,8 @@
           <elements xsi:type="sysMLOC:ItemUsage" direction="out" declaredName="fuelOut">
             <typings>Fuel</typings>
           </elements>
-          <elements xsi:type="sysMLOC:ItemUsage" direction="in" declaredName="fuelIn">
+          <elements xsi:type="sysMLOC:ItemUsage" direction="in" declaredName="fuelIn" valuePart="fuelTankPort.fuelReturn">
             <typings>Fuel</typings>
-            <valuePart>fuelTankPort.fuelReturn</valuePart>
           </elements>
         </elements>
       </elements>

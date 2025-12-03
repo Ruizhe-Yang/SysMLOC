@@ -9,27 +9,21 @@
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="rho"/>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="R_bar"/>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="T"/>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="p">
-          <valuePart>rho * R_bar * T</valuePart>
-        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="p" valuePart="rho * R_bar * T"/>
       </elements>
       <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="'Reversible Adiabatic Compression Density'">
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="rho_1"/>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="p_1"/>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="p_2"/>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="gamma"/>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="rho_2">
-          <valuePart>rho_1 * (p_2 / p_1)^(1/gamma)</valuePart>
-        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="rho_2" valuePart="rho_1 * (p_2 / p_1)^(1/gamma)"/>
       </elements>
       <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="'Reversible Adiabatic Compression Temperature'">
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="T_1"/>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="p_1"/>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="p_2"/>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="gamma"/>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="T_2">
-          <valuePart>T_1 * (p_2 / p_1)**((gamma - 1) / gamma)</valuePart>
-        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="T_2" valuePart="T_1 * (p_2 / p_1)**((gamma - 1) / gamma)"/>
       </elements>
       <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="'Total Pressure'">
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="P_static"/>
@@ -48,18 +42,15 @@
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="V">
           <typings>VolumeValue</typings>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" valuePart="1/(2 * Cp) * V^2 + T_static">
           <typings>TemperatureValue</typings>
-          <valuePart>1/(2 * Cp) * V^2 + T_static</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="'Total Enthalpy'">
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="h_total"/>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="h_static"/>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="V"/>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="H_total">
-          <valuePart>1/2 * V^2 + h_static</valuePart>
-        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="H_total" valuePart="1/2 * V^2 + h_static"/>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:Package" declaredName="'Thermodynamics Structure'">
@@ -137,20 +128,13 @@
           <elements xsi:type="sysMLOC:CodeAnnotation" body="// Shorthand parameter binding notation&#xD;&#xA;"/>
           <elements xsi:type="sysMLOC:CalculationUsage" declaredName="'Solve for Pressure2'">
             <typings>'Ideal Gas Law'</typings>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="rho">
-              <valuePart>'Density'</valuePart>
-            </elements>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="R_bar">
-              <valuePart>'Specific Gas Constant'</valuePart>
-            </elements>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="T">
-              <valuePart>'Static Temperature'</valuePart>
-            </elements>
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="rho" valuePart="'Density'"/>
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="R_bar" valuePart="'Specific Gas Constant'"/>
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="T" valuePart="'Static Temperature'"/>
           </elements>
           <elements xsi:type="sysMLOC:CodeAnnotation" body="// Invocation expression notation&#xD;&#xA;"/>
-          <elements xsi:type="sysMLOC:AttributeUsage">
+          <elements xsi:type="sysMLOC:AttributeUsage" valuePart="'Ideal Gas Law'('Density', 'Specific Gas Constant', 'Static Temperature')">
             <redefinitions>'Static Pressure'</redefinitions>
-            <valuePart>'Ideal Gas Law'('Density', 'Specific Gas Constant', 'Static Temperature')</valuePart>
           </elements>
           <elements xsi:type="sysMLOC:CodeAnnotation" body="// Equation as a constraint (note &quot;==&quot;)&#xD;&#xA;"/>
           <elements xsi:type="sysMLOC:ConstraintUsage">

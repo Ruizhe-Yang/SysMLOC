@@ -45,21 +45,18 @@
     <elements xsi:type="sysMLOC:EnumerationDefinition" declaredName="SeverityEnum">
       <superclassifiers>ConditionLevel</superclassifiers>
       <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="danger">
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="ConditionColor::red">
           <redefinitions>associatedColor</redefinitions>
-          <valuePart>ConditionColor::red</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="warning">
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="ConditionColor::yellow">
           <redefinitions>associatedColor</redefinitions>
-          <valuePart>ConditionColor::yellow</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="normal">
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="ConditionColor::green">
           <redefinitions>associatedColor</redefinitions>
-          <valuePart>ConditionColor::green</valuePart>
         </elements>
       </elements>
     </elements>
@@ -68,19 +65,12 @@
     </elements>
     <elements xsi:type="sysMLOC:EnumerationDefinition" declaredName="DiameterChoice">
       <superclassifiers>Diameter</superclassifiers>
-      <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="small">
-        <valuePart>60 [SI::mm]</valuePart>
-      </elements>
-      <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="medium">
-        <valuePart>70 [SI::mm]</valuePart>
-      </elements>
-      <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="large">
-        <valuePart>80 [SI::mm]</valuePart>
-      </elements>
+      <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="small" valuePart="60 [SI::mm]"/>
+      <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="medium" valuePart="70 [SI::mm]"/>
+      <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="large" valuePart="80 [SI::mm]"/>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="aperatureDiameter">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="aperatureDiameter" valuePart="DiameterChoice::small">
       <typings>DiameterChoice</typings>
-      <valuePart>DiameterChoice::small</valuePart>
     </elements>
   </elements>
 </sysMLOC:Namespace>

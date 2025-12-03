@@ -53,7 +53,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class AllocationDefinitionImpl extends DefinitionElementImpl implements AllocationDefinition
+public class AllocationDefinitionImpl extends DefinitionElementsImpl implements AllocationDefinition
 {
   /**
    * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.

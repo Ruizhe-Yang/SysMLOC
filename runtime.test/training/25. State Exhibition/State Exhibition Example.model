@@ -8,12 +8,8 @@
         <typings>VehicleController</typings>
       </elements>
       <elements xsi:type="sysMLOC:ExhibitStateUsage" refElement="vehicleStates">
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="operatingVehicle">
-          <valuePart>vehicle</valuePart>
-        </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="controller">
-          <valuePart>vehicleController</valuePart>
-        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="operatingVehicle" valuePart="vehicle"/>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="controller" valuePart="vehicleController"/>
       </elements>
     </elements>
   </elements>

@@ -38,9 +38,7 @@
       <elements xsi:type="sysMLOC:ItemUsage" direction="out" declaredName="picture"/>
       <elements xsi:type="sysMLOC:ActionUsage" declaredName="focus">
         <typings>Focus</typings>
-        <elements xsi:type="sysMLOC:ItemUsage" direction="in" declaredName="scene">
-          <valuePart>takePicture::scene</valuePart>
-        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" direction="in" declaredName="scene" valuePart="takePicture::scene"/>
         <elements xsi:type="sysMLOC:ItemUsage" direction="out" declaredName="image"/>
       </elements>
       <elements xsi:type="sysMLOC:IfNode" isFirst="true" firstElement="focus" ifConditionExpression="focus.image.isWellFocused">
@@ -53,9 +51,7 @@
       <elements xsi:type="sysMLOC:ActionUsage" declaredName="shoot">
         <typings>Shoot</typings>
         <elements xsi:type="sysMLOC:ItemUsage" direction="in"/>
-        <elements xsi:type="sysMLOC:ItemUsage" direction="out" declaredName="picture">
-          <valuePart>takePicture::picture</valuePart>
-        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" direction="out" declaredName="picture" valuePart="takePicture::picture"/>
       </elements>
     </elements>
   </elements>

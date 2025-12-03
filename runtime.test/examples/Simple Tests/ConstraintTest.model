@@ -64,13 +64,11 @@
       <subsetting>vehicle</subsetting>
       <elements xsi:type="sysMLOC:AssertConstraintUsage" declaredName="massAnalysis">
         <typings>MassAnalysis</typings>
-        <elements xsi:type="sysMLOC:AttributeUsage">
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="mass">
           <redefinitions>totalMass</redefinitions>
-          <valuePart>mass</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:AttributeUsage">
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="(engine.mass, frontAxleAssembly.mass, rearAxleAssembly.mass)">
           <redefinitions>componentMasses</redefinitions>
-          <valuePart>(engine.mass, frontAxleAssembly.mass, rearAxleAssembly.mass)</valuePart>
         </elements>
       </elements>
     </elements>
@@ -111,12 +109,8 @@
       <subsetting>vehicle</subsetting>
       <elements xsi:type="sysMLOC:AssertConstraintUsage" declaredName="massAnalysis2">
         <typings>MassAnalysis2</typings>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="totalMass">
-          <valuePart>mass</valuePart>
-        </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="componentMasses">
-          <valuePart>(engine.mass, frontAxleAssembly.mass, rearAxleAssembly.mass)</valuePart>
-        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="totalMass" valuePart="mass"/>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="componentMasses" valuePart="(engine.mass, frontAxleAssembly.mass, rearAxleAssembly.mass)"/>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:ConstraintDefinition" declaredName="MassAnalysis3">
@@ -144,12 +138,8 @@
     <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle3">
       <subsetting>vehicle</subsetting>
       <elements xsi:type="sysMLOC:AssertConstraintUsage" refElement="massAnalysis3">
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="totalMass">
-          <valuePart>mass</valuePart>
-        </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="componentMasses">
-          <valuePart>(engine.mass, frontAxleAssembly.mass, rearAxleAssembly.mass)</valuePart>
-        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="totalMass" valuePart="mass"/>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="componentMasses" valuePart="(engine.mass, frontAxleAssembly.mass, rearAxleAssembly.mass)"/>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle4">
@@ -168,13 +158,11 @@
       <resultExpressionParameter resultExpression="mass &lt; massLimit"/>
     </elements>
     <elements xsi:type="sysMLOC:AssertConstraintUsage" refElement="massLimitation" isNegated="true">
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="vehicle3.mass">
         <redefinitions>mass</redefinitions>
-        <valuePart>vehicle3.mass</valuePart>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="vehicle4.mass">
         <redefinitions>massLimit</redefinitions>
-        <valuePart>vehicle4.mass</valuePart>
       </elements>
     </elements>
   </elements>

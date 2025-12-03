@@ -14,53 +14,37 @@
     <elements xsi:type="sysMLOC:EnumerationDefinition" declaredName="ClassificationKind">
       <superclassifiers>ClassificationLevel</superclassifiers>
       <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="unclassified">
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;uncl&quot;">
           <redefinitions>code</redefinitions>
-          <valuePart>&quot;uncl&quot;</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="TrafficLightColor::green">
           <redefinitions>color</redefinitions>
-          <valuePart>TrafficLightColor::green</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="confidential">
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;conf&quot;">
           <redefinitions>code</redefinitions>
-          <valuePart>&quot;conf&quot;</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="TrafficLightColor::yellow">
           <redefinitions>color</redefinitions>
-          <valuePart>TrafficLightColor::yellow</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="secret">
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;secr&quot;">
           <redefinitions>code</redefinitions>
-          <valuePart>&quot;secr&quot;</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="TrafficLightColor::red">
           <redefinitions>color</redefinitions>
-          <valuePart>TrafficLightColor::red</valuePart>
         </elements>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:EnumerationDefinition" declaredName="GradePoints">
       <superclassifiers>Real</superclassifiers>
-      <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="A">
-        <valuePart>4.0</valuePart>
-      </elements>
-      <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="B">
-        <valuePart>3.0</valuePart>
-      </elements>
-      <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="C">
-        <valuePart>2.0</valuePart>
-      </elements>
-      <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="D">
-        <valuePart>1.0</valuePart>
-      </elements>
-      <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="F">
-        <valuePart>0.0</valuePart>
-      </elements>
+      <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="A" valuePart="4.0"/>
+      <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="B" valuePart="3.0"/>
+      <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="C" valuePart="2.0"/>
+      <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="D" valuePart="1.0"/>
+      <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="F" valuePart="0.0"/>
     </elements>
   </elements>
 </sysMLOC:Namespace>

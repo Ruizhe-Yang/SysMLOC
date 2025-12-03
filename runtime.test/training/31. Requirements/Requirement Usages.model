@@ -8,9 +8,8 @@
       <elements xsi:type="sysMLOC:SubjectUsage" declaredName="vehicle">
         <typings>Vehicle</typings>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="2000[kg]">
         <redefinitions>massReqd</redefinitions>
-        <valuePart>2000[kg]</valuePart>
       </elements>
       <elements xsi:type="sysMLOC:RequirementConstraintUsage">
         <elements xsi:type="sysMLOC:Documentation" body="/* Full tank is full. */"/>
@@ -22,9 +21,8 @@
       <elements xsi:type="sysMLOC:SubjectUsage" declaredName="vehicle">
         <typings>Vehicle</typings>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="1500[kg]">
         <redefinitions>massReqd</redefinitions>
-        <valuePart>1500[kg]</valuePart>
       </elements>
       <elements xsi:type="sysMLOC:RequirementConstraintUsage">
         <elements xsi:type="sysMLOC:Documentation" body="/* Full tank is empty. */"/>

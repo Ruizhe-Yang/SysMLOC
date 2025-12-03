@@ -3,26 +3,26 @@
  */
 package dut.control.sysmloc.sysMLOC.impl;
 
-import dut.control.sysmloc.sysMLOC.BehaviorUsageElement;
+import dut.control.sysmloc.sysMLOC.DefinitionElements;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Behavior Usage Element</b></em>'.
+ * An implementation of the model object '<em><b>Definition Elements</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class BehaviorUsageElementImpl extends OccurrenceUsageElementImpl implements BehaviorUsageElement
+public class DefinitionElementsImpl extends GeneralBodyElementsImpl implements DefinitionElements
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected BehaviorUsageElementImpl()
+  protected DefinitionElementsImpl()
   {
     super();
   }
@@ -35,7 +35,7 @@ public class BehaviorUsageElementImpl extends OccurrenceUsageElementImpl impleme
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.eINSTANCE.getBehaviorUsageElement();
+    return SysMLOCPackage.eINSTANCE.getDefinitionElements();
   }
 
-} //BehaviorUsageElementImpl
+} //DefinitionElementsImpl

@@ -43,9 +43,8 @@
         <FlowEnd>vehicle.engineController.fuelCommandReceived</FlowEnd>
       </elements>
       <elements xsi:type="sysMLOC:Message" isThen="true" declaredName="fuelCommandForwardingMessage">
-        <itemFeatureParameter declaredName="fuelCommand">
+        <itemFeatureParameter declaredName="fuelCommand" valuePart="fuelCommandMessage.fuelCommand">
           <typings>FuelCommand</typings>
-          <valuePart>fuelCommandMessage.fuelCommand</valuePart>
         </itemFeatureParameter>
         <FlowEnd>vehicle.engineController.fuelCommandForwarded</FlowEnd>
         <FlowEnd>vehicle.engine.fuelCommandReceived</FlowEnd>

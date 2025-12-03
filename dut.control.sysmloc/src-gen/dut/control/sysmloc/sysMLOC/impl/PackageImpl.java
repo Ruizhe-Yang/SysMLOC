@@ -38,7 +38,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class PackageImpl extends DefinitionElementImpl implements dut.control.sysmloc.sysMLOC.Package
+public class PackageImpl extends DefinitionElementsImpl implements dut.control.sysmloc.sysMLOC.Package
 {
   /**
    * The cached value of the '{@link #getPrefixMetadataExtension() <em>Prefix Metadata Extension</em>}' attribute list.

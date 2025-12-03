@@ -5,36 +5,30 @@
     <elements xsi:type="sysMLOC:PartDefinition" isIndividual="true" declaredName="Vehicle_1">
       <superclassifiers>Vehicle</superclassifiers>
       <elements xsi:type="sysMLOC:PartUsage" portionKind="snapshot" declaredName="vehicle_1_t0">
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2000.0">
           <redefinitions>mass</redefinitions>
-          <valuePart>2000.0</valuePart>
         </elements>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage">
           <redefinitions>status</redefinitions>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="0">
             <redefinitions>gearSetting</redefinitions>
-            <valuePart>0</valuePart>
           </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="0.0">
             <redefinitions>acceleratorPosition</redefinitions>
-            <valuePart>0.0</valuePart>
           </elements>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:PartUsage" portionKind="snapshot" declaredName="vehicle_1_t1">
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1500.0">
           <redefinitions>mass</redefinitions>
-          <valuePart>1500.0</valuePart>
         </elements>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage">
           <redefinitions>status</redefinitions>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2">
             <redefinitions>gearSetting</redefinitions>
-            <valuePart>2</valuePart>
           </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="0.5">
             <redefinitions>acceleratorPosition</redefinitions>
-            <valuePart>0.5</valuePart>
           </elements>
         </elements>
       </elements>

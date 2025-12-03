@@ -15,9 +15,8 @@
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle1">
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="m">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="m" valuePart="eng.m + trans.m">
         <typings>MassValue</typings>
-        <valuePart>eng.m + trans.m</valuePart>
       </elements>
       <elements xsi:type="sysMLOC:PartUsage" declaredName="eng">
         <typings>Engine</typings>
@@ -70,12 +69,8 @@
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle3">
       <elements xsi:type="sysMLOC:AssertConstraintUsage" declaredName="massConstraint">
         <typings>MassConstraint3</typings>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="totalMass">
-          <valuePart>m</valuePart>
-        </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="partMasses">
-          <valuePart>(eng.m, trans.m)</valuePart>
-        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="totalMass" valuePart="m"/>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="partMasses" valuePart="(eng.m, trans.m)"/>
       </elements>
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="m">
         <typings>MassValue</typings>
@@ -115,12 +110,8 @@
     </elements>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle4">
       <elements xsi:type="sysMLOC:AssertConstraintUsage" refElement="mc">
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="totalMass">
-          <valuePart>m</valuePart>
-        </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="partMasses">
-          <valuePart>(eng.m, trans.m)</valuePart>
-        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="totalMass" valuePart="m"/>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="partMasses" valuePart="(eng.m, trans.m)"/>
       </elements>
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="m">
         <typings>MassValue</typings>
@@ -152,16 +143,11 @@
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle5">
       <elements xsi:type="sysMLOC:AssertConstraintUsage" declaredName="ml">
         <typings>MassLimit</typings>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="mass">
-          <valuePart>m</valuePart>
-        </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="maxMass">
-          <valuePart>2500 [kg]</valuePart>
-        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="mass" valuePart="m"/>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="maxMass" valuePart="2500 [kg]"/>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="m">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="m" valuePart="eng.m + trans.m">
         <typings>MassValue</typings>
-        <valuePart>eng.m + trans.m</valuePart>
       </elements>
       <elements xsi:type="sysMLOC:PartUsage" declaredName="eng">
         <typings>Engine</typings>

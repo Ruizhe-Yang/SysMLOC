@@ -42,36 +42,21 @@
       <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="deltaT">
         <subsetting>ISQ::time</subsetting>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" direction="out" declaredName="positions" isInitial="true">
+      <elements xsi:type="sysMLOC:AttributeUsage" direction="out" declaredName="positions" isInitial="true" valuePart="( )">
         <subsetting>ISQ::length</subsetting>
         <Multiplicity>*</Multiplicity>
-        <valuePart>( )</valuePart>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="position" isInitial="true">
-        <valuePart>initialPosition</valuePart>
-      </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="speed" isInitial="true">
-        <valuePart>initialSpeed</valuePart>
-      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="position" isInitial="true" valuePart="initialPosition"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="speed" isInitial="true" valuePart="initialSpeed"/>
       <elements xsi:type="sysMLOC:ForLoopNode" forNodeParameter="1..powerProfile->size()">
         <forVariableParameter declaredName="i"/>
         <elements xsi:type="sysMLOC:PerformActionUsage" declaredName="dynamics">
           <typings>StraightLineDynamics</typings>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="power">
-            <valuePart>powerProfile#(i)</valuePart>
-          </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="mass">
-            <valuePart>vehicleMass</valuePart>
-          </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="delta_t">
-            <valuePart>deltaT</valuePart>
-          </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x_in">
-            <valuePart>position</valuePart>
-          </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="v_in">
-            <valuePart>speed</valuePart>
-          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="power" valuePart="powerProfile#(i)"/>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="mass" valuePart="vehicleMass"/>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="delta_t" valuePart="deltaT"/>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x_in" valuePart="position"/>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="v_in" valuePart="speed"/>
           <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="x_out"/>
           <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="v_out"/>
         </elements>

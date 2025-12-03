@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
   <elements xsi:type="sysMLOC:ActionDefinition" declaredName="DecisionTest">
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="x">
-      <valuePart>1</valuePart>
-    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="x" valuePart="1"/>
     <elements xsi:type="sysMLOC:CommonNode" declaredName="'test x'" nodeKind="decide"/>
     <elements xsi:type="sysMLOC:IfNode" ifConditionExpression="x == 1">
       <transitionSuccessionElement refElement="A1"/>

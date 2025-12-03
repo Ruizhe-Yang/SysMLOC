@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface ConnectionDefinition extends DefinitionElement, MemberPrefix, OccurrenceDefinitionPrefix, BasicDefinitionPrefix, DefinitionExtensionKeyword, PrefixMetadata, DefinitionDeclaration, Identification
+public interface ConnectionDefinition extends DefinitionElements, MemberPrefix, OccurrenceDefinitionPrefix, BasicDefinitionPrefix, DefinitionExtensionKeyword, PrefixMetadata, DefinitionDeclaration, Identification
 {
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.

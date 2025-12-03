@@ -6,35 +6,28 @@
       <superclassifiers>PubSubSequence</superclassifiers>
       <elements xsi:type="sysMLOC:PartUsage">
         <redefinitions>producer</redefinitions>
-        <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="publish_source_event">
-          <valuePart>publish_message.start</valuePart>
-        </elements>
+        <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="publish_source_event" valuePart="publish_message.start"/>
       </elements>
       <elements xsi:type="sysMLOC:PartUsage">
         <redefinitions>server</redefinitions>
-        <elements xsi:type="sysMLOC:EventOccurrenceUsage">
+        <elements xsi:type="sysMLOC:EventOccurrenceUsage" valuePart="subscribe_message.done">
           <redefinitions>subscribe_target_event</redefinitions>
-          <valuePart>subscribe_message.done</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:EventOccurrenceUsage" isThen="true">
+        <elements xsi:type="sysMLOC:EventOccurrenceUsage" isThen="true" valuePart="publish_message.done">
           <redefinitions>publish_target_event</redefinitions>
-          <valuePart>publish_message.done</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:EventOccurrenceUsage" isThen="true">
+        <elements xsi:type="sysMLOC:EventOccurrenceUsage" isThen="true" valuePart="deliver_message.start">
           <redefinitions>deliver_source_event</redefinitions>
-          <valuePart>deliver_message.start</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:PartUsage">
         <redefinitions>consumer</redefinitions>
         <elements xsi:type="sysMLOC:Comment" body="/* Redundant with timing constraints on server and generic transfers. */"/>
-        <elements xsi:type="sysMLOC:EventOccurrenceUsage">
+        <elements xsi:type="sysMLOC:EventOccurrenceUsage" valuePart="subscribe_message.start">
           <redefinitions>subscribe_source_event</redefinitions>
-          <valuePart>subscribe_message.start</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:EventOccurrenceUsage" isThen="true">
+        <elements xsi:type="sysMLOC:EventOccurrenceUsage" isThen="true" valuePart="deliver_message.done">
           <redefinitions>deliver_target_event</redefinitions>
-          <valuePart>deliver_message.done</valuePart>
         </elements>
       </elements>
     </elements>

@@ -12,37 +12,22 @@
     </elements>
     <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="goal">
       <superclassifiers>SemanticMetadata</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="goals meta SysML::RequirementUsage">
         <redefinitions>baseType</redefinitions>
-        <valuePart>goals meta SysML::RequirementUsage</valuePart>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:RequirementUsage" declaredShortName="'1'" declaredName="vehicleMassRequirement">
       <elements xsi:type="sysMLOC:Documentation" body="/* The total mass of a vehicle shall be less than or equal to the required mass. */"/>
       <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="StatusInfo">
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="status">
-          <valuePart>StatusKind::tbd</valuePart>
-        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="status" valuePart="StatusKind::tbd"/>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="risk">
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="totalRisk">
-            <valuePart>high</valuePart>
-          </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="technicalRisk">
-            <valuePart>medium</valuePart>
-          </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="scheduleRisk">
-            <valuePart>low</valuePart>
-          </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="costRisk">
-            <valuePart>medium</valuePart>
-          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="totalRisk" valuePart="high"/>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="technicalRisk" valuePart="medium"/>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="scheduleRisk" valuePart="low"/>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="costRisk" valuePart="medium"/>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="originator">
-          <valuePart>&quot;Bob&quot;</valuePart>
-        </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="owner">
-          <valuePart>&quot;Mary&quot;</valuePart>
-        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="originator" valuePart="&quot;Bob&quot;"/>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="owner" valuePart="&quot;Mary&quot;"/>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:RequirementUsage" declaredName="deliverPayload">

@@ -108,12 +108,8 @@
       <connectorPart refElement="b"/>
       <connectorPart refElement="d"/>
       <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="CausationMetadata">
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="isNecessary">
-          <valuePart>true</valuePart>
-        </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="probability">
-          <valuePart>0.1</valuePart>
-        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="isNecessary" valuePart="true"/>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="probability" valuePart="0.1"/>
       </elements>
     </elements>
   </elements>

@@ -48,10 +48,9 @@
         </elements>
         <elements xsi:type="sysMLOC:PerformActionUsage" declaredName="producerBehavior">
           <elements xsi:type="sysMLOC:ActionUsage" declaredName="publish">
-            <elements xsi:type="sysMLOC:ReferenceUsage" direction="out" declaredName="request">
+            <elements xsi:type="sysMLOC:ReferenceUsage" direction="out" declaredName="request" valuePart="Publish(someTopic, somePublication)">
               <typings>Publish</typings>
               <Multiplicity>1</Multiplicity>
-              <valuePart>Publish(someTopic, somePublication)</valuePart>
             </elements>
           </elements>
         </elements>
@@ -104,10 +103,9 @@
               <typings>Subscribe</typings>
               <Multiplicity>1</Multiplicity>
             </elements>
-            <elements xsi:type="sysMLOC:AttributeUsage" direction="out" declaredName="topic">
+            <elements xsi:type="sysMLOC:AttributeUsage" direction="out" declaredName="topic" valuePart="request.topic">
               <typings>String</typings>
               <Multiplicity>1</Multiplicity>
-              <valuePart>request.topic</valuePart>
             </elements>
           </elements>
           <elements xsi:type="sysMLOC:CommonNode" isThen="true" declaredName="continuePublishing"/>
@@ -116,13 +114,11 @@
               <typings>Publish</typings>
               <Multiplicity>1</Multiplicity>
             </elements>
-            <elements xsi:type="sysMLOC:AttributeUsage" direction="out" declaredName="topic">
+            <elements xsi:type="sysMLOC:AttributeUsage" direction="out" declaredName="topic" valuePart="request.topic">
               <Multiplicity>1</Multiplicity>
-              <valuePart>request.topic</valuePart>
             </elements>
-            <elements xsi:type="sysMLOC:ReferenceUsage" direction="out" declaredName="publication">
+            <elements xsi:type="sysMLOC:ReferenceUsage" direction="out" declaredName="publication" valuePart="request.publication">
               <Multiplicity>1</Multiplicity>
-              <valuePart>request.publication</valuePart>
             </elements>
           </elements>
           <elements xsi:type="sysMLOC:CommonNode" isThen="true" nodeKind="decide"/>
@@ -133,18 +129,15 @@
             <elseEnd refElement="continuePublishing"/>
           </elements>
           <elements xsi:type="sysMLOC:ActionUsage" isThen="true" declaredName="delivering">
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="topic">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="topic" valuePart="subscribing.topic">
               <typings>String</typings>
               <Multiplicity>1</Multiplicity>
-              <valuePart>subscribing.topic</valuePart>
             </elements>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="publication">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="publication" valuePart="publishing.publication">
               <Multiplicity>1</Multiplicity>
-              <valuePart>publishing.publication</valuePart>
             </elements>
-            <elements xsi:type="sysMLOC:ReferenceUsage" direction="out" declaredName="response">
+            <elements xsi:type="sysMLOC:ReferenceUsage" direction="out" declaredName="response" valuePart="Deliver(publication)">
               <typings>Deliver</typings>
-              <valuePart>Deliver(publication)</valuePart>
             </elements>
           </elements>
           <elements xsi:type="sysMLOC:ThenNode">
@@ -189,9 +182,8 @@
         </elements>
         <elements xsi:type="sysMLOC:PerformActionUsage" declaredName="consumerBehavior">
           <elements xsi:type="sysMLOC:ActionUsage" declaredName="subscribe">
-            <elements xsi:type="sysMLOC:ReferenceUsage" direction="out" declaredName="request">
+            <elements xsi:type="sysMLOC:ReferenceUsage" direction="out" declaredName="request" valuePart="Subscribe(myTopic)">
               <typings>Subscribe</typings>
-              <valuePart>Subscribe(myTopic)</valuePart>
             </elements>
           </elements>
           <elements xsi:type="sysMLOC:ActionUsage" isThen="true" declaredName="delivery">

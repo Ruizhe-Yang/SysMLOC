@@ -52,24 +52,20 @@
     </elements>
     <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicleConfigA">
       <subsetting>anyVehicleConfig</subsetting>
-      <elements xsi:type="sysMLOC:PartUsage">
+      <elements xsi:type="sysMLOC:PartUsage" valuePart="subsystemA::subsystem1">
         <redefinitions>subsystemA</redefinitions>
-        <valuePart>subsystemA::subsystem1</valuePart>
       </elements>
-      <elements xsi:type="sysMLOC:PartUsage">
+      <elements xsi:type="sysMLOC:PartUsage" valuePart="subsystemB::subsystem3">
         <redefinitions>subsystemB</redefinitions>
-        <valuePart>subsystemB::subsystem3</valuePart>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:PartUsage" declaredName="VehicleConfigB">
       <subsetting>anyVehicleConfig</subsetting>
-      <elements xsi:type="sysMLOC:PartUsage">
+      <elements xsi:type="sysMLOC:PartUsage" valuePart="subsystemA::subsystem2">
         <redefinitions>subsystemA</redefinitions>
-        <valuePart>subsystemA::subsystem2</valuePart>
       </elements>
-      <elements xsi:type="sysMLOC:PartUsage">
+      <elements xsi:type="sysMLOC:PartUsage" valuePart="subsystemB::subsystem3">
         <redefinitions>subsystemB</redefinitions>
-        <valuePart>subsystemB::subsystem3</valuePart>
       </elements>
     </elements>
   </elements>

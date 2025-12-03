@@ -83,17 +83,14 @@
           </elements>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:Message">
+      <elements xsi:type="sysMLOC:Message" valuePart="driver_a.driverBehavior.sendSetSpeed.sentMessage">
         <redefinitions>setSpeedMessage</redefinitions>
-        <valuePart>driver_a.driverBehavior.sendSetSpeed.sentMessage</valuePart>
       </elements>
-      <elements xsi:type="sysMLOC:Message">
+      <elements xsi:type="sysMLOC:Message" valuePart="vehicle_a.speedometer_a.speedometerBehavior.sendSensedSpeed.sentMessage">
         <redefinitions>sensedSpeedMessage</redefinitions>
-        <valuePart>vehicle_a.speedometer_a.speedometerBehavior.sendSensedSpeed.sentMessage</valuePart>
       </elements>
-      <elements xsi:type="sysMLOC:Message">
+      <elements xsi:type="sysMLOC:Message" valuePart="vehicle_a.cruiseController_a.controllerBehavior.sendFuelCommand.sentMessage">
         <redefinitions>fuelCommandMessage</redefinitions>
-        <valuePart>vehicle_a.cruiseController_a.controllerBehavior.sendFuelCommand.sentMessage</valuePart>
       </elements>
     </elements>
   </elements>

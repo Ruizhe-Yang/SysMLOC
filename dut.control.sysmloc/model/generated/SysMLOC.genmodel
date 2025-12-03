@@ -59,12 +59,12 @@
     <genClasses ecoreClass="SysMLOC.ecore#//ViewBodyElement"/>
     <genClasses ecoreClass="SysMLOC.ecore#//RelationshipBodyElement"/>
     <genClasses ecoreClass="SysMLOC.ecore#//AnnotatingElement"/>
-    <genClasses ecoreClass="SysMLOC.ecore#//DefinitionElement"/>
-    <genClasses ecoreClass="SysMLOC.ecore#//UsageElement"/>
+    <genClasses ecoreClass="SysMLOC.ecore#//DefinitionElements"/>
+    <genClasses ecoreClass="SysMLOC.ecore#//UsageElements"/>
     <genClasses ecoreClass="SysMLOC.ecore#//NonOccurrenceUsageElement"/>
     <genClasses ecoreClass="SysMLOC.ecore#//OccurrenceUsageElement"/>
-    <genClasses ecoreClass="SysMLOC.ecore#//StructureUsageElement"/>
-    <genClasses ecoreClass="SysMLOC.ecore#//BehaviorUsageElement"/>
+    <genClasses ecoreClass="SysMLOC.ecore#//StructureUsageElements"/>
+    <genClasses ecoreClass="SysMLOC.ecore#//BehaviorUsageElements"/>
     <genClasses ecoreClass="SysMLOC.ecore#//ActionNodeElements"/>
     <genClasses ecoreClass="SysMLOC.ecore#//StateNodeElements"/>
     <genClasses ecoreClass="SysMLOC.ecore#//RequirementNodeElements"/>

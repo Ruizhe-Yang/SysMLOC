@@ -8,9 +8,7 @@
       <typings>A</typings>
       <elements xsi:type="sysMLOC:InitialNode" memberElement="start"/>
       <elements xsi:type="sysMLOC:ActionUsage" declaredName="b">
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="y">
-          <valuePart>x</valuePart>
-        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="y" valuePart="x"/>
       </elements>
       <elements xsi:type="sysMLOC:BindingConnectorAsUsage">
         <connectorPart refElement="x"/>

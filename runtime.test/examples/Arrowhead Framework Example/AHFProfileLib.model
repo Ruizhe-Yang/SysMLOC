@@ -116,39 +116,34 @@
       <superclassifiers>SemanticMetadata</superclassifiers>
       <elements xsi:type="sysMLOC:CodeAnnotation" body="// :>> baseType = system_of_systems.locclouds.systems.services meta SysML::PortUsage;&#xD;&#xA;"/>
       <elements xsi:type="sysMLOC:CodeAnnotation" body="// :>> baseType = SysD::services meta SysML::PortUsage;&#xD;&#xA;"/>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isDefault="true">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isDefault="true" valuePart="global_sd meta SysML::PortUsage">
         <redefinitions>baseType</redefinitions>
-        <valuePart>global_sd meta SysML::PortUsage</valuePart>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:MetadataDefinition" declaredShortName="sos" declaredName="SysLocalCloudsMetadata">
       <superclassifiers>SemanticMetadata</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="system_of_systems meta SysML::PartUsage">
         <redefinitions>baseType</redefinitions>
-        <valuePart>system_of_systems meta SysML::PartUsage</valuePart>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:MetadataDefinition" declaredShortName="cloud" declaredName="LocalCloudsMetadata">
       <superclassifiers>SemanticMetadata</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isDefault="true">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isDefault="true" valuePart="system_of_systems::locclouds meta SysML::PartUsage">
         <redefinitions>baseType</redefinitions>
-        <valuePart>system_of_systems::locclouds meta SysML::PartUsage</valuePart>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:MetadataDefinition" declaredShortName="system" declaredName="SysDMetadata">
       <superclassifiers>SemanticMetadata</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isDefault="true">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isDefault="true" valuePart="system_of_systems::locclouds::systems meta SysML::PartUsage">
         <redefinitions>baseType</redefinitions>
-        <valuePart>system_of_systems::locclouds::systems meta SysML::PartUsage</valuePart>
       </elements>
       <elements xsi:type="sysMLOC:CodeAnnotation" body="// :>> baseType default LocalCloudDesign::systems meta SysML::PartUsage;&#xD;&#xA;"/>
     </elements>
     <elements xsi:type="sysMLOC:MetadataDefinition" declaredShortName="idd" declaredName="IDDMetadata">
       <superclassifiers>SDMetadata</superclassifiers>
       <elements xsi:type="sysMLOC:CodeAnnotation" body="// :>> baseType = system_of_systems.locclouds.systems.services.idd meta SysML::PortUsage;&#xD;&#xA;"/>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="SDDD::idds meta SysML::PortUsage">
         <redefinitions>baseType</redefinitions>
-        <valuePart>SDDD::idds meta SysML::PortUsage</valuePart>
       </elements>
       <elements xsi:type="sysMLOC:CodeAnnotation" body="// :>> global_sddd.idd;&#xD;&#xA;"/>
     </elements>
@@ -158,16 +153,14 @@
     <elements xsi:type="sysMLOC:MetadataDefinition" declaredShortName="servicedd" declaredName="SDDDMetadata">
       <superclassifiers>SDMetadata</superclassifiers>
       <elements xsi:type="sysMLOC:CodeAnnotation" body="// :>> baseType = system_of_systems.locclouds.systems.services meta SysML::PortUsage;&#xD;&#xA;"/>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="global_sddd meta SysML::PortUsage">
         <redefinitions>baseType</redefinitions>
-        <valuePart>global_sddd meta SysML::PortUsage</valuePart>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:MetadataDefinition" declaredShortName="clouddd" declaredName="LocalCloudsDDMetadata">
       <superclassifiers>LocalCloudsMetadata</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="system_of_systems::locclouds meta SysML::PartUsage">
         <redefinitions>baseType</redefinitions>
-        <valuePart>system_of_systems::locclouds meta SysML::PartUsage</valuePart>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:PartUsage" declaredName="global_clouddd">
@@ -180,9 +173,8 @@
       <superclassifiers>SysDMetadata</superclassifiers>
       <elements xsi:type="sysMLOC:CodeAnnotation" body="// :>> baseType = system_of_systems.locclouds.systems meta SysML::PartUsage;&#xD;&#xA;"/>
       <elements xsi:type="sysMLOC:CodeAnnotation" body="//:>> baseType = LocalCloudDD::systems meta SysML::PartUsage;&#xD;&#xA;"/>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="global_systemsdd meta SysML::PartUsage">
         <redefinitions>baseType</redefinitions>
-        <valuePart>global_systemsdd meta SysML::PartUsage</valuePart>
       </elements>
     </elements>
   </elements>

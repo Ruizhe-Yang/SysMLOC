@@ -12,9 +12,8 @@
     </elements>
     <elements xsi:type="sysMLOC:PartUsage" declaredName="simpleThing">
       <typings>MassedThing</typings>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="simpleMass">
         <redefinitions>totalMass</redefinitions>
-        <valuePart>simpleMass</valuePart>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:PartUsage" declaredName="compositeThing">
@@ -23,9 +22,8 @@
         <typings>MassedThing</typings>
         <Multiplicity>*</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="simpleMass + sum(subcomponents.totalMass)">
         <redefinitions>totalMass</redefinitions>
-        <valuePart>simpleMass + sum(subcomponents.totalMass)</valuePart>
       </elements>
     </elements>
   </elements>

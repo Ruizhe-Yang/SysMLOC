@@ -8,17 +8,15 @@
       <elements xsi:type="sysMLOC:PartDefinition" isIndividual="true" declaredName="Vehicle1">
         <superclassifiers>Vehicle</superclassifiers>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * This is an individual Vehicle with a mass of 1800 kg.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
-        <elements xsi:type="sysMLOC:AttributeUsage">
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="1800 [kg]">
           <redefinitions>mass</redefinitions>
-          <valuePart>1800 [kg]</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:PartDefinition" isIndividual="true" declaredName="Vehicle2">
         <superclassifiers>Vehicle</superclassifiers>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * This is an individual Vehicle with a mass of 1700 kg.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
-        <elements xsi:type="sysMLOC:AttributeUsage">
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="1700 [kg]">
           <redefinitions>mass</redefinitions>
-          <valuePart>1700 [kg]</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:PartDefinition" isIndividual="true" declaredName="AxleAssembly1">
@@ -43,22 +41,17 @@
         <typings>Vehicle1</typings>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * This is a snapshot of Vehicle1 at time t0;&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
         <elements xsi:type="sysMLOC:CodeAnnotation" body="// Note: Timestamping of snapshots is not yet formalized.&#xD;&#xA;"/>
-        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="t">
-          <valuePart>t0</valuePart>
-        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="t" valuePart="t0"/>
       </elements>
       <elements xsi:type="sysMLOC:PartUsage" portionKind="timeslice" declaredName="vehicle1_t0_t1">
         <typings>Vehicle1</typings>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * This is a time slice of Vehicle1 starting at snapshot vehicle1_t0 &#xD;&#xA;&#x9;&#x9;&#x9; * (time t0) and ending at time t1.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
-        <elements xsi:type="sysMLOC:PortionUsage" portionKind="snapshot">
+        <elements xsi:type="sysMLOC:PortionUsage" valuePart="vehicle1_t0" portionKind="snapshot">
           <redefinitions>start</redefinitions>
-          <valuePart>vehicle1_t0</valuePart>
         </elements>
         <elements xsi:type="sysMLOC:PortionUsage" portionKind="snapshot">
           <redefinitions>done</redefinitions>
-          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="t">
-            <valuePart>t1</valuePart>
-          </elements>
+          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="t" valuePart="t1"/>
         </elements>
       </elements>
     </elements>

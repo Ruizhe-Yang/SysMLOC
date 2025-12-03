@@ -95,7 +95,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class SatisfyRequirementUsageImpl extends BehaviorUsageElementImpl implements SatisfyRequirementUsage
+public class SatisfyRequirementUsageImpl extends BehaviorUsageElementsImpl implements SatisfyRequirementUsage
 {
   /**
    * The default value of the '{@link #isIsThen() <em>Is Then</em>}' attribute.
@@ -578,14 +578,24 @@ public class SatisfyRequirementUsageImpl extends BehaviorUsageElementImpl implem
   protected boolean isDefault = IS_DEFAULT_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getValuePart() <em>Value Part</em>}' attribute list.
+   * The default value of the '{@link #getValuePart() <em>Value Part</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getValuePart()
    * @generated
    * @ordered
    */
-  protected EList<String> valuePart;
+  protected static final String VALUE_PART_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getValuePart() <em>Value Part</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getValuePart()
+   * @generated
+   * @ordered
+   */
+  protected String valuePart = VALUE_PART_EDEFAULT;
 
   /**
    * The default value of the '{@link #isIsNegated() <em>Is Negated</em>}' attribute.
@@ -1284,13 +1294,23 @@ public class SatisfyRequirementUsageImpl extends BehaviorUsageElementImpl implem
    * @generated
    */
   @Override
-  public EList<String> getValuePart()
+  public String getValuePart()
   {
-    if (valuePart == null)
-    {
-      valuePart = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.SATISFY_REQUIREMENT_USAGE__VALUE_PART);
-    }
     return valuePart;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setValuePart(String newValuePart)
+  {
+    String oldValuePart = valuePart;
+    valuePart = newValuePart;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SATISFY_REQUIREMENT_USAGE__VALUE_PART, oldValuePart, valuePart));
   }
 
   /**
@@ -1556,8 +1576,7 @@ public class SatisfyRequirementUsageImpl extends BehaviorUsageElementImpl implem
         setIsDefault((Boolean)newValue);
         return;
       case SysMLOCPackage.SATISFY_REQUIREMENT_USAGE__VALUE_PART:
-        getValuePart().clear();
-        getValuePart().addAll((Collection<? extends String>)newValue);
+        setValuePart((String)newValue);
         return;
       case SysMLOCPackage.SATISFY_REQUIREMENT_USAGE__IS_NEGATED:
         setIsNegated((Boolean)newValue);
@@ -1668,7 +1687,7 @@ public class SatisfyRequirementUsageImpl extends BehaviorUsageElementImpl implem
         setIsDefault(IS_DEFAULT_EDEFAULT);
         return;
       case SysMLOCPackage.SATISFY_REQUIREMENT_USAGE__VALUE_PART:
-        getValuePart().clear();
+        setValuePart(VALUE_PART_EDEFAULT);
         return;
       case SysMLOCPackage.SATISFY_REQUIREMENT_USAGE__IS_NEGATED:
         setIsNegated(IS_NEGATED_EDEFAULT);
@@ -1750,7 +1769,7 @@ public class SatisfyRequirementUsageImpl extends BehaviorUsageElementImpl implem
       case SysMLOCPackage.SATISFY_REQUIREMENT_USAGE__IS_DEFAULT:
         return isDefault != IS_DEFAULT_EDEFAULT;
       case SysMLOCPackage.SATISFY_REQUIREMENT_USAGE__VALUE_PART:
-        return valuePart != null && !valuePart.isEmpty();
+        return VALUE_PART_EDEFAULT == null ? valuePart != null : !VALUE_PART_EDEFAULT.equals(valuePart);
       case SysMLOCPackage.SATISFY_REQUIREMENT_USAGE__IS_NEGATED:
         return isNegated != IS_NEGATED_EDEFAULT;
       case SysMLOCPackage.SATISFY_REQUIREMENT_USAGE__SATISFACTION_PARAMETER:

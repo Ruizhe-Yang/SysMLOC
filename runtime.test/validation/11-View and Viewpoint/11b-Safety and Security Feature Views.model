@@ -22,9 +22,7 @@
           <elements xsi:type="sysMLOC:PartUsage" declaredName="seatBelt">
             <Multiplicity>2</Multiplicity>
             <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="Safety">
-              <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="isMandatory">
-                <valuePart>true</valuePart>
-              </elements>
+              <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="isMandatory" valuePart="true"/>
             </elements>
           </elements>
           <elements xsi:type="sysMLOC:PartUsage" declaredName="frontSeat">
@@ -32,9 +30,7 @@
           </elements>
           <elements xsi:type="sysMLOC:PartUsage" declaredName="driverAirBag">
             <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="Safety">
-              <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="isMandatory">
-                <valuePart>false</valuePart>
-              </elements>
+              <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="isMandatory" valuePart="false"/>
             </elements>
           </elements>
         </elements>
@@ -42,9 +38,7 @@
           <elements xsi:type="sysMLOC:PartUsage" declaredName="body"/>
           <elements xsi:type="sysMLOC:PartUsage" declaredName="bumper">
             <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="Safety">
-              <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="isMandatory">
-                <valuePart>true</valuePart>
-              </elements>
+              <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="isMandatory" valuePart="true"/>
             </elements>
           </elements>
           <elements xsi:type="sysMLOC:PartUsage" declaredName="keylessEntry">
@@ -58,9 +52,7 @@
           <elements xsi:type="sysMLOC:PartUsage" declaredName="antilockBrakes">
             <Multiplicity>2</Multiplicity>
             <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="Safety">
-              <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="isMandatory">
-                <valuePart>false</valuePart>
-              </elements>
+              <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="isMandatory" valuePart="false"/>
             </elements>
           </elements>
         </elements>

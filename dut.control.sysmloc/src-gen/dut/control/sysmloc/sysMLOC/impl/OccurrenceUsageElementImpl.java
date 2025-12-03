@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class OccurrenceUsageElementImpl extends UsageElementImpl implements OccurrenceUsageElement
+public class OccurrenceUsageElementImpl extends UsageElementsImpl implements OccurrenceUsageElement
 {
   /**
    * <!-- begin-user-doc -->

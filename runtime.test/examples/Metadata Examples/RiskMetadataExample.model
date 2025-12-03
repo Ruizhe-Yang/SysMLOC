@@ -5,24 +5,14 @@
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="RiskLevelEnum" isNamespace="true"/>
     <elements xsi:type="sysMLOC:PartUsage" declaredName="engine4cyl">
       <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="Risk">
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="totalRisk">
-          <valuePart>high</valuePart>
-        </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="technicalRisk">
-          <valuePart>medium</valuePart>
-        </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="scheduleRisk">
-          <valuePart>medium</valuePart>
-        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="totalRisk" valuePart="high"/>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="technicalRisk" valuePart="medium"/>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="scheduleRisk" valuePart="medium"/>
       </elements>
       <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="Risk">
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="totalRisk">
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="probability">
-            <valuePart>0.3</valuePart>
-          </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="impact">
-            <valuePart>0.7</valuePart>
-          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="probability" valuePart="0.3"/>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="impact" valuePart="0.7"/>
         </elements>
       </elements>
     </elements>

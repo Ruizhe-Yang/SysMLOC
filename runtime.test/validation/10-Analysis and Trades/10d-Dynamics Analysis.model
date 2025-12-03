@@ -20,9 +20,8 @@
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="v">
           <typings>SpeedValue</typings>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" valuePart="p / (m * v)">
           <typings>AccelerationValue</typings>
-          <valuePart>p / (m * v)</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="Velocity">
@@ -35,9 +34,8 @@
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="dt">
           <typings>TimeValue</typings>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" valuePart="v0 + a * dt">
           <typings>SpeedValue</typings>
-          <valuePart>v0 + a * dt</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="Position">
@@ -50,9 +48,8 @@
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="dt">
           <typings>TimeValue</typings>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" valuePart="x0 + v * dt">
           <typings>LengthValue</typings>
-          <valuePart>x0 + v * dt</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:ActionDefinition" declaredName="StraightLineDynamics">
@@ -71,17 +68,14 @@
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="v_in">
           <typings>SpeedValue</typings>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="x_out">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="x_out" valuePart="Position(x_in, v_in, delta_t)">
           <typings>LengthValue</typings>
-          <valuePart>Position(x_in, v_in, delta_t)</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="v_out">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="v_out" valuePart="Velocity(v_in, a_out, delta_t)">
           <typings>SpeedValue</typings>
-          <valuePart>Velocity(v_in, a_out, delta_t)</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="a_out">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="a_out" valuePart="Acceleration(power, mass, v_in)">
           <typings>AccelerationValue</typings>
-          <valuePart>Acceleration(power, mass, v_in)</valuePart>
         </elements>
       </elements>
     </elements>
@@ -108,36 +102,21 @@
         <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="deltaT">
           <subsetting>ISQ::time</subsetting>
         </elements>
-        <elements xsi:type="sysMLOC:AttributeUsage" isReturn="true" declaredName="accelerationProfile" isInitial="true">
+        <elements xsi:type="sysMLOC:AttributeUsage" isReturn="true" declaredName="accelerationProfile" isInitial="true" valuePart="()">
           <subsetting>ISQ::acceleration</subsetting>
           <Multiplicity>*</Multiplicity>
-          <valuePart>()</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="position" isInitial="true">
-          <valuePart>initialPosition</valuePart>
-        </elements>
-        <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="speed" isInitial="true">
-          <valuePart>initialSpeed</valuePart>
-        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="position" isInitial="true" valuePart="initialPosition"/>
+        <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="speed" isInitial="true" valuePart="initialSpeed"/>
         <elements xsi:type="sysMLOC:ForLoopNode" forNodeParameter="1..powerProfile->size()-1">
           <forVariableParameter declaredName="i"/>
           <elements xsi:type="sysMLOC:PerformActionUsage" declaredName="dynamics">
             <typings>StraightLineDynamics</typings>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="power">
-              <valuePart>powerProfile#(i)</valuePart>
-            </elements>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="mass">
-              <valuePart>vehicle.mass</valuePart>
-            </elements>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="delta_t">
-              <valuePart>deltaT</valuePart>
-            </elements>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x_in">
-              <valuePart>position</valuePart>
-            </elements>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="v_in">
-              <valuePart>speed</valuePart>
-            </elements>
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="power" valuePart="powerProfile#(i)"/>
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="mass" valuePart="vehicle.mass"/>
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="delta_t" valuePart="deltaT"/>
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x_in" valuePart="position"/>
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="v_in" valuePart="speed"/>
           </elements>
           <elements xsi:type="sysMLOC:AssignmentNode" isThen="true" featureChain="position" NodeParameter="dynamics.x_out"/>
           <elements xsi:type="sysMLOC:AssignmentNode" isThen="true" featureChain="speed" NodeParameter="dynamics.v_out"/>

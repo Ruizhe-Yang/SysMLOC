@@ -75,19 +75,17 @@
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:ActionUsage" isThen="true" declaredName="solveForFuelConsumption">
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="power">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="power" valuePart="solveForPower.power">
           <typings>PowerValue</typings>
           <Multiplicity>*</Multiplicity>
-          <valuePart>solveForPower.power</valuePart>
         </elements>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="fuelEconomy">
           <typings>DistancePerVolumeValue</typings>
         </elements>
         <elements xsi:type="sysMLOC:Comment" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * Solve the engine equations to determine how much fuel is&#xD;&#xA;&#x9;&#x9;&#x9; * consumed.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="fuelEconomyResult">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="fuelEconomyResult" valuePart="solveForFuelConsumption.fuelEconomy">
         <typings>DistancePerVolumeValue</typings>
-        <valuePart>solveForFuelConsumption.fuelEconomy</valuePart>
       </elements>
     </elements>
   </elements>

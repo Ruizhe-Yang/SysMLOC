@@ -23,17 +23,9 @@
         <typings>ScalarValues::Integer</typings>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="f">
-      <valuePart>F(a, 2)</valuePart>
-    </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="g">
-      <valuePart>F(q = 1, p = a)</valuePart>
-    </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="b">
-      <valuePart>A(y=a, x=&quot;&quot;)</valuePart>
-    </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="c">
-      <valuePart>A(&quot;test2&quot;)</valuePart>
-    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="f" valuePart="F(a, 2)"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="g" valuePart="F(q = 1, p = a)"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="b" valuePart="A(y=a, x=&quot;&quot;)"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="c" valuePart="A(&quot;test2&quot;)"/>
   </elements>
 </sysMLOC:Namespace>

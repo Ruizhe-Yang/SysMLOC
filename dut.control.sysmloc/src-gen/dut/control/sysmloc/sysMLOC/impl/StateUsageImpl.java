@@ -92,7 +92,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class StateUsageImpl extends BehaviorUsageElementImpl implements StateUsage
+public class StateUsageImpl extends BehaviorUsageElementsImpl implements StateUsage
 {
   /**
    * The default value of the '{@link #isIsThen() <em>Is Then</em>}' attribute.
@@ -555,14 +555,24 @@ public class StateUsageImpl extends BehaviorUsageElementImpl implements StateUsa
   protected boolean isDefault = IS_DEFAULT_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getValuePart() <em>Value Part</em>}' attribute list.
+   * The default value of the '{@link #getValuePart() <em>Value Part</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getValuePart()
    * @generated
    * @ordered
    */
-  protected EList<String> valuePart;
+  protected static final String VALUE_PART_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getValuePart() <em>Value Part</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getValuePart()
+   * @generated
+   * @ordered
+   */
+  protected String valuePart = VALUE_PART_EDEFAULT;
 
   /**
    * The default value of the '{@link #isIsParallel() <em>Is Parallel</em>}' attribute.
@@ -1216,13 +1226,23 @@ public class StateUsageImpl extends BehaviorUsageElementImpl implements StateUsa
    * @generated
    */
   @Override
-  public EList<String> getValuePart()
+  public String getValuePart()
   {
-    if (valuePart == null)
-    {
-      valuePart = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.STATE_USAGE__VALUE_PART);
-    }
     return valuePart;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setValuePart(String newValuePart)
+  {
+    String oldValuePart = valuePart;
+    valuePart = newValuePart;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.STATE_USAGE__VALUE_PART, oldValuePart, valuePart));
   }
 
   /**
@@ -1456,8 +1476,7 @@ public class StateUsageImpl extends BehaviorUsageElementImpl implements StateUsa
         setIsDefault((Boolean)newValue);
         return;
       case SysMLOCPackage.STATE_USAGE__VALUE_PART:
-        getValuePart().clear();
-        getValuePart().addAll((Collection<? extends String>)newValue);
+        setValuePart((String)newValue);
         return;
       case SysMLOCPackage.STATE_USAGE__IS_PARALLEL:
         setIsParallel((Boolean)newValue);
@@ -1562,7 +1581,7 @@ public class StateUsageImpl extends BehaviorUsageElementImpl implements StateUsa
         setIsDefault(IS_DEFAULT_EDEFAULT);
         return;
       case SysMLOCPackage.STATE_USAGE__VALUE_PART:
-        getValuePart().clear();
+        setValuePart(VALUE_PART_EDEFAULT);
         return;
       case SysMLOCPackage.STATE_USAGE__IS_PARALLEL:
         setIsParallel(IS_PARALLEL_EDEFAULT);
@@ -1639,7 +1658,7 @@ public class StateUsageImpl extends BehaviorUsageElementImpl implements StateUsa
       case SysMLOCPackage.STATE_USAGE__IS_DEFAULT:
         return isDefault != IS_DEFAULT_EDEFAULT;
       case SysMLOCPackage.STATE_USAGE__VALUE_PART:
-        return valuePart != null && !valuePart.isEmpty();
+        return VALUE_PART_EDEFAULT == null ? valuePart != null : !VALUE_PART_EDEFAULT.equals(valuePart);
       case SysMLOCPackage.STATE_USAGE__IS_PARALLEL:
         return isParallel != IS_PARALLEL_EDEFAULT;
       case SysMLOCPackage.STATE_USAGE__ELEMENTS:

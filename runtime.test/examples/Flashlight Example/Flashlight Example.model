@@ -19,9 +19,7 @@
           <typings>OnOffCmdPort</typings>
         </elements>
         <elements xsi:type="sysMLOC:PerformActionUsage" refElement="illuminateRegion.sendOnOffCmd">
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="onOffCmd">
-            <valuePart>onOffCmdPort.onOffCmd</valuePart>
-          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="onOffCmd" valuePart="onOffCmdPort.onOffCmd"/>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:InterfaceUsage" declaredName="userToFlashlight">
@@ -38,12 +36,8 @@
           <typings>~OnOffCmdPort</typings>
         </elements>
         <elements xsi:type="sysMLOC:PerformActionUsage" refElement="illuminateRegion.produceDirectedLight">
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="onOffCmd">
-            <valuePart>onOffCmdPort.onOffCmd</valuePart>
-          </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="light">
-            <valuePart>lightPort.light</valuePart>
-          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="onOffCmd" valuePart="onOffCmdPort.onOffCmd"/>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="light" valuePart="lightPort.light"/>
         </elements>
         <elements xsi:type="sysMLOC:PortUsage" declaredName="lightPort">
           <typings>LightPort</typings>
@@ -54,9 +48,7 @@
           <typings>~LightPort</typings>
         </elements>
         <elements xsi:type="sysMLOC:PerformActionUsage" refElement="illuminateRegion.reflectLight">
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="light">
-            <valuePart>lightPort.light</valuePart>
-          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="light" valuePart="lightPort.light"/>
         </elements>
       </elements>
     </elements>

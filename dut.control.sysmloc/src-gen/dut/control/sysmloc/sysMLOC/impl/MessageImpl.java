@@ -95,7 +95,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class MessageImpl extends StructureUsageElementImpl implements Message
+public class MessageImpl extends StructureUsageElementsImpl implements Message
 {
   /**
    * The default value of the '{@link #isIsThen() <em>Is Then</em>}' attribute.
@@ -558,14 +558,24 @@ public class MessageImpl extends StructureUsageElementImpl implements Message
   protected boolean isDefault = IS_DEFAULT_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getValuePart() <em>Value Part</em>}' attribute list.
+   * The default value of the '{@link #getValuePart() <em>Value Part</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getValuePart()
    * @generated
    * @ordered
    */
-  protected EList<String> valuePart;
+  protected static final String VALUE_PART_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getValuePart() <em>Value Part</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getValuePart()
+   * @generated
+   * @ordered
+   */
+  protected String valuePart = VALUE_PART_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getItemFeatureParameter() <em>Item Feature Parameter</em>}' containment reference list.
@@ -1219,13 +1229,23 @@ public class MessageImpl extends StructureUsageElementImpl implements Message
    * @generated
    */
   @Override
-  public EList<String> getValuePart()
+  public String getValuePart()
   {
-    if (valuePart == null)
-    {
-      valuePart = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.MESSAGE__VALUE_PART);
-    }
     return valuePart;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setValuePart(String newValuePart)
+  {
+    String oldValuePart = valuePart;
+    valuePart = newValuePart;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.MESSAGE__VALUE_PART, oldValuePart, valuePart));
   }
 
   /**
@@ -1468,8 +1488,7 @@ public class MessageImpl extends StructureUsageElementImpl implements Message
         setIsDefault((Boolean)newValue);
         return;
       case SysMLOCPackage.MESSAGE__VALUE_PART:
-        getValuePart().clear();
-        getValuePart().addAll((Collection<? extends String>)newValue);
+        setValuePart((String)newValue);
         return;
       case SysMLOCPackage.MESSAGE__ITEM_FEATURE_PARAMETER:
         getItemFeatureParameter().clear();
@@ -1579,7 +1598,7 @@ public class MessageImpl extends StructureUsageElementImpl implements Message
         setIsDefault(IS_DEFAULT_EDEFAULT);
         return;
       case SysMLOCPackage.MESSAGE__VALUE_PART:
-        getValuePart().clear();
+        setValuePart(VALUE_PART_EDEFAULT);
         return;
       case SysMLOCPackage.MESSAGE__ITEM_FEATURE_PARAMETER:
         getItemFeatureParameter().clear();
@@ -1659,7 +1678,7 @@ public class MessageImpl extends StructureUsageElementImpl implements Message
       case SysMLOCPackage.MESSAGE__IS_DEFAULT:
         return isDefault != IS_DEFAULT_EDEFAULT;
       case SysMLOCPackage.MESSAGE__VALUE_PART:
-        return valuePart != null && !valuePart.isEmpty();
+        return VALUE_PART_EDEFAULT == null ? valuePart != null : !VALUE_PART_EDEFAULT.equals(valuePart);
       case SysMLOCPackage.MESSAGE__ITEM_FEATURE_PARAMETER:
         return itemFeatureParameter != null && !itemFeatureParameter.isEmpty();
       case SysMLOCPackage.MESSAGE__FLOW_END:

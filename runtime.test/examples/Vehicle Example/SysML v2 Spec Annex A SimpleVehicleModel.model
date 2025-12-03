@@ -649,19 +649,12 @@
         </elements>
         <elements xsi:type="sysMLOC:EnumerationDefinition" declaredName="DiameterChoices">
           <superclassifiers>ISQ::LengthValue</superclassifiers>
-          <elements xsi:type="sysMLOC:EnumeratedValue">
-            <valuePart>60 [mm]</valuePart>
-          </elements>
-          <elements xsi:type="sysMLOC:EnumeratedValue">
-            <valuePart>80 [mm]</valuePart>
-          </elements>
-          <elements xsi:type="sysMLOC:EnumeratedValue">
-            <valuePart>100 [mm]</valuePart>
-          </elements>
+          <elements xsi:type="sysMLOC:EnumeratedValue" valuePart="60 [mm]"/>
+          <elements xsi:type="sysMLOC:EnumeratedValue" valuePart="80 [mm]"/>
+          <elements xsi:type="sysMLOC:EnumeratedValue" valuePart="100 [mm]"/>
         </elements>
-        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cylinderDiameter">
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cylinderDiameter" valuePart="80 [mm]">
           <typings>DiameterChoices</typings>
-          <valuePart>80 [mm]</valuePart>
         </elements>
         <elements xsi:type="sysMLOC:EnumerationDefinition" declaredName="IgnitionOnOff">
           <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="on"/>
@@ -671,34 +664,27 @@
           <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="gas"/>
           <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="diesel"/>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="distancePerVolume">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="distancePerVolume" valuePart="distance / volume">
           <subsetting>scalarQuantities</subsetting>
-          <valuePart>distance / volume</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="timePerDistance">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="timePerDistance" valuePart="time / distance">
           <subsetting>scalarQuantities</subsetting>
-          <valuePart>time / distance</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="volumePerDistance">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="volumePerDistance" valuePart="volume / distance">
           <subsetting>scalarQuantities</subsetting>
-          <valuePart>volume / distance</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="volumePerTime">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="volumePerTime" valuePart="volume / time">
           <subsetting>scalarQuantities</subsetting>
-          <valuePart>volume / time</valuePart>
         </elements>
         <elements xsi:type="sysMLOC:CodeAnnotation" body="// kpl is approx .425 * mpg&#xA;"/>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="kpl">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="kpl" valuePart="km / L">
           <typings>DerivedUnit</typings>
-          <valuePart>km / L</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="rpm">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="rpm" valuePart="1 / SI::min">
           <typings>DerivedUnit</typings>
-          <valuePart>1 / SI::min</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="kW">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="kW" valuePart="kilo * W">
           <typings>DerivedUnit</typings>
-          <valuePart>kilo * W</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:Package" declaredName="IndividualDefinitions">
@@ -745,9 +731,8 @@
         <elements xsi:type="sysMLOC:CodeAnnotation" body="// with alias &lt;fm>&#xA;"/>
         <elements xsi:type="sysMLOC:MetadataDefinition" declaredShortName="fm" declaredName="failureMode">
           <superclassifiers>SemanticMetadata</superclassifiers>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="failureModes meta SysML::StateUsage">
             <redefinitions>baseType</redefinitions>
-            <valuePart>failureModes meta SysML::StateUsage</valuePart>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:OccurrenceUsage" declaredName="logicalOccurrences" isNonunique="true">
@@ -755,9 +740,8 @@
         </elements>
         <elements xsi:type="sysMLOC:MetadataDefinition" declaredShortName="l" declaredName="logical">
           <superclassifiers>SemanticMetadata</superclassifiers>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="logicalOccurrences meta SysML::Usage">
             <redefinitions>baseType</redefinitions>
-            <valuePart>logicalOccurrences meta SysML::Usage</valuePart>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:OccurrenceUsage" declaredName="physicalOccurrences" isNonunique="true">
@@ -765,9 +749,8 @@
         </elements>
         <elements xsi:type="sysMLOC:MetadataDefinition" declaredShortName="p" declaredName="physical">
           <superclassifiers>SemanticMetadata</superclassifiers>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="physicalOccurrences meta SysML::Usage">
             <redefinitions>baseType</redefinitions>
-            <valuePart>physicalOccurrences meta SysML::Usage</valuePart>
           </elements>
         </elements>
       </elements>
@@ -779,20 +762,17 @@
           <elements xsi:type="sysMLOC:AttributeUsage" declaredName="spatialCF">
             <typings>CartesianSpatial3dCoordinateFrame</typings>
             <Multiplicity>1</Multiplicity>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(m, m, m)">
               <redefinitions>mRefs</redefinitions>
-              <valuePart>(m, m, m)</valuePart>
             </elements>
           </elements>
-          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="velocityCF">
+          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="velocityCF" valuePart="spatialCF/s">
             <typings>CartesianVelocity3dCoordinateFrame</typings>
             <Multiplicity>1</Multiplicity>
-            <valuePart>spatialCF/s</valuePart>
           </elements>
-          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="accelarationCF">
+          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="accelarationCF" valuePart="velocityCF/s">
             <typings>CartesianAcceleration3dCoordinateFrame</typings>
             <Multiplicity>1</Multiplicity>
-            <valuePart>velocityCF/s</valuePart>
           </elements>
         </elements>
       </elements>
@@ -849,17 +829,14 @@
         <elements xsi:type="sysMLOC:Package" declaredName="PartsTree">
           <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle_a">
             <typings>Vehicle</typings>
-            <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass">
+            <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass" valuePart="dryMass+cargoMass+fuelTank.fuel.fuelMass">
               <redefinitions>Vehicle::mass</redefinitions>
-              <valuePart>dryMass+cargoMass+fuelTank.fuel.fuelMass</valuePart>
             </elements>
-            <elements xsi:type="sysMLOC:AttributeUsage" declaredName="dryMass">
+            <elements xsi:type="sysMLOC:AttributeUsage" declaredName="dryMass" valuePart="sum(partMasses)">
               <redefinitions>Vehicle::dryMass</redefinitions>
-              <valuePart>sum(partMasses)</valuePart>
             </elements>
-            <elements xsi:type="sysMLOC:AttributeUsage">
+            <elements xsi:type="sysMLOC:AttributeUsage" valuePart="0 [kg]">
               <redefinitions>Vehicle::cargoMass</redefinitions>
-              <valuePart>0 [kg]</valuePart>
             </elements>
             <elements xsi:type="sysMLOC:AttributeUsage" declaredName="partMasses" isNonunique="true">
               <subsetting>ISQ::mass</subsetting>
@@ -867,23 +844,20 @@
             </elements>
             <elements xsi:type="sysMLOC:PartUsage" declaredName="fuelTank">
               <typings>FuelTank</typings>
-              <elements xsi:type="sysMLOC:AttributeUsage">
+              <elements xsi:type="sysMLOC:AttributeUsage" valuePart="75[kg]">
                 <redefinitions>mass</redefinitions>
-                <valuePart>75[kg]</valuePart>
               </elements>
               <elements xsi:type="sysMLOC:ItemUsage" isReference="true">
                 <redefinitions>fuel</redefinitions>
-                <elements xsi:type="sysMLOC:AttributeUsage">
+                <elements xsi:type="sysMLOC:AttributeUsage" valuePart="50[kg]">
                   <redefinitions>fuelMass</redefinitions>
-                  <valuePart>50[kg]</valuePart>
                 </elements>
               </elements>
             </elements>
             <elements xsi:type="sysMLOC:PartUsage" declaredName="frontAxleAssembly">
               <typings>AxleAssembly</typings>
-              <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass">
+              <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass" valuePart="800[kg]">
                 <subsetting>ISQ::mass</subsetting>
-                <valuePart>800[kg]</valuePart>
               </elements>
               <elements xsi:type="sysMLOC:PartUsage" declaredName="frontAxle">
                 <typings>Axle</typings>
@@ -895,13 +869,11 @@
             </elements>
             <elements xsi:type="sysMLOC:PartUsage" declaredName="rearAxleAssembly">
               <typings>AxleAssembly</typings>
-              <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass">
+              <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass" valuePart="875[kg]">
                 <subsetting>ISQ::mass</subsetting>
-                <valuePart>875[kg]</valuePart>
               </elements>
-              <elements xsi:type="sysMLOC:AttributeUsage" declaredName="driveTrainEfficiency">
+              <elements xsi:type="sysMLOC:AttributeUsage" declaredName="driveTrainEfficiency" valuePart="0.6">
                 <typings>Real</typings>
-                <valuePart>0.6</valuePart>
               </elements>
               <elements xsi:type="sysMLOC:PartUsage" declaredName="rearAxle">
                 <typings>Axle</typings>
@@ -928,22 +900,17 @@
         <elements xsi:type="sysMLOC:Package" declaredName="PartsTree">
           <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle_b">
             <typings>Vehicle</typings>
-            <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass">
+            <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass" valuePart="dryMass+cargoMass+fuelTank.fuel.fuelMass">
               <prefixMetadataExtension>#mop</prefixMetadataExtension>
               <redefinitions>mass</redefinitions>
-              <valuePart>dryMass+cargoMass+fuelTank.fuel.fuelMass</valuePart>
             </elements>
-            <elements xsi:type="sysMLOC:AttributeUsage" declaredName="dryMass">
+            <elements xsi:type="sysMLOC:AttributeUsage" declaredName="dryMass" valuePart="sum(partMasses)">
               <redefinitions>dryMass</redefinitions>
-              <valuePart>sum(partMasses)</valuePart>
             </elements>
-            <elements xsi:type="sysMLOC:AttributeUsage" isDefault="true">
+            <elements xsi:type="sysMLOC:AttributeUsage" isDefault="true" valuePart="0 [kg]">
               <redefinitions>cargoMass</redefinitions>
-              <valuePart>0 [kg]</valuePart>
             </elements>
-            <elements xsi:type="sysMLOC:AttributeUsage" declaredName="partMasses">
-              <valuePart>(fuelTank.mass,frontAxleAssembly.mass,rearAxleAssembly.mass,engine.mass,transmission.mass,driveshaft.mass)</valuePart>
-            </elements>
+            <elements xsi:type="sysMLOC:AttributeUsage" declaredName="partMasses" valuePart="(fuelTank.mass,frontAxleAssembly.mass,rearAxleAssembly.mass,engine.mass,transmission.mass,driveshaft.mass)"/>
             <elements xsi:type="sysMLOC:AttributeUsage" declaredName="avgFuelEconomy">
               <subsetting>distancePerVolume</subsetting>
             </elements>
@@ -986,42 +953,35 @@
               <typings>Box</typings>
               <subsetting>envelopingShapes</subsetting>
               <Multiplicity>1</Multiplicity>
-              <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="length1">
+              <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="length1" valuePart="4800 [mm]">
                 <redefinitions>length</redefinitions>
-                <valuePart>4800 [mm]</valuePart>
               </elements>
-              <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="width1">
+              <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="width1" valuePart="1840 [mm]">
                 <redefinitions>width</redefinitions>
-                <valuePart>1840 [mm]</valuePart>
               </elements>
-              <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="height1">
+              <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="height1" valuePart="1350 [mm]">
                 <redefinitions>height</redefinitions>
-                <valuePart>1350 [mm]</valuePart>
               </elements>
             </elements>
             <elements xsi:type="sysMLOC:PartUsage" declaredName="fuelTank">
               <typings>FuelTank</typings>
-              <elements xsi:type="sysMLOC:AttributeUsage">
+              <elements xsi:type="sysMLOC:AttributeUsage" valuePart="75[kg]">
                 <redefinitions>mass</redefinitions>
-                <valuePart>75[kg]</valuePart>
               </elements>
               <elements xsi:type="sysMLOC:ItemUsage" isReference="true">
                 <redefinitions>fuel</redefinitions>
-                <elements xsi:type="sysMLOC:AttributeUsage">
+                <elements xsi:type="sysMLOC:AttributeUsage" valuePart="60[kg]">
                   <redefinitions>fuelMass</redefinitions>
-                  <valuePart>60[kg]</valuePart>
                 </elements>
               </elements>
-              <elements xsi:type="sysMLOC:AttributeUsage">
+              <elements xsi:type="sysMLOC:AttributeUsage" valuePart="60 [kg]">
                 <redefinitions>fuelMassMax</redefinitions>
-                <valuePart>60 [kg]</valuePart>
               </elements>
             </elements>
             <elements xsi:type="sysMLOC:PartUsage" declaredName="frontAxleAssembly">
               <typings>AxleAssembly</typings>
-              <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass">
+              <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass" valuePart="800[kg]">
                 <subsetting>ISQ::mass</subsetting>
-                <valuePart>800[kg]</valuePart>
               </elements>
               <elements xsi:type="sysMLOC:PortUsage" declaredName="shaftPort_d">
                 <typings>ShaftPort_d</typings>
@@ -1036,13 +996,11 @@
             </elements>
             <elements xsi:type="sysMLOC:PartUsage" declaredName="rearAxleAssembly">
               <typings>AxleAssembly</typings>
-              <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass">
+              <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass" valuePart="875[kg]">
                 <subsetting>ISQ::mass</subsetting>
-                <valuePart>875[kg]</valuePart>
               </elements>
-              <elements xsi:type="sysMLOC:AttributeUsage" declaredName="driveTrainEfficiency">
+              <elements xsi:type="sysMLOC:AttributeUsage" declaredName="driveTrainEfficiency" valuePart="0.6">
                 <typings>Real</typings>
-                <valuePart>0.6</valuePart>
               </elements>
               <elements xsi:type="sysMLOC:PortUsage" declaredName="shaftPort_d">
                 <typings>ShaftPort_d</typings>
@@ -1170,25 +1128,22 @@
               <elements xsi:type="sysMLOC:SatisfyRequirementUsage" refElement="Requirements::engineSpecification" satisfactionParameter="vehicle_b.engine">
                 <elements xsi:type="sysMLOC:RequirementUsage" declaredName="torqueGenerationRequirement">
                   <redefinitions>torqueGenerationRequirement</redefinitions>
-                  <elements xsi:type="sysMLOC:SubjectUsage" declaredName="generateTorque">
+                  <elements xsi:type="sysMLOC:SubjectUsage" declaredName="generateTorque" valuePart="vehicle_b.engine.generateTorque">
                     <redefinitions>generateTorque</redefinitions>
-                    <valuePart>vehicle_b.engine.generateTorque</valuePart>
                   </elements>
                 </elements>
                 <elements xsi:type="sysMLOC:RequirementUsage" declaredName="drivePowerOuputRequirement">
                   <redefinitions>drivePowerOutputRequirement</redefinitions>
-                  <elements xsi:type="sysMLOC:PortUsage" declaredName="torqueOutPort">
+                  <elements xsi:type="sysMLOC:PortUsage" declaredName="torqueOutPort" valuePart="vehicle_b.engine.drivePwrPort">
                     <redefinitions>torqueOutPort</redefinitions>
-                    <valuePart>vehicle_b.engine.drivePwrPort</valuePart>
                   </elements>
                 </elements>
               </elements>
             </elements>
             <elements xsi:type="sysMLOC:PartUsage" declaredName="transmission">
               <typings>Transmission</typings>
-              <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass">
+              <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass" valuePart="100[kg]">
                 <subsetting>ISQ::mass</subsetting>
-                <valuePart>100[kg]</valuePart>
               </elements>
               <elements xsi:type="sysMLOC:PortUsage" declaredName="shaftPort_a">
                 <typings>ShaftPort_a</typings>
@@ -1197,9 +1152,8 @@
             </elements>
             <elements xsi:type="sysMLOC:PartUsage" declaredName="driveshaft">
               <typings>Driveshaft</typings>
-              <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass">
+              <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass" valuePart="100[kg]">
                 <subsetting>ISQ::mass</subsetting>
-                <valuePart>100[kg]</valuePart>
               </elements>
               <elements xsi:type="sysMLOC:PortUsage" declaredName="shaftPort_b">
                 <typings>ShaftPort_b</typings>
@@ -1229,16 +1183,13 @@
               <typings>BodyAssy</typings>
               <elements xsi:type="sysMLOC:PartUsage" declaredName="body">
                 <typings>Body</typings>
-                <elements xsi:type="sysMLOC:AttributeUsage">
+                <elements xsi:type="sysMLOC:AttributeUsage" valuePart="Colors::red">
                   <redefinitions>color</redefinitions>
-                  <valuePart>Colors::red</valuePart>
                 </elements>
               </elements>
               <elements xsi:type="sysMLOC:PartUsage" declaredName="bumper">
                 <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="Safety">
-                  <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="isMandatory">
-                    <valuePart>true</valuePart>
-                  </elements>
+                  <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="isMandatory" valuePart="true"/>
                 </elements>
               </elements>
               <elements xsi:type="sysMLOC:PartUsage" declaredName="keylessEntry">
@@ -1252,9 +1203,7 @@
               <elements xsi:type="sysMLOC:PartUsage" declaredName="seatBelt">
                 <Multiplicity>2</Multiplicity>
                 <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="Safety">
-                  <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="isMandatory">
-                    <valuePart>true</valuePart>
-                  </elements>
+                  <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="isMandatory" valuePart="true"/>
                 </elements>
               </elements>
               <elements xsi:type="sysMLOC:PartUsage" declaredName="frontSeat">
@@ -1262,9 +1211,7 @@
               </elements>
               <elements xsi:type="sysMLOC:PartUsage" declaredName="driverAirBag">
                 <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="Safety">
-                  <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="isMandatory">
-                    <valuePart>false</valuePart>
-                  </elements>
+                  <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="isMandatory" valuePart="false"/>
                 </elements>
               </elements>
             </elements>
@@ -1330,13 +1277,11 @@
             <elements xsi:type="sysMLOC:SatisfyRequirementUsage" refElement="Requirements::vehicleSpecification" satisfactionParameter="vehicle_b">
               <elements xsi:type="sysMLOC:RequirementUsage" declaredName="vehicleMassRequirement">
                 <redefinitions>vehicleMassRequirement</redefinitions>
-                <elements xsi:type="sysMLOC:AttributeUsage">
+                <elements xsi:type="sysMLOC:AttributeUsage" valuePart="vehicle_b.mass">
                   <redefinitions>massActual</redefinitions>
-                  <valuePart>vehicle_b.mass</valuePart>
                 </elements>
-                <elements xsi:type="sysMLOC:AttributeUsage">
+                <elements xsi:type="sysMLOC:AttributeUsage" valuePart="vehicle_b.fuelTank.fuel.fuelMass">
                   <redefinitions>fuelMassActual</redefinitions>
-                  <valuePart>vehicle_b.fuelTank.fuel.fuelMass</valuePart>
                 </elements>
               </elements>
             </elements>
@@ -1349,16 +1294,13 @@
               <typings>FuelCmd</typings>
               <redefinitions>pwrCmd</redefinitions>
             </elements>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="wheelToRoadTorque">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="wheelToRoadTorque" valuePart="distributeTorque.wheelToRoadTorque">
               <redefinitions>wheelToRoadTorque</redefinitions>
               <Multiplicity>2</Multiplicity>
-              <valuePart>distributeTorque.wheelToRoadTorque</valuePart>
             </elements>
             <elements xsi:type="sysMLOC:ActionUsage" declaredName="generateTorque">
               <typings>GenerateTorque</typings>
-              <elements xsi:type="sysMLOC:ItemUsage" direction="in">
-                <valuePart>providePower.fuelCmd</valuePart>
-              </elements>
+              <elements xsi:type="sysMLOC:ItemUsage" direction="in" valuePart="providePower.fuelCmd"/>
             </elements>
             <elements xsi:type="sysMLOC:ActionUsage" declaredName="amplifyTorque">
               <typings>AmplifyTorque</typings>
@@ -1496,9 +1438,7 @@
                     <elements xsi:type="sysMLOC:PortUsage">
                       <redefinitions>setSpeedPort</redefinitions>
                       <elements xsi:type="sysMLOC:CodeAnnotation" body="//analagous to gate: event occurrence bound but may not need this since the port is bound&#xA;"/>
-                      <elements xsi:type="sysMLOC:EventOccurrenceUsage" declaredName="setSpeedReceived">
-                        <valuePart>vehicle_b.setSpeedPort.setSpeedReceived</valuePart>
-                      </elements>
+                      <elements xsi:type="sysMLOC:EventOccurrenceUsage" declaredName="setSpeedReceived" valuePart="vehicle_b.setSpeedPort.setSpeedReceived"/>
                     </elements>
                     <elements xsi:type="sysMLOC:PortUsage">
                       <redefinitions>speedSensorPort</redefinitions>
@@ -1553,15 +1493,11 @@
                     <elements xsi:type="sysMLOC:PortUsage">
                       <redefinitions>setSpeedPort</redefinitions>
                       <elements xsi:type="sysMLOC:CodeAnnotation" body="//analagous to gate: event occurrence bound but may not need this since the port is bound&#xA;"/>
-                      <elements xsi:type="sysMLOC:EventOccurrenceUsage" declaredName="setSpeedReceived">
-                        <valuePart>vehicle_b.setSpeedPort.setSpeedReceived</valuePart>
-                      </elements>
+                      <elements xsi:type="sysMLOC:EventOccurrenceUsage" declaredName="setSpeedReceived" valuePart="vehicle_b.setSpeedPort.setSpeedReceived"/>
                     </elements>
                     <elements xsi:type="sysMLOC:PortUsage">
                       <redefinitions>speedSensorPort</redefinitions>
-                      <elements xsi:type="sysMLOC:EventOccurrenceUsage" declaredName="setSpeedReceived">
-                        <valuePart>setSpeedPort.setSpeedReceived</valuePart>
-                      </elements>
+                      <elements xsi:type="sysMLOC:EventOccurrenceUsage" declaredName="setSpeedReceived" valuePart="setSpeedPort.setSpeedReceived"/>
                       <elements xsi:type="sysMLOC:EventOccurrenceUsage" isThen="true" refElement="sendSensedSpeed.target"/>
                     </elements>
                     <elements xsi:type="sysMLOC:PortUsage">
@@ -1603,20 +1539,17 @@
             <elements xsi:type="sysMLOC:RequirementUsage" declaredShortName="'1'" declaredName="vehicleMassRequirement">
               <typings>MassRequirement</typings>
               <elements xsi:type="sysMLOC:Documentation" body="/* The total mass of the vehicle shall be less than or equal to the required mass.&#xA;                        Assume total mass includes a full tank of gas of 60 kg*/"/>
-              <elements xsi:type="sysMLOC:AttributeUsage">
+              <elements xsi:type="sysMLOC:AttributeUsage" valuePart="2000 [kg]">
                 <redefinitions>massRequired</redefinitions>
-                <valuePart>2000 [kg]</valuePart>
               </elements>
-              <elements xsi:type="sysMLOC:AttributeUsage" isDefault="true">
+              <elements xsi:type="sysMLOC:AttributeUsage" isDefault="true" valuePart="vehicle.dryMass + fuelMassActual">
                 <redefinitions>massActual</redefinitions>
-                <valuePart>vehicle.dryMass + fuelMassActual</valuePart>
               </elements>
               <elements xsi:type="sysMLOC:AttributeUsage" declaredName="fuelMassActual">
                 <subsetting>ISQ::mass</subsetting>
               </elements>
-              <elements xsi:type="sysMLOC:AttributeUsage" declaredName="fuelMassMax">
+              <elements xsi:type="sysMLOC:AttributeUsage" declaredName="fuelMassMax" valuePart="60 [kg]">
                 <subsetting>ISQ::mass</subsetting>
-                <valuePart>60 [kg]</valuePart>
               </elements>
               <elements xsi:type="sysMLOC:RequirementConstraintUsage">
                 <resultExpressionParameter resultExpression="fuelMassActual==fuelMassMax"/>
@@ -1633,9 +1566,8 @@
               </elements>
               <elements xsi:type="sysMLOC:RequirementUsage" declaredShortName="'2_1'" declaredName="cityFuelEconomyRequirement">
                 <typings>FuelEconomyRequirement</typings>
-                <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+                <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="10 [km / L]">
                   <redefinitions>requiredFuelEconomy</redefinitions>
-                  <valuePart>10 [km / L]</valuePart>
                 </elements>
                 <elements xsi:type="sysMLOC:RequirementConstraintUsage">
                   <resultExpressionParameter resultExpression="assumedCargoMass&lt;=500 [kg]"/>
@@ -1643,9 +1575,8 @@
               </elements>
               <elements xsi:type="sysMLOC:RequirementUsage" declaredShortName="'2_2'" declaredName="highwayFuelEconomyRequirement">
                 <typings>FuelEconomyRequirement</typings>
-                <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+                <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="12.75 [km / L]">
                   <redefinitions>requiredFuelEconomy</redefinitions>
-                  <valuePart>12.75 [km / L]</valuePart>
                 </elements>
                 <elements xsi:type="sysMLOC:RequirementConstraintUsage">
                   <resultExpressionParameter resultExpression="assumedCargoMass&lt;=500 [kg]"/>
@@ -1653,15 +1584,9 @@
                 <elements xsi:type="sysMLOC:CodeAnnotation" body="//StatusInfo is contained in ModelingMetadata library&#xA;"/>
                 <elements xsi:type="sysMLOC:CodeAnnotation" body="// StatusKind has values for open, closed, tbd, tbr, tbd&#xA;"/>
                 <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="StatusInfo">
-                  <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="status">
-                    <valuePart>StatusKind::closed</valuePart>
-                  </elements>
-                  <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="originator">
-                    <valuePart>&quot;Bob&quot;</valuePart>
-                  </elements>
-                  <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="owner">
-                    <valuePart>&quot;Mary&quot;</valuePart>
-                  </elements>
+                  <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="status" valuePart="StatusKind::closed"/>
+                  <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="originator" valuePart="&quot;Bob&quot;"/>
+                  <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="owner" valuePart="&quot;Mary&quot;"/>
                 </elements>
               </elements>
             </elements>
@@ -1673,20 +1598,16 @@
             <elements xsi:type="sysMLOC:RequirementUsage" declaredShortName="'1'" declaredName="engineMassRequirement">
               <typings>MassRequirement</typings>
               <elements xsi:type="sysMLOC:Documentation" body="/* The total mass of the engine shall be less than or equal to the required mass.*/"/>
-              <elements xsi:type="sysMLOC:AttributeUsage">
+              <elements xsi:type="sysMLOC:AttributeUsage" valuePart="200 [kg]">
                 <redefinitions>massRequired</redefinitions>
-                <valuePart>200 [kg]</valuePart>
               </elements>
-              <elements xsi:type="sysMLOC:AttributeUsage">
+              <elements xsi:type="sysMLOC:AttributeUsage" valuePart="engine1.mass">
                 <redefinitions>massActual</redefinitions>
-                <valuePart>engine1.mass</valuePart>
               </elements>
             </elements>
             <elements xsi:type="sysMLOC:RequirementUsage" declaredName="torqueGenerationRequirement">
               <typings>TorqueGenerationRequirement</typings>
-              <elements xsi:type="sysMLOC:SubjectUsage" declaredName="generateTorque" isDefault="true">
-                <valuePart>engine1.generateTorque</valuePart>
-              </elements>
+              <elements xsi:type="sysMLOC:SubjectUsage" declaredName="generateTorque" isDefault="true" valuePart="engine1.generateTorque"/>
             </elements>
             <elements xsi:type="sysMLOC:RequirementUsage" declaredName="drivePowerOutputRequirement">
               <typings>DrivePowerOutputRequirement</typings>
@@ -1838,13 +1759,11 @@
               <elements xsi:type="sysMLOC:PortUsage" declaredName="lugNutPort">
                 <redefinitions>lugNutPort</redefinitions>
                 <Multiplicity>5</Multiplicity>
-                <elements xsi:type="sysMLOC:AttributeUsage">
+                <elements xsi:type="sysMLOC:AttributeUsage" valuePart="14 [mm]">
                   <redefinitions>threadDia</redefinitions>
-                  <valuePart>14 [mm]</valuePart>
                 </elements>
-                <elements xsi:type="sysMLOC:AttributeUsage">
+                <elements xsi:type="sysMLOC:AttributeUsage" valuePart="1.5 [mm]">
                   <redefinitions>threadPitch</redefinitions>
-                  <valuePart>1.5 [mm]</valuePart>
                 </elements>
               </elements>
               <elements xsi:type="sysMLOC:PortUsage" declaredName="lugNutPort1">
@@ -1868,17 +1787,14 @@
               <elements xsi:type="sysMLOC:PortUsage" declaredName="shankPort">
                 <redefinitions>shankPort</redefinitions>
                 <Multiplicity>5</Multiplicity>
-                <elements xsi:type="sysMLOC:AttributeUsage">
+                <elements xsi:type="sysMLOC:AttributeUsage" valuePart="14 [mm]">
                   <redefinitions>threadDia</redefinitions>
-                  <valuePart>14 [mm]</valuePart>
                 </elements>
-                <elements xsi:type="sysMLOC:AttributeUsage">
+                <elements xsi:type="sysMLOC:AttributeUsage" valuePart="1.5 [mm]">
                   <redefinitions>threadPitch</redefinitions>
-                  <valuePart>1.5 [mm]</valuePart>
                 </elements>
-                <elements xsi:type="sysMLOC:AttributeUsage">
+                <elements xsi:type="sysMLOC:AttributeUsage" valuePart="70 [mm]">
                   <redefinitions>shaftLength</redefinitions>
-                  <valuePart>70 [mm]</valuePart>
                 </elements>
               </elements>
               <elements xsi:type="sysMLOC:PortUsage" declaredName="shankPort1">
@@ -1907,27 +1823,24 @@
               <subsetting>wheelFastenerInterface</subsetting>
               <connectorPart refElement="lugNutCompositePort.lugNutPort1" delcaredName="lugNutPort"/>
               <connectorPart refElement="shankCompositePort.shankPort1" delcaredName="shankPort"/>
-              <elements xsi:type="sysMLOC:AttributeUsage">
+              <elements xsi:type="sysMLOC:AttributeUsage" valuePart="90 * 1.356 [N*m]">
                 <redefinitions>maxTorque</redefinitions>
-                <valuePart>90 * 1.356 [N*m]</valuePart>
               </elements>
             </elements>
             <elements xsi:type="sysMLOC:InterfaceUsage" declaredName="wheelFastenerInterface2">
               <subsetting>wheelFastenerInterface</subsetting>
               <connectorPart refElement="lugNutCompositePort.lugNutPort2" delcaredName="lugNutPort"/>
               <connectorPart refElement="shankCompositePort.shankPort2" delcaredName="shankPort"/>
-              <elements xsi:type="sysMLOC:AttributeUsage">
+              <elements xsi:type="sysMLOC:AttributeUsage" valuePart="90 * 1.356 [N*m]">
                 <redefinitions>maxTorque</redefinitions>
-                <valuePart>90 * 1.356 [N*m]</valuePart>
               </elements>
             </elements>
             <elements xsi:type="sysMLOC:InterfaceUsage" declaredName="wheelFastenerInterface3">
               <subsetting>wheelFastenerInterface</subsetting>
               <connectorPart refElement="lugNutCompositePort.lugNutPort3" delcaredName="lugNutPort"/>
               <connectorPart refElement="shankCompositePort.shankPort3" delcaredName="shankPort"/>
-              <elements xsi:type="sysMLOC:AttributeUsage">
+              <elements xsi:type="sysMLOC:AttributeUsage" valuePart="90 * 1.356 [N*m]">
                 <redefinitions>maxTorque</redefinitions>
-                <valuePart>90 * 1.356 [N*m]</valuePart>
               </elements>
             </elements>
           </elements>
@@ -1967,12 +1880,9 @@
           <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="tpd_avg">
             <subsetting>timePerDistance</subsetting>
           </elements>
-          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="f">
-            <valuePart>bestFuelConsumption + idlingFuelConsumption * tpd_avg</valuePart>
-          </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="dpv">
+          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="f" valuePart="bestFuelConsumption + idlingFuelConsumption * tpd_avg"/>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="dpv" valuePart="1/f">
             <subsetting>distancePerVolume</subsetting>
-            <valuePart>1/f</valuePart>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="AverageTravelTimePerDistance">
@@ -1995,18 +1905,15 @@
           <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="engine">
             <typings>Engine</typings>
           </elements>
-          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="idlingFuelConsumptionPerDisplacement">
+          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="idlingFuelConsumptionPerDisplacement" valuePart="0.5">
             <typings>Real</typings>
-            <valuePart>0.5</valuePart>
           </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="f_a">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="f_a" valuePart="engine.displacement * idlingFuelConsumptionPerDisplacement">
             <typings>Real</typings>
-            <valuePart>engine.displacement * idlingFuelConsumptionPerDisplacement</valuePart>
           </elements>
         </elements>
-        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="specificGravityOfGasoline">
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="specificGravityOfGasoline" valuePart="0.76">
           <typings>Real</typings>
-          <valuePart>0.76</valuePart>
         </elements>
         <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="BestFuelConsumptionPerDistance">
           <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="mass">
@@ -2027,9 +1934,8 @@
           <elements xsi:type="sysMLOC:ConstraintUsage">
             <resultExpressionParameter resultExpression="required_power_avg == 1/2 * mass * tpd_avg **(-3) / distance"/>
           </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="f_b">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="f_b" valuePart="bsfc * specificGravityOfGasoline * required_power_avg * tpd_avg">
             <typings>Real</typings>
-            <valuePart>bsfc * specificGravityOfGasoline * required_power_avg * tpd_avg</valuePart>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="ComputeBSFC">
@@ -2041,9 +1947,7 @@
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:AnalysisCaseUsage" declaredName="fuelEconomyAnalysis">
-          <elements xsi:type="sysMLOC:SubjectUsage">
-            <valuePart>vehicle_b</valuePart>
-          </elements>
+          <elements xsi:type="sysMLOC:SubjectUsage" valuePart="vehicle_b"/>
           <elements xsi:type="sysMLOC:ObjectiveRequirementUsage" declaredName="fuelEconomyAnalysisObjective">
             <elements xsi:type="sysMLOC:Documentation" body="/*estimate the vehicle fuel economy*/"/>
             <elements xsi:type="sysMLOC:RequirementConstraintUsage" refElement="vehicleSpecification.vehicleFuelEconomyRequirements" kind="require"/>
@@ -2052,24 +1956,13 @@
             <typings>Scenario</typings>
           </elements>
           <elements xsi:type="sysMLOC:CodeAnnotation" body="// define a series of waypoints&#xA;"/>
-          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="distance">
-            <valuePart>TraveledDistance(scenario)</valuePart>
-          </elements>
-          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="tpd_avg">
-            <valuePart>AverageTravelTimePerDistance(scenario)</valuePart>
-          </elements>
-          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="bsfc">
-            <valuePart>ComputeBSFC(vehicle_b.engine)</valuePart>
-          </elements>
-          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="f_a">
-            <valuePart>BestFuelConsumptionPerDistance(vehicle_b.mass, bsfc, tpd_avg, distance)</valuePart>
-          </elements>
-          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="f_b">
-            <valuePart>IdlingFuelConsumptionPerTime(vehicle_b.engine)</valuePart>
-          </elements>
-          <elements xsi:type="sysMLOC:AttributeUsage" isReturn="true" declaredName="calculatedFuelEconomy">
+          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="distance" valuePart="TraveledDistance(scenario)"/>
+          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="tpd_avg" valuePart="AverageTravelTimePerDistance(scenario)"/>
+          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="bsfc" valuePart="ComputeBSFC(vehicle_b.engine)"/>
+          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="f_a" valuePart="BestFuelConsumptionPerDistance(vehicle_b.mass, bsfc, tpd_avg, distance)"/>
+          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="f_b" valuePart="IdlingFuelConsumptionPerTime(vehicle_b.engine)"/>
+          <elements xsi:type="sysMLOC:AttributeUsage" isReturn="true" declaredName="calculatedFuelEconomy" valuePart="FuelConsumption(f_a, f_b, tpd_avg)">
             <subsetting>distancePerVolume</subsetting>
-            <valuePart>FuelConsumption(f_a, f_b, tpd_avg)</valuePart>
           </elements>
         </elements>
       </elements>
@@ -2079,38 +1972,22 @@
         <elements xsi:type="sysMLOC:Comment" body="/* The following example provides the rationale for selecting the engine4cyl. &#xA;            The rationale and risk are contained in a metadata library. */"/>
         <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="Rationale">
           <annotatedElement>engineTradeOffAnalysis::vehicle_b_engine4cyl</annotatedElement>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="explanation">
-            <valuePart>VehicleAnalysis::VehicleTradeOffAnalysis::engineTradeOffAnalysis</valuePart>
-          </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="text">
-            <valuePart>&quot;the engine4cyl was evaluated to have a higher objective function compared to the engine6cyl based on the trade-off analyiss&quot;</valuePart>
-          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="explanation" valuePart="VehicleAnalysis::VehicleTradeOffAnalysis::engineTradeOffAnalysis"/>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="text" valuePart="&quot;the engine4cyl was evaluated to have a higher objective function compared to the engine6cyl based on the trade-off analyiss&quot;"/>
         </elements>
         <elements xsi:type="sysMLOC:CodeAnnotation" body="// The following risk for the engine4cyl could have been included as part of the objective evaluaiton criteria&#xA;"/>
         <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="Risk">
           <annotatedElement>engineTradeOffAnalysis::vehicle_b_engine4cyl</annotatedElement>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="totalRisk">
-            <valuePart>medium</valuePart>
-          </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="technicalRisk">
-            <valuePart>medium</valuePart>
-          </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="scheduleRisk">
-            <valuePart>medium</valuePart>
-          </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="costRisk">
-            <valuePart>RiskLevelEnum::low</valuePart>
-          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="totalRisk" valuePart="medium"/>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="technicalRisk" valuePart="medium"/>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="scheduleRisk" valuePart="medium"/>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="costRisk" valuePart="RiskLevelEnum::low"/>
         </elements>
         <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="Risk">
           <annotatedElement>engineTradeOffAnalysis::vehicle_b_engine4cyl::engine::fuelEfficiency</annotatedElement>
           <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="technicalRisk">
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="probability">
-              <valuePart>0.3</valuePart>
-            </elements>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="impact">
-              <valuePart>0.5</valuePart>
-            </elements>
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="probability" valuePart="0.3"/>
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="impact" valuePart="0.5"/>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="TradeStudies" isNamespace="true"/>
@@ -2180,21 +2057,17 @@
                 <redefinitions>cylinders</redefinitions>
                 <Multiplicity>4</Multiplicity>
               </elements>
-              <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass">
+              <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass" valuePart="180 [kg]">
                 <redefinitions>mass</redefinitions>
-                <valuePart>180 [kg]</valuePart>
               </elements>
-              <elements xsi:type="sysMLOC:AttributeUsage" declaredName="peakHorsePower">
+              <elements xsi:type="sysMLOC:AttributeUsage" declaredName="peakHorsePower" valuePart="180 [W]">
                 <redefinitions>peakHorsePower</redefinitions>
-                <valuePart>180 [W]</valuePart>
               </elements>
-              <elements xsi:type="sysMLOC:AttributeUsage" declaredName="fuelEfficiency">
+              <elements xsi:type="sysMLOC:AttributeUsage" declaredName="fuelEfficiency" valuePart=".6">
                 <redefinitions>fuelEfficiency</redefinitions>
-                <valuePart>.6</valuePart>
               </elements>
-              <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cost">
+              <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cost" valuePart="1000">
                 <redefinitions>cost</redefinitions>
-                <valuePart>1000</valuePart>
               </elements>
             </elements>
           </elements>
@@ -2206,21 +2079,17 @@
                 <redefinitions>cylinders</redefinitions>
                 <Multiplicity>6</Multiplicity>
               </elements>
-              <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass">
+              <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass" valuePart="220 [kg]">
                 <redefinitions>mass</redefinitions>
-                <valuePart>220 [kg]</valuePart>
               </elements>
-              <elements xsi:type="sysMLOC:AttributeUsage" declaredName="peakHorsePower">
+              <elements xsi:type="sysMLOC:AttributeUsage" declaredName="peakHorsePower" valuePart="220 [W]">
                 <redefinitions>peakHorsePower</redefinitions>
-                <valuePart>220 [W]</valuePart>
               </elements>
-              <elements xsi:type="sysMLOC:AttributeUsage" declaredName="fuelEfficiency">
+              <elements xsi:type="sysMLOC:AttributeUsage" declaredName="fuelEfficiency" valuePart=".5">
                 <redefinitions>fuelEfficiency</redefinitions>
-                <valuePart>.5</valuePart>
               </elements>
-              <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cost">
+              <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cost" valuePart="1500">
                 <redefinitions>cost</redefinitions>
-                <valuePart>1500</valuePart>
               </elements>
             </elements>
           </elements>
@@ -2233,9 +2102,8 @@
             <elements xsi:type="sysMLOC:PartUsage" direction="in" declaredName="vehicle">
               <subsetting>vehicle_b_engine4cyl</subsetting>
             </elements>
-            <elements xsi:type="sysMLOC:AttributeUsage" isReturn="true" declaredName="eval">
+            <elements xsi:type="sysMLOC:AttributeUsage" isReturn="true" declaredName="eval" valuePart="EngineEvaluation_4cyl (vehicle.engine.mass, vehicle.engine.peakHorsePower, vehicle.engine.fuelEfficiency, vehicle.engine.cost)">
               <typings>Real</typings>
-              <valuePart>EngineEvaluation_4cyl (vehicle.engine.mass, vehicle.engine.peakHorsePower, vehicle.engine.fuelEfficiency, vehicle.engine.cost)</valuePart>
             </elements>
           </elements>
           <elements xsi:type="sysMLOC:CalculationUsage">
@@ -2243,9 +2111,8 @@
             <elements xsi:type="sysMLOC:PartUsage" direction="in" declaredName="vehicle">
               <subsetting>vehicle_b_engine6cyl</subsetting>
             </elements>
-            <elements xsi:type="sysMLOC:AttributeUsage" isReturn="true" declaredName="eval">
+            <elements xsi:type="sysMLOC:AttributeUsage" isReturn="true" declaredName="eval" valuePart="EngineEvaluation_6cyl (vehicle.engine.mass, vehicle.engine.peakHorsePower, vehicle.engine.fuelEfficiency, vehicle.engine.cost)">
               <typings>Real</typings>
-              <valuePart>EngineEvaluation_6cyl (vehicle.engine.mass, vehicle.engine.peakHorsePower, vehicle.engine.fuelEfficiency, vehicle.engine.cost)</valuePart>
             </elements>
           </elements>
           <elements xsi:type="sysMLOC:PartUsage" isReturn="true" declaredName="selectedVehicle">
@@ -2272,22 +2139,17 @@
           <elements xsi:type="sysMLOC:SubjectUsage" declaredName="vehicle_uut">
             <subsetting>vehicle_b</subsetting>
           </elements>
-          <elements xsi:type="sysMLOC:ActorUsage" declaredName="vehicleVerificationSubSystem_1">
-            <valuePart>verificationContext.massVerificationSystem</valuePart>
-          </elements>
+          <elements xsi:type="sysMLOC:ActorUsage" declaredName="vehicleVerificationSubSystem_1" valuePart="verificationContext.massVerificationSystem"/>
           <elements xsi:type="sysMLOC:ObjectiveRequirementUsage">
             <elements xsi:type="sysMLOC:RequirementVerificationUsage" refElement="vehicleSpecification.vehicleMassRequirement">
-              <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+              <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="weighVehicle.massMeasured">
                 <redefinitions>massActual</redefinitions>
-                <valuePart>weighVehicle.massMeasured</valuePart>
               </elements>
             </elements>
           </elements>
           <elements xsi:type="sysMLOC:CodeAnnotation" body="// method kinds are test, demo, analyze, should also include inspection, similarity&#xA;"/>
           <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="VerificationMethod">
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="kind">
-              <valuePart>(VerificationMethodKind::test, VerificationMethodKind::analyze)</valuePart>
-            </elements>
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="kind" valuePart="(VerificationMethodKind::test, VerificationMethodKind::analyze)"/>
           </elements>
           <elements xsi:type="sysMLOC:ActionUsage" declaredName="weighVehicle">
             <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="massMeasured">
@@ -2298,17 +2160,14 @@
             <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="massMeasured">
               <subsetting>ISQ::mass</subsetting>
             </elements>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="verdict">
-              <valuePart>PassIf(vehicleSpecification.vehicleMassRequirement(vehicle_uut))</valuePart>
-            </elements>
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="verdict" valuePart="PassIf(vehicleSpecification.vehicleMassRequirement(vehicle_uut))"/>
           </elements>
           <elements xsi:type="sysMLOC:FlowUsage">
             <FlowEnd>weighVehicle.massMeasured</FlowEnd>
             <FlowEnd>evaluatePassFail.massMeasured</FlowEnd>
           </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" valuePart="evaluatePassFail.verdict">
             <redefinitions>verdict</redefinitions>
-            <valuePart>evaluatePassFail.verdict</valuePart>
           </elements>
         </elements>
       </elements>
@@ -2334,34 +2193,28 @@
         <typings>VehicleRoadContext_1</typings>
         <elements xsi:type="sysMLOC:PortionUsage" declaredName="t0_t2_a" portionKind="timeslice">
           <elements xsi:type="sysMLOC:PortionUsage" declaredName="t0_a" portionKind="snapshot">
-            <elements xsi:type="sysMLOC:AttributeUsage" declaredName="t0">
+            <elements xsi:type="sysMLOC:AttributeUsage" declaredName="t0" valuePart="0 [s]">
               <redefinitions>time</redefinitions>
-              <valuePart>0 [s]</valuePart>
             </elements>
             <elements xsi:type="sysMLOC:PortionUsage" declaredName="t0_r" portionKind="snapshot">
               <typings>Road_1</typings>
-              <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+              <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="0">
                 <redefinitions>Road::incline</redefinitions>
-                <valuePart>0</valuePart>
               </elements>
-              <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+              <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart=".1">
                 <redefinitions>Road::friction</redefinitions>
-                <valuePart>.1</valuePart>
               </elements>
             </elements>
             <elements xsi:type="sysMLOC:PortionUsage" declaredName="t0_v" portionKind="snapshot">
               <typings>Vehicle_1</typings>
-              <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+              <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="0 [m]">
                 <redefinitions>Vehicle::position</redefinitions>
-                <valuePart>0 [m]</valuePart>
               </elements>
-              <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+              <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="0 [m]">
                 <redefinitions>Vehicle::velocity</redefinitions>
-                <valuePart>0 [m]</valuePart>
               </elements>
-              <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+              <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1.96 [m/s**2]">
                 <redefinitions>Vehicle::acceleration</redefinitions>
-                <valuePart>1.96 [m/s**2]</valuePart>
               </elements>
               <elements xsi:type="sysMLOC:CodeAnnotation" body="// .2 g where 1 g = 9.8 meters/sec^2&#xA;"/>
               <elements xsi:type="sysMLOC:PortionUsage" declaredName="t0_fa" portionKind="snapshot">
@@ -2376,34 +2229,28 @@
             </elements>
           </elements>
           <elements xsi:type="sysMLOC:PortionUsage" declaredName="t1_a" portionKind="snapshot">
-            <elements xsi:type="sysMLOC:AttributeUsage" declaredName="t1">
+            <elements xsi:type="sysMLOC:AttributeUsage" declaredName="t1" valuePart="1 [s]">
               <redefinitions>time</redefinitions>
-              <valuePart>1 [s]</valuePart>
             </elements>
             <elements xsi:type="sysMLOC:PortionUsage" declaredName="t1_r" portionKind="snapshot">
               <typings>Road_1</typings>
-              <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+              <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="0">
                 <redefinitions>Road::incline</redefinitions>
-                <valuePart>0</valuePart>
               </elements>
-              <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+              <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart=".1">
                 <redefinitions>Road::friction</redefinitions>
-                <valuePart>.1</valuePart>
               </elements>
             </elements>
             <elements xsi:type="sysMLOC:PortionUsage" declaredName="t1_v" portionKind="snapshot">
               <typings>Vehicle_1</typings>
-              <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+              <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart=".98 [m]">
                 <redefinitions>Vehicle::position</redefinitions>
-                <valuePart>.98 [m]</valuePart>
               </elements>
-              <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+              <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1.96 [m/s]">
                 <redefinitions>Vehicle::velocity</redefinitions>
-                <valuePart>1.96 [m/s]</valuePart>
               </elements>
-              <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+              <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1.96 [m/s**2]">
                 <redefinitions>Vehicle::acceleration</redefinitions>
-                <valuePart>1.96 [m/s**2]</valuePart>
               </elements>
               <elements xsi:type="sysMLOC:CodeAnnotation" body="// .2 g where 1 g = 9.8 meters/sec^2&#xA;"/>
               <elements xsi:type="sysMLOC:PortionUsage" declaredName="t1_fa" portionKind="snapshot">
@@ -2418,34 +2265,28 @@
             </elements>
           </elements>
           <elements xsi:type="sysMLOC:PortionUsage" declaredName="t2_a" portionKind="snapshot">
-            <elements xsi:type="sysMLOC:AttributeUsage" declaredName="t2">
+            <elements xsi:type="sysMLOC:AttributeUsage" declaredName="t2" valuePart="2 [s]">
               <redefinitions>time</redefinitions>
-              <valuePart>2 [s]</valuePart>
             </elements>
             <elements xsi:type="sysMLOC:PortionUsage" declaredName="t2_r" portionKind="snapshot">
               <typings>Road_1</typings>
-              <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+              <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="0">
                 <redefinitions>Road::incline</redefinitions>
-                <valuePart>0</valuePart>
               </elements>
-              <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+              <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart=".1">
                 <redefinitions>Road::friction</redefinitions>
-                <valuePart>.1</valuePart>
               </elements>
             </elements>
             <elements xsi:type="sysMLOC:PortionUsage" declaredName="t2_v" portionKind="snapshot">
               <typings>Vehicle_1</typings>
-              <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+              <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="3.92 [m]">
                 <redefinitions>Vehicle::position</redefinitions>
-                <valuePart>3.92 [m]</valuePart>
               </elements>
-              <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+              <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="3.92 [m/s]">
                 <redefinitions>Vehicle::velocity</redefinitions>
-                <valuePart>3.92 [m/s]</valuePart>
               </elements>
-              <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+              <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1.96 [m/s**2]">
                 <redefinitions>Vehicle::acceleration</redefinitions>
-                <valuePart>1.96 [m/s**2]</valuePart>
               </elements>
               <elements xsi:type="sysMLOC:CodeAnnotation" body="// .2 g where 1 g = 9.8 meters/sec^2&#xA;"/>
               <elements xsi:type="sysMLOC:PortionUsage" declaredName="t2_fa" portionKind="snapshot">
@@ -2716,13 +2557,11 @@
         </elements>
         <elements xsi:type="sysMLOC:PerformActionUsage" refElement="transportPassenger"/>
         <elements xsi:type="sysMLOC:CodeAnnotation" body="// bind parts to actors of use case&#xA;"/>
-        <elements xsi:type="sysMLOC:PartUsage" declaredName="road">
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="road" valuePart="transportPassenger.road">
           <typings>ContextDefinitions::Road</typings>
-          <valuePart>transportPassenger.road</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:PartUsage" declaredName="driver">
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="driver" valuePart="transportPassenger.driver">
           <typings>ContextDefinitions::Driver</typings>
-          <valuePart>transportPassenger.driver</valuePart>
           <elements xsi:type="sysMLOC:PerformActionUsage" refElement="transportPassenger.a.driverGetInVehicle.unlockDoor_in"/>
           <elements xsi:type="sysMLOC:PerformActionUsage" refElement="transportPassenger.a.driverGetInVehicle.openDoor_in"/>
           <elements xsi:type="sysMLOC:PerformActionUsage" refElement="transportPassenger.a.driverGetInVehicle.enterVehicle"/>
@@ -2733,9 +2572,8 @@
           <elements xsi:type="sysMLOC:PerformActionUsage" refElement="transportPassenger.c.driverGetOutOfVehicle.lockDoor_out"/>
           <elements xsi:type="sysMLOC:PerformActionUsage" refElement="transportPassenger.b.driveVehicleToDestination"/>
         </elements>
-        <elements xsi:type="sysMLOC:PartUsage" declaredName="passenger1">
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="passenger1" valuePart="transportPassenger.passenger">
           <typings>ContextDefinitions::Passenger</typings>
-          <valuePart>transportPassenger.passenger</valuePart>
           <elements xsi:type="sysMLOC:PerformActionUsage" refElement="transportPassenger.a.passenger1GetInVehicle.unlockDoor_in"/>
           <elements xsi:type="sysMLOC:PerformActionUsage" refElement="transportPassenger.a.passenger1GetInVehicle.openDoor_in"/>
           <elements xsi:type="sysMLOC:PerformActionUsage" refElement="transportPassenger.a.passenger1GetInVehicle.enterVehicle"/>
@@ -2745,12 +2583,10 @@
           <elements xsi:type="sysMLOC:PerformActionUsage" refElement="transportPassenger.c.passenger1GetOutOfVehicle.closeDoor_out"/>
           <elements xsi:type="sysMLOC:PerformActionUsage" refElement="transportPassenger.c.passenger1GetOutOfVehicle.lockDoor_out"/>
         </elements>
-        <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle_b_1">
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle_b_1" valuePart="transportPassenger.vehicle">
           <subsetting>vehicle_b</subsetting>
-          <valuePart>transportPassenger.vehicle</valuePart>
-          <elements xsi:type="sysMLOC:AttributeUsage">
+          <elements xsi:type="sysMLOC:AttributeUsage" valuePart="(0,0,0) [spatialCF]">
             <redefinitions>position3dVector</redefinitions>
-            <valuePart>(0,0,0) [spatialCF]</valuePart>
           </elements>
           <elements xsi:type="sysMLOC:PerformActionUsage" refElement="transportPassenger.b.providePower">
             <redefinitions>providePower</redefinitions>

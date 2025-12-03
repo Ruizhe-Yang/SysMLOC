@@ -10,9 +10,7 @@
       <typings>F</typings>
     </elements>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="A">
-      <elements xsi:type="sysMLOC:PartUsage" declaredName="g">
-        <valuePart>f.a</valuePart>
-      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="g" valuePart="f.a"/>
     </elements>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="B">
       <elements xsi:type="sysMLOC:PartUsage" declaredName="f">
@@ -59,8 +57,6 @@
       <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="e1"/>
       <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="e2"/>
     </elements>
-    <elements xsi:type="sysMLOC:PartUsage" declaredName="g">
-      <valuePart>A().g.g.g</valuePart>
-    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="g" valuePart="A().g.g.g"/>
   </elements>
 </sysMLOC:Namespace>

@@ -34,9 +34,7 @@
       </elements>
       <elements xsi:type="sysMLOC:ActionUsage" declaredName="addCharge">
         <typings>AddCharge</typings>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="charge">
-          <valuePart>monitor.batteryCharge</valuePart>
-        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="charge" valuePart="monitor.batteryCharge"/>
       </elements>
       <elements xsi:type="sysMLOC:ThenNode">
         <thenElement refElement="continueCharging"/>

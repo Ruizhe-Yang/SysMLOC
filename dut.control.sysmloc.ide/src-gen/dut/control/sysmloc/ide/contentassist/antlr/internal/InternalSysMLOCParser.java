@@ -1773,23 +1773,23 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleAnnotatingElement"
 
 
-    // $ANTLR start "entryRuleDefinitionElement"
-    // InternalSysMLOC.g:504:1: entryRuleDefinitionElement : ruleDefinitionElement EOF ;
-    public final void entryRuleDefinitionElement() throws RecognitionException {
+    // $ANTLR start "entryRuleDefinitionElements"
+    // InternalSysMLOC.g:504:1: entryRuleDefinitionElements : ruleDefinitionElements EOF ;
+    public final void entryRuleDefinitionElements() throws RecognitionException {
         try {
-            // InternalSysMLOC.g:505:1: ( ruleDefinitionElement EOF )
-            // InternalSysMLOC.g:506:1: ruleDefinitionElement EOF
+            // InternalSysMLOC.g:505:1: ( ruleDefinitionElements EOF )
+            // InternalSysMLOC.g:506:1: ruleDefinitionElements EOF
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getDefinitionElementRule()); 
+               before(grammarAccess.getDefinitionElementsRule()); 
             }
             pushFollow(FOLLOW_1);
-            ruleDefinitionElement();
+            ruleDefinitionElements();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getDefinitionElementRule()); 
+               after(grammarAccess.getDefinitionElementsRule()); 
             }
             match(input,EOF,FOLLOW_2); if (state.failed) return ;
 
@@ -1804,30 +1804,30 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRuleDefinitionElement"
+    // $ANTLR end "entryRuleDefinitionElements"
 
 
-    // $ANTLR start "ruleDefinitionElement"
-    // InternalSysMLOC.g:513:1: ruleDefinitionElement : ( ( rule__DefinitionElement__Alternatives ) ) ;
-    public final void ruleDefinitionElement() throws RecognitionException {
+    // $ANTLR start "ruleDefinitionElements"
+    // InternalSysMLOC.g:513:1: ruleDefinitionElements : ( ( rule__DefinitionElements__Alternatives ) ) ;
+    public final void ruleDefinitionElements() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:517:2: ( ( ( rule__DefinitionElement__Alternatives ) ) )
-            // InternalSysMLOC.g:518:2: ( ( rule__DefinitionElement__Alternatives ) )
+            // InternalSysMLOC.g:517:2: ( ( ( rule__DefinitionElements__Alternatives ) ) )
+            // InternalSysMLOC.g:518:2: ( ( rule__DefinitionElements__Alternatives ) )
             {
-            // InternalSysMLOC.g:518:2: ( ( rule__DefinitionElement__Alternatives ) )
-            // InternalSysMLOC.g:519:3: ( rule__DefinitionElement__Alternatives )
+            // InternalSysMLOC.g:518:2: ( ( rule__DefinitionElements__Alternatives ) )
+            // InternalSysMLOC.g:519:3: ( rule__DefinitionElements__Alternatives )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getDefinitionElementAccess().getAlternatives()); 
+               before(grammarAccess.getDefinitionElementsAccess().getAlternatives()); 
             }
-            // InternalSysMLOC.g:520:3: ( rule__DefinitionElement__Alternatives )
-            // InternalSysMLOC.g:520:4: rule__DefinitionElement__Alternatives
+            // InternalSysMLOC.g:520:3: ( rule__DefinitionElements__Alternatives )
+            // InternalSysMLOC.g:520:4: rule__DefinitionElements__Alternatives
             {
             pushFollow(FOLLOW_2);
-            rule__DefinitionElement__Alternatives();
+            rule__DefinitionElements__Alternatives();
 
             state._fsp--;
             if (state.failed) return ;
@@ -1835,7 +1835,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getDefinitionElementAccess().getAlternatives()); 
+               after(grammarAccess.getDefinitionElementsAccess().getAlternatives()); 
             }
 
             }
@@ -1855,26 +1855,26 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "ruleDefinitionElement"
+    // $ANTLR end "ruleDefinitionElements"
 
 
-    // $ANTLR start "entryRuleUsageElement"
-    // InternalSysMLOC.g:529:1: entryRuleUsageElement : ruleUsageElement EOF ;
-    public final void entryRuleUsageElement() throws RecognitionException {
+    // $ANTLR start "entryRuleUsageElements"
+    // InternalSysMLOC.g:529:1: entryRuleUsageElements : ruleUsageElements EOF ;
+    public final void entryRuleUsageElements() throws RecognitionException {
         try {
-            // InternalSysMLOC.g:530:1: ( ruleUsageElement EOF )
-            // InternalSysMLOC.g:531:1: ruleUsageElement EOF
+            // InternalSysMLOC.g:530:1: ( ruleUsageElements EOF )
+            // InternalSysMLOC.g:531:1: ruleUsageElements EOF
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getUsageElementRule()); 
+               before(grammarAccess.getUsageElementsRule()); 
             }
             pushFollow(FOLLOW_1);
-            ruleUsageElement();
+            ruleUsageElements();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getUsageElementRule()); 
+               after(grammarAccess.getUsageElementsRule()); 
             }
             match(input,EOF,FOLLOW_2); if (state.failed) return ;
 
@@ -1889,30 +1889,30 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRuleUsageElement"
+    // $ANTLR end "entryRuleUsageElements"
 
 
-    // $ANTLR start "ruleUsageElement"
-    // InternalSysMLOC.g:538:1: ruleUsageElement : ( ( rule__UsageElement__Alternatives ) ) ;
-    public final void ruleUsageElement() throws RecognitionException {
+    // $ANTLR start "ruleUsageElements"
+    // InternalSysMLOC.g:538:1: ruleUsageElements : ( ( rule__UsageElements__Alternatives ) ) ;
+    public final void ruleUsageElements() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:542:2: ( ( ( rule__UsageElement__Alternatives ) ) )
-            // InternalSysMLOC.g:543:2: ( ( rule__UsageElement__Alternatives ) )
+            // InternalSysMLOC.g:542:2: ( ( ( rule__UsageElements__Alternatives ) ) )
+            // InternalSysMLOC.g:543:2: ( ( rule__UsageElements__Alternatives ) )
             {
-            // InternalSysMLOC.g:543:2: ( ( rule__UsageElement__Alternatives ) )
-            // InternalSysMLOC.g:544:3: ( rule__UsageElement__Alternatives )
+            // InternalSysMLOC.g:543:2: ( ( rule__UsageElements__Alternatives ) )
+            // InternalSysMLOC.g:544:3: ( rule__UsageElements__Alternatives )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getUsageElementAccess().getAlternatives()); 
+               before(grammarAccess.getUsageElementsAccess().getAlternatives()); 
             }
-            // InternalSysMLOC.g:545:3: ( rule__UsageElement__Alternatives )
-            // InternalSysMLOC.g:545:4: rule__UsageElement__Alternatives
+            // InternalSysMLOC.g:545:3: ( rule__UsageElements__Alternatives )
+            // InternalSysMLOC.g:545:4: rule__UsageElements__Alternatives
             {
             pushFollow(FOLLOW_2);
-            rule__UsageElement__Alternatives();
+            rule__UsageElements__Alternatives();
 
             state._fsp--;
             if (state.failed) return ;
@@ -1920,7 +1920,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getUsageElementAccess().getAlternatives()); 
+               after(grammarAccess.getUsageElementsAccess().getAlternatives()); 
             }
 
             }
@@ -1940,7 +1940,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "ruleUsageElement"
+    // $ANTLR end "ruleUsageElements"
 
 
     // $ANTLR start "entryRuleNonOccurrenceUsageElement"
@@ -2113,23 +2113,23 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleOccurrenceUsageElement"
 
 
-    // $ANTLR start "entryRuleStructureUsageElement"
-    // InternalSysMLOC.g:604:1: entryRuleStructureUsageElement : ruleStructureUsageElement EOF ;
-    public final void entryRuleStructureUsageElement() throws RecognitionException {
+    // $ANTLR start "entryRuleStructureUsageElements"
+    // InternalSysMLOC.g:604:1: entryRuleStructureUsageElements : ruleStructureUsageElements EOF ;
+    public final void entryRuleStructureUsageElements() throws RecognitionException {
         try {
-            // InternalSysMLOC.g:605:1: ( ruleStructureUsageElement EOF )
-            // InternalSysMLOC.g:606:1: ruleStructureUsageElement EOF
+            // InternalSysMLOC.g:605:1: ( ruleStructureUsageElements EOF )
+            // InternalSysMLOC.g:606:1: ruleStructureUsageElements EOF
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getStructureUsageElementRule()); 
+               before(grammarAccess.getStructureUsageElementsRule()); 
             }
             pushFollow(FOLLOW_1);
-            ruleStructureUsageElement();
+            ruleStructureUsageElements();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getStructureUsageElementRule()); 
+               after(grammarAccess.getStructureUsageElementsRule()); 
             }
             match(input,EOF,FOLLOW_2); if (state.failed) return ;
 
@@ -2144,30 +2144,30 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRuleStructureUsageElement"
+    // $ANTLR end "entryRuleStructureUsageElements"
 
 
-    // $ANTLR start "ruleStructureUsageElement"
-    // InternalSysMLOC.g:613:1: ruleStructureUsageElement : ( ( rule__StructureUsageElement__Alternatives ) ) ;
-    public final void ruleStructureUsageElement() throws RecognitionException {
+    // $ANTLR start "ruleStructureUsageElements"
+    // InternalSysMLOC.g:613:1: ruleStructureUsageElements : ( ( rule__StructureUsageElements__Alternatives ) ) ;
+    public final void ruleStructureUsageElements() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:617:2: ( ( ( rule__StructureUsageElement__Alternatives ) ) )
-            // InternalSysMLOC.g:618:2: ( ( rule__StructureUsageElement__Alternatives ) )
+            // InternalSysMLOC.g:617:2: ( ( ( rule__StructureUsageElements__Alternatives ) ) )
+            // InternalSysMLOC.g:618:2: ( ( rule__StructureUsageElements__Alternatives ) )
             {
-            // InternalSysMLOC.g:618:2: ( ( rule__StructureUsageElement__Alternatives ) )
-            // InternalSysMLOC.g:619:3: ( rule__StructureUsageElement__Alternatives )
+            // InternalSysMLOC.g:618:2: ( ( rule__StructureUsageElements__Alternatives ) )
+            // InternalSysMLOC.g:619:3: ( rule__StructureUsageElements__Alternatives )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getStructureUsageElementAccess().getAlternatives()); 
+               before(grammarAccess.getStructureUsageElementsAccess().getAlternatives()); 
             }
-            // InternalSysMLOC.g:620:3: ( rule__StructureUsageElement__Alternatives )
-            // InternalSysMLOC.g:620:4: rule__StructureUsageElement__Alternatives
+            // InternalSysMLOC.g:620:3: ( rule__StructureUsageElements__Alternatives )
+            // InternalSysMLOC.g:620:4: rule__StructureUsageElements__Alternatives
             {
             pushFollow(FOLLOW_2);
-            rule__StructureUsageElement__Alternatives();
+            rule__StructureUsageElements__Alternatives();
 
             state._fsp--;
             if (state.failed) return ;
@@ -2175,7 +2175,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getStructureUsageElementAccess().getAlternatives()); 
+               after(grammarAccess.getStructureUsageElementsAccess().getAlternatives()); 
             }
 
             }
@@ -2195,26 +2195,26 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "ruleStructureUsageElement"
+    // $ANTLR end "ruleStructureUsageElements"
 
 
-    // $ANTLR start "entryRuleBehaviorUsageElement"
-    // InternalSysMLOC.g:629:1: entryRuleBehaviorUsageElement : ruleBehaviorUsageElement EOF ;
-    public final void entryRuleBehaviorUsageElement() throws RecognitionException {
+    // $ANTLR start "entryRuleBehaviorUsageElements"
+    // InternalSysMLOC.g:629:1: entryRuleBehaviorUsageElements : ruleBehaviorUsageElements EOF ;
+    public final void entryRuleBehaviorUsageElements() throws RecognitionException {
         try {
-            // InternalSysMLOC.g:630:1: ( ruleBehaviorUsageElement EOF )
-            // InternalSysMLOC.g:631:1: ruleBehaviorUsageElement EOF
+            // InternalSysMLOC.g:630:1: ( ruleBehaviorUsageElements EOF )
+            // InternalSysMLOC.g:631:1: ruleBehaviorUsageElements EOF
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getBehaviorUsageElementRule()); 
+               before(grammarAccess.getBehaviorUsageElementsRule()); 
             }
             pushFollow(FOLLOW_1);
-            ruleBehaviorUsageElement();
+            ruleBehaviorUsageElements();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getBehaviorUsageElementRule()); 
+               after(grammarAccess.getBehaviorUsageElementsRule()); 
             }
             match(input,EOF,FOLLOW_2); if (state.failed) return ;
 
@@ -2229,30 +2229,30 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRuleBehaviorUsageElement"
+    // $ANTLR end "entryRuleBehaviorUsageElements"
 
 
-    // $ANTLR start "ruleBehaviorUsageElement"
-    // InternalSysMLOC.g:638:1: ruleBehaviorUsageElement : ( ( rule__BehaviorUsageElement__Alternatives ) ) ;
-    public final void ruleBehaviorUsageElement() throws RecognitionException {
+    // $ANTLR start "ruleBehaviorUsageElements"
+    // InternalSysMLOC.g:638:1: ruleBehaviorUsageElements : ( ( rule__BehaviorUsageElements__Alternatives ) ) ;
+    public final void ruleBehaviorUsageElements() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:642:2: ( ( ( rule__BehaviorUsageElement__Alternatives ) ) )
-            // InternalSysMLOC.g:643:2: ( ( rule__BehaviorUsageElement__Alternatives ) )
+            // InternalSysMLOC.g:642:2: ( ( ( rule__BehaviorUsageElements__Alternatives ) ) )
+            // InternalSysMLOC.g:643:2: ( ( rule__BehaviorUsageElements__Alternatives ) )
             {
-            // InternalSysMLOC.g:643:2: ( ( rule__BehaviorUsageElement__Alternatives ) )
-            // InternalSysMLOC.g:644:3: ( rule__BehaviorUsageElement__Alternatives )
+            // InternalSysMLOC.g:643:2: ( ( rule__BehaviorUsageElements__Alternatives ) )
+            // InternalSysMLOC.g:644:3: ( rule__BehaviorUsageElements__Alternatives )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getBehaviorUsageElementAccess().getAlternatives()); 
+               before(grammarAccess.getBehaviorUsageElementsAccess().getAlternatives()); 
             }
-            // InternalSysMLOC.g:645:3: ( rule__BehaviorUsageElement__Alternatives )
-            // InternalSysMLOC.g:645:4: rule__BehaviorUsageElement__Alternatives
+            // InternalSysMLOC.g:645:3: ( rule__BehaviorUsageElements__Alternatives )
+            // InternalSysMLOC.g:645:4: rule__BehaviorUsageElements__Alternatives
             {
             pushFollow(FOLLOW_2);
-            rule__BehaviorUsageElement__Alternatives();
+            rule__BehaviorUsageElements__Alternatives();
 
             state._fsp--;
             if (state.failed) return ;
@@ -2260,7 +2260,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getBehaviorUsageElementAccess().getAlternatives()); 
+               after(grammarAccess.getBehaviorUsageElementsAccess().getAlternatives()); 
             }
 
             }
@@ -2280,7 +2280,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "ruleBehaviorUsageElement"
+    // $ANTLR end "ruleBehaviorUsageElements"
 
 
     // $ANTLR start "entryRuleActionNodeElements"
@@ -18778,13 +18778,13 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GeneralBodyElements__Alternatives"
-    // InternalSysMLOC.g:5631:1: rule__GeneralBodyElements__Alternatives : ( ( ruleAnnotatingElement ) | ( ruleImportElement ) | ( ruleDefinitionElement ) | ( ruleUsageElement ) | ( ruleAliasElement ) | ( ruleCodeAnnotation ) | ( ruleReferenceVariantUsage ) );
+    // InternalSysMLOC.g:5631:1: rule__GeneralBodyElements__Alternatives : ( ( ruleAnnotatingElement ) | ( ruleImportElement ) | ( ruleDefinitionElements ) | ( ruleUsageElements ) | ( ruleAliasElement ) | ( ruleCodeAnnotation ) | ( ruleReferenceVariantUsage ) );
     public final void rule__GeneralBodyElements__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:5635:1: ( ( ruleAnnotatingElement ) | ( ruleImportElement ) | ( ruleDefinitionElement ) | ( ruleUsageElement ) | ( ruleAliasElement ) | ( ruleCodeAnnotation ) | ( ruleReferenceVariantUsage ) )
+            // InternalSysMLOC.g:5635:1: ( ( ruleAnnotatingElement ) | ( ruleImportElement ) | ( ruleDefinitionElements ) | ( ruleUsageElements ) | ( ruleAliasElement ) | ( ruleCodeAnnotation ) | ( ruleReferenceVariantUsage ) )
             int alt4=7;
             alt4 = dfa4.predict(input);
             switch (alt4) {
@@ -18835,21 +18835,21 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // InternalSysMLOC.g:5648:2: ( ruleDefinitionElement )
+                    // InternalSysMLOC.g:5648:2: ( ruleDefinitionElements )
                     {
-                    // InternalSysMLOC.g:5648:2: ( ruleDefinitionElement )
-                    // InternalSysMLOC.g:5649:3: ruleDefinitionElement
+                    // InternalSysMLOC.g:5648:2: ( ruleDefinitionElements )
+                    // InternalSysMLOC.g:5649:3: ruleDefinitionElements
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getGeneralBodyElementsAccess().getDefinitionElementParserRuleCall_2()); 
+                       before(grammarAccess.getGeneralBodyElementsAccess().getDefinitionElementsParserRuleCall_2()); 
                     }
                     pushFollow(FOLLOW_2);
-                    ruleDefinitionElement();
+                    ruleDefinitionElements();
 
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getGeneralBodyElementsAccess().getDefinitionElementParserRuleCall_2()); 
+                       after(grammarAccess.getGeneralBodyElementsAccess().getDefinitionElementsParserRuleCall_2()); 
                     }
 
                     }
@@ -18858,21 +18858,21 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // InternalSysMLOC.g:5654:2: ( ruleUsageElement )
+                    // InternalSysMLOC.g:5654:2: ( ruleUsageElements )
                     {
-                    // InternalSysMLOC.g:5654:2: ( ruleUsageElement )
-                    // InternalSysMLOC.g:5655:3: ruleUsageElement
+                    // InternalSysMLOC.g:5654:2: ( ruleUsageElements )
+                    // InternalSysMLOC.g:5655:3: ruleUsageElements
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getGeneralBodyElementsAccess().getUsageElementParserRuleCall_3()); 
+                       before(grammarAccess.getGeneralBodyElementsAccess().getUsageElementsParserRuleCall_3()); 
                     }
                     pushFollow(FOLLOW_2);
-                    ruleUsageElement();
+                    ruleUsageElements();
 
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getGeneralBodyElementsAccess().getUsageElementParserRuleCall_3()); 
+                       after(grammarAccess.getGeneralBodyElementsAccess().getUsageElementsParserRuleCall_3()); 
                     }
 
                     }
@@ -22232,9 +22232,9 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__AnnotatingElement__Alternatives"
 
 
-    // $ANTLR start "rule__DefinitionElement__Alternatives"
-    // InternalSysMLOC.g:5982:1: rule__DefinitionElement__Alternatives : ( ( rulePackage ) | ( ruleLibraryPackage ) | ( ruleDependency ) | ( ruleAttributeDefinition ) | ( ruleEnumerationDefinition ) | ( ruleOccurrenceDefinition ) | ( ruleIndividualDefinition ) | ( ruleItemDefinition ) | ( ruleMetadataDefinition ) | ( rulePartDefinition ) | ( ruleConnectionDefinition ) | ( ruleFlowDefinition ) | ( ruleInterfaceDefinition ) | ( ruleAllocationDefinition ) | ( rulePortDefinition ) | ( ruleActionDefinition ) | ( ruleCalculationDefinition ) | ( ruleStateDefinition ) | ( ruleConstraintDefinition ) | ( ruleRequirementDefinition ) | ( ruleConcernDefinition ) | ( ruleCaseDefinition ) | ( ruleAnalysisCaseDefinition ) | ( ruleVerificationCaseDefinition ) | ( ruleUseCaseDefinition ) | ( ruleViewDefinition ) | ( ruleViewpointDefinition ) | ( ruleRenderingDefinition ) | ( ruleExtendedDefinition ) );
-    public final void rule__DefinitionElement__Alternatives() throws RecognitionException {
+    // $ANTLR start "rule__DefinitionElements__Alternatives"
+    // InternalSysMLOC.g:5982:1: rule__DefinitionElements__Alternatives : ( ( rulePackage ) | ( ruleLibraryPackage ) | ( ruleDependency ) | ( ruleAttributeDefinition ) | ( ruleEnumerationDefinition ) | ( ruleOccurrenceDefinition ) | ( ruleIndividualDefinition ) | ( ruleItemDefinition ) | ( ruleMetadataDefinition ) | ( rulePartDefinition ) | ( ruleConnectionDefinition ) | ( ruleFlowDefinition ) | ( ruleInterfaceDefinition ) | ( ruleAllocationDefinition ) | ( rulePortDefinition ) | ( ruleActionDefinition ) | ( ruleCalculationDefinition ) | ( ruleStateDefinition ) | ( ruleConstraintDefinition ) | ( ruleRequirementDefinition ) | ( ruleConcernDefinition ) | ( ruleCaseDefinition ) | ( ruleAnalysisCaseDefinition ) | ( ruleVerificationCaseDefinition ) | ( ruleUseCaseDefinition ) | ( ruleViewDefinition ) | ( ruleViewpointDefinition ) | ( ruleRenderingDefinition ) | ( ruleExtendedDefinition ) );
+    public final void rule__DefinitionElements__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -22250,7 +22250,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:5988:3: rulePackage
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getDefinitionElementAccess().getPackageParserRuleCall_0()); 
+                       before(grammarAccess.getDefinitionElementsAccess().getPackageParserRuleCall_0()); 
                     }
                     pushFollow(FOLLOW_2);
                     rulePackage();
@@ -22258,7 +22258,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getDefinitionElementAccess().getPackageParserRuleCall_0()); 
+                       after(grammarAccess.getDefinitionElementsAccess().getPackageParserRuleCall_0()); 
                     }
 
                     }
@@ -22273,7 +22273,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:5994:3: ruleLibraryPackage
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getDefinitionElementAccess().getLibraryPackageParserRuleCall_1()); 
+                       before(grammarAccess.getDefinitionElementsAccess().getLibraryPackageParserRuleCall_1()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleLibraryPackage();
@@ -22281,7 +22281,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getDefinitionElementAccess().getLibraryPackageParserRuleCall_1()); 
+                       after(grammarAccess.getDefinitionElementsAccess().getLibraryPackageParserRuleCall_1()); 
                     }
 
                     }
@@ -22296,7 +22296,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6000:3: ruleDependency
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getDefinitionElementAccess().getDependencyParserRuleCall_2()); 
+                       before(grammarAccess.getDefinitionElementsAccess().getDependencyParserRuleCall_2()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleDependency();
@@ -22304,7 +22304,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getDefinitionElementAccess().getDependencyParserRuleCall_2()); 
+                       after(grammarAccess.getDefinitionElementsAccess().getDependencyParserRuleCall_2()); 
                     }
 
                     }
@@ -22319,7 +22319,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6006:3: ruleAttributeDefinition
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getDefinitionElementAccess().getAttributeDefinitionParserRuleCall_3()); 
+                       before(grammarAccess.getDefinitionElementsAccess().getAttributeDefinitionParserRuleCall_3()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleAttributeDefinition();
@@ -22327,7 +22327,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getDefinitionElementAccess().getAttributeDefinitionParserRuleCall_3()); 
+                       after(grammarAccess.getDefinitionElementsAccess().getAttributeDefinitionParserRuleCall_3()); 
                     }
 
                     }
@@ -22342,7 +22342,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6012:3: ruleEnumerationDefinition
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getDefinitionElementAccess().getEnumerationDefinitionParserRuleCall_4()); 
+                       before(grammarAccess.getDefinitionElementsAccess().getEnumerationDefinitionParserRuleCall_4()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleEnumerationDefinition();
@@ -22350,7 +22350,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getDefinitionElementAccess().getEnumerationDefinitionParserRuleCall_4()); 
+                       after(grammarAccess.getDefinitionElementsAccess().getEnumerationDefinitionParserRuleCall_4()); 
                     }
 
                     }
@@ -22365,7 +22365,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6018:3: ruleOccurrenceDefinition
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getDefinitionElementAccess().getOccurrenceDefinitionParserRuleCall_5()); 
+                       before(grammarAccess.getDefinitionElementsAccess().getOccurrenceDefinitionParserRuleCall_5()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleOccurrenceDefinition();
@@ -22373,7 +22373,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getDefinitionElementAccess().getOccurrenceDefinitionParserRuleCall_5()); 
+                       after(grammarAccess.getDefinitionElementsAccess().getOccurrenceDefinitionParserRuleCall_5()); 
                     }
 
                     }
@@ -22388,7 +22388,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6024:3: ruleIndividualDefinition
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getDefinitionElementAccess().getIndividualDefinitionParserRuleCall_6()); 
+                       before(grammarAccess.getDefinitionElementsAccess().getIndividualDefinitionParserRuleCall_6()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleIndividualDefinition();
@@ -22396,7 +22396,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getDefinitionElementAccess().getIndividualDefinitionParserRuleCall_6()); 
+                       after(grammarAccess.getDefinitionElementsAccess().getIndividualDefinitionParserRuleCall_6()); 
                     }
 
                     }
@@ -22411,7 +22411,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6030:3: ruleItemDefinition
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getDefinitionElementAccess().getItemDefinitionParserRuleCall_7()); 
+                       before(grammarAccess.getDefinitionElementsAccess().getItemDefinitionParserRuleCall_7()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleItemDefinition();
@@ -22419,7 +22419,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getDefinitionElementAccess().getItemDefinitionParserRuleCall_7()); 
+                       after(grammarAccess.getDefinitionElementsAccess().getItemDefinitionParserRuleCall_7()); 
                     }
 
                     }
@@ -22434,7 +22434,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6036:3: ruleMetadataDefinition
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getDefinitionElementAccess().getMetadataDefinitionParserRuleCall_8()); 
+                       before(grammarAccess.getDefinitionElementsAccess().getMetadataDefinitionParserRuleCall_8()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleMetadataDefinition();
@@ -22442,7 +22442,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getDefinitionElementAccess().getMetadataDefinitionParserRuleCall_8()); 
+                       after(grammarAccess.getDefinitionElementsAccess().getMetadataDefinitionParserRuleCall_8()); 
                     }
 
                     }
@@ -22457,7 +22457,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6042:3: rulePartDefinition
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getDefinitionElementAccess().getPartDefinitionParserRuleCall_9()); 
+                       before(grammarAccess.getDefinitionElementsAccess().getPartDefinitionParserRuleCall_9()); 
                     }
                     pushFollow(FOLLOW_2);
                     rulePartDefinition();
@@ -22465,7 +22465,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getDefinitionElementAccess().getPartDefinitionParserRuleCall_9()); 
+                       after(grammarAccess.getDefinitionElementsAccess().getPartDefinitionParserRuleCall_9()); 
                     }
 
                     }
@@ -22480,7 +22480,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6048:3: ruleConnectionDefinition
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getDefinitionElementAccess().getConnectionDefinitionParserRuleCall_10()); 
+                       before(grammarAccess.getDefinitionElementsAccess().getConnectionDefinitionParserRuleCall_10()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleConnectionDefinition();
@@ -22488,7 +22488,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getDefinitionElementAccess().getConnectionDefinitionParserRuleCall_10()); 
+                       after(grammarAccess.getDefinitionElementsAccess().getConnectionDefinitionParserRuleCall_10()); 
                     }
 
                     }
@@ -22503,7 +22503,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6054:3: ruleFlowDefinition
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getDefinitionElementAccess().getFlowDefinitionParserRuleCall_11()); 
+                       before(grammarAccess.getDefinitionElementsAccess().getFlowDefinitionParserRuleCall_11()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleFlowDefinition();
@@ -22511,7 +22511,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getDefinitionElementAccess().getFlowDefinitionParserRuleCall_11()); 
+                       after(grammarAccess.getDefinitionElementsAccess().getFlowDefinitionParserRuleCall_11()); 
                     }
 
                     }
@@ -22526,7 +22526,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6060:3: ruleInterfaceDefinition
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getDefinitionElementAccess().getInterfaceDefinitionParserRuleCall_12()); 
+                       before(grammarAccess.getDefinitionElementsAccess().getInterfaceDefinitionParserRuleCall_12()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleInterfaceDefinition();
@@ -22534,7 +22534,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getDefinitionElementAccess().getInterfaceDefinitionParserRuleCall_12()); 
+                       after(grammarAccess.getDefinitionElementsAccess().getInterfaceDefinitionParserRuleCall_12()); 
                     }
 
                     }
@@ -22549,7 +22549,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6066:3: ruleAllocationDefinition
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getDefinitionElementAccess().getAllocationDefinitionParserRuleCall_13()); 
+                       before(grammarAccess.getDefinitionElementsAccess().getAllocationDefinitionParserRuleCall_13()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleAllocationDefinition();
@@ -22557,7 +22557,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getDefinitionElementAccess().getAllocationDefinitionParserRuleCall_13()); 
+                       after(grammarAccess.getDefinitionElementsAccess().getAllocationDefinitionParserRuleCall_13()); 
                     }
 
                     }
@@ -22572,7 +22572,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6072:3: rulePortDefinition
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getDefinitionElementAccess().getPortDefinitionParserRuleCall_14()); 
+                       before(grammarAccess.getDefinitionElementsAccess().getPortDefinitionParserRuleCall_14()); 
                     }
                     pushFollow(FOLLOW_2);
                     rulePortDefinition();
@@ -22580,7 +22580,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getDefinitionElementAccess().getPortDefinitionParserRuleCall_14()); 
+                       after(grammarAccess.getDefinitionElementsAccess().getPortDefinitionParserRuleCall_14()); 
                     }
 
                     }
@@ -22595,7 +22595,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6078:3: ruleActionDefinition
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getDefinitionElementAccess().getActionDefinitionParserRuleCall_15()); 
+                       before(grammarAccess.getDefinitionElementsAccess().getActionDefinitionParserRuleCall_15()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleActionDefinition();
@@ -22603,7 +22603,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getDefinitionElementAccess().getActionDefinitionParserRuleCall_15()); 
+                       after(grammarAccess.getDefinitionElementsAccess().getActionDefinitionParserRuleCall_15()); 
                     }
 
                     }
@@ -22618,7 +22618,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6084:3: ruleCalculationDefinition
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getDefinitionElementAccess().getCalculationDefinitionParserRuleCall_16()); 
+                       before(grammarAccess.getDefinitionElementsAccess().getCalculationDefinitionParserRuleCall_16()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleCalculationDefinition();
@@ -22626,7 +22626,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getDefinitionElementAccess().getCalculationDefinitionParserRuleCall_16()); 
+                       after(grammarAccess.getDefinitionElementsAccess().getCalculationDefinitionParserRuleCall_16()); 
                     }
 
                     }
@@ -22641,7 +22641,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6090:3: ruleStateDefinition
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getDefinitionElementAccess().getStateDefinitionParserRuleCall_17()); 
+                       before(grammarAccess.getDefinitionElementsAccess().getStateDefinitionParserRuleCall_17()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleStateDefinition();
@@ -22649,7 +22649,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getDefinitionElementAccess().getStateDefinitionParserRuleCall_17()); 
+                       after(grammarAccess.getDefinitionElementsAccess().getStateDefinitionParserRuleCall_17()); 
                     }
 
                     }
@@ -22664,7 +22664,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6096:3: ruleConstraintDefinition
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getDefinitionElementAccess().getConstraintDefinitionParserRuleCall_18()); 
+                       before(grammarAccess.getDefinitionElementsAccess().getConstraintDefinitionParserRuleCall_18()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleConstraintDefinition();
@@ -22672,7 +22672,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getDefinitionElementAccess().getConstraintDefinitionParserRuleCall_18()); 
+                       after(grammarAccess.getDefinitionElementsAccess().getConstraintDefinitionParserRuleCall_18()); 
                     }
 
                     }
@@ -22687,7 +22687,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6102:3: ruleRequirementDefinition
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getDefinitionElementAccess().getRequirementDefinitionParserRuleCall_19()); 
+                       before(grammarAccess.getDefinitionElementsAccess().getRequirementDefinitionParserRuleCall_19()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleRequirementDefinition();
@@ -22695,7 +22695,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getDefinitionElementAccess().getRequirementDefinitionParserRuleCall_19()); 
+                       after(grammarAccess.getDefinitionElementsAccess().getRequirementDefinitionParserRuleCall_19()); 
                     }
 
                     }
@@ -22710,7 +22710,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6108:3: ruleConcernDefinition
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getDefinitionElementAccess().getConcernDefinitionParserRuleCall_20()); 
+                       before(grammarAccess.getDefinitionElementsAccess().getConcernDefinitionParserRuleCall_20()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleConcernDefinition();
@@ -22718,7 +22718,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getDefinitionElementAccess().getConcernDefinitionParserRuleCall_20()); 
+                       after(grammarAccess.getDefinitionElementsAccess().getConcernDefinitionParserRuleCall_20()); 
                     }
 
                     }
@@ -22733,7 +22733,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6114:3: ruleCaseDefinition
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getDefinitionElementAccess().getCaseDefinitionParserRuleCall_21()); 
+                       before(grammarAccess.getDefinitionElementsAccess().getCaseDefinitionParserRuleCall_21()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleCaseDefinition();
@@ -22741,7 +22741,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getDefinitionElementAccess().getCaseDefinitionParserRuleCall_21()); 
+                       after(grammarAccess.getDefinitionElementsAccess().getCaseDefinitionParserRuleCall_21()); 
                     }
 
                     }
@@ -22756,7 +22756,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6120:3: ruleAnalysisCaseDefinition
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getDefinitionElementAccess().getAnalysisCaseDefinitionParserRuleCall_22()); 
+                       before(grammarAccess.getDefinitionElementsAccess().getAnalysisCaseDefinitionParserRuleCall_22()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleAnalysisCaseDefinition();
@@ -22764,7 +22764,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getDefinitionElementAccess().getAnalysisCaseDefinitionParserRuleCall_22()); 
+                       after(grammarAccess.getDefinitionElementsAccess().getAnalysisCaseDefinitionParserRuleCall_22()); 
                     }
 
                     }
@@ -22779,7 +22779,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6126:3: ruleVerificationCaseDefinition
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getDefinitionElementAccess().getVerificationCaseDefinitionParserRuleCall_23()); 
+                       before(grammarAccess.getDefinitionElementsAccess().getVerificationCaseDefinitionParserRuleCall_23()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleVerificationCaseDefinition();
@@ -22787,7 +22787,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getDefinitionElementAccess().getVerificationCaseDefinitionParserRuleCall_23()); 
+                       after(grammarAccess.getDefinitionElementsAccess().getVerificationCaseDefinitionParserRuleCall_23()); 
                     }
 
                     }
@@ -22802,7 +22802,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6132:3: ruleUseCaseDefinition
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getDefinitionElementAccess().getUseCaseDefinitionParserRuleCall_24()); 
+                       before(grammarAccess.getDefinitionElementsAccess().getUseCaseDefinitionParserRuleCall_24()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleUseCaseDefinition();
@@ -22810,7 +22810,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getDefinitionElementAccess().getUseCaseDefinitionParserRuleCall_24()); 
+                       after(grammarAccess.getDefinitionElementsAccess().getUseCaseDefinitionParserRuleCall_24()); 
                     }
 
                     }
@@ -22825,7 +22825,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6138:3: ruleViewDefinition
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getDefinitionElementAccess().getViewDefinitionParserRuleCall_25()); 
+                       before(grammarAccess.getDefinitionElementsAccess().getViewDefinitionParserRuleCall_25()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleViewDefinition();
@@ -22833,7 +22833,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getDefinitionElementAccess().getViewDefinitionParserRuleCall_25()); 
+                       after(grammarAccess.getDefinitionElementsAccess().getViewDefinitionParserRuleCall_25()); 
                     }
 
                     }
@@ -22848,7 +22848,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6144:3: ruleViewpointDefinition
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getDefinitionElementAccess().getViewpointDefinitionParserRuleCall_26()); 
+                       before(grammarAccess.getDefinitionElementsAccess().getViewpointDefinitionParserRuleCall_26()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleViewpointDefinition();
@@ -22856,7 +22856,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getDefinitionElementAccess().getViewpointDefinitionParserRuleCall_26()); 
+                       after(grammarAccess.getDefinitionElementsAccess().getViewpointDefinitionParserRuleCall_26()); 
                     }
 
                     }
@@ -22871,7 +22871,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6150:3: ruleRenderingDefinition
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getDefinitionElementAccess().getRenderingDefinitionParserRuleCall_27()); 
+                       before(grammarAccess.getDefinitionElementsAccess().getRenderingDefinitionParserRuleCall_27()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleRenderingDefinition();
@@ -22879,7 +22879,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getDefinitionElementAccess().getRenderingDefinitionParserRuleCall_27()); 
+                       after(grammarAccess.getDefinitionElementsAccess().getRenderingDefinitionParserRuleCall_27()); 
                     }
 
                     }
@@ -22894,7 +22894,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6156:3: ruleExtendedDefinition
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getDefinitionElementAccess().getExtendedDefinitionParserRuleCall_28()); 
+                       before(grammarAccess.getDefinitionElementsAccess().getExtendedDefinitionParserRuleCall_28()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleExtendedDefinition();
@@ -22902,7 +22902,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getDefinitionElementAccess().getExtendedDefinitionParserRuleCall_28()); 
+                       after(grammarAccess.getDefinitionElementsAccess().getExtendedDefinitionParserRuleCall_28()); 
                     }
 
                     }
@@ -22924,12 +22924,12 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__DefinitionElement__Alternatives"
+    // $ANTLR end "rule__DefinitionElements__Alternatives"
 
 
-    // $ANTLR start "rule__UsageElement__Alternatives"
-    // InternalSysMLOC.g:6165:1: rule__UsageElement__Alternatives : ( ( ruleNonOccurrenceUsageElement ) | ( ruleOccurrenceUsageElement ) );
-    public final void rule__UsageElement__Alternatives() throws RecognitionException {
+    // $ANTLR start "rule__UsageElements__Alternatives"
+    // InternalSysMLOC.g:6165:1: rule__UsageElements__Alternatives : ( ( ruleNonOccurrenceUsageElement ) | ( ruleOccurrenceUsageElement ) );
+    public final void rule__UsageElements__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -22945,7 +22945,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6171:3: ruleNonOccurrenceUsageElement
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getUsageElementAccess().getNonOccurrenceUsageElementParserRuleCall_0()); 
+                       before(grammarAccess.getUsageElementsAccess().getNonOccurrenceUsageElementParserRuleCall_0()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleNonOccurrenceUsageElement();
@@ -22953,7 +22953,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getUsageElementAccess().getNonOccurrenceUsageElementParserRuleCall_0()); 
+                       after(grammarAccess.getUsageElementsAccess().getNonOccurrenceUsageElementParserRuleCall_0()); 
                     }
 
                     }
@@ -22968,7 +22968,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6177:3: ruleOccurrenceUsageElement
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getUsageElementAccess().getOccurrenceUsageElementParserRuleCall_1()); 
+                       before(grammarAccess.getUsageElementsAccess().getOccurrenceUsageElementParserRuleCall_1()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleOccurrenceUsageElement();
@@ -22976,7 +22976,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getUsageElementAccess().getOccurrenceUsageElementParserRuleCall_1()); 
+                       after(grammarAccess.getUsageElementsAccess().getOccurrenceUsageElementParserRuleCall_1()); 
                     }
 
                     }
@@ -22998,7 +22998,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__UsageElement__Alternatives"
+    // $ANTLR end "rule__UsageElements__Alternatives"
 
 
     // $ANTLR start "rule__NonOccurrenceUsageElement__Alternatives"
@@ -23191,32 +23191,32 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OccurrenceUsageElement__Alternatives"
-    // InternalSysMLOC.g:6237:1: rule__OccurrenceUsageElement__Alternatives : ( ( ruleStructureUsageElement ) | ( ruleBehaviorUsageElement ) );
+    // InternalSysMLOC.g:6237:1: rule__OccurrenceUsageElement__Alternatives : ( ( ruleStructureUsageElements ) | ( ruleBehaviorUsageElements ) );
     public final void rule__OccurrenceUsageElement__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:6241:1: ( ( ruleStructureUsageElement ) | ( ruleBehaviorUsageElement ) )
+            // InternalSysMLOC.g:6241:1: ( ( ruleStructureUsageElements ) | ( ruleBehaviorUsageElements ) )
             int alt20=2;
             alt20 = dfa20.predict(input);
             switch (alt20) {
                 case 1 :
-                    // InternalSysMLOC.g:6242:2: ( ruleStructureUsageElement )
+                    // InternalSysMLOC.g:6242:2: ( ruleStructureUsageElements )
                     {
-                    // InternalSysMLOC.g:6242:2: ( ruleStructureUsageElement )
-                    // InternalSysMLOC.g:6243:3: ruleStructureUsageElement
+                    // InternalSysMLOC.g:6242:2: ( ruleStructureUsageElements )
+                    // InternalSysMLOC.g:6243:3: ruleStructureUsageElements
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getOccurrenceUsageElementAccess().getStructureUsageElementParserRuleCall_0()); 
+                       before(grammarAccess.getOccurrenceUsageElementAccess().getStructureUsageElementsParserRuleCall_0()); 
                     }
                     pushFollow(FOLLOW_2);
-                    ruleStructureUsageElement();
+                    ruleStructureUsageElements();
 
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getOccurrenceUsageElementAccess().getStructureUsageElementParserRuleCall_0()); 
+                       after(grammarAccess.getOccurrenceUsageElementAccess().getStructureUsageElementsParserRuleCall_0()); 
                     }
 
                     }
@@ -23225,21 +23225,21 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalSysMLOC.g:6248:2: ( ruleBehaviorUsageElement )
+                    // InternalSysMLOC.g:6248:2: ( ruleBehaviorUsageElements )
                     {
-                    // InternalSysMLOC.g:6248:2: ( ruleBehaviorUsageElement )
-                    // InternalSysMLOC.g:6249:3: ruleBehaviorUsageElement
+                    // InternalSysMLOC.g:6248:2: ( ruleBehaviorUsageElements )
+                    // InternalSysMLOC.g:6249:3: ruleBehaviorUsageElements
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getOccurrenceUsageElementAccess().getBehaviorUsageElementParserRuleCall_1()); 
+                       before(grammarAccess.getOccurrenceUsageElementAccess().getBehaviorUsageElementsParserRuleCall_1()); 
                     }
                     pushFollow(FOLLOW_2);
-                    ruleBehaviorUsageElement();
+                    ruleBehaviorUsageElements();
 
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getOccurrenceUsageElementAccess().getBehaviorUsageElementParserRuleCall_1()); 
+                       after(grammarAccess.getOccurrenceUsageElementAccess().getBehaviorUsageElementsParserRuleCall_1()); 
                     }
 
                     }
@@ -23264,9 +23264,9 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__OccurrenceUsageElement__Alternatives"
 
 
-    // $ANTLR start "rule__StructureUsageElement__Alternatives"
-    // InternalSysMLOC.g:6258:1: rule__StructureUsageElement__Alternatives : ( ( ruleOccurrenceUsage ) | ( ruleIndividualUsage ) | ( rulePortionUsage ) | ( ruleEventOccurrenceUsage ) | ( ruleItemUsage ) | ( rulePartUsage ) | ( ruleViewUsage ) | ( ruleRenderingUsage ) | ( rulePortUsage ) | ( ruleConnectionUsage ) | ( ruleInterfaceUsage ) | ( ruleAllocationUsage ) | ( ruleMessage ) | ( ruleFlowUsage ) | ( ruleSuccessionFlowUsage ) );
-    public final void rule__StructureUsageElement__Alternatives() throws RecognitionException {
+    // $ANTLR start "rule__StructureUsageElements__Alternatives"
+    // InternalSysMLOC.g:6258:1: rule__StructureUsageElements__Alternatives : ( ( ruleOccurrenceUsage ) | ( ruleIndividualUsage ) | ( rulePortionUsage ) | ( ruleEventOccurrenceUsage ) | ( ruleItemUsage ) | ( rulePartUsage ) | ( ruleViewUsage ) | ( ruleRenderingUsage ) | ( rulePortUsage ) | ( ruleConnectionUsage ) | ( ruleInterfaceUsage ) | ( ruleAllocationUsage ) | ( ruleMessage ) | ( ruleFlowUsage ) | ( ruleSuccessionFlowUsage ) );
+    public final void rule__StructureUsageElements__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -23282,7 +23282,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6264:3: ruleOccurrenceUsage
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getStructureUsageElementAccess().getOccurrenceUsageParserRuleCall_0()); 
+                       before(grammarAccess.getStructureUsageElementsAccess().getOccurrenceUsageParserRuleCall_0()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleOccurrenceUsage();
@@ -23290,7 +23290,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getStructureUsageElementAccess().getOccurrenceUsageParserRuleCall_0()); 
+                       after(grammarAccess.getStructureUsageElementsAccess().getOccurrenceUsageParserRuleCall_0()); 
                     }
 
                     }
@@ -23305,7 +23305,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6270:3: ruleIndividualUsage
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getStructureUsageElementAccess().getIndividualUsageParserRuleCall_1()); 
+                       before(grammarAccess.getStructureUsageElementsAccess().getIndividualUsageParserRuleCall_1()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleIndividualUsage();
@@ -23313,7 +23313,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getStructureUsageElementAccess().getIndividualUsageParserRuleCall_1()); 
+                       after(grammarAccess.getStructureUsageElementsAccess().getIndividualUsageParserRuleCall_1()); 
                     }
 
                     }
@@ -23328,7 +23328,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6276:3: rulePortionUsage
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getStructureUsageElementAccess().getPortionUsageParserRuleCall_2()); 
+                       before(grammarAccess.getStructureUsageElementsAccess().getPortionUsageParserRuleCall_2()); 
                     }
                     pushFollow(FOLLOW_2);
                     rulePortionUsage();
@@ -23336,7 +23336,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getStructureUsageElementAccess().getPortionUsageParserRuleCall_2()); 
+                       after(grammarAccess.getStructureUsageElementsAccess().getPortionUsageParserRuleCall_2()); 
                     }
 
                     }
@@ -23351,7 +23351,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6282:3: ruleEventOccurrenceUsage
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getStructureUsageElementAccess().getEventOccurrenceUsageParserRuleCall_3()); 
+                       before(grammarAccess.getStructureUsageElementsAccess().getEventOccurrenceUsageParserRuleCall_3()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleEventOccurrenceUsage();
@@ -23359,7 +23359,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getStructureUsageElementAccess().getEventOccurrenceUsageParserRuleCall_3()); 
+                       after(grammarAccess.getStructureUsageElementsAccess().getEventOccurrenceUsageParserRuleCall_3()); 
                     }
 
                     }
@@ -23374,7 +23374,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6288:3: ruleItemUsage
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getStructureUsageElementAccess().getItemUsageParserRuleCall_4()); 
+                       before(grammarAccess.getStructureUsageElementsAccess().getItemUsageParserRuleCall_4()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleItemUsage();
@@ -23382,7 +23382,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getStructureUsageElementAccess().getItemUsageParserRuleCall_4()); 
+                       after(grammarAccess.getStructureUsageElementsAccess().getItemUsageParserRuleCall_4()); 
                     }
 
                     }
@@ -23397,7 +23397,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6294:3: rulePartUsage
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getStructureUsageElementAccess().getPartUsageParserRuleCall_5()); 
+                       before(grammarAccess.getStructureUsageElementsAccess().getPartUsageParserRuleCall_5()); 
                     }
                     pushFollow(FOLLOW_2);
                     rulePartUsage();
@@ -23405,7 +23405,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getStructureUsageElementAccess().getPartUsageParserRuleCall_5()); 
+                       after(grammarAccess.getStructureUsageElementsAccess().getPartUsageParserRuleCall_5()); 
                     }
 
                     }
@@ -23420,7 +23420,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6300:3: ruleViewUsage
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getStructureUsageElementAccess().getViewUsageParserRuleCall_6()); 
+                       before(grammarAccess.getStructureUsageElementsAccess().getViewUsageParserRuleCall_6()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleViewUsage();
@@ -23428,7 +23428,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getStructureUsageElementAccess().getViewUsageParserRuleCall_6()); 
+                       after(grammarAccess.getStructureUsageElementsAccess().getViewUsageParserRuleCall_6()); 
                     }
 
                     }
@@ -23443,7 +23443,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6306:3: ruleRenderingUsage
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getStructureUsageElementAccess().getRenderingUsageParserRuleCall_7()); 
+                       before(grammarAccess.getStructureUsageElementsAccess().getRenderingUsageParserRuleCall_7()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleRenderingUsage();
@@ -23451,7 +23451,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getStructureUsageElementAccess().getRenderingUsageParserRuleCall_7()); 
+                       after(grammarAccess.getStructureUsageElementsAccess().getRenderingUsageParserRuleCall_7()); 
                     }
 
                     }
@@ -23466,7 +23466,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6312:3: rulePortUsage
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getStructureUsageElementAccess().getPortUsageParserRuleCall_8()); 
+                       before(grammarAccess.getStructureUsageElementsAccess().getPortUsageParserRuleCall_8()); 
                     }
                     pushFollow(FOLLOW_2);
                     rulePortUsage();
@@ -23474,7 +23474,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getStructureUsageElementAccess().getPortUsageParserRuleCall_8()); 
+                       after(grammarAccess.getStructureUsageElementsAccess().getPortUsageParserRuleCall_8()); 
                     }
 
                     }
@@ -23489,7 +23489,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6318:3: ruleConnectionUsage
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getStructureUsageElementAccess().getConnectionUsageParserRuleCall_9()); 
+                       before(grammarAccess.getStructureUsageElementsAccess().getConnectionUsageParserRuleCall_9()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleConnectionUsage();
@@ -23497,7 +23497,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getStructureUsageElementAccess().getConnectionUsageParserRuleCall_9()); 
+                       after(grammarAccess.getStructureUsageElementsAccess().getConnectionUsageParserRuleCall_9()); 
                     }
 
                     }
@@ -23512,7 +23512,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6324:3: ruleInterfaceUsage
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getStructureUsageElementAccess().getInterfaceUsageParserRuleCall_10()); 
+                       before(grammarAccess.getStructureUsageElementsAccess().getInterfaceUsageParserRuleCall_10()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleInterfaceUsage();
@@ -23520,7 +23520,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getStructureUsageElementAccess().getInterfaceUsageParserRuleCall_10()); 
+                       after(grammarAccess.getStructureUsageElementsAccess().getInterfaceUsageParserRuleCall_10()); 
                     }
 
                     }
@@ -23535,7 +23535,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6330:3: ruleAllocationUsage
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getStructureUsageElementAccess().getAllocationUsageParserRuleCall_11()); 
+                       before(grammarAccess.getStructureUsageElementsAccess().getAllocationUsageParserRuleCall_11()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleAllocationUsage();
@@ -23543,7 +23543,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getStructureUsageElementAccess().getAllocationUsageParserRuleCall_11()); 
+                       after(grammarAccess.getStructureUsageElementsAccess().getAllocationUsageParserRuleCall_11()); 
                     }
 
                     }
@@ -23558,7 +23558,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6336:3: ruleMessage
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getStructureUsageElementAccess().getMessageParserRuleCall_12()); 
+                       before(grammarAccess.getStructureUsageElementsAccess().getMessageParserRuleCall_12()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleMessage();
@@ -23566,7 +23566,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getStructureUsageElementAccess().getMessageParserRuleCall_12()); 
+                       after(grammarAccess.getStructureUsageElementsAccess().getMessageParserRuleCall_12()); 
                     }
 
                     }
@@ -23581,7 +23581,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6342:3: ruleFlowUsage
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getStructureUsageElementAccess().getFlowUsageParserRuleCall_13()); 
+                       before(grammarAccess.getStructureUsageElementsAccess().getFlowUsageParserRuleCall_13()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleFlowUsage();
@@ -23589,7 +23589,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getStructureUsageElementAccess().getFlowUsageParserRuleCall_13()); 
+                       after(grammarAccess.getStructureUsageElementsAccess().getFlowUsageParserRuleCall_13()); 
                     }
 
                     }
@@ -23604,7 +23604,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6348:3: ruleSuccessionFlowUsage
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getStructureUsageElementAccess().getSuccessionFlowUsageParserRuleCall_14()); 
+                       before(grammarAccess.getStructureUsageElementsAccess().getSuccessionFlowUsageParserRuleCall_14()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleSuccessionFlowUsage();
@@ -23612,7 +23612,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getStructureUsageElementAccess().getSuccessionFlowUsageParserRuleCall_14()); 
+                       after(grammarAccess.getStructureUsageElementsAccess().getSuccessionFlowUsageParserRuleCall_14()); 
                     }
 
                     }
@@ -23634,12 +23634,12 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__StructureUsageElement__Alternatives"
+    // $ANTLR end "rule__StructureUsageElements__Alternatives"
 
 
-    // $ANTLR start "rule__BehaviorUsageElement__Alternatives"
-    // InternalSysMLOC.g:6357:1: rule__BehaviorUsageElement__Alternatives : ( ( ruleActionUsage ) | ( ruleCalculationUsage ) | ( ruleStateUsage ) | ( ruleConstraintUsage ) | ( ruleRequirementUsage ) | ( ruleConcernUsage ) | ( ruleCaseUsage ) | ( ruleAnalysisCaseUsage ) | ( ruleVerificationCaseUsage ) | ( ruleUseCaseUsage ) | ( ruleViewpointUsage ) | ( rulePerformActionUsage ) | ( ruleExhibitStateUsage ) | ( ruleIncludeUseCaseUsage ) | ( ruleAssertConstraintUsage ) | ( ruleSatisfyRequirementUsage ) );
-    public final void rule__BehaviorUsageElement__Alternatives() throws RecognitionException {
+    // $ANTLR start "rule__BehaviorUsageElements__Alternatives"
+    // InternalSysMLOC.g:6357:1: rule__BehaviorUsageElements__Alternatives : ( ( ruleActionUsage ) | ( ruleCalculationUsage ) | ( ruleStateUsage ) | ( ruleConstraintUsage ) | ( ruleRequirementUsage ) | ( ruleConcernUsage ) | ( ruleCaseUsage ) | ( ruleAnalysisCaseUsage ) | ( ruleVerificationCaseUsage ) | ( ruleUseCaseUsage ) | ( ruleViewpointUsage ) | ( rulePerformActionUsage ) | ( ruleExhibitStateUsage ) | ( ruleIncludeUseCaseUsage ) | ( ruleAssertConstraintUsage ) | ( ruleSatisfyRequirementUsage ) );
+    public final void rule__BehaviorUsageElements__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -23655,7 +23655,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6363:3: ruleActionUsage
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getBehaviorUsageElementAccess().getActionUsageParserRuleCall_0()); 
+                       before(grammarAccess.getBehaviorUsageElementsAccess().getActionUsageParserRuleCall_0()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleActionUsage();
@@ -23663,7 +23663,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getBehaviorUsageElementAccess().getActionUsageParserRuleCall_0()); 
+                       after(grammarAccess.getBehaviorUsageElementsAccess().getActionUsageParserRuleCall_0()); 
                     }
 
                     }
@@ -23678,7 +23678,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6369:3: ruleCalculationUsage
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getBehaviorUsageElementAccess().getCalculationUsageParserRuleCall_1()); 
+                       before(grammarAccess.getBehaviorUsageElementsAccess().getCalculationUsageParserRuleCall_1()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleCalculationUsage();
@@ -23686,7 +23686,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getBehaviorUsageElementAccess().getCalculationUsageParserRuleCall_1()); 
+                       after(grammarAccess.getBehaviorUsageElementsAccess().getCalculationUsageParserRuleCall_1()); 
                     }
 
                     }
@@ -23701,7 +23701,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6375:3: ruleStateUsage
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getBehaviorUsageElementAccess().getStateUsageParserRuleCall_2()); 
+                       before(grammarAccess.getBehaviorUsageElementsAccess().getStateUsageParserRuleCall_2()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleStateUsage();
@@ -23709,7 +23709,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getBehaviorUsageElementAccess().getStateUsageParserRuleCall_2()); 
+                       after(grammarAccess.getBehaviorUsageElementsAccess().getStateUsageParserRuleCall_2()); 
                     }
 
                     }
@@ -23724,7 +23724,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6381:3: ruleConstraintUsage
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getBehaviorUsageElementAccess().getConstraintUsageParserRuleCall_3()); 
+                       before(grammarAccess.getBehaviorUsageElementsAccess().getConstraintUsageParserRuleCall_3()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleConstraintUsage();
@@ -23732,7 +23732,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getBehaviorUsageElementAccess().getConstraintUsageParserRuleCall_3()); 
+                       after(grammarAccess.getBehaviorUsageElementsAccess().getConstraintUsageParserRuleCall_3()); 
                     }
 
                     }
@@ -23747,7 +23747,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6387:3: ruleRequirementUsage
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getBehaviorUsageElementAccess().getRequirementUsageParserRuleCall_4()); 
+                       before(grammarAccess.getBehaviorUsageElementsAccess().getRequirementUsageParserRuleCall_4()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleRequirementUsage();
@@ -23755,7 +23755,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getBehaviorUsageElementAccess().getRequirementUsageParserRuleCall_4()); 
+                       after(grammarAccess.getBehaviorUsageElementsAccess().getRequirementUsageParserRuleCall_4()); 
                     }
 
                     }
@@ -23770,7 +23770,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6393:3: ruleConcernUsage
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getBehaviorUsageElementAccess().getConcernUsageParserRuleCall_5()); 
+                       before(grammarAccess.getBehaviorUsageElementsAccess().getConcernUsageParserRuleCall_5()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleConcernUsage();
@@ -23778,7 +23778,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getBehaviorUsageElementAccess().getConcernUsageParserRuleCall_5()); 
+                       after(grammarAccess.getBehaviorUsageElementsAccess().getConcernUsageParserRuleCall_5()); 
                     }
 
                     }
@@ -23793,7 +23793,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6399:3: ruleCaseUsage
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getBehaviorUsageElementAccess().getCaseUsageParserRuleCall_6()); 
+                       before(grammarAccess.getBehaviorUsageElementsAccess().getCaseUsageParserRuleCall_6()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleCaseUsage();
@@ -23801,7 +23801,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getBehaviorUsageElementAccess().getCaseUsageParserRuleCall_6()); 
+                       after(grammarAccess.getBehaviorUsageElementsAccess().getCaseUsageParserRuleCall_6()); 
                     }
 
                     }
@@ -23816,7 +23816,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6405:3: ruleAnalysisCaseUsage
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getBehaviorUsageElementAccess().getAnalysisCaseUsageParserRuleCall_7()); 
+                       before(grammarAccess.getBehaviorUsageElementsAccess().getAnalysisCaseUsageParserRuleCall_7()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleAnalysisCaseUsage();
@@ -23824,7 +23824,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getBehaviorUsageElementAccess().getAnalysisCaseUsageParserRuleCall_7()); 
+                       after(grammarAccess.getBehaviorUsageElementsAccess().getAnalysisCaseUsageParserRuleCall_7()); 
                     }
 
                     }
@@ -23839,7 +23839,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6411:3: ruleVerificationCaseUsage
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getBehaviorUsageElementAccess().getVerificationCaseUsageParserRuleCall_8()); 
+                       before(grammarAccess.getBehaviorUsageElementsAccess().getVerificationCaseUsageParserRuleCall_8()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleVerificationCaseUsage();
@@ -23847,7 +23847,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getBehaviorUsageElementAccess().getVerificationCaseUsageParserRuleCall_8()); 
+                       after(grammarAccess.getBehaviorUsageElementsAccess().getVerificationCaseUsageParserRuleCall_8()); 
                     }
 
                     }
@@ -23862,7 +23862,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6417:3: ruleUseCaseUsage
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getBehaviorUsageElementAccess().getUseCaseUsageParserRuleCall_9()); 
+                       before(grammarAccess.getBehaviorUsageElementsAccess().getUseCaseUsageParserRuleCall_9()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleUseCaseUsage();
@@ -23870,7 +23870,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getBehaviorUsageElementAccess().getUseCaseUsageParserRuleCall_9()); 
+                       after(grammarAccess.getBehaviorUsageElementsAccess().getUseCaseUsageParserRuleCall_9()); 
                     }
 
                     }
@@ -23885,7 +23885,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6423:3: ruleViewpointUsage
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getBehaviorUsageElementAccess().getViewpointUsageParserRuleCall_10()); 
+                       before(grammarAccess.getBehaviorUsageElementsAccess().getViewpointUsageParserRuleCall_10()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleViewpointUsage();
@@ -23893,7 +23893,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getBehaviorUsageElementAccess().getViewpointUsageParserRuleCall_10()); 
+                       after(grammarAccess.getBehaviorUsageElementsAccess().getViewpointUsageParserRuleCall_10()); 
                     }
 
                     }
@@ -23908,7 +23908,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6429:3: rulePerformActionUsage
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getBehaviorUsageElementAccess().getPerformActionUsageParserRuleCall_11()); 
+                       before(grammarAccess.getBehaviorUsageElementsAccess().getPerformActionUsageParserRuleCall_11()); 
                     }
                     pushFollow(FOLLOW_2);
                     rulePerformActionUsage();
@@ -23916,7 +23916,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getBehaviorUsageElementAccess().getPerformActionUsageParserRuleCall_11()); 
+                       after(grammarAccess.getBehaviorUsageElementsAccess().getPerformActionUsageParserRuleCall_11()); 
                     }
 
                     }
@@ -23931,7 +23931,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6435:3: ruleExhibitStateUsage
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getBehaviorUsageElementAccess().getExhibitStateUsageParserRuleCall_12()); 
+                       before(grammarAccess.getBehaviorUsageElementsAccess().getExhibitStateUsageParserRuleCall_12()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleExhibitStateUsage();
@@ -23939,7 +23939,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getBehaviorUsageElementAccess().getExhibitStateUsageParserRuleCall_12()); 
+                       after(grammarAccess.getBehaviorUsageElementsAccess().getExhibitStateUsageParserRuleCall_12()); 
                     }
 
                     }
@@ -23954,7 +23954,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6441:3: ruleIncludeUseCaseUsage
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getBehaviorUsageElementAccess().getIncludeUseCaseUsageParserRuleCall_13()); 
+                       before(grammarAccess.getBehaviorUsageElementsAccess().getIncludeUseCaseUsageParserRuleCall_13()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleIncludeUseCaseUsage();
@@ -23962,7 +23962,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getBehaviorUsageElementAccess().getIncludeUseCaseUsageParserRuleCall_13()); 
+                       after(grammarAccess.getBehaviorUsageElementsAccess().getIncludeUseCaseUsageParserRuleCall_13()); 
                     }
 
                     }
@@ -23977,7 +23977,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6447:3: ruleAssertConstraintUsage
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getBehaviorUsageElementAccess().getAssertConstraintUsageParserRuleCall_14()); 
+                       before(grammarAccess.getBehaviorUsageElementsAccess().getAssertConstraintUsageParserRuleCall_14()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleAssertConstraintUsage();
@@ -23985,7 +23985,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getBehaviorUsageElementAccess().getAssertConstraintUsageParserRuleCall_14()); 
+                       after(grammarAccess.getBehaviorUsageElementsAccess().getAssertConstraintUsageParserRuleCall_14()); 
                     }
 
                     }
@@ -24000,7 +24000,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     // InternalSysMLOC.g:6453:3: ruleSatisfyRequirementUsage
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getBehaviorUsageElementAccess().getSatisfyRequirementUsageParserRuleCall_15()); 
+                       before(grammarAccess.getBehaviorUsageElementsAccess().getSatisfyRequirementUsageParserRuleCall_15()); 
                     }
                     pushFollow(FOLLOW_2);
                     ruleSatisfyRequirementUsage();
@@ -24008,7 +24008,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getBehaviorUsageElementAccess().getSatisfyRequirementUsageParserRuleCall_15()); 
+                       after(grammarAccess.getBehaviorUsageElementsAccess().getSatisfyRequirementUsageParserRuleCall_15()); 
                     }
 
                     }
@@ -24030,7 +24030,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__BehaviorUsageElement__Alternatives"
+    // $ANTLR end "rule__BehaviorUsageElements__Alternatives"
 
 
     // $ANTLR start "rule__ActionNodeElements__Alternatives"
@@ -190657,7 +190657,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             this.transition = dfa_6;
         }
         public String getDescription() {
-            return "5631:1: rule__GeneralBodyElements__Alternatives : ( ( ruleAnnotatingElement ) | ( ruleImportElement ) | ( ruleDefinitionElement ) | ( ruleUsageElement ) | ( ruleAliasElement ) | ( ruleCodeAnnotation ) | ( ruleReferenceVariantUsage ) );";
+            return "5631:1: rule__GeneralBodyElements__Alternatives : ( ( ruleAnnotatingElement ) | ( ruleImportElement ) | ( ruleDefinitionElements ) | ( ruleUsageElements ) | ( ruleAliasElement ) | ( ruleCodeAnnotation ) | ( ruleReferenceVariantUsage ) );";
         }
     }
     static final String dfa_7s = "\5\uffff";
@@ -193614,7 +193614,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             this.transition = dfa_37;
         }
         public String getDescription() {
-            return "5982:1: rule__DefinitionElement__Alternatives : ( ( rulePackage ) | ( ruleLibraryPackage ) | ( ruleDependency ) | ( ruleAttributeDefinition ) | ( ruleEnumerationDefinition ) | ( ruleOccurrenceDefinition ) | ( ruleIndividualDefinition ) | ( ruleItemDefinition ) | ( ruleMetadataDefinition ) | ( rulePartDefinition ) | ( ruleConnectionDefinition ) | ( ruleFlowDefinition ) | ( ruleInterfaceDefinition ) | ( ruleAllocationDefinition ) | ( rulePortDefinition ) | ( ruleActionDefinition ) | ( ruleCalculationDefinition ) | ( ruleStateDefinition ) | ( ruleConstraintDefinition ) | ( ruleRequirementDefinition ) | ( ruleConcernDefinition ) | ( ruleCaseDefinition ) | ( ruleAnalysisCaseDefinition ) | ( ruleVerificationCaseDefinition ) | ( ruleUseCaseDefinition ) | ( ruleViewDefinition ) | ( ruleViewpointDefinition ) | ( ruleRenderingDefinition ) | ( ruleExtendedDefinition ) );";
+            return "5982:1: rule__DefinitionElements__Alternatives : ( ( rulePackage ) | ( ruleLibraryPackage ) | ( ruleDependency ) | ( ruleAttributeDefinition ) | ( ruleEnumerationDefinition ) | ( ruleOccurrenceDefinition ) | ( ruleIndividualDefinition ) | ( ruleItemDefinition ) | ( ruleMetadataDefinition ) | ( rulePartDefinition ) | ( ruleConnectionDefinition ) | ( ruleFlowDefinition ) | ( ruleInterfaceDefinition ) | ( ruleAllocationDefinition ) | ( rulePortDefinition ) | ( ruleActionDefinition ) | ( ruleCalculationDefinition ) | ( ruleStateDefinition ) | ( ruleConstraintDefinition ) | ( ruleRequirementDefinition ) | ( ruleConcernDefinition ) | ( ruleCaseDefinition ) | ( ruleAnalysisCaseDefinition ) | ( ruleVerificationCaseDefinition ) | ( ruleUseCaseDefinition ) | ( ruleViewDefinition ) | ( ruleViewpointDefinition ) | ( ruleRenderingDefinition ) | ( ruleExtendedDefinition ) );";
         }
     }
     static final String dfa_38s = "\167\uffff";
@@ -193765,7 +193765,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             this.transition = dfa_43;
         }
         public String getDescription() {
-            return "6165:1: rule__UsageElement__Alternatives : ( ( ruleNonOccurrenceUsageElement ) | ( ruleOccurrenceUsageElement ) );";
+            return "6165:1: rule__UsageElements__Alternatives : ( ( ruleNonOccurrenceUsageElement ) | ( ruleOccurrenceUsageElement ) );";
         }
     }
     static final String dfa_44s = "\106\uffff";
@@ -193960,7 +193960,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             this.transition = dfa_55;
         }
         public String getDescription() {
-            return "6237:1: rule__OccurrenceUsageElement__Alternatives : ( ( ruleStructureUsageElement ) | ( ruleBehaviorUsageElement ) );";
+            return "6237:1: rule__OccurrenceUsageElement__Alternatives : ( ( ruleStructureUsageElements ) | ( ruleBehaviorUsageElements ) );";
         }
     }
     static final String dfa_56s = "\112\uffff";
@@ -194066,7 +194066,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             this.transition = dfa_61;
         }
         public String getDescription() {
-            return "6258:1: rule__StructureUsageElement__Alternatives : ( ( ruleOccurrenceUsage ) | ( ruleIndividualUsage ) | ( rulePortionUsage ) | ( ruleEventOccurrenceUsage ) | ( ruleItemUsage ) | ( rulePartUsage ) | ( ruleViewUsage ) | ( ruleRenderingUsage ) | ( rulePortUsage ) | ( ruleConnectionUsage ) | ( ruleInterfaceUsage ) | ( ruleAllocationUsage ) | ( ruleMessage ) | ( ruleFlowUsage ) | ( ruleSuccessionFlowUsage ) );";
+            return "6258:1: rule__StructureUsageElements__Alternatives : ( ( ruleOccurrenceUsage ) | ( ruleIndividualUsage ) | ( rulePortionUsage ) | ( ruleEventOccurrenceUsage ) | ( ruleItemUsage ) | ( rulePartUsage ) | ( ruleViewUsage ) | ( ruleRenderingUsage ) | ( rulePortUsage ) | ( ruleConnectionUsage ) | ( ruleInterfaceUsage ) | ( ruleAllocationUsage ) | ( ruleMessage ) | ( ruleFlowUsage ) | ( ruleSuccessionFlowUsage ) );";
         }
     }
     static final String dfa_62s = "\113\uffff";
@@ -194173,7 +194173,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             this.transition = dfa_67;
         }
         public String getDescription() {
-            return "6357:1: rule__BehaviorUsageElement__Alternatives : ( ( ruleActionUsage ) | ( ruleCalculationUsage ) | ( ruleStateUsage ) | ( ruleConstraintUsage ) | ( ruleRequirementUsage ) | ( ruleConcernUsage ) | ( ruleCaseUsage ) | ( ruleAnalysisCaseUsage ) | ( ruleVerificationCaseUsage ) | ( ruleUseCaseUsage ) | ( ruleViewpointUsage ) | ( rulePerformActionUsage ) | ( ruleExhibitStateUsage ) | ( ruleIncludeUseCaseUsage ) | ( ruleAssertConstraintUsage ) | ( ruleSatisfyRequirementUsage ) );";
+            return "6357:1: rule__BehaviorUsageElements__Alternatives : ( ( ruleActionUsage ) | ( ruleCalculationUsage ) | ( ruleStateUsage ) | ( ruleConstraintUsage ) | ( ruleRequirementUsage ) | ( ruleConcernUsage ) | ( ruleCaseUsage ) | ( ruleAnalysisCaseUsage ) | ( ruleVerificationCaseUsage ) | ( ruleUseCaseUsage ) | ( ruleViewpointUsage ) | ( rulePerformActionUsage ) | ( ruleExhibitStateUsage ) | ( ruleIncludeUseCaseUsage ) | ( ruleAssertConstraintUsage ) | ( ruleSatisfyRequirementUsage ) );";
         }
     }
     static final String dfa_68s = "\u0530\uffff";

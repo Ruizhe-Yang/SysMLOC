@@ -19,15 +19,10 @@
       <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="v">
         <typings>SpeedValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="drag">
-        <valuePart>Cd * v</valuePart>
-      </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="friction">
-        <valuePart>Cf * tm * v</valuePart>
-      </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="drag" valuePart="Cd * v"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="friction" valuePart="Cf * tm * v"/>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" valuePart="whlpwr - drag - friction">
         <typings>PowerValue</typings>
-        <valuePart>whlpwr - drag - friction</valuePart>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="Acceleration">
@@ -40,9 +35,8 @@
       <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="v">
         <typings>SpeedValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" valuePart="tp / (tm * v)">
         <typings>AccelerationValue</typings>
-        <valuePart>tp / (tm * v)</valuePart>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="Velocity">
@@ -55,9 +49,8 @@
       <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="a">
         <typings>AccelerationValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" valuePart="v0 + a * dt">
         <typings>SpeedValue</typings>
-        <valuePart>v0 + a * dt</valuePart>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="Position">
@@ -70,9 +63,8 @@
       <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="v">
         <typings>SpeedValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" valuePart="x0 + v * dt">
         <typings>LengthValue</typings>
-        <valuePart>x0 + v * dt</valuePart>
       </elements>
     </elements>
   </elements>

@@ -52,7 +52,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class IndividualDefinitionImpl extends DefinitionElementImpl implements IndividualDefinition
+public class IndividualDefinitionImpl extends DefinitionElementsImpl implements IndividualDefinition
 {
   /**
    * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.

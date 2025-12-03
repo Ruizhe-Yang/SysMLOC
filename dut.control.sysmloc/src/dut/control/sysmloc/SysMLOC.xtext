@@ -16,8 +16,8 @@ Namespace:
 GeneralBodyElements:
 	AnnotatingElement
     | ImportElement
-    | DefinitionElement
-    | UsageElement
+    | DefinitionElements
+    | UsageElements
     | AliasElement
     | CodeAnnotation
     | ReferenceVariantUsage
@@ -122,7 +122,7 @@ AnnotatingElement:
 
 // Definitions
 
-DefinitionElement:
+DefinitionElements:
 	Package
 	| LibraryPackage
 	| Dependency
@@ -155,7 +155,7 @@ DefinitionElement:
 ;
 
 // Usages
-UsageElement:
+UsageElements:
 	NonOccurrenceUsageElement 
 	| OccurrenceUsageElement
 ;
@@ -172,11 +172,11 @@ NonOccurrenceUsageElement:
 ;
 
 OccurrenceUsageElement:
-	StructureUsageElement 
-	| BehaviorUsageElement
+	StructureUsageElements
+	| BehaviorUsageElements
 ;
 
-StructureUsageElement:
+StructureUsageElements:
 	OccurrenceUsage
 	| IndividualUsage
 	| PortionUsage
@@ -194,7 +194,7 @@ StructureUsageElement:
 	| SuccessionFlowUsage
 ;
 
-BehaviorUsageElement:
+BehaviorUsageElements:
 	ActionUsage
 	| CalculationUsage
 	| StateUsage
@@ -271,6 +271,7 @@ ExposeElement:
 
 CodeAnnotation:
     body=SL_NOTE | body=ML_NOTE
+    
 ;
 
 Comment:
@@ -927,7 +928,6 @@ SatisfyRequirementUsage:
 	(';' | '{' => (elements+=RequirementBodyElement)* '}')
 ;
 
-
 AliasElement:
 	MemberPrefix 
 	'alias' 
@@ -1305,7 +1305,7 @@ fragment FeatureValue:
 	| isInitial ?= ':='
 	| isDefault ?= 'default' ( '=' | isInitial ?= ':=' )?
 	)
-	valuePart += Expression
+	valuePart = Expression
 ;
 
 fragment FeatureDeclaration:

@@ -2,9 +2,8 @@
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
   <elements xsi:type="sysMLOC:Package" declaredName="StructuredControlTest">
     <elements xsi:type="sysMLOC:ActionUsage">
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="i" isInitial="true">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="i" isInitial="true" valuePart="0">
         <typings>ScalarValues::Integer</typings>
-        <valuePart>0</valuePart>
       </elements>
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="b">
         <typings>ScalarValues::Boolean</typings>

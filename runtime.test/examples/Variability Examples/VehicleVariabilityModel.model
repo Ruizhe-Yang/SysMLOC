@@ -180,27 +180,22 @@
       <elements xsi:type="sysMLOC:CodeAnnotation" body="// Vehicle instance model&#xD;&#xA;"/>
       <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle4Cyl">
         <subsetting>PartsTree::vehicleFamily</subsetting>
-        <elements xsi:type="sysMLOC:PartUsage">
+        <elements xsi:type="sysMLOC:PartUsage" valuePart="engine::'4cylEngine'">
           <redefinitions>engine</redefinitions>
-          <valuePart>engine::'4cylEngine'</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:PartUsage">
+        <elements xsi:type="sysMLOC:PartUsage" valuePart="transmission::manualTransmission">
           <redefinitions>transmission</redefinitions>
-          <valuePart>transmission::manualTransmission</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:PartUsage">
+        <elements xsi:type="sysMLOC:PartUsage" valuePart="sunroof::withoutSunroof">
           <redefinitions>sunroof</redefinitions>
-          <valuePart>sunroof::withoutSunroof</valuePart>
         </elements>
         <elements xsi:type="sysMLOC:PerformActionUsage">
           <redefinitions>providePowerFamily</redefinitions>
-          <elements xsi:type="sysMLOC:ActionUsage">
+          <elements xsi:type="sysMLOC:ActionUsage" valuePart="generateTorque::generateTorque4Cyl">
             <redefinitions>generateTorque</redefinitions>
-            <valuePart>generateTorque::generateTorque4Cyl</valuePart>
           </elements>
-          <elements xsi:type="sysMLOC:ActionUsage">
+          <elements xsi:type="sysMLOC:ActionUsage" valuePart="amplifyTorque::amplifyTorqueManual">
             <redefinitions>amplifyTorque</redefinitions>
-            <valuePart>amplifyTorque::amplifyTorqueManual</valuePart>
           </elements>
         </elements>
       </elements>

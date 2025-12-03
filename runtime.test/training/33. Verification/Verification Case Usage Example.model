@@ -24,12 +24,9 @@
             <redefinitions>testVehicle</redefinitions>
           </elements>
           <elements xsi:type="sysMLOC:CodeAnnotation" body="// In reality, this would be some more involved process.&#xD;&#xA;"/>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="measurement">
-            <valuePart>testVehicle.mass</valuePart>
-          </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="measurement" valuePart="testVehicle.mass"/>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" valuePart="measurement">
             <redefinitions>massMeasured</redefinitions>
-            <valuePart>measurement</valuePart>
           </elements>
         </elements>
       </elements>
@@ -52,9 +49,8 @@
           <elements xsi:type="sysMLOC:IndividualUsage" direction="in" isIndividual="true">
             <typings>TestVehicle1</typings>
             <redefinitions>testVehicle</redefinitions>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2500[SI::kg]">
               <redefinitions>mass</redefinitions>
-              <valuePart>2500[SI::kg]</valuePart>
             </elements>
           </elements>
         </elements>
@@ -65,9 +61,8 @@
           <elements xsi:type="sysMLOC:IndividualUsage" direction="in" isIndividual="true">
             <typings>TestVehicle2</typings>
             <redefinitions>testVehicle</redefinitions>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="3000[SI::kg]">
               <redefinitions>mass</redefinitions>
-              <valuePart>3000[SI::kg]</valuePart>
             </elements>
           </elements>
         </elements>

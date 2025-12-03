@@ -44,12 +44,12 @@ public class SysMLOCParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getViewBodyElementAccess().getAlternatives(), "rule__ViewBodyElement__Alternatives");
 			builder.put(grammarAccess.getRelationshipBodyElementAccess().getAlternatives(), "rule__RelationshipBodyElement__Alternatives");
 			builder.put(grammarAccess.getAnnotatingElementAccess().getAlternatives(), "rule__AnnotatingElement__Alternatives");
-			builder.put(grammarAccess.getDefinitionElementAccess().getAlternatives(), "rule__DefinitionElement__Alternatives");
-			builder.put(grammarAccess.getUsageElementAccess().getAlternatives(), "rule__UsageElement__Alternatives");
+			builder.put(grammarAccess.getDefinitionElementsAccess().getAlternatives(), "rule__DefinitionElements__Alternatives");
+			builder.put(grammarAccess.getUsageElementsAccess().getAlternatives(), "rule__UsageElements__Alternatives");
 			builder.put(grammarAccess.getNonOccurrenceUsageElementAccess().getAlternatives(), "rule__NonOccurrenceUsageElement__Alternatives");
 			builder.put(grammarAccess.getOccurrenceUsageElementAccess().getAlternatives(), "rule__OccurrenceUsageElement__Alternatives");
-			builder.put(grammarAccess.getStructureUsageElementAccess().getAlternatives(), "rule__StructureUsageElement__Alternatives");
-			builder.put(grammarAccess.getBehaviorUsageElementAccess().getAlternatives(), "rule__BehaviorUsageElement__Alternatives");
+			builder.put(grammarAccess.getStructureUsageElementsAccess().getAlternatives(), "rule__StructureUsageElements__Alternatives");
+			builder.put(grammarAccess.getBehaviorUsageElementsAccess().getAlternatives(), "rule__BehaviorUsageElements__Alternatives");
 			builder.put(grammarAccess.getActionNodeElementsAccess().getAlternatives(), "rule__ActionNodeElements__Alternatives");
 			builder.put(grammarAccess.getStateNodeElementsAccess().getAlternatives(), "rule__StateNodeElements__Alternatives");
 			builder.put(grammarAccess.getRequirementNodeElementsAccess().getAlternatives(), "rule__RequirementNodeElements__Alternatives");

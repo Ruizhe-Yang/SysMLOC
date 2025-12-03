@@ -55,7 +55,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class CalculationDefinitionImpl extends DefinitionElementImpl implements CalculationDefinition
+public class CalculationDefinitionImpl extends DefinitionElementsImpl implements CalculationDefinition
 {
   /**
    * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.

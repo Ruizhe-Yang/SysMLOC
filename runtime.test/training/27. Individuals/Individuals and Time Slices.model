@@ -17,16 +17,14 @@
         </elements>
         <elements xsi:type="sysMLOC:PortionUsage" portionKind="snapshot">
           <redefinitions>start</redefinitions>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2000.0">
             <redefinitions>mass</redefinitions>
-            <valuePart>2000.0</valuePart>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:PortionUsage" portionKind="snapshot">
           <redefinitions>done</redefinitions>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1500.0">
             <redefinitions>mass</redefinitions>
-            <valuePart>1500.0</valuePart>
           </elements>
         </elements>
       </elements>

@@ -7,16 +7,12 @@
     <elements xsi:type="sysMLOC:VerificationCaseUsage" declaredName="massTests">
       <typings>MassTest</typings>
       <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="VerificationMethod">
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="kind">
-          <valuePart>(test,demo)</valuePart>
-        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="kind" valuePart="(test,demo)"/>
       </elements>
       <elements xsi:type="sysMLOC:ObjectiveRequirementUsage"/>
       <elements xsi:type="sysMLOC:ActionUsage" declaredName="weighVehicle">
         <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="VerificationMethod">
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="kind">
-            <valuePart>analyze</valuePart>
-          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="kind" valuePart="analyze"/>
         </elements>
       </elements>
     </elements>

@@ -7,19 +7,16 @@
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="AHFCoreLib" isNamespace="true"/>
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="AHFNorway" isNamespace="true"/>
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues" isNamespace="true"/>
-    <elements xsi:type="sysMLOC:PartUsage" declaredName="AHFN_LocalCloudDD_Seqs">
-      <valuePart>AHFNorway_LocalCloudDD</valuePart>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="AHFN_LocalCloudDD_Seqs" valuePart="AHFNorway_LocalCloudDD">
       <elements xsi:type="sysMLOC:OccurrenceDefinition" declaredName="APIS_transfer_lifetime">
         <elements xsi:type="sysMLOC:CodeAnnotation" body="// lifetime orderings &#xD;&#xA;"/>
-        <elements xsi:type="sysMLOC:PartUsage" isReference="true" declaredName="tlc">
-          <valuePart>AHFNorway_LocalCloudDD.TellUConsumer</valuePart>
+        <elements xsi:type="sysMLOC:PartUsage" isReference="true" declaredName="tlc" valuePart="AHFNorway_LocalCloudDD.TellUConsumer">
           <elements xsi:type="sysMLOC:EventOccurrenceUsage" declaredName="call_getItems1"/>
           <elements xsi:type="sysMLOC:EventOccurrenceUsage" isThen="true" declaredName="return_getItems1"/>
           <elements xsi:type="sysMLOC:EventOccurrenceUsage" declaredName="call_getItems2"/>
           <elements xsi:type="sysMLOC:EventOccurrenceUsage" isThen="true" declaredName="return_getItems2"/>
         </elements>
-        <elements xsi:type="sysMLOC:PartUsage" isReference="true" declaredName="apsp">
-          <valuePart>AHFNorway_LocalCloudDD.APISProducer</valuePart>
+        <elements xsi:type="sysMLOC:PartUsage" isReference="true" declaredName="apsp" valuePart="AHFNorway_LocalCloudDD.APISProducer">
           <elements xsi:type="sysMLOC:EventOccurrenceUsage" declaredName="send_publish_returnallitems"/>
           <elements xsi:type="sysMLOC:EventOccurrenceUsage" isThen="true" declaredName="receive_call_getItems1"/>
           <elements xsi:type="sysMLOC:EventOccurrenceUsage" isThen="true" declaredName="send_returnallitems1"/>
@@ -28,8 +25,7 @@
           <elements xsi:type="sysMLOC:EventOccurrenceUsage" isThen="true" declaredName="send_returnallitems2"/>
           <elements xsi:type="sysMLOC:EventOccurrenceUsage" isThen="true" declaredName="return_getItems_ack2"/>
         </elements>
-        <elements xsi:type="sysMLOC:PartUsage" isReference="true" declaredName="mqtts">
-          <valuePart>AHFNorway_LocalCloudDD.MQTTServer</valuePart>
+        <elements xsi:type="sysMLOC:PartUsage" isReference="true" declaredName="mqtts" valuePart="AHFNorway_LocalCloudDD.MQTTServer">
           <elements xsi:type="sysMLOC:EventOccurrenceUsage" declaredName="receive_publish_returnallitems"/>
           <elements xsi:type="sysMLOC:EventOccurrenceUsage" isThen="true" declaredName="receive_subscribe_returnallitems"/>
           <elements xsi:type="sysMLOC:EventOccurrenceUsage" isThen="true" refElement="forw1">
@@ -39,8 +35,7 @@
             <typings>MQTTforwarding</typings>
           </elements>
         </elements>
-        <elements xsi:type="sysMLOC:PartUsage" isReference="true" declaredName="apsc">
-          <valuePart>AHFNorway_LocalCloudDD.APISConsumer</valuePart>
+        <elements xsi:type="sysMLOC:PartUsage" isReference="true" declaredName="apsc" valuePart="AHFNorway_LocalCloudDD.APISConsumer">
           <elements xsi:type="sysMLOC:EventOccurrenceUsage" declaredName="send_subscribe_returnallitems"/>
           <elements xsi:type="sysMLOC:EventOccurrenceUsage" isThen="true" refElement="forw1">
             <typings>MQTTforwarding</typings>
@@ -102,8 +97,7 @@
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:OccurrenceDefinition" declaredName="MQTTforwarding">
-        <elements xsi:type="sysMLOC:PartUsage" isReference="true" declaredName="mqttsf">
-          <valuePart>AHFNorway_LocalCloudDD.MQTTServer</valuePart>
+        <elements xsi:type="sysMLOC:PartUsage" isReference="true" declaredName="mqttsf" valuePart="AHFNorway_LocalCloudDD.MQTTServer">
           <elements xsi:type="sysMLOC:EventOccurrenceUsage" declaredName="receive_returnallitems"/>
           <elements xsi:type="sysMLOC:EventOccurrenceUsage" isThen="true" declaredName="send_returnallitems"/>
         </elements>

@@ -423,7 +423,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGeneralBodyElements"
-    // InternalSysMLOC.g:108:1: ruleGeneralBodyElements returns [EObject current=null] : (this_AnnotatingElement_0= ruleAnnotatingElement | this_ImportElement_1= ruleImportElement | this_DefinitionElement_2= ruleDefinitionElement | this_UsageElement_3= ruleUsageElement | this_AliasElement_4= ruleAliasElement | this_CodeAnnotation_5= ruleCodeAnnotation | this_ReferenceVariantUsage_6= ruleReferenceVariantUsage ) ;
+    // InternalSysMLOC.g:108:1: ruleGeneralBodyElements returns [EObject current=null] : (this_AnnotatingElement_0= ruleAnnotatingElement | this_ImportElement_1= ruleImportElement | this_DefinitionElements_2= ruleDefinitionElements | this_UsageElements_3= ruleUsageElements | this_AliasElement_4= ruleAliasElement | this_CodeAnnotation_5= ruleCodeAnnotation | this_ReferenceVariantUsage_6= ruleReferenceVariantUsage ) ;
     public final EObject ruleGeneralBodyElements() throws RecognitionException {
         EObject current = null;
 
@@ -431,9 +431,9 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
         EObject this_ImportElement_1 = null;
 
-        EObject this_DefinitionElement_2 = null;
+        EObject this_DefinitionElements_2 = null;
 
-        EObject this_UsageElement_3 = null;
+        EObject this_UsageElements_3 = null;
 
         EObject this_AliasElement_4 = null;
 
@@ -446,10 +446,10 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSysMLOC.g:114:2: ( (this_AnnotatingElement_0= ruleAnnotatingElement | this_ImportElement_1= ruleImportElement | this_DefinitionElement_2= ruleDefinitionElement | this_UsageElement_3= ruleUsageElement | this_AliasElement_4= ruleAliasElement | this_CodeAnnotation_5= ruleCodeAnnotation | this_ReferenceVariantUsage_6= ruleReferenceVariantUsage ) )
-            // InternalSysMLOC.g:115:2: (this_AnnotatingElement_0= ruleAnnotatingElement | this_ImportElement_1= ruleImportElement | this_DefinitionElement_2= ruleDefinitionElement | this_UsageElement_3= ruleUsageElement | this_AliasElement_4= ruleAliasElement | this_CodeAnnotation_5= ruleCodeAnnotation | this_ReferenceVariantUsage_6= ruleReferenceVariantUsage )
+            // InternalSysMLOC.g:114:2: ( (this_AnnotatingElement_0= ruleAnnotatingElement | this_ImportElement_1= ruleImportElement | this_DefinitionElements_2= ruleDefinitionElements | this_UsageElements_3= ruleUsageElements | this_AliasElement_4= ruleAliasElement | this_CodeAnnotation_5= ruleCodeAnnotation | this_ReferenceVariantUsage_6= ruleReferenceVariantUsage ) )
+            // InternalSysMLOC.g:115:2: (this_AnnotatingElement_0= ruleAnnotatingElement | this_ImportElement_1= ruleImportElement | this_DefinitionElements_2= ruleDefinitionElements | this_UsageElements_3= ruleUsageElements | this_AliasElement_4= ruleAliasElement | this_CodeAnnotation_5= ruleCodeAnnotation | this_ReferenceVariantUsage_6= ruleReferenceVariantUsage )
             {
-            // InternalSysMLOC.g:115:2: (this_AnnotatingElement_0= ruleAnnotatingElement | this_ImportElement_1= ruleImportElement | this_DefinitionElement_2= ruleDefinitionElement | this_UsageElement_3= ruleUsageElement | this_AliasElement_4= ruleAliasElement | this_CodeAnnotation_5= ruleCodeAnnotation | this_ReferenceVariantUsage_6= ruleReferenceVariantUsage )
+            // InternalSysMLOC.g:115:2: (this_AnnotatingElement_0= ruleAnnotatingElement | this_ImportElement_1= ruleImportElement | this_DefinitionElements_2= ruleDefinitionElements | this_UsageElements_3= ruleUsageElements | this_AliasElement_4= ruleAliasElement | this_CodeAnnotation_5= ruleCodeAnnotation | this_ReferenceVariantUsage_6= ruleReferenceVariantUsage )
             int alt2=7;
             alt2 = dfa2.predict(input);
             switch (alt2) {
@@ -498,21 +498,21 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalSysMLOC.g:134:3: this_DefinitionElement_2= ruleDefinitionElement
+                    // InternalSysMLOC.g:134:3: this_DefinitionElements_2= ruleDefinitionElements
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getGeneralBodyElementsAccess().getDefinitionElementParserRuleCall_2());
+                      			newCompositeNode(grammarAccess.getGeneralBodyElementsAccess().getDefinitionElementsParserRuleCall_2());
                       		
                     }
                     pushFollow(FOLLOW_2);
-                    this_DefinitionElement_2=ruleDefinitionElement();
+                    this_DefinitionElements_2=ruleDefinitionElements();
 
                     state._fsp--;
                     if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      			current = this_DefinitionElement_2;
+                      			current = this_DefinitionElements_2;
                       			afterParserOrEnumRuleCall();
                       		
                     }
@@ -520,21 +520,21 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalSysMLOC.g:143:3: this_UsageElement_3= ruleUsageElement
+                    // InternalSysMLOC.g:143:3: this_UsageElements_3= ruleUsageElements
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getGeneralBodyElementsAccess().getUsageElementParserRuleCall_3());
+                      			newCompositeNode(grammarAccess.getGeneralBodyElementsAccess().getUsageElementsParserRuleCall_3());
                       		
                     }
                     pushFollow(FOLLOW_2);
-                    this_UsageElement_3=ruleUsageElement();
+                    this_UsageElements_3=ruleUsageElements();
 
                     state._fsp--;
                     if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      			current = this_UsageElement_3;
+                      			current = this_UsageElements_3;
                       			afterParserOrEnumRuleCall();
                       		
                     }
@@ -4933,28 +4933,28 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleAnnotatingElement"
 
 
-    // $ANTLR start "entryRuleDefinitionElement"
-    // InternalSysMLOC.g:786:1: entryRuleDefinitionElement returns [EObject current=null] : iv_ruleDefinitionElement= ruleDefinitionElement EOF ;
-    public final EObject entryRuleDefinitionElement() throws RecognitionException {
+    // $ANTLR start "entryRuleDefinitionElements"
+    // InternalSysMLOC.g:786:1: entryRuleDefinitionElements returns [EObject current=null] : iv_ruleDefinitionElements= ruleDefinitionElements EOF ;
+    public final EObject entryRuleDefinitionElements() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleDefinitionElement = null;
+        EObject iv_ruleDefinitionElements = null;
 
 
         try {
-            // InternalSysMLOC.g:786:58: (iv_ruleDefinitionElement= ruleDefinitionElement EOF )
-            // InternalSysMLOC.g:787:2: iv_ruleDefinitionElement= ruleDefinitionElement EOF
+            // InternalSysMLOC.g:786:59: (iv_ruleDefinitionElements= ruleDefinitionElements EOF )
+            // InternalSysMLOC.g:787:2: iv_ruleDefinitionElements= ruleDefinitionElements EOF
             {
             if ( state.backtracking==0 ) {
-               newCompositeNode(grammarAccess.getDefinitionElementRule()); 
+               newCompositeNode(grammarAccess.getDefinitionElementsRule()); 
             }
             pushFollow(FOLLOW_1);
-            iv_ruleDefinitionElement=ruleDefinitionElement();
+            iv_ruleDefinitionElements=ruleDefinitionElements();
 
             state._fsp--;
             if (state.failed) return current;
             if ( state.backtracking==0 ) {
-               current =iv_ruleDefinitionElement; 
+               current =iv_ruleDefinitionElements; 
             }
             match(input,EOF,FOLLOW_2); if (state.failed) return current;
 
@@ -4970,12 +4970,12 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleDefinitionElement"
+    // $ANTLR end "entryRuleDefinitionElements"
 
 
-    // $ANTLR start "ruleDefinitionElement"
-    // InternalSysMLOC.g:793:1: ruleDefinitionElement returns [EObject current=null] : (this_Package_0= rulePackage | this_LibraryPackage_1= ruleLibraryPackage | this_Dependency_2= ruleDependency | this_AttributeDefinition_3= ruleAttributeDefinition | this_EnumerationDefinition_4= ruleEnumerationDefinition | this_OccurrenceDefinition_5= ruleOccurrenceDefinition | this_IndividualDefinition_6= ruleIndividualDefinition | this_ItemDefinition_7= ruleItemDefinition | this_MetadataDefinition_8= ruleMetadataDefinition | this_PartDefinition_9= rulePartDefinition | this_ConnectionDefinition_10= ruleConnectionDefinition | this_FlowDefinition_11= ruleFlowDefinition | this_InterfaceDefinition_12= ruleInterfaceDefinition | this_AllocationDefinition_13= ruleAllocationDefinition | this_PortDefinition_14= rulePortDefinition | this_ActionDefinition_15= ruleActionDefinition | this_CalculationDefinition_16= ruleCalculationDefinition | this_StateDefinition_17= ruleStateDefinition | this_ConstraintDefinition_18= ruleConstraintDefinition | this_RequirementDefinition_19= ruleRequirementDefinition | this_ConcernDefinition_20= ruleConcernDefinition | this_CaseDefinition_21= ruleCaseDefinition | this_AnalysisCaseDefinition_22= ruleAnalysisCaseDefinition | this_VerificationCaseDefinition_23= ruleVerificationCaseDefinition | this_UseCaseDefinition_24= ruleUseCaseDefinition | this_ViewDefinition_25= ruleViewDefinition | this_ViewpointDefinition_26= ruleViewpointDefinition | this_RenderingDefinition_27= ruleRenderingDefinition | this_ExtendedDefinition_28= ruleExtendedDefinition ) ;
-    public final EObject ruleDefinitionElement() throws RecognitionException {
+    // $ANTLR start "ruleDefinitionElements"
+    // InternalSysMLOC.g:793:1: ruleDefinitionElements returns [EObject current=null] : (this_Package_0= rulePackage | this_LibraryPackage_1= ruleLibraryPackage | this_Dependency_2= ruleDependency | this_AttributeDefinition_3= ruleAttributeDefinition | this_EnumerationDefinition_4= ruleEnumerationDefinition | this_OccurrenceDefinition_5= ruleOccurrenceDefinition | this_IndividualDefinition_6= ruleIndividualDefinition | this_ItemDefinition_7= ruleItemDefinition | this_MetadataDefinition_8= ruleMetadataDefinition | this_PartDefinition_9= rulePartDefinition | this_ConnectionDefinition_10= ruleConnectionDefinition | this_FlowDefinition_11= ruleFlowDefinition | this_InterfaceDefinition_12= ruleInterfaceDefinition | this_AllocationDefinition_13= ruleAllocationDefinition | this_PortDefinition_14= rulePortDefinition | this_ActionDefinition_15= ruleActionDefinition | this_CalculationDefinition_16= ruleCalculationDefinition | this_StateDefinition_17= ruleStateDefinition | this_ConstraintDefinition_18= ruleConstraintDefinition | this_RequirementDefinition_19= ruleRequirementDefinition | this_ConcernDefinition_20= ruleConcernDefinition | this_CaseDefinition_21= ruleCaseDefinition | this_AnalysisCaseDefinition_22= ruleAnalysisCaseDefinition | this_VerificationCaseDefinition_23= ruleVerificationCaseDefinition | this_UseCaseDefinition_24= ruleUseCaseDefinition | this_ViewDefinition_25= ruleViewDefinition | this_ViewpointDefinition_26= ruleViewpointDefinition | this_RenderingDefinition_27= ruleRenderingDefinition | this_ExtendedDefinition_28= ruleExtendedDefinition ) ;
+    public final EObject ruleDefinitionElements() throws RecognitionException {
         EObject current = null;
 
         EObject this_Package_0 = null;
@@ -5053,7 +5053,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getDefinitionElementAccess().getPackageParserRuleCall_0());
+                      			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getPackageParserRuleCall_0());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -5075,7 +5075,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getDefinitionElementAccess().getLibraryPackageParserRuleCall_1());
+                      			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getLibraryPackageParserRuleCall_1());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -5097,7 +5097,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getDefinitionElementAccess().getDependencyParserRuleCall_2());
+                      			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getDependencyParserRuleCall_2());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -5119,7 +5119,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getDefinitionElementAccess().getAttributeDefinitionParserRuleCall_3());
+                      			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getAttributeDefinitionParserRuleCall_3());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -5141,7 +5141,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getDefinitionElementAccess().getEnumerationDefinitionParserRuleCall_4());
+                      			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getEnumerationDefinitionParserRuleCall_4());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -5163,7 +5163,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getDefinitionElementAccess().getOccurrenceDefinitionParserRuleCall_5());
+                      			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getOccurrenceDefinitionParserRuleCall_5());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -5185,7 +5185,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getDefinitionElementAccess().getIndividualDefinitionParserRuleCall_6());
+                      			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getIndividualDefinitionParserRuleCall_6());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -5207,7 +5207,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getDefinitionElementAccess().getItemDefinitionParserRuleCall_7());
+                      			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getItemDefinitionParserRuleCall_7());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -5229,7 +5229,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getDefinitionElementAccess().getMetadataDefinitionParserRuleCall_8());
+                      			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getMetadataDefinitionParserRuleCall_8());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -5251,7 +5251,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getDefinitionElementAccess().getPartDefinitionParserRuleCall_9());
+                      			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getPartDefinitionParserRuleCall_9());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -5273,7 +5273,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getDefinitionElementAccess().getConnectionDefinitionParserRuleCall_10());
+                      			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getConnectionDefinitionParserRuleCall_10());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -5295,7 +5295,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getDefinitionElementAccess().getFlowDefinitionParserRuleCall_11());
+                      			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getFlowDefinitionParserRuleCall_11());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -5317,7 +5317,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getDefinitionElementAccess().getInterfaceDefinitionParserRuleCall_12());
+                      			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getInterfaceDefinitionParserRuleCall_12());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -5339,7 +5339,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getDefinitionElementAccess().getAllocationDefinitionParserRuleCall_13());
+                      			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getAllocationDefinitionParserRuleCall_13());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -5361,7 +5361,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getDefinitionElementAccess().getPortDefinitionParserRuleCall_14());
+                      			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getPortDefinitionParserRuleCall_14());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -5383,7 +5383,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getDefinitionElementAccess().getActionDefinitionParserRuleCall_15());
+                      			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getActionDefinitionParserRuleCall_15());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -5405,7 +5405,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getDefinitionElementAccess().getCalculationDefinitionParserRuleCall_16());
+                      			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getCalculationDefinitionParserRuleCall_16());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -5427,7 +5427,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getDefinitionElementAccess().getStateDefinitionParserRuleCall_17());
+                      			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getStateDefinitionParserRuleCall_17());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -5449,7 +5449,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getDefinitionElementAccess().getConstraintDefinitionParserRuleCall_18());
+                      			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getConstraintDefinitionParserRuleCall_18());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -5471,7 +5471,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getDefinitionElementAccess().getRequirementDefinitionParserRuleCall_19());
+                      			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getRequirementDefinitionParserRuleCall_19());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -5493,7 +5493,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getDefinitionElementAccess().getConcernDefinitionParserRuleCall_20());
+                      			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getConcernDefinitionParserRuleCall_20());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -5515,7 +5515,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getDefinitionElementAccess().getCaseDefinitionParserRuleCall_21());
+                      			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getCaseDefinitionParserRuleCall_21());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -5537,7 +5537,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getDefinitionElementAccess().getAnalysisCaseDefinitionParserRuleCall_22());
+                      			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getAnalysisCaseDefinitionParserRuleCall_22());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -5559,7 +5559,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getDefinitionElementAccess().getVerificationCaseDefinitionParserRuleCall_23());
+                      			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getVerificationCaseDefinitionParserRuleCall_23());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -5581,7 +5581,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getDefinitionElementAccess().getUseCaseDefinitionParserRuleCall_24());
+                      			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getUseCaseDefinitionParserRuleCall_24());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -5603,7 +5603,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getDefinitionElementAccess().getViewDefinitionParserRuleCall_25());
+                      			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getViewDefinitionParserRuleCall_25());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -5625,7 +5625,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getDefinitionElementAccess().getViewpointDefinitionParserRuleCall_26());
+                      			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getViewpointDefinitionParserRuleCall_26());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -5647,7 +5647,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getDefinitionElementAccess().getRenderingDefinitionParserRuleCall_27());
+                      			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getRenderingDefinitionParserRuleCall_27());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -5669,7 +5669,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getDefinitionElementAccess().getExtendedDefinitionParserRuleCall_28());
+                      			newCompositeNode(grammarAccess.getDefinitionElementsAccess().getExtendedDefinitionParserRuleCall_28());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -5707,31 +5707,31 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleDefinitionElement"
+    // $ANTLR end "ruleDefinitionElements"
 
 
-    // $ANTLR start "entryRuleUsageElement"
-    // InternalSysMLOC.g:1065:1: entryRuleUsageElement returns [EObject current=null] : iv_ruleUsageElement= ruleUsageElement EOF ;
-    public final EObject entryRuleUsageElement() throws RecognitionException {
+    // $ANTLR start "entryRuleUsageElements"
+    // InternalSysMLOC.g:1065:1: entryRuleUsageElements returns [EObject current=null] : iv_ruleUsageElements= ruleUsageElements EOF ;
+    public final EObject entryRuleUsageElements() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleUsageElement = null;
+        EObject iv_ruleUsageElements = null;
 
 
         try {
-            // InternalSysMLOC.g:1065:53: (iv_ruleUsageElement= ruleUsageElement EOF )
-            // InternalSysMLOC.g:1066:2: iv_ruleUsageElement= ruleUsageElement EOF
+            // InternalSysMLOC.g:1065:54: (iv_ruleUsageElements= ruleUsageElements EOF )
+            // InternalSysMLOC.g:1066:2: iv_ruleUsageElements= ruleUsageElements EOF
             {
             if ( state.backtracking==0 ) {
-               newCompositeNode(grammarAccess.getUsageElementRule()); 
+               newCompositeNode(grammarAccess.getUsageElementsRule()); 
             }
             pushFollow(FOLLOW_1);
-            iv_ruleUsageElement=ruleUsageElement();
+            iv_ruleUsageElements=ruleUsageElements();
 
             state._fsp--;
             if (state.failed) return current;
             if ( state.backtracking==0 ) {
-               current =iv_ruleUsageElement; 
+               current =iv_ruleUsageElements; 
             }
             match(input,EOF,FOLLOW_2); if (state.failed) return current;
 
@@ -5747,12 +5747,12 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleUsageElement"
+    // $ANTLR end "entryRuleUsageElements"
 
 
-    // $ANTLR start "ruleUsageElement"
-    // InternalSysMLOC.g:1072:1: ruleUsageElement returns [EObject current=null] : (this_NonOccurrenceUsageElement_0= ruleNonOccurrenceUsageElement | this_OccurrenceUsageElement_1= ruleOccurrenceUsageElement ) ;
-    public final EObject ruleUsageElement() throws RecognitionException {
+    // $ANTLR start "ruleUsageElements"
+    // InternalSysMLOC.g:1072:1: ruleUsageElements returns [EObject current=null] : (this_NonOccurrenceUsageElement_0= ruleNonOccurrenceUsageElement | this_OccurrenceUsageElement_1= ruleOccurrenceUsageElement ) ;
+    public final EObject ruleUsageElements() throws RecognitionException {
         EObject current = null;
 
         EObject this_NonOccurrenceUsageElement_0 = null;
@@ -5776,7 +5776,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getUsageElementAccess().getNonOccurrenceUsageElementParserRuleCall_0());
+                      			newCompositeNode(grammarAccess.getUsageElementsAccess().getNonOccurrenceUsageElementParserRuleCall_0());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -5798,7 +5798,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getUsageElementAccess().getOccurrenceUsageElementParserRuleCall_1());
+                      			newCompositeNode(grammarAccess.getUsageElementsAccess().getOccurrenceUsageElementParserRuleCall_1());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -5836,7 +5836,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleUsageElement"
+    // $ANTLR end "ruleUsageElements"
 
 
     // $ANTLR start "entryRuleNonOccurrenceUsageElement"
@@ -6129,42 +6129,42 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOccurrenceUsageElement"
-    // InternalSysMLOC.g:1189:1: ruleOccurrenceUsageElement returns [EObject current=null] : (this_StructureUsageElement_0= ruleStructureUsageElement | this_BehaviorUsageElement_1= ruleBehaviorUsageElement ) ;
+    // InternalSysMLOC.g:1189:1: ruleOccurrenceUsageElement returns [EObject current=null] : (this_StructureUsageElements_0= ruleStructureUsageElements | this_BehaviorUsageElements_1= ruleBehaviorUsageElements ) ;
     public final EObject ruleOccurrenceUsageElement() throws RecognitionException {
         EObject current = null;
 
-        EObject this_StructureUsageElement_0 = null;
+        EObject this_StructureUsageElements_0 = null;
 
-        EObject this_BehaviorUsageElement_1 = null;
+        EObject this_BehaviorUsageElements_1 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalSysMLOC.g:1195:2: ( (this_StructureUsageElement_0= ruleStructureUsageElement | this_BehaviorUsageElement_1= ruleBehaviorUsageElement ) )
-            // InternalSysMLOC.g:1196:2: (this_StructureUsageElement_0= ruleStructureUsageElement | this_BehaviorUsageElement_1= ruleBehaviorUsageElement )
+            // InternalSysMLOC.g:1195:2: ( (this_StructureUsageElements_0= ruleStructureUsageElements | this_BehaviorUsageElements_1= ruleBehaviorUsageElements ) )
+            // InternalSysMLOC.g:1196:2: (this_StructureUsageElements_0= ruleStructureUsageElements | this_BehaviorUsageElements_1= ruleBehaviorUsageElements )
             {
-            // InternalSysMLOC.g:1196:2: (this_StructureUsageElement_0= ruleStructureUsageElement | this_BehaviorUsageElement_1= ruleBehaviorUsageElement )
+            // InternalSysMLOC.g:1196:2: (this_StructureUsageElements_0= ruleStructureUsageElements | this_BehaviorUsageElements_1= ruleBehaviorUsageElements )
             int alt18=2;
             alt18 = dfa18.predict(input);
             switch (alt18) {
                 case 1 :
-                    // InternalSysMLOC.g:1197:3: this_StructureUsageElement_0= ruleStructureUsageElement
+                    // InternalSysMLOC.g:1197:3: this_StructureUsageElements_0= ruleStructureUsageElements
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getOccurrenceUsageElementAccess().getStructureUsageElementParserRuleCall_0());
+                      			newCompositeNode(grammarAccess.getOccurrenceUsageElementAccess().getStructureUsageElementsParserRuleCall_0());
                       		
                     }
                     pushFollow(FOLLOW_2);
-                    this_StructureUsageElement_0=ruleStructureUsageElement();
+                    this_StructureUsageElements_0=ruleStructureUsageElements();
 
                     state._fsp--;
                     if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      			current = this_StructureUsageElement_0;
+                      			current = this_StructureUsageElements_0;
                       			afterParserOrEnumRuleCall();
                       		
                     }
@@ -6172,21 +6172,21 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSysMLOC.g:1206:3: this_BehaviorUsageElement_1= ruleBehaviorUsageElement
+                    // InternalSysMLOC.g:1206:3: this_BehaviorUsageElements_1= ruleBehaviorUsageElements
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getOccurrenceUsageElementAccess().getBehaviorUsageElementParserRuleCall_1());
+                      			newCompositeNode(grammarAccess.getOccurrenceUsageElementAccess().getBehaviorUsageElementsParserRuleCall_1());
                       		
                     }
                     pushFollow(FOLLOW_2);
-                    this_BehaviorUsageElement_1=ruleBehaviorUsageElement();
+                    this_BehaviorUsageElements_1=ruleBehaviorUsageElements();
 
                     state._fsp--;
                     if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      			current = this_BehaviorUsageElement_1;
+                      			current = this_BehaviorUsageElements_1;
                       			afterParserOrEnumRuleCall();
                       		
                     }
@@ -6217,28 +6217,28 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleOccurrenceUsageElement"
 
 
-    // $ANTLR start "entryRuleStructureUsageElement"
-    // InternalSysMLOC.g:1218:1: entryRuleStructureUsageElement returns [EObject current=null] : iv_ruleStructureUsageElement= ruleStructureUsageElement EOF ;
-    public final EObject entryRuleStructureUsageElement() throws RecognitionException {
+    // $ANTLR start "entryRuleStructureUsageElements"
+    // InternalSysMLOC.g:1218:1: entryRuleStructureUsageElements returns [EObject current=null] : iv_ruleStructureUsageElements= ruleStructureUsageElements EOF ;
+    public final EObject entryRuleStructureUsageElements() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleStructureUsageElement = null;
+        EObject iv_ruleStructureUsageElements = null;
 
 
         try {
-            // InternalSysMLOC.g:1218:62: (iv_ruleStructureUsageElement= ruleStructureUsageElement EOF )
-            // InternalSysMLOC.g:1219:2: iv_ruleStructureUsageElement= ruleStructureUsageElement EOF
+            // InternalSysMLOC.g:1218:63: (iv_ruleStructureUsageElements= ruleStructureUsageElements EOF )
+            // InternalSysMLOC.g:1219:2: iv_ruleStructureUsageElements= ruleStructureUsageElements EOF
             {
             if ( state.backtracking==0 ) {
-               newCompositeNode(grammarAccess.getStructureUsageElementRule()); 
+               newCompositeNode(grammarAccess.getStructureUsageElementsRule()); 
             }
             pushFollow(FOLLOW_1);
-            iv_ruleStructureUsageElement=ruleStructureUsageElement();
+            iv_ruleStructureUsageElements=ruleStructureUsageElements();
 
             state._fsp--;
             if (state.failed) return current;
             if ( state.backtracking==0 ) {
-               current =iv_ruleStructureUsageElement; 
+               current =iv_ruleStructureUsageElements; 
             }
             match(input,EOF,FOLLOW_2); if (state.failed) return current;
 
@@ -6254,12 +6254,12 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleStructureUsageElement"
+    // $ANTLR end "entryRuleStructureUsageElements"
 
 
-    // $ANTLR start "ruleStructureUsageElement"
-    // InternalSysMLOC.g:1225:1: ruleStructureUsageElement returns [EObject current=null] : (this_OccurrenceUsage_0= ruleOccurrenceUsage | this_IndividualUsage_1= ruleIndividualUsage | this_PortionUsage_2= rulePortionUsage | this_EventOccurrenceUsage_3= ruleEventOccurrenceUsage | this_ItemUsage_4= ruleItemUsage | this_PartUsage_5= rulePartUsage | this_ViewUsage_6= ruleViewUsage | this_RenderingUsage_7= ruleRenderingUsage | this_PortUsage_8= rulePortUsage | this_ConnectionUsage_9= ruleConnectionUsage | this_InterfaceUsage_10= ruleInterfaceUsage | this_AllocationUsage_11= ruleAllocationUsage | this_Message_12= ruleMessage | this_FlowUsage_13= ruleFlowUsage | this_SuccessionFlowUsage_14= ruleSuccessionFlowUsage ) ;
-    public final EObject ruleStructureUsageElement() throws RecognitionException {
+    // $ANTLR start "ruleStructureUsageElements"
+    // InternalSysMLOC.g:1225:1: ruleStructureUsageElements returns [EObject current=null] : (this_OccurrenceUsage_0= ruleOccurrenceUsage | this_IndividualUsage_1= ruleIndividualUsage | this_PortionUsage_2= rulePortionUsage | this_EventOccurrenceUsage_3= ruleEventOccurrenceUsage | this_ItemUsage_4= ruleItemUsage | this_PartUsage_5= rulePartUsage | this_ViewUsage_6= ruleViewUsage | this_RenderingUsage_7= ruleRenderingUsage | this_PortUsage_8= rulePortUsage | this_ConnectionUsage_9= ruleConnectionUsage | this_InterfaceUsage_10= ruleInterfaceUsage | this_AllocationUsage_11= ruleAllocationUsage | this_Message_12= ruleMessage | this_FlowUsage_13= ruleFlowUsage | this_SuccessionFlowUsage_14= ruleSuccessionFlowUsage ) ;
+    public final EObject ruleStructureUsageElements() throws RecognitionException {
         EObject current = null;
 
         EObject this_OccurrenceUsage_0 = null;
@@ -6309,7 +6309,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getStructureUsageElementAccess().getOccurrenceUsageParserRuleCall_0());
+                      			newCompositeNode(grammarAccess.getStructureUsageElementsAccess().getOccurrenceUsageParserRuleCall_0());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -6331,7 +6331,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getStructureUsageElementAccess().getIndividualUsageParserRuleCall_1());
+                      			newCompositeNode(grammarAccess.getStructureUsageElementsAccess().getIndividualUsageParserRuleCall_1());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -6353,7 +6353,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getStructureUsageElementAccess().getPortionUsageParserRuleCall_2());
+                      			newCompositeNode(grammarAccess.getStructureUsageElementsAccess().getPortionUsageParserRuleCall_2());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -6375,7 +6375,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getStructureUsageElementAccess().getEventOccurrenceUsageParserRuleCall_3());
+                      			newCompositeNode(grammarAccess.getStructureUsageElementsAccess().getEventOccurrenceUsageParserRuleCall_3());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -6397,7 +6397,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getStructureUsageElementAccess().getItemUsageParserRuleCall_4());
+                      			newCompositeNode(grammarAccess.getStructureUsageElementsAccess().getItemUsageParserRuleCall_4());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -6419,7 +6419,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getStructureUsageElementAccess().getPartUsageParserRuleCall_5());
+                      			newCompositeNode(grammarAccess.getStructureUsageElementsAccess().getPartUsageParserRuleCall_5());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -6441,7 +6441,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getStructureUsageElementAccess().getViewUsageParserRuleCall_6());
+                      			newCompositeNode(grammarAccess.getStructureUsageElementsAccess().getViewUsageParserRuleCall_6());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -6463,7 +6463,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getStructureUsageElementAccess().getRenderingUsageParserRuleCall_7());
+                      			newCompositeNode(grammarAccess.getStructureUsageElementsAccess().getRenderingUsageParserRuleCall_7());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -6485,7 +6485,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getStructureUsageElementAccess().getPortUsageParserRuleCall_8());
+                      			newCompositeNode(grammarAccess.getStructureUsageElementsAccess().getPortUsageParserRuleCall_8());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -6507,7 +6507,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getStructureUsageElementAccess().getConnectionUsageParserRuleCall_9());
+                      			newCompositeNode(grammarAccess.getStructureUsageElementsAccess().getConnectionUsageParserRuleCall_9());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -6529,7 +6529,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getStructureUsageElementAccess().getInterfaceUsageParserRuleCall_10());
+                      			newCompositeNode(grammarAccess.getStructureUsageElementsAccess().getInterfaceUsageParserRuleCall_10());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -6551,7 +6551,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getStructureUsageElementAccess().getAllocationUsageParserRuleCall_11());
+                      			newCompositeNode(grammarAccess.getStructureUsageElementsAccess().getAllocationUsageParserRuleCall_11());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -6573,7 +6573,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getStructureUsageElementAccess().getMessageParserRuleCall_12());
+                      			newCompositeNode(grammarAccess.getStructureUsageElementsAccess().getMessageParserRuleCall_12());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -6595,7 +6595,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getStructureUsageElementAccess().getFlowUsageParserRuleCall_13());
+                      			newCompositeNode(grammarAccess.getStructureUsageElementsAccess().getFlowUsageParserRuleCall_13());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -6617,7 +6617,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getStructureUsageElementAccess().getSuccessionFlowUsageParserRuleCall_14());
+                      			newCompositeNode(grammarAccess.getStructureUsageElementsAccess().getSuccessionFlowUsageParserRuleCall_14());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -6655,31 +6655,31 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleStructureUsageElement"
+    // $ANTLR end "ruleStructureUsageElements"
 
 
-    // $ANTLR start "entryRuleBehaviorUsageElement"
-    // InternalSysMLOC.g:1371:1: entryRuleBehaviorUsageElement returns [EObject current=null] : iv_ruleBehaviorUsageElement= ruleBehaviorUsageElement EOF ;
-    public final EObject entryRuleBehaviorUsageElement() throws RecognitionException {
+    // $ANTLR start "entryRuleBehaviorUsageElements"
+    // InternalSysMLOC.g:1371:1: entryRuleBehaviorUsageElements returns [EObject current=null] : iv_ruleBehaviorUsageElements= ruleBehaviorUsageElements EOF ;
+    public final EObject entryRuleBehaviorUsageElements() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleBehaviorUsageElement = null;
+        EObject iv_ruleBehaviorUsageElements = null;
 
 
         try {
-            // InternalSysMLOC.g:1371:61: (iv_ruleBehaviorUsageElement= ruleBehaviorUsageElement EOF )
-            // InternalSysMLOC.g:1372:2: iv_ruleBehaviorUsageElement= ruleBehaviorUsageElement EOF
+            // InternalSysMLOC.g:1371:62: (iv_ruleBehaviorUsageElements= ruleBehaviorUsageElements EOF )
+            // InternalSysMLOC.g:1372:2: iv_ruleBehaviorUsageElements= ruleBehaviorUsageElements EOF
             {
             if ( state.backtracking==0 ) {
-               newCompositeNode(grammarAccess.getBehaviorUsageElementRule()); 
+               newCompositeNode(grammarAccess.getBehaviorUsageElementsRule()); 
             }
             pushFollow(FOLLOW_1);
-            iv_ruleBehaviorUsageElement=ruleBehaviorUsageElement();
+            iv_ruleBehaviorUsageElements=ruleBehaviorUsageElements();
 
             state._fsp--;
             if (state.failed) return current;
             if ( state.backtracking==0 ) {
-               current =iv_ruleBehaviorUsageElement; 
+               current =iv_ruleBehaviorUsageElements; 
             }
             match(input,EOF,FOLLOW_2); if (state.failed) return current;
 
@@ -6695,12 +6695,12 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleBehaviorUsageElement"
+    // $ANTLR end "entryRuleBehaviorUsageElements"
 
 
-    // $ANTLR start "ruleBehaviorUsageElement"
-    // InternalSysMLOC.g:1378:1: ruleBehaviorUsageElement returns [EObject current=null] : (this_ActionUsage_0= ruleActionUsage | this_CalculationUsage_1= ruleCalculationUsage | this_StateUsage_2= ruleStateUsage | this_ConstraintUsage_3= ruleConstraintUsage | this_RequirementUsage_4= ruleRequirementUsage | this_ConcernUsage_5= ruleConcernUsage | this_CaseUsage_6= ruleCaseUsage | this_AnalysisCaseUsage_7= ruleAnalysisCaseUsage | this_VerificationCaseUsage_8= ruleVerificationCaseUsage | this_UseCaseUsage_9= ruleUseCaseUsage | this_ViewpointUsage_10= ruleViewpointUsage | this_PerformActionUsage_11= rulePerformActionUsage | this_ExhibitStateUsage_12= ruleExhibitStateUsage | this_IncludeUseCaseUsage_13= ruleIncludeUseCaseUsage | this_AssertConstraintUsage_14= ruleAssertConstraintUsage | this_SatisfyRequirementUsage_15= ruleSatisfyRequirementUsage ) ;
-    public final EObject ruleBehaviorUsageElement() throws RecognitionException {
+    // $ANTLR start "ruleBehaviorUsageElements"
+    // InternalSysMLOC.g:1378:1: ruleBehaviorUsageElements returns [EObject current=null] : (this_ActionUsage_0= ruleActionUsage | this_CalculationUsage_1= ruleCalculationUsage | this_StateUsage_2= ruleStateUsage | this_ConstraintUsage_3= ruleConstraintUsage | this_RequirementUsage_4= ruleRequirementUsage | this_ConcernUsage_5= ruleConcernUsage | this_CaseUsage_6= ruleCaseUsage | this_AnalysisCaseUsage_7= ruleAnalysisCaseUsage | this_VerificationCaseUsage_8= ruleVerificationCaseUsage | this_UseCaseUsage_9= ruleUseCaseUsage | this_ViewpointUsage_10= ruleViewpointUsage | this_PerformActionUsage_11= rulePerformActionUsage | this_ExhibitStateUsage_12= ruleExhibitStateUsage | this_IncludeUseCaseUsage_13= ruleIncludeUseCaseUsage | this_AssertConstraintUsage_14= ruleAssertConstraintUsage | this_SatisfyRequirementUsage_15= ruleSatisfyRequirementUsage ) ;
+    public final EObject ruleBehaviorUsageElements() throws RecognitionException {
         EObject current = null;
 
         EObject this_ActionUsage_0 = null;
@@ -6752,7 +6752,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getBehaviorUsageElementAccess().getActionUsageParserRuleCall_0());
+                      			newCompositeNode(grammarAccess.getBehaviorUsageElementsAccess().getActionUsageParserRuleCall_0());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -6774,7 +6774,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getBehaviorUsageElementAccess().getCalculationUsageParserRuleCall_1());
+                      			newCompositeNode(grammarAccess.getBehaviorUsageElementsAccess().getCalculationUsageParserRuleCall_1());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -6796,7 +6796,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getBehaviorUsageElementAccess().getStateUsageParserRuleCall_2());
+                      			newCompositeNode(grammarAccess.getBehaviorUsageElementsAccess().getStateUsageParserRuleCall_2());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -6818,7 +6818,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getBehaviorUsageElementAccess().getConstraintUsageParserRuleCall_3());
+                      			newCompositeNode(grammarAccess.getBehaviorUsageElementsAccess().getConstraintUsageParserRuleCall_3());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -6840,7 +6840,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getBehaviorUsageElementAccess().getRequirementUsageParserRuleCall_4());
+                      			newCompositeNode(grammarAccess.getBehaviorUsageElementsAccess().getRequirementUsageParserRuleCall_4());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -6862,7 +6862,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getBehaviorUsageElementAccess().getConcernUsageParserRuleCall_5());
+                      			newCompositeNode(grammarAccess.getBehaviorUsageElementsAccess().getConcernUsageParserRuleCall_5());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -6884,7 +6884,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getBehaviorUsageElementAccess().getCaseUsageParserRuleCall_6());
+                      			newCompositeNode(grammarAccess.getBehaviorUsageElementsAccess().getCaseUsageParserRuleCall_6());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -6906,7 +6906,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getBehaviorUsageElementAccess().getAnalysisCaseUsageParserRuleCall_7());
+                      			newCompositeNode(grammarAccess.getBehaviorUsageElementsAccess().getAnalysisCaseUsageParserRuleCall_7());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -6928,7 +6928,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getBehaviorUsageElementAccess().getVerificationCaseUsageParserRuleCall_8());
+                      			newCompositeNode(grammarAccess.getBehaviorUsageElementsAccess().getVerificationCaseUsageParserRuleCall_8());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -6950,7 +6950,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getBehaviorUsageElementAccess().getUseCaseUsageParserRuleCall_9());
+                      			newCompositeNode(grammarAccess.getBehaviorUsageElementsAccess().getUseCaseUsageParserRuleCall_9());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -6972,7 +6972,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getBehaviorUsageElementAccess().getViewpointUsageParserRuleCall_10());
+                      			newCompositeNode(grammarAccess.getBehaviorUsageElementsAccess().getViewpointUsageParserRuleCall_10());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -6994,7 +6994,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getBehaviorUsageElementAccess().getPerformActionUsageParserRuleCall_11());
+                      			newCompositeNode(grammarAccess.getBehaviorUsageElementsAccess().getPerformActionUsageParserRuleCall_11());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -7016,7 +7016,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getBehaviorUsageElementAccess().getExhibitStateUsageParserRuleCall_12());
+                      			newCompositeNode(grammarAccess.getBehaviorUsageElementsAccess().getExhibitStateUsageParserRuleCall_12());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -7038,7 +7038,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getBehaviorUsageElementAccess().getIncludeUseCaseUsageParserRuleCall_13());
+                      			newCompositeNode(grammarAccess.getBehaviorUsageElementsAccess().getIncludeUseCaseUsageParserRuleCall_13());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -7060,7 +7060,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getBehaviorUsageElementAccess().getAssertConstraintUsageParserRuleCall_14());
+                      			newCompositeNode(grammarAccess.getBehaviorUsageElementsAccess().getAssertConstraintUsageParserRuleCall_14());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -7082,7 +7082,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     {
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getBehaviorUsageElementAccess().getSatisfyRequirementUsageParserRuleCall_15());
+                      			newCompositeNode(grammarAccess.getBehaviorUsageElementsAccess().getSatisfyRequirementUsageParserRuleCall_15());
                       		
                     }
                     pushFollow(FOLLOW_2);
@@ -7120,7 +7120,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleBehaviorUsageElement"
+    // $ANTLR end "ruleBehaviorUsageElements"
 
 
     // $ANTLR start "entryRuleActionNodeElements"
@@ -48463,7 +48463,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
               					if (current==null) {
               						current = createModelElementForParent(grammarAccess.getFeatureValueRule());
               					}
-              					add(
+              					set(
               						current,
               						"valuePart",
               						lv_valuePart_5_0,
@@ -65164,7 +65164,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
             this.transition = dfa_6;
         }
         public String getDescription() {
-            return "115:2: (this_AnnotatingElement_0= ruleAnnotatingElement | this_ImportElement_1= ruleImportElement | this_DefinitionElement_2= ruleDefinitionElement | this_UsageElement_3= ruleUsageElement | this_AliasElement_4= ruleAliasElement | this_CodeAnnotation_5= ruleCodeAnnotation | this_ReferenceVariantUsage_6= ruleReferenceVariantUsage )";
+            return "115:2: (this_AnnotatingElement_0= ruleAnnotatingElement | this_ImportElement_1= ruleImportElement | this_DefinitionElements_2= ruleDefinitionElements | this_UsageElements_3= ruleUsageElements | this_AliasElement_4= ruleAliasElement | this_CodeAnnotation_5= ruleCodeAnnotation | this_ReferenceVariantUsage_6= ruleReferenceVariantUsage )";
         }
     }
     static final String dfa_7s = "\5\uffff";
@@ -67772,7 +67772,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
             this.transition = dfa_56;
         }
         public String getDescription() {
-            return "1196:2: (this_StructureUsageElement_0= ruleStructureUsageElement | this_BehaviorUsageElement_1= ruleBehaviorUsageElement )";
+            return "1196:2: (this_StructureUsageElements_0= ruleStructureUsageElements | this_BehaviorUsageElements_1= ruleBehaviorUsageElements )";
         }
     }
     static final String dfa_57s = "\104\uffff";

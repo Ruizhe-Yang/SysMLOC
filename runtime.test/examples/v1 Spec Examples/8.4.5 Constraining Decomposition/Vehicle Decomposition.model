@@ -23,18 +23,15 @@
           <redefinitions>Engine::cyl</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="cylinderBR">
+      <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="cylinderBR" valuePart="eng.cyl">
         <Multiplicity>*</Multiplicity>
-        <valuePart>eng.cyl</valuePart>
       </elements>
-      <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="rollBarBR">
+      <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="rollBarBR" valuePart="chs.rb">
         <Multiplicity>*</Multiplicity>
-        <valuePart>chs.rb</valuePart>
       </elements>
-      <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="lugBoltBR">
+      <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="lugBoltBR" valuePart="chs.w.lb">
         <Multiplicity>24</Multiplicity>
         <Multiplicity>32</Multiplicity>
-        <valuePart>chs.w.lb</valuePart>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="'Chassis Assembly'">

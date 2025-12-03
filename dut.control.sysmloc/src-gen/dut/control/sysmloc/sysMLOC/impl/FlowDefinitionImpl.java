@@ -53,7 +53,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class FlowDefinitionImpl extends DefinitionElementImpl implements FlowDefinition
+public class FlowDefinitionImpl extends DefinitionElementsImpl implements FlowDefinition
 {
   /**
    * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.

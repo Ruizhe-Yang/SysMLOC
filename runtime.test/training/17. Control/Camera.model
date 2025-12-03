@@ -15,9 +15,8 @@
         <Multiplicity>*</Multiplicity>
       </elements>
       <elements xsi:type="sysMLOC:PartUsage" declaredName="autoFocus">
-        <elements xsi:type="sysMLOC:ItemUsage" direction="in" isReference="true" declaredName="scene">
+        <elements xsi:type="sysMLOC:ItemUsage" direction="in" isReference="true" declaredName="scene" valuePart="camera::scene">
           <typings>Scene</typings>
-          <valuePart>camera::scene</valuePart>
         </elements>
         <elements xsi:type="sysMLOC:ItemUsage" direction="out" isReference="true" declaredName="realImage">
           <typings>Image</typings>

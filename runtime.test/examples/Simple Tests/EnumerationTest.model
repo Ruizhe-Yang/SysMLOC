@@ -10,34 +10,28 @@
       <superclassifiers>Color</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * An EnumerationDefinition can contain only EnumerationUsages. However,&#xD;&#xA;&#x9;&#x9; * it can specialize an AttributeDefinition in order to inherit&#xD;&#xA;&#x9;&#x9; * common features for its enumeration values.&#xD;&#xA;&#x9;&#x9; */"/>
       <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="red">
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="0">
           <redefinitions>val</redefinitions>
-          <valuePart>0</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="blue">
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
           <redefinitions>val</redefinitions>
-          <valuePart>1</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="green">
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2">
           <redefinitions>val</redefinitions>
-          <valuePart>2</valuePart>
         </elements>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:EnumerationUsage" declaredName="color">
       <typings>ColorKind</typings>
     </elements>
-    <elements xsi:type="sysMLOC:EnumerationUsage" declaredName="color1">
-      <valuePart>ColorKind::blue</valuePart>
-    </elements>
+    <elements xsi:type="sysMLOC:EnumerationUsage" declaredName="color1" valuePart="ColorKind::blue"/>
     <elements xsi:type="sysMLOC:CodeAnnotation" body="// Implicitly typed by ColorKind.&#xD;&#xA;"/>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="color2">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="color2" valuePart="color1">
       <typings>ColorKind</typings>
-      <valuePart>color1</valuePart>
     </elements>
     <elements xsi:type="sysMLOC:EnumerationDefinition" declaredName="E1">
       <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="a"/>
@@ -52,19 +46,12 @@
     </elements>
     <elements xsi:type="sysMLOC:EnumerationDefinition" declaredName="SizeChoice">
       <superclassifiers>Size</superclassifiers>
-      <elements xsi:type="sysMLOC:EnumeratedValue">
-        <valuePart>60.0</valuePart>
-      </elements>
-      <elements xsi:type="sysMLOC:EnumeratedValue">
-        <valuePart>70.0</valuePart>
-      </elements>
-      <elements xsi:type="sysMLOC:EnumeratedValue">
-        <valuePart>80.0</valuePart>
-      </elements>
+      <elements xsi:type="sysMLOC:EnumeratedValue" valuePart="60.0"/>
+      <elements xsi:type="sysMLOC:EnumeratedValue" valuePart="70.0"/>
+      <elements xsi:type="sysMLOC:EnumeratedValue" valuePart="80.0"/>
     </elements>
-    <elements xsi:type="sysMLOC:EnumerationUsage" declaredName="size">
+    <elements xsi:type="sysMLOC:EnumerationUsage" declaredName="size" valuePart="60.0">
       <typings>SizeChoice</typings>
-      <valuePart>60.0</valuePart>
     </elements>
   </elements>
 </sysMLOC:Namespace>

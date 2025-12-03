@@ -30,9 +30,8 @@
       <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle1">
         <typings>Vehicle</typings>
         <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9; * 'vehicle1' is a package-owned part of type Vehicle.&#xA;&#x9;&#x9;&#x9; */"/>
-        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass">
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass" valuePart="1750 [kg]">
           <redefinitions>Vehicle::mass</redefinitions>
-          <valuePart>1750 [kg]</valuePart>
           <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9;&#x9; * This redefines the 'mass' attribute property from 'Vehicle' to &#xA;&#x9;&#x9;&#x9;&#x9; * give it a fixed attribute.&#xA;&#x9;&#x9;&#x9;&#x9; */"/>
         </elements>
         <elements xsi:type="sysMLOC:PartUsage" declaredName="frontAxleAssembly">
@@ -61,9 +60,8 @@
       <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle1_c1">
         <typings>Vehicle</typings>
         <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9; * 'vehicle1_c1' is a modified copy of 'vehicle1'. There is no&#xA;&#x9;&#x9;&#x9; * connection between this copy and the original version in the&#xA;&#x9;&#x9;&#x9; * model.&#xA;&#x9;&#x9;&#x9; */"/>
-        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass">
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass" valuePart="2000 [kg]">
           <redefinitions>Vehicle::mass</redefinitions>
-          <valuePart>2000 [kg]</valuePart>
           <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9;&#x9; * The mass attribute has been modified.&#xA;&#x9;&#x9;&#x9;&#x9; */"/>
         </elements>
         <elements xsi:type="sysMLOC:PartUsage" declaredName="frontAxleAssembly">
@@ -77,13 +75,11 @@
             <Multiplicity>2</Multiplicity>
             <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * The parts 'frontWheel_1' and 'frontWheel_2' have been added&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * as subsets of 'frontWheel'. These are separate parts from&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * 'frontWheel', but essentially provide alternate names for&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * each of the two wheels, as given by their defining expressions.&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; */"/>
           </elements>
-          <elements xsi:type="sysMLOC:PartUsage" declaredName="frontWheel_1">
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="frontWheel_1" valuePart="frontWheel#(1)">
             <subsetting>frontWheel</subsetting>
-            <valuePart>frontWheel#(1)</valuePart>
           </elements>
-          <elements xsi:type="sysMLOC:PartUsage" declaredName="frontWheel_2">
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="frontWheel_2" valuePart="frontWheel#(2)">
             <subsetting>frontWheel</subsetting>
-            <valuePart>frontWheel#(2)</valuePart>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:PartUsage" declaredName="rearAxleAssembly">
@@ -96,13 +92,11 @@
             <typings>Wheel</typings>
             <Multiplicity>2</Multiplicity>
           </elements>
-          <elements xsi:type="sysMLOC:PartUsage" declaredName="rearWheel_1">
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="rearWheel_1" valuePart="rearWheel#(1)">
             <subsetting>rearWheel</subsetting>
-            <valuePart>rearWheel#(1)</valuePart>
           </elements>
-          <elements xsi:type="sysMLOC:PartUsage" declaredName="rearWheel_2">
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="rearWheel_2" valuePart="rearWheel#(2)">
             <subsetting>rearWheel</subsetting>
-            <valuePart>rearWheel#(2)</valuePart>
           </elements>
         </elements>
       </elements>

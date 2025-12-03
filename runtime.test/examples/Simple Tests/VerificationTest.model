@@ -40,9 +40,7 @@
     <elements xsi:type="sysMLOC:PartUsage" declaredName="verificationContext">
       <elements xsi:type="sysMLOC:VerificationCaseUsage" declaredName="verificationPlan">
         <typings>VerificationPlan</typings>
-        <elements xsi:type="sysMLOC:SubjectUsage" declaredName="v">
-          <valuePart>vv</valuePart>
-        </elements>
+        <elements xsi:type="sysMLOC:SubjectUsage" declaredName="v" valuePart="vv"/>
       </elements>
     </elements>
   </elements>

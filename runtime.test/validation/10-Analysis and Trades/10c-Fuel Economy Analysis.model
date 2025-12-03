@@ -6,13 +6,11 @@
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="MeasurementReferences" isNamespace="true"/>
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ISQ" isNamespace="true"/>
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="USCustomaryUnits" isNamespace="true"/>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="distancePerVolume">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="distancePerVolume" valuePart="length / volume">
       <typings>ScalarQuantityValue</typings>
-      <valuePart>length / volume</valuePart>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="gallon">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="gallon" valuePart="231.0 * 'in'^3">
       <typings>MeasurementUnit</typings>
-      <valuePart>231.0 * 'in'^3</valuePart>
     </elements>
     <elements xsi:type="sysMLOC:Package" declaredName="FuelEconomyRequirementsModel">
       <elements xsi:type="sysMLOC:RequirementDefinition" declaredName="FuelEconomyRequirement">
@@ -28,16 +26,14 @@
       </elements>
       <elements xsi:type="sysMLOC:RequirementUsage" declaredName="cityFuelEconomyRequirement">
         <typings>FuelEconomyRequirement</typings>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="25 [mi/gallon]">
           <redefinitions>requiredFuelEconomy</redefinitions>
-          <valuePart>25 [mi/gallon]</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:RequirementUsage" declaredName="highwayFuelEconomyRequirement">
         <typings>FuelEconomyRequirement</typings>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="30 [mi/gallon]">
           <redefinitions>requiredFuelEconomy</redefinitions>
-          <valuePart>30 [mi/gallon]</valuePart>
         </elements>
       </elements>
     </elements>
@@ -134,9 +130,8 @@
             <elements xsi:type="sysMLOC:Documentation" body="/* wheelDiameter == 33 inches&#xA;&#x9;&#x9;&#x9;&#x9; &#x9;     * drive train efficiency == 0.4&#xA;&#x9;&#x9;&#x9;&#x9; &#x9;     */"/>
           </elements>
           <elements xsi:type="sysMLOC:RequirementConstraintUsage" refElement="fuelEconomyRequirement" kind="require">
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="calculatedFuelEconomy">
               <redefinitions>actualFuelEconomy</redefinitions>
-              <valuePart>calculatedFuelEconomy</valuePart>
             </elements>
           </elements>
         </elements>
@@ -154,9 +149,8 @@
         <elements xsi:type="sysMLOC:RequirementUsage" declaredName="vehicleFuelEconomyRequirement_city">
           <subsetting>cityFuelEconomyRequirement</subsetting>
           <elements xsi:type="sysMLOC:Documentation" body="/* The vehicle shall provide a fuel economy that is greater than or equal to&#xA;&#x9;&#x9;&#x9;&#x9;     * 25 miles per gallon for the nominal city driving scenarios.&#xA;&#x9;&#x9;&#x9;&#x9;     */"/>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="vehicle.fuelEconomy_city">
             <redefinitions>actualFuelEconomy</redefinitions>
-            <valuePart>vehicle.fuelEconomy_city</valuePart>
           </elements>
           <elements xsi:type="sysMLOC:RequirementConstraintUsage">
             <resultExpressionParameter resultExpression="vehicle.cargoWeight == 1000 [lb]"/>
@@ -165,9 +159,8 @@
         <elements xsi:type="sysMLOC:RequirementUsage" declaredName="vehicleFuelEconomyRequirement_highway">
           <subsetting>highwayFuelEconomyRequirement</subsetting>
           <elements xsi:type="sysMLOC:Documentation" body="/* The vehicle shall provide a fuel economy that is greater than or equal to&#xA;&#x9;&#x9;&#x9;&#x9;     * 30 miles per gallon for the nominal highway driving scenarios.&#xA;&#x9;&#x9;&#x9;&#x9;     */"/>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="vehicle.fuelEconomy_highway">
             <redefinitions>actualFuelEconomy</redefinitions>
-            <valuePart>vehicle.fuelEconomy_highway</valuePart>
           </elements>
           <elements xsi:type="sysMLOC:RequirementConstraintUsage">
             <resultExpressionParameter resultExpression="vehicle.cargoWeight == 1000 [lb]"/>
@@ -177,37 +170,23 @@
       <elements xsi:type="sysMLOC:PartUsage" declaredName="analysisContext">
         <elements xsi:type="sysMLOC:AnalysisCaseUsage" declaredName="cityFuelEconomyAnalysis">
           <typings>FuelEconomyAnalysis</typings>
-          <elements xsi:type="sysMLOC:SubjectUsage" declaredName="vehicle">
-            <valuePart>vehicle1_c1</valuePart>
-          </elements>
-          <elements xsi:type="sysMLOC:CalculationUsage" direction="in" declaredName="scenario">
-            <valuePart>cityScenario</valuePart>
-          </elements>
-          <elements xsi:type="sysMLOC:RequirementUsage" direction="in" declaredName="fuelEconomyRequirement">
-            <valuePart>cityFuelEconomyRequirement</valuePart>
-          </elements>
+          <elements xsi:type="sysMLOC:SubjectUsage" declaredName="vehicle" valuePart="vehicle1_c1"/>
+          <elements xsi:type="sysMLOC:CalculationUsage" direction="in" declaredName="scenario" valuePart="cityScenario"/>
+          <elements xsi:type="sysMLOC:RequirementUsage" direction="in" declaredName="fuelEconomyRequirement" valuePart="cityFuelEconomyRequirement"/>
         </elements>
         <elements xsi:type="sysMLOC:AnalysisCaseUsage" declaredName="highwayFuelEconomyAnalysis">
           <typings>FuelEconomyAnalysis</typings>
-          <elements xsi:type="sysMLOC:SubjectUsage" declaredName="vehicle">
-            <valuePart>vehicle1_c1</valuePart>
-          </elements>
-          <elements xsi:type="sysMLOC:CalculationUsage" direction="in" declaredName="scenario">
-            <valuePart>highwayScenario</valuePart>
-          </elements>
-          <elements xsi:type="sysMLOC:RequirementUsage" direction="in" declaredName="fuelEconomyRequirement">
-            <valuePart>highwayFuelEconomyRequirement</valuePart>
-          </elements>
+          <elements xsi:type="sysMLOC:SubjectUsage" declaredName="vehicle" valuePart="vehicle1_c1"/>
+          <elements xsi:type="sysMLOC:CalculationUsage" direction="in" declaredName="scenario" valuePart="highwayScenario"/>
+          <elements xsi:type="sysMLOC:RequirementUsage" direction="in" declaredName="fuelEconomyRequirement" valuePart="highwayFuelEconomyRequirement"/>
         </elements>
         <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle1_c1_analysized">
           <subsetting>vehicle1_c1</subsetting>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="cityFuelEconomyAnalysis.calculatedFuelEconomy">
             <redefinitions>fuelEconomy_city</redefinitions>
-            <valuePart>cityFuelEconomyAnalysis.calculatedFuelEconomy</valuePart>
           </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="highwayFuelEconomyAnalysis.calculatedFuelEconomy">
             <redefinitions>fuelEconomy_highway</redefinitions>
-            <valuePart>highwayFuelEconomyAnalysis.calculatedFuelEconomy</valuePart>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:SatisfyRequirementUsage" refElement="vehicleFuelEconomyRequirementsGroup" satisfactionParameter="vehicle1_c1_analysized"/>

@@ -5,9 +5,8 @@
     <elements xsi:type="sysMLOC:ItemDefinition" declaredName="Start"/>
     <elements xsi:type="sysMLOC:ItemDefinition" declaredName="Request"/>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Server">
-      <elements xsi:type="sysMLOC:PartUsage">
+      <elements xsi:type="sysMLOC:PartUsage" valuePart="Time::Clock()">
         <redefinitions>localClock</redefinitions>
-        <valuePart>Time::Clock()</valuePart>
       </elements>
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="today">
         <typings>String</typings>

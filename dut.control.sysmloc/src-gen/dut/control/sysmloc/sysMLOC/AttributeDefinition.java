@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface AttributeDefinition extends DefinitionElement, MemberPrefix, DefinitionPrefix, BasicDefinitionPrefix, DefinitionExtensionKeyword, PrefixMetadata, DefinitionDeclaration, Identification
+public interface AttributeDefinition extends DefinitionElements, MemberPrefix, DefinitionPrefix, BasicDefinitionPrefix, DefinitionExtensionKeyword, PrefixMetadata, DefinitionDeclaration, Identification
 {
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.

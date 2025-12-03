@@ -36,9 +36,7 @@
       </elements>
       <elements xsi:type="sysMLOC:ActionUsage" isThen="true" declaredName="focus">
         <typings>Focus</typings>
-        <elements xsi:type="sysMLOC:ItemUsage" direction="in" declaredName="scene">
-          <valuePart>trigger.scene</valuePart>
-        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" direction="in" declaredName="scene" valuePart="trigger.scene"/>
         <elements xsi:type="sysMLOC:ItemUsage" direction="out" declaredName="image"/>
       </elements>
       <elements xsi:type="sysMLOC:FlowUsage">

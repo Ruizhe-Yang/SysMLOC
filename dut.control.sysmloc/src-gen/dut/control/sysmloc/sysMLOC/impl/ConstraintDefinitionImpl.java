@@ -55,7 +55,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class ConstraintDefinitionImpl extends DefinitionElementImpl implements ConstraintDefinition
+public class ConstraintDefinitionImpl extends DefinitionElementsImpl implements ConstraintDefinition
 {
   /**
    * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.

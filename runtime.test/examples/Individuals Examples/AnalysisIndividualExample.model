@@ -12,32 +12,27 @@
         <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="distancePF">
           <typings>QuantityPowerFactor</typings>
           <Multiplicity>1</Multiplicity>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
             <redefinitions>quantity</redefinitions>
-            <valuePart>isq.L</valuePart>
           </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
             <redefinitions>exponent</redefinitions>
-            <valuePart>1</valuePart>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="volumePF">
           <typings>QuantityPowerFactor</typings>
           <Multiplicity>1</Multiplicity>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
             <redefinitions>quantity</redefinitions>
-            <valuePart>isq.L</valuePart>
           </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-3">
             <redefinitions>exponent</redefinitions>
-            <valuePart>-3</valuePart>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:AttributeUsage">
           <redefinitions>quantityDimension</redefinitions>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(distancePF, volumePF)">
             <redefinitions>quantityPowerFactors</redefinitions>
-            <valuePart>(distancePF, volumePF)</valuePart>
           </elements>
         </elements>
       </elements>
@@ -52,17 +47,14 @@
           <redefinitions>mRef</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="gallon">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="gallon" valuePart="231.0 * 'in' ** 3">
         <typings>VolumeUnit</typings>
-        <valuePart>231.0 * 'in' ** 3</valuePart>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mpg">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mpg" valuePart="'mi' / gallon">
         <typings>DistancePerVolumeUnit</typings>
-        <valuePart>'mi' / gallon</valuePart>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="hp">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="hp" valuePart="745.7[SI::W]">
         <typings>PowerUnit</typings>
-        <valuePart>745.7[SI::W]</valuePart>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:Package" declaredName="VehicleModel">
@@ -82,9 +74,8 @@
       </elements>
       <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle_c1">
         <typings>Vehicle</typings>
-        <elements xsi:type="sysMLOC:AttributeUsage">
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="engine.peakPower">
           <redefinitions>power</redefinitions>
-          <valuePart>engine.peakPower</valuePart>
         </elements>
         <elements xsi:type="sysMLOC:PartUsage" declaredName="engine">
           <typings>Engine</typings>
@@ -113,16 +104,13 @@
         </elements>
         <elements xsi:type="sysMLOC:ActionUsage" declaredName="fuelConsumption">
           <typings>FuelConsumption</typings>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="power">
-            <valuePart>vehicle.power</valuePart>
-          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="power" valuePart="vehicle.power"/>
           <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="fuelEconomy">
             <typings>DistancePerVolumeValue</typings>
           </elements>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="calculatedFuelEconomy">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="calculatedFuelEconomy" valuePart="fuelConsumption.fuelEconomy">
           <typings>DistancePerVolumeValue</typings>
-          <valuePart>fuelConsumption.fuelEconomy</valuePart>
         </elements>
       </elements>
     </elements>
@@ -149,13 +137,11 @@
           <elements xsi:type="sysMLOC:PartUsage" isIndividual="true">
             <typings>Engine_1</typings>
             <redefinitions>engine</redefinitions>
-            <elements xsi:type="sysMLOC:AttributeUsage">
+            <elements xsi:type="sysMLOC:AttributeUsage" valuePart="200[hp]">
               <redefinitions>peakPower</redefinitions>
-              <valuePart>200[hp]</valuePart>
             </elements>
-            <elements xsi:type="sysMLOC:AttributeUsage">
+            <elements xsi:type="sysMLOC:AttributeUsage" valuePart="0.4">
               <redefinitions>fuelEfficiency</redefinitions>
-              <valuePart>0.4</valuePart>
             </elements>
           </elements>
         </elements>
@@ -165,9 +151,8 @@
           <elements xsi:type="sysMLOC:PortionUsage" portionKind="snapshot">
             <subsetting>fuelConsumption</subsetting>
             <redefinitions>done</redefinitions>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" valuePart="35[mph]">
               <redefinitions>fuelEconomy</redefinitions>
-              <valuePart>35[mph]</valuePart>
             </elements>
           </elements>
         </elements>

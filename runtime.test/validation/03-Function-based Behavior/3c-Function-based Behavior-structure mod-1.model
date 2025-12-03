@@ -48,9 +48,7 @@
         <elements xsi:type="sysMLOC:CodeAnnotation" body="// Destroy the link object.&#xA;"/>
         <elements xsi:type="sysMLOC:ActionUsage" isThen="true" declaredName="'destroy connection of trailer to vehicle'">
           <typings>OccurrenceFunctions::destroy</typings>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="inout" declaredName="occ">
-            <valuePart>'vehicle-trailer system'.trailerHitch</valuePart>
-          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="inout" declaredName="occ" valuePart="'vehicle-trailer system'.trailerHitch"/>
         </elements>
         <elements xsi:type="sysMLOC:CodeAnnotation" body="// Remove the link from the TrailerHitch connection.&#xA;"/>
         <elements xsi:type="sysMLOC:AssignmentNode" isThen="true" declaredName="'disconnect trailer from vehicle'" featureChain="'vehicle-trailer system'.trailerHitch" NodeParameter="null"/>

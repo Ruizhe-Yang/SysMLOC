@@ -134,29 +134,24 @@
         <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9; * An individual usage must be typed by an individual definition,&#xA;&#x9;&#x9;&#x9; * representing the condition of that individual during some or all&#xA;&#x9;&#x9;&#x9; * of its life.&#xA;&#x9;&#x9;&#x9; */"/>
         <elements xsi:type="sysMLOC:PortionUsage" declaredName="context_t0" portionKind="snapshot">
           <typings>VehicleRoadContext_ID1</typings>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="t0">
             <redefinitions>t</redefinitions>
-            <valuePart>t0</valuePart>
             <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * This is a concise notation for showing the redefinition&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * of a attribute property.&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; */"/>
           </elements>
           <elements xsi:type="sysMLOC:PortionUsage" declaredName="vehicle_ID1_t0" portionKind="snapshot">
             <typings>VehicleA_ID1</typings>
             <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * A snapshot is a kind of individual usage restricted to&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * a single instant of time.&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; */"/>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="m">
               <redefinitions>mass</redefinitions>
-              <valuePart>m</valuePart>
             </elements>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="p0">
               <redefinitions>position</redefinitions>
-              <valuePart>p0</valuePart>
             </elements>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="v0">
               <redefinitions>velocity</redefinitions>
-              <valuePart>v0</valuePart>
             </elements>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="a0">
               <redefinitions>acceleration</redefinitions>
-              <valuePart>a0</valuePart>
             </elements>
             <elements xsi:type="sysMLOC:ExhibitStateUsage" refElement="vehicleStates.on">
               <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; * This asserts that the snapshot exhibits the referenced &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; * state, which means that the vehicle must me in the state &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; * at the time of the snapshot.&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; */"/>
@@ -164,90 +159,74 @@
           </elements>
           <elements xsi:type="sysMLOC:PortionUsage" declaredName="road_ID1_t0" portionKind="snapshot">
             <typings>Road_ID1</typings>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="theta0">
               <redefinitions>angle</redefinitions>
-              <valuePart>theta0</valuePart>
             </elements>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="sf0">
               <redefinitions>surfaceFriction</redefinitions>
-              <valuePart>sf0</valuePart>
             </elements>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:PortionUsage" declaredName="context_t1" portionKind="snapshot">
           <typings>VehicleRoadContext_ID1</typings>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="t1">
             <redefinitions>t</redefinitions>
-            <valuePart>t1</valuePart>
           </elements>
           <elements xsi:type="sysMLOC:PortionUsage" declaredName="vehicle_ID1_t1" portionKind="snapshot">
             <typings>VehicleA_ID1</typings>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="m">
               <redefinitions>mass</redefinitions>
-              <valuePart>m</valuePart>
             </elements>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="p1">
               <redefinitions>position</redefinitions>
-              <valuePart>p1</valuePart>
             </elements>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="v1">
               <redefinitions>velocity</redefinitions>
-              <valuePart>v1</valuePart>
             </elements>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="a1">
               <redefinitions>acceleration</redefinitions>
-              <valuePart>a1</valuePart>
             </elements>
             <elements xsi:type="sysMLOC:ExhibitStateUsage" refElement="vehicleStates.on"/>
           </elements>
           <elements xsi:type="sysMLOC:PortionUsage" declaredName="road_ID1_t1" portionKind="snapshot">
             <typings>Road_ID1</typings>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="theta1">
               <redefinitions>angle</redefinitions>
-              <valuePart>theta1</valuePart>
             </elements>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="sf1">
               <redefinitions>surfaceFriction</redefinitions>
-              <valuePart>sf1</valuePart>
             </elements>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:CodeAnnotation" body="// ...&#xA;"/>
         <elements xsi:type="sysMLOC:PortionUsage" declaredName="context_tn" portionKind="snapshot">
           <typings>VehicleRoadContext_ID1</typings>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="tn">
             <redefinitions>t</redefinitions>
-            <valuePart>tn</valuePart>
           </elements>
           <elements xsi:type="sysMLOC:PortionUsage" declaredName="vehicle_ID1_tn" portionKind="snapshot">
             <typings>VehicleA_ID1</typings>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="m">
               <redefinitions>mass</redefinitions>
-              <valuePart>m</valuePart>
             </elements>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="pn">
               <redefinitions>position</redefinitions>
-              <valuePart>pn</valuePart>
             </elements>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="vn">
               <redefinitions>velocity</redefinitions>
-              <valuePart>vn</valuePart>
             </elements>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="an">
               <redefinitions>acceleration</redefinitions>
-              <valuePart>an</valuePart>
             </elements>
             <elements xsi:type="sysMLOC:ExhibitStateUsage" refElement="vehicleStates.off"/>
           </elements>
           <elements xsi:type="sysMLOC:PortionUsage" declaredName="road_ID1_tn" portionKind="snapshot">
             <typings>Road_ID1</typings>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="theta1">
               <redefinitions>angle</redefinitions>
-              <valuePart>theta1</valuePart>
             </elements>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="sfn">
               <redefinitions>surfaceFriction</redefinitions>
-              <valuePart>sfn</valuePart>
             </elements>
           </elements>
         </elements>

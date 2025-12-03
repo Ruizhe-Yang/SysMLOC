@@ -32,7 +32,7 @@ import dut.control.sysmloc.sysMLOC.AttributeDefinition;
 import dut.control.sysmloc.sysMLOC.AttributeUsage;
 import dut.control.sysmloc.sysMLOC.BasicDefinitionPrefix;
 import dut.control.sysmloc.sysMLOC.BasicUsagePrefix;
-import dut.control.sysmloc.sysMLOC.BehaviorUsageElement;
+import dut.control.sysmloc.sysMLOC.BehaviorUsageElements;
 import dut.control.sysmloc.sysMLOC.BindingConnectorAsUsage;
 import dut.control.sysmloc.sysMLOC.CalculationBodyElement;
 import dut.control.sysmloc.sysMLOC.CalculationDefinition;
@@ -58,7 +58,7 @@ import dut.control.sysmloc.sysMLOC.CrossFeatureChain;
 import dut.control.sysmloc.sysMLOC.DefaultReferenceUsage;
 import dut.control.sysmloc.sysMLOC.DefinitionBodyElement;
 import dut.control.sysmloc.sysMLOC.DefinitionDeclaration;
-import dut.control.sysmloc.sysMLOC.DefinitionElement;
+import dut.control.sysmloc.sysMLOC.DefinitionElements;
 import dut.control.sysmloc.sysMLOC.DefinitionExtensionKeyword;
 import dut.control.sysmloc.sysMLOC.DefinitionPrefix;
 import dut.control.sysmloc.sysMLOC.Dependency;
@@ -162,7 +162,7 @@ import dut.control.sysmloc.sysMLOC.StateBodyElement;
 import dut.control.sysmloc.sysMLOC.StateDefinition;
 import dut.control.sysmloc.sysMLOC.StateNodeElements;
 import dut.control.sysmloc.sysMLOC.StateUsage;
-import dut.control.sysmloc.sysMLOC.StructureUsageElement;
+import dut.control.sysmloc.sysMLOC.StructureUsageElements;
 import dut.control.sysmloc.sysMLOC.SubjectUsage;
 import dut.control.sysmloc.sysMLOC.SubsettingFeatureChain;
 import dut.control.sysmloc.sysMLOC.SuccessionAsUsage;
@@ -181,7 +181,7 @@ import dut.control.sysmloc.sysMLOC.UnextendedUsagePrefix;
 import dut.control.sysmloc.sysMLOC.Usage;
 import dut.control.sysmloc.sysMLOC.UsageBodyElement;
 import dut.control.sysmloc.sysMLOC.UsageDeclaration;
-import dut.control.sysmloc.sysMLOC.UsageElement;
+import dut.control.sysmloc.sysMLOC.UsageElements;
 import dut.control.sysmloc.sysMLOC.UsageExtensionKeyword;
 import dut.control.sysmloc.sysMLOC.UsagePrefix;
 import dut.control.sysmloc.sysMLOC.UseCaseDefinition;
@@ -279,12 +279,12 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
       case SysMLOCPackage.VIEW_BODY_ELEMENT: return createViewBodyElement();
       case SysMLOCPackage.RELATIONSHIP_BODY_ELEMENT: return createRelationshipBodyElement();
       case SysMLOCPackage.ANNOTATING_ELEMENT: return createAnnotatingElement();
-      case SysMLOCPackage.DEFINITION_ELEMENT: return createDefinitionElement();
-      case SysMLOCPackage.USAGE_ELEMENT: return createUsageElement();
+      case SysMLOCPackage.DEFINITION_ELEMENTS: return createDefinitionElements();
+      case SysMLOCPackage.USAGE_ELEMENTS: return createUsageElements();
       case SysMLOCPackage.NON_OCCURRENCE_USAGE_ELEMENT: return createNonOccurrenceUsageElement();
       case SysMLOCPackage.OCCURRENCE_USAGE_ELEMENT: return createOccurrenceUsageElement();
-      case SysMLOCPackage.STRUCTURE_USAGE_ELEMENT: return createStructureUsageElement();
-      case SysMLOCPackage.BEHAVIOR_USAGE_ELEMENT: return createBehaviorUsageElement();
+      case SysMLOCPackage.STRUCTURE_USAGE_ELEMENTS: return createStructureUsageElements();
+      case SysMLOCPackage.BEHAVIOR_USAGE_ELEMENTS: return createBehaviorUsageElements();
       case SysMLOCPackage.ACTION_NODE_ELEMENTS: return createActionNodeElements();
       case SysMLOCPackage.STATE_NODE_ELEMENTS: return createStateNodeElements();
       case SysMLOCPackage.REQUIREMENT_NODE_ELEMENTS: return createRequirementNodeElements();
@@ -731,10 +731,10 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
    * @generated
    */
   @Override
-  public DefinitionElement createDefinitionElement()
+  public DefinitionElements createDefinitionElements()
   {
-    DefinitionElementImpl definitionElement = new DefinitionElementImpl();
-    return definitionElement;
+    DefinitionElementsImpl definitionElements = new DefinitionElementsImpl();
+    return definitionElements;
   }
 
   /**
@@ -743,10 +743,10 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
    * @generated
    */
   @Override
-  public UsageElement createUsageElement()
+  public UsageElements createUsageElements()
   {
-    UsageElementImpl usageElement = new UsageElementImpl();
-    return usageElement;
+    UsageElementsImpl usageElements = new UsageElementsImpl();
+    return usageElements;
   }
 
   /**
@@ -779,10 +779,10 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
    * @generated
    */
   @Override
-  public StructureUsageElement createStructureUsageElement()
+  public StructureUsageElements createStructureUsageElements()
   {
-    StructureUsageElementImpl structureUsageElement = new StructureUsageElementImpl();
-    return structureUsageElement;
+    StructureUsageElementsImpl structureUsageElements = new StructureUsageElementsImpl();
+    return structureUsageElements;
   }
 
   /**
@@ -791,10 +791,10 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
    * @generated
    */
   @Override
-  public BehaviorUsageElement createBehaviorUsageElement()
+  public BehaviorUsageElements createBehaviorUsageElements()
   {
-    BehaviorUsageElementImpl behaviorUsageElement = new BehaviorUsageElementImpl();
-    return behaviorUsageElement;
+    BehaviorUsageElementsImpl behaviorUsageElements = new BehaviorUsageElementsImpl();
+    return behaviorUsageElements;
   }
 
   /**

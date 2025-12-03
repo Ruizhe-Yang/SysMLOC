@@ -20,13 +20,11 @@
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle">
       <elements xsi:type="sysMLOC:ConstraintUsage" declaredName="massConstraint">
         <typings>MassConstraint</typings>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(chassisMass, engine.mass, transmission.mass)">
           <redefinitions>partMasses</redefinitions>
-          <valuePart>(chassisMass, engine.mass, transmission.mass)</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2500[kg]">
           <redefinitions>massLimit</redefinitions>
-          <valuePart>2500[kg]</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="chassisMass">

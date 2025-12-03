@@ -4,25 +4,25 @@
 package dut.control.sysmloc.sysMLOC.impl;
 
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
-import dut.control.sysmloc.sysMLOC.UsageElement;
+import dut.control.sysmloc.sysMLOC.UsageElements;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Usage Element</b></em>'.
+ * An implementation of the model object '<em><b>Usage Elements</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class UsageElementImpl extends GeneralBodyElementsImpl implements UsageElement
+public class UsageElementsImpl extends GeneralBodyElementsImpl implements UsageElements
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected UsageElementImpl()
+  protected UsageElementsImpl()
   {
     super();
   }
@@ -35,7 +35,7 @@ public class UsageElementImpl extends GeneralBodyElementsImpl implements UsageEl
   @Override
   protected EClass eStaticClass()
   {
-    return SysMLOCPackage.eINSTANCE.getUsageElement();
+    return SysMLOCPackage.eINSTANCE.getUsageElements();
   }
 
-} //UsageElementImpl
+} //UsageElementsImpl

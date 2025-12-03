@@ -149,30 +149,26 @@
       </elements>
       <elements xsi:type="sysMLOC:MetadataDefinition" declaredShortName="situation" declaredName="SituationMetadata">
         <superclassifiers>SemanticMetadata</superclassifiers>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isDefault="true">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isDefault="true" valuePart="situations meta SysML::Usage">
           <redefinitions>baseType</redefinitions>
-          <valuePart>situations meta SysML::Usage</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:MetadataDefinition" declaredShortName="cause" declaredName="CauseMetadata">
         <superclassifiers>SituationMetadata</superclassifiers>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="causes meta SysML::Usage">
           <redefinitions>baseType</redefinitions>
-          <valuePart>causes meta SysML::Usage</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:MetadataDefinition" declaredShortName="failure" declaredName="FailureModeMetadata">
         <superclassifiers>SituationMetadata</superclassifiers>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="failureModes meta SysML::Usage">
           <redefinitions>baseType</redefinitions>
-          <valuePart>failureModes meta SysML::Usage</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:MetadataDefinition" declaredShortName="effect" declaredName="EffectMetadata">
         <superclassifiers>SituationMetadata</superclassifiers>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="effects meta SysML::Usage">
           <redefinitions>baseType</redefinitions>
-          <valuePart>effects meta SysML::Usage</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:MetadataDefinition" declaredShortName="fmea" declaredName="FMEAItemMetadata">
@@ -185,9 +181,8 @@
           <typings>SysML::ItemUsage</typings>
           <subsetting>annotatedElement</subsetting>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="fmeaItems meta SysML::Usage">
           <redefinitions>baseType</redefinitions>
-          <valuePart>fmeaItems meta SysML::Usage</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:MetadataDefinition" declaredShortName="causation" declaredName="CausationMetadata">
@@ -196,9 +191,8 @@
           <typings>SysML::ConnectionUsage</typings>
           <redefinitions>annotatedElement</redefinitions>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="causations meta SysML::Usage">
           <redefinitions>baseType</redefinitions>
-          <valuePart>causations meta SysML::Usage</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:MetadataDefinition" declaredShortName="fmeaspec" declaredName="FMEARequirementMetadata">
@@ -207,9 +201,8 @@
           <typings>SysML::RequirementUsage</typings>
           <redefinitions>annotatedElement</redefinitions>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="fmeaRequirements meta SysML::Usage">
           <redefinitions>baseType</redefinitions>
-          <valuePart>fmeaRequirements meta SysML::Usage</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:MetadataDefinition" declaredShortName="violation" declaredName="ViolationMetadata">
@@ -218,9 +211,8 @@
           <typings>SysML::ConnectionUsage</typings>
           <redefinitions>annotatedElement</redefinitions>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="violations meta SysML::Usage">
           <redefinitions>baseType</redefinitions>
-          <valuePart>violations meta SysML::Usage</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="ControllingMeasureMetadata" isAbstract="true">
@@ -232,16 +224,14 @@
       </elements>
       <elements xsi:type="sysMLOC:MetadataDefinition" declaredShortName="prevention" declaredName="PreventionMetadata">
         <superclassifiers>ControllingMeasureMetadata</superclassifiers>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="preventions meta SysML::Usage">
           <redefinitions>baseType</redefinitions>
-          <valuePart>preventions meta SysML::Usage</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:MetadataDefinition" declaredShortName="mitigation" declaredName="MitigationMetadata">
         <superclassifiers>ControllingMeasureMetadata</superclassifiers>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="mitigations meta SysML::Usage">
           <redefinitions>baseType</redefinitions>
-          <valuePart>mitigations meta SysML::Usage</valuePart>
         </elements>
       </elements>
     </elements>
@@ -260,14 +250,11 @@
         <prefixMetadataExtension>#fmeaspec</prefixMetadataExtension>
         <typings>RequirementWithSIL</typings>
         <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="StatusHolder">
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="status">
-            <valuePart>Status::Approved</valuePart>
-          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="status" valuePart="Status::Approved"/>
         </elements>
         <elements xsi:type="sysMLOC:Documentation" body="/* Alarm when battery has sank */"/>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="SIL::A">
           <redefinitions>sil</redefinitions>
-          <valuePart>SIL::A</valuePart>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:ItemDefinition" declaredName="'Glucose FMEA Item'">
@@ -279,9 +266,8 @@
         </elements>
         <elements xsi:type="sysMLOC:OccurrenceUsage" declaredName="'battery depleted'">
           <prefixMetadataExtension>#cause</prefixMetadataExtension>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="0.005">
             <redefinitions>occurs</redefinitions>
-            <valuePart>0.005</valuePart>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:ConnectionUsage">
@@ -291,9 +277,8 @@
         </elements>
         <elements xsi:type="sysMLOC:OccurrenceUsage" declaredName="'battery cannot be charged'">
           <prefixMetadataExtension>#failure</prefixMetadataExtension>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="0.013">
             <redefinitions>detected</redefinitions>
-            <valuePart>0.013</valuePart>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:ConnectionUsage">
@@ -311,9 +296,8 @@
         </elements>
         <elements xsi:type="sysMLOC:OccurrenceUsage" declaredName="'therapy delay'">
           <prefixMetadataExtension>#effect</prefixMetadataExtension>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;High&quot;">
             <redefinitions>severity</redefinitions>
-            <valuePart>&quot;High&quot;</valuePart>
           </elements>
         </elements>
       </elements>

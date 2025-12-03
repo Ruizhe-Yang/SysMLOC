@@ -20,9 +20,8 @@
       <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="v">
         <typings>SpeedValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="tp">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="tp" valuePart="whlpwr - Cd * v - Cf * tm * v">
         <typings>PowerValue</typings>
-        <valuePart>whlpwr - Cd * v - Cf * tm * v</valuePart>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="Acceleration">
@@ -35,9 +34,8 @@
       <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="tp">
         <typings>PowerValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="a">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="a" valuePart="tp * dt * tp">
         <typings>AccelerationValue</typings>
-        <valuePart>tp * dt * tp</valuePart>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="Velocity">
@@ -50,9 +48,8 @@
       <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="a">
         <typings>AccelerationValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="v">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="v" valuePart="v0 + a * dt">
         <typings>SpeedValue</typings>
-        <valuePart>v0 + a * dt</valuePart>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="Position">
@@ -65,9 +62,8 @@
       <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="v">
         <typings>SpeedValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="x">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="x" valuePart="x0 + v * dt">
         <typings>LengthValue</typings>
-        <valuePart>x0 + v * dt</valuePart>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CodeAnnotation" body="// Analysis action def&#xD;&#xA;"/>
@@ -133,39 +129,29 @@
       <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="x_in">
         <typings>LengthValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="tp">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="tp" valuePart="Power(whlpwr, Cd, Cf, tm, v_in)">
         <typings>PowerValue</typings>
-        <valuePart>Power(whlpwr, Cd, Cf, tm, v_in)</valuePart>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" direction="out">
+      <elements xsi:type="sysMLOC:AttributeUsage" direction="out" valuePart="Acceleration(dt, tm, tp)">
         <typings>AccelerationValue</typings>
         <redefinitions>a_out</redefinitions>
-        <valuePart>Acceleration(dt, tm, tp)</valuePart>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" direction="out">
+      <elements xsi:type="sysMLOC:AttributeUsage" direction="out" valuePart="Velocity(dt, v_in, a_out)">
         <typings>SpeedValue</typings>
         <redefinitions>v_out</redefinitions>
-        <valuePart>Velocity(dt, v_in, a_out)</valuePart>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" direction="out">
+      <elements xsi:type="sysMLOC:AttributeUsage" direction="out" valuePart="Position(dt, x_in, v_in)">
         <typings>LengthValue</typings>
         <redefinitions>x_out</redefinitions>
-        <valuePart>Position(dt, x_in, v_in)</valuePart>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:ActionUsage" declaredName="dyn2">
       <typings>StraightLineVehicleDynamics</typings>
       <elements xsi:type="sysMLOC:CalculationUsage" declaredName="acc">
         <typings>Acceleration</typings>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="dt">
-          <valuePart>dyn2::dt</valuePart>
-        </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="tm">
-          <valuePart>dyn2::tm</valuePart>
-        </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="tp">
-          <valuePart>Power(whlpwr, Cd, Cf, tm, v_in)</valuePart>
-        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="dt" valuePart="dyn2::dt"/>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="tm" valuePart="dyn2::tm"/>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="tp" valuePart="Power(whlpwr, Cd, Cf, tm, v_in)"/>
       </elements>
       <elements xsi:type="sysMLOC:BindingConnectorAsUsage">
         <connectorPart refElement="a_out"/>
@@ -173,15 +159,9 @@
       </elements>
       <elements xsi:type="sysMLOC:CalculationUsage" declaredName="vel">
         <typings>Velocity</typings>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="dt">
-          <valuePart>dyn2::dt</valuePart>
-        </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="v0">
-          <valuePart>dyn2::v_in</valuePart>
-        </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="a">
-          <valuePart>acc.a</valuePart>
-        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="dt" valuePart="dyn2::dt"/>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="v0" valuePart="dyn2::v_in"/>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="a" valuePart="acc.a"/>
       </elements>
       <elements xsi:type="sysMLOC:BindingConnectorAsUsage">
         <connectorPart refElement="v_out"/>
@@ -189,15 +169,9 @@
       </elements>
       <elements xsi:type="sysMLOC:CalculationUsage" declaredName="pos">
         <typings>Position</typings>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="dt">
-          <valuePart>dyn2::dt</valuePart>
-        </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x0">
-          <valuePart>dyn2::x_in</valuePart>
-        </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="v0">
-          <valuePart>vel.v</valuePart>
-        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="dt" valuePart="dyn2::dt"/>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x0" valuePart="dyn2::x_in"/>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="v0" valuePart="vel.v"/>
       </elements>
       <elements xsi:type="sysMLOC:BindingConnectorAsUsage">
         <connectorPart refElement="x_out"/>

@@ -21,28 +21,21 @@
         <typings>Shell</typings>
         <redefinitions>shape</redefinitions>
         <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="ExternalShapeRef">
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="purpose">
-            <valuePart>&quot;highLoD&quot;</valuePart>
-          </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="shapeIri">
-            <valuePart>&quot;file:/detailed-geometry/LEMS-250W_BatteryHousing_Example.step&quot;</valuePart>
-          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="purpose" valuePart="&quot;highLoD&quot;"/>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="shapeIri" valuePart="&quot;file:/detailed-geometry/LEMS-250W_BatteryHousing_Example.step&quot;"/>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:ItemUsage" visibility="private" declaredName="envelopingBoxBatteryUnit">
         <typings>Box</typings>
         <subsetting>envelopingShapes</subsetting>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="140[mm]">
           <redefinitions>length</redefinitions>
-          <valuePart>140[mm]</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="148[mm]">
           <redefinitions>width</redefinitions>
-          <valuePart>148[mm]</valuePart>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="90[mm]">
           <redefinitions>height</redefinitions>
-          <valuePart>90[mm]</valuePart>
         </elements>
       </elements>
     </elements>

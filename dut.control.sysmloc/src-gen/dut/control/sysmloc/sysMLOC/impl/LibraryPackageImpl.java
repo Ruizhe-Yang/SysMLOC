@@ -43,7 +43,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class LibraryPackageImpl extends DefinitionElementImpl implements LibraryPackage
+public class LibraryPackageImpl extends DefinitionElementsImpl implements LibraryPackage
 {
   /**
    * The cached value of the '{@link #getPrefixMetadataExtension() <em>Prefix Metadata Extension</em>}' attribute list.

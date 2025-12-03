@@ -30,9 +30,8 @@
         </elements>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:PartUsage" declaredName="y">
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="y" valuePart="v::q">
       <typings>P</typings>
-      <valuePart>v::q</valuePart>
     </elements>
     <elements xsi:type="sysMLOC:ActionDefinition" isVariation="true" declaredName="A">
       <elements xsi:type="sysMLOC:ActionUsage" isVariant="true" declaredName="a1"/>
