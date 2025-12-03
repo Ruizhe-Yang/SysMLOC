@@ -2,11 +2,11 @@
 [%root.lineOfCode();%]
 
 [%operation SysMLOC!EObject write(i){%]
-[%=i.Tab()%][%=self.lineOfCode()%] [%if (self.isEnd()){%];
+[%=i.Tab()%][%=self.lineOfCode()%][%if (self.isEnd()){%];
 [%}else{%]{
 [%for (e in self.elements){e.write(i+1);}%]
 [%=i.Tab()%]}
-[%i++;}%]
+[%i++;}%] 
 [%}%]
 
 [%
@@ -14,27 +14,27 @@ operation SysMLOC!Namespace lineOfCode(){%]
 [%for (e in self.elements){e.write(0);}%]
 [%}%]
 
-[% @template
+[% 
 operation SysMLOC!Package lineOfCode(){%]
 package [%=self.declaredName%]
 [%}%]
 
-[% @template
+[% 
 operation SysMLOC!Documentation lineOfCode(){%]
 doc [%=self.Identification()%] [%=self.body%]
 [%}%]
 
-[% @template
+[% 
 operation SysMLOC!PartDefinition lineOfCode(){%]
 part def [%=self.DefinitionDeclaration()%]
 [%}%]
 
-[% @template
+[% 
 operation SysMLOC!PartUsage lineOfCode(){%]
 [%=self.GeneralUsagePrefix()%][%=self.OccurrenceUsagePrefix()%]part [%=self.Usage()%]
 [%}%]
 
-[% @template
+[% 
 operation SysMLOC!EObject lineOfCode(){%]
 // == Unfinished [%=self.type().name%] ==
 [%}%]

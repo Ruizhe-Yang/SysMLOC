@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="ASCII"?>
 <sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
   <elements xsi:type="sysMLOC:Package" declaredName="VehicleDefinitions">
-    <elements xsi:type="sysMLOC:CodeAnnotation" body="// Documentation;&#xD;&#xA;"/>
-    <elements xsi:type="sysMLOC:CodeAnnotation" body="// ImportElement;&#xD;&#xA;"/>
-    <elements xsi:type="sysMLOC:CodeAnnotation" body="// ImportElement;&#xD;&#xA;"/>
-    <elements xsi:type="sysMLOC:CodeAnnotation" body="// ImportElement;&#xD;&#xA;"/>
-    <elements xsi:type="sysMLOC:CodeAnnotation" body="// ImportElement;&#xD;&#xA;"/>
-    <elements xsi:type="sysMLOC:CodeAnnotation" body="// ImportElement;&#xD;&#xA;"/>
-    <elements xsi:type="sysMLOC:CodeAnnotation" body="// Comment;&#xD;&#xA;"/>
-    <elements xsi:type="sysMLOC:CodeAnnotation" body="// PartDefinition;&#xD;&#xA;"/>
-    <elements xsi:type="sysMLOC:CodeAnnotation" body="// PartDefinition;&#xD;&#xA;"/>
+    <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;     &#x9; * Example vehicle definitions model.&#xD;&#xA;&#x9;     &#x9; */"/>
+    <elements xsi:type="sysMLOC:CodeAnnotation" body="// == Unfinished ImportElement ==;&#xD;&#xA;"/>
+    <elements xsi:type="sysMLOC:CodeAnnotation" body="// == Unfinished ImportElement ==;&#xD;&#xA;"/>
+    <elements xsi:type="sysMLOC:CodeAnnotation" body="// == Unfinished ImportElement ==;&#xD;&#xA;"/>
+    <elements xsi:type="sysMLOC:CodeAnnotation" body="// == Unfinished ImportElement ==;&#xD;&#xA;"/>
+    <elements xsi:type="sysMLOC:CodeAnnotation" body="// == Unfinished ImportElement ==;&#xD;&#xA;"/>
+    <elements xsi:type="sysMLOC:CodeAnnotation" body="// == Unfinished Comment ==;&#xD;&#xA;"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle">
+      <elements xsi:type="sysMLOC:CodeAnnotation" body="// == Unfinished AttributeUsage ==;&#xD;&#xA;"/>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Transmission"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="AxleAssembly"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Axle">
+      <elements xsi:type="sysMLOC:CodeAnnotation" body="// == Unfinished PortUsage ==;&#xD;&#xA;"/>
+      <elements xsi:type="sysMLOC:CodeAnnotation" body="// == Unfinished PortUsage ==;&#xD;&#xA;"/>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Wheel">
+      <elements xsi:type="sysMLOC:CodeAnnotation" body="// == Unfinished PortUsage ==;&#xD;&#xA;"/>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Lugbolt">
+      <elements xsi:type="sysMLOC:CodeAnnotation" body="// == Unfinished AttributeUsage ==;&#xD;&#xA;"/>
+    </elements>
   </elements>
 </sysMLOC:Namespace>
