@@ -8,10 +8,8 @@
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="totalMass">
         <typings>MassValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="componentMasses">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="componentMasses" Multi1="0" Multi02="*">
         <typings>MassValue</typings>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>*</Multiplicity>
       </elements>
       <resultExpressionParameter resultExpression="totalMass == sum(componentMasses)"/>
     </elements>
@@ -76,10 +74,8 @@
       <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="totalMass">
         <typings>MassValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="componentMasses">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="componentMasses" Multi1="0" Multi02="*">
         <typings>MassValue</typings>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>*</Multiplicity>
       </elements>
       <resultExpressionParameter resultExpression="totalMass == sum(componentMasses)"/>
     </elements>
@@ -117,10 +113,8 @@
       <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="totalMass">
         <typings>MassValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="componentMasses">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="componentMasses" Multi1="0" Multi02="*">
         <typings>MassValue</typings>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>*</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:ConstraintUsage" declaredName="massAnalysis3">
@@ -128,10 +122,8 @@
       <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="totalMass">
         <typings>MassValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="componentMasses">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="componentMasses" Multi1="0" Multi02="*">
         <typings>MassValue</typings>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>*</Multiplicity>
       </elements>
       <resultExpressionParameter resultExpression="totalMass == sum(componentMasses)"/>
     </elements>

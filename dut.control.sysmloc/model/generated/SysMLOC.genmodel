@@ -481,10 +481,14 @@
     <genClasses ecoreClass="SysMLOC.ecore#//DefinitionExtensionKeyword"/>
     <genClasses ecoreClass="SysMLOC.ecore#//EmptySuccessionPrefix">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//EmptySuccessionPrefix/isThen"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//EmptySuccessionPrefix/ThenMultiplicity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//EmptySuccessionPrefix/ThenMulti0"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//EmptySuccessionPrefix/ThenMulti1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//EmptySuccessionPrefix/ThenMulti02"/>
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//MultiplicityRange">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//MultiplicityRange/Multiplicity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//MultiplicityRange/Multi0"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//MultiplicityRange/Multi1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//MultiplicityRange/Multi02"/>
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//ValuePart"/>
     <genClasses ecoreClass="SysMLOC.ecore#//MemberPrefix">

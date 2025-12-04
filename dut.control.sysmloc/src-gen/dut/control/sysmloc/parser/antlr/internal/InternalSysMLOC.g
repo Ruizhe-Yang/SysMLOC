@@ -14944,17 +14944,17 @@ ruleEmptySuccessionPrefix[EObject in_current]  returns [EObject current=in_curre
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getEmptySuccessionPrefixAccess().getThenMultiplicityMultiplicityExpressionParserRuleCall_1_0_1_0());
+							newCompositeNode(grammarAccess.getEmptySuccessionPrefixAccess().getThenMulti0MultiplicityExpressionParserRuleCall_1_0_1_0());
 						}
-						lv_ThenMultiplicity_2_0=ruleMultiplicityExpression
+						lv_ThenMulti0_2_0=ruleMultiplicityExpression
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getEmptySuccessionPrefixRule());
 							}
-							add(
+							set(
 								$current,
-								"ThenMultiplicity",
-								lv_ThenMultiplicity_2_0,
+								"ThenMulti0",
+								lv_ThenMulti0_2_0,
 								"dut.control.sysmloc.SysMLOC.MultiplicityExpression");
 							afterParserOrEnumRuleCall();
 						}
@@ -14974,17 +14974,17 @@ ruleEmptySuccessionPrefix[EObject in_current]  returns [EObject current=in_curre
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getEmptySuccessionPrefixAccess().getThenMultiplicityMultiplicityExpressionParserRuleCall_1_1_1_0());
+							newCompositeNode(grammarAccess.getEmptySuccessionPrefixAccess().getThenMulti1MultiplicityExpressionParserRuleCall_1_1_1_0());
 						}
-						lv_ThenMultiplicity_5_0=ruleMultiplicityExpression
+						lv_ThenMulti1_5_0=ruleMultiplicityExpression
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getEmptySuccessionPrefixRule());
 							}
-							add(
+							set(
 								$current,
-								"ThenMultiplicity",
-								lv_ThenMultiplicity_5_0,
+								"ThenMulti1",
+								lv_ThenMulti1_5_0,
 								"dut.control.sysmloc.SysMLOC.MultiplicityExpression");
 							afterParserOrEnumRuleCall();
 						}
@@ -14997,17 +14997,17 @@ ruleEmptySuccessionPrefix[EObject in_current]  returns [EObject current=in_curre
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getEmptySuccessionPrefixAccess().getThenMultiplicityMultiplicityExpressionParserRuleCall_1_1_3_0());
+							newCompositeNode(grammarAccess.getEmptySuccessionPrefixAccess().getThenMulti02MultiplicityExpressionParserRuleCall_1_1_3_0());
 						}
-						lv_ThenMultiplicity_7_0=ruleMultiplicityExpression
+						lv_ThenMulti02_7_0=ruleMultiplicityExpression
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getEmptySuccessionPrefixRule());
 							}
-							add(
+							set(
 								$current,
-								"ThenMultiplicity",
-								lv_ThenMultiplicity_7_0,
+								"ThenMulti02",
+								lv_ThenMulti02_7_0,
 								"dut.control.sysmloc.SysMLOC.MultiplicityExpression");
 							afterParserOrEnumRuleCall();
 						}
@@ -15040,17 +15040,17 @@ ruleMultiplicityRange[EObject in_current]  returns [EObject current=in_current]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getMultiplicityRangeAccess().getMultiplicityMultiplicityExpressionParserRuleCall_0_1_0());
+						newCompositeNode(grammarAccess.getMultiplicityRangeAccess().getMulti0MultiplicityExpressionParserRuleCall_0_1_0());
 					}
-					lv_Multiplicity_1_0=ruleMultiplicityExpression
+					lv_Multi0_1_0=ruleMultiplicityExpression
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getMultiplicityRangeRule());
 						}
-						add(
+						set(
 							$current,
-							"Multiplicity",
-							lv_Multiplicity_1_0,
+							"Multi0",
+							lv_Multi0_1_0,
 							"dut.control.sysmloc.SysMLOC.MultiplicityExpression");
 						afterParserOrEnumRuleCall();
 					}
@@ -15070,17 +15070,17 @@ ruleMultiplicityRange[EObject in_current]  returns [EObject current=in_current]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getMultiplicityRangeAccess().getMultiplicityMultiplicityExpressionParserRuleCall_1_1_0());
+						newCompositeNode(grammarAccess.getMultiplicityRangeAccess().getMulti1MultiplicityExpressionParserRuleCall_1_1_0());
 					}
-					lv_Multiplicity_4_0=ruleMultiplicityExpression
+					lv_Multi1_4_0=ruleMultiplicityExpression
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getMultiplicityRangeRule());
 						}
-						add(
+						set(
 							$current,
-							"Multiplicity",
-							lv_Multiplicity_4_0,
+							"Multi1",
+							lv_Multi1_4_0,
 							"dut.control.sysmloc.SysMLOC.MultiplicityExpression");
 						afterParserOrEnumRuleCall();
 					}
@@ -15093,17 +15093,17 @@ ruleMultiplicityRange[EObject in_current]  returns [EObject current=in_current]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getMultiplicityRangeAccess().getMultiplicityMultiplicityExpressionParserRuleCall_1_3_0());
+						newCompositeNode(grammarAccess.getMultiplicityRangeAccess().getMulti02MultiplicityExpressionParserRuleCall_1_3_0());
 					}
-					lv_Multiplicity_6_0=ruleMultiplicityExpression
+					lv_Multi02_6_0=ruleMultiplicityExpression
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getMultiplicityRangeRule());
 						}
-						add(
+						set(
 							$current,
-							"Multiplicity",
-							lv_Multiplicity_6_0,
+							"Multi02",
+							lv_Multi02_6_0,
 							"dut.control.sysmloc.SysMLOC.MultiplicityExpression");
 						afterParserOrEnumRuleCall();
 					}
@@ -16400,7 +16400,7 @@ ruleAcceptParameterPart[EObject in_current]  returns [EObject current=in_current
 				if ($current==null) {
 					$current = createModelElementForParent(grammarAccess.getAcceptParameterPartRule());
 				}
-				add(
+				set(
 					$current,
 					"acceptParameter",
 					lv_acceptParameter_0_0,
@@ -16430,7 +16430,7 @@ ruleItemFeatureParameterPart[EObject in_current]  returns [EObject current=in_cu
 				if ($current==null) {
 					$current = createModelElementForParent(grammarAccess.getItemFeatureParameterPartRule());
 				}
-				add(
+				set(
 					$current,
 					"itemFeatureParameter",
 					lv_itemFeatureParameter_0_0,

@@ -16,10 +16,9 @@
     <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="ISQSpaceTime::TimeValue"/>
     <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="ISQSpaceTime::TimeUnit"/>
     <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="ISQSpaceTime::time"/>
-    <elements xsi:type="sysMLOC:PartUsage" declaredName="universalClock">
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="universalClock" Multi0="1">
       <typings>Clock</typings>
       <subsetting>Clocks::universalClock</subsetting>
-      <Multiplicity>1</Multiplicity>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;     * universalClock is a single Clock that can be used as a default universal time reference.&#xA;&#x9;     */"/>
     </elements>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Clock">
@@ -33,29 +32,24 @@
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="TimeOf">
       <superclassifiers>Clocks::TimeOf</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * TimeOf returns a TimeInstantValue for a given Occurrence relative to a given Clock. This TimeInstantValue is the &#xA;&#x9;&#x9; * time of the start of the Occurrence, which is considered to be synchronized with the snapshot of the Clock with a &#xA;&#x9;&#x9; * currentTime equal to the returned timeInstant.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="o">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="o" Multi0="1">
         <typings>Occurrence</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="clock" isDefault="true" valuePart="localClock">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="clock" Multi0="1" isDefault="true" valuePart="localClock">
         <typings>Clock</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="timeInstant">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="timeInstant" Multi0="1">
         <typings>TimeInstantValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="DurationOf">
       <superclassifiers>Clocks::DurationOf</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * DurationOf returns the duration of a given Occurrence relative to a given Clock, which is equal to the TimeOf &#xA;&#x9;&#x9; * the end snapshot of the Occurrence minus the TimeOf its start snapshot.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="o">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="o" Multi0="1">
         <typings>Occurrence</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="clock" isDefault="true" valuePart="localClock">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="clock" Multi0="1" isDefault="true" valuePart="localClock">
         <typings>Clock</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
       <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="duration">
         <typings>DurationValue</typings>
@@ -64,14 +58,12 @@
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="TimeScale">
       <superclassifiers>IntervalScale</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Generic time scale to express a time instant, including a textual definition of the meaning of zero time instant value&#xA;&#x9;&#x9; * &#xA;&#x9;&#x9; * Attribute definitionalEpoch captures the specification of the time instant with value zero, also known as the (reference) epoch.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>DurationUnit</typings>
         <redefinitions>unit</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="definitionalEpoch">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="definitionalEpoch" Multi0="1">
         <typings>DefinitionalQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="definitionalEpoch">
         <redefinitions>definitionalQuantityValues</redefinitions>
@@ -80,15 +72,13 @@
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="TimeInstantValue">
       <superclassifiers>ScalarQuantityValue</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Representation of a time instant quantity&#xA;&#x9;&#x9; *&#xA;&#x9;&#x9; * Also known as instant (of time), or, point in time.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>TimeScale</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:AttributeUsage" declaredName="timeInstant">

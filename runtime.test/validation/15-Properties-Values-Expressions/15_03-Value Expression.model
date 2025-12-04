@@ -28,9 +28,8 @@
         <typings>LengthValue</typings>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;         * This binds 'outDiameter' to the result of a computed attribute.&#xA;&#x9;         * There is no need to mark it as &quot;derived&quot;.&#xA;&#x9;         */"/>
       </elements>
-      <elements xsi:type="sysMLOC:PartUsage" declaredName="tire">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="tire" Multi0="1">
         <typings>Tire</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Tire">

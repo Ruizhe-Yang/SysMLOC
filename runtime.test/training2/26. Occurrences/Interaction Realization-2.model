@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="'Interaction Realization-2'">
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="'Interaction Example-1'" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="driver_b">
+      <typings>Driver</typings>
+      <elements xsi:type="sysMLOC:PortUsage" declaredName="setSpeedPort">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="setSpeed">
+          <typings>SetSpeed</typings>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:InterfaceUsage" declaredName="driverToVehicleInterface">
+      <connectorPart refElement="driver_b.setSpeedPort"/>
+      <connectorPart refElement="vehicle_b.setSpeedPort"/>
+      <elements xsi:type="sysMLOC:FlowUsage" declaredName="setSpeedFlow">
+        <itemFeatureParameter payloadFeatureElement="SetSpeed"/>
+        <FlowEnd>driver_b.setSpeedPort.setSpeed</FlowEnd>
+        <FlowEnd>vehicle_b.setSpeedPort.setSpeed</FlowEnd>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle_b">
+      <typings>Vehicle</typings>
+      <elements xsi:type="sysMLOC:PortUsage" declaredName="setSpeedPort">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="setSpeed">
+          <typings>SetSpeed</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:BindingConnectorAsUsage">
+        <connectorPart refElement="setSpeedPort"/>
+        <connectorPart refElement="cruiseController_b.setSpeedPort"/>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="cruiseController_b">
+        <typings>CruiseController</typings>
+        <elements xsi:type="sysMLOC:PortUsage" declaredName="setSpeedPort">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="setSpeed">
+            <typings>SetSpeed</typings>
+          </elements>
+        </elements>
+        <elements xsi:type="sysMLOC:PortUsage" declaredName="sensedSpeedPort">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="sensedSpeed">
+            <typings>SensedSpeed</typings>
+          </elements>
+        </elements>
+        <elements xsi:type="sysMLOC:PortUsage" declaredName="fuelCommandPort">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="fuelCommand">
+            <typings>FuelCommand</typings>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:FlowUsage" declaredName="sensedSpeedFlow">
+        <itemFeatureParameter payloadFeatureElement="SensedSpeed"/>
+        <FlowEnd>speedometer_b.sensedSpeedPort.sensedSpeed</FlowEnd>
+        <FlowEnd>cruiseController_b.sensedSpeedPort.sensedSpeed</FlowEnd>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="speedometer_b">
+        <typings>Speedometer</typings>
+        <elements xsi:type="sysMLOC:PortUsage" declaredName="sensedSpeedPort">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="sensedSpeed">
+            <typings>SensedSpeed</typings>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:FlowUsage" declaredName="fuelCommandFlow">
+        <itemFeatureParameter payloadFeatureElement="FuelCommand"/>
+        <FlowEnd>cruiseController_b.fuelCommandPort.fuelCommand</FlowEnd>
+        <FlowEnd>engine_b.fuelCommandPort.fuelCommand</FlowEnd>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="engine_b">
+        <typings>Engine</typings>
+        <elements xsi:type="sysMLOC:PortUsage" declaredName="fuelCommandPort">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="fuelCommand">
+            <typings>FuelCommand</typings>
+          </elements>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:OccurrenceUsage" declaredName="cruiseControlInteraction_b">
+      <typings>CruiseControlInteraction</typings>
+      <elements xsi:type="sysMLOC:PartUsage">
+        <redefinitions>driver</redefinitions>
+        <redefinitions>driver_b</redefinitions>
+        <elements xsi:type="sysMLOC:PortUsage">
+          <redefinitions>setSpeedPort</redefinitions>
+          <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="driver::setSpeedSent"/>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage">
+        <redefinitions>vehicle</redefinitions>
+        <redefinitions>vehicle_b</redefinitions>
+        <elements xsi:type="sysMLOC:PartUsage">
+          <redefinitions>cruiseController</redefinitions>
+          <redefinitions>cruiseController_b</redefinitions>
+          <elements xsi:type="sysMLOC:PortUsage">
+            <redefinitions>setSpeedPort</redefinitions>
+            <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="cruiseController::setSpeedReceived"/>
+          </elements>
+        </elements>
+        <elements xsi:type="sysMLOC:PartUsage">
+          <redefinitions>speedometer</redefinitions>
+          <redefinitions>speedometer_b</redefinitions>
+          <elements xsi:type="sysMLOC:PortUsage">
+            <redefinitions>sensedSpeedPort</redefinitions>
+            <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="speedometer::sensedSpeedSent"/>
+          </elements>
+        </elements>
+        <elements xsi:type="sysMLOC:PartUsage">
+          <redefinitions>engine</redefinitions>
+          <redefinitions>engine_b</redefinitions>
+          <elements xsi:type="sysMLOC:PortUsage">
+            <redefinitions>fuelCommandPort</redefinitions>
+            <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="engine::fuelCommandReceived"/>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:Message" valuePart="driverToVehicleInterface.setSpeedFlow">
+        <redefinitions>setSpeedMessage</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:Message" valuePart="vehicle_b.sensedSpeedFlow">
+        <redefinitions>sensedSpeedMessage</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:Message" valuePart="vehicle_b.fuelCommandFlow">
+        <redefinitions>fuelCommandMessage</redefinitions>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

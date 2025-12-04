@@ -89,9 +89,8 @@
         <elements xsi:type="sysMLOC:SubjectUsage" declaredName="vehicle">
           <typings>Vehicle</typings>
         </elements>
-        <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="powerProfile">
+        <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="powerProfile" Multi0="*">
           <subsetting>ISQ::power</subsetting>
-          <Multiplicity>*</Multiplicity>
         </elements>
         <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="initialPosition">
           <subsetting>ISQ::length</subsetting>
@@ -102,9 +101,8 @@
         <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="deltaT">
           <subsetting>ISQ::time</subsetting>
         </elements>
-        <elements xsi:type="sysMLOC:AttributeUsage" isReturn="true" declaredName="accelerationProfile" isInitial="true" valuePart="()">
+        <elements xsi:type="sysMLOC:AttributeUsage" isReturn="true" declaredName="accelerationProfile" Multi0="*" isInitial="true" valuePart="()">
           <subsetting>ISQ::acceleration</subsetting>
-          <Multiplicity>*</Multiplicity>
         </elements>
         <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="position" isInitial="true" valuePart="initialPosition"/>
         <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="speed" isInitial="true" valuePart="initialSpeed"/>

@@ -21,39 +21,30 @@
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:OccurrenceDefinition" declaredName="PubSubSequence">
-      <elements xsi:type="sysMLOC:PartUsage" declaredName="producer">
-        <Multiplicity>1</Multiplicity>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="producer" Multi0="1">
         <elements xsi:type="sysMLOC:EventOccurrenceUsage" declaredName="publish_source_event"/>
       </elements>
       <elements xsi:type="sysMLOC:Message" declaredName="publish_message">
-        <itemFeatureParameter payloadFeatureElement="Publish">
-          <Multiplicity>1</Multiplicity>
-        </itemFeatureParameter>
+        <itemFeatureParameter Multi0="1" payloadFeatureElement="Publish"/>
         <FlowEnd>producer.publish_source_event</FlowEnd>
         <FlowEnd>server.publish_target_event</FlowEnd>
       </elements>
-      <elements xsi:type="sysMLOC:PartUsage" declaredName="server">
-        <Multiplicity>1</Multiplicity>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="server" Multi0="1">
         <elements xsi:type="sysMLOC:EventOccurrenceUsage" declaredName="subscribe_target_event"/>
         <elements xsi:type="sysMLOC:EventOccurrenceUsage" isThen="true" declaredName="publish_target_event"/>
         <elements xsi:type="sysMLOC:EventOccurrenceUsage" isThen="true" declaredName="deliver_source_event"/>
       </elements>
       <elements xsi:type="sysMLOC:Message" declaredName="subscribe_message">
-        <itemFeatureParameter payloadFeatureElement="Subscribe">
-          <Multiplicity>1</Multiplicity>
-        </itemFeatureParameter>
+        <itemFeatureParameter Multi0="1" payloadFeatureElement="Subscribe"/>
         <FlowEnd>consumer.subscribe_source_event</FlowEnd>
         <FlowEnd>server.subscribe_target_event</FlowEnd>
       </elements>
       <elements xsi:type="sysMLOC:Message" declaredName="deliver_message">
-        <itemFeatureParameter payloadFeatureElement="Deliver">
-          <Multiplicity>1</Multiplicity>
-        </itemFeatureParameter>
+        <itemFeatureParameter Multi0="1" payloadFeatureElement="Deliver"/>
         <FlowEnd>server.deliver_source_event</FlowEnd>
         <FlowEnd>consumer.deliver_target_event</FlowEnd>
       </elements>
-      <elements xsi:type="sysMLOC:PartUsage" declaredName="consumer">
-        <Multiplicity>1</Multiplicity>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="consumer" Multi0="1">
         <elements xsi:type="sysMLOC:EventOccurrenceUsage" declaredName="subscribe_source_event"/>
         <elements xsi:type="sysMLOC:EventOccurrenceUsage" isThen="true" declaredName="deliver_target_event"/>
       </elements>

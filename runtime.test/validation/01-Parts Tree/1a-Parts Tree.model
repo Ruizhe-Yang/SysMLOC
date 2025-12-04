@@ -40,9 +40,8 @@
           <elements xsi:type="sysMLOC:PartUsage" declaredName="frontAxle">
             <typings>Axle</typings>
           </elements>
-          <elements xsi:type="sysMLOC:PartUsage" declaredName="frontWheel" isOrdered="true">
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="frontWheel" Multi0="2" isOrdered="true">
             <typings>Wheel</typings>
-            <Multiplicity>2</Multiplicity>
             <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * 'frontWheel' is a nested part of type 'Wheel' with&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * multiplicity &quot;2&quot;. This means that this axle assembly&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * must have exactly two wheels. However, there is still&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * only one 'frontWheel' part. The part is &quot;ordered&quot;,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * so that the first wheel can be distinguished from the&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * second.&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; */"/>
           </elements>
         </elements>
@@ -51,9 +50,8 @@
           <elements xsi:type="sysMLOC:PartUsage" declaredName="rearAxle">
             <typings>Axle</typings>
           </elements>
-          <elements xsi:type="sysMLOC:PartUsage" declaredName="rearWheel" isOrdered="true">
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="rearWheel" Multi0="2" isOrdered="true">
             <typings>Wheel</typings>
-            <Multiplicity>2</Multiplicity>
           </elements>
         </elements>
       </elements>
@@ -70,9 +68,8 @@
             <typings>FrontAxle</typings>
             <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * The part 'frontAxle' has been modified to have type 'FrontAxle'.&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; */"/>
           </elements>
-          <elements xsi:type="sysMLOC:PartUsage" declaredName="frontWheel" isOrdered="true">
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="frontWheel" Multi0="2" isOrdered="true">
             <typings>Wheel</typings>
-            <Multiplicity>2</Multiplicity>
             <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * The parts 'frontWheel_1' and 'frontWheel_2' have been added&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * as subsets of 'frontWheel'. These are separate parts from&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * 'frontWheel', but essentially provide alternate names for&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * each of the two wheels, as given by their defining expressions.&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; */"/>
           </elements>
           <elements xsi:type="sysMLOC:PartUsage" declaredName="frontWheel_1" valuePart="frontWheel#(1)">
@@ -88,9 +85,8 @@
           <elements xsi:type="sysMLOC:PartUsage" declaredName="rearAxle">
             <typings>Axle</typings>
           </elements>
-          <elements xsi:type="sysMLOC:PartUsage" declaredName="rearWheel" isOrdered="true">
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="rearWheel" Multi0="2" isOrdered="true">
             <typings>Wheel</typings>
-            <Multiplicity>2</Multiplicity>
           </elements>
           <elements xsi:type="sysMLOC:PartUsage" declaredName="rearWheel_1" valuePart="rearWheel#(1)">
             <subsetting>rearWheel</subsetting>

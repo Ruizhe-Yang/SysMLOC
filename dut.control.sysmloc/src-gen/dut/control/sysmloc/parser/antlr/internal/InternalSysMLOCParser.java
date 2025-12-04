@@ -45215,7 +45215,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEmptySuccessionPrefix"
-    // InternalSysMLOC.g:14916:1: ruleEmptySuccessionPrefix[EObject in_current] returns [EObject current=in_current] : ( ( (lv_isThen_0_0= 'then' ) )? ( (otherlv_1= '[' ( (lv_ThenMultiplicity_2_0= ruleMultiplicityExpression ) ) otherlv_3= ']' ) | (otherlv_4= '[' ( (lv_ThenMultiplicity_5_0= ruleMultiplicityExpression ) ) otherlv_6= '..' ( (lv_ThenMultiplicity_7_0= ruleMultiplicityExpression ) ) otherlv_8= ']' ) )? ) ;
+    // InternalSysMLOC.g:14916:1: ruleEmptySuccessionPrefix[EObject in_current] returns [EObject current=in_current] : ( ( (lv_isThen_0_0= 'then' ) )? ( (otherlv_1= '[' ( (lv_ThenMulti0_2_0= ruleMultiplicityExpression ) ) otherlv_3= ']' ) | (otherlv_4= '[' ( (lv_ThenMulti1_5_0= ruleMultiplicityExpression ) ) otherlv_6= '..' ( (lv_ThenMulti02_7_0= ruleMultiplicityExpression ) ) otherlv_8= ']' ) )? ) ;
     public final EObject ruleEmptySuccessionPrefix(EObject in_current) throws RecognitionException {
         EObject current = in_current;
 
@@ -45225,22 +45225,22 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
         Token otherlv_4=null;
         Token otherlv_6=null;
         Token otherlv_8=null;
-        AntlrDatatypeRuleToken lv_ThenMultiplicity_2_0 = null;
+        AntlrDatatypeRuleToken lv_ThenMulti0_2_0 = null;
 
-        AntlrDatatypeRuleToken lv_ThenMultiplicity_5_0 = null;
+        AntlrDatatypeRuleToken lv_ThenMulti1_5_0 = null;
 
-        AntlrDatatypeRuleToken lv_ThenMultiplicity_7_0 = null;
+        AntlrDatatypeRuleToken lv_ThenMulti02_7_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalSysMLOC.g:14922:2: ( ( ( (lv_isThen_0_0= 'then' ) )? ( (otherlv_1= '[' ( (lv_ThenMultiplicity_2_0= ruleMultiplicityExpression ) ) otherlv_3= ']' ) | (otherlv_4= '[' ( (lv_ThenMultiplicity_5_0= ruleMultiplicityExpression ) ) otherlv_6= '..' ( (lv_ThenMultiplicity_7_0= ruleMultiplicityExpression ) ) otherlv_8= ']' ) )? ) )
-            // InternalSysMLOC.g:14923:2: ( ( (lv_isThen_0_0= 'then' ) )? ( (otherlv_1= '[' ( (lv_ThenMultiplicity_2_0= ruleMultiplicityExpression ) ) otherlv_3= ']' ) | (otherlv_4= '[' ( (lv_ThenMultiplicity_5_0= ruleMultiplicityExpression ) ) otherlv_6= '..' ( (lv_ThenMultiplicity_7_0= ruleMultiplicityExpression ) ) otherlv_8= ']' ) )? )
+            // InternalSysMLOC.g:14922:2: ( ( ( (lv_isThen_0_0= 'then' ) )? ( (otherlv_1= '[' ( (lv_ThenMulti0_2_0= ruleMultiplicityExpression ) ) otherlv_3= ']' ) | (otherlv_4= '[' ( (lv_ThenMulti1_5_0= ruleMultiplicityExpression ) ) otherlv_6= '..' ( (lv_ThenMulti02_7_0= ruleMultiplicityExpression ) ) otherlv_8= ']' ) )? ) )
+            // InternalSysMLOC.g:14923:2: ( ( (lv_isThen_0_0= 'then' ) )? ( (otherlv_1= '[' ( (lv_ThenMulti0_2_0= ruleMultiplicityExpression ) ) otherlv_3= ']' ) | (otherlv_4= '[' ( (lv_ThenMulti1_5_0= ruleMultiplicityExpression ) ) otherlv_6= '..' ( (lv_ThenMulti02_7_0= ruleMultiplicityExpression ) ) otherlv_8= ']' ) )? )
             {
-            // InternalSysMLOC.g:14923:2: ( ( (lv_isThen_0_0= 'then' ) )? ( (otherlv_1= '[' ( (lv_ThenMultiplicity_2_0= ruleMultiplicityExpression ) ) otherlv_3= ']' ) | (otherlv_4= '[' ( (lv_ThenMultiplicity_5_0= ruleMultiplicityExpression ) ) otherlv_6= '..' ( (lv_ThenMultiplicity_7_0= ruleMultiplicityExpression ) ) otherlv_8= ']' ) )? )
-            // InternalSysMLOC.g:14924:3: ( (lv_isThen_0_0= 'then' ) )? ( (otherlv_1= '[' ( (lv_ThenMultiplicity_2_0= ruleMultiplicityExpression ) ) otherlv_3= ']' ) | (otherlv_4= '[' ( (lv_ThenMultiplicity_5_0= ruleMultiplicityExpression ) ) otherlv_6= '..' ( (lv_ThenMultiplicity_7_0= ruleMultiplicityExpression ) ) otherlv_8= ']' ) )?
+            // InternalSysMLOC.g:14923:2: ( ( (lv_isThen_0_0= 'then' ) )? ( (otherlv_1= '[' ( (lv_ThenMulti0_2_0= ruleMultiplicityExpression ) ) otherlv_3= ']' ) | (otherlv_4= '[' ( (lv_ThenMulti1_5_0= ruleMultiplicityExpression ) ) otherlv_6= '..' ( (lv_ThenMulti02_7_0= ruleMultiplicityExpression ) ) otherlv_8= ']' ) )? )
+            // InternalSysMLOC.g:14924:3: ( (lv_isThen_0_0= 'then' ) )? ( (otherlv_1= '[' ( (lv_ThenMulti0_2_0= ruleMultiplicityExpression ) ) otherlv_3= ']' ) | (otherlv_4= '[' ( (lv_ThenMulti1_5_0= ruleMultiplicityExpression ) ) otherlv_6= '..' ( (lv_ThenMulti02_7_0= ruleMultiplicityExpression ) ) otherlv_8= ']' ) )?
             {
             // InternalSysMLOC.g:14924:3: ( (lv_isThen_0_0= 'then' ) )?
             int alt420=2;
@@ -45275,15 +45275,15 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSysMLOC.g:14938:3: ( (otherlv_1= '[' ( (lv_ThenMultiplicity_2_0= ruleMultiplicityExpression ) ) otherlv_3= ']' ) | (otherlv_4= '[' ( (lv_ThenMultiplicity_5_0= ruleMultiplicityExpression ) ) otherlv_6= '..' ( (lv_ThenMultiplicity_7_0= ruleMultiplicityExpression ) ) otherlv_8= ']' ) )?
+            // InternalSysMLOC.g:14938:3: ( (otherlv_1= '[' ( (lv_ThenMulti0_2_0= ruleMultiplicityExpression ) ) otherlv_3= ']' ) | (otherlv_4= '[' ( (lv_ThenMulti1_5_0= ruleMultiplicityExpression ) ) otherlv_6= '..' ( (lv_ThenMulti02_7_0= ruleMultiplicityExpression ) ) otherlv_8= ']' ) )?
             int alt421=3;
             alt421 = dfa421.predict(input);
             switch (alt421) {
                 case 1 :
-                    // InternalSysMLOC.g:14939:4: (otherlv_1= '[' ( (lv_ThenMultiplicity_2_0= ruleMultiplicityExpression ) ) otherlv_3= ']' )
+                    // InternalSysMLOC.g:14939:4: (otherlv_1= '[' ( (lv_ThenMulti0_2_0= ruleMultiplicityExpression ) ) otherlv_3= ']' )
                     {
-                    // InternalSysMLOC.g:14939:4: (otherlv_1= '[' ( (lv_ThenMultiplicity_2_0= ruleMultiplicityExpression ) ) otherlv_3= ']' )
-                    // InternalSysMLOC.g:14940:5: otherlv_1= '[' ( (lv_ThenMultiplicity_2_0= ruleMultiplicityExpression ) ) otherlv_3= ']'
+                    // InternalSysMLOC.g:14939:4: (otherlv_1= '[' ( (lv_ThenMulti0_2_0= ruleMultiplicityExpression ) ) otherlv_3= ']' )
+                    // InternalSysMLOC.g:14940:5: otherlv_1= '[' ( (lv_ThenMulti0_2_0= ruleMultiplicityExpression ) ) otherlv_3= ']'
                     {
                     otherlv_1=(Token)match(input,23,FOLLOW_234); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -45291,19 +45291,19 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                       					newLeafNode(otherlv_1, grammarAccess.getEmptySuccessionPrefixAccess().getLeftSquareBracketKeyword_1_0_0());
                       				
                     }
-                    // InternalSysMLOC.g:14944:5: ( (lv_ThenMultiplicity_2_0= ruleMultiplicityExpression ) )
-                    // InternalSysMLOC.g:14945:6: (lv_ThenMultiplicity_2_0= ruleMultiplicityExpression )
+                    // InternalSysMLOC.g:14944:5: ( (lv_ThenMulti0_2_0= ruleMultiplicityExpression ) )
+                    // InternalSysMLOC.g:14945:6: (lv_ThenMulti0_2_0= ruleMultiplicityExpression )
                     {
-                    // InternalSysMLOC.g:14945:6: (lv_ThenMultiplicity_2_0= ruleMultiplicityExpression )
-                    // InternalSysMLOC.g:14946:7: lv_ThenMultiplicity_2_0= ruleMultiplicityExpression
+                    // InternalSysMLOC.g:14945:6: (lv_ThenMulti0_2_0= ruleMultiplicityExpression )
+                    // InternalSysMLOC.g:14946:7: lv_ThenMulti0_2_0= ruleMultiplicityExpression
                     {
                     if ( state.backtracking==0 ) {
 
-                      							newCompositeNode(grammarAccess.getEmptySuccessionPrefixAccess().getThenMultiplicityMultiplicityExpressionParserRuleCall_1_0_1_0());
+                      							newCompositeNode(grammarAccess.getEmptySuccessionPrefixAccess().getThenMulti0MultiplicityExpressionParserRuleCall_1_0_1_0());
                       						
                     }
                     pushFollow(FOLLOW_15);
-                    lv_ThenMultiplicity_2_0=ruleMultiplicityExpression();
+                    lv_ThenMulti0_2_0=ruleMultiplicityExpression();
 
                     state._fsp--;
                     if (state.failed) return current;
@@ -45312,10 +45312,10 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                       							if (current==null) {
                       								current = createModelElementForParent(grammarAccess.getEmptySuccessionPrefixRule());
                       							}
-                      							add(
+                      							set(
                       								current,
-                      								"ThenMultiplicity",
-                      								lv_ThenMultiplicity_2_0,
+                      								"ThenMulti0",
+                      								lv_ThenMulti0_2_0,
                       								"dut.control.sysmloc.SysMLOC.MultiplicityExpression");
                       							afterParserOrEnumRuleCall();
                       						
@@ -45339,10 +45339,10 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSysMLOC.g:14969:4: (otherlv_4= '[' ( (lv_ThenMultiplicity_5_0= ruleMultiplicityExpression ) ) otherlv_6= '..' ( (lv_ThenMultiplicity_7_0= ruleMultiplicityExpression ) ) otherlv_8= ']' )
+                    // InternalSysMLOC.g:14969:4: (otherlv_4= '[' ( (lv_ThenMulti1_5_0= ruleMultiplicityExpression ) ) otherlv_6= '..' ( (lv_ThenMulti02_7_0= ruleMultiplicityExpression ) ) otherlv_8= ']' )
                     {
-                    // InternalSysMLOC.g:14969:4: (otherlv_4= '[' ( (lv_ThenMultiplicity_5_0= ruleMultiplicityExpression ) ) otherlv_6= '..' ( (lv_ThenMultiplicity_7_0= ruleMultiplicityExpression ) ) otherlv_8= ']' )
-                    // InternalSysMLOC.g:14970:5: otherlv_4= '[' ( (lv_ThenMultiplicity_5_0= ruleMultiplicityExpression ) ) otherlv_6= '..' ( (lv_ThenMultiplicity_7_0= ruleMultiplicityExpression ) ) otherlv_8= ']'
+                    // InternalSysMLOC.g:14969:4: (otherlv_4= '[' ( (lv_ThenMulti1_5_0= ruleMultiplicityExpression ) ) otherlv_6= '..' ( (lv_ThenMulti02_7_0= ruleMultiplicityExpression ) ) otherlv_8= ']' )
+                    // InternalSysMLOC.g:14970:5: otherlv_4= '[' ( (lv_ThenMulti1_5_0= ruleMultiplicityExpression ) ) otherlv_6= '..' ( (lv_ThenMulti02_7_0= ruleMultiplicityExpression ) ) otherlv_8= ']'
                     {
                     otherlv_4=(Token)match(input,23,FOLLOW_234); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -45350,19 +45350,19 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                       					newLeafNode(otherlv_4, grammarAccess.getEmptySuccessionPrefixAccess().getLeftSquareBracketKeyword_1_1_0());
                       				
                     }
-                    // InternalSysMLOC.g:14974:5: ( (lv_ThenMultiplicity_5_0= ruleMultiplicityExpression ) )
-                    // InternalSysMLOC.g:14975:6: (lv_ThenMultiplicity_5_0= ruleMultiplicityExpression )
+                    // InternalSysMLOC.g:14974:5: ( (lv_ThenMulti1_5_0= ruleMultiplicityExpression ) )
+                    // InternalSysMLOC.g:14975:6: (lv_ThenMulti1_5_0= ruleMultiplicityExpression )
                     {
-                    // InternalSysMLOC.g:14975:6: (lv_ThenMultiplicity_5_0= ruleMultiplicityExpression )
-                    // InternalSysMLOC.g:14976:7: lv_ThenMultiplicity_5_0= ruleMultiplicityExpression
+                    // InternalSysMLOC.g:14975:6: (lv_ThenMulti1_5_0= ruleMultiplicityExpression )
+                    // InternalSysMLOC.g:14976:7: lv_ThenMulti1_5_0= ruleMultiplicityExpression
                     {
                     if ( state.backtracking==0 ) {
 
-                      							newCompositeNode(grammarAccess.getEmptySuccessionPrefixAccess().getThenMultiplicityMultiplicityExpressionParserRuleCall_1_1_1_0());
+                      							newCompositeNode(grammarAccess.getEmptySuccessionPrefixAccess().getThenMulti1MultiplicityExpressionParserRuleCall_1_1_1_0());
                       						
                     }
                     pushFollow(FOLLOW_235);
-                    lv_ThenMultiplicity_5_0=ruleMultiplicityExpression();
+                    lv_ThenMulti1_5_0=ruleMultiplicityExpression();
 
                     state._fsp--;
                     if (state.failed) return current;
@@ -45371,10 +45371,10 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                       							if (current==null) {
                       								current = createModelElementForParent(grammarAccess.getEmptySuccessionPrefixRule());
                       							}
-                      							add(
+                      							set(
                       								current,
-                      								"ThenMultiplicity",
-                      								lv_ThenMultiplicity_5_0,
+                      								"ThenMulti1",
+                      								lv_ThenMulti1_5_0,
                       								"dut.control.sysmloc.SysMLOC.MultiplicityExpression");
                       							afterParserOrEnumRuleCall();
                       						
@@ -45391,19 +45391,19 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                       					newLeafNode(otherlv_6, grammarAccess.getEmptySuccessionPrefixAccess().getFullStopFullStopKeyword_1_1_2());
                       				
                     }
-                    // InternalSysMLOC.g:14997:5: ( (lv_ThenMultiplicity_7_0= ruleMultiplicityExpression ) )
-                    // InternalSysMLOC.g:14998:6: (lv_ThenMultiplicity_7_0= ruleMultiplicityExpression )
+                    // InternalSysMLOC.g:14997:5: ( (lv_ThenMulti02_7_0= ruleMultiplicityExpression ) )
+                    // InternalSysMLOC.g:14998:6: (lv_ThenMulti02_7_0= ruleMultiplicityExpression )
                     {
-                    // InternalSysMLOC.g:14998:6: (lv_ThenMultiplicity_7_0= ruleMultiplicityExpression )
-                    // InternalSysMLOC.g:14999:7: lv_ThenMultiplicity_7_0= ruleMultiplicityExpression
+                    // InternalSysMLOC.g:14998:6: (lv_ThenMulti02_7_0= ruleMultiplicityExpression )
+                    // InternalSysMLOC.g:14999:7: lv_ThenMulti02_7_0= ruleMultiplicityExpression
                     {
                     if ( state.backtracking==0 ) {
 
-                      							newCompositeNode(grammarAccess.getEmptySuccessionPrefixAccess().getThenMultiplicityMultiplicityExpressionParserRuleCall_1_1_3_0());
+                      							newCompositeNode(grammarAccess.getEmptySuccessionPrefixAccess().getThenMulti02MultiplicityExpressionParserRuleCall_1_1_3_0());
                       						
                     }
                     pushFollow(FOLLOW_15);
-                    lv_ThenMultiplicity_7_0=ruleMultiplicityExpression();
+                    lv_ThenMulti02_7_0=ruleMultiplicityExpression();
 
                     state._fsp--;
                     if (state.failed) return current;
@@ -45412,10 +45412,10 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                       							if (current==null) {
                       								current = createModelElementForParent(grammarAccess.getEmptySuccessionPrefixRule());
                       							}
-                      							add(
+                      							set(
                       								current,
-                      								"ThenMultiplicity",
-                      								lv_ThenMultiplicity_7_0,
+                      								"ThenMulti02",
+                      								lv_ThenMulti02_7_0,
                       								"dut.control.sysmloc.SysMLOC.MultiplicityExpression");
                       							afterParserOrEnumRuleCall();
                       						
@@ -45466,7 +45466,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMultiplicityRange"
-    // InternalSysMLOC.g:15027:1: ruleMultiplicityRange[EObject in_current] returns [EObject current=in_current] : ( (otherlv_0= '[' ( (lv_Multiplicity_1_0= ruleMultiplicityExpression ) ) otherlv_2= ']' ) | (otherlv_3= '[' ( (lv_Multiplicity_4_0= ruleMultiplicityExpression ) ) otherlv_5= '..' ( (lv_Multiplicity_6_0= ruleMultiplicityExpression ) ) otherlv_7= ']' ) ) ;
+    // InternalSysMLOC.g:15027:1: ruleMultiplicityRange[EObject in_current] returns [EObject current=in_current] : ( (otherlv_0= '[' ( (lv_Multi0_1_0= ruleMultiplicityExpression ) ) otherlv_2= ']' ) | (otherlv_3= '[' ( (lv_Multi1_4_0= ruleMultiplicityExpression ) ) otherlv_5= '..' ( (lv_Multi02_6_0= ruleMultiplicityExpression ) ) otherlv_7= ']' ) ) ;
     public final EObject ruleMultiplicityRange(EObject in_current) throws RecognitionException {
         EObject current = in_current;
 
@@ -45475,29 +45475,29 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
         Token otherlv_3=null;
         Token otherlv_5=null;
         Token otherlv_7=null;
-        AntlrDatatypeRuleToken lv_Multiplicity_1_0 = null;
+        AntlrDatatypeRuleToken lv_Multi0_1_0 = null;
 
-        AntlrDatatypeRuleToken lv_Multiplicity_4_0 = null;
+        AntlrDatatypeRuleToken lv_Multi1_4_0 = null;
 
-        AntlrDatatypeRuleToken lv_Multiplicity_6_0 = null;
+        AntlrDatatypeRuleToken lv_Multi02_6_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalSysMLOC.g:15033:2: ( ( (otherlv_0= '[' ( (lv_Multiplicity_1_0= ruleMultiplicityExpression ) ) otherlv_2= ']' ) | (otherlv_3= '[' ( (lv_Multiplicity_4_0= ruleMultiplicityExpression ) ) otherlv_5= '..' ( (lv_Multiplicity_6_0= ruleMultiplicityExpression ) ) otherlv_7= ']' ) ) )
-            // InternalSysMLOC.g:15034:2: ( (otherlv_0= '[' ( (lv_Multiplicity_1_0= ruleMultiplicityExpression ) ) otherlv_2= ']' ) | (otherlv_3= '[' ( (lv_Multiplicity_4_0= ruleMultiplicityExpression ) ) otherlv_5= '..' ( (lv_Multiplicity_6_0= ruleMultiplicityExpression ) ) otherlv_7= ']' ) )
+            // InternalSysMLOC.g:15033:2: ( ( (otherlv_0= '[' ( (lv_Multi0_1_0= ruleMultiplicityExpression ) ) otherlv_2= ']' ) | (otherlv_3= '[' ( (lv_Multi1_4_0= ruleMultiplicityExpression ) ) otherlv_5= '..' ( (lv_Multi02_6_0= ruleMultiplicityExpression ) ) otherlv_7= ']' ) ) )
+            // InternalSysMLOC.g:15034:2: ( (otherlv_0= '[' ( (lv_Multi0_1_0= ruleMultiplicityExpression ) ) otherlv_2= ']' ) | (otherlv_3= '[' ( (lv_Multi1_4_0= ruleMultiplicityExpression ) ) otherlv_5= '..' ( (lv_Multi02_6_0= ruleMultiplicityExpression ) ) otherlv_7= ']' ) )
             {
-            // InternalSysMLOC.g:15034:2: ( (otherlv_0= '[' ( (lv_Multiplicity_1_0= ruleMultiplicityExpression ) ) otherlv_2= ']' ) | (otherlv_3= '[' ( (lv_Multiplicity_4_0= ruleMultiplicityExpression ) ) otherlv_5= '..' ( (lv_Multiplicity_6_0= ruleMultiplicityExpression ) ) otherlv_7= ']' ) )
+            // InternalSysMLOC.g:15034:2: ( (otherlv_0= '[' ( (lv_Multi0_1_0= ruleMultiplicityExpression ) ) otherlv_2= ']' ) | (otherlv_3= '[' ( (lv_Multi1_4_0= ruleMultiplicityExpression ) ) otherlv_5= '..' ( (lv_Multi02_6_0= ruleMultiplicityExpression ) ) otherlv_7= ']' ) )
             int alt422=2;
             alt422 = dfa422.predict(input);
             switch (alt422) {
                 case 1 :
-                    // InternalSysMLOC.g:15035:3: (otherlv_0= '[' ( (lv_Multiplicity_1_0= ruleMultiplicityExpression ) ) otherlv_2= ']' )
+                    // InternalSysMLOC.g:15035:3: (otherlv_0= '[' ( (lv_Multi0_1_0= ruleMultiplicityExpression ) ) otherlv_2= ']' )
                     {
-                    // InternalSysMLOC.g:15035:3: (otherlv_0= '[' ( (lv_Multiplicity_1_0= ruleMultiplicityExpression ) ) otherlv_2= ']' )
-                    // InternalSysMLOC.g:15036:4: otherlv_0= '[' ( (lv_Multiplicity_1_0= ruleMultiplicityExpression ) ) otherlv_2= ']'
+                    // InternalSysMLOC.g:15035:3: (otherlv_0= '[' ( (lv_Multi0_1_0= ruleMultiplicityExpression ) ) otherlv_2= ']' )
+                    // InternalSysMLOC.g:15036:4: otherlv_0= '[' ( (lv_Multi0_1_0= ruleMultiplicityExpression ) ) otherlv_2= ']'
                     {
                     otherlv_0=(Token)match(input,23,FOLLOW_234); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -45505,19 +45505,19 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                       				newLeafNode(otherlv_0, grammarAccess.getMultiplicityRangeAccess().getLeftSquareBracketKeyword_0_0());
                       			
                     }
-                    // InternalSysMLOC.g:15040:4: ( (lv_Multiplicity_1_0= ruleMultiplicityExpression ) )
-                    // InternalSysMLOC.g:15041:5: (lv_Multiplicity_1_0= ruleMultiplicityExpression )
+                    // InternalSysMLOC.g:15040:4: ( (lv_Multi0_1_0= ruleMultiplicityExpression ) )
+                    // InternalSysMLOC.g:15041:5: (lv_Multi0_1_0= ruleMultiplicityExpression )
                     {
-                    // InternalSysMLOC.g:15041:5: (lv_Multiplicity_1_0= ruleMultiplicityExpression )
-                    // InternalSysMLOC.g:15042:6: lv_Multiplicity_1_0= ruleMultiplicityExpression
+                    // InternalSysMLOC.g:15041:5: (lv_Multi0_1_0= ruleMultiplicityExpression )
+                    // InternalSysMLOC.g:15042:6: lv_Multi0_1_0= ruleMultiplicityExpression
                     {
                     if ( state.backtracking==0 ) {
 
-                      						newCompositeNode(grammarAccess.getMultiplicityRangeAccess().getMultiplicityMultiplicityExpressionParserRuleCall_0_1_0());
+                      						newCompositeNode(grammarAccess.getMultiplicityRangeAccess().getMulti0MultiplicityExpressionParserRuleCall_0_1_0());
                       					
                     }
                     pushFollow(FOLLOW_15);
-                    lv_Multiplicity_1_0=ruleMultiplicityExpression();
+                    lv_Multi0_1_0=ruleMultiplicityExpression();
 
                     state._fsp--;
                     if (state.failed) return current;
@@ -45526,10 +45526,10 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                       						if (current==null) {
                       							current = createModelElementForParent(grammarAccess.getMultiplicityRangeRule());
                       						}
-                      						add(
+                      						set(
                       							current,
-                      							"Multiplicity",
-                      							lv_Multiplicity_1_0,
+                      							"Multi0",
+                      							lv_Multi0_1_0,
                       							"dut.control.sysmloc.SysMLOC.MultiplicityExpression");
                       						afterParserOrEnumRuleCall();
                       					
@@ -45553,10 +45553,10 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSysMLOC.g:15065:3: (otherlv_3= '[' ( (lv_Multiplicity_4_0= ruleMultiplicityExpression ) ) otherlv_5= '..' ( (lv_Multiplicity_6_0= ruleMultiplicityExpression ) ) otherlv_7= ']' )
+                    // InternalSysMLOC.g:15065:3: (otherlv_3= '[' ( (lv_Multi1_4_0= ruleMultiplicityExpression ) ) otherlv_5= '..' ( (lv_Multi02_6_0= ruleMultiplicityExpression ) ) otherlv_7= ']' )
                     {
-                    // InternalSysMLOC.g:15065:3: (otherlv_3= '[' ( (lv_Multiplicity_4_0= ruleMultiplicityExpression ) ) otherlv_5= '..' ( (lv_Multiplicity_6_0= ruleMultiplicityExpression ) ) otherlv_7= ']' )
-                    // InternalSysMLOC.g:15066:4: otherlv_3= '[' ( (lv_Multiplicity_4_0= ruleMultiplicityExpression ) ) otherlv_5= '..' ( (lv_Multiplicity_6_0= ruleMultiplicityExpression ) ) otherlv_7= ']'
+                    // InternalSysMLOC.g:15065:3: (otherlv_3= '[' ( (lv_Multi1_4_0= ruleMultiplicityExpression ) ) otherlv_5= '..' ( (lv_Multi02_6_0= ruleMultiplicityExpression ) ) otherlv_7= ']' )
+                    // InternalSysMLOC.g:15066:4: otherlv_3= '[' ( (lv_Multi1_4_0= ruleMultiplicityExpression ) ) otherlv_5= '..' ( (lv_Multi02_6_0= ruleMultiplicityExpression ) ) otherlv_7= ']'
                     {
                     otherlv_3=(Token)match(input,23,FOLLOW_234); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -45564,19 +45564,19 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                       				newLeafNode(otherlv_3, grammarAccess.getMultiplicityRangeAccess().getLeftSquareBracketKeyword_1_0());
                       			
                     }
-                    // InternalSysMLOC.g:15070:4: ( (lv_Multiplicity_4_0= ruleMultiplicityExpression ) )
-                    // InternalSysMLOC.g:15071:5: (lv_Multiplicity_4_0= ruleMultiplicityExpression )
+                    // InternalSysMLOC.g:15070:4: ( (lv_Multi1_4_0= ruleMultiplicityExpression ) )
+                    // InternalSysMLOC.g:15071:5: (lv_Multi1_4_0= ruleMultiplicityExpression )
                     {
-                    // InternalSysMLOC.g:15071:5: (lv_Multiplicity_4_0= ruleMultiplicityExpression )
-                    // InternalSysMLOC.g:15072:6: lv_Multiplicity_4_0= ruleMultiplicityExpression
+                    // InternalSysMLOC.g:15071:5: (lv_Multi1_4_0= ruleMultiplicityExpression )
+                    // InternalSysMLOC.g:15072:6: lv_Multi1_4_0= ruleMultiplicityExpression
                     {
                     if ( state.backtracking==0 ) {
 
-                      						newCompositeNode(grammarAccess.getMultiplicityRangeAccess().getMultiplicityMultiplicityExpressionParserRuleCall_1_1_0());
+                      						newCompositeNode(grammarAccess.getMultiplicityRangeAccess().getMulti1MultiplicityExpressionParserRuleCall_1_1_0());
                       					
                     }
                     pushFollow(FOLLOW_235);
-                    lv_Multiplicity_4_0=ruleMultiplicityExpression();
+                    lv_Multi1_4_0=ruleMultiplicityExpression();
 
                     state._fsp--;
                     if (state.failed) return current;
@@ -45585,10 +45585,10 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                       						if (current==null) {
                       							current = createModelElementForParent(grammarAccess.getMultiplicityRangeRule());
                       						}
-                      						add(
+                      						set(
                       							current,
-                      							"Multiplicity",
-                      							lv_Multiplicity_4_0,
+                      							"Multi1",
+                      							lv_Multi1_4_0,
                       							"dut.control.sysmloc.SysMLOC.MultiplicityExpression");
                       						afterParserOrEnumRuleCall();
                       					
@@ -45605,19 +45605,19 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                       				newLeafNode(otherlv_5, grammarAccess.getMultiplicityRangeAccess().getFullStopFullStopKeyword_1_2());
                       			
                     }
-                    // InternalSysMLOC.g:15093:4: ( (lv_Multiplicity_6_0= ruleMultiplicityExpression ) )
-                    // InternalSysMLOC.g:15094:5: (lv_Multiplicity_6_0= ruleMultiplicityExpression )
+                    // InternalSysMLOC.g:15093:4: ( (lv_Multi02_6_0= ruleMultiplicityExpression ) )
+                    // InternalSysMLOC.g:15094:5: (lv_Multi02_6_0= ruleMultiplicityExpression )
                     {
-                    // InternalSysMLOC.g:15094:5: (lv_Multiplicity_6_0= ruleMultiplicityExpression )
-                    // InternalSysMLOC.g:15095:6: lv_Multiplicity_6_0= ruleMultiplicityExpression
+                    // InternalSysMLOC.g:15094:5: (lv_Multi02_6_0= ruleMultiplicityExpression )
+                    // InternalSysMLOC.g:15095:6: lv_Multi02_6_0= ruleMultiplicityExpression
                     {
                     if ( state.backtracking==0 ) {
 
-                      						newCompositeNode(grammarAccess.getMultiplicityRangeAccess().getMultiplicityMultiplicityExpressionParserRuleCall_1_3_0());
+                      						newCompositeNode(grammarAccess.getMultiplicityRangeAccess().getMulti02MultiplicityExpressionParserRuleCall_1_3_0());
                       					
                     }
                     pushFollow(FOLLOW_15);
-                    lv_Multiplicity_6_0=ruleMultiplicityExpression();
+                    lv_Multi02_6_0=ruleMultiplicityExpression();
 
                     state._fsp--;
                     if (state.failed) return current;
@@ -45626,10 +45626,10 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
                       						if (current==null) {
                       							current = createModelElementForParent(grammarAccess.getMultiplicityRangeRule());
                       						}
-                      						add(
+                      						set(
                       							current,
-                      							"Multiplicity",
-                      							lv_Multiplicity_6_0,
+                      							"Multi02",
+                      							lv_Multi02_6_0,
                       							"dut.control.sysmloc.SysMLOC.MultiplicityExpression");
                       						afterParserOrEnumRuleCall();
                       					
@@ -49312,7 +49312,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
               				if (current==null) {
               					current = createModelElementForParent(grammarAccess.getAcceptParameterPartRule());
               				}
-              				add(
+              				set(
               					current,
               					"acceptParameter",
               					lv_acceptParameter_0_0,
@@ -49383,7 +49383,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
               				if (current==null) {
               					current = createModelElementForParent(grammarAccess.getItemFeatureParameterPartRule());
               				}
-              				add(
+              				set(
               					current,
               					"itemFeatureParameter",
               					lv_itemFeatureParameter_0_0,
@@ -80550,7 +80550,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
             this.transition = dfa_151;
         }
         public String getDescription() {
-            return "14938:3: ( (otherlv_1= '[' ( (lv_ThenMultiplicity_2_0= ruleMultiplicityExpression ) ) otherlv_3= ']' ) | (otherlv_4= '[' ( (lv_ThenMultiplicity_5_0= ruleMultiplicityExpression ) ) otherlv_6= '..' ( (lv_ThenMultiplicity_7_0= ruleMultiplicityExpression ) ) otherlv_8= ']' ) )?";
+            return "14938:3: ( (otherlv_1= '[' ( (lv_ThenMulti0_2_0= ruleMultiplicityExpression ) ) otherlv_3= ']' ) | (otherlv_4= '[' ( (lv_ThenMulti1_5_0= ruleMultiplicityExpression ) ) otherlv_6= '..' ( (lv_ThenMulti02_7_0= ruleMultiplicityExpression ) ) otherlv_8= ']' ) )?";
         }
     }
     static final String dfa_152s = "\20\uffff";
@@ -80598,7 +80598,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
             this.transition = dfa_157;
         }
         public String getDescription() {
-            return "15034:2: ( (otherlv_0= '[' ( (lv_Multiplicity_1_0= ruleMultiplicityExpression ) ) otherlv_2= ']' ) | (otherlv_3= '[' ( (lv_Multiplicity_4_0= ruleMultiplicityExpression ) ) otherlv_5= '..' ( (lv_Multiplicity_6_0= ruleMultiplicityExpression ) ) otherlv_7= ']' ) )";
+            return "15034:2: ( (otherlv_0= '[' ( (lv_Multi0_1_0= ruleMultiplicityExpression ) ) otherlv_2= ']' ) | (otherlv_3= '[' ( (lv_Multi1_4_0= ruleMultiplicityExpression ) ) otherlv_5= '..' ( (lv_Multi02_6_0= ruleMultiplicityExpression ) ) otherlv_7= ']' ) )";
         }
     }
     static final String dfa_158s = "\41\uffff";

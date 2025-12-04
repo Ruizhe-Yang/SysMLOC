@@ -12,10 +12,8 @@
       <elements xsi:type="sysMLOC:ActorUsage" declaredName="driver">
         <typings>Person</typings>
       </elements>
-      <elements xsi:type="sysMLOC:ActorUsage" declaredName="passengers">
+      <elements xsi:type="sysMLOC:ActorUsage" declaredName="passengers" Multi1="0" Multi02="4">
         <typings>Person</typings>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>4</Multiplicity>
       </elements>
       <elements xsi:type="sysMLOC:ActorUsage" declaredName="environment">
         <typings>Environment</typings>
@@ -31,10 +29,8 @@
       <elements xsi:type="sysMLOC:ActorUsage" declaredName="driver">
         <typings>Person</typings>
       </elements>
-      <elements xsi:type="sysMLOC:ActorUsage" declaredName="passengers">
+      <elements xsi:type="sysMLOC:ActorUsage" declaredName="passengers" Multi1="0" Multi02="4">
         <typings>Person</typings>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>4</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:UseCaseDefinition" declaredName="'Exit Vehicle'">
@@ -44,10 +40,8 @@
       <elements xsi:type="sysMLOC:ActorUsage" declaredName="driver">
         <typings>Person</typings>
       </elements>
-      <elements xsi:type="sysMLOC:ActorUsage" declaredName="passengers">
+      <elements xsi:type="sysMLOC:ActorUsage" declaredName="passengers" Multi1="0" Multi02="4">
         <typings>Person</typings>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>4</Multiplicity>
       </elements>
     </elements>
   </elements>

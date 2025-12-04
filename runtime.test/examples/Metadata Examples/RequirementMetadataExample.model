@@ -6,9 +6,8 @@
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="RiskMetadata" isNamespace="true"/>
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="RiskLevelEnum" isNamespace="true"/>
     <elements xsi:type="sysMLOC:RequirementDefinition" declaredName="Goal"/>
-    <elements xsi:type="sysMLOC:RequirementUsage" declaredName="goals" isNonunique="true">
+    <elements xsi:type="sysMLOC:RequirementUsage" declaredName="goals" Multi0="*" isNonunique="true">
       <typings>Goal</typings>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="goal">
       <superclassifiers>SemanticMetadata</superclassifiers>

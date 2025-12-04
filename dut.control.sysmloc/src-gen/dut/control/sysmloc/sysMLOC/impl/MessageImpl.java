@@ -61,7 +61,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.MessageImpl#isIsThen <em>Is Then</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.MessageImpl#getThenMultiplicity <em>Then Multiplicity</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.MessageImpl#getThenMulti0 <em>Then Multi0</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.MessageImpl#getThenMulti1 <em>Then Multi1</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.MessageImpl#getThenMulti02 <em>Then Multi02</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.MessageImpl#getVisibility <em>Visibility</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.MessageImpl#isIsVariant <em>Is Variant</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.MessageImpl#isIsReturn <em>Is Return</em>}</li>
@@ -82,7 +84,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.MessageImpl#getReferences <em>References</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.MessageImpl#getCrosses <em>Crosses</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.MessageImpl#getRedefinitions <em>Redefinitions</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.MessageImpl#getMultiplicity <em>Multiplicity</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.MessageImpl#getMulti0 <em>Multi0</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.MessageImpl#getMulti1 <em>Multi1</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.MessageImpl#getMulti02 <em>Multi02</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.MessageImpl#isIsOrdered <em>Is Ordered</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.MessageImpl#isIsNonunique <em>Is Nonunique</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.MessageImpl#isIsInitial <em>Is Initial</em>}</li>
@@ -118,14 +122,64 @@ public class MessageImpl extends StructureUsageElementsImpl implements Message
   protected boolean isThen = IS_THEN_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getThenMultiplicity() <em>Then Multiplicity</em>}' attribute list.
+   * The default value of the '{@link #getThenMulti0() <em>Then Multi0</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getThenMultiplicity()
+   * @see #getThenMulti0()
    * @generated
    * @ordered
    */
-  protected EList<String> thenMultiplicity;
+  protected static final String THEN_MULTI0_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getThenMulti0() <em>Then Multi0</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getThenMulti0()
+   * @generated
+   * @ordered
+   */
+  protected String thenMulti0 = THEN_MULTI0_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getThenMulti1() <em>Then Multi1</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getThenMulti1()
+   * @generated
+   * @ordered
+   */
+  protected static final String THEN_MULTI1_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getThenMulti1() <em>Then Multi1</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getThenMulti1()
+   * @generated
+   * @ordered
+   */
+  protected String thenMulti1 = THEN_MULTI1_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getThenMulti02() <em>Then Multi02</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getThenMulti02()
+   * @generated
+   * @ordered
+   */
+  protected static final String THEN_MULTI02_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getThenMulti02() <em>Then Multi02</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getThenMulti02()
+   * @generated
+   * @ordered
+   */
+  protected String thenMulti02 = THEN_MULTI02_EDEFAULT;
 
   /**
    * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
@@ -468,14 +522,64 @@ public class MessageImpl extends StructureUsageElementsImpl implements Message
   protected EList<String> redefinitions;
 
   /**
-   * The cached value of the '{@link #getMultiplicity() <em>Multiplicity</em>}' attribute list.
+   * The default value of the '{@link #getMulti0() <em>Multi0</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMultiplicity()
+   * @see #getMulti0()
    * @generated
    * @ordered
    */
-  protected EList<String> multiplicity;
+  protected static final String MULTI0_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getMulti0() <em>Multi0</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMulti0()
+   * @generated
+   * @ordered
+   */
+  protected String multi0 = MULTI0_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getMulti1() <em>Multi1</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMulti1()
+   * @generated
+   * @ordered
+   */
+  protected static final String MULTI1_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getMulti1() <em>Multi1</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMulti1()
+   * @generated
+   * @ordered
+   */
+  protected String multi1 = MULTI1_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getMulti02() <em>Multi02</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMulti02()
+   * @generated
+   * @ordered
+   */
+  protected static final String MULTI02_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getMulti02() <em>Multi02</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMulti02()
+   * @generated
+   * @ordered
+   */
+  protected String multi02 = MULTI02_EDEFAULT;
 
   /**
    * The default value of the '{@link #isIsOrdered() <em>Is Ordered</em>}' attribute.
@@ -578,14 +682,14 @@ public class MessageImpl extends StructureUsageElementsImpl implements Message
   protected String valuePart = VALUE_PART_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getItemFeatureParameter() <em>Item Feature Parameter</em>}' containment reference list.
+   * The cached value of the '{@link #getItemFeatureParameter() <em>Item Feature Parameter</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getItemFeatureParameter()
    * @generated
    * @ordered
    */
-  protected EList<ItemFeatureParameter> itemFeatureParameter;
+  protected ItemFeatureParameter itemFeatureParameter;
 
   /**
    * The cached value of the '{@link #getFlowEnd() <em>Flow End</em>}' attribute list.
@@ -659,13 +763,73 @@ public class MessageImpl extends StructureUsageElementsImpl implements Message
    * @generated
    */
   @Override
-  public EList<String> getThenMultiplicity()
+  public String getThenMulti0()
   {
-    if (thenMultiplicity == null)
-    {
-      thenMultiplicity = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.MESSAGE__THEN_MULTIPLICITY);
-    }
-    return thenMultiplicity;
+    return thenMulti0;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setThenMulti0(String newThenMulti0)
+  {
+    String oldThenMulti0 = thenMulti0;
+    thenMulti0 = newThenMulti0;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.MESSAGE__THEN_MULTI0, oldThenMulti0, thenMulti0));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getThenMulti1()
+  {
+    return thenMulti1;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setThenMulti1(String newThenMulti1)
+  {
+    String oldThenMulti1 = thenMulti1;
+    thenMulti1 = newThenMulti1;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.MESSAGE__THEN_MULTI1, oldThenMulti1, thenMulti1));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getThenMulti02()
+  {
+    return thenMulti02;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setThenMulti02(String newThenMulti02)
+  {
+    String oldThenMulti02 = thenMulti02;
+    thenMulti02 = newThenMulti02;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.MESSAGE__THEN_MULTI02, oldThenMulti02, thenMulti02));
   }
 
   /**
@@ -1114,13 +1278,73 @@ public class MessageImpl extends StructureUsageElementsImpl implements Message
    * @generated
    */
   @Override
-  public EList<String> getMultiplicity()
+  public String getMulti0()
   {
-    if (multiplicity == null)
-    {
-      multiplicity = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.MESSAGE__MULTIPLICITY);
-    }
-    return multiplicity;
+    return multi0;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setMulti0(String newMulti0)
+  {
+    String oldMulti0 = multi0;
+    multi0 = newMulti0;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.MESSAGE__MULTI0, oldMulti0, multi0));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getMulti1()
+  {
+    return multi1;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setMulti1(String newMulti1)
+  {
+    String oldMulti1 = multi1;
+    multi1 = newMulti1;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.MESSAGE__MULTI1, oldMulti1, multi1));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getMulti02()
+  {
+    return multi02;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setMulti02(String newMulti02)
+  {
+    String oldMulti02 = multi02;
+    multi02 = newMulti02;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.MESSAGE__MULTI02, oldMulti02, multi02));
   }
 
   /**
@@ -1254,13 +1478,48 @@ public class MessageImpl extends StructureUsageElementsImpl implements Message
    * @generated
    */
   @Override
-  public EList<ItemFeatureParameter> getItemFeatureParameter()
+  public ItemFeatureParameter getItemFeatureParameter()
   {
-    if (itemFeatureParameter == null)
-    {
-      itemFeatureParameter = new EObjectContainmentEList<ItemFeatureParameter>(ItemFeatureParameter.class, this, SysMLOCPackage.MESSAGE__ITEM_FEATURE_PARAMETER);
-    }
     return itemFeatureParameter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetItemFeatureParameter(ItemFeatureParameter newItemFeatureParameter, NotificationChain msgs)
+  {
+    ItemFeatureParameter oldItemFeatureParameter = itemFeatureParameter;
+    itemFeatureParameter = newItemFeatureParameter;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SysMLOCPackage.MESSAGE__ITEM_FEATURE_PARAMETER, oldItemFeatureParameter, newItemFeatureParameter);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setItemFeatureParameter(ItemFeatureParameter newItemFeatureParameter)
+  {
+    if (newItemFeatureParameter != itemFeatureParameter)
+    {
+      NotificationChain msgs = null;
+      if (itemFeatureParameter != null)
+        msgs = ((InternalEObject)itemFeatureParameter).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SysMLOCPackage.MESSAGE__ITEM_FEATURE_PARAMETER, null, msgs);
+      if (newItemFeatureParameter != null)
+        msgs = ((InternalEObject)newItemFeatureParameter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SysMLOCPackage.MESSAGE__ITEM_FEATURE_PARAMETER, null, msgs);
+      msgs = basicSetItemFeatureParameter(newItemFeatureParameter, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.MESSAGE__ITEM_FEATURE_PARAMETER, newItemFeatureParameter, newItemFeatureParameter));
   }
 
   /**
@@ -1304,7 +1563,7 @@ public class MessageImpl extends StructureUsageElementsImpl implements Message
     switch (featureID)
     {
       case SysMLOCPackage.MESSAGE__ITEM_FEATURE_PARAMETER:
-        return ((InternalEList<?>)getItemFeatureParameter()).basicRemove(otherEnd, msgs);
+        return basicSetItemFeatureParameter(null, msgs);
       case SysMLOCPackage.MESSAGE__ELEMENTS:
         return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
     }
@@ -1323,8 +1582,12 @@ public class MessageImpl extends StructureUsageElementsImpl implements Message
     {
       case SysMLOCPackage.MESSAGE__IS_THEN:
         return isIsThen();
-      case SysMLOCPackage.MESSAGE__THEN_MULTIPLICITY:
-        return getThenMultiplicity();
+      case SysMLOCPackage.MESSAGE__THEN_MULTI0:
+        return getThenMulti0();
+      case SysMLOCPackage.MESSAGE__THEN_MULTI1:
+        return getThenMulti1();
+      case SysMLOCPackage.MESSAGE__THEN_MULTI02:
+        return getThenMulti02();
       case SysMLOCPackage.MESSAGE__VISIBILITY:
         return getVisibility();
       case SysMLOCPackage.MESSAGE__IS_VARIANT:
@@ -1365,8 +1628,12 @@ public class MessageImpl extends StructureUsageElementsImpl implements Message
         return getCrosses();
       case SysMLOCPackage.MESSAGE__REDEFINITIONS:
         return getRedefinitions();
-      case SysMLOCPackage.MESSAGE__MULTIPLICITY:
-        return getMultiplicity();
+      case SysMLOCPackage.MESSAGE__MULTI0:
+        return getMulti0();
+      case SysMLOCPackage.MESSAGE__MULTI1:
+        return getMulti1();
+      case SysMLOCPackage.MESSAGE__MULTI02:
+        return getMulti02();
       case SysMLOCPackage.MESSAGE__IS_ORDERED:
         return isIsOrdered();
       case SysMLOCPackage.MESSAGE__IS_NONUNIQUE:
@@ -1401,9 +1668,14 @@ public class MessageImpl extends StructureUsageElementsImpl implements Message
       case SysMLOCPackage.MESSAGE__IS_THEN:
         setIsThen((Boolean)newValue);
         return;
-      case SysMLOCPackage.MESSAGE__THEN_MULTIPLICITY:
-        getThenMultiplicity().clear();
-        getThenMultiplicity().addAll((Collection<? extends String>)newValue);
+      case SysMLOCPackage.MESSAGE__THEN_MULTI0:
+        setThenMulti0((String)newValue);
+        return;
+      case SysMLOCPackage.MESSAGE__THEN_MULTI1:
+        setThenMulti1((String)newValue);
+        return;
+      case SysMLOCPackage.MESSAGE__THEN_MULTI02:
+        setThenMulti02((String)newValue);
         return;
       case SysMLOCPackage.MESSAGE__VISIBILITY:
         setVisibility((VisibilityIndicator)newValue);
@@ -1471,9 +1743,14 @@ public class MessageImpl extends StructureUsageElementsImpl implements Message
         getRedefinitions().clear();
         getRedefinitions().addAll((Collection<? extends String>)newValue);
         return;
-      case SysMLOCPackage.MESSAGE__MULTIPLICITY:
-        getMultiplicity().clear();
-        getMultiplicity().addAll((Collection<? extends String>)newValue);
+      case SysMLOCPackage.MESSAGE__MULTI0:
+        setMulti0((String)newValue);
+        return;
+      case SysMLOCPackage.MESSAGE__MULTI1:
+        setMulti1((String)newValue);
+        return;
+      case SysMLOCPackage.MESSAGE__MULTI02:
+        setMulti02((String)newValue);
         return;
       case SysMLOCPackage.MESSAGE__IS_ORDERED:
         setIsOrdered((Boolean)newValue);
@@ -1491,8 +1768,7 @@ public class MessageImpl extends StructureUsageElementsImpl implements Message
         setValuePart((String)newValue);
         return;
       case SysMLOCPackage.MESSAGE__ITEM_FEATURE_PARAMETER:
-        getItemFeatureParameter().clear();
-        getItemFeatureParameter().addAll((Collection<? extends ItemFeatureParameter>)newValue);
+        setItemFeatureParameter((ItemFeatureParameter)newValue);
         return;
       case SysMLOCPackage.MESSAGE__FLOW_END:
         getFlowEnd().clear();
@@ -1519,8 +1795,14 @@ public class MessageImpl extends StructureUsageElementsImpl implements Message
       case SysMLOCPackage.MESSAGE__IS_THEN:
         setIsThen(IS_THEN_EDEFAULT);
         return;
-      case SysMLOCPackage.MESSAGE__THEN_MULTIPLICITY:
-        getThenMultiplicity().clear();
+      case SysMLOCPackage.MESSAGE__THEN_MULTI0:
+        setThenMulti0(THEN_MULTI0_EDEFAULT);
+        return;
+      case SysMLOCPackage.MESSAGE__THEN_MULTI1:
+        setThenMulti1(THEN_MULTI1_EDEFAULT);
+        return;
+      case SysMLOCPackage.MESSAGE__THEN_MULTI02:
+        setThenMulti02(THEN_MULTI02_EDEFAULT);
         return;
       case SysMLOCPackage.MESSAGE__VISIBILITY:
         setVisibility(VISIBILITY_EDEFAULT);
@@ -1582,8 +1864,14 @@ public class MessageImpl extends StructureUsageElementsImpl implements Message
       case SysMLOCPackage.MESSAGE__REDEFINITIONS:
         getRedefinitions().clear();
         return;
-      case SysMLOCPackage.MESSAGE__MULTIPLICITY:
-        getMultiplicity().clear();
+      case SysMLOCPackage.MESSAGE__MULTI0:
+        setMulti0(MULTI0_EDEFAULT);
+        return;
+      case SysMLOCPackage.MESSAGE__MULTI1:
+        setMulti1(MULTI1_EDEFAULT);
+        return;
+      case SysMLOCPackage.MESSAGE__MULTI02:
+        setMulti02(MULTI02_EDEFAULT);
         return;
       case SysMLOCPackage.MESSAGE__IS_ORDERED:
         setIsOrdered(IS_ORDERED_EDEFAULT);
@@ -1601,7 +1889,7 @@ public class MessageImpl extends StructureUsageElementsImpl implements Message
         setValuePart(VALUE_PART_EDEFAULT);
         return;
       case SysMLOCPackage.MESSAGE__ITEM_FEATURE_PARAMETER:
-        getItemFeatureParameter().clear();
+        setItemFeatureParameter((ItemFeatureParameter)null);
         return;
       case SysMLOCPackage.MESSAGE__FLOW_END:
         getFlowEnd().clear();
@@ -1625,8 +1913,12 @@ public class MessageImpl extends StructureUsageElementsImpl implements Message
     {
       case SysMLOCPackage.MESSAGE__IS_THEN:
         return isThen != IS_THEN_EDEFAULT;
-      case SysMLOCPackage.MESSAGE__THEN_MULTIPLICITY:
-        return thenMultiplicity != null && !thenMultiplicity.isEmpty();
+      case SysMLOCPackage.MESSAGE__THEN_MULTI0:
+        return THEN_MULTI0_EDEFAULT == null ? thenMulti0 != null : !THEN_MULTI0_EDEFAULT.equals(thenMulti0);
+      case SysMLOCPackage.MESSAGE__THEN_MULTI1:
+        return THEN_MULTI1_EDEFAULT == null ? thenMulti1 != null : !THEN_MULTI1_EDEFAULT.equals(thenMulti1);
+      case SysMLOCPackage.MESSAGE__THEN_MULTI02:
+        return THEN_MULTI02_EDEFAULT == null ? thenMulti02 != null : !THEN_MULTI02_EDEFAULT.equals(thenMulti02);
       case SysMLOCPackage.MESSAGE__VISIBILITY:
         return visibility != VISIBILITY_EDEFAULT;
       case SysMLOCPackage.MESSAGE__IS_VARIANT:
@@ -1667,8 +1959,12 @@ public class MessageImpl extends StructureUsageElementsImpl implements Message
         return crosses != null && !crosses.isEmpty();
       case SysMLOCPackage.MESSAGE__REDEFINITIONS:
         return redefinitions != null && !redefinitions.isEmpty();
-      case SysMLOCPackage.MESSAGE__MULTIPLICITY:
-        return multiplicity != null && !multiplicity.isEmpty();
+      case SysMLOCPackage.MESSAGE__MULTI0:
+        return MULTI0_EDEFAULT == null ? multi0 != null : !MULTI0_EDEFAULT.equals(multi0);
+      case SysMLOCPackage.MESSAGE__MULTI1:
+        return MULTI1_EDEFAULT == null ? multi1 != null : !MULTI1_EDEFAULT.equals(multi1);
+      case SysMLOCPackage.MESSAGE__MULTI02:
+        return MULTI02_EDEFAULT == null ? multi02 != null : !MULTI02_EDEFAULT.equals(multi02);
       case SysMLOCPackage.MESSAGE__IS_ORDERED:
         return isOrdered != IS_ORDERED_EDEFAULT;
       case SysMLOCPackage.MESSAGE__IS_NONUNIQUE:
@@ -1680,7 +1976,7 @@ public class MessageImpl extends StructureUsageElementsImpl implements Message
       case SysMLOCPackage.MESSAGE__VALUE_PART:
         return VALUE_PART_EDEFAULT == null ? valuePart != null : !VALUE_PART_EDEFAULT.equals(valuePart);
       case SysMLOCPackage.MESSAGE__ITEM_FEATURE_PARAMETER:
-        return itemFeatureParameter != null && !itemFeatureParameter.isEmpty();
+        return itemFeatureParameter != null;
       case SysMLOCPackage.MESSAGE__FLOW_END:
         return flowEnd != null && !flowEnd.isEmpty();
       case SysMLOCPackage.MESSAGE__ELEMENTS:
@@ -1702,7 +1998,9 @@ public class MessageImpl extends StructureUsageElementsImpl implements Message
       switch (derivedFeatureID)
       {
         case SysMLOCPackage.MESSAGE__IS_THEN: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__IS_THEN;
-        case SysMLOCPackage.MESSAGE__THEN_MULTIPLICITY: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTIPLICITY;
+        case SysMLOCPackage.MESSAGE__THEN_MULTI0: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI0;
+        case SysMLOCPackage.MESSAGE__THEN_MULTI1: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI1;
+        case SysMLOCPackage.MESSAGE__THEN_MULTI02: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI02;
         default: return -1;
       }
     }
@@ -1842,7 +2140,9 @@ public class MessageImpl extends StructureUsageElementsImpl implements Message
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.MESSAGE__MULTIPLICITY: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTIPLICITY;
+        case SysMLOCPackage.MESSAGE__MULTI0: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI0;
+        case SysMLOCPackage.MESSAGE__MULTI1: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI1;
+        case SysMLOCPackage.MESSAGE__MULTI02: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI02;
         default: return -1;
       }
     }
@@ -1917,7 +2217,9 @@ public class MessageImpl extends StructureUsageElementsImpl implements Message
       switch (baseFeatureID)
       {
         case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__IS_THEN: return SysMLOCPackage.MESSAGE__IS_THEN;
-        case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTIPLICITY: return SysMLOCPackage.MESSAGE__THEN_MULTIPLICITY;
+        case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI0: return SysMLOCPackage.MESSAGE__THEN_MULTI0;
+        case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI1: return SysMLOCPackage.MESSAGE__THEN_MULTI1;
+        case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI02: return SysMLOCPackage.MESSAGE__THEN_MULTI02;
         default: return -1;
       }
     }
@@ -2057,7 +2359,9 @@ public class MessageImpl extends StructureUsageElementsImpl implements Message
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTIPLICITY: return SysMLOCPackage.MESSAGE__MULTIPLICITY;
+        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI0: return SysMLOCPackage.MESSAGE__MULTI0;
+        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI1: return SysMLOCPackage.MESSAGE__MULTI1;
+        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI02: return SysMLOCPackage.MESSAGE__MULTI02;
         default: return -1;
       }
     }
@@ -2132,8 +2436,12 @@ public class MessageImpl extends StructureUsageElementsImpl implements Message
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (isThen: ");
     result.append(isThen);
-    result.append(", ThenMultiplicity: ");
-    result.append(thenMultiplicity);
+    result.append(", ThenMulti0: ");
+    result.append(thenMulti0);
+    result.append(", ThenMulti1: ");
+    result.append(thenMulti1);
+    result.append(", ThenMulti02: ");
+    result.append(thenMulti02);
     result.append(", visibility: ");
     result.append(visibility);
     result.append(", isVariant: ");
@@ -2174,8 +2482,12 @@ public class MessageImpl extends StructureUsageElementsImpl implements Message
     result.append(crosses);
     result.append(", redefinitions: ");
     result.append(redefinitions);
-    result.append(", Multiplicity: ");
-    result.append(multiplicity);
+    result.append(", Multi0: ");
+    result.append(multi0);
+    result.append(", Multi1: ");
+    result.append(multi1);
+    result.append(", Multi02: ");
+    result.append(multi02);
     result.append(", isOrdered: ");
     result.append(isOrdered);
     result.append(", isNonunique: ");

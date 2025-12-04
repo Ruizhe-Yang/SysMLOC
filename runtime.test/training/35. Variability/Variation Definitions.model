@@ -7,30 +7,25 @@
       <superclassifiers>ISQ::LengthValue</superclassifiers>
     </elements>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Cylinder">
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="diameter">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="diameter" Multi0="1">
         <typings>Diameter</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Engine">
-      <elements xsi:type="sysMLOC:PartUsage" declaredName="cylinder">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="cylinder" Multi1="2" Multi02="*">
         <typings>Cylinder</typings>
-        <Multiplicity>2</Multiplicity>
-        <Multiplicity>*</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:PartUsage" declaredName="'4cylEngine'">
       <typings>Engine</typings>
-      <elements xsi:type="sysMLOC:PartUsage">
+      <elements xsi:type="sysMLOC:PartUsage" Multi0="4">
         <redefinitions>cylinder</redefinitions>
-        <Multiplicity>4</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:PartUsage" declaredName="'6cylEngine'">
       <typings>Engine</typings>
-      <elements xsi:type="sysMLOC:PartUsage">
+      <elements xsi:type="sysMLOC:PartUsage" Multi0="6">
         <redefinitions>cylinder</redefinitions>
-        <Multiplicity>6</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CodeAnnotation" body="// Variability model&#xD;&#xA;"/>

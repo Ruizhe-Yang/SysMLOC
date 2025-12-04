@@ -22,10 +22,9 @@
           <redefinitions>mRefs</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:PartUsage" declaredName="powerSource">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="powerSource" Multi0="1">
         <typings>Engine</typings>
         <subsetting>componentItems</subsetting>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage">
           <redefinitions>ecf</redefinitions>
           <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="datum.mRefs">
@@ -47,20 +46,17 @@
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Engine">
       <superclassifiers>SpatialItem</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * Simple 2-cylinder engine&#xD;&#xA;&#x9;&#x9; * &#xD;&#xA;&#x9;&#x9; * Note: The engine shape is modeled as a rectangular box with two cylindrical holes, a gross simplification.&#xD;&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:ItemUsage">
+      <elements xsi:type="sysMLOC:ItemUsage" Multi0="1">
         <redefinitions>shape</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
       <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="ecf" declaredName="engineCoordinateFrame">
         <redefinitions>coordinateFrame</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:PartUsage" declaredName="rawEngineBlock">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="rawEngineBlock" Multi0="1">
         <typings>SpatialItem</typings>
-        <Multiplicity>1</Multiplicity>
-        <elements xsi:type="sysMLOC:ItemUsage">
+        <elements xsi:type="sysMLOC:ItemUsage" Multi0="1">
           <typings>Box</typings>
           <redefinitions>shape</redefinitions>
-          <Multiplicity>1</Multiplicity>
           <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="300 [mm]">
             <redefinitions>length</redefinitions>
           </elements>
@@ -73,13 +69,11 @@
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="rearCylinderSpacing" valuePart="90 [mm]"/>
-      <elements xsi:type="sysMLOC:ItemUsage" visibility="private" declaredName="cylinder1">
+      <elements xsi:type="sysMLOC:ItemUsage" visibility="private" declaredName="cylinder1" Multi0="1">
         <typings>SpatialItem</typings>
-        <Multiplicity>1</Multiplicity>
-        <elements xsi:type="sysMLOC:ItemUsage">
+        <elements xsi:type="sysMLOC:ItemUsage" Multi0="1">
           <typings>Cylinder</typings>
           <redefinitions>shape</redefinitions>
-          <Multiplicity>1</Multiplicity>
           <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="55 [mm]">
             <redefinitions>radius</redefinitions>
           </elements>
@@ -102,13 +96,11 @@
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="cylinderSpacing" valuePart="2*cylinder1.shape.radius + 20 [mm]"/>
-      <elements xsi:type="sysMLOC:ItemUsage" visibility="private" declaredName="cylinder2">
+      <elements xsi:type="sysMLOC:ItemUsage" visibility="private" declaredName="cylinder2" Multi0="1">
         <typings>SpatialItem</typings>
-        <Multiplicity>1</Multiplicity>
-        <elements xsi:type="sysMLOC:ItemUsage">
+        <elements xsi:type="sysMLOC:ItemUsage" Multi0="1">
           <typings>Cylinder</typings>
           <redefinitions>shape</redefinitions>
-          <Multiplicity>1</Multiplicity>
           <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="cylinder1.shape.radius">
             <redefinitions>radius</redefinitions>
           </elements>
@@ -131,9 +123,8 @@
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:Comment" body="/* CSG difference of rawEngineBlock minus cylinder1 minus cylinder2 */"/>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <subsetting>differencesOf</subsetting>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:ItemUsage" valuePart="(rawEngineBlock, cylinder1, cylinder2)">
           <redefinitions>elements</redefinitions>
         </elements>

@@ -21,33 +21,24 @@
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:OccurrenceDefinition" declaredName="PubSubSequence">
-      <elements xsi:type="sysMLOC:PartUsage" declaredName="producer">
-        <Multiplicity>1</Multiplicity>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="producer" Multi0="1">
         <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="publish_message.sourceEvent"/>
       </elements>
       <elements xsi:type="sysMLOC:Message" declaredName="publish_message">
-        <itemFeatureParameter payloadFeatureElement="Publish">
-          <Multiplicity>1</Multiplicity>
-        </itemFeatureParameter>
+        <itemFeatureParameter Multi0="1" payloadFeatureElement="Publish"/>
       </elements>
-      <elements xsi:type="sysMLOC:PartUsage" declaredName="server">
-        <Multiplicity>1</Multiplicity>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="server" Multi0="1">
         <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="subscribe_message.targetEvent"/>
         <elements xsi:type="sysMLOC:EventOccurrenceUsage" isThen="true" refElement="publish_message.targetEvent"/>
         <elements xsi:type="sysMLOC:EventOccurrenceUsage" isThen="true" refElement="deliver_message.sourceEvent"/>
       </elements>
       <elements xsi:type="sysMLOC:Message" declaredName="subscribe_message">
-        <itemFeatureParameter payloadFeatureElement="Subscribe">
-          <Multiplicity>1</Multiplicity>
-        </itemFeatureParameter>
+        <itemFeatureParameter Multi0="1" payloadFeatureElement="Subscribe"/>
       </elements>
       <elements xsi:type="sysMLOC:Message" declaredName="deliver_message">
-        <itemFeatureParameter payloadFeatureElement="Deliver">
-          <Multiplicity>1</Multiplicity>
-        </itemFeatureParameter>
+        <itemFeatureParameter Multi0="1" payloadFeatureElement="Deliver"/>
       </elements>
-      <elements xsi:type="sysMLOC:PartUsage" declaredName="consumer">
-        <Multiplicity>1</Multiplicity>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="consumer" Multi0="1">
         <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="subscribe_message.sourceEvent"/>
         <elements xsi:type="sysMLOC:EventOccurrenceUsage" isThen="true" refElement="deliver_message.targetEvent"/>
       </elements>

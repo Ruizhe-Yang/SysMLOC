@@ -56,18 +56,15 @@
           <resultExpressionParameter resultExpression="fuelEconomyResult > 30 [mi / gal]"/>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="scenario">
+      <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="scenario" Multi0="*">
         <typings>WayPoint</typings>
-        <Multiplicity>*</Multiplicity>
       </elements>
       <elements xsi:type="sysMLOC:ActionUsage" declaredName="solveForPower">
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="power">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="power" Multi0="*">
           <typings>PowerValue</typings>
-          <Multiplicity>*</Multiplicity>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="acceleration">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="acceleration" Multi0="*">
           <typings>AccelerationValue</typings>
-          <Multiplicity>*</Multiplicity>
         </elements>
         <elements xsi:type="sysMLOC:Comment" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * Solve for the required engine power as a function of time&#xD;&#xA;&#x9;&#x9;&#x9; * to support the scenario.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
         <elements xsi:type="sysMLOC:AssertConstraintUsage">
@@ -75,9 +72,8 @@
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:ActionUsage" isThen="true" declaredName="solveForFuelConsumption">
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="power" valuePart="solveForPower.power">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="power" Multi0="*" valuePart="solveForPower.power">
           <typings>PowerValue</typings>
-          <Multiplicity>*</Multiplicity>
         </elements>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="fuelEconomy">
           <typings>DistancePerVolumeValue</typings>

@@ -20,22 +20,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>ElectricChargeUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="electricCharge" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="electricCharge" Multi0="*" isNonunique="true">
       <typings>ElectricChargeValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ElectricChargeUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -43,9 +40,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -68,22 +64,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>ElectricChargeDensityUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="electricChargeDensity" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="electricChargeDensity" Multi0="*" isNonunique="true">
       <typings>ElectricChargeDensityValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ElectricChargeDensityUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -91,9 +84,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -101,9 +93,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -129,22 +120,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>SurfaceDensityOfElectricChargeUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="surfaceDensityOfElectricCharge" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="surfaceDensityOfElectricCharge" Multi0="*" isNonunique="true">
       <typings>SurfaceDensityOfElectricChargeValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SurfaceDensityOfElectricChargeUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -152,9 +140,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -162,9 +149,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -190,22 +176,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>LinearDensityOfElectricChargeUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="linearDensityOfElectricCharge" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="linearDensityOfElectricCharge" Multi0="*" isNonunique="true">
       <typings>LinearDensityOfElectricChargeValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="LinearDensityOfElectricChargeUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -213,9 +196,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -223,9 +205,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -251,22 +232,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>ElectricDipoleMomentUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="electricDipoleMoment" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="electricDipoleMoment" Multi0="*" isNonunique="true">
       <typings>ElectricDipoleMomentValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ElectricDipoleMomentUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -274,9 +252,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -284,9 +261,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -307,10 +283,9 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
         <redefinitions>isBound</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>CartesianElectricDipoleMoment3dCoordinateFrame</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cartesianElectricDipoleMoment3dVector">
@@ -325,10 +300,9 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
         <redefinitions>isOrthogonal</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="3">
         <typings>ElectricDipoleMomentUnit</typings>
         <redefinitions>mRefs</redefinitions>
-        <Multiplicity>3</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:Comment" body="/* IEC-80000-6 item 6-7 electric polarization */"/>
@@ -339,22 +313,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>ElectricPolarizationUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="electricPolarization" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="electricPolarization" Multi0="*" isNonunique="true">
       <typings>ElectricPolarizationValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ElectricPolarizationUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -362,9 +333,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -372,9 +342,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -395,10 +364,9 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
         <redefinitions>isBound</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>CartesianElectricPolarization3dCoordinateFrame</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cartesianElectricPolarization3dVector">
@@ -413,10 +381,9 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
         <redefinitions>isOrthogonal</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="3">
         <typings>ElectricPolarizationUnit</typings>
         <redefinitions>mRefs</redefinitions>
-        <Multiplicity>3</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:Comment" body="/* IEC-80000-6 item 6-8 electric current density, areic electric current */"/>
@@ -427,22 +394,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>ElectricCurrentDensityUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="electricCurrentDensity" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="electricCurrentDensity" Multi0="*" isNonunique="true">
       <typings>ElectricCurrentDensityValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ElectricCurrentDensityUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -450,9 +414,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -473,10 +436,9 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
         <redefinitions>isBound</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>CartesianElectricCurrentDensity3dCoordinateFrame</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cartesianElectricCurrentDensity3dVector">
@@ -491,10 +453,9 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
         <redefinitions>isOrthogonal</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="3">
         <typings>ElectricCurrentDensityUnit</typings>
         <redefinitions>mRefs</redefinitions>
-        <Multiplicity>3</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:AliasElement" memberName="CartesianAreicElectricCurrent3dCoordinateFrame" memberElement="CartesianElectricCurrentDensity3dCoordinateFrame"/>
@@ -507,22 +468,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>LinearElectricCurrentDensityUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="linearElectricCurrentDensity" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="linearElectricCurrentDensity" Multi0="*" isNonunique="true">
       <typings>LinearElectricCurrentDensityValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="LinearElectricCurrentDensityUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -530,9 +488,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -553,10 +510,9 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
         <redefinitions>isBound</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>CartesianLinearElectricCurrentDensity3dCoordinateFrame</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cartesianLinearElectricCurrentDensity3dVector">
@@ -571,10 +527,9 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
         <redefinitions>isOrthogonal</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="3">
         <typings>LinearElectricCurrentDensityUnit</typings>
         <redefinitions>mRefs</redefinitions>
-        <Multiplicity>3</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:AliasElement" memberName="CartesianLineicElectricCurrent3dCoordinateFrame" memberElement="CartesianLinearElectricCurrentDensity3dCoordinateFrame"/>
@@ -587,22 +542,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>ElectricFieldStrengthUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="electricFieldStrength" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="electricFieldStrength" Multi0="*" isNonunique="true">
       <typings>ElectricFieldStrengthValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ElectricFieldStrengthUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -610,9 +562,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -620,9 +571,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -630,9 +580,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -653,10 +602,9 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
         <redefinitions>isBound</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>CartesianElectricFieldStrength3dCoordinateFrame</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cartesianElectricFieldStrength3dVector">
@@ -671,10 +619,9 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
         <redefinitions>isOrthogonal</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="3">
         <typings>ElectricFieldStrengthUnit</typings>
         <redefinitions>mRefs</redefinitions>
-        <Multiplicity>3</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:Comment" body="/* IEC-80000-6 item 6-11.1 electric potential */"/>
@@ -685,22 +632,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>ElectricPotentialUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="electricPotential" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="electricPotential" Multi0="*" isNonunique="true">
       <typings>ElectricPotentialValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ElectricPotentialUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -708,9 +652,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -718,9 +661,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -728,9 +670,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -753,22 +694,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>ElectricPotentialDifferenceUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="electricPotentialDifference" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="electricPotentialDifference" Multi0="*" isNonunique="true">
       <typings>ElectricPotentialDifferenceValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ElectricPotentialDifferenceUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -776,9 +714,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -786,9 +723,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -796,9 +732,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -828,22 +763,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>ElectricFluxDensityUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="electricFluxDensity" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="electricFluxDensity" Multi0="*" isNonunique="true">
       <typings>ElectricFluxDensityValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ElectricFluxDensityUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -851,9 +783,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -861,9 +792,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -884,10 +814,9 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
         <redefinitions>isBound</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>CartesianElectricFluxDensity3dCoordinateFrame</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cartesianElectricFluxDensity3dVector">
@@ -902,10 +831,9 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
         <redefinitions>isOrthogonal</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="3">
         <typings>ElectricFluxDensityUnit</typings>
         <redefinitions>mRefs</redefinitions>
-        <Multiplicity>3</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:AliasElement" memberName="CartesianElectricDisplacement3dCoordinateFrame" memberElement="CartesianElectricFluxDensity3dCoordinateFrame"/>
@@ -918,22 +846,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>CapacitanceUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="capacitance" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="capacitance" Multi0="*" isNonunique="true">
       <typings>CapacitanceValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CapacitanceUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -941,9 +866,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -951,9 +875,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -961,9 +884,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -986,22 +908,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>ElectricConstantUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="electricConstant" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="electricConstant" Multi0="*" isNonunique="true">
       <typings>ElectricConstantValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ElectricConstantUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -1009,9 +928,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -1019,9 +937,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -1029,9 +946,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -1057,22 +973,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>PermittivityUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="permittivity" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="permittivity" Multi0="*" isNonunique="true">
       <typings>PermittivityValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="PermittivityUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -1080,9 +993,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -1090,9 +1002,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -1100,9 +1011,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -1143,22 +1053,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>ElectricFluxUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="electricFlux" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="electricFlux" Multi0="*" isNonunique="true">
       <typings>ElectricFluxValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ElectricFluxUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -1166,9 +1073,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -1191,22 +1097,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>DisplacementCurrentDensityUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="displacementCurrentDensity" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="displacementCurrentDensity" Multi0="*" isNonunique="true">
       <typings>DisplacementCurrentDensityValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="DisplacementCurrentDensityUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -1214,9 +1117,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -1237,10 +1139,9 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
         <redefinitions>isBound</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>CartesianDisplacementCurrentDensity3dCoordinateFrame</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cartesianDisplacementCurrentDensity3dVector">
@@ -1255,10 +1156,9 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
         <redefinitions>isOrthogonal</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="3">
         <typings>DisplacementCurrentDensityUnit</typings>
         <redefinitions>mRefs</redefinitions>
-        <Multiplicity>3</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:Comment" body="/* IEC-80000-6 item 6-19.1 displacement current */"/>
@@ -1281,22 +1181,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>TotalCurrentDensityUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="totalCurrentDensity" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="totalCurrentDensity" Multi0="*" isNonunique="true">
       <typings>TotalCurrentDensityValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="TotalCurrentDensityUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -1304,9 +1201,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -1327,10 +1223,9 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
         <redefinitions>isBound</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>CartesianTotalCurrentDensity3dCoordinateFrame</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cartesianTotalCurrentDensity3dVector">
@@ -1345,10 +1240,9 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
         <redefinitions>isOrthogonal</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="3">
         <typings>TotalCurrentDensityUnit</typings>
         <redefinitions>mRefs</redefinitions>
-        <Multiplicity>3</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:Comment" body="/* IEC-80000-6 item 6-21 magnetic flux density */"/>
@@ -1359,22 +1253,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>MagneticFluxDensityUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="magneticFluxDensity" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="magneticFluxDensity" Multi0="*" isNonunique="true">
       <typings>MagneticFluxDensityValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MagneticFluxDensityUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -1382,9 +1273,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -1392,9 +1282,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -1415,10 +1304,9 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
         <redefinitions>isBound</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>CartesianMagneticFluxDensity3dCoordinateFrame</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cartesianMagneticFluxDensity3dVector">
@@ -1433,10 +1321,9 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
         <redefinitions>isOrthogonal</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="3">
         <typings>MagneticFluxDensityUnit</typings>
         <redefinitions>mRefs</redefinitions>
-        <Multiplicity>3</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:Comment" body="/* IEC-80000-6 item 6-22.1 magnetic flux */"/>
@@ -1447,22 +1334,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>MagneticFluxUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="magneticFlux" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="magneticFlux" Multi0="*" isNonunique="true">
       <typings>MagneticFluxValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MagneticFluxUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -1470,9 +1354,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -1480,9 +1363,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -1490,9 +1372,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -1515,22 +1396,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>LinkedFluxUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="linkedFlux" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="linkedFlux" Multi0="*" isNonunique="true">
       <typings>LinkedFluxValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="LinkedFluxUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -1538,9 +1416,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -1548,9 +1425,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -1558,9 +1434,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -1583,22 +1458,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>MagneticMomentUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="magneticMoment" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="magneticMoment" Multi0="*" isNonunique="true">
       <typings>MagneticMomentValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MagneticMomentUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -1606,9 +1478,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -1629,10 +1500,9 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
         <redefinitions>isBound</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>CartesianMagneticMoment3dCoordinateFrame</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cartesianMagneticMoment3dVector">
@@ -1647,10 +1517,9 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
         <redefinitions>isOrthogonal</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="3">
         <typings>MagneticMomentUnit</typings>
         <redefinitions>mRefs</redefinitions>
-        <Multiplicity>3</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:AliasElement" memberName="CartesianMagneticAreaMoment3dCoordinateFrame" memberElement="CartesianMagneticMoment3dCoordinateFrame"/>
@@ -1663,22 +1532,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>MagnetizationUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="magnetization" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="magnetization" Multi0="*" isNonunique="true">
       <typings>MagnetizationValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MagnetizationUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -1686,9 +1552,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -1709,10 +1574,9 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
         <redefinitions>isBound</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>CartesianMagnetization3dCoordinateFrame</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cartesianMagnetization3dVector">
@@ -1727,10 +1591,9 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
         <redefinitions>isOrthogonal</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="3">
         <typings>MagnetizationUnit</typings>
         <redefinitions>mRefs</redefinitions>
-        <Multiplicity>3</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:Comment" body="/* IEC-80000-6 item 6-25 magnetic field strength, magnetizing field */"/>
@@ -1741,22 +1604,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>MagneticFieldStrengthUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="magneticFieldStrength" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="magneticFieldStrength" Multi0="*" isNonunique="true">
       <typings>MagneticFieldStrengthValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MagneticFieldStrengthUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -1764,9 +1624,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -1787,10 +1646,9 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
         <redefinitions>isBound</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>CartesianMagneticFieldStrength3dCoordinateFrame</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cartesianMagneticFieldStrength3dVector">
@@ -1805,10 +1663,9 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
         <redefinitions>isOrthogonal</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="3">
         <typings>MagneticFieldStrengthUnit</typings>
         <redefinitions>mRefs</redefinitions>
-        <Multiplicity>3</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:AliasElement" memberName="CartesianMagnetizingField3dCoordinateFrame" memberElement="CartesianMagneticFieldStrength3dCoordinateFrame"/>
@@ -1821,22 +1678,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>MagneticConstantUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="magneticConstant" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="magneticConstant" Multi0="*" isNonunique="true">
       <typings>MagneticConstantValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MagneticConstantUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -1844,9 +1698,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -1854,9 +1707,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -1864,9 +1716,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -1892,22 +1743,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>PermeabilityUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="permeability" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="permeability" Multi0="*" isNonunique="true">
       <typings>PermeabilityValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="PermeabilityUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -1915,9 +1763,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -1925,9 +1772,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -1935,9 +1781,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -1978,22 +1823,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>MagneticPolarizationUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="magneticPolarization" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="magneticPolarization" Multi0="*" isNonunique="true">
       <typings>MagneticPolarizationValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MagneticPolarizationUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -2001,9 +1843,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -2011,9 +1852,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -2034,10 +1874,9 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
         <redefinitions>isBound</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>CartesianMagneticPolarization3dCoordinateFrame</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cartesianMagneticPolarization3dVector">
@@ -2052,10 +1891,9 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
         <redefinitions>isOrthogonal</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="3">
         <typings>MagneticPolarizationUnit</typings>
         <redefinitions>mRefs</redefinitions>
-        <Multiplicity>3</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:Comment" body="/* IEC-80000-6 item 6-30 magnetic dipole moment */"/>
@@ -2066,22 +1904,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>MagneticDipoleMomentUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="magneticDipoleMoment" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="magneticDipoleMoment" Multi0="*" isNonunique="true">
       <typings>MagneticDipoleMomentValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MagneticDipoleMomentUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -2089,9 +1924,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -2099,9 +1933,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -2109,9 +1942,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -2132,10 +1964,9 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
         <redefinitions>isBound</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>CartesianMagneticDipoleMoment3dCoordinateFrame</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cartesianMagneticDipoleMoment3dVector">
@@ -2150,10 +1981,9 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
         <redefinitions>isOrthogonal</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="3">
         <typings>MagneticDipoleMomentUnit</typings>
         <redefinitions>mRefs</redefinitions>
-        <Multiplicity>3</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:Comment" body="/* IEC-80000-6 item 6-31 coercivity */"/>
@@ -2164,22 +1994,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>CoercivityUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="coercivity" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="coercivity" Multi0="*" isNonunique="true">
       <typings>CoercivityValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CoercivityUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -2187,9 +2014,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -2212,22 +2038,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>MagneticVectorPotentialUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="magneticVectorPotential" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="magneticVectorPotential" Multi0="*" isNonunique="true">
       <typings>MagneticVectorPotentialValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MagneticVectorPotentialUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -2235,9 +2058,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -2245,9 +2067,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -2255,9 +2076,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -2278,10 +2098,9 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
         <redefinitions>isBound</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>CartesianMagneticVectorPotential3dCoordinateFrame</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cartesianMagneticVectorPotential3dVector">
@@ -2296,10 +2115,9 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
         <redefinitions>isOrthogonal</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="3">
         <typings>MagneticVectorPotentialUnit</typings>
         <redefinitions>mRefs</redefinitions>
-        <Multiplicity>3</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:Comment" body="/* IEC-80000-6 item 6-33 electromagnetic energy density, volumic electromagnetic energy */"/>
@@ -2310,22 +2128,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>ElectromagneticEnergyDensityUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="electromagneticEnergyDensity" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="electromagneticEnergyDensity" Multi0="*" isNonunique="true">
       <typings>ElectromagneticEnergyDensityValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ElectromagneticEnergyDensityUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -2333,9 +2148,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -2343,9 +2157,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -2371,22 +2184,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>PoyntingVectorMagnitudeUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="poyntingVectorMagnitude" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="poyntingVectorMagnitude" Multi0="*" isNonunique="true">
       <typings>PoyntingVectorMagnitudeValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="PoyntingVectorMagnitudeUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -2394,9 +2204,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -2417,10 +2226,9 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
         <redefinitions>isBound</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>CartesianPoynting3dCoordinateFrame</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cartesianPoynting3dVector">
@@ -2435,10 +2243,9 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
         <redefinitions>isOrthogonal</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="3">
         <typings>PoyntingVectorMagnitudeUnit</typings>
         <redefinitions>mRefs</redefinitions>
-        <Multiplicity>3</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:Comment" body="/* IEC-80000-6 item 6-35.1 phase speed of electromagnetic waves */"/>
@@ -2449,22 +2256,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>PhaseSpeedOfElectromagneticWavesUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="phaseSpeedOfElectromagneticWaves" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="phaseSpeedOfElectromagneticWaves" Multi0="*" isNonunique="true">
       <typings>PhaseSpeedOfElectromagneticWavesValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="PhaseSpeedOfElectromagneticWavesUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -2472,9 +2276,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -2497,22 +2300,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>SpeedOfLightUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="speedOfLight" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="speedOfLight" Multi0="*" isNonunique="true">
       <typings>SpeedOfLightValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SpeedOfLightUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -2520,9 +2320,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -2548,22 +2347,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>SourceVoltageUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="sourceVoltage" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="sourceVoltage" Multi0="*" isNonunique="true">
       <typings>SourceVoltageValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SourceVoltageUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -2571,9 +2367,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -2581,9 +2376,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -2591,9 +2385,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -2631,22 +2424,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>MagnetomotiveForceUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="magnetomotiveForce" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="magnetomotiveForce" Multi0="*" isNonunique="true">
       <typings>MagnetomotiveForceValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MagnetomotiveForceUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -2681,22 +2471,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>ReluctanceUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="reluctance" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="reluctance" Multi0="*" isNonunique="true">
       <typings>ReluctanceValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ReluctanceUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -2704,9 +2491,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -2714,9 +2500,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -2724,9 +2509,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -2749,22 +2533,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>PermeanceUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="permeance" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="permeance" Multi0="*" isNonunique="true">
       <typings>PermeanceValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="PermeanceUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -2772,9 +2553,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -2782,9 +2562,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -2792,9 +2571,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -2817,22 +2595,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>InductanceUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="inductance" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="inductance" Multi0="*" isNonunique="true">
       <typings>InductanceValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="InductanceUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -2840,9 +2615,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -2850,9 +2624,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -2860,9 +2633,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -2912,22 +2684,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>ConductivityUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="conductivity" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="conductivity" Multi0="*" isNonunique="true">
       <typings>ConductivityValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ConductivityUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -2935,9 +2704,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -2945,9 +2713,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -2955,9 +2722,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -2980,22 +2746,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>ResistivityUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="resistivity" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="resistivity" Multi0="*" isNonunique="true">
       <typings>ResistivityValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ResistivityUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -3003,9 +2766,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -3013,9 +2775,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -3023,9 +2784,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -3055,22 +2815,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>ResistanceUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="resistance" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="resistance" Multi0="*" isNonunique="true">
       <typings>ResistanceValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ResistanceUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -3078,9 +2835,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -3088,9 +2844,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -3098,9 +2853,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -3123,22 +2877,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>ConductanceUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="conductance" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="conductance" Multi0="*" isNonunique="true">
       <typings>ConductanceValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ConductanceUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -3146,9 +2897,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -3156,9 +2906,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -3166,9 +2915,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -3191,16 +2939,14 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>PhaseDifferenceUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="phaseDifference" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="phaseDifference" Multi0="*" isNonunique="true">
       <typings>PhaseDifferenceValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="PhaseDifferenceUnit">
       <superclassifiers>DimensionOneUnit</superclassifiers>
@@ -3225,22 +2971,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>ImpedanceUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="impedance" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="impedance" Multi0="*" isNonunique="true">
       <typings>ImpedanceValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ImpedanceUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -3248,9 +2991,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -3258,9 +3000,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -3268,9 +3009,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -3296,22 +3036,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>ResistanceToAlternatingCurrentUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="resistanceToAlternatingCurrent" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="resistanceToAlternatingCurrent" Multi0="*" isNonunique="true">
       <typings>ResistanceToAlternatingCurrentValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ResistanceToAlternatingCurrentUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -3319,9 +3056,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -3329,9 +3065,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -3339,9 +3074,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -3364,22 +3098,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>ReactanceUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="reactance" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="reactance" Multi0="*" isNonunique="true">
       <typings>ReactanceValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ReactanceUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -3387,9 +3118,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -3397,9 +3127,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -3407,9 +3136,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -3432,22 +3160,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>ModulusOfImpedanceUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="modulusOfImpedance" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="modulusOfImpedance" Multi0="*" isNonunique="true">
       <typings>ModulusOfImpedanceValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ModulusOfImpedanceUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -3455,9 +3180,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -3465,9 +3189,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -3475,9 +3198,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -3500,22 +3222,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>AdmittanceUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="admittance" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="admittance" Multi0="*" isNonunique="true">
       <typings>AdmittanceValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="AdmittanceUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -3523,9 +3242,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -3533,9 +3251,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -3543,9 +3260,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -3577,22 +3293,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>SusceptanceUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="susceptance" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="susceptance" Multi0="*" isNonunique="true">
       <typings>SusceptanceValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SusceptanceUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -3600,9 +3313,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -3610,9 +3322,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -3620,9 +3331,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -3645,22 +3355,19 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <typings>ModulusOfAdmittanceUnit</typings>
         <redefinitions>mRef</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="modulusOfAdmittance" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="modulusOfAdmittance" Multi0="*" isNonunique="true">
       <typings>ModulusOfAdmittanceValue</typings>
       <subsetting>scalarQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ModulusOfAdmittanceUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -3668,9 +3375,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -3678,9 +3384,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -3688,9 +3393,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
         </elements>

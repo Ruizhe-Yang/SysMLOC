@@ -28,15 +28,11 @@
         <elements xsi:type="sysMLOC:FramedConcernUsage" declaredName="c1"/>
         <elements xsi:type="sysMLOC:ConcernUsage" declaredName="c2"/>
       </elements>
-      <elements xsi:type="sysMLOC:ViewRenderingUsage" declaredName="r1">
+      <elements xsi:type="sysMLOC:ViewRenderingUsage" declaredName="r1" Multi1="0" Multi02="1">
         <typings>R</typings>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:ViewUsage" declaredName="v">
+      <elements xsi:type="sysMLOC:ViewUsage" declaredName="v" Multi1="0" Multi02="*">
         <typings>V</typings>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>*</Multiplicity>
         <elements xsi:type="sysMLOC:ExposeElement" declaredName="P" isNamespace="true"/>
         <elements xsi:type="sysMLOC:ViewRenderingUsage" refElement="r"/>
         <elements xsi:type="sysMLOC:RenderingUsage" declaredName="r2"/>

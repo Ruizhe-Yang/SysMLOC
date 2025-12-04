@@ -11,10 +11,7 @@
       <elements xsi:type="sysMLOC:PortUsage" visibility="protected" declaredName="c">
         <typings>C</typings>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" isReadOnly="true" declaredName="x">
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>2</Multiplicity>
-      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" isReadOnly="true" declaredName="x" Multi1="0" Multi02="2"/>
       <elements xsi:type="sysMLOC:AttributeUsage" isDerived="true" isReference="true" declaredName="y">
         <subsetting>x</subsetting>
       </elements>
@@ -23,18 +20,14 @@
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:PartDefinition" isAbstract="true" declaredShortName="xx" declaredName="B">
-      <elements xsi:type="sysMLOC:PartUsage" visibility="public" isAbstract="true" declaredName="a">
+      <elements xsi:type="sysMLOC:PartUsage" visibility="public" isAbstract="true" declaredName="a" Multi1="1" Multi02="2">
         <typings>A</typings>
-        <Multiplicity>1</Multiplicity>
-        <Multiplicity>2</Multiplicity>
       </elements>
       <elements xsi:type="sysMLOC:PartUsage" visibility="public" isAbstract="true" declaredName="b">
         <subsetting>a</subsetting>
       </elements>
-      <elements xsi:type="sysMLOC:PartUsage" visibility="public" isAbstract="true" declaredName="c">
+      <elements xsi:type="sysMLOC:PartUsage" visibility="public" isAbstract="true" declaredName="c" Multi1="0" Multi02="1">
         <subsetting>a</subsetting>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>1</Multiplicity>
       </elements>
       <elements xsi:type="sysMLOC:PortUsage" declaredName="x">
         <typings>~C</typings>

@@ -8,10 +8,8 @@
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Engine">
-      <elements xsi:type="sysMLOC:PartUsage" declaredName="cyl">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="cyl" Multi1="4" Multi02="6">
         <typings>Cylinder</typings>
-        <Multiplicity>4</Multiplicity>
-        <Multiplicity>6</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Cylinder"/>
@@ -20,9 +18,8 @@
       <typings>Vehicle</typings>
       <elements xsi:type="sysMLOC:PartUsage">
         <redefinitions>eng</redefinitions>
-        <elements xsi:type="sysMLOC:PartUsage">
+        <elements xsi:type="sysMLOC:PartUsage" Multi0="4">
           <redefinitions>cyl</redefinitions>
-          <Multiplicity>4</Multiplicity>
         </elements>
       </elements>
     </elements>
@@ -30,9 +27,8 @@
       <typings>Vehicle</typings>
       <elements xsi:type="sysMLOC:PartUsage">
         <redefinitions>eng</redefinitions>
-        <elements xsi:type="sysMLOC:PartUsage">
+        <elements xsi:type="sysMLOC:PartUsage" Multi0="6">
           <redefinitions>cyl</redefinitions>
-          <Multiplicity>6</Multiplicity>
         </elements>
       </elements>
     </elements>

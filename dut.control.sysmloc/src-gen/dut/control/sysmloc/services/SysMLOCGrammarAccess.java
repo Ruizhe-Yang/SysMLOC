@@ -9964,26 +9964,28 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
 		private final Group cGroup_1_0 = (Group)cAlternatives_1.eContents().get(0);
 		private final Keyword cLeftSquareBracketKeyword_1_0_0 = (Keyword)cGroup_1_0.eContents().get(0);
-		private final Assignment cThenMultiplicityAssignment_1_0_1 = (Assignment)cGroup_1_0.eContents().get(1);
-		private final RuleCall cThenMultiplicityMultiplicityExpressionParserRuleCall_1_0_1_0 = (RuleCall)cThenMultiplicityAssignment_1_0_1.eContents().get(0);
+		private final Assignment cThenMulti0Assignment_1_0_1 = (Assignment)cGroup_1_0.eContents().get(1);
+		private final RuleCall cThenMulti0MultiplicityExpressionParserRuleCall_1_0_1_0 = (RuleCall)cThenMulti0Assignment_1_0_1.eContents().get(0);
 		private final Keyword cRightSquareBracketKeyword_1_0_2 = (Keyword)cGroup_1_0.eContents().get(2);
 		private final Group cGroup_1_1 = (Group)cAlternatives_1.eContents().get(1);
 		private final Keyword cLeftSquareBracketKeyword_1_1_0 = (Keyword)cGroup_1_1.eContents().get(0);
-		private final Assignment cThenMultiplicityAssignment_1_1_1 = (Assignment)cGroup_1_1.eContents().get(1);
-		private final RuleCall cThenMultiplicityMultiplicityExpressionParserRuleCall_1_1_1_0 = (RuleCall)cThenMultiplicityAssignment_1_1_1.eContents().get(0);
+		private final Assignment cThenMulti1Assignment_1_1_1 = (Assignment)cGroup_1_1.eContents().get(1);
+		private final RuleCall cThenMulti1MultiplicityExpressionParserRuleCall_1_1_1_0 = (RuleCall)cThenMulti1Assignment_1_1_1.eContents().get(0);
 		private final Keyword cFullStopFullStopKeyword_1_1_2 = (Keyword)cGroup_1_1.eContents().get(2);
-		private final Assignment cThenMultiplicityAssignment_1_1_3 = (Assignment)cGroup_1_1.eContents().get(3);
-		private final RuleCall cThenMultiplicityMultiplicityExpressionParserRuleCall_1_1_3_0 = (RuleCall)cThenMultiplicityAssignment_1_1_3.eContents().get(0);
+		private final Assignment cThenMulti02Assignment_1_1_3 = (Assignment)cGroup_1_1.eContents().get(3);
+		private final RuleCall cThenMulti02MultiplicityExpressionParserRuleCall_1_1_3_0 = (RuleCall)cThenMulti02Assignment_1_1_3.eContents().get(0);
 		private final Keyword cRightSquareBracketKeyword_1_1_4 = (Keyword)cGroup_1_1.eContents().get(4);
 		
 		//fragment EmptySuccessionPrefix:
 		//    ( isThen ?= 'then' )?
-		//    ( '[' ThenMultiplicity += MultiplicityExpression ']' | '[' ThenMultiplicity += MultiplicityExpression '..' ThenMultiplicity += MultiplicityExpression ']')?
+		////    ( '[' ThenMultiplicity += MultiplicityExpression ']' | '[' ThenMultiplicity += MultiplicityExpression '..' ThenMultiplicity += MultiplicityExpression ']')?
+		//    ('[' ThenMulti0 = MultiplicityExpression ']' | '[' ThenMulti1 = MultiplicityExpression '..' ThenMulti02 = MultiplicityExpression ']')?
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//( isThen ?= 'then' )?
-		//( '[' ThenMultiplicity += MultiplicityExpression ']' | '[' ThenMultiplicity += MultiplicityExpression '..' ThenMultiplicity += MultiplicityExpression ']')?
+		//    ( isThen ?= 'then' )?
+		////    ( '[' ThenMultiplicity += MultiplicityExpression ']' | '[' ThenMultiplicity += MultiplicityExpression '..' ThenMultiplicity += MultiplicityExpression ']')?
+		//    ('[' ThenMulti0 = MultiplicityExpression ']' | '[' ThenMulti1 = MultiplicityExpression '..' ThenMulti02 = MultiplicityExpression ']')?
 		public Group getGroup() { return cGroup; }
 		
 		//( isThen ?= 'then' )?
@@ -9992,44 +9994,45 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//'then'
 		public Keyword getIsThenThenKeyword_0_0() { return cIsThenThenKeyword_0_0; }
 		
-		//( '[' ThenMultiplicity += MultiplicityExpression ']' | '[' ThenMultiplicity += MultiplicityExpression '..' ThenMultiplicity += MultiplicityExpression ']')?
+		////    ( '[' ThenMultiplicity += MultiplicityExpression ']' | '[' ThenMultiplicity += MultiplicityExpression '..' ThenMultiplicity += MultiplicityExpression ']')?
+		//    ('[' ThenMulti0 = MultiplicityExpression ']' | '[' ThenMulti1 = MultiplicityExpression '..' ThenMulti02 = MultiplicityExpression ']')?
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 		
-		//'[' ThenMultiplicity += MultiplicityExpression ']'
+		//'[' ThenMulti0 = MultiplicityExpression ']'
 		public Group getGroup_1_0() { return cGroup_1_0; }
 		
 		//'['
 		public Keyword getLeftSquareBracketKeyword_1_0_0() { return cLeftSquareBracketKeyword_1_0_0; }
 		
-		//ThenMultiplicity += MultiplicityExpression
-		public Assignment getThenMultiplicityAssignment_1_0_1() { return cThenMultiplicityAssignment_1_0_1; }
+		//ThenMulti0 = MultiplicityExpression
+		public Assignment getThenMulti0Assignment_1_0_1() { return cThenMulti0Assignment_1_0_1; }
 		
 		//MultiplicityExpression
-		public RuleCall getThenMultiplicityMultiplicityExpressionParserRuleCall_1_0_1_0() { return cThenMultiplicityMultiplicityExpressionParserRuleCall_1_0_1_0; }
+		public RuleCall getThenMulti0MultiplicityExpressionParserRuleCall_1_0_1_0() { return cThenMulti0MultiplicityExpressionParserRuleCall_1_0_1_0; }
 		
 		//']'
 		public Keyword getRightSquareBracketKeyword_1_0_2() { return cRightSquareBracketKeyword_1_0_2; }
 		
-		//'[' ThenMultiplicity += MultiplicityExpression '..' ThenMultiplicity += MultiplicityExpression ']'
+		//'[' ThenMulti1 = MultiplicityExpression '..' ThenMulti02 = MultiplicityExpression ']'
 		public Group getGroup_1_1() { return cGroup_1_1; }
 		
 		//'['
 		public Keyword getLeftSquareBracketKeyword_1_1_0() { return cLeftSquareBracketKeyword_1_1_0; }
 		
-		//ThenMultiplicity += MultiplicityExpression
-		public Assignment getThenMultiplicityAssignment_1_1_1() { return cThenMultiplicityAssignment_1_1_1; }
+		//ThenMulti1 = MultiplicityExpression
+		public Assignment getThenMulti1Assignment_1_1_1() { return cThenMulti1Assignment_1_1_1; }
 		
 		//MultiplicityExpression
-		public RuleCall getThenMultiplicityMultiplicityExpressionParserRuleCall_1_1_1_0() { return cThenMultiplicityMultiplicityExpressionParserRuleCall_1_1_1_0; }
+		public RuleCall getThenMulti1MultiplicityExpressionParserRuleCall_1_1_1_0() { return cThenMulti1MultiplicityExpressionParserRuleCall_1_1_1_0; }
 		
 		//'..'
 		public Keyword getFullStopFullStopKeyword_1_1_2() { return cFullStopFullStopKeyword_1_1_2; }
 		
-		//ThenMultiplicity += MultiplicityExpression
-		public Assignment getThenMultiplicityAssignment_1_1_3() { return cThenMultiplicityAssignment_1_1_3; }
+		//ThenMulti02 = MultiplicityExpression
+		public Assignment getThenMulti02Assignment_1_1_3() { return cThenMulti02Assignment_1_1_3; }
 		
 		//MultiplicityExpression
-		public RuleCall getThenMultiplicityMultiplicityExpressionParserRuleCall_1_1_3_0() { return cThenMultiplicityMultiplicityExpressionParserRuleCall_1_1_3_0; }
+		public RuleCall getThenMulti02MultiplicityExpressionParserRuleCall_1_1_3_0() { return cThenMulti02MultiplicityExpressionParserRuleCall_1_1_3_0; }
 		
 		//']'
 		public Keyword getRightSquareBracketKeyword_1_1_4() { return cRightSquareBracketKeyword_1_1_4; }
@@ -10039,61 +10042,65 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
 		private final Keyword cLeftSquareBracketKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
-		private final Assignment cMultiplicityAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
-		private final RuleCall cMultiplicityMultiplicityExpressionParserRuleCall_0_1_0 = (RuleCall)cMultiplicityAssignment_0_1.eContents().get(0);
+		private final Assignment cMulti0Assignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cMulti0MultiplicityExpressionParserRuleCall_0_1_0 = (RuleCall)cMulti0Assignment_0_1.eContents().get(0);
 		private final Keyword cRightSquareBracketKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Keyword cLeftSquareBracketKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final Assignment cMultiplicityAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cMultiplicityMultiplicityExpressionParserRuleCall_1_1_0 = (RuleCall)cMultiplicityAssignment_1_1.eContents().get(0);
+		private final Assignment cMulti1Assignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cMulti1MultiplicityExpressionParserRuleCall_1_1_0 = (RuleCall)cMulti1Assignment_1_1.eContents().get(0);
 		private final Keyword cFullStopFullStopKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
-		private final Assignment cMultiplicityAssignment_1_3 = (Assignment)cGroup_1.eContents().get(3);
-		private final RuleCall cMultiplicityMultiplicityExpressionParserRuleCall_1_3_0 = (RuleCall)cMultiplicityAssignment_1_3.eContents().get(0);
+		private final Assignment cMulti02Assignment_1_3 = (Assignment)cGroup_1.eContents().get(3);
+		private final RuleCall cMulti02MultiplicityExpressionParserRuleCall_1_3_0 = (RuleCall)cMulti02Assignment_1_3.eContents().get(0);
 		private final Keyword cRightSquareBracketKeyword_1_4 = (Keyword)cGroup_1.eContents().get(4);
 		
 		//fragment MultiplicityRange:
-		//    '[' Multiplicity += MultiplicityExpression ']' | '[' Multiplicity += MultiplicityExpression '..' Multiplicity += MultiplicityExpression ']'
+		////    '[' Multiplicity += MultiplicityExpression ']' | '[' Multiplicity += MultiplicityExpression '..' Multiplicity += MultiplicityExpression ']'
+		//    '[' Multi0 = MultiplicityExpression ']' | '[' Multi1 = MultiplicityExpression '..' Multi02 = MultiplicityExpression ']'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'[' Multiplicity += MultiplicityExpression ']' | '[' Multiplicity += MultiplicityExpression '..' Multiplicity += MultiplicityExpression ']'
+		////    '[' Multiplicity += MultiplicityExpression ']' | '[' Multiplicity += MultiplicityExpression '..' Multiplicity += MultiplicityExpression ']'
+		//    '[' Multi0 = MultiplicityExpression ']' | '[' Multi1 = MultiplicityExpression '..' Multi02 = MultiplicityExpression ']'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//'[' Multiplicity += MultiplicityExpression ']'
+		////    '[' Multiplicity += MultiplicityExpression ']' | '[' Multiplicity += MultiplicityExpression '..' Multiplicity += MultiplicityExpression ']'
+		//    '[' Multi0 = MultiplicityExpression ']'
 		public Group getGroup_0() { return cGroup_0; }
 		
-		//'['
+		////    '[' Multiplicity += MultiplicityExpression ']' | '[' Multiplicity += MultiplicityExpression '..' Multiplicity += MultiplicityExpression ']'
+		//    '['
 		public Keyword getLeftSquareBracketKeyword_0_0() { return cLeftSquareBracketKeyword_0_0; }
 		
-		//Multiplicity += MultiplicityExpression
-		public Assignment getMultiplicityAssignment_0_1() { return cMultiplicityAssignment_0_1; }
+		//Multi0 = MultiplicityExpression
+		public Assignment getMulti0Assignment_0_1() { return cMulti0Assignment_0_1; }
 		
 		//MultiplicityExpression
-		public RuleCall getMultiplicityMultiplicityExpressionParserRuleCall_0_1_0() { return cMultiplicityMultiplicityExpressionParserRuleCall_0_1_0; }
+		public RuleCall getMulti0MultiplicityExpressionParserRuleCall_0_1_0() { return cMulti0MultiplicityExpressionParserRuleCall_0_1_0; }
 		
 		//']'
 		public Keyword getRightSquareBracketKeyword_0_2() { return cRightSquareBracketKeyword_0_2; }
 		
-		//'[' Multiplicity += MultiplicityExpression '..' Multiplicity += MultiplicityExpression ']'
+		//'[' Multi1 = MultiplicityExpression '..' Multi02 = MultiplicityExpression ']'
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//'['
 		public Keyword getLeftSquareBracketKeyword_1_0() { return cLeftSquareBracketKeyword_1_0; }
 		
-		//Multiplicity += MultiplicityExpression
-		public Assignment getMultiplicityAssignment_1_1() { return cMultiplicityAssignment_1_1; }
+		//Multi1 = MultiplicityExpression
+		public Assignment getMulti1Assignment_1_1() { return cMulti1Assignment_1_1; }
 		
 		//MultiplicityExpression
-		public RuleCall getMultiplicityMultiplicityExpressionParserRuleCall_1_1_0() { return cMultiplicityMultiplicityExpressionParserRuleCall_1_1_0; }
+		public RuleCall getMulti1MultiplicityExpressionParserRuleCall_1_1_0() { return cMulti1MultiplicityExpressionParserRuleCall_1_1_0; }
 		
 		//'..'
 		public Keyword getFullStopFullStopKeyword_1_2() { return cFullStopFullStopKeyword_1_2; }
 		
-		//Multiplicity += MultiplicityExpression
-		public Assignment getMultiplicityAssignment_1_3() { return cMultiplicityAssignment_1_3; }
+		//Multi02 = MultiplicityExpression
+		public Assignment getMulti02Assignment_1_3() { return cMulti02Assignment_1_3; }
 		
 		//MultiplicityExpression
-		public RuleCall getMultiplicityMultiplicityExpressionParserRuleCall_1_3_0() { return cMultiplicityMultiplicityExpressionParserRuleCall_1_3_0; }
+		public RuleCall getMulti02MultiplicityExpressionParserRuleCall_1_3_0() { return cMulti02MultiplicityExpressionParserRuleCall_1_3_0; }
 		
 		//']'
 		public Keyword getRightSquareBracketKeyword_1_4() { return cRightSquareBracketKeyword_1_4; }
@@ -10908,11 +10915,11 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cAcceptParameterPayloadParameterParserRuleCall_0 = (RuleCall)cAcceptParameterAssignment.eContents().get(0);
 		
 		//fragment AcceptParameterPart:
-		//    acceptParameter+=PayloadParameter
+		//    acceptParameter=PayloadParameter
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//acceptParameter+=PayloadParameter
+		//acceptParameter=PayloadParameter
 		public Assignment getAcceptParameterAssignment() { return cAcceptParameterAssignment; }
 		
 		//PayloadParameter
@@ -10924,11 +10931,11 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cItemFeatureParameterItemFeatureParameterParserRuleCall_0 = (RuleCall)cItemFeatureParameterAssignment.eContents().get(0);
 		
 		//fragment ItemFeatureParameterPart:
-		//    itemFeatureParameter+=ItemFeatureParameter
+		//    itemFeatureParameter=ItemFeatureParameter
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//itemFeatureParameter+=ItemFeatureParameter
+		//itemFeatureParameter=ItemFeatureParameter
 		public Assignment getItemFeatureParameterAssignment() { return cItemFeatureParameterAssignment; }
 		
 		//ItemFeatureParameter
@@ -11282,18 +11289,18 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		
 		//fragment MultiplicityPart:
 		//    MultiplicityRange
-		//    | (MultiplicityRange? ( isOrdered ?= 'ordered' isNonunique ?= 'nonunique'? | isNonunique ?= 'nonunique' isOrdered ?= 'ordered'? ))
+		//    | MultiplicityRange? ( isOrdered ?= 'ordered' isNonunique ?= 'nonunique'? | isNonunique ?= 'nonunique' isOrdered ?= 'ordered'? )
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//MultiplicityRange
-		//| (MultiplicityRange? ( isOrdered ?= 'ordered' isNonunique ?= 'nonunique'? | isNonunique ?= 'nonunique' isOrdered ?= 'ordered'? ))
+		//| MultiplicityRange? ( isOrdered ?= 'ordered' isNonunique ?= 'nonunique'? | isNonunique ?= 'nonunique' isOrdered ?= 'ordered'? )
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//MultiplicityRange
 		public RuleCall getMultiplicityRangeParserRuleCall_0() { return cMultiplicityRangeParserRuleCall_0; }
 		
-		//(MultiplicityRange? ( isOrdered ?= 'ordered' isNonunique ?= 'nonunique'? | isNonunique ?= 'nonunique' isOrdered ?= 'ordered'? ))
+		//MultiplicityRange? ( isOrdered ?= 'ordered' isNonunique ?= 'nonunique'? | isNonunique ?= 'nonunique' isOrdered ?= 'ordered'? )
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//MultiplicityRange?
@@ -16742,7 +16749,8 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	
 	//fragment EmptySuccessionPrefix:
 	//    ( isThen ?= 'then' )?
-	//    ( '[' ThenMultiplicity += MultiplicityExpression ']' | '[' ThenMultiplicity += MultiplicityExpression '..' ThenMultiplicity += MultiplicityExpression ']')?
+	////    ( '[' ThenMultiplicity += MultiplicityExpression ']' | '[' ThenMultiplicity += MultiplicityExpression '..' ThenMultiplicity += MultiplicityExpression ']')?
+	//    ('[' ThenMulti0 = MultiplicityExpression ']' | '[' ThenMulti1 = MultiplicityExpression '..' ThenMulti02 = MultiplicityExpression ']')?
 	//;
 	public EmptySuccessionPrefixElements getEmptySuccessionPrefixAccess() {
 		return pEmptySuccessionPrefix;
@@ -16753,7 +16761,8 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//fragment MultiplicityRange:
-	//    '[' Multiplicity += MultiplicityExpression ']' | '[' Multiplicity += MultiplicityExpression '..' Multiplicity += MultiplicityExpression ']'
+	////    '[' Multiplicity += MultiplicityExpression ']' | '[' Multiplicity += MultiplicityExpression '..' Multiplicity += MultiplicityExpression ']'
+	//    '[' Multi0 = MultiplicityExpression ']' | '[' Multi1 = MultiplicityExpression '..' Multi02 = MultiplicityExpression ']'
 	//;
 	public MultiplicityRangeElements getMultiplicityRangeAccess() {
 		return pMultiplicityRange;
@@ -17054,7 +17063,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//fragment AcceptParameterPart:
-	//    acceptParameter+=PayloadParameter
+	//    acceptParameter=PayloadParameter
 	//;
 	public AcceptParameterPartElements getAcceptParameterPartAccess() {
 		return pAcceptParameterPart;
@@ -17065,7 +17074,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//fragment ItemFeatureParameterPart:
-	//    itemFeatureParameter+=ItemFeatureParameter
+	//    itemFeatureParameter=ItemFeatureParameter
 	//;
 	public ItemFeatureParameterPartElements getItemFeatureParameterPartAccess() {
 		return pItemFeatureParameterPart;
@@ -17158,7 +17167,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	
 	//fragment MultiplicityPart:
 	//    MultiplicityRange
-	//    | (MultiplicityRange? ( isOrdered ?= 'ordered' isNonunique ?= 'nonunique'? | isNonunique ?= 'nonunique' isOrdered ?= 'ordered'? ))
+	//    | MultiplicityRange? ( isOrdered ?= 'ordered' isNonunique ?= 'nonunique'? | isNonunique ?= 'nonunique' isOrdered ?= 'ordered'? )
 	//;
 	public MultiplicityPartElements getMultiplicityPartAccess() {
 		return pMultiplicityPart;

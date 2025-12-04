@@ -4,12 +4,8 @@
     <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle1_c1">
       <elements xsi:type="sysMLOC:PartUsage" declaredName="interior">
         <elements xsi:type="sysMLOC:PartUsage" declaredName="alarm"/>
-        <elements xsi:type="sysMLOC:PartUsage" declaredName="seatBelt">
-          <Multiplicity>2</Multiplicity>
-        </elements>
-        <elements xsi:type="sysMLOC:PartUsage" declaredName="frontSeat">
-          <Multiplicity>2</Multiplicity>
-        </elements>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="seatBelt" Multi0="2"/>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="frontSeat" Multi0="2"/>
         <elements xsi:type="sysMLOC:PartUsage" declaredName="driverAirBag"/>
       </elements>
       <elements xsi:type="sysMLOC:PartUsage" declaredName="bodyAssy">

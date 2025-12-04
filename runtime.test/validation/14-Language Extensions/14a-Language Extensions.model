@@ -13,9 +13,8 @@
           <typings>SysML::PartUsage</typings>
           <redefinitions>annotatedElement</redefinitions>
         </elements>
-        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="classificationLevel">
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="classificationLevel" Multi0="1">
           <typings>ClassificationLevel</typings>
-          <Multiplicity>1</Multiplicity>
         </elements>
       </elements>
     </elements>

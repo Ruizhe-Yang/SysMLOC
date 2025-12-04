@@ -583,12 +583,14 @@
   <eClassifiers xsi:type="ecore:EClass" name="DefinitionExtensionKeyword" eSuperTypes="#//PrefixMetadata"/>
   <eClassifiers xsi:type="ecore:EClass" name="EmptySuccessionPrefix">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isThen" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ThenMultiplicity" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ThenMulti0" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ThenMulti1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ThenMulti02" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MultiplicityRange">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Multiplicity" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Multi0" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Multi1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Multi02" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ValuePart" eSuperTypes="#//FeatureValue"/>
   <eClassifiers xsi:type="ecore:EClass" name="MemberPrefix">
@@ -649,12 +651,12 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AcceptNodeDeclaration" eSuperTypes="#//ActionNodeUsageDeclaration #//AcceptParameterPart"/>
   <eClassifiers xsi:type="ecore:EClass" name="AcceptParameterPart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="acceptParameter" upperBound="-1"
-        eType="#//PayloadParameter" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="acceptParameter" eType="#//PayloadParameter"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ItemFeatureParameterPart">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="itemFeatureParameter" upperBound="-1"
-        eType="#//ItemFeatureParameter" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="itemFeatureParameter" eType="#//ItemFeatureParameter"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PayloadFeature" eSuperTypes="#//Identification #//PayloadFeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//ValuePart">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="payloadFeatureElement"

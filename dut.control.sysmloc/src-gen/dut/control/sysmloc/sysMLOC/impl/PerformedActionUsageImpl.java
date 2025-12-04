@@ -12,20 +12,13 @@ import dut.control.sysmloc.sysMLOC.PerformedActionUsage;
 import dut.control.sysmloc.sysMLOC.SendNodeDeclaration;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -49,14 +42,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class PerformedActionUsageImpl extends PerformActionUsageDeclarationImpl implements PerformedActionUsage
 {
   /**
-   * The cached value of the '{@link #getAcceptParameter() <em>Accept Parameter</em>}' containment reference list.
+   * The cached value of the '{@link #getAcceptParameter() <em>Accept Parameter</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getAcceptParameter()
    * @generated
    * @ordered
    */
-  protected EList<PayloadParameter> acceptParameter;
+  protected PayloadParameter acceptParameter;
 
   /**
    * The default value of the '{@link #getSendNodeParameter() <em>Send Node Parameter</em>}' attribute.
@@ -205,13 +198,48 @@ public class PerformedActionUsageImpl extends PerformActionUsageDeclarationImpl 
    * @generated
    */
   @Override
-  public EList<PayloadParameter> getAcceptParameter()
+  public PayloadParameter getAcceptParameter()
   {
-    if (acceptParameter == null)
-    {
-      acceptParameter = new EObjectContainmentEList<PayloadParameter>(PayloadParameter.class, this, SysMLOCPackage.PERFORMED_ACTION_USAGE__ACCEPT_PARAMETER);
-    }
     return acceptParameter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetAcceptParameter(PayloadParameter newAcceptParameter, NotificationChain msgs)
+  {
+    PayloadParameter oldAcceptParameter = acceptParameter;
+    acceptParameter = newAcceptParameter;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SysMLOCPackage.PERFORMED_ACTION_USAGE__ACCEPT_PARAMETER, oldAcceptParameter, newAcceptParameter);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setAcceptParameter(PayloadParameter newAcceptParameter)
+  {
+    if (newAcceptParameter != acceptParameter)
+    {
+      NotificationChain msgs = null;
+      if (acceptParameter != null)
+        msgs = ((InternalEObject)acceptParameter).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SysMLOCPackage.PERFORMED_ACTION_USAGE__ACCEPT_PARAMETER, null, msgs);
+      if (newAcceptParameter != null)
+        msgs = ((InternalEObject)newAcceptParameter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SysMLOCPackage.PERFORMED_ACTION_USAGE__ACCEPT_PARAMETER, null, msgs);
+      msgs = basicSetAcceptParameter(newAcceptParameter, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.PERFORMED_ACTION_USAGE__ACCEPT_PARAMETER, newAcceptParameter, newAcceptParameter));
   }
 
   /**
@@ -375,7 +403,7 @@ public class PerformedActionUsageImpl extends PerformActionUsageDeclarationImpl 
     switch (featureID)
     {
       case SysMLOCPackage.PERFORMED_ACTION_USAGE__ACCEPT_PARAMETER:
-        return ((InternalEList<?>)getAcceptParameter()).basicRemove(otherEnd, msgs);
+        return basicSetAcceptParameter(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -413,15 +441,13 @@ public class PerformedActionUsageImpl extends PerformActionUsageDeclarationImpl 
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
       case SysMLOCPackage.PERFORMED_ACTION_USAGE__ACCEPT_PARAMETER:
-        getAcceptParameter().clear();
-        getAcceptParameter().addAll((Collection<? extends PayloadParameter>)newValue);
+        setAcceptParameter((PayloadParameter)newValue);
         return;
       case SysMLOCPackage.PERFORMED_ACTION_USAGE__SEND_NODE_PARAMETER:
         setSendNodeParameter((String)newValue);
@@ -456,7 +482,7 @@ public class PerformedActionUsageImpl extends PerformActionUsageDeclarationImpl 
     switch (featureID)
     {
       case SysMLOCPackage.PERFORMED_ACTION_USAGE__ACCEPT_PARAMETER:
-        getAcceptParameter().clear();
+        setAcceptParameter((PayloadParameter)null);
         return;
       case SysMLOCPackage.PERFORMED_ACTION_USAGE__SEND_NODE_PARAMETER:
         setSendNodeParameter(SEND_NODE_PARAMETER_EDEFAULT);
@@ -491,7 +517,7 @@ public class PerformedActionUsageImpl extends PerformActionUsageDeclarationImpl 
     switch (featureID)
     {
       case SysMLOCPackage.PERFORMED_ACTION_USAGE__ACCEPT_PARAMETER:
-        return acceptParameter != null && !acceptParameter.isEmpty();
+        return acceptParameter != null;
       case SysMLOCPackage.PERFORMED_ACTION_USAGE__SEND_NODE_PARAMETER:
         return SEND_NODE_PARAMETER_EDEFAULT == null ? sendNodeParameter != null : !SEND_NODE_PARAMETER_EDEFAULT.equals(sendNodeParameter);
       case SysMLOCPackage.PERFORMED_ACTION_USAGE__VIA_NODE_PARAMETER:

@@ -10,9 +10,8 @@
       <elements xsi:type="sysMLOC:ItemUsage" isReference="true" declaredName="scene">
         <typings>Scene</typings>
       </elements>
-      <elements xsi:type="sysMLOC:PartUsage" declaredName="photos">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="photos" Multi0="*">
         <typings>Picture</typings>
-        <Multiplicity>*</Multiplicity>
       </elements>
       <elements xsi:type="sysMLOC:PartUsage" declaredName="autoFocus">
         <elements xsi:type="sysMLOC:ItemUsage" direction="in" isReference="true" declaredName="scene" valuePart="camera::scene">

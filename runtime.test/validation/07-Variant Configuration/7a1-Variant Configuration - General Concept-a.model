@@ -18,16 +18,13 @@
     </elements>
     <elements xsi:type="sysMLOC:PartUsage" declaredName="part6"/>
     <elements xsi:type="sysMLOC:PartDefinition" isAbstract="true" declaredName="SubsystemA">
-      <elements xsi:type="sysMLOC:PartUsage" isAbstract="true">
+      <elements xsi:type="sysMLOC:PartUsage" isAbstract="true" Multi1="0" Multi02="1">
         <redefinitions>part3</redefinitions>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:PartDefinition" isAbstract="true" declaredName="SubsystemB">
-      <elements xsi:type="sysMLOC:PartUsage" isAbstract="true">
+      <elements xsi:type="sysMLOC:PartUsage" isAbstract="true" Multi0="1">
         <redefinitions>part5</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:PartUsage" declaredName="anyVehicleConfig">
@@ -35,24 +32,20 @@
         <typings>SubsystemA</typings>
         <elements xsi:type="sysMLOC:PartUsage" isVariant="true" declaredName="subsystem1">
           <typings>SubsystemA</typings>
-          <elements xsi:type="sysMLOC:PartUsage">
+          <elements xsi:type="sysMLOC:PartUsage" Multi0="1">
             <redefinitions>part1</redefinitions>
-            <Multiplicity>1</Multiplicity>
           </elements>
-          <elements xsi:type="sysMLOC:PartUsage">
+          <elements xsi:type="sysMLOC:PartUsage" Multi0="1">
             <redefinitions>part2</redefinitions>
-            <Multiplicity>1</Multiplicity>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:PartUsage" isVariant="true" declaredName="subsystem2">
           <typings>SubsystemA</typings>
-          <elements xsi:type="sysMLOC:PartUsage">
+          <elements xsi:type="sysMLOC:PartUsage" Multi0="1">
             <redefinitions>part2</redefinitions>
-            <Multiplicity>1</Multiplicity>
           </elements>
-          <elements xsi:type="sysMLOC:PartUsage">
+          <elements xsi:type="sysMLOC:PartUsage" Multi0="1">
             <redefinitions>part3</redefinitions>
-            <Multiplicity>1</Multiplicity>
           </elements>
         </elements>
       </elements>
@@ -60,35 +53,26 @@
         <typings>SubsystemB</typings>
         <elements xsi:type="sysMLOC:PartUsage" isVariant="true" declaredName="subsystem3">
           <typings>SubsystemB</typings>
-          <elements xsi:type="sysMLOC:PartUsage">
+          <elements xsi:type="sysMLOC:PartUsage" Multi0="1">
             <redefinitions>part4</redefinitions>
-            <Multiplicity>1</Multiplicity>
           </elements>
-          <elements xsi:type="sysMLOC:PartUsage">
+          <elements xsi:type="sysMLOC:PartUsage" Multi0="1">
             <redefinitions>part5</redefinitions>
-            <Multiplicity>1</Multiplicity>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:PartUsage" isVariant="true" declaredName="subsystem4">
           <typings>SubsystemB</typings>
-          <elements xsi:type="sysMLOC:PartUsage">
+          <elements xsi:type="sysMLOC:PartUsage" Multi0="1">
             <redefinitions>part5</redefinitions>
-            <Multiplicity>1</Multiplicity>
           </elements>
-          <elements xsi:type="sysMLOC:PartUsage">
+          <elements xsi:type="sysMLOC:PartUsage" Multi0="1">
             <redefinitions>part6</redefinitions>
-            <Multiplicity>1</Multiplicity>
           </elements>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:ConnectionUsage">
-        <connectorPart refElement="subsystemA.part3.p1">
-          <Multiplicity>0</Multiplicity>
-          <Multiplicity>1</Multiplicity>
-        </connectorPart>
-        <connectorPart refElement="subsystemB.part5.p2">
-          <Multiplicity>1</Multiplicity>
-        </connectorPart>
+        <connectorPart Multi1="0" Multi02="1" refElement="subsystemA.part3.p1"/>
+        <connectorPart Multi0="1" refElement="subsystemB.part5.p2"/>
       </elements>
       <elements xsi:type="sysMLOC:AssertConstraintUsage">
         <resultExpressionParameter resultExpression="subsystemA != subsystemA::subsystem2 | subsystemB == subsystemB::subsystem3"/>

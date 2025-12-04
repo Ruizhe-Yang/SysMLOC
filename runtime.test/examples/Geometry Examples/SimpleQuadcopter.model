@@ -74,9 +74,8 @@
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:Comment" body="/* Strut shape is CSG difference of rawStrut minus motorCutout */"/>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
         <subsetting>differencesOf</subsetting>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:ItemUsage" valuePart="(rawStrut, motorCutout)">
           <redefinitions>elements</redefinitions>
         </elements>
@@ -238,9 +237,8 @@
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:Comment" body="/* Main body shape is the CSG intersection of rawBody and cuttingCornersBox */"/>
-        <elements xsi:type="sysMLOC:AttributeUsage">
+        <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
           <subsetting>intersectionsOf</subsetting>
-          <Multiplicity>1</Multiplicity>
           <elements xsi:type="sysMLOC:ItemUsage" valuePart="(rawBody, cuttingCornersBox)">
             <redefinitions>elements</redefinitions>
           </elements>

@@ -61,9 +61,7 @@
           <FlowEnd>mqtts.receive_subscribe_returnallitems</FlowEnd>
         </elements>
         <elements xsi:type="sysMLOC:Message" declaredName="call_getItems1">
-          <itemFeatureParameter payloadFeatureElement="CallGiveItems">
-            <Multiplicity>1</Multiplicity>
-          </itemFeatureParameter>
+          <itemFeatureParameter Multi0="1" payloadFeatureElement="CallGiveItems"/>
           <FlowEnd>tlc.call_getItems1</FlowEnd>
           <FlowEnd>apsp.receive_call_getItems1</FlowEnd>
         </elements>
@@ -79,9 +77,7 @@
           <FlowEnd>tlc.return_getItems1</FlowEnd>
         </elements>
         <elements xsi:type="sysMLOC:Message" declaredName="call_getItems2">
-          <itemFeatureParameter payloadFeatureElement="CallGiveItems">
-            <Multiplicity>1</Multiplicity>
-          </itemFeatureParameter>
+          <itemFeatureParameter Multi0="1" payloadFeatureElement="CallGiveItems"/>
           <FlowEnd>tlc.call_getItems2</FlowEnd>
           <FlowEnd>apsp.receive_call_getItems2</FlowEnd>
         </elements>
@@ -138,9 +134,7 @@
           <FlowEnd>mqgive</FlowEnd>
         </elements>
         <elements xsi:type="sysMLOC:Message" declaredName="call_getItems">
-          <itemFeatureParameter payloadFeatureElement="CallGiveItems">
-            <Multiplicity>1</Multiplicity>
-          </itemFeatureParameter>
+          <itemFeatureParameter Multi0="1" payloadFeatureElement="CallGiveItems"/>
           <FlowEnd>tlu</FlowEnd>
           <FlowEnd>apsph</FlowEnd>
         </elements>

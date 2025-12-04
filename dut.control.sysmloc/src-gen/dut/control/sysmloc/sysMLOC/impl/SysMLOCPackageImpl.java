@@ -5732,9 +5732,31 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   @Override
-  public EAttribute getEmptySuccessionPrefix_ThenMultiplicity()
+  public EAttribute getEmptySuccessionPrefix_ThenMulti0()
   {
         return (EAttribute)getEmptySuccessionPrefix().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getEmptySuccessionPrefix_ThenMulti1()
+  {
+        return (EAttribute)getEmptySuccessionPrefix().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getEmptySuccessionPrefix_ThenMulti02()
+  {
+        return (EAttribute)getEmptySuccessionPrefix().getEStructuralFeatures().get(3);
   }
 
   /**
@@ -5758,9 +5780,31 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   @Override
-  public EAttribute getMultiplicityRange_Multiplicity()
+  public EAttribute getMultiplicityRange_Multi0()
   {
         return (EAttribute)getMultiplicityRange().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getMultiplicityRange_Multi1()
+  {
+        return (EAttribute)getMultiplicityRange().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getMultiplicityRange_Multi02()
+  {
+        return (EAttribute)getMultiplicityRange().getEStructuralFeatures().get(2);
   }
 
   /**

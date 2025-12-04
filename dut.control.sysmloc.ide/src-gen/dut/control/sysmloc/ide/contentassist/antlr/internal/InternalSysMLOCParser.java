@@ -143545,26 +143545,26 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmptySuccessionPrefix__Group_1_0__1__Impl"
-    // InternalSysMLOC.g:42276:1: rule__EmptySuccessionPrefix__Group_1_0__1__Impl : ( ( rule__EmptySuccessionPrefix__ThenMultiplicityAssignment_1_0_1 ) ) ;
+    // InternalSysMLOC.g:42276:1: rule__EmptySuccessionPrefix__Group_1_0__1__Impl : ( ( rule__EmptySuccessionPrefix__ThenMulti0Assignment_1_0_1 ) ) ;
     public final void rule__EmptySuccessionPrefix__Group_1_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:42280:1: ( ( ( rule__EmptySuccessionPrefix__ThenMultiplicityAssignment_1_0_1 ) ) )
-            // InternalSysMLOC.g:42281:1: ( ( rule__EmptySuccessionPrefix__ThenMultiplicityAssignment_1_0_1 ) )
+            // InternalSysMLOC.g:42280:1: ( ( ( rule__EmptySuccessionPrefix__ThenMulti0Assignment_1_0_1 ) ) )
+            // InternalSysMLOC.g:42281:1: ( ( rule__EmptySuccessionPrefix__ThenMulti0Assignment_1_0_1 ) )
             {
-            // InternalSysMLOC.g:42281:1: ( ( rule__EmptySuccessionPrefix__ThenMultiplicityAssignment_1_0_1 ) )
-            // InternalSysMLOC.g:42282:2: ( rule__EmptySuccessionPrefix__ThenMultiplicityAssignment_1_0_1 )
+            // InternalSysMLOC.g:42281:1: ( ( rule__EmptySuccessionPrefix__ThenMulti0Assignment_1_0_1 ) )
+            // InternalSysMLOC.g:42282:2: ( rule__EmptySuccessionPrefix__ThenMulti0Assignment_1_0_1 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getEmptySuccessionPrefixAccess().getThenMultiplicityAssignment_1_0_1()); 
+               before(grammarAccess.getEmptySuccessionPrefixAccess().getThenMulti0Assignment_1_0_1()); 
             }
-            // InternalSysMLOC.g:42283:2: ( rule__EmptySuccessionPrefix__ThenMultiplicityAssignment_1_0_1 )
-            // InternalSysMLOC.g:42283:3: rule__EmptySuccessionPrefix__ThenMultiplicityAssignment_1_0_1
+            // InternalSysMLOC.g:42283:2: ( rule__EmptySuccessionPrefix__ThenMulti0Assignment_1_0_1 )
+            // InternalSysMLOC.g:42283:3: rule__EmptySuccessionPrefix__ThenMulti0Assignment_1_0_1
             {
             pushFollow(FOLLOW_2);
-            rule__EmptySuccessionPrefix__ThenMultiplicityAssignment_1_0_1();
+            rule__EmptySuccessionPrefix__ThenMulti0Assignment_1_0_1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -143572,7 +143572,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getEmptySuccessionPrefixAccess().getThenMultiplicityAssignment_1_0_1()); 
+               after(grammarAccess.getEmptySuccessionPrefixAccess().getThenMulti0Assignment_1_0_1()); 
             }
 
             }
@@ -143787,26 +143787,26 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmptySuccessionPrefix__Group_1_1__1__Impl"
-    // InternalSysMLOC.g:42357:1: rule__EmptySuccessionPrefix__Group_1_1__1__Impl : ( ( rule__EmptySuccessionPrefix__ThenMultiplicityAssignment_1_1_1 ) ) ;
+    // InternalSysMLOC.g:42357:1: rule__EmptySuccessionPrefix__Group_1_1__1__Impl : ( ( rule__EmptySuccessionPrefix__ThenMulti1Assignment_1_1_1 ) ) ;
     public final void rule__EmptySuccessionPrefix__Group_1_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:42361:1: ( ( ( rule__EmptySuccessionPrefix__ThenMultiplicityAssignment_1_1_1 ) ) )
-            // InternalSysMLOC.g:42362:1: ( ( rule__EmptySuccessionPrefix__ThenMultiplicityAssignment_1_1_1 ) )
+            // InternalSysMLOC.g:42361:1: ( ( ( rule__EmptySuccessionPrefix__ThenMulti1Assignment_1_1_1 ) ) )
+            // InternalSysMLOC.g:42362:1: ( ( rule__EmptySuccessionPrefix__ThenMulti1Assignment_1_1_1 ) )
             {
-            // InternalSysMLOC.g:42362:1: ( ( rule__EmptySuccessionPrefix__ThenMultiplicityAssignment_1_1_1 ) )
-            // InternalSysMLOC.g:42363:2: ( rule__EmptySuccessionPrefix__ThenMultiplicityAssignment_1_1_1 )
+            // InternalSysMLOC.g:42362:1: ( ( rule__EmptySuccessionPrefix__ThenMulti1Assignment_1_1_1 ) )
+            // InternalSysMLOC.g:42363:2: ( rule__EmptySuccessionPrefix__ThenMulti1Assignment_1_1_1 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getEmptySuccessionPrefixAccess().getThenMultiplicityAssignment_1_1_1()); 
+               before(grammarAccess.getEmptySuccessionPrefixAccess().getThenMulti1Assignment_1_1_1()); 
             }
-            // InternalSysMLOC.g:42364:2: ( rule__EmptySuccessionPrefix__ThenMultiplicityAssignment_1_1_1 )
-            // InternalSysMLOC.g:42364:3: rule__EmptySuccessionPrefix__ThenMultiplicityAssignment_1_1_1
+            // InternalSysMLOC.g:42364:2: ( rule__EmptySuccessionPrefix__ThenMulti1Assignment_1_1_1 )
+            // InternalSysMLOC.g:42364:3: rule__EmptySuccessionPrefix__ThenMulti1Assignment_1_1_1
             {
             pushFollow(FOLLOW_2);
-            rule__EmptySuccessionPrefix__ThenMultiplicityAssignment_1_1_1();
+            rule__EmptySuccessionPrefix__ThenMulti1Assignment_1_1_1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -143814,7 +143814,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getEmptySuccessionPrefixAccess().getThenMultiplicityAssignment_1_1_1()); 
+               after(grammarAccess.getEmptySuccessionPrefixAccess().getThenMulti1Assignment_1_1_1()); 
             }
 
             }
@@ -143955,26 +143955,26 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EmptySuccessionPrefix__Group_1_1__3__Impl"
-    // InternalSysMLOC.g:42411:1: rule__EmptySuccessionPrefix__Group_1_1__3__Impl : ( ( rule__EmptySuccessionPrefix__ThenMultiplicityAssignment_1_1_3 ) ) ;
+    // InternalSysMLOC.g:42411:1: rule__EmptySuccessionPrefix__Group_1_1__3__Impl : ( ( rule__EmptySuccessionPrefix__ThenMulti02Assignment_1_1_3 ) ) ;
     public final void rule__EmptySuccessionPrefix__Group_1_1__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:42415:1: ( ( ( rule__EmptySuccessionPrefix__ThenMultiplicityAssignment_1_1_3 ) ) )
-            // InternalSysMLOC.g:42416:1: ( ( rule__EmptySuccessionPrefix__ThenMultiplicityAssignment_1_1_3 ) )
+            // InternalSysMLOC.g:42415:1: ( ( ( rule__EmptySuccessionPrefix__ThenMulti02Assignment_1_1_3 ) ) )
+            // InternalSysMLOC.g:42416:1: ( ( rule__EmptySuccessionPrefix__ThenMulti02Assignment_1_1_3 ) )
             {
-            // InternalSysMLOC.g:42416:1: ( ( rule__EmptySuccessionPrefix__ThenMultiplicityAssignment_1_1_3 ) )
-            // InternalSysMLOC.g:42417:2: ( rule__EmptySuccessionPrefix__ThenMultiplicityAssignment_1_1_3 )
+            // InternalSysMLOC.g:42416:1: ( ( rule__EmptySuccessionPrefix__ThenMulti02Assignment_1_1_3 ) )
+            // InternalSysMLOC.g:42417:2: ( rule__EmptySuccessionPrefix__ThenMulti02Assignment_1_1_3 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getEmptySuccessionPrefixAccess().getThenMultiplicityAssignment_1_1_3()); 
+               before(grammarAccess.getEmptySuccessionPrefixAccess().getThenMulti02Assignment_1_1_3()); 
             }
-            // InternalSysMLOC.g:42418:2: ( rule__EmptySuccessionPrefix__ThenMultiplicityAssignment_1_1_3 )
-            // InternalSysMLOC.g:42418:3: rule__EmptySuccessionPrefix__ThenMultiplicityAssignment_1_1_3
+            // InternalSysMLOC.g:42418:2: ( rule__EmptySuccessionPrefix__ThenMulti02Assignment_1_1_3 )
+            // InternalSysMLOC.g:42418:3: rule__EmptySuccessionPrefix__ThenMulti02Assignment_1_1_3
             {
             pushFollow(FOLLOW_2);
-            rule__EmptySuccessionPrefix__ThenMultiplicityAssignment_1_1_3();
+            rule__EmptySuccessionPrefix__ThenMulti02Assignment_1_1_3();
 
             state._fsp--;
             if (state.failed) return ;
@@ -143982,7 +143982,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getEmptySuccessionPrefixAccess().getThenMultiplicityAssignment_1_1_3()); 
+               after(grammarAccess.getEmptySuccessionPrefixAccess().getThenMulti02Assignment_1_1_3()); 
             }
 
             }
@@ -144197,26 +144197,26 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MultiplicityRange__Group_0__1__Impl"
-    // InternalSysMLOC.g:42492:1: rule__MultiplicityRange__Group_0__1__Impl : ( ( rule__MultiplicityRange__MultiplicityAssignment_0_1 ) ) ;
+    // InternalSysMLOC.g:42492:1: rule__MultiplicityRange__Group_0__1__Impl : ( ( rule__MultiplicityRange__Multi0Assignment_0_1 ) ) ;
     public final void rule__MultiplicityRange__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:42496:1: ( ( ( rule__MultiplicityRange__MultiplicityAssignment_0_1 ) ) )
-            // InternalSysMLOC.g:42497:1: ( ( rule__MultiplicityRange__MultiplicityAssignment_0_1 ) )
+            // InternalSysMLOC.g:42496:1: ( ( ( rule__MultiplicityRange__Multi0Assignment_0_1 ) ) )
+            // InternalSysMLOC.g:42497:1: ( ( rule__MultiplicityRange__Multi0Assignment_0_1 ) )
             {
-            // InternalSysMLOC.g:42497:1: ( ( rule__MultiplicityRange__MultiplicityAssignment_0_1 ) )
-            // InternalSysMLOC.g:42498:2: ( rule__MultiplicityRange__MultiplicityAssignment_0_1 )
+            // InternalSysMLOC.g:42497:1: ( ( rule__MultiplicityRange__Multi0Assignment_0_1 ) )
+            // InternalSysMLOC.g:42498:2: ( rule__MultiplicityRange__Multi0Assignment_0_1 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getMultiplicityRangeAccess().getMultiplicityAssignment_0_1()); 
+               before(grammarAccess.getMultiplicityRangeAccess().getMulti0Assignment_0_1()); 
             }
-            // InternalSysMLOC.g:42499:2: ( rule__MultiplicityRange__MultiplicityAssignment_0_1 )
-            // InternalSysMLOC.g:42499:3: rule__MultiplicityRange__MultiplicityAssignment_0_1
+            // InternalSysMLOC.g:42499:2: ( rule__MultiplicityRange__Multi0Assignment_0_1 )
+            // InternalSysMLOC.g:42499:3: rule__MultiplicityRange__Multi0Assignment_0_1
             {
             pushFollow(FOLLOW_2);
-            rule__MultiplicityRange__MultiplicityAssignment_0_1();
+            rule__MultiplicityRange__Multi0Assignment_0_1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -144224,7 +144224,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getMultiplicityRangeAccess().getMultiplicityAssignment_0_1()); 
+               after(grammarAccess.getMultiplicityRangeAccess().getMulti0Assignment_0_1()); 
             }
 
             }
@@ -144439,26 +144439,26 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MultiplicityRange__Group_1__1__Impl"
-    // InternalSysMLOC.g:42573:1: rule__MultiplicityRange__Group_1__1__Impl : ( ( rule__MultiplicityRange__MultiplicityAssignment_1_1 ) ) ;
+    // InternalSysMLOC.g:42573:1: rule__MultiplicityRange__Group_1__1__Impl : ( ( rule__MultiplicityRange__Multi1Assignment_1_1 ) ) ;
     public final void rule__MultiplicityRange__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:42577:1: ( ( ( rule__MultiplicityRange__MultiplicityAssignment_1_1 ) ) )
-            // InternalSysMLOC.g:42578:1: ( ( rule__MultiplicityRange__MultiplicityAssignment_1_1 ) )
+            // InternalSysMLOC.g:42577:1: ( ( ( rule__MultiplicityRange__Multi1Assignment_1_1 ) ) )
+            // InternalSysMLOC.g:42578:1: ( ( rule__MultiplicityRange__Multi1Assignment_1_1 ) )
             {
-            // InternalSysMLOC.g:42578:1: ( ( rule__MultiplicityRange__MultiplicityAssignment_1_1 ) )
-            // InternalSysMLOC.g:42579:2: ( rule__MultiplicityRange__MultiplicityAssignment_1_1 )
+            // InternalSysMLOC.g:42578:1: ( ( rule__MultiplicityRange__Multi1Assignment_1_1 ) )
+            // InternalSysMLOC.g:42579:2: ( rule__MultiplicityRange__Multi1Assignment_1_1 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getMultiplicityRangeAccess().getMultiplicityAssignment_1_1()); 
+               before(grammarAccess.getMultiplicityRangeAccess().getMulti1Assignment_1_1()); 
             }
-            // InternalSysMLOC.g:42580:2: ( rule__MultiplicityRange__MultiplicityAssignment_1_1 )
-            // InternalSysMLOC.g:42580:3: rule__MultiplicityRange__MultiplicityAssignment_1_1
+            // InternalSysMLOC.g:42580:2: ( rule__MultiplicityRange__Multi1Assignment_1_1 )
+            // InternalSysMLOC.g:42580:3: rule__MultiplicityRange__Multi1Assignment_1_1
             {
             pushFollow(FOLLOW_2);
-            rule__MultiplicityRange__MultiplicityAssignment_1_1();
+            rule__MultiplicityRange__Multi1Assignment_1_1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -144466,7 +144466,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getMultiplicityRangeAccess().getMultiplicityAssignment_1_1()); 
+               after(grammarAccess.getMultiplicityRangeAccess().getMulti1Assignment_1_1()); 
             }
 
             }
@@ -144607,26 +144607,26 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MultiplicityRange__Group_1__3__Impl"
-    // InternalSysMLOC.g:42627:1: rule__MultiplicityRange__Group_1__3__Impl : ( ( rule__MultiplicityRange__MultiplicityAssignment_1_3 ) ) ;
+    // InternalSysMLOC.g:42627:1: rule__MultiplicityRange__Group_1__3__Impl : ( ( rule__MultiplicityRange__Multi02Assignment_1_3 ) ) ;
     public final void rule__MultiplicityRange__Group_1__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:42631:1: ( ( ( rule__MultiplicityRange__MultiplicityAssignment_1_3 ) ) )
-            // InternalSysMLOC.g:42632:1: ( ( rule__MultiplicityRange__MultiplicityAssignment_1_3 ) )
+            // InternalSysMLOC.g:42631:1: ( ( ( rule__MultiplicityRange__Multi02Assignment_1_3 ) ) )
+            // InternalSysMLOC.g:42632:1: ( ( rule__MultiplicityRange__Multi02Assignment_1_3 ) )
             {
-            // InternalSysMLOC.g:42632:1: ( ( rule__MultiplicityRange__MultiplicityAssignment_1_3 ) )
-            // InternalSysMLOC.g:42633:2: ( rule__MultiplicityRange__MultiplicityAssignment_1_3 )
+            // InternalSysMLOC.g:42632:1: ( ( rule__MultiplicityRange__Multi02Assignment_1_3 ) )
+            // InternalSysMLOC.g:42633:2: ( rule__MultiplicityRange__Multi02Assignment_1_3 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getMultiplicityRangeAccess().getMultiplicityAssignment_1_3()); 
+               before(grammarAccess.getMultiplicityRangeAccess().getMulti02Assignment_1_3()); 
             }
-            // InternalSysMLOC.g:42634:2: ( rule__MultiplicityRange__MultiplicityAssignment_1_3 )
-            // InternalSysMLOC.g:42634:3: rule__MultiplicityRange__MultiplicityAssignment_1_3
+            // InternalSysMLOC.g:42634:2: ( rule__MultiplicityRange__Multi02Assignment_1_3 )
+            // InternalSysMLOC.g:42634:3: rule__MultiplicityRange__Multi02Assignment_1_3
             {
             pushFollow(FOLLOW_2);
-            rule__MultiplicityRange__MultiplicityAssignment_1_3();
+            rule__MultiplicityRange__Multi02Assignment_1_3();
 
             state._fsp--;
             if (state.failed) return ;
@@ -144634,7 +144634,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getMultiplicityRangeAccess().getMultiplicityAssignment_1_3()); 
+               after(grammarAccess.getMultiplicityRangeAccess().getMulti02Assignment_1_3()); 
             }
 
             }
@@ -186848,9 +186848,9 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__EmptySuccessionPrefix__IsThenAssignment_0"
 
 
-    // $ANTLR start "rule__EmptySuccessionPrefix__ThenMultiplicityAssignment_1_0_1"
-    // InternalSysMLOC.g:56067:1: rule__EmptySuccessionPrefix__ThenMultiplicityAssignment_1_0_1 : ( ruleMultiplicityExpression ) ;
-    public final void rule__EmptySuccessionPrefix__ThenMultiplicityAssignment_1_0_1() throws RecognitionException {
+    // $ANTLR start "rule__EmptySuccessionPrefix__ThenMulti0Assignment_1_0_1"
+    // InternalSysMLOC.g:56067:1: rule__EmptySuccessionPrefix__ThenMulti0Assignment_1_0_1 : ( ruleMultiplicityExpression ) ;
+    public final void rule__EmptySuccessionPrefix__ThenMulti0Assignment_1_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -186862,7 +186862,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             // InternalSysMLOC.g:56073:3: ruleMultiplicityExpression
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getEmptySuccessionPrefixAccess().getThenMultiplicityMultiplicityExpressionParserRuleCall_1_0_1_0()); 
+               before(grammarAccess.getEmptySuccessionPrefixAccess().getThenMulti0MultiplicityExpressionParserRuleCall_1_0_1_0()); 
             }
             pushFollow(FOLLOW_2);
             ruleMultiplicityExpression();
@@ -186870,7 +186870,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getEmptySuccessionPrefixAccess().getThenMultiplicityMultiplicityExpressionParserRuleCall_1_0_1_0()); 
+               after(grammarAccess.getEmptySuccessionPrefixAccess().getThenMulti0MultiplicityExpressionParserRuleCall_1_0_1_0()); 
             }
 
             }
@@ -186890,12 +186890,12 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__EmptySuccessionPrefix__ThenMultiplicityAssignment_1_0_1"
+    // $ANTLR end "rule__EmptySuccessionPrefix__ThenMulti0Assignment_1_0_1"
 
 
-    // $ANTLR start "rule__EmptySuccessionPrefix__ThenMultiplicityAssignment_1_1_1"
-    // InternalSysMLOC.g:56082:1: rule__EmptySuccessionPrefix__ThenMultiplicityAssignment_1_1_1 : ( ruleMultiplicityExpression ) ;
-    public final void rule__EmptySuccessionPrefix__ThenMultiplicityAssignment_1_1_1() throws RecognitionException {
+    // $ANTLR start "rule__EmptySuccessionPrefix__ThenMulti1Assignment_1_1_1"
+    // InternalSysMLOC.g:56082:1: rule__EmptySuccessionPrefix__ThenMulti1Assignment_1_1_1 : ( ruleMultiplicityExpression ) ;
+    public final void rule__EmptySuccessionPrefix__ThenMulti1Assignment_1_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -186907,7 +186907,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             // InternalSysMLOC.g:56088:3: ruleMultiplicityExpression
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getEmptySuccessionPrefixAccess().getThenMultiplicityMultiplicityExpressionParserRuleCall_1_1_1_0()); 
+               before(grammarAccess.getEmptySuccessionPrefixAccess().getThenMulti1MultiplicityExpressionParserRuleCall_1_1_1_0()); 
             }
             pushFollow(FOLLOW_2);
             ruleMultiplicityExpression();
@@ -186915,7 +186915,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getEmptySuccessionPrefixAccess().getThenMultiplicityMultiplicityExpressionParserRuleCall_1_1_1_0()); 
+               after(grammarAccess.getEmptySuccessionPrefixAccess().getThenMulti1MultiplicityExpressionParserRuleCall_1_1_1_0()); 
             }
 
             }
@@ -186935,12 +186935,12 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__EmptySuccessionPrefix__ThenMultiplicityAssignment_1_1_1"
+    // $ANTLR end "rule__EmptySuccessionPrefix__ThenMulti1Assignment_1_1_1"
 
 
-    // $ANTLR start "rule__EmptySuccessionPrefix__ThenMultiplicityAssignment_1_1_3"
-    // InternalSysMLOC.g:56097:1: rule__EmptySuccessionPrefix__ThenMultiplicityAssignment_1_1_3 : ( ruleMultiplicityExpression ) ;
-    public final void rule__EmptySuccessionPrefix__ThenMultiplicityAssignment_1_1_3() throws RecognitionException {
+    // $ANTLR start "rule__EmptySuccessionPrefix__ThenMulti02Assignment_1_1_3"
+    // InternalSysMLOC.g:56097:1: rule__EmptySuccessionPrefix__ThenMulti02Assignment_1_1_3 : ( ruleMultiplicityExpression ) ;
+    public final void rule__EmptySuccessionPrefix__ThenMulti02Assignment_1_1_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -186952,7 +186952,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             // InternalSysMLOC.g:56103:3: ruleMultiplicityExpression
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getEmptySuccessionPrefixAccess().getThenMultiplicityMultiplicityExpressionParserRuleCall_1_1_3_0()); 
+               before(grammarAccess.getEmptySuccessionPrefixAccess().getThenMulti02MultiplicityExpressionParserRuleCall_1_1_3_0()); 
             }
             pushFollow(FOLLOW_2);
             ruleMultiplicityExpression();
@@ -186960,7 +186960,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getEmptySuccessionPrefixAccess().getThenMultiplicityMultiplicityExpressionParserRuleCall_1_1_3_0()); 
+               after(grammarAccess.getEmptySuccessionPrefixAccess().getThenMulti02MultiplicityExpressionParserRuleCall_1_1_3_0()); 
             }
 
             }
@@ -186980,12 +186980,12 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__EmptySuccessionPrefix__ThenMultiplicityAssignment_1_1_3"
+    // $ANTLR end "rule__EmptySuccessionPrefix__ThenMulti02Assignment_1_1_3"
 
 
-    // $ANTLR start "rule__MultiplicityRange__MultiplicityAssignment_0_1"
-    // InternalSysMLOC.g:56112:1: rule__MultiplicityRange__MultiplicityAssignment_0_1 : ( ruleMultiplicityExpression ) ;
-    public final void rule__MultiplicityRange__MultiplicityAssignment_0_1() throws RecognitionException {
+    // $ANTLR start "rule__MultiplicityRange__Multi0Assignment_0_1"
+    // InternalSysMLOC.g:56112:1: rule__MultiplicityRange__Multi0Assignment_0_1 : ( ruleMultiplicityExpression ) ;
+    public final void rule__MultiplicityRange__Multi0Assignment_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -186997,7 +186997,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             // InternalSysMLOC.g:56118:3: ruleMultiplicityExpression
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getMultiplicityRangeAccess().getMultiplicityMultiplicityExpressionParserRuleCall_0_1_0()); 
+               before(grammarAccess.getMultiplicityRangeAccess().getMulti0MultiplicityExpressionParserRuleCall_0_1_0()); 
             }
             pushFollow(FOLLOW_2);
             ruleMultiplicityExpression();
@@ -187005,7 +187005,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getMultiplicityRangeAccess().getMultiplicityMultiplicityExpressionParserRuleCall_0_1_0()); 
+               after(grammarAccess.getMultiplicityRangeAccess().getMulti0MultiplicityExpressionParserRuleCall_0_1_0()); 
             }
 
             }
@@ -187025,12 +187025,12 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__MultiplicityRange__MultiplicityAssignment_0_1"
+    // $ANTLR end "rule__MultiplicityRange__Multi0Assignment_0_1"
 
 
-    // $ANTLR start "rule__MultiplicityRange__MultiplicityAssignment_1_1"
-    // InternalSysMLOC.g:56127:1: rule__MultiplicityRange__MultiplicityAssignment_1_1 : ( ruleMultiplicityExpression ) ;
-    public final void rule__MultiplicityRange__MultiplicityAssignment_1_1() throws RecognitionException {
+    // $ANTLR start "rule__MultiplicityRange__Multi1Assignment_1_1"
+    // InternalSysMLOC.g:56127:1: rule__MultiplicityRange__Multi1Assignment_1_1 : ( ruleMultiplicityExpression ) ;
+    public final void rule__MultiplicityRange__Multi1Assignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -187042,7 +187042,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             // InternalSysMLOC.g:56133:3: ruleMultiplicityExpression
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getMultiplicityRangeAccess().getMultiplicityMultiplicityExpressionParserRuleCall_1_1_0()); 
+               before(grammarAccess.getMultiplicityRangeAccess().getMulti1MultiplicityExpressionParserRuleCall_1_1_0()); 
             }
             pushFollow(FOLLOW_2);
             ruleMultiplicityExpression();
@@ -187050,7 +187050,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getMultiplicityRangeAccess().getMultiplicityMultiplicityExpressionParserRuleCall_1_1_0()); 
+               after(grammarAccess.getMultiplicityRangeAccess().getMulti1MultiplicityExpressionParserRuleCall_1_1_0()); 
             }
 
             }
@@ -187070,12 +187070,12 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__MultiplicityRange__MultiplicityAssignment_1_1"
+    // $ANTLR end "rule__MultiplicityRange__Multi1Assignment_1_1"
 
 
-    // $ANTLR start "rule__MultiplicityRange__MultiplicityAssignment_1_3"
-    // InternalSysMLOC.g:56142:1: rule__MultiplicityRange__MultiplicityAssignment_1_3 : ( ruleMultiplicityExpression ) ;
-    public final void rule__MultiplicityRange__MultiplicityAssignment_1_3() throws RecognitionException {
+    // $ANTLR start "rule__MultiplicityRange__Multi02Assignment_1_3"
+    // InternalSysMLOC.g:56142:1: rule__MultiplicityRange__Multi02Assignment_1_3 : ( ruleMultiplicityExpression ) ;
+    public final void rule__MultiplicityRange__Multi02Assignment_1_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -187087,7 +187087,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             // InternalSysMLOC.g:56148:3: ruleMultiplicityExpression
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getMultiplicityRangeAccess().getMultiplicityMultiplicityExpressionParserRuleCall_1_3_0()); 
+               before(grammarAccess.getMultiplicityRangeAccess().getMulti02MultiplicityExpressionParserRuleCall_1_3_0()); 
             }
             pushFollow(FOLLOW_2);
             ruleMultiplicityExpression();
@@ -187095,7 +187095,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getMultiplicityRangeAccess().getMultiplicityMultiplicityExpressionParserRuleCall_1_3_0()); 
+               after(grammarAccess.getMultiplicityRangeAccess().getMulti02MultiplicityExpressionParserRuleCall_1_3_0()); 
             }
 
             }
@@ -187115,7 +187115,7 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__MultiplicityRange__MultiplicityAssignment_1_3"
+    // $ANTLR end "rule__MultiplicityRange__Multi02Assignment_1_3"
 
 
     // $ANTLR start "rule__MemberPrefix__VisibilityAssignment_0"

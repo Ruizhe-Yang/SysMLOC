@@ -25,12 +25,10 @@
       <elements xsi:type="sysMLOC:Documentation" body="/* Basic Vehicle configuration showing a part hierarchy. */"/>
       <elements xsi:type="sysMLOC:PartUsage" declaredName="frontAxleAssembly">
         <typings>AxleAssembly</typings>
-        <elements xsi:type="sysMLOC:PartUsage" declaredName="frontWheel">
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="frontWheel" Multi0="2">
           <subsetting>narrowRimWheel</subsetting>
-          <Multiplicity>2</Multiplicity>
-          <elements xsi:type="sysMLOC:PartUsage">
+          <elements xsi:type="sysMLOC:PartUsage" Multi0="4">
             <redefinitions>lugbolt</redefinitions>
-            <Multiplicity>4</Multiplicity>
             <elements xsi:type="sysMLOC:AttributeUsage" valuePart="T1">
               <redefinitions>tighteningTorque</redefinitions>
             </elements>
@@ -42,12 +40,10 @@
       </elements>
       <elements xsi:type="sysMLOC:PartUsage" declaredName="rearAxleAssembly">
         <typings>AxleAssembly</typings>
-        <elements xsi:type="sysMLOC:PartUsage" declaredName="rearWheel">
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="rearWheel" Multi0="2">
           <subsetting>wideRimWheel</subsetting>
-          <Multiplicity>2</Multiplicity>
-          <elements xsi:type="sysMLOC:PartUsage">
+          <elements xsi:type="sysMLOC:PartUsage" Multi0="6">
             <redefinitions>lugbolt</redefinitions>
-            <Multiplicity>6</Multiplicity>
             <elements xsi:type="sysMLOC:AttributeUsage" valuePart="T2">
               <redefinitions>tighteningTorque</redefinitions>
             </elements>

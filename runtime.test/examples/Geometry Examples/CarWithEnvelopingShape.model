@@ -5,10 +5,9 @@
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="SI::mm"/>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Car">
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * Example car with simple enveloping shape that is a solid box&#xD;&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:ItemUsage" declaredName="boundingBox">
+      <elements xsi:type="sysMLOC:ItemUsage" declaredName="boundingBox" Multi0="1">
         <typings>Box</typings>
         <subsetting>boundingShapes</subsetting>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="4800 [mm]">
           <redefinitions>length</redefinitions>
         </elements>

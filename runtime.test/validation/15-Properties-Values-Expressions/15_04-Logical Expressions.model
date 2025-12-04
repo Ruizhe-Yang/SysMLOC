@@ -20,13 +20,11 @@
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="isHighPerformance">
         <typings>Boolean</typings>
       </elements>
-      <elements xsi:type="sysMLOC:PartUsage" declaredName="engine">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="engine" Multi0="1">
         <typings>Engine</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:PartUsage" declaredName="transmission">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="transmission" Multi0="1">
         <typings>Transmission</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
       <elements xsi:type="sysMLOC:AssertConstraintUsage">
         <resultExpressionParameter resultExpression="if isHighPerformance? engine istype '6CylEngine' else engine istype '4CylEngine'"/>

@@ -18,9 +18,8 @@
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="TradeStudies" isNamespace="true"/>
     <elements xsi:type="sysMLOC:AnalysisCaseUsage" declaredName="engineTradeOffAnalysis">
       <typings>TradeStudy</typings>
-      <elements xsi:type="sysMLOC:SubjectUsage" declaredName="alternatives" valuePart="(engine4cyl, engine6cyl)">
+      <elements xsi:type="sysMLOC:SubjectUsage" declaredName="alternatives" Multi0="2" valuePart="(engine4cyl, engine6cyl)">
         <subsetting>engine</subsetting>
-        <Multiplicity>2</Multiplicity>
       </elements>
       <elements xsi:type="sysMLOC:Comment" body="/* ... */"/>
       <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="selectedEngine">

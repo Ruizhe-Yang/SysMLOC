@@ -5,9 +5,8 @@
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="SI" isNamespace="true"/>
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="'15_01-Constants'::'Mathematical Constants'::pi"/>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="HeadLightsTiltKnob">
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="headLightsTile">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="headLightsTile" Multi0="1">
         <typings>LightBeamTiltAngleValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="LightBeamTiltAngleValue">

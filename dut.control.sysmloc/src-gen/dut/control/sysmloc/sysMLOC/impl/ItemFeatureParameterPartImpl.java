@@ -7,19 +7,14 @@ import dut.control.sysmloc.sysMLOC.ItemFeatureParameter;
 import dut.control.sysmloc.sysMLOC.ItemFeatureParameterPart;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 
-import java.util.Collection;
-
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -37,14 +32,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class ItemFeatureParameterPartImpl extends MinimalEObjectImpl.Container implements ItemFeatureParameterPart
 {
   /**
-   * The cached value of the '{@link #getItemFeatureParameter() <em>Item Feature Parameter</em>}' containment reference list.
+   * The cached value of the '{@link #getItemFeatureParameter() <em>Item Feature Parameter</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getItemFeatureParameter()
    * @generated
    * @ordered
    */
-  protected EList<ItemFeatureParameter> itemFeatureParameter;
+  protected ItemFeatureParameter itemFeatureParameter;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,13 +68,48 @@ public class ItemFeatureParameterPartImpl extends MinimalEObjectImpl.Container i
    * @generated
    */
   @Override
-  public EList<ItemFeatureParameter> getItemFeatureParameter()
+  public ItemFeatureParameter getItemFeatureParameter()
   {
-    if (itemFeatureParameter == null)
-    {
-      itemFeatureParameter = new EObjectContainmentEList<ItemFeatureParameter>(ItemFeatureParameter.class, this, SysMLOCPackage.ITEM_FEATURE_PARAMETER_PART__ITEM_FEATURE_PARAMETER);
-    }
     return itemFeatureParameter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetItemFeatureParameter(ItemFeatureParameter newItemFeatureParameter, NotificationChain msgs)
+  {
+    ItemFeatureParameter oldItemFeatureParameter = itemFeatureParameter;
+    itemFeatureParameter = newItemFeatureParameter;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ITEM_FEATURE_PARAMETER_PART__ITEM_FEATURE_PARAMETER, oldItemFeatureParameter, newItemFeatureParameter);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setItemFeatureParameter(ItemFeatureParameter newItemFeatureParameter)
+  {
+    if (newItemFeatureParameter != itemFeatureParameter)
+    {
+      NotificationChain msgs = null;
+      if (itemFeatureParameter != null)
+        msgs = ((InternalEObject)itemFeatureParameter).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SysMLOCPackage.ITEM_FEATURE_PARAMETER_PART__ITEM_FEATURE_PARAMETER, null, msgs);
+      if (newItemFeatureParameter != null)
+        msgs = ((InternalEObject)newItemFeatureParameter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SysMLOCPackage.ITEM_FEATURE_PARAMETER_PART__ITEM_FEATURE_PARAMETER, null, msgs);
+      msgs = basicSetItemFeatureParameter(newItemFeatureParameter, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ITEM_FEATURE_PARAMETER_PART__ITEM_FEATURE_PARAMETER, newItemFeatureParameter, newItemFeatureParameter));
   }
 
   /**
@@ -93,7 +123,7 @@ public class ItemFeatureParameterPartImpl extends MinimalEObjectImpl.Container i
     switch (featureID)
     {
       case SysMLOCPackage.ITEM_FEATURE_PARAMETER_PART__ITEM_FEATURE_PARAMETER:
-        return ((InternalEList<?>)getItemFeatureParameter()).basicRemove(otherEnd, msgs);
+        return basicSetItemFeatureParameter(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -119,15 +149,13 @@ public class ItemFeatureParameterPartImpl extends MinimalEObjectImpl.Container i
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
       case SysMLOCPackage.ITEM_FEATURE_PARAMETER_PART__ITEM_FEATURE_PARAMETER:
-        getItemFeatureParameter().clear();
-        getItemFeatureParameter().addAll((Collection<? extends ItemFeatureParameter>)newValue);
+        setItemFeatureParameter((ItemFeatureParameter)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -144,7 +172,7 @@ public class ItemFeatureParameterPartImpl extends MinimalEObjectImpl.Container i
     switch (featureID)
     {
       case SysMLOCPackage.ITEM_FEATURE_PARAMETER_PART__ITEM_FEATURE_PARAMETER:
-        getItemFeatureParameter().clear();
+        setItemFeatureParameter((ItemFeatureParameter)null);
         return;
     }
     super.eUnset(featureID);
@@ -161,7 +189,7 @@ public class ItemFeatureParameterPartImpl extends MinimalEObjectImpl.Container i
     switch (featureID)
     {
       case SysMLOCPackage.ITEM_FEATURE_PARAMETER_PART__ITEM_FEATURE_PARAMETER:
-        return itemFeatureParameter != null && !itemFeatureParameter.isEmpty();
+        return itemFeatureParameter != null;
     }
     return super.eIsSet(featureID);
   }

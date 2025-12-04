@@ -8,13 +8,11 @@
     <elements xsi:type="sysMLOC:PartUsage" declaredName="automaticTransmission"/>
     <elements xsi:type="sysMLOC:PartUsage" isAbstract="true" declaredName="vehicleFamily">
       <typings>Vehicle</typings>
-      <elements xsi:type="sysMLOC:PartUsage" declaredName="engine">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="engine" Multi0="1">
         <typings>EngineChoices</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:PartUsage" isVariation="true" declaredName="transmission">
+      <elements xsi:type="sysMLOC:PartUsage" isVariation="true" declaredName="transmission" Multi0="1">
         <typings>Transmission</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:ReferenceVariantUsage" refElement="manualTransmission"/>
         <elements xsi:type="sysMLOC:ReferenceVariantUsage" refElement="automaticTransmission"/>
       </elements>

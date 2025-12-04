@@ -12,36 +12,30 @@
         <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass" valuePart="2500[SI::kg]">
           <subsetting>ISQ::mass</subsetting>
         </elements>
-        <elements xsi:type="sysMLOC:PartUsage" declaredName="frontAxleAssembly">
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="frontAxleAssembly" Multi0="1">
           <typings>AxleAssembly</typings>
-          <Multiplicity>1</Multiplicity>
           <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass" valuePart="150[kg]">
             <subsetting>ISQ::mass</subsetting>
           </elements>
-          <elements xsi:type="sysMLOC:PartUsage" declaredName="frontWheel">
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="frontWheel" Multi0="2">
             <typings>Wheel</typings>
-            <Multiplicity>2</Multiplicity>
           </elements>
-          <elements xsi:type="sysMLOC:PartUsage" declaredName="frontAxle">
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="frontAxle" Multi0="1">
             <typings>Axle</typings>
-            <Multiplicity>1</Multiplicity>
             <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass"/>
             <elements xsi:type="sysMLOC:AttributeUsage" declaredName="steeringAngle"/>
           </elements>
         </elements>
-        <elements xsi:type="sysMLOC:PartUsage" declaredName="rearAxleAssembly">
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="rearAxleAssembly" Multi0="1">
           <typings>AxleAssembly</typings>
-          <Multiplicity>1</Multiplicity>
           <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass" valuePart="250[kg]">
             <subsetting>ISQ::mass</subsetting>
           </elements>
-          <elements xsi:type="sysMLOC:PartUsage" declaredName="rearWheel">
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="rearWheel" Multi0="2">
             <typings>Wheel</typings>
-            <Multiplicity>2</Multiplicity>
           </elements>
-          <elements xsi:type="sysMLOC:PartUsage" declaredName="rearAxle">
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="rearAxle" Multi0="1">
             <typings>Axle</typings>
-            <Multiplicity>1</Multiplicity>
             <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass"/>
           </elements>
         </elements>
@@ -65,9 +59,8 @@
           <filterPackageExpression>@SysML::PartUsage</filterPackageExpression>
         </elements>
         <elements xsi:type="sysMLOC:ViewRenderingUsage" refElement="asElementTable">
-          <elements xsi:type="sysMLOC:ViewUsage">
+          <elements xsi:type="sysMLOC:ViewUsage" Multi0="1">
             <redefinitions>columnView</redefinitions>
-            <Multiplicity>1</Multiplicity>
             <elements xsi:type="sysMLOC:ViewRenderingUsage" refElement="asTextualNotation"/>
           </elements>
         </elements>

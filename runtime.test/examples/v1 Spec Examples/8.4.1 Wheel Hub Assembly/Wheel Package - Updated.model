@@ -21,13 +21,11 @@
     </elements>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="TireBead"/>
     <elements xsi:type="sysMLOC:ConnectionDefinition" declaredName="PressureSeat">
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isEnd="true">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" Multi0="1" isEnd="true">
         <typings>TireBead</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isEnd="true">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" Multi0="1" isEnd="true">
         <typings>TireMountingRim</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Wheel">
@@ -39,13 +37,11 @@
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:ConnectionDefinition" declaredName="BandMount">
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isEnd="true">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" Multi0="1" isEnd="true">
         <typings>Wheel</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isEnd="true">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" Multi0="1" isEnd="true">
         <typings>WirelessTirePressureMonitor</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="WirelessTirePressureMonitor">
@@ -80,36 +76,27 @@
     <elements xsi:type="sysMLOC:CodeAnnotation" body="// Parts&#xD;&#xA;"/>
     <elements xsi:type="sysMLOC:PartUsage" declaredName="wheelHubAssembly">
       <typings>WheelHubAssembly</typings>
-      <elements xsi:type="sysMLOC:PartUsage" declaredName="wheel">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="wheel" Multi0="1">
         <typings>WheelAssembly</typings>
-        <Multiplicity>1</Multiplicity>
-        <elements xsi:type="sysMLOC:PartUsage" declaredName="t">
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="t" Multi0="1">
           <typings>Tire</typings>
-          <Multiplicity>1</Multiplicity>
-          <elements xsi:type="sysMLOC:PartUsage" declaredName="bead">
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="bead" Multi0="2">
             <typings>TireBead</typings>
-            <Multiplicity>2</Multiplicity>
           </elements>
         </elements>
-        <elements xsi:type="sysMLOC:PartUsage" declaredName="w">
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="w" Multi0="1">
           <typings>Wheel</typings>
-          <Multiplicity>1</Multiplicity>
-          <elements xsi:type="sysMLOC:PartUsage" declaredName="rim">
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="rim" Multi0="2">
             <typings>TireMountingRim</typings>
-            <Multiplicity>2</Multiplicity>
           </elements>
-          <elements xsi:type="sysMLOC:PartUsage" declaredName="v">
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="v" Multi0="1">
             <typings>InflationValve</typings>
-            <Multiplicity>1</Multiplicity>
           </elements>
-          <elements xsi:type="sysMLOC:PartUsage" declaredName="weight">
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="weight" Multi1="0" Multi02="6">
             <typings>BalanceWeight</typings>
-            <Multiplicity>0</Multiplicity>
-            <Multiplicity>6</Multiplicity>
           </elements>
-          <elements xsi:type="sysMLOC:PartUsage" declaredName="mountingHoles">
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="mountingHoles" Multi0="5">
             <typings>LugBoltMountingHole</typings>
-            <Multiplicity>5</Multiplicity>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:ConnectionUsage">
@@ -118,26 +105,21 @@
           <connectorPart refElement="w.rim"/>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:PartUsage" declaredName="lugBoltJoints">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="lugBoltJoints" Multi0="5">
         <typings>LugBoltJoint</typings>
-        <Multiplicity>5</Multiplicity>
-        <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="mountingHole">
+        <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="mountingHole" Multi0="1">
           <typings>LugBoltMountingHole</typings>
           <subsetting>wheel.w.mountingHoles</subsetting>
-          <Multiplicity>1</Multiplicity>
         </elements>
-        <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="threadedHole">
+        <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="threadedHole" Multi0="1">
           <typings>LugBoltThreadableHole</typings>
           <subsetting>hub.h</subsetting>
-          <Multiplicity>1</Multiplicity>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:PartUsage" declaredName="hub">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="hub" Multi0="1">
         <typings>Hub</typings>
-        <Multiplicity>1</Multiplicity>
-        <elements xsi:type="sysMLOC:PartUsage" declaredName="h">
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="h" Multi0="5">
           <typings>LugBoltThreadableHole</typings>
-          <Multiplicity>5</Multiplicity>
         </elements>
       </elements>
     </elements>

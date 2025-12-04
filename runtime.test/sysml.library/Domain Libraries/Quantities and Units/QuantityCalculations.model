@@ -8,62 +8,50 @@
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="MeasurementReferences::DimensionOneValue"/>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="'['">
       <superclassifiers>BaseFunctions::'['</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="num">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="num" Multi0="1">
         <typings>Number</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="mRef">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="mRef" Multi0="1">
         <typings>ScalarMeasurementReference</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="quantity">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="quantity" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="isZero">
       <superclassifiers>NumericalFunctions::isZero</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" valuePart="NumericalFunctions::isZero(x.num)">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" Multi0="1" valuePart="NumericalFunctions::isZero(x.num)">
         <typings>Boolean</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="isUnit">
       <superclassifiers>NumericalFunctions::isUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" valuePart="NumericalFunctions::isUnit(x.num)">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" Multi0="1" valuePart="NumericalFunctions::isUnit(x.num)">
         <typings>Boolean</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="abs">
       <superclassifiers>NumericalFunctions::abs</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="'+'">
       <superclassifiers>NumericalFunctions::'+'</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="y">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="y" Multi1="0" Multi02="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>1</Multiplicity>
       </elements>
       <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
         <typings>ScalarQuantityValue</typings>
@@ -74,271 +62,217 @@
       <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x">
         <typings>ScalarQuantityValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="y">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="y" Multi1="0" Multi02="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="'*'">
       <superclassifiers>NumericalFunctions::'*'</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="y">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="y" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="'/'">
       <superclassifiers>NumericalFunctions::'/'</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="y">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="y" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="'**'">
       <superclassifiers>NumericalFunctions::'**'</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="y">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="y" Multi0="1">
         <typings>Real</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="'^'">
       <superclassifiers>NumericalFunctions::'^'</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="y">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="y" Multi0="1">
         <typings>Real</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="'&lt;'">
       <superclassifiers>NumericalFunctions::'&lt;'</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="y">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="y" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" Multi0="1">
         <typings>Boolean</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="'>'">
       <superclassifiers>NumericalFunctions::'>'</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="y">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="y" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" Multi0="1">
         <typings>Boolean</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="'&lt;='">
       <superclassifiers>NumericalFunctions::'&lt;='</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="y">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="y" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" Multi0="1">
         <typings>Boolean</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="'>='">
       <superclassifiers>NumericalFunctions::'>='</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="y">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="y" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" Multi0="1">
         <typings>Boolean</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="max">
       <superclassifiers>NumericalFunctions::max</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="y">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="y" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="min">
       <superclassifiers>NumericalFunctions::min</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="y">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="y" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="'=='">
       <superclassifiers>DataFunctions::'=='</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="y">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="y" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" Multi0="1">
         <typings>Boolean</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="sqrt">
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="floor">
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="round">
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="ToString">
       <superclassifiers>BaseFunctions::ToString</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
       <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
         <typings>String</typings>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="ToInteger">
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" Multi0="1">
         <typings>Integer</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="ToRational">
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" Multi0="1">
         <typings>Rational</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="ToReal">
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" Multi0="1">
         <typings>Real</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="ToDimensionOneValue">
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x" Multi0="1">
         <typings>Real</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" Multi0="1">
         <typings>DimensionOneValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="sum">
       <superclassifiers>NumericalFunctions::sum</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="collection">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="collection" Multi1="0" Multi02="*">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>*</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="zero">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="zero" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
       <elements xsi:type="sysMLOC:AssertConstraintUsage">
         <resultExpressionParameter resultExpression="isZero(zero)"/>
@@ -349,14 +283,11 @@
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="product">
       <superclassifiers>NumericalFunctions::product</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="collection">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="collection" Multi1="0" Multi02="*">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>*</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="one">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="one" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
       <elements xsi:type="sysMLOC:AssertConstraintUsage">
         <resultExpressionParameter resultExpression="isUnit(one)"/>
@@ -366,17 +297,14 @@
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="ConvertQuantity">
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="targetMRef">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="targetMRef" Multi0="1">
         <typings>ScalarMeasurementReference</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
   </elements>

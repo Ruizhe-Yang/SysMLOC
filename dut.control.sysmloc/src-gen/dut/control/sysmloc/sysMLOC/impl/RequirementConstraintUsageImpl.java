@@ -64,7 +64,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.RequirementConstraintUsageImpl#getPrefixMetadataExtension <em>Prefix Metadata Extension</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.RequirementConstraintUsageImpl#getDeclaredShortName <em>Declared Short Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.RequirementConstraintUsageImpl#getDeclaredName <em>Declared Name</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.RequirementConstraintUsageImpl#getMultiplicity <em>Multiplicity</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.RequirementConstraintUsageImpl#getMulti0 <em>Multi0</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.RequirementConstraintUsageImpl#getMulti1 <em>Multi1</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.RequirementConstraintUsageImpl#getMulti02 <em>Multi02</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.RequirementConstraintUsageImpl#isIsOrdered <em>Is Ordered</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.RequirementConstraintUsageImpl#isIsNonunique <em>Is Nonunique</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.RequirementConstraintUsageImpl#isIsInitial <em>Is Initial</em>}</li>
@@ -240,14 +242,64 @@ public class RequirementConstraintUsageImpl extends RequirementNodeElementsImpl 
   protected String declaredName = DECLARED_NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getMultiplicity() <em>Multiplicity</em>}' attribute list.
+   * The default value of the '{@link #getMulti0() <em>Multi0</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMultiplicity()
+   * @see #getMulti0()
    * @generated
    * @ordered
    */
-  protected EList<String> multiplicity;
+  protected static final String MULTI0_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getMulti0() <em>Multi0</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMulti0()
+   * @generated
+   * @ordered
+   */
+  protected String multi0 = MULTI0_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getMulti1() <em>Multi1</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMulti1()
+   * @generated
+   * @ordered
+   */
+  protected static final String MULTI1_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getMulti1() <em>Multi1</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMulti1()
+   * @generated
+   * @ordered
+   */
+  protected String multi1 = MULTI1_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getMulti02() <em>Multi02</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMulti02()
+   * @generated
+   * @ordered
+   */
+  protected static final String MULTI02_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getMulti02() <em>Multi02</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMulti02()
+   * @generated
+   * @ordered
+   */
+  protected String multi02 = MULTI02_EDEFAULT;
 
   /**
    * The default value of the '{@link #isIsOrdered() <em>Is Ordered</em>}' attribute.
@@ -631,13 +683,73 @@ public class RequirementConstraintUsageImpl extends RequirementNodeElementsImpl 
    * @generated
    */
   @Override
-  public EList<String> getMultiplicity()
+  public String getMulti0()
   {
-    if (multiplicity == null)
-    {
-      multiplicity = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__MULTIPLICITY);
-    }
-    return multiplicity;
+    return multi0;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setMulti0(String newMulti0)
+  {
+    String oldMulti0 = multi0;
+    multi0 = newMulti0;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__MULTI0, oldMulti0, multi0));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getMulti1()
+  {
+    return multi1;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setMulti1(String newMulti1)
+  {
+    String oldMulti1 = multi1;
+    multi1 = newMulti1;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__MULTI1, oldMulti1, multi1));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getMulti02()
+  {
+    return multi02;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setMulti02(String newMulti02)
+  {
+    String oldMulti02 = multi02;
+    multi02 = newMulti02;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__MULTI02, oldMulti02, multi02));
   }
 
   /**
@@ -870,8 +982,12 @@ public class RequirementConstraintUsageImpl extends RequirementNodeElementsImpl 
         return getDeclaredShortName();
       case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__DECLARED_NAME:
         return getDeclaredName();
-      case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__MULTIPLICITY:
-        return getMultiplicity();
+      case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__MULTI0:
+        return getMulti0();
+      case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__MULTI1:
+        return getMulti1();
+      case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__MULTI02:
+        return getMulti02();
       case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__IS_ORDERED:
         return isIsOrdered();
       case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__IS_NONUNIQUE:
@@ -942,9 +1058,14 @@ public class RequirementConstraintUsageImpl extends RequirementNodeElementsImpl 
       case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__DECLARED_NAME:
         setDeclaredName((String)newValue);
         return;
-      case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__MULTIPLICITY:
-        getMultiplicity().clear();
-        getMultiplicity().addAll((Collection<? extends String>)newValue);
+      case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__MULTI0:
+        setMulti0((String)newValue);
+        return;
+      case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__MULTI1:
+        setMulti1((String)newValue);
+        return;
+      case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__MULTI02:
+        setMulti02((String)newValue);
         return;
       case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__IS_ORDERED:
         setIsOrdered((Boolean)newValue);
@@ -1019,8 +1140,14 @@ public class RequirementConstraintUsageImpl extends RequirementNodeElementsImpl 
       case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__DECLARED_NAME:
         setDeclaredName(DECLARED_NAME_EDEFAULT);
         return;
-      case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__MULTIPLICITY:
-        getMultiplicity().clear();
+      case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__MULTI0:
+        setMulti0(MULTI0_EDEFAULT);
+        return;
+      case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__MULTI1:
+        setMulti1(MULTI1_EDEFAULT);
+        return;
+      case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__MULTI02:
+        setMulti02(MULTI02_EDEFAULT);
         return;
       case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__IS_ORDERED:
         setIsOrdered(IS_ORDERED_EDEFAULT);
@@ -1082,8 +1209,12 @@ public class RequirementConstraintUsageImpl extends RequirementNodeElementsImpl 
         return DECLARED_SHORT_NAME_EDEFAULT == null ? declaredShortName != null : !DECLARED_SHORT_NAME_EDEFAULT.equals(declaredShortName);
       case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__DECLARED_NAME:
         return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
-      case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__MULTIPLICITY:
-        return multiplicity != null && !multiplicity.isEmpty();
+      case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__MULTI0:
+        return MULTI0_EDEFAULT == null ? multi0 != null : !MULTI0_EDEFAULT.equals(multi0);
+      case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__MULTI1:
+        return MULTI1_EDEFAULT == null ? multi1 != null : !MULTI1_EDEFAULT.equals(multi1);
+      case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__MULTI02:
+        return MULTI02_EDEFAULT == null ? multi02 != null : !MULTI02_EDEFAULT.equals(multi02);
       case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__IS_ORDERED:
         return isOrdered != IS_ORDERED_EDEFAULT;
       case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__IS_NONUNIQUE:
@@ -1204,7 +1335,9 @@ public class RequirementConstraintUsageImpl extends RequirementNodeElementsImpl 
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__MULTIPLICITY: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTIPLICITY;
+        case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__MULTI0: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI0;
+        case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__MULTI1: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI1;
+        case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__MULTI02: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI02;
         default: return -1;
       }
     }
@@ -1365,7 +1498,9 @@ public class RequirementConstraintUsageImpl extends RequirementNodeElementsImpl 
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTIPLICITY: return SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__MULTIPLICITY;
+        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI0: return SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__MULTI0;
+        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI1: return SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__MULTI1;
+        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI02: return SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__MULTI02;
         default: return -1;
       }
     }
@@ -1459,8 +1594,12 @@ public class RequirementConstraintUsageImpl extends RequirementNodeElementsImpl 
     result.append(declaredShortName);
     result.append(", declaredName: ");
     result.append(declaredName);
-    result.append(", Multiplicity: ");
-    result.append(multiplicity);
+    result.append(", Multi0: ");
+    result.append(multi0);
+    result.append(", Multi1: ");
+    result.append(multi1);
+    result.append(", Multi02: ");
+    result.append(multi02);
     result.append(", isOrdered: ");
     result.append(isOrdered);
     result.append(", isNonunique: ");

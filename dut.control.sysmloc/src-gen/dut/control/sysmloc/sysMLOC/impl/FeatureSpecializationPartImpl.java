@@ -8,17 +8,11 @@ import dut.control.sysmloc.sysMLOC.MultiplicityPart;
 import dut.control.sysmloc.sysMLOC.MultiplicityRange;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +22,9 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FeatureSpecializationPartImpl#getMultiplicity <em>Multiplicity</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FeatureSpecializationPartImpl#getMulti0 <em>Multi0</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FeatureSpecializationPartImpl#getMulti1 <em>Multi1</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FeatureSpecializationPartImpl#getMulti02 <em>Multi02</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FeatureSpecializationPartImpl#isIsOrdered <em>Is Ordered</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FeatureSpecializationPartImpl#isIsNonunique <em>Is Nonunique</em>}</li>
  * </ul>
@@ -38,14 +34,64 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
 public class FeatureSpecializationPartImpl extends FeatureSpecializationImpl implements FeatureSpecializationPart
 {
   /**
-   * The cached value of the '{@link #getMultiplicity() <em>Multiplicity</em>}' attribute list.
+   * The default value of the '{@link #getMulti0() <em>Multi0</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMultiplicity()
+   * @see #getMulti0()
    * @generated
    * @ordered
    */
-  protected EList<String> multiplicity;
+  protected static final String MULTI0_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getMulti0() <em>Multi0</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMulti0()
+   * @generated
+   * @ordered
+   */
+  protected String multi0 = MULTI0_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getMulti1() <em>Multi1</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMulti1()
+   * @generated
+   * @ordered
+   */
+  protected static final String MULTI1_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getMulti1() <em>Multi1</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMulti1()
+   * @generated
+   * @ordered
+   */
+  protected String multi1 = MULTI1_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getMulti02() <em>Multi02</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMulti02()
+   * @generated
+   * @ordered
+   */
+  protected static final String MULTI02_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getMulti02() <em>Multi02</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMulti02()
+   * @generated
+   * @ordered
+   */
+  protected String multi02 = MULTI02_EDEFAULT;
 
   /**
    * The default value of the '{@link #isIsOrdered() <em>Is Ordered</em>}' attribute.
@@ -114,13 +160,73 @@ public class FeatureSpecializationPartImpl extends FeatureSpecializationImpl imp
    * @generated
    */
   @Override
-  public EList<String> getMultiplicity()
+  public String getMulti0()
   {
-    if (multiplicity == null)
-    {
-      multiplicity = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.FEATURE_SPECIALIZATION_PART__MULTIPLICITY);
-    }
-    return multiplicity;
+    return multi0;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setMulti0(String newMulti0)
+  {
+    String oldMulti0 = multi0;
+    multi0 = newMulti0;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.FEATURE_SPECIALIZATION_PART__MULTI0, oldMulti0, multi0));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getMulti1()
+  {
+    return multi1;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setMulti1(String newMulti1)
+  {
+    String oldMulti1 = multi1;
+    multi1 = newMulti1;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.FEATURE_SPECIALIZATION_PART__MULTI1, oldMulti1, multi1));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getMulti02()
+  {
+    return multi02;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setMulti02(String newMulti02)
+  {
+    String oldMulti02 = multi02;
+    multi02 = newMulti02;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.FEATURE_SPECIALIZATION_PART__MULTI02, oldMulti02, multi02));
   }
 
   /**
@@ -183,8 +289,12 @@ public class FeatureSpecializationPartImpl extends FeatureSpecializationImpl imp
   {
     switch (featureID)
     {
-      case SysMLOCPackage.FEATURE_SPECIALIZATION_PART__MULTIPLICITY:
-        return getMultiplicity();
+      case SysMLOCPackage.FEATURE_SPECIALIZATION_PART__MULTI0:
+        return getMulti0();
+      case SysMLOCPackage.FEATURE_SPECIALIZATION_PART__MULTI1:
+        return getMulti1();
+      case SysMLOCPackage.FEATURE_SPECIALIZATION_PART__MULTI02:
+        return getMulti02();
       case SysMLOCPackage.FEATURE_SPECIALIZATION_PART__IS_ORDERED:
         return isIsOrdered();
       case SysMLOCPackage.FEATURE_SPECIALIZATION_PART__IS_NONUNIQUE:
@@ -198,15 +308,19 @@ public class FeatureSpecializationPartImpl extends FeatureSpecializationImpl imp
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case SysMLOCPackage.FEATURE_SPECIALIZATION_PART__MULTIPLICITY:
-        getMultiplicity().clear();
-        getMultiplicity().addAll((Collection<? extends String>)newValue);
+      case SysMLOCPackage.FEATURE_SPECIALIZATION_PART__MULTI0:
+        setMulti0((String)newValue);
+        return;
+      case SysMLOCPackage.FEATURE_SPECIALIZATION_PART__MULTI1:
+        setMulti1((String)newValue);
+        return;
+      case SysMLOCPackage.FEATURE_SPECIALIZATION_PART__MULTI02:
+        setMulti02((String)newValue);
         return;
       case SysMLOCPackage.FEATURE_SPECIALIZATION_PART__IS_ORDERED:
         setIsOrdered((Boolean)newValue);
@@ -228,8 +342,14 @@ public class FeatureSpecializationPartImpl extends FeatureSpecializationImpl imp
   {
     switch (featureID)
     {
-      case SysMLOCPackage.FEATURE_SPECIALIZATION_PART__MULTIPLICITY:
-        getMultiplicity().clear();
+      case SysMLOCPackage.FEATURE_SPECIALIZATION_PART__MULTI0:
+        setMulti0(MULTI0_EDEFAULT);
+        return;
+      case SysMLOCPackage.FEATURE_SPECIALIZATION_PART__MULTI1:
+        setMulti1(MULTI1_EDEFAULT);
+        return;
+      case SysMLOCPackage.FEATURE_SPECIALIZATION_PART__MULTI02:
+        setMulti02(MULTI02_EDEFAULT);
         return;
       case SysMLOCPackage.FEATURE_SPECIALIZATION_PART__IS_ORDERED:
         setIsOrdered(IS_ORDERED_EDEFAULT);
@@ -251,8 +371,12 @@ public class FeatureSpecializationPartImpl extends FeatureSpecializationImpl imp
   {
     switch (featureID)
     {
-      case SysMLOCPackage.FEATURE_SPECIALIZATION_PART__MULTIPLICITY:
-        return multiplicity != null && !multiplicity.isEmpty();
+      case SysMLOCPackage.FEATURE_SPECIALIZATION_PART__MULTI0:
+        return MULTI0_EDEFAULT == null ? multi0 != null : !MULTI0_EDEFAULT.equals(multi0);
+      case SysMLOCPackage.FEATURE_SPECIALIZATION_PART__MULTI1:
+        return MULTI1_EDEFAULT == null ? multi1 != null : !MULTI1_EDEFAULT.equals(multi1);
+      case SysMLOCPackage.FEATURE_SPECIALIZATION_PART__MULTI02:
+        return MULTI02_EDEFAULT == null ? multi02 != null : !MULTI02_EDEFAULT.equals(multi02);
       case SysMLOCPackage.FEATURE_SPECIALIZATION_PART__IS_ORDERED:
         return isOrdered != IS_ORDERED_EDEFAULT;
       case SysMLOCPackage.FEATURE_SPECIALIZATION_PART__IS_NONUNIQUE:
@@ -273,7 +397,9 @@ public class FeatureSpecializationPartImpl extends FeatureSpecializationImpl imp
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.FEATURE_SPECIALIZATION_PART__MULTIPLICITY: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTIPLICITY;
+        case SysMLOCPackage.FEATURE_SPECIALIZATION_PART__MULTI0: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI0;
+        case SysMLOCPackage.FEATURE_SPECIALIZATION_PART__MULTI1: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI1;
+        case SysMLOCPackage.FEATURE_SPECIALIZATION_PART__MULTI02: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI02;
         default: return -1;
       }
     }
@@ -301,7 +427,9 @@ public class FeatureSpecializationPartImpl extends FeatureSpecializationImpl imp
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTIPLICITY: return SysMLOCPackage.FEATURE_SPECIALIZATION_PART__MULTIPLICITY;
+        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI0: return SysMLOCPackage.FEATURE_SPECIALIZATION_PART__MULTI0;
+        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI1: return SysMLOCPackage.FEATURE_SPECIALIZATION_PART__MULTI1;
+        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI02: return SysMLOCPackage.FEATURE_SPECIALIZATION_PART__MULTI02;
         default: return -1;
       }
     }
@@ -328,8 +456,12 @@ public class FeatureSpecializationPartImpl extends FeatureSpecializationImpl imp
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (Multiplicity: ");
-    result.append(multiplicity);
+    result.append(" (Multi0: ");
+    result.append(multi0);
+    result.append(", Multi1: ");
+    result.append(multi1);
+    result.append(", Multi02: ");
+    result.append(multi02);
     result.append(", isOrdered: ");
     result.append(isOrdered);
     result.append(", isNonunique: ");

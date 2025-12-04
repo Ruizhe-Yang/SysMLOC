@@ -5,40 +5,23 @@
     <elements xsi:type="sysMLOC:AttributeUsage" declaredName="n" valuePart="5">
       <typings>ScalarValues::Integer</typings>
     </elements>
-    <elements xsi:type="sysMLOC:PartUsage" declaredName="a">
-      <Multiplicity>1</Multiplicity>
-    </elements>
-    <elements xsi:type="sysMLOC:PartUsage" declaredName="b">
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="a" Multi0="1"/>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="b" Multi1="0" Multi02="2">
       <typings>P</typings>
-      <Multiplicity>0</Multiplicity>
-      <Multiplicity>2</Multiplicity>
     </elements>
-    <elements xsi:type="sysMLOC:PartUsage" declaredName="c">
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="c" Multi1="2" Multi02="*">
       <typings>P</typings>
-      <Multiplicity>2</Multiplicity>
-      <Multiplicity>*</Multiplicity>
     </elements>
-    <elements xsi:type="sysMLOC:PartUsage" declaredName="d">
-      <Multiplicity>*</Multiplicity>
-    </elements>
-    <elements xsi:type="sysMLOC:PartUsage" declaredName="e">
-      <Multiplicity>n</Multiplicity>
-    </elements>
-    <elements xsi:type="sysMLOC:PartUsage" declaredName="f">
-      <Multiplicity>n</Multiplicity>
-      <Multiplicity>*</Multiplicity>
-    </elements>
-    <elements xsi:type="sysMLOC:PartUsage" declaredName="g">
-      <Multiplicity>1</Multiplicity>
-      <Multiplicity>n</Multiplicity>
-    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="d" Multi0="*"/>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="e" Multi0="n"/>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="f" Multi1="n" Multi02="*"/>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="g" Multi1="1" Multi02="n"/>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="A">
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="i">
         <typings>ScalarValues::Integer</typings>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="x">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="x" Multi0="i">
         <typings>A</typings>
-        <Multiplicity>i</Multiplicity>
       </elements>
     </elements>
   </elements>

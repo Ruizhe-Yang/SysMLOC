@@ -4,52 +4,40 @@
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues" isNamespace="true"/>
     <elements xsi:type="sysMLOC:LibraryPackage" declaredName="FMEALibrary" isLibrary="true">
       <elements xsi:type="sysMLOC:OccurrenceDefinition" isAbstract="true" declaredName="Situation"/>
-      <elements xsi:type="sysMLOC:OccurrenceUsage" isAbstract="true" declaredName="situations" isNonunique="true">
+      <elements xsi:type="sysMLOC:OccurrenceUsage" isAbstract="true" declaredName="situations" Multi0="*" isNonunique="true">
         <typings>Situation</typings>
-        <Multiplicity>*</Multiplicity>
       </elements>
       <elements xsi:type="sysMLOC:OccurrenceDefinition" declaredName="Cause">
         <superclassifiers>Situation</superclassifiers>
-        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="occurs">
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="occurs" Multi1="0" Multi02="1">
           <typings>Real</typings>
-          <Multiplicity>0</Multiplicity>
-          <Multiplicity>1</Multiplicity>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:OccurrenceUsage" isAbstract="true" declaredName="causes" isNonunique="true">
+      <elements xsi:type="sysMLOC:OccurrenceUsage" isAbstract="true" declaredName="causes" Multi0="*" isNonunique="true">
         <typings>Cause</typings>
-        <Multiplicity>*</Multiplicity>
       </elements>
       <elements xsi:type="sysMLOC:OccurrenceDefinition" declaredName="FailureMode">
         <superclassifiers>Situation</superclassifiers>
-        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="detected">
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="detected" Multi1="0" Multi02="1">
           <typings>Real</typings>
-          <Multiplicity>0</Multiplicity>
-          <Multiplicity>1</Multiplicity>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:OccurrenceUsage" isAbstract="true" declaredName="failureModes" isNonunique="true">
+      <elements xsi:type="sysMLOC:OccurrenceUsage" isAbstract="true" declaredName="failureModes" Multi0="*" isNonunique="true">
         <typings>FailureMode</typings>
-        <Multiplicity>*</Multiplicity>
       </elements>
       <elements xsi:type="sysMLOC:OccurrenceDefinition" declaredName="Effect">
         <superclassifiers>Situation</superclassifiers>
-        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="severity">
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="severity" Multi1="0" Multi02="1">
           <typings>String</typings>
-          <Multiplicity>0</Multiplicity>
-          <Multiplicity>1</Multiplicity>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:OccurrenceUsage" isAbstract="true" declaredName="effects" isNonunique="true">
+      <elements xsi:type="sysMLOC:OccurrenceUsage" isAbstract="true" declaredName="effects" Multi0="*" isNonunique="true">
         <typings>Effect</typings>
-        <Multiplicity>*</Multiplicity>
       </elements>
       <elements xsi:type="sysMLOC:ItemDefinition" declaredName="FMEAItem">
         <superclassifiers>Situation</superclassifiers>
-        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="RPN">
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="RPN" Multi1="0" Multi02="1">
           <typings>Real</typings>
-          <Multiplicity>0</Multiplicity>
-          <Multiplicity>1</Multiplicity>
         </elements>
         <elements xsi:type="sysMLOC:OccurrenceUsage">
           <redefinitions>causes</redefinitions>
@@ -61,29 +49,24 @@
           <redefinitions>effects</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:ItemUsage" isAbstract="true" declaredName="fmeaItems" isNonunique="true">
+      <elements xsi:type="sysMLOC:ItemUsage" isAbstract="true" declaredName="fmeaItems" Multi0="*" isNonunique="true">
         <typings>FMEAItem</typings>
-        <Multiplicity>*</Multiplicity>
       </elements>
       <elements xsi:type="sysMLOC:ConnectionDefinition" declaredName="Causation">
         <superclassifiers>Occurrences::HappensBefore</superclassifiers>
-        <elements xsi:type="sysMLOC:ReferenceUsage" isEnd="true" declaredName="cause">
+        <elements xsi:type="sysMLOC:ReferenceUsage" isEnd="true" declaredName="cause" Multi0="*">
           <typings>Situation</typings>
-          <Multiplicity>*</Multiplicity>
         </elements>
-        <elements xsi:type="sysMLOC:ReferenceUsage" isEnd="true" declaredName="effect">
+        <elements xsi:type="sysMLOC:ReferenceUsage" isEnd="true" declaredName="effect" Multi0="*">
           <typings>Situation</typings>
-          <Multiplicity>*</Multiplicity>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:ConnectionUsage" isAbstract="true" declaredName="causations" isNonunique="true">
+      <elements xsi:type="sysMLOC:ConnectionUsage" isAbstract="true" declaredName="causations" Multi0="*" isNonunique="true">
         <typings>Causation</typings>
-        <Multiplicity>*</Multiplicity>
       </elements>
       <elements xsi:type="sysMLOC:RequirementDefinition" declaredName="FMEARequirement"/>
-      <elements xsi:type="sysMLOC:RequirementUsage" isAbstract="true" declaredName="fmeaRequirements" isNonunique="true">
+      <elements xsi:type="sysMLOC:RequirementUsage" isAbstract="true" declaredName="fmeaRequirements" Multi0="*" isNonunique="true">
         <typings>FMEARequirement</typings>
-        <Multiplicity>*</Multiplicity>
       </elements>
       <elements xsi:type="sysMLOC:RequirementDefinition" declaredName="RequirementWithSIL">
         <superclassifiers>FMEARequirement</superclassifiers>
@@ -97,42 +80,35 @@
         <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="C"/>
       </elements>
       <elements xsi:type="sysMLOC:ConnectionDefinition" declaredName="Violation">
-        <elements xsi:type="sysMLOC:ReferenceUsage" isEnd="true" declaredName="sit">
+        <elements xsi:type="sysMLOC:ReferenceUsage" isEnd="true" declaredName="sit" Multi0="*">
           <typings>Situation</typings>
-          <Multiplicity>*</Multiplicity>
         </elements>
-        <elements xsi:type="sysMLOC:ReferenceUsage" isEnd="true" declaredName="req">
+        <elements xsi:type="sysMLOC:ReferenceUsage" isEnd="true" declaredName="req" Multi0="*">
           <typings>FMEARequirement</typings>
-          <Multiplicity>*</Multiplicity>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:ConnectionUsage" isAbstract="true" declaredName="violations" isNonunique="true">
+      <elements xsi:type="sysMLOC:ConnectionUsage" isAbstract="true" declaredName="violations" Multi0="*" isNonunique="true">
         <typings>Violation</typings>
-        <Multiplicity>*</Multiplicity>
       </elements>
       <elements xsi:type="sysMLOC:ConnectionDefinition" isAbstract="true" declaredName="ControllingMeasure">
-        <elements xsi:type="sysMLOC:ReferenceUsage" isEnd="true" declaredName="sit">
+        <elements xsi:type="sysMLOC:ReferenceUsage" isEnd="true" declaredName="sit" Multi0="*">
           <typings>Situation</typings>
-          <Multiplicity>*</Multiplicity>
         </elements>
-        <elements xsi:type="sysMLOC:ReferenceUsage" isEnd="true" declaredName="req">
+        <elements xsi:type="sysMLOC:ReferenceUsage" isEnd="true" declaredName="req" Multi0="*">
           <typings>FMEARequirement</typings>
-          <Multiplicity>*</Multiplicity>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:ConnectionDefinition" declaredName="Prevention">
         <superclassifiers>ControllingMeasure</superclassifiers>
       </elements>
-      <elements xsi:type="sysMLOC:ConnectionUsage" isAbstract="true" declaredName="preventions" isNonunique="true">
+      <elements xsi:type="sysMLOC:ConnectionUsage" isAbstract="true" declaredName="preventions" Multi0="*" isNonunique="true">
         <typings>Prevention</typings>
-        <Multiplicity>*</Multiplicity>
       </elements>
       <elements xsi:type="sysMLOC:ConnectionDefinition" declaredName="Mitigation">
         <superclassifiers>ControllingMeasure</superclassifiers>
       </elements>
-      <elements xsi:type="sysMLOC:ConnectionUsage" isAbstract="true" declaredName="mitigations" isNonunique="true">
+      <elements xsi:type="sysMLOC:ConnectionUsage" isAbstract="true" declaredName="mitigations" Multi0="*" isNonunique="true">
         <typings>Mitigation</typings>
-        <Multiplicity>*</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:LibraryPackage" declaredName="FMEAMetadata" isLibrary="true">
@@ -315,24 +291,16 @@
         <prefixMetadataExtension>#fmea</prefixMetadataExtension>
         <typings>'Glucose FMEA Item'</typings>
         <elements xsi:type="sysMLOC:PartUsage" declaredName="'glucose meter'">
-          <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="'glucose level undetected'">
-            <Multiplicity>*</Multiplicity>
-          </elements>
+          <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="'glucose level undetected'" Multi0="*"/>
           <elements xsi:type="sysMLOC:PartUsage" declaredName="battery">
-            <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="'battery depleted'">
-              <Multiplicity>*</Multiplicity>
-            </elements>
-            <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="'battery cannot be charged'">
-              <Multiplicity>*</Multiplicity>
-            </elements>
+            <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="'battery depleted'" Multi0="*"/>
+            <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="'battery cannot be charged'" Multi0="*"/>
           </elements>
           <elements xsi:type="sysMLOC:PartUsage" declaredName="pump"/>
           <elements xsi:type="sysMLOC:PartUsage" declaredName="reservoir"/>
         </elements>
         <elements xsi:type="sysMLOC:PartUsage" declaredName="patient">
-          <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="'therapy delay'">
-            <Multiplicity>*</Multiplicity>
-          </elements>
+          <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="'therapy delay'" Multi0="*"/>
         </elements>
       </elements>
     </elements>

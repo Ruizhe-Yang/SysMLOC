@@ -7,9 +7,8 @@
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:ActionDefinition" declaredName="UpdateSensors">
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="sensors">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="sensors" Multi0="*">
         <typings>Sensor</typings>
-        <Multiplicity>*</Multiplicity>
       </elements>
       <elements xsi:type="sysMLOC:TextualRepresentation" language="&quot;Alf&quot;" body="/* &#xD;&#xA;&#x9;&#x9;&#x9; * for (sensor in sensors) {&#xD;&#xA;&#x9;&#x9;&#x9; *     if (sensor.ready) {&#xD;&#xA;&#x9;&#x9;&#x9; *         Update(sensor);&#xD;&#xA;&#x9;&#x9;&#x9; *     }&#xD;&#xA;&#x9;&#x9;&#x9; * }&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
     </elements>

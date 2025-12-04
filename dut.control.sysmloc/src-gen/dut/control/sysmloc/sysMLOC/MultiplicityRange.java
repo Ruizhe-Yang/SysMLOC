@@ -3,8 +3,6 @@
  */
 package dut.control.sysmloc.sysMLOC;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,7 +14,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.MultiplicityRange#getMultiplicity <em>Multiplicity</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.MultiplicityRange#getMulti0 <em>Multi0</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.MultiplicityRange#getMulti1 <em>Multi1</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.MultiplicityRange#getMulti02 <em>Multi02</em>}</li>
  * </ul>
  *
  * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getMultiplicityRange()
@@ -26,15 +26,69 @@ import org.eclipse.emf.ecore.EObject;
 public interface MultiplicityRange extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Multiplicity</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Multi0</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Multiplicity</em>' attribute list.
-   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getMultiplicityRange_Multiplicity()
-   * @model unique="false"
+   * @return the value of the '<em>Multi0</em>' attribute.
+   * @see #setMulti0(String)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getMultiplicityRange_Multi0()
+   * @model
    * @generated
    */
-  EList<String> getMultiplicity();
+  String getMulti0();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.MultiplicityRange#getMulti0 <em>Multi0</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Multi0</em>' attribute.
+   * @see #getMulti0()
+   * @generated
+   */
+  void setMulti0(String value);
+
+  /**
+   * Returns the value of the '<em><b>Multi1</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Multi1</em>' attribute.
+   * @see #setMulti1(String)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getMultiplicityRange_Multi1()
+   * @model
+   * @generated
+   */
+  String getMulti1();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.MultiplicityRange#getMulti1 <em>Multi1</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Multi1</em>' attribute.
+   * @see #getMulti1()
+   * @generated
+   */
+  void setMulti1(String value);
+
+  /**
+   * Returns the value of the '<em><b>Multi02</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Multi02</em>' attribute.
+   * @see #setMulti02(String)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getMultiplicityRange_Multi02()
+   * @model
+   * @generated
+   */
+  String getMulti02();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.MultiplicityRange#getMulti02 <em>Multi02</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Multi02</em>' attribute.
+   * @see #getMulti02()
+   * @generated
+   */
+  void setMulti02(String value);
 
 } // MultiplicityRange

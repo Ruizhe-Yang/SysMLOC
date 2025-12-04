@@ -25,11 +25,51 @@ public class SysMLOC2SysML {
         if (args.length > 0) {
             modelPath = args[0];
         } else {
-            modelPath = "E:\\GitYang\\SysMLOC\\runtime.test\\test\\VehicleUsages.model";
+//            modelPath = "E:\\GitYang\\SysMLOC\\runtime.test\\training2\\17. Control\\Control Structures Example.model";
+        	 modelPath = "E:\\GitYang\\SysMLOC\\runtime.test\\training2";
+        }
+//        Path out = convertModelToSysml(modelPath);
+//        System.out.println("Done. Written to: " + out.toAbsolutePath());
+        convertAllModelsInFolder(modelPath);
+        
+    }
+    
+    public static void convertAllModelsInFolder(String folderPath) throws Exception {
+        Path dir = Paths.get(folderPath).toAbsolutePath();
+        if (!Files.isDirectory(dir)) {
+            throw new IllegalArgumentException("Not a directory: " + dir);
         }
 
-        Path out = convertModelToSysml(modelPath);
-        System.out.println("Done. Written to: " + out.toAbsolutePath());
+        int count = 0;
+
+        // 递归遍历所有子目录，查找 *.model 文件
+        try {
+            // 默认不跟随符号链接，如果你有软链接可以再加选项
+            try (java.util.stream.Stream<Path> paths = Files.walk(dir)) {
+                java.util.Iterator<Path> it = paths.iterator();
+                while (it.hasNext()) {
+                    Path p = it.next();
+                    if (Files.isRegularFile(p) && p.toString().endsWith(".model")) {
+                        count++;
+                        String absModelPath = p.toAbsolutePath().toString();
+                        try {
+                            Path out = convertModelToSysml(absModelPath);
+                            System.out.println("[Successfully Generate SysML v2] " + dir.relativize(p)
+                                    + " -> " + out.getFileName());
+                        } catch (Exception e) {
+                            System.err.println("[FAIL] " + dir.relativize(p)
+                                    + " : " + e.getMessage());
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }
+        } catch (Exception e) {
+            System.err.println("Error while walking folder " + dir + ": " + e.getMessage());
+            throw e;
+        }
+
+        System.out.println("Done. Processed " + count + " .model files under " + dir);
     }
 
     /**
@@ -272,6 +312,5 @@ public class SysMLOC2SysML {
 	        out.append("\t");
 	    }
 	}
-
-
+	
 }

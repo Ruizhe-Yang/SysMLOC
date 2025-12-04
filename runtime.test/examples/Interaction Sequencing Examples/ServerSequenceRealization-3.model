@@ -34,8 +34,7 @@
           <typings>SubscriptionPort</typings>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:PartUsage" declaredName="producer_3">
-        <Multiplicity>1</Multiplicity>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="producer_3" Multi0="1">
         <elements xsi:type="sysMLOC:AttributeUsage" declaredName="someTopic">
           <typings>String</typings>
         </elements>
@@ -48,9 +47,8 @@
         </elements>
         <elements xsi:type="sysMLOC:PerformActionUsage" declaredName="producerBehavior">
           <elements xsi:type="sysMLOC:ActionUsage" declaredName="publish">
-            <elements xsi:type="sysMLOC:ReferenceUsage" direction="out" declaredName="request" valuePart="Publish(someTopic, somePublication)">
+            <elements xsi:type="sysMLOC:ReferenceUsage" direction="out" declaredName="request" Multi0="1" valuePart="Publish(someTopic, somePublication)">
               <typings>Publish</typings>
-              <Multiplicity>1</Multiplicity>
             </elements>
           </elements>
         </elements>
@@ -68,8 +66,7 @@
           <FlowEnd>publication_interface.target.publish</FlowEnd>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:PartUsage" declaredName="server_3">
-        <Multiplicity>1</Multiplicity>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="server_3" Multi0="1">
         <elements xsi:type="sysMLOC:PortUsage" declaredName="publicationPort">
           <typings>PublicationPort</typings>
           <elements xsi:type="sysMLOC:ReferenceUsage" direction="in">
@@ -99,27 +96,20 @@
         </elements>
         <elements xsi:type="sysMLOC:PerformActionUsage" declaredName="serverBehavior">
           <elements xsi:type="sysMLOC:ActionUsage" declaredName="subscribing">
-            <elements xsi:type="sysMLOC:ReferenceUsage" direction="in" declaredName="request">
+            <elements xsi:type="sysMLOC:ReferenceUsage" direction="in" declaredName="request" Multi0="1">
               <typings>Subscribe</typings>
-              <Multiplicity>1</Multiplicity>
             </elements>
-            <elements xsi:type="sysMLOC:AttributeUsage" direction="out" declaredName="topic" valuePart="request.topic">
+            <elements xsi:type="sysMLOC:AttributeUsage" direction="out" declaredName="topic" Multi0="1" valuePart="request.topic">
               <typings>String</typings>
-              <Multiplicity>1</Multiplicity>
             </elements>
           </elements>
           <elements xsi:type="sysMLOC:CommonNode" isThen="true" declaredName="continuePublishing"/>
           <elements xsi:type="sysMLOC:ActionUsage" isThen="true" declaredName="publishing">
-            <elements xsi:type="sysMLOC:ReferenceUsage" direction="in" declaredName="request">
+            <elements xsi:type="sysMLOC:ReferenceUsage" direction="in" declaredName="request" Multi0="1">
               <typings>Publish</typings>
-              <Multiplicity>1</Multiplicity>
             </elements>
-            <elements xsi:type="sysMLOC:AttributeUsage" direction="out" declaredName="topic" valuePart="request.topic">
-              <Multiplicity>1</Multiplicity>
-            </elements>
-            <elements xsi:type="sysMLOC:ReferenceUsage" direction="out" declaredName="publication" valuePart="request.publication">
-              <Multiplicity>1</Multiplicity>
-            </elements>
+            <elements xsi:type="sysMLOC:AttributeUsage" direction="out" declaredName="topic" Multi0="1" valuePart="request.topic"/>
+            <elements xsi:type="sysMLOC:ReferenceUsage" direction="out" declaredName="publication" Multi0="1" valuePart="request.publication"/>
           </elements>
           <elements xsi:type="sysMLOC:CommonNode" isThen="true" nodeKind="decide"/>
           <elements xsi:type="sysMLOC:IfNode" ifConditionExpression="publishing.topic == subscribing.topic">
@@ -129,13 +119,10 @@
             <elseEnd refElement="continuePublishing"/>
           </elements>
           <elements xsi:type="sysMLOC:ActionUsage" isThen="true" declaredName="delivering">
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="topic" valuePart="subscribing.topic">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="topic" Multi0="1" valuePart="subscribing.topic">
               <typings>String</typings>
-              <Multiplicity>1</Multiplicity>
             </elements>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="publication" valuePart="publishing.publication">
-              <Multiplicity>1</Multiplicity>
-            </elements>
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="publication" Multi0="1" valuePart="publishing.publication"/>
             <elements xsi:type="sysMLOC:ReferenceUsage" direction="out" declaredName="response" valuePart="Deliver(publication)">
               <typings>Deliver</typings>
             </elements>
@@ -158,8 +145,7 @@
           <FlowEnd>subscription_interface.source.deliver</FlowEnd>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:PartUsage" declaredName="consumer_3">
-        <Multiplicity>1</Multiplicity>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="consumer_3" Multi0="1">
         <elements xsi:type="sysMLOC:AttributeUsage" declaredName="myTopic">
           <typings>String</typings>
         </elements>
@@ -199,80 +185,56 @@
       <elements xsi:type="sysMLOC:PartUsage">
         <subsetting>producer_3</subsetting>
         <redefinitions>producer</redefinitions>
-        <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="producerBehavior.publish">
+        <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="producerBehavior.publish" Multi0="1">
           <redefinitions>publish_source_event</redefinitions>
-          <Multiplicity>1</Multiplicity>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:PartUsage">
         <subsetting>server_3</subsetting>
         <redefinitions>server</redefinitions>
-        <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="serverBehavior.subscribing">
+        <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="serverBehavior.subscribing" Multi0="1">
           <redefinitions>subscribe_target_event</redefinitions>
-          <Multiplicity>1</Multiplicity>
         </elements>
-        <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="serverBehavior.publishing">
+        <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="serverBehavior.publishing" Multi0="1">
           <redefinitions>publish_target_event</redefinitions>
-          <Multiplicity>1</Multiplicity>
         </elements>
-        <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="serverBehavior.delivering">
+        <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="serverBehavior.delivering" Multi0="1">
           <redefinitions>deliver_source_event</redefinitions>
-          <Multiplicity>1</Multiplicity>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:PartUsage">
         <subsetting>consumer_3</subsetting>
         <redefinitions>consumer</redefinitions>
-        <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="consumerBehavior.subscribe">
+        <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="consumerBehavior.subscribe" Multi0="1">
           <redefinitions>subscribe_source_event</redefinitions>
-          <Multiplicity>1</Multiplicity>
         </elements>
-        <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="consumerBehavior.delivery">
+        <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="consumerBehavior.delivery" Multi0="1">
           <redefinitions>deliver_target_event</redefinitions>
-          <Multiplicity>1</Multiplicity>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:FlowUsage">
         <redefinitions>publish_message</redefinitions>
         <FlowEnd>producer.producerBehavior.publish.request</FlowEnd>
         <FlowEnd>server.serverBehavior.publishing.request</FlowEnd>
-        <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="producer.publish_request">
-          <Multiplicity>1</Multiplicity>
-        </elements>
-        <elements xsi:type="sysMLOC:EventOccurrenceUsage" isThen="true" refElement="publication_interface.publish_request">
-          <Multiplicity>1</Multiplicity>
-        </elements>
-        <elements xsi:type="sysMLOC:EventOccurrenceUsage" isThen="true" refElement="server.publish_request">
-          <Multiplicity>1</Multiplicity>
-        </elements>
+        <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="producer.publish_request" Multi0="1"/>
+        <elements xsi:type="sysMLOC:EventOccurrenceUsage" isThen="true" refElement="publication_interface.publish_request" Multi0="1"/>
+        <elements xsi:type="sysMLOC:EventOccurrenceUsage" isThen="true" refElement="server.publish_request" Multi0="1"/>
       </elements>
       <elements xsi:type="sysMLOC:FlowUsage">
         <redefinitions>subscribe_message</redefinitions>
         <FlowEnd>consumer.consumerBehavior.subscribe.request</FlowEnd>
         <FlowEnd>server.serverBehavior.subscribing.request</FlowEnd>
-        <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="consumer.subscribe_request">
-          <Multiplicity>1</Multiplicity>
-        </elements>
-        <elements xsi:type="sysMLOC:EventOccurrenceUsage" isThen="true" refElement="subscription_interface.subscribe_request">
-          <Multiplicity>1</Multiplicity>
-        </elements>
-        <elements xsi:type="sysMLOC:EventOccurrenceUsage" isThen="true" refElement="server.subscribe_request">
-          <Multiplicity>1</Multiplicity>
-        </elements>
+        <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="consumer.subscribe_request" Multi0="1"/>
+        <elements xsi:type="sysMLOC:EventOccurrenceUsage" isThen="true" refElement="subscription_interface.subscribe_request" Multi0="1"/>
+        <elements xsi:type="sysMLOC:EventOccurrenceUsage" isThen="true" refElement="server.subscribe_request" Multi0="1"/>
       </elements>
       <elements xsi:type="sysMLOC:FlowUsage">
         <redefinitions>deliver_message</redefinitions>
         <FlowEnd>server.serverBehavior.delivering.response</FlowEnd>
         <FlowEnd>consumer.consumerBehavior.delivery.response</FlowEnd>
-        <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="server.deliver_response">
-          <Multiplicity>1</Multiplicity>
-        </elements>
-        <elements xsi:type="sysMLOC:EventOccurrenceUsage" isThen="true" refElement="subscription_interface.deliver_response">
-          <Multiplicity>1</Multiplicity>
-        </elements>
-        <elements xsi:type="sysMLOC:EventOccurrenceUsage" isThen="true" refElement="consumer.deliver_response">
-          <Multiplicity>1</Multiplicity>
-        </elements>
+        <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="server.deliver_response" Multi0="1"/>
+        <elements xsi:type="sysMLOC:EventOccurrenceUsage" isThen="true" refElement="subscription_interface.deliver_response" Multi0="1"/>
+        <elements xsi:type="sysMLOC:EventOccurrenceUsage" isThen="true" refElement="consumer.deliver_response" Multi0="1"/>
       </elements>
     </elements>
   </elements>

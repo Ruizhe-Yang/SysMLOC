@@ -25,10 +25,8 @@
           </elements>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:ConnectionUsage" declaredName="trailerHitch">
+      <elements xsi:type="sysMLOC:ConnectionUsage" declaredName="trailerHitch" Multi1="0" Multi02="1">
         <typings>TrailerHitch</typings>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>1</Multiplicity>
         <connectorPart refElement="vehicle.vehicleFrame.hitch"/>
         <connectorPart refElement="trailer.trailerFrame.coupler"/>
       </elements>
@@ -45,17 +43,15 @@
         <elements xsi:type="sysMLOC:ActionUsage" declaredName="'connect trailer to vehicle'">
           <elements xsi:type="sysMLOC:CodeAnnotation" body="// Assert that exactly one connection exists during the&#xA;"/>
           <elements xsi:type="sysMLOC:CodeAnnotation" body="// performance of this action.&#xA;"/>
-          <elements xsi:type="sysMLOC:ReferenceUsage" isAbstract="true">
+          <elements xsi:type="sysMLOC:ReferenceUsage" isAbstract="true" Multi0="1">
             <redefinitions>trailerHitch</redefinitions>
-            <Multiplicity>1</Multiplicity>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:ActionUsage" isThen="true" declaredName="'disconnect trailer from vehicle'">
           <elements xsi:type="sysMLOC:CodeAnnotation" body="// Assert that exactly no connection exists during the&#xA;"/>
           <elements xsi:type="sysMLOC:CodeAnnotation" body="// performance of this action.&#xA;"/>
-          <elements xsi:type="sysMLOC:ReferenceUsage" isAbstract="true">
+          <elements xsi:type="sysMLOC:ReferenceUsage" isAbstract="true" Multi0="0">
             <redefinitions>trailerHitch</redefinitions>
-            <Multiplicity>0</Multiplicity>
           </elements>
         </elements>
       </elements>

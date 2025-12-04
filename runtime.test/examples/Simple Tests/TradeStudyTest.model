@@ -12,10 +12,8 @@
     </elements>
     <elements xsi:type="sysMLOC:AnalysisCaseUsage" declaredName="engineTradeStudy">
       <typings>TradeStudy</typings>
-      <elements xsi:type="sysMLOC:SubjectUsage" valuePart="(engine1, engine2)">
+      <elements xsi:type="sysMLOC:SubjectUsage" Multi1="1" Multi02="*" valuePart="(engine1, engine2)">
         <typings>Engine</typings>
-        <Multiplicity>1</Multiplicity>
-        <Multiplicity>*</Multiplicity>
       </elements>
       <elements xsi:type="sysMLOC:ObjectiveRequirementUsage">
         <typings>MaximizeObjective</typings>

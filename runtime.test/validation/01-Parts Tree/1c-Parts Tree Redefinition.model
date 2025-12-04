@@ -35,9 +35,8 @@
           <elements xsi:type="sysMLOC:PartUsage" declaredName="frontAxle">
             <typings>Axle</typings>
           </elements>
-          <elements xsi:type="sysMLOC:PartUsage" declaredName="frontWheel" isOrdered="true">
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="frontWheel" Multi0="2" isOrdered="true">
             <typings>Wheel</typings>
-            <Multiplicity>2</Multiplicity>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:PartUsage" declaredName="rearAxleAssembly">
@@ -45,9 +44,8 @@
           <elements xsi:type="sysMLOC:PartUsage" declaredName="rearAxle">
             <typings>Axle</typings>
           </elements>
-          <elements xsi:type="sysMLOC:PartUsage" declaredName="rearWheel" isOrdered="true">
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="rearWheel" Multi0="2" isOrdered="true">
             <typings>Wheel</typings>
-            <Multiplicity>2</Multiplicity>
           </elements>
         </elements>
       </elements>

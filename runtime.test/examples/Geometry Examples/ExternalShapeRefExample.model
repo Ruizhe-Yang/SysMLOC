@@ -7,13 +7,11 @@
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="SI::mm"/>
     <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="ExternalShapeRef">
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * Metadata to reference an externally defined shape.&#xD;&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="purpose">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="purpose" Multi0="1">
         <typings>String</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="shapeIri">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="shapeIri" Multi0="1">
         <typings>String</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:PartUsage" declaredName="myBatteryUnit">

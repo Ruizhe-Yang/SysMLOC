@@ -1,6 +1,6 @@
 package dut.control.sysmloc.ui.actions;
 
-import java.nio.file.Path;
+//import java.nio.file.Path;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
@@ -26,16 +26,11 @@ public class GenerateSysMLAction implements IObjectActionDelegate {
             if (file == null) {
                 return;
             }
-
             String absPath = file.getLocation().toOSString();
-
-            // 调用你刚才的转换函数
-            Path out = SysMLOC2SysML.convertModelToSysml(absPath);
-
-            // 刷新工作空间，让新文件在 Package Explorer 里出现
+            SysMLOC2SysML.convertModelToSysml(absPath);
+//            Path out = SysMLOC2SysML.convertModelToSysml(absPath);
             file.getParent().refreshLocal(IResource.DEPTH_INFINITE, null);
 
-            // 简单提示一下
 //            MessageDialog.openInformation(
 //                PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(),
 //                "Generate SysML v2",
@@ -70,7 +65,6 @@ public class GenerateSysMLAction implements IObjectActionDelegate {
 
     @Override
     public void setActivePart(IAction action, IWorkbenchPart targetPart) {
-        // 不需要可以留空
     }
 }
 

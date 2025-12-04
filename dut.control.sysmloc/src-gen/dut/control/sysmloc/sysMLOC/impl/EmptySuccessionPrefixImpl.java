@@ -6,18 +6,12 @@ package dut.control.sysmloc.sysMLOC.impl;
 import dut.control.sysmloc.sysMLOC.EmptySuccessionPrefix;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +22,9 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EmptySuccessionPrefixImpl#isIsThen <em>Is Then</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EmptySuccessionPrefixImpl#getThenMultiplicity <em>Then Multiplicity</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EmptySuccessionPrefixImpl#getThenMulti0 <em>Then Multi0</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EmptySuccessionPrefixImpl#getThenMulti1 <em>Then Multi1</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EmptySuccessionPrefixImpl#getThenMulti02 <em>Then Multi02</em>}</li>
  * </ul>
  *
  * @generated
@@ -56,14 +52,64 @@ public class EmptySuccessionPrefixImpl extends MinimalEObjectImpl.Container impl
   protected boolean isThen = IS_THEN_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getThenMultiplicity() <em>Then Multiplicity</em>}' attribute list.
+   * The default value of the '{@link #getThenMulti0() <em>Then Multi0</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getThenMultiplicity()
+   * @see #getThenMulti0()
    * @generated
    * @ordered
    */
-  protected EList<String> thenMultiplicity;
+  protected static final String THEN_MULTI0_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getThenMulti0() <em>Then Multi0</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getThenMulti0()
+   * @generated
+   * @ordered
+   */
+  protected String thenMulti0 = THEN_MULTI0_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getThenMulti1() <em>Then Multi1</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getThenMulti1()
+   * @generated
+   * @ordered
+   */
+  protected static final String THEN_MULTI1_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getThenMulti1() <em>Then Multi1</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getThenMulti1()
+   * @generated
+   * @ordered
+   */
+  protected String thenMulti1 = THEN_MULTI1_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getThenMulti02() <em>Then Multi02</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getThenMulti02()
+   * @generated
+   * @ordered
+   */
+  protected static final String THEN_MULTI02_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getThenMulti02() <em>Then Multi02</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getThenMulti02()
+   * @generated
+   * @ordered
+   */
+  protected String thenMulti02 = THEN_MULTI02_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -117,13 +163,73 @@ public class EmptySuccessionPrefixImpl extends MinimalEObjectImpl.Container impl
    * @generated
    */
   @Override
-  public EList<String> getThenMultiplicity()
+  public String getThenMulti0()
   {
-    if (thenMultiplicity == null)
-    {
-      thenMultiplicity = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTIPLICITY);
-    }
-    return thenMultiplicity;
+    return thenMulti0;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setThenMulti0(String newThenMulti0)
+  {
+    String oldThenMulti0 = thenMulti0;
+    thenMulti0 = newThenMulti0;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI0, oldThenMulti0, thenMulti0));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getThenMulti1()
+  {
+    return thenMulti1;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setThenMulti1(String newThenMulti1)
+  {
+    String oldThenMulti1 = thenMulti1;
+    thenMulti1 = newThenMulti1;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI1, oldThenMulti1, thenMulti1));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getThenMulti02()
+  {
+    return thenMulti02;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setThenMulti02(String newThenMulti02)
+  {
+    String oldThenMulti02 = thenMulti02;
+    thenMulti02 = newThenMulti02;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI02, oldThenMulti02, thenMulti02));
   }
 
   /**
@@ -138,8 +244,12 @@ public class EmptySuccessionPrefixImpl extends MinimalEObjectImpl.Container impl
     {
       case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__IS_THEN:
         return isIsThen();
-      case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTIPLICITY:
-        return getThenMultiplicity();
+      case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI0:
+        return getThenMulti0();
+      case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI1:
+        return getThenMulti1();
+      case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI02:
+        return getThenMulti02();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -149,7 +259,6 @@ public class EmptySuccessionPrefixImpl extends MinimalEObjectImpl.Container impl
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -158,9 +267,14 @@ public class EmptySuccessionPrefixImpl extends MinimalEObjectImpl.Container impl
       case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__IS_THEN:
         setIsThen((Boolean)newValue);
         return;
-      case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTIPLICITY:
-        getThenMultiplicity().clear();
-        getThenMultiplicity().addAll((Collection<? extends String>)newValue);
+      case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI0:
+        setThenMulti0((String)newValue);
+        return;
+      case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI1:
+        setThenMulti1((String)newValue);
+        return;
+      case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI02:
+        setThenMulti02((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -179,8 +293,14 @@ public class EmptySuccessionPrefixImpl extends MinimalEObjectImpl.Container impl
       case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__IS_THEN:
         setIsThen(IS_THEN_EDEFAULT);
         return;
-      case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTIPLICITY:
-        getThenMultiplicity().clear();
+      case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI0:
+        setThenMulti0(THEN_MULTI0_EDEFAULT);
+        return;
+      case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI1:
+        setThenMulti1(THEN_MULTI1_EDEFAULT);
+        return;
+      case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI02:
+        setThenMulti02(THEN_MULTI02_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -198,8 +318,12 @@ public class EmptySuccessionPrefixImpl extends MinimalEObjectImpl.Container impl
     {
       case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__IS_THEN:
         return isThen != IS_THEN_EDEFAULT;
-      case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTIPLICITY:
-        return thenMultiplicity != null && !thenMultiplicity.isEmpty();
+      case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI0:
+        return THEN_MULTI0_EDEFAULT == null ? thenMulti0 != null : !THEN_MULTI0_EDEFAULT.equals(thenMulti0);
+      case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI1:
+        return THEN_MULTI1_EDEFAULT == null ? thenMulti1 != null : !THEN_MULTI1_EDEFAULT.equals(thenMulti1);
+      case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI02:
+        return THEN_MULTI02_EDEFAULT == null ? thenMulti02 != null : !THEN_MULTI02_EDEFAULT.equals(thenMulti02);
     }
     return super.eIsSet(featureID);
   }
@@ -217,8 +341,12 @@ public class EmptySuccessionPrefixImpl extends MinimalEObjectImpl.Container impl
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (isThen: ");
     result.append(isThen);
-    result.append(", ThenMultiplicity: ");
-    result.append(thenMultiplicity);
+    result.append(", ThenMulti0: ");
+    result.append(thenMulti0);
+    result.append(", ThenMulti1: ");
+    result.append(thenMulti1);
+    result.append(", ThenMulti02: ");
+    result.append(thenMulti02);
     result.append(')');
     return result.toString();
   }

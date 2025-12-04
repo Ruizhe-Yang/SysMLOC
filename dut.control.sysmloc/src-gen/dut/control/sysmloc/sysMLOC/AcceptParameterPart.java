@@ -3,8 +3,6 @@
  */
 package dut.control.sysmloc.sysMLOC;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -26,15 +24,25 @@ import org.eclipse.emf.ecore.EObject;
 public interface AcceptParameterPart extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Accept Parameter</b></em>' containment reference list.
-   * The list contents are of type {@link dut.control.sysmloc.sysMLOC.PayloadParameter}.
+   * Returns the value of the '<em><b>Accept Parameter</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Accept Parameter</em>' containment reference list.
+   * @return the value of the '<em>Accept Parameter</em>' containment reference.
+   * @see #setAcceptParameter(PayloadParameter)
    * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getAcceptParameterPart_AcceptParameter()
    * @model containment="true"
    * @generated
    */
-  EList<PayloadParameter> getAcceptParameter();
+  PayloadParameter getAcceptParameter();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.AcceptParameterPart#getAcceptParameter <em>Accept Parameter</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Accept Parameter</em>' containment reference.
+   * @see #getAcceptParameter()
+   * @generated
+   */
+  void setAcceptParameter(PayloadParameter value);
 
 } // AcceptParameterPart

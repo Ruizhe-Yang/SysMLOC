@@ -48,10 +48,8 @@
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="numberOfBolts" valuePart="5">
         <typings>Natural</typings>
       </elements>
-      <elements xsi:type="sysMLOC:PartUsage" declaredName="lugBolts">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="lugBolts" Multi1="1" Multi02="numberOfBolts">
         <typings>LugBolt</typings>
-        <Multiplicity>1</Multiplicity>
-        <Multiplicity>numberOfBolts</Multiplicity>
       </elements>
       <elements xsi:type="sysMLOC:Comment" body="/* &#xD;&#xA;&#x9;&#x9; * As an example of a more involved placement of composite parts, constrain the positions of the coordinate frame origins &#xD;&#xA;&#x9;&#x9; * of the lugbolts to a circle with radius lbpr distributed evenly over 360&#xb0;.&#xD;&#xA;&#x9;&#x9; */"/>
       <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="lbpr" declaredName="lugBoltPlacementRadius" isDefault="true" valuePart="60 [mm]">
@@ -91,10 +89,9 @@
           <redefinitions>mRefs</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:PartUsage" declaredName="chassis">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="chassis" Multi0="1">
         <typings>Chassis</typings>
         <subsetting>componentItems</subsetting>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:AttributeUsage">
           <redefinitions>coordinateFrame</redefinitions>
           <elements xsi:type="sysMLOC:AttributeUsage">
@@ -114,10 +111,9 @@
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="3">
           <redefinitions>dimensions</redefinitions>
         </elements>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(1, 0, 0)">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" Multi0="3" valuePart="(1, 0, 0)">
           <typings>Real</typings>
           <redefinitions>elements</redefinitions>
-          <Multiplicity>3</Multiplicity>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="frontWheelXShift" valuePart="1670">
@@ -129,10 +125,9 @@
       <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="wheelYShift" valuePart="720">
         <typings>Real</typings>
       </elements>
-      <elements xsi:type="sysMLOC:PartUsage" declaredName="leftFrontWheel">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="leftFrontWheel" Multi0="1">
         <typings>Wheel</typings>
         <subsetting>componentItems</subsetting>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:AttributeUsage">
           <redefinitions>coordinateFrame</redefinitions>
           <elements xsi:type="sysMLOC:AttributeUsage">
@@ -147,10 +142,9 @@
           </elements>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:PartUsage" declaredName="rightFrontWheel">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="rightFrontWheel" Multi0="1">
         <typings>Wheel</typings>
         <subsetting>componentItems</subsetting>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:AttributeUsage">
           <redefinitions>coordinateFrame</redefinitions>
           <elements xsi:type="sysMLOC:AttributeUsage">
@@ -165,10 +159,9 @@
           </elements>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:PartUsage" declaredName="leftRearWheel">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="leftRearWheel" Multi0="1">
         <typings>Wheel</typings>
         <subsetting>componentItems</subsetting>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:AttributeUsage">
           <redefinitions>coordinateFrame</redefinitions>
           <elements xsi:type="sysMLOC:AttributeUsage">
@@ -183,10 +176,9 @@
           </elements>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:PartUsage" declaredName="rightRearWheel">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="rightRearWheel" Multi0="1">
         <typings>Wheel</typings>
         <subsetting>componentItems</subsetting>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:AttributeUsage">
           <redefinitions>coordinateFrame</redefinitions>
           <elements xsi:type="sysMLOC:AttributeUsage">

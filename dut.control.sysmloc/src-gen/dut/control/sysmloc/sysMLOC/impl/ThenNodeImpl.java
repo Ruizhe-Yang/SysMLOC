@@ -23,7 +23,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -37,7 +36,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ThenNodeImpl#getVisibility <em>Visibility</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ThenNodeImpl#isIsVariant <em>Is Variant</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ThenNodeImpl#getMultiplicity <em>Multiplicity</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ThenNodeImpl#getMulti0 <em>Multi0</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ThenNodeImpl#getMulti1 <em>Multi1</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ThenNodeImpl#getMulti02 <em>Multi02</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ThenNodeImpl#getThenElement <em>Then Element</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ThenNodeImpl#getElements <em>Elements</em>}</li>
  * </ul>
@@ -87,14 +88,64 @@ public class ThenNodeImpl extends ActionNodeElementsImpl implements ThenNode
   protected boolean isVariant = IS_VARIANT_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getMultiplicity() <em>Multiplicity</em>}' attribute list.
+   * The default value of the '{@link #getMulti0() <em>Multi0</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMultiplicity()
+   * @see #getMulti0()
    * @generated
    * @ordered
    */
-  protected EList<String> multiplicity;
+  protected static final String MULTI0_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getMulti0() <em>Multi0</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMulti0()
+   * @generated
+   * @ordered
+   */
+  protected String multi0 = MULTI0_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getMulti1() <em>Multi1</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMulti1()
+   * @generated
+   * @ordered
+   */
+  protected static final String MULTI1_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getMulti1() <em>Multi1</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMulti1()
+   * @generated
+   * @ordered
+   */
+  protected String multi1 = MULTI1_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getMulti02() <em>Multi02</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMulti02()
+   * @generated
+   * @ordered
+   */
+  protected static final String MULTI02_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getMulti02() <em>Multi02</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMulti02()
+   * @generated
+   * @ordered
+   */
+  protected String multi02 = MULTI02_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getThenElement() <em>Then Element</em>}' containment reference list.
@@ -193,13 +244,73 @@ public class ThenNodeImpl extends ActionNodeElementsImpl implements ThenNode
    * @generated
    */
   @Override
-  public EList<String> getMultiplicity()
+  public String getMulti0()
   {
-    if (multiplicity == null)
-    {
-      multiplicity = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.THEN_NODE__MULTIPLICITY);
-    }
-    return multiplicity;
+    return multi0;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setMulti0(String newMulti0)
+  {
+    String oldMulti0 = multi0;
+    multi0 = newMulti0;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.THEN_NODE__MULTI0, oldMulti0, multi0));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getMulti1()
+  {
+    return multi1;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setMulti1(String newMulti1)
+  {
+    String oldMulti1 = multi1;
+    multi1 = newMulti1;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.THEN_NODE__MULTI1, oldMulti1, multi1));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getMulti02()
+  {
+    return multi02;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setMulti02(String newMulti02)
+  {
+    String oldMulti02 = multi02;
+    multi02 = newMulti02;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.THEN_NODE__MULTI02, oldMulti02, multi02));
   }
 
   /**
@@ -264,8 +375,12 @@ public class ThenNodeImpl extends ActionNodeElementsImpl implements ThenNode
         return getVisibility();
       case SysMLOCPackage.THEN_NODE__IS_VARIANT:
         return isIsVariant();
-      case SysMLOCPackage.THEN_NODE__MULTIPLICITY:
-        return getMultiplicity();
+      case SysMLOCPackage.THEN_NODE__MULTI0:
+        return getMulti0();
+      case SysMLOCPackage.THEN_NODE__MULTI1:
+        return getMulti1();
+      case SysMLOCPackage.THEN_NODE__MULTI02:
+        return getMulti02();
       case SysMLOCPackage.THEN_NODE__THEN_ELEMENT:
         return getThenElement();
       case SysMLOCPackage.THEN_NODE__ELEMENTS:
@@ -291,9 +406,14 @@ public class ThenNodeImpl extends ActionNodeElementsImpl implements ThenNode
       case SysMLOCPackage.THEN_NODE__IS_VARIANT:
         setIsVariant((Boolean)newValue);
         return;
-      case SysMLOCPackage.THEN_NODE__MULTIPLICITY:
-        getMultiplicity().clear();
-        getMultiplicity().addAll((Collection<? extends String>)newValue);
+      case SysMLOCPackage.THEN_NODE__MULTI0:
+        setMulti0((String)newValue);
+        return;
+      case SysMLOCPackage.THEN_NODE__MULTI1:
+        setMulti1((String)newValue);
+        return;
+      case SysMLOCPackage.THEN_NODE__MULTI02:
+        setMulti02((String)newValue);
         return;
       case SysMLOCPackage.THEN_NODE__THEN_ELEMENT:
         getThenElement().clear();
@@ -323,8 +443,14 @@ public class ThenNodeImpl extends ActionNodeElementsImpl implements ThenNode
       case SysMLOCPackage.THEN_NODE__IS_VARIANT:
         setIsVariant(IS_VARIANT_EDEFAULT);
         return;
-      case SysMLOCPackage.THEN_NODE__MULTIPLICITY:
-        getMultiplicity().clear();
+      case SysMLOCPackage.THEN_NODE__MULTI0:
+        setMulti0(MULTI0_EDEFAULT);
+        return;
+      case SysMLOCPackage.THEN_NODE__MULTI1:
+        setMulti1(MULTI1_EDEFAULT);
+        return;
+      case SysMLOCPackage.THEN_NODE__MULTI02:
+        setMulti02(MULTI02_EDEFAULT);
         return;
       case SysMLOCPackage.THEN_NODE__THEN_ELEMENT:
         getThenElement().clear();
@@ -350,8 +476,12 @@ public class ThenNodeImpl extends ActionNodeElementsImpl implements ThenNode
         return visibility != VISIBILITY_EDEFAULT;
       case SysMLOCPackage.THEN_NODE__IS_VARIANT:
         return isVariant != IS_VARIANT_EDEFAULT;
-      case SysMLOCPackage.THEN_NODE__MULTIPLICITY:
-        return multiplicity != null && !multiplicity.isEmpty();
+      case SysMLOCPackage.THEN_NODE__MULTI0:
+        return MULTI0_EDEFAULT == null ? multi0 != null : !MULTI0_EDEFAULT.equals(multi0);
+      case SysMLOCPackage.THEN_NODE__MULTI1:
+        return MULTI1_EDEFAULT == null ? multi1 != null : !MULTI1_EDEFAULT.equals(multi1);
+      case SysMLOCPackage.THEN_NODE__MULTI02:
+        return MULTI02_EDEFAULT == null ? multi02 != null : !MULTI02_EDEFAULT.equals(multi02);
       case SysMLOCPackage.THEN_NODE__THEN_ELEMENT:
         return thenElement != null && !thenElement.isEmpty();
       case SysMLOCPackage.THEN_NODE__ELEMENTS:
@@ -381,7 +511,9 @@ public class ThenNodeImpl extends ActionNodeElementsImpl implements ThenNode
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.THEN_NODE__MULTIPLICITY: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTIPLICITY;
+        case SysMLOCPackage.THEN_NODE__MULTI0: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI0;
+        case SysMLOCPackage.THEN_NODE__MULTI1: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI1;
+        case SysMLOCPackage.THEN_NODE__MULTI02: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI02;
         default: return -1;
       }
     }
@@ -409,7 +541,9 @@ public class ThenNodeImpl extends ActionNodeElementsImpl implements ThenNode
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTIPLICITY: return SysMLOCPackage.THEN_NODE__MULTIPLICITY;
+        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI0: return SysMLOCPackage.THEN_NODE__MULTI0;
+        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI1: return SysMLOCPackage.THEN_NODE__MULTI1;
+        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI02: return SysMLOCPackage.THEN_NODE__MULTI02;
         default: return -1;
       }
     }
@@ -431,8 +565,12 @@ public class ThenNodeImpl extends ActionNodeElementsImpl implements ThenNode
     result.append(visibility);
     result.append(", isVariant: ");
     result.append(isVariant);
-    result.append(", Multiplicity: ");
-    result.append(multiplicity);
+    result.append(", Multi0: ");
+    result.append(multi0);
+    result.append(", Multi1: ");
+    result.append(multi1);
+    result.append(", Multi02: ");
+    result.append(multi02);
     result.append(')');
     return result.toString();
   }

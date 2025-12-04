@@ -9,13 +9,11 @@
         </elements>
         <elements xsi:type="sysMLOC:CodeAnnotation" body="// ...&#xD;&#xA;"/>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cityScenario" valuePart="( )">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cityScenario" Multi0="*" valuePart="( )">
         <typings>WayPoint</typings>
-        <Multiplicity>*</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="highwayScenario" valuePart="( )">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="highwayScenario" Multi0="*" valuePart="( )">
         <typings>WayPoint</typings>
-        <Multiplicity>*</Multiplicity>
       </elements>
       <elements xsi:type="sysMLOC:AnalysisCaseUsage" declaredName="cityAnalysis">
         <typings>FuelEconomyAnalysis</typings>

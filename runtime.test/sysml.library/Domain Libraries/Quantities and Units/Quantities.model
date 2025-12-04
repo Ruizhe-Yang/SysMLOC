@@ -17,11 +17,9 @@
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="isBound">
         <typings>Boolean</typings>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="num" isOrdered="true" isNonunique="true">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="num" Multi1="1" Multi02="*" isOrdered="true" isNonunique="true">
         <typings>Number</typings>
         <redefinitions>elements</redefinitions>
-        <Multiplicity>1</Multiplicity>
-        <Multiplicity>*</Multiplicity>
       </elements>
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mRef">
         <typings>MeasurementReferences::TensorMeasurementReference</typings>
@@ -61,29 +59,25 @@
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" isAbstract="true" declaredName="tensorQuantities" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" isAbstract="true" declaredName="tensorQuantities" Multi0="*" isNonunique="true">
       <typings>TensorQuantityValue</typings>
-      <Multiplicity>*</Multiplicity>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Quantities are defined as self-standing features that can be used to consistently specify quantities as &#xA;&#x9;&#x9; * features of occurrences. Each single quantity feature is subsetting the root feature tensorQuantities. &#xA;&#x9;&#x9; * In other words, the codomain of a quantity feature is a suitable specialization of TensorQuantityValue.&#xA;&#x9;&#x9; */"/>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" isAbstract="true" declaredName="vectorQuantities" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" isAbstract="true" declaredName="vectorQuantities" Multi0="*" isNonunique="true">
       <typings>VectorQuantityValue</typings>
       <subsetting>tensorQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" isAbstract="true" declaredName="scalarQuantities" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" isAbstract="true" declaredName="scalarQuantities" Multi0="*" isNonunique="true">
       <typings>ScalarQuantityValue</typings>
       <subsetting>vectorQuantities</subsetting>
-      <Multiplicity>*</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" isAbstract="true" declaredName="'3dVectorQuantityValue'">
       <superclassifiers>VectorQuantityValue</superclassifiers>
       <superclassifiers>ThreeVectorValue</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;    &#x9; * Most general representation of real 3-vector quantities&#xA;    &#x9; */"/>
-      <elements xsi:type="sysMLOC:AttributeUsage">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="3">
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
-        <Multiplicity>3</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:AliasElement" memberName="ThreeDVectorQuantityValue" memberElement="'3dVectorQuantityValue'"/>
@@ -92,28 +86,24 @@
     <elements xsi:type="sysMLOC:AliasElement" memberName="quantities" memberElement="tensorQuantities"/>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SystemOfQuantities">
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * A SystemOfQuantities represents the essentials of [VIM] concept &quot;system of quantities&quot; (https://jcgm.bipm.org/vim/en/1.3.html), defined as a&#xA;&#x9;&#x9; * &quot;set of quantities together with a set of noncontradictory equations relating those quantities&quot;.&#xA;&#x9;&#x9; * In order to establish such a set of noncontradictory equations a set of base quantities is selected. Subsequently the system of quantities is &#xA;&#x9;&#x9; * completed by adding derived quantities which are products of powers of the base quantities.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="baseQuantities" isOrdered="true">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="baseQuantities" Multi0="*" isOrdered="true">
         <typings>ScalarQuantityValue</typings>
         <subsetting>scalarQuantities</subsetting>
-        <Multiplicity>*</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="QuantityPowerFactor">
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Representation of a quantity power factor, being the combination of a quantity and an exponent.&#xA;&#x9;&#x9; * &#xA;&#x9;&#x9; * A sequence of QuantityPowerFactors for the baseQuantities of a SystemOfQuantities define the QuantityDimension of a scalar quantity.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="quantity">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="quantity" Multi0="1">
         <typings>ScalarQuantityValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="exponent">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="exponent" Multi0="1">
         <typings>Real</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="QuantityDimension">
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Representation of quantity dimension, which is the product of powers of the set of base quantities defined for a particular system of quantities, units and scales.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="quantityPowerFactors" isOrdered="true">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="quantityPowerFactors" Multi0="*" isOrdered="true">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>*</Multiplicity>
       </elements>
     </elements>
   </elements>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="'Event Occurrence Example'">
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Driver"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="CruiseController"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Speedometer"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Engine"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle"/>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="driver">
+      <typings>Driver</typings>
+      <elements xsi:type="sysMLOC:EventOccurrenceUsage" declaredName="setSpeedSent"/>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle">
+      <typings>Vehicle</typings>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="cruiseController">
+        <typings>CruiseController</typings>
+        <elements xsi:type="sysMLOC:EventOccurrenceUsage" declaredName="setSpeedReceived"/>
+        <elements xsi:type="sysMLOC:EventOccurrenceUsage" isThen="true" declaredName="sensedSpeedReceived"/>
+        <elements xsi:type="sysMLOC:EventOccurrenceUsage" isThen="true" declaredName="fuelCommandSent"/>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="speedometer">
+        <typings>Speedometer</typings>
+        <elements xsi:type="sysMLOC:EventOccurrenceUsage" declaredName="sensedSpeedSent"/>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="engine">
+        <typings>Engine</typings>
+        <elements xsi:type="sysMLOC:EventOccurrenceUsage" declaredName="fuelCommandReceived"/>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

@@ -58,47 +58,40 @@
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="spatialCF">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="spatialCF" Multi0="1">
       <typings>CartesianSpatial3dCoordinateFrame</typings>
-      <Multiplicity>1</Multiplicity>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Define Cartesian 3D coordinate systems for position and velocity&#xA;&#x9;&#x9; * Create a velocity coordinate system from the spatial coordinate system through division by second&#xA;&#x9;&#x9; */"/>
       <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(m, m, m)">
         <redefinitions>mRefs</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="velocityCF" valuePart="spatialCF/s">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="velocityCF" Multi0="1" valuePart="spatialCF/s">
       <typings>CartesianVelocity3dCoordinateFrame</typings>
-      <Multiplicity>1</Multiplicity>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="PositionAndVelocity">
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="position">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="position" Multi0="1">
         <typings>CartesianPosition3dVector</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="velocity">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="velocity" Multi0="1">
         <typings>CartesianVelocity3dVector</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="AscentProfile">
       <superclassifiers>SampledFunction</superclassifiers>
       <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="AscentSample">
         <superclassifiers>SamplePair</superclassifiers>
-        <elements xsi:type="sysMLOC:AttributeUsage">
+        <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
           <typings>MissionElapsedTimeValue</typings>
           <redefinitions>domainValue</redefinitions>
-          <Multiplicity>1</Multiplicity>
         </elements>
-        <elements xsi:type="sysMLOC:AttributeUsage">
+        <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
           <typings>PositionAndVelocity</typings>
           <redefinitions>rangeValue</redefinitions>
-          <Multiplicity>1</Multiplicity>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" isOrdered="true">
+      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="*" isOrdered="true">
         <typings>AscentSample</typings>
         <redefinitions>samples</redefinitions>
-        <Multiplicity>*</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:AttributeUsage" declaredName="ascentProfile1">

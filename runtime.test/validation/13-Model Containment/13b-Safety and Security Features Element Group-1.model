@@ -18,15 +18,12 @@
           <elements xsi:type="sysMLOC:PartUsage" declaredName="alarm">
             <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="Security"/>
           </elements>
-          <elements xsi:type="sysMLOC:PartUsage" declaredName="seatBelt">
-            <Multiplicity>2</Multiplicity>
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="seatBelt" Multi0="2">
             <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="Safety">
               <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="isMandatory" valuePart="true"/>
             </elements>
           </elements>
-          <elements xsi:type="sysMLOC:PartUsage" declaredName="frontSeat">
-            <Multiplicity>2</Multiplicity>
-          </elements>
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="frontSeat" Multi0="2"/>
           <elements xsi:type="sysMLOC:PartUsage" declaredName="driverAirBag">
             <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="Safety">
               <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="isMandatory" valuePart="false"/>
@@ -45,11 +42,8 @@
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:PartUsage" declaredName="wheelAssy">
-          <elements xsi:type="sysMLOC:PartUsage" declaredName="wheel">
-            <Multiplicity>2</Multiplicity>
-          </elements>
-          <elements xsi:type="sysMLOC:PartUsage" declaredName="antilockBrakes">
-            <Multiplicity>2</Multiplicity>
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="wheel" Multi0="2"/>
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="antilockBrakes" Multi0="2">
             <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="Safety">
               <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="isMandatory" valuePart="false"/>
             </elements>

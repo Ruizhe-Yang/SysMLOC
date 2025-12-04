@@ -9,9 +9,8 @@
       <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="MeasurementReferences" isNamespace="true"/>
       <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="DistancePerVolumeUnit">
         <superclassifiers>DerivedUnit</superclassifiers>
-        <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="distancePF">
+        <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="distancePF" Multi0="1">
           <typings>QuantityPowerFactor</typings>
-          <Multiplicity>1</Multiplicity>
           <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
             <redefinitions>quantity</redefinitions>
           </elements>
@@ -19,9 +18,8 @@
             <redefinitions>exponent</redefinitions>
           </elements>
         </elements>
-        <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="volumePF">
+        <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="volumePF" Multi0="1">
           <typings>QuantityPowerFactor</typings>
-          <Multiplicity>1</Multiplicity>
           <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
             <redefinitions>quantity</redefinitions>
           </elements>
@@ -77,9 +75,8 @@
         <elements xsi:type="sysMLOC:AttributeUsage" valuePart="engine.peakPower">
           <redefinitions>power</redefinitions>
         </elements>
-        <elements xsi:type="sysMLOC:PartUsage" declaredName="engine">
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="engine" Multi0="1">
           <typings>Engine</typings>
-          <Multiplicity>1</Multiplicity>
         </elements>
       </elements>
     </elements>
@@ -90,9 +87,8 @@
       <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="SampledFunctions::SamplePair"/>
       <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ControlFunctions::forAll"/>
       <elements xsi:type="sysMLOC:ActionDefinition" declaredName="FuelConsumption">
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="power">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="power" Multi0="*">
           <typings>PowerValue</typings>
-          <Multiplicity>*</Multiplicity>
         </elements>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="fuelEconomy">
           <typings>DistancePerVolumeValue</typings>

@@ -19,31 +19,22 @@
     <elements xsi:type="sysMLOC:CodeAnnotation" body="// Parts&#xD;&#xA;"/>
     <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle">
       <typings>Vehicle</typings>
-      <elements xsi:type="sysMLOC:PartUsage" declaredName="chs">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="chs" Multi0="1">
         <typings>'Chassis Assembly'</typings>
-        <Multiplicity>1</Multiplicity>
-        <elements xsi:type="sysMLOC:PartUsage" declaredName="rb">
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="rb" Multi1="0" Multi02="1">
           <typings>RollBar</typings>
-          <Multiplicity>0</Multiplicity>
-          <Multiplicity>1</Multiplicity>
         </elements>
-        <elements xsi:type="sysMLOC:PartUsage" declaredName="w">
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="w" Multi0="4">
           <typings>Wheel</typings>
-          <Multiplicity>4</Multiplicity>
-          <elements xsi:type="sysMLOC:PartUsage" declaredName="lb">
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="lb" Multi1="6" Multi02="10">
             <typings>LugBolt</typings>
-            <Multiplicity>6</Multiplicity>
-            <Multiplicity>10</Multiplicity>
           </elements>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:PartUsage" declaredName="eng">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="eng" Multi0="1">
         <typings>Engine</typings>
-        <Multiplicity>1</Multiplicity>
-        <elements xsi:type="sysMLOC:PartUsage" declaredName="cyl">
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="cyl" Multi1="4" Multi02="8">
           <typings>Cylinder</typings>
-          <Multiplicity>4</Multiplicity>
-          <Multiplicity>8</Multiplicity>
         </elements>
       </elements>
     </elements>
@@ -51,11 +42,9 @@
       <subsetting>vehicle</subsetting>
       <elements xsi:type="sysMLOC:PartUsage">
         <redefinitions>chs</redefinitions>
-        <elements xsi:type="sysMLOC:PartUsage">
+        <elements xsi:type="sysMLOC:PartUsage" Multi1="0" Multi02="1">
           <typings>LightRollBar</typings>
           <redefinitions>rb</redefinitions>
-          <Multiplicity>0</Multiplicity>
-          <Multiplicity>1</Multiplicity>
         </elements>
         <elements xsi:type="sysMLOC:PartUsage">
           <redefinitions>w</redefinitions>
@@ -66,40 +55,32 @@
       </elements>
       <elements xsi:type="sysMLOC:PartUsage">
         <redefinitions>eng</redefinitions>
-        <elements xsi:type="sysMLOC:PartUsage">
+        <elements xsi:type="sysMLOC:PartUsage" Multi0="4">
           <redefinitions>cyl</redefinitions>
-          <Multiplicity>4</Multiplicity>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:CodeAnnotation" body="// Constrains total number of lugbolts.&#xD;&#xA;"/>
-      <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="lugBolts" valuePart="chs.w.lb">
-        <Multiplicity>24</Multiplicity>
-      </elements>
+      <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="lugBolts" Multi0="24" valuePart="chs.w.lb"/>
     </elements>
     <elements xsi:type="sysMLOC:PartUsage" declaredName="'vehicle model 2'">
       <subsetting>vehicle</subsetting>
       <elements xsi:type="sysMLOC:PartUsage">
         <redefinitions>chs</redefinitions>
-        <elements xsi:type="sysMLOC:PartUsage">
+        <elements xsi:type="sysMLOC:PartUsage" Multi0="0">
           <redefinitions>rb</redefinitions>
-          <Multiplicity>0</Multiplicity>
         </elements>
         <elements xsi:type="sysMLOC:PartUsage">
           <redefinitions>w</redefinitions>
           <elements xsi:type="sysMLOC:CodeAnnotation" body="// Constrains number of lugbolts per wheel.&#xD;&#xA;"/>
-          <elements xsi:type="sysMLOC:PartUsage">
+          <elements xsi:type="sysMLOC:PartUsage" Multi1="6" Multi02="7">
             <redefinitions>lb</redefinitions>
-            <Multiplicity>6</Multiplicity>
-            <Multiplicity>7</Multiplicity>
           </elements>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:PartUsage">
         <redefinitions>eng</redefinitions>
-        <elements xsi:type="sysMLOC:PartUsage">
+        <elements xsi:type="sysMLOC:PartUsage" Multi1="6" Multi02="8">
           <redefinitions>cyl</redefinitions>
-          <Multiplicity>6</Multiplicity>
-          <Multiplicity>8</Multiplicity>
         </elements>
       </elements>
     </elements>

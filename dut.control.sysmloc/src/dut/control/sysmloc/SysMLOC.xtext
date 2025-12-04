@@ -1199,11 +1199,13 @@ fragment DefinitionExtensionKeyword:
 
 fragment EmptySuccessionPrefix:
 	( isThen ?= 'then' )?
-	( '[' ThenMultiplicity += MultiplicityExpression ']' | '[' ThenMultiplicity += MultiplicityExpression '..' ThenMultiplicity += MultiplicityExpression ']')?
+//	( '[' ThenMultiplicity += MultiplicityExpression ']' | '[' ThenMultiplicity += MultiplicityExpression '..' ThenMultiplicity += MultiplicityExpression ']')?
+	('[' ThenMulti0 = MultiplicityExpression ']' | '[' ThenMulti1 = MultiplicityExpression '..' ThenMulti02 = MultiplicityExpression ']')?
 ;
 
 fragment MultiplicityRange:
-	'[' Multiplicity += MultiplicityExpression ']' | '[' Multiplicity += MultiplicityExpression '..' Multiplicity += MultiplicityExpression ']'
+//	'[' Multiplicity += MultiplicityExpression ']' | '[' Multiplicity += MultiplicityExpression '..' Multiplicity += MultiplicityExpression ']'
+	'[' Multi0 = MultiplicityExpression ']' | '[' Multi1 = MultiplicityExpression '..' Multi02 = MultiplicityExpression ']'
 ;
 
 fragment ValuePart:
@@ -1329,11 +1331,11 @@ fragment AcceptNodeDeclaration:
 ;
 
 fragment AcceptParameterPart:
-	acceptParameter+=PayloadParameter
+	acceptParameter=PayloadParameter
 ;
 
 fragment ItemFeatureParameterPart:
-	itemFeatureParameter+=ItemFeatureParameter
+	itemFeatureParameter=ItemFeatureParameter
 ;
 
 fragment PayloadFeature:
@@ -1378,7 +1380,7 @@ fragment Identification:
 
 fragment MultiplicityPart:
 	MultiplicityRange
-	| (MultiplicityRange? ( isOrdered ?= 'ordered' isNonunique ?= 'nonunique'? | isNonunique ?= 'nonunique' isOrdered ?= 'ordered'? ))
+	| MultiplicityRange? ( isOrdered ?= 'ordered' isNonunique ?= 'nonunique'? | isNonunique ?= 'nonunique' isOrdered ?= 'ordered'? )
 ;
 
 fragment FeatureSpecialization:

@@ -378,15 +378,13 @@
         <elements xsi:type="sysMLOC:PortDefinition" declaredName="WheelToAxlePort"/>
         <elements xsi:type="sysMLOC:PortDefinition" declaredName="WheelToRoadPort"/>
         <elements xsi:type="sysMLOC:PortDefinition" declaredName="LugNutCompositePort">
-          <elements xsi:type="sysMLOC:PortUsage" declaredName="lugNutPort">
+          <elements xsi:type="sysMLOC:PortUsage" declaredName="lugNutPort" Multi0="*">
             <typings>LugNutPort</typings>
-            <Multiplicity>*</Multiplicity>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:PortDefinition" declaredName="ShankCompositePort">
-          <elements xsi:type="sysMLOC:PortUsage" declaredName="shankPort">
+          <elements xsi:type="sysMLOC:PortUsage" declaredName="shankPort" Multi0="*">
             <typings>ShankPort</typings>
-            <Multiplicity>*</Multiplicity>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:PortDefinition" declaredName="LugNutPort">
@@ -406,9 +404,8 @@
         <elements xsi:type="sysMLOC:PortDefinition" declaredName="SpeedSensorPort"/>
         <elements xsi:type="sysMLOC:PortDefinition" declaredName="SetSpeedPort"/>
         <elements xsi:type="sysMLOC:PortDefinition" declaredName="DriverCmdPort">
-          <elements xsi:type="sysMLOC:ItemUsage" direction="out" declaredName="driverCmd">
+          <elements xsi:type="sysMLOC:ItemUsage" direction="out" declaredName="driverCmd" Multi0="*">
             <typings>DriverCmd</typings>
-            <Multiplicity>*</Multiplicity>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:PortDefinition" declaredName="HandPort">
@@ -511,9 +508,8 @@
           <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="shankCompositePort" isEnd="true">
             <typings>ShankCompositePort</typings>
           </elements>
-          <elements xsi:type="sysMLOC:InterfaceUsage" declaredName="wheelFastenerInterface">
+          <elements xsi:type="sysMLOC:InterfaceUsage" declaredName="wheelFastenerInterface" Multi0="5">
             <typings>WheelFastenerInterface</typings>
-            <Multiplicity>5</Multiplicity>
             <connectorPart refElement="lugNutCompositePort.lugNutPort"/>
             <connectorPart refElement="shankCompositePort.shankPort"/>
           </elements>
@@ -534,9 +530,8 @@
           <elements xsi:type="sysMLOC:ItemUsage" direction="in" declaredName="pwrCmd">
             <typings>PwrCmd</typings>
           </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="wheelToRoadTorque">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="wheelToRoadTorque" Multi0="2">
             <typings>Torque</typings>
-            <Multiplicity>2</Multiplicity>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:ActionDefinition" declaredName="GenerateTorque">
@@ -567,9 +562,8 @@
           <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="driveshaftTorque">
             <typings>Torque</typings>
           </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="wheelToRoadTorque">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="wheelToRoadTorque" Multi0="2">
             <typings>Torque</typings>
-            <Multiplicity>2</Multiplicity>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:ActionDefinition" declaredName="PerformSelfTest"/>
@@ -725,9 +719,7 @@
       <elements xsi:type="sysMLOC:Package" declaredName="KeyWord_MetadataDefinitions">
         <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="Metaobjects::SemanticMetadata"/>
         <elements xsi:type="sysMLOC:CodeAnnotation" body="// the following is used to define the key word failureMode&#xA;"/>
-        <elements xsi:type="sysMLOC:StateUsage" declaredName="failureModes" isNonunique="true">
-          <Multiplicity>*</Multiplicity>
-        </elements>
+        <elements xsi:type="sysMLOC:StateUsage" declaredName="failureModes" Multi0="*" isNonunique="true"/>
         <elements xsi:type="sysMLOC:CodeAnnotation" body="// with alias &lt;fm>&#xA;"/>
         <elements xsi:type="sysMLOC:MetadataDefinition" declaredShortName="fm" declaredName="failureMode">
           <superclassifiers>SemanticMetadata</superclassifiers>
@@ -735,18 +727,14 @@
             <redefinitions>baseType</redefinitions>
           </elements>
         </elements>
-        <elements xsi:type="sysMLOC:OccurrenceUsage" declaredName="logicalOccurrences" isNonunique="true">
-          <Multiplicity>*</Multiplicity>
-        </elements>
+        <elements xsi:type="sysMLOC:OccurrenceUsage" declaredName="logicalOccurrences" Multi0="*" isNonunique="true"/>
         <elements xsi:type="sysMLOC:MetadataDefinition" declaredShortName="l" declaredName="logical">
           <superclassifiers>SemanticMetadata</superclassifiers>
           <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="logicalOccurrences meta SysML::Usage">
             <redefinitions>baseType</redefinitions>
           </elements>
         </elements>
-        <elements xsi:type="sysMLOC:OccurrenceUsage" declaredName="physicalOccurrences" isNonunique="true">
-          <Multiplicity>*</Multiplicity>
-        </elements>
+        <elements xsi:type="sysMLOC:OccurrenceUsage" declaredName="physicalOccurrences" Multi0="*" isNonunique="true"/>
         <elements xsi:type="sysMLOC:MetadataDefinition" declaredShortName="p" declaredName="physical">
           <superclassifiers>SemanticMetadata</superclassifiers>
           <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="physicalOccurrences meta SysML::Usage">
@@ -759,20 +747,17 @@
           <elements xsi:type="sysMLOC:AttributeUsage" declaredName="time">
             <typings>TimeValue</typings>
           </elements>
-          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="spatialCF">
+          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="spatialCF" Multi0="1">
             <typings>CartesianSpatial3dCoordinateFrame</typings>
-            <Multiplicity>1</Multiplicity>
             <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(m, m, m)">
               <redefinitions>mRefs</redefinitions>
             </elements>
           </elements>
-          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="velocityCF" valuePart="spatialCF/s">
+          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="velocityCF" Multi0="1" valuePart="spatialCF/s">
             <typings>CartesianVelocity3dCoordinateFrame</typings>
-            <Multiplicity>1</Multiplicity>
           </elements>
-          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="accelarationCF" valuePart="velocityCF/s">
+          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="accelarationCF" Multi0="1" valuePart="velocityCF/s">
             <typings>CartesianAcceleration3dCoordinateFrame</typings>
-            <Multiplicity>1</Multiplicity>
           </elements>
         </elements>
       </elements>
@@ -838,9 +823,8 @@
             <elements xsi:type="sysMLOC:AttributeUsage" valuePart="0 [kg]">
               <redefinitions>Vehicle::cargoMass</redefinitions>
             </elements>
-            <elements xsi:type="sysMLOC:AttributeUsage" declaredName="partMasses" isNonunique="true">
+            <elements xsi:type="sysMLOC:AttributeUsage" declaredName="partMasses" Multi0="*" isNonunique="true">
               <subsetting>ISQ::mass</subsetting>
-              <Multiplicity>*</Multiplicity>
             </elements>
             <elements xsi:type="sysMLOC:PartUsage" declaredName="fuelTank">
               <typings>FuelTank</typings>
@@ -862,9 +846,8 @@
               <elements xsi:type="sysMLOC:PartUsage" declaredName="frontAxle">
                 <typings>Axle</typings>
               </elements>
-              <elements xsi:type="sysMLOC:PartUsage" declaredName="frontWheels">
+              <elements xsi:type="sysMLOC:PartUsage" declaredName="frontWheels" Multi0="2">
                 <typings>Wheel</typings>
-                <Multiplicity>2</Multiplicity>
               </elements>
             </elements>
             <elements xsi:type="sysMLOC:PartUsage" declaredName="rearAxleAssembly">
@@ -878,9 +861,8 @@
               <elements xsi:type="sysMLOC:PartUsage" declaredName="rearAxle">
                 <typings>Axle</typings>
               </elements>
-              <elements xsi:type="sysMLOC:PartUsage" declaredName="rearWheels">
+              <elements xsi:type="sysMLOC:PartUsage" declaredName="rearWheels" Multi0="2">
                 <typings>Wheel</typings>
-                <Multiplicity>2</Multiplicity>
                 <elements xsi:type="sysMLOC:AttributeUsage">
                   <redefinitions>diameter</redefinitions>
                 </elements>
@@ -949,10 +931,9 @@
               <redefinitions>vehicleStates</redefinitions>
             </elements>
             <elements xsi:type="sysMLOC:CodeAnnotation" body="// Example vehicle with simple enveloping shape that is a solid &#xA;"/>
-            <elements xsi:type="sysMLOC:ItemUsage">
+            <elements xsi:type="sysMLOC:ItemUsage" Multi0="1">
               <typings>Box</typings>
               <subsetting>envelopingShapes</subsetting>
-              <Multiplicity>1</Multiplicity>
               <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="length1" valuePart="4800 [mm]">
                 <redefinitions>length</redefinitions>
               </elements>
@@ -989,9 +970,8 @@
               <elements xsi:type="sysMLOC:PartUsage" declaredName="frontAxle">
                 <typings>FrontAxle</typings>
               </elements>
-              <elements xsi:type="sysMLOC:PartUsage" declaredName="frontWheels">
+              <elements xsi:type="sysMLOC:PartUsage" declaredName="frontWheels" Multi0="2">
                 <typings>Wheel</typings>
-                <Multiplicity>2</Multiplicity>
               </elements>
             </elements>
             <elements xsi:type="sysMLOC:PartUsage" declaredName="rearAxleAssembly">
@@ -1016,9 +996,8 @@
                 </elements>
                 <elements xsi:type="sysMLOC:PortUsage" declaredName="lugNutCompositePort">
                   <redefinitions>lugNutCompositePort</redefinitions>
-                  <elements xsi:type="sysMLOC:PortUsage" declaredName="lugNutPort">
+                  <elements xsi:type="sysMLOC:PortUsage" declaredName="lugNutPort" Multi0="5">
                     <redefinitions>lugNutPort</redefinitions>
-                    <Multiplicity>5</Multiplicity>
                   </elements>
                 </elements>
               </elements>
@@ -1032,9 +1011,8 @@
                 </elements>
                 <elements xsi:type="sysMLOC:PortUsage" declaredName="lugNutCompositePort">
                   <redefinitions>lugNutCompositePort</redefinitions>
-                  <elements xsi:type="sysMLOC:PortUsage" declaredName="lugNutPort">
+                  <elements xsi:type="sysMLOC:PortUsage" declaredName="lugNutPort" Multi0="5">
                     <redefinitions>lugNutPort</redefinitions>
-                    <Multiplicity>5</Multiplicity>
                   </elements>
                 </elements>
               </elements>
@@ -1058,9 +1036,8 @@
                   </elements>
                   <elements xsi:type="sysMLOC:PortUsage" declaredName="shankCompositePort">
                     <redefinitions>shankCompositePort</redefinitions>
-                    <elements xsi:type="sysMLOC:PortUsage" declaredName="shankPort">
+                    <elements xsi:type="sysMLOC:PortUsage" declaredName="shankPort" Multi0="5">
                       <redefinitions>shankPort</redefinitions>
-                      <Multiplicity>5</Multiplicity>
                     </elements>
                   </elements>
                 </elements>
@@ -1071,9 +1048,8 @@
                   </elements>
                   <elements xsi:type="sysMLOC:PortUsage" declaredName="shankCompositePort">
                     <redefinitions>shankCompositePort</redefinitions>
-                    <elements xsi:type="sysMLOC:PortUsage" declaredName="shankPort">
+                    <elements xsi:type="sysMLOC:PortUsage" declaredName="shankPort" Multi0="5">
                       <redefinitions>shankPort</redefinitions>
-                      <Multiplicity>5</Multiplicity>
                     </elements>
                   </elements>
                 </elements>
@@ -1092,21 +1068,13 @@
               </elements>
               <elements xsi:type="sysMLOC:InterfaceUsage" declaredName="wheelToleftHalAxleInterface">
                 <typings>WheelHubInterface</typings>
-                <connectorPart refElement="rearWheel1.lugNutCompositePort">
-                  <Multiplicity>1</Multiplicity>
-                </connectorPart>
-                <connectorPart refElement="rearAxle.leftHalfAxle.shankCompositePort">
-                  <Multiplicity>1</Multiplicity>
-                </connectorPart>
+                <connectorPart Multi0="1" refElement="rearWheel1.lugNutCompositePort"/>
+                <connectorPart Multi0="1" refElement="rearAxle.leftHalfAxle.shankCompositePort"/>
               </elements>
               <elements xsi:type="sysMLOC:InterfaceUsage" declaredName="wheelTorightHalAxleInterface">
                 <typings>WheelHubInterface</typings>
-                <connectorPart refElement="rearWheel2.lugNutCompositePort">
-                  <Multiplicity>1</Multiplicity>
-                </connectorPart>
-                <connectorPart refElement="rearAxle.rightHalfAxle.shankCompositePort">
-                  <Multiplicity>1</Multiplicity>
-                </connectorPart>
+                <connectorPart Multi0="1" refElement="rearWheel2.lugNutCompositePort"/>
+                <connectorPart Multi0="1" refElement="rearAxle.rightHalfAxle.shankCompositePort"/>
               </elements>
             </elements>
             <elements xsi:type="sysMLOC:PartUsage" declaredName="starterMotor">
@@ -1117,10 +1085,8 @@
               <elements xsi:type="sysMLOC:PerformActionUsage" refElement="providePower.generateTorque">
                 <redefinitions>generateTorque</redefinitions>
               </elements>
-              <elements xsi:type="sysMLOC:PartUsage" declaredName="cylinders">
+              <elements xsi:type="sysMLOC:PartUsage" declaredName="cylinders" Multi1="4" Multi02="6">
                 <typings>Cylinder</typings>
-                <Multiplicity>4</Multiplicity>
-                <Multiplicity>6</Multiplicity>
               </elements>
               <elements xsi:type="sysMLOC:PartUsage" declaredName="alternator">
                 <elements xsi:type="sysMLOC:ActionUsage" declaredName="generateElectricity"/>
@@ -1200,15 +1166,12 @@
               <elements xsi:type="sysMLOC:PartUsage" declaredName="alarm">
                 <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="Security"/>
               </elements>
-              <elements xsi:type="sysMLOC:PartUsage" declaredName="seatBelt">
-                <Multiplicity>2</Multiplicity>
+              <elements xsi:type="sysMLOC:PartUsage" declaredName="seatBelt" Multi0="2">
                 <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="Safety">
                   <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="isMandatory" valuePart="true"/>
                 </elements>
               </elements>
-              <elements xsi:type="sysMLOC:PartUsage" declaredName="frontSeat">
-                <Multiplicity>2</Multiplicity>
-              </elements>
+              <elements xsi:type="sysMLOC:PartUsage" declaredName="frontSeat" Multi0="2"/>
               <elements xsi:type="sysMLOC:PartUsage" declaredName="driverAirBag">
                 <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="Safety">
                   <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="isMandatory" valuePart="false"/>
@@ -1294,9 +1257,8 @@
               <typings>FuelCmd</typings>
               <redefinitions>pwrCmd</redefinitions>
             </elements>
-            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="wheelToRoadTorque" valuePart="distributeTorque.wheelToRoadTorque">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="wheelToRoadTorque" Multi0="2" valuePart="distributeTorque.wheelToRoadTorque">
               <redefinitions>wheelToRoadTorque</redefinitions>
-              <Multiplicity>2</Multiplicity>
             </elements>
             <elements xsi:type="sysMLOC:ActionUsage" declaredName="generateTorque">
               <typings>GenerateTorque</typings>
@@ -1637,33 +1599,26 @@
         <elements xsi:type="sysMLOC:CodeAnnotation" body="// incudes refinement&#xA;"/>
         <elements xsi:type="sysMLOC:PartUsage" declaredName="engine">
           <typings>Engine</typings>
-          <elements xsi:type="sysMLOC:PartUsage" declaredName="cylinders" isOrdered="true">
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="cylinders" Multi1="4" Multi02="8" isOrdered="true">
             <typings>Cylinder</typings>
-            <Multiplicity>4</Multiplicity>
-            <Multiplicity>8</Multiplicity>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:PartUsage" declaredName="engine4Cyl">
           <subsetting>engine</subsetting>
-          <elements xsi:type="sysMLOC:PartUsage">
+          <elements xsi:type="sysMLOC:PartUsage" Multi0="4">
             <redefinitions>cylinders</redefinitions>
-            <Multiplicity>4</Multiplicity>
           </elements>
-          <elements xsi:type="sysMLOC:PartUsage" declaredName="cylinder1">
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="cylinder1" Multi0="1">
             <subsetting>cylinders</subsetting>
-            <Multiplicity>1</Multiplicity>
           </elements>
-          <elements xsi:type="sysMLOC:PartUsage" declaredName="cylinder2">
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="cylinder2" Multi0="1">
             <subsetting>cylinders</subsetting>
-            <Multiplicity>1</Multiplicity>
           </elements>
-          <elements xsi:type="sysMLOC:PartUsage" declaredName="cylinder3">
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="cylinder3" Multi0="1">
             <subsetting>cylinders</subsetting>
-            <Multiplicity>1</Multiplicity>
           </elements>
-          <elements xsi:type="sysMLOC:PartUsage" declaredName="cylinder4">
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="cylinder4" Multi0="1">
             <subsetting>cylinders</subsetting>
-            <Multiplicity>1</Multiplicity>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:Dependency">
@@ -1680,9 +1635,8 @@
             <elements xsi:type="sysMLOC:PortUsage">
               <typings>LugNutCompositePort</typings>
               <redefinitions>lugNutCompositePort</redefinitions>
-              <elements xsi:type="sysMLOC:PortUsage" declaredName="lugNutPort">
+              <elements xsi:type="sysMLOC:PortUsage" declaredName="lugNutPort" Multi0="5">
                 <redefinitions>lugNutPort</redefinitions>
-                <Multiplicity>5</Multiplicity>
               </elements>
             </elements>
           </elements>
@@ -1691,20 +1645,15 @@
             <elements xsi:type="sysMLOC:PortUsage">
               <typings>ShankCompositePort</typings>
               <redefinitions>shankCompositePort</redefinitions>
-              <elements xsi:type="sysMLOC:PortUsage" declaredName="shankPort">
+              <elements xsi:type="sysMLOC:PortUsage" declaredName="shankPort" Multi0="5">
                 <redefinitions>shankPort</redefinitions>
-                <Multiplicity>5</Multiplicity>
               </elements>
             </elements>
           </elements>
           <elements xsi:type="sysMLOC:InterfaceUsage" declaredName="wheelHubInterface">
             <typings>WheelHubInterface</typings>
-            <connectorPart refElement="wheel1.lugNutCompositePort">
-              <Multiplicity>1</Multiplicity>
-            </connectorPart>
-            <connectorPart refElement="hub1.shankCompositePort">
-              <Multiplicity>1</Multiplicity>
-            </connectorPart>
+            <connectorPart Multi0="1" refElement="wheel1.lugNutCompositePort"/>
+            <connectorPart Multi0="1" refElement="hub1.shankCompositePort"/>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:CodeAnnotation" body="// alternative 2 - w multiple nesxted interfaces&#xA;"/>
@@ -1714,9 +1663,8 @@
             <elements xsi:type="sysMLOC:PortUsage">
               <typings>LugNutCompositePort</typings>
               <redefinitions>lugNutCompositePort</redefinitions>
-              <elements xsi:type="sysMLOC:PortUsage" declaredName="lugNutPort">
+              <elements xsi:type="sysMLOC:PortUsage" declaredName="lugNutPort" Multi0="5">
                 <redefinitions>lugNutPort</redefinitions>
-                <Multiplicity>5</Multiplicity>
               </elements>
             </elements>
           </elements>
@@ -1725,28 +1673,19 @@
             <elements xsi:type="sysMLOC:PortUsage">
               <typings>ShankCompositePort</typings>
               <redefinitions>shankCompositePort</redefinitions>
-              <elements xsi:type="sysMLOC:PortUsage" declaredName="shankPort">
+              <elements xsi:type="sysMLOC:PortUsage" declaredName="shankPort" Multi0="5">
                 <redefinitions>shankPort</redefinitions>
-                <Multiplicity>5</Multiplicity>
               </elements>
             </elements>
           </elements>
           <elements xsi:type="sysMLOC:InterfaceUsage" declaredName="wheelHubInterface">
             <typings>WheelHubInterface</typings>
-            <connectorPart refElement="wheel1.lugNutCompositePort" delcaredName="lugNutCompositePort">
-              <Multiplicity>1</Multiplicity>
-            </connectorPart>
-            <connectorPart refElement="hub1.shankCompositePort" delcaredName="shankCompositePort">
-              <Multiplicity>1</Multiplicity>
-            </connectorPart>
+            <connectorPart Multi0="1" refElement="wheel1.lugNutCompositePort" delcaredName="lugNutCompositePort"/>
+            <connectorPart Multi0="1" refElement="hub1.shankCompositePort" delcaredName="shankCompositePort"/>
             <elements xsi:type="sysMLOC:InterfaceUsage" declaredName="wheelFastenerInterface1">
               <subsetting>wheelFastenerInterface</subsetting>
-              <connectorPart refElement="lugNutCompositePort.lugNutPort" delcaredName="lugNutPort">
-                <Multiplicity>5</Multiplicity>
-              </connectorPart>
-              <connectorPart refElement="shankCompositePort.shankPort" delcaredName="shankPort">
-                <Multiplicity>5</Multiplicity>
-              </connectorPart>
+              <connectorPart Multi0="5" refElement="lugNutCompositePort.lugNutPort" delcaredName="lugNutPort"/>
+              <connectorPart Multi0="5" refElement="shankCompositePort.shankPort" delcaredName="shankPort"/>
             </elements>
           </elements>
         </elements>
@@ -1756,9 +1695,8 @@
             <typings>Wheel</typings>
             <elements xsi:type="sysMLOC:PortUsage" declaredName="lugNutCompositePort">
               <redefinitions>lugNutCompositePort</redefinitions>
-              <elements xsi:type="sysMLOC:PortUsage" declaredName="lugNutPort">
+              <elements xsi:type="sysMLOC:PortUsage" declaredName="lugNutPort" Multi0="5">
                 <redefinitions>lugNutPort</redefinitions>
-                <Multiplicity>5</Multiplicity>
                 <elements xsi:type="sysMLOC:AttributeUsage" valuePart="14 [mm]">
                   <redefinitions>threadDia</redefinitions>
                 </elements>
@@ -1766,17 +1704,14 @@
                   <redefinitions>threadPitch</redefinitions>
                 </elements>
               </elements>
-              <elements xsi:type="sysMLOC:PortUsage" declaredName="lugNutPort1">
+              <elements xsi:type="sysMLOC:PortUsage" declaredName="lugNutPort1" Multi0="1">
                 <subsetting>lugNutPort</subsetting>
-                <Multiplicity>1</Multiplicity>
               </elements>
-              <elements xsi:type="sysMLOC:PortUsage" declaredName="lugNutPort2">
+              <elements xsi:type="sysMLOC:PortUsage" declaredName="lugNutPort2" Multi0="1">
                 <subsetting>lugNutPort</subsetting>
-                <Multiplicity>1</Multiplicity>
               </elements>
-              <elements xsi:type="sysMLOC:PortUsage" declaredName="lugNutPort3">
+              <elements xsi:type="sysMLOC:PortUsage" declaredName="lugNutPort3" Multi0="1">
                 <subsetting>lugNutPort</subsetting>
-                <Multiplicity>1</Multiplicity>
               </elements>
             </elements>
           </elements>
@@ -1784,9 +1719,8 @@
             <typings>Hub</typings>
             <elements xsi:type="sysMLOC:PortUsage" declaredName="shankCompositePort">
               <redefinitions>shankCompositePort</redefinitions>
-              <elements xsi:type="sysMLOC:PortUsage" declaredName="shankPort">
+              <elements xsi:type="sysMLOC:PortUsage" declaredName="shankPort" Multi0="5">
                 <redefinitions>shankPort</redefinitions>
-                <Multiplicity>5</Multiplicity>
                 <elements xsi:type="sysMLOC:AttributeUsage" valuePart="14 [mm]">
                   <redefinitions>threadDia</redefinitions>
                 </elements>
@@ -1797,28 +1731,21 @@
                   <redefinitions>shaftLength</redefinitions>
                 </elements>
               </elements>
-              <elements xsi:type="sysMLOC:PortUsage" declaredName="shankPort1">
+              <elements xsi:type="sysMLOC:PortUsage" declaredName="shankPort1" Multi0="1">
                 <subsetting>shankPort</subsetting>
-                <Multiplicity>1</Multiplicity>
               </elements>
-              <elements xsi:type="sysMLOC:PortUsage" declaredName="shankPort2">
+              <elements xsi:type="sysMLOC:PortUsage" declaredName="shankPort2" Multi0="1">
                 <subsetting>shankPort</subsetting>
-                <Multiplicity>1</Multiplicity>
               </elements>
-              <elements xsi:type="sysMLOC:PortUsage" declaredName="shankPort3">
+              <elements xsi:type="sysMLOC:PortUsage" declaredName="shankPort3" Multi0="1">
                 <subsetting>shankPort</subsetting>
-                <Multiplicity>1</Multiplicity>
               </elements>
             </elements>
           </elements>
           <elements xsi:type="sysMLOC:InterfaceUsage" declaredName="wheelHubInterface">
             <typings>WheelHubInterface</typings>
-            <connectorPart refElement="wheel1.lugNutCompositePort" delcaredName="lugNutCompositePort">
-              <Multiplicity>1</Multiplicity>
-            </connectorPart>
-            <connectorPart refElement="hub1.shankCompositePort" delcaredName="shankCompositePort">
-              <Multiplicity>1</Multiplicity>
-            </connectorPart>
+            <connectorPart Multi0="1" refElement="wheel1.lugNutCompositePort" delcaredName="lugNutCompositePort"/>
+            <connectorPart Multi0="1" refElement="hub1.shankCompositePort" delcaredName="shankCompositePort"/>
             <elements xsi:type="sysMLOC:InterfaceUsage" declaredName="wheelFastenerInterface1">
               <subsetting>wheelFastenerInterface</subsetting>
               <connectorPart refElement="lugNutCompositePort.lugNutPort1" delcaredName="lugNutPort"/>
@@ -1857,16 +1784,12 @@
         <elements xsi:type="sysMLOC:Comment" body="/*&#xA;            This analysis model was provided by Hisashi Miyashita on January 27, 2021&#xA;              We use the simplest fuel consumption analysis model introduced in:&#xA;              Akcelik, R. &quot;Fuel efficiency and other objectives in traffic system management.&quot; Traffic Engineering and Control 22.2 (1981): 54-65. &#xA;&#xA;              Fuel consumption rate f can be decomposed to:&#xA;              f = f_a + f_b * tpd_avg,&#xA;              where tpd_avg is average interrupted travel time per unit distance, actually the inverse of the average velocity [t/km];&#xA;              f_a is the best fuel consumption per distance; and&#xA;              f_b is the additional fuel consumption per distance and average travel time, which can be regarded as the idling fuel consumption.&#xA;              Approximately, it is proportional to engine displacement and it ranges from 0.5 to 0.6 [l/hour/litre of engine displacement]&#xA;              according to:&#xA;              Review of the Incidence, Energy Use and Costs of Passenger Vehicle Idling; Gordon W. Taylor, P.Eng. Prepared for the Office of Energy Efficiency, Natural Resources Canada, 2003&#xA;&#xA;              We assume f_a can be approximated to&#xA;              fuel_consumption / distance = BSFC * SGG * required_power_avg * tpd_avg,&#xA;              where required_power_avg is the required power, and it can be approximately derived from:&#xA;                  total_energy == P_req * tpd_avg * distance == 1/2 * mass / tpd_avg^2&#xA;              This part is computed with BestFuelConsumptionPerDistance calc def.&#xA;&#xA;              BSFC means Brake-Specific Fuel Consumption, defined as gram/power.  SGG is the specific gravity of gasoline.&#xA;              The high octane gasoline is about 0.76[l/kg].&#xA;            */"/>
         <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="Scenario">
           <superclassifiers>SampledFunction</superclassifiers>
-          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="wayPoint">
-            <Multiplicity>1</Multiplicity>
-            <Multiplicity>*</Multiplicity>
-            <elements xsi:type="sysMLOC:AttributeUsage" declaredName="elapseTime">
+          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="wayPoint" Multi1="1" Multi02="*">
+            <elements xsi:type="sysMLOC:AttributeUsage" declaredName="elapseTime" Multi0="1">
               <subsetting>ISQ::time</subsetting>
-              <Multiplicity>1</Multiplicity>
             </elements>
-            <elements xsi:type="sysMLOC:AttributeUsage" declaredName="position">
+            <elements xsi:type="sysMLOC:AttributeUsage" declaredName="position" Multi0="1">
               <subsetting>ISQ::distance</subsetting>
-              <Multiplicity>1</Multiplicity>
             </elements>
           </elements>
         </elements>
@@ -2045,17 +1968,15 @@
         </elements>
         <elements xsi:type="sysMLOC:AnalysisCaseUsage" declaredName="engineTradeOffAnalysis">
           <typings>TradeStudy</typings>
-          <elements xsi:type="sysMLOC:SubjectUsage" declaredName="vehicleAlternatives">
+          <elements xsi:type="sysMLOC:SubjectUsage" declaredName="vehicleAlternatives" Multi0="2">
             <subsetting>vehicle_b</subsetting>
-            <Multiplicity>2</Multiplicity>
           </elements>
           <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle_b_engine4cyl">
             <subsetting>vehicleAlternatives</subsetting>
             <elements xsi:type="sysMLOC:PartUsage" declaredName="engine">
               <redefinitions>engine</redefinitions>
-              <elements xsi:type="sysMLOC:PartUsage" declaredName="cylinders">
+              <elements xsi:type="sysMLOC:PartUsage" declaredName="cylinders" Multi0="4">
                 <redefinitions>cylinders</redefinitions>
-                <Multiplicity>4</Multiplicity>
               </elements>
               <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass" valuePart="180 [kg]">
                 <redefinitions>mass</redefinitions>
@@ -2075,9 +1996,8 @@
             <subsetting>vehicleAlternatives</subsetting>
             <elements xsi:type="sysMLOC:PartUsage" declaredName="engine">
               <redefinitions>engine</redefinitions>
-              <elements xsi:type="sysMLOC:PartUsage" declaredName="cylinders">
+              <elements xsi:type="sysMLOC:PartUsage" declaredName="cylinders" Multi0="6">
                 <redefinitions>cylinders</redefinitions>
-                <Multiplicity>6</Multiplicity>
               </elements>
               <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass" valuePart="220 [kg]">
                 <redefinitions>mass</redefinitions>
@@ -2348,27 +2268,17 @@
           <elements xsi:type="sysMLOC:ActorUsage" declaredName="environment"/>
           <elements xsi:type="sysMLOC:ActorUsage" declaredName="road"/>
           <elements xsi:type="sysMLOC:ActorUsage" declaredName="driver"/>
-          <elements xsi:type="sysMLOC:ActorUsage" declaredName="passenger">
-            <Multiplicity>0</Multiplicity>
-            <Multiplicity>4</Multiplicity>
-          </elements>
-          <elements xsi:type="sysMLOC:IncludeUseCaseUsage" declaredName="getInVehicle_a">
+          <elements xsi:type="sysMLOC:ActorUsage" declaredName="passenger" Multi1="0" Multi02="4"/>
+          <elements xsi:type="sysMLOC:IncludeUseCaseUsage" Multi1="1" Multi02="5" declaredName="getInVehicle_a">
             <subsetting>getInVehicle</subsetting>
-            <Multiplicity>1</Multiplicity>
-            <Multiplicity>5</Multiplicity>
           </elements>
-          <elements xsi:type="sysMLOC:IncludeUseCaseUsage" declaredName="getOutOfVehicle_a">
+          <elements xsi:type="sysMLOC:IncludeUseCaseUsage" Multi1="1" Multi02="5" declaredName="getOutOfVehicle_a">
             <subsetting>getOutOfVehicle</subsetting>
-            <Multiplicity>1</Multiplicity>
-            <Multiplicity>5</Multiplicity>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:UseCaseUsage" declaredName="getInVehicle">
           <typings>GetInVehicle</typings>
-          <elements xsi:type="sysMLOC:ActionUsage" declaredName="unlockDoor_in">
-            <Multiplicity>0</Multiplicity>
-            <Multiplicity>1</Multiplicity>
-          </elements>
+          <elements xsi:type="sysMLOC:ActionUsage" declaredName="unlockDoor_in" Multi1="0" Multi02="1"/>
           <elements xsi:type="sysMLOC:ActionUsage" isThen="true" declaredName="openDoor_in"/>
           <elements xsi:type="sysMLOC:ActionUsage" isThen="true" declaredName="enterVehicle"/>
           <elements xsi:type="sysMLOC:ActionUsage" isThen="true" declaredName="closeDoor_in"/>
@@ -2377,14 +2287,8 @@
           <elements xsi:type="sysMLOC:SubjectUsage" declaredName="vehicle">
             <typings>Vehicle</typings>
           </elements>
-          <elements xsi:type="sysMLOC:ActorUsage" declaredName="driver">
-            <Multiplicity>0</Multiplicity>
-            <Multiplicity>1</Multiplicity>
-          </elements>
-          <elements xsi:type="sysMLOC:ActorUsage" declaredName="passenger">
-            <Multiplicity>0</Multiplicity>
-            <Multiplicity>1</Multiplicity>
-          </elements>
+          <elements xsi:type="sysMLOC:ActorUsage" declaredName="driver" Multi1="0" Multi02="1"/>
+          <elements xsi:type="sysMLOC:ActorUsage" declaredName="passenger" Multi1="0" Multi02="1"/>
           <elements xsi:type="sysMLOC:AssertConstraintUsage">
             <resultExpressionParameter resultExpression="driver != null xor passenger != null"/>
           </elements>
@@ -2400,14 +2304,8 @@
           <elements xsi:type="sysMLOC:SubjectUsage" declaredName="vehicle">
             <typings>Vehicle</typings>
           </elements>
-          <elements xsi:type="sysMLOC:ActorUsage" declaredName="driver">
-            <Multiplicity>0</Multiplicity>
-            <Multiplicity>1</Multiplicity>
-          </elements>
-          <elements xsi:type="sysMLOC:ActorUsage" declaredName="passenger">
-            <Multiplicity>0</Multiplicity>
-            <Multiplicity>1</Multiplicity>
-          </elements>
+          <elements xsi:type="sysMLOC:ActorUsage" declaredName="driver" Multi1="0" Multi02="1"/>
+          <elements xsi:type="sysMLOC:ActorUsage" declaredName="passenger" Multi1="0" Multi02="1"/>
           <elements xsi:type="sysMLOC:AssertConstraintUsage">
             <resultExpressionParameter resultExpression="driver != null xor passenger != null"/>
           </elements>
@@ -2420,13 +2318,11 @@
           <typings>TransportPassenger</typings>
           <elements xsi:type="sysMLOC:InitialNode" memberElement="start"/>
           <elements xsi:type="sysMLOC:ActionUsage" isThen="true" declaredName="a">
-            <elements xsi:type="sysMLOC:ActionUsage" declaredName="driverGetInVehicle">
+            <elements xsi:type="sysMLOC:ActionUsage" declaredName="driverGetInVehicle" Multi0="1">
               <subsetting>getInVehicle_a</subsetting>
-              <Multiplicity>1</Multiplicity>
             </elements>
-            <elements xsi:type="sysMLOC:ActionUsage" declaredName="passenger1GetInVehicle">
+            <elements xsi:type="sysMLOC:ActionUsage" declaredName="passenger1GetInVehicle" Multi0="1">
               <subsetting>getInVehicle_a</subsetting>
-              <Multiplicity>1</Multiplicity>
             </elements>
           </elements>
           <elements xsi:type="sysMLOC:AcceptNode" isThen="true" declaredName="trigger">
@@ -2439,13 +2335,11 @@
             <elements xsi:type="sysMLOC:ActionUsage" declaredName="providePower"/>
           </elements>
           <elements xsi:type="sysMLOC:ActionUsage" isThen="true" declaredName="c">
-            <elements xsi:type="sysMLOC:ActionUsage" declaredName="driverGetOutOfVehicle">
+            <elements xsi:type="sysMLOC:ActionUsage" declaredName="driverGetOutOfVehicle" Multi0="1">
               <subsetting>getOutOfVehicle_a</subsetting>
-              <Multiplicity>1</Multiplicity>
             </elements>
-            <elements xsi:type="sysMLOC:ActionUsage" declaredName="passenger1GetOutOfVehicle">
+            <elements xsi:type="sysMLOC:ActionUsage" declaredName="passenger1GetOutOfVehicle" Multi0="1">
               <subsetting>getOutOfVehicle_a</subsetting>
-              <Multiplicity>1</Multiplicity>
             </elements>
           </elements>
           <elements xsi:type="sysMLOC:ThenNode">
@@ -2456,21 +2350,17 @@
         <elements xsi:type="sysMLOC:UseCaseUsage" declaredName="transportPassenger_1">
           <typings>TransportPassenger</typings>
           <elements xsi:type="sysMLOC:CodeAnnotation" body="// declare actions&#xA;"/>
-          <elements xsi:type="sysMLOC:ActionUsage" declaredName="driverGetInVehicle">
+          <elements xsi:type="sysMLOC:ActionUsage" declaredName="driverGetInVehicle" Multi0="1">
             <subsetting>getInVehicle_a</subsetting>
-            <Multiplicity>1</Multiplicity>
           </elements>
-          <elements xsi:type="sysMLOC:ActionUsage" declaredName="passenger1GetInVehicle">
+          <elements xsi:type="sysMLOC:ActionUsage" declaredName="passenger1GetInVehicle" Multi0="1">
             <subsetting>getInVehicle_a</subsetting>
-            <Multiplicity>1</Multiplicity>
           </elements>
-          <elements xsi:type="sysMLOC:ActionUsage" declaredName="driverGetOutOfVehicle">
+          <elements xsi:type="sysMLOC:ActionUsage" declaredName="driverGetOutOfVehicle" Multi0="1">
             <subsetting>getOutOfVehicle_a</subsetting>
-            <Multiplicity>1</Multiplicity>
           </elements>
-          <elements xsi:type="sysMLOC:ActionUsage" declaredName="passenger1GetOutOfVehicle">
+          <elements xsi:type="sysMLOC:ActionUsage" declaredName="passenger1GetOutOfVehicle" Multi0="1">
             <subsetting>getOutOfVehicle_a</subsetting>
-            <Multiplicity>1</Multiplicity>
           </elements>
           <elements xsi:type="sysMLOC:ActionUsage" declaredName="driveVehicleToDestination"/>
           <elements xsi:type="sysMLOC:ActionUsage" declaredName="providePower"/>
@@ -2627,9 +2517,8 @@
             </elements>
             <elements xsi:type="sysMLOC:PartUsage" isVariant="true" declaredName="engine6Cyl">
               <typings>Engine6Cyl</typings>
-              <elements xsi:type="sysMLOC:PartUsage" declaredName="cylinder">
+              <elements xsi:type="sysMLOC:PartUsage" declaredName="cylinder" Multi0="6">
                 <typings>Cylinder</typings>
-                <Multiplicity>6</Multiplicity>
                 <elements xsi:type="sysMLOC:AttributeUsage" isVariation="true" declaredName="diameter">
                   <typings>LengthValue</typings>
                   <elements xsi:type="sysMLOC:AttributeUsage" isVariant="true" declaredName="smallDiameter">
@@ -2647,10 +2536,8 @@
             <typings>TransmissionChoices</typings>
           </elements>
           <elements xsi:type="sysMLOC:CodeAnnotation" body="// optional variation point&#xA;"/>
-          <elements xsi:type="sysMLOC:PartUsage" declaredName="sunroof">
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="sunroof" Multi1="0" Multi02="1">
             <typings>Sunroof</typings>
-            <Multiplicity>0</Multiplicity>
-            <Multiplicity>1</Multiplicity>
           </elements>
           <elements xsi:type="sysMLOC:CodeAnnotation" body="// selection constraint&#xA;"/>
           <elements xsi:type="sysMLOC:AssertConstraintUsage" declaredName="selectionConstraint">

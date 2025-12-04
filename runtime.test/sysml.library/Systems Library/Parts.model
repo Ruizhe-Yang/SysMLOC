@@ -27,28 +27,22 @@
         <typings>Part</typings>
         <redefinitions>Item::done</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:PortUsage" isAbstract="true" declaredName="ownedPorts">
+      <elements xsi:type="sysMLOC:PortUsage" isAbstract="true" declaredName="ownedPorts" Multi1="0" Multi02="*">
         <typings>Port</typings>
         <subsetting>ports</subsetting>
         <subsetting>timeEnclosedOccurrences</subsetting>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>*</Multiplicity>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * Ports that are owned by this Part.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
-      <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" isReference="true" declaredName="performedActions">
+      <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" isReference="true" declaredName="performedActions" Multi1="0" Multi02="*">
         <typings>Action</typings>
         <subsetting>actions</subsetting>
         <subsetting>enactedPerformances</subsetting>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>*</Multiplicity>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * Actions that are performed by this Part.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
-      <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="ownedActions">
+      <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="ownedActions" Multi1="0" Multi02="*">
         <typings>Action</typings>
         <subsetting>actions</subsetting>
         <subsetting>ownedPerformances</subsetting>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>*</Multiplicity>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * Actions that are owned by this Part.&#xA;&#x9;&#x9;&#x9; */"/>
         <elements xsi:type="sysMLOC:PartUsage" isReference="true" declaredName="this" valuePart="that as Part">
           <typings>Part</typings>
@@ -57,28 +51,22 @@
           <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9;&#x9; * The &quot;this&quot; reference of an ownedAction is always its owning Part.&#xA;&#x9;&#x9;&#x9;&#x9; */"/>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:StateUsage" isAbstract="true" isReference="true" declaredName="exhibitedStates">
+      <elements xsi:type="sysMLOC:StateUsage" isAbstract="true" isReference="true" declaredName="exhibitedStates" Multi1="0" Multi02="*">
         <typings>StateAction</typings>
         <subsetting>stateActions</subsetting>
         <subsetting>performedActions</subsetting>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>*</Multiplicity>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * StateActions that are exhibited by this Part.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
-      <elements xsi:type="sysMLOC:StateUsage" isAbstract="true" declaredName="ownedStates">
+      <elements xsi:type="sysMLOC:StateUsage" isAbstract="true" declaredName="ownedStates" Multi1="0" Multi02="*">
         <typings>StateAction</typings>
         <subsetting>stateActions</subsetting>
         <subsetting>ownedActions</subsetting>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>*</Multiplicity>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * StateActions that are owned by this Part.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:PartUsage" isAbstract="true" declaredName="parts" isNonunique="true">
+    <elements xsi:type="sysMLOC:PartUsage" isAbstract="true" declaredName="parts" Multi1="0" Multi02="*" isNonunique="true">
       <typings>Part</typings>
       <subsetting>items</subsetting>
-      <Multiplicity>0</Multiplicity>
-      <Multiplicity>*</Multiplicity>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * parts is the base feature of all part properties.&#xA;&#x9;&#x9; */"/>
     </elements>
   </elements>

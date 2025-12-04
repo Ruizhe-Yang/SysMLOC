@@ -18,9 +18,8 @@
     </elements>
     <elements xsi:type="sysMLOC:PartUsage" declaredName="compositeThing">
       <typings>MassedThing</typings>
-      <elements xsi:type="sysMLOC:PartUsage" declaredName="subcomponents">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="subcomponents" Multi0="*">
         <typings>MassedThing</typings>
-        <Multiplicity>*</Multiplicity>
       </elements>
       <elements xsi:type="sysMLOC:AttributeUsage" isDefault="true" valuePart="mass + sum(subcomponents.totalMass)">
         <redefinitions>totalMass</redefinitions>

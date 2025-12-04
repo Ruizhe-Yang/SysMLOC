@@ -36,27 +36,23 @@
           <connectorPart refElement="fuelCmdPort"/>
           <connectorPart refElement="engine.fuelCmdPort"/>
         </elements>
-        <elements xsi:type="sysMLOC:PartUsage" declaredName="engine">
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="engine" Multi0="1">
           <typings>Engine</typings>
-          <Multiplicity>1</Multiplicity>
           <elements xsi:type="sysMLOC:PortUsage" declaredName="fuelCmdPort">
             <typings>FuelCmdPort</typings>
           </elements>
         </elements>
-        <elements xsi:type="sysMLOC:PartUsage" declaredName="transmission">
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="transmission" Multi0="1">
           <typings>Transmission</typings>
-          <Multiplicity>1</Multiplicity>
-          <elements xsi:type="sysMLOC:PartUsage" declaredName="clutch">
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="clutch" Multi0="1">
             <typings>Clutch</typings>
-            <Multiplicity>1</Multiplicity>
             <elements xsi:type="sysMLOC:PortUsage" declaredName="clutchPort">
               <typings>ClutchPort</typings>
             </elements>
           </elements>
         </elements>
-        <elements xsi:type="sysMLOC:PartUsage" declaredName="driveshaft">
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="driveshaft" Multi0="1">
           <typings>Driveshaft</typings>
-          <Multiplicity>1</Multiplicity>
           <elements xsi:type="sysMLOC:PortUsage" declaredName="shaftPort_b">
             <typings>ShaftPort_b</typings>
           </elements>
@@ -66,9 +62,8 @@
         </elements>
         <elements xsi:type="sysMLOC:PartUsage" declaredName="rearAxleAssembly">
           <typings>RearAxleAssembly</typings>
-          <elements xsi:type="sysMLOC:PartUsage" declaredName="rearWheels">
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="rearWheels" Multi0="2">
             <typings>Wheel</typings>
-            <Multiplicity>2</Multiplicity>
             <elements xsi:type="sysMLOC:PortUsage" declaredName="wheelToRoadPort">
               <typings>WheelToRoadPort</typings>
             </elements>
@@ -76,9 +71,8 @@
         </elements>
         <elements xsi:type="sysMLOC:PortUsage" declaredName="vehicleToRoadPort">
           <typings>VehicleToRoadPort</typings>
-          <elements xsi:type="sysMLOC:PortUsage" declaredName="wheelToRoadPort">
+          <elements xsi:type="sysMLOC:PortUsage" declaredName="wheelToRoadPort" Multi0="2">
             <typings>WheelToRoadPort</typings>
-            <Multiplicity>2</Multiplicity>
           </elements>
         </elements>
       </elements>

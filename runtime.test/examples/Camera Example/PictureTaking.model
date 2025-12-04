@@ -13,17 +13,15 @@
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:ActionUsage" declaredName="takePicture">
-      <elements xsi:type="sysMLOC:ActionUsage" declaredName="focus">
+      <elements xsi:type="sysMLOC:ActionUsage" declaredName="focus" Multi0="1">
         <typings>Focus</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
       <elements xsi:type="sysMLOC:FlowUsage">
         <FlowEnd>focus.xrsl</FlowEnd>
         <FlowEnd>shoot.xsf</FlowEnd>
       </elements>
-      <elements xsi:type="sysMLOC:ActionUsage" declaredName="shoot">
+      <elements xsi:type="sysMLOC:ActionUsage" declaredName="shoot" Multi0="1">
         <typings>Shoot</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
   </elements>

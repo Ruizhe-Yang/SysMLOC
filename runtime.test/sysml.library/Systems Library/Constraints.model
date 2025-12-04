@@ -14,11 +14,9 @@
         <redefinitions>BooleanEvaluation::self</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:ConstraintUsage" isAbstract="true" declaredName="constraintChecks" isNonunique="true">
+    <elements xsi:type="sysMLOC:ConstraintUsage" isAbstract="true" declaredName="constraintChecks" Multi1="0" Multi02="*" isNonunique="true">
       <typings>ConstraintCheck</typings>
       <subsetting>booleanEvaluations</subsetting>
-      <Multiplicity>0</Multiplicity>
-      <Multiplicity>*</Multiplicity>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * constraintChecks is the base feature of all ConstraintUsages.&#xA;&#x9;&#x9; */"/>
     </elements>
     <elements xsi:type="sysMLOC:ConstraintUsage" isAbstract="true" declaredName="assertedConstraintChecks">

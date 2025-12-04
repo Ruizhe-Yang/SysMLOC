@@ -7,8 +7,7 @@
     <elements xsi:type="sysMLOC:Package" declaredName="Configuration">
       <elements xsi:type="sysMLOC:PortDefinition" declaredName="PublicationPort"/>
       <elements xsi:type="sysMLOC:PortDefinition" declaredName="SubscriptionPort"/>
-      <elements xsi:type="sysMLOC:PartUsage" declaredName="producer_2">
-        <Multiplicity>1</Multiplicity>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="producer_2" Multi0="1">
         <elements xsi:type="sysMLOC:AttributeUsage" declaredName="someTopic">
           <typings>String</typings>
         </elements>
@@ -32,8 +31,7 @@
           <connectorPart refElement="target.incomingTransfersToSelf"/>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:PartUsage" declaredName="server_2">
-        <Multiplicity>1</Multiplicity>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="server_2" Multi0="1">
         <elements xsi:type="sysMLOC:PortUsage" declaredName="publicationPort">
           <typings>PublicationPort</typings>
         </elements>
@@ -73,8 +71,7 @@
           <connectorPart refElement="target.incomingTransfersToSelf"/>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:PartUsage" declaredName="consumer_2">
-        <Multiplicity>1</Multiplicity>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="consumer_2" Multi0="1">
         <elements xsi:type="sysMLOC:AttributeUsage" declaredName="myTopic">
           <typings>String</typings>
         </elements>

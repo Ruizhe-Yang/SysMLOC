@@ -46,12 +46,10 @@
         <redefinitions>endShot</redefinitions>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The ending snapshot of an Action.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
-      <elements xsi:type="sysMLOC:ActionUsage" declaredName="subactions">
+      <elements xsi:type="sysMLOC:ActionUsage" declaredName="subactions" Multi1="0" Multi02="*">
         <typings>Action</typings>
         <subsetting>actions</subsetting>
         <subsetting>subperformances</subsetting>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>*</Multiplicity>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The subperformances of this Action that are Actions. &#xA;&#x9;&#x9;&#x9; */"/>
         <elements xsi:type="sysMLOC:OccurrenceUsage" isReference="true" valuePart="(that as Action).this">
           <redefinitions>Action::this</redefinitions>
@@ -60,42 +58,32 @@
           <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9;&#x9; * The &quot;this&quot; reference of a subaction is always the same as that of&#xA;&#x9;&#x9;&#x9;&#x9; * its owning Action.&#xA;&#x9;&#x9;&#x9;&#x9; */"/>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:ActionUsage" declaredName="sendSubactions">
+      <elements xsi:type="sysMLOC:ActionUsage" declaredName="sendSubactions" Multi1="0" Multi02="*">
         <typings>SendAction</typings>
         <subsetting>subactions</subsetting>
         <subsetting>sendActions</subsetting>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>*</Multiplicity>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The subactions of this Action that are SendActions. &#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
-      <elements xsi:type="sysMLOC:ActionUsage" declaredName="acceptSubactions">
+      <elements xsi:type="sysMLOC:ActionUsage" declaredName="acceptSubactions" Multi1="0" Multi02="*">
         <typings>AcceptAction</typings>
         <subsetting>subactions</subsetting>
         <subsetting>acceptActions</subsetting>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>*</Multiplicity>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The subactions of this Action that are AcceptActions. &#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
-      <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="terminateSubactions">
+      <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="terminateSubactions" Multi1="0" Multi02="*">
         <typings>TerminateAction</typings>
         <subsetting>subactions</subsetting>
         <subsetting>terminateActions</subsetting>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>*</Multiplicity>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The subactions of this Action that are TerminateActions.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
-      <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="controls">
+      <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="controls" Multi1="0" Multi02="*">
         <typings>ControlAction</typings>
         <subsetting>subactions</subsetting>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>*</Multiplicity>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The subactions of this Action that are ControlActions.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
-      <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="merges">
+      <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="merges" Multi1="0" Multi02="*">
         <typings>MergeAction</typings>
         <subsetting>controls</subsetting>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>*</Multiplicity>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The controls of this Action that are MergeActions.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
       <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="decisions">
@@ -113,78 +101,60 @@
         <subsetting>controls</subsetting>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The controls of this Action that are ForkActions.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
-      <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="transitions">
+      <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="transitions" Multi1="0" Multi02="*">
         <typings>TransitionAction</typings>
         <subsetting>subactions</subsetting>
         <subsetting>transitionActions</subsetting>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>*</Multiplicity>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The subactions of this Action that are TransitionActions. &#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
-      <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="decisionTransitions">
+      <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="decisionTransitions" Multi1="0" Multi02="*">
         <typings>DecisionTransitionAction</typings>
         <subsetting>transitions</subsetting>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>*</Multiplicity>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The subactions of this Action that are DecisionTransitionActions. &#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
-      <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="assignments">
+      <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="assignments" Multi1="0" Multi02="*">
         <typings>AssignmentAction</typings>
         <subsetting>subactions</subsetting>
         <subsetting>assignmentActions</subsetting>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>*</Multiplicity>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The subactions of this Action that are AssignmentActions.&#xA;&#x9;&#x9;&#x9; */"/>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="target"/>
       </elements>
-      <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="ifSubactions">
+      <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="ifSubactions" Multi1="0" Multi02="*">
         <typings>IfThenAction</typings>
         <subsetting>subactions</subsetting>
         <subsetting>ifThenActions</subsetting>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>*</Multiplicity>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The subactions of this Action that are IfThenActions (including IfThenElseActions).&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
-      <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="loops">
+      <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="loops" Multi1="0" Multi02="*">
         <typings>LoopAction</typings>
         <subsetting>subactions</subsetting>
         <subsetting>loopActions</subsetting>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>*</Multiplicity>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The subactions of this Action that are LoopActions.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
-      <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="whileLoops">
+      <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="whileLoops" Multi1="0" Multi02="*">
         <typings>WhileLoopAction</typings>
         <subsetting>loops</subsetting>
         <subsetting>whileLoopActions</subsetting>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>*</Multiplicity>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The loops of this Action that are WhileLoopActions.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
-      <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="forLoops">
+      <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="forLoops" Multi1="0" Multi02="*">
         <typings>ForLoopAction</typings>
         <subsetting>loops</subsetting>
         <subsetting>forLoopActions</subsetting>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>*</Multiplicity>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The loops of this Action that are ForLoopActions.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="actions" isNonunique="true">
+    <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="actions" Multi1="0" Multi02="*" isNonunique="true">
       <typings>Action</typings>
       <subsetting>performances</subsetting>
-      <Multiplicity>0</Multiplicity>
-      <Multiplicity>*</Multiplicity>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * actions is the base feature for all ActionUsages.&#xA;&#x9;&#x9; */"/>
     </elements>
     <elements xsi:type="sysMLOC:ActionDefinition" declaredName="SendAction">
       <superclassifiers>Action</superclassifiers>
       <superclassifiers>SendPerformance</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * A SendAction is an Action used to type SendActionUsages. It initiates an outgoingTransferFromSelf &#xA;&#x9;&#x9; * from a designated sender Occurrence with a given payload, optionally to a designated receiver.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" Multi1="0" Multi02="*">
         <redefinitions>payload</redefinitions>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>*</Multiplicity>
       </elements>
       <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="sentMessage">
         <typings>MessageTransfer</typings>
@@ -196,12 +166,10 @@
         </elements>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="sendActions" isNonunique="true">
+    <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="sendActions" Multi1="0" Multi02="*" isNonunique="true">
       <typings>SendAction</typings>
       <subsetting>actions</subsetting>
       <subsetting>sendPerformances</subsetting>
-      <Multiplicity>0</Multiplicity>
-      <Multiplicity>*</Multiplicity>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * sendActions is the base feature for all SendActionUsages.&#xA;&#x9;&#x9; */"/>
     </elements>
     <elements xsi:type="sysMLOC:ActionDefinition" declaredName="AcceptMessageAction">
@@ -240,32 +208,26 @@
         <connectorPart refElement="aState.aTransition.apayload"/>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="acceptActions" isNonunique="true">
+    <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="acceptActions" Multi1="0" Multi02="*" isNonunique="true">
       <typings>AcceptAction</typings>
       <subsetting>actions</subsetting>
       <subsetting>acceptPerformances</subsetting>
-      <Multiplicity>0</Multiplicity>
-      <Multiplicity>*</Multiplicity>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * acceptActions is the base feature for standalone AcceptActionUsages.&#xA;&#x9;&#x9; */"/>
     </elements>
     <elements xsi:type="sysMLOC:ActionDefinition" isAbstract="true" declaredName="TerminateAction">
       <superclassifiers>Action</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * A TerminateAction is an Action that terminates a given Occurrence, meaning &#xA;&#x9;&#x9; * that the Occurrence ends during the performance of this Action. TerminateAction&#xA;&#x9;&#x9; * is the base type for all TerminateActionUsages.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:OccurrenceUsage" direction="in" declaredName="terminatedOccurrence">
-        <Multiplicity>1</Multiplicity>
+      <elements xsi:type="sysMLOC:OccurrenceUsage" direction="in" declaredName="terminatedOccurrence" Multi0="1">
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The Occurrence to be terminated.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
-      <elements xsi:type="sysMLOC:ActionUsage" declaredName="terminateOccurrence">
+      <elements xsi:type="sysMLOC:ActionUsage" declaredName="terminateOccurrence" Multi0="1">
         <typings>destroy</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="occ" valuePart="terminatedOccurrence"/>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="terminateActions" isNonunique="true">
+    <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="terminateActions" Multi1="0" Multi02="*" isNonunique="true">
       <typings>TerminateAction</typings>
       <subsetting>actions</subsetting>
-      <Multiplicity>0</Multiplicity>
-      <Multiplicity>*</Multiplicity>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * terminateActions is the base feature for all TerminateActionUsages.&#xA;&#x9;&#x9; */"/>
       <elements xsi:type="sysMLOC:OccurrenceUsage" direction="in" declaredName="terminatedOccurrence" isDefault="true" valuePart="that as Occurrence">
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The default terminatedOccurrence for a terminateAction is its&#xA;&#x9;&#x9;&#x9; * featuring occurrence (which will generally be a containing Action).&#xA;&#x9;&#x9;&#x9; */"/>
@@ -339,47 +301,35 @@
       <superclassifiers>TransitionAction</superclassifiers>
       <superclassifiers>NonStateTransitionPerformance</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * A DecisionTransitionAction is a TransitionAction and NonStateTransitionPerformance that has a &#xA;&#x9;&#x9; * guard, but no trigger or effects. It is the base type of TransitionUsages used as &#xA;&#x9;&#x9; * conditional successions in action models.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:ActionUsage" isReference="true">
+      <elements xsi:type="sysMLOC:ActionUsage" isReference="true" Multi1="0" Multi02="0">
         <redefinitions>accepter</redefinitions>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>0</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:ActionUsage" isReference="true">
+      <elements xsi:type="sysMLOC:ActionUsage" isReference="true" Multi1="0" Multi02="0">
         <redefinitions>effect</redefinitions>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>0</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="transitionActions" isNonunique="true">
+    <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="transitionActions" Multi1="0" Multi02="*" isNonunique="true">
       <typings>TransitionAction</typings>
       <subsetting>actions</subsetting>
-      <Multiplicity>0</Multiplicity>
-      <Multiplicity>*</Multiplicity>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * transitionActions is the base feature for all TransitionUsages.&#xA;&#x9;&#x9; */"/>
     </elements>
     <elements xsi:type="sysMLOC:ActionDefinition" declaredName="AssignmentAction">
       <superclassifiers>FeatureWritePerformance</superclassifiers>
       <superclassifiers>Action</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * An AssignmentAction is an Action, used to type an AssignmentActionUsage. It is also a&#xA;&#x9;&#x9; * FeatureWritePerformance that updates the accessedFeature of its target Occurrence with&#xA;&#x9;&#x9; * the given replacementValues.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="target">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="target" Multi0="1">
         <typings>Occurrence</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="inout" declaredName="replacementValues" isNonunique="true">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="inout" declaredName="replacementValues" Multi1="0" Multi02="*" isNonunique="true">
         <typings>Anything</typings>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>*</Multiplicity>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="assignmentActions" isNonunique="true">
+    <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="assignmentActions" Multi1="0" Multi02="*" isNonunique="true">
       <typings>AssignmentAction</typings>
       <subsetting>actions</subsetting>
-      <Multiplicity>0</Multiplicity>
-      <Multiplicity>*</Multiplicity>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * assignmentActions is the base feature for all AssignmentActionsUsages.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="target" isDefault="true" valuePart="that as Occurrence">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="target" Multi0="1" isDefault="true" valuePart="that as Occurrence">
         <typings>Occurrence</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;             * The default target for assignmentActions is its featuring instance (if that is &#xA;             * an Occurrence).&#xA;             */"/>
       </elements>
     </elements>
@@ -387,51 +337,32 @@
       <superclassifiers>Action</superclassifiers>
       <superclassifiers>IfThenPerformance</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * An IfThenAction is a Kernel IfThenPerformance that is also an Action. &#xA;&#x9;&#x9; * It is the base type for all IfActionUsages.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="ifTest">
-        <Multiplicity>1</Multiplicity>
-      </elements>
-      <elements xsi:type="sysMLOC:ActionUsage" direction="in" declaredName="thenClause">
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>1</Multiplicity>
-      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="ifTest" Multi0="1"/>
+      <elements xsi:type="sysMLOC:ActionUsage" direction="in" declaredName="thenClause" Multi1="0" Multi02="1"/>
     </elements>
     <elements xsi:type="sysMLOC:ActionDefinition" declaredName="IfThenElseAction">
       <superclassifiers>IfThenAction</superclassifiers>
       <superclassifiers>IfThenElsePerformance</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * An IfThenElseAction is a Kernel IfThenElsePeformance that is also an IfThenAction. &#xA;&#x9;&#x9; * It is the base type for all IfActionUsages that have an elseAction.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="ifTest">
-        <Multiplicity>1</Multiplicity>
-      </elements>
-      <elements xsi:type="sysMLOC:ActionUsage" direction="in" declaredName="thenClause">
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>1</Multiplicity>
-      </elements>
-      <elements xsi:type="sysMLOC:ActionUsage" direction="in" declaredName="elseClause">
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>1</Multiplicity>
-      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="ifTest" Multi0="1"/>
+      <elements xsi:type="sysMLOC:ActionUsage" direction="in" declaredName="thenClause" Multi1="0" Multi02="1"/>
+      <elements xsi:type="sysMLOC:ActionUsage" direction="in" declaredName="elseClause" Multi1="0" Multi02="1"/>
     </elements>
-    <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="ifThenActions" isNonunique="true">
+    <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="ifThenActions" Multi1="0" Multi02="*" isNonunique="true">
       <typings>IfThenAction</typings>
       <subsetting>actions</subsetting>
-      <Multiplicity>0</Multiplicity>
-      <Multiplicity>*</Multiplicity>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * ifThenActions is the base feature for all IfActionUsages.&#xA;&#x9;&#x9; */"/>
     </elements>
-    <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="ifThenElseActions" isNonunique="true">
+    <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="ifThenElseActions" Multi1="0" Multi02="*" isNonunique="true">
       <typings>IfThenElseAction</typings>
       <subsetting>actions</subsetting>
-      <Multiplicity>0</Multiplicity>
-      <Multiplicity>*</Multiplicity>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * ifThenElseActions is the base feature for all IfActionUsages that have an elseAction.&#xA;&#x9;&#x9; */"/>
     </elements>
     <elements xsi:type="sysMLOC:ActionDefinition" isAbstract="true" declaredName="LoopAction">
       <superclassifiers>Action</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * A LoopAction is the base type for all LoopActionUsages.&#xA;&#x9;&#x9; */"/>
       <elements xsi:type="sysMLOC:ReferenceUsage" direction="in" declaredName="iterator"/>
-      <elements xsi:type="sysMLOC:ActionUsage" direction="in" declaredName="body">
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>*</Multiplicity>
+      <elements xsi:type="sysMLOC:ActionUsage" direction="in" declaredName="body" Multi1="0" Multi02="*">
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The action that is performed repeatedly in the loop.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
     </elements>
@@ -452,10 +383,8 @@
     <elements xsi:type="sysMLOC:ActionDefinition" declaredName="ForLoopAction">
       <superclassifiers>LoopAction</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * A ForLoopAction is a LoopAction that iterates over an ordered sequence of values.&#xA;&#x9;&#x9; * It is the base type for all ForLoopActionUsages.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:ReferenceUsage" visibility="protected" declaredName="var">
+      <elements xsi:type="sysMLOC:ReferenceUsage" visibility="protected" declaredName="var" Multi1="0" Multi02="1">
         <subsetting>seq</subsetting>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The loop variable that is assigned successive elements of seq on each&#xA;&#x9;&#x9;&#x9; * iteration of the loop.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
       <elements xsi:type="sysMLOC:ReferenceUsage" direction="in" declaredName="seq">
@@ -475,25 +404,19 @@
         <elements xsi:type="sysMLOC:AssignmentNode" isThen="true" featureChain="index" NodeParameter="index + 1"/>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="loopActions" isNonunique="true">
+    <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="loopActions" Multi1="0" Multi02="*" isNonunique="true">
       <typings>LoopAction</typings>
       <subsetting>actions</subsetting>
-      <Multiplicity>0</Multiplicity>
-      <Multiplicity>*</Multiplicity>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * loopActions is the base feature for all LoopActionUsages.&#xA;&#x9;&#x9; */"/>
     </elements>
-    <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="whileLoopActions" isNonunique="true">
+    <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="whileLoopActions" Multi1="0" Multi02="*" isNonunique="true">
       <typings>WhileLoopAction</typings>
       <subsetting>loopActions</subsetting>
-      <Multiplicity>0</Multiplicity>
-      <Multiplicity>*</Multiplicity>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * whileLoopActions is the base feature for all WhileLoopActionUsages.&#xA;&#x9;&#x9; */"/>
     </elements>
-    <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="forLoopActions" isNonunique="true">
+    <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="forLoopActions" Multi1="0" Multi02="*" isNonunique="true">
       <typings>ForLoopAction</typings>
       <subsetting>loopActions</subsetting>
-      <Multiplicity>0</Multiplicity>
-      <Multiplicity>*</Multiplicity>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * forLoopActions is the base feature for all ForLoopActionUsages.&#xA;&#x9;&#x9; */"/>
     </elements>
   </elements>

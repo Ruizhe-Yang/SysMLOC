@@ -24,10 +24,8 @@
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="MassSum">
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="partMasses">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="partMasses" Multi1="0" Multi02="*">
         <typings>MassValue</typings>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>*</Multiplicity>
       </elements>
       <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="totalMass" valuePart="sum(partMasses)">
         <typings>MassValue</typings>
@@ -38,14 +36,8 @@
       <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="partMasses" valuePart="(vehicle.eng.m, vehicle.trans.m)"/>
       <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="totalMass"/>
     </elements>
-    <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicles" valuePart="(vehicle, vehicle)">
-      <Multiplicity>*</Multiplicity>
-    </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="masses1" valuePart="(vehicles as VehiclePart).m">
-      <Multiplicity>*</Multiplicity>
-    </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="masses2" valuePart="(vehicles as vehicle).m">
-      <Multiplicity>*</Multiplicity>
-    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicles" Multi0="*" valuePart="(vehicle, vehicle)"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="masses1" Multi0="*" valuePart="(vehicles as VehiclePart).m"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="masses2" Multi0="*" valuePart="(vehicles as vehicle).m"/>
   </elements>
 </sysMLOC:Namespace>

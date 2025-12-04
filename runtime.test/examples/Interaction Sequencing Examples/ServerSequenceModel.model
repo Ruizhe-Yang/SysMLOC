@@ -21,16 +21,14 @@
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="PubSubSequence">
-      <elements xsi:type="sysMLOC:PartUsage" declaredName="producer">
-        <Multiplicity>1</Multiplicity>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="producer" Multi0="1">
         <elements xsi:type="sysMLOC:EventOccurrenceUsage" declaredName="publish_source_event"/>
       </elements>
       <elements xsi:type="sysMLOC:Message" declaredName="publish_message">
         <FlowEnd>producer.publish_source_event</FlowEnd>
         <FlowEnd>server.publish_target_event</FlowEnd>
       </elements>
-      <elements xsi:type="sysMLOC:PartUsage" declaredName="server">
-        <Multiplicity>1</Multiplicity>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="server" Multi0="1">
         <elements xsi:type="sysMLOC:EventOccurrenceUsage" declaredName="subscribe_target_event"/>
         <elements xsi:type="sysMLOC:EventOccurrenceUsage" isThen="true" declaredName="publish_target_event"/>
         <elements xsi:type="sysMLOC:EventOccurrenceUsage" isThen="true" declaredName="deliver_source_event"/>

@@ -15,43 +15,33 @@
         <typings>Case</typings>
         <redefinitions>Calculation::self</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:SubjectUsage" declaredName="subj">
+      <elements xsi:type="sysMLOC:SubjectUsage" declaredName="subj" Multi0="1">
         <typings>Anything</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The subject that was investigated by this Case.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
-      <elements xsi:type="sysMLOC:PartUsage" isReference="true" declaredName="actors">
+      <elements xsi:type="sysMLOC:PartUsage" isReference="true" declaredName="actors" Multi1="0" Multi02="*">
         <typings>Part</typings>
         <subsetting>parts</subsetting>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>*</Multiplicity>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The Parts that fill the role of actors for this Case.&#xA;&#x9;&#x9;&#x9; * (Note: This is not itself an actor parameter, because specific actor&#xA;&#x9;&#x9;&#x9; * parameters will be added for specific Cases.)&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
-      <elements xsi:type="sysMLOC:ObjectiveRequirementUsage" declaredName="obj">
+      <elements xsi:type="sysMLOC:ObjectiveRequirementUsage" declaredName="obj" Multi0="1">
         <typings>RequirementCheck</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * A check of whether the objective RequirementUsage was satisfied for this Case.&#xA;&#x9;&#x9;&#x9; */"/>
         <elements xsi:type="sysMLOC:SubjectUsage" declaredName="subj" isDefault="true" valuePart="Case::result"/>
       </elements>
-      <elements xsi:type="sysMLOC:ReferenceUsage" isReturn="true" declaredName="result">
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>*</Multiplicity>
+      <elements xsi:type="sysMLOC:ReferenceUsage" isReturn="true" declaredName="result" Multi1="0" Multi02="*">
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The result determined by the case, which should satisfy the case objective.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
-      <elements xsi:type="sysMLOC:CaseUsage" isAbstract="true" declaredName="subcases">
+      <elements xsi:type="sysMLOC:CaseUsage" isAbstract="true" declaredName="subcases" Multi1="0" Multi02="*">
         <typings>Case</typings>
         <subsetting>cases</subsetting>
         <subsetting>subcalculations</subsetting>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>*</Multiplicity>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * Other Cases carried out as part of the performance of this Case.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:CaseUsage" isAbstract="true" declaredName="cases" isNonunique="true">
+    <elements xsi:type="sysMLOC:CaseUsage" isAbstract="true" declaredName="cases" Multi1="0" Multi02="*" isNonunique="true">
       <typings>Case</typings>
       <subsetting>calculations</subsetting>
-      <Multiplicity>0</Multiplicity>
-      <Multiplicity>*</Multiplicity>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * cases is the base Feature of all CaseUsages.&#xA;&#x9;&#x9; */"/>
     </elements>
   </elements>

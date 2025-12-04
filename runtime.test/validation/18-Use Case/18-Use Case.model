@@ -12,10 +12,8 @@
       <elements xsi:type="sysMLOC:ActorUsage" declaredName="driver">
         <typings>Person</typings>
       </elements>
-      <elements xsi:type="sysMLOC:ActorUsage" declaredName="passengers">
+      <elements xsi:type="sysMLOC:ActorUsage" declaredName="passengers" Multi1="0" Multi02="4">
         <typings>Person</typings>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>4</Multiplicity>
       </elements>
       <elements xsi:type="sysMLOC:ActorUsage" declaredName="environment">
         <typings>Environment</typings>
@@ -41,9 +39,7 @@
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:UseCaseUsage" isThen="true" declaredName="'drive vehicle'">
-        <elements xsi:type="sysMLOC:IncludeUseCaseUsage" refElement="'add fuel'">
-          <Multiplicity>0</Multiplicity>
-          <Multiplicity>*</Multiplicity>
+        <elements xsi:type="sysMLOC:IncludeUseCaseUsage" refElement="'add fuel'" Multi1="0" Multi02="*">
           <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9;&#x9; * Mock-up of an extension point.&#xA;&#x9;&#x9;&#x9;&#x9; * (But reference to 'add fuel' is in the wrong direction, and it doesn't&#xA;&#x9;&#x9;&#x9;&#x9; * make the extension condition sufficient to trigger the behavior.)&#xA;&#x9;&#x9;&#x9;&#x9; */"/>
           <elements xsi:type="sysMLOC:SubjectUsage"/>
           <elements xsi:type="sysMLOC:ActorUsage" valuePart="driver">
@@ -82,10 +78,8 @@
       <elements xsi:type="sysMLOC:ActorUsage" declaredName="driver">
         <typings>Person</typings>
       </elements>
-      <elements xsi:type="sysMLOC:ActorUsage" declaredName="passengers">
+      <elements xsi:type="sysMLOC:ActorUsage" declaredName="passengers" Multi1="0" Multi02="4">
         <typings>Person</typings>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>4</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:UseCaseUsage" declaredName="'exit vehicle'">
@@ -95,10 +89,8 @@
       <elements xsi:type="sysMLOC:ActorUsage" declaredName="driver">
         <typings>Person</typings>
       </elements>
-      <elements xsi:type="sysMLOC:ActorUsage" declaredName="passengers">
+      <elements xsi:type="sysMLOC:ActorUsage" declaredName="passengers" Multi1="0" Multi02="4">
         <typings>Person</typings>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>4</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:UseCaseUsage" declaredName="'add fuel'">

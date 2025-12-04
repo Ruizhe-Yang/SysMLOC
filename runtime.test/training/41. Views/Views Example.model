@@ -15,9 +15,8 @@
     </elements>
     <elements xsi:type="sysMLOC:RenderingUsage" declaredName="asTextualNotationTable">
       <subsetting>asElementTable</subsetting>
-      <elements xsi:type="sysMLOC:ViewUsage">
+      <elements xsi:type="sysMLOC:ViewUsage" Multi0="1">
         <redefinitions>columnView</redefinitions>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:ViewRenderingUsage" refElement="asTextualNotation"/>
       </elements>
     </elements>

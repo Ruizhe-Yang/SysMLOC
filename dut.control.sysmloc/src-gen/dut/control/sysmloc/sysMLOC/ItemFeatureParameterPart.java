@@ -3,8 +3,6 @@
  */
 package dut.control.sysmloc.sysMLOC;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -26,15 +24,25 @@ import org.eclipse.emf.ecore.EObject;
 public interface ItemFeatureParameterPart extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Item Feature Parameter</b></em>' containment reference list.
-   * The list contents are of type {@link dut.control.sysmloc.sysMLOC.ItemFeatureParameter}.
+   * Returns the value of the '<em><b>Item Feature Parameter</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Item Feature Parameter</em>' containment reference list.
+   * @return the value of the '<em>Item Feature Parameter</em>' containment reference.
+   * @see #setItemFeatureParameter(ItemFeatureParameter)
    * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getItemFeatureParameterPart_ItemFeatureParameter()
    * @model containment="true"
    * @generated
    */
-  EList<ItemFeatureParameter> getItemFeatureParameter();
+  ItemFeatureParameter getItemFeatureParameter();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.ItemFeatureParameterPart#getItemFeatureParameter <em>Item Feature Parameter</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Item Feature Parameter</em>' containment reference.
+   * @see #getItemFeatureParameter()
+   * @generated
+   */
+  void setItemFeatureParameter(ItemFeatureParameter value);
 
 } // ItemFeatureParameterPart

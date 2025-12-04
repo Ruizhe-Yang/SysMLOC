@@ -6,15 +6,12 @@ package dut.control.sysmloc.sysMLOC.impl;
 import dut.control.sysmloc.sysMLOC.MultiplicityRange;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 
-import java.util.Collection;
-
-import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,7 +21,9 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.MultiplicityRangeImpl#getMultiplicity <em>Multiplicity</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.MultiplicityRangeImpl#getMulti0 <em>Multi0</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.MultiplicityRangeImpl#getMulti1 <em>Multi1</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.MultiplicityRangeImpl#getMulti02 <em>Multi02</em>}</li>
  * </ul>
  *
  * @generated
@@ -32,14 +31,64 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
 public class MultiplicityRangeImpl extends MinimalEObjectImpl.Container implements MultiplicityRange
 {
   /**
-   * The cached value of the '{@link #getMultiplicity() <em>Multiplicity</em>}' attribute list.
+   * The default value of the '{@link #getMulti0() <em>Multi0</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMultiplicity()
+   * @see #getMulti0()
    * @generated
    * @ordered
    */
-  protected EList<String> multiplicity;
+  protected static final String MULTI0_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getMulti0() <em>Multi0</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMulti0()
+   * @generated
+   * @ordered
+   */
+  protected String multi0 = MULTI0_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getMulti1() <em>Multi1</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMulti1()
+   * @generated
+   * @ordered
+   */
+  protected static final String MULTI1_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getMulti1() <em>Multi1</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMulti1()
+   * @generated
+   * @ordered
+   */
+  protected String multi1 = MULTI1_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getMulti02() <em>Multi02</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMulti02()
+   * @generated
+   * @ordered
+   */
+  protected static final String MULTI02_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getMulti02() <em>Multi02</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMulti02()
+   * @generated
+   * @ordered
+   */
+  protected String multi02 = MULTI02_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -68,13 +117,73 @@ public class MultiplicityRangeImpl extends MinimalEObjectImpl.Container implemen
    * @generated
    */
   @Override
-  public EList<String> getMultiplicity()
+  public String getMulti0()
   {
-    if (multiplicity == null)
-    {
-      multiplicity = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.MULTIPLICITY_RANGE__MULTIPLICITY);
-    }
-    return multiplicity;
+    return multi0;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setMulti0(String newMulti0)
+  {
+    String oldMulti0 = multi0;
+    multi0 = newMulti0;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.MULTIPLICITY_RANGE__MULTI0, oldMulti0, multi0));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getMulti1()
+  {
+    return multi1;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setMulti1(String newMulti1)
+  {
+    String oldMulti1 = multi1;
+    multi1 = newMulti1;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.MULTIPLICITY_RANGE__MULTI1, oldMulti1, multi1));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getMulti02()
+  {
+    return multi02;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setMulti02(String newMulti02)
+  {
+    String oldMulti02 = multi02;
+    multi02 = newMulti02;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.MULTIPLICITY_RANGE__MULTI02, oldMulti02, multi02));
   }
 
   /**
@@ -87,8 +196,12 @@ public class MultiplicityRangeImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case SysMLOCPackage.MULTIPLICITY_RANGE__MULTIPLICITY:
-        return getMultiplicity();
+      case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI0:
+        return getMulti0();
+      case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI1:
+        return getMulti1();
+      case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI02:
+        return getMulti02();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -98,15 +211,19 @@ public class MultiplicityRangeImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case SysMLOCPackage.MULTIPLICITY_RANGE__MULTIPLICITY:
-        getMultiplicity().clear();
-        getMultiplicity().addAll((Collection<? extends String>)newValue);
+      case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI0:
+        setMulti0((String)newValue);
+        return;
+      case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI1:
+        setMulti1((String)newValue);
+        return;
+      case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI02:
+        setMulti02((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -122,8 +239,14 @@ public class MultiplicityRangeImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case SysMLOCPackage.MULTIPLICITY_RANGE__MULTIPLICITY:
-        getMultiplicity().clear();
+      case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI0:
+        setMulti0(MULTI0_EDEFAULT);
+        return;
+      case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI1:
+        setMulti1(MULTI1_EDEFAULT);
+        return;
+      case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI02:
+        setMulti02(MULTI02_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -139,8 +262,12 @@ public class MultiplicityRangeImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case SysMLOCPackage.MULTIPLICITY_RANGE__MULTIPLICITY:
-        return multiplicity != null && !multiplicity.isEmpty();
+      case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI0:
+        return MULTI0_EDEFAULT == null ? multi0 != null : !MULTI0_EDEFAULT.equals(multi0);
+      case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI1:
+        return MULTI1_EDEFAULT == null ? multi1 != null : !MULTI1_EDEFAULT.equals(multi1);
+      case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI02:
+        return MULTI02_EDEFAULT == null ? multi02 != null : !MULTI02_EDEFAULT.equals(multi02);
     }
     return super.eIsSet(featureID);
   }
@@ -156,8 +283,12 @@ public class MultiplicityRangeImpl extends MinimalEObjectImpl.Container implemen
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (Multiplicity: ");
-    result.append(multiplicity);
+    result.append(" (Multi0: ");
+    result.append(multi0);
+    result.append(", Multi1: ");
+    result.append(multi1);
+    result.append(", Multi02: ");
+    result.append(multi02);
     result.append(')');
     return result.toString();
   }

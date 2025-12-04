@@ -15,10 +15,9 @@
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="vin">
         <redefinitions>serialNumber</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:PartUsage" declaredName="carParts">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="carParts" Multi0="*">
         <typings>CarPart</typings>
         <redefinitions>subcomponents</redefinitions>
-        <Multiplicity>*</Multiplicity>
       </elements>
       <elements xsi:type="sysMLOC:PartUsage" declaredName="engine">
         <subsetting>carParts</subsetting>

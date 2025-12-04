@@ -20,10 +20,8 @@
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="SysLocalCloudsDesign">
       <elements xsi:type="sysMLOC:Documentation" body="/* System of Systems Definition */"/>
       <elements xsi:type="sysMLOC:CodeAnnotation" body="// System of Local Clouds &#xD;&#xA;"/>
-      <elements xsi:type="sysMLOC:PartUsage" declaredName="locclouds">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="locclouds" Multi1="1" Multi02="*">
         <typings>LocalCloudDesign</typings>
-        <Multiplicity>1</Multiplicity>
-        <Multiplicity>*</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:PartUsage" declaredName="system_of_systems">
@@ -32,18 +30,14 @@
     <elements xsi:type="sysMLOC:CodeAnnotation" body="// defining a top level usage&#xD;&#xA;"/>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="LocalCloudDesign">
       <elements xsi:type="sysMLOC:Documentation" body="/* Local Cloud definition */"/>
-      <elements xsi:type="sysMLOC:PartUsage" declaredName="systems">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="systems" Multi1="1" Multi02="*">
         <typings>SysD</typings>
-        <Multiplicity>1</Multiplicity>
-        <Multiplicity>*</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="SysD">
       <elements xsi:type="sysMLOC:Documentation" body="/* System definitions */"/>
-      <elements xsi:type="sysMLOC:PortUsage" declaredName="services">
+      <elements xsi:type="sysMLOC:PortUsage" declaredName="services" Multi1="1" Multi02="*">
         <typings>SD</typings>
-        <Multiplicity>1</Multiplicity>
-        <Multiplicity>*</Multiplicity>
       </elements>
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="systemname">
         <typings>String</typings>
@@ -66,30 +60,25 @@
     <elements xsi:type="sysMLOC:PortDefinition" declaredName="SDDD">
       <superclassifiers>SD</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/* Service Definition Design Description */"/>
-      <elements xsi:type="sysMLOC:PortUsage" declaredName="idds">
+      <elements xsi:type="sysMLOC:PortUsage" declaredName="idds" Multi0="*">
         <typings>IDD</typings>
-        <Multiplicity>*</Multiplicity>
       </elements>
       <elements xsi:type="sysMLOC:CodeAnnotation" body="// nested protocol-specific services&#xD;&#xA;"/>
     </elements>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="SysLocalCloudsDD">
       <superclassifiers>SysLocalCloudsDesign</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/* System of Systems Detailed Description */"/>
-      <elements xsi:type="sysMLOC:PartUsage">
+      <elements xsi:type="sysMLOC:PartUsage" Multi1="1" Multi02="*">
         <typings>LocalCloudDD</typings>
         <redefinitions>locclouds</redefinitions>
-        <Multiplicity>1</Multiplicity>
-        <Multiplicity>*</Multiplicity>
       </elements>
       <elements xsi:type="sysMLOC:CodeAnnotation" body="// the descriptions&#xD;&#xA;"/>
     </elements>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="LocalCloudDD">
       <superclassifiers>LocalCloudDesign</superclassifiers>
-      <elements xsi:type="sysMLOC:PartUsage">
+      <elements xsi:type="sysMLOC:PartUsage" Multi1="1" Multi02="*">
         <typings>SysDD</typings>
         <redefinitions>systems</redefinitions>
-        <Multiplicity>1</Multiplicity>
-        <Multiplicity>*</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="SysDD">
@@ -99,10 +88,7 @@
         <typings>SDDD</typings>
         <redefinitions>services</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:ActionUsage" declaredName="ServiceMethod">
-        <Multiplicity>1</Multiplicity>
-        <Multiplicity>*</Multiplicity>
-      </elements>
+      <elements xsi:type="sysMLOC:ActionUsage" declaredName="ServiceMethod" Multi1="1" Multi02="*"/>
       <elements xsi:type="sysMLOC:CodeAnnotation" body="//means general behaviors&#xD;&#xA;"/>
     </elements>
   </elements>

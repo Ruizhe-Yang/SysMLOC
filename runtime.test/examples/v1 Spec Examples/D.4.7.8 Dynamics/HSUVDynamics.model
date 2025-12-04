@@ -47,15 +47,11 @@
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="dt">
         <typings>Time</typings>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="v" isOrdered="true">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="v" Multi1="0" Multi02="*" isOrdered="true">
         <typings>Vel</typings>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>*</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="x" isOrdered="true">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="x" Multi1="0" Multi02="*" isOrdered="true">
         <typings>Dist</typings>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>*</Multiplicity>
       </elements>
       <resultExpressionParameter resultExpression="(1..size(x)-1)->forAll {in n : Natural; x#(n + 1) == x#(n) + v#(n) * (5280/3600) * dt}"/>
     </elements>
@@ -63,10 +59,8 @@
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="dt">
         <typings>Time</typings>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="v" isOrdered="true">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="v" Multi1="0" Multi02="*" isOrdered="true">
         <typings>Vel</typings>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>*</Multiplicity>
       </elements>
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="a">
         <typings>Accel</typings>
@@ -107,15 +101,11 @@
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="a">
         <typings>Accel</typings>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="v" isOrdered="true">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="v" Multi1="0" Multi02="*" isOrdered="true">
         <typings>Vel</typings>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>*</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="x" isOrdered="true">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="x" Multi1="0" Multi02="*" isOrdered="true">
         <typings>Dist</typings>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>*</Multiplicity>
       </elements>
       <elements xsi:type="sysMLOC:ConstraintUsage" declaredName="pwr">
         <typings>PowerEquation</typings>

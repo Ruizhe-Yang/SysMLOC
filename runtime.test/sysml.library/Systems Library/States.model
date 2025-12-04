@@ -56,37 +56,25 @@
         <redefinitions>subactions</redefinitions>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The subperformances of this StateAction that are Actions, other than the entry and exit Actions. &#xA;&#x9;&#x9;&#x9; * These subactions all take place in the &quot;middle&quot; of the StatePerformance, that is, after the &#xA;&#x9;&#x9;&#x9; * entry Action and before the exit Action. &#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
-      <elements xsi:type="sysMLOC:ActionUsage" declaredName="substates">
+      <elements xsi:type="sysMLOC:ActionUsage" declaredName="substates" Multi1="0" Multi02="*">
         <typings>StateAction</typings>
         <subsetting>stateActions</subsetting>
         <subsetting>subactions</subsetting>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>*</Multiplicity>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The subactions of this state that are states.&#xA;&#x9;&#x9;&#x9; * &#xA;&#x9;&#x9;&#x9; * NOTE: This feature is declared as an ActionUsage, not a StateUsage, so that the constraint &#xA; &#x9;&#x9;&#x9; * checkStateUsageExclusiveStateSpecialization does not apply to it, since this constraint &#xA;&#x9;&#x9;&#x9; * would otherwise incorrectly require that &quot;substates&quot; subset &quot;exclusiveStates&quot;.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
-      <elements xsi:type="sysMLOC:StateUsage" isAbstract="true" declaredName="exclusiveStates">
+      <elements xsi:type="sysMLOC:StateUsage" isAbstract="true" declaredName="exclusiveStates" Multi1="0" Multi02="*">
         <typings>StateAction</typings>
         <subsetting>substates</subsetting>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>*</Multiplicity>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The substates of this state that are mutually exclusive, that is, whose performances do not&#xA;&#x9;&#x9;&#x9; * overlap in time.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
-      <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="stateTransitions">
+      <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="stateTransitions" Multi1="0" Multi02="*">
         <typings>StateTransitionAction</typings>
         <subsetting>transitions</subsetting>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>*</Multiplicity>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The transitions of this state that are state transitions.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
       <elements xsi:type="sysMLOC:SuccessionAsUsage" declaredName="stateSequencing">
-        <connectorPart refElement="exclusiveStates">
-          <Multiplicity>0</Multiplicity>
-          <Multiplicity>1</Multiplicity>
-        </connectorPart>
-        <connectorPart refElement="exclusiveStates">
-          <Multiplicity>0</Multiplicity>
-          <Multiplicity>1</Multiplicity>
-        </connectorPart>
+        <connectorPart Multi1="0" Multi02="1" refElement="exclusiveStates"/>
+        <connectorPart Multi1="0" Multi02="1" refElement="exclusiveStates"/>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * Exclusive states cannot overlap, so it must be possible to strictly sequence them in time.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
       <elements xsi:type="sysMLOC:AssertConstraintUsage">
@@ -97,16 +85,12 @@
       <superclassifiers>TransitionAction</superclassifiers>
       <superclassifiers>StateTransitionPerformance</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * A StateTransitionAction is a TransitionAction and a StateTransitionPerformance whose transitionLinkSource &#xA;&#x9;&#x9; * is a State. It is the base type of TransitionUsages used transitions in state models.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="transitionLinkSource">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="transitionLinkSource" Multi0="1">
         <typings>StateAction</typings>
         <redefinitions>TransitionAction::transitionLinkSource</redefinitions>
         <redefinitions>StateTransitionPerformance::transitionLinkSource</redefinitions>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="inout" declaredName="payload">
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>*</Multiplicity>
-      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="inout" declaredName="payload" Multi1="0" Multi02="*"/>
       <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in">
         <redefinitions>receiver</redefinitions>
       </elements>
@@ -119,11 +103,9 @@
         <connectorPart refElement="accepter.receiver"/>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:StateUsage" isAbstract="true" declaredName="stateActions" isNonunique="true">
+    <elements xsi:type="sysMLOC:StateUsage" isAbstract="true" declaredName="stateActions" Multi1="0" Multi02="*" isNonunique="true">
       <typings>StateAction</typings>
       <subsetting>actions</subsetting>
-      <Multiplicity>0</Multiplicity>
-      <Multiplicity>*</Multiplicity>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * stateActions is the base feature for all StateUsages.&#xA;&#x9;&#x9; */"/>
     </elements>
   </elements>

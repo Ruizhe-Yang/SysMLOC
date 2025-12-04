@@ -18,9 +18,7 @@
       <elements xsi:type="sysMLOC:UseCaseUsage" isThen="true" declaredName="'drive vehicle'">
         <elements xsi:type="sysMLOC:ActorUsage" declaredName="driver" valuePart="'provide transportation'::driver"/>
         <elements xsi:type="sysMLOC:ActorUsage" declaredName="environment" valuePart="'provide transportation'::environment"/>
-        <elements xsi:type="sysMLOC:IncludeUseCaseUsage" refElement="'add fuel'">
-          <Multiplicity>0</Multiplicity>
-          <Multiplicity>*</Multiplicity>
+        <elements xsi:type="sysMLOC:IncludeUseCaseUsage" refElement="'add fuel'" Multi1="0" Multi02="*">
           <elements xsi:type="sysMLOC:ActorUsage" valuePart="driver">
             <redefinitions>fueler</redefinitions>
           </elements>

@@ -10,105 +10,85 @@
     <elements xsi:type="sysMLOC:Comment" body="/* MeasurementUnit operations */"/>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="'*'">
       <superclassifiers>DataFunctions::'*'</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x" Multi0="1">
         <typings>MeasurementUnit</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="y">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="y" Multi0="1">
         <typings>MeasurementUnit</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" Multi0="1">
         <typings>MeasurementUnit</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="'/'">
       <superclassifiers>DataFunctions::'/'</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x" Multi0="1">
         <typings>MeasurementUnit</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="y">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="y" Multi0="1">
         <typings>MeasurementUnit</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" Multi0="1">
         <typings>MeasurementUnit</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="'**'">
       <superclassifiers>DataFunctions::'**'</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x" Multi0="1">
         <typings>MeasurementUnit</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="y">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="y" Multi0="1">
         <typings>Real</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" Multi0="1">
         <typings>MeasurementUnit</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="'^'">
       <superclassifiers>DataFunctions::'^'</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x" Multi0="1">
         <typings>MeasurementUnit</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="y">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="y" Multi0="1">
         <typings>Real</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" Multi0="1">
         <typings>MeasurementUnit</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:Comment" body="/* CoordinateFrame and MeasurementUnit operations */"/>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="'CoordinateFrame*'">
       <superclassifiers>DataFunctions::'*'</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x" Multi0="1">
         <typings>CoordinateFrame</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="y">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="y" Multi0="1">
         <typings>MeasurementUnit</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" Multi0="1">
         <typings>CoordinateFrame</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="'CoordinateFrame/'">
       <superclassifiers>DataFunctions::'/'</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x" Multi0="1">
         <typings>CoordinateFrame</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="y">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="y" Multi0="1">
         <typings>MeasurementUnit</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" Multi0="1">
         <typings>CoordinateFrame</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="ToString">
       <superclassifiers>BaseFunctions::ToString</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * Returns the Unicode string symbol representing a scalar measurement reference.&#xA;         */"/>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x" Multi0="1">
         <typings>ScalarMeasurementReference</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" Multi0="1">
         <typings>String</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
   </elements>

@@ -1052,7 +1052,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         isThen?='then'? 
-	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         (
@@ -1069,7 +1069,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         )? 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -1079,10 +1079,10 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
-	 *         acceptParameter+=PayloadParameter 
+	 *         acceptParameter=PayloadParameter 
 	 *         elements+=ActionBodyElement*
 	 *     )
 	 * </pre>
@@ -1103,7 +1103,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	// Constraint:
 	//     (
 	//         isThen?='then'? 
-	//         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	//         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	//         visibility=VisibilityIndicator? 
 	//         isVariant?='variant'? 
 	//         (
@@ -1120,7 +1120,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//         )? 
 	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	//         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	//         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	//         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	//         (
 	//             (
@@ -1130,10 +1130,10 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	//                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	//             ) 
-	//             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	//             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	//             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	//         )* 
-	//         acceptParameter+=PayloadParameter 
+	//         acceptParameter=PayloadParameter 
 	//         elements+=ActionBodyElement*
 	//     )
 	//
@@ -1149,7 +1149,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         isThen?='then'? 
-	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         isReturn?='return'? 
@@ -1157,7 +1157,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             conditionalExpression=Expression | 
 	 *             (
 	 *                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *                 (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *                 (
 	 *                     (
@@ -1167,11 +1167,11 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                         (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                         (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *                     ) 
-	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *                     (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *                 )* 
 	 *                 transitionSourceElement=FeatureChainName? 
-	 *                 (conditionalExpression=Expression | (acceptParameter+=PayloadParameter (conditionalExpression=Expression | conditionalExpression=Expression)?))?
+	 *                 (conditionalExpression=Expression | (acceptParameter=PayloadParameter (conditionalExpression=Expression | conditionalExpression=Expression)?))?
 	 *             )
 	 *         )? 
 	 *         (
@@ -1196,7 +1196,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -1206,10 +1206,10 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
-	 *         acceptParameter+=PayloadParameter
+	 *         acceptParameter=PayloadParameter
 	 *     )
 	 * </pre>
 	 */
@@ -1297,7 +1297,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         isThen?='then'? 
-	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         isReturn?='return'? 
@@ -1315,7 +1315,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         )? 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -1325,7 +1325,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
@@ -1352,7 +1352,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         isVariant?='variant'? 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -1362,7 +1362,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
@@ -1487,7 +1487,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         isThen?='then'? 
-	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         isReturn?='return'? 
@@ -1505,7 +1505,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         )? 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -1515,7 +1515,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         (
@@ -1612,7 +1612,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         isThen?='then'? 
-	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         isReturn?='return'? 
@@ -1630,7 +1630,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         )? 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -1640,7 +1640,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
@@ -1673,7 +1673,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         isThen?='then'? 
-	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         isReturn?='return'? 
@@ -1697,7 +1697,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                     (declaredShortName=Name declaredName=Name?) | 
 	 *                     (
 	 *                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name | refElement=FeatureChainName) 
-	 *                         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))?
+	 *                         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))?
 	 *                     ) | 
 	 *                     declaredName=Name
 	 *                 )? 
@@ -1708,7 +1708,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                     (declaredShortName=Name declaredName=Name?) | 
 	 *                     (
 	 *                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name | refElement=FeatureChainName) 
-	 *                         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))?
+	 *                         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))?
 	 *                     ) | 
 	 *                     declaredName=Name | 
 	 *                     refElement=FeatureChainName
@@ -1721,14 +1721,14 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                     (declaredShortName=Name declaredName=Name?) | 
 	 *                     (
 	 *                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name | refElement=FeatureChainName) 
-	 *                         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))?
+	 *                         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))?
 	 *                     ) | 
 	 *                     (
 	 *                         (
 	 *                             (declaredShortName=Name declaredName=Name?) | 
 	 *                             (
 	 *                                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name | refElement=FeatureChainName) 
-	 *                                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))?
+	 *                                 (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))?
 	 *                             ) | 
 	 *                             declaredName=Name | 
 	 *                             refElement=FeatureChainName
@@ -1746,13 +1746,13 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                         (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                         (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *                     ) 
-	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *                     (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *                     (
-	 *                         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *                         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *                         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
 	 *                     )?
 	 *                 )+ 
-	 *                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *                 (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *                 ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)?
 	 *             ) | 
 	 *             refElement=FeatureChainName
@@ -1780,7 +1780,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	// Constraint:
 	//     (
 	//         isThen?='then'? 
-	//         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	//         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	//         visibility=VisibilityIndicator? 
 	//         isVariant?='variant'? 
 	//         isReturn?='return'? 
@@ -1804,7 +1804,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//                     (declaredShortName=Name declaredName=Name?) | 
 	//                     (
 	//                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name | refElement=FeatureChainName) 
-	//                         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))?
+	//                         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))?
 	//                     ) | 
 	//                     declaredName=Name
 	//                 )? 
@@ -1815,7 +1815,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//                     (declaredShortName=Name declaredName=Name?) | 
 	//                     (
 	//                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name | refElement=FeatureChainName) 
-	//                         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))?
+	//                         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))?
 	//                     ) | 
 	//                     declaredName=Name | 
 	//                     refElement=FeatureChainName
@@ -1828,14 +1828,14 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//                     (declaredShortName=Name declaredName=Name?) | 
 	//                     (
 	//                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name | refElement=FeatureChainName) 
-	//                         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))?
+	//                         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))?
 	//                     ) | 
 	//                     (
 	//                         (
 	//                             (declaredShortName=Name declaredName=Name?) | 
 	//                             (
 	//                                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name | refElement=FeatureChainName) 
-	//                                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))?
+	//                                 (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))?
 	//                             ) | 
 	//                             declaredName=Name | 
 	//                             refElement=FeatureChainName
@@ -1853,13 +1853,13 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//                         (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	//                         (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	//                     ) 
-	//                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	//                     (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	//                     (
-	//                         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	//                         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	//                         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
 	//                     )?
 	//                 )+ 
-	//                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	//                 (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	//                 ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)?
 	//             ) | 
 	//             refElement=FeatureChainName
@@ -1878,7 +1878,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -1888,7 +1888,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         targetParameter=TargetExpression? 
@@ -1912,7 +1912,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         isThen?='then'? 
-	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         (
@@ -1929,7 +1929,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         )? 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -1939,7 +1939,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         targetParameter=TargetExpression? 
@@ -1965,7 +1965,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	// Constraint:
 	//     (
 	//         isThen?='then'? 
-	//         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	//         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	//         visibility=VisibilityIndicator? 
 	//         isVariant?='variant'? 
 	//         (
@@ -1982,7 +1982,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//         )? 
 	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	//         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	//         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	//         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	//         (
 	//             (
@@ -1992,7 +1992,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	//                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	//             ) 
-	//             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	//             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	//             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	//         )* 
 	//         targetParameter=TargetExpression? 
@@ -2093,7 +2093,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         )? 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -2103,7 +2103,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
@@ -2149,7 +2149,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         )? 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -2159,7 +2159,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         connectorPart+=ConnectorEnd 
@@ -2199,7 +2199,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//         )? 
 	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	//         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	//         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	//         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	//         (
 	//             (
@@ -2209,7 +2209,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	//                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	//             ) 
-	//             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	//             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	//             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	//         )* 
 	//         connectorPart+=ConnectorEnd 
@@ -2242,7 +2242,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         isThen?='then'? 
-	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         isReturn?='return'? 
@@ -2260,7 +2260,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         )? 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -2270,7 +2270,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
@@ -2307,7 +2307,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         isThen?='then'? 
-	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         isReturn?='return'? 
@@ -2325,7 +2325,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         )? 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -2335,7 +2335,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
@@ -2372,7 +2372,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         isThen?='then'? 
-	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         isReturn?='return'? 
@@ -2390,7 +2390,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         )? 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -2400,7 +2400,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
@@ -2436,7 +2436,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         isThen?='then'? 
-	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         isReturn?='return'? 
@@ -2454,7 +2454,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         )? 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -2464,7 +2464,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
@@ -2504,7 +2504,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         isThen?='then'? 
-	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         isReturn?='return'? 
@@ -2522,7 +2522,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         )? 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -2532,7 +2532,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         (
@@ -2571,7 +2571,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         isThen?='then'? 
-	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         isReturn?='return'? 
@@ -2589,7 +2589,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         )? 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -2599,7 +2599,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
@@ -2625,7 +2625,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         isThen?='then'? 
-	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         (
@@ -2642,7 +2642,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         )? 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -2652,7 +2652,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         (actionParameterEnd+=ActionParameterEnd | elseEnd+=ConnectorEnd)? 
@@ -2687,7 +2687,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         isThen?='then'? 
-	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         isReturn?='return'? 
@@ -2703,7 +2703,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         )? 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT+ 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -2713,7 +2713,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
@@ -2749,7 +2749,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         isThen?='then'? 
-	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         isReturn?='return'? 
@@ -2767,7 +2767,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         )? 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name | refElement=FeatureChainName)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -2777,7 +2777,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
@@ -2813,7 +2813,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         isThen?='then'? 
-	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         isReturn?='return'? 
@@ -2831,7 +2831,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         )? 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name | refElement=FeatureChainName)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -2841,7 +2841,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
@@ -2878,7 +2878,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         isThen?='then'? 
-	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         isReturn?='return'? 
@@ -2896,7 +2896,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         )? 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -2906,11 +2906,11 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
-	 *         itemFeatureParameter+=ItemFeatureParameter? 
+	 *         itemFeatureParameter=ItemFeatureParameter? 
 	 *         (FlowEnd+=FeatureChainName FlowEnd+=FeatureChainName)? 
 	 *         elements+=UsageBodyElement*
 	 *     )
@@ -2944,7 +2944,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         isThen?='then'? 
-	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         isReturn?='return'? 
@@ -2962,7 +2962,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         )? 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name | refElement=FeatureChainName)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -2972,7 +2972,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
@@ -3009,7 +3009,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         isThen?='then'? 
-	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         isReturn?='return'? 
@@ -3021,7 +3021,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         isIndividual?='individual' 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -3031,7 +3031,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
@@ -3067,7 +3067,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         isThen?='then'? 
-	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         isReturn?='return'? 
@@ -3085,7 +3085,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         )? 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -3095,11 +3095,11 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
-	 *         itemFeatureParameter+=ItemFeatureParameter? 
+	 *         itemFeatureParameter=ItemFeatureParameter? 
 	 *         (FlowEnd+=FeatureChainName FlowEnd+=FeatureChainName)? 
 	 *         elements+=UsageBodyElement*
 	 *     )
@@ -3133,7 +3133,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         isThen?='then'? 
-	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         isReturn?='return'? 
@@ -3151,7 +3151,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         )? 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -3161,11 +3161,11 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
-	 *         itemFeatureParameter+=ItemFeatureParameter? 
+	 *         itemFeatureParameter=ItemFeatureParameter? 
 	 *         (FlowEnd+=FeatureChainName FlowEnd+=FeatureChainName)? 
 	 *         elements+=DefinitionBodyElement*
 	 *     )
@@ -3199,7 +3199,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         isThen?='then'? 
-	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         isReturn?='return'? 
@@ -3217,7 +3217,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         )? 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -3227,7 +3227,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
@@ -3263,7 +3263,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         isThen?='then'? 
-	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         isReturn?='return'? 
@@ -3281,7 +3281,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         )? 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -3291,7 +3291,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
@@ -3327,7 +3327,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         isThen?='then'? 
-	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         isReturn?='return'? 
@@ -3345,7 +3345,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         )? 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name | refElement=FeatureChainName)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -3355,7 +3355,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
@@ -3391,7 +3391,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         isThen?='then'? 
-	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         isReturn?='return'? 
@@ -3409,7 +3409,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         )? 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -3419,7 +3419,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
@@ -3455,7 +3455,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         isThen?='then'? 
-	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         isReturn?='return'? 
@@ -3474,7 +3474,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         isNegated?='not'? 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name | refElement=FeatureChainName)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -3484,7 +3484,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
@@ -3521,7 +3521,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         isThen?='then'? 
-	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         isReturn?='return'? 
@@ -3539,7 +3539,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         )? 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -3549,7 +3549,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
@@ -3585,7 +3585,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         isThen?='then'? 
-	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         isReturn?='return'? 
@@ -3603,7 +3603,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         )? 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -3613,7 +3613,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
@@ -3649,7 +3649,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         isThen?='then'? 
-	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         isReturn?='return'? 
@@ -3667,7 +3667,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         )? 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -3677,7 +3677,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
@@ -3710,7 +3710,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         isThen?='then'? 
-	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         isReturn?='return'? 
@@ -3728,7 +3728,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         )? 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -3738,7 +3738,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
@@ -3765,7 +3765,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	// Constraint:
 	//     (
 	//         isThen?='then'? 
-	//         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	//         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	//         visibility=VisibilityIndicator? 
 	//         isVariant?='variant'? 
 	//         isReturn?='return'? 
@@ -3783,7 +3783,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//         )? 
 	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	//         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	//         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	//         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	//         (
 	//             (
@@ -3793,7 +3793,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	//                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	//             ) 
-	//             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	//             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	//             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	//         )* 
 	//         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
@@ -3826,7 +3826,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         isThen?='then'? 
-	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         isReturn?='return'? 
@@ -3844,7 +3844,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         )? 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -3854,7 +3854,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
@@ -3891,7 +3891,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         isThen?='then'? 
-	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         isReturn?='return'? 
@@ -3909,7 +3909,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         )? 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -3919,7 +3919,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
@@ -3955,7 +3955,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         isThen?='then'? 
-	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         isReturn?='return'? 
@@ -3973,7 +3973,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         )? 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -3983,7 +3983,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
@@ -4019,7 +4019,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         isThen?='then'? 
-	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         isReturn?='return'? 
@@ -4037,7 +4037,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         )? 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -4047,7 +4047,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
@@ -4083,7 +4083,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         isThen?='then'? 
-	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         isReturn?='return'? 
@@ -4096,7 +4096,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         portionKind=PortionKind 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -4106,7 +4106,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
@@ -4131,7 +4131,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         isThen?='then'? 
-	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         (
@@ -4148,7 +4148,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         )? 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -4158,7 +4158,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         forVariableParameter=ForVariableParameter 
@@ -4185,7 +4185,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         isThen?='then'? 
-	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         (
@@ -4202,7 +4202,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         )? 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -4212,7 +4212,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         (isSuccession?='succession' successionElement+=IfSuccessionAsUsage)? 
@@ -4243,7 +4243,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         isThen?='then'? 
-	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         (
@@ -4260,7 +4260,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         )? 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -4270,7 +4270,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         sendNodeParameter?=Expression 
@@ -4297,7 +4297,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         isThen?='then'? 
-	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         (
@@ -4314,7 +4314,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         )? 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -4324,7 +4324,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         NodeParameter?=Expression 
@@ -4349,7 +4349,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         isThen?='then'? 
-	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         (
@@ -4366,7 +4366,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         )? 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -4376,7 +4376,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         whileConditionExpression=Expression? 
@@ -4427,7 +4427,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         )? 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -4437,7 +4437,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
@@ -4483,7 +4483,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         )? 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -4493,7 +4493,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         connectorPart+=ConnectorEnd 
@@ -4533,7 +4533,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//         )? 
 	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	//         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	//         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	//         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	//         (
 	//             (
@@ -4543,7 +4543,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	//                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	//             ) 
-	//             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	//             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	//             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	//         )* 
 	//         connectorPart+=ConnectorEnd 
@@ -4681,7 +4681,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         isThen?='then'? 
-	 *         (ThenMultiplicity+=MultiplicityExpression | (ThenMultiplicity+=MultiplicityExpression ThenMultiplicity+=MultiplicityExpression))? 
+	 *         (ThenMulti0=MultiplicityExpression | (ThenMulti1=MultiplicityExpression ThenMulti02=MultiplicityExpression))? 
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
 	 *         direction=FeatureDirection? 
@@ -4693,7 +4693,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         nodeKind=CommonNodeKind 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -4703,7 +4703,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         elements+=ActionNodeBodyElement*
@@ -4919,14 +4919,14 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                     (declaredShortName=Name declaredName=Name?) | 
 	 *                     (
 	 *                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *                         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))?
+	 *                         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))?
 	 *                     ) | 
 	 *                     (
 	 *                         (
 	 *                             (declaredShortName=Name declaredName=Name?) | 
 	 *                             (
 	 *                                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *                                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))?
+	 *                                 (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))?
 	 *                             ) | 
 	 *                             declaredName=Name
 	 *                         )? 
@@ -4942,25 +4942,25 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                         (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                         (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *                     ) 
-	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *                     (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *                     (
-	 *                         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *                         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *                         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
 	 *                     )?
 	 *                 )+ 
-	 *                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))?
+	 *                 (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))?
 	 *             ) | 
 	 *             (declaredShortName=Name declaredName=Name?) | 
 	 *             (
 	 *                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))?
+	 *                 (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))?
 	 *             ) | 
 	 *             (
 	 *                 (
 	 *                     (declaredShortName=Name declaredName=Name?) | 
 	 *                     (
 	 *                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *                         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))?
+	 *                         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))?
 	 *                     ) | 
 	 *                     declaredName=Name
 	 *                 )? 
@@ -5004,7 +5004,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         isReturn?='return'? 
 	 *         (isEnd?='end' | (direction=FeatureDirection? (isAbstract?='abstract' | isVariation?='variation')? isReadOnly?='readonly'? isDerived?='derived'?))? 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -5014,7 +5014,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
@@ -5903,7 +5903,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *
 	 * Constraint:
 	 *     (
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         delcaredName=Name? 
 	 *         refElement=FeatureChainName
 	 *     )
@@ -5926,7 +5926,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         isVariant?='variant'? 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -5936,7 +5936,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
@@ -5966,7 +5966,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                     (
 	 *                         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *                         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *                         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *                         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *                         (
 	 *                             (typings+=FeatureTypingName typings+=FeatureTypingName*) | 
@@ -5988,7 +5988,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                     )
 	 *                 ) 
 	 *                 (
-	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *                     (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *                     (
 	 *                         (typings+=FeatureTypingName typings+=FeatureTypingName*) | 
@@ -6001,7 +6001,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (
 	 *                     elements+=RequirementBodyElement+ | 
 	 *                     (
-	 *                         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *                         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *                         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *                         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *                         elements+=CalculationBodyElement* 
@@ -6012,7 +6012,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (
 	 *                 prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *                 (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *                 ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *                 elements+=CalculationBodyElement* 
@@ -6040,7 +6040,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         isVariant?='variant'? 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -6050,7 +6050,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
@@ -6079,7 +6079,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (
 	 *                 prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *                 (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *                 ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)?
 	 *             ) | 
@@ -6088,7 +6088,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                     (
 	 *                         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *                         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *                         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *                         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *                     ) | 
 	 *                     refElement=FeatureChainName
@@ -6101,7 +6101,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                         (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                         (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *                     ) 
-	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *                     (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *                 )+ 
 	 *                 ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)?
@@ -6135,7 +6135,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                     (
 	 *                         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *                         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *                         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *                         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *                         (
 	 *                             (typings+=FeatureTypingName typings+=FeatureTypingName*) | 
@@ -6157,7 +6157,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                     )
 	 *                 ) 
 	 *                 (
-	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *                     (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *                     (
 	 *                         (typings+=FeatureTypingName typings+=FeatureTypingName*) | 
@@ -6170,7 +6170,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (
 	 *                     elements+=RequirementBodyElement+ | 
 	 *                     (
-	 *                         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *                         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *                         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *                         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *                         elements+=CalculationBodyElement* 
@@ -6181,7 +6181,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (
 	 *                 prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *                 (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *                 ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
 	 *                 elements+=CalculationBodyElement* 
@@ -6212,7 +6212,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (
 	 *                 prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *                 (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *                 ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)?
 	 *             ) | 
@@ -6221,7 +6221,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                     (
 	 *                         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *                         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *                         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *                         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *                     ) | 
 	 *                     refElement=FeatureChainName
@@ -6234,7 +6234,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                         (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                         (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *                     ) 
-	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *                     (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *                 )+ 
 	 *                 ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)?
@@ -6263,7 +6263,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         isVariant?='variant'? 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -6273,7 +6273,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
@@ -6300,7 +6300,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         isVariant?='variant'? 
 	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -6310,7 +6310,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
@@ -6335,13 +6335,13 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (
 	 *                     (
 	 *                         (payloadFeatureElement=FeatureChainName | (declaredShortName=Name declaredName=Name?) | declaredName=Name) 
-	 *                         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))?
+	 *                         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))?
 	 *                     ) | 
 	 *                     (
 	 *                         (
 	 *                             (
 	 *                                 (payloadFeatureElement=FeatureChainName | (declaredShortName=Name declaredName=Name?) | declaredName=Name) 
-	 *                                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))?
+	 *                                 (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))?
 	 *                             ) | 
 	 *                             (declaredShortName=Name declaredName=Name?) | 
 	 *                             declaredName=Name
@@ -6359,29 +6359,26 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                         (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                         (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *                     ) 
-	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *                     (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *                     (
-	 *                         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *                         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *                         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
 	 *                     )?
 	 *                 )+ 
 	 *                 (
+	 *                     ((Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? payloadFeatureElement=FeatureChainName?) | 
 	 *                     (
-	 *                         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *                         payloadFeatureElement=FeatureChainName?
-	 *                     ) | 
-	 *                     (
-	 *                         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *                         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *                         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
 	 *                     ) | 
 	 *                     (
 	 *                         (
-	 *                             Multiplicity+=MultiplicityExpression | 
+	 *                             Multi0=MultiplicityExpression | 
 	 *                             (
-	 *                                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *                                 (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *                                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
 	 *                             ) | 
-	 *                             (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression)
+	 *                             (Multi1=MultiplicityExpression Multi02=MultiplicityExpression)
 	 *                         )? 
 	 *                         (((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression) | (triggerkind=TriggerKind triggerExpression=Expression))
 	 *                     )
@@ -6390,16 +6387,13 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             payloadFeatureElement=FeatureChainName | 
 	 *             (
 	 *                 (payloadFeatureElement=FeatureChainName | (declaredShortName=Name declaredName=Name?) | declaredName=Name) 
-	 *                 (
-	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *                     payloadFeatureElement=FeatureChainName?
-	 *                 )
+	 *                 ((Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? payloadFeatureElement=FeatureChainName?)
 	 *             ) | 
 	 *             (
 	 *                 (
 	 *                     (
 	 *                         (payloadFeatureElement=FeatureChainName | (declaredShortName=Name declaredName=Name?) | declaredName=Name) 
-	 *                         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))?
+	 *                         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))?
 	 *                     ) | 
 	 *                     (declaredShortName=Name declaredName=Name?) | 
 	 *                     declaredName=Name
@@ -6410,7 +6404,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (
 	 *                     (
 	 *                         (payloadFeatureElement=FeatureChainName | (declaredShortName=Name declaredName=Name?) | declaredName=Name) 
-	 *                         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))?
+	 *                         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))?
 	 *                     ) | 
 	 *                     (declaredShortName=Name declaredName=Name?) | 
 	 *                     declaredName=Name
@@ -6446,20 +6440,17 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (payloadFeatureElement=FeatureChainName | (declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *             (
 	 *                 (
-	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *                     (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *                     ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)?
 	 *                 ) | 
-	 *                 (
-	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *                     payloadFeatureElement=FeatureChainName?
-	 *                 )
+	 *                 ((Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? payloadFeatureElement=FeatureChainName?)
 	 *             )?
 	 *         ) | 
 	 *         (
 	 *             (
 	 *                 (
 	 *                     (payloadFeatureElement=FeatureChainName | (declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))?
+	 *                     (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))?
 	 *                 ) | 
 	 *                 (declaredShortName=Name declaredName=Name?) | 
 	 *                 declaredName=Name
@@ -6471,13 +6462,13 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             (
 	 *                 (
 	 *                     (payloadFeatureElement=FeatureChainName | (declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))?
+	 *                     (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))?
 	 *                 ) | 
 	 *                 (
 	 *                     (
 	 *                         (
 	 *                             (payloadFeatureElement=FeatureChainName | (declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *                             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))?
+	 *                             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))?
 	 *                         ) | 
 	 *                         (declaredShortName=Name declaredName=Name?) | 
 	 *                         declaredName=Name
@@ -6495,21 +6486,18 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                     (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                     (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *                 ) 
-	 *                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *                 (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *                 (
-	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *                     (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
 	 *                 )?
 	 *             )+ 
 	 *             (
 	 *                 (
-	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *                     (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *                     ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)?
 	 *                 ) | 
-	 *                 (
-	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
-	 *                     payloadFeatureElement=FeatureChainName?
-	 *                 )
+	 *                 ((Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? payloadFeatureElement=FeatureChainName?)
 	 *             )
 	 *         ) | 
 	 *         (
@@ -6532,7 +6520,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         (referencedFeature=FeatureChainName | (declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -6542,7 +6530,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)?
@@ -6562,7 +6550,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
 	 *         (
 	 *             (
@@ -6572,7 +6560,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *             ) 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
 	 *         )* 
 	 *         sendNodeParameter=Expression 
@@ -6596,14 +6584,14 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         (declaredShortName=Name declaredName=Name?) | 
 	 *         (
 	 *             ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))?
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))?
 	 *         ) | 
 	 *         (
 	 *             (
 	 *                 (declaredShortName=Name declaredName=Name?) | 
 	 *                 (
 	 *                     ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))?
+	 *                     (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))?
 	 *                 ) | 
 	 *                 declaredName=Name
 	 *             )? 
@@ -6614,14 +6602,14 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (declaredShortName=Name declaredName=Name?) | 
 	 *                 (
 	 *                     ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))?
+	 *                     (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))?
 	 *                 ) | 
 	 *                 (
 	 *                     (
 	 *                         (declaredShortName=Name declaredName=Name?) | 
 	 *                         (
 	 *                             ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *                             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))?
+	 *                             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))?
 	 *                         ) | 
 	 *                         declaredName=Name
 	 *                     )? 
@@ -6637,13 +6625,13 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                     (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                     (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *                 ) 
-	 *                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *                 (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *                 (
-	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *                     (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
 	 *                 )?
 	 *             )+ 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))?
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))?
 	 *         ) | 
 	 *         declaredName=Name
 	 *     )?
@@ -6664,14 +6652,14 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         (declaredShortName=Name declaredName=Name?) | 
 	 *         (
 	 *             ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))?
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))?
 	 *         ) | 
 	 *         (
 	 *             (
 	 *                 (declaredShortName=Name declaredName=Name?) | 
 	 *                 (
 	 *                     ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))?
+	 *                     (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))?
 	 *                 ) | 
 	 *                 declaredName=Name
 	 *             )? 
@@ -6682,14 +6670,14 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (declaredShortName=Name declaredName=Name?) | 
 	 *                 (
 	 *                     ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))?
+	 *                     (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))?
 	 *                 ) | 
 	 *                 (
 	 *                     (
 	 *                         (declaredShortName=Name declaredName=Name?) | 
 	 *                         (
 	 *                             ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *                             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))?
+	 *                             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))?
 	 *                         ) | 
 	 *                         declaredName=Name
 	 *                     )? 
@@ -6705,13 +6693,13 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                     (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                     (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *                 ) 
-	 *                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *                 (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *                 (
-	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *                     (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
 	 *                 )?
 	 *             )+ 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))?
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))?
 	 *         ) | 
 	 *         declaredName=Name
 	 *     )?
@@ -6732,14 +6720,14 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         (declaredShortName=Name declaredName=Name?) | 
 	 *         (
 	 *             ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))?
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))?
 	 *         ) | 
 	 *         (
 	 *             (
 	 *                 (declaredShortName=Name declaredName=Name?) | 
 	 *                 (
 	 *                     ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))?
+	 *                     (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))?
 	 *                 ) | 
 	 *                 declaredName=Name
 	 *             )? 
@@ -6750,14 +6738,14 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                 (declaredShortName=Name declaredName=Name?) | 
 	 *                 (
 	 *                     ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))?
+	 *                     (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))?
 	 *                 ) | 
 	 *                 (
 	 *                     (
 	 *                         (declaredShortName=Name declaredName=Name?) | 
 	 *                         (
 	 *                             ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *                             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))?
+	 *                             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))?
 	 *                         ) | 
 	 *                         declaredName=Name
 	 *                     )? 
@@ -6773,13 +6761,13 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *                     (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
 	 *                     (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
 	 *                 ) 
-	 *                 (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *                 (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *                 (
-	 *                     (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *                     (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
 	 *                 )?
 	 *             )+ 
-	 *             (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))?
+	 *             (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))?
 	 *         ) | 
 	 *         declaredName=Name
 	 *     )?
@@ -7227,7 +7215,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     (
 	 *         visibility=VisibilityIndicator? 
 	 *         isVariant?='variant'? 
-	 *         (Multiplicity+=MultiplicityExpression | (Multiplicity+=MultiplicityExpression Multiplicity+=MultiplicityExpression))? 
+	 *         (Multi0=MultiplicityExpression | (Multi1=MultiplicityExpression Multi02=MultiplicityExpression))? 
 	 *         thenElement+=ConnectorEnd 
 	 *         elements+=UsageBodyElement*
 	 *     )

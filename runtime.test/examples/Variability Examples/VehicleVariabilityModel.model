@@ -10,9 +10,8 @@
         <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle"/>
         <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="Diameter"/>
         <elements xsi:type="sysMLOC:PartDefinition" declaredName="Cylinder">
-          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="diameter">
+          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="diameter" Multi0="1">
             <typings>Diameter</typings>
-            <Multiplicity>1</Multiplicity>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:PartDefinition" declaredName="Engine"/>
@@ -23,18 +22,14 @@
       <elements xsi:type="sysMLOC:Package" declaredName="PartsTree">
         <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle">
           <typings>Vehicle</typings>
-          <elements xsi:type="sysMLOC:PartUsage" declaredName="engine">
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="engine" Multi0="1">
             <typings>Engine</typings>
-            <Multiplicity>1</Multiplicity>
           </elements>
-          <elements xsi:type="sysMLOC:PartUsage" declaredName="transmission">
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="transmission" Multi0="1">
             <typings>Transmission</typings>
-            <Multiplicity>1</Multiplicity>
           </elements>
-          <elements xsi:type="sysMLOC:PartUsage" declaredName="sunroof">
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="sunroof" Multi1="0" Multi02="1">
             <typings>Sunroof</typings>
-            <Multiplicity>0</Multiplicity>
-            <Multiplicity>1</Multiplicity>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:PartUsage" declaredName="engine">
@@ -42,24 +37,20 @@
           <elements xsi:type="sysMLOC:PortUsage" declaredName="autoPort">
             <typings>AutoPort</typings>
           </elements>
-          <elements xsi:type="sysMLOC:PartUsage" declaredName="cylinder">
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="cylinder" Multi1="2" Multi02="*">
             <typings>Cylinder</typings>
-            <Multiplicity>2</Multiplicity>
-            <Multiplicity>*</Multiplicity>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:PartUsage" declaredName="'4cylEngine'">
           <subsetting>engine</subsetting>
-          <elements xsi:type="sysMLOC:PartUsage">
+          <elements xsi:type="sysMLOC:PartUsage" Multi0="4">
             <redefinitions>cylinder</redefinitions>
-            <Multiplicity>4</Multiplicity>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:PartUsage" declaredName="'6cylEngine'">
           <subsetting>engine</subsetting>
-          <elements xsi:type="sysMLOC:PartUsage">
+          <elements xsi:type="sysMLOC:PartUsage" Multi0="6">
             <redefinitions>cylinder</redefinitions>
-            <Multiplicity>6</Multiplicity>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:PartUsage" declaredName="transmission">
@@ -126,16 +117,14 @@
         <elements xsi:type="sysMLOC:PartUsage" isAbstract="true" declaredName="vehicleFamily">
           <subsetting>vehicle</subsetting>
           <elements xsi:type="sysMLOC:CodeAnnotation" body="// Variation point usage&#xD;&#xA;"/>
-          <elements xsi:type="sysMLOC:PartUsage">
+          <elements xsi:type="sysMLOC:PartUsage" Multi0="1">
             <typings>EngineChoices</typings>
             <redefinitions>engine</redefinitions>
-            <Multiplicity>1</Multiplicity>
           </elements>
           <elements xsi:type="sysMLOC:CodeAnnotation" body="// Variation point with embedded variant definitions&#xD;&#xA;"/>
-          <elements xsi:type="sysMLOC:PartUsage" isVariation="true">
+          <elements xsi:type="sysMLOC:PartUsage" isVariation="true" Multi0="1">
             <typings>Transmission</typings>
             <redefinitions>transmission</redefinitions>
-            <Multiplicity>1</Multiplicity>
             <elements xsi:type="sysMLOC:ReferenceVariantUsage" refElement="manualTransmission"/>
             <elements xsi:type="sysMLOC:ReferenceVariantUsage" refElement="automaticTransmission"/>
           </elements>
@@ -145,12 +134,8 @@
           <elements xsi:type="sysMLOC:CodeAnnotation" body="// Variation point on variant multiplicity (inherited multiplicity is [0..1]) &#xD;&#xA;"/>
           <elements xsi:type="sysMLOC:PartUsage" isVariation="true">
             <redefinitions>sunroof</redefinitions>
-            <elements xsi:type="sysMLOC:PartUsage" isVariant="true" declaredName="withSunroof">
-              <Multiplicity>1</Multiplicity>
-            </elements>
-            <elements xsi:type="sysMLOC:PartUsage" isVariant="true" declaredName="withoutSunroof">
-              <Multiplicity>0</Multiplicity>
-            </elements>
+            <elements xsi:type="sysMLOC:PartUsage" isVariant="true" declaredName="withSunroof" Multi0="1"/>
+            <elements xsi:type="sysMLOC:PartUsage" isVariant="true" declaredName="withoutSunroof" Multi0="0"/>
           </elements>
           <elements xsi:type="sysMLOC:PerformActionUsage" refElement="ActionTree::providePowerFamily"/>
         </elements>

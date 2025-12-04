@@ -19,9 +19,8 @@
       <elements xsi:type="sysMLOC:PortDefinition" declaredName="WheelToRoadPort"/>
       <elements xsi:type="sysMLOC:PortDefinition" declaredName="VehicleToRoadPort">
         <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9; * A port definition can have nested ports.&#xA;&#x9;&#x9;&#x9; */"/>
-        <elements xsi:type="sysMLOC:PortUsage" declaredName="wheelToRoadPort">
+        <elements xsi:type="sysMLOC:PortUsage" declaredName="wheelToRoadPort" Multi0="2">
           <typings>WheelToRoadPort</typings>
-          <Multiplicity>2</Multiplicity>
         </elements>
       </elements>
       <elements xsi:type="sysMLOC:CodeAnnotation" body="// Blocks&#xA;"/>
@@ -189,9 +188,8 @@
             <connectorPart refElement="rearAxle.rightHalfAxle.axleToWheelPort"/>
             <connectorPart refElement="rightWheel.wheelToAxlePort"/>
           </elements>
-          <elements xsi:type="sysMLOC:PartUsage" declaredName="rearWheel" isOrdered="true">
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="rearWheel" Multi0="2" isOrdered="true">
             <typings>Wheel</typings>
-            <Multiplicity>2</Multiplicity>
           </elements>
           <elements xsi:type="sysMLOC:Comment" body="/* The two rear wheels of 'rearAxleAssembly' must be given&#xA;&#x9;&#x9;&#x9;&#x9; * their own names in order to be referenced in connections.&#xA;&#x9;&#x9;&#x9;&#x9; * &#xA;&#x9;&#x9;&#x9;&#x9; * (&quot;:>&quot; is a shorthand here for &quot;subsets&quot;.)&#xA;&#x9;&#x9;&#x9;&#x9; */"/>
           <elements xsi:type="sysMLOC:PartUsage" declaredName="leftWheel" valuePart="rearWheel#(1)">

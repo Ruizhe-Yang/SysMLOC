@@ -14,9 +14,8 @@
       <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="MeasurementReferences" isNamespace="true"/>
       <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="DistancePerVolumeUnit">
         <superclassifiers>DerivedUnit</superclassifiers>
-        <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="distancePF">
+        <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="distancePF" Multi0="1">
           <typings>QuantityPowerFactor</typings>
-          <Multiplicity>1</Multiplicity>
           <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
             <redefinitions>quantity</redefinitions>
           </elements>
@@ -24,9 +23,8 @@
             <redefinitions>exponent</redefinitions>
           </elements>
         </elements>
-        <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="volumePF">
+        <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="volumePF" Multi0="1">
           <typings>QuantityPowerFactor</typings>
-          <Multiplicity>1</Multiplicity>
           <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
             <redefinitions>quantity</redefinitions>
           </elements>
@@ -132,9 +130,8 @@
           <connectorPart refElement="fuelInPort.fuel"/>
           <connectorPart refElement="fuelTank.fuelInPort.fuel"/>
         </elements>
-        <elements xsi:type="sysMLOC:PartUsage" declaredName="wheel">
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="wheel" Multi0="4">
           <typings>Wheel</typings>
-          <Multiplicity>4</Multiplicity>
           <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="wheelDiameter">
             <redefinitions>diameter</redefinitions>
           </elements>
@@ -339,13 +336,11 @@
           <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="sc">
             <typings>NominalScenario</typings>
           </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="power">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="power" Multi0="*">
             <typings>PowerValue</typings>
-            <Multiplicity>*</Multiplicity>
           </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="acceleration">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="acceleration" Multi0="*">
             <typings>AccelerationValue</typings>
-            <Multiplicity>*</Multiplicity>
           </elements>
           <elements xsi:type="sysMLOC:Comment" body="/*&#xD;&#xA;&#x9;&#x9;&#x9;&#x9; * Solve for the required engine power as a function of time&#xD;&#xA;&#x9;&#x9;&#x9;&#x9; * to support the scenarios.&#xD;&#xA;&#x9;&#x9;&#x9;&#x9; */"/>
           <elements xsi:type="sysMLOC:AssertConstraintUsage" declaredName="straightLineDynamics">
@@ -353,13 +348,11 @@
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:ActionUsage" declaredName="fuelConsumptionAnalysis">
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="power" valuePart="dynamicsAnalysis.power">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="power" Multi0="*" valuePart="dynamicsAnalysis.power">
             <typings>PowerValue</typings>
-            <Multiplicity>*</Multiplicity>
           </elements>
-          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="acceleration" valuePart="dynamicsAnalysis.acceleration">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="acceleration" Multi0="*" valuePart="dynamicsAnalysis.acceleration">
             <typings>AccelerationValue</typings>
-            <Multiplicity>*</Multiplicity>
           </elements>
           <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="fuelEconomy" valuePart="calculatedFuelEconomy">
             <typings>DistancePerVolumeValue</typings>

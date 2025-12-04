@@ -63,7 +63,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DefaultReferenceUsageImpl#getReferences <em>References</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DefaultReferenceUsageImpl#getCrosses <em>Crosses</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DefaultReferenceUsageImpl#getRedefinitions <em>Redefinitions</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DefaultReferenceUsageImpl#getMultiplicity <em>Multiplicity</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DefaultReferenceUsageImpl#getMulti0 <em>Multi0</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DefaultReferenceUsageImpl#getMulti1 <em>Multi1</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DefaultReferenceUsageImpl#getMulti02 <em>Multi02</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DefaultReferenceUsageImpl#isIsOrdered <em>Is Ordered</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DefaultReferenceUsageImpl#isIsNonunique <em>Is Nonunique</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DefaultReferenceUsageImpl#isIsInitial <em>Is Initial</em>}</li>
@@ -289,14 +291,64 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
   protected EList<String> redefinitions;
 
   /**
-   * The cached value of the '{@link #getMultiplicity() <em>Multiplicity</em>}' attribute list.
+   * The default value of the '{@link #getMulti0() <em>Multi0</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMultiplicity()
+   * @see #getMulti0()
    * @generated
    * @ordered
    */
-  protected EList<String> multiplicity;
+  protected static final String MULTI0_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getMulti0() <em>Multi0</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMulti0()
+   * @generated
+   * @ordered
+   */
+  protected String multi0 = MULTI0_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getMulti1() <em>Multi1</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMulti1()
+   * @generated
+   * @ordered
+   */
+  protected static final String MULTI1_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getMulti1() <em>Multi1</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMulti1()
+   * @generated
+   * @ordered
+   */
+  protected String multi1 = MULTI1_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getMulti02() <em>Multi02</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMulti02()
+   * @generated
+   * @ordered
+   */
+  protected static final String MULTI02_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getMulti02() <em>Multi02</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMulti02()
+   * @generated
+   * @ordered
+   */
+  protected String multi02 = MULTI02_EDEFAULT;
 
   /**
    * The default value of the '{@link #isIsOrdered() <em>Is Ordered</em>}' attribute.
@@ -750,13 +802,73 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
    * @generated
    */
   @Override
-  public EList<String> getMultiplicity()
+  public String getMulti0()
   {
-    if (multiplicity == null)
-    {
-      multiplicity = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.DEFAULT_REFERENCE_USAGE__MULTIPLICITY);
-    }
-    return multiplicity;
+    return multi0;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setMulti0(String newMulti0)
+  {
+    String oldMulti0 = multi0;
+    multi0 = newMulti0;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.DEFAULT_REFERENCE_USAGE__MULTI0, oldMulti0, multi0));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getMulti1()
+  {
+    return multi1;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setMulti1(String newMulti1)
+  {
+    String oldMulti1 = multi1;
+    multi1 = newMulti1;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.DEFAULT_REFERENCE_USAGE__MULTI1, oldMulti1, multi1));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getMulti02()
+  {
+    return multi02;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setMulti02(String newMulti02)
+  {
+    String oldMulti02 = multi02;
+    multi02 = newMulti02;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.DEFAULT_REFERENCE_USAGE__MULTI02, oldMulti02, multi02));
   }
 
   /**
@@ -1001,8 +1113,12 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
         return getCrosses();
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__REDEFINITIONS:
         return getRedefinitions();
-      case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__MULTIPLICITY:
-        return getMultiplicity();
+      case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__MULTI0:
+        return getMulti0();
+      case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__MULTI1:
+        return getMulti1();
+      case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__MULTI02:
+        return getMulti02();
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__IS_ORDERED:
         return isIsOrdered();
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__IS_NONUNIQUE:
@@ -1078,9 +1194,14 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
         getRedefinitions().clear();
         getRedefinitions().addAll((Collection<? extends String>)newValue);
         return;
-      case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__MULTIPLICITY:
-        getMultiplicity().clear();
-        getMultiplicity().addAll((Collection<? extends String>)newValue);
+      case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__MULTI0:
+        setMulti0((String)newValue);
+        return;
+      case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__MULTI1:
+        setMulti1((String)newValue);
+        return;
+      case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__MULTI02:
+        setMulti02((String)newValue);
         return;
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__IS_ORDERED:
         setIsOrdered((Boolean)newValue);
@@ -1160,8 +1281,14 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__REDEFINITIONS:
         getRedefinitions().clear();
         return;
-      case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__MULTIPLICITY:
-        getMultiplicity().clear();
+      case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__MULTI0:
+        setMulti0(MULTI0_EDEFAULT);
+        return;
+      case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__MULTI1:
+        setMulti1(MULTI1_EDEFAULT);
+        return;
+      case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__MULTI02:
+        setMulti02(MULTI02_EDEFAULT);
         return;
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__IS_ORDERED:
         setIsOrdered(IS_ORDERED_EDEFAULT);
@@ -1227,8 +1354,12 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
         return crosses != null && !crosses.isEmpty();
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__REDEFINITIONS:
         return redefinitions != null && !redefinitions.isEmpty();
-      case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__MULTIPLICITY:
-        return multiplicity != null && !multiplicity.isEmpty();
+      case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__MULTI0:
+        return MULTI0_EDEFAULT == null ? multi0 != null : !MULTI0_EDEFAULT.equals(multi0);
+      case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__MULTI1:
+        return MULTI1_EDEFAULT == null ? multi1 != null : !MULTI1_EDEFAULT.equals(multi1);
+      case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__MULTI02:
+        return MULTI02_EDEFAULT == null ? multi02 != null : !MULTI02_EDEFAULT.equals(multi02);
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__IS_ORDERED:
         return isOrdered != IS_ORDERED_EDEFAULT;
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__IS_NONUNIQUE:
@@ -1344,7 +1475,9 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__MULTIPLICITY: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTIPLICITY;
+        case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__MULTI0: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI0;
+        case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__MULTI1: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI1;
+        case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__MULTI02: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI02;
         default: return -1;
       }
     }
@@ -1493,7 +1626,9 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTIPLICITY: return SysMLOCPackage.DEFAULT_REFERENCE_USAGE__MULTIPLICITY;
+        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI0: return SysMLOCPackage.DEFAULT_REFERENCE_USAGE__MULTI0;
+        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI1: return SysMLOCPackage.DEFAULT_REFERENCE_USAGE__MULTI1;
+        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI02: return SysMLOCPackage.DEFAULT_REFERENCE_USAGE__MULTI02;
         default: return -1;
       }
     }
@@ -1584,8 +1719,12 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
     result.append(crosses);
     result.append(", redefinitions: ");
     result.append(redefinitions);
-    result.append(", Multiplicity: ");
-    result.append(multiplicity);
+    result.append(", Multi0: ");
+    result.append(multi0);
+    result.append(", Multi1: ");
+    result.append(multi1);
+    result.append(", Multi02: ");
+    result.append(multi02);
     result.append(", isOrdered: ");
     result.append(isOrdered);
     result.append(", isNonunique: ");

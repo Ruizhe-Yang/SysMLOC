@@ -38,16 +38,13 @@
     <elements xsi:type="sysMLOC:Package" declaredName="Usages">
       <elements xsi:type="sysMLOC:PartUsage" declaredName="engine">
         <typings>Engine</typings>
-        <elements xsi:type="sysMLOC:PartUsage" declaredName="cyl">
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="cyl" Multi0="*">
           <typings>Cylinder</typings>
-          <Multiplicity>*</Multiplicity>
-          <elements xsi:type="sysMLOC:PartUsage" declaredName="p">
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="p" Multi0="1">
             <typings>Piston</typings>
-            <Multiplicity>1</Multiplicity>
           </elements>
-          <elements xsi:type="sysMLOC:PartUsage" declaredName="rod">
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="rod" Multi0="1">
             <typings>ConnectingRod</typings>
-            <Multiplicity>1</Multiplicity>
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:PartUsage" declaredName="cs">
@@ -57,9 +54,8 @@
       <elements xsi:type="sysMLOC:PartUsage" isVariation="true" declaredName="engineChoice">
         <subsetting>engine</subsetting>
         <elements xsi:type="sysMLOC:PartUsage" isVariant="true" declaredName="'4cylEngine'">
-          <elements xsi:type="sysMLOC:PartUsage">
+          <elements xsi:type="sysMLOC:PartUsage" Multi0="4">
             <redefinitions>cyl</redefinitions>
-            <Multiplicity>4</Multiplicity>
           </elements>
           <elements xsi:type="sysMLOC:PartUsage">
             <typings>'4CylCrankShaft'</typings>
@@ -67,9 +63,8 @@
           </elements>
         </elements>
         <elements xsi:type="sysMLOC:PartUsage" isVariant="true" declaredName="'6cylEngine'">
-          <elements xsi:type="sysMLOC:PartUsage">
+          <elements xsi:type="sysMLOC:PartUsage" Multi0="6">
             <redefinitions>cyl</redefinitions>
-            <Multiplicity>6</Multiplicity>
           </elements>
           <elements xsi:type="sysMLOC:PartUsage">
             <typings>'6CylCrankShaft'</typings>
@@ -79,9 +74,8 @@
       </elements>
       <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle">
         <typings>Vehicle</typings>
-        <elements xsi:type="sysMLOC:PartUsage" declaredName="engine" valuePart="engineChoice::'6cylEngine'">
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="engine" Multi0="1" valuePart="engineChoice::'6cylEngine'">
           <subsetting>engineChoice</subsetting>
-          <Multiplicity>1</Multiplicity>
           <elements xsi:type="sysMLOC:AssertConstraintUsage" declaredName="engineSelectionRational">
             <elements xsi:type="sysMLOC:Documentation" body="/* Selected the best engine based on the 'engineTradeStudy'. */"/>
             <resultExpressionParameter resultExpression="engine == Analysis::engineTradeStudy.selectedAlternative"/>
@@ -111,10 +105,8 @@
       </elements>
       <elements xsi:type="sysMLOC:AnalysisCaseUsage" declaredName="engineTradeStudy">
         <typings>TradeStudy</typings>
-        <elements xsi:type="sysMLOC:SubjectUsage" valuePart="all engineChoice">
+        <elements xsi:type="sysMLOC:SubjectUsage" Multi1="1" Multi02="*" valuePart="all engineChoice">
           <typings>Engine</typings>
-          <Multiplicity>1</Multiplicity>
-          <Multiplicity>*</Multiplicity>
         </elements>
         <elements xsi:type="sysMLOC:ObjectiveRequirementUsage">
           <typings>MaximizeObjective</typings>

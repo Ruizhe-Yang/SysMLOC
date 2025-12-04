@@ -26,9 +26,8 @@
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:ActionDefinition" declaredName="ComputeMotion">
-      <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="powerProfile">
+      <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="powerProfile" Multi0="*">
         <subsetting>ISQ::power</subsetting>
-        <Multiplicity>*</Multiplicity>
       </elements>
       <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="vehicleMass">
         <subsetting>ISQ::mass</subsetting>
@@ -42,9 +41,8 @@
       <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="deltaT">
         <subsetting>ISQ::time</subsetting>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" direction="out" declaredName="positions" isInitial="true" valuePart="( )">
+      <elements xsi:type="sysMLOC:AttributeUsage" direction="out" declaredName="positions" Multi0="*" isInitial="true" valuePart="( )">
         <subsetting>ISQ::length</subsetting>
-        <Multiplicity>*</Multiplicity>
       </elements>
       <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="position" isInitial="true" valuePart="initialPosition"/>
       <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="speed" isInitial="true" valuePart="initialSpeed"/>

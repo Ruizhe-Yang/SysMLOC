@@ -10,9 +10,8 @@
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="TensileStrengthUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -20,9 +19,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -30,9 +28,8 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
         <typings>QuantityPowerFactor</typings>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
         </elements>
@@ -68,19 +65,16 @@
     <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9; * The classification of materials into metals and alloys is grossly simplified and not exhaustive.&#xA;&#x9; * A more complete classification would include: ChemicalSubstance, PureMaterial, MixedMaterial,&#xA;&#x9; * Class, Ceramic, OrganicMaterial, AnorganicMaterial, Polymer, HybridMaterial, CompositeMaterial,&#xA;&#x9; * etc.&#xA;&#x9; */"/>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Metal">
       <superclassifiers>Material</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="atomicMass">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="atomicMass" Multi0="1">
         <typings>AtomicMassValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MaterialFraction">
-      <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="material">
+      <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="material" Multi0="1">
         <typings>Material</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="massFraction">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="massFraction" Multi0="1">
         <typings>MassFractionValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MassFractionValue">
@@ -88,10 +82,8 @@
     </elements>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Alloy">
       <superclassifiers>Material</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="fractions">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="fractions" Multi1="2" Multi02="*">
         <typings>MaterialFraction</typings>
-        <Multiplicity>2</Multiplicity>
-        <Multiplicity>*</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:IndividualDefinition" declaredName="Iron" isIndividual="true">

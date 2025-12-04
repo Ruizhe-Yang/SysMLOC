@@ -6,10 +6,8 @@
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="age">
         <typings>ScalarValues::Natural</typings>
       </elements>
-      <elements xsi:type="sysMLOC:PortionUsage" declaredName="asPresident" portionKind="timeslice">
+      <elements xsi:type="sysMLOC:PortionUsage" declaredName="asPresident" Multi1="0" Multi02="*" portionKind="timeslice">
         <typings>Person</typings>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>*</Multiplicity>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * These are the periods during which a Person is president.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
     </elements>
@@ -19,27 +17,23 @@
     </elements>
     <elements xsi:type="sysMLOC:ItemDefinition" declaredName="Country">
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * This is the definition of the class of countries, each of which may have &#xD;&#xA;&#x9;&#x9; * at most one president (at any point in time).&#xD;&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="presidentOfCountry">
+      <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="presidentOfCountry" Multi1="0" Multi02="1">
         <typings>Person</typings>
         <subsetting>presidentOfCountry.asPresident</subsetting>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:ItemDefinition" isIndividual="true" declaredName="UnitedStates">
       <superclassifiers>Country</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * This is the definition of the individual country that is the&#xD;&#xA;&#x9;&#x9; * United States. It contains a single instance. The United States&#xD;&#xA;&#x9;&#x9; * always has a president who must be at least 35 years old.&#xD;&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="presidentOfUS">
+      <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="presidentOfUS" Multi0="1">
         <redefinitions>presidentOfCountry</redefinitions>
-        <Multiplicity>1</Multiplicity>
         <elements xsi:type="sysMLOC:AssertConstraintUsage">
           <resultExpressionParameter resultExpression="age >= 35"/>
         </elements>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:ItemUsage" portionKind="timeslice" declaredName="UnitedStatesWithJohnAsPresident">
+    <elements xsi:type="sysMLOC:ItemUsage" portionKind="timeslice" declaredName="UnitedStatesWithJohnAsPresident" Multi0="*">
       <typings>UnitedStates</typings>
-      <Multiplicity>*</Multiplicity>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * These are the time slices of the United States during&#xD;&#xA;&#x9;&#x9; * which John is president of the United States.&#xD;&#xA;&#x9;&#x9; */"/>
       <elements xsi:type="sysMLOC:ReferenceUsage">
         <typings>John</typings>

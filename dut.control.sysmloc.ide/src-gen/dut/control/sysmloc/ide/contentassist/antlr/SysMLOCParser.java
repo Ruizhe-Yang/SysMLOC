@@ -925,12 +925,12 @@ public class SysMLOCParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getConnectorEndAccess().getDelcaredNameAssignment_1_0(), "rule__ConnectorEnd__DelcaredNameAssignment_1_0");
 			builder.put(grammarAccess.getPrefixMetadataAccess().getPrefixMetadataExtensionAssignment(), "rule__PrefixMetadata__PrefixMetadataExtensionAssignment");
 			builder.put(grammarAccess.getEmptySuccessionPrefixAccess().getIsThenAssignment_0(), "rule__EmptySuccessionPrefix__IsThenAssignment_0");
-			builder.put(grammarAccess.getEmptySuccessionPrefixAccess().getThenMultiplicityAssignment_1_0_1(), "rule__EmptySuccessionPrefix__ThenMultiplicityAssignment_1_0_1");
-			builder.put(grammarAccess.getEmptySuccessionPrefixAccess().getThenMultiplicityAssignment_1_1_1(), "rule__EmptySuccessionPrefix__ThenMultiplicityAssignment_1_1_1");
-			builder.put(grammarAccess.getEmptySuccessionPrefixAccess().getThenMultiplicityAssignment_1_1_3(), "rule__EmptySuccessionPrefix__ThenMultiplicityAssignment_1_1_3");
-			builder.put(grammarAccess.getMultiplicityRangeAccess().getMultiplicityAssignment_0_1(), "rule__MultiplicityRange__MultiplicityAssignment_0_1");
-			builder.put(grammarAccess.getMultiplicityRangeAccess().getMultiplicityAssignment_1_1(), "rule__MultiplicityRange__MultiplicityAssignment_1_1");
-			builder.put(grammarAccess.getMultiplicityRangeAccess().getMultiplicityAssignment_1_3(), "rule__MultiplicityRange__MultiplicityAssignment_1_3");
+			builder.put(grammarAccess.getEmptySuccessionPrefixAccess().getThenMulti0Assignment_1_0_1(), "rule__EmptySuccessionPrefix__ThenMulti0Assignment_1_0_1");
+			builder.put(grammarAccess.getEmptySuccessionPrefixAccess().getThenMulti1Assignment_1_1_1(), "rule__EmptySuccessionPrefix__ThenMulti1Assignment_1_1_1");
+			builder.put(grammarAccess.getEmptySuccessionPrefixAccess().getThenMulti02Assignment_1_1_3(), "rule__EmptySuccessionPrefix__ThenMulti02Assignment_1_1_3");
+			builder.put(grammarAccess.getMultiplicityRangeAccess().getMulti0Assignment_0_1(), "rule__MultiplicityRange__Multi0Assignment_0_1");
+			builder.put(grammarAccess.getMultiplicityRangeAccess().getMulti1Assignment_1_1(), "rule__MultiplicityRange__Multi1Assignment_1_1");
+			builder.put(grammarAccess.getMultiplicityRangeAccess().getMulti02Assignment_1_3(), "rule__MultiplicityRange__Multi02Assignment_1_3");
 			builder.put(grammarAccess.getMemberPrefixAccess().getVisibilityAssignment_0(), "rule__MemberPrefix__VisibilityAssignment_0");
 			builder.put(grammarAccess.getMemberPrefixAccess().getIsVariantAssignment_1(), "rule__MemberPrefix__IsVariantAssignment_1");
 			builder.put(grammarAccess.getIsReturnPrefixAccess().getIsReturnAssignment(), "rule__IsReturnPrefix__IsReturnAssignment");

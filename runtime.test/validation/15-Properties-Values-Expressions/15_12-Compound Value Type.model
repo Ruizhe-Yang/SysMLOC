@@ -5,17 +5,14 @@
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="USCustomaryUnits::'in'"/>
     <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9; * Real world user models would use quantity and vector types&#xA;&#x9; * from library models. They are included here for the purpose&#xA;&#x9; * of showing how such attribute defs can be defined.&#xA;&#x9; */"/>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="PositionVector">
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="x">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="x" Multi0="1">
         <typings>Real</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="y">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="y" Multi0="1">
         <typings>Real</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="z">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="z" Multi0="1">
         <typings>Real</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="LengthValue">
@@ -31,10 +28,8 @@
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="width">
         <typings>Integer</typings>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="placement">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="placement" Multi1="0" Multi02="1">
         <typings>PositionVector</typings>
-        <Multiplicity>0</Multiplicity>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:AttributeUsage" declaredName="frenchTireInfo">

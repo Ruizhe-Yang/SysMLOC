@@ -5,35 +5,29 @@
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ControlFunctions::forAll"/>
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="SI" isNamespace="true"/>
     <elements xsi:type="sysMLOC:ConstraintDefinition" declaredName="DiscBrakeConstraint">
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="wheelAssy">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="wheelAssy" Multi0="4">
         <typings>WheelAssy</typings>
-        <Multiplicity>4</Multiplicity>
       </elements>
       <resultExpressionParameter resultExpression="wheelAssy->forAll {in ref w: WheelAssy; 2 * w.discBrakeAssy.radius &lt; w.wheel.outerDiameter }"/>
     </elements>
     <elements xsi:type="sysMLOC:ConstraintDefinition" declaredName="DiscBrakeFitConstraint_Alt">
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="discBrakeAssy">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="discBrakeAssy" Multi0="1">
         <typings>DiscBrakeAssy</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="wheel">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="wheel" Multi0="1">
         <typings>Wheel</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
       <resultExpressionParameter resultExpression="2 * discBrakeAssy.radius &lt; wheel.outerDiameter"/>
     </elements>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle_2">
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass" valuePart="1200 [kg]">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass" Multi0="1" valuePart="1200 [kg]">
         <typings>MassValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="length" valuePart="4.82 [m]">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="length" Multi0="1" valuePart="4.82 [m]">
         <typings>LengthValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:PartUsage" declaredName="wheelAssy">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="wheelAssy" Multi0="4">
         <typings>WheelAssy</typings>
-        <Multiplicity>4</Multiplicity>
       </elements>
       <elements xsi:type="sysMLOC:ConstraintUsage" declaredName="discBrakeConstraint">
         <typings>DiscBrakeConstraint</typings>
@@ -42,13 +36,11 @@
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="WheelAssy">
-      <elements xsi:type="sysMLOC:PartUsage" declaredName="wheel">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="wheel" Multi0="1">
         <typings>Wheel</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
-      <elements xsi:type="sysMLOC:PartUsage" declaredName="discBrakeAssy">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="discBrakeAssy" Multi0="1">
         <typings>DiscBrakeAssy</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
       <elements xsi:type="sysMLOC:AssertConstraintUsage" declaredName="discBrakeFitConstraint_Alt">
         <typings>DiscBrakeFitConstraint_Alt</typings>
@@ -58,9 +50,8 @@
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="DiscBrakeAssy">
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="radius" valuePart="95 [mm]">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="radius" Multi0="1" valuePart="95 [mm]">
         <typings>LengthValue</typings>
-        <Multiplicity>1</Multiplicity>
       </elements>
     </elements>
   </elements>

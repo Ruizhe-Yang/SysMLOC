@@ -570,7 +570,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ';' | ('{' '}')
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     acceptParameter+=PayloadParameter (ambiguity) (rule end)
+	 *     acceptParameter=PayloadParameter (ambiguity) (rule end)
 	 
 	 * </pre>
 	 */
@@ -608,8 +608,10 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'action' (ambiguity) (rule start)
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'action' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     ThenMulti02=MultiplicityExpression ']' 'action' (ambiguity) (rule end)
+	 *     ThenMulti0=MultiplicityExpression ']' 'action' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -648,7 +650,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'actor' (ambiguity) (rule start)
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -714,8 +717,10 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) '(' connectorPart+=ConnectorEnd
 	 *     (rule start) (ambiguity) connectorPart+=ConnectorEnd
-	 *     ThenMultiplicity+=MultiplicityExpression ']' (ambiguity) '(' connectorPart+=ConnectorEnd
-	 *     ThenMultiplicity+=MultiplicityExpression ']' (ambiguity) connectorPart+=ConnectorEnd
+	 *     ThenMulti02=MultiplicityExpression ']' (ambiguity) '(' connectorPart+=ConnectorEnd
+	 *     ThenMulti02=MultiplicityExpression ']' (ambiguity) connectorPart+=ConnectorEnd
+	 *     ThenMulti0=MultiplicityExpression ']' (ambiguity) '(' connectorPart+=ConnectorEnd
+	 *     ThenMulti0=MultiplicityExpression ']' (ambiguity) connectorPart+=ConnectorEnd
 	 *     direction=FeatureDirection (ambiguity) '(' connectorPart+=ConnectorEnd
 	 *     direction=FeatureDirection (ambiguity) connectorPart+=ConnectorEnd
 	 *     isAbstract?='abstract' (ambiguity) '(' connectorPart+=ConnectorEnd
@@ -758,8 +763,10 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'allocation' (ambiguity) (rule start)
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'allocation' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     ThenMulti02=MultiplicityExpression ']' 'allocation' (ambiguity) (rule end)
+	 *     ThenMulti0=MultiplicityExpression ']' 'allocation' (ambiguity) (rule end)
 	 *     connectorPart+=ConnectorEnd ')' (ambiguity) (rule end)
 	 *     connectorPart+=ConnectorEnd (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
@@ -822,8 +829,10 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'analysis' (ambiguity) (rule start)
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'analysis' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     ThenMulti02=MultiplicityExpression ']' 'analysis' (ambiguity) (rule end)
+	 *     ThenMulti0=MultiplicityExpression ']' 'analysis' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -862,8 +871,10 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'assert' 'constraint' (ambiguity) (rule start)
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'assert' 'constraint' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     ThenMulti02=MultiplicityExpression ']' 'assert' 'constraint' (ambiguity) (rule end)
+	 *     ThenMulti0=MultiplicityExpression ']' 'assert' 'constraint' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -940,7 +951,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'attribute' (ambiguity) (rule start)
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -1038,8 +1050,10 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'calc' (ambiguity) (rule start)
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'calc' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     ThenMulti02=MultiplicityExpression ']' 'calc' (ambiguity) (rule end)
+	 *     ThenMulti0=MultiplicityExpression ']' 'calc' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -1101,8 +1115,10 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'case' (ambiguity) (rule start)
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'case' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     ThenMulti02=MultiplicityExpression ']' 'case' (ambiguity) (rule end)
+	 *     ThenMulti0=MultiplicityExpression ']' 'case' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -1155,7 +1171,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ';' | ('{' '}')
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -1203,8 +1220,10 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'concern' (ambiguity) (rule start)
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'concern' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     ThenMulti02=MultiplicityExpression ']' 'concern' (ambiguity) (rule end)
+	 *     ThenMulti0=MultiplicityExpression ']' 'concern' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -1267,8 +1286,10 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) '(' connectorPart+=ConnectorEnd
 	 *     (rule start) (ambiguity) connectorPart+=ConnectorEnd
-	 *     ThenMultiplicity+=MultiplicityExpression ']' (ambiguity) '(' connectorPart+=ConnectorEnd
-	 *     ThenMultiplicity+=MultiplicityExpression ']' (ambiguity) connectorPart+=ConnectorEnd
+	 *     ThenMulti02=MultiplicityExpression ']' (ambiguity) '(' connectorPart+=ConnectorEnd
+	 *     ThenMulti02=MultiplicityExpression ']' (ambiguity) connectorPart+=ConnectorEnd
+	 *     ThenMulti0=MultiplicityExpression ']' (ambiguity) '(' connectorPart+=ConnectorEnd
+	 *     ThenMulti0=MultiplicityExpression ']' (ambiguity) connectorPart+=ConnectorEnd
 	 *     direction=FeatureDirection (ambiguity) '(' connectorPart+=ConnectorEnd
 	 *     direction=FeatureDirection (ambiguity) connectorPart+=ConnectorEnd
 	 *     isAbstract?='abstract' (ambiguity) '(' connectorPart+=ConnectorEnd
@@ -1311,8 +1332,10 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'connection' (ambiguity) (rule start)
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'connection' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     ThenMulti02=MultiplicityExpression ']' 'connection' (ambiguity) (rule end)
+	 *     ThenMulti0=MultiplicityExpression ']' 'connection' (ambiguity) (rule end)
 	 *     connectorPart+=ConnectorEnd ')' (ambiguity) (rule end)
 	 *     connectorPart+=ConnectorEnd (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
@@ -1390,8 +1413,10 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'constraint' (ambiguity) (rule start)
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'constraint' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     ThenMulti02=MultiplicityExpression ']' 'constraint' (ambiguity) (rule end)
+	 *     ThenMulti0=MultiplicityExpression ']' 'constraint' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -1429,7 +1454,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ';' | ('{' '}')
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -1678,8 +1704,10 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'else' (ambiguity) (rule start)
-	 *     Multiplicity+=MultiplicityExpression ']' 'else' (ambiguity) (rule end)
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'else' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' 'else' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' 'else' (ambiguity) (rule end)
+	 *     ThenMulti02=MultiplicityExpression ']' 'else' (ambiguity) (rule end)
+	 *     ThenMulti0=MultiplicityExpression ']' 'else' (ambiguity) (rule end)
 	 *     actionParameterEnd+=ActionParameterEnd (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName 'else' (ambiguity) (rule end)
 	 *     declaredName=Name 'else' (ambiguity) (rule end)
@@ -1736,7 +1764,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) '&lt;' declaredShortName=Name
 	 *     (rule start) (ambiguity) '=' valuePart=Expression
-	 *     (rule start) (ambiguity) '[' Multiplicity+=MultiplicityExpression
+	 *     (rule start) (ambiguity) '[' Multi0=MultiplicityExpression
+	 *     (rule start) (ambiguity) '[' Multi1=MultiplicityExpression
 	 *     (rule start) (ambiguity) '{' elements+=UsageBodyElement
 	 *     (rule start) (ambiguity) (':' | ('defined' 'by')) typings+=FeatureTypingName
 	 *     (rule start) (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
@@ -1751,7 +1780,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) (ambiguity) isOrdered?='ordered'
 	 *     isVariant?='variant' (ambiguity) '&lt;' declaredShortName=Name
 	 *     isVariant?='variant' (ambiguity) '=' valuePart=Expression
-	 *     isVariant?='variant' (ambiguity) '[' Multiplicity+=MultiplicityExpression
+	 *     isVariant?='variant' (ambiguity) '[' Multi0=MultiplicityExpression
+	 *     isVariant?='variant' (ambiguity) '[' Multi1=MultiplicityExpression
 	 *     isVariant?='variant' (ambiguity) '{' elements+=UsageBodyElement
 	 *     isVariant?='variant' (ambiguity) (':' | ('defined' 'by')) typings+=FeatureTypingName
 	 *     isVariant?='variant' (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
@@ -1766,7 +1796,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariant?='variant' (ambiguity) isOrdered?='ordered'
 	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) '&lt;' declaredShortName=Name
 	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) '=' valuePart=Expression
-	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) '[' Multiplicity+=MultiplicityExpression
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) '[' Multi0=MultiplicityExpression
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) '[' Multi1=MultiplicityExpression
 	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) '{' elements+=UsageBodyElement
 	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) (':' | ('defined' 'by')) typings+=FeatureTypingName
 	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
@@ -1781,7 +1812,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) isOrdered?='ordered'
 	 *     visibility=VisibilityIndicator (ambiguity) '&lt;' declaredShortName=Name
 	 *     visibility=VisibilityIndicator (ambiguity) '=' valuePart=Expression
-	 *     visibility=VisibilityIndicator (ambiguity) '[' Multiplicity+=MultiplicityExpression
+	 *     visibility=VisibilityIndicator (ambiguity) '[' Multi0=MultiplicityExpression
+	 *     visibility=VisibilityIndicator (ambiguity) '[' Multi1=MultiplicityExpression
 	 *     visibility=VisibilityIndicator (ambiguity) '{' elements+=UsageBodyElement
 	 *     visibility=VisibilityIndicator (ambiguity) (':' | ('defined' 'by')) typings+=FeatureTypingName
 	 *     visibility=VisibilityIndicator (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
@@ -1808,7 +1840,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'enum'? (ambiguity) (rule start)
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -1856,7 +1889,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'enum' (ambiguity) (rule start)
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -1892,8 +1926,10 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'event' 'occurrence' (ambiguity) (rule start)
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'event' 'occurrence' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     ThenMulti02=MultiplicityExpression ']' 'event' 'occurrence' (ambiguity) (rule end)
+	 *     ThenMulti0=MultiplicityExpression ']' 'event' 'occurrence' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -1933,8 +1969,10 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'exhibit' 'state' (ambiguity) (rule start)
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'exhibit' 'state' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     ThenMulti02=MultiplicityExpression ']' 'exhibit' 'state' (ambiguity) (rule end)
+	 *     ThenMulti0=MultiplicityExpression ']' 'exhibit' 'state' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -2024,7 +2062,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ';' | ('{' '}')
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -2093,37 +2132,68 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) 'view' (ambiguity) references+=FeatureChainName
 	 *     (rule start) 'viewpoint' (ambiguity) references+=FeatureChainName
 	 *     (rule start) (ambiguity) references+=FeatureChainName
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) references+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'action' (ambiguity) references+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'allocation' (ambiguity) references+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'analysis' (ambiguity) references+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'assert' 'constraint' (ambiguity) references+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'assert'? 'satisfy' 'requirement' (ambiguity) references+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'calc' (ambiguity) references+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'case' (ambiguity) references+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'concern' (ambiguity) references+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'connection' (ambiguity) references+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'constraint' (ambiguity) references+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'event' 'occurrence' (ambiguity) references+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'exhibit' 'state' (ambiguity) references+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'flow' (ambiguity) references+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'include' 'use' 'case' (ambiguity) references+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'interface' (ambiguity) references+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'item' (ambiguity) references+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'message' (ambiguity) references+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'occurrence' (ambiguity) references+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'part' (ambiguity) references+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'perform' 'action' (ambiguity) references+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'port' (ambiguity) references+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'rendering' (ambiguity) references+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'requirement' (ambiguity) references+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'state' (ambiguity) references+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'succession' 'flow' (ambiguity) references+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'transition' (ambiguity) references+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'use' 'case' (ambiguity) references+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'verification' (ambiguity) references+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'view' (ambiguity) references+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'viewpoint' (ambiguity) references+=FeatureChainName
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) references+=FeatureChainName
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'action' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'allocation' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'analysis' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'assert' 'constraint' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'assert'? 'satisfy' 'requirement' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'calc' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'case' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'concern' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'connection' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'constraint' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'event' 'occurrence' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'exhibit' 'state' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'flow' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'include' 'use' 'case' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'interface' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'item' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'message' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'occurrence' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'part' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'perform' 'action' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'port' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'rendering' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'requirement' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'state' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'succession' 'flow' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'transition' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'use' 'case' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'verification' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'view' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'viewpoint' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'action' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'allocation' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'analysis' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'assert' 'constraint' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'assert'? 'satisfy' 'requirement' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'calc' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'case' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'concern' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'connection' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'constraint' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'event' 'occurrence' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'exhibit' 'state' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'flow' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'include' 'use' 'case' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'interface' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'item' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'message' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'occurrence' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'part' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'perform' 'action' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'port' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'rendering' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'requirement' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'state' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'succession' 'flow' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'transition' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'use' 'case' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'verification' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'view' (ambiguity) references+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'viewpoint' (ambiguity) references+=FeatureChainName
 	 *     crosses+=FeatureChainName (ambiguity) references+=FeatureChainName
 	 *     declaredName=Name (ambiguity) references+=FeatureChainName
 	 *     declaredShortName=Name '&gt;' (ambiguity) references+=FeatureChainName
@@ -2687,37 +2757,68 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) 'view' (ambiguity) redefinitions+=FeatureChainName
 	 *     (rule start) 'viewpoint' (ambiguity) redefinitions+=FeatureChainName
 	 *     (rule start) (ambiguity) redefinitions+=FeatureChainName
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) redefinitions+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'action' (ambiguity) redefinitions+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'allocation' (ambiguity) redefinitions+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'analysis' (ambiguity) redefinitions+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'assert' 'constraint' (ambiguity) redefinitions+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'assert'? 'satisfy' 'requirement' (ambiguity) redefinitions+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'calc' (ambiguity) redefinitions+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'case' (ambiguity) redefinitions+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'concern' (ambiguity) redefinitions+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'connection' (ambiguity) redefinitions+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'constraint' (ambiguity) redefinitions+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'event' 'occurrence' (ambiguity) redefinitions+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'exhibit' 'state' (ambiguity) redefinitions+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'flow' (ambiguity) redefinitions+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'include' 'use' 'case' (ambiguity) redefinitions+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'interface' (ambiguity) redefinitions+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'item' (ambiguity) redefinitions+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'message' (ambiguity) redefinitions+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'occurrence' (ambiguity) redefinitions+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'part' (ambiguity) redefinitions+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'perform' 'action' (ambiguity) redefinitions+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'port' (ambiguity) redefinitions+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'rendering' (ambiguity) redefinitions+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'requirement' (ambiguity) redefinitions+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'state' (ambiguity) redefinitions+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'succession' 'flow' (ambiguity) redefinitions+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'transition' (ambiguity) redefinitions+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'use' 'case' (ambiguity) redefinitions+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'verification' (ambiguity) redefinitions+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'view' (ambiguity) redefinitions+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'viewpoint' (ambiguity) redefinitions+=FeatureChainName
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) redefinitions+=FeatureChainName
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'action' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'allocation' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'analysis' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'assert' 'constraint' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'assert'? 'satisfy' 'requirement' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'calc' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'case' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'concern' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'connection' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'constraint' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'event' 'occurrence' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'exhibit' 'state' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'flow' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'include' 'use' 'case' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'interface' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'item' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'message' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'occurrence' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'part' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'perform' 'action' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'port' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'rendering' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'requirement' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'state' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'succession' 'flow' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'transition' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'use' 'case' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'verification' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'view' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'viewpoint' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'action' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'allocation' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'analysis' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'assert' 'constraint' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'assert'? 'satisfy' 'requirement' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'calc' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'case' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'concern' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'connection' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'constraint' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'event' 'occurrence' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'exhibit' 'state' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'flow' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'include' 'use' 'case' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'interface' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'item' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'message' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'occurrence' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'part' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'perform' 'action' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'port' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'rendering' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'requirement' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'state' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'succession' 'flow' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'transition' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'use' 'case' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'verification' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'view' (ambiguity) redefinitions+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'viewpoint' (ambiguity) redefinitions+=FeatureChainName
 	 *     crosses+=FeatureChainName (ambiguity) redefinitions+=FeatureChainName
 	 *     declaredName=Name (ambiguity) redefinitions+=FeatureChainName
 	 *     declaredShortName=Name '&gt;' (ambiguity) redefinitions+=FeatureChainName
@@ -3281,37 +3382,68 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) 'view' (ambiguity) subsetting+=FeatureChainName
 	 *     (rule start) 'viewpoint' (ambiguity) subsetting+=FeatureChainName
 	 *     (rule start) (ambiguity) subsetting+=FeatureChainName
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) subsetting+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'action' (ambiguity) subsetting+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'allocation' (ambiguity) subsetting+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'analysis' (ambiguity) subsetting+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'assert' 'constraint' (ambiguity) subsetting+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'assert'? 'satisfy' 'requirement' (ambiguity) subsetting+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'calc' (ambiguity) subsetting+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'case' (ambiguity) subsetting+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'concern' (ambiguity) subsetting+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'connection' (ambiguity) subsetting+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'constraint' (ambiguity) subsetting+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'event' 'occurrence' (ambiguity) subsetting+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'exhibit' 'state' (ambiguity) subsetting+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'flow' (ambiguity) subsetting+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'include' 'use' 'case' (ambiguity) subsetting+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'interface' (ambiguity) subsetting+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'item' (ambiguity) subsetting+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'message' (ambiguity) subsetting+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'occurrence' (ambiguity) subsetting+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'part' (ambiguity) subsetting+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'perform' 'action' (ambiguity) subsetting+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'port' (ambiguity) subsetting+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'rendering' (ambiguity) subsetting+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'requirement' (ambiguity) subsetting+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'state' (ambiguity) subsetting+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'succession' 'flow' (ambiguity) subsetting+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'transition' (ambiguity) subsetting+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'use' 'case' (ambiguity) subsetting+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'verification' (ambiguity) subsetting+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'view' (ambiguity) subsetting+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'viewpoint' (ambiguity) subsetting+=FeatureChainName
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) subsetting+=FeatureChainName
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'action' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'allocation' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'analysis' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'assert' 'constraint' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'assert'? 'satisfy' 'requirement' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'calc' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'case' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'concern' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'connection' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'constraint' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'event' 'occurrence' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'exhibit' 'state' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'flow' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'include' 'use' 'case' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'interface' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'item' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'message' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'occurrence' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'part' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'perform' 'action' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'port' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'rendering' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'requirement' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'state' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'succession' 'flow' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'transition' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'use' 'case' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'verification' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'view' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'viewpoint' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'action' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'allocation' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'analysis' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'assert' 'constraint' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'assert'? 'satisfy' 'requirement' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'calc' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'case' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'concern' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'connection' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'constraint' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'event' 'occurrence' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'exhibit' 'state' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'flow' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'include' 'use' 'case' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'interface' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'item' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'message' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'occurrence' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'part' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'perform' 'action' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'port' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'rendering' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'requirement' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'state' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'succession' 'flow' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'transition' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'use' 'case' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'verification' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'view' (ambiguity) subsetting+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'viewpoint' (ambiguity) subsetting+=FeatureChainName
 	 *     crosses+=FeatureChainName (ambiguity) subsetting+=FeatureChainName
 	 *     declaredName=Name (ambiguity) subsetting+=FeatureChainName
 	 *     declaredShortName=Name '&gt;' (ambiguity) subsetting+=FeatureChainName
@@ -3875,37 +4007,68 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) 'view' (ambiguity) typings+=FeatureTypingName
 	 *     (rule start) 'viewpoint' (ambiguity) typings+=FeatureTypingName
 	 *     (rule start) (ambiguity) typings+=FeatureTypingName
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) typings+=FeatureTypingName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'action' (ambiguity) typings+=FeatureTypingName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'allocation' (ambiguity) typings+=FeatureTypingName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'analysis' (ambiguity) typings+=FeatureTypingName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'assert' 'constraint' (ambiguity) typings+=FeatureTypingName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'assert'? 'satisfy' 'requirement' (ambiguity) typings+=FeatureTypingName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'calc' (ambiguity) typings+=FeatureTypingName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'case' (ambiguity) typings+=FeatureTypingName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'concern' (ambiguity) typings+=FeatureTypingName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'connection' (ambiguity) typings+=FeatureTypingName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'constraint' (ambiguity) typings+=FeatureTypingName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'event' 'occurrence' (ambiguity) typings+=FeatureTypingName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'exhibit' 'state' (ambiguity) typings+=FeatureTypingName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'flow' (ambiguity) typings+=FeatureTypingName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'include' 'use' 'case' (ambiguity) typings+=FeatureTypingName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'interface' (ambiguity) typings+=FeatureTypingName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'item' (ambiguity) typings+=FeatureTypingName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'message' (ambiguity) typings+=FeatureTypingName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'occurrence' (ambiguity) typings+=FeatureTypingName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'part' (ambiguity) typings+=FeatureTypingName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'perform' 'action' (ambiguity) typings+=FeatureTypingName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'port' (ambiguity) typings+=FeatureTypingName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'rendering' (ambiguity) typings+=FeatureTypingName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'requirement' (ambiguity) typings+=FeatureTypingName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'state' (ambiguity) typings+=FeatureTypingName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'succession' 'flow' (ambiguity) typings+=FeatureTypingName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'transition' (ambiguity) typings+=FeatureTypingName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'use' 'case' (ambiguity) typings+=FeatureTypingName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'verification' (ambiguity) typings+=FeatureTypingName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'view' (ambiguity) typings+=FeatureTypingName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'viewpoint' (ambiguity) typings+=FeatureTypingName
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) typings+=FeatureTypingName
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti02=MultiplicityExpression ']' 'action' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti02=MultiplicityExpression ']' 'allocation' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti02=MultiplicityExpression ']' 'analysis' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti02=MultiplicityExpression ']' 'assert' 'constraint' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti02=MultiplicityExpression ']' 'assert'? 'satisfy' 'requirement' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti02=MultiplicityExpression ']' 'calc' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti02=MultiplicityExpression ']' 'case' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti02=MultiplicityExpression ']' 'concern' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti02=MultiplicityExpression ']' 'connection' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti02=MultiplicityExpression ']' 'constraint' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti02=MultiplicityExpression ']' 'event' 'occurrence' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti02=MultiplicityExpression ']' 'exhibit' 'state' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti02=MultiplicityExpression ']' 'flow' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti02=MultiplicityExpression ']' 'include' 'use' 'case' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti02=MultiplicityExpression ']' 'interface' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti02=MultiplicityExpression ']' 'item' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti02=MultiplicityExpression ']' 'message' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti02=MultiplicityExpression ']' 'occurrence' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti02=MultiplicityExpression ']' 'part' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti02=MultiplicityExpression ']' 'perform' 'action' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti02=MultiplicityExpression ']' 'port' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti02=MultiplicityExpression ']' 'rendering' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti02=MultiplicityExpression ']' 'requirement' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti02=MultiplicityExpression ']' 'state' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti02=MultiplicityExpression ']' 'succession' 'flow' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti02=MultiplicityExpression ']' 'transition' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti02=MultiplicityExpression ']' 'use' 'case' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti02=MultiplicityExpression ']' 'verification' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti02=MultiplicityExpression ']' 'view' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti02=MultiplicityExpression ']' 'viewpoint' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti0=MultiplicityExpression ']' 'action' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti0=MultiplicityExpression ']' 'allocation' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti0=MultiplicityExpression ']' 'analysis' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti0=MultiplicityExpression ']' 'assert' 'constraint' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti0=MultiplicityExpression ']' 'assert'? 'satisfy' 'requirement' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti0=MultiplicityExpression ']' 'calc' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti0=MultiplicityExpression ']' 'case' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti0=MultiplicityExpression ']' 'concern' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti0=MultiplicityExpression ']' 'connection' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti0=MultiplicityExpression ']' 'constraint' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti0=MultiplicityExpression ']' 'event' 'occurrence' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti0=MultiplicityExpression ']' 'exhibit' 'state' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti0=MultiplicityExpression ']' 'flow' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti0=MultiplicityExpression ']' 'include' 'use' 'case' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti0=MultiplicityExpression ']' 'interface' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti0=MultiplicityExpression ']' 'item' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti0=MultiplicityExpression ']' 'message' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti0=MultiplicityExpression ']' 'occurrence' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti0=MultiplicityExpression ']' 'part' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti0=MultiplicityExpression ']' 'perform' 'action' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti0=MultiplicityExpression ']' 'port' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti0=MultiplicityExpression ']' 'rendering' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti0=MultiplicityExpression ']' 'requirement' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti0=MultiplicityExpression ']' 'state' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti0=MultiplicityExpression ']' 'succession' 'flow' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti0=MultiplicityExpression ']' 'transition' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti0=MultiplicityExpression ']' 'use' 'case' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti0=MultiplicityExpression ']' 'verification' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti0=MultiplicityExpression ']' 'view' (ambiguity) typings+=FeatureTypingName
+	 *     ThenMulti0=MultiplicityExpression ']' 'viewpoint' (ambiguity) typings+=FeatureTypingName
 	 *     crosses+=FeatureChainName (ambiguity) typings+=FeatureTypingName
 	 *     declaredName=Name (ambiguity) typings+=FeatureTypingName
 	 *     declaredShortName=Name '&gt;' (ambiguity) typings+=FeatureTypingName
@@ -4469,37 +4632,68 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) 'view' (ambiguity) crosses+=FeatureChainName
 	 *     (rule start) 'viewpoint' (ambiguity) crosses+=FeatureChainName
 	 *     (rule start) (ambiguity) crosses+=FeatureChainName
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) crosses+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'action' (ambiguity) crosses+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'allocation' (ambiguity) crosses+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'analysis' (ambiguity) crosses+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'assert' 'constraint' (ambiguity) crosses+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'assert'? 'satisfy' 'requirement' (ambiguity) crosses+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'calc' (ambiguity) crosses+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'case' (ambiguity) crosses+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'concern' (ambiguity) crosses+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'connection' (ambiguity) crosses+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'constraint' (ambiguity) crosses+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'event' 'occurrence' (ambiguity) crosses+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'exhibit' 'state' (ambiguity) crosses+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'flow' (ambiguity) crosses+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'include' 'use' 'case' (ambiguity) crosses+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'interface' (ambiguity) crosses+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'item' (ambiguity) crosses+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'message' (ambiguity) crosses+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'occurrence' (ambiguity) crosses+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'part' (ambiguity) crosses+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'perform' 'action' (ambiguity) crosses+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'port' (ambiguity) crosses+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'rendering' (ambiguity) crosses+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'requirement' (ambiguity) crosses+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'state' (ambiguity) crosses+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'succession' 'flow' (ambiguity) crosses+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'transition' (ambiguity) crosses+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'use' 'case' (ambiguity) crosses+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'verification' (ambiguity) crosses+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'view' (ambiguity) crosses+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'viewpoint' (ambiguity) crosses+=FeatureChainName
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) crosses+=FeatureChainName
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'action' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'allocation' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'analysis' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'assert' 'constraint' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'assert'? 'satisfy' 'requirement' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'calc' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'case' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'concern' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'connection' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'constraint' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'event' 'occurrence' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'exhibit' 'state' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'flow' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'include' 'use' 'case' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'interface' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'item' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'message' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'occurrence' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'part' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'perform' 'action' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'port' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'rendering' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'requirement' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'state' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'succession' 'flow' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'transition' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'use' 'case' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'verification' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'view' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'viewpoint' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'action' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'allocation' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'analysis' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'assert' 'constraint' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'assert'? 'satisfy' 'requirement' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'calc' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'case' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'concern' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'connection' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'constraint' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'event' 'occurrence' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'exhibit' 'state' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'flow' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'include' 'use' 'case' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'interface' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'item' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'message' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'occurrence' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'part' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'perform' 'action' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'port' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'rendering' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'requirement' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'state' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'succession' 'flow' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'transition' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'use' 'case' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'verification' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'view' (ambiguity) crosses+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'viewpoint' (ambiguity) crosses+=FeatureChainName
 	 *     crosses+=FeatureChainName (ambiguity) crosses+=FeatureChainName
 	 *     declaredName=Name (ambiguity) crosses+=FeatureChainName
 	 *     declaredShortName=Name '&gt;' (ambiguity) crosses+=FeatureChainName
@@ -5057,8 +5251,10 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'flow' (ambiguity) FlowEnd+=FeatureChainName
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) FlowEnd+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'flow' (ambiguity) FlowEnd+=FeatureChainName
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) FlowEnd+=FeatureChainName
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) FlowEnd+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'flow' (ambiguity) FlowEnd+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'flow' (ambiguity) FlowEnd+=FeatureChainName
 	 *     crosses+=FeatureChainName (ambiguity) FlowEnd+=FeatureChainName
 	 *     declaredName=Name (ambiguity) FlowEnd+=FeatureChainName
 	 *     declaredShortName=Name '&gt;' (ambiguity) FlowEnd+=FeatureChainName
@@ -5075,7 +5271,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isThen?='then' 'flow' (ambiguity) FlowEnd+=FeatureChainName
 	 *     isVariant?='variant' 'flow' (ambiguity) FlowEnd+=FeatureChainName
 	 *     isVariation?='variation' 'flow' (ambiguity) FlowEnd+=FeatureChainName
-	 *     itemFeatureParameter+=ItemFeatureParameter (ambiguity) FlowEnd+=FeatureChainName
+	 *     itemFeatureParameter=ItemFeatureParameter (ambiguity) FlowEnd+=FeatureChainName
 	 *     portionKind=PortionKind 'flow' (ambiguity) FlowEnd+=FeatureChainName
 	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'flow' (ambiguity) FlowEnd+=FeatureChainName
 	 *     redefinitions+=FeatureChainName (ambiguity) FlowEnd+=FeatureChainName
@@ -5099,8 +5295,10 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'flow' (ambiguity) (rule start)
 	 *     FlowEnd+=FeatureChainName (ambiguity) (rule end)
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'flow' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     ThenMulti02=MultiplicityExpression ']' 'flow' (ambiguity) (rule end)
+	 *     ThenMulti0=MultiplicityExpression ']' 'flow' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -5117,7 +5315,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isThen?='then' 'flow' (ambiguity) (rule end)
 	 *     isVariant?='variant' 'flow' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'flow' (ambiguity) (rule end)
-	 *     itemFeatureParameter+=ItemFeatureParameter (ambiguity) (rule end)
+	 *     itemFeatureParameter=ItemFeatureParameter (ambiguity) (rule end)
 	 *     portionKind=PortionKind 'flow' (ambiguity) (rule end)
 	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'flow' (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
@@ -5159,7 +5357,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'frame' 'concern' (ambiguity) (rule start)
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
 	 *     isNonunique?='nonunique' (ambiguity) (rule end)
@@ -5213,8 +5412,10 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'include' 'use' 'case' (ambiguity) (rule start)
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'include' 'use' 'case' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     ThenMulti02=MultiplicityExpression ']' 'include' 'use' 'case' (ambiguity) (rule end)
+	 *     ThenMulti0=MultiplicityExpression ']' 'include' 'use' 'case' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -5271,7 +5472,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ';' | ('{' '}')
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -5336,8 +5538,10 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'interface' (ambiguity) '(' connectorPart+=ConnectorEnd
 	 *     (rule start) 'interface' (ambiguity) connectorPart+=ConnectorEnd
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'interface' (ambiguity) '(' connectorPart+=ConnectorEnd
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'interface' (ambiguity) connectorPart+=ConnectorEnd
+	 *     ThenMulti02=MultiplicityExpression ']' 'interface' (ambiguity) '(' connectorPart+=ConnectorEnd
+	 *     ThenMulti02=MultiplicityExpression ']' 'interface' (ambiguity) connectorPart+=ConnectorEnd
+	 *     ThenMulti0=MultiplicityExpression ']' 'interface' (ambiguity) '(' connectorPart+=ConnectorEnd
+	 *     ThenMulti0=MultiplicityExpression ']' 'interface' (ambiguity) connectorPart+=ConnectorEnd
 	 *     direction=FeatureDirection 'interface' (ambiguity) '(' connectorPart+=ConnectorEnd
 	 *     direction=FeatureDirection 'interface' (ambiguity) connectorPart+=ConnectorEnd
 	 *     isAbstract?='abstract' 'interface' (ambiguity) '(' connectorPart+=ConnectorEnd
@@ -5380,8 +5584,10 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'interface' (ambiguity) (rule start)
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'interface' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     ThenMulti02=MultiplicityExpression ']' 'interface' (ambiguity) (rule end)
+	 *     ThenMulti0=MultiplicityExpression ']' 'interface' (ambiguity) (rule end)
 	 *     connectorPart+=ConnectorEnd ')' (ambiguity) (rule end)
 	 *     connectorPart+=ConnectorEnd (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
@@ -5444,8 +5650,10 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'item' (ambiguity) (rule start)
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'item' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     ThenMulti02=MultiplicityExpression ']' 'item' (ambiguity) (rule end)
+	 *     ThenMulti0=MultiplicityExpression ']' 'item' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -5501,8 +5709,10 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'message' (ambiguity) FlowEnd+=FeatureChainName
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) FlowEnd+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'message' (ambiguity) FlowEnd+=FeatureChainName
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) FlowEnd+=FeatureChainName
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) FlowEnd+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'message' (ambiguity) FlowEnd+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'message' (ambiguity) FlowEnd+=FeatureChainName
 	 *     crosses+=FeatureChainName (ambiguity) FlowEnd+=FeatureChainName
 	 *     declaredName=Name (ambiguity) FlowEnd+=FeatureChainName
 	 *     declaredShortName=Name '&gt;' (ambiguity) FlowEnd+=FeatureChainName
@@ -5519,7 +5729,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isThen?='then' 'message' (ambiguity) FlowEnd+=FeatureChainName
 	 *     isVariant?='variant' 'message' (ambiguity) FlowEnd+=FeatureChainName
 	 *     isVariation?='variation' 'message' (ambiguity) FlowEnd+=FeatureChainName
-	 *     itemFeatureParameter+=ItemFeatureParameter (ambiguity) FlowEnd+=FeatureChainName
+	 *     itemFeatureParameter=ItemFeatureParameter (ambiguity) FlowEnd+=FeatureChainName
 	 *     portionKind=PortionKind 'message' (ambiguity) FlowEnd+=FeatureChainName
 	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'message' (ambiguity) FlowEnd+=FeatureChainName
 	 *     redefinitions+=FeatureChainName (ambiguity) FlowEnd+=FeatureChainName
@@ -5543,8 +5753,10 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'message' (ambiguity) (rule start)
 	 *     FlowEnd+=FeatureChainName (ambiguity) (rule end)
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'message' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     ThenMulti02=MultiplicityExpression ']' 'message' (ambiguity) (rule end)
+	 *     ThenMulti0=MultiplicityExpression ']' 'message' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -5561,7 +5773,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isThen?='then' 'message' (ambiguity) (rule end)
 	 *     isVariant?='variant' 'message' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'message' (ambiguity) (rule end)
-	 *     itemFeatureParameter+=ItemFeatureParameter (ambiguity) (rule end)
+	 *     itemFeatureParameter=ItemFeatureParameter (ambiguity) (rule end)
 	 *     portionKind=PortionKind 'message' (ambiguity) (rule end)
 	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'message' (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
@@ -5669,7 +5881,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'objective' (ambiguity) (rule start)
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -5720,8 +5933,10 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'occurrence' (ambiguity) (rule start)
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'occurrence' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     ThenMulti02=MultiplicityExpression ']' 'occurrence' (ambiguity) (rule end)
+	 *     ThenMulti0=MultiplicityExpression ']' 'occurrence' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -5797,8 +6012,10 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'part' (ambiguity) (rule start)
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'part' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     ThenMulti02=MultiplicityExpression ']' 'part' (ambiguity) (rule end)
+	 *     ThenMulti0=MultiplicityExpression ']' 'part' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -5837,8 +6054,10 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'perform' 'action' (ambiguity) (rule start)
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'perform' 'action' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     ThenMulti02=MultiplicityExpression ']' 'perform' 'action' (ambiguity) (rule end)
+	 *     ThenMulti0=MultiplicityExpression ']' 'perform' 'action' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -5900,8 +6119,10 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'port' (ambiguity) (rule start)
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'port' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     ThenMulti02=MultiplicityExpression ']' 'port' (ambiguity) (rule end)
+	 *     ThenMulti0=MultiplicityExpression ']' 'port' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -5939,7 +6160,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ';' | ('{' '}')
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -5966,7 +6188,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'ref' (ambiguity) (rule start)
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -6042,8 +6265,10 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'rendering' (ambiguity) (rule start)
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'rendering' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     ThenMulti02=MultiplicityExpression ']' 'rendering' (ambiguity) (rule end)
+	 *     ThenMulti0=MultiplicityExpression ']' 'rendering' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -6081,7 +6306,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ';' | ('{' '}')
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -6132,8 +6358,10 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'requirement' (ambiguity) (rule start)
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'requirement' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     ThenMulti02=MultiplicityExpression ']' 'requirement' (ambiguity) (rule end)
+	 *     ThenMulti0=MultiplicityExpression ']' 'requirement' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -6191,7 +6419,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'verify' 'requirement' (ambiguity) (rule start)
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
 	 *     isNonunique?='nonunique' (ambiguity) (rule end)
@@ -6215,7 +6444,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) 'satisfy' 'requirement' '&lt;' declaredShortName=Name
 	 *     (rule start) (ambiguity) 'satisfy' 'requirement' '=' valuePart=Expression
-	 *     (rule start) (ambiguity) 'satisfy' 'requirement' '[' Multiplicity+=MultiplicityExpression
+	 *     (rule start) (ambiguity) 'satisfy' 'requirement' '[' Multi0=MultiplicityExpression
+	 *     (rule start) (ambiguity) 'satisfy' 'requirement' '[' Multi1=MultiplicityExpression
 	 *     (rule start) (ambiguity) 'satisfy' 'requirement' 'by' satisfactionParameter=FeatureChainName
 	 *     (rule start) (ambiguity) 'satisfy' 'requirement' '{' elements+=RequirementBodyElement
 	 *     (rule start) (ambiguity) 'satisfy' 'requirement' (':' | ('defined' 'by')) typings+=FeatureTypingName
@@ -6231,27 +6461,48 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) (ambiguity) 'satisfy' 'requirement' isOrdered?='ordered'
 	 *     (rule start) (ambiguity) 'satisfy' refElement=FeatureChainName
 	 *     (rule start) (ambiguity) isNegated?='not'
-	 *     ThenMultiplicity+=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' '&lt;' declaredShortName=Name
-	 *     ThenMultiplicity+=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' '=' valuePart=Expression
-	 *     ThenMultiplicity+=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' '[' Multiplicity+=MultiplicityExpression
-	 *     ThenMultiplicity+=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' 'by' satisfactionParameter=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' '{' elements+=RequirementBodyElement
-	 *     ThenMultiplicity+=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' (':' | ('defined' 'by')) typings+=FeatureTypingName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' ('::&gt;' | 'references') references+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' (':&gt;&gt;' | 'redefines') redefinitions+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' (';' | ('{' '}')) (rule end)
-	 *     ThenMultiplicity+=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' ('=&gt;' | 'crosses') crosses+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' declaredName=Name
-	 *     ThenMultiplicity+=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' isDefault?='default'
-	 *     ThenMultiplicity+=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' isInitial?=':='
-	 *     ThenMultiplicity+=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' isNonunique?='nonunique'
-	 *     ThenMultiplicity+=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' isOrdered?='ordered'
-	 *     ThenMultiplicity+=MultiplicityExpression ']' (ambiguity) 'satisfy' refElement=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' (ambiguity) isNegated?='not'
+	 *     ThenMulti02=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' '&lt;' declaredShortName=Name
+	 *     ThenMulti02=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' '=' valuePart=Expression
+	 *     ThenMulti02=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' '[' Multi0=MultiplicityExpression
+	 *     ThenMulti02=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' '[' Multi1=MultiplicityExpression
+	 *     ThenMulti02=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' 'by' satisfactionParameter=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' '{' elements+=RequirementBodyElement
+	 *     ThenMulti02=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' (':' | ('defined' 'by')) typings+=FeatureTypingName
+	 *     ThenMulti02=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' ('::&gt;' | 'references') references+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' (':&gt;&gt;' | 'redefines') redefinitions+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' (';' | ('{' '}')) (rule end)
+	 *     ThenMulti02=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' ('=&gt;' | 'crosses') crosses+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' declaredName=Name
+	 *     ThenMulti02=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' isDefault?='default'
+	 *     ThenMulti02=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' isInitial?=':='
+	 *     ThenMulti02=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' isNonunique?='nonunique'
+	 *     ThenMulti02=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' isOrdered?='ordered'
+	 *     ThenMulti02=MultiplicityExpression ']' (ambiguity) 'satisfy' refElement=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' (ambiguity) isNegated?='not'
+	 *     ThenMulti0=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' '&lt;' declaredShortName=Name
+	 *     ThenMulti0=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' '=' valuePart=Expression
+	 *     ThenMulti0=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' '[' Multi0=MultiplicityExpression
+	 *     ThenMulti0=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' '[' Multi1=MultiplicityExpression
+	 *     ThenMulti0=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' 'by' satisfactionParameter=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' '{' elements+=RequirementBodyElement
+	 *     ThenMulti0=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' (':' | ('defined' 'by')) typings+=FeatureTypingName
+	 *     ThenMulti0=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' ('::&gt;' | 'references') references+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' (':&gt;&gt;' | 'redefines') redefinitions+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' (';' | ('{' '}')) (rule end)
+	 *     ThenMulti0=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' ('=&gt;' | 'crosses') crosses+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' declaredName=Name
+	 *     ThenMulti0=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' isDefault?='default'
+	 *     ThenMulti0=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' isInitial?=':='
+	 *     ThenMulti0=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' isNonunique?='nonunique'
+	 *     ThenMulti0=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' isOrdered?='ordered'
+	 *     ThenMulti0=MultiplicityExpression ']' (ambiguity) 'satisfy' refElement=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' (ambiguity) isNegated?='not'
 	 *     direction=FeatureDirection (ambiguity) 'satisfy' 'requirement' '&lt;' declaredShortName=Name
 	 *     direction=FeatureDirection (ambiguity) 'satisfy' 'requirement' '=' valuePart=Expression
-	 *     direction=FeatureDirection (ambiguity) 'satisfy' 'requirement' '[' Multiplicity+=MultiplicityExpression
+	 *     direction=FeatureDirection (ambiguity) 'satisfy' 'requirement' '[' Multi0=MultiplicityExpression
+	 *     direction=FeatureDirection (ambiguity) 'satisfy' 'requirement' '[' Multi1=MultiplicityExpression
 	 *     direction=FeatureDirection (ambiguity) 'satisfy' 'requirement' 'by' satisfactionParameter=FeatureChainName
 	 *     direction=FeatureDirection (ambiguity) 'satisfy' 'requirement' '{' elements+=RequirementBodyElement
 	 *     direction=FeatureDirection (ambiguity) 'satisfy' 'requirement' (':' | ('defined' 'by')) typings+=FeatureTypingName
@@ -6269,7 +6520,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     direction=FeatureDirection (ambiguity) isNegated?='not'
 	 *     isAbstract?='abstract' (ambiguity) 'satisfy' 'requirement' '&lt;' declaredShortName=Name
 	 *     isAbstract?='abstract' (ambiguity) 'satisfy' 'requirement' '=' valuePart=Expression
-	 *     isAbstract?='abstract' (ambiguity) 'satisfy' 'requirement' '[' Multiplicity+=MultiplicityExpression
+	 *     isAbstract?='abstract' (ambiguity) 'satisfy' 'requirement' '[' Multi0=MultiplicityExpression
+	 *     isAbstract?='abstract' (ambiguity) 'satisfy' 'requirement' '[' Multi1=MultiplicityExpression
 	 *     isAbstract?='abstract' (ambiguity) 'satisfy' 'requirement' 'by' satisfactionParameter=FeatureChainName
 	 *     isAbstract?='abstract' (ambiguity) 'satisfy' 'requirement' '{' elements+=RequirementBodyElement
 	 *     isAbstract?='abstract' (ambiguity) 'satisfy' 'requirement' (':' | ('defined' 'by')) typings+=FeatureTypingName
@@ -6287,7 +6539,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isAbstract?='abstract' (ambiguity) isNegated?='not'
 	 *     isDerived?='derived' (ambiguity) 'satisfy' 'requirement' '&lt;' declaredShortName=Name
 	 *     isDerived?='derived' (ambiguity) 'satisfy' 'requirement' '=' valuePart=Expression
-	 *     isDerived?='derived' (ambiguity) 'satisfy' 'requirement' '[' Multiplicity+=MultiplicityExpression
+	 *     isDerived?='derived' (ambiguity) 'satisfy' 'requirement' '[' Multi0=MultiplicityExpression
+	 *     isDerived?='derived' (ambiguity) 'satisfy' 'requirement' '[' Multi1=MultiplicityExpression
 	 *     isDerived?='derived' (ambiguity) 'satisfy' 'requirement' 'by' satisfactionParameter=FeatureChainName
 	 *     isDerived?='derived' (ambiguity) 'satisfy' 'requirement' '{' elements+=RequirementBodyElement
 	 *     isDerived?='derived' (ambiguity) 'satisfy' 'requirement' (':' | ('defined' 'by')) typings+=FeatureTypingName
@@ -6305,7 +6558,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isDerived?='derived' (ambiguity) isNegated?='not'
 	 *     isEnd?='end' (ambiguity) 'satisfy' 'requirement' '&lt;' declaredShortName=Name
 	 *     isEnd?='end' (ambiguity) 'satisfy' 'requirement' '=' valuePart=Expression
-	 *     isEnd?='end' (ambiguity) 'satisfy' 'requirement' '[' Multiplicity+=MultiplicityExpression
+	 *     isEnd?='end' (ambiguity) 'satisfy' 'requirement' '[' Multi0=MultiplicityExpression
+	 *     isEnd?='end' (ambiguity) 'satisfy' 'requirement' '[' Multi1=MultiplicityExpression
 	 *     isEnd?='end' (ambiguity) 'satisfy' 'requirement' 'by' satisfactionParameter=FeatureChainName
 	 *     isEnd?='end' (ambiguity) 'satisfy' 'requirement' '{' elements+=RequirementBodyElement
 	 *     isEnd?='end' (ambiguity) 'satisfy' 'requirement' (':' | ('defined' 'by')) typings+=FeatureTypingName
@@ -6323,7 +6577,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isEnd?='end' (ambiguity) isNegated?='not'
 	 *     isIndividual?='individual' (ambiguity) 'satisfy' 'requirement' '&lt;' declaredShortName=Name
 	 *     isIndividual?='individual' (ambiguity) 'satisfy' 'requirement' '=' valuePart=Expression
-	 *     isIndividual?='individual' (ambiguity) 'satisfy' 'requirement' '[' Multiplicity+=MultiplicityExpression
+	 *     isIndividual?='individual' (ambiguity) 'satisfy' 'requirement' '[' Multi0=MultiplicityExpression
+	 *     isIndividual?='individual' (ambiguity) 'satisfy' 'requirement' '[' Multi1=MultiplicityExpression
 	 *     isIndividual?='individual' (ambiguity) 'satisfy' 'requirement' 'by' satisfactionParameter=FeatureChainName
 	 *     isIndividual?='individual' (ambiguity) 'satisfy' 'requirement' '{' elements+=RequirementBodyElement
 	 *     isIndividual?='individual' (ambiguity) 'satisfy' 'requirement' (':' | ('defined' 'by')) typings+=FeatureTypingName
@@ -6341,7 +6596,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isIndividual?='individual' (ambiguity) isNegated?='not'
 	 *     isReadOnly?='readonly' (ambiguity) 'satisfy' 'requirement' '&lt;' declaredShortName=Name
 	 *     isReadOnly?='readonly' (ambiguity) 'satisfy' 'requirement' '=' valuePart=Expression
-	 *     isReadOnly?='readonly' (ambiguity) 'satisfy' 'requirement' '[' Multiplicity+=MultiplicityExpression
+	 *     isReadOnly?='readonly' (ambiguity) 'satisfy' 'requirement' '[' Multi0=MultiplicityExpression
+	 *     isReadOnly?='readonly' (ambiguity) 'satisfy' 'requirement' '[' Multi1=MultiplicityExpression
 	 *     isReadOnly?='readonly' (ambiguity) 'satisfy' 'requirement' 'by' satisfactionParameter=FeatureChainName
 	 *     isReadOnly?='readonly' (ambiguity) 'satisfy' 'requirement' '{' elements+=RequirementBodyElement
 	 *     isReadOnly?='readonly' (ambiguity) 'satisfy' 'requirement' (':' | ('defined' 'by')) typings+=FeatureTypingName
@@ -6359,7 +6615,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isReadOnly?='readonly' (ambiguity) isNegated?='not'
 	 *     isReference?='ref' (ambiguity) 'satisfy' 'requirement' '&lt;' declaredShortName=Name
 	 *     isReference?='ref' (ambiguity) 'satisfy' 'requirement' '=' valuePart=Expression
-	 *     isReference?='ref' (ambiguity) 'satisfy' 'requirement' '[' Multiplicity+=MultiplicityExpression
+	 *     isReference?='ref' (ambiguity) 'satisfy' 'requirement' '[' Multi0=MultiplicityExpression
+	 *     isReference?='ref' (ambiguity) 'satisfy' 'requirement' '[' Multi1=MultiplicityExpression
 	 *     isReference?='ref' (ambiguity) 'satisfy' 'requirement' 'by' satisfactionParameter=FeatureChainName
 	 *     isReference?='ref' (ambiguity) 'satisfy' 'requirement' '{' elements+=RequirementBodyElement
 	 *     isReference?='ref' (ambiguity) 'satisfy' 'requirement' (':' | ('defined' 'by')) typings+=FeatureTypingName
@@ -6377,7 +6634,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isReference?='ref' (ambiguity) isNegated?='not'
 	 *     isReturn?='return' (ambiguity) 'satisfy' 'requirement' '&lt;' declaredShortName=Name
 	 *     isReturn?='return' (ambiguity) 'satisfy' 'requirement' '=' valuePart=Expression
-	 *     isReturn?='return' (ambiguity) 'satisfy' 'requirement' '[' Multiplicity+=MultiplicityExpression
+	 *     isReturn?='return' (ambiguity) 'satisfy' 'requirement' '[' Multi0=MultiplicityExpression
+	 *     isReturn?='return' (ambiguity) 'satisfy' 'requirement' '[' Multi1=MultiplicityExpression
 	 *     isReturn?='return' (ambiguity) 'satisfy' 'requirement' 'by' satisfactionParameter=FeatureChainName
 	 *     isReturn?='return' (ambiguity) 'satisfy' 'requirement' '{' elements+=RequirementBodyElement
 	 *     isReturn?='return' (ambiguity) 'satisfy' 'requirement' (':' | ('defined' 'by')) typings+=FeatureTypingName
@@ -6395,7 +6653,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isReturn?='return' (ambiguity) isNegated?='not'
 	 *     isThen?='then' (ambiguity) 'satisfy' 'requirement' '&lt;' declaredShortName=Name
 	 *     isThen?='then' (ambiguity) 'satisfy' 'requirement' '=' valuePart=Expression
-	 *     isThen?='then' (ambiguity) 'satisfy' 'requirement' '[' Multiplicity+=MultiplicityExpression
+	 *     isThen?='then' (ambiguity) 'satisfy' 'requirement' '[' Multi0=MultiplicityExpression
+	 *     isThen?='then' (ambiguity) 'satisfy' 'requirement' '[' Multi1=MultiplicityExpression
 	 *     isThen?='then' (ambiguity) 'satisfy' 'requirement' 'by' satisfactionParameter=FeatureChainName
 	 *     isThen?='then' (ambiguity) 'satisfy' 'requirement' '{' elements+=RequirementBodyElement
 	 *     isThen?='then' (ambiguity) 'satisfy' 'requirement' (':' | ('defined' 'by')) typings+=FeatureTypingName
@@ -6413,7 +6672,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isThen?='then' (ambiguity) isNegated?='not'
 	 *     isVariant?='variant' (ambiguity) 'satisfy' 'requirement' '&lt;' declaredShortName=Name
 	 *     isVariant?='variant' (ambiguity) 'satisfy' 'requirement' '=' valuePart=Expression
-	 *     isVariant?='variant' (ambiguity) 'satisfy' 'requirement' '[' Multiplicity+=MultiplicityExpression
+	 *     isVariant?='variant' (ambiguity) 'satisfy' 'requirement' '[' Multi0=MultiplicityExpression
+	 *     isVariant?='variant' (ambiguity) 'satisfy' 'requirement' '[' Multi1=MultiplicityExpression
 	 *     isVariant?='variant' (ambiguity) 'satisfy' 'requirement' 'by' satisfactionParameter=FeatureChainName
 	 *     isVariant?='variant' (ambiguity) 'satisfy' 'requirement' '{' elements+=RequirementBodyElement
 	 *     isVariant?='variant' (ambiguity) 'satisfy' 'requirement' (':' | ('defined' 'by')) typings+=FeatureTypingName
@@ -6431,7 +6691,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariant?='variant' (ambiguity) isNegated?='not'
 	 *     isVariation?='variation' (ambiguity) 'satisfy' 'requirement' '&lt;' declaredShortName=Name
 	 *     isVariation?='variation' (ambiguity) 'satisfy' 'requirement' '=' valuePart=Expression
-	 *     isVariation?='variation' (ambiguity) 'satisfy' 'requirement' '[' Multiplicity+=MultiplicityExpression
+	 *     isVariation?='variation' (ambiguity) 'satisfy' 'requirement' '[' Multi0=MultiplicityExpression
+	 *     isVariation?='variation' (ambiguity) 'satisfy' 'requirement' '[' Multi1=MultiplicityExpression
 	 *     isVariation?='variation' (ambiguity) 'satisfy' 'requirement' 'by' satisfactionParameter=FeatureChainName
 	 *     isVariation?='variation' (ambiguity) 'satisfy' 'requirement' '{' elements+=RequirementBodyElement
 	 *     isVariation?='variation' (ambiguity) 'satisfy' 'requirement' (':' | ('defined' 'by')) typings+=FeatureTypingName
@@ -6449,7 +6710,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isVariation?='variation' (ambiguity) isNegated?='not'
 	 *     portionKind=PortionKind (ambiguity) 'satisfy' 'requirement' '&lt;' declaredShortName=Name
 	 *     portionKind=PortionKind (ambiguity) 'satisfy' 'requirement' '=' valuePart=Expression
-	 *     portionKind=PortionKind (ambiguity) 'satisfy' 'requirement' '[' Multiplicity+=MultiplicityExpression
+	 *     portionKind=PortionKind (ambiguity) 'satisfy' 'requirement' '[' Multi0=MultiplicityExpression
+	 *     portionKind=PortionKind (ambiguity) 'satisfy' 'requirement' '[' Multi1=MultiplicityExpression
 	 *     portionKind=PortionKind (ambiguity) 'satisfy' 'requirement' 'by' satisfactionParameter=FeatureChainName
 	 *     portionKind=PortionKind (ambiguity) 'satisfy' 'requirement' '{' elements+=RequirementBodyElement
 	 *     portionKind=PortionKind (ambiguity) 'satisfy' 'requirement' (':' | ('defined' 'by')) typings+=FeatureTypingName
@@ -6467,7 +6729,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     portionKind=PortionKind (ambiguity) isNegated?='not'
 	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) 'satisfy' 'requirement' '&lt;' declaredShortName=Name
 	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) 'satisfy' 'requirement' '=' valuePart=Expression
-	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) 'satisfy' 'requirement' '[' Multiplicity+=MultiplicityExpression
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) 'satisfy' 'requirement' '[' Multi0=MultiplicityExpression
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) 'satisfy' 'requirement' '[' Multi1=MultiplicityExpression
 	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) 'satisfy' 'requirement' 'by' satisfactionParameter=FeatureChainName
 	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) 'satisfy' 'requirement' '{' elements+=RequirementBodyElement
 	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) 'satisfy' 'requirement' (':' | ('defined' 'by')) typings+=FeatureTypingName
@@ -6485,7 +6748,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) isNegated?='not'
 	 *     visibility=VisibilityIndicator (ambiguity) 'satisfy' 'requirement' '&lt;' declaredShortName=Name
 	 *     visibility=VisibilityIndicator (ambiguity) 'satisfy' 'requirement' '=' valuePart=Expression
-	 *     visibility=VisibilityIndicator (ambiguity) 'satisfy' 'requirement' '[' Multiplicity+=MultiplicityExpression
+	 *     visibility=VisibilityIndicator (ambiguity) 'satisfy' 'requirement' '[' Multi0=MultiplicityExpression
+	 *     visibility=VisibilityIndicator (ambiguity) 'satisfy' 'requirement' '[' Multi1=MultiplicityExpression
 	 *     visibility=VisibilityIndicator (ambiguity) 'satisfy' 'requirement' 'by' satisfactionParameter=FeatureChainName
 	 *     visibility=VisibilityIndicator (ambiguity) 'satisfy' 'requirement' '{' elements+=RequirementBodyElement
 	 *     visibility=VisibilityIndicator (ambiguity) 'satisfy' 'requirement' (':' | ('defined' 'by')) typings+=FeatureTypingName
@@ -6515,8 +6779,10 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'assert'? 'satisfy' 'requirement' (ambiguity) (rule start)
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'assert'? 'satisfy' 'requirement' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     ThenMulti02=MultiplicityExpression ']' 'assert'? 'satisfy' 'requirement' (ambiguity) (rule end)
+	 *     ThenMulti0=MultiplicityExpression ']' 'assert'? 'satisfy' 'requirement' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -6574,7 +6840,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'stakeholder' (ambiguity) (rule start)
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -6625,8 +6892,10 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'state' (ambiguity) (rule start)
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'state' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     ThenMulti02=MultiplicityExpression ']' 'state' (ambiguity) (rule end)
+	 *     ThenMulti0=MultiplicityExpression ']' 'state' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -6665,7 +6934,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'subject' (ambiguity) (rule start)
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -6732,8 +7002,10 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'succession' 'flow' (ambiguity) FlowEnd+=FeatureChainName
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) FlowEnd+=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'succession' 'flow' (ambiguity) FlowEnd+=FeatureChainName
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) FlowEnd+=FeatureChainName
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) FlowEnd+=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'succession' 'flow' (ambiguity) FlowEnd+=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'succession' 'flow' (ambiguity) FlowEnd+=FeatureChainName
 	 *     crosses+=FeatureChainName (ambiguity) FlowEnd+=FeatureChainName
 	 *     declaredName=Name (ambiguity) FlowEnd+=FeatureChainName
 	 *     declaredShortName=Name '&gt;' (ambiguity) FlowEnd+=FeatureChainName
@@ -6750,7 +7022,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isThen?='then' 'succession' 'flow' (ambiguity) FlowEnd+=FeatureChainName
 	 *     isVariant?='variant' 'succession' 'flow' (ambiguity) FlowEnd+=FeatureChainName
 	 *     isVariation?='variation' 'succession' 'flow' (ambiguity) FlowEnd+=FeatureChainName
-	 *     itemFeatureParameter+=ItemFeatureParameter (ambiguity) FlowEnd+=FeatureChainName
+	 *     itemFeatureParameter=ItemFeatureParameter (ambiguity) FlowEnd+=FeatureChainName
 	 *     portionKind=PortionKind 'succession' 'flow' (ambiguity) FlowEnd+=FeatureChainName
 	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'succession' 'flow' (ambiguity) FlowEnd+=FeatureChainName
 	 *     redefinitions+=FeatureChainName (ambiguity) FlowEnd+=FeatureChainName
@@ -6774,8 +7046,10 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'succession' 'flow' (ambiguity) (rule start)
 	 *     FlowEnd+=FeatureChainName (ambiguity) (rule end)
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'succession' 'flow' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     ThenMulti02=MultiplicityExpression ']' 'succession' 'flow' (ambiguity) (rule end)
+	 *     ThenMulti0=MultiplicityExpression ']' 'succession' 'flow' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -6792,7 +7066,7 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     isThen?='then' 'succession' 'flow' (ambiguity) (rule end)
 	 *     isVariant?='variant' 'succession' 'flow' (ambiguity) (rule end)
 	 *     isVariation?='variation' 'succession' 'flow' (ambiguity) (rule end)
-	 *     itemFeatureParameter+=ItemFeatureParameter (ambiguity) (rule end)
+	 *     itemFeatureParameter=ItemFeatureParameter (ambiguity) (rule end)
 	 *     portionKind=PortionKind 'succession' 'flow' (ambiguity) (rule end)
 	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'succession' 'flow' (ambiguity) (rule end)
 	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
@@ -6856,12 +7130,13 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('transition' 'first'? 'accept') | 'accept'
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) acceptParameter+=PayloadParameter
-	 *     ThenMultiplicity+=MultiplicityExpression ']' (ambiguity) acceptParameter+=PayloadParameter
-	 *     isReturn?='return' (ambiguity) acceptParameter+=PayloadParameter
-	 *     isThen?='then' (ambiguity) acceptParameter+=PayloadParameter
-	 *     isVariant?='variant' (ambiguity) acceptParameter+=PayloadParameter
-	 *     visibility=VisibilityIndicator (ambiguity) acceptParameter+=PayloadParameter
+	 *     (rule start) (ambiguity) acceptParameter=PayloadParameter
+	 *     ThenMulti02=MultiplicityExpression ']' (ambiguity) acceptParameter=PayloadParameter
+	 *     ThenMulti0=MultiplicityExpression ']' (ambiguity) acceptParameter=PayloadParameter
+	 *     isReturn?='return' (ambiguity) acceptParameter=PayloadParameter
+	 *     isThen?='then' (ambiguity) acceptParameter=PayloadParameter
+	 *     isVariant?='variant' (ambiguity) acceptParameter=PayloadParameter
+	 *     visibility=VisibilityIndicator (ambiguity) acceptParameter=PayloadParameter
 	 
 	 * </pre>
 	 */
@@ -6878,9 +7153,12 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) 'transition' (ambiguity) 'do' performedActionParameterPart+=PerformedActionUsage
 	 *     (rule start) 'transition' (ambiguity) 'if' conditionalExpression=Expression
 	 *     (rule start) 'transition' (ambiguity) transitionSourceElement=FeatureChainName
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'transition' (ambiguity) 'do' performedActionParameterPart+=PerformedActionUsage
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'transition' (ambiguity) 'if' conditionalExpression=Expression
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'transition' (ambiguity) transitionSourceElement=FeatureChainName
+	 *     ThenMulti02=MultiplicityExpression ']' 'transition' (ambiguity) 'do' performedActionParameterPart+=PerformedActionUsage
+	 *     ThenMulti02=MultiplicityExpression ']' 'transition' (ambiguity) 'if' conditionalExpression=Expression
+	 *     ThenMulti02=MultiplicityExpression ']' 'transition' (ambiguity) transitionSourceElement=FeatureChainName
+	 *     ThenMulti0=MultiplicityExpression ']' 'transition' (ambiguity) 'do' performedActionParameterPart+=PerformedActionUsage
+	 *     ThenMulti0=MultiplicityExpression ']' 'transition' (ambiguity) 'if' conditionalExpression=Expression
+	 *     ThenMulti0=MultiplicityExpression ']' 'transition' (ambiguity) transitionSourceElement=FeatureChainName
 	 *     isReturn?='return' 'transition' (ambiguity) 'do' performedActionParameterPart+=PerformedActionUsage
 	 *     isReturn?='return' 'transition' (ambiguity) 'if' conditionalExpression=Expression
 	 *     isReturn?='return' 'transition' (ambiguity) transitionSourceElement=FeatureChainName
@@ -6935,7 +7213,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) 'then' transitionSuccessionElement+=ConnectorEnd
-	 *     ThenMultiplicity+=MultiplicityExpression ']' (ambiguity) 'then' transitionSuccessionElement+=ConnectorEnd
+	 *     ThenMulti02=MultiplicityExpression ']' (ambiguity) 'then' transitionSuccessionElement+=ConnectorEnd
+	 *     ThenMulti0=MultiplicityExpression ']' (ambiguity) 'then' transitionSuccessionElement+=ConnectorEnd
 	 *     isReturn?='return' (ambiguity) 'then' transitionSuccessionElement+=ConnectorEnd
 	 *     isThen?='then' (ambiguity) 'then' transitionSuccessionElement+=ConnectorEnd
 	 *     isVariant?='variant' (ambiguity) 'then' transitionSuccessionElement+=ConnectorEnd
@@ -6977,8 +7256,10 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'use' 'case' (ambiguity) (rule start)
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'use' 'case' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     ThenMulti02=MultiplicityExpression ']' 'use' 'case' (ambiguity) (rule end)
+	 *     ThenMulti0=MultiplicityExpression ']' 'use' 'case' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -7040,8 +7321,10 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'verification' (ambiguity) (rule start)
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'verification' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     ThenMulti02=MultiplicityExpression ']' 'verification' (ambiguity) (rule end)
+	 *     ThenMulti0=MultiplicityExpression ']' 'verification' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -7103,7 +7386,8 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'render' 'rendering' (ambiguity) (rule start)
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -7132,8 +7416,10 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'view' (ambiguity) (rule start)
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'view' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     ThenMulti02=MultiplicityExpression ']' 'view' (ambiguity) (rule end)
+	 *     ThenMulti0=MultiplicityExpression ']' 'view' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -7195,8 +7481,10 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'viewpoint' (ambiguity) (rule start)
-	 *     Multiplicity+=MultiplicityExpression ']' (ambiguity) (rule end)
-	 *     ThenMultiplicity+=MultiplicityExpression ']' 'viewpoint' (ambiguity) (rule end)
+	 *     Multi02=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     Multi0=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     ThenMulti02=MultiplicityExpression ']' 'viewpoint' (ambiguity) (rule end)
+	 *     ThenMulti0=MultiplicityExpression ']' 'viewpoint' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
