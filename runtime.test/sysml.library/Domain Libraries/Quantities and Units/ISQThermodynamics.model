@@ -1,0 +1,1992 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:LibraryPackage" declaredName="ISQThermodynamics" isStandard="true" isLibrary="true">
+    <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;     * International System of Quantities and Units&#xA;     * Generated on 2025-03-13T15:00:05Z from standard ISO-80000-5:2019 &quot;Thermodynamics&quot;&#xA;     * see also https://www.iso.org/standard/64976.html&#xA;     * &#xA;     * Note 1: In documentation comments, AsciiMath notation (see http://asciimath.org/) is used for mathematical concepts,&#xA;     * with Greek letters in Unicode encoding. In running text, AsciiMath is placed between backticks.&#xA;     * Note 2: For vector and tensor quantities currently the unit and quantity value type for their (scalar) magnitude is &#xA;     * defined, as well as their typical Cartesian 3d VectorMeasurementReference (i.e. coordinate system) &#xA;     * or TensorMeasurementReference.&#xA;     */"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues::Real"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Quantities" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="MeasurementReferences" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ISQBase" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* Quantity definitions referenced from other ISQ packages */"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-1 thermodynamic temperature, temperature */"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* See package ISQBase for the declarations of ThermodynamicTemperatureValue and ThermodynamicTemperatureUnit */"/>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="TemperatureUnit" memberElement="ThermodynamicTemperatureUnit"/>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="TemperatureValue" memberElement="ThermodynamicTemperatureValue"/>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="temperature" memberElement="thermodynamicTemperature"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-2 Celsius temperature */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CelsiusTemperatureValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-2 Celsius temperature&#xA;         * symbol(s): `t`, `&#x3b8;`&#xA;         * application domain: generic&#xA;         * name: CelsiusTemperature&#xA;         * quantity dimension: &#x398;^1&#xA;         * measurement unit(s): &#xb0;C&#xA;         * tensor order: 0&#xA;         * definition: temperature difference from the thermodynamic temperature of the ice point is called the Celsius temperature t, which is defined by the quantity equation: `t = T - T_0` where `T` is thermodynamic temperature (item 5-1) and `T_0 = 273,15 K`&#xA;         * remarks: The unit degree Celsius is a special name for the kelvin for use in stating values of Celsius temperature. The unit degree Celsius is by definition equal in magnitude to the kelvin. A difference or interval of temperature may be expressed in kelvin or in degrees Celsius. The thermodynamic temperature `T_0` is 0,01 K below the thermodynamic temperature of the triple point of water. The symbol &#xb0;C for the degree Celsius shall be preceded by a space (see ISO 80000-1). Prefixes are not allowed in combination with the unit &#xb0;C.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>CelsiusTemperatureUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="celsiusTemperature" isNonunique="true">
+      <typings>CelsiusTemperatureValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CelsiusTemperatureUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="thermodynamicTemperaturePF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.'&#x398;'">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="thermodynamicTemperaturePF">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-3.1 linear expansion coefficient */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="LinearExpansionCoefficientValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-3.1 linear expansion coefficient&#xA;         * symbol(s): `&#x3b1;_l`&#xA;         * application domain: generic&#xA;         * name: LinearExpansionCoefficient&#xA;         * quantity dimension: &#x398;^-1&#xA;         * measurement unit(s): K^-1&#xA;         * tensor order: 0&#xA;         * definition: relative change of length with temperature: `&#x3b1;_l = 1/l * (dl)/(dT)` where l is length (ISO 80000-3) and `T` is thermodynamic temperature (item 5-1)&#xA;         * remarks: The subscripts in the symbols may be omitted when there is no risk of confusion.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>LinearExpansionCoefficientUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="linearExpansionCoefficient" isNonunique="true">
+      <typings>LinearExpansionCoefficientValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="LinearExpansionCoefficientUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="thermodynamicTemperaturePF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.'&#x398;'">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="thermodynamicTemperaturePF">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-3.2 cubic expansion coefficient */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CubicExpansionCoefficientValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-3.2 cubic expansion coefficient&#xA;         * symbol(s): `&#x3b1;_V`, `&#x3b3;`&#xA;         * application domain: generic&#xA;         * name: CubicExpansionCoefficient&#xA;         * quantity dimension: &#x398;^-1&#xA;         * measurement unit(s): K^-1&#xA;         * tensor order: 0&#xA;         * definition: relative change of volume with temperature: `&#x3b1;_V = 1/V * (dV)/(dT)` where `V` is volume (ISO 80000-3) and `T` is thermodynamic temperature (item 5-1)&#xA;         * remarks: Also called volumetric expansion coefficient. The subscripts in the symbols may be omitted when there is no risk of confusion.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>CubicExpansionCoefficientUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cubicExpansionCoefficient" isNonunique="true">
+      <typings>CubicExpansionCoefficientValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CubicExpansionCoefficientUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="thermodynamicTemperaturePF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.'&#x398;'">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="thermodynamicTemperaturePF">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-3.3 relative pressure coefficient */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="RelativePressureCoefficientValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-3.3 relative pressure coefficient&#xA;         * symbol(s): `&#x3b1;_p`&#xA;         * application domain: generic&#xA;         * name: RelativePressureCoefficient&#xA;         * quantity dimension: &#x398;^-1&#xA;         * measurement unit(s): K^-1&#xA;         * tensor order: 0&#xA;         * definition: relative change of pressure with temperature at constant volume: `&#x3b1;_p = 1/p * ((partial p)/(partial T))_V` where `p` is pressure (ISO 80000-4), `T` is thermodynamic temperature (item 5-1), and `V` is volume (ISO 80000-3)&#xA;         * remarks: The subscripts in the symbols may be omitted when there is no risk of confusion.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>RelativePressureCoefficientUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="relativePressureCoefficient" isNonunique="true">
+      <typings>RelativePressureCoefficientValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="RelativePressureCoefficientUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="thermodynamicTemperaturePF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.'&#x398;'">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="thermodynamicTemperaturePF">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-4 pressure coefficient */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="PressureCoefficientValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-4 pressure coefficient&#xA;         * symbol(s): `&#x3b2;`&#xA;         * application domain: generic&#xA;         * name: PressureCoefficient&#xA;         * quantity dimension: L^-1*M^1*T^-2*&#x398;^-1&#xA;         * measurement unit(s): Pa/K, kg*m^-1*s^-2*K^-1&#xA;         * tensor order: 0&#xA;         * definition: change of pressure with temperature at constant volume: `&#x3b2; = ((partial p)/(partial T))_V` where `p` is pressure (ISO 80000-4), `T` is thermodynamic temperature (item 5-1), and `V` is volume (ISO 80000-3)&#xA;         * remarks: None.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>PressureCoefficientUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="pressureCoefficient" isNonunique="true">
+      <typings>PressureCoefficientValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="PressureCoefficientUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="thermodynamicTemperaturePF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.'&#x398;'">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, massPF, durationPF, thermodynamicTemperaturePF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-5.1 isothermal compressibility */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="IsothermalCompressibilityValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-5.1 isothermal compressibility&#xA;         * symbol(s): `&#x3f0;_T`&#xA;         * application domain: generic&#xA;         * name: IsothermalCompressibility&#xA;         * quantity dimension: L^1*M^-1*T^2&#xA;         * measurement unit(s): Pa^-1, kg^-1*m*s^2&#xA;         * tensor order: 0&#xA;         * definition: negative relative change of volume with pressure at constant temperature: `&#x3f0;_T = -1/V * ((partial V)/(partial p))_T` where `V` is volume (ISO 80000-3), `p` is pressure (ISO 80000-4), and `T` is thermodynamic temperature (item 5-1)&#xA;         * remarks: The subscripts in the symbols may be omitted when there is no risk of confusion.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>IsothermalCompressibilityUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="isothermalCompressibility" isNonunique="true">
+      <typings>IsothermalCompressibilityValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="IsothermalCompressibilityUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, massPF, durationPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-5.2 isentropic compressibility */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="IsentropicCompressibilityValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-5.2 isentropic compressibility&#xA;         * symbol(s): `&#x3f0;_S`&#xA;         * application domain: generic&#xA;         * name: IsentropicCompressibility&#xA;         * quantity dimension: L^1*M^-1*T^2&#xA;         * measurement unit(s): Pa^-1, kg^-1*m*s^2&#xA;         * tensor order: 0&#xA;         * definition: negative relative change of volume with pressure at constant entropy: `&#x3f0;_S = -1/V * ((partial V)/(partial p))_S` where `V` is volume (ISO 80000-3), `p` is pressure (ISO 80000-4), and `S` is entropy (item 5-18)&#xA;         * remarks: The subscripts in the symbols may be omitted when there is no risk of confusion.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>IsentropicCompressibilityUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="isentropicCompressibility" isNonunique="true">
+      <typings>IsentropicCompressibilityValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="IsentropicCompressibilityUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, massPF, durationPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-6.1 heat, amount of heat */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="heat">
+      <typings>EnergyValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-6.1 heat, amount of heat&#xA;         * symbol(s): `Q`&#xA;         * application domain: generic&#xA;         * name: Heat (specializes Energy)&#xA;         * quantity dimension: L^2*M^1*T^-2&#xA;         * measurement unit(s): J, kg*m^2*s^-2&#xA;         * tensor order: 0&#xA;         * definition: difference between the increase in the internal energy (item 5-20.2) of a system and the work (ISO 80000-4) done on the system, provided that the amounts of substances within the system are not changed&#xA;         * remarks: The heat transferred in an isothermal phase transformation should be expressed as the change in the appropriate state functions, e.g. `T &#x394;S`, where `T` is thermodynamic temperature (item 5-1) and `S` is entropy (item 5-18), or `&#x394;H`, where `H` is enthalpy (item 5-20.3). NOTE A supply of heat can correspond to an increase in thermodynamic temperature or to other effects, such as phase change or chemical processes; see item 5-6.2.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="amountOfHeat" memberElement="heat"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-6.2 latent heat */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="latentHeat">
+      <typings>EnergyValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-6.2 latent heat&#xA;         * symbol(s): `Q`&#xA;         * application domain: generic&#xA;         * name: LatentHeat (specializes Energy)&#xA;         * quantity dimension: L^2*M^1*T^-2&#xA;         * measurement unit(s): J, kg*m^2*s^-2&#xA;         * tensor order: 0&#xA;         * definition: energy released or absorbed by a system during a constant-temperature process&#xA;         * remarks: Examples of latent heat are latent heat of fusion (melting) and latent heat of vaporization (boiling).&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-7 heat flow rate */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="HeatFlowRateValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-7 heat flow rate&#xA;         * symbol(s): `dot(Q)`&#xA;         * application domain: generic&#xA;         * name: HeatFlowRate&#xA;         * quantity dimension: L^2*M^1*T^-3&#xA;         * measurement unit(s): W, J/s, kg*m^2*s^-3&#xA;         * tensor order: 0&#xA;         * definition: time rate at which heat (item 5-6.1) crosses a given surface&#xA;         * remarks: None.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>HeatFlowRateUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="heatFlowRate" isNonunique="true">
+      <typings>HeatFlowRateValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="HeatFlowRateUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-3">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, massPF, durationPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-8 density of heat flow rate */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="DensityOfHeatFlowRateValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-8 density of heat flow rate&#xA;         * symbol(s): `q`, `&#x3c6;`&#xA;         * application domain: generic&#xA;         * name: DensityOfHeatFlowRate&#xA;         * quantity dimension: M^1*T^-3&#xA;         * measurement unit(s): W/m^2, kg*s^-3&#xA;         * tensor order: 0&#xA;         * definition: quotient of heat flow rate and area: `q = dot Q / A` where `dot Q` is heat flow rate (item 5-7) and A is area (ISO 80000-3) of a given surface&#xA;         * remarks: None.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>DensityOfHeatFlowRateUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="densityOfHeatFlowRate" isNonunique="true">
+      <typings>DensityOfHeatFlowRateValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="DensityOfHeatFlowRateUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-3">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(massPF, durationPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-9 thermal conductivity */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ThermalConductivityValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-9 thermal conductivity&#xA;         * symbol(s): `&#x3bb;_l`, `(&#x3f0;)`&#xA;         * application domain: generic&#xA;         * name: ThermalConductivity&#xA;         * quantity dimension: L^1*M^1*T^-3*&#x398;^-1&#xA;         * measurement unit(s): W/(m*K), kg*m*s^-3*K^-1&#xA;         * tensor order: 0&#xA;         * definition: quotient of density of heat flow rate (item 5-8) and thermodynamic temperature gradient that has the same direction as the heat flow&#xA;         * remarks: None.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>ThermalConductivityUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="thermalConductivity" isNonunique="true">
+      <typings>ThermalConductivityValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ThermalConductivityUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-3">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="thermodynamicTemperaturePF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.'&#x398;'">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, massPF, durationPF, thermodynamicTemperaturePF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-10.1 coefficient of heat transfer */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CoefficientOfHeatTransferValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-10.1 coefficient of heat transfer&#xA;         * symbol(s): `K`, `(k)`&#xA;         * application domain: generic&#xA;         * name: CoefficientOfHeatTransfer&#xA;         * quantity dimension: M^1*T^-3*&#x398;^-1&#xA;         * measurement unit(s): W/(m^2*K), kg*s^-3*K^-1&#xA;         * tensor order: 0&#xA;         * definition: quotient of density of heat flow rate (item 5-8) and thermodynamic temperature (item 5-1) difference&#xA;         * remarks: In building technology, the coefficient of heat transfer is often called thermal transmittance, with the symbol U (no longer recommended). See remark to item 5-13.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>CoefficientOfHeatTransferUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="coefficientOfHeatTransfer" isNonunique="true">
+      <typings>CoefficientOfHeatTransferValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CoefficientOfHeatTransferUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-3">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="thermodynamicTemperaturePF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.'&#x398;'">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(massPF, durationPF, thermodynamicTemperaturePF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-10.2 surface coefficient of heat transfer */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SurfaceCoefficientOfHeatTransferValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-10.2 surface coefficient of heat transfer&#xA;         * symbol(s): `h`, `(&#x3b1;)`&#xA;         * application domain: generic&#xA;         * name: SurfaceCoefficientOfHeatTransfer&#xA;         * quantity dimension: M^1*T^-3*&#x398;^-1&#xA;         * measurement unit(s): W/(m^2*K), kg*s^-3*K^-1&#xA;         * tensor order: 0&#xA;         * definition: quotient of density of heat flow rate and the difference of the temperature at the surface and a reference temperature: `h = q / (T_s - T_r)` where q is density of heat flow rate (item 5-8), `T_s` is the thermodynamic temperature (item 5-1) at the surface, and `T_r` is a reference thermodynamic temperature characterizing the adjacent surroundings&#xA;         * remarks: None.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>SurfaceCoefficientOfHeatTransferUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="surfaceCoefficientOfHeatTransfer" isNonunique="true">
+      <typings>SurfaceCoefficientOfHeatTransferValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SurfaceCoefficientOfHeatTransferUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-3">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="thermodynamicTemperaturePF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.'&#x398;'">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(massPF, durationPF, thermodynamicTemperaturePF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-11 thermal insulance, coefficient of thermal insulance */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ThermalInsulanceValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-11 thermal insulance, coefficient of thermal insulance&#xA;         * symbol(s): `M`&#xA;         * application domain: generic&#xA;         * name: ThermalInsulance&#xA;         * quantity dimension: M^-1*T^3*&#x398;^1&#xA;         * measurement unit(s): m^2*K/W, kg^-1*s^3*K&#xA;         * tensor order: 0&#xA;         * definition: inverse of coefficient of heat transfer `K`: `M = 1/K` where `K` is coefficient of heat transfer (item 5-10.1)&#xA;         * remarks: In building technology, this quantity is often called thermal resistance, with the symbol R.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>ThermalInsulanceUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="thermalInsulance" isNonunique="true">
+      <typings>ThermalInsulanceValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ThermalInsulanceUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="3">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="thermodynamicTemperaturePF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.'&#x398;'">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(massPF, durationPF, thermodynamicTemperaturePF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="CoefficientOfThermalInsulanceUnit" memberElement="ThermalInsulanceUnit"/>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="CoefficientOfThermalInsulanceValue" memberElement="ThermalInsulanceValue"/>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="coefficientOfThermalInsulance" memberElement="thermalInsulance"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-12 thermal resistance */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ThermalResistanceValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-12 thermal resistance&#xA;         * symbol(s): `R`&#xA;         * application domain: generic&#xA;         * name: ThermalResistance&#xA;         * quantity dimension: L^-2*M^-1*T^3*&#x398;^1&#xA;         * measurement unit(s): K/W, kg^-1*m^-2*s^3*K&#xA;         * tensor order: 0&#xA;         * definition: quotient of thermodynamic temperature (item 5-1) difference and heat flow rate (item 5-7)&#xA;         * remarks: See remark to item 5-11.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>ThermalResistanceUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="thermalResistance" isNonunique="true">
+      <typings>ThermalResistanceValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ThermalResistanceUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="3">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="thermodynamicTemperaturePF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.'&#x398;'">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, massPF, durationPF, thermodynamicTemperaturePF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-13 thermal conductance */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ThermalConductanceValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-13 thermal conductance&#xA;         * symbol(s): `G`, `(H)`&#xA;         * application domain: generic&#xA;         * name: ThermalConductance&#xA;         * quantity dimension: L^2*M^1*T^-3*&#x398;^-1&#xA;         * measurement unit(s): W/K, kg*m^2*s^-3*K^-1&#xA;         * tensor order: 0&#xA;         * definition: inverse of thermal resistance `R`: `G = 1/R` where `R` is thermal resistance (item 5-12)&#xA;         * remarks: See remark to item 5-11. This quantity is also called heat transfer coefficient. See item 5-10.1.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>ThermalConductanceUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="thermalConductance" isNonunique="true">
+      <typings>ThermalConductanceValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ThermalConductanceUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-3">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="thermodynamicTemperaturePF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.'&#x398;'">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, massPF, durationPF, thermodynamicTemperaturePF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-14 thermal diffusivity */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ThermalDiffusivityValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-14 thermal diffusivity&#xA;         * symbol(s): `a`&#xA;         * application domain: generic&#xA;         * name: ThermalDiffusivity&#xA;         * quantity dimension: L^2*T^-1&#xA;         * measurement unit(s): m^2*s^-1&#xA;         * tensor order: 0&#xA;         * definition: quotient of thermal conductivity and the product of mass density and specific heat capacity: `a = &#x3bb; / (&#x3c1; C_p)` where `&#x3bb;` is thermal conductivity (item 5-9), `&#x3c1;` is mass density (ISO 80000-4), and `c_p` is specific heat capacity at constant pressure (item 5-16.2)&#xA;         * remarks: None.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>ThermalDiffusivityUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="thermalDiffusivity" isNonunique="true">
+      <typings>ThermalDiffusivityValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ThermalDiffusivityUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, durationPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-15 heat capacity */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="HeatCapacityValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-15 heat capacity&#xA;         * symbol(s): `C`&#xA;         * application domain: generic&#xA;         * name: HeatCapacity&#xA;         * quantity dimension: L^2*M^1*T^-2*&#x398;^-1&#xA;         * measurement unit(s): J/K, kg*m^2*s^-2*K^-1&#xA;         * tensor order: 0&#xA;         * definition: derivative of added heat with respect to thermodynamic temperature of a system: `C = (dQ)/(dT)` where `Q` is amount of heat (item 5-6.1) and `T` is thermodynamic temperature (item 5-1)&#xA;         * remarks: Heat capacity is not completely defined unless specified as seen in items 5-16.2, 5-16.3 and 5-16.4.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>HeatCapacityUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="heatCapacity" isNonunique="true">
+      <typings>HeatCapacityValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="HeatCapacityUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="thermodynamicTemperaturePF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.'&#x398;'">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, massPF, durationPF, thermodynamicTemperaturePF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-16.1 specific heat capacity */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SpecificHeatCapacityValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-16.1 specific heat capacity&#xA;         * symbol(s): `c`&#xA;         * application domain: generic&#xA;         * name: SpecificHeatCapacity&#xA;         * quantity dimension: L^2*T^-2*&#x398;^-1&#xA;         * measurement unit(s): J/(kg*K), m^2*s^-2*K^-1&#xA;         * tensor order: 0&#xA;         * definition: quotient of heat capacity and mass: `c = C/m` where `C` is heat capacity (item 5-15) and `m` is mass (ISO 80000-4)&#xA;         * remarks: For the corresponding quantities related to the amount of substance, see ISO 80000-9.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>SpecificHeatCapacityUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="specificHeatCapacity" isNonunique="true">
+      <typings>SpecificHeatCapacityValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SpecificHeatCapacityUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="thermodynamicTemperaturePF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.'&#x398;'">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, durationPF, thermodynamicTemperaturePF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-16.2 specific heat capacity at constant pressure */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SpecificHeatCapacityAtConstantPressureValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-16.2 specific heat capacity at constant pressure&#xA;         * symbol(s): `c_p`&#xA;         * application domain: generic&#xA;         * name: SpecificHeatCapacityAtConstantPressure&#xA;         * quantity dimension: L^2*T^-2*&#x398;^-1&#xA;         * measurement unit(s): J/(kg*K), m^2*s^-2*K^-1&#xA;         * tensor order: 0&#xA;         * definition: specific heat capacity (item 5-16.1) at constant pressure (ISO 80000-4)&#xA;         * remarks: Also called specific isobaric heat capacity.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>SpecificHeatCapacityAtConstantPressureUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="specificHeatCapacityAtConstantPressure" isNonunique="true">
+      <typings>SpecificHeatCapacityAtConstantPressureValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SpecificHeatCapacityAtConstantPressureUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="thermodynamicTemperaturePF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.'&#x398;'">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, durationPF, thermodynamicTemperaturePF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-16.3 specific heat capacity at constant volume */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SpecificHeatCapacityAtConstantVolumeValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-16.3 specific heat capacity at constant volume&#xA;         * symbol(s): `c_V`&#xA;         * application domain: generic&#xA;         * name: SpecificHeatCapacityAtConstantVolume&#xA;         * quantity dimension: L^2*T^-2*&#x398;^-1&#xA;         * measurement unit(s): J/(kg*K), m^2*s^-2*K^-1&#xA;         * tensor order: 0&#xA;         * definition: specific heat capacity (item 5-16.1) at constant volume (ISO 80000-3)&#xA;         * remarks: Also called specific isochoric heat capacity.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>SpecificHeatCapacityAtConstantVolumeUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="specificHeatCapacityAtConstantVolume" isNonunique="true">
+      <typings>SpecificHeatCapacityAtConstantVolumeValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SpecificHeatCapacityAtConstantVolumeUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="thermodynamicTemperaturePF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.'&#x398;'">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, durationPF, thermodynamicTemperaturePF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-16.4 specific heat capacity at saturated vapour pressure */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SpecificHeatCapacityAtSaturatedVapourPressureValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-16.4 specific heat capacity at saturated vapour pressure&#xA;         * symbol(s): `c_&quot;sat&quot;`&#xA;         * application domain: generic&#xA;         * name: SpecificHeatCapacityAtSaturatedVapourPressure&#xA;         * quantity dimension: L^2*T^-2*&#x398;^-1&#xA;         * measurement unit(s): J/(kg*K), m^2*s^-2*K^-1&#xA;         * tensor order: 0&#xA;         * definition: specific heat capacity (item 5-16.1) at saturated vapour pressure (ISO 80000-4)&#xA;         * remarks: None.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>SpecificHeatCapacityAtSaturatedVapourPressureUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="specificHeatCapacityAtSaturatedVapourPressure" isNonunique="true">
+      <typings>SpecificHeatCapacityAtSaturatedVapourPressureValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SpecificHeatCapacityAtSaturatedVapourPressureUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="thermodynamicTemperaturePF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.'&#x398;'">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, durationPF, thermodynamicTemperaturePF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-17.1 ratio of specific heat capacities */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="RatioOfSpecificHeatCapacitiesValue">
+      <superclassifiers>DimensionOneValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-17.1 ratio of specific heat capacities&#xA;         * symbol(s): `&#x3b3;`&#xA;         * application domain: generic&#xA;         * name: RatioOfSpecificHeatCapacities (specializes DimensionOneQuantity)&#xA;         * quantity dimension: 1&#xA;         * measurement unit(s): 1&#xA;         * tensor order: 0&#xA;         * definition: quotient of specific heat capacity at constant pressure and specific heat capacity at constant volume: `&#x3b3; = c_p/c_V` where `c_p` is specific heat capacity at constant pressure (item 5-16.2) and `c_V` is specific heat capacity at constant volume (item 5-16.3)&#xA;         * remarks: This quantity can also be expressed by `&#x3b3; = C_p/C_V` where `C_p` is heat capacity at constant pressure and `C_V` is heat capacity at constant volume.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="ratioOfSpecificHeatCapacities">
+      <typings>RatioOfSpecificHeatCapacitiesValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-17.2 isentropic exponent, isentropic expansion factor */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="IsentropicExponentValue">
+      <superclassifiers>DimensionOneValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-17.2 isentropic exponent, isentropic expansion factor&#xA;         * symbol(s): `&#x3f0;`&#xA;         * application domain: generic&#xA;         * name: IsentropicExponent (specializes DimensionOneQuantity)&#xA;         * quantity dimension: 1&#xA;         * measurement unit(s): 1&#xA;         * tensor order: 0&#xA;         * definition: the negative of relative pressure change, divided by relative volume change, at constant entropy: `&#x3f0; = -V/p * ((partial p)/(partial V))_S` where `V` is volume (ISO 80000-3), `p` is pressure (ISO 80000-4), and `S` is entropy (item 5-18)&#xA;         * remarks: For an ideal gas, `&#x3f0;` is equal to `&#x3b3;` (item 5-17.1).&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="isentropicExponent">
+      <typings>IsentropicExponentValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="isentropicExpansionFactor" memberElement="isentropicExponent"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-18 entropy */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="EntropyValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-18 entropy&#xA;         * symbol(s): `S`&#xA;         * application domain: generic&#xA;         * name: Entropy&#xA;         * quantity dimension: L^2*M^1*T^-2*&#x398;^-1&#xA;         * measurement unit(s): J/K, kg*m^2*s^-2*K^-1&#xA;         * tensor order: 0&#xA;         * definition: natural logarithm of number of equally probable microscopic configurations in a macroscopic system, multiplied by the Boltzmann constant: `S = k lnW` where `W` is number of configurations and `k` is the Boltzmann constant (ISO 80000-1)&#xA;         * remarks: None.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>EntropyUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="entropy" isNonunique="true">
+      <typings>EntropyValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="EntropyUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="thermodynamicTemperaturePF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.'&#x398;'">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, massPF, durationPF, thermodynamicTemperaturePF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-19 specific entropy */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SpecificEntropyValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-19 specific entropy&#xA;         * symbol(s): `s`&#xA;         * application domain: generic&#xA;         * name: SpecificEntropy&#xA;         * quantity dimension: L^2*T^-2*&#x398;^-1&#xA;         * measurement unit(s): J/(kg*K), m^2*s^-2*K^-1&#xA;         * tensor order: 0&#xA;         * definition: quotient of entropy and mass: `s = S/m` where `S` is entropy (item 5-18) and `m` is mass (ISO 80000-4)&#xA;         * remarks: For the corresponding quantity related to amount of substance, see ISO 80000-9.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>SpecificEntropyUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="specificEntropy" isNonunique="true">
+      <typings>SpecificEntropyValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SpecificEntropyUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="thermodynamicTemperaturePF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.'&#x398;'">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, durationPF, thermodynamicTemperaturePF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-20.1 energy */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="EnergyValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-20.1 energy&#xA;         * symbol(s): `E`&#xA;         * application domain: thermodynamics&#xA;         * name: Energy&#xA;         * quantity dimension: L^2*M^1*T^-2&#xA;         * measurement unit(s): J, kg*m^2*s^-2&#xA;         * tensor order: 0&#xA;         * definition: ability of a system to do work (ISO 80000-4)&#xA;         * remarks: Energy exists in different forms that are mutually transformable into each other, either totally or partially. In contrast to internal energy (item 5-20.2), energy is not a state function.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>EnergyUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="energy" isNonunique="true">
+      <typings>EnergyValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="EnergyUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, massPF, durationPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-20.2 internal energy, thermodynamic energy */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="internalEnergy">
+      <typings>EnergyValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-20.2 internal energy, thermodynamic energy&#xA;         * symbol(s): `U`&#xA;         * application domain: generic&#xA;         * name: InternalEnergy (specializes Energy)&#xA;         * quantity dimension: L^2*M^1*T^-2&#xA;         * measurement unit(s): J, kg*m^2*s^-2&#xA;         * tensor order: 0&#xA;         * definition: energy of a system whose change is given by the amount of the heat (item 5-6.1) transferred to the system and the work (ISO 80000-4) done on the system, provided that the system is closed and no chemical reactions occur&#xA;         * remarks: In thermodynamic text books, usually the formula `&#x394;U = Q + W` is used. Note that the zero of the energy is undefined.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="thermodynamicEnergy" memberElement="internalEnergy"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-20.3 enthalpy */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="enthalpy">
+      <typings>EnergyValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-20.3 enthalpy&#xA;         * symbol(s): `H`&#xA;         * application domain: generic&#xA;         * name: Enthalpy (specializes Energy)&#xA;         * quantity dimension: L^2*M^1*T^-2&#xA;         * measurement unit(s): J, kg*m^2*s^-2&#xA;         * tensor order: 0&#xA;         * definition: sum of internal energy of the system and the product of pressure and volume of the system: `H = U + p*V` where U is internal energy (item 5-20.2), `p` is pressure (ISO 80000-4), and `V` is volume (ISO 80000-3)&#xA;         * remarks: None.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-20.4 Helmholtz energy, Helmholtz function */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="helmholtzEnergy">
+      <typings>EnergyValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-20.4 Helmholtz energy, Helmholtz function&#xA;         * symbol(s): `A`, `F`&#xA;         * application domain: generic&#xA;         * name: HelmholtzEnergy (specializes Energy)&#xA;         * quantity dimension: L^2*M^1*T^-2&#xA;         * measurement unit(s): J, kg*m^2*s^-2&#xA;         * tensor order: 0&#xA;         * definition: difference of internal energy of the system and the product of thermodynamic temperature and entropy of the system: `A = U - TS` where `U` is internal energy (item 5-20.2), `T` is thermodynamic temperature (item 5-1), and `S` is entropy (item 5-18)&#xA;         * remarks: The name Helmholtz free energy is also used. However, this term is not recommended.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="helmholtzFunction" memberElement="helmholtzEnergy"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-20.5 Gibbs energy, Gibbs function */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="gibbsEnergy">
+      <typings>EnergyValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-20.5 Gibbs energy, Gibbs function&#xA;         * symbol(s): `G`&#xA;         * application domain: generic&#xA;         * name: GibbsEnergy (specializes Energy)&#xA;         * quantity dimension: L^2*M^1*T^-2&#xA;         * measurement unit(s): J, kg*m^2*s^-2&#xA;         * tensor order: 0&#xA;         * definition: difference of the enthalpy and the product of thermodynamic temperature and entropy of the system: `G = H - T*S` where H is enthalpy (item 5-20.3), `T` is thermodynamic temperature (item 5-1), and `S` is entropy (item 5-18)&#xA;         * remarks: The name Gibbs free energy is also used. However, this term is not recommended.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="gibbsFunction" memberElement="gibbsEnergy"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-21.1 specific energy */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SpecificEnergyValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-21.1 specific energy&#xA;         * symbol(s): `e`&#xA;         * application domain: generic&#xA;         * name: SpecificEnergy&#xA;         * quantity dimension: L^2*T^-2&#xA;         * measurement unit(s): J/kg, m^2*s^-2&#xA;         * tensor order: 0&#xA;         * definition: quotient of energy and mass: `e = E/m` where `E` is energy (item 5-20.1) and `m` is mass (ISO 80000-4)&#xA;         * remarks: None.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>SpecificEnergyUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="specificEnergy" isNonunique="true">
+      <typings>SpecificEnergyValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SpecificEnergyUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, durationPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-21.2 specific internal energy, specific thermodynamic energy */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="specificInternalEnergy">
+      <typings>SpecificEnergyValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-21.2 specific internal energy, specific thermodynamic energy&#xA;         * symbol(s): `u`&#xA;         * application domain: generic&#xA;         * name: SpecificInternalEnergy (specializes SpecificEnergy)&#xA;         * quantity dimension: L^2*T^-2&#xA;         * measurement unit(s): J/kg, m^2*s^-2&#xA;         * tensor order: 0&#xA;         * definition: quotient of internal energy and mass: `u = U/m` where `U` is internal energy (item 5-20.2) and `m` is mass (ISO 80000-4)&#xA;         * remarks: None.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="specificThermodynamicEnergy" memberElement="specificInternalEnergy"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-21.3 specific enthalpy */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SpecificEnthalpyValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-21.3 specific enthalpy&#xA;         * symbol(s): `h`&#xA;         * application domain: generic&#xA;         * name: SpecificEnthalpy&#xA;         * quantity dimension: L^2*T^-2&#xA;         * measurement unit(s): J/kg, m^2*s^-2&#xA;         * tensor order: 0&#xA;         * definition: quotient of enthalpy and mass: `h = H/m` where `H` is enthalpy (item 5-20.3) and `m` is mass (ISO 80000-4)&#xA;         * remarks: None.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>SpecificEnthalpyUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="specificEnthalpy" isNonunique="true">
+      <typings>SpecificEnthalpyValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SpecificEnthalpyUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, durationPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-21.4 specific Helmholtz energy, specific Helmholtz function */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="specificHelmholtzEnergy">
+      <typings>SpecificEnergyValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-21.4 specific Helmholtz energy, specific Helmholtz function&#xA;         * symbol(s): `a`, `f`&#xA;         * application domain: generic&#xA;         * name: SpecificHelmholtzEnergy (specializes SpecificEnergy)&#xA;         * quantity dimension: L^2*T^-2&#xA;         * measurement unit(s): J/kg, m^2*s^-2&#xA;         * tensor order: 0&#xA;         * definition: quotient of Helmholtz energy and mass: `a = A/m` where A is Helmholtz energy (item 5-20.4) and m is mass (ISO 80000-4)&#xA;         * remarks: The name specific Helmholtz free energy is also used. However, this term is not recommended.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="specificHelmholtzFunction" memberElement="specificHelmholtzEnergy"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-21.5 specific Gibbs energy, specific Gibbs function */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="specificGibbsEnergy">
+      <typings>SpecificEnergyValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-21.5 specific Gibbs energy, specific Gibbs function&#xA;         * symbol(s): `g`&#xA;         * application domain: generic&#xA;         * name: SpecificGibbsEnergy (specializes SpecificEnergy)&#xA;         * quantity dimension: L^2*T^-2&#xA;         * measurement unit(s): J/kg, m^2*s^-2&#xA;         * tensor order: 0&#xA;         * definition: quotient of Gibbs energy and mass: `g = G/m` where `G` is Gibbs energy (item 5-20.5) and `m` is mass (ISO 80000-4)&#xA;         * remarks: The name specific Gibbs free energy is also used. However, this term is not recommended.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="specificGibbsFunction" memberElement="specificGibbsEnergy"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-22 Massieu function */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MassieuFunctionValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-22 Massieu function&#xA;         * symbol(s): `J`&#xA;         * application domain: generic&#xA;         * name: MassieuFunction&#xA;         * quantity dimension: L^2*M^1*T^-2*&#x398;^-1&#xA;         * measurement unit(s): J/K, kg*m^2*s^-2*K^-1&#xA;         * tensor order: 0&#xA;         * definition: quotient of the negative of Helmholtz energy and temperature: `J = -A/T` where `A` is Helmholtz energy (item 5-20.4) and `T` is thermodynamic temperature (item 5-1)&#xA;         * remarks: None.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>MassieuFunctionUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="massieuFunction" isNonunique="true">
+      <typings>MassieuFunctionValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MassieuFunctionUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="thermodynamicTemperaturePF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.'&#x398;'">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, massPF, durationPF, thermodynamicTemperaturePF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-23 Planck function */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="PlanckFunctionValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-23 Planck function&#xA;         * symbol(s): `Y`&#xA;         * application domain: generic&#xA;         * name: PlanckFunction&#xA;         * quantity dimension: L^2*M^1*T^-2*&#x398;^-1&#xA;         * measurement unit(s): J/K, kg*m^2*s^-2*K^-1&#xA;         * tensor order: 0&#xA;         * definition: quotient of the negative of Gibbs energy and temperature: `Y = -G/T` where G is Gibbs energy (item 5-20.5) and `T` is thermodynamic temperature (item 5-1)&#xA;         * remarks: None.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>PlanckFunctionUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="planckFunction" isNonunique="true">
+      <typings>PlanckFunctionValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="PlanckFunctionUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="thermodynamicTemperaturePF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.'&#x398;'">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, massPF, durationPF, thermodynamicTemperaturePF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-24 Joule-Thomson coefficient */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="JouleThomsonCoefficientValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-24 Joule-Thomson coefficient&#xA;         * symbol(s): `&#x3bc;_&quot;JT&quot;`&#xA;         * application domain: generic&#xA;         * name: JouleThomsonCoefficient&#xA;         * quantity dimension: L^1*M^-1*T^2*&#x398;^1&#xA;         * measurement unit(s): K/Pa, kg^-1*m*s^2*K&#xA;         * tensor order: 0&#xA;         * definition: change of thermodynamic temperature with respect to pressure in a Joule-Thomson process at constant enthalpy: `&#x3bc;_(JT) = ((partial T)/(partial p))_H` where `T` is thermodynamic temperature (item 5-1), `p` is pressure (ISO 80000-4) and H is enthalpy (item 5-20.3)&#xA;         * remarks: None.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>JouleThomsonCoefficientUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="jouleThomsonCoefficient" isNonunique="true">
+      <typings>JouleThomsonCoefficientValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="JouleThomsonCoefficientUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="thermodynamicTemperaturePF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.'&#x398;'">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, massPF, durationPF, thermodynamicTemperaturePF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-25.1 thermal efficiency */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ThermalEfficiencyValue">
+      <superclassifiers>DimensionOneValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-25.1 thermal efficiency&#xA;         * symbol(s): `&#x3b7;`&#xA;         * application domain: thermodynamics&#xA;         * name: ThermalEfficiency (specializes DimensionOneQuantity)&#xA;         * quantity dimension: 1&#xA;         * measurement unit(s): 1&#xA;         * tensor order: 0&#xA;         * definition: quotient of work (ISO 80000-4) delivered by a heat engine and supplied heat: `&#x3b7; = W/Q` where `W` is work (ISO 80000-4) and `Q` is heat (item 5-6.1)&#xA;         * remarks: None.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="thermalEfficiency">
+      <typings>ThermalEfficiencyValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-25.2 maximum thermal efficiency */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MaximumThermalEfficiencyValue">
+      <superclassifiers>DimensionOneValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-25.2 maximum thermal efficiency&#xA;         * symbol(s): `&#x3b7;_&quot;max&quot;`&#xA;         * application domain: generic&#xA;         * name: MaximumThermalEfficiency (specializes DimensionOneQuantity)&#xA;         * quantity dimension: 1&#xA;         * measurement unit(s): 1&#xA;         * tensor order: 0&#xA;         * definition: efficiency determined by the quotient of the temperatures of the hot source and the cold sink: `&#x3b7;_max = 1 - T_c/T_h` where `T_c` is the thermodynamic temperature (item 5-1) of the cold sink and `T_h` is the thermodynamic temperature (item 5-1) of the hot source&#xA;         * remarks: An ideal heat engine operating according to the Carnot process is delivering the maximum efficiency.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="maximumThermalEfficiency">
+      <typings>MaximumThermalEfficiencyValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-26 specific gas constant */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SpecificGasConstantValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-26 specific gas constant&#xA;         * symbol(s): `R_s`&#xA;         * application domain: generic&#xA;         * name: SpecificGasConstant&#xA;         * quantity dimension: L^2*T^-2*&#x398;^-1&#xA;         * measurement unit(s): J/(kg*K), m^2*s^-2*K^-1&#xA;         * tensor order: 0&#xA;         * definition: quotient of the Boltzmann constant `k` (ISO 80000-1) and the mass `m` (ISO 80000-4) of the gas particle&#xA;         * remarks: None.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>SpecificGasConstantUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="specificGasConstant" isNonunique="true">
+      <typings>SpecificGasConstantValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SpecificGasConstantUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="thermodynamicTemperaturePF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.'&#x398;'">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, durationPF, thermodynamicTemperaturePF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-27 mass concentration of water */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MassConcentrationOfWaterValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-27 mass concentration of water&#xA;         * symbol(s): `w`&#xA;         * application domain: generic&#xA;         * name: MassConcentrationOfWater&#xA;         * quantity dimension: L^-3*M^1&#xA;         * measurement unit(s): kg*m^-3&#xA;         * tensor order: 0&#xA;         * definition: quotient of mass of water and a specified volume: `w = m/V` where `m` is mass (ISO 80000-4) of water, irrespective of the form of aggregation state, and `V` is volume (ISO 80000-3)&#xA;         * remarks: Mass concentration of water at saturation is denoted `w_&quot;sat&quot;`.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>MassConcentrationOfWaterUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="massConcentrationOfWater" isNonunique="true">
+      <typings>MassConcentrationOfWaterValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MassConcentrationOfWaterUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-3">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, massPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-28 mass concentration of water vapour absolute humidity */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MassConcentrationOfWaterVapourAbsoluteHumidityValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-28 mass concentration of water vapour absolute humidity&#xA;         * symbol(s): `v`&#xA;         * application domain: generic&#xA;         * name: MassConcentrationOfWaterVapourAbsoluteHumidity&#xA;         * quantity dimension: L^-3*M^1&#xA;         * measurement unit(s): kg*m^-3&#xA;         * tensor order: 0&#xA;         * definition: quotient of mass of water vapour and a specified volume: `v = m/V` where m is mass (ISO 80000-4) of water vapour and `V` is volume (ISO 80000-3)&#xA;         * remarks: Mass concentration of water vapour at saturation is denoted `v_&quot;sat&quot;`.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>MassConcentrationOfWaterVapourAbsoluteHumidityUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="massConcentrationOfWaterVapourAbsoluteHumidity" isNonunique="true">
+      <typings>MassConcentrationOfWaterVapourAbsoluteHumidityValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MassConcentrationOfWaterVapourAbsoluteHumidityUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-3">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, massPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-29 mass ratio of water to dry matter */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MassRatioOfWaterToDryMatterValue">
+      <superclassifiers>DimensionOneValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-29 mass ratio of water to dry matter&#xA;         * symbol(s): `u`&#xA;         * application domain: generic&#xA;         * name: MassRatioOfWaterToDryMatter (specializes DimensionOneQuantity)&#xA;         * quantity dimension: 1&#xA;         * measurement unit(s): 1&#xA;         * tensor order: 0&#xA;         * definition: quotient of mass of water and mass of dry matter: `u = m/m_d` where `m` is mass (ISO 80000-4) of water and `m_d` is mass of dry matter&#xA;         * remarks: Mass ratio of water to dry matter at saturation is denoted `u_&quot;sat&quot;`.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="massRatioOfWaterToDryMatter">
+      <typings>MassRatioOfWaterToDryMatterValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-30 mass ratio of water vapour to dry gas */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MassRatioOfWaterVapourToDryGasValue">
+      <superclassifiers>DimensionOneValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-30 mass ratio of water vapour to dry gas&#xA;         * symbol(s): `r`, `(x)`&#xA;         * application domain: generic&#xA;         * name: MassRatioOfWaterVapourToDryGas (specializes DimensionOneQuantity)&#xA;         * quantity dimension: 1&#xA;         * measurement unit(s): 1&#xA;         * tensor order: 0&#xA;         * definition: quotient of mass of water vapour and mass of dry gas: `r = m/m_d` where `m` is mass (ISO 80000-4) of water vapour and `m_d` is mass of dry gas&#xA;         * remarks: Mass ratio of water vapour to dry gas at saturation is denoted `r_&quot;sat&quot;`. Mass ratio of water vapour to dry gas is also called mixing ratio.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="massRatioOfWaterVapourToDryGas">
+      <typings>MassRatioOfWaterVapourToDryGasValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-31 mass fraction of water */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MassFractionOfWaterValue">
+      <superclassifiers>DimensionOneValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-31 mass fraction of water&#xA;         * symbol(s): `w_(H_(2)O)`&#xA;         * application domain: generic&#xA;         * name: MassFractionOfWater (specializes DimensionOneQuantity)&#xA;         * quantity dimension: 1&#xA;         * measurement unit(s): 1&#xA;         * tensor order: 0&#xA;         * definition: quantity given by: `w_(H_(2)O) = u/(1+u)` where `u` is mass ratio of water to dry matter (item 5-29)&#xA;         * remarks: None.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="massFractionOfWater">
+      <typings>MassFractionOfWaterValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-32 mass fraction of dry matter */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MassFractionOfDryMatterValue">
+      <superclassifiers>DimensionOneValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-32 mass fraction of dry matter&#xA;         * symbol(s): `w_d`&#xA;         * application domain: generic&#xA;         * name: MassFractionOfDryMatter (specializes DimensionOneQuantity)&#xA;         * quantity dimension: 1&#xA;         * measurement unit(s): 1&#xA;         * tensor order: 0&#xA;         * definition: quantity given by: `w_d = 1 - w_(H_(2)O)` where `w_(H_(2)O)` is mass fraction of water (item 5-31)&#xA;         * remarks: None.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="massFractionOfDryMatter">
+      <typings>MassFractionOfDryMatterValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-33 relative humidity */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="RelativeHumidityValue">
+      <superclassifiers>DimensionOneValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-33 relative humidity&#xA;         * symbol(s): `&#x3c6;`&#xA;         * application domain: generic&#xA;         * name: RelativeHumidity (specializes DimensionOneQuantity)&#xA;         * quantity dimension: 1&#xA;         * measurement unit(s): 1&#xA;         * tensor order: 0&#xA;         * definition: quotient of partial pressure of water vapour and partial pressure at its saturation: `&#x3c6; = p/p_&quot;sat&quot;` where `p` is partial pressure (ISO 80000-4) of vapour and `p_&quot;sat&quot;` is its partial pressure at saturation at the same temperature&#xA;         * remarks: Relative humidity is often referred to as RH and expressed in percent. See also remark in item 5-35.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="relativeHumidity">
+      <typings>RelativeHumidityValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-34 relative mass concentration of vapour */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="RelativeMassConcentrationOfVapourValue">
+      <superclassifiers>DimensionOneValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-34 relative mass concentration of vapour&#xA;         * symbol(s): `&#x3c6;`&#xA;         * application domain: generic&#xA;         * name: RelativeMassConcentrationOfVapour (specializes DimensionOneQuantity)&#xA;         * quantity dimension: 1&#xA;         * measurement unit(s): 1&#xA;         * tensor order: 0&#xA;         * definition: quotient of mass concentration of water vapour and mass concentration at its saturation: `&#x3c6; = v/v_&quot;sat&quot;` where `v` is mass concentration of water vapour (item 5-28) and `v_&quot;sat&quot;` is its mass concentration of water vapour at saturation of the same temperature&#xA;         * remarks: For water vapour concentrations up to 1 kg/m^3, the relative humidity (item 5-33) is assumed to be equal to relative mass concentration of vapour. For details see Reference [8].&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="relativeMassConcentrationOfVapour">
+      <typings>RelativeMassConcentrationOfVapourValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-35 relative mass ratio of vapour */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="RelativeMassRatioOfVapourValue">
+      <superclassifiers>DimensionOneValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-35 relative mass ratio of vapour&#xA;         * symbol(s): `&#x3c8;`&#xA;         * application domain: generic&#xA;         * name: RelativeMassRatioOfVapour (specializes DimensionOneQuantity)&#xA;         * quantity dimension: 1&#xA;         * measurement unit(s): 1&#xA;         * tensor order: 0&#xA;         * definition: quotient of mass ratio of water vapour to dry gas and mass ratio of water vapour to dry gas at saturation: `&#x3c8; = r/r_&quot;sat&quot;` where `r` is mass ratio of water vapour to dry gas (item 5-30) and `r_&quot;sat&quot;` is its mass ratio of water vapour to dry gas at saturation of the same temperature&#xA;         * remarks: This quantity is also used as an approximation of relative humidity (item 5-33).&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="relativeMassRatioOfVapour">
+      <typings>RelativeMassRatioOfVapourValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-5 item 5-36 dew-point temperature */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="dewPointTemperature">
+      <typings>ThermodynamicTemperatureValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-36 dew-point temperature&#xA;         * symbol(s): `T_d`&#xA;         * application domain: generic&#xA;         * name: DewPointTemperature (specializes ThermodynamicTemperature)&#xA;         * quantity dimension: &#x398;^1&#xA;         * measurement unit(s): K&#xA;         * tensor order: 0&#xA;         * definition: temperature at which water vapour in the air reaches saturation under isobaric conditions&#xA;         * remarks: The corresponding Celsius temperature, denoted `t_d`, is still called dew-point temperature. The unit for the corresponding Celsius temperature is degree Celsius, symbol &#xb0;C.&#xA;         */"/>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

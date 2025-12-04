@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:LibraryPackage" declaredName="Connections" isStandard="true" isLibrary="true">
+    <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;     * This package defines the base types for connections and related structural elements &#xA;     * in the SysML language.&#xA;     */"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Base::Anything"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Occurrences::Occurrence"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Occurrences::HappensDuring"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Objects::LinkObject"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Objects::linkObjects"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Objects::BinaryLinkObject"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Objects::binaryLinkObjects"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Transfers::Transfer"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Transfers::transfers"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Transfers::FlowTransfer"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Transfers::flowTransfers"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Transfers::FlowTransferBefore"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Transfers::flowTransfersBefore"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues::Natural"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Parts::Part"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Parts::parts"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Actions::Action"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Actions::actions"/>
+    <elements xsi:type="sysMLOC:ConnectionDefinition" isAbstract="true" declaredName="Connection">
+      <superclassifiers>LinkObject</superclassifiers>
+      <superclassifiers>Part</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * Connection is the most general class of links between things within some &#xA;         * containing structure. Connection is the base type of all ConnectionDefinitions.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:ConnectionDefinition" isAbstract="true" declaredName="BinaryConnection">
+      <superclassifiers>BinaryLinkObject</superclassifiers>
+      <superclassifiers>Connection</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * BinaryConnection is the most general class of binary links between two things &#xA;         * within some containing structure. BinaryConnection is the base type of all &#xA;         * ConnectionDefinitions with exactly two ends.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="source" isEnd="true">
+        <typings>Anything</typings>
+        <redefinitions>BinaryLinkObject::source</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="target" isEnd="true">
+        <typings>Anything</typings>
+        <redefinitions>BinaryLinkObject::target</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:ConnectionUsage" isAbstract="true" declaredName="connections" isNonunique="true">
+      <typings>Connection</typings>
+      <subsetting>linkObjects</subsetting>
+      <subsetting>parts</subsetting>
+      <Multiplicity>0</Multiplicity>
+      <Multiplicity>*</Multiplicity>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * connections is the base feature of all ConnectionUsages.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:ConnectionUsage" isAbstract="true" declaredName="binaryConnections" isNonunique="true">
+      <typings>Connection</typings>
+      <subsetting>connections</subsetting>
+      <subsetting>binaryLinkObjects</subsetting>
+      <Multiplicity>0</Multiplicity>
+      <Multiplicity>*</Multiplicity>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * binaryConnections is the base feature of all binary ConnectionUsages.&#xA;         */"/>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

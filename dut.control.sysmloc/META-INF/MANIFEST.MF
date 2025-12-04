@@ -14,15 +14,16 @@ Require-Bundle: org.eclipse.xtext,
  org.eclipse.emf.common,
  org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
 Bundle-RequiredExecutionEnvironment: JavaSE-21
-Export-Package: dut.control.sysmloc.services,
- dut.control.sysmloc.sysMLOC,
+Export-Package: dut.control.sysmloc,
+ dut.control.sysmloc.generator,
  dut.control.sysmloc.parser.antlr,
- dut.control.sysmloc.scoping,
- dut.control.sysmloc,
  dut.control.sysmloc.parser.antlr.internal,
+ dut.control.sysmloc.scoping,
+ dut.control.sysmloc.serializer,
+ dut.control.sysmloc.services,
+ dut.control.sysmloc.sysMLOC,
  dut.control.sysmloc.sysMLOC.impl,
  dut.control.sysmloc.sysMLOC.util,
- dut.control.sysmloc.serializer,
- dut.control.sysmloc.validation,
- dut.control.sysmloc.generator
+ dut.control.sysmloc.util,
+ dut.control.sysmloc.validation
 Import-Package: org.apache.log4j

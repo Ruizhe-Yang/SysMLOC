@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:LibraryPackage" declaredName="ParametersOfInterestMetadata" isStandard="true" isLibrary="true">
+    <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9; * This package contains definitions of metadata to identify key parameters of interest,&#xA;&#x9; * including measures of effectiveness (MOE) and other key measures of performance (MOP).&#xA;&#x9; */"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Metaobjects::SemanticMetadata"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="measuresOfEffectiveness" isNonunique="true">
+      <Multiplicity>*</Multiplicity>
+      <elements xsi:type="sysMLOC:Documentation" body="/* Base feature for attributes that are measures of effectiveness. */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="measuresOfPerformance" isNonunique="true">
+      <Multiplicity>*</Multiplicity>
+      <elements xsi:type="sysMLOC:Documentation" body="/* Base feature for attributes that are measures of performance. */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:MetadataDefinition" declaredShortName="moe" declaredName="MeasureOfEffectiveness">
+      <superclassifiers>SemanticMetadata</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9; &#x9; * MeasureOfEffectiveness is semantic metadata for identifying an attribute as a&#xA;&#x9; &#x9; * measure of effectiveness.&#xA;&#x9; &#x9; */"/>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <typings>SysML::Usage</typings>
+        <redefinitions>annotatedElement</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="measuresOfEffectiveness meta SysML::Usage">
+        <redefinitions>baseType</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:MetadataDefinition" declaredShortName="mop" declaredName="MeasureOfPerformance">
+      <superclassifiers>SemanticMetadata</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9; &#x9; * MeasureOfPerformance is semantic metadata for identifying an attribute as a&#xA;&#x9; &#x9; * measure of performance.&#xA;&#x9; &#x9; */"/>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <typings>SysML::Usage</typings>
+        <redefinitions>annotatedElement</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="measuresOfPerformance meta SysML::Usage">
+        <redefinitions>baseType</redefinitions>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

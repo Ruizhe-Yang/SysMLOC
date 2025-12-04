@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:LibraryPackage" declaredName="AnalysisTooling" isStandard="true" isLibrary="true">
+    <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9; * This package contains definitions for metadata annotations related&#xA;&#x9; * to analysis tool integration.&#xA;&#x9; */"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="ToolExecution">
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * ToolExecution metadata identifies an external analysis tool to be&#xA;&#x9;&#x9; * used to implement the annotated action.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="toolName">
+        <typings>String</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="uri">
+        <typings>String</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="ToolVariable">
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * ToolVariable metadata is used in the context of an action that has&#xA;&#x9;&#x9; * been annotated with ToolExecution metadata. It is used to annotate&#xA;&#x9;&#x9; * a parameter or other feature of the action with the name of the&#xA;&#x9;&#x9; * variable in the tool that is to correspond to the annotated&#xA;&#x9;&#x9; * feature.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="name">
+        <typings>String</typings>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

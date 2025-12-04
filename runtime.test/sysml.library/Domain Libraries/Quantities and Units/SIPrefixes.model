@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:LibraryPackage" declaredName="SIPrefixes" isStandard="true" isLibrary="true">
+    <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9; * Definition of SI unit prefixes as specified in ISO/IEC 80000-1&#xD;&#xA;&#x9; */"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="MeasurementReferences" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:Comment" body="/*&#xD;&#xA;&#x9; * ISO/IEC 80000-1 prefixes for decimal multiples and sub-multiples&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * See also https://en.wikipedia.org/wiki/Unit_prefix&#xD;&#xA;&#x9; */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="yocto">
+      <typings>UnitPrefix</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;yocto&quot;">
+        <redefinitions>longName</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;y&quot;">
+        <redefinitions>symbol</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1E-24">
+        <redefinitions>conversionFactor</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="zepto">
+      <typings>UnitPrefix</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;zepto&quot;">
+        <redefinitions>longName</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;z&quot;">
+        <redefinitions>symbol</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1E-21">
+        <redefinitions>conversionFactor</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="atto">
+      <typings>UnitPrefix</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;atto&quot;">
+        <redefinitions>longName</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;a&quot;">
+        <redefinitions>symbol</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1E-18">
+        <redefinitions>conversionFactor</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="femto">
+      <typings>UnitPrefix</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;femto&quot;">
+        <redefinitions>longName</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;f&quot;">
+        <redefinitions>symbol</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1E-15">
+        <redefinitions>conversionFactor</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="pico">
+      <typings>UnitPrefix</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;pico&quot;">
+        <redefinitions>longName</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;p&quot;">
+        <redefinitions>symbol</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1E-12">
+        <redefinitions>conversionFactor</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="nano">
+      <typings>UnitPrefix</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;nano&quot;">
+        <redefinitions>longName</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;n&quot;">
+        <redefinitions>symbol</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1E-9">
+        <redefinitions>conversionFactor</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="micro">
+      <typings>UnitPrefix</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;micro&quot;">
+        <redefinitions>longName</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;&#x3bc;&quot;">
+        <redefinitions>symbol</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1E-6">
+        <redefinitions>conversionFactor</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="milli">
+      <typings>UnitPrefix</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;milli&quot;">
+        <redefinitions>longName</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;m&quot;">
+        <redefinitions>symbol</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1E-3">
+        <redefinitions>conversionFactor</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="centi">
+      <typings>UnitPrefix</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;centi&quot;">
+        <redefinitions>longName</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;c&quot;">
+        <redefinitions>symbol</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1E-2">
+        <redefinitions>conversionFactor</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="deci">
+      <typings>UnitPrefix</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;deci&quot;">
+        <redefinitions>longName</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;d&quot;">
+        <redefinitions>symbol</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1E-1">
+        <redefinitions>conversionFactor</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="deca">
+      <typings>UnitPrefix</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;deca&quot;">
+        <redefinitions>longName</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;da&quot;">
+        <redefinitions>symbol</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1E1">
+        <redefinitions>conversionFactor</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="hecto">
+      <typings>UnitPrefix</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;hecto&quot;">
+        <redefinitions>longName</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;h&quot;">
+        <redefinitions>symbol</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1E2">
+        <redefinitions>conversionFactor</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="kilo">
+      <typings>UnitPrefix</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;kilo&quot;">
+        <redefinitions>longName</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;k&quot;">
+        <redefinitions>symbol</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1E3">
+        <redefinitions>conversionFactor</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mega">
+      <typings>UnitPrefix</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;mega&quot;">
+        <redefinitions>longName</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;M&quot;">
+        <redefinitions>symbol</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1E6">
+        <redefinitions>conversionFactor</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="giga">
+      <typings>UnitPrefix</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;giga&quot;">
+        <redefinitions>longName</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;G&quot;">
+        <redefinitions>symbol</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1E9">
+        <redefinitions>conversionFactor</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="tera">
+      <typings>UnitPrefix</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;tera&quot;">
+        <redefinitions>longName</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;T&quot;">
+        <redefinitions>symbol</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1E12">
+        <redefinitions>conversionFactor</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="peta">
+      <typings>UnitPrefix</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;peta&quot;">
+        <redefinitions>longName</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;P&quot;">
+        <redefinitions>symbol</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1E15">
+        <redefinitions>conversionFactor</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="exa">
+      <typings>UnitPrefix</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;exa&quot;">
+        <redefinitions>longName</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;E&quot;">
+        <redefinitions>symbol</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1E18">
+        <redefinitions>conversionFactor</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="zetta">
+      <typings>UnitPrefix</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;zetta&quot;">
+        <redefinitions>longName</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;Z&quot;">
+        <redefinitions>symbol</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1E21">
+        <redefinitions>conversionFactor</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="yotta">
+      <typings>UnitPrefix</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;yotta&quot;">
+        <redefinitions>longName</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;Y&quot;">
+        <redefinitions>symbol</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1E24">
+        <redefinitions>conversionFactor</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/*&#xD;&#xA;&#x9; * ISO/IEC 80000-1 prefixes for binary multiples, i.e. multiples of 1024 (= 2^10)&#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * See also https://en.wikipedia.org/wiki/Binary_prefix&#xD;&#xA;&#x9; */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="kibi">
+      <typings>UnitPrefix</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;kibi&quot;">
+        <redefinitions>longName</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;Ki&quot;">
+        <redefinitions>symbol</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1024">
+        <redefinitions>conversionFactor</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mebi">
+      <typings>UnitPrefix</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;mebi&quot;">
+        <redefinitions>longName</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;Mi&quot;">
+        <redefinitions>symbol</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1024^2">
+        <redefinitions>conversionFactor</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="gibi">
+      <typings>UnitPrefix</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;gibi&quot;">
+        <redefinitions>longName</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;Gi&quot;">
+        <redefinitions>symbol</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1024^3">
+        <redefinitions>conversionFactor</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="tebi">
+      <typings>UnitPrefix</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;tebi&quot;">
+        <redefinitions>longName</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;Ti&quot;">
+        <redefinitions>symbol</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1024^4">
+        <redefinitions>conversionFactor</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="pebi">
+      <typings>UnitPrefix</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;pebi&quot;">
+        <redefinitions>longName</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;Pi&quot;">
+        <redefinitions>symbol</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1024^5">
+        <redefinitions>conversionFactor</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="exbi">
+      <typings>UnitPrefix</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;exbi&quot;">
+        <redefinitions>longName</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;Ei&quot;">
+        <redefinitions>symbol</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1024^6">
+        <redefinitions>conversionFactor</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="zebi">
+      <typings>UnitPrefix</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;zebi&quot;">
+        <redefinitions>longName</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;Zi&quot;">
+        <redefinitions>symbol</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1024^7">
+        <redefinitions>conversionFactor</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="yobi">
+      <typings>UnitPrefix</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;yobi&quot;">
+        <redefinitions>longName</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;Yi&quot;">
+        <redefinitions>symbol</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1024^8">
+        <redefinitions>conversionFactor</redefinitions>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

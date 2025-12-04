@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:LibraryPackage" declaredName="Cases" isStandard="true" isLibrary="true">
+    <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9; * This package defines the base types for cases and related behavioral elements &#xA;&#x9; * in the SysML language.&#xA;&#x9; */"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Base::Anything"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Requirements::RequirementCheck"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Calculations::Calculation"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Calculations::calculations"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Parts::Part"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Parts::parts"/>
+    <elements xsi:type="sysMLOC:CaseDefinition" isAbstract="true" declaredName="Case">
+      <superclassifiers>Calculation</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Case is the most general class of performances of CaseDefinitions. &#xA;&#x9;&#x9; * Case is the base class of all CaseDefinitions.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:CaseUsage" isReference="true" declaredName="self">
+        <typings>Case</typings>
+        <redefinitions>Calculation::self</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:SubjectUsage" declaredName="subj">
+        <typings>Anything</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The subject that was investigated by this Case.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" isReference="true" declaredName="actors">
+        <typings>Part</typings>
+        <subsetting>parts</subsetting>
+        <Multiplicity>0</Multiplicity>
+        <Multiplicity>*</Multiplicity>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The Parts that fill the role of actors for this Case.&#xA;&#x9;&#x9;&#x9; * (Note: This is not itself an actor parameter, because specific actor&#xA;&#x9;&#x9;&#x9; * parameters will be added for specific Cases.)&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:ObjectiveRequirementUsage" declaredName="obj">
+        <typings>RequirementCheck</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * A check of whether the objective RequirementUsage was satisfied for this Case.&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="sysMLOC:SubjectUsage" declaredName="subj" isDefault="true" valuePart="Case::result"/>
+      </elements>
+      <elements xsi:type="sysMLOC:ReferenceUsage" isReturn="true" declaredName="result">
+        <Multiplicity>0</Multiplicity>
+        <Multiplicity>*</Multiplicity>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The result determined by the case, which should satisfy the case objective.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:CaseUsage" isAbstract="true" declaredName="subcases">
+        <typings>Case</typings>
+        <subsetting>cases</subsetting>
+        <subsetting>subcalculations</subsetting>
+        <Multiplicity>0</Multiplicity>
+        <Multiplicity>*</Multiplicity>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * Other Cases carried out as part of the performance of this Case.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:CaseUsage" isAbstract="true" declaredName="cases" isNonunique="true">
+      <typings>Case</typings>
+      <subsetting>calculations</subsetting>
+      <Multiplicity>0</Multiplicity>
+      <Multiplicity>*</Multiplicity>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * cases is the base Feature of all CaseUsages.&#xA;&#x9;&#x9; */"/>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

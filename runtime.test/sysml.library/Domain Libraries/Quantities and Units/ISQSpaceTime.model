@@ -1,0 +1,1266 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:LibraryPackage" declaredName="ISQSpaceTime" isStandard="true" isLibrary="true">
+    <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;     * International System of Quantities and Units&#xA;     * Generated on 2025-03-13T15:00:05Z from standard ISO-80000-3:2019 &quot;Space and Time&quot;&#xA;     * see also https://www.iso.org/standard/64974.html&#xA;     * &#xA;     * Note 1: In documentation comments, AsciiMath notation (see http://asciimath.org/) is used for mathematical concepts,&#xA;     * with Greek letters in Unicode encoding. In running text, AsciiMath is placed between backticks.&#xA;     * Note 2: For vector and tensor quantities currently the unit and quantity value type for their (scalar) magnitude is &#xA;     * defined, as well as their typical Cartesian 3d VectorMeasurementReference (i.e. coordinate system) &#xA;     * or TensorMeasurementReference.&#xA;     */"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues::Real"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Quantities" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="MeasurementReferences" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ISQBase" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-3 item 3-1.1 length */"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* See package ISQBase for the declarations of LengthValue and LengthUnit */"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-3 item 3-1.2 width, breadth */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="width">
+      <typings>LengthValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 3-1.2 width, breadth&#xA;         * symbol(s): `b`, `B`&#xA;         * application domain: generic&#xA;         * name: Width (specializes Length)&#xA;         * quantity dimension: L^1&#xA;         * measurement unit(s): m&#xA;         * tensor order: 0&#xA;         * definition: minimum length of a straight line segment between two parallel straight lines (in two dimensions) or planes (in three dimensions) that enclose a given geometrical shape&#xA;         * remarks: This quantity is non-negative.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="breadth" memberElement="width"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-3 item 3-1.3 height, depth, altitude */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="height">
+      <typings>LengthValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 3-1.3 height, depth, altitude&#xA;         * symbol(s): `h`, `H`&#xA;         * application domain: generic&#xA;         * name: Height (specializes Length)&#xA;         * quantity dimension: L^1&#xA;         * measurement unit(s): m&#xA;         * tensor order: 0&#xA;         * definition: minimum length of a straight line segment between a point and a reference line or reference surface&#xA;         * remarks: This quantity is usually signed. The sign expresses the position of the particular point with respect to the reference line or surface and is chosen by convention. The symbol `H` is often used to denote altitude, i.e. height above sea level.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="depth" memberElement="height"/>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="altitude" memberElement="height"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-3 item 3-1.4 thickness */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="thickness">
+      <typings>LengthValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 3-1.4 thickness&#xA;         * symbol(s): `d`, `&#x3b4;`&#xA;         * application domain: generic&#xA;         * name: Thickness (specializes Length)&#xA;         * quantity dimension: L^1&#xA;         * measurement unit(s): m&#xA;         * tensor order: 0&#xA;         * definition: width (item 3-1.2)&#xA;         * remarks: This quantity is non-negative.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-3 item 3-1.5 diameter */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="diameter">
+      <typings>LengthValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 3-1.5 diameter&#xA;         * symbol(s): `d`, `D`&#xA;         * application domain: generic&#xA;         * name: Diameter (specializes Length)&#xA;         * quantity dimension: L^1&#xA;         * measurement unit(s): m&#xA;         * tensor order: 0&#xA;         * definition: width (item 3-1.2) of a circle, cylinder or sphere&#xA;         * remarks: This quantity is non-negative.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-3 item 3-1.6 radius */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="radius">
+      <typings>LengthValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 3-1.6 radius&#xA;         * symbol(s): `r`, `R`&#xA;         * application domain: generic&#xA;         * name: Radius (specializes Length)&#xA;         * quantity dimension: L^1&#xA;         * measurement unit(s): m&#xA;         * tensor order: 0&#xA;         * definition: half of a diameter (item 3-1.5)&#xA;         * remarks: This quantity is non-negative.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-3 item 3-1.7 path length, arc length */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="pathLength">
+      <typings>LengthValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 3-1.7 path length, arc length&#xA;         * symbol(s): `s`&#xA;         * application domain: generic&#xA;         * name: PathLength (specializes Length)&#xA;         * quantity dimension: L^1&#xA;         * measurement unit(s): m&#xA;         * tensor order: 0&#xA;         * definition: length of a rectifiable curve between two of its points&#xA;         * remarks: The differential path length at a given point of a curve is: `ds = sqrt(dx^2 + dy^2 + dz^2)` where `x`, `y`, and `z` denote the Cartesian coordinates (ISO 80000-2) of the particular point. There are curves which are not rectifiable, for example fractal curves.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="arcLength" memberElement="pathLength"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-3 item 3-1.8 distance */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="distance">
+      <typings>LengthValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 3-1.8 distance&#xA;         * symbol(s): `d`, `r`&#xA;         * application domain: generic&#xA;         * name: Distance (specializes Length)&#xA;         * quantity dimension: L^1&#xA;         * measurement unit(s): m&#xA;         * tensor order: 0&#xA;         * definition: shortest path length (item 3-1.7) between two points in a metric space&#xA;         * remarks: A metric space might be curved. An example of a curved metric space is the surface of the Earth. In this case, distances are measured along great circles. A metric is not necessarily Euclidean.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-3 item 3-1.9 radial distance */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="radialDistance">
+      <typings>LengthValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 3-1.9 radial distance&#xA;         * symbol(s): `r_Q`, `&#x3c1;`&#xA;         * application domain: generic&#xA;         * name: RadialDistance (specializes Length)&#xA;         * quantity dimension: L^1&#xA;         * measurement unit(s): m&#xA;         * tensor order: 0&#xA;         * definition: distance (item 3-1.8), where one point is located on an axis or within a closed non self-intersecting curve or surface&#xA;         * remarks: The subscript Q denotes the point from which the radial distance is measured. Examples of closed non self-intersecting curves are circles or ellipses. Examples of closed non self-intersecting surfaces are surfaces of spheres or egg-shaped objects.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* Spatial coordinate frames */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="Spatial3dCoordinateFrame">
+      <superclassifiers>'3dCoordinateFrame'</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * Most general spatial 3D coordinate frame&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CartesianSpatial3dCoordinateFrame">
+      <superclassifiers>Spatial3dCoordinateFrame</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * Cartesian spatial 3D coordinate frame&#xA;         *&#xA;         * source: ISO 80000-2 item 2-17.1 Cartesian coordinates&#xA;         *&#xA;         * The components of a vector expressed on a Cartesian spatial coordinate frame are all LengthValues, and denoted with symbols `x`, `y`, `z`.&#xA;         *&#xA;         * Note 1: The Cartesian basis vectors `vec(e_x)`, `vec(e_y)` and `vec(e_z)` form an orthonormal right-handed coordinate frame.&#xA;         * Note 2: The measurement units for the 3 dimensions are typically the same, but may be different.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="xUnit" valuePart="mRefs#(1)">
+        <typings>LengthUnit</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="yUnit" valuePart="mRefs#(2)">
+        <typings>LengthUnit</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="zUnit" valuePart="mRefs#(3)">
+        <typings>LengthUnit</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>LengthUnit</typings>
+        <redefinitions>mRefs</redefinitions>
+        <Multiplicity>3</Multiplicity>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
+        <redefinitions>isOrthogonal</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="universalCartesianSpatial3dCoordinateFrame">
+      <typings>CartesianSpatial3dCoordinateFrame</typings>
+      <Multiplicity>1</Multiplicity>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * A singleton CartesianSpatial3dCoordinateFrame that can be used as a default universal Cartesian 3D coordinate frame.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" isDefault="true" valuePart="(SI::m, SI::m, SI::m)">
+        <redefinitions>mRefs</redefinitions>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;             * By default, the universalCartesianSpatial3dCoordinateFrame uses meters as the units on all three axes.&#xA;             */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>transformation</redefinitions>
+        <Multiplicity>0</Multiplicity>
+        <Multiplicity>0</Multiplicity>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;             * The universalCartesianSpatial3dCoordinateFrame is the &quot;top-level&quot; coordinate frame, not nested in any other frame.&#xA;             */"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CylindricalSpatial3dCoordinateFrame">
+      <superclassifiers>Spatial3dCoordinateFrame</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * Cylindrical spatial 3D coordinate frame&#xA;         *&#xA;         * source: ISO 80000-2 item 2-17.2 cylindrical coordinates&#xA;         *&#xA;         * The components of a (position) vector to a point P in a cylindrical coordinate frame are:&#xA;         * - radialDistance (symbol `&#x3c1;`) defined by LengthValue, that is the radial distance from the cylinder axis to P&#xA;         * - azimuth (symbol `&#x3c6;`) defined by AngularMeasure, that is the angle between the azimuth reference direction and the line segment&#xA;         * from the cylinder axis, in the plane that is orthogonal to the cylinder axis and intersects P&#xA;         * - z coordinate (symbol `z`) defined by LengthValue, the coordinate along the clyinder axis.&#xA;         *&#xA;         * Note 1: The basis vectors `vec(e_&#x3c1;)(&#x3c6;)`, `vec(e_&#x3c6;)(&#x3c6;)` and `vec(e_z)` form an orthonormal right-handed coordinate frame, where&#xA;         * `vec(e_&#x3c6;)` is tangent to the circular arc in the `&#x3c6;` direction.&#xA;         * Note 2: In order to enable transformation to and from a CartesianSpatial3dCoordinateFrame the `vec(e_x)` Cartesian basis vector is aligned&#xA;         * with the `&#x3c6;=0` direction in the cylindrical frame, and the `vec(e_z)` Cartesian basis vector is aligned with&#xA;         * the `vec(e_z)` cylindrical basis vector.&#xA;         * Note 3: If `z = 0`, then `&#x3c1;` and `&#x3c6;` are polar coordinates in the XY-plane.&#xA;         * Note 4: See also https://en.wikipedia.org/wiki/Cylindrical_coordinate_system .&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="radialDistanceUnit">
+        <typings>LengthUnit</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="azimuthUnit">
+        <typings>AngularMeasureUnit</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="zUnit">
+        <typings>LengthUnit</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="(radialDistanceUnit, azimuthUnit, zUnit)">
+        <redefinitions>mRefs</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
+        <redefinitions>isOrthogonal</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SphericalSpatial3dCoordinateFrame">
+      <superclassifiers>Spatial3dCoordinateFrame</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * Spherical spatial 3D coordinate frame&#xA;         *&#xA;         * source: ISO 80000-2 item 2-17.3 spherical coordinates&#xA;         *&#xA;         * The components of a (position) vector to a point P specified in a spherical coordinate frame are:&#xA;         * - radialDistance (symbol `r`) defined by LengthValue, that is the distance from the origin to P&#xA;         * - inclination (symbol `&#x3b8;`) defined by AngularMeasure, that is the angle between the zenith direction and the line segment from origin to P&#xA;         * - azimuth (symbol `&#x3c6;`) defined by AngularMeasure, that is the angle between the azimuth reference direction and the line segment&#xA;         * from the origin to the orthogonal projection of P on the reference plane, normal to the zenith direction.&#xA;         *&#xA;         * Note 1: The basis vectors `vec(e_r)(&#x3b8;,&#x3c6;)`, `vec(e_&#x3b8;)(&#x3b8;,&#x3c6;)` and `vec(e_&#x3c6;)(&#x3c6;)` form an orthonormal right-handed frame, where&#xA;         * `vec(e_&#x3b8;)` and `vec(e_&#x3c6;)` are tangent to the respective circular arcs in the `&#x3b8;` and `&#x3c6;` directions.&#xA;         * Note 2: In order to transform to and from a CartesianSpatial3dCoordinateFrame the `vec(e_x)` Cartesian basis vector is aligned&#xA;         * with the `&#x3b8;=&#x3c0;/4` and `&#x3c6;=0` direction in the spherical frame, and the `vec(e_z)` Cartesian basis vector is aligned&#xA;         * with the `&#x3b8;=0` zenith direction in the spherical frame.&#xA;         * Note 3: If `&#x3b8; = &#x3c0;/4`, then `&#x3c1;` and `&#x3c6;` are polar coordinates in the XY-plane.&#xA;         * Note 4: See also https://en.wikipedia.org/wiki/Spherical_coordinate_system .&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="radialDistanceUnit">
+        <typings>LengthUnit</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="inclinationUnit">
+        <typings>AngularMeasureUnit</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="azimuthUnit">
+        <typings>AngularMeasureUnit</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="(radialDistanceUnit, inclinationUnit, azimuthUnit)">
+        <redefinitions>mRefs</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
+        <redefinitions>isOrthogonal</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="PlanetarySpatial3dCoordinateFrame">
+      <superclassifiers>Spatial3dCoordinateFrame</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * Planetary spatial 3D coordinate frame&#xA;         *&#xA;         * A planetary spatial 3D coordinate frame is a generalization for any planet of the geographic coordinate frame and geocentric coordinate&#xA;         * for Earth. In such coordinate frames, typically the origin is located at the planet's centre of gravity, and the surface of the planet&#xA;         * is approximated by a reference ellipsoid centred on the origin, with its major axes oriented along the south to north pole vector and&#xA;         * the equatorial plane.&#xA;         *&#xA;         * The components of a (position) vector to a point P specified in a planetary coordinate frame are:&#xA;         * - latitude (symbol `lat` or `&#x3c6;`) defined by AngularMeasure, that is the angle between the equatorial plane and the vector from&#xA;         *   the origin to P, similar to the inclination in a spherical spatial coordinate frame. Typically, the zero reference latitude is chosen&#xA;         *   for positions in the equatorial plane, with positive latitude for positions in the northern hemisphere and negative latitude for positions&#xA;         *   in the southern hemisphere.&#xA;         * - longitude (symbol `long` or `&#x3bb;`) defined by AngularMeasure, that is the angle between a reference meridian and the meridian&#xA;         *   passing through P, similar to the azimuth of a spherical spatial coordinate frame. The convention is to connotate positive longitude&#xA;         *   with eastward direction and negative longitude with westward direction. The reference meridian for `long=0` is chosen to pass&#xA;         *   through a particular feature of the planet, e.g., for Earth typically the position of the British Royal Observatory in Greenwich, UK.&#xA;         * - altitude (symbol `h`) defined by LengthValue, that is the distance between P and the reference ellipsoid&#xA;         *   in the normal direction to the ellipsoid. Positive altitude specifies a position above the reference ellipsoid surface,&#xA;         *   while a negative value specifies a position below.&#xA;         *&#xA;         * Note 1: The reference meridian is also called prime meridian.&#xA;         * Note 2: The basis vectors `vec(e_&#x3c6;)(&#x3c6;)`, `vec(e_&#x3bb;)(&#x3bb;)` and `vec(e_h)(&#x3c6;,&#x3bb;)` form an orthonormal right-handed frame, where&#xA;         * `vec(e_&#x3c6;)` and `vec(e_&#x3bb;)` are tangent to the reference ellipsoid in the respective latitude and longitude directions,&#xA;         * and `vec(e_h)` is normal to the reference ellipsoid.&#xA;         * Note 3: In order to transform to and from a CartesianSpatial3dCoordinateFrame the `vec(e_x)` Cartesian basis vector is aligned&#xA;         * with the `&#x3c6;=0` and `&#x3bb;=0` direction in the planetary frame, and the `vec(e_z)` Cartesian basis vector is aligned&#xA;         * with the `&#x3bb;=&#x3c0;/2` (north pole) direction in the planetary frame.&#xA;         * Note 4: See also https://en.wikipedia.org/wiki/Planetary_coordinate_system .&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="latitudeUnit">
+        <typings>AngularMeasureUnit</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="longitudeUnit">
+        <typings>AngularMeasureUnit</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="altitudeUnit">
+        <typings>LengthUnit</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="(longitudeUnit, latitudeUnit, altitudeUnit)">
+        <redefinitions>mRefs</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
+        <redefinitions>isOrthogonal</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-3 item 3-1.10 position vector */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="Position3dVector">
+      <superclassifiers>'3dVectorQuantityValue'</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 3-1.10 position vector&#xA;         * symbol(s): `vec(r)`&#xA;         * application domain: generic&#xA;         * name: PositionVector&#xA;         * quantity dimension: L^1&#xA;         * measurement unit(s): m&#xA;         * tensor order: 1&#xA;         * definition: vector (ISO 80000-2) quantity from the origin of a coordinate system to a point in space&#xA;         * remarks: Position vectors are so-called bounded vectors, i.e. their magnitude (ISO 80000-2) and direction depend on the particular coordinate system used.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Spatial3dCoordinateFrame</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="position3dVector">
+      <typings>Position3dVector</typings>
+      <subsetting>vectorQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CartesianPosition3dVector">
+      <superclassifiers>Position3dVector</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="x" valuePart="num#(1) [mRef.mRefs#(1)]">
+        <typings>LengthValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="y" valuePart="num#(2) [mRef.mRefs#(2)]">
+        <typings>LengthValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="z" valuePart="num#(3) [mRef.mRefs#(3)]">
+        <typings>LengthValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>CartesianSpatial3dCoordinateFrame</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cartesianPosition3dVector">
+      <typings>CartesianPosition3dVector</typings>
+      <subsetting>position3dVector</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CylindricalPosition3dVector">
+      <superclassifiers>Position3dVector</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'&#x3c1;'" declaredName="radialDistance" valuePart="num#(1) [mRef.mRefs#(1)]">
+        <typings>LengthValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'&#x3c6;'" declaredName="azimuth" valuePart="num#(2) [mRef.mRefs#(2)]">
+        <typings>AngularMeasureUnit</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="h" declaredName="height" valuePart="num#(3) [mRef.mRefs#(3)]">
+        <typings>LengthValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>CylindricalSpatial3dCoordinateFrame</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cylindricalPosition3dVector">
+      <typings>CylindricalPosition3dVector</typings>
+      <subsetting>position3dVector</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SphericalPosition3dVector">
+      <superclassifiers>Position3dVector</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="r" declaredName="radialDistance" valuePart="num#(1) [mRef.mRefs#(1)]">
+        <typings>LengthValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'&#x3b8;'" declaredName="inclination" valuePart="num#(2) [mRef.mRefs#(2)]">
+        <typings>AngularMeasureUnit</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'&#x3c6;'" declaredName="azimuth" valuePart="num#(3) [mRef.mRefs#(3)]">
+        <typings>AngularMeasureUnit</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>SphericalSpatial3dCoordinateFrame</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="sphericalPosition3dVector">
+      <typings>SphericalPosition3dVector</typings>
+      <subsetting>position3dVector</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="PlanetaryPosition3dVector">
+      <superclassifiers>Position3dVector</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="lat" declaredName="latitude" valuePart="num#(1) [mRef.mRefs#(1)]">
+        <typings>AngularMeasureUnit</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="long" declaredName="longitude" valuePart="num#(2) [mRef.mRefs#(2)]">
+        <typings>AngularMeasureUnit</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="h" declaredName="altitude" valuePart="num#(3) [mRef.mRefs#(3)]">
+        <typings>LengthValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>PlanetarySpatial3dCoordinateFrame</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="planetaryPosition3dVector">
+      <typings>PlanetaryPosition3dVector</typings>
+      <subsetting>position3dVector</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-3 item 3-1.11 displacement */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="Displacement3dVector">
+      <superclassifiers>'3dVectorQuantityValue'</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 3-1.11 displacement&#xA;         * symbol(s): `vec(&#x394;r)`&#xA;         * application domain: generic&#xA;         * name: Displacement&#xA;         * quantity dimension: L^1&#xA;         * measurement unit(s): m&#xA;         * tensor order: 1&#xA;         * definition: vector (ISO 80000-2) quantity between any two points in space&#xA;         * remarks: Displacement vectors are so-called free vectors, i.e. their magnitude (ISO 80000-2) and direction do not depend on a particular coordinate system. The magnitude of this vector is also called displacement.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Spatial3dCoordinateFrame</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="displacement3dVector">
+      <typings>Displacement3dVector</typings>
+      <subsetting>vectorQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CartesianDisplacement3dVector">
+      <superclassifiers>Displacement3dVector</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="x" valuePart="num#(1) [mRef.mRefs#(1)]">
+        <typings>LengthValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="y" valuePart="num#(2) [mRef.mRefs#(2)]">
+        <typings>LengthValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="z" valuePart="num#(3) [mRef.mRefs#(3)]">
+        <typings>LengthValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>CartesianSpatial3dCoordinateFrame</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cartesianDisplacement3dVector">
+      <typings>CartesianDisplacement3dVector</typings>
+      <subsetting>displacement3dVector</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CylindricalDisplacement3dVector">
+      <superclassifiers>Displacement3dVector</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'&#x3c1;'" declaredName="radialDistance" valuePart="num#(1) [mRef.mRefs#(1)]">
+        <typings>LengthValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'&#x3c6;'" declaredName="azimuth" valuePart="num#(2) [mRef.mRefs#(2)]">
+        <typings>AngularMeasureUnit</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="h" declaredName="height" valuePart="num#(3) [mRef.mRefs#(3)]">
+        <typings>LengthValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>CylindricalSpatial3dCoordinateFrame</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cylindricalDisplacement3dVector">
+      <typings>CylindricalDisplacement3dVector</typings>
+      <subsetting>displacement3dVector</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SphericalDisplacement3dVector">
+      <superclassifiers>Displacement3dVector</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="r" declaredName="radialDistance" valuePart="num#(1) [mRef.mRefs#(1)]">
+        <typings>LengthValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'&#x3b8;'" declaredName="inclination" valuePart="num#(2) [mRef.mRefs#(2)]">
+        <typings>AngularMeasureUnit</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'&#x3c6;'" declaredName="azimuth" valuePart="num#(3) [mRef.mRefs#(3)]">
+        <typings>AngularMeasureUnit</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>SphericalSpatial3dCoordinateFrame</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="sphericalDisplacement3dVector">
+      <typings>SphericalDisplacement3dVector</typings>
+      <subsetting>displacement3dVector</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-3 item 3-1.12 radius of curvature */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="radiusOfCurvature">
+      <typings>LengthValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 3-1.12 radius of curvature&#xA;         * symbol(s): `&#x3c1;`&#xA;         * application domain: generic&#xA;         * name: RadiusOfCurvature (specializes Length)&#xA;         * quantity dimension: L^1&#xA;         * measurement unit(s): m&#xA;         * tensor order: 0&#xA;         * definition: radius (item 3-1.6) of the osculating circle of a planar curve at a particular point of the curve&#xA;         * remarks: The radius of curvature is only defined for curves which are at least twice continuously differentiable.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-3 item 3-2 curvature */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CurvatureValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 3-2 curvature&#xA;         * symbol(s): `&#x3ba;`&#xA;         * application domain: generic&#xA;         * name: Curvature&#xA;         * quantity dimension: L^-1&#xA;         * measurement unit(s): m^-1&#xA;         * tensor order: 0&#xA;         * definition: inverse of the radius of curvature (item 3-1.12)&#xA;         * remarks: The curvature is given by: `&#x3ba; = 1/&#x3c1;` where `&#x3c1;` denotes the radius of curvature (item 3-1.12).&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>CurvatureUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="curvature" isNonunique="true">
+      <typings>CurvatureValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CurvatureUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="lengthPF">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-3 item 3-3 area */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="AreaValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 3-3 area&#xA;         * symbol(s): `A`, `S`&#xA;         * application domain: generic&#xA;         * name: Area&#xA;         * quantity dimension: L^2&#xA;         * measurement unit(s): m^2&#xA;         * tensor order: 0&#xA;         * definition: extent of a two-dimensional geometrical shape&#xA;         * remarks: The surface element at a given point of a surface is given by: `dA = g du dv` where `u` and `v` denote the Gaussian surface coordinates and `g` denotes the determinant of the metric tensor (ISO 80000-2) at the particular point. The symbol `d&#x3c3;` is also used for the surface element.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>AreaUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="area" isNonunique="true">
+      <typings>AreaValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="AreaUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="lengthPF">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-3 item 3-4 volume */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="VolumeValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 3-4 volume&#xA;         * symbol(s): `V`, `(S)`&#xA;         * application domain: generic&#xA;         * name: Volume&#xA;         * quantity dimension: L^3&#xA;         * measurement unit(s): m^3&#xA;         * tensor order: 0&#xA;         * definition: extent of a three-dimensional geometrical shape&#xA;         * remarks: The volume element in Euclidean space is given by: `dV = dx dy dz` where `dx`, `dy`, and `dz` denote the differentials of the Cartesian coordinates (ISO 80000-2). The symbol `d&#x3c4;` is also used for the volume element.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>VolumeUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="volume" isNonunique="true">
+      <typings>VolumeValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="VolumeUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="3">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="lengthPF">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-3 item 3-5 angular measure, plane angle */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="AngularMeasureValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 3-5 angular measure, plane angle&#xA;         * symbol(s): `&#x3b1;`, `&#x3b2;`, `&#x3b3;`&#xA;         * application domain: generic&#xA;         * name: AngularMeasure&#xA;         * quantity dimension: 1&#xA;         * measurement unit(s): rad, 1&#xA;         * tensor order: 0&#xA;         * definition: measure of a geometric figure, called plane angle, formed by two rays, called the sides of the plane angle, emanating from a common point, called the vertex of the plane angle&#xA;         * remarks: The angular measure is given by: `&#x3b1; = s/r` where `s` denotes the arc length (item 3-1.7) of the included arc of a circle, centred at the vertex of the plane angle, and `r` the radius (item 3-1.6) of that circle. Other symbols are also used.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>AngularMeasureUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="angularMeasure" isNonunique="true">
+      <typings>AngularMeasureValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="AngularMeasureUnit">
+      <superclassifiers>DimensionOneUnit</superclassifiers>
+    </elements>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="PlaneAngleUnit" memberElement="AngularMeasureUnit"/>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="PlaneAngleValue" memberElement="AngularMeasureValue"/>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="planeAngle" memberElement="angularMeasure"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-3 item 3-6 rotational displacement, angular displacement */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="rotationalDisplacement">
+      <typings>AngularMeasureValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 3-6 rotational displacement, angular displacement&#xA;         * symbol(s): `&#x3d1;`, `&#x3c6;`&#xA;         * application domain: generic&#xA;         * name: RotationalDisplacement (specializes AngularMeasure)&#xA;         * quantity dimension: 1&#xA;         * measurement unit(s): rad, 1&#xA;         * tensor order: 0&#xA;         * definition: quotient of the traversed circular path length (item 3-1.7) of a point in space during a rotation and its distance (item 3-1.8) from the axis or centre of rotation&#xA;         * remarks: The rotational displacement is given by: `&#x3c6; = s/r` where `s` denotes the traversed path length (item 3-1.7) along the periphery of a circle, centred at the vertex of the plane angle, and `r` the radius (item 3-1.6) of that circle. The rotational displacement is signed. The sign denotes the direction of rotation and is chosen by convention. Other symbols are also used.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="angularDisplacement" memberElement="rotationalDisplacement"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-3 item 3-7 phase angle */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="phaseAngle">
+      <typings>AngularMeasureValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 3-7 phase angle&#xA;         * symbol(s): `&#x3c6;`, `&#x3d5;`&#xA;         * application domain: generic&#xA;         * name: PhaseAngle (specializes AngularMeasure)&#xA;         * quantity dimension: 1&#xA;         * measurement unit(s): rad, 1&#xA;         * tensor order: 0&#xA;         * definition: angular measure (item 3-5) between the positive real axis and the radius of the polar representation of the complex number in the complex plane&#xA;         * remarks: The phase angle (often imprecisely referred to as the &quot;phase&quot;) is the argument of a complex number. Other symbols are also used.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-3 item 3-8 solid angular measure */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SolidAngularMeasureValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 3-8 solid angular measure&#xA;         * symbol(s): `&#x3a9;`&#xA;         * application domain: generic&#xA;         * name: SolidAngularMeasure&#xA;         * quantity dimension: 1&#xA;         * measurement unit(s): sr, 1&#xA;         * tensor order: 0&#xA;         * definition: measure of a conical geometric figure, called solid angle, formed by all rays, originating from a common point, called the vertex of the solid angle, and passing through the points of a closed, non-self-intersecting curve in space considered as the border of a surface&#xA;         * remarks: The differential solid angular measure expressed in spherical coordinates (ISO 80000-2) is given by: `d&#x3a9; = A/r^2 * sin(&#x3b8; * d&#x3b8; * d&#x3c6;)` where `A` is area, `r` is radius, `&#x3b8;` and `&#x3c6;` are spherical coordinates.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>SolidAngularMeasureUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="solidAngularMeasure" isNonunique="true">
+      <typings>SolidAngularMeasureValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SolidAngularMeasureUnit">
+      <superclassifiers>DimensionOneUnit</superclassifiers>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-3 item 3-9 duration, time */"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* See package ISQBase for the declarations of DurationValue and DurationUnit */"/>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="TimeUnit" memberElement="DurationUnit"/>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="TimeValue" memberElement="DurationValue"/>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="time" memberElement="duration"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-3 item 3-10.1 velocity */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CartesianVelocity3dVector">
+      <superclassifiers>'3dVectorQuantityValue'</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 3-10.1 velocity&#xA;         * symbol(s): `vec(v)`, `u,v,w`&#xA;         * application domain: generic&#xA;         * name: Velocity&#xA;         * quantity dimension: L^1*T^-1&#xA;         * measurement unit(s): m/s, m*s^-1&#xA;         * tensor order: 1&#xA;         * definition: vector (ISO 80000-2) quantity giving the rate of change of a position vector (item 3-1.10)&#xA;         * remarks: The velocity vector is given by: `vec(v) = (d vec(r)) / (dt)` where `vec(r)` denotes the position vector (item 3-1.10) and `t` the duration (item 3-9). When the general symbol `vec(v)` is not used for the velocity, the symbols `u`, `v`, `w` may be used for the components (ISO 80000-2) of the velocity.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>CartesianVelocity3dCoordinateFrame</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cartesianVelocity3dVector">
+      <typings>CartesianVelocity3dVector</typings>
+      <subsetting>vectorQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CartesianVelocity3dCoordinateFrame">
+      <superclassifiers>'3dCoordinateFrame'</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
+        <redefinitions>isOrthogonal</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>SpeedUnit</typings>
+        <redefinitions>mRefs</redefinitions>
+        <Multiplicity>3</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-3 item 3-10.2 speed */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SpeedValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 3-10.2 speed&#xA;         * symbol(s): `v`&#xA;         * application domain: generic&#xA;         * name: Speed&#xA;         * quantity dimension: L^1*T^-1&#xA;         * measurement unit(s): m/s, m*s^-1&#xA;         * tensor order: 0&#xA;         * definition: magnitude (ISO 80000-2) of the velocity (item 3-10.1)&#xA;         * remarks: None.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>SpeedUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="speed" isNonunique="true">
+      <typings>SpeedValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SpeedUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, durationPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-3 item 3-11 acceleration */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="AccelerationValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 3-11 acceleration (magnitude)&#xA;         * symbol(s): `a`&#xA;         * application domain: generic&#xA;         * name: Acceleration&#xA;         * quantity dimension: L^1*T^-2&#xA;         * measurement unit(s): m*s^-2&#xA;         * tensor order: 0&#xA;         * definition: vector (ISO 80000-2) quantity giving the rate of change of velocity (item 3-10)&#xA;         * remarks: The acceleration vector is given by: `vec(a) = (d vec(v))/(dt)` where `vec(v)` denotes the velocity (item 3-10.1) and `t` the duration (item 3-9). The magnitude (ISO 80000-2) of the acceleration of free fall is usually denoted by `g`.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>AccelerationUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="acceleration" isNonunique="true">
+      <typings>AccelerationValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="AccelerationUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, durationPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CartesianAcceleration3dVector">
+      <superclassifiers>'3dVectorQuantityValue'</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 3-11 acceleration (vector)&#xA;         * symbol(s): `vec(a)`&#xA;         * application domain: generic&#xA;         * name: Acceleration&#xA;         * quantity dimension: L^1*T^-2&#xA;         * measurement unit(s): m*s^-2&#xA;         * tensor order: 1&#xA;         * definition: vector (ISO 80000-2) quantity giving the rate of change of velocity (item 3-10)&#xA;         * remarks: The acceleration vector is given by: `vec(a) = (d vec(v))/(dt)` where `vec(v)` denotes the velocity (item 3-10.1) and `t` the duration (item 3-9). The magnitude (ISO 80000-2) of the acceleration of free fall is usually denoted by `g`.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>CartesianAcceleration3dCoordinateFrame</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cartesianAcceleration3dVector">
+      <typings>CartesianAcceleration3dVector</typings>
+      <subsetting>vectorQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CartesianAcceleration3dCoordinateFrame">
+      <superclassifiers>'3dCoordinateFrame'</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
+        <redefinitions>isOrthogonal</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>AccelerationUnit</typings>
+        <redefinitions>mRefs</redefinitions>
+        <Multiplicity>3</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-3 item 3-12 angular velocity */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="AngularVelocityValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 3-12 angular velocity (magnitude)&#xA;         * symbol(s): `&#x3c9;`&#xA;         * application domain: generic&#xA;         * name: AngularVelocity&#xA;         * quantity dimension: T^-1&#xA;         * measurement unit(s): rad*s^-1, s^-1&#xA;         * tensor order: 0&#xA;         * definition: vector (ISO 80000-2) quantity giving the rate of change of the rotational displacement (item 3-6) as its magnitude (ISO 80000-2) and with a direction equal to the direction of the axis of rotation&#xA;         * remarks: The angular velocity vector is given by: `vec(&#x3c9;) = (d &#x3c6;) / (dt) vec(u)` where `&#x3c6;` denotes the angular displacement (item 3-6), `t` the duration (item 3-9), and `vec(u)` the unit vector (ISO 80000-2) along the axis of rotation in the direction for which the rotation corresponds to a right-hand spiral.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>AngularVelocityUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="angularVelocity" isNonunique="true">
+      <typings>AngularVelocityValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="AngularVelocityUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="durationPF">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CartesianAngularVelocity3dVector">
+      <superclassifiers>'3dVectorQuantityValue'</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 3-12 angular velocity (vector)&#xA;         * symbol(s): `vec(&#x3c9;)`&#xA;         * application domain: generic&#xA;         * name: AngularVelocity&#xA;         * quantity dimension: T^-1&#xA;         * measurement unit(s): rad*s^-1, s^-1&#xA;         * tensor order: 1&#xA;         * definition: vector (ISO 80000-2) quantity giving the rate of change of the rotational displacement (item 3-6) as its magnitude (ISO 80000-2) and with a direction equal to the direction of the axis of rotation&#xA;         * remarks: The angular velocity vector is given by: `vec(&#x3c9;) = (d &#x3c6;) / (dt) vec(u)` where `&#x3c6;` denotes the angular displacement (item 3-6), `t` the duration (item 3-9), and `vec(u)` the unit vector (ISO 80000-2) along the axis of rotation in the direction for which the rotation corresponds to a right-hand spiral.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>CartesianAngularVelocity3dCoordinateFrame</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cartesianAngularVelocity3dVector">
+      <typings>CartesianAngularVelocity3dVector</typings>
+      <subsetting>vectorQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CartesianAngularVelocity3dCoordinateFrame">
+      <superclassifiers>'3dCoordinateFrame'</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
+        <redefinitions>isOrthogonal</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>AngularVelocityUnit</typings>
+        <redefinitions>mRefs</redefinitions>
+        <Multiplicity>3</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-3 item 3-13 angular acceleration */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="AngularAccelerationValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 3-13 angular acceleration (magnitude)&#xA;         * symbol(s): `&#x3b1;`&#xA;         * application domain: generic&#xA;         * name: AngularAcceleration&#xA;         * quantity dimension: T^-2&#xA;         * measurement unit(s): rad*s^-2, s^-2&#xA;         * tensor order: 0&#xA;         * definition: vector (ISO 80000-2) quantity giving the rate of change of angular velocity (item 3-12)&#xA;         * remarks: The angular acceleration vector is given by: `vec &#x3b1; = (d vec(&#x3c9;))/(dt)` Where `vec(&#x3c9;)` denotes the angular velocity (item 3-12) and `t` the duration (item 3-9).&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>AngularAccelerationUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="angularAcceleration" isNonunique="true">
+      <typings>AngularAccelerationValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="AngularAccelerationUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="durationPF">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CartesianAngularAcceleration3dVector">
+      <superclassifiers>'3dVectorQuantityValue'</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 3-13 angular acceleration (vector)&#xA;         * symbol(s): `vec(&#x3b1;)`&#xA;         * application domain: generic&#xA;         * name: AngularAcceleration&#xA;         * quantity dimension: T^-2&#xA;         * measurement unit(s): rad*s^-2, s^-2&#xA;         * tensor order: 1&#xA;         * definition: vector (ISO 80000-2) quantity giving the rate of change of angular velocity (item 3-12)&#xA;         * remarks: The angular acceleration vector is given by: `vec &#x3b1; = (d vec(&#x3c9;))/(dt)` Where `vec(&#x3c9;)` denotes the angular velocity (item 3-12) and `t` the duration (item 3-9).&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>CartesianAngularAcceleration3dCoordinateFrame</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cartesianAngularAcceleration3dVector">
+      <typings>CartesianAngularAcceleration3dVector</typings>
+      <subsetting>vectorQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CartesianAngularAcceleration3dCoordinateFrame">
+      <superclassifiers>'3dCoordinateFrame'</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
+        <redefinitions>isOrthogonal</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>AngularAccelerationUnit</typings>
+        <redefinitions>mRefs</redefinitions>
+        <Multiplicity>3</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-3 item 3-14 period duration, period */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="periodDuration">
+      <typings>DurationValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 3-14 period duration, period&#xA;         * symbol(s): `T`&#xA;         * application domain: generic&#xA;         * name: PeriodDuration (specializes Duration)&#xA;         * quantity dimension: T^1&#xA;         * measurement unit(s): s&#xA;         * tensor order: 0&#xA;         * definition: duration (item 3-9) of one cycle of a periodic event&#xA;         * remarks: A periodic event is an event that occurs regularly with a fixed time interval.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="period" memberElement="periodDuration"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-3 item 3-15 time constant */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="timeConstant">
+      <typings>DurationValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 3-15 time constant&#xA;         * symbol(s): `&#x3c4;`, `T`&#xA;         * application domain: generic&#xA;         * name: TimeConstant (specializes Duration)&#xA;         * quantity dimension: T^1&#xA;         * measurement unit(s): s&#xA;         * tensor order: 0&#xA;         * definition: parameter characterizing the response to a step input of a first-order, linear time-invariant system&#xA;         * remarks: If a quantity is a function of the duration (item 3-9) expressed by: `F(t) prop e^(-t/&#x3c4;)` where `t` denotes the duration (item 3-9), then `&#x3c4;` denotes the time constant. Here the time constant `&#x3c4;` applies to an exponentially decaying quantity.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-3 item 3-16 rotation */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="rotation">
+      <typings>CountValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 3-16 rotation&#xA;         * symbol(s): `N`&#xA;         * application domain: generic&#xA;         * name: Rotation (specializes Count)&#xA;         * quantity dimension: 1&#xA;         * measurement unit(s): 1&#xA;         * tensor order: 0&#xA;         * definition: number of revolutions&#xA;         * remarks: `N` is the number (not necessarily an integer) of revolutions, for example, of a rotating body about a given axis. Its value is given by: `N = &#x3c6;/(2 &#x3c0;)` where `&#x3c6;` denotes the measure of rotational displacement (item 3-6).&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-3 item 3-17.1 frequency */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="FrequencyValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 3-17.1 frequency&#xA;         * symbol(s): `f`, `&#x3bd;`&#xA;         * application domain: generic&#xA;         * name: Frequency&#xA;         * quantity dimension: T^-1&#xA;         * measurement unit(s): Hz, s^-1&#xA;         * tensor order: 0&#xA;         * definition: inverse of period duration (item 3-14)&#xA;         * remarks: The frequency is given by: `f = 1/T` where `T` denotes the period duration (item 3-14).&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>FrequencyUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="frequency" isNonunique="true">
+      <typings>FrequencyValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="FrequencyUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="durationPF">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-3 item 3-17.2 rotational frequency */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="rotationalFrequency">
+      <typings>FrequencyValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 3-17.2 rotational frequency&#xA;         * symbol(s): `n`&#xA;         * application domain: generic&#xA;         * name: RotationalFrequency (specializes Frequency)&#xA;         * quantity dimension: T^-1&#xA;         * measurement unit(s): s^-1&#xA;         * tensor order: 0&#xA;         * definition: duration (item 3-9) of one cycle of a periodic event&#xA;         * remarks: The rotational frequency is given by: `n = (dN) / (dt)` where `N` denotes the rotation (item 3-16) and `t` is the duration (item 3-9).&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-3 item 3-18 angular frequency */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="AngularFrequencyValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 3-18 angular frequency&#xA;         * symbol(s): `&#x3c9;`&#xA;         * application domain: generic&#xA;         * name: AngularFrequency&#xA;         * quantity dimension: T^-1&#xA;         * measurement unit(s): rad*s^-1, s^-1&#xA;         * tensor order: 0&#xA;         * definition: rate of change of the phase angle (item 3-7)&#xA;         * remarks: The angular frequency is given by: `&#x3c9; = 2 &#x3c0; f` where `f` denotes the frequency (item 3-17.1).&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>AngularFrequencyUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="angularFrequency" isNonunique="true">
+      <typings>AngularFrequencyValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="AngularFrequencyUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="durationPF">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-3 item 3-19 wavelength */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="wavelength">
+      <typings>LengthValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 3-19 wavelength&#xA;         * symbol(s): `&#x3bb;`&#xA;         * application domain: generic&#xA;         * name: Wavelength (specializes Length)&#xA;         * quantity dimension: L^1&#xA;         * measurement unit(s): m&#xA;         * tensor order: 0&#xA;         * definition: length (item 3-1.1) of the repetition interval of a wave&#xA;         * remarks: None.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-3 item 3-20 repetency, wavenumber */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="RepetencyValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 3-20 repetency, wavenumber&#xA;         * symbol(s): `&#x3c3;`, `&#x1e7d;`&#xA;         * application domain: generic&#xA;         * name: Repetency&#xA;         * quantity dimension: L^-1&#xA;         * measurement unit(s): m^-1&#xA;         * tensor order: 0&#xA;         * definition: inverse of the wavelength (item 3-19)&#xA;         * remarks: The repetency is given by: `&#x3c3; = 1 / &#x3bb;` where `&#x3bb;` denotes the wavelength (item 3-19).&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>RepetencyUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="repetency" isNonunique="true">
+      <typings>RepetencyValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="RepetencyUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="lengthPF">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="WavenumberUnit" memberElement="RepetencyUnit"/>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="WavenumberValue" memberElement="RepetencyValue"/>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="wavenumber" memberElement="repetency"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-3 item 3-21 wave vector */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CartesianWave3dVector">
+      <superclassifiers>'3dVectorQuantityValue'</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 3-21 wave vector&#xA;         * symbol(s): `vec(k)`&#xA;         * application domain: generic&#xA;         * name: WaveVector&#xA;         * quantity dimension: L^-1&#xA;         * measurement unit(s): m^-1&#xA;         * tensor order: 1&#xA;         * definition: vector normal to the surfaces of constant phase angle (item 3-7) of a wave, with the magnitude (ISO 80000-2) of repetency (item 3-20)&#xA;         * remarks: None.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>CartesianWaveVector3dCoordinateFrame</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cartesianWave3dVector">
+      <typings>CartesianWave3dVector</typings>
+      <subsetting>vectorQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CartesianWaveVector3dCoordinateFrame">
+      <superclassifiers>'3dCoordinateFrame'</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
+        <redefinitions>isOrthogonal</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>RepetencyUnit</typings>
+        <redefinitions>mRefs</redefinitions>
+        <Multiplicity>3</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-3 item 3-22 angular repetency, angular wavenumber */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="AngularRepetencyValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 3-22 angular repetency, angular wavenumber&#xA;         * symbol(s): `k`&#xA;         * application domain: generic&#xA;         * name: AngularRepetency&#xA;         * quantity dimension: L^-1&#xA;         * measurement unit(s): m^-1&#xA;         * tensor order: 0&#xA;         * definition: magnitude (ISO 80000-2) of the wave vector (item 3-21)&#xA;         * remarks: The angular repetency is given by: `&#x3ba; = (2 &#x3c0;)/&#x3bb;` where `&#x3bb;` denotes the wavelength (item 3-19).&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>AngularRepetencyUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="angularRepetency" isNonunique="true">
+      <typings>AngularRepetencyValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="AngularRepetencyUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="lengthPF">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="AngularWavenumberUnit" memberElement="AngularRepetencyUnit"/>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="AngularWavenumberValue" memberElement="AngularRepetencyValue"/>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="angularWavenumber" memberElement="angularRepetency"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-3 item 3-23.1 phase velocity, phase speed */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="PhaseVelocityValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 3-23.1 phase velocity, phase speed&#xA;         * symbol(s): `c`, `v`, `(&#x3bd;)`, `c_&#x3c6;`, `v_&#x3c6;`, `(&#x3bd;_&#x3c6;)`&#xA;         * application domain: generic&#xA;         * name: PhaseVelocity&#xA;         * quantity dimension: L^1*T^-1&#xA;         * measurement unit(s): m*s^-1&#xA;         * tensor order: 0&#xA;         * definition: speed with which the phase angle (item 3-7) of a wave propagates in space&#xA;         * remarks: The phase velocity is given by: `c = &#x3c9;/&#x3ba;` where `&#x3c9;` denotes the angular frequency (item 3-18) and `k` the angular repetency (item 3-22). If phase velocities of electromagnetic waves and other phase velocities are both involved, then `c` should be used for the former and `&#x3c5;` for the latter. Phase velocity can also be written as `c = &#x3bb; f`.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>PhaseVelocityUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="phaseVelocity" isNonunique="true">
+      <typings>PhaseVelocityValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="PhaseVelocityUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, durationPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="PhaseSpeedUnit" memberElement="PhaseVelocityUnit"/>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="PhaseSpeedValue" memberElement="PhaseVelocityValue"/>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="phaseSpeed" memberElement="phaseVelocity"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-3 item 3-23.2 group velocity, group speed */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="groupVelocity">
+      <typings>SpeedValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 3-23.2 group velocity, group speed&#xA;         * symbol(s): `c_g`, `v_g`, `(&#x3bd;_g)`&#xA;         * application domain: generic&#xA;         * name: GroupVelocity (specializes Speed)&#xA;         * quantity dimension: L^1*T^-1&#xA;         * measurement unit(s): m*s^-1&#xA;         * tensor order: 0&#xA;         * definition: speed with which the envelope of a wave propagates in space&#xA;         * remarks: The group velocity is given by: `c_g = (d &#x3c9;)/ (dk)` where `&#x3c9;` denotes the angular frequency (item 3-18) and `k` the angular repetency (item 3-22).&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="groupSpeed" memberElement="groupVelocity"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-3 item 3-24 damping coefficient */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="DampingCoefficientValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 3-24 damping coefficient&#xA;         * symbol(s): `&#x3b4;`&#xA;         * application domain: generic&#xA;         * name: DampingCoefficient&#xA;         * quantity dimension: T^-1&#xA;         * measurement unit(s): s^-1&#xA;         * tensor order: 0&#xA;         * definition: inverse of the time constant (item 3-15) of an exponentially varying quantity&#xA;         * remarks: None.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>DampingCoefficientUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="dampingCoefficient" isNonunique="true">
+      <typings>DampingCoefficientValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="DampingCoefficientUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="durationPF">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-3 item 3-25 logarithmic decrement */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="LogarithmicDecrementValue">
+      <superclassifiers>DimensionOneValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 3-25 logarithmic decrement&#xA;         * symbol(s): `&#x39b;`&#xA;         * application domain: generic&#xA;         * name: LogarithmicDecrement (specializes DimensionOneQuantity)&#xA;         * quantity dimension: 1&#xA;         * measurement unit(s): 1&#xA;         * tensor order: 0&#xA;         * definition: product of damping coefficient (item 3-24) and period duration (item 3-14)&#xA;         * remarks: None.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="logarithmicDecrement">
+      <typings>LogarithmicDecrementValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-3 item 3-26.1 attenuation, extinction */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="AttenuationValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 3-26.1 attenuation, extinction&#xA;         * symbol(s): `&#x3b1;`&#xA;         * application domain: generic&#xA;         * name: Attenuation&#xA;         * quantity dimension: L^-1&#xA;         * measurement unit(s): m^-1&#xA;         * tensor order: 0&#xA;         * definition: gradual decrease in magnitude (ISO 80000-2) of any kind of flux through a medium&#xA;         * remarks: If a quantity is a function of distance (item 3-1.8) expressed by: `f(x) prop e^(-&#x3b1; x)` where `x` denotes distance (item 3-1.8), then `&#x3b1;` denotes attenuation. The inverse of attenuation is called attenuation length.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>AttenuationUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="attenuation" isNonunique="true">
+      <typings>AttenuationValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="AttenuationUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="lengthPF">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="ExtinctionUnit" memberElement="AttenuationUnit"/>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="ExtinctionValue" memberElement="AttenuationValue"/>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="extinction" memberElement="attenuation"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-3 item 3-26.2 phase coefficient */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="PhaseCoefficientValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 3-26.2 phase coefficient&#xA;         * symbol(s): `&#x3b2;`&#xA;         * application domain: generic&#xA;         * name: PhaseCoefficient&#xA;         * quantity dimension: L^-1&#xA;         * measurement unit(s): rad/m, m^-1&#xA;         * tensor order: 0&#xA;         * definition: change of phase angle (item 3-7) with the length (item 3-1.1) along the path travelled by a plane wave&#xA;         * remarks: If a quantity is a function of distance expressed by: `f(x) prop cos(&#x3b2;(x-x_0))` where `x` denotes distance (item 3-1.8), then `&#x3b2;` denotes the phase coefficient.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>PhaseCoefficientUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="phaseCoefficient" isNonunique="true">
+      <typings>PhaseCoefficientValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="PhaseCoefficientUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="lengthPF">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-3 item 3-26.3 propagation coefficient */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="PropagationCoefficientValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 3-26.3 propagation coefficient&#xA;         * symbol(s): `&#x3b3;`&#xA;         * application domain: generic&#xA;         * name: PropagationCoefficient&#xA;         * quantity dimension: L^-1&#xA;         * measurement unit(s): m^-1&#xA;         * tensor order: 0&#xA;         * definition: measure of the change of amplitude and phase angle (item 3-7) of a plane wave propagating in a given direction&#xA;         * remarks: The propagation coefficient is given by: `&#x3b3; = &#x3b1; + i&#x3b2;` where `&#x3b1;` denotes attenuation (item 3-26.1) and `&#x3b2;` the phase coefficient (item 3-26.2) of a plane wave.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>PropagationCoefficientUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="propagationCoefficient" isNonunique="true">
+      <typings>PropagationCoefficientValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="PropagationCoefficientUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="lengthPF">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

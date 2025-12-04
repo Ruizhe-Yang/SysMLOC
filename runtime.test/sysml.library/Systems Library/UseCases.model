@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:LibraryPackage" declaredName="UseCases" isStandard="true" isLibrary="true">
+    <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9; * This package defines the base types for use cases and related behavioral elements in the SysML language.&#xA;&#x9; */"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Cases::Case"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Cases::cases"/>
+    <elements xsi:type="sysMLOC:UseCaseDefinition" declaredName="UseCase">
+      <superclassifiers>Case</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * UseCase is the most general class of performances of UseCaseDefinitions. &#xA;&#x9;&#x9; * UseCase is the base class of all UseCaseDefinitions.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:UseCaseUsage" isReference="true" declaredName="self">
+        <typings>UseCase</typings>
+        <redefinitions>Case::self</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:SubjectUsage" declaredName="subj">
+        <redefinitions>Case::subj</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:ObjectiveRequirementUsage" declaredName="obj">
+        <redefinitions>Case::obj</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:UseCaseUsage" isReference="true" declaredName="start">
+        <typings>UseCase</typings>
+        <redefinitions>start</redefinitions>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The starting snapshot of a Use Case. &#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:UseCaseUsage" isReference="true" declaredName="done">
+        <typings>UseCase</typings>
+        <redefinitions>done</redefinitions>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The ending snapshot of a Use Case.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:UseCaseUsage" isAbstract="true" declaredName="subUseCases">
+        <typings>UseCase</typings>
+        <subsetting>useCases</subsetting>
+        <subsetting>subcases</subsetting>
+        <Multiplicity>0</Multiplicity>
+        <Multiplicity>*</Multiplicity>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * Other UseCases carried out as part of the performance of this UseCase.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:UseCaseUsage" isAbstract="true" isReference="true" declaredName="includedUseCases">
+        <typings>UseCase</typings>
+        <subsetting>useCases</subsetting>
+        <subsetting>enclosedPerformances</subsetting>
+        <Multiplicity>0</Multiplicity>
+        <Multiplicity>*</Multiplicity>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * Other UseCases included by this UseCase (i.e., as modeled by an &#xA;&#x9;&#x9;&#x9; * IncludeUseCaseUsage).&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:UseCaseUsage" declaredName="useCases" isNonunique="true">
+      <typings>UseCase</typings>
+      <subsetting>cases</subsetting>
+      <Multiplicity>0</Multiplicity>
+      <Multiplicity>*</Multiplicity>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * useCases is the base feature of all UseCaseUsages.&#xA;&#x9;&#x9; */"/>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

@@ -1,0 +1,1813 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:LibraryPackage" declaredName="SysML" isStandard="true" isLibrary="true">
+    <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9; * This package contains a reflective KerML model of the KerML abstract syntax.&#xA;&#x9; */"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="Systems" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:Package" declaredName="Systems">
+      <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="KerML::Kernel" isNamespace="true"/>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="AcceptActionUsage">
+        <superclassifiers>ActionUsage</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="receiverArgument">
+          <typings>Expression</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="payloadParameter">
+          <typings>ReferenceUsage</typings>
+          <subsetting>nestedReference</subsetting>
+          <subsetting>parameter</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="payloadArgument">
+          <typings>Expression</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="ActionDefinition">
+        <superclassifiers>Behavior</superclassifiers>
+        <superclassifiers>OccurrenceDefinition</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="'action'" isOrdered="true">
+          <typings>ActionUsage</typings>
+          <subsetting>step</subsetting>
+          <subsetting>usage</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="ActionUsage">
+        <superclassifiers>Step</superclassifiers>
+        <superclassifiers>OccurrenceUsage</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="actionDefinition" isOrdered="true">
+          <typings>Behavior</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>behavior</redefinitions>
+          <redefinitions>occurrenceDefinition</redefinitions>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="ActorMembership">
+        <superclassifiers>ParameterMembership</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" declaredName="ownedActorParameter">
+          <typings>PartUsage</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>ownedMemberParameter</redefinitions>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="AllocationDefinition">
+        <superclassifiers>ConnectionDefinition</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="'allocation'" isOrdered="true">
+          <typings>AllocationUsage</typings>
+          <subsetting>usage</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="AllocationUsage">
+        <superclassifiers>ConnectionUsage</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="allocationDefinition" isOrdered="true">
+          <typings>AllocationDefinition</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>connectionDefinition</redefinitions>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="AnalysisCaseDefinition">
+        <superclassifiers>CaseDefinition</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="resultExpression">
+          <typings>Expression</typings>
+          <subsetting>expression</subsetting>
+          <subsetting>ownedFeature</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="AnalysisCaseUsage">
+        <superclassifiers>CaseUsage</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="analysisCaseDefinition">
+          <typings>AnalysisCaseDefinition</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>caseDefinition</redefinitions>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="resultExpression">
+          <typings>Expression</typings>
+          <subsetting>ownedFeature</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="AssertConstraintUsage">
+        <superclassifiers>ConstraintUsage</superclassifiers>
+        <superclassifiers>Invariant</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="assertedConstraint">
+          <typings>ConstraintUsage</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="AssignmentActionUsage">
+        <superclassifiers>ActionUsage</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="targetArgument">
+          <typings>Expression</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="valueExpression">
+          <typings>Expression</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="referent">
+          <typings>Feature</typings>
+          <subsetting>member</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="AttributeDefinition">
+        <superclassifiers>DataType</superclassifiers>
+        <superclassifiers>Definition</superclassifiers>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="AttributeUsage">
+        <superclassifiers>Usage</superclassifiers>
+        <elements xsi:type="sysMLOC:AttributeUsage" isDerived="true" declaredName="isReference">
+          <typings>Boolean</typings>
+          <redefinitions>isReference</redefinitions>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="attributeDefinition" isOrdered="true">
+          <typings>DataType</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>definition</redefinitions>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="BindingConnectorAsUsage">
+        <superclassifiers>BindingConnector</superclassifiers>
+        <superclassifiers>ConnectorAsUsage</superclassifiers>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="CalculationDefinition">
+        <superclassifiers>Function</superclassifiers>
+        <superclassifiers>ActionDefinition</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="calculation" isOrdered="true">
+          <typings>CalculationUsage</typings>
+          <subsetting>'action'</subsetting>
+          <subsetting>expression</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="CalculationUsage">
+        <superclassifiers>Expression</superclassifiers>
+        <superclassifiers>ActionUsage</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="calculationDefinition" isOrdered="true">
+          <typings>Function</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>function</redefinitions>
+          <redefinitions>actionDefinition</redefinitions>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="CaseDefinition">
+        <superclassifiers>CalculationDefinition</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="objectiveRequirement" isOrdered="true">
+          <typings>RequirementUsage</typings>
+          <subsetting>usage</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="subjectParameter">
+          <typings>Usage</typings>
+          <subsetting>parameter</subsetting>
+          <subsetting>usage</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="actorParameter" isOrdered="true">
+          <typings>PartUsage</typings>
+          <subsetting>parameter</subsetting>
+          <subsetting>usage</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="CaseUsage">
+        <superclassifiers>CalculationUsage</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="objectiveRequirement" isOrdered="true">
+          <typings>RequirementUsage</typings>
+          <subsetting>usage</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="caseDefinition">
+          <typings>CaseDefinition</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>calculationDefinition</redefinitions>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="subjectParameter">
+          <typings>Usage</typings>
+          <subsetting>parameter</subsetting>
+          <subsetting>usage</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="actorParameter" isOrdered="true">
+          <typings>PartUsage</typings>
+          <subsetting>parameter</subsetting>
+          <subsetting>usage</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="ConcernDefinition">
+        <superclassifiers>RequirementDefinition</superclassifiers>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="ConcernUsage">
+        <superclassifiers>RequirementUsage</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="concernDefinition">
+          <typings>ConcernDefinition</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>requirementDefinition</redefinitions>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="ConjugatedPortDefinition">
+        <superclassifiers>PortDefinition</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="originalPortDefinition">
+          <typings>PortDefinition</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>owningNamespace</redefinitions>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="ownedPortConjugator">
+          <typings>PortConjugation</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>ownedConjugator</redefinitions>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="ConjugatedPortTyping">
+        <superclassifiers>FeatureTyping</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isReference="true" declaredName="conjugatedPortDefinition">
+          <typings>ConjugatedPortDefinition</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>type</redefinitions>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="portDefinition">
+          <typings>PortDefinition</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="ConnectionDefinition">
+        <superclassifiers>AssociationStructure</superclassifiers>
+        <superclassifiers>PartDefinition</superclassifiers>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="isSufficient">
+          <typings>Boolean</typings>
+          <redefinitions>isSufficient</redefinitions>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="connectionEnd" isOrdered="true">
+          <typings>Usage</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>associationEnd</redefinitions>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="ConnectionUsage">
+        <superclassifiers>ConnectorAsUsage</superclassifiers>
+        <superclassifiers>PartUsage</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="connectionDefinition" isOrdered="true">
+          <typings>AssociationStructure</typings>
+          <subsetting>itemDefinition</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>association</redefinitions>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="ConnectorAsUsage" isAbstract="true">
+        <superclassifiers>Usage</superclassifiers>
+        <superclassifiers>Connector</superclassifiers>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="ConstraintDefinition">
+        <superclassifiers>OccurrenceDefinition</superclassifiers>
+        <superclassifiers>Predicate</superclassifiers>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="ConstraintUsage">
+        <superclassifiers>BooleanExpression</superclassifiers>
+        <superclassifiers>OccurrenceUsage</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="constraintDefinition">
+          <typings>Predicate</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>predicate</redefinitions>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="ControlNode" isAbstract="true">
+        <superclassifiers>ActionUsage</superclassifiers>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="DecisionNode">
+        <superclassifiers>ControlNode</superclassifiers>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="Definition">
+        <superclassifiers>Classifier</superclassifiers>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="isVariation">
+          <typings>Boolean</typings>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="'variant'">
+          <typings>Usage</typings>
+          <subsetting>ownedMember</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" declaredName="variantMembership">
+          <typings>VariantMembership</typings>
+          <subsetting>ownedMembership</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="usage" isOrdered="true">
+          <typings>Usage</typings>
+          <subsetting>feature</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="directedUsage" isOrdered="true">
+          <typings>Usage</typings>
+          <subsetting>directedFeature</subsetting>
+          <subsetting>usage</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="ownedUsage" isOrdered="true">
+          <typings>Usage</typings>
+          <subsetting>ownedFeature</subsetting>
+          <subsetting>usage</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="ownedReference" isOrdered="true">
+          <typings>ReferenceUsage</typings>
+          <subsetting>ownedUsage</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="ownedAttribute" isOrdered="true">
+          <typings>AttributeUsage</typings>
+          <subsetting>ownedUsage</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="ownedEnumeration" isOrdered="true">
+          <typings>EnumerationUsage</typings>
+          <subsetting>ownedAttribute</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="ownedOccurrence" isOrdered="true">
+          <typings>OccurrenceUsage</typings>
+          <subsetting>ownedUsage</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="ownedItem" isOrdered="true">
+          <typings>ItemUsage</typings>
+          <subsetting>ownedOccurrence</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="ownedPart" isOrdered="true">
+          <typings>PartUsage</typings>
+          <subsetting>ownedItem</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="ownedPort" isOrdered="true">
+          <typings>PortUsage</typings>
+          <subsetting>ownedUsage</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="ownedConnection" isOrdered="true">
+          <typings>ConnectorAsUsage</typings>
+          <subsetting>ownedUsage</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="ownedFlow">
+          <typings>FlowUsage</typings>
+          <subsetting>ownedConnection</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="ownedInterface" isOrdered="true">
+          <typings>InterfaceUsage</typings>
+          <subsetting>ownedConnection</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="ownedAllocation" isOrdered="true">
+          <typings>AllocationUsage</typings>
+          <subsetting>ownedConnection</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="ownedAction" isOrdered="true">
+          <typings>ActionUsage</typings>
+          <subsetting>ownedOccurrence</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="ownedState" isOrdered="true">
+          <typings>StateUsage</typings>
+          <subsetting>ownedAction</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="ownedTransition">
+          <typings>TransitionUsage</typings>
+          <subsetting>ownedUsage</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="ownedCalculation" isOrdered="true">
+          <typings>CalculationUsage</typings>
+          <subsetting>ownedAction</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="ownedConstraint" isOrdered="true">
+          <typings>ConstraintUsage</typings>
+          <subsetting>ownedOccurrence</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="ownedRequirement" isOrdered="true">
+          <typings>RequirementUsage</typings>
+          <subsetting>ownedConstraint</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="ownedConcern">
+          <typings>ConcernUsage</typings>
+          <subsetting>ownedRequirement</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="ownedCase" isOrdered="true">
+          <typings>CaseUsage</typings>
+          <subsetting>ownedCalculation</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="ownedAnalysisCase" isOrdered="true">
+          <typings>AnalysisCaseUsage</typings>
+          <subsetting>ownedCase</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="ownedVerificationCase" isOrdered="true">
+          <typings>VerificationCaseUsage</typings>
+          <subsetting>ownedCase</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="ownedUseCase" isOrdered="true">
+          <typings>UseCaseUsage</typings>
+          <subsetting>ownedCase</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="ownedView" isOrdered="true">
+          <typings>ViewUsage</typings>
+          <subsetting>ownedPart</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="ownedViewpoint" isOrdered="true">
+          <typings>ViewpointUsage</typings>
+          <subsetting>ownedRequirement</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="ownedRendering" isOrdered="true">
+          <typings>RenderingUsage</typings>
+          <subsetting>ownedPart</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="ownedMetadata" isOrdered="true">
+          <typings>MetadataUsage</typings>
+          <subsetting>ownedItem</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="EnumerationDefinition">
+        <superclassifiers>AttributeDefinition</superclassifiers>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="isVariation">
+          <typings>Boolean</typings>
+          <redefinitions>isVariation</redefinitions>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="enumeratedValue" isOrdered="true">
+          <typings>EnumerationUsage</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>'variant'</redefinitions>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="EnumerationUsage">
+        <superclassifiers>AttributeUsage</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="enumerationDefinition">
+          <typings>EnumerationDefinition</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>attributeDefinition</redefinitions>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="EventOccurrenceUsage">
+        <superclassifiers>OccurrenceUsage</superclassifiers>
+        <elements xsi:type="sysMLOC:AttributeUsage" isDerived="true" declaredName="isReference">
+          <typings>Boolean</typings>
+          <redefinitions>isReference</redefinitions>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="eventOccurrence">
+          <typings>OccurrenceUsage</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="ExhibitStateUsage">
+        <superclassifiers>StateUsage</superclassifiers>
+        <superclassifiers>PerformActionUsage</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="exhibitedState">
+          <typings>StateUsage</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>performedAction</redefinitions>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="Expose" isAbstract="true">
+        <superclassifiers>Import</superclassifiers>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="visibility">
+          <typings>VisibilityKind</typings>
+          <redefinitions>visibility</redefinitions>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="isImportAll">
+          <typings>Boolean</typings>
+          <redefinitions>isImportAll</redefinitions>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="FlowDefinition">
+        <superclassifiers>Interaction</superclassifiers>
+        <superclassifiers>ActionDefinition</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="flowEnd">
+          <typings>Usage</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>associationEnd</redefinitions>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="FlowUsage">
+        <superclassifiers>ConnectorAsUsage</superclassifiers>
+        <superclassifiers>Flow</superclassifiers>
+        <superclassifiers>ActionUsage</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="flowDefinition" isOrdered="true">
+          <typings>Interaction</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>actionDefinition</redefinitions>
+          <redefinitions>interaction</redefinitions>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="ForLoopActionUsage">
+        <superclassifiers>LoopActionUsage</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="seqArgument">
+          <typings>Expression</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="loopVariable">
+          <typings>ReferenceUsage</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="ForkNode">
+        <superclassifiers>ControlNode</superclassifiers>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="FramedConcernMembership">
+        <superclassifiers>RequirementConstraintMembership</superclassifiers>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="kind">
+          <typings>RequirementConstraintKind</typings>
+          <redefinitions>kind</redefinitions>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" declaredName="ownedConcern">
+          <typings>ConcernUsage</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>ownedConstraint</redefinitions>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="referencedConcern">
+          <typings>ConcernUsage</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>referencedConstraint</redefinitions>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="IfActionUsage">
+        <superclassifiers>ActionUsage</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="elseAction">
+          <typings>ActionUsage</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="thenAction">
+          <typings>ActionUsage</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="ifArgument">
+          <typings>Expression</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="IncludeUseCaseUsage">
+        <superclassifiers>UseCaseUsage</superclassifiers>
+        <superclassifiers>PerformActionUsage</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="useCaseIncluded">
+          <typings>UseCaseUsage</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>performedAction</redefinitions>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="InterfaceDefinition">
+        <superclassifiers>ConnectionDefinition</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="interfaceEnd" isOrdered="true">
+          <typings>PortUsage</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>connectionEnd</redefinitions>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="InterfaceUsage">
+        <superclassifiers>ConnectionUsage</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="interfaceDefinition">
+          <typings>InterfaceDefinition</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>connectionDefinition</redefinitions>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="ItemDefinition">
+        <superclassifiers>Structure</superclassifiers>
+        <superclassifiers>OccurrenceDefinition</superclassifiers>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="ItemUsage">
+        <superclassifiers>OccurrenceUsage</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="itemDefinition" isOrdered="true">
+          <typings>Structure</typings>
+          <subsetting>occurrenceDefinition</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="JoinNode">
+        <superclassifiers>ControlNode</superclassifiers>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="LoopActionUsage" isAbstract="true">
+        <superclassifiers>ActionUsage</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="bodyAction">
+          <typings>ActionUsage</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="MembershipExpose">
+        <superclassifiers>MembershipImport</superclassifiers>
+        <superclassifiers>Expose</superclassifiers>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="MergeNode">
+        <superclassifiers>ControlNode</superclassifiers>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="MetadataDefinition">
+        <superclassifiers>ItemDefinition</superclassifiers>
+        <superclassifiers>Metaclass</superclassifiers>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="MetadataUsage">
+        <superclassifiers>ItemUsage</superclassifiers>
+        <superclassifiers>MetadataFeature</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="metadataDefinition">
+          <typings>Metaclass</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>itemDefinition</redefinitions>
+          <redefinitions>metaclass</redefinitions>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="NamespaceExpose">
+        <superclassifiers>Expose</superclassifiers>
+        <superclassifiers>NamespaceImport</superclassifiers>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="ObjectiveMembership">
+        <superclassifiers>FeatureMembership</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" declaredName="ownedObjectiveRequirement">
+          <typings>RequirementUsage</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>ownedMemberFeature</redefinitions>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="OccurrenceDefinition">
+        <superclassifiers>Definition</superclassifiers>
+        <superclassifiers>Class</superclassifiers>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="isIndividual">
+          <typings>Boolean</typings>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="OccurrenceUsage">
+        <superclassifiers>Usage</superclassifiers>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="isIndividual">
+          <typings>Boolean</typings>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="portionKind">
+          <typings>PortionKind</typings>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="occurrenceDefinition" isOrdered="true">
+          <typings>Class</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>definition</redefinitions>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="individualDefinition">
+          <typings>OccurrenceDefinition</typings>
+          <subsetting>occurrenceDefinition</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="PartDefinition">
+        <superclassifiers>ItemDefinition</superclassifiers>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="PartUsage">
+        <superclassifiers>ItemUsage</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="partDefinition" isOrdered="true">
+          <typings>PartDefinition</typings>
+          <subsetting>itemDefinition</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="PerformActionUsage">
+        <superclassifiers>ActionUsage</superclassifiers>
+        <superclassifiers>EventOccurrenceUsage</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="performedAction">
+          <typings>ActionUsage</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>eventOccurrence</redefinitions>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="PortConjugation">
+        <superclassifiers>Conjugation</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isReference="true" declaredName="originalPortDefinition">
+          <typings>PortDefinition</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>originalType</redefinitions>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="conjugatedPortDefinition">
+          <typings>ConjugatedPortDefinition</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>owningType</redefinitions>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="PortDefinition">
+        <superclassifiers>OccurrenceDefinition</superclassifiers>
+        <superclassifiers>Structure</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="conjugatedPortDefinition">
+          <typings>ConjugatedPortDefinition</typings>
+          <subsetting>ownedMember</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="PortUsage">
+        <superclassifiers>OccurrenceUsage</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="portDefinition" isOrdered="true">
+          <typings>PortDefinition</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>occurrenceDefinition</redefinitions>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:EnumerationDefinition" declaredName="PortionKind">
+        <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="'timeslice'"/>
+        <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="'snapshot'"/>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="ReferenceUsage">
+        <superclassifiers>Usage</superclassifiers>
+        <elements xsi:type="sysMLOC:AttributeUsage" isDerived="true" declaredName="isReference">
+          <typings>Boolean</typings>
+          <redefinitions>isReference</redefinitions>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="RenderingDefinition">
+        <superclassifiers>PartDefinition</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="'rendering'" isOrdered="true">
+          <typings>RenderingUsage</typings>
+          <subsetting>usage</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="RenderingUsage">
+        <superclassifiers>PartUsage</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="renderingDefinition">
+          <typings>RenderingDefinition</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>partDefinition</redefinitions>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:EnumerationDefinition" declaredName="RequirementConstraintKind">
+        <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="assumption"/>
+        <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="'requirement'"/>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="RequirementConstraintMembership">
+        <superclassifiers>FeatureMembership</superclassifiers>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="kind">
+          <typings>RequirementConstraintKind</typings>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" declaredName="ownedConstraint">
+          <typings>ConstraintUsage</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>ownedMemberFeature</redefinitions>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="referencedConstraint">
+          <typings>ConstraintUsage</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="RequirementDefinition">
+        <superclassifiers>ConstraintDefinition</superclassifiers>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="reqId">
+          <typings>String</typings>
+          <redefinitions>declaredShortName</redefinitions>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage" isDerived="true" declaredName="text">
+          <typings>String</typings>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="subjectParameter">
+          <typings>Usage</typings>
+          <subsetting>parameter</subsetting>
+          <subsetting>usage</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="actorParameter" isOrdered="true">
+          <typings>PartUsage</typings>
+          <subsetting>parameter</subsetting>
+          <subsetting>usage</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="stakeholderParameter" isOrdered="true">
+          <typings>PartUsage</typings>
+          <subsetting>parameter</subsetting>
+          <subsetting>usage</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="assumedConstraint" isOrdered="true">
+          <typings>ConstraintUsage</typings>
+          <subsetting>ownedFeature</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="requiredConstraint" isOrdered="true">
+          <typings>ConstraintUsage</typings>
+          <subsetting>ownedFeature</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="framedConcern" isOrdered="true">
+          <typings>ConcernUsage</typings>
+          <subsetting>requiredConstraint</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="RequirementUsage">
+        <superclassifiers>ConstraintUsage</superclassifiers>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="reqId">
+          <typings>String</typings>
+          <redefinitions>declaredShortName</redefinitions>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage" isDerived="true" declaredName="text">
+          <typings>String</typings>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="requirementDefinition">
+          <typings>RequirementDefinition</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>constraintDefinition</redefinitions>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="requiredConstraint" isOrdered="true">
+          <typings>ConstraintUsage</typings>
+          <subsetting>ownedFeature</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="assumedConstraint" isOrdered="true">
+          <typings>ConstraintUsage</typings>
+          <subsetting>ownedFeature</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="subjectParameter">
+          <typings>Usage</typings>
+          <subsetting>parameter</subsetting>
+          <subsetting>usage</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="framedConcern" isOrdered="true">
+          <typings>ConcernUsage</typings>
+          <subsetting>requiredConstraint</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="actorParameter" isOrdered="true">
+          <typings>PartUsage</typings>
+          <subsetting>parameter</subsetting>
+          <subsetting>usage</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="stakeholderParameter" isOrdered="true">
+          <typings>PartUsage</typings>
+          <subsetting>parameter</subsetting>
+          <subsetting>usage</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="RequirementVerificationMembership">
+        <superclassifiers>RequirementConstraintMembership</superclassifiers>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="kind">
+          <typings>RequirementConstraintKind</typings>
+          <redefinitions>kind</redefinitions>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" declaredName="ownedRequirement">
+          <typings>RequirementUsage</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>ownedConstraint</redefinitions>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="verifiedRequirement">
+          <typings>RequirementUsage</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>referencedConstraint</redefinitions>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="SatisfyRequirementUsage">
+        <superclassifiers>RequirementUsage</superclassifiers>
+        <superclassifiers>AssertConstraintUsage</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="satisfiedRequirement">
+          <typings>RequirementUsage</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>assertedConstraint</redefinitions>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="satisfyingFeature">
+          <typings>Feature</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="SendActionUsage">
+        <superclassifiers>ActionUsage</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="receiverArgument">
+          <typings>Expression</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="payloadArgument">
+          <typings>Expression</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="senderArgument">
+          <typings>Expression</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="StakeholderMembership">
+        <superclassifiers>ParameterMembership</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" declaredName="ownedStakeholderParameter">
+          <typings>PartUsage</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>ownedMemberParameter</redefinitions>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="StateDefinition">
+        <superclassifiers>ActionDefinition</superclassifiers>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="isParallel">
+          <typings>Boolean</typings>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="'state'" isOrdered="true">
+          <typings>StateUsage</typings>
+          <subsetting>'action'</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="entryAction">
+          <typings>ActionUsage</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="doAction">
+          <typings>ActionUsage</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="exitAction">
+          <typings>ActionUsage</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:EnumerationDefinition" declaredName="StateSubactionKind">
+        <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="'entry'"/>
+        <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="'do'"/>
+        <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="'exit'"/>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="StateSubactionMembership">
+        <superclassifiers>FeatureMembership</superclassifiers>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="kind">
+          <typings>StateSubactionKind</typings>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" declaredName="'action'">
+          <typings>ActionUsage</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>ownedMemberFeature</redefinitions>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="StateUsage">
+        <superclassifiers>ActionUsage</superclassifiers>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="isParallel">
+          <typings>Boolean</typings>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="stateDefinition" isOrdered="true">
+          <typings>Behavior</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>actionDefinition</redefinitions>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="entryAction">
+          <typings>ActionUsage</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="doAction">
+          <typings>ActionUsage</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="exitAction">
+          <typings>ActionUsage</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="SubjectMembership">
+        <superclassifiers>ParameterMembership</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" declaredName="ownedSubjectParameter">
+          <typings>Usage</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>ownedMemberParameter</redefinitions>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="SuccessionAsUsage">
+        <superclassifiers>ConnectorAsUsage</superclassifiers>
+        <superclassifiers>Succession</superclassifiers>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="SuccessionFlowUsage">
+        <superclassifiers>SuccessionFlow</superclassifiers>
+        <superclassifiers>FlowUsage</superclassifiers>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="TerminateActionUsage">
+        <superclassifiers>ActionUsage</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="terminatedOccurrenceArgument">
+          <typings>Expression</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:EnumerationDefinition" declaredName="TransitionFeatureKind">
+        <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="trigger"/>
+        <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="guard"/>
+        <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="effect"/>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="TransitionFeatureMembership">
+        <superclassifiers>FeatureMembership</superclassifiers>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="kind">
+          <typings>TransitionFeatureKind</typings>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" declaredName="transitionFeature">
+          <typings>Step</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>ownedMemberFeature</redefinitions>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="TransitionUsage">
+        <superclassifiers>ActionUsage</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="source">
+          <typings>ActionUsage</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="target">
+          <typings>ActionUsage</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="triggerAction">
+          <typings>AcceptActionUsage</typings>
+          <subsetting>ownedFeature</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="guardExpression">
+          <typings>Expression</typings>
+          <subsetting>ownedFeature</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="effectAction">
+          <typings>ActionUsage</typings>
+          <subsetting>feature</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="'succession'">
+          <typings>Succession</typings>
+          <subsetting>ownedMember</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="TriggerInvocationExpression">
+        <superclassifiers>InvocationExpression</superclassifiers>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="kind">
+          <typings>TriggerKind</typings>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:EnumerationDefinition" declaredName="TriggerKind">
+        <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="'when'"/>
+        <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="'at'"/>
+        <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="'after'"/>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="Usage">
+        <superclassifiers>Feature</superclassifiers>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="isVariation">
+          <typings>Boolean</typings>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage" isDerived="true" declaredName="mayTimeVary">
+          <typings>Boolean</typings>
+          <redefinitions>isVariable</redefinitions>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage" isDerived="true" declaredName="isReference">
+          <typings>Boolean</typings>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="'variant'">
+          <typings>Usage</typings>
+          <subsetting>ownedMember</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" declaredName="variantMembership">
+          <typings>VariantMembership</typings>
+          <subsetting>ownedMembership</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="owningDefinition">
+          <typings>Definition</typings>
+          <subsetting>owningType</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="owningUsage">
+          <typings>Usage</typings>
+          <subsetting>owningType</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="definition" isOrdered="true">
+          <typings>Classifier</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>type</redefinitions>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="usage" isOrdered="true">
+          <typings>Usage</typings>
+          <subsetting>feature</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="directedUsage" isOrdered="true">
+          <typings>Usage</typings>
+          <subsetting>directedFeature</subsetting>
+          <subsetting>usage</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="nestedUsage" isOrdered="true">
+          <typings>Usage</typings>
+          <subsetting>ownedFeature</subsetting>
+          <subsetting>usage</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="nestedReference" isOrdered="true">
+          <typings>ReferenceUsage</typings>
+          <subsetting>nestedUsage</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="nestedAttribute" isOrdered="true">
+          <typings>AttributeUsage</typings>
+          <subsetting>nestedUsage</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="nestedEnumeration" isOrdered="true">
+          <typings>EnumerationUsage</typings>
+          <subsetting>nestedAttribute</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="nestedOccurrence" isOrdered="true">
+          <typings>OccurrenceUsage</typings>
+          <subsetting>nestedUsage</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="nestedItem" isOrdered="true">
+          <typings>ItemUsage</typings>
+          <subsetting>nestedOccurrence</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="nestedPart" isOrdered="true">
+          <typings>PartUsage</typings>
+          <subsetting>nestedItem</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="nestedPort" isOrdered="true">
+          <typings>PortUsage</typings>
+          <subsetting>nestedUsage</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="nestedConnection" isOrdered="true">
+          <typings>ConnectorAsUsage</typings>
+          <subsetting>nestedUsage</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="nestedFlow">
+          <typings>FlowUsage</typings>
+          <subsetting>nestedConnection</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="nestedInterface" isOrdered="true">
+          <typings>InterfaceUsage</typings>
+          <subsetting>nestedConnection</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="nestedAllocation" isOrdered="true">
+          <typings>AllocationUsage</typings>
+          <subsetting>nestedConnection</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="nestedAction" isOrdered="true">
+          <typings>ActionUsage</typings>
+          <subsetting>nestedOccurrence</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="nestedState" isOrdered="true">
+          <typings>StateUsage</typings>
+          <subsetting>nestedAction</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="nestedTransition">
+          <typings>TransitionUsage</typings>
+          <subsetting>nestedUsage</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="nestedCalculation" isOrdered="true">
+          <typings>CalculationUsage</typings>
+          <subsetting>nestedAction</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="nestedConstraint" isOrdered="true">
+          <typings>ConstraintUsage</typings>
+          <subsetting>nestedOccurrence</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="nestedRequirement" isOrdered="true">
+          <typings>RequirementUsage</typings>
+          <subsetting>nestedConstraint</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="nestedConcern">
+          <typings>ConcernUsage</typings>
+          <subsetting>nestedRequirement</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="nestedCase" isOrdered="true">
+          <typings>CaseUsage</typings>
+          <subsetting>nestedCalculation</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="nestedAnalysisCase" isOrdered="true">
+          <typings>AnalysisCaseUsage</typings>
+          <subsetting>nestedCase</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="nestedVerificationCase" isOrdered="true">
+          <typings>VerificationCaseUsage</typings>
+          <subsetting>nestedCase</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="nestedUseCase" isOrdered="true">
+          <typings>UseCaseUsage</typings>
+          <subsetting>nestedCase</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="nestedView" isOrdered="true">
+          <typings>ViewUsage</typings>
+          <subsetting>nestedPart</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="nestedViewpoint" isOrdered="true">
+          <typings>ViewpointUsage</typings>
+          <subsetting>nestedRequirement</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="nestedRendering" isOrdered="true">
+          <typings>RenderingUsage</typings>
+          <subsetting>nestedPart</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="nestedMetadata" isOrdered="true">
+          <typings>MetadataUsage</typings>
+          <subsetting>nestedItem</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="UseCaseDefinition">
+        <superclassifiers>CaseDefinition</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="includedUseCase" isOrdered="true">
+          <typings>UseCaseUsage</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="UseCaseUsage">
+        <superclassifiers>CaseUsage</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="useCaseDefinition">
+          <typings>UseCaseDefinition</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>caseDefinition</redefinitions>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="includedUseCase" isOrdered="true">
+          <typings>UseCaseUsage</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="VariantMembership">
+        <superclassifiers>OwningMembership</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" declaredName="ownedVariantUsage">
+          <typings>Usage</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>ownedMemberElement</redefinitions>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="VerificationCaseDefinition">
+        <superclassifiers>CaseDefinition</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="verifiedRequirement" isOrdered="true">
+          <typings>RequirementUsage</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="VerificationCaseUsage">
+        <superclassifiers>CaseUsage</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="verificationCaseDefinition">
+          <typings>VerificationCaseDefinition</typings>
+          <subsetting>caseDefinition</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="verifiedRequirement" isOrdered="true">
+          <typings>RequirementUsage</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="ViewDefinition">
+        <superclassifiers>PartDefinition</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="'view'" isOrdered="true">
+          <typings>ViewUsage</typings>
+          <subsetting>usage</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="satisfiedViewpoint" isOrdered="true">
+          <typings>ViewpointUsage</typings>
+          <subsetting>ownedRequirement</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="viewRendering">
+          <typings>RenderingUsage</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="viewCondition" isOrdered="true">
+          <typings>Expression</typings>
+          <subsetting>ownedMember</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="ViewRenderingMembership">
+        <superclassifiers>FeatureMembership</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" declaredName="ownedRendering">
+          <typings>RenderingUsage</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>ownedMemberFeature</redefinitions>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="referencedRendering">
+          <typings>RenderingUsage</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="ViewUsage">
+        <superclassifiers>PartUsage</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="viewDefinition">
+          <typings>ViewDefinition</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>partDefinition</redefinitions>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="satisfiedViewpoint" isOrdered="true">
+          <typings>ViewpointUsage</typings>
+          <subsetting>nestedRequirement</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="exposedElement" isOrdered="true">
+          <typings>Element</typings>
+          <subsetting>member</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="viewRendering">
+          <typings>RenderingUsage</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="viewCondition" isOrdered="true">
+          <typings>Expression</typings>
+          <subsetting>ownedMember</subsetting>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="ViewpointDefinition">
+        <superclassifiers>RequirementDefinition</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="viewpointStakeholder" isOrdered="true">
+          <typings>PartUsage</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="ViewpointUsage">
+        <superclassifiers>RequirementUsage</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="viewpointDefinition">
+          <typings>ViewpointDefinition</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <redefinitions>requirementDefinition</redefinitions>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="viewpointStakeholder" isOrdered="true">
+          <typings>PartUsage</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>*</Multiplicity>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="WhileLoopActionUsage">
+        <superclassifiers>LoopActionUsage</superclassifiers>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="whileArgument">
+          <typings>Expression</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>1</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" isDerived="true" isReference="true" declaredName="untilArgument">
+          <typings>Expression</typings>
+          <subsetting>Metadata::metadataItems</subsetting>
+          <Multiplicity>0</Multiplicity>
+          <Multiplicity>1</Multiplicity>
+        </elements>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

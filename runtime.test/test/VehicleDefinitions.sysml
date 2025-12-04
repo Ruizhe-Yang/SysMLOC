@@ -6,10 +6,11 @@ package VehicleDefinitions {
 
 	private import ScalarValues::*;
 	private import Quantities::*;
+	// aaaaa aaaa.
 	private import MeasurementReferences::*;
 	private import ISQ::*;
 	private import SI::*;
-	
+	// aaaaa
 	/* PART DEFINITIONS */
 	
 	part def Vehicle {
@@ -20,6 +21,7 @@ package VehicleDefinitions {
 	part def Axle {
 		port leftMountingPoint: AxleMountIF;
 		port rightMountingPoint: AxleMountIF;
+		// aaaaa aaaa.qqqqq
 	}
 	part def Wheel {
 		port hub: WheelHubIF;
@@ -33,7 +35,7 @@ package VehicleDefinitions {
 	port def DriveIF { 
 		in driveTorque :> ISQ::torque;
 	}
-
+	// aaaaa aaaa.
 	port def AxleMountIF { 
 		out transferredTorque :> ISQ::torque;
 	}

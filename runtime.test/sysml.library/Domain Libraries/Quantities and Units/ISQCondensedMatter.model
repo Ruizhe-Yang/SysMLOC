@@ -1,0 +1,1170 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:LibraryPackage" declaredName="ISQCondensedMatter" isStandard="true" isLibrary="true">
+    <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;     * International System of Quantities and Units&#xA;     * Generated on 2025-03-13T15:00:05Z from standard ISO-80000-12:2019 &quot;Condensed matter physics&quot;&#xA;     * see also https://www.iso.org/standard/63480.html&#xA;     * &#xA;     * Note 1: In documentation comments, AsciiMath notation (see http://asciimath.org/) is used for mathematical concepts,&#xA;     * with Greek letters in Unicode encoding. In running text, AsciiMath is placed between backticks.&#xA;     * Note 2: For vector and tensor quantities currently the unit and quantity value type for their (scalar) magnitude is &#xA;     * defined, as well as their typical Cartesian 3d VectorMeasurementReference (i.e. coordinate system) &#xA;     * or TensorMeasurementReference.&#xA;     */"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues::Real"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Quantities" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="MeasurementReferences" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ISQBase" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* Quantity definitions referenced from other ISQ packages */"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ISQElectromagnetism::ElectricPotentialDifferenceValue"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ISQElectromagnetism::MagneticFluxDensityValue"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ISQElectromagnetism::ResistivityValue"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ISQSpaceTime::CartesianSpatial3dCoordinateFrame"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ISQSpaceTime::AngularFrequencyValue"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ISQSpaceTime::AngularMeasureValue"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ISQSpaceTime::RepetencyValue"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ISQThermodynamics::EnergyValue"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-1.1 lattice vector */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CartesianLattice3dVector">
+      <superclassifiers>'3dVectorQuantityValue'</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-1.1 lattice vector&#xA;         * symbol(s): `vec(R)`&#xA;         * application domain: generic&#xA;         * name: LatticeVector (specializes Displacement)&#xA;         * quantity dimension: L^1&#xA;         * measurement unit(s): m&#xA;         * tensor order: 1&#xA;         * definition: translation vector that maps the crystal lattice on itself&#xA;         * remarks: The non-SI unit &#xe5;ngstr&#xf6;m (&#xc5;) is widely used by x-ray crystallographers and structural chemists.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>CartesianSpatial3dCoordinateFrame</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cartesianLattice3dVector">
+      <typings>CartesianLattice3dVector</typings>
+      <subsetting>vectorQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-1.2 fundamental lattice vector */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CartesianFundamentalLattice3dVector">
+      <superclassifiers>'3dVectorQuantityValue'</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-1.2 fundamental lattice vector&#xA;         * symbol(s): `vec(a_1),vec(a_2),vec(a_3)`, `vec(a),vec(b),vec(c)`&#xA;         * application domain: generic&#xA;         * name: FundamentalLatticeVector (specializes Displacement)&#xA;         * quantity dimension: L^1&#xA;         * measurement unit(s): m&#xA;         * tensor order: 1&#xA;         * definition: fundamental translation vectors for the crystal lattice&#xA;         * remarks: The lattice vector (item 12-1.1) can be given as `vec(R) = n_1 vec(a_1) + n_2 vec(a_2) + n_3 vec(a_3)` where `n_1`, `n_2` and `n_3` are integers.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>CartesianSpatial3dCoordinateFrame</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cartesianFundamentalLattice3dVector">
+      <typings>CartesianFundamentalLattice3dVector</typings>
+      <subsetting>vectorQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-2.1 angular reciprocal lattice vector */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="AngularReciprocalLatticeVectorMagnitudeValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-2.1 angular reciprocal lattice vector (magnitude)&#xA;         * symbol(s): `G`&#xA;         * application domain: generic&#xA;         * name: AngularReciprocalLatticeVectorMagnitude&#xA;         * quantity dimension: L^-1&#xA;         * measurement unit(s): m^-1&#xA;         * tensor order: 0&#xA;         * definition: vector whose scalar products with all fundamental lattice vectors are integral multiples of  `2&#x3c0;`&#xA;         * remarks: In crystallography, however, the quantity `G/(2&#x3c0;)` is sometimes used.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>AngularReciprocalLatticeVectorMagnitudeUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="angularReciprocalLatticeVectorMagnitude" isNonunique="true">
+      <typings>AngularReciprocalLatticeVectorMagnitudeValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="AngularReciprocalLatticeVectorMagnitudeUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="lengthPF">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CartesianAngularReciprocalLattice3dVector">
+      <superclassifiers>'3dVectorQuantityValue'</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-2.1 angular reciprocal lattice vector&#xA;         * symbol(s): `vec(G)`&#xA;         * application domain: generic&#xA;         * name: AngularReciprocalLatticeVector&#xA;         * quantity dimension: L^-1&#xA;         * measurement unit(s): m^-1&#xA;         * tensor order: 1&#xA;         * definition: vector whose scalar products with all fundamental lattice vectors are integral multiples of  `2&#x3c0;`&#xA;         * remarks: In crystallography, however, the quantity `G/(2&#x3c0;)` is sometimes used.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>CartesianAngularReciprocalLattice3dCoordinateFrame</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cartesianAngularReciprocalLattice3dVector">
+      <typings>CartesianAngularReciprocalLattice3dVector</typings>
+      <subsetting>vectorQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CartesianAngularReciprocalLattice3dCoordinateFrame">
+      <superclassifiers>'3dCoordinateFrame'</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
+        <redefinitions>isOrthogonal</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>AngularReciprocalLatticeVectorMagnitudeUnit</typings>
+        <redefinitions>mRefs</redefinitions>
+        <Multiplicity>3</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-2.2 fundamental reciprocal lattice vector */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="FundamentalReciprocalLatticeVectorMagnitudeValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-2.2 fundamental reciprocal lattice vector (magnitude)&#xA;         * symbol(s): `b_1,b_2,b_3`&#xA;         * application domain: generic&#xA;         * name: FundamentalReciprocalLatticeVectorMagnitude&#xA;         * quantity dimension: L^-1&#xA;         * measurement unit(s): m^-1&#xA;         * tensor order: 0&#xA;         * definition: fundamental translation vectors for the reciprocal lattice&#xA;         * remarks: `vec(a_i) * vec(b_i) = 2&#x3c0; &#x3b4;_(ij)`. In crystallography, however, the quantities `vec(b_j)/(2&#x3c0;)` are also often used.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>FundamentalReciprocalLatticeVectorMagnitudeUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="fundamentalReciprocalLatticeVectorMagnitude" isNonunique="true">
+      <typings>FundamentalReciprocalLatticeVectorMagnitudeValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="FundamentalReciprocalLatticeVectorMagnitudeUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="lengthPF">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CartesianFundamentalReciprocalLattice3dVector">
+      <superclassifiers>'3dVectorQuantityValue'</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-2.2 fundamental reciprocal lattice vector&#xA;         * symbol(s): `vec(b_1),vec(b_2),vec(b_3)`&#xA;         * application domain: generic&#xA;         * name: FundamentalReciprocalLatticeVector&#xA;         * quantity dimension: L^-1&#xA;         * measurement unit(s): m^-1&#xA;         * tensor order: 1&#xA;         * definition: fundamental translation vectors for the reciprocal lattice&#xA;         * remarks: `vec(a_i) * vec(b_i) = 2&#x3c0; &#x3b4;_(ij)`. In crystallography, however, the quantities `vec(b_j)/(2&#x3c0;)` are also often used.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>CartesianFundamentalReciprocalLattice3dCoordinateFrame</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cartesianFundamentalReciprocalLattice3dVector">
+      <typings>CartesianFundamentalReciprocalLattice3dVector</typings>
+      <subsetting>vectorQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CartesianFundamentalReciprocalLattice3dCoordinateFrame">
+      <superclassifiers>'3dCoordinateFrame'</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
+        <redefinitions>isOrthogonal</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>FundamentalReciprocalLatticeVectorMagnitudeUnit</typings>
+        <redefinitions>mRefs</redefinitions>
+        <Multiplicity>3</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-3 lattice plane spacing */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="latticePlaneSpacing">
+      <typings>LengthValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-3 lattice plane spacing&#xA;         * symbol(s): `d`&#xA;         * application domain: generic&#xA;         * name: LatticePlaneSpacing (specializes Length)&#xA;         * quantity dimension: L^1&#xA;         * measurement unit(s): m&#xA;         * tensor order: 0&#xA;         * definition: distance (ISO 80000-3) between successive lattice planes&#xA;         * remarks: The non-SI unit &#xe5;ngstr&#xf6;m (&#xc5;) is widely used by x-ray crystallographers and structural chemists.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-4 Bragg angle */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="braggAngle">
+      <typings>AngularMeasureValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-4 Bragg angle&#xA;         * symbol(s): `&#x3d1;`&#xA;         * application domain: generic&#xA;         * name: BraggAngle (specializes AngularMeasure)&#xA;         * quantity dimension: 1&#xA;         * measurement unit(s): &#xb0;, 1&#xA;         * tensor order: 0&#xA;         * definition: angle between the scattered ray and the lattice plane&#xA;         * remarks: Bragg angle `&#x3d1;` is given by `2d sin &#x3d1; = n&#x3bb;`, where `d` is the lattice plane spacing (item 12-3), `&#x3bb;` is the wavelength (ISO 80000-7) of the radiation, and `n` is the order of reflexion which is an integer.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-5.1 short-range order parameter */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ShortRangeOrderParameterValue">
+      <superclassifiers>DimensionOneValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-5.1 short-range order parameter&#xA;         * symbol(s): `r`, `&#x3c3;`&#xA;         * application domain: generic&#xA;         * name: ShortRangeOrderParameter (specializes DimensionOneQuantity)&#xA;         * quantity dimension: 1&#xA;         * measurement unit(s): 1&#xA;         * tensor order: 0&#xA;         * definition: fraction of nearest-neighbour atom pairs in an Ising ferromagnet having magnetic moments in one direction, minus the fraction having magnetic moments in the opposite direction&#xA;         * remarks: Similar definitions apply to other order-disorder phenomena. Other symbols are frequently used.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="shortRangeOrderParameter">
+      <typings>ShortRangeOrderParameterValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-5.2 long-range order parameter */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="LongRangeOrderParameterValue">
+      <superclassifiers>DimensionOneValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-5.2 long-range order parameter&#xA;         * symbol(s): `R`, `s`&#xA;         * application domain: generic&#xA;         * name: LongRangeOrderParameter (specializes DimensionOneQuantity)&#xA;         * quantity dimension: 1&#xA;         * measurement unit(s): 1&#xA;         * tensor order: 0&#xA;         * definition: fraction of atoms in an Ising ferromagnet having magnetic moments in one direction, minus the fraction having magnetic moments in the opposite direction&#xA;         * remarks: Similar definitions apply to other order-disorder phenomena. Other symbols are frequently used.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="longRangeOrderParameter">
+      <typings>LongRangeOrderParameterValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-5.3 atomic scattering factor */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="AtomicScatteringFactorValue">
+      <superclassifiers>DimensionOneValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-5.3 atomic scattering factor&#xA;         * symbol(s): `f`&#xA;         * application domain: generic&#xA;         * name: AtomicScatteringFactor (specializes DimensionOneQuantity)&#xA;         * quantity dimension: 1&#xA;         * measurement unit(s): 1&#xA;         * tensor order: 0&#xA;         * definition: quotient of radiation amplitude scattered by the atom and radiation amplitude scattered by a single electron&#xA;         * remarks: The atomic scattering factor can be expressed by: `f = E_a/(E_e`, where `E_a` is the radiation amplitude scattered by the atom and `E_e` is the radiation amplitude scattered by a single electron.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="atomicScatteringFactor">
+      <typings>AtomicScatteringFactorValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-5.4 structure factor */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="StructureFactorValue">
+      <superclassifiers>DimensionOneValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-5.4 structure factor&#xA;         * symbol(s): `F(h,k,l)`&#xA;         * application domain: generic&#xA;         * name: StructureFactor (specializes DimensionOneQuantity)&#xA;         * quantity dimension: 1&#xA;         * measurement unit(s): 1&#xA;         * tensor order: 0&#xA;         * definition: quantity given by: `F(h,k,l) = sum_(n=1)^N f_n exp[2&#x3c0; i (h x_n + k y_n + l z_n)]`, where `f_n` is the atomic scattering factor (item 12-5.3) for atom `n`, `x_n`, `y_n`, `z_n` are fractional coordinates of its position, `N` is the total number of atoms in the unit cell and `h`, `k`, `l` are the Miller indices&#xA;         * remarks: For the Miller indices `h`, `k`, `l`, see Annex A.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="structureFactor">
+      <typings>StructureFactorValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-6 Burgers vector */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CartesianBurgers3dVector">
+      <superclassifiers>'3dVectorQuantityValue'</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-6 Burgers vector&#xA;         * symbol(s): `vec(b)`&#xA;         * application domain: generic&#xA;         * name: BurgersVector (specializes Displacement)&#xA;         * quantity dimension: L^1&#xA;         * measurement unit(s): m&#xA;         * tensor order: 1&#xA;         * definition: closing vector in a sequence of vectors encircling a dislocation&#xA;         * remarks: None.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>CartesianSpatial3dCoordinateFrame</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cartesianBurgers3dVector">
+      <typings>CartesianBurgers3dVector</typings>
+      <subsetting>vectorQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-7.1 particle position vector */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CartesianParticlePosition3dVector">
+      <superclassifiers>'3dVectorQuantityValue'</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-7.1 particle position vector&#xA;         * symbol(s): `vec(r)`, `vec(R)`&#xA;         * application domain: generic&#xA;         * name: ParticlePositionVector (specializes PositionVector)&#xA;         * quantity dimension: L^1&#xA;         * measurement unit(s): m&#xA;         * tensor order: 1&#xA;         * definition: position vector (ISO 80000-3) of a particle&#xA;         * remarks: Often, `r` is used for electrons and `R` is used for atoms and other heavier particles.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>CartesianSpatial3dCoordinateFrame</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cartesianParticlePosition3dVector">
+      <typings>CartesianParticlePosition3dVector</typings>
+      <subsetting>vectorQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-7.2 equilibrium position vector */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CartesianEquilibriumPosition3dVector">
+      <superclassifiers>'3dVectorQuantityValue'</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-7.2 equilibrium position vector&#xA;         * symbol(s): `vec(R_0)`&#xA;         * application domain: condensed matter physics&#xA;         * name: EquilibriumPositionVector (specializes PositionVector)&#xA;         * quantity dimension: L^1&#xA;         * measurement unit(s): m&#xA;         * tensor order: 1&#xA;         * definition: position vector (ISO 80000-3) of an ion or atom in equilibrium&#xA;         * remarks: None.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>CartesianSpatial3dCoordinateFrame</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cartesianEquilibriumPosition3dVector">
+      <typings>CartesianEquilibriumPosition3dVector</typings>
+      <subsetting>vectorQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-7.3 displacement vector */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CartesianDisplacement3dVector">
+      <superclassifiers>'3dVectorQuantityValue'</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-7.3 displacement vector&#xA;         * symbol(s): `vec(u)`&#xA;         * application domain: condensed matter physics&#xA;         * name: DisplacementVector (specializes Displacement)&#xA;         * quantity dimension: L^1&#xA;         * measurement unit(s): m&#xA;         * tensor order: 1&#xA;         * definition: difference between the position vector (ISO 80000-3) of an ion or atom and its position vector in equilibrium&#xA;         * remarks: The displacement vector can be expressed by: `vec(u) = vec(R) &#x2212; vec(R_0)`, where `vec(R)` is particle position vector (item 12-7.1) and `vec(R_0)` is position vector of an ion or atom in equilibrium (item 12-7.2).&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>CartesianSpatial3dCoordinateFrame</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cartesianDisplacement3dVector">
+      <typings>CartesianDisplacement3dVector</typings>
+      <subsetting>vectorQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-8 Debye-Waller factor */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="DebyeWallerFactorValue">
+      <superclassifiers>DimensionOneValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-8 Debye-Waller factor&#xA;         * symbol(s): `D`, `B`&#xA;         * application domain: generic&#xA;         * name: DebyeWallerFactor (specializes DimensionOneQuantity)&#xA;         * quantity dimension: 1&#xA;         * measurement unit(s): 1&#xA;         * tensor order: 0&#xA;         * definition: factor by which the intensity of a diffraction line is reduced because of the lattice vibrations&#xA;         * remarks: `D` is sometimes expressed as `D = exp(&#x2212;2W)`; in M&#xf6;ssbauer spectroscopy, it is also called the `f` factor and denoted by `f`.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="debyeWallerFactor">
+      <typings>DebyeWallerFactorValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-9.1 angular wavenumber, angular repetency */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="angularWavenumber">
+      <typings>RepetencyValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-9.1 angular wavenumber, angular repetency&#xA;         * symbol(s): `k`, `q`&#xA;         * application domain: condensed matter physics&#xA;         * name: AngularWavenumber (specializes Repetency)&#xA;         * quantity dimension: L^-1&#xA;         * measurement unit(s): m^-1&#xA;         * tensor order: 0&#xA;         * definition: quotient of momentum (ISO 80000-4) and the reduced Planck constant (ISO 80000-1)&#xA;         * remarks: The corresponding vector (ISO 80000-2) quantity is called wave vector (ISO 80000-3), expressed by: `vec(k) = vec(p)/&#x127;`, where `vec(p)` is the momentum (ISO 80000-4) of quasi free electrons in an electron gas, and `&#x127;` is the reduced Planck constant (ISO 80000-1); for phonons, its magnitude is `k = 2&#x3c0;/&#x3bb;`, where `&#x3bb;` is the wavelength (ISO 80000-3) of the lattice vibrations. When a distinction is needed between `k` and the symbol for the Boltzmann constant (ISO 80000-1), `k_B` can be used for the latter. When a distinction is needed, `q` should be used for phonons, and `k` for particles such as electrons and neutrons. The method of cut-off must be specified. In condensed matter physics, angular wavenumber is often called wavenumber.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="angularRepetency" memberElement="angularWavenumber"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-9.2 Fermi angular wavenumber, Fermi angular repetency */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="fermiAngularWavenumber">
+      <typings>RepetencyValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-9.2 Fermi angular wavenumber, Fermi angular repetency&#xA;         * symbol(s): `k_F`&#xA;         * application domain: generic&#xA;         * name: FermiAngularWavenumber (specializes Repetency)&#xA;         * quantity dimension: L^-1&#xA;         * measurement unit(s): m^-1&#xA;         * tensor order: 0&#xA;         * definition: angular wavenumber (item 12-9.1) of electrons in states on the Fermi sphere&#xA;         * remarks: In condensed matter physics, angular wavenumber is often called wavenumber.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="fermiAngularRepetency" memberElement="fermiAngularWavenumber"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-9.3 Debye angular wavenumber, Debye angular repetency */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="debyeAngularWavenumber">
+      <typings>RepetencyValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-9.3 Debye angular wavenumber, Debye angular repetency&#xA;         * symbol(s): `q_D`&#xA;         * application domain: generic&#xA;         * name: DebyeAngularWavenumber (specializes Repetency)&#xA;         * quantity dimension: L^-1&#xA;         * measurement unit(s): m^-1&#xA;         * tensor order: 0&#xA;         * definition: cut-off angular wavenumber (item 12-9.1) in the Debye model of the vibrational spectrum of a solid&#xA;         * remarks: The method of cut-off must be specified. In condensed matter physics, angular wavenumber is often called wavenumber.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="debyeAngularRepetency" memberElement="debyeAngularWavenumber"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-10 Debye angular frequency */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="debyeAngularFrequency">
+      <typings>AngularFrequencyValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-10 Debye angular frequency&#xA;         * symbol(s): `&#x3c9;_D`&#xA;         * application domain: generic&#xA;         * name: DebyeAngularFrequency (specializes AngularFrequency)&#xA;         * quantity dimension: T^-1&#xA;         * measurement unit(s): s^-1&#xA;         * tensor order: 0&#xA;         * definition: cut-off angular frequency (ISO 80000-3) in the Debye model of the vibrational spectrum of a solid&#xA;         * remarks: The method of cut-off must be specified.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-11 Debye temperature */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="debyeTemperature">
+      <typings>ThermodynamicTemperatureValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-11 Debye temperature&#xA;         * symbol(s): `&#x398;_D`&#xA;         * application domain: generic&#xA;         * name: DebyeTemperature (specializes ThermodynamicTemperature)&#xA;         * quantity dimension: &#x398;^1&#xA;         * measurement unit(s): K&#xA;         * tensor order: 0&#xA;         * definition: in the Debye model, quantity given by: `&#x398;_D = &#x127;*&#x3c9;_D/k`, where `k` is the Boltzmann constant, (ISO 80000-1), `&#x127;` is the reduced Planck constant (ISO 80000-1), and `&#x3c9;_D` is Debye angular frequency (item 12-10)&#xA;         * remarks: A Debye temperature can also be defined by fitting a Debye model result to a certain quantity, for instance, the heat capacity at a certain temperature.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-12 density of vibrational states */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="DensityOfVibrationalStatesValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-12 density of vibrational states&#xA;         * symbol(s): `g`&#xA;         * application domain: angular frequency&#xA;         * name: DensityOfVibrationalStates&#xA;         * quantity dimension: L^-3*T^1&#xA;         * measurement unit(s): m^-3*s&#xA;         * tensor order: 0&#xA;         * definition: quotient of the number of vibrational modes in an infinitesimal interval of angular frequency (ISO 80000-3), and the product of the width of that interval and volume (ISO 80000-3)&#xA;         * remarks: `g(&#x3c9;) = n_&#x3c9; = (dn(&#x3c9;))/(d&#x3c9;)`, where `n(&#x3c9;)` is the total number of vibrational modes per volume with angular frequency less than `&#x3c9;`. The density of states may also be normalized in other ways instead of with respect to volume. See also item 12-16.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>DensityOfVibrationalStatesUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="densityOfVibrationalStates" isNonunique="true">
+      <typings>DensityOfVibrationalStatesValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="DensityOfVibrationalStatesUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-3">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, durationPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-13 thermodynamic Gr&#xfc;neisen parameter */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="'ThermodynamicGr&#xfc;neisenParameterValue'">
+      <superclassifiers>DimensionOneValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-13 thermodynamic Gr&#xfc;neisen parameter&#xA;         * symbol(s): `&#x3b3;_G`, `&#x393;_G`&#xA;         * application domain: generic&#xA;         * name: ThermodynamicGr&#xfc;neisenParameter (specializes DimensionOneQuantity)&#xA;         * quantity dimension: 1&#xA;         * measurement unit(s): 1&#xA;         * tensor order: 0&#xA;         * definition: quantity given by: `&#x3b3;_G = (&#x3b1;_V)/(&#x3ba;_T c_V &#x3c1;)`, where `&#x3b1;_V` is cubic expansion coefficient (ISO 80000-5), `&#x3ba;_T` is isothermal compressibility (ISO 80000-5), `c_V` is specific heat capacity at constant volume (ISO 80000-5), and `&#x3c1;` is mass density (ISO 80000-4)&#xA;         * remarks: None.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="'thermodynamicGr&#xfc;neisenParameter'">
+      <typings>'ThermodynamicGr&#xfc;neisenParameterValue'</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-14 Gr&#xfc;neisen parameter */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="'Gr&#xfc;neisenParameterValue'">
+      <superclassifiers>DimensionOneValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-14 Gr&#xfc;neisen parameter&#xA;         * symbol(s): `&#x3b3;`&#xA;         * application domain: generic&#xA;         * name: Gr&#xfc;neisenParameter (specializes DimensionOneQuantity)&#xA;         * quantity dimension: 1&#xA;         * measurement unit(s): 1&#xA;         * tensor order: 0&#xA;         * definition: quantity given by minus the partial differential quotient: `&#x3b3; = -(del ln &#x3c9;)/(del ln V)`, where `&#x3c9;` is a lattice vibration frequency (ISO 80000-3), and `V` is volume (ISO 80000-3)&#xA;         * remarks: `&#x3c9;` can also refer to an average of the vibrational spectrum, for instance as represented by a Debye angular frequency (item 12-10).&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="'gr&#xfc;neisenParameter'">
+      <typings>'Gr&#xfc;neisenParameterValue'</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-15.1 mean free path of phonons */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="meanFreePathOfPhonons">
+      <typings>LengthValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-15.1 mean free path of phonons&#xA;         * symbol(s): `l_p`&#xA;         * application domain: generic&#xA;         * name: MeanFreePathOfPhonons (specializes Length)&#xA;         * quantity dimension: L^1&#xA;         * measurement unit(s): m&#xA;         * tensor order: 0&#xA;         * definition: average distance (ISO 80000-3) that phonons travel between two successive interactions&#xA;         * remarks: None.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-15.2 mean free path of electrons */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="meanFreePathOfElectrons">
+      <typings>LengthValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-15.2 mean free path of electrons&#xA;         * symbol(s): `l_e`&#xA;         * application domain: generic&#xA;         * name: MeanFreePathOfElectrons (specializes Length)&#xA;         * quantity dimension: L^1&#xA;         * measurement unit(s): m&#xA;         * tensor order: 0&#xA;         * definition: average distance (ISO 80000-3) that electrons travel between two successive interactions&#xA;         * remarks: None.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-16 energy density of states */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="EnergyDensityOfStatesValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-16 energy density of states&#xA;         * symbol(s): `n_E(E)`, `&#x3c1;(E)`&#xA;         * application domain: generic&#xA;         * name: EnergyDensityOfStates&#xA;         * quantity dimension: L^-5*M^-1*T^2&#xA;         * measurement unit(s): J^-1*m^-3*eV^-1*m^-3, kg^-1*m^-5*s^2&#xA;         * tensor order: 0&#xA;         * definition: quantity given by the differential quotient with respect to energy: `n_E(E) = (dn(E))/(dE)`, where `n_E(E)` is the total number of one-electron states per volume (ISO 80000-3) with energy less than `E` (ISO 80000-5)&#xA;         * remarks: Density of states refers to electrons or other entities, e.g. phonons. It may be normalized in other ways instead of with respect to volume, e.g. with respect to amount of substance. See also item 12-12.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>EnergyDensityOfStatesUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="energyDensityOfStates" isNonunique="true">
+      <typings>EnergyDensityOfStatesValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="EnergyDensityOfStatesUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-5">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, massPF, durationPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-17 residual resistivity */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="residualResistivity">
+      <typings>ResistivityValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-17 residual resistivity&#xA;         * symbol(s): `&#x3c1;_0`&#xA;         * application domain: generic&#xA;         * name: ResidualResistivity (specializes Resistivity)&#xA;         * quantity dimension: L^3*M^1*T^-3*I^-2&#xA;         * measurement unit(s): &#x3a9;*m, kg*m^3*s^-3*A^-2&#xA;         * tensor order: 0&#xA;         * definition: for metals, the resistivity (IEC 80000-6) extrapolated to zero thermodynamic temperature (ISO 80000-5)&#xA;         * remarks: None.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-18 Lorenz coefficient */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="LorenzCoefficientValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-18 Lorenz coefficient&#xA;         * symbol(s): `L`&#xA;         * application domain: generic&#xA;         * name: LorenzCoefficient&#xA;         * quantity dimension: L^4*M^2*T^-6*I^-2*&#x398;^-2&#xA;         * measurement unit(s): V^2/K^2, kg^2*m^4*s^-6*A^-2*K^-2&#xA;         * tensor order: 0&#xA;         * definition: quotient of thermal conductivity (ISO 80000-5), and the product of electric conductivity (IEC 80000-6) and thermodynamic temperature (ISO 80000-3)&#xA;         * remarks: The Lorenz coefficient can be expressed by `L = &#x3bb;/(&#x3c3;T)`, where `&#x3bb;` is thermal conductivity (ISO 80000-5), `&#x3c3;` is electric conductivity (IEC 80000-6), and `T` is thermodynamic temperature (ISO 80000-5).&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>LorenzCoefficientUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="lorenzCoefficient" isNonunique="true">
+      <typings>LorenzCoefficientValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="LorenzCoefficientUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="4">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-6">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="thermodynamicTemperaturePF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.'&#x398;'">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, massPF, durationPF, electricCurrentPF, thermodynamicTemperaturePF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-19 Hall coefficient */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="HallCoefficientValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-19 Hall coefficient&#xA;         * symbol(s): `R_H`, `A_H`&#xA;         * application domain: generic&#xA;         * name: HallCoefficient&#xA;         * quantity dimension: L^3*T^-1*I^-1&#xA;         * measurement unit(s): m^3/C, m^3*s^-1*A^-1&#xA;         * tensor order: 0&#xA;         * definition: in an isotropic conductor, relation between electric field strength, `vec(E)`, (IEC 80000-6) and electric current density, `vec(J)`, (IEC 80000-6) expressed as: `vec(E) = &#x3c1; vec(J) + R_H (vec(B) xx vec(J))`, where `&#x3c1;` is resistivity (IEC 80000-6), and `vec(B)` is magnetic flux density (IEC 80000-6)&#xA;         * remarks: None.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>HallCoefficientUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="hallCoefficient" isNonunique="true">
+      <typings>HallCoefficientValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="HallCoefficientUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="3">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, durationPF, electricCurrentPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-20 thermoelectric voltage (between substances a and b) */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="thermoelectricVoltageBetweenSubstancesAAndB">
+      <typings>ElectricPotentialDifferenceValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-20 thermoelectric voltage (between substances a and b)&#xA;         * symbol(s): `E_(ab)`&#xA;         * application domain: generic&#xA;         * name: ThermoelectricVoltageBetweenSubstancesAAndB (specializes ElectricPotentialDifference)&#xA;         * quantity dimension: L^2*M^1*T^-3*I^-1&#xA;         * measurement unit(s): V, kg*m^2*s^-3*A^-1&#xA;         * tensor order: 0&#xA;         * definition: voltage (IEC 80000-6) between substances `a` and `b` caused by the thermoelectric effect&#xA;         * remarks: None.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-21 Seebeck coefficient (for substances a and b) */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SeebeckCoefficientForSubstancesAAndBValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-21 Seebeck coefficient (for substances a and b)&#xA;         * symbol(s): `S_(ab)`&#xA;         * application domain: generic&#xA;         * name: SeebeckCoefficientForSubstancesAAndB&#xA;         * quantity dimension: L^2*M^1*T^-3*I^-1*&#x398;^-1&#xA;         * measurement unit(s): V/K, kg*m^2*s^-3*A^-1*K^-1&#xA;         * tensor order: 0&#xA;         * definition: differential quotient of thermoelectric voltage with respect to thermodynamic temperature: `S_(ab) =      (dE_(ab))/(dT)`, where `E_(ab)` is the thermoelectric voltage between substances `a` and `b` (item 12-20) and `T` is thermodynamic temperature (ISO 80000-5)&#xA;         * remarks: This term is also called &quot;thermoelectric power&quot;.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>SeebeckCoefficientForSubstancesAAndBUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="seebeckCoefficientForSubstancesAAndB" isNonunique="true">
+      <typings>SeebeckCoefficientForSubstancesAAndBValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SeebeckCoefficientForSubstancesAAndBUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-3">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="thermodynamicTemperaturePF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.'&#x398;'">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, massPF, durationPF, electricCurrentPF, thermodynamicTemperaturePF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-22 Peltier coefficient (for substances a and b) */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="peltierCoefficientForSubstancesAAndB">
+      <typings>ElectricPotentialDifferenceValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-22 Peltier coefficient (for substances a and b)&#xA;         * symbol(s): `&#x3a0;_(ab)`&#xA;         * application domain: generic&#xA;         * name: PeltierCoefficientForSubstancesAAndB (specializes ElectricPotentialDifference)&#xA;         * quantity dimension: L^2*M^1*T^-3*I^-1&#xA;         * measurement unit(s): V, kg*m^2*s^-3*A^-1&#xA;         * tensor order: 0&#xA;         * definition: quotient of Peltier heat power (ISO 80000-5) developed at a junction, and the electric current (IEC 80000-6) flowing from substance `a` to substance `b`&#xA;         * remarks: `&#x3a0;_(ab) = &#x3a0;_a - &#x3a0;_b`, where `&#x3a0;_a` and `&#x3a0;_b` are the Peltier coefficients of substances `a` and `b`, respectively.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-23 Thomson coefficient */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ThomsonCoefficientValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-23 Thomson coefficient&#xA;         * symbol(s): `&#x3bc;`&#xA;         * application domain: generic&#xA;         * name: ThomsonCoefficient&#xA;         * quantity dimension: L^2*M^1*T^-3*I^-1*&#x398;^-1&#xA;         * measurement unit(s): V/K, kg*m^2*s^-3*A^-1*K^-1&#xA;         * tensor order: 0&#xA;         * definition: quotient of Thomson heat power (ISO 80000-5) developed, and the electric current (IEC 80000-6) and temperature (ISO 80000-5) difference&#xA;         * remarks: `&#x3bc;` is positive if heat is developed when the temperature decreases in the direction of the electric current.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>ThomsonCoefficientUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="thomsonCoefficient" isNonunique="true">
+      <typings>ThomsonCoefficientValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ThomsonCoefficientUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-3">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="thermodynamicTemperaturePF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.'&#x398;'">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, massPF, durationPF, electricCurrentPF, thermodynamicTemperaturePF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-24.1 work function */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="workFunction">
+      <typings>EnergyValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-24.1 work function&#xA;         * symbol(s): `&#x3d5;`&#xA;         * application domain: generic&#xA;         * name: WorkFunction (specializes Energy)&#xA;         * quantity dimension: L^2*M^1*T^-2&#xA;         * measurement unit(s): J, eV, kg*m^2*s^-2&#xA;         * tensor order: 0&#xA;         * definition: difference between energy (ISO 80000-5) of an electron at rest at infinity and the Fermi energy (item 12-27.1)&#xA;         * remarks: The term &quot;energy level&quot; is often used for the state of the electron, not only for its energy. The contact potential difference between substances `a` and `b` is given by `V_a - V_b = (&#x3d5;_a - &#x3d5;_b)/e`, where `e` is the elementary charge (ISO 80000-1). A set of energy levels, the energies of which occupy an interval practically continuously, is called an energy band. In semi-conductors `E_d` and `E_a` are used for donors and acceptors, respectively.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-24.2 ionization energy */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="ionizationEnergy">
+      <typings>EnergyValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-24.2 ionization energy&#xA;         * symbol(s): `E_i`&#xA;         * application domain: generic&#xA;         * name: IonizationEnergy (specializes Energy)&#xA;         * quantity dimension: L^2*M^1*T^-2&#xA;         * measurement unit(s): J, eV, kg*m^2*s^-2&#xA;         * tensor order: 0&#xA;         * definition: difference between energy (ISO 80000-5) of an electron at rest at infinity and a certain energy level which is the energy of an electron in the interior of a substance&#xA;         * remarks: None.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-25 electron affinity */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="electronAffinity">
+      <typings>EnergyValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-25 electron affinity&#xA;         * symbol(s): `&#x3c7;`&#xA;         * application domain: condensed matter physics&#xA;         * name: ElectronAffinity (specializes Energy)&#xA;         * quantity dimension: L^2*M^1*T^-2&#xA;         * measurement unit(s): J, eV, kg*m^2*s^-2&#xA;         * tensor order: 0&#xA;         * definition: energy (ISO 80000-5) difference between an electron at rest at infinity and an electron at the lowest level of the conduction band in an insulator or semiconductor&#xA;         * remarks: None.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-26 Richardson constant */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="RichardsonConstantValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-26 Richardson constant&#xA;         * symbol(s): `A`&#xA;         * application domain: generic&#xA;         * name: RichardsonConstant&#xA;         * quantity dimension: L^-2*I^1*&#x398;^-2&#xA;         * measurement unit(s): A*m^-2*K^-2&#xA;         * tensor order: 0&#xA;         * definition: parameter in the expression for the thermionic emission current density `J` (IEC 80000-6) for a metal in terms of the thermodynamic temperature `T` (ISO 80000-5) and work function `&#x3d5;`, (item 12-24.1): `J = AT^2 exp(&#x3d5;/(kT))`, where `k` is the Boltzmann constant (ISO 80000-1)&#xA;         * remarks: None.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>RichardsonConstantUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="richardsonConstant" isNonunique="true">
+      <typings>RichardsonConstantValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="RichardsonConstantUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="thermodynamicTemperaturePF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.'&#x398;'">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, electricCurrentPF, thermodynamicTemperaturePF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-27.1 Fermi energy */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="fermiEnergy">
+      <typings>EnergyValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-27.1 Fermi energy&#xA;         * symbol(s): `E_F`&#xA;         * application domain: generic&#xA;         * name: FermiEnergy (specializes Energy)&#xA;         * quantity dimension: L^2*M^1*T^-2&#xA;         * measurement unit(s): J, eV, kg*m^2*s^-2&#xA;         * tensor order: 0&#xA;         * definition: in a metal, highest occupied energy level at zero thermodynamic temperature (ISO 80000-5), where energy level means the energy (ISO 80000-5) of an electron in the interior of a substance&#xA;         * remarks: The term &quot;energy level&quot; is often used for the state of the electron, not only for its energy. At `T = 0 [K]`, `E_F` is equal to the chemical potential per electron. In condensed matter physics, the reference level for the energy is sometimes chosen so that, for instance, `E_F = 0`.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-27.2 gap energy */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="gapEnergy">
+      <typings>EnergyValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-27.2 gap energy&#xA;         * symbol(s): `E_g`&#xA;         * application domain: generic&#xA;         * name: GapEnergy (specializes Energy)&#xA;         * quantity dimension: L^2*M^1*T^-2&#xA;         * measurement unit(s): J, eV, kg*m^2*s^-2&#xA;         * tensor order: 0&#xA;         * definition: difference in energy (ISO 80000-5) between the lowest level of conduction band and the highest level of valence band at zero thermodynamic temperature (ISO 80000-5)&#xA;         * remarks: None.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-28 Fermi temperature */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="fermiTemperature">
+      <typings>ThermodynamicTemperatureValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-28 Fermi temperature&#xA;         * symbol(s): `T_F`&#xA;         * application domain: generic&#xA;         * name: FermiTemperature (specializes ThermodynamicTemperature)&#xA;         * quantity dimension: &#x398;^1&#xA;         * measurement unit(s): K&#xA;         * tensor order: 0&#xA;         * definition: in the free electron model, the Fermi energy (item 12-27.1) divided by the Boltzmann constant (ISO 80000-1)&#xA;         * remarks: The Fermi temperature is expressed by: `T_F = E_F/k`, where `E_F` is Fermi energy (item 12-27.1) and `k` is the Boltzmann constant (ISO 80000-1). `E_F` is relative to the lowest occupied state.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-29.1 electron density */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ElectronDensityValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-29.1 electron density&#xA;         * symbol(s): `n`&#xA;         * application domain: generic&#xA;         * name: ElectronDensity&#xA;         * quantity dimension: L^-3&#xA;         * measurement unit(s): m^-3&#xA;         * tensor order: 0&#xA;         * definition: quotient of number of electrons in conduction band and volume (ISO 80000-3)&#xA;         * remarks: Subscripts `n` and `p` or `-` and `+` are often used to denote electrons and holes, respectively. `n_n` and `n_p` are also used for electron densities, and `p_n` and `p_p` for hole densities, in `n`-type and `p`-type regions, respectively, of a `n`-`p` junction.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>ElectronDensityUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="electronDensity" isNonunique="true">
+      <typings>ElectronDensityValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ElectronDensityUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-3">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="lengthPF">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-29.2 hole density */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="HoleDensityValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-29.2 hole density&#xA;         * symbol(s): `p`&#xA;         * application domain: generic&#xA;         * name: HoleDensity&#xA;         * quantity dimension: L^-3&#xA;         * measurement unit(s): m^-3&#xA;         * tensor order: 0&#xA;         * definition: quotient of number of holes in valence band and volume (ISO 80000-3)&#xA;         * remarks: Subscripts `n` and `p` or `-` and `+` are often used to denote electrons and holes, respectively. `n_n` and `n_p` are also used for electron densities, and `p_n` and `p_p` for hole densities, in `n`-type and `p`-type regions, respectively, of a `n`-`p` junction.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>HoleDensityUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="holeDensity" isNonunique="true">
+      <typings>HoleDensityValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="HoleDensityUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-3">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="lengthPF">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-29.3 intrinsic carrier density */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="IntrinsicCarrierDensityValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-29.3 intrinsic carrier density&#xA;         * symbol(s): `n_i`&#xA;         * application domain: generic&#xA;         * name: IntrinsicCarrierDensity&#xA;         * quantity dimension: L^-3&#xA;         * measurement unit(s): m^-3&#xA;         * tensor order: 0&#xA;         * definition: quantity given by: `n_i = sqrt(n p)`, where `n` is electron density (item 12-29.1), and `p` is hole&#xA;         * remarks: Subscripts `n` and `p` or `-` and `+` are often used to denote electrons and holes, respectively. `n_n` and `n_p` are also used for electron densities, and `p_n` and `p_p` for hole densities, in `n`-type and `p`-type regions, respectively, of a `n`-`p` junction.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>IntrinsicCarrierDensityUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="intrinsicCarrierDensity" isNonunique="true">
+      <typings>IntrinsicCarrierDensityValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="IntrinsicCarrierDensityUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-3">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="lengthPF">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-29.4 donor density */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="DonorDensityValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-29.4 donor density&#xA;         * symbol(s): `n_d`&#xA;         * application domain: generic&#xA;         * name: DonorDensity&#xA;         * quantity dimension: L^-3&#xA;         * measurement unit(s): m^-3&#xA;         * tensor order: 0&#xA;         * definition: quotient of number of donor levels and volume (ISO 80000-3)&#xA;         * remarks: None.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>DonorDensityUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="donorDensity" isNonunique="true">
+      <typings>DonorDensityValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="DonorDensityUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-3">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="lengthPF">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-29.5 acceptor density */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="AcceptorDensityValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-29.5 acceptor density&#xA;         * symbol(s): `n_a`&#xA;         * application domain: generic&#xA;         * name: AcceptorDensity&#xA;         * quantity dimension: L^-3&#xA;         * measurement unit(s): m^-3&#xA;         * tensor order: 0&#xA;         * definition: quotient of number of acceptor levels and volume (ISO 80000-3)&#xA;         * remarks: None.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>AcceptorDensityUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="acceptorDensity" isNonunique="true">
+      <typings>AcceptorDensityValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="AcceptorDensityUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-3">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="lengthPF">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-30 effective mass */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="effectiveMass">
+      <typings>MassValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-30 effective mass&#xA;         * symbol(s): `m&quot;*&quot;`&#xA;         * application domain: generic&#xA;         * name: EffectiveMass (specializes Mass)&#xA;         * quantity dimension: M^1&#xA;         * measurement unit(s): kg&#xA;         * tensor order: 0&#xA;         * definition: quantity given by: `m^&quot;*&quot; = (&#x127;^2 k) / ((d&#x3b5;)/(dk))`, where `k` is wavenumber (ISO 80000-3), `&#x3b5;` is the energy (ISO 80000-5) of an electron in the interior of a substance, and `&#x127;` is the reduced Planck constant (ISO 80000-1)&#xA;         * remarks: When `k` refers to a state where `&#x3b5;` has an extremum, `m&quot;*&quot; = (&#x127;^2 k) / ((d^2&#x3b5;)/(dk^2))`. The effective mass can be generalized to refer to an anisotropic system with `&#x3b5; = &#x3b5;(k)`.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-31 mobility ratio */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MobilityRatioValue">
+      <superclassifiers>DimensionOneValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-31 mobility ratio&#xA;         * symbol(s): `b`&#xA;         * application domain: generic&#xA;         * name: MobilityRatio (specializes DimensionOneQuantity)&#xA;         * quantity dimension: 1&#xA;         * measurement unit(s): 1&#xA;         * tensor order: 0&#xA;         * definition: quotient of mobilities (ISO 80000-10) of electrons and holes, respectively&#xA;         * remarks: The mobility ratio can be expressed by: `b = &#x3bc;_n/&#x3bc;_p`, where `&#x3bc;_n` and `&#x3bc;_p` are mobilities (ISO 80000-10) for electrons and holes, respectively.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mobilityRatio">
+      <typings>MobilityRatioValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-32.1 relaxation time */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="relaxationTime">
+      <typings>DurationValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-32.1 relaxation time&#xA;         * symbol(s): `&#x3c4;`&#xA;         * application domain: condensed matter physics&#xA;         * name: RelaxationTime (specializes Duration)&#xA;         * quantity dimension: T^1&#xA;         * measurement unit(s): s&#xA;         * tensor order: 0&#xA;         * definition: time constant (ISO 80000-3) for scattering, trapping or annihilation of charge carriers, phonons or other quasiparticles&#xA;         * remarks: For electrons in metals, `&#x3c4; = l/v_F`, where `l` is mean free path (item 12-15.2) and `v_F` is speed (ISO 80000-3) of electrons on the Fermi surface.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-32.2 carrier lifetime */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="carrierLifetime">
+      <typings>DurationValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-32.2 carrier lifetime&#xA;         * symbol(s): `&#x3c4;`, `&#x3c4;_n`, `&#x3c4;_p`&#xA;         * application domain: semiconductors&#xA;         * name: CarrierLifetime (specializes Duration)&#xA;         * quantity dimension: T^1&#xA;         * measurement unit(s): s&#xA;         * tensor order: 0&#xA;         * definition: time constant (ISO 80000-3) for recombination or trapping of minority charge carriers in semiconductors&#xA;         * remarks: Indices &quot;n&quot; and &quot;p&quot; denote negative and positive charge carriers, respectively. Positive charge carriers can also be holes.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-33 diffusion length */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="diffusionLengthForCondensedMatterPhysics">
+      <typings>LengthValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-33 diffusion length&#xA;         * symbol(s): `L`, `L_n`, `L_p`&#xA;         * application domain: condensed matter physics&#xA;         * name: DiffusionLength (specializes Length)&#xA;         * quantity dimension: L^1&#xA;         * measurement unit(s): m&#xA;         * tensor order: 0&#xA;         * definition: square root of the product of diffusion coefficient (ISO 80000-10) and lifetime (ISO 80000-10)&#xA;         * remarks: The diffusion length can be expressed by: `L = sqrt(D&#x3c4;)`, where `D` is the diffusion coefficient (ISO 80000-9) and `&#x3c4;` is lifetime (ISO 80000-3).&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-34 exchange integral */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="exchangeIntegral">
+      <typings>EnergyValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-34 exchange integral&#xA;         * symbol(s): `K`, `J`&#xA;         * application domain: generic&#xA;         * name: ExchangeIntegral (specializes Energy)&#xA;         * quantity dimension: L^2*M^1*T^-2&#xA;         * measurement unit(s): J, eV, kg*m^2*s^-2&#xA;         * tensor order: 0&#xA;         * definition: constituent of the interaction energy (ISO 80000-5) between the spins of adjacent electrons in matter arising from the overlap of electron state functions&#xA;         * remarks: None.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-35.1 Curie temperature */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="curieTemperature">
+      <typings>ThermodynamicTemperatureValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-35.1 Curie temperature&#xA;         * symbol(s): `T_C`&#xA;         * application domain: generic&#xA;         * name: CurieTemperature (specializes ThermodynamicTemperature)&#xA;         * quantity dimension: &#x398;^1&#xA;         * measurement unit(s): K&#xA;         * tensor order: 0&#xA;         * definition: critical thermodynamic temperature (ISO 80000-5) of a ferromagnet&#xA;         * remarks: `T_(cr)` is used for critical thermodynamic temperature in general.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-35.2 N&#xe9;el temperature */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="'n&#xe9;elTemperature'">
+      <typings>ThermodynamicTemperatureValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-35.2 N&#xe9;el temperature&#xA;         * symbol(s): `T_N`&#xA;         * application domain: generic&#xA;         * name: N&#xe9;elTemperature (specializes ThermodynamicTemperature)&#xA;         * quantity dimension: &#x398;^1&#xA;         * measurement unit(s): K&#xA;         * tensor order: 0&#xA;         * definition: critical thermodynamic temperature (ISO 80000-5) of an antiferromagnet&#xA;         * remarks: None.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-35.3 superconduction transition temperature */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="superconductionTransitionTemperature">
+      <typings>ThermodynamicTemperatureValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-35.3 superconduction transition temperature&#xA;         * symbol(s): `T_c`&#xA;         * application domain: generic&#xA;         * name: SuperconductionTransitionTemperature (specializes ThermodynamicTemperature)&#xA;         * quantity dimension: &#x398;^1&#xA;         * measurement unit(s): K&#xA;         * tensor order: 0&#xA;         * definition: critical thermodynamic temperature (ISO 80000-5) of a superconductor&#xA;         * remarks: None.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-36.1 thermodynamic critical magnetic flux density */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="thermodynamicCriticalMagneticFluxDensity">
+      <typings>MagneticFluxDensityValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-36.1 thermodynamic critical magnetic flux density&#xA;         * symbol(s): `B_c`&#xA;         * application domain: generic&#xA;         * name: ThermodynamicCriticalMagneticFluxDensity (specializes MagneticFluxDensity)&#xA;         * quantity dimension: M^1*T^-2*I^-1&#xA;         * measurement unit(s): T, kg*s^-2*A^-1&#xA;         * tensor order: 0&#xA;         * definition: quantity given by: `B_c = sqrt((2&#x3bc;_0 (G_n - G_s))/V)`, where `G_n` and `G_s` are the Gibbs energies (ISO 80000-5) at zero magnetic flux density (IEC 80000-6) in a normal conductor and superconductor, respectively, `&#x3bc;_0` is the magnetic constant (IEC 80000-6), and `V` is volume (ISO 80000-3)&#xA;         * remarks: In type I superconductors, `B_c` is the critical magnetic flux density for disappearance of superconductivity. The symbol `B_(c3)` is used for the critical magnetic flux density for disappearance of surface superconductivity.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-36.2 lower critical magnetic flux density */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="lowerCriticalMagneticFluxDensity">
+      <typings>MagneticFluxDensityValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-36.2 lower critical magnetic flux density&#xA;         * symbol(s): `B_(c1)`&#xA;         * application domain: generic&#xA;         * name: LowerCriticalMagneticFluxDensity (specializes MagneticFluxDensity)&#xA;         * quantity dimension: M^1*T^-2*I^-1&#xA;         * measurement unit(s): T, kg*s^-2*A^-1&#xA;         * tensor order: 0&#xA;         * definition: for type II superconductors, the threshold magnetic flux density (IEC 80000-6) for magnetic flux (IEC 80000-6) entering the superconductor&#xA;         * remarks: None.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-36.3 upper critical magnetic flux density */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="upperCriticalMagneticFluxDensity">
+      <typings>MagneticFluxDensityValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-36.3 upper critical magnetic flux density&#xA;         * symbol(s): `B_(c2)`&#xA;         * application domain: generic&#xA;         * name: UpperCriticalMagneticFluxDensity (specializes MagneticFluxDensity)&#xA;         * quantity dimension: M^1*T^-2*I^-1&#xA;         * measurement unit(s): T, kg*s^-2*A^-1&#xA;         * tensor order: 0&#xA;         * definition: for type II superconductors, the threshold magnetic flux density (IEC 80000-6) for disappearance of bulk superconductivity&#xA;         * remarks: None.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-37 superconductor energy gap */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="superconductorEnergyGap">
+      <typings>EnergyValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-37 superconductor energy gap&#xA;         * symbol(s): `&#x394;`&#xA;         * application domain: generic&#xA;         * name: SuperconductorEnergyGap (specializes Energy)&#xA;         * quantity dimension: L^2*M^1*T^-2&#xA;         * measurement unit(s): J, eV, kg*m^2*s^-2&#xA;         * tensor order: 0&#xA;         * definition: width of the forbidden energy band (item 12-24.2) in a superconductor&#xA;         * remarks: None.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-38.1 London penetration depth */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="londonPenetrationDepth">
+      <typings>LengthValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-38.1 London penetration depth&#xA;         * symbol(s): `&#x3bb;_L`&#xA;         * application domain: generic&#xA;         * name: LondonPenetrationDepth (specializes Length)&#xA;         * quantity dimension: L^1&#xA;         * measurement unit(s): m&#xA;         * tensor order: 0&#xA;         * definition: distance (ISO 80000-3) a magnetic field penetrates the plane surface of a semi-finite superconductor according to the expression: `B(x) = B(0) exp(-x/&#x3bb;_L)`, where `B` is magnetic flux density (IEC 80000-6) and `x` is distance (ISO 80000-3) from the surface&#xA;         * remarks: None.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-12 item 12-38.2 coherence length */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="coherenceLength">
+      <typings>LengthValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 12-38.2 coherence length&#xA;         * symbol(s): `&#x3be;`&#xA;         * application domain: generic&#xA;         * name: CoherenceLength (specializes Length)&#xA;         * quantity dimension: L^1&#xA;         * measurement unit(s): m&#xA;         * tensor order: 0&#xA;         * definition: distance (ISO 80000-3) in a superconductor over which the effect of a perturbation is appreciable at zero thermodynamic temperature (ISO 80000-5)&#xA;         * remarks: None.&#xA;         */"/>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

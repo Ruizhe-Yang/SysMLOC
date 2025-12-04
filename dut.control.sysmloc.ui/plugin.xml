@@ -431,4 +431,22 @@
 			type="text">
 		</fileTypes>
 	</extension>
+ <extension
+       id="dut.control.sysmloc.ui.SysMLv2Generation"
+       name="SysMLv2Generation"
+       point="org.eclipse.ui.popupMenus">
+    <objectContribution
+          adaptable="true"
+          id="dut.control.sysmloc.ui.generateSysMLAction"
+          nameFilter="*.model"
+          objectClass="org.eclipse.core.resources.IFile">
+       <action
+             class="dut.control.sysmloc.ui.actions.GenerateSysMLAction"
+             enablesFor="1"
+             id="dut.control.sysmloc.ui.generateSysMLAction"
+             label="Generate SysML v2"
+             menubarPath="additions">
+       </action>
+    </objectContribution>
+ </extension>
 </plugin>

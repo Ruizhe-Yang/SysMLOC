@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:LibraryPackage" declaredName="Parts" isStandard="true" isLibrary="true">
+    <elements xsi:type="sysMLOC:Documentation" body="/*&#xA; * This package defines the base types for parts and related structural elements in the&#xA; * SysML language.&#xA; */"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Objects::Object"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Objects::objects"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Items::Item"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Items::items"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Ports::Port"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Ports::ports"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Actions::Action"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Actions::actions"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="States::StateAction"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="States::stateActions"/>
+    <elements xsi:type="sysMLOC:PartDefinition" isAbstract="true" declaredName="Part">
+      <superclassifiers>Item</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Part is the most general class of objects that represent all or a part of a system.&#xA;&#x9;&#x9; * Part is the base type of all PartDefinitions.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="self">
+        <typings>Part</typings>
+        <redefinitions>Item::self</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="start">
+        <typings>Part</typings>
+        <redefinitions>Item::start</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="done">
+        <typings>Part</typings>
+        <redefinitions>Item::done</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:PortUsage" isAbstract="true" declaredName="ownedPorts">
+        <typings>Port</typings>
+        <subsetting>ports</subsetting>
+        <subsetting>timeEnclosedOccurrences</subsetting>
+        <Multiplicity>0</Multiplicity>
+        <Multiplicity>*</Multiplicity>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * Ports that are owned by this Part.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" isReference="true" declaredName="performedActions">
+        <typings>Action</typings>
+        <subsetting>actions</subsetting>
+        <subsetting>enactedPerformances</subsetting>
+        <Multiplicity>0</Multiplicity>
+        <Multiplicity>*</Multiplicity>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * Actions that are performed by this Part.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="ownedActions">
+        <typings>Action</typings>
+        <subsetting>actions</subsetting>
+        <subsetting>ownedPerformances</subsetting>
+        <Multiplicity>0</Multiplicity>
+        <Multiplicity>*</Multiplicity>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * Actions that are owned by this Part.&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="sysMLOC:PartUsage" isReference="true" declaredName="this" valuePart="that as Part">
+          <typings>Part</typings>
+          <redefinitions>Action::this</redefinitions>
+          <redefinitions>ownedPerformances::this</redefinitions>
+          <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9;&#x9; * The &quot;this&quot; reference of an ownedAction is always its owning Part.&#xA;&#x9;&#x9;&#x9;&#x9; */"/>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:StateUsage" isAbstract="true" isReference="true" declaredName="exhibitedStates">
+        <typings>StateAction</typings>
+        <subsetting>stateActions</subsetting>
+        <subsetting>performedActions</subsetting>
+        <Multiplicity>0</Multiplicity>
+        <Multiplicity>*</Multiplicity>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * StateActions that are exhibited by this Part.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:StateUsage" isAbstract="true" declaredName="ownedStates">
+        <typings>StateAction</typings>
+        <subsetting>stateActions</subsetting>
+        <subsetting>ownedActions</subsetting>
+        <Multiplicity>0</Multiplicity>
+        <Multiplicity>*</Multiplicity>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * StateActions that are owned by this Part.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" isAbstract="true" declaredName="parts" isNonunique="true">
+      <typings>Part</typings>
+      <subsetting>items</subsetting>
+      <Multiplicity>0</Multiplicity>
+      <Multiplicity>*</Multiplicity>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * parts is the base feature of all part properties.&#xA;&#x9;&#x9; */"/>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:LibraryPackage" declaredName="ISQ" isStandard="true" isLibrary="true">
+    <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;     * International system of quantities (ISQ), as defined in ISO/IEC 80000&#xA;     */"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues::Real"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Quantities" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="MeasurementReferences" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="ISQBase" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:CodeAnnotation" body="// ISO/IEC 80000 base quantities and general concepts&#xA;"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="ISQSpaceTime" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:CodeAnnotation" body="// ISO 80000-3 &quot;Space and Time&quot;&#xA;"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="ISQMechanics" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:CodeAnnotation" body="// ISO 80000-4 &quot;Mechanics&quot;&#xA;"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="ISQThermodynamics" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:CodeAnnotation" body="// ISO 80000-5 &quot;Thermodynamics&quot;&#xA;"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="ISQElectromagnetism" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:CodeAnnotation" body="// IEC 80000-6 &quot;Electromagnetism&quot;&#xA;"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="ISQLight" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:CodeAnnotation" body="// ISO 80000-7 &quot;Light&quot;&#xA;"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="ISQAcoustics" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:CodeAnnotation" body="// ISO 80000-8 &quot;Acoustics&quot;&#xA;"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="ISQChemistryMolecular" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:CodeAnnotation" body="// ISO 80000-9 &quot;Physical chemistry and molecular physics&quot;&#xA;"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="ISQAtomicNuclear" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:CodeAnnotation" body="// ISO 80000-10 &quot;Atomic and nuclear physics&quot;&#xA;"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="ISQCharacteristicNumbers" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:CodeAnnotation" body="// ISO 80000-11 &quot;Characteristic numbers&quot;&#xA;"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="ISQCondensedMatter" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:CodeAnnotation" body="// ISO 80000-12 &quot;Condensed matter physics&quot;&#xA;"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="ISQInformation" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:CodeAnnotation" body="// IEC 80000-13 &quot;Information science and technology&quot;&#xA;"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* Additional quantity declarations */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="TemperatureDifferenceValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * temperature difference&#xA;         * A separate temperature difference quantity and unit are needed in order to support &#xb0;C, &#xb0;F and centrigrade temperature differences&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>TemperatureDifferenceUnit</typings>
+        <redefinitions>mRef</redefinitions>
+        <Multiplicity>1</Multiplicity>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="temperatureDifference" isNonunique="true">
+      <typings>TemperatureDifferenceValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <Multiplicity>*</Multiplicity>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="TemperatureDifferenceUnit">
+      <superclassifiers>SimpleUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="thermodynamicTemperaturePF">
+        <typings>QuantityPowerFactor</typings>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.'&#x398;'">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="thermodynamicTemperaturePF">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

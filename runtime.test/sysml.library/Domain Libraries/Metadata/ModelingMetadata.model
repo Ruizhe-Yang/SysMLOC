@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:LibraryPackage" declaredName="ModelingMetadata" isStandard="true" isLibrary="true">
+    <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9; * This package contains definitions of metadata generally useful for annotating models.&#xA;&#x9; */"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Base::Anything"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues::String"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="RiskMetadata::Risk"/>
+    <elements xsi:type="sysMLOC:EnumerationDefinition" declaredName="StatusKind">
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * StatusKind enumerates the possible statuses of work on a model element.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="open">
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * Status is open.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="tbd">
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * Status is to be determined.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="tbr">
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * Status is to be resolved.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="tbc">
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * Status is to be confirmed.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="done">
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * Status is done.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="closed">
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * Status is closed.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="StatusInfo">
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * StatusInfo is used to annotate a model element with status information.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="originator">
+        <typings>String</typings>
+        <Multiplicity>0</Multiplicity>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The originator of the annotated element.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="owner">
+        <typings>String</typings>
+        <Multiplicity>0</Multiplicity>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The current owner of the annotated element.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="status">
+        <typings>StatusKind</typings>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The current status of work on the annotated element (required).&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:ItemUsage" declaredName="risk">
+        <typings>Risk</typings>
+        <Multiplicity>0</Multiplicity>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * An assessment of risk for the annotated element.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="Rationale">
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Rationale is used to explain a choice or other decision made related to the&#xA;&#x9;&#x9; * annotated element.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="text">
+        <typings>String</typings>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * A textual description of the rationale (required).&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="explanation">
+        <typings>Anything</typings>
+        <Multiplicity>0</Multiplicity>
+        <Multiplicity>1</Multiplicity>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * A reference to a feature that provides a formal explanation of the rationale.&#xA;&#x9;&#x9;&#x9; * (For example, a trade study whose result explains the choice of a certain alternative).&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="Issue">
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Issue is used to record some issue concerning the annotated element.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="text">
+        <typings>String</typings>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * A textual description of the issue.&#xA;&#x9;&#x9; */"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:MetadataDefinition" declaredShortName="refinement" declaredName="Refinement">
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Refinement is used to identify a dependency as modeling a refinement relationship.&#xA;&#x9;&#x9; * In such a relationship, the source elements of the relationship provide a more precise and/or &#xA;&#x9;&#x9; * accurate representation than the target elements.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <typings>SysML::Dependency</typings>
+        <redefinitions>annotatedElement</redefinitions>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

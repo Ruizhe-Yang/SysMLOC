@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:LibraryPackage" declaredName="AnalysisCases" isStandard="true" isLibrary="true">
+    <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9; * This package defines the base types for analysis cases and related behavioral elements &#xA;&#x9; * in the SysML language.&#xA;&#x9; */"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Performances::Evaluation"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Performances::evaluations"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Calculations::Calculation"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Cases::Case"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Cases::cases"/>
+    <elements xsi:type="sysMLOC:AnalysisCaseDefinition" isAbstract="true" declaredName="AnalysisCase">
+      <superclassifiers>Case</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * AnalysisCase is the most general class of performances of AnalysisCaseDefinitions. &#xA;&#x9;&#x9; * AnalysisCase is the base class of all AnalysisCaseDefinitions.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:AnalysisCaseUsage" isReference="true" declaredName="self">
+        <typings>AnalysisCase</typings>
+        <redefinitions>Case::self</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:SubjectUsage" declaredName="subj">
+        <redefinitions>Case::subj</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AnalysisCaseUsage" isAbstract="true" declaredName="subAnalysisCases">
+        <typings>AnalysisCase</typings>
+        <subsetting>analysisCases</subsetting>
+        <subsetting>subcases</subsetting>
+        <Multiplicity>0</Multiplicity>
+        <Multiplicity>*</Multiplicity>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * Other AnalysisCases carried out as part of the performance of this AnalysisCase.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AnalysisCaseUsage" isAbstract="true" declaredName="analysisCases" isNonunique="true">
+      <typings>AnalysisCase</typings>
+      <subsetting>cases</subsetting>
+      <Multiplicity>0</Multiplicity>
+      <Multiplicity>*</Multiplicity>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * analysisCases is the base feature of all AnalysisCaseUsages.&#xA;&#x9;&#x9; */"/>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>
