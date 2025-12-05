@@ -33,7 +33,6 @@ public class SysMLOC2SysML {
         convertAllModelsInFolder(modelPath);
         
     }
-    
     public static void convertAllModelsInFolder(String folderPath) throws Exception {
         Path dir = Paths.get(folderPath).toAbsolutePath();
         if (!Files.isDirectory(dir)) {
@@ -42,33 +41,41 @@ public class SysMLOC2SysML {
 
         int count = 0;
 
-        // 递归遍历所有子目录，查找 *.model 文件
-        try {
-            // 默认不跟随符号链接，如果你有软链接可以再加选项
-            try (java.util.stream.Stream<Path> paths = Files.walk(dir)) {
-                java.util.Iterator<Path> it = paths.iterator();
-                while (it.hasNext()) {
-                    Path p = it.next();
-                    if (Files.isRegularFile(p) && p.toString().endsWith(".model")) {
-                        count++;
-                        String absModelPath = p.toAbsolutePath().toString();
-                        try {
-                            Path out = convertModelToSysml(absModelPath);
-                            System.out.println("[Successfully Generate SysML v2] " + dir.relativize(p)
-                                    + " -> " + out.getFileName());
-                        } catch (Exception e) {
-                            System.err.println("[FAIL] " + dir.relativize(p)
-                                    + " : " + e.getMessage());
-                            e.printStackTrace();
-                        }
-                    }
+        try (java.util.stream.Stream<Path> paths = Files.walk(dir)) {
+            java.util.Iterator<Path> it = paths.iterator();
+            while (it.hasNext()) {
+                Path p = it.next();
+
+                if (!Files.isRegularFile(p)) {
+                    continue;
+                }
+
+                String fileName = p.getFileName().toString();
+
+                // 不是 .model 文件直接跳过
+                if (!fileName.endsWith(".model")) {
+                    continue;
+                }
+
+                // 如果是 gen- 开头的 .model，则跳过
+                if (fileName.startsWith("gen-")) {
+                    System.out.println("[SKIP] " + dir.relativize(p) + " (gen-prefix)");
+                    continue;
+                }
+
+                count++;
+                String absModelPath = p.toAbsolutePath().toString();
+                try {
+                    Path out = convertModelToSysml(absModelPath);
+                    System.out.println("[GEN] " + dir.relativize(p)
+                            + " -> " + out.getFileName());
+                } catch (Exception e) {
+                    System.err.println("[FAIL] " + dir.relativize(p)
+                            + " : " + e.getMessage());
+                    e.printStackTrace();
                 }
             }
-        } catch (Exception e) {
-            System.err.println("Error while walking folder " + dir + ": " + e.getMessage());
-            throw e;
         }
-
         System.out.println("Done. Processed " + count + " .model files under " + dir);
     }
 

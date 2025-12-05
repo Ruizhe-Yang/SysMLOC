@@ -8,7 +8,9 @@ package 'Terminate Actions Example-2'{
 	}
 	action terminateProcessing{
 		in processor : Processor;
-		terminate processor.workflowProcess;
-		terminate processor;
+		terminate processor.workflowProcess{
+		}
+		terminate processor{
+		}
 	}
 }

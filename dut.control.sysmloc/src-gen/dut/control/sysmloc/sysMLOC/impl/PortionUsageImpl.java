@@ -59,7 +59,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PortionUsageImpl#isIsThen <em>Is Then</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PortionUsageImpl#getThenMultiValue <em>Then Multi Value</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PortionUsageImpl#getThenMultiLow <em>Then Multi Low</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PortionUsageImpl#getThenMultiHigh <em>Then Multi High</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PortionUsageImpl#getVisibility <em>Visibility</em>}</li>
@@ -79,7 +78,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PortionUsageImpl#getReferences <em>References</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PortionUsageImpl#getCrosses <em>Crosses</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PortionUsageImpl#getRedefinitions <em>Redefinitions</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PortionUsageImpl#getMultiValue <em>Multi Value</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PortionUsageImpl#getMultiLow <em>Multi Low</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PortionUsageImpl#getMultiHigh <em>Multi High</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PortionUsageImpl#isIsOrdered <em>Is Ordered</em>}</li>
@@ -115,26 +113,6 @@ public class PortionUsageImpl extends StructureUsageElementsImpl implements Port
    * @ordered
    */
   protected boolean isThen = IS_THEN_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getThenMultiValue() <em>Then Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getThenMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected static final String THEN_MULTI_VALUE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getThenMultiValue() <em>Then Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getThenMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected String thenMultiValue = THEN_MULTI_VALUE_EDEFAULT;
 
   /**
    * The default value of the '{@link #getThenMultiLow() <em>Then Multi Low</em>}' attribute.
@@ -457,26 +435,6 @@ public class PortionUsageImpl extends StructureUsageElementsImpl implements Port
   protected EList<String> redefinitions;
 
   /**
-   * The default value of the '{@link #getMultiValue() <em>Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected static final String MULTI_VALUE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getMultiValue() <em>Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected String multiValue = MULTI_VALUE_EDEFAULT;
-
-  /**
    * The default value of the '{@link #getMultiLow() <em>Multi Low</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -710,31 +668,6 @@ public class PortionUsageImpl extends StructureUsageElementsImpl implements Port
     isThen = newIsThen;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.PORTION_USAGE__IS_THEN, oldIsThen, isThen));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getThenMultiValue()
-  {
-    return thenMultiValue;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setThenMultiValue(String newThenMultiValue)
-  {
-    String oldThenMultiValue = thenMultiValue;
-    thenMultiValue = newThenMultiValue;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.PORTION_USAGE__THEN_MULTI_VALUE, oldThenMultiValue, thenMultiValue));
   }
 
   /**
@@ -1158,31 +1091,6 @@ public class PortionUsageImpl extends StructureUsageElementsImpl implements Port
    * @generated
    */
   @Override
-  public String getMultiValue()
-  {
-    return multiValue;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setMultiValue(String newMultiValue)
-  {
-    String oldMultiValue = multiValue;
-    multiValue = newMultiValue;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.PORTION_USAGE__MULTI_VALUE, oldMultiValue, multiValue));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public String getMultiLow()
   {
     return multiLow;
@@ -1445,8 +1353,6 @@ public class PortionUsageImpl extends StructureUsageElementsImpl implements Port
     {
       case SysMLOCPackage.PORTION_USAGE__IS_THEN:
         return isIsThen();
-      case SysMLOCPackage.PORTION_USAGE__THEN_MULTI_VALUE:
-        return getThenMultiValue();
       case SysMLOCPackage.PORTION_USAGE__THEN_MULTI_LOW:
         return getThenMultiLow();
       case SysMLOCPackage.PORTION_USAGE__THEN_MULTI_HIGH:
@@ -1485,8 +1391,6 @@ public class PortionUsageImpl extends StructureUsageElementsImpl implements Port
         return getCrosses();
       case SysMLOCPackage.PORTION_USAGE__REDEFINITIONS:
         return getRedefinitions();
-      case SysMLOCPackage.PORTION_USAGE__MULTI_VALUE:
-        return getMultiValue();
       case SysMLOCPackage.PORTION_USAGE__MULTI_LOW:
         return getMultiLow();
       case SysMLOCPackage.PORTION_USAGE__MULTI_HIGH:
@@ -1524,9 +1428,6 @@ public class PortionUsageImpl extends StructureUsageElementsImpl implements Port
     {
       case SysMLOCPackage.PORTION_USAGE__IS_THEN:
         setIsThen((Boolean)newValue);
-        return;
-      case SysMLOCPackage.PORTION_USAGE__THEN_MULTI_VALUE:
-        setThenMultiValue((String)newValue);
         return;
       case SysMLOCPackage.PORTION_USAGE__THEN_MULTI_LOW:
         setThenMultiLow((String)newValue);
@@ -1591,9 +1492,6 @@ public class PortionUsageImpl extends StructureUsageElementsImpl implements Port
         getRedefinitions().clear();
         getRedefinitions().addAll((Collection<? extends String>)newValue);
         return;
-      case SysMLOCPackage.PORTION_USAGE__MULTI_VALUE:
-        setMultiValue((String)newValue);
-        return;
       case SysMLOCPackage.PORTION_USAGE__MULTI_LOW:
         setMultiLow((String)newValue);
         return;
@@ -1641,9 +1539,6 @@ public class PortionUsageImpl extends StructureUsageElementsImpl implements Port
     {
       case SysMLOCPackage.PORTION_USAGE__IS_THEN:
         setIsThen(IS_THEN_EDEFAULT);
-        return;
-      case SysMLOCPackage.PORTION_USAGE__THEN_MULTI_VALUE:
-        setThenMultiValue(THEN_MULTI_VALUE_EDEFAULT);
         return;
       case SysMLOCPackage.PORTION_USAGE__THEN_MULTI_LOW:
         setThenMultiLow(THEN_MULTI_LOW_EDEFAULT);
@@ -1702,9 +1597,6 @@ public class PortionUsageImpl extends StructureUsageElementsImpl implements Port
       case SysMLOCPackage.PORTION_USAGE__REDEFINITIONS:
         getRedefinitions().clear();
         return;
-      case SysMLOCPackage.PORTION_USAGE__MULTI_VALUE:
-        setMultiValue(MULTI_VALUE_EDEFAULT);
-        return;
       case SysMLOCPackage.PORTION_USAGE__MULTI_LOW:
         setMultiLow(MULTI_LOW_EDEFAULT);
         return;
@@ -1751,8 +1643,6 @@ public class PortionUsageImpl extends StructureUsageElementsImpl implements Port
     {
       case SysMLOCPackage.PORTION_USAGE__IS_THEN:
         return isThen != IS_THEN_EDEFAULT;
-      case SysMLOCPackage.PORTION_USAGE__THEN_MULTI_VALUE:
-        return THEN_MULTI_VALUE_EDEFAULT == null ? thenMultiValue != null : !THEN_MULTI_VALUE_EDEFAULT.equals(thenMultiValue);
       case SysMLOCPackage.PORTION_USAGE__THEN_MULTI_LOW:
         return THEN_MULTI_LOW_EDEFAULT == null ? thenMultiLow != null : !THEN_MULTI_LOW_EDEFAULT.equals(thenMultiLow);
       case SysMLOCPackage.PORTION_USAGE__THEN_MULTI_HIGH:
@@ -1791,8 +1681,6 @@ public class PortionUsageImpl extends StructureUsageElementsImpl implements Port
         return crosses != null && !crosses.isEmpty();
       case SysMLOCPackage.PORTION_USAGE__REDEFINITIONS:
         return redefinitions != null && !redefinitions.isEmpty();
-      case SysMLOCPackage.PORTION_USAGE__MULTI_VALUE:
-        return MULTI_VALUE_EDEFAULT == null ? multiValue != null : !MULTI_VALUE_EDEFAULT.equals(multiValue);
       case SysMLOCPackage.PORTION_USAGE__MULTI_LOW:
         return MULTI_LOW_EDEFAULT == null ? multiLow != null : !MULTI_LOW_EDEFAULT.equals(multiLow);
       case SysMLOCPackage.PORTION_USAGE__MULTI_HIGH:
@@ -1830,7 +1718,6 @@ public class PortionUsageImpl extends StructureUsageElementsImpl implements Port
       switch (derivedFeatureID)
       {
         case SysMLOCPackage.PORTION_USAGE__IS_THEN: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__IS_THEN;
-        case SysMLOCPackage.PORTION_USAGE__THEN_MULTI_VALUE: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_VALUE;
         case SysMLOCPackage.PORTION_USAGE__THEN_MULTI_LOW: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_LOW;
         case SysMLOCPackage.PORTION_USAGE__THEN_MULTI_HIGH: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_HIGH;
         default: return -1;
@@ -1962,7 +1849,6 @@ public class PortionUsageImpl extends StructureUsageElementsImpl implements Port
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.PORTION_USAGE__MULTI_VALUE: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_VALUE;
         case SysMLOCPackage.PORTION_USAGE__MULTI_LOW: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_LOW;
         case SysMLOCPackage.PORTION_USAGE__MULTI_HIGH: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_HIGH;
         default: return -1;
@@ -2038,7 +1924,6 @@ public class PortionUsageImpl extends StructureUsageElementsImpl implements Port
       switch (baseFeatureID)
       {
         case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__IS_THEN: return SysMLOCPackage.PORTION_USAGE__IS_THEN;
-        case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_VALUE: return SysMLOCPackage.PORTION_USAGE__THEN_MULTI_VALUE;
         case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_LOW: return SysMLOCPackage.PORTION_USAGE__THEN_MULTI_LOW;
         case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_HIGH: return SysMLOCPackage.PORTION_USAGE__THEN_MULTI_HIGH;
         default: return -1;
@@ -2170,7 +2055,6 @@ public class PortionUsageImpl extends StructureUsageElementsImpl implements Port
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_VALUE: return SysMLOCPackage.PORTION_USAGE__MULTI_VALUE;
         case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_LOW: return SysMLOCPackage.PORTION_USAGE__MULTI_LOW;
         case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_HIGH: return SysMLOCPackage.PORTION_USAGE__MULTI_HIGH;
         default: return -1;
@@ -2246,8 +2130,6 @@ public class PortionUsageImpl extends StructureUsageElementsImpl implements Port
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (isThen: ");
     result.append(isThen);
-    result.append(", ThenMultiValue: ");
-    result.append(thenMultiValue);
     result.append(", ThenMultiLow: ");
     result.append(thenMultiLow);
     result.append(", ThenMultiHigh: ");
@@ -2286,8 +2168,6 @@ public class PortionUsageImpl extends StructureUsageElementsImpl implements Port
     result.append(crosses);
     result.append(", redefinitions: ");
     result.append(redefinitions);
-    result.append(", MultiValue: ");
-    result.append(multiValue);
     result.append(", MultiLow: ");
     result.append(multiLow);
     result.append(", MultiHigh: ");

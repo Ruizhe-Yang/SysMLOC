@@ -1383,13 +1383,22 @@ public interface SysMLOCFactory extends EFactory
   EndUsagePrefix createEndUsagePrefix();
 
   /**
-   * Returns a new object of class '<em>End Multiplicity Range</em>'.
+   * Returns a new object of class '<em>Cross End Usage Prefix</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>End Multiplicity Range</em>'.
+   * @return a new object of class '<em>Cross End Usage Prefix</em>'.
    * @generated
    */
-  EndMultiplicityRange createEndMultiplicityRange();
+  CrossEndUsagePrefix createCrossEndUsagePrefix();
+
+  /**
+   * Returns a new object of class '<em>Cross End Usage</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Cross End Usage</em>'.
+   * @generated
+   */
+  CrossEndUsage createCrossEndUsage();
 
   /**
    * Returns a new object of class '<em>Occurrence Usage Prefix</em>'.

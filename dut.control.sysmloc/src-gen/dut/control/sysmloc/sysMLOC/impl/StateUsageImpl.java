@@ -8,7 +8,6 @@ import dut.control.sysmloc.sysMLOC.BasicDefinitionPrefix;
 import dut.control.sysmloc.sysMLOC.BasicUsagePrefix;
 import dut.control.sysmloc.sysMLOC.CrossFeatureChain;
 import dut.control.sysmloc.sysMLOC.EmptySuccessionPrefix;
-import dut.control.sysmloc.sysMLOC.EndMultiplicityRange;
 import dut.control.sysmloc.sysMLOC.EndUsagePrefix;
 import dut.control.sysmloc.sysMLOC.FeatureDeclaration;
 import dut.control.sysmloc.sysMLOC.FeatureDirection;
@@ -62,15 +61,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.StateUsageImpl#isIsThen <em>Is Then</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.StateUsageImpl#getThenMultiValue <em>Then Multi Value</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.StateUsageImpl#getThenMultiLow <em>Then Multi Low</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.StateUsageImpl#getThenMultiHigh <em>Then Multi High</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.StateUsageImpl#getVisibility <em>Visibility</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.StateUsageImpl#isIsVariant <em>Is Variant</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.StateUsageImpl#isIsReturn <em>Is Return</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.StateUsageImpl#getEndMultiValue <em>End Multi Value</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.StateUsageImpl#getEndMultiLow <em>End Multi Low</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.StateUsageImpl#getEndMultiHigh <em>End Multi High</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.StateUsageImpl#isIsEnd <em>Is End</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.StateUsageImpl#isIsAbstract <em>Is Abstract</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.StateUsageImpl#isIsVariation <em>Is Variation</em>}</li>
@@ -88,7 +83,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.StateUsageImpl#getReferences <em>References</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.StateUsageImpl#getCrosses <em>Crosses</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.StateUsageImpl#getRedefinitions <em>Redefinitions</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.StateUsageImpl#getMultiValue <em>Multi Value</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.StateUsageImpl#getMultiLow <em>Multi Low</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.StateUsageImpl#getMultiHigh <em>Multi High</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.StateUsageImpl#isIsOrdered <em>Is Ordered</em>}</li>
@@ -123,26 +117,6 @@ public class StateUsageImpl extends BehaviorUsageElementsImpl implements StateUs
    * @ordered
    */
   protected boolean isThen = IS_THEN_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getThenMultiValue() <em>Then Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getThenMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected static final String THEN_MULTI_VALUE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getThenMultiValue() <em>Then Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getThenMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected String thenMultiValue = THEN_MULTI_VALUE_EDEFAULT;
 
   /**
    * The default value of the '{@link #getThenMultiLow() <em>Then Multi Low</em>}' attribute.
@@ -243,66 +217,6 @@ public class StateUsageImpl extends BehaviorUsageElementsImpl implements StateUs
    * @ordered
    */
   protected boolean isReturn = IS_RETURN_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getEndMultiValue() <em>End Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEndMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected static final String END_MULTI_VALUE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getEndMultiValue() <em>End Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEndMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected String endMultiValue = END_MULTI_VALUE_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getEndMultiLow() <em>End Multi Low</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEndMultiLow()
-   * @generated
-   * @ordered
-   */
-  protected static final String END_MULTI_LOW_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getEndMultiLow() <em>End Multi Low</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEndMultiLow()
-   * @generated
-   * @ordered
-   */
-  protected String endMultiLow = END_MULTI_LOW_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getEndMultiHigh() <em>End Multi High</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEndMultiHigh()
-   * @generated
-   * @ordered
-   */
-  protected static final String END_MULTI_HIGH_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getEndMultiHigh() <em>End Multi High</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEndMultiHigh()
-   * @generated
-   * @ordered
-   */
-  protected String endMultiHigh = END_MULTI_HIGH_EDEFAULT;
 
   /**
    * The default value of the '{@link #isIsEnd() <em>Is End</em>}' attribute.
@@ -585,26 +499,6 @@ public class StateUsageImpl extends BehaviorUsageElementsImpl implements StateUs
   protected EList<String> redefinitions;
 
   /**
-   * The default value of the '{@link #getMultiValue() <em>Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected static final String MULTI_VALUE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getMultiValue() <em>Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected String multiValue = MULTI_VALUE_EDEFAULT;
-
-  /**
    * The default value of the '{@link #getMultiLow() <em>Multi Low</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -826,31 +720,6 @@ public class StateUsageImpl extends BehaviorUsageElementsImpl implements StateUs
    * @generated
    */
   @Override
-  public String getThenMultiValue()
-  {
-    return thenMultiValue;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setThenMultiValue(String newThenMultiValue)
-  {
-    String oldThenMultiValue = thenMultiValue;
-    thenMultiValue = newThenMultiValue;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.STATE_USAGE__THEN_MULTI_VALUE, oldThenMultiValue, thenMultiValue));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public String getThenMultiLow()
   {
     return thenMultiLow;
@@ -968,81 +837,6 @@ public class StateUsageImpl extends BehaviorUsageElementsImpl implements StateUs
     isReturn = newIsReturn;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.STATE_USAGE__IS_RETURN, oldIsReturn, isReturn));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getEndMultiValue()
-  {
-    return endMultiValue;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setEndMultiValue(String newEndMultiValue)
-  {
-    String oldEndMultiValue = endMultiValue;
-    endMultiValue = newEndMultiValue;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.STATE_USAGE__END_MULTI_VALUE, oldEndMultiValue, endMultiValue));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getEndMultiLow()
-  {
-    return endMultiLow;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setEndMultiLow(String newEndMultiLow)
-  {
-    String oldEndMultiLow = endMultiLow;
-    endMultiLow = newEndMultiLow;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.STATE_USAGE__END_MULTI_LOW, oldEndMultiLow, endMultiLow));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getEndMultiHigh()
-  {
-    return endMultiHigh;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setEndMultiHigh(String newEndMultiHigh)
-  {
-    String oldEndMultiHigh = endMultiHigh;
-    endMultiHigh = newEndMultiHigh;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.STATE_USAGE__END_MULTI_HIGH, oldEndMultiHigh, endMultiHigh));
   }
 
   /**
@@ -1416,31 +1210,6 @@ public class StateUsageImpl extends BehaviorUsageElementsImpl implements StateUs
    * @generated
    */
   @Override
-  public String getMultiValue()
-  {
-    return multiValue;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setMultiValue(String newMultiValue)
-  {
-    String oldMultiValue = multiValue;
-    multiValue = newMultiValue;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.STATE_USAGE__MULTI_VALUE, oldMultiValue, multiValue));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public String getMultiLow()
   {
     return multiLow;
@@ -1678,8 +1447,6 @@ public class StateUsageImpl extends BehaviorUsageElementsImpl implements StateUs
     {
       case SysMLOCPackage.STATE_USAGE__IS_THEN:
         return isIsThen();
-      case SysMLOCPackage.STATE_USAGE__THEN_MULTI_VALUE:
-        return getThenMultiValue();
       case SysMLOCPackage.STATE_USAGE__THEN_MULTI_LOW:
         return getThenMultiLow();
       case SysMLOCPackage.STATE_USAGE__THEN_MULTI_HIGH:
@@ -1690,12 +1457,6 @@ public class StateUsageImpl extends BehaviorUsageElementsImpl implements StateUs
         return isIsVariant();
       case SysMLOCPackage.STATE_USAGE__IS_RETURN:
         return isIsReturn();
-      case SysMLOCPackage.STATE_USAGE__END_MULTI_VALUE:
-        return getEndMultiValue();
-      case SysMLOCPackage.STATE_USAGE__END_MULTI_LOW:
-        return getEndMultiLow();
-      case SysMLOCPackage.STATE_USAGE__END_MULTI_HIGH:
-        return getEndMultiHigh();
       case SysMLOCPackage.STATE_USAGE__IS_END:
         return isIsEnd();
       case SysMLOCPackage.STATE_USAGE__IS_ABSTRACT:
@@ -1730,8 +1491,6 @@ public class StateUsageImpl extends BehaviorUsageElementsImpl implements StateUs
         return getCrosses();
       case SysMLOCPackage.STATE_USAGE__REDEFINITIONS:
         return getRedefinitions();
-      case SysMLOCPackage.STATE_USAGE__MULTI_VALUE:
-        return getMultiValue();
       case SysMLOCPackage.STATE_USAGE__MULTI_LOW:
         return getMultiLow();
       case SysMLOCPackage.STATE_USAGE__MULTI_HIGH:
@@ -1768,9 +1527,6 @@ public class StateUsageImpl extends BehaviorUsageElementsImpl implements StateUs
       case SysMLOCPackage.STATE_USAGE__IS_THEN:
         setIsThen((Boolean)newValue);
         return;
-      case SysMLOCPackage.STATE_USAGE__THEN_MULTI_VALUE:
-        setThenMultiValue((String)newValue);
-        return;
       case SysMLOCPackage.STATE_USAGE__THEN_MULTI_LOW:
         setThenMultiLow((String)newValue);
         return;
@@ -1785,15 +1541,6 @@ public class StateUsageImpl extends BehaviorUsageElementsImpl implements StateUs
         return;
       case SysMLOCPackage.STATE_USAGE__IS_RETURN:
         setIsReturn((Boolean)newValue);
-        return;
-      case SysMLOCPackage.STATE_USAGE__END_MULTI_VALUE:
-        setEndMultiValue((String)newValue);
-        return;
-      case SysMLOCPackage.STATE_USAGE__END_MULTI_LOW:
-        setEndMultiLow((String)newValue);
-        return;
-      case SysMLOCPackage.STATE_USAGE__END_MULTI_HIGH:
-        setEndMultiHigh((String)newValue);
         return;
       case SysMLOCPackage.STATE_USAGE__IS_END:
         setIsEnd((Boolean)newValue);
@@ -1852,9 +1599,6 @@ public class StateUsageImpl extends BehaviorUsageElementsImpl implements StateUs
         getRedefinitions().clear();
         getRedefinitions().addAll((Collection<? extends String>)newValue);
         return;
-      case SysMLOCPackage.STATE_USAGE__MULTI_VALUE:
-        setMultiValue((String)newValue);
-        return;
       case SysMLOCPackage.STATE_USAGE__MULTI_LOW:
         setMultiLow((String)newValue);
         return;
@@ -1900,9 +1644,6 @@ public class StateUsageImpl extends BehaviorUsageElementsImpl implements StateUs
       case SysMLOCPackage.STATE_USAGE__IS_THEN:
         setIsThen(IS_THEN_EDEFAULT);
         return;
-      case SysMLOCPackage.STATE_USAGE__THEN_MULTI_VALUE:
-        setThenMultiValue(THEN_MULTI_VALUE_EDEFAULT);
-        return;
       case SysMLOCPackage.STATE_USAGE__THEN_MULTI_LOW:
         setThenMultiLow(THEN_MULTI_LOW_EDEFAULT);
         return;
@@ -1917,15 +1658,6 @@ public class StateUsageImpl extends BehaviorUsageElementsImpl implements StateUs
         return;
       case SysMLOCPackage.STATE_USAGE__IS_RETURN:
         setIsReturn(IS_RETURN_EDEFAULT);
-        return;
-      case SysMLOCPackage.STATE_USAGE__END_MULTI_VALUE:
-        setEndMultiValue(END_MULTI_VALUE_EDEFAULT);
-        return;
-      case SysMLOCPackage.STATE_USAGE__END_MULTI_LOW:
-        setEndMultiLow(END_MULTI_LOW_EDEFAULT);
-        return;
-      case SysMLOCPackage.STATE_USAGE__END_MULTI_HIGH:
-        setEndMultiHigh(END_MULTI_HIGH_EDEFAULT);
         return;
       case SysMLOCPackage.STATE_USAGE__IS_END:
         setIsEnd(IS_END_EDEFAULT);
@@ -1978,9 +1710,6 @@ public class StateUsageImpl extends BehaviorUsageElementsImpl implements StateUs
       case SysMLOCPackage.STATE_USAGE__REDEFINITIONS:
         getRedefinitions().clear();
         return;
-      case SysMLOCPackage.STATE_USAGE__MULTI_VALUE:
-        setMultiValue(MULTI_VALUE_EDEFAULT);
-        return;
       case SysMLOCPackage.STATE_USAGE__MULTI_LOW:
         setMultiLow(MULTI_LOW_EDEFAULT);
         return;
@@ -2024,8 +1753,6 @@ public class StateUsageImpl extends BehaviorUsageElementsImpl implements StateUs
     {
       case SysMLOCPackage.STATE_USAGE__IS_THEN:
         return isThen != IS_THEN_EDEFAULT;
-      case SysMLOCPackage.STATE_USAGE__THEN_MULTI_VALUE:
-        return THEN_MULTI_VALUE_EDEFAULT == null ? thenMultiValue != null : !THEN_MULTI_VALUE_EDEFAULT.equals(thenMultiValue);
       case SysMLOCPackage.STATE_USAGE__THEN_MULTI_LOW:
         return THEN_MULTI_LOW_EDEFAULT == null ? thenMultiLow != null : !THEN_MULTI_LOW_EDEFAULT.equals(thenMultiLow);
       case SysMLOCPackage.STATE_USAGE__THEN_MULTI_HIGH:
@@ -2036,12 +1763,6 @@ public class StateUsageImpl extends BehaviorUsageElementsImpl implements StateUs
         return isVariant != IS_VARIANT_EDEFAULT;
       case SysMLOCPackage.STATE_USAGE__IS_RETURN:
         return isReturn != IS_RETURN_EDEFAULT;
-      case SysMLOCPackage.STATE_USAGE__END_MULTI_VALUE:
-        return END_MULTI_VALUE_EDEFAULT == null ? endMultiValue != null : !END_MULTI_VALUE_EDEFAULT.equals(endMultiValue);
-      case SysMLOCPackage.STATE_USAGE__END_MULTI_LOW:
-        return END_MULTI_LOW_EDEFAULT == null ? endMultiLow != null : !END_MULTI_LOW_EDEFAULT.equals(endMultiLow);
-      case SysMLOCPackage.STATE_USAGE__END_MULTI_HIGH:
-        return END_MULTI_HIGH_EDEFAULT == null ? endMultiHigh != null : !END_MULTI_HIGH_EDEFAULT.equals(endMultiHigh);
       case SysMLOCPackage.STATE_USAGE__IS_END:
         return isEnd != IS_END_EDEFAULT;
       case SysMLOCPackage.STATE_USAGE__IS_ABSTRACT:
@@ -2076,8 +1797,6 @@ public class StateUsageImpl extends BehaviorUsageElementsImpl implements StateUs
         return crosses != null && !crosses.isEmpty();
       case SysMLOCPackage.STATE_USAGE__REDEFINITIONS:
         return redefinitions != null && !redefinitions.isEmpty();
-      case SysMLOCPackage.STATE_USAGE__MULTI_VALUE:
-        return MULTI_VALUE_EDEFAULT == null ? multiValue != null : !MULTI_VALUE_EDEFAULT.equals(multiValue);
       case SysMLOCPackage.STATE_USAGE__MULTI_LOW:
         return MULTI_LOW_EDEFAULT == null ? multiLow != null : !MULTI_LOW_EDEFAULT.equals(multiLow);
       case SysMLOCPackage.STATE_USAGE__MULTI_HIGH:
@@ -2113,7 +1832,6 @@ public class StateUsageImpl extends BehaviorUsageElementsImpl implements StateUs
       switch (derivedFeatureID)
       {
         case SysMLOCPackage.STATE_USAGE__IS_THEN: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__IS_THEN;
-        case SysMLOCPackage.STATE_USAGE__THEN_MULTI_VALUE: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_VALUE;
         case SysMLOCPackage.STATE_USAGE__THEN_MULTI_LOW: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_LOW;
         case SysMLOCPackage.STATE_USAGE__THEN_MULTI_HIGH: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_HIGH;
         default: return -1;
@@ -2140,16 +1858,6 @@ public class StateUsageImpl extends BehaviorUsageElementsImpl implements StateUs
     {
       switch (derivedFeatureID)
       {
-        default: return -1;
-      }
-    }
-    if (baseClass == EndMultiplicityRange.class)
-    {
-      switch (derivedFeatureID)
-      {
-        case SysMLOCPackage.STATE_USAGE__END_MULTI_VALUE: return SysMLOCPackage.END_MULTIPLICITY_RANGE__END_MULTI_VALUE;
-        case SysMLOCPackage.STATE_USAGE__END_MULTI_LOW: return SysMLOCPackage.END_MULTIPLICITY_RANGE__END_MULTI_LOW;
-        case SysMLOCPackage.STATE_USAGE__END_MULTI_HIGH: return SysMLOCPackage.END_MULTIPLICITY_RANGE__END_MULTI_HIGH;
         default: return -1;
       }
     }
@@ -2272,7 +1980,6 @@ public class StateUsageImpl extends BehaviorUsageElementsImpl implements StateUs
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.STATE_USAGE__MULTI_VALUE: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_VALUE;
         case SysMLOCPackage.STATE_USAGE__MULTI_LOW: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_LOW;
         case SysMLOCPackage.STATE_USAGE__MULTI_HIGH: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_HIGH;
         default: return -1;
@@ -2348,7 +2055,6 @@ public class StateUsageImpl extends BehaviorUsageElementsImpl implements StateUs
       switch (baseFeatureID)
       {
         case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__IS_THEN: return SysMLOCPackage.STATE_USAGE__IS_THEN;
-        case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_VALUE: return SysMLOCPackage.STATE_USAGE__THEN_MULTI_VALUE;
         case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_LOW: return SysMLOCPackage.STATE_USAGE__THEN_MULTI_LOW;
         case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_HIGH: return SysMLOCPackage.STATE_USAGE__THEN_MULTI_HIGH;
         default: return -1;
@@ -2375,16 +2081,6 @@ public class StateUsageImpl extends BehaviorUsageElementsImpl implements StateUs
     {
       switch (baseFeatureID)
       {
-        default: return -1;
-      }
-    }
-    if (baseClass == EndMultiplicityRange.class)
-    {
-      switch (baseFeatureID)
-      {
-        case SysMLOCPackage.END_MULTIPLICITY_RANGE__END_MULTI_VALUE: return SysMLOCPackage.STATE_USAGE__END_MULTI_VALUE;
-        case SysMLOCPackage.END_MULTIPLICITY_RANGE__END_MULTI_LOW: return SysMLOCPackage.STATE_USAGE__END_MULTI_LOW;
-        case SysMLOCPackage.END_MULTIPLICITY_RANGE__END_MULTI_HIGH: return SysMLOCPackage.STATE_USAGE__END_MULTI_HIGH;
         default: return -1;
       }
     }
@@ -2507,7 +2203,6 @@ public class StateUsageImpl extends BehaviorUsageElementsImpl implements StateUs
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_VALUE: return SysMLOCPackage.STATE_USAGE__MULTI_VALUE;
         case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_LOW: return SysMLOCPackage.STATE_USAGE__MULTI_LOW;
         case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_HIGH: return SysMLOCPackage.STATE_USAGE__MULTI_HIGH;
         default: return -1;
@@ -2583,8 +2278,6 @@ public class StateUsageImpl extends BehaviorUsageElementsImpl implements StateUs
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (isThen: ");
     result.append(isThen);
-    result.append(", ThenMultiValue: ");
-    result.append(thenMultiValue);
     result.append(", ThenMultiLow: ");
     result.append(thenMultiLow);
     result.append(", ThenMultiHigh: ");
@@ -2595,12 +2288,6 @@ public class StateUsageImpl extends BehaviorUsageElementsImpl implements StateUs
     result.append(isVariant);
     result.append(", isReturn: ");
     result.append(isReturn);
-    result.append(", EndMultiValue: ");
-    result.append(endMultiValue);
-    result.append(", EndMultiLow: ");
-    result.append(endMultiLow);
-    result.append(", EndMultiHigh: ");
-    result.append(endMultiHigh);
     result.append(", isEnd: ");
     result.append(isEnd);
     result.append(", isAbstract: ");
@@ -2635,8 +2322,6 @@ public class StateUsageImpl extends BehaviorUsageElementsImpl implements StateUs
     result.append(crosses);
     result.append(", redefinitions: ");
     result.append(redefinitions);
-    result.append(", MultiValue: ");
-    result.append(multiValue);
     result.append(", MultiLow: ");
     result.append(multiLow);
     result.append(", MultiHigh: ");

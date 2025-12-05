@@ -58,7 +58,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IndividualUsageImpl#isIsThen <em>Is Then</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IndividualUsageImpl#getThenMultiValue <em>Then Multi Value</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IndividualUsageImpl#getThenMultiLow <em>Then Multi Low</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IndividualUsageImpl#getThenMultiHigh <em>Then Multi High</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IndividualUsageImpl#getVisibility <em>Visibility</em>}</li>
@@ -78,7 +77,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IndividualUsageImpl#getReferences <em>References</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IndividualUsageImpl#getCrosses <em>Crosses</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IndividualUsageImpl#getRedefinitions <em>Redefinitions</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IndividualUsageImpl#getMultiValue <em>Multi Value</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IndividualUsageImpl#getMultiLow <em>Multi Low</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IndividualUsageImpl#getMultiHigh <em>Multi High</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IndividualUsageImpl#isIsOrdered <em>Is Ordered</em>}</li>
@@ -113,26 +111,6 @@ public class IndividualUsageImpl extends StructureUsageElementsImpl implements I
    * @ordered
    */
   protected boolean isThen = IS_THEN_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getThenMultiValue() <em>Then Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getThenMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected static final String THEN_MULTI_VALUE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getThenMultiValue() <em>Then Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getThenMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected String thenMultiValue = THEN_MULTI_VALUE_EDEFAULT;
 
   /**
    * The default value of the '{@link #getThenMultiLow() <em>Then Multi Low</em>}' attribute.
@@ -455,26 +433,6 @@ public class IndividualUsageImpl extends StructureUsageElementsImpl implements I
   protected EList<String> redefinitions;
 
   /**
-   * The default value of the '{@link #getMultiValue() <em>Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected static final String MULTI_VALUE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getMultiValue() <em>Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected String multiValue = MULTI_VALUE_EDEFAULT;
-
-  /**
    * The default value of the '{@link #getMultiLow() <em>Multi Low</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -688,31 +646,6 @@ public class IndividualUsageImpl extends StructureUsageElementsImpl implements I
     isThen = newIsThen;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.INDIVIDUAL_USAGE__IS_THEN, oldIsThen, isThen));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getThenMultiValue()
-  {
-    return thenMultiValue;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setThenMultiValue(String newThenMultiValue)
-  {
-    String oldThenMultiValue = thenMultiValue;
-    thenMultiValue = newThenMultiValue;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.INDIVIDUAL_USAGE__THEN_MULTI_VALUE, oldThenMultiValue, thenMultiValue));
   }
 
   /**
@@ -1136,31 +1069,6 @@ public class IndividualUsageImpl extends StructureUsageElementsImpl implements I
    * @generated
    */
   @Override
-  public String getMultiValue()
-  {
-    return multiValue;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setMultiValue(String newMultiValue)
-  {
-    String oldMultiValue = multiValue;
-    multiValue = newMultiValue;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.INDIVIDUAL_USAGE__MULTI_VALUE, oldMultiValue, multiValue));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public String getMultiLow()
   {
     return multiLow;
@@ -1398,8 +1306,6 @@ public class IndividualUsageImpl extends StructureUsageElementsImpl implements I
     {
       case SysMLOCPackage.INDIVIDUAL_USAGE__IS_THEN:
         return isIsThen();
-      case SysMLOCPackage.INDIVIDUAL_USAGE__THEN_MULTI_VALUE:
-        return getThenMultiValue();
       case SysMLOCPackage.INDIVIDUAL_USAGE__THEN_MULTI_LOW:
         return getThenMultiLow();
       case SysMLOCPackage.INDIVIDUAL_USAGE__THEN_MULTI_HIGH:
@@ -1438,8 +1344,6 @@ public class IndividualUsageImpl extends StructureUsageElementsImpl implements I
         return getCrosses();
       case SysMLOCPackage.INDIVIDUAL_USAGE__REDEFINITIONS:
         return getRedefinitions();
-      case SysMLOCPackage.INDIVIDUAL_USAGE__MULTI_VALUE:
-        return getMultiValue();
       case SysMLOCPackage.INDIVIDUAL_USAGE__MULTI_LOW:
         return getMultiLow();
       case SysMLOCPackage.INDIVIDUAL_USAGE__MULTI_HIGH:
@@ -1475,9 +1379,6 @@ public class IndividualUsageImpl extends StructureUsageElementsImpl implements I
     {
       case SysMLOCPackage.INDIVIDUAL_USAGE__IS_THEN:
         setIsThen((Boolean)newValue);
-        return;
-      case SysMLOCPackage.INDIVIDUAL_USAGE__THEN_MULTI_VALUE:
-        setThenMultiValue((String)newValue);
         return;
       case SysMLOCPackage.INDIVIDUAL_USAGE__THEN_MULTI_LOW:
         setThenMultiLow((String)newValue);
@@ -1542,9 +1443,6 @@ public class IndividualUsageImpl extends StructureUsageElementsImpl implements I
         getRedefinitions().clear();
         getRedefinitions().addAll((Collection<? extends String>)newValue);
         return;
-      case SysMLOCPackage.INDIVIDUAL_USAGE__MULTI_VALUE:
-        setMultiValue((String)newValue);
-        return;
       case SysMLOCPackage.INDIVIDUAL_USAGE__MULTI_LOW:
         setMultiLow((String)newValue);
         return;
@@ -1589,9 +1487,6 @@ public class IndividualUsageImpl extends StructureUsageElementsImpl implements I
     {
       case SysMLOCPackage.INDIVIDUAL_USAGE__IS_THEN:
         setIsThen(IS_THEN_EDEFAULT);
-        return;
-      case SysMLOCPackage.INDIVIDUAL_USAGE__THEN_MULTI_VALUE:
-        setThenMultiValue(THEN_MULTI_VALUE_EDEFAULT);
         return;
       case SysMLOCPackage.INDIVIDUAL_USAGE__THEN_MULTI_LOW:
         setThenMultiLow(THEN_MULTI_LOW_EDEFAULT);
@@ -1650,9 +1545,6 @@ public class IndividualUsageImpl extends StructureUsageElementsImpl implements I
       case SysMLOCPackage.INDIVIDUAL_USAGE__REDEFINITIONS:
         getRedefinitions().clear();
         return;
-      case SysMLOCPackage.INDIVIDUAL_USAGE__MULTI_VALUE:
-        setMultiValue(MULTI_VALUE_EDEFAULT);
-        return;
       case SysMLOCPackage.INDIVIDUAL_USAGE__MULTI_LOW:
         setMultiLow(MULTI_LOW_EDEFAULT);
         return;
@@ -1696,8 +1588,6 @@ public class IndividualUsageImpl extends StructureUsageElementsImpl implements I
     {
       case SysMLOCPackage.INDIVIDUAL_USAGE__IS_THEN:
         return isThen != IS_THEN_EDEFAULT;
-      case SysMLOCPackage.INDIVIDUAL_USAGE__THEN_MULTI_VALUE:
-        return THEN_MULTI_VALUE_EDEFAULT == null ? thenMultiValue != null : !THEN_MULTI_VALUE_EDEFAULT.equals(thenMultiValue);
       case SysMLOCPackage.INDIVIDUAL_USAGE__THEN_MULTI_LOW:
         return THEN_MULTI_LOW_EDEFAULT == null ? thenMultiLow != null : !THEN_MULTI_LOW_EDEFAULT.equals(thenMultiLow);
       case SysMLOCPackage.INDIVIDUAL_USAGE__THEN_MULTI_HIGH:
@@ -1736,8 +1626,6 @@ public class IndividualUsageImpl extends StructureUsageElementsImpl implements I
         return crosses != null && !crosses.isEmpty();
       case SysMLOCPackage.INDIVIDUAL_USAGE__REDEFINITIONS:
         return redefinitions != null && !redefinitions.isEmpty();
-      case SysMLOCPackage.INDIVIDUAL_USAGE__MULTI_VALUE:
-        return MULTI_VALUE_EDEFAULT == null ? multiValue != null : !MULTI_VALUE_EDEFAULT.equals(multiValue);
       case SysMLOCPackage.INDIVIDUAL_USAGE__MULTI_LOW:
         return MULTI_LOW_EDEFAULT == null ? multiLow != null : !MULTI_LOW_EDEFAULT.equals(multiLow);
       case SysMLOCPackage.INDIVIDUAL_USAGE__MULTI_HIGH:
@@ -1773,7 +1661,6 @@ public class IndividualUsageImpl extends StructureUsageElementsImpl implements I
       switch (derivedFeatureID)
       {
         case SysMLOCPackage.INDIVIDUAL_USAGE__IS_THEN: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__IS_THEN;
-        case SysMLOCPackage.INDIVIDUAL_USAGE__THEN_MULTI_VALUE: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_VALUE;
         case SysMLOCPackage.INDIVIDUAL_USAGE__THEN_MULTI_LOW: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_LOW;
         case SysMLOCPackage.INDIVIDUAL_USAGE__THEN_MULTI_HIGH: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_HIGH;
         default: return -1;
@@ -1905,7 +1792,6 @@ public class IndividualUsageImpl extends StructureUsageElementsImpl implements I
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.INDIVIDUAL_USAGE__MULTI_VALUE: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_VALUE;
         case SysMLOCPackage.INDIVIDUAL_USAGE__MULTI_LOW: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_LOW;
         case SysMLOCPackage.INDIVIDUAL_USAGE__MULTI_HIGH: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_HIGH;
         default: return -1;
@@ -1981,7 +1867,6 @@ public class IndividualUsageImpl extends StructureUsageElementsImpl implements I
       switch (baseFeatureID)
       {
         case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__IS_THEN: return SysMLOCPackage.INDIVIDUAL_USAGE__IS_THEN;
-        case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_VALUE: return SysMLOCPackage.INDIVIDUAL_USAGE__THEN_MULTI_VALUE;
         case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_LOW: return SysMLOCPackage.INDIVIDUAL_USAGE__THEN_MULTI_LOW;
         case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_HIGH: return SysMLOCPackage.INDIVIDUAL_USAGE__THEN_MULTI_HIGH;
         default: return -1;
@@ -2113,7 +1998,6 @@ public class IndividualUsageImpl extends StructureUsageElementsImpl implements I
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_VALUE: return SysMLOCPackage.INDIVIDUAL_USAGE__MULTI_VALUE;
         case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_LOW: return SysMLOCPackage.INDIVIDUAL_USAGE__MULTI_LOW;
         case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_HIGH: return SysMLOCPackage.INDIVIDUAL_USAGE__MULTI_HIGH;
         default: return -1;
@@ -2189,8 +2073,6 @@ public class IndividualUsageImpl extends StructureUsageElementsImpl implements I
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (isThen: ");
     result.append(isThen);
-    result.append(", ThenMultiValue: ");
-    result.append(thenMultiValue);
     result.append(", ThenMultiLow: ");
     result.append(thenMultiLow);
     result.append(", ThenMultiHigh: ");
@@ -2229,8 +2111,6 @@ public class IndividualUsageImpl extends StructureUsageElementsImpl implements I
     result.append(crosses);
     result.append(", redefinitions: ");
     result.append(redefinitions);
-    result.append(", MultiValue: ");
-    result.append(multiValue);
     result.append(", MultiLow: ");
     result.append(multiLow);
     result.append(", MultiHigh: ");

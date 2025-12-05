@@ -23,7 +23,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PayloadFeatureSpecializationPartImpl#getMultiValue <em>Multi Value</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PayloadFeatureSpecializationPartImpl#getMultiLow <em>Multi Low</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PayloadFeatureSpecializationPartImpl#getMultiHigh <em>Multi High</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.PayloadFeatureSpecializationPartImpl#isIsOrdered <em>Is Ordered</em>}</li>
@@ -34,26 +33,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class PayloadFeatureSpecializationPartImpl extends FeatureSpecializationImpl implements PayloadFeatureSpecializationPart
 {
-  /**
-   * The default value of the '{@link #getMultiValue() <em>Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected static final String MULTI_VALUE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getMultiValue() <em>Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected String multiValue = MULTI_VALUE_EDEFAULT;
-
   /**
    * The default value of the '{@link #getMultiLow() <em>Multi Low</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -153,31 +132,6 @@ public class PayloadFeatureSpecializationPartImpl extends FeatureSpecializationI
   protected EClass eStaticClass()
   {
     return SysMLOCPackage.eINSTANCE.getPayloadFeatureSpecializationPart();
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getMultiValue()
-  {
-    return multiValue;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setMultiValue(String newMultiValue)
-  {
-    String oldMultiValue = multiValue;
-    multiValue = newMultiValue;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.PAYLOAD_FEATURE_SPECIALIZATION_PART__MULTI_VALUE, oldMultiValue, multiValue));
   }
 
   /**
@@ -290,8 +244,6 @@ public class PayloadFeatureSpecializationPartImpl extends FeatureSpecializationI
   {
     switch (featureID)
     {
-      case SysMLOCPackage.PAYLOAD_FEATURE_SPECIALIZATION_PART__MULTI_VALUE:
-        return getMultiValue();
       case SysMLOCPackage.PAYLOAD_FEATURE_SPECIALIZATION_PART__MULTI_LOW:
         return getMultiLow();
       case SysMLOCPackage.PAYLOAD_FEATURE_SPECIALIZATION_PART__MULTI_HIGH:
@@ -314,9 +266,6 @@ public class PayloadFeatureSpecializationPartImpl extends FeatureSpecializationI
   {
     switch (featureID)
     {
-      case SysMLOCPackage.PAYLOAD_FEATURE_SPECIALIZATION_PART__MULTI_VALUE:
-        setMultiValue((String)newValue);
-        return;
       case SysMLOCPackage.PAYLOAD_FEATURE_SPECIALIZATION_PART__MULTI_LOW:
         setMultiLow((String)newValue);
         return;
@@ -343,9 +292,6 @@ public class PayloadFeatureSpecializationPartImpl extends FeatureSpecializationI
   {
     switch (featureID)
     {
-      case SysMLOCPackage.PAYLOAD_FEATURE_SPECIALIZATION_PART__MULTI_VALUE:
-        setMultiValue(MULTI_VALUE_EDEFAULT);
-        return;
       case SysMLOCPackage.PAYLOAD_FEATURE_SPECIALIZATION_PART__MULTI_LOW:
         setMultiLow(MULTI_LOW_EDEFAULT);
         return;
@@ -372,8 +318,6 @@ public class PayloadFeatureSpecializationPartImpl extends FeatureSpecializationI
   {
     switch (featureID)
     {
-      case SysMLOCPackage.PAYLOAD_FEATURE_SPECIALIZATION_PART__MULTI_VALUE:
-        return MULTI_VALUE_EDEFAULT == null ? multiValue != null : !MULTI_VALUE_EDEFAULT.equals(multiValue);
       case SysMLOCPackage.PAYLOAD_FEATURE_SPECIALIZATION_PART__MULTI_LOW:
         return MULTI_LOW_EDEFAULT == null ? multiLow != null : !MULTI_LOW_EDEFAULT.equals(multiLow);
       case SysMLOCPackage.PAYLOAD_FEATURE_SPECIALIZATION_PART__MULTI_HIGH:
@@ -398,7 +342,6 @@ public class PayloadFeatureSpecializationPartImpl extends FeatureSpecializationI
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.PAYLOAD_FEATURE_SPECIALIZATION_PART__MULTI_VALUE: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_VALUE;
         case SysMLOCPackage.PAYLOAD_FEATURE_SPECIALIZATION_PART__MULTI_LOW: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_LOW;
         case SysMLOCPackage.PAYLOAD_FEATURE_SPECIALIZATION_PART__MULTI_HIGH: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_HIGH;
         default: return -1;
@@ -435,7 +378,6 @@ public class PayloadFeatureSpecializationPartImpl extends FeatureSpecializationI
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_VALUE: return SysMLOCPackage.PAYLOAD_FEATURE_SPECIALIZATION_PART__MULTI_VALUE;
         case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_LOW: return SysMLOCPackage.PAYLOAD_FEATURE_SPECIALIZATION_PART__MULTI_LOW;
         case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_HIGH: return SysMLOCPackage.PAYLOAD_FEATURE_SPECIALIZATION_PART__MULTI_HIGH;
         default: return -1;
@@ -471,9 +413,7 @@ public class PayloadFeatureSpecializationPartImpl extends FeatureSpecializationI
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (MultiValue: ");
-    result.append(multiValue);
-    result.append(", MultiLow: ");
+    result.append(" (MultiLow: ");
     result.append(multiLow);
     result.append(", MultiHigh: ");
     result.append(multiHigh);

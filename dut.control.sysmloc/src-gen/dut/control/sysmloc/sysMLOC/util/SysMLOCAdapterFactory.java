@@ -53,6 +53,8 @@ import dut.control.sysmloc.sysMLOC.ConstraintDefinition;
 import dut.control.sysmloc.sysMLOC.ConstraintUsage;
 import dut.control.sysmloc.sysMLOC.ConstraintUsageDeclaration;
 import dut.control.sysmloc.sysMLOC.ControlNodePrefix;
+import dut.control.sysmloc.sysMLOC.CrossEndUsage;
+import dut.control.sysmloc.sysMLOC.CrossEndUsagePrefix;
 import dut.control.sysmloc.sysMLOC.CrossFeatureChain;
 import dut.control.sysmloc.sysMLOC.DefaultReferenceUsage;
 import dut.control.sysmloc.sysMLOC.DefinitionBodyElement;
@@ -66,7 +68,6 @@ import dut.control.sysmloc.sysMLOC.Documentation;
 import dut.control.sysmloc.sysMLOC.ElementFilterElement;
 import dut.control.sysmloc.sysMLOC.ElseNode;
 import dut.control.sysmloc.sysMLOC.EmptySuccessionPrefix;
-import dut.control.sysmloc.sysMLOC.EndMultiplicityRange;
 import dut.control.sysmloc.sysMLOC.EndUsagePrefix;
 import dut.control.sysmloc.sysMLOC.EntryActionNode;
 import dut.control.sysmloc.sysMLOC.EnumeratedValue;
@@ -1022,9 +1023,14 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
         return createEndUsagePrefixAdapter();
       }
       @Override
-      public Adapter caseEndMultiplicityRange(EndMultiplicityRange object)
+      public Adapter caseCrossEndUsagePrefix(CrossEndUsagePrefix object)
       {
-        return createEndMultiplicityRangeAdapter();
+        return createCrossEndUsagePrefixAdapter();
+      }
+      @Override
+      public Adapter caseCrossEndUsage(CrossEndUsage object)
+      {
+        return createCrossEndUsageAdapter();
       }
       @Override
       public Adapter caseOccurrenceUsagePrefix(OccurrenceUsagePrefix object)
@@ -3514,16 +3520,31 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.EndMultiplicityRange <em>End Multiplicity Range</em>}'.
+   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.CrossEndUsagePrefix <em>Cross End Usage Prefix</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see dut.control.sysmloc.sysMLOC.EndMultiplicityRange
+   * @see dut.control.sysmloc.sysMLOC.CrossEndUsagePrefix
    * @generated
    */
-  public Adapter createEndMultiplicityRangeAdapter()
+  public Adapter createCrossEndUsagePrefixAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.CrossEndUsage <em>Cross End Usage</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.sysmloc.sysMLOC.CrossEndUsage
+   * @generated
+   */
+  public Adapter createCrossEndUsageAdapter()
   {
     return null;
   }

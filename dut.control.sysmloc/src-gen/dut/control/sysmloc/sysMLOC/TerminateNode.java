@@ -14,6 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.TerminateNode#isIsSemicolon <em>Is Semicolon</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.TerminateNode#getNodeParameter <em>Node Parameter</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.TerminateNode#getElements <em>Elements</em>}</li>
  * </ul>
@@ -22,8 +23,30 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface TerminateNode extends ActionNodeElements, EmptySuccessionPrefix, MemberPrefix, OccurrenceUsagePrefix, EndUsagePrefix, EndMultiplicityRange, BasicUsagePrefix, RefPrefix, BasicDefinitionPrefix, UsageExtensionKeyword, PrefixMetadata, ActionNodeUsageDeclaration, UsageDeclaration, FeatureDeclaration, Identification, FeatureSpecializationPart, FeatureSpecialization, TypingFeatureTyping, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, MultiplicityPart, MultiplicityRange, MultiplicityModifiers
+public interface TerminateNode extends ActionNodeElements, EmptySuccessionPrefix, MemberPrefix, OccurrenceUsagePrefix, EndUsagePrefix, BasicUsagePrefix, RefPrefix, BasicDefinitionPrefix, UsageExtensionKeyword, PrefixMetadata, ActionNodeUsageDeclaration, UsageDeclaration, FeatureDeclaration, Identification, FeatureSpecializationPart, FeatureSpecialization, TypingFeatureTyping, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, MultiplicityPart, MultiplicityRange, MultiplicityModifiers
 {
+  /**
+   * Returns the value of the '<em><b>Is Semicolon</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Is Semicolon</em>' attribute.
+   * @see #setIsSemicolon(boolean)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getTerminateNode_IsSemicolon()
+   * @model
+   * @generated
+   */
+  boolean isIsSemicolon();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.TerminateNode#isIsSemicolon <em>Is Semicolon</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Is Semicolon</em>' attribute.
+   * @see #isIsSemicolon()
+   * @generated
+   */
+  void setIsSemicolon(boolean value);
+
   /**
    * Returns the value of the '<em><b>Node Parameter</b></em>' attribute.
    * <!-- begin-user-doc -->

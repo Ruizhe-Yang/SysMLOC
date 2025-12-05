@@ -63,7 +63,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ViewRenderingUsageImpl#getPrefixMetadataExtension <em>Prefix Metadata Extension</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ViewRenderingUsageImpl#getDeclaredShortName <em>Declared Short Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ViewRenderingUsageImpl#getDeclaredName <em>Declared Name</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ViewRenderingUsageImpl#getMultiValue <em>Multi Value</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ViewRenderingUsageImpl#getMultiLow <em>Multi Low</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ViewRenderingUsageImpl#getMultiHigh <em>Multi High</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ViewRenderingUsageImpl#isIsOrdered <em>Is Ordered</em>}</li>
@@ -237,26 +236,6 @@ public class ViewRenderingUsageImpl extends ViewDefinitionBodyElementImpl implem
    * @ordered
    */
   protected String declaredName = DECLARED_NAME_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getMultiValue() <em>Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected static final String MULTI_VALUE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getMultiValue() <em>Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected String multiValue = MULTI_VALUE_EDEFAULT;
 
   /**
    * The default value of the '{@link #getMultiLow() <em>Multi Low</em>}' attribute.
@@ -650,31 +629,6 @@ public class ViewRenderingUsageImpl extends ViewDefinitionBodyElementImpl implem
    * @generated
    */
   @Override
-  public String getMultiValue()
-  {
-    return multiValue;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setMultiValue(String newMultiValue)
-  {
-    String oldMultiValue = multiValue;
-    multiValue = newMultiValue;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.VIEW_RENDERING_USAGE__MULTI_VALUE, oldMultiValue, multiValue));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public String getMultiLow()
   {
     return multiLow;
@@ -907,8 +861,6 @@ public class ViewRenderingUsageImpl extends ViewDefinitionBodyElementImpl implem
         return getDeclaredShortName();
       case SysMLOCPackage.VIEW_RENDERING_USAGE__DECLARED_NAME:
         return getDeclaredName();
-      case SysMLOCPackage.VIEW_RENDERING_USAGE__MULTI_VALUE:
-        return getMultiValue();
       case SysMLOCPackage.VIEW_RENDERING_USAGE__MULTI_LOW:
         return getMultiLow();
       case SysMLOCPackage.VIEW_RENDERING_USAGE__MULTI_HIGH:
@@ -978,9 +930,6 @@ public class ViewRenderingUsageImpl extends ViewDefinitionBodyElementImpl implem
         return;
       case SysMLOCPackage.VIEW_RENDERING_USAGE__DECLARED_NAME:
         setDeclaredName((String)newValue);
-        return;
-      case SysMLOCPackage.VIEW_RENDERING_USAGE__MULTI_VALUE:
-        setMultiValue((String)newValue);
         return;
       case SysMLOCPackage.VIEW_RENDERING_USAGE__MULTI_LOW:
         setMultiLow((String)newValue);
@@ -1054,9 +1003,6 @@ public class ViewRenderingUsageImpl extends ViewDefinitionBodyElementImpl implem
       case SysMLOCPackage.VIEW_RENDERING_USAGE__DECLARED_NAME:
         setDeclaredName(DECLARED_NAME_EDEFAULT);
         return;
-      case SysMLOCPackage.VIEW_RENDERING_USAGE__MULTI_VALUE:
-        setMultiValue(MULTI_VALUE_EDEFAULT);
-        return;
       case SysMLOCPackage.VIEW_RENDERING_USAGE__MULTI_LOW:
         setMultiLow(MULTI_LOW_EDEFAULT);
         return;
@@ -1117,8 +1063,6 @@ public class ViewRenderingUsageImpl extends ViewDefinitionBodyElementImpl implem
         return DECLARED_SHORT_NAME_EDEFAULT == null ? declaredShortName != null : !DECLARED_SHORT_NAME_EDEFAULT.equals(declaredShortName);
       case SysMLOCPackage.VIEW_RENDERING_USAGE__DECLARED_NAME:
         return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
-      case SysMLOCPackage.VIEW_RENDERING_USAGE__MULTI_VALUE:
-        return MULTI_VALUE_EDEFAULT == null ? multiValue != null : !MULTI_VALUE_EDEFAULT.equals(multiValue);
       case SysMLOCPackage.VIEW_RENDERING_USAGE__MULTI_LOW:
         return MULTI_LOW_EDEFAULT == null ? multiLow != null : !MULTI_LOW_EDEFAULT.equals(multiLow);
       case SysMLOCPackage.VIEW_RENDERING_USAGE__MULTI_HIGH:
@@ -1246,7 +1190,6 @@ public class ViewRenderingUsageImpl extends ViewDefinitionBodyElementImpl implem
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.VIEW_RENDERING_USAGE__MULTI_VALUE: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_VALUE;
         case SysMLOCPackage.VIEW_RENDERING_USAGE__MULTI_LOW: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_LOW;
         case SysMLOCPackage.VIEW_RENDERING_USAGE__MULTI_HIGH: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_HIGH;
         default: return -1;
@@ -1416,7 +1359,6 @@ public class ViewRenderingUsageImpl extends ViewDefinitionBodyElementImpl implem
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_VALUE: return SysMLOCPackage.VIEW_RENDERING_USAGE__MULTI_VALUE;
         case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_LOW: return SysMLOCPackage.VIEW_RENDERING_USAGE__MULTI_LOW;
         case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_HIGH: return SysMLOCPackage.VIEW_RENDERING_USAGE__MULTI_HIGH;
         default: return -1;
@@ -1512,8 +1454,6 @@ public class ViewRenderingUsageImpl extends ViewDefinitionBodyElementImpl implem
     result.append(declaredShortName);
     result.append(", declaredName: ");
     result.append(declaredName);
-    result.append(", MultiValue: ");
-    result.append(multiValue);
     result.append(", MultiLow: ");
     result.append(multiLow);
     result.append(", MultiHigh: ");

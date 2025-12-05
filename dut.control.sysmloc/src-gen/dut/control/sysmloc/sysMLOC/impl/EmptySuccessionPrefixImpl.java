@@ -22,7 +22,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EmptySuccessionPrefixImpl#isIsThen <em>Is Then</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EmptySuccessionPrefixImpl#getThenMultiValue <em>Then Multi Value</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EmptySuccessionPrefixImpl#getThenMultiLow <em>Then Multi Low</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EmptySuccessionPrefixImpl#getThenMultiHigh <em>Then Multi High</em>}</li>
  * </ul>
@@ -50,26 +49,6 @@ public class EmptySuccessionPrefixImpl extends MinimalEObjectImpl.Container impl
    * @ordered
    */
   protected boolean isThen = IS_THEN_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getThenMultiValue() <em>Then Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getThenMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected static final String THEN_MULTI_VALUE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getThenMultiValue() <em>Then Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getThenMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected String thenMultiValue = THEN_MULTI_VALUE_EDEFAULT;
 
   /**
    * The default value of the '{@link #getThenMultiLow() <em>Then Multi Low</em>}' attribute.
@@ -163,31 +142,6 @@ public class EmptySuccessionPrefixImpl extends MinimalEObjectImpl.Container impl
    * @generated
    */
   @Override
-  public String getThenMultiValue()
-  {
-    return thenMultiValue;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setThenMultiValue(String newThenMultiValue)
-  {
-    String oldThenMultiValue = thenMultiValue;
-    thenMultiValue = newThenMultiValue;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_VALUE, oldThenMultiValue, thenMultiValue));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public String getThenMultiLow()
   {
     return thenMultiLow;
@@ -244,8 +198,6 @@ public class EmptySuccessionPrefixImpl extends MinimalEObjectImpl.Container impl
     {
       case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__IS_THEN:
         return isIsThen();
-      case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_VALUE:
-        return getThenMultiValue();
       case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_LOW:
         return getThenMultiLow();
       case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_HIGH:
@@ -266,9 +218,6 @@ public class EmptySuccessionPrefixImpl extends MinimalEObjectImpl.Container impl
     {
       case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__IS_THEN:
         setIsThen((Boolean)newValue);
-        return;
-      case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_VALUE:
-        setThenMultiValue((String)newValue);
         return;
       case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_LOW:
         setThenMultiLow((String)newValue);
@@ -293,9 +242,6 @@ public class EmptySuccessionPrefixImpl extends MinimalEObjectImpl.Container impl
       case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__IS_THEN:
         setIsThen(IS_THEN_EDEFAULT);
         return;
-      case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_VALUE:
-        setThenMultiValue(THEN_MULTI_VALUE_EDEFAULT);
-        return;
       case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_LOW:
         setThenMultiLow(THEN_MULTI_LOW_EDEFAULT);
         return;
@@ -318,8 +264,6 @@ public class EmptySuccessionPrefixImpl extends MinimalEObjectImpl.Container impl
     {
       case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__IS_THEN:
         return isThen != IS_THEN_EDEFAULT;
-      case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_VALUE:
-        return THEN_MULTI_VALUE_EDEFAULT == null ? thenMultiValue != null : !THEN_MULTI_VALUE_EDEFAULT.equals(thenMultiValue);
       case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_LOW:
         return THEN_MULTI_LOW_EDEFAULT == null ? thenMultiLow != null : !THEN_MULTI_LOW_EDEFAULT.equals(thenMultiLow);
       case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_HIGH:
@@ -341,8 +285,6 @@ public class EmptySuccessionPrefixImpl extends MinimalEObjectImpl.Container impl
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (isThen: ");
     result.append(isThen);
-    result.append(", ThenMultiValue: ");
-    result.append(thenMultiValue);
     result.append(", ThenMultiLow: ");
     result.append(thenMultiLow);
     result.append(", ThenMultiHigh: ");

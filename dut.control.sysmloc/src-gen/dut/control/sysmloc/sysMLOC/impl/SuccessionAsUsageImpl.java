@@ -8,7 +8,6 @@ import dut.control.sysmloc.sysMLOC.BasicUsagePrefix;
 import dut.control.sysmloc.sysMLOC.ConnectorEnd;
 import dut.control.sysmloc.sysMLOC.CrossFeatureChain;
 import dut.control.sysmloc.sysMLOC.DefinitionBodyElement;
-import dut.control.sysmloc.sysMLOC.EndMultiplicityRange;
 import dut.control.sysmloc.sysMLOC.EndUsagePrefix;
 import dut.control.sysmloc.sysMLOC.FeatureDeclaration;
 import dut.control.sysmloc.sysMLOC.FeatureDirection;
@@ -61,9 +60,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionAsUsageImpl#getVisibility <em>Visibility</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionAsUsageImpl#isIsVariant <em>Is Variant</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionAsUsageImpl#isIsReturn <em>Is Return</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionAsUsageImpl#getEndMultiValue <em>End Multi Value</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionAsUsageImpl#getEndMultiLow <em>End Multi Low</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionAsUsageImpl#getEndMultiHigh <em>End Multi High</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionAsUsageImpl#isIsEnd <em>Is End</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionAsUsageImpl#isIsAbstract <em>Is Abstract</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionAsUsageImpl#isIsVariation <em>Is Variation</em>}</li>
@@ -79,7 +75,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionAsUsageImpl#getReferences <em>References</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionAsUsageImpl#getCrosses <em>Crosses</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionAsUsageImpl#getRedefinitions <em>Redefinitions</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionAsUsageImpl#getMultiValue <em>Multi Value</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionAsUsageImpl#getMultiLow <em>Multi Low</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionAsUsageImpl#getMultiHigh <em>Multi High</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.SuccessionAsUsageImpl#isIsOrdered <em>Is Ordered</em>}</li>
@@ -151,66 +146,6 @@ public class SuccessionAsUsageImpl extends NonOccurrenceUsageElementImpl impleme
    * @ordered
    */
   protected boolean isReturn = IS_RETURN_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getEndMultiValue() <em>End Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEndMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected static final String END_MULTI_VALUE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getEndMultiValue() <em>End Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEndMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected String endMultiValue = END_MULTI_VALUE_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getEndMultiLow() <em>End Multi Low</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEndMultiLow()
-   * @generated
-   * @ordered
-   */
-  protected static final String END_MULTI_LOW_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getEndMultiLow() <em>End Multi Low</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEndMultiLow()
-   * @generated
-   * @ordered
-   */
-  protected String endMultiLow = END_MULTI_LOW_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getEndMultiHigh() <em>End Multi High</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEndMultiHigh()
-   * @generated
-   * @ordered
-   */
-  protected static final String END_MULTI_HIGH_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getEndMultiHigh() <em>End Multi High</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEndMultiHigh()
-   * @generated
-   * @ordered
-   */
-  protected String endMultiHigh = END_MULTI_HIGH_EDEFAULT;
 
   /**
    * The default value of the '{@link #isIsEnd() <em>Is End</em>}' attribute.
@@ -453,26 +388,6 @@ public class SuccessionAsUsageImpl extends NonOccurrenceUsageElementImpl impleme
   protected EList<String> redefinitions;
 
   /**
-   * The default value of the '{@link #getMultiValue() <em>Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected static final String MULTI_VALUE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getMultiValue() <em>Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected String multiValue = MULTI_VALUE_EDEFAULT;
-
-  /**
    * The default value of the '{@link #getMultiLow() <em>Multi Low</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -666,81 +581,6 @@ public class SuccessionAsUsageImpl extends NonOccurrenceUsageElementImpl impleme
     isReturn = newIsReturn;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SUCCESSION_AS_USAGE__IS_RETURN, oldIsReturn, isReturn));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getEndMultiValue()
-  {
-    return endMultiValue;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setEndMultiValue(String newEndMultiValue)
-  {
-    String oldEndMultiValue = endMultiValue;
-    endMultiValue = newEndMultiValue;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SUCCESSION_AS_USAGE__END_MULTI_VALUE, oldEndMultiValue, endMultiValue));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getEndMultiLow()
-  {
-    return endMultiLow;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setEndMultiLow(String newEndMultiLow)
-  {
-    String oldEndMultiLow = endMultiLow;
-    endMultiLow = newEndMultiLow;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SUCCESSION_AS_USAGE__END_MULTI_LOW, oldEndMultiLow, endMultiLow));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getEndMultiHigh()
-  {
-    return endMultiHigh;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setEndMultiHigh(String newEndMultiHigh)
-  {
-    String oldEndMultiHigh = endMultiHigh;
-    endMultiHigh = newEndMultiHigh;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SUCCESSION_AS_USAGE__END_MULTI_HIGH, oldEndMultiHigh, endMultiHigh));
   }
 
   /**
@@ -1064,31 +904,6 @@ public class SuccessionAsUsageImpl extends NonOccurrenceUsageElementImpl impleme
    * @generated
    */
   @Override
-  public String getMultiValue()
-  {
-    return multiValue;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setMultiValue(String newMultiValue)
-  {
-    String oldMultiValue = multiValue;
-    multiValue = newMultiValue;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.SUCCESSION_AS_USAGE__MULTI_VALUE, oldMultiValue, multiValue));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public String getMultiLow()
   {
     return multiLow;
@@ -1247,12 +1062,6 @@ public class SuccessionAsUsageImpl extends NonOccurrenceUsageElementImpl impleme
         return isIsVariant();
       case SysMLOCPackage.SUCCESSION_AS_USAGE__IS_RETURN:
         return isIsReturn();
-      case SysMLOCPackage.SUCCESSION_AS_USAGE__END_MULTI_VALUE:
-        return getEndMultiValue();
-      case SysMLOCPackage.SUCCESSION_AS_USAGE__END_MULTI_LOW:
-        return getEndMultiLow();
-      case SysMLOCPackage.SUCCESSION_AS_USAGE__END_MULTI_HIGH:
-        return getEndMultiHigh();
       case SysMLOCPackage.SUCCESSION_AS_USAGE__IS_END:
         return isIsEnd();
       case SysMLOCPackage.SUCCESSION_AS_USAGE__IS_ABSTRACT:
@@ -1283,8 +1092,6 @@ public class SuccessionAsUsageImpl extends NonOccurrenceUsageElementImpl impleme
         return getCrosses();
       case SysMLOCPackage.SUCCESSION_AS_USAGE__REDEFINITIONS:
         return getRedefinitions();
-      case SysMLOCPackage.SUCCESSION_AS_USAGE__MULTI_VALUE:
-        return getMultiValue();
       case SysMLOCPackage.SUCCESSION_AS_USAGE__MULTI_LOW:
         return getMultiLow();
       case SysMLOCPackage.SUCCESSION_AS_USAGE__MULTI_HIGH:
@@ -1320,15 +1127,6 @@ public class SuccessionAsUsageImpl extends NonOccurrenceUsageElementImpl impleme
         return;
       case SysMLOCPackage.SUCCESSION_AS_USAGE__IS_RETURN:
         setIsReturn((Boolean)newValue);
-        return;
-      case SysMLOCPackage.SUCCESSION_AS_USAGE__END_MULTI_VALUE:
-        setEndMultiValue((String)newValue);
-        return;
-      case SysMLOCPackage.SUCCESSION_AS_USAGE__END_MULTI_LOW:
-        setEndMultiLow((String)newValue);
-        return;
-      case SysMLOCPackage.SUCCESSION_AS_USAGE__END_MULTI_HIGH:
-        setEndMultiHigh((String)newValue);
         return;
       case SysMLOCPackage.SUCCESSION_AS_USAGE__IS_END:
         setIsEnd((Boolean)newValue);
@@ -1381,9 +1179,6 @@ public class SuccessionAsUsageImpl extends NonOccurrenceUsageElementImpl impleme
         getRedefinitions().clear();
         getRedefinitions().addAll((Collection<? extends String>)newValue);
         return;
-      case SysMLOCPackage.SUCCESSION_AS_USAGE__MULTI_VALUE:
-        setMultiValue((String)newValue);
-        return;
       case SysMLOCPackage.SUCCESSION_AS_USAGE__MULTI_LOW:
         setMultiLow((String)newValue);
         return;
@@ -1426,15 +1221,6 @@ public class SuccessionAsUsageImpl extends NonOccurrenceUsageElementImpl impleme
         return;
       case SysMLOCPackage.SUCCESSION_AS_USAGE__IS_RETURN:
         setIsReturn(IS_RETURN_EDEFAULT);
-        return;
-      case SysMLOCPackage.SUCCESSION_AS_USAGE__END_MULTI_VALUE:
-        setEndMultiValue(END_MULTI_VALUE_EDEFAULT);
-        return;
-      case SysMLOCPackage.SUCCESSION_AS_USAGE__END_MULTI_LOW:
-        setEndMultiLow(END_MULTI_LOW_EDEFAULT);
-        return;
-      case SysMLOCPackage.SUCCESSION_AS_USAGE__END_MULTI_HIGH:
-        setEndMultiHigh(END_MULTI_HIGH_EDEFAULT);
         return;
       case SysMLOCPackage.SUCCESSION_AS_USAGE__IS_END:
         setIsEnd(IS_END_EDEFAULT);
@@ -1481,9 +1267,6 @@ public class SuccessionAsUsageImpl extends NonOccurrenceUsageElementImpl impleme
       case SysMLOCPackage.SUCCESSION_AS_USAGE__REDEFINITIONS:
         getRedefinitions().clear();
         return;
-      case SysMLOCPackage.SUCCESSION_AS_USAGE__MULTI_VALUE:
-        setMultiValue(MULTI_VALUE_EDEFAULT);
-        return;
       case SysMLOCPackage.SUCCESSION_AS_USAGE__MULTI_LOW:
         setMultiLow(MULTI_LOW_EDEFAULT);
         return;
@@ -1522,12 +1305,6 @@ public class SuccessionAsUsageImpl extends NonOccurrenceUsageElementImpl impleme
         return isVariant != IS_VARIANT_EDEFAULT;
       case SysMLOCPackage.SUCCESSION_AS_USAGE__IS_RETURN:
         return isReturn != IS_RETURN_EDEFAULT;
-      case SysMLOCPackage.SUCCESSION_AS_USAGE__END_MULTI_VALUE:
-        return END_MULTI_VALUE_EDEFAULT == null ? endMultiValue != null : !END_MULTI_VALUE_EDEFAULT.equals(endMultiValue);
-      case SysMLOCPackage.SUCCESSION_AS_USAGE__END_MULTI_LOW:
-        return END_MULTI_LOW_EDEFAULT == null ? endMultiLow != null : !END_MULTI_LOW_EDEFAULT.equals(endMultiLow);
-      case SysMLOCPackage.SUCCESSION_AS_USAGE__END_MULTI_HIGH:
-        return END_MULTI_HIGH_EDEFAULT == null ? endMultiHigh != null : !END_MULTI_HIGH_EDEFAULT.equals(endMultiHigh);
       case SysMLOCPackage.SUCCESSION_AS_USAGE__IS_END:
         return isEnd != IS_END_EDEFAULT;
       case SysMLOCPackage.SUCCESSION_AS_USAGE__IS_ABSTRACT:
@@ -1558,8 +1335,6 @@ public class SuccessionAsUsageImpl extends NonOccurrenceUsageElementImpl impleme
         return crosses != null && !crosses.isEmpty();
       case SysMLOCPackage.SUCCESSION_AS_USAGE__REDEFINITIONS:
         return redefinitions != null && !redefinitions.isEmpty();
-      case SysMLOCPackage.SUCCESSION_AS_USAGE__MULTI_VALUE:
-        return MULTI_VALUE_EDEFAULT == null ? multiValue != null : !MULTI_VALUE_EDEFAULT.equals(multiValue);
       case SysMLOCPackage.SUCCESSION_AS_USAGE__MULTI_LOW:
         return MULTI_LOW_EDEFAULT == null ? multiLow != null : !MULTI_LOW_EDEFAULT.equals(multiLow);
       case SysMLOCPackage.SUCCESSION_AS_USAGE__MULTI_HIGH:
@@ -1598,16 +1373,6 @@ public class SuccessionAsUsageImpl extends NonOccurrenceUsageElementImpl impleme
       switch (derivedFeatureID)
       {
         case SysMLOCPackage.SUCCESSION_AS_USAGE__IS_RETURN: return SysMLOCPackage.IS_RETURN_PREFIX__IS_RETURN;
-        default: return -1;
-      }
-    }
-    if (baseClass == EndMultiplicityRange.class)
-    {
-      switch (derivedFeatureID)
-      {
-        case SysMLOCPackage.SUCCESSION_AS_USAGE__END_MULTI_VALUE: return SysMLOCPackage.END_MULTIPLICITY_RANGE__END_MULTI_VALUE;
-        case SysMLOCPackage.SUCCESSION_AS_USAGE__END_MULTI_LOW: return SysMLOCPackage.END_MULTIPLICITY_RANGE__END_MULTI_LOW;
-        case SysMLOCPackage.SUCCESSION_AS_USAGE__END_MULTI_HIGH: return SysMLOCPackage.END_MULTIPLICITY_RANGE__END_MULTI_HIGH;
         default: return -1;
       }
     }
@@ -1735,7 +1500,6 @@ public class SuccessionAsUsageImpl extends NonOccurrenceUsageElementImpl impleme
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.SUCCESSION_AS_USAGE__MULTI_VALUE: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_VALUE;
         case SysMLOCPackage.SUCCESSION_AS_USAGE__MULTI_LOW: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_LOW;
         case SysMLOCPackage.SUCCESSION_AS_USAGE__MULTI_HIGH: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_HIGH;
         default: return -1;
@@ -1803,16 +1567,6 @@ public class SuccessionAsUsageImpl extends NonOccurrenceUsageElementImpl impleme
       switch (baseFeatureID)
       {
         case SysMLOCPackage.IS_RETURN_PREFIX__IS_RETURN: return SysMLOCPackage.SUCCESSION_AS_USAGE__IS_RETURN;
-        default: return -1;
-      }
-    }
-    if (baseClass == EndMultiplicityRange.class)
-    {
-      switch (baseFeatureID)
-      {
-        case SysMLOCPackage.END_MULTIPLICITY_RANGE__END_MULTI_VALUE: return SysMLOCPackage.SUCCESSION_AS_USAGE__END_MULTI_VALUE;
-        case SysMLOCPackage.END_MULTIPLICITY_RANGE__END_MULTI_LOW: return SysMLOCPackage.SUCCESSION_AS_USAGE__END_MULTI_LOW;
-        case SysMLOCPackage.END_MULTIPLICITY_RANGE__END_MULTI_HIGH: return SysMLOCPackage.SUCCESSION_AS_USAGE__END_MULTI_HIGH;
         default: return -1;
       }
     }
@@ -1940,7 +1694,6 @@ public class SuccessionAsUsageImpl extends NonOccurrenceUsageElementImpl impleme
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_VALUE: return SysMLOCPackage.SUCCESSION_AS_USAGE__MULTI_VALUE;
         case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_LOW: return SysMLOCPackage.SUCCESSION_AS_USAGE__MULTI_LOW;
         case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_HIGH: return SysMLOCPackage.SUCCESSION_AS_USAGE__MULTI_HIGH;
         default: return -1;
@@ -2003,12 +1756,6 @@ public class SuccessionAsUsageImpl extends NonOccurrenceUsageElementImpl impleme
     result.append(isVariant);
     result.append(", isReturn: ");
     result.append(isReturn);
-    result.append(", EndMultiValue: ");
-    result.append(endMultiValue);
-    result.append(", EndMultiLow: ");
-    result.append(endMultiLow);
-    result.append(", EndMultiHigh: ");
-    result.append(endMultiHigh);
     result.append(", isEnd: ");
     result.append(isEnd);
     result.append(", isAbstract: ");
@@ -2039,8 +1786,6 @@ public class SuccessionAsUsageImpl extends NonOccurrenceUsageElementImpl impleme
     result.append(crosses);
     result.append(", redefinitions: ");
     result.append(redefinitions);
-    result.append(", MultiValue: ");
-    result.append(multiValue);
     result.append(", MultiLow: ");
     result.append(multiLow);
     result.append(", MultiHigh: ");

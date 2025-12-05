@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.EmptySuccessionPrefix#isIsThen <em>Is Then</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.EmptySuccessionPrefix#getThenMultiValue <em>Then Multi Value</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.EmptySuccessionPrefix#getThenMultiLow <em>Then Multi Low</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.EmptySuccessionPrefix#getThenMultiHigh <em>Then Multi High</em>}</li>
  * </ul>
@@ -47,28 +46,6 @@ public interface EmptySuccessionPrefix extends EObject
    * @generated
    */
   void setIsThen(boolean value);
-
-  /**
-   * Returns the value of the '<em><b>Then Multi Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Then Multi Value</em>' attribute.
-   * @see #setThenMultiValue(String)
-   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getEmptySuccessionPrefix_ThenMultiValue()
-   * @model
-   * @generated
-   */
-  String getThenMultiValue();
-
-  /**
-   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.EmptySuccessionPrefix#getThenMultiValue <em>Then Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Then Multi Value</em>' attribute.
-   * @see #getThenMultiValue()
-   * @generated
-   */
-  void setThenMultiValue(String value);
 
   /**
    * Returns the value of the '<em><b>Then Multi Low</b></em>' attribute.

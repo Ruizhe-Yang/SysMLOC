@@ -60,7 +60,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EnumeratedValueImpl#getReferences <em>References</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EnumeratedValueImpl#getCrosses <em>Crosses</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EnumeratedValueImpl#getRedefinitions <em>Redefinitions</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EnumeratedValueImpl#getMultiValue <em>Multi Value</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EnumeratedValueImpl#getMultiLow <em>Multi Low</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EnumeratedValueImpl#getMultiHigh <em>Multi High</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.EnumeratedValueImpl#isIsOrdered <em>Is Ordered</em>}</li>
@@ -214,26 +213,6 @@ public class EnumeratedValueImpl extends EnumerationBodyElementImpl implements E
    * @ordered
    */
   protected EList<String> redefinitions;
-
-  /**
-   * The default value of the '{@link #getMultiValue() <em>Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected static final String MULTI_VALUE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getMultiValue() <em>Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected String multiValue = MULTI_VALUE_EDEFAULT;
 
   /**
    * The default value of the '{@link #getMultiLow() <em>Multi Low</em>}' attribute.
@@ -602,31 +581,6 @@ public class EnumeratedValueImpl extends EnumerationBodyElementImpl implements E
    * @generated
    */
   @Override
-  public String getMultiValue()
-  {
-    return multiValue;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setMultiValue(String newMultiValue)
-  {
-    String oldMultiValue = multiValue;
-    multiValue = newMultiValue;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ENUMERATED_VALUE__MULTI_VALUE, oldMultiValue, multiValue));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public String getMultiLow()
   {
     return multiLow;
@@ -857,8 +811,6 @@ public class EnumeratedValueImpl extends EnumerationBodyElementImpl implements E
         return getCrosses();
       case SysMLOCPackage.ENUMERATED_VALUE__REDEFINITIONS:
         return getRedefinitions();
-      case SysMLOCPackage.ENUMERATED_VALUE__MULTI_VALUE:
-        return getMultiValue();
       case SysMLOCPackage.ENUMERATED_VALUE__MULTI_LOW:
         return getMultiLow();
       case SysMLOCPackage.ENUMERATED_VALUE__MULTI_HIGH:
@@ -925,9 +877,6 @@ public class EnumeratedValueImpl extends EnumerationBodyElementImpl implements E
       case SysMLOCPackage.ENUMERATED_VALUE__REDEFINITIONS:
         getRedefinitions().clear();
         getRedefinitions().addAll((Collection<? extends String>)newValue);
-        return;
-      case SysMLOCPackage.ENUMERATED_VALUE__MULTI_VALUE:
-        setMultiValue((String)newValue);
         return;
       case SysMLOCPackage.ENUMERATED_VALUE__MULTI_LOW:
         setMultiLow((String)newValue);
@@ -998,9 +947,6 @@ public class EnumeratedValueImpl extends EnumerationBodyElementImpl implements E
       case SysMLOCPackage.ENUMERATED_VALUE__REDEFINITIONS:
         getRedefinitions().clear();
         return;
-      case SysMLOCPackage.ENUMERATED_VALUE__MULTI_VALUE:
-        setMultiValue(MULTI_VALUE_EDEFAULT);
-        return;
       case SysMLOCPackage.ENUMERATED_VALUE__MULTI_LOW:
         setMultiLow(MULTI_LOW_EDEFAULT);
         return;
@@ -1059,8 +1005,6 @@ public class EnumeratedValueImpl extends EnumerationBodyElementImpl implements E
         return crosses != null && !crosses.isEmpty();
       case SysMLOCPackage.ENUMERATED_VALUE__REDEFINITIONS:
         return redefinitions != null && !redefinitions.isEmpty();
-      case SysMLOCPackage.ENUMERATED_VALUE__MULTI_VALUE:
-        return MULTI_VALUE_EDEFAULT == null ? multiValue != null : !MULTI_VALUE_EDEFAULT.equals(multiValue);
       case SysMLOCPackage.ENUMERATED_VALUE__MULTI_LOW:
         return MULTI_LOW_EDEFAULT == null ? multiLow != null : !MULTI_LOW_EDEFAULT.equals(multiLow);
       case SysMLOCPackage.ENUMERATED_VALUE__MULTI_HIGH:
@@ -1173,7 +1117,6 @@ public class EnumeratedValueImpl extends EnumerationBodyElementImpl implements E
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.ENUMERATED_VALUE__MULTI_VALUE: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_VALUE;
         case SysMLOCPackage.ENUMERATED_VALUE__MULTI_LOW: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_LOW;
         case SysMLOCPackage.ENUMERATED_VALUE__MULTI_HIGH: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_HIGH;
         default: return -1;
@@ -1328,7 +1271,6 @@ public class EnumeratedValueImpl extends EnumerationBodyElementImpl implements E
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_VALUE: return SysMLOCPackage.ENUMERATED_VALUE__MULTI_VALUE;
         case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_LOW: return SysMLOCPackage.ENUMERATED_VALUE__MULTI_LOW;
         case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_HIGH: return SysMLOCPackage.ENUMERATED_VALUE__MULTI_HIGH;
         default: return -1;
@@ -1422,8 +1364,6 @@ public class EnumeratedValueImpl extends EnumerationBodyElementImpl implements E
     result.append(crosses);
     result.append(", redefinitions: ");
     result.append(redefinitions);
-    result.append(", MultiValue: ");
-    result.append(multiValue);
     result.append(", MultiLow: ");
     result.append(multiLow);
     result.append(", MultiHigh: ");

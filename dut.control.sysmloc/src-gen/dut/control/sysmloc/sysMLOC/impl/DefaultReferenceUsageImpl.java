@@ -64,7 +64,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DefaultReferenceUsageImpl#getReferences <em>References</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DefaultReferenceUsageImpl#getCrosses <em>Crosses</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DefaultReferenceUsageImpl#getRedefinitions <em>Redefinitions</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DefaultReferenceUsageImpl#getMultiValue <em>Multi Value</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DefaultReferenceUsageImpl#getMultiLow <em>Multi Low</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DefaultReferenceUsageImpl#getMultiHigh <em>Multi High</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DefaultReferenceUsageImpl#isIsOrdered <em>Is Ordered</em>}</li>
@@ -290,26 +289,6 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
    * @ordered
    */
   protected EList<String> redefinitions;
-
-  /**
-   * The default value of the '{@link #getMultiValue() <em>Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected static final String MULTI_VALUE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getMultiValue() <em>Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected String multiValue = MULTI_VALUE_EDEFAULT;
 
   /**
    * The default value of the '{@link #getMultiLow() <em>Multi Low</em>}' attribute.
@@ -803,31 +782,6 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
    * @generated
    */
   @Override
-  public String getMultiValue()
-  {
-    return multiValue;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setMultiValue(String newMultiValue)
-  {
-    String oldMultiValue = multiValue;
-    multiValue = newMultiValue;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.DEFAULT_REFERENCE_USAGE__MULTI_VALUE, oldMultiValue, multiValue));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public String getMultiLow()
   {
     return multiLow;
@@ -1114,8 +1068,6 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
         return getCrosses();
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__REDEFINITIONS:
         return getRedefinitions();
-      case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__MULTI_VALUE:
-        return getMultiValue();
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__MULTI_LOW:
         return getMultiLow();
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__MULTI_HIGH:
@@ -1194,9 +1146,6 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__REDEFINITIONS:
         getRedefinitions().clear();
         getRedefinitions().addAll((Collection<? extends String>)newValue);
-        return;
-      case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__MULTI_VALUE:
-        setMultiValue((String)newValue);
         return;
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__MULTI_LOW:
         setMultiLow((String)newValue);
@@ -1282,9 +1231,6 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__REDEFINITIONS:
         getRedefinitions().clear();
         return;
-      case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__MULTI_VALUE:
-        setMultiValue(MULTI_VALUE_EDEFAULT);
-        return;
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__MULTI_LOW:
         setMultiLow(MULTI_LOW_EDEFAULT);
         return;
@@ -1355,8 +1301,6 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
         return crosses != null && !crosses.isEmpty();
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__REDEFINITIONS:
         return redefinitions != null && !redefinitions.isEmpty();
-      case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__MULTI_VALUE:
-        return MULTI_VALUE_EDEFAULT == null ? multiValue != null : !MULTI_VALUE_EDEFAULT.equals(multiValue);
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__MULTI_LOW:
         return MULTI_LOW_EDEFAULT == null ? multiLow != null : !MULTI_LOW_EDEFAULT.equals(multiLow);
       case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__MULTI_HIGH:
@@ -1476,7 +1420,6 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__MULTI_VALUE: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_VALUE;
         case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__MULTI_LOW: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_LOW;
         case SysMLOCPackage.DEFAULT_REFERENCE_USAGE__MULTI_HIGH: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_HIGH;
         default: return -1;
@@ -1634,7 +1577,6 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_VALUE: return SysMLOCPackage.DEFAULT_REFERENCE_USAGE__MULTI_VALUE;
         case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_LOW: return SysMLOCPackage.DEFAULT_REFERENCE_USAGE__MULTI_LOW;
         case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_HIGH: return SysMLOCPackage.DEFAULT_REFERENCE_USAGE__MULTI_HIGH;
         default: return -1;
@@ -1734,8 +1676,6 @@ public class DefaultReferenceUsageImpl extends NonOccurrenceUsageElementImpl imp
     result.append(crosses);
     result.append(", redefinitions: ");
     result.append(redefinitions);
-    result.append(", MultiValue: ");
-    result.append(multiValue);
     result.append(", MultiLow: ");
     result.append(multiLow);
     result.append(", MultiHigh: ");

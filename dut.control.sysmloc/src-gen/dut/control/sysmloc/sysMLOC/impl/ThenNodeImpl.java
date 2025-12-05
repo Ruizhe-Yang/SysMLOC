@@ -36,7 +36,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ThenNodeImpl#getVisibility <em>Visibility</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ThenNodeImpl#isIsVariant <em>Is Variant</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ThenNodeImpl#getMultiValue <em>Multi Value</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ThenNodeImpl#getMultiLow <em>Multi Low</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ThenNodeImpl#getMultiHigh <em>Multi High</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ThenNodeImpl#getThenElement <em>Then Element</em>}</li>
@@ -86,26 +85,6 @@ public class ThenNodeImpl extends ActionNodeElementsImpl implements ThenNode
    * @ordered
    */
   protected boolean isVariant = IS_VARIANT_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getMultiValue() <em>Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected static final String MULTI_VALUE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getMultiValue() <em>Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected String multiValue = MULTI_VALUE_EDEFAULT;
 
   /**
    * The default value of the '{@link #getMultiLow() <em>Multi Low</em>}' attribute.
@@ -244,31 +223,6 @@ public class ThenNodeImpl extends ActionNodeElementsImpl implements ThenNode
    * @generated
    */
   @Override
-  public String getMultiValue()
-  {
-    return multiValue;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setMultiValue(String newMultiValue)
-  {
-    String oldMultiValue = multiValue;
-    multiValue = newMultiValue;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.THEN_NODE__MULTI_VALUE, oldMultiValue, multiValue));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public String getMultiLow()
   {
     return multiLow;
@@ -375,8 +329,6 @@ public class ThenNodeImpl extends ActionNodeElementsImpl implements ThenNode
         return getVisibility();
       case SysMLOCPackage.THEN_NODE__IS_VARIANT:
         return isIsVariant();
-      case SysMLOCPackage.THEN_NODE__MULTI_VALUE:
-        return getMultiValue();
       case SysMLOCPackage.THEN_NODE__MULTI_LOW:
         return getMultiLow();
       case SysMLOCPackage.THEN_NODE__MULTI_HIGH:
@@ -405,9 +357,6 @@ public class ThenNodeImpl extends ActionNodeElementsImpl implements ThenNode
         return;
       case SysMLOCPackage.THEN_NODE__IS_VARIANT:
         setIsVariant((Boolean)newValue);
-        return;
-      case SysMLOCPackage.THEN_NODE__MULTI_VALUE:
-        setMultiValue((String)newValue);
         return;
       case SysMLOCPackage.THEN_NODE__MULTI_LOW:
         setMultiLow((String)newValue);
@@ -443,9 +392,6 @@ public class ThenNodeImpl extends ActionNodeElementsImpl implements ThenNode
       case SysMLOCPackage.THEN_NODE__IS_VARIANT:
         setIsVariant(IS_VARIANT_EDEFAULT);
         return;
-      case SysMLOCPackage.THEN_NODE__MULTI_VALUE:
-        setMultiValue(MULTI_VALUE_EDEFAULT);
-        return;
       case SysMLOCPackage.THEN_NODE__MULTI_LOW:
         setMultiLow(MULTI_LOW_EDEFAULT);
         return;
@@ -476,8 +422,6 @@ public class ThenNodeImpl extends ActionNodeElementsImpl implements ThenNode
         return visibility != VISIBILITY_EDEFAULT;
       case SysMLOCPackage.THEN_NODE__IS_VARIANT:
         return isVariant != IS_VARIANT_EDEFAULT;
-      case SysMLOCPackage.THEN_NODE__MULTI_VALUE:
-        return MULTI_VALUE_EDEFAULT == null ? multiValue != null : !MULTI_VALUE_EDEFAULT.equals(multiValue);
       case SysMLOCPackage.THEN_NODE__MULTI_LOW:
         return MULTI_LOW_EDEFAULT == null ? multiLow != null : !MULTI_LOW_EDEFAULT.equals(multiLow);
       case SysMLOCPackage.THEN_NODE__MULTI_HIGH:
@@ -511,7 +455,6 @@ public class ThenNodeImpl extends ActionNodeElementsImpl implements ThenNode
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.THEN_NODE__MULTI_VALUE: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_VALUE;
         case SysMLOCPackage.THEN_NODE__MULTI_LOW: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_LOW;
         case SysMLOCPackage.THEN_NODE__MULTI_HIGH: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_HIGH;
         default: return -1;
@@ -541,7 +484,6 @@ public class ThenNodeImpl extends ActionNodeElementsImpl implements ThenNode
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_VALUE: return SysMLOCPackage.THEN_NODE__MULTI_VALUE;
         case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_LOW: return SysMLOCPackage.THEN_NODE__MULTI_LOW;
         case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_HIGH: return SysMLOCPackage.THEN_NODE__MULTI_HIGH;
         default: return -1;
@@ -565,8 +507,6 @@ public class ThenNodeImpl extends ActionNodeElementsImpl implements ThenNode
     result.append(visibility);
     result.append(", isVariant: ");
     result.append(isVariant);
-    result.append(", MultiValue: ");
-    result.append(multiValue);
     result.append(", MultiLow: ");
     result.append(multiLow);
     result.append(", MultiHigh: ");

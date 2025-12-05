@@ -41,7 +41,6 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FeatureDeclarationImpl#getReferences <em>References</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FeatureDeclarationImpl#getCrosses <em>Crosses</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FeatureDeclarationImpl#getRedefinitions <em>Redefinitions</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FeatureDeclarationImpl#getMultiValue <em>Multi Value</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FeatureDeclarationImpl#getMultiLow <em>Multi Low</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FeatureDeclarationImpl#getMultiHigh <em>Multi High</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FeatureDeclarationImpl#isIsOrdered <em>Is Ordered</em>}</li>
@@ -101,26 +100,6 @@ public class FeatureDeclarationImpl extends IdentificationImpl implements Featur
    * @ordered
    */
   protected EList<String> redefinitions;
-
-  /**
-   * The default value of the '{@link #getMultiValue() <em>Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected static final String MULTI_VALUE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getMultiValue() <em>Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected String multiValue = MULTI_VALUE_EDEFAULT;
 
   /**
    * The default value of the '{@link #getMultiLow() <em>Multi Low</em>}' attribute.
@@ -304,31 +283,6 @@ public class FeatureDeclarationImpl extends IdentificationImpl implements Featur
    * @generated
    */
   @Override
-  public String getMultiValue()
-  {
-    return multiValue;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setMultiValue(String newMultiValue)
-  {
-    String oldMultiValue = multiValue;
-    multiValue = newMultiValue;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.FEATURE_DECLARATION__MULTI_VALUE, oldMultiValue, multiValue));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public String getMultiLow()
   {
     return multiLow;
@@ -443,8 +397,6 @@ public class FeatureDeclarationImpl extends IdentificationImpl implements Featur
         return getCrosses();
       case SysMLOCPackage.FEATURE_DECLARATION__REDEFINITIONS:
         return getRedefinitions();
-      case SysMLOCPackage.FEATURE_DECLARATION__MULTI_VALUE:
-        return getMultiValue();
       case SysMLOCPackage.FEATURE_DECLARATION__MULTI_LOW:
         return getMultiLow();
       case SysMLOCPackage.FEATURE_DECLARATION__MULTI_HIGH:
@@ -488,9 +440,6 @@ public class FeatureDeclarationImpl extends IdentificationImpl implements Featur
         getRedefinitions().clear();
         getRedefinitions().addAll((Collection<? extends String>)newValue);
         return;
-      case SysMLOCPackage.FEATURE_DECLARATION__MULTI_VALUE:
-        setMultiValue((String)newValue);
-        return;
       case SysMLOCPackage.FEATURE_DECLARATION__MULTI_LOW:
         setMultiLow((String)newValue);
         return;
@@ -532,9 +481,6 @@ public class FeatureDeclarationImpl extends IdentificationImpl implements Featur
       case SysMLOCPackage.FEATURE_DECLARATION__REDEFINITIONS:
         getRedefinitions().clear();
         return;
-      case SysMLOCPackage.FEATURE_DECLARATION__MULTI_VALUE:
-        setMultiValue(MULTI_VALUE_EDEFAULT);
-        return;
       case SysMLOCPackage.FEATURE_DECLARATION__MULTI_LOW:
         setMultiLow(MULTI_LOW_EDEFAULT);
         return;
@@ -571,8 +517,6 @@ public class FeatureDeclarationImpl extends IdentificationImpl implements Featur
         return crosses != null && !crosses.isEmpty();
       case SysMLOCPackage.FEATURE_DECLARATION__REDEFINITIONS:
         return redefinitions != null && !redefinitions.isEmpty();
-      case SysMLOCPackage.FEATURE_DECLARATION__MULTI_VALUE:
-        return MULTI_VALUE_EDEFAULT == null ? multiValue != null : !MULTI_VALUE_EDEFAULT.equals(multiValue);
       case SysMLOCPackage.FEATURE_DECLARATION__MULTI_LOW:
         return MULTI_LOW_EDEFAULT == null ? multiLow != null : !MULTI_LOW_EDEFAULT.equals(multiLow);
       case SysMLOCPackage.FEATURE_DECLARATION__MULTI_HIGH:
@@ -644,7 +588,6 @@ public class FeatureDeclarationImpl extends IdentificationImpl implements Featur
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.FEATURE_DECLARATION__MULTI_VALUE: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_VALUE;
         case SysMLOCPackage.FEATURE_DECLARATION__MULTI_LOW: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_LOW;
         case SysMLOCPackage.FEATURE_DECLARATION__MULTI_HIGH: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_HIGH;
         default: return -1;
@@ -735,7 +678,6 @@ public class FeatureDeclarationImpl extends IdentificationImpl implements Featur
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_VALUE: return SysMLOCPackage.FEATURE_DECLARATION__MULTI_VALUE;
         case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_LOW: return SysMLOCPackage.FEATURE_DECLARATION__MULTI_LOW;
         case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_HIGH: return SysMLOCPackage.FEATURE_DECLARATION__MULTI_HIGH;
         default: return -1;
@@ -788,8 +730,6 @@ public class FeatureDeclarationImpl extends IdentificationImpl implements Featur
     result.append(crosses);
     result.append(", redefinitions: ");
     result.append(redefinitions);
-    result.append(", MultiValue: ");
-    result.append(multiValue);
     result.append(", MultiLow: ");
     result.append(multiLow);
     result.append(", MultiHigh: ");

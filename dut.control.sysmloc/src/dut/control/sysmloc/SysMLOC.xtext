@@ -1016,8 +1016,12 @@ TerminateNode:
 	OccurrenceUsagePrefix
 	ActionNodeUsageDeclaration?
 	'terminate'
-	NodeParameter=Expression
-	( ';' | '{' (elements+=ActionBodyElement)* '}' )
+	( isSemicolon ?= ';' |
+		NodeParameter=Expression
+		(  isSemicolon ?= ';' | '{' (elements+=ActionBodyElement)* '}' )
+	)
+//	NodeParameter=Expression
+//	( ';' | '{' (elements+=ActionBodyElement)* '}' )
 ;
 
 CommonNode:
@@ -1203,12 +1207,14 @@ fragment DefinitionExtensionKeyword:
 fragment EmptySuccessionPrefix:
 	( isThen ?= 'then' )?
 //	( '[' ThenMultiplicity += MultiplicityExpression ']' | '[' ThenMultiplicity += MultiplicityExpression '..' ThenMultiplicity += MultiplicityExpression ']')?
-	('[' ThenMultiValue = MultiplicityExpression ']' | '[' ThenMultiLow = MultiplicityExpression '..' ThenMultiHigh = MultiplicityExpression ']')?
+//	('[' ThenMultiValue = MultiplicityExpression ']' | '[' ThenMultiLow = MultiplicityExpression '..' ThenMultiHigh = MultiplicityExpression ']')?
+	('[' ThenMultiLow = MultiplicityExpression ']' ( '..' ThenMultiHigh = MultiplicityExpression )? ']')?
 ;
 
 fragment MultiplicityRange:
 //	'[' Multiplicity += MultiplicityExpression ']' | '[' Multiplicity += MultiplicityExpression '..' Multiplicity += MultiplicityExpression ']'
-	'[' MultiValue = MultiplicityExpression ']' | '[' MultiLow = MultiplicityExpression '..' MultiHigh = MultiplicityExpression ']'
+//	'[' MultiValue = MultiplicityExpression ']' | '[' MultiLow = MultiplicityExpression '..' MultiHigh = MultiplicityExpression ']'
+	'[' MultiLow = MultiplicityExpression ']' ( '..' MultiHigh = MultiplicityExpression )? ']'
 ;
 
 fragment ValuePart:
@@ -1251,13 +1257,19 @@ fragment UnextendedUsagePrefix:
 
 fragment EndUsagePrefix:
 	isEnd ?= 'end' 
+//	| isEnd ?= 'end' EndMultiplicityRange
 //	( isCross?='[*]' )?
-//	( crossEndUsage += CrossEndUsage )?
-	EndMultiplicityRange?
+//	( crossEndUsage = CrossEndUsage )?
+//	CrossEndUsagePrefix?
 ;
 
-fragment EndMultiplicityRange:
-	'[' EndMultiValue = MultiplicityExpression ']' | '[' EndMultiLow = MultiplicityExpression '..' EndMultiHigh = MultiplicityExpression ']'
+fragment CrossEndUsagePrefix:
+	crossEndUsage = CrossEndUsage
+;
+
+CrossEndUsage:
+//	BasicUsagePrefix 
+	FeatureDeclaration
 ;
 
 fragment OccurrenceUsagePrefix:

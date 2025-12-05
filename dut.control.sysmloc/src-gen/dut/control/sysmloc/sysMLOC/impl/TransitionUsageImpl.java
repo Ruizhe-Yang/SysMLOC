@@ -57,7 +57,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.TransitionUsageImpl#isIsThen <em>Is Then</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.TransitionUsageImpl#getThenMultiValue <em>Then Multi Value</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.TransitionUsageImpl#getThenMultiLow <em>Then Multi Low</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.TransitionUsageImpl#getThenMultiHigh <em>Then Multi High</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.TransitionUsageImpl#getVisibility <em>Visibility</em>}</li>
@@ -70,7 +69,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.TransitionUsageImpl#getReferences <em>References</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.TransitionUsageImpl#getCrosses <em>Crosses</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.TransitionUsageImpl#getRedefinitions <em>Redefinitions</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.TransitionUsageImpl#getMultiValue <em>Multi Value</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.TransitionUsageImpl#getMultiLow <em>Multi Low</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.TransitionUsageImpl#getMultiHigh <em>Multi High</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.TransitionUsageImpl#isIsOrdered <em>Is Ordered</em>}</li>
@@ -106,26 +104,6 @@ public class TransitionUsageImpl extends StateNodeElementsImpl implements Transi
    * @ordered
    */
   protected boolean isThen = IS_THEN_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getThenMultiValue() <em>Then Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getThenMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected static final String THEN_MULTI_VALUE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getThenMultiValue() <em>Then Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getThenMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected String thenMultiValue = THEN_MULTI_VALUE_EDEFAULT;
 
   /**
    * The default value of the '{@link #getThenMultiLow() <em>Then Multi Low</em>}' attribute.
@@ -316,26 +294,6 @@ public class TransitionUsageImpl extends StateNodeElementsImpl implements Transi
    * @ordered
    */
   protected EList<String> redefinitions;
-
-  /**
-   * The default value of the '{@link #getMultiValue() <em>Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected static final String MULTI_VALUE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getMultiValue() <em>Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected String multiValue = MULTI_VALUE_EDEFAULT;
 
   /**
    * The default value of the '{@link #getMultiLow() <em>Multi Low</em>}' attribute.
@@ -541,31 +499,6 @@ public class TransitionUsageImpl extends StateNodeElementsImpl implements Transi
     isThen = newIsThen;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.TRANSITION_USAGE__IS_THEN, oldIsThen, isThen));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getThenMultiValue()
-  {
-    return thenMultiValue;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setThenMultiValue(String newThenMultiValue)
-  {
-    String oldThenMultiValue = thenMultiValue;
-    thenMultiValue = newThenMultiValue;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.TRANSITION_USAGE__THEN_MULTI_VALUE, oldThenMultiValue, thenMultiValue));
   }
 
   /**
@@ -816,31 +749,6 @@ public class TransitionUsageImpl extends StateNodeElementsImpl implements Transi
       redefinitions = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.TRANSITION_USAGE__REDEFINITIONS);
     }
     return redefinitions;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getMultiValue()
-  {
-    return multiValue;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setMultiValue(String newMultiValue)
-  {
-    String oldMultiValue = multiValue;
-    multiValue = newMultiValue;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.TRANSITION_USAGE__MULTI_VALUE, oldMultiValue, multiValue));
   }
 
   /**
@@ -1122,8 +1030,6 @@ public class TransitionUsageImpl extends StateNodeElementsImpl implements Transi
     {
       case SysMLOCPackage.TRANSITION_USAGE__IS_THEN:
         return isIsThen();
-      case SysMLOCPackage.TRANSITION_USAGE__THEN_MULTI_VALUE:
-        return getThenMultiValue();
       case SysMLOCPackage.TRANSITION_USAGE__THEN_MULTI_LOW:
         return getThenMultiLow();
       case SysMLOCPackage.TRANSITION_USAGE__THEN_MULTI_HIGH:
@@ -1148,8 +1054,6 @@ public class TransitionUsageImpl extends StateNodeElementsImpl implements Transi
         return getCrosses();
       case SysMLOCPackage.TRANSITION_USAGE__REDEFINITIONS:
         return getRedefinitions();
-      case SysMLOCPackage.TRANSITION_USAGE__MULTI_VALUE:
-        return getMultiValue();
       case SysMLOCPackage.TRANSITION_USAGE__MULTI_LOW:
         return getMultiLow();
       case SysMLOCPackage.TRANSITION_USAGE__MULTI_HIGH:
@@ -1187,9 +1091,6 @@ public class TransitionUsageImpl extends StateNodeElementsImpl implements Transi
     {
       case SysMLOCPackage.TRANSITION_USAGE__IS_THEN:
         setIsThen((Boolean)newValue);
-        return;
-      case SysMLOCPackage.TRANSITION_USAGE__THEN_MULTI_VALUE:
-        setThenMultiValue((String)newValue);
         return;
       case SysMLOCPackage.TRANSITION_USAGE__THEN_MULTI_LOW:
         setThenMultiLow((String)newValue);
@@ -1231,9 +1132,6 @@ public class TransitionUsageImpl extends StateNodeElementsImpl implements Transi
       case SysMLOCPackage.TRANSITION_USAGE__REDEFINITIONS:
         getRedefinitions().clear();
         getRedefinitions().addAll((Collection<? extends String>)newValue);
-        return;
-      case SysMLOCPackage.TRANSITION_USAGE__MULTI_VALUE:
-        setMultiValue((String)newValue);
         return;
       case SysMLOCPackage.TRANSITION_USAGE__MULTI_LOW:
         setMultiLow((String)newValue);
@@ -1285,9 +1183,6 @@ public class TransitionUsageImpl extends StateNodeElementsImpl implements Transi
       case SysMLOCPackage.TRANSITION_USAGE__IS_THEN:
         setIsThen(IS_THEN_EDEFAULT);
         return;
-      case SysMLOCPackage.TRANSITION_USAGE__THEN_MULTI_VALUE:
-        setThenMultiValue(THEN_MULTI_VALUE_EDEFAULT);
-        return;
       case SysMLOCPackage.TRANSITION_USAGE__THEN_MULTI_LOW:
         setThenMultiLow(THEN_MULTI_LOW_EDEFAULT);
         return;
@@ -1323,9 +1218,6 @@ public class TransitionUsageImpl extends StateNodeElementsImpl implements Transi
         return;
       case SysMLOCPackage.TRANSITION_USAGE__REDEFINITIONS:
         getRedefinitions().clear();
-        return;
-      case SysMLOCPackage.TRANSITION_USAGE__MULTI_VALUE:
-        setMultiValue(MULTI_VALUE_EDEFAULT);
         return;
       case SysMLOCPackage.TRANSITION_USAGE__MULTI_LOW:
         setMultiLow(MULTI_LOW_EDEFAULT);
@@ -1373,8 +1265,6 @@ public class TransitionUsageImpl extends StateNodeElementsImpl implements Transi
     {
       case SysMLOCPackage.TRANSITION_USAGE__IS_THEN:
         return isThen != IS_THEN_EDEFAULT;
-      case SysMLOCPackage.TRANSITION_USAGE__THEN_MULTI_VALUE:
-        return THEN_MULTI_VALUE_EDEFAULT == null ? thenMultiValue != null : !THEN_MULTI_VALUE_EDEFAULT.equals(thenMultiValue);
       case SysMLOCPackage.TRANSITION_USAGE__THEN_MULTI_LOW:
         return THEN_MULTI_LOW_EDEFAULT == null ? thenMultiLow != null : !THEN_MULTI_LOW_EDEFAULT.equals(thenMultiLow);
       case SysMLOCPackage.TRANSITION_USAGE__THEN_MULTI_HIGH:
@@ -1399,8 +1289,6 @@ public class TransitionUsageImpl extends StateNodeElementsImpl implements Transi
         return crosses != null && !crosses.isEmpty();
       case SysMLOCPackage.TRANSITION_USAGE__REDEFINITIONS:
         return redefinitions != null && !redefinitions.isEmpty();
-      case SysMLOCPackage.TRANSITION_USAGE__MULTI_VALUE:
-        return MULTI_VALUE_EDEFAULT == null ? multiValue != null : !MULTI_VALUE_EDEFAULT.equals(multiValue);
       case SysMLOCPackage.TRANSITION_USAGE__MULTI_LOW:
         return MULTI_LOW_EDEFAULT == null ? multiLow != null : !MULTI_LOW_EDEFAULT.equals(multiLow);
       case SysMLOCPackage.TRANSITION_USAGE__MULTI_HIGH:
@@ -1438,7 +1326,6 @@ public class TransitionUsageImpl extends StateNodeElementsImpl implements Transi
       switch (derivedFeatureID)
       {
         case SysMLOCPackage.TRANSITION_USAGE__IS_THEN: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__IS_THEN;
-        case SysMLOCPackage.TRANSITION_USAGE__THEN_MULTI_VALUE: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_VALUE;
         case SysMLOCPackage.TRANSITION_USAGE__THEN_MULTI_LOW: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_LOW;
         case SysMLOCPackage.TRANSITION_USAGE__THEN_MULTI_HIGH: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_HIGH;
         default: return -1;
@@ -1528,7 +1415,6 @@ public class TransitionUsageImpl extends StateNodeElementsImpl implements Transi
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.TRANSITION_USAGE__MULTI_VALUE: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_VALUE;
         case SysMLOCPackage.TRANSITION_USAGE__MULTI_LOW: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_LOW;
         case SysMLOCPackage.TRANSITION_USAGE__MULTI_HIGH: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_HIGH;
         default: return -1;
@@ -1619,7 +1505,6 @@ public class TransitionUsageImpl extends StateNodeElementsImpl implements Transi
       switch (baseFeatureID)
       {
         case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__IS_THEN: return SysMLOCPackage.TRANSITION_USAGE__IS_THEN;
-        case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_VALUE: return SysMLOCPackage.TRANSITION_USAGE__THEN_MULTI_VALUE;
         case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_LOW: return SysMLOCPackage.TRANSITION_USAGE__THEN_MULTI_LOW;
         case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_HIGH: return SysMLOCPackage.TRANSITION_USAGE__THEN_MULTI_HIGH;
         default: return -1;
@@ -1709,7 +1594,6 @@ public class TransitionUsageImpl extends StateNodeElementsImpl implements Transi
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_VALUE: return SysMLOCPackage.TRANSITION_USAGE__MULTI_VALUE;
         case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_LOW: return SysMLOCPackage.TRANSITION_USAGE__MULTI_LOW;
         case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_HIGH: return SysMLOCPackage.TRANSITION_USAGE__MULTI_HIGH;
         default: return -1;
@@ -1800,8 +1684,6 @@ public class TransitionUsageImpl extends StateNodeElementsImpl implements Transi
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (isThen: ");
     result.append(isThen);
-    result.append(", ThenMultiValue: ");
-    result.append(thenMultiValue);
     result.append(", ThenMultiLow: ");
     result.append(thenMultiLow);
     result.append(", ThenMultiHigh: ");
@@ -1826,8 +1708,6 @@ public class TransitionUsageImpl extends StateNodeElementsImpl implements Transi
     result.append(crosses);
     result.append(", redefinitions: ");
     result.append(redefinitions);
-    result.append(", MultiValue: ");
-    result.append(multiValue);
     result.append(", MultiLow: ");
     result.append(multiLow);
     result.append(", MultiHigh: ");

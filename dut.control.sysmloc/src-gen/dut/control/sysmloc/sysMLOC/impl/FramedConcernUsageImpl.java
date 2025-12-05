@@ -64,7 +64,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FramedConcernUsageImpl#getPrefixMetadataExtension <em>Prefix Metadata Extension</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FramedConcernUsageImpl#getDeclaredShortName <em>Declared Short Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FramedConcernUsageImpl#getDeclaredName <em>Declared Name</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FramedConcernUsageImpl#getMultiValue <em>Multi Value</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FramedConcernUsageImpl#getMultiLow <em>Multi Low</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FramedConcernUsageImpl#getMultiHigh <em>Multi High</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.FramedConcernUsageImpl#isIsOrdered <em>Is Ordered</em>}</li>
@@ -239,26 +238,6 @@ public class FramedConcernUsageImpl extends RequirementNodeElementsImpl implemen
    * @ordered
    */
   protected String declaredName = DECLARED_NAME_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getMultiValue() <em>Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected static final String MULTI_VALUE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getMultiValue() <em>Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected String multiValue = MULTI_VALUE_EDEFAULT;
 
   /**
    * The default value of the '{@link #getMultiLow() <em>Multi Low</em>}' attribute.
@@ -662,31 +641,6 @@ public class FramedConcernUsageImpl extends RequirementNodeElementsImpl implemen
    * @generated
    */
   @Override
-  public String getMultiValue()
-  {
-    return multiValue;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setMultiValue(String newMultiValue)
-  {
-    String oldMultiValue = multiValue;
-    multiValue = newMultiValue;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.FRAMED_CONCERN_USAGE__MULTI_VALUE, oldMultiValue, multiValue));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public String getMultiLow()
   {
     return multiLow;
@@ -936,8 +890,6 @@ public class FramedConcernUsageImpl extends RequirementNodeElementsImpl implemen
         return getDeclaredShortName();
       case SysMLOCPackage.FRAMED_CONCERN_USAGE__DECLARED_NAME:
         return getDeclaredName();
-      case SysMLOCPackage.FRAMED_CONCERN_USAGE__MULTI_VALUE:
-        return getMultiValue();
       case SysMLOCPackage.FRAMED_CONCERN_USAGE__MULTI_LOW:
         return getMultiLow();
       case SysMLOCPackage.FRAMED_CONCERN_USAGE__MULTI_HIGH:
@@ -1009,9 +961,6 @@ public class FramedConcernUsageImpl extends RequirementNodeElementsImpl implemen
         return;
       case SysMLOCPackage.FRAMED_CONCERN_USAGE__DECLARED_NAME:
         setDeclaredName((String)newValue);
-        return;
-      case SysMLOCPackage.FRAMED_CONCERN_USAGE__MULTI_VALUE:
-        setMultiValue((String)newValue);
         return;
       case SysMLOCPackage.FRAMED_CONCERN_USAGE__MULTI_LOW:
         setMultiLow((String)newValue);
@@ -1089,9 +1038,6 @@ public class FramedConcernUsageImpl extends RequirementNodeElementsImpl implemen
       case SysMLOCPackage.FRAMED_CONCERN_USAGE__DECLARED_NAME:
         setDeclaredName(DECLARED_NAME_EDEFAULT);
         return;
-      case SysMLOCPackage.FRAMED_CONCERN_USAGE__MULTI_VALUE:
-        setMultiValue(MULTI_VALUE_EDEFAULT);
-        return;
       case SysMLOCPackage.FRAMED_CONCERN_USAGE__MULTI_LOW:
         setMultiLow(MULTI_LOW_EDEFAULT);
         return;
@@ -1155,8 +1101,6 @@ public class FramedConcernUsageImpl extends RequirementNodeElementsImpl implemen
         return DECLARED_SHORT_NAME_EDEFAULT == null ? declaredShortName != null : !DECLARED_SHORT_NAME_EDEFAULT.equals(declaredShortName);
       case SysMLOCPackage.FRAMED_CONCERN_USAGE__DECLARED_NAME:
         return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
-      case SysMLOCPackage.FRAMED_CONCERN_USAGE__MULTI_VALUE:
-        return MULTI_VALUE_EDEFAULT == null ? multiValue != null : !MULTI_VALUE_EDEFAULT.equals(multiValue);
       case SysMLOCPackage.FRAMED_CONCERN_USAGE__MULTI_LOW:
         return MULTI_LOW_EDEFAULT == null ? multiLow != null : !MULTI_LOW_EDEFAULT.equals(multiLow);
       case SysMLOCPackage.FRAMED_CONCERN_USAGE__MULTI_HIGH:
@@ -1279,7 +1223,6 @@ public class FramedConcernUsageImpl extends RequirementNodeElementsImpl implemen
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.FRAMED_CONCERN_USAGE__MULTI_VALUE: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_VALUE;
         case SysMLOCPackage.FRAMED_CONCERN_USAGE__MULTI_LOW: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_LOW;
         case SysMLOCPackage.FRAMED_CONCERN_USAGE__MULTI_HIGH: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_HIGH;
         default: return -1;
@@ -1449,7 +1392,6 @@ public class FramedConcernUsageImpl extends RequirementNodeElementsImpl implemen
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_VALUE: return SysMLOCPackage.FRAMED_CONCERN_USAGE__MULTI_VALUE;
         case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_LOW: return SysMLOCPackage.FRAMED_CONCERN_USAGE__MULTI_LOW;
         case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_HIGH: return SysMLOCPackage.FRAMED_CONCERN_USAGE__MULTI_HIGH;
         default: return -1;
@@ -1552,8 +1494,6 @@ public class FramedConcernUsageImpl extends RequirementNodeElementsImpl implemen
     result.append(declaredShortName);
     result.append(", declaredName: ");
     result.append(declaredName);
-    result.append(", MultiValue: ");
-    result.append(multiValue);
     result.append(", MultiLow: ");
     result.append(multiLow);
     result.append(", MultiHigh: ");

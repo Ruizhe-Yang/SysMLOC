@@ -405,6 +405,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//ForLoopNode/elements"/>
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//TerminateNode">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//TerminateNode/isSemicolon"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//TerminateNode/NodeParameter"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//TerminateNode/elements"/>
     </genClasses>
@@ -481,12 +482,10 @@
     <genClasses ecoreClass="SysMLOC.ecore#//DefinitionExtensionKeyword"/>
     <genClasses ecoreClass="SysMLOC.ecore#//EmptySuccessionPrefix">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//EmptySuccessionPrefix/isThen"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//EmptySuccessionPrefix/ThenMultiValue"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//EmptySuccessionPrefix/ThenMultiLow"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//EmptySuccessionPrefix/ThenMultiHigh"/>
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//MultiplicityRange">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//MultiplicityRange/MultiValue"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//MultiplicityRange/MultiLow"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//MultiplicityRange/MultiHigh"/>
     </genClasses>
@@ -511,11 +510,10 @@
     <genClasses ecoreClass="SysMLOC.ecore#//EndUsagePrefix">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//EndUsagePrefix/isEnd"/>
     </genClasses>
-    <genClasses ecoreClass="SysMLOC.ecore#//EndMultiplicityRange">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//EndMultiplicityRange/EndMultiValue"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//EndMultiplicityRange/EndMultiLow"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//EndMultiplicityRange/EndMultiHigh"/>
+    <genClasses ecoreClass="SysMLOC.ecore#//CrossEndUsagePrefix">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//CrossEndUsagePrefix/crossEndUsage"/>
     </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//CrossEndUsage"/>
     <genClasses ecoreClass="SysMLOC.ecore#//OccurrenceUsagePrefix">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//OccurrenceUsagePrefix/isIndividual"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//OccurrenceUsagePrefix/portionKind"/>

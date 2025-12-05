@@ -65,7 +65,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.RequirementConstraintUsageImpl#getPrefixMetadataExtension <em>Prefix Metadata Extension</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.RequirementConstraintUsageImpl#getDeclaredShortName <em>Declared Short Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.RequirementConstraintUsageImpl#getDeclaredName <em>Declared Name</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.RequirementConstraintUsageImpl#getMultiValue <em>Multi Value</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.RequirementConstraintUsageImpl#getMultiLow <em>Multi Low</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.RequirementConstraintUsageImpl#getMultiHigh <em>Multi High</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.RequirementConstraintUsageImpl#isIsOrdered <em>Is Ordered</em>}</li>
@@ -241,26 +240,6 @@ public class RequirementConstraintUsageImpl extends RequirementNodeElementsImpl 
    * @ordered
    */
   protected String declaredName = DECLARED_NAME_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getMultiValue() <em>Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected static final String MULTI_VALUE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getMultiValue() <em>Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected String multiValue = MULTI_VALUE_EDEFAULT;
 
   /**
    * The default value of the '{@link #getMultiLow() <em>Multi Low</em>}' attribute.
@@ -684,31 +663,6 @@ public class RequirementConstraintUsageImpl extends RequirementNodeElementsImpl 
    * @generated
    */
   @Override
-  public String getMultiValue()
-  {
-    return multiValue;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setMultiValue(String newMultiValue)
-  {
-    String oldMultiValue = multiValue;
-    multiValue = newMultiValue;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__MULTI_VALUE, oldMultiValue, multiValue));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public String getMultiLow()
   {
     return multiLow;
@@ -983,8 +937,6 @@ public class RequirementConstraintUsageImpl extends RequirementNodeElementsImpl 
         return getDeclaredShortName();
       case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__DECLARED_NAME:
         return getDeclaredName();
-      case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__MULTI_VALUE:
-        return getMultiValue();
       case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__MULTI_LOW:
         return getMultiLow();
       case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__MULTI_HIGH:
@@ -1058,9 +1010,6 @@ public class RequirementConstraintUsageImpl extends RequirementNodeElementsImpl 
         return;
       case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__DECLARED_NAME:
         setDeclaredName((String)newValue);
-        return;
-      case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__MULTI_VALUE:
-        setMultiValue((String)newValue);
         return;
       case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__MULTI_LOW:
         setMultiLow((String)newValue);
@@ -1141,9 +1090,6 @@ public class RequirementConstraintUsageImpl extends RequirementNodeElementsImpl 
       case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__DECLARED_NAME:
         setDeclaredName(DECLARED_NAME_EDEFAULT);
         return;
-      case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__MULTI_VALUE:
-        setMultiValue(MULTI_VALUE_EDEFAULT);
-        return;
       case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__MULTI_LOW:
         setMultiLow(MULTI_LOW_EDEFAULT);
         return;
@@ -1210,8 +1156,6 @@ public class RequirementConstraintUsageImpl extends RequirementNodeElementsImpl 
         return DECLARED_SHORT_NAME_EDEFAULT == null ? declaredShortName != null : !DECLARED_SHORT_NAME_EDEFAULT.equals(declaredShortName);
       case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__DECLARED_NAME:
         return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
-      case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__MULTI_VALUE:
-        return MULTI_VALUE_EDEFAULT == null ? multiValue != null : !MULTI_VALUE_EDEFAULT.equals(multiValue);
       case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__MULTI_LOW:
         return MULTI_LOW_EDEFAULT == null ? multiLow != null : !MULTI_LOW_EDEFAULT.equals(multiLow);
       case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__MULTI_HIGH:
@@ -1336,7 +1280,6 @@ public class RequirementConstraintUsageImpl extends RequirementNodeElementsImpl 
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__MULTI_VALUE: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_VALUE;
         case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__MULTI_LOW: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_LOW;
         case SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__MULTI_HIGH: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_HIGH;
         default: return -1;
@@ -1506,7 +1449,6 @@ public class RequirementConstraintUsageImpl extends RequirementNodeElementsImpl 
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_VALUE: return SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__MULTI_VALUE;
         case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_LOW: return SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__MULTI_LOW;
         case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_HIGH: return SysMLOCPackage.REQUIREMENT_CONSTRAINT_USAGE__MULTI_HIGH;
         default: return -1;
@@ -1609,8 +1551,6 @@ public class RequirementConstraintUsageImpl extends RequirementNodeElementsImpl 
     result.append(declaredShortName);
     result.append(", declaredName: ");
     result.append(declaredName);
-    result.append(", MultiValue: ");
-    result.append(multiValue);
     result.append(", MultiLow: ");
     result.append(multiLow);
     result.append(", MultiHigh: ");

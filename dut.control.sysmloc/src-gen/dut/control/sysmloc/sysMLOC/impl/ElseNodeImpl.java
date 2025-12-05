@@ -13,7 +13,6 @@ import dut.control.sysmloc.sysMLOC.ConnectorEnd;
 import dut.control.sysmloc.sysMLOC.CrossFeatureChain;
 import dut.control.sysmloc.sysMLOC.ElseNode;
 import dut.control.sysmloc.sysMLOC.EmptySuccessionPrefix;
-import dut.control.sysmloc.sysMLOC.EndMultiplicityRange;
 import dut.control.sysmloc.sysMLOC.EndUsagePrefix;
 import dut.control.sysmloc.sysMLOC.FeatureDeclaration;
 import dut.control.sysmloc.sysMLOC.FeatureDirection;
@@ -62,14 +61,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ElseNodeImpl#isIsThen <em>Is Then</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ElseNodeImpl#getThenMultiValue <em>Then Multi Value</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ElseNodeImpl#getThenMultiLow <em>Then Multi Low</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ElseNodeImpl#getThenMultiHigh <em>Then Multi High</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ElseNodeImpl#getVisibility <em>Visibility</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ElseNodeImpl#isIsVariant <em>Is Variant</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ElseNodeImpl#getEndMultiValue <em>End Multi Value</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ElseNodeImpl#getEndMultiLow <em>End Multi Low</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ElseNodeImpl#getEndMultiHigh <em>End Multi High</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ElseNodeImpl#isIsEnd <em>Is End</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ElseNodeImpl#isIsAbstract <em>Is Abstract</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ElseNodeImpl#isIsVariation <em>Is Variation</em>}</li>
@@ -87,7 +82,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ElseNodeImpl#getReferences <em>References</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ElseNodeImpl#getCrosses <em>Crosses</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ElseNodeImpl#getRedefinitions <em>Redefinitions</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ElseNodeImpl#getMultiValue <em>Multi Value</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ElseNodeImpl#getMultiLow <em>Multi Low</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ElseNodeImpl#getMultiHigh <em>Multi High</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ElseNodeImpl#isIsOrdered <em>Is Ordered</em>}</li>
@@ -120,26 +114,6 @@ public class ElseNodeImpl extends ActionNodeElementsImpl implements ElseNode
    * @ordered
    */
   protected boolean isThen = IS_THEN_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getThenMultiValue() <em>Then Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getThenMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected static final String THEN_MULTI_VALUE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getThenMultiValue() <em>Then Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getThenMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected String thenMultiValue = THEN_MULTI_VALUE_EDEFAULT;
 
   /**
    * The default value of the '{@link #getThenMultiLow() <em>Then Multi Low</em>}' attribute.
@@ -220,66 +194,6 @@ public class ElseNodeImpl extends ActionNodeElementsImpl implements ElseNode
    * @ordered
    */
   protected boolean isVariant = IS_VARIANT_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getEndMultiValue() <em>End Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEndMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected static final String END_MULTI_VALUE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getEndMultiValue() <em>End Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEndMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected String endMultiValue = END_MULTI_VALUE_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getEndMultiLow() <em>End Multi Low</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEndMultiLow()
-   * @generated
-   * @ordered
-   */
-  protected static final String END_MULTI_LOW_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getEndMultiLow() <em>End Multi Low</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEndMultiLow()
-   * @generated
-   * @ordered
-   */
-  protected String endMultiLow = END_MULTI_LOW_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getEndMultiHigh() <em>End Multi High</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEndMultiHigh()
-   * @generated
-   * @ordered
-   */
-  protected static final String END_MULTI_HIGH_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getEndMultiHigh() <em>End Multi High</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEndMultiHigh()
-   * @generated
-   * @ordered
-   */
-  protected String endMultiHigh = END_MULTI_HIGH_EDEFAULT;
 
   /**
    * The default value of the '{@link #isIsEnd() <em>Is End</em>}' attribute.
@@ -562,26 +476,6 @@ public class ElseNodeImpl extends ActionNodeElementsImpl implements ElseNode
   protected EList<String> redefinitions;
 
   /**
-   * The default value of the '{@link #getMultiValue() <em>Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected static final String MULTI_VALUE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getMultiValue() <em>Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected String multiValue = MULTI_VALUE_EDEFAULT;
-
-  /**
    * The default value of the '{@link #getMultiLow() <em>Multi Low</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -743,31 +637,6 @@ public class ElseNodeImpl extends ActionNodeElementsImpl implements ElseNode
    * @generated
    */
   @Override
-  public String getThenMultiValue()
-  {
-    return thenMultiValue;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setThenMultiValue(String newThenMultiValue)
-  {
-    String oldThenMultiValue = thenMultiValue;
-    thenMultiValue = newThenMultiValue;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ELSE_NODE__THEN_MULTI_VALUE, oldThenMultiValue, thenMultiValue));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public String getThenMultiLow()
   {
     return thenMultiLow;
@@ -860,81 +729,6 @@ public class ElseNodeImpl extends ActionNodeElementsImpl implements ElseNode
     isVariant = newIsVariant;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ELSE_NODE__IS_VARIANT, oldIsVariant, isVariant));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getEndMultiValue()
-  {
-    return endMultiValue;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setEndMultiValue(String newEndMultiValue)
-  {
-    String oldEndMultiValue = endMultiValue;
-    endMultiValue = newEndMultiValue;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ELSE_NODE__END_MULTI_VALUE, oldEndMultiValue, endMultiValue));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getEndMultiLow()
-  {
-    return endMultiLow;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setEndMultiLow(String newEndMultiLow)
-  {
-    String oldEndMultiLow = endMultiLow;
-    endMultiLow = newEndMultiLow;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ELSE_NODE__END_MULTI_LOW, oldEndMultiLow, endMultiLow));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getEndMultiHigh()
-  {
-    return endMultiHigh;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setEndMultiHigh(String newEndMultiHigh)
-  {
-    String oldEndMultiHigh = endMultiHigh;
-    endMultiHigh = newEndMultiHigh;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ELSE_NODE__END_MULTI_HIGH, oldEndMultiHigh, endMultiHigh));
   }
 
   /**
@@ -1308,31 +1102,6 @@ public class ElseNodeImpl extends ActionNodeElementsImpl implements ElseNode
    * @generated
    */
   @Override
-  public String getMultiValue()
-  {
-    return multiValue;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setMultiValue(String newMultiValue)
-  {
-    String oldMultiValue = multiValue;
-    multiValue = newMultiValue;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ELSE_NODE__MULTI_VALUE, oldMultiValue, multiValue));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public String getMultiLow()
   {
     return multiLow;
@@ -1504,8 +1273,6 @@ public class ElseNodeImpl extends ActionNodeElementsImpl implements ElseNode
     {
       case SysMLOCPackage.ELSE_NODE__IS_THEN:
         return isIsThen();
-      case SysMLOCPackage.ELSE_NODE__THEN_MULTI_VALUE:
-        return getThenMultiValue();
       case SysMLOCPackage.ELSE_NODE__THEN_MULTI_LOW:
         return getThenMultiLow();
       case SysMLOCPackage.ELSE_NODE__THEN_MULTI_HIGH:
@@ -1514,12 +1281,6 @@ public class ElseNodeImpl extends ActionNodeElementsImpl implements ElseNode
         return getVisibility();
       case SysMLOCPackage.ELSE_NODE__IS_VARIANT:
         return isIsVariant();
-      case SysMLOCPackage.ELSE_NODE__END_MULTI_VALUE:
-        return getEndMultiValue();
-      case SysMLOCPackage.ELSE_NODE__END_MULTI_LOW:
-        return getEndMultiLow();
-      case SysMLOCPackage.ELSE_NODE__END_MULTI_HIGH:
-        return getEndMultiHigh();
       case SysMLOCPackage.ELSE_NODE__IS_END:
         return isIsEnd();
       case SysMLOCPackage.ELSE_NODE__IS_ABSTRACT:
@@ -1554,8 +1315,6 @@ public class ElseNodeImpl extends ActionNodeElementsImpl implements ElseNode
         return getCrosses();
       case SysMLOCPackage.ELSE_NODE__REDEFINITIONS:
         return getRedefinitions();
-      case SysMLOCPackage.ELSE_NODE__MULTI_VALUE:
-        return getMultiValue();
       case SysMLOCPackage.ELSE_NODE__MULTI_LOW:
         return getMultiLow();
       case SysMLOCPackage.ELSE_NODE__MULTI_HIGH:
@@ -1588,9 +1347,6 @@ public class ElseNodeImpl extends ActionNodeElementsImpl implements ElseNode
       case SysMLOCPackage.ELSE_NODE__IS_THEN:
         setIsThen((Boolean)newValue);
         return;
-      case SysMLOCPackage.ELSE_NODE__THEN_MULTI_VALUE:
-        setThenMultiValue((String)newValue);
-        return;
       case SysMLOCPackage.ELSE_NODE__THEN_MULTI_LOW:
         setThenMultiLow((String)newValue);
         return;
@@ -1602,15 +1358,6 @@ public class ElseNodeImpl extends ActionNodeElementsImpl implements ElseNode
         return;
       case SysMLOCPackage.ELSE_NODE__IS_VARIANT:
         setIsVariant((Boolean)newValue);
-        return;
-      case SysMLOCPackage.ELSE_NODE__END_MULTI_VALUE:
-        setEndMultiValue((String)newValue);
-        return;
-      case SysMLOCPackage.ELSE_NODE__END_MULTI_LOW:
-        setEndMultiLow((String)newValue);
-        return;
-      case SysMLOCPackage.ELSE_NODE__END_MULTI_HIGH:
-        setEndMultiHigh((String)newValue);
         return;
       case SysMLOCPackage.ELSE_NODE__IS_END:
         setIsEnd((Boolean)newValue);
@@ -1669,9 +1416,6 @@ public class ElseNodeImpl extends ActionNodeElementsImpl implements ElseNode
         getRedefinitions().clear();
         getRedefinitions().addAll((Collection<? extends String>)newValue);
         return;
-      case SysMLOCPackage.ELSE_NODE__MULTI_VALUE:
-        setMultiValue((String)newValue);
-        return;
       case SysMLOCPackage.ELSE_NODE__MULTI_LOW:
         setMultiLow((String)newValue);
         return;
@@ -1713,9 +1457,6 @@ public class ElseNodeImpl extends ActionNodeElementsImpl implements ElseNode
       case SysMLOCPackage.ELSE_NODE__IS_THEN:
         setIsThen(IS_THEN_EDEFAULT);
         return;
-      case SysMLOCPackage.ELSE_NODE__THEN_MULTI_VALUE:
-        setThenMultiValue(THEN_MULTI_VALUE_EDEFAULT);
-        return;
       case SysMLOCPackage.ELSE_NODE__THEN_MULTI_LOW:
         setThenMultiLow(THEN_MULTI_LOW_EDEFAULT);
         return;
@@ -1727,15 +1468,6 @@ public class ElseNodeImpl extends ActionNodeElementsImpl implements ElseNode
         return;
       case SysMLOCPackage.ELSE_NODE__IS_VARIANT:
         setIsVariant(IS_VARIANT_EDEFAULT);
-        return;
-      case SysMLOCPackage.ELSE_NODE__END_MULTI_VALUE:
-        setEndMultiValue(END_MULTI_VALUE_EDEFAULT);
-        return;
-      case SysMLOCPackage.ELSE_NODE__END_MULTI_LOW:
-        setEndMultiLow(END_MULTI_LOW_EDEFAULT);
-        return;
-      case SysMLOCPackage.ELSE_NODE__END_MULTI_HIGH:
-        setEndMultiHigh(END_MULTI_HIGH_EDEFAULT);
         return;
       case SysMLOCPackage.ELSE_NODE__IS_END:
         setIsEnd(IS_END_EDEFAULT);
@@ -1788,9 +1520,6 @@ public class ElseNodeImpl extends ActionNodeElementsImpl implements ElseNode
       case SysMLOCPackage.ELSE_NODE__REDEFINITIONS:
         getRedefinitions().clear();
         return;
-      case SysMLOCPackage.ELSE_NODE__MULTI_VALUE:
-        setMultiValue(MULTI_VALUE_EDEFAULT);
-        return;
       case SysMLOCPackage.ELSE_NODE__MULTI_LOW:
         setMultiLow(MULTI_LOW_EDEFAULT);
         return;
@@ -1828,8 +1557,6 @@ public class ElseNodeImpl extends ActionNodeElementsImpl implements ElseNode
     {
       case SysMLOCPackage.ELSE_NODE__IS_THEN:
         return isThen != IS_THEN_EDEFAULT;
-      case SysMLOCPackage.ELSE_NODE__THEN_MULTI_VALUE:
-        return THEN_MULTI_VALUE_EDEFAULT == null ? thenMultiValue != null : !THEN_MULTI_VALUE_EDEFAULT.equals(thenMultiValue);
       case SysMLOCPackage.ELSE_NODE__THEN_MULTI_LOW:
         return THEN_MULTI_LOW_EDEFAULT == null ? thenMultiLow != null : !THEN_MULTI_LOW_EDEFAULT.equals(thenMultiLow);
       case SysMLOCPackage.ELSE_NODE__THEN_MULTI_HIGH:
@@ -1838,12 +1565,6 @@ public class ElseNodeImpl extends ActionNodeElementsImpl implements ElseNode
         return visibility != VISIBILITY_EDEFAULT;
       case SysMLOCPackage.ELSE_NODE__IS_VARIANT:
         return isVariant != IS_VARIANT_EDEFAULT;
-      case SysMLOCPackage.ELSE_NODE__END_MULTI_VALUE:
-        return END_MULTI_VALUE_EDEFAULT == null ? endMultiValue != null : !END_MULTI_VALUE_EDEFAULT.equals(endMultiValue);
-      case SysMLOCPackage.ELSE_NODE__END_MULTI_LOW:
-        return END_MULTI_LOW_EDEFAULT == null ? endMultiLow != null : !END_MULTI_LOW_EDEFAULT.equals(endMultiLow);
-      case SysMLOCPackage.ELSE_NODE__END_MULTI_HIGH:
-        return END_MULTI_HIGH_EDEFAULT == null ? endMultiHigh != null : !END_MULTI_HIGH_EDEFAULT.equals(endMultiHigh);
       case SysMLOCPackage.ELSE_NODE__IS_END:
         return isEnd != IS_END_EDEFAULT;
       case SysMLOCPackage.ELSE_NODE__IS_ABSTRACT:
@@ -1878,8 +1599,6 @@ public class ElseNodeImpl extends ActionNodeElementsImpl implements ElseNode
         return crosses != null && !crosses.isEmpty();
       case SysMLOCPackage.ELSE_NODE__REDEFINITIONS:
         return redefinitions != null && !redefinitions.isEmpty();
-      case SysMLOCPackage.ELSE_NODE__MULTI_VALUE:
-        return MULTI_VALUE_EDEFAULT == null ? multiValue != null : !MULTI_VALUE_EDEFAULT.equals(multiValue);
       case SysMLOCPackage.ELSE_NODE__MULTI_LOW:
         return MULTI_LOW_EDEFAULT == null ? multiLow != null : !MULTI_LOW_EDEFAULT.equals(multiLow);
       case SysMLOCPackage.ELSE_NODE__MULTI_HIGH:
@@ -1911,7 +1630,6 @@ public class ElseNodeImpl extends ActionNodeElementsImpl implements ElseNode
       switch (derivedFeatureID)
       {
         case SysMLOCPackage.ELSE_NODE__IS_THEN: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__IS_THEN;
-        case SysMLOCPackage.ELSE_NODE__THEN_MULTI_VALUE: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_VALUE;
         case SysMLOCPackage.ELSE_NODE__THEN_MULTI_LOW: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_LOW;
         case SysMLOCPackage.ELSE_NODE__THEN_MULTI_HIGH: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_HIGH;
         default: return -1;
@@ -1923,16 +1641,6 @@ public class ElseNodeImpl extends ActionNodeElementsImpl implements ElseNode
       {
         case SysMLOCPackage.ELSE_NODE__VISIBILITY: return SysMLOCPackage.MEMBER_PREFIX__VISIBILITY;
         case SysMLOCPackage.ELSE_NODE__IS_VARIANT: return SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT;
-        default: return -1;
-      }
-    }
-    if (baseClass == EndMultiplicityRange.class)
-    {
-      switch (derivedFeatureID)
-      {
-        case SysMLOCPackage.ELSE_NODE__END_MULTI_VALUE: return SysMLOCPackage.END_MULTIPLICITY_RANGE__END_MULTI_VALUE;
-        case SysMLOCPackage.ELSE_NODE__END_MULTI_LOW: return SysMLOCPackage.END_MULTIPLICITY_RANGE__END_MULTI_LOW;
-        case SysMLOCPackage.ELSE_NODE__END_MULTI_HIGH: return SysMLOCPackage.END_MULTIPLICITY_RANGE__END_MULTI_HIGH;
         default: return -1;
       }
     }
@@ -2055,7 +1763,6 @@ public class ElseNodeImpl extends ActionNodeElementsImpl implements ElseNode
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.ELSE_NODE__MULTI_VALUE: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_VALUE;
         case SysMLOCPackage.ELSE_NODE__MULTI_LOW: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_LOW;
         case SysMLOCPackage.ELSE_NODE__MULTI_HIGH: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_HIGH;
         default: return -1;
@@ -2128,7 +1835,6 @@ public class ElseNodeImpl extends ActionNodeElementsImpl implements ElseNode
       switch (baseFeatureID)
       {
         case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__IS_THEN: return SysMLOCPackage.ELSE_NODE__IS_THEN;
-        case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_VALUE: return SysMLOCPackage.ELSE_NODE__THEN_MULTI_VALUE;
         case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_LOW: return SysMLOCPackage.ELSE_NODE__THEN_MULTI_LOW;
         case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_HIGH: return SysMLOCPackage.ELSE_NODE__THEN_MULTI_HIGH;
         default: return -1;
@@ -2140,16 +1846,6 @@ public class ElseNodeImpl extends ActionNodeElementsImpl implements ElseNode
       {
         case SysMLOCPackage.MEMBER_PREFIX__VISIBILITY: return SysMLOCPackage.ELSE_NODE__VISIBILITY;
         case SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT: return SysMLOCPackage.ELSE_NODE__IS_VARIANT;
-        default: return -1;
-      }
-    }
-    if (baseClass == EndMultiplicityRange.class)
-    {
-      switch (baseFeatureID)
-      {
-        case SysMLOCPackage.END_MULTIPLICITY_RANGE__END_MULTI_VALUE: return SysMLOCPackage.ELSE_NODE__END_MULTI_VALUE;
-        case SysMLOCPackage.END_MULTIPLICITY_RANGE__END_MULTI_LOW: return SysMLOCPackage.ELSE_NODE__END_MULTI_LOW;
-        case SysMLOCPackage.END_MULTIPLICITY_RANGE__END_MULTI_HIGH: return SysMLOCPackage.ELSE_NODE__END_MULTI_HIGH;
         default: return -1;
       }
     }
@@ -2272,7 +1968,6 @@ public class ElseNodeImpl extends ActionNodeElementsImpl implements ElseNode
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_VALUE: return SysMLOCPackage.ELSE_NODE__MULTI_VALUE;
         case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_LOW: return SysMLOCPackage.ELSE_NODE__MULTI_LOW;
         case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_HIGH: return SysMLOCPackage.ELSE_NODE__MULTI_HIGH;
         default: return -1;
@@ -2345,8 +2040,6 @@ public class ElseNodeImpl extends ActionNodeElementsImpl implements ElseNode
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (isThen: ");
     result.append(isThen);
-    result.append(", ThenMultiValue: ");
-    result.append(thenMultiValue);
     result.append(", ThenMultiLow: ");
     result.append(thenMultiLow);
     result.append(", ThenMultiHigh: ");
@@ -2355,12 +2048,6 @@ public class ElseNodeImpl extends ActionNodeElementsImpl implements ElseNode
     result.append(visibility);
     result.append(", isVariant: ");
     result.append(isVariant);
-    result.append(", EndMultiValue: ");
-    result.append(endMultiValue);
-    result.append(", EndMultiLow: ");
-    result.append(endMultiLow);
-    result.append(", EndMultiHigh: ");
-    result.append(endMultiHigh);
     result.append(", isEnd: ");
     result.append(isEnd);
     result.append(", isAbstract: ");
@@ -2395,8 +2082,6 @@ public class ElseNodeImpl extends ActionNodeElementsImpl implements ElseNode
     result.append(crosses);
     result.append(", redefinitions: ");
     result.append(redefinitions);
-    result.append(", MultiValue: ");
-    result.append(multiValue);
     result.append(", MultiLow: ");
     result.append(multiLow);
     result.append(", MultiHigh: ");

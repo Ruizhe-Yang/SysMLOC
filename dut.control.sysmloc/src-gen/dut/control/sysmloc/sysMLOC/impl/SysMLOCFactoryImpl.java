@@ -54,6 +54,8 @@ import dut.control.sysmloc.sysMLOC.ConstraintDefinition;
 import dut.control.sysmloc.sysMLOC.ConstraintUsage;
 import dut.control.sysmloc.sysMLOC.ConstraintUsageDeclaration;
 import dut.control.sysmloc.sysMLOC.ControlNodePrefix;
+import dut.control.sysmloc.sysMLOC.CrossEndUsage;
+import dut.control.sysmloc.sysMLOC.CrossEndUsagePrefix;
 import dut.control.sysmloc.sysMLOC.CrossFeatureChain;
 import dut.control.sysmloc.sysMLOC.DefaultReferenceUsage;
 import dut.control.sysmloc.sysMLOC.DefinitionBodyElement;
@@ -67,7 +69,6 @@ import dut.control.sysmloc.sysMLOC.Documentation;
 import dut.control.sysmloc.sysMLOC.ElementFilterElement;
 import dut.control.sysmloc.sysMLOC.ElseNode;
 import dut.control.sysmloc.sysMLOC.EmptySuccessionPrefix;
-import dut.control.sysmloc.sysMLOC.EndMultiplicityRange;
 import dut.control.sysmloc.sysMLOC.EndUsagePrefix;
 import dut.control.sysmloc.sysMLOC.EntryActionNode;
 import dut.control.sysmloc.sysMLOC.EnumeratedValue;
@@ -415,7 +416,8 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
       case SysMLOCPackage.USAGE_PREFIX: return createUsagePrefix();
       case SysMLOCPackage.UNEXTENDED_USAGE_PREFIX: return createUnextendedUsagePrefix();
       case SysMLOCPackage.END_USAGE_PREFIX: return createEndUsagePrefix();
-      case SysMLOCPackage.END_MULTIPLICITY_RANGE: return createEndMultiplicityRange();
+      case SysMLOCPackage.CROSS_END_USAGE_PREFIX: return createCrossEndUsagePrefix();
+      case SysMLOCPackage.CROSS_END_USAGE: return createCrossEndUsage();
       case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX: return createOccurrenceUsagePrefix();
       case SysMLOCPackage.REF_PREFIX: return createRefPrefix();
       case SysMLOCPackage.BASIC_USAGE_PREFIX: return createBasicUsagePrefix();
@@ -2333,10 +2335,22 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
    * @generated
    */
   @Override
-  public EndMultiplicityRange createEndMultiplicityRange()
+  public CrossEndUsagePrefix createCrossEndUsagePrefix()
   {
-    EndMultiplicityRangeImpl endMultiplicityRange = new EndMultiplicityRangeImpl();
-    return endMultiplicityRange;
+    CrossEndUsagePrefixImpl crossEndUsagePrefix = new CrossEndUsagePrefixImpl();
+    return crossEndUsagePrefix;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public CrossEndUsage createCrossEndUsage()
+  {
+    CrossEndUsageImpl crossEndUsage = new CrossEndUsageImpl();
+    return crossEndUsage;
   }
 
   /**

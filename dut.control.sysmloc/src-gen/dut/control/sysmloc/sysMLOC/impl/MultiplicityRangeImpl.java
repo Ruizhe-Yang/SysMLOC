@@ -21,7 +21,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.MultiplicityRangeImpl#getMultiValue <em>Multi Value</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.MultiplicityRangeImpl#getMultiLow <em>Multi Low</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.MultiplicityRangeImpl#getMultiHigh <em>Multi High</em>}</li>
  * </ul>
@@ -30,26 +29,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class MultiplicityRangeImpl extends MinimalEObjectImpl.Container implements MultiplicityRange
 {
-  /**
-   * The default value of the '{@link #getMultiValue() <em>Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected static final String MULTI_VALUE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getMultiValue() <em>Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMultiValue()
-   * @generated
-   * @ordered
-   */
-  protected String multiValue = MULTI_VALUE_EDEFAULT;
-
   /**
    * The default value of the '{@link #getMultiLow() <em>Multi Low</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -117,31 +96,6 @@ public class MultiplicityRangeImpl extends MinimalEObjectImpl.Container implemen
    * @generated
    */
   @Override
-  public String getMultiValue()
-  {
-    return multiValue;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setMultiValue(String newMultiValue)
-  {
-    String oldMultiValue = multiValue;
-    multiValue = newMultiValue;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_VALUE, oldMultiValue, multiValue));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public String getMultiLow()
   {
     return multiLow;
@@ -196,8 +150,6 @@ public class MultiplicityRangeImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_VALUE:
-        return getMultiValue();
       case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_LOW:
         return getMultiLow();
       case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_HIGH:
@@ -216,9 +168,6 @@ public class MultiplicityRangeImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_VALUE:
-        setMultiValue((String)newValue);
-        return;
       case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_LOW:
         setMultiLow((String)newValue);
         return;
@@ -239,9 +188,6 @@ public class MultiplicityRangeImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_VALUE:
-        setMultiValue(MULTI_VALUE_EDEFAULT);
-        return;
       case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_LOW:
         setMultiLow(MULTI_LOW_EDEFAULT);
         return;
@@ -262,8 +208,6 @@ public class MultiplicityRangeImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_VALUE:
-        return MULTI_VALUE_EDEFAULT == null ? multiValue != null : !MULTI_VALUE_EDEFAULT.equals(multiValue);
       case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_LOW:
         return MULTI_LOW_EDEFAULT == null ? multiLow != null : !MULTI_LOW_EDEFAULT.equals(multiLow);
       case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_HIGH:
@@ -283,9 +227,7 @@ public class MultiplicityRangeImpl extends MinimalEObjectImpl.Container implemen
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (MultiValue: ");
-    result.append(multiValue);
-    result.append(", MultiLow: ");
+    result.append(" (MultiLow: ");
     result.append(multiLow);
     result.append(", MultiHigh: ");
     result.append(multiHigh);

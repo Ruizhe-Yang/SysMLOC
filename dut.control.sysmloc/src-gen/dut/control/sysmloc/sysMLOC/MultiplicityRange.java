@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.MultiplicityRange#getMultiValue <em>Multi Value</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.MultiplicityRange#getMultiLow <em>Multi Low</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.MultiplicityRange#getMultiHigh <em>Multi High</em>}</li>
  * </ul>
@@ -25,28 +24,6 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface MultiplicityRange extends EObject
 {
-  /**
-   * Returns the value of the '<em><b>Multi Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Multi Value</em>' attribute.
-   * @see #setMultiValue(String)
-   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getMultiplicityRange_MultiValue()
-   * @model
-   * @generated
-   */
-  String getMultiValue();
-
-  /**
-   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.MultiplicityRange#getMultiValue <em>Multi Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Multi Value</em>' attribute.
-   * @see #getMultiValue()
-   * @generated
-   */
-  void setMultiValue(String value);
-
   /**
    * Returns the value of the '<em><b>Multi Low</b></em>' attribute.
    * <!-- begin-user-doc -->
