@@ -36,7 +36,7 @@
         <typings>RequirementCheck</typings>
         <redefinitions>self</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:SubjectUsage" declaredName="subj" MultiValue="1">
+      <elements xsi:type="sysMLOC:SubjectUsage" declaredName="subj" MultiLow="1">
         <typings>Anything</typings>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The entity that is being checked for satisfaction of the required constraints.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>

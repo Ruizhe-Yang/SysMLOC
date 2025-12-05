@@ -4,10 +4,10 @@
     <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9; * This package provides a library model for derivation connections between requirements.&#xA;&#x9; */"/>
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="SequenceFunctions::excludes"/>
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ControlFunctions::allTrue"/>
-    <elements xsi:type="sysMLOC:RequirementUsage" declaredName="originalRequirements" MultiValue="*">
+    <elements xsi:type="sysMLOC:RequirementUsage" declaredName="originalRequirements" MultiLow="*">
       <elements xsi:type="sysMLOC:Documentation" body="/* originalRequirements are the original requirements in Derivation connections. */"/>
     </elements>
-    <elements xsi:type="sysMLOC:RequirementUsage" declaredName="derivedRequirements" MultiValue="*">
+    <elements xsi:type="sysMLOC:RequirementUsage" declaredName="derivedRequirements" MultiLow="*">
       <elements xsi:type="sysMLOC:Documentation" body="/* derivedRequirements are the derived requirments in Derivation connections. */"/>
     </elements>
     <elements xsi:type="sysMLOC:ConnectionDefinition" isAbstract="true" declaredName="Derivation">
@@ -17,7 +17,7 @@
       <elements xsi:type="sysMLOC:CodeAnnotation" body="// ref requirement :>> participant {&#xA;"/>
       <elements xsi:type="sysMLOC:CodeAnnotation" body="//&#x9;doc /* All the participants in a Derivation must be requirements. */&#xA;"/>
       <elements xsi:type="sysMLOC:CodeAnnotation" body="// }&#xA;"/>
-      <elements xsi:type="sysMLOC:RequirementUsage" isReference="true" declaredName="originalRequirement" MultiValue="1">
+      <elements xsi:type="sysMLOC:RequirementUsage" isReference="true" declaredName="originalRequirement" MultiLow="1">
         <subsetting>participant</subsetting>
         <redefinitions>originalRequirements</redefinitions>
         <elements xsi:type="sysMLOC:Documentation" body="/* The single original requirement. */"/>
@@ -36,7 +36,7 @@
         <resultExpressionParameter resultExpression="originalRequirement.result implies allTrue(derivedRequirements.result)"/>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:ConnectionUsage" isAbstract="true" declaredName="derivations" MultiValue="*">
+    <elements xsi:type="sysMLOC:ConnectionUsage" isAbstract="true" declaredName="derivations" MultiLow="*">
       <typings>Derivation</typings>
       <elements xsi:type="sysMLOC:Documentation" body="/* derivations is the base feature for Derivation connection usages. */"/>
     </elements>

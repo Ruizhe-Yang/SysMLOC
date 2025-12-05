@@ -49,7 +49,6 @@
     <genClasses ecoreClass="SysMLOC.ecore#//InterfaceBodyElement"/>
     <genClasses ecoreClass="SysMLOC.ecore#//EnumerationBodyElement"/>
     <genClasses ecoreClass="SysMLOC.ecore#//AnnotatingBodyElement"/>
-    <genClasses ecoreClass="SysMLOC.ecore#//ActionNodeBodyElement"/>
     <genClasses ecoreClass="SysMLOC.ecore#//ActionBodyElement"/>
     <genClasses ecoreClass="SysMLOC.ecore#//CalculationBodyElement"/>
     <genClasses ecoreClass="SysMLOC.ecore#//StateBodyElement"/>
@@ -513,7 +512,9 @@
     <genClasses ecoreClass="SysMLOC.ecore#//CrossEndUsagePrefix">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//CrossEndUsagePrefix/crossEndUsage"/>
     </genClasses>
-    <genClasses ecoreClass="SysMLOC.ecore#//CrossEndUsage"/>
+    <genClasses ecoreClass="SysMLOC.ecore#//CrossEndUsage">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//CrossEndUsage/declaredName"/>
+    </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//OccurrenceUsagePrefix">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//OccurrenceUsagePrefix/isIndividual"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//OccurrenceUsagePrefix/portionKind"/>

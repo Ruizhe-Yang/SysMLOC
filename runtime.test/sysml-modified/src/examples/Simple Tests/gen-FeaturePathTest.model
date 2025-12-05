@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="Q">
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="F">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="a">
+        <typings>A</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="f">
+      <typings>F</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="A">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="g" valuePart="f.a"/>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="B">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="f">
+        <typings>F</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="a">
+        <typings>A</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="C">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="b">
+        <typings>B</typings>
+        <elements xsi:type="sysMLOC:ConnectionUsage">
+          <connectorPart refElement="f.a"/>
+          <connectorPart refElement="a.g"/>
+        </elements>
+        <elements xsi:type="sysMLOC:BindingConnectorAsUsage">
+          <connectorPart refElement="f.a"/>
+          <connectorPart refElement="a.g"/>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="c">
+        <subsetting>b.f</subsetting>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="aa">
+          <subsetting>a</subsetting>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:FlowUsage">
+        <FlowEnd>b.f.a</FlowEnd>
+        <FlowEnd>c.aa</FlowEnd>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="e1">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="x">
+        <typings>E</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:CodeAnnotation" body="// Ensure that &quot;e1&quot; resolves correctly.&#xA;"/>
+      <elements xsi:type="sysMLOC:BindingConnectorAsUsage">
+        <connectorPart refElement="e1.x"/>
+        <connectorPart refElement="E::e2"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:EnumerationDefinition" declaredName="E">
+      <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="e1"/>
+      <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="e2"/>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="g" valuePart="new A().g.g.g"/>
+  </elements>
+</sysMLOC:Namespace>

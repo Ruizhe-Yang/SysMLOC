@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="'13b-Safety and Security Features Element Group'">
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle1_c1">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="interior">
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="alarm"/>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="seatBelt" MultiLow="2"/>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="frontSeat" MultiLow="2"/>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="driverAirBag"/>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="bodyAssy">
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="body"/>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="bumper"/>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="keylessEntry"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Package" declaredName="'Safety Features'">
+      <elements xsi:type="sysMLOC:Comment" body="/* Parts that contribute to safety. */"/>
+      <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="vehicle1_c1::interior::seatBelt"/>
+      <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="vehicle1_c1::interior::driverAirBag"/>
+      <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="vehicle1_c1::bodyAssy::bumper"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Package" declaredName="'Security Features'">
+      <elements xsi:type="sysMLOC:Comment" body="/* Parts that contribute to security. */"/>
+      <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="vehicle1_c1::interior::alarm"/>
+      <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="vehicle1_c1::bodyAssy::keylessEntry"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Package" declaredName="'Safety &amp; Security Features'">
+      <elements xsi:type="sysMLOC:Comment" body="/* Parts that contribute to safety AND&#xA;&#x9;&#x9; * parts that contribute to security.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="'Safety Features'" isNamespace="true"/>
+      <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="'Security Features'" isNamespace="true"/>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

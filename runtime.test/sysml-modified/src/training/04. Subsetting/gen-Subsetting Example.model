@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="'Subsetting Example'">
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="parts" MultiLow="*">
+        <typings>VehiclePart</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="eng">
+        <typings>Engine</typings>
+        <subsetting>parts</subsetting>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="trans">
+        <typings>Transmission</typings>
+        <subsetting>parts</subsetting>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="wheels" MultiLow="4">
+        <typings>Wheel</typings>
+        <subsetting>parts</subsetting>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" isAbstract="true" declaredName="VehiclePart"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Engine">
+      <superclassifiers>VehiclePart</superclassifiers>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Transmission">
+      <superclassifiers>VehiclePart</superclassifiers>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Wheel">
+      <superclassifiers>VehiclePart</superclassifiers>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

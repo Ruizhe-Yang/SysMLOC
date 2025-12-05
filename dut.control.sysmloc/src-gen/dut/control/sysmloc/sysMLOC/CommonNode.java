@@ -51,7 +51,7 @@ public interface CommonNode extends ActionNodeElements, EmptySuccessionPrefix, M
 
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
-   * The list contents are of type {@link dut.control.sysmloc.sysMLOC.ActionNodeBodyElement}.
+   * The list contents are of type {@link dut.control.sysmloc.sysMLOC.ActionBodyElement}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Elements</em>' containment reference list.
@@ -59,6 +59,6 @@ public interface CommonNode extends ActionNodeElements, EmptySuccessionPrefix, M
    * @model containment="true"
    * @generated
    */
-  EList<ActionNodeBodyElement> getElements();
+  EList<ActionBodyElement> getElements();
 
 } // CommonNode

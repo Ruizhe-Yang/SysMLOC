@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="'15_19-Materials with Properties'">
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues::Real"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Quantities" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="MeasurementReferences" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="SI" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="AtomicMassValue">
+      <superclassifiers>MassValue</superclassifiers>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="TensileStrengthUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, massPF, durationPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="TensileStrengthValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>TensileStrengthUnit</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'N/mm&#xb2;'" declaredName="'newton per square millimetre'" valuePart="N / mm^2">
+      <typings>TensileStrengthUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Substance"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Material">
+      <superclassifiers>Substance</superclassifiers>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9; * The classification of materials into metals and alloys is grossly simplified and not exhaustive.&#xA;&#x9; * A more complete classification would include: ChemicalSubstance, PureMaterial, MixedMaterial,&#xA;&#x9; * Class, Ceramic, OrganicMaterial, AnorganicMaterial, Polymer, HybridMaterial, CompositeMaterial,&#xA;&#x9; * etc.&#xA;&#x9; */"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Metal">
+      <superclassifiers>Material</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="atomicMass" MultiLow="1">
+        <typings>AtomicMassValue</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MaterialFraction">
+      <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="material" MultiLow="1">
+        <typings>Material</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="massFraction" MultiLow="1">
+        <typings>MassFractionValue</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MassFractionValue">
+      <superclassifiers>DimensionOneValue</superclassifiers>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Alloy">
+      <superclassifiers>Material</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="fractions" MultiLow="2" MultiHigh="*">
+        <typings>MaterialFraction</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:IndividualDefinition" declaredName="Iron" isIndividual="true">
+      <superclassifiers>Metal</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="55.845 [Da]">
+        <redefinitions>atomicMass</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:IndividualDefinition" declaredName="Carbon" isIndividual="true">
+      <superclassifiers>Metal</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="atomicMass" valuePart="12.011[Da]">
+        <redefinitions>Metal::atomicMass</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:IndividualDefinition" declaredName="Manganese" isIndividual="true">
+      <superclassifiers>Metal</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="atomicMass" valuePart="54.938[Da]">
+        <redefinitions>Metal::atomicMass</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:IndividualDefinition" declaredName="Steel_980" isIndividual="true">
+      <superclassifiers>Alloy</superclassifiers>
+      <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9; * Particular example of high tensile strength steel.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="fraction1">
+        <subsetting>fractions</subsetting>
+        <elements xsi:type="sysMLOC:ReferenceUsage">
+          <typings>Iron</typings>
+          <redefinitions>material</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="0.9862[one]">
+          <redefinitions>massFraction</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="fraction2">
+        <subsetting>fractions</subsetting>
+        <elements xsi:type="sysMLOC:ReferenceUsage">
+          <typings>Carbon</typings>
+          <redefinitions>material</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="0.9862[one]">
+          <redefinitions>massFraction</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="fraction3">
+        <subsetting>fractions</subsetting>
+        <elements xsi:type="sysMLOC:ReferenceUsage">
+          <typings>Manganese</typings>
+          <redefinitions>material</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="0.9862[one]">
+          <redefinitions>massFraction</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="tensileStrength" valuePart="980['N/mm&#xb2;']">
+        <typings>TensileStrengthValue</typings>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

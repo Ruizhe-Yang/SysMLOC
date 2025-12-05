@@ -9,7 +9,6 @@ import dut.control.sysmloc.sysMLOC.AcceptNodeDeclaration;
 import dut.control.sysmloc.sysMLOC.AcceptParameterPart;
 import dut.control.sysmloc.sysMLOC.ActionBodyElement;
 import dut.control.sysmloc.sysMLOC.ActionDefinition;
-import dut.control.sysmloc.sysMLOC.ActionNodeBodyElement;
 import dut.control.sysmloc.sysMLOC.ActionNodeElements;
 import dut.control.sysmloc.sysMLOC.ActionNodePrefix;
 import dut.control.sysmloc.sysMLOC.ActionNodeUsageDeclaration;
@@ -273,7 +272,6 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
       case SysMLOCPackage.INTERFACE_BODY_ELEMENT: return createInterfaceBodyElement();
       case SysMLOCPackage.ENUMERATION_BODY_ELEMENT: return createEnumerationBodyElement();
       case SysMLOCPackage.ANNOTATING_BODY_ELEMENT: return createAnnotatingBodyElement();
-      case SysMLOCPackage.ACTION_NODE_BODY_ELEMENT: return createActionNodeBodyElement();
       case SysMLOCPackage.ACTION_BODY_ELEMENT: return createActionBodyElement();
       case SysMLOCPackage.CALCULATION_BODY_ELEMENT: return createCalculationBodyElement();
       case SysMLOCPackage.STATE_BODY_ELEMENT: return createStateBodyElement();
@@ -611,18 +609,6 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
   {
     AnnotatingBodyElementImpl annotatingBodyElement = new AnnotatingBodyElementImpl();
     return annotatingBodyElement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ActionNodeBodyElement createActionNodeBodyElement()
-  {
-    ActionNodeBodyElementImpl actionNodeBodyElement = new ActionNodeBodyElementImpl();
-    return actionNodeBodyElement;
   }
 
   /**

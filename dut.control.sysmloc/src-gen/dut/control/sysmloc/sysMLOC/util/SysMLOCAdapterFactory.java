@@ -9,7 +9,6 @@ import dut.control.sysmloc.sysMLOC.AcceptNodeDeclaration;
 import dut.control.sysmloc.sysMLOC.AcceptParameterPart;
 import dut.control.sysmloc.sysMLOC.ActionBodyElement;
 import dut.control.sysmloc.sysMLOC.ActionDefinition;
-import dut.control.sysmloc.sysMLOC.ActionNodeBodyElement;
 import dut.control.sysmloc.sysMLOC.ActionNodeElements;
 import dut.control.sysmloc.sysMLOC.ActionNodePrefix;
 import dut.control.sysmloc.sysMLOC.ActionNodeUsageDeclaration;
@@ -306,11 +305,6 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
       public Adapter caseAnnotatingBodyElement(AnnotatingBodyElement object)
       {
         return createAnnotatingBodyElementAdapter();
-      }
-      @Override
-      public Adapter caseActionNodeBodyElement(ActionNodeBodyElement object)
-      {
-        return createActionNodeBodyElementAdapter();
       }
       @Override
       public Adapter caseActionBodyElement(ActionBodyElement object)
@@ -1370,21 +1364,6 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAnnotatingBodyElementAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.ActionNodeBodyElement <em>Action Node Body Element</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see dut.control.sysmloc.sysMLOC.ActionNodeBodyElement
-   * @generated
-   */
-  public Adapter createActionNodeBodyElementAdapter()
   {
     return null;
   }

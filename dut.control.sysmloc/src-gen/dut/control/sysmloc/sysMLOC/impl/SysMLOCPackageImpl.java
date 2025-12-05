@@ -102,13 +102,6 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass actionNodeBodyElementEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass actionBodyElementEClass = null;
 
   /**
@@ -1631,26 +1624,11 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
    * @generated
    */
   @Override
-  public EClass getActionNodeBodyElement()
-  {
-    if (actionNodeBodyElementEClass == null)
-    {
-      actionNodeBodyElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(8);
-    }
-    return actionNodeBodyElementEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EClass getActionBodyElement()
   {
     if (actionBodyElementEClass == null)
     {
-      actionBodyElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(9);
+      actionBodyElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(8);
     }
     return actionBodyElementEClass;
   }
@@ -1665,7 +1643,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (calculationBodyElementEClass == null)
     {
-      calculationBodyElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(10);
+      calculationBodyElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(9);
     }
     return calculationBodyElementEClass;
   }
@@ -1680,7 +1658,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (stateBodyElementEClass == null)
     {
-      stateBodyElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(11);
+      stateBodyElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(10);
     }
     return stateBodyElementEClass;
   }
@@ -1695,7 +1673,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (requirementBodyElementEClass == null)
     {
-      requirementBodyElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(12);
+      requirementBodyElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(11);
     }
     return requirementBodyElementEClass;
   }
@@ -1710,7 +1688,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (caseBodyElementEClass == null)
     {
-      caseBodyElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(13);
+      caseBodyElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(12);
     }
     return caseBodyElementEClass;
   }
@@ -1725,7 +1703,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (viewDefinitionBodyElementEClass == null)
     {
-      viewDefinitionBodyElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(14);
+      viewDefinitionBodyElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(13);
     }
     return viewDefinitionBodyElementEClass;
   }
@@ -1740,7 +1718,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (viewBodyElementEClass == null)
     {
-      viewBodyElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(15);
+      viewBodyElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(14);
     }
     return viewBodyElementEClass;
   }
@@ -1755,7 +1733,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (relationshipBodyElementEClass == null)
     {
-      relationshipBodyElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(16);
+      relationshipBodyElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(15);
     }
     return relationshipBodyElementEClass;
   }
@@ -1770,7 +1748,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (annotatingElementEClass == null)
     {
-      annotatingElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(17);
+      annotatingElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(16);
     }
     return annotatingElementEClass;
   }
@@ -1785,7 +1763,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (definitionElementsEClass == null)
     {
-      definitionElementsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(18);
+      definitionElementsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(17);
     }
     return definitionElementsEClass;
   }
@@ -1800,7 +1778,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (usageElementsEClass == null)
     {
-      usageElementsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(19);
+      usageElementsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(18);
     }
     return usageElementsEClass;
   }
@@ -1815,7 +1793,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (nonOccurrenceUsageElementEClass == null)
     {
-      nonOccurrenceUsageElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(20);
+      nonOccurrenceUsageElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(19);
     }
     return nonOccurrenceUsageElementEClass;
   }
@@ -1830,7 +1808,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (occurrenceUsageElementEClass == null)
     {
-      occurrenceUsageElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(21);
+      occurrenceUsageElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(20);
     }
     return occurrenceUsageElementEClass;
   }
@@ -1845,7 +1823,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (structureUsageElementsEClass == null)
     {
-      structureUsageElementsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(22);
+      structureUsageElementsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(21);
     }
     return structureUsageElementsEClass;
   }
@@ -1860,7 +1838,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (behaviorUsageElementsEClass == null)
     {
-      behaviorUsageElementsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(23);
+      behaviorUsageElementsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(22);
     }
     return behaviorUsageElementsEClass;
   }
@@ -1875,7 +1853,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (actionNodeElementsEClass == null)
     {
-      actionNodeElementsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(24);
+      actionNodeElementsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(23);
     }
     return actionNodeElementsEClass;
   }
@@ -1890,7 +1868,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (stateNodeElementsEClass == null)
     {
-      stateNodeElementsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(25);
+      stateNodeElementsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(24);
     }
     return stateNodeElementsEClass;
   }
@@ -1905,7 +1883,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (requirementNodeElementsEClass == null)
     {
-      requirementNodeElementsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(26);
+      requirementNodeElementsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(25);
     }
     return requirementNodeElementsEClass;
   }
@@ -1920,7 +1898,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (packageEClass == null)
     {
-      packageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(27);
+      packageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(26);
     }
     return packageEClass;
   }
@@ -1957,7 +1935,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (importElementEClass == null)
     {
-      importElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(28);
+      importElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(27);
     }
     return importElementEClass;
   }
@@ -2049,7 +2027,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (exposeElementEClass == null)
     {
-      exposeElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(29);
+      exposeElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(28);
     }
     return exposeElementEClass;
   }
@@ -2119,7 +2097,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (codeAnnotationEClass == null)
     {
-      codeAnnotationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(30);
+      codeAnnotationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(29);
     }
     return codeAnnotationEClass;
   }
@@ -2145,7 +2123,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (commentEClass == null)
     {
-      commentEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(31);
+      commentEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(30);
     }
     return commentEClass;
   }
@@ -2193,7 +2171,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (documentationEClass == null)
     {
-      documentationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(32);
+      documentationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(31);
     }
     return documentationEClass;
   }
@@ -2230,7 +2208,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (textualRepresentationEClass == null)
     {
-      textualRepresentationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(33);
+      textualRepresentationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(32);
     }
     return textualRepresentationEClass;
   }
@@ -2267,7 +2245,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (metadataUsageEClass == null)
     {
-      metadataUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(34);
+      metadataUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(33);
     }
     return metadataUsageEClass;
   }
@@ -2315,7 +2293,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (elementFilterElementEClass == null)
     {
-      elementFilterElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(35);
+      elementFilterElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(34);
     }
     return elementFilterElementEClass;
   }
@@ -2341,7 +2319,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (defaultReferenceUsageEClass == null)
     {
-      defaultReferenceUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(36);
+      defaultReferenceUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(35);
     }
     return defaultReferenceUsageEClass;
   }
@@ -2389,7 +2367,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (extendedUsageEClass == null)
     {
-      extendedUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(37);
+      extendedUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(36);
     }
     return extendedUsageEClass;
   }
@@ -2415,7 +2393,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (referenceVariantUsageEClass == null)
     {
-      referenceVariantUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(38);
+      referenceVariantUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(37);
     }
     return referenceVariantUsageEClass;
   }
@@ -2452,7 +2430,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (referenceUsageEClass == null)
     {
-      referenceUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(39);
+      referenceUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(38);
     }
     return referenceUsageEClass;
   }
@@ -2478,7 +2456,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (libraryPackageEClass == null)
     {
-      libraryPackageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(40);
+      libraryPackageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(39);
     }
     return libraryPackageEClass;
   }
@@ -2526,7 +2504,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (dependencyEClass == null)
     {
-      dependencyEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(41);
+      dependencyEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(40);
     }
     return dependencyEClass;
   }
@@ -2574,7 +2552,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (attributeDefinitionEClass == null)
     {
-      attributeDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(42);
+      attributeDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(41);
     }
     return attributeDefinitionEClass;
   }
@@ -2600,7 +2578,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (attributeUsageEClass == null)
     {
-      attributeUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(43);
+      attributeUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(42);
     }
     return attributeUsageEClass;
   }
@@ -2626,7 +2604,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (enumerationDefinitionEClass == null)
     {
-      enumerationDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(44);
+      enumerationDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(43);
     }
     return enumerationDefinitionEClass;
   }
@@ -2652,7 +2630,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (enumeratedValueEClass == null)
     {
-      enumeratedValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(45);
+      enumeratedValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(44);
     }
     return enumeratedValueEClass;
   }
@@ -2678,7 +2656,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (enumerationUsageEClass == null)
     {
-      enumerationUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(46);
+      enumerationUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(45);
     }
     return enumerationUsageEClass;
   }
@@ -2704,7 +2682,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (bindingConnectorAsUsageEClass == null)
     {
-      bindingConnectorAsUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(47);
+      bindingConnectorAsUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(46);
     }
     return bindingConnectorAsUsageEClass;
   }
@@ -2741,7 +2719,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (successionAsUsageEClass == null)
     {
-      successionAsUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(48);
+      successionAsUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(47);
     }
     return successionAsUsageEClass;
   }
@@ -2778,7 +2756,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (occurrenceDefinitionEClass == null)
     {
-      occurrenceDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(49);
+      occurrenceDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(48);
     }
     return occurrenceDefinitionEClass;
   }
@@ -2804,7 +2782,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (occurrenceUsageEClass == null)
     {
-      occurrenceUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(50);
+      occurrenceUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(49);
     }
     return occurrenceUsageEClass;
   }
@@ -2830,7 +2808,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (portionUsageEClass == null)
     {
-      portionUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(51);
+      portionUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(50);
     }
     return portionUsageEClass;
   }
@@ -2878,7 +2856,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (eventOccurrenceUsageEClass == null)
     {
-      eventOccurrenceUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(52);
+      eventOccurrenceUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(51);
     }
     return eventOccurrenceUsageEClass;
   }
@@ -2904,7 +2882,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (individualDefinitionEClass == null)
     {
-      individualDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(53);
+      individualDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(52);
     }
     return individualDefinitionEClass;
   }
@@ -2941,7 +2919,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (individualUsageEClass == null)
     {
-      individualUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(54);
+      individualUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(53);
     }
     return individualUsageEClass;
   }
@@ -2978,7 +2956,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (itemDefinitionEClass == null)
     {
-      itemDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(55);
+      itemDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(54);
     }
     return itemDefinitionEClass;
   }
@@ -3004,7 +2982,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (itemUsageEClass == null)
     {
-      itemUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(56);
+      itemUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(55);
     }
     return itemUsageEClass;
   }
@@ -3030,7 +3008,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (metadataDefinitionEClass == null)
     {
-      metadataDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(57);
+      metadataDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(56);
     }
     return metadataDefinitionEClass;
   }
@@ -3067,7 +3045,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (partDefinitionEClass == null)
     {
-      partDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(58);
+      partDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(57);
     }
     return partDefinitionEClass;
   }
@@ -3093,7 +3071,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (partUsageEClass == null)
     {
-      partUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(59);
+      partUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(58);
     }
     return partUsageEClass;
   }
@@ -3119,7 +3097,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (portDefinitionEClass == null)
     {
-      portDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(60);
+      portDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(59);
     }
     return portDefinitionEClass;
   }
@@ -3145,7 +3123,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (portUsageEClass == null)
     {
-      portUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(61);
+      portUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(60);
     }
     return portUsageEClass;
   }
@@ -3171,7 +3149,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (connectionDefinitionEClass == null)
     {
-      connectionDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(62);
+      connectionDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(61);
     }
     return connectionDefinitionEClass;
   }
@@ -3197,7 +3175,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (connectionUsageEClass == null)
     {
-      connectionUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(63);
+      connectionUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(62);
     }
     return connectionUsageEClass;
   }
@@ -3223,7 +3201,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (interfaceDefinitionEClass == null)
     {
-      interfaceDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(64);
+      interfaceDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(63);
     }
     return interfaceDefinitionEClass;
   }
@@ -3249,7 +3227,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (interfaceUsageEClass == null)
     {
-      interfaceUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(65);
+      interfaceUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(64);
     }
     return interfaceUsageEClass;
   }
@@ -3275,7 +3253,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (messageEClass == null)
     {
-      messageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(66);
+      messageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(65);
     }
     return messageEClass;
   }
@@ -3312,7 +3290,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (flowDefinitionEClass == null)
     {
-      flowDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(67);
+      flowDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(66);
     }
     return flowDefinitionEClass;
   }
@@ -3338,7 +3316,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (flowUsageEClass == null)
     {
-      flowUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(68);
+      flowUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(67);
     }
     return flowUsageEClass;
   }
@@ -3375,7 +3353,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (successionFlowUsageEClass == null)
     {
-      successionFlowUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(69);
+      successionFlowUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(68);
     }
     return successionFlowUsageEClass;
   }
@@ -3412,7 +3390,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (allocationDefinitionEClass == null)
     {
-      allocationDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(70);
+      allocationDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(69);
     }
     return allocationDefinitionEClass;
   }
@@ -3438,7 +3416,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (allocationUsageEClass == null)
     {
-      allocationUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(71);
+      allocationUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(70);
     }
     return allocationUsageEClass;
   }
@@ -3464,7 +3442,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (actionDefinitionEClass == null)
     {
-      actionDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(72);
+      actionDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(71);
     }
     return actionDefinitionEClass;
   }
@@ -3490,7 +3468,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (actionUsageEClass == null)
     {
-      actionUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(73);
+      actionUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(72);
     }
     return actionUsageEClass;
   }
@@ -3516,7 +3494,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (calculationDefinitionEClass == null)
     {
-      calculationDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(74);
+      calculationDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(73);
     }
     return calculationDefinitionEClass;
   }
@@ -3553,7 +3531,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (calculationUsageEClass == null)
     {
-      calculationUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(75);
+      calculationUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(74);
     }
     return calculationUsageEClass;
   }
@@ -3590,7 +3568,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (stateDefinitionEClass == null)
     {
-      stateDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(76);
+      stateDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(75);
     }
     return stateDefinitionEClass;
   }
@@ -3627,7 +3605,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (stateUsageEClass == null)
     {
-      stateUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(77);
+      stateUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(76);
     }
     return stateUsageEClass;
   }
@@ -3664,7 +3642,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (constraintDefinitionEClass == null)
     {
-      constraintDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(78);
+      constraintDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(77);
     }
     return constraintDefinitionEClass;
   }
@@ -3701,7 +3679,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (constraintUsageEClass == null)
     {
-      constraintUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(79);
+      constraintUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(78);
     }
     return constraintUsageEClass;
   }
@@ -3738,7 +3716,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (transitionUsageEClass == null)
     {
-      transitionUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(80);
+      transitionUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(79);
     }
     return transitionUsageEClass;
   }
@@ -3775,7 +3753,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (requirementDefinitionEClass == null)
     {
-      requirementDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(81);
+      requirementDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(80);
     }
     return requirementDefinitionEClass;
   }
@@ -3801,7 +3779,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (requirementUsageEClass == null)
     {
-      requirementUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(82);
+      requirementUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(81);
     }
     return requirementUsageEClass;
   }
@@ -3827,7 +3805,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (concernDefinitionEClass == null)
     {
-      concernDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(83);
+      concernDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(82);
     }
     return concernDefinitionEClass;
   }
@@ -3853,7 +3831,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (concernUsageEClass == null)
     {
-      concernUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(84);
+      concernUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(83);
     }
     return concernUsageEClass;
   }
@@ -3879,7 +3857,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (caseDefinitionEClass == null)
     {
-      caseDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(85);
+      caseDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(84);
     }
     return caseDefinitionEClass;
   }
@@ -3916,7 +3894,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (caseUsageEClass == null)
     {
-      caseUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(86);
+      caseUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(85);
     }
     return caseUsageEClass;
   }
@@ -3953,7 +3931,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (analysisCaseDefinitionEClass == null)
     {
-      analysisCaseDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(87);
+      analysisCaseDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(86);
     }
     return analysisCaseDefinitionEClass;
   }
@@ -3990,7 +3968,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (analysisCaseUsageEClass == null)
     {
-      analysisCaseUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(88);
+      analysisCaseUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(87);
     }
     return analysisCaseUsageEClass;
   }
@@ -4027,7 +4005,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (verificationCaseDefinitionEClass == null)
     {
-      verificationCaseDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(89);
+      verificationCaseDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(88);
     }
     return verificationCaseDefinitionEClass;
   }
@@ -4064,7 +4042,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (verificationCaseUsageEClass == null)
     {
-      verificationCaseUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(90);
+      verificationCaseUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(89);
     }
     return verificationCaseUsageEClass;
   }
@@ -4101,7 +4079,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (useCaseDefinitionEClass == null)
     {
-      useCaseDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(91);
+      useCaseDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(90);
     }
     return useCaseDefinitionEClass;
   }
@@ -4138,7 +4116,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (useCaseUsageEClass == null)
     {
-      useCaseUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(92);
+      useCaseUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(91);
     }
     return useCaseUsageEClass;
   }
@@ -4175,7 +4153,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (viewDefinitionEClass == null)
     {
-      viewDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(93);
+      viewDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(92);
     }
     return viewDefinitionEClass;
   }
@@ -4201,7 +4179,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (viewUsageEClass == null)
     {
-      viewUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(94);
+      viewUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(93);
     }
     return viewUsageEClass;
   }
@@ -4227,7 +4205,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (viewpointDefinitionEClass == null)
     {
-      viewpointDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(95);
+      viewpointDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(94);
     }
     return viewpointDefinitionEClass;
   }
@@ -4253,7 +4231,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (viewpointUsageEClass == null)
     {
-      viewpointUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(96);
+      viewpointUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(95);
     }
     return viewpointUsageEClass;
   }
@@ -4279,7 +4257,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (renderingDefinitionEClass == null)
     {
-      renderingDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(97);
+      renderingDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(96);
     }
     return renderingDefinitionEClass;
   }
@@ -4305,7 +4283,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (renderingUsageEClass == null)
     {
-      renderingUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(98);
+      renderingUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(97);
     }
     return renderingUsageEClass;
   }
@@ -4331,7 +4309,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (extendedDefinitionEClass == null)
     {
-      extendedDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(99);
+      extendedDefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(98);
     }
     return extendedDefinitionEClass;
   }
@@ -4357,7 +4335,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (performActionUsageEClass == null)
     {
-      performActionUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(100);
+      performActionUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(99);
     }
     return performActionUsageEClass;
   }
@@ -4383,7 +4361,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (exhibitStateUsageEClass == null)
     {
-      exhibitStateUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(101);
+      exhibitStateUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(100);
     }
     return exhibitStateUsageEClass;
   }
@@ -4420,7 +4398,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (includeUseCaseUsageEClass == null)
     {
-      includeUseCaseUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(102);
+      includeUseCaseUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(101);
     }
     return includeUseCaseUsageEClass;
   }
@@ -4457,7 +4435,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (assertConstraintUsageEClass == null)
     {
-      assertConstraintUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(103);
+      assertConstraintUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(102);
     }
     return assertConstraintUsageEClass;
   }
@@ -4505,7 +4483,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (satisfyRequirementUsageEClass == null)
     {
-      satisfyRequirementUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(104);
+      satisfyRequirementUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(103);
     }
     return satisfyRequirementUsageEClass;
   }
@@ -4553,7 +4531,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (aliasElementEClass == null)
     {
-      aliasElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(105);
+      aliasElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(104);
     }
     return aliasElementEClass;
   }
@@ -4612,7 +4590,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (initialNodeEClass == null)
     {
-      initialNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(106);
+      initialNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(105);
     }
     return initialNodeEClass;
   }
@@ -4649,7 +4627,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (sendNodeEClass == null)
     {
-      sendNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(107);
+      sendNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(106);
     }
     return sendNodeEClass;
   }
@@ -4708,7 +4686,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (acceptNodeEClass == null)
     {
-      acceptNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(108);
+      acceptNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(107);
     }
     return acceptNodeEClass;
   }
@@ -4734,7 +4712,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (assignmentNodeEClass == null)
     {
-      assignmentNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(109);
+      assignmentNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(108);
     }
     return assignmentNodeEClass;
   }
@@ -4793,7 +4771,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (ifNodeEClass == null)
     {
-      ifNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(110);
+      ifNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(109);
     }
     return ifNodeEClass;
   }
@@ -4896,7 +4874,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (whileLoopNodeEClass == null)
     {
-      whileLoopNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(111);
+      whileLoopNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(110);
     }
     return whileLoopNodeEClass;
   }
@@ -4955,7 +4933,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (forLoopNodeEClass == null)
     {
-      forLoopNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(112);
+      forLoopNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(111);
     }
     return forLoopNodeEClass;
   }
@@ -5014,7 +4992,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (terminateNodeEClass == null)
     {
-      terminateNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(113);
+      terminateNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(112);
     }
     return terminateNodeEClass;
   }
@@ -5062,7 +5040,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (commonNodeEClass == null)
     {
-      commonNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(114);
+      commonNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(113);
     }
     return commonNodeEClass;
   }
@@ -5099,7 +5077,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (thenNodeEClass == null)
     {
-      thenNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(115);
+      thenNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(114);
     }
     return thenNodeEClass;
   }
@@ -5136,7 +5114,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (elseNodeEClass == null)
     {
-      elseNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(116);
+      elseNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(115);
     }
     return elseNodeEClass;
   }
@@ -5184,7 +5162,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (entryActionNodeEClass == null)
     {
-      entryActionNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(117);
+      entryActionNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(116);
     }
     return entryActionNodeEClass;
   }
@@ -5210,7 +5188,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (doActionNodeEClass == null)
     {
-      doActionNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(118);
+      doActionNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(117);
     }
     return doActionNodeEClass;
   }
@@ -5236,7 +5214,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (exitActionNodeEClass == null)
     {
-      exitActionNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(119);
+      exitActionNodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(118);
     }
     return exitActionNodeEClass;
   }
@@ -5262,7 +5240,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (subjectUsageEClass == null)
     {
-      subjectUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(120);
+      subjectUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(119);
     }
     return subjectUsageEClass;
   }
@@ -5288,7 +5266,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (requirementConstraintUsageEClass == null)
     {
-      requirementConstraintUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(121);
+      requirementConstraintUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(120);
     }
     return requirementConstraintUsageEClass;
   }
@@ -5336,7 +5314,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (framedConcernUsageEClass == null)
     {
-      framedConcernUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(122);
+      framedConcernUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(121);
     }
     return framedConcernUsageEClass;
   }
@@ -5373,7 +5351,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (requirementVerificationUsageEClass == null)
     {
-      requirementVerificationUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(123);
+      requirementVerificationUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(122);
     }
     return requirementVerificationUsageEClass;
   }
@@ -5410,7 +5388,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (actorUsageEClass == null)
     {
-      actorUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(124);
+      actorUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(123);
     }
     return actorUsageEClass;
   }
@@ -5436,7 +5414,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (stakeholderUsageEClass == null)
     {
-      stakeholderUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(125);
+      stakeholderUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(124);
     }
     return stakeholderUsageEClass;
   }
@@ -5462,7 +5440,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (objectiveRequirementUsageEClass == null)
     {
-      objectiveRequirementUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(126);
+      objectiveRequirementUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(125);
     }
     return objectiveRequirementUsageEClass;
   }
@@ -5488,7 +5466,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (viewRenderingUsageEClass == null)
     {
-      viewRenderingUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(127);
+      viewRenderingUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(126);
     }
     return viewRenderingUsageEClass;
   }
@@ -5514,7 +5492,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (resultExpressionEClass == null)
     {
-      resultExpressionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(128);
+      resultExpressionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(127);
     }
     return resultExpressionEClass;
   }
@@ -5540,7 +5518,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (actionParameterEndEClass == null)
     {
-      actionParameterEndEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(129);
+      actionParameterEndEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(128);
     }
     return actionParameterEndEClass;
   }
@@ -5555,7 +5533,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (forVariableParameterEClass == null)
     {
-      forVariableParameterEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(130);
+      forVariableParameterEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(129);
     }
     return forVariableParameterEClass;
   }
@@ -5570,7 +5548,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (payloadParameterEClass == null)
     {
-      payloadParameterEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(131);
+      payloadParameterEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(130);
     }
     return payloadParameterEClass;
   }
@@ -5607,7 +5585,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (connectorEndEClass == null)
     {
-      connectorEndEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(132);
+      connectorEndEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(131);
     }
     return connectorEndEClass;
   }
@@ -5633,7 +5611,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (performedActionUsageEClass == null)
     {
-      performedActionUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(133);
+      performedActionUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(132);
     }
     return performedActionUsageEClass;
   }
@@ -5648,7 +5626,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (itemFeatureParameterEClass == null)
     {
-      itemFeatureParameterEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(134);
+      itemFeatureParameterEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(133);
     }
     return itemFeatureParameterEClass;
   }
@@ -5663,7 +5641,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (ifSuccessionAsUsageEClass == null)
     {
-      ifSuccessionAsUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(135);
+      ifSuccessionAsUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(134);
     }
     return ifSuccessionAsUsageEClass;
   }
@@ -5678,7 +5656,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (generalUsagePrefixEClass == null)
     {
-      generalUsagePrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(136);
+      generalUsagePrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(135);
     }
     return generalUsagePrefixEClass;
   }
@@ -5693,7 +5671,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (prefixMetadataEClass == null)
     {
-      prefixMetadataEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(137);
+      prefixMetadataEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(136);
     }
     return prefixMetadataEClass;
   }
@@ -5719,7 +5697,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (usageExtensionKeywordEClass == null)
     {
-      usageExtensionKeywordEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(138);
+      usageExtensionKeywordEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(137);
     }
     return usageExtensionKeywordEClass;
   }
@@ -5734,7 +5712,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (definitionExtensionKeywordEClass == null)
     {
-      definitionExtensionKeywordEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(139);
+      definitionExtensionKeywordEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(138);
     }
     return definitionExtensionKeywordEClass;
   }
@@ -5749,7 +5727,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (emptySuccessionPrefixEClass == null)
     {
-      emptySuccessionPrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(140);
+      emptySuccessionPrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(139);
     }
     return emptySuccessionPrefixEClass;
   }
@@ -5797,7 +5775,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (multiplicityRangeEClass == null)
     {
-      multiplicityRangeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(141);
+      multiplicityRangeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(140);
     }
     return multiplicityRangeEClass;
   }
@@ -5834,7 +5812,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (valuePartEClass == null)
     {
-      valuePartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(142);
+      valuePartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(141);
     }
     return valuePartEClass;
   }
@@ -5849,7 +5827,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (memberPrefixEClass == null)
     {
-      memberPrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(143);
+      memberPrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(142);
     }
     return memberPrefixEClass;
   }
@@ -5886,7 +5864,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (isReturnPrefixEClass == null)
     {
-      isReturnPrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(144);
+      isReturnPrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(143);
     }
     return isReturnPrefixEClass;
   }
@@ -5912,7 +5890,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (definitionPrefixEClass == null)
     {
-      definitionPrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(145);
+      definitionPrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(144);
     }
     return definitionPrefixEClass;
   }
@@ -5927,7 +5905,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (occurrenceDefinitionPrefixEClass == null)
     {
-      occurrenceDefinitionPrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(146);
+      occurrenceDefinitionPrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(145);
     }
     return occurrenceDefinitionPrefixEClass;
   }
@@ -5953,7 +5931,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (basicDefinitionPrefixEClass == null)
     {
-      basicDefinitionPrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(147);
+      basicDefinitionPrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(146);
     }
     return basicDefinitionPrefixEClass;
   }
@@ -5990,7 +5968,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (usagePrefixEClass == null)
     {
-      usagePrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(148);
+      usagePrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(147);
     }
     return usagePrefixEClass;
   }
@@ -6005,7 +5983,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (unextendedUsagePrefixEClass == null)
     {
-      unextendedUsagePrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(149);
+      unextendedUsagePrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(148);
     }
     return unextendedUsagePrefixEClass;
   }
@@ -6020,7 +5998,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (endUsagePrefixEClass == null)
     {
-      endUsagePrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(150);
+      endUsagePrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(149);
     }
     return endUsagePrefixEClass;
   }
@@ -6046,7 +6024,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (crossEndUsagePrefixEClass == null)
     {
-      crossEndUsagePrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(151);
+      crossEndUsagePrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(150);
     }
     return crossEndUsagePrefixEClass;
   }
@@ -6072,9 +6050,20 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (crossEndUsageEClass == null)
     {
-      crossEndUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(152);
+      crossEndUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(151);
     }
     return crossEndUsageEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getCrossEndUsage_DeclaredName()
+  {
+        return (EAttribute)getCrossEndUsage().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -6087,7 +6076,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (occurrenceUsagePrefixEClass == null)
     {
-      occurrenceUsagePrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(153);
+      occurrenceUsagePrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(152);
     }
     return occurrenceUsagePrefixEClass;
   }
@@ -6124,7 +6113,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (refPrefixEClass == null)
     {
-      refPrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(154);
+      refPrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(153);
     }
     return refPrefixEClass;
   }
@@ -6172,7 +6161,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (basicUsagePrefixEClass == null)
     {
-      basicUsagePrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(155);
+      basicUsagePrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(154);
     }
     return basicUsagePrefixEClass;
   }
@@ -6198,7 +6187,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (connectorPartEClass == null)
     {
-      connectorPartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(156);
+      connectorPartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(155);
     }
     return connectorPartEClass;
   }
@@ -6224,7 +6213,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (definitionDeclarationEClass == null)
     {
-      definitionDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(157);
+      definitionDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(156);
     }
     return definitionDeclarationEClass;
   }
@@ -6250,7 +6239,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (actionUsageDeclarationEClass == null)
     {
-      actionUsageDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(158);
+      actionUsageDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(157);
     }
     return actionUsageDeclarationEClass;
   }
@@ -6265,7 +6254,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (constraintUsageDeclarationEClass == null)
     {
-      constraintUsageDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(159);
+      constraintUsageDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(158);
     }
     return constraintUsageDeclarationEClass;
   }
@@ -6280,7 +6269,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (actionNodeUsageDeclarationEClass == null)
     {
-      actionNodeUsageDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(160);
+      actionNodeUsageDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(159);
     }
     return actionNodeUsageDeclarationEClass;
   }
@@ -6295,7 +6284,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (usageEClass == null)
     {
-      usageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(161);
+      usageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(160);
     }
     return usageEClass;
   }
@@ -6310,7 +6299,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (usageDeclarationEClass == null)
     {
-      usageDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(162);
+      usageDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(161);
     }
     return usageDeclarationEClass;
   }
@@ -6325,7 +6314,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (featureValueEClass == null)
     {
-      featureValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(163);
+      featureValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(162);
     }
     return featureValueEClass;
   }
@@ -6373,7 +6362,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (featureDeclarationEClass == null)
     {
-      featureDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(164);
+      featureDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(163);
     }
     return featureDeclarationEClass;
   }
@@ -6388,7 +6377,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (featureSpecializationPartEClass == null)
     {
-      featureSpecializationPartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(165);
+      featureSpecializationPartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(164);
     }
     return featureSpecializationPartEClass;
   }
@@ -6403,7 +6392,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (performActionUsageDeclarationEClass == null)
     {
-      performActionUsageDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(166);
+      performActionUsageDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(165);
     }
     return performActionUsageDeclarationEClass;
   }
@@ -6429,7 +6418,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (acceptNodeDeclarationEClass == null)
     {
-      acceptNodeDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(167);
+      acceptNodeDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(166);
     }
     return acceptNodeDeclarationEClass;
   }
@@ -6444,7 +6433,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (acceptParameterPartEClass == null)
     {
-      acceptParameterPartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(168);
+      acceptParameterPartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(167);
     }
     return acceptParameterPartEClass;
   }
@@ -6470,7 +6459,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (itemFeatureParameterPartEClass == null)
     {
-      itemFeatureParameterPartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(169);
+      itemFeatureParameterPartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(168);
     }
     return itemFeatureParameterPartEClass;
   }
@@ -6496,7 +6485,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (payloadFeatureEClass == null)
     {
-      payloadFeatureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(170);
+      payloadFeatureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(169);
     }
     return payloadFeatureEClass;
   }
@@ -6522,7 +6511,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (payloadFeatureSpecializationPartEClass == null)
     {
-      payloadFeatureSpecializationPartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(171);
+      payloadFeatureSpecializationPartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(170);
     }
     return payloadFeatureSpecializationPartEClass;
   }
@@ -6537,7 +6526,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (triggerValuePartEClass == null)
     {
-      triggerValuePartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(172);
+      triggerValuePartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(171);
     }
     return triggerValuePartEClass;
   }
@@ -6574,7 +6563,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (sendNodeDeclarationEClass == null)
     {
-      sendNodeDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(173);
+      sendNodeDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(172);
     }
     return sendNodeDeclarationEClass;
   }
@@ -6622,7 +6611,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (assignmentNodeDeclarationEClass == null)
     {
-      assignmentNodeDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(174);
+      assignmentNodeDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(173);
     }
     return assignmentNodeDeclarationEClass;
   }
@@ -6670,7 +6659,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (identificationEClass == null)
     {
-      identificationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(175);
+      identificationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(174);
     }
     return identificationEClass;
   }
@@ -6707,7 +6696,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (multiplicityPartEClass == null)
     {
-      multiplicityPartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(176);
+      multiplicityPartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(175);
     }
     return multiplicityPartEClass;
   }
@@ -6722,7 +6711,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (multiplicityModifiersEClass == null)
     {
-      multiplicityModifiersEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(177);
+      multiplicityModifiersEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(176);
     }
     return multiplicityModifiersEClass;
   }
@@ -6759,7 +6748,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (featureSpecializationEClass == null)
     {
-      featureSpecializationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(178);
+      featureSpecializationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(177);
     }
     return featureSpecializationEClass;
   }
@@ -6774,7 +6763,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (typingFeatureTypingEClass == null)
     {
-      typingFeatureTypingEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(179);
+      typingFeatureTypingEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(178);
     }
     return typingFeatureTypingEClass;
   }
@@ -6800,7 +6789,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (subsettingFeatureChainEClass == null)
     {
-      subsettingFeatureChainEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(180);
+      subsettingFeatureChainEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(179);
     }
     return subsettingFeatureChainEClass;
   }
@@ -6826,7 +6815,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (referenceFeatureChainEClass == null)
     {
-      referenceFeatureChainEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(181);
+      referenceFeatureChainEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(180);
     }
     return referenceFeatureChainEClass;
   }
@@ -6852,7 +6841,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (crossFeatureChainEClass == null)
     {
-      crossFeatureChainEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(182);
+      crossFeatureChainEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(181);
     }
     return crossFeatureChainEClass;
   }
@@ -6878,7 +6867,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (redefinitionFeatureChainEClass == null)
     {
-      redefinitionFeatureChainEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(183);
+      redefinitionFeatureChainEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(182);
     }
     return redefinitionFeatureChainEClass;
   }
@@ -6904,7 +6893,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (transitionSuccessionEClass == null)
     {
-      transitionSuccessionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(184);
+      transitionSuccessionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(183);
     }
     return transitionSuccessionEClass;
   }
@@ -6930,7 +6919,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (referenceSubsettingEClass == null)
     {
-      referenceSubsettingEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(185);
+      referenceSubsettingEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(184);
     }
     return referenceSubsettingEClass;
   }
@@ -6956,7 +6945,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (actionNodePrefixEClass == null)
     {
-      actionNodePrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(186);
+      actionNodePrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(185);
     }
     return actionNodePrefixEClass;
   }
@@ -6971,7 +6960,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (controlNodePrefixEClass == null)
     {
-      controlNodePrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(187);
+      controlNodePrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(186);
     }
     return controlNodePrefixEClass;
   }
@@ -7008,7 +6997,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (performedActionParameterPartEClass == null)
     {
-      performedActionParameterPartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(188);
+      performedActionParameterPartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(187);
     }
     return performedActionParameterPartEClass;
   }
@@ -7034,7 +7023,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (transitionUsageIfPartEClass == null)
     {
-      transitionUsageIfPartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(189);
+      transitionUsageIfPartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(188);
     }
     return transitionUsageIfPartEClass;
   }
@@ -7060,7 +7049,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (acceptActionUsageEClass == null)
     {
-      acceptActionUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(196);
+      acceptActionUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(195);
     }
     return acceptActionUsageEClass;
   }
@@ -7075,7 +7064,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (sendActionUsageEClass == null)
     {
-      sendActionUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(197);
+      sendActionUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(196);
     }
     return sendActionUsageEClass;
   }
@@ -7090,7 +7079,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (assignmentActionUsageEClass == null)
     {
-      assignmentActionUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(198);
+      assignmentActionUsageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(197);
     }
     return assignmentActionUsageEClass;
   }
@@ -7105,7 +7094,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (visibilityIndicatorEEnum == null)
     {
-      visibilityIndicatorEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(190);
+      visibilityIndicatorEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(189);
     }
     return visibilityIndicatorEEnum;
   }
@@ -7120,7 +7109,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (featureDirectionEEnum == null)
     {
-      featureDirectionEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(191);
+      featureDirectionEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(190);
     }
     return featureDirectionEEnum;
   }
@@ -7135,7 +7124,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (portionKindEEnum == null)
     {
-      portionKindEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(192);
+      portionKindEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(191);
     }
     return portionKindEEnum;
   }
@@ -7150,7 +7139,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (triggerKindEEnum == null)
     {
-      triggerKindEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(193);
+      triggerKindEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(192);
     }
     return triggerKindEEnum;
   }
@@ -7165,7 +7154,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (commonNodeKindEEnum == null)
     {
-      commonNodeKindEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(194);
+      commonNodeKindEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(193);
     }
     return commonNodeKindEEnum;
   }
@@ -7180,7 +7169,7 @@ public class SysMLOCPackageImpl extends EPackageImpl implements SysMLOCPackage
   {
     if (requirementConstraintKindEEnum == null)
     {
-      requirementConstraintKindEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(195);
+      requirementConstraintKindEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(SysMLOCPackage.eNS_URI).getEClassifiers().get(194);
     }
     return requirementConstraintKindEEnum;
   }

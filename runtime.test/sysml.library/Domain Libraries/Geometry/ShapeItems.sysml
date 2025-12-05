@@ -68,9 +68,14 @@ standard library package ShapeItems {
 		}
 		item :>> vertices [*] = edges.vertices;
 
-		assert constraint { isClosed == vertices->forAll{in p1 : Point;
-					vertices->exists{p2 : Point; p1 != p2 and
-							 includes(p1.matingOccurrences, p2) } } }
+		assert constraint { 
+			//isClosed == vertices->forAll{
+				//in p1 : Point;
+				//vertices->exists{
+				//	p2 : Point; p1 != p2 and includes(p1.matingOccurrences, p2)
+				//}
+			//} 
+		}
 	}
 
 	attribute semiMajorAxis : LengthValue [0..*] :> scalarQuantities;

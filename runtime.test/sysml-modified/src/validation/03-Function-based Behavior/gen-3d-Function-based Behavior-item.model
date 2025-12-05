@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="'3d-Function-based Behavior-item'">
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues::Real"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="Definitions" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="Usages" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:Package" declaredName="Definitions">
+      <elements xsi:type="sysMLOC:ItemDefinition" declaredName="Fuel"/>
+      <elements xsi:type="sysMLOC:PortDefinition" declaredName="FuelPort">
+        <elements xsi:type="sysMLOC:ItemUsage" direction="out" declaredName="fuel">
+          <typings>Fuel</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="Pump">
+        <elements xsi:type="sysMLOC:PortUsage" declaredName="fuelInPort">
+          <typings>~FuelPort</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:PortUsage" declaredName="fuelOutPort">
+          <typings>FuelPort</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="StorageTank">
+        <elements xsi:type="sysMLOC:PortUsage" declaredName="fuelOutPort">
+          <typings>FuelPort</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="FuelTank">
+        <elements xsi:type="sysMLOC:PortUsage" declaredName="fuelInPort">
+          <typings>~FuelPort</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle">
+        <elements xsi:type="sysMLOC:PortUsage" declaredName="fuelInPort">
+          <typings>~FuelPort</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:ActionDefinition" declaredName="PumpFuel">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="fuelIn">
+          <typings>Fuel</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="fuelOut">
+          <typings>Fuel</typings>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Package" declaredName="Usages">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="context">
+        <elements xsi:type="sysMLOC:Comment" body="/* Storage Element */"/>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="storageTank">
+          <typings>StorageTank</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:FlowUsage">
+          <itemFeatureParameter declaredName="fuel">
+            <typings>Fuel</typings>
+          </itemFeatureParameter>
+          <FlowEnd>storageTank.fuelOutPort.fuel</FlowEnd>
+          <FlowEnd>pump.fuelInPort.fuel</FlowEnd>
+          <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9;&#x9; * Note: Explicitly notating that the flow is &quot;of fuel : Fuel&quot; is optional.&#xA;&#x9;&#x9;&#x9;&#x9; */"/>
+        </elements>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="pump">
+          <typings>Pump</typings>
+          <elements xsi:type="sysMLOC:PerformActionUsage" declaredName="pumpFuel">
+            <typings>PumpFuel</typings>
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="fuelIn" valuePart="fuelInPort.fuel"/>
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="fuelOut" valuePart="fuelOutPort.fuel"/>
+          </elements>
+        </elements>
+        <elements xsi:type="sysMLOC:FlowUsage">
+          <itemFeatureParameter declaredName="fuel">
+            <typings>Fuel</typings>
+          </itemFeatureParameter>
+          <FlowEnd>pump.fuelOutPort.fuel</FlowEnd>
+          <FlowEnd>vehicle.fuelInPort.fuel</FlowEnd>
+        </elements>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle">
+          <typings>Vehicle</typings>
+          <elements xsi:type="sysMLOC:FlowUsage">
+            <FlowEnd>fuelInPort.fuel</FlowEnd>
+            <FlowEnd>fuelTank.fuel</FlowEnd>
+            <elements xsi:type="sysMLOC:Comment" body="/* &#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * Note: The semantics of flowing to a &quot;stored item&quot; is tentative.&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; */"/>
+          </elements>
+          <elements xsi:type="sysMLOC:Comment" body="/* Storage Element */"/>
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="fuelTank">
+            <typings>FuelTank</typings>
+            <elements xsi:type="sysMLOC:AttributeUsage" declaredName="volumeMax">
+              <typings>Real</typings>
+            </elements>
+            <elements xsi:type="sysMLOC:AttributeUsage" declaredName="fuelLevel" valuePart="fuel.volume / volumeMax">
+              <typings>Real</typings>
+            </elements>
+            <elements xsi:type="sysMLOC:Comment" body="/* Stored Item */"/>
+            <elements xsi:type="sysMLOC:ItemUsage" declaredName="fuel">
+              <typings>Fuel</typings>
+              <elements xsi:type="sysMLOC:AttributeUsage" declaredName="volume">
+                <typings>Real</typings>
+              </elements>
+              <elements xsi:type="sysMLOC:Comment" body="/* isConserved = true */"/>
+            </elements>
+          </elements>
+        </elements>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

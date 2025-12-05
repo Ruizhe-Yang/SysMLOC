@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="ConnectionTest">
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="p">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="x">
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="x1"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="P">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="y"/>
+      <elements xsi:type="sysMLOC:ConnectionUsage">
+        <connectorPart refElement="p"/>
+        <connectorPart refElement="y"/>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="p1">
+        <subsetting>p</subsetting>
+      </elements>
+      <elements xsi:type="sysMLOC:ConnectionUsage">
+        <connectorPart refElement="p1.x"/>
+        <connectorPart refElement="y"/>
+      </elements>
+      <elements xsi:type="sysMLOC:ConnectionUsage">
+        <connectorPart refElement="p1.x.x1"/>
+        <connectorPart refElement="y"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:ConnectionDefinition" isAbstract="true" declaredName="C">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="p"/>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="end1" isEnd="true"/>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="end2" isEnd="true"/>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="end3" isEnd="true"/>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="d1"/>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="d2"/>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="d3"/>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="d4"/>
+    <elements xsi:type="sysMLOC:ConnectionUsage" declaredName="bus">
+      <typings>C</typings>
+      <connectorPart refElement="d1"/>
+      <connectorPart refElement="d2"/>
+      <connectorPart refElement="d3"/>
+      <connectorPart refElement="d4"/>
+    </elements>
+    <elements xsi:type="sysMLOC:ConnectionUsage">
+      <typings>C</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isEnd="true">
+        <references>d1</references>
+        <redefinitions>end1</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="end2" isEnd="true">
+        <references>d2</references>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="end3" isEnd="true">
+        <references>d3</references>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:ConnectionUsage">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="q"/>
+      <elements xsi:type="sysMLOC:ReferenceUsage" isEnd="true" declaredName="end1">
+        <subsetting>q</subsetting>
+        <references>d1</references>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="end2" isEnd="true">
+        <references>d2</references>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:FlowDefinition" isAbstract="true" declaredName="F"/>
+    <elements xsi:type="sysMLOC:Message">
+      <typings>F</typings>
+      <FlowEnd>p</FlowEnd>
+      <FlowEnd>p</FlowEnd>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="A">
+      <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="b">
+        <typings>B</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="B"/>
+    <elements xsi:type="sysMLOC:ConnectionDefinition" declaredName="AB">
+      <elements xsi:type="sysMLOC:ItemUsage" isEnd="true" declaredName="a">
+        <crossEndUsage MultiLow="1"/>
+        <typings>A</typings>
+        <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="M"/>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="b" isEnd="true">
+        <typings>B</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="M"/>
+  </elements>
+</sysMLOC:Namespace>

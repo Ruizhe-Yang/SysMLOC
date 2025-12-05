@@ -85,7 +85,7 @@
       <superclassifiers>TransitionAction</superclassifiers>
       <superclassifiers>StateTransitionPerformance</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * A StateTransitionAction is a TransitionAction and a StateTransitionPerformance whose transitionLinkSource &#xA;&#x9;&#x9; * is a State. It is the base type of TransitionUsages used transitions in state models.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="transitionLinkSource" MultiValue="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="transitionLinkSource" MultiLow="1">
         <typings>StateAction</typings>
         <redefinitions>TransitionAction::transitionLinkSource</redefinitions>
         <redefinitions>StateTransitionPerformance::transitionLinkSource</redefinitions>

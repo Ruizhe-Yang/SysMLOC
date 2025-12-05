@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="RequirementTest">
+    <elements xsi:type="sysMLOC:ConstraintDefinition" declaredName="C"/>
+    <elements xsi:type="sysMLOC:ConstraintUsage" declaredName="c">
+      <typings>C</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="q" isRecursive="true"/>
+    <elements xsi:type="sysMLOC:RequirementDefinition" declaredName="R">
+      <elements xsi:type="sysMLOC:RequirementConstraintUsage" declaredName="c1">
+        <typings>C</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:RequirementConstraintUsage" refElement="c" kind="require"/>
+      <elements xsi:type="sysMLOC:Documentation" body="/* */"/>
+      <elements xsi:type="sysMLOC:RequirementUsage"/>
+      <elements xsi:type="sysMLOC:RequirementDefinition" declaredShortName="'1'" declaredName="A">
+        <elements xsi:type="sysMLOC:Documentation" body="/* Text */"/>
+        <elements xsi:type="sysMLOC:SubjectUsage" declaredName="s"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:RequirementDefinition" declaredName="R1">
+      <elements xsi:type="sysMLOC:RequirementConstraintUsage" declaredName="c1" kind="require">
+        <redefinitions>c</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="p"/>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="q">
+      <elements xsi:type="sysMLOC:RequirementUsage" declaredName="r">
+        <typings>R</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:SatisfyRequirementUsage" refElement="r" satisfactionParameter="p"/>
+      <elements xsi:type="sysMLOC:SatisfyRequirementUsage" refElement="r" satisfactionParameter="q"/>
+    </elements>
+    <elements xsi:type="sysMLOC:RequirementUsage" declaredName="r1">
+      <typings>R1</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:SatisfyRequirementUsage" refElement="r1" isNegated="true" satisfactionParameter="p"/>
+    <elements xsi:type="sysMLOC:SatisfyRequirementUsage" refElement="r1" isNegated="true" satisfactionParameter="q"/>
+  </elements>
+</sysMLOC:Namespace>

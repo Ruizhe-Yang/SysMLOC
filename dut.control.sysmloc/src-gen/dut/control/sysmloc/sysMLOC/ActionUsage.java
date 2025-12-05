@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface ActionUsage extends BehaviorUsageElements, GeneralUsagePrefix, EmptySuccessionPrefix, MemberPrefix, isReturnPrefix, OccurrenceUsagePrefix, EndUsagePrefix, BasicUsagePrefix, RefPrefix, BasicDefinitionPrefix, UsageExtensionKeyword, PrefixMetadata, ActionUsageDeclaration, UsageDeclaration, FeatureDeclaration, Identification, FeatureSpecializationPart, FeatureSpecialization, TypingFeatureTyping, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, MultiplicityPart, MultiplicityRange, MultiplicityModifiers, FeatureValue
+public interface ActionUsage extends BehaviorUsageElements, GeneralUsagePrefix, EmptySuccessionPrefix, MemberPrefix, isReturnPrefix, OccurrenceUsagePrefix, EndUsagePrefix, CrossEndUsagePrefix, BasicUsagePrefix, RefPrefix, BasicDefinitionPrefix, UsageExtensionKeyword, PrefixMetadata, ActionUsageDeclaration, UsageDeclaration, FeatureDeclaration, Identification, FeatureSpecializationPart, FeatureSpecialization, TypingFeatureTyping, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, MultiplicityPart, MultiplicityRange, MultiplicityModifiers, FeatureValue
 {
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="'3a-Function-based Behavior-1'">
+    <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="Definitions" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="Usages" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:Package" declaredName="Definitions">
+      <elements xsi:type="sysMLOC:AliasElement" memberName="Torque" memberElement="ISQ::TorqueValue">
+        <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9; * The 'TorqueValue' type is aliased as 'Torque'.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="FuelCmd"/>
+      <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9; * There is no special construct for modeling &quot;signals&quot;. Data to be&#xA;&#x9;&#x9; * transmitted asynchronously can simply be modeled using attribute defs.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="EngineStart"/>
+      <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="EngineOff"/>
+      <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9; * Black box definitions for actions include their inputs and outputs.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:ActionDefinition" declaredName="'Generate Torque'">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="fuelCmd">
+          <typings>FuelCmd</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="engineTorque">
+          <typings>Torque</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:ActionDefinition" declaredName="'Amplify Torque'">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="engineTorque">
+          <typings>Torque</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="transmissionTorque">
+          <typings>Torque</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:ActionDefinition" declaredName="'Transfer Torque'">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="transmissionTorque">
+          <typings>Torque</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="driveshaftTorque">
+          <typings>Torque</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:ActionDefinition" declaredName="'Distribute Torque'">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="driveShaftTorque">
+          <typings>Torque</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="wheelTorque1">
+          <typings>Torque</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="wheelTorque2">
+          <typings>Torque</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:ActionDefinition" declaredName="'Provide Power'">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="fuelCmd">
+          <typings>FuelCmd</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="wheelTorque1">
+          <typings>Torque</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="wheelTorque2">
+          <typings>Torque</typings>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Package" declaredName="Usages">
+      <elements xsi:type="sysMLOC:ActionUsage" declaredName="'provide power'">
+        <typings>'Provide Power'</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="fuelCmd">
+          <typings>FuelCmd</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="wheelTorque1">
+          <typings>Torque</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="wheelTorque2">
+          <typings>Torque</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:CodeAnnotation" body="// ITEM FLOW PART&#xA;"/>
+        <elements xsi:type="sysMLOC:BindingConnectorAsUsage">
+          <connectorPart refElement="'generate torque'.fuelCmd"/>
+          <connectorPart refElement="fuelCmd"/>
+          <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9;&#x9; * This is a binding connector, just as was used to&#xA;&#x9;&#x9;&#x9;&#x9; * model delegation between ports.&#xA;&#x9;&#x9;&#x9;&#x9; */"/>
+        </elements>
+        <elements xsi:type="sysMLOC:ActionUsage" declaredName="'generate torque'">
+          <typings>'Generate Torque'</typings>
+          <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9;&#x9; * An action usage inherits parameters from its definition.&#xA;&#x9;&#x9;&#x9;&#x9; * They act as its &quot;pins&quot;.&#xA;&#x9;&#x9;&#x9;&#x9; */"/>
+        </elements>
+        <elements xsi:type="sysMLOC:FlowUsage">
+          <FlowEnd>'generate torque'.engineTorque</FlowEnd>
+          <FlowEnd>'amplify torque'.engineTorque</FlowEnd>
+          <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9;&#x9; * A flow is a connection between two actions that streams items from&#xA;&#x9;&#x9;&#x9;&#x9; * an output parameter of one action to an input parameter of the other.&#xA;&#x9;&#x9;&#x9;&#x9; * Note that streaming is a property of the connection, not the&#xA;&#x9;&#x9;&#x9;&#x9; * actions or their parameters.&#xA;&#x9;&#x9;&#x9;&#x9; */"/>
+        </elements>
+        <elements xsi:type="sysMLOC:ActionUsage" declaredName="'amplify torque'">
+          <typings>'Amplify Torque'</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:FlowUsage">
+          <FlowEnd>'amplify torque'.transmissionTorque</FlowEnd>
+          <FlowEnd>'transfer torque'.transmissionTorque</FlowEnd>
+        </elements>
+        <elements xsi:type="sysMLOC:ActionUsage" declaredName="'transfer torque'">
+          <typings>'Transfer Torque'</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:FlowUsage">
+          <FlowEnd>'transfer torque'.driveshaftTorque</FlowEnd>
+          <FlowEnd>'distribute torque'.driveShaftTorque</FlowEnd>
+        </elements>
+        <elements xsi:type="sysMLOC:ActionUsage" declaredName="'distribute torque'">
+          <typings>'Distribute Torque'</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:BindingConnectorAsUsage">
+          <connectorPart refElement="wheelTorque1"/>
+          <connectorPart refElement="'distribute torque'.wheelTorque1"/>
+        </elements>
+        <elements xsi:type="sysMLOC:BindingConnectorAsUsage">
+          <connectorPart refElement="wheelTorque2"/>
+          <connectorPart refElement="'distribute torque'.wheelTorque2"/>
+        </elements>
+        <elements xsi:type="sysMLOC:CodeAnnotation" body="// CONTROL FLOW PART&#xA;"/>
+        <elements xsi:type="sysMLOC:SuccessionAsUsage">
+          <connectorPart refElement="start"/>
+          <connectorPart refElement="continue"/>
+          <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9;&#x9; * A first is an assertion that one thing must occur&#xA;&#x9;&#x9;&#x9;&#x9; * before another, acting like a &quot;control flow&quot;. 'start' is&#xA;&#x9;&#x9;&#x9;&#x9; * the start snapshot of the action, which acts like an&#xA;&#x9;&#x9;&#x9;&#x9; * &quot;initial node&quot;.&#xA;&#x9;&#x9;&#x9;&#x9; */"/>
+        </elements>
+        <elements xsi:type="sysMLOC:CommonNode" declaredName="continue">
+          <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9;&#x9; * A merge node is necessary to prevent a loop of successions&#xA;&#x9;&#x9;&#x9;&#x9; * from being unsatisfiable.&#xA;&#x9;&#x9;&#x9;&#x9; */"/>
+        </elements>
+        <elements xsi:type="sysMLOC:SuccessionAsUsage">
+          <connectorPart refElement="continue"/>
+          <connectorPart refElement="engineStarted"/>
+        </elements>
+        <elements xsi:type="sysMLOC:AcceptNode" declaredName="engineStarted">
+          <acceptParameter declaredName="engineStart">
+            <typings>EngineStart</typings>
+          </acceptParameter>
+          <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9;&#x9; * An accept action accepts an incoming transfer of some item&#xA;&#x9;&#x9;&#x9;&#x9; * from outside an action, in this case the &quot;signal&quot; 'EngineStart'.&#xA;&#x9;&#x9;&#x9;&#x9; * Note that 'engineStarted' is the name of the action, while&#xA;&#x9;&#x9;&#x9;&#x9; * 'engineStart' is the name of the received signal attribute.&#xA;&#x9;&#x9;&#x9;&#x9; */"/>
+        </elements>
+        <elements xsi:type="sysMLOC:SuccessionAsUsage">
+          <connectorPart refElement="engineStarted"/>
+          <connectorPart refElement="engineStopped"/>
+        </elements>
+        <elements xsi:type="sysMLOC:AcceptNode" declaredName="engineStopped">
+          <acceptParameter declaredName="engineOff">
+            <typings>EngineOff</typings>
+          </acceptParameter>
+        </elements>
+        <elements xsi:type="sysMLOC:SuccessionAsUsage">
+          <connectorPart refElement="engineStopped"/>
+          <connectorPart refElement="continue"/>
+        </elements>
+        <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9; * These successions act to &quot;enable&quot; the torque-related actions.&#xA;&#x9;&#x9;&#x9; * Each action on the right can only be performed following the&#xA;&#x9;&#x9;&#x9; * completion of a performance of 'engineStarted'.&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="sysMLOC:SuccessionAsUsage">
+          <connectorPart refElement="engineStarted"/>
+          <connectorPart refElement="'generate torque'"/>
+        </elements>
+        <elements xsi:type="sysMLOC:SuccessionAsUsage">
+          <connectorPart refElement="engineStarted"/>
+          <connectorPart refElement="'amplify torque'"/>
+        </elements>
+        <elements xsi:type="sysMLOC:SuccessionAsUsage">
+          <connectorPart refElement="engineStarted"/>
+          <connectorPart refElement="'transfer torque'"/>
+        </elements>
+        <elements xsi:type="sysMLOC:SuccessionAsUsage">
+          <connectorPart refElement="engineStarted"/>
+          <connectorPart refElement="'distribute torque'"/>
+        </elements>
+        <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9; * These successions act to &quot;disable&quot; the torque-related actions.&#xA;&#x9;&#x9;&#x9; * The performance of the actions on the left cannot continue&#xA;&#x9;&#x9;&#x9; * once there is a performance of 'engineStopped'.&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="sysMLOC:SuccessionAsUsage">
+          <connectorPart refElement="'generate torque'"/>
+          <connectorPart refElement="engineStopped"/>
+        </elements>
+        <elements xsi:type="sysMLOC:SuccessionAsUsage">
+          <connectorPart refElement="'amplify torque'"/>
+          <connectorPart refElement="engineStopped"/>
+        </elements>
+        <elements xsi:type="sysMLOC:SuccessionAsUsage">
+          <connectorPart refElement="'transfer torque'"/>
+          <connectorPart refElement="engineStopped"/>
+        </elements>
+        <elements xsi:type="sysMLOC:SuccessionAsUsage">
+          <connectorPart refElement="'distribute torque'"/>
+          <connectorPart refElement="engineStopped"/>
+        </elements>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:CodeAnnotation" body="// State Space Representation EV example&#xA;"/>
+  <elements xsi:type="sysMLOC:Package" declaredName="EVSample">
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="SI" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="StateSpaceRepresentation" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'A&#x22c5;h'" declaredName="'ampere hour'" valuePart="A*h">
+      <typings>ElectricChargeUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass">
+        <subsetting>ISQ::mass</subsetting>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="VehicleInput">
+        <superclassifiers>Input</superclassifiers>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="force">
+          <subsetting>ISQ::force</subsetting>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="VehicleOutput">
+        <superclassifiers>Output</superclassifiers>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="accel">
+          <subsetting>ISQ::acceleration</subsetting>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="velocity">
+          <subsetting>ISQ::speed</subsetting>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="distance">
+          <subsetting>ISQ::distance</subsetting>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="VehicleState">
+        <superclassifiers>StateSpace</superclassifiers>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="velocity">
+          <subsetting>ISQ::speed</subsetting>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="distance">
+          <subsetting>ISQ::distance</subsetting>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Battery">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="baseVoltage">
+        <subsetting>ISQ::electricPotential</subsetting>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="socInit">
+        <typings>ScalarValues::Real</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="capacity">
+        <subsetting>ISQ::electricCharge</subsetting>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="internalResistance">
+        <subsetting>ISQ::resistance</subsetting>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="BatteryInput">
+        <superclassifiers>Input</superclassifiers>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="current">
+          <subsetting>ISQ::electricCurrent</subsetting>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="BatteryOutput">
+        <superclassifiers>Output</superclassifiers>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="voltage">
+          <subsetting>ISQ::electricPotential</subsetting>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="BatteryState">
+        <superclassifiers>StateSpace</superclassifiers>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="soc">
+          <typings>ScalarValues::Real</typings>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Motor">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="torquePerCurrent" valuePart="ISQ::torque / ISQ::electricCurrent">
+        <subsetting>Quantities::scalarQuantities</subsetting>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="motR">
+        <subsetting>ISQ::resistance</subsetting>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="motL">
+        <subsetting>ISQ::inductance</subsetting>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MotorInput">
+        <superclassifiers>Input</superclassifiers>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="voltage">
+          <subsetting>ISQ::electricPotential</subsetting>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="friction">
+          <subsetting>ISQ::torque</subsetting>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MotorOutput">
+        <superclassifiers>Output</superclassifiers>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="current">
+          <subsetting>ISQ::electricCurrent</subsetting>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="torque">
+          <subsetting>ISQ::torque</subsetting>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MotorState">
+        <superclassifiers>StateSpace</superclassifiers>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="current">
+          <subsetting>ISQ::electricCurrent</subsetting>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Tire">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="radius">
+        <subsetting>ISQ::length</subsetting>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="moment">
+        <subsetting>ISQ::momentOfInertia</subsetting>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="TireInput">
+        <superclassifiers>Input</superclassifiers>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="torque">
+          <subsetting>ISQ::torque</subsetting>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="accel">
+          <subsetting>ISQ::acceleration</subsetting>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="TireOutput">
+        <superclassifiers>Output</superclassifiers>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="force">
+          <subsetting>ISQ::force</subsetting>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="outTorque">
+          <subsetting>ISQ::torque</subsetting>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:RequirementDefinition" declaredName="VehicleRequirement">
+      <elements xsi:type="sysMLOC:SubjectUsage" declaredName="vehicle">
+        <typings>Vehicle</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AnalysisCaseDefinition" declaredName="VehicleAnalysis">
+      <elements xsi:type="sysMLOC:SubjectUsage" declaredName="vehicle">
+        <typings>Vehicle</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:RequirementUsage" declaredName="vehicleRequirement">
+        <typings>VehicleRequirement</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:RequirementDefinition" declaredName="RangeRequirement">
+      <superclassifiers>VehicleRequirement</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/* The range of EV must be longer than the required spec under the flat road. */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="actualRange">
+        <typings>LengthValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="requiredRange">
+        <typings>LengthValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:RequirementConstraintUsage" kind="require">
+        <resultExpressionParameter resultExpression="actualRange >= requiredRange"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AnalysisCaseDefinition" declaredName="RangeAnalysis">
+      <superclassifiers>VehicleAnalysis</superclassifiers>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="simulatedRange">
+        <typings>LengthValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:RequirementUsage" declaredName="rangeRequirement">
+        <typings>RangeRequirement</typings>
+        <redefinitions>vehicleRequirement</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:ObjectiveRequirementUsage" declaredName="rangeAnalysisObjective">
+        <elements xsi:type="sysMLOC:Documentation" body="/* This analysis is to estimate the range of&#xA;                 * the EV by simulating the vehicle driving under the compact vehicle regulation.&#xA;                 */"/>
+        <elements xsi:type="sysMLOC:RequirementConstraintUsage" refElement="rangeRequirement" kind="require">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="simulatedRange">
+            <redefinitions>actualRange</redefinitions>
+          </elements>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:RequirementDefinition" declaredName="EfficiencyRequirement">
+      <superclassifiers>VehicleRequirement</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/* The efficiency of EV must be better than the required spec. */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="actualEfficiency"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="requiredEfficiency"/>
+      <elements xsi:type="sysMLOC:RequirementConstraintUsage" kind="require">
+        <resultExpressionParameter resultExpression="actualEfficiency >= requiredEfficiency"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AnalysisCaseDefinition" declaredName="EfficiencyAnalysis">
+      <superclassifiers>VehicleAnalysis</superclassifiers>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="simulatedEfficiency"/>
+      <elements xsi:type="sysMLOC:RequirementUsage" declaredName="efficiencyRequirement">
+        <typings>EfficiencyRequirement</typings>
+        <redefinitions>vehicleRequirement</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:ObjectiveRequirementUsage" declaredName="efficiencyAnalysisObjective">
+        <elements xsi:type="sysMLOC:RequirementConstraintUsage" refElement="efficiencyRequirement" kind="require">
+          <elements xsi:type="sysMLOC:AttributeUsage" valuePart="simulatedEfficiency">
+            <redefinitions>actualEfficiency</redefinitions>
+          </elements>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:RequirementDefinition" declaredName="MaxSpeedRequirement">
+      <superclassifiers>VehicleRequirement</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/* The maximum speed of EV must be larger than the required spec. */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="actualMaxSpeed">
+        <subsetting>ISQ::speed</subsetting>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="requiredMaxSpeed">
+        <subsetting>ISQ::speed</subsetting>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AnalysisCaseDefinition" declaredName="MaxSpeedAnalysis">
+      <superclassifiers>VehicleAnalysis</superclassifiers>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="simulatedMaxSpeed"/>
+      <elements xsi:type="sysMLOC:RequirementUsage" declaredName="maxSpeedRequirement">
+        <typings>MaxSpeedRequirement</typings>
+        <redefinitions>vehicleRequirement</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:ObjectiveRequirementUsage" declaredName="maxSpeedAnalysisObjective">
+        <elements xsi:type="sysMLOC:RequirementConstraintUsage" refElement="maxSpeedRequirement" kind="require">
+          <elements xsi:type="sysMLOC:AttributeUsage" valuePart="simulatedMaxSpeed">
+            <redefinitions>actualMaxSpeed</redefinitions>
+          </elements>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle">
+      <typings>Vehicle</typings>
+      <elements xsi:type="sysMLOC:AttributeUsage" isDefault="true" valuePart="1000[kg]">
+        <redefinitions>mass</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:Comment" body="/* airFrictionCoefficient [kg / m] = 1/2 * rho[kg/m^3] * Cd * S[m^2],&#xA;         * where rho is air density, S is front projected area. */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="airFrictionCoefficient" valuePart="0.2"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="efficiency"/>
+      <elements xsi:type="sysMLOC:ActionUsage" declaredName="vehicleBehavior">
+        <typings>ContinuousStateSpaceDynamics</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="input">
+          <typings>VehicleInput</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="output">
+          <typings>VehicleOutput</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <typings>VehicleState</typings>
+          <redefinitions>stateSpace</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="battery">
+        <typings>Battery</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="300[V]">
+          <redefinitions>baseVoltage</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="50['A&#x22c5;h']">
+          <redefinitions>capacity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="0.8">
+          <redefinitions>socInit</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1.8['&#x3a9;']">
+          <redefinitions>internalResistance</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:ActionUsage" declaredName="batteryBehavior">
+          <typings>ContinuousStateSpaceDynamics</typings>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="input">
+            <typings>BatteryInput</typings>
+          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="output">
+            <typings>BatteryOutput</typings>
+          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <typings>BatteryState</typings>
+            <redefinitions>stateSpace</redefinitions>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:FlowUsage">
+        <FlowEnd>battery.batteryBehavior.output</FlowEnd>
+        <FlowEnd>motor.motorBehavior.input</FlowEnd>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="motor">
+        <typings>Motor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="4['&#x3a9;']">
+          <redefinitions>motR</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="0.2[H]">
+          <redefinitions>motL</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:ActionUsage" declaredName="motorBehavior">
+          <typings>ContinuousStateSpaceDynamics</typings>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="input">
+            <typings>MotorInput</typings>
+          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="output">
+            <typings>MotorOutput</typings>
+          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <typings>MotorState</typings>
+            <redefinitions>stateSpace</redefinitions>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:FlowUsage">
+        <FlowEnd>motor.motorBehavior.output</FlowEnd>
+        <FlowEnd>tire.tireBehavior.input</FlowEnd>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="tire">
+        <typings>Tire</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isDefault="true" valuePart="300['kg&#x22c5;m&#xb2;']">
+          <redefinitions>moment</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isDefault="true" valuePart="0.7[m]">
+          <redefinitions>radius</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:ActionUsage" declaredName="tireBehavior">
+          <typings>ContinuousStateSpaceDynamics</typings>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="input">
+            <typings>TireInput</typings>
+          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="output">
+            <typings>TireOutput</typings>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:FlowUsage">
+        <FlowEnd>tire.tireBehavior.output</FlowEnd>
+        <FlowEnd>motor.motorBehavior.input</FlowEnd>
+      </elements>
+      <elements xsi:type="sysMLOC:FlowUsage">
+        <FlowEnd>tire.tireBehavior.output</FlowEnd>
+        <FlowEnd>vehicleBehavior.input</FlowEnd>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle_compact">
+      <subsetting>vehicle</subsetting>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="800[kg]">
+        <redefinitions>mass</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage">
+        <redefinitions>tire</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="200['kg&#x22c5;m&#xb2;']">
+          <redefinitions>moment</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="0.5[m]">
+          <redefinitions>radius</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="smallEVRangeContext">
+      <elements xsi:type="sysMLOC:RequirementUsage" declaredName="smallEVRequirement">
+        <typings>VehicleRequirement</typings>
+        <elements xsi:type="sysMLOC:Documentation" body="/* The small EVs must be ligher than 900[kg] */"/>
+        <elements xsi:type="sysMLOC:SubjectUsage" valuePart="vehicle_compact">
+          <redefinitions>vehicle</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:Comment" body="/*  To comform with the regulation and the battery mass will impact it. */"/>
+        <elements xsi:type="sysMLOC:RequirementConstraintUsage">
+          <resultExpressionParameter resultExpression="vehicle.mass &lt; 900[kg]"/>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AnalysisCaseUsage" declaredName="smallEVAnalysis">
+        <typings>VehicleAnalysis</typings>
+        <elements xsi:type="sysMLOC:SubjectUsage">
+          <subsetting>vehicle_compact</subsetting>
+          <redefinitions>vehicle</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:RequirementUsage" valuePart="smallEVRequirement">
+          <redefinitions>vehicleRequirement</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:RequirementUsage" declaredShortName="C1" declaredName="rangeRequirementSmall">
+        <typings>RangeRequirement</typings>
+        <subsetting>smallEVRequirement</subsetting>
+        <elements xsi:type="sysMLOC:Documentation" body="/* The small EVs must run longer than 130km */"/>
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="130[km]">
+          <redefinitions>requiredRange</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AnalysisCaseUsage" declaredName="rangeAnalysisSmall">
+        <typings>RangeAnalysis</typings>
+        <subsetting>smallEVAnalysis</subsetting>
+        <elements xsi:type="sysMLOC:RequirementUsage" valuePart="rangeRequirementSmall">
+          <redefinitions>rangeRequirement</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="simulatedRange" valuePart="vehicle.vehicleBehavior.output.distance"/>
+      </elements>
+      <elements xsi:type="sysMLOC:RequirementUsage" declaredShortName="C2" declaredName="efficiencyRequirementSmall">
+        <typings>EfficiencyRequirement</typings>
+        <subsetting>smallEVRequirement</subsetting>
+        <elements xsi:type="sysMLOC:Documentation" body="/* The target efficiency of small EVs is 0.9. */"/>
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="0.9">
+          <redefinitions>requiredEfficiency</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AnalysisCaseUsage" declaredName="efficiencyAnalysisSmall">
+        <typings>EfficiencyAnalysis</typings>
+        <subsetting>smallEVAnalysis</subsetting>
+        <elements xsi:type="sysMLOC:RequirementUsage" valuePart="efficiencyRequirementSmall">
+          <redefinitions>efficiencyRequirement</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="simulatedEfficiency" valuePart="vehicle.efficiency"/>
+      </elements>
+      <elements xsi:type="sysMLOC:RequirementUsage" declaredShortName="C3" declaredName="maxSpeedRequirementSmall">
+        <typings>MaxSpeedRequirement</typings>
+        <subsetting>smallEVRequirement</subsetting>
+        <elements xsi:type="sysMLOC:Documentation" body="/* The target maximum speed of small EVs is 130 [km/h]. */"/>
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="130 [km/h]">
+          <redefinitions>requiredMaxSpeed</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AnalysisCaseUsage" declaredName="maxSpeedAnalysisSmall">
+        <typings>MaxSpeedAnalysis</typings>
+        <subsetting>smallEVAnalysis</subsetting>
+        <elements xsi:type="sysMLOC:SubjectUsage"/>
+        <elements xsi:type="sysMLOC:RequirementUsage" valuePart="maxSpeedRequirementSmall">
+          <redefinitions>maxSpeedRequirement</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="voltage" valuePart="vehicle.battery.batteryBehavior.output.voltage">
+          <subsetting>ISQ::electricPotential</subsetting>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="simulatedMaxSpeed" valuePart="vehicle.vehicleBehavior.output.velocity"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle_large">
+      <subsetting>vehicle</subsetting>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="1100[kg]">
+        <redefinitions>mass</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage">
+        <redefinitions>tire</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="300['kg&#x22c5;m&#xb2;']">
+          <redefinitions>moment</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="0.7[m]">
+          <redefinitions>radius</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="largeEVRangeContext">
+      <elements xsi:type="sysMLOC:RequirementUsage" declaredName="largeEVRequirement">
+        <typings>VehicleRequirement</typings>
+        <elements xsi:type="sysMLOC:Documentation" body="/* The large EVs must be ligher than 900[kg] */"/>
+        <elements xsi:type="sysMLOC:SubjectUsage" valuePart="vehicle_large">
+          <redefinitions>vehicle</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:Comment" body="/*  To comform with the regulation and the battery mass will impact it. */"/>
+        <elements xsi:type="sysMLOC:RequirementConstraintUsage">
+          <resultExpressionParameter resultExpression="vehicle.mass &lt; 1200[kg]"/>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AnalysisCaseUsage" declaredName="largeEVAnalysis">
+        <typings>VehicleAnalysis</typings>
+        <elements xsi:type="sysMLOC:SubjectUsage">
+          <subsetting>vehicle_large</subsetting>
+          <redefinitions>vehicle</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:RequirementUsage" valuePart="largeEVRequirement">
+          <redefinitions>vehicleRequirement</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:RequirementUsage" declaredShortName="L1" declaredName="rangeRequirementLarge">
+        <typings>RangeRequirement</typings>
+        <subsetting>largeEVRequirement</subsetting>
+        <elements xsi:type="sysMLOC:Documentation" body="/* The large EVs must run longer than 200km */"/>
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="200[km]">
+          <redefinitions>requiredRange</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AnalysisCaseUsage" declaredName="rangeAnalysisLarge">
+        <typings>RangeAnalysis</typings>
+        <subsetting>largeEVAnalysis</subsetting>
+        <elements xsi:type="sysMLOC:RequirementUsage" valuePart="rangeRequirementLarge">
+          <redefinitions>rangeRequirement</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="simulatedRange" valuePart="vehicle.vehicleBehavior.output.distance"/>
+      </elements>
+      <elements xsi:type="sysMLOC:RequirementUsage" declaredShortName="L2" declaredName="efficiencyRequirementLarge">
+        <typings>EfficiencyRequirement</typings>
+        <subsetting>largeEVRequirement</subsetting>
+        <elements xsi:type="sysMLOC:Documentation" body="/* The target efficiency of large EVs is 0.8. */"/>
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="0.8">
+          <redefinitions>requiredEfficiency</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AnalysisCaseUsage" declaredName="efficiencyAnalysisLarge">
+        <typings>EfficiencyAnalysis</typings>
+        <subsetting>largeEVAnalysis</subsetting>
+        <elements xsi:type="sysMLOC:RequirementUsage" valuePart="efficiencyRequirementLarge">
+          <redefinitions>efficiencyRequirement</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="simulatedEfficiency" valuePart="vehicle.efficiency"/>
+      </elements>
+      <elements xsi:type="sysMLOC:RequirementUsage" declaredShortName="L3" declaredName="maxSpeedRequirementLarge">
+        <typings>MaxSpeedRequirement</typings>
+        <subsetting>largeEVRequirement</subsetting>
+        <elements xsi:type="sysMLOC:Documentation" body="/* The target maximum speed of large EVs is 140 [km/h]. */"/>
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="140 [km/h]">
+          <redefinitions>requiredMaxSpeed</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AnalysisCaseUsage" declaredName="maxSpeedAnalysisLarge">
+        <typings>MaxSpeedAnalysis</typings>
+        <subsetting>largeEVAnalysis</subsetting>
+        <elements xsi:type="sysMLOC:SubjectUsage"/>
+        <elements xsi:type="sysMLOC:RequirementUsage" valuePart="maxSpeedRequirementLarge">
+          <redefinitions>maxSpeedRequirement</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="voltage" valuePart="vehicle.battery.batteryBehavior.output.voltage"/>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="simulatedMaxSpeed" valuePart="vehicle.vehicleBehavior.output.velocity"/>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

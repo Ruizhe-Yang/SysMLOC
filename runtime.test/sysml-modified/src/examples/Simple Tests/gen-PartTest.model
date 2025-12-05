@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="PartTest">
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="f">
+      <typings>A</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" visibility="public" declaredName="A">
+      <elements xsi:type="sysMLOC:PartUsage" declaredShortName="'1'" declaredName="b">
+        <typings>B</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:PortUsage" visibility="protected" declaredName="c">
+        <typings>C</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" isConstant="true" declaredName="x" MultiLow="0" MultiHigh="2"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" isDerived="true" isConstant="true" isReference="true" declaredName="y">
+        <subsetting>x</subsetting>
+      </elements>
+      <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="z">
+        <typings>ScalarValues::Integer</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:ItemDefinition" declaredName="S"/>
+    <elements xsi:type="sysMLOC:PartDefinition" isAbstract="true" declaredShortName="xx" declaredName="B">
+      <elements xsi:type="sysMLOC:PartUsage" visibility="public" isAbstract="true" declaredName="a" MultiLow="1" MultiHigh="2">
+        <typings>A</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" visibility="public" isAbstract="true" declaredName="b">
+        <subsetting>a</subsetting>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" visibility="public" isAbstract="true" declaredName="c" MultiLow="0" MultiHigh="1">
+        <subsetting>a</subsetting>
+      </elements>
+      <elements xsi:type="sysMLOC:PortUsage" declaredName="x">
+        <typings>~C</typings>
+        <elements xsi:type="sysMLOC:PortUsage" declaredName="p"/>
+        <elements xsi:type="sysMLOC:PortUsage" isReference="true" declaredName="q"/>
+      </elements>
+      <elements xsi:type="sysMLOC:Package" declaredName="P"/>
+      <elements xsi:type="sysMLOC:SuccessionFlowUsage">
+        <FlowEnd>x.p</FlowEnd>
+        <FlowEnd>a1.aa.receiver</FlowEnd>
+      </elements>
+      <elements xsi:type="sysMLOC:ActionUsage" declaredName="a1">
+        <elements xsi:type="sysMLOC:AcceptNode">
+          <acceptParameter payloadFeatureElement="S" isVia="true" viaNodeParameter="x"/>
+        </elements>
+        <elements xsi:type="sysMLOC:AcceptNode" declaredName="aa">
+          <acceptParameter payloadFeatureElement="S"/>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PerformActionUsage" declaredName="a2"/>
+      <elements xsi:type="sysMLOC:StateUsage" declaredName="s1"/>
+      <elements xsi:type="sysMLOC:ExhibitStateUsage" declaredName="s2"/>
+    </elements>
+    <elements xsi:type="sysMLOC:PortDefinition" visibility="private" declaredName="C">
+      <elements xsi:type="sysMLOC:ReferenceUsage" visibility="private" direction="in" declaredName="y">
+        <typings>A</typings>
+        <typings>B</typings>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="B_b">
+          <redefinitions>B::b</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="B_c">
+          <redefinitions>B::c</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:PortUsage" declaredName="B_x">
+          <redefinitions>B::x</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AliasElement" memberName="z1" memberElement="y"/>
+      <elements xsi:type="sysMLOC:AliasElement" memberName="z2" memberElement="y"/>
+      <elements xsi:type="sysMLOC:PortUsage" declaredName="c1">
+        <typings>C</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:PortUsage" isReference="true" declaredName="c2">
+        <typings>C</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="p1">
+      <subsetting>p2</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="p2">
+      <subsetting>p3</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="p3">
+      <subsetting>p1</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="p4">
+      <subsetting>p4</subsetting>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

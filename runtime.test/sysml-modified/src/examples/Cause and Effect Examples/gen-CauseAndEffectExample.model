@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="CauseAndEffectExample">
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="CauseAndEffect" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Causer1"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Causer2"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Effected1"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Effected2"/>
+    <elements xsi:type="sysMLOC:ConnectionDefinition" declaredName="MultiCauseEffect">
+      <prefixMetadataExtension>#multicausation</prefixMetadataExtension>
+      <elements xsi:type="sysMLOC:ExtendedUsage" isEnd="true" declaredName="cause1">
+        <prefixMetadataExtension>#cause</prefixMetadataExtension>
+        <typings>Causer1</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:ExtendedUsage" isEnd="true" declaredName="cause2">
+        <prefixMetadataExtension>#cause</prefixMetadataExtension>
+        <typings>Causer2</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:ExtendedUsage" isEnd="true" declaredName="effect1">
+        <prefixMetadataExtension>#effect</prefixMetadataExtension>
+        <typings>Effected1</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:ExtendedUsage" isEnd="true" declaredName="effect2">
+        <prefixMetadataExtension>#effect</prefixMetadataExtension>
+        <typings>Effected2</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="causer1">
+      <typings>Causer1</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="causer2">
+      <typings>Causer2</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="effected1">
+      <typings>Effected1</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="effected2">
+      <typings>Effected2</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:ConnectionUsage">
+      <prefixMetadataExtension>#multicausation</prefixMetadataExtension>
+      <typings>MultiCauseEffect</typings>
+      <connectorPart refElement="causer1" delcaredName="cause1"/>
+      <connectorPart refElement="causer2" delcaredName="cause2"/>
+      <connectorPart refElement="effected1" delcaredName="effect1"/>
+      <connectorPart refElement="effected2" delcaredName="effect2"/>
+    </elements>
+    <elements xsi:type="sysMLOC:ConnectionUsage">
+      <prefixMetadataExtension>#multicausation</prefixMetadataExtension>
+      <connectorPart refElement="causer1" delcaredName="cause1"/>
+      <connectorPart refElement="causer2" delcaredName="cause2"/>
+      <connectorPart refElement="effected1" delcaredName="effect1"/>
+      <connectorPart refElement="effected2" delcaredName="effect2"/>
+    </elements>
+    <elements xsi:type="sysMLOC:OccurrenceUsage" declaredName="a"/>
+    <elements xsi:type="sysMLOC:ItemUsage" declaredName="b"/>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="c"/>
+    <elements xsi:type="sysMLOC:ActionUsage" declaredName="d"/>
+    <elements xsi:type="sysMLOC:ConnectionUsage">
+      <prefixMetadataExtension>#multicausation</prefixMetadataExtension>
+      <elements xsi:type="sysMLOC:ExtendedUsage" isEnd="true">
+        <prefixMetadataExtension>#cause</prefixMetadataExtension>
+        <references>a</references>
+      </elements>
+      <elements xsi:type="sysMLOC:ExtendedUsage" isEnd="true">
+        <prefixMetadataExtension>#cause</prefixMetadataExtension>
+        <references>b</references>
+      </elements>
+      <elements xsi:type="sysMLOC:ExtendedUsage" isEnd="true">
+        <prefixMetadataExtension>#effect</prefixMetadataExtension>
+        <references>c</references>
+      </elements>
+      <elements xsi:type="sysMLOC:ExtendedUsage" isEnd="true">
+        <prefixMetadataExtension>#effect</prefixMetadataExtension>
+        <references>d</references>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:ExtendedUsage" declaredName="causeA">
+      <prefixMetadataExtension>#cause</prefixMetadataExtension>
+      <references>a</references>
+    </elements>
+    <elements xsi:type="sysMLOC:ExtendedUsage" declaredName="causeB">
+      <prefixMetadataExtension>#cause</prefixMetadataExtension>
+      <references>b</references>
+    </elements>
+    <elements xsi:type="sysMLOC:ExtendedUsage" declaredName="effectC">
+      <prefixMetadataExtension>#effect</prefixMetadataExtension>
+      <references>c</references>
+    </elements>
+    <elements xsi:type="sysMLOC:ExtendedUsage" declaredName="effectD">
+      <prefixMetadataExtension>#effect</prefixMetadataExtension>
+      <references>d</references>
+    </elements>
+    <elements xsi:type="sysMLOC:ConnectionUsage">
+      <prefixMetadataExtension>#multicausation</prefixMetadataExtension>
+      <connectorPart refElement="causeA"/>
+      <connectorPart refElement="causeB"/>
+      <connectorPart refElement="effectC"/>
+      <connectorPart refElement="effectD"/>
+    </elements>
+    <elements xsi:type="sysMLOC:ConnectionUsage">
+      <prefixMetadataExtension>#causation</prefixMetadataExtension>
+      <connectorPart refElement="a"/>
+      <connectorPart refElement="c"/>
+    </elements>
+    <elements xsi:type="sysMLOC:ConnectionUsage">
+      <prefixMetadataExtension>#causation</prefixMetadataExtension>
+      <connectorPart refElement="b"/>
+      <connectorPart refElement="d"/>
+      <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="CausationMetadata">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="isNecessary" valuePart="true"/>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="probability" valuePart="0.1"/>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

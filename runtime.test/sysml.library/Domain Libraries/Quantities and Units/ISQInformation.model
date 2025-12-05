@@ -18,12 +18,12 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>TrafficIntensityUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="trafficIntensity" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="trafficIntensity" MultiLow="*" isNonunique="true">
       <typings>TrafficIntensityValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
@@ -38,12 +38,12 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>TrafficOfferedIntensityUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="trafficOfferedIntensity" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="trafficOfferedIntensity" MultiLow="*" isNonunique="true">
       <typings>TrafficOfferedIntensityValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
@@ -58,12 +58,12 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>TrafficCarriedIntensityUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="trafficCarriedIntensity" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="trafficCarriedIntensity" MultiLow="*" isNonunique="true">
       <typings>TrafficCarriedIntensityValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
@@ -108,18 +108,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>CallIntensityUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="callIntensity" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="callIntensity" MultiLow="*" isNonunique="true">
       <typings>CallIntensityValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CallIntensityUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiLow="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
@@ -146,18 +146,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>CompletedCallIntensityUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="completedCallIntensity" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="completedCallIntensity" MultiLow="*" isNonunique="true">
       <typings>CompletedCallIntensityValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CompletedCallIntensityUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiLow="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
@@ -181,12 +181,12 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>StorageCapacityUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="storageCapacity" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="storageCapacity" MultiLow="*" isNonunique="true">
       <typings>StorageCapacityValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
@@ -204,12 +204,12 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>EquivalentBinaryStorageCapacityUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="equivalentBinaryStorageCapacity" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="equivalentBinaryStorageCapacity" MultiLow="*" isNonunique="true">
       <typings>EquivalentBinaryStorageCapacityValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
@@ -224,18 +224,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>TransferRateUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="transferRate" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="transferRate" MultiLow="*" isNonunique="true">
       <typings>TransferRateValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="TransferRateUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiLow="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
@@ -265,18 +265,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>BinaryDigitRateUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="binaryDigitRate" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="binaryDigitRate" MultiLow="*" isNonunique="true">
       <typings>BinaryDigitRateValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="BinaryDigitRateUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiLow="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
@@ -310,18 +310,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>EquivalentBinaryDigitRateUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="equivalentBinaryDigitRate" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="equivalentBinaryDigitRate" MultiLow="*" isNonunique="true">
       <typings>EquivalentBinaryDigitRateValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="EquivalentBinaryDigitRateUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiLow="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
@@ -348,18 +348,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>ModulationRateUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="modulationRate" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="modulationRate" MultiLow="*" isNonunique="true">
       <typings>ModulationRateValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ModulationRateUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiLow="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
@@ -435,12 +435,12 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>InformationContentUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="informationContent" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="informationContent" MultiLow="*" isNonunique="true">
       <typings>InformationContentValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
@@ -455,12 +455,12 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>EntropyForInformationScienceUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="entropyForInformationScience" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="entropyForInformationScience" MultiLow="*" isNonunique="true">
       <typings>EntropyForInformationScienceValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
@@ -475,12 +475,12 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>MaximumEntropyUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="maximumEntropy" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="maximumEntropy" MultiLow="*" isNonunique="true">
       <typings>MaximumEntropyValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
@@ -504,12 +504,12 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>RedundancyUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="redundancy" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="redundancy" MultiLow="*" isNonunique="true">
       <typings>RedundancyValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
@@ -533,12 +533,12 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>JointInformationContentUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="jointInformationContent" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="jointInformationContent" MultiLow="*" isNonunique="true">
       <typings>JointInformationContentValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
@@ -553,12 +553,12 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>ConditionalInformationContentUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="conditionalInformationContent" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="conditionalInformationContent" MultiLow="*" isNonunique="true">
       <typings>ConditionalInformationContentValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
@@ -573,12 +573,12 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>ConditionalEntropyUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="conditionalEntropy" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="conditionalEntropy" MultiLow="*" isNonunique="true">
       <typings>ConditionalEntropyValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
@@ -599,12 +599,12 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>EquivocationUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="equivocation" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="equivocation" MultiLow="*" isNonunique="true">
       <typings>EquivocationValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
@@ -619,12 +619,12 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>IrrelevanceUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="irrelevance" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="irrelevance" MultiLow="*" isNonunique="true">
       <typings>IrrelevanceValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
@@ -639,12 +639,12 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>TransinformationContentUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="transinformationContent" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="transinformationContent" MultiLow="*" isNonunique="true">
       <typings>TransinformationContentValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
@@ -659,12 +659,12 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>MeanTransinformationContentUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="meanTransinformationContent" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="meanTransinformationContent" MultiLow="*" isNonunique="true">
       <typings>MeanTransinformationContentValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
@@ -679,12 +679,12 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>CharacterMeanEntropyUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="characterMeanEntropy" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="characterMeanEntropy" MultiLow="*" isNonunique="true">
       <typings>CharacterMeanEntropyValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
@@ -699,18 +699,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>AverageInformationRateUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="averageInformationRate" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="averageInformationRate" MultiLow="*" isNonunique="true">
       <typings>AverageInformationRateValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="AverageInformationRateUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiLow="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
@@ -734,12 +734,12 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>CharacterMeanTransinformationContentUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="characterMeanTransinformationContent" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="characterMeanTransinformationContent" MultiLow="*" isNonunique="true">
       <typings>CharacterMeanTransinformationContentValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
@@ -754,18 +754,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>AverageTransinformationRateUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="averageTransinformationRate" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="averageTransinformationRate" MultiLow="*" isNonunique="true">
       <typings>AverageTransinformationRateValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="AverageTransinformationRateUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiLow="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
@@ -789,12 +789,12 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>ChannelCapacityPerCharacterUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="channelCapacityPerCharacter" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="channelCapacityPerCharacter" MultiLow="*" isNonunique="true">
       <typings>ChannelCapacityPerCharacterValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
@@ -812,18 +812,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>ChannelTimeCapacityUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="channelTimeCapacity" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="channelTimeCapacity" MultiLow="*" isNonunique="true">
       <typings>ChannelTimeCapacityValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ChannelTimeCapacityUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiLow="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>

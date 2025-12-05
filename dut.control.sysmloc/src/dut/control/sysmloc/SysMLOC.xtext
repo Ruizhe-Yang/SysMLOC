@@ -51,11 +51,6 @@ AnnotatingBodyElement:
 	| CodeAnnotation
 ;
 
-ActionNodeBodyElement:
-	AnnotatingElement
-	| CodeAnnotation
-;
-
 ActionBodyElement:
 	GeneralBodyElements
 	| ActionNodeElements
@@ -82,14 +77,14 @@ CaseBodyElement:
 	| ObjectiveRequirementUsage
 ;
 
-//MetadataBodyElement:
-//	DefinitionElement
-////	| MetadataBodyUsage
-//	| NonOccurrenceUsageElement
-//	| AliasElement
-//	| ImportElement
-//	| CodeAnnotation
-//;
+	//MetadataBodyElement:
+	//	DefinitionElement
+	////	| MetadataBodyUsage
+	//	| NonOccurrenceUsageElement
+	//	| AliasElement
+	//	| ImportElement
+	//	| CodeAnnotation
+	//;
 
 ViewDefinitionBodyElement:
 	DefinitionBodyElement
@@ -158,7 +153,7 @@ UsageElements:
 ;
 
 NonOccurrenceUsageElement:
-//	CompositeReferenceUsage
+	//	CompositeReferenceUsage
 	DefaultReferenceUsage
 	| ReferenceUsage
 	| AttributeUsage
@@ -254,14 +249,14 @@ ImportElement:
     'import' (isImportAll?='all')? 
     declaredName=QualifiedName (isNamespace?='::' '*')? ( '::' isRecursive ?= '**' )? 
     ( '[' filterPackageExpression+=Expression ']')*
-//	 declaredName=QualifiedName (isNamespace?='::' )? ( '*' | isRecursive ?= '**' )?  
+	//	 declaredName=QualifiedName (isNamespace?='::' )? ( '*' | isRecursive ?= '**' )?  
     (';' | '{' ( elements+=RelationshipBodyElement )* '}')
 ;
 
 ExposeElement:
 	'expose'
 	declaredName=QualifiedName (isNamespace?='::' '*')? ( '::' isRecursive ?= '**' )?  
-//	 declaredName=QualifiedName (isNamespace?='::' )? ( '*' | isRecursive ?= '**' )?  
+	//	 declaredName=QualifiedName (isNamespace?='::' )? ( '*' | isRecursive ?= '**' )?  
 	( '[' filterPackageExpression+=Expression ']')*
 	(';' | '{' ( elements+=RelationshipBodyElement )* '}')
 ;
@@ -298,7 +293,8 @@ MetadataUsage:
 	( Identification? (':' | 'defined' 'by'))?
 	metadataTyping=QualifiedName
 	( 'about' annotatedElement+=QualifiedName ( ',' annotatedElement+=QualifiedName)* )?
-//	( ';' | '{' (elements+=MetadataBodyElement)* '}' ) // exceeding 65535 bytes
+	//	( ';' | '{' (elements+=MetadataBodyElement)* '}' )
+	// [exceeding 65535 bytes]
 	( ';' | '{' (elements+=GeneralBodyElements)* '}' )
 	
 ;
@@ -328,16 +324,16 @@ ExtendedUsage:
 	( ';' | '{' (elements+=UsageBodyElement)* '}' )
 ;
 
-//CompositeReferenceUsage:
-//    GeneralUsagePrefix
-//    ( isEnd ?= 'end' )?
-//    RefPrefix
-//	( isReference ?= 'ref' )?
-////	UsageDeclaration
-//    ( UsageDeclaration | UsageExtensionKeyword+ UsageDeclaration?)
-//   	ValuePart?
-//    ( ';' | '{' (elements+=UsageBodyElement)* '}' )
-//;
+	//CompositeReferenceUsage:
+	//    GeneralUsagePrefix
+	//    ( isEnd ?= 'end' )?
+	//    RefPrefix
+	//	( isReference ?= 'ref' )?
+	////	UsageDeclaration
+	//    ( UsageDeclaration | UsageExtensionKeyword+ UsageDeclaration?)
+	//   	ValuePart?
+	//    ( ';' | '{' (elements+=UsageBodyElement)* '}' )
+	//;
 
 ReferenceVariantUsage:
 	( visibility = VisibilityIndicator )?
@@ -701,7 +697,7 @@ TransitionUsage:
 		( UsageDeclaration? 'first' )? 
 		( transitionSourceElement=FeatureChainName)?
 		('accept' AcceptParameterPart)?
-//		('if' conditionalExpression=Expression)?
+	//		('if' conditionalExpression=Expression)?
 		TransitionUsageIfPart?
 		('do' PerformedActionParameterPart ( '{' elements+=ActionBodyElement* '}' )?)?
 	|	'accept' AcceptParameterPart
@@ -867,14 +863,14 @@ ExtendedDefinition:
 	( ';' | '{' (elements+=DefinitionBodyElement)* '}' )
 ;
 
-//ExtendedUsage:
-//	GeneralUsagePrefix
-//	UnextendedUsagePrefix
-//	'#' prefixMetadataExtension+=QualifiedName
-//	UsageExtensionKeyword*
-//	Usage
-//	( ';' | '{' (elements+=UsageBodyElement)* '}' )
-//;
+	//ExtendedUsage:
+	//	GeneralUsagePrefix
+	//	UnextendedUsagePrefix
+	//	'#' prefixMetadataExtension+=QualifiedName
+	//	UsageExtensionKeyword*
+	//	Usage
+	//	( ';' | '{' (elements+=UsageBodyElement)* '}' )
+	//;
 
 PerformActionUsage:
 	GeneralUsagePrefix
@@ -938,7 +934,7 @@ InitialNode:
 	MemberPrefix 
 	'first' 
 	memberElement = QualifiedName
-	(';' | '{' (elements+=ActionNodeBodyElement)* '}')
+	(';' | '{' (elements+=RelationshipBodyElement)* '}')
 ;
 
 SendNode:
@@ -947,7 +943,7 @@ SendNode:
 	OccurrenceUsagePrefix
 	ActionNodeUsageDeclaration?
 	'send'
-// 	(sendNodeParameter=Expression)?
+	// 	(sendNodeParameter=Expression)?
 	sendNodeParameter=Expression
 	( 'via' viaNodeParameter=Expression )?
 	( 'to' toNodeParameter=Expression )?
@@ -1020,8 +1016,8 @@ TerminateNode:
 		NodeParameter=Expression
 		(  isSemicolon ?= ';' | '{' (elements+=ActionBodyElement)* '}' )
 	)
-//	NodeParameter=Expression
-//	( ';' | '{' (elements+=ActionBodyElement)* '}' )
+	//	NodeParameter=Expression
+	//	( ';' | '{' (elements+=ActionBodyElement)* '}' )
 ;
 
 CommonNode:
@@ -1030,7 +1026,7 @@ CommonNode:
 	ControlNodePrefix 
 	nodeKind=CommonNodeKind 
 	UsageDeclaration?
-	(';' | '{' (elements+=ActionNodeBodyElement)* '}')
+	(';' | '{' (elements+=ActionBodyElement)* '}')
 ;
 
 ThenNode: // TransitionSuccession
@@ -1056,7 +1052,7 @@ EntryActionNode:
 	'entry'
 	PerformedActionParameterPart?
 	( ';' | '{' (elements+=ActionBodyElement)* '}' )
-//	( ownedRelationship += EntryTransitionMember )*
+	//	( ownedRelationship += EntryTransitionMember )*
 ;
 
 DoActionNode:
@@ -1166,10 +1162,10 @@ PerformedActionUsage:
 	| {AcceptActionUsage} AcceptNodeDeclaration
 	| {SendActionUsage} SendNodeDeclaration
 	| {AssignmentActionUsage} AssignmentNodeDeclaration
-//	PerformActionUsage
-//	| AcceptNode
-//	| SendNode
-//	| AssignmentNode
+	//	PerformActionUsage
+	//	| AcceptNode
+	//	| SendNode
+	//	| AssignmentNode
 ;
 
 ItemFeatureParameter:
@@ -1180,6 +1176,11 @@ IfSuccessionAsUsage:
 	UsageDeclaration
 ;
 
+CrossEndUsage:
+	(declaredName = Name)? MultiplicityPart
+	//	FeatureDeclaration
+;
+
 // TODO --------------------------------- Fragment Level ---------------------------------//
 
 fragment GeneralUsagePrefix:
@@ -1187,14 +1188,14 @@ fragment GeneralUsagePrefix:
 ;
 
 fragment PrefixMetadata:
-//	'#' prefixMetadataExtension += QualifiedName
-//	prefixMetadataExtension += PrefixMetadataName
+	//	'#' prefixMetadataExtension += QualifiedName
+	//	prefixMetadataExtension += PrefixMetadataName
 	prefixMetadataExtension += PREFIXNAME_TEXT
 ;
 
-//PrefixMetadataName:
-//	'#' Qualification
-//;
+	//PrefixMetadataName:
+	//	'#' Qualification
+	//;
 
 fragment UsageExtensionKeyword:
 	PrefixMetadata
@@ -1206,15 +1207,13 @@ fragment DefinitionExtensionKeyword:
 
 fragment EmptySuccessionPrefix:
 	( isThen ?= 'then' )?
-//	( '[' ThenMultiplicity += MultiplicityExpression ']' | '[' ThenMultiplicity += MultiplicityExpression '..' ThenMultiplicity += MultiplicityExpression ']')?
-//	('[' ThenMultiValue = MultiplicityExpression ']' | '[' ThenMultiLow = MultiplicityExpression '..' ThenMultiHigh = MultiplicityExpression ']')?
-	('[' ThenMultiLow = MultiplicityExpression ']' ( '..' ThenMultiHigh = MultiplicityExpression )? ']')?
+	//	( '[' ThenMultiplicity += MultiplicityExpression ']' | '[' ThenMultiplicity += MultiplicityExpression '..' ThenMultiplicity += MultiplicityExpression ']')?
+	('[' ThenMultiLow = MultiplicityExpression ( '..' ThenMultiHigh = MultiplicityExpression )? ']')?
 ;
 
 fragment MultiplicityRange:
-//	'[' Multiplicity += MultiplicityExpression ']' | '[' Multiplicity += MultiplicityExpression '..' Multiplicity += MultiplicityExpression ']'
-//	'[' MultiValue = MultiplicityExpression ']' | '[' MultiLow = MultiplicityExpression '..' MultiHigh = MultiplicityExpression ']'
-	'[' MultiLow = MultiplicityExpression ']' ( '..' MultiHigh = MultiplicityExpression )? ']'
+	//	'[' Multiplicity += MultiplicityExpression ']' | '[' Multiplicity += MultiplicityExpression '..' Multiplicity += MultiplicityExpression ']'
+	'[' MultiLow = MultiplicityExpression ( '..' MultiHigh = MultiplicityExpression )? ']'
 ;
 
 fragment ValuePart:
@@ -1257,19 +1256,12 @@ fragment UnextendedUsagePrefix:
 
 fragment EndUsagePrefix:
 	isEnd ?= 'end' 
-//	| isEnd ?= 'end' EndMultiplicityRange
-//	( isCross?='[*]' )?
-//	( crossEndUsage = CrossEndUsage )?
-//	CrossEndUsagePrefix?
+	// [exceeding 65535 bytes]
+	CrossEndUsagePrefix? 
 ;
 
 fragment CrossEndUsagePrefix:
 	crossEndUsage = CrossEndUsage
-;
-
-CrossEndUsage:
-//	BasicUsagePrefix 
-	FeatureDeclaration
 ;
 
 fragment OccurrenceUsagePrefix:
@@ -1359,7 +1351,7 @@ fragment ItemFeatureParameterPart:
 ;
 
 fragment PayloadFeature:
-//	Identification? PayloadFeatureSpecializationPart? TriggerValuePart
+	//	Identification? PayloadFeatureSpecializationPart? TriggerValuePart
 	Identification? PayloadFeatureSpecializationPart ValuePart?
 	// Warning
 	| Identification? ValuePart
@@ -1439,20 +1431,20 @@ fragment TransitionSuccession:
 	transitionSuccessionElement += ConnectorEnd
 ;
 
-//fragment TargetSuccession:
-//	MultiplicityRange?
-//	'then'
-//	TransitionSuccession
-//;
-//
-//fragment GuardedTargetSuccession:
-//	'if' ConditionalExpression=Expression 
-//	'then' TransitionSuccession
-//;
-//
-//fragment DefaultTargetSuccession:
-//	'else' TransitionSuccession
-//;
+	//fragment TargetSuccession:
+	//	MultiplicityRange?
+	//	'then'
+	//	TransitionSuccession
+	//;
+	//
+	//fragment GuardedTargetSuccession:
+	//	'if' ConditionalExpression=Expression 
+	//	'then' TransitionSuccession
+	//;
+	//
+	//fragment DefaultTargetSuccession:
+	//	'else' TransitionSuccession
+	//;
 
 fragment ReferenceSubsetting:
 	refElement = FeatureChainName
@@ -1698,7 +1690,7 @@ BodyExpression:
 		//
 		OwnedExpression
 	'}'
-//	( bodyExpressions += CalculationBodyElement)*
+	//	( bodyExpressions += CalculationBodyElement)*
 ;
 
 FeatureSpecializationName:

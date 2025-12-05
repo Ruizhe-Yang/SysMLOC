@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="MetadataTest">
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="'User Defined Extensions'" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:LibraryPackage" declaredName="'User Defined Extensions'" isLibrary="true">
+      <elements xsi:type="sysMLOC:EnumerationDefinition" declaredName="ClassificationLevel">
+        <prefixMetadataExtension>#Security</prefixMetadataExtension>
+        <superclassifiers>ScalarValues::Natural</superclassifiers>
+        <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="uncl" valuePart="0">
+          <typings>ClassificationLevel</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="conf" valuePart="1">
+          <typings>ClassificationLevel</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:EnumeratedValue" declaredName="secret" valuePart="2">
+          <prefixMetadataExtension>#Security</prefixMetadataExtension>
+          <typings>ClassificationLevel</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="Classified">
+        <elements xsi:type="sysMLOC:ReferenceUsage">
+          <typings>SysML::Usage</typings>
+          <redefinitions>annotatedElement</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="classificationLevel">
+          <typings>ClassificationLevel</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="Security"/>
+    </elements>
+    <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="x">
+      <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="Classified">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="classificationLevel" valuePart="ClassificationLevel::conf"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="y">
+      <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="Classified">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="classificationLevel" valuePart="ClassificationLevel::conf"/>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="Security"/>
+    </elements>
+    <elements xsi:type="sysMLOC:ExtendedUsage" visibility="private" isReference="true" declaredName="z1">
+      <prefixMetadataExtension>#Classified</prefixMetadataExtension>
+      <prefixMetadataExtension>#Security</prefixMetadataExtension>
+    </elements>
+    <elements xsi:type="sysMLOC:ExtendedUsage" isAbstract="true" declaredName="z2">
+      <prefixMetadataExtension>#Classified</prefixMetadataExtension>
+    </elements>
+    <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="z">
+      <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="Classified">
+        <prefixMetadataExtension>#Security</prefixMetadataExtension>
+        <prefixMetadataExtension>#Classified</prefixMetadataExtension>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="classificationLevel" valuePart="ClassificationLevel::secret"/>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

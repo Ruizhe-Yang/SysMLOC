@@ -6,17 +6,47 @@ package dut.control.sysmloc.sysMLOC.impl;
 import dut.control.sysmloc.sysMLOC.CrossEndUsage;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 
+import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Cross End Usage</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.CrossEndUsageImpl#getDeclaredName <em>Declared Name</em>}</li>
+ * </ul>
  *
  * @generated
  */
-public class CrossEndUsageImpl extends FeatureDeclarationImpl implements CrossEndUsage
+public class CrossEndUsageImpl extends MultiplicityPartImpl implements CrossEndUsage
 {
+  /**
+   * The default value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredName()
+   * @generated
+   * @ordered
+   */
+  protected static final String DECLARED_NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredName()
+   * @generated
+   * @ordered
+   */
+  protected String declaredName = DECLARED_NAME_EDEFAULT;
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -36,6 +66,114 @@ public class CrossEndUsageImpl extends FeatureDeclarationImpl implements CrossEn
   protected EClass eStaticClass()
   {
     return SysMLOCPackage.eINSTANCE.getCrossEndUsage();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getDeclaredName()
+  {
+    return declaredName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDeclaredName(String newDeclaredName)
+  {
+    String oldDeclaredName = declaredName;
+    declaredName = newDeclaredName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.CROSS_END_USAGE__DECLARED_NAME, oldDeclaredName, declaredName));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object eGet(int featureID, boolean resolve, boolean coreType)
+  {
+    switch (featureID)
+    {
+      case SysMLOCPackage.CROSS_END_USAGE__DECLARED_NAME:
+        return getDeclaredName();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eSet(int featureID, Object newValue)
+  {
+    switch (featureID)
+    {
+      case SysMLOCPackage.CROSS_END_USAGE__DECLARED_NAME:
+        setDeclaredName((String)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eUnset(int featureID)
+  {
+    switch (featureID)
+    {
+      case SysMLOCPackage.CROSS_END_USAGE__DECLARED_NAME:
+        setDeclaredName(DECLARED_NAME_EDEFAULT);
+        return;
+    }
+    super.eUnset(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean eIsSet(int featureID)
+  {
+    switch (featureID)
+    {
+      case SysMLOCPackage.CROSS_END_USAGE__DECLARED_NAME:
+        return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
+    }
+    return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (declaredName: ");
+    result.append(declaredName);
+    result.append(')');
+    return result.toString();
   }
 
 } //CrossEndUsageImpl

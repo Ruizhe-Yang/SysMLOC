@@ -32,33 +32,33 @@
         <redefinitions>Transfer::payload</redefinitions>
       </elements>
       <elements xsi:type="sysMLOC:ActionUsage" visibility="private" isReference="true" declaredName="thisConnection" valuePart="self"/>
-      <elements xsi:type="sysMLOC:EventOccurrenceUsage" direction="in" MultiValue="1" declaredName="sourceEvent" isDefault="true" valuePart="thisConnection.start">
+      <elements xsi:type="sysMLOC:EventOccurrenceUsage" direction="in" MultiLow="1" declaredName="sourceEvent" isDefault="true" valuePart="thisConnection.start">
         <elements xsi:type="sysMLOC:Documentation" body="/* &#xA;             * An occurrence happening during the source of this message&#xA;             * that is either the start of the mssage or happens before it.&#xA;             */"/>
       </elements>
-      <elements xsi:type="sysMLOC:EventOccurrenceUsage" direction="in" MultiValue="1" declaredName="targetEvent" isDefault="true" valuePart="thisConnection.done">
+      <elements xsi:type="sysMLOC:EventOccurrenceUsage" direction="in" MultiLow="1" declaredName="targetEvent" isDefault="true" valuePart="thisConnection.done">
         <elements xsi:type="sysMLOC:Documentation" body="/* &#xA;             * An occurrence happening during the target of this message&#xA;             * that is either the end of the message or happens after it.&#xA;             */"/>
       </elements>
       <elements xsi:type="sysMLOC:ConnectionUsage">
         <typings>HappensDuring</typings>
         <connectorPart refElement="sourceEvent"/>
-        <connectorPart MultiValue="1" refElement="source"/>
+        <connectorPart MultiLow="1" refElement="source"/>
       </elements>
       <elements xsi:type="sysMLOC:ConnectionUsage">
         <typings>HappensDuring</typings>
         <connectorPart refElement="targetEvent"/>
-        <connectorPart MultiValue="1" refElement="target"/>
+        <connectorPart MultiLow="1" refElement="target"/>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="seBeforeNum" MultiValue="1" valuePart="if sourceEvent==thisConnection.start ? 0 else 1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="seBeforeNum" MultiLow="1" valuePart="if sourceEvent==thisConnection.start ? 0 else 1">
         <typings>Natural</typings>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="teAfterNum" MultiValue="1" valuePart="if targetEvent==thisConnection.done ? 0 else 1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="teAfterNum" MultiLow="1" valuePart="if targetEvent==thisConnection.done ? 0 else 1">
         <typings>Natural</typings>
       </elements>
-      <elements xsi:type="sysMLOC:SuccessionAsUsage" MultiValue="seBeforeNum">
+      <elements xsi:type="sysMLOC:SuccessionAsUsage" MultiLow="seBeforeNum">
         <connectorPart MultiLow="0" MultiHigh="1" refElement="sourceEvent"/>
         <connectorPart MultiLow="0" MultiHigh="1" refElement="self"/>
       </elements>
-      <elements xsi:type="sysMLOC:SuccessionAsUsage" MultiValue="teAfterNum">
+      <elements xsi:type="sysMLOC:SuccessionAsUsage" MultiLow="teAfterNum">
         <connectorPart MultiLow="0" MultiHigh="1" refElement="self"/>
         <connectorPart MultiLow="0" MultiHigh="1" refElement="targetEvent"/>
       </elements>

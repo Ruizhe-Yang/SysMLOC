@@ -217,10 +217,10 @@
     <elements xsi:type="sysMLOC:ActionDefinition" isAbstract="true" declaredName="TerminateAction">
       <superclassifiers>Action</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * A TerminateAction is an Action that terminates a given Occurrence, meaning &#xA;&#x9;&#x9; * that the Occurrence ends during the performance of this Action. TerminateAction&#xA;&#x9;&#x9; * is the base type for all TerminateActionUsages.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:OccurrenceUsage" direction="in" declaredName="terminatedOccurrence" MultiValue="1">
+      <elements xsi:type="sysMLOC:OccurrenceUsage" direction="in" declaredName="terminatedOccurrence" MultiLow="1">
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The Occurrence to be terminated.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
-      <elements xsi:type="sysMLOC:ActionUsage" declaredName="terminateOccurrence" MultiValue="1">
+      <elements xsi:type="sysMLOC:ActionUsage" declaredName="terminateOccurrence" MultiLow="1">
         <typings>destroy</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="occ" valuePart="terminatedOccurrence"/>
       </elements>
@@ -317,7 +317,7 @@
       <superclassifiers>FeatureWritePerformance</superclassifiers>
       <superclassifiers>Action</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * An AssignmentAction is an Action, used to type an AssignmentActionUsage. It is also a&#xA;&#x9;&#x9; * FeatureWritePerformance that updates the accessedFeature of its target Occurrence with&#xA;&#x9;&#x9; * the given replacementValues.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="target" MultiValue="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="target" MultiLow="1">
         <typings>Occurrence</typings>
       </elements>
       <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="inout" declaredName="replacementValues" MultiLow="0" MultiHigh="*" isNonunique="true">
@@ -328,7 +328,7 @@
       <typings>AssignmentAction</typings>
       <subsetting>actions</subsetting>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * assignmentActions is the base feature for all AssignmentActionsUsages.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="target" MultiValue="1" isDefault="true" valuePart="that as Occurrence">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="target" MultiLow="1" isDefault="true" valuePart="that as Occurrence">
         <typings>Occurrence</typings>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;             * The default target for assignmentActions is its featuring instance (if that is &#xA;             * an Occurrence).&#xA;             */"/>
       </elements>
@@ -337,14 +337,14 @@
       <superclassifiers>Action</superclassifiers>
       <superclassifiers>IfThenPerformance</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * An IfThenAction is a Kernel IfThenPerformance that is also an Action. &#xA;&#x9;&#x9; * It is the base type for all IfActionUsages.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="ifTest" MultiValue="1"/>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="ifTest" MultiLow="1"/>
       <elements xsi:type="sysMLOC:ActionUsage" direction="in" declaredName="thenClause" MultiLow="0" MultiHigh="1"/>
     </elements>
     <elements xsi:type="sysMLOC:ActionDefinition" declaredName="IfThenElseAction">
       <superclassifiers>IfThenAction</superclassifiers>
       <superclassifiers>IfThenElsePerformance</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * An IfThenElseAction is a Kernel IfThenElsePeformance that is also an IfThenAction. &#xA;&#x9;&#x9; * It is the base type for all IfActionUsages that have an elseAction.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="ifTest" MultiValue="1"/>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="ifTest" MultiLow="1"/>
       <elements xsi:type="sysMLOC:ActionUsage" direction="in" declaredName="thenClause" MultiLow="0" MultiHigh="1"/>
       <elements xsi:type="sysMLOC:ActionUsage" direction="in" declaredName="elseClause" MultiLow="0" MultiHigh="1"/>
     </elements>

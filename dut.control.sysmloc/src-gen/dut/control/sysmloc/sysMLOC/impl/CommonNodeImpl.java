@@ -3,7 +3,7 @@
  */
 package dut.control.sysmloc.sysMLOC.impl;
 
-import dut.control.sysmloc.sysMLOC.ActionNodeBodyElement;
+import dut.control.sysmloc.sysMLOC.ActionBodyElement;
 import dut.control.sysmloc.sysMLOC.BasicDefinitionPrefix;
 import dut.control.sysmloc.sysMLOC.CommonNode;
 import dut.control.sysmloc.sysMLOC.CommonNodeKind;
@@ -535,7 +535,7 @@ public class CommonNodeImpl extends ActionNodeElementsImpl implements CommonNode
    * @generated
    * @ordered
    */
-  protected EList<ActionNodeBodyElement> elements;
+  protected EList<ActionBodyElement> elements;
 
   /**
    * <!-- begin-user-doc -->
@@ -1129,11 +1129,11 @@ public class CommonNodeImpl extends ActionNodeElementsImpl implements CommonNode
    * @generated
    */
   @Override
-  public EList<ActionNodeBodyElement> getElements()
+  public EList<ActionBodyElement> getElements()
   {
     if (elements == null)
     {
-      elements = new EObjectContainmentEList<ActionNodeBodyElement>(ActionNodeBodyElement.class, this, SysMLOCPackage.COMMON_NODE__ELEMENTS);
+      elements = new EObjectContainmentEList<ActionBodyElement>(ActionBodyElement.class, this, SysMLOCPackage.COMMON_NODE__ELEMENTS);
     }
     return elements;
   }
@@ -1314,7 +1314,7 @@ public class CommonNodeImpl extends ActionNodeElementsImpl implements CommonNode
         return;
       case SysMLOCPackage.COMMON_NODE__ELEMENTS:
         getElements().clear();
-        getElements().addAll((Collection<? extends ActionNodeBodyElement>)newValue);
+        getElements().addAll((Collection<? extends ActionBodyElement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

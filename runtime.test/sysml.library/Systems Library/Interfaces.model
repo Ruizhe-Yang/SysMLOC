@@ -15,10 +15,10 @@
     <elements xsi:type="sysMLOC:CalculationDefinition" visibility="private" declaredName="excludingOnce">
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * Return a sequence that is the same as the input sequence, but with a single&#xA;         * instance of a given value removed. The given value must be in the input sequence.&#xA;         */"/>
       <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="seq" MultiLow="1" MultiHigh="*" isOrdered="true" isNonunique="true"/>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="value" MultiValue="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="value" MultiLow="1">
         <subsetting>seq</subsetting>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="position" MultiValue="1" valuePart="(1..size(seq))->selectOne{in i; seq#(i) == value}">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="position" MultiLow="1" valuePart="(1..size(seq))->selectOne{in i; seq#(i) == value}">
         <typings>Natural</typings>
       </elements>
       <resultExpressionParameter resultExpression="seq->excludingAt(position)"/>
@@ -43,7 +43,7 @@
       <superclassifiers>Interface</superclassifiers>
       <superclassifiers>BinaryConnection</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * BinaryInterface is the most general class of links between two Ports &#xA;         * on Parts within some containing structure. BinaryInterface is the base &#xA;         * type of all binary InterfaceDefinitions which have exactly two ends. &#xA;         * &#xA;         * Transfers outgoing from each participant Port of a BinaryInterface may be &#xA;         * targeted to the other participant Port (depending on any other Interfaces &#xA;         * in which the Port is also participating).&#xA;         */"/>
-      <elements xsi:type="sysMLOC:PortUsage" isReference="true" MultiValue="2" isOrdered="true" isNonunique="true">
+      <elements xsi:type="sysMLOC:PortUsage" isReference="true" MultiLow="2" isOrdered="true" isNonunique="true">
         <redefinitions>Interface::participant</redefinitions>
         <redefinitions>BinaryConnection::participant</redefinitions>
       </elements>

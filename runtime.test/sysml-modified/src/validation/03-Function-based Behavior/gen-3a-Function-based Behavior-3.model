@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="'3a-Function-based Behavior-5'">
+    <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="Definitions" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="Usages" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:Package" declaredName="Definitions">
+      <elements xsi:type="sysMLOC:AliasElement" memberName="Torque" memberElement="ISQ::TorqueValue"/>
+      <elements xsi:type="sysMLOC:CodeAnnotation" body="// ATTRIBUTE DEFINITIONS&#xA;"/>
+      <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="FuelCmd"/>
+      <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="EngineStart"/>
+      <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="EngineOff"/>
+      <elements xsi:type="sysMLOC:CodeAnnotation" body="// ACTION DEFINITIONS&#xA;"/>
+      <elements xsi:type="sysMLOC:ActionDefinition" declaredName="'Generate Torque'">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="fuelCmd">
+          <typings>FuelCmd</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="engineTorque">
+          <typings>Torque</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:ActionDefinition" declaredName="'Amplify Torque'">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="engineTorque">
+          <typings>Torque</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="transmissionTorque">
+          <typings>Torque</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:ActionDefinition" declaredName="'Transfer Torque'">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="transmissionTorque">
+          <typings>Torque</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="driveshaftTorque">
+          <typings>Torque</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:ActionDefinition" declaredName="'Distribute Torque'">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="driveShaftTorque">
+          <typings>Torque</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="wheelTorque1">
+          <typings>Torque</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="wheelTorque2">
+          <typings>Torque</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:ActionDefinition" declaredName="'Provide Power'">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="fuelCmd">
+          <typings>FuelCmd</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="wheelTorque1">
+          <typings>Torque</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="wheelTorque2">
+          <typings>Torque</typings>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Package" declaredName="Usages">
+      <elements xsi:type="sysMLOC:ActionUsage" declaredName="'provide power'">
+        <typings>'Provide Power'</typings>
+        <elements xsi:type="sysMLOC:CodeAnnotation" body="// PARAMETERS&#xA;"/>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="fuelCmd">
+          <typings>FuelCmd</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="wheelTorque1">
+          <typings>Torque</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="wheelTorque2">
+          <typings>Torque</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:WhileLoopNode">
+          <elements xsi:type="sysMLOC:AcceptNode">
+            <acceptParameter declaredName="engineStart">
+              <typings>EngineStart</typings>
+            </acceptParameter>
+          </elements>
+          <elements xsi:type="sysMLOC:ActionUsage" isThen="true">
+            <elements xsi:type="sysMLOC:ActionUsage" declaredName="'generate torque'">
+              <typings>'Generate Torque'</typings>
+              <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="fuelCmd" valuePart="'provide power'::fuelCmd"/>
+              <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="engineTorque">
+                <typings>Torque</typings>
+              </elements>
+            </elements>
+            <elements xsi:type="sysMLOC:FlowUsage">
+              <FlowEnd>'generate torque'.engineTorque</FlowEnd>
+              <FlowEnd>'amplify torque'.engineTorque</FlowEnd>
+            </elements>
+            <elements xsi:type="sysMLOC:ActionUsage" declaredName="'amplify torque'">
+              <typings>'Amplify Torque'</typings>
+              <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="engineTorque">
+                <typings>Torque</typings>
+              </elements>
+              <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="transmissionTorque">
+                <typings>Torque</typings>
+              </elements>
+            </elements>
+            <elements xsi:type="sysMLOC:FlowUsage">
+              <FlowEnd>'amplify torque'.transmissionTorque</FlowEnd>
+              <FlowEnd>'transfer torque'.transmissionTorque</FlowEnd>
+            </elements>
+            <elements xsi:type="sysMLOC:ActionUsage" declaredName="'transfer torque'">
+              <typings>'Transfer Torque'</typings>
+              <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="transmissionTorque">
+                <typings>Torque</typings>
+              </elements>
+              <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="driveshaftTorque">
+                <typings>Torque</typings>
+              </elements>
+            </elements>
+            <elements xsi:type="sysMLOC:FlowUsage">
+              <FlowEnd>'transfer torque'.driveshaftTorque</FlowEnd>
+              <FlowEnd>'distribute torque'.driveshaftTorque</FlowEnd>
+            </elements>
+            <elements xsi:type="sysMLOC:ActionUsage" declaredName="'distribute torque'">
+              <typings>'Distribute Torque'</typings>
+              <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="driveshaftTorque">
+                <typings>Torque</typings>
+              </elements>
+              <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="wheelTorque1">
+                <typings>Torque</typings>
+              </elements>
+              <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="wheelTorque2">
+                <typings>Torque</typings>
+              </elements>
+            </elements>
+          </elements>
+          <elements xsi:type="sysMLOC:AcceptNode" isThen="true">
+            <acceptParameter declaredName="engineOff">
+              <typings>EngineOff</typings>
+            </acceptParameter>
+          </elements>
+        </elements>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

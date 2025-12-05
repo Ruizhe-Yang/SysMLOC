@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="OccurrenceTest">
+    <elements xsi:type="sysMLOC:OccurrenceDefinition" declaredName="Occ">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="a"/>
+      <elements xsi:type="sysMLOC:OccurrenceUsage" isReference="true" declaredName="occ1">
+        <typings>Occ</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:OccurrenceUsage" declaredName="occ2">
+        <typings>Occ</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:ItemUsage" declaredName="x"/>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="y"/>
+      <elements xsi:type="sysMLOC:PortionUsage" declaredName="s" isIndividual="true" portionKind="snapshot">
+        <typings>Ind</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:PortionUsage" declaredName="t" portionKind="timeslice"/>
+    </elements>
+    <elements xsi:type="sysMLOC:OccurrenceUsage" declaredName="occ">
+      <typings>Occ</typings>
+      <elements xsi:type="sysMLOC:OccurrenceUsage" declaredName="o1">
+        <typings>Occ</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:OccurrenceUsage" isReference="true" declaredName="o2">
+        <typings>Occ</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:ItemUsage" declaredName="z"/>
+    </elements>
+    <elements xsi:type="sysMLOC:OccurrenceDefinition" isIndividual="true" declaredName="Ind">
+      <elements xsi:type="sysMLOC:PortionUsage" declaredName="s2" portionKind="snapshot"/>
+      <elements xsi:type="sysMLOC:PortionUsage" declaredName="t2" portionKind="timeslice"/>
+    </elements>
+    <elements xsi:type="sysMLOC:OccurrenceUsage" isIndividual="true" declaredName="ind">
+      <typings>Ind</typings>
+      <typings>Occ</typings>
+      <elements xsi:type="sysMLOC:PortionUsage" declaredName="s3" portionKind="snapshot"/>
+      <elements xsi:type="sysMLOC:PortionUsage" declaredName="t3" isIndividual="true" portionKind="timeslice">
+        <subsetting>ind</subsetting>
+      </elements>
+      <elements xsi:type="sysMLOC:PortionUsage" declaredName="s4" isIndividual="true" portionKind="snapshot">
+        <typings>Ind</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:OccurrenceUsage" declaredName="o1">
+      <elements xsi:type="sysMLOC:OccurrenceUsage" declaredName="o2"/>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

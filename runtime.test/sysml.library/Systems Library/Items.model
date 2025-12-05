@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:LibraryPackage" declaredName="Items" isStandard="true" isLibrary="true">
+    <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9; * This package defines the base types for items and related structural elements in the&#xA;&#x9; * SysML language.&#xA;&#x9; */"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Objects::Object"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Objects::objects"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Parts::Part"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Parts::parts"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Occurrences::HappensWhile"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Occurrences::JustOutsideOf"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Objects::StructuredSpaceObject"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Constraints::ConstraintCheck"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Constraints::constraintChecks"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="CollectionFunctions::contains"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="SequenceFunctions::isEmpty"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="SequenceFunctions::notEmpty"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="SequenceFunctions::includes"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="SequenceFunctions::union"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ControlFunctions::forAll"/>
+    <elements xsi:type="sysMLOC:ItemDefinition" isAbstract="true" declaredName="Item">
+      <superclassifiers>Object</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Item is the most general class of objects that are part of, exist in or flow through a system. &#xA;&#x9;&#x9; * Item is the base type of all ItemDefinitions.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="self">
+        <typings>Item</typings>
+        <redefinitions>Object::self</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:ItemUsage" declaredName="start">
+        <typings>Item</typings>
+        <redefinitions>startShot</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:ItemUsage" declaredName="done">
+        <typings>Item</typings>
+        <redefinitions>endShot</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:ItemUsage" declaredName="shape">
+        <typings>Item</typings>
+        <redefinitions>spaceBoundary</redefinitions>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The shape of an Item is its spatial boundary.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:ItemUsage" declaredName="envelopingShapes" MultiLow="0" MultiHigh="*">
+        <typings>Item</typings>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * Each enveloping shape is the shape of an Item that spacially overlaps this Item for its&#xA;&#x9;&#x9;&#x9; * entire lifetime.&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="sysMLOC:ItemUsage" isReference="true" declaredName="envelopedItem">
+          <redefinitions>that</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:AssertConstraintUsage">
+          <elements xsi:type="sysMLOC:Documentation" body="/* &#xA;                 * Enables two dimensional items to be enveloped by two or three dimensional shapes.&#xA;                 */"/>
+          <resultExpressionParameter resultExpression="innerSpaceDimension == (if envelopedItem.innerSpaceDimension == 3 | envelopedItem.outerSpaceDimension == 3 ? 2 else envelopedItem.outerSpaceDimension - 1 )"/>
+        </elements>
+        <elements xsi:type="sysMLOC:AssertConstraintUsage">
+          <resultExpressionParameter resultExpression="(that as Item).innerSpaceDimension &lt; 3 implies notEmpty(outerSpaceDimension)"/>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" declaredName="envelopingItem" MultiLow="1"/>
+        <elements xsi:type="sysMLOC:AssertConstraintUsage">
+          <elements xsi:type="sysMLOC:Documentation" body="/* &#xA;&#x9;&#x9;&#x9;&#x9; * This constraint prevents an envelopingShape from being a portion.&#xA;&#x9;&#x9;&#x9;&#x9; */"/>
+          <resultExpressionParameter resultExpression="envelopingItem.shape.spaceTimeCoincidentOccurrences->includes(that) and envelopingItem.spaceTimeEnclosedOccurrences->includes(that.that)"/>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:ItemUsage" declaredName="boundingShapes" MultiLow="0" MultiHigh="*">
+        <typings>StructuredSpaceObject</typings>
+        <subsetting>envelopingShapes</subsetting>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * envelopingShapes that are structured space objects with every face or every edge&#xA;&#x9;&#x9;&#x9; * intersecting this Item.&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="sysMLOC:ItemUsage" isReference="true" declaredName="boundingShape">
+          <typings>Item</typings>
+          <redefinitions>self</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" visibility="private">
+          <redefinitions>faces</redefinitions>
+          <elements xsi:type="sysMLOC:ItemUsage" isReference="true" declaredName="face">
+            <redefinitions>self</redefinitions>
+          </elements>
+          <elements xsi:type="sysMLOC:ItemUsage" declaredName="inter" MultiLow="1"/>
+          <elements xsi:type="sysMLOC:AssertConstraintUsage">
+            <resultExpressionParameter resultExpression="contains(inter.intersectionsOf, union(face, boundingShape))"/>
+          </elements>
+        </elements>
+        <elements xsi:type="sysMLOC:ItemUsage" visibility="private">
+          <redefinitions>edges</redefinitions>
+          <elements xsi:type="sysMLOC:ItemUsage" isReference="true" declaredName="edge">
+            <redefinitions>self</redefinitions>
+          </elements>
+          <elements xsi:type="sysMLOC:ItemUsage" declaredName="inter" MultiLow="1"/>
+          <elements xsi:type="sysMLOC:AssertConstraintUsage">
+            <resultExpressionParameter resultExpression="isEmpty(faces) implies contains(inter.intersectionsOf, union(edge, boundingShape))"/>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:ItemUsage" declaredName="voids" MultiLow="0" MultiHigh="*">
+        <redefinitions>innerSpaceOccurrences</redefinitions>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * Voids are inner space occurrences of this Item.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="isSolid" valuePart="isEmpty(voids)">
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * An Item is solid if it has no voids.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:ItemUsage" isAbstract="true" declaredName="subitems" MultiLow="0" MultiHigh="*">
+        <typings>Item</typings>
+        <subsetting>items</subsetting>
+        <subsetting>subobjects</subsetting>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The Items that are composite subitems of this Item.&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="sysMLOC:ReferenceUsage" visibility="private">
+          <redefinitions>Item::incomingTransferSort</redefinitions>
+          <redefinitions>subobjects::incomingTransferSort</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" isAbstract="true" declaredName="subparts" MultiLow="0" MultiHigh="*">
+        <typings>Part</typings>
+        <subsetting>subitems</subsetting>
+        <subsetting>parts</subsetting>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The subitems of this Item that are Parts.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:ConstraintUsage" isAbstract="true" declaredName="checkedConstraints" MultiLow="0" MultiHigh="*">
+        <typings>ConstraintCheck</typings>
+        <subsetting>constraintChecks</subsetting>
+        <subsetting>ownedPerformances</subsetting>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * Constraints that have been checked by this Item.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:ConnectionDefinition" declaredName="Touches">
+      <superclassifiers>JustOutsideOf</superclassifiers>
+      <superclassifiers>HappensWhile</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Touching items are just outside each other and happen at the same time.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:ItemUsage" isEnd="true" declaredName="touchedItemToo">
+        <crossEndUsage MultiLow="0" MultiHigh="*" declaredName="touchesToo"/>
+        <redefinitions>separateSpaceToo</redefinitions>
+        <redefinitions>thisOccurrence</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:ItemUsage" isEnd="true" declaredName="touchedItem">
+        <crossEndUsage MultiLow="0" MultiHigh="*" declaredName="touches"/>
+        <redefinitions>separateSpace</redefinitions>
+        <redefinitions>thatOccurrence</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:ItemUsage" isAbstract="true" declaredName="items" MultiLow="0" MultiHigh="*" isNonunique="true">
+      <typings>Item</typings>
+      <subsetting>objects</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * items is the base feature of all ItemUsages.&#xA;&#x9;&#x9; */"/>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

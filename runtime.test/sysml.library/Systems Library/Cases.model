@@ -15,7 +15,7 @@
         <typings>Case</typings>
         <redefinitions>Calculation::self</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:SubjectUsage" declaredName="subj" MultiValue="1">
+      <elements xsi:type="sysMLOC:SubjectUsage" declaredName="subj" MultiLow="1">
         <typings>Anything</typings>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The subject that was investigated by this Case.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
@@ -24,7 +24,7 @@
         <subsetting>parts</subsetting>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The Parts that fill the role of actors for this Case.&#xA;&#x9;&#x9;&#x9; * (Note: This is not itself an actor parameter, because specific actor&#xA;&#x9;&#x9;&#x9; * parameters will be added for specific Cases.)&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
-      <elements xsi:type="sysMLOC:ObjectiveRequirementUsage" declaredName="obj" MultiValue="1">
+      <elements xsi:type="sysMLOC:ObjectiveRequirementUsage" declaredName="obj" MultiLow="1">
         <typings>RequirementCheck</typings>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * A check of whether the objective RequirementUsage was satisfied for this Case.&#xA;&#x9;&#x9;&#x9; */"/>
         <elements xsi:type="sysMLOC:SubjectUsage" declaredName="subj" isDefault="true" valuePart="Case::result"/>

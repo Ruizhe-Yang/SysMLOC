@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="Packets">
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Time::DateTime"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="'packet header'"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="'packet data field'">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="'packet secondary header'">
+        <redefinitions>'packet header'</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="'user data field'"/>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="'Data Packet'">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="'packet primary header'">
+        <redefinitions>'packet header'</redefinitions>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="'packet version number'">
+          <typings>Integer</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="'packet identification'">
+          <typings>String</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="'packet data length'">
+          <typings>Integer</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>'packet data field'</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="'Thermal Data Packet'">
+      <superclassifiers>'Data Packet'</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="'packet data field'">
+        <redefinitions>Packets::'packet data field'</redefinitions>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="'packet secondary header'">
+          <redefinitions>'packet header'</redefinitions>
+          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="'packet timestamp'">
+            <typings>DateTime</typings>
+          </elements>
+          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="'telemetry packet type'">
+            <typings>String</typings>
+          </elements>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="'user data field'">
+          <redefinitions>Packets::'packet data field'::'user data field'</redefinitions>
+          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="timestamp">
+            <typings>DateTime</typings>
+          </elements>
+          <elements xsi:type="sysMLOC:AttributeUsage" declaredName="temperature">
+            <typings>Real</typings>
+          </elements>
+        </elements>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

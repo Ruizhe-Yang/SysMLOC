@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Views" isNamespace="true"/>
+  <elements xsi:type="sysMLOC:CodeAnnotation" body="// private import library package, not internal Views package!&#xA;"/>
+  <elements xsi:type="sysMLOC:Package" declaredName="'11b-Safety and Security Feaure Views'">
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:Package" declaredName="AnnotationDefinitions">
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="Safety">
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="isMandatory">
+          <typings>Boolean</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="Security"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Package" declaredName="PartsTree">
+      <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="AnnotationDefinitions" isNamespace="true"/>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle">
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="interior">
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="alarm">
+            <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="Security"/>
+          </elements>
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="seatBelt" MultiLow="2">
+            <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="Safety">
+              <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="isMandatory" valuePart="true"/>
+            </elements>
+          </elements>
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="frontSeat" MultiLow="2"/>
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="driverAirBag">
+            <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="Safety">
+              <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="isMandatory" valuePart="false"/>
+            </elements>
+          </elements>
+        </elements>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="bodyAssy">
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="body"/>
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="bumper">
+            <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="Safety">
+              <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="isMandatory" valuePart="true"/>
+            </elements>
+          </elements>
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="keylessEntry">
+            <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="Security"/>
+          </elements>
+        </elements>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="wheelAssy">
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="wheel" MultiLow="2"/>
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="antilockBrakes" MultiLow="2">
+            <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="Safety">
+              <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="isMandatory" valuePart="false"/>
+            </elements>
+          </elements>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Package" declaredName="ViewDefinitions">
+      <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="AnnotationDefinitions" isNamespace="true"/>
+      <elements xsi:type="sysMLOC:ViewDefinition" declaredName="SafetyFeatureView">
+        <elements xsi:type="sysMLOC:Comment" body="/* Parts that contribute to safety. */"/>
+        <elements xsi:type="sysMLOC:ElementFilterElement" filterExpression="@Safety"/>
+        <elements xsi:type="sysMLOC:ViewRenderingUsage" refElement="asTreeDiagram"/>
+      </elements>
+      <elements xsi:type="sysMLOC:ViewDefinition" declaredName="SafetyOrSecurityFeatureView">
+        <elements xsi:type="sysMLOC:Comment" body="/* Parts that contribute to safety OR security. */"/>
+        <elements xsi:type="sysMLOC:ElementFilterElement" filterExpression="@Safety | @Security"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Package" declaredName="Views">
+      <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ViewDefinitions" isNamespace="true"/>
+      <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="PartsTree::vehicle"/>
+      <elements xsi:type="sysMLOC:ViewUsage" declaredName="vehicleSafetyFeatureView">
+        <typings>SafetyFeatureView</typings>
+        <elements xsi:type="sysMLOC:ExposeElement" declaredName="vehicle"/>
+      </elements>
+      <elements xsi:type="sysMLOC:ViewUsage" declaredName="vehicleMandatorySafetyFeatureView">
+        <subsetting>vehicleSafetyFeatureView</subsetting>
+        <elements xsi:type="sysMLOC:ExposeElement" declaredName="vehicle" isNamespace="true" isRecursive="true"/>
+        <elements xsi:type="sysMLOC:ElementFilterElement" filterExpression="Safety::isMandatory"/>
+      </elements>
+      <elements xsi:type="sysMLOC:ViewUsage" declaredName="vehicleMandatorySafetyFeatureViewStandalone">
+        <elements xsi:type="sysMLOC:ExposeElement" declaredName="vehicle" isRecursive="true">
+          <filterPackageExpression>@Safety and Safety::isMandatory</filterPackageExpression>
+        </elements>
+        <elements xsi:type="sysMLOC:ViewRenderingUsage" refElement="asElementTable"/>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="VariabilityTest">
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="P">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="a"/>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Q">
+      <superclassifiers>P</superclassifiers>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="B"/>
+    <elements xsi:type="sysMLOC:PartDefinition" isVariation="true" declaredName="V">
+      <superclassifiers>P</superclassifiers>
+      <elements xsi:type="sysMLOC:PartUsage" isVariant="true" declaredName="x">
+        <typings>Q</typings>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="b">
+          <typings>B</typings>
+          <redefinitions>a</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="q">
+      <typings>Q</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" isVariation="true" declaredName="v">
+      <typings>P</typings>
+      <elements xsi:type="sysMLOC:ReferenceVariantUsage" refElement="q">
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="b">
+          <typings>B</typings>
+          <redefinitions>a</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="y" valuePart="v::q">
+      <typings>P</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:ActionDefinition" isVariation="true" declaredName="A">
+      <elements xsi:type="sysMLOC:ActionUsage" isVariant="true" declaredName="a1"/>
+      <elements xsi:type="sysMLOC:ActionUsage" isVariant="true" declaredName="a2"/>
+    </elements>
+    <elements xsi:type="sysMLOC:UseCaseUsage" isVariation="true" declaredName="uc1">
+      <elements xsi:type="sysMLOC:UseCaseUsage" isVariant="true" declaredName="uc11"/>
+      <elements xsi:type="sysMLOC:UseCaseUsage" isVariant="true" declaredName="uc12"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AnalysisCaseUsage" isVariation="true" declaredName="a1"/>
+    <elements xsi:type="sysMLOC:VerificationCaseUsage" isVariation="true" declaredName="v1"/>
+    <elements xsi:type="sysMLOC:RequirementUsage" isVariation="true" declaredName="r">
+      <elements xsi:type="sysMLOC:RequirementUsage" isVariant="true" declaredName="r1"/>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

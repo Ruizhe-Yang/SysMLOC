@@ -84,12 +84,12 @@ standard library package TradeStudies {
 		 * selectedAlternative have the minimum ObjectiveFunction value of all the
 		 * given alternatives.
 		 */
-		 
-		attribute :>> best = alternatives->minimize {
-			doc
+		 doc
 			/*
 			 * For a MinimizeObjective, the best value is the minimum one.
 			 */
+		attribute :>> best = alternatives->minimize {
+			
 		
 			in x; eval(x)
 		};
@@ -102,12 +102,12 @@ standard library package TradeStudies {
 		 * selectedAlternative have the maximum ObjectiveFunction value of all the
 		 * given alternatives.
 		 */
-	
-		attribute :>> best = alternatives->maximize {
-			doc
+		doc
 			/*
 			 * For a MinimizeObjective, the best value is the maximum one.
 			 */
+		attribute :>> best = alternatives->maximize {
+			
 		
 			in x; eval(x)
 		};
@@ -158,14 +158,14 @@ standard library package TradeStudies {
 			in ref :>> alternatives = studyAlternatives;
 			in calc :>> eval = evaluationFunction;
 		}
-		
-		return selectedAlternative : Anything = studyAlternatives->selectOne {in ref a {
-			doc
+		doc
 			/*
 			 * The alternative selected by this TradeStudy, which is the one that meets the
 			 * requirement of the tradeStudyObjective.
 			 */
-		} tradeStudyObjective(selectedAlternative = a)};
+		
+		return selectedAlternative : Anything = studyAlternatives->selectOne {in ref a ;
+			 tradeStudyObjective(selectedAlternative = a)};
 	}
 	
 }

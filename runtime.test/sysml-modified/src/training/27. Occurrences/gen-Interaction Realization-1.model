@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="'Interaction Realization-1'">
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="'Interaction Example-1'" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="driver_a">
+      <typings>Driver</typings>
+      <elements xsi:type="sysMLOC:ActionUsage" declaredName="driverBehavior">
+        <elements xsi:type="sysMLOC:SendNode" declaredName="sendSetSpeed" sendNodeParameter="new SetSpeed()" toNodeParameter="vehicle_a"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle_a">
+      <typings>Vehicle</typings>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="cruiseController_a">
+        <typings>CruiseController</typings>
+        <elements xsi:type="sysMLOC:ActionUsage" declaredName="controllerBehavior">
+          <elements xsi:type="sysMLOC:AcceptNode" declaredName="receiveSetSpeed">
+            <acceptParameter payloadFeatureElement="SetSpeed" isVia="true" viaNodeParameter="vehicle_a"/>
+          </elements>
+          <elements xsi:type="sysMLOC:AcceptNode" isThen="true" declaredName="receiveSensedSpeed">
+            <acceptParameter payloadFeatureElement="SensedSpeed" isVia="true" viaNodeParameter="cruiseController_a"/>
+          </elements>
+          <elements xsi:type="sysMLOC:SendNode" isThen="true" declaredName="sendFuelCommand" sendNodeParameter="new FuelCommand()" toNodeParameter="engine_a"/>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="speedometer_a">
+        <typings>Speedometer</typings>
+        <elements xsi:type="sysMLOC:ActionUsage" declaredName="speedometerBehavior">
+          <elements xsi:type="sysMLOC:SendNode" declaredName="sendSensedSpeed" sendNodeParameter="new SensedSpeed()" toNodeParameter="cruiseController_a"/>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="engine_a">
+        <typings>Engine</typings>
+        <elements xsi:type="sysMLOC:ActionUsage" declaredName="engineBehavior">
+          <elements xsi:type="sysMLOC:AcceptNode" declaredName="receiveFuelCommand">
+            <acceptParameter payloadFeatureElement="FuelCommand" isVia="true" viaNodeParameter="engine_a"/>
+          </elements>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:OccurrenceUsage" declaredName="cruiseControlInteraction_a">
+      <typings>CruiseControlInteraction</typings>
+      <elements xsi:type="sysMLOC:PartUsage">
+        <redefinitions>driver</redefinitions>
+        <redefinitions>driver_a</redefinitions>
+        <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="driverBehavior.sendSetSpeed" MultiLow="1">
+          <redefinitions>setSpeedSent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage">
+        <redefinitions>vehicle</redefinitions>
+        <redefinitions>vehicle_a</redefinitions>
+        <elements xsi:type="sysMLOC:PartUsage">
+          <redefinitions>cruiseController</redefinitions>
+          <redefinitions>cruiseController_a</redefinitions>
+          <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="controllerBehavior.receiveSetSpeed" MultiLow="1">
+            <redefinitions>setSpeedReceived</redefinitions>
+          </elements>
+          <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="controllerBehavior.receiveSensedSpeed" MultiLow="1">
+            <redefinitions>sensedSpeedReceived</redefinitions>
+          </elements>
+          <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="controllerBehavior.sendFuelCommand" MultiLow="1">
+            <redefinitions>fuelCommandSent</redefinitions>
+          </elements>
+        </elements>
+        <elements xsi:type="sysMLOC:PartUsage">
+          <redefinitions>speedometer</redefinitions>
+          <redefinitions>speedometer_a</redefinitions>
+          <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="speedometerBehavior.sendSensedSpeed" MultiLow="1">
+            <redefinitions>sensedSpeedSent</redefinitions>
+          </elements>
+        </elements>
+        <elements xsi:type="sysMLOC:PartUsage">
+          <redefinitions>engine</redefinitions>
+          <redefinitions>engine_a</redefinitions>
+          <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="engineBehavior.receiveFuelCommand" MultiLow="1">
+            <redefinitions>fuelCommandReceived</redefinitions>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:Message" valuePart="driver_a.driverBehavior.sendSetSpeed.sentMessage">
+        <redefinitions>setSpeedMessage</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:Message" valuePart="vehicle_a.speedometer_a.speedometerBehavior.sendSensedSpeed.sentMessage">
+        <redefinitions>sensedSpeedMessage</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:Message" valuePart="vehicle_a.cruiseController_a.controllerBehavior.sendFuelCommand.sentMessage">
+        <redefinitions>fuelCommandMessage</redefinitions>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

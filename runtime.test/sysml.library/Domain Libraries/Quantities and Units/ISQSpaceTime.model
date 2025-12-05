@@ -80,7 +80,7 @@
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="zUnit" valuePart="mRefs#(3)">
         <typings>LengthUnit</typings>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="3">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="3">
         <typings>LengthUnit</typings>
         <redefinitions>mRefs</redefinitions>
       </elements>
@@ -88,7 +88,7 @@
         <redefinitions>isOrthogonal</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="universalCartesianSpatial3dCoordinateFrame" MultiValue="1">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="universalCartesianSpatial3dCoordinateFrame" MultiLow="1">
       <typings>CartesianSpatial3dCoordinateFrame</typings>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * A singleton CartesianSpatial3dCoordinateFrame that can be used as a default universal Cartesian 3D coordinate frame.&#xA;         */"/>
       <elements xsi:type="sysMLOC:AttributeUsage" isDefault="true" valuePart="(SI::m, SI::m, SI::m)">
@@ -164,7 +164,7 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
         <redefinitions>isBound</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>Spatial3dCoordinateFrame</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
@@ -184,7 +184,7 @@
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="z" valuePart="num#(3) [mRef.mRefs#(3)]">
         <typings>LengthValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>CartesianSpatial3dCoordinateFrame</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
@@ -204,7 +204,7 @@
       <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="h" declaredName="height" valuePart="num#(3) [mRef.mRefs#(3)]">
         <typings>LengthValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>CylindricalSpatial3dCoordinateFrame</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
@@ -224,7 +224,7 @@
       <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'&#x3c6;'" declaredName="azimuth" valuePart="num#(3) [mRef.mRefs#(3)]">
         <typings>AngularMeasureUnit</typings>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>SphericalSpatial3dCoordinateFrame</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
@@ -244,7 +244,7 @@
       <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="h" declaredName="altitude" valuePart="num#(3) [mRef.mRefs#(3)]">
         <typings>LengthValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>PlanetarySpatial3dCoordinateFrame</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
@@ -260,7 +260,7 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
         <redefinitions>isBound</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>Spatial3dCoordinateFrame</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
@@ -280,7 +280,7 @@
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="z" valuePart="num#(3) [mRef.mRefs#(3)]">
         <typings>LengthValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>CartesianSpatial3dCoordinateFrame</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
@@ -300,7 +300,7 @@
       <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="h" declaredName="height" valuePart="num#(3) [mRef.mRefs#(3)]">
         <typings>LengthValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>CylindricalSpatial3dCoordinateFrame</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
@@ -320,7 +320,7 @@
       <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'&#x3c6;'" declaredName="azimuth" valuePart="num#(3) [mRef.mRefs#(3)]">
         <typings>AngularMeasureUnit</typings>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>SphericalSpatial3dCoordinateFrame</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
@@ -343,18 +343,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>CurvatureUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="curvature" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="curvature" MultiLow="*" isNonunique="true">
       <typings>CurvatureValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CurvatureUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiLow="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
@@ -378,18 +378,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>AreaUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="area" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="area" MultiLow="*" isNonunique="true">
       <typings>AreaValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="AreaUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiLow="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
@@ -413,18 +413,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>VolumeUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="volume" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="volume" MultiLow="*" isNonunique="true">
       <typings>VolumeValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="VolumeUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiLow="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
@@ -448,12 +448,12 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>AngularMeasureUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="angularMeasure" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="angularMeasure" MultiLow="*" isNonunique="true">
       <typings>AngularMeasureValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
@@ -484,12 +484,12 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>SolidAngularMeasureUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="solidAngularMeasure" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="solidAngularMeasure" MultiLow="*" isNonunique="true">
       <typings>SolidAngularMeasureValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
@@ -508,7 +508,7 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
         <redefinitions>isBound</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>CartesianVelocity3dCoordinateFrame</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
@@ -525,7 +525,7 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
         <redefinitions>isOrthogonal</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="3">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="3">
         <typings>SpeedUnit</typings>
         <redefinitions>mRefs</redefinitions>
       </elements>
@@ -538,18 +538,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>SpeedUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="speed" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="speed" MultiLow="*" isNonunique="true">
       <typings>SpeedValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SpeedUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiLow="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
@@ -558,7 +558,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiLow="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
@@ -582,18 +582,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>AccelerationUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="acceleration" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="acceleration" MultiLow="*" isNonunique="true">
       <typings>AccelerationValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="AccelerationUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiLow="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
@@ -602,7 +602,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiLow="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
@@ -624,7 +624,7 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
         <redefinitions>isBound</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>CartesianAcceleration3dCoordinateFrame</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
@@ -641,7 +641,7 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
         <redefinitions>isOrthogonal</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="3">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="3">
         <typings>AccelerationUnit</typings>
         <redefinitions>mRefs</redefinitions>
       </elements>
@@ -654,18 +654,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>AngularVelocityUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="angularVelocity" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="angularVelocity" MultiLow="*" isNonunique="true">
       <typings>AngularVelocityValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="AngularVelocityUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiLow="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
@@ -687,7 +687,7 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
         <redefinitions>isBound</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>CartesianAngularVelocity3dCoordinateFrame</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
@@ -704,7 +704,7 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
         <redefinitions>isOrthogonal</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="3">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="3">
         <typings>AngularVelocityUnit</typings>
         <redefinitions>mRefs</redefinitions>
       </elements>
@@ -717,18 +717,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>AngularAccelerationUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="angularAcceleration" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="angularAcceleration" MultiLow="*" isNonunique="true">
       <typings>AngularAccelerationValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="AngularAccelerationUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiLow="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
@@ -750,7 +750,7 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
         <redefinitions>isBound</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>CartesianAngularAcceleration3dCoordinateFrame</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
@@ -767,7 +767,7 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
         <redefinitions>isOrthogonal</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="3">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="3">
         <typings>AngularAccelerationUnit</typings>
         <redefinitions>mRefs</redefinitions>
       </elements>
@@ -799,18 +799,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>FrequencyUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="frequency" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="frequency" MultiLow="*" isNonunique="true">
       <typings>FrequencyValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="FrequencyUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiLow="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
@@ -840,18 +840,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>AngularFrequencyUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="angularFrequency" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="angularFrequency" MultiLow="*" isNonunique="true">
       <typings>AngularFrequencyValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="AngularFrequencyUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiLow="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
@@ -881,18 +881,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>RepetencyUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="repetency" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="repetency" MultiLow="*" isNonunique="true">
       <typings>RepetencyValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="RepetencyUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiLow="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
@@ -918,7 +918,7 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
         <redefinitions>isBound</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>CartesianWaveVector3dCoordinateFrame</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
@@ -935,7 +935,7 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
         <redefinitions>isOrthogonal</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="3">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="3">
         <typings>RepetencyUnit</typings>
         <redefinitions>mRefs</redefinitions>
       </elements>
@@ -948,18 +948,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>AngularRepetencyUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="angularRepetency" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="angularRepetency" MultiLow="*" isNonunique="true">
       <typings>AngularRepetencyValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="AngularRepetencyUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiLow="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
@@ -986,18 +986,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>PhaseVelocityUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="phaseVelocity" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="phaseVelocity" MultiLow="*" isNonunique="true">
       <typings>PhaseVelocityValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="PhaseVelocityUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiLow="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
@@ -1006,7 +1006,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiLow="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
@@ -1040,18 +1040,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>DampingCoefficientUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="dampingCoefficient" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="dampingCoefficient" MultiLow="*" isNonunique="true">
       <typings>DampingCoefficientValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="DampingCoefficientUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiLow="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
@@ -1084,18 +1084,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>AttenuationUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="attenuation" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="attenuation" MultiLow="*" isNonunique="true">
       <typings>AttenuationValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="AttenuationUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiLow="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
@@ -1122,18 +1122,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>PhaseCoefficientUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="phaseCoefficient" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="phaseCoefficient" MultiLow="*" isNonunique="true">
       <typings>PhaseCoefficientValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="PhaseCoefficientUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiLow="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
@@ -1157,18 +1157,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
         <typings>PropagationCoefficientUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="propagationCoefficient" MultiValue="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="propagationCoefficient" MultiLow="*" isNonunique="true">
       <typings>PropagationCoefficientValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="PropagationCoefficientUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiValue="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiLow="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>

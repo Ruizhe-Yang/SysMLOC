@@ -45,7 +45,7 @@
         <typings>ViewpointCheck</typings>
         <redefinitions>self</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:SubjectUsage" declaredName="subj" MultiValue="1">
+      <elements xsi:type="sysMLOC:SubjectUsage" declaredName="subj" MultiLow="1">
         <typings>View</typings>
         <redefinitions>RequirementCheck::subj</redefinitions>
       </elements>
@@ -90,22 +90,22 @@
       <subsetting>parts</subsetting>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * renderings is the base feature of all RenderingUsages.&#xA;&#x9;&#x9; */"/>
     </elements>
-    <elements xsi:type="sysMLOC:RenderingUsage" declaredName="asTextualNotation" MultiValue="1">
+    <elements xsi:type="sysMLOC:RenderingUsage" declaredName="asTextualNotation" MultiLow="1">
       <typings>TextualRendering</typings>
       <subsetting>renderings</subsetting>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * asTextualNotation renders a View into textual notation as defined in the &#xA;&#x9;&#x9; * KerML and SysML specifications.&#xA;&#x9;&#x9; */"/>
     </elements>
-    <elements xsi:type="sysMLOC:RenderingUsage" declaredName="asTreeDiagram" MultiValue="1">
+    <elements xsi:type="sysMLOC:RenderingUsage" declaredName="asTreeDiagram" MultiLow="1">
       <typings>GraphicalRendering</typings>
       <subsetting>renderings</subsetting>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * asTreeDiagram renders a View as a tree diagram, using the &#xA;&#x9;&#x9; * graphical notation defined in the SysML specification.&#xA;&#x9;&#x9; */"/>
     </elements>
-    <elements xsi:type="sysMLOC:RenderingUsage" declaredName="asInterconnectionDiagram" MultiValue="1">
+    <elements xsi:type="sysMLOC:RenderingUsage" declaredName="asInterconnectionDiagram" MultiLow="1">
       <typings>GraphicalRendering</typings>
       <subsetting>renderings</subsetting>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * asInterconnectionDiagram renders a View as an interconnection &#xA;&#x9;&#x9; * diagram, using the graphical notation defined in the SysML specification.&#xA;&#x9;&#x9; */"/>
     </elements>
-    <elements xsi:type="sysMLOC:RenderingUsage" declaredName="asElementTable" MultiValue="1">
+    <elements xsi:type="sysMLOC:RenderingUsage" declaredName="asElementTable" MultiLow="1">
       <typings>TabularRendering</typings>
       <subsetting>renderings</subsetting>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * asElementTable  renders a View as a table, with one row for each exposed &#xA;&#x9;&#x9; * Element and columns rendered by applying the columnViews in order to the&#xA;&#x9;&#x9; * Element in each row.&#xA;&#x9;&#x9; */"/>

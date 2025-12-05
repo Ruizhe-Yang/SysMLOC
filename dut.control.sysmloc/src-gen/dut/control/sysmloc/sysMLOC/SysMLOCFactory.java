@@ -96,15 +96,6 @@ public interface SysMLOCFactory extends EFactory
   AnnotatingBodyElement createAnnotatingBodyElement();
 
   /**
-   * Returns a new object of class '<em>Action Node Body Element</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Action Node Body Element</em>'.
-   * @generated
-   */
-  ActionNodeBodyElement createActionNodeBodyElement();
-
-  /**
    * Returns a new object of class '<em>Action Body Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

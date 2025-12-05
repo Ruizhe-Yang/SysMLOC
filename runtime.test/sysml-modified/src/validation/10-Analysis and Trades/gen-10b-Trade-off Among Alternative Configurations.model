@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="'10b-Trade-off Among Alternative Configurations'">
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues::Real"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="TradeStudies" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Definitions" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Usages" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:Package" declaredName="Definitions">
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle"/>
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="Engine">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="power">
+          <typings>ISQ::PowerValue</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="mass">
+          <typings>ISQ::MassValue</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="efficiency">
+          <typings>Real</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="reliability">
+          <typings>Real</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="cost">
+          <typings>Real</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="Piston"/>
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="Cylinder"/>
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="ConnectingRod"/>
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="CrankShaft"/>
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="'4CylCrankShaft'">
+        <superclassifiers>CrankShaft</superclassifiers>
+      </elements>
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="'6CylCrankShaft'">
+        <superclassifiers>CrankShaft</superclassifiers>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Package" declaredName="Usages">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="engine">
+        <typings>Engine</typings>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="cyl" MultiLow="*">
+          <typings>Cylinder</typings>
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="p" MultiLow="1">
+            <typings>Piston</typings>
+          </elements>
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="rod" MultiLow="1">
+            <typings>ConnectingRod</typings>
+          </elements>
+        </elements>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="cs">
+          <typings>CrankShaft</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" isVariation="true" declaredName="engineChoice">
+        <subsetting>engine</subsetting>
+        <elements xsi:type="sysMLOC:PartUsage" isVariant="true" declaredName="'4cylEngine'">
+          <elements xsi:type="sysMLOC:PartUsage" MultiLow="4">
+            <redefinitions>cyl</redefinitions>
+          </elements>
+          <elements xsi:type="sysMLOC:PartUsage">
+            <typings>'4CylCrankShaft'</typings>
+            <redefinitions>cs</redefinitions>
+          </elements>
+        </elements>
+        <elements xsi:type="sysMLOC:PartUsage" isVariant="true" declaredName="'6cylEngine'">
+          <elements xsi:type="sysMLOC:PartUsage" MultiLow="6">
+            <redefinitions>cyl</redefinitions>
+          </elements>
+          <elements xsi:type="sysMLOC:PartUsage">
+            <typings>'6CylCrankShaft'</typings>
+            <redefinitions>cs</redefinitions>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle">
+        <typings>Vehicle</typings>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="engine" MultiLow="1" valuePart="engineChoice::'6cylEngine'">
+          <subsetting>engineChoice</subsetting>
+          <elements xsi:type="sysMLOC:AssertConstraintUsage" declaredName="engineSelectionRational">
+            <elements xsi:type="sysMLOC:Documentation" body="/* Selected the best engine based on the 'engineTradeStudy'. */"/>
+            <resultExpressionParameter resultExpression="engine == Analysis::engineTradeStudy.selectedAlternative"/>
+          </elements>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Package" declaredName="Analysis">
+      <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="EngineEvaluation">
+        <elements xsi:type="sysMLOC:Documentation" body="/* Evaluation function with criteria power, mass, efficency and cost. */"/>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="power">
+          <typings>ISQ::PowerValue</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="mass">
+          <typings>ISQ::MassValue</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="efficiency">
+          <typings>Real</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="cost">
+          <typings>Real</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="evaluation">
+          <typings>Real</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:CodeAnnotation" body="// Compute evaluation...&#xA;"/>
+      </elements>
+      <elements xsi:type="sysMLOC:AnalysisCaseUsage" declaredName="engineTradeStudy">
+        <typings>TradeStudy</typings>
+        <elements xsi:type="sysMLOC:SubjectUsage" MultiLow="1" MultiHigh="*" valuePart="all engineChoice">
+          <typings>Engine</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:ObjectiveRequirementUsage">
+          <typings>MaximizeObjective</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:CalculationUsage">
+          <redefinitions>evaluationFunction</redefinitions>
+          <elements xsi:type="sysMLOC:PartUsage" direction="in" declaredName="anEngine">
+            <typings>Engine</typings>
+            <redefinitions>alternative</redefinitions>
+          </elements>
+          <elements xsi:type="sysMLOC:CalculationUsage" declaredName="powerRollup">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="engine" valuePart="anEngine"/>
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="power">
+              <subsetting>ISQ::power</subsetting>
+            </elements>
+          </elements>
+          <elements xsi:type="sysMLOC:CalculationUsage" declaredName="massRollup">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="engine" valuePart="anEngine"/>
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="mass">
+              <subsetting>ISQ::mass</subsetting>
+            </elements>
+          </elements>
+          <elements xsi:type="sysMLOC:CalculationUsage" declaredName="efficiencyRollup">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="engine" valuePart="anEngine"/>
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="efficiency">
+              <typings>Real</typings>
+            </elements>
+          </elements>
+          <elements xsi:type="sysMLOC:CalculationUsage" declaredName="costRollup">
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="engine" valuePart="anEngine"/>
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="cost">
+              <typings>Real</typings>
+            </elements>
+          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" valuePart="EngineEvaluation( powerRollup.power, massRollup.mass, efficiencyRollup.efficiency, costRollup.cost )">
+            <typings>Real</typings>
+            <redefinitions>result</redefinitions>
+          </elements>
+        </elements>
+        <elements xsi:type="sysMLOC:PartUsage" isReturn="true">
+          <typings>Engine</typings>
+          <redefinitions>selectedAlternative</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

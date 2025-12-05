@@ -19,16 +19,16 @@
     <elements xsi:type="sysMLOC:ItemDefinition" declaredName="SpatialItem">
       <superclassifiers>SpatialFrame</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * A SpatialItem is an Item with a three-dimensional spatial extent that also acts as a SpatialFrame of reference.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:ItemUsage" isReference="true" MultiValue="1" isDefault="true" valuePart="Time::universalClock">
+      <elements xsi:type="sysMLOC:ItemUsage" isReference="true" MultiLow="1" isDefault="true" valuePart="Time::universalClock">
         <typings>Clock</typings>
         <redefinitions>localClock</redefinitions>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * A local Clock to be used as the corresponding time reference within this SpatialItem. &#xA;&#x9;&#x9;&#x9; * By default this is the singleton universalClock.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="coordinateFrame" MultiValue="1" isDefault="true" valuePart="universalCartesianSpatial3dCoordinateFrame">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="coordinateFrame" MultiLow="1" isDefault="true" valuePart="universalCartesianSpatial3dCoordinateFrame">
         <typings>ThreeDCoordinateFrame</typings>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;             * The three-dimensional CoordinateFrame to be used as the measurement reference for position &#xA;             * and displacement vector values relative to this SpatialItem.&#xA;             * By default this is the singleton universalCartesianSpatial3dCoordinateFrame.&#xA;             */"/>
       </elements>
-      <elements xsi:type="sysMLOC:ItemUsage" declaredName="originPoint" MultiValue="1">
+      <elements xsi:type="sysMLOC:ItemUsage" declaredName="originPoint" MultiLow="1">
         <typings>Point</typings>
         <subsetting>spaceShots</subsetting>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The Point at the origin of the coordinateFrame of this SpatialItem.&#xA;&#x9;&#x9;&#x9; */"/>
@@ -68,7 +68,7 @@
           <elements xsi:type="sysMLOC:AttributeUsage" isDefault="true" valuePart="(that.that as SpatialItem).coordinateFrame.mRefs">
             <redefinitions>mRefs</redefinitions>
           </elements>
-          <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1" isDefault="true" valuePart="nullTransformation">
+          <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1" isDefault="true" valuePart="nullTransformation">
             <redefinitions>transformation</redefinitions>
             <elements xsi:type="sysMLOC:AttributeUsage" isDefault="true" valuePart="(that.that.that as SpatialItem).coordinateFrame">
               <redefinitions>source</redefinitions>
@@ -76,10 +76,10 @@
           </elements>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="cunionNum" MultiValue="1" valuePart="if isEmpty(componentItems) ? 0 else 1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="cunionNum" MultiLow="1" valuePart="if isEmpty(componentItems) ? 0 else 1">
         <typings>Natural</typings>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="componentUnion" MultiValue="cunionNum">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="componentUnion" MultiLow="cunionNum">
         <subsetting>unionsOf</subsetting>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * A SpatialItem with componentItems is is a spatial union of them.&#xA;&#x9;&#x9;&#x9; */"/>
         <elements xsi:type="sysMLOC:ItemUsage" MultiLow="1" MultiHigh="*" valuePart="componentItems">
@@ -102,20 +102,20 @@
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="PositionOf">
       <superclassifiers>SpatialFrames::PositionOf</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * The PositionOf a Point relative to a SpatialItem, at a specific TimeInstantValue relative to a given Clock,&#xA;&#x9;&#x9; * is a positionVector that is a VectorQuantityValue in the coordinateFrame of the SpatialItem.&#xA;&#x9;&#x9; * The default Clock is the localClock of the SpatialItem.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="point" MultiValue="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="point" MultiLow="1">
         <typings>Point</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="timeInstant" MultiValue="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="timeInstant" MultiLow="1">
         <typings>TimeInstantValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="enclosingItem" MultiValue="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="enclosingItem" MultiLow="1">
         <typings>SpatialItem</typings>
         <redefinitions>'frame'</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="clock" MultiValue="1" isDefault="true" valuePart="enclosingItem.localClock">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="clock" MultiLow="1" isDefault="true" valuePart="enclosingItem.localClock">
         <typings>Clock</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="positionVector" MultiValue="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="positionVector" MultiLow="1">
         <typings>Position3dVector</typings>
         <elements xsi:type="sysMLOC:AttributeUsage" valuePart="enclosingItem.coordinateFrame">
           <redefinitions>mRef</redefinitions>
@@ -125,17 +125,17 @@
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="CurrentPositionOf">
       <superclassifiers>SpatialFrames::CurrentPositionOf</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * The CurrentPositionOf a Point relative to a SpatialItem and a Clock is the PositionOf&#xA;&#x9;&#x9; * the Point relative to the SpatialItem at the currentTime of the Clock.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="point" MultiValue="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="point" MultiLow="1">
         <typings>Point</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="enclosingItem" MultiValue="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="enclosingItem" MultiLow="1">
         <typings>SpatialItem</typings>
         <redefinitions>'frame'</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="clock" MultiValue="1" isDefault="true" valuePart="enclosingItem.localClock">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="clock" MultiLow="1" isDefault="true" valuePart="enclosingItem.localClock">
         <typings>Clock</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="positionVector" MultiValue="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="positionVector" MultiLow="1">
         <typings>Position3dVector</typings>
         <elements xsi:type="sysMLOC:AttributeUsage" valuePart="enclosingItem.coordinateFrame">
           <redefinitions>mRef</redefinitions>
@@ -145,23 +145,23 @@
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="DisplacementOf">
       <superclassifiers>SpatialFrames::DisplacementOf</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * The DisplacementOf two Points relative to a SpatialItem, at a specific TimeInstantValue relative to a&#xA;&#x9;&#x9; * given Clock, is the displacementVector computed as the difference between the PositionOf the &#xA;&#x9;&#x9; * first Point and PositionOf the second Point, relative to that SpatialItem, at that timeInstant.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="point1" MultiValue="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="point1" MultiLow="1">
         <typings>Point</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="point2" MultiValue="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="point2" MultiLow="1">
         <typings>Point</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="timeInstant" MultiValue="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="timeInstant" MultiLow="1">
         <typings>TimeInstantValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="spatialItem" MultiValue="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="spatialItem" MultiLow="1">
         <typings>SpatialItem</typings>
         <redefinitions>'frame'</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="clock" MultiValue="1" isDefault="true" valuePart="spatialItem.localClock">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="clock" MultiLow="1" isDefault="true" valuePart="spatialItem.localClock">
         <typings>Clock</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="displacementVector" MultiValue="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="displacementVector" MultiLow="1">
         <typings>Displacement3dVector</typings>
         <elements xsi:type="sysMLOC:AttributeUsage" valuePart="spatialItem.coordinateFrame">
           <redefinitions>mRef</redefinitions>
@@ -171,20 +171,20 @@
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="CurrentDisplacementOf">
       <superclassifiers>SpatialFrames::CurrentDisplacementOf</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * The CurrentDisplacementOf two Points relative to a SpatialItem and a Clock is the DisplacementOf&#xA;&#x9;&#x9; * the Points relative to the SpatialItem, at the currentTime of the Clock.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="point1" MultiValue="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="point1" MultiLow="1">
         <typings>Point</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="point2" MultiValue="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="point2" MultiLow="1">
         <typings>Point</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="spatialItem" MultiValue="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="spatialItem" MultiLow="1">
         <typings>SpatialItem</typings>
         <redefinitions>'frame'</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="clock" MultiValue="1" isDefault="true" valuePart="spatialItem.localClock">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="clock" MultiLow="1" isDefault="true" valuePart="spatialItem.localClock">
         <typings>Clock</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="displacementVector" MultiValue="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="displacementVector" MultiLow="1">
         <typings>Displacement3dVector</typings>
         <elements xsi:type="sysMLOC:AttributeUsage" valuePart="spatialItem.coordinateFrame">
           <redefinitions>mRef</redefinitions>

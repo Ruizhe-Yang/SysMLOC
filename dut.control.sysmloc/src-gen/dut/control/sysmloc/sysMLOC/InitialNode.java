@@ -48,7 +48,7 @@ public interface InitialNode extends ActionNodeElements, MemberPrefix
 
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
-   * The list contents are of type {@link dut.control.sysmloc.sysMLOC.ActionNodeBodyElement}.
+   * The list contents are of type {@link dut.control.sysmloc.sysMLOC.RelationshipBodyElement}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Elements</em>' containment reference list.
@@ -56,6 +56,6 @@ public interface InitialNode extends ActionNodeElements, MemberPrefix
    * @model containment="true"
    * @generated
    */
-  EList<ActionNodeBodyElement> getElements();
+  EList<RelationshipBodyElement> getElements();
 
 } // InitialNode

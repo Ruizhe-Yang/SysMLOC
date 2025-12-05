@@ -3,9 +3,9 @@
  */
 package dut.control.sysmloc.sysMLOC.impl;
 
-import dut.control.sysmloc.sysMLOC.ActionNodeBodyElement;
 import dut.control.sysmloc.sysMLOC.InitialNode;
 import dut.control.sysmloc.sysMLOC.MemberPrefix;
+import dut.control.sysmloc.sysMLOC.RelationshipBodyElement;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 import dut.control.sysmloc.sysMLOC.VisibilityIndicator;
 
@@ -110,7 +110,7 @@ public class InitialNodeImpl extends ActionNodeElementsImpl implements InitialNo
    * @generated
    * @ordered
    */
-  protected EList<ActionNodeBodyElement> elements;
+  protected EList<RelationshipBodyElement> elements;
 
   /**
    * <!-- begin-user-doc -->
@@ -214,11 +214,11 @@ public class InitialNodeImpl extends ActionNodeElementsImpl implements InitialNo
    * @generated
    */
   @Override
-  public EList<ActionNodeBodyElement> getElements()
+  public EList<RelationshipBodyElement> getElements()
   {
     if (elements == null)
     {
-      elements = new EObjectContainmentEList<ActionNodeBodyElement>(ActionNodeBodyElement.class, this, SysMLOCPackage.INITIAL_NODE__ELEMENTS);
+      elements = new EObjectContainmentEList<RelationshipBodyElement>(RelationshipBodyElement.class, this, SysMLOCPackage.INITIAL_NODE__ELEMENTS);
     }
     return elements;
   }
@@ -283,7 +283,7 @@ public class InitialNodeImpl extends ActionNodeElementsImpl implements InitialNo
         return;
       case SysMLOCPackage.INITIAL_NODE__ELEMENTS:
         getElements().clear();
-        getElements().addAll((Collection<? extends ActionNodeBodyElement>)newValue);
+        getElements().addAll((Collection<? extends RelationshipBodyElement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

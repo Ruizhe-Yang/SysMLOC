@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="TimeVaryingAttribute">
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="SI::s"/>
+    <elements xsi:type="sysMLOC:ItemDefinition" declaredName="PwrCmd">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="pwrLevel">
+        <typings>ScalarValues::Integer</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Transport2">
+      <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Time" isNamespace="true"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="startTime" valuePart="TimeOf(start)"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="elapseTime">
+        <subsetting>ISQ::duration</subsetting>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="startTime + elapseTime">
+        <redefinitions>localClock.currentTime</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:ItemUsage" direction="out" declaredName="pwrCmd">
+        <typings>PwrCmd</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:CodeAnnotation" body="// Lifetime conditions&#xA;"/>
+      <elements xsi:type="sysMLOC:PortionUsage" portionKind="timeslice">
+        <redefinitions>portionOfLife</redefinitions>
+        <elements xsi:type="sysMLOC:PortionUsage" portionKind="snapshot">
+          <redefinitions>start</redefinitions>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="0 [s]">
+            <redefinitions>elapseTime</redefinitions>
+          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="0">
+            <redefinitions>pwrCmd.pwrLevel</redefinitions>
+          </elements>
+        </elements>
+        <elements xsi:type="sysMLOC:PortionUsage" portionKind="snapshot">
+          <redefinitions>done</redefinitions>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2 [s]">
+            <redefinitions>elapseTime</redefinitions>
+          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+            <redefinitions>pwrCmd.pwrLevel</redefinitions>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:CodeAnnotation" body="//     Alternative:&#xA;"/>
+      <elements xsi:type="sysMLOC:CodeAnnotation" body="//       // initial conditions&#xA;"/>
+      <elements xsi:type="sysMLOC:CodeAnnotation" body="//       :>> portionOfLife.start : C {&#xA;"/>
+      <elements xsi:type="sysMLOC:CodeAnnotation" body="//           :>> elapseTime = 0 [s];&#xA;"/>
+      <elements xsi:type="sysMLOC:CodeAnnotation" body="//           :>> pwrCmd.pwrLevel = 0;&#xA;"/>
+      <elements xsi:type="sysMLOC:CodeAnnotation" body="//       }&#xA;"/>
+      <elements xsi:type="sysMLOC:PortionUsage" declaredName="transportPeriod" portionKind="timeslice">
+        <elements xsi:type="sysMLOC:PortionUsage" portionKind="snapshot">
+          <redefinitions>start</redefinitions>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1 [s]">
+            <redefinitions>elapseTime</redefinitions>
+          </elements>
+        </elements>
+        <elements xsi:type="sysMLOC:PortionUsage" portionKind="snapshot">
+          <redefinitions>done</redefinitions>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1.5 [s]">
+            <redefinitions>elapseTime</redefinitions>
+          </elements>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2*elapseTime.num">
+          <redefinitions>pwrCmd.pwrLevel</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:CodeAnnotation" body="//      Alternative:&#xA;"/>
+      <elements xsi:type="sysMLOC:CodeAnnotation" body="//        // final conditions&#xA;"/>
+      <elements xsi:type="sysMLOC:CodeAnnotation" body="//        :>> portionOfLife.done {&#xA;"/>
+      <elements xsi:type="sysMLOC:CodeAnnotation" body="//            :>> elapseTime = 2 [s];&#xA;"/>
+      <elements xsi:type="sysMLOC:CodeAnnotation" body="//            :>> pwrCmd.pwrLevel = 1;&#xA;"/>
+      <elements xsi:type="sysMLOC:CodeAnnotation" body="//        }&#xA;"/>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

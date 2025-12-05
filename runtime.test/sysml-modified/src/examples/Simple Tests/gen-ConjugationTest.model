@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="ConjugationTest">
+    <elements xsi:type="sysMLOC:PortDefinition" declaredName="P"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="B">
+      <elements xsi:type="sysMLOC:PortUsage" declaredName="p1">
+        <typings>P</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:PortUsage" declaredName="p2">
+        <typings>~P</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:ConnectionDefinition" declaredName="A">
+      <elements xsi:type="sysMLOC:PortUsage" isEnd="true" declaredName="p1">
+        <typings>P</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:PortUsage" isEnd="true" declaredName="p2">
+        <typings>~P</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:InterfaceDefinition" declaredName="I">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="p1" isEnd="true">
+        <typings>P</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="p2" isEnd="true">
+        <typings>~P</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="B1">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="p">
+        <elements xsi:type="sysMLOC:PortUsage" declaredName="p1">
+          <typings>P</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:PortUsage" declaredName="p2">
+          <typings>~P</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:ConnectionUsage" declaredName="a">
+        <typings>A</typings>
+        <elements xsi:type="sysMLOC:PortUsage" isEnd="true" declaredName="p3">
+          <typings>P</typings>
+          <references>p.p1</references>
+        </elements>
+        <elements xsi:type="sysMLOC:PortUsage" isEnd="true" declaredName="p4">
+          <typings>~P</typings>
+          <references>p.p2</references>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:InterfaceUsage" declaredName="i">
+        <typings>I</typings>
+        <elements xsi:type="sysMLOC:PortUsage" isEnd="true" declaredName="p3">
+          <typings>P</typings>
+          <references>p.p1</references>
+        </elements>
+        <elements xsi:type="sysMLOC:PortUsage" isEnd="true" declaredName="p4">
+          <typings>~P</typings>
+          <references>p.p2</references>
+        </elements>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

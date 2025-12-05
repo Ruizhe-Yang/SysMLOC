@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="'1d-Parts Tree with Reference'">
+    <elements xsi:type="sysMLOC:Package" declaredName="Definitions">
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle"/>
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="Trailer"/>
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="TrailerHitch"/>
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="HitchBall"/>
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="TrailerCoupler"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Package" declaredName="Usages">
+      <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Definitions" isNamespace="true"/>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle_trailer_system">
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle1_c1">
+          <typings>Vehicle</typings>
+          <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="hitchBall">
+            <typings>HitchBall</typings>
+            <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * 'vehicle1_c1'::'hitchBall' is a reference property that&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * references a hitch ball that is not part of this vehicle. &#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * If 'vehicle1_c1' is removed or destroyed, this does not&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * effect the hitchBall referenced here.&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; */"/>
+          </elements>
+        </elements>
+        <elements xsi:type="sysMLOC:BindingConnectorAsUsage">
+          <connectorPart refElement="vehicle1_c1.hitchBall"/>
+          <connectorPart refElement="trailerHitch.hitchBall"/>
+          <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9;&#x9; * This is a binding connector between the 'hitchBall' in 'vehicle1_c1'&#xA;&#x9;&#x9;&#x9;&#x9; * and the 'hitchBall' in 'trailerHitch'.&#xA;&#x9;&#x9;&#x9;&#x9; */"/>
+        </elements>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="trailerHitch">
+          <typings>TrailerHitch</typings>
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="hitchBall">
+            <typings>HitchBall</typings>
+          </elements>
+          <elements xsi:type="sysMLOC:PartUsage" declaredName="trailerCoupler">
+            <typings>TrailerCoupler</typings>
+          </elements>
+        </elements>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="trailer1">
+          <typings>Trailer</typings>
+          <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="trailerCoupler" valuePart="trailerHitch.trailerCoupler">
+            <typings>TrailerCoupler</typings>
+            <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * This is a shorthand for a binding connector between the&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * 'trailerCoupler' here and the 'trailerCoupler' in 'trailerHitch'.&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * The binding connector is now contained within the 'trailer1'&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * part, though, rather than being at the system level. &#xA;&#x9;&#x9;&#x9;&#x9;&#x9; */"/>
+          </elements>
+        </elements>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

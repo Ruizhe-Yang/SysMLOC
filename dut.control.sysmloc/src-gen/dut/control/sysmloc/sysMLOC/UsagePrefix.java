@@ -14,6 +14,6 @@ package dut.control.sysmloc.sysMLOC;
  * @model
  * @generated
  */
-public interface UsagePrefix extends UnextendedUsagePrefix, EndUsagePrefix, BasicUsagePrefix, RefPrefix, BasicDefinitionPrefix, UsageExtensionKeyword
+public interface UsagePrefix extends UnextendedUsagePrefix, EndUsagePrefix, CrossEndUsagePrefix, BasicUsagePrefix, RefPrefix, BasicDefinitionPrefix, UsageExtensionKeyword
 {
 } // UsagePrefix

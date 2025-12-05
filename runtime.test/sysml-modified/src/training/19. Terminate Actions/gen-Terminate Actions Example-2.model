@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="'Terminate Actions Example-2'">
+    <elements xsi:type="sysMLOC:ActionDefinition" declaredName="WorkflowProcess"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Processor">
+      <elements xsi:type="sysMLOC:ActionUsage" isReference="true" declaredName="workflowProcess">
+        <typings>WorkflowProcess</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:ActionUsage" declaredName="internalProcess">
+        <elements xsi:type="sysMLOC:CodeAnnotation" body="// ...&#xA;"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:ActionUsage" declaredName="terminateProcessing">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="processor">
+        <typings>Processor</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:TerminateNode" isSemicolon="true" NodeParameter="processor.workflowProcess"/>
+      <elements xsi:type="sysMLOC:TerminateNode" isSemicolon="true" NodeParameter="processor"/>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

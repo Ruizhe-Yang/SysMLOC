@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="ActionTest">
+    <elements xsi:type="sysMLOC:ActionDefinition" declaredName="A">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x"/>
+    </elements>
+    <elements xsi:type="sysMLOC:ActionUsage" declaredName="a">
+      <typings>A</typings>
+      <elements xsi:type="sysMLOC:InitialNode" memberElement="start"/>
+      <elements xsi:type="sysMLOC:ActionUsage" declaredName="b">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="y" valuePart="x"/>
+      </elements>
+      <elements xsi:type="sysMLOC:BindingConnectorAsUsage">
+        <connectorPart refElement="x"/>
+        <connectorPart refElement="b.y"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="S"/>
+    <elements xsi:type="sysMLOC:ActionUsage" declaredName="a1">
+      <elements xsi:type="sysMLOC:InitialNode" memberElement="start"/>
+      <elements xsi:type="sysMLOC:CommonNode" isThen="true" declaredName="m"/>
+      <elements xsi:type="sysMLOC:AcceptNode" isThen="true">
+        <acceptParameter payloadFeatureElement="S"/>
+      </elements>
+      <elements xsi:type="sysMLOC:AcceptNode" isThen="true">
+        <acceptParameter declaredName="sig" triggerkind="after" triggerExpression="10[SI::s]"/>
+      </elements>
+      <elements xsi:type="sysMLOC:AcceptNode" isThen="true">
+        <acceptParameter triggerkind="at" triggerExpression="new Time::Iso8601DateTime(&quot;2022-01-30T01:00:00Z&quot;)"/>
+      </elements>
+      <elements xsi:type="sysMLOC:SendNode" isThen="true" sendNodeParameter="new S()" toNodeParameter="b"/>
+      <elements xsi:type="sysMLOC:AcceptNode" isThen="true">
+        <acceptParameter triggerkind="when" triggerExpression="b.f"/>
+      </elements>
+      <elements xsi:type="sysMLOC:CommonNode" isThen="true" nodeKind="decide"/>
+      <elements xsi:type="sysMLOC:IfNode" ifConditionExpression="true">
+        <transitionSuccessionElement refElement="m"/>
+      </elements>
+      <elements xsi:type="sysMLOC:ElseNode">
+        <elseEnd refElement="done"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:ActionUsage" declaredName="a2">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="s">
+        <typings>S</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:ActionUsage" declaredName="aa">
+        <elements xsi:type="sysMLOC:PartUsage" direction="out" declaredName="target"/>
+      </elements>
+      <elements xsi:type="sysMLOC:FlowUsage">
+        <FlowEnd>aa.target</FlowEnd>
+        <FlowEnd>snd.receiver</FlowEnd>
+      </elements>
+      <elements xsi:type="sysMLOC:SendNode" declaredName="snd" sendNodeParameter="null">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" valuePart="s">
+          <redefinitions>payload</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:SendNode" declaredName="snd2" sendNodeParameter="null" viaNodeParameter="this" toNodeParameter="aa.target"/>
+      <elements xsi:type="sysMLOC:BindingConnectorAsUsage">
+        <connectorPart refElement="s"/>
+        <connectorPart refElement="snd2.payload"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:ActionUsage" declaredName="b">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="f">
+        <typings>ScalarValues::Boolean</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:ActionUsage" isReference="true" declaredName="a">
+        <typings>A</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:ActionDefinition" declaredName="c">
+      <elements xsi:type="sysMLOC:InitialNode" memberElement="start"/>
+      <elements xsi:type="sysMLOC:ActionUsage" isThen="true" declaredName="c1">
+        <elements xsi:type="sysMLOC:TerminateNode" isSemicolon="true" NodeParameter="c1"/>
+      </elements>
+      <elements xsi:type="sysMLOC:TerminateNode" isThen="true" isSemicolon="true"/>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

@@ -9,11 +9,39 @@ package dut.control.sysmloc.sysMLOC;
  * A representation of the model object '<em><b>Cross End Usage</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.CrossEndUsage#getDeclaredName <em>Declared Name</em>}</li>
+ * </ul>
  *
  * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getCrossEndUsage()
  * @model
  * @generated
  */
-public interface CrossEndUsage extends FeatureDeclaration, Identification, FeatureSpecializationPart, FeatureSpecialization, TypingFeatureTyping, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, MultiplicityPart, MultiplicityRange, MultiplicityModifiers
+public interface CrossEndUsage extends MultiplicityPart, MultiplicityRange, MultiplicityModifiers
 {
+  /**
+   * Returns the value of the '<em><b>Declared Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Declared Name</em>' attribute.
+   * @see #setDeclaredName(String)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getCrossEndUsage_DeclaredName()
+   * @model
+   * @generated
+   */
+  String getDeclaredName();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.CrossEndUsage#getDeclaredName <em>Declared Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Declared Name</em>' attribute.
+   * @see #getDeclaredName()
+   * @generated
+   */
+  void setDeclaredName(String value);
+
 } // CrossEndUsage

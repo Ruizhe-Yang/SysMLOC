@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="'5-State-based Behavior-1a'">
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ISQ" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:Package" declaredName="Definitions">
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="VehicleA">
+        <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9; * The following declare that 'VehicleA' performs a&#xA;&#x9;&#x9;&#x9; * 'provide power' action and exhibits some 'vehicle states',&#xA;&#x9;&#x9;&#x9; * without giving details about these behaviors.&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="sysMLOC:PerformActionUsage" declaredName="'provide power'">
+          <typings>'Provide Power'</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:ExhibitStateUsage" declaredName="'vehicle states'">
+          <typings>'Vehicle States'</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="VehicleController">
+        <elements xsi:type="sysMLOC:ExhibitStateUsage" declaredName="'controller states'">
+          <typings>'Controller States'</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9; * Black box specifications for state definitions may also have&#xA;&#x9;&#x9; * input and output parameters, like activities, though none&#xA;&#x9;&#x9; * are used here.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:StateDefinition" declaredName="'Vehicle States'"/>
+      <elements xsi:type="sysMLOC:StateDefinition" declaredName="'Controller States'"/>
+      <elements xsi:type="sysMLOC:ActionDefinition" declaredName="'Provide Power'"/>
+      <elements xsi:type="sysMLOC:ActionDefinition" declaredName="'Perform Self Test'"/>
+      <elements xsi:type="sysMLOC:ActionDefinition" declaredName="'Apply Parking Brake'"/>
+      <elements xsi:type="sysMLOC:ActionDefinition" declaredName="'Sense Temperature'">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="temp">
+          <typings>TemperatureValue</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="FuelCmd"/>
+      <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="'Vehicle Start Signal'"/>
+      <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="'Vehicle On Signal'"/>
+      <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="'Vehicle Off Signal'"/>
+      <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="'Start Signal'"/>
+      <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="'Off Signal'"/>
+      <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="'Over Temp'"/>
+      <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="'Return to Normal'"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Package" declaredName="Usages">
+      <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Definitions" isNamespace="true"/>
+      <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9; * These actions are used enabled in the state usage &#xA;&#x9;&#x9; * 'vehicle states', in addition to 'provide power'.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:ActionUsage" declaredName="'provide power'">
+        <typings>'Provide Power'</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:ActionUsage" declaredName="'perform self test'">
+        <typings>'Perform Self Test'</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:ActionUsage" declaredName="'apply parking brake'">
+        <typings>'Apply Parking Brake'</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:ActionUsage" declaredName="'sense temperature'">
+        <typings>'Sense Temperature'</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:StateUsage" declaredName="'vehicle states'" isParallel="true">
+        <typings>'Vehicle States'</typings>
+        <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9; * This is a usage of the state definition 'Vehicle States'.&#xA;&#x9;&#x9;&#x9; * Note that it depends specifically on on the part 'vehicle1_c1'.&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="sysMLOC:StateUsage" declaredName="'operational states'">
+          <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The state definition for this usage is implicit.&#xA;&#x9;&#x9;&#x9; */"/>
+          <elements xsi:type="sysMLOC:EntryActionNode">
+            <performedActionParameterPart xsi:type="sysMLOC:PerformActionUsage" declaredName="initial"/>
+            <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9;&#x9; * This empty entry action acts like a start pseudo state.&#xA;&#x9;&#x9;&#x9;&#x9; */"/>
+          </elements>
+          <elements xsi:type="sysMLOC:TransitionUsage" transitionSourceElement="initial">
+            <transitionSuccessionElement refElement="off"/>
+          </elements>
+          <elements xsi:type="sysMLOC:StateUsage" declaredName="off"/>
+          <elements xsi:type="sysMLOC:TransitionUsage" declaredName="'off-starting'" conditionalExpression="vehicle1_c1.'brake pedal depressed'" transitionSourceElement="off">
+            <acceptParameter payloadFeatureElement="'Vehicle Start Signal'"/>
+            <performedActionParameterPart xsi:type="sysMLOC:SendActionUsage" sendNodeParameter="new 'Start Signal'()" toNodeParameter="vehicle1_c1.vehicleController"/>
+            <transitionSuccessionElement refElement="starting"/>
+            <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * The transition definition for a transition usage is always implicit.&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * &quot;accept&quot; marks the trigger, &quot;if&quot; the guard and &quot;do&quot; the effect.&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * &#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * The notation &quot;'new Start Signal'()&quot; constructs a specific instance of the&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * 'Start Signal' attribute def to be sent to the 'vehicleController'. If the&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * attribute def had properties, their values would be given as arguments&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * inside the parentheses.&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; */"/>
+          </elements>
+          <elements xsi:type="sysMLOC:StateUsage" declaredName="starting"/>
+          <elements xsi:type="sysMLOC:TransitionUsage" declaredName="'starting-on'" transitionSourceElement="starting">
+            <acceptParameter payloadFeatureElement="'Vehicle On Signal'"/>
+            <transitionSuccessionElement refElement="on"/>
+          </elements>
+          <elements xsi:type="sysMLOC:StateUsage" declaredName="on">
+            <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * A state may have a &quot;entry&quot; action that is performed on entry into&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * the state, a &quot;do&quot; action that is performed while in the state&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * and an &quot;exit&quot; action that is performed on exit from the state.&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; */"/>
+            <elements xsi:type="sysMLOC:EntryActionNode">
+              <performedActionParameterPart xsi:type="sysMLOC:PerformActionUsage" referencedFeature="'perform self test'"/>
+            </elements>
+            <elements xsi:type="sysMLOC:DoActionNode">
+              <performedActionParameterPart xsi:type="sysMLOC:PerformActionUsage" referencedFeature="'provide power'"/>
+            </elements>
+            <elements xsi:type="sysMLOC:ExitActionNode">
+              <performedActionParameterPart xsi:type="sysMLOC:PerformActionUsage" referencedFeature="'apply parking brake'"/>
+            </elements>
+          </elements>
+          <elements xsi:type="sysMLOC:TransitionUsage" declaredName="'on-off'" transitionSourceElement="on">
+            <acceptParameter payloadFeatureElement="'Vehicle Off Signal'"/>
+            <transitionSuccessionElement refElement="off"/>
+          </elements>
+        </elements>
+        <elements xsi:type="sysMLOC:StateUsage" declaredName="'health states'">
+          <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9;&#x9; * 'health states' is concurrent with 'operational states', because the&#xA;&#x9;&#x9;&#x9;&#x9; * containing state usage is &quot;parallel&quot;.&#xA;&#x9;&#x9;&#x9;&#x9; */"/>
+          <elements xsi:type="sysMLOC:EntryActionNode">
+            <performedActionParameterPart xsi:type="sysMLOC:PerformActionUsage" declaredName="initial"/>
+          </elements>
+          <elements xsi:type="sysMLOC:DoActionNode">
+            <performedActionParameterPart xsi:type="sysMLOC:PerformActionUsage" referencedFeature="'sense temperature'"/>
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="temp"/>
+            <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; * State-behavior actions may have input and output parameters.&#xA;&#x9;&#x9;&#x9;&#x9;&#x9; */"/>
+          </elements>
+          <elements xsi:type="sysMLOC:TransitionUsage" transitionSourceElement="initial">
+            <transitionSuccessionElement refElement="normal"/>
+          </elements>
+          <elements xsi:type="sysMLOC:StateUsage" declaredName="normal"/>
+          <elements xsi:type="sysMLOC:TransitionUsage" declaredName="'normal-maintenance'" transitionSourceElement="normal">
+            <acceptParameter triggerkind="at" triggerExpression="vehicle1_c1.maintenanceTime"/>
+            <transitionSuccessionElement refElement="maintenance"/>
+          </elements>
+          <elements xsi:type="sysMLOC:TransitionUsage" declaredName="'normal-degraded'" transitionSourceElement="normal">
+            <acceptParameter triggerkind="when" triggerExpression="'sense temperature'.temp > vehicle1_c1.Tmax"/>
+            <performedActionParameterPart xsi:type="sysMLOC:SendActionUsage" sendNodeParameter="new 'Over Temp'()" toNodeParameter="vehicle1_c1.vehicleController"/>
+            <transitionSuccessionElement refElement="degraded"/>
+          </elements>
+          <elements xsi:type="sysMLOC:StateUsage" declaredName="maintenance"/>
+          <elements xsi:type="sysMLOC:TransitionUsage" declaredName="'maintenance-normal'" transitionSourceElement="maintenance">
+            <acceptParameter payloadFeatureElement="'Return to Normal'"/>
+            <transitionSuccessionElement refElement="normal"/>
+          </elements>
+          <elements xsi:type="sysMLOC:StateUsage" declaredName="degraded"/>
+          <elements xsi:type="sysMLOC:TransitionUsage" declaredName="'degraded-normal'" transitionSourceElement="degraded">
+            <acceptParameter payloadFeatureElement="'Return to Normal'"/>
+            <transitionSuccessionElement refElement="normal"/>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:StateUsage" declaredName="'controller states'" isParallel="true">
+        <typings>'Controller States'</typings>
+        <elements xsi:type="sysMLOC:StateUsage" declaredName="'operational controller states'">
+          <elements xsi:type="sysMLOC:EntryActionNode">
+            <performedActionParameterPart xsi:type="sysMLOC:PerformActionUsage" declaredName="initial"/>
+          </elements>
+          <elements xsi:type="sysMLOC:TransitionUsage" transitionSourceElement="initial">
+            <transitionSuccessionElement refElement="off"/>
+          </elements>
+          <elements xsi:type="sysMLOC:StateUsage" declaredName="off"/>
+          <elements xsi:type="sysMLOC:TransitionUsage" declaredName="'off-on'" transitionSourceElement="off">
+            <acceptParameter payloadFeatureElement="'Start Signal'"/>
+            <transitionSuccessionElement refElement="on"/>
+          </elements>
+          <elements xsi:type="sysMLOC:StateUsage" declaredName="on"/>
+          <elements xsi:type="sysMLOC:TransitionUsage" declaredName="'on-off'" transitionSourceElement="on">
+            <acceptParameter payloadFeatureElement="'Off Signal'"/>
+            <transitionSuccessionElement refElement="off"/>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle1_c1">
+        <typings>VehicleA</typings>
+        <elements xsi:type="sysMLOC:PortUsage" declaredName="fuelCmdPort">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="fuelCmd">
+            <typings>FuelCmd</typings>
+          </elements>
+        </elements>
+        <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9; * These attribute properties are used in the specification for&#xA;&#x9;&#x9;&#x9; * 'vehicle states'.&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="'brake pedal depressed'">
+          <typings>Boolean</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="maintenanceTime">
+          <typings>Time::DateTime</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="Tmax">
+          <typings>TemperatureValue</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:PerformActionUsage" refElement="'provide power'">
+          <redefinitions>VehicleA::'provide power'</redefinitions>
+          <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * In the context of the 'vehicle1_c1' part, the 'provide power' action&#xA;&#x9;&#x9;&#x9; * that is enabled in 'vehicle states' gets its input from the 'fuelCmdPort'.&#xA;&#x9;&#x9;&#x9; */"/>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="fuelCmd" valuePart="fuelCmdPort.fuelCmd"/>
+        </elements>
+        <elements xsi:type="sysMLOC:ExhibitStateUsage" refElement="'vehicle states'">
+          <redefinitions>VehicleA::'vehicle states'</redefinitions>
+          <elements xsi:type="sysMLOC:Comment" body="/*&#xA;&#x9;&#x9;&#x9;&#x9; * This allocates the state usage 'vehicle states' as the detailed&#xA;&#x9;&#x9;&#x9;&#x9; * state-based behavior for 'vehicle1_c1' that fills in the generic&#xA;&#x9;&#x9;&#x9;&#x9; * declaration in 'VehicleA'.&#xA;&#x9;&#x9;&#x9;&#x9; */"/>
+        </elements>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicleController">
+          <typings>VehicleController</typings>
+          <elements xsi:type="sysMLOC:ExhibitStateUsage" refElement="'controller states'">
+            <redefinitions>VehicleController::'controller states'</redefinitions>
+          </elements>
+        </elements>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

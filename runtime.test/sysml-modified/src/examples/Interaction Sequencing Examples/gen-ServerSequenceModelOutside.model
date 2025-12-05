@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="ServerSequenceModelOutside">
+    <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="ServerSequenceModel" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="PubSubSequenceOutside">
+      <superclassifiers>PubSubSequence</superclassifiers>
+      <elements xsi:type="sysMLOC:PartUsage">
+        <redefinitions>producer</redefinitions>
+        <elements xsi:type="sysMLOC:EventOccurrenceUsage" refElement="publish_source_event" valuePart="publish_message.start"/>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage">
+        <redefinitions>server</redefinitions>
+        <elements xsi:type="sysMLOC:EventOccurrenceUsage" valuePart="subscribe_message.done">
+          <redefinitions>subscribe_target_event</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:EventOccurrenceUsage" isThen="true" valuePart="publish_message.done">
+          <redefinitions>publish_target_event</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:EventOccurrenceUsage" isThen="true" valuePart="deliver_message.start">
+          <redefinitions>deliver_source_event</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage">
+        <redefinitions>consumer</redefinitions>
+        <elements xsi:type="sysMLOC:Comment" body="/* Redundant with timing constraints on server and generic transfers. */"/>
+        <elements xsi:type="sysMLOC:EventOccurrenceUsage" valuePart="subscribe_message.start">
+          <redefinitions>subscribe_source_event</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:EventOccurrenceUsage" isThen="true" valuePart="deliver_message.done">
+          <redefinitions>deliver_target_event</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

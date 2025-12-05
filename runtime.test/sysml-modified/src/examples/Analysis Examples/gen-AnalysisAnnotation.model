@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="AnalysisAnnotation">
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues::Real"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="AnalysisTooling" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ISQ" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ActionDefinition" declaredName="ComputeDynamics">
+      <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="ToolExecution">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="toolName" valuePart="&quot;ModelCenter&quot;"/>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="uri" valuePart="&quot;aserv://localhost/Vehicle/Equation1&quot;"/>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="dt">
+        <typings>TimeValue</typings>
+        <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="ToolVariable">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="name" valuePart="&quot;deltaT&quot;"/>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="whlpwr">
+        <typings>PowerValue</typings>
+        <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="ToolVariable">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="name" valuePart="&quot;power&quot;"/>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="Cd">
+        <typings>Real</typings>
+        <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="ToolVariable">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="name" valuePart="&quot;C_D&quot;"/>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="Cf">
+        <typings>Real</typings>
+        <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="ToolVariable">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="name" valuePart="&quot;C_F&quot;"/>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="tm">
+        <typings>MassValue</typings>
+        <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="ToolVariable">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="name" valuePart="&quot;mass&quot;"/>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="v_in">
+        <typings>SpeedValue</typings>
+        <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="ToolVariable">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="name" valuePart="&quot;v0&quot;"/>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x_in">
+        <typings>LengthValue</typings>
+        <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="ToolVariable">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="name" valuePart="&quot;x0&quot;"/>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="a_out">
+        <typings>AccelerationValue</typings>
+        <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="ToolVariable">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="name" valuePart="&quot;a&quot;"/>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="v_out">
+        <typings>SpeedValue</typings>
+        <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="ToolVariable">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="name" valuePart="&quot;v&quot;"/>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="x_out">
+        <typings>LengthValue</typings>
+        <elements xsi:type="sysMLOC:MetadataUsage" metadataTyping="ToolVariable">
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="name" valuePart="&quot;x&quot;"/>
+        </elements>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>
