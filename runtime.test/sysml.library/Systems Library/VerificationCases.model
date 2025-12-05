@@ -23,24 +23,24 @@
       <elements xsi:type="sysMLOC:ObjectiveRequirementUsage" declaredName="obj">
         <redefinitions>Case::obj</redefinitions>
         <elements xsi:type="sysMLOC:SubjectUsage" declaredName="subj" valuePart="VerificationCase::subj"/>
-        <elements xsi:type="sysMLOC:RequirementUsage" declaredName="requirementVerifications" Multi1="0" Multi02="*">
+        <elements xsi:type="sysMLOC:RequirementUsage" declaredName="requirementVerifications" MultiLow="0" MultiHigh="*">
           <typings>RequirementCheck</typings>
           <subsetting>subrequirements</subsetting>
           <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9;&#x9; * A record of the evaluations of the RequirementChecks of requirements being verified.&#xA;&#x9;&#x9;&#x9;&#x9; */"/>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:RequirementUsage" isReference="true" declaredName="requirementVerifications" Multi1="0" Multi02="*" valuePart="obj.requirementVerifications">
+      <elements xsi:type="sysMLOC:RequirementUsage" isReference="true" declaredName="requirementVerifications" MultiLow="0" MultiHigh="*" valuePart="obj.requirementVerifications">
         <typings>RequirementCheck</typings>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * Checks on whether the verifiedRequirements of the VerificationCase have been satisfied.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
-      <elements xsi:type="sysMLOC:VerificationCaseUsage" isAbstract="true" declaredName="subVerificationCases" Multi1="0" Multi02="*">
+      <elements xsi:type="sysMLOC:VerificationCaseUsage" isAbstract="true" declaredName="subVerificationCases" MultiLow="0" MultiHigh="*">
         <typings>VerificationCase</typings>
         <subsetting>verificationCases</subsetting>
         <subsetting>subcases</subsetting>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The subcases of this VerificationCase that are VerificationCaseUsages.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:VerificationCaseUsage" isAbstract="true" declaredName="verificationCases" Multi1="0" Multi02="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:VerificationCaseUsage" isAbstract="true" declaredName="verificationCases" MultiLow="0" MultiHigh="*" isNonunique="true">
       <typings>VerificationCase</typings>
       <subsetting>cases</subsetting>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * verificationCases is the base feature of all VerificationCaseUsages.&#xA;&#x9;&#x9; */"/>
@@ -63,7 +63,7 @@
     </elements>
     <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="VerificationMethod">
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * VerificationMethod can be used as metadata annotating a verification case or action.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="kind" Multi1="1" Multi02="*">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="kind" MultiLow="1" MultiHigh="*">
         <typings>VerificationMethodKind</typings>
       </elements>
     </elements>

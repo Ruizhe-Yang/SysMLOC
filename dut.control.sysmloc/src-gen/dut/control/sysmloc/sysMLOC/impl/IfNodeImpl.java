@@ -11,6 +11,8 @@ import dut.control.sysmloc.sysMLOC.BasicUsagePrefix;
 import dut.control.sysmloc.sysMLOC.ConnectorEnd;
 import dut.control.sysmloc.sysMLOC.CrossFeatureChain;
 import dut.control.sysmloc.sysMLOC.EmptySuccessionPrefix;
+import dut.control.sysmloc.sysMLOC.EndMultiplicityRange;
+import dut.control.sysmloc.sysMLOC.EndUsagePrefix;
 import dut.control.sysmloc.sysMLOC.FeatureDeclaration;
 import dut.control.sysmloc.sysMLOC.FeatureDirection;
 import dut.control.sysmloc.sysMLOC.FeatureSpecialization;
@@ -19,6 +21,7 @@ import dut.control.sysmloc.sysMLOC.Identification;
 import dut.control.sysmloc.sysMLOC.IfNode;
 import dut.control.sysmloc.sysMLOC.IfSuccessionAsUsage;
 import dut.control.sysmloc.sysMLOC.MemberPrefix;
+import dut.control.sysmloc.sysMLOC.MultiplicityModifiers;
 import dut.control.sysmloc.sysMLOC.MultiplicityPart;
 import dut.control.sysmloc.sysMLOC.MultiplicityRange;
 import dut.control.sysmloc.sysMLOC.OccurrenceUsagePrefix;
@@ -61,19 +64,22 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#isIsThen <em>Is Then</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#getThenMulti0 <em>Then Multi0</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#getThenMulti1 <em>Then Multi1</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#getThenMulti02 <em>Then Multi02</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#getThenMultiValue <em>Then Multi Value</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#getThenMultiLow <em>Then Multi Low</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#getThenMultiHigh <em>Then Multi High</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#getVisibility <em>Visibility</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#isIsVariant <em>Is Variant</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#getEndMultiValue <em>End Multi Value</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#getEndMultiLow <em>End Multi Low</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#getEndMultiHigh <em>End Multi High</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#isIsEnd <em>Is End</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#isIsAbstract <em>Is Abstract</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#isIsVariation <em>Is Variation</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#getDirection <em>Direction</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#isIsReadOnly <em>Is Read Only</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#isIsDerived <em>Is Derived</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#isIsConstant <em>Is Constant</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#isIsReference <em>Is Reference</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#getPrefixMetadataExtension <em>Prefix Metadata Extension</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#isIsEnd <em>Is End</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#isIsIndividual <em>Is Individual</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#getPortionKind <em>Portion Kind</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#getDeclaredShortName <em>Declared Short Name</em>}</li>
@@ -83,9 +89,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#getReferences <em>References</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#getCrosses <em>Crosses</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#getRedefinitions <em>Redefinitions</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#getMulti0 <em>Multi0</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#getMulti1 <em>Multi1</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#getMulti02 <em>Multi02</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#getMultiValue <em>Multi Value</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#getMultiLow <em>Multi Low</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#getMultiHigh <em>Multi High</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#isIsOrdered <em>Is Ordered</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#isIsNonunique <em>Is Nonunique</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#getTransitionSuccessionElement <em>Transition Succession Element</em>}</li>
@@ -124,64 +130,64 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
   protected boolean isThen = IS_THEN_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getThenMulti0() <em>Then Multi0</em>}' attribute.
+   * The default value of the '{@link #getThenMultiValue() <em>Then Multi Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getThenMulti0()
+   * @see #getThenMultiValue()
    * @generated
    * @ordered
    */
-  protected static final String THEN_MULTI0_EDEFAULT = null;
+  protected static final String THEN_MULTI_VALUE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getThenMulti0() <em>Then Multi0</em>}' attribute.
+   * The cached value of the '{@link #getThenMultiValue() <em>Then Multi Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getThenMulti0()
+   * @see #getThenMultiValue()
    * @generated
    * @ordered
    */
-  protected String thenMulti0 = THEN_MULTI0_EDEFAULT;
+  protected String thenMultiValue = THEN_MULTI_VALUE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getThenMulti1() <em>Then Multi1</em>}' attribute.
+   * The default value of the '{@link #getThenMultiLow() <em>Then Multi Low</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getThenMulti1()
+   * @see #getThenMultiLow()
    * @generated
    * @ordered
    */
-  protected static final String THEN_MULTI1_EDEFAULT = null;
+  protected static final String THEN_MULTI_LOW_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getThenMulti1() <em>Then Multi1</em>}' attribute.
+   * The cached value of the '{@link #getThenMultiLow() <em>Then Multi Low</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getThenMulti1()
+   * @see #getThenMultiLow()
    * @generated
    * @ordered
    */
-  protected String thenMulti1 = THEN_MULTI1_EDEFAULT;
+  protected String thenMultiLow = THEN_MULTI_LOW_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getThenMulti02() <em>Then Multi02</em>}' attribute.
+   * The default value of the '{@link #getThenMultiHigh() <em>Then Multi High</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getThenMulti02()
+   * @see #getThenMultiHigh()
    * @generated
    * @ordered
    */
-  protected static final String THEN_MULTI02_EDEFAULT = null;
+  protected static final String THEN_MULTI_HIGH_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getThenMulti02() <em>Then Multi02</em>}' attribute.
+   * The cached value of the '{@link #getThenMultiHigh() <em>Then Multi High</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getThenMulti02()
+   * @see #getThenMultiHigh()
    * @generated
    * @ordered
    */
-  protected String thenMulti02 = THEN_MULTI02_EDEFAULT;
+  protected String thenMultiHigh = THEN_MULTI_HIGH_EDEFAULT;
 
   /**
    * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
@@ -222,6 +228,86 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
    * @ordered
    */
   protected boolean isVariant = IS_VARIANT_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getEndMultiValue() <em>End Multi Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getEndMultiValue()
+   * @generated
+   * @ordered
+   */
+  protected static final String END_MULTI_VALUE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getEndMultiValue() <em>End Multi Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getEndMultiValue()
+   * @generated
+   * @ordered
+   */
+  protected String endMultiValue = END_MULTI_VALUE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getEndMultiLow() <em>End Multi Low</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getEndMultiLow()
+   * @generated
+   * @ordered
+   */
+  protected static final String END_MULTI_LOW_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getEndMultiLow() <em>End Multi Low</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getEndMultiLow()
+   * @generated
+   * @ordered
+   */
+  protected String endMultiLow = END_MULTI_LOW_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getEndMultiHigh() <em>End Multi High</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getEndMultiHigh()
+   * @generated
+   * @ordered
+   */
+  protected static final String END_MULTI_HIGH_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getEndMultiHigh() <em>End Multi High</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getEndMultiHigh()
+   * @generated
+   * @ordered
+   */
+  protected String endMultiHigh = END_MULTI_HIGH_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsEnd() <em>Is End</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsEnd()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_END_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsEnd() <em>Is End</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsEnd()
+   * @generated
+   * @ordered
+   */
+  protected boolean isEnd = IS_END_EDEFAULT;
 
   /**
    * The default value of the '{@link #isIsAbstract() <em>Is Abstract</em>}' attribute.
@@ -284,26 +370,6 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
   protected FeatureDirection direction = DIRECTION_EDEFAULT;
 
   /**
-   * The default value of the '{@link #isIsReadOnly() <em>Is Read Only</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isIsReadOnly()
-   * @generated
-   * @ordered
-   */
-  protected static final boolean IS_READ_ONLY_EDEFAULT = false;
-
-  /**
-   * The cached value of the '{@link #isIsReadOnly() <em>Is Read Only</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isIsReadOnly()
-   * @generated
-   * @ordered
-   */
-  protected boolean isReadOnly = IS_READ_ONLY_EDEFAULT;
-
-  /**
    * The default value of the '{@link #isIsDerived() <em>Is Derived</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -322,6 +388,26 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
    * @ordered
    */
   protected boolean isDerived = IS_DERIVED_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsConstant() <em>Is Constant</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsConstant()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_CONSTANT_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsConstant() <em>Is Constant</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsConstant()
+   * @generated
+   * @ordered
+   */
+  protected boolean isConstant = IS_CONSTANT_EDEFAULT;
 
   /**
    * The default value of the '{@link #isIsReference() <em>Is Reference</em>}' attribute.
@@ -352,26 +438,6 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
    * @ordered
    */
   protected EList<String> prefixMetadataExtension;
-
-  /**
-   * The default value of the '{@link #isIsEnd() <em>Is End</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isIsEnd()
-   * @generated
-   * @ordered
-   */
-  protected static final boolean IS_END_EDEFAULT = false;
-
-  /**
-   * The cached value of the '{@link #isIsEnd() <em>Is End</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isIsEnd()
-   * @generated
-   * @ordered
-   */
-  protected boolean isEnd = IS_END_EDEFAULT;
 
   /**
    * The default value of the '{@link #isIsIndividual() <em>Is Individual</em>}' attribute.
@@ -504,64 +570,64 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
   protected EList<String> redefinitions;
 
   /**
-   * The default value of the '{@link #getMulti0() <em>Multi0</em>}' attribute.
+   * The default value of the '{@link #getMultiValue() <em>Multi Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMulti0()
+   * @see #getMultiValue()
    * @generated
    * @ordered
    */
-  protected static final String MULTI0_EDEFAULT = null;
+  protected static final String MULTI_VALUE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getMulti0() <em>Multi0</em>}' attribute.
+   * The cached value of the '{@link #getMultiValue() <em>Multi Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMulti0()
+   * @see #getMultiValue()
    * @generated
    * @ordered
    */
-  protected String multi0 = MULTI0_EDEFAULT;
+  protected String multiValue = MULTI_VALUE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getMulti1() <em>Multi1</em>}' attribute.
+   * The default value of the '{@link #getMultiLow() <em>Multi Low</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMulti1()
+   * @see #getMultiLow()
    * @generated
    * @ordered
    */
-  protected static final String MULTI1_EDEFAULT = null;
+  protected static final String MULTI_LOW_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getMulti1() <em>Multi1</em>}' attribute.
+   * The cached value of the '{@link #getMultiLow() <em>Multi Low</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMulti1()
+   * @see #getMultiLow()
    * @generated
    * @ordered
    */
-  protected String multi1 = MULTI1_EDEFAULT;
+  protected String multiLow = MULTI_LOW_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getMulti02() <em>Multi02</em>}' attribute.
+   * The default value of the '{@link #getMultiHigh() <em>Multi High</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMulti02()
+   * @see #getMultiHigh()
    * @generated
    * @ordered
    */
-  protected static final String MULTI02_EDEFAULT = null;
+  protected static final String MULTI_HIGH_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getMulti02() <em>Multi02</em>}' attribute.
+   * The cached value of the '{@link #getMultiHigh() <em>Multi High</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMulti02()
+   * @see #getMultiHigh()
    * @generated
    * @ordered
    */
-  protected String multi02 = MULTI02_EDEFAULT;
+  protected String multiHigh = MULTI_HIGH_EDEFAULT;
 
   /**
    * The default value of the '{@link #isIsOrdered() <em>Is Ordered</em>}' attribute.
@@ -795,9 +861,9 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
    * @generated
    */
   @Override
-  public String getThenMulti0()
+  public String getThenMultiValue()
   {
-    return thenMulti0;
+    return thenMultiValue;
   }
 
   /**
@@ -806,12 +872,12 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
    * @generated
    */
   @Override
-  public void setThenMulti0(String newThenMulti0)
+  public void setThenMultiValue(String newThenMultiValue)
   {
-    String oldThenMulti0 = thenMulti0;
-    thenMulti0 = newThenMulti0;
+    String oldThenMultiValue = thenMultiValue;
+    thenMultiValue = newThenMultiValue;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.IF_NODE__THEN_MULTI0, oldThenMulti0, thenMulti0));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.IF_NODE__THEN_MULTI_VALUE, oldThenMultiValue, thenMultiValue));
   }
 
   /**
@@ -820,9 +886,9 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
    * @generated
    */
   @Override
-  public String getThenMulti1()
+  public String getThenMultiLow()
   {
-    return thenMulti1;
+    return thenMultiLow;
   }
 
   /**
@@ -831,12 +897,12 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
    * @generated
    */
   @Override
-  public void setThenMulti1(String newThenMulti1)
+  public void setThenMultiLow(String newThenMultiLow)
   {
-    String oldThenMulti1 = thenMulti1;
-    thenMulti1 = newThenMulti1;
+    String oldThenMultiLow = thenMultiLow;
+    thenMultiLow = newThenMultiLow;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.IF_NODE__THEN_MULTI1, oldThenMulti1, thenMulti1));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.IF_NODE__THEN_MULTI_LOW, oldThenMultiLow, thenMultiLow));
   }
 
   /**
@@ -845,9 +911,9 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
    * @generated
    */
   @Override
-  public String getThenMulti02()
+  public String getThenMultiHigh()
   {
-    return thenMulti02;
+    return thenMultiHigh;
   }
 
   /**
@@ -856,12 +922,12 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
    * @generated
    */
   @Override
-  public void setThenMulti02(String newThenMulti02)
+  public void setThenMultiHigh(String newThenMultiHigh)
   {
-    String oldThenMulti02 = thenMulti02;
-    thenMulti02 = newThenMulti02;
+    String oldThenMultiHigh = thenMultiHigh;
+    thenMultiHigh = newThenMultiHigh;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.IF_NODE__THEN_MULTI02, oldThenMulti02, thenMulti02));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.IF_NODE__THEN_MULTI_HIGH, oldThenMultiHigh, thenMultiHigh));
   }
 
   /**
@@ -912,6 +978,106 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
     isVariant = newIsVariant;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.IF_NODE__IS_VARIANT, oldIsVariant, isVariant));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getEndMultiValue()
+  {
+    return endMultiValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setEndMultiValue(String newEndMultiValue)
+  {
+    String oldEndMultiValue = endMultiValue;
+    endMultiValue = newEndMultiValue;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.IF_NODE__END_MULTI_VALUE, oldEndMultiValue, endMultiValue));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getEndMultiLow()
+  {
+    return endMultiLow;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setEndMultiLow(String newEndMultiLow)
+  {
+    String oldEndMultiLow = endMultiLow;
+    endMultiLow = newEndMultiLow;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.IF_NODE__END_MULTI_LOW, oldEndMultiLow, endMultiLow));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getEndMultiHigh()
+  {
+    return endMultiHigh;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setEndMultiHigh(String newEndMultiHigh)
+  {
+    String oldEndMultiHigh = endMultiHigh;
+    endMultiHigh = newEndMultiHigh;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.IF_NODE__END_MULTI_HIGH, oldEndMultiHigh, endMultiHigh));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsEnd()
+  {
+    return isEnd;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsEnd(boolean newIsEnd)
+  {
+    boolean oldIsEnd = isEnd;
+    isEnd = newIsEnd;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.IF_NODE__IS_END, oldIsEnd, isEnd));
   }
 
   /**
@@ -995,31 +1161,6 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
    * @generated
    */
   @Override
-  public boolean isIsReadOnly()
-  {
-    return isReadOnly;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setIsReadOnly(boolean newIsReadOnly)
-  {
-    boolean oldIsReadOnly = isReadOnly;
-    isReadOnly = newIsReadOnly;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.IF_NODE__IS_READ_ONLY, oldIsReadOnly, isReadOnly));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public boolean isIsDerived()
   {
     return isDerived;
@@ -1037,6 +1178,31 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
     isDerived = newIsDerived;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.IF_NODE__IS_DERIVED, oldIsDerived, isDerived));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsConstant()
+  {
+    return isConstant;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsConstant(boolean newIsConstant)
+  {
+    boolean oldIsConstant = isConstant;
+    isConstant = newIsConstant;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.IF_NODE__IS_CONSTANT, oldIsConstant, isConstant));
   }
 
   /**
@@ -1077,31 +1243,6 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
       prefixMetadataExtension = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.IF_NODE__PREFIX_METADATA_EXTENSION);
     }
     return prefixMetadataExtension;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public boolean isIsEnd()
-  {
-    return isEnd;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setIsEnd(boolean newIsEnd)
-  {
-    boolean oldIsEnd = isEnd;
-    isEnd = newIsEnd;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.IF_NODE__IS_END, oldIsEnd, isEnd));
   }
 
   /**
@@ -1285,9 +1426,9 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
    * @generated
    */
   @Override
-  public String getMulti0()
+  public String getMultiValue()
   {
-    return multi0;
+    return multiValue;
   }
 
   /**
@@ -1296,12 +1437,12 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
    * @generated
    */
   @Override
-  public void setMulti0(String newMulti0)
+  public void setMultiValue(String newMultiValue)
   {
-    String oldMulti0 = multi0;
-    multi0 = newMulti0;
+    String oldMultiValue = multiValue;
+    multiValue = newMultiValue;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.IF_NODE__MULTI0, oldMulti0, multi0));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.IF_NODE__MULTI_VALUE, oldMultiValue, multiValue));
   }
 
   /**
@@ -1310,9 +1451,9 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
    * @generated
    */
   @Override
-  public String getMulti1()
+  public String getMultiLow()
   {
-    return multi1;
+    return multiLow;
   }
 
   /**
@@ -1321,12 +1462,12 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
    * @generated
    */
   @Override
-  public void setMulti1(String newMulti1)
+  public void setMultiLow(String newMultiLow)
   {
-    String oldMulti1 = multi1;
-    multi1 = newMulti1;
+    String oldMultiLow = multiLow;
+    multiLow = newMultiLow;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.IF_NODE__MULTI1, oldMulti1, multi1));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.IF_NODE__MULTI_LOW, oldMultiLow, multiLow));
   }
 
   /**
@@ -1335,9 +1476,9 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
    * @generated
    */
   @Override
-  public String getMulti02()
+  public String getMultiHigh()
   {
-    return multi02;
+    return multiHigh;
   }
 
   /**
@@ -1346,12 +1487,12 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
    * @generated
    */
   @Override
-  public void setMulti02(String newMulti02)
+  public void setMultiHigh(String newMultiHigh)
   {
-    String oldMulti02 = multi02;
-    multi02 = newMulti02;
+    String oldMultiHigh = multiHigh;
+    multiHigh = newMultiHigh;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.IF_NODE__MULTI02, oldMulti02, multi02));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.IF_NODE__MULTI_HIGH, oldMultiHigh, multiHigh));
   }
 
   /**
@@ -1623,32 +1764,38 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
     {
       case SysMLOCPackage.IF_NODE__IS_THEN:
         return isIsThen();
-      case SysMLOCPackage.IF_NODE__THEN_MULTI0:
-        return getThenMulti0();
-      case SysMLOCPackage.IF_NODE__THEN_MULTI1:
-        return getThenMulti1();
-      case SysMLOCPackage.IF_NODE__THEN_MULTI02:
-        return getThenMulti02();
+      case SysMLOCPackage.IF_NODE__THEN_MULTI_VALUE:
+        return getThenMultiValue();
+      case SysMLOCPackage.IF_NODE__THEN_MULTI_LOW:
+        return getThenMultiLow();
+      case SysMLOCPackage.IF_NODE__THEN_MULTI_HIGH:
+        return getThenMultiHigh();
       case SysMLOCPackage.IF_NODE__VISIBILITY:
         return getVisibility();
       case SysMLOCPackage.IF_NODE__IS_VARIANT:
         return isIsVariant();
+      case SysMLOCPackage.IF_NODE__END_MULTI_VALUE:
+        return getEndMultiValue();
+      case SysMLOCPackage.IF_NODE__END_MULTI_LOW:
+        return getEndMultiLow();
+      case SysMLOCPackage.IF_NODE__END_MULTI_HIGH:
+        return getEndMultiHigh();
+      case SysMLOCPackage.IF_NODE__IS_END:
+        return isIsEnd();
       case SysMLOCPackage.IF_NODE__IS_ABSTRACT:
         return isIsAbstract();
       case SysMLOCPackage.IF_NODE__IS_VARIATION:
         return isIsVariation();
       case SysMLOCPackage.IF_NODE__DIRECTION:
         return getDirection();
-      case SysMLOCPackage.IF_NODE__IS_READ_ONLY:
-        return isIsReadOnly();
       case SysMLOCPackage.IF_NODE__IS_DERIVED:
         return isIsDerived();
+      case SysMLOCPackage.IF_NODE__IS_CONSTANT:
+        return isIsConstant();
       case SysMLOCPackage.IF_NODE__IS_REFERENCE:
         return isIsReference();
       case SysMLOCPackage.IF_NODE__PREFIX_METADATA_EXTENSION:
         return getPrefixMetadataExtension();
-      case SysMLOCPackage.IF_NODE__IS_END:
-        return isIsEnd();
       case SysMLOCPackage.IF_NODE__IS_INDIVIDUAL:
         return isIsIndividual();
       case SysMLOCPackage.IF_NODE__PORTION_KIND:
@@ -1667,12 +1814,12 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
         return getCrosses();
       case SysMLOCPackage.IF_NODE__REDEFINITIONS:
         return getRedefinitions();
-      case SysMLOCPackage.IF_NODE__MULTI0:
-        return getMulti0();
-      case SysMLOCPackage.IF_NODE__MULTI1:
-        return getMulti1();
-      case SysMLOCPackage.IF_NODE__MULTI02:
-        return getMulti02();
+      case SysMLOCPackage.IF_NODE__MULTI_VALUE:
+        return getMultiValue();
+      case SysMLOCPackage.IF_NODE__MULTI_LOW:
+        return getMultiLow();
+      case SysMLOCPackage.IF_NODE__MULTI_HIGH:
+        return getMultiHigh();
       case SysMLOCPackage.IF_NODE__IS_ORDERED:
         return isIsOrdered();
       case SysMLOCPackage.IF_NODE__IS_NONUNIQUE:
@@ -1713,20 +1860,32 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
       case SysMLOCPackage.IF_NODE__IS_THEN:
         setIsThen((Boolean)newValue);
         return;
-      case SysMLOCPackage.IF_NODE__THEN_MULTI0:
-        setThenMulti0((String)newValue);
+      case SysMLOCPackage.IF_NODE__THEN_MULTI_VALUE:
+        setThenMultiValue((String)newValue);
         return;
-      case SysMLOCPackage.IF_NODE__THEN_MULTI1:
-        setThenMulti1((String)newValue);
+      case SysMLOCPackage.IF_NODE__THEN_MULTI_LOW:
+        setThenMultiLow((String)newValue);
         return;
-      case SysMLOCPackage.IF_NODE__THEN_MULTI02:
-        setThenMulti02((String)newValue);
+      case SysMLOCPackage.IF_NODE__THEN_MULTI_HIGH:
+        setThenMultiHigh((String)newValue);
         return;
       case SysMLOCPackage.IF_NODE__VISIBILITY:
         setVisibility((VisibilityIndicator)newValue);
         return;
       case SysMLOCPackage.IF_NODE__IS_VARIANT:
         setIsVariant((Boolean)newValue);
+        return;
+      case SysMLOCPackage.IF_NODE__END_MULTI_VALUE:
+        setEndMultiValue((String)newValue);
+        return;
+      case SysMLOCPackage.IF_NODE__END_MULTI_LOW:
+        setEndMultiLow((String)newValue);
+        return;
+      case SysMLOCPackage.IF_NODE__END_MULTI_HIGH:
+        setEndMultiHigh((String)newValue);
+        return;
+      case SysMLOCPackage.IF_NODE__IS_END:
+        setIsEnd((Boolean)newValue);
         return;
       case SysMLOCPackage.IF_NODE__IS_ABSTRACT:
         setIsAbstract((Boolean)newValue);
@@ -1737,11 +1896,11 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
       case SysMLOCPackage.IF_NODE__DIRECTION:
         setDirection((FeatureDirection)newValue);
         return;
-      case SysMLOCPackage.IF_NODE__IS_READ_ONLY:
-        setIsReadOnly((Boolean)newValue);
-        return;
       case SysMLOCPackage.IF_NODE__IS_DERIVED:
         setIsDerived((Boolean)newValue);
+        return;
+      case SysMLOCPackage.IF_NODE__IS_CONSTANT:
+        setIsConstant((Boolean)newValue);
         return;
       case SysMLOCPackage.IF_NODE__IS_REFERENCE:
         setIsReference((Boolean)newValue);
@@ -1749,9 +1908,6 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
       case SysMLOCPackage.IF_NODE__PREFIX_METADATA_EXTENSION:
         getPrefixMetadataExtension().clear();
         getPrefixMetadataExtension().addAll((Collection<? extends String>)newValue);
-        return;
-      case SysMLOCPackage.IF_NODE__IS_END:
-        setIsEnd((Boolean)newValue);
         return;
       case SysMLOCPackage.IF_NODE__IS_INDIVIDUAL:
         setIsIndividual((Boolean)newValue);
@@ -1785,14 +1941,14 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
         getRedefinitions().clear();
         getRedefinitions().addAll((Collection<? extends String>)newValue);
         return;
-      case SysMLOCPackage.IF_NODE__MULTI0:
-        setMulti0((String)newValue);
+      case SysMLOCPackage.IF_NODE__MULTI_VALUE:
+        setMultiValue((String)newValue);
         return;
-      case SysMLOCPackage.IF_NODE__MULTI1:
-        setMulti1((String)newValue);
+      case SysMLOCPackage.IF_NODE__MULTI_LOW:
+        setMultiLow((String)newValue);
         return;
-      case SysMLOCPackage.IF_NODE__MULTI02:
-        setMulti02((String)newValue);
+      case SysMLOCPackage.IF_NODE__MULTI_HIGH:
+        setMultiHigh((String)newValue);
         return;
       case SysMLOCPackage.IF_NODE__IS_ORDERED:
         setIsOrdered((Boolean)newValue);
@@ -1848,20 +2004,32 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
       case SysMLOCPackage.IF_NODE__IS_THEN:
         setIsThen(IS_THEN_EDEFAULT);
         return;
-      case SysMLOCPackage.IF_NODE__THEN_MULTI0:
-        setThenMulti0(THEN_MULTI0_EDEFAULT);
+      case SysMLOCPackage.IF_NODE__THEN_MULTI_VALUE:
+        setThenMultiValue(THEN_MULTI_VALUE_EDEFAULT);
         return;
-      case SysMLOCPackage.IF_NODE__THEN_MULTI1:
-        setThenMulti1(THEN_MULTI1_EDEFAULT);
+      case SysMLOCPackage.IF_NODE__THEN_MULTI_LOW:
+        setThenMultiLow(THEN_MULTI_LOW_EDEFAULT);
         return;
-      case SysMLOCPackage.IF_NODE__THEN_MULTI02:
-        setThenMulti02(THEN_MULTI02_EDEFAULT);
+      case SysMLOCPackage.IF_NODE__THEN_MULTI_HIGH:
+        setThenMultiHigh(THEN_MULTI_HIGH_EDEFAULT);
         return;
       case SysMLOCPackage.IF_NODE__VISIBILITY:
         setVisibility(VISIBILITY_EDEFAULT);
         return;
       case SysMLOCPackage.IF_NODE__IS_VARIANT:
         setIsVariant(IS_VARIANT_EDEFAULT);
+        return;
+      case SysMLOCPackage.IF_NODE__END_MULTI_VALUE:
+        setEndMultiValue(END_MULTI_VALUE_EDEFAULT);
+        return;
+      case SysMLOCPackage.IF_NODE__END_MULTI_LOW:
+        setEndMultiLow(END_MULTI_LOW_EDEFAULT);
+        return;
+      case SysMLOCPackage.IF_NODE__END_MULTI_HIGH:
+        setEndMultiHigh(END_MULTI_HIGH_EDEFAULT);
+        return;
+      case SysMLOCPackage.IF_NODE__IS_END:
+        setIsEnd(IS_END_EDEFAULT);
         return;
       case SysMLOCPackage.IF_NODE__IS_ABSTRACT:
         setIsAbstract(IS_ABSTRACT_EDEFAULT);
@@ -1872,20 +2040,17 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
       case SysMLOCPackage.IF_NODE__DIRECTION:
         setDirection(DIRECTION_EDEFAULT);
         return;
-      case SysMLOCPackage.IF_NODE__IS_READ_ONLY:
-        setIsReadOnly(IS_READ_ONLY_EDEFAULT);
-        return;
       case SysMLOCPackage.IF_NODE__IS_DERIVED:
         setIsDerived(IS_DERIVED_EDEFAULT);
+        return;
+      case SysMLOCPackage.IF_NODE__IS_CONSTANT:
+        setIsConstant(IS_CONSTANT_EDEFAULT);
         return;
       case SysMLOCPackage.IF_NODE__IS_REFERENCE:
         setIsReference(IS_REFERENCE_EDEFAULT);
         return;
       case SysMLOCPackage.IF_NODE__PREFIX_METADATA_EXTENSION:
         getPrefixMetadataExtension().clear();
-        return;
-      case SysMLOCPackage.IF_NODE__IS_END:
-        setIsEnd(IS_END_EDEFAULT);
         return;
       case SysMLOCPackage.IF_NODE__IS_INDIVIDUAL:
         setIsIndividual(IS_INDIVIDUAL_EDEFAULT);
@@ -1914,14 +2079,14 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
       case SysMLOCPackage.IF_NODE__REDEFINITIONS:
         getRedefinitions().clear();
         return;
-      case SysMLOCPackage.IF_NODE__MULTI0:
-        setMulti0(MULTI0_EDEFAULT);
+      case SysMLOCPackage.IF_NODE__MULTI_VALUE:
+        setMultiValue(MULTI_VALUE_EDEFAULT);
         return;
-      case SysMLOCPackage.IF_NODE__MULTI1:
-        setMulti1(MULTI1_EDEFAULT);
+      case SysMLOCPackage.IF_NODE__MULTI_LOW:
+        setMultiLow(MULTI_LOW_EDEFAULT);
         return;
-      case SysMLOCPackage.IF_NODE__MULTI02:
-        setMulti02(MULTI02_EDEFAULT);
+      case SysMLOCPackage.IF_NODE__MULTI_HIGH:
+        setMultiHigh(MULTI_HIGH_EDEFAULT);
         return;
       case SysMLOCPackage.IF_NODE__IS_ORDERED:
         setIsOrdered(IS_ORDERED_EDEFAULT);
@@ -1972,32 +2137,38 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
     {
       case SysMLOCPackage.IF_NODE__IS_THEN:
         return isThen != IS_THEN_EDEFAULT;
-      case SysMLOCPackage.IF_NODE__THEN_MULTI0:
-        return THEN_MULTI0_EDEFAULT == null ? thenMulti0 != null : !THEN_MULTI0_EDEFAULT.equals(thenMulti0);
-      case SysMLOCPackage.IF_NODE__THEN_MULTI1:
-        return THEN_MULTI1_EDEFAULT == null ? thenMulti1 != null : !THEN_MULTI1_EDEFAULT.equals(thenMulti1);
-      case SysMLOCPackage.IF_NODE__THEN_MULTI02:
-        return THEN_MULTI02_EDEFAULT == null ? thenMulti02 != null : !THEN_MULTI02_EDEFAULT.equals(thenMulti02);
+      case SysMLOCPackage.IF_NODE__THEN_MULTI_VALUE:
+        return THEN_MULTI_VALUE_EDEFAULT == null ? thenMultiValue != null : !THEN_MULTI_VALUE_EDEFAULT.equals(thenMultiValue);
+      case SysMLOCPackage.IF_NODE__THEN_MULTI_LOW:
+        return THEN_MULTI_LOW_EDEFAULT == null ? thenMultiLow != null : !THEN_MULTI_LOW_EDEFAULT.equals(thenMultiLow);
+      case SysMLOCPackage.IF_NODE__THEN_MULTI_HIGH:
+        return THEN_MULTI_HIGH_EDEFAULT == null ? thenMultiHigh != null : !THEN_MULTI_HIGH_EDEFAULT.equals(thenMultiHigh);
       case SysMLOCPackage.IF_NODE__VISIBILITY:
         return visibility != VISIBILITY_EDEFAULT;
       case SysMLOCPackage.IF_NODE__IS_VARIANT:
         return isVariant != IS_VARIANT_EDEFAULT;
+      case SysMLOCPackage.IF_NODE__END_MULTI_VALUE:
+        return END_MULTI_VALUE_EDEFAULT == null ? endMultiValue != null : !END_MULTI_VALUE_EDEFAULT.equals(endMultiValue);
+      case SysMLOCPackage.IF_NODE__END_MULTI_LOW:
+        return END_MULTI_LOW_EDEFAULT == null ? endMultiLow != null : !END_MULTI_LOW_EDEFAULT.equals(endMultiLow);
+      case SysMLOCPackage.IF_NODE__END_MULTI_HIGH:
+        return END_MULTI_HIGH_EDEFAULT == null ? endMultiHigh != null : !END_MULTI_HIGH_EDEFAULT.equals(endMultiHigh);
+      case SysMLOCPackage.IF_NODE__IS_END:
+        return isEnd != IS_END_EDEFAULT;
       case SysMLOCPackage.IF_NODE__IS_ABSTRACT:
         return isAbstract != IS_ABSTRACT_EDEFAULT;
       case SysMLOCPackage.IF_NODE__IS_VARIATION:
         return isVariation != IS_VARIATION_EDEFAULT;
       case SysMLOCPackage.IF_NODE__DIRECTION:
         return direction != DIRECTION_EDEFAULT;
-      case SysMLOCPackage.IF_NODE__IS_READ_ONLY:
-        return isReadOnly != IS_READ_ONLY_EDEFAULT;
       case SysMLOCPackage.IF_NODE__IS_DERIVED:
         return isDerived != IS_DERIVED_EDEFAULT;
+      case SysMLOCPackage.IF_NODE__IS_CONSTANT:
+        return isConstant != IS_CONSTANT_EDEFAULT;
       case SysMLOCPackage.IF_NODE__IS_REFERENCE:
         return isReference != IS_REFERENCE_EDEFAULT;
       case SysMLOCPackage.IF_NODE__PREFIX_METADATA_EXTENSION:
         return prefixMetadataExtension != null && !prefixMetadataExtension.isEmpty();
-      case SysMLOCPackage.IF_NODE__IS_END:
-        return isEnd != IS_END_EDEFAULT;
       case SysMLOCPackage.IF_NODE__IS_INDIVIDUAL:
         return isIndividual != IS_INDIVIDUAL_EDEFAULT;
       case SysMLOCPackage.IF_NODE__PORTION_KIND:
@@ -2016,12 +2187,12 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
         return crosses != null && !crosses.isEmpty();
       case SysMLOCPackage.IF_NODE__REDEFINITIONS:
         return redefinitions != null && !redefinitions.isEmpty();
-      case SysMLOCPackage.IF_NODE__MULTI0:
-        return MULTI0_EDEFAULT == null ? multi0 != null : !MULTI0_EDEFAULT.equals(multi0);
-      case SysMLOCPackage.IF_NODE__MULTI1:
-        return MULTI1_EDEFAULT == null ? multi1 != null : !MULTI1_EDEFAULT.equals(multi1);
-      case SysMLOCPackage.IF_NODE__MULTI02:
-        return MULTI02_EDEFAULT == null ? multi02 != null : !MULTI02_EDEFAULT.equals(multi02);
+      case SysMLOCPackage.IF_NODE__MULTI_VALUE:
+        return MULTI_VALUE_EDEFAULT == null ? multiValue != null : !MULTI_VALUE_EDEFAULT.equals(multiValue);
+      case SysMLOCPackage.IF_NODE__MULTI_LOW:
+        return MULTI_LOW_EDEFAULT == null ? multiLow != null : !MULTI_LOW_EDEFAULT.equals(multiLow);
+      case SysMLOCPackage.IF_NODE__MULTI_HIGH:
+        return MULTI_HIGH_EDEFAULT == null ? multiHigh != null : !MULTI_HIGH_EDEFAULT.equals(multiHigh);
       case SysMLOCPackage.IF_NODE__IS_ORDERED:
         return isOrdered != IS_ORDERED_EDEFAULT;
       case SysMLOCPackage.IF_NODE__IS_NONUNIQUE:
@@ -2061,9 +2232,9 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
       switch (derivedFeatureID)
       {
         case SysMLOCPackage.IF_NODE__IS_THEN: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__IS_THEN;
-        case SysMLOCPackage.IF_NODE__THEN_MULTI0: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI0;
-        case SysMLOCPackage.IF_NODE__THEN_MULTI1: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI1;
-        case SysMLOCPackage.IF_NODE__THEN_MULTI02: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI02;
+        case SysMLOCPackage.IF_NODE__THEN_MULTI_VALUE: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_VALUE;
+        case SysMLOCPackage.IF_NODE__THEN_MULTI_LOW: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_LOW;
+        case SysMLOCPackage.IF_NODE__THEN_MULTI_HIGH: return SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_HIGH;
         default: return -1;
       }
     }
@@ -2073,6 +2244,24 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
       {
         case SysMLOCPackage.IF_NODE__VISIBILITY: return SysMLOCPackage.MEMBER_PREFIX__VISIBILITY;
         case SysMLOCPackage.IF_NODE__IS_VARIANT: return SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT;
+        default: return -1;
+      }
+    }
+    if (baseClass == EndMultiplicityRange.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.IF_NODE__END_MULTI_VALUE: return SysMLOCPackage.END_MULTIPLICITY_RANGE__END_MULTI_VALUE;
+        case SysMLOCPackage.IF_NODE__END_MULTI_LOW: return SysMLOCPackage.END_MULTIPLICITY_RANGE__END_MULTI_LOW;
+        case SysMLOCPackage.IF_NODE__END_MULTI_HIGH: return SysMLOCPackage.END_MULTIPLICITY_RANGE__END_MULTI_HIGH;
+        default: return -1;
+      }
+    }
+    if (baseClass == EndUsagePrefix.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.IF_NODE__IS_END: return SysMLOCPackage.END_USAGE_PREFIX__IS_END;
         default: return -1;
       }
     }
@@ -2090,8 +2279,8 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
       switch (derivedFeatureID)
       {
         case SysMLOCPackage.IF_NODE__DIRECTION: return SysMLOCPackage.REF_PREFIX__DIRECTION;
-        case SysMLOCPackage.IF_NODE__IS_READ_ONLY: return SysMLOCPackage.REF_PREFIX__IS_READ_ONLY;
         case SysMLOCPackage.IF_NODE__IS_DERIVED: return SysMLOCPackage.REF_PREFIX__IS_DERIVED;
+        case SysMLOCPackage.IF_NODE__IS_CONSTANT: return SysMLOCPackage.REF_PREFIX__IS_CONSTANT;
         default: return -1;
       }
     }
@@ -2122,7 +2311,6 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.IF_NODE__IS_END: return SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_END;
         case SysMLOCPackage.IF_NODE__IS_INDIVIDUAL: return SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_INDIVIDUAL;
         case SysMLOCPackage.IF_NODE__PORTION_KIND: return SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__PORTION_KIND;
         default: return -1;
@@ -2188,9 +2376,18 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.IF_NODE__MULTI0: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI0;
-        case SysMLOCPackage.IF_NODE__MULTI1: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI1;
-        case SysMLOCPackage.IF_NODE__MULTI02: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI02;
+        case SysMLOCPackage.IF_NODE__MULTI_VALUE: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_VALUE;
+        case SysMLOCPackage.IF_NODE__MULTI_LOW: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_LOW;
+        case SysMLOCPackage.IF_NODE__MULTI_HIGH: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_HIGH;
+        default: return -1;
+      }
+    }
+    if (baseClass == MultiplicityModifiers.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.IF_NODE__IS_ORDERED: return SysMLOCPackage.MULTIPLICITY_MODIFIERS__IS_ORDERED;
+        case SysMLOCPackage.IF_NODE__IS_NONUNIQUE: return SysMLOCPackage.MULTIPLICITY_MODIFIERS__IS_NONUNIQUE;
         default: return -1;
       }
     }
@@ -2198,8 +2395,6 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.IF_NODE__IS_ORDERED: return SysMLOCPackage.MULTIPLICITY_PART__IS_ORDERED;
-        case SysMLOCPackage.IF_NODE__IS_NONUNIQUE: return SysMLOCPackage.MULTIPLICITY_PART__IS_NONUNIQUE;
         default: return -1;
       }
     }
@@ -2262,9 +2457,9 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
       switch (baseFeatureID)
       {
         case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__IS_THEN: return SysMLOCPackage.IF_NODE__IS_THEN;
-        case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI0: return SysMLOCPackage.IF_NODE__THEN_MULTI0;
-        case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI1: return SysMLOCPackage.IF_NODE__THEN_MULTI1;
-        case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI02: return SysMLOCPackage.IF_NODE__THEN_MULTI02;
+        case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_VALUE: return SysMLOCPackage.IF_NODE__THEN_MULTI_VALUE;
+        case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_LOW: return SysMLOCPackage.IF_NODE__THEN_MULTI_LOW;
+        case SysMLOCPackage.EMPTY_SUCCESSION_PREFIX__THEN_MULTI_HIGH: return SysMLOCPackage.IF_NODE__THEN_MULTI_HIGH;
         default: return -1;
       }
     }
@@ -2274,6 +2469,24 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
       {
         case SysMLOCPackage.MEMBER_PREFIX__VISIBILITY: return SysMLOCPackage.IF_NODE__VISIBILITY;
         case SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT: return SysMLOCPackage.IF_NODE__IS_VARIANT;
+        default: return -1;
+      }
+    }
+    if (baseClass == EndMultiplicityRange.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.END_MULTIPLICITY_RANGE__END_MULTI_VALUE: return SysMLOCPackage.IF_NODE__END_MULTI_VALUE;
+        case SysMLOCPackage.END_MULTIPLICITY_RANGE__END_MULTI_LOW: return SysMLOCPackage.IF_NODE__END_MULTI_LOW;
+        case SysMLOCPackage.END_MULTIPLICITY_RANGE__END_MULTI_HIGH: return SysMLOCPackage.IF_NODE__END_MULTI_HIGH;
+        default: return -1;
+      }
+    }
+    if (baseClass == EndUsagePrefix.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.END_USAGE_PREFIX__IS_END: return SysMLOCPackage.IF_NODE__IS_END;
         default: return -1;
       }
     }
@@ -2291,8 +2504,8 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
       switch (baseFeatureID)
       {
         case SysMLOCPackage.REF_PREFIX__DIRECTION: return SysMLOCPackage.IF_NODE__DIRECTION;
-        case SysMLOCPackage.REF_PREFIX__IS_READ_ONLY: return SysMLOCPackage.IF_NODE__IS_READ_ONLY;
         case SysMLOCPackage.REF_PREFIX__IS_DERIVED: return SysMLOCPackage.IF_NODE__IS_DERIVED;
+        case SysMLOCPackage.REF_PREFIX__IS_CONSTANT: return SysMLOCPackage.IF_NODE__IS_CONSTANT;
         default: return -1;
       }
     }
@@ -2323,7 +2536,6 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_END: return SysMLOCPackage.IF_NODE__IS_END;
         case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_INDIVIDUAL: return SysMLOCPackage.IF_NODE__IS_INDIVIDUAL;
         case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__PORTION_KIND: return SysMLOCPackage.IF_NODE__PORTION_KIND;
         default: return -1;
@@ -2389,9 +2601,18 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI0: return SysMLOCPackage.IF_NODE__MULTI0;
-        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI1: return SysMLOCPackage.IF_NODE__MULTI1;
-        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI02: return SysMLOCPackage.IF_NODE__MULTI02;
+        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_VALUE: return SysMLOCPackage.IF_NODE__MULTI_VALUE;
+        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_LOW: return SysMLOCPackage.IF_NODE__MULTI_LOW;
+        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_HIGH: return SysMLOCPackage.IF_NODE__MULTI_HIGH;
+        default: return -1;
+      }
+    }
+    if (baseClass == MultiplicityModifiers.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.MULTIPLICITY_MODIFIERS__IS_ORDERED: return SysMLOCPackage.IF_NODE__IS_ORDERED;
+        case SysMLOCPackage.MULTIPLICITY_MODIFIERS__IS_NONUNIQUE: return SysMLOCPackage.IF_NODE__IS_NONUNIQUE;
         default: return -1;
       }
     }
@@ -2399,8 +2620,6 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.MULTIPLICITY_PART__IS_ORDERED: return SysMLOCPackage.IF_NODE__IS_ORDERED;
-        case SysMLOCPackage.MULTIPLICITY_PART__IS_NONUNIQUE: return SysMLOCPackage.IF_NODE__IS_NONUNIQUE;
         default: return -1;
       }
     }
@@ -2463,32 +2682,38 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (isThen: ");
     result.append(isThen);
-    result.append(", ThenMulti0: ");
-    result.append(thenMulti0);
-    result.append(", ThenMulti1: ");
-    result.append(thenMulti1);
-    result.append(", ThenMulti02: ");
-    result.append(thenMulti02);
+    result.append(", ThenMultiValue: ");
+    result.append(thenMultiValue);
+    result.append(", ThenMultiLow: ");
+    result.append(thenMultiLow);
+    result.append(", ThenMultiHigh: ");
+    result.append(thenMultiHigh);
     result.append(", visibility: ");
     result.append(visibility);
     result.append(", isVariant: ");
     result.append(isVariant);
+    result.append(", EndMultiValue: ");
+    result.append(endMultiValue);
+    result.append(", EndMultiLow: ");
+    result.append(endMultiLow);
+    result.append(", EndMultiHigh: ");
+    result.append(endMultiHigh);
+    result.append(", isEnd: ");
+    result.append(isEnd);
     result.append(", isAbstract: ");
     result.append(isAbstract);
     result.append(", isVariation: ");
     result.append(isVariation);
     result.append(", direction: ");
     result.append(direction);
-    result.append(", isReadOnly: ");
-    result.append(isReadOnly);
     result.append(", isDerived: ");
     result.append(isDerived);
+    result.append(", isConstant: ");
+    result.append(isConstant);
     result.append(", isReference: ");
     result.append(isReference);
     result.append(", prefixMetadataExtension: ");
     result.append(prefixMetadataExtension);
-    result.append(", isEnd: ");
-    result.append(isEnd);
     result.append(", isIndividual: ");
     result.append(isIndividual);
     result.append(", portionKind: ");
@@ -2507,12 +2732,12 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
     result.append(crosses);
     result.append(", redefinitions: ");
     result.append(redefinitions);
-    result.append(", Multi0: ");
-    result.append(multi0);
-    result.append(", Multi1: ");
-    result.append(multi1);
-    result.append(", Multi02: ");
-    result.append(multi02);
+    result.append(", MultiValue: ");
+    result.append(multiValue);
+    result.append(", MultiLow: ");
+    result.append(multiLow);
+    result.append(", MultiHigh: ");
+    result.append(multiHigh);
     result.append(", isOrdered: ");
     result.append(isOrdered);
     result.append(", isNonunique: ");

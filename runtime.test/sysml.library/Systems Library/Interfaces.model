@@ -14,11 +14,11 @@
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="SequenceFunctions::notEmpty"/>
     <elements xsi:type="sysMLOC:CalculationDefinition" visibility="private" declaredName="excludingOnce">
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * Return a sequence that is the same as the input sequence, but with a single&#xA;         * instance of a given value removed. The given value must be in the input sequence.&#xA;         */"/>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="seq" Multi1="1" Multi02="*" isOrdered="true" isNonunique="true"/>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="value" Multi0="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="seq" MultiLow="1" MultiHigh="*" isOrdered="true" isNonunique="true"/>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="value" MultiValue="1">
         <subsetting>seq</subsetting>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="position" Multi0="1" valuePart="(1..size(seq))->selectOne{in i; seq#(i) == value}">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="position" MultiValue="1" valuePart="(1..size(seq))->selectOne{in i; seq#(i) == value}">
         <typings>Natural</typings>
       </elements>
       <resultExpressionParameter resultExpression="seq->excludingAt(position)"/>
@@ -26,14 +26,14 @@
     <elements xsi:type="sysMLOC:InterfaceDefinition" isAbstract="true" declaredName="Interface">
       <superclassifiers>Connection</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * Interface is the most general class of links between Ports on Parts &#xA;         * within some containing structure. Interface is the base type of all&#xA;         * InterfaceDefinitions. &#xA;         * &#xA;         * Transfers outgoing from any one of the participant Ports of an Interface &#xA;         * may be targeted to one of the other participant Ports (depending on any &#xA;         * other Interfaces in which the Port is also participating).&#xA;         */"/>
-      <elements xsi:type="sysMLOC:PortUsage" isReference="true" Multi1="2" Multi02="*" isOrdered="true" isNonunique="true">
+      <elements xsi:type="sysMLOC:PortUsage" isReference="true" MultiLow="2" MultiHigh="*" isOrdered="true" isNonunique="true">
         <typings>Port</typings>
         <redefinitions>participant</redefinitions>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;             * The participants of an Interface must be Ports. The interfacingPorts of&#xA;             * each participant Port include all the other participants in the Interface.&#xA;             */"/>
         <elements xsi:type="sysMLOC:ReferenceUsage" visibility="protected" declaredName="thisParticipant">
           <redefinitions>self</redefinitions>
         </elements>
-        <elements xsi:type="sysMLOC:ReferenceUsage" visibility="protected" declaredName="otherParticipants" Multi1="1" Multi02="*" isNonunique="true" isDefault="true" valuePart="participant->excludingOnce(thisParticipant)">
+        <elements xsi:type="sysMLOC:ReferenceUsage" visibility="protected" declaredName="otherParticipants" MultiLow="1" MultiHigh="*" isNonunique="true" isDefault="true" valuePart="participant->excludingOnce(thisParticipant)">
           <typings>Port</typings>
           <subsetting>interfacingPorts</subsetting>
         </elements>
@@ -43,7 +43,7 @@
       <superclassifiers>Interface</superclassifiers>
       <superclassifiers>BinaryConnection</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * BinaryInterface is the most general class of links between two Ports &#xA;         * on Parts within some containing structure. BinaryInterface is the base &#xA;         * type of all binary InterfaceDefinitions which have exactly two ends. &#xA;         * &#xA;         * Transfers outgoing from each participant Port of a BinaryInterface may be &#xA;         * targeted to the other participant Port (depending on any other Interfaces &#xA;         * in which the Port is also participating).&#xA;         */"/>
-      <elements xsi:type="sysMLOC:PortUsage" isReference="true" Multi0="2" isOrdered="true" isNonunique="true">
+      <elements xsi:type="sysMLOC:PortUsage" isReference="true" MultiValue="2" isOrdered="true" isNonunique="true">
         <redefinitions>Interface::participant</redefinitions>
         <redefinitions>BinaryConnection::participant</redefinitions>
       </elements>
@@ -56,12 +56,12 @@
         <redefinitions>BinaryConnection::target</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:InterfaceUsage" isAbstract="true" declaredName="interfaces" Multi1="0" Multi02="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:InterfaceUsage" isAbstract="true" declaredName="interfaces" MultiLow="0" MultiHigh="*" isNonunique="true">
       <typings>Interface</typings>
       <subsetting>connections</subsetting>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * interfaces is the base feature of all InterfaceUsages.&#xA;         */"/>
     </elements>
-    <elements xsi:type="sysMLOC:InterfaceUsage" isAbstract="true" declaredName="binaryInterfaces" Multi1="0" Multi02="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:InterfaceUsage" isAbstract="true" declaredName="binaryInterfaces" MultiLow="0" MultiHigh="*" isNonunique="true">
       <typings>BinaryInterface</typings>
       <subsetting>interfaces</subsetting>
       <subsetting>binaryConnections</subsetting>

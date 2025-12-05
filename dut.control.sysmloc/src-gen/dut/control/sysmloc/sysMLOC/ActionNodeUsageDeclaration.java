@@ -14,6 +14,6 @@ package dut.control.sysmloc.sysMLOC;
  * @model
  * @generated
  */
-public interface ActionNodeUsageDeclaration extends UsageDeclaration, FeatureDeclaration, Identification, FeatureSpecializationPart, FeatureSpecialization, TypingFeatureTyping, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, MultiplicityPart, MultiplicityRange
+public interface ActionNodeUsageDeclaration extends UsageDeclaration, FeatureDeclaration, Identification, FeatureSpecializationPart, FeatureSpecialization, TypingFeatureTyping, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, MultiplicityPart, MultiplicityRange, MultiplicityModifiers
 {
 } // ActionNodeUsageDeclaration

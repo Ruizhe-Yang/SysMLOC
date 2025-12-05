@@ -17,14 +17,14 @@
       <elements xsi:type="sysMLOC:SubjectUsage" declaredName="subj">
         <redefinitions>Case::subj</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AnalysisCaseUsage" isAbstract="true" declaredName="subAnalysisCases" Multi1="0" Multi02="*">
+      <elements xsi:type="sysMLOC:AnalysisCaseUsage" isAbstract="true" declaredName="subAnalysisCases" MultiLow="0" MultiHigh="*">
         <typings>AnalysisCase</typings>
         <subsetting>analysisCases</subsetting>
         <subsetting>subcases</subsetting>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * Other AnalysisCases carried out as part of the performance of this AnalysisCase.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AnalysisCaseUsage" isAbstract="true" declaredName="analysisCases" Multi1="0" Multi02="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AnalysisCaseUsage" isAbstract="true" declaredName="analysisCases" MultiLow="0" MultiHigh="*" isNonunique="true">
       <typings>AnalysisCase</typings>
       <subsetting>cases</subsetting>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * analysisCases is the base feature of all AnalysisCaseUsages.&#xA;&#x9;&#x9; */"/>

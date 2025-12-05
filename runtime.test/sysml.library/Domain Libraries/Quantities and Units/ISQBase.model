@@ -13,18 +13,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>LengthUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="length" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="length" MultiValue="*" isNonunique="true">
       <typings>LengthValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="LengthUnit">
       <superclassifiers>SimpleUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
@@ -48,18 +48,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>DurationUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="duration" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="duration" MultiValue="*" isNonunique="true">
       <typings>DurationValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="DurationUnit">
       <superclassifiers>SimpleUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
@@ -83,18 +83,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>MassUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass" MultiValue="*" isNonunique="true">
       <typings>MassValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MassUnit">
       <superclassifiers>SimpleUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
@@ -118,18 +118,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>ThermodynamicTemperatureUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="thermodynamicTemperature" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="thermodynamicTemperature" MultiValue="*" isNonunique="true">
       <typings>ThermodynamicTemperatureValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ThermodynamicTemperatureUnit">
       <superclassifiers>SimpleUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="thermodynamicTemperaturePF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="thermodynamicTemperaturePF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.'&#x398;'">
           <redefinitions>quantity</redefinitions>
@@ -153,18 +153,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>ElectricCurrentUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="electricCurrent" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="electricCurrent" MultiValue="*" isNonunique="true">
       <typings>ElectricCurrentValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ElectricCurrentUnit">
       <superclassifiers>SimpleUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
@@ -188,18 +188,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>LuminousIntensityUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="luminousIntensity" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="luminousIntensity" MultiValue="*" isNonunique="true">
       <typings>LuminousIntensityValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="LuminousIntensityUnit">
       <superclassifiers>SimpleUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="luminousIntensityPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="luminousIntensityPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.J">
           <redefinitions>quantity</redefinitions>
@@ -223,18 +223,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>AmountOfSubstanceUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="amountOfSubstance" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="amountOfSubstance" MultiValue="*" isNonunique="true">
       <typings>AmountOfSubstanceValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="AmountOfSubstanceUnit">
       <superclassifiers>SimpleUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="amountOfSubstancePF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="amountOfSubstancePF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.N">
           <redefinitions>quantity</redefinitions>
@@ -256,25 +256,25 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="( L, M, T, I, '&#x398;', N, J )">
         <redefinitions>baseQuantities</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="L" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="L" MultiValue="1">
         <typings>LengthValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="M" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="M" MultiValue="1">
         <typings>MassValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="T" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="T" MultiValue="1">
         <typings>DurationValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="I" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="I" MultiValue="1">
         <typings>ElectricCurrentValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="'&#x398;'" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="'&#x398;'" MultiValue="1">
         <typings>ThermodynamicTemperatureValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="N" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="N" MultiValue="1">
         <typings>AmountOfSubstanceValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="J" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="J" MultiValue="1">
         <typings>LuminousIntensityValue</typings>
       </elements>
     </elements>

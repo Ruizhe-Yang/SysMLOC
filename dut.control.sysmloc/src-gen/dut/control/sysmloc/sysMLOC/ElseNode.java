@@ -23,7 +23,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface ElseNode extends ActionNodeElements, EmptySuccessionPrefix, MemberPrefix, ActionNodePrefix, OccurrenceUsagePrefix, BasicUsagePrefix, RefPrefix, BasicDefinitionPrefix, UsageExtensionKeyword, PrefixMetadata, ActionNodeUsageDeclaration, UsageDeclaration, FeatureDeclaration, Identification, FeatureSpecializationPart, FeatureSpecialization, TypingFeatureTyping, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, MultiplicityPart, MultiplicityRange
+public interface ElseNode extends ActionNodeElements, EmptySuccessionPrefix, MemberPrefix, ActionNodePrefix, OccurrenceUsagePrefix, EndUsagePrefix, EndMultiplicityRange, BasicUsagePrefix, RefPrefix, BasicDefinitionPrefix, UsageExtensionKeyword, PrefixMetadata, ActionNodeUsageDeclaration, UsageDeclaration, FeatureDeclaration, Identification, FeatureSpecializationPart, FeatureSpecialization, TypingFeatureTyping, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, MultiplicityPart, MultiplicityRange, MultiplicityModifiers
 {
   /**
    * Returns the value of the '<em><b>Action Parameter End</b></em>' containment reference list.

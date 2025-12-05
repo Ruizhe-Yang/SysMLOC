@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Comment" body="/* AAA */"/>
+  <elements xsi:type="sysMLOC:CodeAnnotation" body="//a lexical comment (&quot;note&quot;) is not a part of model&#xA;"/>
+  <elements xsi:type="sysMLOC:Package" declaredName="CommentTest">
+    <elements xsi:type="sysMLOC:CodeAnnotation" body="// inside package&#xA;"/>
+    <elements xsi:type="sysMLOC:Comment" body="/*&#xA;*AAA&#xA; * BBB*/"/>
+    <elements xsi:type="sysMLOC:Comment" body="/*&#xA;    *&#xA;    *&#xA;    * AAA  ***   &#xA;    *BBB&#xA;    &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;*/"/>
+    <elements xsi:type="sysMLOC:Comment" body="/*&#xA; *       AAAA&#xA; *       BBBB           */"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* AAAA&#xA; &#xA; &#xA;  * BBBB&#xA; *&#xA; * CCCC&#xA; */"/>
+    <elements xsi:type="sysMLOC:Comment" locale="&quot;en_US&quot;" body="/*&#xA; * AAAA&#xA; * BBBB&#xA; *    CCC DDD    &#xA; */"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* comment inside a package */"/>
+    <elements xsi:type="sysMLOC:Documentation" locale="&quot;en_US&quot;" body="/* Documentation about Package */"/>
+    <elements xsi:type="sysMLOC:Comment" declaredName="cmt" body="/* Named Comment */"/>
+    <elements xsi:type="sysMLOC:Comment" declaredName="cmt_cmt" body="/* Comment about Comment */">
+      <annotatedElement>cmt</annotatedElement>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* Documention Comment about Part Def */">
+      <annotatedElement>C</annotatedElement>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="C">
+      <elements xsi:type="sysMLOC:Documentation" body="/* Documentation in Part Def */"/>
+      <elements xsi:type="sysMLOC:Comment" body="/* Comment in Part Def */"/>
+      <elements xsi:type="sysMLOC:Comment" locale="&quot;en_US&quot;" body="/* Comment about Package */">
+        <annotatedElement>CommentTest</annotatedElement>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* abc */"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="A"/>
+  </elements>
+</sysMLOC:Namespace>

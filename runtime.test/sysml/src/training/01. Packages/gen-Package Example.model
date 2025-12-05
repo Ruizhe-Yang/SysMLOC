@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="'Package Example'">
+    <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="ISQ::TorqueValue"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:PartDefinition" visibility="private" declaredName="Automobile"/>
+    <elements xsi:type="sysMLOC:AliasElement" visibility="public" memberName="Car" memberElement="Automobile"/>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="Torque" memberElement="ISQ::TorqueValue"/>
+  </elements>
+</sysMLOC:Namespace>

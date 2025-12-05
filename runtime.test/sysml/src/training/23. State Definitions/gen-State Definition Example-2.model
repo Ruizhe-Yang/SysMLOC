@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="'State Definition Example-2'">
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="VehicleStartSignal"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="VehicleOnSignal"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="VehicleOffSignal"/>
+    <elements xsi:type="sysMLOC:StateDefinition" declaredName="VehicleStates">
+      <elements xsi:type="sysMLOC:EntryActionNode"/>
+      <elements xsi:type="sysMLOC:TransitionUsage">
+        <transitionSuccessionElement refElement="off"/>
+      </elements>
+      <elements xsi:type="sysMLOC:StateUsage" declaredName="off"/>
+      <elements xsi:type="sysMLOC:TransitionUsage">
+        <acceptParameter payloadFeatureElement="VehicleStartSignal"/>
+        <transitionSuccessionElement refElement="starting"/>
+      </elements>
+      <elements xsi:type="sysMLOC:StateUsage" declaredName="starting"/>
+      <elements xsi:type="sysMLOC:TransitionUsage">
+        <acceptParameter payloadFeatureElement="VehicleOnSignal"/>
+        <transitionSuccessionElement refElement="on"/>
+      </elements>
+      <elements xsi:type="sysMLOC:StateUsage" declaredName="on"/>
+      <elements xsi:type="sysMLOC:TransitionUsage">
+        <acceptParameter payloadFeatureElement="VehicleOffSignal"/>
+        <transitionSuccessionElement refElement="off"/>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

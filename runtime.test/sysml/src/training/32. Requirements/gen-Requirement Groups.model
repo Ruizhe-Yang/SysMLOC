@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="'Requirement Groups'">
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="'Requirement Definitions'" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="'Requirement Usages'" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Engine">
+      <elements xsi:type="sysMLOC:PortUsage" declaredName="clutchPort">
+        <typings>ClutchPort</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:PerformActionUsage" declaredName="generateTorque">
+        <typings>GenerateTorque</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:RequirementUsage" declaredName="vehicleSpecification">
+      <elements xsi:type="sysMLOC:Documentation" body="/* Overall vehicle requirements group */"/>
+      <elements xsi:type="sysMLOC:SubjectUsage" declaredName="vehicle">
+        <typings>Vehicle</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:RequirementConstraintUsage" refElement="fullVehicleMassLimit" kind="require"/>
+      <elements xsi:type="sysMLOC:RequirementConstraintUsage" refElement="emptyVehicleMassLimit" kind="require"/>
+    </elements>
+    <elements xsi:type="sysMLOC:RequirementUsage" declaredName="engineSpecification">
+      <elements xsi:type="sysMLOC:Documentation" body="/* Engine power requirements group */"/>
+      <elements xsi:type="sysMLOC:SubjectUsage" declaredName="engine">
+        <typings>Engine</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:RequirementUsage" declaredName="drivePowerInterface">
+        <typings>DrivePowerInterface</typings>
+        <elements xsi:type="sysMLOC:SubjectUsage" valuePart="engine.clutchPort"/>
+      </elements>
+      <elements xsi:type="sysMLOC:RequirementUsage" declaredName="torqueGeneration">
+        <typings>TorqueGeneration</typings>
+        <elements xsi:type="sysMLOC:SubjectUsage" valuePart="engine.generateTorque"/>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

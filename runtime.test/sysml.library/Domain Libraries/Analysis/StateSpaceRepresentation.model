@@ -125,7 +125,7 @@
         </elements>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="result" valuePart="integrate.result"/>
       </elements>
-      <elements xsi:type="sysMLOC:EventOccurrenceUsage" Multi1="0" Multi02="*" declaredName="zeroCrossingEvents">
+      <elements xsi:type="sysMLOC:EventOccurrenceUsage" MultiLow="0" MultiHigh="*" declaredName="zeroCrossingEvents">
         <typings>ZeroCrossingEventDef</typings>
         <elements xsi:type="sysMLOC:Comment" body="/* ContinuousStateSpaceDynamics may cause zero crossings anomaly. */"/>
       </elements>

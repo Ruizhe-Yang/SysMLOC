@@ -37,18 +37,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>MolarMassUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="molarMass" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="molarMass" MultiValue="*" isNonunique="true">
       <typings>MolarMassValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MolarMassUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
@@ -57,7 +57,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="amountOfSubstancePF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="amountOfSubstancePF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.N">
           <redefinitions>quantity</redefinitions>
@@ -81,18 +81,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>MolarVolumeUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="molarVolume" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="molarVolume" MultiValue="*" isNonunique="true">
       <typings>MolarVolumeValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MolarVolumeUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
@@ -101,7 +101,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="amountOfSubstancePF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="amountOfSubstancePF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.N">
           <redefinitions>quantity</redefinitions>
@@ -125,18 +125,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>MolarInternalEnergyUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="molarInternalEnergy" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="molarInternalEnergy" MultiValue="*" isNonunique="true">
       <typings>MolarInternalEnergyValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MolarInternalEnergyUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
@@ -145,7 +145,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
@@ -154,7 +154,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
@@ -163,7 +163,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="amountOfSubstancePF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="amountOfSubstancePF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.N">
           <redefinitions>quantity</redefinitions>
@@ -187,18 +187,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>MolarEnthalpyUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="molarEnthalpy" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="molarEnthalpy" MultiValue="*" isNonunique="true">
       <typings>MolarEnthalpyValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MolarEnthalpyUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
@@ -207,7 +207,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
@@ -216,7 +216,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
@@ -225,7 +225,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="amountOfSubstancePF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="amountOfSubstancePF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.N">
           <redefinitions>quantity</redefinitions>
@@ -249,18 +249,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>MolarHelmholtzEnergyUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="molarHelmholtzEnergy" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="molarHelmholtzEnergy" MultiValue="*" isNonunique="true">
       <typings>MolarHelmholtzEnergyValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MolarHelmholtzEnergyUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
@@ -269,7 +269,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
@@ -278,7 +278,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
@@ -287,7 +287,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="amountOfSubstancePF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="amountOfSubstancePF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.N">
           <redefinitions>quantity</redefinitions>
@@ -311,18 +311,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>MolarGibbsEnergyUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="molarGibbsEnergy" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="molarGibbsEnergy" MultiValue="*" isNonunique="true">
       <typings>MolarGibbsEnergyValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MolarGibbsEnergyUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
@@ -331,7 +331,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
@@ -340,7 +340,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
@@ -349,7 +349,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="amountOfSubstancePF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="amountOfSubstancePF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.N">
           <redefinitions>quantity</redefinitions>
@@ -373,18 +373,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>MolarHeatCapacityUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="molarHeatCapacity" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="molarHeatCapacity" MultiValue="*" isNonunique="true">
       <typings>MolarHeatCapacityValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MolarHeatCapacityUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
@@ -393,7 +393,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
@@ -402,7 +402,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
@@ -411,7 +411,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="thermodynamicTemperaturePF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="thermodynamicTemperaturePF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.'&#x398;'">
           <redefinitions>quantity</redefinitions>
@@ -420,7 +420,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="amountOfSubstancePF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="amountOfSubstancePF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.N">
           <redefinitions>quantity</redefinitions>
@@ -444,18 +444,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>MolarEntropyUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="molarEntropy" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="molarEntropy" MultiValue="*" isNonunique="true">
       <typings>MolarEntropyValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MolarEntropyUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
@@ -464,7 +464,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
@@ -473,7 +473,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
@@ -482,7 +482,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="thermodynamicTemperaturePF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="thermodynamicTemperaturePF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.'&#x398;'">
           <redefinitions>quantity</redefinitions>
@@ -491,7 +491,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="amountOfSubstancePF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="amountOfSubstancePF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.N">
           <redefinitions>quantity</redefinitions>
@@ -515,18 +515,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>ParticleConcentrationUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="particleConcentration" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="particleConcentration" MultiValue="*" isNonunique="true">
       <typings>ParticleConcentrationValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ParticleConcentrationUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
@@ -556,18 +556,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>MassConcentrationUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="massConcentration" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="massConcentration" MultiValue="*" isNonunique="true">
       <typings>MassConcentrationValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MassConcentrationUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
@@ -576,7 +576,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
@@ -609,18 +609,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>AmountOfSubstanceConcentrationUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="amountOfSubstanceConcentration" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="amountOfSubstanceConcentration" MultiValue="*" isNonunique="true">
       <typings>AmountOfSubstanceConcentrationValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="AmountOfSubstanceConcentrationUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
@@ -629,7 +629,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="amountOfSubstancePF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="amountOfSubstancePF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.N">
           <redefinitions>quantity</redefinitions>
@@ -668,12 +668,12 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>VolumeFractionUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="volumeFraction" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="volumeFraction" MultiValue="*" isNonunique="true">
       <typings>VolumeFractionValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
@@ -688,18 +688,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>MolalityUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="molality" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="molality" MultiValue="*" isNonunique="true">
       <typings>MolalityValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MolalityUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
@@ -708,7 +708,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="amountOfSubstancePF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="amountOfSubstancePF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.N">
           <redefinitions>quantity</redefinitions>
@@ -739,18 +739,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>ChemicalPotentialUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="chemicalPotential" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="chemicalPotential" MultiValue="*" isNonunique="true">
       <typings>ChemicalPotentialValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ChemicalPotentialUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
@@ -759,7 +759,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
@@ -768,7 +768,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
@@ -777,7 +777,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="amountOfSubstancePF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="amountOfSubstancePF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.N">
           <redefinitions>quantity</redefinitions>
@@ -810,18 +810,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>PartialPressureUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="partialPressure" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="partialPressure" MultiValue="*" isNonunique="true">
       <typings>PartialPressureValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="PartialPressureUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
@@ -830,7 +830,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
@@ -839,7 +839,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
@@ -863,18 +863,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>FugacityUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="fugacity" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="fugacity" MultiValue="*" isNonunique="true">
       <typings>FugacityValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="FugacityUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
@@ -883,7 +883,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
@@ -892,7 +892,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
@@ -916,18 +916,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>StandardChemicalPotentialUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="standardChemicalPotential" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="standardChemicalPotential" MultiValue="*" isNonunique="true">
       <typings>StandardChemicalPotentialValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="StandardChemicalPotentialUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
@@ -936,7 +936,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
@@ -945,7 +945,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
@@ -954,7 +954,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="amountOfSubstancePF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="amountOfSubstancePF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.N">
           <redefinitions>quantity</redefinitions>
@@ -1053,18 +1053,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>OsmoticPressureUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="osmoticPressure" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="osmoticPressure" MultiValue="*" isNonunique="true">
       <typings>OsmoticPressureValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="OsmoticPressureUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
@@ -1073,7 +1073,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
@@ -1082,7 +1082,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
@@ -1115,18 +1115,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>AffinityOfAChemicalReactionUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="affinityOfAChemicalReaction" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="affinityOfAChemicalReaction" MultiValue="*" isNonunique="true">
       <typings>AffinityOfAChemicalReactionValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="AffinityOfAChemicalReactionUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
@@ -1135,7 +1135,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
@@ -1144,7 +1144,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
@@ -1153,7 +1153,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="amountOfSubstancePF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="amountOfSubstancePF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.N">
           <redefinitions>quantity</redefinitions>
@@ -1193,18 +1193,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>EquilibriumConstantOnPressureBasisUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="equilibriumConstantOnPressureBasis" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="equilibriumConstantOnPressureBasis" MultiValue="*" isNonunique="true">
       <typings>EquilibriumConstantOnPressureBasisValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="EquilibriumConstantOnPressureBasisUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
@@ -1213,7 +1213,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
@@ -1222,7 +1222,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
@@ -1246,18 +1246,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>EquilibriumConstantOnConcentrationBasisUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="equilibriumConstantOnConcentrationBasis" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="equilibriumConstantOnConcentrationBasis" MultiValue="*" isNonunique="true">
       <typings>EquilibriumConstantOnConcentrationBasisValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="EquilibriumConstantOnConcentrationBasisUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
@@ -1266,7 +1266,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="amountOfSubstancePF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="amountOfSubstancePF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.N">
           <redefinitions>quantity</redefinitions>
@@ -1341,18 +1341,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>MolarGasConstantUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="molarGasConstant" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="molarGasConstant" MultiValue="*" isNonunique="true">
       <typings>MolarGasConstantValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MolarGasConstantUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
@@ -1361,7 +1361,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
@@ -1370,7 +1370,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
@@ -1379,7 +1379,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="thermodynamicTemperaturePF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="thermodynamicTemperaturePF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.'&#x398;'">
           <redefinitions>quantity</redefinitions>
@@ -1388,7 +1388,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="amountOfSubstancePF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="amountOfSubstancePF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.N">
           <redefinitions>quantity</redefinitions>
@@ -1420,18 +1420,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>DiffusionCoefficientUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="diffusionCoefficient" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="diffusionCoefficient" MultiValue="*" isNonunique="true">
       <typings>DiffusionCoefficientValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="DiffusionCoefficientUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
@@ -1440,7 +1440,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
@@ -1482,18 +1482,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>ThermalDiffusionCoefficientUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="thermalDiffusionCoefficient" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="thermalDiffusionCoefficient" MultiValue="*" isNonunique="true">
       <typings>ThermalDiffusionCoefficientValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ThermalDiffusionCoefficientUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
@@ -1502,7 +1502,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
@@ -1526,18 +1526,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>IonicStrengthUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="ionicStrength" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="ionicStrength" MultiValue="*" isNonunique="true">
       <typings>IonicStrengthValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="IonicStrengthUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
@@ -1546,7 +1546,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="amountOfSubstancePF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="amountOfSubstancePF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.N">
           <redefinitions>quantity</redefinitions>
@@ -1580,18 +1580,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>ElectrolyticConductivityUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="electrolyticConductivity" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="electrolyticConductivity" MultiValue="*" isNonunique="true">
       <typings>ElectrolyticConductivityValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ElectrolyticConductivityUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
@@ -1600,7 +1600,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
@@ -1609,7 +1609,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
@@ -1618,7 +1618,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
@@ -1642,18 +1642,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>MolarConductivityUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="molarConductivity" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="molarConductivity" MultiValue="*" isNonunique="true">
       <typings>MolarConductivityValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MolarConductivityUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
@@ -1662,7 +1662,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
@@ -1671,7 +1671,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="electricCurrentPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.I">
           <redefinitions>quantity</redefinitions>
@@ -1680,7 +1680,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="amountOfSubstancePF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="amountOfSubstancePF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.N">
           <redefinitions>quantity</redefinitions>
@@ -1720,18 +1720,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>MolarOpticalRotatoryPowerUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="molarOpticalRotatoryPower" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="molarOpticalRotatoryPower" MultiValue="*" isNonunique="true">
       <typings>MolarOpticalRotatoryPowerValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MolarOpticalRotatoryPowerUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
@@ -1740,7 +1740,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="amountOfSubstancePF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="amountOfSubstancePF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.N">
           <redefinitions>quantity</redefinitions>
@@ -1764,18 +1764,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>SpecificOpticalRotatoryPowerUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="specificOpticalRotatoryPower" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="specificOpticalRotatoryPower" MultiValue="*" isNonunique="true">
       <typings>SpecificOpticalRotatoryPowerValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SpecificOpticalRotatoryPowerUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
@@ -1784,7 +1784,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>

@@ -13,6 +13,7 @@ package dut.control.sysmloc.sysMLOC;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.PayloadParameter#isIsVia <em>Is Via</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.PayloadParameter#getViaNodeParameter <em>Via Node Parameter</em>}</li>
  * </ul>
  *
@@ -20,8 +21,30 @@ package dut.control.sysmloc.sysMLOC;
  * @model
  * @generated
  */
-public interface PayloadParameter extends PayloadFeature, Identification, PayloadFeatureSpecializationPart, FeatureSpecialization, TypingFeatureTyping, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, MultiplicityPart, MultiplicityRange, ValuePart, FeatureValue, TriggerValuePart
+public interface PayloadParameter extends PayloadFeature, Identification, PayloadFeatureSpecializationPart, FeatureSpecialization, TypingFeatureTyping, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, MultiplicityPart, MultiplicityRange, MultiplicityModifiers, ValuePart, FeatureValue, TriggerValuePart
 {
+  /**
+   * Returns the value of the '<em><b>Is Via</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Is Via</em>' attribute.
+   * @see #setIsVia(boolean)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getPayloadParameter_IsVia()
+   * @model
+   * @generated
+   */
+  boolean isIsVia();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.PayloadParameter#isIsVia <em>Is Via</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Is Via</em>' attribute.
+   * @see #isIsVia()
+   * @generated
+   */
+  void setIsVia(boolean value);
+
   /**
    * Returns the value of the '<em><b>Via Node Parameter</b></em>' attribute.
    * <!-- begin-user-doc -->

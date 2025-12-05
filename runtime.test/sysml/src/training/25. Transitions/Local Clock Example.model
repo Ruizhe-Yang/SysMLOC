@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="'Local Clock Example'">
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues::String"/>
+    <elements xsi:type="sysMLOC:ItemDefinition" declaredName="Start"/>
+    <elements xsi:type="sysMLOC:ItemDefinition" declaredName="Request"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Server">
+      <elements xsi:type="sysMLOC:PartUsage" valuePart="new Time::Clock()">
+        <redefinitions>localClock</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="today">
+        <typings>String</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:PortUsage" declaredName="requestPort"/>
+      <elements xsi:type="sysMLOC:StateUsage" declaredName="ServerBehavior">
+        <elements xsi:type="sysMLOC:EntryActionNode"/>
+        <elements xsi:type="sysMLOC:TransitionUsage">
+          <transitionSuccessionElement refElement="off"/>
+        </elements>
+        <elements xsi:type="sysMLOC:StateUsage" declaredName="off"/>
+        <elements xsi:type="sysMLOC:TransitionUsage">
+          <acceptParameter payloadFeatureElement="Start" isVia="true" viaNodeParameter="requestPort"/>
+          <transitionSuccessionElement refElement="waiting"/>
+        </elements>
+        <elements xsi:type="sysMLOC:StateUsage" declaredName="waiting"/>
+        <elements xsi:type="sysMLOC:TransitionUsage">
+          <acceptParameter declaredName="request" isVia="true" viaNodeParameter="requestPort">
+            <typings>Request</typings>
+          </acceptParameter>
+          <transitionSuccessionElement refElement="responding"/>
+        </elements>
+        <elements xsi:type="sysMLOC:TransitionUsage">
+          <acceptParameter triggerkind="at" triggerExpression="new Time::Iso8601DateTime(today + &quot;11:59:00&quot;)"/>
+          <transitionSuccessionElement refElement="off"/>
+        </elements>
+        <elements xsi:type="sysMLOC:StateUsage" declaredName="responding"/>
+        <elements xsi:type="sysMLOC:TransitionUsage">
+          <acceptParameter triggerkind="after" triggerExpression="5 [SI::min]"/>
+          <transitionSuccessionElement refElement="waiting"/>
+        </elements>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

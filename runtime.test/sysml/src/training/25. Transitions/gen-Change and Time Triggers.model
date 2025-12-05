@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="'Change and Time Triggers'">
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ISQ::TemperatureValue"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ISQ::DurationValue"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Time::TimeInstantValue"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="SI::h"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="OverTemp"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="maintenanceTime">
+        <typings>TimeInstantValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="maintenanceInterval">
+        <typings>DurationValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="maxTemperature">
+        <typings>TemperatureValue</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="VehicleController"/>
+    <elements xsi:type="sysMLOC:ActionUsage" declaredName="senseTemperature">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="temp">
+        <typings>TemperatureValue</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:StateUsage" declaredName="healthStates">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="vehicle">
+        <typings>Vehicle</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="controller">
+        <typings>VehicleController</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:EntryActionNode"/>
+      <elements xsi:type="sysMLOC:TransitionUsage">
+        <transitionSuccessionElement refElement="normal"/>
+      </elements>
+      <elements xsi:type="sysMLOC:DoActionNode">
+        <performedActionParameterPart xsi:type="sysMLOC:PerformActionUsage" referencedFeature="senseTemperature"/>
+      </elements>
+      <elements xsi:type="sysMLOC:StateUsage" declaredName="normal"/>
+      <elements xsi:type="sysMLOC:TransitionUsage">
+        <acceptParameter triggerkind="at" triggerExpression="vehicle.maintenanceTime"/>
+        <transitionSuccessionElement refElement="maintenance"/>
+      </elements>
+      <elements xsi:type="sysMLOC:TransitionUsage">
+        <acceptParameter triggerkind="when" triggerExpression="senseTemperature.temp > vehicle.maxTemperature"/>
+        <performedActionParameterPart xsi:type="sysMLOC:SendActionUsage" sendNodeParameter="new OverTemp()" toNodeParameter="controller"/>
+        <transitionSuccessionElement refElement="degraded"/>
+      </elements>
+      <elements xsi:type="sysMLOC:StateUsage" declaredName="maintenance">
+        <elements xsi:type="sysMLOC:EntryActionNode">
+          <performedActionParameterPart xsi:type="sysMLOC:AssignmentActionUsage" featureChain="vehicle.maintenanceTime" NodeParameter="vehicle.maintenanceTime + vehicle.maintenanceInterval"/>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:TransitionUsage">
+        <acceptParameter triggerkind="after" triggerExpression="48 [h]"/>
+        <transitionSuccessionElement refElement="normal"/>
+      </elements>
+      <elements xsi:type="sysMLOC:StateUsage" declaredName="degraded"/>
+      <elements xsi:type="sysMLOC:TransitionUsage">
+        <acceptParameter triggerkind="when" triggerExpression="senseTemperature.temp &lt;= vehicle.maxTemperature"/>
+        <transitionSuccessionElement refElement="normal"/>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

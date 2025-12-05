@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="'Items Example'">
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ItemDefinition" declaredName="Fuel"/>
+    <elements xsi:type="sysMLOC:ItemDefinition" declaredName="Person"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:ItemUsage" isReference="true" declaredName="driver">
+        <typings>Person</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="fuelTank">
+        <elements xsi:type="sysMLOC:ItemUsage" declaredName="fuel">
+          <typings>Fuel</typings>
+        </elements>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

@@ -16,7 +16,7 @@
         <redefinitions>Item::self</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:ItemUsage" isAbstract="true" declaredName="metadataItems" Multi1="0" Multi02="*">
+    <elements xsi:type="sysMLOC:ItemUsage" isAbstract="true" declaredName="metadataItems" MultiLow="0" MultiHigh="*">
       <typings>MetadataItem</typings>
       <subsetting>metaobjects</subsetting>
       <subsetting>items</subsetting>

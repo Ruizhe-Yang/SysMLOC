@@ -27,19 +27,19 @@
         <typings>Part</typings>
         <redefinitions>Item::done</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:PortUsage" isAbstract="true" declaredName="ownedPorts" Multi1="0" Multi02="*">
+      <elements xsi:type="sysMLOC:PortUsage" isAbstract="true" declaredName="ownedPorts" MultiLow="0" MultiHigh="*">
         <typings>Port</typings>
         <subsetting>ports</subsetting>
         <subsetting>timeEnclosedOccurrences</subsetting>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * Ports that are owned by this Part.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
-      <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" isReference="true" declaredName="performedActions" Multi1="0" Multi02="*">
+      <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" isReference="true" declaredName="performedActions" MultiLow="0" MultiHigh="*">
         <typings>Action</typings>
         <subsetting>actions</subsetting>
         <subsetting>enactedPerformances</subsetting>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * Actions that are performed by this Part.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
-      <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="ownedActions" Multi1="0" Multi02="*">
+      <elements xsi:type="sysMLOC:ActionUsage" isAbstract="true" declaredName="ownedActions" MultiLow="0" MultiHigh="*">
         <typings>Action</typings>
         <subsetting>actions</subsetting>
         <subsetting>ownedPerformances</subsetting>
@@ -51,20 +51,20 @@
           <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9;&#x9; * The &quot;this&quot; reference of an ownedAction is always its owning Part.&#xA;&#x9;&#x9;&#x9;&#x9; */"/>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:StateUsage" isAbstract="true" isReference="true" declaredName="exhibitedStates" Multi1="0" Multi02="*">
+      <elements xsi:type="sysMLOC:StateUsage" isAbstract="true" isReference="true" declaredName="exhibitedStates" MultiLow="0" MultiHigh="*">
         <typings>StateAction</typings>
         <subsetting>stateActions</subsetting>
         <subsetting>performedActions</subsetting>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * StateActions that are exhibited by this Part.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
-      <elements xsi:type="sysMLOC:StateUsage" isAbstract="true" declaredName="ownedStates" Multi1="0" Multi02="*">
+      <elements xsi:type="sysMLOC:StateUsage" isAbstract="true" declaredName="ownedStates" MultiLow="0" MultiHigh="*">
         <typings>StateAction</typings>
         <subsetting>stateActions</subsetting>
         <subsetting>ownedActions</subsetting>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * StateActions that are owned by this Part.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:PartUsage" isAbstract="true" declaredName="parts" Multi1="0" Multi02="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:PartUsage" isAbstract="true" declaredName="parts" MultiLow="0" MultiHigh="*" isNonunique="true">
       <typings>Part</typings>
       <subsetting>items</subsetting>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * parts is the base feature of all part properties.&#xA;&#x9;&#x9; */"/>

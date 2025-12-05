@@ -15,9 +15,9 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.EmptySuccessionPrefix#isIsThen <em>Is Then</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.EmptySuccessionPrefix#getThenMulti0 <em>Then Multi0</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.EmptySuccessionPrefix#getThenMulti1 <em>Then Multi1</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.EmptySuccessionPrefix#getThenMulti02 <em>Then Multi02</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.EmptySuccessionPrefix#getThenMultiValue <em>Then Multi Value</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.EmptySuccessionPrefix#getThenMultiLow <em>Then Multi Low</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.EmptySuccessionPrefix#getThenMultiHigh <em>Then Multi High</em>}</li>
  * </ul>
  *
  * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getEmptySuccessionPrefix()
@@ -49,69 +49,69 @@ public interface EmptySuccessionPrefix extends EObject
   void setIsThen(boolean value);
 
   /**
-   * Returns the value of the '<em><b>Then Multi0</b></em>' attribute.
+   * Returns the value of the '<em><b>Then Multi Value</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Then Multi0</em>' attribute.
-   * @see #setThenMulti0(String)
-   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getEmptySuccessionPrefix_ThenMulti0()
+   * @return the value of the '<em>Then Multi Value</em>' attribute.
+   * @see #setThenMultiValue(String)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getEmptySuccessionPrefix_ThenMultiValue()
    * @model
    * @generated
    */
-  String getThenMulti0();
+  String getThenMultiValue();
 
   /**
-   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.EmptySuccessionPrefix#getThenMulti0 <em>Then Multi0</em>}' attribute.
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.EmptySuccessionPrefix#getThenMultiValue <em>Then Multi Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Then Multi0</em>' attribute.
-   * @see #getThenMulti0()
+   * @param value the new value of the '<em>Then Multi Value</em>' attribute.
+   * @see #getThenMultiValue()
    * @generated
    */
-  void setThenMulti0(String value);
+  void setThenMultiValue(String value);
 
   /**
-   * Returns the value of the '<em><b>Then Multi1</b></em>' attribute.
+   * Returns the value of the '<em><b>Then Multi Low</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Then Multi1</em>' attribute.
-   * @see #setThenMulti1(String)
-   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getEmptySuccessionPrefix_ThenMulti1()
+   * @return the value of the '<em>Then Multi Low</em>' attribute.
+   * @see #setThenMultiLow(String)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getEmptySuccessionPrefix_ThenMultiLow()
    * @model
    * @generated
    */
-  String getThenMulti1();
+  String getThenMultiLow();
 
   /**
-   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.EmptySuccessionPrefix#getThenMulti1 <em>Then Multi1</em>}' attribute.
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.EmptySuccessionPrefix#getThenMultiLow <em>Then Multi Low</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Then Multi1</em>' attribute.
-   * @see #getThenMulti1()
+   * @param value the new value of the '<em>Then Multi Low</em>' attribute.
+   * @see #getThenMultiLow()
    * @generated
    */
-  void setThenMulti1(String value);
+  void setThenMultiLow(String value);
 
   /**
-   * Returns the value of the '<em><b>Then Multi02</b></em>' attribute.
+   * Returns the value of the '<em><b>Then Multi High</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Then Multi02</em>' attribute.
-   * @see #setThenMulti02(String)
-   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getEmptySuccessionPrefix_ThenMulti02()
+   * @return the value of the '<em>Then Multi High</em>' attribute.
+   * @see #setThenMultiHigh(String)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getEmptySuccessionPrefix_ThenMultiHigh()
    * @model
    * @generated
    */
-  String getThenMulti02();
+  String getThenMultiHigh();
 
   /**
-   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.EmptySuccessionPrefix#getThenMulti02 <em>Then Multi02</em>}' attribute.
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.EmptySuccessionPrefix#getThenMultiHigh <em>Then Multi High</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Then Multi02</em>' attribute.
-   * @see #getThenMulti02()
+   * @param value the new value of the '<em>Then Multi High</em>' attribute.
+   * @see #getThenMultiHigh()
    * @generated
    */
-  void setThenMulti02(String value);
+  void setThenMultiHigh(String value);
 
 } // EmptySuccessionPrefix

@@ -14,8 +14,8 @@ package dut.control.sysmloc.sysMLOC;
  * </p>
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.RefPrefix#getDirection <em>Direction</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.RefPrefix#isIsReadOnly <em>Is Read Only</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.RefPrefix#isIsDerived <em>Is Derived</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.RefPrefix#isIsConstant <em>Is Constant</em>}</li>
  * </ul>
  *
  * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getRefPrefix()
@@ -50,28 +50,6 @@ public interface RefPrefix extends BasicDefinitionPrefix
   void setDirection(FeatureDirection value);
 
   /**
-   * Returns the value of the '<em><b>Is Read Only</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Is Read Only</em>' attribute.
-   * @see #setIsReadOnly(boolean)
-   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getRefPrefix_IsReadOnly()
-   * @model
-   * @generated
-   */
-  boolean isIsReadOnly();
-
-  /**
-   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.RefPrefix#isIsReadOnly <em>Is Read Only</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Is Read Only</em>' attribute.
-   * @see #isIsReadOnly()
-   * @generated
-   */
-  void setIsReadOnly(boolean value);
-
-  /**
    * Returns the value of the '<em><b>Is Derived</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -92,5 +70,27 @@ public interface RefPrefix extends BasicDefinitionPrefix
    * @generated
    */
   void setIsDerived(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Is Constant</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Is Constant</em>' attribute.
+   * @see #setIsConstant(boolean)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getRefPrefix_IsConstant()
+   * @model
+   * @generated
+   */
+  boolean isIsConstant();
+
+  /**
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.RefPrefix#isIsConstant <em>Is Constant</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Is Constant</em>' attribute.
+   * @see #isIsConstant()
+   * @generated
+   */
+  void setIsConstant(boolean value);
 
 } // RefPrefix

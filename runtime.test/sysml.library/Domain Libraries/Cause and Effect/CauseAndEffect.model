@@ -45,7 +45,7 @@
         <typings>Boolean</typings>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * Whether the causes were sufficient for all the effects to occur.&#xA;&#x9;&#x9;&#x9; * If this is false (the default), then it may be the case that some&#xA;&#x9;&#x9;&#x9; * other occurrences were also necessary for some or all of the effects&#xA;&#x9;&#x9;&#x9; * to have occurred.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="probability" Multi1="0" Multi02="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="probability" MultiLow="0" MultiHigh="1">
         <typings>Real</typings>
         <elements xsi:type="sysMLOC:Documentation" body="/* The probability that the causes will actually result in effects occurring. */"/>
       </elements>

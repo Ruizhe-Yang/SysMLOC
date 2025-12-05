@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:PartDefinition" declaredName="Camera">
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="PictureTaking" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:PerformActionUsage" MultiValue="*" declaredName="takePicture">
+      <subsetting>PictureTaking::takePicture</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="focusingSubsystem">
+      <elements xsi:type="sysMLOC:PerformActionUsage" refElement="takePicture.focus"/>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="imagingSubsystem">
+      <elements xsi:type="sysMLOC:PerformActionUsage" refElement="takePicture.shoot"/>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

@@ -67,6 +67,7 @@ import dut.control.sysmloc.sysMLOC.Documentation;
 import dut.control.sysmloc.sysMLOC.ElementFilterElement;
 import dut.control.sysmloc.sysMLOC.ElseNode;
 import dut.control.sysmloc.sysMLOC.EmptySuccessionPrefix;
+import dut.control.sysmloc.sysMLOC.EndMultiplicityRange;
 import dut.control.sysmloc.sysMLOC.EndUsagePrefix;
 import dut.control.sysmloc.sysMLOC.EntryActionNode;
 import dut.control.sysmloc.sysMLOC.EnumeratedValue;
@@ -111,6 +112,7 @@ import dut.control.sysmloc.sysMLOC.MemberPrefix;
 import dut.control.sysmloc.sysMLOC.Message;
 import dut.control.sysmloc.sysMLOC.MetadataDefinition;
 import dut.control.sysmloc.sysMLOC.MetadataUsage;
+import dut.control.sysmloc.sysMLOC.MultiplicityModifiers;
 import dut.control.sysmloc.sysMLOC.MultiplicityPart;
 import dut.control.sysmloc.sysMLOC.MultiplicityRange;
 import dut.control.sysmloc.sysMLOC.Namespace;
@@ -174,6 +176,7 @@ import dut.control.sysmloc.sysMLOC.TextualRepresentation;
 import dut.control.sysmloc.sysMLOC.ThenNode;
 import dut.control.sysmloc.sysMLOC.TransitionSuccession;
 import dut.control.sysmloc.sysMLOC.TransitionUsage;
+import dut.control.sysmloc.sysMLOC.TransitionUsageIfPart;
 import dut.control.sysmloc.sysMLOC.TriggerKind;
 import dut.control.sysmloc.sysMLOC.TriggerValuePart;
 import dut.control.sysmloc.sysMLOC.TypingFeatureTyping;
@@ -412,6 +415,7 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
       case SysMLOCPackage.USAGE_PREFIX: return createUsagePrefix();
       case SysMLOCPackage.UNEXTENDED_USAGE_PREFIX: return createUnextendedUsagePrefix();
       case SysMLOCPackage.END_USAGE_PREFIX: return createEndUsagePrefix();
+      case SysMLOCPackage.END_MULTIPLICITY_RANGE: return createEndMultiplicityRange();
       case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX: return createOccurrenceUsagePrefix();
       case SysMLOCPackage.REF_PREFIX: return createRefPrefix();
       case SysMLOCPackage.BASIC_USAGE_PREFIX: return createBasicUsagePrefix();
@@ -436,6 +440,7 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
       case SysMLOCPackage.ASSIGNMENT_NODE_DECLARATION: return createAssignmentNodeDeclaration();
       case SysMLOCPackage.IDENTIFICATION: return createIdentification();
       case SysMLOCPackage.MULTIPLICITY_PART: return createMultiplicityPart();
+      case SysMLOCPackage.MULTIPLICITY_MODIFIERS: return createMultiplicityModifiers();
       case SysMLOCPackage.FEATURE_SPECIALIZATION: return createFeatureSpecialization();
       case SysMLOCPackage.TYPING_FEATURE_TYPING: return createTypingFeatureTyping();
       case SysMLOCPackage.SUBSETTING_FEATURE_CHAIN: return createSubsettingFeatureChain();
@@ -447,6 +452,7 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
       case SysMLOCPackage.ACTION_NODE_PREFIX: return createActionNodePrefix();
       case SysMLOCPackage.CONTROL_NODE_PREFIX: return createControlNodePrefix();
       case SysMLOCPackage.PERFORMED_ACTION_PARAMETER_PART: return createPerformedActionParameterPart();
+      case SysMLOCPackage.TRANSITION_USAGE_IF_PART: return createTransitionUsageIfPart();
       case SysMLOCPackage.ACCEPT_ACTION_USAGE: return createAcceptActionUsage();
       case SysMLOCPackage.SEND_ACTION_USAGE: return createSendActionUsage();
       case SysMLOCPackage.ASSIGNMENT_ACTION_USAGE: return createAssignmentActionUsage();
@@ -2327,6 +2333,18 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
    * @generated
    */
   @Override
+  public EndMultiplicityRange createEndMultiplicityRange()
+  {
+    EndMultiplicityRangeImpl endMultiplicityRange = new EndMultiplicityRangeImpl();
+    return endMultiplicityRange;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public OccurrenceUsagePrefix createOccurrenceUsagePrefix()
   {
     OccurrenceUsagePrefixImpl occurrenceUsagePrefix = new OccurrenceUsagePrefixImpl();
@@ -2615,6 +2633,18 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
    * @generated
    */
   @Override
+  public MultiplicityModifiers createMultiplicityModifiers()
+  {
+    MultiplicityModifiersImpl multiplicityModifiers = new MultiplicityModifiersImpl();
+    return multiplicityModifiers;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public FeatureSpecialization createFeatureSpecialization()
   {
     FeatureSpecializationImpl featureSpecialization = new FeatureSpecializationImpl();
@@ -2739,6 +2769,18 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
   {
     PerformedActionParameterPartImpl performedActionParameterPart = new PerformedActionParameterPartImpl();
     return performedActionParameterPart;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TransitionUsageIfPart createTransitionUsageIfPart()
+  {
+    TransitionUsageIfPartImpl transitionUsageIfPart = new TransitionUsageIfPartImpl();
+    return transitionUsageIfPart;
   }
 
   /**

@@ -10,149 +10,149 @@
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="MeasurementReferences::CoordinateTransformation"/>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="'['">
       <superclassifiers>BaseFunctions::'['</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="elements" Multi1="1" Multi02="n" isOrdered="true">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="elements" MultiLow="1" MultiHigh="n" isOrdered="true">
         <typings>Number</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="mRef" Multi0="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="mRef" MultiValue="1">
         <typings>VectorMeasurementReference</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="quantity" Multi0="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="quantity" MultiValue="1">
         <typings>VectorQuantityValue</typings>
       </elements>
       <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="n" valuePart="mRef.flattenedSize"/>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="isZeroVectorQuantity">
       <superclassifiers>VectorFunctions::isZeroVector</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" Multi0="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" MultiValue="1">
         <typings>VectorQuantityValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" Multi0="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" MultiValue="1">
         <typings>Boolean</typings>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="isUnitVectorQuantity">
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" Multi0="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" MultiValue="1">
         <typings>VectorQuantityValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" Multi0="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" MultiValue="1">
         <typings>Boolean</typings>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:Comment" body="/* Addition and subtraction */"/>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="'+'">
       <superclassifiers>VectorFunctions::'+'</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" Multi0="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" MultiValue="1">
         <typings>VectorQuantityValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" Multi0="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" MultiValue="1">
         <typings>VectorQuantityValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" Multi0="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" MultiValue="1">
         <typings>VectorQuantityValue</typings>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="'-'">
       <superclassifiers>VectorFunctions::'-'</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" Multi0="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" MultiValue="1">
         <typings>VectorQuantityValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" Multi0="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" MultiValue="1">
         <typings>VectorQuantityValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" Multi0="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" MultiValue="1">
         <typings>VectorQuantityValue</typings>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:Comment" body="/* Multiplication and division */"/>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="scalarVectorMult">
       <superclassifiers>VectorFunctions::scalarVectorMult</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" Multi0="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" MultiValue="1">
         <typings>Number</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" Multi0="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" MultiValue="1">
         <typings>VectorQuantityValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" Multi0="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" MultiValue="1">
         <typings>VectorQuantityValue</typings>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="vectorScalarMult">
       <superclassifiers>VectorFunctions::vectorScalarMult</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" Multi0="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" MultiValue="1">
         <typings>VectorQuantityValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" Multi0="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" MultiValue="1">
         <typings>Number</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" Multi0="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" MultiValue="1">
         <typings>VectorQuantityValue</typings>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="scalarQuantityVectorMult">
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" Multi0="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" MultiValue="1">
         <typings>ScalarQuantityValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" Multi0="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" MultiValue="1">
         <typings>VectorQuantityValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" Multi0="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" MultiValue="1">
         <typings>VectorQuantityValue</typings>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="vectorScalarQuantityMult">
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" Multi0="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" MultiValue="1">
         <typings>VectorQuantityValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" Multi0="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" MultiValue="1">
         <typings>ScalarQuantityValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" Multi0="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" MultiValue="1">
         <typings>VectorQuantityValue</typings>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="vectorScalarDiv">
       <superclassifiers>VectorFunctions::vectorScalarDiv</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" Multi0="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" MultiValue="1">
         <typings>VectorQuantityValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" Multi0="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" MultiValue="1">
         <typings>Number</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" Multi0="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" MultiValue="1">
         <typings>VectorQuantityValue</typings>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="vectorScalarQuantityDiv">
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" Multi0="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" MultiValue="1">
         <typings>VectorQuantityValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" Multi0="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" MultiValue="1">
         <typings>ScalarQuantityValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" Multi0="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" MultiValue="1">
         <typings>VectorQuantityValue</typings>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="inner">
       <superclassifiers>VectorFunctions::inner</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" Multi0="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" MultiValue="1">
         <typings>VectorQuantityValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" Multi0="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" MultiValue="1">
         <typings>VectorQuantityValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" Multi0="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" MultiValue="1">
         <typings>Number</typings>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="outer">
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" Multi0="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" MultiValue="1">
         <typings>VectorQuantityValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" Multi0="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" MultiValue="1">
         <typings>VectorQuantityValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" Multi0="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" MultiValue="1">
         <typings>VectorQuantityValue</typings>
       </elements>
     </elements>
@@ -160,22 +160,22 @@
     <elements xsi:type="sysMLOC:Comment" body="/* Norm and angle */"/>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="norm">
       <superclassifiers>VectorFunctions::norm</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" Multi0="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" MultiValue="1">
         <typings>VectorQuantityValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" Multi0="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" MultiValue="1">
         <typings>Number</typings>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="angle">
       <superclassifiers>VectorFunctions::angle</superclassifiers>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" Multi0="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" MultiValue="1">
         <typings>VectorQuantityValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" Multi0="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" MultiValue="1">
         <typings>VectorQuantityValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" Multi0="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" MultiValue="1">
         <typings>Number</typings>
       </elements>
     </elements>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="ViewTest">
+    <elements xsi:type="sysMLOC:Package" declaredName="P">
+      <elements xsi:type="sysMLOC:PartUsage" visibility="public" declaredName="p1"/>
+      <elements xsi:type="sysMLOC:PartUsage" visibility="private" declaredName="p2"/>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="S"/>
+    <elements xsi:type="sysMLOC:ConcernDefinition" declaredName="C">
+      <elements xsi:type="sysMLOC:SubjectUsage"/>
+      <elements xsi:type="sysMLOC:StakeholderUsage" declaredName="s">
+        <typings>S</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:ConcernUsage" declaredName="c">
+      <typings>C</typings>
+      <elements xsi:type="sysMLOC:SubjectUsage"/>
+      <elements xsi:type="sysMLOC:StakeholderUsage" declaredName="s1"/>
+    </elements>
+    <elements xsi:type="sysMLOC:ViewpointDefinition" declaredName="VP">
+      <elements xsi:type="sysMLOC:FramedConcernUsage" refElement="c"/>
+    </elements>
+    <elements xsi:type="sysMLOC:RenderingDefinition" declaredName="R"/>
+    <elements xsi:type="sysMLOC:RenderingUsage" declaredName="r">
+      <typings>R</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:ViewDefinition" declaredName="V">
+      <elements xsi:type="sysMLOC:ViewpointUsage" declaredName="vp">
+        <typings>VP</typings>
+        <elements xsi:type="sysMLOC:FramedConcernUsage" declaredName="c1"/>
+        <elements xsi:type="sysMLOC:ConcernUsage" declaredName="c2"/>
+      </elements>
+      <elements xsi:type="sysMLOC:ViewRenderingUsage" declaredName="r1" MultiLow="0" MultiHigh="1">
+        <typings>R</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:ViewUsage" declaredName="v" MultiLow="0" MultiHigh="*">
+        <typings>V</typings>
+        <elements xsi:type="sysMLOC:ExposeElement" declaredName="P" isNamespace="true"/>
+        <elements xsi:type="sysMLOC:ViewRenderingUsage" refElement="r"/>
+        <elements xsi:type="sysMLOC:RenderingUsage" declaredName="r2"/>
+        <elements xsi:type="sysMLOC:AliasElement" memberName="vp1" memberElement="p1"/>
+        <elements xsi:type="sysMLOC:CodeAnnotation" body="// Note: &quot;expose&quot; imports all.&#xA;"/>
+        <elements xsi:type="sysMLOC:AliasElement" memberName="vp2" memberElement="p2"/>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

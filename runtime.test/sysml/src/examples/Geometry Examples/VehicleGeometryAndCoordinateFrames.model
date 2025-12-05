@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="VehicleGeometryAndCoordinateFrames">
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="TrigFunctions" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ISQ" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="SI" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Time" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ShapeItems" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="SpatialItems" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="MeasurementReferences::CoordinateFrame"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="MeasurementReferences::TranslationRotationSequence"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="MeasurementReferences::Translation"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="MeasurementReferences::Rotation"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Collections::Array"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues::Boolean"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues::Real"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues::Natural"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ControlFunctions::forAll"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle">
+      <superclassifiers>SpatialItem</superclassifiers>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Chassis">
+      <superclassifiers>SpatialItem</superclassifiers>
+      <elements xsi:type="sysMLOC:ItemUsage" valuePart="new Box(4800 [mm], 1840 [mm], 1350 [mm])">
+        <redefinitions>shape</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Wheel">
+      <superclassifiers>SpatialItem</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Generic wheel with lugbolts&#xA;&#x9;&#x9; * &#xA;&#x9;&#x9; * The radius is estimated for a 22 inch hub plus 110 mm tire height.&#xA;&#x9;&#x9; * The wheel width is equal to the cylinder height.&#xA;&#x9;&#x9; * The wheel has 5 lugbolts that are evenly distributed along a circle centered at the wheel's center.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:ItemUsage">
+        <typings>Cylinder</typings>
+        <redefinitions>shape</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="22/2*25.4 + 110 [mm]">
+          <redefinitions>radius</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="220 [mm]">
+          <redefinitions>height</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="wcf" declaredName="wheelCoordinateFrame">
+        <typings>CoordinateFrame</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="numberOfBolts" valuePart="5">
+        <typings>Natural</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="lugBolts" MultiLow="1" MultiHigh="numberOfBolts">
+        <typings>LugBolt</typings>
+        <subsetting>subSpatialParts</subsetting>
+      </elements>
+      <elements xsi:type="sysMLOC:Comment" body="/* &#xA;&#x9;&#x9; * As an example of a more involved placement of composite parts, constrain the positions of the coordinate frame origins &#xA;&#x9;&#x9; * of the lugbolts to a circle with radius lbpr distributed evenly over 360&#xb0;.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="lbpr" declaredName="lugBoltPlacementRadius" isDefault="true" valuePart="60 [mm]">
+        <redefinitions>radius</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lugBoltDistributionAngle" valuePart="360/numberOfBolts ['&#xb0;']">
+        <redefinitions>planeAngle</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lbda" valuePart="lugBoltDistributionAngle.num * (pi/180)">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:CodeAnnotation" body="// lugBoltDistributionAngle in radian&#xA;"/>
+      <elements xsi:type="sysMLOC:AssertConstraintUsage">
+        <resultExpressionParameter resultExpression="(1..numberOfBolts)->forAll { in i : Natural; private attribute lbcf = lugBolts#(i).coordinateFrame; private attribute trs : TranslationRotationSequence { :>> source = wcf; :>> target = lbcf; :>> elements = new Translation((lbpr*cos((i-1)*lbda), lbpr*sin((i-1)*lbda), -8)[wcf]); } lbcf.transformation == trs }"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="LugBolt">
+      <superclassifiers>SpatialItem</superclassifiers>
+      <elements xsi:type="sysMLOC:ItemUsage">
+        <typings>Cylinder</typings>
+        <redefinitions>shape</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="14 [mm]">
+          <redefinitions>radius</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="40 [mm]">
+          <redefinitions>height</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle">
+      <typings>Vehicle</typings>
+      <typings>SpatialItem</typings>
+      <elements xsi:type="sysMLOC:Comment" body="/* &#xA;&#x9;&#x9; * Vehicle frame origin at center of bottom plate of chassis&#xA;&#x9;&#x9; * with +Z upwards and +X in the forward (front) direction&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="datum">
+        <redefinitions>coordinateFrame</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(mm, mm, mm)">
+          <redefinitions>mRefs</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="chassis" MultiValue="1">
+        <typings>Chassis</typings>
+        <subsetting>componentParts</subsetting>
+        <elements xsi:type="sysMLOC:AttributeUsage">
+          <redefinitions>coordinateFrame</redefinitions>
+          <elements xsi:type="sysMLOC:AttributeUsage">
+            <typings>TranslationRotationSequence</typings>
+            <redefinitions>transformation</redefinitions>
+            <elements xsi:type="sysMLOC:AttributeUsage" valuePart="datum">
+              <redefinitions>source</redefinitions>
+            </elements>
+            <elements xsi:type="sysMLOC:AttributeUsage" valuePart="new Translation((-(shape as Box).length/2, -(shape as Box).width/2, 0)[datum])">
+              <redefinitions>elements</redefinitions>
+            </elements>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="plusXAxis">
+        <typings>Array</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="3">
+          <redefinitions>dimensions</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" MultiValue="3" valuePart="(1, 0, 0)">
+          <typings>Real</typings>
+          <redefinitions>elements</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="frontWheelXShift" valuePart="1670">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="rearWheelXShift" valuePart="-1820">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="wheelYShift" valuePart="720">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="leftFrontWheel" MultiValue="1">
+        <typings>Wheel</typings>
+        <subsetting>componentParts</subsetting>
+        <elements xsi:type="sysMLOC:AttributeUsage">
+          <redefinitions>coordinateFrame</redefinitions>
+          <elements xsi:type="sysMLOC:AttributeUsage">
+            <typings>TranslationRotationSequence</typings>
+            <redefinitions>transformation</redefinitions>
+            <elements xsi:type="sysMLOC:AttributeUsage" valuePart="datum">
+              <redefinitions>source</redefinitions>
+            </elements>
+            <elements xsi:type="sysMLOC:AttributeUsage" valuePart="(new Translation((frontWheelXShift, wheelYShift, 80)[datum]), new Rotation(plusXAxis[datum], -90['&#xb0;']))">
+              <redefinitions>elements</redefinitions>
+            </elements>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="rightFrontWheel" MultiValue="1">
+        <typings>Wheel</typings>
+        <subsetting>componentParts</subsetting>
+        <elements xsi:type="sysMLOC:AttributeUsage">
+          <redefinitions>coordinateFrame</redefinitions>
+          <elements xsi:type="sysMLOC:AttributeUsage">
+            <typings>TranslationRotationSequence</typings>
+            <redefinitions>transformation</redefinitions>
+            <elements xsi:type="sysMLOC:AttributeUsage" valuePart="datum">
+              <redefinitions>source</redefinitions>
+            </elements>
+            <elements xsi:type="sysMLOC:AttributeUsage" valuePart="(new Translation((frontWheelXShift, -wheelYShift, 80)[datum]), new Rotation((1, 0, 0)[datum], 90['&#xb0;']))">
+              <redefinitions>elements</redefinitions>
+            </elements>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="leftRearWheel" MultiValue="1">
+        <typings>Wheel</typings>
+        <subsetting>componentParts</subsetting>
+        <elements xsi:type="sysMLOC:AttributeUsage">
+          <redefinitions>coordinateFrame</redefinitions>
+          <elements xsi:type="sysMLOC:AttributeUsage">
+            <typings>TranslationRotationSequence</typings>
+            <redefinitions>transformation</redefinitions>
+            <elements xsi:type="sysMLOC:AttributeUsage" valuePart="datum">
+              <redefinitions>source</redefinitions>
+            </elements>
+            <elements xsi:type="sysMLOC:AttributeUsage" valuePart="(new Translation((rearWheelXShift, wheelYShift, 80)[datum]), new Rotation((1, 0, 0)[datum], 90['&#xb0;']))">
+              <redefinitions>elements</redefinitions>
+            </elements>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="rightRearWheel" MultiValue="1">
+        <typings>Wheel</typings>
+        <subsetting>componentParts</subsetting>
+        <elements xsi:type="sysMLOC:AttributeUsage">
+          <redefinitions>coordinateFrame</redefinitions>
+          <elements xsi:type="sysMLOC:AttributeUsage">
+            <typings>TranslationRotationSequence</typings>
+            <redefinitions>transformation</redefinitions>
+            <elements xsi:type="sysMLOC:AttributeUsage" valuePart="datum">
+              <redefinitions>source</redefinitions>
+            </elements>
+            <elements xsi:type="sysMLOC:AttributeUsage" valuePart="(new Translation((rearWheelXShift, -wheelYShift, 80)[datum]), new Rotation((-1, 0, 0)[datum], 90['&#xb0;']))">
+              <redefinitions>elements</redefinitions>
+            </elements>
+          </elements>
+        </elements>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

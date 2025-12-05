@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface SubjectUsage extends CaseBodyElement, RequirementNodeElements, MemberPrefix, UsageExtensionKeyword, PrefixMetadata, Usage, UsageDeclaration, FeatureDeclaration, Identification, FeatureSpecializationPart, FeatureSpecialization, TypingFeatureTyping, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, MultiplicityPart, MultiplicityRange, FeatureValue
+public interface SubjectUsage extends CaseBodyElement, RequirementNodeElements, MemberPrefix, UsageExtensionKeyword, PrefixMetadata, Usage, UsageDeclaration, FeatureDeclaration, Identification, FeatureSpecializationPart, FeatureSpecialization, TypingFeatureTyping, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, MultiplicityPart, MultiplicityRange, MultiplicityModifiers, FeatureValue
 {
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.

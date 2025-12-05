@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="AnalysisIndividualExample">
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Quantities" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ISQ" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="USCustomaryUnits" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:Package" declaredName="VehicleQuantities">
+      <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="MeasurementReferences" isNamespace="true"/>
+      <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="DistancePerVolumeUnit">
+        <superclassifiers>DerivedUnit</superclassifiers>
+        <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="distancePF" MultiValue="1">
+          <typings>QuantityPowerFactor</typings>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+            <redefinitions>quantity</redefinitions>
+          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+            <redefinitions>exponent</redefinitions>
+          </elements>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="volumePF" MultiValue="1">
+          <typings>QuantityPowerFactor</typings>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+            <redefinitions>quantity</redefinitions>
+          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-3">
+            <redefinitions>exponent</redefinitions>
+          </elements>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage">
+          <redefinitions>quantityDimension</redefinitions>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(distancePF, volumePF)">
+            <redefinitions>quantityPowerFactors</redefinitions>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="DistancePerVolumeValue">
+        <superclassifiers>ScalarQuantityValue</superclassifiers>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <typings>Real</typings>
+          <redefinitions>num</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <typings>DistancePerVolumeUnit</typings>
+          <redefinitions>mRef</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="gallon" valuePart="231.0 * 'in' ** 3">
+        <typings>VolumeUnit</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mpg" valuePart="'mi' / gallon">
+        <typings>DistancePerVolumeUnit</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="hp" valuePart="745.7[SI::W]">
+        <typings>PowerUnit</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Package" declaredName="VehicleModel">
+      <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="VehicleQuantities" isNamespace="true"/>
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle">
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="power">
+          <subsetting>ISQ::power</subsetting>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="Engine">
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="peakPower">
+          <subsetting>ISQ::power</subsetting>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="fuelEfficiency">
+          <typings>Real</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicle_c1">
+        <typings>Vehicle</typings>
+        <elements xsi:type="sysMLOC:AttributeUsage" valuePart="engine.peakPower">
+          <redefinitions>power</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="engine" MultiValue="1">
+          <typings>Engine</typings>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Package" declaredName="FuelEconomyAnalysisModel">
+      <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="VehicleModel" isNamespace="true"/>
+      <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="SequenceFunctions::size"/>
+      <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="SampledFunctions::SampledFunction"/>
+      <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="SampledFunctions::SamplePair"/>
+      <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ControlFunctions::forAll"/>
+      <elements xsi:type="sysMLOC:ActionDefinition" declaredName="FuelConsumption">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="power" MultiValue="*">
+          <typings>PowerValue</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="fuelEconomy">
+          <typings>DistancePerVolumeValue</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AnalysisCaseDefinition" declaredName="FuelEconomyAnalysis">
+        <elements xsi:type="sysMLOC:SubjectUsage" declaredName="vehicle">
+          <typings>Vehicle</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:ActionUsage" declaredName="fuelConsumption">
+          <typings>FuelConsumption</typings>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="power" valuePart="vehicle.power"/>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" declaredName="fuelEconomy">
+            <typings>DistancePerVolumeValue</typings>
+          </elements>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="calculatedFuelEconomy" valuePart="fuelConsumption.fuelEconomy">
+          <typings>DistancePerVolumeValue</typings>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Package" declaredName="IndividualAnalysisModel">
+      <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="VehicleModel" isNamespace="true"/>
+      <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="FuelEconomyAnalysisModel" isNamespace="true"/>
+      <elements xsi:type="sysMLOC:PartDefinition" isIndividual="true" declaredName="Vehicle_1">
+        <superclassifiers>Vehicle</superclassifiers>
+      </elements>
+      <elements xsi:type="sysMLOC:PartDefinition" isIndividual="true" declaredName="Engine_1">
+        <superclassifiers>Engine</superclassifiers>
+      </elements>
+      <elements xsi:type="sysMLOC:AnalysisCaseDefinition" isIndividual="true" declaredName="FuelEconomyAnalysis_1">
+        <superclassifiers>FuelEconomyAnalysis</superclassifiers>
+      </elements>
+      <elements xsi:type="sysMLOC:ActionDefinition" isIndividual="true" declaredName="FuelConsumption_1">
+        <superclassifiers>FuelConsumption</superclassifiers>
+      </elements>
+      <elements xsi:type="sysMLOC:AnalysisCaseUsage" isIndividual="true" declaredName="fuelEconomyAnalysis_1">
+        <typings>FuelEconomyAnalysis_1</typings>
+        <elements xsi:type="sysMLOC:SubjectUsage" declaredName="vehicle">
+          <typings>Vehicle_1</typings>
+          <subsetting>vehicle_c1</subsetting>
+          <elements xsi:type="sysMLOC:PartUsage" isIndividual="true">
+            <typings>Engine_1</typings>
+            <redefinitions>engine</redefinitions>
+            <elements xsi:type="sysMLOC:AttributeUsage" valuePart="200[hp]">
+              <redefinitions>peakPower</redefinitions>
+            </elements>
+            <elements xsi:type="sysMLOC:AttributeUsage" valuePart="0.4">
+              <redefinitions>fuelEfficiency</redefinitions>
+            </elements>
+          </elements>
+        </elements>
+        <elements xsi:type="sysMLOC:ActionUsage" isIndividual="true">
+          <typings>FuelEconomyAnalysis_1</typings>
+          <redefinitions>fuelConsumption</redefinitions>
+          <elements xsi:type="sysMLOC:PortionUsage" portionKind="snapshot">
+            <subsetting>fuelConsumption</subsetting>
+            <redefinitions>done</redefinitions>
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" valuePart="35[mph]">
+              <redefinitions>fuelEconomy</redefinitions>
+            </elements>
+          </elements>
+        </elements>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

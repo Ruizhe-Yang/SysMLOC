@@ -66,6 +66,7 @@ import dut.control.sysmloc.sysMLOC.Documentation;
 import dut.control.sysmloc.sysMLOC.ElementFilterElement;
 import dut.control.sysmloc.sysMLOC.ElseNode;
 import dut.control.sysmloc.sysMLOC.EmptySuccessionPrefix;
+import dut.control.sysmloc.sysMLOC.EndMultiplicityRange;
 import dut.control.sysmloc.sysMLOC.EndUsagePrefix;
 import dut.control.sysmloc.sysMLOC.EntryActionNode;
 import dut.control.sysmloc.sysMLOC.EnumeratedValue;
@@ -109,6 +110,7 @@ import dut.control.sysmloc.sysMLOC.MemberPrefix;
 import dut.control.sysmloc.sysMLOC.Message;
 import dut.control.sysmloc.sysMLOC.MetadataDefinition;
 import dut.control.sysmloc.sysMLOC.MetadataUsage;
+import dut.control.sysmloc.sysMLOC.MultiplicityModifiers;
 import dut.control.sysmloc.sysMLOC.MultiplicityPart;
 import dut.control.sysmloc.sysMLOC.MultiplicityRange;
 import dut.control.sysmloc.sysMLOC.Namespace;
@@ -169,6 +171,7 @@ import dut.control.sysmloc.sysMLOC.TextualRepresentation;
 import dut.control.sysmloc.sysMLOC.ThenNode;
 import dut.control.sysmloc.sysMLOC.TransitionSuccession;
 import dut.control.sysmloc.sysMLOC.TransitionUsage;
+import dut.control.sysmloc.sysMLOC.TransitionUsageIfPart;
 import dut.control.sysmloc.sysMLOC.TriggerValuePart;
 import dut.control.sysmloc.sysMLOC.TypingFeatureTyping;
 import dut.control.sysmloc.sysMLOC.UnextendedUsagePrefix;
@@ -1019,6 +1022,11 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
         return createEndUsagePrefixAdapter();
       }
       @Override
+      public Adapter caseEndMultiplicityRange(EndMultiplicityRange object)
+      {
+        return createEndMultiplicityRangeAdapter();
+      }
+      @Override
       public Adapter caseOccurrenceUsagePrefix(OccurrenceUsagePrefix object)
       {
         return createOccurrenceUsagePrefixAdapter();
@@ -1139,6 +1147,11 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
         return createMultiplicityPartAdapter();
       }
       @Override
+      public Adapter caseMultiplicityModifiers(MultiplicityModifiers object)
+      {
+        return createMultiplicityModifiersAdapter();
+      }
+      @Override
       public Adapter caseFeatureSpecialization(FeatureSpecialization object)
       {
         return createFeatureSpecializationAdapter();
@@ -1192,6 +1205,11 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
       public Adapter casePerformedActionParameterPart(PerformedActionParameterPart object)
       {
         return createPerformedActionParameterPartAdapter();
+      }
+      @Override
+      public Adapter caseTransitionUsageIfPart(TransitionUsageIfPart object)
+      {
+        return createTransitionUsageIfPartAdapter();
       }
       @Override
       public Adapter caseAcceptActionUsage(AcceptActionUsage object)
@@ -3496,6 +3514,21 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.EndMultiplicityRange <em>End Multiplicity Range</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.sysmloc.sysMLOC.EndMultiplicityRange
+   * @generated
+   */
+  public Adapter createEndMultiplicityRangeAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.OccurrenceUsagePrefix <em>Occurrence Usage Prefix</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -3856,6 +3889,21 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.MultiplicityModifiers <em>Multiplicity Modifiers</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.sysmloc.sysMLOC.MultiplicityModifiers
+   * @generated
+   */
+  public Adapter createMultiplicityModifiersAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.FeatureSpecialization <em>Feature Specialization</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -4016,6 +4064,21 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createPerformedActionParameterPartAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.TransitionUsageIfPart <em>Transition Usage If Part</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.sysmloc.sysMLOC.TransitionUsageIfPart
+   * @generated
+   */
+  public Adapter createTransitionUsageIfPartAdapter()
   {
     return null;
   }

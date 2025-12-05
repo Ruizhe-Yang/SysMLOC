@@ -19,7 +19,7 @@
       <superclassifiers>Action</superclassifiers>
       <superclassifiers>Link</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * MessageAction is the most general class of actions that represent&#xA;         * interactions between linked things. It is the base type of all&#xA;         * FlowDefinitions.&#xA;         */"/>
-      <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="payload" Multi1="0" Multi02="*">
+      <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="payload" MultiLow="0" MultiHigh="*">
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         &#x9; * A payload that may be transferred during the interaction.&#xA;         &#x9; */"/>
       </elements>
     </elements>
@@ -32,35 +32,35 @@
         <redefinitions>Transfer::payload</redefinitions>
       </elements>
       <elements xsi:type="sysMLOC:ActionUsage" visibility="private" isReference="true" declaredName="thisConnection" valuePart="self"/>
-      <elements xsi:type="sysMLOC:EventOccurrenceUsage" direction="in" Multi0="1" declaredName="sourceEvent" isDefault="true" valuePart="thisConnection.start">
+      <elements xsi:type="sysMLOC:EventOccurrenceUsage" direction="in" MultiValue="1" declaredName="sourceEvent" isDefault="true" valuePart="thisConnection.start">
         <elements xsi:type="sysMLOC:Documentation" body="/* &#xA;             * An occurrence happening during the source of this message&#xA;             * that is either the start of the mssage or happens before it.&#xA;             */"/>
       </elements>
-      <elements xsi:type="sysMLOC:EventOccurrenceUsage" direction="in" Multi0="1" declaredName="targetEvent" isDefault="true" valuePart="thisConnection.done">
+      <elements xsi:type="sysMLOC:EventOccurrenceUsage" direction="in" MultiValue="1" declaredName="targetEvent" isDefault="true" valuePart="thisConnection.done">
         <elements xsi:type="sysMLOC:Documentation" body="/* &#xA;             * An occurrence happening during the target of this message&#xA;             * that is either the end of the message or happens after it.&#xA;             */"/>
       </elements>
       <elements xsi:type="sysMLOC:ConnectionUsage">
         <typings>HappensDuring</typings>
         <connectorPart refElement="sourceEvent"/>
-        <connectorPart Multi0="1" refElement="source"/>
+        <connectorPart MultiValue="1" refElement="source"/>
       </elements>
       <elements xsi:type="sysMLOC:ConnectionUsage">
         <typings>HappensDuring</typings>
         <connectorPart refElement="targetEvent"/>
-        <connectorPart Multi0="1" refElement="target"/>
+        <connectorPart MultiValue="1" refElement="target"/>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="seBeforeNum" Multi0="1" valuePart="if sourceEvent==thisConnection.start ? 0 else 1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="seBeforeNum" MultiValue="1" valuePart="if sourceEvent==thisConnection.start ? 0 else 1">
         <typings>Natural</typings>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="teAfterNum" Multi0="1" valuePart="if targetEvent==thisConnection.done ? 0 else 1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="teAfterNum" MultiValue="1" valuePart="if targetEvent==thisConnection.done ? 0 else 1">
         <typings>Natural</typings>
       </elements>
-      <elements xsi:type="sysMLOC:SuccessionAsUsage" Multi0="seBeforeNum">
-        <connectorPart Multi1="0" Multi02="1" refElement="sourceEvent"/>
-        <connectorPart Multi1="0" Multi02="1" refElement="self"/>
+      <elements xsi:type="sysMLOC:SuccessionAsUsage" MultiValue="seBeforeNum">
+        <connectorPart MultiLow="0" MultiHigh="1" refElement="sourceEvent"/>
+        <connectorPart MultiLow="0" MultiHigh="1" refElement="self"/>
       </elements>
-      <elements xsi:type="sysMLOC:SuccessionAsUsage" Multi0="teAfterNum">
-        <connectorPart Multi1="0" Multi02="1" refElement="self"/>
-        <connectorPart Multi1="0" Multi02="1" refElement="targetEvent"/>
+      <elements xsi:type="sysMLOC:SuccessionAsUsage" MultiValue="teAfterNum">
+        <connectorPart MultiLow="0" MultiHigh="1" refElement="self"/>
+        <connectorPart MultiLow="0" MultiHigh="1" refElement="targetEvent"/>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:FlowDefinition" isAbstract="true" declaredName="Flow">
@@ -98,13 +98,13 @@
         <redefinitions>FlowTransferBefore::target</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:Message" isAbstract="true" declaredName="messages" Multi1="0" Multi02="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:Message" isAbstract="true" declaredName="messages" MultiLow="0" MultiHigh="*" isNonunique="true">
       <typings>Message</typings>
       <subsetting>transfers</subsetting>
       <subsetting>actions</subsetting>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * messages is the base feature of all FlowUsages.&#xA;         */"/>
     </elements>
-    <elements xsi:type="sysMLOC:FlowUsage" isAbstract="true" declaredName="flows" Multi1="0" Multi02="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:FlowUsage" isAbstract="true" declaredName="flows" MultiLow="0" MultiHigh="*" isNonunique="true">
       <typings>Flow</typings>
       <subsetting>messages</subsetting>
       <subsetting>flowTransfers</subsetting>
@@ -122,7 +122,7 @@
         <redefinitions>flowTransfers::target</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:FlowUsage" isAbstract="true" declaredName="successionFlows" Multi1="0" Multi02="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:FlowUsage" isAbstract="true" declaredName="successionFlows" MultiLow="0" MultiHigh="*" isNonunique="true">
       <typings>SuccessionFlow</typings>
       <subsetting>flows</subsetting>
       <subsetting>flowTransfersBefore</subsetting>

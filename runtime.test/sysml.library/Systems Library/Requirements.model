@@ -15,12 +15,12 @@
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Attributes::AttributeValue"/>
     <elements xsi:type="sysMLOC:ConstraintDefinition" visibility="private" isAbstract="true" declaredName="RequirementConstraintCheck">
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * RequirementConstraintCheck is the base ConstraintCheck for RequirementCheck, defining the&#xA;&#x9;&#x9; * separate assumptions and required constraints such that, if all the assumptions are true,&#xA;&#x9;&#x9; * then all the required constraints must be true.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:ConstraintUsage" declaredName="assumptions" Multi1="0" Multi02="*">
+      <elements xsi:type="sysMLOC:ConstraintUsage" declaredName="assumptions" MultiLow="0" MultiHigh="*">
         <subsetting>constraintChecks</subsetting>
         <subsetting>subperformances</subsetting>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * Assumptions that must hold for the required constraints to apply.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
-      <elements xsi:type="sysMLOC:ConstraintUsage" declaredName="constraints" Multi1="0" Multi02="*">
+      <elements xsi:type="sysMLOC:ConstraintUsage" declaredName="constraints" MultiLow="0" MultiHigh="*">
         <subsetting>constraintChecks</subsetting>
         <subsetting>subperformances</subsetting>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The required constraints that are to be checked.&#xA;&#x9;&#x9;&#x9; */"/>
@@ -36,15 +36,15 @@
         <typings>RequirementCheck</typings>
         <redefinitions>self</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:SubjectUsage" declaredName="subj" Multi0="1">
+      <elements xsi:type="sysMLOC:SubjectUsage" declaredName="subj" MultiValue="1">
         <typings>Anything</typings>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The entity that is being checked for satisfaction of the required constraints.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
-      <elements xsi:type="sysMLOC:PartUsage" isReference="true" declaredName="actors" Multi1="0" Multi02="*">
+      <elements xsi:type="sysMLOC:PartUsage" isReference="true" declaredName="actors" MultiLow="0" MultiHigh="*">
         <typings>Part</typings>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The Parts that fill the role of actors for this RequirementCheck.&#xA;&#x9;&#x9;&#x9; * (Note: This is not itself an actor parameter, because specific actor&#xA;&#x9;&#x9;&#x9; * parameters will be added for specific RequirementChecks.)&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
-      <elements xsi:type="sysMLOC:PartUsage" isReference="true" declaredName="stakeholders" Multi1="0" Multi02="*">
+      <elements xsi:type="sysMLOC:PartUsage" isReference="true" declaredName="stakeholders" MultiLow="0" MultiHigh="*">
         <typings>Part</typings>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The Parts that represent stakeholders interested in the concern being checked.&#xA;&#x9;&#x9;&#x9; * (Note: This is not itself a stakeholder parameter, because specific stakeholder&#xA;&#x9;&#x9;&#x9; * parameters will be added for specific RequirementChecks.)&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
@@ -55,12 +55,12 @@
       <elements xsi:type="sysMLOC:ConstraintUsage" declaredName="constraints">
         <redefinitions>RequirementConstraintCheck::constraints</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:RequirementUsage" isAbstract="true" declaredName="subrequirements" Multi1="0" Multi02="*">
+      <elements xsi:type="sysMLOC:RequirementUsage" isAbstract="true" declaredName="subrequirements" MultiLow="0" MultiHigh="*">
         <subsetting>requirementChecks</subsetting>
         <subsetting>constraints</subsetting>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * Nested requirements, which are also required constraints.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
-      <elements xsi:type="sysMLOC:ConcernUsage" isAbstract="true" declaredName="concerns" Multi1="0" Multi02="*">
+      <elements xsi:type="sysMLOC:ConcernUsage" isAbstract="true" declaredName="concerns" MultiLow="0" MultiHigh="*">
         <subsetting>concernChecks</subsetting>
         <subsetting>subrequirements</subsetting>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The checks of any concerns being addressed (as required constraints).&#xA;&#x9;&#x9;&#x9; */"/>
@@ -109,7 +109,7 @@
         <redefinitions>self</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:RequirementUsage" isAbstract="true" declaredName="requirementChecks" Multi1="0" Multi02="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:RequirementUsage" isAbstract="true" declaredName="requirementChecks" MultiLow="0" MultiHigh="*" isNonunique="true">
       <typings>RequirementCheck</typings>
       <subsetting>constraintChecks</subsetting>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * requirementChecks is the base feature of all requirement usages.&#xA;&#x9;&#x9; */"/>
@@ -119,13 +119,13 @@
       <subsetting>assertedConstraintChecks</subsetting>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * satisfiedRequirementChecks is the subset of requirementChecks for Requirements asserted to be satisfied.&#xA;&#x9;&#x9; */"/>
     </elements>
-    <elements xsi:type="sysMLOC:RequirementUsage" isAbstract="true" declaredName="notSatisfiedRequirementChecks" Multi1="0" Multi02="*">
+    <elements xsi:type="sysMLOC:RequirementUsage" isAbstract="true" declaredName="notSatisfiedRequirementChecks" MultiLow="0" MultiHigh="*">
       <typings>RequirementCheck</typings>
       <subsetting>requirementChecks</subsetting>
       <subsetting>negatedConstraintChecks</subsetting>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * notSatisfiedRequirementChecks is the subset of requirementChecks for Requirements asserted to be not satisfied.&#xA;&#x9;&#x9; */"/>
     </elements>
-    <elements xsi:type="sysMLOC:ConcernUsage" isAbstract="true" declaredName="concernChecks" Multi1="0" Multi02="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:ConcernUsage" isAbstract="true" declaredName="concernChecks" MultiLow="0" MultiHigh="*" isNonunique="true">
       <typings>ConcernCheck</typings>
       <subsetting>requirementChecks</subsetting>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * concernChecks is the base feature of all ConcernUsages.&#xA;&#x9;&#x9; */"/>

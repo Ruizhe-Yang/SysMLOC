@@ -109,10 +109,8 @@ RelationshipBodyElement:
 	| CodeAnnotation
 ;
 
-
 // TODO --------------------------------- Abstract Level ---------------------------------//
 // Annotating
-
 AnnotatingElement:
 	Comment
 	| Documentation
@@ -121,7 +119,6 @@ AnnotatingElement:
 ;
 
 // Definitions
-
 DefinitionElements:
 	Package
 	| LibraryPackage
@@ -704,12 +701,13 @@ TransitionUsage:
 		( UsageDeclaration? 'first' )? 
 		( transitionSourceElement=FeatureChainName)?
 		('accept' AcceptParameterPart)?
-		('if' conditionalExpression=Expression)?
+//		('if' conditionalExpression=Expression)?
+		TransitionUsageIfPart?
 		('do' PerformedActionParameterPart ( '{' elements+=ActionBodyElement* '}' )?)?
 	|	'accept' AcceptParameterPart
-		('if' conditionalExpression=Expression)?
+		TransitionUsageIfPart?
 		('do' PerformedActionParameterPart ( '{' elements+=ActionBodyElement* '}' )?)?
-	| 	'if' conditionalExpression=Expression
+	| 	TransitionUsageIfPart
 		('do' PerformedActionParameterPart ( '{' elements+=ActionBodyElement* '}' )?)?
 	)?
 	'then' TransitionSuccession
@@ -949,9 +947,10 @@ SendNode:
 	OccurrenceUsagePrefix
 	ActionNodeUsageDeclaration?
 	'send'
-	sendNodeParameter?=Expression
-	('via' viaNodeParameter=Expression)?
-	('to' toNodeParameter=Expression)?
+// 	(sendNodeParameter=Expression)?
+	sendNodeParameter=Expression
+	( 'via' viaNodeParameter=Expression )?
+	( 'to' toNodeParameter=Expression )?
 	( ';' | '{' (elements+=ActionBodyElement)* '}' )
 ;
 
@@ -1017,7 +1016,7 @@ TerminateNode:
 	OccurrenceUsagePrefix
 	ActionNodeUsageDeclaration?
 	'terminate'
-	NodeParameter?=Expression
+	NodeParameter=Expression
 	( ';' | '{' (elements+=ActionBodyElement)* '}' )
 ;
 
@@ -1149,7 +1148,7 @@ ForVariableParameter:
 
 PayloadParameter:
 	( PayloadFeature | Identification? PayloadFeatureSpecializationPart? TriggerValuePart)
-	('via' viaNodeParameter=Expression)?
+	( isVia?='via' viaNodeParameter=Expression)?
 ;
 
 ConnectorEnd:
@@ -1163,6 +1162,10 @@ PerformedActionUsage:
 	| {AcceptActionUsage} AcceptNodeDeclaration
 	| {SendActionUsage} SendNodeDeclaration
 	| {AssignmentActionUsage} AssignmentNodeDeclaration
+//	PerformActionUsage
+//	| AcceptNode
+//	| SendNode
+//	| AssignmentNode
 ;
 
 ItemFeatureParameter:
@@ -1200,12 +1203,12 @@ fragment DefinitionExtensionKeyword:
 fragment EmptySuccessionPrefix:
 	( isThen ?= 'then' )?
 //	( '[' ThenMultiplicity += MultiplicityExpression ']' | '[' ThenMultiplicity += MultiplicityExpression '..' ThenMultiplicity += MultiplicityExpression ']')?
-	('[' ThenMulti0 = MultiplicityExpression ']' | '[' ThenMulti1 = MultiplicityExpression '..' ThenMulti02 = MultiplicityExpression ']')?
+	('[' ThenMultiValue = MultiplicityExpression ']' | '[' ThenMultiLow = MultiplicityExpression '..' ThenMultiHigh = MultiplicityExpression ']')?
 ;
 
 fragment MultiplicityRange:
 //	'[' Multiplicity += MultiplicityExpression ']' | '[' Multiplicity += MultiplicityExpression '..' Multiplicity += MultiplicityExpression ']'
-	'[' Multi0 = MultiplicityExpression ']' | '[' Multi1 = MultiplicityExpression '..' Multi02 = MultiplicityExpression ']'
+	'[' MultiValue = MultiplicityExpression ']' | '[' MultiLow = MultiplicityExpression '..' MultiHigh = MultiplicityExpression ']'
 ;
 
 fragment ValuePart:
@@ -1249,23 +1252,28 @@ fragment UnextendedUsagePrefix:
 fragment EndUsagePrefix:
 	isEnd ?= 'end' 
 //	( isCross?='[*]' )?
-//	( ownedRelationship += OwnedCrossFeatureMember )?
+//	( crossEndUsage += CrossEndUsage )?
+	EndMultiplicityRange?
+;
+
+fragment EndMultiplicityRange:
+	'[' EndMultiValue = MultiplicityExpression ']' | '[' EndMultiLow = MultiplicityExpression '..' EndMultiHigh = MultiplicityExpression ']'
 ;
 
 fragment OccurrenceUsagePrefix:
-	( isEnd ?= 'end'
+	( EndUsagePrefix
 	| BasicUsagePrefix
 	  ( isIndividual ?= 'individual' )?
-	  ( portionKind = PortionKind )? 
+	  ( portionKind = PortionKind )?
 	)
 	UsageExtensionKeyword*
 ;
 
 fragment RefPrefix:
     ( direction = FeatureDirection )?
-	BasicDefinitionPrefix?
-    ( isReadOnly ?= 'readonly' )?
     ( isDerived ?= 'derived' )?
+	BasicDefinitionPrefix?
+    ( isConstant ?= 'constant' )?
 ;
 
 fragment BasicUsagePrefix:
@@ -1357,7 +1365,6 @@ fragment TriggerValuePart:
 	triggerExpression=Expression
 ;
 
-
 fragment SendNodeDeclaration:
 	ActionNodeUsageDeclaration?
 	'send' 
@@ -1379,8 +1386,13 @@ fragment Identification:
 ;
 
 fragment MultiplicityPart:
-	MultiplicityRange
-	| MultiplicityRange? ( isOrdered ?= 'ordered' isNonunique ?= 'nonunique'? | isNonunique ?= 'nonunique' isOrdered ?= 'ordered'? )
+	MultiplicityRange MultiplicityModifiers?
+	| MultiplicityModifiers
+;
+
+fragment MultiplicityModifiers:
+      isOrdered?='ordered' (isNonunique?='nonunique')?
+    | isNonunique?='nonunique' (isOrdered?='ordered')?
 ;
 
 fragment FeatureSpecialization:
@@ -1448,6 +1460,10 @@ fragment ControlNodePrefix:
 
 fragment PerformedActionParameterPart:
 	performedActionParameterPart+=PerformedActionUsage 
+;
+
+fragment TransitionUsageIfPart:
+	'if' conditionalExpression=Expression
 ;
 
 // TODO --------------------------------- Enum Level ---------------------------------//

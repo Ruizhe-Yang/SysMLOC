@@ -1383,6 +1383,15 @@ public interface SysMLOCFactory extends EFactory
   EndUsagePrefix createEndUsagePrefix();
 
   /**
+   * Returns a new object of class '<em>End Multiplicity Range</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>End Multiplicity Range</em>'.
+   * @generated
+   */
+  EndMultiplicityRange createEndMultiplicityRange();
+
+  /**
    * Returns a new object of class '<em>Occurrence Usage Prefix</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1599,6 +1608,15 @@ public interface SysMLOCFactory extends EFactory
   MultiplicityPart createMultiplicityPart();
 
   /**
+   * Returns a new object of class '<em>Multiplicity Modifiers</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Multiplicity Modifiers</em>'.
+   * @generated
+   */
+  MultiplicityModifiers createMultiplicityModifiers();
+
+  /**
    * Returns a new object of class '<em>Feature Specialization</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1696,6 +1714,15 @@ public interface SysMLOCFactory extends EFactory
    * @generated
    */
   PerformedActionParameterPart createPerformedActionParameterPart();
+
+  /**
+   * Returns a new object of class '<em>Transition Usage If Part</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Transition Usage If Part</em>'.
+   * @generated
+   */
+  TransitionUsageIfPart createTransitionUsageIfPart();
 
   /**
    * Returns a new object of class '<em>Accept Action Usage</em>'.

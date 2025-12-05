@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface SuccessionFlowUsage extends StructureUsageElements, GeneralUsagePrefix, EmptySuccessionPrefix, MemberPrefix, isReturnPrefix, OccurrenceUsagePrefix, BasicUsagePrefix, RefPrefix, BasicDefinitionPrefix, UsageExtensionKeyword, PrefixMetadata, UsageDeclaration, FeatureDeclaration, Identification, FeatureSpecializationPart, FeatureSpecialization, TypingFeatureTyping, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, MultiplicityPart, MultiplicityRange, FeatureValue, ItemFeatureParameterPart
+public interface SuccessionFlowUsage extends StructureUsageElements, GeneralUsagePrefix, EmptySuccessionPrefix, MemberPrefix, isReturnPrefix, OccurrenceUsagePrefix, EndUsagePrefix, EndMultiplicityRange, BasicUsagePrefix, RefPrefix, BasicDefinitionPrefix, UsageExtensionKeyword, PrefixMetadata, UsageDeclaration, FeatureDeclaration, Identification, FeatureSpecializationPart, FeatureSpecialization, TypingFeatureTyping, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, MultiplicityPart, MultiplicityRange, MultiplicityModifiers, FeatureValue, ItemFeatureParameterPart
 {
   /**
    * Returns the value of the '<em><b>Flow End</b></em>' attribute list.

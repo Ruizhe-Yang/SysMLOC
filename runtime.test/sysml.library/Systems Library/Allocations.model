@@ -16,7 +16,7 @@
         <redefinitions>BinaryConnection::target</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AllocationUsage" isAbstract="true" declaredName="allocations" Multi1="0" Multi02="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AllocationUsage" isAbstract="true" declaredName="allocations" MultiLow="0" MultiHigh="*" isNonunique="true">
       <typings>Allocation</typings>
       <subsetting>binaryConnections</subsetting>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * allocations is the base feature of all AllocationUsages.&#xA;&#x9;&#x9; */"/>

@@ -3,9 +3,13 @@
  */
 package dut.control.sysmloc.sysMLOC.impl;
 
+import dut.control.sysmloc.sysMLOC.BasicDefinitionPrefix;
+import dut.control.sysmloc.sysMLOC.BasicUsagePrefix;
+import dut.control.sysmloc.sysMLOC.FeatureDirection;
 import dut.control.sysmloc.sysMLOC.OccurrenceUsagePrefix;
 import dut.control.sysmloc.sysMLOC.PortionKind;
 import dut.control.sysmloc.sysMLOC.PrefixMetadata;
+import dut.control.sysmloc.sysMLOC.RefPrefix;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 import dut.control.sysmloc.sysMLOC.UsageExtensionKeyword;
 
@@ -29,16 +33,141 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.OccurrenceUsagePrefixImpl#isIsAbstract <em>Is Abstract</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.OccurrenceUsagePrefixImpl#isIsVariation <em>Is Variation</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.OccurrenceUsagePrefixImpl#getDirection <em>Direction</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.OccurrenceUsagePrefixImpl#isIsDerived <em>Is Derived</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.OccurrenceUsagePrefixImpl#isIsConstant <em>Is Constant</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.OccurrenceUsagePrefixImpl#isIsReference <em>Is Reference</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.OccurrenceUsagePrefixImpl#getPrefixMetadataExtension <em>Prefix Metadata Extension</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.OccurrenceUsagePrefixImpl#isIsEnd <em>Is End</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.OccurrenceUsagePrefixImpl#isIsIndividual <em>Is Individual</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.OccurrenceUsagePrefixImpl#getPortionKind <em>Portion Kind</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class OccurrenceUsagePrefixImpl extends BasicUsagePrefixImpl implements OccurrenceUsagePrefix
+public class OccurrenceUsagePrefixImpl extends EndUsagePrefixImpl implements OccurrenceUsagePrefix
 {
+  /**
+   * The default value of the '{@link #isIsAbstract() <em>Is Abstract</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAbstract()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_ABSTRACT_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsAbstract() <em>Is Abstract</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsAbstract()
+   * @generated
+   * @ordered
+   */
+  protected boolean isAbstract = IS_ABSTRACT_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsVariation() <em>Is Variation</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsVariation()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_VARIATION_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsVariation() <em>Is Variation</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsVariation()
+   * @generated
+   * @ordered
+   */
+  protected boolean isVariation = IS_VARIATION_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getDirection() <em>Direction</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDirection()
+   * @generated
+   * @ordered
+   */
+  protected static final FeatureDirection DIRECTION_EDEFAULT = FeatureDirection.NULL;
+
+  /**
+   * The cached value of the '{@link #getDirection() <em>Direction</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDirection()
+   * @generated
+   * @ordered
+   */
+  protected FeatureDirection direction = DIRECTION_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsDerived() <em>Is Derived</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsDerived()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_DERIVED_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsDerived() <em>Is Derived</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsDerived()
+   * @generated
+   * @ordered
+   */
+  protected boolean isDerived = IS_DERIVED_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsConstant() <em>Is Constant</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsConstant()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_CONSTANT_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsConstant() <em>Is Constant</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsConstant()
+   * @generated
+   * @ordered
+   */
+  protected boolean isConstant = IS_CONSTANT_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsReference() <em>Is Reference</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsReference()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_REFERENCE_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsReference() <em>Is Reference</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsReference()
+   * @generated
+   * @ordered
+   */
+  protected boolean isReference = IS_REFERENCE_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getPrefixMetadataExtension() <em>Prefix Metadata Extension</em>}' attribute list.
    * <!-- begin-user-doc -->
@@ -48,26 +177,6 @@ public class OccurrenceUsagePrefixImpl extends BasicUsagePrefixImpl implements O
    * @ordered
    */
   protected EList<String> prefixMetadataExtension;
-
-  /**
-   * The default value of the '{@link #isIsEnd() <em>Is End</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isIsEnd()
-   * @generated
-   * @ordered
-   */
-  protected static final boolean IS_END_EDEFAULT = false;
-
-  /**
-   * The cached value of the '{@link #isIsEnd() <em>Is End</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isIsEnd()
-   * @generated
-   * @ordered
-   */
-  protected boolean isEnd = IS_END_EDEFAULT;
 
   /**
    * The default value of the '{@link #isIsIndividual() <em>Is Individual</em>}' attribute.
@@ -136,6 +245,156 @@ public class OccurrenceUsagePrefixImpl extends BasicUsagePrefixImpl implements O
    * @generated
    */
   @Override
+  public boolean isIsAbstract()
+  {
+    return isAbstract;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsAbstract(boolean newIsAbstract)
+  {
+    boolean oldIsAbstract = isAbstract;
+    isAbstract = newIsAbstract;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_ABSTRACT, oldIsAbstract, isAbstract));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsVariation()
+  {
+    return isVariation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsVariation(boolean newIsVariation)
+  {
+    boolean oldIsVariation = isVariation;
+    isVariation = newIsVariation;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_VARIATION, oldIsVariation, isVariation));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public FeatureDirection getDirection()
+  {
+    return direction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDirection(FeatureDirection newDirection)
+  {
+    FeatureDirection oldDirection = direction;
+    direction = newDirection == null ? DIRECTION_EDEFAULT : newDirection;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__DIRECTION, oldDirection, direction));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsDerived()
+  {
+    return isDerived;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsDerived(boolean newIsDerived)
+  {
+    boolean oldIsDerived = isDerived;
+    isDerived = newIsDerived;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_DERIVED, oldIsDerived, isDerived));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsConstant()
+  {
+    return isConstant;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsConstant(boolean newIsConstant)
+  {
+    boolean oldIsConstant = isConstant;
+    isConstant = newIsConstant;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_CONSTANT, oldIsConstant, isConstant));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsReference()
+  {
+    return isReference;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsReference(boolean newIsReference)
+  {
+    boolean oldIsReference = isReference;
+    isReference = newIsReference;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_REFERENCE, oldIsReference, isReference));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<String> getPrefixMetadataExtension()
   {
     if (prefixMetadataExtension == null)
@@ -143,31 +402,6 @@ public class OccurrenceUsagePrefixImpl extends BasicUsagePrefixImpl implements O
       prefixMetadataExtension = new EDataTypeEList<String>(String.class, this, SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__PREFIX_METADATA_EXTENSION);
     }
     return prefixMetadataExtension;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public boolean isIsEnd()
-  {
-    return isEnd;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setIsEnd(boolean newIsEnd)
-  {
-    boolean oldIsEnd = isEnd;
-    isEnd = newIsEnd;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_END, oldIsEnd, isEnd));
   }
 
   /**
@@ -230,10 +464,20 @@ public class OccurrenceUsagePrefixImpl extends BasicUsagePrefixImpl implements O
   {
     switch (featureID)
     {
+      case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_ABSTRACT:
+        return isIsAbstract();
+      case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_VARIATION:
+        return isIsVariation();
+      case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__DIRECTION:
+        return getDirection();
+      case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_DERIVED:
+        return isIsDerived();
+      case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_CONSTANT:
+        return isIsConstant();
+      case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_REFERENCE:
+        return isIsReference();
       case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__PREFIX_METADATA_EXTENSION:
         return getPrefixMetadataExtension();
-      case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_END:
-        return isIsEnd();
       case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_INDIVIDUAL:
         return isIsIndividual();
       case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__PORTION_KIND:
@@ -253,12 +497,27 @@ public class OccurrenceUsagePrefixImpl extends BasicUsagePrefixImpl implements O
   {
     switch (featureID)
     {
+      case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_ABSTRACT:
+        setIsAbstract((Boolean)newValue);
+        return;
+      case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_VARIATION:
+        setIsVariation((Boolean)newValue);
+        return;
+      case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__DIRECTION:
+        setDirection((FeatureDirection)newValue);
+        return;
+      case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_DERIVED:
+        setIsDerived((Boolean)newValue);
+        return;
+      case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_CONSTANT:
+        setIsConstant((Boolean)newValue);
+        return;
+      case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_REFERENCE:
+        setIsReference((Boolean)newValue);
+        return;
       case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__PREFIX_METADATA_EXTENSION:
         getPrefixMetadataExtension().clear();
         getPrefixMetadataExtension().addAll((Collection<? extends String>)newValue);
-        return;
-      case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_END:
-        setIsEnd((Boolean)newValue);
         return;
       case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_INDIVIDUAL:
         setIsIndividual((Boolean)newValue);
@@ -280,11 +539,26 @@ public class OccurrenceUsagePrefixImpl extends BasicUsagePrefixImpl implements O
   {
     switch (featureID)
     {
+      case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_ABSTRACT:
+        setIsAbstract(IS_ABSTRACT_EDEFAULT);
+        return;
+      case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_VARIATION:
+        setIsVariation(IS_VARIATION_EDEFAULT);
+        return;
+      case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__DIRECTION:
+        setDirection(DIRECTION_EDEFAULT);
+        return;
+      case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_DERIVED:
+        setIsDerived(IS_DERIVED_EDEFAULT);
+        return;
+      case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_CONSTANT:
+        setIsConstant(IS_CONSTANT_EDEFAULT);
+        return;
+      case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_REFERENCE:
+        setIsReference(IS_REFERENCE_EDEFAULT);
+        return;
       case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__PREFIX_METADATA_EXTENSION:
         getPrefixMetadataExtension().clear();
-        return;
-      case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_END:
-        setIsEnd(IS_END_EDEFAULT);
         return;
       case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_INDIVIDUAL:
         setIsIndividual(IS_INDIVIDUAL_EDEFAULT);
@@ -306,10 +580,20 @@ public class OccurrenceUsagePrefixImpl extends BasicUsagePrefixImpl implements O
   {
     switch (featureID)
     {
+      case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_ABSTRACT:
+        return isAbstract != IS_ABSTRACT_EDEFAULT;
+      case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_VARIATION:
+        return isVariation != IS_VARIATION_EDEFAULT;
+      case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__DIRECTION:
+        return direction != DIRECTION_EDEFAULT;
+      case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_DERIVED:
+        return isDerived != IS_DERIVED_EDEFAULT;
+      case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_CONSTANT:
+        return isConstant != IS_CONSTANT_EDEFAULT;
+      case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_REFERENCE:
+        return isReference != IS_REFERENCE_EDEFAULT;
       case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__PREFIX_METADATA_EXTENSION:
         return prefixMetadataExtension != null && !prefixMetadataExtension.isEmpty();
-      case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_END:
-        return isEnd != IS_END_EDEFAULT;
       case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_INDIVIDUAL:
         return isIndividual != IS_INDIVIDUAL_EDEFAULT;
       case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__PORTION_KIND:
@@ -326,6 +610,33 @@ public class OccurrenceUsagePrefixImpl extends BasicUsagePrefixImpl implements O
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
   {
+    if (baseClass == BasicDefinitionPrefix.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_ABSTRACT: return SysMLOCPackage.BASIC_DEFINITION_PREFIX__IS_ABSTRACT;
+        case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_VARIATION: return SysMLOCPackage.BASIC_DEFINITION_PREFIX__IS_VARIATION;
+        default: return -1;
+      }
+    }
+    if (baseClass == RefPrefix.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__DIRECTION: return SysMLOCPackage.REF_PREFIX__DIRECTION;
+        case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_DERIVED: return SysMLOCPackage.REF_PREFIX__IS_DERIVED;
+        case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_CONSTANT: return SysMLOCPackage.REF_PREFIX__IS_CONSTANT;
+        default: return -1;
+      }
+    }
+    if (baseClass == BasicUsagePrefix.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_REFERENCE: return SysMLOCPackage.BASIC_USAGE_PREFIX__IS_REFERENCE;
+        default: return -1;
+      }
+    }
     if (baseClass == PrefixMetadata.class)
     {
       switch (derivedFeatureID)
@@ -352,6 +663,33 @@ public class OccurrenceUsagePrefixImpl extends BasicUsagePrefixImpl implements O
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
   {
+    if (baseClass == BasicDefinitionPrefix.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.BASIC_DEFINITION_PREFIX__IS_ABSTRACT: return SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_ABSTRACT;
+        case SysMLOCPackage.BASIC_DEFINITION_PREFIX__IS_VARIATION: return SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_VARIATION;
+        default: return -1;
+      }
+    }
+    if (baseClass == RefPrefix.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.REF_PREFIX__DIRECTION: return SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__DIRECTION;
+        case SysMLOCPackage.REF_PREFIX__IS_DERIVED: return SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_DERIVED;
+        case SysMLOCPackage.REF_PREFIX__IS_CONSTANT: return SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_CONSTANT;
+        default: return -1;
+      }
+    }
+    if (baseClass == BasicUsagePrefix.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.BASIC_USAGE_PREFIX__IS_REFERENCE: return SysMLOCPackage.OCCURRENCE_USAGE_PREFIX__IS_REFERENCE;
+        default: return -1;
+      }
+    }
     if (baseClass == PrefixMetadata.class)
     {
       switch (baseFeatureID)
@@ -381,10 +719,20 @@ public class OccurrenceUsagePrefixImpl extends BasicUsagePrefixImpl implements O
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (prefixMetadataExtension: ");
+    result.append(" (isAbstract: ");
+    result.append(isAbstract);
+    result.append(", isVariation: ");
+    result.append(isVariation);
+    result.append(", direction: ");
+    result.append(direction);
+    result.append(", isDerived: ");
+    result.append(isDerived);
+    result.append(", isConstant: ");
+    result.append(isConstant);
+    result.append(", isReference: ");
+    result.append(isReference);
+    result.append(", prefixMetadataExtension: ");
     result.append(prefixMetadataExtension);
-    result.append(", isEnd: ");
-    result.append(isEnd);
     result.append(", isIndividual: ");
     result.append(isIndividual);
     result.append(", portionKind: ");

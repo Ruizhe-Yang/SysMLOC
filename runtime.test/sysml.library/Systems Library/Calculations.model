@@ -22,7 +22,7 @@
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The subactions of this Calculation that are Calculations.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:CalculationUsage" isAbstract="true" declaredName="calculations" Multi1="0" Multi02="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:CalculationUsage" isAbstract="true" declaredName="calculations" MultiLow="0" MultiHigh="*" isNonunique="true">
       <typings>Calculation</typings>
       <subsetting>actions</subsetting>
       <subsetting>evaluations</subsetting>

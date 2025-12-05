@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="'Allocation Definition Example'">
+    <elements xsi:type="sysMLOC:Package" declaredName="LogicalModel">
+      <elements xsi:type="sysMLOC:ActionDefinition" declaredName="ProvidePower"/>
+      <elements xsi:type="sysMLOC:ActionDefinition" declaredName="GenerateTorque"/>
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="LogicalElement"/>
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="TorqueGenerator">
+        <superclassifiers>LogicalElement</superclassifiers>
+      </elements>
+      <elements xsi:type="sysMLOC:ActionUsage" declaredName="providePower">
+        <typings>ProvidePower</typings>
+        <elements xsi:type="sysMLOC:ActionUsage" declaredName="generateTorque">
+          <typings>GenerateTorque</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="torqueGenerator">
+        <typings>TorqueGenerator</typings>
+        <elements xsi:type="sysMLOC:PerformActionUsage" refElement="providePower.generateTorque"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Package" declaredName="PhysicalModel">
+      <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="LogicalModel" isNamespace="true"/>
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="PhysicalElement"/>
+      <elements xsi:type="sysMLOC:PartDefinition" declaredName="PowerTrain">
+        <superclassifiers>PhysicalElement</superclassifiers>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="powerTrain">
+        <typings>PowerTrain</typings>
+        <elements xsi:type="sysMLOC:PartUsage" declaredName="engine">
+          <elements xsi:type="sysMLOC:PerformActionUsage" refElement="providePower.generateTorque"/>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AllocationDefinition" declaredName="LogicalToPhysical">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="logical" isEnd="true">
+          <typings>LogicalElement</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="physical" isEnd="true">
+          <typings>PhysicalElement</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AllocationUsage" declaredName="torqueGenAlloc">
+        <typings>LogicalToPhysical</typings>
+        <connectorPart refElement="torqueGenerator"/>
+        <connectorPart refElement="powerTrain"/>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

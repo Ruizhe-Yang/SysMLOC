@@ -3,6 +3,7 @@
  */
 package dut.control.sysmloc.sysMLOC.impl;
 
+import dut.control.sysmloc.sysMLOC.MultiplicityModifiers;
 import dut.control.sysmloc.sysMLOC.MultiplicityPart;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 
@@ -213,6 +214,46 @@ public class MultiplicityPartImpl extends MultiplicityRangeImpl implements Multi
         return isNonunique != IS_NONUNIQUE_EDEFAULT;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == MultiplicityModifiers.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.MULTIPLICITY_PART__IS_ORDERED: return SysMLOCPackage.MULTIPLICITY_MODIFIERS__IS_ORDERED;
+        case SysMLOCPackage.MULTIPLICITY_PART__IS_NONUNIQUE: return SysMLOCPackage.MULTIPLICITY_MODIFIERS__IS_NONUNIQUE;
+        default: return -1;
+      }
+    }
+    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == MultiplicityModifiers.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.MULTIPLICITY_MODIFIERS__IS_ORDERED: return SysMLOCPackage.MULTIPLICITY_PART__IS_ORDERED;
+        case SysMLOCPackage.MULTIPLICITY_MODIFIERS__IS_NONUNIQUE: return SysMLOCPackage.MULTIPLICITY_PART__IS_NONUNIQUE;
+        default: return -1;
+      }
+    }
+    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
   }
 
   /**

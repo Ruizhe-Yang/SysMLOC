@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface ViewRenderingUsage extends ViewDefinitionBodyElement, ViewBodyElement, MemberPrefix, ReferenceSubsetting, FeatureSpecialization, TypingFeatureTyping, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, UsageExtensionKeyword, PrefixMetadata, Usage, UsageDeclaration, FeatureDeclaration, Identification, FeatureSpecializationPart, MultiplicityPart, MultiplicityRange, FeatureValue
+public interface ViewRenderingUsage extends ViewDefinitionBodyElement, ViewBodyElement, MemberPrefix, ReferenceSubsetting, FeatureSpecialization, TypingFeatureTyping, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, UsageExtensionKeyword, PrefixMetadata, Usage, UsageDeclaration, FeatureDeclaration, Identification, FeatureSpecializationPart, MultiplicityPart, MultiplicityRange, MultiplicityModifiers, FeatureValue
 {
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.

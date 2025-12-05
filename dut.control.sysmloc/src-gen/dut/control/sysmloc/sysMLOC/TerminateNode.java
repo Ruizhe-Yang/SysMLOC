@@ -14,7 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.TerminateNode#isNodeParameter <em>Node Parameter</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.TerminateNode#getNodeParameter <em>Node Parameter</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.TerminateNode#getElements <em>Elements</em>}</li>
  * </ul>
  *
@@ -22,29 +22,29 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface TerminateNode extends ActionNodeElements, EmptySuccessionPrefix, MemberPrefix, OccurrenceUsagePrefix, BasicUsagePrefix, RefPrefix, BasicDefinitionPrefix, UsageExtensionKeyword, PrefixMetadata, ActionNodeUsageDeclaration, UsageDeclaration, FeatureDeclaration, Identification, FeatureSpecializationPart, FeatureSpecialization, TypingFeatureTyping, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, MultiplicityPart, MultiplicityRange
+public interface TerminateNode extends ActionNodeElements, EmptySuccessionPrefix, MemberPrefix, OccurrenceUsagePrefix, EndUsagePrefix, EndMultiplicityRange, BasicUsagePrefix, RefPrefix, BasicDefinitionPrefix, UsageExtensionKeyword, PrefixMetadata, ActionNodeUsageDeclaration, UsageDeclaration, FeatureDeclaration, Identification, FeatureSpecializationPart, FeatureSpecialization, TypingFeatureTyping, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, MultiplicityPart, MultiplicityRange, MultiplicityModifiers
 {
   /**
    * Returns the value of the '<em><b>Node Parameter</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Node Parameter</em>' attribute.
-   * @see #setNodeParameter(boolean)
+   * @see #setNodeParameter(String)
    * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getTerminateNode_NodeParameter()
    * @model
    * @generated
    */
-  boolean isNodeParameter();
+  String getNodeParameter();
 
   /**
-   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.TerminateNode#isNodeParameter <em>Node Parameter</em>}' attribute.
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.TerminateNode#getNodeParameter <em>Node Parameter</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Node Parameter</em>' attribute.
-   * @see #isNodeParameter()
+   * @see #getNodeParameter()
    * @generated
    */
-  void setNodeParameter(boolean value);
+  void setNodeParameter(String value);
 
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.

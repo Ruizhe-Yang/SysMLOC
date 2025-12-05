@@ -12,16 +12,16 @@
         <typings>View</typings>
         <redefinitions>self</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:ViewUsage" isAbstract="true" isReference="true" declaredName="subviews" Multi1="0" Multi02="*">
+      <elements xsi:type="sysMLOC:ViewUsage" isAbstract="true" isReference="true" declaredName="subviews" MultiLow="0" MultiHigh="*">
         <typings>View</typings>
         <subsetting>views</subsetting>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;    &#x9;&#x9; * Other Views that are used in the rendering of this View.&#xA;    &#x9;&#x9; */"/>
       </elements>
-      <elements xsi:type="sysMLOC:RenderingUsage" isAbstract="true" isReference="true" declaredName="viewRendering" Multi1="0" Multi02="1">
+      <elements xsi:type="sysMLOC:RenderingUsage" isAbstract="true" isReference="true" declaredName="viewRendering" MultiLow="0" MultiHigh="1">
         <typings>Rendering</typings>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The rendering of this View.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
-      <elements xsi:type="sysMLOC:ViewpointUsage" declaredName="viewpointSatisfactions" Multi1="0" Multi02="*">
+      <elements xsi:type="sysMLOC:ViewpointUsage" declaredName="viewpointSatisfactions" MultiLow="0" MultiHigh="*">
         <typings>ViewpointCheck</typings>
         <subsetting>viewpointChecks</subsetting>
         <subsetting>checkedConstraints</subsetting>
@@ -45,7 +45,7 @@
         <typings>ViewpointCheck</typings>
         <redefinitions>self</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:SubjectUsage" declaredName="subj" Multi0="1">
+      <elements xsi:type="sysMLOC:SubjectUsage" declaredName="subj" MultiValue="1">
         <typings>View</typings>
         <redefinitions>RequirementCheck::subj</redefinitions>
       </elements>
@@ -57,7 +57,7 @@
         <typings>Rendering</typings>
         <redefinitions>self</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:RenderingUsage" isAbstract="true" isReference="true" declaredName="subrenderings" Multi1="0" Multi02="*">
+      <elements xsi:type="sysMLOC:RenderingUsage" isAbstract="true" isReference="true" declaredName="subrenderings" MultiLow="0" MultiHigh="*">
         <typings>Rendering</typings>
         <subsetting>renderings</subsetting>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * Other Renderings used to carry out this Rendering.&#xA;&#x9;&#x9;&#x9; */"/>
@@ -75,47 +75,47 @@
       <superclassifiers>Rendering</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * A TabularRendering is a Rendering of a View into a tabular format.&#xA;&#x9;&#x9; */"/>
     </elements>
-    <elements xsi:type="sysMLOC:ViewUsage" isAbstract="true" declaredName="views" Multi1="0" Multi02="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:ViewUsage" isAbstract="true" declaredName="views" MultiLow="0" MultiHigh="*" isNonunique="true">
       <typings>View</typings>
       <subsetting>parts</subsetting>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * views is the base feature of all ViewUsages.&#xA;&#x9;&#x9; */"/>
     </elements>
-    <elements xsi:type="sysMLOC:ViewpointUsage" isAbstract="true" declaredName="viewpointChecks" Multi1="0" Multi02="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:ViewpointUsage" isAbstract="true" declaredName="viewpointChecks" MultiLow="0" MultiHigh="*" isNonunique="true">
       <typings>ViewpointCheck</typings>
       <subsetting>requirementChecks</subsetting>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * viewpointChecks is the base feature of all ViewpointUsages.&#xA;&#x9;&#x9; */"/>
     </elements>
-    <elements xsi:type="sysMLOC:RenderingUsage" isAbstract="true" declaredName="renderings" Multi1="0" Multi02="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:RenderingUsage" isAbstract="true" declaredName="renderings" MultiLow="0" MultiHigh="*" isNonunique="true">
       <typings>Rendering</typings>
       <subsetting>parts</subsetting>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * renderings is the base feature of all RenderingUsages.&#xA;&#x9;&#x9; */"/>
     </elements>
-    <elements xsi:type="sysMLOC:RenderingUsage" declaredName="asTextualNotation" Multi0="1">
+    <elements xsi:type="sysMLOC:RenderingUsage" declaredName="asTextualNotation" MultiValue="1">
       <typings>TextualRendering</typings>
       <subsetting>renderings</subsetting>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * asTextualNotation renders a View into textual notation as defined in the &#xA;&#x9;&#x9; * KerML and SysML specifications.&#xA;&#x9;&#x9; */"/>
     </elements>
-    <elements xsi:type="sysMLOC:RenderingUsage" declaredName="asTreeDiagram" Multi0="1">
+    <elements xsi:type="sysMLOC:RenderingUsage" declaredName="asTreeDiagram" MultiValue="1">
       <typings>GraphicalRendering</typings>
       <subsetting>renderings</subsetting>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * asTreeDiagram renders a View as a tree diagram, using the &#xA;&#x9;&#x9; * graphical notation defined in the SysML specification.&#xA;&#x9;&#x9; */"/>
     </elements>
-    <elements xsi:type="sysMLOC:RenderingUsage" declaredName="asInterconnectionDiagram" Multi0="1">
+    <elements xsi:type="sysMLOC:RenderingUsage" declaredName="asInterconnectionDiagram" MultiValue="1">
       <typings>GraphicalRendering</typings>
       <subsetting>renderings</subsetting>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * asInterconnectionDiagram renders a View as an interconnection &#xA;&#x9;&#x9; * diagram, using the graphical notation defined in the SysML specification.&#xA;&#x9;&#x9; */"/>
     </elements>
-    <elements xsi:type="sysMLOC:RenderingUsage" declaredName="asElementTable" Multi0="1">
+    <elements xsi:type="sysMLOC:RenderingUsage" declaredName="asElementTable" MultiValue="1">
       <typings>TabularRendering</typings>
       <subsetting>renderings</subsetting>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * asElementTable  renders a View as a table, with one row for each exposed &#xA;&#x9;&#x9; * Element and columns rendered by applying the columnViews in order to the&#xA;&#x9;&#x9; * Element in each row.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:ViewUsage" declaredName="columnView" Multi1="0" Multi02="*" isOrdered="true">
+      <elements xsi:type="sysMLOC:ViewUsage" declaredName="columnView" MultiLow="0" MultiHigh="*" isOrdered="true">
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The Views to be rendered in the column cells, in order, of each rows of the table.&#xA;&#x9;&#x9;&#x9; */"/>
-        <elements xsi:type="sysMLOC:RenderingUsage" isAbstract="true" isReference="true" Multi1="0" Multi02="1">
+        <elements xsi:type="sysMLOC:RenderingUsage" isAbstract="true" isReference="true" MultiLow="0" MultiHigh="1">
           <redefinitions>viewRendering</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:RenderingUsage" Multi1="0" Multi02="*" valuePart="columnView.viewRendering">
+      <elements xsi:type="sysMLOC:RenderingUsage" MultiLow="0" MultiHigh="*" valuePart="columnView.viewRendering">
         <redefinitions>subrenderings</redefinitions>
       </elements>
     </elements>

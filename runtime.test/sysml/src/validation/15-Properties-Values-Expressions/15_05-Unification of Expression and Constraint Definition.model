@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="'15_05-Unification of Expression and Constraint Definition'">
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="'15_03-Value Expression'" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ControlFunctions::forAll"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="SI" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ConstraintDefinition" declaredName="DiscBrakeConstraint">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="wheelAssy" MultiValue="4">
+        <typings>WheelAssy</typings>
+      </elements>
+      <resultExpressionParameter resultExpression="wheelAssy->forAll {in ref w: WheelAssy; 2 * w.discBrakeAssy.radius &lt; w.wheel.outerDiameter }"/>
+    </elements>
+    <elements xsi:type="sysMLOC:ConstraintDefinition" declaredName="DiscBrakeFitConstraint_Alt">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="discBrakeAssy" MultiValue="1">
+        <typings>DiscBrakeAssy</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="wheel" MultiValue="1">
+        <typings>Wheel</typings>
+      </elements>
+      <resultExpressionParameter resultExpression="2 * discBrakeAssy.radius &lt; wheel.outerDiameter"/>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle_2">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass" MultiValue="1" valuePart="1200 [kg]">
+        <typings>MassValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="length" MultiValue="1" valuePart="4.82 [m]">
+        <typings>LengthValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="wheelAssy" MultiValue="4">
+        <typings>WheelAssy</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:ConstraintUsage" declaredName="discBrakeConstraint">
+        <typings>DiscBrakeConstraint</typings>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * This constraint is computed, but not asserted. This means a tool can identify &#xA;&#x9;&#x9;&#x9; * when it is violated without the model being inconsistent.&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="wheelAssy" valuePart="Vehicle_2::wheelAssy"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="WheelAssy">
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="wheel" MultiValue="1">
+        <typings>Wheel</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="discBrakeAssy" MultiValue="1">
+        <typings>DiscBrakeAssy</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AssertConstraintUsage" declaredName="discBrakeFitConstraint_Alt">
+        <typings>DiscBrakeFitConstraint_Alt</typings>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * This constraint is asserted to be true, which means that the model&#xA;&#x9;&#x9;&#x9; * is inconsistent if it the constraint is violated.&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="discBrakeAssy" valuePart="WheelAssy::discBrakeAssy"/>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="wheel" valuePart="WheelAssy::wheel"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="DiscBrakeAssy">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="radius" MultiValue="1" valuePart="95 [mm]">
+        <typings>LengthValue</typings>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

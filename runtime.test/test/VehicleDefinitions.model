@@ -4,11 +4,9 @@
     <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9; * Example vehicle definitions model.&#xD;&#xA;&#x9; */"/>
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues" isNamespace="true"/>
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Quantities" isNamespace="true"/>
-    <elements xsi:type="sysMLOC:CodeAnnotation" body="// aaaaa aaaa.&#xD;&#xA;"/>
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="MeasurementReferences" isNamespace="true"/>
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ISQ" isNamespace="true"/>
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="SI" isNamespace="true"/>
-    <elements xsi:type="sysMLOC:CodeAnnotation" body="// aaaaa&#xD;&#xA;"/>
     <elements xsi:type="sysMLOC:Comment" body="/* PART DEFINITIONS */"/>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Vehicle">
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mass">

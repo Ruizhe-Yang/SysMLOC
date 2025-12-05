@@ -28,11 +28,11 @@
     </elements>
     <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="StatusInfo">
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * StatusInfo is used to annotate a model element with status information.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="originator" Multi1="0" Multi02="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="originator" MultiLow="0" MultiHigh="1">
         <typings>String</typings>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The originator of the annotated element.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="owner" Multi1="0" Multi02="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="owner" MultiLow="0" MultiHigh="1">
         <typings>String</typings>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The current owner of the annotated element.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
@@ -40,7 +40,7 @@
         <typings>StatusKind</typings>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The current status of work on the annotated element (required).&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
-      <elements xsi:type="sysMLOC:ItemUsage" declaredName="risk" Multi1="0" Multi02="1">
+      <elements xsi:type="sysMLOC:ItemUsage" declaredName="risk" MultiLow="0" MultiHigh="1">
         <typings>Risk</typings>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * An assessment of risk for the annotated element.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
@@ -51,7 +51,7 @@
         <typings>String</typings>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * A textual description of the rationale (required).&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
-      <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="explanation" Multi1="0" Multi02="1">
+      <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="explanation" MultiLow="0" MultiHigh="1">
         <typings>Anything</typings>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * A reference to a feature that provides a formal explanation of the rationale.&#xA;&#x9;&#x9;&#x9; * (For example, a trade study whose result explains the choice of a certain alternative).&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>

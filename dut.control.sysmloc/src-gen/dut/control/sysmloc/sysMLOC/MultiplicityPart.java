@@ -9,62 +9,11 @@ package dut.control.sysmloc.sysMLOC;
  * A representation of the model object '<em><b>Multiplicity Part</b></em>'.
  * <!-- end-user-doc -->
  *
- * <p>
- * The following features are supported:
- * </p>
- * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.MultiplicityPart#isIsOrdered <em>Is Ordered</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.MultiplicityPart#isIsNonunique <em>Is Nonunique</em>}</li>
- * </ul>
  *
  * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getMultiplicityPart()
  * @model
  * @generated
  */
-public interface MultiplicityPart extends MultiplicityRange
+public interface MultiplicityPart extends MultiplicityRange, MultiplicityModifiers
 {
-  /**
-   * Returns the value of the '<em><b>Is Ordered</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Is Ordered</em>' attribute.
-   * @see #setIsOrdered(boolean)
-   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getMultiplicityPart_IsOrdered()
-   * @model
-   * @generated
-   */
-  boolean isIsOrdered();
-
-  /**
-   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.MultiplicityPart#isIsOrdered <em>Is Ordered</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Is Ordered</em>' attribute.
-   * @see #isIsOrdered()
-   * @generated
-   */
-  void setIsOrdered(boolean value);
-
-  /**
-   * Returns the value of the '<em><b>Is Nonunique</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Is Nonunique</em>' attribute.
-   * @see #setIsNonunique(boolean)
-   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getMultiplicityPart_IsNonunique()
-   * @model
-   * @generated
-   */
-  boolean isIsNonunique();
-
-  /**
-   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.MultiplicityPart#isIsNonunique <em>Is Nonunique</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Is Nonunique</em>' attribute.
-   * @see #isIsNonunique()
-   * @generated
-   */
-  void setIsNonunique(boolean value);
-
 } // MultiplicityPart

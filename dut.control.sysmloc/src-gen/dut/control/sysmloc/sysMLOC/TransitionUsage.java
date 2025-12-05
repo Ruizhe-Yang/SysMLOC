@@ -15,7 +15,6 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.TransitionUsage#getTransitionSourceElement <em>Transition Source Element</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.TransitionUsage#getConditionalExpression <em>Conditional Expression</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.TransitionUsage#getElements <em>Elements</em>}</li>
  * </ul>
  *
@@ -23,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface TransitionUsage extends StateNodeElements, GeneralUsagePrefix, EmptySuccessionPrefix, MemberPrefix, isReturnPrefix, UsageDeclaration, FeatureDeclaration, Identification, FeatureSpecializationPart, FeatureSpecialization, TypingFeatureTyping, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, MultiplicityPart, MultiplicityRange, AcceptParameterPart, PerformedActionParameterPart, TransitionSuccession
+public interface TransitionUsage extends StateNodeElements, GeneralUsagePrefix, EmptySuccessionPrefix, MemberPrefix, isReturnPrefix, UsageDeclaration, FeatureDeclaration, Identification, FeatureSpecializationPart, FeatureSpecialization, TypingFeatureTyping, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, MultiplicityPart, MultiplicityRange, MultiplicityModifiers, AcceptParameterPart, TransitionUsageIfPart, PerformedActionParameterPart, TransitionSuccession
 {
   /**
    * Returns the value of the '<em><b>Transition Source Element</b></em>' attribute.
@@ -46,28 +45,6 @@ public interface TransitionUsage extends StateNodeElements, GeneralUsagePrefix, 
    * @generated
    */
   void setTransitionSourceElement(String value);
-
-  /**
-   * Returns the value of the '<em><b>Conditional Expression</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Conditional Expression</em>' attribute.
-   * @see #setConditionalExpression(String)
-   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getTransitionUsage_ConditionalExpression()
-   * @model
-   * @generated
-   */
-  String getConditionalExpression();
-
-  /**
-   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.TransitionUsage#getConditionalExpression <em>Conditional Expression</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Conditional Expression</em>' attribute.
-   * @see #getConditionalExpression()
-   * @generated
-   */
-  void setConditionalExpression(String value);
 
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.

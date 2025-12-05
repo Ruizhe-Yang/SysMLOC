@@ -23,12 +23,12 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>LogarithmicFrequencyRangeUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="logarithmicFrequencyRange" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="logarithmicFrequencyRange" MultiValue="*" isNonunique="true">
       <typings>LogarithmicFrequencyRangeValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
@@ -54,7 +54,7 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
         <redefinitions>isBound</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>CartesianSpatial3dCoordinateFrame</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
@@ -70,7 +70,7 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
         <redefinitions>isBound</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>CartesianVelocity3dCoordinateFrame</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
@@ -86,7 +86,7 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
         <redefinitions>isBound</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>CartesianAcceleration3dCoordinateFrame</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
@@ -110,18 +110,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>SoundEnergyDensityUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="soundEnergyDensity" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="soundEnergyDensity" MultiValue="*" isNonunique="true">
       <typings>SoundEnergyDensityValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SoundEnergyDensityUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
@@ -130,7 +130,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
@@ -139,7 +139,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
@@ -175,18 +175,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>SoundIntensityUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="soundIntensity" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="soundIntensity" MultiValue="*" isNonunique="true">
       <typings>SoundIntensityValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SoundIntensityUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
@@ -195,7 +195,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
@@ -217,7 +217,7 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
         <redefinitions>isBound</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>CartesianSoundIntensity3dCoordinateFrame</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
@@ -234,7 +234,7 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
         <redefinitions>isOrthogonal</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="3">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="3">
         <typings>SoundIntensityUnit</typings>
         <redefinitions>mRefs</redefinitions>
       </elements>
@@ -247,18 +247,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>SoundExposureUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="soundExposure" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="soundExposure" MultiValue="*" isNonunique="true">
       <typings>SoundExposureValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SoundExposureUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
@@ -267,7 +267,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
@@ -276,7 +276,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
@@ -300,18 +300,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>CharacteristicImpedanceOfAMediumForLongitudinalWavesUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="characteristicImpedanceOfAMediumForLongitudinalWaves" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="characteristicImpedanceOfAMediumForLongitudinalWaves" MultiValue="*" isNonunique="true">
       <typings>CharacteristicImpedanceOfAMediumForLongitudinalWavesValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CharacteristicImpedanceOfAMediumForLongitudinalWavesUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
@@ -320,7 +320,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
@@ -329,7 +329,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
@@ -353,18 +353,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>AcousticImpedanceUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="acousticImpedance" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="acousticImpedance" MultiValue="*" isNonunique="true">
       <typings>AcousticImpedanceValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="AcousticImpedanceUnit">
       <superclassifiers>DerivedUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
           <redefinitions>quantity</redefinitions>
@@ -373,7 +373,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
           <redefinitions>quantity</redefinitions>
@@ -382,7 +382,7 @@
           <redefinitions>exponent</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
           <redefinitions>quantity</redefinitions>
@@ -406,12 +406,12 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>SoundPressureLevelUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="soundPressureLevel" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="soundPressureLevel" MultiValue="*" isNonunique="true">
       <typings>SoundPressureLevelValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
@@ -426,12 +426,12 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>SoundPowerLevelUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="soundPowerLevel" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="soundPowerLevel" MultiValue="*" isNonunique="true">
       <typings>SoundPowerLevelValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
@@ -446,12 +446,12 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>SoundExposureLevelUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="soundExposureLevel" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="soundExposureLevel" MultiValue="*" isNonunique="true">
       <typings>SoundExposureLevelValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>

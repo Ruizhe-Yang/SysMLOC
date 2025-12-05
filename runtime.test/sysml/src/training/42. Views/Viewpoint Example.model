@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="'Viewpoint Example'">
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="'Systems Engineer'"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="'IV&amp;V'"/>
+    <elements xsi:type="sysMLOC:ConcernUsage" declaredName="'system breakdown'">
+      <elements xsi:type="sysMLOC:Documentation" body="/* &#xA;&#x9;&#x9; * To ensure that a system covers all its required capabilities,&#xA;&#x9;&#x9; * it is necessary to understand how it is broken down into&#xA;&#x9;&#x9; * subsystems and components that provide those capabilities.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:SubjectUsage"/>
+      <elements xsi:type="sysMLOC:StakeholderUsage" declaredName="se">
+        <typings>'Systems Engineer'</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:StakeholderUsage" declaredName="ivv">
+        <typings>'IV&amp;V'</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:ConcernUsage" declaredName="'modularity'">
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * There should be well defined interfaces between the parts of&#xA;&#x9;&#x9; * a system that allow each part to be understood individually,&#xA;&#x9;&#x9; * as well as being part of the whole system.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:SubjectUsage"/>
+      <elements xsi:type="sysMLOC:StakeholderUsage" declaredName="se">
+        <typings>'Systems Engineer'</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:ViewpointUsage" declaredName="'system structure perspective'">
+      <elements xsi:type="sysMLOC:FramedConcernUsage" refElement="'system breakdown'"/>
+      <elements xsi:type="sysMLOC:FramedConcernUsage" refElement="'modularity'"/>
+      <elements xsi:type="sysMLOC:RequirementConstraintUsage" kind="require">
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * A system structure view shall show the hierarchical &#xA;&#x9;&#x9;&#x9; * part decomposition of a system, starting with a &#xA;&#x9;&#x9;&#x9; * specified root part.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

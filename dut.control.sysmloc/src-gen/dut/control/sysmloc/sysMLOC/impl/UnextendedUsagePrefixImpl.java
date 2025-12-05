@@ -27,8 +27,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.UnextendedUsagePrefixImpl#isIsAbstract <em>Is Abstract</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.UnextendedUsagePrefixImpl#isIsVariation <em>Is Variation</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.UnextendedUsagePrefixImpl#getDirection <em>Direction</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.UnextendedUsagePrefixImpl#isIsReadOnly <em>Is Read Only</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.UnextendedUsagePrefixImpl#isIsDerived <em>Is Derived</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.UnextendedUsagePrefixImpl#isIsConstant <em>Is Constant</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.UnextendedUsagePrefixImpl#isIsReference <em>Is Reference</em>}</li>
  * </ul>
  *
@@ -97,26 +97,6 @@ public class UnextendedUsagePrefixImpl extends EndUsagePrefixImpl implements Une
   protected FeatureDirection direction = DIRECTION_EDEFAULT;
 
   /**
-   * The default value of the '{@link #isIsReadOnly() <em>Is Read Only</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isIsReadOnly()
-   * @generated
-   * @ordered
-   */
-  protected static final boolean IS_READ_ONLY_EDEFAULT = false;
-
-  /**
-   * The cached value of the '{@link #isIsReadOnly() <em>Is Read Only</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isIsReadOnly()
-   * @generated
-   * @ordered
-   */
-  protected boolean isReadOnly = IS_READ_ONLY_EDEFAULT;
-
-  /**
    * The default value of the '{@link #isIsDerived() <em>Is Derived</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -135,6 +115,26 @@ public class UnextendedUsagePrefixImpl extends EndUsagePrefixImpl implements Une
    * @ordered
    */
   protected boolean isDerived = IS_DERIVED_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsConstant() <em>Is Constant</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsConstant()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_CONSTANT_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsConstant() <em>Is Constant</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsConstant()
+   * @generated
+   * @ordered
+   */
+  protected boolean isConstant = IS_CONSTANT_EDEFAULT;
 
   /**
    * The default value of the '{@link #isIsReference() <em>Is Reference</em>}' attribute.
@@ -258,31 +258,6 @@ public class UnextendedUsagePrefixImpl extends EndUsagePrefixImpl implements Une
    * @generated
    */
   @Override
-  public boolean isIsReadOnly()
-  {
-    return isReadOnly;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setIsReadOnly(boolean newIsReadOnly)
-  {
-    boolean oldIsReadOnly = isReadOnly;
-    isReadOnly = newIsReadOnly;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.UNEXTENDED_USAGE_PREFIX__IS_READ_ONLY, oldIsReadOnly, isReadOnly));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public boolean isIsDerived()
   {
     return isDerived;
@@ -300,6 +275,31 @@ public class UnextendedUsagePrefixImpl extends EndUsagePrefixImpl implements Une
     isDerived = newIsDerived;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.UNEXTENDED_USAGE_PREFIX__IS_DERIVED, oldIsDerived, isDerived));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsConstant()
+  {
+    return isConstant;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsConstant(boolean newIsConstant)
+  {
+    boolean oldIsConstant = isConstant;
+    isConstant = newIsConstant;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.UNEXTENDED_USAGE_PREFIX__IS_CONSTANT, oldIsConstant, isConstant));
   }
 
   /**
@@ -343,10 +343,10 @@ public class UnextendedUsagePrefixImpl extends EndUsagePrefixImpl implements Une
         return isIsVariation();
       case SysMLOCPackage.UNEXTENDED_USAGE_PREFIX__DIRECTION:
         return getDirection();
-      case SysMLOCPackage.UNEXTENDED_USAGE_PREFIX__IS_READ_ONLY:
-        return isIsReadOnly();
       case SysMLOCPackage.UNEXTENDED_USAGE_PREFIX__IS_DERIVED:
         return isIsDerived();
+      case SysMLOCPackage.UNEXTENDED_USAGE_PREFIX__IS_CONSTANT:
+        return isIsConstant();
       case SysMLOCPackage.UNEXTENDED_USAGE_PREFIX__IS_REFERENCE:
         return isIsReference();
     }
@@ -372,11 +372,11 @@ public class UnextendedUsagePrefixImpl extends EndUsagePrefixImpl implements Une
       case SysMLOCPackage.UNEXTENDED_USAGE_PREFIX__DIRECTION:
         setDirection((FeatureDirection)newValue);
         return;
-      case SysMLOCPackage.UNEXTENDED_USAGE_PREFIX__IS_READ_ONLY:
-        setIsReadOnly((Boolean)newValue);
-        return;
       case SysMLOCPackage.UNEXTENDED_USAGE_PREFIX__IS_DERIVED:
         setIsDerived((Boolean)newValue);
+        return;
+      case SysMLOCPackage.UNEXTENDED_USAGE_PREFIX__IS_CONSTANT:
+        setIsConstant((Boolean)newValue);
         return;
       case SysMLOCPackage.UNEXTENDED_USAGE_PREFIX__IS_REFERENCE:
         setIsReference((Boolean)newValue);
@@ -404,11 +404,11 @@ public class UnextendedUsagePrefixImpl extends EndUsagePrefixImpl implements Une
       case SysMLOCPackage.UNEXTENDED_USAGE_PREFIX__DIRECTION:
         setDirection(DIRECTION_EDEFAULT);
         return;
-      case SysMLOCPackage.UNEXTENDED_USAGE_PREFIX__IS_READ_ONLY:
-        setIsReadOnly(IS_READ_ONLY_EDEFAULT);
-        return;
       case SysMLOCPackage.UNEXTENDED_USAGE_PREFIX__IS_DERIVED:
         setIsDerived(IS_DERIVED_EDEFAULT);
+        return;
+      case SysMLOCPackage.UNEXTENDED_USAGE_PREFIX__IS_CONSTANT:
+        setIsConstant(IS_CONSTANT_EDEFAULT);
         return;
       case SysMLOCPackage.UNEXTENDED_USAGE_PREFIX__IS_REFERENCE:
         setIsReference(IS_REFERENCE_EDEFAULT);
@@ -433,10 +433,10 @@ public class UnextendedUsagePrefixImpl extends EndUsagePrefixImpl implements Une
         return isVariation != IS_VARIATION_EDEFAULT;
       case SysMLOCPackage.UNEXTENDED_USAGE_PREFIX__DIRECTION:
         return direction != DIRECTION_EDEFAULT;
-      case SysMLOCPackage.UNEXTENDED_USAGE_PREFIX__IS_READ_ONLY:
-        return isReadOnly != IS_READ_ONLY_EDEFAULT;
       case SysMLOCPackage.UNEXTENDED_USAGE_PREFIX__IS_DERIVED:
         return isDerived != IS_DERIVED_EDEFAULT;
+      case SysMLOCPackage.UNEXTENDED_USAGE_PREFIX__IS_CONSTANT:
+        return isConstant != IS_CONSTANT_EDEFAULT;
       case SysMLOCPackage.UNEXTENDED_USAGE_PREFIX__IS_REFERENCE:
         return isReference != IS_REFERENCE_EDEFAULT;
     }
@@ -465,8 +465,8 @@ public class UnextendedUsagePrefixImpl extends EndUsagePrefixImpl implements Une
       switch (derivedFeatureID)
       {
         case SysMLOCPackage.UNEXTENDED_USAGE_PREFIX__DIRECTION: return SysMLOCPackage.REF_PREFIX__DIRECTION;
-        case SysMLOCPackage.UNEXTENDED_USAGE_PREFIX__IS_READ_ONLY: return SysMLOCPackage.REF_PREFIX__IS_READ_ONLY;
         case SysMLOCPackage.UNEXTENDED_USAGE_PREFIX__IS_DERIVED: return SysMLOCPackage.REF_PREFIX__IS_DERIVED;
+        case SysMLOCPackage.UNEXTENDED_USAGE_PREFIX__IS_CONSTANT: return SysMLOCPackage.REF_PREFIX__IS_CONSTANT;
         default: return -1;
       }
     }
@@ -503,8 +503,8 @@ public class UnextendedUsagePrefixImpl extends EndUsagePrefixImpl implements Une
       switch (baseFeatureID)
       {
         case SysMLOCPackage.REF_PREFIX__DIRECTION: return SysMLOCPackage.UNEXTENDED_USAGE_PREFIX__DIRECTION;
-        case SysMLOCPackage.REF_PREFIX__IS_READ_ONLY: return SysMLOCPackage.UNEXTENDED_USAGE_PREFIX__IS_READ_ONLY;
         case SysMLOCPackage.REF_PREFIX__IS_DERIVED: return SysMLOCPackage.UNEXTENDED_USAGE_PREFIX__IS_DERIVED;
+        case SysMLOCPackage.REF_PREFIX__IS_CONSTANT: return SysMLOCPackage.UNEXTENDED_USAGE_PREFIX__IS_CONSTANT;
         default: return -1;
       }
     }
@@ -536,10 +536,10 @@ public class UnextendedUsagePrefixImpl extends EndUsagePrefixImpl implements Une
     result.append(isVariation);
     result.append(", direction: ");
     result.append(direction);
-    result.append(", isReadOnly: ");
-    result.append(isReadOnly);
     result.append(", isDerived: ");
     result.append(isDerived);
+    result.append(", isConstant: ");
+    result.append(isConstant);
     result.append(", isReference: ");
     result.append(isReference);
     result.append(')');

@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface AcceptNode extends ActionNodeElements, EmptySuccessionPrefix, MemberPrefix, OccurrenceUsagePrefix, BasicUsagePrefix, RefPrefix, BasicDefinitionPrefix, UsageExtensionKeyword, PrefixMetadata, ActionNodeUsageDeclaration, UsageDeclaration, FeatureDeclaration, Identification, FeatureSpecializationPart, FeatureSpecialization, TypingFeatureTyping, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, MultiplicityPart, MultiplicityRange, AcceptParameterPart
+public interface AcceptNode extends ActionNodeElements, EmptySuccessionPrefix, MemberPrefix, OccurrenceUsagePrefix, EndUsagePrefix, EndMultiplicityRange, BasicUsagePrefix, RefPrefix, BasicDefinitionPrefix, UsageExtensionKeyword, PrefixMetadata, ActionNodeUsageDeclaration, UsageDeclaration, FeatureDeclaration, Identification, FeatureSpecializationPart, FeatureSpecialization, TypingFeatureTyping, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, MultiplicityPart, MultiplicityRange, MultiplicityModifiers, AcceptParameterPart
 {
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.

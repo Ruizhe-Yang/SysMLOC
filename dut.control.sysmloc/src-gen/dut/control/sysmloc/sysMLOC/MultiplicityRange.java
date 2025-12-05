@@ -14,9 +14,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.MultiplicityRange#getMulti0 <em>Multi0</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.MultiplicityRange#getMulti1 <em>Multi1</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.MultiplicityRange#getMulti02 <em>Multi02</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.MultiplicityRange#getMultiValue <em>Multi Value</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.MultiplicityRange#getMultiLow <em>Multi Low</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.MultiplicityRange#getMultiHigh <em>Multi High</em>}</li>
  * </ul>
  *
  * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getMultiplicityRange()
@@ -26,69 +26,69 @@ import org.eclipse.emf.ecore.EObject;
 public interface MultiplicityRange extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Multi0</b></em>' attribute.
+   * Returns the value of the '<em><b>Multi Value</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Multi0</em>' attribute.
-   * @see #setMulti0(String)
-   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getMultiplicityRange_Multi0()
+   * @return the value of the '<em>Multi Value</em>' attribute.
+   * @see #setMultiValue(String)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getMultiplicityRange_MultiValue()
    * @model
    * @generated
    */
-  String getMulti0();
+  String getMultiValue();
 
   /**
-   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.MultiplicityRange#getMulti0 <em>Multi0</em>}' attribute.
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.MultiplicityRange#getMultiValue <em>Multi Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Multi0</em>' attribute.
-   * @see #getMulti0()
+   * @param value the new value of the '<em>Multi Value</em>' attribute.
+   * @see #getMultiValue()
    * @generated
    */
-  void setMulti0(String value);
+  void setMultiValue(String value);
 
   /**
-   * Returns the value of the '<em><b>Multi1</b></em>' attribute.
+   * Returns the value of the '<em><b>Multi Low</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Multi1</em>' attribute.
-   * @see #setMulti1(String)
-   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getMultiplicityRange_Multi1()
+   * @return the value of the '<em>Multi Low</em>' attribute.
+   * @see #setMultiLow(String)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getMultiplicityRange_MultiLow()
    * @model
    * @generated
    */
-  String getMulti1();
+  String getMultiLow();
 
   /**
-   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.MultiplicityRange#getMulti1 <em>Multi1</em>}' attribute.
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.MultiplicityRange#getMultiLow <em>Multi Low</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Multi1</em>' attribute.
-   * @see #getMulti1()
+   * @param value the new value of the '<em>Multi Low</em>' attribute.
+   * @see #getMultiLow()
    * @generated
    */
-  void setMulti1(String value);
+  void setMultiLow(String value);
 
   /**
-   * Returns the value of the '<em><b>Multi02</b></em>' attribute.
+   * Returns the value of the '<em><b>Multi High</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Multi02</em>' attribute.
-   * @see #setMulti02(String)
-   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getMultiplicityRange_Multi02()
+   * @return the value of the '<em>Multi High</em>' attribute.
+   * @see #setMultiHigh(String)
+   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getMultiplicityRange_MultiHigh()
    * @model
    * @generated
    */
-  String getMulti02();
+  String getMultiHigh();
 
   /**
-   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.MultiplicityRange#getMulti02 <em>Multi02</em>}' attribute.
+   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.MultiplicityRange#getMultiHigh <em>Multi High</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Multi02</em>' attribute.
-   * @see #getMulti02()
+   * @param value the new value of the '<em>Multi High</em>' attribute.
+   * @see #getMultiHigh()
    * @generated
    */
-  void setMulti02(String value);
+  void setMultiHigh(String value);
 
 } // MultiplicityRange

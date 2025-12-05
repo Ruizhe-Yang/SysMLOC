@@ -38,13 +38,13 @@
         <redefinitions>BinaryLinkObject::target</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:ConnectionUsage" isAbstract="true" declaredName="connections" Multi1="0" Multi02="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:ConnectionUsage" isAbstract="true" declaredName="connections" MultiLow="0" MultiHigh="*" isNonunique="true">
       <typings>Connection</typings>
       <subsetting>linkObjects</subsetting>
       <subsetting>parts</subsetting>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * connections is the base feature of all ConnectionUsages.&#xA;         */"/>
     </elements>
-    <elements xsi:type="sysMLOC:ConnectionUsage" isAbstract="true" declaredName="binaryConnections" Multi1="0" Multi02="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:ConnectionUsage" isAbstract="true" declaredName="binaryConnections" MultiLow="0" MultiHigh="*" isNonunique="true">
       <typings>Connection</typings>
       <subsetting>connections</subsetting>
       <subsetting>binaryLinkObjects</subsetting>

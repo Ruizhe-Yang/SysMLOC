@@ -22,8 +22,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.RefPrefixImpl#getDirection <em>Direction</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.RefPrefixImpl#isIsReadOnly <em>Is Read Only</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.RefPrefixImpl#isIsDerived <em>Is Derived</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.RefPrefixImpl#isIsConstant <em>Is Constant</em>}</li>
  * </ul>
  *
  * @generated
@@ -51,26 +51,6 @@ public class RefPrefixImpl extends BasicDefinitionPrefixImpl implements RefPrefi
   protected FeatureDirection direction = DIRECTION_EDEFAULT;
 
   /**
-   * The default value of the '{@link #isIsReadOnly() <em>Is Read Only</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isIsReadOnly()
-   * @generated
-   * @ordered
-   */
-  protected static final boolean IS_READ_ONLY_EDEFAULT = false;
-
-  /**
-   * The cached value of the '{@link #isIsReadOnly() <em>Is Read Only</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isIsReadOnly()
-   * @generated
-   * @ordered
-   */
-  protected boolean isReadOnly = IS_READ_ONLY_EDEFAULT;
-
-  /**
    * The default value of the '{@link #isIsDerived() <em>Is Derived</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -89,6 +69,26 @@ public class RefPrefixImpl extends BasicDefinitionPrefixImpl implements RefPrefi
    * @ordered
    */
   protected boolean isDerived = IS_DERIVED_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsConstant() <em>Is Constant</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsConstant()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_CONSTANT_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsConstant() <em>Is Constant</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsConstant()
+   * @generated
+   * @ordered
+   */
+  protected boolean isConstant = IS_CONSTANT_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -142,31 +142,6 @@ public class RefPrefixImpl extends BasicDefinitionPrefixImpl implements RefPrefi
    * @generated
    */
   @Override
-  public boolean isIsReadOnly()
-  {
-    return isReadOnly;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setIsReadOnly(boolean newIsReadOnly)
-  {
-    boolean oldIsReadOnly = isReadOnly;
-    isReadOnly = newIsReadOnly;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.REF_PREFIX__IS_READ_ONLY, oldIsReadOnly, isReadOnly));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public boolean isIsDerived()
   {
     return isDerived;
@@ -192,16 +167,41 @@ public class RefPrefixImpl extends BasicDefinitionPrefixImpl implements RefPrefi
    * @generated
    */
   @Override
+  public boolean isIsConstant()
+  {
+    return isConstant;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsConstant(boolean newIsConstant)
+  {
+    boolean oldIsConstant = isConstant;
+    isConstant = newIsConstant;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.REF_PREFIX__IS_CONSTANT, oldIsConstant, isConstant));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
       case SysMLOCPackage.REF_PREFIX__DIRECTION:
         return getDirection();
-      case SysMLOCPackage.REF_PREFIX__IS_READ_ONLY:
-        return isIsReadOnly();
       case SysMLOCPackage.REF_PREFIX__IS_DERIVED:
         return isIsDerived();
+      case SysMLOCPackage.REF_PREFIX__IS_CONSTANT:
+        return isIsConstant();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -219,11 +219,11 @@ public class RefPrefixImpl extends BasicDefinitionPrefixImpl implements RefPrefi
       case SysMLOCPackage.REF_PREFIX__DIRECTION:
         setDirection((FeatureDirection)newValue);
         return;
-      case SysMLOCPackage.REF_PREFIX__IS_READ_ONLY:
-        setIsReadOnly((Boolean)newValue);
-        return;
       case SysMLOCPackage.REF_PREFIX__IS_DERIVED:
         setIsDerived((Boolean)newValue);
+        return;
+      case SysMLOCPackage.REF_PREFIX__IS_CONSTANT:
+        setIsConstant((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -242,11 +242,11 @@ public class RefPrefixImpl extends BasicDefinitionPrefixImpl implements RefPrefi
       case SysMLOCPackage.REF_PREFIX__DIRECTION:
         setDirection(DIRECTION_EDEFAULT);
         return;
-      case SysMLOCPackage.REF_PREFIX__IS_READ_ONLY:
-        setIsReadOnly(IS_READ_ONLY_EDEFAULT);
-        return;
       case SysMLOCPackage.REF_PREFIX__IS_DERIVED:
         setIsDerived(IS_DERIVED_EDEFAULT);
+        return;
+      case SysMLOCPackage.REF_PREFIX__IS_CONSTANT:
+        setIsConstant(IS_CONSTANT_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -264,10 +264,10 @@ public class RefPrefixImpl extends BasicDefinitionPrefixImpl implements RefPrefi
     {
       case SysMLOCPackage.REF_PREFIX__DIRECTION:
         return direction != DIRECTION_EDEFAULT;
-      case SysMLOCPackage.REF_PREFIX__IS_READ_ONLY:
-        return isReadOnly != IS_READ_ONLY_EDEFAULT;
       case SysMLOCPackage.REF_PREFIX__IS_DERIVED:
         return isDerived != IS_DERIVED_EDEFAULT;
+      case SysMLOCPackage.REF_PREFIX__IS_CONSTANT:
+        return isConstant != IS_CONSTANT_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -285,10 +285,10 @@ public class RefPrefixImpl extends BasicDefinitionPrefixImpl implements RefPrefi
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (direction: ");
     result.append(direction);
-    result.append(", isReadOnly: ");
-    result.append(isReadOnly);
     result.append(", isDerived: ");
     result.append(isDerived);
+    result.append(", isConstant: ");
+    result.append(isConstant);
     result.append(')');
     return result.toString();
   }

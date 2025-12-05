@@ -37,18 +37,18 @@
         <typings>Real</typings>
         <redefinitions>num</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>TemperatureDifferenceUnit</typings>
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="temperatureDifference" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="temperatureDifference" MultiValue="*" isNonunique="true">
       <typings>TemperatureDifferenceValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="TemperatureDifferenceUnit">
       <superclassifiers>SimpleUnit</superclassifiers>
-      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="thermodynamicTemperaturePF" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="thermodynamicTemperaturePF" MultiValue="1">
         <typings>QuantityPowerFactor</typings>
         <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.'&#x398;'">
           <redefinitions>quantity</redefinitions>

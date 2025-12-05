@@ -269,7 +269,6 @@
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//TransitionUsage">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//TransitionUsage/transitionSourceElement"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//TransitionUsage/conditionalExpression"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//TransitionUsage/elements"/>
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//RequirementDefinition">
@@ -465,6 +464,7 @@
     <genClasses ecoreClass="SysMLOC.ecore#//ActionParameterEnd"/>
     <genClasses ecoreClass="SysMLOC.ecore#//ForVariableParameter"/>
     <genClasses ecoreClass="SysMLOC.ecore#//PayloadParameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//PayloadParameter/isVia"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//PayloadParameter/viaNodeParameter"/>
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//ConnectorEnd">
@@ -481,14 +481,14 @@
     <genClasses ecoreClass="SysMLOC.ecore#//DefinitionExtensionKeyword"/>
     <genClasses ecoreClass="SysMLOC.ecore#//EmptySuccessionPrefix">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//EmptySuccessionPrefix/isThen"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//EmptySuccessionPrefix/ThenMulti0"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//EmptySuccessionPrefix/ThenMulti1"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//EmptySuccessionPrefix/ThenMulti02"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//EmptySuccessionPrefix/ThenMultiValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//EmptySuccessionPrefix/ThenMultiLow"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//EmptySuccessionPrefix/ThenMultiHigh"/>
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//MultiplicityRange">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//MultiplicityRange/Multi0"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//MultiplicityRange/Multi1"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//MultiplicityRange/Multi02"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//MultiplicityRange/MultiValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//MultiplicityRange/MultiLow"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//MultiplicityRange/MultiHigh"/>
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//ValuePart"/>
     <genClasses ecoreClass="SysMLOC.ecore#//MemberPrefix">
@@ -511,15 +511,19 @@
     <genClasses ecoreClass="SysMLOC.ecore#//EndUsagePrefix">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//EndUsagePrefix/isEnd"/>
     </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//EndMultiplicityRange">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//EndMultiplicityRange/EndMultiValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//EndMultiplicityRange/EndMultiLow"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//EndMultiplicityRange/EndMultiHigh"/>
+    </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//OccurrenceUsagePrefix">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//OccurrenceUsagePrefix/isEnd"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//OccurrenceUsagePrefix/isIndividual"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//OccurrenceUsagePrefix/portionKind"/>
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//RefPrefix">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//RefPrefix/direction"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//RefPrefix/isReadOnly"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//RefPrefix/isDerived"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//RefPrefix/isConstant"/>
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//BasicUsagePrefix">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//BasicUsagePrefix/isReference"/>
@@ -574,9 +578,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//Identification/declaredShortName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//Identification/declaredName"/>
     </genClasses>
-    <genClasses ecoreClass="SysMLOC.ecore#//MultiplicityPart">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//MultiplicityPart/isOrdered"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//MultiplicityPart/isNonunique"/>
+    <genClasses ecoreClass="SysMLOC.ecore#//MultiplicityPart"/>
+    <genClasses ecoreClass="SysMLOC.ecore#//MultiplicityModifiers">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//MultiplicityModifiers/isOrdered"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//MultiplicityModifiers/isNonunique"/>
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//FeatureSpecialization"/>
     <genClasses ecoreClass="SysMLOC.ecore#//TypingFeatureTyping">
@@ -607,6 +612,9 @@
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//PerformedActionParameterPart">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//PerformedActionParameterPart/performedActionParameterPart"/>
+    </genClasses>
+    <genClasses ecoreClass="SysMLOC.ecore#//TransitionUsageIfPart">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//TransitionUsageIfPart/conditionalExpression"/>
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//AcceptActionUsage"/>
     <genClasses ecoreClass="SysMLOC.ecore#//SendActionUsage"/>

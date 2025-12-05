@@ -23,7 +23,7 @@
         <typings>Level</typings>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The probability that a risk will occur.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="impact" Multi1="0" Multi02="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="impact" MultiLow="0" MultiHigh="1">
         <typings>Level</typings>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The impact of the risk if it occurs (with 0.0 being no impact and 1.0 being &#xA;&#x9;&#x9;&#x9; * the most severe impact).&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
@@ -37,19 +37,19 @@
     </elements>
     <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="Risk">
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Risk is used to annotate a model element with an assessment of the risk related to it&#xA;&#x9;&#x9; * in some typical risk areas.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="totalRisk" Multi1="0" Multi02="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="totalRisk" MultiLow="0" MultiHigh="1">
         <typings>RiskLevel</typings>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The total risk associated with the annotated element.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="technicalRisk" Multi1="0" Multi02="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="technicalRisk" MultiLow="0" MultiHigh="1">
         <typings>RiskLevel</typings>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The risk of unresolved technical issues regarding the annotated element.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="scheduleRisk" Multi1="0" Multi02="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="scheduleRisk" MultiLow="0" MultiHigh="1">
         <typings>RiskLevel</typings>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The risk that work on the annotated element will not be completed on schedule.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="costRisk" Multi1="0" Multi02="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="costRisk" MultiLow="0" MultiHigh="1">
         <typings>RiskLevel</typings>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The risk that work on the annotated element will exceed its planned cost.&#xA;&#x9;&#x9;&#x9; */"/>
       </elements>

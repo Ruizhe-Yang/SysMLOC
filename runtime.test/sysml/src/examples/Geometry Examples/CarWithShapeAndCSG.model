@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="CarWithShapeAndCSG">
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="SpatialItems" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ShapeItems" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Objects::Point"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Quantities::VectorQuantityValue"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="MeasurementReferences::CoordinateFrame"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="MeasurementReferences::TranslationRotationSequence"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="MeasurementReferences::Translation"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="MeasurementReferences::Rotation"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="SI" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Car">
+      <superclassifiers>SpatialItem</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Car with simple engine&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:ItemUsage" valuePart="new Cuboid(4800 [mm], 1840 [mm], 1350 [mm])">
+        <redefinitions>shape</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="datum">
+        <redefinitions>coordinateFrame</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(mm, mm, mm)">
+          <redefinitions>mRefs</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="powerSource" MultiValue="1">
+        <typings>Engine</typings>
+        <subsetting>componentParts</subsetting>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <redefinitions>ecf</redefinitions>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="datum.mRefs">
+            <redefinitions>mRefs</redefinitions>
+          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <typings>TranslationRotationSequence</typings>
+            <redefinitions>transformation</redefinitions>
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="datum">
+              <redefinitions>source</redefinitions>
+            </elements>
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="( new Translation((3800, (1840-190)/2, 40)[datum]) )">
+              <redefinitions>elements</redefinitions>
+            </elements>
+          </elements>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Engine">
+      <superclassifiers>SpatialItem</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Simple 2-cylinder engine&#xA;&#x9;&#x9; * &#xA;&#x9;&#x9; * Note: The engine shape is modeled as a rectangular box with two cylindrical holes, a gross simplification.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:ItemUsage" MultiValue="1">
+        <redefinitions>shape</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="ecf" declaredName="engineCoordinateFrame">
+        <redefinitions>coordinateFrame</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="rawEngineBlock" MultiValue="1">
+        <subsetting>subSpatialParts</subsetting>
+        <elements xsi:type="sysMLOC:ItemUsage" MultiValue="1">
+          <typings>Box</typings>
+          <redefinitions>shape</redefinitions>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="300 [mm]">
+            <redefinitions>length</redefinitions>
+          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="190 [mm]">
+            <redefinitions>width</redefinitions>
+          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="330 [mm]">
+            <redefinitions>height</redefinitions>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="rearCylinderSpacing" valuePart="90 [mm]"/>
+      <elements xsi:type="sysMLOC:ItemUsage" visibility="private" declaredName="cylinder1" MultiValue="1">
+        <subsetting>subSpatialParts</subsetting>
+        <elements xsi:type="sysMLOC:ItemUsage" MultiValue="1">
+          <typings>Cylinder</typings>
+          <redefinitions>shape</redefinitions>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="55 [mm]">
+            <redefinitions>radius</redefinitions>
+          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="350 [mm]">
+            <redefinitions>height</redefinitions>
+          </elements>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage">
+          <redefinitions>coordinateFrame</redefinitions>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <typings>TranslationRotationSequence</typings>
+            <redefinitions>transformation</redefinitions>
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="ecf">
+              <redefinitions>source</redefinitions>
+            </elements>
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(new Translation( (rearCylinderSpacing, rawEngineBlock.shape.width/2, -10)[ecf]))">
+              <redefinitions>elements</redefinitions>
+            </elements>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="cylinderSpacing" valuePart="2*cylinder1.shape.radius + 20 [mm]"/>
+      <elements xsi:type="sysMLOC:ItemUsage" visibility="private" declaredName="cylinder2" MultiValue="1">
+        <subsetting>subSpatialParts</subsetting>
+        <elements xsi:type="sysMLOC:ItemUsage" MultiValue="1">
+          <typings>Cylinder</typings>
+          <redefinitions>shape</redefinitions>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="cylinder1.shape.radius">
+            <redefinitions>radius</redefinitions>
+          </elements>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="cylinder1.shape.height">
+            <redefinitions>height</redefinitions>
+          </elements>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage">
+          <redefinitions>coordinateFrame</redefinitions>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+            <typings>TranslationRotationSequence</typings>
+            <redefinitions>transformation</redefinitions>
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="ecf">
+              <redefinitions>source</redefinitions>
+            </elements>
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="( new Translation((rearCylinderSpacing + cylinderSpacing, rawEngineBlock.shape.width/2, -10)[ecf]) )">
+              <redefinitions>elements</redefinitions>
+            </elements>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:Comment" body="/* CSG difference of rawEngineBlock minus cylinder1 minus cylinder2 */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
+        <subsetting>differencesOf</subsetting>
+        <elements xsi:type="sysMLOC:ItemUsage" valuePart="(rawEngineBlock, cylinder1, cylinder2)">
+          <redefinitions>elements</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

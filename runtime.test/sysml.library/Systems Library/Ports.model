@@ -11,13 +11,13 @@
         <typings>Port</typings>
         <redefinitions>Object::self</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:PortUsage" declaredName="subports" Multi1="0" Multi02="*">
+      <elements xsi:type="sysMLOC:PortUsage" declaredName="subports" MultiLow="0" MultiHigh="*">
         <typings>Port</typings>
         <subsetting>ports</subsetting>
         <subsetting>timeEnclosedOccurrences</subsetting>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;             * The Ports that are subports of this Port.&#xA;             */"/>
       </elements>
-      <elements xsi:type="sysMLOC:PortUsage" isAbstract="true" isReference="true" declaredName="interfacingPorts" Multi1="0" Multi02="*" isNonunique="true">
+      <elements xsi:type="sysMLOC:PortUsage" isAbstract="true" isReference="true" declaredName="interfacingPorts" MultiLow="0" MultiHigh="*" isNonunique="true">
         <typings>Port</typings>
         <subsetting>ports</subsetting>
         <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;             * Ports that are connected to this Port by an Interface.&#xA;             */"/>
@@ -30,7 +30,7 @@
         <elements xsi:type="sysMLOC:ReferenceUsage" isEnd="true" declaredName="target"/>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:PortUsage" isAbstract="true" declaredName="ports" Multi1="0" Multi02="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:PortUsage" isAbstract="true" declaredName="ports" MultiLow="0" MultiHigh="*" isNonunique="true">
       <typings>Port</typings>
       <subsetting>objects</subsetting>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * ports is the base feature of all PortUsages.&#xA;         */"/>

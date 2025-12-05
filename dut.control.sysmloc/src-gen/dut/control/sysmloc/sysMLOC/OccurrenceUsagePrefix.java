@@ -13,7 +13,6 @@ package dut.control.sysmloc.sysMLOC;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dut.control.sysmloc.sysMLOC.OccurrenceUsagePrefix#isIsEnd <em>Is End</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.OccurrenceUsagePrefix#isIsIndividual <em>Is Individual</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.OccurrenceUsagePrefix#getPortionKind <em>Portion Kind</em>}</li>
  * </ul>
@@ -22,30 +21,8 @@ package dut.control.sysmloc.sysMLOC;
  * @model
  * @generated
  */
-public interface OccurrenceUsagePrefix extends BasicUsagePrefix, RefPrefix, BasicDefinitionPrefix, UsageExtensionKeyword
+public interface OccurrenceUsagePrefix extends EndUsagePrefix, BasicUsagePrefix, RefPrefix, BasicDefinitionPrefix, UsageExtensionKeyword
 {
-  /**
-   * Returns the value of the '<em><b>Is End</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Is End</em>' attribute.
-   * @see #setIsEnd(boolean)
-   * @see dut.control.sysmloc.sysMLOC.SysMLOCPackage#getOccurrenceUsagePrefix_IsEnd()
-   * @model
-   * @generated
-   */
-  boolean isIsEnd();
-
-  /**
-   * Sets the value of the '{@link dut.control.sysmloc.sysMLOC.OccurrenceUsagePrefix#isIsEnd <em>Is End</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Is End</em>' attribute.
-   * @see #isIsEnd()
-   * @generated
-   */
-  void setIsEnd(boolean value);
-
   /**
    * Returns the value of the '<em><b>Is Individual</b></em>' attribute.
    * <!-- begin-user-doc -->

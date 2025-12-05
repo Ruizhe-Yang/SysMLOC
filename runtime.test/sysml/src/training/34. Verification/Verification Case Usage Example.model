@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:Package" declaredName="'Verification Case Usage Example'">
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="'Verification Case Definition Example'" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="MassVerificationSystem"/>
+    <elements xsi:type="sysMLOC:PartDefinition" declaredName="Scale"/>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="vehicleTestConfig">
+      <typings>Vehicle</typings>
+      <elements xsi:type="sysMLOC:CodeAnnotation" body="// ...&#xA;"/>
+    </elements>
+    <elements xsi:type="sysMLOC:VerificationCaseUsage" declaredName="vehicleMassTest">
+      <typings>VehicleMassTest</typings>
+      <elements xsi:type="sysMLOC:SubjectUsage" declaredName="testVehicle">
+        <subsetting>vehicleTestConfig</subsetting>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PartUsage" declaredName="massVerificationSystem">
+      <typings>MassVerificationSystem</typings>
+      <elements xsi:type="sysMLOC:PerformActionUsage" refElement="vehicleMassTest"/>
+      <elements xsi:type="sysMLOC:PartUsage" declaredName="scale">
+        <typings>Scale</typings>
+        <elements xsi:type="sysMLOC:PerformActionUsage" refElement="vehicleMassTest.collectData">
+          <elements xsi:type="sysMLOC:PartUsage" direction="in">
+            <redefinitions>testVehicle</redefinitions>
+          </elements>
+          <elements xsi:type="sysMLOC:CodeAnnotation" body="// In reality, this would be some more involved process.&#xA;"/>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" declaredName="measurement" valuePart="testVehicle.mass"/>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="out" valuePart="measurement">
+            <redefinitions>massMeasured</redefinitions>
+          </elements>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:IndividualDefinition" declaredName="TestSystem" isIndividual="true">
+      <superclassifiers>MassVerificationSystem</superclassifiers>
+    </elements>
+    <elements xsi:type="sysMLOC:IndividualDefinition" declaredName="TestVehicle1" isIndividual="true">
+      <superclassifiers>Vehicle</superclassifiers>
+    </elements>
+    <elements xsi:type="sysMLOC:IndividualDefinition" declaredName="TestVehicle2" isIndividual="true">
+      <superclassifiers>Vehicle</superclassifiers>
+    </elements>
+    <elements xsi:type="sysMLOC:IndividualUsage" declaredName="testSystem" isIndividual="true">
+      <typings>TestSystem</typings>
+      <subsetting>massVerificationSystem</subsetting>
+      <elements xsi:type="sysMLOC:PortionUsage" declaredName="test1" portionKind="timeslice">
+        <elements xsi:type="sysMLOC:PerformActionUsage">
+          <redefinitions>vehicleMassTest</redefinitions>
+          <elements xsi:type="sysMLOC:IndividualUsage" direction="in" isIndividual="true">
+            <typings>TestVehicle1</typings>
+            <redefinitions>testVehicle</redefinitions>
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2500[SI::kg]">
+              <redefinitions>mass</redefinitions>
+            </elements>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:PortionUsage" isThen="true" declaredName="test2" portionKind="timeslice">
+        <elements xsi:type="sysMLOC:PerformActionUsage">
+          <redefinitions>vehicleMassTest</redefinitions>
+          <elements xsi:type="sysMLOC:IndividualUsage" direction="in" isIndividual="true">
+            <typings>TestVehicle2</typings>
+            <redefinitions>testVehicle</redefinitions>
+            <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="3000[SI::kg]">
+              <redefinitions>mass</redefinitions>
+            </elements>
+          </elements>
+        </elements>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

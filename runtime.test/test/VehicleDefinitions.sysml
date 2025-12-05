@@ -6,11 +6,9 @@ package VehicleDefinitions {
 
 	private import ScalarValues::*;
 	private import Quantities::*;
-	// aaaaa aaaa.
 	private import MeasurementReferences::*;
 	private import ISQ::*;
 	private import SI::*;
-	// aaaaa
 	/* PART DEFINITIONS */
 	
 	part def Vehicle {

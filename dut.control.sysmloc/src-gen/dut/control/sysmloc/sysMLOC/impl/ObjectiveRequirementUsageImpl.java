@@ -11,6 +11,7 @@ import dut.control.sysmloc.sysMLOC.FeatureSpecializationPart;
 import dut.control.sysmloc.sysMLOC.FeatureValue;
 import dut.control.sysmloc.sysMLOC.Identification;
 import dut.control.sysmloc.sysMLOC.MemberPrefix;
+import dut.control.sysmloc.sysMLOC.MultiplicityModifiers;
 import dut.control.sysmloc.sysMLOC.MultiplicityPart;
 import dut.control.sysmloc.sysMLOC.MultiplicityRange;
 import dut.control.sysmloc.sysMLOC.ObjectiveRequirementUsage;
@@ -60,9 +61,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ObjectiveRequirementUsageImpl#getReferences <em>References</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ObjectiveRequirementUsageImpl#getCrosses <em>Crosses</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ObjectiveRequirementUsageImpl#getRedefinitions <em>Redefinitions</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ObjectiveRequirementUsageImpl#getMulti0 <em>Multi0</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ObjectiveRequirementUsageImpl#getMulti1 <em>Multi1</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ObjectiveRequirementUsageImpl#getMulti02 <em>Multi02</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ObjectiveRequirementUsageImpl#getMultiValue <em>Multi Value</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ObjectiveRequirementUsageImpl#getMultiLow <em>Multi Low</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ObjectiveRequirementUsageImpl#getMultiHigh <em>Multi High</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ObjectiveRequirementUsageImpl#isIsOrdered <em>Is Ordered</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ObjectiveRequirementUsageImpl#isIsNonunique <em>Is Nonunique</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ObjectiveRequirementUsageImpl#isIsInitial <em>Is Initial</em>}</li>
@@ -216,64 +217,64 @@ public class ObjectiveRequirementUsageImpl extends CaseBodyElementImpl implement
   protected EList<String> redefinitions;
 
   /**
-   * The default value of the '{@link #getMulti0() <em>Multi0</em>}' attribute.
+   * The default value of the '{@link #getMultiValue() <em>Multi Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMulti0()
+   * @see #getMultiValue()
    * @generated
    * @ordered
    */
-  protected static final String MULTI0_EDEFAULT = null;
+  protected static final String MULTI_VALUE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getMulti0() <em>Multi0</em>}' attribute.
+   * The cached value of the '{@link #getMultiValue() <em>Multi Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMulti0()
+   * @see #getMultiValue()
    * @generated
    * @ordered
    */
-  protected String multi0 = MULTI0_EDEFAULT;
+  protected String multiValue = MULTI_VALUE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getMulti1() <em>Multi1</em>}' attribute.
+   * The default value of the '{@link #getMultiLow() <em>Multi Low</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMulti1()
+   * @see #getMultiLow()
    * @generated
    * @ordered
    */
-  protected static final String MULTI1_EDEFAULT = null;
+  protected static final String MULTI_LOW_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getMulti1() <em>Multi1</em>}' attribute.
+   * The cached value of the '{@link #getMultiLow() <em>Multi Low</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMulti1()
+   * @see #getMultiLow()
    * @generated
    * @ordered
    */
-  protected String multi1 = MULTI1_EDEFAULT;
+  protected String multiLow = MULTI_LOW_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getMulti02() <em>Multi02</em>}' attribute.
+   * The default value of the '{@link #getMultiHigh() <em>Multi High</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMulti02()
+   * @see #getMultiHigh()
    * @generated
    * @ordered
    */
-  protected static final String MULTI02_EDEFAULT = null;
+  protected static final String MULTI_HIGH_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getMulti02() <em>Multi02</em>}' attribute.
+   * The cached value of the '{@link #getMultiHigh() <em>Multi High</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMulti02()
+   * @see #getMultiHigh()
    * @generated
    * @ordered
    */
-  protected String multi02 = MULTI02_EDEFAULT;
+  protected String multiHigh = MULTI_HIGH_EDEFAULT;
 
   /**
    * The default value of the '{@link #isIsOrdered() <em>Is Ordered</em>}' attribute.
@@ -602,9 +603,9 @@ public class ObjectiveRequirementUsageImpl extends CaseBodyElementImpl implement
    * @generated
    */
   @Override
-  public String getMulti0()
+  public String getMultiValue()
   {
-    return multi0;
+    return multiValue;
   }
 
   /**
@@ -613,12 +614,12 @@ public class ObjectiveRequirementUsageImpl extends CaseBodyElementImpl implement
    * @generated
    */
   @Override
-  public void setMulti0(String newMulti0)
+  public void setMultiValue(String newMultiValue)
   {
-    String oldMulti0 = multi0;
-    multi0 = newMulti0;
+    String oldMultiValue = multiValue;
+    multiValue = newMultiValue;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__MULTI0, oldMulti0, multi0));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__MULTI_VALUE, oldMultiValue, multiValue));
   }
 
   /**
@@ -627,9 +628,9 @@ public class ObjectiveRequirementUsageImpl extends CaseBodyElementImpl implement
    * @generated
    */
   @Override
-  public String getMulti1()
+  public String getMultiLow()
   {
-    return multi1;
+    return multiLow;
   }
 
   /**
@@ -638,12 +639,12 @@ public class ObjectiveRequirementUsageImpl extends CaseBodyElementImpl implement
    * @generated
    */
   @Override
-  public void setMulti1(String newMulti1)
+  public void setMultiLow(String newMultiLow)
   {
-    String oldMulti1 = multi1;
-    multi1 = newMulti1;
+    String oldMultiLow = multiLow;
+    multiLow = newMultiLow;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__MULTI1, oldMulti1, multi1));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__MULTI_LOW, oldMultiLow, multiLow));
   }
 
   /**
@@ -652,9 +653,9 @@ public class ObjectiveRequirementUsageImpl extends CaseBodyElementImpl implement
    * @generated
    */
   @Override
-  public String getMulti02()
+  public String getMultiHigh()
   {
-    return multi02;
+    return multiHigh;
   }
 
   /**
@@ -663,12 +664,12 @@ public class ObjectiveRequirementUsageImpl extends CaseBodyElementImpl implement
    * @generated
    */
   @Override
-  public void setMulti02(String newMulti02)
+  public void setMultiHigh(String newMultiHigh)
   {
-    String oldMulti02 = multi02;
-    multi02 = newMulti02;
+    String oldMultiHigh = multiHigh;
+    multiHigh = newMultiHigh;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__MULTI02, oldMulti02, multi02));
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__MULTI_HIGH, oldMultiHigh, multiHigh));
   }
 
   /**
@@ -857,12 +858,12 @@ public class ObjectiveRequirementUsageImpl extends CaseBodyElementImpl implement
         return getCrosses();
       case SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__REDEFINITIONS:
         return getRedefinitions();
-      case SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__MULTI0:
-        return getMulti0();
-      case SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__MULTI1:
-        return getMulti1();
-      case SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__MULTI02:
-        return getMulti02();
+      case SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__MULTI_VALUE:
+        return getMultiValue();
+      case SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__MULTI_LOW:
+        return getMultiLow();
+      case SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__MULTI_HIGH:
+        return getMultiHigh();
       case SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__IS_ORDERED:
         return isIsOrdered();
       case SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__IS_NONUNIQUE:
@@ -926,14 +927,14 @@ public class ObjectiveRequirementUsageImpl extends CaseBodyElementImpl implement
         getRedefinitions().clear();
         getRedefinitions().addAll((Collection<? extends String>)newValue);
         return;
-      case SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__MULTI0:
-        setMulti0((String)newValue);
+      case SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__MULTI_VALUE:
+        setMultiValue((String)newValue);
         return;
-      case SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__MULTI1:
-        setMulti1((String)newValue);
+      case SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__MULTI_LOW:
+        setMultiLow((String)newValue);
         return;
-      case SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__MULTI02:
-        setMulti02((String)newValue);
+      case SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__MULTI_HIGH:
+        setMultiHigh((String)newValue);
         return;
       case SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__IS_ORDERED:
         setIsOrdered((Boolean)newValue);
@@ -998,14 +999,14 @@ public class ObjectiveRequirementUsageImpl extends CaseBodyElementImpl implement
       case SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__REDEFINITIONS:
         getRedefinitions().clear();
         return;
-      case SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__MULTI0:
-        setMulti0(MULTI0_EDEFAULT);
+      case SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__MULTI_VALUE:
+        setMultiValue(MULTI_VALUE_EDEFAULT);
         return;
-      case SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__MULTI1:
-        setMulti1(MULTI1_EDEFAULT);
+      case SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__MULTI_LOW:
+        setMultiLow(MULTI_LOW_EDEFAULT);
         return;
-      case SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__MULTI02:
-        setMulti02(MULTI02_EDEFAULT);
+      case SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__MULTI_HIGH:
+        setMultiHigh(MULTI_HIGH_EDEFAULT);
         return;
       case SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__IS_ORDERED:
         setIsOrdered(IS_ORDERED_EDEFAULT);
@@ -1059,12 +1060,12 @@ public class ObjectiveRequirementUsageImpl extends CaseBodyElementImpl implement
         return crosses != null && !crosses.isEmpty();
       case SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__REDEFINITIONS:
         return redefinitions != null && !redefinitions.isEmpty();
-      case SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__MULTI0:
-        return MULTI0_EDEFAULT == null ? multi0 != null : !MULTI0_EDEFAULT.equals(multi0);
-      case SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__MULTI1:
-        return MULTI1_EDEFAULT == null ? multi1 != null : !MULTI1_EDEFAULT.equals(multi1);
-      case SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__MULTI02:
-        return MULTI02_EDEFAULT == null ? multi02 != null : !MULTI02_EDEFAULT.equals(multi02);
+      case SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__MULTI_VALUE:
+        return MULTI_VALUE_EDEFAULT == null ? multiValue != null : !MULTI_VALUE_EDEFAULT.equals(multiValue);
+      case SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__MULTI_LOW:
+        return MULTI_LOW_EDEFAULT == null ? multiLow != null : !MULTI_LOW_EDEFAULT.equals(multiLow);
+      case SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__MULTI_HIGH:
+        return MULTI_HIGH_EDEFAULT == null ? multiHigh != null : !MULTI_HIGH_EDEFAULT.equals(multiHigh);
       case SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__IS_ORDERED:
         return isOrdered != IS_ORDERED_EDEFAULT;
       case SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__IS_NONUNIQUE:
@@ -1173,9 +1174,18 @@ public class ObjectiveRequirementUsageImpl extends CaseBodyElementImpl implement
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__MULTI0: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI0;
-        case SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__MULTI1: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI1;
-        case SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__MULTI02: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI02;
+        case SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__MULTI_VALUE: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_VALUE;
+        case SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__MULTI_LOW: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_LOW;
+        case SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__MULTI_HIGH: return SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_HIGH;
+        default: return -1;
+      }
+    }
+    if (baseClass == MultiplicityModifiers.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__IS_ORDERED: return SysMLOCPackage.MULTIPLICITY_MODIFIERS__IS_ORDERED;
+        case SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__IS_NONUNIQUE: return SysMLOCPackage.MULTIPLICITY_MODIFIERS__IS_NONUNIQUE;
         default: return -1;
       }
     }
@@ -1183,8 +1193,6 @@ public class ObjectiveRequirementUsageImpl extends CaseBodyElementImpl implement
     {
       switch (derivedFeatureID)
       {
-        case SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__IS_ORDERED: return SysMLOCPackage.MULTIPLICITY_PART__IS_ORDERED;
-        case SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__IS_NONUNIQUE: return SysMLOCPackage.MULTIPLICITY_PART__IS_NONUNIQUE;
         default: return -1;
       }
     }
@@ -1328,9 +1336,18 @@ public class ObjectiveRequirementUsageImpl extends CaseBodyElementImpl implement
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI0: return SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__MULTI0;
-        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI1: return SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__MULTI1;
-        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI02: return SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__MULTI02;
+        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_VALUE: return SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__MULTI_VALUE;
+        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_LOW: return SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__MULTI_LOW;
+        case SysMLOCPackage.MULTIPLICITY_RANGE__MULTI_HIGH: return SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__MULTI_HIGH;
+        default: return -1;
+      }
+    }
+    if (baseClass == MultiplicityModifiers.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.MULTIPLICITY_MODIFIERS__IS_ORDERED: return SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__IS_ORDERED;
+        case SysMLOCPackage.MULTIPLICITY_MODIFIERS__IS_NONUNIQUE: return SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__IS_NONUNIQUE;
         default: return -1;
       }
     }
@@ -1338,8 +1355,6 @@ public class ObjectiveRequirementUsageImpl extends CaseBodyElementImpl implement
     {
       switch (baseFeatureID)
       {
-        case SysMLOCPackage.MULTIPLICITY_PART__IS_ORDERED: return SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__IS_ORDERED;
-        case SysMLOCPackage.MULTIPLICITY_PART__IS_NONUNIQUE: return SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE__IS_NONUNIQUE;
         default: return -1;
       }
     }
@@ -1422,12 +1437,12 @@ public class ObjectiveRequirementUsageImpl extends CaseBodyElementImpl implement
     result.append(crosses);
     result.append(", redefinitions: ");
     result.append(redefinitions);
-    result.append(", Multi0: ");
-    result.append(multi0);
-    result.append(", Multi1: ");
-    result.append(multi1);
-    result.append(", Multi02: ");
-    result.append(multi02);
+    result.append(", MultiValue: ");
+    result.append(multiValue);
+    result.append(", MultiLow: ");
+    result.append(multiLow);
+    result.append(", MultiHigh: ");
+    result.append(multiHigh);
     result.append(", isOrdered: ");
     result.append(isOrdered);
     result.append(", isNonunique: ");

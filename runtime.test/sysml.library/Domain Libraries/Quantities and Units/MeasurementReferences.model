@@ -18,28 +18,28 @@
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="TensorMeasurementReference">
       <superclassifiers>Array</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * TensorMeasurementReference is the most general AttributeDefinition to represent measurement references.&#xA;&#x9;&#x9; *&#xA;&#x9;&#x9; * The concept &quot;measurement reference&quot; is defined in [VIM] &quot;quantity&quot; NOTE 2 as &quot;A reference can be a measurement unit,&#xA;&#x9;&#x9; * a measurement procedure, a reference material, or a combination of such.&quot;, see https://jcgm.bipm.org/vim/en/1.1.html .&#xA;&#x9;&#x9; * In addition [VIM] &quot;quantity&quot; NOTE 5 states that &quot;A quantity as defined here is a scalar. However, a vector or a tensor, &#xA;&#x9;&#x9; * the components of which are quantities, is also considered to be a quantity&quot;. However, the rest of [VIM] does not explicitly &#xA;&#x9;&#x9; * define how tensor and vector quantities can be or should be supported.&#xA;&#x9;&#x9; *&#xA;&#x9;&#x9; * In this package, in line with TensorQuantityValue in package Quantities, the most general kind of measurement reference&#xA;&#x9;&#x9; * is TensorMeasurementReference that represents a measurement reference for any order of tensor quantity. Since the order can &#xA;&#x9;&#x9; * also be one or zero, this includes vector and scalar quantities. The specializations VectorMeasurementReference and &#xA;&#x9;&#x9; * ScalarMeasurementReference are defined to specifically represent measurement references for vector and scalar quantities.&#xA;&#x9;&#x9; * &#xA;&#x9;&#x9; * TensorMeasurementReference specializes Array, which provides its multi-dimensional structure. The order of a tensor is equivalent&#xA;&#x9;&#x9; * to the rank of an Array.&#xA;&#x9;&#x9; * &#xA;&#x9;&#x9; * Attribute isBound specifies whether the vector space product is bound (isBound is true) or free (isBound is false).&#xA;&#x9;&#x9; * &#xA;&#x9;&#x9; * Attribute mRefs specifies the scalar measurement references for all dimensions of a tensor quantity.&#xA;&#x9;&#x9; *&#xA;&#x9;&#x9; * The short name of a TensorMeasurementReference is the unique symbol by which the measurement reference is known.&#xA;&#x9;&#x9; * The name of a TensorMeasurementReference is spelled-out human readable name of the measurement reference.&#xA;&#x9;&#x9; *&#xA;&#x9;&#x9; * For example, typical measurement references for (scalar) quantity speed are declared with the following humanId and name:&#xA;&#x9;&#x9; * &lt;'m/s'> and 'metre per second',&#xA;&#x9;&#x9; * &lt;'km/h'> and 'kilometre per hour',&#xA;&#x9;&#x9; * &lt;'mi/h'> and 'mile per hour'.&#xA;&#x9;&#x9; *&#xA;&#x9;&#x9; * A measurement reference can have zero or more definitionalQuantityValues that allow to specify&#xA;&#x9;&#x9; * quantity values that carry a particular meaning or relevance for the measurement reference.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="isBound" Multi0="1" isDefault="true" valuePart="false">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="isBound" MultiValue="1" isDefault="true" valuePart="false">
         <typings>Boolean</typings>
       </elements>
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="order">
         <redefinitions>rank</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mRefs" Multi1="1" Multi02="*" isNonunique="true">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mRefs" MultiLow="1" MultiHigh="*" isNonunique="true">
         <typings>ScalarMeasurementReference</typings>
         <redefinitions>elements</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="definitionalQuantityValues" Multi1="0" Multi02="*">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="definitionalQuantityValues" MultiLow="0" MultiHigh="*">
         <typings>DefinitionalQuantityValue</typings>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="VectorMeasurementReference">
       <superclassifiers>TensorMeasurementReference</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * A VectorMeasurementReference is a specialization of TensorMeasurementReference for vector quantities that are&#xA;&#x9;&#x9; * typed by a VectorQuantityValue. Its order is one. Implicitly, it defines a vector space of dimension `n` = dimensions[1].&#xA;&#x9;&#x9; * The magnitudes of the `n` basis unit vectors that span the vector space are defined by the mRefs which each are&#xA;&#x9;&#x9; * a ScalarMeasurementReference, typically a MeasurementUnit or an IntervalScale.&#xA;&#x9;&#x9; * &#xA;&#x9;&#x9; * Attribute isOrthogonal declares whether the basis vectors of the vector space are orthogonal, i.e., whether all&#xA;&#x9;&#x9; * inner products of any pair of basis vectors are equal to zero.&#xA;&#x9;&#x9; * &#xA;&#x9;&#x9; * A pair of a specialization of VectorQuantityValue and a specialization of VectorMeasurementReference can also be used to&#xA;&#x9;&#x9; * define a vector space for state vectors as used in state-space representation models.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi1="0" Multi02="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="0" MultiHigh="1">
         <typings>Positive</typings>
         <redefinitions>dimensions</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="isOrthogonal" Multi0="1" isDefault="true" valuePart="true">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="isOrthogonal" MultiValue="1" isDefault="true" valuePart="true">
         <typings>Boolean</typings>
       </elements>
     </elements>
@@ -55,14 +55,14 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="self">
         <redefinitions>mRefs</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="quantityDimension" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="quantityDimension" MultiValue="1">
         <typings>QuantityDimension</typings>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CoordinateFrame">
       <superclassifiers>VectorMeasurementReference</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * CoordinateFrame is a VectorMeasurementReference with the specific purpose to quantify (i.e., coordinatize) a vector space, &#xA;&#x9;&#x9; * and locate and orient it with respect to another CoordinateFrame.&#xA;&#x9;&#x9; * &#xA;&#x9;&#x9; * Optional attribute transformation enables specification of the location and orientation of this CoordinateFrame as dependent&#xA;&#x9;&#x9; * and nested with respect to another (reference) coordinate frame. Typically the other CoordinateFrame is the frame of &#xA;&#x9;&#x9; * the next higher element (Object, Item or Part) in a composite structure.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="transformation" Multi1="0" Multi02="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="transformation" MultiLow="0" MultiHigh="1">
         <typings>CoordinateTransformation</typings>
         <elements xsi:type="sysMLOC:AttributeUsage" valuePart="that">
           <redefinitions>target</redefinitions>
@@ -79,10 +79,10 @@
     <elements xsi:type="sysMLOC:AliasElement" memberName="ThreeDCoordinateFrame" memberElement="'3dCoordinateFrame'"/>
     <elements xsi:type="sysMLOC:AttributeDefinition" isAbstract="true" declaredName="CoordinateTransformation">
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;     * CoordinateTransformation is the most general representation of the transformation of a target VectorMeasurementReference &#xA;&#x9;     * with respect to a source VectorMeasurementReference.&#xA;&#x9;     */"/>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="source" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="source" MultiValue="1">
         <typings>VectorMeasurementReference</typings>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="target" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="target" MultiValue="1">
         <typings>VectorMeasurementReference</typings>
       </elements>
       <elements xsi:type="sysMLOC:AssertConstraintUsage" declaredName="validSourceTargetDimensions">
@@ -92,10 +92,10 @@
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CoordinateFramePlacement">
       <superclassifiers>CoordinateTransformation</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;    &#x9; * CoordinateFramePlacement is a CoordinateTransformation by placement of the target frame in the source frame.&#xA;    &#x9; *  &#xA;    &#x9; * Attribute origin specifies the location of the origin of the target frame as a vector in the source frame.&#xA;    &#x9; * &#xA;    &#x9; * Attribute basisDirections specifies the orientation of the target frame by specifying the directions of &#xA;    &#x9; * the respective basis vectors of the target frame via direction vectors in the source frame. An empty sequence of&#xA;    &#x9; * basisDirections signifies no change of orientation of the target coordinate frame.&#xA;    &#x9; */"/>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="origin" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="origin" MultiValue="1">
         <typings>VectorQuantityValue</typings>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="basisDirections" Multi1="0" Multi02="*" isOrdered="true" isNonunique="true">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="basisDirections" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
         <typings>VectorQuantityValue</typings>
       </elements>
       <elements xsi:type="sysMLOC:AssertConstraintUsage" declaredName="validOriginDimensions">
@@ -114,20 +114,20 @@
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="Translation">
       <superclassifiers>TranslationOrRotation</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Representation of a translation with respect to a coordinate frame&#xA;&#x9;&#x9; * &#xA;&#x9;&#x9; * Attribute translationVector specifies the displacement vector that constitutes the translation.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="translationVector" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="translationVector" MultiValue="1">
         <typings>VectorQuantityValue</typings>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="Rotation">
       <superclassifiers>TranslationOrRotation</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Representation of a rotation about an axis over an angle&#xA;&#x9;&#x9; * &#xA;&#x9;&#x9; * Attribute axisDirection specifies the direction of the rotation axis.&#xA;&#x9;&#x9; * Attribute angle specifies the angle of rotation, where a positive value implies right-handed rotation.&#xA;&#x9;&#x9; * Attribute isIntrinsic asserts whether the intermediate coordinate frame moves with the rotation or not, &#xA;&#x9;&#x9; * i.e. whether an instrinsic or extrinsic rotation is specified.&#xA;&#x9;&#x9; * &#xA;&#x9;&#x9; * See https://en.wikipedia.org/wiki/Davenport_chained_rotations for details.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="axisDirection" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="axisDirection" MultiValue="1">
         <typings>VectorQuantityValue</typings>
       </elements>
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="angle">
         <redefinitions>angularMeasure</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="isIntrinsic" Multi0="1" isDefault="true" valuePart="true">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="isIntrinsic" MultiValue="1" isDefault="true" valuePart="true">
         <typings>Boolean</typings>
       </elements>
     </elements>
@@ -135,7 +135,7 @@
       <superclassifiers>CoordinateTransformation</superclassifiers>
       <superclassifiers>List</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9; * Coordinate frame transformation specified by a sequence of translations and/or rotations&#xA;&#x9; *&#xA;&#x9; * Note: This is a coordinate transformation that is convenient for interpretation by humans.&#xA;&#x9; * In particular a sequence of rotations about the principal axes of a coordinate frame is much more easy understandable &#xA;&#x9; * than a rotation about an arbitrary axis.&#xA;&#x9; * Any sequence can be reduced to a single combination of a translation and a rotation about a particular axis, but in general &#xA;&#x9; * the original sequence cannot be retrieved as there are infinitely many sequences representing the reduced transformation.&#xA;&#x9; */"/>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi1="1" Multi02="*" isOrdered="true" isNonunique="true">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1" MultiHigh="*" isOrdered="true" isNonunique="true">
         <typings>TranslationOrRotation</typings>
         <redefinitions>elements</redefinitions>
       </elements>
@@ -146,7 +146,7 @@
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * AffineTransformationMatrix3d is a three dimensional CoordinateTransformation specified via an affine transformation matrix&#xA;&#x9;&#x9; *&#xA;&#x9;&#x9; * The interpretation of the matrix is as follows:&#xA;&#x9;&#x9; * - the upper left 3x3 matrix represents the rotation matrix&#xA;&#x9;&#x9; * - the uper right 3x1 column vector represents the translation vector&#xA;&#x9;&#x9; * - the bottom row must be the row vector (0, 0, 0, 1).&#xA;&#x9;&#x9; *&#xA;&#x9;&#x9; * I.e. the matrix has the following form:&#xA;&#x9;&#x9; * ( R, R, R, T,&#xA;&#x9;&#x9; *   R, R, R, T,&#xA;&#x9;&#x9; *   R, R, R, T,&#xA;&#x9;&#x9; *   0, 0, 0, 1 )&#xA;&#x9;&#x9; * where the cells marked R form the rotation matrix and the cells marked T form the translation vector.&#xA;&#x9;&#x9; * &#xA;&#x9;&#x9; * Note: See https://en.wikipedia.org/wiki/Transformation_matrix, under affine transformations for a general explanation.&#xA;&#x9;&#x9; */"/>
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="rotationMatrix">
         <typings>Array</typings>
-        <elements xsi:type="sysMLOC:AttributeUsage" Multi0="9" isOrdered="true" isNonunique="true">
+        <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="9" isOrdered="true" isNonunique="true">
           <typings>Real</typings>
           <redefinitions>elements</redefinitions>
         </elements>
@@ -154,9 +154,9 @@
           <redefinitions>dimensions</redefinitions>
         </elements>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="translationVector" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="translationVector" MultiValue="1">
         <typings>ThreeVectorValue</typings>
-        <elements xsi:type="sysMLOC:DefaultReferenceUsage" Multi0="3">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" MultiValue="3">
           <typings>Real</typings>
           <redefinitions>elements</redefinitions>
         </elements>
@@ -164,7 +164,7 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="(4, 4)">
         <redefinitions>dimensions</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="16" isOrdered="true" isNonunique="true" valuePart="( rotationMatrix.elements#(1), rotationMatrix.elements#(2), rotationMatrix.elements#(3), translationVector#(1), rotationMatrix.elements#(4), rotationMatrix.elements#(5), rotationMatrix.elements#(6), translationVector#(2), rotationMatrix.elements#(7), rotationMatrix.elements#(8), rotationMatrix.elements#(9), translationVector#(3), 0, 0, 0, 1 )">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="16" isOrdered="true" isNonunique="true" valuePart="( rotationMatrix.elements#(1), rotationMatrix.elements#(2), rotationMatrix.elements#(3), translationVector#(1), rotationMatrix.elements#(4), rotationMatrix.elements#(5), rotationMatrix.elements#(6), translationVector#(2), rotationMatrix.elements#(7), rotationMatrix.elements#(8), rotationMatrix.elements#(9), translationVector#(3), 0, 0, 0, 1 )">
         <typings>Real</typings>
         <redefinitions>elements</redefinitions>
       </elements>
@@ -188,7 +188,7 @@
         </elements>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="nullTransformation" Multi0="1">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="nullTransformation" MultiValue="1">
       <typings>NullTransformation</typings>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" isAbstract="true" declaredName="MeasurementUnit">
@@ -197,10 +197,10 @@
       <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
         <redefinitions>isBound</redefinitions>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="unitPowerFactors" Multi1="0" Multi02="*" isOrdered="true">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="unitPowerFactors" MultiLow="0" MultiHigh="*" isOrdered="true">
         <typings>UnitPowerFactor</typings>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="unitConversion" Multi1="0" Multi02="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="unitConversion" MultiLow="0" MultiHigh="1">
         <typings>UnitConversion</typings>
       </elements>
       <elements xsi:type="sysMLOC:AssertConstraintUsage" declaredName="hasValidUnitPowerFactors">
@@ -215,7 +215,7 @@
       <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="simpleUnitSelf" valuePart="self">
         <typings>SimpleUnit</typings>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiValue="1">
         <typings>UnitPowerFactor</typings>
         <redefinitions>unitPowerFactors</redefinitions>
         <elements xsi:type="sysMLOC:AttributeUsage" declaredName="unit" valuePart="simpleUnitSelf">
@@ -258,7 +258,7 @@
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ConversionByPrefix">
       <superclassifiers>UnitConversion</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Representation of a UnitConversion that is defined through reference to a named unit prefix,&#xA;&#x9;&#x9; * that in turn represents a decimal or binary multiple or sub-multiple, as defined in ISO/IEC 80000-1.&#xA;&#x9;&#x9; *&#xA;&#x9;&#x9; * Note: The actual value of the conversion factor is derived from the definition of the unit prefix.&#xA;&#x9;&#x9; *&#xA;&#x9;&#x9; * Examples: kilometre for conversion factor 1000 with reference unit metre, nanofarad for 1E-9 farad.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="prefix" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="prefix" MultiValue="1">
         <typings>UnitPrefix</typings>
       </elements>
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="conversionFactor" valuePart="prefix.conversionFactor">
@@ -283,7 +283,7 @@
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="unit">
         <typings>MeasurementUnit</typings>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="quantityValueMapping" Multi1="0" Multi02="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="quantityValueMapping" MultiLow="0" MultiHigh="1">
         <typings>QuantityValueMapping</typings>
       </elements>
     </elements>
@@ -318,7 +318,7 @@
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="exponent">
         <typings>Number</typings>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="referenceQuantity" Multi1="0" Multi02="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="referenceQuantity" MultiLow="0" MultiHigh="1">
         <typings>ScalarQuantityValue</typings>
       </elements>
     </elements>
@@ -333,7 +333,7 @@
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="DefinitionalQuantityValue">
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Representation of a particular quantity value that is used in the definition of a TensorMeasurementReference&#xA;&#x9;&#x9; *&#xA;&#x9;&#x9; * Typically such a particular value is defined by convention. It can be used to define a selected reference value,&#xA;&#x9;&#x9; * such as the meaning of zero on a measurement scale or the origin of a top-level coordinate frame.&#xA;&#x9;&#x9; *&#xA;&#x9;&#x9; * Example: The 'kelvin' MeasurementReference for thermodynamic temperature could have a&#xA;&#x9;&#x9; * DefinitionalQuantityValue {&#xA;&#x9;&#x9; *     :>> num = 273.16;&#xA;&#x9;&#x9; *     :>> definition = &quot;thermodynamic temperature of the triple point of Vienna Standard Mean Ocean Water in kelvin&quot;;&#xA;&#x9;&#x9; * }&#xA;&#x9;&#x9; * that is value of the definition of the scale.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="num" Multi1="1" Multi02="*">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="num" MultiLow="1" MultiHigh="*">
         <typings>Number</typings>
       </elements>
       <elements xsi:type="sysMLOC:AttributeUsage" declaredName="definition">
@@ -359,39 +359,39 @@
         <redefinitions>mRef</redefinitions>
       </elements>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="dimensionOneQuantities" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="dimensionOneQuantities" MultiValue="*" isNonunique="true">
       <typings>DimensionOneValue</typings>
       <subsetting>scalarQuantities</subsetting>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="one" Multi0="1" valuePart="new DimensionOneUnit()">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="one" MultiValue="1" valuePart="new DimensionOneUnit()">
       <typings>DimensionOneUnit</typings>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CountValue">
       <superclassifiers>DimensionOneValue</superclassifiers>
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Explicit definition of a generic &quot;count&quot; quantity as a DimensionOneValue.&#xA;&#x9;&#x9; */"/>
     </elements>
-    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="countQuantities" Multi0="*" isNonunique="true">
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="countQuantities" MultiValue="*" isNonunique="true">
       <typings>CountValue</typings>
       <subsetting>dimensionOneQuantities</subsetting>
     </elements>
     <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SystemOfUnits">
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * A SystemOfUnits represents the essentials of [VIM] concept &quot;system of units&quot; (https://jcgm.bipm.org/vim/en/1.13.html), defined as a&#xA;&#x9;&#x9; * &quot;set of base units and derived units, together with their multiples and submultiples, defined in accordance with given rules,&#xA;&#x9;&#x9; * for a given system of quantities&quot;.&#xA;&#x9;&#x9; * The base units are a particular selection of measurement units for each of the base quantities of a system of quantities,&#xA;&#x9;&#x9; * that form the basis on top of which all other (derived) units are defined.&#xA;&#x9;&#x9; *&#xA;&#x9;&#x9; * Attribute systemOfQuantities speficies the associated SystemOfQuantities.&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="longName" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="longName" MultiValue="1">
         <typings>String</typings>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="systemOfQuantities" Multi0="1">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="systemOfQuantities" MultiValue="1">
         <typings>SystemOfQuantities</typings>
       </elements>
-      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="baseUnits" Multi1="1" Multi02="*" isOrdered="true">
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="baseUnits" MultiLow="1" MultiHigh="*" isOrdered="true">
         <typings>SimpleUnit</typings>
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:ConstraintDefinition" declaredName="VerifyUnitPowerFactors">
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Constraint definition to verify that the given unit power factors comply with the required quantity dimension&#xA;&#x9;&#x9; */"/>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="unitPowerFactors" Multi0="*" isOrdered="true">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="unitPowerFactors" MultiValue="*" isOrdered="true">
         <typings>UnitPowerFactor</typings>
       </elements>
-      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="quantityDimension" Multi0="1">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="quantityDimension" MultiValue="1">
         <typings>QuantityDimension</typings>
       </elements>
     </elements>

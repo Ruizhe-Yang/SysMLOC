@@ -23,7 +23,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface RequirementConstraintUsage extends RequirementNodeElements, MemberPrefix, ReferenceSubsetting, FeatureSpecialization, TypingFeatureTyping, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, UsageExtensionKeyword, PrefixMetadata, ConstraintUsageDeclaration, UsageDeclaration, FeatureDeclaration, Identification, FeatureSpecializationPart, MultiplicityPart, MultiplicityRange, ValuePart, FeatureValue
+public interface RequirementConstraintUsage extends RequirementNodeElements, MemberPrefix, ReferenceSubsetting, FeatureSpecialization, TypingFeatureTyping, SubsettingFeatureChain, ReferenceFeatureChain, CrossFeatureChain, RedefinitionFeatureChain, UsageExtensionKeyword, PrefixMetadata, ConstraintUsageDeclaration, UsageDeclaration, FeatureDeclaration, Identification, FeatureSpecializationPart, MultiplicityPart, MultiplicityRange, MultiplicityModifiers, ValuePart, FeatureValue
 {
   /**
    * Returns the value of the '<em><b>Kind</b></em>' attribute.
