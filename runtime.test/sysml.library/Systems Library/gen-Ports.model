@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:LibraryPackage" declaredName="Ports" isStandard="true" isLibrary="true">
+    <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;     * This package defines the base types for ports and related structural elements &#xA;     * in the SysML language.&#xA;     */"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Objects::Object"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Objects::objects"/>
+    <elements xsi:type="sysMLOC:PortDefinition" isAbstract="true" declaredName="Port">
+      <superclassifiers>Object</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * Port is the most general class of objects that represent connection points&#xA;         * for interacting with a Part. Port is the base type of all PortDefinitions.&#xA;         * &#xA;         * Transfers outgoing from a Port are always targeted to a Port connected to&#xA;         * the original Port by an Interface.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="self">
+        <typings>Port</typings>
+        <redefinitions>Object::self</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:PortUsage" declaredName="subports" MultiLow="0" MultiHigh="*">
+        <typings>Port</typings>
+        <subsetting>ports</subsetting>
+        <subsetting>timeEnclosedOccurrences</subsetting>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;             * The Ports that are subports of this Port.&#xA;             */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:PortUsage" isAbstract="true" isReference="true" declaredName="interfacingPorts" MultiLow="0" MultiHigh="*" isNonunique="true">
+        <typings>Port</typings>
+        <subsetting>ports</subsetting>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;             * Ports that are connected to this Port by an Interface.&#xA;             */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:ReferenceUsage">
+        <subsetting>interfacingPorts.incomingTransfersToSelf</subsetting>
+        <redefinitions>outgoingTransfersFromSelf</redefinitions>
+        <elements xsi:type="sysMLOC:Documentation" body="/* &#xA;             * The target of each of the outgoingTransfersFromSelf of a Port must be an interfacingPort.&#xA;             */"/>
+        <elements xsi:type="sysMLOC:ReferenceUsage" isEnd="true" declaredName="source"/>
+        <elements xsi:type="sysMLOC:ReferenceUsage" isEnd="true" declaredName="target"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:PortUsage" isAbstract="true" declaredName="ports" MultiLow="0" MultiHigh="*" isNonunique="true">
+      <typings>Port</typings>
+      <subsetting>objects</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * ports is the base feature of all PortUsages.&#xA;         */"/>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

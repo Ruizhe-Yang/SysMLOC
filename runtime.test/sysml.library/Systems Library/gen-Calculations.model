@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:LibraryPackage" declaredName="Calculations" isStandard="true" isLibrary="true">
+    <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9; * This package defines the base types for calculations and related behavioral elements in the&#xA;&#x9; * SysML language.&#xA;&#x9; */"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Performances::Evaluation"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Performances::evaluations"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Actions::Action"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Actions::actions"/>
+    <elements xsi:type="sysMLOC:CalculationDefinition" isAbstract="true" declaredName="Calculation">
+      <superclassifiers>Action</superclassifiers>
+      <superclassifiers>Evaluation</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Calculation is the most general class of evaluations of CalculationDefinitions in a&#xA;&#x9;&#x9; * system or part of a system. Calculation is the base class of all CalculationDefinitions.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:CalculationUsage" isReference="true" declaredName="self">
+        <typings>Calculation</typings>
+        <redefinitions>Action::self</redefinitions>
+        <redefinitions>Evaluation::self</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:CalculationUsage" isAbstract="true" declaredName="subcalculations">
+        <typings>Calculation</typings>
+        <subsetting>calculations</subsetting>
+        <subsetting>subactions</subsetting>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The subactions of this Calculation that are Calculations.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:CalculationUsage" isAbstract="true" declaredName="calculations" MultiLow="0" MultiHigh="*" isNonunique="true">
+      <typings>Calculation</typings>
+      <subsetting>actions</subsetting>
+      <subsetting>evaluations</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * calculations is the base Feature for all CalculationUsages.&#xA;&#x9;&#x9; */"/>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

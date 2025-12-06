@@ -92,7 +92,7 @@ package AHFNorway {
 				then WaitOnData; 
 				
 				state WaitOnData;
-					accept cl:CallGiveItems via tellu.APIS_HTTP
+				accept cl:CallGiveItems via tellu.APIS_HTTP
 					do action {
 						first start;
 						then action giveItems{ in itms=cl.itms; out ack=x; }

@@ -1,0 +1,1185 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:LibraryPackage" declaredName="SI" isStandard="true" isLibrary="true">
+    <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9; * International System of (Measurement) Units -- Syst&#xe8;me International d'Unit&#xe9;s (SI), as defined in ISO/IEC 80000&#xA;&#x9; *&#xA;&#x9; * Note 1: In accordance with ISO/IEC 80000 en-GB spelling is used for the names and definitions of the units.&#xA;&#x9; * Note 2: This is a representative but not yet complete list of measurement units.&#xA;&#x9; */"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="MeasurementReferences" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="ISQ" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="SIPrefixes" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:Comment" body="/*&#xA;     * SI simple unit needed in support of creation of the base units&#xA;     */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="g" declaredName="gram">
+      <typings>MassUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/*&#xA;     * SI base units&#xA;     */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="m" declaredName="metre">
+      <typings>LengthUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="kg" declaredName="kilogram">
+      <typings>MassUnit</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <typings>ConversionByPrefix</typings>
+        <redefinitions>unitConversion</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="kilo">
+          <redefinitions>prefix</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="g">
+          <redefinitions>referenceUnit</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="s" declaredName="second">
+      <typings>DurationUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="A" declaredName="ampere">
+      <typings>ElectricCurrentUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="K" declaredName="kelvin">
+      <typings>ThermodynamicTemperatureUnit</typings>
+      <typings>TemperatureDifferenceUnit</typings>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="temperatureOfWaterAtTriplePointInK">
+        <typings>DefinitionalQuantityValue</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="27316/100">
+          <redefinitions>num</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;temperature in kelvin of pure water at the triple point&quot;">
+          <redefinitions>definition</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="temperatureOfWaterAtTriplePointInK">
+        <redefinitions>definitionalQuantityValues</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>ThermodynamicTemperatureUnit::quantityDimension</redefinitions>
+        <redefinitions>TemperatureDifferenceUnit::quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <redefinitions>ThermodynamicTemperatureUnit::quantityDimension::quantityPowerFactors</redefinitions>
+          <redefinitions>TemperatureDifferenceUnit::quantityDimension::quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="mol" declaredName="mole">
+      <typings>AmountOfSubstanceUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="cd" declaredName="candela">
+      <typings>LuminousIntensityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/*&#xA;     * Declare the SI system of units with its explicit base units&#xA;     * and its associated system of quantities, the ISQ.&#xA;     */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="si" declaredName="'ISO/IEC 80000 International System of Units'">
+      <typings>SystemOfUnits</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq">
+        <redefinitions>systemOfQuantities</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(m, kg, s, A, K, mol, cd)">
+        <redefinitions>baseUnits</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/*&#xA;     * Units with special names&#xA;     */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="B" declaredName="byte" valuePart="one">
+      <typings>StorageCapacityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="Bd" declaredName="baud" valuePart="s^-1">
+      <typings>ModulationRateUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="bit" declaredName="bit" valuePart="one">
+      <typings>StorageCapacityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="Bq" declaredName="becquerel" valuePart="s^-1">
+      <typings>NuclearActivityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="C" declaredName="coulomb" valuePart="A*s">
+      <typings>ElectricChargeUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="dB" declaredName="decibel" valuePart="one">
+      <typings>SoundPressureLevelUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="dec" declaredName="decade" valuePart="one">
+      <typings>LogarithmicFrequencyRangeUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="E" declaredName="erlang" valuePart="one">
+      <typings>TrafficIntensityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="F" declaredName="farad" valuePart="C/V">
+      <typings>CapacitanceUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="Gy" declaredName="gray" valuePart="J/kg">
+      <typings>AbsorbedDoseUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="H" declaredName="henry" valuePart="Wb/A">
+      <typings>PermeanceUnit</typings>
+      <typings>InductanceUnit</typings>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>PermeanceUnit::quantityDimension</redefinitions>
+        <redefinitions>InductanceUnit::quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <redefinitions>PermeanceUnit::quantityDimension::quantityPowerFactors</redefinitions>
+          <redefinitions>InductanceUnit::quantityDimension::quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="Hart" declaredName="hartley" valuePart="one">
+      <typings>InformationContentUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="Hz" declaredName="hertz" valuePart="s^-1">
+      <typings>FrequencyUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="J" declaredName="joule" valuePart="N*m">
+      <typings>EnergyUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:CodeAnnotation" body="//attribute &lt;kat> katal : CatalyticActivityUnit = mol/s;&#xA;"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="lm" declaredName="lumen" valuePart="cd*sr">
+      <typings>LuminousFluxUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="lx" declaredName="lux" valuePart="lm/m^2">
+      <typings>IlluminanceUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="N" declaredName="newton" valuePart="kg*m/s^2">
+      <typings>ForceUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="nat" declaredName="'natural unit of information'" valuePart="one">
+      <typings>InformationContentUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="o" declaredName="octet" valuePart="one">
+      <typings>StorageCapacityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="oct" declaredName="octave" valuePart="one">
+      <typings>LogarithmicFrequencyRangeUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="Pa" declaredName="pascal" valuePart="N/m^2">
+      <typings>PressureUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="rad" declaredName="radian" valuePart="m/m">
+      <typings>AngularMeasureUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="S" declaredName="siemens" valuePart="'&#x3a9;'^-1">
+      <typings>ConductanceUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="Sh" declaredName="shannon" valuePart="one">
+      <typings>InformationContentUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="sr" declaredName="steradian" valuePart="m^2/m^2">
+      <typings>SolidAngularMeasureUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="Sv" declaredName="sievert" valuePart="J/kg">
+      <typings>DoseEquivalentUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="T" declaredName="tesla" valuePart="Wb/m^2">
+      <typings>MagneticFluxDensityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="V" declaredName="volt" valuePart="W/A">
+      <typings>ElectricPotentialUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="W" declaredName="watt" valuePart="J/s">
+      <typings>PowerUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="Wb" declaredName="weber" valuePart="V*s">
+      <typings>MagneticFluxUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'&#x3a9;'" declaredName="ohm" valuePart="V/A">
+      <typings>ResistanceUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/*&#xA;     * Units recognized in SI as specified in ISO 80000-1:2009&#xA;     */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'&#xc5;'" declaredName="'&#xe5;ngstr&#xf6;m'">
+      <typings>LengthUnit</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <typings>ConversionByConvention</typings>
+        <redefinitions>unitConversion</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="m">
+          <redefinitions>referenceUnit</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1.0e-10">
+          <redefinitions>conversionFactor</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="b" declaredName="barn">
+      <typings>AreaUnit</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <typings>ConversionByConvention</typings>
+        <redefinitions>unitConversion</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="'m&#xb2;'">
+          <redefinitions>referenceUnit</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1.0e-28">
+          <redefinitions>conversionFactor</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="d" declaredName="day">
+      <typings>DurationUnit</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <typings>ConversionByConvention</typings>
+        <redefinitions>unitConversion</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="hour">
+          <redefinitions>referenceUnit</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="24">
+          <redefinitions>conversionFactor</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="Da" declaredName="dalton">
+      <typings>MassUnit</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <typings>ConversionByConvention</typings>
+        <redefinitions>unitConversion</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="kg">
+          <redefinitions>referenceUnit</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1.66053906660e-27">
+          <redefinitions>conversionFactor</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="false">
+          <redefinitions>isExact</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="eV" declaredName="electronvolt">
+      <typings>EnergyUnit</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <typings>ConversionByConvention</typings>
+        <redefinitions>unitConversion</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="J">
+          <redefinitions>referenceUnit</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1.602176487e-19">
+          <redefinitions>conversionFactor</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="false">
+          <redefinitions>isExact</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="h" declaredName="hour">
+      <typings>DurationUnit</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <typings>ConversionByConvention</typings>
+        <redefinitions>unitConversion</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="min">
+          <redefinitions>referenceUnit</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="60">
+          <redefinitions>conversionFactor</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="min" declaredName="minute">
+      <typings>DurationUnit</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <typings>ConversionByConvention</typings>
+        <redefinitions>unitConversion</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="s">
+          <redefinitions>referenceUnit</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="60">
+          <redefinitions>conversionFactor</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="L" declaredName="litre">
+      <typings>VolumeUnit</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <typings>ConversionByConvention</typings>
+        <redefinitions>unitConversion</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="'m&#xb3;'">
+          <redefinitions>referenceUnit</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1.0e-3">
+          <redefinitions>conversionFactor</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="tonne">
+      <typings>MassUnit</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <typings>ConversionByConvention</typings>
+        <redefinitions>unitConversion</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="kg">
+          <redefinitions>referenceUnit</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1.0e-3">
+          <redefinitions>conversionFactor</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="'metric ton'" memberElement="tonne"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="u" declaredName="'atomic mass unit'">
+      <typings>MassUnit</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <typings>ConversionByConvention</typings>
+        <redefinitions>unitConversion</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="Da">
+          <redefinitions>referenceUnit</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1.0">
+          <redefinitions>conversionFactor</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="ua" declaredName="'astronomical unit'">
+      <typings>LengthUnit</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <typings>ConversionByConvention</typings>
+        <redefinitions>unitConversion</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="m">
+          <redefinitions>referenceUnit</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="149597870691e11">
+          <redefinitions>conversionFactor</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="false">
+          <redefinitions>isExact</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="var" declaredName="'volt ampere reactive'">
+      <typings>PowerUnit</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <typings>ConversionByConvention</typings>
+        <redefinitions>unitConversion</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="V*A">
+          <redefinitions>referenceUnit</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1.0">
+          <redefinitions>conversionFactor</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'&#xb0;'" declaredName="degree">
+      <typings>AngularMeasureUnit</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <typings>ConversionByConvention</typings>
+        <redefinitions>unitConversion</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="rad">
+          <redefinitions>referenceUnit</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1.745329E-02">
+          <redefinitions>conversionFactor</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="false">
+          <redefinitions>isExact</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:CodeAnnotation" body="// conversionFactor should become pi/180&#xA;"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'&#x2032;'" declaredName="'minute (angle)'">
+      <typings>AngularMeasureUnit</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <typings>ConversionByConvention</typings>
+        <redefinitions>unitConversion</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="rad">
+          <redefinitions>referenceUnit</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2.908882E-04">
+          <redefinitions>conversionFactor</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="false">
+          <redefinitions>isExact</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="arcmin" memberElement="'&#x2032;'"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'&#x2033;'" declaredName="'second (angle)'">
+      <typings>AngularMeasureUnit</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <typings>ConversionByConvention</typings>
+        <redefinitions>unitConversion</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="rad">
+          <redefinitions>referenceUnit</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="4.848137E-06">
+          <redefinitions>conversionFactor</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="false">
+          <redefinitions>isExact</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="arcsec" memberElement="'&#x2033;'"/>
+    <elements xsi:type="sysMLOC:Comment" body="/*&#xA;     * Derived units used in parts 3 to 12 of ISO/IEC 80000&#xA;     */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'A&#x22c5;m&#x207b;&#xb2;&#x22c5;K&#x207b;&#xb2;'" declaredName="'ampere metre to the power minus 2 kelvin to the power minus 2'" valuePart="A*m^-2*K^-2">
+      <typings>RichardsonConstantUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'A&#x22c5;m&#xb2;'" declaredName="'ampere metre squared'" valuePart="A*m^2">
+      <typings>MagneticMomentUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'A&#x22c5;m&#xb2;&#x22c5;J&#x207b;&#xb9;&#x22c5;s&#x207b;&#xb9;'" declaredName="'ampere metre squared joule to the power minus 1 second to the power minus 1'" valuePart="A*m^2*J^-1*s^-1">
+      <typings>GyromagneticRatioUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'A&#x22c5;s/kg'" declaredName="'ampere second per kilogram'" valuePart="A*s/kg">
+      <typings>GyromagneticRatioUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'A/m'" declaredName="'ampere per metre'" valuePart="A/m">
+      <typings>LinearElectricCurrentDensityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'A/m&#xb2;'" declaredName="'ampere per square metre'" valuePart="A/m^2">
+      <typings>ElectricCurrentDensityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'B/s'" declaredName="'byte per second'" valuePart="B/s">
+      <typings>TransferRateUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'bit/s'" declaredName="'bit per second'" valuePart="bit/s">
+      <typings>BinaryDigitRateUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'Bq/kg'" declaredName="'becquerel per kilogram'" valuePart="Bq/kg">
+      <typings>SpecificActivityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'Bq/m&#xb2;'" declaredName="'becquerel per square metre'" valuePart="Bq/m^2">
+      <typings>SurfaceActivityDensityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'Bq/m&#xb3;'" declaredName="'becquerel per cubic metre'" valuePart="Bq/m^3">
+      <typings>ActivityDensityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'C&#x22c5;m'" declaredName="'coulomb metre'" valuePart="C*m">
+      <typings>ElectricDipoleMomentUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'C/(kg&#x22c5;s)'" declaredName="'coulomb per kilogram second'" valuePart="C/(kg*s)">
+      <typings>ExposureRateUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'C/kg'" declaredName="'coulomb per kilogram'" valuePart="C/kg">
+      <typings>ExposureUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'C/m'" declaredName="'coulomb per metre'" valuePart="C/m">
+      <typings>LinearDensityOfElectricChargeUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'C/m&#xb2;'" declaredName="'coulomb per square metre'" valuePart="C/m^2">
+      <typings>SurfaceDensityOfElectricChargeUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'C/m&#xb3;'" declaredName="'coulomb per cubic metre'" valuePart="C/m^3">
+      <typings>ElectricChargeDensityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'cd&#x22c5;m&#x207b;&#xb2;'" declaredName="'candela metre to the power minus 2'" valuePart="cd*m^-2">
+      <typings>LuminanceUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'cd&#x22c5;sr'" declaredName="'candela steradian'" valuePart="cd*sr">
+      <typings>LuminousFluxUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'cd&#x22c5;sr&#x22c5;kg&#x207b;&#xb9;&#x22c5;m&#x207b;&#xb2;&#x22c5;s&#xb3;'" declaredName="'candela steradian kilogram to the power minus 1 metre to the power minus 2 second to the power 3'" valuePart="cd*sr*kg^-1*m^-2*s^3">
+      <typings>LuminousEfficacyOfRadiationUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'cd&#x22c5;sr&#x22c5;m&#x207b;&#xb2;'" declaredName="'candela steradian metre to the power minus 2'" valuePart="cd*sr*m^-2">
+      <typings>IlluminanceUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'cd&#x22c5;sr&#x22c5;m&#x207b;&#xb2;&#x22c5;s'" declaredName="'candela steradian metre to the power minus 2 second'" valuePart="cd*sr*m^-2*s">
+      <typings>LuminousExposureUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'cd&#x22c5;sr&#x22c5;s'" declaredName="'candela steradian second'" valuePart="cd*sr*s">
+      <typings>LuminousEnergyUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'eV&#x22c5;J&#x22c5;kg&#x22c5;m&#xb2;&#x22c5;s&#x207b;&#xb2;'" declaredName="'electronvolt joule kilogram metre squared second to the power minus 2'" valuePart="eV*J*kg*m^2*s^-2">
+      <typings>HartreeEnergyUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'eV&#x22c5;m&#x207b;&#xb2;/kg'" declaredName="'electronvolt metre to the power minus 2 per kilogram'" valuePart="eV*m^-2/kg">
+      <typings>TotalMassStoppingPowerUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'eV/m'" declaredName="'electronvolt per metre'" valuePart="eV/m">
+      <typings>TotalLinearStoppingPowerUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'eV/m&#xb2;'" declaredName="'electronvolt per square metre'" valuePart="eV/m^2">
+      <typings>EnergyFluenceUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'F/m'" declaredName="'farad per metre'" valuePart="F/m">
+      <typings>ElectricConstantUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'g/L'" declaredName="'g per l'" valuePart="g/L">
+      <typings>MassConcentrationUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'g/mol'" declaredName="'g per mole'" valuePart="g/mol">
+      <typings>MolarMassUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'Gy/s'" declaredName="'gray per second'" valuePart="Gy/s">
+      <typings>AbsorbedDoseRateUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'H/m'" declaredName="'henry per metre'" valuePart="H/m">
+      <typings>MagneticConstantUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'H&#x207b;&#xb9;'" declaredName="'henry to the power minus 1'" valuePart="H^-1">
+      <typings>ReluctanceUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'Hart/s'" declaredName="'hartley per second'" valuePart="Hart/s">
+      <typings>AverageInformationRateUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'J&#x22c5;m&#xb2;/kg'" declaredName="'joule metre squared per kilogram'" valuePart="J*m^2/kg">
+      <typings>TotalMassStoppingPowerUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'J&#x22c5;s'" declaredName="'joule second'" valuePart="J*s">
+      <typings>ActionQuantityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'J&#x22c5;s&#x22c5;eV&#x22c5;s'" declaredName="'joule second electronvolt second'" valuePart="J*s*eV*s">
+      <typings>TotalAngularMomentumUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'J&#x22c5;s&#x207b;&#xb9;'" declaredName="'joule second to the power minus 1'" valuePart="J*s^-1">
+      <typings>PowerUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'J/(kg&#x22c5;K)'" declaredName="'joule per kilogram kelvin'" valuePart="J/(kg*K)">
+      <typings>SpecificHeatCapacityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'J/(m&#xb2;&#x22c5;nm)'" declaredName="'joule per square metre nm'" valuePart="J/(m^2*nm)">
+      <typings>SpectralRadiantExposureUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'J/(m&#xb3;&#x22c5;nm)'" declaredName="'joule per cubic metre nm'" valuePart="J/(m^3*nm)">
+      <typings>SpectralRadiantEnergyDensityInTermsOfWavelengthUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'J/(mol&#x22c5;K)'" declaredName="'joule per mole kelvin'" valuePart="J/(mol*K)">
+      <typings>MolarHeatCapacityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'J/K'" declaredName="'joule per kelvin'" valuePart="J/K">
+      <typings>HeatCapacityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'J/kg'" declaredName="'joule per kilogram'" valuePart="J/kg">
+      <typings>SpecificEnergyUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'J/m'" declaredName="'joule per metre'" valuePart="J/m">
+      <typings>TotalLinearStoppingPowerUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'J/m&#xb2;'" declaredName="'joule per square metre'" valuePart="J/m^2">
+      <typings>SpectralRadiantEnergyDensityInTermsOfWavenumberUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'J/m&#xb3;'" declaredName="'joule per cubic metre'" valuePart="J/m^3">
+      <typings>ElectromagneticEnergyDensityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'J/mol'" declaredName="'joule per mole'" valuePart="J/mol">
+      <typings>MolarInternalEnergyUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'J/nm'" declaredName="'joule per nm'" valuePart="J/nm">
+      <typings>SpectralRadiantEnergyUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'J/s'" declaredName="'joule per second'" valuePart="J/s">
+      <typings>HeatFlowRateUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'J&#x207b;&#xb9;&#x22c5;m&#x207b;&#xb3;&#x22c5;eV&#x207b;&#xb9;&#x22c5;m&#x207b;&#xb3;'" declaredName="'joule to the power minus 1 metre to the power minus 3 electronvolt to the power minus 1 metre to the power minus 3'" valuePart="J^-1*m^-3*eV^-1*m^-3">
+      <typings>EnergyDensityOfStatesUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'K/Pa'" declaredName="'kelvin per pascal'" valuePart="K/Pa">
+      <typings>JouleThomsonCoefficientUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'K/W'" declaredName="'kelvin per watt'" valuePart="K/W">
+      <typings>ThermalResistanceUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'K&#x207b;&#xb9;'" declaredName="'kelvin to the power minus 1'" valuePart="K^-1">
+      <typings>LinearExpansionCoefficientUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x22c5;m&#x22c5;s&#x207b;&#xb9;'" declaredName="'kilogram metre second to the power minus 1'" valuePart="kg*m*s^-1">
+      <typings>MomentumUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x22c5;m&#x22c5;s&#x207b;&#xb2;'" declaredName="'kilogram metre second to the power minus 2'" valuePart="kg*m*s^-2">
+      <typings>ForceUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x22c5;m&#x22c5;s&#x207b;&#xb3;'" declaredName="'kilogram metre second to the power minus 3'" valuePart="kg*m*s^-3">
+      <typings>SpectralRadiantFluxUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x22c5;m&#x22c5;s&#x207b;&#xb3;&#x22c5;K&#x207b;&#xb9;'" declaredName="'kilogram metre second to the power minus 3 kelvin to the power minus 1'" valuePart="kg*m*s^-3*K^-1">
+      <typings>ThermalConductivityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x22c5;m&#x22c5;s&#x207b;&#xb3;&#x22c5;sr&#x207b;&#xb9;'" declaredName="'kilogram metre second to the power minus 3 steradian to the power minus 1'" valuePart="kg*m*s^-3*sr^-1">
+      <typings>SpectralRadiantIntensityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x22c5;m&#x207b;&#xb9;'" declaredName="'kilogram metre to the power minus 1'" valuePart="kg*m^-1">
+      <typings>LinearMassDensityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x22c5;m&#x207b;&#xb9;&#x22c5;s&#x207b;&#xb9;'" declaredName="'kilogram metre to the power minus 1 second to the power minus 1'" valuePart="kg*m^-1*s^-1">
+      <typings>DynamicViscosityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x22c5;m&#x207b;&#xb9;&#x22c5;s&#x207b;&#xb2;'" declaredName="'kilogram metre to the power minus 1 second to the power minus 2'" valuePart="kg*m^-1*s^-2">
+      <typings>PressureUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x22c5;m&#x207b;&#xb9;&#x22c5;s&#x207b;&#xb2;&#x22c5;K&#x207b;&#xb9;'" declaredName="'kilogram metre to the power minus 1 second to the power minus 2 kelvin to the power minus 1'" valuePart="kg*m^-1*s^-2*K^-1">
+      <typings>PressureCoefficientUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x22c5;m&#x207b;&#xb9;&#x22c5;s&#x207b;&#xb3;'" declaredName="'kilogram metre to the power minus 1 second to the power minus 3'" valuePart="kg*m^-1*s^-3">
+      <typings>SpectralIrradianceUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x22c5;m&#x207b;&#xb9;&#x22c5;s&#x207b;&#xb3;&#x22c5;sr&#x207b;&#xb9;'" declaredName="'kilogram metre to the power minus 1 second to the power minus 3 steradian to the power minus 1'" valuePart="kg*m^-1*s^-3*sr^-1">
+      <typings>SpectralRadianceUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x22c5;m&#x207b;&#xb2;'" declaredName="'kilogram metre to the power minus 2'" valuePart="kg*m^-2">
+      <typings>SurfaceMassDensityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x22c5;m&#x207b;&#xb2;&#x22c5;s&#x207b;&#xb9;'" declaredName="'kilogram metre to the power minus 2 second to the power minus 1'" valuePart="kg*m^-2*s^-1">
+      <typings>MassFlowUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x22c5;m&#x207b;&#xb2;&#x22c5;s&#x207b;&#xb2;'" declaredName="'kilogram metre to the power minus 2 second to the power minus 2'" valuePart="kg*m^-2*s^-2">
+      <typings>SpectralRadiantEnergyDensityInTermsOfWavelengthUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x22c5;m&#x207b;&#xb3;'" declaredName="'kilogram metre to the power minus 3'" valuePart="kg*m^-3">
+      <typings>MassDensityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x22c5;m&#x207b;&#x2074;&#x22c5;s&#x207b;&#xb9;'" declaredName="'kilogram metre to the power minus 4 second to the power minus 1'" valuePart="kg*m^-4*s^-1">
+      <typings>AcousticImpedanceUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x22c5;m&#xb2;'" declaredName="'kilogram metre squared'" valuePart="kg*m^2">
+      <typings>MomentOfInertiaUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x22c5;m&#xb2;&#x22c5;s&#x207b;&#xb9;'" declaredName="'kilogram metre squared second to the power minus 1'" valuePart="kg*m^2*s^-1">
+      <typings>AngularMomentumUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x22c5;m&#xb2;&#x22c5;s&#x207b;&#xb2;'" declaredName="'kilogram metre squared second to the power minus 2'" valuePart="kg*m^2*s^-2">
+      <typings>MomentOfForceUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x22c5;m&#xb2;&#x22c5;s&#x207b;&#xb2;&#x22c5;K&#x207b;&#xb9;'" declaredName="'kilogram metre squared second to the power minus 2 kelvin to the power minus 1'" valuePart="kg*m^2*s^-2*K^-1">
+      <typings>HeatCapacityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x22c5;m&#xb2;&#x22c5;s&#x207b;&#xb2;&#x22c5;K&#x207b;&#xb9;&#x22c5;mol&#x207b;&#xb9;'" declaredName="'kilogram metre squared second to the power minus 2 kelvin to the power minus 1 mole to the power minus 1'" valuePart="kg*m^2*s^-2*K^-1*mol^-1">
+      <typings>MolarHeatCapacityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x22c5;m&#xb2;&#x22c5;s&#x207b;&#xb2;&#x22c5;mol&#x207b;&#xb9;'" declaredName="'kilogram metre squared second to the power minus 2 mole to the power minus 1'" valuePart="kg*m^2*s^-2*mol^-1">
+      <typings>MolarInternalEnergyUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x22c5;m&#xb2;&#x22c5;s&#x207b;&#xb3;'" declaredName="'kilogram metre squared second to the power minus 3'" valuePart="kg*m^2*s^-3">
+      <typings>PowerUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x22c5;m&#xb2;&#x22c5;s&#x207b;&#xb3;&#x22c5;A&#x207b;&#xb9;'" declaredName="'kilogram metre squared second to the power minus 3 ampere to the power minus 1'" valuePart="kg*m^2*s^-3*A^-1">
+      <typings>ElectricPotentialDifferenceUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x22c5;m&#xb2;&#x22c5;s&#x207b;&#xb3;&#x22c5;A&#x207b;&#xb9;&#x22c5;K&#x207b;&#xb9;'" declaredName="'kilogram metre squared second to the power minus 3 ampere to the power minus 1 kelvin to the power minus 1'" valuePart="kg*m^2*s^-3*A^-1*K^-1">
+      <typings>SeebeckCoefficientForSubstancesAAndBUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x22c5;m&#xb2;&#x22c5;s&#x207b;&#xb3;&#x22c5;K&#x207b;&#xb9;'" declaredName="'kilogram metre squared second to the power minus 3 kelvin to the power minus 1'" valuePart="kg*m^2*s^-3*K^-1">
+      <typings>ThermalConductanceUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x22c5;m&#xb2;&#x22c5;s&#x207b;&#xb3;&#x22c5;sr&#x207b;&#xb9;'" declaredName="'kilogram metre squared second to the power minus 3 steradian to the power minus 1'" valuePart="kg*m^2*s^-3*sr^-1">
+      <typings>RadiantIntensityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x22c5;m&#xb3;&#x22c5;s&#x207b;&#xb3;&#x22c5;A&#x207b;&#xb2;'" declaredName="'kilogram metre cubed second to the power minus 3 ampere to the power minus 2'" valuePart="kg*m^3*s^-3*A^-2">
+      <typings>ResistivityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x22c5;mol&#x207b;&#xb9;'" declaredName="'kilogram mole to the power minus 1'" valuePart="kg*mol^-1">
+      <typings>MolarMassUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x22c5;s&#x207b;&#xb9;'" declaredName="'kilogram second to the power minus 1'" valuePart="kg*s^-1">
+      <typings>MassFlowRateUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x22c5;s&#x207b;&#xb2;'" declaredName="'kilogram second to the power minus 2'" valuePart="kg*s^-2">
+      <typings>SurfaceTensionUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x22c5;s&#x207b;&#xb2;&#x22c5;A&#x207b;&#xb9;'" declaredName="'kilogram second to the power minus 2 ampere to the power minus 1'" valuePart="kg*s^-2*A^-1">
+      <typings>MagneticFluxDensityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x22c5;s&#x207b;&#xb3;'" declaredName="'kilogram second to the power minus 3'" valuePart="kg*s^-3">
+      <typings>DensityOfHeatFlowRateUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x22c5;s&#x207b;&#xb3;&#x22c5;K&#x207b;&#xb9;'" declaredName="'kilogram second to the power minus 3 kelvin to the power minus 1'" valuePart="kg*s^-3*K^-1">
+      <typings>CoefficientOfHeatTransferUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x22c5;s&#x207b;&#xb3;&#x22c5;sr&#x207b;&#xb9;'" declaredName="'kilogram second to the power minus 3 steradian to the power minus 1'" valuePart="kg*s^-3*sr^-1">
+      <typings>RadianceUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x207b;&#xb9;&#x22c5;A'" declaredName="'kilogram to the power minus 1 ampere'" valuePart="kg^-1*A">
+      <typings>ExposureRateUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x207b;&#xb9;&#x22c5;m&#x22c5;s&#xb2;'" declaredName="'kilogram to the power minus 1 metre second to the power 2'" valuePart="kg^-1*m*s^2">
+      <typings>CompressibilityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x207b;&#xb9;&#x22c5;m&#x22c5;s&#xb2;&#x22c5;K'" declaredName="'kilogram to the power minus 1 metre second to the power 2 kelvin'" valuePart="kg^-1*m*s^2*K">
+      <typings>JouleThomsonCoefficientUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x207b;&#xb9;&#x22c5;m&#x207b;&#xb2;&#x22c5;s&#xb3;&#x22c5;K'" declaredName="'kilogram to the power minus 1 metre to the power minus 2 second to the power 3 kelvin'" valuePart="kg^-1*m^-2*s^3*K">
+      <typings>ThermalResistanceUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x207b;&#xb9;&#x22c5;m&#x207b;&#xb3;&#x22c5;s&#xb3;&#x22c5;A&#xb2;'" declaredName="'kilogram to the power minus 1 metre to the power minus 3 second to the power 3 ampere to the power 2'" valuePart="kg^-1*m^-3*s^3*A^2">
+      <typings>ElectrolyticConductivityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x207b;&#xb9;&#x22c5;m&#x207b;&#x2075;&#x22c5;s&#xb2;'" declaredName="'kilogram to the power minus 1 metre to the power minus 5 second to the power 2'" valuePart="kg^-1*m^-5*s^2">
+      <typings>EnergyDensityOfStatesUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x207b;&#xb9;&#x22c5;m&#xb2;'" declaredName="'kilogram to the power minus 1 metre squared'" valuePart="kg^-1*m^2">
+      <typings>MassAttenuationCoefficientUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x207b;&#xb9;&#x22c5;m&#xb3;'" declaredName="'kilogram to the power minus 1 metre cubed'" valuePart="kg^-1*m^3">
+      <typings>SpecificVolumeUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x207b;&#xb9;&#x22c5;s&#x22c5;A'" declaredName="'kilogram to the power minus 1 second ampere'" valuePart="kg^-1*s*A">
+      <typings>GyromagneticRatioUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x207b;&#xb9;&#x22c5;s&#x207b;&#xb9;'" declaredName="'kilogram to the power minus 1 second to the power minus 1'" valuePart="kg^-1*s^-1">
+      <typings>SpecificActivityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x207b;&#xb9;&#x22c5;s&#xb2;'" declaredName="'kilogram to the power minus 1 second to the power 2'" valuePart="kg^-1*s^2">
+      <typings>EnergyDistributionOfCrossSectionUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x207b;&#xb9;&#x22c5;s&#xb2;&#x22c5;A'" declaredName="'kilogram to the power minus 1 second to the power 2 ampere'" valuePart="kg^-1*s^2*A">
+      <typings>MobilityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x207b;&#xb9;&#x22c5;s&#xb3;&#x22c5;A&#xb2;&#x22c5;mol&#x207b;&#xb9;'" declaredName="'kilogram to the power minus 1 second to the power 3 ampere to the power 2 mole to the power minus 1'" valuePart="kg^-1*s^3*A^2*mol^-1">
+      <typings>MolarConductivityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#x207b;&#xb9;&#x22c5;s&#xb3;&#x22c5;K'" declaredName="'kilogram to the power minus 1 second to the power 3 kelvin'" valuePart="kg^-1*s^3*K">
+      <typings>ThermalInsulanceUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#xb2;&#x22c5;m&#x207b;&#xb2;&#x22c5;s&#x207b;&#xb3;'" declaredName="'kilogram to the power 2 metre to the power minus 2 second to the power minus 3'" valuePart="kg^2*m^-2*s^-3">
+      <typings>SoundExposureUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'kg&#xb2;&#x22c5;m&#x2074;&#x22c5;s&#x207b;&#x2076;&#x22c5;A&#x207b;&#xb2;&#x22c5;K&#x207b;&#xb2;'" declaredName="'kilogram to the power 2 metre to the power 4 second to the power minus 6 ampere to the power minus 2 kelvin to the power minus 2'" valuePart="kg^2*m^4*s^-6*A^-2*K^-2">
+      <typings>LorenzCoefficientUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'lm&#x22c5;s'" declaredName="'lumen second'" valuePart="lm*s">
+      <typings>LuminousEnergyUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'lm/m&#xb2;'" declaredName="'lumen per square metre'" valuePart="lm/m^2">
+      <typings>LuminousExitanceUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'lm/W'" declaredName="'lumen per watt'" valuePart="lm/W">
+      <typings>LuminousEfficacyOfRadiationUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'lx&#x22c5;s'" declaredName="'lux second'" valuePart="lx*s">
+      <typings>LuminousExposureUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'m&#x22c5;s&#x207b;&#xb9;'" declaredName="'metre second to the power minus 1'" valuePart="m*s^-1">
+      <typings>SpeedUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'m&#x22c5;s&#x207b;&#xb2;'" declaredName="'metre second to the power minus 2'" valuePart="m*s^-2">
+      <typings>AccelerationUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'m/s'" declaredName="'metre per second'" valuePart="m/s">
+      <typings>SpeedUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'m&#x207b;&#xb9;'" declaredName="'metre to the power minus 1'" valuePart="m^-1">
+      <typings>CurvatureUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'m&#x207b;&#xb2;'" declaredName="'metre to the power minus 2'" valuePart="m^-2">
+      <typings>PhotonExposureUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'m&#x207b;&#xb2;&#x22c5;s&#x207b;&#xb9;'" declaredName="'metre to the power minus 2 second to the power minus 1'" valuePart="m^-2*s^-1">
+      <typings>PhotonIrradianceUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'m&#x207b;&#xb2;&#x22c5;s&#x207b;&#xb9;&#x22c5;sr&#x207b;&#xb9;'" declaredName="'metre to the power minus 2 second to the power minus 1 steradian to the power minus 1'" valuePart="m^-2*s^-1*sr^-1">
+      <typings>PhotonRadianceUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'m&#x207b;&#xb3;'" declaredName="'metre to the power minus 3'" valuePart="m^-3">
+      <typings>ParticleConcentrationUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'m&#x207b;&#xb3;&#x22c5;s'" declaredName="'metre to the power minus 3 second'" valuePart="m^-3*s">
+      <typings>DensityOfVibrationalStatesUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'m&#x207b;&#xb3;&#x22c5;s&#x207b;&#xb9;'" declaredName="'metre to the power minus 3 second to the power minus 1'" valuePart="m^-3*s^-1">
+      <typings>ActivityDensityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'m&#xb2;'" declaredName="'metre squared'" valuePart="m^2">
+      <typings>AreaUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'m&#xb2;&#x22c5;A'" declaredName="'metre squared ampere'" valuePart="m^2*A">
+      <typings>MagneticDipoleMomentUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'m&#xb2;&#x22c5;K/W'" declaredName="'metre squared kelvin per watt'" valuePart="m^2*K/W">
+      <typings>ThermalInsulanceUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'m&#xb2;&#x22c5;mol&#x207b;&#xb9;'" declaredName="'metre squared mole to the power minus 1'" valuePart="m^2*mol^-1">
+      <typings>MolarAbsorptionCoefficientUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'m&#xb2;&#x22c5;s&#x207b;&#xb9;'" declaredName="'metre squared second to the power minus 1'" valuePart="m^2*s^-1">
+      <typings>KinematicViscosityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'m&#xb2;&#x22c5;s&#x207b;&#xb2;'" declaredName="'metre squared second to the power minus 2'" valuePart="m^2*s^-2">
+      <typings>SpecificEnergyUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'m&#xb2;&#x22c5;s&#x207b;&#xb2;&#x22c5;K&#x207b;&#xb9;'" declaredName="'metre squared second to the power minus 2 kelvin to the power minus 1'" valuePart="m^2*s^-2*K^-1">
+      <typings>SpecificHeatCapacityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'m&#xb2;&#x22c5;s&#x207b;&#xb3;'" declaredName="'metre squared second to the power minus 3'" valuePart="m^2*s^-3">
+      <typings>DoseEquivalentUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'m&#xb2;&#x22c5;sr&#x207b;&#xb9;'" declaredName="'metre squared steradian to the power minus 1'" valuePart="m^2*sr^-1">
+      <typings>DirectionDistributionOfCrossSectionUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'m&#xb2;/(J&#x22c5;sr)'" declaredName="'metre squared per joule steradian'" valuePart="m^2/(J*sr)">
+      <typings>DirectionAndEnergyDistributionOfCrossSectionUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'m&#xb2;/(V&#x22c5;s)'" declaredName="'metre squared per volt second'" valuePart="m^2/(V*s)">
+      <typings>MobilityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'m&#xb2;/J'" declaredName="'metre squared per joule'" valuePart="m^2/J">
+      <typings>EnergyDistributionOfCrossSectionUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'m&#xb3;'" declaredName="'metre cubed'" valuePart="m^3">
+      <typings>VolumeUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'m&#xb3;&#x22c5;mol&#x207b;&#xb9;'" declaredName="'metre cubed mole to the power minus 1'" valuePart="m^3*mol^-1">
+      <typings>MolarVolumeUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'m&#xb3;&#x22c5;s&#x207b;&#xb9;'" declaredName="'metre cubed second to the power minus 1'" valuePart="m^3*s^-1">
+      <typings>VolumeFlowRateUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'m&#xb3;/C&#x22c5;m&#xb3;&#x22c5;s&#x207b;&#xb9;&#x22c5;A&#x207b;&#xb9;'" declaredName="'metre cubed per coulomb cubic metre second to the power minus 1 ampere to the power minus 1'" valuePart="m^3/C*m^3*s^-1*A^-1">
+      <typings>HallCoefficientUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'m&#x2074;'" declaredName="'metre to the power 4'" valuePart="m^4">
+      <typings>SecondAxialMomentOfAreaUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'m&#x2074;&#x22c5;s&#x207b;&#xb2;'" declaredName="'metre to the power 4 second to the power minus 2'" valuePart="m^4*s^-2">
+      <typings>TotalMassStoppingPowerUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'mL/L '" declaredName="'ml per l'" valuePart="mL/L">
+      <typings>VolumeFractionUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'mol&#x22c5;kg&#x207b;&#xb9;'" declaredName="'mole kilogram to the power minus 1'" valuePart="mol*kg^-1">
+      <typings>IonicStrengthUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'mol&#x22c5;m&#x207b;&#xb3;'" declaredName="'mole metre to the power minus 3'" valuePart="mol*m^-3">
+      <typings>AmountOfSubstanceConcentrationUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'mol/kg'" declaredName="'mole per kilogram'" valuePart="mol/kg">
+      <typings>MolalityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'mol/L'" declaredName="'mole per l'" valuePart="mol/L">
+      <typings>AmountOfSubstanceConcentrationUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'mol/m&#xb3;'" declaredName="'mole per cubic metre'" valuePart="mol/m^3">
+      <typings>EquilibriumConstantOnConcentrationBasisUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'N&#x22c5;m'" declaredName="'newton metre'" valuePart="N*m">
+      <typings>MomentOfForceUnit</typings>
+      <typings>TorqueUnit</typings>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>MomentOfForceUnit::quantityDimension</redefinitions>
+        <redefinitions>TorqueUnit::quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+          <redefinitions>MomentOfForceUnit::quantityDimension::quantityPowerFactors</redefinitions>
+          <redefinitions>TorqueUnit::quantityDimension::quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'N&#x22c5;m&#x22c5;s'" declaredName="'newton metre second'" valuePart="N*m*s">
+      <typings>AngularImpulseUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'N&#x22c5;m&#x22c5;s&#x207b;&#xb9;'" declaredName="'newton metre second to the power minus 1'" valuePart="N*m*s^-1">
+      <typings>PowerUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'N&#x22c5;m&#x207b;&#xb9;'" declaredName="'newton metre to the power minus 1'" valuePart="N*m^-1">
+      <typings>SurfaceTensionUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'N&#x22c5;m&#x207b;&#xb2;'" declaredName="'newton metre to the power minus 2'" valuePart="N*m^-2">
+      <typings>PressureUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'N&#x22c5;s'" declaredName="'newton second'" valuePart="N*s">
+      <typings>ImpulseUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'nat/s'" declaredName="'natural unit of information per second'" valuePart="nat/s">
+      <typings>AverageInformationRateUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'o/s'" declaredName="'octet per second'" valuePart="o/s">
+      <typings>TransferRateUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'Pa&#x22c5;s'" declaredName="'pascal second'" valuePart="Pa*s">
+      <typings>DynamicViscosityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'Pa&#x22c5;s/m'" declaredName="'pascal second per metre'" valuePart="Pa*s/m">
+      <typings>CharacteristicImpedanceOfAMediumForLongitudinalWavesUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'Pa&#x22c5;s/m&#xb3;'" declaredName="'pascal second per cubic metre'" valuePart="Pa*s/m^3">
+      <typings>AcousticImpedanceUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'Pa/K'" declaredName="'pascal per kelvin'" valuePart="Pa/K">
+      <typings>PressureCoefficientUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'Pa&#x207b;&#xb9;'" declaredName="'pascal to the power minus 1'" valuePart="Pa^-1">
+      <typings>CompressibilityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'Pa&#xb2;&#x22c5;s'" declaredName="'pascal to the power 2 second'" valuePart="Pa^2*s">
+      <typings>SoundExposureUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'rad&#x22c5;m&#xb2;/kg&#xb9;'" declaredName="'radian metre squared per kilogram to the power 1'" valuePart="rad*m^2/kg^1">
+      <typings>SpecificOpticalRotatoryPowerUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'rad&#x22c5;m&#xb2;/mol'" declaredName="'radian metre squared per mole'" valuePart="rad*m^2/mol">
+      <typings>MolarOpticalRotatoryPowerUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'rad&#x22c5;s&#x207b;&#xb9;'" declaredName="'radian second to the power minus 1'" valuePart="rad*s^-1">
+      <typings>AngularVelocityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'rad&#x22c5;s&#x207b;&#xb2;'" declaredName="'radian second to the power minus 2'" valuePart="rad*s^-2">
+      <typings>AngularAccelerationUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'rad/m'" declaredName="'radian per metre'" valuePart="rad/m">
+      <typings>PhaseCoefficientUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'s&#x22c5;A'" declaredName="'second ampere'" valuePart="s*A">
+      <typings>ElectricChargeUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'S&#x22c5;m&#xb2;/mol'" declaredName="'siemens metre squared per mole'" valuePart="S*m^2/mol">
+      <typings>MolarConductivityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'S/m'" declaredName="'siemens per metre'" valuePart="S/m">
+      <typings>ConductivityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'s&#x207b;&#xb9;'" declaredName="'second to the power minus 1'" valuePart="s^-1">
+      <typings>AngularVelocityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'s&#x207b;&#xb9;&#x22c5;sr&#x207b;&#xb9;'" declaredName="'second to the power minus 1 steradian to the power minus 1'" valuePart="s^-1*sr^-1">
+      <typings>PhotonIntensityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'s&#x207b;&#xb2;'" declaredName="'second to the power minus 2'" valuePart="s^-2">
+      <typings>AngularAccelerationUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'Sh/s'" declaredName="'shannon per second'" valuePart="Sh/s">
+      <typings>AverageInformationRateUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'Sv/s'" declaredName="'sievert per second'" valuePart="Sv/s">
+      <typings>DoseEquivalentUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'V&#x22c5;A'" declaredName="'volt ampere'" valuePart="V*A">
+      <typings>PowerUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'V/K'" declaredName="'volt per kelvin'" valuePart="V/K">
+      <typings>SeebeckCoefficientForSubstancesAAndBUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'V/m'" declaredName="'volt per metre'" valuePart="V/m">
+      <typings>ElectricFieldStrengthUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'V&#xb2;/K&#xb2;'" declaredName="'volt to the power 2 per kelvin to the power 2'" valuePart="V^2/K^2">
+      <typings>LorenzCoefficientUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'W&#x22c5;h'" declaredName="'watt hour'" valuePart="W*h">
+      <typings>EnergyUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'W/(m&#x22c5;K)'" declaredName="'watt per metre kelvin'" valuePart="W/(m*K)">
+      <typings>ThermalConductivityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'W/(m&#xb2;&#x22c5;K)'" declaredName="'watt per square metre kelvin'" valuePart="W/(m^2*K)">
+      <typings>CoefficientOfHeatTransferUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'W/(m&#xb2;&#x22c5;nm)'" declaredName="'watt per square metre nm'" valuePart="W/(m^2*nm)">
+      <typings>SpectralIrradianceUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'W/(sr&#x22c5;m&#xb2;)'" declaredName="'watt per steradian square metre'" valuePart="W/(sr*m^2)">
+      <typings>RadianceUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'W/(sr&#x22c5;m&#xb2;&#x22c5;nm)'" declaredName="'watt per steradian square metre nm'" valuePart="W/(sr*m^2*nm)">
+      <typings>SpectralRadianceUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'W/(sr&#x22c5;nm)'" declaredName="'watt per steradian nm'" valuePart="W/(sr*nm)">
+      <typings>SpectralRadiantIntensityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'W/K'" declaredName="'watt per kelvin'" valuePart="W/K">
+      <typings>ThermalConductanceUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'W/kg'" declaredName="'watt per kilogram'" valuePart="W/kg">
+      <typings>DoseEquivalentUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'W/m&#xb2;'" declaredName="'watt per square metre'" valuePart="W/m^2">
+      <typings>DensityOfHeatFlowRateUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'W/nm'" declaredName="'watt per nm'" valuePart="W/nm">
+      <typings>SpectralRadiantFluxUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'W/sr'" declaredName="'watt per steradian'" valuePart="W/sr">
+      <typings>RadiantIntensityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'Wb&#x22c5;m'" declaredName="'weber metre'" valuePart="Wb*m">
+      <typings>MagneticDipoleMomentUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'Wb/m'" declaredName="'weber per metre'" valuePart="Wb/m">
+      <typings>MagneticVectorPotentialUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'&#x3a9;&#x22c5;m'" declaredName="'ohm metre'" valuePart="'&#x3a9;'*m">
+      <typings>ResistivityUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="'m/s&#xb2;'" memberElement="'m&#x22c5;s&#x207b;&#xb2;'"/>
+    <elements xsi:type="sysMLOC:Comment" body="/*&#xA;     * Prefixed units&#xA;     */"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* Length */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="nm" declaredName="nanometre">
+      <typings>LengthUnit</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <typings>ConversionByPrefix</typings>
+        <redefinitions>unitConversion</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="nano">
+          <redefinitions>prefix</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="m">
+          <redefinitions>referenceUnit</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="mm" declaredName="millimetre">
+      <typings>LengthUnit</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <typings>ConversionByPrefix</typings>
+        <redefinitions>unitConversion</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="milli">
+          <redefinitions>prefix</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="m">
+          <redefinitions>referenceUnit</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="cm" declaredName="centimetre">
+      <typings>LengthUnit</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <typings>ConversionByPrefix</typings>
+        <redefinitions>unitConversion</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="centi">
+          <redefinitions>prefix</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="m">
+          <redefinitions>referenceUnit</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="km" declaredName="kilometre">
+      <typings>LengthUnit</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <typings>ConversionByPrefix</typings>
+        <redefinitions>unitConversion</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="kilo">
+          <redefinitions>prefix</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="m">
+          <redefinitions>referenceUnit</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* Volume */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="mL" declaredName="millilitre">
+      <typings>VolumeUnit</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <typings>ConversionByPrefix</typings>
+        <redefinitions>unitConversion</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="milli">
+          <redefinitions>prefix</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="L">
+          <redefinitions>referenceUnit</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* Force */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="mN" declaredName="millinewton">
+      <typings>ForceUnit</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <typings>ConversionByPrefix</typings>
+        <redefinitions>unitConversion</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="milli">
+          <redefinitions>prefix</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="N">
+          <redefinitions>referenceUnit</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* Energy */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="kJ" declaredName="kilojoule">
+      <typings>EnergyUnit</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <typings>ConversionByPrefix</typings>
+        <redefinitions>unitConversion</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="kilo">
+          <redefinitions>prefix</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="J">
+          <redefinitions>referenceUnit</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="MJ" declaredName="megajoule">
+      <typings>EnergyUnit</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <typings>ConversionByPrefix</typings>
+        <redefinitions>unitConversion</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="mega">
+          <redefinitions>prefix</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="J">
+          <redefinitions>referenceUnit</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="GJ" declaredName="gigajoule">
+      <typings>EnergyUnit</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <typings>ConversionByPrefix</typings>
+        <redefinitions>unitConversion</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="giga">
+          <redefinitions>prefix</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="J">
+          <redefinitions>referenceUnit</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* Power */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="kW" declaredName="kilowatt">
+      <typings>PowerUnit</typings>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage">
+        <typings>ConversionByPrefix</typings>
+        <redefinitions>unitConversion</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="kilo">
+          <redefinitions>prefix</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="W">
+          <redefinitions>referenceUnit</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* Speed */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'km/h'" declaredName="'kilometre per hour'" valuePart="km/h">
+      <typings>SpeedUnit</typings>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* &#xA;&#x9; * Celsius units&#xA;&#x9; */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'&#xb0;C'" declaredName="'degree celsius (temperature difference)'">
+      <typings>TemperatureDifferenceUnit</typings>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;     * degree Celsius unit for temperature interval (i.e. temperature difference) quantities&#xA;&#x9;     */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>ConversionByConvention</typings>
+        <redefinitions>unitConversion</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="K">
+          <redefinitions>referenceUnit</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>conversionFactor</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredShortName="'&#xb0;C_abs'" declaredName="'degree celsius (absolute temperature scale)'">
+      <typings>IntervalScale</typings>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;     * degree Celsius interval scale for absolute (thermodynamic) temperature quantities&#xA;&#x9;     *&#xA;&#x9;     * The interval scale is defined with an explicit transformation with respect to &#xA;&#x9;     * the kelvin thermodynamic temperature scale that specifies the zero shift.&#xA;&#x9;     */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="'&#xb0;C'">
+        <redefinitions>unit</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="temperatureWaterAtFreezingPointInC">
+        <typings>DefinitionalQuantityValue</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="0">
+          <redefinitions>num</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;temperature in degree Celsius of pure water at freezing point&quot;">
+          <redefinitions>definition</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="temperatureWaterAtTriplePointInC">
+        <typings>DefinitionalQuantityValue</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1/100">
+          <redefinitions>num</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="&quot;temperature in degree Celsius of pure water at the triple point&quot;">
+          <redefinitions>definition</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="celsiusToKelvinScaleMapping">
+        <typings>QuantityValueMapping</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="temperatureWaterAtTriplePointInC">
+          <redefinitions>mappedQuantityValue</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="K.temperatureOfWaterAtTriplePointInK">
+          <redefinitions>referenceQuantityValue</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="(temperatureWaterAtTriplePointInC, temperatureWaterAtFreezingPointInC)">
+        <redefinitions>definitionalQuantityValues</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="celsiusToKelvinScaleMapping">
+        <redefinitions>quantityValueMapping</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:Comment" body="/* CoordinateFramePlacement (zero shift) w.r.t. the kelvin thermodynamic temperature scale */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="zeroDegreeCelsiusInKelvin" valuePart="273.15 [K]">
+        <typings>ThermodynamicTemperatureValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="zeroDegreeCelsiusToKelvinShift">
+        <typings>CoordinateFramePlacement</typings>
+        <redefinitions>transformation</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="K">
+          <redefinitions>source</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="zeroDegreeCelsiusInKelvin">
+          <redefinitions>origin</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

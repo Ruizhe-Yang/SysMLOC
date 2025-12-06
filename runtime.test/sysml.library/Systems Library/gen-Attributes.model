@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:LibraryPackage" declaredName="Attributes" isStandard="true" isLibrary="true">
+    <elements xsi:type="sysMLOC:Documentation" body="/*&#xA; * This package defines the base types for attributes and related structural elements &#xA; * in the SysML language.&#xA; */"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Base::DataValue"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Base::dataValues"/>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="AttributeValue" memberElement="DataValue">
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * AttributeValue is the most general type of data values that represent qualities or characteristics &#xA;&#x9;&#x9; * of a system or part of a system. AttributeValue is the base type of all AttributeDefinitions.&#xA;&#x9;&#x9; */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="attributeValues" memberElement="dataValues">
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * attributeValues is the base feature for all AttributeUsages.&#xA;&#x9;&#x9; */"/>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

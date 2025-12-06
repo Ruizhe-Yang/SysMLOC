@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:LibraryPackage" declaredName="SampledFunctions" isStandard="true" isLibrary="true">
+    <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9; * This package provides a library model of discretely sampled mathematical functions.&#xA;&#x9; */"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Base::Anything"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues::Positive"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Collections::KeyValuePair"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Collections::OrderedMap"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="SequenceFunctions::size"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ControlFunctions::forAll"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ControlFunctions::collect"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ControlFunctions::select"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SamplePair">
+      <superclassifiers>KeyValuePair</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * SamplePair is a key-value pair of a domain-value and a range-value, used as a sample element in SampledFunction.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="domainValue">
+        <redefinitions>key</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="rangeValue">
+        <redefinitions>val</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SampledFunction">
+      <superclassifiers>OrderedMap</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;     * SampledFunction is a variable-size, ordered collection of 'SamplePair' elements that represents a generic, discretely sampled, &#xA;&#x9;     * uni-variate or multi-variate mathematical function. The function must be montonic, either strictly increasing or strictly&#xA;&#x9;     * decreasing.&#xA;&#x9;     * &#xA;&#x9;     * It maps discrete domain values to discrete range values.&#xA;&#x9;     * The domain of the function is represented by the sequence of 'domainValue' of each 'SamplePair' in 'samples', and &#xA;&#x9;     * the range of the function is represented by the sequence of 'rangeValue' of each 'SamplePair' in 'samples'.&#xA;&#x9;     */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="samples" MultiLow="0" MultiHigh="*" isOrdered="true">
+        <typings>SamplePair</typings>
+        <redefinitions>elements</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AssertConstraintUsage">
+        <elements xsi:type="sysMLOC:CodeAnnotation" body="// Note: Assumes the functions '&lt;' and '>' are defined for the domain type.&#xA;"/>
+        <elements xsi:type="sysMLOC:CodeAnnotation" body="// Strictly increasing&#xA;"/>
+        <elements xsi:type="sysMLOC:CodeAnnotation" body="// Strictly decreasing&#xA;"/>
+        <resultExpressionParameter resultExpression="(1..size(samples)-1)->forAll{ in i; (samples.domainValue#(i) &lt; samples.domainValue#(i+1)) } or (1..size(samples)-1)->forAll{ in i; (samples.domainValue#(i) > samples.domainValue#(i+1)) }"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="Domain">
+      <elements xsi:type="sysMLOC:Documentation" body="/* &#xA;&#x9;&#x9; * Domain returns the sequence of the domainValues of all samples in a SampledFunction.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="fn">
+        <typings>SampledFunction</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" MultiLow="0" MultiHigh="*" valuePart="fn.samples.domainValue">
+        <typings>Anything</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="Range">
+      <elements xsi:type="sysMLOC:Documentation" body="/* &#xA;&#x9;&#x9; * Range returns the sequence of the rangeValues of all samples in a SampledFunction.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="fn">
+        <typings>SampledFunction</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" MultiLow="0" MultiHigh="*" valuePart="fn.samples.rangeValue">
+        <typings>Anything</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="Sample">
+      <elements xsi:type="sysMLOC:Documentation" body="/* &#xA;&#x9;&#x9; * Sample returns a SampledFunction that samples a given calculation over a sequence of domainValues.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:CalculationUsage" direction="in" declaredName="calculation">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x"/>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="domainValues" MultiLow="0" MultiHigh="*"/>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="sampling" valuePart="new SampledFunction ( samples = domainValues->collect{ in x; new SamplePair(x, calculation(x)) } )"/>
+    </elements>
+    <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="Interpolate">
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * An Interpolate calculation returns an interpolated range value from a given SampledFunction for a given domain value.&#xA;&#x9;&#x9; * If the input domain value is outside the bounds of the domainValues of the SampleFunction, null is returned.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="fn">
+        <typings>SampledFunction</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="value"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" isReturn="true" declaredName="result"/>
+    </elements>
+    <elements xsi:type="sysMLOC:CalculationUsage" declaredName="interpolateLinear">
+      <typings>Interpolate</typings>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * interpolateLinear is an Interpolate calculation assuming a linear functional form between SamplePairs.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="fn">
+        <typings>SampledFunction</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="value"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="domainValues" valuePart="Domain(fn)"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="index" MultiLow="0" MultiHigh="1" valuePart="(1..size(domainValues))->select{ in i : Positive; domainValues#(i) &lt;= value } #(1)">
+        <typings>Positive</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:CalculationDefinition" visibility="private" declaredName="Linear">
+        <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="lowerSample">
+          <typings>SamplePair</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="upperSample">
+          <typings>SamplePair</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="value"/>
+        <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="f" valuePart="(value - lowerSample.domainValue) / (lowerSample.domainValue - upperSample.domainValue)"/>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="result" valuePart="upperSample.rangeValue + f * (lowerSample.rangeValue - upperSample.rangeValue)"/>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="result" MultiLow="0" MultiHigh="1" valuePart="if index == null or index == size(domainValues)? null else if domainValues#(index) &lt; domainValues#(index+1)? Linear(fn.samples#(index), fn.samples#(index+1), value) else Linear(fn.samples#(index+1), fn.samples#(index), value)"/>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:LibraryPackage" declaredName="StateSpaceRepresentation" isStandard="true" isLibrary="true">
+    <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9; * This package provides a model of the foundational state-space system representation, &#xA;&#x9; * commonly used in control systems.&#xA;&#x9; */"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ISQ::DurationValue"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Quantities::VectorQuantityValue"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="VectorCalculations" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" isAbstract="true" declaredName="StateSpace">
+      <superclassifiers>VectorQuantityValue</superclassifiers>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" isAbstract="true" declaredName="Input">
+      <superclassifiers>VectorQuantityValue</superclassifiers>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" isAbstract="true" declaredName="Output">
+      <superclassifiers>VectorQuantityValue</superclassifiers>
+    </elements>
+    <elements xsi:type="sysMLOC:CalculationDefinition" isAbstract="true" declaredName="GetNextState">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="input">
+        <typings>Input</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="stateSpace">
+        <typings>StateSpace</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="timeStep">
+        <typings>DurationValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+        <typings>StateSpace</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:CalculationDefinition" isAbstract="true" declaredName="GetOutput">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="input">
+        <typings>Input</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="stateSpace">
+        <typings>StateSpace</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+        <typings>Output</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:ActionDefinition" isAbstract="true" declaredName="StateSpaceEventDef">
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;    &#x9; * Events to be received.&#xA;    &#x9; */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:ActionDefinition" declaredName="ZeroCrossingEventDef">
+      <superclassifiers>StateSpaceEventDef</superclassifiers>
+    </elements>
+    <elements xsi:type="sysMLOC:ItemDefinition" declaredName="StateSpaceItem">
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;    &#x9; * Item for SSR connection&#xA;    &#x9; */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:ActionDefinition" isAbstract="true" declaredName="StateSpaceDynamics">
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;     * StateSpaceDynamics is the simplest form of State Space Representation,&#xA;&#x9;     * and nextState directly computes the stateSpace of the next timestep. &#xA;&#x9;     */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="input">
+        <typings>Input</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:CalculationUsage" isAbstract="true" declaredName="getNextState">
+        <typings>GetNextState</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:CalculationUsage" isAbstract="true" declaredName="getOutput">
+        <typings>GetOutput</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="stateSpace">
+        <typings>StateSpace</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" direction="out" declaredName="output" valuePart="getOutput(input, stateSpace)">
+        <typings>Output</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" isAbstract="true" declaredName="StateDerivative">
+      <superclassifiers>VectorQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;     * The definition of the time derivative of StateSpace, which means dx/dt, where x is StateSpace&#xA;&#x9;     */"/>
+      <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="stateSpace">
+        <typings>StateSpace</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:ConstraintUsage">
+        <resultExpressionParameter resultExpression="stateSpace.order == order"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:CalculationDefinition" isAbstract="true" declaredName="GetDerivative">
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;     * Computes the time derivative of stateSpace, which corresponds dx/dt = f(u, x), where u is input and x is stateSpace.&#xA;&#x9;     */"/>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="input">
+        <typings>Input</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="stateSpace">
+        <typings>StateSpace</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+        <typings>StateDerivative</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:CalculationDefinition" isAbstract="true" declaredName="Integrate">
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;     * Integrates stateSpace to compute the next stateSpace, which corresponds to x + int dx/dt dt.&#xA;&#x9;     * Its actual implementation should be given by a solver. &#xA;&#x9;     */"/>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="getDerivative">
+        <typings>GetDerivative</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="input">
+        <typings>Input</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="initialState">
+        <typings>StateSpace</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="timeInterval">
+        <typings>DurationValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="result">
+        <typings>StateSpace</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:ActionDefinition" isAbstract="true" declaredName="ContinuousStateSpaceDynamics">
+      <superclassifiers>StateSpaceDynamics</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;     * ContinuousStateSpaceDynamics represents continuous behavior.&#xA;&#x9;     * derivative needs to return a time derivative of stateSpace, i.e. dx/dt.&#xA;&#x9;     */"/>
+      <elements xsi:type="sysMLOC:CalculationUsage" isAbstract="true" declaredName="getDerivative">
+        <typings>GetDerivative</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:CalculationUsage">
+        <typings>GetNextState</typings>
+        <redefinitions>getNextState</redefinitions>
+        <elements xsi:type="sysMLOC:Comment" body="/* We compute nextState by Integrate defined above by giving derivative calc. */"/>
+        <elements xsi:type="sysMLOC:CalculationUsage" declaredName="integrate">
+          <typings>Integrate</typings>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="getDerivative" valuePart="ContinuousStateSpaceDynamics::getDerivative"/>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="input" valuePart="GetNextState::input"/>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="initialState" valuePart="GetNextState::stateSpace"/>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="timeInterval" valuePart="GetNextState::timeStep"/>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="result" valuePart="integrate.result"/>
+      </elements>
+      <elements xsi:type="sysMLOC:EventOccurrenceUsage" MultiLow="0" MultiHigh="*" declaredName="zeroCrossingEvents">
+        <typings>ZeroCrossingEventDef</typings>
+        <elements xsi:type="sysMLOC:Comment" body="/* ContinuousStateSpaceDynamics may cause zero crossings anomaly. */"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:CalculationDefinition" isAbstract="true" declaredName="GetDifference">
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;     * Computes difference of stateSpace by one timestep, that is x(k+1) - x(k),&#xA;&#x9;     * where k is the timestep number. &#xA;&#x9;     */"/>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="input">
+        <typings>Input</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="stateSpace">
+        <typings>StateSpace</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+        <typings>StateSpace</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:ActionDefinition" isAbstract="true" declaredName="DiscreteStateSpaceDynamics">
+      <superclassifiers>StateSpaceDynamics</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;     * DiscreteStateSpaceDynamics represents discrete behavior.&#xA;&#x9;     * differences needs to return difference of the stateSpace for each timestep.&#xA;&#x9;     */"/>
+      <elements xsi:type="sysMLOC:CalculationUsage" isAbstract="true" declaredName="getDifference">
+        <typings>GetDifference</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:CalculationUsage">
+        <typings>GetNextState</typings>
+        <redefinitions>getNextState</redefinitions>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="diff" valuePart="getDifference(input, stateSpace)">
+          <typings>StateSpace</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="result" valuePart="stateSpace + diff"/>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:LibraryPackage" declaredName="TradeStudies" isStandard="true" isLibrary="true">
+    <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9; * This package provides a simple framework for defining trade-off study analysis cases.&#xA;&#x9; */"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Base::Anything"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarFunctions" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ControlFunctions" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:CalculationDefinition" isAbstract="true" declaredName="EvaluationFunction">
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * An EvaluationFunction is a calculation that evaluates a TradeStudy alternative,&#xA;&#x9;&#x9; * producing a ScalarValue that can be comparted with the evaluation of other&#xA;&#x9;&#x9; * alternatives.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:ReferenceUsage" direction="in" declaredName="alternative">
+        <typings>Anything</typings>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The alternative to be evaluated.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" isReturn="true" declaredName="result" MultiLow="1">
+        <typings>ScalarValue</typings>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * A ScalarValue representing the evaluation of the given alternative.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:RequirementDefinition" isAbstract="true" declaredName="TradeStudyObjective">
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * A TradeStudyObjective is the base definition for the objective of a TradeStudy.&#xA;&#x9;&#x9; * The requirement is to choose from a given set of alternatives the selectedAlternative&#xA;&#x9;&#x9; * for that has the best evaluation according to a given EvaluationFunction. What&#xA;&#x9;&#x9; * value is considered &quot;best&quot; is not defined in the abstract base definition but must be&#xA;&#x9;&#x9; * computed in any concrete specialization.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:SubjectUsage" declaredName="selectedAlternative">
+        <typings>Anything</typings>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The alternative that should be selected, as evaluated using the given &#xA;&#x9;&#x9;&#x9; * ObjectiveFunction.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:ReferenceUsage" direction="in" declaredName="alternatives" MultiLow="1" MultiHigh="*">
+        <typings>Anything</typings>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The alternatives being considered in the TradeStudy for which this TradeStudyObjective &#xA;&#x9;&#x9;&#x9; * is the objective.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:CalculationUsage" direction="in" declaredName="eval">
+        <typings>EvaluationFunction</typings>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The EvaluationFunction to be used in evaluating the given alternatives.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="best">
+        <typings>ScalarValue</typings>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * Out of the evaluation results of all the given alternatives, the one that is considered &#xA;&#x9;&#x9;&#x9; * &quot;best&quot;, in the sense that it is the value the selectedAlternative should have. This &#xA;&#x9;&#x9;&#x9; * value must be computed in any concrete specialization of TradeStudyObjective.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:RequirementConstraintUsage" kind="require">
+        <resultExpressionParameter resultExpression="eval(selectedAlternative) == best"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:RequirementDefinition" declaredName="MinimizeObjective">
+      <superclassifiers>TradeStudyObjective</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * A MinimizeObjective is a TradeStudyObjective that requires that the &#xA;&#x9;&#x9; * selectedAlternative have the minimum ObjectiveFunction value of all the&#xA;&#x9;&#x9; * given alternatives.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * For a MinimizeObjective, the best value is the minimum one.&#xA;&#x9;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="alternatives->minimize{ in x; eval(x) }">
+        <redefinitions>best</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:RequirementDefinition" declaredName="MaximizeObjective">
+      <superclassifiers>TradeStudyObjective</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * A MaximizeObjective is a TradeStudyObjective that requires that the &#xA;&#x9;&#x9; * selectedAlternative have the maximum ObjectiveFunction value of all the&#xA;&#x9;&#x9; * given alternatives.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * For a MinimizeObjective, the best value is the maximum one.&#xA;&#x9;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="alternatives->maximize{ in x; eval(x) }">
+        <redefinitions>best</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AnalysisCaseDefinition" isAbstract="true" declaredName="TradeStudy">
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * A TradeStudy is an analysis case whose subject is a set of alternatives&#xA;&#x9;&#x9; * (at least one) and whose result is a selection of one of those alternatives.&#xA;&#x9;&#x9; * The alternatives are evaluated based on a given ObjectiveFunction and the&#xA;&#x9;&#x9; * selection is made such that it satisfies the objective of the TradeStudy&#xA;&#x9;&#x9; * (which must be a TradeStudyObjective).&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:SubjectUsage" declaredName="studyAlternatives" MultiLow="1" MultiHigh="*">
+        <typings>Anything</typings>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The set of alternatives being considered in this TradeStudy. &#xA;&#x9;&#x9;&#x9; * &#xA;&#x9;&#x9;&#x9; * In a TradeStudy usage, bind this feature to the actual collection of&#xA;&#x9;&#x9;&#x9; * alternatives to be considered.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:CalculationUsage" isAbstract="true" declaredName="evaluationFunction">
+        <typings>EvaluationFunction</typings>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The EvaluationFunction to be used to evaluate the alternatives.&#xA;&#x9;&#x9;&#x9; * &#xA;&#x9;&#x9;&#x9; * In a TradeStudy usage, redefine this feature to provide the desired&#xA;&#x9;&#x9;&#x9; * calculation (or bind it to a calculation usage that does so).&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:ObjectiveRequirementUsage" declaredName="tradeStudyObjective">
+        <typings>TradeStudyObjective</typings>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The objective of this TradeStudy.&#xA;&#x9;&#x9;&#x9; * &#xA;&#x9;&#x9;&#x9; * Redefine this feature to give it a definition that is a concrete&#xA;&#x9;&#x9;&#x9; * specialization of TradeStudyObjective. That can either be one of the&#xA;&#x9;&#x9;&#x9; * specializations provided in this package, or a more specific user-&#xA;&#x9;&#x9;&#x9; * defined one.&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="sysMLOC:SubjectUsage">
+          <redefinitions>selectedAlternative</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:ReferenceUsage" direction="in" valuePart="studyAlternatives">
+          <redefinitions>alternatives</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:CalculationUsage" direction="in" valuePart="evaluationFunction">
+          <redefinitions>eval</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The alternative selected by this TradeStudy, which is the one that meets the&#xA;&#x9;&#x9;&#x9; * requirement of the tradeStudyObjective.&#xA;&#x9;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="selectedAlternative" valuePart="studyAlternatives->selectOne{ in ref a; tradeStudyObjective(selectedAlternative = a) }">
+        <typings>Anything</typings>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>

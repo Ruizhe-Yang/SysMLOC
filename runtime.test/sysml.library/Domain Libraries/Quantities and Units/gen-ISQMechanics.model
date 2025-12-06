@@ -1,0 +1,2115 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:LibraryPackage" declaredName="ISQMechanics" isStandard="true" isLibrary="true">
+    <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;     * International System of Quantities and Units&#xA;     * Generated on 2025-03-13T15:00:05Z from standard ISO-80000-4:2019 &quot;Mechanics&quot;&#xA;     * see also https://www.iso.org/standard/64975.html&#xA;     * &#xA;     * Note 1: In documentation comments, AsciiMath notation (see http://asciimath.org/) is used for mathematical concepts,&#xA;     * with Greek letters in Unicode encoding. In running text, AsciiMath is placed between backticks.&#xA;     * Note 2: For vector and tensor quantities currently the unit and quantity value type for their (scalar) magnitude is &#xA;     * defined, as well as their typical Cartesian 3d VectorMeasurementReference (i.e. coordinate system) &#xA;     * or TensorMeasurementReference.&#xA;     */"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues::Real"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Quantities" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="MeasurementReferences" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ISQBase" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* Quantity definitions referenced from other ISQ packages */"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ISQThermodynamics::EnergyValue"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-1 mass */"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* See package ISQBase for the declarations of MassValue and MassUnit */"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-2 mass density, density */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MassDensityValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-2 mass density, density&#xA;         * symbol(s): `&#x3c1;`, `&#x3c1;_m`&#xA;         * application domain: generic&#xA;         * name: MassDensity&#xA;         * quantity dimension: L^-3*M^1&#xA;         * measurement unit(s): kg*m^-3&#xA;         * tensor order: 0&#xA;         * definition: quantity representing the spatial distribution of mass of a continuous material: `&#x3c1;(vec(r)) = (dm)/(dV)` where `m` is mass of the material contained in an infinitesimal domain at point `vec(r)` and `V` is volume of this domain&#xA;         * remarks: None.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>MassDensityUnit</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="massDensity" MultiLow="*" isNonunique="true">
+      <typings>MassDensityValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MassDensityUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-3">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, massPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="DensityUnit" memberElement="MassDensityUnit"/>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="DensityValue" memberElement="MassDensityValue"/>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="density" memberElement="massDensity"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-3 specific volume */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SpecificVolumeValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-3 specific volume&#xA;         * symbol(s): `v`&#xA;         * application domain: generic&#xA;         * name: SpecificVolume&#xA;         * quantity dimension: L^3*M^-1&#xA;         * measurement unit(s): kg^-1*m^3&#xA;         * tensor order: 0&#xA;         * definition: reciprocal of mass density `&#x3c1;` (item 4-2): `v = 1/&#x3c1;`&#xA;         * remarks: None.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>SpecificVolumeUnit</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="specificVolume" MultiLow="*" isNonunique="true">
+      <typings>SpecificVolumeValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SpecificVolumeUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="3">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, massPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-4 relative mass density, relative density */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="RelativeMassDensityValue">
+      <superclassifiers>DimensionOneValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-4 relative mass density, relative density&#xA;         * symbol(s): `d`&#xA;         * application domain: generic&#xA;         * name: RelativeMassDensity (specializes DimensionOneQuantity)&#xA;         * quantity dimension: 1&#xA;         * measurement unit(s): 1&#xA;         * tensor order: 0&#xA;         * definition: quotient of mass density of a substance `&#x3c1;` and mass density of a reference substance `&#x3c1;_0` : `d = &#x3c1;/&#x3c1;_0`&#xA;         * remarks: Conditions and material should be specified for the reference substance.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="relativeMassDensity">
+      <typings>RelativeMassDensityValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="relativeDensity" memberElement="relativeMassDensity"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-5 surface mass density, surface density */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SurfaceMassDensityValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-5 surface mass density, surface density&#xA;         * symbol(s): `&#x3c1;_A`&#xA;         * application domain: generic&#xA;         * name: SurfaceMassDensity&#xA;         * quantity dimension: L^-2*M^1&#xA;         * measurement unit(s): kg*m^-2&#xA;         * tensor order: 0&#xA;         * definition: quantity representing the areal distribution of mass of a continuous material: `&#x3c1;_A(vec(r)) = (dm)/(dA)` where `m` is the mass of the material at position `vec(r)` and `A` is area&#xA;         * remarks: The name &quot;grammage&quot; should not be used for this quantity.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>SurfaceMassDensityUnit</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="surfaceMassDensity" MultiLow="*" isNonunique="true">
+      <typings>SurfaceMassDensityValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SurfaceMassDensityUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, massPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="SurfaceDensityUnit" memberElement="SurfaceMassDensityUnit"/>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="SurfaceDensityValue" memberElement="SurfaceMassDensityValue"/>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="surfaceDensity" memberElement="surfaceMassDensity"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-6 linear mass density, linear density */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="LinearMassDensityValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-6 linear mass density, linear density&#xA;         * symbol(s): `&#x3c1;_I`&#xA;         * application domain: generic&#xA;         * name: LinearMassDensity&#xA;         * quantity dimension: L^-1*M^1&#xA;         * measurement unit(s): kg*m^-1&#xA;         * tensor order: 0&#xA;         * definition: quantity representing the linear distribution of mass of a continuous material: `&#x3c1;_I(vec(r)) = (dm)/(dI)` where `m` is the mass of the material at position `vec(r)` and `l` is length&#xA;         * remarks: None.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>LinearMassDensityUnit</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="linearMassDensity" MultiLow="*" isNonunique="true">
+      <typings>LinearMassDensityValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="LinearMassDensityUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, massPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="LinearDensityUnit" memberElement="LinearMassDensityUnit"/>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="LinearDensityValue" memberElement="LinearMassDensityValue"/>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="linearDensity" memberElement="linearMassDensity"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-7 moment of inertia */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MomentOfInertiaValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-7 moment of inertia (magnitude)&#xA;         * symbol(s): `J`&#xA;         * application domain: generic&#xA;         * name: MomentOfInertia&#xA;         * quantity dimension: L^2*M^1&#xA;         * measurement unit(s): kg*m^2&#xA;         * tensor order: 0&#xA;         * definition: tensor (ISO 80000-2) quantity representing rotational inertia of a rigid body relative to a fixed centre of rotation expressed by the tensor product: `vec(L) = vec(vec(J)) vec(&#x3c9;)` where `vec(L)` is angular momentum (item 4-11) of the body relative to the reference point and `vec(&#x3c9;)` is its angular velocity (ISO 80000-3)&#xA;         * remarks: The calculation of the value requires an integration.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>MomentOfInertiaUnit</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="momentOfInertia" MultiLow="*" isNonunique="true">
+      <typings>MomentOfInertiaValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MomentOfInertiaUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, massPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="Cartesian3dMomentOfInertiaTensor">
+      <superclassifiers>TensorQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-7 moment of inertia (tensor)&#xA;         * symbol(s): `vec(vec(J))`&#xA;         * application domain: generic&#xA;         * name: MomentOfInertia&#xA;         * quantity dimension: L^2*M^1&#xA;         * measurement unit(s): kg*m^2&#xA;         * tensor order: 2&#xA;         * definition: tensor (ISO 80000-2) quantity representing rotational inertia of a rigid body relative to a fixed centre of rotation expressed by the tensor product: `vec(L) = vec(vec(J)) vec(&#x3c9;)` where `vec(L)` is angular momentum (item 4-11) of the body relative to the reference point and `vec(&#x3c9;)` is its angular velocity (ISO 80000-3)&#xA;         * remarks: The calculation of the value requires an integration.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="9">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>Cartesian3dMomentOfInertiaMeasurementReference</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="momentOfInertiaTensor">
+      <typings>Cartesian3dMomentOfInertiaTensor</typings>
+      <subsetting>tensorQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="Cartesian3dMomentOfInertiaMeasurementReference">
+      <superclassifiers>TensorMeasurementReference</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="(3, 3)">
+        <redefinitions>dimensions</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="9">
+        <typings>MomentOfInertiaUnit</typings>
+        <redefinitions>mRefs</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-8 momentum */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MomentumValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-8 momentum (magnitude)&#xA;         * symbol(s): `p`&#xA;         * application domain: generic&#xA;         * name: Momentum&#xA;         * quantity dimension: L^1*M^1*T^-1&#xA;         * measurement unit(s): kg*m*s^-1&#xA;         * tensor order: 0&#xA;         * definition: product of mass `m` (item 4-1) of a body and velocity `vec(v)` (ISO 80000-3) of its centre of mass: `vec(p) = m  vec(v)`&#xA;         * remarks: None.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>MomentumUnit</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="momentum" MultiLow="*" isNonunique="true">
+      <typings>MomentumValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MomentumUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, massPF, durationPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CartesianMomentum3dVector">
+      <superclassifiers>'3dVectorQuantityValue'</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-8 momentum (vector)&#xA;         * symbol(s): `vec(p)`&#xA;         * application domain: generic&#xA;         * name: Momentum&#xA;         * quantity dimension: L^1*M^1*T^-1&#xA;         * measurement unit(s): kg*m*s^-1&#xA;         * tensor order: 1&#xA;         * definition: product of mass `m` (item 4-1) of a body and velocity `vec(v)` (ISO 80000-3) of its centre of mass: `vec(p) = m  vec(v)`&#xA;         * remarks: None.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>CartesianMomentum3dCoordinateFrame</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cartesianMomentum3dVector">
+      <typings>CartesianMomentum3dVector</typings>
+      <subsetting>vectorQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CartesianMomentum3dCoordinateFrame">
+      <superclassifiers>'3dCoordinateFrame'</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
+        <redefinitions>isOrthogonal</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="3">
+        <typings>MomentumUnit</typings>
+        <redefinitions>mRefs</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-9.1 force */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ForceValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-9.1 force (magnitude)&#xA;         * symbol(s): `F`&#xA;         * application domain: generic&#xA;         * name: Force&#xA;         * quantity dimension: L^1*M^1*T^-2&#xA;         * measurement unit(s): N, kg*m*s^-2&#xA;         * tensor order: 0&#xA;         * definition: vector (ISO 80000-2) quantity describing interaction between bodies or particles&#xA;         * remarks: None.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>ForceUnit</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="force" MultiLow="*" isNonunique="true">
+      <typings>ForceValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ForceUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, massPF, durationPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CartesianForce3dVector">
+      <superclassifiers>'3dVectorQuantityValue'</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-9.1 force (vector)&#xA;         * symbol(s): `vec(F)`&#xA;         * application domain: generic&#xA;         * name: Force&#xA;         * quantity dimension: L^1*M^1*T^-2&#xA;         * measurement unit(s): N, kg*m*s^-2&#xA;         * tensor order: 1&#xA;         * definition: vector (ISO 80000-2) quantity describing interaction between bodies or particles&#xA;         * remarks: None.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>CartesianForce3dCoordinateFrame</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cartesianForce3dVector">
+      <typings>CartesianForce3dVector</typings>
+      <subsetting>vectorQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CartesianForce3dCoordinateFrame">
+      <superclassifiers>'3dCoordinateFrame'</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
+        <redefinitions>isOrthogonal</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="3">
+        <typings>ForceUnit</typings>
+        <redefinitions>mRefs</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-9.2 weight */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CartesianWeight3dVector">
+      <superclassifiers>'3dVectorQuantityValue'</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-9.2 weight&#xA;         * symbol(s): `vec(F_g)`&#xA;         * application domain: generic&#xA;         * name: Weight (specializes Force)&#xA;         * quantity dimension: L^1*M^1*T^-2&#xA;         * measurement unit(s): N, kg*m*s^-2&#xA;         * tensor order: 1&#xA;         * definition: force (item 4-9.1) acting on a body in the gravitational field of Earth: `vec(F_g) = m vec(g)` where `m` (item 4-1) is the mass of the body and `vec(g)` is the local acceleration of free fall (ISO 80000-3)&#xA;         * remarks: In colloquial language, the name &quot;weight&quot; continues to be used where &quot;mass&quot; is meant. This practice should be avoided. Weight is an example of a gravitational force. Weight comprises not only the local gravitational force but also the local centrifugal force due to the rotation of the Earth.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>CartesianForce3dCoordinateFrame</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cartesianWeight3dVector">
+      <typings>CartesianWeight3dVector</typings>
+      <subsetting>vectorQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-9.3 static friction force, static friction */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CartesianStaticFrictionForce3dVector">
+      <superclassifiers>'3dVectorQuantityValue'</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-9.3 static friction force, static friction&#xA;         * symbol(s): `vec(F_s)`&#xA;         * application domain: generic&#xA;         * name: StaticFrictionForce (specializes Force)&#xA;         * quantity dimension: L^1*M^1*T^-2&#xA;         * measurement unit(s): N, kg*m*s^-2&#xA;         * tensor order: 1&#xA;         * definition: force (item 4-9.1) resisting the motion before a body starts to slide on a surface&#xA;         * remarks: For the static friction coefficient, see item 4-23.1.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>CartesianForce3dCoordinateFrame</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cartesianStaticFrictionForce3dVector">
+      <typings>CartesianStaticFrictionForce3dVector</typings>
+      <subsetting>vectorQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="cartesianStaticFriction3dVector" memberElement="cartesianStaticFrictionForce3dVector"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-9.4 kinetic friction force, dynamic friction force */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CartesianKineticFrictionForce3dVector">
+      <superclassifiers>'3dVectorQuantityValue'</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-9.4 kinetic friction force, dynamic friction force&#xA;         * symbol(s): `vec(F_&#x3bc;)`&#xA;         * application domain: generic&#xA;         * name: KineticFrictionForce (specializes Force)&#xA;         * quantity dimension: L^1*M^1*T^-2&#xA;         * measurement unit(s): N, kg*m*s^-2&#xA;         * tensor order: 1&#xA;         * definition: force (item 4-9.1) resisting the motion when a body slides on a surface&#xA;         * remarks: For the kinetic friction factor, see item 4-23.2.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>CartesianForce3dCoordinateFrame</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cartesianKineticFrictionForce3dVector">
+      <typings>CartesianKineticFrictionForce3dVector</typings>
+      <subsetting>vectorQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="cartesianDynamicFrictionForce3dVector" memberElement="cartesianKineticFrictionForce3dVector"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-9.5 rolling resistance, rolling drag, rolling friction force */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CartesianRollingResistance3dVector">
+      <superclassifiers>'3dVectorQuantityValue'</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-9.5 rolling resistance, rolling drag, rolling friction force&#xA;         * symbol(s): `vec(F_&quot;rr&quot;)`&#xA;         * application domain: generic&#xA;         * name: RollingResistance (specializes Force)&#xA;         * quantity dimension: L^1*M^1*T^-2&#xA;         * measurement unit(s): N, kg*m*s^-2&#xA;         * tensor order: 1&#xA;         * definition: force (item 4-9.1) resisting the motion when a body rolls on a surface&#xA;         * remarks: For the rolling resistance factor, see item 4-23.3.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>CartesianForce3dCoordinateFrame</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cartesianRollingResistance3dVector">
+      <typings>CartesianRollingResistance3dVector</typings>
+      <subsetting>vectorQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="cartesianRollingDrag3dVector" memberElement="cartesianRollingResistance3dVector"/>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="cartesianRollingFrictionForce3dVector" memberElement="cartesianRollingResistance3dVector"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-9.6 drag force */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CartesianDragForce3dVector">
+      <superclassifiers>'3dVectorQuantityValue'</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-9.6 drag force&#xA;         * symbol(s): `vec(F_D)`&#xA;         * application domain: generic&#xA;         * name: DragForce (specializes Force)&#xA;         * quantity dimension: L^1*M^1*T^-2&#xA;         * measurement unit(s): N, kg*m*s^-2&#xA;         * tensor order: 1&#xA;         * definition: force (item 4-9.1) resisting the motion of a body in a fluid&#xA;         * remarks: For the drag coefficient, see item 4-23.4.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>CartesianForce3dCoordinateFrame</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cartesianDragForce3dVector">
+      <typings>CartesianDragForce3dVector</typings>
+      <subsetting>vectorQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-10 impulse */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ImpulseValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-10 impulse (magnitude)&#xA;         * symbol(s): `I`&#xA;         * application domain: generic&#xA;         * name: Impulse&#xA;         * quantity dimension: L^1*M^1*T^-1&#xA;         * measurement unit(s): N*s, kg*m*s^-1&#xA;         * tensor order: 0&#xA;         * definition: vector (ISO 80000-2) quantity describing the effect of force acting during a time interval: `vec(I) = int_(t_1)^(t_2) vec(F)*dt` where `vec(F)` is force (item 4-9.1), `t` is time (ISO 80000-3) and `[t_1, t_2]` is considered time interval&#xA;         * remarks: For a time interval `[t_1, t_2]`, `vec(I)(t_1, t_2) = vec(p)(t_1) - vec(p)(t_2) = vec(&#x394;p)` where `vec(p)` is momentum (item 4-8).&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>ImpulseUnit</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="impulse" MultiLow="*" isNonunique="true">
+      <typings>ImpulseValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ImpulseUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, massPF, durationPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CartesianImpulse3dVector">
+      <superclassifiers>'3dVectorQuantityValue'</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-10 impulse (vector)&#xA;         * symbol(s): `vec(I)`&#xA;         * application domain: generic&#xA;         * name: Impulse&#xA;         * quantity dimension: L^1*M^1*T^-1&#xA;         * measurement unit(s): N*s, kg*m*s^-1&#xA;         * tensor order: 1&#xA;         * definition: vector (ISO 80000-2) quantity describing the effect of force acting during a time interval: `vec(I) = int_(t_1)^(t_2) vec(F)*dt` where `vec(F)` is force (item 4-9.1), `t` is time (ISO 80000-3) and `[t_1, t_2]` is considered time interval&#xA;         * remarks: For a time interval `[t_1, t_2]`, `vec(I)(t_1, t_2) = vec(p)(t_1) - vec(p)(t_2) = vec(&#x394;p)` where `vec(p)` is momentum (item 4-8).&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>CartesianImpulse3dCoordinateFrame</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cartesianImpulse3dVector">
+      <typings>CartesianImpulse3dVector</typings>
+      <subsetting>vectorQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CartesianImpulse3dCoordinateFrame">
+      <superclassifiers>'3dCoordinateFrame'</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
+        <redefinitions>isOrthogonal</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="3">
+        <typings>ImpulseUnit</typings>
+        <redefinitions>mRefs</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-11 angular momentum */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="AngularMomentumValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-11 angular momentum (magnitude)&#xA;         * symbol(s): `L`&#xA;         * application domain: generic&#xA;         * name: AngularMomentum&#xA;         * quantity dimension: L^2*M^1*T^-1&#xA;         * measurement unit(s): kg*m^2*s^-1&#xA;         * tensor order: 0&#xA;         * definition: vector (ISO 80000-2) quantity described by the vector product: `vec(L) = vec(r) xx vec(p)` where `vec(r)` is position vector (ISO 80000-3) with respect to the axis of rotation and `vec(p)` is momentum (item 4-8)&#xA;         * remarks: None.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>AngularMomentumUnit</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="angularMomentum" MultiLow="*" isNonunique="true">
+      <typings>AngularMomentumValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="AngularMomentumUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, massPF, durationPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CartesianAngularMomentum3dVector">
+      <superclassifiers>'3dVectorQuantityValue'</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-11 angular momentum (vector)&#xA;         * symbol(s): `vec(L)`&#xA;         * application domain: generic&#xA;         * name: AngularMomentum&#xA;         * quantity dimension: L^2*M^1*T^-1&#xA;         * measurement unit(s): kg*m^2*s^-1&#xA;         * tensor order: 1&#xA;         * definition: vector (ISO 80000-2) quantity described by the vector product: `vec(L) = vec(r) xx vec(p)` where `vec(r)` is position vector (ISO 80000-3) with respect to the axis of rotation and `vec(p)` is momentum (item 4-8)&#xA;         * remarks: None.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>CartesianAngularMomentum3dCoordinateFrame</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cartesianAngularMomentum3dVector">
+      <typings>CartesianAngularMomentum3dVector</typings>
+      <subsetting>vectorQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CartesianAngularMomentum3dCoordinateFrame">
+      <superclassifiers>'3dCoordinateFrame'</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
+        <redefinitions>isOrthogonal</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="3">
+        <typings>AngularMomentumUnit</typings>
+        <redefinitions>mRefs</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-12.1 moment of force */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MomentOfForceValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-12.1 moment of force (magnitude)&#xA;         * symbol(s): `M`&#xA;         * application domain: generic&#xA;         * name: MomentOfForce&#xA;         * quantity dimension: L^2*M^1*T^-2&#xA;         * measurement unit(s): N*m, kg*m^2*s^-2&#xA;         * tensor order: 0&#xA;         * definition: vector (ISO 80000-2) quantity described by the vector product: `vec(M) = vec(r) xx vec(F)` where `vec(r)` is position vector (ISO 80000-3) with respect to the axis of rotation and `vec(F)` is force (item 4-9.1)&#xA;         * remarks: The bending moment of force is denoted by `vec(M)_b`.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>MomentOfForceUnit</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="momentOfForce" MultiLow="*" isNonunique="true">
+      <typings>MomentOfForceValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MomentOfForceUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, massPF, durationPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CartesianMomentOfForce3dVector">
+      <superclassifiers>'3dVectorQuantityValue'</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-12.1 moment of force (vector)&#xA;         * symbol(s): `vec(M)`&#xA;         * application domain: generic&#xA;         * name: MomentOfForce&#xA;         * quantity dimension: L^2*M^1*T^-2&#xA;         * measurement unit(s): N*m, kg*m^2*s^-2&#xA;         * tensor order: 1&#xA;         * definition: vector (ISO 80000-2) quantity described by the vector product: `vec(M) = vec(r) xx vec(F)` where `vec(r)` is position vector (ISO 80000-3) with respect to the axis of rotation and `vec(F)` is force (item 4-9.1)&#xA;         * remarks: The bending moment of force is denoted by `vec(M)_b`.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>CartesianMomentOfForce3dCoordinateFrame</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cartesianMomentOfForce3dVector">
+      <typings>CartesianMomentOfForce3dVector</typings>
+      <subsetting>vectorQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CartesianMomentOfForce3dCoordinateFrame">
+      <superclassifiers>'3dCoordinateFrame'</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
+        <redefinitions>isOrthogonal</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="3">
+        <typings>MomentOfForceUnit</typings>
+        <redefinitions>mRefs</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-12.2 torque */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="TorqueValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-12.2 torque&#xA;         * symbol(s): `T`, `M_Q`&#xA;         * application domain: generic&#xA;         * name: Torque&#xA;         * quantity dimension: L^2*M^1*T^-2&#xA;         * measurement unit(s): N*m, kg*m^2*s^-2&#xA;         * tensor order: 0&#xA;         * definition: quantity described by the scalar product: `T = vec(M)*vec(e_Q)` where `vec(M)` is moment of force (item 4-12.1) and `vec(e_Q)` is unit vector of direction with respect to which the torque is considered&#xA;         * remarks: For example, torque is the twisting moment of force with respect to the longitudinal axis of a beam or shaft.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>TorqueUnit</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="torque" MultiLow="*" isNonunique="true">
+      <typings>TorqueValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="TorqueUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, massPF, durationPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-13 angular impulse */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="AngularImpulseValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-13 angular impulse (magnitude)&#xA;         * symbol(s): `H`&#xA;         * application domain: generic&#xA;         * name: AngularImpulse&#xA;         * quantity dimension: L^2*M^1*T^-1&#xA;         * measurement unit(s): N*m*s, kg*m^2*s^-1&#xA;         * tensor order: 0&#xA;         * definition: vector (ISO 80000-2) quantity describing the effect of moment of force during a time interval: `vec(H)(t_1; t_2) = int_(t_1)^(t_2) vec(M) dt` where `vec(M)` is moment of force (item 4-12.1), `t` is time (ISO 80000-3) and `[t_1, t_2]` is considered time interval&#xA;         * remarks: For a time interval `[t_1, t_2]`, `vec(H)(t_1, t_2) = vec(L)(t_1) - vec(L)(t_2) = vec(&#x394;L)` where `vec(L)` is angular momentum.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>AngularImpulseUnit</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="angularImpulse" MultiLow="*" isNonunique="true">
+      <typings>AngularImpulseValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="AngularImpulseUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, massPF, durationPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CartesianAngularImpulse3dVector">
+      <superclassifiers>'3dVectorQuantityValue'</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-13 angular impulse (vector)&#xA;         * symbol(s): `vec(H)`&#xA;         * application domain: generic&#xA;         * name: AngularImpulse&#xA;         * quantity dimension: L^2*M^1*T^-1&#xA;         * measurement unit(s): N*m*s, kg*m^2*s^-1&#xA;         * tensor order: 1&#xA;         * definition: vector (ISO 80000-2) quantity describing the effect of moment of force during a time interval: `vec(H)(t_1; t_2) = int_(t_1)^(t_2) vec(M) dt` where `vec(M)` is moment of force (item 4-12.1), `t` is time (ISO 80000-3) and `[t_1, t_2]` is considered time interval&#xA;         * remarks: For a time interval `[t_1, t_2]`, `vec(H)(t_1, t_2) = vec(L)(t_1) - vec(L)(t_2) = vec(&#x394;L)` where `vec(L)` is angular momentum.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>CartesianAngularImpulse3dCoordinateFrame</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cartesianAngularImpulse3dVector">
+      <typings>CartesianAngularImpulse3dVector</typings>
+      <subsetting>vectorQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CartesianAngularImpulse3dCoordinateFrame">
+      <superclassifiers>'3dCoordinateFrame'</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
+        <redefinitions>isOrthogonal</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="3">
+        <typings>AngularImpulseUnit</typings>
+        <redefinitions>mRefs</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-14.1 pressure */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="PressureValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-14.1 pressure&#xA;         * symbol(s): `p`&#xA;         * application domain: generic&#xA;         * name: Pressure&#xA;         * quantity dimension: L^-1*M^1*T^-2&#xA;         * measurement unit(s): Pa, N*m^-2, kg*m^-1*s^-2&#xA;         * tensor order: 0&#xA;         * definition: quotient of the component of a force normal to a surface and its area: `p = (vec(e_n) * vec(F)) / A` where `vec(e_n)` is unit vector of the surface normal, `vec(F)` is force (item 4-9.1) and `A` is area (ISO 80000-3)&#xA;         * remarks: None.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>PressureUnit</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="pressure" MultiLow="*" isNonunique="true">
+      <typings>PressureValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="PressureUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, massPF, durationPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-14.2 gauge pressure */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="gaugePressure">
+      <typings>PressureValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-14.2 gauge pressure&#xA;         * symbol(s): `p_e`&#xA;         * application domain: generic&#xA;         * name: GaugePressure (specializes Pressure)&#xA;         * quantity dimension: L^-1*M^1*T^-2&#xA;         * measurement unit(s): Pa, N*m^-2, kg*m^-1*s^-2&#xA;         * tensor order: 0&#xA;         * definition: pressure `p` (item 4-14.1) decremented by ambient pressure `p_amb` : `p_e = p - p_amb`&#xA;         * remarks: Often, `p_amb` is chosen as a standard pressure. Gauge pressure is positive or negative.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-15 stress */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="StressValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-15 stress (magnitude)&#xA;         * symbol(s): `&#x3c3;`&#xA;         * application domain: generic&#xA;         * name: Stress&#xA;         * quantity dimension: L^-1*M^1*T^-2&#xA;         * measurement unit(s): Pa, N*m^-2, kg*m^-1*s^-2&#xA;         * tensor order: 0&#xA;         * definition: tensor (ISO 80000-2) quantity representing state of tension of matter&#xA;         * remarks: Stress tensor is symmetric and has three normal-stress and three shear-stress (Cartesian) components.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>StressUnit</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="stress" MultiLow="*" isNonunique="true">
+      <typings>StressValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="StressUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, massPF, durationPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="Cartesian3dStressTensor">
+      <superclassifiers>TensorQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-15 stress (tensor)&#xA;         * symbol(s): `vec(vec(&#x3c3;))`&#xA;         * application domain: generic&#xA;         * name: Stress&#xA;         * quantity dimension: L^-1*M^1*T^-2&#xA;         * measurement unit(s): Pa, N*m^-2, kg*m^-1*s^-2&#xA;         * tensor order: 2&#xA;         * definition: tensor (ISO 80000-2) quantity representing state of tension of matter&#xA;         * remarks: Stress tensor is symmetric and has three normal-stress and three shear-stress (Cartesian) components.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="9">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>Cartesian3dStressMeasurementReference</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="stressTensor">
+      <typings>Cartesian3dStressTensor</typings>
+      <subsetting>tensorQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="Cartesian3dStressMeasurementReference">
+      <superclassifiers>TensorMeasurementReference</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="(3, 3)">
+        <redefinitions>dimensions</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="9">
+        <typings>StressUnit</typings>
+        <redefinitions>mRefs</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-16.1 normal stress */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="NormalStressValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-16.1 normal stress&#xA;         * symbol(s): `&#x3c3;_n`, `&#x3c3;`&#xA;         * application domain: generic&#xA;         * name: NormalStress&#xA;         * quantity dimension: L^-1*M^1*T^-2&#xA;         * measurement unit(s): Pa, N*m^-2, kg*m^-1*s^-2&#xA;         * tensor order: 0&#xA;         * definition: scalar (ISO 80000-2) quantity describing surface action of a force into a body equal to: `&#x3c3;_n = (d F_n)/(dA)` where `F_n` is the normal component of force (item 4-9.1) and `A` is the area (ISO 80000-3) of the surface element&#xA;         * remarks: A couple of mutually opposite forces of magnitude `F` acting on the opposite surfaces of a slice (layer) of homogenous solid matter normal to it, and evenly distributed, cause a constant normal stress `&#x3c3;_n = F A` in the slice (layer).&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>NormalStressUnit</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="normalStress" MultiLow="*" isNonunique="true">
+      <typings>NormalStressValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="NormalStressUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, massPF, durationPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-16.2 shear stress */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ShearStressValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-16.2 shear stress&#xA;         * symbol(s): `&#x3c4;_s`, `&#x3c4;`&#xA;         * application domain: generic&#xA;         * name: ShearStress&#xA;         * quantity dimension: L^-1*M^1*T^-2&#xA;         * measurement unit(s): Pa, N*m^-2, kg*m^-1*s^-2&#xA;         * tensor order: 0&#xA;         * definition: scalar (ISO 80000-2) quantity describing surface action of a force into a body equal to: `&#x3c4;_s = (d F_t)/(dA)` where `F_t` is the tangential component of force (item 4-9.1) and `A` is the area (ISO 80000-3) of the surface element&#xA;         * remarks: A couple of mutually opposite forces of magnitude `F` acting on the opposite surfaces of a slice (layer) of homogenous solid matter parallel to it, and evenly distributed, cause a constant shear stress `&#x3c4; = F/A` in the slice (layer).&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>ShearStressUnit</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="shearStress" MultiLow="*" isNonunique="true">
+      <typings>ShearStressValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ShearStressUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, massPF, durationPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-17.1 strain */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="StrainValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-17.1 strain (magnitude)&#xA;         * symbol(s): `&#x3b5;`&#xA;         * application domain: generic&#xA;         * name: Strain&#xA;         * quantity dimension: 1&#xA;         * measurement unit(s): 1&#xA;         * tensor order: 0&#xA;         * definition: tensor (ISO 80000-2) quantity representing the deformation of matter caused by stress&#xA;         * remarks: Strain tensor is symmetric and has three linear-strain and three shear strain (Cartesian) components.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>StrainUnit</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="strain" MultiLow="*" isNonunique="true">
+      <typings>StrainValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="StrainUnit">
+      <superclassifiers>DimensionOneUnit</superclassifiers>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="Cartesian3dStrainTensor">
+      <superclassifiers>TensorQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-17.1 strain (tensor)&#xA;         * symbol(s): `vec(vec(&#x3b5;))`&#xA;         * application domain: generic&#xA;         * name: Strain&#xA;         * quantity dimension: 1&#xA;         * measurement unit(s): 1&#xA;         * tensor order: 2&#xA;         * definition: tensor (ISO 80000-2) quantity representing the deformation of matter caused by stress&#xA;         * remarks: Strain tensor is symmetric and has three linear-strain and three shear strain (Cartesian) components.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="9">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>Cartesian3dStrainMeasurementReference</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="strainTensor">
+      <typings>Cartesian3dStrainTensor</typings>
+      <subsetting>tensorQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="Cartesian3dStrainMeasurementReference">
+      <superclassifiers>TensorMeasurementReference</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="(3, 3)">
+        <redefinitions>dimensions</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="9">
+        <typings>StrainUnit</typings>
+        <redefinitions>mRefs</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-17.2 relative linear strain */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="RelativeLinearStrainValue">
+      <superclassifiers>DimensionOneValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-17.2 relative linear strain&#xA;         * symbol(s): `&#x3b5;`, `(e)`&#xA;         * application domain: generic&#xA;         * name: RelativeLinearStrain (specializes DimensionOneQuantity)&#xA;         * quantity dimension: 1&#xA;         * measurement unit(s): 1&#xA;         * tensor order: 0&#xA;         * definition: quotient of change in length `&#x394;l` (ISO 80000-3) of an object and its length `l` (ISO 80000-3): `&#x3b5; = (&#x394;l)/l`&#xA;         * remarks: None.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="relativeLinearStrain">
+      <typings>RelativeLinearStrainValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-17.3 shear strain */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ShearStrainValue">
+      <superclassifiers>DimensionOneValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-17.3 shear strain&#xA;         * symbol(s): `&#x3b3;`&#xA;         * application domain: generic&#xA;         * name: ShearStrain (specializes DimensionOneQuantity)&#xA;         * quantity dimension: 1&#xA;         * measurement unit(s): 1&#xA;         * tensor order: 0&#xA;         * definition: quotient of parallel displacement `&#x394;x` (ISO 80000-3) of two surfaces of a layer and the thickness `d` (ISO 80000-3) of the layer: `&#x3b3; = (&#x394;x)/d`&#xA;         * remarks: None.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="shearStrain">
+      <typings>ShearStrainValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-17.4 relative volume strain */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="RelativeVolumeStrainValue">
+      <superclassifiers>DimensionOneValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-17.4 relative volume strain&#xA;         * symbol(s): `&#x3b8;`&#xA;         * application domain: generic&#xA;         * name: RelativeVolumeStrain (specializes DimensionOneQuantity)&#xA;         * quantity dimension: 1&#xA;         * measurement unit(s): 1&#xA;         * tensor order: 0&#xA;         * definition: quotient of change in volume `&#x394;V` (ISO 80000-3) of an object and its volume `V_0` (ISO 80000-3): `&#x3b8; = (&#x394;V)/V_0`&#xA;         * remarks: None.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="relativeVolumeStrain">
+      <typings>RelativeVolumeStrainValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-18 Poisson number */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="PoissonNumberValue">
+      <superclassifiers>DimensionOneValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-18 Poisson number&#xA;         * symbol(s): `&#x3bc;`, `(v)`&#xA;         * application domain: generic&#xA;         * name: PoissonNumber (specializes DimensionOneQuantity)&#xA;         * quantity dimension: 1&#xA;         * measurement unit(s): 1&#xA;         * tensor order: 0&#xA;         * definition: quotient of change in width `&#x394;b` (width is defined in ISO 80000-3) and change in length `&#x394;l` (length is defined in ISO 80000-3) of an object: `&#x3bc; = (&#x394;b)/(&#x394;l)`&#xA;         * remarks: None.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="poissonNumber">
+      <typings>PoissonNumberValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-19.1 modulus of elasticity, Young modulus */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ModulusOfElasticityValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-19.1 modulus of elasticity, Young modulus&#xA;         * symbol(s): `E`, `E_m`, `Y`&#xA;         * application domain: generic&#xA;         * name: ModulusOfElasticity&#xA;         * quantity dimension: L^-1*M^1*T^-2&#xA;         * measurement unit(s): Pa, N*m^-2, kg*m^-1*s^-2&#xA;         * tensor order: 0&#xA;         * definition: quotient of normal stress `&#x3c3;` (item 4-16.1) and relative linear strain `&#x3b5;` (item 4-17.2): `E = &#x3c3;/&#x3b5;`&#xA;         * remarks: Conditions should be specified (e.g. adiabatic or isothermal process).&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>ModulusOfElasticityUnit</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="modulusOfElasticity" MultiLow="*" isNonunique="true">
+      <typings>ModulusOfElasticityValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ModulusOfElasticityUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, massPF, durationPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="YoungModulusUnit" memberElement="ModulusOfElasticityUnit"/>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="YoungModulusValue" memberElement="ModulusOfElasticityValue"/>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="youngModulus" memberElement="modulusOfElasticity"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-19.2 modulus of rigidity, shear modulus */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ModulusOfRigidityValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-19.2 modulus of rigidity, shear modulus&#xA;         * symbol(s): `G`&#xA;         * application domain: generic&#xA;         * name: ModulusOfRigidity&#xA;         * quantity dimension: L^-1*M^1*T^-2&#xA;         * measurement unit(s): Pa, N*m^-2, kg*m^-1*s^-2&#xA;         * tensor order: 0&#xA;         * definition: quotient of shear stress `&#x3c4;` (item 4-16.2) and shear strain `&#x3b3;` (item 4-17.3): `G = &#x3c4;/&#x3b3;`&#xA;         * remarks: Conditions should be specified (e.g. isentropic or isothermal process).&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>ModulusOfRigidityUnit</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="modulusOfRigidity" MultiLow="*" isNonunique="true">
+      <typings>ModulusOfRigidityValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ModulusOfRigidityUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, massPF, durationPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="ShearModulusUnit" memberElement="ModulusOfRigidityUnit"/>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="ShearModulusValue" memberElement="ModulusOfRigidityValue"/>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="shearModulus" memberElement="modulusOfRigidity"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-19.3 modulus of compression, bulk modulus */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ModulusOfCompressionValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-19.3 modulus of compression, bulk modulus&#xA;         * symbol(s): `K`, `K_m`, `B`&#xA;         * application domain: generic&#xA;         * name: ModulusOfCompression&#xA;         * quantity dimension: L^-1*M^1*T^-2&#xA;         * measurement unit(s): Pa, N*m^-2, kg*m^-1*s^-2&#xA;         * tensor order: 0&#xA;         * definition: negative of the quotient of pressure `p` (item 4-14.1) and relative volume strain `&#x3b8;` (item 4-17.4): `K = -(p/&#x3b8;)`&#xA;         * remarks: Conditions should be specified (e.g. isentropic or isothermal process).&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>ModulusOfCompressionUnit</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="modulusOfCompression" MultiLow="*" isNonunique="true">
+      <typings>ModulusOfCompressionValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ModulusOfCompressionUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, massPF, durationPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="BulkModulusUnit" memberElement="ModulusOfCompressionUnit"/>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="BulkModulusValue" memberElement="ModulusOfCompressionValue"/>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="bulkModulus" memberElement="modulusOfCompression"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-20 compressibility */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CompressibilityValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-20 compressibility&#xA;         * symbol(s): `&#x3f0;`&#xA;         * application domain: generic&#xA;         * name: Compressibility&#xA;         * quantity dimension: L^1*M^-1*T^2&#xA;         * measurement unit(s): Pa^-1, kg^-1*m*s^2&#xA;         * tensor order: 0&#xA;         * definition: negative relative change of volume `V` (ISO 80000-3) of an object under pressure `p` (item 4-14.1) expressed by: `&#x3f0; = -(1/V)(dV)/(dp)`&#xA;         * remarks: Conditions should be specified (e.g. isentropic or isothermal process). See also ISO 80000-5.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>CompressibilityUnit</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="compressibility" MultiLow="*" isNonunique="true">
+      <typings>CompressibilityValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CompressibilityUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, massPF, durationPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-21.1 second axial moment of area */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SecondAxialMomentOfAreaValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-21.1 second axial moment of area&#xA;         * symbol(s): `I_a`&#xA;         * application domain: generic&#xA;         * name: SecondAxialMomentOfArea&#xA;         * quantity dimension: L^4&#xA;         * measurement unit(s): m^4&#xA;         * tensor order: 0&#xA;         * definition: geometrical characteristic of a shape of a body equal to: `I_a = int int_M r_Q^2 dA` where `M` is the two-dimensional domain of the cross-section of a plane and considered body, `r_Q` is radial distance (ISO 80000-3) from a Q-axis in the plane of the surface considered and `A` is area (ISO 80000-3)&#xA;         * remarks: This quantity is often referred to wrongly as &quot;moment of inertia&quot; (item 4-7). The subscript, `a`, may be omitted when there is no risk of confusion.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>SecondAxialMomentOfAreaUnit</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="secondAxialMomentOfArea" MultiLow="*" isNonunique="true">
+      <typings>SecondAxialMomentOfAreaValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SecondAxialMomentOfAreaUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="4">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="lengthPF">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-21.2 second polar moment of area */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SecondPolarMomentOfAreaValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-21.2 second polar moment of area&#xA;         * symbol(s): `I_p`&#xA;         * application domain: generic&#xA;         * name: SecondPolarMomentOfArea&#xA;         * quantity dimension: L^4&#xA;         * measurement unit(s): m^4&#xA;         * tensor order: 0&#xA;         * definition: geometrical characteristic of a shape of a body equal to: `I_p = int int_M r_Q^2 * dA` where `M` is the two-dimensional domain of the cross-section of a plane and considered body, `r_Q` is radial distance (ISO 80000-3) from a Q-axis perpendicular to the plane of the surface considered and `A` is area (ISO 80000-3)&#xA;         * remarks: This quantity is often referred to wrongly as &quot;moment of inertia&quot; (item 4-7). The subscript, `p`, may be omitted when there is no risk of confusion.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>SecondPolarMomentOfAreaUnit</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="secondPolarMomentOfArea" MultiLow="*" isNonunique="true">
+      <typings>SecondPolarMomentOfAreaValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SecondPolarMomentOfAreaUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="4">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="lengthPF">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-22 section modulus */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SectionModulusValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-22 section modulus&#xA;         * symbol(s): `Z`, `(W)`&#xA;         * application domain: generic&#xA;         * name: SectionModulus&#xA;         * quantity dimension: L^3&#xA;         * measurement unit(s): m^3&#xA;         * tensor order: 0&#xA;         * definition: geometrical characteristic of a shape of a body equal to: `Z = I_a/r_(Q_max)` where `I_a` is the second axial moment of area (item 4-21.1) and `r_(Q,max)` is the maximum radial distance (ISO 80000-3) of any point in the surface considered from the Q-axis with respect to which `I_a` is defined&#xA;         * remarks: None.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>SectionModulusUnit</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="sectionModulus" MultiLow="*" isNonunique="true">
+      <typings>SectionModulusValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SectionModulusUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="3">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="lengthPF">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-23.1 static friction coefficient, static friction factor, coefficient of static friction */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="StaticFrictionCoefficientValue">
+      <superclassifiers>DimensionOneValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-23.1 static friction coefficient, static friction factor, coefficient of static friction&#xA;         * symbol(s): `&#x3bc;_s`, `(f_s)`&#xA;         * application domain: generic&#xA;         * name: StaticFrictionCoefficient (specializes DimensionOneQuantity)&#xA;         * quantity dimension: 1&#xA;         * measurement unit(s): 1&#xA;         * tensor order: 0&#xA;         * definition: proportionality factor between the maximum magnitude of the tangential component `F_max` of the static friction force (item 4-9.3) and the magnitude of the normal component `N` of the contact force (item 4-9.1) between two bodies at relative rest with respect to each other: `F_max = &#x3bc;_s * N`&#xA;         * remarks: When it is not necessary to distinguish between dynamic friction factor and static friction factor, the name friction factor may be used for both.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="staticFrictionCoefficient">
+      <typings>StaticFrictionCoefficientValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="staticFrictionFactor" memberElement="staticFrictionCoefficient"/>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="coefficientOfStaticFriction" memberElement="staticFrictionCoefficient"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-23.2 kinetic friction factor, dynamic friction factor */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="KineticFrictionFactorValue">
+      <superclassifiers>DimensionOneValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-23.2 kinetic friction factor, dynamic friction factor&#xA;         * symbol(s): `&#x3bc;`, `(f)`&#xA;         * application domain: generic&#xA;         * name: KineticFrictionFactor (specializes DimensionOneQuantity)&#xA;         * quantity dimension: 1&#xA;         * measurement unit(s): 1&#xA;         * tensor order: 0&#xA;         * definition: proportionality factor between the magnitudes of the kinetic friction force, `F_&#x3bc;` (item 4-9.4) and the normal component `N` of the contact force (item 4-9.1): `F_&#x3bc; = &#x3bc; * N`&#xA;         * remarks: When it is not necessary to distinguish between dynamic friction factor and static friction factor, the name friction factor may be used for both. The dynamic friction factor `&#xb5;` is independent in first approximation of the contact surface.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="kineticFrictionFactor">
+      <typings>KineticFrictionFactorValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="dynamicFrictionFactor" memberElement="kineticFrictionFactor"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-23.3 rolling resistance factor */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="RollingResistanceFactorValue">
+      <superclassifiers>DimensionOneValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-23.3 rolling resistance factor&#xA;         * symbol(s): `C_&quot;rr&quot;`&#xA;         * application domain: generic&#xA;         * name: RollingResistanceFactor (specializes DimensionOneQuantity)&#xA;         * quantity dimension: 1&#xA;         * measurement unit(s): 1&#xA;         * tensor order: 0&#xA;         * definition: proportionality factor between the magnitude of the tangential component `F` and the magnitude of the normal component `N` of the force applied to a body rolling on a surface at constant speed: `F = C_(rr)*N`&#xA;         * remarks: Also known as rolling resistance coefficient, RRC.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="rollingResistanceFactor">
+      <typings>RollingResistanceFactorValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-23.4 drag coefficient, drag factor */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="DragCoefficientValue">
+      <superclassifiers>DimensionOneValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-23.4 drag coefficient, drag factor&#xA;         * symbol(s): `C_D`&#xA;         * application domain: generic&#xA;         * name: DragCoefficient (specializes DimensionOneQuantity)&#xA;         * quantity dimension: 1&#xA;         * measurement unit(s): 1&#xA;         * tensor order: 0&#xA;         * definition: factor proportional to magnitude `F_D` of the drag force (item 4-9.6) of a body moving in a fluid, dependent on the shape and speed `v` (ISO 80000-3) of a body: `F_D = 1/2 * C_D * &#x3c1; * v^2 * A` where `&#x3c1;` is mass density (item 4-2) of the fluid and `A` is cross-section area (ISO 80000-3) of the body&#xA;         * remarks: None.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="dragCoefficient">
+      <typings>DragCoefficientValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="dragFactor" memberElement="dragCoefficient"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-24 dynamic viscosity, viscosity */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="DynamicViscosityValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-24 dynamic viscosity, viscosity&#xA;         * symbol(s): `&#x3b7;`&#xA;         * application domain: generic&#xA;         * name: DynamicViscosity&#xA;         * quantity dimension: L^-1*M^1*T^-1&#xA;         * measurement unit(s): Pa*s, kg*m^-1*s^-1&#xA;         * tensor order: 0&#xA;         * definition: for laminar flows, proportionality constant between shear stress `&#x3c4;_(xz)` (item 4-16.2) in a fluid moving with a velocity `v_x` (ISO 80000-3) and gradient `(d v_x)/dz` perpendicular to the plane of shear: `&#x3c4;_(xz) = &#x3b7; (d v_x)/(dz)`&#xA;         * remarks: None.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>DynamicViscosityUnit</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="dynamicViscosity" MultiLow="*" isNonunique="true">
+      <typings>DynamicViscosityValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="DynamicViscosityUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, massPF, durationPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="ViscosityUnit" memberElement="DynamicViscosityUnit"/>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="ViscosityValue" memberElement="DynamicViscosityValue"/>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="viscosity" memberElement="dynamicViscosity"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-25 kinematic viscosity */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="KinematicViscosityValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-25 kinematic viscosity&#xA;         * symbol(s): `v`&#xA;         * application domain: generic&#xA;         * name: KinematicViscosity&#xA;         * quantity dimension: L^2*T^-1&#xA;         * measurement unit(s): m^2*s^-1&#xA;         * tensor order: 0&#xA;         * definition: quotient of dynamic viscosity `&#x3b7;` (item 4-24) and mass density `&#x3c1;` (item 4-2) of a fluid: `v = &#x3b7;/&#x3c1;`&#xA;         * remarks: None.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>KinematicViscosityUnit</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="kinematicViscosity" MultiLow="*" isNonunique="true">
+      <typings>KinematicViscosityValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="KinematicViscosityUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, durationPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-26 surface tension */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SurfaceTensionValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-26 surface tension&#xA;         * symbol(s): `&#x3b3;`, `&#x3c3;`&#xA;         * application domain: generic&#xA;         * name: SurfaceTension&#xA;         * quantity dimension: M^1*T^-2&#xA;         * measurement unit(s): N*m^-1, kg*s^-2&#xA;         * tensor order: 0&#xA;         * definition: magnitude of a force acting against the enlargement of area portion of a surface separating a liquid from its surrounding&#xA;         * remarks: The concept of surface energy is closely related to surface tension and has the same dimension.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>SurfaceTensionUnit</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="surfaceTension" MultiLow="*" isNonunique="true">
+      <typings>SurfaceTensionValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SurfaceTensionUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(massPF, durationPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-27.1 power */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="PowerValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-27.1 power&#xA;         * symbol(s): `P`&#xA;         * application domain: generic&#xA;         * name: Power&#xA;         * quantity dimension: L^2*M^1*T^-3&#xA;         * measurement unit(s): W, J*s^-1, kg*m^2*s^-3&#xA;         * tensor order: 0&#xA;         * definition: quotient of energy (ISO 80000-5) and duration (ISO 80000-3)&#xA;         * remarks: None.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>PowerUnit</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="power" MultiLow="*" isNonunique="true">
+      <typings>PowerValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="PowerUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-3">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, massPF, durationPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-27 mechanical power */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mechanicalPower">
+      <typings>PowerValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-27 mechanical power&#xA;         * symbol(s): `P`&#xA;         * application domain: mechanics&#xA;         * name: MechanicalPower (specializes Power)&#xA;         * quantity dimension: L^2*M^1*T^-3&#xA;         * measurement unit(s): W, N*m*s^-1, kg*m^2*s^-3&#xA;         * tensor order: 0&#xA;         * definition: scalar product of force `vec(F)` (item 4-9.1) acting to a body and its velocity `vec(v)` (ISO 80000-3): `P = vec(F) * vec(v)`&#xA;         * remarks: None.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-28.1 potential energy */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="potentialEnergy">
+      <typings>EnergyValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-28.1 potential energy&#xA;         * symbol(s): `V`, `E_p`&#xA;         * application domain: generic&#xA;         * name: PotentialEnergy (specializes Energy)&#xA;         * quantity dimension: L^2*M^1*T^-2&#xA;         * measurement unit(s): J, kg*m^2*s^-2&#xA;         * tensor order: 0&#xA;         * definition: for conservative force `vec(F)`, scalar additive quantity obeying condition `vec(F) = -nabla F`, if it exists&#xA;         * remarks: For the definition of energy, see ISO 80000-5. A force is conservative when the force field is irrotational, i.e. `rot(F) = 0` , or `vec(F)` is perpendicular to the speed of the body to ensure `vec(F) * d vec(r) = 0` .&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-28.2 kinetic energy */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="kineticEnergy">
+      <typings>EnergyValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-28.2 kinetic energy&#xA;         * symbol(s): `T`, `E_k`&#xA;         * application domain: generic&#xA;         * name: KineticEnergy (specializes Energy)&#xA;         * quantity dimension: L^2*M^1*T^-2&#xA;         * measurement unit(s): J, kg*m^2*s^-2&#xA;         * tensor order: 0&#xA;         * definition: scalar (ISO 80000-2) quantity characterizing a moving body expressed by: `T = 1/2 m v^2` where `m` is mass (item 4-1) of the body and `v` is its speed (ISO 80000-3)&#xA;         * remarks: For the definition of energy, see ISO 80000-5.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-28.3 mechanical energy */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mechanicalEnergy">
+      <typings>EnergyValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-28.3 mechanical energy&#xA;         * symbol(s): `E`, `W`&#xA;         * application domain: generic&#xA;         * name: MechanicalEnergy (specializes Energy)&#xA;         * quantity dimension: L^2*M^1*T^-2&#xA;         * measurement unit(s): J, kg*m^2*s^-2&#xA;         * tensor order: 0&#xA;         * definition: sum of kinetic energy `T` (item 4-28.2) and potential energy `V` (item 4-28.1): `E = T+V`&#xA;         * remarks: The symbols `E` and `W` are also used for other kinds of energy. This definition is understood in a classical way and it does not include thermal motion.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-28.4 mechanical work, work */"/>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mechanicalWork">
+      <typings>EnergyValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-28.4 mechanical work, work&#xA;         * symbol(s): `A`, `W`&#xA;         * application domain: generic&#xA;         * name: MechanicalWork (specializes Energy)&#xA;         * quantity dimension: L^2*M^1*T^-2&#xA;         * measurement unit(s): J, kg*m^2*s^-2&#xA;         * tensor order: 0&#xA;         * definition: process quantity describing the total action of a force `vec(F)` (item 4-9.1) along a continuous curve `&#x393;` in three-dimensional space with infinitesimal displacement (ISO 80000-3) `dvec(r)`, as a line integral of their scalar product: `A = int_&#x393; vec(F) * d vec(r)`&#xA;         * remarks: The definition covers the case `A = -int_&#x393; p*dV` where `&#x393;` is a curve in the phase space and implies that work generally depends upon `&#x393;`, and that type of process must be defined (e.g. isentropic or isothermic).&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AliasElement" memberName="work" memberElement="mechanicalWork"/>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-29 mechanical efficiency */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MechanicalEfficiencyValue">
+      <superclassifiers>DimensionOneValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-29 mechanical efficiency&#xA;         * symbol(s): `&#x3b7;`&#xA;         * application domain: mechanics&#xA;         * name: MechanicalEfficiency (specializes DimensionOneQuantity)&#xA;         * quantity dimension: 1&#xA;         * measurement unit(s): 1&#xA;         * tensor order: 0&#xA;         * definition: quotient of output power `P_&quot;out&quot;` (item 4-27) from a system and input power `P_&quot;in&quot;` (item 4-27) to this system: `&#x3b7; = P_&quot;out&quot;/P_&quot;in&quot;`&#xA;         * remarks: The system must be specified. This quantity is often expressed by the unit percent, symbol %.&#xA;         */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="mechanicalEfficiency">
+      <typings>MechanicalEfficiencyValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-30.1 mass flow */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MassFlowValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-30.1 mass flow (magnitude)&#xA;         * symbol(s): `j_m`&#xA;         * application domain: generic&#xA;         * name: MassFlow&#xA;         * quantity dimension: L^-2*M^1*T^-1&#xA;         * measurement unit(s): kg*m^-2*s^-1&#xA;         * tensor order: 0&#xA;         * definition: vector (ISO 80000-2) quantity characterizing a flowing fluid by the product of its local mass density `&#x3c1;` (item 4-2) and local velocity `vec(v)` (ISO 80000-3): `vec(j_m) = &#x3c1; vec(v)`&#xA;         * remarks: None.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>MassFlowUnit</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="massFlow" MultiLow="*" isNonunique="true">
+      <typings>MassFlowValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MassFlowUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, massPF, durationPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CartesianMassFlow3dVector">
+      <superclassifiers>'3dVectorQuantityValue'</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-30.1 mass flow (vector)&#xA;         * symbol(s): `vec(j_m)`&#xA;         * application domain: generic&#xA;         * name: MassFlow&#xA;         * quantity dimension: L^-2*M^1*T^-1&#xA;         * measurement unit(s): kg*m^-2*s^-1&#xA;         * tensor order: 1&#xA;         * definition: vector (ISO 80000-2) quantity characterizing a flowing fluid by the product of its local mass density `&#x3c1;` (item 4-2) and local velocity `vec(v)` (ISO 80000-3): `vec(j_m) = &#x3c1; vec(v)`&#xA;         * remarks: None.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>CartesianMassFlow3dCoordinateFrame</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="cartesianMassFlow3dVector">
+      <typings>CartesianMassFlow3dVector</typings>
+      <subsetting>vectorQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="CartesianMassFlow3dCoordinateFrame">
+      <superclassifiers>'3dCoordinateFrame'</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="false">
+        <redefinitions>isBound</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="true">
+        <redefinitions>isOrthogonal</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="3">
+        <typings>MassFlowUnit</typings>
+        <redefinitions>mRefs</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-30.2 mass flow rate */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MassFlowRateValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-30.2 mass flow rate&#xA;         * symbol(s): `q_m`&#xA;         * application domain: generic&#xA;         * name: MassFlowRate&#xA;         * quantity dimension: M^1*T^-1&#xA;         * measurement unit(s): kg*s^-1&#xA;         * tensor order: 0&#xA;         * definition: scalar (ISO 80000-2) quantity characterizing the total flow through the two-dimensional domain `A` with normal vector `vec(e)_n` of a flowing fluid with mass flow `vec(j)_m` (item 4-30.1) as an integral: `q_m = int int_A vec(j)_m * vec(e)_n dA` where `dA` is the area (ISO 80000-3) of an element of the two-dimensional domain `A`&#xA;         * remarks: None.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>MassFlowRateUnit</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="massFlowRate" MultiLow="*" isNonunique="true">
+      <typings>MassFlowRateValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MassFlowRateUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(massPF, durationPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-30.3 mass change rate */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MassChangeRateValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-30.3 mass change rate&#xA;         * symbol(s): `q_m`&#xA;         * application domain: generic&#xA;         * name: MassChangeRate&#xA;         * quantity dimension: M^1*T^-1&#xA;         * measurement unit(s): kg*s^-1&#xA;         * tensor order: 0&#xA;         * definition: rate of increment of mass `m` (item 4-1): `q_m = (dm)/(dt)` where `dm` is the infinitesimal mass (item 4-1) increment and `dt` is the infinitesimal duration (ISO 80000-3)&#xA;         * remarks: None.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>MassChangeRateUnit</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="massChangeRate" MultiLow="*" isNonunique="true">
+      <typings>MassChangeRateValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="MassChangeRateUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(massPF, durationPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-31 volume flow rate */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="VolumeFlowRateValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-31 volume flow rate&#xA;         * symbol(s): `q_v`&#xA;         * application domain: generic&#xA;         * name: VolumeFlowRate&#xA;         * quantity dimension: L^3*T^-1&#xA;         * measurement unit(s): m^3*s^-1&#xA;         * tensor order: 0&#xA;         * definition: scalar (ISO 80000-2) quantity characterizing the total flow through the two-dimensional domain `A` with the normal vector `vec(e)_n` of a flowing fluid with velocity `vec(v)` (ISO 80000-3) as an integral: `q_v = int int_A vec(v) * vec(e)_n dA` where `dA` is the area (ISO 80000-3) of an element of the two-dimensional domain `A`&#xA;         * remarks: None.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>VolumeFlowRateUnit</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="volumeFlowRate" MultiLow="*" isNonunique="true">
+      <typings>VolumeFlowRateValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="VolumeFlowRateUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="3">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, durationPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:Comment" body="/* ISO-80000-4 item 4-32 action quantity */"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ActionQuantityValue">
+      <superclassifiers>ScalarQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 4-32 action quantity&#xA;         * symbol(s): `S`&#xA;         * application domain: generic&#xA;         * name: ActionQuantity&#xA;         * quantity dimension: L^2*M^1*T^-1&#xA;         * measurement unit(s): J*s, kg*m^2*s^-1&#xA;         * tensor order: 0&#xA;         * definition: time integral of energy `E` over a time interval `(t_1, t_2)`: `S = int_(t_1)^(t_2) E dt`&#xA;         * remarks: The energy may be expressed by a Lagrangian or Hamiltonian function. Note for SysML: the ISQ quantity &quot;action&quot; has been renamed to &quot;action quantity&quot; to avoid the name clash with the SysML action keyword.&#xA;         */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <typings>Real</typings>
+        <redefinitions>num</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" MultiLow="1">
+        <typings>ActionQuantityUnit</typings>
+        <redefinitions>mRef</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeUsage" declaredName="actionQuantity" MultiLow="*" isNonunique="true">
+      <typings>ActionQuantityValue</typings>
+      <subsetting>scalarQuantities</subsetting>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="ActionQuantityUnit">
+      <superclassifiers>DerivedUnit</superclassifiers>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="lengthPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.L">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="2">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="massPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.M">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="durationPF" MultiLow="1">
+        <typings>QuantityPowerFactor</typings>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="isq.T">
+          <redefinitions>quantity</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="-1">
+          <redefinitions>exponent</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage">
+        <redefinitions>quantityDimension</redefinitions>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" valuePart="(lengthPF, massPF, durationPF)">
+          <redefinitions>quantityPowerFactors</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+  </elements>
+</sysMLOC:Namespace>
