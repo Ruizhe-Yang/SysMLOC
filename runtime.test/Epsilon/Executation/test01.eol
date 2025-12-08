@@ -1,0 +1,84 @@
+var root = SysMLOC!Package.all.first();
+root.checkElement();
+
+operation SysMLOC!EObject checkElement(){
+	var result = true;
+	for (e in self.elements){
+		if (e.isKindOf(SysMLOC!DefinitionDeclaration)){
+			if (not e.checkSuperclassifier()){
+				result = false;
+				("[Error]" + e.declaredName + " : SuperClassifier error." ).println();
+				return result;
+			}
+			else{
+//				("[Check]" + e.declaredName + " : " + result.asString()).println();
+			}
+		}
+		if (e.isKindOf(SysMLOC!FeatureSpecialization)){
+			if (not e.checkFeatureSpecialization()){
+				result = false;
+				("[Error]" + e.declaredName + " : FeatureSpecialization error.").println();
+				return result;
+			}
+			else{
+//				("[Check]" + e.declaredName + " : " + result.asString()).println();
+			}
+		}
+		if (result and e.elements.size() >= 0){
+			result = e.checkElement();
+		}
+	}
+	return result;
+}
+
+operation SysMLOC!DefinitionDeclaration checkSuperclassifier(){
+	for (t in self.superclassifiers){
+		if (getElement(t) == null){
+			return false;
+		}
+	}
+	return true;
+}
+
+operation SysMLOC!FeatureSpecialization checkFeatureSpecialization(){
+	for (t in self.typings){
+		if (getElement(t) == null){
+			return false;
+		}
+	}
+	for (t in self.subsetting){
+		if (getElement(t) == null){
+			return false;
+		}
+	}
+	for (t in self.references){
+		if (getElement(t) == null){
+			return false;
+		}
+	}
+	for (t in self.crosses){
+		if (getElement(t) == null){
+			return false;
+		}
+	}
+	for (t in self.redefinitions){
+		if (getElement(t) == null){
+			return false;
+		}
+	}
+	return true;
+}
+
+operation getElement( name : String ){
+	var e = SysMLOC!EObject.all.select(s|s.hasProperty("declaredName") and s.declaredName==name);
+	if (e.size() == 1){
+		return e.first();
+	}
+	else if (e.size() == 0){
+		return null;
+	}
+	else{
+		"Modeling Error.".println();
+		return null;
+	}
+}
