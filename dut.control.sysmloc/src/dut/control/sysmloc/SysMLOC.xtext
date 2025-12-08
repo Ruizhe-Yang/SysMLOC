@@ -1,10 +1,8 @@
 //grammar dut.control.sysmloc.expr.SysEXPR with org.eclipse.xtext.common.Terminals
 //grammar dut.control.sysmloc.SysMLOC hidden(WS, ML_NOTE, SL_NOTE)
 grammar dut.control.sysmloc.SysMLOC hidden(WS, ML_NOTE)
-//grammar dut.control.sysmloc.SysMLOC with dut.control.sysmloc.expr.SysEXPR
 
 import "http://www.eclipse.org/emf/2002/Ecore" as Ecore
-//import "http://www.control.dut/sysmloc/expr/SysEXPR" as EXPR
 
 generate sysMLOC "http://www.control.dut/sysmloc/SysMLOC"
  
