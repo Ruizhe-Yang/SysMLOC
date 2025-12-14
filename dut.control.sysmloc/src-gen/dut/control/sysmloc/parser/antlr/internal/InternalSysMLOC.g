@@ -15384,15 +15384,60 @@ ruleEndUsagePrefix[EObject in_current]  returns [EObject current=in_current]
 }:
 	(
 		(
-			lv_isEnd_0_0='end'
-			{
-				newLeafNode(lv_isEnd_0_0, grammarAccess.getEndUsagePrefixAccess().getIsEndEndKeyword_0());
-			}
+			(
+				lv_isEnd_0_0='end'
+				{
+					newLeafNode(lv_isEnd_0_0, grammarAccess.getEndUsagePrefixAccess().getIsEndEndKeyword_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getEndUsagePrefixRule());
+					}
+					setWithLastConsumed($current, "isEnd", lv_isEnd_0_0 != null, "end");
+				}
+			)
+		)
+		(
 			{
 				if ($current==null) {
 					$current = createModelElement(grammarAccess.getEndUsagePrefixRule());
 				}
-				setWithLastConsumed($current, "isEnd", lv_isEnd_0_0 != null, "end");
+				newCompositeNode(grammarAccess.getEndUsagePrefixAccess().getCrossEndUsagePrefixParserRuleCall_1());
+			}
+			this_CrossEndUsagePrefix_1=ruleCrossEndUsagePrefix[$current]
+			{
+				$current = $this_CrossEndUsagePrefix_1.current;
+				afterParserOrEnumRuleCall();
+			}
+		)?
+	)
+;
+
+
+// Rule CrossEndUsagePrefix
+ruleCrossEndUsagePrefix[EObject in_current]  returns [EObject current=in_current]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				newCompositeNode(grammarAccess.getCrossEndUsagePrefixAccess().getCrossEndUsageCrossEndUsageParserRuleCall_0());
+			}
+			lv_crossEndUsage_0_0=ruleCrossEndUsage
+			{
+				if ($current==null) {
+					$current = createModelElementForParent(grammarAccess.getCrossEndUsagePrefixRule());
+				}
+				set(
+					$current,
+					"crossEndUsage",
+					lv_crossEndUsage_0_0,
+					"dut.control.sysmloc.SysMLOC.CrossEndUsage");
+				afterParserOrEnumRuleCall();
 			}
 		)
 	)

@@ -3,7 +3,6 @@
  */
 package dut.control.sysmloc.sysMLOC;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface EndUsagePrefix extends EObject
+public interface EndUsagePrefix extends CrossEndUsagePrefix
 {
   /**
    * Returns the value of the '<em><b>Is End</b></em>' attribute.

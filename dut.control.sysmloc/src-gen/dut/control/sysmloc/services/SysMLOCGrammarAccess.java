@@ -10270,21 +10270,32 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	public class EndUsagePrefixElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.EndUsagePrefix");
-		private final Assignment cIsEndAssignment = (Assignment)rule.eContents().get(1);
-		private final Keyword cIsEndEndKeyword_0 = (Keyword)cIsEndAssignment.eContents().get(0);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cIsEndAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final Keyword cIsEndEndKeyword_0_0 = (Keyword)cIsEndAssignment_0.eContents().get(0);
+		private final RuleCall cCrossEndUsagePrefixParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		
 		//fragment EndUsagePrefix:
 		//    isEnd ?= 'end'
 		//    // [exceeding 65535 bytes]
-		////    CrossEndUsagePrefix?
+		//    CrossEndUsagePrefix?
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//isEnd ?= 'end'
-		public Assignment getIsEndAssignment() { return cIsEndAssignment; }
+		//// [exceeding 65535 bytes]
+		//CrossEndUsagePrefix?
+		public Group getGroup() { return cGroup; }
+		
+		//isEnd ?= 'end'
+		public Assignment getIsEndAssignment_0() { return cIsEndAssignment_0; }
 		
 		//'end'
-		public Keyword getIsEndEndKeyword_0() { return cIsEndEndKeyword_0; }
+		public Keyword getIsEndEndKeyword_0_0() { return cIsEndEndKeyword_0_0; }
+		
+		//// [exceeding 65535 bytes]
+		//CrossEndUsagePrefix?
+		public RuleCall getCrossEndUsagePrefixParserRuleCall_1() { return cCrossEndUsagePrefixParserRuleCall_1; }
 	}
 	public class CrossEndUsagePrefixElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.CrossEndUsagePrefix");
@@ -16915,7 +16926,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	//fragment EndUsagePrefix:
 	//    isEnd ?= 'end'
 	//    // [exceeding 65535 bytes]
-	////    CrossEndUsagePrefix?
+	//    CrossEndUsagePrefix?
 	//;
 	public EndUsagePrefixElements getEndUsagePrefixAccess() {
 		return pEndUsagePrefix;

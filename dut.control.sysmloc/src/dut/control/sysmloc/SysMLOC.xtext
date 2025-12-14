@@ -1256,7 +1256,7 @@ fragment UnextendedUsagePrefix:
 fragment EndUsagePrefix:
 	isEnd ?= 'end' 
 	// [exceeding 65535 bytes]
-//	CrossEndUsagePrefix? 
+	CrossEndUsagePrefix? 
 ;
 
 fragment CrossEndUsagePrefix:

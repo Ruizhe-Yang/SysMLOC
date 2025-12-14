@@ -568,6 +568,7 @@ public class SysMLOCParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getDefinitionPrefixAccess().getGroup(), "rule__DefinitionPrefix__Group__0");
 			builder.put(grammarAccess.getOccurrenceDefinitionPrefixAccess().getGroup(), "rule__OccurrenceDefinitionPrefix__Group__0");
 			builder.put(grammarAccess.getUsagePrefixAccess().getGroup(), "rule__UsagePrefix__Group__0");
+			builder.put(grammarAccess.getEndUsagePrefixAccess().getGroup(), "rule__EndUsagePrefix__Group__0");
 			builder.put(grammarAccess.getOccurrenceUsagePrefixAccess().getGroup(), "rule__OccurrenceUsagePrefix__Group__0");
 			builder.put(grammarAccess.getOccurrenceUsagePrefixAccess().getGroup_0_1(), "rule__OccurrenceUsagePrefix__Group_0_1__0");
 			builder.put(grammarAccess.getRefPrefixAccess().getGroup(), "rule__RefPrefix__Group__0");
@@ -935,7 +936,7 @@ public class SysMLOCParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getOccurrenceDefinitionPrefixAccess().getIsIndividualAssignment_1(), "rule__OccurrenceDefinitionPrefix__IsIndividualAssignment_1");
 			builder.put(grammarAccess.getBasicDefinitionPrefixAccess().getIsAbstractAssignment_0(), "rule__BasicDefinitionPrefix__IsAbstractAssignment_0");
 			builder.put(grammarAccess.getBasicDefinitionPrefixAccess().getIsVariationAssignment_1(), "rule__BasicDefinitionPrefix__IsVariationAssignment_1");
-			builder.put(grammarAccess.getEndUsagePrefixAccess().getIsEndAssignment(), "rule__EndUsagePrefix__IsEndAssignment");
+			builder.put(grammarAccess.getEndUsagePrefixAccess().getIsEndAssignment_0(), "rule__EndUsagePrefix__IsEndAssignment_0");
 			builder.put(grammarAccess.getCrossEndUsagePrefixAccess().getCrossEndUsageAssignment(), "rule__CrossEndUsagePrefix__CrossEndUsageAssignment");
 			builder.put(grammarAccess.getOccurrenceUsagePrefixAccess().getIsIndividualAssignment_0_1_1(), "rule__OccurrenceUsagePrefix__IsIndividualAssignment_0_1_1");
 			builder.put(grammarAccess.getOccurrenceUsagePrefixAccess().getPortionKindAssignment_0_1_2(), "rule__OccurrenceUsagePrefix__PortionKindAssignment_0_1_2");
