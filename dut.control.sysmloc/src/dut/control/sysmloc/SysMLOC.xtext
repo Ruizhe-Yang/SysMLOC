@@ -1,5 +1,6 @@
 //grammar dut.control.sysmloc.expr.SysEXPR with org.eclipse.xtext.common.Terminals
 //grammar dut.control.sysmloc.SysMLOC hidden(WS, ML_NOTE, SL_NOTE)
+// [exceeding 65535 bytes]
 grammar dut.control.sysmloc.SysMLOC hidden(WS, ML_NOTE)
 
 import "http://www.eclipse.org/emf/2002/Ecore" as Ecore
@@ -1255,7 +1256,7 @@ fragment UnextendedUsagePrefix:
 fragment EndUsagePrefix:
 	isEnd ?= 'end' 
 	// [exceeding 65535 bytes]
-	CrossEndUsagePrefix? 
+//	CrossEndUsagePrefix? 
 ;
 
 fragment CrossEndUsagePrefix:

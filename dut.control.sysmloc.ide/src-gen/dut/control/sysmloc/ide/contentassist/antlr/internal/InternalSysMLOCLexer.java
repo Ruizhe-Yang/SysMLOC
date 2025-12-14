@@ -3911,8 +3911,8 @@ public class InternalSysMLOCLexer extends Lexer {
         try {
             int _type = RULE_PREFIXNAME_TEXT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSysMLOC.g:57096:22: ( '#' ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalSysMLOC.g:57096:24: '#' ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalSysMLOC.g:57010:22: ( '#' ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalSysMLOC.g:57010:24: '#' ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
             match('#'); 
             if ( (input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
@@ -3924,7 +3924,7 @@ public class InternalSysMLOCLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalSysMLOC.g:57096:52: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalSysMLOC.g:57010:52: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop1:
             do {
                 int alt1=2;
@@ -3973,11 +3973,11 @@ public class InternalSysMLOCLexer extends Lexer {
         try {
             int _type = RULE_DECIMAL_VALUE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSysMLOC.g:57098:20: ( '0' .. '9' ( '0' .. '9' )* )
-            // InternalSysMLOC.g:57098:22: '0' .. '9' ( '0' .. '9' )*
+            // InternalSysMLOC.g:57012:20: ( '0' .. '9' ( '0' .. '9' )* )
+            // InternalSysMLOC.g:57012:22: '0' .. '9' ( '0' .. '9' )*
             {
             matchRange('0','9'); 
-            // InternalSysMLOC.g:57098:31: ( '0' .. '9' )*
+            // InternalSysMLOC.g:57012:31: ( '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -3990,7 +3990,7 @@ public class InternalSysMLOCLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // InternalSysMLOC.g:57098:32: '0' .. '9'
+            	    // InternalSysMLOC.g:57012:32: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -4018,11 +4018,11 @@ public class InternalSysMLOCLexer extends Lexer {
         try {
             int _type = RULE_EXP_VALUE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSysMLOC.g:57100:16: ( RULE_DECIMAL_VALUE ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_DECIMAL_VALUE )? )
-            // InternalSysMLOC.g:57100:18: RULE_DECIMAL_VALUE ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_DECIMAL_VALUE )?
+            // InternalSysMLOC.g:57014:16: ( RULE_DECIMAL_VALUE ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_DECIMAL_VALUE )? )
+            // InternalSysMLOC.g:57014:18: RULE_DECIMAL_VALUE ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_DECIMAL_VALUE )?
             {
             mRULE_DECIMAL_VALUE(); 
-            // InternalSysMLOC.g:57100:37: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_DECIMAL_VALUE )?
+            // InternalSysMLOC.g:57014:37: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_DECIMAL_VALUE )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -4031,7 +4031,7 @@ public class InternalSysMLOCLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // InternalSysMLOC.g:57100:38: ( 'e' | 'E' ) ( '+' | '-' )? RULE_DECIMAL_VALUE
+                    // InternalSysMLOC.g:57014:38: ( 'e' | 'E' ) ( '+' | '-' )? RULE_DECIMAL_VALUE
                     {
                     if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                         input.consume();
@@ -4042,7 +4042,7 @@ public class InternalSysMLOCLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // InternalSysMLOC.g:57100:48: ( '+' | '-' )?
+                    // InternalSysMLOC.g:57014:48: ( '+' | '-' )?
                     int alt3=2;
                     int LA3_0 = input.LA(1);
 
@@ -4091,8 +4091,8 @@ public class InternalSysMLOCLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSysMLOC.g:57102:9: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalSysMLOC.g:57102:11: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalSysMLOC.g:57016:9: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalSysMLOC.g:57016:11: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
             if ( (input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                 input.consume();
@@ -4103,7 +4103,7 @@ public class InternalSysMLOCLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalSysMLOC.g:57102:35: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalSysMLOC.g:57016:35: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop5:
             do {
                 int alt5=2;
@@ -4152,11 +4152,11 @@ public class InternalSysMLOCLexer extends Lexer {
         try {
             int _type = RULE_UNRESTRICTED_NAME;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSysMLOC.g:57104:24: ( '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
-            // InternalSysMLOC.g:57104:26: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+            // InternalSysMLOC.g:57018:24: ( '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalSysMLOC.g:57018:26: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
             {
             match('\''); 
-            // InternalSysMLOC.g:57104:31: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+            // InternalSysMLOC.g:57018:31: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
             loop6:
             do {
                 int alt6=3;
@@ -4172,7 +4172,7 @@ public class InternalSysMLOCLexer extends Lexer {
 
                 switch (alt6) {
             	case 1 :
-            	    // InternalSysMLOC.g:57104:32: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
+            	    // InternalSysMLOC.g:57018:32: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
             	    {
             	    match('\\'); 
             	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||input.LA(1)=='t' ) {
@@ -4188,7 +4188,7 @@ public class InternalSysMLOCLexer extends Lexer {
             	    }
             	    break;
             	case 2 :
-            	    // InternalSysMLOC.g:57104:73: ~ ( ( '\\\\' | '\\'' ) )
+            	    // InternalSysMLOC.g:57018:73: ~ ( ( '\\\\' | '\\'' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -4225,11 +4225,11 @@ public class InternalSysMLOCLexer extends Lexer {
         try {
             int _type = RULE_STRING_VALUE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSysMLOC.g:57106:19: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' )
-            // InternalSysMLOC.g:57106:21: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+            // InternalSysMLOC.g:57020:19: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' )
+            // InternalSysMLOC.g:57020:21: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
             {
             match('\"'); 
-            // InternalSysMLOC.g:57106:25: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+            // InternalSysMLOC.g:57020:25: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
             loop7:
             do {
                 int alt7=3;
@@ -4245,7 +4245,7 @@ public class InternalSysMLOCLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalSysMLOC.g:57106:26: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
+            	    // InternalSysMLOC.g:57020:26: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\"' | '\\'' | '\\\\' )
             	    {
             	    match('\\'); 
             	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||input.LA(1)=='t' ) {
@@ -4261,7 +4261,7 @@ public class InternalSysMLOCLexer extends Lexer {
             	    }
             	    break;
             	case 2 :
-            	    // InternalSysMLOC.g:57106:67: ~ ( ( '\\\\' | '\"' ) )
+            	    // InternalSysMLOC.g:57020:67: ~ ( ( '\\\\' | '\"' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -4298,12 +4298,12 @@ public class InternalSysMLOCLexer extends Lexer {
         try {
             int _type = RULE_REGULAR_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSysMLOC.g:57108:22: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalSysMLOC.g:57108:24: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalSysMLOC.g:57022:22: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalSysMLOC.g:57022:24: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalSysMLOC.g:57108:29: ( options {greedy=false; } : . )*
+            // InternalSysMLOC.g:57022:29: ( options {greedy=false; } : . )*
             loop8:
             do {
                 int alt8=2;
@@ -4328,7 +4328,7 @@ public class InternalSysMLOCLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalSysMLOC.g:57108:57: .
+            	    // InternalSysMLOC.g:57022:57: .
             	    {
             	    matchAny(); 
 
@@ -4358,12 +4358,12 @@ public class InternalSysMLOCLexer extends Lexer {
         try {
             int _type = RULE_ML_NOTE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSysMLOC.g:57110:14: ( '//*' ( options {greedy=false; } : . )* '*/' )
-            // InternalSysMLOC.g:57110:16: '//*' ( options {greedy=false; } : . )* '*/'
+            // InternalSysMLOC.g:57024:14: ( '//*' ( options {greedy=false; } : . )* '*/' )
+            // InternalSysMLOC.g:57024:16: '//*' ( options {greedy=false; } : . )* '*/'
             {
             match("//*"); 
 
-            // InternalSysMLOC.g:57110:22: ( options {greedy=false; } : . )*
+            // InternalSysMLOC.g:57024:22: ( options {greedy=false; } : . )*
             loop9:
             do {
                 int alt9=2;
@@ -4388,7 +4388,7 @@ public class InternalSysMLOCLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // InternalSysMLOC.g:57110:50: .
+            	    // InternalSysMLOC.g:57024:50: .
             	    {
             	    matchAny(); 
 
@@ -4418,12 +4418,12 @@ public class InternalSysMLOCLexer extends Lexer {
         try {
             int _type = RULE_SL_NOTE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSysMLOC.g:57112:14: ( '//' (~ ( ( '\\n' | '\\r' ) ) (~ ( ( '\\n' | '\\r' ) ) )* )? ( ( '\\r' )? '\\n' )? )
-            // InternalSysMLOC.g:57112:16: '//' (~ ( ( '\\n' | '\\r' ) ) (~ ( ( '\\n' | '\\r' ) ) )* )? ( ( '\\r' )? '\\n' )?
+            // InternalSysMLOC.g:57026:14: ( '//' (~ ( ( '\\n' | '\\r' ) ) (~ ( ( '\\n' | '\\r' ) ) )* )? ( ( '\\r' )? '\\n' )? )
+            // InternalSysMLOC.g:57026:16: '//' (~ ( ( '\\n' | '\\r' ) ) (~ ( ( '\\n' | '\\r' ) ) )* )? ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalSysMLOC.g:57112:21: (~ ( ( '\\n' | '\\r' ) ) (~ ( ( '\\n' | '\\r' ) ) )* )?
+            // InternalSysMLOC.g:57026:21: (~ ( ( '\\n' | '\\r' ) ) (~ ( ( '\\n' | '\\r' ) ) )* )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -4432,7 +4432,7 @@ public class InternalSysMLOCLexer extends Lexer {
             }
             switch (alt11) {
                 case 1 :
-                    // InternalSysMLOC.g:57112:22: ~ ( ( '\\n' | '\\r' ) ) (~ ( ( '\\n' | '\\r' ) ) )*
+                    // InternalSysMLOC.g:57026:22: ~ ( ( '\\n' | '\\r' ) ) (~ ( ( '\\n' | '\\r' ) ) )*
                     {
                     if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
                         input.consume();
@@ -4443,7 +4443,7 @@ public class InternalSysMLOCLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // InternalSysMLOC.g:57112:37: (~ ( ( '\\n' | '\\r' ) ) )*
+                    // InternalSysMLOC.g:57026:37: (~ ( ( '\\n' | '\\r' ) ) )*
                     loop10:
                     do {
                         int alt10=2;
@@ -4456,7 +4456,7 @@ public class InternalSysMLOCLexer extends Lexer {
 
                         switch (alt10) {
                     	case 1 :
-                    	    // InternalSysMLOC.g:57112:37: ~ ( ( '\\n' | '\\r' ) )
+                    	    // InternalSysMLOC.g:57026:37: ~ ( ( '\\n' | '\\r' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -4482,7 +4482,7 @@ public class InternalSysMLOCLexer extends Lexer {
 
             }
 
-            // InternalSysMLOC.g:57112:55: ( ( '\\r' )? '\\n' )?
+            // InternalSysMLOC.g:57026:55: ( ( '\\r' )? '\\n' )?
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -4491,9 +4491,9 @@ public class InternalSysMLOCLexer extends Lexer {
             }
             switch (alt13) {
                 case 1 :
-                    // InternalSysMLOC.g:57112:56: ( '\\r' )? '\\n'
+                    // InternalSysMLOC.g:57026:56: ( '\\r' )? '\\n'
                     {
-                    // InternalSysMLOC.g:57112:56: ( '\\r' )?
+                    // InternalSysMLOC.g:57026:56: ( '\\r' )?
                     int alt12=2;
                     int LA12_0 = input.LA(1);
 
@@ -4502,7 +4502,7 @@ public class InternalSysMLOCLexer extends Lexer {
                     }
                     switch (alt12) {
                         case 1 :
-                            // InternalSysMLOC.g:57112:56: '\\r'
+                            // InternalSysMLOC.g:57026:56: '\\r'
                             {
                             match('\r'); 
 
@@ -4534,10 +4534,10 @@ public class InternalSysMLOCLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSysMLOC.g:57114:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalSysMLOC.g:57114:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalSysMLOC.g:57028:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalSysMLOC.g:57028:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalSysMLOC.g:57114:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalSysMLOC.g:57028:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt14=0;
             loop14:
             do {

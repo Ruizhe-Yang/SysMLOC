@@ -399,6 +399,7 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
       case SysMLOCPackage.PERFORMED_ACTION_USAGE: return createPerformedActionUsage();
       case SysMLOCPackage.ITEM_FEATURE_PARAMETER: return createItemFeatureParameter();
       case SysMLOCPackage.IF_SUCCESSION_AS_USAGE: return createIfSuccessionAsUsage();
+      case SysMLOCPackage.CROSS_END_USAGE: return createCrossEndUsage();
       case SysMLOCPackage.GENERAL_USAGE_PREFIX: return createGeneralUsagePrefix();
       case SysMLOCPackage.PREFIX_METADATA: return createPrefixMetadata();
       case SysMLOCPackage.USAGE_EXTENSION_KEYWORD: return createUsageExtensionKeyword();
@@ -415,7 +416,6 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
       case SysMLOCPackage.UNEXTENDED_USAGE_PREFIX: return createUnextendedUsagePrefix();
       case SysMLOCPackage.END_USAGE_PREFIX: return createEndUsagePrefix();
       case SysMLOCPackage.CROSS_END_USAGE_PREFIX: return createCrossEndUsagePrefix();
-      case SysMLOCPackage.CROSS_END_USAGE: return createCrossEndUsage();
       case SysMLOCPackage.OCCURRENCE_USAGE_PREFIX: return createOccurrenceUsagePrefix();
       case SysMLOCPackage.REF_PREFIX: return createRefPrefix();
       case SysMLOCPackage.BASIC_USAGE_PREFIX: return createBasicUsagePrefix();
@@ -2141,6 +2141,18 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
    * @generated
    */
   @Override
+  public CrossEndUsage createCrossEndUsage()
+  {
+    CrossEndUsageImpl crossEndUsage = new CrossEndUsageImpl();
+    return crossEndUsage;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public GeneralUsagePrefix createGeneralUsagePrefix()
   {
     GeneralUsagePrefixImpl generalUsagePrefix = new GeneralUsagePrefixImpl();
@@ -2325,18 +2337,6 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
   {
     CrossEndUsagePrefixImpl crossEndUsagePrefix = new CrossEndUsagePrefixImpl();
     return crossEndUsagePrefix;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public CrossEndUsage createCrossEndUsage()
-  {
-    CrossEndUsageImpl crossEndUsage = new CrossEndUsageImpl();
-    return crossEndUsage;
   }
 
   /**

@@ -557,6 +557,7 @@ public class SysMLOCParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getPerformedActionUsageAccess().getGroup_1(), "rule__PerformedActionUsage__Group_1__0");
 			builder.put(grammarAccess.getPerformedActionUsageAccess().getGroup_2(), "rule__PerformedActionUsage__Group_2__0");
 			builder.put(grammarAccess.getPerformedActionUsageAccess().getGroup_3(), "rule__PerformedActionUsage__Group_3__0");
+			builder.put(grammarAccess.getCrossEndUsageAccess().getGroup(), "rule__CrossEndUsage__Group__0");
 			builder.put(grammarAccess.getGeneralUsagePrefixAccess().getGroup(), "rule__GeneralUsagePrefix__Group__0");
 			builder.put(grammarAccess.getEmptySuccessionPrefixAccess().getGroup(), "rule__EmptySuccessionPrefix__Group__0");
 			builder.put(grammarAccess.getEmptySuccessionPrefixAccess().getGroup_1(), "rule__EmptySuccessionPrefix__Group_1__0");
@@ -567,8 +568,6 @@ public class SysMLOCParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getDefinitionPrefixAccess().getGroup(), "rule__DefinitionPrefix__Group__0");
 			builder.put(grammarAccess.getOccurrenceDefinitionPrefixAccess().getGroup(), "rule__OccurrenceDefinitionPrefix__Group__0");
 			builder.put(grammarAccess.getUsagePrefixAccess().getGroup(), "rule__UsagePrefix__Group__0");
-			builder.put(grammarAccess.getEndUsagePrefixAccess().getGroup(), "rule__EndUsagePrefix__Group__0");
-			builder.put(grammarAccess.getCrossEndUsageAccess().getGroup(), "rule__CrossEndUsage__Group__0");
 			builder.put(grammarAccess.getOccurrenceUsagePrefixAccess().getGroup(), "rule__OccurrenceUsagePrefix__Group__0");
 			builder.put(grammarAccess.getOccurrenceUsagePrefixAccess().getGroup_0_1(), "rule__OccurrenceUsagePrefix__Group_0_1__0");
 			builder.put(grammarAccess.getRefPrefixAccess().getGroup(), "rule__RefPrefix__Group__0");
@@ -923,6 +922,7 @@ public class SysMLOCParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getPayloadParameterAccess().getIsViaAssignment_1_0(), "rule__PayloadParameter__IsViaAssignment_1_0");
 			builder.put(grammarAccess.getPayloadParameterAccess().getViaNodeParameterAssignment_1_1(), "rule__PayloadParameter__ViaNodeParameterAssignment_1_1");
 			builder.put(grammarAccess.getConnectorEndAccess().getDelcaredNameAssignment_1_0(), "rule__ConnectorEnd__DelcaredNameAssignment_1_0");
+			builder.put(grammarAccess.getCrossEndUsageAccess().getDeclaredNameAssignment_0(), "rule__CrossEndUsage__DeclaredNameAssignment_0");
 			builder.put(grammarAccess.getPrefixMetadataAccess().getPrefixMetadataExtensionAssignment(), "rule__PrefixMetadata__PrefixMetadataExtensionAssignment");
 			builder.put(grammarAccess.getEmptySuccessionPrefixAccess().getIsThenAssignment_0(), "rule__EmptySuccessionPrefix__IsThenAssignment_0");
 			builder.put(grammarAccess.getEmptySuccessionPrefixAccess().getThenMultiLowAssignment_1_1(), "rule__EmptySuccessionPrefix__ThenMultiLowAssignment_1_1");
@@ -935,9 +935,8 @@ public class SysMLOCParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getOccurrenceDefinitionPrefixAccess().getIsIndividualAssignment_1(), "rule__OccurrenceDefinitionPrefix__IsIndividualAssignment_1");
 			builder.put(grammarAccess.getBasicDefinitionPrefixAccess().getIsAbstractAssignment_0(), "rule__BasicDefinitionPrefix__IsAbstractAssignment_0");
 			builder.put(grammarAccess.getBasicDefinitionPrefixAccess().getIsVariationAssignment_1(), "rule__BasicDefinitionPrefix__IsVariationAssignment_1");
-			builder.put(grammarAccess.getEndUsagePrefixAccess().getIsEndAssignment_0(), "rule__EndUsagePrefix__IsEndAssignment_0");
+			builder.put(grammarAccess.getEndUsagePrefixAccess().getIsEndAssignment(), "rule__EndUsagePrefix__IsEndAssignment");
 			builder.put(grammarAccess.getCrossEndUsagePrefixAccess().getCrossEndUsageAssignment(), "rule__CrossEndUsagePrefix__CrossEndUsageAssignment");
-			builder.put(grammarAccess.getCrossEndUsageAccess().getDeclaredNameAssignment_0(), "rule__CrossEndUsage__DeclaredNameAssignment_0");
 			builder.put(grammarAccess.getOccurrenceUsagePrefixAccess().getIsIndividualAssignment_0_1_1(), "rule__OccurrenceUsagePrefix__IsIndividualAssignment_0_1_1");
 			builder.put(grammarAccess.getOccurrenceUsagePrefixAccess().getPortionKindAssignment_0_1_2(), "rule__OccurrenceUsagePrefix__PortionKindAssignment_0_1_2");
 			builder.put(grammarAccess.getRefPrefixAccess().getDirectionAssignment_0(), "rule__RefPrefix__DirectionAssignment_0");

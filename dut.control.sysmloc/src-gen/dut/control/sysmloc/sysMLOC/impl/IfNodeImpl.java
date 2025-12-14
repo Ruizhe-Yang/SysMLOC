@@ -9,8 +9,6 @@ import dut.control.sysmloc.sysMLOC.ActionParameterEnd;
 import dut.control.sysmloc.sysMLOC.BasicDefinitionPrefix;
 import dut.control.sysmloc.sysMLOC.BasicUsagePrefix;
 import dut.control.sysmloc.sysMLOC.ConnectorEnd;
-import dut.control.sysmloc.sysMLOC.CrossEndUsage;
-import dut.control.sysmloc.sysMLOC.CrossEndUsagePrefix;
 import dut.control.sysmloc.sysMLOC.CrossFeatureChain;
 import dut.control.sysmloc.sysMLOC.EmptySuccessionPrefix;
 import dut.control.sysmloc.sysMLOC.EndUsagePrefix;
@@ -69,7 +67,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#getThenMultiHigh <em>Then Multi High</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#getVisibility <em>Visibility</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#isIsVariant <em>Is Variant</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#getCrossEndUsage <em>Cross End Usage</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#isIsEnd <em>Is End</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#isIsAbstract <em>Is Abstract</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.IfNodeImpl#isIsVariation <em>Is Variation</em>}</li>
@@ -205,16 +202,6 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
    * @ordered
    */
   protected boolean isVariant = IS_VARIANT_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getCrossEndUsage() <em>Cross End Usage</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCrossEndUsage()
-   * @generated
-   * @ordered
-   */
-  protected CrossEndUsage crossEndUsage;
 
   /**
    * The default value of the '{@link #isIsEnd() <em>Is End</em>}' attribute.
@@ -860,56 +847,6 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
     isVariant = newIsVariant;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.IF_NODE__IS_VARIANT, oldIsVariant, isVariant));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public CrossEndUsage getCrossEndUsage()
-  {
-    return crossEndUsage;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetCrossEndUsage(CrossEndUsage newCrossEndUsage, NotificationChain msgs)
-  {
-    CrossEndUsage oldCrossEndUsage = crossEndUsage;
-    crossEndUsage = newCrossEndUsage;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SysMLOCPackage.IF_NODE__CROSS_END_USAGE, oldCrossEndUsage, newCrossEndUsage);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setCrossEndUsage(CrossEndUsage newCrossEndUsage)
-  {
-    if (newCrossEndUsage != crossEndUsage)
-    {
-      NotificationChain msgs = null;
-      if (crossEndUsage != null)
-        msgs = ((InternalEObject)crossEndUsage).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SysMLOCPackage.IF_NODE__CROSS_END_USAGE, null, msgs);
-      if (newCrossEndUsage != null)
-        msgs = ((InternalEObject)newCrossEndUsage).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SysMLOCPackage.IF_NODE__CROSS_END_USAGE, null, msgs);
-      msgs = basicSetCrossEndUsage(newCrossEndUsage, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.IF_NODE__CROSS_END_USAGE, newCrossEndUsage, newCrossEndUsage));
   }
 
   /**
@@ -1572,8 +1509,6 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
   {
     switch (featureID)
     {
-      case SysMLOCPackage.IF_NODE__CROSS_END_USAGE:
-        return basicSetCrossEndUsage(null, msgs);
       case SysMLOCPackage.IF_NODE__TRANSITION_SUCCESSION_ELEMENT:
         return ((InternalEList<?>)getTransitionSuccessionElement()).basicRemove(otherEnd, msgs);
       case SysMLOCPackage.IF_NODE__SUCCESSION_ELEMENT:
@@ -1606,8 +1541,6 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
         return getVisibility();
       case SysMLOCPackage.IF_NODE__IS_VARIANT:
         return isIsVariant();
-      case SysMLOCPackage.IF_NODE__CROSS_END_USAGE:
-        return getCrossEndUsage();
       case SysMLOCPackage.IF_NODE__IS_END:
         return isIsEnd();
       case SysMLOCPackage.IF_NODE__IS_ABSTRACT:
@@ -1697,9 +1630,6 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
         return;
       case SysMLOCPackage.IF_NODE__IS_VARIANT:
         setIsVariant((Boolean)newValue);
-        return;
-      case SysMLOCPackage.IF_NODE__CROSS_END_USAGE:
-        setCrossEndUsage((CrossEndUsage)newValue);
         return;
       case SysMLOCPackage.IF_NODE__IS_END:
         setIsEnd((Boolean)newValue);
@@ -1830,9 +1760,6 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
       case SysMLOCPackage.IF_NODE__IS_VARIANT:
         setIsVariant(IS_VARIANT_EDEFAULT);
         return;
-      case SysMLOCPackage.IF_NODE__CROSS_END_USAGE:
-        setCrossEndUsage((CrossEndUsage)null);
-        return;
       case SysMLOCPackage.IF_NODE__IS_END:
         setIsEnd(IS_END_EDEFAULT);
         return;
@@ -1947,8 +1874,6 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
         return visibility != VISIBILITY_EDEFAULT;
       case SysMLOCPackage.IF_NODE__IS_VARIANT:
         return isVariant != IS_VARIANT_EDEFAULT;
-      case SysMLOCPackage.IF_NODE__CROSS_END_USAGE:
-        return crossEndUsage != null;
       case SysMLOCPackage.IF_NODE__IS_END:
         return isEnd != IS_END_EDEFAULT;
       case SysMLOCPackage.IF_NODE__IS_ABSTRACT:
@@ -2037,14 +1962,6 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
       {
         case SysMLOCPackage.IF_NODE__VISIBILITY: return SysMLOCPackage.MEMBER_PREFIX__VISIBILITY;
         case SysMLOCPackage.IF_NODE__IS_VARIANT: return SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT;
-        default: return -1;
-      }
-    }
-    if (baseClass == CrossEndUsagePrefix.class)
-    {
-      switch (derivedFeatureID)
-      {
-        case SysMLOCPackage.IF_NODE__CROSS_END_USAGE: return SysMLOCPackage.CROSS_END_USAGE_PREFIX__CROSS_END_USAGE;
         default: return -1;
       }
     }
@@ -2258,14 +2175,6 @@ public class IfNodeImpl extends ActionNodeElementsImpl implements IfNode
       {
         case SysMLOCPackage.MEMBER_PREFIX__VISIBILITY: return SysMLOCPackage.IF_NODE__VISIBILITY;
         case SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT: return SysMLOCPackage.IF_NODE__IS_VARIANT;
-        default: return -1;
-      }
-    }
-    if (baseClass == CrossEndUsagePrefix.class)
-    {
-      switch (baseFeatureID)
-      {
-        case SysMLOCPackage.CROSS_END_USAGE_PREFIX__CROSS_END_USAGE: return SysMLOCPackage.IF_NODE__CROSS_END_USAGE;
         default: return -1;
       }
     }

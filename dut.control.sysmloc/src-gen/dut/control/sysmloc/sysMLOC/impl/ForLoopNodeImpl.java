@@ -9,8 +9,6 @@ import dut.control.sysmloc.sysMLOC.ActionNodeUsageDeclaration;
 import dut.control.sysmloc.sysMLOC.ActionParameterEnd;
 import dut.control.sysmloc.sysMLOC.BasicDefinitionPrefix;
 import dut.control.sysmloc.sysMLOC.BasicUsagePrefix;
-import dut.control.sysmloc.sysMLOC.CrossEndUsage;
-import dut.control.sysmloc.sysMLOC.CrossEndUsagePrefix;
 import dut.control.sysmloc.sysMLOC.CrossFeatureChain;
 import dut.control.sysmloc.sysMLOC.EmptySuccessionPrefix;
 import dut.control.sysmloc.sysMLOC.EndUsagePrefix;
@@ -67,7 +65,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ForLoopNodeImpl#getThenMultiHigh <em>Then Multi High</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ForLoopNodeImpl#getVisibility <em>Visibility</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ForLoopNodeImpl#isIsVariant <em>Is Variant</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ForLoopNodeImpl#getCrossEndUsage <em>Cross End Usage</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ForLoopNodeImpl#isIsEnd <em>Is End</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ForLoopNodeImpl#isIsAbstract <em>Is Abstract</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.ForLoopNodeImpl#isIsVariation <em>Is Variation</em>}</li>
@@ -198,16 +195,6 @@ public class ForLoopNodeImpl extends ActionNodeElementsImpl implements ForLoopNo
    * @ordered
    */
   protected boolean isVariant = IS_VARIANT_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getCrossEndUsage() <em>Cross End Usage</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCrossEndUsage()
-   * @generated
-   * @ordered
-   */
-  protected CrossEndUsage crossEndUsage;
 
   /**
    * The default value of the '{@link #isIsEnd() <em>Is End</em>}' attribute.
@@ -763,56 +750,6 @@ public class ForLoopNodeImpl extends ActionNodeElementsImpl implements ForLoopNo
     isVariant = newIsVariant;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.FOR_LOOP_NODE__IS_VARIANT, oldIsVariant, isVariant));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public CrossEndUsage getCrossEndUsage()
-  {
-    return crossEndUsage;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetCrossEndUsage(CrossEndUsage newCrossEndUsage, NotificationChain msgs)
-  {
-    CrossEndUsage oldCrossEndUsage = crossEndUsage;
-    crossEndUsage = newCrossEndUsage;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SysMLOCPackage.FOR_LOOP_NODE__CROSS_END_USAGE, oldCrossEndUsage, newCrossEndUsage);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setCrossEndUsage(CrossEndUsage newCrossEndUsage)
-  {
-    if (newCrossEndUsage != crossEndUsage)
-    {
-      NotificationChain msgs = null;
-      if (crossEndUsage != null)
-        msgs = ((InternalEObject)crossEndUsage).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SysMLOCPackage.FOR_LOOP_NODE__CROSS_END_USAGE, null, msgs);
-      if (newCrossEndUsage != null)
-        msgs = ((InternalEObject)newCrossEndUsage).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SysMLOCPackage.FOR_LOOP_NODE__CROSS_END_USAGE, null, msgs);
-      msgs = basicSetCrossEndUsage(newCrossEndUsage, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.FOR_LOOP_NODE__CROSS_END_USAGE, newCrossEndUsage, newCrossEndUsage));
   }
 
   /**
@@ -1395,8 +1332,6 @@ public class ForLoopNodeImpl extends ActionNodeElementsImpl implements ForLoopNo
   {
     switch (featureID)
     {
-      case SysMLOCPackage.FOR_LOOP_NODE__CROSS_END_USAGE:
-        return basicSetCrossEndUsage(null, msgs);
       case SysMLOCPackage.FOR_LOOP_NODE__FOR_VARIABLE_PARAMETER:
         return basicSetForVariableParameter(null, msgs);
       case SysMLOCPackage.FOR_LOOP_NODE__ACTION_PARAMETER_END:
@@ -1427,8 +1362,6 @@ public class ForLoopNodeImpl extends ActionNodeElementsImpl implements ForLoopNo
         return getVisibility();
       case SysMLOCPackage.FOR_LOOP_NODE__IS_VARIANT:
         return isIsVariant();
-      case SysMLOCPackage.FOR_LOOP_NODE__CROSS_END_USAGE:
-        return getCrossEndUsage();
       case SysMLOCPackage.FOR_LOOP_NODE__IS_END:
         return isIsEnd();
       case SysMLOCPackage.FOR_LOOP_NODE__IS_ABSTRACT:
@@ -1508,9 +1441,6 @@ public class ForLoopNodeImpl extends ActionNodeElementsImpl implements ForLoopNo
         return;
       case SysMLOCPackage.FOR_LOOP_NODE__IS_VARIANT:
         setIsVariant((Boolean)newValue);
-        return;
-      case SysMLOCPackage.FOR_LOOP_NODE__CROSS_END_USAGE:
-        setCrossEndUsage((CrossEndUsage)newValue);
         return;
       case SysMLOCPackage.FOR_LOOP_NODE__IS_END:
         setIsEnd((Boolean)newValue);
@@ -1624,9 +1554,6 @@ public class ForLoopNodeImpl extends ActionNodeElementsImpl implements ForLoopNo
       case SysMLOCPackage.FOR_LOOP_NODE__IS_VARIANT:
         setIsVariant(IS_VARIANT_EDEFAULT);
         return;
-      case SysMLOCPackage.FOR_LOOP_NODE__CROSS_END_USAGE:
-        setCrossEndUsage((CrossEndUsage)null);
-        return;
       case SysMLOCPackage.FOR_LOOP_NODE__IS_END:
         setIsEnd(IS_END_EDEFAULT);
         return;
@@ -1726,8 +1653,6 @@ public class ForLoopNodeImpl extends ActionNodeElementsImpl implements ForLoopNo
         return visibility != VISIBILITY_EDEFAULT;
       case SysMLOCPackage.FOR_LOOP_NODE__IS_VARIANT:
         return isVariant != IS_VARIANT_EDEFAULT;
-      case SysMLOCPackage.FOR_LOOP_NODE__CROSS_END_USAGE:
-        return crossEndUsage != null;
       case SysMLOCPackage.FOR_LOOP_NODE__IS_END:
         return isEnd != IS_END_EDEFAULT;
       case SysMLOCPackage.FOR_LOOP_NODE__IS_ABSTRACT:
@@ -1806,14 +1731,6 @@ public class ForLoopNodeImpl extends ActionNodeElementsImpl implements ForLoopNo
       {
         case SysMLOCPackage.FOR_LOOP_NODE__VISIBILITY: return SysMLOCPackage.MEMBER_PREFIX__VISIBILITY;
         case SysMLOCPackage.FOR_LOOP_NODE__IS_VARIANT: return SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT;
-        default: return -1;
-      }
-    }
-    if (baseClass == CrossEndUsagePrefix.class)
-    {
-      switch (derivedFeatureID)
-      {
-        case SysMLOCPackage.FOR_LOOP_NODE__CROSS_END_USAGE: return SysMLOCPackage.CROSS_END_USAGE_PREFIX__CROSS_END_USAGE;
         default: return -1;
       }
     }
@@ -2019,14 +1936,6 @@ public class ForLoopNodeImpl extends ActionNodeElementsImpl implements ForLoopNo
       {
         case SysMLOCPackage.MEMBER_PREFIX__VISIBILITY: return SysMLOCPackage.FOR_LOOP_NODE__VISIBILITY;
         case SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT: return SysMLOCPackage.FOR_LOOP_NODE__IS_VARIANT;
-        default: return -1;
-      }
-    }
-    if (baseClass == CrossEndUsagePrefix.class)
-    {
-      switch (baseFeatureID)
-      {
-        case SysMLOCPackage.CROSS_END_USAGE_PREFIX__CROSS_END_USAGE: return SysMLOCPackage.FOR_LOOP_NODE__CROSS_END_USAGE;
         default: return -1;
       }
     }

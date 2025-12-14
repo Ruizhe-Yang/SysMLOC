@@ -8,8 +8,6 @@ import dut.control.sysmloc.sysMLOC.AnalysisCaseUsage;
 import dut.control.sysmloc.sysMLOC.BasicDefinitionPrefix;
 import dut.control.sysmloc.sysMLOC.BasicUsagePrefix;
 import dut.control.sysmloc.sysMLOC.CaseBodyElement;
-import dut.control.sysmloc.sysMLOC.CrossEndUsage;
-import dut.control.sysmloc.sysMLOC.CrossEndUsagePrefix;
 import dut.control.sysmloc.sysMLOC.CrossFeatureChain;
 import dut.control.sysmloc.sysMLOC.EmptySuccessionPrefix;
 import dut.control.sysmloc.sysMLOC.EndUsagePrefix;
@@ -69,7 +67,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AnalysisCaseUsageImpl#getVisibility <em>Visibility</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AnalysisCaseUsageImpl#isIsVariant <em>Is Variant</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AnalysisCaseUsageImpl#isIsReturn <em>Is Return</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AnalysisCaseUsageImpl#getCrossEndUsage <em>Cross End Usage</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AnalysisCaseUsageImpl#isIsEnd <em>Is End</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AnalysisCaseUsageImpl#isIsAbstract <em>Is Abstract</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.AnalysisCaseUsageImpl#isIsVariation <em>Is Variation</em>}</li>
@@ -221,16 +218,6 @@ public class AnalysisCaseUsageImpl extends BehaviorUsageElementsImpl implements 
    * @ordered
    */
   protected boolean isReturn = IS_RETURN_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getCrossEndUsage() <em>Cross End Usage</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCrossEndUsage()
-   * @generated
-   * @ordered
-   */
-  protected CrossEndUsage crossEndUsage;
 
   /**
    * The default value of the '{@link #isIsEnd() <em>Is End</em>}' attribute.
@@ -849,56 +836,6 @@ public class AnalysisCaseUsageImpl extends BehaviorUsageElementsImpl implements 
    * @generated
    */
   @Override
-  public CrossEndUsage getCrossEndUsage()
-  {
-    return crossEndUsage;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetCrossEndUsage(CrossEndUsage newCrossEndUsage, NotificationChain msgs)
-  {
-    CrossEndUsage oldCrossEndUsage = crossEndUsage;
-    crossEndUsage = newCrossEndUsage;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ANALYSIS_CASE_USAGE__CROSS_END_USAGE, oldCrossEndUsage, newCrossEndUsage);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setCrossEndUsage(CrossEndUsage newCrossEndUsage)
-  {
-    if (newCrossEndUsage != crossEndUsage)
-    {
-      NotificationChain msgs = null;
-      if (crossEndUsage != null)
-        msgs = ((InternalEObject)crossEndUsage).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SysMLOCPackage.ANALYSIS_CASE_USAGE__CROSS_END_USAGE, null, msgs);
-      if (newCrossEndUsage != null)
-        msgs = ((InternalEObject)newCrossEndUsage).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SysMLOCPackage.ANALYSIS_CASE_USAGE__CROSS_END_USAGE, null, msgs);
-      msgs = basicSetCrossEndUsage(newCrossEndUsage, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.ANALYSIS_CASE_USAGE__CROSS_END_USAGE, newCrossEndUsage, newCrossEndUsage));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public boolean isIsEnd()
   {
     return isEnd;
@@ -1473,8 +1410,6 @@ public class AnalysisCaseUsageImpl extends BehaviorUsageElementsImpl implements 
   {
     switch (featureID)
     {
-      case SysMLOCPackage.ANALYSIS_CASE_USAGE__CROSS_END_USAGE:
-        return basicSetCrossEndUsage(null, msgs);
       case SysMLOCPackage.ANALYSIS_CASE_USAGE__ELEMENTS:
         return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
       case SysMLOCPackage.ANALYSIS_CASE_USAGE__RESULT_EXPRESSION_PARAMETER:
@@ -1505,8 +1440,6 @@ public class AnalysisCaseUsageImpl extends BehaviorUsageElementsImpl implements 
         return isIsVariant();
       case SysMLOCPackage.ANALYSIS_CASE_USAGE__IS_RETURN:
         return isIsReturn();
-      case SysMLOCPackage.ANALYSIS_CASE_USAGE__CROSS_END_USAGE:
-        return getCrossEndUsage();
       case SysMLOCPackage.ANALYSIS_CASE_USAGE__IS_END:
         return isIsEnd();
       case SysMLOCPackage.ANALYSIS_CASE_USAGE__IS_ABSTRACT:
@@ -1591,9 +1524,6 @@ public class AnalysisCaseUsageImpl extends BehaviorUsageElementsImpl implements 
         return;
       case SysMLOCPackage.ANALYSIS_CASE_USAGE__IS_RETURN:
         setIsReturn((Boolean)newValue);
-        return;
-      case SysMLOCPackage.ANALYSIS_CASE_USAGE__CROSS_END_USAGE:
-        setCrossEndUsage((CrossEndUsage)newValue);
         return;
       case SysMLOCPackage.ANALYSIS_CASE_USAGE__IS_END:
         setIsEnd((Boolean)newValue);
@@ -1713,9 +1643,6 @@ public class AnalysisCaseUsageImpl extends BehaviorUsageElementsImpl implements 
       case SysMLOCPackage.ANALYSIS_CASE_USAGE__IS_RETURN:
         setIsReturn(IS_RETURN_EDEFAULT);
         return;
-      case SysMLOCPackage.ANALYSIS_CASE_USAGE__CROSS_END_USAGE:
-        setCrossEndUsage((CrossEndUsage)null);
-        return;
       case SysMLOCPackage.ANALYSIS_CASE_USAGE__IS_END:
         setIsEnd(IS_END_EDEFAULT);
         return;
@@ -1820,8 +1747,6 @@ public class AnalysisCaseUsageImpl extends BehaviorUsageElementsImpl implements 
         return isVariant != IS_VARIANT_EDEFAULT;
       case SysMLOCPackage.ANALYSIS_CASE_USAGE__IS_RETURN:
         return isReturn != IS_RETURN_EDEFAULT;
-      case SysMLOCPackage.ANALYSIS_CASE_USAGE__CROSS_END_USAGE:
-        return crossEndUsage != null;
       case SysMLOCPackage.ANALYSIS_CASE_USAGE__IS_END:
         return isEnd != IS_END_EDEFAULT;
       case SysMLOCPackage.ANALYSIS_CASE_USAGE__IS_ABSTRACT:
@@ -1917,14 +1842,6 @@ public class AnalysisCaseUsageImpl extends BehaviorUsageElementsImpl implements 
     {
       switch (derivedFeatureID)
       {
-        default: return -1;
-      }
-    }
-    if (baseClass == CrossEndUsagePrefix.class)
-    {
-      switch (derivedFeatureID)
-      {
-        case SysMLOCPackage.ANALYSIS_CASE_USAGE__CROSS_END_USAGE: return SysMLOCPackage.CROSS_END_USAGE_PREFIX__CROSS_END_USAGE;
         default: return -1;
       }
     }
@@ -2148,14 +2065,6 @@ public class AnalysisCaseUsageImpl extends BehaviorUsageElementsImpl implements 
     {
       switch (baseFeatureID)
       {
-        default: return -1;
-      }
-    }
-    if (baseClass == CrossEndUsagePrefix.class)
-    {
-      switch (baseFeatureID)
-      {
-        case SysMLOCPackage.CROSS_END_USAGE_PREFIX__CROSS_END_USAGE: return SysMLOCPackage.ANALYSIS_CASE_USAGE__CROSS_END_USAGE;
         default: return -1;
       }
     }

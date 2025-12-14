@@ -473,6 +473,9 @@
     <genClasses ecoreClass="SysMLOC.ecore#//PerformedActionUsage"/>
     <genClasses ecoreClass="SysMLOC.ecore#//ItemFeatureParameter"/>
     <genClasses ecoreClass="SysMLOC.ecore#//IfSuccessionAsUsage"/>
+    <genClasses ecoreClass="SysMLOC.ecore#//CrossEndUsage">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//CrossEndUsage/declaredName"/>
+    </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//GeneralUsagePrefix"/>
     <genClasses ecoreClass="SysMLOC.ecore#//PrefixMetadata">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//PrefixMetadata/prefixMetadataExtension"/>
@@ -511,9 +514,6 @@
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//CrossEndUsagePrefix">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//CrossEndUsagePrefix/crossEndUsage"/>
-    </genClasses>
-    <genClasses ecoreClass="SysMLOC.ecore#//CrossEndUsage">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//CrossEndUsage/declaredName"/>
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//OccurrenceUsagePrefix">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SysMLOC.ecore#//OccurrenceUsagePrefix/isIndividual"/>

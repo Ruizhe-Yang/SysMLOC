@@ -942,6 +942,11 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
         return createIfSuccessionAsUsageAdapter();
       }
       @Override
+      public Adapter caseCrossEndUsage(CrossEndUsage object)
+      {
+        return createCrossEndUsageAdapter();
+      }
+      @Override
       public Adapter caseGeneralUsagePrefix(GeneralUsagePrefix object)
       {
         return createGeneralUsagePrefixAdapter();
@@ -1020,11 +1025,6 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
       public Adapter caseCrossEndUsagePrefix(CrossEndUsagePrefix object)
       {
         return createCrossEndUsagePrefixAdapter();
-      }
-      @Override
-      public Adapter caseCrossEndUsage(CrossEndUsage object)
-      {
-        return createCrossEndUsageAdapter();
       }
       @Override
       public Adapter caseOccurrenceUsagePrefix(OccurrenceUsagePrefix object)
@@ -3274,6 +3274,21 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.CrossEndUsage <em>Cross End Usage</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.sysmloc.sysMLOC.CrossEndUsage
+   * @generated
+   */
+  public Adapter createCrossEndUsageAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.GeneralUsagePrefix <em>General Usage Prefix</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -3509,21 +3524,6 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createCrossEndUsagePrefixAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.CrossEndUsage <em>Cross End Usage</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see dut.control.sysmloc.sysMLOC.CrossEndUsage
-   * @generated
-   */
-  public Adapter createCrossEndUsageAdapter()
   {
     return null;
   }

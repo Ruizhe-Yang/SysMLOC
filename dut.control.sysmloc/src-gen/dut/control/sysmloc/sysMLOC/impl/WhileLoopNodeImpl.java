@@ -9,8 +9,6 @@ import dut.control.sysmloc.sysMLOC.ActionNodeUsageDeclaration;
 import dut.control.sysmloc.sysMLOC.ActionParameterEnd;
 import dut.control.sysmloc.sysMLOC.BasicDefinitionPrefix;
 import dut.control.sysmloc.sysMLOC.BasicUsagePrefix;
-import dut.control.sysmloc.sysMLOC.CrossEndUsage;
-import dut.control.sysmloc.sysMLOC.CrossEndUsagePrefix;
 import dut.control.sysmloc.sysMLOC.CrossFeatureChain;
 import dut.control.sysmloc.sysMLOC.EmptySuccessionPrefix;
 import dut.control.sysmloc.sysMLOC.EndUsagePrefix;
@@ -66,7 +64,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.WhileLoopNodeImpl#getThenMultiHigh <em>Then Multi High</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.WhileLoopNodeImpl#getVisibility <em>Visibility</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.WhileLoopNodeImpl#isIsVariant <em>Is Variant</em>}</li>
- *   <li>{@link dut.control.sysmloc.sysMLOC.impl.WhileLoopNodeImpl#getCrossEndUsage <em>Cross End Usage</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.WhileLoopNodeImpl#isIsEnd <em>Is End</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.WhileLoopNodeImpl#isIsAbstract <em>Is Abstract</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.WhileLoopNodeImpl#isIsVariation <em>Is Variation</em>}</li>
@@ -197,16 +194,6 @@ public class WhileLoopNodeImpl extends ActionNodeElementsImpl implements WhileLo
    * @ordered
    */
   protected boolean isVariant = IS_VARIANT_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getCrossEndUsage() <em>Cross End Usage</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCrossEndUsage()
-   * @generated
-   * @ordered
-   */
-  protected CrossEndUsage crossEndUsage;
 
   /**
    * The default value of the '{@link #isIsEnd() <em>Is End</em>}' attribute.
@@ -780,56 +767,6 @@ public class WhileLoopNodeImpl extends ActionNodeElementsImpl implements WhileLo
    * @generated
    */
   @Override
-  public CrossEndUsage getCrossEndUsage()
-  {
-    return crossEndUsage;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetCrossEndUsage(CrossEndUsage newCrossEndUsage, NotificationChain msgs)
-  {
-    CrossEndUsage oldCrossEndUsage = crossEndUsage;
-    crossEndUsage = newCrossEndUsage;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SysMLOCPackage.WHILE_LOOP_NODE__CROSS_END_USAGE, oldCrossEndUsage, newCrossEndUsage);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setCrossEndUsage(CrossEndUsage newCrossEndUsage)
-  {
-    if (newCrossEndUsage != crossEndUsage)
-    {
-      NotificationChain msgs = null;
-      if (crossEndUsage != null)
-        msgs = ((InternalEObject)crossEndUsage).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SysMLOCPackage.WHILE_LOOP_NODE__CROSS_END_USAGE, null, msgs);
-      if (newCrossEndUsage != null)
-        msgs = ((InternalEObject)newCrossEndUsage).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SysMLOCPackage.WHILE_LOOP_NODE__CROSS_END_USAGE, null, msgs);
-      msgs = basicSetCrossEndUsage(newCrossEndUsage, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.WHILE_LOOP_NODE__CROSS_END_USAGE, newCrossEndUsage, newCrossEndUsage));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public boolean isIsEnd()
   {
     return isEnd;
@@ -1379,8 +1316,6 @@ public class WhileLoopNodeImpl extends ActionNodeElementsImpl implements WhileLo
   {
     switch (featureID)
     {
-      case SysMLOCPackage.WHILE_LOOP_NODE__CROSS_END_USAGE:
-        return basicSetCrossEndUsage(null, msgs);
       case SysMLOCPackage.WHILE_LOOP_NODE__ACTION_PARAMETER_END:
         return ((InternalEList<?>)getActionParameterEnd()).basicRemove(otherEnd, msgs);
       case SysMLOCPackage.WHILE_LOOP_NODE__ELEMENTS:
@@ -1409,8 +1344,6 @@ public class WhileLoopNodeImpl extends ActionNodeElementsImpl implements WhileLo
         return getVisibility();
       case SysMLOCPackage.WHILE_LOOP_NODE__IS_VARIANT:
         return isIsVariant();
-      case SysMLOCPackage.WHILE_LOOP_NODE__CROSS_END_USAGE:
-        return getCrossEndUsage();
       case SysMLOCPackage.WHILE_LOOP_NODE__IS_END:
         return isIsEnd();
       case SysMLOCPackage.WHILE_LOOP_NODE__IS_ABSTRACT:
@@ -1490,9 +1423,6 @@ public class WhileLoopNodeImpl extends ActionNodeElementsImpl implements WhileLo
         return;
       case SysMLOCPackage.WHILE_LOOP_NODE__IS_VARIANT:
         setIsVariant((Boolean)newValue);
-        return;
-      case SysMLOCPackage.WHILE_LOOP_NODE__CROSS_END_USAGE:
-        setCrossEndUsage((CrossEndUsage)newValue);
         return;
       case SysMLOCPackage.WHILE_LOOP_NODE__IS_END:
         setIsEnd((Boolean)newValue);
@@ -1606,9 +1536,6 @@ public class WhileLoopNodeImpl extends ActionNodeElementsImpl implements WhileLo
       case SysMLOCPackage.WHILE_LOOP_NODE__IS_VARIANT:
         setIsVariant(IS_VARIANT_EDEFAULT);
         return;
-      case SysMLOCPackage.WHILE_LOOP_NODE__CROSS_END_USAGE:
-        setCrossEndUsage((CrossEndUsage)null);
-        return;
       case SysMLOCPackage.WHILE_LOOP_NODE__IS_END:
         setIsEnd(IS_END_EDEFAULT);
         return;
@@ -1708,8 +1635,6 @@ public class WhileLoopNodeImpl extends ActionNodeElementsImpl implements WhileLo
         return visibility != VISIBILITY_EDEFAULT;
       case SysMLOCPackage.WHILE_LOOP_NODE__IS_VARIANT:
         return isVariant != IS_VARIANT_EDEFAULT;
-      case SysMLOCPackage.WHILE_LOOP_NODE__CROSS_END_USAGE:
-        return crossEndUsage != null;
       case SysMLOCPackage.WHILE_LOOP_NODE__IS_END:
         return isEnd != IS_END_EDEFAULT;
       case SysMLOCPackage.WHILE_LOOP_NODE__IS_ABSTRACT:
@@ -1788,14 +1713,6 @@ public class WhileLoopNodeImpl extends ActionNodeElementsImpl implements WhileLo
       {
         case SysMLOCPackage.WHILE_LOOP_NODE__VISIBILITY: return SysMLOCPackage.MEMBER_PREFIX__VISIBILITY;
         case SysMLOCPackage.WHILE_LOOP_NODE__IS_VARIANT: return SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT;
-        default: return -1;
-      }
-    }
-    if (baseClass == CrossEndUsagePrefix.class)
-    {
-      switch (derivedFeatureID)
-      {
-        case SysMLOCPackage.WHILE_LOOP_NODE__CROSS_END_USAGE: return SysMLOCPackage.CROSS_END_USAGE_PREFIX__CROSS_END_USAGE;
         default: return -1;
       }
     }
@@ -2001,14 +1918,6 @@ public class WhileLoopNodeImpl extends ActionNodeElementsImpl implements WhileLo
       {
         case SysMLOCPackage.MEMBER_PREFIX__VISIBILITY: return SysMLOCPackage.WHILE_LOOP_NODE__VISIBILITY;
         case SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT: return SysMLOCPackage.WHILE_LOOP_NODE__IS_VARIANT;
-        default: return -1;
-      }
-    }
-    if (baseClass == CrossEndUsagePrefix.class)
-    {
-      switch (baseFeatureID)
-      {
-        case SysMLOCPackage.CROSS_END_USAGE_PREFIX__CROSS_END_USAGE: return SysMLOCPackage.WHILE_LOOP_NODE__CROSS_END_USAGE;
         default: return -1;
       }
     }

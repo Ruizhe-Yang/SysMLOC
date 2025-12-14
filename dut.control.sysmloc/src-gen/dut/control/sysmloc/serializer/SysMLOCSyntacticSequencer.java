@@ -596,7 +596,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     ThenMultiHigh=MultiplicityExpression ']' 'action' (ambiguity) (rule end)
 	 *     ThenMultiLow=MultiplicityExpression ']' 'action' (ambiguity) (rule end)
-	 *     crossEndUsage=CrossEndUsage 'action' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -706,8 +705,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ThenMultiHigh=MultiplicityExpression ']' (ambiguity) connectorPart+=ConnectorEnd
 	 *     ThenMultiLow=MultiplicityExpression ']' (ambiguity) '(' connectorPart+=ConnectorEnd
 	 *     ThenMultiLow=MultiplicityExpression ']' (ambiguity) connectorPart+=ConnectorEnd
-	 *     crossEndUsage=CrossEndUsage (ambiguity) '(' connectorPart+=ConnectorEnd
-	 *     crossEndUsage=CrossEndUsage (ambiguity) connectorPart+=ConnectorEnd
 	 *     direction=FeatureDirection (ambiguity) '(' connectorPart+=ConnectorEnd
 	 *     direction=FeatureDirection (ambiguity) connectorPart+=ConnectorEnd
 	 *     isAbstract?='abstract' (ambiguity) '(' connectorPart+=ConnectorEnd
@@ -756,7 +753,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ThenMultiLow=MultiplicityExpression ']' 'allocation' (ambiguity) (rule end)
 	 *     connectorPart+=ConnectorEnd ')' (ambiguity) (rule end)
 	 *     connectorPart+=ConnectorEnd (ambiguity) (rule end)
-	 *     crossEndUsage=CrossEndUsage 'allocation' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -821,7 +817,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     ThenMultiHigh=MultiplicityExpression ']' 'analysis' (ambiguity) (rule end)
 	 *     ThenMultiLow=MultiplicityExpression ']' 'analysis' (ambiguity) (rule end)
-	 *     crossEndUsage=CrossEndUsage 'analysis' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -864,7 +859,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     ThenMultiHigh=MultiplicityExpression ']' 'assert' 'constraint' (ambiguity) (rule end)
 	 *     ThenMultiLow=MultiplicityExpression ']' 'assert' 'constraint' (ambiguity) (rule end)
-	 *     crossEndUsage=CrossEndUsage 'assert' 'constraint' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -943,7 +937,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) 'attribute' (ambiguity) (rule start)
 	 *     MultiHigh=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
-	 *     crossEndUsage=CrossEndUsage 'attribute' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -979,7 +972,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) 'bind' connectorPart+=ConnectorEnd
-	 *     crossEndUsage=CrossEndUsage (ambiguity) 'bind' connectorPart+=ConnectorEnd
 	 *     direction=FeatureDirection (ambiguity) 'bind' connectorPart+=ConnectorEnd
 	 *     isAbstract?='abstract' (ambiguity) 'bind' connectorPart+=ConnectorEnd
 	 *     isConstant?='constant' (ambiguity) 'bind' connectorPart+=ConnectorEnd
@@ -1046,7 +1038,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     ThenMultiHigh=MultiplicityExpression ']' 'calc' (ambiguity) (rule end)
 	 *     ThenMultiLow=MultiplicityExpression ']' 'calc' (ambiguity) (rule end)
-	 *     crossEndUsage=CrossEndUsage 'calc' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -1112,7 +1103,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     ThenMultiHigh=MultiplicityExpression ']' 'case' (ambiguity) (rule end)
 	 *     ThenMultiLow=MultiplicityExpression ']' 'case' (ambiguity) (rule end)
-	 *     crossEndUsage=CrossEndUsage 'case' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -1218,7 +1208,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     ThenMultiHigh=MultiplicityExpression ']' 'concern' (ambiguity) (rule end)
 	 *     ThenMultiLow=MultiplicityExpression ']' 'concern' (ambiguity) (rule end)
-	 *     crossEndUsage=CrossEndUsage 'concern' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -1285,8 +1274,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ThenMultiHigh=MultiplicityExpression ']' (ambiguity) connectorPart+=ConnectorEnd
 	 *     ThenMultiLow=MultiplicityExpression ']' (ambiguity) '(' connectorPart+=ConnectorEnd
 	 *     ThenMultiLow=MultiplicityExpression ']' (ambiguity) connectorPart+=ConnectorEnd
-	 *     crossEndUsage=CrossEndUsage (ambiguity) '(' connectorPart+=ConnectorEnd
-	 *     crossEndUsage=CrossEndUsage (ambiguity) connectorPart+=ConnectorEnd
 	 *     direction=FeatureDirection (ambiguity) '(' connectorPart+=ConnectorEnd
 	 *     direction=FeatureDirection (ambiguity) connectorPart+=ConnectorEnd
 	 *     isAbstract?='abstract' (ambiguity) '(' connectorPart+=ConnectorEnd
@@ -1335,7 +1322,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ThenMultiLow=MultiplicityExpression ']' 'connection' (ambiguity) (rule end)
 	 *     connectorPart+=ConnectorEnd ')' (ambiguity) (rule end)
 	 *     connectorPart+=ConnectorEnd (ambiguity) (rule end)
-	 *     crossEndUsage=CrossEndUsage 'connection' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -1415,7 +1401,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     ThenMultiHigh=MultiplicityExpression ']' 'constraint' (ambiguity) (rule end)
 	 *     ThenMultiLow=MultiplicityExpression ']' 'constraint' (ambiguity) (rule end)
-	 *     crossEndUsage=CrossEndUsage 'constraint' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -1708,7 +1693,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ThenMultiHigh=MultiplicityExpression ']' 'else' (ambiguity) (rule end)
 	 *     ThenMultiLow=MultiplicityExpression ']' 'else' (ambiguity) (rule end)
 	 *     actionParameterEnd+=ActionParameterEnd (ambiguity) (rule end)
-	 *     crossEndUsage=CrossEndUsage 'else' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName 'else' (ambiguity) (rule end)
 	 *     declaredName=Name 'else' (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' 'else' (ambiguity) (rule end)
@@ -1887,7 +1871,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) 'enum' (ambiguity) (rule start)
 	 *     MultiHigh=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
-	 *     crossEndUsage=CrossEndUsage 'enum' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -1927,7 +1910,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     ThenMultiHigh=MultiplicityExpression ']' 'event' 'occurrence' (ambiguity) (rule end)
 	 *     ThenMultiLow=MultiplicityExpression ']' 'event' 'occurrence' (ambiguity) (rule end)
-	 *     crossEndUsage=CrossEndUsage 'event' 'occurrence' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -1971,7 +1953,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     ThenMultiHigh=MultiplicityExpression ']' 'exhibit' 'state' (ambiguity) (rule end)
 	 *     ThenMultiLow=MultiplicityExpression ']' 'exhibit' 'state' (ambiguity) (rule end)
-	 *     crossEndUsage=CrossEndUsage 'exhibit' 'state' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -2193,40 +2174,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ThenMultiLow=MultiplicityExpression ']' 'verification' (ambiguity) references+=FeatureChainName
 	 *     ThenMultiLow=MultiplicityExpression ']' 'view' (ambiguity) references+=FeatureChainName
 	 *     ThenMultiLow=MultiplicityExpression ']' 'viewpoint' (ambiguity) references+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'action' (ambiguity) references+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'allocation' (ambiguity) references+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'analysis' (ambiguity) references+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'assert' 'constraint' (ambiguity) references+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'assert'? 'satisfy' 'requirement' (ambiguity) references+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'attribute' (ambiguity) references+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'binding' (ambiguity) references+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'calc' (ambiguity) references+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'case' (ambiguity) references+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'concern' (ambiguity) references+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'connection' (ambiguity) references+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'constraint' (ambiguity) references+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'enum' (ambiguity) references+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'event' 'occurrence' (ambiguity) references+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'exhibit' 'state' (ambiguity) references+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'flow' (ambiguity) references+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'include' 'use' 'case' (ambiguity) references+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'interface' (ambiguity) references+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'item' (ambiguity) references+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'message' (ambiguity) references+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'occurrence' (ambiguity) references+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'part' (ambiguity) references+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'perform' 'action' (ambiguity) references+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'port' (ambiguity) references+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'ref' (ambiguity) references+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'rendering' (ambiguity) references+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'requirement' (ambiguity) references+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'state' (ambiguity) references+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'succession' 'flow' (ambiguity) references+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'succession' (ambiguity) references+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'use' 'case' (ambiguity) references+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'verification' (ambiguity) references+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'view' (ambiguity) references+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'viewpoint' (ambiguity) references+=FeatureChainName
 	 *     crosses+=FeatureChainName (ambiguity) references+=FeatureChainName
 	 *     declaredName=Name (ambiguity) references+=FeatureChainName
 	 *     declaredShortName=Name '&gt;' (ambiguity) references+=FeatureChainName
@@ -2852,40 +2799,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ThenMultiLow=MultiplicityExpression ']' 'verification' (ambiguity) redefinitions+=FeatureChainName
 	 *     ThenMultiLow=MultiplicityExpression ']' 'view' (ambiguity) redefinitions+=FeatureChainName
 	 *     ThenMultiLow=MultiplicityExpression ']' 'viewpoint' (ambiguity) redefinitions+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'action' (ambiguity) redefinitions+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'allocation' (ambiguity) redefinitions+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'analysis' (ambiguity) redefinitions+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'assert' 'constraint' (ambiguity) redefinitions+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'assert'? 'satisfy' 'requirement' (ambiguity) redefinitions+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'attribute' (ambiguity) redefinitions+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'binding' (ambiguity) redefinitions+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'calc' (ambiguity) redefinitions+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'case' (ambiguity) redefinitions+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'concern' (ambiguity) redefinitions+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'connection' (ambiguity) redefinitions+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'constraint' (ambiguity) redefinitions+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'enum' (ambiguity) redefinitions+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'event' 'occurrence' (ambiguity) redefinitions+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'exhibit' 'state' (ambiguity) redefinitions+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'flow' (ambiguity) redefinitions+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'include' 'use' 'case' (ambiguity) redefinitions+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'interface' (ambiguity) redefinitions+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'item' (ambiguity) redefinitions+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'message' (ambiguity) redefinitions+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'occurrence' (ambiguity) redefinitions+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'part' (ambiguity) redefinitions+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'perform' 'action' (ambiguity) redefinitions+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'port' (ambiguity) redefinitions+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'ref' (ambiguity) redefinitions+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'rendering' (ambiguity) redefinitions+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'requirement' (ambiguity) redefinitions+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'state' (ambiguity) redefinitions+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'succession' 'flow' (ambiguity) redefinitions+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'succession' (ambiguity) redefinitions+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'use' 'case' (ambiguity) redefinitions+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'verification' (ambiguity) redefinitions+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'view' (ambiguity) redefinitions+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'viewpoint' (ambiguity) redefinitions+=FeatureChainName
 	 *     crosses+=FeatureChainName (ambiguity) redefinitions+=FeatureChainName
 	 *     declaredName=Name (ambiguity) redefinitions+=FeatureChainName
 	 *     declaredShortName=Name '&gt;' (ambiguity) redefinitions+=FeatureChainName
@@ -3511,40 +3424,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ThenMultiLow=MultiplicityExpression ']' 'verification' (ambiguity) subsetting+=FeatureChainName
 	 *     ThenMultiLow=MultiplicityExpression ']' 'view' (ambiguity) subsetting+=FeatureChainName
 	 *     ThenMultiLow=MultiplicityExpression ']' 'viewpoint' (ambiguity) subsetting+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'action' (ambiguity) subsetting+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'allocation' (ambiguity) subsetting+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'analysis' (ambiguity) subsetting+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'assert' 'constraint' (ambiguity) subsetting+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'assert'? 'satisfy' 'requirement' (ambiguity) subsetting+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'attribute' (ambiguity) subsetting+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'binding' (ambiguity) subsetting+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'calc' (ambiguity) subsetting+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'case' (ambiguity) subsetting+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'concern' (ambiguity) subsetting+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'connection' (ambiguity) subsetting+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'constraint' (ambiguity) subsetting+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'enum' (ambiguity) subsetting+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'event' 'occurrence' (ambiguity) subsetting+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'exhibit' 'state' (ambiguity) subsetting+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'flow' (ambiguity) subsetting+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'include' 'use' 'case' (ambiguity) subsetting+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'interface' (ambiguity) subsetting+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'item' (ambiguity) subsetting+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'message' (ambiguity) subsetting+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'occurrence' (ambiguity) subsetting+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'part' (ambiguity) subsetting+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'perform' 'action' (ambiguity) subsetting+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'port' (ambiguity) subsetting+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'ref' (ambiguity) subsetting+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'rendering' (ambiguity) subsetting+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'requirement' (ambiguity) subsetting+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'state' (ambiguity) subsetting+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'succession' 'flow' (ambiguity) subsetting+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'succession' (ambiguity) subsetting+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'use' 'case' (ambiguity) subsetting+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'verification' (ambiguity) subsetting+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'view' (ambiguity) subsetting+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'viewpoint' (ambiguity) subsetting+=FeatureChainName
 	 *     crosses+=FeatureChainName (ambiguity) subsetting+=FeatureChainName
 	 *     declaredName=Name (ambiguity) subsetting+=FeatureChainName
 	 *     declaredShortName=Name '&gt;' (ambiguity) subsetting+=FeatureChainName
@@ -4170,40 +4049,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ThenMultiLow=MultiplicityExpression ']' 'verification' (ambiguity) typings+=FeatureTypingName
 	 *     ThenMultiLow=MultiplicityExpression ']' 'view' (ambiguity) typings+=FeatureTypingName
 	 *     ThenMultiLow=MultiplicityExpression ']' 'viewpoint' (ambiguity) typings+=FeatureTypingName
-	 *     crossEndUsage=CrossEndUsage 'action' (ambiguity) typings+=FeatureTypingName
-	 *     crossEndUsage=CrossEndUsage 'allocation' (ambiguity) typings+=FeatureTypingName
-	 *     crossEndUsage=CrossEndUsage 'analysis' (ambiguity) typings+=FeatureTypingName
-	 *     crossEndUsage=CrossEndUsage 'assert' 'constraint' (ambiguity) typings+=FeatureTypingName
-	 *     crossEndUsage=CrossEndUsage 'assert'? 'satisfy' 'requirement' (ambiguity) typings+=FeatureTypingName
-	 *     crossEndUsage=CrossEndUsage 'attribute' (ambiguity) typings+=FeatureTypingName
-	 *     crossEndUsage=CrossEndUsage 'binding' (ambiguity) typings+=FeatureTypingName
-	 *     crossEndUsage=CrossEndUsage 'calc' (ambiguity) typings+=FeatureTypingName
-	 *     crossEndUsage=CrossEndUsage 'case' (ambiguity) typings+=FeatureTypingName
-	 *     crossEndUsage=CrossEndUsage 'concern' (ambiguity) typings+=FeatureTypingName
-	 *     crossEndUsage=CrossEndUsage 'connection' (ambiguity) typings+=FeatureTypingName
-	 *     crossEndUsage=CrossEndUsage 'constraint' (ambiguity) typings+=FeatureTypingName
-	 *     crossEndUsage=CrossEndUsage 'enum' (ambiguity) typings+=FeatureTypingName
-	 *     crossEndUsage=CrossEndUsage 'event' 'occurrence' (ambiguity) typings+=FeatureTypingName
-	 *     crossEndUsage=CrossEndUsage 'exhibit' 'state' (ambiguity) typings+=FeatureTypingName
-	 *     crossEndUsage=CrossEndUsage 'flow' (ambiguity) typings+=FeatureTypingName
-	 *     crossEndUsage=CrossEndUsage 'include' 'use' 'case' (ambiguity) typings+=FeatureTypingName
-	 *     crossEndUsage=CrossEndUsage 'interface' (ambiguity) typings+=FeatureTypingName
-	 *     crossEndUsage=CrossEndUsage 'item' (ambiguity) typings+=FeatureTypingName
-	 *     crossEndUsage=CrossEndUsage 'message' (ambiguity) typings+=FeatureTypingName
-	 *     crossEndUsage=CrossEndUsage 'occurrence' (ambiguity) typings+=FeatureTypingName
-	 *     crossEndUsage=CrossEndUsage 'part' (ambiguity) typings+=FeatureTypingName
-	 *     crossEndUsage=CrossEndUsage 'perform' 'action' (ambiguity) typings+=FeatureTypingName
-	 *     crossEndUsage=CrossEndUsage 'port' (ambiguity) typings+=FeatureTypingName
-	 *     crossEndUsage=CrossEndUsage 'ref' (ambiguity) typings+=FeatureTypingName
-	 *     crossEndUsage=CrossEndUsage 'rendering' (ambiguity) typings+=FeatureTypingName
-	 *     crossEndUsage=CrossEndUsage 'requirement' (ambiguity) typings+=FeatureTypingName
-	 *     crossEndUsage=CrossEndUsage 'state' (ambiguity) typings+=FeatureTypingName
-	 *     crossEndUsage=CrossEndUsage 'succession' 'flow' (ambiguity) typings+=FeatureTypingName
-	 *     crossEndUsage=CrossEndUsage 'succession' (ambiguity) typings+=FeatureTypingName
-	 *     crossEndUsage=CrossEndUsage 'use' 'case' (ambiguity) typings+=FeatureTypingName
-	 *     crossEndUsage=CrossEndUsage 'verification' (ambiguity) typings+=FeatureTypingName
-	 *     crossEndUsage=CrossEndUsage 'view' (ambiguity) typings+=FeatureTypingName
-	 *     crossEndUsage=CrossEndUsage 'viewpoint' (ambiguity) typings+=FeatureTypingName
 	 *     crosses+=FeatureChainName (ambiguity) typings+=FeatureTypingName
 	 *     declaredName=Name (ambiguity) typings+=FeatureTypingName
 	 *     declaredShortName=Name '&gt;' (ambiguity) typings+=FeatureTypingName
@@ -4829,40 +4674,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ThenMultiLow=MultiplicityExpression ']' 'verification' (ambiguity) crosses+=FeatureChainName
 	 *     ThenMultiLow=MultiplicityExpression ']' 'view' (ambiguity) crosses+=FeatureChainName
 	 *     ThenMultiLow=MultiplicityExpression ']' 'viewpoint' (ambiguity) crosses+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'action' (ambiguity) crosses+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'allocation' (ambiguity) crosses+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'analysis' (ambiguity) crosses+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'assert' 'constraint' (ambiguity) crosses+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'assert'? 'satisfy' 'requirement' (ambiguity) crosses+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'attribute' (ambiguity) crosses+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'binding' (ambiguity) crosses+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'calc' (ambiguity) crosses+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'case' (ambiguity) crosses+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'concern' (ambiguity) crosses+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'connection' (ambiguity) crosses+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'constraint' (ambiguity) crosses+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'enum' (ambiguity) crosses+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'event' 'occurrence' (ambiguity) crosses+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'exhibit' 'state' (ambiguity) crosses+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'flow' (ambiguity) crosses+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'include' 'use' 'case' (ambiguity) crosses+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'interface' (ambiguity) crosses+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'item' (ambiguity) crosses+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'message' (ambiguity) crosses+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'occurrence' (ambiguity) crosses+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'part' (ambiguity) crosses+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'perform' 'action' (ambiguity) crosses+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'port' (ambiguity) crosses+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'ref' (ambiguity) crosses+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'rendering' (ambiguity) crosses+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'requirement' (ambiguity) crosses+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'state' (ambiguity) crosses+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'succession' 'flow' (ambiguity) crosses+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'succession' (ambiguity) crosses+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'use' 'case' (ambiguity) crosses+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'verification' (ambiguity) crosses+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'view' (ambiguity) crosses+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'viewpoint' (ambiguity) crosses+=FeatureChainName
 	 *     crosses+=FeatureChainName (ambiguity) crosses+=FeatureChainName
 	 *     declaredName=Name (ambiguity) crosses+=FeatureChainName
 	 *     declaredShortName=Name '&gt;' (ambiguity) crosses+=FeatureChainName
@@ -5424,7 +5235,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     MultiLow=MultiplicityExpression ']' (ambiguity) FlowEnd+=FeatureChainName
 	 *     ThenMultiHigh=MultiplicityExpression ']' 'flow' (ambiguity) FlowEnd+=FeatureChainName
 	 *     ThenMultiLow=MultiplicityExpression ']' 'flow' (ambiguity) FlowEnd+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'flow' (ambiguity) FlowEnd+=FeatureChainName
 	 *     crosses+=FeatureChainName (ambiguity) FlowEnd+=FeatureChainName
 	 *     declaredName=Name (ambiguity) FlowEnd+=FeatureChainName
 	 *     declaredShortName=Name '&gt;' (ambiguity) FlowEnd+=FeatureChainName
@@ -5469,7 +5279,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     ThenMultiHigh=MultiplicityExpression ']' 'flow' (ambiguity) (rule end)
 	 *     ThenMultiLow=MultiplicityExpression ']' 'flow' (ambiguity) (rule end)
-	 *     crossEndUsage=CrossEndUsage 'flow' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -5587,7 +5396,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     ThenMultiHigh=MultiplicityExpression ']' 'include' 'use' 'case' (ambiguity) (rule end)
 	 *     ThenMultiLow=MultiplicityExpression ']' 'include' 'use' 'case' (ambiguity) (rule end)
-	 *     crossEndUsage=CrossEndUsage 'include' 'use' 'case' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -5714,8 +5522,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ThenMultiHigh=MultiplicityExpression ']' 'interface' (ambiguity) connectorPart+=ConnectorEnd
 	 *     ThenMultiLow=MultiplicityExpression ']' 'interface' (ambiguity) '(' connectorPart+=ConnectorEnd
 	 *     ThenMultiLow=MultiplicityExpression ']' 'interface' (ambiguity) connectorPart+=ConnectorEnd
-	 *     crossEndUsage=CrossEndUsage 'interface' (ambiguity) '(' connectorPart+=ConnectorEnd
-	 *     crossEndUsage=CrossEndUsage 'interface' (ambiguity) connectorPart+=ConnectorEnd
 	 *     direction=FeatureDirection 'interface' (ambiguity) '(' connectorPart+=ConnectorEnd
 	 *     direction=FeatureDirection 'interface' (ambiguity) connectorPart+=ConnectorEnd
 	 *     isAbstract?='abstract' 'interface' (ambiguity) '(' connectorPart+=ConnectorEnd
@@ -5764,7 +5570,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ThenMultiLow=MultiplicityExpression ']' 'interface' (ambiguity) (rule end)
 	 *     connectorPart+=ConnectorEnd ')' (ambiguity) (rule end)
 	 *     connectorPart+=ConnectorEnd (ambiguity) (rule end)
-	 *     crossEndUsage=CrossEndUsage 'interface' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -5829,7 +5634,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     ThenMultiHigh=MultiplicityExpression ']' 'item' (ambiguity) (rule end)
 	 *     ThenMultiLow=MultiplicityExpression ']' 'item' (ambiguity) (rule end)
-	 *     crossEndUsage=CrossEndUsage 'item' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -5889,7 +5693,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     MultiLow=MultiplicityExpression ']' (ambiguity) FlowEnd+=FeatureChainName
 	 *     ThenMultiHigh=MultiplicityExpression ']' 'message' (ambiguity) FlowEnd+=FeatureChainName
 	 *     ThenMultiLow=MultiplicityExpression ']' 'message' (ambiguity) FlowEnd+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'message' (ambiguity) FlowEnd+=FeatureChainName
 	 *     crosses+=FeatureChainName (ambiguity) FlowEnd+=FeatureChainName
 	 *     declaredName=Name (ambiguity) FlowEnd+=FeatureChainName
 	 *     declaredShortName=Name '&gt;' (ambiguity) FlowEnd+=FeatureChainName
@@ -5934,7 +5737,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     ThenMultiHigh=MultiplicityExpression ']' 'message' (ambiguity) (rule end)
 	 *     ThenMultiLow=MultiplicityExpression ']' 'message' (ambiguity) (rule end)
-	 *     crossEndUsage=CrossEndUsage 'message' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -6115,7 +5917,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     ThenMultiHigh=MultiplicityExpression ']' 'occurrence' (ambiguity) (rule end)
 	 *     ThenMultiLow=MultiplicityExpression ']' 'occurrence' (ambiguity) (rule end)
-	 *     crossEndUsage=CrossEndUsage 'occurrence' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -6195,7 +5996,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     ThenMultiHigh=MultiplicityExpression ']' 'part' (ambiguity) (rule end)
 	 *     ThenMultiLow=MultiplicityExpression ']' 'part' (ambiguity) (rule end)
-	 *     crossEndUsage=CrossEndUsage 'part' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -6238,7 +6038,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     ThenMultiHigh=MultiplicityExpression ']' 'perform' 'action' (ambiguity) (rule end)
 	 *     ThenMultiLow=MultiplicityExpression ']' 'perform' 'action' (ambiguity) (rule end)
-	 *     crossEndUsage=CrossEndUsage 'perform' 'action' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -6304,7 +6103,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     ThenMultiHigh=MultiplicityExpression ']' 'port' (ambiguity) (rule end)
 	 *     ThenMultiLow=MultiplicityExpression ']' 'port' (ambiguity) (rule end)
-	 *     crossEndUsage=CrossEndUsage 'port' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -6372,7 +6170,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) 'ref' (ambiguity) (rule start)
 	 *     MultiHigh=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
-	 *     crossEndUsage=CrossEndUsage 'ref' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -6452,7 +6249,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     ThenMultiHigh=MultiplicityExpression ']' 'rendering' (ambiguity) (rule end)
 	 *     ThenMultiLow=MultiplicityExpression ']' 'rendering' (ambiguity) (rule end)
-	 *     crossEndUsage=CrossEndUsage 'rendering' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -6546,7 +6342,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     ThenMultiHigh=MultiplicityExpression ']' 'requirement' (ambiguity) (rule end)
 	 *     ThenMultiLow=MultiplicityExpression ']' 'requirement' (ambiguity) (rule end)
-	 *     crossEndUsage=CrossEndUsage 'requirement' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -6681,24 +6476,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ThenMultiLow=MultiplicityExpression ']' (ambiguity) 'satisfy' 'requirement' isOrdered?='ordered'
 	 *     ThenMultiLow=MultiplicityExpression ']' (ambiguity) 'satisfy' refElement=FeatureChainName
 	 *     ThenMultiLow=MultiplicityExpression ']' (ambiguity) isNegated?='not'
-	 *     crossEndUsage=CrossEndUsage (ambiguity) 'satisfy' 'requirement' '&lt;' declaredShortName=Name
-	 *     crossEndUsage=CrossEndUsage (ambiguity) 'satisfy' 'requirement' '=' valuePart=Expression
-	 *     crossEndUsage=CrossEndUsage (ambiguity) 'satisfy' 'requirement' '[' MultiLow=MultiplicityExpression
-	 *     crossEndUsage=CrossEndUsage (ambiguity) 'satisfy' 'requirement' 'by' satisfactionParameter=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage (ambiguity) 'satisfy' 'requirement' '{' elements+=RequirementBodyElement
-	 *     crossEndUsage=CrossEndUsage (ambiguity) 'satisfy' 'requirement' (':' | ('defined' 'by')) typings+=FeatureTypingName
-	 *     crossEndUsage=CrossEndUsage (ambiguity) 'satisfy' 'requirement' ('::&gt;' | 'references') references+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage (ambiguity) 'satisfy' 'requirement' (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage (ambiguity) 'satisfy' 'requirement' (':&gt;&gt;' | 'redefines') redefinitions+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage (ambiguity) 'satisfy' 'requirement' (';' | ('{' '}')) (rule end)
-	 *     crossEndUsage=CrossEndUsage (ambiguity) 'satisfy' 'requirement' ('=&gt;' | 'crosses') crosses+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage (ambiguity) 'satisfy' 'requirement' declaredName=Name
-	 *     crossEndUsage=CrossEndUsage (ambiguity) 'satisfy' 'requirement' isDefault?='default'
-	 *     crossEndUsage=CrossEndUsage (ambiguity) 'satisfy' 'requirement' isInitial?=':='
-	 *     crossEndUsage=CrossEndUsage (ambiguity) 'satisfy' 'requirement' isNonunique?='nonunique'
-	 *     crossEndUsage=CrossEndUsage (ambiguity) 'satisfy' 'requirement' isOrdered?='ordered'
-	 *     crossEndUsage=CrossEndUsage (ambiguity) 'satisfy' refElement=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage (ambiguity) isNegated?='not'
 	 *     direction=FeatureDirection (ambiguity) 'satisfy' 'requirement' '&lt;' declaredShortName=Name
 	 *     direction=FeatureDirection (ambiguity) 'satisfy' 'requirement' '=' valuePart=Expression
 	 *     direction=FeatureDirection (ambiguity) 'satisfy' 'requirement' '[' MultiLow=MultiplicityExpression
@@ -6969,7 +6746,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     ThenMultiHigh=MultiplicityExpression ']' 'assert'? 'satisfy' 'requirement' (ambiguity) (rule end)
 	 *     ThenMultiLow=MultiplicityExpression ']' 'assert'? 'satisfy' 'requirement' (ambiguity) (rule end)
-	 *     crossEndUsage=CrossEndUsage 'assert'? 'satisfy' 'requirement' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -7083,7 +6859,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     ThenMultiHigh=MultiplicityExpression ']' 'state' (ambiguity) (rule end)
 	 *     ThenMultiLow=MultiplicityExpression ']' 'state' (ambiguity) (rule end)
-	 *     crossEndUsage=CrossEndUsage 'state' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -7165,7 +6940,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) 'first' connectorPart+=ConnectorEnd
-	 *     crossEndUsage=CrossEndUsage (ambiguity) 'first' connectorPart+=ConnectorEnd
 	 *     direction=FeatureDirection (ambiguity) 'first' connectorPart+=ConnectorEnd
 	 *     isAbstract?='abstract' (ambiguity) 'first' connectorPart+=ConnectorEnd
 	 *     isConstant?='constant' (ambiguity) 'first' connectorPart+=ConnectorEnd
@@ -7195,7 +6969,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     MultiLow=MultiplicityExpression ']' (ambiguity) FlowEnd+=FeatureChainName
 	 *     ThenMultiHigh=MultiplicityExpression ']' 'succession' 'flow' (ambiguity) FlowEnd+=FeatureChainName
 	 *     ThenMultiLow=MultiplicityExpression ']' 'succession' 'flow' (ambiguity) FlowEnd+=FeatureChainName
-	 *     crossEndUsage=CrossEndUsage 'succession' 'flow' (ambiguity) FlowEnd+=FeatureChainName
 	 *     crosses+=FeatureChainName (ambiguity) FlowEnd+=FeatureChainName
 	 *     declaredName=Name (ambiguity) FlowEnd+=FeatureChainName
 	 *     declaredShortName=Name '&gt;' (ambiguity) FlowEnd+=FeatureChainName
@@ -7240,7 +7013,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     ThenMultiHigh=MultiplicityExpression ']' 'succession' 'flow' (ambiguity) (rule end)
 	 *     ThenMultiLow=MultiplicityExpression ']' 'succession' 'flow' (ambiguity) (rule end)
-	 *     crossEndUsage=CrossEndUsage 'succession' 'flow' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -7437,7 +7209,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     ThenMultiHigh=MultiplicityExpression ']' 'use' 'case' (ambiguity) (rule end)
 	 *     ThenMultiLow=MultiplicityExpression ']' 'use' 'case' (ambiguity) (rule end)
-	 *     crossEndUsage=CrossEndUsage 'use' 'case' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -7503,7 +7274,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     ThenMultiHigh=MultiplicityExpression ']' 'verification' (ambiguity) (rule end)
 	 *     ThenMultiLow=MultiplicityExpression ']' 'verification' (ambiguity) (rule end)
-	 *     crossEndUsage=CrossEndUsage 'verification' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -7599,7 +7369,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     ThenMultiHigh=MultiplicityExpression ']' 'view' (ambiguity) (rule end)
 	 *     ThenMultiLow=MultiplicityExpression ']' 'view' (ambiguity) (rule end)
-	 *     crossEndUsage=CrossEndUsage 'view' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
@@ -7665,7 +7434,6 @@ public class SysMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
 	 *     ThenMultiHigh=MultiplicityExpression ']' 'viewpoint' (ambiguity) (rule end)
 	 *     ThenMultiLow=MultiplicityExpression ']' 'viewpoint' (ambiguity) (rule end)
-	 *     crossEndUsage=CrossEndUsage 'viewpoint' (ambiguity) (rule end)
 	 *     crosses+=FeatureChainName (ambiguity) (rule end)
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
