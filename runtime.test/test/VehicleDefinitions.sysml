@@ -4,7 +4,7 @@ package VehicleDefinitions {
 	 * Example vehicle definitions model.
 	 */
 
-	private import ScalarValues::*;
+	private import ScalarValues::*; 
 	private import Quantities::*;
 	private import MeasurementReferences::*;
 	private import ISQ::*;

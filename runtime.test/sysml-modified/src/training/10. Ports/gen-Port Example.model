@@ -31,7 +31,7 @@
       </elements>
     </elements>
     <elements xsi:type="sysMLOC:PartDefinition" declaredName="Engine">
-      <elements xsi:type="sysMLOC:PortUsage" declaredName="engineFuelPort">
+      <elements xsi:type="sysMLOC:PortUsage" declaredName="engineFuelPort2222">
         <typings>FuelInPort</typings>
       </elements>
     </elements>

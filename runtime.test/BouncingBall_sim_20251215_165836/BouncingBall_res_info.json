@@ -1,0 +1,25 @@
+{"format":"Transformational debugger info","version":1,
+"info":{"name":"BouncingBall","description":""},
+"variables":{
+"h":{"comment":"Height (m)","kind":"state","type":"Real","unit":"","displayUnit":"","source":{"info":{"file":"E:/GitYang/SysMLOC/runtime.test/BouncingBall.mo","lineStart":5,"lineEnd":5,"colStart":3,"colEnd":47}}},
+"v":{"comment":"Velocity (m/s)","kind":"state","type":"Real","unit":"","displayUnit":"","source":{"info":{"file":"E:/GitYang/SysMLOC/runtime.test/BouncingBall.mo","lineStart":6,"lineEnd":6,"colStart":3,"colEnd":51}}},
+"der(h)":{"comment":"der(Height (m))","kind":"derivative","type":"Real","unit":"","displayUnit":"","source":{"info":{"file":"E:/GitYang/SysMLOC/runtime.test/BouncingBall.mo","lineStart":5,"lineEnd":5,"colStart":3,"colEnd":47}}},
+"der(v)":{"comment":"der(Velocity (m/s))","kind":"derivative","type":"Real","unit":"","displayUnit":"","source":{"info":{"file":"E:/GitYang/SysMLOC/runtime.test/BouncingBall.mo","lineStart":6,"lineEnd":6,"colStart":3,"colEnd":51}}},
+"$whenCondition1":{"comment":"h <= 0.0","kind":"discrete","type":"Boolean","unit":"","displayUnit":"","source":{"info":{"file":"E:/GitYang/SysMLOC/runtime.test/BouncingBall.mo","lineStart":12,"lineEnd":12,"colStart":5,"colEnd":22}}},
+"e":{"comment":"Coefficient of restitution","kind":"parameter","type":"Real","unit":"","displayUnit":"","source":{"info":{"file":"E:/GitYang/SysMLOC/runtime.test/BouncingBall.mo","lineStart":3,"lineEnd":3,"colStart":3,"colEnd":55}}},
+"g":{"comment":"Gravity acceleration (m/s^2)","kind":"parameter","type":"Real","unit":"","displayUnit":"","source":{"info":{"file":"E:/GitYang/SysMLOC/runtime.test/BouncingBall.mo","lineStart":2,"lineEnd":2,"colStart":3,"colEnd":57}}}
+},
+"equations":[{"eqIndex":0,"tag":"dummy"},
+{"eqIndex":1,"section":"initial","tag":"assign","defines":["v"],"uses":["$START.v"],"equation":["$START.v"],"source":{"info":{"file":"","lineStart":0,"lineEnd":0,"colStart":0,"colEnd":0}}},
+{"eqIndex":2,"tag":"alias","equation":[8],"section":"initial"},
+{"eqIndex":3,"tag":"alias","equation":[7],"section":"initial"},
+{"eqIndex":4,"section":"initial","tag":"assign","defines":["h"],"uses":["$START.h"],"equation":["$START.h"],"source":{"info":{"file":"","lineStart":0,"lineEnd":0,"colStart":0,"colEnd":0}}},
+{"eqIndex":5,"tag":"alias","equation":[6],"section":"initial"},
+{"eqIndex":6,"section":"regular","tag":"assign","defines":["$whenCondition1"],"uses":["h"],"equation":["h <= 0.0"],"source":{"info":{"file":"E:/GitYang/SysMLOC/runtime.test/BouncingBall.mo","lineStart":12,"lineEnd":12,"colStart":5,"colEnd":22}}},
+{"eqIndex":7,"section":"regular","tag":"assign","defines":["der(v)"],"uses":["g"],"equation":["-g"],"source":{"info":{"file":"E:/GitYang/SysMLOC/runtime.test/BouncingBall.mo","lineStart":9,"lineEnd":9,"colStart":3,"colEnd":14}}},
+{"eqIndex":8,"section":"regular","tag":"assign","defines":["der(h)"],"uses":["v"],"equation":["v"],"source":{"info":{"file":"E:/GitYang/SysMLOC/runtime.test/BouncingBall.mo","lineStart":8,"lineEnd":8,"colStart":3,"colEnd":13}}},
+{"eqIndex":9,"section":"regular","tag":"when","defines":["v"],"uses":["$whenCondition1","v","e"],"equation":["(-e) * v"],"source":{"info":{"file":"E:/GitYang/SysMLOC/runtime.test/BouncingBall.mo","lineStart":12,"lineEnd":12,"colStart":5,"colEnd":22}}}
+],
+"functions":[
+]
+}

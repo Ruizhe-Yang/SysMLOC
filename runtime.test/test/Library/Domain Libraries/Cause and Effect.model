@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:CodeAnnotation" body="// ===== BEGIN: CausationConnections.sysml =====&#xD;&#xA;"/>
+  <elements xsi:type="sysMLOC:LibraryPackage" declaredName="CausationConnections" isStandard="true" isLibrary="true">
+    <elements xsi:type="sysMLOC:Documentation" body="/* &#xD;&#xA;&#x9; * This package provides a library model modeling causes, effects, and causation connections &#xD;&#xA;&#x9; * between them.&#xD;&#xA;&#x9; */"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="SequenceFunctions::isEmpty"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="SequenceFunctions::size"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="SequenceFunctions::intersection"/>
+    <elements xsi:type="sysMLOC:OccurrenceUsage" isAbstract="true" declaredName="causes" MultiLow="*">
+      <elements xsi:type="sysMLOC:Documentation" body="/* Occurrences that are causes. */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:OccurrenceUsage" isAbstract="true" declaredName="effects" MultiLow="*">
+      <elements xsi:type="sysMLOC:Documentation" body="/* Occurrences that are effects. */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:ConnectionDefinition" isAbstract="true" declaredName="Multicausation">
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * A Multicausation connection models the situation in which one set of&#xD;&#xA;&#x9;&#x9; * occurrences causes another.&#xD;&#xA;&#x9;&#x9; * &#xD;&#xA;&#x9;&#x9; * To create a Multicausation connection, specialize this connection definition&#xD;&#xA;&#x9;&#x9; * adding specific end features of the relavent types. Ends representing causes&#xD;&#xA;&#x9;&#x9; * should subset 'causes', while ends representing effects should subset 'effects'.&#xD;&#xA;&#x9;&#x9; * There must be at least one cause and at least one effect.&#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:OccurrenceUsage" isAbstract="true" isConstant="true" isReference="true" declaredName="causes" MultiLow="1" MultiHigh="*">
+        <subsetting>participant</subsetting>
+        <redefinitions>causes</redefinitions>
+        <elements xsi:type="sysMLOC:Documentation" body="/* &#xD;&#xA;&#x9;&#x9;&#x9; * The causing occurrences. (Constant for each Multicausation instance.)&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:OccurrenceUsage" isAbstract="true" isConstant="true" isReference="true" declaredName="effects" MultiLow="1" MultiHigh="*">
+        <subsetting>participant</subsetting>
+        <redefinitions>effects</redefinitions>
+        <elements xsi:type="sysMLOC:Documentation" body="/* &#xD;&#xA;&#x9;&#x9;&#x9; * The effect occurrences caused by the causing occurrences. &#xD;&#xA;&#x9;&#x9;&#x9; * (Constant for each Multicausation instance.)&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:AssertConstraintUsage" visibility="private" declaredName="disjointCauseEffect">
+        <elements xsi:type="sysMLOC:Documentation" body="/* causes must be disjoint from effects. */"/>
+        <resultExpressionParameter resultExpression="isEmpty(intersection(causes, effects))"/>
+      </elements>
+      <elements xsi:type="sysMLOC:SuccessionAsUsage" visibility="private" declaredName="causalOrdering">
+        <connectorPart MultiLow="nCauses" refElement="causes.startShot"/>
+        <connectorPart MultiLow="nEffects" refElement="effects"/>
+        <elements xsi:type="sysMLOC:Documentation" body="/* All causes must exist before all effects. */"/>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="nCauses" valuePart="size(causes)"/>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="nEffects" valuePart="size(effects)"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:ConnectionUsage" isAbstract="true" declaredName="multicausations" MultiLow="*">
+      <typings>Multicausation</typings>
+      <elements xsi:type="sysMLOC:Documentation" body="/* multicausations is the base feature for Multicausation ConnectionUsages. */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:ConnectionDefinition" declaredName="Causation">
+      <superclassifiers>Multicausation</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * A Causation is a binary Multicausation in which a single cause occurrence&#xD;&#xA;&#x9;&#x9; * causes a single effect occurrence. (However, a single cause can separately&#xD;&#xA;&#x9;&#x9; * have multiple effects, and a single effect can have separate Causation&#xD;&#xA;&#x9;&#x9; * connections with multiple causes.)&#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:OccurrenceUsage" isEnd="true" declaredName="theCause">
+        <crossEndUsage MultiLow="*" declaredName="theCauses"/>
+        <subsetting>causes</subsetting>
+        <redefinitions>source</redefinitions>
+        <elements xsi:type="sysMLOC:Documentation" body="/* The single causing occurrence. */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:OccurrenceUsage" isEnd="true" declaredName="theEffect">
+        <crossEndUsage MultiLow="*" declaredName="theEffects"/>
+        <subsetting>effects</subsetting>
+        <redefinitions>target</redefinitions>
+        <elements xsi:type="sysMLOC:Documentation" body="/* The single effect occurrence resulting from the cause. */"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:ConnectionUsage" isAbstract="true" declaredName="causations" MultiLow="*">
+      <typings>Causation</typings>
+      <subsetting>multicausations</subsetting>
+      <elements xsi:type="sysMLOC:Documentation" body="/* causations is the base feature for Causation ConnectionUsages. */"/>
+    </elements>
+  </elements>
+  <elements xsi:type="sysMLOC:CodeAnnotation" body="// ===== END: CausationConnections.sysml =====&#xD;&#xA;"/>
+  <elements xsi:type="sysMLOC:CodeAnnotation" body="// ===== BEGIN: CauseAndEffect.sysml =====&#xD;&#xA;"/>
+  <elements xsi:type="sysMLOC:LibraryPackage" declaredName="CauseAndEffect" isStandard="true" isLibrary="true">
+    <elements xsi:type="sysMLOC:Documentation" body="/* This package provides language-extension metadata for cause-effect modeling. */"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="CausationConnections" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Metaobjects::SemanticMetadata"/>
+    <elements xsi:type="sysMLOC:MetadataDefinition" declaredShortName="cause" declaredName="CauseMetadata">
+      <superclassifiers>SemanticMetadata</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * CauseMetadata identifies a usage as being a cause occurrence.&#xD;&#xA;&#x9;&#x9; * It is intended to be used to tag the cause ends of a Multicausation.&#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:ReferenceUsage">
+        <typings>SysML::Usage</typings>
+        <redefinitions>annotatedElement</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:ReferenceUsage" valuePart="causes as SysML::Usage">
+        <redefinitions>baseType</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:MetadataDefinition" declaredShortName="effect" declaredName="EffectMetadata">
+      <superclassifiers>SemanticMetadata</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * EffectMetadata identifies a usage as being an effect occurrence.&#xD;&#xA;&#x9;&#x9; * It is intended to be used to tag the effect ends of a Multicausation.&#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:ReferenceUsage">
+        <typings>SysML::Usage</typings>
+        <redefinitions>annotatedElement</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:ReferenceUsage" valuePart="effects as SysML::Usage">
+        <redefinitions>baseType</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="CausationMetadata">
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * CausationMetadata allows for the specification of additional metadata about&#xD;&#xA;&#x9;&#x9; * a cause-effect connection definition or usage.&#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:ReferenceUsage">
+        <typings>SysML::ConnectionDefinition</typings>
+        <subsetting>annotatedElement</subsetting>
+      </elements>
+      <elements xsi:type="sysMLOC:ReferenceUsage">
+        <typings>SysML::ConnectionUsage</typings>
+        <subsetting>annotatedElement</subsetting>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="isNecessary" isDefault="true" valuePart="false">
+        <typings>Boolean</typings>
+        <elements xsi:type="sysMLOC:Documentation" body="/* &#xD;&#xA;&#x9;&#x9;&#x9; * Whether all the causes are necessary for all the effects to occur.&#xD;&#xA;&#x9;&#x9;&#x9; * If this is false (the default), then some or all of the effects may &#xD;&#xA;&#x9;&#x9;&#x9; * still have occurred even if some of the causes did not.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="isSufficient" isDefault="true" valuePart="false">
+        <typings>Boolean</typings>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * Whether the causes were sufficient for all the effects to occur.&#xD;&#xA;&#x9;&#x9;&#x9; * If this is false (the default), then it may be the case that some&#xD;&#xA;&#x9;&#x9;&#x9; * other occurrences were also necessary for some or all of the effects&#xD;&#xA;&#x9;&#x9;&#x9; * to have occurred.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="probability" MultiLow="0" MultiHigh="1">
+        <typings>Real</typings>
+        <elements xsi:type="sysMLOC:Documentation" body="/* The probability that the causes will actually result in effects occurring. */"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:MetadataDefinition" declaredShortName="multicausation" declaredName="MulticausationSemanticMetadata">
+      <superclassifiers>CausationMetadata</superclassifiers>
+      <superclassifiers>SemanticMetadata</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * MulticausationMetadata is SemanticMetadata for a Multicausation connection.&#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:ReferenceUsage" valuePart="multicausations meta SysML::Usage">
+        <redefinitions>baseType</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:MetadataDefinition" declaredShortName="causation" declaredName="CausationSemanticMetadadata">
+      <superclassifiers>CausationMetadata</superclassifiers>
+      <superclassifiers>SemanticMetadata</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * CausationMetadata is SemanticMetadata for a Causation connection.&#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:ReferenceUsage" valuePart="causations meta SysML::Usage">
+        <redefinitions>baseType</redefinitions>
+      </elements>
+    </elements>
+  </elements>
+  <elements xsi:type="sysMLOC:CodeAnnotation" body="// ===== END: CauseAndEffect.sysml =====&#xD;&#xA;"/>
+</sysMLOC:Namespace>

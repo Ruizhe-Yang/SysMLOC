@@ -15,6 +15,6 @@ package 'Port Example'{
 		port fuelTankPort : FuelOutPort;
 	}
 	part def Engine{
-		port engineFuelPort : FuelInPort;
+		port engineFuelPort2222 : FuelInPort;
 	}
 }

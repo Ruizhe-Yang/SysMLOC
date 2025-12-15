@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+  <elements xsi:type="sysMLOC:CodeAnnotation" body="// ===== BEGIN: AnalysisTooling.sysml =====&#xD;&#xA;"/>
+  <elements xsi:type="sysMLOC:LibraryPackage" declaredName="AnalysisTooling" isStandard="true" isLibrary="true">
+    <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9; * This package contains definitions for metadata annotations related&#xD;&#xA;&#x9; * to analysis tool integration.&#xD;&#xA;&#x9; */"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="ToolExecution">
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * ToolExecution metadata identifies an external analysis tool to be&#xD;&#xA;&#x9;&#x9; * used to implement the annotated action.&#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="toolName">
+        <typings>String</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="uri">
+        <typings>String</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:MetadataDefinition" declaredName="ToolVariable">
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * ToolVariable metadata is used in the context of an action that has&#xD;&#xA;&#x9;&#x9; * been annotated with ToolExecution metadata. It is used to annotate&#xD;&#xA;&#x9;&#x9; * a parameter or other feature of the action with the name of the&#xD;&#xA;&#x9;&#x9; * variable in the tool that is to correspond to the annotated&#xD;&#xA;&#x9;&#x9; * feature.&#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="name">
+        <typings>String</typings>
+      </elements>
+    </elements>
+  </elements>
+  <elements xsi:type="sysMLOC:CodeAnnotation" body="// ===== END: AnalysisTooling.sysml =====&#xD;&#xA;"/>
+  <elements xsi:type="sysMLOC:CodeAnnotation" body="// ===== BEGIN: SampledFunctions.sysml =====&#xD;&#xA;"/>
+  <elements xsi:type="sysMLOC:LibraryPackage" declaredName="SampledFunctions" isStandard="true" isLibrary="true">
+    <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9; * This package provides a library model of discretely sampled mathematical functions.&#xD;&#xA;&#x9; */"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Base::Anything"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues::Positive"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Collections::KeyValuePair"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Collections::OrderedMap"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="SequenceFunctions::size"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ControlFunctions::forAll"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ControlFunctions::collect"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ControlFunctions::select"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SamplePair">
+      <superclassifiers>KeyValuePair</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * SamplePair is a key-value pair of a domain-value and a range-value, used as a sample element in SampledFunction.&#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="domainValue">
+        <redefinitions>key</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="rangeValue">
+        <redefinitions>val</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" declaredName="SampledFunction">
+      <superclassifiers>OrderedMap</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;     * SampledFunction is a variable-size, ordered collection of 'SamplePair' elements that represents a generic, discretely sampled, &#xD;&#xA;&#x9;     * uni-variate or multi-variate mathematical function. The function must be montonic, either strictly increasing or strictly&#xD;&#xA;&#x9;     * decreasing.&#xD;&#xA;&#x9;     * &#xD;&#xA;&#x9;     * It maps discrete domain values to discrete range values.&#xD;&#xA;&#x9;     * The domain of the function is represented by the sequence of 'domainValue' of each 'SamplePair' in 'samples', and &#xD;&#xA;&#x9;     * the range of the function is represented by the sequence of 'rangeValue' of each 'SamplePair' in 'samples'.&#xD;&#xA;&#x9;     */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="samples" MultiLow="0" MultiHigh="*" isOrdered="true">
+        <typings>SamplePair</typings>
+        <redefinitions>elements</redefinitions>
+      </elements>
+      <elements xsi:type="sysMLOC:AssertConstraintUsage">
+        <elements xsi:type="sysMLOC:CodeAnnotation" body="// Note: Assumes the functions '&lt;' and '>' are defined for the domain type.&#xD;&#xA;"/>
+        <elements xsi:type="sysMLOC:CodeAnnotation" body="// Strictly increasing&#xD;&#xA;"/>
+        <elements xsi:type="sysMLOC:CodeAnnotation" body="// Strictly decreasing&#xD;&#xA;"/>
+        <resultExpressionParameter resultExpression="(1..size(samples)-1)->forAll { in i; (samples.domainValue#(i) &lt; samples.domainValue#(i+1)) } or (1..size(samples)-1)->forAll { in i; (samples.domainValue#(i) > samples.domainValue#(i+1)) }"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="Domain">
+      <elements xsi:type="sysMLOC:Documentation" body="/* &#xD;&#xA;&#x9;&#x9; * Domain returns the sequence of the domainValues of all samples in a SampledFunction.&#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="fn">
+        <typings>SampledFunction</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" MultiLow="0" MultiHigh="*" valuePart="fn.samples.domainValue">
+        <typings>Anything</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="Range">
+      <elements xsi:type="sysMLOC:Documentation" body="/* &#xD;&#xA;&#x9;&#x9; * Range returns the sequence of the rangeValues of all samples in a SampledFunction.&#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="fn">
+        <typings>SampledFunction</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" MultiLow="0" MultiHigh="*" valuePart="fn.samples.rangeValue">
+        <typings>Anything</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="Sample">
+      <elements xsi:type="sysMLOC:Documentation" body="/* &#xD;&#xA;&#x9;&#x9; * Sample returns a SampledFunction that samples a given calculation over a sequence of domainValues.&#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:CalculationUsage" direction="in" declaredName="calculation">
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="x"/>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="domainValues" MultiLow="0" MultiHigh="*"/>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="sampling" valuePart="new SampledFunction ( samples = domainValues->collect { in x; new SamplePair(x, calculation(x)) } )"/>
+    </elements>
+    <elements xsi:type="sysMLOC:CalculationDefinition" declaredName="Interpolate">
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * An Interpolate calculation returns an interpolated range value from a given SampledFunction for a given domain value.&#xD;&#xA;&#x9;&#x9; * If the input domain value is outside the bounds of the domainValues of the SampleFunction, null is returned.&#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="fn">
+        <typings>SampledFunction</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="value"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" isReturn="true" declaredName="result"/>
+    </elements>
+    <elements xsi:type="sysMLOC:CalculationUsage" declaredName="interpolateLinear">
+      <typings>Interpolate</typings>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * interpolateLinear is an Interpolate calculation assuming a linear functional form between SamplePairs.&#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="fn">
+        <typings>SampledFunction</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="value"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="domainValues" valuePart="Domain(fn)"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="index" MultiLow="0" MultiHigh="1" valuePart="(1..size(domainValues))->select { in i : Positive; domainValues#(i) &lt;= value }#(1)">
+        <typings>Positive</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:CalculationDefinition" visibility="private" declaredName="Linear">
+        <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="lowerSample">
+          <typings>SamplePair</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="upperSample">
+          <typings>SamplePair</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="value"/>
+        <elements xsi:type="sysMLOC:AttributeUsage" visibility="private" declaredName="f" valuePart="(value - lowerSample.domainValue) / (lowerSample.domainValue - upperSample.domainValue)"/>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="result" valuePart="upperSample.rangeValue + f * (lowerSample.rangeValue - upperSample.rangeValue)"/>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="result" MultiLow="0" MultiHigh="1" valuePart="if index == null or index == size(domainValues)? null else if domainValues#(index) &lt; domainValues#(index+1)? Linear(fn.samples#(index), fn.samples#(index+1), value) else Linear(fn.samples#(index+1), fn.samples#(index), value)"/>
+    </elements>
+  </elements>
+  <elements xsi:type="sysMLOC:CodeAnnotation" body="// ===== END: SampledFunctions.sysml =====&#xD;&#xA;"/>
+  <elements xsi:type="sysMLOC:CodeAnnotation" body="// ===== BEGIN: StateSpaceRepresentation.sysml =====&#xD;&#xA;"/>
+  <elements xsi:type="sysMLOC:LibraryPackage" declaredName="StateSpaceRepresentation" isStandard="true" isLibrary="true">
+    <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9; * This package provides a model of the foundational state-space system representation, &#xD;&#xA;&#x9; * commonly used in control systems.&#xD;&#xA;&#x9; */"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ISQ::DurationValue"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Quantities::VectorQuantityValue"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="VectorCalculations" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:AttributeDefinition" isAbstract="true" declaredName="StateSpace">
+      <superclassifiers>VectorQuantityValue</superclassifiers>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" isAbstract="true" declaredName="Input">
+      <superclassifiers>VectorQuantityValue</superclassifiers>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" isAbstract="true" declaredName="Output">
+      <superclassifiers>VectorQuantityValue</superclassifiers>
+    </elements>
+    <elements xsi:type="sysMLOC:CalculationDefinition" isAbstract="true" declaredName="GetNextState">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="input">
+        <typings>Input</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="stateSpace">
+        <typings>StateSpace</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="timeStep">
+        <typings>DurationValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+        <typings>StateSpace</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:CalculationDefinition" isAbstract="true" declaredName="GetOutput">
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="input">
+        <typings>Input</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="stateSpace">
+        <typings>StateSpace</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+        <typings>Output</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:ActionDefinition" isAbstract="true" declaredName="StateSpaceEventDef">
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;    &#x9; * Events to be received.&#xD;&#xA;    &#x9; */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:ActionDefinition" declaredName="ZeroCrossingEventDef">
+      <superclassifiers>StateSpaceEventDef</superclassifiers>
+    </elements>
+    <elements xsi:type="sysMLOC:ItemDefinition" declaredName="StateSpaceItem">
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;    &#x9; * Item for SSR connection&#xD;&#xA;    &#x9; */"/>
+    </elements>
+    <elements xsi:type="sysMLOC:ActionDefinition" isAbstract="true" declaredName="StateSpaceDynamics">
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;     * StateSpaceDynamics is the simplest form of State Space Representation,&#xD;&#xA;&#x9;     * and nextState directly computes the stateSpace of the next timestep. &#xD;&#xA;&#x9;     */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" direction="in" declaredName="input">
+        <typings>Input</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:CalculationUsage" isAbstract="true" declaredName="getNextState">
+        <typings>GetNextState</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:CalculationUsage" isAbstract="true" declaredName="getOutput">
+        <typings>GetOutput</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="stateSpace">
+        <typings>StateSpace</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" direction="out" declaredName="output" valuePart="getOutput(input, stateSpace)">
+        <typings>Output</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AttributeDefinition" isAbstract="true" declaredName="StateDerivative">
+      <superclassifiers>VectorQuantityValue</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;     * The definition of the time derivative of StateSpace, which means dx/dt, where x is StateSpace&#xD;&#xA;&#x9;     */"/>
+      <elements xsi:type="sysMLOC:ReferenceUsage" declaredName="stateSpace">
+        <typings>StateSpace</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:ConstraintUsage">
+        <resultExpressionParameter resultExpression="stateSpace.order == order"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:CalculationDefinition" isAbstract="true" declaredName="GetDerivative">
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;     * Computes the time derivative of stateSpace, which corresponds dx/dt = f(u, x), where u is input and x is stateSpace.&#xD;&#xA;&#x9;     */"/>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="input">
+        <typings>Input</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="stateSpace">
+        <typings>StateSpace</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+        <typings>StateDerivative</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:CalculationDefinition" isAbstract="true" declaredName="Integrate">
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;     * Integrates stateSpace to compute the next stateSpace, which corresponds to x + int dx/dt dt.&#xD;&#xA;&#x9;     * Its actual implementation should be given by a solver. &#xD;&#xA;&#x9;     */"/>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="getDerivative">
+        <typings>GetDerivative</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="input">
+        <typings>Input</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="initialState">
+        <typings>StateSpace</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="timeInterval">
+        <typings>DurationValue</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="result">
+        <typings>StateSpace</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:ActionDefinition" isAbstract="true" declaredName="ContinuousStateSpaceDynamics">
+      <superclassifiers>StateSpaceDynamics</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;     * ContinuousStateSpaceDynamics represents continuous behavior.&#xD;&#xA;&#x9;     * derivative needs to return a time derivative of stateSpace, i.e. dx/dt.&#xD;&#xA;&#x9;     */"/>
+      <elements xsi:type="sysMLOC:CalculationUsage" isAbstract="true" declaredName="getDerivative">
+        <typings>GetDerivative</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:CalculationUsage">
+        <typings>GetNextState</typings>
+        <redefinitions>getNextState</redefinitions>
+        <elements xsi:type="sysMLOC:Comment" body="/* We compute nextState by Integrate defined above by giving derivative calc. */"/>
+        <elements xsi:type="sysMLOC:CalculationUsage" declaredName="integrate">
+          <typings>Integrate</typings>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="getDerivative" valuePart="ContinuousStateSpaceDynamics::getDerivative"/>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="input" valuePart="GetNextState::input"/>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="initialState" valuePart="GetNextState::stateSpace"/>
+          <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="timeInterval" valuePart="GetNextState::timeStep"/>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="result" valuePart="integrate.result"/>
+      </elements>
+      <elements xsi:type="sysMLOC:EventOccurrenceUsage" MultiLow="0" MultiHigh="*" declaredName="zeroCrossingEvents">
+        <typings>ZeroCrossingEventDef</typings>
+        <elements xsi:type="sysMLOC:Comment" body="/* ContinuousStateSpaceDynamics may cause zero crossings anomaly. */"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:CalculationDefinition" isAbstract="true" declaredName="GetDifference">
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;     * Computes difference of stateSpace by one timestep, that is x(k+1) - x(k),&#xD;&#xA;&#x9;     * where k is the timestep number. &#xD;&#xA;&#x9;     */"/>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="input">
+        <typings>Input</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" direction="in" declaredName="stateSpace">
+        <typings>StateSpace</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true">
+        <typings>StateSpace</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:ActionDefinition" isAbstract="true" declaredName="DiscreteStateSpaceDynamics">
+      <superclassifiers>StateSpaceDynamics</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;     * DiscreteStateSpaceDynamics represents discrete behavior.&#xD;&#xA;&#x9;     * differences needs to return difference of the stateSpace for each timestep.&#xD;&#xA;&#x9;     */"/>
+      <elements xsi:type="sysMLOC:CalculationUsage" isAbstract="true" declaredName="getDifference">
+        <typings>GetDifference</typings>
+      </elements>
+      <elements xsi:type="sysMLOC:CalculationUsage">
+        <typings>GetNextState</typings>
+        <redefinitions>getNextState</redefinitions>
+        <elements xsi:type="sysMLOC:AttributeUsage" declaredName="diff" valuePart="getDifference(input, stateSpace)">
+          <typings>StateSpace</typings>
+        </elements>
+        <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="result" valuePart="stateSpace + diff"/>
+      </elements>
+    </elements>
+  </elements>
+  <elements xsi:type="sysMLOC:CodeAnnotation" body="// ===== END: StateSpaceRepresentation.sysml =====&#xD;&#xA;"/>
+  <elements xsi:type="sysMLOC:CodeAnnotation" body="// ===== BEGIN: TradeStudies.sysml =====&#xD;&#xA;"/>
+  <elements xsi:type="sysMLOC:LibraryPackage" declaredName="TradeStudies" isStandard="true" isLibrary="true">
+    <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9; * This package provides a simple framework for defining trade-off study analysis cases.&#xD;&#xA;&#x9; */"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Base::Anything"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarFunctions" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ControlFunctions" isNamespace="true"/>
+    <elements xsi:type="sysMLOC:CalculationDefinition" isAbstract="true" declaredName="EvaluationFunction">
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * An EvaluationFunction is a calculation that evaluates a TradeStudy alternative,&#xD;&#xA;&#x9;&#x9; * producing a ScalarValue that can be comparted with the evaluation of other&#xD;&#xA;&#x9;&#x9; * alternatives.&#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:ReferenceUsage" direction="in" declaredName="alternative">
+        <typings>Anything</typings>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * The alternative to be evaluated.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" isReturn="true" declaredName="result" MultiLow="1">
+        <typings>ScalarValue</typings>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * A ScalarValue representing the evaluation of the given alternative.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:RequirementDefinition" isAbstract="true" declaredName="TradeStudyObjective">
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * A TradeStudyObjective is the base definition for the objective of a TradeStudy.&#xD;&#xA;&#x9;&#x9; * The requirement is to choose from a given set of alternatives the selectedAlternative&#xD;&#xA;&#x9;&#x9; * for that has the best evaluation according to a given EvaluationFunction. What&#xD;&#xA;&#x9;&#x9; * value is considered &quot;best&quot; is not defined in the abstract base definition but must be&#xD;&#xA;&#x9;&#x9; * computed in any concrete specialization.&#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:SubjectUsage" declaredName="selectedAlternative">
+        <typings>Anything</typings>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * The alternative that should be selected, as evaluated using the given &#xD;&#xA;&#x9;&#x9;&#x9; * ObjectiveFunction.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:ReferenceUsage" direction="in" declaredName="alternatives" MultiLow="1" MultiHigh="*">
+        <typings>Anything</typings>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * The alternatives being considered in the TradeStudy for which this TradeStudyObjective &#xD;&#xA;&#x9;&#x9;&#x9; * is the objective.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:CalculationUsage" direction="in" declaredName="eval">
+        <typings>EvaluationFunction</typings>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * The EvaluationFunction to be used in evaluating the given alternatives.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:AttributeUsage" declaredName="best">
+        <typings>ScalarValue</typings>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * Out of the evaluation results of all the given alternatives, the one that is considered &#xD;&#xA;&#x9;&#x9;&#x9; * &quot;best&quot;, in the sense that it is the value the selectedAlternative should have. This &#xD;&#xA;&#x9;&#x9;&#x9; * value must be computed in any concrete specialization of TradeStudyObjective.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:RequirementConstraintUsage" kind="require">
+        <resultExpressionParameter resultExpression="eval(selectedAlternative) == best"/>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:RequirementDefinition" declaredName="MinimizeObjective">
+      <superclassifiers>TradeStudyObjective</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * A MinimizeObjective is a TradeStudyObjective that requires that the &#xD;&#xA;&#x9;&#x9; * selectedAlternative have the minimum ObjectiveFunction value of all the&#xD;&#xA;&#x9;&#x9; * given alternatives.&#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * For a MinimizeObjective, the best value is the minimum one.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="alternatives->minimize { in x; eval(x) }">
+        <redefinitions>best</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:RequirementDefinition" declaredName="MaximizeObjective">
+      <superclassifiers>TradeStudyObjective</superclassifiers>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * A MaximizeObjective is a TradeStudyObjective that requires that the &#xD;&#xA;&#x9;&#x9; * selectedAlternative have the maximum ObjectiveFunction value of all the&#xD;&#xA;&#x9;&#x9; * given alternatives.&#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * For a MinimizeObjective, the best value is the maximum one.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:AttributeUsage" valuePart="alternatives->maximize { in x; eval(x) }">
+        <redefinitions>best</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="sysMLOC:AnalysisCaseDefinition" isAbstract="true" declaredName="TradeStudy">
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9; * A TradeStudy is an analysis case whose subject is a set of alternatives&#xD;&#xA;&#x9;&#x9; * (at least one) and whose result is a selection of one of those alternatives.&#xD;&#xA;&#x9;&#x9; * The alternatives are evaluated based on a given ObjectiveFunction and the&#xD;&#xA;&#x9;&#x9; * selection is made such that it satisfies the objective of the TradeStudy&#xD;&#xA;&#x9;&#x9; * (which must be a TradeStudyObjective).&#xD;&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:SubjectUsage" declaredName="studyAlternatives" MultiLow="1" MultiHigh="*">
+        <typings>Anything</typings>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * The set of alternatives being considered in this TradeStudy. &#xD;&#xA;&#x9;&#x9;&#x9; * &#xD;&#xA;&#x9;&#x9;&#x9; * In a TradeStudy usage, bind this feature to the actual collection of&#xD;&#xA;&#x9;&#x9;&#x9; * alternatives to be considered.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:CalculationUsage" isAbstract="true" declaredName="evaluationFunction">
+        <typings>EvaluationFunction</typings>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * The EvaluationFunction to be used to evaluate the alternatives.&#xD;&#xA;&#x9;&#x9;&#x9; * &#xD;&#xA;&#x9;&#x9;&#x9; * In a TradeStudy usage, redefine this feature to provide the desired&#xD;&#xA;&#x9;&#x9;&#x9; * calculation (or bind it to a calculation usage that does so).&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="sysMLOC:ObjectiveRequirementUsage" declaredName="tradeStudyObjective">
+        <typings>TradeStudyObjective</typings>
+        <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * The objective of this TradeStudy.&#xD;&#xA;&#x9;&#x9;&#x9; * &#xD;&#xA;&#x9;&#x9;&#x9; * Redefine this feature to give it a definition that is a concrete&#xD;&#xA;&#x9;&#x9;&#x9; * specialization of TradeStudyObjective. That can either be one of the&#xD;&#xA;&#x9;&#x9;&#x9; * specializations provided in this package, or a more specific user-&#xD;&#xA;&#x9;&#x9;&#x9; * defined one.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+        <elements xsi:type="sysMLOC:SubjectUsage">
+          <redefinitions>selectedAlternative</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:ReferenceUsage" direction="in" valuePart="studyAlternatives">
+          <redefinitions>alternatives</redefinitions>
+        </elements>
+        <elements xsi:type="sysMLOC:CalculationUsage" direction="in" valuePart="evaluationFunction">
+          <redefinitions>eval</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="sysMLOC:Documentation" body="/*&#xD;&#xA;&#x9;&#x9;&#x9; * The alternative selected by this TradeStudy, which is the one that meets the&#xD;&#xA;&#x9;&#x9;&#x9; * requirement of the tradeStudyObjective.&#xD;&#xA;&#x9;&#x9;&#x9; */"/>
+      <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="selectedAlternative" valuePart="studyAlternatives->selectOne {in ref a ; tradeStudyObjective(selectedAlternative = a)}">
+        <typings>Anything</typings>
+      </elements>
+    </elements>
+  </elements>
+  <elements xsi:type="sysMLOC:CodeAnnotation" body="// ===== END: TradeStudies.sysml =====&#xD;&#xA;"/>
+</sysMLOC:Namespace>

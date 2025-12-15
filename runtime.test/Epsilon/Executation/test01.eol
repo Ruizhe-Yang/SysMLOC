@@ -1,34 +1,57 @@
 var root = SysMLOC!Package.all.first();
-root.checkElement();
+//root.checkElement();
+root.run();
+
+operation SysMLOC!EObject run(){
+	if (self.hasProperty("elements")){
+		for (e in self.elements){
+			e.operate();
+			e.run();
+		}
+	}
+}
+
+operation SysMLOC!EObject operate(){
+//	self.println();
+	if (self.isTypeOf(SysMLOC!ImportElement)){
+		getLibrary(self.declaredName).println();
+		
+	}
+}
 
 operation SysMLOC!EObject checkElement(){
 	var result = true;
-	for (e in self.elements){
-		if (e.isKindOf(SysMLOC!DefinitionDeclaration)){
-			if (not e.checkSuperclassifier()){
-				result = false;
-				("[Error]" + e.declaredName + " : SuperClassifier error." ).println();
-				return result;
+	if (self.hasProperty("elements")){
+		for (e in self.elements){
+			if (e.isKindOf(SysMLOC!DefinitionDeclaration)){
+				if (not e.checkSuperclassifier()){
+					result = false;
+					("[Error]" + e.declaredName + " : SuperClassifier error." ).println();
+					return result;
+				}
+				else{
+	//				("[Check]" + e.declaredName + " : " + result.asString()).println();
+				}
 			}
-			else{
-//				("[Check]" + e.declaredName + " : " + result.asString()).println();
+			if (e.isKindOf(SysMLOC!FeatureSpecialization)){
+				if (not e.checkFeatureSpecialization()){
+					result = false;
+					("[Error]" + e.declaredName + " : FeatureSpecialization error.").println();
+					return result;
+				}
+				else{
+	//				("[Check]" + e.declaredName + " : " + result.asString()).println();
+				}
+			}
+			if (result and e.elements.size() >= 0){
+				result = e.checkElement();
 			}
 		}
-		if (e.isKindOf(SysMLOC!FeatureSpecialization)){
-			if (not e.checkFeatureSpecialization()){
-				result = false;
-				("[Error]" + e.declaredName + " : FeatureSpecialization error.").println();
-				return result;
-			}
-			else{
-//				("[Check]" + e.declaredName + " : " + result.asString()).println();
-			}
-		}
-		if (result and e.elements.size() >= 0){
-			result = e.checkElement();
-		}
+		return result;
 	}
-	return result;
+	else{
+		return result;
+	}
 }
 
 operation SysMLOC!DefinitionDeclaration checkSuperclassifier(){
@@ -76,6 +99,30 @@ operation getElement( name : String ){
 	}
 	else if (e.size() == 0){
 		return null;
+	}
+	else{
+		"Modeling Error.".println();
+		return null;
+	}
+}
+
+operation getLibrary( name : String ){
+	var e = Library!Package.all.select(s|s.hasProperty("declaredName") and s.declaredName==name);
+	if (e.size() == 1){
+		return e.first();
+	}
+	else if (e.size() == 0){
+		var ee = Library!LibraryPackage.all.select(s|s.hasProperty("declaredName") and s.declaredName==name);
+		if (ee.size() == 1){
+			return ee.first();
+		}
+		else if (ee.size() == 0){
+			return null;
+		}
+		else{
+			"Modeling Error.".println();
+			return null;
+		}
 	}
 	else{
 		"Modeling Error.".println();
