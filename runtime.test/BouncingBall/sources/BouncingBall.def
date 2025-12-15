@@ -1,0 +1,54 @@
+EXPORTS
+  ;***************************************************
+  ;Common Functions
+  ;****************************************************
+  BouncingBall_fmiGetTypesPlatform @1
+  BouncingBall_fmiGetVersion @2
+  BouncingBall_fmiSetDebugLogging @3
+  BouncingBall_fmiInstantiate @4
+  BouncingBall_fmiFreeInstance @5
+  BouncingBall_fmiSetupExperiment @6
+  BouncingBall_fmiEnterInitializationMode @7
+  BouncingBall_fmiExitInitializationMode @8
+  BouncingBall_fmiTerminate @9
+  BouncingBall_fmiReset @10
+  BouncingBall_fmiGetReal @11
+  BouncingBall_fmiGetInteger @12
+  BouncingBall_fmiGetBoolean @13
+  BouncingBall_fmiGetString @14
+  BouncingBall_fmiSetReal @15
+  BouncingBall_fmiSetInteger @16
+  BouncingBall_fmiSetBoolean @17
+  BouncingBall_fmiSetString @18
+  BouncingBall_fmiGetFMUstate @19
+  BouncingBall_fmiSetFMUstate @20
+  BouncingBall_fmiFreeFMUstate @21
+  BouncingBall_fmiSerializedFMUstateSize @22
+  BouncingBall_fmiSerializeFMUstate @23
+  BouncingBall_fmiDeSerializeFMUstate @24
+  BouncingBall_fmiGetDirectionalDerivative @25
+  ;***************************************************
+  ;Functions for FMI for Model Exchange
+  ;****************************************************
+  BouncingBall_fmiEnterEventMode @26
+  BouncingBall_fmiNewDiscreteStates @27
+  BouncingBall_fmiEnterContinuousTimeMode @28
+  BouncingBall_fmiCompletedIntegratorStep @29
+  BouncingBall_fmiSetTime @30
+  BouncingBall_fmiSetContinuousStates @31
+  BouncingBall_fmiGetDerivatives @32
+  BouncingBall_fmiGetEventIndicators @33
+  BouncingBall_fmiGetContinuousStates @34
+  BouncingBall_fmiGetNominalsOfContinuousStates @35
+  ;***************************************************
+  ;Functions for FMI for Co-Simulation
+  ;****************************************************
+  BouncingBall_fmiSetRealInputDerivatives @36
+  BouncingBall_fmiGetRealOutputDerivatives @37
+  BouncingBall_fmiDoStep @38
+  BouncingBall_fmiCancelStep @39
+  BouncingBall_fmiGetStatus @40
+  BouncingBall_fmiGetRealStatus @41
+  BouncingBall_fmiGetIntegerStatus @42
+  BouncingBall_fmiGetBooleanStatus @43
+  BouncingBall_fmiGetStringStatus @44

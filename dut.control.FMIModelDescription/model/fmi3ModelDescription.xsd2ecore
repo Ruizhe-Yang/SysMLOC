@@ -1,0 +1,907 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd2ecore:XSD2EcoreMappingRoot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsd2ecore="http://www.eclipse.org/emf/2002/XSD2Ecore" inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#/ file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Annotation.xsd#/ file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3InterfaceType.xsd#/ file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Unit.xsd#/ file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Type.xsd#/ file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#/ file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#/ file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3VariableDependency.xsd#/"
+    outputs="Fmi3Annotation.ecore#/" topToBottom="true">
+  <nested inputs="bundleentry://820.fwk1411015570/cache/www.w3.org/2001/XMLSchema.xsd#//normalizedString;XSDSimpleTypeDefinition=28"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//NormalizedString"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Annotation.xsd#//fmi3Annotations;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Annotation;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//AnnotationType">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Annotation.xsd#//fmi3Annotations;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Annotation;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Fmi3Annotation.ecore#//AnnotationType/any"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Annotation.xsd#//fmi3Annotations;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Annotation;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="Fmi3Annotation.ecore#//AnnotationType/type"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Annotation.xsd#//fmi3Annotations;XSDComplexTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//Fmi3Annotations">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Annotation.xsd#//fmi3Annotations;XSDComplexTypeDefinition/XSDParticle"
+        outputs="Fmi3Annotation.ecore#//Fmi3Annotations/group"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Annotation.xsd#//fmi3Annotations;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Fmi3Annotation.ecore#//Fmi3Annotations/annotation"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Annotation.xsd#//Annotations;XSDElementDeclaration"
+      outputs="Fmi3Annotation.ecore#//DocumentRoot/annotations"/>
+  <nested inputs="bundleentry://820.fwk1411015570/cache/www.w3.org/2001/XMLSchema.xsd#//boolean;XSDSimpleTypeDefinition=10"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//Boolean"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3InterfaceType.xsd#//fmi3InterfaceType;XSDComplexTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//Fmi3InterfaceType">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3InterfaceType.xsd#//fmi3InterfaceType;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Fmi3Annotation.ecore#//Fmi3InterfaceType/annotations"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3InterfaceType.xsd#//fmi3InterfaceType;XSDComplexTypeDefinition/XSDAttributeUse=2"
+        outputs="Fmi3Annotation.ecore#//Fmi3InterfaceType/canBeInstantiatedOnlyOncePerProcess"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3InterfaceType.xsd#//fmi3InterfaceType;XSDComplexTypeDefinition/XSDAttributeUse=3"
+        outputs="Fmi3Annotation.ecore#//Fmi3InterfaceType/canGetAndSetFMUState"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3InterfaceType.xsd#//fmi3InterfaceType;XSDComplexTypeDefinition/XSDAttributeUse=4"
+        outputs="Fmi3Annotation.ecore#//Fmi3InterfaceType/canSerializeFMUState"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3InterfaceType.xsd#//fmi3InterfaceType;XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="Fmi3Annotation.ecore#//Fmi3InterfaceType/modelIdentifier"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3InterfaceType.xsd#//fmi3InterfaceType;XSDComplexTypeDefinition/XSDAttributeUse=1"
+        outputs="Fmi3Annotation.ecore#//Fmi3InterfaceType/needsExecutionTool"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3InterfaceType.xsd#//fmi3InterfaceType;XSDComplexTypeDefinition/XSDAttributeUse=6"
+        outputs="Fmi3Annotation.ecore#//Fmi3InterfaceType/providesAdjointDerivatives"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3InterfaceType.xsd#//fmi3InterfaceType;XSDComplexTypeDefinition/XSDAttributeUse=5"
+        outputs="Fmi3Annotation.ecore#//Fmi3InterfaceType/providesDirectionalDerivatives"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3InterfaceType.xsd#//fmi3InterfaceType;XSDComplexTypeDefinition/XSDAttributeUse=7"
+        outputs="Fmi3Annotation.ecore#//Fmi3InterfaceType/providesPerElementDependencies"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3InterfaceType.xsd#//fmi3InterfaceType;XSDComplexTypeDefinition/XSDWildcard"
+        outputs="Fmi3Annotation.ecore#//Fmi3InterfaceType/anyAttribute"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3InterfaceType.xsd#//fmi3ModelExchange;XSDComplexTypeDefinition=1"
+      outputs="Fmi3Annotation.ecore#//Fmi3ModelExchange">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3InterfaceType.xsd#//fmi3ModelExchange;XSDComplexTypeDefinition=1/XSDAttributeUse"
+        outputs="Fmi3Annotation.ecore#//Fmi3ModelExchange/needsCompletedIntegratorStep"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3InterfaceType.xsd#//fmi3ModelExchange;XSDComplexTypeDefinition=1/XSDAttributeUse=1"
+        outputs="Fmi3Annotation.ecore#//Fmi3ModelExchange/providesEvaluateDiscreteStates"/>
+  </nested>
+  <nested inputs="bundleentry://820.fwk1411015570/cache/www.w3.org/2001/XMLSchema.xsd#//double;XSDSimpleTypeDefinition=12"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//Double"/>
+  <nested inputs="bundleentry://820.fwk1411015570/cache/www.w3.org/2001/XMLSchema.xsd#//unsignedInt;XSDSimpleTypeDefinition=49"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//UnsignedInt"/>
+  <nested inputs="bundleentry://820.fwk1411015570/cache/www.w3.org/2001/XMLSchema.xsd#//int;XSDSimpleTypeDefinition=44"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3InterfaceType.xsd#//fmi3CoSimulation;XSDComplexTypeDefinition=2"
+      outputs="Fmi3Annotation.ecore#//Fmi3CoSimulation">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3InterfaceType.xsd#//fmi3CoSimulation;XSDComplexTypeDefinition=2/XSDAttributeUse"
+        outputs="Fmi3Annotation.ecore#//Fmi3CoSimulation/canHandleVariableCommunicationStepSize"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3InterfaceType.xsd#//fmi3CoSimulation;XSDComplexTypeDefinition=2/XSDAttributeUse=6"
+        outputs="Fmi3Annotation.ecore#//Fmi3CoSimulation/canReturnEarlyAfterIntermediateUpdate"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3InterfaceType.xsd#//fmi3CoSimulation;XSDComplexTypeDefinition=2/XSDAttributeUse=1"
+        outputs="Fmi3Annotation.ecore#//Fmi3CoSimulation/fixedInternalStepSize"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3InterfaceType.xsd#//fmi3CoSimulation;XSDComplexTypeDefinition=2/XSDAttributeUse=7"
+        outputs="Fmi3Annotation.ecore#//Fmi3CoSimulation/hasEventMode"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3InterfaceType.xsd#//fmi3CoSimulation;XSDComplexTypeDefinition=2/XSDAttributeUse=2"
+        outputs="Fmi3Annotation.ecore#//Fmi3CoSimulation/maxOutputDerivativeOrder"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3InterfaceType.xsd#//fmi3CoSimulation;XSDComplexTypeDefinition=2/XSDAttributeUse=5"
+        outputs="Fmi3Annotation.ecore#//Fmi3CoSimulation/mightReturnEarlyFromDoStep"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3InterfaceType.xsd#//fmi3CoSimulation;XSDComplexTypeDefinition=2/XSDAttributeUse=8"
+        outputs="Fmi3Annotation.ecore#//Fmi3CoSimulation/providesEvaluateDiscreteStates"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3InterfaceType.xsd#//fmi3CoSimulation;XSDComplexTypeDefinition=2/XSDAttributeUse=4"
+        outputs="Fmi3Annotation.ecore#//Fmi3CoSimulation/providesIntermediateUpdate"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3InterfaceType.xsd#//fmi3CoSimulation;XSDComplexTypeDefinition=2/XSDAttributeUse=3"
+        outputs="Fmi3Annotation.ecore#//Fmi3CoSimulation/recommendedIntermediateInputSmoothness"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3InterfaceType.xsd#//fmi3ScheduledExecution;XSDComplexTypeDefinition=3"
+      outputs="Fmi3Annotation.ecore#//Fmi3ScheduledExecution"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Unit.xsd#//fmi3Unit;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/BaseUnit;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//BaseUnitType">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Unit.xsd#//fmi3Unit;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/BaseUnit;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=3"
+        outputs="Fmi3Annotation.ecore#//BaseUnitType/a"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Unit.xsd#//fmi3Unit;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/BaseUnit;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=6"
+        outputs="Fmi3Annotation.ecore#//BaseUnitType/cd"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Unit.xsd#//fmi3Unit;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/BaseUnit;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=8"
+        outputs="Fmi3Annotation.ecore#//BaseUnitType/factor"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Unit.xsd#//fmi3Unit;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/BaseUnit;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=4"
+        outputs="Fmi3Annotation.ecore#//BaseUnitType/k"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Unit.xsd#//fmi3Unit;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/BaseUnit;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="Fmi3Annotation.ecore#//BaseUnitType/kg"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Unit.xsd#//fmi3Unit;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/BaseUnit;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=1"
+        outputs="Fmi3Annotation.ecore#//BaseUnitType/m"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Unit.xsd#//fmi3Unit;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/BaseUnit;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=5"
+        outputs="Fmi3Annotation.ecore#//BaseUnitType/mol"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Unit.xsd#//fmi3Unit;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/BaseUnit;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=9"
+        outputs="Fmi3Annotation.ecore#//BaseUnitType/offset"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Unit.xsd#//fmi3Unit;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/BaseUnit;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=7"
+        outputs="Fmi3Annotation.ecore#//BaseUnitType/rad"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Unit.xsd#//fmi3Unit;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/BaseUnit;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=2"
+        outputs="Fmi3Annotation.ecore#//BaseUnitType/s"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Unit.xsd#//fmi3Unit;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1/DisplayUnit;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//DisplayUnitType">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Unit.xsd#//fmi3Unit;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1/DisplayUnit;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Fmi3Annotation.ecore#//DisplayUnitType/annotations"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Unit.xsd#//fmi3Unit;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1/DisplayUnit;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=1"
+        outputs="Fmi3Annotation.ecore#//DisplayUnitType/factor"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Unit.xsd#//fmi3Unit;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1/DisplayUnit;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=3"
+        outputs="Fmi3Annotation.ecore#//DisplayUnitType/inverse"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Unit.xsd#//fmi3Unit;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1/DisplayUnit;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="Fmi3Annotation.ecore#//DisplayUnitType/name"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Unit.xsd#//fmi3Unit;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1/DisplayUnit;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=2"
+        outputs="Fmi3Annotation.ecore#//DisplayUnitType/offset"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Unit.xsd#//fmi3Unit;XSDComplexTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//Fmi3Unit">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Unit.xsd#//fmi3Unit;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Fmi3Annotation.ecore#//Fmi3Unit/baseUnit"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Unit.xsd#//fmi3Unit;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="Fmi3Annotation.ecore#//Fmi3Unit/displayUnit"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Unit.xsd#//fmi3Unit;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="Fmi3Annotation.ecore#//Fmi3Unit/annotations"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Unit.xsd#//fmi3Unit;XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="Fmi3Annotation.ecore#//Fmi3Unit/name"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=3/UnitDefinitions;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//UnitDefinitionsType">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=3/UnitDefinitions;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle"
+        outputs="Fmi3Annotation.ecore#//UnitDefinitionsType/group"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=3/UnitDefinitions;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Fmi3Annotation.ecore#//UnitDefinitionsType/unit"/>
+  </nested>
+  <nested inputs="bundleentry://820.fwk1411015570/cache/www.w3.org/2001/XMLSchema.xsd#//string;XSDSimpleTypeDefinition=9"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//String"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Type.xsd#//fmi3TypeDefinitionBase;XSDComplexTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//Fmi3TypeDefinitionBase">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Type.xsd#//fmi3TypeDefinitionBase;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Fmi3Annotation.ecore#//Fmi3TypeDefinitionBase/annotations"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Type.xsd#//fmi3TypeDefinitionBase;XSDComplexTypeDefinition/XSDAttributeUse=1"
+        outputs="Fmi3Annotation.ecore#//Fmi3TypeDefinitionBase/description"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Type.xsd#//fmi3TypeDefinitionBase;XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="Fmi3Annotation.ecore#//Fmi3TypeDefinitionBase/name"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3RealBaseAttributes;XSDAttributeGroupDefinition/XSDAttributeUse=2"
+      outputs="Fmi3Annotation.ecore#//Float32TypeType/displayUnit"/>
+  <nested inputs="bundleentry://820.fwk1411015570/cache/www.w3.org/2001/XMLSchema.xsd#//float;XSDSimpleTypeDefinition=11"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//Float"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3Float32Attributes;XSDAttributeGroupDefinition=2/XSDAttributeUse=1"
+      outputs="Fmi3Annotation.ecore#//Float32TypeType/max"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3Float32Attributes;XSDAttributeGroupDefinition=2/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//Float32TypeType/min"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3Float32Attributes;XSDAttributeGroupDefinition=2/XSDAttributeUse=2"
+      outputs="Fmi3Annotation.ecore#//Float32TypeType/nominal"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3RealBaseAttributes;XSDAttributeGroupDefinition/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//Float32TypeType/quantity"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3RealBaseAttributes;XSDAttributeGroupDefinition/XSDAttributeUse=3"
+      outputs="Fmi3Annotation.ecore#//Float32TypeType/relativeQuantity"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3RealBaseAttributes;XSDAttributeGroupDefinition/XSDAttributeUse=4"
+      outputs="Fmi3Annotation.ecore#//Float32TypeType/unbounded"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3RealBaseAttributes;XSDAttributeGroupDefinition/XSDAttributeUse=1"
+      outputs="Fmi3Annotation.ecore#//Float32TypeType/unit"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Type.xsd#//fmi3TypeDefinition;XSDModelGroupDefinition/XSDModelGroup/XSDParticle/Float32Type;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//Float32TypeType"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Type.xsd#//fmi3TypeDefinition;XSDModelGroupDefinition/XSDModelGroup/XSDParticle"
+      outputs="Fmi3Annotation.ecore#//TypeDefinitionsType/float32Type"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3RealBaseAttributes;XSDAttributeGroupDefinition/XSDAttributeUse=2"
+      outputs="Fmi3Annotation.ecore#//Float64TypeType/displayUnit"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3Float64Attributes;XSDAttributeGroupDefinition=1/XSDAttributeUse=1"
+      outputs="Fmi3Annotation.ecore#//Float64TypeType/max"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3Float64Attributes;XSDAttributeGroupDefinition=1/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//Float64TypeType/min"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3Float64Attributes;XSDAttributeGroupDefinition=1/XSDAttributeUse=2"
+      outputs="Fmi3Annotation.ecore#//Float64TypeType/nominal"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3RealBaseAttributes;XSDAttributeGroupDefinition/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//Float64TypeType/quantity"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3RealBaseAttributes;XSDAttributeGroupDefinition/XSDAttributeUse=3"
+      outputs="Fmi3Annotation.ecore#//Float64TypeType/relativeQuantity"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3RealBaseAttributes;XSDAttributeGroupDefinition/XSDAttributeUse=4"
+      outputs="Fmi3Annotation.ecore#//Float64TypeType/unbounded"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3RealBaseAttributes;XSDAttributeGroupDefinition/XSDAttributeUse=1"
+      outputs="Fmi3Annotation.ecore#//Float64TypeType/unit"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Type.xsd#//fmi3TypeDefinition;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=1/Float64Type;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//Float64TypeType"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Type.xsd#//fmi3TypeDefinition;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=1"
+      outputs="Fmi3Annotation.ecore#//TypeDefinitionsType/float64Type"/>
+  <nested inputs="bundleentry://820.fwk1411015570/cache/www.w3.org/2001/XMLSchema.xsd#//byte;XSDSimpleTypeDefinition=46"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//Byte"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3Int8Attributes;XSDAttributeGroupDefinition=4/XSDAttributeUse=1"
+      outputs="Fmi3Annotation.ecore#//Int8TypeType/max"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3Int8Attributes;XSDAttributeGroupDefinition=4/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//Int8TypeType/min"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3IntegerBaseAttributes;XSDAttributeGroupDefinition=3/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//Int8TypeType/quantity"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Type.xsd#//fmi3TypeDefinition;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=2/Int8Type;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//Int8TypeType"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Type.xsd#//fmi3TypeDefinition;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=2"
+      outputs="Fmi3Annotation.ecore#//TypeDefinitionsType/int8Type"/>
+  <nested inputs="bundleentry://820.fwk1411015570/cache/www.w3.org/2001/XMLSchema.xsd#//unsignedByte;XSDSimpleTypeDefinition=51"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//UnsignedByte"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3UInt8Attributes;XSDAttributeGroupDefinition=5/XSDAttributeUse=1"
+      outputs="Fmi3Annotation.ecore#//UInt8TypeType/max"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3UInt8Attributes;XSDAttributeGroupDefinition=5/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//UInt8TypeType/min"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3IntegerBaseAttributes;XSDAttributeGroupDefinition=3/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//UInt8TypeType/quantity"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Type.xsd#//fmi3TypeDefinition;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=3/UInt8Type;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//UInt8TypeType"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Type.xsd#//fmi3TypeDefinition;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=3"
+      outputs="Fmi3Annotation.ecore#//TypeDefinitionsType/uInt8Type"/>
+  <nested inputs="bundleentry://820.fwk1411015570/cache/www.w3.org/2001/XMLSchema.xsd#//short;XSDSimpleTypeDefinition=45"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//Short"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3Int16Attributes;XSDAttributeGroupDefinition=6/XSDAttributeUse=1"
+      outputs="Fmi3Annotation.ecore#//Int16TypeType/max"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3Int16Attributes;XSDAttributeGroupDefinition=6/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//Int16TypeType/min"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3IntegerBaseAttributes;XSDAttributeGroupDefinition=3/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//Int16TypeType/quantity"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Type.xsd#//fmi3TypeDefinition;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=4/Int16Type;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//Int16TypeType"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Type.xsd#//fmi3TypeDefinition;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=4"
+      outputs="Fmi3Annotation.ecore#//TypeDefinitionsType/int16Type"/>
+  <nested inputs="bundleentry://820.fwk1411015570/cache/www.w3.org/2001/XMLSchema.xsd#//unsignedShort;XSDSimpleTypeDefinition=50"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//UnsignedShort"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3UInt16Attributes;XSDAttributeGroupDefinition=7/XSDAttributeUse=1"
+      outputs="Fmi3Annotation.ecore#//UInt16TypeType/max"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3UInt16Attributes;XSDAttributeGroupDefinition=7/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//UInt16TypeType/min"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3IntegerBaseAttributes;XSDAttributeGroupDefinition=3/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//UInt16TypeType/quantity"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Type.xsd#//fmi3TypeDefinition;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=5/UInt16Type;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//UInt16TypeType"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Type.xsd#//fmi3TypeDefinition;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=5"
+      outputs="Fmi3Annotation.ecore#//TypeDefinitionsType/uInt16Type"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3Int32Attributes;XSDAttributeGroupDefinition=8/XSDAttributeUse=1"
+      outputs="Fmi3Annotation.ecore#//Int32TypeType/max"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3Int32Attributes;XSDAttributeGroupDefinition=8/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//Int32TypeType/min"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3IntegerBaseAttributes;XSDAttributeGroupDefinition=3/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//Int32TypeType/quantity"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Type.xsd#//fmi3TypeDefinition;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=6/Int32Type;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//Int32TypeType"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Type.xsd#//fmi3TypeDefinition;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=6"
+      outputs="Fmi3Annotation.ecore#//TypeDefinitionsType/int32Type"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3UInt32Attributes;XSDAttributeGroupDefinition=9/XSDAttributeUse=1"
+      outputs="Fmi3Annotation.ecore#//UInt32TypeType/max"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3UInt32Attributes;XSDAttributeGroupDefinition=9/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//UInt32TypeType/min"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3IntegerBaseAttributes;XSDAttributeGroupDefinition=3/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//UInt32TypeType/quantity"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Type.xsd#//fmi3TypeDefinition;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=7/UInt32Type;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//UInt32TypeType"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Type.xsd#//fmi3TypeDefinition;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=7"
+      outputs="Fmi3Annotation.ecore#//TypeDefinitionsType/uInt32Type"/>
+  <nested inputs="bundleentry://820.fwk1411015570/cache/www.w3.org/2001/XMLSchema.xsd#//long;XSDSimpleTypeDefinition=43"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//Long"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3Int64Attributes;XSDAttributeGroupDefinition=10/XSDAttributeUse=1"
+      outputs="Fmi3Annotation.ecore#//Int64TypeType/max"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3Int64Attributes;XSDAttributeGroupDefinition=10/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//Int64TypeType/min"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3IntegerBaseAttributes;XSDAttributeGroupDefinition=3/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//Int64TypeType/quantity"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Type.xsd#//fmi3TypeDefinition;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=8/Int64Type;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//Int64TypeType"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Type.xsd#//fmi3TypeDefinition;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=8"
+      outputs="Fmi3Annotation.ecore#//TypeDefinitionsType/int64Type"/>
+  <nested inputs="bundleentry://820.fwk1411015570/cache/www.w3.org/2001/XMLSchema.xsd#//unsignedLong;XSDSimpleTypeDefinition=48"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//UnsignedLong"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3UInt64Attributes;XSDAttributeGroupDefinition=11/XSDAttributeUse=1"
+      outputs="Fmi3Annotation.ecore#//UInt64TypeType/max"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3UInt64Attributes;XSDAttributeGroupDefinition=11/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//UInt64TypeType/min"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3IntegerBaseAttributes;XSDAttributeGroupDefinition=3/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//UInt64TypeType/quantity"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Type.xsd#//fmi3TypeDefinition;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=9/UInt64Type;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//UInt64TypeType"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Type.xsd#//fmi3TypeDefinition;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=9"
+      outputs="Fmi3Annotation.ecore#//TypeDefinitionsType/uInt64Type"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Type.xsd#//fmi3TypeDefinition;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=10/BooleanType;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//BooleanTypeType"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Type.xsd#//fmi3TypeDefinition;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=10"
+      outputs="Fmi3Annotation.ecore#//TypeDefinitionsType/booleanType"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Type.xsd#//fmi3TypeDefinition;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=11/StringType;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//StringTypeType"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Type.xsd#//fmi3TypeDefinition;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=11"
+      outputs="Fmi3Annotation.ecore#//TypeDefinitionsType/stringType"/>
+  <nested inputs="bundleentry://820.fwk1411015570/cache/www.w3.org/2001/XMLSchema.xsd#//nonNegativeInteger;XSDSimpleTypeDefinition=47"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//NonNegativeInteger"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Type.xsd#//fmi3TypeDefinition;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=12/BinaryType;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//BinaryTypeType">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Type.xsd#//fmi3TypeDefinition;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=12/BinaryType;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=1"
+        outputs="Fmi3Annotation.ecore#//BinaryTypeType/maxSize"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Type.xsd#//fmi3TypeDefinition;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=12/BinaryType;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="Fmi3Annotation.ecore#//BinaryTypeType/mimeType"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Type.xsd#//fmi3TypeDefinition;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=12"
+      outputs="Fmi3Annotation.ecore#//TypeDefinitionsType/binaryType"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Type.xsd#//fmi3TypeDefinition;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=13/EnumerationType;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Item;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//ItemType">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Type.xsd#//fmi3TypeDefinition;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=13/EnumerationType;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Item;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Fmi3Annotation.ecore#//ItemType/annotations"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Type.xsd#//fmi3TypeDefinition;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=13/EnumerationType;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Item;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=2"
+        outputs="Fmi3Annotation.ecore#//ItemType/description"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Type.xsd#//fmi3TypeDefinition;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=13/EnumerationType;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Item;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="Fmi3Annotation.ecore#//ItemType/name"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Type.xsd#//fmi3TypeDefinition;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=13/EnumerationType;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Item;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=1"
+        outputs="Fmi3Annotation.ecore#//ItemType/value"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3EnumerationAttributes;XSDAttributeGroupDefinition=13/XSDAttributeUse=1"
+      outputs="Fmi3Annotation.ecore#//EnumerationTypeType/max"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3EnumerationAttributes;XSDAttributeGroupDefinition=13/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//EnumerationTypeType/min"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3IntegerBaseAttributes;XSDAttributeGroupDefinition=3/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//EnumerationTypeType/quantity"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Type.xsd#//fmi3TypeDefinition;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=13/EnumerationType;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//EnumerationTypeType">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Type.xsd#//fmi3TypeDefinition;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=13/EnumerationType;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle"
+        outputs="Fmi3Annotation.ecore#//EnumerationTypeType/group"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Type.xsd#//fmi3TypeDefinition;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=13/EnumerationType;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Fmi3Annotation.ecore#//EnumerationTypeType/item"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Type.xsd#//fmi3TypeDefinition;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=13"
+      outputs="Fmi3Annotation.ecore#//TypeDefinitionsType/enumerationType"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3ClockAttributes;XSDAttributeGroupDefinition=14/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//ClockTypeType/canBeDeactivated"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3ClockAttributes;XSDAttributeGroupDefinition=14/XSDAttributeUse=7"
+      outputs="Fmi3Annotation.ecore#//ClockTypeType/intervalCounter"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3ClockAttributes;XSDAttributeGroupDefinition=14/XSDAttributeUse=3"
+      outputs="Fmi3Annotation.ecore#//ClockTypeType/intervalDecimal"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3ClockAttributes;XSDAttributeGroupDefinition=14/XSDAttributeUse=2/intervalVariability;XSDAttributeDeclaration/XSDSimpleTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//IntervalVariabilityType">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3ClockAttributes;XSDAttributeGroupDefinition=14/XSDAttributeUse=2/intervalVariability;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet"
+        outputs="Fmi3Annotation.ecore#//IntervalVariabilityType/constant"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3ClockAttributes;XSDAttributeGroupDefinition=14/XSDAttributeUse=2/intervalVariability;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=1"
+        outputs="Fmi3Annotation.ecore#//IntervalVariabilityType/fixed"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3ClockAttributes;XSDAttributeGroupDefinition=14/XSDAttributeUse=2/intervalVariability;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=2"
+        outputs="Fmi3Annotation.ecore#//IntervalVariabilityType/tunable"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3ClockAttributes;XSDAttributeGroupDefinition=14/XSDAttributeUse=2/intervalVariability;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=3"
+        outputs="Fmi3Annotation.ecore#//IntervalVariabilityType/changing"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3ClockAttributes;XSDAttributeGroupDefinition=14/XSDAttributeUse=2/intervalVariability;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=4"
+        outputs="Fmi3Annotation.ecore#//IntervalVariabilityType/countdown"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3ClockAttributes;XSDAttributeGroupDefinition=14/XSDAttributeUse=2/intervalVariability;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=5"
+        outputs="Fmi3Annotation.ecore#//IntervalVariabilityType/triggered"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3ClockAttributes;XSDAttributeGroupDefinition=14/XSDAttributeUse=2"
+      outputs="Fmi3Annotation.ecore#//ClockTypeType/intervalVariability"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3ClockAttributes;XSDAttributeGroupDefinition=14/XSDAttributeUse=1"
+      outputs="Fmi3Annotation.ecore#//ClockTypeType/priority"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3ClockAttributes;XSDAttributeGroupDefinition=14/XSDAttributeUse=6"
+      outputs="Fmi3Annotation.ecore#//ClockTypeType/resolution"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3ClockAttributes;XSDAttributeGroupDefinition=14/XSDAttributeUse=8"
+      outputs="Fmi3Annotation.ecore#//ClockTypeType/shiftCounter"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3ClockAttributes;XSDAttributeGroupDefinition=14/XSDAttributeUse=4"
+      outputs="Fmi3Annotation.ecore#//ClockTypeType/shiftDecimal"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3ClockAttributes;XSDAttributeGroupDefinition=14/XSDAttributeUse=5"
+      outputs="Fmi3Annotation.ecore#//ClockTypeType/supportsFraction"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Type.xsd#//fmi3TypeDefinition;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=14/ClockType;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//ClockTypeType"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Type.xsd#//fmi3TypeDefinition;XSDModelGroupDefinition/XSDModelGroup/XSDParticle=14"
+      outputs="Fmi3Annotation.ecore#//TypeDefinitionsType/clockType"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=4/TypeDefinitions;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//TypeDefinitionsType">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=4/TypeDefinitions;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle"
+        outputs="Fmi3Annotation.ecore#//TypeDefinitionsType/fmi3TypeDefinition"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=5/LogCategories;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Category;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//CategoryType">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=5/LogCategories;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Category;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Fmi3Annotation.ecore#//CategoryType/annotations"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=5/LogCategories;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Category;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=1"
+        outputs="Fmi3Annotation.ecore#//CategoryType/description"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=5/LogCategories;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/Category;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="Fmi3Annotation.ecore#//CategoryType/name"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=5/LogCategories;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//LogCategoriesType">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=5/LogCategories;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle"
+        outputs="Fmi3Annotation.ecore#//LogCategoriesType/group"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=5/LogCategories;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Fmi3Annotation.ecore#//LogCategoriesType/category"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=6/DefaultExperiment;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//DefaultExperimentType">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=6/DefaultExperiment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Fmi3Annotation.ecore#//DefaultExperimentType/annotations"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=6/DefaultExperiment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="Fmi3Annotation.ecore#//DefaultExperimentType/startTime"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=6/DefaultExperiment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=3"
+        outputs="Fmi3Annotation.ecore#//DefaultExperimentType/stepSize"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=6/DefaultExperiment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=1"
+        outputs="Fmi3Annotation.ecore#//DefaultExperimentType/stopTime"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=6/DefaultExperiment;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=2"
+        outputs="Fmi3Annotation.ecore#//DefaultExperimentType/tolerance"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3AbstractVariable;XSDComplexTypeDefinition/XSDAttributeUse=3/causality;XSDAttributeDeclaration/XSDSimpleTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//CausalityType">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3AbstractVariable;XSDComplexTypeDefinition/XSDAttributeUse=3/causality;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet"
+        outputs="Fmi3Annotation.ecore#//CausalityType/parameter"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3AbstractVariable;XSDComplexTypeDefinition/XSDAttributeUse=3/causality;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=1"
+        outputs="Fmi3Annotation.ecore#//CausalityType/calculatedParameter"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3AbstractVariable;XSDComplexTypeDefinition/XSDAttributeUse=3/causality;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=2"
+        outputs="Fmi3Annotation.ecore#//CausalityType/input"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3AbstractVariable;XSDComplexTypeDefinition/XSDAttributeUse=3/causality;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=3"
+        outputs="Fmi3Annotation.ecore#//CausalityType/output"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3AbstractVariable;XSDComplexTypeDefinition/XSDAttributeUse=3/causality;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=4"
+        outputs="Fmi3Annotation.ecore#//CausalityType/local"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3AbstractVariable;XSDComplexTypeDefinition/XSDAttributeUse=3/causality;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=5"
+        outputs="Fmi3Annotation.ecore#//CausalityType/independent"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3AbstractVariable;XSDComplexTypeDefinition/XSDAttributeUse=3/causality;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=6"
+        outputs="Fmi3Annotation.ecore#//CausalityType/structuralParameter"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3AbstractVariable;XSDComplexTypeDefinition/XSDAttributeUse=6/clocks;XSDAttributeDeclaration/XSDSimpleTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//ClocksType"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3AbstractVariable;XSDComplexTypeDefinition/XSDAttributeUse=4/variability;XSDAttributeDeclaration/XSDSimpleTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//VariabilityType">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3AbstractVariable;XSDComplexTypeDefinition/XSDAttributeUse=4/variability;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet"
+        outputs="Fmi3Annotation.ecore#//VariabilityType/constant"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3AbstractVariable;XSDComplexTypeDefinition/XSDAttributeUse=4/variability;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=1"
+        outputs="Fmi3Annotation.ecore#//VariabilityType/fixed"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3AbstractVariable;XSDComplexTypeDefinition/XSDAttributeUse=4/variability;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=2"
+        outputs="Fmi3Annotation.ecore#//VariabilityType/tunable"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3AbstractVariable;XSDComplexTypeDefinition/XSDAttributeUse=4/variability;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=3"
+        outputs="Fmi3Annotation.ecore#//VariabilityType/discrete"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3AbstractVariable;XSDComplexTypeDefinition/XSDAttributeUse=4/variability;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=4"
+        outputs="Fmi3Annotation.ecore#//VariabilityType/continuous"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3AbstractVariable;XSDComplexTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//Fmi3AbstractVariable">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3AbstractVariable;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Fmi3Annotation.ecore#//Fmi3AbstractVariable/annotations"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3AbstractVariable;XSDComplexTypeDefinition/XSDAttributeUse=5"
+        outputs="Fmi3Annotation.ecore#//Fmi3AbstractVariable/canHandleMultipleSetPerTimeInstant"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3AbstractVariable;XSDComplexTypeDefinition/XSDAttributeUse=3"
+        outputs="Fmi3Annotation.ecore#//Fmi3AbstractVariable/causality"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3AbstractVariable;XSDComplexTypeDefinition/XSDAttributeUse=6"
+        outputs="Fmi3Annotation.ecore#//Fmi3AbstractVariable/clocks"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3AbstractVariable;XSDComplexTypeDefinition/XSDAttributeUse=2"
+        outputs="Fmi3Annotation.ecore#//Fmi3AbstractVariable/description"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3AbstractVariable;XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="Fmi3Annotation.ecore#//Fmi3AbstractVariable/name"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3AbstractVariable;XSDComplexTypeDefinition/XSDAttributeUse=1"
+        outputs="Fmi3Annotation.ecore#//Fmi3AbstractVariable/valueReference"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3AbstractVariable;XSDComplexTypeDefinition/XSDAttributeUse=4"
+        outputs="Fmi3Annotation.ecore#//Fmi3AbstractVariable/variability"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Dimensions;XSDModelGroupDefinition/XSDModelGroup/XSDParticle/Dimension;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//DimensionType">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Dimensions;XSDModelGroupDefinition/XSDModelGroup/XSDParticle/Dimension;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="Fmi3Annotation.ecore#//DimensionType/start"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Dimensions;XSDModelGroupDefinition/XSDModelGroup/XSDParticle/Dimension;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=1"
+        outputs="Fmi3Annotation.ecore#//DimensionType/valueReference"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Dimensions;XSDModelGroupDefinition/XSDModelGroup/XSDParticle"
+      outputs="Fmi3Annotation.ecore#//Fmi3ArrayableVariable/dimension"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3ArrayableVariable;XSDComplexTypeDefinition=1"
+      outputs="Fmi3Annotation.ecore#//Fmi3ArrayableVariable">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3ArrayableVariable;XSDComplexTypeDefinition=1/XSDAttributeUse"
+        outputs="Fmi3Annotation.ecore#//Fmi3ArrayableVariable/intermediateUpdate"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3ArrayableVariable;XSDComplexTypeDefinition=1/XSDAttributeUse=1"
+        outputs="Fmi3Annotation.ecore#//Fmi3ArrayableVariable/previous"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3TypedArrayableVariable;XSDComplexTypeDefinition=3"
+      outputs="Fmi3Annotation.ecore#//Fmi3TypedArrayableVariable">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3TypedArrayableVariable;XSDComplexTypeDefinition=3/XSDAttributeUse"
+        outputs="Fmi3Annotation.ecore#//Fmi3TypedArrayableVariable/declaredType"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3InitializableVariable;XSDComplexTypeDefinition=5/XSDAttributeUse/initial;XSDAttributeDeclaration/XSDSimpleTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//InitialType1">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3InitializableVariable;XSDComplexTypeDefinition=5/XSDAttributeUse/initial;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet"
+        outputs="Fmi3Annotation.ecore#//InitialType1/exact"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3InitializableVariable;XSDComplexTypeDefinition=5/XSDAttributeUse/initial;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=1"
+        outputs="Fmi3Annotation.ecore#//InitialType1/approx"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3InitializableVariable;XSDComplexTypeDefinition=5/XSDAttributeUse/initial;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=2"
+        outputs="Fmi3Annotation.ecore#//InitialType1/calculated"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3InitializableVariable;XSDComplexTypeDefinition=5"
+      outputs="Fmi3Annotation.ecore#//Fmi3InitializableVariable">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3InitializableVariable;XSDComplexTypeDefinition=5/XSDAttributeUse"
+        outputs="Fmi3Annotation.ecore#//Fmi3InitializableVariable/initial"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3VariableAlias;XSDComplexTypeDefinition=22"
+      outputs="Fmi3Annotation.ecore#//Fmi3VariableAlias">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3VariableAlias;XSDComplexTypeDefinition=22/XSDAttributeUse=1"
+        outputs="Fmi3Annotation.ecore#//Fmi3VariableAlias/description"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3VariableAlias;XSDComplexTypeDefinition=22/XSDAttributeUse"
+        outputs="Fmi3Annotation.ecore#//Fmi3VariableAlias/name"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3FloatVariableAlias;XSDComplexTypeDefinition=23"
+      outputs="Fmi3Annotation.ecore#//Fmi3FloatVariableAlias">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3FloatVariableAlias;XSDComplexTypeDefinition=23/XSDAttributeUse"
+        outputs="Fmi3Annotation.ecore#//Fmi3FloatVariableAlias/displayUnit"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3RealVariableAttributes;XSDAttributeGroupDefinition=12/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//Fmi3Float32/derivative"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3RealBaseAttributes;XSDAttributeGroupDefinition/XSDAttributeUse=2"
+      outputs="Fmi3Annotation.ecore#//Fmi3Float32/displayUnit"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3Float32Attributes;XSDAttributeGroupDefinition=2/XSDAttributeUse=1"
+      outputs="Fmi3Annotation.ecore#//Fmi3Float32/max"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3Float32Attributes;XSDAttributeGroupDefinition=2/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//Fmi3Float32/min"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3Float32Attributes;XSDAttributeGroupDefinition=2/XSDAttributeUse=2"
+      outputs="Fmi3Annotation.ecore#//Fmi3Float32/nominal"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3RealBaseAttributes;XSDAttributeGroupDefinition/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//Fmi3Float32/quantity"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3RealVariableAttributes;XSDAttributeGroupDefinition=12/XSDAttributeUse=1"
+      outputs="Fmi3Annotation.ecore#//Fmi3Float32/reinit"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3RealBaseAttributes;XSDAttributeGroupDefinition/XSDAttributeUse=3"
+      outputs="Fmi3Annotation.ecore#//Fmi3Float32/relativeQuantity"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Float32;XSDComplexTypeDefinition=7/XSDAttributeUse/start;XSDAttributeDeclaration/XSDSimpleTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//StartType13"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3RealBaseAttributes;XSDAttributeGroupDefinition/XSDAttributeUse=4"
+      outputs="Fmi3Annotation.ecore#//Fmi3Float32/unbounded"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3RealBaseAttributes;XSDAttributeGroupDefinition/XSDAttributeUse=1"
+      outputs="Fmi3Annotation.ecore#//Fmi3Float32/unit"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Float32;XSDComplexTypeDefinition=7"
+      outputs="Fmi3Annotation.ecore#//Fmi3Float32">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Float32;XSDComplexTypeDefinition=7/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Fmi3Annotation.ecore#//Fmi3Float32/alias"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Float32;XSDComplexTypeDefinition=7/XSDAttributeUse"
+        outputs="Fmi3Annotation.ecore#//Fmi3Float32/start"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Variable;XSDModelGroupDefinition=1/XSDModelGroup/XSDParticle"
+      outputs="Fmi3Annotation.ecore#//ModelVariablesType/float32"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3RealVariableAttributes;XSDAttributeGroupDefinition=12/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//Fmi3Float64/derivative"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3RealBaseAttributes;XSDAttributeGroupDefinition/XSDAttributeUse=2"
+      outputs="Fmi3Annotation.ecore#//Fmi3Float64/displayUnit"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3Float64Attributes;XSDAttributeGroupDefinition=1/XSDAttributeUse=1"
+      outputs="Fmi3Annotation.ecore#//Fmi3Float64/max"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3Float64Attributes;XSDAttributeGroupDefinition=1/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//Fmi3Float64/min"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3Float64Attributes;XSDAttributeGroupDefinition=1/XSDAttributeUse=2"
+      outputs="Fmi3Annotation.ecore#//Fmi3Float64/nominal"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3RealBaseAttributes;XSDAttributeGroupDefinition/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//Fmi3Float64/quantity"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3RealVariableAttributes;XSDAttributeGroupDefinition=12/XSDAttributeUse=1"
+      outputs="Fmi3Annotation.ecore#//Fmi3Float64/reinit"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3RealBaseAttributes;XSDAttributeGroupDefinition/XSDAttributeUse=3"
+      outputs="Fmi3Annotation.ecore#//Fmi3Float64/relativeQuantity"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Float64;XSDComplexTypeDefinition=8/XSDAttributeUse/start;XSDAttributeDeclaration/XSDSimpleTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//StartType12"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3RealBaseAttributes;XSDAttributeGroupDefinition/XSDAttributeUse=4"
+      outputs="Fmi3Annotation.ecore#//Fmi3Float64/unbounded"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3RealBaseAttributes;XSDAttributeGroupDefinition/XSDAttributeUse=1"
+      outputs="Fmi3Annotation.ecore#//Fmi3Float64/unit"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Float64;XSDComplexTypeDefinition=8"
+      outputs="Fmi3Annotation.ecore#//Fmi3Float64">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Float64;XSDComplexTypeDefinition=8/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Fmi3Annotation.ecore#//Fmi3Float64/alias"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Float64;XSDComplexTypeDefinition=8/XSDAttributeUse"
+        outputs="Fmi3Annotation.ecore#//Fmi3Float64/start"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Variable;XSDModelGroupDefinition=1/XSDModelGroup/XSDParticle=1"
+      outputs="Fmi3Annotation.ecore#//ModelVariablesType/float64"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3Int8Attributes;XSDAttributeGroupDefinition=4/XSDAttributeUse=1"
+      outputs="Fmi3Annotation.ecore#//Fmi3Int8/max"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3Int8Attributes;XSDAttributeGroupDefinition=4/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//Fmi3Int8/min"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3IntegerBaseAttributes;XSDAttributeGroupDefinition=3/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//Fmi3Int8/quantity"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Int8;XSDComplexTypeDefinition=9/XSDAttributeUse/start;XSDAttributeDeclaration/XSDSimpleTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//StartType11"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Int8;XSDComplexTypeDefinition=9"
+      outputs="Fmi3Annotation.ecore#//Fmi3Int8">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Int8;XSDComplexTypeDefinition=9/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Fmi3Annotation.ecore#//Fmi3Int8/alias"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Int8;XSDComplexTypeDefinition=9/XSDAttributeUse"
+        outputs="Fmi3Annotation.ecore#//Fmi3Int8/start"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Variable;XSDModelGroupDefinition=1/XSDModelGroup/XSDParticle=2"
+      outputs="Fmi3Annotation.ecore#//ModelVariablesType/int8"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3UInt8Attributes;XSDAttributeGroupDefinition=5/XSDAttributeUse=1"
+      outputs="Fmi3Annotation.ecore#//Fmi3UInt8/max"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3UInt8Attributes;XSDAttributeGroupDefinition=5/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//Fmi3UInt8/min"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3IntegerBaseAttributes;XSDAttributeGroupDefinition=3/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//Fmi3UInt8/quantity"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3UInt8;XSDComplexTypeDefinition=10/XSDAttributeUse/start;XSDAttributeDeclaration/XSDSimpleTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//StartType6"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3UInt8;XSDComplexTypeDefinition=10"
+      outputs="Fmi3Annotation.ecore#//Fmi3UInt8">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3UInt8;XSDComplexTypeDefinition=10/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Fmi3Annotation.ecore#//Fmi3UInt8/alias"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3UInt8;XSDComplexTypeDefinition=10/XSDAttributeUse"
+        outputs="Fmi3Annotation.ecore#//Fmi3UInt8/start"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Variable;XSDModelGroupDefinition=1/XSDModelGroup/XSDParticle=3"
+      outputs="Fmi3Annotation.ecore#//ModelVariablesType/uInt8"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3Int16Attributes;XSDAttributeGroupDefinition=6/XSDAttributeUse=1"
+      outputs="Fmi3Annotation.ecore#//Fmi3Int16/max"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3Int16Attributes;XSDAttributeGroupDefinition=6/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//Fmi3Int16/min"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3IntegerBaseAttributes;XSDAttributeGroupDefinition=3/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//Fmi3Int16/quantity"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Int16;XSDComplexTypeDefinition=11/XSDAttributeUse/start;XSDAttributeDeclaration/XSDSimpleTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//StartType7"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Int16;XSDComplexTypeDefinition=11"
+      outputs="Fmi3Annotation.ecore#//Fmi3Int16">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Int16;XSDComplexTypeDefinition=11/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Fmi3Annotation.ecore#//Fmi3Int16/alias"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Int16;XSDComplexTypeDefinition=11/XSDAttributeUse"
+        outputs="Fmi3Annotation.ecore#//Fmi3Int16/start"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Variable;XSDModelGroupDefinition=1/XSDModelGroup/XSDParticle=4"
+      outputs="Fmi3Annotation.ecore#//ModelVariablesType/int16"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3UInt16Attributes;XSDAttributeGroupDefinition=7/XSDAttributeUse=1"
+      outputs="Fmi3Annotation.ecore#//Fmi3UInt16/max"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3UInt16Attributes;XSDAttributeGroupDefinition=7/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//Fmi3UInt16/min"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3IntegerBaseAttributes;XSDAttributeGroupDefinition=3/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//Fmi3UInt16/quantity"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3UInt16;XSDComplexTypeDefinition=12/XSDAttributeUse/start;XSDAttributeDeclaration/XSDSimpleTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//StartType8"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3UInt16;XSDComplexTypeDefinition=12"
+      outputs="Fmi3Annotation.ecore#//Fmi3UInt16">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3UInt16;XSDComplexTypeDefinition=12/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Fmi3Annotation.ecore#//Fmi3UInt16/alias"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3UInt16;XSDComplexTypeDefinition=12/XSDAttributeUse"
+        outputs="Fmi3Annotation.ecore#//Fmi3UInt16/start"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Variable;XSDModelGroupDefinition=1/XSDModelGroup/XSDParticle=5"
+      outputs="Fmi3Annotation.ecore#//ModelVariablesType/uInt16"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3Int32Attributes;XSDAttributeGroupDefinition=8/XSDAttributeUse=1"
+      outputs="Fmi3Annotation.ecore#//Fmi3Int32/max"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3Int32Attributes;XSDAttributeGroupDefinition=8/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//Fmi3Int32/min"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3IntegerBaseAttributes;XSDAttributeGroupDefinition=3/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//Fmi3Int32/quantity"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Int32;XSDComplexTypeDefinition=13/XSDAttributeUse/start;XSDAttributeDeclaration/XSDSimpleTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//StartType10"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Int32;XSDComplexTypeDefinition=13"
+      outputs="Fmi3Annotation.ecore#//Fmi3Int32">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Int32;XSDComplexTypeDefinition=13/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Fmi3Annotation.ecore#//Fmi3Int32/alias"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Int32;XSDComplexTypeDefinition=13/XSDAttributeUse"
+        outputs="Fmi3Annotation.ecore#//Fmi3Int32/start"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Variable;XSDModelGroupDefinition=1/XSDModelGroup/XSDParticle=6"
+      outputs="Fmi3Annotation.ecore#//ModelVariablesType/int32"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3UInt32Attributes;XSDAttributeGroupDefinition=9/XSDAttributeUse=1"
+      outputs="Fmi3Annotation.ecore#//Fmi3UInt32/max"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3UInt32Attributes;XSDAttributeGroupDefinition=9/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//Fmi3UInt32/min"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3IntegerBaseAttributes;XSDAttributeGroupDefinition=3/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//Fmi3UInt32/quantity"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3UInt32;XSDComplexTypeDefinition=14/XSDAttributeUse/start;XSDAttributeDeclaration/XSDSimpleTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//StartType9"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3UInt32;XSDComplexTypeDefinition=14"
+      outputs="Fmi3Annotation.ecore#//Fmi3UInt32">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3UInt32;XSDComplexTypeDefinition=14/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Fmi3Annotation.ecore#//Fmi3UInt32/alias"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3UInt32;XSDComplexTypeDefinition=14/XSDAttributeUse"
+        outputs="Fmi3Annotation.ecore#//Fmi3UInt32/start"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Variable;XSDModelGroupDefinition=1/XSDModelGroup/XSDParticle=7"
+      outputs="Fmi3Annotation.ecore#//ModelVariablesType/uInt32"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3Int64Attributes;XSDAttributeGroupDefinition=10/XSDAttributeUse=1"
+      outputs="Fmi3Annotation.ecore#//Fmi3Int64/max"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3Int64Attributes;XSDAttributeGroupDefinition=10/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//Fmi3Int64/min"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3IntegerBaseAttributes;XSDAttributeGroupDefinition=3/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//Fmi3Int64/quantity"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Int64;XSDComplexTypeDefinition=15/XSDAttributeUse/start;XSDAttributeDeclaration/XSDSimpleTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//StartType5"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Int64;XSDComplexTypeDefinition=15"
+      outputs="Fmi3Annotation.ecore#//Fmi3Int64">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Int64;XSDComplexTypeDefinition=15/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Fmi3Annotation.ecore#//Fmi3Int64/alias"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Int64;XSDComplexTypeDefinition=15/XSDAttributeUse"
+        outputs="Fmi3Annotation.ecore#//Fmi3Int64/start"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Variable;XSDModelGroupDefinition=1/XSDModelGroup/XSDParticle=8"
+      outputs="Fmi3Annotation.ecore#//ModelVariablesType/int64"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3UInt64Attributes;XSDAttributeGroupDefinition=11/XSDAttributeUse=1"
+      outputs="Fmi3Annotation.ecore#//Fmi3UInt64/max"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3UInt64Attributes;XSDAttributeGroupDefinition=11/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//Fmi3UInt64/min"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3IntegerBaseAttributes;XSDAttributeGroupDefinition=3/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//Fmi3UInt64/quantity"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3UInt64;XSDComplexTypeDefinition=16/XSDAttributeUse/start;XSDAttributeDeclaration/XSDSimpleTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//StartType"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3UInt64;XSDComplexTypeDefinition=16"
+      outputs="Fmi3Annotation.ecore#//Fmi3UInt64">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3UInt64;XSDComplexTypeDefinition=16/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Fmi3Annotation.ecore#//Fmi3UInt64/alias"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3UInt64;XSDComplexTypeDefinition=16/XSDAttributeUse"
+        outputs="Fmi3Annotation.ecore#//Fmi3UInt64/start"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Variable;XSDModelGroupDefinition=1/XSDModelGroup/XSDParticle=9"
+      outputs="Fmi3Annotation.ecore#//ModelVariablesType/uInt64"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Boolean;XSDComplexTypeDefinition=17/XSDAttributeUse/start;XSDAttributeDeclaration/XSDSimpleTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//StartType4"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Boolean;XSDComplexTypeDefinition=17"
+      outputs="Fmi3Annotation.ecore#//Fmi3Boolean">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Boolean;XSDComplexTypeDefinition=17/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Fmi3Annotation.ecore#//Fmi3Boolean/alias"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Boolean;XSDComplexTypeDefinition=17/XSDAttributeUse"
+        outputs="Fmi3Annotation.ecore#//Fmi3Boolean/start"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Variable;XSDModelGroupDefinition=1/XSDModelGroup/XSDParticle=10"
+      outputs="Fmi3Annotation.ecore#//ModelVariablesType/boolean"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3String;XSDComplexTypeDefinition=18/XSDParticle/XSDModelGroup/XSDParticle/Start;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//StartType2">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3String;XSDComplexTypeDefinition=18/XSDParticle/XSDModelGroup/XSDParticle/Start;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="Fmi3Annotation.ecore#//StartType2/value"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3String;XSDComplexTypeDefinition=18"
+      outputs="Fmi3Annotation.ecore#//Fmi3String">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3String;XSDComplexTypeDefinition=18/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Fmi3Annotation.ecore#//Fmi3String/start"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3String;XSDComplexTypeDefinition=18/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="Fmi3Annotation.ecore#//Fmi3String/alias"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Variable;XSDModelGroupDefinition=1/XSDModelGroup/XSDParticle=11"
+      outputs="Fmi3Annotation.ecore#//ModelVariablesType/string"/>
+  <nested inputs="bundleentry://820.fwk1411015570/cache/www.w3.org/2001/XMLSchema.xsd#//hexBinary;XSDSimpleTypeDefinition=23"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//HexBinary"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Binary;XSDComplexTypeDefinition=19/XSDParticle/XSDModelGroup/XSDParticle/Start;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//StartType3">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Binary;XSDComplexTypeDefinition=19/XSDParticle/XSDModelGroup/XSDParticle/Start;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="Fmi3Annotation.ecore#//StartType3/value"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Binary;XSDComplexTypeDefinition=19"
+      outputs="Fmi3Annotation.ecore#//Fmi3Binary">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Binary;XSDComplexTypeDefinition=19/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Fmi3Annotation.ecore#//Fmi3Binary/start"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Binary;XSDComplexTypeDefinition=19/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="Fmi3Annotation.ecore#//Fmi3Binary/alias"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Binary;XSDComplexTypeDefinition=19/XSDAttributeUse=1"
+        outputs="Fmi3Annotation.ecore#//Fmi3Binary/maxSize"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Binary;XSDComplexTypeDefinition=19/XSDAttributeUse"
+        outputs="Fmi3Annotation.ecore#//Fmi3Binary/mimeType"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Variable;XSDModelGroupDefinition=1/XSDModelGroup/XSDParticle=12"
+      outputs="Fmi3Annotation.ecore#//ModelVariablesType/binary"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3MandatorilyTypedArrayableVariable;XSDComplexTypeDefinition=4"
+      outputs="Fmi3Annotation.ecore#//Fmi3MandatorilyTypedArrayableVariable"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3MandatorilyTypedInitializableVariable;XSDComplexTypeDefinition=6/XSDAttributeUse/initial;XSDAttributeDeclaration/XSDSimpleTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//InitialType">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3MandatorilyTypedInitializableVariable;XSDComplexTypeDefinition=6/XSDAttributeUse/initial;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet"
+        outputs="Fmi3Annotation.ecore#//InitialType/exact"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3MandatorilyTypedInitializableVariable;XSDComplexTypeDefinition=6/XSDAttributeUse/initial;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=1"
+        outputs="Fmi3Annotation.ecore#//InitialType/approx"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3MandatorilyTypedInitializableVariable;XSDComplexTypeDefinition=6/XSDAttributeUse/initial;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=2"
+        outputs="Fmi3Annotation.ecore#//InitialType/calculated"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3MandatorilyTypedInitializableVariable;XSDComplexTypeDefinition=6"
+      outputs="Fmi3Annotation.ecore#//Fmi3MandatorilyTypedInitializableVariable">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3MandatorilyTypedInitializableVariable;XSDComplexTypeDefinition=6/XSDAttributeUse"
+        outputs="Fmi3Annotation.ecore#//Fmi3MandatorilyTypedInitializableVariable/initial"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3EnumerationAttributes;XSDAttributeGroupDefinition=13/XSDAttributeUse=1"
+      outputs="Fmi3Annotation.ecore#//Fmi3Enumeration/max"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3EnumerationAttributes;XSDAttributeGroupDefinition=13/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//Fmi3Enumeration/min"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3IntegerBaseAttributes;XSDAttributeGroupDefinition=3/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//Fmi3Enumeration/quantity"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Enumeration;XSDComplexTypeDefinition=20/XSDAttributeUse/start;XSDAttributeDeclaration/XSDSimpleTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//StartType1"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Enumeration;XSDComplexTypeDefinition=20"
+      outputs="Fmi3Annotation.ecore#//Fmi3Enumeration">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Enumeration;XSDComplexTypeDefinition=20/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Fmi3Annotation.ecore#//Fmi3Enumeration/alias"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Enumeration;XSDComplexTypeDefinition=20/XSDAttributeUse"
+        outputs="Fmi3Annotation.ecore#//Fmi3Enumeration/start"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Variable;XSDModelGroupDefinition=1/XSDModelGroup/XSDParticle=13"
+      outputs="Fmi3Annotation.ecore#//ModelVariablesType/enumeration"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3TypedVariable;XSDComplexTypeDefinition=2"
+      outputs="Fmi3Annotation.ecore#//Fmi3TypedVariable">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3TypedVariable;XSDComplexTypeDefinition=2/XSDAttributeUse"
+        outputs="Fmi3Annotation.ecore#//Fmi3TypedVariable/declaredType"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3ClockAttributes;XSDAttributeGroupDefinition=14/XSDAttributeUse"
+      outputs="Fmi3Annotation.ecore#//Fmi3Clock/canBeDeactivated"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3ClockAttributes;XSDAttributeGroupDefinition=14/XSDAttributeUse=7"
+      outputs="Fmi3Annotation.ecore#//Fmi3Clock/intervalCounter"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3ClockAttributes;XSDAttributeGroupDefinition=14/XSDAttributeUse=3"
+      outputs="Fmi3Annotation.ecore#//Fmi3Clock/intervalDecimal"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3ClockAttributes;XSDAttributeGroupDefinition=14/XSDAttributeUse=2"
+      outputs="Fmi3Annotation.ecore#//Fmi3Clock/intervalVariability"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3ClockAttributes;XSDAttributeGroupDefinition=14/XSDAttributeUse=1"
+      outputs="Fmi3Annotation.ecore#//Fmi3Clock/priority"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3ClockAttributes;XSDAttributeGroupDefinition=14/XSDAttributeUse=6"
+      outputs="Fmi3Annotation.ecore#//Fmi3Clock/resolution"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3ClockAttributes;XSDAttributeGroupDefinition=14/XSDAttributeUse=8"
+      outputs="Fmi3Annotation.ecore#//Fmi3Clock/shiftCounter"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3ClockAttributes;XSDAttributeGroupDefinition=14/XSDAttributeUse=4"
+      outputs="Fmi3Annotation.ecore#//Fmi3Clock/shiftDecimal"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3AttributeGroups.xsd#//fmi3ClockAttributes;XSDAttributeGroupDefinition=14/XSDAttributeUse=5"
+      outputs="Fmi3Annotation.ecore#//Fmi3Clock/supportsFraction"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Clock;XSDComplexTypeDefinition=21"
+      outputs="Fmi3Annotation.ecore#//Fmi3Clock">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Clock;XSDComplexTypeDefinition=21/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Fmi3Annotation.ecore#//Fmi3Clock/alias"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3Variable.xsd#//fmi3Variable;XSDModelGroupDefinition=1/XSDModelGroup/XSDParticle=14"
+      outputs="Fmi3Annotation.ecore#//ModelVariablesType/clock"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=7/ModelVariables;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//ModelVariablesType">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=7/ModelVariables;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle"
+        outputs="Fmi3Annotation.ecore#//ModelVariablesType/fmi3Variable"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3VariableDependency.xsd#//fmi3Unknown;XSDComplexTypeDefinition/XSDAttributeUse=1/dependencies;XSDAttributeDeclaration/XSDSimpleTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//DependenciesType"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3VariableDependency.xsd#//fmi3Unknown;XSDComplexTypeDefinition/XSDAttributeUse=2/dependenciesKind;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDSimpleTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//DependenciesKindTypeItem">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3VariableDependency.xsd#//fmi3Unknown;XSDComplexTypeDefinition/XSDAttributeUse=2/dependenciesKind;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDSimpleTypeDefinition/XSDEnumerationFacet"
+        outputs="Fmi3Annotation.ecore#//DependenciesKindTypeItem/dependent"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3VariableDependency.xsd#//fmi3Unknown;XSDComplexTypeDefinition/XSDAttributeUse=2/dependenciesKind;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDSimpleTypeDefinition/XSDEnumerationFacet=1"
+        outputs="Fmi3Annotation.ecore#//DependenciesKindTypeItem/constant"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3VariableDependency.xsd#//fmi3Unknown;XSDComplexTypeDefinition/XSDAttributeUse=2/dependenciesKind;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDSimpleTypeDefinition/XSDEnumerationFacet=2"
+        outputs="Fmi3Annotation.ecore#//DependenciesKindTypeItem/fixed"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3VariableDependency.xsd#//fmi3Unknown;XSDComplexTypeDefinition/XSDAttributeUse=2/dependenciesKind;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDSimpleTypeDefinition/XSDEnumerationFacet=3"
+        outputs="Fmi3Annotation.ecore#//DependenciesKindTypeItem/tunable"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3VariableDependency.xsd#//fmi3Unknown;XSDComplexTypeDefinition/XSDAttributeUse=2/dependenciesKind;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDSimpleTypeDefinition/XSDEnumerationFacet=4"
+        outputs="Fmi3Annotation.ecore#//DependenciesKindTypeItem/discrete"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3VariableDependency.xsd#//fmi3Unknown;XSDComplexTypeDefinition/XSDAttributeUse=2/dependenciesKind;XSDAttributeDeclaration/XSDSimpleTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//DependenciesKindType"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3VariableDependency.xsd#//fmi3Unknown;XSDComplexTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//Fmi3Unknown">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3VariableDependency.xsd#//fmi3Unknown;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Fmi3Annotation.ecore#//Fmi3Unknown/annotations"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3VariableDependency.xsd#//fmi3Unknown;XSDComplexTypeDefinition/XSDAttributeUse=1"
+        outputs="Fmi3Annotation.ecore#//Fmi3Unknown/dependencies"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3VariableDependency.xsd#//fmi3Unknown;XSDComplexTypeDefinition/XSDAttributeUse=2"
+        outputs="Fmi3Annotation.ecore#//Fmi3Unknown/dependenciesKind"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3VariableDependency.xsd#//fmi3Unknown;XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="Fmi3Annotation.ecore#//Fmi3Unknown/valueReference"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=8/ModelStructure;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//ModelStructureType">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=8/ModelStructure;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Fmi3Annotation.ecore#//ModelStructureType/output"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=8/ModelStructure;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="Fmi3Annotation.ecore#//ModelStructureType/continuousStateDerivative"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=8/ModelStructure;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="Fmi3Annotation.ecore#//ModelStructureType/clockedState"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=8/ModelStructure;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=3"
+        outputs="Fmi3Annotation.ecore#//ModelStructureType/initialUnknown"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=8/ModelStructure;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=4"
+        outputs="Fmi3Annotation.ecore#//ModelStructureType/eventIndicator"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse/fmiVersion;XSDAttributeDeclaration/XSDSimpleTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//FmiVersionType"/>
+  <nested inputs="bundleentry://820.fwk1411015570/cache/www.w3.org/2001/XMLSchema.xsd#//dateTime;XSDSimpleTypeDefinition=15"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//DateTime"/>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=10/variableNamingConvention;XSDAttributeDeclaration/XSDSimpleTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//VariableNamingConventionType">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=10/variableNamingConvention;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet"
+        outputs="Fmi3Annotation.ecore#//VariableNamingConventionType/flat"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=10/variableNamingConvention;XSDAttributeDeclaration/XSDSimpleTypeDefinition/XSDEnumerationFacet=1"
+        outputs="Fmi3Annotation.ecore#//VariableNamingConventionType/structured"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="Fmi3Annotation.ecore#//FmiModelDescriptionType">
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Fmi3Annotation.ecore#//FmiModelDescriptionType/modelExchange"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="Fmi3Annotation.ecore#//FmiModelDescriptionType/coSimulation"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="Fmi3Annotation.ecore#//FmiModelDescriptionType/scheduledExecution"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=3"
+        outputs="Fmi3Annotation.ecore#//FmiModelDescriptionType/unitDefinitions"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=4"
+        outputs="Fmi3Annotation.ecore#//FmiModelDescriptionType/typeDefinitions"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=5"
+        outputs="Fmi3Annotation.ecore#//FmiModelDescriptionType/logCategories"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=6"
+        outputs="Fmi3Annotation.ecore#//FmiModelDescriptionType/defaultExperiment"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=7"
+        outputs="Fmi3Annotation.ecore#//FmiModelDescriptionType/modelVariables"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=8"
+        outputs="Fmi3Annotation.ecore#//FmiModelDescriptionType/modelStructure"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=9"
+        outputs="Fmi3Annotation.ecore#//FmiModelDescriptionType/annotations"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=4"
+        outputs="Fmi3Annotation.ecore#//FmiModelDescriptionType/author"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=6"
+        outputs="Fmi3Annotation.ecore#//FmiModelDescriptionType/copyright"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=3"
+        outputs="Fmi3Annotation.ecore#//FmiModelDescriptionType/description"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="Fmi3Annotation.ecore#//FmiModelDescriptionType/fmiVersion"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=9"
+        outputs="Fmi3Annotation.ecore#//FmiModelDescriptionType/generationDateAndTime"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=8"
+        outputs="Fmi3Annotation.ecore#//FmiModelDescriptionType/generationTool"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=2"
+        outputs="Fmi3Annotation.ecore#//FmiModelDescriptionType/instantiationToken"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=7"
+        outputs="Fmi3Annotation.ecore#//FmiModelDescriptionType/license"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=1"
+        outputs="Fmi3Annotation.ecore#//FmiModelDescriptionType/modelName"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=10"
+        outputs="Fmi3Annotation.ecore#//FmiModelDescriptionType/variableNamingConvention"/>
+    <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse=5"
+        outputs="Fmi3Annotation.ecore#//FmiModelDescriptionType/version"/>
+  </nested>
+  <nested inputs="file:/E:/workspaces/SysMLOC-workspace/fmi-standard-main/schema/fmi3ModelDescription.xsd#//fmiModelDescription;XSDElementDeclaration"
+      outputs="Fmi3Annotation.ecore#//DocumentRoot/fmiModelDescription"/>
+</xsd2ecore:XSD2EcoreMappingRoot>
