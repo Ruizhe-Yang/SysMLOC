@@ -2,7 +2,7 @@ package VehicleDefinitions{
 	doc /*
 	 * Example vehicle definitions model.
 	 */
-	private import ScalarValues :: *;
+	private import all ScalarValues :: * :: **;
 	private import Quantities :: *;
 	private import MeasurementReferences :: *;
 	private import ISQ :: *;

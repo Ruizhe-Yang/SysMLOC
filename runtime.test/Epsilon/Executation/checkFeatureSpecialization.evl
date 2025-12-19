@@ -4,11 +4,11 @@ context SysMLOC!FeatureSpecialization{
 	constraint Check{
 		check: self.checkFeatureSpecialization()
 		message: "[Error]" + self.declaredName + " : FeatureSpecialization error."
-		fix{
-			title: "add AAA"
-			do{
-				self.declaredName += "AAA";
-			}
-		}
+//		fix{
+//			title: "add AAA"
+//			do{
+//				self.declaredName += "AAA";
+//			}
+//		}
 	}
 }
