@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: dut.control.kermloc.ui
+Bundle-ManifestVersion: 2
+Bundle-Name: dut.control.kermloc.ui
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: dut.control.kermloc.ui; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: dut.control.kermloc,
+ dut.control.kermloc.ide,
+ org.eclipse.xtext.ui,
+ org.eclipse.xtext.ui.shared,
+ org.eclipse.xtext.ui.codetemplates.ui,
+ org.eclipse.ui.editors;bundle-version="3.14.300",
+ org.eclipse.ui.ide;bundle-version="3.18.500",
+ org.eclipse.ui,
+ org.eclipse.compare,
+ org.eclipse.xtext.builder
+Import-Package: org.apache.log4j
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Export-Package: dut.control.kermloc.ui.internal,
+ dut.control.kermloc.ui.contentassist,
+ dut.control.kermloc.ui.quickfix
+Bundle-Activator: dut.control.kermloc.ui.internal.KermlocActivator

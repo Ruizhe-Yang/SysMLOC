@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+	<extension
+		point="org.eclipse.ui.editors">
+		<editor
+			class="dut.control.kermloc.ui.KerMLOCExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
+			contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
+			default="true"
+			extensions="kerml"
+			id="dut.control.kermloc.KerMLOC"
+			name="KerMLOC Editor">
+		</editor>
+	</extension>
+	<extension
+		point="org.eclipse.ui.handlers">
+		<handler
+			class="dut.control.kermloc.ui.KerMLOCExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
+			commandId="org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclaration">
+			<activeWhen>
+				<reference
+					definitionId="dut.control.kermloc.KerMLOC.Editor.opened">
+				</reference>
+			</activeWhen>
+		</handler>
+		<handler
+			class="dut.control.kermloc.ui.KerMLOCExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
+			commandId="dut.control.kermloc.KerMLOC.validate">
+			<activeWhen>
+				<reference
+					definitionId="dut.control.kermloc.KerMLOC.Editor.opened">
+				</reference>
+			</activeWhen>
+		</handler>
+		<!-- copy qualified name -->
+		<handler
+			class="dut.control.kermloc.ui.KerMLOCExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedNameHandler"
+			commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName">
+			<activeWhen>
+				<reference definitionId="dut.control.kermloc.KerMLOC.Editor.opened" />
+			</activeWhen>
+		</handler>
+		<handler
+			class="dut.control.kermloc.ui.KerMLOCExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedNameHandler"
+			commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName">
+			<activeWhen>
+				<and>
+					<reference definitionId="dut.control.kermloc.KerMLOC.XtextEditor.opened" />
+					<iterate>
+						<adapt type="org.eclipse.xtext.ui.editor.outline.IOutlineNode" />
+					</iterate>
+				</and>
+			</activeWhen>
+		</handler>
+	</extension>
+	<extension point="org.eclipse.core.expressions.definitions">
+		<definition id="dut.control.kermloc.KerMLOC.Editor.opened">
+			<and>
+				<reference definitionId="isActiveEditorAnInstanceOfXtextEditor"/>
+				<with variable="activeEditor">
+					<test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName"
+						value="dut.control.kermloc.KerMLOC"
+						forcePluginActivation="true"/>
+				</with>
+			</and>
+		</definition>
+		<definition id="dut.control.kermloc.KerMLOC.XtextEditor.opened">
+			<and>
+				<reference definitionId="isXtextEditorActive"/>
+				<with variable="activeEditor">
+					<test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName"
+						value="dut.control.kermloc.KerMLOC"
+						forcePluginActivation="true"/>
+				</with>
+			</and>
+		</definition>
+	</extension>
+	<extension
+			point="org.eclipse.ui.preferencePages">
+		<page
+			class="dut.control.kermloc.ui.KerMLOCExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+			id="dut.control.kermloc.KerMLOC"
+			name="KerMLOC">
+			<keywordReference id="dut.control.kermloc.ui.keyword_KerMLOC"/>
+		</page>
+		<page
+			category="dut.control.kermloc.KerMLOC"
+			class="dut.control.kermloc.ui.KerMLOCExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
+			id="dut.control.kermloc.KerMLOC.coloring"
+			name="Syntax Coloring">
+			<keywordReference id="dut.control.kermloc.ui.keyword_KerMLOC"/>
+		</page>
+		<page
+			category="dut.control.kermloc.KerMLOC"
+			class="dut.control.kermloc.ui.KerMLOCExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
+			id="dut.control.kermloc.KerMLOC.templates"
+			name="Templates">
+			<keywordReference id="dut.control.kermloc.ui.keyword_KerMLOC"/>
+		</page>
+	</extension>
+	<extension
+			point="org.eclipse.ui.propertyPages">
+		<page
+			class="dut.control.kermloc.ui.KerMLOCExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+			id="dut.control.kermloc.KerMLOC"
+			name="KerMLOC">
+			<keywordReference id="dut.control.kermloc.ui.keyword_KerMLOC"/>
+			<enabledWhen>
+				<adapt type="org.eclipse.core.resources.IProject"/>
+			</enabledWhen>
+			<filter name="projectNature" value="org.eclipse.xtext.ui.shared.xtextNature"/>
+		</page>
+	</extension>
+	<extension
+		point="org.eclipse.ui.keywords">
+		<keyword
+			id="dut.control.kermloc.ui.keyword_KerMLOC"
+			label="KerMLOC"/>
+	</extension>
+	<extension
+		point="org.eclipse.ui.commands">
+		<command
+			description="Trigger expensive validation"
+			id="dut.control.kermloc.KerMLOC.validate"
+			name="Validate">
+		</command>
+		<!-- copy qualified name -->
+		<command
+			id="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
+			categoryId="org.eclipse.ui.category.edit"
+			description="Copy the qualified name for the selected element"
+			name="Copy Qualified Name">
+		</command>
+		<command
+			id="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName"
+			categoryId="org.eclipse.ui.category.edit"
+			description="Copy the qualified name for the selected element"
+			name="Copy Qualified Name">
+		</command>
+	</extension>
+	<extension point="org.eclipse.ui.menus">
+		<menuContribution
+			locationURI="popup:#TextEditorContext?after=group.edit">
+			<command
+				commandId="dut.control.kermloc.KerMLOC.validate"
+				style="push"
+				tooltip="Trigger expensive validation">
+				<visibleWhen checkEnabled="false">
+					<reference
+						definitionId="dut.control.kermloc.KerMLOC.Editor.opened">
+					</reference>
+				</visibleWhen>
+			</command>
+		</menuContribution>
+		<!-- copy qualified name -->
+		<menuContribution locationURI="popup:#TextEditorContext?after=copy">
+			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
+				style="push" tooltip="Copy Qualified Name">
+				<visibleWhen checkEnabled="false">
+					<reference definitionId="dut.control.kermloc.KerMLOC.Editor.opened" />
+				</visibleWhen>
+			</command>
+		</menuContribution>
+		<menuContribution locationURI="menu:edit?after=copy">
+			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
+				style="push" tooltip="Copy Qualified Name">
+				<visibleWhen checkEnabled="false">
+					<reference definitionId="dut.control.kermloc.KerMLOC.Editor.opened" />
+				</visibleWhen>
+			</command>
+		</menuContribution>
+		<menuContribution locationURI="popup:org.eclipse.xtext.ui.outline?after=additions">
+			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName"
+				style="push" tooltip="Copy Qualified Name">
+				<visibleWhen checkEnabled="false">
+					<and>
+						<reference definitionId="dut.control.kermloc.KerMLOC.XtextEditor.opened" />
+						<iterate>
+							<adapt type="org.eclipse.xtext.ui.editor.outline.IOutlineNode" />
+						</iterate>
+					</and>
+				</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+	<extension point="org.eclipse.ui.menus">
+		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
+			<command commandId="org.eclipse.xtext.ui.editor.FindReferences">
+				<visibleWhen checkEnabled="false">
+					<reference definitionId="dut.control.kermloc.KerMLOC.Editor.opened">
+					</reference>
+				</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+	<extension point="org.eclipse.ui.handlers">
+		<handler
+			class="dut.control.kermloc.ui.KerMLOCExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
+			commandId="org.eclipse.xtext.ui.editor.FindReferences">
+			<activeWhen>
+				<reference
+					definitionId="dut.control.kermloc.KerMLOC.Editor.opened">
+				</reference>
+			</activeWhen>
+		</handler>
+	</extension>
+	<extension point="org.eclipse.core.contenttype.contentTypes">
+		<content-type
+			base-type="org.eclipse.core.runtime.text"
+			file-extensions="kerml"
+			id="dut.control.kermloc.KerMLOC.contenttype"
+			name="KerMLOC File"
+			priority="normal">
+		</content-type>
+	</extension>
+	<!-- adding resource factories -->
+	<extension
+		point="org.eclipse.emf.ecore.extension_parser">
+		<parser
+			class="dut.control.kermloc.ui.KerMLOCExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
+			type="kerml">
+		</parser>
+	</extension>
+	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
+		<resourceServiceProvider
+			class="dut.control.kermloc.ui.KerMLOCExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
+			uriExtension="kerml">
+		</resourceServiceProvider>
+	</extension>
+	<!-- marker definitions for dut.control.kermloc.KerMLOC -->
+	<extension
+			id="kermloc.check.fast"
+			name="KerMLOC Problem"
+			point="org.eclipse.core.resources.markers">
+		<super type="org.eclipse.xtext.ui.check.fast"/>
+		<persistent value="true"/>
+	</extension>
+	<extension
+			id="kermloc.check.normal"
+			name="KerMLOC Problem"
+			point="org.eclipse.core.resources.markers">
+		<super type="org.eclipse.xtext.ui.check.normal"/>
+		<persistent value="true"/>
+	</extension>
+	<extension
+			id="kermloc.check.expensive"
+			name="KerMLOC Problem"
+			point="org.eclipse.core.resources.markers">
+		<super type="org.eclipse.xtext.ui.check.expensive"/>
+		<persistent value="true"/>
+	</extension>
+	<extension point="org.eclipse.ui.preferencePages">
+		<page
+			category="dut.control.kermloc.KerMLOC"
+			class="dut.control.kermloc.ui.KerMLOCExecutableExtensionFactory:org.eclipse.xtext.ui.validation.ValidatorPreferencePage"
+			id="dut.control.kermloc.KerMLOC.validator.preferencePage"
+			name="Errors/Warnings">
+			<keywordReference id="dut.control.kermloc.ui.keyword_KerMLOC"/>
+		</page>
+	</extension>
+	<extension point="org.eclipse.xtext.builder.participant">
+		<participant
+			class="dut.control.kermloc.ui.KerMLOCExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
+			fileExtensions="kerml"/>
+	</extension>
+	<extension point="org.eclipse.ui.preferencePages">
+		<page
+			category="dut.control.kermloc.KerMLOC"
+			class="dut.control.kermloc.ui.KerMLOCExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+			id="dut.control.kermloc.KerMLOC.compiler.preferencePage"
+			name="Compiler">
+			<keywordReference id="dut.control.kermloc.ui.keyword_KerMLOC"/>
+		</page>
+	</extension>
+	<extension point="org.eclipse.ui.propertyPages">
+		<page
+			category="dut.control.kermloc.KerMLOC"
+			class="dut.control.kermloc.ui.KerMLOCExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+			id="dut.control.kermloc.KerMLOC.compiler.propertyPage"
+			name="Compiler">
+			<keywordReference id="dut.control.kermloc.ui.keyword_KerMLOC"/>
+			<enabledWhen>
+				<adapt type="org.eclipse.core.resources.IProject"/>
+			</enabledWhen>
+			<filter name="projectNature" value="org.eclipse.xtext.ui.shared.xtextNature"/>
+		</page>
+	</extension>
+	<extension point="org.eclipse.ui.menus">
+		<menuContribution locationURI="popup:#TextEditorContext?after=xtext.ui.openDeclaration">
+			<command
+				commandId="org.eclipse.xtext.ui.OpenGeneratedFileCommand"
+				id="dut.control.kermloc.KerMLOC.OpenGeneratedCode"
+				style="push">
+				<visibleWhen checkEnabled="false">
+					<reference definitionId="dut.control.kermloc.KerMLOC.Editor.opened" />
+				</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+	<extension point="org.eclipse.ui.handlers">
+		<handler
+			class="dut.control.kermloc.ui.KerMLOCExecutableExtensionFactory:org.eclipse.xtext.ui.generator.trace.OpenGeneratedFileHandler"
+			commandId="org.eclipse.xtext.ui.OpenGeneratedFileCommand">
+			<activeWhen>
+				<reference definitionId="dut.control.kermloc.KerMLOC.Editor.opened" />
+			</activeWhen>
+		</handler>
+	</extension>
+	<!-- Quick Outline -->
+	<extension
+		point="org.eclipse.ui.handlers">
+		<handler
+			class="dut.control.kermloc.ui.KerMLOCExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
+			commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline">
+			<activeWhen>
+				<reference
+					definitionId="dut.control.kermloc.KerMLOC.Editor.opened">
+				</reference>
+			</activeWhen>
+		</handler>
+	</extension>
+	<extension
+		point="org.eclipse.ui.commands">
+		<command
+			description="Open the quick outline."
+			id="org.eclipse.xtext.ui.editor.outline.QuickOutline"
+			name="Quick Outline">
+		</command>
+	</extension>
+	<extension point="org.eclipse.ui.menus">
+		<menuContribution
+			locationURI="popup:#TextEditorContext?after=group.open">
+			<command commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline"
+				style="push"
+				tooltip="Open Quick Outline">
+				<visibleWhen checkEnabled="false">
+					<reference definitionId="dut.control.kermloc.KerMLOC.Editor.opened"/>
+				</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+	<!-- quickfix marker resolution generator for dut.control.kermloc.KerMLOC -->
+	<extension
+			point="org.eclipse.ui.ide.markerResolution">
+		<markerResolutionGenerator
+			class="dut.control.kermloc.ui.KerMLOCExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+			markerType="dut.control.kermloc.ui.kermloc.check.fast">
+			<attribute
+				name="FIXABLE_KEY"
+				value="true">
+			</attribute>
+		</markerResolutionGenerator>
+		<markerResolutionGenerator
+			class="dut.control.kermloc.ui.KerMLOCExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+			markerType="dut.control.kermloc.ui.kermloc.check.normal">
+			<attribute
+				name="FIXABLE_KEY"
+				value="true">
+			</attribute>
+		</markerResolutionGenerator>
+		<markerResolutionGenerator
+			class="dut.control.kermloc.ui.KerMLOCExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+			markerType="dut.control.kermloc.ui.kermloc.check.expensive">
+			<attribute
+				name="FIXABLE_KEY"
+				value="true">
+			</attribute>
+		</markerResolutionGenerator>
+	</extension>
+	<!-- Rename Refactoring -->
+	<extension point="org.eclipse.ui.handlers">
+		<handler
+			class="dut.control.kermloc.ui.KerMLOCExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.DefaultRenameElementHandler"
+			commandId="org.eclipse.xtext.ui.refactoring.RenameElement">
+			<activeWhen>
+				<reference
+					definitionId="dut.control.kermloc.KerMLOC.Editor.opened">
+				</reference>
+			</activeWhen>
+		</handler>
+	</extension>
+	<extension point="org.eclipse.ui.menus">
+		<menuContribution
+			locationURI="popup:#TextEditorContext?after=group.edit">
+			<command commandId="org.eclipse.xtext.ui.refactoring.RenameElement"
+				style="push">
+				<visibleWhen checkEnabled="false">
+					<reference
+						definitionId="dut.control.kermloc.KerMLOC.Editor.opened">
+					</reference>
+				</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+	<extension point="org.eclipse.ui.preferencePages">
+		<page
+			category="dut.control.kermloc.KerMLOC"
+			class="dut.control.kermloc.ui.KerMLOCExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
+			id="dut.control.kermloc.KerMLOC.refactoring"
+			name="Refactoring">
+			<keywordReference id="dut.control.kermloc.ui.keyword_KerMLOC"/>
+		</page>
+	</extension>
+	<extension point="org.eclipse.compare.contentViewers">
+		<viewer id="dut.control.kermloc.KerMLOC.compare.contentViewers"
+			class="dut.control.kermloc.ui.KerMLOCExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+			extensions="kerml">
+		</viewer>
+		<contentTypeBinding
+			contentTypeId="dut.control.kermloc.KerMLOC.contenttype"
+			contentViewerId="dut.control.kermloc.KerMLOC.compare.contentViewers" />
+	</extension>
+	<extension point="org.eclipse.compare.contentMergeViewers">
+		<viewer id="dut.control.kermloc.KerMLOC.compare.contentMergeViewers"
+			class="dut.control.kermloc.ui.KerMLOCExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+			extensions="kerml" label="KerMLOC Compare">
+		</viewer>
+		<contentTypeBinding
+			contentTypeId="dut.control.kermloc.KerMLOC.contenttype"
+			contentMergeViewerId="dut.control.kermloc.KerMLOC.compare.contentMergeViewers" />
+	</extension>
+	<extension point="org.eclipse.ui.editors.documentProviders">
+		<provider id="dut.control.kermloc.KerMLOC.editors.documentProviders"
+			class="dut.control.kermloc.ui.KerMLOCExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
+			extensions="kerml">
+		</provider>
+	</extension>
+	<extension point="org.eclipse.team.core.fileTypes">
+		<fileTypes
+			extension="kerml"
+			type="text">
+		</fileTypes>
+	</extension>
+ <extension
+       id="dut.control.kermloc.ui.KerMLv2Generation"
+       name="KerMLv2Generation"
+       point="org.eclipse.ui.popupMenus">
+    <objectContribution
+          adaptable="false"
+          id="dut.control.kermloc.ui.objectContribution1"
+          nameFilter="*.model"
+          objectClass="dut.control.kermloc.ui.Object1">
+       <action
+             class="dut.control.kermloc.util.KerMLOC2KerML"
+             enablesFor="1"
+             id="dut.control.kermloc.ui.action1"
+             label="Generate KerML"
+             menubarPath="additions">
+       </action>
+    </objectContribution>
+ </extension>
+</plugin>

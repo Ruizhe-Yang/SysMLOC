@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: dut.control.kermloc
+Bundle-ManifestVersion: 2
+Bundle-Name: dut.control.kermloc
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: dut.control.kermloc; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.19.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.38.0",
+ org.eclipse.emf.common,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Export-Package: dut.control.kermloc,
+ dut.control.kermloc.generator,
+ dut.control.kermloc.kerMLOC,
+ dut.control.kermloc.kerMLOC.impl,
+ dut.control.kermloc.kerMLOC.util,
+ dut.control.kermloc.parser.antlr,
+ dut.control.kermloc.parser.antlr.internal,
+ dut.control.kermloc.scoping,
+ dut.control.kermloc.serializer,
+ dut.control.kermloc.services,
+ dut.control.kermloc.util,
+ dut.control.kermloc.validation
+Import-Package: org.apache.log4j

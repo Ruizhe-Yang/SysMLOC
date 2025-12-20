@@ -1,0 +1,303 @@
+//grammar dut.control.kermloc.KerMLOC with org.eclipse.xtext.common.Terminals
+grammar dut.control.kermloc.KerMLOC hidden(WS, ML_NOTE)
+
+import "http://www.eclipse.org/emf/2002/Ecore" as Ecore
+
+generate kerMLOC "http://www.control.dut/kermloc/KerMLOC"
+Namespace:
+	(elements+=GeneralBodyElements)*
+;
+
+GeneralBodyElements:
+	'aaa' 
+;
+// TODO --------------------------------- Enum Level ---------------------------------//
+
+// enum
+
+enum VisibilityIndicator:
+	null='NULLVisibility' | public = 'public' | private = 'private' | protected = 'protected'
+;
+
+// TODO --------------------------------- String Level ---------------------------------//
+
+/* NAMES */
+
+Name:
+	ID | UNRESTRICTED_NAME
+;
+
+Qualification :
+	( Name '::' )+
+;
+
+QualifiedName:
+	Qualification? Name
+;
+
+FeatureChainName:
+	'USELESS'? 
+	QualifiedName ('.' Name)*
+;
+
+FeatureTypingName:
+	FeatureChainName | '~' QualifiedName
+;
+
+Expression:
+	OwnedExpression 
+;
+
+OwnedExpression:
+	ConditionalExpression
+;
+
+ConditionalExpression:
+	NullCoalescingExpression
+	| 'if' NullCoalescingExpression '?' OwnedExpression 'else' OwnedExpression
+;
+
+NullCoalescingExpression:
+	ImpliesExpression ('??' ImpliesExpression)*
+;
+
+ImpliesExpression:
+	OrExpression ('implies' OrExpression)*
+;
+
+OrExpression:
+	XorExpression ('|' XorExpression | 'or' XorExpression)*
+;
+
+XorExpression:
+	AndExpression ('xor' AndExpression)*
+;
+
+AndExpression:
+	EqualityExpression ('&' EqualityExpression | 'and' EqualityExpression)*
+;
+
+EqualityExpression:
+	ClassificationExpression (('==' | '!=' | '===' | '!==') ClassificationExpression)*
+;
+
+ClassificationExpression:
+	RelationalExpression (('hastype' | 'istype' | '@') ReferenceTypingName | 'as' ReferenceTypingName)?
+	| ('hastype' | 'istype' | '@') ReferenceTypingName
+	| MetadataReferenceName '@@' ReferenceTypingName
+	| 'as' ReferenceTypingName
+	| MetadataReferenceName 'meta' ReferenceTypingName
+;
+
+ReferenceTypingName:
+	QualifiedName
+;
+
+MetadataReferenceName:
+	QualifiedName
+;
+
+RelationalExpression:
+	RangeExpression (('<' | '>' | '<=' | '>=') RangeExpression)*
+;
+
+RangeExpression:
+	AdditiveExpression ('..' AdditiveExpression)?
+;
+
+AdditiveExpression:
+	MultiplicativeExpression (('+'|'-') MultiplicativeExpression)*
+;
+
+MultiplicativeExpression:
+	ExponentiationExpression (('*' | '/' | '%') ExponentiationExpression)*
+;
+
+ExponentiationExpression:
+	UnaryExpression (('**' | '^') UnaryExpression)?
+;
+
+UnaryExpression:
+	('+' | '-' | '~' | 'not') ExtentExpression
+	| ExtentExpression
+;
+
+ExtentExpression:
+	'all' ReferenceTypingName
+	| PrimaryExpression
+;
+
+PrimaryExpression:
+	BaseExpression
+	('.' FeatureChainName)?
+	(	( '#' '(' SequenceExpression ')'
+		| '[' SequenceExpression ']'
+		| '->' ReferenceTypingName (BodyExpression | FunctionReferenceExpression | ArgumentList)
+		| '.' BodyExpression
+		| '.?' BodyExpression
+		)
+		('.' FeatureChainName)?	
+	)*
+;
+
+TargetExpression:
+	BaseExpression
+	('.' FeatureChainName)?
+	(	( '#' '(' SequenceExpression ')'
+		| '[' SequenceExpression ']'
+		| '->' ReferenceTypingName (BodyExpression | FunctionReferenceExpression | ArgumentList)
+		| '.' BodyExpression
+		| '.?' BodyExpression
+		)
+	)*
+;
+
+BaseExpression:
+	NullExpression
+	| LiteralExpression 
+	| FeatureReferenceExpression 
+	| MetadataAccessExpression
+	| InvocationExpression 
+	| BodyExpression
+	| '(' SequenceExpression ')'
+;
+
+FunctionReferenceExpression:
+	QualifiedName
+;
+
+ArgumentList:
+	'(' ( PositionalArgumentList | NamedArgumentList )? ')'
+;
+
+PositionalArgumentList:
+	ArgumentValue (',' ArgumentValue)*
+;
+
+NamedArgumentList:
+	NamedArgument (',' NamedArgument)*
+;
+
+ArgumentValue:
+	OwnedExpression
+;
+
+NamedArgument:
+	QualifiedName '=' ArgumentValue
+;
+
+NullExpression:
+	'null' 
+	| '(' ')' 
+;
+
+MetadataAccessExpression:
+	QualifiedName '.' 'metadata'
+;
+
+InvocationExpression:
+	'new'? FeatureChainName ArgumentList
+;
+
+BodyExpression:
+	'{' 
+		('in' Name FeatureSpecializationName* ';')*
+		// False Grammar (to avoid the usage of '( bodyExpressions += CalculationBodyElement)*')
+		// In OMG's tools, BodyExpression was rewritten as a nested format, but in this tool it is treated as a string, which cannot meet all the needs. This time, the original syntax is retained.
+		('in' 'ref' Name FeatureSpecializationName* ';')*
+		('private' FeatureChainName ':' QualifiedName '=' OwnedExpression ';')*
+		('private' 'attribute' FeatureChainName '=' OwnedExpression ';')?
+		('private' 'attribute' FeatureChainName ':' QualifiedName '{' (':>>' FeatureChainName '=' OwnedExpression ';')* '}')?
+		//
+		OwnedExpression
+	'}'
+	//	( bodyExpressions += CalculationBodyElement)*
+;
+
+FeatureSpecializationName:
+	(':'|'defined' 'by') FeatureTypingName (',' FeatureTypingName)*
+	| (':>'|'specializes'|'subsets') FeatureChainName (',' FeatureChainName)*
+	| ('::>'|'references') FeatureChainName (',' FeatureChainName)*
+	| ('=>'|'crosses') FeatureChainName (',' FeatureChainName)*
+	| (':>>'|'redefines') FeatureChainName (',' FeatureChainName)*
+;
+
+SequenceExpression:
+	OwnedExpression (',' SequenceExpression)?
+;
+
+MultiplicityExpression:
+	LiteralExpression | FeatureReferenceExpression
+;
+
+LiteralExpression:
+	LiteralBoolean
+	| LiteralString
+	| LiteralInteger
+	| LiteralReal
+	| LiteralInfinity
+;
+
+LiteralBoolean:
+	BooleanValue
+;
+
+BooleanValue:
+	'true' | 'false'
+;
+
+LiteralString:
+	STRING_VALUE
+;
+
+LiteralInteger:
+	DECIMAL_VALUE
+;
+
+LiteralReal:
+	RealValue
+;
+
+RealValue:
+	DECIMAL_VALUE? '.' ( DECIMAL_VALUE | EXP_VALUE ) | EXP_VALUE
+;
+
+LiteralInfinity:
+	'*'
+;
+
+FeatureReferenceExpression:
+	QualifiedName
+;
+
+// TODO --------------------------------- Terminal Level ---------------------------------//
+
+terminal PREFIXNAME_TEXT:
+	'#' ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
+
+terminal DECIMAL_VALUE returns Ecore::EInt:
+	'0'..'9' ('0'..'9')*;
+
+terminal EXP_VALUE:
+	DECIMAL_VALUE (('e' | 'E') ('+' | '-')? DECIMAL_VALUE)?;
+
+terminal ID:
+	('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
+
+terminal UNRESTRICTED_NAME returns Ecore::EString:
+	'\'' ('\\' ('b' | 't' | 'n' | 'f' | 'r' | '"' | "'" | '\\') | !('\\' | '\''))* '\'';
+
+terminal STRING_VALUE returns Ecore::EString:
+	'"' ('\\' ('b' | 't' | 'n' | 'f' | 'r' | '"' | "'" | '\\') | !('\\' | '"'))* '"';
+
+terminal REGULAR_COMMENT:
+	'/*' -> '*/';
+
+terminal ML_NOTE:
+	'//*'-> '*/';
+
+terminal SL_NOTE:
+	'//' (!('\n' | '\r') !('\n' | '\r')*)? ('\r'? '\n')?;
+	
+terminal WS:
+	(' ' | '\t' | '\r' | '\n')+;
