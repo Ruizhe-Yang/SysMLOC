@@ -3,7 +3,61 @@
  */
 package dut.control.kermloc.kerMLOC.util;
 
-import dut.control.kermloc.kerMLOC.*;
+import dut.control.kermloc.kerMLOC.AliasElement;
+import dut.control.kermloc.kerMLOC.AnnotatingBodyElement;
+import dut.control.kermloc.kerMLOC.AnnotatingElement;
+import dut.control.kermloc.kerMLOC.Association;
+import dut.control.kermloc.kerMLOC.AssociationStructure;
+import dut.control.kermloc.kerMLOC.Behavior;
+import dut.control.kermloc.kerMLOC.Classifier;
+import dut.control.kermloc.kerMLOC.ClassifierConjugationPart;
+import dut.control.kermloc.kerMLOC.ClassifierDeclaration;
+import dut.control.kermloc.kerMLOC.CodeAnnotation;
+import dut.control.kermloc.kerMLOC.Comment;
+import dut.control.kermloc.kerMLOC.ConjugationPart;
+import dut.control.kermloc.kerMLOC.CrossFeatureChain;
+import dut.control.kermloc.kerMLOC.DataType;
+import dut.control.kermloc.kerMLOC.Dependency;
+import dut.control.kermloc.kerMLOC.DifferencingPart;
+import dut.control.kermloc.kerMLOC.DisjoiningPart;
+import dut.control.kermloc.kerMLOC.Documentation;
+import dut.control.kermloc.kerMLOC.ElementFilterElement;
+import dut.control.kermloc.kerMLOC.FeatureSpecialization;
+import dut.control.kermloc.kerMLOC.Function;
+import dut.control.kermloc.kerMLOC.FunctionBodyElement;
+import dut.control.kermloc.kerMLOC.GeneralBodyElements;
+import dut.control.kermloc.kerMLOC.Identification;
+import dut.control.kermloc.kerMLOC.ImportElement;
+import dut.control.kermloc.kerMLOC.Interaction;
+import dut.control.kermloc.kerMLOC.IntersectingPart;
+import dut.control.kermloc.kerMLOC.KerMLOCPackage;
+import dut.control.kermloc.kerMLOC.LibraryPackage;
+import dut.control.kermloc.kerMLOC.MemberPrefix;
+import dut.control.kermloc.kerMLOC.Metaclass;
+import dut.control.kermloc.kerMLOC.Multiplicity;
+import dut.control.kermloc.kerMLOC.MultiplicityBounds;
+import dut.control.kermloc.kerMLOC.Namespace;
+import dut.control.kermloc.kerMLOC.NamespaceBodyElement;
+import dut.control.kermloc.kerMLOC.NonFeatureElement;
+import dut.control.kermloc.kerMLOC.PackageBodyElement;
+import dut.control.kermloc.kerMLOC.Predicate;
+import dut.control.kermloc.kerMLOC.PrefixMetadata;
+import dut.control.kermloc.kerMLOC.RedefinitionFeatureChain;
+import dut.control.kermloc.kerMLOC.ReferenceFeatureChain;
+import dut.control.kermloc.kerMLOC.ResultExpression;
+import dut.control.kermloc.kerMLOC.RootNamespace;
+import dut.control.kermloc.kerMLOC.SpecializationPart;
+import dut.control.kermloc.kerMLOC.Structure;
+import dut.control.kermloc.kerMLOC.Subsets;
+import dut.control.kermloc.kerMLOC.SubsettingFeatureChain;
+import dut.control.kermloc.kerMLOC.SuperclassingPart;
+import dut.control.kermloc.kerMLOC.TextualRepresentation;
+import dut.control.kermloc.kerMLOC.Type;
+import dut.control.kermloc.kerMLOC.TypeBodyElement;
+import dut.control.kermloc.kerMLOC.TypePrefix;
+import dut.control.kermloc.kerMLOC.TypeRelationshipPart;
+import dut.control.kermloc.kerMLOC.TypingFeatureTyping;
+import dut.control.kermloc.kerMLOC.UnioningPart;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -73,15 +127,1089 @@ public class KerMLOCSwitch<T> extends Switch<T>
   {
     switch (classifierID)
     {
+      case KerMLOCPackage.ROOT_NAMESPACE:
+      {
+        RootNamespace rootNamespace = (RootNamespace)theEObject;
+        T result = caseRootNamespace(rootNamespace);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.GENERAL_BODY_ELEMENTS:
+      {
+        GeneralBodyElements generalBodyElements = (GeneralBodyElements)theEObject;
+        T result = caseGeneralBodyElements(generalBodyElements);
+        if (result == null) result = casePackageBodyElement(generalBodyElements);
+        if (result == null) result = caseTypeBodyElement(generalBodyElements);
+        if (result == null) result = caseNamespaceBodyElement(generalBodyElements);
+        if (result == null) result = caseFunctionBodyElement(generalBodyElements);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.ANNOTATING_BODY_ELEMENT:
+      {
+        AnnotatingBodyElement annotatingBodyElement = (AnnotatingBodyElement)theEObject;
+        T result = caseAnnotatingBodyElement(annotatingBodyElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.PACKAGE_BODY_ELEMENT:
+      {
+        PackageBodyElement packageBodyElement = (PackageBodyElement)theEObject;
+        T result = casePackageBodyElement(packageBodyElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.TYPE_BODY_ELEMENT:
+      {
+        TypeBodyElement typeBodyElement = (TypeBodyElement)theEObject;
+        T result = caseTypeBodyElement(typeBodyElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.NAMESPACE_BODY_ELEMENT:
+      {
+        NamespaceBodyElement namespaceBodyElement = (NamespaceBodyElement)theEObject;
+        T result = caseNamespaceBodyElement(namespaceBodyElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.FUNCTION_BODY_ELEMENT:
+      {
+        FunctionBodyElement functionBodyElement = (FunctionBodyElement)theEObject;
+        T result = caseFunctionBodyElement(functionBodyElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.ANNOTATING_ELEMENT:
+      {
+        AnnotatingElement annotatingElement = (AnnotatingElement)theEObject;
+        T result = caseAnnotatingElement(annotatingElement);
+        if (result == null) result = caseGeneralBodyElements(annotatingElement);
+        if (result == null) result = caseAnnotatingBodyElement(annotatingElement);
+        if (result == null) result = casePackageBodyElement(annotatingElement);
+        if (result == null) result = caseTypeBodyElement(annotatingElement);
+        if (result == null) result = caseNamespaceBodyElement(annotatingElement);
+        if (result == null) result = caseFunctionBodyElement(annotatingElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.NON_FEATURE_ELEMENT:
+      {
+        NonFeatureElement nonFeatureElement = (NonFeatureElement)theEObject;
+        T result = caseNonFeatureElement(nonFeatureElement);
+        if (result == null) result = caseGeneralBodyElements(nonFeatureElement);
+        if (result == null) result = casePackageBodyElement(nonFeatureElement);
+        if (result == null) result = caseTypeBodyElement(nonFeatureElement);
+        if (result == null) result = caseNamespaceBodyElement(nonFeatureElement);
+        if (result == null) result = caseFunctionBodyElement(nonFeatureElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.PACKAGE:
+      {
+        dut.control.kermloc.kerMLOC.Package package_ = (dut.control.kermloc.kerMLOC.Package)theEObject;
+        T result = casePackage(package_);
+        if (result == null) result = caseNonFeatureElement(package_);
+        if (result == null) result = caseMemberPrefix(package_);
+        if (result == null) result = casePrefixMetadata(package_);
+        if (result == null) result = caseGeneralBodyElements(package_);
+        if (result == null) result = casePackageBodyElement(package_);
+        if (result == null) result = caseTypeBodyElement(package_);
+        if (result == null) result = caseNamespaceBodyElement(package_);
+        if (result == null) result = caseFunctionBodyElement(package_);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.LIBRARY_PACKAGE:
+      {
+        LibraryPackage libraryPackage = (LibraryPackage)theEObject;
+        T result = caseLibraryPackage(libraryPackage);
+        if (result == null) result = caseNonFeatureElement(libraryPackage);
+        if (result == null) result = caseMemberPrefix(libraryPackage);
+        if (result == null) result = casePrefixMetadata(libraryPackage);
+        if (result == null) result = caseIdentification(libraryPackage);
+        if (result == null) result = caseGeneralBodyElements(libraryPackage);
+        if (result == null) result = casePackageBodyElement(libraryPackage);
+        if (result == null) result = caseTypeBodyElement(libraryPackage);
+        if (result == null) result = caseNamespaceBodyElement(libraryPackage);
+        if (result == null) result = caseFunctionBodyElement(libraryPackage);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.DEPENDENCY:
+      {
+        Dependency dependency = (Dependency)theEObject;
+        T result = caseDependency(dependency);
+        if (result == null) result = caseNonFeatureElement(dependency);
+        if (result == null) result = caseMemberPrefix(dependency);
+        if (result == null) result = casePrefixMetadata(dependency);
+        if (result == null) result = caseIdentification(dependency);
+        if (result == null) result = caseGeneralBodyElements(dependency);
+        if (result == null) result = casePackageBodyElement(dependency);
+        if (result == null) result = caseTypeBodyElement(dependency);
+        if (result == null) result = caseNamespaceBodyElement(dependency);
+        if (result == null) result = caseFunctionBodyElement(dependency);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.COMMENT:
+      {
+        Comment comment = (Comment)theEObject;
+        T result = caseComment(comment);
+        if (result == null) result = caseAnnotatingElement(comment);
+        if (result == null) result = caseMemberPrefix(comment);
+        if (result == null) result = caseIdentification(comment);
+        if (result == null) result = caseGeneralBodyElements(comment);
+        if (result == null) result = caseAnnotatingBodyElement(comment);
+        if (result == null) result = casePackageBodyElement(comment);
+        if (result == null) result = caseTypeBodyElement(comment);
+        if (result == null) result = caseNamespaceBodyElement(comment);
+        if (result == null) result = caseFunctionBodyElement(comment);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.DOCUMENTATION:
+      {
+        Documentation documentation = (Documentation)theEObject;
+        T result = caseDocumentation(documentation);
+        if (result == null) result = caseAnnotatingElement(documentation);
+        if (result == null) result = caseMemberPrefix(documentation);
+        if (result == null) result = caseIdentification(documentation);
+        if (result == null) result = caseGeneralBodyElements(documentation);
+        if (result == null) result = caseAnnotatingBodyElement(documentation);
+        if (result == null) result = casePackageBodyElement(documentation);
+        if (result == null) result = caseTypeBodyElement(documentation);
+        if (result == null) result = caseNamespaceBodyElement(documentation);
+        if (result == null) result = caseFunctionBodyElement(documentation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.TEXTUAL_REPRESENTATION:
+      {
+        TextualRepresentation textualRepresentation = (TextualRepresentation)theEObject;
+        T result = caseTextualRepresentation(textualRepresentation);
+        if (result == null) result = caseAnnotatingElement(textualRepresentation);
+        if (result == null) result = caseMemberPrefix(textualRepresentation);
+        if (result == null) result = caseIdentification(textualRepresentation);
+        if (result == null) result = caseGeneralBodyElements(textualRepresentation);
+        if (result == null) result = caseAnnotatingBodyElement(textualRepresentation);
+        if (result == null) result = casePackageBodyElement(textualRepresentation);
+        if (result == null) result = caseTypeBodyElement(textualRepresentation);
+        if (result == null) result = caseNamespaceBodyElement(textualRepresentation);
+        if (result == null) result = caseFunctionBodyElement(textualRepresentation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.IMPORT_ELEMENT:
+      {
+        ImportElement importElement = (ImportElement)theEObject;
+        T result = caseImportElement(importElement);
+        if (result == null) result = caseGeneralBodyElements(importElement);
+        if (result == null) result = casePackageBodyElement(importElement);
+        if (result == null) result = caseTypeBodyElement(importElement);
+        if (result == null) result = caseNamespaceBodyElement(importElement);
+        if (result == null) result = caseFunctionBodyElement(importElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.CODE_ANNOTATION:
+      {
+        CodeAnnotation codeAnnotation = (CodeAnnotation)theEObject;
+        T result = caseCodeAnnotation(codeAnnotation);
+        if (result == null) result = caseGeneralBodyElements(codeAnnotation);
+        if (result == null) result = caseAnnotatingBodyElement(codeAnnotation);
+        if (result == null) result = casePackageBodyElement(codeAnnotation);
+        if (result == null) result = caseTypeBodyElement(codeAnnotation);
+        if (result == null) result = caseNamespaceBodyElement(codeAnnotation);
+        if (result == null) result = caseFunctionBodyElement(codeAnnotation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.ALIAS_ELEMENT:
+      {
+        AliasElement aliasElement = (AliasElement)theEObject;
+        T result = caseAliasElement(aliasElement);
+        if (result == null) result = caseGeneralBodyElements(aliasElement);
+        if (result == null) result = caseMemberPrefix(aliasElement);
+        if (result == null) result = casePackageBodyElement(aliasElement);
+        if (result == null) result = caseTypeBodyElement(aliasElement);
+        if (result == null) result = caseNamespaceBodyElement(aliasElement);
+        if (result == null) result = caseFunctionBodyElement(aliasElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.ELEMENT_FILTER_ELEMENT:
+      {
+        ElementFilterElement elementFilterElement = (ElementFilterElement)theEObject;
+        T result = caseElementFilterElement(elementFilterElement);
+        if (result == null) result = casePackageBodyElement(elementFilterElement);
+        if (result == null) result = caseMemberPrefix(elementFilterElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.MULTIPLICITY:
+      {
+        Multiplicity multiplicity = (Multiplicity)theEObject;
+        T result = caseMultiplicity(multiplicity);
+        if (result == null) result = caseNonFeatureElement(multiplicity);
+        if (result == null) result = caseMemberPrefix(multiplicity);
+        if (result == null) result = caseIdentification(multiplicity);
+        if (result == null) result = caseSubsets(multiplicity);
+        if (result == null) result = caseMultiplicityBounds(multiplicity);
+        if (result == null) result = caseGeneralBodyElements(multiplicity);
+        if (result == null) result = caseSubsettingFeatureChain(multiplicity);
+        if (result == null) result = casePackageBodyElement(multiplicity);
+        if (result == null) result = caseTypeBodyElement(multiplicity);
+        if (result == null) result = caseNamespaceBodyElement(multiplicity);
+        if (result == null) result = caseFunctionBodyElement(multiplicity);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case KerMLOCPackage.NAMESPACE:
       {
         Namespace namespace = (Namespace)theEObject;
         T result = caseNamespace(namespace);
+        if (result == null) result = caseNonFeatureElement(namespace);
+        if (result == null) result = casePrefixMetadata(namespace);
+        if (result == null) result = caseIdentification(namespace);
+        if (result == null) result = caseGeneralBodyElements(namespace);
+        if (result == null) result = casePackageBodyElement(namespace);
+        if (result == null) result = caseTypeBodyElement(namespace);
+        if (result == null) result = caseNamespaceBodyElement(namespace);
+        if (result == null) result = caseFunctionBodyElement(namespace);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.TYPE:
+      {
+        Type type = (Type)theEObject;
+        T result = caseType(type);
+        if (result == null) result = caseNonFeatureElement(type);
+        if (result == null) result = caseMemberPrefix(type);
+        if (result == null) result = caseTypePrefix(type);
+        if (result == null) result = caseIdentification(type);
+        if (result == null) result = caseMultiplicityBounds(type);
+        if (result == null) result = caseSpecializationPart(type);
+        if (result == null) result = caseConjugationPart(type);
+        if (result == null) result = caseTypeRelationshipPart(type);
+        if (result == null) result = caseGeneralBodyElements(type);
+        if (result == null) result = casePrefixMetadata(type);
+        if (result == null) result = caseSubsettingFeatureChain(type);
+        if (result == null) result = caseDisjoiningPart(type);
+        if (result == null) result = caseUnioningPart(type);
+        if (result == null) result = caseIntersectingPart(type);
+        if (result == null) result = caseDifferencingPart(type);
+        if (result == null) result = casePackageBodyElement(type);
+        if (result == null) result = caseTypeBodyElement(type);
+        if (result == null) result = caseNamespaceBodyElement(type);
+        if (result == null) result = caseFunctionBodyElement(type);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.CLASSIFIER:
+      {
+        Classifier classifier = (Classifier)theEObject;
+        T result = caseClassifier(classifier);
+        if (result == null) result = caseNonFeatureElement(classifier);
+        if (result == null) result = caseMemberPrefix(classifier);
+        if (result == null) result = caseTypePrefix(classifier);
+        if (result == null) result = caseClassifierDeclaration(classifier);
+        if (result == null) result = caseGeneralBodyElements(classifier);
+        if (result == null) result = casePrefixMetadata(classifier);
+        if (result == null) result = caseIdentification(classifier);
+        if (result == null) result = caseMultiplicityBounds(classifier);
+        if (result == null) result = caseSuperclassingPart(classifier);
+        if (result == null) result = caseClassifierConjugationPart(classifier);
+        if (result == null) result = caseTypeRelationshipPart(classifier);
+        if (result == null) result = casePackageBodyElement(classifier);
+        if (result == null) result = caseTypeBodyElement(classifier);
+        if (result == null) result = caseNamespaceBodyElement(classifier);
+        if (result == null) result = caseFunctionBodyElement(classifier);
+        if (result == null) result = caseSubsettingFeatureChain(classifier);
+        if (result == null) result = caseDisjoiningPart(classifier);
+        if (result == null) result = caseUnioningPart(classifier);
+        if (result == null) result = caseIntersectingPart(classifier);
+        if (result == null) result = caseDifferencingPart(classifier);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.CLASS:
+      {
+        dut.control.kermloc.kerMLOC.Class class_ = (dut.control.kermloc.kerMLOC.Class)theEObject;
+        T result = caseClass(class_);
+        if (result == null) result = caseNonFeatureElement(class_);
+        if (result == null) result = caseMemberPrefix(class_);
+        if (result == null) result = caseTypePrefix(class_);
+        if (result == null) result = caseClassifierDeclaration(class_);
+        if (result == null) result = caseGeneralBodyElements(class_);
+        if (result == null) result = casePrefixMetadata(class_);
+        if (result == null) result = caseIdentification(class_);
+        if (result == null) result = caseMultiplicityBounds(class_);
+        if (result == null) result = caseSuperclassingPart(class_);
+        if (result == null) result = caseClassifierConjugationPart(class_);
+        if (result == null) result = caseTypeRelationshipPart(class_);
+        if (result == null) result = casePackageBodyElement(class_);
+        if (result == null) result = caseTypeBodyElement(class_);
+        if (result == null) result = caseNamespaceBodyElement(class_);
+        if (result == null) result = caseFunctionBodyElement(class_);
+        if (result == null) result = caseSubsettingFeatureChain(class_);
+        if (result == null) result = caseDisjoiningPart(class_);
+        if (result == null) result = caseUnioningPart(class_);
+        if (result == null) result = caseIntersectingPart(class_);
+        if (result == null) result = caseDifferencingPart(class_);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.STRUCTURE:
+      {
+        Structure structure = (Structure)theEObject;
+        T result = caseStructure(structure);
+        if (result == null) result = caseNonFeatureElement(structure);
+        if (result == null) result = caseMemberPrefix(structure);
+        if (result == null) result = caseTypePrefix(structure);
+        if (result == null) result = caseClassifierDeclaration(structure);
+        if (result == null) result = caseGeneralBodyElements(structure);
+        if (result == null) result = casePrefixMetadata(structure);
+        if (result == null) result = caseIdentification(structure);
+        if (result == null) result = caseMultiplicityBounds(structure);
+        if (result == null) result = caseSuperclassingPart(structure);
+        if (result == null) result = caseClassifierConjugationPart(structure);
+        if (result == null) result = caseTypeRelationshipPart(structure);
+        if (result == null) result = casePackageBodyElement(structure);
+        if (result == null) result = caseTypeBodyElement(structure);
+        if (result == null) result = caseNamespaceBodyElement(structure);
+        if (result == null) result = caseFunctionBodyElement(structure);
+        if (result == null) result = caseSubsettingFeatureChain(structure);
+        if (result == null) result = caseDisjoiningPart(structure);
+        if (result == null) result = caseUnioningPart(structure);
+        if (result == null) result = caseIntersectingPart(structure);
+        if (result == null) result = caseDifferencingPart(structure);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.METACLASS:
+      {
+        Metaclass metaclass = (Metaclass)theEObject;
+        T result = caseMetaclass(metaclass);
+        if (result == null) result = caseNonFeatureElement(metaclass);
+        if (result == null) result = caseMemberPrefix(metaclass);
+        if (result == null) result = caseTypePrefix(metaclass);
+        if (result == null) result = caseClassifierDeclaration(metaclass);
+        if (result == null) result = caseGeneralBodyElements(metaclass);
+        if (result == null) result = casePrefixMetadata(metaclass);
+        if (result == null) result = caseIdentification(metaclass);
+        if (result == null) result = caseMultiplicityBounds(metaclass);
+        if (result == null) result = caseSuperclassingPart(metaclass);
+        if (result == null) result = caseClassifierConjugationPart(metaclass);
+        if (result == null) result = caseTypeRelationshipPart(metaclass);
+        if (result == null) result = casePackageBodyElement(metaclass);
+        if (result == null) result = caseTypeBodyElement(metaclass);
+        if (result == null) result = caseNamespaceBodyElement(metaclass);
+        if (result == null) result = caseFunctionBodyElement(metaclass);
+        if (result == null) result = caseSubsettingFeatureChain(metaclass);
+        if (result == null) result = caseDisjoiningPart(metaclass);
+        if (result == null) result = caseUnioningPart(metaclass);
+        if (result == null) result = caseIntersectingPart(metaclass);
+        if (result == null) result = caseDifferencingPart(metaclass);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.DATA_TYPE:
+      {
+        DataType dataType = (DataType)theEObject;
+        T result = caseDataType(dataType);
+        if (result == null) result = caseNonFeatureElement(dataType);
+        if (result == null) result = caseMemberPrefix(dataType);
+        if (result == null) result = caseTypePrefix(dataType);
+        if (result == null) result = caseClassifierDeclaration(dataType);
+        if (result == null) result = caseGeneralBodyElements(dataType);
+        if (result == null) result = casePrefixMetadata(dataType);
+        if (result == null) result = caseIdentification(dataType);
+        if (result == null) result = caseMultiplicityBounds(dataType);
+        if (result == null) result = caseSuperclassingPart(dataType);
+        if (result == null) result = caseClassifierConjugationPart(dataType);
+        if (result == null) result = caseTypeRelationshipPart(dataType);
+        if (result == null) result = casePackageBodyElement(dataType);
+        if (result == null) result = caseTypeBodyElement(dataType);
+        if (result == null) result = caseNamespaceBodyElement(dataType);
+        if (result == null) result = caseFunctionBodyElement(dataType);
+        if (result == null) result = caseSubsettingFeatureChain(dataType);
+        if (result == null) result = caseDisjoiningPart(dataType);
+        if (result == null) result = caseUnioningPart(dataType);
+        if (result == null) result = caseIntersectingPart(dataType);
+        if (result == null) result = caseDifferencingPart(dataType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.ASSOCIATION:
+      {
+        Association association = (Association)theEObject;
+        T result = caseAssociation(association);
+        if (result == null) result = caseNonFeatureElement(association);
+        if (result == null) result = caseMemberPrefix(association);
+        if (result == null) result = caseTypePrefix(association);
+        if (result == null) result = caseClassifierDeclaration(association);
+        if (result == null) result = caseGeneralBodyElements(association);
+        if (result == null) result = casePrefixMetadata(association);
+        if (result == null) result = caseIdentification(association);
+        if (result == null) result = caseMultiplicityBounds(association);
+        if (result == null) result = caseSuperclassingPart(association);
+        if (result == null) result = caseClassifierConjugationPart(association);
+        if (result == null) result = caseTypeRelationshipPart(association);
+        if (result == null) result = casePackageBodyElement(association);
+        if (result == null) result = caseTypeBodyElement(association);
+        if (result == null) result = caseNamespaceBodyElement(association);
+        if (result == null) result = caseFunctionBodyElement(association);
+        if (result == null) result = caseSubsettingFeatureChain(association);
+        if (result == null) result = caseDisjoiningPart(association);
+        if (result == null) result = caseUnioningPart(association);
+        if (result == null) result = caseIntersectingPart(association);
+        if (result == null) result = caseDifferencingPart(association);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.ASSOCIATION_STRUCTURE:
+      {
+        AssociationStructure associationStructure = (AssociationStructure)theEObject;
+        T result = caseAssociationStructure(associationStructure);
+        if (result == null) result = caseNonFeatureElement(associationStructure);
+        if (result == null) result = caseMemberPrefix(associationStructure);
+        if (result == null) result = caseTypePrefix(associationStructure);
+        if (result == null) result = caseClassifierDeclaration(associationStructure);
+        if (result == null) result = caseGeneralBodyElements(associationStructure);
+        if (result == null) result = casePrefixMetadata(associationStructure);
+        if (result == null) result = caseIdentification(associationStructure);
+        if (result == null) result = caseMultiplicityBounds(associationStructure);
+        if (result == null) result = caseSuperclassingPart(associationStructure);
+        if (result == null) result = caseClassifierConjugationPart(associationStructure);
+        if (result == null) result = caseTypeRelationshipPart(associationStructure);
+        if (result == null) result = casePackageBodyElement(associationStructure);
+        if (result == null) result = caseTypeBodyElement(associationStructure);
+        if (result == null) result = caseNamespaceBodyElement(associationStructure);
+        if (result == null) result = caseFunctionBodyElement(associationStructure);
+        if (result == null) result = caseSubsettingFeatureChain(associationStructure);
+        if (result == null) result = caseDisjoiningPart(associationStructure);
+        if (result == null) result = caseUnioningPart(associationStructure);
+        if (result == null) result = caseIntersectingPart(associationStructure);
+        if (result == null) result = caseDifferencingPart(associationStructure);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.INTERACTION:
+      {
+        Interaction interaction = (Interaction)theEObject;
+        T result = caseInteraction(interaction);
+        if (result == null) result = caseNonFeatureElement(interaction);
+        if (result == null) result = caseMemberPrefix(interaction);
+        if (result == null) result = caseTypePrefix(interaction);
+        if (result == null) result = caseClassifierDeclaration(interaction);
+        if (result == null) result = caseGeneralBodyElements(interaction);
+        if (result == null) result = casePrefixMetadata(interaction);
+        if (result == null) result = caseIdentification(interaction);
+        if (result == null) result = caseMultiplicityBounds(interaction);
+        if (result == null) result = caseSuperclassingPart(interaction);
+        if (result == null) result = caseClassifierConjugationPart(interaction);
+        if (result == null) result = caseTypeRelationshipPart(interaction);
+        if (result == null) result = casePackageBodyElement(interaction);
+        if (result == null) result = caseTypeBodyElement(interaction);
+        if (result == null) result = caseNamespaceBodyElement(interaction);
+        if (result == null) result = caseFunctionBodyElement(interaction);
+        if (result == null) result = caseSubsettingFeatureChain(interaction);
+        if (result == null) result = caseDisjoiningPart(interaction);
+        if (result == null) result = caseUnioningPart(interaction);
+        if (result == null) result = caseIntersectingPart(interaction);
+        if (result == null) result = caseDifferencingPart(interaction);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.BEHAVIOR:
+      {
+        Behavior behavior = (Behavior)theEObject;
+        T result = caseBehavior(behavior);
+        if (result == null) result = caseNonFeatureElement(behavior);
+        if (result == null) result = caseMemberPrefix(behavior);
+        if (result == null) result = caseTypePrefix(behavior);
+        if (result == null) result = caseClassifierDeclaration(behavior);
+        if (result == null) result = caseGeneralBodyElements(behavior);
+        if (result == null) result = casePrefixMetadata(behavior);
+        if (result == null) result = caseIdentification(behavior);
+        if (result == null) result = caseMultiplicityBounds(behavior);
+        if (result == null) result = caseSuperclassingPart(behavior);
+        if (result == null) result = caseClassifierConjugationPart(behavior);
+        if (result == null) result = caseTypeRelationshipPart(behavior);
+        if (result == null) result = casePackageBodyElement(behavior);
+        if (result == null) result = caseTypeBodyElement(behavior);
+        if (result == null) result = caseNamespaceBodyElement(behavior);
+        if (result == null) result = caseFunctionBodyElement(behavior);
+        if (result == null) result = caseSubsettingFeatureChain(behavior);
+        if (result == null) result = caseDisjoiningPart(behavior);
+        if (result == null) result = caseUnioningPart(behavior);
+        if (result == null) result = caseIntersectingPart(behavior);
+        if (result == null) result = caseDifferencingPart(behavior);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.FUNCTION:
+      {
+        Function function = (Function)theEObject;
+        T result = caseFunction(function);
+        if (result == null) result = caseNonFeatureElement(function);
+        if (result == null) result = caseMemberPrefix(function);
+        if (result == null) result = caseTypePrefix(function);
+        if (result == null) result = caseClassifierDeclaration(function);
+        if (result == null) result = caseGeneralBodyElements(function);
+        if (result == null) result = casePrefixMetadata(function);
+        if (result == null) result = caseIdentification(function);
+        if (result == null) result = caseMultiplicityBounds(function);
+        if (result == null) result = caseSuperclassingPart(function);
+        if (result == null) result = caseClassifierConjugationPart(function);
+        if (result == null) result = caseTypeRelationshipPart(function);
+        if (result == null) result = casePackageBodyElement(function);
+        if (result == null) result = caseTypeBodyElement(function);
+        if (result == null) result = caseNamespaceBodyElement(function);
+        if (result == null) result = caseFunctionBodyElement(function);
+        if (result == null) result = caseSubsettingFeatureChain(function);
+        if (result == null) result = caseDisjoiningPart(function);
+        if (result == null) result = caseUnioningPart(function);
+        if (result == null) result = caseIntersectingPart(function);
+        if (result == null) result = caseDifferencingPart(function);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.PREDICATE:
+      {
+        Predicate predicate = (Predicate)theEObject;
+        T result = casePredicate(predicate);
+        if (result == null) result = caseNonFeatureElement(predicate);
+        if (result == null) result = caseMemberPrefix(predicate);
+        if (result == null) result = caseTypePrefix(predicate);
+        if (result == null) result = caseClassifierDeclaration(predicate);
+        if (result == null) result = caseGeneralBodyElements(predicate);
+        if (result == null) result = casePrefixMetadata(predicate);
+        if (result == null) result = caseIdentification(predicate);
+        if (result == null) result = caseMultiplicityBounds(predicate);
+        if (result == null) result = caseSuperclassingPart(predicate);
+        if (result == null) result = caseClassifierConjugationPart(predicate);
+        if (result == null) result = caseTypeRelationshipPart(predicate);
+        if (result == null) result = casePackageBodyElement(predicate);
+        if (result == null) result = caseTypeBodyElement(predicate);
+        if (result == null) result = caseNamespaceBodyElement(predicate);
+        if (result == null) result = caseFunctionBodyElement(predicate);
+        if (result == null) result = caseSubsettingFeatureChain(predicate);
+        if (result == null) result = caseDisjoiningPart(predicate);
+        if (result == null) result = caseUnioningPart(predicate);
+        if (result == null) result = caseIntersectingPart(predicate);
+        if (result == null) result = caseDifferencingPart(predicate);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.RESULT_EXPRESSION:
+      {
+        ResultExpression resultExpression = (ResultExpression)theEObject;
+        T result = caseResultExpression(resultExpression);
+        if (result == null) result = caseMemberPrefix(resultExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.IDENTIFICATION:
+      {
+        Identification identification = (Identification)theEObject;
+        T result = caseIdentification(identification);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.MEMBER_PREFIX:
+      {
+        MemberPrefix memberPrefix = (MemberPrefix)theEObject;
+        T result = caseMemberPrefix(memberPrefix);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.PREFIX_METADATA:
+      {
+        PrefixMetadata prefixMetadata = (PrefixMetadata)theEObject;
+        T result = casePrefixMetadata(prefixMetadata);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.MULTIPLICITY_BOUNDS:
+      {
+        MultiplicityBounds multiplicityBounds = (MultiplicityBounds)theEObject;
+        T result = caseMultiplicityBounds(multiplicityBounds);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.FEATURE_SPECIALIZATION:
+      {
+        FeatureSpecialization featureSpecialization = (FeatureSpecialization)theEObject;
+        T result = caseFeatureSpecialization(featureSpecialization);
+        if (result == null) result = caseTypingFeatureTyping(featureSpecialization);
+        if (result == null) result = caseSubsettingFeatureChain(featureSpecialization);
+        if (result == null) result = caseReferenceFeatureChain(featureSpecialization);
+        if (result == null) result = caseCrossFeatureChain(featureSpecialization);
+        if (result == null) result = caseRedefinitionFeatureChain(featureSpecialization);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.TYPING_FEATURE_TYPING:
+      {
+        TypingFeatureTyping typingFeatureTyping = (TypingFeatureTyping)theEObject;
+        T result = caseTypingFeatureTyping(typingFeatureTyping);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.SUBSETTING_FEATURE_CHAIN:
+      {
+        SubsettingFeatureChain subsettingFeatureChain = (SubsettingFeatureChain)theEObject;
+        T result = caseSubsettingFeatureChain(subsettingFeatureChain);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.REFERENCE_FEATURE_CHAIN:
+      {
+        ReferenceFeatureChain referenceFeatureChain = (ReferenceFeatureChain)theEObject;
+        T result = caseReferenceFeatureChain(referenceFeatureChain);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.CROSS_FEATURE_CHAIN:
+      {
+        CrossFeatureChain crossFeatureChain = (CrossFeatureChain)theEObject;
+        T result = caseCrossFeatureChain(crossFeatureChain);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.REDEFINITION_FEATURE_CHAIN:
+      {
+        RedefinitionFeatureChain redefinitionFeatureChain = (RedefinitionFeatureChain)theEObject;
+        T result = caseRedefinitionFeatureChain(redefinitionFeatureChain);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.SUBSETS:
+      {
+        Subsets subsets = (Subsets)theEObject;
+        T result = caseSubsets(subsets);
+        if (result == null) result = caseSubsettingFeatureChain(subsets);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.TYPE_PREFIX:
+      {
+        TypePrefix typePrefix = (TypePrefix)theEObject;
+        T result = caseTypePrefix(typePrefix);
+        if (result == null) result = casePrefixMetadata(typePrefix);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.SPECIALIZATION_PART:
+      {
+        SpecializationPart specializationPart = (SpecializationPart)theEObject;
+        T result = caseSpecializationPart(specializationPart);
+        if (result == null) result = caseSubsettingFeatureChain(specializationPart);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.SUPERCLASSING_PART:
+      {
+        SuperclassingPart superclassingPart = (SuperclassingPart)theEObject;
+        T result = caseSuperclassingPart(superclassingPart);
+        if (result == null) result = caseSubsettingFeatureChain(superclassingPart);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.CLASSIFIER_CONJUGATION_PART:
+      {
+        ClassifierConjugationPart classifierConjugationPart = (ClassifierConjugationPart)theEObject;
+        T result = caseClassifierConjugationPart(classifierConjugationPart);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.CONJUGATION_PART:
+      {
+        ConjugationPart conjugationPart = (ConjugationPart)theEObject;
+        T result = caseConjugationPart(conjugationPart);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.TYPE_RELATIONSHIP_PART:
+      {
+        TypeRelationshipPart typeRelationshipPart = (TypeRelationshipPart)theEObject;
+        T result = caseTypeRelationshipPart(typeRelationshipPart);
+        if (result == null) result = caseDisjoiningPart(typeRelationshipPart);
+        if (result == null) result = caseUnioningPart(typeRelationshipPart);
+        if (result == null) result = caseIntersectingPart(typeRelationshipPart);
+        if (result == null) result = caseDifferencingPart(typeRelationshipPart);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.DISJOINING_PART:
+      {
+        DisjoiningPart disjoiningPart = (DisjoiningPart)theEObject;
+        T result = caseDisjoiningPart(disjoiningPart);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.UNIONING_PART:
+      {
+        UnioningPart unioningPart = (UnioningPart)theEObject;
+        T result = caseUnioningPart(unioningPart);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.INTERSECTING_PART:
+      {
+        IntersectingPart intersectingPart = (IntersectingPart)theEObject;
+        T result = caseIntersectingPart(intersectingPart);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.DIFFERENCING_PART:
+      {
+        DifferencingPart differencingPart = (DifferencingPart)theEObject;
+        T result = caseDifferencingPart(differencingPart);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case KerMLOCPackage.CLASSIFIER_DECLARATION:
+      {
+        ClassifierDeclaration classifierDeclaration = (ClassifierDeclaration)theEObject;
+        T result = caseClassifierDeclaration(classifierDeclaration);
+        if (result == null) result = caseIdentification(classifierDeclaration);
+        if (result == null) result = caseMultiplicityBounds(classifierDeclaration);
+        if (result == null) result = caseSuperclassingPart(classifierDeclaration);
+        if (result == null) result = caseClassifierConjugationPart(classifierDeclaration);
+        if (result == null) result = caseTypeRelationshipPart(classifierDeclaration);
+        if (result == null) result = caseSubsettingFeatureChain(classifierDeclaration);
+        if (result == null) result = caseDisjoiningPart(classifierDeclaration);
+        if (result == null) result = caseUnioningPart(classifierDeclaration);
+        if (result == null) result = caseIntersectingPart(classifierDeclaration);
+        if (result == null) result = caseDifferencingPart(classifierDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
       default: return defaultCase(theEObject);
     }
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Root Namespace</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Root Namespace</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRootNamespace(RootNamespace object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>General Body Elements</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>General Body Elements</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseGeneralBodyElements(GeneralBodyElements object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Annotating Body Element</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Annotating Body Element</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAnnotatingBodyElement(AnnotatingBodyElement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Package Body Element</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Package Body Element</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePackageBodyElement(PackageBodyElement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Type Body Element</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Type Body Element</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTypeBodyElement(TypeBodyElement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Namespace Body Element</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Namespace Body Element</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNamespaceBodyElement(NamespaceBodyElement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Function Body Element</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Function Body Element</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFunctionBodyElement(FunctionBodyElement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Annotating Element</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Annotating Element</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAnnotatingElement(AnnotatingElement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Non Feature Element</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Non Feature Element</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNonFeatureElement(NonFeatureElement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Package</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Package</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePackage(dut.control.kermloc.kerMLOC.Package object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Library Package</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Library Package</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLibraryPackage(LibraryPackage object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Dependency</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Dependency</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDependency(Dependency object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Comment</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Comment</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseComment(Comment object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Documentation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Documentation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDocumentation(Documentation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Textual Representation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Textual Representation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTextualRepresentation(TextualRepresentation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Import Element</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Import Element</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseImportElement(ImportElement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Code Annotation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Code Annotation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCodeAnnotation(CodeAnnotation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Alias Element</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Alias Element</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAliasElement(AliasElement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Element Filter Element</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Element Filter Element</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseElementFilterElement(ElementFilterElement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Multiplicity</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Multiplicity</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMultiplicity(Multiplicity object)
+  {
+    return null;
   }
 
   /**
@@ -96,6 +1224,566 @@ public class KerMLOCSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseNamespace(Namespace object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseType(Type object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Classifier</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Classifier</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseClassifier(Classifier object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Class</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Class</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseClass(dut.control.kermloc.kerMLOC.Class object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Structure</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Structure</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStructure(Structure object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Metaclass</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Metaclass</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMetaclass(Metaclass object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Data Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Data Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDataType(DataType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Association</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Association</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAssociation(Association object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Association Structure</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Association Structure</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAssociationStructure(AssociationStructure object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Interaction</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Interaction</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInteraction(Interaction object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Behavior</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Behavior</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBehavior(Behavior object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Function</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Function</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFunction(Function object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Predicate</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Predicate</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePredicate(Predicate object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Result Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Result Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseResultExpression(ResultExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Identification</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Identification</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIdentification(Identification object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Member Prefix</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Member Prefix</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMemberPrefix(MemberPrefix object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Prefix Metadata</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Prefix Metadata</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePrefixMetadata(PrefixMetadata object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Multiplicity Bounds</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Multiplicity Bounds</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMultiplicityBounds(MultiplicityBounds object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Feature Specialization</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Feature Specialization</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFeatureSpecialization(FeatureSpecialization object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Typing Feature Typing</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Typing Feature Typing</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTypingFeatureTyping(TypingFeatureTyping object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Subsetting Feature Chain</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Subsetting Feature Chain</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSubsettingFeatureChain(SubsettingFeatureChain object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Reference Feature Chain</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Reference Feature Chain</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseReferenceFeatureChain(ReferenceFeatureChain object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Cross Feature Chain</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Cross Feature Chain</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCrossFeatureChain(CrossFeatureChain object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Redefinition Feature Chain</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Redefinition Feature Chain</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRedefinitionFeatureChain(RedefinitionFeatureChain object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Subsets</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Subsets</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSubsets(Subsets object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Type Prefix</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Type Prefix</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTypePrefix(TypePrefix object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Specialization Part</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Specialization Part</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSpecializationPart(SpecializationPart object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Superclassing Part</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Superclassing Part</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSuperclassingPart(SuperclassingPart object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Classifier Conjugation Part</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Classifier Conjugation Part</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseClassifierConjugationPart(ClassifierConjugationPart object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Conjugation Part</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Conjugation Part</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseConjugationPart(ConjugationPart object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Type Relationship Part</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Type Relationship Part</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTypeRelationshipPart(TypeRelationshipPart object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Disjoining Part</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Disjoining Part</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDisjoiningPart(DisjoiningPart object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Unioning Part</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Unioning Part</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseUnioningPart(UnioningPart object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Intersecting Part</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Intersecting Part</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIntersectingPart(IntersectingPart object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Differencing Part</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Differencing Part</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDifferencingPart(DifferencingPart object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Classifier Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Classifier Declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseClassifierDeclaration(ClassifierDeclaration object)
   {
     return null;
   }

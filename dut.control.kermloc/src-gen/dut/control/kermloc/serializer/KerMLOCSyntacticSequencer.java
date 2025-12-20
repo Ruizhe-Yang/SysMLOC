@@ -11,6 +11,10 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.AlternativeAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.GroupAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
+import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
 import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 
@@ -18,10 +22,64 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected KerMLOCGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_AliasElement_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__;
+	protected AbstractElementAlias match_AssociationStructure_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__;
+	protected AbstractElementAlias match_Association_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__;
+	protected AbstractElementAlias match_Behavior_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__;
+	protected AbstractElementAlias match_Class_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__;
+	protected AbstractElementAlias match_ClassifierConjugationPart_ConjugatesKeyword_0_1_or_TildeKeyword_0_0;
+	protected AbstractElementAlias match_Classifier_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__;
+	protected AbstractElementAlias match_Comment_CommentKeyword_1_0_q;
+	protected AbstractElementAlias match_ConjugationPart_ConjugatesKeyword_0_1_or_TildeKeyword_0_0;
+	protected AbstractElementAlias match_DataType_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__;
+	protected AbstractElementAlias match_Dependency_FromKeyword_3_1_q;
+	protected AbstractElementAlias match_Dependency_SemicolonKeyword_9_0_or___LeftCurlyBracketKeyword_9_1_0_RightCurlyBracketKeyword_9_1_2__;
+	protected AbstractElementAlias match_Function_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_3__;
+	protected AbstractElementAlias match_ImportElement_SemicolonKeyword_7_0_or___LeftCurlyBracketKeyword_7_1_0_RightCurlyBracketKeyword_7_1_2__;
+	protected AbstractElementAlias match_Interaction_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__;
+	protected AbstractElementAlias match_LibraryPackage_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__;
+	protected AbstractElementAlias match_Metaclass_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__;
+	protected AbstractElementAlias match_Multiplicity_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__;
+	protected AbstractElementAlias match_Namespace_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__;
+	protected AbstractElementAlias match_Package_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__;
+	protected AbstractElementAlias match_Predicate_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_3__;
+	protected AbstractElementAlias match_SpecializationPart_ColonGreaterThanSignKeyword_0_0_or_SpecializesKeyword_0_1;
+	protected AbstractElementAlias match_Structure_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__;
+	protected AbstractElementAlias match_Subsets_ColonGreaterThanSignKeyword_0_0_or_SubsetsKeyword_0_1;
+	protected AbstractElementAlias match_SuperclassingPart_ColonGreaterThanSignKeyword_0_0_or_SpecializesKeyword_0_1;
+	protected AbstractElementAlias match_TextualRepresentation_RepKeyword_1_0_q;
+	protected AbstractElementAlias match_Type_SemicolonKeyword_8_0_or___LeftCurlyBracketKeyword_8_1_0_RightCurlyBracketKeyword_8_1_2__;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (KerMLOCGrammarAccess) access;
+		match_AliasElement_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getAliasElementAccess().getLeftCurlyBracketKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getAliasElementAccess().getRightCurlyBracketKeyword_6_1_2())), new TokenAlias(false, false, grammarAccess.getAliasElementAccess().getSemicolonKeyword_6_0()));
+		match_AssociationStructure_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getAssociationStructureAccess().getLeftCurlyBracketKeyword_5_1_0()), new TokenAlias(false, false, grammarAccess.getAssociationStructureAccess().getRightCurlyBracketKeyword_5_1_2())), new TokenAlias(false, false, grammarAccess.getAssociationStructureAccess().getSemicolonKeyword_5_0()));
+		match_Association_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getAssociationAccess().getLeftCurlyBracketKeyword_4_1_0()), new TokenAlias(false, false, grammarAccess.getAssociationAccess().getRightCurlyBracketKeyword_4_1_2())), new TokenAlias(false, false, grammarAccess.getAssociationAccess().getSemicolonKeyword_4_0()));
+		match_Behavior_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getBehaviorAccess().getLeftCurlyBracketKeyword_4_1_0()), new TokenAlias(false, false, grammarAccess.getBehaviorAccess().getRightCurlyBracketKeyword_4_1_2())), new TokenAlias(false, false, grammarAccess.getBehaviorAccess().getSemicolonKeyword_4_0()));
+		match_Class_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getClassAccess().getLeftCurlyBracketKeyword_4_1_0()), new TokenAlias(false, false, grammarAccess.getClassAccess().getRightCurlyBracketKeyword_4_1_2())), new TokenAlias(false, false, grammarAccess.getClassAccess().getSemicolonKeyword_4_0()));
+		match_ClassifierConjugationPart_ConjugatesKeyword_0_1_or_TildeKeyword_0_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getClassifierConjugationPartAccess().getConjugatesKeyword_0_1()), new TokenAlias(false, false, grammarAccess.getClassifierConjugationPartAccess().getTildeKeyword_0_0()));
+		match_Classifier_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getClassifierAccess().getLeftCurlyBracketKeyword_4_1_0()), new TokenAlias(false, false, grammarAccess.getClassifierAccess().getRightCurlyBracketKeyword_4_1_2())), new TokenAlias(false, false, grammarAccess.getClassifierAccess().getSemicolonKeyword_4_0()));
+		match_Comment_CommentKeyword_1_0_q = new TokenAlias(false, true, grammarAccess.getCommentAccess().getCommentKeyword_1_0());
+		match_ConjugationPart_ConjugatesKeyword_0_1_or_TildeKeyword_0_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getConjugationPartAccess().getConjugatesKeyword_0_1()), new TokenAlias(false, false, grammarAccess.getConjugationPartAccess().getTildeKeyword_0_0()));
+		match_DataType_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getDataTypeAccess().getLeftCurlyBracketKeyword_4_1_0()), new TokenAlias(false, false, grammarAccess.getDataTypeAccess().getRightCurlyBracketKeyword_4_1_2())), new TokenAlias(false, false, grammarAccess.getDataTypeAccess().getSemicolonKeyword_4_0()));
+		match_Dependency_FromKeyword_3_1_q = new TokenAlias(false, true, grammarAccess.getDependencyAccess().getFromKeyword_3_1());
+		match_Dependency_SemicolonKeyword_9_0_or___LeftCurlyBracketKeyword_9_1_0_RightCurlyBracketKeyword_9_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getDependencyAccess().getLeftCurlyBracketKeyword_9_1_0()), new TokenAlias(false, false, grammarAccess.getDependencyAccess().getRightCurlyBracketKeyword_9_1_2())), new TokenAlias(false, false, grammarAccess.getDependencyAccess().getSemicolonKeyword_9_0()));
+		match_Function_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_3__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getFunctionAccess().getLeftCurlyBracketKeyword_4_1_0()), new TokenAlias(false, false, grammarAccess.getFunctionAccess().getRightCurlyBracketKeyword_4_1_3())), new TokenAlias(false, false, grammarAccess.getFunctionAccess().getSemicolonKeyword_4_0()));
+		match_ImportElement_SemicolonKeyword_7_0_or___LeftCurlyBracketKeyword_7_1_0_RightCurlyBracketKeyword_7_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getImportElementAccess().getLeftCurlyBracketKeyword_7_1_0()), new TokenAlias(false, false, grammarAccess.getImportElementAccess().getRightCurlyBracketKeyword_7_1_2())), new TokenAlias(false, false, grammarAccess.getImportElementAccess().getSemicolonKeyword_7_0()));
+		match_Interaction_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getInteractionAccess().getLeftCurlyBracketKeyword_4_1_0()), new TokenAlias(false, false, grammarAccess.getInteractionAccess().getRightCurlyBracketKeyword_4_1_2())), new TokenAlias(false, false, grammarAccess.getInteractionAccess().getSemicolonKeyword_4_0()));
+		match_LibraryPackage_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getLibraryPackageAccess().getLeftCurlyBracketKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getLibraryPackageAccess().getRightCurlyBracketKeyword_6_1_2())), new TokenAlias(false, false, grammarAccess.getLibraryPackageAccess().getSemicolonKeyword_6_0()));
+		match_Metaclass_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getMetaclassAccess().getLeftCurlyBracketKeyword_4_1_0()), new TokenAlias(false, false, grammarAccess.getMetaclassAccess().getRightCurlyBracketKeyword_4_1_2())), new TokenAlias(false, false, grammarAccess.getMetaclassAccess().getSemicolonKeyword_4_0()));
+		match_Multiplicity_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getMultiplicityAccess().getLeftCurlyBracketKeyword_4_1_0()), new TokenAlias(false, false, grammarAccess.getMultiplicityAccess().getRightCurlyBracketKeyword_4_1_2())), new TokenAlias(false, false, grammarAccess.getMultiplicityAccess().getSemicolonKeyword_4_0()));
+		match_Namespace_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNamespaceAccess().getLeftCurlyBracketKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getNamespaceAccess().getRightCurlyBracketKeyword_3_1_2())), new TokenAlias(false, false, grammarAccess.getNamespaceAccess().getSemicolonKeyword_3_0()));
+		match_Package_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getPackageAccess().getLeftCurlyBracketKeyword_4_1_0()), new TokenAlias(false, false, grammarAccess.getPackageAccess().getRightCurlyBracketKeyword_4_1_2())), new TokenAlias(false, false, grammarAccess.getPackageAccess().getSemicolonKeyword_4_0()));
+		match_Predicate_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_3__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getPredicateAccess().getLeftCurlyBracketKeyword_4_1_0()), new TokenAlias(false, false, grammarAccess.getPredicateAccess().getRightCurlyBracketKeyword_4_1_3())), new TokenAlias(false, false, grammarAccess.getPredicateAccess().getSemicolonKeyword_4_0()));
+		match_SpecializationPart_ColonGreaterThanSignKeyword_0_0_or_SpecializesKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getSpecializationPartAccess().getColonGreaterThanSignKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getSpecializationPartAccess().getSpecializesKeyword_0_1()));
+		match_Structure_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getStructureAccess().getLeftCurlyBracketKeyword_4_1_0()), new TokenAlias(false, false, grammarAccess.getStructureAccess().getRightCurlyBracketKeyword_4_1_2())), new TokenAlias(false, false, grammarAccess.getStructureAccess().getSemicolonKeyword_4_0()));
+		match_Subsets_ColonGreaterThanSignKeyword_0_0_or_SubsetsKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getSubsetsAccess().getColonGreaterThanSignKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getSubsetsAccess().getSubsetsKeyword_0_1()));
+		match_SuperclassingPart_ColonGreaterThanSignKeyword_0_0_or_SpecializesKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getSuperclassingPartAccess().getColonGreaterThanSignKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getSuperclassingPartAccess().getSpecializesKeyword_0_1()));
+		match_TextualRepresentation_RepKeyword_1_0_q = new TokenAlias(false, true, grammarAccess.getTextualRepresentationAccess().getRepKeyword_1_0());
+		match_Type_SemicolonKeyword_8_0_or___LeftCurlyBracketKeyword_8_1_0_RightCurlyBracketKeyword_8_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getTypeAccess().getLeftCurlyBracketKeyword_8_1_0()), new TokenAlias(false, false, grammarAccess.getTypeAccess().getRightCurlyBracketKeyword_8_1_2())), new TokenAlias(false, false, grammarAccess.getTypeAccess().getSemicolonKeyword_8_0()));
 	}
 	
 	@Override
@@ -36,8 +94,770 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			acceptNodes(getLastNavigableState(), syntaxNodes);
+			if (match_AliasElement_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__.equals(syntax))
+				emit_AliasElement_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_AssociationStructure_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__.equals(syntax))
+				emit_AssociationStructure_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Association_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__.equals(syntax))
+				emit_Association_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Behavior_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__.equals(syntax))
+				emit_Behavior_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Class_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__.equals(syntax))
+				emit_Class_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ClassifierConjugationPart_ConjugatesKeyword_0_1_or_TildeKeyword_0_0.equals(syntax))
+				emit_ClassifierConjugationPart_ConjugatesKeyword_0_1_or_TildeKeyword_0_0(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Classifier_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__.equals(syntax))
+				emit_Classifier_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Comment_CommentKeyword_1_0_q.equals(syntax))
+				emit_Comment_CommentKeyword_1_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ConjugationPart_ConjugatesKeyword_0_1_or_TildeKeyword_0_0.equals(syntax))
+				emit_ConjugationPart_ConjugatesKeyword_0_1_or_TildeKeyword_0_0(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_DataType_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__.equals(syntax))
+				emit_DataType_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Dependency_FromKeyword_3_1_q.equals(syntax))
+				emit_Dependency_FromKeyword_3_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Dependency_SemicolonKeyword_9_0_or___LeftCurlyBracketKeyword_9_1_0_RightCurlyBracketKeyword_9_1_2__.equals(syntax))
+				emit_Dependency_SemicolonKeyword_9_0_or___LeftCurlyBracketKeyword_9_1_0_RightCurlyBracketKeyword_9_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Function_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_3__.equals(syntax))
+				emit_Function_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_3__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ImportElement_SemicolonKeyword_7_0_or___LeftCurlyBracketKeyword_7_1_0_RightCurlyBracketKeyword_7_1_2__.equals(syntax))
+				emit_ImportElement_SemicolonKeyword_7_0_or___LeftCurlyBracketKeyword_7_1_0_RightCurlyBracketKeyword_7_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Interaction_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__.equals(syntax))
+				emit_Interaction_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_LibraryPackage_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__.equals(syntax))
+				emit_LibraryPackage_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Metaclass_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__.equals(syntax))
+				emit_Metaclass_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Multiplicity_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__.equals(syntax))
+				emit_Multiplicity_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Namespace_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__.equals(syntax))
+				emit_Namespace_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Package_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__.equals(syntax))
+				emit_Package_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Predicate_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_3__.equals(syntax))
+				emit_Predicate_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_3__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_SpecializationPart_ColonGreaterThanSignKeyword_0_0_or_SpecializesKeyword_0_1.equals(syntax))
+				emit_SpecializationPart_ColonGreaterThanSignKeyword_0_0_or_SpecializesKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Structure_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__.equals(syntax))
+				emit_Structure_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Subsets_ColonGreaterThanSignKeyword_0_0_or_SubsetsKeyword_0_1.equals(syntax))
+				emit_Subsets_ColonGreaterThanSignKeyword_0_0_or_SubsetsKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_SuperclassingPart_ColonGreaterThanSignKeyword_0_0_or_SpecializesKeyword_0_1.equals(syntax))
+				emit_SuperclassingPart_ColonGreaterThanSignKeyword_0_0_or_SpecializesKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_TextualRepresentation_RepKeyword_1_0_q.equals(syntax))
+				emit_TextualRepresentation_RepKeyword_1_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Type_SemicolonKeyword_8_0_or___LeftCurlyBracketKeyword_8_1_0_RightCurlyBracketKeyword_8_1_2__.equals(syntax))
+				emit_Type_SemicolonKeyword_8_0_or___LeftCurlyBracketKeyword_8_1_0_RightCurlyBracketKeyword_8_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     memberElement=QualifiedName (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_AliasElement_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'assoc' 'struct' (ambiguity) (rule start)
+	 *     MultiHigh=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     declaredName=Name (ambiguity) (rule end)
+	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
+	 *     differencing+=FeatureChainName (ambiguity) (rule end)
+	 *     disjoining+=FeatureChainName (ambiguity) (rule end)
+	 *     intersecting+=FeatureChainName (ambiguity) (rule end)
+	 *     isAbstract?='abstract' 'assoc' 'struct' (ambiguity) (rule end)
+	 *     isSufficient?='all' (ambiguity) (rule end)
+	 *     isVariant?='variant' 'assoc' 'struct' (ambiguity) (rule end)
+	 *     originalType=FeatureChainName (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'assoc' 'struct' (ambiguity) (rule end)
+	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
+	 *     unioning+=FeatureChainName (ambiguity) (rule end)
+	 *     visibility=VisibilityIndicator 'assoc' 'struct' (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_AssociationStructure_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'assoc' (ambiguity) (rule start)
+	 *     MultiHigh=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     declaredName=Name (ambiguity) (rule end)
+	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
+	 *     differencing+=FeatureChainName (ambiguity) (rule end)
+	 *     disjoining+=FeatureChainName (ambiguity) (rule end)
+	 *     intersecting+=FeatureChainName (ambiguity) (rule end)
+	 *     isAbstract?='abstract' 'assoc' (ambiguity) (rule end)
+	 *     isSufficient?='all' (ambiguity) (rule end)
+	 *     isVariant?='variant' 'assoc' (ambiguity) (rule end)
+	 *     originalType=FeatureChainName (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'assoc' (ambiguity) (rule end)
+	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
+	 *     unioning+=FeatureChainName (ambiguity) (rule end)
+	 *     visibility=VisibilityIndicator 'assoc' (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Association_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'behavior' (ambiguity) (rule start)
+	 *     MultiHigh=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     declaredName=Name (ambiguity) (rule end)
+	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
+	 *     differencing+=FeatureChainName (ambiguity) (rule end)
+	 *     disjoining+=FeatureChainName (ambiguity) (rule end)
+	 *     intersecting+=FeatureChainName (ambiguity) (rule end)
+	 *     isAbstract?='abstract' 'behavior' (ambiguity) (rule end)
+	 *     isSufficient?='all' (ambiguity) (rule end)
+	 *     isVariant?='variant' 'behavior' (ambiguity) (rule end)
+	 *     originalType=FeatureChainName (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'behavior' (ambiguity) (rule end)
+	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
+	 *     unioning+=FeatureChainName (ambiguity) (rule end)
+	 *     visibility=VisibilityIndicator 'behavior' (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Behavior_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'class' (ambiguity) (rule start)
+	 *     MultiHigh=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     declaredName=Name (ambiguity) (rule end)
+	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
+	 *     differencing+=FeatureChainName (ambiguity) (rule end)
+	 *     disjoining+=FeatureChainName (ambiguity) (rule end)
+	 *     intersecting+=FeatureChainName (ambiguity) (rule end)
+	 *     isAbstract?='abstract' 'class' (ambiguity) (rule end)
+	 *     isSufficient?='all' (ambiguity) (rule end)
+	 *     isVariant?='variant' 'class' (ambiguity) (rule end)
+	 *     originalType=FeatureChainName (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'class' (ambiguity) (rule end)
+	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
+	 *     unioning+=FeatureChainName (ambiguity) (rule end)
+	 *     visibility=VisibilityIndicator 'class' (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Class_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     '~' | 'conjugates'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'assoc' 'struct' (ambiguity) originalType=FeatureChainName
+	 *     (rule start) 'assoc' (ambiguity) originalType=FeatureChainName
+	 *     (rule start) 'behavior' (ambiguity) originalType=FeatureChainName
+	 *     (rule start) 'class' (ambiguity) originalType=FeatureChainName
+	 *     (rule start) 'classifier' (ambiguity) originalType=FeatureChainName
+	 *     (rule start) 'datatype' (ambiguity) originalType=FeatureChainName
+	 *     (rule start) 'function' (ambiguity) originalType=FeatureChainName
+	 *     (rule start) 'interaction' (ambiguity) originalType=FeatureChainName
+	 *     (rule start) 'metaclass' (ambiguity) originalType=FeatureChainName
+	 *     (rule start) 'predicate' (ambiguity) originalType=FeatureChainName
+	 *     (rule start) 'struct' (ambiguity) originalType=FeatureChainName
+	 *     MultiHigh=MultiplicityExpression ']' (ambiguity) originalType=FeatureChainName
+	 *     MultiLow=MultiplicityExpression ']' (ambiguity) originalType=FeatureChainName
+	 *     declaredName=Name (ambiguity) originalType=FeatureChainName
+	 *     declaredShortName=Name '&gt;' (ambiguity) originalType=FeatureChainName
+	 *     isAbstract?='abstract' 'assoc' 'struct' (ambiguity) originalType=FeatureChainName
+	 *     isAbstract?='abstract' 'assoc' (ambiguity) originalType=FeatureChainName
+	 *     isAbstract?='abstract' 'behavior' (ambiguity) originalType=FeatureChainName
+	 *     isAbstract?='abstract' 'class' (ambiguity) originalType=FeatureChainName
+	 *     isAbstract?='abstract' 'classifier' (ambiguity) originalType=FeatureChainName
+	 *     isAbstract?='abstract' 'datatype' (ambiguity) originalType=FeatureChainName
+	 *     isAbstract?='abstract' 'function' (ambiguity) originalType=FeatureChainName
+	 *     isAbstract?='abstract' 'interaction' (ambiguity) originalType=FeatureChainName
+	 *     isAbstract?='abstract' 'metaclass' (ambiguity) originalType=FeatureChainName
+	 *     isAbstract?='abstract' 'predicate' (ambiguity) originalType=FeatureChainName
+	 *     isAbstract?='abstract' 'struct' (ambiguity) originalType=FeatureChainName
+	 *     isSufficient?='all' (ambiguity) originalType=FeatureChainName
+	 *     isVariant?='variant' 'assoc' 'struct' (ambiguity) originalType=FeatureChainName
+	 *     isVariant?='variant' 'assoc' (ambiguity) originalType=FeatureChainName
+	 *     isVariant?='variant' 'behavior' (ambiguity) originalType=FeatureChainName
+	 *     isVariant?='variant' 'class' (ambiguity) originalType=FeatureChainName
+	 *     isVariant?='variant' 'classifier' (ambiguity) originalType=FeatureChainName
+	 *     isVariant?='variant' 'datatype' (ambiguity) originalType=FeatureChainName
+	 *     isVariant?='variant' 'function' (ambiguity) originalType=FeatureChainName
+	 *     isVariant?='variant' 'interaction' (ambiguity) originalType=FeatureChainName
+	 *     isVariant?='variant' 'metaclass' (ambiguity) originalType=FeatureChainName
+	 *     isVariant?='variant' 'predicate' (ambiguity) originalType=FeatureChainName
+	 *     isVariant?='variant' 'struct' (ambiguity) originalType=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'assoc' 'struct' (ambiguity) originalType=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'assoc' (ambiguity) originalType=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'behavior' (ambiguity) originalType=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'class' (ambiguity) originalType=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'classifier' (ambiguity) originalType=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'datatype' (ambiguity) originalType=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'function' (ambiguity) originalType=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'interaction' (ambiguity) originalType=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'metaclass' (ambiguity) originalType=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'predicate' (ambiguity) originalType=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'struct' (ambiguity) originalType=FeatureChainName
+	 *     visibility=VisibilityIndicator 'assoc' 'struct' (ambiguity) originalType=FeatureChainName
+	 *     visibility=VisibilityIndicator 'assoc' (ambiguity) originalType=FeatureChainName
+	 *     visibility=VisibilityIndicator 'behavior' (ambiguity) originalType=FeatureChainName
+	 *     visibility=VisibilityIndicator 'class' (ambiguity) originalType=FeatureChainName
+	 *     visibility=VisibilityIndicator 'classifier' (ambiguity) originalType=FeatureChainName
+	 *     visibility=VisibilityIndicator 'datatype' (ambiguity) originalType=FeatureChainName
+	 *     visibility=VisibilityIndicator 'function' (ambiguity) originalType=FeatureChainName
+	 *     visibility=VisibilityIndicator 'interaction' (ambiguity) originalType=FeatureChainName
+	 *     visibility=VisibilityIndicator 'metaclass' (ambiguity) originalType=FeatureChainName
+	 *     visibility=VisibilityIndicator 'predicate' (ambiguity) originalType=FeatureChainName
+	 *     visibility=VisibilityIndicator 'struct' (ambiguity) originalType=FeatureChainName
+	 
+	 * </pre>
+	 */
+	protected void emit_ClassifierConjugationPart_ConjugatesKeyword_0_1_or_TildeKeyword_0_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'classifier' (ambiguity) (rule start)
+	 *     MultiHigh=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     declaredName=Name (ambiguity) (rule end)
+	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
+	 *     differencing+=FeatureChainName (ambiguity) (rule end)
+	 *     disjoining+=FeatureChainName (ambiguity) (rule end)
+	 *     intersecting+=FeatureChainName (ambiguity) (rule end)
+	 *     isAbstract?='abstract' 'classifier' (ambiguity) (rule end)
+	 *     isSufficient?='all' (ambiguity) (rule end)
+	 *     isVariant?='variant' 'classifier' (ambiguity) (rule end)
+	 *     originalType=FeatureChainName (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'classifier' (ambiguity) (rule end)
+	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
+	 *     unioning+=FeatureChainName (ambiguity) (rule end)
+	 *     visibility=VisibilityIndicator 'classifier' (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Classifier_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     'comment'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) 'locale' locale=STRING_VALUE
+	 *     (rule start) (ambiguity) body=REGULAR_COMMENT
+	 *     isVariant?='variant' (ambiguity) 'locale' locale=STRING_VALUE
+	 *     isVariant?='variant' (ambiguity) body=REGULAR_COMMENT
+	 *     visibility=VisibilityIndicator (ambiguity) 'locale' locale=STRING_VALUE
+	 *     visibility=VisibilityIndicator (ambiguity) body=REGULAR_COMMENT
+	 
+	 * </pre>
+	 */
+	protected void emit_Comment_CommentKeyword_1_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     '~' | 'conjugates'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'type' (ambiguity) originalType=FeatureChainName
+	 *     MultiHigh=MultiplicityExpression ']' (ambiguity) originalType=FeatureChainName
+	 *     MultiLow=MultiplicityExpression ']' (ambiguity) originalType=FeatureChainName
+	 *     declaredName=Name (ambiguity) originalType=FeatureChainName
+	 *     declaredShortName=Name '&gt;' (ambiguity) originalType=FeatureChainName
+	 *     isAbstract?='abstract' 'type' (ambiguity) originalType=FeatureChainName
+	 *     isSufficient?='all' (ambiguity) originalType=FeatureChainName
+	 *     isVariant?='variant' 'type' (ambiguity) originalType=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'type' (ambiguity) originalType=FeatureChainName
+	 *     visibility=VisibilityIndicator 'type' (ambiguity) originalType=FeatureChainName
+	 
+	 * </pre>
+	 */
+	protected void emit_ConjugationPart_ConjugatesKeyword_0_1_or_TildeKeyword_0_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'datatype' (ambiguity) (rule start)
+	 *     MultiHigh=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     declaredName=Name (ambiguity) (rule end)
+	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
+	 *     differencing+=FeatureChainName (ambiguity) (rule end)
+	 *     disjoining+=FeatureChainName (ambiguity) (rule end)
+	 *     intersecting+=FeatureChainName (ambiguity) (rule end)
+	 *     isAbstract?='abstract' 'datatype' (ambiguity) (rule end)
+	 *     isSufficient?='all' (ambiguity) (rule end)
+	 *     isVariant?='variant' 'datatype' (ambiguity) (rule end)
+	 *     originalType=FeatureChainName (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'datatype' (ambiguity) (rule end)
+	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
+	 *     unioning+=FeatureChainName (ambiguity) (rule end)
+	 *     visibility=VisibilityIndicator 'datatype' (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_DataType_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     'from'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'dependency' (ambiguity) client+=QualifiedName
+	 *     isVariant?='variant' 'dependency' (ambiguity) client+=QualifiedName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'dependency' (ambiguity) client+=QualifiedName
+	 *     visibility=VisibilityIndicator 'dependency' (ambiguity) client+=QualifiedName
+	 
+	 * </pre>
+	 */
+	protected void emit_Dependency_FromKeyword_3_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     supplier+=QualifiedName (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Dependency_SemicolonKeyword_9_0_or___LeftCurlyBracketKeyword_9_1_0_RightCurlyBracketKeyword_9_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'function' (ambiguity) (rule start)
+	 *     MultiHigh=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     declaredName=Name (ambiguity) (rule end)
+	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
+	 *     differencing+=FeatureChainName (ambiguity) (rule end)
+	 *     disjoining+=FeatureChainName (ambiguity) (rule end)
+	 *     intersecting+=FeatureChainName (ambiguity) (rule end)
+	 *     isAbstract?='abstract' 'function' (ambiguity) (rule end)
+	 *     isSufficient?='all' (ambiguity) (rule end)
+	 *     isVariant?='variant' 'function' (ambiguity) (rule end)
+	 *     originalType=FeatureChainName (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'function' (ambiguity) (rule end)
+	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
+	 *     unioning+=FeatureChainName (ambiguity) (rule end)
+	 *     visibility=VisibilityIndicator 'function' (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Function_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_3__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     declaredName=QualifiedName (ambiguity) (rule end)
+	 *     filterPackageExpression+=Expression ']' (ambiguity) (rule end)
+	 *     isNamespace?='::' '*' (ambiguity) (rule end)
+	 *     isRecursive?='**' (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_ImportElement_SemicolonKeyword_7_0_or___LeftCurlyBracketKeyword_7_1_0_RightCurlyBracketKeyword_7_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'interaction' (ambiguity) (rule start)
+	 *     MultiHigh=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     declaredName=Name (ambiguity) (rule end)
+	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
+	 *     differencing+=FeatureChainName (ambiguity) (rule end)
+	 *     disjoining+=FeatureChainName (ambiguity) (rule end)
+	 *     intersecting+=FeatureChainName (ambiguity) (rule end)
+	 *     isAbstract?='abstract' 'interaction' (ambiguity) (rule end)
+	 *     isSufficient?='all' (ambiguity) (rule end)
+	 *     isVariant?='variant' 'interaction' (ambiguity) (rule end)
+	 *     originalType=FeatureChainName (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'interaction' (ambiguity) (rule end)
+	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
+	 *     unioning+=FeatureChainName (ambiguity) (rule end)
+	 *     visibility=VisibilityIndicator 'interaction' (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Interaction_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     declaredName=Name (ambiguity) (rule end)
+	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
+	 *     isLibrary?='library' 'package' (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'package' (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_LibraryPackage_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'metaclass' (ambiguity) (rule start)
+	 *     MultiHigh=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     declaredName=Name (ambiguity) (rule end)
+	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
+	 *     differencing+=FeatureChainName (ambiguity) (rule end)
+	 *     disjoining+=FeatureChainName (ambiguity) (rule end)
+	 *     intersecting+=FeatureChainName (ambiguity) (rule end)
+	 *     isAbstract?='abstract' 'metaclass' (ambiguity) (rule end)
+	 *     isSufficient?='all' (ambiguity) (rule end)
+	 *     isVariant?='variant' 'metaclass' (ambiguity) (rule end)
+	 *     originalType=FeatureChainName (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'metaclass' (ambiguity) (rule end)
+	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
+	 *     unioning+=FeatureChainName (ambiguity) (rule end)
+	 *     visibility=VisibilityIndicator 'metaclass' (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Metaclass_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     MultiHigh=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Multiplicity_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     declaredName=Name (ambiguity) (rule end)
+	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
+	 *     isNamespace?='namespace' (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Namespace_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     declaredName=QualifiedName (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Package_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'predicate' (ambiguity) (rule start)
+	 *     MultiHigh=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     declaredName=Name (ambiguity) (rule end)
+	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
+	 *     differencing+=FeatureChainName (ambiguity) (rule end)
+	 *     disjoining+=FeatureChainName (ambiguity) (rule end)
+	 *     intersecting+=FeatureChainName (ambiguity) (rule end)
+	 *     isAbstract?='abstract' 'predicate' (ambiguity) (rule end)
+	 *     isSufficient?='all' (ambiguity) (rule end)
+	 *     isVariant?='variant' 'predicate' (ambiguity) (rule end)
+	 *     originalType=FeatureChainName (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'predicate' (ambiguity) (rule end)
+	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
+	 *     unioning+=FeatureChainName (ambiguity) (rule end)
+	 *     visibility=VisibilityIndicator 'predicate' (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Predicate_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_3__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ':&gt;' | 'specializes'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'type' (ambiguity) subsetting+=FeatureChainName
+	 *     MultiHigh=MultiplicityExpression ']' (ambiguity) subsetting+=FeatureChainName
+	 *     MultiLow=MultiplicityExpression ']' (ambiguity) subsetting+=FeatureChainName
+	 *     declaredName=Name (ambiguity) subsetting+=FeatureChainName
+	 *     declaredShortName=Name '&gt;' (ambiguity) subsetting+=FeatureChainName
+	 *     isAbstract?='abstract' 'type' (ambiguity) subsetting+=FeatureChainName
+	 *     isSufficient?='all' (ambiguity) subsetting+=FeatureChainName
+	 *     isVariant?='variant' 'type' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'type' (ambiguity) subsetting+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'type' (ambiguity) subsetting+=FeatureChainName
+	 
+	 * </pre>
+	 */
+	protected void emit_SpecializationPart_ColonGreaterThanSignKeyword_0_0_or_SpecializesKeyword_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'struct' (ambiguity) (rule start)
+	 *     MultiHigh=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     declaredName=Name (ambiguity) (rule end)
+	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
+	 *     differencing+=FeatureChainName (ambiguity) (rule end)
+	 *     disjoining+=FeatureChainName (ambiguity) (rule end)
+	 *     intersecting+=FeatureChainName (ambiguity) (rule end)
+	 *     isAbstract?='abstract' 'struct' (ambiguity) (rule end)
+	 *     isSufficient?='all' (ambiguity) (rule end)
+	 *     isVariant?='variant' 'struct' (ambiguity) (rule end)
+	 *     originalType=FeatureChainName (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'struct' (ambiguity) (rule end)
+	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
+	 *     unioning+=FeatureChainName (ambiguity) (rule end)
+	 *     visibility=VisibilityIndicator 'struct' (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Structure_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ':&gt;' | 'subsets'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'multiplicity' (ambiguity) subsetting+=FeatureChainName
+	 *     declaredName=Name (ambiguity) subsetting+=FeatureChainName
+	 *     declaredShortName=Name '&gt;' (ambiguity) subsetting+=FeatureChainName
+	 *     isVariant?='variant' 'multiplicity' (ambiguity) subsetting+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'multiplicity' (ambiguity) subsetting+=FeatureChainName
+	 
+	 * </pre>
+	 */
+	protected void emit_Subsets_ColonGreaterThanSignKeyword_0_0_or_SubsetsKeyword_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ':&gt;' | 'specializes'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'assoc' 'struct' (ambiguity) subsetting+=FeatureChainName
+	 *     (rule start) 'assoc' (ambiguity) subsetting+=FeatureChainName
+	 *     (rule start) 'behavior' (ambiguity) subsetting+=FeatureChainName
+	 *     (rule start) 'class' (ambiguity) subsetting+=FeatureChainName
+	 *     (rule start) 'classifier' (ambiguity) subsetting+=FeatureChainName
+	 *     (rule start) 'datatype' (ambiguity) subsetting+=FeatureChainName
+	 *     (rule start) 'function' (ambiguity) subsetting+=FeatureChainName
+	 *     (rule start) 'interaction' (ambiguity) subsetting+=FeatureChainName
+	 *     (rule start) 'metaclass' (ambiguity) subsetting+=FeatureChainName
+	 *     (rule start) 'predicate' (ambiguity) subsetting+=FeatureChainName
+	 *     (rule start) 'struct' (ambiguity) subsetting+=FeatureChainName
+	 *     MultiHigh=MultiplicityExpression ']' (ambiguity) subsetting+=FeatureChainName
+	 *     MultiLow=MultiplicityExpression ']' (ambiguity) subsetting+=FeatureChainName
+	 *     declaredName=Name (ambiguity) subsetting+=FeatureChainName
+	 *     declaredShortName=Name '&gt;' (ambiguity) subsetting+=FeatureChainName
+	 *     isAbstract?='abstract' 'assoc' 'struct' (ambiguity) subsetting+=FeatureChainName
+	 *     isAbstract?='abstract' 'assoc' (ambiguity) subsetting+=FeatureChainName
+	 *     isAbstract?='abstract' 'behavior' (ambiguity) subsetting+=FeatureChainName
+	 *     isAbstract?='abstract' 'class' (ambiguity) subsetting+=FeatureChainName
+	 *     isAbstract?='abstract' 'classifier' (ambiguity) subsetting+=FeatureChainName
+	 *     isAbstract?='abstract' 'datatype' (ambiguity) subsetting+=FeatureChainName
+	 *     isAbstract?='abstract' 'function' (ambiguity) subsetting+=FeatureChainName
+	 *     isAbstract?='abstract' 'interaction' (ambiguity) subsetting+=FeatureChainName
+	 *     isAbstract?='abstract' 'metaclass' (ambiguity) subsetting+=FeatureChainName
+	 *     isAbstract?='abstract' 'predicate' (ambiguity) subsetting+=FeatureChainName
+	 *     isAbstract?='abstract' 'struct' (ambiguity) subsetting+=FeatureChainName
+	 *     isSufficient?='all' (ambiguity) subsetting+=FeatureChainName
+	 *     isVariant?='variant' 'assoc' 'struct' (ambiguity) subsetting+=FeatureChainName
+	 *     isVariant?='variant' 'assoc' (ambiguity) subsetting+=FeatureChainName
+	 *     isVariant?='variant' 'behavior' (ambiguity) subsetting+=FeatureChainName
+	 *     isVariant?='variant' 'class' (ambiguity) subsetting+=FeatureChainName
+	 *     isVariant?='variant' 'classifier' (ambiguity) subsetting+=FeatureChainName
+	 *     isVariant?='variant' 'datatype' (ambiguity) subsetting+=FeatureChainName
+	 *     isVariant?='variant' 'function' (ambiguity) subsetting+=FeatureChainName
+	 *     isVariant?='variant' 'interaction' (ambiguity) subsetting+=FeatureChainName
+	 *     isVariant?='variant' 'metaclass' (ambiguity) subsetting+=FeatureChainName
+	 *     isVariant?='variant' 'predicate' (ambiguity) subsetting+=FeatureChainName
+	 *     isVariant?='variant' 'struct' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'assoc' 'struct' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'assoc' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'behavior' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'class' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'classifier' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'datatype' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'function' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'interaction' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'metaclass' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'predicate' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'struct' (ambiguity) subsetting+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'assoc' 'struct' (ambiguity) subsetting+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'assoc' (ambiguity) subsetting+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'behavior' (ambiguity) subsetting+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'class' (ambiguity) subsetting+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'classifier' (ambiguity) subsetting+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'datatype' (ambiguity) subsetting+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'function' (ambiguity) subsetting+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'interaction' (ambiguity) subsetting+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'metaclass' (ambiguity) subsetting+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'predicate' (ambiguity) subsetting+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'struct' (ambiguity) subsetting+=FeatureChainName
+	 
+	 * </pre>
+	 */
+	protected void emit_SuperclassingPart_ColonGreaterThanSignKeyword_0_0_or_SpecializesKeyword_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     'rep'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) 'language' language=STRING_VALUE
+	 *     isVariant?='variant' (ambiguity) 'language' language=STRING_VALUE
+	 *     visibility=VisibilityIndicator (ambiguity) 'language' language=STRING_VALUE
+	 
+	 * </pre>
+	 */
+	protected void emit_TextualRepresentation_RepKeyword_1_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     differencing+=FeatureChainName (ambiguity) (rule end)
+	 *     disjoining+=FeatureChainName (ambiguity) (rule end)
+	 *     intersecting+=FeatureChainName (ambiguity) (rule end)
+	 *     originalType=FeatureChainName (ambiguity) (rule end)
+	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
+	 *     unioning+=FeatureChainName (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Type_SemicolonKeyword_8_0_or___LeftCurlyBracketKeyword_8_1_0_RightCurlyBracketKeyword_8_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 }

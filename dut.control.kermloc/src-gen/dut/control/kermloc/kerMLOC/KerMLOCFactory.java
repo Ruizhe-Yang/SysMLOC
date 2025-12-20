@@ -24,6 +24,186 @@ public interface KerMLOCFactory extends EFactory
   KerMLOCFactory eINSTANCE = dut.control.kermloc.kerMLOC.impl.KerMLOCFactoryImpl.init();
 
   /**
+   * Returns a new object of class '<em>Root Namespace</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Root Namespace</em>'.
+   * @generated
+   */
+  RootNamespace createRootNamespace();
+
+  /**
+   * Returns a new object of class '<em>General Body Elements</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>General Body Elements</em>'.
+   * @generated
+   */
+  GeneralBodyElements createGeneralBodyElements();
+
+  /**
+   * Returns a new object of class '<em>Annotating Body Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Annotating Body Element</em>'.
+   * @generated
+   */
+  AnnotatingBodyElement createAnnotatingBodyElement();
+
+  /**
+   * Returns a new object of class '<em>Package Body Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Package Body Element</em>'.
+   * @generated
+   */
+  PackageBodyElement createPackageBodyElement();
+
+  /**
+   * Returns a new object of class '<em>Type Body Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Type Body Element</em>'.
+   * @generated
+   */
+  TypeBodyElement createTypeBodyElement();
+
+  /**
+   * Returns a new object of class '<em>Namespace Body Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Namespace Body Element</em>'.
+   * @generated
+   */
+  NamespaceBodyElement createNamespaceBodyElement();
+
+  /**
+   * Returns a new object of class '<em>Function Body Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Function Body Element</em>'.
+   * @generated
+   */
+  FunctionBodyElement createFunctionBodyElement();
+
+  /**
+   * Returns a new object of class '<em>Annotating Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Annotating Element</em>'.
+   * @generated
+   */
+  AnnotatingElement createAnnotatingElement();
+
+  /**
+   * Returns a new object of class '<em>Non Feature Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Non Feature Element</em>'.
+   * @generated
+   */
+  NonFeatureElement createNonFeatureElement();
+
+  /**
+   * Returns a new object of class '<em>Package</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Package</em>'.
+   * @generated
+   */
+  Package createPackage();
+
+  /**
+   * Returns a new object of class '<em>Library Package</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Library Package</em>'.
+   * @generated
+   */
+  LibraryPackage createLibraryPackage();
+
+  /**
+   * Returns a new object of class '<em>Dependency</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Dependency</em>'.
+   * @generated
+   */
+  Dependency createDependency();
+
+  /**
+   * Returns a new object of class '<em>Comment</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Comment</em>'.
+   * @generated
+   */
+  Comment createComment();
+
+  /**
+   * Returns a new object of class '<em>Documentation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Documentation</em>'.
+   * @generated
+   */
+  Documentation createDocumentation();
+
+  /**
+   * Returns a new object of class '<em>Textual Representation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Textual Representation</em>'.
+   * @generated
+   */
+  TextualRepresentation createTextualRepresentation();
+
+  /**
+   * Returns a new object of class '<em>Import Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Import Element</em>'.
+   * @generated
+   */
+  ImportElement createImportElement();
+
+  /**
+   * Returns a new object of class '<em>Code Annotation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Code Annotation</em>'.
+   * @generated
+   */
+  CodeAnnotation createCodeAnnotation();
+
+  /**
+   * Returns a new object of class '<em>Alias Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Alias Element</em>'.
+   * @generated
+   */
+  AliasElement createAliasElement();
+
+  /**
+   * Returns a new object of class '<em>Element Filter Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Element Filter Element</em>'.
+   * @generated
+   */
+  ElementFilterElement createElementFilterElement();
+
+  /**
+   * Returns a new object of class '<em>Multiplicity</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Multiplicity</em>'.
+   * @generated
+   */
+  Multiplicity createMultiplicity();
+
+  /**
    * Returns a new object of class '<em>Namespace</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -31,6 +211,321 @@ public interface KerMLOCFactory extends EFactory
    * @generated
    */
   Namespace createNamespace();
+
+  /**
+   * Returns a new object of class '<em>Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Type</em>'.
+   * @generated
+   */
+  Type createType();
+
+  /**
+   * Returns a new object of class '<em>Classifier</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Classifier</em>'.
+   * @generated
+   */
+  Classifier createClassifier();
+
+  /**
+   * Returns a new object of class '<em>Class</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Class</em>'.
+   * @generated
+   */
+  Class createClass();
+
+  /**
+   * Returns a new object of class '<em>Structure</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Structure</em>'.
+   * @generated
+   */
+  Structure createStructure();
+
+  /**
+   * Returns a new object of class '<em>Metaclass</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Metaclass</em>'.
+   * @generated
+   */
+  Metaclass createMetaclass();
+
+  /**
+   * Returns a new object of class '<em>Data Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Type</em>'.
+   * @generated
+   */
+  DataType createDataType();
+
+  /**
+   * Returns a new object of class '<em>Association</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Association</em>'.
+   * @generated
+   */
+  Association createAssociation();
+
+  /**
+   * Returns a new object of class '<em>Association Structure</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Association Structure</em>'.
+   * @generated
+   */
+  AssociationStructure createAssociationStructure();
+
+  /**
+   * Returns a new object of class '<em>Interaction</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Interaction</em>'.
+   * @generated
+   */
+  Interaction createInteraction();
+
+  /**
+   * Returns a new object of class '<em>Behavior</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Behavior</em>'.
+   * @generated
+   */
+  Behavior createBehavior();
+
+  /**
+   * Returns a new object of class '<em>Function</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Function</em>'.
+   * @generated
+   */
+  Function createFunction();
+
+  /**
+   * Returns a new object of class '<em>Predicate</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Predicate</em>'.
+   * @generated
+   */
+  Predicate createPredicate();
+
+  /**
+   * Returns a new object of class '<em>Result Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Result Expression</em>'.
+   * @generated
+   */
+  ResultExpression createResultExpression();
+
+  /**
+   * Returns a new object of class '<em>Identification</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Identification</em>'.
+   * @generated
+   */
+  Identification createIdentification();
+
+  /**
+   * Returns a new object of class '<em>Member Prefix</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Member Prefix</em>'.
+   * @generated
+   */
+  MemberPrefix createMemberPrefix();
+
+  /**
+   * Returns a new object of class '<em>Prefix Metadata</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Prefix Metadata</em>'.
+   * @generated
+   */
+  PrefixMetadata createPrefixMetadata();
+
+  /**
+   * Returns a new object of class '<em>Multiplicity Bounds</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Multiplicity Bounds</em>'.
+   * @generated
+   */
+  MultiplicityBounds createMultiplicityBounds();
+
+  /**
+   * Returns a new object of class '<em>Feature Specialization</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Feature Specialization</em>'.
+   * @generated
+   */
+  FeatureSpecialization createFeatureSpecialization();
+
+  /**
+   * Returns a new object of class '<em>Typing Feature Typing</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Typing Feature Typing</em>'.
+   * @generated
+   */
+  TypingFeatureTyping createTypingFeatureTyping();
+
+  /**
+   * Returns a new object of class '<em>Subsetting Feature Chain</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Subsetting Feature Chain</em>'.
+   * @generated
+   */
+  SubsettingFeatureChain createSubsettingFeatureChain();
+
+  /**
+   * Returns a new object of class '<em>Reference Feature Chain</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Reference Feature Chain</em>'.
+   * @generated
+   */
+  ReferenceFeatureChain createReferenceFeatureChain();
+
+  /**
+   * Returns a new object of class '<em>Cross Feature Chain</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Cross Feature Chain</em>'.
+   * @generated
+   */
+  CrossFeatureChain createCrossFeatureChain();
+
+  /**
+   * Returns a new object of class '<em>Redefinition Feature Chain</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Redefinition Feature Chain</em>'.
+   * @generated
+   */
+  RedefinitionFeatureChain createRedefinitionFeatureChain();
+
+  /**
+   * Returns a new object of class '<em>Subsets</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Subsets</em>'.
+   * @generated
+   */
+  Subsets createSubsets();
+
+  /**
+   * Returns a new object of class '<em>Type Prefix</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Type Prefix</em>'.
+   * @generated
+   */
+  TypePrefix createTypePrefix();
+
+  /**
+   * Returns a new object of class '<em>Specialization Part</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Specialization Part</em>'.
+   * @generated
+   */
+  SpecializationPart createSpecializationPart();
+
+  /**
+   * Returns a new object of class '<em>Superclassing Part</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Superclassing Part</em>'.
+   * @generated
+   */
+  SuperclassingPart createSuperclassingPart();
+
+  /**
+   * Returns a new object of class '<em>Classifier Conjugation Part</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Classifier Conjugation Part</em>'.
+   * @generated
+   */
+  ClassifierConjugationPart createClassifierConjugationPart();
+
+  /**
+   * Returns a new object of class '<em>Conjugation Part</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Conjugation Part</em>'.
+   * @generated
+   */
+  ConjugationPart createConjugationPart();
+
+  /**
+   * Returns a new object of class '<em>Type Relationship Part</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Type Relationship Part</em>'.
+   * @generated
+   */
+  TypeRelationshipPart createTypeRelationshipPart();
+
+  /**
+   * Returns a new object of class '<em>Disjoining Part</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Disjoining Part</em>'.
+   * @generated
+   */
+  DisjoiningPart createDisjoiningPart();
+
+  /**
+   * Returns a new object of class '<em>Unioning Part</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Unioning Part</em>'.
+   * @generated
+   */
+  UnioningPart createUnioningPart();
+
+  /**
+   * Returns a new object of class '<em>Intersecting Part</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Intersecting Part</em>'.
+   * @generated
+   */
+  IntersectingPart createIntersectingPart();
+
+  /**
+   * Returns a new object of class '<em>Differencing Part</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Differencing Part</em>'.
+   * @generated
+   */
+  DifferencingPart createDifferencingPart();
+
+  /**
+   * Returns a new object of class '<em>Classifier Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Classifier Declaration</em>'.
+   * @generated
+   */
+  ClassifierDeclaration createClassifierDeclaration();
 
   /**
    * Returns the package supported by this factory.

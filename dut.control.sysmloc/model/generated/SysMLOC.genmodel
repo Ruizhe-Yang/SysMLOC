@@ -39,8 +39,8 @@
       <genEnumLiterals ecoreEnumLiteral="SysMLOC.ecore#//RequirementConstraintKind/assumption"/>
       <genEnumLiterals ecoreEnumLiteral="SysMLOC.ecore#//RequirementConstraintKind/requirement"/>
     </genEnums>
-    <genClasses ecoreClass="SysMLOC.ecore#//Namespace">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//Namespace/elements"/>
+    <genClasses ecoreClass="SysMLOC.ecore#//RootNamespace">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SysMLOC.ecore#//RootNamespace/elements"/>
     </genClasses>
     <genClasses ecoreClass="SysMLOC.ecore#//GeneralBodyElements"/>
     <genClasses ecoreClass="SysMLOC.ecore#//PackageBodyElement"/>
@@ -56,7 +56,6 @@
     <genClasses ecoreClass="SysMLOC.ecore#//CaseBodyElement"/>
     <genClasses ecoreClass="SysMLOC.ecore#//ViewDefinitionBodyElement"/>
     <genClasses ecoreClass="SysMLOC.ecore#//ViewBodyElement"/>
-    <genClasses ecoreClass="SysMLOC.ecore#//RelationshipBodyElement"/>
     <genClasses ecoreClass="SysMLOC.ecore#//AnnotatingElement"/>
     <genClasses ecoreClass="SysMLOC.ecore#//DefinitionElements"/>
     <genClasses ecoreClass="SysMLOC.ecore#//UsageElements"/>

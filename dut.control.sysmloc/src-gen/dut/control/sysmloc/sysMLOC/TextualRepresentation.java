@@ -21,7 +21,7 @@ package dut.control.sysmloc.sysMLOC;
  * @model
  * @generated
  */
-public interface TextualRepresentation extends AnnotatingElement, Identification
+public interface TextualRepresentation extends AnnotatingElement, MemberPrefix, Identification
 {
   /**
    * Returns the value of the '<em><b>Language</b></em>' attribute.

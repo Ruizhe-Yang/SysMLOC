@@ -5,8 +5,6 @@ package dut.control.kermloc.kerMLOC;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Namespace</b></em>'.
@@ -16,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.kermloc.kerMLOC.Namespace#isIsNamespace <em>Is Namespace</em>}</li>
  *   <li>{@link dut.control.kermloc.kerMLOC.Namespace#getElements <em>Elements</em>}</li>
  * </ul>
  *
@@ -23,18 +22,40 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Namespace extends EObject
+public interface Namespace extends NonFeatureElement, PrefixMetadata, Identification
 {
   /**
-   * Returns the value of the '<em><b>Elements</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Is Namespace</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Elements</em>' attribute list.
-   * @see dut.control.kermloc.kerMLOC.KerMLOCPackage#getNamespace_Elements()
-   * @model unique="false"
+   * @return the value of the '<em>Is Namespace</em>' attribute.
+   * @see #setIsNamespace(boolean)
+   * @see dut.control.kermloc.kerMLOC.KerMLOCPackage#getNamespace_IsNamespace()
+   * @model
    * @generated
    */
-  EList<String> getElements();
+  boolean isIsNamespace();
+
+  /**
+   * Sets the value of the '{@link dut.control.kermloc.kerMLOC.Namespace#isIsNamespace <em>Is Namespace</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Is Namespace</em>' attribute.
+   * @see #isIsNamespace()
+   * @generated
+   */
+  void setIsNamespace(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
+   * The list contents are of type {@link dut.control.kermloc.kerMLOC.NamespaceBodyElement}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Elements</em>' containment reference list.
+   * @see dut.control.kermloc.kerMLOC.KerMLOCPackage#getNamespace_Elements()
+   * @model containment="true"
+   * @generated
+   */
+  EList<NamespaceBodyElement> getElements();
 
 } // Namespace

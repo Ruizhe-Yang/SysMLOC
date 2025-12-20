@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+<sysMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
   <elements xsi:type="sysMLOC:LibraryPackage" declaredName="StandardViewDefinitions" isStandard="true" isLibrary="true">
     <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * This package defines the standard view definitions for the SysML language.&#xA;         */"/>
     <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="SysML" isNamespace="true"/>
@@ -30,4 +30,4 @@
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;             * View definition to present the hierarchical membership structure of model&#xA;             * elements starting from one or more exposed root elements.&#xA;             * The typical rendering in graphical notation is as an indented list of rows,&#xA;             * consisting of dynamically collapsible-expandable nodes that represent&#xA;             * branches and leaves of the tree, as in graphical user interface widgets.&#xA;             */"/>
     </elements>
   </elements>
-</sysMLOC:Namespace>
+</sysMLOC:RootNamespace>

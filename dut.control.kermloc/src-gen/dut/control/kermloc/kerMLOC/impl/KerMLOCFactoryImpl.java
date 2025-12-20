@@ -3,7 +3,63 @@
  */
 package dut.control.kermloc.kerMLOC.impl;
 
-import dut.control.kermloc.kerMLOC.*;
+import dut.control.kermloc.kerMLOC.AliasElement;
+import dut.control.kermloc.kerMLOC.AnnotatingBodyElement;
+import dut.control.kermloc.kerMLOC.AnnotatingElement;
+import dut.control.kermloc.kerMLOC.Association;
+import dut.control.kermloc.kerMLOC.AssociationStructure;
+import dut.control.kermloc.kerMLOC.Behavior;
+import dut.control.kermloc.kerMLOC.Classifier;
+import dut.control.kermloc.kerMLOC.ClassifierConjugationPart;
+import dut.control.kermloc.kerMLOC.ClassifierDeclaration;
+import dut.control.kermloc.kerMLOC.CodeAnnotation;
+import dut.control.kermloc.kerMLOC.Comment;
+import dut.control.kermloc.kerMLOC.ConjugationPart;
+import dut.control.kermloc.kerMLOC.CrossFeatureChain;
+import dut.control.kermloc.kerMLOC.DataType;
+import dut.control.kermloc.kerMLOC.Dependency;
+import dut.control.kermloc.kerMLOC.DifferencingPart;
+import dut.control.kermloc.kerMLOC.DisjoiningPart;
+import dut.control.kermloc.kerMLOC.Documentation;
+import dut.control.kermloc.kerMLOC.ElementFilterElement;
+import dut.control.kermloc.kerMLOC.FeatureSpecialization;
+import dut.control.kermloc.kerMLOC.Function;
+import dut.control.kermloc.kerMLOC.FunctionBodyElement;
+import dut.control.kermloc.kerMLOC.GeneralBodyElements;
+import dut.control.kermloc.kerMLOC.Identification;
+import dut.control.kermloc.kerMLOC.ImportElement;
+import dut.control.kermloc.kerMLOC.Interaction;
+import dut.control.kermloc.kerMLOC.IntersectingPart;
+import dut.control.kermloc.kerMLOC.KerMLOCFactory;
+import dut.control.kermloc.kerMLOC.KerMLOCPackage;
+import dut.control.kermloc.kerMLOC.LibraryPackage;
+import dut.control.kermloc.kerMLOC.MemberPrefix;
+import dut.control.kermloc.kerMLOC.Metaclass;
+import dut.control.kermloc.kerMLOC.Multiplicity;
+import dut.control.kermloc.kerMLOC.MultiplicityBounds;
+import dut.control.kermloc.kerMLOC.Namespace;
+import dut.control.kermloc.kerMLOC.NamespaceBodyElement;
+import dut.control.kermloc.kerMLOC.NonFeatureElement;
+import dut.control.kermloc.kerMLOC.PackageBodyElement;
+import dut.control.kermloc.kerMLOC.Predicate;
+import dut.control.kermloc.kerMLOC.PrefixMetadata;
+import dut.control.kermloc.kerMLOC.RedefinitionFeatureChain;
+import dut.control.kermloc.kerMLOC.ReferenceFeatureChain;
+import dut.control.kermloc.kerMLOC.ResultExpression;
+import dut.control.kermloc.kerMLOC.RootNamespace;
+import dut.control.kermloc.kerMLOC.SpecializationPart;
+import dut.control.kermloc.kerMLOC.Structure;
+import dut.control.kermloc.kerMLOC.Subsets;
+import dut.control.kermloc.kerMLOC.SubsettingFeatureChain;
+import dut.control.kermloc.kerMLOC.SuperclassingPart;
+import dut.control.kermloc.kerMLOC.TextualRepresentation;
+import dut.control.kermloc.kerMLOC.Type;
+import dut.control.kermloc.kerMLOC.TypeBodyElement;
+import dut.control.kermloc.kerMLOC.TypePrefix;
+import dut.control.kermloc.kerMLOC.TypeRelationshipPart;
+import dut.control.kermloc.kerMLOC.TypingFeatureTyping;
+import dut.control.kermloc.kerMLOC.UnioningPart;
+import dut.control.kermloc.kerMLOC.VisibilityIndicator;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -66,7 +122,62 @@ public class KerMLOCFactoryImpl extends EFactoryImpl implements KerMLOCFactory
   {
     switch (eClass.getClassifierID())
     {
+      case KerMLOCPackage.ROOT_NAMESPACE: return createRootNamespace();
+      case KerMLOCPackage.GENERAL_BODY_ELEMENTS: return createGeneralBodyElements();
+      case KerMLOCPackage.ANNOTATING_BODY_ELEMENT: return createAnnotatingBodyElement();
+      case KerMLOCPackage.PACKAGE_BODY_ELEMENT: return createPackageBodyElement();
+      case KerMLOCPackage.TYPE_BODY_ELEMENT: return createTypeBodyElement();
+      case KerMLOCPackage.NAMESPACE_BODY_ELEMENT: return createNamespaceBodyElement();
+      case KerMLOCPackage.FUNCTION_BODY_ELEMENT: return createFunctionBodyElement();
+      case KerMLOCPackage.ANNOTATING_ELEMENT: return createAnnotatingElement();
+      case KerMLOCPackage.NON_FEATURE_ELEMENT: return createNonFeatureElement();
+      case KerMLOCPackage.PACKAGE: return createPackage();
+      case KerMLOCPackage.LIBRARY_PACKAGE: return createLibraryPackage();
+      case KerMLOCPackage.DEPENDENCY: return createDependency();
+      case KerMLOCPackage.COMMENT: return createComment();
+      case KerMLOCPackage.DOCUMENTATION: return createDocumentation();
+      case KerMLOCPackage.TEXTUAL_REPRESENTATION: return createTextualRepresentation();
+      case KerMLOCPackage.IMPORT_ELEMENT: return createImportElement();
+      case KerMLOCPackage.CODE_ANNOTATION: return createCodeAnnotation();
+      case KerMLOCPackage.ALIAS_ELEMENT: return createAliasElement();
+      case KerMLOCPackage.ELEMENT_FILTER_ELEMENT: return createElementFilterElement();
+      case KerMLOCPackage.MULTIPLICITY: return createMultiplicity();
       case KerMLOCPackage.NAMESPACE: return createNamespace();
+      case KerMLOCPackage.TYPE: return createType();
+      case KerMLOCPackage.CLASSIFIER: return createClassifier();
+      case KerMLOCPackage.CLASS: return createClass();
+      case KerMLOCPackage.STRUCTURE: return createStructure();
+      case KerMLOCPackage.METACLASS: return createMetaclass();
+      case KerMLOCPackage.DATA_TYPE: return createDataType();
+      case KerMLOCPackage.ASSOCIATION: return createAssociation();
+      case KerMLOCPackage.ASSOCIATION_STRUCTURE: return createAssociationStructure();
+      case KerMLOCPackage.INTERACTION: return createInteraction();
+      case KerMLOCPackage.BEHAVIOR: return createBehavior();
+      case KerMLOCPackage.FUNCTION: return createFunction();
+      case KerMLOCPackage.PREDICATE: return createPredicate();
+      case KerMLOCPackage.RESULT_EXPRESSION: return createResultExpression();
+      case KerMLOCPackage.IDENTIFICATION: return createIdentification();
+      case KerMLOCPackage.MEMBER_PREFIX: return createMemberPrefix();
+      case KerMLOCPackage.PREFIX_METADATA: return createPrefixMetadata();
+      case KerMLOCPackage.MULTIPLICITY_BOUNDS: return createMultiplicityBounds();
+      case KerMLOCPackage.FEATURE_SPECIALIZATION: return createFeatureSpecialization();
+      case KerMLOCPackage.TYPING_FEATURE_TYPING: return createTypingFeatureTyping();
+      case KerMLOCPackage.SUBSETTING_FEATURE_CHAIN: return createSubsettingFeatureChain();
+      case KerMLOCPackage.REFERENCE_FEATURE_CHAIN: return createReferenceFeatureChain();
+      case KerMLOCPackage.CROSS_FEATURE_CHAIN: return createCrossFeatureChain();
+      case KerMLOCPackage.REDEFINITION_FEATURE_CHAIN: return createRedefinitionFeatureChain();
+      case KerMLOCPackage.SUBSETS: return createSubsets();
+      case KerMLOCPackage.TYPE_PREFIX: return createTypePrefix();
+      case KerMLOCPackage.SPECIALIZATION_PART: return createSpecializationPart();
+      case KerMLOCPackage.SUPERCLASSING_PART: return createSuperclassingPart();
+      case KerMLOCPackage.CLASSIFIER_CONJUGATION_PART: return createClassifierConjugationPart();
+      case KerMLOCPackage.CONJUGATION_PART: return createConjugationPart();
+      case KerMLOCPackage.TYPE_RELATIONSHIP_PART: return createTypeRelationshipPart();
+      case KerMLOCPackage.DISJOINING_PART: return createDisjoiningPart();
+      case KerMLOCPackage.UNIONING_PART: return createUnioningPart();
+      case KerMLOCPackage.INTERSECTING_PART: return createIntersectingPart();
+      case KerMLOCPackage.DIFFERENCING_PART: return createDifferencingPart();
+      case KerMLOCPackage.CLASSIFIER_DECLARATION: return createClassifierDeclaration();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -112,10 +223,670 @@ public class KerMLOCFactoryImpl extends EFactoryImpl implements KerMLOCFactory
    * @generated
    */
   @Override
+  public RootNamespace createRootNamespace()
+  {
+    RootNamespaceImpl rootNamespace = new RootNamespaceImpl();
+    return rootNamespace;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public GeneralBodyElements createGeneralBodyElements()
+  {
+    GeneralBodyElementsImpl generalBodyElements = new GeneralBodyElementsImpl();
+    return generalBodyElements;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public AnnotatingBodyElement createAnnotatingBodyElement()
+  {
+    AnnotatingBodyElementImpl annotatingBodyElement = new AnnotatingBodyElementImpl();
+    return annotatingBodyElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PackageBodyElement createPackageBodyElement()
+  {
+    PackageBodyElementImpl packageBodyElement = new PackageBodyElementImpl();
+    return packageBodyElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TypeBodyElement createTypeBodyElement()
+  {
+    TypeBodyElementImpl typeBodyElement = new TypeBodyElementImpl();
+    return typeBodyElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NamespaceBodyElement createNamespaceBodyElement()
+  {
+    NamespaceBodyElementImpl namespaceBodyElement = new NamespaceBodyElementImpl();
+    return namespaceBodyElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public FunctionBodyElement createFunctionBodyElement()
+  {
+    FunctionBodyElementImpl functionBodyElement = new FunctionBodyElementImpl();
+    return functionBodyElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public AnnotatingElement createAnnotatingElement()
+  {
+    AnnotatingElementImpl annotatingElement = new AnnotatingElementImpl();
+    return annotatingElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NonFeatureElement createNonFeatureElement()
+  {
+    NonFeatureElementImpl nonFeatureElement = new NonFeatureElementImpl();
+    return nonFeatureElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public dut.control.kermloc.kerMLOC.Package createPackage()
+  {
+    PackageImpl package_ = new PackageImpl();
+    return package_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public LibraryPackage createLibraryPackage()
+  {
+    LibraryPackageImpl libraryPackage = new LibraryPackageImpl();
+    return libraryPackage;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Dependency createDependency()
+  {
+    DependencyImpl dependency = new DependencyImpl();
+    return dependency;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Comment createComment()
+  {
+    CommentImpl comment = new CommentImpl();
+    return comment;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Documentation createDocumentation()
+  {
+    DocumentationImpl documentation = new DocumentationImpl();
+    return documentation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TextualRepresentation createTextualRepresentation()
+  {
+    TextualRepresentationImpl textualRepresentation = new TextualRepresentationImpl();
+    return textualRepresentation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ImportElement createImportElement()
+  {
+    ImportElementImpl importElement = new ImportElementImpl();
+    return importElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public CodeAnnotation createCodeAnnotation()
+  {
+    CodeAnnotationImpl codeAnnotation = new CodeAnnotationImpl();
+    return codeAnnotation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public AliasElement createAliasElement()
+  {
+    AliasElementImpl aliasElement = new AliasElementImpl();
+    return aliasElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ElementFilterElement createElementFilterElement()
+  {
+    ElementFilterElementImpl elementFilterElement = new ElementFilterElementImpl();
+    return elementFilterElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Multiplicity createMultiplicity()
+  {
+    MultiplicityImpl multiplicity = new MultiplicityImpl();
+    return multiplicity;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Namespace createNamespace()
   {
     NamespaceImpl namespace = new NamespaceImpl();
     return namespace;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Type createType()
+  {
+    TypeImpl type = new TypeImpl();
+    return type;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Classifier createClassifier()
+  {
+    ClassifierImpl classifier = new ClassifierImpl();
+    return classifier;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public dut.control.kermloc.kerMLOC.Class createClass()
+  {
+    ClassImpl class_ = new ClassImpl();
+    return class_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Structure createStructure()
+  {
+    StructureImpl structure = new StructureImpl();
+    return structure;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Metaclass createMetaclass()
+  {
+    MetaclassImpl metaclass = new MetaclassImpl();
+    return metaclass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public DataType createDataType()
+  {
+    DataTypeImpl dataType = new DataTypeImpl();
+    return dataType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Association createAssociation()
+  {
+    AssociationImpl association = new AssociationImpl();
+    return association;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public AssociationStructure createAssociationStructure()
+  {
+    AssociationStructureImpl associationStructure = new AssociationStructureImpl();
+    return associationStructure;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Interaction createInteraction()
+  {
+    InteractionImpl interaction = new InteractionImpl();
+    return interaction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Behavior createBehavior()
+  {
+    BehaviorImpl behavior = new BehaviorImpl();
+    return behavior;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Function createFunction()
+  {
+    FunctionImpl function = new FunctionImpl();
+    return function;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Predicate createPredicate()
+  {
+    PredicateImpl predicate = new PredicateImpl();
+    return predicate;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ResultExpression createResultExpression()
+  {
+    ResultExpressionImpl resultExpression = new ResultExpressionImpl();
+    return resultExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Identification createIdentification()
+  {
+    IdentificationImpl identification = new IdentificationImpl();
+    return identification;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public MemberPrefix createMemberPrefix()
+  {
+    MemberPrefixImpl memberPrefix = new MemberPrefixImpl();
+    return memberPrefix;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PrefixMetadata createPrefixMetadata()
+  {
+    PrefixMetadataImpl prefixMetadata = new PrefixMetadataImpl();
+    return prefixMetadata;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public MultiplicityBounds createMultiplicityBounds()
+  {
+    MultiplicityBoundsImpl multiplicityBounds = new MultiplicityBoundsImpl();
+    return multiplicityBounds;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public FeatureSpecialization createFeatureSpecialization()
+  {
+    FeatureSpecializationImpl featureSpecialization = new FeatureSpecializationImpl();
+    return featureSpecialization;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TypingFeatureTyping createTypingFeatureTyping()
+  {
+    TypingFeatureTypingImpl typingFeatureTyping = new TypingFeatureTypingImpl();
+    return typingFeatureTyping;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SubsettingFeatureChain createSubsettingFeatureChain()
+  {
+    SubsettingFeatureChainImpl subsettingFeatureChain = new SubsettingFeatureChainImpl();
+    return subsettingFeatureChain;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ReferenceFeatureChain createReferenceFeatureChain()
+  {
+    ReferenceFeatureChainImpl referenceFeatureChain = new ReferenceFeatureChainImpl();
+    return referenceFeatureChain;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public CrossFeatureChain createCrossFeatureChain()
+  {
+    CrossFeatureChainImpl crossFeatureChain = new CrossFeatureChainImpl();
+    return crossFeatureChain;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public RedefinitionFeatureChain createRedefinitionFeatureChain()
+  {
+    RedefinitionFeatureChainImpl redefinitionFeatureChain = new RedefinitionFeatureChainImpl();
+    return redefinitionFeatureChain;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Subsets createSubsets()
+  {
+    SubsetsImpl subsets = new SubsetsImpl();
+    return subsets;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TypePrefix createTypePrefix()
+  {
+    TypePrefixImpl typePrefix = new TypePrefixImpl();
+    return typePrefix;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SpecializationPart createSpecializationPart()
+  {
+    SpecializationPartImpl specializationPart = new SpecializationPartImpl();
+    return specializationPart;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SuperclassingPart createSuperclassingPart()
+  {
+    SuperclassingPartImpl superclassingPart = new SuperclassingPartImpl();
+    return superclassingPart;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ClassifierConjugationPart createClassifierConjugationPart()
+  {
+    ClassifierConjugationPartImpl classifierConjugationPart = new ClassifierConjugationPartImpl();
+    return classifierConjugationPart;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ConjugationPart createConjugationPart()
+  {
+    ConjugationPartImpl conjugationPart = new ConjugationPartImpl();
+    return conjugationPart;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TypeRelationshipPart createTypeRelationshipPart()
+  {
+    TypeRelationshipPartImpl typeRelationshipPart = new TypeRelationshipPartImpl();
+    return typeRelationshipPart;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public DisjoiningPart createDisjoiningPart()
+  {
+    DisjoiningPartImpl disjoiningPart = new DisjoiningPartImpl();
+    return disjoiningPart;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public UnioningPart createUnioningPart()
+  {
+    UnioningPartImpl unioningPart = new UnioningPartImpl();
+    return unioningPart;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public IntersectingPart createIntersectingPart()
+  {
+    IntersectingPartImpl intersectingPart = new IntersectingPartImpl();
+    return intersectingPart;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public DifferencingPart createDifferencingPart()
+  {
+    DifferencingPartImpl differencingPart = new DifferencingPartImpl();
+    return differencingPart;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ClassifierDeclaration createClassifierDeclaration()
+  {
+    ClassifierDeclarationImpl classifierDeclaration = new ClassifierDeclarationImpl();
+    return classifierDeclaration;
   }
 
   /**

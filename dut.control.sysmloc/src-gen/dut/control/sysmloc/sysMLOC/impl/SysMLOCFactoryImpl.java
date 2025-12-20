@@ -115,7 +115,6 @@ import dut.control.sysmloc.sysMLOC.MetadataUsage;
 import dut.control.sysmloc.sysMLOC.MultiplicityModifiers;
 import dut.control.sysmloc.sysMLOC.MultiplicityPart;
 import dut.control.sysmloc.sysMLOC.MultiplicityRange;
-import dut.control.sysmloc.sysMLOC.Namespace;
 import dut.control.sysmloc.sysMLOC.NonOccurrenceUsageElement;
 import dut.control.sysmloc.sysMLOC.ObjectiveRequirementUsage;
 import dut.control.sysmloc.sysMLOC.OccurrenceDefinition;
@@ -144,7 +143,6 @@ import dut.control.sysmloc.sysMLOC.ReferenceFeatureChain;
 import dut.control.sysmloc.sysMLOC.ReferenceSubsetting;
 import dut.control.sysmloc.sysMLOC.ReferenceUsage;
 import dut.control.sysmloc.sysMLOC.ReferenceVariantUsage;
-import dut.control.sysmloc.sysMLOC.RelationshipBodyElement;
 import dut.control.sysmloc.sysMLOC.RenderingDefinition;
 import dut.control.sysmloc.sysMLOC.RenderingUsage;
 import dut.control.sysmloc.sysMLOC.RequirementBodyElement;
@@ -155,6 +153,7 @@ import dut.control.sysmloc.sysMLOC.RequirementNodeElements;
 import dut.control.sysmloc.sysMLOC.RequirementUsage;
 import dut.control.sysmloc.sysMLOC.RequirementVerificationUsage;
 import dut.control.sysmloc.sysMLOC.ResultExpression;
+import dut.control.sysmloc.sysMLOC.RootNamespace;
 import dut.control.sysmloc.sysMLOC.SatisfyRequirementUsage;
 import dut.control.sysmloc.sysMLOC.SendActionUsage;
 import dut.control.sysmloc.sysMLOC.SendNode;
@@ -264,7 +263,7 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
   {
     switch (eClass.getClassifierID())
     {
-      case SysMLOCPackage.NAMESPACE: return createNamespace();
+      case SysMLOCPackage.ROOT_NAMESPACE: return createRootNamespace();
       case SysMLOCPackage.GENERAL_BODY_ELEMENTS: return createGeneralBodyElements();
       case SysMLOCPackage.PACKAGE_BODY_ELEMENT: return createPackageBodyElement();
       case SysMLOCPackage.DEFINITION_BODY_ELEMENT: return createDefinitionBodyElement();
@@ -279,7 +278,6 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
       case SysMLOCPackage.CASE_BODY_ELEMENT: return createCaseBodyElement();
       case SysMLOCPackage.VIEW_DEFINITION_BODY_ELEMENT: return createViewDefinitionBodyElement();
       case SysMLOCPackage.VIEW_BODY_ELEMENT: return createViewBodyElement();
-      case SysMLOCPackage.RELATIONSHIP_BODY_ELEMENT: return createRelationshipBodyElement();
       case SysMLOCPackage.ANNOTATING_ELEMENT: return createAnnotatingElement();
       case SysMLOCPackage.DEFINITION_ELEMENTS: return createDefinitionElements();
       case SysMLOCPackage.USAGE_ELEMENTS: return createUsageElements();
@@ -521,10 +519,10 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
    * @generated
    */
   @Override
-  public Namespace createNamespace()
+  public RootNamespace createRootNamespace()
   {
-    NamespaceImpl namespace = new NamespaceImpl();
-    return namespace;
+    RootNamespaceImpl rootNamespace = new RootNamespaceImpl();
+    return rootNamespace;
   }
 
   /**
@@ -693,18 +691,6 @@ public class SysMLOCFactoryImpl extends EFactoryImpl implements SysMLOCFactory
   {
     ViewBodyElementImpl viewBodyElement = new ViewBodyElementImpl();
     return viewBodyElement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public RelationshipBodyElement createRelationshipBodyElement()
-  {
-    RelationshipBodyElementImpl relationshipBodyElement = new RelationshipBodyElementImpl();
-    return relationshipBodyElement;
   }
 
   /**

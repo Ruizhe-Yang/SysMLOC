@@ -24,13 +24,13 @@ public interface SysMLOCFactory extends EFactory
   SysMLOCFactory eINSTANCE = dut.control.sysmloc.sysMLOC.impl.SysMLOCFactoryImpl.init();
 
   /**
-   * Returns a new object of class '<em>Namespace</em>'.
+   * Returns a new object of class '<em>Root Namespace</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Namespace</em>'.
+   * @return a new object of class '<em>Root Namespace</em>'.
    * @generated
    */
-  Namespace createNamespace();
+  RootNamespace createRootNamespace();
 
   /**
    * Returns a new object of class '<em>General Body Elements</em>'.
@@ -157,15 +157,6 @@ public interface SysMLOCFactory extends EFactory
    * @generated
    */
   ViewBodyElement createViewBodyElement();
-
-  /**
-   * Returns a new object of class '<em>Relationship Body Element</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Relationship Body Element</em>'.
-   * @generated
-   */
-  RelationshipBodyElement createRelationshipBodyElement();
 
   /**
    * Returns a new object of class '<em>Annotating Element</em>'.

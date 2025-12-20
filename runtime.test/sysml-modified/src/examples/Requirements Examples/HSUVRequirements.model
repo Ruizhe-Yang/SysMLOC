@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+<sysMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
   <elements xsi:type="sysMLOC:Package" declaredName="HSUVRequirements">
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Requirements" isNamespace="true"/>
     <elements xsi:type="sysMLOC:RequirementUsage" declaredShortName="'UR1.1'" declaredName="Load">
@@ -37,4 +37,4 @@
       <elements xsi:type="sysMLOC:RequirementConstraintUsage" refElement="Ergonomics" kind="require"/>
     </elements>
   </elements>
-</sysMLOC:Namespace>
+</sysMLOC:RootNamespace>

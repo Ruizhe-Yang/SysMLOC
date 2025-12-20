@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+<sysMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
   <elements xsi:type="sysMLOC:Package" declaredName="'Vehicle Analysis Demo'">
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues" isNamespace="true"/>
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ISQ" isNamespace="true"/>
@@ -417,4 +417,4 @@
       <elements xsi:type="sysMLOC:SatisfyRequirementUsage" refElement="vehicleFuelEconomyRequirementsGroup" satisfactionParameter="vehicle_c1_analysized"/>
     </elements>
   </elements>
-</sysMLOC:Namespace>
+</sysMLOC:RootNamespace>

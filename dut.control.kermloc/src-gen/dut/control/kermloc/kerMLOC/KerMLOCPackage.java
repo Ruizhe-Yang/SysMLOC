@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -58,6 +59,980 @@ public interface KerMLOCPackage extends EPackage
   KerMLOCPackage eINSTANCE = dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl.init();
 
   /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.RootNamespaceImpl <em>Root Namespace</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.RootNamespaceImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getRootNamespace()
+   * @generated
+   */
+  int ROOT_NAMESPACE = 0;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROOT_NAMESPACE__ELEMENTS = 0;
+
+  /**
+   * The number of structural features of the '<em>Root Namespace</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROOT_NAMESPACE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.PackageBodyElementImpl <em>Package Body Element</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.PackageBodyElementImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getPackageBodyElement()
+   * @generated
+   */
+  int PACKAGE_BODY_ELEMENT = 3;
+
+  /**
+   * The number of structural features of the '<em>Package Body Element</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PACKAGE_BODY_ELEMENT_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.GeneralBodyElementsImpl <em>General Body Elements</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.GeneralBodyElementsImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getGeneralBodyElements()
+   * @generated
+   */
+  int GENERAL_BODY_ELEMENTS = 1;
+
+  /**
+   * The number of structural features of the '<em>General Body Elements</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERAL_BODY_ELEMENTS_FEATURE_COUNT = PACKAGE_BODY_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.AnnotatingBodyElementImpl <em>Annotating Body Element</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.AnnotatingBodyElementImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getAnnotatingBodyElement()
+   * @generated
+   */
+  int ANNOTATING_BODY_ELEMENT = 2;
+
+  /**
+   * The number of structural features of the '<em>Annotating Body Element</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATING_BODY_ELEMENT_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.TypeBodyElementImpl <em>Type Body Element</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.TypeBodyElementImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getTypeBodyElement()
+   * @generated
+   */
+  int TYPE_BODY_ELEMENT = 4;
+
+  /**
+   * The number of structural features of the '<em>Type Body Element</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_BODY_ELEMENT_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.NamespaceBodyElementImpl <em>Namespace Body Element</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.NamespaceBodyElementImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getNamespaceBodyElement()
+   * @generated
+   */
+  int NAMESPACE_BODY_ELEMENT = 5;
+
+  /**
+   * The number of structural features of the '<em>Namespace Body Element</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAMESPACE_BODY_ELEMENT_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.FunctionBodyElementImpl <em>Function Body Element</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.FunctionBodyElementImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getFunctionBodyElement()
+   * @generated
+   */
+  int FUNCTION_BODY_ELEMENT = 6;
+
+  /**
+   * The number of structural features of the '<em>Function Body Element</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_BODY_ELEMENT_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.AnnotatingElementImpl <em>Annotating Element</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.AnnotatingElementImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getAnnotatingElement()
+   * @generated
+   */
+  int ANNOTATING_ELEMENT = 7;
+
+  /**
+   * The number of structural features of the '<em>Annotating Element</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANNOTATING_ELEMENT_FEATURE_COUNT = GENERAL_BODY_ELEMENTS_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.NonFeatureElementImpl <em>Non Feature Element</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.NonFeatureElementImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getNonFeatureElement()
+   * @generated
+   */
+  int NON_FEATURE_ELEMENT = 8;
+
+  /**
+   * The number of structural features of the '<em>Non Feature Element</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NON_FEATURE_ELEMENT_FEATURE_COUNT = GENERAL_BODY_ELEMENTS_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.PackageImpl <em>Package</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.PackageImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getPackage()
+   * @generated
+   */
+  int PACKAGE = 9;
+
+  /**
+   * The feature id for the '<em><b>Visibility</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PACKAGE__VISIBILITY = NON_FEATURE_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Is Variant</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PACKAGE__IS_VARIANT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PACKAGE__PREFIX_METADATA_EXTENSION = NON_FEATURE_ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Declared Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PACKAGE__DECLARED_NAME = NON_FEATURE_ELEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PACKAGE__ELEMENTS = NON_FEATURE_ELEMENT_FEATURE_COUNT + 4;
+
+  /**
+   * The number of structural features of the '<em>Package</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PACKAGE_FEATURE_COUNT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 5;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.LibraryPackageImpl <em>Library Package</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.LibraryPackageImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getLibraryPackage()
+   * @generated
+   */
+  int LIBRARY_PACKAGE = 10;
+
+  /**
+   * The feature id for the '<em><b>Visibility</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIBRARY_PACKAGE__VISIBILITY = NON_FEATURE_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Is Variant</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIBRARY_PACKAGE__IS_VARIANT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIBRARY_PACKAGE__PREFIX_METADATA_EXTENSION = NON_FEATURE_ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIBRARY_PACKAGE__DECLARED_SHORT_NAME = NON_FEATURE_ELEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Declared Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIBRARY_PACKAGE__DECLARED_NAME = NON_FEATURE_ELEMENT_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Is Standard</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIBRARY_PACKAGE__IS_STANDARD = NON_FEATURE_ELEMENT_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Is Library</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIBRARY_PACKAGE__IS_LIBRARY = NON_FEATURE_ELEMENT_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIBRARY_PACKAGE__ELEMENTS = NON_FEATURE_ELEMENT_FEATURE_COUNT + 7;
+
+  /**
+   * The number of structural features of the '<em>Library Package</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIBRARY_PACKAGE_FEATURE_COUNT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 8;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.DependencyImpl <em>Dependency</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.DependencyImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getDependency()
+   * @generated
+   */
+  int DEPENDENCY = 11;
+
+  /**
+   * The feature id for the '<em><b>Visibility</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEPENDENCY__VISIBILITY = NON_FEATURE_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Is Variant</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEPENDENCY__IS_VARIANT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEPENDENCY__PREFIX_METADATA_EXTENSION = NON_FEATURE_ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEPENDENCY__DECLARED_SHORT_NAME = NON_FEATURE_ELEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Declared Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEPENDENCY__DECLARED_NAME = NON_FEATURE_ELEMENT_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Client</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEPENDENCY__CLIENT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Supplier</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEPENDENCY__SUPPLIER = NON_FEATURE_ELEMENT_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEPENDENCY__ELEMENTS = NON_FEATURE_ELEMENT_FEATURE_COUNT + 7;
+
+  /**
+   * The number of structural features of the '<em>Dependency</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEPENDENCY_FEATURE_COUNT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 8;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.CommentImpl <em>Comment</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.CommentImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getComment()
+   * @generated
+   */
+  int COMMENT = 12;
+
+  /**
+   * The feature id for the '<em><b>Visibility</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMMENT__VISIBILITY = ANNOTATING_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Is Variant</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMMENT__IS_VARIANT = ANNOTATING_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMMENT__DECLARED_SHORT_NAME = ANNOTATING_ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Declared Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMMENT__DECLARED_NAME = ANNOTATING_ELEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Annotated Element</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMMENT__ANNOTATED_ELEMENT = ANNOTATING_ELEMENT_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Locale</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMMENT__LOCALE = ANNOTATING_ELEMENT_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Body</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMMENT__BODY = ANNOTATING_ELEMENT_FEATURE_COUNT + 6;
+
+  /**
+   * The number of structural features of the '<em>Comment</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMMENT_FEATURE_COUNT = ANNOTATING_ELEMENT_FEATURE_COUNT + 7;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.DocumentationImpl <em>Documentation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.DocumentationImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getDocumentation()
+   * @generated
+   */
+  int DOCUMENTATION = 13;
+
+  /**
+   * The feature id for the '<em><b>Visibility</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DOCUMENTATION__VISIBILITY = ANNOTATING_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Is Variant</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DOCUMENTATION__IS_VARIANT = ANNOTATING_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DOCUMENTATION__DECLARED_SHORT_NAME = ANNOTATING_ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Declared Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DOCUMENTATION__DECLARED_NAME = ANNOTATING_ELEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Locale</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DOCUMENTATION__LOCALE = ANNOTATING_ELEMENT_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Body</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DOCUMENTATION__BODY = ANNOTATING_ELEMENT_FEATURE_COUNT + 5;
+
+  /**
+   * The number of structural features of the '<em>Documentation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DOCUMENTATION_FEATURE_COUNT = ANNOTATING_ELEMENT_FEATURE_COUNT + 6;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.TextualRepresentationImpl <em>Textual Representation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.TextualRepresentationImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getTextualRepresentation()
+   * @generated
+   */
+  int TEXTUAL_REPRESENTATION = 14;
+
+  /**
+   * The feature id for the '<em><b>Visibility</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEXTUAL_REPRESENTATION__VISIBILITY = ANNOTATING_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Is Variant</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEXTUAL_REPRESENTATION__IS_VARIANT = ANNOTATING_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEXTUAL_REPRESENTATION__DECLARED_SHORT_NAME = ANNOTATING_ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Declared Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEXTUAL_REPRESENTATION__DECLARED_NAME = ANNOTATING_ELEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Language</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEXTUAL_REPRESENTATION__LANGUAGE = ANNOTATING_ELEMENT_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Body</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEXTUAL_REPRESENTATION__BODY = ANNOTATING_ELEMENT_FEATURE_COUNT + 5;
+
+  /**
+   * The number of structural features of the '<em>Textual Representation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEXTUAL_REPRESENTATION_FEATURE_COUNT = ANNOTATING_ELEMENT_FEATURE_COUNT + 6;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.ImportElementImpl <em>Import Element</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.ImportElementImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getImportElement()
+   * @generated
+   */
+  int IMPORT_ELEMENT = 15;
+
+  /**
+   * The feature id for the '<em><b>Visibility</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT_ELEMENT__VISIBILITY = GENERAL_BODY_ELEMENTS_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Is Import All</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT_ELEMENT__IS_IMPORT_ALL = GENERAL_BODY_ELEMENTS_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Declared Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT_ELEMENT__DECLARED_NAME = GENERAL_BODY_ELEMENTS_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Is Namespace</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT_ELEMENT__IS_NAMESPACE = GENERAL_BODY_ELEMENTS_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Is Recursive</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT_ELEMENT__IS_RECURSIVE = GENERAL_BODY_ELEMENTS_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Filter Package Expression</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT_ELEMENT__FILTER_PACKAGE_EXPRESSION = GENERAL_BODY_ELEMENTS_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT_ELEMENT__ELEMENTS = GENERAL_BODY_ELEMENTS_FEATURE_COUNT + 6;
+
+  /**
+   * The number of structural features of the '<em>Import Element</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT_ELEMENT_FEATURE_COUNT = GENERAL_BODY_ELEMENTS_FEATURE_COUNT + 7;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.CodeAnnotationImpl <em>Code Annotation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.CodeAnnotationImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getCodeAnnotation()
+   * @generated
+   */
+  int CODE_ANNOTATION = 16;
+
+  /**
+   * The feature id for the '<em><b>Body</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CODE_ANNOTATION__BODY = GENERAL_BODY_ELEMENTS_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Code Annotation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CODE_ANNOTATION_FEATURE_COUNT = GENERAL_BODY_ELEMENTS_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.AliasElementImpl <em>Alias Element</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.AliasElementImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getAliasElement()
+   * @generated
+   */
+  int ALIAS_ELEMENT = 17;
+
+  /**
+   * The feature id for the '<em><b>Visibility</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALIAS_ELEMENT__VISIBILITY = GENERAL_BODY_ELEMENTS_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Is Variant</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALIAS_ELEMENT__IS_VARIANT = GENERAL_BODY_ELEMENTS_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Member Short Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALIAS_ELEMENT__MEMBER_SHORT_NAME = GENERAL_BODY_ELEMENTS_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Member Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALIAS_ELEMENT__MEMBER_NAME = GENERAL_BODY_ELEMENTS_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Member Element</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALIAS_ELEMENT__MEMBER_ELEMENT = GENERAL_BODY_ELEMENTS_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALIAS_ELEMENT__ELEMENTS = GENERAL_BODY_ELEMENTS_FEATURE_COUNT + 5;
+
+  /**
+   * The number of structural features of the '<em>Alias Element</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALIAS_ELEMENT_FEATURE_COUNT = GENERAL_BODY_ELEMENTS_FEATURE_COUNT + 6;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.ElementFilterElementImpl <em>Element Filter Element</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.ElementFilterElementImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getElementFilterElement()
+   * @generated
+   */
+  int ELEMENT_FILTER_ELEMENT = 18;
+
+  /**
+   * The feature id for the '<em><b>Visibility</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_FILTER_ELEMENT__VISIBILITY = PACKAGE_BODY_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Is Variant</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_FILTER_ELEMENT__IS_VARIANT = PACKAGE_BODY_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Filter Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_FILTER_ELEMENT__FILTER_EXPRESSION = PACKAGE_BODY_ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Element Filter Element</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_FILTER_ELEMENT_FEATURE_COUNT = PACKAGE_BODY_ELEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.MultiplicityImpl <em>Multiplicity</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.MultiplicityImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getMultiplicity()
+   * @generated
+   */
+  int MULTIPLICITY = 19;
+
+  /**
+   * The feature id for the '<em><b>Visibility</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICITY__VISIBILITY = NON_FEATURE_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Is Variant</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICITY__IS_VARIANT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICITY__DECLARED_SHORT_NAME = NON_FEATURE_ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Declared Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICITY__DECLARED_NAME = NON_FEATURE_ELEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICITY__SUBSETTING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Multi Low</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICITY__MULTI_LOW = NON_FEATURE_ELEMENT_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Multi High</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICITY__MULTI_HIGH = NON_FEATURE_ELEMENT_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICITY__ELEMENTS = NON_FEATURE_ELEMENT_FEATURE_COUNT + 7;
+
+  /**
+   * The number of structural features of the '<em>Multiplicity</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICITY_FEATURE_COUNT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 8;
+
+  /**
    * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.NamespaceImpl <em>Namespace</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -65,16 +1040,52 @@ public interface KerMLOCPackage extends EPackage
    * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getNamespace()
    * @generated
    */
-  int NAMESPACE = 0;
+  int NAMESPACE = 20;
 
   /**
-   * The feature id for the '<em><b>Elements</b></em>' attribute list.
+   * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NAMESPACE__ELEMENTS = 0;
+  int NAMESPACE__PREFIX_METADATA_EXTENSION = NON_FEATURE_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAMESPACE__DECLARED_SHORT_NAME = NON_FEATURE_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Declared Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAMESPACE__DECLARED_NAME = NON_FEATURE_ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Is Namespace</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAMESPACE__IS_NAMESPACE = NON_FEATURE_ELEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAMESPACE__ELEMENTS = NON_FEATURE_ELEMENT_FEATURE_COUNT + 4;
 
   /**
    * The number of structural features of the '<em>Namespace</em>' class.
@@ -83,7 +1094,2832 @@ public interface KerMLOCPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NAMESPACE_FEATURE_COUNT = 1;
+  int NAMESPACE_FEATURE_COUNT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 5;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.TypeImpl <em>Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.TypeImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getType()
+   * @generated
+   */
+  int TYPE = 21;
+
+  /**
+   * The feature id for the '<em><b>Visibility</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE__VISIBILITY = NON_FEATURE_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Is Variant</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE__IS_VARIANT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE__PREFIX_METADATA_EXTENSION = NON_FEATURE_ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE__IS_ABSTRACT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE__DECLARED_SHORT_NAME = NON_FEATURE_ELEMENT_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Declared Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE__DECLARED_NAME = NON_FEATURE_ELEMENT_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Multi Low</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE__MULTI_LOW = NON_FEATURE_ELEMENT_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Multi High</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE__MULTI_HIGH = NON_FEATURE_ELEMENT_FEATURE_COUNT + 7;
+
+  /**
+   * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE__SUBSETTING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 8;
+
+  /**
+   * The feature id for the '<em><b>Original Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE__ORIGINAL_TYPE = NON_FEATURE_ELEMENT_FEATURE_COUNT + 9;
+
+  /**
+   * The feature id for the '<em><b>Disjoining</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE__DISJOINING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 10;
+
+  /**
+   * The feature id for the '<em><b>Unioning</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE__UNIONING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 11;
+
+  /**
+   * The feature id for the '<em><b>Intersecting</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE__INTERSECTING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 12;
+
+  /**
+   * The feature id for the '<em><b>Differencing</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE__DIFFERENCING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 13;
+
+  /**
+   * The feature id for the '<em><b>Is Sufficient</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE__IS_SUFFICIENT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 14;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE__ELEMENTS = NON_FEATURE_ELEMENT_FEATURE_COUNT + 15;
+
+  /**
+   * The number of structural features of the '<em>Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_FEATURE_COUNT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 16;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.ClassifierImpl <em>Classifier</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.ClassifierImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getClassifier()
+   * @generated
+   */
+  int CLASSIFIER = 22;
+
+  /**
+   * The feature id for the '<em><b>Visibility</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASSIFIER__VISIBILITY = NON_FEATURE_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Is Variant</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASSIFIER__IS_VARIANT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASSIFIER__PREFIX_METADATA_EXTENSION = NON_FEATURE_ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASSIFIER__IS_ABSTRACT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASSIFIER__DECLARED_SHORT_NAME = NON_FEATURE_ELEMENT_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Declared Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASSIFIER__DECLARED_NAME = NON_FEATURE_ELEMENT_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Multi Low</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASSIFIER__MULTI_LOW = NON_FEATURE_ELEMENT_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Multi High</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASSIFIER__MULTI_HIGH = NON_FEATURE_ELEMENT_FEATURE_COUNT + 7;
+
+  /**
+   * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASSIFIER__SUBSETTING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 8;
+
+  /**
+   * The feature id for the '<em><b>Original Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASSIFIER__ORIGINAL_TYPE = NON_FEATURE_ELEMENT_FEATURE_COUNT + 9;
+
+  /**
+   * The feature id for the '<em><b>Disjoining</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASSIFIER__DISJOINING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 10;
+
+  /**
+   * The feature id for the '<em><b>Unioning</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASSIFIER__UNIONING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 11;
+
+  /**
+   * The feature id for the '<em><b>Intersecting</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASSIFIER__INTERSECTING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 12;
+
+  /**
+   * The feature id for the '<em><b>Differencing</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASSIFIER__DIFFERENCING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 13;
+
+  /**
+   * The feature id for the '<em><b>Is Sufficient</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASSIFIER__IS_SUFFICIENT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 14;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASSIFIER__ELEMENTS = NON_FEATURE_ELEMENT_FEATURE_COUNT + 15;
+
+  /**
+   * The number of structural features of the '<em>Classifier</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASSIFIER_FEATURE_COUNT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 16;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.ClassImpl <em>Class</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.ClassImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getClass_()
+   * @generated
+   */
+  int CLASS = 23;
+
+  /**
+   * The feature id for the '<em><b>Visibility</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS__VISIBILITY = NON_FEATURE_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Is Variant</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS__IS_VARIANT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS__PREFIX_METADATA_EXTENSION = NON_FEATURE_ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS__IS_ABSTRACT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS__DECLARED_SHORT_NAME = NON_FEATURE_ELEMENT_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Declared Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS__DECLARED_NAME = NON_FEATURE_ELEMENT_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Multi Low</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS__MULTI_LOW = NON_FEATURE_ELEMENT_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Multi High</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS__MULTI_HIGH = NON_FEATURE_ELEMENT_FEATURE_COUNT + 7;
+
+  /**
+   * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS__SUBSETTING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 8;
+
+  /**
+   * The feature id for the '<em><b>Original Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS__ORIGINAL_TYPE = NON_FEATURE_ELEMENT_FEATURE_COUNT + 9;
+
+  /**
+   * The feature id for the '<em><b>Disjoining</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS__DISJOINING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 10;
+
+  /**
+   * The feature id for the '<em><b>Unioning</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS__UNIONING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 11;
+
+  /**
+   * The feature id for the '<em><b>Intersecting</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS__INTERSECTING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 12;
+
+  /**
+   * The feature id for the '<em><b>Differencing</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS__DIFFERENCING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 13;
+
+  /**
+   * The feature id for the '<em><b>Is Sufficient</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS__IS_SUFFICIENT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 14;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS__ELEMENTS = NON_FEATURE_ELEMENT_FEATURE_COUNT + 15;
+
+  /**
+   * The number of structural features of the '<em>Class</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_FEATURE_COUNT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 16;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.StructureImpl <em>Structure</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.StructureImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getStructure()
+   * @generated
+   */
+  int STRUCTURE = 24;
+
+  /**
+   * The feature id for the '<em><b>Visibility</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRUCTURE__VISIBILITY = NON_FEATURE_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Is Variant</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRUCTURE__IS_VARIANT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRUCTURE__PREFIX_METADATA_EXTENSION = NON_FEATURE_ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRUCTURE__IS_ABSTRACT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRUCTURE__DECLARED_SHORT_NAME = NON_FEATURE_ELEMENT_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Declared Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRUCTURE__DECLARED_NAME = NON_FEATURE_ELEMENT_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Multi Low</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRUCTURE__MULTI_LOW = NON_FEATURE_ELEMENT_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Multi High</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRUCTURE__MULTI_HIGH = NON_FEATURE_ELEMENT_FEATURE_COUNT + 7;
+
+  /**
+   * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRUCTURE__SUBSETTING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 8;
+
+  /**
+   * The feature id for the '<em><b>Original Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRUCTURE__ORIGINAL_TYPE = NON_FEATURE_ELEMENT_FEATURE_COUNT + 9;
+
+  /**
+   * The feature id for the '<em><b>Disjoining</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRUCTURE__DISJOINING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 10;
+
+  /**
+   * The feature id for the '<em><b>Unioning</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRUCTURE__UNIONING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 11;
+
+  /**
+   * The feature id for the '<em><b>Intersecting</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRUCTURE__INTERSECTING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 12;
+
+  /**
+   * The feature id for the '<em><b>Differencing</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRUCTURE__DIFFERENCING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 13;
+
+  /**
+   * The feature id for the '<em><b>Is Sufficient</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRUCTURE__IS_SUFFICIENT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 14;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRUCTURE__ELEMENTS = NON_FEATURE_ELEMENT_FEATURE_COUNT + 15;
+
+  /**
+   * The number of structural features of the '<em>Structure</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRUCTURE_FEATURE_COUNT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 16;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.MetaclassImpl <em>Metaclass</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.MetaclassImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getMetaclass()
+   * @generated
+   */
+  int METACLASS = 25;
+
+  /**
+   * The feature id for the '<em><b>Visibility</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METACLASS__VISIBILITY = NON_FEATURE_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Is Variant</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METACLASS__IS_VARIANT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METACLASS__PREFIX_METADATA_EXTENSION = NON_FEATURE_ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METACLASS__IS_ABSTRACT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METACLASS__DECLARED_SHORT_NAME = NON_FEATURE_ELEMENT_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Declared Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METACLASS__DECLARED_NAME = NON_FEATURE_ELEMENT_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Multi Low</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METACLASS__MULTI_LOW = NON_FEATURE_ELEMENT_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Multi High</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METACLASS__MULTI_HIGH = NON_FEATURE_ELEMENT_FEATURE_COUNT + 7;
+
+  /**
+   * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METACLASS__SUBSETTING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 8;
+
+  /**
+   * The feature id for the '<em><b>Original Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METACLASS__ORIGINAL_TYPE = NON_FEATURE_ELEMENT_FEATURE_COUNT + 9;
+
+  /**
+   * The feature id for the '<em><b>Disjoining</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METACLASS__DISJOINING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 10;
+
+  /**
+   * The feature id for the '<em><b>Unioning</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METACLASS__UNIONING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 11;
+
+  /**
+   * The feature id for the '<em><b>Intersecting</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METACLASS__INTERSECTING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 12;
+
+  /**
+   * The feature id for the '<em><b>Differencing</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METACLASS__DIFFERENCING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 13;
+
+  /**
+   * The feature id for the '<em><b>Is Sufficient</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METACLASS__IS_SUFFICIENT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 14;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METACLASS__ELEMENTS = NON_FEATURE_ELEMENT_FEATURE_COUNT + 15;
+
+  /**
+   * The number of structural features of the '<em>Metaclass</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METACLASS_FEATURE_COUNT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 16;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.DataTypeImpl <em>Data Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.DataTypeImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getDataType()
+   * @generated
+   */
+  int DATA_TYPE = 26;
+
+  /**
+   * The feature id for the '<em><b>Visibility</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_TYPE__VISIBILITY = NON_FEATURE_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Is Variant</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_TYPE__IS_VARIANT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_TYPE__PREFIX_METADATA_EXTENSION = NON_FEATURE_ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_TYPE__IS_ABSTRACT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_TYPE__DECLARED_SHORT_NAME = NON_FEATURE_ELEMENT_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Declared Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_TYPE__DECLARED_NAME = NON_FEATURE_ELEMENT_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Multi Low</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_TYPE__MULTI_LOW = NON_FEATURE_ELEMENT_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Multi High</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_TYPE__MULTI_HIGH = NON_FEATURE_ELEMENT_FEATURE_COUNT + 7;
+
+  /**
+   * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_TYPE__SUBSETTING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 8;
+
+  /**
+   * The feature id for the '<em><b>Original Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_TYPE__ORIGINAL_TYPE = NON_FEATURE_ELEMENT_FEATURE_COUNT + 9;
+
+  /**
+   * The feature id for the '<em><b>Disjoining</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_TYPE__DISJOINING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 10;
+
+  /**
+   * The feature id for the '<em><b>Unioning</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_TYPE__UNIONING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 11;
+
+  /**
+   * The feature id for the '<em><b>Intersecting</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_TYPE__INTERSECTING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 12;
+
+  /**
+   * The feature id for the '<em><b>Differencing</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_TYPE__DIFFERENCING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 13;
+
+  /**
+   * The feature id for the '<em><b>Is Sufficient</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_TYPE__IS_SUFFICIENT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 14;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_TYPE__ELEMENTS = NON_FEATURE_ELEMENT_FEATURE_COUNT + 15;
+
+  /**
+   * The number of structural features of the '<em>Data Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_TYPE_FEATURE_COUNT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 16;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.AssociationImpl <em>Association</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.AssociationImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getAssociation()
+   * @generated
+   */
+  int ASSOCIATION = 27;
+
+  /**
+   * The feature id for the '<em><b>Visibility</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSOCIATION__VISIBILITY = NON_FEATURE_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Is Variant</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSOCIATION__IS_VARIANT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSOCIATION__PREFIX_METADATA_EXTENSION = NON_FEATURE_ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSOCIATION__IS_ABSTRACT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSOCIATION__DECLARED_SHORT_NAME = NON_FEATURE_ELEMENT_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Declared Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSOCIATION__DECLARED_NAME = NON_FEATURE_ELEMENT_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Multi Low</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSOCIATION__MULTI_LOW = NON_FEATURE_ELEMENT_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Multi High</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSOCIATION__MULTI_HIGH = NON_FEATURE_ELEMENT_FEATURE_COUNT + 7;
+
+  /**
+   * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSOCIATION__SUBSETTING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 8;
+
+  /**
+   * The feature id for the '<em><b>Original Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSOCIATION__ORIGINAL_TYPE = NON_FEATURE_ELEMENT_FEATURE_COUNT + 9;
+
+  /**
+   * The feature id for the '<em><b>Disjoining</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSOCIATION__DISJOINING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 10;
+
+  /**
+   * The feature id for the '<em><b>Unioning</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSOCIATION__UNIONING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 11;
+
+  /**
+   * The feature id for the '<em><b>Intersecting</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSOCIATION__INTERSECTING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 12;
+
+  /**
+   * The feature id for the '<em><b>Differencing</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSOCIATION__DIFFERENCING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 13;
+
+  /**
+   * The feature id for the '<em><b>Is Sufficient</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSOCIATION__IS_SUFFICIENT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 14;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSOCIATION__ELEMENTS = NON_FEATURE_ELEMENT_FEATURE_COUNT + 15;
+
+  /**
+   * The number of structural features of the '<em>Association</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSOCIATION_FEATURE_COUNT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 16;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.AssociationStructureImpl <em>Association Structure</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.AssociationStructureImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getAssociationStructure()
+   * @generated
+   */
+  int ASSOCIATION_STRUCTURE = 28;
+
+  /**
+   * The feature id for the '<em><b>Visibility</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSOCIATION_STRUCTURE__VISIBILITY = NON_FEATURE_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Is Variant</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSOCIATION_STRUCTURE__IS_VARIANT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSOCIATION_STRUCTURE__PREFIX_METADATA_EXTENSION = NON_FEATURE_ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSOCIATION_STRUCTURE__IS_ABSTRACT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSOCIATION_STRUCTURE__DECLARED_SHORT_NAME = NON_FEATURE_ELEMENT_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Declared Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSOCIATION_STRUCTURE__DECLARED_NAME = NON_FEATURE_ELEMENT_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Multi Low</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSOCIATION_STRUCTURE__MULTI_LOW = NON_FEATURE_ELEMENT_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Multi High</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSOCIATION_STRUCTURE__MULTI_HIGH = NON_FEATURE_ELEMENT_FEATURE_COUNT + 7;
+
+  /**
+   * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSOCIATION_STRUCTURE__SUBSETTING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 8;
+
+  /**
+   * The feature id for the '<em><b>Original Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSOCIATION_STRUCTURE__ORIGINAL_TYPE = NON_FEATURE_ELEMENT_FEATURE_COUNT + 9;
+
+  /**
+   * The feature id for the '<em><b>Disjoining</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSOCIATION_STRUCTURE__DISJOINING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 10;
+
+  /**
+   * The feature id for the '<em><b>Unioning</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSOCIATION_STRUCTURE__UNIONING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 11;
+
+  /**
+   * The feature id for the '<em><b>Intersecting</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSOCIATION_STRUCTURE__INTERSECTING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 12;
+
+  /**
+   * The feature id for the '<em><b>Differencing</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSOCIATION_STRUCTURE__DIFFERENCING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 13;
+
+  /**
+   * The feature id for the '<em><b>Is Sufficient</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSOCIATION_STRUCTURE__IS_SUFFICIENT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 14;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSOCIATION_STRUCTURE__ELEMENTS = NON_FEATURE_ELEMENT_FEATURE_COUNT + 15;
+
+  /**
+   * The number of structural features of the '<em>Association Structure</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSOCIATION_STRUCTURE_FEATURE_COUNT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 16;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.InteractionImpl <em>Interaction</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.InteractionImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getInteraction()
+   * @generated
+   */
+  int INTERACTION = 29;
+
+  /**
+   * The feature id for the '<em><b>Visibility</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTION__VISIBILITY = NON_FEATURE_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Is Variant</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTION__IS_VARIANT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTION__PREFIX_METADATA_EXTENSION = NON_FEATURE_ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTION__IS_ABSTRACT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTION__DECLARED_SHORT_NAME = NON_FEATURE_ELEMENT_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Declared Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTION__DECLARED_NAME = NON_FEATURE_ELEMENT_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Multi Low</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTION__MULTI_LOW = NON_FEATURE_ELEMENT_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Multi High</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTION__MULTI_HIGH = NON_FEATURE_ELEMENT_FEATURE_COUNT + 7;
+
+  /**
+   * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTION__SUBSETTING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 8;
+
+  /**
+   * The feature id for the '<em><b>Original Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTION__ORIGINAL_TYPE = NON_FEATURE_ELEMENT_FEATURE_COUNT + 9;
+
+  /**
+   * The feature id for the '<em><b>Disjoining</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTION__DISJOINING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 10;
+
+  /**
+   * The feature id for the '<em><b>Unioning</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTION__UNIONING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 11;
+
+  /**
+   * The feature id for the '<em><b>Intersecting</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTION__INTERSECTING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 12;
+
+  /**
+   * The feature id for the '<em><b>Differencing</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTION__DIFFERENCING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 13;
+
+  /**
+   * The feature id for the '<em><b>Is Sufficient</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTION__IS_SUFFICIENT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 14;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTION__ELEMENTS = NON_FEATURE_ELEMENT_FEATURE_COUNT + 15;
+
+  /**
+   * The number of structural features of the '<em>Interaction</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERACTION_FEATURE_COUNT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 16;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.BehaviorImpl <em>Behavior</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.BehaviorImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getBehavior()
+   * @generated
+   */
+  int BEHAVIOR = 30;
+
+  /**
+   * The feature id for the '<em><b>Visibility</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BEHAVIOR__VISIBILITY = NON_FEATURE_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Is Variant</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BEHAVIOR__IS_VARIANT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BEHAVIOR__PREFIX_METADATA_EXTENSION = NON_FEATURE_ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BEHAVIOR__IS_ABSTRACT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BEHAVIOR__DECLARED_SHORT_NAME = NON_FEATURE_ELEMENT_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Declared Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BEHAVIOR__DECLARED_NAME = NON_FEATURE_ELEMENT_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Multi Low</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BEHAVIOR__MULTI_LOW = NON_FEATURE_ELEMENT_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Multi High</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BEHAVIOR__MULTI_HIGH = NON_FEATURE_ELEMENT_FEATURE_COUNT + 7;
+
+  /**
+   * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BEHAVIOR__SUBSETTING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 8;
+
+  /**
+   * The feature id for the '<em><b>Original Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BEHAVIOR__ORIGINAL_TYPE = NON_FEATURE_ELEMENT_FEATURE_COUNT + 9;
+
+  /**
+   * The feature id for the '<em><b>Disjoining</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BEHAVIOR__DISJOINING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 10;
+
+  /**
+   * The feature id for the '<em><b>Unioning</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BEHAVIOR__UNIONING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 11;
+
+  /**
+   * The feature id for the '<em><b>Intersecting</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BEHAVIOR__INTERSECTING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 12;
+
+  /**
+   * The feature id for the '<em><b>Differencing</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BEHAVIOR__DIFFERENCING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 13;
+
+  /**
+   * The feature id for the '<em><b>Is Sufficient</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BEHAVIOR__IS_SUFFICIENT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 14;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BEHAVIOR__ELEMENTS = NON_FEATURE_ELEMENT_FEATURE_COUNT + 15;
+
+  /**
+   * The number of structural features of the '<em>Behavior</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BEHAVIOR_FEATURE_COUNT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 16;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.FunctionImpl <em>Function</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.FunctionImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getFunction()
+   * @generated
+   */
+  int FUNCTION = 31;
+
+  /**
+   * The feature id for the '<em><b>Visibility</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION__VISIBILITY = NON_FEATURE_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Is Variant</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION__IS_VARIANT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION__PREFIX_METADATA_EXTENSION = NON_FEATURE_ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION__IS_ABSTRACT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION__DECLARED_SHORT_NAME = NON_FEATURE_ELEMENT_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Declared Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION__DECLARED_NAME = NON_FEATURE_ELEMENT_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Multi Low</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION__MULTI_LOW = NON_FEATURE_ELEMENT_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Multi High</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION__MULTI_HIGH = NON_FEATURE_ELEMENT_FEATURE_COUNT + 7;
+
+  /**
+   * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION__SUBSETTING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 8;
+
+  /**
+   * The feature id for the '<em><b>Original Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION__ORIGINAL_TYPE = NON_FEATURE_ELEMENT_FEATURE_COUNT + 9;
+
+  /**
+   * The feature id for the '<em><b>Disjoining</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION__DISJOINING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 10;
+
+  /**
+   * The feature id for the '<em><b>Unioning</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION__UNIONING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 11;
+
+  /**
+   * The feature id for the '<em><b>Intersecting</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION__INTERSECTING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 12;
+
+  /**
+   * The feature id for the '<em><b>Differencing</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION__DIFFERENCING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 13;
+
+  /**
+   * The feature id for the '<em><b>Is Sufficient</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION__IS_SUFFICIENT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 14;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION__ELEMENTS = NON_FEATURE_ELEMENT_FEATURE_COUNT + 15;
+
+  /**
+   * The feature id for the '<em><b>Result Expression Parameter</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION__RESULT_EXPRESSION_PARAMETER = NON_FEATURE_ELEMENT_FEATURE_COUNT + 16;
+
+  /**
+   * The number of structural features of the '<em>Function</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_FEATURE_COUNT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 17;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.PredicateImpl <em>Predicate</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.PredicateImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getPredicate()
+   * @generated
+   */
+  int PREDICATE = 32;
+
+  /**
+   * The feature id for the '<em><b>Visibility</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE__VISIBILITY = NON_FEATURE_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Is Variant</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE__IS_VARIANT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE__PREFIX_METADATA_EXTENSION = NON_FEATURE_ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE__IS_ABSTRACT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE__DECLARED_SHORT_NAME = NON_FEATURE_ELEMENT_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Declared Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE__DECLARED_NAME = NON_FEATURE_ELEMENT_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Multi Low</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE__MULTI_LOW = NON_FEATURE_ELEMENT_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Multi High</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE__MULTI_HIGH = NON_FEATURE_ELEMENT_FEATURE_COUNT + 7;
+
+  /**
+   * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE__SUBSETTING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 8;
+
+  /**
+   * The feature id for the '<em><b>Original Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE__ORIGINAL_TYPE = NON_FEATURE_ELEMENT_FEATURE_COUNT + 9;
+
+  /**
+   * The feature id for the '<em><b>Disjoining</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE__DISJOINING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 10;
+
+  /**
+   * The feature id for the '<em><b>Unioning</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE__UNIONING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 11;
+
+  /**
+   * The feature id for the '<em><b>Intersecting</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE__INTERSECTING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 12;
+
+  /**
+   * The feature id for the '<em><b>Differencing</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE__DIFFERENCING = NON_FEATURE_ELEMENT_FEATURE_COUNT + 13;
+
+  /**
+   * The feature id for the '<em><b>Is Sufficient</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE__IS_SUFFICIENT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 14;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE__ELEMENTS = NON_FEATURE_ELEMENT_FEATURE_COUNT + 15;
+
+  /**
+   * The feature id for the '<em><b>Result Expression Parameter</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE__RESULT_EXPRESSION_PARAMETER = NON_FEATURE_ELEMENT_FEATURE_COUNT + 16;
+
+  /**
+   * The number of structural features of the '<em>Predicate</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE_FEATURE_COUNT = NON_FEATURE_ELEMENT_FEATURE_COUNT + 17;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.MemberPrefixImpl <em>Member Prefix</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.MemberPrefixImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getMemberPrefix()
+   * @generated
+   */
+  int MEMBER_PREFIX = 35;
+
+  /**
+   * The feature id for the '<em><b>Visibility</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MEMBER_PREFIX__VISIBILITY = 0;
+
+  /**
+   * The feature id for the '<em><b>Is Variant</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MEMBER_PREFIX__IS_VARIANT = 1;
+
+  /**
+   * The number of structural features of the '<em>Member Prefix</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MEMBER_PREFIX_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.ResultExpressionImpl <em>Result Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.ResultExpressionImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getResultExpression()
+   * @generated
+   */
+  int RESULT_EXPRESSION = 33;
+
+  /**
+   * The feature id for the '<em><b>Visibility</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RESULT_EXPRESSION__VISIBILITY = MEMBER_PREFIX__VISIBILITY;
+
+  /**
+   * The feature id for the '<em><b>Is Variant</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RESULT_EXPRESSION__IS_VARIANT = MEMBER_PREFIX__IS_VARIANT;
+
+  /**
+   * The feature id for the '<em><b>Result Expression</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RESULT_EXPRESSION__RESULT_EXPRESSION = MEMBER_PREFIX_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Result Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RESULT_EXPRESSION_FEATURE_COUNT = MEMBER_PREFIX_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.IdentificationImpl <em>Identification</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.IdentificationImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getIdentification()
+   * @generated
+   */
+  int IDENTIFICATION = 34;
+
+  /**
+   * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IDENTIFICATION__DECLARED_SHORT_NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Declared Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IDENTIFICATION__DECLARED_NAME = 1;
+
+  /**
+   * The number of structural features of the '<em>Identification</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IDENTIFICATION_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.PrefixMetadataImpl <em>Prefix Metadata</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.PrefixMetadataImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getPrefixMetadata()
+   * @generated
+   */
+  int PREFIX_METADATA = 36;
+
+  /**
+   * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREFIX_METADATA__PREFIX_METADATA_EXTENSION = 0;
+
+  /**
+   * The number of structural features of the '<em>Prefix Metadata</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREFIX_METADATA_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.MultiplicityBoundsImpl <em>Multiplicity Bounds</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.MultiplicityBoundsImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getMultiplicityBounds()
+   * @generated
+   */
+  int MULTIPLICITY_BOUNDS = 37;
+
+  /**
+   * The feature id for the '<em><b>Multi Low</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICITY_BOUNDS__MULTI_LOW = 0;
+
+  /**
+   * The feature id for the '<em><b>Multi High</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICITY_BOUNDS__MULTI_HIGH = 1;
+
+  /**
+   * The number of structural features of the '<em>Multiplicity Bounds</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTIPLICITY_BOUNDS_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.TypingFeatureTypingImpl <em>Typing Feature Typing</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.TypingFeatureTypingImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getTypingFeatureTyping()
+   * @generated
+   */
+  int TYPING_FEATURE_TYPING = 39;
+
+  /**
+   * The feature id for the '<em><b>Typings</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPING_FEATURE_TYPING__TYPINGS = 0;
+
+  /**
+   * The number of structural features of the '<em>Typing Feature Typing</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPING_FEATURE_TYPING_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.FeatureSpecializationImpl <em>Feature Specialization</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.FeatureSpecializationImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getFeatureSpecialization()
+   * @generated
+   */
+  int FEATURE_SPECIALIZATION = 38;
+
+  /**
+   * The feature id for the '<em><b>Typings</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FEATURE_SPECIALIZATION__TYPINGS = TYPING_FEATURE_TYPING__TYPINGS;
+
+  /**
+   * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FEATURE_SPECIALIZATION__SUBSETTING = TYPING_FEATURE_TYPING_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>References</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FEATURE_SPECIALIZATION__REFERENCES = TYPING_FEATURE_TYPING_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Crosses</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FEATURE_SPECIALIZATION__CROSSES = TYPING_FEATURE_TYPING_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FEATURE_SPECIALIZATION__REDEFINITIONS = TYPING_FEATURE_TYPING_FEATURE_COUNT + 3;
+
+  /**
+   * The number of structural features of the '<em>Feature Specialization</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FEATURE_SPECIALIZATION_FEATURE_COUNT = TYPING_FEATURE_TYPING_FEATURE_COUNT + 4;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.SubsettingFeatureChainImpl <em>Subsetting Feature Chain</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.SubsettingFeatureChainImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getSubsettingFeatureChain()
+   * @generated
+   */
+  int SUBSETTING_FEATURE_CHAIN = 40;
+
+  /**
+   * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUBSETTING_FEATURE_CHAIN__SUBSETTING = 0;
+
+  /**
+   * The number of structural features of the '<em>Subsetting Feature Chain</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUBSETTING_FEATURE_CHAIN_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.ReferenceFeatureChainImpl <em>Reference Feature Chain</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.ReferenceFeatureChainImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getReferenceFeatureChain()
+   * @generated
+   */
+  int REFERENCE_FEATURE_CHAIN = 41;
+
+  /**
+   * The feature id for the '<em><b>References</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REFERENCE_FEATURE_CHAIN__REFERENCES = 0;
+
+  /**
+   * The number of structural features of the '<em>Reference Feature Chain</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REFERENCE_FEATURE_CHAIN_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.CrossFeatureChainImpl <em>Cross Feature Chain</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.CrossFeatureChainImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getCrossFeatureChain()
+   * @generated
+   */
+  int CROSS_FEATURE_CHAIN = 42;
+
+  /**
+   * The feature id for the '<em><b>Crosses</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CROSS_FEATURE_CHAIN__CROSSES = 0;
+
+  /**
+   * The number of structural features of the '<em>Cross Feature Chain</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CROSS_FEATURE_CHAIN_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.RedefinitionFeatureChainImpl <em>Redefinition Feature Chain</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.RedefinitionFeatureChainImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getRedefinitionFeatureChain()
+   * @generated
+   */
+  int REDEFINITION_FEATURE_CHAIN = 43;
+
+  /**
+   * The feature id for the '<em><b>Redefinitions</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REDEFINITION_FEATURE_CHAIN__REDEFINITIONS = 0;
+
+  /**
+   * The number of structural features of the '<em>Redefinition Feature Chain</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REDEFINITION_FEATURE_CHAIN_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.SubsetsImpl <em>Subsets</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.SubsetsImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getSubsets()
+   * @generated
+   */
+  int SUBSETS = 44;
+
+  /**
+   * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUBSETS__SUBSETTING = SUBSETTING_FEATURE_CHAIN__SUBSETTING;
+
+  /**
+   * The number of structural features of the '<em>Subsets</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUBSETS_FEATURE_COUNT = SUBSETTING_FEATURE_CHAIN_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.TypePrefixImpl <em>Type Prefix</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.TypePrefixImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getTypePrefix()
+   * @generated
+   */
+  int TYPE_PREFIX = 45;
+
+  /**
+   * The feature id for the '<em><b>Prefix Metadata Extension</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_PREFIX__PREFIX_METADATA_EXTENSION = PREFIX_METADATA__PREFIX_METADATA_EXTENSION;
+
+  /**
+   * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_PREFIX__IS_ABSTRACT = PREFIX_METADATA_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Type Prefix</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_PREFIX_FEATURE_COUNT = PREFIX_METADATA_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.SpecializationPartImpl <em>Specialization Part</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.SpecializationPartImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getSpecializationPart()
+   * @generated
+   */
+  int SPECIALIZATION_PART = 46;
+
+  /**
+   * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SPECIALIZATION_PART__SUBSETTING = SUBSETTING_FEATURE_CHAIN__SUBSETTING;
+
+  /**
+   * The number of structural features of the '<em>Specialization Part</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SPECIALIZATION_PART_FEATURE_COUNT = SUBSETTING_FEATURE_CHAIN_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.SuperclassingPartImpl <em>Superclassing Part</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.SuperclassingPartImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getSuperclassingPart()
+   * @generated
+   */
+  int SUPERCLASSING_PART = 47;
+
+  /**
+   * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUPERCLASSING_PART__SUBSETTING = SUBSETTING_FEATURE_CHAIN__SUBSETTING;
+
+  /**
+   * The number of structural features of the '<em>Superclassing Part</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUPERCLASSING_PART_FEATURE_COUNT = SUBSETTING_FEATURE_CHAIN_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.ClassifierConjugationPartImpl <em>Classifier Conjugation Part</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.ClassifierConjugationPartImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getClassifierConjugationPart()
+   * @generated
+   */
+  int CLASSIFIER_CONJUGATION_PART = 48;
+
+  /**
+   * The feature id for the '<em><b>Original Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASSIFIER_CONJUGATION_PART__ORIGINAL_TYPE = 0;
+
+  /**
+   * The number of structural features of the '<em>Classifier Conjugation Part</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASSIFIER_CONJUGATION_PART_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.ConjugationPartImpl <em>Conjugation Part</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.ConjugationPartImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getConjugationPart()
+   * @generated
+   */
+  int CONJUGATION_PART = 49;
+
+  /**
+   * The feature id for the '<em><b>Original Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONJUGATION_PART__ORIGINAL_TYPE = 0;
+
+  /**
+   * The number of structural features of the '<em>Conjugation Part</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONJUGATION_PART_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.DisjoiningPartImpl <em>Disjoining Part</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.DisjoiningPartImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getDisjoiningPart()
+   * @generated
+   */
+  int DISJOINING_PART = 51;
+
+  /**
+   * The feature id for the '<em><b>Disjoining</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DISJOINING_PART__DISJOINING = 0;
+
+  /**
+   * The number of structural features of the '<em>Disjoining Part</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DISJOINING_PART_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.TypeRelationshipPartImpl <em>Type Relationship Part</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.TypeRelationshipPartImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getTypeRelationshipPart()
+   * @generated
+   */
+  int TYPE_RELATIONSHIP_PART = 50;
+
+  /**
+   * The feature id for the '<em><b>Disjoining</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_RELATIONSHIP_PART__DISJOINING = DISJOINING_PART__DISJOINING;
+
+  /**
+   * The feature id for the '<em><b>Unioning</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_RELATIONSHIP_PART__UNIONING = DISJOINING_PART_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Intersecting</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_RELATIONSHIP_PART__INTERSECTING = DISJOINING_PART_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Differencing</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_RELATIONSHIP_PART__DIFFERENCING = DISJOINING_PART_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Type Relationship Part</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_RELATIONSHIP_PART_FEATURE_COUNT = DISJOINING_PART_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.UnioningPartImpl <em>Unioning Part</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.UnioningPartImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getUnioningPart()
+   * @generated
+   */
+  int UNIONING_PART = 52;
+
+  /**
+   * The feature id for the '<em><b>Unioning</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNIONING_PART__UNIONING = 0;
+
+  /**
+   * The number of structural features of the '<em>Unioning Part</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNIONING_PART_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.IntersectingPartImpl <em>Intersecting Part</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.IntersectingPartImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getIntersectingPart()
+   * @generated
+   */
+  int INTERSECTING_PART = 53;
+
+  /**
+   * The feature id for the '<em><b>Intersecting</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERSECTING_PART__INTERSECTING = 0;
+
+  /**
+   * The number of structural features of the '<em>Intersecting Part</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERSECTING_PART_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.DifferencingPartImpl <em>Differencing Part</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.DifferencingPartImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getDifferencingPart()
+   * @generated
+   */
+  int DIFFERENCING_PART = 54;
+
+  /**
+   * The feature id for the '<em><b>Differencing</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIFFERENCING_PART__DIFFERENCING = 0;
+
+  /**
+   * The number of structural features of the '<em>Differencing Part</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIFFERENCING_PART_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link dut.control.kermloc.kerMLOC.impl.ClassifierDeclarationImpl <em>Classifier Declaration</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dut.control.kermloc.kerMLOC.impl.ClassifierDeclarationImpl
+   * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getClassifierDeclaration()
+   * @generated
+   */
+  int CLASSIFIER_DECLARATION = 55;
+
+  /**
+   * The feature id for the '<em><b>Declared Short Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASSIFIER_DECLARATION__DECLARED_SHORT_NAME = IDENTIFICATION__DECLARED_SHORT_NAME;
+
+  /**
+   * The feature id for the '<em><b>Declared Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASSIFIER_DECLARATION__DECLARED_NAME = IDENTIFICATION__DECLARED_NAME;
+
+  /**
+   * The feature id for the '<em><b>Multi Low</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASSIFIER_DECLARATION__MULTI_LOW = IDENTIFICATION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Multi High</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASSIFIER_DECLARATION__MULTI_HIGH = IDENTIFICATION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Subsetting</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASSIFIER_DECLARATION__SUBSETTING = IDENTIFICATION_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Original Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASSIFIER_DECLARATION__ORIGINAL_TYPE = IDENTIFICATION_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Disjoining</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASSIFIER_DECLARATION__DISJOINING = IDENTIFICATION_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Unioning</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASSIFIER_DECLARATION__UNIONING = IDENTIFICATION_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Intersecting</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASSIFIER_DECLARATION__INTERSECTING = IDENTIFICATION_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Differencing</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASSIFIER_DECLARATION__DIFFERENCING = IDENTIFICATION_FEATURE_COUNT + 7;
+
+  /**
+   * The feature id for the '<em><b>Is Sufficient</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASSIFIER_DECLARATION__IS_SUFFICIENT = IDENTIFICATION_FEATURE_COUNT + 8;
+
+  /**
+   * The number of structural features of the '<em>Classifier Declaration</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASSIFIER_DECLARATION_FEATURE_COUNT = IDENTIFICATION_FEATURE_COUNT + 9;
 
   /**
    * The meta object id for the '{@link dut.control.kermloc.kerMLOC.VisibilityIndicator <em>Visibility Indicator</em>}' enum.
@@ -93,8 +3929,538 @@ public interface KerMLOCPackage extends EPackage
    * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getVisibilityIndicator()
    * @generated
    */
-  int VISIBILITY_INDICATOR = 1;
+  int VISIBILITY_INDICATOR = 56;
 
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.RootNamespace <em>Root Namespace</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Root Namespace</em>'.
+   * @see dut.control.kermloc.kerMLOC.RootNamespace
+   * @generated
+   */
+  EClass getRootNamespace();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.kermloc.kerMLOC.RootNamespace#getElements <em>Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see dut.control.kermloc.kerMLOC.RootNamespace#getElements()
+   * @see #getRootNamespace()
+   * @generated
+   */
+  EReference getRootNamespace_Elements();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.GeneralBodyElements <em>General Body Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>General Body Elements</em>'.
+   * @see dut.control.kermloc.kerMLOC.GeneralBodyElements
+   * @generated
+   */
+  EClass getGeneralBodyElements();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.AnnotatingBodyElement <em>Annotating Body Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Annotating Body Element</em>'.
+   * @see dut.control.kermloc.kerMLOC.AnnotatingBodyElement
+   * @generated
+   */
+  EClass getAnnotatingBodyElement();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.PackageBodyElement <em>Package Body Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Package Body Element</em>'.
+   * @see dut.control.kermloc.kerMLOC.PackageBodyElement
+   * @generated
+   */
+  EClass getPackageBodyElement();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.TypeBodyElement <em>Type Body Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Type Body Element</em>'.
+   * @see dut.control.kermloc.kerMLOC.TypeBodyElement
+   * @generated
+   */
+  EClass getTypeBodyElement();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.NamespaceBodyElement <em>Namespace Body Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Namespace Body Element</em>'.
+   * @see dut.control.kermloc.kerMLOC.NamespaceBodyElement
+   * @generated
+   */
+  EClass getNamespaceBodyElement();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.FunctionBodyElement <em>Function Body Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Function Body Element</em>'.
+   * @see dut.control.kermloc.kerMLOC.FunctionBodyElement
+   * @generated
+   */
+  EClass getFunctionBodyElement();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.AnnotatingElement <em>Annotating Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Annotating Element</em>'.
+   * @see dut.control.kermloc.kerMLOC.AnnotatingElement
+   * @generated
+   */
+  EClass getAnnotatingElement();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.NonFeatureElement <em>Non Feature Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Non Feature Element</em>'.
+   * @see dut.control.kermloc.kerMLOC.NonFeatureElement
+   * @generated
+   */
+  EClass getNonFeatureElement();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.Package <em>Package</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Package</em>'.
+   * @see dut.control.kermloc.kerMLOC.Package
+   * @generated
+   */
+  EClass getPackage();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.kermloc.kerMLOC.Package#getDeclaredName <em>Declared Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Declared Name</em>'.
+   * @see dut.control.kermloc.kerMLOC.Package#getDeclaredName()
+   * @see #getPackage()
+   * @generated
+   */
+  EAttribute getPackage_DeclaredName();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.kermloc.kerMLOC.Package#getElements <em>Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see dut.control.kermloc.kerMLOC.Package#getElements()
+   * @see #getPackage()
+   * @generated
+   */
+  EReference getPackage_Elements();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.LibraryPackage <em>Library Package</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Library Package</em>'.
+   * @see dut.control.kermloc.kerMLOC.LibraryPackage
+   * @generated
+   */
+  EClass getLibraryPackage();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.kermloc.kerMLOC.LibraryPackage#isIsStandard <em>Is Standard</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Standard</em>'.
+   * @see dut.control.kermloc.kerMLOC.LibraryPackage#isIsStandard()
+   * @see #getLibraryPackage()
+   * @generated
+   */
+  EAttribute getLibraryPackage_IsStandard();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.kermloc.kerMLOC.LibraryPackage#isIsLibrary <em>Is Library</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Library</em>'.
+   * @see dut.control.kermloc.kerMLOC.LibraryPackage#isIsLibrary()
+   * @see #getLibraryPackage()
+   * @generated
+   */
+  EAttribute getLibraryPackage_IsLibrary();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.kermloc.kerMLOC.LibraryPackage#getElements <em>Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see dut.control.kermloc.kerMLOC.LibraryPackage#getElements()
+   * @see #getLibraryPackage()
+   * @generated
+   */
+  EReference getLibraryPackage_Elements();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.Dependency <em>Dependency</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Dependency</em>'.
+   * @see dut.control.kermloc.kerMLOC.Dependency
+   * @generated
+   */
+  EClass getDependency();
+
+  /**
+   * Returns the meta object for the attribute list '{@link dut.control.kermloc.kerMLOC.Dependency#getClient <em>Client</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Client</em>'.
+   * @see dut.control.kermloc.kerMLOC.Dependency#getClient()
+   * @see #getDependency()
+   * @generated
+   */
+  EAttribute getDependency_Client();
+
+  /**
+   * Returns the meta object for the attribute list '{@link dut.control.kermloc.kerMLOC.Dependency#getSupplier <em>Supplier</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Supplier</em>'.
+   * @see dut.control.kermloc.kerMLOC.Dependency#getSupplier()
+   * @see #getDependency()
+   * @generated
+   */
+  EAttribute getDependency_Supplier();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.kermloc.kerMLOC.Dependency#getElements <em>Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see dut.control.kermloc.kerMLOC.Dependency#getElements()
+   * @see #getDependency()
+   * @generated
+   */
+  EReference getDependency_Elements();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.Comment <em>Comment</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Comment</em>'.
+   * @see dut.control.kermloc.kerMLOC.Comment
+   * @generated
+   */
+  EClass getComment();
+
+  /**
+   * Returns the meta object for the attribute list '{@link dut.control.kermloc.kerMLOC.Comment#getAnnotatedElement <em>Annotated Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Annotated Element</em>'.
+   * @see dut.control.kermloc.kerMLOC.Comment#getAnnotatedElement()
+   * @see #getComment()
+   * @generated
+   */
+  EAttribute getComment_AnnotatedElement();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.kermloc.kerMLOC.Comment#getLocale <em>Locale</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Locale</em>'.
+   * @see dut.control.kermloc.kerMLOC.Comment#getLocale()
+   * @see #getComment()
+   * @generated
+   */
+  EAttribute getComment_Locale();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.kermloc.kerMLOC.Comment#getBody <em>Body</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Body</em>'.
+   * @see dut.control.kermloc.kerMLOC.Comment#getBody()
+   * @see #getComment()
+   * @generated
+   */
+  EAttribute getComment_Body();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.Documentation <em>Documentation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Documentation</em>'.
+   * @see dut.control.kermloc.kerMLOC.Documentation
+   * @generated
+   */
+  EClass getDocumentation();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.kermloc.kerMLOC.Documentation#getLocale <em>Locale</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Locale</em>'.
+   * @see dut.control.kermloc.kerMLOC.Documentation#getLocale()
+   * @see #getDocumentation()
+   * @generated
+   */
+  EAttribute getDocumentation_Locale();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.kermloc.kerMLOC.Documentation#getBody <em>Body</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Body</em>'.
+   * @see dut.control.kermloc.kerMLOC.Documentation#getBody()
+   * @see #getDocumentation()
+   * @generated
+   */
+  EAttribute getDocumentation_Body();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.TextualRepresentation <em>Textual Representation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Textual Representation</em>'.
+   * @see dut.control.kermloc.kerMLOC.TextualRepresentation
+   * @generated
+   */
+  EClass getTextualRepresentation();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.kermloc.kerMLOC.TextualRepresentation#getLanguage <em>Language</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Language</em>'.
+   * @see dut.control.kermloc.kerMLOC.TextualRepresentation#getLanguage()
+   * @see #getTextualRepresentation()
+   * @generated
+   */
+  EAttribute getTextualRepresentation_Language();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.kermloc.kerMLOC.TextualRepresentation#getBody <em>Body</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Body</em>'.
+   * @see dut.control.kermloc.kerMLOC.TextualRepresentation#getBody()
+   * @see #getTextualRepresentation()
+   * @generated
+   */
+  EAttribute getTextualRepresentation_Body();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.ImportElement <em>Import Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Import Element</em>'.
+   * @see dut.control.kermloc.kerMLOC.ImportElement
+   * @generated
+   */
+  EClass getImportElement();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.kermloc.kerMLOC.ImportElement#getVisibility <em>Visibility</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Visibility</em>'.
+   * @see dut.control.kermloc.kerMLOC.ImportElement#getVisibility()
+   * @see #getImportElement()
+   * @generated
+   */
+  EAttribute getImportElement_Visibility();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.kermloc.kerMLOC.ImportElement#isIsImportAll <em>Is Import All</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Import All</em>'.
+   * @see dut.control.kermloc.kerMLOC.ImportElement#isIsImportAll()
+   * @see #getImportElement()
+   * @generated
+   */
+  EAttribute getImportElement_IsImportAll();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.kermloc.kerMLOC.ImportElement#getDeclaredName <em>Declared Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Declared Name</em>'.
+   * @see dut.control.kermloc.kerMLOC.ImportElement#getDeclaredName()
+   * @see #getImportElement()
+   * @generated
+   */
+  EAttribute getImportElement_DeclaredName();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.kermloc.kerMLOC.ImportElement#isIsNamespace <em>Is Namespace</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Namespace</em>'.
+   * @see dut.control.kermloc.kerMLOC.ImportElement#isIsNamespace()
+   * @see #getImportElement()
+   * @generated
+   */
+  EAttribute getImportElement_IsNamespace();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.kermloc.kerMLOC.ImportElement#isIsRecursive <em>Is Recursive</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Recursive</em>'.
+   * @see dut.control.kermloc.kerMLOC.ImportElement#isIsRecursive()
+   * @see #getImportElement()
+   * @generated
+   */
+  EAttribute getImportElement_IsRecursive();
+
+  /**
+   * Returns the meta object for the attribute list '{@link dut.control.kermloc.kerMLOC.ImportElement#getFilterPackageExpression <em>Filter Package Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Filter Package Expression</em>'.
+   * @see dut.control.kermloc.kerMLOC.ImportElement#getFilterPackageExpression()
+   * @see #getImportElement()
+   * @generated
+   */
+  EAttribute getImportElement_FilterPackageExpression();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.kermloc.kerMLOC.ImportElement#getElements <em>Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see dut.control.kermloc.kerMLOC.ImportElement#getElements()
+   * @see #getImportElement()
+   * @generated
+   */
+  EReference getImportElement_Elements();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.CodeAnnotation <em>Code Annotation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Code Annotation</em>'.
+   * @see dut.control.kermloc.kerMLOC.CodeAnnotation
+   * @generated
+   */
+  EClass getCodeAnnotation();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.kermloc.kerMLOC.CodeAnnotation#getBody <em>Body</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Body</em>'.
+   * @see dut.control.kermloc.kerMLOC.CodeAnnotation#getBody()
+   * @see #getCodeAnnotation()
+   * @generated
+   */
+  EAttribute getCodeAnnotation_Body();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.AliasElement <em>Alias Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Alias Element</em>'.
+   * @see dut.control.kermloc.kerMLOC.AliasElement
+   * @generated
+   */
+  EClass getAliasElement();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.kermloc.kerMLOC.AliasElement#getMemberShortName <em>Member Short Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Member Short Name</em>'.
+   * @see dut.control.kermloc.kerMLOC.AliasElement#getMemberShortName()
+   * @see #getAliasElement()
+   * @generated
+   */
+  EAttribute getAliasElement_MemberShortName();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.kermloc.kerMLOC.AliasElement#getMemberName <em>Member Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Member Name</em>'.
+   * @see dut.control.kermloc.kerMLOC.AliasElement#getMemberName()
+   * @see #getAliasElement()
+   * @generated
+   */
+  EAttribute getAliasElement_MemberName();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.kermloc.kerMLOC.AliasElement#getMemberElement <em>Member Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Member Element</em>'.
+   * @see dut.control.kermloc.kerMLOC.AliasElement#getMemberElement()
+   * @see #getAliasElement()
+   * @generated
+   */
+  EAttribute getAliasElement_MemberElement();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.kermloc.kerMLOC.AliasElement#getElements <em>Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see dut.control.kermloc.kerMLOC.AliasElement#getElements()
+   * @see #getAliasElement()
+   * @generated
+   */
+  EReference getAliasElement_Elements();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.ElementFilterElement <em>Element Filter Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Element Filter Element</em>'.
+   * @see dut.control.kermloc.kerMLOC.ElementFilterElement
+   * @generated
+   */
+  EClass getElementFilterElement();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.kermloc.kerMLOC.ElementFilterElement#getFilterExpression <em>Filter Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Filter Expression</em>'.
+   * @see dut.control.kermloc.kerMLOC.ElementFilterElement#getFilterExpression()
+   * @see #getElementFilterElement()
+   * @generated
+   */
+  EAttribute getElementFilterElement_FilterExpression();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.Multiplicity <em>Multiplicity</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Multiplicity</em>'.
+   * @see dut.control.kermloc.kerMLOC.Multiplicity
+   * @generated
+   */
+  EClass getMultiplicity();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.kermloc.kerMLOC.Multiplicity#getElements <em>Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see dut.control.kermloc.kerMLOC.Multiplicity#getElements()
+   * @see #getMultiplicity()
+   * @generated
+   */
+  EReference getMultiplicity_Elements();
 
   /**
    * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.Namespace <em>Namespace</em>}'.
@@ -107,15 +4473,772 @@ public interface KerMLOCPackage extends EPackage
   EClass getNamespace();
 
   /**
-   * Returns the meta object for the attribute list '{@link dut.control.kermloc.kerMLOC.Namespace#getElements <em>Elements</em>}'.
+   * Returns the meta object for the attribute '{@link dut.control.kermloc.kerMLOC.Namespace#isIsNamespace <em>Is Namespace</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Elements</em>'.
+   * @return the meta object for the attribute '<em>Is Namespace</em>'.
+   * @see dut.control.kermloc.kerMLOC.Namespace#isIsNamespace()
+   * @see #getNamespace()
+   * @generated
+   */
+  EAttribute getNamespace_IsNamespace();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.kermloc.kerMLOC.Namespace#getElements <em>Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
    * @see dut.control.kermloc.kerMLOC.Namespace#getElements()
    * @see #getNamespace()
    * @generated
    */
-  EAttribute getNamespace_Elements();
+  EReference getNamespace_Elements();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.Type <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Type</em>'.
+   * @see dut.control.kermloc.kerMLOC.Type
+   * @generated
+   */
+  EClass getType();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.kermloc.kerMLOC.Type#isIsSufficient <em>Is Sufficient</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Sufficient</em>'.
+   * @see dut.control.kermloc.kerMLOC.Type#isIsSufficient()
+   * @see #getType()
+   * @generated
+   */
+  EAttribute getType_IsSufficient();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.kermloc.kerMLOC.Type#getElements <em>Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see dut.control.kermloc.kerMLOC.Type#getElements()
+   * @see #getType()
+   * @generated
+   */
+  EReference getType_Elements();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.Classifier <em>Classifier</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Classifier</em>'.
+   * @see dut.control.kermloc.kerMLOC.Classifier
+   * @generated
+   */
+  EClass getClassifier();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.kermloc.kerMLOC.Classifier#getElements <em>Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see dut.control.kermloc.kerMLOC.Classifier#getElements()
+   * @see #getClassifier()
+   * @generated
+   */
+  EReference getClassifier_Elements();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.Class <em>Class</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Class</em>'.
+   * @see dut.control.kermloc.kerMLOC.Class
+   * @generated
+   */
+  EClass getClass_();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.kermloc.kerMLOC.Class#getElements <em>Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see dut.control.kermloc.kerMLOC.Class#getElements()
+   * @see #getClass_()
+   * @generated
+   */
+  EReference getClass_Elements();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.Structure <em>Structure</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Structure</em>'.
+   * @see dut.control.kermloc.kerMLOC.Structure
+   * @generated
+   */
+  EClass getStructure();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.kermloc.kerMLOC.Structure#getElements <em>Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see dut.control.kermloc.kerMLOC.Structure#getElements()
+   * @see #getStructure()
+   * @generated
+   */
+  EReference getStructure_Elements();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.Metaclass <em>Metaclass</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Metaclass</em>'.
+   * @see dut.control.kermloc.kerMLOC.Metaclass
+   * @generated
+   */
+  EClass getMetaclass();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.kermloc.kerMLOC.Metaclass#getElements <em>Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see dut.control.kermloc.kerMLOC.Metaclass#getElements()
+   * @see #getMetaclass()
+   * @generated
+   */
+  EReference getMetaclass_Elements();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.DataType <em>Data Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Data Type</em>'.
+   * @see dut.control.kermloc.kerMLOC.DataType
+   * @generated
+   */
+  EClass getDataType();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.kermloc.kerMLOC.DataType#getElements <em>Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see dut.control.kermloc.kerMLOC.DataType#getElements()
+   * @see #getDataType()
+   * @generated
+   */
+  EReference getDataType_Elements();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.Association <em>Association</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Association</em>'.
+   * @see dut.control.kermloc.kerMLOC.Association
+   * @generated
+   */
+  EClass getAssociation();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.kermloc.kerMLOC.Association#getElements <em>Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see dut.control.kermloc.kerMLOC.Association#getElements()
+   * @see #getAssociation()
+   * @generated
+   */
+  EReference getAssociation_Elements();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.AssociationStructure <em>Association Structure</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Association Structure</em>'.
+   * @see dut.control.kermloc.kerMLOC.AssociationStructure
+   * @generated
+   */
+  EClass getAssociationStructure();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.kermloc.kerMLOC.AssociationStructure#getElements <em>Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see dut.control.kermloc.kerMLOC.AssociationStructure#getElements()
+   * @see #getAssociationStructure()
+   * @generated
+   */
+  EReference getAssociationStructure_Elements();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.Interaction <em>Interaction</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Interaction</em>'.
+   * @see dut.control.kermloc.kerMLOC.Interaction
+   * @generated
+   */
+  EClass getInteraction();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.kermloc.kerMLOC.Interaction#getElements <em>Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see dut.control.kermloc.kerMLOC.Interaction#getElements()
+   * @see #getInteraction()
+   * @generated
+   */
+  EReference getInteraction_Elements();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.Behavior <em>Behavior</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Behavior</em>'.
+   * @see dut.control.kermloc.kerMLOC.Behavior
+   * @generated
+   */
+  EClass getBehavior();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.kermloc.kerMLOC.Behavior#getElements <em>Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see dut.control.kermloc.kerMLOC.Behavior#getElements()
+   * @see #getBehavior()
+   * @generated
+   */
+  EReference getBehavior_Elements();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.Function <em>Function</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Function</em>'.
+   * @see dut.control.kermloc.kerMLOC.Function
+   * @generated
+   */
+  EClass getFunction();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.kermloc.kerMLOC.Function#getElements <em>Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see dut.control.kermloc.kerMLOC.Function#getElements()
+   * @see #getFunction()
+   * @generated
+   */
+  EReference getFunction_Elements();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.kermloc.kerMLOC.Function#getResultExpressionParameter <em>Result Expression Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Result Expression Parameter</em>'.
+   * @see dut.control.kermloc.kerMLOC.Function#getResultExpressionParameter()
+   * @see #getFunction()
+   * @generated
+   */
+  EReference getFunction_ResultExpressionParameter();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.Predicate <em>Predicate</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Predicate</em>'.
+   * @see dut.control.kermloc.kerMLOC.Predicate
+   * @generated
+   */
+  EClass getPredicate();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.kermloc.kerMLOC.Predicate#getElements <em>Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see dut.control.kermloc.kerMLOC.Predicate#getElements()
+   * @see #getPredicate()
+   * @generated
+   */
+  EReference getPredicate_Elements();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dut.control.kermloc.kerMLOC.Predicate#getResultExpressionParameter <em>Result Expression Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Result Expression Parameter</em>'.
+   * @see dut.control.kermloc.kerMLOC.Predicate#getResultExpressionParameter()
+   * @see #getPredicate()
+   * @generated
+   */
+  EReference getPredicate_ResultExpressionParameter();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.ResultExpression <em>Result Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Result Expression</em>'.
+   * @see dut.control.kermloc.kerMLOC.ResultExpression
+   * @generated
+   */
+  EClass getResultExpression();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.kermloc.kerMLOC.ResultExpression#getResultExpression <em>Result Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Result Expression</em>'.
+   * @see dut.control.kermloc.kerMLOC.ResultExpression#getResultExpression()
+   * @see #getResultExpression()
+   * @generated
+   */
+  EAttribute getResultExpression_ResultExpression();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.Identification <em>Identification</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Identification</em>'.
+   * @see dut.control.kermloc.kerMLOC.Identification
+   * @generated
+   */
+  EClass getIdentification();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.kermloc.kerMLOC.Identification#getDeclaredShortName <em>Declared Short Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Declared Short Name</em>'.
+   * @see dut.control.kermloc.kerMLOC.Identification#getDeclaredShortName()
+   * @see #getIdentification()
+   * @generated
+   */
+  EAttribute getIdentification_DeclaredShortName();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.kermloc.kerMLOC.Identification#getDeclaredName <em>Declared Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Declared Name</em>'.
+   * @see dut.control.kermloc.kerMLOC.Identification#getDeclaredName()
+   * @see #getIdentification()
+   * @generated
+   */
+  EAttribute getIdentification_DeclaredName();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.MemberPrefix <em>Member Prefix</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Member Prefix</em>'.
+   * @see dut.control.kermloc.kerMLOC.MemberPrefix
+   * @generated
+   */
+  EClass getMemberPrefix();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.kermloc.kerMLOC.MemberPrefix#getVisibility <em>Visibility</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Visibility</em>'.
+   * @see dut.control.kermloc.kerMLOC.MemberPrefix#getVisibility()
+   * @see #getMemberPrefix()
+   * @generated
+   */
+  EAttribute getMemberPrefix_Visibility();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.kermloc.kerMLOC.MemberPrefix#isIsVariant <em>Is Variant</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Variant</em>'.
+   * @see dut.control.kermloc.kerMLOC.MemberPrefix#isIsVariant()
+   * @see #getMemberPrefix()
+   * @generated
+   */
+  EAttribute getMemberPrefix_IsVariant();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.PrefixMetadata <em>Prefix Metadata</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Prefix Metadata</em>'.
+   * @see dut.control.kermloc.kerMLOC.PrefixMetadata
+   * @generated
+   */
+  EClass getPrefixMetadata();
+
+  /**
+   * Returns the meta object for the attribute list '{@link dut.control.kermloc.kerMLOC.PrefixMetadata#getPrefixMetadataExtension <em>Prefix Metadata Extension</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Prefix Metadata Extension</em>'.
+   * @see dut.control.kermloc.kerMLOC.PrefixMetadata#getPrefixMetadataExtension()
+   * @see #getPrefixMetadata()
+   * @generated
+   */
+  EAttribute getPrefixMetadata_PrefixMetadataExtension();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.MultiplicityBounds <em>Multiplicity Bounds</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Multiplicity Bounds</em>'.
+   * @see dut.control.kermloc.kerMLOC.MultiplicityBounds
+   * @generated
+   */
+  EClass getMultiplicityBounds();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.kermloc.kerMLOC.MultiplicityBounds#getMultiLow <em>Multi Low</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Multi Low</em>'.
+   * @see dut.control.kermloc.kerMLOC.MultiplicityBounds#getMultiLow()
+   * @see #getMultiplicityBounds()
+   * @generated
+   */
+  EAttribute getMultiplicityBounds_MultiLow();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.kermloc.kerMLOC.MultiplicityBounds#getMultiHigh <em>Multi High</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Multi High</em>'.
+   * @see dut.control.kermloc.kerMLOC.MultiplicityBounds#getMultiHigh()
+   * @see #getMultiplicityBounds()
+   * @generated
+   */
+  EAttribute getMultiplicityBounds_MultiHigh();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.FeatureSpecialization <em>Feature Specialization</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Feature Specialization</em>'.
+   * @see dut.control.kermloc.kerMLOC.FeatureSpecialization
+   * @generated
+   */
+  EClass getFeatureSpecialization();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.TypingFeatureTyping <em>Typing Feature Typing</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Typing Feature Typing</em>'.
+   * @see dut.control.kermloc.kerMLOC.TypingFeatureTyping
+   * @generated
+   */
+  EClass getTypingFeatureTyping();
+
+  /**
+   * Returns the meta object for the attribute list '{@link dut.control.kermloc.kerMLOC.TypingFeatureTyping#getTypings <em>Typings</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Typings</em>'.
+   * @see dut.control.kermloc.kerMLOC.TypingFeatureTyping#getTypings()
+   * @see #getTypingFeatureTyping()
+   * @generated
+   */
+  EAttribute getTypingFeatureTyping_Typings();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.SubsettingFeatureChain <em>Subsetting Feature Chain</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Subsetting Feature Chain</em>'.
+   * @see dut.control.kermloc.kerMLOC.SubsettingFeatureChain
+   * @generated
+   */
+  EClass getSubsettingFeatureChain();
+
+  /**
+   * Returns the meta object for the attribute list '{@link dut.control.kermloc.kerMLOC.SubsettingFeatureChain#getSubsetting <em>Subsetting</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Subsetting</em>'.
+   * @see dut.control.kermloc.kerMLOC.SubsettingFeatureChain#getSubsetting()
+   * @see #getSubsettingFeatureChain()
+   * @generated
+   */
+  EAttribute getSubsettingFeatureChain_Subsetting();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.ReferenceFeatureChain <em>Reference Feature Chain</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Reference Feature Chain</em>'.
+   * @see dut.control.kermloc.kerMLOC.ReferenceFeatureChain
+   * @generated
+   */
+  EClass getReferenceFeatureChain();
+
+  /**
+   * Returns the meta object for the attribute list '{@link dut.control.kermloc.kerMLOC.ReferenceFeatureChain#getReferences <em>References</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>References</em>'.
+   * @see dut.control.kermloc.kerMLOC.ReferenceFeatureChain#getReferences()
+   * @see #getReferenceFeatureChain()
+   * @generated
+   */
+  EAttribute getReferenceFeatureChain_References();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.CrossFeatureChain <em>Cross Feature Chain</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Cross Feature Chain</em>'.
+   * @see dut.control.kermloc.kerMLOC.CrossFeatureChain
+   * @generated
+   */
+  EClass getCrossFeatureChain();
+
+  /**
+   * Returns the meta object for the attribute list '{@link dut.control.kermloc.kerMLOC.CrossFeatureChain#getCrosses <em>Crosses</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Crosses</em>'.
+   * @see dut.control.kermloc.kerMLOC.CrossFeatureChain#getCrosses()
+   * @see #getCrossFeatureChain()
+   * @generated
+   */
+  EAttribute getCrossFeatureChain_Crosses();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.RedefinitionFeatureChain <em>Redefinition Feature Chain</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Redefinition Feature Chain</em>'.
+   * @see dut.control.kermloc.kerMLOC.RedefinitionFeatureChain
+   * @generated
+   */
+  EClass getRedefinitionFeatureChain();
+
+  /**
+   * Returns the meta object for the attribute list '{@link dut.control.kermloc.kerMLOC.RedefinitionFeatureChain#getRedefinitions <em>Redefinitions</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Redefinitions</em>'.
+   * @see dut.control.kermloc.kerMLOC.RedefinitionFeatureChain#getRedefinitions()
+   * @see #getRedefinitionFeatureChain()
+   * @generated
+   */
+  EAttribute getRedefinitionFeatureChain_Redefinitions();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.Subsets <em>Subsets</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Subsets</em>'.
+   * @see dut.control.kermloc.kerMLOC.Subsets
+   * @generated
+   */
+  EClass getSubsets();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.TypePrefix <em>Type Prefix</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Type Prefix</em>'.
+   * @see dut.control.kermloc.kerMLOC.TypePrefix
+   * @generated
+   */
+  EClass getTypePrefix();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.kermloc.kerMLOC.TypePrefix#isIsAbstract <em>Is Abstract</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Abstract</em>'.
+   * @see dut.control.kermloc.kerMLOC.TypePrefix#isIsAbstract()
+   * @see #getTypePrefix()
+   * @generated
+   */
+  EAttribute getTypePrefix_IsAbstract();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.SpecializationPart <em>Specialization Part</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Specialization Part</em>'.
+   * @see dut.control.kermloc.kerMLOC.SpecializationPart
+   * @generated
+   */
+  EClass getSpecializationPart();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.SuperclassingPart <em>Superclassing Part</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Superclassing Part</em>'.
+   * @see dut.control.kermloc.kerMLOC.SuperclassingPart
+   * @generated
+   */
+  EClass getSuperclassingPart();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.ClassifierConjugationPart <em>Classifier Conjugation Part</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Classifier Conjugation Part</em>'.
+   * @see dut.control.kermloc.kerMLOC.ClassifierConjugationPart
+   * @generated
+   */
+  EClass getClassifierConjugationPart();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.kermloc.kerMLOC.ClassifierConjugationPart#getOriginalType <em>Original Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Original Type</em>'.
+   * @see dut.control.kermloc.kerMLOC.ClassifierConjugationPart#getOriginalType()
+   * @see #getClassifierConjugationPart()
+   * @generated
+   */
+  EAttribute getClassifierConjugationPart_OriginalType();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.ConjugationPart <em>Conjugation Part</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Conjugation Part</em>'.
+   * @see dut.control.kermloc.kerMLOC.ConjugationPart
+   * @generated
+   */
+  EClass getConjugationPart();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.kermloc.kerMLOC.ConjugationPart#getOriginalType <em>Original Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Original Type</em>'.
+   * @see dut.control.kermloc.kerMLOC.ConjugationPart#getOriginalType()
+   * @see #getConjugationPart()
+   * @generated
+   */
+  EAttribute getConjugationPart_OriginalType();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.TypeRelationshipPart <em>Type Relationship Part</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Type Relationship Part</em>'.
+   * @see dut.control.kermloc.kerMLOC.TypeRelationshipPart
+   * @generated
+   */
+  EClass getTypeRelationshipPart();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.DisjoiningPart <em>Disjoining Part</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Disjoining Part</em>'.
+   * @see dut.control.kermloc.kerMLOC.DisjoiningPart
+   * @generated
+   */
+  EClass getDisjoiningPart();
+
+  /**
+   * Returns the meta object for the attribute list '{@link dut.control.kermloc.kerMLOC.DisjoiningPart#getDisjoining <em>Disjoining</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Disjoining</em>'.
+   * @see dut.control.kermloc.kerMLOC.DisjoiningPart#getDisjoining()
+   * @see #getDisjoiningPart()
+   * @generated
+   */
+  EAttribute getDisjoiningPart_Disjoining();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.UnioningPart <em>Unioning Part</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Unioning Part</em>'.
+   * @see dut.control.kermloc.kerMLOC.UnioningPart
+   * @generated
+   */
+  EClass getUnioningPart();
+
+  /**
+   * Returns the meta object for the attribute list '{@link dut.control.kermloc.kerMLOC.UnioningPart#getUnioning <em>Unioning</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Unioning</em>'.
+   * @see dut.control.kermloc.kerMLOC.UnioningPart#getUnioning()
+   * @see #getUnioningPart()
+   * @generated
+   */
+  EAttribute getUnioningPart_Unioning();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.IntersectingPart <em>Intersecting Part</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Intersecting Part</em>'.
+   * @see dut.control.kermloc.kerMLOC.IntersectingPart
+   * @generated
+   */
+  EClass getIntersectingPart();
+
+  /**
+   * Returns the meta object for the attribute list '{@link dut.control.kermloc.kerMLOC.IntersectingPart#getIntersecting <em>Intersecting</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Intersecting</em>'.
+   * @see dut.control.kermloc.kerMLOC.IntersectingPart#getIntersecting()
+   * @see #getIntersectingPart()
+   * @generated
+   */
+  EAttribute getIntersectingPart_Intersecting();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.DifferencingPart <em>Differencing Part</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Differencing Part</em>'.
+   * @see dut.control.kermloc.kerMLOC.DifferencingPart
+   * @generated
+   */
+  EClass getDifferencingPart();
+
+  /**
+   * Returns the meta object for the attribute list '{@link dut.control.kermloc.kerMLOC.DifferencingPart#getDifferencing <em>Differencing</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Differencing</em>'.
+   * @see dut.control.kermloc.kerMLOC.DifferencingPart#getDifferencing()
+   * @see #getDifferencingPart()
+   * @generated
+   */
+  EAttribute getDifferencingPart_Differencing();
+
+  /**
+   * Returns the meta object for class '{@link dut.control.kermloc.kerMLOC.ClassifierDeclaration <em>Classifier Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Classifier Declaration</em>'.
+   * @see dut.control.kermloc.kerMLOC.ClassifierDeclaration
+   * @generated
+   */
+  EClass getClassifierDeclaration();
+
+  /**
+   * Returns the meta object for the attribute '{@link dut.control.kermloc.kerMLOC.ClassifierDeclaration#isIsSufficient <em>Is Sufficient</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Sufficient</em>'.
+   * @see dut.control.kermloc.kerMLOC.ClassifierDeclaration#isIsSufficient()
+   * @see #getClassifierDeclaration()
+   * @generated
+   */
+  EAttribute getClassifierDeclaration_IsSufficient();
 
   /**
    * Returns the meta object for enum '{@link dut.control.kermloc.kerMLOC.VisibilityIndicator <em>Visibility Indicator</em>}'.
@@ -151,6 +5274,446 @@ public interface KerMLOCPackage extends EPackage
   interface Literals
   {
     /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.RootNamespaceImpl <em>Root Namespace</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.RootNamespaceImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getRootNamespace()
+     * @generated
+     */
+    EClass ROOT_NAMESPACE = eINSTANCE.getRootNamespace();
+
+    /**
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ROOT_NAMESPACE__ELEMENTS = eINSTANCE.getRootNamespace_Elements();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.GeneralBodyElementsImpl <em>General Body Elements</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.GeneralBodyElementsImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getGeneralBodyElements()
+     * @generated
+     */
+    EClass GENERAL_BODY_ELEMENTS = eINSTANCE.getGeneralBodyElements();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.AnnotatingBodyElementImpl <em>Annotating Body Element</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.AnnotatingBodyElementImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getAnnotatingBodyElement()
+     * @generated
+     */
+    EClass ANNOTATING_BODY_ELEMENT = eINSTANCE.getAnnotatingBodyElement();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.PackageBodyElementImpl <em>Package Body Element</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.PackageBodyElementImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getPackageBodyElement()
+     * @generated
+     */
+    EClass PACKAGE_BODY_ELEMENT = eINSTANCE.getPackageBodyElement();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.TypeBodyElementImpl <em>Type Body Element</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.TypeBodyElementImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getTypeBodyElement()
+     * @generated
+     */
+    EClass TYPE_BODY_ELEMENT = eINSTANCE.getTypeBodyElement();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.NamespaceBodyElementImpl <em>Namespace Body Element</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.NamespaceBodyElementImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getNamespaceBodyElement()
+     * @generated
+     */
+    EClass NAMESPACE_BODY_ELEMENT = eINSTANCE.getNamespaceBodyElement();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.FunctionBodyElementImpl <em>Function Body Element</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.FunctionBodyElementImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getFunctionBodyElement()
+     * @generated
+     */
+    EClass FUNCTION_BODY_ELEMENT = eINSTANCE.getFunctionBodyElement();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.AnnotatingElementImpl <em>Annotating Element</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.AnnotatingElementImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getAnnotatingElement()
+     * @generated
+     */
+    EClass ANNOTATING_ELEMENT = eINSTANCE.getAnnotatingElement();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.NonFeatureElementImpl <em>Non Feature Element</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.NonFeatureElementImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getNonFeatureElement()
+     * @generated
+     */
+    EClass NON_FEATURE_ELEMENT = eINSTANCE.getNonFeatureElement();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.PackageImpl <em>Package</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.PackageImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getPackage()
+     * @generated
+     */
+    EClass PACKAGE = eINSTANCE.getPackage();
+
+    /**
+     * The meta object literal for the '<em><b>Declared Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PACKAGE__DECLARED_NAME = eINSTANCE.getPackage_DeclaredName();
+
+    /**
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PACKAGE__ELEMENTS = eINSTANCE.getPackage_Elements();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.LibraryPackageImpl <em>Library Package</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.LibraryPackageImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getLibraryPackage()
+     * @generated
+     */
+    EClass LIBRARY_PACKAGE = eINSTANCE.getLibraryPackage();
+
+    /**
+     * The meta object literal for the '<em><b>Is Standard</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LIBRARY_PACKAGE__IS_STANDARD = eINSTANCE.getLibraryPackage_IsStandard();
+
+    /**
+     * The meta object literal for the '<em><b>Is Library</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LIBRARY_PACKAGE__IS_LIBRARY = eINSTANCE.getLibraryPackage_IsLibrary();
+
+    /**
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LIBRARY_PACKAGE__ELEMENTS = eINSTANCE.getLibraryPackage_Elements();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.DependencyImpl <em>Dependency</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.DependencyImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getDependency()
+     * @generated
+     */
+    EClass DEPENDENCY = eINSTANCE.getDependency();
+
+    /**
+     * The meta object literal for the '<em><b>Client</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DEPENDENCY__CLIENT = eINSTANCE.getDependency_Client();
+
+    /**
+     * The meta object literal for the '<em><b>Supplier</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DEPENDENCY__SUPPLIER = eINSTANCE.getDependency_Supplier();
+
+    /**
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DEPENDENCY__ELEMENTS = eINSTANCE.getDependency_Elements();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.CommentImpl <em>Comment</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.CommentImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getComment()
+     * @generated
+     */
+    EClass COMMENT = eINSTANCE.getComment();
+
+    /**
+     * The meta object literal for the '<em><b>Annotated Element</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COMMENT__ANNOTATED_ELEMENT = eINSTANCE.getComment_AnnotatedElement();
+
+    /**
+     * The meta object literal for the '<em><b>Locale</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COMMENT__LOCALE = eINSTANCE.getComment_Locale();
+
+    /**
+     * The meta object literal for the '<em><b>Body</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COMMENT__BODY = eINSTANCE.getComment_Body();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.DocumentationImpl <em>Documentation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.DocumentationImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getDocumentation()
+     * @generated
+     */
+    EClass DOCUMENTATION = eINSTANCE.getDocumentation();
+
+    /**
+     * The meta object literal for the '<em><b>Locale</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DOCUMENTATION__LOCALE = eINSTANCE.getDocumentation_Locale();
+
+    /**
+     * The meta object literal for the '<em><b>Body</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DOCUMENTATION__BODY = eINSTANCE.getDocumentation_Body();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.TextualRepresentationImpl <em>Textual Representation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.TextualRepresentationImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getTextualRepresentation()
+     * @generated
+     */
+    EClass TEXTUAL_REPRESENTATION = eINSTANCE.getTextualRepresentation();
+
+    /**
+     * The meta object literal for the '<em><b>Language</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TEXTUAL_REPRESENTATION__LANGUAGE = eINSTANCE.getTextualRepresentation_Language();
+
+    /**
+     * The meta object literal for the '<em><b>Body</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TEXTUAL_REPRESENTATION__BODY = eINSTANCE.getTextualRepresentation_Body();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.ImportElementImpl <em>Import Element</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.ImportElementImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getImportElement()
+     * @generated
+     */
+    EClass IMPORT_ELEMENT = eINSTANCE.getImportElement();
+
+    /**
+     * The meta object literal for the '<em><b>Visibility</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute IMPORT_ELEMENT__VISIBILITY = eINSTANCE.getImportElement_Visibility();
+
+    /**
+     * The meta object literal for the '<em><b>Is Import All</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute IMPORT_ELEMENT__IS_IMPORT_ALL = eINSTANCE.getImportElement_IsImportAll();
+
+    /**
+     * The meta object literal for the '<em><b>Declared Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute IMPORT_ELEMENT__DECLARED_NAME = eINSTANCE.getImportElement_DeclaredName();
+
+    /**
+     * The meta object literal for the '<em><b>Is Namespace</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute IMPORT_ELEMENT__IS_NAMESPACE = eINSTANCE.getImportElement_IsNamespace();
+
+    /**
+     * The meta object literal for the '<em><b>Is Recursive</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute IMPORT_ELEMENT__IS_RECURSIVE = eINSTANCE.getImportElement_IsRecursive();
+
+    /**
+     * The meta object literal for the '<em><b>Filter Package Expression</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute IMPORT_ELEMENT__FILTER_PACKAGE_EXPRESSION = eINSTANCE.getImportElement_FilterPackageExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IMPORT_ELEMENT__ELEMENTS = eINSTANCE.getImportElement_Elements();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.CodeAnnotationImpl <em>Code Annotation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.CodeAnnotationImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getCodeAnnotation()
+     * @generated
+     */
+    EClass CODE_ANNOTATION = eINSTANCE.getCodeAnnotation();
+
+    /**
+     * The meta object literal for the '<em><b>Body</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CODE_ANNOTATION__BODY = eINSTANCE.getCodeAnnotation_Body();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.AliasElementImpl <em>Alias Element</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.AliasElementImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getAliasElement()
+     * @generated
+     */
+    EClass ALIAS_ELEMENT = eINSTANCE.getAliasElement();
+
+    /**
+     * The meta object literal for the '<em><b>Member Short Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ALIAS_ELEMENT__MEMBER_SHORT_NAME = eINSTANCE.getAliasElement_MemberShortName();
+
+    /**
+     * The meta object literal for the '<em><b>Member Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ALIAS_ELEMENT__MEMBER_NAME = eINSTANCE.getAliasElement_MemberName();
+
+    /**
+     * The meta object literal for the '<em><b>Member Element</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ALIAS_ELEMENT__MEMBER_ELEMENT = eINSTANCE.getAliasElement_MemberElement();
+
+    /**
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ALIAS_ELEMENT__ELEMENTS = eINSTANCE.getAliasElement_Elements();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.ElementFilterElementImpl <em>Element Filter Element</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.ElementFilterElementImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getElementFilterElement()
+     * @generated
+     */
+    EClass ELEMENT_FILTER_ELEMENT = eINSTANCE.getElementFilterElement();
+
+    /**
+     * The meta object literal for the '<em><b>Filter Expression</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ELEMENT_FILTER_ELEMENT__FILTER_EXPRESSION = eINSTANCE.getElementFilterElement_FilterExpression();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.MultiplicityImpl <em>Multiplicity</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.MultiplicityImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getMultiplicity()
+     * @generated
+     */
+    EClass MULTIPLICITY = eINSTANCE.getMultiplicity();
+
+    /**
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MULTIPLICITY__ELEMENTS = eINSTANCE.getMultiplicity_Elements();
+
+    /**
      * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.NamespaceImpl <em>Namespace</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -161,12 +5724,658 @@ public interface KerMLOCPackage extends EPackage
     EClass NAMESPACE = eINSTANCE.getNamespace();
 
     /**
-     * The meta object literal for the '<em><b>Elements</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Is Namespace</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute NAMESPACE__ELEMENTS = eINSTANCE.getNamespace_Elements();
+    EAttribute NAMESPACE__IS_NAMESPACE = eINSTANCE.getNamespace_IsNamespace();
+
+    /**
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NAMESPACE__ELEMENTS = eINSTANCE.getNamespace_Elements();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.TypeImpl <em>Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.TypeImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getType()
+     * @generated
+     */
+    EClass TYPE = eINSTANCE.getType();
+
+    /**
+     * The meta object literal for the '<em><b>Is Sufficient</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TYPE__IS_SUFFICIENT = eINSTANCE.getType_IsSufficient();
+
+    /**
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE__ELEMENTS = eINSTANCE.getType_Elements();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.ClassifierImpl <em>Classifier</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.ClassifierImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getClassifier()
+     * @generated
+     */
+    EClass CLASSIFIER = eINSTANCE.getClassifier();
+
+    /**
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CLASSIFIER__ELEMENTS = eINSTANCE.getClassifier_Elements();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.ClassImpl <em>Class</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.ClassImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getClass_()
+     * @generated
+     */
+    EClass CLASS = eINSTANCE.getClass_();
+
+    /**
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CLASS__ELEMENTS = eINSTANCE.getClass_Elements();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.StructureImpl <em>Structure</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.StructureImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getStructure()
+     * @generated
+     */
+    EClass STRUCTURE = eINSTANCE.getStructure();
+
+    /**
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STRUCTURE__ELEMENTS = eINSTANCE.getStructure_Elements();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.MetaclassImpl <em>Metaclass</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.MetaclassImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getMetaclass()
+     * @generated
+     */
+    EClass METACLASS = eINSTANCE.getMetaclass();
+
+    /**
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference METACLASS__ELEMENTS = eINSTANCE.getMetaclass_Elements();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.DataTypeImpl <em>Data Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.DataTypeImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getDataType()
+     * @generated
+     */
+    EClass DATA_TYPE = eINSTANCE.getDataType();
+
+    /**
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DATA_TYPE__ELEMENTS = eINSTANCE.getDataType_Elements();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.AssociationImpl <em>Association</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.AssociationImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getAssociation()
+     * @generated
+     */
+    EClass ASSOCIATION = eINSTANCE.getAssociation();
+
+    /**
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ASSOCIATION__ELEMENTS = eINSTANCE.getAssociation_Elements();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.AssociationStructureImpl <em>Association Structure</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.AssociationStructureImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getAssociationStructure()
+     * @generated
+     */
+    EClass ASSOCIATION_STRUCTURE = eINSTANCE.getAssociationStructure();
+
+    /**
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ASSOCIATION_STRUCTURE__ELEMENTS = eINSTANCE.getAssociationStructure_Elements();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.InteractionImpl <em>Interaction</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.InteractionImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getInteraction()
+     * @generated
+     */
+    EClass INTERACTION = eINSTANCE.getInteraction();
+
+    /**
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INTERACTION__ELEMENTS = eINSTANCE.getInteraction_Elements();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.BehaviorImpl <em>Behavior</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.BehaviorImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getBehavior()
+     * @generated
+     */
+    EClass BEHAVIOR = eINSTANCE.getBehavior();
+
+    /**
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BEHAVIOR__ELEMENTS = eINSTANCE.getBehavior_Elements();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.FunctionImpl <em>Function</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.FunctionImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getFunction()
+     * @generated
+     */
+    EClass FUNCTION = eINSTANCE.getFunction();
+
+    /**
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FUNCTION__ELEMENTS = eINSTANCE.getFunction_Elements();
+
+    /**
+     * The meta object literal for the '<em><b>Result Expression Parameter</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FUNCTION__RESULT_EXPRESSION_PARAMETER = eINSTANCE.getFunction_ResultExpressionParameter();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.PredicateImpl <em>Predicate</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.PredicateImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getPredicate()
+     * @generated
+     */
+    EClass PREDICATE = eINSTANCE.getPredicate();
+
+    /**
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PREDICATE__ELEMENTS = eINSTANCE.getPredicate_Elements();
+
+    /**
+     * The meta object literal for the '<em><b>Result Expression Parameter</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PREDICATE__RESULT_EXPRESSION_PARAMETER = eINSTANCE.getPredicate_ResultExpressionParameter();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.ResultExpressionImpl <em>Result Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.ResultExpressionImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getResultExpression()
+     * @generated
+     */
+    EClass RESULT_EXPRESSION = eINSTANCE.getResultExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Result Expression</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RESULT_EXPRESSION__RESULT_EXPRESSION = eINSTANCE.getResultExpression_ResultExpression();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.IdentificationImpl <em>Identification</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.IdentificationImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getIdentification()
+     * @generated
+     */
+    EClass IDENTIFICATION = eINSTANCE.getIdentification();
+
+    /**
+     * The meta object literal for the '<em><b>Declared Short Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute IDENTIFICATION__DECLARED_SHORT_NAME = eINSTANCE.getIdentification_DeclaredShortName();
+
+    /**
+     * The meta object literal for the '<em><b>Declared Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute IDENTIFICATION__DECLARED_NAME = eINSTANCE.getIdentification_DeclaredName();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.MemberPrefixImpl <em>Member Prefix</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.MemberPrefixImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getMemberPrefix()
+     * @generated
+     */
+    EClass MEMBER_PREFIX = eINSTANCE.getMemberPrefix();
+
+    /**
+     * The meta object literal for the '<em><b>Visibility</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MEMBER_PREFIX__VISIBILITY = eINSTANCE.getMemberPrefix_Visibility();
+
+    /**
+     * The meta object literal for the '<em><b>Is Variant</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MEMBER_PREFIX__IS_VARIANT = eINSTANCE.getMemberPrefix_IsVariant();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.PrefixMetadataImpl <em>Prefix Metadata</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.PrefixMetadataImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getPrefixMetadata()
+     * @generated
+     */
+    EClass PREFIX_METADATA = eINSTANCE.getPrefixMetadata();
+
+    /**
+     * The meta object literal for the '<em><b>Prefix Metadata Extension</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PREFIX_METADATA__PREFIX_METADATA_EXTENSION = eINSTANCE.getPrefixMetadata_PrefixMetadataExtension();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.MultiplicityBoundsImpl <em>Multiplicity Bounds</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.MultiplicityBoundsImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getMultiplicityBounds()
+     * @generated
+     */
+    EClass MULTIPLICITY_BOUNDS = eINSTANCE.getMultiplicityBounds();
+
+    /**
+     * The meta object literal for the '<em><b>Multi Low</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MULTIPLICITY_BOUNDS__MULTI_LOW = eINSTANCE.getMultiplicityBounds_MultiLow();
+
+    /**
+     * The meta object literal for the '<em><b>Multi High</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MULTIPLICITY_BOUNDS__MULTI_HIGH = eINSTANCE.getMultiplicityBounds_MultiHigh();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.FeatureSpecializationImpl <em>Feature Specialization</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.FeatureSpecializationImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getFeatureSpecialization()
+     * @generated
+     */
+    EClass FEATURE_SPECIALIZATION = eINSTANCE.getFeatureSpecialization();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.TypingFeatureTypingImpl <em>Typing Feature Typing</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.TypingFeatureTypingImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getTypingFeatureTyping()
+     * @generated
+     */
+    EClass TYPING_FEATURE_TYPING = eINSTANCE.getTypingFeatureTyping();
+
+    /**
+     * The meta object literal for the '<em><b>Typings</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TYPING_FEATURE_TYPING__TYPINGS = eINSTANCE.getTypingFeatureTyping_Typings();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.SubsettingFeatureChainImpl <em>Subsetting Feature Chain</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.SubsettingFeatureChainImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getSubsettingFeatureChain()
+     * @generated
+     */
+    EClass SUBSETTING_FEATURE_CHAIN = eINSTANCE.getSubsettingFeatureChain();
+
+    /**
+     * The meta object literal for the '<em><b>Subsetting</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SUBSETTING_FEATURE_CHAIN__SUBSETTING = eINSTANCE.getSubsettingFeatureChain_Subsetting();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.ReferenceFeatureChainImpl <em>Reference Feature Chain</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.ReferenceFeatureChainImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getReferenceFeatureChain()
+     * @generated
+     */
+    EClass REFERENCE_FEATURE_CHAIN = eINSTANCE.getReferenceFeatureChain();
+
+    /**
+     * The meta object literal for the '<em><b>References</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute REFERENCE_FEATURE_CHAIN__REFERENCES = eINSTANCE.getReferenceFeatureChain_References();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.CrossFeatureChainImpl <em>Cross Feature Chain</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.CrossFeatureChainImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getCrossFeatureChain()
+     * @generated
+     */
+    EClass CROSS_FEATURE_CHAIN = eINSTANCE.getCrossFeatureChain();
+
+    /**
+     * The meta object literal for the '<em><b>Crosses</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CROSS_FEATURE_CHAIN__CROSSES = eINSTANCE.getCrossFeatureChain_Crosses();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.RedefinitionFeatureChainImpl <em>Redefinition Feature Chain</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.RedefinitionFeatureChainImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getRedefinitionFeatureChain()
+     * @generated
+     */
+    EClass REDEFINITION_FEATURE_CHAIN = eINSTANCE.getRedefinitionFeatureChain();
+
+    /**
+     * The meta object literal for the '<em><b>Redefinitions</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute REDEFINITION_FEATURE_CHAIN__REDEFINITIONS = eINSTANCE.getRedefinitionFeatureChain_Redefinitions();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.SubsetsImpl <em>Subsets</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.SubsetsImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getSubsets()
+     * @generated
+     */
+    EClass SUBSETS = eINSTANCE.getSubsets();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.TypePrefixImpl <em>Type Prefix</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.TypePrefixImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getTypePrefix()
+     * @generated
+     */
+    EClass TYPE_PREFIX = eINSTANCE.getTypePrefix();
+
+    /**
+     * The meta object literal for the '<em><b>Is Abstract</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TYPE_PREFIX__IS_ABSTRACT = eINSTANCE.getTypePrefix_IsAbstract();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.SpecializationPartImpl <em>Specialization Part</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.SpecializationPartImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getSpecializationPart()
+     * @generated
+     */
+    EClass SPECIALIZATION_PART = eINSTANCE.getSpecializationPart();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.SuperclassingPartImpl <em>Superclassing Part</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.SuperclassingPartImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getSuperclassingPart()
+     * @generated
+     */
+    EClass SUPERCLASSING_PART = eINSTANCE.getSuperclassingPart();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.ClassifierConjugationPartImpl <em>Classifier Conjugation Part</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.ClassifierConjugationPartImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getClassifierConjugationPart()
+     * @generated
+     */
+    EClass CLASSIFIER_CONJUGATION_PART = eINSTANCE.getClassifierConjugationPart();
+
+    /**
+     * The meta object literal for the '<em><b>Original Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CLASSIFIER_CONJUGATION_PART__ORIGINAL_TYPE = eINSTANCE.getClassifierConjugationPart_OriginalType();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.ConjugationPartImpl <em>Conjugation Part</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.ConjugationPartImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getConjugationPart()
+     * @generated
+     */
+    EClass CONJUGATION_PART = eINSTANCE.getConjugationPart();
+
+    /**
+     * The meta object literal for the '<em><b>Original Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONJUGATION_PART__ORIGINAL_TYPE = eINSTANCE.getConjugationPart_OriginalType();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.TypeRelationshipPartImpl <em>Type Relationship Part</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.TypeRelationshipPartImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getTypeRelationshipPart()
+     * @generated
+     */
+    EClass TYPE_RELATIONSHIP_PART = eINSTANCE.getTypeRelationshipPart();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.DisjoiningPartImpl <em>Disjoining Part</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.DisjoiningPartImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getDisjoiningPart()
+     * @generated
+     */
+    EClass DISJOINING_PART = eINSTANCE.getDisjoiningPart();
+
+    /**
+     * The meta object literal for the '<em><b>Disjoining</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DISJOINING_PART__DISJOINING = eINSTANCE.getDisjoiningPart_Disjoining();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.UnioningPartImpl <em>Unioning Part</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.UnioningPartImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getUnioningPart()
+     * @generated
+     */
+    EClass UNIONING_PART = eINSTANCE.getUnioningPart();
+
+    /**
+     * The meta object literal for the '<em><b>Unioning</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute UNIONING_PART__UNIONING = eINSTANCE.getUnioningPart_Unioning();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.IntersectingPartImpl <em>Intersecting Part</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.IntersectingPartImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getIntersectingPart()
+     * @generated
+     */
+    EClass INTERSECTING_PART = eINSTANCE.getIntersectingPart();
+
+    /**
+     * The meta object literal for the '<em><b>Intersecting</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INTERSECTING_PART__INTERSECTING = eINSTANCE.getIntersectingPart_Intersecting();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.DifferencingPartImpl <em>Differencing Part</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.DifferencingPartImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getDifferencingPart()
+     * @generated
+     */
+    EClass DIFFERENCING_PART = eINSTANCE.getDifferencingPart();
+
+    /**
+     * The meta object literal for the '<em><b>Differencing</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DIFFERENCING_PART__DIFFERENCING = eINSTANCE.getDifferencingPart_Differencing();
+
+    /**
+     * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.impl.ClassifierDeclarationImpl <em>Classifier Declaration</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dut.control.kermloc.kerMLOC.impl.ClassifierDeclarationImpl
+     * @see dut.control.kermloc.kerMLOC.impl.KerMLOCPackageImpl#getClassifierDeclaration()
+     * @generated
+     */
+    EClass CLASSIFIER_DECLARATION = eINSTANCE.getClassifierDeclaration();
+
+    /**
+     * The meta object literal for the '<em><b>Is Sufficient</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CLASSIFIER_DECLARATION__IS_SUFFICIENT = eINSTANCE.getClassifierDeclaration_IsSufficient();
 
     /**
      * The meta object literal for the '{@link dut.control.kermloc.kerMLOC.VisibilityIndicator <em>Visibility Indicator</em>}' enum.

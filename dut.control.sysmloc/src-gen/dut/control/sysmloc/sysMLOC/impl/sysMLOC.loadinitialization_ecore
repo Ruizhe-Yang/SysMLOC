@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="sysMLOC" nsURI="http://www.control.dut/sysmloc/SysMLOC" nsPrefix="sysMLOC">
-  <eClassifiers xsi:type="ecore:EClass" name="Namespace">
+  <eClassifiers xsi:type="ecore:EClass" name="RootNamespace">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//GeneralBodyElements" containment="true"/>
   </eClassifiers>
@@ -19,8 +19,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="CaseBodyElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="ViewDefinitionBodyElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="ViewBodyElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="RelationshipBodyElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AnnotatingElement" eSuperTypes="#//GeneralBodyElements #//EnumerationBodyElement #//AnnotatingBodyElement #//RelationshipBodyElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AnnotatingElement" eSuperTypes="#//GeneralBodyElements #//EnumerationBodyElement #//AnnotatingBodyElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="DefinitionElements" eSuperTypes="#//GeneralBodyElements"/>
   <eClassifiers xsi:type="ecore:EClass" name="UsageElements" eSuperTypes="#//GeneralBodyElements"/>
   <eClassifiers xsi:type="ecore:EClass" name="NonOccurrenceUsageElement" eSuperTypes="#//UsageElements"/>
@@ -44,7 +43,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="filterPackageExpression"
         unique="false" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="#//RelationshipBodyElement" containment="true"/>
+        eType="#//AnnotatingBodyElement" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExposeElement" eSuperTypes="#//ViewBodyElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="declaredName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -53,22 +52,22 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="filterPackageExpression"
         unique="false" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="#//RelationshipBodyElement" containment="true"/>
+        eType="#//AnnotatingBodyElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CodeAnnotation" eSuperTypes="#//GeneralBodyElements #//EnumerationBodyElement #//AnnotatingBodyElement #//RelationshipBodyElement">
+  <eClassifiers xsi:type="ecore:EClass" name="CodeAnnotation" eSuperTypes="#//GeneralBodyElements #//EnumerationBodyElement #//AnnotatingBodyElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="body" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Comment" eSuperTypes="#//AnnotatingElement #//Identification">
+  <eClassifiers xsi:type="ecore:EClass" name="Comment" eSuperTypes="#//AnnotatingElement #//MemberPrefix #//Identification">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="annotatedElement" unique="false"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="locale" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="body" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Documentation" eSuperTypes="#//AnnotatingElement #//Identification">
+  <eClassifiers xsi:type="ecore:EClass" name="Documentation" eSuperTypes="#//AnnotatingElement #//MemberPrefix #//Identification">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="locale" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="body" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TextualRepresentation" eSuperTypes="#//AnnotatingElement #//Identification">
+  <eClassifiers xsi:type="ecore:EClass" name="TextualRepresentation" eSuperTypes="#//AnnotatingElement #//MemberPrefix #//Identification">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="body" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -429,7 +428,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="InitialNode" eSuperTypes="#//ActionNodeElements #//MemberPrefix">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="memberElement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="#//RelationshipBodyElement" containment="true"/>
+        eType="#//AnnotatingBodyElement" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SendNode" eSuperTypes="#//ActionNodeElements #//EmptySuccessionPrefix #//MemberPrefix #//OccurrenceUsagePrefix #//EndUsagePrefix #//CrossEndUsagePrefix #//BasicUsagePrefix #//RefPrefix #//BasicDefinitionPrefix #//UsageExtensionKeyword #//PrefixMetadata #//ActionNodeUsageDeclaration #//UsageDeclaration #//FeatureDeclaration #//Identification #//FeatureSpecializationPart #//FeatureSpecialization #//TypingFeatureTyping #//SubsettingFeatureChain #//ReferenceFeatureChain #//CrossFeatureChain #//RedefinitionFeatureChain #//MultiplicityPart #//MultiplicityRange #//MultiplicityModifiers">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sendNodeParameter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

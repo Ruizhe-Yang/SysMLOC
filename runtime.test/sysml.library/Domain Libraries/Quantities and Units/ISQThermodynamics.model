@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+<sysMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
   <elements xsi:type="sysMLOC:LibraryPackage" declaredName="ISQThermodynamics" isStandard="true" isLibrary="true">
     <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;     * International System of Quantities and Units&#xA;     * Generated on 2025-03-13T15:00:05Z from standard ISO-80000-5:2019 &quot;Thermodynamics&quot;&#xA;     * see also https://www.iso.org/standard/64976.html&#xA;     * &#xA;     * Note 1: In documentation comments, AsciiMath notation (see http://asciimath.org/) is used for mathematical concepts,&#xA;     * with Greek letters in Unicode encoding. In running text, AsciiMath is placed between backticks.&#xA;     * Note 2: For vector and tensor quantities currently the unit and quantity value type for their (scalar) magnitude is &#xA;     * defined, as well as their typical Cartesian 3d VectorMeasurementReference (i.e. coordinate system) &#xA;     * or TensorMeasurementReference.&#xA;     */"/>
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues::Real"/>
@@ -1834,4 +1834,4 @@
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 5-36 dew-point temperature&#xA;         * symbol(s): `T_d`&#xA;         * application domain: generic&#xA;         * name: DewPointTemperature (specializes ThermodynamicTemperature)&#xA;         * quantity dimension: &#x398;^1&#xA;         * measurement unit(s): K&#xA;         * tensor order: 0&#xA;         * definition: temperature at which water vapour in the air reaches saturation under isobaric conditions&#xA;         * remarks: The corresponding Celsius temperature, denoted `t_d`, is still called dew-point temperature. The unit for the corresponding Celsius temperature is degree Celsius, symbol &#xb0;C.&#xA;         */"/>
     </elements>
   </elements>
-</sysMLOC:Namespace>
+</sysMLOC:RootNamespace>

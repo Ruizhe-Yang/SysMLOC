@@ -3,8 +3,8 @@
  */
 package dut.control.sysmloc.sysMLOC.impl;
 
+import dut.control.sysmloc.sysMLOC.AnnotatingBodyElement;
 import dut.control.sysmloc.sysMLOC.ImportElement;
-import dut.control.sysmloc.sysMLOC.RelationshipBodyElement;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 import dut.control.sysmloc.sysMLOC.VisibilityIndicator;
 
@@ -163,7 +163,7 @@ public class ImportElementImpl extends GeneralBodyElementsImpl implements Import
    * @generated
    * @ordered
    */
-  protected EList<RelationshipBodyElement> elements;
+  protected EList<AnnotatingBodyElement> elements;
 
   /**
    * <!-- begin-user-doc -->
@@ -332,11 +332,11 @@ public class ImportElementImpl extends GeneralBodyElementsImpl implements Import
    * @generated
    */
   @Override
-  public EList<RelationshipBodyElement> getElements()
+  public EList<AnnotatingBodyElement> getElements()
   {
     if (elements == null)
     {
-      elements = new EObjectContainmentEList<RelationshipBodyElement>(RelationshipBodyElement.class, this, SysMLOCPackage.IMPORT_ELEMENT__ELEMENTS);
+      elements = new EObjectContainmentEList<AnnotatingBodyElement>(AnnotatingBodyElement.class, this, SysMLOCPackage.IMPORT_ELEMENT__ELEMENTS);
     }
     return elements;
   }
@@ -417,7 +417,7 @@ public class ImportElementImpl extends GeneralBodyElementsImpl implements Import
         return;
       case SysMLOCPackage.IMPORT_ELEMENT__ELEMENTS:
         getElements().clear();
-        getElements().addAll((Collection<? extends RelationshipBodyElement>)newValue);
+        getElements().addAll((Collection<? extends AnnotatingBodyElement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+<sysMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
   <elements xsi:type="sysMLOC:LibraryPackage" declaredName="ISQElectromagnetism" isStandard="true" isLibrary="true">
     <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;     * International System of Quantities and Units&#xA;     * Generated on 2025-03-13T15:00:05Z from standard IEC-80000-6:2008 &quot;Electromagnetism&quot;&#xA;     * see also https://www.iso.org/obp/ui/#iso:std:iec:80000:-6:ed-1:v1:en,fr&#xA;     * &#xA;     * Note 1: In documentation comments, AsciiMath notation (see http://asciimath.org/) is used for mathematical concepts,&#xA;     * with Greek letters in Unicode encoding. In running text, AsciiMath is placed between backticks.&#xA;     * Note 2: For vector and tensor quantities currently the unit and quantity value type for their (scalar) magnitude is &#xA;     * defined, as well as their typical Cartesian 3d VectorMeasurementReference (i.e. coordinate system) &#xA;     * or TensorMeasurementReference.&#xA;     */"/>
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues::Real"/>
@@ -3479,4 +3479,4 @@
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;         * source: item 6-62 active energy&#xA;         * symbol(s): `W`&#xA;         * application domain: generic&#xA;         * name: ActiveEnergy (specializes Energy)&#xA;         * quantity dimension: L^2*M^1*T^-2&#xA;         * measurement unit(s): J, W*h&#xA;         * tensor order: 0&#xA;         * definition: `W = int_(t_1)^(t_2) p dt` where `p` is instantaneous power (item 6-45), and the integral interval is the time interval from `t_1` to `t_2`&#xA;         * remarks: None.&#xA;         */"/>
     </elements>
   </elements>
-</sysMLOC:Namespace>
+</sysMLOC:RootNamespace>

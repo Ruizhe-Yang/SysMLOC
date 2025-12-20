@@ -5,7 +5,9 @@ package dut.control.sysmloc.sysMLOC.impl;
 
 import dut.control.sysmloc.sysMLOC.Documentation;
 import dut.control.sysmloc.sysMLOC.Identification;
+import dut.control.sysmloc.sysMLOC.MemberPrefix;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
+import dut.control.sysmloc.sysMLOC.VisibilityIndicator;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -21,6 +23,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DocumentationImpl#getVisibility <em>Visibility</em>}</li>
+ *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DocumentationImpl#isIsVariant <em>Is Variant</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DocumentationImpl#getDeclaredShortName <em>Declared Short Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DocumentationImpl#getDeclaredName <em>Declared Name</em>}</li>
  *   <li>{@link dut.control.sysmloc.sysMLOC.impl.DocumentationImpl#getLocale <em>Locale</em>}</li>
@@ -31,6 +35,46 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class DocumentationImpl extends AnnotatingElementImpl implements Documentation
 {
+  /**
+   * The default value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVisibility()
+   * @generated
+   * @ordered
+   */
+  protected static final VisibilityIndicator VISIBILITY_EDEFAULT = VisibilityIndicator.NULL;
+
+  /**
+   * The cached value of the '{@link #getVisibility() <em>Visibility</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVisibility()
+   * @generated
+   * @ordered
+   */
+  protected VisibilityIndicator visibility = VISIBILITY_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsVariant() <em>Is Variant</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsVariant()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_VARIANT_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsVariant() <em>Is Variant</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsVariant()
+   * @generated
+   * @ordered
+   */
+  protected boolean isVariant = IS_VARIANT_EDEFAULT;
+
   /**
    * The default value of the '{@link #getDeclaredShortName() <em>Declared Short Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -130,6 +174,56 @@ public class DocumentationImpl extends AnnotatingElementImpl implements Document
   protected EClass eStaticClass()
   {
     return SysMLOCPackage.eINSTANCE.getDocumentation();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public VisibilityIndicator getVisibility()
+  {
+    return visibility;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setVisibility(VisibilityIndicator newVisibility)
+  {
+    VisibilityIndicator oldVisibility = visibility;
+    visibility = newVisibility == null ? VISIBILITY_EDEFAULT : newVisibility;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.DOCUMENTATION__VISIBILITY, oldVisibility, visibility));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsVariant()
+  {
+    return isVariant;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsVariant(boolean newIsVariant)
+  {
+    boolean oldIsVariant = isVariant;
+    isVariant = newIsVariant;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SysMLOCPackage.DOCUMENTATION__IS_VARIANT, oldIsVariant, isVariant));
   }
 
   /**
@@ -242,6 +336,10 @@ public class DocumentationImpl extends AnnotatingElementImpl implements Document
   {
     switch (featureID)
     {
+      case SysMLOCPackage.DOCUMENTATION__VISIBILITY:
+        return getVisibility();
+      case SysMLOCPackage.DOCUMENTATION__IS_VARIANT:
+        return isIsVariant();
       case SysMLOCPackage.DOCUMENTATION__DECLARED_SHORT_NAME:
         return getDeclaredShortName();
       case SysMLOCPackage.DOCUMENTATION__DECLARED_NAME:
@@ -264,6 +362,12 @@ public class DocumentationImpl extends AnnotatingElementImpl implements Document
   {
     switch (featureID)
     {
+      case SysMLOCPackage.DOCUMENTATION__VISIBILITY:
+        setVisibility((VisibilityIndicator)newValue);
+        return;
+      case SysMLOCPackage.DOCUMENTATION__IS_VARIANT:
+        setIsVariant((Boolean)newValue);
+        return;
       case SysMLOCPackage.DOCUMENTATION__DECLARED_SHORT_NAME:
         setDeclaredShortName((String)newValue);
         return;
@@ -290,6 +394,12 @@ public class DocumentationImpl extends AnnotatingElementImpl implements Document
   {
     switch (featureID)
     {
+      case SysMLOCPackage.DOCUMENTATION__VISIBILITY:
+        setVisibility(VISIBILITY_EDEFAULT);
+        return;
+      case SysMLOCPackage.DOCUMENTATION__IS_VARIANT:
+        setIsVariant(IS_VARIANT_EDEFAULT);
+        return;
       case SysMLOCPackage.DOCUMENTATION__DECLARED_SHORT_NAME:
         setDeclaredShortName(DECLARED_SHORT_NAME_EDEFAULT);
         return;
@@ -316,6 +426,10 @@ public class DocumentationImpl extends AnnotatingElementImpl implements Document
   {
     switch (featureID)
     {
+      case SysMLOCPackage.DOCUMENTATION__VISIBILITY:
+        return visibility != VISIBILITY_EDEFAULT;
+      case SysMLOCPackage.DOCUMENTATION__IS_VARIANT:
+        return isVariant != IS_VARIANT_EDEFAULT;
       case SysMLOCPackage.DOCUMENTATION__DECLARED_SHORT_NAME:
         return DECLARED_SHORT_NAME_EDEFAULT == null ? declaredShortName != null : !DECLARED_SHORT_NAME_EDEFAULT.equals(declaredShortName);
       case SysMLOCPackage.DOCUMENTATION__DECLARED_NAME:
@@ -336,6 +450,15 @@ public class DocumentationImpl extends AnnotatingElementImpl implements Document
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
   {
+    if (baseClass == MemberPrefix.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case SysMLOCPackage.DOCUMENTATION__VISIBILITY: return SysMLOCPackage.MEMBER_PREFIX__VISIBILITY;
+        case SysMLOCPackage.DOCUMENTATION__IS_VARIANT: return SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT;
+        default: return -1;
+      }
+    }
     if (baseClass == Identification.class)
     {
       switch (derivedFeatureID)
@@ -356,6 +479,15 @@ public class DocumentationImpl extends AnnotatingElementImpl implements Document
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
   {
+    if (baseClass == MemberPrefix.class)
+    {
+      switch (baseFeatureID)
+      {
+        case SysMLOCPackage.MEMBER_PREFIX__VISIBILITY: return SysMLOCPackage.DOCUMENTATION__VISIBILITY;
+        case SysMLOCPackage.MEMBER_PREFIX__IS_VARIANT: return SysMLOCPackage.DOCUMENTATION__IS_VARIANT;
+        default: return -1;
+      }
+    }
     if (baseClass == Identification.class)
     {
       switch (baseFeatureID)
@@ -379,7 +511,11 @@ public class DocumentationImpl extends AnnotatingElementImpl implements Document
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (declaredShortName: ");
+    result.append(" (visibility: ");
+    result.append(visibility);
+    result.append(", isVariant: ");
+    result.append(isVariant);
+    result.append(", declaredShortName: ");
     result.append(declaredShortName);
     result.append(", declaredName: ");
     result.append(declaredName);

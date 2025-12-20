@@ -23,7 +23,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Comment extends AnnotatingElement, Identification
+public interface Comment extends AnnotatingElement, MemberPrefix, Identification
 {
   /**
    * Returns the value of the '<em><b>Annotated Element</b></em>' attribute list.

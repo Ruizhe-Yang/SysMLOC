@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+<sysMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
   <elements xsi:type="sysMLOC:LibraryPackage" declaredName="Metadata" isStandard="true" isLibrary="true">
     <elements xsi:type="sysMLOC:Documentation" body="/*&#xA; * This package defines the base types for metadata definitions and related &#xA; * metadata annotations in the SysML language.&#xA; */"/>
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Metaobjects::Metaobject"/>
@@ -23,4 +23,4 @@
       <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * metadataItems is the base feature of all MetadataUsages.&#xA;&#x9;&#x9; * &#xA;&#x9;&#x9; * Note: It is not itself a MetadataUsage, because it is not being used as an&#xA;&#x9;&#x9; * AnnotatingElement here.&#xA;&#x9;&#x9; */"/>
     </elements>
   </elements>
-</sysMLOC:Namespace>
+</sysMLOC:RootNamespace>

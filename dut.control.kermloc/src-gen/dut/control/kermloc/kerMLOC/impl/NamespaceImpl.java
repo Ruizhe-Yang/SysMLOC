@@ -3,18 +3,27 @@
  */
 package dut.control.kermloc.kerMLOC.impl;
 
+import dut.control.kermloc.kerMLOC.Identification;
 import dut.control.kermloc.kerMLOC.KerMLOCPackage;
 import dut.control.kermloc.kerMLOC.Namespace;
+import dut.control.kermloc.kerMLOC.NamespaceBodyElement;
+import dut.control.kermloc.kerMLOC.PrefixMetadata;
 
 import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,22 +33,96 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dut.control.kermloc.kerMLOC.impl.NamespaceImpl#getPrefixMetadataExtension <em>Prefix Metadata Extension</em>}</li>
+ *   <li>{@link dut.control.kermloc.kerMLOC.impl.NamespaceImpl#getDeclaredShortName <em>Declared Short Name</em>}</li>
+ *   <li>{@link dut.control.kermloc.kerMLOC.impl.NamespaceImpl#getDeclaredName <em>Declared Name</em>}</li>
+ *   <li>{@link dut.control.kermloc.kerMLOC.impl.NamespaceImpl#isIsNamespace <em>Is Namespace</em>}</li>
  *   <li>{@link dut.control.kermloc.kerMLOC.impl.NamespaceImpl#getElements <em>Elements</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class NamespaceImpl extends MinimalEObjectImpl.Container implements Namespace
+public class NamespaceImpl extends NonFeatureElementImpl implements Namespace
 {
   /**
-   * The cached value of the '{@link #getElements() <em>Elements</em>}' attribute list.
+   * The cached value of the '{@link #getPrefixMetadataExtension() <em>Prefix Metadata Extension</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPrefixMetadataExtension()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> prefixMetadataExtension;
+
+  /**
+   * The default value of the '{@link #getDeclaredShortName() <em>Declared Short Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredShortName()
+   * @generated
+   * @ordered
+   */
+  protected static final String DECLARED_SHORT_NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDeclaredShortName() <em>Declared Short Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredShortName()
+   * @generated
+   * @ordered
+   */
+  protected String declaredShortName = DECLARED_SHORT_NAME_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredName()
+   * @generated
+   * @ordered
+   */
+  protected static final String DECLARED_NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDeclaredName() <em>Declared Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeclaredName()
+   * @generated
+   * @ordered
+   */
+  protected String declaredName = DECLARED_NAME_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isIsNamespace() <em>Is Namespace</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsNamespace()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_NAMESPACE_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsNamespace() <em>Is Namespace</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsNamespace()
+   * @generated
+   * @ordered
+   */
+  protected boolean isNamespace = IS_NAMESPACE_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getElements()
    * @generated
    * @ordered
    */
-  protected EList<String> elements;
+  protected EList<NamespaceBodyElement> elements;
 
   /**
    * <!-- begin-user-doc -->
@@ -68,13 +151,119 @@ public class NamespaceImpl extends MinimalEObjectImpl.Container implements Names
    * @generated
    */
   @Override
-  public EList<String> getElements()
+  public EList<String> getPrefixMetadataExtension()
+  {
+    if (prefixMetadataExtension == null)
+    {
+      prefixMetadataExtension = new EDataTypeEList<String>(String.class, this, KerMLOCPackage.NAMESPACE__PREFIX_METADATA_EXTENSION);
+    }
+    return prefixMetadataExtension;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getDeclaredShortName()
+  {
+    return declaredShortName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDeclaredShortName(String newDeclaredShortName)
+  {
+    String oldDeclaredShortName = declaredShortName;
+    declaredShortName = newDeclaredShortName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, KerMLOCPackage.NAMESPACE__DECLARED_SHORT_NAME, oldDeclaredShortName, declaredShortName));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getDeclaredName()
+  {
+    return declaredName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDeclaredName(String newDeclaredName)
+  {
+    String oldDeclaredName = declaredName;
+    declaredName = newDeclaredName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, KerMLOCPackage.NAMESPACE__DECLARED_NAME, oldDeclaredName, declaredName));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isIsNamespace()
+  {
+    return isNamespace;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setIsNamespace(boolean newIsNamespace)
+  {
+    boolean oldIsNamespace = isNamespace;
+    isNamespace = newIsNamespace;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, KerMLOCPackage.NAMESPACE__IS_NAMESPACE, oldIsNamespace, isNamespace));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<NamespaceBodyElement> getElements()
   {
     if (elements == null)
     {
-      elements = new EDataTypeEList<String>(String.class, this, KerMLOCPackage.NAMESPACE__ELEMENTS);
+      elements = new EObjectContainmentEList<NamespaceBodyElement>(NamespaceBodyElement.class, this, KerMLOCPackage.NAMESPACE__ELEMENTS);
     }
     return elements;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case KerMLOCPackage.NAMESPACE__ELEMENTS:
+        return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -87,6 +276,14 @@ public class NamespaceImpl extends MinimalEObjectImpl.Container implements Names
   {
     switch (featureID)
     {
+      case KerMLOCPackage.NAMESPACE__PREFIX_METADATA_EXTENSION:
+        return getPrefixMetadataExtension();
+      case KerMLOCPackage.NAMESPACE__DECLARED_SHORT_NAME:
+        return getDeclaredShortName();
+      case KerMLOCPackage.NAMESPACE__DECLARED_NAME:
+        return getDeclaredName();
+      case KerMLOCPackage.NAMESPACE__IS_NAMESPACE:
+        return isIsNamespace();
       case KerMLOCPackage.NAMESPACE__ELEMENTS:
         return getElements();
     }
@@ -104,9 +301,22 @@ public class NamespaceImpl extends MinimalEObjectImpl.Container implements Names
   {
     switch (featureID)
     {
+      case KerMLOCPackage.NAMESPACE__PREFIX_METADATA_EXTENSION:
+        getPrefixMetadataExtension().clear();
+        getPrefixMetadataExtension().addAll((Collection<? extends String>)newValue);
+        return;
+      case KerMLOCPackage.NAMESPACE__DECLARED_SHORT_NAME:
+        setDeclaredShortName((String)newValue);
+        return;
+      case KerMLOCPackage.NAMESPACE__DECLARED_NAME:
+        setDeclaredName((String)newValue);
+        return;
+      case KerMLOCPackage.NAMESPACE__IS_NAMESPACE:
+        setIsNamespace((Boolean)newValue);
+        return;
       case KerMLOCPackage.NAMESPACE__ELEMENTS:
         getElements().clear();
-        getElements().addAll((Collection<? extends String>)newValue);
+        getElements().addAll((Collection<? extends NamespaceBodyElement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -122,6 +332,18 @@ public class NamespaceImpl extends MinimalEObjectImpl.Container implements Names
   {
     switch (featureID)
     {
+      case KerMLOCPackage.NAMESPACE__PREFIX_METADATA_EXTENSION:
+        getPrefixMetadataExtension().clear();
+        return;
+      case KerMLOCPackage.NAMESPACE__DECLARED_SHORT_NAME:
+        setDeclaredShortName(DECLARED_SHORT_NAME_EDEFAULT);
+        return;
+      case KerMLOCPackage.NAMESPACE__DECLARED_NAME:
+        setDeclaredName(DECLARED_NAME_EDEFAULT);
+        return;
+      case KerMLOCPackage.NAMESPACE__IS_NAMESPACE:
+        setIsNamespace(IS_NAMESPACE_EDEFAULT);
+        return;
       case KerMLOCPackage.NAMESPACE__ELEMENTS:
         getElements().clear();
         return;
@@ -139,10 +361,74 @@ public class NamespaceImpl extends MinimalEObjectImpl.Container implements Names
   {
     switch (featureID)
     {
+      case KerMLOCPackage.NAMESPACE__PREFIX_METADATA_EXTENSION:
+        return prefixMetadataExtension != null && !prefixMetadataExtension.isEmpty();
+      case KerMLOCPackage.NAMESPACE__DECLARED_SHORT_NAME:
+        return DECLARED_SHORT_NAME_EDEFAULT == null ? declaredShortName != null : !DECLARED_SHORT_NAME_EDEFAULT.equals(declaredShortName);
+      case KerMLOCPackage.NAMESPACE__DECLARED_NAME:
+        return DECLARED_NAME_EDEFAULT == null ? declaredName != null : !DECLARED_NAME_EDEFAULT.equals(declaredName);
+      case KerMLOCPackage.NAMESPACE__IS_NAMESPACE:
+        return isNamespace != IS_NAMESPACE_EDEFAULT;
       case KerMLOCPackage.NAMESPACE__ELEMENTS:
         return elements != null && !elements.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == PrefixMetadata.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case KerMLOCPackage.NAMESPACE__PREFIX_METADATA_EXTENSION: return KerMLOCPackage.PREFIX_METADATA__PREFIX_METADATA_EXTENSION;
+        default: return -1;
+      }
+    }
+    if (baseClass == Identification.class)
+    {
+      switch (derivedFeatureID)
+      {
+        case KerMLOCPackage.NAMESPACE__DECLARED_SHORT_NAME: return KerMLOCPackage.IDENTIFICATION__DECLARED_SHORT_NAME;
+        case KerMLOCPackage.NAMESPACE__DECLARED_NAME: return KerMLOCPackage.IDENTIFICATION__DECLARED_NAME;
+        default: return -1;
+      }
+    }
+    return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
+  {
+    if (baseClass == PrefixMetadata.class)
+    {
+      switch (baseFeatureID)
+      {
+        case KerMLOCPackage.PREFIX_METADATA__PREFIX_METADATA_EXTENSION: return KerMLOCPackage.NAMESPACE__PREFIX_METADATA_EXTENSION;
+        default: return -1;
+      }
+    }
+    if (baseClass == Identification.class)
+    {
+      switch (baseFeatureID)
+      {
+        case KerMLOCPackage.IDENTIFICATION__DECLARED_SHORT_NAME: return KerMLOCPackage.NAMESPACE__DECLARED_SHORT_NAME;
+        case KerMLOCPackage.IDENTIFICATION__DECLARED_NAME: return KerMLOCPackage.NAMESPACE__DECLARED_NAME;
+        default: return -1;
+      }
+    }
+    return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
   }
 
   /**
@@ -156,8 +442,14 @@ public class NamespaceImpl extends MinimalEObjectImpl.Container implements Names
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (elements: ");
-    result.append(elements);
+    result.append(" (prefixMetadataExtension: ");
+    result.append(prefixMetadataExtension);
+    result.append(", declaredShortName: ");
+    result.append(declaredShortName);
+    result.append(", declaredName: ");
+    result.append(declaredName);
+    result.append(", isNamespace: ");
+    result.append(isNamespace);
     result.append(')');
     return result.toString();
   }

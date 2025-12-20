@@ -3,15 +3,69 @@
  */
 package dut.control.kermloc.kerMLOC.impl;
 
+import dut.control.kermloc.kerMLOC.AliasElement;
+import dut.control.kermloc.kerMLOC.AnnotatingBodyElement;
+import dut.control.kermloc.kerMLOC.AnnotatingElement;
+import dut.control.kermloc.kerMLOC.Association;
+import dut.control.kermloc.kerMLOC.AssociationStructure;
+import dut.control.kermloc.kerMLOC.Behavior;
+import dut.control.kermloc.kerMLOC.Classifier;
+import dut.control.kermloc.kerMLOC.ClassifierConjugationPart;
+import dut.control.kermloc.kerMLOC.ClassifierDeclaration;
+import dut.control.kermloc.kerMLOC.CodeAnnotation;
+import dut.control.kermloc.kerMLOC.Comment;
+import dut.control.kermloc.kerMLOC.ConjugationPart;
+import dut.control.kermloc.kerMLOC.CrossFeatureChain;
+import dut.control.kermloc.kerMLOC.DataType;
+import dut.control.kermloc.kerMLOC.Dependency;
+import dut.control.kermloc.kerMLOC.DifferencingPart;
+import dut.control.kermloc.kerMLOC.DisjoiningPart;
+import dut.control.kermloc.kerMLOC.Documentation;
+import dut.control.kermloc.kerMLOC.ElementFilterElement;
+import dut.control.kermloc.kerMLOC.FeatureSpecialization;
+import dut.control.kermloc.kerMLOC.Function;
+import dut.control.kermloc.kerMLOC.FunctionBodyElement;
+import dut.control.kermloc.kerMLOC.GeneralBodyElements;
+import dut.control.kermloc.kerMLOC.Identification;
+import dut.control.kermloc.kerMLOC.ImportElement;
+import dut.control.kermloc.kerMLOC.Interaction;
+import dut.control.kermloc.kerMLOC.IntersectingPart;
 import dut.control.kermloc.kerMLOC.KerMLOCFactory;
 import dut.control.kermloc.kerMLOC.KerMLOCPackage;
+import dut.control.kermloc.kerMLOC.LibraryPackage;
+import dut.control.kermloc.kerMLOC.MemberPrefix;
+import dut.control.kermloc.kerMLOC.Metaclass;
+import dut.control.kermloc.kerMLOC.Multiplicity;
+import dut.control.kermloc.kerMLOC.MultiplicityBounds;
 import dut.control.kermloc.kerMLOC.Namespace;
+import dut.control.kermloc.kerMLOC.NamespaceBodyElement;
+import dut.control.kermloc.kerMLOC.NonFeatureElement;
+import dut.control.kermloc.kerMLOC.PackageBodyElement;
+import dut.control.kermloc.kerMLOC.Predicate;
+import dut.control.kermloc.kerMLOC.PrefixMetadata;
+import dut.control.kermloc.kerMLOC.RedefinitionFeatureChain;
+import dut.control.kermloc.kerMLOC.ReferenceFeatureChain;
+import dut.control.kermloc.kerMLOC.ResultExpression;
+import dut.control.kermloc.kerMLOC.RootNamespace;
+import dut.control.kermloc.kerMLOC.SpecializationPart;
+import dut.control.kermloc.kerMLOC.Structure;
+import dut.control.kermloc.kerMLOC.Subsets;
+import dut.control.kermloc.kerMLOC.SubsettingFeatureChain;
+import dut.control.kermloc.kerMLOC.SuperclassingPart;
+import dut.control.kermloc.kerMLOC.TextualRepresentation;
+import dut.control.kermloc.kerMLOC.Type;
+import dut.control.kermloc.kerMLOC.TypeBodyElement;
+import dut.control.kermloc.kerMLOC.TypePrefix;
+import dut.control.kermloc.kerMLOC.TypeRelationshipPart;
+import dut.control.kermloc.kerMLOC.TypingFeatureTyping;
+import dut.control.kermloc.kerMLOC.UnioningPart;
 import dut.control.kermloc.kerMLOC.VisibilityIndicator;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
@@ -28,7 +82,392 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass rootNamespaceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass generalBodyElementsEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass annotatingBodyElementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass packageBodyElementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass typeBodyElementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass namespaceBodyElementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass functionBodyElementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass annotatingElementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass nonFeatureElementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass packageEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass libraryPackageEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass dependencyEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass commentEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass documentationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass textualRepresentationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass importElementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass codeAnnotationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass aliasElementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass elementFilterElementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass multiplicityEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass namespaceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass typeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass classifierEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass classEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass structureEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass metaclassEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass dataTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass associationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass associationStructureEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass interactionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass behaviorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass functionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass predicateEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass resultExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass identificationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass memberPrefixEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass prefixMetadataEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass multiplicityBoundsEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass featureSpecializationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass typingFeatureTypingEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass subsettingFeatureChainEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass referenceFeatureChainEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass crossFeatureChainEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass redefinitionFeatureChainEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass subsetsEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass typePrefixEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass specializationPartEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass superclassingPartEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass classifierConjugationPartEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass conjugationPartEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass typeRelationshipPartEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass disjoiningPartEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass unioningPartEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass intersectingPartEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass differencingPartEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass classifierDeclarationEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -105,6 +544,556 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
    * @generated
    */
   @Override
+  public EClass getRootNamespace()
+  {
+    return rootNamespaceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getRootNamespace_Elements()
+  {
+    return (EReference)rootNamespaceEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getGeneralBodyElements()
+  {
+    return generalBodyElementsEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getAnnotatingBodyElement()
+  {
+    return annotatingBodyElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getPackageBodyElement()
+  {
+    return packageBodyElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getTypeBodyElement()
+  {
+    return typeBodyElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getNamespaceBodyElement()
+  {
+    return namespaceBodyElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getFunctionBodyElement()
+  {
+    return functionBodyElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getAnnotatingElement()
+  {
+    return annotatingElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getNonFeatureElement()
+  {
+    return nonFeatureElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getPackage()
+  {
+    return packageEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getPackage_DeclaredName()
+  {
+    return (EAttribute)packageEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getPackage_Elements()
+  {
+    return (EReference)packageEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getLibraryPackage()
+  {
+    return libraryPackageEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getLibraryPackage_IsStandard()
+  {
+    return (EAttribute)libraryPackageEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getLibraryPackage_IsLibrary()
+  {
+    return (EAttribute)libraryPackageEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getLibraryPackage_Elements()
+  {
+    return (EReference)libraryPackageEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getDependency()
+  {
+    return dependencyEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getDependency_Client()
+  {
+    return (EAttribute)dependencyEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getDependency_Supplier()
+  {
+    return (EAttribute)dependencyEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getDependency_Elements()
+  {
+    return (EReference)dependencyEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getComment()
+  {
+    return commentEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getComment_AnnotatedElement()
+  {
+    return (EAttribute)commentEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getComment_Locale()
+  {
+    return (EAttribute)commentEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getComment_Body()
+  {
+    return (EAttribute)commentEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getDocumentation()
+  {
+    return documentationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getDocumentation_Locale()
+  {
+    return (EAttribute)documentationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getDocumentation_Body()
+  {
+    return (EAttribute)documentationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getTextualRepresentation()
+  {
+    return textualRepresentationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTextualRepresentation_Language()
+  {
+    return (EAttribute)textualRepresentationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTextualRepresentation_Body()
+  {
+    return (EAttribute)textualRepresentationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getImportElement()
+  {
+    return importElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getImportElement_Visibility()
+  {
+    return (EAttribute)importElementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getImportElement_IsImportAll()
+  {
+    return (EAttribute)importElementEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getImportElement_DeclaredName()
+  {
+    return (EAttribute)importElementEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getImportElement_IsNamespace()
+  {
+    return (EAttribute)importElementEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getImportElement_IsRecursive()
+  {
+    return (EAttribute)importElementEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getImportElement_FilterPackageExpression()
+  {
+    return (EAttribute)importElementEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getImportElement_Elements()
+  {
+    return (EReference)importElementEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getCodeAnnotation()
+  {
+    return codeAnnotationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getCodeAnnotation_Body()
+  {
+    return (EAttribute)codeAnnotationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getAliasElement()
+  {
+    return aliasElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getAliasElement_MemberShortName()
+  {
+    return (EAttribute)aliasElementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getAliasElement_MemberName()
+  {
+    return (EAttribute)aliasElementEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getAliasElement_MemberElement()
+  {
+    return (EAttribute)aliasElementEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getAliasElement_Elements()
+  {
+    return (EReference)aliasElementEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getElementFilterElement()
+  {
+    return elementFilterElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getElementFilterElement_FilterExpression()
+  {
+    return (EAttribute)elementFilterElementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getMultiplicity()
+  {
+    return multiplicityEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getMultiplicity_Elements()
+  {
+    return (EReference)multiplicityEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getNamespace()
   {
     return namespaceEClass;
@@ -116,9 +1105,801 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
    * @generated
    */
   @Override
-  public EAttribute getNamespace_Elements()
+  public EAttribute getNamespace_IsNamespace()
   {
     return (EAttribute)namespaceEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getNamespace_Elements()
+  {
+    return (EReference)namespaceEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getType()
+  {
+    return typeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getType_IsSufficient()
+  {
+    return (EAttribute)typeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getType_Elements()
+  {
+    return (EReference)typeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getClassifier()
+  {
+    return classifierEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getClassifier_Elements()
+  {
+    return (EReference)classifierEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getClass_()
+  {
+    return classEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getClass_Elements()
+  {
+    return (EReference)classEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getStructure()
+  {
+    return structureEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getStructure_Elements()
+  {
+    return (EReference)structureEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getMetaclass()
+  {
+    return metaclassEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getMetaclass_Elements()
+  {
+    return (EReference)metaclassEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getDataType()
+  {
+    return dataTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getDataType_Elements()
+  {
+    return (EReference)dataTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getAssociation()
+  {
+    return associationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getAssociation_Elements()
+  {
+    return (EReference)associationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getAssociationStructure()
+  {
+    return associationStructureEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getAssociationStructure_Elements()
+  {
+    return (EReference)associationStructureEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getInteraction()
+  {
+    return interactionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getInteraction_Elements()
+  {
+    return (EReference)interactionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getBehavior()
+  {
+    return behaviorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getBehavior_Elements()
+  {
+    return (EReference)behaviorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getFunction()
+  {
+    return functionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getFunction_Elements()
+  {
+    return (EReference)functionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getFunction_ResultExpressionParameter()
+  {
+    return (EReference)functionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getPredicate()
+  {
+    return predicateEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getPredicate_Elements()
+  {
+    return (EReference)predicateEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getPredicate_ResultExpressionParameter()
+  {
+    return (EReference)predicateEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getResultExpression()
+  {
+    return resultExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getResultExpression_ResultExpression()
+  {
+    return (EAttribute)resultExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getIdentification()
+  {
+    return identificationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getIdentification_DeclaredShortName()
+  {
+    return (EAttribute)identificationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getIdentification_DeclaredName()
+  {
+    return (EAttribute)identificationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getMemberPrefix()
+  {
+    return memberPrefixEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getMemberPrefix_Visibility()
+  {
+    return (EAttribute)memberPrefixEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getMemberPrefix_IsVariant()
+  {
+    return (EAttribute)memberPrefixEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getPrefixMetadata()
+  {
+    return prefixMetadataEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getPrefixMetadata_PrefixMetadataExtension()
+  {
+    return (EAttribute)prefixMetadataEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getMultiplicityBounds()
+  {
+    return multiplicityBoundsEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getMultiplicityBounds_MultiLow()
+  {
+    return (EAttribute)multiplicityBoundsEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getMultiplicityBounds_MultiHigh()
+  {
+    return (EAttribute)multiplicityBoundsEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getFeatureSpecialization()
+  {
+    return featureSpecializationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getTypingFeatureTyping()
+  {
+    return typingFeatureTypingEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTypingFeatureTyping_Typings()
+  {
+    return (EAttribute)typingFeatureTypingEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSubsettingFeatureChain()
+  {
+    return subsettingFeatureChainEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSubsettingFeatureChain_Subsetting()
+  {
+    return (EAttribute)subsettingFeatureChainEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getReferenceFeatureChain()
+  {
+    return referenceFeatureChainEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getReferenceFeatureChain_References()
+  {
+    return (EAttribute)referenceFeatureChainEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getCrossFeatureChain()
+  {
+    return crossFeatureChainEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getCrossFeatureChain_Crosses()
+  {
+    return (EAttribute)crossFeatureChainEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getRedefinitionFeatureChain()
+  {
+    return redefinitionFeatureChainEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getRedefinitionFeatureChain_Redefinitions()
+  {
+    return (EAttribute)redefinitionFeatureChainEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSubsets()
+  {
+    return subsetsEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getTypePrefix()
+  {
+    return typePrefixEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTypePrefix_IsAbstract()
+  {
+    return (EAttribute)typePrefixEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSpecializationPart()
+  {
+    return specializationPartEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSuperclassingPart()
+  {
+    return superclassingPartEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getClassifierConjugationPart()
+  {
+    return classifierConjugationPartEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getClassifierConjugationPart_OriginalType()
+  {
+    return (EAttribute)classifierConjugationPartEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getConjugationPart()
+  {
+    return conjugationPartEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getConjugationPart_OriginalType()
+  {
+    return (EAttribute)conjugationPartEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getTypeRelationshipPart()
+  {
+    return typeRelationshipPartEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getDisjoiningPart()
+  {
+    return disjoiningPartEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getDisjoiningPart_Disjoining()
+  {
+    return (EAttribute)disjoiningPartEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getUnioningPart()
+  {
+    return unioningPartEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getUnioningPart_Unioning()
+  {
+    return (EAttribute)unioningPartEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getIntersectingPart()
+  {
+    return intersectingPartEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getIntersectingPart_Intersecting()
+  {
+    return (EAttribute)intersectingPartEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getDifferencingPart()
+  {
+    return differencingPartEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getDifferencingPart_Differencing()
+  {
+    return (EAttribute)differencingPartEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getClassifierDeclaration()
+  {
+    return classifierDeclarationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getClassifierDeclaration_IsSufficient()
+  {
+    return (EAttribute)classifierDeclarationEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -163,8 +1944,185 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
     isCreated = true;
 
     // Create classes and their features
+    rootNamespaceEClass = createEClass(ROOT_NAMESPACE);
+    createEReference(rootNamespaceEClass, ROOT_NAMESPACE__ELEMENTS);
+
+    generalBodyElementsEClass = createEClass(GENERAL_BODY_ELEMENTS);
+
+    annotatingBodyElementEClass = createEClass(ANNOTATING_BODY_ELEMENT);
+
+    packageBodyElementEClass = createEClass(PACKAGE_BODY_ELEMENT);
+
+    typeBodyElementEClass = createEClass(TYPE_BODY_ELEMENT);
+
+    namespaceBodyElementEClass = createEClass(NAMESPACE_BODY_ELEMENT);
+
+    functionBodyElementEClass = createEClass(FUNCTION_BODY_ELEMENT);
+
+    annotatingElementEClass = createEClass(ANNOTATING_ELEMENT);
+
+    nonFeatureElementEClass = createEClass(NON_FEATURE_ELEMENT);
+
+    packageEClass = createEClass(PACKAGE);
+    createEAttribute(packageEClass, PACKAGE__DECLARED_NAME);
+    createEReference(packageEClass, PACKAGE__ELEMENTS);
+
+    libraryPackageEClass = createEClass(LIBRARY_PACKAGE);
+    createEAttribute(libraryPackageEClass, LIBRARY_PACKAGE__IS_STANDARD);
+    createEAttribute(libraryPackageEClass, LIBRARY_PACKAGE__IS_LIBRARY);
+    createEReference(libraryPackageEClass, LIBRARY_PACKAGE__ELEMENTS);
+
+    dependencyEClass = createEClass(DEPENDENCY);
+    createEAttribute(dependencyEClass, DEPENDENCY__CLIENT);
+    createEAttribute(dependencyEClass, DEPENDENCY__SUPPLIER);
+    createEReference(dependencyEClass, DEPENDENCY__ELEMENTS);
+
+    commentEClass = createEClass(COMMENT);
+    createEAttribute(commentEClass, COMMENT__ANNOTATED_ELEMENT);
+    createEAttribute(commentEClass, COMMENT__LOCALE);
+    createEAttribute(commentEClass, COMMENT__BODY);
+
+    documentationEClass = createEClass(DOCUMENTATION);
+    createEAttribute(documentationEClass, DOCUMENTATION__LOCALE);
+    createEAttribute(documentationEClass, DOCUMENTATION__BODY);
+
+    textualRepresentationEClass = createEClass(TEXTUAL_REPRESENTATION);
+    createEAttribute(textualRepresentationEClass, TEXTUAL_REPRESENTATION__LANGUAGE);
+    createEAttribute(textualRepresentationEClass, TEXTUAL_REPRESENTATION__BODY);
+
+    importElementEClass = createEClass(IMPORT_ELEMENT);
+    createEAttribute(importElementEClass, IMPORT_ELEMENT__VISIBILITY);
+    createEAttribute(importElementEClass, IMPORT_ELEMENT__IS_IMPORT_ALL);
+    createEAttribute(importElementEClass, IMPORT_ELEMENT__DECLARED_NAME);
+    createEAttribute(importElementEClass, IMPORT_ELEMENT__IS_NAMESPACE);
+    createEAttribute(importElementEClass, IMPORT_ELEMENT__IS_RECURSIVE);
+    createEAttribute(importElementEClass, IMPORT_ELEMENT__FILTER_PACKAGE_EXPRESSION);
+    createEReference(importElementEClass, IMPORT_ELEMENT__ELEMENTS);
+
+    codeAnnotationEClass = createEClass(CODE_ANNOTATION);
+    createEAttribute(codeAnnotationEClass, CODE_ANNOTATION__BODY);
+
+    aliasElementEClass = createEClass(ALIAS_ELEMENT);
+    createEAttribute(aliasElementEClass, ALIAS_ELEMENT__MEMBER_SHORT_NAME);
+    createEAttribute(aliasElementEClass, ALIAS_ELEMENT__MEMBER_NAME);
+    createEAttribute(aliasElementEClass, ALIAS_ELEMENT__MEMBER_ELEMENT);
+    createEReference(aliasElementEClass, ALIAS_ELEMENT__ELEMENTS);
+
+    elementFilterElementEClass = createEClass(ELEMENT_FILTER_ELEMENT);
+    createEAttribute(elementFilterElementEClass, ELEMENT_FILTER_ELEMENT__FILTER_EXPRESSION);
+
+    multiplicityEClass = createEClass(MULTIPLICITY);
+    createEReference(multiplicityEClass, MULTIPLICITY__ELEMENTS);
+
     namespaceEClass = createEClass(NAMESPACE);
-    createEAttribute(namespaceEClass, NAMESPACE__ELEMENTS);
+    createEAttribute(namespaceEClass, NAMESPACE__IS_NAMESPACE);
+    createEReference(namespaceEClass, NAMESPACE__ELEMENTS);
+
+    typeEClass = createEClass(TYPE);
+    createEAttribute(typeEClass, TYPE__IS_SUFFICIENT);
+    createEReference(typeEClass, TYPE__ELEMENTS);
+
+    classifierEClass = createEClass(CLASSIFIER);
+    createEReference(classifierEClass, CLASSIFIER__ELEMENTS);
+
+    classEClass = createEClass(CLASS);
+    createEReference(classEClass, CLASS__ELEMENTS);
+
+    structureEClass = createEClass(STRUCTURE);
+    createEReference(structureEClass, STRUCTURE__ELEMENTS);
+
+    metaclassEClass = createEClass(METACLASS);
+    createEReference(metaclassEClass, METACLASS__ELEMENTS);
+
+    dataTypeEClass = createEClass(DATA_TYPE);
+    createEReference(dataTypeEClass, DATA_TYPE__ELEMENTS);
+
+    associationEClass = createEClass(ASSOCIATION);
+    createEReference(associationEClass, ASSOCIATION__ELEMENTS);
+
+    associationStructureEClass = createEClass(ASSOCIATION_STRUCTURE);
+    createEReference(associationStructureEClass, ASSOCIATION_STRUCTURE__ELEMENTS);
+
+    interactionEClass = createEClass(INTERACTION);
+    createEReference(interactionEClass, INTERACTION__ELEMENTS);
+
+    behaviorEClass = createEClass(BEHAVIOR);
+    createEReference(behaviorEClass, BEHAVIOR__ELEMENTS);
+
+    functionEClass = createEClass(FUNCTION);
+    createEReference(functionEClass, FUNCTION__ELEMENTS);
+    createEReference(functionEClass, FUNCTION__RESULT_EXPRESSION_PARAMETER);
+
+    predicateEClass = createEClass(PREDICATE);
+    createEReference(predicateEClass, PREDICATE__ELEMENTS);
+    createEReference(predicateEClass, PREDICATE__RESULT_EXPRESSION_PARAMETER);
+
+    resultExpressionEClass = createEClass(RESULT_EXPRESSION);
+    createEAttribute(resultExpressionEClass, RESULT_EXPRESSION__RESULT_EXPRESSION);
+
+    identificationEClass = createEClass(IDENTIFICATION);
+    createEAttribute(identificationEClass, IDENTIFICATION__DECLARED_SHORT_NAME);
+    createEAttribute(identificationEClass, IDENTIFICATION__DECLARED_NAME);
+
+    memberPrefixEClass = createEClass(MEMBER_PREFIX);
+    createEAttribute(memberPrefixEClass, MEMBER_PREFIX__VISIBILITY);
+    createEAttribute(memberPrefixEClass, MEMBER_PREFIX__IS_VARIANT);
+
+    prefixMetadataEClass = createEClass(PREFIX_METADATA);
+    createEAttribute(prefixMetadataEClass, PREFIX_METADATA__PREFIX_METADATA_EXTENSION);
+
+    multiplicityBoundsEClass = createEClass(MULTIPLICITY_BOUNDS);
+    createEAttribute(multiplicityBoundsEClass, MULTIPLICITY_BOUNDS__MULTI_LOW);
+    createEAttribute(multiplicityBoundsEClass, MULTIPLICITY_BOUNDS__MULTI_HIGH);
+
+    featureSpecializationEClass = createEClass(FEATURE_SPECIALIZATION);
+
+    typingFeatureTypingEClass = createEClass(TYPING_FEATURE_TYPING);
+    createEAttribute(typingFeatureTypingEClass, TYPING_FEATURE_TYPING__TYPINGS);
+
+    subsettingFeatureChainEClass = createEClass(SUBSETTING_FEATURE_CHAIN);
+    createEAttribute(subsettingFeatureChainEClass, SUBSETTING_FEATURE_CHAIN__SUBSETTING);
+
+    referenceFeatureChainEClass = createEClass(REFERENCE_FEATURE_CHAIN);
+    createEAttribute(referenceFeatureChainEClass, REFERENCE_FEATURE_CHAIN__REFERENCES);
+
+    crossFeatureChainEClass = createEClass(CROSS_FEATURE_CHAIN);
+    createEAttribute(crossFeatureChainEClass, CROSS_FEATURE_CHAIN__CROSSES);
+
+    redefinitionFeatureChainEClass = createEClass(REDEFINITION_FEATURE_CHAIN);
+    createEAttribute(redefinitionFeatureChainEClass, REDEFINITION_FEATURE_CHAIN__REDEFINITIONS);
+
+    subsetsEClass = createEClass(SUBSETS);
+
+    typePrefixEClass = createEClass(TYPE_PREFIX);
+    createEAttribute(typePrefixEClass, TYPE_PREFIX__IS_ABSTRACT);
+
+    specializationPartEClass = createEClass(SPECIALIZATION_PART);
+
+    superclassingPartEClass = createEClass(SUPERCLASSING_PART);
+
+    classifierConjugationPartEClass = createEClass(CLASSIFIER_CONJUGATION_PART);
+    createEAttribute(classifierConjugationPartEClass, CLASSIFIER_CONJUGATION_PART__ORIGINAL_TYPE);
+
+    conjugationPartEClass = createEClass(CONJUGATION_PART);
+    createEAttribute(conjugationPartEClass, CONJUGATION_PART__ORIGINAL_TYPE);
+
+    typeRelationshipPartEClass = createEClass(TYPE_RELATIONSHIP_PART);
+
+    disjoiningPartEClass = createEClass(DISJOINING_PART);
+    createEAttribute(disjoiningPartEClass, DISJOINING_PART__DISJOINING);
+
+    unioningPartEClass = createEClass(UNIONING_PART);
+    createEAttribute(unioningPartEClass, UNIONING_PART__UNIONING);
+
+    intersectingPartEClass = createEClass(INTERSECTING_PART);
+    createEAttribute(intersectingPartEClass, INTERSECTING_PART__INTERSECTING);
+
+    differencingPartEClass = createEClass(DIFFERENCING_PART);
+    createEAttribute(differencingPartEClass, DIFFERENCING_PART__DIFFERENCING);
+
+    classifierDeclarationEClass = createEClass(CLASSIFIER_DECLARATION);
+    createEAttribute(classifierDeclarationEClass, CLASSIFIER_DECLARATION__IS_SUFFICIENT);
 
     // Create enums
     visibilityIndicatorEEnum = createEEnum(VISIBILITY_INDICATOR);
@@ -199,10 +2157,428 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    generalBodyElementsEClass.getESuperTypes().add(this.getPackageBodyElement());
+    generalBodyElementsEClass.getESuperTypes().add(this.getTypeBodyElement());
+    generalBodyElementsEClass.getESuperTypes().add(this.getNamespaceBodyElement());
+    generalBodyElementsEClass.getESuperTypes().add(this.getFunctionBodyElement());
+    annotatingElementEClass.getESuperTypes().add(this.getGeneralBodyElements());
+    annotatingElementEClass.getESuperTypes().add(this.getAnnotatingBodyElement());
+    nonFeatureElementEClass.getESuperTypes().add(this.getGeneralBodyElements());
+    packageEClass.getESuperTypes().add(this.getNonFeatureElement());
+    packageEClass.getESuperTypes().add(this.getMemberPrefix());
+    packageEClass.getESuperTypes().add(this.getPrefixMetadata());
+    libraryPackageEClass.getESuperTypes().add(this.getNonFeatureElement());
+    libraryPackageEClass.getESuperTypes().add(this.getMemberPrefix());
+    libraryPackageEClass.getESuperTypes().add(this.getPrefixMetadata());
+    libraryPackageEClass.getESuperTypes().add(this.getIdentification());
+    dependencyEClass.getESuperTypes().add(this.getNonFeatureElement());
+    dependencyEClass.getESuperTypes().add(this.getMemberPrefix());
+    dependencyEClass.getESuperTypes().add(this.getPrefixMetadata());
+    dependencyEClass.getESuperTypes().add(this.getIdentification());
+    commentEClass.getESuperTypes().add(this.getAnnotatingElement());
+    commentEClass.getESuperTypes().add(this.getMemberPrefix());
+    commentEClass.getESuperTypes().add(this.getIdentification());
+    documentationEClass.getESuperTypes().add(this.getAnnotatingElement());
+    documentationEClass.getESuperTypes().add(this.getMemberPrefix());
+    documentationEClass.getESuperTypes().add(this.getIdentification());
+    textualRepresentationEClass.getESuperTypes().add(this.getAnnotatingElement());
+    textualRepresentationEClass.getESuperTypes().add(this.getMemberPrefix());
+    textualRepresentationEClass.getESuperTypes().add(this.getIdentification());
+    importElementEClass.getESuperTypes().add(this.getGeneralBodyElements());
+    codeAnnotationEClass.getESuperTypes().add(this.getGeneralBodyElements());
+    codeAnnotationEClass.getESuperTypes().add(this.getAnnotatingBodyElement());
+    aliasElementEClass.getESuperTypes().add(this.getGeneralBodyElements());
+    aliasElementEClass.getESuperTypes().add(this.getMemberPrefix());
+    elementFilterElementEClass.getESuperTypes().add(this.getPackageBodyElement());
+    elementFilterElementEClass.getESuperTypes().add(this.getMemberPrefix());
+    multiplicityEClass.getESuperTypes().add(this.getNonFeatureElement());
+    multiplicityEClass.getESuperTypes().add(this.getMemberPrefix());
+    multiplicityEClass.getESuperTypes().add(this.getIdentification());
+    multiplicityEClass.getESuperTypes().add(this.getSubsets());
+    multiplicityEClass.getESuperTypes().add(this.getSubsettingFeatureChain());
+    multiplicityEClass.getESuperTypes().add(this.getMultiplicityBounds());
+    namespaceEClass.getESuperTypes().add(this.getNonFeatureElement());
+    namespaceEClass.getESuperTypes().add(this.getPrefixMetadata());
+    namespaceEClass.getESuperTypes().add(this.getIdentification());
+    typeEClass.getESuperTypes().add(this.getNonFeatureElement());
+    typeEClass.getESuperTypes().add(this.getMemberPrefix());
+    typeEClass.getESuperTypes().add(this.getTypePrefix());
+    typeEClass.getESuperTypes().add(this.getPrefixMetadata());
+    typeEClass.getESuperTypes().add(this.getIdentification());
+    typeEClass.getESuperTypes().add(this.getMultiplicityBounds());
+    typeEClass.getESuperTypes().add(this.getSpecializationPart());
+    typeEClass.getESuperTypes().add(this.getSubsettingFeatureChain());
+    typeEClass.getESuperTypes().add(this.getConjugationPart());
+    typeEClass.getESuperTypes().add(this.getTypeRelationshipPart());
+    typeEClass.getESuperTypes().add(this.getDisjoiningPart());
+    typeEClass.getESuperTypes().add(this.getUnioningPart());
+    typeEClass.getESuperTypes().add(this.getIntersectingPart());
+    typeEClass.getESuperTypes().add(this.getDifferencingPart());
+    classifierEClass.getESuperTypes().add(this.getNonFeatureElement());
+    classifierEClass.getESuperTypes().add(this.getMemberPrefix());
+    classifierEClass.getESuperTypes().add(this.getTypePrefix());
+    classifierEClass.getESuperTypes().add(this.getPrefixMetadata());
+    classifierEClass.getESuperTypes().add(this.getClassifierDeclaration());
+    classifierEClass.getESuperTypes().add(this.getIdentification());
+    classifierEClass.getESuperTypes().add(this.getMultiplicityBounds());
+    classifierEClass.getESuperTypes().add(this.getSuperclassingPart());
+    classifierEClass.getESuperTypes().add(this.getSubsettingFeatureChain());
+    classifierEClass.getESuperTypes().add(this.getClassifierConjugationPart());
+    classifierEClass.getESuperTypes().add(this.getTypeRelationshipPart());
+    classifierEClass.getESuperTypes().add(this.getDisjoiningPart());
+    classifierEClass.getESuperTypes().add(this.getUnioningPart());
+    classifierEClass.getESuperTypes().add(this.getIntersectingPart());
+    classifierEClass.getESuperTypes().add(this.getDifferencingPart());
+    classEClass.getESuperTypes().add(this.getNonFeatureElement());
+    classEClass.getESuperTypes().add(this.getMemberPrefix());
+    classEClass.getESuperTypes().add(this.getTypePrefix());
+    classEClass.getESuperTypes().add(this.getPrefixMetadata());
+    classEClass.getESuperTypes().add(this.getClassifierDeclaration());
+    classEClass.getESuperTypes().add(this.getIdentification());
+    classEClass.getESuperTypes().add(this.getMultiplicityBounds());
+    classEClass.getESuperTypes().add(this.getSuperclassingPart());
+    classEClass.getESuperTypes().add(this.getSubsettingFeatureChain());
+    classEClass.getESuperTypes().add(this.getClassifierConjugationPart());
+    classEClass.getESuperTypes().add(this.getTypeRelationshipPart());
+    classEClass.getESuperTypes().add(this.getDisjoiningPart());
+    classEClass.getESuperTypes().add(this.getUnioningPart());
+    classEClass.getESuperTypes().add(this.getIntersectingPart());
+    classEClass.getESuperTypes().add(this.getDifferencingPart());
+    structureEClass.getESuperTypes().add(this.getNonFeatureElement());
+    structureEClass.getESuperTypes().add(this.getMemberPrefix());
+    structureEClass.getESuperTypes().add(this.getTypePrefix());
+    structureEClass.getESuperTypes().add(this.getPrefixMetadata());
+    structureEClass.getESuperTypes().add(this.getClassifierDeclaration());
+    structureEClass.getESuperTypes().add(this.getIdentification());
+    structureEClass.getESuperTypes().add(this.getMultiplicityBounds());
+    structureEClass.getESuperTypes().add(this.getSuperclassingPart());
+    structureEClass.getESuperTypes().add(this.getSubsettingFeatureChain());
+    structureEClass.getESuperTypes().add(this.getClassifierConjugationPart());
+    structureEClass.getESuperTypes().add(this.getTypeRelationshipPart());
+    structureEClass.getESuperTypes().add(this.getDisjoiningPart());
+    structureEClass.getESuperTypes().add(this.getUnioningPart());
+    structureEClass.getESuperTypes().add(this.getIntersectingPart());
+    structureEClass.getESuperTypes().add(this.getDifferencingPart());
+    metaclassEClass.getESuperTypes().add(this.getNonFeatureElement());
+    metaclassEClass.getESuperTypes().add(this.getMemberPrefix());
+    metaclassEClass.getESuperTypes().add(this.getTypePrefix());
+    metaclassEClass.getESuperTypes().add(this.getPrefixMetadata());
+    metaclassEClass.getESuperTypes().add(this.getClassifierDeclaration());
+    metaclassEClass.getESuperTypes().add(this.getIdentification());
+    metaclassEClass.getESuperTypes().add(this.getMultiplicityBounds());
+    metaclassEClass.getESuperTypes().add(this.getSuperclassingPart());
+    metaclassEClass.getESuperTypes().add(this.getSubsettingFeatureChain());
+    metaclassEClass.getESuperTypes().add(this.getClassifierConjugationPart());
+    metaclassEClass.getESuperTypes().add(this.getTypeRelationshipPart());
+    metaclassEClass.getESuperTypes().add(this.getDisjoiningPart());
+    metaclassEClass.getESuperTypes().add(this.getUnioningPart());
+    metaclassEClass.getESuperTypes().add(this.getIntersectingPart());
+    metaclassEClass.getESuperTypes().add(this.getDifferencingPart());
+    dataTypeEClass.getESuperTypes().add(this.getNonFeatureElement());
+    dataTypeEClass.getESuperTypes().add(this.getMemberPrefix());
+    dataTypeEClass.getESuperTypes().add(this.getTypePrefix());
+    dataTypeEClass.getESuperTypes().add(this.getPrefixMetadata());
+    dataTypeEClass.getESuperTypes().add(this.getClassifierDeclaration());
+    dataTypeEClass.getESuperTypes().add(this.getIdentification());
+    dataTypeEClass.getESuperTypes().add(this.getMultiplicityBounds());
+    dataTypeEClass.getESuperTypes().add(this.getSuperclassingPart());
+    dataTypeEClass.getESuperTypes().add(this.getSubsettingFeatureChain());
+    dataTypeEClass.getESuperTypes().add(this.getClassifierConjugationPart());
+    dataTypeEClass.getESuperTypes().add(this.getTypeRelationshipPart());
+    dataTypeEClass.getESuperTypes().add(this.getDisjoiningPart());
+    dataTypeEClass.getESuperTypes().add(this.getUnioningPart());
+    dataTypeEClass.getESuperTypes().add(this.getIntersectingPart());
+    dataTypeEClass.getESuperTypes().add(this.getDifferencingPart());
+    associationEClass.getESuperTypes().add(this.getNonFeatureElement());
+    associationEClass.getESuperTypes().add(this.getMemberPrefix());
+    associationEClass.getESuperTypes().add(this.getTypePrefix());
+    associationEClass.getESuperTypes().add(this.getPrefixMetadata());
+    associationEClass.getESuperTypes().add(this.getClassifierDeclaration());
+    associationEClass.getESuperTypes().add(this.getIdentification());
+    associationEClass.getESuperTypes().add(this.getMultiplicityBounds());
+    associationEClass.getESuperTypes().add(this.getSuperclassingPart());
+    associationEClass.getESuperTypes().add(this.getSubsettingFeatureChain());
+    associationEClass.getESuperTypes().add(this.getClassifierConjugationPart());
+    associationEClass.getESuperTypes().add(this.getTypeRelationshipPart());
+    associationEClass.getESuperTypes().add(this.getDisjoiningPart());
+    associationEClass.getESuperTypes().add(this.getUnioningPart());
+    associationEClass.getESuperTypes().add(this.getIntersectingPart());
+    associationEClass.getESuperTypes().add(this.getDifferencingPart());
+    associationStructureEClass.getESuperTypes().add(this.getNonFeatureElement());
+    associationStructureEClass.getESuperTypes().add(this.getMemberPrefix());
+    associationStructureEClass.getESuperTypes().add(this.getTypePrefix());
+    associationStructureEClass.getESuperTypes().add(this.getPrefixMetadata());
+    associationStructureEClass.getESuperTypes().add(this.getClassifierDeclaration());
+    associationStructureEClass.getESuperTypes().add(this.getIdentification());
+    associationStructureEClass.getESuperTypes().add(this.getMultiplicityBounds());
+    associationStructureEClass.getESuperTypes().add(this.getSuperclassingPart());
+    associationStructureEClass.getESuperTypes().add(this.getSubsettingFeatureChain());
+    associationStructureEClass.getESuperTypes().add(this.getClassifierConjugationPart());
+    associationStructureEClass.getESuperTypes().add(this.getTypeRelationshipPart());
+    associationStructureEClass.getESuperTypes().add(this.getDisjoiningPart());
+    associationStructureEClass.getESuperTypes().add(this.getUnioningPart());
+    associationStructureEClass.getESuperTypes().add(this.getIntersectingPart());
+    associationStructureEClass.getESuperTypes().add(this.getDifferencingPart());
+    interactionEClass.getESuperTypes().add(this.getNonFeatureElement());
+    interactionEClass.getESuperTypes().add(this.getMemberPrefix());
+    interactionEClass.getESuperTypes().add(this.getTypePrefix());
+    interactionEClass.getESuperTypes().add(this.getPrefixMetadata());
+    interactionEClass.getESuperTypes().add(this.getClassifierDeclaration());
+    interactionEClass.getESuperTypes().add(this.getIdentification());
+    interactionEClass.getESuperTypes().add(this.getMultiplicityBounds());
+    interactionEClass.getESuperTypes().add(this.getSuperclassingPart());
+    interactionEClass.getESuperTypes().add(this.getSubsettingFeatureChain());
+    interactionEClass.getESuperTypes().add(this.getClassifierConjugationPart());
+    interactionEClass.getESuperTypes().add(this.getTypeRelationshipPart());
+    interactionEClass.getESuperTypes().add(this.getDisjoiningPart());
+    interactionEClass.getESuperTypes().add(this.getUnioningPart());
+    interactionEClass.getESuperTypes().add(this.getIntersectingPart());
+    interactionEClass.getESuperTypes().add(this.getDifferencingPart());
+    behaviorEClass.getESuperTypes().add(this.getNonFeatureElement());
+    behaviorEClass.getESuperTypes().add(this.getMemberPrefix());
+    behaviorEClass.getESuperTypes().add(this.getTypePrefix());
+    behaviorEClass.getESuperTypes().add(this.getPrefixMetadata());
+    behaviorEClass.getESuperTypes().add(this.getClassifierDeclaration());
+    behaviorEClass.getESuperTypes().add(this.getIdentification());
+    behaviorEClass.getESuperTypes().add(this.getMultiplicityBounds());
+    behaviorEClass.getESuperTypes().add(this.getSuperclassingPart());
+    behaviorEClass.getESuperTypes().add(this.getSubsettingFeatureChain());
+    behaviorEClass.getESuperTypes().add(this.getClassifierConjugationPart());
+    behaviorEClass.getESuperTypes().add(this.getTypeRelationshipPart());
+    behaviorEClass.getESuperTypes().add(this.getDisjoiningPart());
+    behaviorEClass.getESuperTypes().add(this.getUnioningPart());
+    behaviorEClass.getESuperTypes().add(this.getIntersectingPart());
+    behaviorEClass.getESuperTypes().add(this.getDifferencingPart());
+    functionEClass.getESuperTypes().add(this.getNonFeatureElement());
+    functionEClass.getESuperTypes().add(this.getMemberPrefix());
+    functionEClass.getESuperTypes().add(this.getTypePrefix());
+    functionEClass.getESuperTypes().add(this.getPrefixMetadata());
+    functionEClass.getESuperTypes().add(this.getClassifierDeclaration());
+    functionEClass.getESuperTypes().add(this.getIdentification());
+    functionEClass.getESuperTypes().add(this.getMultiplicityBounds());
+    functionEClass.getESuperTypes().add(this.getSuperclassingPart());
+    functionEClass.getESuperTypes().add(this.getSubsettingFeatureChain());
+    functionEClass.getESuperTypes().add(this.getClassifierConjugationPart());
+    functionEClass.getESuperTypes().add(this.getTypeRelationshipPart());
+    functionEClass.getESuperTypes().add(this.getDisjoiningPart());
+    functionEClass.getESuperTypes().add(this.getUnioningPart());
+    functionEClass.getESuperTypes().add(this.getIntersectingPart());
+    functionEClass.getESuperTypes().add(this.getDifferencingPart());
+    predicateEClass.getESuperTypes().add(this.getNonFeatureElement());
+    predicateEClass.getESuperTypes().add(this.getMemberPrefix());
+    predicateEClass.getESuperTypes().add(this.getTypePrefix());
+    predicateEClass.getESuperTypes().add(this.getPrefixMetadata());
+    predicateEClass.getESuperTypes().add(this.getClassifierDeclaration());
+    predicateEClass.getESuperTypes().add(this.getIdentification());
+    predicateEClass.getESuperTypes().add(this.getMultiplicityBounds());
+    predicateEClass.getESuperTypes().add(this.getSuperclassingPart());
+    predicateEClass.getESuperTypes().add(this.getSubsettingFeatureChain());
+    predicateEClass.getESuperTypes().add(this.getClassifierConjugationPart());
+    predicateEClass.getESuperTypes().add(this.getTypeRelationshipPart());
+    predicateEClass.getESuperTypes().add(this.getDisjoiningPart());
+    predicateEClass.getESuperTypes().add(this.getUnioningPart());
+    predicateEClass.getESuperTypes().add(this.getIntersectingPart());
+    predicateEClass.getESuperTypes().add(this.getDifferencingPart());
+    resultExpressionEClass.getESuperTypes().add(this.getMemberPrefix());
+    featureSpecializationEClass.getESuperTypes().add(this.getTypingFeatureTyping());
+    featureSpecializationEClass.getESuperTypes().add(this.getSubsettingFeatureChain());
+    featureSpecializationEClass.getESuperTypes().add(this.getReferenceFeatureChain());
+    featureSpecializationEClass.getESuperTypes().add(this.getCrossFeatureChain());
+    featureSpecializationEClass.getESuperTypes().add(this.getRedefinitionFeatureChain());
+    subsetsEClass.getESuperTypes().add(this.getSubsettingFeatureChain());
+    typePrefixEClass.getESuperTypes().add(this.getPrefixMetadata());
+    specializationPartEClass.getESuperTypes().add(this.getSubsettingFeatureChain());
+    superclassingPartEClass.getESuperTypes().add(this.getSubsettingFeatureChain());
+    typeRelationshipPartEClass.getESuperTypes().add(this.getDisjoiningPart());
+    typeRelationshipPartEClass.getESuperTypes().add(this.getUnioningPart());
+    typeRelationshipPartEClass.getESuperTypes().add(this.getIntersectingPart());
+    typeRelationshipPartEClass.getESuperTypes().add(this.getDifferencingPart());
+    classifierDeclarationEClass.getESuperTypes().add(this.getIdentification());
+    classifierDeclarationEClass.getESuperTypes().add(this.getMultiplicityBounds());
+    classifierDeclarationEClass.getESuperTypes().add(this.getSuperclassingPart());
+    classifierDeclarationEClass.getESuperTypes().add(this.getClassifierConjugationPart());
+    classifierDeclarationEClass.getESuperTypes().add(this.getTypeRelationshipPart());
 
     // Initialize classes and features; add operations and parameters
+    initEClass(rootNamespaceEClass, RootNamespace.class, "RootNamespace", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getRootNamespace_Elements(), this.getGeneralBodyElements(), null, "elements", null, 0, -1, RootNamespace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(generalBodyElementsEClass, GeneralBodyElements.class, "GeneralBodyElements", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(annotatingBodyElementEClass, AnnotatingBodyElement.class, "AnnotatingBodyElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(packageBodyElementEClass, PackageBodyElement.class, "PackageBodyElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(typeBodyElementEClass, TypeBodyElement.class, "TypeBodyElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(namespaceBodyElementEClass, NamespaceBodyElement.class, "NamespaceBodyElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(functionBodyElementEClass, FunctionBodyElement.class, "FunctionBodyElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(annotatingElementEClass, AnnotatingElement.class, "AnnotatingElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(nonFeatureElementEClass, NonFeatureElement.class, "NonFeatureElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(packageEClass, dut.control.kermloc.kerMLOC.Package.class, "Package", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getPackage_DeclaredName(), ecorePackage.getEString(), "declaredName", null, 0, 1, dut.control.kermloc.kerMLOC.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPackage_Elements(), this.getPackageBodyElement(), null, "elements", null, 0, -1, dut.control.kermloc.kerMLOC.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(libraryPackageEClass, LibraryPackage.class, "LibraryPackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getLibraryPackage_IsStandard(), ecorePackage.getEBoolean(), "isStandard", null, 0, 1, LibraryPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getLibraryPackage_IsLibrary(), ecorePackage.getEBoolean(), "isLibrary", null, 0, 1, LibraryPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLibraryPackage_Elements(), this.getPackageBodyElement(), null, "elements", null, 0, -1, LibraryPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(dependencyEClass, Dependency.class, "Dependency", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDependency_Client(), ecorePackage.getEString(), "client", null, 0, -1, Dependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDependency_Supplier(), ecorePackage.getEString(), "supplier", null, 0, -1, Dependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDependency_Elements(), this.getAnnotatingElement(), null, "elements", null, 0, -1, Dependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(commentEClass, Comment.class, "Comment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getComment_AnnotatedElement(), ecorePackage.getEString(), "annotatedElement", null, 0, -1, Comment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getComment_Locale(), ecorePackage.getEString(), "locale", null, 0, 1, Comment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getComment_Body(), ecorePackage.getEString(), "body", null, 0, 1, Comment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(documentationEClass, Documentation.class, "Documentation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDocumentation_Locale(), ecorePackage.getEString(), "locale", null, 0, 1, Documentation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDocumentation_Body(), ecorePackage.getEString(), "body", null, 0, 1, Documentation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(textualRepresentationEClass, TextualRepresentation.class, "TextualRepresentation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTextualRepresentation_Language(), ecorePackage.getEString(), "language", null, 0, 1, TextualRepresentation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTextualRepresentation_Body(), ecorePackage.getEString(), "body", null, 0, 1, TextualRepresentation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(importElementEClass, ImportElement.class, "ImportElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getImportElement_Visibility(), this.getVisibilityIndicator(), "visibility", null, 0, 1, ImportElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getImportElement_IsImportAll(), ecorePackage.getEBoolean(), "isImportAll", null, 0, 1, ImportElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getImportElement_DeclaredName(), ecorePackage.getEString(), "declaredName", null, 0, 1, ImportElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getImportElement_IsNamespace(), ecorePackage.getEBoolean(), "isNamespace", null, 0, 1, ImportElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getImportElement_IsRecursive(), ecorePackage.getEBoolean(), "isRecursive", null, 0, 1, ImportElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getImportElement_FilterPackageExpression(), ecorePackage.getEString(), "filterPackageExpression", null, 0, -1, ImportElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getImportElement_Elements(), this.getAnnotatingBodyElement(), null, "elements", null, 0, -1, ImportElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(codeAnnotationEClass, CodeAnnotation.class, "CodeAnnotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getCodeAnnotation_Body(), ecorePackage.getEString(), "body", null, 0, 1, CodeAnnotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(aliasElementEClass, AliasElement.class, "AliasElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAliasElement_MemberShortName(), ecorePackage.getEString(), "memberShortName", null, 0, 1, AliasElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAliasElement_MemberName(), ecorePackage.getEString(), "memberName", null, 0, 1, AliasElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAliasElement_MemberElement(), ecorePackage.getEString(), "memberElement", null, 0, 1, AliasElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAliasElement_Elements(), this.getAnnotatingBodyElement(), null, "elements", null, 0, -1, AliasElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(elementFilterElementEClass, ElementFilterElement.class, "ElementFilterElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getElementFilterElement_FilterExpression(), ecorePackage.getEString(), "filterExpression", null, 0, 1, ElementFilterElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(multiplicityEClass, Multiplicity.class, "Multiplicity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMultiplicity_Elements(), this.getTypeBodyElement(), null, "elements", null, 0, -1, Multiplicity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(namespaceEClass, Namespace.class, "Namespace", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getNamespace_Elements(), ecorePackage.getEString(), "elements", null, 0, -1, Namespace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getNamespace_IsNamespace(), ecorePackage.getEBoolean(), "isNamespace", null, 0, 1, Namespace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNamespace_Elements(), this.getNamespaceBodyElement(), null, "elements", null, 0, -1, Namespace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(typeEClass, Type.class, "Type", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getType_IsSufficient(), ecorePackage.getEBoolean(), "isSufficient", null, 0, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getType_Elements(), this.getTypeBodyElement(), null, "elements", null, 0, -1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(classifierEClass, Classifier.class, "Classifier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getClassifier_Elements(), this.getTypeBodyElement(), null, "elements", null, 0, -1, Classifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(classEClass, dut.control.kermloc.kerMLOC.Class.class, "Class", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getClass_Elements(), this.getTypeBodyElement(), null, "elements", null, 0, -1, dut.control.kermloc.kerMLOC.Class.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(structureEClass, Structure.class, "Structure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getStructure_Elements(), this.getTypeBodyElement(), null, "elements", null, 0, -1, Structure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(metaclassEClass, Metaclass.class, "Metaclass", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMetaclass_Elements(), this.getTypeBodyElement(), null, "elements", null, 0, -1, Metaclass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(dataTypeEClass, DataType.class, "DataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDataType_Elements(), this.getTypeBodyElement(), null, "elements", null, 0, -1, DataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(associationEClass, Association.class, "Association", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getAssociation_Elements(), this.getTypeBodyElement(), null, "elements", null, 0, -1, Association.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(associationStructureEClass, AssociationStructure.class, "AssociationStructure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getAssociationStructure_Elements(), this.getTypeBodyElement(), null, "elements", null, 0, -1, AssociationStructure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(interactionEClass, Interaction.class, "Interaction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getInteraction_Elements(), this.getTypeBodyElement(), null, "elements", null, 0, -1, Interaction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(behaviorEClass, Behavior.class, "Behavior", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getBehavior_Elements(), this.getTypeBodyElement(), null, "elements", null, 0, -1, Behavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(functionEClass, Function.class, "Function", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getFunction_Elements(), this.getFunctionBodyElement(), null, "elements", null, 0, -1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFunction_ResultExpressionParameter(), this.getResultExpression(), null, "resultExpressionParameter", null, 0, -1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(predicateEClass, Predicate.class, "Predicate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getPredicate_Elements(), this.getFunctionBodyElement(), null, "elements", null, 0, -1, Predicate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPredicate_ResultExpressionParameter(), this.getResultExpression(), null, "resultExpressionParameter", null, 0, -1, Predicate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(resultExpressionEClass, ResultExpression.class, "ResultExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getResultExpression_ResultExpression(), ecorePackage.getEString(), "resultExpression", null, 0, 1, ResultExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(identificationEClass, Identification.class, "Identification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getIdentification_DeclaredShortName(), ecorePackage.getEString(), "declaredShortName", null, 0, 1, Identification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getIdentification_DeclaredName(), ecorePackage.getEString(), "declaredName", null, 0, 1, Identification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(memberPrefixEClass, MemberPrefix.class, "MemberPrefix", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getMemberPrefix_Visibility(), this.getVisibilityIndicator(), "visibility", null, 0, 1, MemberPrefix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMemberPrefix_IsVariant(), ecorePackage.getEBoolean(), "isVariant", null, 0, 1, MemberPrefix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(prefixMetadataEClass, PrefixMetadata.class, "PrefixMetadata", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getPrefixMetadata_PrefixMetadataExtension(), ecorePackage.getEString(), "prefixMetadataExtension", null, 0, -1, PrefixMetadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(multiplicityBoundsEClass, MultiplicityBounds.class, "MultiplicityBounds", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getMultiplicityBounds_MultiLow(), ecorePackage.getEString(), "MultiLow", null, 0, 1, MultiplicityBounds.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMultiplicityBounds_MultiHigh(), ecorePackage.getEString(), "MultiHigh", null, 0, 1, MultiplicityBounds.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(featureSpecializationEClass, FeatureSpecialization.class, "FeatureSpecialization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(typingFeatureTypingEClass, TypingFeatureTyping.class, "TypingFeatureTyping", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTypingFeatureTyping_Typings(), ecorePackage.getEString(), "typings", null, 0, -1, TypingFeatureTyping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(subsettingFeatureChainEClass, SubsettingFeatureChain.class, "SubsettingFeatureChain", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSubsettingFeatureChain_Subsetting(), ecorePackage.getEString(), "subsetting", null, 0, -1, SubsettingFeatureChain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(referenceFeatureChainEClass, ReferenceFeatureChain.class, "ReferenceFeatureChain", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getReferenceFeatureChain_References(), ecorePackage.getEString(), "references", null, 0, -1, ReferenceFeatureChain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(crossFeatureChainEClass, CrossFeatureChain.class, "CrossFeatureChain", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getCrossFeatureChain_Crosses(), ecorePackage.getEString(), "crosses", null, 0, -1, CrossFeatureChain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(redefinitionFeatureChainEClass, RedefinitionFeatureChain.class, "RedefinitionFeatureChain", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getRedefinitionFeatureChain_Redefinitions(), ecorePackage.getEString(), "redefinitions", null, 0, -1, RedefinitionFeatureChain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(subsetsEClass, Subsets.class, "Subsets", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(typePrefixEClass, TypePrefix.class, "TypePrefix", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTypePrefix_IsAbstract(), ecorePackage.getEBoolean(), "isAbstract", null, 0, 1, TypePrefix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(specializationPartEClass, SpecializationPart.class, "SpecializationPart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(superclassingPartEClass, SuperclassingPart.class, "SuperclassingPart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(classifierConjugationPartEClass, ClassifierConjugationPart.class, "ClassifierConjugationPart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getClassifierConjugationPart_OriginalType(), ecorePackage.getEString(), "originalType", null, 0, 1, ClassifierConjugationPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(conjugationPartEClass, ConjugationPart.class, "ConjugationPart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getConjugationPart_OriginalType(), ecorePackage.getEString(), "originalType", null, 0, 1, ConjugationPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(typeRelationshipPartEClass, TypeRelationshipPart.class, "TypeRelationshipPart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(disjoiningPartEClass, DisjoiningPart.class, "DisjoiningPart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDisjoiningPart_Disjoining(), ecorePackage.getEString(), "disjoining", null, 0, -1, DisjoiningPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(unioningPartEClass, UnioningPart.class, "UnioningPart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getUnioningPart_Unioning(), ecorePackage.getEString(), "unioning", null, 0, -1, UnioningPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(intersectingPartEClass, IntersectingPart.class, "IntersectingPart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getIntersectingPart_Intersecting(), ecorePackage.getEString(), "intersecting", null, 0, -1, IntersectingPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(differencingPartEClass, DifferencingPart.class, "DifferencingPart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDifferencingPart_Differencing(), ecorePackage.getEString(), "differencing", null, 0, -1, DifferencingPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(classifierDeclarationEClass, ClassifierDeclaration.class, "ClassifierDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getClassifierDeclaration_IsSufficient(), ecorePackage.getEBoolean(), "isSufficient", null, 0, 1, ClassifierDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals
     initEEnum(visibilityIndicatorEEnum, VisibilityIndicator.class, "VisibilityIndicator");

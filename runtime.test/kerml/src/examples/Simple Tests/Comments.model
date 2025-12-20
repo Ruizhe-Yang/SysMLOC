@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:Comment" body="/* AAA */"/>
+  <elements xsi:type="kerMLOC:CodeAnnotation" body="//a lexical comment (&quot;note&quot;) is not a part of model&#xA;"/>
+  <elements xsi:type="kerMLOC:Package" declaredName="Comments">
+    <elements xsi:type="kerMLOC:CodeAnnotation" body="// inside package&#xA;"/>
+    <elements xsi:type="kerMLOC:Comment" body="/*&#xA;*AAA&#xA; * BBB*/"/>
+    <elements xsi:type="kerMLOC:Comment" body="/*&#xA;    *&#xA;    *&#xA;    * AAA  ***   &#xA;    *BBB&#xA;    &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;*/"/>
+    <elements xsi:type="kerMLOC:Comment" body="/*&#xA; *       AAAA&#xA; *       BBBB           */"/>
+    <elements xsi:type="kerMLOC:Comment" body="/* AAAA&#xA; &#xA; &#xA;  * BBBB&#xA; *&#xA; * CCCC&#xA; */"/>
+    <elements xsi:type="kerMLOC:Comment" locale="&quot;en_US&quot;" body="/*&#xA; * AAAA&#xA; * BBBB&#xA; *    CCC DDD    &#xA; */"/>
+    <elements xsi:type="kerMLOC:Comment" body="/* comment inside a package */"/>
+    <elements xsi:type="kerMLOC:Comment" declaredName="cmt" body="/* Named Comment */"/>
+    <elements xsi:type="kerMLOC:Comment" declaredName="cmt_cmt" body="/* Other Comment about Comment */">
+      <annotatedElement>cmt</annotatedElement>
+    </elements>
+    <elements xsi:type="kerMLOC:Class" declaredName="C">
+      <elements xsi:type="kerMLOC:Documentation" locale="&quot;en_US&quot;" body="/* Documentation on Class C */"/>
+      <elements xsi:type="kerMLOC:Comment" body="/* Comment in Class C */"/>
+      <elements xsi:type="kerMLOC:Comment" body="/* Comment about Package */">
+        <annotatedElement>Comments</annotatedElement>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Comment" body="/* abc */"/>
+    <elements xsi:type="kerMLOC:Class" declaredName="A">
+      <elements xsi:type="kerMLOC:Documentation" declaredShortName="a" body="/* Documentation comment on A*/"/>
+      <elements xsi:type="kerMLOC:Comment" locale="&quot;en_US&quot;" body="/* Comment about documenation with ID 'a' */">
+        <annotatedElement>a</annotatedElement>
+      </elements>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

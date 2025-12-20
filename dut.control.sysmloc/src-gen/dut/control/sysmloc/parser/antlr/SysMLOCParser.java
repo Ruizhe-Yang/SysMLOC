@@ -27,7 +27,7 @@ public class SysMLOCParser extends AbstractAntlrParser {
 
 	@Override 
 	protected String getDefaultRuleName() {
-		return "Namespace";
+		return "RootNamespace";
 	}
 
 	public SysMLOCGrammarAccess getGrammarAccess() {

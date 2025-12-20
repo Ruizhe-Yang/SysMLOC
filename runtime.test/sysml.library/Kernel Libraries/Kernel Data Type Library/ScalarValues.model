@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:LibraryPackage" declaredName="ScalarValues" isStandard="true" isLibrary="true">
+    <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9; * This package contains a basic set of primitive scalar (non-collection) data types. &#xA;&#x9; * These include Boolean and String types and a hierarchy of concrete Number types, from &#xA;&#x9; * the most general type of Complex numbers to the most specific type of Positive integers.&lt;/p>&#xA;&#x9; */"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Base::DataValue"/>
+    <elements xsi:type="kerMLOC:DataType" isAbstract="true" declaredName="ScalarValue">
+      <subsetting>DataValue</subsetting>
+    </elements>
+    <elements xsi:type="kerMLOC:DataType" declaredName="Boolean">
+      <subsetting>ScalarValue</subsetting>
+    </elements>
+    <elements xsi:type="kerMLOC:DataType" declaredName="String">
+      <subsetting>ScalarValue</subsetting>
+    </elements>
+    <elements xsi:type="kerMLOC:DataType" isAbstract="true" declaredName="NumericalValue">
+      <subsetting>ScalarValue</subsetting>
+    </elements>
+    <elements xsi:type="kerMLOC:DataType" isAbstract="true" declaredName="Number">
+      <subsetting>NumericalValue</subsetting>
+    </elements>
+    <elements xsi:type="kerMLOC:DataType" declaredName="Complex">
+      <subsetting>Number</subsetting>
+    </elements>
+    <elements xsi:type="kerMLOC:DataType" declaredName="Real">
+      <subsetting>Complex</subsetting>
+    </elements>
+    <elements xsi:type="kerMLOC:DataType" declaredName="Rational">
+      <subsetting>Real</subsetting>
+    </elements>
+    <elements xsi:type="kerMLOC:DataType" declaredName="Integer">
+      <subsetting>Rational</subsetting>
+    </elements>
+    <elements xsi:type="kerMLOC:DataType" declaredName="Natural">
+      <subsetting>Integer</subsetting>
+    </elements>
+    <elements xsi:type="kerMLOC:DataType" declaredName="Positive">
+      <subsetting>Natural</subsetting>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

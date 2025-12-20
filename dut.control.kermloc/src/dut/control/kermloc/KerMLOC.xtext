@@ -4,16 +4,413 @@ grammar dut.control.kermloc.KerMLOC hidden(WS, ML_NOTE)
 import "http://www.eclipse.org/emf/2002/Ecore" as Ecore
 
 generate kerMLOC "http://www.control.dut/kermloc/KerMLOC"
-Namespace:
+
+RootNamespace:
 	(elements+=GeneralBodyElements)*
 ;
 
-GeneralBodyElements:
-	'aaa' 
-;
-// TODO --------------------------------- Enum Level ---------------------------------//
+// TODO --------------------------------- Body Level ---------------------------------//
 
-// enum
+GeneralBodyElements:
+	AnnotatingElement
+    | ImportElement
+    | AliasElement
+    | CodeAnnotation
+    | NonFeatureElement
+//    | FeatureElement
+;
+
+AnnotatingBodyElement:
+	AnnotatingElement
+	| CodeAnnotation
+;
+
+PackageBodyElement:
+    GeneralBodyElements
+  	| ElementFilterElement
+;
+
+TypeBodyElement:
+	GeneralBodyElements
+;
+
+NamespaceBodyElement:
+	GeneralBodyElements
+;
+
+FunctionBodyElement:
+	GeneralBodyElements
+//	| ReturnFeatureElement
+;
+
+// TODO --------------------------------- Abstract Level ---------------------------------//
+
+AnnotatingElement:
+	Comment
+	| Documentation
+	| TextualRepresentation
+//	| MetadataFeature
+;
+
+NonFeatureElement:
+	Dependency
+	| Namespace
+	| Package
+	| LibraryPackage 
+	| Multiplicity
+	| Type
+	| Classifier 
+	| Class
+	| Structure
+	| Metaclass
+	| DataType 
+	| Association
+	| AssociationStructure
+	| Interaction
+	| Behavior
+	| Function
+	| Predicate
+//	| Specialization
+//	| Conjugation
+//	| FeatureTyping
+//	| Subclassification
+//	| Disjoining
+//	| FeatureInverting
+//	| Subsetting
+//	| Redefinition
+//	| TypeFeaturing
+;
+
+//FeatureElement:
+//	Feature
+//	| Step
+//	| Expression
+//	| BooleanExpression
+//	| Invariant
+//	| Connector
+//	| BindingConnector
+//	| Succession
+//	| Flow
+//	| SuccessionFlow
+//;
+
+// TODO --------------------------------- Instance Level ---------------------------------//
+
+Package:
+	MemberPrefix
+    PrefixMetadata*
+    'package' 
+    declaredName=QualifiedName 
+    ( ';' | '{' (elements+=PackageBodyElement)* '}')
+;
+
+LibraryPackage:
+	MemberPrefix
+	( isStandard ?= 'standard' )? 
+	isLibrary ?= 'library'
+	PrefixMetadata*
+	'package'
+	Identification?
+	( ';' | '{' (elements+=PackageBodyElement)* '}')
+;
+
+Dependency:
+	MemberPrefix
+	PrefixMetadata*
+	'dependency'
+	( Identification? 'from' )?
+	client+=QualifiedName ( ',' client+=QualifiedName )*
+	'to'
+	supplier+=QualifiedName ( ',' supplier+=QualifiedName )*
+	(';' | '{' ( elements+=AnnotatingElement )* '}')
+;
+
+Comment:
+	MemberPrefix
+	( 'comment' Identification? 
+	  ('about' annotatedElement += QualifiedName
+	     ( ',' annotatedElement += QualifiedName )* )? 
+	)?
+    ( 'locale' locale = STRING_VALUE )?
+    body=REGULAR_COMMENT
+;
+
+Documentation:
+	MemberPrefix
+    'doc' Identification? 
+    ( 'locale' locale = STRING_VALUE )?
+    body=REGULAR_COMMENT
+;
+
+TextualRepresentation:
+	MemberPrefix
+    ( 'rep' Identification? )?
+    'language' language = STRING_VALUE 
+    body = REGULAR_COMMENT
+;
+
+ImportElement:
+	visibility=VisibilityIndicator 
+    'import' (isImportAll?='all')? 
+    declaredName=QualifiedName (isNamespace?='::' '*')? ( '::' isRecursive ?= '**' )? 
+    ( '[' filterPackageExpression+=Expression ']')*
+	//	 declaredName=QualifiedName (isNamespace?='::' )? ( '*' | isRecursive ?= '**' )?  
+    (';' | '{' ( elements+=AnnotatingBodyElement )* '}')
+;
+
+CodeAnnotation:
+    body=SL_NOTE | body=ML_NOTE
+;
+
+AliasElement:
+	MemberPrefix 
+	'alias' 
+	( '<' memberShortName = Name '>' )? ( memberName = Name )? 
+	'for' memberElement = QualifiedName
+	(';' | '{' (elements+=AnnotatingBodyElement)* '}')
+;
+
+ElementFilterElement:
+	MemberPrefix
+	'filter'
+	filterExpression=Expression
+	';'
+;
+
+Multiplicity:
+	MemberPrefix
+	'multiplicity' 
+	Identification?
+	(Subsets | MultiplicityBounds)
+	( ';' | '{' (elements+=TypeBodyElement)* '}')
+;
+
+Namespace:
+	PrefixMetadata*
+	isNamespace?='namespace' 
+	Identification?
+	( ';' | '{' (elements+=NamespaceBodyElement)* '}')
+;
+
+Type:
+	MemberPrefix
+	TypePrefix
+	'type'
+	( isSufficient ?= 'all' )?
+	Identification?
+	MultiplicityBounds?
+	( SpecializationPart | ConjugationPart )
+	TypeRelationshipPart*
+	( ';' | '{' (elements+=TypeBodyElement)* '}')
+;
+
+Classifier:
+	MemberPrefix
+	TypePrefix
+	'classifier'
+	ClassifierDeclaration
+	( ';' | '{' (elements+=TypeBodyElement)* '}')
+;
+
+Class:
+	MemberPrefix
+	TypePrefix 
+	'class' 
+	ClassifierDeclaration
+	( ';' | '{' (elements+=TypeBodyElement)* '}')
+;
+
+Structure:
+	MemberPrefix
+	TypePrefix
+	'struct'
+	ClassifierDeclaration
+	( ';' | '{' (elements+=TypeBodyElement)* '}')
+;
+
+Metaclass:
+	MemberPrefix
+	TypePrefix
+	'metaclass' 
+	ClassifierDeclaration
+	( ';' | '{' (elements+=TypeBodyElement)* '}')
+;
+
+DataType:
+	MemberPrefix
+	TypePrefix
+	'datatype' 
+	ClassifierDeclaration
+	( ';' | '{' (elements+=TypeBodyElement)* '}')
+;
+
+Association:
+	MemberPrefix
+	TypePrefix
+	'assoc' 
+	ClassifierDeclaration
+	( ';' | '{' (elements+=TypeBodyElement)* '}')
+;
+
+AssociationStructure:
+	MemberPrefix
+	TypePrefix
+	'assoc' 'struct' 
+	ClassifierDeclaration
+	( ';' | '{' (elements+=TypeBodyElement)* '}')
+;
+
+Interaction:
+	MemberPrefix
+	TypePrefix
+	'interaction'
+	ClassifierDeclaration
+	( ';' | '{' (elements+=TypeBodyElement)* '}')
+;
+
+Behavior:
+	MemberPrefix
+	TypePrefix
+	'behavior'
+	ClassifierDeclaration
+	( ';' | '{' (elements+=TypeBodyElement)* '}')
+;
+
+Function:
+	MemberPrefix
+	TypePrefix
+	'function'
+	ClassifierDeclaration
+	( ';' | '{' (elements+=FunctionBodyElement)* (resultExpressionParameter+=ResultExpression)? '}')
+;
+
+Predicate:
+	MemberPrefix
+	TypePrefix
+	'predicate'
+	ClassifierDeclaration
+	( ';' | '{' (elements+=FunctionBodyElement)* (resultExpressionParameter+=ResultExpression)? '}')	
+;
+
+// TODO --------------------------------- Secondary Instance Level ---------------------------------//
+ResultExpression:
+	MemberPrefix resultExpression=Expression
+;
+
+// TODO --------------------------------- Fragment Level ---------------------------------//
+fragment Identification:
+	'<' declaredShortName = Name '>' ( declaredName = Name )?
+	| declaredName = Name
+;
+
+fragment MemberPrefix:
+	( visibility = VisibilityIndicator )?
+	( isVariant ?= 'variant')?
+;
+
+fragment PrefixMetadata:
+	//	'#' prefixMetadataExtension += QualifiedName
+	//	prefixMetadataExtension += PrefixMetadataName
+	prefixMetadataExtension += PREFIXNAME_TEXT
+;
+
+fragment MultiplicityBounds:
+	//	'[' Multiplicity += MultiplicityExpression ']' | '[' Multiplicity += MultiplicityExpression '..' Multiplicity += MultiplicityExpression ']'
+	'[' MultiLow = MultiplicityExpression ( '..' MultiHigh = MultiplicityExpression )? ']'
+;
+
+fragment FeatureSpecialization:
+	(':'|'defined' 'by') TypingFeatureTyping
+	| (':>'|'specializes'|'subsets') SubsettingFeatureChain
+	| ('::>'|'references')  ReferenceFeatureChain
+	| ('=>'|'crosses') CrossFeatureChain
+	| (':>>'|'redefines') RedefinitionFeatureChain
+;
+
+fragment TypingFeatureTyping:
+	typings+=FeatureTypingName (',' typings+=FeatureTypingName)*
+;
+
+fragment SubsettingFeatureChain:
+	subsetting+=FeatureChainName (',' subsetting+=FeatureChainName)*
+;
+
+fragment ReferenceFeatureChain:
+	references+=FeatureChainName (',' references+=FeatureChainName)*
+;
+
+fragment CrossFeatureChain:
+	crosses+=FeatureChainName (',' crosses+=FeatureChainName)*
+;
+
+fragment RedefinitionFeatureChain:
+	redefinitions+=FeatureChainName (',' redefinitions+=FeatureChainName)*
+;
+
+fragment Subsets:
+	(':>'| 'subsets') SubsettingFeatureChain
+;
+
+fragment TypePrefix:
+	( isAbstract ?= 'abstract' )? 
+	PrefixMetadata*
+;
+
+fragment SpecializationPart:
+	 ( ':>' | 'specializes' ) 
+	 SubsettingFeatureChain
+;
+
+fragment SuperclassingPart:
+	( ':>' | 'specializes' ) 
+	SubsettingFeatureChain
+;
+
+fragment ClassifierConjugationPart:
+	( '~' | 'conjugates' ) 
+	originalType=FeatureChainName
+;
+
+fragment ConjugationPart:
+	( '~' | 'conjugates' ) 
+	originalType=FeatureChainName
+;
+
+fragment TypeRelationshipPart:
+	DisjoiningPart | UnioningPart | IntersectingPart | DifferencingPart
+;
+
+fragment DisjoiningPart:
+	'disjoint' 'from' disjoining += FeatureChainName 
+	( ',' disjoining += FeatureChainName )* 
+;
+
+fragment UnioningPart:
+	'unions' unioning += FeatureChainName 
+	( ',' unioning += FeatureChainName )* 
+;
+
+fragment IntersectingPart:
+	'intersects' intersecting += FeatureChainName 
+	( ',' intersecting += FeatureChainName )* 
+;
+
+fragment DifferencingPart :
+	'differences' differencing += FeatureChainName 
+	( ',' differencing += FeatureChainName )* 
+;
+
+fragment ClassifierDeclaration:
+	(isSufficient ?= 'all' )?
+	Identification?
+	MultiplicityBounds?
+	( SuperclassingPart | ClassifierConjugationPart )?
+	TypeRelationshipPart*
+;
+
+
+
+// TODO --------------------------------- Enum Level ---------------------------------//
 
 enum VisibilityIndicator:
 	null='NULLVisibility' | public = 'public' | private = 'private' | protected = 'protected'

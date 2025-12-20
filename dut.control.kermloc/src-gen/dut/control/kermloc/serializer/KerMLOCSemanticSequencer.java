@@ -4,8 +4,31 @@
 package dut.control.kermloc.serializer;
 
 import com.google.inject.Inject;
+import dut.control.kermloc.kerMLOC.AliasElement;
+import dut.control.kermloc.kerMLOC.Association;
+import dut.control.kermloc.kerMLOC.AssociationStructure;
+import dut.control.kermloc.kerMLOC.Behavior;
+import dut.control.kermloc.kerMLOC.Classifier;
+import dut.control.kermloc.kerMLOC.CodeAnnotation;
+import dut.control.kermloc.kerMLOC.Comment;
+import dut.control.kermloc.kerMLOC.DataType;
+import dut.control.kermloc.kerMLOC.Dependency;
+import dut.control.kermloc.kerMLOC.Documentation;
+import dut.control.kermloc.kerMLOC.ElementFilterElement;
+import dut.control.kermloc.kerMLOC.Function;
+import dut.control.kermloc.kerMLOC.ImportElement;
+import dut.control.kermloc.kerMLOC.Interaction;
 import dut.control.kermloc.kerMLOC.KerMLOCPackage;
+import dut.control.kermloc.kerMLOC.LibraryPackage;
+import dut.control.kermloc.kerMLOC.Metaclass;
+import dut.control.kermloc.kerMLOC.Multiplicity;
 import dut.control.kermloc.kerMLOC.Namespace;
+import dut.control.kermloc.kerMLOC.Predicate;
+import dut.control.kermloc.kerMLOC.ResultExpression;
+import dut.control.kermloc.kerMLOC.RootNamespace;
+import dut.control.kermloc.kerMLOC.Structure;
+import dut.control.kermloc.kerMLOC.TextualRepresentation;
+import dut.control.kermloc.kerMLOC.Type;
 import dut.control.kermloc.services.KerMLOCGrammarAccess;
 import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
@@ -30,9 +53,240 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == KerMLOCPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case KerMLOCPackage.NAMESPACE:
-				sequence_Namespace(context, (Namespace) semanticObject); 
+			case KerMLOCPackage.ALIAS_ELEMENT:
+				sequence_AliasElement_MemberPrefix(context, (AliasElement) semanticObject); 
 				return; 
+			case KerMLOCPackage.ASSOCIATION:
+				if (rule == grammarAccess.getGeneralBodyElementsRule()
+						|| rule == grammarAccess.getPackageBodyElementRule()
+						|| rule == grammarAccess.getTypeBodyElementRule()
+						|| rule == grammarAccess.getNamespaceBodyElementRule()
+						|| rule == grammarAccess.getFunctionBodyElementRule()
+						|| rule == grammarAccess.getNonFeatureElementRule()) {
+					sequence_Association_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Association) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getAssociationRule()) {
+					sequence_Association_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Association) semanticObject); 
+					return; 
+				}
+				else break;
+			case KerMLOCPackage.ASSOCIATION_STRUCTURE:
+				if (rule == grammarAccess.getGeneralBodyElementsRule()
+						|| rule == grammarAccess.getPackageBodyElementRule()
+						|| rule == grammarAccess.getTypeBodyElementRule()
+						|| rule == grammarAccess.getNamespaceBodyElementRule()
+						|| rule == grammarAccess.getFunctionBodyElementRule()
+						|| rule == grammarAccess.getNonFeatureElementRule()) {
+					sequence_AssociationStructure_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (AssociationStructure) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getAssociationStructureRule()) {
+					sequence_AssociationStructure_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (AssociationStructure) semanticObject); 
+					return; 
+				}
+				else break;
+			case KerMLOCPackage.BEHAVIOR:
+				if (rule == grammarAccess.getGeneralBodyElementsRule()
+						|| rule == grammarAccess.getPackageBodyElementRule()
+						|| rule == grammarAccess.getTypeBodyElementRule()
+						|| rule == grammarAccess.getNamespaceBodyElementRule()
+						|| rule == grammarAccess.getFunctionBodyElementRule()
+						|| rule == grammarAccess.getNonFeatureElementRule()) {
+					sequence_Behavior_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Behavior) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getBehaviorRule()) {
+					sequence_Behavior_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Behavior) semanticObject); 
+					return; 
+				}
+				else break;
+			case KerMLOCPackage.CLASS:
+				if (rule == grammarAccess.getGeneralBodyElementsRule()
+						|| rule == grammarAccess.getPackageBodyElementRule()
+						|| rule == grammarAccess.getTypeBodyElementRule()
+						|| rule == grammarAccess.getNamespaceBodyElementRule()
+						|| rule == grammarAccess.getFunctionBodyElementRule()
+						|| rule == grammarAccess.getNonFeatureElementRule()) {
+					sequence_Class_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (dut.control.kermloc.kerMLOC.Class) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getClassRule()) {
+					sequence_Class_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (dut.control.kermloc.kerMLOC.Class) semanticObject); 
+					return; 
+				}
+				else break;
+			case KerMLOCPackage.CLASSIFIER:
+				if (rule == grammarAccess.getGeneralBodyElementsRule()
+						|| rule == grammarAccess.getPackageBodyElementRule()
+						|| rule == grammarAccess.getTypeBodyElementRule()
+						|| rule == grammarAccess.getNamespaceBodyElementRule()
+						|| rule == grammarAccess.getFunctionBodyElementRule()
+						|| rule == grammarAccess.getNonFeatureElementRule()) {
+					sequence_Classifier_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Classifier) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getClassifierRule()) {
+					sequence_Classifier_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Classifier) semanticObject); 
+					return; 
+				}
+				else break;
+			case KerMLOCPackage.CODE_ANNOTATION:
+				sequence_CodeAnnotation(context, (CodeAnnotation) semanticObject); 
+				return; 
+			case KerMLOCPackage.COMMENT:
+				sequence_Comment_Identification_MemberPrefix(context, (Comment) semanticObject); 
+				return; 
+			case KerMLOCPackage.DATA_TYPE:
+				if (rule == grammarAccess.getGeneralBodyElementsRule()
+						|| rule == grammarAccess.getPackageBodyElementRule()
+						|| rule == grammarAccess.getTypeBodyElementRule()
+						|| rule == grammarAccess.getNamespaceBodyElementRule()
+						|| rule == grammarAccess.getFunctionBodyElementRule()
+						|| rule == grammarAccess.getNonFeatureElementRule()) {
+					sequence_ClassifierConjugationPart_ClassifierDeclaration_DataType_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (DataType) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getDataTypeRule()) {
+					sequence_ClassifierConjugationPart_ClassifierDeclaration_DataType_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (DataType) semanticObject); 
+					return; 
+				}
+				else break;
+			case KerMLOCPackage.DEPENDENCY:
+				if (rule == grammarAccess.getGeneralBodyElementsRule()
+						|| rule == grammarAccess.getPackageBodyElementRule()
+						|| rule == grammarAccess.getTypeBodyElementRule()
+						|| rule == grammarAccess.getNamespaceBodyElementRule()
+						|| rule == grammarAccess.getFunctionBodyElementRule()
+						|| rule == grammarAccess.getNonFeatureElementRule()) {
+					sequence_Dependency_Identification_MemberPrefix_PrefixMetadata(context, (Dependency) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getDependencyRule()) {
+					sequence_Dependency_Identification_MemberPrefix_PrefixMetadata(context, (Dependency) semanticObject); 
+					return; 
+				}
+				else break;
+			case KerMLOCPackage.DOCUMENTATION:
+				sequence_Documentation_Identification_MemberPrefix(context, (Documentation) semanticObject); 
+				return; 
+			case KerMLOCPackage.ELEMENT_FILTER_ELEMENT:
+				sequence_ElementFilterElement_MemberPrefix(context, (ElementFilterElement) semanticObject); 
+				return; 
+			case KerMLOCPackage.FUNCTION:
+				if (rule == grammarAccess.getGeneralBodyElementsRule()
+						|| rule == grammarAccess.getPackageBodyElementRule()
+						|| rule == grammarAccess.getTypeBodyElementRule()
+						|| rule == grammarAccess.getNamespaceBodyElementRule()
+						|| rule == grammarAccess.getFunctionBodyElementRule()
+						|| rule == grammarAccess.getNonFeatureElementRule()) {
+					sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Function_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Function) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getFunctionRule()) {
+					sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Function_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Function) semanticObject); 
+					return; 
+				}
+				else break;
+			case KerMLOCPackage.IMPORT_ELEMENT:
+				sequence_ImportElement(context, (ImportElement) semanticObject); 
+				return; 
+			case KerMLOCPackage.INTERACTION:
+				if (rule == grammarAccess.getGeneralBodyElementsRule()
+						|| rule == grammarAccess.getPackageBodyElementRule()
+						|| rule == grammarAccess.getTypeBodyElementRule()
+						|| rule == grammarAccess.getNamespaceBodyElementRule()
+						|| rule == grammarAccess.getFunctionBodyElementRule()
+						|| rule == grammarAccess.getNonFeatureElementRule()) {
+					sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_Interaction_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Interaction) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getInteractionRule()) {
+					sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_Interaction_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Interaction) semanticObject); 
+					return; 
+				}
+				else break;
+			case KerMLOCPackage.LIBRARY_PACKAGE:
+				sequence_Identification_LibraryPackage_MemberPrefix_PrefixMetadata(context, (LibraryPackage) semanticObject); 
+				return; 
+			case KerMLOCPackage.METACLASS:
+				if (rule == grammarAccess.getGeneralBodyElementsRule()
+						|| rule == grammarAccess.getPackageBodyElementRule()
+						|| rule == grammarAccess.getTypeBodyElementRule()
+						|| rule == grammarAccess.getNamespaceBodyElementRule()
+						|| rule == grammarAccess.getFunctionBodyElementRule()
+						|| rule == grammarAccess.getNonFeatureElementRule()) {
+					sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_Metaclass_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Metaclass) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getMetaclassRule()) {
+					sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_Metaclass_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Metaclass) semanticObject); 
+					return; 
+				}
+				else break;
+			case KerMLOCPackage.MULTIPLICITY:
+				sequence_Identification_MemberPrefix_Multiplicity_MultiplicityBounds_SubsettingFeatureChain(context, (Multiplicity) semanticObject); 
+				return; 
+			case KerMLOCPackage.NAMESPACE:
+				sequence_Identification_Namespace_PrefixMetadata(context, (Namespace) semanticObject); 
+				return; 
+			case KerMLOCPackage.PACKAGE:
+				sequence_MemberPrefix_Package_PrefixMetadata(context, (dut.control.kermloc.kerMLOC.Package) semanticObject); 
+				return; 
+			case KerMLOCPackage.PREDICATE:
+				if (rule == grammarAccess.getGeneralBodyElementsRule()
+						|| rule == grammarAccess.getPackageBodyElementRule()
+						|| rule == grammarAccess.getTypeBodyElementRule()
+						|| rule == grammarAccess.getNamespaceBodyElementRule()
+						|| rule == grammarAccess.getFunctionBodyElementRule()
+						|| rule == grammarAccess.getNonFeatureElementRule()) {
+					sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_Predicate_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Predicate) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getPredicateRule()) {
+					sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_Predicate_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Predicate) semanticObject); 
+					return; 
+				}
+				else break;
+			case KerMLOCPackage.RESULT_EXPRESSION:
+				sequence_MemberPrefix_ResultExpression(context, (ResultExpression) semanticObject); 
+				return; 
+			case KerMLOCPackage.ROOT_NAMESPACE:
+				sequence_RootNamespace(context, (RootNamespace) semanticObject); 
+				return; 
+			case KerMLOCPackage.STRUCTURE:
+				if (rule == grammarAccess.getGeneralBodyElementsRule()
+						|| rule == grammarAccess.getPackageBodyElementRule()
+						|| rule == grammarAccess.getTypeBodyElementRule()
+						|| rule == grammarAccess.getNamespaceBodyElementRule()
+						|| rule == grammarAccess.getFunctionBodyElementRule()
+						|| rule == grammarAccess.getNonFeatureElementRule()) {
+					sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_Structure_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Structure) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getStructureRule()) {
+					sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_Structure_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Structure) semanticObject); 
+					return; 
+				}
+				else break;
+			case KerMLOCPackage.TEXTUAL_REPRESENTATION:
+				sequence_Identification_MemberPrefix_TextualRepresentation(context, (TextualRepresentation) semanticObject); 
+				return; 
+			case KerMLOCPackage.TYPE:
+				if (rule == grammarAccess.getGeneralBodyElementsRule()
+						|| rule == grammarAccess.getPackageBodyElementRule()
+						|| rule == grammarAccess.getTypeBodyElementRule()
+						|| rule == grammarAccess.getNamespaceBodyElementRule()
+						|| rule == grammarAccess.getFunctionBodyElementRule()
+						|| rule == grammarAccess.getNonFeatureElementRule()) {
+					sequence_ConjugationPart_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_Type_TypePrefix_UnioningPart(context, (Type) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getTypeRule()) {
+					sequence_ConjugationPart_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_Type_TypePrefix_UnioningPart(context, (Type) semanticObject); 
+					return; 
+				}
+				else break;
 			}
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
@@ -41,13 +295,1113 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     GeneralBodyElements returns AliasElement
+	 *     PackageBodyElement returns AliasElement
+	 *     TypeBodyElement returns AliasElement
+	 *     NamespaceBodyElement returns AliasElement
+	 *     FunctionBodyElement returns AliasElement
+	 *     AliasElement returns AliasElement
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
+	 *         memberShortName=Name? 
+	 *         memberName=Name? 
+	 *         memberElement=QualifiedName 
+	 *         elements+=AnnotatingBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_AliasElement_MemberPrefix(ISerializationContext context, AliasElement semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GeneralBodyElements returns AssociationStructure
+	 *     PackageBodyElement returns AssociationStructure
+	 *     TypeBodyElement returns AssociationStructure
+	 *     NamespaceBodyElement returns AssociationStructure
+	 *     FunctionBodyElement returns AssociationStructure
+	 *     NonFeatureElement returns AssociationStructure
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
+	 *         isAbstract?='abstract'? 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
+	 *         isSufficient?='all'? 
+	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
+	 *         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)? 
+	 *         ((subsetting+=FeatureChainName subsetting+=FeatureChainName*) | originalType=FeatureChainName)? 
+	 *         (
+	 *             (disjoining+=FeatureChainName disjoining+=FeatureChainName*) | 
+	 *             (unioning+=FeatureChainName unioning+=FeatureChainName*) | 
+	 *             (intersecting+=FeatureChainName intersecting+=FeatureChainName*) | 
+	 *             (differencing+=FeatureChainName differencing+=FeatureChainName*)
+	 *         )* 
+	 *         elements+=TypeBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_AssociationStructure_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, AssociationStructure semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	// This method is commented out because it has the same signature as another method in this class.
+	// This is probably a bug in Xtext's serializer, please report it here: 
+	// https://bugs.eclipse.org/bugs/enter_bug.cgi?product=TMF
+	//
+	// Contexts:
+	//     AssociationStructure returns AssociationStructure
+	//
+	// Constraint:
+	//     (
+	//         visibility=VisibilityIndicator? 
+	//         isVariant?='variant'? 
+	//         isAbstract?='abstract'? 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
+	//         isSufficient?='all'? 
+	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
+	//         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)? 
+	//         ((subsetting+=FeatureChainName subsetting+=FeatureChainName*) | originalType=FeatureChainName)? 
+	//         (
+	//             (disjoining+=FeatureChainName disjoining+=FeatureChainName*) | 
+	//             (unioning+=FeatureChainName unioning+=FeatureChainName*) | 
+	//             (intersecting+=FeatureChainName intersecting+=FeatureChainName*) | 
+	//             (differencing+=FeatureChainName differencing+=FeatureChainName*)
+	//         )* 
+	//         elements+=TypeBodyElement*
+	//     )
+	//
+	// protected void sequence_AssociationStructure_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, AssociationStructure semanticObject) { }
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GeneralBodyElements returns Association
+	 *     PackageBodyElement returns Association
+	 *     TypeBodyElement returns Association
+	 *     NamespaceBodyElement returns Association
+	 *     FunctionBodyElement returns Association
+	 *     NonFeatureElement returns Association
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
+	 *         isAbstract?='abstract'? 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
+	 *         isSufficient?='all'? 
+	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
+	 *         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)? 
+	 *         ((subsetting+=FeatureChainName subsetting+=FeatureChainName*) | originalType=FeatureChainName)? 
+	 *         (
+	 *             (disjoining+=FeatureChainName disjoining+=FeatureChainName*) | 
+	 *             (unioning+=FeatureChainName unioning+=FeatureChainName*) | 
+	 *             (intersecting+=FeatureChainName intersecting+=FeatureChainName*) | 
+	 *             (differencing+=FeatureChainName differencing+=FeatureChainName*)
+	 *         )* 
+	 *         elements+=TypeBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_Association_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Association semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	// This method is commented out because it has the same signature as another method in this class.
+	// This is probably a bug in Xtext's serializer, please report it here: 
+	// https://bugs.eclipse.org/bugs/enter_bug.cgi?product=TMF
+	//
+	// Contexts:
+	//     Association returns Association
+	//
+	// Constraint:
+	//     (
+	//         visibility=VisibilityIndicator? 
+	//         isVariant?='variant'? 
+	//         isAbstract?='abstract'? 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
+	//         isSufficient?='all'? 
+	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
+	//         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)? 
+	//         ((subsetting+=FeatureChainName subsetting+=FeatureChainName*) | originalType=FeatureChainName)? 
+	//         (
+	//             (disjoining+=FeatureChainName disjoining+=FeatureChainName*) | 
+	//             (unioning+=FeatureChainName unioning+=FeatureChainName*) | 
+	//             (intersecting+=FeatureChainName intersecting+=FeatureChainName*) | 
+	//             (differencing+=FeatureChainName differencing+=FeatureChainName*)
+	//         )* 
+	//         elements+=TypeBodyElement*
+	//     )
+	//
+	// protected void sequence_Association_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Association semanticObject) { }
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GeneralBodyElements returns Behavior
+	 *     PackageBodyElement returns Behavior
+	 *     TypeBodyElement returns Behavior
+	 *     NamespaceBodyElement returns Behavior
+	 *     FunctionBodyElement returns Behavior
+	 *     NonFeatureElement returns Behavior
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
+	 *         isAbstract?='abstract'? 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
+	 *         isSufficient?='all'? 
+	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
+	 *         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)? 
+	 *         ((subsetting+=FeatureChainName subsetting+=FeatureChainName*) | originalType=FeatureChainName)? 
+	 *         (
+	 *             (disjoining+=FeatureChainName disjoining+=FeatureChainName*) | 
+	 *             (unioning+=FeatureChainName unioning+=FeatureChainName*) | 
+	 *             (intersecting+=FeatureChainName intersecting+=FeatureChainName*) | 
+	 *             (differencing+=FeatureChainName differencing+=FeatureChainName*)
+	 *         )* 
+	 *         elements+=TypeBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_Behavior_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Behavior semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	// This method is commented out because it has the same signature as another method in this class.
+	// This is probably a bug in Xtext's serializer, please report it here: 
+	// https://bugs.eclipse.org/bugs/enter_bug.cgi?product=TMF
+	//
+	// Contexts:
+	//     Behavior returns Behavior
+	//
+	// Constraint:
+	//     (
+	//         visibility=VisibilityIndicator? 
+	//         isVariant?='variant'? 
+	//         isAbstract?='abstract'? 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
+	//         isSufficient?='all'? 
+	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
+	//         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)? 
+	//         ((subsetting+=FeatureChainName subsetting+=FeatureChainName*) | originalType=FeatureChainName)? 
+	//         (
+	//             (disjoining+=FeatureChainName disjoining+=FeatureChainName*) | 
+	//             (unioning+=FeatureChainName unioning+=FeatureChainName*) | 
+	//             (intersecting+=FeatureChainName intersecting+=FeatureChainName*) | 
+	//             (differencing+=FeatureChainName differencing+=FeatureChainName*)
+	//         )* 
+	//         elements+=TypeBodyElement*
+	//     )
+	//
+	// protected void sequence_Behavior_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Behavior semanticObject) { }
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GeneralBodyElements returns Class
+	 *     PackageBodyElement returns Class
+	 *     TypeBodyElement returns Class
+	 *     NamespaceBodyElement returns Class
+	 *     FunctionBodyElement returns Class
+	 *     NonFeatureElement returns Class
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
+	 *         isAbstract?='abstract'? 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
+	 *         isSufficient?='all'? 
+	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
+	 *         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)? 
+	 *         ((subsetting+=FeatureChainName subsetting+=FeatureChainName*) | originalType=FeatureChainName)? 
+	 *         (
+	 *             (disjoining+=FeatureChainName disjoining+=FeatureChainName*) | 
+	 *             (unioning+=FeatureChainName unioning+=FeatureChainName*) | 
+	 *             (intersecting+=FeatureChainName intersecting+=FeatureChainName*) | 
+	 *             (differencing+=FeatureChainName differencing+=FeatureChainName*)
+	 *         )* 
+	 *         elements+=TypeBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_Class_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, dut.control.kermloc.kerMLOC.Class semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	// This method is commented out because it has the same signature as another method in this class.
+	// This is probably a bug in Xtext's serializer, please report it here: 
+	// https://bugs.eclipse.org/bugs/enter_bug.cgi?product=TMF
+	//
+	// Contexts:
+	//     Class returns Class
+	//
+	// Constraint:
+	//     (
+	//         visibility=VisibilityIndicator? 
+	//         isVariant?='variant'? 
+	//         isAbstract?='abstract'? 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
+	//         isSufficient?='all'? 
+	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
+	//         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)? 
+	//         ((subsetting+=FeatureChainName subsetting+=FeatureChainName*) | originalType=FeatureChainName)? 
+	//         (
+	//             (disjoining+=FeatureChainName disjoining+=FeatureChainName*) | 
+	//             (unioning+=FeatureChainName unioning+=FeatureChainName*) | 
+	//             (intersecting+=FeatureChainName intersecting+=FeatureChainName*) | 
+	//             (differencing+=FeatureChainName differencing+=FeatureChainName*)
+	//         )* 
+	//         elements+=TypeBodyElement*
+	//     )
+	//
+	// protected void sequence_Class_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, dut.control.kermloc.kerMLOC.Class semanticObject) { }
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GeneralBodyElements returns DataType
+	 *     PackageBodyElement returns DataType
+	 *     TypeBodyElement returns DataType
+	 *     NamespaceBodyElement returns DataType
+	 *     FunctionBodyElement returns DataType
+	 *     NonFeatureElement returns DataType
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
+	 *         isAbstract?='abstract'? 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
+	 *         isSufficient?='all'? 
+	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
+	 *         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)? 
+	 *         ((subsetting+=FeatureChainName subsetting+=FeatureChainName*) | originalType=FeatureChainName)? 
+	 *         (
+	 *             (disjoining+=FeatureChainName disjoining+=FeatureChainName*) | 
+	 *             (unioning+=FeatureChainName unioning+=FeatureChainName*) | 
+	 *             (intersecting+=FeatureChainName intersecting+=FeatureChainName*) | 
+	 *             (differencing+=FeatureChainName differencing+=FeatureChainName*)
+	 *         )* 
+	 *         elements+=TypeBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_ClassifierConjugationPart_ClassifierDeclaration_DataType_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, DataType semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	// This method is commented out because it has the same signature as another method in this class.
+	// This is probably a bug in Xtext's serializer, please report it here: 
+	// https://bugs.eclipse.org/bugs/enter_bug.cgi?product=TMF
+	//
+	// Contexts:
+	//     DataType returns DataType
+	//
+	// Constraint:
+	//     (
+	//         visibility=VisibilityIndicator? 
+	//         isVariant?='variant'? 
+	//         isAbstract?='abstract'? 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
+	//         isSufficient?='all'? 
+	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
+	//         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)? 
+	//         ((subsetting+=FeatureChainName subsetting+=FeatureChainName*) | originalType=FeatureChainName)? 
+	//         (
+	//             (disjoining+=FeatureChainName disjoining+=FeatureChainName*) | 
+	//             (unioning+=FeatureChainName unioning+=FeatureChainName*) | 
+	//             (intersecting+=FeatureChainName intersecting+=FeatureChainName*) | 
+	//             (differencing+=FeatureChainName differencing+=FeatureChainName*)
+	//         )* 
+	//         elements+=TypeBodyElement*
+	//     )
+	//
+	// protected void sequence_ClassifierConjugationPart_ClassifierDeclaration_DataType_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, DataType semanticObject) { }
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GeneralBodyElements returns Function
+	 *     PackageBodyElement returns Function
+	 *     TypeBodyElement returns Function
+	 *     NamespaceBodyElement returns Function
+	 *     FunctionBodyElement returns Function
+	 *     NonFeatureElement returns Function
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
+	 *         isAbstract?='abstract'? 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
+	 *         isSufficient?='all'? 
+	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
+	 *         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)? 
+	 *         ((subsetting+=FeatureChainName subsetting+=FeatureChainName*) | originalType=FeatureChainName)? 
+	 *         (
+	 *             (disjoining+=FeatureChainName disjoining+=FeatureChainName*) | 
+	 *             (unioning+=FeatureChainName unioning+=FeatureChainName*) | 
+	 *             (intersecting+=FeatureChainName intersecting+=FeatureChainName*) | 
+	 *             (differencing+=FeatureChainName differencing+=FeatureChainName*)
+	 *         )* 
+	 *         elements+=FunctionBodyElement* 
+	 *         resultExpressionParameter+=ResultExpression?
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Function_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Function semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	// This method is commented out because it has the same signature as another method in this class.
+	// This is probably a bug in Xtext's serializer, please report it here: 
+	// https://bugs.eclipse.org/bugs/enter_bug.cgi?product=TMF
+	//
+	// Contexts:
+	//     Function returns Function
+	//
+	// Constraint:
+	//     (
+	//         visibility=VisibilityIndicator? 
+	//         isVariant?='variant'? 
+	//         isAbstract?='abstract'? 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
+	//         isSufficient?='all'? 
+	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
+	//         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)? 
+	//         ((subsetting+=FeatureChainName subsetting+=FeatureChainName*) | originalType=FeatureChainName)? 
+	//         (
+	//             (disjoining+=FeatureChainName disjoining+=FeatureChainName*) | 
+	//             (unioning+=FeatureChainName unioning+=FeatureChainName*) | 
+	//             (intersecting+=FeatureChainName intersecting+=FeatureChainName*) | 
+	//             (differencing+=FeatureChainName differencing+=FeatureChainName*)
+	//         )* 
+	//         elements+=FunctionBodyElement* 
+	//         resultExpressionParameter+=ResultExpression?
+	//     )
+	//
+	// protected void sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Function_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Function semanticObject) { }
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GeneralBodyElements returns Interaction
+	 *     PackageBodyElement returns Interaction
+	 *     TypeBodyElement returns Interaction
+	 *     NamespaceBodyElement returns Interaction
+	 *     FunctionBodyElement returns Interaction
+	 *     NonFeatureElement returns Interaction
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
+	 *         isAbstract?='abstract'? 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
+	 *         isSufficient?='all'? 
+	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
+	 *         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)? 
+	 *         ((subsetting+=FeatureChainName subsetting+=FeatureChainName*) | originalType=FeatureChainName)? 
+	 *         (
+	 *             (disjoining+=FeatureChainName disjoining+=FeatureChainName*) | 
+	 *             (unioning+=FeatureChainName unioning+=FeatureChainName*) | 
+	 *             (intersecting+=FeatureChainName intersecting+=FeatureChainName*) | 
+	 *             (differencing+=FeatureChainName differencing+=FeatureChainName*)
+	 *         )* 
+	 *         elements+=TypeBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_Interaction_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Interaction semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	// This method is commented out because it has the same signature as another method in this class.
+	// This is probably a bug in Xtext's serializer, please report it here: 
+	// https://bugs.eclipse.org/bugs/enter_bug.cgi?product=TMF
+	//
+	// Contexts:
+	//     Interaction returns Interaction
+	//
+	// Constraint:
+	//     (
+	//         visibility=VisibilityIndicator? 
+	//         isVariant?='variant'? 
+	//         isAbstract?='abstract'? 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
+	//         isSufficient?='all'? 
+	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
+	//         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)? 
+	//         ((subsetting+=FeatureChainName subsetting+=FeatureChainName*) | originalType=FeatureChainName)? 
+	//         (
+	//             (disjoining+=FeatureChainName disjoining+=FeatureChainName*) | 
+	//             (unioning+=FeatureChainName unioning+=FeatureChainName*) | 
+	//             (intersecting+=FeatureChainName intersecting+=FeatureChainName*) | 
+	//             (differencing+=FeatureChainName differencing+=FeatureChainName*)
+	//         )* 
+	//         elements+=TypeBodyElement*
+	//     )
+	//
+	// protected void sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_Interaction_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Interaction semanticObject) { }
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GeneralBodyElements returns Metaclass
+	 *     PackageBodyElement returns Metaclass
+	 *     TypeBodyElement returns Metaclass
+	 *     NamespaceBodyElement returns Metaclass
+	 *     FunctionBodyElement returns Metaclass
+	 *     NonFeatureElement returns Metaclass
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
+	 *         isAbstract?='abstract'? 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
+	 *         isSufficient?='all'? 
+	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
+	 *         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)? 
+	 *         ((subsetting+=FeatureChainName subsetting+=FeatureChainName*) | originalType=FeatureChainName)? 
+	 *         (
+	 *             (disjoining+=FeatureChainName disjoining+=FeatureChainName*) | 
+	 *             (unioning+=FeatureChainName unioning+=FeatureChainName*) | 
+	 *             (intersecting+=FeatureChainName intersecting+=FeatureChainName*) | 
+	 *             (differencing+=FeatureChainName differencing+=FeatureChainName*)
+	 *         )* 
+	 *         elements+=TypeBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_Metaclass_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Metaclass semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	// This method is commented out because it has the same signature as another method in this class.
+	// This is probably a bug in Xtext's serializer, please report it here: 
+	// https://bugs.eclipse.org/bugs/enter_bug.cgi?product=TMF
+	//
+	// Contexts:
+	//     Metaclass returns Metaclass
+	//
+	// Constraint:
+	//     (
+	//         visibility=VisibilityIndicator? 
+	//         isVariant?='variant'? 
+	//         isAbstract?='abstract'? 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
+	//         isSufficient?='all'? 
+	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
+	//         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)? 
+	//         ((subsetting+=FeatureChainName subsetting+=FeatureChainName*) | originalType=FeatureChainName)? 
+	//         (
+	//             (disjoining+=FeatureChainName disjoining+=FeatureChainName*) | 
+	//             (unioning+=FeatureChainName unioning+=FeatureChainName*) | 
+	//             (intersecting+=FeatureChainName intersecting+=FeatureChainName*) | 
+	//             (differencing+=FeatureChainName differencing+=FeatureChainName*)
+	//         )* 
+	//         elements+=TypeBodyElement*
+	//     )
+	//
+	// protected void sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_Metaclass_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Metaclass semanticObject) { }
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GeneralBodyElements returns Predicate
+	 *     PackageBodyElement returns Predicate
+	 *     TypeBodyElement returns Predicate
+	 *     NamespaceBodyElement returns Predicate
+	 *     FunctionBodyElement returns Predicate
+	 *     NonFeatureElement returns Predicate
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
+	 *         isAbstract?='abstract'? 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
+	 *         isSufficient?='all'? 
+	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
+	 *         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)? 
+	 *         ((subsetting+=FeatureChainName subsetting+=FeatureChainName*) | originalType=FeatureChainName)? 
+	 *         (
+	 *             (disjoining+=FeatureChainName disjoining+=FeatureChainName*) | 
+	 *             (unioning+=FeatureChainName unioning+=FeatureChainName*) | 
+	 *             (intersecting+=FeatureChainName intersecting+=FeatureChainName*) | 
+	 *             (differencing+=FeatureChainName differencing+=FeatureChainName*)
+	 *         )* 
+	 *         elements+=FunctionBodyElement* 
+	 *         resultExpressionParameter+=ResultExpression?
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_Predicate_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Predicate semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	// This method is commented out because it has the same signature as another method in this class.
+	// This is probably a bug in Xtext's serializer, please report it here: 
+	// https://bugs.eclipse.org/bugs/enter_bug.cgi?product=TMF
+	//
+	// Contexts:
+	//     Predicate returns Predicate
+	//
+	// Constraint:
+	//     (
+	//         visibility=VisibilityIndicator? 
+	//         isVariant?='variant'? 
+	//         isAbstract?='abstract'? 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
+	//         isSufficient?='all'? 
+	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
+	//         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)? 
+	//         ((subsetting+=FeatureChainName subsetting+=FeatureChainName*) | originalType=FeatureChainName)? 
+	//         (
+	//             (disjoining+=FeatureChainName disjoining+=FeatureChainName*) | 
+	//             (unioning+=FeatureChainName unioning+=FeatureChainName*) | 
+	//             (intersecting+=FeatureChainName intersecting+=FeatureChainName*) | 
+	//             (differencing+=FeatureChainName differencing+=FeatureChainName*)
+	//         )* 
+	//         elements+=FunctionBodyElement* 
+	//         resultExpressionParameter+=ResultExpression?
+	//     )
+	//
+	// protected void sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_Predicate_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Predicate semanticObject) { }
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GeneralBodyElements returns Structure
+	 *     PackageBodyElement returns Structure
+	 *     TypeBodyElement returns Structure
+	 *     NamespaceBodyElement returns Structure
+	 *     FunctionBodyElement returns Structure
+	 *     NonFeatureElement returns Structure
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
+	 *         isAbstract?='abstract'? 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
+	 *         isSufficient?='all'? 
+	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
+	 *         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)? 
+	 *         ((subsetting+=FeatureChainName subsetting+=FeatureChainName*) | originalType=FeatureChainName)? 
+	 *         (
+	 *             (disjoining+=FeatureChainName disjoining+=FeatureChainName*) | 
+	 *             (unioning+=FeatureChainName unioning+=FeatureChainName*) | 
+	 *             (intersecting+=FeatureChainName intersecting+=FeatureChainName*) | 
+	 *             (differencing+=FeatureChainName differencing+=FeatureChainName*)
+	 *         )* 
+	 *         elements+=TypeBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_Structure_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Structure semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	// This method is commented out because it has the same signature as another method in this class.
+	// This is probably a bug in Xtext's serializer, please report it here: 
+	// https://bugs.eclipse.org/bugs/enter_bug.cgi?product=TMF
+	//
+	// Contexts:
+	//     Structure returns Structure
+	//
+	// Constraint:
+	//     (
+	//         visibility=VisibilityIndicator? 
+	//         isVariant?='variant'? 
+	//         isAbstract?='abstract'? 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
+	//         isSufficient?='all'? 
+	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
+	//         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)? 
+	//         ((subsetting+=FeatureChainName subsetting+=FeatureChainName*) | originalType=FeatureChainName)? 
+	//         (
+	//             (disjoining+=FeatureChainName disjoining+=FeatureChainName*) | 
+	//             (unioning+=FeatureChainName unioning+=FeatureChainName*) | 
+	//             (intersecting+=FeatureChainName intersecting+=FeatureChainName*) | 
+	//             (differencing+=FeatureChainName differencing+=FeatureChainName*)
+	//         )* 
+	//         elements+=TypeBodyElement*
+	//     )
+	//
+	// protected void sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_Structure_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Structure semanticObject) { }
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GeneralBodyElements returns Classifier
+	 *     PackageBodyElement returns Classifier
+	 *     TypeBodyElement returns Classifier
+	 *     NamespaceBodyElement returns Classifier
+	 *     FunctionBodyElement returns Classifier
+	 *     NonFeatureElement returns Classifier
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
+	 *         isAbstract?='abstract'? 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
+	 *         isSufficient?='all'? 
+	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
+	 *         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)? 
+	 *         ((subsetting+=FeatureChainName subsetting+=FeatureChainName*) | originalType=FeatureChainName)? 
+	 *         (
+	 *             (disjoining+=FeatureChainName disjoining+=FeatureChainName*) | 
+	 *             (unioning+=FeatureChainName unioning+=FeatureChainName*) | 
+	 *             (intersecting+=FeatureChainName intersecting+=FeatureChainName*) | 
+	 *             (differencing+=FeatureChainName differencing+=FeatureChainName*)
+	 *         )* 
+	 *         elements+=TypeBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_Classifier_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Classifier semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	// This method is commented out because it has the same signature as another method in this class.
+	// This is probably a bug in Xtext's serializer, please report it here: 
+	// https://bugs.eclipse.org/bugs/enter_bug.cgi?product=TMF
+	//
+	// Contexts:
+	//     Classifier returns Classifier
+	//
+	// Constraint:
+	//     (
+	//         visibility=VisibilityIndicator? 
+	//         isVariant?='variant'? 
+	//         isAbstract?='abstract'? 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
+	//         isSufficient?='all'? 
+	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
+	//         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)? 
+	//         ((subsetting+=FeatureChainName subsetting+=FeatureChainName*) | originalType=FeatureChainName)? 
+	//         (
+	//             (disjoining+=FeatureChainName disjoining+=FeatureChainName*) | 
+	//             (unioning+=FeatureChainName unioning+=FeatureChainName*) | 
+	//             (intersecting+=FeatureChainName intersecting+=FeatureChainName*) | 
+	//             (differencing+=FeatureChainName differencing+=FeatureChainName*)
+	//         )* 
+	//         elements+=TypeBodyElement*
+	//     )
+	//
+	// protected void sequence_Classifier_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Classifier semanticObject) { }
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GeneralBodyElements returns CodeAnnotation
+	 *     AnnotatingBodyElement returns CodeAnnotation
+	 *     PackageBodyElement returns CodeAnnotation
+	 *     TypeBodyElement returns CodeAnnotation
+	 *     NamespaceBodyElement returns CodeAnnotation
+	 *     FunctionBodyElement returns CodeAnnotation
+	 *     CodeAnnotation returns CodeAnnotation
+	 *
+	 * Constraint:
+	 *     (body=SL_NOTE | body=ML_NOTE)
+	 * </pre>
+	 */
+	protected void sequence_CodeAnnotation(ISerializationContext context, CodeAnnotation semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GeneralBodyElements returns Comment
+	 *     AnnotatingBodyElement returns Comment
+	 *     PackageBodyElement returns Comment
+	 *     TypeBodyElement returns Comment
+	 *     NamespaceBodyElement returns Comment
+	 *     FunctionBodyElement returns Comment
+	 *     AnnotatingElement returns Comment
+	 *     Comment returns Comment
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
+	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
+	 *         (annotatedElement+=QualifiedName annotatedElement+=QualifiedName*)? 
+	 *         locale=STRING_VALUE? 
+	 *         body=REGULAR_COMMENT
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_Comment_Identification_MemberPrefix(ISerializationContext context, Comment semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GeneralBodyElements returns Type
+	 *     PackageBodyElement returns Type
+	 *     TypeBodyElement returns Type
+	 *     NamespaceBodyElement returns Type
+	 *     FunctionBodyElement returns Type
+	 *     NonFeatureElement returns Type
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
+	 *         isAbstract?='abstract'? 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
+	 *         isSufficient?='all'? 
+	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
+	 *         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)? 
+	 *         ((subsetting+=FeatureChainName subsetting+=FeatureChainName*) | originalType=FeatureChainName) 
+	 *         (
+	 *             (disjoining+=FeatureChainName disjoining+=FeatureChainName*) | 
+	 *             (unioning+=FeatureChainName unioning+=FeatureChainName*) | 
+	 *             (intersecting+=FeatureChainName intersecting+=FeatureChainName*) | 
+	 *             (differencing+=FeatureChainName differencing+=FeatureChainName*)
+	 *         )* 
+	 *         elements+=TypeBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_ConjugationPart_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_Type_TypePrefix_UnioningPart(ISerializationContext context, Type semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	// This method is commented out because it has the same signature as another method in this class.
+	// This is probably a bug in Xtext's serializer, please report it here: 
+	// https://bugs.eclipse.org/bugs/enter_bug.cgi?product=TMF
+	//
+	// Contexts:
+	//     Type returns Type
+	//
+	// Constraint:
+	//     (
+	//         visibility=VisibilityIndicator? 
+	//         isVariant?='variant'? 
+	//         isAbstract?='abstract'? 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
+	//         isSufficient?='all'? 
+	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
+	//         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)? 
+	//         ((subsetting+=FeatureChainName subsetting+=FeatureChainName*) | originalType=FeatureChainName) 
+	//         (
+	//             (disjoining+=FeatureChainName disjoining+=FeatureChainName*) | 
+	//             (unioning+=FeatureChainName unioning+=FeatureChainName*) | 
+	//             (intersecting+=FeatureChainName intersecting+=FeatureChainName*) | 
+	//             (differencing+=FeatureChainName differencing+=FeatureChainName*)
+	//         )* 
+	//         elements+=TypeBodyElement*
+	//     )
+	//
+	// protected void sequence_ConjugationPart_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_Type_TypePrefix_UnioningPart(ISerializationContext context, Type semanticObject) { }
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GeneralBodyElements returns Dependency
+	 *     PackageBodyElement returns Dependency
+	 *     TypeBodyElement returns Dependency
+	 *     NamespaceBodyElement returns Dependency
+	 *     FunctionBodyElement returns Dependency
+	 *     NonFeatureElement returns Dependency
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
+	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
+	 *         client+=QualifiedName 
+	 *         client+=QualifiedName* 
+	 *         supplier+=QualifiedName 
+	 *         supplier+=QualifiedName* 
+	 *         elements+=AnnotatingElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_Dependency_Identification_MemberPrefix_PrefixMetadata(ISerializationContext context, Dependency semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	// This method is commented out because it has the same signature as another method in this class.
+	// This is probably a bug in Xtext's serializer, please report it here: 
+	// https://bugs.eclipse.org/bugs/enter_bug.cgi?product=TMF
+	//
+	// Contexts:
+	//     Dependency returns Dependency
+	//
+	// Constraint:
+	//     (
+	//         visibility=VisibilityIndicator? 
+	//         isVariant?='variant'? 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
+	//         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
+	//         client+=QualifiedName 
+	//         client+=QualifiedName* 
+	//         supplier+=QualifiedName 
+	//         supplier+=QualifiedName* 
+	//         elements+=AnnotatingElement*
+	//     )
+	//
+	// protected void sequence_Dependency_Identification_MemberPrefix_PrefixMetadata(ISerializationContext context, Dependency semanticObject) { }
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GeneralBodyElements returns Documentation
+	 *     AnnotatingBodyElement returns Documentation
+	 *     PackageBodyElement returns Documentation
+	 *     TypeBodyElement returns Documentation
+	 *     NamespaceBodyElement returns Documentation
+	 *     FunctionBodyElement returns Documentation
+	 *     AnnotatingElement returns Documentation
+	 *     Documentation returns Documentation
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
+	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
+	 *         locale=STRING_VALUE? 
+	 *         body=REGULAR_COMMENT
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_Documentation_Identification_MemberPrefix(ISerializationContext context, Documentation semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     PackageBodyElement returns ElementFilterElement
+	 *     ElementFilterElement returns ElementFilterElement
+	 *
+	 * Constraint:
+	 *     (visibility=VisibilityIndicator? isVariant?='variant'? filterExpression=Expression)
+	 * </pre>
+	 */
+	protected void sequence_ElementFilterElement_MemberPrefix(ISerializationContext context, ElementFilterElement semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GeneralBodyElements returns LibraryPackage
+	 *     PackageBodyElement returns LibraryPackage
+	 *     TypeBodyElement returns LibraryPackage
+	 *     NamespaceBodyElement returns LibraryPackage
+	 *     FunctionBodyElement returns LibraryPackage
+	 *     NonFeatureElement returns LibraryPackage
+	 *     LibraryPackage returns LibraryPackage
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
+	 *         isStandard?='standard'? 
+	 *         isLibrary?='library' 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
+	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
+	 *         elements+=PackageBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_Identification_LibraryPackage_MemberPrefix_PrefixMetadata(ISerializationContext context, LibraryPackage semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GeneralBodyElements returns Multiplicity
+	 *     PackageBodyElement returns Multiplicity
+	 *     TypeBodyElement returns Multiplicity
+	 *     NamespaceBodyElement returns Multiplicity
+	 *     FunctionBodyElement returns Multiplicity
+	 *     NonFeatureElement returns Multiplicity
+	 *     Multiplicity returns Multiplicity
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
+	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
+	 *         ((MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | (subsetting+=FeatureChainName subsetting+=FeatureChainName*)) 
+	 *         elements+=TypeBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_Identification_MemberPrefix_Multiplicity_MultiplicityBounds_SubsettingFeatureChain(ISerializationContext context, Multiplicity semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GeneralBodyElements returns TextualRepresentation
+	 *     AnnotatingBodyElement returns TextualRepresentation
+	 *     PackageBodyElement returns TextualRepresentation
+	 *     TypeBodyElement returns TextualRepresentation
+	 *     NamespaceBodyElement returns TextualRepresentation
+	 *     FunctionBodyElement returns TextualRepresentation
+	 *     AnnotatingElement returns TextualRepresentation
+	 *     TextualRepresentation returns TextualRepresentation
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
+	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
+	 *         language=STRING_VALUE 
+	 *         body=REGULAR_COMMENT
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_Identification_MemberPrefix_TextualRepresentation(ISerializationContext context, TextualRepresentation semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GeneralBodyElements returns Namespace
+	 *     PackageBodyElement returns Namespace
+	 *     TypeBodyElement returns Namespace
+	 *     NamespaceBodyElement returns Namespace
+	 *     FunctionBodyElement returns Namespace
+	 *     NonFeatureElement returns Namespace
 	 *     Namespace returns Namespace
+	 *
+	 * Constraint:
+	 *     (
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
+	 *         isNamespace?='namespace' 
+	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
+	 *         elements+=NamespaceBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_Identification_Namespace_PrefixMetadata(ISerializationContext context, Namespace semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GeneralBodyElements returns ImportElement
+	 *     PackageBodyElement returns ImportElement
+	 *     TypeBodyElement returns ImportElement
+	 *     NamespaceBodyElement returns ImportElement
+	 *     FunctionBodyElement returns ImportElement
+	 *     ImportElement returns ImportElement
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator 
+	 *         isImportAll?='all'? 
+	 *         declaredName=QualifiedName 
+	 *         isNamespace?='::'? 
+	 *         isRecursive?='**'? 
+	 *         filterPackageExpression+=Expression* 
+	 *         elements+=AnnotatingBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_ImportElement(ISerializationContext context, ImportElement semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GeneralBodyElements returns Package
+	 *     PackageBodyElement returns Package
+	 *     TypeBodyElement returns Package
+	 *     NamespaceBodyElement returns Package
+	 *     FunctionBodyElement returns Package
+	 *     NonFeatureElement returns Package
+	 *     Package returns Package
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
+	 *         declaredName=QualifiedName 
+	 *         elements+=PackageBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_MemberPrefix_Package_PrefixMetadata(ISerializationContext context, dut.control.kermloc.kerMLOC.Package semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     ResultExpression returns ResultExpression
+	 *
+	 * Constraint:
+	 *     (visibility=VisibilityIndicator? isVariant?='variant'? resultExpression=Expression)
+	 * </pre>
+	 */
+	protected void sequence_MemberPrefix_ResultExpression(ISerializationContext context, ResultExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     RootNamespace returns RootNamespace
 	 *
 	 * Constraint:
 	 *     elements+=GeneralBodyElements+
 	 * </pre>
 	 */
-	protected void sequence_Namespace(ISerializationContext context, Namespace semanticObject) {
+	protected void sequence_RootNamespace(ISerializationContext context, RootNamespace semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

@@ -3,8 +3,8 @@
  */
 package dut.control.sysmloc.sysMLOC.impl;
 
+import dut.control.sysmloc.sysMLOC.AnnotatingBodyElement;
 import dut.control.sysmloc.sysMLOC.ExposeElement;
-import dut.control.sysmloc.sysMLOC.RelationshipBodyElement;
 import dut.control.sysmloc.sysMLOC.SysMLOCPackage;
 
 import java.util.Collection;
@@ -120,7 +120,7 @@ public class ExposeElementImpl extends ViewBodyElementImpl implements ExposeElem
    * @generated
    * @ordered
    */
-  protected EList<RelationshipBodyElement> elements;
+  protected EList<AnnotatingBodyElement> elements;
 
   /**
    * <!-- begin-user-doc -->
@@ -239,11 +239,11 @@ public class ExposeElementImpl extends ViewBodyElementImpl implements ExposeElem
    * @generated
    */
   @Override
-  public EList<RelationshipBodyElement> getElements()
+  public EList<AnnotatingBodyElement> getElements()
   {
     if (elements == null)
     {
-      elements = new EObjectContainmentEList<RelationshipBodyElement>(RelationshipBodyElement.class, this, SysMLOCPackage.EXPOSE_ELEMENT__ELEMENTS);
+      elements = new EObjectContainmentEList<AnnotatingBodyElement>(AnnotatingBodyElement.class, this, SysMLOCPackage.EXPOSE_ELEMENT__ELEMENTS);
     }
     return elements;
   }
@@ -314,7 +314,7 @@ public class ExposeElementImpl extends ViewBodyElementImpl implements ExposeElem
         return;
       case SysMLOCPackage.EXPOSE_ELEMENT__ELEMENTS:
         getElements().clear();
-        getElements().addAll((Collection<? extends RelationshipBodyElement>)newValue);
+        getElements().addAll((Collection<? extends AnnotatingBodyElement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

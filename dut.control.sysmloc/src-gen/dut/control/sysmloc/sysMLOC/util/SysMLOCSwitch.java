@@ -113,7 +113,6 @@ import dut.control.sysmloc.sysMLOC.MetadataUsage;
 import dut.control.sysmloc.sysMLOC.MultiplicityModifiers;
 import dut.control.sysmloc.sysMLOC.MultiplicityPart;
 import dut.control.sysmloc.sysMLOC.MultiplicityRange;
-import dut.control.sysmloc.sysMLOC.Namespace;
 import dut.control.sysmloc.sysMLOC.NonOccurrenceUsageElement;
 import dut.control.sysmloc.sysMLOC.ObjectiveRequirementUsage;
 import dut.control.sysmloc.sysMLOC.OccurrenceDefinition;
@@ -141,7 +140,6 @@ import dut.control.sysmloc.sysMLOC.ReferenceFeatureChain;
 import dut.control.sysmloc.sysMLOC.ReferenceSubsetting;
 import dut.control.sysmloc.sysMLOC.ReferenceUsage;
 import dut.control.sysmloc.sysMLOC.ReferenceVariantUsage;
-import dut.control.sysmloc.sysMLOC.RelationshipBodyElement;
 import dut.control.sysmloc.sysMLOC.RenderingDefinition;
 import dut.control.sysmloc.sysMLOC.RenderingUsage;
 import dut.control.sysmloc.sysMLOC.RequirementBodyElement;
@@ -151,6 +149,7 @@ import dut.control.sysmloc.sysMLOC.RequirementNodeElements;
 import dut.control.sysmloc.sysMLOC.RequirementUsage;
 import dut.control.sysmloc.sysMLOC.RequirementVerificationUsage;
 import dut.control.sysmloc.sysMLOC.ResultExpression;
+import dut.control.sysmloc.sysMLOC.RootNamespace;
 import dut.control.sysmloc.sysMLOC.SatisfyRequirementUsage;
 import dut.control.sysmloc.sysMLOC.SendActionUsage;
 import dut.control.sysmloc.sysMLOC.SendNode;
@@ -264,10 +263,10 @@ public class SysMLOCSwitch<T> extends Switch<T>
   {
     switch (classifierID)
     {
-      case SysMLOCPackage.NAMESPACE:
+      case SysMLOCPackage.ROOT_NAMESPACE:
       {
-        Namespace namespace = (Namespace)theEObject;
-        T result = caseNamespace(namespace);
+        RootNamespace rootNamespace = (RootNamespace)theEObject;
+        T result = caseRootNamespace(rootNamespace);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -385,13 +384,6 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SysMLOCPackage.RELATIONSHIP_BODY_ELEMENT:
-      {
-        RelationshipBodyElement relationshipBodyElement = (RelationshipBodyElement)theEObject;
-        T result = caseRelationshipBodyElement(relationshipBodyElement);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case SysMLOCPackage.ANNOTATING_ELEMENT:
       {
         AnnotatingElement annotatingElement = (AnnotatingElement)theEObject;
@@ -399,7 +391,6 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseGeneralBodyElements(annotatingElement);
         if (result == null) result = caseEnumerationBodyElement(annotatingElement);
         if (result == null) result = caseAnnotatingBodyElement(annotatingElement);
-        if (result == null) result = caseRelationshipBodyElement(annotatingElement);
         if (result == null) result = casePackageBodyElement(annotatingElement);
         if (result == null) result = caseDefinitionBodyElement(annotatingElement);
         if (result == null) result = caseUsageBodyElement(annotatingElement);
@@ -615,7 +606,6 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseGeneralBodyElements(codeAnnotation);
         if (result == null) result = caseEnumerationBodyElement(codeAnnotation);
         if (result == null) result = caseAnnotatingBodyElement(codeAnnotation);
-        if (result == null) result = caseRelationshipBodyElement(codeAnnotation);
         if (result == null) result = casePackageBodyElement(codeAnnotation);
         if (result == null) result = caseDefinitionBodyElement(codeAnnotation);
         if (result == null) result = caseUsageBodyElement(codeAnnotation);
@@ -635,11 +625,11 @@ public class SysMLOCSwitch<T> extends Switch<T>
         Comment comment = (Comment)theEObject;
         T result = caseComment(comment);
         if (result == null) result = caseAnnotatingElement(comment);
+        if (result == null) result = caseMemberPrefix(comment);
         if (result == null) result = caseIdentification(comment);
         if (result == null) result = caseGeneralBodyElements(comment);
         if (result == null) result = caseEnumerationBodyElement(comment);
         if (result == null) result = caseAnnotatingBodyElement(comment);
-        if (result == null) result = caseRelationshipBodyElement(comment);
         if (result == null) result = casePackageBodyElement(comment);
         if (result == null) result = caseDefinitionBodyElement(comment);
         if (result == null) result = caseUsageBodyElement(comment);
@@ -659,11 +649,11 @@ public class SysMLOCSwitch<T> extends Switch<T>
         Documentation documentation = (Documentation)theEObject;
         T result = caseDocumentation(documentation);
         if (result == null) result = caseAnnotatingElement(documentation);
+        if (result == null) result = caseMemberPrefix(documentation);
         if (result == null) result = caseIdentification(documentation);
         if (result == null) result = caseGeneralBodyElements(documentation);
         if (result == null) result = caseEnumerationBodyElement(documentation);
         if (result == null) result = caseAnnotatingBodyElement(documentation);
-        if (result == null) result = caseRelationshipBodyElement(documentation);
         if (result == null) result = casePackageBodyElement(documentation);
         if (result == null) result = caseDefinitionBodyElement(documentation);
         if (result == null) result = caseUsageBodyElement(documentation);
@@ -683,11 +673,11 @@ public class SysMLOCSwitch<T> extends Switch<T>
         TextualRepresentation textualRepresentation = (TextualRepresentation)theEObject;
         T result = caseTextualRepresentation(textualRepresentation);
         if (result == null) result = caseAnnotatingElement(textualRepresentation);
+        if (result == null) result = caseMemberPrefix(textualRepresentation);
         if (result == null) result = caseIdentification(textualRepresentation);
         if (result == null) result = caseGeneralBodyElements(textualRepresentation);
         if (result == null) result = caseEnumerationBodyElement(textualRepresentation);
         if (result == null) result = caseAnnotatingBodyElement(textualRepresentation);
-        if (result == null) result = caseRelationshipBodyElement(textualRepresentation);
         if (result == null) result = casePackageBodyElement(textualRepresentation);
         if (result == null) result = caseDefinitionBodyElement(textualRepresentation);
         if (result == null) result = caseUsageBodyElement(textualRepresentation);
@@ -712,7 +702,6 @@ public class SysMLOCSwitch<T> extends Switch<T>
         if (result == null) result = caseGeneralBodyElements(metadataUsage);
         if (result == null) result = caseEnumerationBodyElement(metadataUsage);
         if (result == null) result = caseAnnotatingBodyElement(metadataUsage);
-        if (result == null) result = caseRelationshipBodyElement(metadataUsage);
         if (result == null) result = casePrefixMetadata(metadataUsage);
         if (result == null) result = casePackageBodyElement(metadataUsage);
         if (result == null) result = caseDefinitionBodyElement(metadataUsage);
@@ -4882,17 +4871,17 @@ public class SysMLOCSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Namespace</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Root Namespace</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Namespace</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Root Namespace</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseNamespace(Namespace object)
+  public T caseRootNamespace(RootNamespace object)
   {
     return null;
   }
@@ -5117,22 +5106,6 @@ public class SysMLOCSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseViewBodyElement(ViewBodyElement object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Relationship Body Element</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Relationship Body Element</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseRelationshipBodyElement(RelationshipBodyElement object)
   {
     return null;
   }

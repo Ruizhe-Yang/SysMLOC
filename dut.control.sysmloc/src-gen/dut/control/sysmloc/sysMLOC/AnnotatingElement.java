@@ -14,6 +14,6 @@ package dut.control.sysmloc.sysMLOC;
  * @model
  * @generated
  */
-public interface AnnotatingElement extends GeneralBodyElements, EnumerationBodyElement, AnnotatingBodyElement, RelationshipBodyElement
+public interface AnnotatingElement extends GeneralBodyElements, EnumerationBodyElement, AnnotatingBodyElement
 {
 } // AnnotatingElement

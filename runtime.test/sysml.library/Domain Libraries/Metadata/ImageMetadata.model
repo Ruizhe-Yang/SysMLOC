@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+<sysMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
   <elements xsi:type="sysMLOC:LibraryPackage" declaredName="ImageMetadata" isStandard="true" isLibrary="true">
     <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9; * This package provides attributive data and metadata to allow a model element to be&#xA;&#x9; * annotated with an image to be used in its graphical rendering or as a marker to&#xA;&#x9; * adorn graphical or textual renderings.&#xA;&#x9; */"/>
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="ScalarValues::String"/>
@@ -34,4 +34,4 @@
       </elements>
     </elements>
   </elements>
-</sysMLOC:Namespace>
+</sysMLOC:RootNamespace>

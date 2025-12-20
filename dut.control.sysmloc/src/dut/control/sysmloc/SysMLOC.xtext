@@ -1,13 +1,13 @@
 //grammar dut.control.sysmloc.expr.SysEXPR with org.eclipse.xtext.common.Terminals
 //grammar dut.control.sysmloc.SysMLOC hidden(WS, ML_NOTE, SL_NOTE)
-// [exceeding 65535 bytes]
+// [Causes LL parsing issues.]
 grammar dut.control.sysmloc.SysMLOC hidden(WS, ML_NOTE)
 
 import "http://www.eclipse.org/emf/2002/Ecore" as Ecore
 
 generate sysMLOC "http://www.control.dut/sysmloc/SysMLOC"
  
-Namespace:
+RootNamespace:
 	(elements+=GeneralBodyElements)*
 ;
 
@@ -96,11 +96,6 @@ ViewBodyElement:
 	| ElementFilterElement
 	| ExposeElement
 	| ViewRenderingUsage
-;
-
-RelationshipBodyElement:
-	AnnotatingElement
-	| CodeAnnotation
 ;
 
 // TODO --------------------------------- Abstract Level ---------------------------------//
@@ -249,7 +244,7 @@ ImportElement:
     declaredName=QualifiedName (isNamespace?='::' '*')? ( '::' isRecursive ?= '**' )? 
     ( '[' filterPackageExpression+=Expression ']')*
 	//	 declaredName=QualifiedName (isNamespace?='::' )? ( '*' | isRecursive ?= '**' )?  
-    (';' | '{' ( elements+=RelationshipBodyElement )* '}')
+    (';' | '{' ( elements+=AnnotatingBodyElement )* '}')
 ;
 
 ExposeElement:
@@ -257,15 +252,15 @@ ExposeElement:
 	declaredName=QualifiedName (isNamespace?='::' '*')? ( '::' isRecursive ?= '**' )?  
 	//	 declaredName=QualifiedName (isNamespace?='::' )? ( '*' | isRecursive ?= '**' )?  
 	( '[' filterPackageExpression+=Expression ']')*
-	(';' | '{' ( elements+=RelationshipBodyElement )* '}')
+	(';' | '{' ( elements+=AnnotatingBodyElement )* '}')
 ;
 
 CodeAnnotation:
     body=SL_NOTE | body=ML_NOTE
-    
 ;
 
 Comment:
+	MemberPrefix
 	( 'comment' Identification? 
 	  ('about' annotatedElement += QualifiedName
 	     ( ',' annotatedElement += QualifiedName )* )? 
@@ -275,12 +270,14 @@ Comment:
 ;
 
 Documentation:
+	MemberPrefix
     'doc' Identification? 
     ( 'locale' locale = STRING_VALUE )?
     body=REGULAR_COMMENT
 ;
 
 TextualRepresentation:
+	MemberPrefix
     ( 'rep' Identification? )?
     'language' language = STRING_VALUE 
     body = REGULAR_COMMENT
@@ -293,7 +290,7 @@ MetadataUsage:
 	metadataTyping=QualifiedName
 	( 'about' annotatedElement+=QualifiedName ( ',' annotatedElement+=QualifiedName)* )?
 	//	( ';' | '{' (elements+=MetadataBodyElement)* '}' )
-	// [exceeding 65535 bytes]
+	// [Causes LL parsing issues.]
 	( ';' | '{' (elements+=GeneralBodyElements)* '}' )
 	
 ;
@@ -933,7 +930,7 @@ InitialNode:
 	MemberPrefix 
 	'first' 
 	memberElement = QualifiedName
-	(';' | '{' (elements+=RelationshipBodyElement)* '}')
+	(';' | '{' (elements+=AnnotatingBodyElement)* '}')
 ;
 
 SendNode:
@@ -1255,7 +1252,7 @@ fragment UnextendedUsagePrefix:
 
 fragment EndUsagePrefix:
 	isEnd ?= 'end' 
-	// [exceeding 65535 bytes]
+	// [Causes LL parsing issues.]
 	CrossEndUsagePrefix? 
 ;
 
@@ -1470,8 +1467,6 @@ fragment TransitionUsageIfPart:
 ;
 
 // TODO --------------------------------- Enum Level ---------------------------------//
-
-// enum
 
 enum VisibilityIndicator:
 	null='NULLVisibility' | public = 'public' | private = 'private' | protected = 'protected'

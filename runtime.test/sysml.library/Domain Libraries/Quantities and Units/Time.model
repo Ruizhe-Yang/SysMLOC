@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+<sysMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
   <elements xsi:type="sysMLOC:LibraryPackage" declaredName="Time" isStandard="true" isLibrary="true">
     <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9; * This package specifies concepts to support time-related quantities and metrology, beyond &#xA;&#x9; * the quantities duration and time as defined in [ISO 80000-3]. Representations of the &#xA;&#x9; * Gregorian calendar date and time of day as specified by the [ISO 8601-1] standard are used.&#xA;&#x9; */"/>
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Occurrences::Occurrence"/>
@@ -239,4 +239,4 @@
       </elements>
     </elements>
   </elements>
-</sysMLOC:Namespace>
+</sysMLOC:RootNamespace>

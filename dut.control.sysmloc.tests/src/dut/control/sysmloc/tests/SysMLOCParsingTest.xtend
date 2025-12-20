@@ -4,7 +4,7 @@
 package dut.control.sysmloc.tests
 
 import com.google.inject.Inject
-import dut.control.sysmloc.sysMLOC.Namespace
+import dut.control.sysmloc.sysMLOC.RootNamespace
 import org.eclipse.xtext.testing.InjectWith
 import org.eclipse.xtext.testing.extensions.InjectionExtension
 import org.eclipse.xtext.testing.util.ParseHelper
@@ -16,7 +16,7 @@ import org.junit.jupiter.api.^extension.ExtendWith
 @InjectWith(SysMLOCInjectorProvider)
 class SysMLOCParsingTest {
 	@Inject
-	ParseHelper<Namespace> parseHelper
+	ParseHelper<RootNamespace> parseHelper
 	
 	@Test
 	def void loadModel() {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+<sysMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
   <elements xsi:type="sysMLOC:Package" declaredName="Traffic_light">
     <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="ISQ" isNamespace="true"/>
     <elements xsi:type="sysMLOC:ImportElement" visibility="public" declaredName="ISQBase" isNamespace="true"/>
@@ -613,4 +613,4 @@
       <connectorPart refElement="light_housing.light_inserts.green_light.light_control_in"/>
     </elements>
   </elements>
-</sysMLOC:Namespace>
+</sysMLOC:RootNamespace>

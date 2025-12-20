@@ -74,7 +74,6 @@ import dut.control.sysmloc.sysMLOC.LibraryPackage;
 import dut.control.sysmloc.sysMLOC.Message;
 import dut.control.sysmloc.sysMLOC.MetadataDefinition;
 import dut.control.sysmloc.sysMLOC.MetadataUsage;
-import dut.control.sysmloc.sysMLOC.Namespace;
 import dut.control.sysmloc.sysMLOC.ObjectiveRequirementUsage;
 import dut.control.sysmloc.sysMLOC.OccurrenceDefinition;
 import dut.control.sysmloc.sysMLOC.OccurrenceUsage;
@@ -94,6 +93,7 @@ import dut.control.sysmloc.sysMLOC.RequirementDefinition;
 import dut.control.sysmloc.sysMLOC.RequirementUsage;
 import dut.control.sysmloc.sysMLOC.RequirementVerificationUsage;
 import dut.control.sysmloc.sysMLOC.ResultExpression;
+import dut.control.sysmloc.sysMLOC.RootNamespace;
 import dut.control.sysmloc.sysMLOC.SatisfyRequirementUsage;
 import dut.control.sysmloc.sysMLOC.SendActionUsage;
 import dut.control.sysmloc.sysMLOC.SendNode;
@@ -383,7 +383,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 				sequence_CodeAnnotation(context, (CodeAnnotation) semanticObject); 
 				return; 
 			case SysMLOCPackage.COMMENT:
-				sequence_Comment_Identification(context, (Comment) semanticObject); 
+				sequence_Comment_Identification_MemberPrefix(context, (Comment) semanticObject); 
 				return; 
 			case SysMLOCPackage.COMMON_NODE:
 				sequence_BasicDefinitionPrefix_CommonNode_ControlNodePrefix_CrossFeatureChain_EmptySuccessionPrefix_Identification_MemberPrefix_MultiplicityModifiers_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_RefPrefix_ReferenceFeatureChain_SubsettingFeatureChain_TypingFeatureTyping(context, (CommonNode) semanticObject); 
@@ -498,7 +498,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 				sequence_DoActionNode_MemberPrefix_PerformedActionParameterPart(context, (DoActionNode) semanticObject); 
 				return; 
 			case SysMLOCPackage.DOCUMENTATION:
-				sequence_Documentation_Identification(context, (Documentation) semanticObject); 
+				sequence_Documentation_Identification_MemberPrefix(context, (Documentation) semanticObject); 
 				return; 
 			case SysMLOCPackage.ELEMENT_FILTER_ELEMENT:
 				sequence_ElementFilterElement_MemberPrefix(context, (ElementFilterElement) semanticObject); 
@@ -655,9 +655,6 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 				return; 
 			case SysMLOCPackage.METADATA_USAGE:
 				sequence_Identification_MetadataUsage_PrefixMetadata(context, (MetadataUsage) semanticObject); 
-				return; 
-			case SysMLOCPackage.NAMESPACE:
-				sequence_Namespace(context, (Namespace) semanticObject); 
 				return; 
 			case SysMLOCPackage.OBJECTIVE_REQUIREMENT_USAGE:
 				sequence_CrossFeatureChain_FeatureValue_Identification_MemberPrefix_MultiplicityModifiers_MultiplicityRange_ObjectiveRequirementUsage_PrefixMetadata_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_TypingFeatureTyping(context, (ObjectiveRequirementUsage) semanticObject); 
@@ -836,6 +833,9 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 			case SysMLOCPackage.RESULT_EXPRESSION:
 				sequence_MemberPrefix_ResultExpression(context, (ResultExpression) semanticObject); 
 				return; 
+			case SysMLOCPackage.ROOT_NAMESPACE:
+				sequence_RootNamespace(context, (RootNamespace) semanticObject); 
+				return; 
 			case SysMLOCPackage.SATISFY_REQUIREMENT_USAGE:
 				sequence_BasicDefinitionPrefix_BasicUsagePrefix_CrossEndUsagePrefix_CrossFeatureChain_EmptySuccessionPrefix_EndUsagePrefix_FeatureValue_Identification_MemberPrefix_MultiplicityModifiers_MultiplicityRange_OccurrenceUsagePrefix_PrefixMetadata_RedefinitionFeatureChain_RefPrefix_ReferenceFeatureChain_ReferenceSubsetting_SatisfyRequirementUsage_SubsettingFeatureChain_TypingFeatureTyping_isReturnPrefix(context, (SatisfyRequirementUsage) semanticObject); 
 				return; 
@@ -906,7 +906,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 				sequence_BasicDefinitionPrefix_BasicUsagePrefix_CrossEndUsagePrefix_CrossFeatureChain_EmptySuccessionPrefix_EndUsagePrefix_Identification_MemberPrefix_MultiplicityModifiers_MultiplicityRange_OccurrenceUsagePrefix_PrefixMetadata_RedefinitionFeatureChain_RefPrefix_ReferenceFeatureChain_SubsettingFeatureChain_TerminateNode_TypingFeatureTyping(context, (TerminateNode) semanticObject); 
 				return; 
 			case SysMLOCPackage.TEXTUAL_REPRESENTATION:
-				sequence_Identification_TextualRepresentation(context, (TextualRepresentation) semanticObject); 
+				sequence_Identification_MemberPrefix_TextualRepresentation(context, (TextualRepresentation) semanticObject); 
 				return; 
 			case SysMLOCPackage.THEN_NODE:
 				sequence_MemberPrefix_MultiplicityRange_ThenNode(context, (ThenNode) semanticObject); 
@@ -5791,7 +5791,6 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns CodeAnnotation
 	 *     ViewDefinitionBodyElement returns CodeAnnotation
 	 *     ViewBodyElement returns CodeAnnotation
-	 *     RelationshipBodyElement returns CodeAnnotation
 	 *     CodeAnnotation returns CodeAnnotation
 	 *
 	 * Constraint:
@@ -5820,12 +5819,13 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns Comment
 	 *     ViewDefinitionBodyElement returns Comment
 	 *     ViewBodyElement returns Comment
-	 *     RelationshipBodyElement returns Comment
 	 *     AnnotatingElement returns Comment
 	 *     Comment returns Comment
 	 *
 	 * Constraint:
 	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
 	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
 	 *         (annotatedElement+=QualifiedName annotatedElement+=QualifiedName*)? 
 	 *         locale=STRING_VALUE? 
@@ -5833,7 +5833,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     )
 	 * </pre>
 	 */
-	protected void sequence_Comment_Identification(ISerializationContext context, Comment semanticObject) {
+	protected void sequence_Comment_Identification_MemberPrefix(ISerializationContext context, Comment semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -6782,15 +6782,20 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns Documentation
 	 *     ViewDefinitionBodyElement returns Documentation
 	 *     ViewBodyElement returns Documentation
-	 *     RelationshipBodyElement returns Documentation
 	 *     AnnotatingElement returns Documentation
 	 *     Documentation returns Documentation
 	 *
 	 * Constraint:
-	 *     (((declaredShortName=Name declaredName=Name?) | declaredName=Name)? locale=STRING_VALUE? body=REGULAR_COMMENT)
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
+	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
+	 *         locale=STRING_VALUE? 
+	 *         body=REGULAR_COMMENT
+	 *     )
 	 * </pre>
 	 */
-	protected void sequence_Documentation_Identification(ISerializationContext context, Documentation semanticObject) {
+	protected void sequence_Documentation_Identification_MemberPrefix(ISerializationContext context, Documentation semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -6851,7 +6856,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     ExposeElement returns ExposeElement
 	 *
 	 * Constraint:
-	 *     (declaredName=QualifiedName isNamespace?='::'? isRecursive?='**'? filterPackageExpression+=Expression* elements+=RelationshipBodyElement*)
+	 *     (declaredName=QualifiedName isNamespace?='::'? isRecursive?='**'? filterPackageExpression+=Expression* elements+=AnnotatingBodyElement*)
 	 * </pre>
 	 */
 	protected void sequence_ExposeElement(ISerializationContext context, ExposeElement semanticObject) {
@@ -6895,42 +6900,6 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     GeneralBodyElements returns MetadataUsage
-	 *     PackageBodyElement returns MetadataUsage
-	 *     DefinitionBodyElement returns MetadataUsage
-	 *     UsageBodyElement returns MetadataUsage
-	 *     InterfaceBodyElement returns MetadataUsage
-	 *     EnumerationBodyElement returns MetadataUsage
-	 *     AnnotatingBodyElement returns MetadataUsage
-	 *     ActionBodyElement returns MetadataUsage
-	 *     CalculationBodyElement returns MetadataUsage
-	 *     StateBodyElement returns MetadataUsage
-	 *     RequirementBodyElement returns MetadataUsage
-	 *     CaseBodyElement returns MetadataUsage
-	 *     ViewDefinitionBodyElement returns MetadataUsage
-	 *     ViewBodyElement returns MetadataUsage
-	 *     RelationshipBodyElement returns MetadataUsage
-	 *     AnnotatingElement returns MetadataUsage
-	 *     MetadataUsage returns MetadataUsage
-	 *
-	 * Constraint:
-	 *     (
-	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
-	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
-	 *         metadataTyping=QualifiedName 
-	 *         (annotatedElement+=QualifiedName annotatedElement+=QualifiedName*)? 
-	 *         elements+=GeneralBodyElements*
-	 *     )
-	 * </pre>
-	 */
-	protected void sequence_Identification_MetadataUsage_PrefixMetadata(ISerializationContext context, MetadataUsage semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
 	 *     GeneralBodyElements returns TextualRepresentation
 	 *     PackageBodyElement returns TextualRepresentation
 	 *     DefinitionBodyElement returns TextualRepresentation
@@ -6945,15 +6914,55 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CaseBodyElement returns TextualRepresentation
 	 *     ViewDefinitionBodyElement returns TextualRepresentation
 	 *     ViewBodyElement returns TextualRepresentation
-	 *     RelationshipBodyElement returns TextualRepresentation
 	 *     AnnotatingElement returns TextualRepresentation
 	 *     TextualRepresentation returns TextualRepresentation
 	 *
 	 * Constraint:
-	 *     (((declaredShortName=Name declaredName=Name?) | declaredName=Name)? language=STRING_VALUE body=REGULAR_COMMENT)
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
+	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
+	 *         language=STRING_VALUE 
+	 *         body=REGULAR_COMMENT
+	 *     )
 	 * </pre>
 	 */
-	protected void sequence_Identification_TextualRepresentation(ISerializationContext context, TextualRepresentation semanticObject) {
+	protected void sequence_Identification_MemberPrefix_TextualRepresentation(ISerializationContext context, TextualRepresentation semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GeneralBodyElements returns MetadataUsage
+	 *     PackageBodyElement returns MetadataUsage
+	 *     DefinitionBodyElement returns MetadataUsage
+	 *     UsageBodyElement returns MetadataUsage
+	 *     InterfaceBodyElement returns MetadataUsage
+	 *     EnumerationBodyElement returns MetadataUsage
+	 *     AnnotatingBodyElement returns MetadataUsage
+	 *     ActionBodyElement returns MetadataUsage
+	 *     CalculationBodyElement returns MetadataUsage
+	 *     StateBodyElement returns MetadataUsage
+	 *     RequirementBodyElement returns MetadataUsage
+	 *     CaseBodyElement returns MetadataUsage
+	 *     ViewDefinitionBodyElement returns MetadataUsage
+	 *     ViewBodyElement returns MetadataUsage
+	 *     AnnotatingElement returns MetadataUsage
+	 *     MetadataUsage returns MetadataUsage
+	 *
+	 * Constraint:
+	 *     (
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
+	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
+	 *         metadataTyping=QualifiedName 
+	 *         (annotatedElement+=QualifiedName annotatedElement+=QualifiedName*)? 
+	 *         elements+=GeneralBodyElements*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_Identification_MetadataUsage_PrefixMetadata(ISerializationContext context, MetadataUsage semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -6983,7 +6992,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         isNamespace?='::'? 
 	 *         isRecursive?='**'? 
 	 *         filterPackageExpression+=Expression* 
-	 *         elements+=RelationshipBodyElement*
+	 *         elements+=AnnotatingBodyElement*
 	 *     )
 	 * </pre>
 	 */
@@ -7002,7 +7011,7 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     InitialNode returns InitialNode
 	 *
 	 * Constraint:
-	 *     (visibility=VisibilityIndicator? isVariant?='variant'? memberElement=QualifiedName elements+=RelationshipBodyElement*)
+	 *     (visibility=VisibilityIndicator? isVariant?='variant'? memberElement=QualifiedName elements+=AnnotatingBodyElement*)
 	 * </pre>
 	 */
 	protected void sequence_InitialNode_MemberPrefix(ISerializationContext context, InitialNode semanticObject) {
@@ -7051,20 +7060,6 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Namespace returns Namespace
-	 *
-	 * Constraint:
-	 *     elements+=GeneralBodyElements+
-	 * </pre>
-	 */
-	protected void sequence_Namespace(ISerializationContext context, Namespace semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
 	 *     GeneralBodyElements returns Package
 	 *     PackageBodyElement returns Package
 	 *     DefinitionBodyElement returns Package
@@ -7085,6 +7080,20 @@ public class SysMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * </pre>
 	 */
 	protected void sequence_Package_PrefixMetadata(ISerializationContext context, dut.control.sysmloc.sysMLOC.Package semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     RootNamespace returns RootNamespace
+	 *
+	 * Constraint:
+	 *     elements+=GeneralBodyElements+
+	 * </pre>
+	 */
+	protected void sequence_RootNamespace(ISerializationContext context, RootNamespace semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

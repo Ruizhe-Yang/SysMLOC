@@ -27,7 +27,7 @@ public class KerMLOCParser extends AbstractAntlrParser {
 
 	@Override 
 	protected String getDefaultRuleName() {
-		return "Namespace";
+		return "RootNamespace";
 	}
 
 	public KerMLOCGrammarAccess getGrammarAccess() {

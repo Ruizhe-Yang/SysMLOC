@@ -4,7 +4,7 @@
 package dut.control.sysmloc.tests;
 
 import com.google.inject.Inject;
-import dut.control.sysmloc.sysMLOC.Namespace;
+import dut.control.sysmloc.sysMLOC.RootNamespace;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtend2.lib.StringConcatenation;
@@ -22,7 +22,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 @SuppressWarnings("all")
 public class SysMLOCParsingTest {
   @Inject
-  private ParseHelper<Namespace> parseHelper;
+  private ParseHelper<RootNamespace> parseHelper;
 
   @Test
   public void loadModel() {
@@ -30,7 +30,7 @@ public class SysMLOCParsingTest {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("Hello Xtext!");
       _builder.newLine();
-      final Namespace result = this.parseHelper.parse(_builder);
+      final RootNamespace result = this.parseHelper.parse(_builder);
       Assertions.assertNotNull(result);
       final EList<Resource.Diagnostic> errors = result.eResource().getErrors();
       boolean _isEmpty = errors.isEmpty();

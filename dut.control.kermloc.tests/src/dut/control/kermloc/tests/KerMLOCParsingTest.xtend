@@ -4,7 +4,7 @@
 package dut.control.kermloc.tests
 
 import com.google.inject.Inject
-import dut.control.kermloc.kerMLOC.Namespace
+import dut.control.kermloc.kerMLOC.RootNamespace
 import org.eclipse.xtext.testing.InjectWith
 import org.eclipse.xtext.testing.extensions.InjectionExtension
 import org.eclipse.xtext.testing.util.ParseHelper
@@ -16,7 +16,7 @@ import org.junit.jupiter.api.^extension.ExtendWith
 @InjectWith(KerMLOCInjectorProvider)
 class KerMLOCParsingTest {
 	@Inject
-	ParseHelper<Namespace> parseHelper
+	ParseHelper<RootNamespace> parseHelper
 	
 	@Test
 	def void loadModel() {

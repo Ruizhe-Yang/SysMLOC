@@ -21,7 +21,7 @@ package dut.control.sysmloc.sysMLOC;
  * @model
  * @generated
  */
-public interface Documentation extends AnnotatingElement, Identification
+public interface Documentation extends AnnotatingElement, MemberPrefix, Identification
 {
   /**
    * Returns the value of the '<em><b>Locale</b></em>' attribute.

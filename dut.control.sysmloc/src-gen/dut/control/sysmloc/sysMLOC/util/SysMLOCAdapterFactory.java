@@ -113,7 +113,6 @@ import dut.control.sysmloc.sysMLOC.MetadataUsage;
 import dut.control.sysmloc.sysMLOC.MultiplicityModifiers;
 import dut.control.sysmloc.sysMLOC.MultiplicityPart;
 import dut.control.sysmloc.sysMLOC.MultiplicityRange;
-import dut.control.sysmloc.sysMLOC.Namespace;
 import dut.control.sysmloc.sysMLOC.NonOccurrenceUsageElement;
 import dut.control.sysmloc.sysMLOC.ObjectiveRequirementUsage;
 import dut.control.sysmloc.sysMLOC.OccurrenceDefinition;
@@ -141,7 +140,6 @@ import dut.control.sysmloc.sysMLOC.ReferenceFeatureChain;
 import dut.control.sysmloc.sysMLOC.ReferenceSubsetting;
 import dut.control.sysmloc.sysMLOC.ReferenceUsage;
 import dut.control.sysmloc.sysMLOC.ReferenceVariantUsage;
-import dut.control.sysmloc.sysMLOC.RelationshipBodyElement;
 import dut.control.sysmloc.sysMLOC.RenderingDefinition;
 import dut.control.sysmloc.sysMLOC.RenderingUsage;
 import dut.control.sysmloc.sysMLOC.RequirementBodyElement;
@@ -151,6 +149,7 @@ import dut.control.sysmloc.sysMLOC.RequirementNodeElements;
 import dut.control.sysmloc.sysMLOC.RequirementUsage;
 import dut.control.sysmloc.sysMLOC.RequirementVerificationUsage;
 import dut.control.sysmloc.sysMLOC.ResultExpression;
+import dut.control.sysmloc.sysMLOC.RootNamespace;
 import dut.control.sysmloc.sysMLOC.SatisfyRequirementUsage;
 import dut.control.sysmloc.sysMLOC.SendActionUsage;
 import dut.control.sysmloc.sysMLOC.SendNode;
@@ -267,9 +266,9 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
     new SysMLOCSwitch<Adapter>()
     {
       @Override
-      public Adapter caseNamespace(Namespace object)
+      public Adapter caseRootNamespace(RootNamespace object)
       {
-        return createNamespaceAdapter();
+        return createRootNamespaceAdapter();
       }
       @Override
       public Adapter caseGeneralBodyElements(GeneralBodyElements object)
@@ -340,11 +339,6 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
       public Adapter caseViewBodyElement(ViewBodyElement object)
       {
         return createViewBodyElementAdapter();
-      }
-      @Override
-      public Adapter caseRelationshipBodyElement(RelationshipBodyElement object)
-      {
-        return createRelationshipBodyElementAdapter();
       }
       @Override
       public Adapter caseAnnotatingElement(AnnotatingElement object)
@@ -1249,16 +1243,16 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
 
 
   /**
-   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.Namespace <em>Namespace</em>}'.
+   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.RootNamespace <em>Root Namespace</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see dut.control.sysmloc.sysMLOC.Namespace
+   * @see dut.control.sysmloc.sysMLOC.RootNamespace
    * @generated
    */
-  public Adapter createNamespaceAdapter()
+  public Adapter createRootNamespaceAdapter()
   {
     return null;
   }
@@ -1469,21 +1463,6 @@ public class SysMLOCAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createViewBodyElementAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link dut.control.sysmloc.sysMLOC.RelationshipBodyElement <em>Relationship Body Element</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see dut.control.sysmloc.sysMLOC.RelationshipBodyElement
-   * @generated
-   */
-  public Adapter createRelationshipBodyElementAdapter()
   {
     return null;
   }

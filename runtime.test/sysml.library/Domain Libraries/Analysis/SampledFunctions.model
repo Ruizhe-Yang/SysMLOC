@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<sysMLOC:Namespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
+<sysMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysMLOC="http://www.control.dut/sysmloc/SysMLOC">
   <elements xsi:type="sysMLOC:LibraryPackage" declaredName="SampledFunctions" isStandard="true" isLibrary="true">
     <elements xsi:type="sysMLOC:Documentation" body="/*&#xA;&#x9; * This package provides a library model of discretely sampled mathematical functions.&#xA;&#x9; */"/>
     <elements xsi:type="sysMLOC:ImportElement" visibility="private" declaredName="Base::Anything"/>
@@ -93,4 +93,4 @@
       <elements xsi:type="sysMLOC:DefaultReferenceUsage" isReturn="true" declaredName="result" MultiLow="0" MultiHigh="1" valuePart="if index == null or index == size(domainValues)? null else if domainValues#(index) &lt; domainValues#(index+1)? Linear(fn.samples#(index), fn.samples#(index+1), value) else Linear(fn.samples#(index+1), fn.samples#(index), value)"/>
     </elements>
   </elements>
-</sysMLOC:Namespace>
+</sysMLOC:RootNamespace>
