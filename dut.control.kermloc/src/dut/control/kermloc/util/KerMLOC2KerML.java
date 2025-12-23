@@ -24,15 +24,15 @@ public class KerMLOC2KerML {
         if (args.length > 0) {
             modelPath = args[0];
         } else {
-//            modelPath = "E:\\GitYang\\KerMLOC\\runtime.test\\training2\\17. Control\\Control Structures Example.model";
-        	 modelPath = "E:\\GitYang\\KerMLOC\\runtime.test\\sysml.library";
+            modelPath = "E:\\GitYang\\SysMLOC\\runtime.test\\kerml\\src\\examples\\Address Book Example\\AddressBookModel.model";
+//        	 modelPath = "E:\\GitYang\\KerMLOC\\runtime.test\\sysml.library";
         }
-//        Path out = convertModelToKerml(modelPath);
-//        System.out.println("Done. Written to: " + out.toAbsolutePath());
-        convertAllModelsInFolder(modelPath);
+        Path out = convertModelToKerml(modelPath);
+        System.out.println("Done. Written to: " + out.toAbsolutePath());
+//        convertAllModelsInFolder2(modelPath);
         
     }
-    public static void convertAllModelsInFolder(String folderPath) throws Exception {
+    public static void convertAllModelsInFolder2(String folderPath) throws Exception {
         Path dir = Paths.get(folderPath).toAbsolutePath();
         if (!Files.isDirectory(dir)) {
             throw new IllegalArgumentException("Not a directory: " + dir);

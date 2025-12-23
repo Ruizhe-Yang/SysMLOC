@@ -1,7 +1,5 @@
 package dut.control.sysmloc.ui.actions;
 
-//import java.nio.file.Path;
-
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.IAdaptable;
@@ -13,7 +11,7 @@ import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PlatformUI;
 
-import dut.control.sysmloc.util.SysMLOC2SysML; // 这里按你类所在包名改
+import dut.control.sysmloc.util.SysMLOC2SysML;
 
 public class GenerateSysMLAction implements IObjectActionDelegate {
 

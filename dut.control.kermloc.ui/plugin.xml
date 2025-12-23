@@ -436,14 +436,14 @@
        name="KerMLv2Generation"
        point="org.eclipse.ui.popupMenus">
     <objectContribution
-          adaptable="false"
-          id="dut.control.kermloc.ui.objectContribution1"
+          adaptable="true"
+          id="dut.control.kermloc.ui.generateKerMLAction"
           nameFilter="*.model"
-          objectClass="dut.control.kermloc.ui.Object1">
+          objectClass="org.eclipse.core.resources.IFile">
        <action
-             class="dut.control.kermloc.util.KerMLOC2KerML"
+             class="dut.control.kermloc.ui.actions.GenerateKerMLAction"
              enablesFor="1"
-             id="dut.control.kermloc.ui.action1"
+             id="dut.control.kermloc.ui.generateKerMLAction"
              label="Generate KerML"
              menubarPath="additions">
        </action>
