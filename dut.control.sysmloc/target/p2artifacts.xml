@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?artifactRepository version='1.1.0'?>
+<artifacts size='1'>
+  <artifact classifier='osgi.bundle' id='dut.control.sysmloc' version='1.0.0.202512230816'>
+    <properties size='8'>
+      <property name='artifact.size' value='2111319'/>
+      <property name='download.size' value='2111319'/>
+      <property name='download.checksum.sha-512' value='f4f1d7a8876b9beeec79c73fe429f29732975d0d8b9bf478e7e79a32cc33a85a36bde20855b2f92c4e4b48ef1f227a5e8c36909865f40fff1a86c6eb3a4b0126'/>
+      <property name='download.checksum.sha-256' value='b7ad035ac0ab6382f6eeb53fc617eb21ea7bfd475c76823199ab3bdfdd92d1ed'/>
+      <property name='maven-groupId' value='dut.control'/>
+      <property name='maven-artifactId' value='dut.control.sysmloc'/>
+      <property name='maven-version' value='1.0.0-SNAPSHOT'/>
+      <property name='maven-type' value='eclipse-plugin'/>
+    </properties>
+  </artifact>
+</artifacts>
