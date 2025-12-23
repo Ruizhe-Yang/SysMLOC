@@ -183,7 +183,7 @@ public class ImportElementImpl extends GeneralBodyElementsImpl implements Import
   @Override
   protected EClass eStaticClass()
   {
-    return KerMLOCPackage.Literals.IMPORT_ELEMENT;
+    return KerMLOCPackage.eINSTANCE.getImportElement();
   }
 
   /**

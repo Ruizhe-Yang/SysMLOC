@@ -66,7 +66,7 @@ public class ClassifierConjugationPartImpl extends MinimalEObjectImpl.Container 
   @Override
   protected EClass eStaticClass()
   {
-    return KerMLOCPackage.Literals.CLASSIFIER_CONJUGATION_PART;
+    return KerMLOCPackage.eINSTANCE.getClassifierConjugationPart();
   }
 
   /**

@@ -35,7 +35,7 @@ public class NonFeatureElementImpl extends GeneralBodyElementsImpl implements No
   @Override
   protected EClass eStaticClass()
   {
-    return KerMLOCPackage.Literals.NON_FEATURE_ELEMENT;
+    return KerMLOCPackage.eINSTANCE.getNonFeatureElement();
   }
 
 } //NonFeatureElementImpl

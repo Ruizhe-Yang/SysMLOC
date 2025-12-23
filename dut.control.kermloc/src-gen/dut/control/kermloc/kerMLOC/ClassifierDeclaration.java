@@ -20,7 +20,7 @@ package dut.control.kermloc.kerMLOC;
  * @model
  * @generated
  */
-public interface ClassifierDeclaration extends Identification, MultiplicityBounds, SuperclassingPart, ClassifierConjugationPart, TypeRelationshipPart
+public interface ClassifierDeclaration extends Identification, MultiplicityRange, SuperclassingPart, ClassifierConjugationPart, TypeRelationshipPart
 {
   /**
    * Returns the value of the '<em><b>Is Sufficient</b></em>' attribute.

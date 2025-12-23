@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:Package" declaredName="Inverses">
+    <elements xsi:type="kerMLOC:Class" declaredName="A">
+      <elements xsi:type="kerMLOC:Feature" declaredName="f">
+        <typings>B</typings>
+        <disjoining>h</disjoining>
+        <invertingFeature>B::g</invertingFeature>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="h">
+        <typings>B</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Class" declaredName="B">
+      <elements xsi:type="kerMLOC:Feature" declaredName="g">
+        <typings>A</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:FeatureInverting" featureInverted="B::g" invertingFeature="A::f"/>
+    <elements xsi:type="kerMLOC:FeatureInverting" declaredName="Invert" isFeatureInverting="true" featureInverted="B::g.f" invertingFeature="A::h"/>
+    <elements xsi:type="kerMLOC:Feature" declaredName="gg">
+      <typings>A</typings>
+      <invertingFeature>A::f</invertingFeature>
+      <featuringType>B</featuringType>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

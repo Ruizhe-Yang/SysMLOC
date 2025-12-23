@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:LibraryPackage" declaredName="TransitionPerformances" isStandard="true" isLibrary="true">
+    <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9; * This package contains a library model of the semantics of conditional transitions between occurrences, &#xA;&#x9; * including the performance of specified Behaviors when the transition occurs.&#xA;&#x9; */"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ScalarValues::Boolean"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ScalarValues::Natural"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="SequenceFunctions::isEmpty"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Occurrences::Occurrence"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Occurrences::HappensBefore"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Performances::Performance"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Performances::Evaluation"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Transfers::MessageTransfer"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Transfers::AcceptPerformance"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Transfers::acceptPerformances"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ControlFunctions::allTrue"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="SequenceFunctions::size"/>
+    <elements xsi:type="kerMLOC:Behavior" isAbstract="true" declaredName="TransitionPerformance">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="transitionLinkSource" MultiLow="1">
+        <typings>Performance</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="trigger" MultiLow="*">
+        <typings>MessageTransfer</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:BooleanExpression" declaredName="guard" MultiLow="*">
+        <subsetting>enclosedPerformances</subsetting>
+      </elements>
+      <elements xsi:type="kerMLOC:Step" declaredName="effect" MultiLow="*">
+        <subsetting>enclosedPerformances</subsetting>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="triggerTarget" MultiLow="1" isDefault="true" valuePart="this">
+        <typings>Occurrence</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="transitionLink" MultiLow="0" MultiHigh="1">
+        <typings>HappensBefore</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:BindingConnector" visibility="private">
+        <connectorPart MultiLow="0" MultiHigh="1" refElement="transitionLink.earlierOccurrence"/>
+        <connectorPart MultiLow="1" refElement="transitionLinkSource"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Succession" visibility="private">
+        <connectorPart MultiLow="1" refElement="transitionLinkSource"/>
+        <connectorPart MultiLow="*" refElement="effect"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Succession" visibility="private">
+        <connectorPart MultiLow="*" refElement="effect"/>
+        <connectorPart MultiLow="1" refElement="transitionLink.laterOccurrence"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Connector" visibility="private">
+        <connectorPartBinary MultiLow="0" MultiHigh="1" refElement="transitionLink"/>
+        <connectorPartBinary MultiLow="1" MultiHigh="*" refElement="trigger"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Connector" visibility="private" declaredName="guardConstraint" MultiLow="*" isSufficient="true">
+        <typings>TPCGuardConstraint</typings>
+        <connectorPartBinary MultiLow="0" MultiHigh="1" refElement="transitionLink"/>
+        <connectorPartBinary MultiLow="*" refElement="guard"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Succession" visibility="private" isSufficient="true">
+        <connectorPart MultiLow="*" refElement="trigger"/>
+        <connectorPart MultiLow="*" refElement="guard"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Succession" visibility="private" isSufficient="true">
+        <connectorPart MultiLow="*" refElement="guard"/>
+        <connectorPart MultiLow="*" refElement="effect"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="accNum" MultiLow="1" valuePart="if isEmpty(trigger) ? 0 else 1">
+        <typings>Natural</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Step" declaredName="accept" MultiLow="accNum">
+        <typings>AcceptPerformance</typings>
+        <subsetting>timeEnclosedOccurrences</subsetting>
+        <subsetting>acceptPerformances</subsetting>
+        <elements xsi:type="kerMLOC:Feature" valuePart="trigger">
+          <redefinitions>acceptedTransfer</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:BindingConnector">
+        <connectorPart refElement="accept.receiver"/>
+        <connectorPart refElement="triggerTarget"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Succession" visibility="private">
+        <connectorPart MultiLow="*" refElement="guard"/>
+        <connectorPart MultiLow="accNum" refElement="accept"/>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Behavior" declaredName="NonStateTransitionPerformance">
+      <subsetting>TransitionPerformance</subsetting>
+      <elements xsi:type="kerMLOC:Feature" declaredName="isTriggerAfter" isDefault="true" valuePart="true">
+        <typings>Boolean</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Succession" visibility="private">
+        <connectorPart MultiLow="1" refElement="transitionLinkSource"/>
+        <connectorPart MultiLow="1" refElement="Performance::self"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" visibility="private" declaredName="taNum" MultiLow="1" valuePart="if isTriggerAfter ? size(trigger) else 0">
+        <typings>Natural</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Succession" visibility="private" declaredName="triggerAfter" MultiLow="taNum" isFirst="true">
+        <connectorPart MultiLow="0" MultiHigh="1" refElement="transitionLinkSource"/>
+        <connectorPart MultiLow="*" refElement="trigger.endShot"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Succession" visibility="private" isSufficient="true">
+        <connectorPart MultiLow="*" refElement="guard"/>
+        <connectorPart MultiLow="0" MultiHigh="1" refElement="transitionLink.laterOccurrence"/>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:AssociationStructure" declaredName="TPCGuardConstraint">
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="constrainedHBLink">
+        <crossingFeature declaredName="guardedLink" MultiLow="0" MultiHigh="1"/>
+        <typings>HappensBefore</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:BooleanExpression" isEnd="true" declaredName="constrainedGuard"/>
+      <elements xsi:type="kerMLOC:Invariant" visibility="private">
+        <resultExpressionParameter resultExpression="allTrue(constrainedGuard())"/>
+      </elements>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

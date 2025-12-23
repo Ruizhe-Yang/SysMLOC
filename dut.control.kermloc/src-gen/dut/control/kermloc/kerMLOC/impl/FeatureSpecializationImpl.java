@@ -94,7 +94,7 @@ public class FeatureSpecializationImpl extends TypingFeatureTypingImpl implement
   @Override
   protected EClass eStaticClass()
   {
-    return KerMLOCPackage.Literals.FEATURE_SPECIALIZATION;
+    return KerMLOCPackage.eINSTANCE.getFeatureSpecialization();
   }
 
   /**

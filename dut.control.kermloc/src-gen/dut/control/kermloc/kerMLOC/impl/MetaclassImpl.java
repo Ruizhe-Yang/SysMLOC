@@ -12,7 +12,7 @@ import dut.control.kermloc.kerMLOC.IntersectingPart;
 import dut.control.kermloc.kerMLOC.KerMLOCPackage;
 import dut.control.kermloc.kerMLOC.MemberPrefix;
 import dut.control.kermloc.kerMLOC.Metaclass;
-import dut.control.kermloc.kerMLOC.MultiplicityBounds;
+import dut.control.kermloc.kerMLOC.MultiplicityRange;
 import dut.control.kermloc.kerMLOC.PrefixMetadata;
 import dut.control.kermloc.kerMLOC.SubsettingFeatureChain;
 import dut.control.kermloc.kerMLOC.SuperclassingPart;
@@ -336,7 +336,7 @@ public class MetaclassImpl extends NonFeatureElementImpl implements Metaclass
   @Override
   protected EClass eStaticClass()
   {
-    return KerMLOCPackage.Literals.METACLASS;
+    return KerMLOCPackage.eINSTANCE.getMetaclass();
   }
 
   /**
@@ -951,12 +951,12 @@ public class MetaclassImpl extends NonFeatureElementImpl implements Metaclass
         default: return -1;
       }
     }
-    if (baseClass == MultiplicityBounds.class)
+    if (baseClass == MultiplicityRange.class)
     {
       switch (derivedFeatureID)
       {
-        case KerMLOCPackage.METACLASS__MULTI_LOW: return KerMLOCPackage.MULTIPLICITY_BOUNDS__MULTI_LOW;
-        case KerMLOCPackage.METACLASS__MULTI_HIGH: return KerMLOCPackage.MULTIPLICITY_BOUNDS__MULTI_HIGH;
+        case KerMLOCPackage.METACLASS__MULTI_LOW: return KerMLOCPackage.MULTIPLICITY_RANGE__MULTI_LOW;
+        case KerMLOCPackage.METACLASS__MULTI_HIGH: return KerMLOCPackage.MULTIPLICITY_RANGE__MULTI_HIGH;
         default: return -1;
       }
     }
@@ -1075,12 +1075,12 @@ public class MetaclassImpl extends NonFeatureElementImpl implements Metaclass
         default: return -1;
       }
     }
-    if (baseClass == MultiplicityBounds.class)
+    if (baseClass == MultiplicityRange.class)
     {
       switch (baseFeatureID)
       {
-        case KerMLOCPackage.MULTIPLICITY_BOUNDS__MULTI_LOW: return KerMLOCPackage.METACLASS__MULTI_LOW;
-        case KerMLOCPackage.MULTIPLICITY_BOUNDS__MULTI_HIGH: return KerMLOCPackage.METACLASS__MULTI_HIGH;
+        case KerMLOCPackage.MULTIPLICITY_RANGE__MULTI_LOW: return KerMLOCPackage.METACLASS__MULTI_LOW;
+        case KerMLOCPackage.MULTIPLICITY_RANGE__MULTI_HIGH: return KerMLOCPackage.METACLASS__MULTI_HIGH;
         default: return -1;
       }
     }

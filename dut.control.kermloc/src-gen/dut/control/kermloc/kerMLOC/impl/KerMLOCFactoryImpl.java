@@ -8,21 +8,48 @@ import dut.control.kermloc.kerMLOC.AnnotatingBodyElement;
 import dut.control.kermloc.kerMLOC.AnnotatingElement;
 import dut.control.kermloc.kerMLOC.Association;
 import dut.control.kermloc.kerMLOC.AssociationStructure;
+import dut.control.kermloc.kerMLOC.BasicFeaturePrefix;
 import dut.control.kermloc.kerMLOC.Behavior;
+import dut.control.kermloc.kerMLOC.BinaryConnectorDeclaration;
+import dut.control.kermloc.kerMLOC.BindingConnector;
+import dut.control.kermloc.kerMLOC.BooleanExpression;
+import dut.control.kermloc.kerMLOC.ChainingPart;
 import dut.control.kermloc.kerMLOC.Classifier;
 import dut.control.kermloc.kerMLOC.ClassifierConjugationPart;
 import dut.control.kermloc.kerMLOC.ClassifierDeclaration;
 import dut.control.kermloc.kerMLOC.CodeAnnotation;
 import dut.control.kermloc.kerMLOC.Comment;
+import dut.control.kermloc.kerMLOC.Conjugation;
 import dut.control.kermloc.kerMLOC.ConjugationPart;
+import dut.control.kermloc.kerMLOC.Connector;
+import dut.control.kermloc.kerMLOC.ConnectorDeclaration;
+import dut.control.kermloc.kerMLOC.ConnectorEnd;
 import dut.control.kermloc.kerMLOC.CrossFeatureChain;
+import dut.control.kermloc.kerMLOC.CrossingFeature;
 import dut.control.kermloc.kerMLOC.DataType;
 import dut.control.kermloc.kerMLOC.Dependency;
 import dut.control.kermloc.kerMLOC.DifferencingPart;
+import dut.control.kermloc.kerMLOC.Disjoining;
 import dut.control.kermloc.kerMLOC.DisjoiningPart;
 import dut.control.kermloc.kerMLOC.Documentation;
 import dut.control.kermloc.kerMLOC.ElementFilterElement;
+import dut.control.kermloc.kerMLOC.EndFeaturePrefix;
+import dut.control.kermloc.kerMLOC.ExpressionClass;
+import dut.control.kermloc.kerMLOC.ExtendedPrefix;
+import dut.control.kermloc.kerMLOC.Feature;
+import dut.control.kermloc.kerMLOC.FeatureConjugationPart;
+import dut.control.kermloc.kerMLOC.FeatureDeclaration;
+import dut.control.kermloc.kerMLOC.FeatureDirection;
+import dut.control.kermloc.kerMLOC.FeatureElement;
+import dut.control.kermloc.kerMLOC.FeatureInverting;
+import dut.control.kermloc.kerMLOC.FeaturePrefix;
+import dut.control.kermloc.kerMLOC.FeatureRelationshipPart;
 import dut.control.kermloc.kerMLOC.FeatureSpecialization;
+import dut.control.kermloc.kerMLOC.FeatureSpecializationPart;
+import dut.control.kermloc.kerMLOC.FeatureTyping;
+import dut.control.kermloc.kerMLOC.FeatureValue;
+import dut.control.kermloc.kerMLOC.Flow;
+import dut.control.kermloc.kerMLOC.FlowDeclaration;
 import dut.control.kermloc.kerMLOC.Function;
 import dut.control.kermloc.kerMLOC.FunctionBodyElement;
 import dut.control.kermloc.kerMLOC.GeneralBodyElements;
@@ -30,35 +57,57 @@ import dut.control.kermloc.kerMLOC.Identification;
 import dut.control.kermloc.kerMLOC.ImportElement;
 import dut.control.kermloc.kerMLOC.Interaction;
 import dut.control.kermloc.kerMLOC.IntersectingPart;
+import dut.control.kermloc.kerMLOC.Invariant;
+import dut.control.kermloc.kerMLOC.InvertingPart;
 import dut.control.kermloc.kerMLOC.KerMLOCFactory;
 import dut.control.kermloc.kerMLOC.KerMLOCPackage;
 import dut.control.kermloc.kerMLOC.LibraryPackage;
 import dut.control.kermloc.kerMLOC.MemberPrefix;
 import dut.control.kermloc.kerMLOC.Metaclass;
+import dut.control.kermloc.kerMLOC.MetadataBodyElement;
+import dut.control.kermloc.kerMLOC.MetadataBodyFeature;
+import dut.control.kermloc.kerMLOC.MetadataFeature;
 import dut.control.kermloc.kerMLOC.Multiplicity;
-import dut.control.kermloc.kerMLOC.MultiplicityBounds;
+import dut.control.kermloc.kerMLOC.MultiplicityModifiers;
+import dut.control.kermloc.kerMLOC.MultiplicityPart;
+import dut.control.kermloc.kerMLOC.MultiplicityRange;
 import dut.control.kermloc.kerMLOC.Namespace;
 import dut.control.kermloc.kerMLOC.NamespaceBodyElement;
+import dut.control.kermloc.kerMLOC.NaryConnectorDeclaration;
 import dut.control.kermloc.kerMLOC.NonFeatureElement;
 import dut.control.kermloc.kerMLOC.PackageBodyElement;
+import dut.control.kermloc.kerMLOC.PayloadFeature;
+import dut.control.kermloc.kerMLOC.PayloadFeatureSpecializationPart;
+import dut.control.kermloc.kerMLOC.PayloadParameter;
 import dut.control.kermloc.kerMLOC.Predicate;
 import dut.control.kermloc.kerMLOC.PrefixMetadata;
+import dut.control.kermloc.kerMLOC.Redefinition;
 import dut.control.kermloc.kerMLOC.RedefinitionFeatureChain;
 import dut.control.kermloc.kerMLOC.ReferenceFeatureChain;
+import dut.control.kermloc.kerMLOC.RelationshipBodyElement;
 import dut.control.kermloc.kerMLOC.ResultExpression;
 import dut.control.kermloc.kerMLOC.RootNamespace;
+import dut.control.kermloc.kerMLOC.Specialization;
 import dut.control.kermloc.kerMLOC.SpecializationPart;
+import dut.control.kermloc.kerMLOC.Step;
 import dut.control.kermloc.kerMLOC.Structure;
+import dut.control.kermloc.kerMLOC.Subclassification;
 import dut.control.kermloc.kerMLOC.Subsets;
+import dut.control.kermloc.kerMLOC.Subsetting;
 import dut.control.kermloc.kerMLOC.SubsettingFeatureChain;
+import dut.control.kermloc.kerMLOC.Succession;
+import dut.control.kermloc.kerMLOC.SuccessionFlow;
 import dut.control.kermloc.kerMLOC.SuperclassingPart;
 import dut.control.kermloc.kerMLOC.TextualRepresentation;
 import dut.control.kermloc.kerMLOC.Type;
 import dut.control.kermloc.kerMLOC.TypeBodyElement;
+import dut.control.kermloc.kerMLOC.TypeFeaturing;
+import dut.control.kermloc.kerMLOC.TypeFeaturingPart;
 import dut.control.kermloc.kerMLOC.TypePrefix;
 import dut.control.kermloc.kerMLOC.TypeRelationshipPart;
 import dut.control.kermloc.kerMLOC.TypingFeatureTyping;
 import dut.control.kermloc.kerMLOC.UnioningPart;
+import dut.control.kermloc.kerMLOC.ValuePart;
 import dut.control.kermloc.kerMLOC.VisibilityIndicator;
 
 import org.eclipse.emf.ecore.EClass;
@@ -129,14 +178,19 @@ public class KerMLOCFactoryImpl extends EFactoryImpl implements KerMLOCFactory
       case KerMLOCPackage.TYPE_BODY_ELEMENT: return createTypeBodyElement();
       case KerMLOCPackage.NAMESPACE_BODY_ELEMENT: return createNamespaceBodyElement();
       case KerMLOCPackage.FUNCTION_BODY_ELEMENT: return createFunctionBodyElement();
+      case KerMLOCPackage.RELATIONSHIP_BODY_ELEMENT: return createRelationshipBodyElement();
+      case KerMLOCPackage.METADATA_BODY_ELEMENT: return createMetadataBodyElement();
       case KerMLOCPackage.ANNOTATING_ELEMENT: return createAnnotatingElement();
       case KerMLOCPackage.NON_FEATURE_ELEMENT: return createNonFeatureElement();
+      case KerMLOCPackage.FEATURE_ELEMENT: return createFeatureElement();
       case KerMLOCPackage.PACKAGE: return createPackage();
       case KerMLOCPackage.LIBRARY_PACKAGE: return createLibraryPackage();
       case KerMLOCPackage.DEPENDENCY: return createDependency();
       case KerMLOCPackage.COMMENT: return createComment();
       case KerMLOCPackage.DOCUMENTATION: return createDocumentation();
       case KerMLOCPackage.TEXTUAL_REPRESENTATION: return createTextualRepresentation();
+      case KerMLOCPackage.METADATA_FEATURE: return createMetadataFeature();
+      case KerMLOCPackage.METADATA_BODY_FEATURE: return createMetadataBodyFeature();
       case KerMLOCPackage.IMPORT_ELEMENT: return createImportElement();
       case KerMLOCPackage.CODE_ANNOTATION: return createCodeAnnotation();
       case KerMLOCPackage.ALIAS_ELEMENT: return createAliasElement();
@@ -155,11 +209,33 @@ public class KerMLOCFactoryImpl extends EFactoryImpl implements KerMLOCFactory
       case KerMLOCPackage.BEHAVIOR: return createBehavior();
       case KerMLOCPackage.FUNCTION: return createFunction();
       case KerMLOCPackage.PREDICATE: return createPredicate();
+      case KerMLOCPackage.SPECIALIZATION: return createSpecialization();
+      case KerMLOCPackage.CONJUGATION: return createConjugation();
+      case KerMLOCPackage.FEATURE_TYPING: return createFeatureTyping();
+      case KerMLOCPackage.SUBCLASSIFICATION: return createSubclassification();
+      case KerMLOCPackage.DISJOINING: return createDisjoining();
+      case KerMLOCPackage.FEATURE_INVERTING: return createFeatureInverting();
+      case KerMLOCPackage.SUBSETTING: return createSubsetting();
+      case KerMLOCPackage.REDEFINITION: return createRedefinition();
+      case KerMLOCPackage.TYPE_FEATURING: return createTypeFeaturing();
+      case KerMLOCPackage.FEATURE: return createFeature();
+      case KerMLOCPackage.STEP: return createStep();
+      case KerMLOCPackage.EXPRESSION_CLASS: return createExpressionClass();
+      case KerMLOCPackage.BOOLEAN_EXPRESSION: return createBooleanExpression();
+      case KerMLOCPackage.INVARIANT: return createInvariant();
+      case KerMLOCPackage.CONNECTOR: return createConnector();
+      case KerMLOCPackage.BINDING_CONNECTOR: return createBindingConnector();
+      case KerMLOCPackage.SUCCESSION: return createSuccession();
+      case KerMLOCPackage.FLOW: return createFlow();
+      case KerMLOCPackage.SUCCESSION_FLOW: return createSuccessionFlow();
       case KerMLOCPackage.RESULT_EXPRESSION: return createResultExpression();
+      case KerMLOCPackage.CROSSING_FEATURE: return createCrossingFeature();
+      case KerMLOCPackage.CONNECTOR_END: return createConnectorEnd();
+      case KerMLOCPackage.PAYLOAD_PARAMETER: return createPayloadParameter();
       case KerMLOCPackage.IDENTIFICATION: return createIdentification();
       case KerMLOCPackage.MEMBER_PREFIX: return createMemberPrefix();
       case KerMLOCPackage.PREFIX_METADATA: return createPrefixMetadata();
-      case KerMLOCPackage.MULTIPLICITY_BOUNDS: return createMultiplicityBounds();
+      case KerMLOCPackage.MULTIPLICITY_RANGE: return createMultiplicityRange();
       case KerMLOCPackage.FEATURE_SPECIALIZATION: return createFeatureSpecialization();
       case KerMLOCPackage.TYPING_FEATURE_TYPING: return createTypingFeatureTyping();
       case KerMLOCPackage.SUBSETTING_FEATURE_CHAIN: return createSubsettingFeatureChain();
@@ -178,6 +254,27 @@ public class KerMLOCFactoryImpl extends EFactoryImpl implements KerMLOCFactory
       case KerMLOCPackage.INTERSECTING_PART: return createIntersectingPart();
       case KerMLOCPackage.DIFFERENCING_PART: return createDifferencingPart();
       case KerMLOCPackage.CLASSIFIER_DECLARATION: return createClassifierDeclaration();
+      case KerMLOCPackage.FEATURE_DECLARATION: return createFeatureDeclaration();
+      case KerMLOCPackage.FEATURE_RELATIONSHIP_PART: return createFeatureRelationshipPart();
+      case KerMLOCPackage.CHAINING_PART: return createChainingPart();
+      case KerMLOCPackage.INVERTING_PART: return createInvertingPart();
+      case KerMLOCPackage.TYPE_FEATURING_PART: return createTypeFeaturingPart();
+      case KerMLOCPackage.FEATURE_SPECIALIZATION_PART: return createFeatureSpecializationPart();
+      case KerMLOCPackage.MULTIPLICITY_PART: return createMultiplicityPart();
+      case KerMLOCPackage.MULTIPLICITY_MODIFIERS: return createMultiplicityModifiers();
+      case KerMLOCPackage.FEATURE_CONJUGATION_PART: return createFeatureConjugationPart();
+      case KerMLOCPackage.FEATURE_PREFIX: return createFeaturePrefix();
+      case KerMLOCPackage.END_FEATURE_PREFIX: return createEndFeaturePrefix();
+      case KerMLOCPackage.BASIC_FEATURE_PREFIX: return createBasicFeaturePrefix();
+      case KerMLOCPackage.VALUE_PART: return createValuePart();
+      case KerMLOCPackage.FEATURE_VALUE: return createFeatureValue();
+      case KerMLOCPackage.FLOW_DECLARATION: return createFlowDeclaration();
+      case KerMLOCPackage.PAYLOAD_FEATURE: return createPayloadFeature();
+      case KerMLOCPackage.PAYLOAD_FEATURE_SPECIALIZATION_PART: return createPayloadFeatureSpecializationPart();
+      case KerMLOCPackage.CONNECTOR_DECLARATION: return createConnectorDeclaration();
+      case KerMLOCPackage.BINARY_CONNECTOR_DECLARATION: return createBinaryConnectorDeclaration();
+      case KerMLOCPackage.NARY_CONNECTOR_DECLARATION: return createNaryConnectorDeclaration();
+      case KerMLOCPackage.EXTENDED_PREFIX: return createExtendedPrefix();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -195,6 +292,8 @@ public class KerMLOCFactoryImpl extends EFactoryImpl implements KerMLOCFactory
     {
       case KerMLOCPackage.VISIBILITY_INDICATOR:
         return createVisibilityIndicatorFromString(eDataType, initialValue);
+      case KerMLOCPackage.FEATURE_DIRECTION:
+        return createFeatureDirectionFromString(eDataType, initialValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -212,6 +311,8 @@ public class KerMLOCFactoryImpl extends EFactoryImpl implements KerMLOCFactory
     {
       case KerMLOCPackage.VISIBILITY_INDICATOR:
         return convertVisibilityIndicatorToString(eDataType, instanceValue);
+      case KerMLOCPackage.FEATURE_DIRECTION:
+        return convertFeatureDirectionToString(eDataType, instanceValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -307,6 +408,30 @@ public class KerMLOCFactoryImpl extends EFactoryImpl implements KerMLOCFactory
    * @generated
    */
   @Override
+  public RelationshipBodyElement createRelationshipBodyElement()
+  {
+    RelationshipBodyElementImpl relationshipBodyElement = new RelationshipBodyElementImpl();
+    return relationshipBodyElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public MetadataBodyElement createMetadataBodyElement()
+  {
+    MetadataBodyElementImpl metadataBodyElement = new MetadataBodyElementImpl();
+    return metadataBodyElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public AnnotatingElement createAnnotatingElement()
   {
     AnnotatingElementImpl annotatingElement = new AnnotatingElementImpl();
@@ -323,6 +448,18 @@ public class KerMLOCFactoryImpl extends EFactoryImpl implements KerMLOCFactory
   {
     NonFeatureElementImpl nonFeatureElement = new NonFeatureElementImpl();
     return nonFeatureElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public FeatureElement createFeatureElement()
+  {
+    FeatureElementImpl featureElement = new FeatureElementImpl();
+    return featureElement;
   }
 
   /**
@@ -395,6 +532,30 @@ public class KerMLOCFactoryImpl extends EFactoryImpl implements KerMLOCFactory
   {
     TextualRepresentationImpl textualRepresentation = new TextualRepresentationImpl();
     return textualRepresentation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public MetadataFeature createMetadataFeature()
+  {
+    MetadataFeatureImpl metadataFeature = new MetadataFeatureImpl();
+    return metadataFeature;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public MetadataBodyFeature createMetadataBodyFeature()
+  {
+    MetadataBodyFeatureImpl metadataBodyFeature = new MetadataBodyFeatureImpl();
+    return metadataBodyFeature;
   }
 
   /**
@@ -619,10 +780,274 @@ public class KerMLOCFactoryImpl extends EFactoryImpl implements KerMLOCFactory
    * @generated
    */
   @Override
+  public Specialization createSpecialization()
+  {
+    SpecializationImpl specialization = new SpecializationImpl();
+    return specialization;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Conjugation createConjugation()
+  {
+    ConjugationImpl conjugation = new ConjugationImpl();
+    return conjugation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public FeatureTyping createFeatureTyping()
+  {
+    FeatureTypingImpl featureTyping = new FeatureTypingImpl();
+    return featureTyping;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Subclassification createSubclassification()
+  {
+    SubclassificationImpl subclassification = new SubclassificationImpl();
+    return subclassification;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Disjoining createDisjoining()
+  {
+    DisjoiningImpl disjoining = new DisjoiningImpl();
+    return disjoining;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public FeatureInverting createFeatureInverting()
+  {
+    FeatureInvertingImpl featureInverting = new FeatureInvertingImpl();
+    return featureInverting;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Subsetting createSubsetting()
+  {
+    SubsettingImpl subsetting = new SubsettingImpl();
+    return subsetting;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Redefinition createRedefinition()
+  {
+    RedefinitionImpl redefinition = new RedefinitionImpl();
+    return redefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TypeFeaturing createTypeFeaturing()
+  {
+    TypeFeaturingImpl typeFeaturing = new TypeFeaturingImpl();
+    return typeFeaturing;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Feature createFeature()
+  {
+    FeatureImpl feature = new FeatureImpl();
+    return feature;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Step createStep()
+  {
+    StepImpl step = new StepImpl();
+    return step;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ExpressionClass createExpressionClass()
+  {
+    ExpressionClassImpl expressionClass = new ExpressionClassImpl();
+    return expressionClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public BooleanExpression createBooleanExpression()
+  {
+    BooleanExpressionImpl booleanExpression = new BooleanExpressionImpl();
+    return booleanExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Invariant createInvariant()
+  {
+    InvariantImpl invariant = new InvariantImpl();
+    return invariant;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Connector createConnector()
+  {
+    ConnectorImpl connector = new ConnectorImpl();
+    return connector;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public BindingConnector createBindingConnector()
+  {
+    BindingConnectorImpl bindingConnector = new BindingConnectorImpl();
+    return bindingConnector;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Succession createSuccession()
+  {
+    SuccessionImpl succession = new SuccessionImpl();
+    return succession;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Flow createFlow()
+  {
+    FlowImpl flow = new FlowImpl();
+    return flow;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SuccessionFlow createSuccessionFlow()
+  {
+    SuccessionFlowImpl successionFlow = new SuccessionFlowImpl();
+    return successionFlow;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public ResultExpression createResultExpression()
   {
     ResultExpressionImpl resultExpression = new ResultExpressionImpl();
     return resultExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public CrossingFeature createCrossingFeature()
+  {
+    CrossingFeatureImpl crossingFeature = new CrossingFeatureImpl();
+    return crossingFeature;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ConnectorEnd createConnectorEnd()
+  {
+    ConnectorEndImpl connectorEnd = new ConnectorEndImpl();
+    return connectorEnd;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PayloadParameter createPayloadParameter()
+  {
+    PayloadParameterImpl payloadParameter = new PayloadParameterImpl();
+    return payloadParameter;
   }
 
   /**
@@ -667,10 +1092,10 @@ public class KerMLOCFactoryImpl extends EFactoryImpl implements KerMLOCFactory
    * @generated
    */
   @Override
-  public MultiplicityBounds createMultiplicityBounds()
+  public MultiplicityRange createMultiplicityRange()
   {
-    MultiplicityBoundsImpl multiplicityBounds = new MultiplicityBoundsImpl();
-    return multiplicityBounds;
+    MultiplicityRangeImpl multiplicityRange = new MultiplicityRangeImpl();
+    return multiplicityRange;
   }
 
   /**
@@ -894,6 +1319,258 @@ public class KerMLOCFactoryImpl extends EFactoryImpl implements KerMLOCFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
+  public FeatureDeclaration createFeatureDeclaration()
+  {
+    FeatureDeclarationImpl featureDeclaration = new FeatureDeclarationImpl();
+    return featureDeclaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public FeatureRelationshipPart createFeatureRelationshipPart()
+  {
+    FeatureRelationshipPartImpl featureRelationshipPart = new FeatureRelationshipPartImpl();
+    return featureRelationshipPart;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ChainingPart createChainingPart()
+  {
+    ChainingPartImpl chainingPart = new ChainingPartImpl();
+    return chainingPart;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public InvertingPart createInvertingPart()
+  {
+    InvertingPartImpl invertingPart = new InvertingPartImpl();
+    return invertingPart;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public TypeFeaturingPart createTypeFeaturingPart()
+  {
+    TypeFeaturingPartImpl typeFeaturingPart = new TypeFeaturingPartImpl();
+    return typeFeaturingPart;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public FeatureSpecializationPart createFeatureSpecializationPart()
+  {
+    FeatureSpecializationPartImpl featureSpecializationPart = new FeatureSpecializationPartImpl();
+    return featureSpecializationPart;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public MultiplicityPart createMultiplicityPart()
+  {
+    MultiplicityPartImpl multiplicityPart = new MultiplicityPartImpl();
+    return multiplicityPart;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public MultiplicityModifiers createMultiplicityModifiers()
+  {
+    MultiplicityModifiersImpl multiplicityModifiers = new MultiplicityModifiersImpl();
+    return multiplicityModifiers;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public FeatureConjugationPart createFeatureConjugationPart()
+  {
+    FeatureConjugationPartImpl featureConjugationPart = new FeatureConjugationPartImpl();
+    return featureConjugationPart;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public FeaturePrefix createFeaturePrefix()
+  {
+    FeaturePrefixImpl featurePrefix = new FeaturePrefixImpl();
+    return featurePrefix;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EndFeaturePrefix createEndFeaturePrefix()
+  {
+    EndFeaturePrefixImpl endFeaturePrefix = new EndFeaturePrefixImpl();
+    return endFeaturePrefix;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public BasicFeaturePrefix createBasicFeaturePrefix()
+  {
+    BasicFeaturePrefixImpl basicFeaturePrefix = new BasicFeaturePrefixImpl();
+    return basicFeaturePrefix;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ValuePart createValuePart()
+  {
+    ValuePartImpl valuePart = new ValuePartImpl();
+    return valuePart;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public FeatureValue createFeatureValue()
+  {
+    FeatureValueImpl featureValue = new FeatureValueImpl();
+    return featureValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public FlowDeclaration createFlowDeclaration()
+  {
+    FlowDeclarationImpl flowDeclaration = new FlowDeclarationImpl();
+    return flowDeclaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PayloadFeature createPayloadFeature()
+  {
+    PayloadFeatureImpl payloadFeature = new PayloadFeatureImpl();
+    return payloadFeature;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PayloadFeatureSpecializationPart createPayloadFeatureSpecializationPart()
+  {
+    PayloadFeatureSpecializationPartImpl payloadFeatureSpecializationPart = new PayloadFeatureSpecializationPartImpl();
+    return payloadFeatureSpecializationPart;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ConnectorDeclaration createConnectorDeclaration()
+  {
+    ConnectorDeclarationImpl connectorDeclaration = new ConnectorDeclarationImpl();
+    return connectorDeclaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public BinaryConnectorDeclaration createBinaryConnectorDeclaration()
+  {
+    BinaryConnectorDeclarationImpl binaryConnectorDeclaration = new BinaryConnectorDeclarationImpl();
+    return binaryConnectorDeclaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NaryConnectorDeclaration createNaryConnectorDeclaration()
+  {
+    NaryConnectorDeclarationImpl naryConnectorDeclaration = new NaryConnectorDeclarationImpl();
+    return naryConnectorDeclaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ExtendedPrefix createExtendedPrefix()
+  {
+    ExtendedPrefixImpl extendedPrefix = new ExtendedPrefixImpl();
+    return extendedPrefix;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public VisibilityIndicator createVisibilityIndicatorFromString(EDataType eDataType, String initialValue)
   {
     VisibilityIndicator result = VisibilityIndicator.get(initialValue);
@@ -907,6 +1584,28 @@ public class KerMLOCFactoryImpl extends EFactoryImpl implements KerMLOCFactory
    * @generated
    */
   public String convertVisibilityIndicatorToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FeatureDirection createFeatureDirectionFromString(EDataType eDataType, String initialValue)
+  {
+    FeatureDirection result = FeatureDirection.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertFeatureDirectionToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

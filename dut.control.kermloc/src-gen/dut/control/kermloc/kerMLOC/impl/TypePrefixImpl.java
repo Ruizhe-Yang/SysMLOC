@@ -65,7 +65,7 @@ public class TypePrefixImpl extends PrefixMetadataImpl implements TypePrefix
   @Override
   protected EClass eStaticClass()
   {
-    return KerMLOCPackage.Literals.TYPE_PREFIX;
+    return KerMLOCPackage.eINSTANCE.getTypePrefix();
   }
 
   /**

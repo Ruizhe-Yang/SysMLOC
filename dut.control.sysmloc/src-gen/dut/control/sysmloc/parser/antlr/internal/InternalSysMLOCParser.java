@@ -56997,25 +56997,25 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleExponentiationExpression"
-    // InternalSysMLOC.g:18933:1: ruleExponentiationExpression returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_UnaryExpression_0= ruleUnaryExpression ( (kw= '**' | kw= '^' ) this_UnaryExpression_3= ruleUnaryExpression )? ) ;
+    // InternalSysMLOC.g:18933:1: ruleExponentiationExpression returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_UnaryExpression_0= ruleUnaryExpression ( (kw= '**' | kw= '^' ) this_ExponentiationExpression_3= ruleExponentiationExpression )? ) ;
     public final AntlrDatatypeRuleToken ruleExponentiationExpression() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
         Token kw=null;
         AntlrDatatypeRuleToken this_UnaryExpression_0 = null;
 
-        AntlrDatatypeRuleToken this_UnaryExpression_3 = null;
+        AntlrDatatypeRuleToken this_ExponentiationExpression_3 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalSysMLOC.g:18939:2: ( (this_UnaryExpression_0= ruleUnaryExpression ( (kw= '**' | kw= '^' ) this_UnaryExpression_3= ruleUnaryExpression )? ) )
-            // InternalSysMLOC.g:18940:2: (this_UnaryExpression_0= ruleUnaryExpression ( (kw= '**' | kw= '^' ) this_UnaryExpression_3= ruleUnaryExpression )? )
+            // InternalSysMLOC.g:18939:2: ( (this_UnaryExpression_0= ruleUnaryExpression ( (kw= '**' | kw= '^' ) this_ExponentiationExpression_3= ruleExponentiationExpression )? ) )
+            // InternalSysMLOC.g:18940:2: (this_UnaryExpression_0= ruleUnaryExpression ( (kw= '**' | kw= '^' ) this_ExponentiationExpression_3= ruleExponentiationExpression )? )
             {
-            // InternalSysMLOC.g:18940:2: (this_UnaryExpression_0= ruleUnaryExpression ( (kw= '**' | kw= '^' ) this_UnaryExpression_3= ruleUnaryExpression )? )
-            // InternalSysMLOC.g:18941:3: this_UnaryExpression_0= ruleUnaryExpression ( (kw= '**' | kw= '^' ) this_UnaryExpression_3= ruleUnaryExpression )?
+            // InternalSysMLOC.g:18940:2: (this_UnaryExpression_0= ruleUnaryExpression ( (kw= '**' | kw= '^' ) this_ExponentiationExpression_3= ruleExponentiationExpression )? )
+            // InternalSysMLOC.g:18941:3: this_UnaryExpression_0= ruleUnaryExpression ( (kw= '**' | kw= '^' ) this_ExponentiationExpression_3= ruleExponentiationExpression )?
             {
             if ( state.backtracking==0 ) {
 
@@ -57037,7 +57037,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
               			afterParserOrEnumRuleCall();
               		
             }
-            // InternalSysMLOC.g:18951:3: ( (kw= '**' | kw= '^' ) this_UnaryExpression_3= ruleUnaryExpression )?
+            // InternalSysMLOC.g:18951:3: ( (kw= '**' | kw= '^' ) this_ExponentiationExpression_3= ruleExponentiationExpression )?
             int alt535=2;
             int LA535_0 = input.LA(1);
 
@@ -57046,7 +57046,7 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
             }
             switch (alt535) {
                 case 1 :
-                    // InternalSysMLOC.g:18952:4: (kw= '**' | kw= '^' ) this_UnaryExpression_3= ruleUnaryExpression
+                    // InternalSysMLOC.g:18952:4: (kw= '**' | kw= '^' ) this_ExponentiationExpression_3= ruleExponentiationExpression
                     {
                     // InternalSysMLOC.g:18952:4: (kw= '**' | kw= '^' )
                     int alt534=2;
@@ -57097,17 +57097,17 @@ public class InternalSysMLOCParser extends AbstractInternalAntlrParser {
 
                     if ( state.backtracking==0 ) {
 
-                      				newCompositeNode(grammarAccess.getExponentiationExpressionAccess().getUnaryExpressionParserRuleCall_1_1());
+                      				newCompositeNode(grammarAccess.getExponentiationExpressionAccess().getExponentiationExpressionParserRuleCall_1_1());
                       			
                     }
                     pushFollow(FOLLOW_2);
-                    this_UnaryExpression_3=ruleUnaryExpression();
+                    this_ExponentiationExpression_3=ruleExponentiationExpression();
 
                     state._fsp--;
                     if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      				current.merge(this_UnaryExpression_3);
+                      				current.merge(this_ExponentiationExpression_3);
                       			
                     }
                     if ( state.backtracking==0 ) {

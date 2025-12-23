@@ -59,7 +59,7 @@ public class RedefinitionFeatureChainImpl extends MinimalEObjectImpl.Container i
   @Override
   protected EClass eStaticClass()
   {
-    return KerMLOCPackage.Literals.REDEFINITION_FEATURE_CHAIN;
+    return KerMLOCPackage.eINSTANCE.getRedefinitionFeatureChain();
   }
 
   /**

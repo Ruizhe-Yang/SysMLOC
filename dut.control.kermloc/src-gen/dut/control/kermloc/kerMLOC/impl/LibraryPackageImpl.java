@@ -207,7 +207,7 @@ public class LibraryPackageImpl extends NonFeatureElementImpl implements Library
   @Override
   protected EClass eStaticClass()
   {
-    return KerMLOCPackage.Literals.LIBRARY_PACKAGE;
+    return KerMLOCPackage.eINSTANCE.getLibraryPackage();
   }
 
   /**

@@ -59,7 +59,7 @@ public class TypingFeatureTypingImpl extends MinimalEObjectImpl.Container implem
   @Override
   protected EClass eStaticClass()
   {
-    return KerMLOCPackage.Literals.TYPING_FEATURE_TYPING;
+    return KerMLOCPackage.eINSTANCE.getTypingFeatureTyping();
   }
 
   /**

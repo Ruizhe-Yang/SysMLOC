@@ -48769,9 +48769,9 @@ rule__ExponentiationExpression__Group_1__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getExponentiationExpressionAccess().getUnaryExpressionParserRuleCall_1_1()); }
-	ruleUnaryExpression
-	{ after(grammarAccess.getExponentiationExpressionAccess().getUnaryExpressionParserRuleCall_1_1()); }
+	{ before(grammarAccess.getExponentiationExpressionAccess().getExponentiationExpressionParserRuleCall_1_1()); }
+	ruleExponentiationExpression
+	{ after(grammarAccess.getExponentiationExpressionAccess().getExponentiationExpressionParserRuleCall_1_1()); }
 )
 ;
 finally {

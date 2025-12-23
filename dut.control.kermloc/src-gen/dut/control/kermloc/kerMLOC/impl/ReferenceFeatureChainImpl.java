@@ -59,7 +59,7 @@ public class ReferenceFeatureChainImpl extends MinimalEObjectImpl.Container impl
   @Override
   protected EClass eStaticClass()
   {
-    return KerMLOCPackage.Literals.REFERENCE_FEATURE_CHAIN;
+    return KerMLOCPackage.eINSTANCE.getReferenceFeatureChain();
   }
 
   /**

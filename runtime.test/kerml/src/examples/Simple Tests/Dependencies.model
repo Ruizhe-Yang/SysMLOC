@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:Package" declaredName="Dependencies">
+    <elements xsi:type="kerMLOC:Package" declaredName="System">
+      <elements xsi:type="kerMLOC:Package" declaredName="'Application Layer'"/>
+      <elements xsi:type="kerMLOC:Package" declaredName="'Service Layer'"/>
+      <elements xsi:type="kerMLOC:Package" declaredName="'Data Layer'"/>
+    </elements>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="public" declaredName="System" isNamespace="true"/>
+    <elements xsi:type="kerMLOC:Dependency" declaredName="Use">
+      <client>'Application Layer'</client>
+      <supplier>'Service Layer'</supplier>
+    </elements>
+    <elements xsi:type="kerMLOC:Dependency">
+      <client>'Service Layer'</client>
+      <supplier>'Data Layer'</supplier>
+    </elements>
+    <elements xsi:type="kerMLOC:Feature" declaredName="x"/>
+    <elements xsi:type="kerMLOC:Feature" declaredName="y"/>
+    <elements xsi:type="kerMLOC:Feature" declaredName="z"/>
+    <elements xsi:type="kerMLOC:Dependency">
+      <client>z</client>
+      <supplier>x</supplier>
+      <supplier>y</supplier>
+      <elements xsi:type="kerMLOC:Feature" declaredName="e"/>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

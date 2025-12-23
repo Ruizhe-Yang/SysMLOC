@@ -1648,7 +1648,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//    metadataTyping=QualifiedName
 		//    ( 'about' annotatedElement+=QualifiedName ( ',' annotatedElement+=QualifiedName)* )?
 		//    //    ( ';' | '{' (elements+=MetadataBodyElement)* '}' )
-		//    // [exceeding 65535 bytes]
+		//    // [Causes LL parsing issues.]
 		//    ( ';' | '{' (elements+=GeneralBodyElements)* '}' )
 		//;
 		@Override public ParserRule getRule() { return rule; }
@@ -1659,7 +1659,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//metadataTyping=QualifiedName
 		//( 'about' annotatedElement+=QualifiedName ( ',' annotatedElement+=QualifiedName)* )?
 		////    ( ';' | '{' (elements+=MetadataBodyElement)* '}' )
-		//// [exceeding 65535 bytes]
+		//// [Causes LL parsing issues.]
 		//( ';' | '{' (elements+=GeneralBodyElements)* '}' )
 		public Group getGroup() { return cGroup; }
 		
@@ -1727,7 +1727,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		public RuleCall getAnnotatedElementQualifiedNameParserRuleCall_4_2_1_0() { return cAnnotatedElementQualifiedNameParserRuleCall_4_2_1_0; }
 		
 		////    ( ';' | '{' (elements+=MetadataBodyElement)* '}' )
-		//// [exceeding 65535 bytes]
+		//// [Causes LL parsing issues.]
 		//( ';' | '{' (elements+=GeneralBodyElements)* '}' )
 		public Alternatives getAlternatives_5() { return cAlternatives_5; }
 		
@@ -10273,13 +10273,13 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		
 		//fragment EndUsagePrefix:
 		//    isEnd ?= 'end'
-		//    // [exceeding 65535 bytes]
+		//    // [Causes LL parsing issues.]
 		//    CrossEndUsagePrefix?
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//isEnd ?= 'end'
-		//// [exceeding 65535 bytes]
+		//// [Causes LL parsing issues.]
 		//CrossEndUsagePrefix?
 		public Group getGroup() { return cGroup; }
 		
@@ -10289,7 +10289,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//'end'
 		public Keyword getIsEndEndKeyword_0_0() { return cIsEndEndKeyword_0_0; }
 		
-		//// [exceeding 65535 bytes]
+		//// [Causes LL parsing issues.]
 		//CrossEndUsagePrefix?
 		public RuleCall getCrossEndUsagePrefixParserRuleCall_1() { return cCrossEndUsagePrefixParserRuleCall_1; }
 	}
@@ -12539,20 +12539,20 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Alternatives cAlternatives_1_0 = (Alternatives)cGroup_1.eContents().get(0);
 		private final Keyword cAsteriskAsteriskKeyword_1_0_0 = (Keyword)cAlternatives_1_0.eContents().get(0);
 		private final Keyword cCircumflexAccentKeyword_1_0_1 = (Keyword)cAlternatives_1_0.eContents().get(1);
-		private final RuleCall cUnaryExpressionParserRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		private final RuleCall cExponentiationExpressionParserRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
 		
 		//ExponentiationExpression:
-		//    UnaryExpression (('**' | '^') UnaryExpression)?
+		//    UnaryExpression (('**' | '^') ExponentiationExpression)?
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//UnaryExpression (('**' | '^') UnaryExpression)?
+		//UnaryExpression (('**' | '^') ExponentiationExpression)?
 		public Group getGroup() { return cGroup; }
 		
 		//UnaryExpression
 		public RuleCall getUnaryExpressionParserRuleCall_0() { return cUnaryExpressionParserRuleCall_0; }
 		
-		//(('**' | '^') UnaryExpression)?
+		//(('**' | '^') ExponentiationExpression)?
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//('**' | '^')
@@ -12564,8 +12564,8 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//'^'
 		public Keyword getCircumflexAccentKeyword_1_0_1() { return cCircumflexAccentKeyword_1_0_1; }
 		
-		//UnaryExpression
-		public RuleCall getUnaryExpressionParserRuleCall_1_1() { return cUnaryExpressionParserRuleCall_1_1; }
+		//ExponentiationExpression
+		public RuleCall getExponentiationExpressionParserRuleCall_1_1() { return cExponentiationExpressionParserRuleCall_1_1; }
 	}
 	public class UnaryExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dut.control.sysmloc.SysMLOC.UnaryExpression");
@@ -15134,7 +15134,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	//    metadataTyping=QualifiedName
 	//    ( 'about' annotatedElement+=QualifiedName ( ',' annotatedElement+=QualifiedName)* )?
 	//    //    ( ';' | '{' (elements+=MetadataBodyElement)* '}' )
-	//    // [exceeding 65535 bytes]
+	//    // [Causes LL parsing issues.]
 	//    ( ';' | '{' (elements+=GeneralBodyElements)* '}' )
 	//;
 	public MetadataUsageElements getMetadataUsageAccess() {
@@ -16909,7 +16909,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	
 	//fragment EndUsagePrefix:
 	//    isEnd ?= 'end'
-	//    // [exceeding 65535 bytes]
+	//    // [Causes LL parsing issues.]
 	//    CrossEndUsagePrefix?
 	//;
 	public EndUsagePrefixElements getEndUsagePrefixAccess() {
@@ -17702,7 +17702,7 @@ public class SysMLOCGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//ExponentiationExpression:
-	//    UnaryExpression (('**' | '^') UnaryExpression)?
+	//    UnaryExpression (('**' | '^') ExponentiationExpression)?
 	//;
 	public ExponentiationExpressionElements getExponentiationExpressionAccess() {
 		return pExponentiationExpression;

@@ -59,7 +59,7 @@ public class DisjoiningPartImpl extends MinimalEObjectImpl.Container implements 
   @Override
   protected EClass eStaticClass()
   {
-    return KerMLOCPackage.Literals.DISJOINING_PART;
+    return KerMLOCPackage.eINSTANCE.getDisjoiningPart();
   }
 
   /**

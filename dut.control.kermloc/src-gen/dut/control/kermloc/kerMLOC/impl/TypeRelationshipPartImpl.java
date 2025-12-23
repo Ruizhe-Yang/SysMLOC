@@ -82,7 +82,7 @@ public class TypeRelationshipPartImpl extends DisjoiningPartImpl implements Type
   @Override
   protected EClass eStaticClass()
   {
-    return KerMLOCPackage.Literals.TYPE_RELATIONSHIP_PART;
+    return KerMLOCPackage.eINSTANCE.getTypeRelationshipPart();
   }
 
   /**

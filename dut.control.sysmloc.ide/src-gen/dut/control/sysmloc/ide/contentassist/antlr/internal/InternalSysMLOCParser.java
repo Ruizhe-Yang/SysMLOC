@@ -164779,28 +164779,28 @@ public class InternalSysMLOCParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExponentiationExpression__Group_1__1__Impl"
-    // InternalSysMLOC.g:48766:1: rule__ExponentiationExpression__Group_1__1__Impl : ( ruleUnaryExpression ) ;
+    // InternalSysMLOC.g:48766:1: rule__ExponentiationExpression__Group_1__1__Impl : ( ruleExponentiationExpression ) ;
     public final void rule__ExponentiationExpression__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSysMLOC.g:48770:1: ( ( ruleUnaryExpression ) )
-            // InternalSysMLOC.g:48771:1: ( ruleUnaryExpression )
+            // InternalSysMLOC.g:48770:1: ( ( ruleExponentiationExpression ) )
+            // InternalSysMLOC.g:48771:1: ( ruleExponentiationExpression )
             {
-            // InternalSysMLOC.g:48771:1: ( ruleUnaryExpression )
-            // InternalSysMLOC.g:48772:2: ruleUnaryExpression
+            // InternalSysMLOC.g:48771:1: ( ruleExponentiationExpression )
+            // InternalSysMLOC.g:48772:2: ruleExponentiationExpression
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getExponentiationExpressionAccess().getUnaryExpressionParserRuleCall_1_1()); 
+               before(grammarAccess.getExponentiationExpressionAccess().getExponentiationExpressionParserRuleCall_1_1()); 
             }
             pushFollow(FOLLOW_2);
-            ruleUnaryExpression();
+            ruleExponentiationExpression();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getExponentiationExpressionAccess().getUnaryExpressionParserRuleCall_1_1()); 
+               after(grammarAccess.getExponentiationExpressionAccess().getExponentiationExpressionParserRuleCall_1_1()); 
             }
 
             }

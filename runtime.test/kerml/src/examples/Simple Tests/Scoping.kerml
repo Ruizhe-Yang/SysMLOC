@@ -32,7 +32,7 @@ package Scoping {
             class D :> '$'::Objects::Object {
                 feature :>> test2;
             }
-            class E :> $::Objects::Object {
+            class E :> '$'::Objects::Object {
                 feature :>> subobjects;
             }
         }

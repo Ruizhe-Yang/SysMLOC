@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:Package" declaredName="Redefinition">
+    <elements xsi:type="kerMLOC:Classifier" declaredName="A">
+      <elements xsi:type="kerMLOC:Feature" declaredName="f"/>
+    </elements>
+    <elements xsi:type="kerMLOC:Classifier" declaredName="B">
+      <subsetting>A</subsetting>
+      <elements xsi:type="kerMLOC:Feature">
+        <redefinitions>f</redefinitions>
+        <elements xsi:type="kerMLOC:Feature" declaredName="g"/>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Classifier" declaredName="C">
+      <subsetting>A</subsetting>
+      <subsetting>B</subsetting>
+      <elements xsi:type="kerMLOC:Feature">
+        <subsetting>f</subsetting>
+        <elements xsi:type="kerMLOC:Feature">
+          <redefinitions>g</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Class" declaredName="X">
+      <elements xsi:type="kerMLOC:Feature">
+        <redefinitions>startShot</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature">
+        <redefinitions>endShot</redefinitions>
+      </elements>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

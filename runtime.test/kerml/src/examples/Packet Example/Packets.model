@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ScalarValues" isNamespace="true"/>
+  <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Time::DateTime"/>
+  <elements xsi:type="kerMLOC:Package" declaredName="Packets">
+    <elements xsi:type="kerMLOC:Feature" declaredName="'packet header'"/>
+    <elements xsi:type="kerMLOC:Feature" declaredName="'packet data field'">
+      <elements xsi:type="kerMLOC:Feature" declaredName="'packet secondary header'">
+        <redefinitions>'packet header'</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="'user data field'"/>
+    </elements>
+    <elements xsi:type="kerMLOC:Class" declaredName="'Data Packet'">
+      <elements xsi:type="kerMLOC:Feature" declaredName="'packet primary header'">
+        <redefinitions>'packet header'</redefinitions>
+        <elements xsi:type="kerMLOC:Feature" declaredName="'packet version number'">
+          <typings>Integer</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" declaredName="'packet identification'">
+          <typings>String</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" declaredName="'packet data length'">
+          <typings>Integer</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature">
+        <redefinitions>'packet data field'</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Class" declaredName="'Thermal Data Packet'">
+      <subsetting>'Data Packet'</subsetting>
+      <elements xsi:type="kerMLOC:Feature" declaredName="'packet data field'">
+        <redefinitions>Packets::'packet data field'</redefinitions>
+        <elements xsi:type="kerMLOC:Feature" declaredName="'packet secondary header'">
+          <redefinitions>'packet header'</redefinitions>
+          <elements xsi:type="kerMLOC:Feature" declaredName="'packet timestamp'">
+            <typings>DateTime</typings>
+          </elements>
+          <elements xsi:type="kerMLOC:Feature" declaredName="'telemetry packet type'">
+            <typings>String</typings>
+          </elements>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" declaredName="'user data field'">
+          <redefinitions>Packets::'packet data field'::'user data field'</redefinitions>
+          <elements xsi:type="kerMLOC:Feature" declaredName="timestamp">
+            <typings>DateTime</typings>
+          </elements>
+          <elements xsi:type="kerMLOC:Feature" declaredName="temperature">
+            <typings>Real</typings>
+          </elements>
+        </elements>
+      </elements>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

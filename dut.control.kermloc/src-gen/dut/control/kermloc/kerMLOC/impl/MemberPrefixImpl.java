@@ -88,7 +88,7 @@ public class MemberPrefixImpl extends MinimalEObjectImpl.Container implements Me
   @Override
   protected EClass eStaticClass()
   {
-    return KerMLOCPackage.Literals.MEMBER_PREFIX;
+    return KerMLOCPackage.eINSTANCE.getMemberPrefix();
   }
 
   /**

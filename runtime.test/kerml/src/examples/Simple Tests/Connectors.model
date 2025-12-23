@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:Package" declaredName="Connectors">
+    <elements xsi:type="kerMLOC:Class" declaredName="A">
+      <elements xsi:type="kerMLOC:Feature" declaredName="a">
+        <typings>A</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="b">
+        <typings>A</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Connector" declaredName="c1">
+        <connectorPartBinary refElement="a"/>
+        <connectorPartBinary refElement="b"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Connector" isAbstract="true" declaredName="c2" valuePart="c1"/>
+      <elements xsi:type="kerMLOC:Connector" valuePart="c2">
+        <elements xsi:type="kerMLOC:Feature" isEnd="true">
+          <references>a</references>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isEnd="true">
+          <references>b</references>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:BindingConnector">
+        <connectorPart refElement="a"/>
+        <connectorPart refElement="b"/>
+      </elements>
+      <elements xsi:type="kerMLOC:BindingConnector" declaredName="ab" isOf="true">
+        <connectorPart refElement="a"/>
+        <connectorPart refElement="b"/>
+      </elements>
+      <elements xsi:type="kerMLOC:BindingConnector">
+        <elements xsi:type="kerMLOC:Feature" isEnd="true">
+          <references>a</references>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isEnd="true">
+          <references>b</references>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Succession">
+        <connectorPart refElement="a"/>
+        <connectorPart refElement="b"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Succession" declaredName="s" isFirst="true">
+        <connectorPart refElement="a"/>
+        <connectorPart refElement="b"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Succession">
+        <elements xsi:type="kerMLOC:Feature" isEnd="true">
+          <references>a</references>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isEnd="true">
+          <references>b</references>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Class" declaredName="B">
+      <elements xsi:type="kerMLOC:Feature" declaredName="a">
+        <typings>A</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Connector">
+        <subsetting>a.c1</subsetting>
+        <connectorPartBinary refElement="a.a"/>
+        <connectorPartBinary refElement="a.b"/>
+      </elements>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

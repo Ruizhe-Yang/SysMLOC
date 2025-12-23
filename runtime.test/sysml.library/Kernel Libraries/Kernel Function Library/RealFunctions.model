@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:LibraryPackage" declaredName="RealFunctions" isStandard="true" isLibrary="true">
+    <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9; * This package defines Functions on Real values, including concrete specializations of the &#xA;&#x9; * general arithmetic and comparison operations.&#xA;&#x9; */"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="public" declaredName="ScalarValues" isNamespace="true"/>
+    <elements xsi:type="kerMLOC:Function" declaredName="re">
+      <subsetting>ComplexFunctions::re</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="x">
+        <typings>Real</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="im">
+      <subsetting>ComplexFunctions::im</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="0.0">
+        <typings>Real</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="abs">
+      <subsetting>ComplexFunctions::abs</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="arg">
+      <subsetting>ComplexFunctions::arg</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="0.0">
+        <typings>Real</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="'+'">
+      <subsetting>ComplexFunctions::'+'</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="0" MultiHigh="1">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="'-'">
+      <subsetting>ComplexFunctions::'-'</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="0" MultiHigh="1">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="'*'">
+      <subsetting>ComplexFunctions::'*'</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="'/'">
+      <subsetting>ComplexFunctions::'/'</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="'**'">
+      <subsetting>ComplexFunctions::'**'</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="'^'">
+      <subsetting>ComplexFunctions::'^'</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="'&lt;'">
+      <subsetting>NumericalFunctions::'&lt;'</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Boolean</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="'>'">
+      <subsetting>NumericalFunctions::'>'</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Boolean</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="'&lt;='">
+      <subsetting>NumericalFunctions::'&lt;='</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Boolean</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="'>='">
+      <subsetting>NumericalFunctions::'>='</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Boolean</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="max">
+      <subsetting>NumericalFunctions::max</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="min">
+      <subsetting>NumericalFunctions::min</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="'=='">
+      <subsetting>ComplexFunctions::'=='</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="0" MultiHigh="1">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="0" MultiHigh="1">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Boolean</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="sqrt">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="floor">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Integer</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="round">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Integer</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="ToString">
+      <subsetting>ComplexFunctions::ToString</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>String</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="ToInteger">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Integer</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="ToRational">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Rational</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="ToReal">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>String</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="sum">
+      <subsetting>ComplexFunctions::sum</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="collection" MultiLow="0" MultiHigh="*">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" isDefault="true" valuePart="NumericalFunctions::sum0(collection, 0.0)">
+        <typings>Real</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="product">
+      <subsetting>ComplexFunctions::product</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="collection" MultiLow="0" MultiHigh="*">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" isDefault="true" valuePart="NumericalFunctions::product1(collection, 1.0)">
+        <typings>Real</typings>
+      </elements>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

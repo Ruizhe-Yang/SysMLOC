@@ -37,7 +37,7 @@ public class TypeBodyElementImpl extends MinimalEObjectImpl.Container implements
   @Override
   protected EClass eStaticClass()
   {
-    return KerMLOCPackage.Literals.TYPE_BODY_ELEMENT;
+    return KerMLOCPackage.eINSTANCE.getTypeBodyElement();
   }
 
 } //TypeBodyElementImpl

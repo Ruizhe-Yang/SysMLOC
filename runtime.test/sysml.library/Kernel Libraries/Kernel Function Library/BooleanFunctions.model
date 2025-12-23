@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:LibraryPackage" declaredName="BooleanFunctions" isStandard="true" isLibrary="true">
+    <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9; * This package defines functions on Boolean values, including those corresponding to &#xA;&#x9; * (non-conditional) logical operators in the KerML expression notation.&#xA;&#x9; */"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="public" declaredName="ScalarValues" isNamespace="true"/>
+    <elements xsi:type="kerMLOC:Function" declaredName="'not'">
+      <subsetting>ScalarFunctions::'not'</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>Boolean</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Boolean</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="'xor'">
+      <subsetting>ScalarFunctions::'xor'</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>Boolean</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="1">
+        <typings>Boolean</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Boolean</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="'|'">
+      <subsetting>ScalarFunctions::'|'</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>Boolean</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="1">
+        <typings>Boolean</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Boolean</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="'&amp;'">
+      <subsetting>ScalarFunctions::'&amp;'</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>Boolean</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="1">
+        <typings>Boolean</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Boolean</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="'=='">
+      <subsetting>DataFunctions::'=='</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="0" MultiHigh="1">
+        <typings>Boolean</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="0" MultiHigh="1">
+        <typings>Boolean</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Boolean</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="ToString">
+      <subsetting>BaseFunctions::ToString</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>Boolean</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>String</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="ToBoolean">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>String</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Boolean</typings>
+      </elements>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

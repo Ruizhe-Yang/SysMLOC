@@ -142,7 +142,7 @@ public class PackageImpl extends NonFeatureElementImpl implements dut.control.ke
   @Override
   protected EClass eStaticClass()
   {
-    return KerMLOCPackage.Literals.PACKAGE;
+    return KerMLOCPackage.eINSTANCE.getPackage();
   }
 
   /**

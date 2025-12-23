@@ -87,7 +87,7 @@ public class IdentificationImpl extends MinimalEObjectImpl.Container implements 
   @Override
   protected EClass eStaticClass()
   {
-    return KerMLOCPackage.Literals.IDENTIFICATION;
+    return KerMLOCPackage.eINSTANCE.getIdentification();
   }
 
   /**

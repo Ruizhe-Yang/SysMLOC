@@ -27,7 +27,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface ImportElement extends GeneralBodyElements
+public interface ImportElement extends GeneralBodyElements, MetadataBodyElement
 {
   /**
    * Returns the value of the '<em><b>Visibility</b></em>' attribute.

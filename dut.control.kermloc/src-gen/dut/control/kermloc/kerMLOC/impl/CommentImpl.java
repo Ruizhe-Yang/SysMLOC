@@ -190,7 +190,7 @@ public class CommentImpl extends AnnotatingElementImpl implements Comment
   @Override
   protected EClass eStaticClass()
   {
-    return KerMLOCPackage.Literals.COMMENT;
+    return KerMLOCPackage.eINSTANCE.getComment();
   }
 
   /**

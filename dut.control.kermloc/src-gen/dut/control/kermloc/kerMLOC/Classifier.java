@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Classifier extends NonFeatureElement, MemberPrefix, TypePrefix, PrefixMetadata, ClassifierDeclaration, Identification, MultiplicityBounds, SuperclassingPart, SubsettingFeatureChain, ClassifierConjugationPart, TypeRelationshipPart, DisjoiningPart, UnioningPart, IntersectingPart, DifferencingPart
+public interface Classifier extends NonFeatureElement, MemberPrefix, TypePrefix, PrefixMetadata, ClassifierDeclaration, Identification, MultiplicityRange, SuperclassingPart, SubsettingFeatureChain, ClassifierConjugationPart, TypeRelationshipPart, DisjoiningPart, UnioningPart, IntersectingPart, DifferencingPart
 {
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.

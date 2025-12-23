@@ -3,12 +3,12 @@
  */
 package dut.control.kermloc.kerMLOC.impl;
 
-import dut.control.kermloc.kerMLOC.AnnotatingElement;
 import dut.control.kermloc.kerMLOC.Dependency;
 import dut.control.kermloc.kerMLOC.Identification;
 import dut.control.kermloc.kerMLOC.KerMLOCPackage;
 import dut.control.kermloc.kerMLOC.MemberPrefix;
 import dut.control.kermloc.kerMLOC.PrefixMetadata;
+import dut.control.kermloc.kerMLOC.RelationshipBodyElement;
 import dut.control.kermloc.kerMLOC.VisibilityIndicator;
 
 import java.util.Collection;
@@ -167,7 +167,7 @@ public class DependencyImpl extends NonFeatureElementImpl implements Dependency
    * @generated
    * @ordered
    */
-  protected EList<AnnotatingElement> elements;
+  protected EList<RelationshipBodyElement> elements;
 
   /**
    * <!-- begin-user-doc -->
@@ -187,7 +187,7 @@ public class DependencyImpl extends NonFeatureElementImpl implements Dependency
   @Override
   protected EClass eStaticClass()
   {
-    return KerMLOCPackage.Literals.DEPENDENCY;
+    return KerMLOCPackage.eINSTANCE.getDependency();
   }
 
   /**
@@ -341,11 +341,11 @@ public class DependencyImpl extends NonFeatureElementImpl implements Dependency
    * @generated
    */
   @Override
-  public EList<AnnotatingElement> getElements()
+  public EList<RelationshipBodyElement> getElements()
   {
     if (elements == null)
     {
-      elements = new EObjectContainmentEList<AnnotatingElement>(AnnotatingElement.class, this, KerMLOCPackage.DEPENDENCY__ELEMENTS);
+      elements = new EObjectContainmentEList<RelationshipBodyElement>(RelationshipBodyElement.class, this, KerMLOCPackage.DEPENDENCY__ELEMENTS);
     }
     return elements;
   }
@@ -433,7 +433,7 @@ public class DependencyImpl extends NonFeatureElementImpl implements Dependency
         return;
       case KerMLOCPackage.DEPENDENCY__ELEMENTS:
         getElements().clear();
-        getElements().addAll((Collection<? extends AnnotatingElement>)newValue);
+        getElements().addAll((Collection<? extends RelationshipBodyElement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

@@ -37,7 +37,7 @@ public class PackageBodyElementImpl extends MinimalEObjectImpl.Container impleme
   @Override
   protected EClass eStaticClass()
   {
-    return KerMLOCPackage.Literals.PACKAGE_BODY_ELEMENT;
+    return KerMLOCPackage.eINSTANCE.getPackageBodyElement();
   }
 
 } //PackageBodyElementImpl

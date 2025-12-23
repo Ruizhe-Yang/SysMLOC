@@ -59,7 +59,7 @@ public class UnioningPartImpl extends MinimalEObjectImpl.Container implements Un
   @Override
   protected EClass eStaticClass()
   {
-    return KerMLOCPackage.Literals.UNIONING_PART;
+    return KerMLOCPackage.eINSTANCE.getUnioningPart();
   }
 
   /**

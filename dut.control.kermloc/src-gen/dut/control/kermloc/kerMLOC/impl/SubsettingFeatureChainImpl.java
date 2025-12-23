@@ -59,7 +59,7 @@ public class SubsettingFeatureChainImpl extends MinimalEObjectImpl.Container imp
   @Override
   protected EClass eStaticClass()
   {
-    return KerMLOCPackage.Literals.SUBSETTING_FEATURE_CHAIN;
+    return KerMLOCPackage.eINSTANCE.getSubsettingFeatureChain();
   }
 
   /**

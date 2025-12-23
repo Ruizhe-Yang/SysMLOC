@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Type extends NonFeatureElement, MemberPrefix, TypePrefix, PrefixMetadata, Identification, MultiplicityBounds, SpecializationPart, SubsettingFeatureChain, ConjugationPart, TypeRelationshipPart, DisjoiningPart, UnioningPart, IntersectingPart, DifferencingPart
+public interface Type extends NonFeatureElement, MemberPrefix, TypePrefix, PrefixMetadata, Identification, MultiplicityRange, SpecializationPart, SubsettingFeatureChain, ConjugationPart, TypeRelationshipPart, DisjoiningPart, UnioningPart, IntersectingPart, DifferencingPart
 {
   /**
    * Returns the value of the '<em><b>Is Sufficient</b></em>' attribute.

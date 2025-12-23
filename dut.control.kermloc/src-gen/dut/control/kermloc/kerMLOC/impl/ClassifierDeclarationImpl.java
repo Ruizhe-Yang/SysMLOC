@@ -9,7 +9,7 @@ import dut.control.kermloc.kerMLOC.DifferencingPart;
 import dut.control.kermloc.kerMLOC.DisjoiningPart;
 import dut.control.kermloc.kerMLOC.IntersectingPart;
 import dut.control.kermloc.kerMLOC.KerMLOCPackage;
-import dut.control.kermloc.kerMLOC.MultiplicityBounds;
+import dut.control.kermloc.kerMLOC.MultiplicityRange;
 import dut.control.kermloc.kerMLOC.SubsettingFeatureChain;
 import dut.control.kermloc.kerMLOC.SuperclassingPart;
 import dut.control.kermloc.kerMLOC.TypeRelationshipPart;
@@ -198,7 +198,7 @@ public class ClassifierDeclarationImpl extends IdentificationImpl implements Cla
   @Override
   protected EClass eStaticClass()
   {
-    return KerMLOCPackage.Literals.CLASSIFIER_DECLARATION;
+    return KerMLOCPackage.eINSTANCE.getClassifierDeclaration();
   }
 
   /**
@@ -536,12 +536,12 @@ public class ClassifierDeclarationImpl extends IdentificationImpl implements Cla
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
   {
-    if (baseClass == MultiplicityBounds.class)
+    if (baseClass == MultiplicityRange.class)
     {
       switch (derivedFeatureID)
       {
-        case KerMLOCPackage.CLASSIFIER_DECLARATION__MULTI_LOW: return KerMLOCPackage.MULTIPLICITY_BOUNDS__MULTI_LOW;
-        case KerMLOCPackage.CLASSIFIER_DECLARATION__MULTI_HIGH: return KerMLOCPackage.MULTIPLICITY_BOUNDS__MULTI_HIGH;
+        case KerMLOCPackage.CLASSIFIER_DECLARATION__MULTI_LOW: return KerMLOCPackage.MULTIPLICITY_RANGE__MULTI_LOW;
+        case KerMLOCPackage.CLASSIFIER_DECLARATION__MULTI_HIGH: return KerMLOCPackage.MULTIPLICITY_RANGE__MULTI_HIGH;
         default: return -1;
       }
     }
@@ -618,12 +618,12 @@ public class ClassifierDeclarationImpl extends IdentificationImpl implements Cla
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
   {
-    if (baseClass == MultiplicityBounds.class)
+    if (baseClass == MultiplicityRange.class)
     {
       switch (baseFeatureID)
       {
-        case KerMLOCPackage.MULTIPLICITY_BOUNDS__MULTI_LOW: return KerMLOCPackage.CLASSIFIER_DECLARATION__MULTI_LOW;
-        case KerMLOCPackage.MULTIPLICITY_BOUNDS__MULTI_HIGH: return KerMLOCPackage.CLASSIFIER_DECLARATION__MULTI_HIGH;
+        case KerMLOCPackage.MULTIPLICITY_RANGE__MULTI_LOW: return KerMLOCPackage.CLASSIFIER_DECLARATION__MULTI_LOW;
+        case KerMLOCPackage.MULTIPLICITY_RANGE__MULTI_HIGH: return KerMLOCPackage.CLASSIFIER_DECLARATION__MULTI_HIGH;
         default: return -1;
       }
     }

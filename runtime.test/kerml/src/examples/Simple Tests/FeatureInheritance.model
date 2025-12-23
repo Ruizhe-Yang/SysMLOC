@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:Package" declaredName="FeatureInheritance">
+    <elements xsi:type="kerMLOC:Feature" declaredName="s">
+      <elements xsi:type="kerMLOC:Feature" declaredName="t">
+        <typings>ISQ::TorqueValue</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Feature" declaredName="u">
+      <subsetting>s</subsetting>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

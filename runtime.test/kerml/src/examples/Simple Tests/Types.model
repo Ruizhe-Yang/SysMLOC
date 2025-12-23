@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:Package" declaredName="Types">
+    <elements xsi:type="kerMLOC:Type" isAbstract="true" declaredName="A">
+      <subsetting>Base::Anything</subsetting>
+    </elements>
+    <elements xsi:type="kerMLOC:Type" declaredName="x" isSufficient="true">
+      <subsetting>A</subsetting>
+      <subsetting>Base::things</subsetting>
+    </elements>
+    <elements xsi:type="kerMLOC:CodeAnnotation" body="// This Type has exactly one instance.&#xA;"/>
+    <elements xsi:type="kerMLOC:Type" declaredName="Singleton" MultiLow="1">
+      <subsetting>Base::Anything</subsetting>
+    </elements>
+    <elements xsi:type="kerMLOC:Type" declaredName="Super">
+      <subsetting>Base::Anything</subsetting>
+      <elements xsi:type="kerMLOC:Package" visibility="private" declaredName="P">
+        <elements xsi:type="kerMLOC:Type" declaredName="Sub">
+          <subsetting>Super</subsetting>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" visibility="protected" declaredName="f">
+        <typings>P::Sub</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Type" declaredName="B">
+      <subsetting>Base::Anything</subsetting>
+    </elements>
+    <elements xsi:type="kerMLOC:Specialization" declaredName="Gen" isSpecialization="true" specific="A" general="B"/>
+    <elements xsi:type="kerMLOC:Specialization" isSpecialization="true" specific="x" general="Base::things"/>
+    <elements xsi:type="kerMLOC:Type" declaredName="Original">
+      <subsetting>Base::Anything</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="Input"/>
+    </elements>
+    <elements xsi:type="kerMLOC:Type" declaredName="Conjugate1">
+      <subsetting>Base::Anything</subsetting>
+    </elements>
+    <elements xsi:type="kerMLOC:Type" declaredName="Conjugate2">
+      <subsetting>Base::Anything</subsetting>
+    </elements>
+    <elements xsi:type="kerMLOC:Conjugation" declaredName="c1" isConjugation="true" conjugatedType="Conjugate1" originalType="Original"/>
+    <elements xsi:type="kerMLOC:Conjugation" declaredName="c2" isConjugation="true" conjugatedType="Conjugate2" originalType="Original"/>
+    <elements xsi:type="kerMLOC:Type" declaredName="Conjugate3" originalType="Original"/>
+    <elements xsi:type="kerMLOC:Type" declaredName="Conjugate4" originalType="Conjugate1"/>
+    <elements xsi:type="kerMLOC:Type" declaredName="C">
+      <subsetting>B</subsetting>
+      <disjoining>A</disjoining>
+    </elements>
+    <elements xsi:type="kerMLOC:Type" declaredName="D">
+      <subsetting>Base::Anything</subsetting>
+      <unioning>A</unioning>
+      <unioning>B</unioning>
+    </elements>
+    <elements xsi:type="kerMLOC:Type" declaredName="E">
+      <subsetting>Base::Anything</subsetting>
+      <intersecting>A</intersecting>
+      <intersecting>B</intersecting>
+    </elements>
+    <elements xsi:type="kerMLOC:Type" declaredName="F">
+      <subsetting>Base::Anything</subsetting>
+      <differencing>A</differencing>
+      <differencing>B</differencing>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

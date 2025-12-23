@@ -59,7 +59,7 @@ public class PrefixMetadataImpl extends MinimalEObjectImpl.Container implements 
   @Override
   protected EClass eStaticClass()
   {
-    return KerMLOCPackage.Literals.PREFIX_METADATA;
+    return KerMLOCPackage.eINSTANCE.getPrefixMetadata();
   }
 
   /**

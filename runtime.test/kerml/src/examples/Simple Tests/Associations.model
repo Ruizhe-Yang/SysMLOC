@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:Package" declaredName="Associations">
+    <elements xsi:type="kerMLOC:DataType" declaredName="X"/>
+    <elements xsi:type="kerMLOC:Class" declaredName="Y"/>
+    <elements xsi:type="kerMLOC:Association" declaredName="A">
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="x">
+        <crossingFeature declaredName="x_cross" MultiLow="1" MultiHigh="1"/>
+        <typings>X</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="y">
+        <crossingFeature declaredName="y_cross" MultiLow="1" MultiHigh="*"/>
+        <typings>Y</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Association" declaredName="B">
+      <subsetting>A</subsetting>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="x1"/>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="y1">
+        <crossingFeature MultiLow="0" MultiHigh="*"/>
+        <redefinitions>y</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Metaclass" declaredName="M"/>
+    <elements xsi:type="kerMLOC:Association" declaredName="XY">
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="x">
+        <crossingFeature MultiLow="0" MultiHigh="1"/>
+        <typings>X</typings>
+        <elements xsi:type="kerMLOC:MetadataFeature" metadataTyping="M"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="y">
+        <typings>Y</typings>
+      </elements>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

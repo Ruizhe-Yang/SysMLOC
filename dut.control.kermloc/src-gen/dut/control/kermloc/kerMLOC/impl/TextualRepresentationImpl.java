@@ -173,7 +173,7 @@ public class TextualRepresentationImpl extends AnnotatingElementImpl implements 
   @Override
   protected EClass eStaticClass()
   {
-    return KerMLOCPackage.Literals.TEXTUAL_REPRESENTATION;
+    return KerMLOCPackage.eINSTANCE.getTextualRepresentation();
   }
 
   /**

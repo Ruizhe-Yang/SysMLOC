@@ -27,7 +27,7 @@ public interface RootNamespace extends EObject
 {
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
-   * The list contents are of type {@link dut.control.kermloc.kerMLOC.GeneralBodyElements}.
+   * The list contents are of type {@link dut.control.kermloc.kerMLOC.NamespaceBodyElement}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Elements</em>' containment reference list.
@@ -35,6 +35,6 @@ public interface RootNamespace extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<GeneralBodyElements> getElements();
+  EList<NamespaceBodyElement> getElements();
 
 } // RootNamespace

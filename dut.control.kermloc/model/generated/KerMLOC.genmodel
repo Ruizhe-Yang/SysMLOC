@@ -5,12 +5,18 @@
     updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="17.0" copyrightFields="false" runtimeVersion="2.36">
   <genPackages prefix="KerMLOC" basePackage="dut.control.kermloc" disposableProviderFactory="true"
-      fileExtensions="kerml" ecorePackage="KerMLOC.ecore#/">
+      loadInitialization="true" literalsInterface="false" fileExtensions="kerml" ecorePackage="KerMLOC.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="KerMLOC.ecore#//VisibilityIndicator">
       <genEnumLiterals ecoreEnumLiteral="KerMLOC.ecore#//VisibilityIndicator/null"/>
       <genEnumLiterals ecoreEnumLiteral="KerMLOC.ecore#//VisibilityIndicator/public"/>
       <genEnumLiterals ecoreEnumLiteral="KerMLOC.ecore#//VisibilityIndicator/private"/>
       <genEnumLiterals ecoreEnumLiteral="KerMLOC.ecore#//VisibilityIndicator/protected"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="KerMLOC.ecore#//FeatureDirection">
+      <genEnumLiterals ecoreEnumLiteral="KerMLOC.ecore#//FeatureDirection/null"/>
+      <genEnumLiterals ecoreEnumLiteral="KerMLOC.ecore#//FeatureDirection/in"/>
+      <genEnumLiterals ecoreEnumLiteral="KerMLOC.ecore#//FeatureDirection/out"/>
+      <genEnumLiterals ecoreEnumLiteral="KerMLOC.ecore#//FeatureDirection/inout"/>
     </genEnums>
     <genClasses ecoreClass="KerMLOC.ecore#//RootNamespace">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KerMLOC.ecore#//RootNamespace/elements"/>
@@ -21,8 +27,11 @@
     <genClasses ecoreClass="KerMLOC.ecore#//TypeBodyElement"/>
     <genClasses ecoreClass="KerMLOC.ecore#//NamespaceBodyElement"/>
     <genClasses ecoreClass="KerMLOC.ecore#//FunctionBodyElement"/>
+    <genClasses ecoreClass="KerMLOC.ecore#//RelationshipBodyElement"/>
+    <genClasses ecoreClass="KerMLOC.ecore#//MetadataBodyElement"/>
     <genClasses ecoreClass="KerMLOC.ecore#//AnnotatingElement"/>
     <genClasses ecoreClass="KerMLOC.ecore#//NonFeatureElement"/>
+    <genClasses ecoreClass="KerMLOC.ecore#//FeatureElement"/>
     <genClasses ecoreClass="KerMLOC.ecore#//Package">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//Package/declaredName"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KerMLOC.ecore#//Package/elements"/>
@@ -49,6 +58,15 @@
     <genClasses ecoreClass="KerMLOC.ecore#//TextualRepresentation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//TextualRepresentation/language"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//TextualRepresentation/body"/>
+    </genClasses>
+    <genClasses ecoreClass="KerMLOC.ecore#//MetadataFeature">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//MetadataFeature/metadataTyping"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//MetadataFeature/annotatedElement"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KerMLOC.ecore#//MetadataFeature/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="KerMLOC.ecore#//MetadataBodyFeature">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//MetadataBodyFeature/redefinedFeature"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KerMLOC.ecore#//MetadataBodyFeature/elements"/>
     </genClasses>
     <genClasses ecoreClass="KerMLOC.ecore#//ImportElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//ImportElement/visibility"/>
@@ -117,9 +135,107 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KerMLOC.ecore#//Predicate/elements"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KerMLOC.ecore#//Predicate/resultExpressionParameter"/>
     </genClasses>
+    <genClasses ecoreClass="KerMLOC.ecore#//Specialization">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//Specialization/isSpecialization"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//Specialization/specific"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//Specialization/general"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KerMLOC.ecore#//Specialization/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="KerMLOC.ecore#//Conjugation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//Conjugation/isConjugation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//Conjugation/conjugatedType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//Conjugation/originalType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KerMLOC.ecore#//Conjugation/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="KerMLOC.ecore#//FeatureTyping">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//FeatureTyping/isSpecialization"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//FeatureTyping/typedFeature"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//FeatureTyping/typeName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KerMLOC.ecore#//FeatureTyping/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="KerMLOC.ecore#//Subclassification">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//Subclassification/isSpecialization"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//Subclassification/subclassifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//Subclassification/superclassifier"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KerMLOC.ecore#//Subclassification/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="KerMLOC.ecore#//Disjoining">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//Disjoining/isDisjoining"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//Disjoining/typeDisjoined"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//Disjoining/disjoiningType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KerMLOC.ecore#//Disjoining/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="KerMLOC.ecore#//FeatureInverting">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//FeatureInverting/isFeatureInverting"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//FeatureInverting/featureInverted"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//FeatureInverting/invertingFeature"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KerMLOC.ecore#//FeatureInverting/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="KerMLOC.ecore#//Subsetting">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//Subsetting/isSpecialization"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//Subsetting/subsettingFeature"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//Subsetting/subsettedFeature"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KerMLOC.ecore#//Subsetting/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="KerMLOC.ecore#//Redefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//Redefinition/isSpecialization"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//Redefinition/redefiningFeature"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//Redefinition/redefinedFeature"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KerMLOC.ecore#//Redefinition/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="KerMLOC.ecore#//TypeFeaturing">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//TypeFeaturing/isOf"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//TypeFeaturing/featureOfType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//TypeFeaturing/featuringType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KerMLOC.ecore#//TypeFeaturing/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="KerMLOC.ecore#//Feature">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KerMLOC.ecore#//Feature/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="KerMLOC.ecore#//Step">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KerMLOC.ecore#//Step/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="KerMLOC.ecore#//ExpressionClass">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KerMLOC.ecore#//ExpressionClass/elements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KerMLOC.ecore#//ExpressionClass/resultExpressionParameter"/>
+    </genClasses>
+    <genClasses ecoreClass="KerMLOC.ecore#//BooleanExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KerMLOC.ecore#//BooleanExpression/elements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KerMLOC.ecore#//BooleanExpression/resultExpressionParameter"/>
+    </genClasses>
+    <genClasses ecoreClass="KerMLOC.ecore#//Invariant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//Invariant/isNegated"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KerMLOC.ecore#//Invariant/elements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KerMLOC.ecore#//Invariant/resultExpressionParameter"/>
+    </genClasses>
+    <genClasses ecoreClass="KerMLOC.ecore#//Connector">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KerMLOC.ecore#//Connector/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="KerMLOC.ecore#//BindingConnector">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//BindingConnector/isOf"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KerMLOC.ecore#//BindingConnector/connectorPart"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KerMLOC.ecore#//BindingConnector/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="KerMLOC.ecore#//Succession">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//Succession/isFirst"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KerMLOC.ecore#//Succession/connectorPart"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KerMLOC.ecore#//Succession/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="KerMLOC.ecore#//Flow">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KerMLOC.ecore#//Flow/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="KerMLOC.ecore#//SuccessionFlow">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KerMLOC.ecore#//SuccessionFlow/elements"/>
+    </genClasses>
     <genClasses ecoreClass="KerMLOC.ecore#//ResultExpression">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//ResultExpression/resultExpression"/>
     </genClasses>
+    <genClasses ecoreClass="KerMLOC.ecore#//CrossingFeature"/>
+    <genClasses ecoreClass="KerMLOC.ecore#//ConnectorEnd">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//ConnectorEnd/delcaredName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//ConnectorEnd/refElement"/>
+    </genClasses>
+    <genClasses ecoreClass="KerMLOC.ecore#//PayloadParameter"/>
     <genClasses ecoreClass="KerMLOC.ecore#//Identification">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//Identification/declaredShortName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//Identification/declaredName"/>
@@ -131,9 +247,9 @@
     <genClasses ecoreClass="KerMLOC.ecore#//PrefixMetadata">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//PrefixMetadata/prefixMetadataExtension"/>
     </genClasses>
-    <genClasses ecoreClass="KerMLOC.ecore#//MultiplicityBounds">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//MultiplicityBounds/MultiLow"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//MultiplicityBounds/MultiHigh"/>
+    <genClasses ecoreClass="KerMLOC.ecore#//MultiplicityRange">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//MultiplicityRange/MultiLow"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//MultiplicityRange/MultiHigh"/>
     </genClasses>
     <genClasses ecoreClass="KerMLOC.ecore#//FeatureSpecialization"/>
     <genClasses ecoreClass="KerMLOC.ecore#//TypingFeatureTyping">
@@ -178,6 +294,69 @@
     </genClasses>
     <genClasses ecoreClass="KerMLOC.ecore#//ClassifierDeclaration">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//ClassifierDeclaration/isSufficient"/>
+    </genClasses>
+    <genClasses ecoreClass="KerMLOC.ecore#//FeatureDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//FeatureDeclaration/isSufficient"/>
+    </genClasses>
+    <genClasses ecoreClass="KerMLOC.ecore#//FeatureRelationshipPart"/>
+    <genClasses ecoreClass="KerMLOC.ecore#//ChainingPart">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//ChainingPart/chainingFeature"/>
+    </genClasses>
+    <genClasses ecoreClass="KerMLOC.ecore#//InvertingPart">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//InvertingPart/invertingFeature"/>
+    </genClasses>
+    <genClasses ecoreClass="KerMLOC.ecore#//TypeFeaturingPart">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//TypeFeaturingPart/featuringType"/>
+    </genClasses>
+    <genClasses ecoreClass="KerMLOC.ecore#//FeatureSpecializationPart"/>
+    <genClasses ecoreClass="KerMLOC.ecore#//MultiplicityPart"/>
+    <genClasses ecoreClass="KerMLOC.ecore#//MultiplicityModifiers">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//MultiplicityModifiers/isOrdered"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//MultiplicityModifiers/isNonunique"/>
+    </genClasses>
+    <genClasses ecoreClass="KerMLOC.ecore#//FeatureConjugationPart">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//FeatureConjugationPart/originalType"/>
+    </genClasses>
+    <genClasses ecoreClass="KerMLOC.ecore#//FeaturePrefix">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KerMLOC.ecore#//FeaturePrefix/crossingFeature"/>
+    </genClasses>
+    <genClasses ecoreClass="KerMLOC.ecore#//EndFeaturePrefix">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//EndFeaturePrefix/isConstantEnd"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//EndFeaturePrefix/isEnd"/>
+    </genClasses>
+    <genClasses ecoreClass="KerMLOC.ecore#//BasicFeaturePrefix">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//BasicFeaturePrefix/direction"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//BasicFeaturePrefix/isDerived"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//BasicFeaturePrefix/isAbstract"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//BasicFeaturePrefix/isComposite"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//BasicFeaturePrefix/isPortion"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//BasicFeaturePrefix/isVariable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//BasicFeaturePrefix/isConstantBasic"/>
+    </genClasses>
+    <genClasses ecoreClass="KerMLOC.ecore#//ValuePart"/>
+    <genClasses ecoreClass="KerMLOC.ecore#//FeatureValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//FeatureValue/isInitial"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//FeatureValue/isDefault"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//FeatureValue/valuePart"/>
+    </genClasses>
+    <genClasses ecoreClass="KerMLOC.ecore#//FlowDeclaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KerMLOC.ecore#//FlowDeclaration/payload"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//FlowDeclaration/FlowEnd"/>
+    </genClasses>
+    <genClasses ecoreClass="KerMLOC.ecore#//PayloadFeature">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//PayloadFeature/payloadFeatureElement"/>
+    </genClasses>
+    <genClasses ecoreClass="KerMLOC.ecore#//PayloadFeatureSpecializationPart"/>
+    <genClasses ecoreClass="KerMLOC.ecore#//ConnectorDeclaration"/>
+    <genClasses ecoreClass="KerMLOC.ecore#//BinaryConnectorDeclaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KerMLOC.ecore#//BinaryConnectorDeclaration/connectorPartBinary"/>
+    </genClasses>
+    <genClasses ecoreClass="KerMLOC.ecore#//NaryConnectorDeclaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference KerMLOC.ecore#//NaryConnectorDeclaration/connectorPart"/>
+    </genClasses>
+    <genClasses ecoreClass="KerMLOC.ecore#//ExtendedPrefix">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//ExtendedPrefix/isReturn"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute KerMLOC.ecore#//ExtendedPrefix/isMember"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -14,6 +14,6 @@ package dut.control.kermloc.kerMLOC;
  * @model
  * @generated
  */
-public interface NonFeatureElement extends GeneralBodyElements
+public interface NonFeatureElement extends GeneralBodyElements, RelationshipBodyElement, MetadataBodyElement
 {
 } // NonFeatureElement

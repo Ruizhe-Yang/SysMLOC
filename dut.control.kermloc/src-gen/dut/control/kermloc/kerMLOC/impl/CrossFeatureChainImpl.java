@@ -59,7 +59,7 @@ public class CrossFeatureChainImpl extends MinimalEObjectImpl.Container implemen
   @Override
   protected EClass eStaticClass()
   {
-    return KerMLOCPackage.Literals.CROSS_FEATURE_CHAIN;
+    return KerMLOCPackage.eINSTANCE.getCrossFeatureChain();
   }
 
   /**

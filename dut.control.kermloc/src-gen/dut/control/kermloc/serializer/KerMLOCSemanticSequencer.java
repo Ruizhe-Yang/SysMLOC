@@ -8,27 +8,51 @@ import dut.control.kermloc.kerMLOC.AliasElement;
 import dut.control.kermloc.kerMLOC.Association;
 import dut.control.kermloc.kerMLOC.AssociationStructure;
 import dut.control.kermloc.kerMLOC.Behavior;
+import dut.control.kermloc.kerMLOC.BindingConnector;
+import dut.control.kermloc.kerMLOC.BooleanExpression;
 import dut.control.kermloc.kerMLOC.Classifier;
 import dut.control.kermloc.kerMLOC.CodeAnnotation;
 import dut.control.kermloc.kerMLOC.Comment;
+import dut.control.kermloc.kerMLOC.Conjugation;
+import dut.control.kermloc.kerMLOC.Connector;
+import dut.control.kermloc.kerMLOC.ConnectorEnd;
+import dut.control.kermloc.kerMLOC.CrossingFeature;
 import dut.control.kermloc.kerMLOC.DataType;
 import dut.control.kermloc.kerMLOC.Dependency;
+import dut.control.kermloc.kerMLOC.Disjoining;
 import dut.control.kermloc.kerMLOC.Documentation;
 import dut.control.kermloc.kerMLOC.ElementFilterElement;
+import dut.control.kermloc.kerMLOC.ExpressionClass;
+import dut.control.kermloc.kerMLOC.Feature;
+import dut.control.kermloc.kerMLOC.FeatureInverting;
+import dut.control.kermloc.kerMLOC.FeatureTyping;
+import dut.control.kermloc.kerMLOC.Flow;
 import dut.control.kermloc.kerMLOC.Function;
 import dut.control.kermloc.kerMLOC.ImportElement;
 import dut.control.kermloc.kerMLOC.Interaction;
+import dut.control.kermloc.kerMLOC.Invariant;
 import dut.control.kermloc.kerMLOC.KerMLOCPackage;
 import dut.control.kermloc.kerMLOC.LibraryPackage;
 import dut.control.kermloc.kerMLOC.Metaclass;
+import dut.control.kermloc.kerMLOC.MetadataBodyFeature;
+import dut.control.kermloc.kerMLOC.MetadataFeature;
 import dut.control.kermloc.kerMLOC.Multiplicity;
 import dut.control.kermloc.kerMLOC.Namespace;
+import dut.control.kermloc.kerMLOC.PayloadParameter;
 import dut.control.kermloc.kerMLOC.Predicate;
+import dut.control.kermloc.kerMLOC.Redefinition;
 import dut.control.kermloc.kerMLOC.ResultExpression;
 import dut.control.kermloc.kerMLOC.RootNamespace;
+import dut.control.kermloc.kerMLOC.Specialization;
+import dut.control.kermloc.kerMLOC.Step;
 import dut.control.kermloc.kerMLOC.Structure;
+import dut.control.kermloc.kerMLOC.Subclassification;
+import dut.control.kermloc.kerMLOC.Subsetting;
+import dut.control.kermloc.kerMLOC.Succession;
+import dut.control.kermloc.kerMLOC.SuccessionFlow;
 import dut.control.kermloc.kerMLOC.TextualRepresentation;
 import dut.control.kermloc.kerMLOC.Type;
+import dut.control.kermloc.kerMLOC.TypeFeaturing;
 import dut.control.kermloc.services.KerMLOCGrammarAccess;
 import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
@@ -62,12 +86,14 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 						|| rule == grammarAccess.getTypeBodyElementRule()
 						|| rule == grammarAccess.getNamespaceBodyElementRule()
 						|| rule == grammarAccess.getFunctionBodyElementRule()
+						|| rule == grammarAccess.getRelationshipBodyElementRule()
+						|| rule == grammarAccess.getMetadataBodyElementRule()
 						|| rule == grammarAccess.getNonFeatureElementRule()) {
-					sequence_Association_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Association) semanticObject); 
+					sequence_Association_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityRange_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Association) semanticObject); 
 					return; 
 				}
 				else if (rule == grammarAccess.getAssociationRule()) {
-					sequence_Association_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Association) semanticObject); 
+					sequence_Association_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityRange_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Association) semanticObject); 
 					return; 
 				}
 				else break;
@@ -77,12 +103,14 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 						|| rule == grammarAccess.getTypeBodyElementRule()
 						|| rule == grammarAccess.getNamespaceBodyElementRule()
 						|| rule == grammarAccess.getFunctionBodyElementRule()
+						|| rule == grammarAccess.getRelationshipBodyElementRule()
+						|| rule == grammarAccess.getMetadataBodyElementRule()
 						|| rule == grammarAccess.getNonFeatureElementRule()) {
-					sequence_AssociationStructure_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (AssociationStructure) semanticObject); 
+					sequence_AssociationStructure_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityRange_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (AssociationStructure) semanticObject); 
 					return; 
 				}
 				else if (rule == grammarAccess.getAssociationStructureRule()) {
-					sequence_AssociationStructure_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (AssociationStructure) semanticObject); 
+					sequence_AssociationStructure_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityRange_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (AssociationStructure) semanticObject); 
 					return; 
 				}
 				else break;
@@ -92,12 +120,46 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 						|| rule == grammarAccess.getTypeBodyElementRule()
 						|| rule == grammarAccess.getNamespaceBodyElementRule()
 						|| rule == grammarAccess.getFunctionBodyElementRule()
+						|| rule == grammarAccess.getRelationshipBodyElementRule()
+						|| rule == grammarAccess.getMetadataBodyElementRule()
 						|| rule == grammarAccess.getNonFeatureElementRule()) {
-					sequence_Behavior_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Behavior) semanticObject); 
+					sequence_Behavior_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityRange_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Behavior) semanticObject); 
 					return; 
 				}
 				else if (rule == grammarAccess.getBehaviorRule()) {
-					sequence_Behavior_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Behavior) semanticObject); 
+					sequence_Behavior_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityRange_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Behavior) semanticObject); 
+					return; 
+				}
+				else break;
+			case KerMLOCPackage.BINDING_CONNECTOR:
+				if (rule == grammarAccess.getGeneralBodyElementsRule()
+						|| rule == grammarAccess.getPackageBodyElementRule()
+						|| rule == grammarAccess.getTypeBodyElementRule()
+						|| rule == grammarAccess.getNamespaceBodyElementRule()
+						|| rule == grammarAccess.getFunctionBodyElementRule()
+						|| rule == grammarAccess.getRelationshipBodyElementRule()) {
+					sequence_BasicFeaturePrefix_BindingConnector_ChainingPart_CrossFeatureChain_DifferencingPart_DisjoiningPart_EndFeaturePrefix_ExtendedPrefix_FeatureConjugationPart_FeatureDeclaration_FeaturePrefix_Identification_IntersectingPart_InvertingPart_MemberPrefix_MultiplicityModifiers_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(context, (BindingConnector) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getFeatureElementRule()
+						|| rule == grammarAccess.getBindingConnectorRule()) {
+					sequence_BasicFeaturePrefix_BindingConnector_ChainingPart_CrossFeatureChain_DifferencingPart_DisjoiningPart_EndFeaturePrefix_ExtendedPrefix_FeatureConjugationPart_FeatureDeclaration_FeaturePrefix_Identification_IntersectingPart_InvertingPart_MemberPrefix_MultiplicityModifiers_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(context, (BindingConnector) semanticObject); 
+					return; 
+				}
+				else break;
+			case KerMLOCPackage.BOOLEAN_EXPRESSION:
+				if (rule == grammarAccess.getGeneralBodyElementsRule()
+						|| rule == grammarAccess.getPackageBodyElementRule()
+						|| rule == grammarAccess.getTypeBodyElementRule()
+						|| rule == grammarAccess.getNamespaceBodyElementRule()
+						|| rule == grammarAccess.getFunctionBodyElementRule()
+						|| rule == grammarAccess.getRelationshipBodyElementRule()) {
+					sequence_BasicFeaturePrefix_BooleanExpression_ChainingPart_CrossFeatureChain_DifferencingPart_DisjoiningPart_EndFeaturePrefix_ExtendedPrefix_FeatureConjugationPart_FeatureDeclaration_FeaturePrefix_FeatureValue_Identification_IntersectingPart_InvertingPart_MemberPrefix_MultiplicityModifiers_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(context, (BooleanExpression) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getFeatureElementRule()
+						|| rule == grammarAccess.getBooleanExpressionRule()) {
+					sequence_BasicFeaturePrefix_BooleanExpression_ChainingPart_CrossFeatureChain_DifferencingPart_DisjoiningPart_EndFeaturePrefix_ExtendedPrefix_FeatureConjugationPart_FeatureDeclaration_FeaturePrefix_FeatureValue_Identification_IntersectingPart_InvertingPart_MemberPrefix_MultiplicityModifiers_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(context, (BooleanExpression) semanticObject); 
 					return; 
 				}
 				else break;
@@ -107,12 +169,14 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 						|| rule == grammarAccess.getTypeBodyElementRule()
 						|| rule == grammarAccess.getNamespaceBodyElementRule()
 						|| rule == grammarAccess.getFunctionBodyElementRule()
+						|| rule == grammarAccess.getRelationshipBodyElementRule()
+						|| rule == grammarAccess.getMetadataBodyElementRule()
 						|| rule == grammarAccess.getNonFeatureElementRule()) {
-					sequence_Class_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (dut.control.kermloc.kerMLOC.Class) semanticObject); 
+					sequence_Class_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityRange_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (dut.control.kermloc.kerMLOC.Class) semanticObject); 
 					return; 
 				}
 				else if (rule == grammarAccess.getClassRule()) {
-					sequence_Class_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (dut.control.kermloc.kerMLOC.Class) semanticObject); 
+					sequence_Class_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityRange_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (dut.control.kermloc.kerMLOC.Class) semanticObject); 
 					return; 
 				}
 				else break;
@@ -122,12 +186,14 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 						|| rule == grammarAccess.getTypeBodyElementRule()
 						|| rule == grammarAccess.getNamespaceBodyElementRule()
 						|| rule == grammarAccess.getFunctionBodyElementRule()
+						|| rule == grammarAccess.getRelationshipBodyElementRule()
+						|| rule == grammarAccess.getMetadataBodyElementRule()
 						|| rule == grammarAccess.getNonFeatureElementRule()) {
-					sequence_Classifier_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Classifier) semanticObject); 
+					sequence_Classifier_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityRange_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Classifier) semanticObject); 
 					return; 
 				}
 				else if (rule == grammarAccess.getClassifierRule()) {
-					sequence_Classifier_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Classifier) semanticObject); 
+					sequence_Classifier_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityRange_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Classifier) semanticObject); 
 					return; 
 				}
 				else break;
@@ -137,18 +203,45 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 			case KerMLOCPackage.COMMENT:
 				sequence_Comment_Identification_MemberPrefix(context, (Comment) semanticObject); 
 				return; 
+			case KerMLOCPackage.CONJUGATION:
+				sequence_Conjugation_Identification_MemberPrefix(context, (Conjugation) semanticObject); 
+				return; 
+			case KerMLOCPackage.CONNECTOR:
+				if (rule == grammarAccess.getGeneralBodyElementsRule()
+						|| rule == grammarAccess.getPackageBodyElementRule()
+						|| rule == grammarAccess.getTypeBodyElementRule()
+						|| rule == grammarAccess.getNamespaceBodyElementRule()
+						|| rule == grammarAccess.getFunctionBodyElementRule()
+						|| rule == grammarAccess.getRelationshipBodyElementRule()) {
+					sequence_BasicFeaturePrefix_BinaryConnectorDeclaration_ChainingPart_Connector_CrossFeatureChain_DifferencingPart_DisjoiningPart_EndFeaturePrefix_ExtendedPrefix_FeatureConjugationPart_FeatureDeclaration_FeaturePrefix_FeatureValue_Identification_IntersectingPart_InvertingPart_MemberPrefix_MultiplicityModifiers_MultiplicityRange_NaryConnectorDeclaration_PrefixMetadata_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(context, (Connector) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getFeatureElementRule()
+						|| rule == grammarAccess.getConnectorRule()) {
+					sequence_BasicFeaturePrefix_BinaryConnectorDeclaration_ChainingPart_Connector_CrossFeatureChain_DifferencingPart_DisjoiningPart_EndFeaturePrefix_ExtendedPrefix_FeatureConjugationPart_FeatureDeclaration_FeaturePrefix_FeatureValue_Identification_IntersectingPart_InvertingPart_MemberPrefix_MultiplicityModifiers_MultiplicityRange_NaryConnectorDeclaration_PrefixMetadata_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(context, (Connector) semanticObject); 
+					return; 
+				}
+				else break;
+			case KerMLOCPackage.CONNECTOR_END:
+				sequence_ConnectorEnd_MultiplicityRange(context, (ConnectorEnd) semanticObject); 
+				return; 
+			case KerMLOCPackage.CROSSING_FEATURE:
+				sequence_BasicFeaturePrefix_ChainingPart_CrossFeatureChain_DifferencingPart_DisjoiningPart_FeatureConjugationPart_FeatureDeclaration_Identification_IntersectingPart_InvertingPart_MultiplicityModifiers_MultiplicityRange_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(context, (CrossingFeature) semanticObject); 
+				return; 
 			case KerMLOCPackage.DATA_TYPE:
 				if (rule == grammarAccess.getGeneralBodyElementsRule()
 						|| rule == grammarAccess.getPackageBodyElementRule()
 						|| rule == grammarAccess.getTypeBodyElementRule()
 						|| rule == grammarAccess.getNamespaceBodyElementRule()
 						|| rule == grammarAccess.getFunctionBodyElementRule()
+						|| rule == grammarAccess.getRelationshipBodyElementRule()
+						|| rule == grammarAccess.getMetadataBodyElementRule()
 						|| rule == grammarAccess.getNonFeatureElementRule()) {
-					sequence_ClassifierConjugationPart_ClassifierDeclaration_DataType_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (DataType) semanticObject); 
+					sequence_ClassifierConjugationPart_ClassifierDeclaration_DataType_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityRange_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (DataType) semanticObject); 
 					return; 
 				}
 				else if (rule == grammarAccess.getDataTypeRule()) {
-					sequence_ClassifierConjugationPart_ClassifierDeclaration_DataType_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (DataType) semanticObject); 
+					sequence_ClassifierConjugationPart_ClassifierDeclaration_DataType_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityRange_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (DataType) semanticObject); 
 					return; 
 				}
 				else break;
@@ -158,6 +251,8 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 						|| rule == grammarAccess.getTypeBodyElementRule()
 						|| rule == grammarAccess.getNamespaceBodyElementRule()
 						|| rule == grammarAccess.getFunctionBodyElementRule()
+						|| rule == grammarAccess.getRelationshipBodyElementRule()
+						|| rule == grammarAccess.getMetadataBodyElementRule()
 						|| rule == grammarAccess.getNonFeatureElementRule()) {
 					sequence_Dependency_Identification_MemberPrefix_PrefixMetadata(context, (Dependency) semanticObject); 
 					return; 
@@ -167,24 +262,86 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 					return; 
 				}
 				else break;
+			case KerMLOCPackage.DISJOINING:
+				sequence_Disjoining_Identification_MemberPrefix(context, (Disjoining) semanticObject); 
+				return; 
 			case KerMLOCPackage.DOCUMENTATION:
 				sequence_Documentation_Identification_MemberPrefix(context, (Documentation) semanticObject); 
 				return; 
 			case KerMLOCPackage.ELEMENT_FILTER_ELEMENT:
 				sequence_ElementFilterElement_MemberPrefix(context, (ElementFilterElement) semanticObject); 
 				return; 
+			case KerMLOCPackage.EXPRESSION_CLASS:
+				if (rule == grammarAccess.getGeneralBodyElementsRule()
+						|| rule == grammarAccess.getPackageBodyElementRule()
+						|| rule == grammarAccess.getTypeBodyElementRule()
+						|| rule == grammarAccess.getNamespaceBodyElementRule()
+						|| rule == grammarAccess.getFunctionBodyElementRule()
+						|| rule == grammarAccess.getRelationshipBodyElementRule()) {
+					sequence_BasicFeaturePrefix_ChainingPart_CrossFeatureChain_DifferencingPart_DisjoiningPart_EndFeaturePrefix_ExpressionClass_ExtendedPrefix_FeatureConjugationPart_FeatureDeclaration_FeaturePrefix_FeatureValue_Identification_IntersectingPart_InvertingPart_MemberPrefix_MultiplicityModifiers_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(context, (ExpressionClass) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getFeatureElementRule()
+						|| rule == grammarAccess.getExpressionClassRule()) {
+					sequence_BasicFeaturePrefix_ChainingPart_CrossFeatureChain_DifferencingPart_DisjoiningPart_EndFeaturePrefix_ExpressionClass_ExtendedPrefix_FeatureConjugationPart_FeatureDeclaration_FeaturePrefix_FeatureValue_Identification_IntersectingPart_InvertingPart_MemberPrefix_MultiplicityModifiers_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(context, (ExpressionClass) semanticObject); 
+					return; 
+				}
+				else break;
+			case KerMLOCPackage.FEATURE:
+				if (rule == grammarAccess.getGeneralBodyElementsRule()
+						|| rule == grammarAccess.getPackageBodyElementRule()
+						|| rule == grammarAccess.getTypeBodyElementRule()
+						|| rule == grammarAccess.getNamespaceBodyElementRule()
+						|| rule == grammarAccess.getFunctionBodyElementRule()
+						|| rule == grammarAccess.getRelationshipBodyElementRule()) {
+					sequence_BasicFeaturePrefix_ChainingPart_CrossFeatureChain_DifferencingPart_DisjoiningPart_EndFeaturePrefix_ExtendedPrefix_Feature_FeatureConjugationPart_FeatureDeclaration_FeaturePrefix_FeatureValue_Identification_IntersectingPart_InvertingPart_MemberPrefix_MultiplicityModifiers_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(context, (Feature) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getFeatureElementRule()
+						|| rule == grammarAccess.getFeatureRule()) {
+					sequence_BasicFeaturePrefix_ChainingPart_CrossFeatureChain_DifferencingPart_DisjoiningPart_EndFeaturePrefix_ExtendedPrefix_Feature_FeatureConjugationPart_FeatureDeclaration_FeaturePrefix_FeatureValue_Identification_IntersectingPart_InvertingPart_MemberPrefix_MultiplicityModifiers_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(context, (Feature) semanticObject); 
+					return; 
+				}
+				else break;
+			case KerMLOCPackage.FEATURE_INVERTING:
+				sequence_FeatureInverting_Identification_MemberPrefix(context, (FeatureInverting) semanticObject); 
+				return; 
+			case KerMLOCPackage.FEATURE_TYPING:
+				sequence_FeatureTyping_Identification_MemberPrefix(context, (FeatureTyping) semanticObject); 
+				return; 
+			case KerMLOCPackage.FLOW:
+				if (rule == grammarAccess.getGeneralBodyElementsRule()
+						|| rule == grammarAccess.getPackageBodyElementRule()
+						|| rule == grammarAccess.getTypeBodyElementRule()
+						|| rule == grammarAccess.getNamespaceBodyElementRule()
+						|| rule == grammarAccess.getFunctionBodyElementRule()
+						|| rule == grammarAccess.getRelationshipBodyElementRule()) {
+					sequence_BasicFeaturePrefix_ChainingPart_CrossFeatureChain_DifferencingPart_DisjoiningPart_EndFeaturePrefix_ExtendedPrefix_FeatureConjugationPart_FeatureDeclaration_FeaturePrefix_FeatureValue_Flow_FlowDeclaration_Identification_IntersectingPart_InvertingPart_MemberPrefix_MultiplicityModifiers_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(context, (Flow) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getFeatureElementRule()) {
+					sequence_BasicFeaturePrefix_ChainingPart_CrossFeatureChain_DifferencingPart_DisjoiningPart_EndFeaturePrefix_ExtendedPrefix_FeatureConjugationPart_FeatureDeclaration_FeaturePrefix_FeatureValue_Flow_FlowDeclaration_Identification_IntersectingPart_InvertingPart_MemberPrefix_MultiplicityModifiers_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(context, (Flow) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getFlowRule()) {
+					sequence_BasicFeaturePrefix_ChainingPart_CrossFeatureChain_DifferencingPart_DisjoiningPart_EndFeaturePrefix_ExtendedPrefix_FeatureConjugationPart_FeatureDeclaration_FeaturePrefix_FeatureValue_Flow_FlowDeclaration_Identification_IntersectingPart_InvertingPart_MemberPrefix_MultiplicityModifiers_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(context, (Flow) semanticObject); 
+					return; 
+				}
+				else break;
 			case KerMLOCPackage.FUNCTION:
 				if (rule == grammarAccess.getGeneralBodyElementsRule()
 						|| rule == grammarAccess.getPackageBodyElementRule()
 						|| rule == grammarAccess.getTypeBodyElementRule()
 						|| rule == grammarAccess.getNamespaceBodyElementRule()
 						|| rule == grammarAccess.getFunctionBodyElementRule()
+						|| rule == grammarAccess.getRelationshipBodyElementRule()
+						|| rule == grammarAccess.getMetadataBodyElementRule()
 						|| rule == grammarAccess.getNonFeatureElementRule()) {
-					sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Function_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Function) semanticObject); 
+					sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Function_Identification_IntersectingPart_MemberPrefix_MultiplicityRange_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Function) semanticObject); 
 					return; 
 				}
 				else if (rule == grammarAccess.getFunctionRule()) {
-					sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Function_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Function) semanticObject); 
+					sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Function_Identification_IntersectingPart_MemberPrefix_MultiplicityRange_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Function) semanticObject); 
 					return; 
 				}
 				else break;
@@ -197,12 +354,30 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 						|| rule == grammarAccess.getTypeBodyElementRule()
 						|| rule == grammarAccess.getNamespaceBodyElementRule()
 						|| rule == grammarAccess.getFunctionBodyElementRule()
+						|| rule == grammarAccess.getRelationshipBodyElementRule()
+						|| rule == grammarAccess.getMetadataBodyElementRule()
 						|| rule == grammarAccess.getNonFeatureElementRule()) {
-					sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_Interaction_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Interaction) semanticObject); 
+					sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_Interaction_IntersectingPart_MemberPrefix_MultiplicityRange_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Interaction) semanticObject); 
 					return; 
 				}
 				else if (rule == grammarAccess.getInteractionRule()) {
-					sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_Interaction_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Interaction) semanticObject); 
+					sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_Interaction_IntersectingPart_MemberPrefix_MultiplicityRange_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Interaction) semanticObject); 
+					return; 
+				}
+				else break;
+			case KerMLOCPackage.INVARIANT:
+				if (rule == grammarAccess.getGeneralBodyElementsRule()
+						|| rule == grammarAccess.getPackageBodyElementRule()
+						|| rule == grammarAccess.getTypeBodyElementRule()
+						|| rule == grammarAccess.getNamespaceBodyElementRule()
+						|| rule == grammarAccess.getFunctionBodyElementRule()
+						|| rule == grammarAccess.getRelationshipBodyElementRule()) {
+					sequence_BasicFeaturePrefix_ChainingPart_CrossFeatureChain_DifferencingPart_DisjoiningPart_EndFeaturePrefix_ExtendedPrefix_FeatureConjugationPart_FeatureDeclaration_FeaturePrefix_FeatureValue_Identification_IntersectingPart_Invariant_InvertingPart_MemberPrefix_MultiplicityModifiers_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(context, (Invariant) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getFeatureElementRule()
+						|| rule == grammarAccess.getInvariantRule()) {
+					sequence_BasicFeaturePrefix_ChainingPart_CrossFeatureChain_DifferencingPart_DisjoiningPart_EndFeaturePrefix_ExtendedPrefix_FeatureConjugationPart_FeatureDeclaration_FeaturePrefix_FeatureValue_Identification_IntersectingPart_Invariant_InvertingPart_MemberPrefix_MultiplicityModifiers_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(context, (Invariant) semanticObject); 
 					return; 
 				}
 				else break;
@@ -215,17 +390,25 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 						|| rule == grammarAccess.getTypeBodyElementRule()
 						|| rule == grammarAccess.getNamespaceBodyElementRule()
 						|| rule == grammarAccess.getFunctionBodyElementRule()
+						|| rule == grammarAccess.getRelationshipBodyElementRule()
+						|| rule == grammarAccess.getMetadataBodyElementRule()
 						|| rule == grammarAccess.getNonFeatureElementRule()) {
-					sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_Metaclass_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Metaclass) semanticObject); 
+					sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_Metaclass_MultiplicityRange_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Metaclass) semanticObject); 
 					return; 
 				}
 				else if (rule == grammarAccess.getMetaclassRule()) {
-					sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_Metaclass_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Metaclass) semanticObject); 
+					sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_Metaclass_MultiplicityRange_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Metaclass) semanticObject); 
 					return; 
 				}
 				else break;
+			case KerMLOCPackage.METADATA_BODY_FEATURE:
+				sequence_CrossFeatureChain_FeatureValue_MemberPrefix_MetadataBodyFeature_MultiplicityModifiers_MultiplicityRange_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_TypingFeatureTyping(context, (MetadataBodyFeature) semanticObject); 
+				return; 
+			case KerMLOCPackage.METADATA_FEATURE:
+				sequence_Identification_MemberPrefix_MetadataFeature_PrefixMetadata(context, (MetadataFeature) semanticObject); 
+				return; 
 			case KerMLOCPackage.MULTIPLICITY:
-				sequence_Identification_MemberPrefix_Multiplicity_MultiplicityBounds_SubsettingFeatureChain(context, (Multiplicity) semanticObject); 
+				sequence_Identification_MemberPrefix_Multiplicity_MultiplicityRange_SubsettingFeatureChain(context, (Multiplicity) semanticObject); 
 				return; 
 			case KerMLOCPackage.NAMESPACE:
 				sequence_Identification_Namespace_PrefixMetadata(context, (Namespace) semanticObject); 
@@ -233,39 +416,109 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 			case KerMLOCPackage.PACKAGE:
 				sequence_MemberPrefix_Package_PrefixMetadata(context, (dut.control.kermloc.kerMLOC.Package) semanticObject); 
 				return; 
+			case KerMLOCPackage.PAYLOAD_PARAMETER:
+				sequence_CrossFeatureChain_FeatureValue_Identification_MultiplicityModifiers_MultiplicityRange_PayloadFeature_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_TypingFeatureTyping(context, (PayloadParameter) semanticObject); 
+				return; 
 			case KerMLOCPackage.PREDICATE:
 				if (rule == grammarAccess.getGeneralBodyElementsRule()
 						|| rule == grammarAccess.getPackageBodyElementRule()
 						|| rule == grammarAccess.getTypeBodyElementRule()
 						|| rule == grammarAccess.getNamespaceBodyElementRule()
 						|| rule == grammarAccess.getFunctionBodyElementRule()
+						|| rule == grammarAccess.getRelationshipBodyElementRule()
+						|| rule == grammarAccess.getMetadataBodyElementRule()
 						|| rule == grammarAccess.getNonFeatureElementRule()) {
-					sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_Predicate_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Predicate) semanticObject); 
+					sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityRange_Predicate_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Predicate) semanticObject); 
 					return; 
 				}
 				else if (rule == grammarAccess.getPredicateRule()) {
-					sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_Predicate_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Predicate) semanticObject); 
+					sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityRange_Predicate_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Predicate) semanticObject); 
 					return; 
 				}
 				else break;
+			case KerMLOCPackage.REDEFINITION:
+				sequence_Identification_MemberPrefix_Redefinition(context, (Redefinition) semanticObject); 
+				return; 
 			case KerMLOCPackage.RESULT_EXPRESSION:
 				sequence_MemberPrefix_ResultExpression(context, (ResultExpression) semanticObject); 
 				return; 
 			case KerMLOCPackage.ROOT_NAMESPACE:
 				sequence_RootNamespace(context, (RootNamespace) semanticObject); 
 				return; 
+			case KerMLOCPackage.SPECIALIZATION:
+				sequence_Identification_MemberPrefix_Specialization(context, (Specialization) semanticObject); 
+				return; 
+			case KerMLOCPackage.STEP:
+				if (rule == grammarAccess.getGeneralBodyElementsRule()
+						|| rule == grammarAccess.getPackageBodyElementRule()
+						|| rule == grammarAccess.getTypeBodyElementRule()
+						|| rule == grammarAccess.getNamespaceBodyElementRule()
+						|| rule == grammarAccess.getFunctionBodyElementRule()
+						|| rule == grammarAccess.getRelationshipBodyElementRule()) {
+					sequence_BasicFeaturePrefix_ChainingPart_CrossFeatureChain_DifferencingPart_DisjoiningPart_EndFeaturePrefix_ExtendedPrefix_FeatureConjugationPart_FeatureDeclaration_FeaturePrefix_FeatureValue_Identification_IntersectingPart_InvertingPart_MemberPrefix_MultiplicityModifiers_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_ReferenceFeatureChain_Step_SubsettingFeatureChain_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(context, (Step) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getFeatureElementRule()
+						|| rule == grammarAccess.getStepRule()) {
+					sequence_BasicFeaturePrefix_ChainingPart_CrossFeatureChain_DifferencingPart_DisjoiningPart_EndFeaturePrefix_ExtendedPrefix_FeatureConjugationPart_FeatureDeclaration_FeaturePrefix_FeatureValue_Identification_IntersectingPart_InvertingPart_MemberPrefix_MultiplicityModifiers_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_ReferenceFeatureChain_Step_SubsettingFeatureChain_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(context, (Step) semanticObject); 
+					return; 
+				}
+				else break;
 			case KerMLOCPackage.STRUCTURE:
 				if (rule == grammarAccess.getGeneralBodyElementsRule()
 						|| rule == grammarAccess.getPackageBodyElementRule()
 						|| rule == grammarAccess.getTypeBodyElementRule()
 						|| rule == grammarAccess.getNamespaceBodyElementRule()
 						|| rule == grammarAccess.getFunctionBodyElementRule()
+						|| rule == grammarAccess.getRelationshipBodyElementRule()
+						|| rule == grammarAccess.getMetadataBodyElementRule()
 						|| rule == grammarAccess.getNonFeatureElementRule()) {
-					sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_Structure_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Structure) semanticObject); 
+					sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityRange_PrefixMetadata_Structure_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Structure) semanticObject); 
 					return; 
 				}
 				else if (rule == grammarAccess.getStructureRule()) {
-					sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_Structure_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Structure) semanticObject); 
+					sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityRange_PrefixMetadata_Structure_SubsettingFeatureChain_TypePrefix_UnioningPart(context, (Structure) semanticObject); 
+					return; 
+				}
+				else break;
+			case KerMLOCPackage.SUBCLASSIFICATION:
+				sequence_Identification_MemberPrefix_Subclassification(context, (Subclassification) semanticObject); 
+				return; 
+			case KerMLOCPackage.SUBSETTING:
+				sequence_Identification_MemberPrefix_Subsetting(context, (Subsetting) semanticObject); 
+				return; 
+			case KerMLOCPackage.SUCCESSION:
+				if (rule == grammarAccess.getGeneralBodyElementsRule()
+						|| rule == grammarAccess.getPackageBodyElementRule()
+						|| rule == grammarAccess.getTypeBodyElementRule()
+						|| rule == grammarAccess.getNamespaceBodyElementRule()
+						|| rule == grammarAccess.getFunctionBodyElementRule()
+						|| rule == grammarAccess.getRelationshipBodyElementRule()) {
+					sequence_BasicFeaturePrefix_ChainingPart_CrossFeatureChain_DifferencingPart_DisjoiningPart_EndFeaturePrefix_ExtendedPrefix_FeatureConjugationPart_FeatureDeclaration_FeaturePrefix_Identification_IntersectingPart_InvertingPart_MemberPrefix_MultiplicityModifiers_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_Succession_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(context, (Succession) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getFeatureElementRule()
+						|| rule == grammarAccess.getSuccessionRule()) {
+					sequence_BasicFeaturePrefix_ChainingPart_CrossFeatureChain_DifferencingPart_DisjoiningPart_EndFeaturePrefix_ExtendedPrefix_FeatureConjugationPart_FeatureDeclaration_FeaturePrefix_Identification_IntersectingPart_InvertingPart_MemberPrefix_MultiplicityModifiers_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_Succession_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(context, (Succession) semanticObject); 
+					return; 
+				}
+				else break;
+			case KerMLOCPackage.SUCCESSION_FLOW:
+				if (rule == grammarAccess.getGeneralBodyElementsRule()
+						|| rule == grammarAccess.getPackageBodyElementRule()
+						|| rule == grammarAccess.getTypeBodyElementRule()
+						|| rule == grammarAccess.getNamespaceBodyElementRule()
+						|| rule == grammarAccess.getFunctionBodyElementRule()
+						|| rule == grammarAccess.getRelationshipBodyElementRule()) {
+					sequence_BasicFeaturePrefix_ChainingPart_CrossFeatureChain_DifferencingPart_DisjoiningPart_EndFeaturePrefix_ExtendedPrefix_FeatureConjugationPart_FeatureDeclaration_FeaturePrefix_FeatureValue_FlowDeclaration_Identification_IntersectingPart_InvertingPart_MemberPrefix_MultiplicityModifiers_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_SuccessionFlow_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(context, (SuccessionFlow) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getFeatureElementRule()) {
+					sequence_BasicFeaturePrefix_ChainingPart_CrossFeatureChain_DifferencingPart_DisjoiningPart_EndFeaturePrefix_ExtendedPrefix_FeatureConjugationPart_FeatureDeclaration_FeaturePrefix_FeatureValue_FlowDeclaration_Identification_IntersectingPart_InvertingPart_MemberPrefix_MultiplicityModifiers_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_SuccessionFlow_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(context, (SuccessionFlow) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getSuccessionFlowRule()) {
+					sequence_BasicFeaturePrefix_ChainingPart_CrossFeatureChain_DifferencingPart_DisjoiningPart_EndFeaturePrefix_ExtendedPrefix_FeatureConjugationPart_FeatureDeclaration_FeaturePrefix_FeatureValue_FlowDeclaration_Identification_IntersectingPart_InvertingPart_MemberPrefix_MultiplicityModifiers_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_SuccessionFlow_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(context, (SuccessionFlow) semanticObject); 
 					return; 
 				}
 				else break;
@@ -278,15 +531,20 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 						|| rule == grammarAccess.getTypeBodyElementRule()
 						|| rule == grammarAccess.getNamespaceBodyElementRule()
 						|| rule == grammarAccess.getFunctionBodyElementRule()
+						|| rule == grammarAccess.getRelationshipBodyElementRule()
+						|| rule == grammarAccess.getMetadataBodyElementRule()
 						|| rule == grammarAccess.getNonFeatureElementRule()) {
-					sequence_ConjugationPart_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_Type_TypePrefix_UnioningPart(context, (Type) semanticObject); 
+					sequence_ConjugationPart_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityRange_PrefixMetadata_SubsettingFeatureChain_Type_TypePrefix_UnioningPart(context, (Type) semanticObject); 
 					return; 
 				}
 				else if (rule == grammarAccess.getTypeRule()) {
-					sequence_ConjugationPart_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_Type_TypePrefix_UnioningPart(context, (Type) semanticObject); 
+					sequence_ConjugationPart_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityRange_PrefixMetadata_SubsettingFeatureChain_Type_TypePrefix_UnioningPart(context, (Type) semanticObject); 
 					return; 
 				}
 				else break;
+			case KerMLOCPackage.TYPE_FEATURING:
+				sequence_Identification_MemberPrefix_TypeFeaturing(context, (TypeFeaturing) semanticObject); 
+				return; 
 			}
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
@@ -300,6 +558,7 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     TypeBodyElement returns AliasElement
 	 *     NamespaceBodyElement returns AliasElement
 	 *     FunctionBodyElement returns AliasElement
+	 *     MetadataBodyElement returns AliasElement
 	 *     AliasElement returns AliasElement
 	 *
 	 * Constraint:
@@ -326,6 +585,8 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     TypeBodyElement returns AssociationStructure
 	 *     NamespaceBodyElement returns AssociationStructure
 	 *     FunctionBodyElement returns AssociationStructure
+	 *     RelationshipBodyElement returns AssociationStructure
+	 *     MetadataBodyElement returns AssociationStructure
 	 *     NonFeatureElement returns AssociationStructure
 	 *
 	 * Constraint:
@@ -348,7 +609,7 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     )
 	 * </pre>
 	 */
-	protected void sequence_AssociationStructure_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, AssociationStructure semanticObject) {
+	protected void sequence_AssociationStructure_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityRange_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, AssociationStructure semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -379,7 +640,7 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//         elements+=TypeBodyElement*
 	//     )
 	//
-	// protected void sequence_AssociationStructure_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, AssociationStructure semanticObject) { }
+	// protected void sequence_AssociationStructure_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityRange_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, AssociationStructure semanticObject) { }
 	
 	/**
 	 * <pre>
@@ -389,6 +650,8 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     TypeBodyElement returns Association
 	 *     NamespaceBodyElement returns Association
 	 *     FunctionBodyElement returns Association
+	 *     RelationshipBodyElement returns Association
+	 *     MetadataBodyElement returns Association
 	 *     NonFeatureElement returns Association
 	 *
 	 * Constraint:
@@ -411,7 +674,7 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     )
 	 * </pre>
 	 */
-	protected void sequence_Association_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Association semanticObject) {
+	protected void sequence_Association_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityRange_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Association semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -442,7 +705,2593 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//         elements+=TypeBodyElement*
 	//     )
 	//
-	// protected void sequence_Association_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Association semanticObject) { }
+	// protected void sequence_Association_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityRange_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Association semanticObject) { }
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GeneralBodyElements returns Connector
+	 *     PackageBodyElement returns Connector
+	 *     TypeBodyElement returns Connector
+	 *     NamespaceBodyElement returns Connector
+	 *     FunctionBodyElement returns Connector
+	 *     RelationshipBodyElement returns Connector
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
+	 *         isReturn?='return'? 
+	 *         isMember?='member'? 
+	 *         (
+	 *             (isConstantEnd?='const'? isEnd?='end' crossingFeature+=CrossingFeature?) | 
+	 *             (
+	 *                 direction=FeatureDirection? 
+	 *                 isDerived?='derived'? 
+	 *                 isAbstract?='abstract'? 
+	 *                 (isComposite?='composite' | isPortion?='portion')? 
+	 *                 (isVariable?='var' | isConstantBasic?='const')?
+	 *             )
+	 *         ) 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
+	 *         (
+	 *             (
+	 *                 (
+	 *                     (
+	 *                         (
+	 *                             isSufficient?='all' | 
+	 *                             (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	 *                             (
+	 *                                 isSufficient?='all' 
+	 *                                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	 *                                 (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	 *                             ) | 
+	 *                             (
+	 *                                 (
+	 *                                     isSufficient?='all' | 
+	 *                                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	 *                                     (
+	 *                                         isSufficient?='all' 
+	 *                                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	 *                                         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	 *                                     )
+	 *                                 ) 
+	 *                                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	 *                             )
+	 *                         )? 
+	 *                         (
+	 *                             (
+	 *                                 (typings+=FeatureTypingName typings+=FeatureTypingName*) | 
+	 *                                 (subsetting+=FeatureChainName subsetting+=FeatureChainName?) | 
+	 *                                 (references+=FeatureChainName references+=FeatureChainName*) | 
+	 *                                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
+	 *                                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
+	 *                             ) 
+	 *                             (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) 
+	 *                             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	 *                         )+
+	 *                     ) | 
+	 *                     (isSufficient?='all' originalType=QualifiedName) | 
+	 *                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	 *                     (
+	 *                         isSufficient?='all' 
+	 *                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	 *                         ((MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | originalType=QualifiedName)?
+	 *                     ) | 
+	 *                     (
+	 *                         (
+	 *                             isSufficient?='all' | 
+	 *                             (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	 *                             (
+	 *                                 isSufficient?='all' 
+	 *                                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	 *                                 (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	 *                             )
+	 *                         ) 
+	 *                         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	 *                     )
+	 *                 ) 
+	 *                 (
+	 *                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	 *                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	 *                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	 *                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	 *                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)? 
+	 *                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)?
+	 *                 )+ 
+	 *                 (
+	 *                     ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression) | 
+	 *                     (connectorPartBinary+=ConnectorEnd connectorPartBinary+=ConnectorEnd) | 
+	 *                     (connectorPart+=ConnectorEnd connectorPart+=ConnectorEnd connectorPart+=ConnectorEnd*)
+	 *                 )?
+	 *             ) | 
+	 *             ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression) | 
+	 *             (isSufficient?='all'? connectorPartBinary+=ConnectorEnd connectorPartBinary+=ConnectorEnd) | 
+	 *             (connectorPart+=ConnectorEnd connectorPart+=ConnectorEnd connectorPart+=ConnectorEnd*)
+	 *         )? 
+	 *         elements+=TypeBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_BasicFeaturePrefix_BinaryConnectorDeclaration_ChainingPart_Connector_CrossFeatureChain_DifferencingPart_DisjoiningPart_EndFeaturePrefix_ExtendedPrefix_FeatureConjugationPart_FeatureDeclaration_FeaturePrefix_FeatureValue_Identification_IntersectingPart_InvertingPart_MemberPrefix_MultiplicityModifiers_MultiplicityRange_NaryConnectorDeclaration_PrefixMetadata_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(ISerializationContext context, Connector semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	// This method is commented out because it has the same signature as another method in this class.
+	// This is probably a bug in Xtext's serializer, please report it here: 
+	// https://bugs.eclipse.org/bugs/enter_bug.cgi?product=TMF
+	//
+	// Contexts:
+	//     FeatureElement returns Connector
+	//     Connector returns Connector
+	//
+	// Constraint:
+	//     (
+	//         visibility=VisibilityIndicator? 
+	//         isVariant?='variant'? 
+	//         isReturn?='return'? 
+	//         isMember?='member'? 
+	//         (
+	//             (isConstantEnd?='const'? isEnd?='end' crossingFeature+=CrossingFeature?) | 
+	//             (
+	//                 direction=FeatureDirection? 
+	//                 isDerived?='derived'? 
+	//                 isAbstract?='abstract'? 
+	//                 (isComposite?='composite' | isPortion?='portion')? 
+	//                 (isVariable?='var' | isConstantBasic?='const')?
+	//             )
+	//         ) 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
+	//         (
+	//             (
+	//                 (
+	//                     (
+	//                         (
+	//                             isSufficient?='all' | 
+	//                             (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                             (
+	//                                 isSufficient?='all' 
+	//                                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                                 (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	//                             ) | 
+	//                             (
+	//                                 (
+	//                                     isSufficient?='all' | 
+	//                                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                                     (
+	//                                         isSufficient?='all' 
+	//                                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                                         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	//                                     )
+	//                                 ) 
+	//                                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	//                             )
+	//                         )? 
+	//                         (
+	//                             (
+	//                                 (typings+=FeatureTypingName typings+=FeatureTypingName*) | 
+	//                                 (subsetting+=FeatureChainName subsetting+=FeatureChainName*) | 
+	//                                 (references+=FeatureChainName references+=FeatureChainName*) | 
+	//                                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
+	//                                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
+	//                             ) 
+	//                             (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) 
+	//                             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	//                         )+
+	//                     ) | 
+	//                     (isSufficient?='all' originalType=QualifiedName) | 
+	//                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                     (
+	//                         isSufficient?='all' 
+	//                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                         ((MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | originalType=QualifiedName)?
+	//                     ) | 
+	//                     (
+	//                         (
+	//                             isSufficient?='all' | 
+	//                             (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                             (
+	//                                 isSufficient?='all' 
+	//                                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                                 (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	//                             )
+	//                         ) 
+	//                         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	//                     )
+	//                 ) 
+	//                 (
+	//                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	//                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)? 
+	//                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	//                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	//                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	//                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)?
+	//                 )+ 
+	//                 (
+	//                     ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression) | 
+	//                     (connectorPartBinary+=ConnectorEnd connectorPartBinary+=ConnectorEnd) | 
+	//                     (connectorPart+=ConnectorEnd connectorPart+=ConnectorEnd connectorPart+=ConnectorEnd*)
+	//                 )?
+	//             ) | 
+	//             ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression) | 
+	//             (isSufficient?='all'? connectorPartBinary+=ConnectorEnd connectorPartBinary+=ConnectorEnd) | 
+	//             (connectorPart+=ConnectorEnd connectorPart+=ConnectorEnd connectorPart+=ConnectorEnd*)
+	//         )? 
+	//         elements+=TypeBodyElement*
+	//     )
+	//
+	// protected void sequence_BasicFeaturePrefix_BinaryConnectorDeclaration_ChainingPart_Connector_CrossFeatureChain_DifferencingPart_DisjoiningPart_EndFeaturePrefix_ExtendedPrefix_FeatureConjugationPart_FeatureDeclaration_FeaturePrefix_FeatureValue_Identification_IntersectingPart_InvertingPart_MemberPrefix_MultiplicityModifiers_MultiplicityRange_NaryConnectorDeclaration_PrefixMetadata_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(ISerializationContext context, Connector semanticObject) { }
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GeneralBodyElements returns BindingConnector
+	 *     PackageBodyElement returns BindingConnector
+	 *     TypeBodyElement returns BindingConnector
+	 *     NamespaceBodyElement returns BindingConnector
+	 *     FunctionBodyElement returns BindingConnector
+	 *     RelationshipBodyElement returns BindingConnector
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
+	 *         isReturn?='return'? 
+	 *         isMember?='member'? 
+	 *         (
+	 *             (isConstantEnd?='const'? isEnd?='end' crossingFeature+=CrossingFeature?) | 
+	 *             (
+	 *                 direction=FeatureDirection? 
+	 *                 isDerived?='derived'? 
+	 *                 isAbstract?='abstract'? 
+	 *                 (isComposite?='composite' | isPortion?='portion')? 
+	 *                 (isVariable?='var' | isConstantBasic?='const')?
+	 *             )
+	 *         ) 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
+	 *         (
+	 *             (isSufficient?='all'? (isOf?='of'? connectorPart+=ConnectorEnd connectorPart+=ConnectorEnd)?) | 
+	 *             (
+	 *                 (
+	 *                     (isSufficient?='all' originalType=QualifiedName) | 
+	 *                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	 *                     (
+	 *                         isSufficient?='all' 
+	 *                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	 *                         ((MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | originalType=QualifiedName)?
+	 *                     )
+	 *                 ) 
+	 *                 (
+	 *                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	 *                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	 *                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	 *                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	 *                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)? 
+	 *                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)?
+	 *                 )+ 
+	 *                 (isOf?='of' connectorPart+=ConnectorEnd connectorPart+=ConnectorEnd)?
+	 *             ) | 
+	 *             (
+	 *                 (
+	 *                     isSufficient?='all' | 
+	 *                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	 *                     (
+	 *                         isSufficient?='all' 
+	 *                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	 *                         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	 *                     )
+	 *                 )? 
+	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
+	 *                 (
+	 *                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	 *                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	 *                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	 *                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	 *                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)? 
+	 *                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)?
+	 *                 )+ 
+	 *                 (isOf?='of' connectorPart+=ConnectorEnd connectorPart+=ConnectorEnd)?
+	 *             ) | 
+	 *             (
+	 *                 (
+	 *                     isSufficient?='all' | 
+	 *                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	 *                     (
+	 *                         isSufficient?='all' 
+	 *                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	 *                         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	 *                     ) | 
+	 *                     (
+	 *                         (
+	 *                             isSufficient?='all' | 
+	 *                             (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	 *                             (
+	 *                                 isSufficient?='all' 
+	 *                                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	 *                                 (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	 *                             )
+	 *                         )? 
+	 *                         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	 *                     )
+	 *                 ) 
+	 *                 (
+	 *                     (
+	 *                         (typings+=FeatureTypingName typings+=FeatureTypingName*) | 
+	 *                         (subsetting+=FeatureChainName subsetting+=FeatureChainName?) | 
+	 *                         (references+=FeatureChainName references+=FeatureChainName*) | 
+	 *                         (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
+	 *                         (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
+	 *                     ) 
+	 *                     (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) 
+	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	 *                 )+ 
+	 *                 (
+	 *                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	 *                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	 *                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	 *                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	 *                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)? 
+	 *                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)?
+	 *                 )+ 
+	 *                 (isOf?='of' connectorPart+=ConnectorEnd connectorPart+=ConnectorEnd)?
+	 *             )
+	 *         ) 
+	 *         elements+=TypeBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_BasicFeaturePrefix_BindingConnector_ChainingPart_CrossFeatureChain_DifferencingPart_DisjoiningPart_EndFeaturePrefix_ExtendedPrefix_FeatureConjugationPart_FeatureDeclaration_FeaturePrefix_Identification_IntersectingPart_InvertingPart_MemberPrefix_MultiplicityModifiers_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(ISerializationContext context, BindingConnector semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	// This method is commented out because it has the same signature as another method in this class.
+	// This is probably a bug in Xtext's serializer, please report it here: 
+	// https://bugs.eclipse.org/bugs/enter_bug.cgi?product=TMF
+	//
+	// Contexts:
+	//     FeatureElement returns BindingConnector
+	//     BindingConnector returns BindingConnector
+	//
+	// Constraint:
+	//     (
+	//         visibility=VisibilityIndicator? 
+	//         isVariant?='variant'? 
+	//         isReturn?='return'? 
+	//         isMember?='member'? 
+	//         (
+	//             (isConstantEnd?='const'? isEnd?='end' crossingFeature+=CrossingFeature?) | 
+	//             (
+	//                 direction=FeatureDirection? 
+	//                 isDerived?='derived'? 
+	//                 isAbstract?='abstract'? 
+	//                 (isComposite?='composite' | isPortion?='portion')? 
+	//                 (isVariable?='var' | isConstantBasic?='const')?
+	//             )
+	//         ) 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
+	//         (
+	//             (isSufficient?='all'? (isOf?='of'? connectorPart+=ConnectorEnd connectorPart+=ConnectorEnd)?) | 
+	//             (
+	//                 (
+	//                     (isSufficient?='all' originalType=QualifiedName) | 
+	//                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                     (
+	//                         isSufficient?='all' 
+	//                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                         ((MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | originalType=QualifiedName)?
+	//                     )
+	//                 ) 
+	//                 (
+	//                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	//                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)? 
+	//                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	//                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	//                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	//                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)?
+	//                 )+ 
+	//                 (isOf?='of' connectorPart+=ConnectorEnd connectorPart+=ConnectorEnd)?
+	//             ) | 
+	//             (
+	//                 (
+	//                     isSufficient?='all' | 
+	//                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                     (
+	//                         isSufficient?='all' 
+	//                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	//                     )
+	//                 )? 
+	//                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
+	//                 (
+	//                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	//                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)? 
+	//                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	//                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	//                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	//                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)?
+	//                 )+ 
+	//                 (isOf?='of' connectorPart+=ConnectorEnd connectorPart+=ConnectorEnd)?
+	//             ) | 
+	//             (
+	//                 (
+	//                     isSufficient?='all' | 
+	//                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                     (
+	//                         isSufficient?='all' 
+	//                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	//                     ) | 
+	//                     (
+	//                         (
+	//                             isSufficient?='all' | 
+	//                             (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                             (
+	//                                 isSufficient?='all' 
+	//                                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                                 (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	//                             )
+	//                         )? 
+	//                         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	//                     )
+	//                 ) 
+	//                 (
+	//                     (
+	//                         (typings+=FeatureTypingName typings+=FeatureTypingName*) | 
+	//                         (subsetting+=FeatureChainName subsetting+=FeatureChainName*) | 
+	//                         (references+=FeatureChainName references+=FeatureChainName*) | 
+	//                         (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
+	//                         (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
+	//                     ) 
+	//                     (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) 
+	//                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	//                 )+ 
+	//                 (
+	//                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	//                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)? 
+	//                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	//                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	//                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	//                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)?
+	//                 )+ 
+	//                 (isOf?='of' connectorPart+=ConnectorEnd connectorPart+=ConnectorEnd)?
+	//             )
+	//         ) 
+	//         elements+=TypeBodyElement*
+	//     )
+	//
+	// protected void sequence_BasicFeaturePrefix_BindingConnector_ChainingPart_CrossFeatureChain_DifferencingPart_DisjoiningPart_EndFeaturePrefix_ExtendedPrefix_FeatureConjugationPart_FeatureDeclaration_FeaturePrefix_Identification_IntersectingPart_InvertingPart_MemberPrefix_MultiplicityModifiers_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(ISerializationContext context, BindingConnector semanticObject) { }
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GeneralBodyElements returns BooleanExpression
+	 *     PackageBodyElement returns BooleanExpression
+	 *     TypeBodyElement returns BooleanExpression
+	 *     NamespaceBodyElement returns BooleanExpression
+	 *     FunctionBodyElement returns BooleanExpression
+	 *     RelationshipBodyElement returns BooleanExpression
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
+	 *         isReturn?='return'? 
+	 *         isMember?='member'? 
+	 *         (
+	 *             (isConstantEnd?='const'? isEnd?='end' crossingFeature+=CrossingFeature?) | 
+	 *             (
+	 *                 direction=FeatureDirection? 
+	 *                 isDerived?='derived'? 
+	 *                 isAbstract?='abstract'? 
+	 *                 (isComposite?='composite' | isPortion?='portion')? 
+	 *                 (isVariable?='var' | isConstantBasic?='const')?
+	 *             )
+	 *         ) 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
+	 *         (
+	 *             (
+	 *                 (
+	 *                     (isSufficient?='all' originalType=QualifiedName) | 
+	 *                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	 *                     (
+	 *                         isSufficient?='all' 
+	 *                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	 *                         ((MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | originalType=QualifiedName)?
+	 *                     )
+	 *                 ) 
+	 *                 (
+	 *                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	 *                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	 *                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	 *                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	 *                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)? 
+	 *                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)?
+	 *                 )+
+	 *             ) | 
+	 *             (
+	 *                 (
+	 *                     isSufficient?='all' | 
+	 *                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	 *                     (
+	 *                         isSufficient?='all' 
+	 *                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	 *                         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	 *                     )
+	 *                 )? 
+	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
+	 *                 (
+	 *                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	 *                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	 *                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	 *                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	 *                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)? 
+	 *                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)?
+	 *                 )+
+	 *             ) | 
+	 *             (
+	 *                 (
+	 *                     isSufficient?='all' | 
+	 *                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	 *                     (
+	 *                         isSufficient?='all' 
+	 *                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	 *                         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	 *                     ) | 
+	 *                     (
+	 *                         (
+	 *                             isSufficient?='all' | 
+	 *                             (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	 *                             (
+	 *                                 isSufficient?='all' 
+	 *                                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	 *                                 (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	 *                             )
+	 *                         )? 
+	 *                         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	 *                     )
+	 *                 ) 
+	 *                 (
+	 *                     (
+	 *                         (typings+=FeatureTypingName typings+=FeatureTypingName*) | 
+	 *                         (subsetting+=FeatureChainName subsetting+=FeatureChainName?) | 
+	 *                         (references+=FeatureChainName references+=FeatureChainName*) | 
+	 *                         (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
+	 *                         (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
+	 *                     ) 
+	 *                     (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) 
+	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	 *                 )+ 
+	 *                 (
+	 *                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	 *                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	 *                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	 *                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	 *                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)? 
+	 *                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)?
+	 *                 )+
+	 *             )
+	 *         )? 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
+	 *         elements+=FunctionBodyElement* 
+	 *         resultExpressionParameter+=ResultExpression?
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_BasicFeaturePrefix_BooleanExpression_ChainingPart_CrossFeatureChain_DifferencingPart_DisjoiningPart_EndFeaturePrefix_ExtendedPrefix_FeatureConjugationPart_FeatureDeclaration_FeaturePrefix_FeatureValue_Identification_IntersectingPart_InvertingPart_MemberPrefix_MultiplicityModifiers_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(ISerializationContext context, BooleanExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	// This method is commented out because it has the same signature as another method in this class.
+	// This is probably a bug in Xtext's serializer, please report it here: 
+	// https://bugs.eclipse.org/bugs/enter_bug.cgi?product=TMF
+	//
+	// Contexts:
+	//     FeatureElement returns BooleanExpression
+	//     BooleanExpression returns BooleanExpression
+	//
+	// Constraint:
+	//     (
+	//         visibility=VisibilityIndicator? 
+	//         isVariant?='variant'? 
+	//         isReturn?='return'? 
+	//         isMember?='member'? 
+	//         (
+	//             (isConstantEnd?='const'? isEnd?='end' crossingFeature+=CrossingFeature?) | 
+	//             (
+	//                 direction=FeatureDirection? 
+	//                 isDerived?='derived'? 
+	//                 isAbstract?='abstract'? 
+	//                 (isComposite?='composite' | isPortion?='portion')? 
+	//                 (isVariable?='var' | isConstantBasic?='const')?
+	//             )
+	//         ) 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
+	//         (
+	//             (
+	//                 (
+	//                     (isSufficient?='all' originalType=QualifiedName) | 
+	//                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                     (
+	//                         isSufficient?='all' 
+	//                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                         ((MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | originalType=QualifiedName)?
+	//                     )
+	//                 ) 
+	//                 (
+	//                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	//                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)? 
+	//                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	//                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	//                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	//                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)?
+	//                 )+
+	//             ) | 
+	//             (
+	//                 (
+	//                     isSufficient?='all' | 
+	//                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                     (
+	//                         isSufficient?='all' 
+	//                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	//                     )
+	//                 )? 
+	//                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
+	//                 (
+	//                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	//                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)? 
+	//                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	//                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	//                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	//                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)?
+	//                 )+
+	//             ) | 
+	//             (
+	//                 (
+	//                     isSufficient?='all' | 
+	//                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                     (
+	//                         isSufficient?='all' 
+	//                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	//                     ) | 
+	//                     (
+	//                         (
+	//                             isSufficient?='all' | 
+	//                             (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                             (
+	//                                 isSufficient?='all' 
+	//                                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                                 (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	//                             )
+	//                         )? 
+	//                         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	//                     )
+	//                 ) 
+	//                 (
+	//                     (
+	//                         (typings+=FeatureTypingName typings+=FeatureTypingName*) | 
+	//                         (subsetting+=FeatureChainName subsetting+=FeatureChainName*) | 
+	//                         (references+=FeatureChainName references+=FeatureChainName*) | 
+	//                         (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
+	//                         (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
+	//                     ) 
+	//                     (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) 
+	//                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	//                 )+ 
+	//                 (
+	//                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	//                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)? 
+	//                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	//                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	//                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	//                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)?
+	//                 )+
+	//             )
+	//         )? 
+	//         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
+	//         elements+=FunctionBodyElement* 
+	//         resultExpressionParameter+=ResultExpression?
+	//     )
+	//
+	// protected void sequence_BasicFeaturePrefix_BooleanExpression_ChainingPart_CrossFeatureChain_DifferencingPart_DisjoiningPart_EndFeaturePrefix_ExtendedPrefix_FeatureConjugationPart_FeatureDeclaration_FeaturePrefix_FeatureValue_Identification_IntersectingPart_InvertingPart_MemberPrefix_MultiplicityModifiers_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(ISerializationContext context, BooleanExpression semanticObject) { }
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GeneralBodyElements returns ExpressionClass
+	 *     PackageBodyElement returns ExpressionClass
+	 *     TypeBodyElement returns ExpressionClass
+	 *     NamespaceBodyElement returns ExpressionClass
+	 *     FunctionBodyElement returns ExpressionClass
+	 *     RelationshipBodyElement returns ExpressionClass
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
+	 *         isReturn?='return'? 
+	 *         isMember?='member'? 
+	 *         (
+	 *             (isConstantEnd?='const'? isEnd?='end' crossingFeature+=CrossingFeature?) | 
+	 *             (
+	 *                 direction=FeatureDirection? 
+	 *                 isDerived?='derived'? 
+	 *                 isAbstract?='abstract'? 
+	 *                 (isComposite?='composite' | isPortion?='portion')? 
+	 *                 (isVariable?='var' | isConstantBasic?='const')?
+	 *             )
+	 *         ) 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
+	 *         (
+	 *             (
+	 *                 (
+	 *                     (isSufficient?='all' originalType=QualifiedName) | 
+	 *                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	 *                     (
+	 *                         isSufficient?='all' 
+	 *                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	 *                         ((MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | originalType=QualifiedName)?
+	 *                     )
+	 *                 ) 
+	 *                 (
+	 *                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	 *                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	 *                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	 *                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	 *                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)? 
+	 *                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)?
+	 *                 )+
+	 *             ) | 
+	 *             (
+	 *                 (
+	 *                     isSufficient?='all' | 
+	 *                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	 *                     (
+	 *                         isSufficient?='all' 
+	 *                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	 *                         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	 *                     )
+	 *                 )? 
+	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
+	 *                 (
+	 *                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	 *                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	 *                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	 *                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	 *                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)? 
+	 *                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)?
+	 *                 )+
+	 *             ) | 
+	 *             (
+	 *                 (
+	 *                     isSufficient?='all' | 
+	 *                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	 *                     (
+	 *                         isSufficient?='all' 
+	 *                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	 *                         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	 *                     ) | 
+	 *                     (
+	 *                         (
+	 *                             isSufficient?='all' | 
+	 *                             (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	 *                             (
+	 *                                 isSufficient?='all' 
+	 *                                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	 *                                 (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	 *                             )
+	 *                         )? 
+	 *                         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	 *                     )
+	 *                 ) 
+	 *                 (
+	 *                     (
+	 *                         (typings+=FeatureTypingName typings+=FeatureTypingName*) | 
+	 *                         (subsetting+=FeatureChainName subsetting+=FeatureChainName?) | 
+	 *                         (references+=FeatureChainName references+=FeatureChainName*) | 
+	 *                         (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
+	 *                         (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
+	 *                     ) 
+	 *                     (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) 
+	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	 *                 )+ 
+	 *                 (
+	 *                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	 *                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	 *                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	 *                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	 *                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)? 
+	 *                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)?
+	 *                 )+
+	 *             )
+	 *         )? 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
+	 *         elements+=FunctionBodyElement* 
+	 *         resultExpressionParameter+=ResultExpression?
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_BasicFeaturePrefix_ChainingPart_CrossFeatureChain_DifferencingPart_DisjoiningPart_EndFeaturePrefix_ExpressionClass_ExtendedPrefix_FeatureConjugationPart_FeatureDeclaration_FeaturePrefix_FeatureValue_Identification_IntersectingPart_InvertingPart_MemberPrefix_MultiplicityModifiers_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(ISerializationContext context, ExpressionClass semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	// This method is commented out because it has the same signature as another method in this class.
+	// This is probably a bug in Xtext's serializer, please report it here: 
+	// https://bugs.eclipse.org/bugs/enter_bug.cgi?product=TMF
+	//
+	// Contexts:
+	//     FeatureElement returns ExpressionClass
+	//     ExpressionClass returns ExpressionClass
+	//
+	// Constraint:
+	//     (
+	//         visibility=VisibilityIndicator? 
+	//         isVariant?='variant'? 
+	//         isReturn?='return'? 
+	//         isMember?='member'? 
+	//         (
+	//             (isConstantEnd?='const'? isEnd?='end' crossingFeature+=CrossingFeature?) | 
+	//             (
+	//                 direction=FeatureDirection? 
+	//                 isDerived?='derived'? 
+	//                 isAbstract?='abstract'? 
+	//                 (isComposite?='composite' | isPortion?='portion')? 
+	//                 (isVariable?='var' | isConstantBasic?='const')?
+	//             )
+	//         ) 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
+	//         (
+	//             (
+	//                 (
+	//                     (isSufficient?='all' originalType=QualifiedName) | 
+	//                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                     (
+	//                         isSufficient?='all' 
+	//                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                         ((MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | originalType=QualifiedName)?
+	//                     )
+	//                 ) 
+	//                 (
+	//                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	//                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)? 
+	//                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	//                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	//                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	//                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)?
+	//                 )+
+	//             ) | 
+	//             (
+	//                 (
+	//                     isSufficient?='all' | 
+	//                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                     (
+	//                         isSufficient?='all' 
+	//                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	//                     )
+	//                 )? 
+	//                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
+	//                 (
+	//                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	//                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)? 
+	//                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	//                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	//                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	//                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)?
+	//                 )+
+	//             ) | 
+	//             (
+	//                 (
+	//                     isSufficient?='all' | 
+	//                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                     (
+	//                         isSufficient?='all' 
+	//                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	//                     ) | 
+	//                     (
+	//                         (
+	//                             isSufficient?='all' | 
+	//                             (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                             (
+	//                                 isSufficient?='all' 
+	//                                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                                 (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	//                             )
+	//                         )? 
+	//                         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	//                     )
+	//                 ) 
+	//                 (
+	//                     (
+	//                         (typings+=FeatureTypingName typings+=FeatureTypingName*) | 
+	//                         (subsetting+=FeatureChainName subsetting+=FeatureChainName*) | 
+	//                         (references+=FeatureChainName references+=FeatureChainName*) | 
+	//                         (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
+	//                         (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
+	//                     ) 
+	//                     (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) 
+	//                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	//                 )+ 
+	//                 (
+	//                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	//                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)? 
+	//                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	//                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	//                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	//                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)?
+	//                 )+
+	//             )
+	//         )? 
+	//         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
+	//         elements+=FunctionBodyElement* 
+	//         resultExpressionParameter+=ResultExpression?
+	//     )
+	//
+	// protected void sequence_BasicFeaturePrefix_ChainingPart_CrossFeatureChain_DifferencingPart_DisjoiningPart_EndFeaturePrefix_ExpressionClass_ExtendedPrefix_FeatureConjugationPart_FeatureDeclaration_FeaturePrefix_FeatureValue_Identification_IntersectingPart_InvertingPart_MemberPrefix_MultiplicityModifiers_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(ISerializationContext context, ExpressionClass semanticObject) { }
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GeneralBodyElements returns SuccessionFlow
+	 *     PackageBodyElement returns SuccessionFlow
+	 *     TypeBodyElement returns SuccessionFlow
+	 *     NamespaceBodyElement returns SuccessionFlow
+	 *     FunctionBodyElement returns SuccessionFlow
+	 *     RelationshipBodyElement returns SuccessionFlow
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
+	 *         isReturn?='return'? 
+	 *         isMember?='member'? 
+	 *         (
+	 *             (isConstantEnd?='const'? isEnd?='end' crossingFeature+=CrossingFeature?) | 
+	 *             (
+	 *                 direction=FeatureDirection? 
+	 *                 isDerived?='derived'? 
+	 *                 isAbstract?='abstract'? 
+	 *                 (isComposite?='composite' | isPortion?='portion')? 
+	 *                 (isVariable?='var' | isConstantBasic?='const')?
+	 *             )
+	 *         ) 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
+	 *         (
+	 *             (
+	 *                 (
+	 *                     (
+	 *                         (
+	 *                             isSufficient?='all' | 
+	 *                             (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	 *                             (
+	 *                                 isSufficient?='all' 
+	 *                                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	 *                                 (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	 *                             ) | 
+	 *                             (
+	 *                                 (
+	 *                                     isSufficient?='all' | 
+	 *                                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	 *                                     (
+	 *                                         isSufficient?='all' 
+	 *                                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	 *                                         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	 *                                     )
+	 *                                 ) 
+	 *                                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	 *                             )
+	 *                         )? 
+	 *                         (
+	 *                             (
+	 *                                 (typings+=FeatureTypingName typings+=FeatureTypingName*) | 
+	 *                                 (subsetting+=FeatureChainName subsetting+=FeatureChainName?) | 
+	 *                                 (references+=FeatureChainName references+=FeatureChainName*) | 
+	 *                                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
+	 *                                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
+	 *                             ) 
+	 *                             (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) 
+	 *                             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	 *                         )+
+	 *                     ) | 
+	 *                     (isSufficient?='all' originalType=QualifiedName) | 
+	 *                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	 *                     (
+	 *                         isSufficient?='all' 
+	 *                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	 *                         ((MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | originalType=QualifiedName)?
+	 *                     ) | 
+	 *                     (
+	 *                         (
+	 *                             isSufficient?='all' | 
+	 *                             (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	 *                             (
+	 *                                 isSufficient?='all' 
+	 *                                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	 *                                 (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	 *                             )
+	 *                         ) 
+	 *                         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	 *                     )
+	 *                 ) 
+	 *                 (
+	 *                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	 *                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	 *                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	 *                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	 *                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)? 
+	 *                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)?
+	 *                 )+ 
+	 *                 ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
+	 *                 payload=PayloadParameter? 
+	 *                 (FlowEnd+=FeatureChainName FlowEnd+=FeatureChainName)?
+	 *             ) | 
+	 *             (
+	 *                 ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
+	 *                 payload=PayloadParameter? 
+	 *                 (FlowEnd+=FeatureChainName FlowEnd+=FeatureChainName)?
+	 *             ) | 
+	 *             (isSufficient?='all'? FlowEnd+=FeatureChainName FlowEnd+=FeatureChainName)
+	 *         ) 
+	 *         elements+=TypeBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_BasicFeaturePrefix_ChainingPart_CrossFeatureChain_DifferencingPart_DisjoiningPart_EndFeaturePrefix_ExtendedPrefix_FeatureConjugationPart_FeatureDeclaration_FeaturePrefix_FeatureValue_FlowDeclaration_Identification_IntersectingPart_InvertingPart_MemberPrefix_MultiplicityModifiers_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_SuccessionFlow_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(ISerializationContext context, SuccessionFlow semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	// This method is commented out because it has the same signature as another method in this class.
+	// This is probably a bug in Xtext's serializer, please report it here: 
+	// https://bugs.eclipse.org/bugs/enter_bug.cgi?product=TMF
+	//
+	// Contexts:
+	//     FeatureElement returns SuccessionFlow
+	//
+	// Constraint:
+	//     (
+	//         visibility=VisibilityIndicator? 
+	//         isVariant?='variant'? 
+	//         isReturn?='return'? 
+	//         isMember?='member'? 
+	//         (
+	//             (isConstantEnd?='const'? isEnd?='end' crossingFeature+=CrossingFeature?) | 
+	//             (
+	//                 direction=FeatureDirection? 
+	//                 isDerived?='derived'? 
+	//                 isAbstract?='abstract'? 
+	//                 (isComposite?='composite' | isPortion?='portion')? 
+	//                 (isVariable?='var' | isConstantBasic?='const')?
+	//             )
+	//         ) 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT? 
+	//         (
+	//             (
+	//                 (
+	//                     (
+	//                         (
+	//                             isSufficient?='all' | 
+	//                             (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                             (
+	//                                 isSufficient?='all' 
+	//                                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                                 (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	//                             ) | 
+	//                             (
+	//                                 (
+	//                                     isSufficient?='all' | 
+	//                                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                                     (
+	//                                         isSufficient?='all' 
+	//                                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                                         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	//                                     )
+	//                                 ) 
+	//                                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	//                             )
+	//                         )? 
+	//                         (
+	//                             (
+	//                                 (typings+=FeatureTypingName typings+=FeatureTypingName*) | 
+	//                                 (subsetting+=FeatureChainName subsetting+=FeatureChainName*) | 
+	//                                 (references+=FeatureChainName references+=FeatureChainName*) | 
+	//                                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
+	//                                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
+	//                             ) 
+	//                             (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) 
+	//                             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	//                         )+
+	//                     ) | 
+	//                     (isSufficient?='all' originalType=QualifiedName) | 
+	//                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                     (
+	//                         isSufficient?='all' 
+	//                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                         ((MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | originalType=QualifiedName)?
+	//                     ) | 
+	//                     (
+	//                         (
+	//                             isSufficient?='all' | 
+	//                             (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                             (
+	//                                 isSufficient?='all' 
+	//                                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                                 (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	//                             )
+	//                         ) 
+	//                         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	//                     )
+	//                 ) 
+	//                 (
+	//                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	//                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)? 
+	//                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	//                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	//                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	//                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)?
+	//                 )+ 
+	//                 ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
+	//                 payload=PayloadParameter? 
+	//                 (FlowEnd+=FeatureChainName FlowEnd+=FeatureChainName)?
+	//             ) | 
+	//             (
+	//                 ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
+	//                 payload=PayloadParameter? 
+	//                 (FlowEnd+=FeatureChainName FlowEnd+=FeatureChainName)?
+	//             ) | 
+	//             (isSufficient?='all'? FlowEnd+=FeatureChainName FlowEnd+=FeatureChainName)
+	//         ) 
+	//         elements+=TypeBodyElement*
+	//     )
+	//
+	// protected void sequence_BasicFeaturePrefix_ChainingPart_CrossFeatureChain_DifferencingPart_DisjoiningPart_EndFeaturePrefix_ExtendedPrefix_FeatureConjugationPart_FeatureDeclaration_FeaturePrefix_FeatureValue_FlowDeclaration_Identification_IntersectingPart_InvertingPart_MemberPrefix_MultiplicityModifiers_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_SuccessionFlow_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(ISerializationContext context, SuccessionFlow semanticObject) { }
+	
+	// This method is commented out because it has the same signature as another method in this class.
+	// This is probably a bug in Xtext's serializer, please report it here: 
+	// https://bugs.eclipse.org/bugs/enter_bug.cgi?product=TMF
+	//
+	// Contexts:
+	//     SuccessionFlow returns SuccessionFlow
+	//
+	// Constraint:
+	//     (
+	//         visibility=VisibilityIndicator? 
+	//         isVariant?='variant'? 
+	//         isReturn?='return'? 
+	//         isMember?='member'? 
+	//         (
+	//             (isConstantEnd?='const'? isEnd?='end' crossingFeature+=CrossingFeature?) | 
+	//             (
+	//                 direction=FeatureDirection? 
+	//                 isDerived?='derived'? 
+	//                 isAbstract?='abstract'? 
+	//                 (isComposite?='composite' | isPortion?='portion')? 
+	//                 (isVariable?='var' | isConstantBasic?='const')?
+	//             )
+	//         ) 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
+	//         (
+	//             (
+	//                 (
+	//                     (
+	//                         (
+	//                             isSufficient?='all' | 
+	//                             (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                             (
+	//                                 isSufficient?='all' 
+	//                                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                                 (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	//                             ) | 
+	//                             (
+	//                                 (
+	//                                     isSufficient?='all' | 
+	//                                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                                     (
+	//                                         isSufficient?='all' 
+	//                                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                                         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	//                                     )
+	//                                 ) 
+	//                                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	//                             )
+	//                         )? 
+	//                         (
+	//                             (
+	//                                 (typings+=FeatureTypingName typings+=FeatureTypingName*) | 
+	//                                 (subsetting+=FeatureChainName subsetting+=FeatureChainName*) | 
+	//                                 (references+=FeatureChainName references+=FeatureChainName*) | 
+	//                                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
+	//                                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
+	//                             ) 
+	//                             (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) 
+	//                             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	//                         )+
+	//                     ) | 
+	//                     (isSufficient?='all' originalType=QualifiedName) | 
+	//                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                     (
+	//                         isSufficient?='all' 
+	//                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                         ((MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | originalType=QualifiedName)?
+	//                     ) | 
+	//                     (
+	//                         (
+	//                             isSufficient?='all' | 
+	//                             (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                             (
+	//                                 isSufficient?='all' 
+	//                                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                                 (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	//                             )
+	//                         ) 
+	//                         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	//                     )
+	//                 ) 
+	//                 (
+	//                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	//                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)? 
+	//                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	//                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	//                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	//                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)?
+	//                 )+ 
+	//                 ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
+	//                 payload=PayloadParameter? 
+	//                 (FlowEnd+=FeatureChainName FlowEnd+=FeatureChainName)?
+	//             ) | 
+	//             (
+	//                 ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
+	//                 payload=PayloadParameter? 
+	//                 (FlowEnd+=FeatureChainName FlowEnd+=FeatureChainName)?
+	//             ) | 
+	//             (isSufficient?='all'? FlowEnd+=FeatureChainName FlowEnd+=FeatureChainName)
+	//         ) 
+	//         elements+=TypeBodyElement*
+	//     )
+	//
+	// protected void sequence_BasicFeaturePrefix_ChainingPart_CrossFeatureChain_DifferencingPart_DisjoiningPart_EndFeaturePrefix_ExtendedPrefix_FeatureConjugationPart_FeatureDeclaration_FeaturePrefix_FeatureValue_FlowDeclaration_Identification_IntersectingPart_InvertingPart_MemberPrefix_MultiplicityModifiers_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_SuccessionFlow_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(ISerializationContext context, SuccessionFlow semanticObject) { }
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GeneralBodyElements returns Flow
+	 *     PackageBodyElement returns Flow
+	 *     TypeBodyElement returns Flow
+	 *     NamespaceBodyElement returns Flow
+	 *     FunctionBodyElement returns Flow
+	 *     RelationshipBodyElement returns Flow
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
+	 *         isReturn?='return'? 
+	 *         isMember?='member'? 
+	 *         (
+	 *             (isConstantEnd?='const'? isEnd?='end' crossingFeature+=CrossingFeature?) | 
+	 *             (
+	 *                 direction=FeatureDirection? 
+	 *                 isDerived?='derived'? 
+	 *                 isAbstract?='abstract'? 
+	 *                 (isComposite?='composite' | isPortion?='portion')? 
+	 *                 (isVariable?='var' | isConstantBasic?='const')?
+	 *             )
+	 *         ) 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT? 
+	 *         (
+	 *             (
+	 *                 (
+	 *                     (
+	 *                         (
+	 *                             isSufficient?='all' | 
+	 *                             (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	 *                             (
+	 *                                 isSufficient?='all' 
+	 *                                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	 *                                 (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	 *                             ) | 
+	 *                             (
+	 *                                 (
+	 *                                     isSufficient?='all' | 
+	 *                                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	 *                                     (
+	 *                                         isSufficient?='all' 
+	 *                                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	 *                                         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	 *                                     )
+	 *                                 ) 
+	 *                                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	 *                             )
+	 *                         )? 
+	 *                         (
+	 *                             (
+	 *                                 (typings+=FeatureTypingName typings+=FeatureTypingName*) | 
+	 *                                 (subsetting+=FeatureChainName subsetting+=FeatureChainName?) | 
+	 *                                 (references+=FeatureChainName references+=FeatureChainName*) | 
+	 *                                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
+	 *                                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
+	 *                             ) 
+	 *                             (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) 
+	 *                             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	 *                         )+
+	 *                     ) | 
+	 *                     (isSufficient?='all' originalType=QualifiedName) | 
+	 *                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	 *                     (
+	 *                         isSufficient?='all' 
+	 *                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	 *                         ((MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | originalType=QualifiedName)?
+	 *                     ) | 
+	 *                     (
+	 *                         (
+	 *                             isSufficient?='all' | 
+	 *                             (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	 *                             (
+	 *                                 isSufficient?='all' 
+	 *                                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	 *                                 (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	 *                             )
+	 *                         ) 
+	 *                         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	 *                     )
+	 *                 ) 
+	 *                 (
+	 *                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	 *                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	 *                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	 *                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	 *                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)? 
+	 *                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)?
+	 *                 )+ 
+	 *                 ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
+	 *                 payload=PayloadParameter? 
+	 *                 (FlowEnd+=FeatureChainName FlowEnd+=FeatureChainName)?
+	 *             ) | 
+	 *             (
+	 *                 ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
+	 *                 payload=PayloadParameter? 
+	 *                 (FlowEnd+=FeatureChainName FlowEnd+=FeatureChainName)?
+	 *             ) | 
+	 *             (isSufficient?='all'? FlowEnd+=FeatureChainName FlowEnd+=FeatureChainName)
+	 *         ) 
+	 *         elements+=TypeBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_BasicFeaturePrefix_ChainingPart_CrossFeatureChain_DifferencingPart_DisjoiningPart_EndFeaturePrefix_ExtendedPrefix_FeatureConjugationPart_FeatureDeclaration_FeaturePrefix_FeatureValue_Flow_FlowDeclaration_Identification_IntersectingPart_InvertingPart_MemberPrefix_MultiplicityModifiers_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(ISerializationContext context, Flow semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	// This method is commented out because it has the same signature as another method in this class.
+	// This is probably a bug in Xtext's serializer, please report it here: 
+	// https://bugs.eclipse.org/bugs/enter_bug.cgi?product=TMF
+	//
+	// Contexts:
+	//     FeatureElement returns Flow
+	//
+	// Constraint:
+	//     (
+	//         visibility=VisibilityIndicator? 
+	//         isVariant?='variant'? 
+	//         isReturn?='return'? 
+	//         isMember?='member'? 
+	//         (
+	//             (isConstantEnd?='const'? isEnd?='end' crossingFeature+=CrossingFeature?) | 
+	//             (
+	//                 direction=FeatureDirection? 
+	//                 isDerived?='derived'? 
+	//                 isAbstract?='abstract'? 
+	//                 (isComposite?='composite' | isPortion?='portion')? 
+	//                 (isVariable?='var' | isConstantBasic?='const')?
+	//             )
+	//         ) 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT? 
+	//         (
+	//             (
+	//                 (
+	//                     (
+	//                         (
+	//                             isSufficient?='all' | 
+	//                             (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                             (
+	//                                 isSufficient?='all' 
+	//                                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                                 (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	//                             ) | 
+	//                             (
+	//                                 (
+	//                                     isSufficient?='all' | 
+	//                                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                                     (
+	//                                         isSufficient?='all' 
+	//                                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                                         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	//                                     )
+	//                                 ) 
+	//                                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	//                             )
+	//                         )? 
+	//                         (
+	//                             (
+	//                                 (typings+=FeatureTypingName typings+=FeatureTypingName*) | 
+	//                                 (subsetting+=FeatureChainName subsetting+=FeatureChainName*) | 
+	//                                 (references+=FeatureChainName references+=FeatureChainName*) | 
+	//                                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
+	//                                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
+	//                             ) 
+	//                             (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) 
+	//                             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	//                         )+
+	//                     ) | 
+	//                     (isSufficient?='all' originalType=QualifiedName) | 
+	//                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                     (
+	//                         isSufficient?='all' 
+	//                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                         ((MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | originalType=QualifiedName)?
+	//                     ) | 
+	//                     (
+	//                         (
+	//                             isSufficient?='all' | 
+	//                             (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                             (
+	//                                 isSufficient?='all' 
+	//                                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                                 (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	//                             )
+	//                         ) 
+	//                         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	//                     )
+	//                 ) 
+	//                 (
+	//                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	//                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)? 
+	//                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	//                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	//                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	//                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)?
+	//                 )+ 
+	//                 ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
+	//                 payload=PayloadParameter? 
+	//                 (FlowEnd+=FeatureChainName FlowEnd+=FeatureChainName)?
+	//             ) | 
+	//             (
+	//                 ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
+	//                 payload=PayloadParameter? 
+	//                 (FlowEnd+=FeatureChainName FlowEnd+=FeatureChainName)?
+	//             ) | 
+	//             (isSufficient?='all'? FlowEnd+=FeatureChainName FlowEnd+=FeatureChainName)
+	//         ) 
+	//         elements+=TypeBodyElement*
+	//     )
+	//
+	// protected void sequence_BasicFeaturePrefix_ChainingPart_CrossFeatureChain_DifferencingPart_DisjoiningPart_EndFeaturePrefix_ExtendedPrefix_FeatureConjugationPart_FeatureDeclaration_FeaturePrefix_FeatureValue_Flow_FlowDeclaration_Identification_IntersectingPart_InvertingPart_MemberPrefix_MultiplicityModifiers_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(ISerializationContext context, Flow semanticObject) { }
+	
+	// This method is commented out because it has the same signature as another method in this class.
+	// This is probably a bug in Xtext's serializer, please report it here: 
+	// https://bugs.eclipse.org/bugs/enter_bug.cgi?product=TMF
+	//
+	// Contexts:
+	//     Flow returns Flow
+	//
+	// Constraint:
+	//     (
+	//         visibility=VisibilityIndicator? 
+	//         isVariant?='variant'? 
+	//         isReturn?='return'? 
+	//         isMember?='member'? 
+	//         (
+	//             (isConstantEnd?='const'? isEnd?='end' crossingFeature+=CrossingFeature?) | 
+	//             (
+	//                 direction=FeatureDirection? 
+	//                 isDerived?='derived'? 
+	//                 isAbstract?='abstract'? 
+	//                 (isComposite?='composite' | isPortion?='portion')? 
+	//                 (isVariable?='var' | isConstantBasic?='const')?
+	//             )
+	//         ) 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
+	//         (
+	//             (
+	//                 (
+	//                     (
+	//                         (
+	//                             isSufficient?='all' | 
+	//                             (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                             (
+	//                                 isSufficient?='all' 
+	//                                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                                 (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	//                             ) | 
+	//                             (
+	//                                 (
+	//                                     isSufficient?='all' | 
+	//                                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                                     (
+	//                                         isSufficient?='all' 
+	//                                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                                         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	//                                     )
+	//                                 ) 
+	//                                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	//                             )
+	//                         )? 
+	//                         (
+	//                             (
+	//                                 (typings+=FeatureTypingName typings+=FeatureTypingName*) | 
+	//                                 (subsetting+=FeatureChainName subsetting+=FeatureChainName*) | 
+	//                                 (references+=FeatureChainName references+=FeatureChainName*) | 
+	//                                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
+	//                                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
+	//                             ) 
+	//                             (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) 
+	//                             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	//                         )+
+	//                     ) | 
+	//                     (isSufficient?='all' originalType=QualifiedName) | 
+	//                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                     (
+	//                         isSufficient?='all' 
+	//                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                         ((MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | originalType=QualifiedName)?
+	//                     ) | 
+	//                     (
+	//                         (
+	//                             isSufficient?='all' | 
+	//                             (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                             (
+	//                                 isSufficient?='all' 
+	//                                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                                 (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	//                             )
+	//                         ) 
+	//                         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	//                     )
+	//                 ) 
+	//                 (
+	//                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	//                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)? 
+	//                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	//                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	//                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	//                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)?
+	//                 )+ 
+	//                 ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
+	//                 payload=PayloadParameter? 
+	//                 (FlowEnd+=FeatureChainName FlowEnd+=FeatureChainName)?
+	//             ) | 
+	//             (
+	//                 ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
+	//                 payload=PayloadParameter? 
+	//                 (FlowEnd+=FeatureChainName FlowEnd+=FeatureChainName)?
+	//             ) | 
+	//             (isSufficient?='all'? FlowEnd+=FeatureChainName FlowEnd+=FeatureChainName)
+	//         ) 
+	//         elements+=TypeBodyElement*
+	//     )
+	//
+	// protected void sequence_BasicFeaturePrefix_ChainingPart_CrossFeatureChain_DifferencingPart_DisjoiningPart_EndFeaturePrefix_ExtendedPrefix_FeatureConjugationPart_FeatureDeclaration_FeaturePrefix_FeatureValue_Flow_FlowDeclaration_Identification_IntersectingPart_InvertingPart_MemberPrefix_MultiplicityModifiers_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(ISerializationContext context, Flow semanticObject) { }
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GeneralBodyElements returns Invariant
+	 *     PackageBodyElement returns Invariant
+	 *     TypeBodyElement returns Invariant
+	 *     NamespaceBodyElement returns Invariant
+	 *     FunctionBodyElement returns Invariant
+	 *     RelationshipBodyElement returns Invariant
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
+	 *         isReturn?='return'? 
+	 *         isMember?='member'? 
+	 *         (
+	 *             (isConstantEnd?='const'? isEnd?='end' crossingFeature+=CrossingFeature?) | 
+	 *             (
+	 *                 direction=FeatureDirection? 
+	 *                 isDerived?='derived'? 
+	 *                 isAbstract?='abstract'? 
+	 *                 (isComposite?='composite' | isPortion?='portion')? 
+	 *                 (isVariable?='var' | isConstantBasic?='const')?
+	 *             )
+	 *         ) 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
+	 *         isNegated?='false'? 
+	 *         (
+	 *             (
+	 *                 (
+	 *                     (isSufficient?='all' originalType=QualifiedName) | 
+	 *                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	 *                     (
+	 *                         isSufficient?='all' 
+	 *                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	 *                         ((MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | originalType=QualifiedName)?
+	 *                     )
+	 *                 ) 
+	 *                 (
+	 *                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	 *                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	 *                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	 *                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	 *                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)? 
+	 *                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)?
+	 *                 )+
+	 *             ) | 
+	 *             (
+	 *                 (
+	 *                     isSufficient?='all' | 
+	 *                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	 *                     (
+	 *                         isSufficient?='all' 
+	 *                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	 *                         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	 *                     )
+	 *                 )? 
+	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
+	 *                 (
+	 *                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	 *                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	 *                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	 *                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	 *                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)? 
+	 *                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)?
+	 *                 )+
+	 *             ) | 
+	 *             (
+	 *                 (
+	 *                     isSufficient?='all' | 
+	 *                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	 *                     (
+	 *                         isSufficient?='all' 
+	 *                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	 *                         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	 *                     ) | 
+	 *                     (
+	 *                         (
+	 *                             isSufficient?='all' | 
+	 *                             (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	 *                             (
+	 *                                 isSufficient?='all' 
+	 *                                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	 *                                 (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	 *                             )
+	 *                         )? 
+	 *                         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	 *                     )
+	 *                 ) 
+	 *                 (
+	 *                     (
+	 *                         (typings+=FeatureTypingName typings+=FeatureTypingName*) | 
+	 *                         (subsetting+=FeatureChainName subsetting+=FeatureChainName?) | 
+	 *                         (references+=FeatureChainName references+=FeatureChainName*) | 
+	 *                         (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
+	 *                         (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
+	 *                     ) 
+	 *                     (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) 
+	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	 *                 )+ 
+	 *                 (
+	 *                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	 *                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	 *                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	 *                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	 *                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)? 
+	 *                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)?
+	 *                 )+
+	 *             )
+	 *         )? 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
+	 *         elements+=FunctionBodyElement* 
+	 *         resultExpressionParameter+=ResultExpression?
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_BasicFeaturePrefix_ChainingPart_CrossFeatureChain_DifferencingPart_DisjoiningPart_EndFeaturePrefix_ExtendedPrefix_FeatureConjugationPart_FeatureDeclaration_FeaturePrefix_FeatureValue_Identification_IntersectingPart_Invariant_InvertingPart_MemberPrefix_MultiplicityModifiers_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(ISerializationContext context, Invariant semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	// This method is commented out because it has the same signature as another method in this class.
+	// This is probably a bug in Xtext's serializer, please report it here: 
+	// https://bugs.eclipse.org/bugs/enter_bug.cgi?product=TMF
+	//
+	// Contexts:
+	//     FeatureElement returns Invariant
+	//     Invariant returns Invariant
+	//
+	// Constraint:
+	//     (
+	//         visibility=VisibilityIndicator? 
+	//         isVariant?='variant'? 
+	//         isReturn?='return'? 
+	//         isMember?='member'? 
+	//         (
+	//             (isConstantEnd?='const'? isEnd?='end' crossingFeature+=CrossingFeature?) | 
+	//             (
+	//                 direction=FeatureDirection? 
+	//                 isDerived?='derived'? 
+	//                 isAbstract?='abstract'? 
+	//                 (isComposite?='composite' | isPortion?='portion')? 
+	//                 (isVariable?='var' | isConstantBasic?='const')?
+	//             )
+	//         ) 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
+	//         isNegated?='false'? 
+	//         (
+	//             (
+	//                 (
+	//                     (isSufficient?='all' originalType=QualifiedName) | 
+	//                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                     (
+	//                         isSufficient?='all' 
+	//                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                         ((MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | originalType=QualifiedName)?
+	//                     )
+	//                 ) 
+	//                 (
+	//                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	//                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)? 
+	//                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	//                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	//                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	//                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)?
+	//                 )+
+	//             ) | 
+	//             (
+	//                 (
+	//                     isSufficient?='all' | 
+	//                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                     (
+	//                         isSufficient?='all' 
+	//                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	//                     )
+	//                 )? 
+	//                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
+	//                 (
+	//                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	//                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)? 
+	//                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	//                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	//                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	//                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)?
+	//                 )+
+	//             ) | 
+	//             (
+	//                 (
+	//                     isSufficient?='all' | 
+	//                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                     (
+	//                         isSufficient?='all' 
+	//                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	//                     ) | 
+	//                     (
+	//                         (
+	//                             isSufficient?='all' | 
+	//                             (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                             (
+	//                                 isSufficient?='all' 
+	//                                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                                 (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	//                             )
+	//                         )? 
+	//                         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	//                     )
+	//                 ) 
+	//                 (
+	//                     (
+	//                         (typings+=FeatureTypingName typings+=FeatureTypingName*) | 
+	//                         (subsetting+=FeatureChainName subsetting+=FeatureChainName*) | 
+	//                         (references+=FeatureChainName references+=FeatureChainName*) | 
+	//                         (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
+	//                         (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
+	//                     ) 
+	//                     (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) 
+	//                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	//                 )+ 
+	//                 (
+	//                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	//                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)? 
+	//                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	//                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	//                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	//                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)?
+	//                 )+
+	//             )
+	//         )? 
+	//         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
+	//         elements+=FunctionBodyElement* 
+	//         resultExpressionParameter+=ResultExpression?
+	//     )
+	//
+	// protected void sequence_BasicFeaturePrefix_ChainingPart_CrossFeatureChain_DifferencingPart_DisjoiningPart_EndFeaturePrefix_ExtendedPrefix_FeatureConjugationPart_FeatureDeclaration_FeaturePrefix_FeatureValue_Identification_IntersectingPart_Invariant_InvertingPart_MemberPrefix_MultiplicityModifiers_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(ISerializationContext context, Invariant semanticObject) { }
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GeneralBodyElements returns Step
+	 *     PackageBodyElement returns Step
+	 *     TypeBodyElement returns Step
+	 *     NamespaceBodyElement returns Step
+	 *     FunctionBodyElement returns Step
+	 *     RelationshipBodyElement returns Step
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
+	 *         isReturn?='return'? 
+	 *         isMember?='member'? 
+	 *         (
+	 *             (isConstantEnd?='const'? isEnd?='end' crossingFeature+=CrossingFeature?) | 
+	 *             (
+	 *                 direction=FeatureDirection? 
+	 *                 isDerived?='derived'? 
+	 *                 isAbstract?='abstract'? 
+	 *                 (isComposite?='composite' | isPortion?='portion')? 
+	 *                 (isVariable?='var' | isConstantBasic?='const')?
+	 *             )
+	 *         ) 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
+	 *         (
+	 *             (
+	 *                 (
+	 *                     (isSufficient?='all' originalType=QualifiedName) | 
+	 *                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	 *                     (
+	 *                         isSufficient?='all' 
+	 *                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	 *                         ((MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | originalType=QualifiedName)?
+	 *                     )
+	 *                 ) 
+	 *                 (
+	 *                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	 *                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	 *                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	 *                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	 *                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)? 
+	 *                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)?
+	 *                 )+
+	 *             ) | 
+	 *             (
+	 *                 (
+	 *                     isSufficient?='all' | 
+	 *                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	 *                     (
+	 *                         isSufficient?='all' 
+	 *                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	 *                         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	 *                     )
+	 *                 )? 
+	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
+	 *                 (
+	 *                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	 *                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	 *                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	 *                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	 *                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)? 
+	 *                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)?
+	 *                 )+
+	 *             ) | 
+	 *             (
+	 *                 (
+	 *                     isSufficient?='all' | 
+	 *                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	 *                     (
+	 *                         isSufficient?='all' 
+	 *                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	 *                         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	 *                     ) | 
+	 *                     (
+	 *                         (
+	 *                             isSufficient?='all' | 
+	 *                             (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	 *                             (
+	 *                                 isSufficient?='all' 
+	 *                                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	 *                                 (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	 *                             )
+	 *                         )? 
+	 *                         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	 *                     )
+	 *                 ) 
+	 *                 (
+	 *                     (
+	 *                         (typings+=FeatureTypingName typings+=FeatureTypingName*) | 
+	 *                         (subsetting+=FeatureChainName subsetting+=FeatureChainName?) | 
+	 *                         (references+=FeatureChainName references+=FeatureChainName*) | 
+	 *                         (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
+	 *                         (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
+	 *                     ) 
+	 *                     (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) 
+	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	 *                 )+ 
+	 *                 (
+	 *                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	 *                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	 *                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	 *                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	 *                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)? 
+	 *                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)?
+	 *                 )+
+	 *             )
+	 *         )? 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
+	 *         elements+=TypeBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_BasicFeaturePrefix_ChainingPart_CrossFeatureChain_DifferencingPart_DisjoiningPart_EndFeaturePrefix_ExtendedPrefix_FeatureConjugationPart_FeatureDeclaration_FeaturePrefix_FeatureValue_Identification_IntersectingPart_InvertingPart_MemberPrefix_MultiplicityModifiers_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_ReferenceFeatureChain_Step_SubsettingFeatureChain_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(ISerializationContext context, Step semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	// This method is commented out because it has the same signature as another method in this class.
+	// This is probably a bug in Xtext's serializer, please report it here: 
+	// https://bugs.eclipse.org/bugs/enter_bug.cgi?product=TMF
+	//
+	// Contexts:
+	//     FeatureElement returns Step
+	//     Step returns Step
+	//
+	// Constraint:
+	//     (
+	//         visibility=VisibilityIndicator? 
+	//         isVariant?='variant'? 
+	//         isReturn?='return'? 
+	//         isMember?='member'? 
+	//         (
+	//             (isConstantEnd?='const'? isEnd?='end' crossingFeature+=CrossingFeature?) | 
+	//             (
+	//                 direction=FeatureDirection? 
+	//                 isDerived?='derived'? 
+	//                 isAbstract?='abstract'? 
+	//                 (isComposite?='composite' | isPortion?='portion')? 
+	//                 (isVariable?='var' | isConstantBasic?='const')?
+	//             )
+	//         ) 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
+	//         (
+	//             (
+	//                 (
+	//                     (isSufficient?='all' originalType=QualifiedName) | 
+	//                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                     (
+	//                         isSufficient?='all' 
+	//                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                         ((MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | originalType=QualifiedName)?
+	//                     )
+	//                 ) 
+	//                 (
+	//                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	//                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)? 
+	//                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	//                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	//                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	//                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)?
+	//                 )+
+	//             ) | 
+	//             (
+	//                 (
+	//                     isSufficient?='all' | 
+	//                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                     (
+	//                         isSufficient?='all' 
+	//                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	//                     )
+	//                 )? 
+	//                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
+	//                 (
+	//                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	//                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)? 
+	//                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	//                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	//                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	//                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)?
+	//                 )+
+	//             ) | 
+	//             (
+	//                 (
+	//                     isSufficient?='all' | 
+	//                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                     (
+	//                         isSufficient?='all' 
+	//                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	//                     ) | 
+	//                     (
+	//                         (
+	//                             isSufficient?='all' | 
+	//                             (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                             (
+	//                                 isSufficient?='all' 
+	//                                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                                 (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	//                             )
+	//                         )? 
+	//                         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	//                     )
+	//                 ) 
+	//                 (
+	//                     (
+	//                         (typings+=FeatureTypingName typings+=FeatureTypingName*) | 
+	//                         (subsetting+=FeatureChainName subsetting+=FeatureChainName*) | 
+	//                         (references+=FeatureChainName references+=FeatureChainName*) | 
+	//                         (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
+	//                         (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
+	//                     ) 
+	//                     (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) 
+	//                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	//                 )+ 
+	//                 (
+	//                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	//                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)? 
+	//                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	//                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	//                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	//                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)?
+	//                 )+
+	//             )
+	//         )? 
+	//         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
+	//         elements+=TypeBodyElement*
+	//     )
+	//
+	// protected void sequence_BasicFeaturePrefix_ChainingPart_CrossFeatureChain_DifferencingPart_DisjoiningPart_EndFeaturePrefix_ExtendedPrefix_FeatureConjugationPart_FeatureDeclaration_FeaturePrefix_FeatureValue_Identification_IntersectingPart_InvertingPart_MemberPrefix_MultiplicityModifiers_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_ReferenceFeatureChain_Step_SubsettingFeatureChain_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(ISerializationContext context, Step semanticObject) { }
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GeneralBodyElements returns Succession
+	 *     PackageBodyElement returns Succession
+	 *     TypeBodyElement returns Succession
+	 *     NamespaceBodyElement returns Succession
+	 *     FunctionBodyElement returns Succession
+	 *     RelationshipBodyElement returns Succession
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
+	 *         isReturn?='return'? 
+	 *         isMember?='member'? 
+	 *         (
+	 *             (isConstantEnd?='const'? isEnd?='end' crossingFeature+=CrossingFeature?) | 
+	 *             (
+	 *                 direction=FeatureDirection? 
+	 *                 isDerived?='derived'? 
+	 *                 isAbstract?='abstract'? 
+	 *                 (isComposite?='composite' | isPortion?='portion')? 
+	 *                 (isVariable?='var' | isConstantBasic?='const')?
+	 *             )
+	 *         ) 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
+	 *         (
+	 *             (isSufficient?='all'? (isFirst?='first'? connectorPart+=ConnectorEnd connectorPart+=ConnectorEnd)?) | 
+	 *             (
+	 *                 (
+	 *                     (isSufficient?='all' originalType=QualifiedName) | 
+	 *                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	 *                     (
+	 *                         isSufficient?='all' 
+	 *                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	 *                         ((MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | originalType=QualifiedName)?
+	 *                     )
+	 *                 ) 
+	 *                 (
+	 *                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	 *                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	 *                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	 *                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	 *                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)? 
+	 *                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)?
+	 *                 )+ 
+	 *                 (isFirst?='first' connectorPart+=ConnectorEnd connectorPart+=ConnectorEnd)?
+	 *             ) | 
+	 *             (
+	 *                 (
+	 *                     isSufficient?='all' | 
+	 *                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	 *                     (
+	 *                         isSufficient?='all' 
+	 *                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	 *                         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	 *                     )
+	 *                 )? 
+	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
+	 *                 (
+	 *                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	 *                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	 *                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	 *                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	 *                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)? 
+	 *                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)?
+	 *                 )+ 
+	 *                 (isFirst?='first' connectorPart+=ConnectorEnd connectorPart+=ConnectorEnd)?
+	 *             ) | 
+	 *             (
+	 *                 (
+	 *                     isSufficient?='all' | 
+	 *                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	 *                     (
+	 *                         isSufficient?='all' 
+	 *                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	 *                         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	 *                     ) | 
+	 *                     (
+	 *                         (
+	 *                             isSufficient?='all' | 
+	 *                             (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	 *                             (
+	 *                                 isSufficient?='all' 
+	 *                                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	 *                                 (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	 *                             )
+	 *                         )? 
+	 *                         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	 *                     )
+	 *                 ) 
+	 *                 (
+	 *                     (
+	 *                         (typings+=FeatureTypingName typings+=FeatureTypingName*) | 
+	 *                         (subsetting+=FeatureChainName subsetting+=FeatureChainName?) | 
+	 *                         (references+=FeatureChainName references+=FeatureChainName*) | 
+	 *                         (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
+	 *                         (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
+	 *                     ) 
+	 *                     (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) 
+	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	 *                 )+ 
+	 *                 (
+	 *                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	 *                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	 *                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	 *                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	 *                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)? 
+	 *                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)?
+	 *                 )+ 
+	 *                 (isFirst?='first' connectorPart+=ConnectorEnd connectorPart+=ConnectorEnd)?
+	 *             )
+	 *         ) 
+	 *         elements+=TypeBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_BasicFeaturePrefix_ChainingPart_CrossFeatureChain_DifferencingPart_DisjoiningPart_EndFeaturePrefix_ExtendedPrefix_FeatureConjugationPart_FeatureDeclaration_FeaturePrefix_Identification_IntersectingPart_InvertingPart_MemberPrefix_MultiplicityModifiers_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_Succession_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(ISerializationContext context, Succession semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	// This method is commented out because it has the same signature as another method in this class.
+	// This is probably a bug in Xtext's serializer, please report it here: 
+	// https://bugs.eclipse.org/bugs/enter_bug.cgi?product=TMF
+	//
+	// Contexts:
+	//     FeatureElement returns Succession
+	//     Succession returns Succession
+	//
+	// Constraint:
+	//     (
+	//         visibility=VisibilityIndicator? 
+	//         isVariant?='variant'? 
+	//         isReturn?='return'? 
+	//         isMember?='member'? 
+	//         (
+	//             (isConstantEnd?='const'? isEnd?='end' crossingFeature+=CrossingFeature?) | 
+	//             (
+	//                 direction=FeatureDirection? 
+	//                 isDerived?='derived'? 
+	//                 isAbstract?='abstract'? 
+	//                 (isComposite?='composite' | isPortion?='portion')? 
+	//                 (isVariable?='var' | isConstantBasic?='const')?
+	//             )
+	//         ) 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
+	//         (
+	//             (isSufficient?='all'? (isFirst?='first'? connectorPart+=ConnectorEnd connectorPart+=ConnectorEnd)?) | 
+	//             (
+	//                 (
+	//                     (isSufficient?='all' originalType=QualifiedName) | 
+	//                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                     (
+	//                         isSufficient?='all' 
+	//                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                         ((MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | originalType=QualifiedName)?
+	//                     )
+	//                 ) 
+	//                 (
+	//                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	//                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)? 
+	//                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	//                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	//                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	//                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)?
+	//                 )+ 
+	//                 (isFirst?='first' connectorPart+=ConnectorEnd connectorPart+=ConnectorEnd)?
+	//             ) | 
+	//             (
+	//                 (
+	//                     isSufficient?='all' | 
+	//                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                     (
+	//                         isSufficient?='all' 
+	//                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	//                     )
+	//                 )? 
+	//                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
+	//                 (
+	//                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	//                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)? 
+	//                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	//                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	//                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	//                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)?
+	//                 )+ 
+	//                 (isFirst?='first' connectorPart+=ConnectorEnd connectorPart+=ConnectorEnd)?
+	//             ) | 
+	//             (
+	//                 (
+	//                     isSufficient?='all' | 
+	//                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                     (
+	//                         isSufficient?='all' 
+	//                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	//                     ) | 
+	//                     (
+	//                         (
+	//                             isSufficient?='all' | 
+	//                             (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                             (
+	//                                 isSufficient?='all' 
+	//                                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                                 (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	//                             )
+	//                         )? 
+	//                         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	//                     )
+	//                 ) 
+	//                 (
+	//                     (
+	//                         (typings+=FeatureTypingName typings+=FeatureTypingName*) | 
+	//                         (subsetting+=FeatureChainName subsetting+=FeatureChainName*) | 
+	//                         (references+=FeatureChainName references+=FeatureChainName*) | 
+	//                         (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
+	//                         (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
+	//                     ) 
+	//                     (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) 
+	//                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	//                 )+ 
+	//                 (
+	//                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	//                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)? 
+	//                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	//                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	//                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	//                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)?
+	//                 )+ 
+	//                 (isFirst?='first' connectorPart+=ConnectorEnd connectorPart+=ConnectorEnd)?
+	//             )
+	//         ) 
+	//         elements+=TypeBodyElement*
+	//     )
+	//
+	// protected void sequence_BasicFeaturePrefix_ChainingPart_CrossFeatureChain_DifferencingPart_DisjoiningPart_EndFeaturePrefix_ExtendedPrefix_FeatureConjugationPart_FeatureDeclaration_FeaturePrefix_Identification_IntersectingPart_InvertingPart_MemberPrefix_MultiplicityModifiers_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_Succession_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(ISerializationContext context, Succession semanticObject) { }
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GeneralBodyElements returns Feature
+	 *     PackageBodyElement returns Feature
+	 *     TypeBodyElement returns Feature
+	 *     NamespaceBodyElement returns Feature
+	 *     FunctionBodyElement returns Feature
+	 *     RelationshipBodyElement returns Feature
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
+	 *         isReturn?='return'? 
+	 *         isMember?='member'? 
+	 *         (
+	 *             (isConstantEnd?='const'? isEnd?='end' crossingFeature+=CrossingFeature?) | 
+	 *             (
+	 *                 direction=FeatureDirection? 
+	 *                 isDerived?='derived'? 
+	 *                 isAbstract?='abstract'? 
+	 *                 (isComposite?='composite' | isPortion?='portion')? 
+	 *                 (isVariable?='var' | isConstantBasic?='const')?
+	 *             )
+	 *         ) 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
+	 *         (
+	 *             (
+	 *                 (
+	 *                     (isSufficient?='all' originalType=QualifiedName) | 
+	 *                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	 *                     (
+	 *                         isSufficient?='all' 
+	 *                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	 *                         ((MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | originalType=QualifiedName)?
+	 *                     )
+	 *                 ) 
+	 *                 (
+	 *                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	 *                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	 *                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	 *                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	 *                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)? 
+	 *                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)?
+	 *                 )+
+	 *             ) | 
+	 *             (
+	 *                 (
+	 *                     isSufficient?='all' | 
+	 *                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	 *                     (
+	 *                         isSufficient?='all' 
+	 *                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	 *                         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	 *                     )
+	 *                 )? 
+	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
+	 *                 (
+	 *                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	 *                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	 *                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	 *                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	 *                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)? 
+	 *                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)?
+	 *                 )+
+	 *             ) | 
+	 *             (
+	 *                 (
+	 *                     isSufficient?='all' | 
+	 *                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	 *                     (
+	 *                         isSufficient?='all' 
+	 *                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	 *                         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	 *                     ) | 
+	 *                     (
+	 *                         (
+	 *                             isSufficient?='all' | 
+	 *                             (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	 *                             (
+	 *                                 isSufficient?='all' 
+	 *                                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	 *                                 (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	 *                             )
+	 *                         )? 
+	 *                         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	 *                     )
+	 *                 ) 
+	 *                 (
+	 *                     (
+	 *                         (typings+=FeatureTypingName typings+=FeatureTypingName*) | 
+	 *                         (subsetting+=FeatureChainName subsetting+=FeatureChainName?) | 
+	 *                         (references+=FeatureChainName references+=FeatureChainName*) | 
+	 *                         (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
+	 *                         (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
+	 *                     ) 
+	 *                     (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) 
+	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	 *                 )+ 
+	 *                 (
+	 *                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	 *                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	 *                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	 *                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	 *                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)? 
+	 *                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)?
+	 *                 )+
+	 *             )
+	 *         )? 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
+	 *         elements+=TypeBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_BasicFeaturePrefix_ChainingPart_CrossFeatureChain_DifferencingPart_DisjoiningPart_EndFeaturePrefix_ExtendedPrefix_Feature_FeatureConjugationPart_FeatureDeclaration_FeaturePrefix_FeatureValue_Identification_IntersectingPart_InvertingPart_MemberPrefix_MultiplicityModifiers_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(ISerializationContext context, Feature semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	// This method is commented out because it has the same signature as another method in this class.
+	// This is probably a bug in Xtext's serializer, please report it here: 
+	// https://bugs.eclipse.org/bugs/enter_bug.cgi?product=TMF
+	//
+	// Contexts:
+	//     FeatureElement returns Feature
+	//     Feature returns Feature
+	//
+	// Constraint:
+	//     (
+	//         visibility=VisibilityIndicator? 
+	//         isVariant?='variant'? 
+	//         isReturn?='return'? 
+	//         isMember?='member'? 
+	//         (
+	//             (isConstantEnd?='const'? isEnd?='end' crossingFeature+=CrossingFeature?) | 
+	//             (
+	//                 direction=FeatureDirection? 
+	//                 isDerived?='derived'? 
+	//                 isAbstract?='abstract'? 
+	//                 (isComposite?='composite' | isPortion?='portion')? 
+	//                 (isVariable?='var' | isConstantBasic?='const')?
+	//             )
+	//         ) 
+	//         prefixMetadataExtension+=PREFIXNAME_TEXT* 
+	//         (
+	//             (
+	//                 (
+	//                     (isSufficient?='all' originalType=QualifiedName) | 
+	//                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                     (
+	//                         isSufficient?='all' 
+	//                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                         ((MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | originalType=QualifiedName)?
+	//                     )
+	//                 ) 
+	//                 (
+	//                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	//                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)? 
+	//                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	//                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	//                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	//                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)?
+	//                 )+
+	//             ) | 
+	//             (
+	//                 (
+	//                     isSufficient?='all' | 
+	//                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                     (
+	//                         isSufficient?='all' 
+	//                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	//                     )
+	//                 )? 
+	//                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))? 
+	//                 (
+	//                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	//                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)? 
+	//                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	//                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	//                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	//                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)?
+	//                 )+
+	//             ) | 
+	//             (
+	//                 (
+	//                     isSufficient?='all' | 
+	//                     (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                     (
+	//                         isSufficient?='all' 
+	//                         ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                         (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	//                     ) | 
+	//                     (
+	//                         (
+	//                             isSufficient?='all' | 
+	//                             (isSufficient?='all' MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	//                             (
+	//                                 isSufficient?='all' 
+	//                                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	//                                 (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	//                             )
+	//                         )? 
+	//                         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	//                     )
+	//                 ) 
+	//                 (
+	//                     (
+	//                         (typings+=FeatureTypingName typings+=FeatureTypingName*) | 
+	//                         (subsetting+=FeatureChainName subsetting+=FeatureChainName*) | 
+	//                         (references+=FeatureChainName references+=FeatureChainName*) | 
+	//                         (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
+	//                         (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
+	//                     ) 
+	//                     (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) 
+	//                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	//                 )+ 
+	//                 (
+	//                     (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	//                     (featuringType+=FeatureChainName featuringType+=FeatureChainName*)? 
+	//                     (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	//                     (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	//                     (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	//                     (disjoining+=FeatureChainName disjoining+=FeatureChainName*)?
+	//                 )+
+	//             )
+	//         )? 
+	//         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
+	//         elements+=TypeBodyElement*
+	//     )
+	//
+	// protected void sequence_BasicFeaturePrefix_ChainingPart_CrossFeatureChain_DifferencingPart_DisjoiningPart_EndFeaturePrefix_ExtendedPrefix_Feature_FeatureConjugationPart_FeatureDeclaration_FeaturePrefix_FeatureValue_Identification_IntersectingPart_InvertingPart_MemberPrefix_MultiplicityModifiers_MultiplicityRange_PrefixMetadata_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(ISerializationContext context, Feature semanticObject) { }
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     CrossingFeature returns CrossingFeature
+	 *
+	 * Constraint:
+	 *     (
+	 *         direction=FeatureDirection? 
+	 *         isDerived?='derived'? 
+	 *         isAbstract?='abstract'? 
+	 *         (isComposite?='composite' | isPortion?='portion')? 
+	 *         (isVariable?='var' | isConstantBasic?='const')? 
+	 *         isSufficient?='all'? 
+	 *         (
+	 *             (
+	 *                 (
+	 *                     (((declaredShortName=Name declaredName=Name?) | declaredName=Name) (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)) | 
+	 *                     (
+	 *                         (
+	 *                             (((declaredShortName=Name declaredName=Name?) | declaredName=Name) (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)) | 
+	 *                             (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	 *                         ) 
+	 *                         ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	 *                     ) | 
+	 *                     (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	 *                 ) 
+	 *                 (
+	 *                     (
+	 *                         (typings+=FeatureTypingName typings+=FeatureTypingName*) | 
+	 *                         (subsetting+=FeatureChainName subsetting+=FeatureChainName*) | 
+	 *                         (references+=FeatureChainName references+=FeatureChainName*) | 
+	 *                         (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
+	 *                         (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
+	 *                     ) 
+	 *                     (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) 
+	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	 *                 )+
+	 *             ) | 
+	 *             (
+	 *                 ((declaredShortName=Name declaredName=Name?) | declaredName=Name) 
+	 *                 ((MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | originalType=QualifiedName)
+	 *             ) | 
+	 *             (
+	 *                 (
+	 *                     (((declaredShortName=Name declaredName=Name?) | declaredName=Name) (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)) | 
+	 *                     (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)
+	 *                 ) 
+	 *                 ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))?
+	 *             ) | 
+	 *             (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?) | 
+	 *             originalType=QualifiedName
+	 *         )? 
+	 *         (
+	 *             (chainingFeature+=FeatureChainName | invertingFeature+=FeatureChainName)? 
+	 *             (disjoining+=FeatureChainName disjoining+=FeatureChainName*)? 
+	 *             (unioning+=FeatureChainName unioning+=FeatureChainName*)? 
+	 *             (intersecting+=FeatureChainName intersecting+=FeatureChainName*)? 
+	 *             (differencing+=FeatureChainName differencing+=FeatureChainName*)? 
+	 *             (featuringType+=FeatureChainName featuringType+=FeatureChainName*)?
+	 *         )+
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_BasicFeaturePrefix_ChainingPart_CrossFeatureChain_DifferencingPart_DisjoiningPart_FeatureConjugationPart_FeatureDeclaration_Identification_IntersectingPart_InvertingPart_MultiplicityModifiers_MultiplicityRange_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_TypeFeaturingPart_TypingFeatureTyping_UnioningPart(ISerializationContext context, CrossingFeature semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
 	
 	/**
 	 * <pre>
@@ -452,6 +3301,8 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     TypeBodyElement returns Behavior
 	 *     NamespaceBodyElement returns Behavior
 	 *     FunctionBodyElement returns Behavior
+	 *     RelationshipBodyElement returns Behavior
+	 *     MetadataBodyElement returns Behavior
 	 *     NonFeatureElement returns Behavior
 	 *
 	 * Constraint:
@@ -474,7 +3325,7 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     )
 	 * </pre>
 	 */
-	protected void sequence_Behavior_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Behavior semanticObject) {
+	protected void sequence_Behavior_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityRange_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Behavior semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -505,7 +3356,7 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//         elements+=TypeBodyElement*
 	//     )
 	//
-	// protected void sequence_Behavior_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Behavior semanticObject) { }
+	// protected void sequence_Behavior_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityRange_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Behavior semanticObject) { }
 	
 	/**
 	 * <pre>
@@ -515,6 +3366,8 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     TypeBodyElement returns Class
 	 *     NamespaceBodyElement returns Class
 	 *     FunctionBodyElement returns Class
+	 *     RelationshipBodyElement returns Class
+	 *     MetadataBodyElement returns Class
 	 *     NonFeatureElement returns Class
 	 *
 	 * Constraint:
@@ -537,7 +3390,7 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     )
 	 * </pre>
 	 */
-	protected void sequence_Class_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, dut.control.kermloc.kerMLOC.Class semanticObject) {
+	protected void sequence_Class_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityRange_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, dut.control.kermloc.kerMLOC.Class semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -568,7 +3421,7 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//         elements+=TypeBodyElement*
 	//     )
 	//
-	// protected void sequence_Class_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, dut.control.kermloc.kerMLOC.Class semanticObject) { }
+	// protected void sequence_Class_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityRange_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, dut.control.kermloc.kerMLOC.Class semanticObject) { }
 	
 	/**
 	 * <pre>
@@ -578,6 +3431,8 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     TypeBodyElement returns DataType
 	 *     NamespaceBodyElement returns DataType
 	 *     FunctionBodyElement returns DataType
+	 *     RelationshipBodyElement returns DataType
+	 *     MetadataBodyElement returns DataType
 	 *     NonFeatureElement returns DataType
 	 *
 	 * Constraint:
@@ -600,7 +3455,7 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     )
 	 * </pre>
 	 */
-	protected void sequence_ClassifierConjugationPart_ClassifierDeclaration_DataType_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, DataType semanticObject) {
+	protected void sequence_ClassifierConjugationPart_ClassifierDeclaration_DataType_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityRange_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, DataType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -631,7 +3486,7 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//         elements+=TypeBodyElement*
 	//     )
 	//
-	// protected void sequence_ClassifierConjugationPart_ClassifierDeclaration_DataType_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, DataType semanticObject) { }
+	// protected void sequence_ClassifierConjugationPart_ClassifierDeclaration_DataType_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityRange_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, DataType semanticObject) { }
 	
 	/**
 	 * <pre>
@@ -641,6 +3496,8 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     TypeBodyElement returns Function
 	 *     NamespaceBodyElement returns Function
 	 *     FunctionBodyElement returns Function
+	 *     RelationshipBodyElement returns Function
+	 *     MetadataBodyElement returns Function
 	 *     NonFeatureElement returns Function
 	 *
 	 * Constraint:
@@ -664,7 +3521,7 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     )
 	 * </pre>
 	 */
-	protected void sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Function_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Function semanticObject) {
+	protected void sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Function_Identification_IntersectingPart_MemberPrefix_MultiplicityRange_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Function semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -696,7 +3553,7 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//         resultExpressionParameter+=ResultExpression?
 	//     )
 	//
-	// protected void sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Function_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Function semanticObject) { }
+	// protected void sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Function_Identification_IntersectingPart_MemberPrefix_MultiplicityRange_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Function semanticObject) { }
 	
 	/**
 	 * <pre>
@@ -706,6 +3563,8 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     TypeBodyElement returns Interaction
 	 *     NamespaceBodyElement returns Interaction
 	 *     FunctionBodyElement returns Interaction
+	 *     RelationshipBodyElement returns Interaction
+	 *     MetadataBodyElement returns Interaction
 	 *     NonFeatureElement returns Interaction
 	 *
 	 * Constraint:
@@ -728,7 +3587,7 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     )
 	 * </pre>
 	 */
-	protected void sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_Interaction_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Interaction semanticObject) {
+	protected void sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_Interaction_IntersectingPart_MemberPrefix_MultiplicityRange_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Interaction semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -759,7 +3618,7 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//         elements+=TypeBodyElement*
 	//     )
 	//
-	// protected void sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_Interaction_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Interaction semanticObject) { }
+	// protected void sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_Interaction_IntersectingPart_MemberPrefix_MultiplicityRange_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Interaction semanticObject) { }
 	
 	/**
 	 * <pre>
@@ -769,6 +3628,8 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     TypeBodyElement returns Metaclass
 	 *     NamespaceBodyElement returns Metaclass
 	 *     FunctionBodyElement returns Metaclass
+	 *     RelationshipBodyElement returns Metaclass
+	 *     MetadataBodyElement returns Metaclass
 	 *     NonFeatureElement returns Metaclass
 	 *
 	 * Constraint:
@@ -791,7 +3652,7 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     )
 	 * </pre>
 	 */
-	protected void sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_Metaclass_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Metaclass semanticObject) {
+	protected void sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_Metaclass_MultiplicityRange_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Metaclass semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -822,7 +3683,7 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//         elements+=TypeBodyElement*
 	//     )
 	//
-	// protected void sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_Metaclass_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Metaclass semanticObject) { }
+	// protected void sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_Metaclass_MultiplicityRange_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Metaclass semanticObject) { }
 	
 	/**
 	 * <pre>
@@ -832,6 +3693,8 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     TypeBodyElement returns Predicate
 	 *     NamespaceBodyElement returns Predicate
 	 *     FunctionBodyElement returns Predicate
+	 *     RelationshipBodyElement returns Predicate
+	 *     MetadataBodyElement returns Predicate
 	 *     NonFeatureElement returns Predicate
 	 *
 	 * Constraint:
@@ -855,7 +3718,7 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     )
 	 * </pre>
 	 */
-	protected void sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_Predicate_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Predicate semanticObject) {
+	protected void sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityRange_Predicate_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Predicate semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -887,7 +3750,7 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//         resultExpressionParameter+=ResultExpression?
 	//     )
 	//
-	// protected void sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_Predicate_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Predicate semanticObject) { }
+	// protected void sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityRange_Predicate_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Predicate semanticObject) { }
 	
 	/**
 	 * <pre>
@@ -897,6 +3760,8 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     TypeBodyElement returns Structure
 	 *     NamespaceBodyElement returns Structure
 	 *     FunctionBodyElement returns Structure
+	 *     RelationshipBodyElement returns Structure
+	 *     MetadataBodyElement returns Structure
 	 *     NonFeatureElement returns Structure
 	 *
 	 * Constraint:
@@ -919,7 +3784,7 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     )
 	 * </pre>
 	 */
-	protected void sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_Structure_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Structure semanticObject) {
+	protected void sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityRange_PrefixMetadata_Structure_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Structure semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -950,7 +3815,7 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//         elements+=TypeBodyElement*
 	//     )
 	//
-	// protected void sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_Structure_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Structure semanticObject) { }
+	// protected void sequence_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityRange_PrefixMetadata_Structure_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Structure semanticObject) { }
 	
 	/**
 	 * <pre>
@@ -960,6 +3825,8 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     TypeBodyElement returns Classifier
 	 *     NamespaceBodyElement returns Classifier
 	 *     FunctionBodyElement returns Classifier
+	 *     RelationshipBodyElement returns Classifier
+	 *     MetadataBodyElement returns Classifier
 	 *     NonFeatureElement returns Classifier
 	 *
 	 * Constraint:
@@ -982,7 +3849,7 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     )
 	 * </pre>
 	 */
-	protected void sequence_Classifier_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Classifier semanticObject) {
+	protected void sequence_Classifier_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityRange_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Classifier semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1013,7 +3880,7 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//         elements+=TypeBodyElement*
 	//     )
 	//
-	// protected void sequence_Classifier_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Classifier semanticObject) { }
+	// protected void sequence_Classifier_ClassifierConjugationPart_ClassifierDeclaration_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityRange_PrefixMetadata_SubsettingFeatureChain_TypePrefix_UnioningPart(ISerializationContext context, Classifier semanticObject) { }
 	
 	/**
 	 * <pre>
@@ -1024,6 +3891,8 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     TypeBodyElement returns CodeAnnotation
 	 *     NamespaceBodyElement returns CodeAnnotation
 	 *     FunctionBodyElement returns CodeAnnotation
+	 *     RelationshipBodyElement returns CodeAnnotation
+	 *     MetadataBodyElement returns CodeAnnotation
 	 *     CodeAnnotation returns CodeAnnotation
 	 *
 	 * Constraint:
@@ -1044,6 +3913,8 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     TypeBodyElement returns Comment
 	 *     NamespaceBodyElement returns Comment
 	 *     FunctionBodyElement returns Comment
+	 *     RelationshipBodyElement returns Comment
+	 *     MetadataBodyElement returns Comment
 	 *     AnnotatingElement returns Comment
 	 *     Comment returns Comment
 	 *
@@ -1071,6 +3942,8 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     TypeBodyElement returns Type
 	 *     NamespaceBodyElement returns Type
 	 *     FunctionBodyElement returns Type
+	 *     RelationshipBodyElement returns Type
+	 *     MetadataBodyElement returns Type
 	 *     NonFeatureElement returns Type
 	 *
 	 * Constraint:
@@ -1093,7 +3966,7 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     )
 	 * </pre>
 	 */
-	protected void sequence_ConjugationPart_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_Type_TypePrefix_UnioningPart(ISerializationContext context, Type semanticObject) {
+	protected void sequence_ConjugationPart_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityRange_PrefixMetadata_SubsettingFeatureChain_Type_TypePrefix_UnioningPart(ISerializationContext context, Type semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1124,7 +3997,156 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//         elements+=TypeBodyElement*
 	//     )
 	//
-	// protected void sequence_ConjugationPart_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityBounds_PrefixMetadata_SubsettingFeatureChain_Type_TypePrefix_UnioningPart(ISerializationContext context, Type semanticObject) { }
+	// protected void sequence_ConjugationPart_DifferencingPart_DisjoiningPart_Identification_IntersectingPart_MemberPrefix_MultiplicityRange_PrefixMetadata_SubsettingFeatureChain_Type_TypePrefix_UnioningPart(ISerializationContext context, Type semanticObject) { }
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GeneralBodyElements returns Conjugation
+	 *     PackageBodyElement returns Conjugation
+	 *     TypeBodyElement returns Conjugation
+	 *     NamespaceBodyElement returns Conjugation
+	 *     FunctionBodyElement returns Conjugation
+	 *     RelationshipBodyElement returns Conjugation
+	 *     MetadataBodyElement returns Conjugation
+	 *     NonFeatureElement returns Conjugation
+	 *     Conjugation returns Conjugation
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
+	 *         (isConjugation?='conjugation' ((declaredShortName=Name declaredName=Name?) | declaredName=Name)?)? 
+	 *         conjugatedType=FeatureChainName 
+	 *         originalType=FeatureChainName 
+	 *         elements+=RelationshipBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_Conjugation_Identification_MemberPrefix(ISerializationContext context, Conjugation semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     ConnectorEnd returns ConnectorEnd
+	 *
+	 * Constraint:
+	 *     ((MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)? delcaredName=Name? refElement=FeatureChainName)
+	 * </pre>
+	 */
+	protected void sequence_ConnectorEnd_MultiplicityRange(ISerializationContext context, ConnectorEnd semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     PayloadParameter returns PayloadParameter
+	 *
+	 * Constraint:
+	 *     (
+	 *         (
+	 *             (
+	 *                 (((declaredShortName=Name declaredName=Name?) | declaredName=Name)? (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)?) | 
+	 *                 (payloadFeatureElement=FeatureChainName (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)?)
+	 *             ) 
+	 *             ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)?
+	 *         ) | 
+	 *         (
+	 *             ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
+	 *             (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression? payloadFeatureElement=FeatureChainName?)
+	 *         ) | 
+	 *         (
+	 *             (
+	 *                 (((declaredShortName=Name declaredName=Name?) | declaredName=Name)? (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)?) | 
+	 *                 (payloadFeatureElement=FeatureChainName (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)?)
+	 *             ) 
+	 *             ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?)) 
+	 *             ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)?
+	 *         ) | 
+	 *         (
+	 *             (
+	 *                 (((declaredShortName=Name declaredName=Name?) | declaredName=Name)? (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)?) | 
+	 *                 (
+	 *                     (
+	 *                         (((declaredShortName=Name declaredName=Name?) | declaredName=Name)? (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)?) | 
+	 *                         (payloadFeatureElement=FeatureChainName (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)?)
+	 *                     ) 
+	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
+	 *                 ) | 
+	 *                 (payloadFeatureElement=FeatureChainName (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)?)
+	 *             ) 
+	 *             (
+	 *                 (
+	 *                     (typings+=FeatureTypingName typings+=FeatureTypingName*) | 
+	 *                     (subsetting+=FeatureChainName subsetting+=FeatureChainName*) | 
+	 *                     (references+=FeatureChainName references+=FeatureChainName*) | 
+	 *                     (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
+	 *                     (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
+	 *                 ) 
+	 *                 (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)? 
+	 *                 (
+	 *                     (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)? 
+	 *                     ((isOrdered?='ordered' isNonunique?='nonunique'?) | (isNonunique?='nonunique' isOrdered?='ordered'?))
+	 *                 )?
+	 *             )+ 
+	 *             (
+	 *                 (
+	 *                     (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)? 
+	 *                     ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)?
+	 *                 ) | 
+	 *                 (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression? payloadFeatureElement=FeatureChainName?)
+	 *             )?
+	 *         ) | 
+	 *         payloadFeatureElement=FeatureChainName | 
+	 *         (
+	 *             payloadFeatureElement=FeatureChainName 
+	 *             (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression? payloadFeatureElement=FeatureChainName?)
+	 *         )
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_CrossFeatureChain_FeatureValue_Identification_MultiplicityModifiers_MultiplicityRange_PayloadFeature_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_TypingFeatureTyping(ISerializationContext context, PayloadParameter semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     MetadataBodyElement returns MetadataBodyFeature
+	 *     MetadataBodyFeature returns MetadataBodyFeature
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
+	 *         redefinedFeature+=FeatureChainName 
+	 *         (
+	 *             (
+	 *                 (typings+=FeatureTypingName typings+=FeatureTypingName*) | 
+	 *                 (subsetting+=FeatureChainName subsetting+=FeatureChainName*) | 
+	 *                 (references+=FeatureChainName references+=FeatureChainName*) | 
+	 *                 (crosses+=FeatureChainName crosses+=FeatureChainName*) | 
+	 *                 (redefinitions+=FeatureChainName redefinitions+=FeatureChainName*)
+	 *             ) 
+	 *             (MultiLow=MultiplicityExpression MultiHigh=MultiplicityExpression?)? 
+	 *             (isOrdered?='ordered' isNonunique?='nonunique'?)? 
+	 *             (isNonunique?='nonunique' isOrdered?='ordered'?)?
+	 *         )* 
+	 *         ((isInitial?=':=' | (isDefault?='default' isInitial?=':='?))? valuePart=Expression)? 
+	 *         elements+=MetadataBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_CrossFeatureChain_FeatureValue_MemberPrefix_MetadataBodyFeature_MultiplicityModifiers_MultiplicityRange_RedefinitionFeatureChain_ReferenceFeatureChain_SubsettingFeatureChain_TypingFeatureTyping(ISerializationContext context, MetadataBodyFeature semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
 	
 	/**
 	 * <pre>
@@ -1134,6 +4156,8 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     TypeBodyElement returns Dependency
 	 *     NamespaceBodyElement returns Dependency
 	 *     FunctionBodyElement returns Dependency
+	 *     RelationshipBodyElement returns Dependency
+	 *     MetadataBodyElement returns Dependency
 	 *     NonFeatureElement returns Dependency
 	 *
 	 * Constraint:
@@ -1146,7 +4170,7 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         client+=QualifiedName* 
 	 *         supplier+=QualifiedName 
 	 *         supplier+=QualifiedName* 
-	 *         elements+=AnnotatingElement*
+	 *         elements+=RelationshipBodyElement*
 	 *     )
 	 * </pre>
 	 */
@@ -1172,10 +4196,39 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	//         client+=QualifiedName* 
 	//         supplier+=QualifiedName 
 	//         supplier+=QualifiedName* 
-	//         elements+=AnnotatingElement*
+	//         elements+=RelationshipBodyElement*
 	//     )
 	//
 	// protected void sequence_Dependency_Identification_MemberPrefix_PrefixMetadata(ISerializationContext context, Dependency semanticObject) { }
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GeneralBodyElements returns Disjoining
+	 *     PackageBodyElement returns Disjoining
+	 *     TypeBodyElement returns Disjoining
+	 *     NamespaceBodyElement returns Disjoining
+	 *     FunctionBodyElement returns Disjoining
+	 *     RelationshipBodyElement returns Disjoining
+	 *     MetadataBodyElement returns Disjoining
+	 *     NonFeatureElement returns Disjoining
+	 *     Disjoining returns Disjoining
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
+	 *         (isDisjoining?='disjoining' ((declaredShortName=Name declaredName=Name?) | declaredName=Name)?)? 
+	 *         typeDisjoined=FeatureChainName 
+	 *         disjoiningType=FeatureChainName 
+	 *         elements+=RelationshipBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_Disjoining_Identification_MemberPrefix(ISerializationContext context, Disjoining semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
 	
 	/**
 	 * <pre>
@@ -1186,6 +4239,8 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     TypeBodyElement returns Documentation
 	 *     NamespaceBodyElement returns Documentation
 	 *     FunctionBodyElement returns Documentation
+	 *     RelationshipBodyElement returns Documentation
+	 *     MetadataBodyElement returns Documentation
 	 *     AnnotatingElement returns Documentation
 	 *     Documentation returns Documentation
 	 *
@@ -1222,11 +4277,71 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     GeneralBodyElements returns FeatureInverting
+	 *     PackageBodyElement returns FeatureInverting
+	 *     TypeBodyElement returns FeatureInverting
+	 *     NamespaceBodyElement returns FeatureInverting
+	 *     FunctionBodyElement returns FeatureInverting
+	 *     RelationshipBodyElement returns FeatureInverting
+	 *     MetadataBodyElement returns FeatureInverting
+	 *     NonFeatureElement returns FeatureInverting
+	 *     FeatureInverting returns FeatureInverting
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
+	 *         (isFeatureInverting?='inverting' ((declaredShortName=Name declaredName=Name?) | declaredName=Name)?)? 
+	 *         featureInverted=FeatureChainName 
+	 *         invertingFeature=FeatureChainName 
+	 *         elements+=RelationshipBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_FeatureInverting_Identification_MemberPrefix(ISerializationContext context, FeatureInverting semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GeneralBodyElements returns FeatureTyping
+	 *     PackageBodyElement returns FeatureTyping
+	 *     TypeBodyElement returns FeatureTyping
+	 *     NamespaceBodyElement returns FeatureTyping
+	 *     FunctionBodyElement returns FeatureTyping
+	 *     RelationshipBodyElement returns FeatureTyping
+	 *     MetadataBodyElement returns FeatureTyping
+	 *     NonFeatureElement returns FeatureTyping
+	 *     FeatureTyping returns FeatureTyping
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
+	 *         (isSpecialization?='specialization' ((declaredShortName=Name declaredName=Name?) | declaredName=Name)?)? 
+	 *         typedFeature=QualifiedName 
+	 *         typeName=FeatureChainName 
+	 *         elements+=RelationshipBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_FeatureTyping_Identification_MemberPrefix(ISerializationContext context, FeatureTyping semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     GeneralBodyElements returns LibraryPackage
 	 *     PackageBodyElement returns LibraryPackage
 	 *     TypeBodyElement returns LibraryPackage
 	 *     NamespaceBodyElement returns LibraryPackage
 	 *     FunctionBodyElement returns LibraryPackage
+	 *     RelationshipBodyElement returns LibraryPackage
+	 *     MetadataBodyElement returns LibraryPackage
 	 *     NonFeatureElement returns LibraryPackage
 	 *     LibraryPackage returns LibraryPackage
 	 *
@@ -1250,11 +4365,44 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     GeneralBodyElements returns MetadataFeature
+	 *     AnnotatingBodyElement returns MetadataFeature
+	 *     PackageBodyElement returns MetadataFeature
+	 *     TypeBodyElement returns MetadataFeature
+	 *     NamespaceBodyElement returns MetadataFeature
+	 *     FunctionBodyElement returns MetadataFeature
+	 *     RelationshipBodyElement returns MetadataFeature
+	 *     MetadataBodyElement returns MetadataFeature
+	 *     AnnotatingElement returns MetadataFeature
+	 *     MetadataFeature returns MetadataFeature
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
+	 *         prefixMetadataExtension+=PREFIXNAME_TEXT* 
+	 *         ((declaredShortName=Name declaredName=Name?) | declaredName=Name)? 
+	 *         metadataTyping=QualifiedName 
+	 *         (annotatedElement+=QualifiedName annotatedElement+=QualifiedName*)? 
+	 *         elements+=MetadataBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_Identification_MemberPrefix_MetadataFeature_PrefixMetadata(ISerializationContext context, MetadataFeature semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     GeneralBodyElements returns Multiplicity
 	 *     PackageBodyElement returns Multiplicity
 	 *     TypeBodyElement returns Multiplicity
 	 *     NamespaceBodyElement returns Multiplicity
 	 *     FunctionBodyElement returns Multiplicity
+	 *     RelationshipBodyElement returns Multiplicity
+	 *     MetadataBodyElement returns Multiplicity
 	 *     NonFeatureElement returns Multiplicity
 	 *     Multiplicity returns Multiplicity
 	 *
@@ -1268,7 +4416,123 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     )
 	 * </pre>
 	 */
-	protected void sequence_Identification_MemberPrefix_Multiplicity_MultiplicityBounds_SubsettingFeatureChain(ISerializationContext context, Multiplicity semanticObject) {
+	protected void sequence_Identification_MemberPrefix_Multiplicity_MultiplicityRange_SubsettingFeatureChain(ISerializationContext context, Multiplicity semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GeneralBodyElements returns Redefinition
+	 *     PackageBodyElement returns Redefinition
+	 *     TypeBodyElement returns Redefinition
+	 *     NamespaceBodyElement returns Redefinition
+	 *     FunctionBodyElement returns Redefinition
+	 *     RelationshipBodyElement returns Redefinition
+	 *     MetadataBodyElement returns Redefinition
+	 *     NonFeatureElement returns Redefinition
+	 *     Redefinition returns Redefinition
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
+	 *         (isSpecialization?='specialization' ((declaredShortName=Name declaredName=Name?) | declaredName=Name)?)? 
+	 *         redefiningFeature=FeatureChainName 
+	 *         redefinedFeature=FeatureChainName 
+	 *         elements+=RelationshipBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_Identification_MemberPrefix_Redefinition(ISerializationContext context, Redefinition semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GeneralBodyElements returns Specialization
+	 *     PackageBodyElement returns Specialization
+	 *     TypeBodyElement returns Specialization
+	 *     NamespaceBodyElement returns Specialization
+	 *     FunctionBodyElement returns Specialization
+	 *     RelationshipBodyElement returns Specialization
+	 *     MetadataBodyElement returns Specialization
+	 *     NonFeatureElement returns Specialization
+	 *     Specialization returns Specialization
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
+	 *         (isSpecialization?='specialization' ((declaredShortName=Name declaredName=Name?) | declaredName=Name)?)? 
+	 *         specific=FeatureChainName 
+	 *         general=FeatureChainName 
+	 *         elements+=RelationshipBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_Identification_MemberPrefix_Specialization(ISerializationContext context, Specialization semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GeneralBodyElements returns Subclassification
+	 *     PackageBodyElement returns Subclassification
+	 *     TypeBodyElement returns Subclassification
+	 *     NamespaceBodyElement returns Subclassification
+	 *     FunctionBodyElement returns Subclassification
+	 *     RelationshipBodyElement returns Subclassification
+	 *     MetadataBodyElement returns Subclassification
+	 *     NonFeatureElement returns Subclassification
+	 *     Subclassification returns Subclassification
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
+	 *         (isSpecialization?='specialization' ((declaredShortName=Name declaredName=Name?) | declaredName=Name)?)? 
+	 *         subclassifier=QualifiedName 
+	 *         superclassifier=QualifiedName 
+	 *         elements+=RelationshipBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_Identification_MemberPrefix_Subclassification(ISerializationContext context, Subclassification semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GeneralBodyElements returns Subsetting
+	 *     PackageBodyElement returns Subsetting
+	 *     TypeBodyElement returns Subsetting
+	 *     NamespaceBodyElement returns Subsetting
+	 *     FunctionBodyElement returns Subsetting
+	 *     RelationshipBodyElement returns Subsetting
+	 *     MetadataBodyElement returns Subsetting
+	 *     NonFeatureElement returns Subsetting
+	 *     Subsetting returns Subsetting
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
+	 *         (isSpecialization?='specialization' ((declaredShortName=Name declaredName=Name?) | declaredName=Name)?)? 
+	 *         subsettingFeature=FeatureChainName 
+	 *         subsettedFeature=FeatureChainName 
+	 *         elements+=RelationshipBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_Identification_MemberPrefix_Subsetting(ISerializationContext context, Subsetting semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1282,6 +4546,8 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     TypeBodyElement returns TextualRepresentation
 	 *     NamespaceBodyElement returns TextualRepresentation
 	 *     FunctionBodyElement returns TextualRepresentation
+	 *     RelationshipBodyElement returns TextualRepresentation
+	 *     MetadataBodyElement returns TextualRepresentation
 	 *     AnnotatingElement returns TextualRepresentation
 	 *     TextualRepresentation returns TextualRepresentation
 	 *
@@ -1303,11 +4569,42 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     GeneralBodyElements returns TypeFeaturing
+	 *     PackageBodyElement returns TypeFeaturing
+	 *     TypeBodyElement returns TypeFeaturing
+	 *     NamespaceBodyElement returns TypeFeaturing
+	 *     FunctionBodyElement returns TypeFeaturing
+	 *     RelationshipBodyElement returns TypeFeaturing
+	 *     MetadataBodyElement returns TypeFeaturing
+	 *     NonFeatureElement returns TypeFeaturing
+	 *     TypeFeaturing returns TypeFeaturing
+	 *
+	 * Constraint:
+	 *     (
+	 *         visibility=VisibilityIndicator? 
+	 *         isVariant?='variant'? 
+	 *         (((declaredShortName=Name declaredName=Name?) | declaredName=Name)? isOf?='of')? 
+	 *         featureOfType=QualifiedName 
+	 *         featuringType=QualifiedName 
+	 *         elements+=RelationshipBodyElement*
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_Identification_MemberPrefix_TypeFeaturing(ISerializationContext context, TypeFeaturing semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     GeneralBodyElements returns Namespace
 	 *     PackageBodyElement returns Namespace
 	 *     TypeBodyElement returns Namespace
 	 *     NamespaceBodyElement returns Namespace
 	 *     FunctionBodyElement returns Namespace
+	 *     RelationshipBodyElement returns Namespace
+	 *     MetadataBodyElement returns Namespace
 	 *     NonFeatureElement returns Namespace
 	 *     Namespace returns Namespace
 	 *
@@ -1333,6 +4630,7 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     TypeBodyElement returns ImportElement
 	 *     NamespaceBodyElement returns ImportElement
 	 *     FunctionBodyElement returns ImportElement
+	 *     MetadataBodyElement returns ImportElement
 	 *     ImportElement returns ImportElement
 	 *
 	 * Constraint:
@@ -1360,6 +4658,8 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     TypeBodyElement returns Package
 	 *     NamespaceBodyElement returns Package
 	 *     FunctionBodyElement returns Package
+	 *     RelationshipBodyElement returns Package
+	 *     MetadataBodyElement returns Package
 	 *     NonFeatureElement returns Package
 	 *     Package returns Package
 	 *
@@ -1398,7 +4698,7 @@ public class KerMLOCSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     RootNamespace returns RootNamespace
 	 *
 	 * Constraint:
-	 *     elements+=GeneralBodyElements+
+	 *     elements+=NamespaceBodyElement+
 	 * </pre>
 	 */
 	protected void sequence_RootNamespace(ISerializationContext context, RootNamespace semanticObject) {

@@ -3,8 +3,8 @@
  */
 package dut.control.kermloc.kerMLOC.impl;
 
+import dut.control.kermloc.kerMLOC.EndFeaturePrefix;
 import dut.control.kermloc.kerMLOC.KerMLOCPackage;
-import dut.control.kermloc.kerMLOC.MultiplicityBounds;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -15,66 +15,66 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Multiplicity Bounds</b></em>'.
+ * An implementation of the model object '<em><b>End Feature Prefix</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dut.control.kermloc.kerMLOC.impl.MultiplicityBoundsImpl#getMultiLow <em>Multi Low</em>}</li>
- *   <li>{@link dut.control.kermloc.kerMLOC.impl.MultiplicityBoundsImpl#getMultiHigh <em>Multi High</em>}</li>
+ *   <li>{@link dut.control.kermloc.kerMLOC.impl.EndFeaturePrefixImpl#isIsConstantEnd <em>Is Constant End</em>}</li>
+ *   <li>{@link dut.control.kermloc.kerMLOC.impl.EndFeaturePrefixImpl#isIsEnd <em>Is End</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class MultiplicityBoundsImpl extends MinimalEObjectImpl.Container implements MultiplicityBounds
+public class EndFeaturePrefixImpl extends MinimalEObjectImpl.Container implements EndFeaturePrefix
 {
   /**
-   * The default value of the '{@link #getMultiLow() <em>Multi Low</em>}' attribute.
+   * The default value of the '{@link #isIsConstantEnd() <em>Is Constant End</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMultiLow()
+   * @see #isIsConstantEnd()
    * @generated
    * @ordered
    */
-  protected static final String MULTI_LOW_EDEFAULT = null;
+  protected static final boolean IS_CONSTANT_END_EDEFAULT = false;
 
   /**
-   * The cached value of the '{@link #getMultiLow() <em>Multi Low</em>}' attribute.
+   * The cached value of the '{@link #isIsConstantEnd() <em>Is Constant End</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMultiLow()
+   * @see #isIsConstantEnd()
    * @generated
    * @ordered
    */
-  protected String multiLow = MULTI_LOW_EDEFAULT;
+  protected boolean isConstantEnd = IS_CONSTANT_END_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getMultiHigh() <em>Multi High</em>}' attribute.
+   * The default value of the '{@link #isIsEnd() <em>Is End</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMultiHigh()
+   * @see #isIsEnd()
    * @generated
    * @ordered
    */
-  protected static final String MULTI_HIGH_EDEFAULT = null;
+  protected static final boolean IS_END_EDEFAULT = false;
 
   /**
-   * The cached value of the '{@link #getMultiHigh() <em>Multi High</em>}' attribute.
+   * The cached value of the '{@link #isIsEnd() <em>Is End</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMultiHigh()
+   * @see #isIsEnd()
    * @generated
    * @ordered
    */
-  protected String multiHigh = MULTI_HIGH_EDEFAULT;
+  protected boolean isEnd = IS_END_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected MultiplicityBoundsImpl()
+  protected EndFeaturePrefixImpl()
   {
     super();
   }
@@ -87,7 +87,7 @@ public class MultiplicityBoundsImpl extends MinimalEObjectImpl.Container impleme
   @Override
   protected EClass eStaticClass()
   {
-    return KerMLOCPackage.Literals.MULTIPLICITY_BOUNDS;
+    return KerMLOCPackage.eINSTANCE.getEndFeaturePrefix();
   }
 
   /**
@@ -96,9 +96,9 @@ public class MultiplicityBoundsImpl extends MinimalEObjectImpl.Container impleme
    * @generated
    */
   @Override
-  public String getMultiLow()
+  public boolean isIsConstantEnd()
   {
-    return multiLow;
+    return isConstantEnd;
   }
 
   /**
@@ -107,12 +107,12 @@ public class MultiplicityBoundsImpl extends MinimalEObjectImpl.Container impleme
    * @generated
    */
   @Override
-  public void setMultiLow(String newMultiLow)
+  public void setIsConstantEnd(boolean newIsConstantEnd)
   {
-    String oldMultiLow = multiLow;
-    multiLow = newMultiLow;
+    boolean oldIsConstantEnd = isConstantEnd;
+    isConstantEnd = newIsConstantEnd;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, KerMLOCPackage.MULTIPLICITY_BOUNDS__MULTI_LOW, oldMultiLow, multiLow));
+      eNotify(new ENotificationImpl(this, Notification.SET, KerMLOCPackage.END_FEATURE_PREFIX__IS_CONSTANT_END, oldIsConstantEnd, isConstantEnd));
   }
 
   /**
@@ -121,9 +121,9 @@ public class MultiplicityBoundsImpl extends MinimalEObjectImpl.Container impleme
    * @generated
    */
   @Override
-  public String getMultiHigh()
+  public boolean isIsEnd()
   {
-    return multiHigh;
+    return isEnd;
   }
 
   /**
@@ -132,12 +132,12 @@ public class MultiplicityBoundsImpl extends MinimalEObjectImpl.Container impleme
    * @generated
    */
   @Override
-  public void setMultiHigh(String newMultiHigh)
+  public void setIsEnd(boolean newIsEnd)
   {
-    String oldMultiHigh = multiHigh;
-    multiHigh = newMultiHigh;
+    boolean oldIsEnd = isEnd;
+    isEnd = newIsEnd;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, KerMLOCPackage.MULTIPLICITY_BOUNDS__MULTI_HIGH, oldMultiHigh, multiHigh));
+      eNotify(new ENotificationImpl(this, Notification.SET, KerMLOCPackage.END_FEATURE_PREFIX__IS_END, oldIsEnd, isEnd));
   }
 
   /**
@@ -150,10 +150,10 @@ public class MultiplicityBoundsImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case KerMLOCPackage.MULTIPLICITY_BOUNDS__MULTI_LOW:
-        return getMultiLow();
-      case KerMLOCPackage.MULTIPLICITY_BOUNDS__MULTI_HIGH:
-        return getMultiHigh();
+      case KerMLOCPackage.END_FEATURE_PREFIX__IS_CONSTANT_END:
+        return isIsConstantEnd();
+      case KerMLOCPackage.END_FEATURE_PREFIX__IS_END:
+        return isIsEnd();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -168,11 +168,11 @@ public class MultiplicityBoundsImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case KerMLOCPackage.MULTIPLICITY_BOUNDS__MULTI_LOW:
-        setMultiLow((String)newValue);
+      case KerMLOCPackage.END_FEATURE_PREFIX__IS_CONSTANT_END:
+        setIsConstantEnd((Boolean)newValue);
         return;
-      case KerMLOCPackage.MULTIPLICITY_BOUNDS__MULTI_HIGH:
-        setMultiHigh((String)newValue);
+      case KerMLOCPackage.END_FEATURE_PREFIX__IS_END:
+        setIsEnd((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -188,11 +188,11 @@ public class MultiplicityBoundsImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case KerMLOCPackage.MULTIPLICITY_BOUNDS__MULTI_LOW:
-        setMultiLow(MULTI_LOW_EDEFAULT);
+      case KerMLOCPackage.END_FEATURE_PREFIX__IS_CONSTANT_END:
+        setIsConstantEnd(IS_CONSTANT_END_EDEFAULT);
         return;
-      case KerMLOCPackage.MULTIPLICITY_BOUNDS__MULTI_HIGH:
-        setMultiHigh(MULTI_HIGH_EDEFAULT);
+      case KerMLOCPackage.END_FEATURE_PREFIX__IS_END:
+        setIsEnd(IS_END_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -208,10 +208,10 @@ public class MultiplicityBoundsImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case KerMLOCPackage.MULTIPLICITY_BOUNDS__MULTI_LOW:
-        return MULTI_LOW_EDEFAULT == null ? multiLow != null : !MULTI_LOW_EDEFAULT.equals(multiLow);
-      case KerMLOCPackage.MULTIPLICITY_BOUNDS__MULTI_HIGH:
-        return MULTI_HIGH_EDEFAULT == null ? multiHigh != null : !MULTI_HIGH_EDEFAULT.equals(multiHigh);
+      case KerMLOCPackage.END_FEATURE_PREFIX__IS_CONSTANT_END:
+        return isConstantEnd != IS_CONSTANT_END_EDEFAULT;
+      case KerMLOCPackage.END_FEATURE_PREFIX__IS_END:
+        return isEnd != IS_END_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -227,12 +227,12 @@ public class MultiplicityBoundsImpl extends MinimalEObjectImpl.Container impleme
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (MultiLow: ");
-    result.append(multiLow);
-    result.append(", MultiHigh: ");
-    result.append(multiHigh);
+    result.append(" (isConstantEnd: ");
+    result.append(isConstantEnd);
+    result.append(", isEnd: ");
+    result.append(isEnd);
     result.append(')');
     return result.toString();
   }
 
-} //MultiplicityBoundsImpl
+} //EndFeaturePrefixImpl

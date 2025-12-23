@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:Package" declaredName="OneToOneConnectorsModelToBeExecuted">
+    <elements xsi:type="kerMLOC:Documentation" body="/* &#xD;&#xA;&#x9; */"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="public" declaredName="WithoutConnectorsModelToBeExecuted::Wheel"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="public" declaredName="WithoutConnectorsModelToBeExecuted::BikeFork"/>
+    <elements xsi:type="kerMLOC:Classifier" declaredName="Bicycle">
+      <elements xsi:type="kerMLOC:Feature" declaredName="rollsOn" MultiLow="2">
+        <typings>Wheel</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="holdsWheel" MultiLow="*">
+        <typings>BikeFork</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Connector" declaredName="fixWheel">
+        <typings>BikeWheelFixed</typings>
+        <connectorPartBinary MultiLow="1" refElement="rollsOn"/>
+        <connectorPartBinary MultiLow="1" refElement="holdsWheel"/>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Association" declaredName="BikeWheelFixed">
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="wheel">
+        <typings>Wheel</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="fixedTo">
+        <typings>BikeFork</typings>
+      </elements>
+    </elements>
+  </elements>
+  <elements xsi:type="kerMLOC:Package" declaredName="OneToOneConnectorsExecution">
+    <elements xsi:type="kerMLOC:Documentation" body="/* &#xD;&#xA;&#x9; */"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Atoms" isNamespace="true"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="public" declaredName="OneToOneConnectorsModelToBeExecuted" isNamespace="true"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="public" declaredName="WithoutConnectorsExecution::MyWheel1"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="public" declaredName="WithoutConnectorsExecution::MyWheel2"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="public" declaredName="WithoutConnectorsExecution::MyWheel"/>
+    <elements xsi:type="kerMLOC:Classifier" declaredName="MyBikeFork1">
+      <prefixMetadataExtension>#atom</prefixMetadataExtension>
+      <subsetting>BikeFork</subsetting>
+    </elements>
+    <elements xsi:type="kerMLOC:Classifier" declaredName="MyBikeFork2">
+      <prefixMetadataExtension>#atom</prefixMetadataExtension>
+      <subsetting>BikeFork</subsetting>
+    </elements>
+    <elements xsi:type="kerMLOC:Classifier" declaredName="MyBikeFork">
+      <unioning>MyBikeFork1</unioning>
+      <unioning>MyBikeFork2</unioning>
+    </elements>
+    <elements xsi:type="kerMLOC:Association" declaredName="MyBikeWheel1_Fork1_BWF_Link">
+      <prefixMetadataExtension>#atom</prefixMetadataExtension>
+      <subsetting>BikeWheelFixed</subsetting>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true">
+        <typings>MyWheel1</typings>
+        <redefinitions>wheel</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true">
+        <typings>MyBikeFork1</typings>
+        <redefinitions>fixedTo</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Association" declaredName="MyBikeWheel2_Fork2_BWF_Link">
+      <prefixMetadataExtension>#atom</prefixMetadataExtension>
+      <subsetting>BikeWheelFixed</subsetting>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true">
+        <typings>MyWheel2</typings>
+        <redefinitions>wheel</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true">
+        <typings>MyBikeFork2</typings>
+        <redefinitions>fixedTo</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Classifier" declaredName="MyBikeWheel_Fork_BWF_Link">
+      <unioning>MyBikeWheel1_Fork1_BWF_Link</unioning>
+      <unioning>MyBikeWheel2_Fork2_BWF_Link</unioning>
+    </elements>
+    <elements xsi:type="kerMLOC:Classifier" declaredName="MyBike">
+      <prefixMetadataExtension>#atom</prefixMetadataExtension>
+      <subsetting>Bicycle</subsetting>
+      <elements xsi:type="kerMLOC:Feature">
+        <typings>MyWheel</typings>
+        <redefinitions>rollsOn</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature">
+        <typings>MyBikeFork</typings>
+        <redefinitions>holdsWheel</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Connector" MultiLow="2">
+        <typings>MyBikeWheel_Fork_BWF_Link</typings>
+        <redefinitions>fixWheel</redefinitions>
+        <connectorPartBinary MultiLow="1" refElement="rollsOn"/>
+        <connectorPartBinary MultiLow="1" refElement="holdsWheel"/>
+      </elements>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

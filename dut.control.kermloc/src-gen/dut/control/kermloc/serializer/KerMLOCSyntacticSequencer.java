@@ -26,59 +26,153 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_AssociationStructure_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__;
 	protected AbstractElementAlias match_Association_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__;
 	protected AbstractElementAlias match_Behavior_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__;
+	protected AbstractElementAlias match_BinaryConnectorDeclaration_FromKeyword_0_0_1_q;
+	protected AbstractElementAlias match_BinaryConnectorDeclaration_FromKeyword_0_1_1_q;
+	protected AbstractElementAlias match_BindingConnector_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__;
+	protected AbstractElementAlias match_BooleanExpression_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_3__;
 	protected AbstractElementAlias match_Class_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__;
 	protected AbstractElementAlias match_ClassifierConjugationPart_ConjugatesKeyword_0_1_or_TildeKeyword_0_0;
 	protected AbstractElementAlias match_Classifier_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__;
 	protected AbstractElementAlias match_Comment_CommentKeyword_1_0_q;
 	protected AbstractElementAlias match_ConjugationPart_ConjugatesKeyword_0_1_or_TildeKeyword_0_0;
+	protected AbstractElementAlias match_Conjugation_ConjugatesKeyword_4_1_or_TildeKeyword_4_0;
+	protected AbstractElementAlias match_Conjugation_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__;
+	protected AbstractElementAlias match_ConnectorEnd_ColonColonGreaterThanSignKeyword_1_1_0_or_ReferencesKeyword_1_1_1;
+	protected AbstractElementAlias match_Connector_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__;
 	protected AbstractElementAlias match_DataType_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__;
 	protected AbstractElementAlias match_Dependency_FromKeyword_3_1_q;
 	protected AbstractElementAlias match_Dependency_SemicolonKeyword_9_0_or___LeftCurlyBracketKeyword_9_1_0_RightCurlyBracketKeyword_9_1_2__;
+	protected AbstractElementAlias match_Disjoining_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__;
+	protected AbstractElementAlias match_ExpressionClass_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_3__;
+	protected AbstractElementAlias match_FeatureConjugationPart_ConjugatesKeyword_0_1_or_TildeKeyword_0_0;
+	protected AbstractElementAlias match_FeatureInverting_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__;
+	protected AbstractElementAlias match_FeatureSpecialization_ColonColonGreaterThanSignKeyword_2_0_0_or_ReferencesKeyword_2_0_1;
+	protected AbstractElementAlias match_FeatureSpecialization_ColonGreaterThanSignGreaterThanSignKeyword_4_0_0_or_RedefinesKeyword_4_0_1;
+	protected AbstractElementAlias match_FeatureSpecialization_ColonGreaterThanSignKeyword_1_0_0_or_SpecializesKeyword_1_0_1_or_SubsetsKeyword_1_0_2;
+	protected AbstractElementAlias match_FeatureSpecialization_ColonKeyword_0_0_0_or___TypedKeyword_0_0_1_0_ByKeyword_0_0_1_1__;
+	protected AbstractElementAlias match_FeatureSpecialization_CrossesKeyword_3_0_1_or_EqualsSignGreaterThanSignKeyword_3_0_0;
+	protected AbstractElementAlias match_FeatureTyping_ColonKeyword_4_0_or___TypedKeyword_4_1_0_ByKeyword_4_1_1__;
+	protected AbstractElementAlias match_FeatureTyping_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__;
+	protected AbstractElementAlias match_FeatureValue_EqualsSignKeyword_0_2_1_0_q;
+	protected AbstractElementAlias match_Feature_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__;
+	protected AbstractElementAlias match_Flow_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__;
 	protected AbstractElementAlias match_Function_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_3__;
 	protected AbstractElementAlias match_ImportElement_SemicolonKeyword_7_0_or___LeftCurlyBracketKeyword_7_1_0_RightCurlyBracketKeyword_7_1_2__;
 	protected AbstractElementAlias match_Interaction_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__;
+	protected AbstractElementAlias match_Invariant_SemicolonKeyword_7_0_or___LeftCurlyBracketKeyword_7_1_0_RightCurlyBracketKeyword_7_1_3__;
+	protected AbstractElementAlias match_Invariant_TrueKeyword_4_0_q;
 	protected AbstractElementAlias match_LibraryPackage_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__;
 	protected AbstractElementAlias match_Metaclass_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__;
+	protected AbstractElementAlias match_MetadataBodyFeature_FeatureKeyword_1_q;
+	protected AbstractElementAlias match_MetadataBodyFeature_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__;
+	protected AbstractElementAlias match_MetadataBodyFeature___ColonGreaterThanSignGreaterThanSignKeyword_2_0_or_RedefinesKeyword_2_1__q;
+	protected AbstractElementAlias match_MetadataFeature_ColonKeyword_3_1_0_or___DefinedKeyword_3_1_1_0_ByKeyword_3_1_1_1__;
+	protected AbstractElementAlias match_MetadataFeature_CommercialAtKeyword_2_1_or_MetadataKeyword_2_0;
+	protected AbstractElementAlias match_MetadataFeature_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__;
+	protected AbstractElementAlias match_MetadataFeature___ColonKeyword_3_1_0_or___DefinedKeyword_3_1_1_0_ByKeyword_3_1_1_1____q;
 	protected AbstractElementAlias match_Multiplicity_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__;
 	protected AbstractElementAlias match_Namespace_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__;
 	protected AbstractElementAlias match_Package_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__;
 	protected AbstractElementAlias match_Predicate_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_3__;
+	protected AbstractElementAlias match_Redefinition_ColonGreaterThanSignGreaterThanSignKeyword_4_0_or_RedefinesKeyword_4_1;
+	protected AbstractElementAlias match_Redefinition_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__;
 	protected AbstractElementAlias match_SpecializationPart_ColonGreaterThanSignKeyword_0_0_or_SpecializesKeyword_0_1;
+	protected AbstractElementAlias match_Specialization_ColonGreaterThanSignKeyword_4_0_or_SpecializesKeyword_4_1;
+	protected AbstractElementAlias match_Specialization_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__;
+	protected AbstractElementAlias match_Step_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__;
 	protected AbstractElementAlias match_Structure_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__;
+	protected AbstractElementAlias match_Subclassification_ColonGreaterThanSignKeyword_4_0_or_SpecializesKeyword_4_1;
+	protected AbstractElementAlias match_Subclassification_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__;
 	protected AbstractElementAlias match_Subsets_ColonGreaterThanSignKeyword_0_0_or_SubsetsKeyword_0_1;
+	protected AbstractElementAlias match_Subsetting_ColonGreaterThanSignKeyword_4_0_or_SubsetsKeyword_4_1;
+	protected AbstractElementAlias match_Subsetting_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__;
+	protected AbstractElementAlias match_SuccessionFlow_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__;
+	protected AbstractElementAlias match_Succession_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__;
 	protected AbstractElementAlias match_SuperclassingPart_ColonGreaterThanSignKeyword_0_0_or_SpecializesKeyword_0_1;
 	protected AbstractElementAlias match_TextualRepresentation_RepKeyword_1_0_q;
+	protected AbstractElementAlias match_TypeFeaturing_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__;
 	protected AbstractElementAlias match_Type_SemicolonKeyword_8_0_or___LeftCurlyBracketKeyword_8_1_0_RightCurlyBracketKeyword_8_1_2__;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (KerMLOCGrammarAccess) access;
+		init0();
+		init1();
+	}
+	
+	private void init0() {
 		match_AliasElement_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getAliasElementAccess().getLeftCurlyBracketKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getAliasElementAccess().getRightCurlyBracketKeyword_6_1_2())), new TokenAlias(false, false, grammarAccess.getAliasElementAccess().getSemicolonKeyword_6_0()));
 		match_AssociationStructure_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getAssociationStructureAccess().getLeftCurlyBracketKeyword_5_1_0()), new TokenAlias(false, false, grammarAccess.getAssociationStructureAccess().getRightCurlyBracketKeyword_5_1_2())), new TokenAlias(false, false, grammarAccess.getAssociationStructureAccess().getSemicolonKeyword_5_0()));
 		match_Association_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getAssociationAccess().getLeftCurlyBracketKeyword_4_1_0()), new TokenAlias(false, false, grammarAccess.getAssociationAccess().getRightCurlyBracketKeyword_4_1_2())), new TokenAlias(false, false, grammarAccess.getAssociationAccess().getSemicolonKeyword_4_0()));
 		match_Behavior_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getBehaviorAccess().getLeftCurlyBracketKeyword_4_1_0()), new TokenAlias(false, false, grammarAccess.getBehaviorAccess().getRightCurlyBracketKeyword_4_1_2())), new TokenAlias(false, false, grammarAccess.getBehaviorAccess().getSemicolonKeyword_4_0()));
+		match_BinaryConnectorDeclaration_FromKeyword_0_0_1_q = new TokenAlias(false, true, grammarAccess.getBinaryConnectorDeclarationAccess().getFromKeyword_0_0_1());
+		match_BinaryConnectorDeclaration_FromKeyword_0_1_1_q = new TokenAlias(false, true, grammarAccess.getBinaryConnectorDeclarationAccess().getFromKeyword_0_1_1());
+		match_BindingConnector_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getBindingConnectorAccess().getLeftCurlyBracketKeyword_5_1_0()), new TokenAlias(false, false, grammarAccess.getBindingConnectorAccess().getRightCurlyBracketKeyword_5_1_2())), new TokenAlias(false, false, grammarAccess.getBindingConnectorAccess().getSemicolonKeyword_5_0()));
+		match_BooleanExpression_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_3__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getBooleanExpressionAccess().getLeftCurlyBracketKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getBooleanExpressionAccess().getRightCurlyBracketKeyword_6_1_3())), new TokenAlias(false, false, grammarAccess.getBooleanExpressionAccess().getSemicolonKeyword_6_0()));
 		match_Class_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getClassAccess().getLeftCurlyBracketKeyword_4_1_0()), new TokenAlias(false, false, grammarAccess.getClassAccess().getRightCurlyBracketKeyword_4_1_2())), new TokenAlias(false, false, grammarAccess.getClassAccess().getSemicolonKeyword_4_0()));
 		match_ClassifierConjugationPart_ConjugatesKeyword_0_1_or_TildeKeyword_0_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getClassifierConjugationPartAccess().getConjugatesKeyword_0_1()), new TokenAlias(false, false, grammarAccess.getClassifierConjugationPartAccess().getTildeKeyword_0_0()));
 		match_Classifier_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getClassifierAccess().getLeftCurlyBracketKeyword_4_1_0()), new TokenAlias(false, false, grammarAccess.getClassifierAccess().getRightCurlyBracketKeyword_4_1_2())), new TokenAlias(false, false, grammarAccess.getClassifierAccess().getSemicolonKeyword_4_0()));
 		match_Comment_CommentKeyword_1_0_q = new TokenAlias(false, true, grammarAccess.getCommentAccess().getCommentKeyword_1_0());
 		match_ConjugationPart_ConjugatesKeyword_0_1_or_TildeKeyword_0_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getConjugationPartAccess().getConjugatesKeyword_0_1()), new TokenAlias(false, false, grammarAccess.getConjugationPartAccess().getTildeKeyword_0_0()));
+		match_Conjugation_ConjugatesKeyword_4_1_or_TildeKeyword_4_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getConjugationAccess().getConjugatesKeyword_4_1()), new TokenAlias(false, false, grammarAccess.getConjugationAccess().getTildeKeyword_4_0()));
+		match_Conjugation_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getConjugationAccess().getLeftCurlyBracketKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getConjugationAccess().getRightCurlyBracketKeyword_6_1_2())), new TokenAlias(false, false, grammarAccess.getConjugationAccess().getSemicolonKeyword_6_0()));
+		match_ConnectorEnd_ColonColonGreaterThanSignKeyword_1_1_0_or_ReferencesKeyword_1_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getConnectorEndAccess().getColonColonGreaterThanSignKeyword_1_1_0()), new TokenAlias(false, false, grammarAccess.getConnectorEndAccess().getReferencesKeyword_1_1_1()));
+		match_Connector_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getConnectorAccess().getLeftCurlyBracketKeyword_5_1_0()), new TokenAlias(false, false, grammarAccess.getConnectorAccess().getRightCurlyBracketKeyword_5_1_2())), new TokenAlias(false, false, grammarAccess.getConnectorAccess().getSemicolonKeyword_5_0()));
 		match_DataType_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getDataTypeAccess().getLeftCurlyBracketKeyword_4_1_0()), new TokenAlias(false, false, grammarAccess.getDataTypeAccess().getRightCurlyBracketKeyword_4_1_2())), new TokenAlias(false, false, grammarAccess.getDataTypeAccess().getSemicolonKeyword_4_0()));
 		match_Dependency_FromKeyword_3_1_q = new TokenAlias(false, true, grammarAccess.getDependencyAccess().getFromKeyword_3_1());
 		match_Dependency_SemicolonKeyword_9_0_or___LeftCurlyBracketKeyword_9_1_0_RightCurlyBracketKeyword_9_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getDependencyAccess().getLeftCurlyBracketKeyword_9_1_0()), new TokenAlias(false, false, grammarAccess.getDependencyAccess().getRightCurlyBracketKeyword_9_1_2())), new TokenAlias(false, false, grammarAccess.getDependencyAccess().getSemicolonKeyword_9_0()));
+		match_Disjoining_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getDisjoiningAccess().getLeftCurlyBracketKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getDisjoiningAccess().getRightCurlyBracketKeyword_6_1_2())), new TokenAlias(false, false, grammarAccess.getDisjoiningAccess().getSemicolonKeyword_6_0()));
+		match_ExpressionClass_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_3__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getExpressionClassAccess().getLeftCurlyBracketKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getExpressionClassAccess().getRightCurlyBracketKeyword_6_1_3())), new TokenAlias(false, false, grammarAccess.getExpressionClassAccess().getSemicolonKeyword_6_0()));
+		match_FeatureConjugationPart_ConjugatesKeyword_0_1_or_TildeKeyword_0_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getFeatureConjugationPartAccess().getConjugatesKeyword_0_1()), new TokenAlias(false, false, grammarAccess.getFeatureConjugationPartAccess().getTildeKeyword_0_0()));
+		match_FeatureInverting_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getFeatureInvertingAccess().getLeftCurlyBracketKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getFeatureInvertingAccess().getRightCurlyBracketKeyword_6_1_2())), new TokenAlias(false, false, grammarAccess.getFeatureInvertingAccess().getSemicolonKeyword_6_0()));
+		match_FeatureSpecialization_ColonColonGreaterThanSignKeyword_2_0_0_or_ReferencesKeyword_2_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getFeatureSpecializationAccess().getColonColonGreaterThanSignKeyword_2_0_0()), new TokenAlias(false, false, grammarAccess.getFeatureSpecializationAccess().getReferencesKeyword_2_0_1()));
+		match_FeatureSpecialization_ColonGreaterThanSignGreaterThanSignKeyword_4_0_0_or_RedefinesKeyword_4_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getFeatureSpecializationAccess().getColonGreaterThanSignGreaterThanSignKeyword_4_0_0()), new TokenAlias(false, false, grammarAccess.getFeatureSpecializationAccess().getRedefinesKeyword_4_0_1()));
+		match_FeatureSpecialization_ColonGreaterThanSignKeyword_1_0_0_or_SpecializesKeyword_1_0_1_or_SubsetsKeyword_1_0_2 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getFeatureSpecializationAccess().getColonGreaterThanSignKeyword_1_0_0()), new TokenAlias(false, false, grammarAccess.getFeatureSpecializationAccess().getSpecializesKeyword_1_0_1()), new TokenAlias(false, false, grammarAccess.getFeatureSpecializationAccess().getSubsetsKeyword_1_0_2()));
+		match_FeatureSpecialization_ColonKeyword_0_0_0_or___TypedKeyword_0_0_1_0_ByKeyword_0_0_1_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getFeatureSpecializationAccess().getTypedKeyword_0_0_1_0()), new TokenAlias(false, false, grammarAccess.getFeatureSpecializationAccess().getByKeyword_0_0_1_1())), new TokenAlias(false, false, grammarAccess.getFeatureSpecializationAccess().getColonKeyword_0_0_0()));
+		match_FeatureSpecialization_CrossesKeyword_3_0_1_or_EqualsSignGreaterThanSignKeyword_3_0_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getFeatureSpecializationAccess().getCrossesKeyword_3_0_1()), new TokenAlias(false, false, grammarAccess.getFeatureSpecializationAccess().getEqualsSignGreaterThanSignKeyword_3_0_0()));
+		match_FeatureTyping_ColonKeyword_4_0_or___TypedKeyword_4_1_0_ByKeyword_4_1_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getFeatureTypingAccess().getTypedKeyword_4_1_0()), new TokenAlias(false, false, grammarAccess.getFeatureTypingAccess().getByKeyword_4_1_1())), new TokenAlias(false, false, grammarAccess.getFeatureTypingAccess().getColonKeyword_4_0()));
+		match_FeatureTyping_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getFeatureTypingAccess().getLeftCurlyBracketKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getFeatureTypingAccess().getRightCurlyBracketKeyword_6_1_2())), new TokenAlias(false, false, grammarAccess.getFeatureTypingAccess().getSemicolonKeyword_6_0()));
+		match_FeatureValue_EqualsSignKeyword_0_2_1_0_q = new TokenAlias(false, true, grammarAccess.getFeatureValueAccess().getEqualsSignKeyword_0_2_1_0());
+		match_Feature_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getFeatureAccess().getLeftCurlyBracketKeyword_4_1_0()), new TokenAlias(false, false, grammarAccess.getFeatureAccess().getRightCurlyBracketKeyword_4_1_2())), new TokenAlias(false, false, grammarAccess.getFeatureAccess().getSemicolonKeyword_4_0()));
+		match_Flow_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getFlowAccess().getLeftCurlyBracketKeyword_5_1_0()), new TokenAlias(false, false, grammarAccess.getFlowAccess().getRightCurlyBracketKeyword_5_1_2())), new TokenAlias(false, false, grammarAccess.getFlowAccess().getSemicolonKeyword_5_0()));
 		match_Function_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_3__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getFunctionAccess().getLeftCurlyBracketKeyword_4_1_0()), new TokenAlias(false, false, grammarAccess.getFunctionAccess().getRightCurlyBracketKeyword_4_1_3())), new TokenAlias(false, false, grammarAccess.getFunctionAccess().getSemicolonKeyword_4_0()));
 		match_ImportElement_SemicolonKeyword_7_0_or___LeftCurlyBracketKeyword_7_1_0_RightCurlyBracketKeyword_7_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getImportElementAccess().getLeftCurlyBracketKeyword_7_1_0()), new TokenAlias(false, false, grammarAccess.getImportElementAccess().getRightCurlyBracketKeyword_7_1_2())), new TokenAlias(false, false, grammarAccess.getImportElementAccess().getSemicolonKeyword_7_0()));
 		match_Interaction_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getInteractionAccess().getLeftCurlyBracketKeyword_4_1_0()), new TokenAlias(false, false, grammarAccess.getInteractionAccess().getRightCurlyBracketKeyword_4_1_2())), new TokenAlias(false, false, grammarAccess.getInteractionAccess().getSemicolonKeyword_4_0()));
+		match_Invariant_SemicolonKeyword_7_0_or___LeftCurlyBracketKeyword_7_1_0_RightCurlyBracketKeyword_7_1_3__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getInvariantAccess().getLeftCurlyBracketKeyword_7_1_0()), new TokenAlias(false, false, grammarAccess.getInvariantAccess().getRightCurlyBracketKeyword_7_1_3())), new TokenAlias(false, false, grammarAccess.getInvariantAccess().getSemicolonKeyword_7_0()));
+		match_Invariant_TrueKeyword_4_0_q = new TokenAlias(false, true, grammarAccess.getInvariantAccess().getTrueKeyword_4_0());
 		match_LibraryPackage_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getLibraryPackageAccess().getLeftCurlyBracketKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getLibraryPackageAccess().getRightCurlyBracketKeyword_6_1_2())), new TokenAlias(false, false, grammarAccess.getLibraryPackageAccess().getSemicolonKeyword_6_0()));
 		match_Metaclass_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getMetaclassAccess().getLeftCurlyBracketKeyword_4_1_0()), new TokenAlias(false, false, grammarAccess.getMetaclassAccess().getRightCurlyBracketKeyword_4_1_2())), new TokenAlias(false, false, grammarAccess.getMetaclassAccess().getSemicolonKeyword_4_0()));
+		match_MetadataBodyFeature_FeatureKeyword_1_q = new TokenAlias(false, true, grammarAccess.getMetadataBodyFeatureAccess().getFeatureKeyword_1());
+		match_MetadataBodyFeature_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getMetadataBodyFeatureAccess().getLeftCurlyBracketKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getMetadataBodyFeatureAccess().getRightCurlyBracketKeyword_6_1_2())), new TokenAlias(false, false, grammarAccess.getMetadataBodyFeatureAccess().getSemicolonKeyword_6_0()));
+		match_MetadataBodyFeature___ColonGreaterThanSignGreaterThanSignKeyword_2_0_or_RedefinesKeyword_2_1__q = new AlternativeAlias(false, true, new TokenAlias(false, false, grammarAccess.getMetadataBodyFeatureAccess().getColonGreaterThanSignGreaterThanSignKeyword_2_0()), new TokenAlias(false, false, grammarAccess.getMetadataBodyFeatureAccess().getRedefinesKeyword_2_1()));
+		match_MetadataFeature_ColonKeyword_3_1_0_or___DefinedKeyword_3_1_1_0_ByKeyword_3_1_1_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getMetadataFeatureAccess().getDefinedKeyword_3_1_1_0()), new TokenAlias(false, false, grammarAccess.getMetadataFeatureAccess().getByKeyword_3_1_1_1())), new TokenAlias(false, false, grammarAccess.getMetadataFeatureAccess().getColonKeyword_3_1_0()));
+		match_MetadataFeature_CommercialAtKeyword_2_1_or_MetadataKeyword_2_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getMetadataFeatureAccess().getCommercialAtKeyword_2_1()), new TokenAlias(false, false, grammarAccess.getMetadataFeatureAccess().getMetadataKeyword_2_0()));
+		match_MetadataFeature_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getMetadataFeatureAccess().getLeftCurlyBracketKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getMetadataFeatureAccess().getRightCurlyBracketKeyword_6_1_2())), new TokenAlias(false, false, grammarAccess.getMetadataFeatureAccess().getSemicolonKeyword_6_0()));
+		match_MetadataFeature___ColonKeyword_3_1_0_or___DefinedKeyword_3_1_1_0_ByKeyword_3_1_1_1____q = new AlternativeAlias(false, true, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getMetadataFeatureAccess().getDefinedKeyword_3_1_1_0()), new TokenAlias(false, false, grammarAccess.getMetadataFeatureAccess().getByKeyword_3_1_1_1())), new TokenAlias(false, false, grammarAccess.getMetadataFeatureAccess().getColonKeyword_3_1_0()));
 		match_Multiplicity_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getMultiplicityAccess().getLeftCurlyBracketKeyword_4_1_0()), new TokenAlias(false, false, grammarAccess.getMultiplicityAccess().getRightCurlyBracketKeyword_4_1_2())), new TokenAlias(false, false, grammarAccess.getMultiplicityAccess().getSemicolonKeyword_4_0()));
 		match_Namespace_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getNamespaceAccess().getLeftCurlyBracketKeyword_3_1_0()), new TokenAlias(false, false, grammarAccess.getNamespaceAccess().getRightCurlyBracketKeyword_3_1_2())), new TokenAlias(false, false, grammarAccess.getNamespaceAccess().getSemicolonKeyword_3_0()));
 		match_Package_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getPackageAccess().getLeftCurlyBracketKeyword_4_1_0()), new TokenAlias(false, false, grammarAccess.getPackageAccess().getRightCurlyBracketKeyword_4_1_2())), new TokenAlias(false, false, grammarAccess.getPackageAccess().getSemicolonKeyword_4_0()));
 		match_Predicate_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_3__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getPredicateAccess().getLeftCurlyBracketKeyword_4_1_0()), new TokenAlias(false, false, grammarAccess.getPredicateAccess().getRightCurlyBracketKeyword_4_1_3())), new TokenAlias(false, false, grammarAccess.getPredicateAccess().getSemicolonKeyword_4_0()));
+		match_Redefinition_ColonGreaterThanSignGreaterThanSignKeyword_4_0_or_RedefinesKeyword_4_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getRedefinitionAccess().getColonGreaterThanSignGreaterThanSignKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getRedefinitionAccess().getRedefinesKeyword_4_1()));
+		match_Redefinition_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getRedefinitionAccess().getLeftCurlyBracketKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getRedefinitionAccess().getRightCurlyBracketKeyword_6_1_2())), new TokenAlias(false, false, grammarAccess.getRedefinitionAccess().getSemicolonKeyword_6_0()));
 		match_SpecializationPart_ColonGreaterThanSignKeyword_0_0_or_SpecializesKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getSpecializationPartAccess().getColonGreaterThanSignKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getSpecializationPartAccess().getSpecializesKeyword_0_1()));
+		match_Specialization_ColonGreaterThanSignKeyword_4_0_or_SpecializesKeyword_4_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getSpecializationAccess().getColonGreaterThanSignKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getSpecializationAccess().getSpecializesKeyword_4_1()));
+		match_Specialization_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getSpecializationAccess().getLeftCurlyBracketKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getSpecializationAccess().getRightCurlyBracketKeyword_6_1_2())), new TokenAlias(false, false, grammarAccess.getSpecializationAccess().getSemicolonKeyword_6_0()));
+		match_Step_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getStepAccess().getLeftCurlyBracketKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getStepAccess().getRightCurlyBracketKeyword_6_1_2())), new TokenAlias(false, false, grammarAccess.getStepAccess().getSemicolonKeyword_6_0()));
 		match_Structure_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getStructureAccess().getLeftCurlyBracketKeyword_4_1_0()), new TokenAlias(false, false, grammarAccess.getStructureAccess().getRightCurlyBracketKeyword_4_1_2())), new TokenAlias(false, false, grammarAccess.getStructureAccess().getSemicolonKeyword_4_0()));
+		match_Subclassification_ColonGreaterThanSignKeyword_4_0_or_SpecializesKeyword_4_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getSubclassificationAccess().getColonGreaterThanSignKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getSubclassificationAccess().getSpecializesKeyword_4_1()));
+	}
+	
+	private void init1() {
+		match_Subclassification_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getSubclassificationAccess().getLeftCurlyBracketKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getSubclassificationAccess().getRightCurlyBracketKeyword_6_1_2())), new TokenAlias(false, false, grammarAccess.getSubclassificationAccess().getSemicolonKeyword_6_0()));
 		match_Subsets_ColonGreaterThanSignKeyword_0_0_or_SubsetsKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getSubsetsAccess().getColonGreaterThanSignKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getSubsetsAccess().getSubsetsKeyword_0_1()));
+		match_Subsetting_ColonGreaterThanSignKeyword_4_0_or_SubsetsKeyword_4_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getSubsettingAccess().getColonGreaterThanSignKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getSubsettingAccess().getSubsetsKeyword_4_1()));
+		match_Subsetting_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getSubsettingAccess().getLeftCurlyBracketKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getSubsettingAccess().getRightCurlyBracketKeyword_6_1_2())), new TokenAlias(false, false, grammarAccess.getSubsettingAccess().getSemicolonKeyword_6_0()));
+		match_SuccessionFlow_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getSuccessionFlowAccess().getLeftCurlyBracketKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getSuccessionFlowAccess().getRightCurlyBracketKeyword_6_1_2())), new TokenAlias(false, false, grammarAccess.getSuccessionFlowAccess().getSemicolonKeyword_6_0()));
+		match_Succession_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getSuccessionAccess().getLeftCurlyBracketKeyword_5_1_0()), new TokenAlias(false, false, grammarAccess.getSuccessionAccess().getRightCurlyBracketKeyword_5_1_2())), new TokenAlias(false, false, grammarAccess.getSuccessionAccess().getSemicolonKeyword_5_0()));
 		match_SuperclassingPart_ColonGreaterThanSignKeyword_0_0_or_SpecializesKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getSuperclassingPartAccess().getColonGreaterThanSignKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getSuperclassingPartAccess().getSpecializesKeyword_0_1()));
 		match_TextualRepresentation_RepKeyword_1_0_q = new TokenAlias(false, true, grammarAccess.getTextualRepresentationAccess().getRepKeyword_1_0());
+		match_TypeFeaturing_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getTypeFeaturingAccess().getLeftCurlyBracketKeyword_6_1_0()), new TokenAlias(false, false, grammarAccess.getTypeFeaturingAccess().getRightCurlyBracketKeyword_6_1_2())), new TokenAlias(false, false, grammarAccess.getTypeFeaturingAccess().getSemicolonKeyword_6_0()));
 		match_Type_SemicolonKeyword_8_0_or___LeftCurlyBracketKeyword_8_1_0_RightCurlyBracketKeyword_8_1_2__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getTypeAccess().getLeftCurlyBracketKeyword_8_1_0()), new TokenAlias(false, false, grammarAccess.getTypeAccess().getRightCurlyBracketKeyword_8_1_2())), new TokenAlias(false, false, grammarAccess.getTypeAccess().getSemicolonKeyword_8_0()));
 	}
 	
@@ -102,6 +196,14 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Association_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Behavior_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__.equals(syntax))
 				emit_Behavior_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_BinaryConnectorDeclaration_FromKeyword_0_0_1_q.equals(syntax))
+				emit_BinaryConnectorDeclaration_FromKeyword_0_0_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_BinaryConnectorDeclaration_FromKeyword_0_1_1_q.equals(syntax))
+				emit_BinaryConnectorDeclaration_FromKeyword_0_1_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_BindingConnector_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__.equals(syntax))
+				emit_BindingConnector_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_BooleanExpression_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_3__.equals(syntax))
+				emit_BooleanExpression_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_3__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Class_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__.equals(syntax))
 				emit_Class_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_ClassifierConjugationPart_ConjugatesKeyword_0_1_or_TildeKeyword_0_0.equals(syntax))
@@ -112,22 +214,76 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Comment_CommentKeyword_1_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_ConjugationPart_ConjugatesKeyword_0_1_or_TildeKeyword_0_0.equals(syntax))
 				emit_ConjugationPart_ConjugatesKeyword_0_1_or_TildeKeyword_0_0(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Conjugation_ConjugatesKeyword_4_1_or_TildeKeyword_4_0.equals(syntax))
+				emit_Conjugation_ConjugatesKeyword_4_1_or_TildeKeyword_4_0(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Conjugation_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__.equals(syntax))
+				emit_Conjugation_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ConnectorEnd_ColonColonGreaterThanSignKeyword_1_1_0_or_ReferencesKeyword_1_1_1.equals(syntax))
+				emit_ConnectorEnd_ColonColonGreaterThanSignKeyword_1_1_0_or_ReferencesKeyword_1_1_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Connector_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__.equals(syntax))
+				emit_Connector_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_DataType_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__.equals(syntax))
 				emit_DataType_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Dependency_FromKeyword_3_1_q.equals(syntax))
 				emit_Dependency_FromKeyword_3_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Dependency_SemicolonKeyword_9_0_or___LeftCurlyBracketKeyword_9_1_0_RightCurlyBracketKeyword_9_1_2__.equals(syntax))
 				emit_Dependency_SemicolonKeyword_9_0_or___LeftCurlyBracketKeyword_9_1_0_RightCurlyBracketKeyword_9_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Disjoining_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__.equals(syntax))
+				emit_Disjoining_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ExpressionClass_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_3__.equals(syntax))
+				emit_ExpressionClass_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_3__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_FeatureConjugationPart_ConjugatesKeyword_0_1_or_TildeKeyword_0_0.equals(syntax))
+				emit_FeatureConjugationPart_ConjugatesKeyword_0_1_or_TildeKeyword_0_0(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_FeatureInverting_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__.equals(syntax))
+				emit_FeatureInverting_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_FeatureSpecialization_ColonColonGreaterThanSignKeyword_2_0_0_or_ReferencesKeyword_2_0_1.equals(syntax))
+				emit_FeatureSpecialization_ColonColonGreaterThanSignKeyword_2_0_0_or_ReferencesKeyword_2_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_FeatureSpecialization_ColonGreaterThanSignGreaterThanSignKeyword_4_0_0_or_RedefinesKeyword_4_0_1.equals(syntax))
+				emit_FeatureSpecialization_ColonGreaterThanSignGreaterThanSignKeyword_4_0_0_or_RedefinesKeyword_4_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_FeatureSpecialization_ColonGreaterThanSignKeyword_1_0_0_or_SpecializesKeyword_1_0_1_or_SubsetsKeyword_1_0_2.equals(syntax))
+				emit_FeatureSpecialization_ColonGreaterThanSignKeyword_1_0_0_or_SpecializesKeyword_1_0_1_or_SubsetsKeyword_1_0_2(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_FeatureSpecialization_ColonKeyword_0_0_0_or___TypedKeyword_0_0_1_0_ByKeyword_0_0_1_1__.equals(syntax))
+				emit_FeatureSpecialization_ColonKeyword_0_0_0_or___TypedKeyword_0_0_1_0_ByKeyword_0_0_1_1__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_FeatureSpecialization_CrossesKeyword_3_0_1_or_EqualsSignGreaterThanSignKeyword_3_0_0.equals(syntax))
+				emit_FeatureSpecialization_CrossesKeyword_3_0_1_or_EqualsSignGreaterThanSignKeyword_3_0_0(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_FeatureTyping_ColonKeyword_4_0_or___TypedKeyword_4_1_0_ByKeyword_4_1_1__.equals(syntax))
+				emit_FeatureTyping_ColonKeyword_4_0_or___TypedKeyword_4_1_0_ByKeyword_4_1_1__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_FeatureTyping_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__.equals(syntax))
+				emit_FeatureTyping_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_FeatureValue_EqualsSignKeyword_0_2_1_0_q.equals(syntax))
+				emit_FeatureValue_EqualsSignKeyword_0_2_1_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Feature_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__.equals(syntax))
+				emit_Feature_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Flow_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__.equals(syntax))
+				emit_Flow_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Function_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_3__.equals(syntax))
 				emit_Function_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_3__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_ImportElement_SemicolonKeyword_7_0_or___LeftCurlyBracketKeyword_7_1_0_RightCurlyBracketKeyword_7_1_2__.equals(syntax))
 				emit_ImportElement_SemicolonKeyword_7_0_or___LeftCurlyBracketKeyword_7_1_0_RightCurlyBracketKeyword_7_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Interaction_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__.equals(syntax))
 				emit_Interaction_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Invariant_SemicolonKeyword_7_0_or___LeftCurlyBracketKeyword_7_1_0_RightCurlyBracketKeyword_7_1_3__.equals(syntax))
+				emit_Invariant_SemicolonKeyword_7_0_or___LeftCurlyBracketKeyword_7_1_0_RightCurlyBracketKeyword_7_1_3__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Invariant_TrueKeyword_4_0_q.equals(syntax))
+				emit_Invariant_TrueKeyword_4_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_LibraryPackage_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__.equals(syntax))
 				emit_LibraryPackage_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Metaclass_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__.equals(syntax))
 				emit_Metaclass_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_MetadataBodyFeature_FeatureKeyword_1_q.equals(syntax))
+				emit_MetadataBodyFeature_FeatureKeyword_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_MetadataBodyFeature_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__.equals(syntax))
+				emit_MetadataBodyFeature_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_MetadataBodyFeature___ColonGreaterThanSignGreaterThanSignKeyword_2_0_or_RedefinesKeyword_2_1__q.equals(syntax))
+				emit_MetadataBodyFeature___ColonGreaterThanSignGreaterThanSignKeyword_2_0_or_RedefinesKeyword_2_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_MetadataFeature_ColonKeyword_3_1_0_or___DefinedKeyword_3_1_1_0_ByKeyword_3_1_1_1__.equals(syntax))
+				emit_MetadataFeature_ColonKeyword_3_1_0_or___DefinedKeyword_3_1_1_0_ByKeyword_3_1_1_1__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_MetadataFeature_CommercialAtKeyword_2_1_or_MetadataKeyword_2_0.equals(syntax))
+				emit_MetadataFeature_CommercialAtKeyword_2_1_or_MetadataKeyword_2_0(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_MetadataFeature_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__.equals(syntax))
+				emit_MetadataFeature_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_MetadataFeature___ColonKeyword_3_1_0_or___DefinedKeyword_3_1_1_0_ByKeyword_3_1_1_1____q.equals(syntax))
+				emit_MetadataFeature___ColonKeyword_3_1_0_or___DefinedKeyword_3_1_1_0_ByKeyword_3_1_1_1____q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Multiplicity_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__.equals(syntax))
 				emit_Multiplicity_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Namespace_SemicolonKeyword_3_0_or___LeftCurlyBracketKeyword_3_1_0_RightCurlyBracketKeyword_3_1_2__.equals(syntax))
@@ -136,16 +292,40 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Package_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Predicate_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_3__.equals(syntax))
 				emit_Predicate_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_3__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Redefinition_ColonGreaterThanSignGreaterThanSignKeyword_4_0_or_RedefinesKeyword_4_1.equals(syntax))
+				emit_Redefinition_ColonGreaterThanSignGreaterThanSignKeyword_4_0_or_RedefinesKeyword_4_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Redefinition_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__.equals(syntax))
+				emit_Redefinition_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_SpecializationPart_ColonGreaterThanSignKeyword_0_0_or_SpecializesKeyword_0_1.equals(syntax))
 				emit_SpecializationPart_ColonGreaterThanSignKeyword_0_0_or_SpecializesKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Specialization_ColonGreaterThanSignKeyword_4_0_or_SpecializesKeyword_4_1.equals(syntax))
+				emit_Specialization_ColonGreaterThanSignKeyword_4_0_or_SpecializesKeyword_4_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Specialization_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__.equals(syntax))
+				emit_Specialization_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Step_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__.equals(syntax))
+				emit_Step_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Structure_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__.equals(syntax))
 				emit_Structure_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Subclassification_ColonGreaterThanSignKeyword_4_0_or_SpecializesKeyword_4_1.equals(syntax))
+				emit_Subclassification_ColonGreaterThanSignKeyword_4_0_or_SpecializesKeyword_4_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Subclassification_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__.equals(syntax))
+				emit_Subclassification_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Subsets_ColonGreaterThanSignKeyword_0_0_or_SubsetsKeyword_0_1.equals(syntax))
 				emit_Subsets_ColonGreaterThanSignKeyword_0_0_or_SubsetsKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Subsetting_ColonGreaterThanSignKeyword_4_0_or_SubsetsKeyword_4_1.equals(syntax))
+				emit_Subsetting_ColonGreaterThanSignKeyword_4_0_or_SubsetsKeyword_4_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Subsetting_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__.equals(syntax))
+				emit_Subsetting_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_SuccessionFlow_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__.equals(syntax))
+				emit_SuccessionFlow_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Succession_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__.equals(syntax))
+				emit_Succession_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_SuperclassingPart_ColonGreaterThanSignKeyword_0_0_or_SpecializesKeyword_0_1.equals(syntax))
 				emit_SuperclassingPart_ColonGreaterThanSignKeyword_0_0_or_SpecializesKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_TextualRepresentation_RepKeyword_1_0_q.equals(syntax))
 				emit_TextualRepresentation_RepKeyword_1_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_TypeFeaturing_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__.equals(syntax))
+				emit_TypeFeaturing_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Type_SemicolonKeyword_8_0_or___LeftCurlyBracketKeyword_8_1_0_RightCurlyBracketKeyword_8_1_2__.equals(syntax))
 				emit_Type_SemicolonKeyword_8_0_or___LeftCurlyBracketKeyword_8_1_0_RightCurlyBracketKeyword_8_1_2__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
@@ -250,6 +430,145 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * </pre>
 	 */
 	protected void emit_Behavior_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     'from'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'connector' (ambiguity) connectorPartBinary+=ConnectorEnd
+	 *     crossingFeature+=CrossingFeature 'connector' (ambiguity) connectorPartBinary+=ConnectorEnd
+	 *     direction=FeatureDirection 'connector' (ambiguity) connectorPartBinary+=ConnectorEnd
+	 *     isAbstract?='abstract' 'connector' (ambiguity) connectorPartBinary+=ConnectorEnd
+	 *     isComposite?='composite' 'connector' (ambiguity) connectorPartBinary+=ConnectorEnd
+	 *     isConstantBasic?='const' 'connector' (ambiguity) connectorPartBinary+=ConnectorEnd
+	 *     isDerived?='derived' 'connector' (ambiguity) connectorPartBinary+=ConnectorEnd
+	 *     isEnd?='end' 'connector' (ambiguity) connectorPartBinary+=ConnectorEnd
+	 *     isMember?='member' 'connector' (ambiguity) connectorPartBinary+=ConnectorEnd
+	 *     isPortion?='portion' 'connector' (ambiguity) connectorPartBinary+=ConnectorEnd
+	 *     isReturn?='return' 'connector' (ambiguity) connectorPartBinary+=ConnectorEnd
+	 *     isVariable?='var' 'connector' (ambiguity) connectorPartBinary+=ConnectorEnd
+	 *     isVariant?='variant' 'connector' (ambiguity) connectorPartBinary+=ConnectorEnd
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'connector' (ambiguity) connectorPartBinary+=ConnectorEnd
+	 *     visibility=VisibilityIndicator 'connector' (ambiguity) connectorPartBinary+=ConnectorEnd
+	 
+	 * </pre>
+	 */
+	protected void emit_BinaryConnectorDeclaration_FromKeyword_0_0_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     'from'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     isSufficient?='all' (ambiguity) connectorPartBinary+=ConnectorEnd
+	 
+	 * </pre>
+	 */
+	protected void emit_BinaryConnectorDeclaration_FromKeyword_0_1_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'binding' (ambiguity) (rule start)
+	 *     MultiHigh=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     chainingFeature+=FeatureChainName (ambiguity) (rule end)
+	 *     connectorPart+=ConnectorEnd (ambiguity) (rule end)
+	 *     crosses+=FeatureChainName (ambiguity) (rule end)
+	 *     crossingFeature+=CrossingFeature 'binding' (ambiguity) (rule end)
+	 *     declaredName=Name (ambiguity) (rule end)
+	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
+	 *     differencing+=FeatureChainName (ambiguity) (rule end)
+	 *     direction=FeatureDirection 'binding' (ambiguity) (rule end)
+	 *     disjoining+=FeatureChainName (ambiguity) (rule end)
+	 *     featuringType+=FeatureChainName (ambiguity) (rule end)
+	 *     intersecting+=FeatureChainName (ambiguity) (rule end)
+	 *     invertingFeature+=FeatureChainName (ambiguity) (rule end)
+	 *     isAbstract?='abstract' 'binding' (ambiguity) (rule end)
+	 *     isComposite?='composite' 'binding' (ambiguity) (rule end)
+	 *     isConstantBasic?='const' 'binding' (ambiguity) (rule end)
+	 *     isDerived?='derived' 'binding' (ambiguity) (rule end)
+	 *     isEnd?='end' 'binding' (ambiguity) (rule end)
+	 *     isMember?='member' 'binding' (ambiguity) (rule end)
+	 *     isNonunique?='nonunique' (ambiguity) (rule end)
+	 *     isOrdered?='ordered' (ambiguity) (rule end)
+	 *     isPortion?='portion' 'binding' (ambiguity) (rule end)
+	 *     isReturn?='return' 'binding' (ambiguity) (rule end)
+	 *     isSufficient?='all' (ambiguity) (rule end)
+	 *     isVariable?='var' 'binding' (ambiguity) (rule end)
+	 *     isVariant?='variant' 'binding' (ambiguity) (rule end)
+	 *     originalType=QualifiedName (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'binding' (ambiguity) (rule end)
+	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
+	 *     references+=FeatureChainName (ambiguity) (rule end)
+	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
+	 *     typings+=FeatureTypingName (ambiguity) (rule end)
+	 *     unioning+=FeatureChainName (ambiguity) (rule end)
+	 *     visibility=VisibilityIndicator 'binding' (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_BindingConnector_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'bool' (ambiguity) (rule start)
+	 *     MultiHigh=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     chainingFeature+=FeatureChainName (ambiguity) (rule end)
+	 *     crosses+=FeatureChainName (ambiguity) (rule end)
+	 *     crossingFeature+=CrossingFeature 'bool' (ambiguity) (rule end)
+	 *     declaredName=Name (ambiguity) (rule end)
+	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
+	 *     differencing+=FeatureChainName (ambiguity) (rule end)
+	 *     direction=FeatureDirection 'bool' (ambiguity) (rule end)
+	 *     disjoining+=FeatureChainName (ambiguity) (rule end)
+	 *     featuringType+=FeatureChainName (ambiguity) (rule end)
+	 *     intersecting+=FeatureChainName (ambiguity) (rule end)
+	 *     invertingFeature+=FeatureChainName (ambiguity) (rule end)
+	 *     isAbstract?='abstract' 'bool' (ambiguity) (rule end)
+	 *     isComposite?='composite' 'bool' (ambiguity) (rule end)
+	 *     isConstantBasic?='const' 'bool' (ambiguity) (rule end)
+	 *     isDerived?='derived' 'bool' (ambiguity) (rule end)
+	 *     isEnd?='end' 'bool' (ambiguity) (rule end)
+	 *     isMember?='member' 'bool' (ambiguity) (rule end)
+	 *     isNonunique?='nonunique' (ambiguity) (rule end)
+	 *     isOrdered?='ordered' (ambiguity) (rule end)
+	 *     isPortion?='portion' 'bool' (ambiguity) (rule end)
+	 *     isReturn?='return' 'bool' (ambiguity) (rule end)
+	 *     isVariable?='var' 'bool' (ambiguity) (rule end)
+	 *     isVariant?='variant' 'bool' (ambiguity) (rule end)
+	 *     originalType=QualifiedName (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'bool' (ambiguity) (rule end)
+	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
+	 *     references+=FeatureChainName (ambiguity) (rule end)
+	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
+	 *     typings+=FeatureTypingName (ambiguity) (rule end)
+	 *     unioning+=FeatureChainName (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
+	 *     visibility=VisibilityIndicator 'bool' (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_BooleanExpression_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_3__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -429,6 +748,98 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	/**
 	 * <pre>
 	 * Ambiguous syntax:
+	 *     '~' | 'conjugates'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     conjugatedType=FeatureChainName (ambiguity) originalType=FeatureChainName
+	 
+	 * </pre>
+	 */
+	protected void emit_Conjugation_ConjugatesKeyword_4_1_or_TildeKeyword_4_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     originalType=FeatureChainName (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Conjugation_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     '::&gt;' | 'references'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     delcaredName=Name (ambiguity) refElement=FeatureChainName
+	 
+	 * </pre>
+	 */
+	protected void emit_ConnectorEnd_ColonColonGreaterThanSignKeyword_1_1_0_or_ReferencesKeyword_1_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'connector' (ambiguity) (rule start)
+	 *     MultiHigh=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     chainingFeature+=FeatureChainName (ambiguity) (rule end)
+	 *     connectorPart+=ConnectorEnd ')' (ambiguity) (rule end)
+	 *     connectorPartBinary+=ConnectorEnd (ambiguity) (rule end)
+	 *     crosses+=FeatureChainName (ambiguity) (rule end)
+	 *     crossingFeature+=CrossingFeature 'connector' (ambiguity) (rule end)
+	 *     declaredName=Name (ambiguity) (rule end)
+	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
+	 *     differencing+=FeatureChainName (ambiguity) (rule end)
+	 *     direction=FeatureDirection 'connector' (ambiguity) (rule end)
+	 *     disjoining+=FeatureChainName (ambiguity) (rule end)
+	 *     featuringType+=FeatureChainName (ambiguity) (rule end)
+	 *     intersecting+=FeatureChainName (ambiguity) (rule end)
+	 *     invertingFeature+=FeatureChainName (ambiguity) (rule end)
+	 *     isAbstract?='abstract' 'connector' (ambiguity) (rule end)
+	 *     isComposite?='composite' 'connector' (ambiguity) (rule end)
+	 *     isConstantBasic?='const' 'connector' (ambiguity) (rule end)
+	 *     isDerived?='derived' 'connector' (ambiguity) (rule end)
+	 *     isEnd?='end' 'connector' (ambiguity) (rule end)
+	 *     isMember?='member' 'connector' (ambiguity) (rule end)
+	 *     isNonunique?='nonunique' (ambiguity) (rule end)
+	 *     isOrdered?='ordered' (ambiguity) (rule end)
+	 *     isPortion?='portion' 'connector' (ambiguity) (rule end)
+	 *     isReturn?='return' 'connector' (ambiguity) (rule end)
+	 *     isVariable?='var' 'connector' (ambiguity) (rule end)
+	 *     isVariant?='variant' 'connector' (ambiguity) (rule end)
+	 *     originalType=QualifiedName (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'connector' (ambiguity) (rule end)
+	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
+	 *     references+=FeatureChainName (ambiguity) (rule end)
+	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
+	 *     typings+=FeatureTypingName (ambiguity) (rule end)
+	 *     unioning+=FeatureChainName (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
+	 *     visibility=VisibilityIndicator 'connector' (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Connector_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
 	 *     ';' | ('{' '}')
 	 *
 	 * This ambiguous syntax occurs at:
@@ -483,6 +894,1274 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * </pre>
 	 */
 	protected void emit_Dependency_SemicolonKeyword_9_0_or___LeftCurlyBracketKeyword_9_1_0_RightCurlyBracketKeyword_9_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     disjoiningType=FeatureChainName (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Disjoining_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'expr' (ambiguity) (rule start)
+	 *     MultiHigh=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     chainingFeature+=FeatureChainName (ambiguity) (rule end)
+	 *     crosses+=FeatureChainName (ambiguity) (rule end)
+	 *     crossingFeature+=CrossingFeature 'expr' (ambiguity) (rule end)
+	 *     declaredName=Name (ambiguity) (rule end)
+	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
+	 *     differencing+=FeatureChainName (ambiguity) (rule end)
+	 *     direction=FeatureDirection 'expr' (ambiguity) (rule end)
+	 *     disjoining+=FeatureChainName (ambiguity) (rule end)
+	 *     featuringType+=FeatureChainName (ambiguity) (rule end)
+	 *     intersecting+=FeatureChainName (ambiguity) (rule end)
+	 *     invertingFeature+=FeatureChainName (ambiguity) (rule end)
+	 *     isAbstract?='abstract' 'expr' (ambiguity) (rule end)
+	 *     isComposite?='composite' 'expr' (ambiguity) (rule end)
+	 *     isConstantBasic?='const' 'expr' (ambiguity) (rule end)
+	 *     isDerived?='derived' 'expr' (ambiguity) (rule end)
+	 *     isEnd?='end' 'expr' (ambiguity) (rule end)
+	 *     isMember?='member' 'expr' (ambiguity) (rule end)
+	 *     isNonunique?='nonunique' (ambiguity) (rule end)
+	 *     isOrdered?='ordered' (ambiguity) (rule end)
+	 *     isPortion?='portion' 'expr' (ambiguity) (rule end)
+	 *     isReturn?='return' 'expr' (ambiguity) (rule end)
+	 *     isVariable?='var' 'expr' (ambiguity) (rule end)
+	 *     isVariant?='variant' 'expr' (ambiguity) (rule end)
+	 *     originalType=QualifiedName (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'expr' (ambiguity) (rule end)
+	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
+	 *     references+=FeatureChainName (ambiguity) (rule end)
+	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
+	 *     typings+=FeatureTypingName (ambiguity) (rule end)
+	 *     unioning+=FeatureChainName (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
+	 *     visibility=VisibilityIndicator 'expr' (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_ExpressionClass_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_3__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     '~' | 'conjugates'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'binding' (ambiguity) originalType=QualifiedName
+	 *     (rule start) 'bool' (ambiguity) originalType=QualifiedName
+	 *     (rule start) 'connector' (ambiguity) originalType=QualifiedName
+	 *     (rule start) 'expr' (ambiguity) originalType=QualifiedName
+	 *     (rule start) 'flow' (ambiguity) originalType=QualifiedName
+	 *     (rule start) 'inv' 'true'? (ambiguity) originalType=QualifiedName
+	 *     (rule start) 'step' (ambiguity) originalType=QualifiedName
+	 *     (rule start) 'succession' 'flow' (ambiguity) originalType=QualifiedName
+	 *     (rule start) 'succession' (ambiguity) originalType=QualifiedName
+	 *     (rule start) (ambiguity) originalType=QualifiedName
+	 *     crossingFeature+=CrossingFeature 'binding' (ambiguity) originalType=QualifiedName
+	 *     crossingFeature+=CrossingFeature 'bool' (ambiguity) originalType=QualifiedName
+	 *     crossingFeature+=CrossingFeature 'connector' (ambiguity) originalType=QualifiedName
+	 *     crossingFeature+=CrossingFeature 'expr' (ambiguity) originalType=QualifiedName
+	 *     crossingFeature+=CrossingFeature 'feature' (ambiguity) originalType=QualifiedName
+	 *     crossingFeature+=CrossingFeature 'flow' (ambiguity) originalType=QualifiedName
+	 *     crossingFeature+=CrossingFeature 'inv' 'true'? (ambiguity) originalType=QualifiedName
+	 *     crossingFeature+=CrossingFeature 'step' (ambiguity) originalType=QualifiedName
+	 *     crossingFeature+=CrossingFeature 'succession' 'flow' (ambiguity) originalType=QualifiedName
+	 *     crossingFeature+=CrossingFeature 'succession' (ambiguity) originalType=QualifiedName
+	 *     declaredName=Name (ambiguity) originalType=QualifiedName
+	 *     declaredShortName=Name '&gt;' (ambiguity) originalType=QualifiedName
+	 *     direction=FeatureDirection 'binding' (ambiguity) originalType=QualifiedName
+	 *     direction=FeatureDirection 'bool' (ambiguity) originalType=QualifiedName
+	 *     direction=FeatureDirection 'connector' (ambiguity) originalType=QualifiedName
+	 *     direction=FeatureDirection 'expr' (ambiguity) originalType=QualifiedName
+	 *     direction=FeatureDirection 'flow' (ambiguity) originalType=QualifiedName
+	 *     direction=FeatureDirection 'inv' 'true'? (ambiguity) originalType=QualifiedName
+	 *     direction=FeatureDirection 'step' (ambiguity) originalType=QualifiedName
+	 *     direction=FeatureDirection 'succession' 'flow' (ambiguity) originalType=QualifiedName
+	 *     direction=FeatureDirection 'succession' (ambiguity) originalType=QualifiedName
+	 *     direction=FeatureDirection (ambiguity) originalType=QualifiedName
+	 *     isAbstract?='abstract' 'binding' (ambiguity) originalType=QualifiedName
+	 *     isAbstract?='abstract' 'bool' (ambiguity) originalType=QualifiedName
+	 *     isAbstract?='abstract' 'connector' (ambiguity) originalType=QualifiedName
+	 *     isAbstract?='abstract' 'expr' (ambiguity) originalType=QualifiedName
+	 *     isAbstract?='abstract' 'flow' (ambiguity) originalType=QualifiedName
+	 *     isAbstract?='abstract' 'inv' 'true'? (ambiguity) originalType=QualifiedName
+	 *     isAbstract?='abstract' 'step' (ambiguity) originalType=QualifiedName
+	 *     isAbstract?='abstract' 'succession' 'flow' (ambiguity) originalType=QualifiedName
+	 *     isAbstract?='abstract' 'succession' (ambiguity) originalType=QualifiedName
+	 *     isAbstract?='abstract' (ambiguity) originalType=QualifiedName
+	 *     isComposite?='composite' 'binding' (ambiguity) originalType=QualifiedName
+	 *     isComposite?='composite' 'bool' (ambiguity) originalType=QualifiedName
+	 *     isComposite?='composite' 'connector' (ambiguity) originalType=QualifiedName
+	 *     isComposite?='composite' 'expr' (ambiguity) originalType=QualifiedName
+	 *     isComposite?='composite' 'flow' (ambiguity) originalType=QualifiedName
+	 *     isComposite?='composite' 'inv' 'true'? (ambiguity) originalType=QualifiedName
+	 *     isComposite?='composite' 'step' (ambiguity) originalType=QualifiedName
+	 *     isComposite?='composite' 'succession' 'flow' (ambiguity) originalType=QualifiedName
+	 *     isComposite?='composite' 'succession' (ambiguity) originalType=QualifiedName
+	 *     isComposite?='composite' (ambiguity) originalType=QualifiedName
+	 *     isConstantBasic?='const' 'binding' (ambiguity) originalType=QualifiedName
+	 *     isConstantBasic?='const' 'bool' (ambiguity) originalType=QualifiedName
+	 *     isConstantBasic?='const' 'connector' (ambiguity) originalType=QualifiedName
+	 *     isConstantBasic?='const' 'expr' (ambiguity) originalType=QualifiedName
+	 *     isConstantBasic?='const' 'flow' (ambiguity) originalType=QualifiedName
+	 *     isConstantBasic?='const' 'inv' 'true'? (ambiguity) originalType=QualifiedName
+	 *     isConstantBasic?='const' 'step' (ambiguity) originalType=QualifiedName
+	 *     isConstantBasic?='const' 'succession' 'flow' (ambiguity) originalType=QualifiedName
+	 *     isConstantBasic?='const' 'succession' (ambiguity) originalType=QualifiedName
+	 *     isConstantBasic?='const' (ambiguity) originalType=QualifiedName
+	 *     isDerived?='derived' 'binding' (ambiguity) originalType=QualifiedName
+	 *     isDerived?='derived' 'bool' (ambiguity) originalType=QualifiedName
+	 *     isDerived?='derived' 'connector' (ambiguity) originalType=QualifiedName
+	 *     isDerived?='derived' 'expr' (ambiguity) originalType=QualifiedName
+	 *     isDerived?='derived' 'flow' (ambiguity) originalType=QualifiedName
+	 *     isDerived?='derived' 'inv' 'true'? (ambiguity) originalType=QualifiedName
+	 *     isDerived?='derived' 'step' (ambiguity) originalType=QualifiedName
+	 *     isDerived?='derived' 'succession' 'flow' (ambiguity) originalType=QualifiedName
+	 *     isDerived?='derived' 'succession' (ambiguity) originalType=QualifiedName
+	 *     isDerived?='derived' (ambiguity) originalType=QualifiedName
+	 *     isEnd?='end' 'binding' (ambiguity) originalType=QualifiedName
+	 *     isEnd?='end' 'bool' (ambiguity) originalType=QualifiedName
+	 *     isEnd?='end' 'connector' (ambiguity) originalType=QualifiedName
+	 *     isEnd?='end' 'expr' (ambiguity) originalType=QualifiedName
+	 *     isEnd?='end' 'flow' (ambiguity) originalType=QualifiedName
+	 *     isEnd?='end' 'inv' 'true'? (ambiguity) originalType=QualifiedName
+	 *     isEnd?='end' 'step' (ambiguity) originalType=QualifiedName
+	 *     isEnd?='end' 'succession' 'flow' (ambiguity) originalType=QualifiedName
+	 *     isEnd?='end' 'succession' (ambiguity) originalType=QualifiedName
+	 *     isEnd?='end' (ambiguity) originalType=QualifiedName
+	 *     isMember?='member' 'binding' (ambiguity) originalType=QualifiedName
+	 *     isMember?='member' 'bool' (ambiguity) originalType=QualifiedName
+	 *     isMember?='member' 'connector' (ambiguity) originalType=QualifiedName
+	 *     isMember?='member' 'expr' (ambiguity) originalType=QualifiedName
+	 *     isMember?='member' 'flow' (ambiguity) originalType=QualifiedName
+	 *     isMember?='member' 'inv' 'true'? (ambiguity) originalType=QualifiedName
+	 *     isMember?='member' 'step' (ambiguity) originalType=QualifiedName
+	 *     isMember?='member' 'succession' 'flow' (ambiguity) originalType=QualifiedName
+	 *     isMember?='member' 'succession' (ambiguity) originalType=QualifiedName
+	 *     isMember?='member' (ambiguity) originalType=QualifiedName
+	 *     isNegated?='false' (ambiguity) originalType=QualifiedName
+	 *     isPortion?='portion' 'binding' (ambiguity) originalType=QualifiedName
+	 *     isPortion?='portion' 'bool' (ambiguity) originalType=QualifiedName
+	 *     isPortion?='portion' 'connector' (ambiguity) originalType=QualifiedName
+	 *     isPortion?='portion' 'expr' (ambiguity) originalType=QualifiedName
+	 *     isPortion?='portion' 'flow' (ambiguity) originalType=QualifiedName
+	 *     isPortion?='portion' 'inv' 'true'? (ambiguity) originalType=QualifiedName
+	 *     isPortion?='portion' 'step' (ambiguity) originalType=QualifiedName
+	 *     isPortion?='portion' 'succession' 'flow' (ambiguity) originalType=QualifiedName
+	 *     isPortion?='portion' 'succession' (ambiguity) originalType=QualifiedName
+	 *     isPortion?='portion' (ambiguity) originalType=QualifiedName
+	 *     isReturn?='return' 'binding' (ambiguity) originalType=QualifiedName
+	 *     isReturn?='return' 'bool' (ambiguity) originalType=QualifiedName
+	 *     isReturn?='return' 'connector' (ambiguity) originalType=QualifiedName
+	 *     isReturn?='return' 'expr' (ambiguity) originalType=QualifiedName
+	 *     isReturn?='return' 'flow' (ambiguity) originalType=QualifiedName
+	 *     isReturn?='return' 'inv' 'true'? (ambiguity) originalType=QualifiedName
+	 *     isReturn?='return' 'step' (ambiguity) originalType=QualifiedName
+	 *     isReturn?='return' 'succession' 'flow' (ambiguity) originalType=QualifiedName
+	 *     isReturn?='return' 'succession' (ambiguity) originalType=QualifiedName
+	 *     isReturn?='return' (ambiguity) originalType=QualifiedName
+	 *     isSufficient?='all' (ambiguity) originalType=QualifiedName
+	 *     isVariable?='var' 'binding' (ambiguity) originalType=QualifiedName
+	 *     isVariable?='var' 'bool' (ambiguity) originalType=QualifiedName
+	 *     isVariable?='var' 'connector' (ambiguity) originalType=QualifiedName
+	 *     isVariable?='var' 'expr' (ambiguity) originalType=QualifiedName
+	 *     isVariable?='var' 'flow' (ambiguity) originalType=QualifiedName
+	 *     isVariable?='var' 'inv' 'true'? (ambiguity) originalType=QualifiedName
+	 *     isVariable?='var' 'step' (ambiguity) originalType=QualifiedName
+	 *     isVariable?='var' 'succession' 'flow' (ambiguity) originalType=QualifiedName
+	 *     isVariable?='var' 'succession' (ambiguity) originalType=QualifiedName
+	 *     isVariable?='var' (ambiguity) originalType=QualifiedName
+	 *     isVariant?='variant' 'binding' (ambiguity) originalType=QualifiedName
+	 *     isVariant?='variant' 'bool' (ambiguity) originalType=QualifiedName
+	 *     isVariant?='variant' 'connector' (ambiguity) originalType=QualifiedName
+	 *     isVariant?='variant' 'expr' (ambiguity) originalType=QualifiedName
+	 *     isVariant?='variant' 'flow' (ambiguity) originalType=QualifiedName
+	 *     isVariant?='variant' 'inv' 'true'? (ambiguity) originalType=QualifiedName
+	 *     isVariant?='variant' 'step' (ambiguity) originalType=QualifiedName
+	 *     isVariant?='variant' 'succession' 'flow' (ambiguity) originalType=QualifiedName
+	 *     isVariant?='variant' 'succession' (ambiguity) originalType=QualifiedName
+	 *     isVariant?='variant' (ambiguity) originalType=QualifiedName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'binding' (ambiguity) originalType=QualifiedName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'bool' (ambiguity) originalType=QualifiedName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'connector' (ambiguity) originalType=QualifiedName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'expr' (ambiguity) originalType=QualifiedName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'flow' (ambiguity) originalType=QualifiedName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'inv' 'true'? (ambiguity) originalType=QualifiedName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'step' (ambiguity) originalType=QualifiedName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'succession' 'flow' (ambiguity) originalType=QualifiedName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'succession' (ambiguity) originalType=QualifiedName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) originalType=QualifiedName
+	 *     visibility=VisibilityIndicator 'binding' (ambiguity) originalType=QualifiedName
+	 *     visibility=VisibilityIndicator 'bool' (ambiguity) originalType=QualifiedName
+	 *     visibility=VisibilityIndicator 'connector' (ambiguity) originalType=QualifiedName
+	 *     visibility=VisibilityIndicator 'expr' (ambiguity) originalType=QualifiedName
+	 *     visibility=VisibilityIndicator 'flow' (ambiguity) originalType=QualifiedName
+	 *     visibility=VisibilityIndicator 'inv' 'true'? (ambiguity) originalType=QualifiedName
+	 *     visibility=VisibilityIndicator 'step' (ambiguity) originalType=QualifiedName
+	 *     visibility=VisibilityIndicator 'succession' 'flow' (ambiguity) originalType=QualifiedName
+	 *     visibility=VisibilityIndicator 'succession' (ambiguity) originalType=QualifiedName
+	 *     visibility=VisibilityIndicator (ambiguity) originalType=QualifiedName
+	 
+	 * </pre>
+	 */
+	protected void emit_FeatureConjugationPart_ConjugatesKeyword_0_1_or_TildeKeyword_0_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     invertingFeature=FeatureChainName (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_FeatureInverting_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     '::&gt;' | 'references'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'binding' (ambiguity) references+=FeatureChainName
+	 *     (rule start) 'bool' (ambiguity) references+=FeatureChainName
+	 *     (rule start) 'connector' (ambiguity) references+=FeatureChainName
+	 *     (rule start) 'expr' (ambiguity) references+=FeatureChainName
+	 *     (rule start) 'flow' (ambiguity) references+=FeatureChainName
+	 *     (rule start) 'inv' 'true'? (ambiguity) references+=FeatureChainName
+	 *     (rule start) 'step' (ambiguity) references+=FeatureChainName
+	 *     (rule start) 'succession' 'flow' (ambiguity) references+=FeatureChainName
+	 *     (rule start) 'succession' (ambiguity) references+=FeatureChainName
+	 *     (rule start) (ambiguity) references+=FeatureChainName
+	 *     MultiHigh=MultiplicityExpression ']' (ambiguity) references+=FeatureChainName
+	 *     MultiLow=MultiplicityExpression ']' (ambiguity) references+=FeatureChainName
+	 *     crosses+=FeatureChainName (ambiguity) references+=FeatureChainName
+	 *     crossingFeature+=CrossingFeature 'binding' (ambiguity) references+=FeatureChainName
+	 *     crossingFeature+=CrossingFeature 'bool' (ambiguity) references+=FeatureChainName
+	 *     crossingFeature+=CrossingFeature 'connector' (ambiguity) references+=FeatureChainName
+	 *     crossingFeature+=CrossingFeature 'expr' (ambiguity) references+=FeatureChainName
+	 *     crossingFeature+=CrossingFeature 'feature' (ambiguity) references+=FeatureChainName
+	 *     crossingFeature+=CrossingFeature 'flow' (ambiguity) references+=FeatureChainName
+	 *     crossingFeature+=CrossingFeature 'inv' 'true'? (ambiguity) references+=FeatureChainName
+	 *     crossingFeature+=CrossingFeature 'step' (ambiguity) references+=FeatureChainName
+	 *     crossingFeature+=CrossingFeature 'succession' 'flow' (ambiguity) references+=FeatureChainName
+	 *     crossingFeature+=CrossingFeature 'succession' (ambiguity) references+=FeatureChainName
+	 *     declaredName=Name (ambiguity) references+=FeatureChainName
+	 *     declaredShortName=Name '&gt;' (ambiguity) references+=FeatureChainName
+	 *     direction=FeatureDirection 'binding' (ambiguity) references+=FeatureChainName
+	 *     direction=FeatureDirection 'bool' (ambiguity) references+=FeatureChainName
+	 *     direction=FeatureDirection 'connector' (ambiguity) references+=FeatureChainName
+	 *     direction=FeatureDirection 'expr' (ambiguity) references+=FeatureChainName
+	 *     direction=FeatureDirection 'flow' (ambiguity) references+=FeatureChainName
+	 *     direction=FeatureDirection 'inv' 'true'? (ambiguity) references+=FeatureChainName
+	 *     direction=FeatureDirection 'step' (ambiguity) references+=FeatureChainName
+	 *     direction=FeatureDirection 'succession' 'flow' (ambiguity) references+=FeatureChainName
+	 *     direction=FeatureDirection 'succession' (ambiguity) references+=FeatureChainName
+	 *     direction=FeatureDirection (ambiguity) references+=FeatureChainName
+	 *     isAbstract?='abstract' 'binding' (ambiguity) references+=FeatureChainName
+	 *     isAbstract?='abstract' 'bool' (ambiguity) references+=FeatureChainName
+	 *     isAbstract?='abstract' 'connector' (ambiguity) references+=FeatureChainName
+	 *     isAbstract?='abstract' 'expr' (ambiguity) references+=FeatureChainName
+	 *     isAbstract?='abstract' 'flow' (ambiguity) references+=FeatureChainName
+	 *     isAbstract?='abstract' 'inv' 'true'? (ambiguity) references+=FeatureChainName
+	 *     isAbstract?='abstract' 'step' (ambiguity) references+=FeatureChainName
+	 *     isAbstract?='abstract' 'succession' 'flow' (ambiguity) references+=FeatureChainName
+	 *     isAbstract?='abstract' 'succession' (ambiguity) references+=FeatureChainName
+	 *     isAbstract?='abstract' (ambiguity) references+=FeatureChainName
+	 *     isComposite?='composite' 'binding' (ambiguity) references+=FeatureChainName
+	 *     isComposite?='composite' 'bool' (ambiguity) references+=FeatureChainName
+	 *     isComposite?='composite' 'connector' (ambiguity) references+=FeatureChainName
+	 *     isComposite?='composite' 'expr' (ambiguity) references+=FeatureChainName
+	 *     isComposite?='composite' 'flow' (ambiguity) references+=FeatureChainName
+	 *     isComposite?='composite' 'inv' 'true'? (ambiguity) references+=FeatureChainName
+	 *     isComposite?='composite' 'step' (ambiguity) references+=FeatureChainName
+	 *     isComposite?='composite' 'succession' 'flow' (ambiguity) references+=FeatureChainName
+	 *     isComposite?='composite' 'succession' (ambiguity) references+=FeatureChainName
+	 *     isComposite?='composite' (ambiguity) references+=FeatureChainName
+	 *     isConstantBasic?='const' 'binding' (ambiguity) references+=FeatureChainName
+	 *     isConstantBasic?='const' 'bool' (ambiguity) references+=FeatureChainName
+	 *     isConstantBasic?='const' 'connector' (ambiguity) references+=FeatureChainName
+	 *     isConstantBasic?='const' 'expr' (ambiguity) references+=FeatureChainName
+	 *     isConstantBasic?='const' 'flow' (ambiguity) references+=FeatureChainName
+	 *     isConstantBasic?='const' 'inv' 'true'? (ambiguity) references+=FeatureChainName
+	 *     isConstantBasic?='const' 'step' (ambiguity) references+=FeatureChainName
+	 *     isConstantBasic?='const' 'succession' 'flow' (ambiguity) references+=FeatureChainName
+	 *     isConstantBasic?='const' 'succession' (ambiguity) references+=FeatureChainName
+	 *     isConstantBasic?='const' (ambiguity) references+=FeatureChainName
+	 *     isDerived?='derived' 'binding' (ambiguity) references+=FeatureChainName
+	 *     isDerived?='derived' 'bool' (ambiguity) references+=FeatureChainName
+	 *     isDerived?='derived' 'connector' (ambiguity) references+=FeatureChainName
+	 *     isDerived?='derived' 'expr' (ambiguity) references+=FeatureChainName
+	 *     isDerived?='derived' 'flow' (ambiguity) references+=FeatureChainName
+	 *     isDerived?='derived' 'inv' 'true'? (ambiguity) references+=FeatureChainName
+	 *     isDerived?='derived' 'step' (ambiguity) references+=FeatureChainName
+	 *     isDerived?='derived' 'succession' 'flow' (ambiguity) references+=FeatureChainName
+	 *     isDerived?='derived' 'succession' (ambiguity) references+=FeatureChainName
+	 *     isDerived?='derived' (ambiguity) references+=FeatureChainName
+	 *     isEnd?='end' 'binding' (ambiguity) references+=FeatureChainName
+	 *     isEnd?='end' 'bool' (ambiguity) references+=FeatureChainName
+	 *     isEnd?='end' 'connector' (ambiguity) references+=FeatureChainName
+	 *     isEnd?='end' 'expr' (ambiguity) references+=FeatureChainName
+	 *     isEnd?='end' 'flow' (ambiguity) references+=FeatureChainName
+	 *     isEnd?='end' 'inv' 'true'? (ambiguity) references+=FeatureChainName
+	 *     isEnd?='end' 'step' (ambiguity) references+=FeatureChainName
+	 *     isEnd?='end' 'succession' 'flow' (ambiguity) references+=FeatureChainName
+	 *     isEnd?='end' 'succession' (ambiguity) references+=FeatureChainName
+	 *     isEnd?='end' (ambiguity) references+=FeatureChainName
+	 *     isMember?='member' 'binding' (ambiguity) references+=FeatureChainName
+	 *     isMember?='member' 'bool' (ambiguity) references+=FeatureChainName
+	 *     isMember?='member' 'connector' (ambiguity) references+=FeatureChainName
+	 *     isMember?='member' 'expr' (ambiguity) references+=FeatureChainName
+	 *     isMember?='member' 'flow' (ambiguity) references+=FeatureChainName
+	 *     isMember?='member' 'inv' 'true'? (ambiguity) references+=FeatureChainName
+	 *     isMember?='member' 'step' (ambiguity) references+=FeatureChainName
+	 *     isMember?='member' 'succession' 'flow' (ambiguity) references+=FeatureChainName
+	 *     isMember?='member' 'succession' (ambiguity) references+=FeatureChainName
+	 *     isMember?='member' (ambiguity) references+=FeatureChainName
+	 *     isNegated?='false' (ambiguity) references+=FeatureChainName
+	 *     isNonunique?='nonunique' (ambiguity) references+=FeatureChainName
+	 *     isOrdered?='ordered' (ambiguity) references+=FeatureChainName
+	 *     isPortion?='portion' 'binding' (ambiguity) references+=FeatureChainName
+	 *     isPortion?='portion' 'bool' (ambiguity) references+=FeatureChainName
+	 *     isPortion?='portion' 'connector' (ambiguity) references+=FeatureChainName
+	 *     isPortion?='portion' 'expr' (ambiguity) references+=FeatureChainName
+	 *     isPortion?='portion' 'flow' (ambiguity) references+=FeatureChainName
+	 *     isPortion?='portion' 'inv' 'true'? (ambiguity) references+=FeatureChainName
+	 *     isPortion?='portion' 'step' (ambiguity) references+=FeatureChainName
+	 *     isPortion?='portion' 'succession' 'flow' (ambiguity) references+=FeatureChainName
+	 *     isPortion?='portion' 'succession' (ambiguity) references+=FeatureChainName
+	 *     isPortion?='portion' (ambiguity) references+=FeatureChainName
+	 *     isReturn?='return' 'binding' (ambiguity) references+=FeatureChainName
+	 *     isReturn?='return' 'bool' (ambiguity) references+=FeatureChainName
+	 *     isReturn?='return' 'connector' (ambiguity) references+=FeatureChainName
+	 *     isReturn?='return' 'expr' (ambiguity) references+=FeatureChainName
+	 *     isReturn?='return' 'flow' (ambiguity) references+=FeatureChainName
+	 *     isReturn?='return' 'inv' 'true'? (ambiguity) references+=FeatureChainName
+	 *     isReturn?='return' 'step' (ambiguity) references+=FeatureChainName
+	 *     isReturn?='return' 'succession' 'flow' (ambiguity) references+=FeatureChainName
+	 *     isReturn?='return' 'succession' (ambiguity) references+=FeatureChainName
+	 *     isReturn?='return' (ambiguity) references+=FeatureChainName
+	 *     isSufficient?='all' (ambiguity) references+=FeatureChainName
+	 *     isVariable?='var' 'binding' (ambiguity) references+=FeatureChainName
+	 *     isVariable?='var' 'bool' (ambiguity) references+=FeatureChainName
+	 *     isVariable?='var' 'connector' (ambiguity) references+=FeatureChainName
+	 *     isVariable?='var' 'expr' (ambiguity) references+=FeatureChainName
+	 *     isVariable?='var' 'flow' (ambiguity) references+=FeatureChainName
+	 *     isVariable?='var' 'inv' 'true'? (ambiguity) references+=FeatureChainName
+	 *     isVariable?='var' 'step' (ambiguity) references+=FeatureChainName
+	 *     isVariable?='var' 'succession' 'flow' (ambiguity) references+=FeatureChainName
+	 *     isVariable?='var' 'succession' (ambiguity) references+=FeatureChainName
+	 *     isVariable?='var' (ambiguity) references+=FeatureChainName
+	 *     isVariant?='variant' 'binding' (ambiguity) references+=FeatureChainName
+	 *     isVariant?='variant' 'bool' (ambiguity) references+=FeatureChainName
+	 *     isVariant?='variant' 'connector' (ambiguity) references+=FeatureChainName
+	 *     isVariant?='variant' 'expr' (ambiguity) references+=FeatureChainName
+	 *     isVariant?='variant' 'flow' (ambiguity) references+=FeatureChainName
+	 *     isVariant?='variant' 'inv' 'true'? (ambiguity) references+=FeatureChainName
+	 *     isVariant?='variant' 'step' (ambiguity) references+=FeatureChainName
+	 *     isVariant?='variant' 'succession' 'flow' (ambiguity) references+=FeatureChainName
+	 *     isVariant?='variant' 'succession' (ambiguity) references+=FeatureChainName
+	 *     isVariant?='variant' (ambiguity) references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'binding' (ambiguity) references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'bool' (ambiguity) references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'connector' (ambiguity) references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'expr' (ambiguity) references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'flow' (ambiguity) references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'inv' 'true'? (ambiguity) references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'step' (ambiguity) references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'succession' 'flow' (ambiguity) references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'succession' (ambiguity) references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) references+=FeatureChainName
+	 *     redefinedFeature+=FeatureChainName (ambiguity) references+=FeatureChainName
+	 *     redefinitions+=FeatureChainName (ambiguity) references+=FeatureChainName
+	 *     references+=FeatureChainName (ambiguity) references+=FeatureChainName
+	 *     subsetting+=FeatureChainName (ambiguity) references+=FeatureChainName
+	 *     typings+=FeatureTypingName (ambiguity) references+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'binding' (ambiguity) references+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'bool' (ambiguity) references+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'connector' (ambiguity) references+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'expr' (ambiguity) references+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'flow' (ambiguity) references+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'inv' 'true'? (ambiguity) references+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'step' (ambiguity) references+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'succession' 'flow' (ambiguity) references+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'succession' (ambiguity) references+=FeatureChainName
+	 *     visibility=VisibilityIndicator (ambiguity) references+=FeatureChainName
+	 
+	 * </pre>
+	 */
+	protected void emit_FeatureSpecialization_ColonColonGreaterThanSignKeyword_2_0_0_or_ReferencesKeyword_2_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ':&gt;&gt;' | 'redefines'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'binding' (ambiguity) redefinitions+=FeatureChainName
+	 *     (rule start) 'bool' (ambiguity) redefinitions+=FeatureChainName
+	 *     (rule start) 'connector' (ambiguity) redefinitions+=FeatureChainName
+	 *     (rule start) 'expr' (ambiguity) redefinitions+=FeatureChainName
+	 *     (rule start) 'flow' (ambiguity) redefinitions+=FeatureChainName
+	 *     (rule start) 'inv' 'true'? (ambiguity) redefinitions+=FeatureChainName
+	 *     (rule start) 'step' (ambiguity) redefinitions+=FeatureChainName
+	 *     (rule start) 'succession' 'flow' (ambiguity) redefinitions+=FeatureChainName
+	 *     (rule start) 'succession' (ambiguity) redefinitions+=FeatureChainName
+	 *     (rule start) (ambiguity) redefinitions+=FeatureChainName
+	 *     MultiHigh=MultiplicityExpression ']' (ambiguity) redefinitions+=FeatureChainName
+	 *     MultiLow=MultiplicityExpression ']' (ambiguity) redefinitions+=FeatureChainName
+	 *     crosses+=FeatureChainName (ambiguity) redefinitions+=FeatureChainName
+	 *     crossingFeature+=CrossingFeature 'binding' (ambiguity) redefinitions+=FeatureChainName
+	 *     crossingFeature+=CrossingFeature 'bool' (ambiguity) redefinitions+=FeatureChainName
+	 *     crossingFeature+=CrossingFeature 'connector' (ambiguity) redefinitions+=FeatureChainName
+	 *     crossingFeature+=CrossingFeature 'expr' (ambiguity) redefinitions+=FeatureChainName
+	 *     crossingFeature+=CrossingFeature 'feature' (ambiguity) redefinitions+=FeatureChainName
+	 *     crossingFeature+=CrossingFeature 'flow' (ambiguity) redefinitions+=FeatureChainName
+	 *     crossingFeature+=CrossingFeature 'inv' 'true'? (ambiguity) redefinitions+=FeatureChainName
+	 *     crossingFeature+=CrossingFeature 'step' (ambiguity) redefinitions+=FeatureChainName
+	 *     crossingFeature+=CrossingFeature 'succession' 'flow' (ambiguity) redefinitions+=FeatureChainName
+	 *     crossingFeature+=CrossingFeature 'succession' (ambiguity) redefinitions+=FeatureChainName
+	 *     declaredName=Name (ambiguity) redefinitions+=FeatureChainName
+	 *     declaredShortName=Name '&gt;' (ambiguity) redefinitions+=FeatureChainName
+	 *     direction=FeatureDirection 'binding' (ambiguity) redefinitions+=FeatureChainName
+	 *     direction=FeatureDirection 'bool' (ambiguity) redefinitions+=FeatureChainName
+	 *     direction=FeatureDirection 'connector' (ambiguity) redefinitions+=FeatureChainName
+	 *     direction=FeatureDirection 'expr' (ambiguity) redefinitions+=FeatureChainName
+	 *     direction=FeatureDirection 'flow' (ambiguity) redefinitions+=FeatureChainName
+	 *     direction=FeatureDirection 'inv' 'true'? (ambiguity) redefinitions+=FeatureChainName
+	 *     direction=FeatureDirection 'step' (ambiguity) redefinitions+=FeatureChainName
+	 *     direction=FeatureDirection 'succession' 'flow' (ambiguity) redefinitions+=FeatureChainName
+	 *     direction=FeatureDirection 'succession' (ambiguity) redefinitions+=FeatureChainName
+	 *     direction=FeatureDirection (ambiguity) redefinitions+=FeatureChainName
+	 *     isAbstract?='abstract' 'binding' (ambiguity) redefinitions+=FeatureChainName
+	 *     isAbstract?='abstract' 'bool' (ambiguity) redefinitions+=FeatureChainName
+	 *     isAbstract?='abstract' 'connector' (ambiguity) redefinitions+=FeatureChainName
+	 *     isAbstract?='abstract' 'expr' (ambiguity) redefinitions+=FeatureChainName
+	 *     isAbstract?='abstract' 'flow' (ambiguity) redefinitions+=FeatureChainName
+	 *     isAbstract?='abstract' 'inv' 'true'? (ambiguity) redefinitions+=FeatureChainName
+	 *     isAbstract?='abstract' 'step' (ambiguity) redefinitions+=FeatureChainName
+	 *     isAbstract?='abstract' 'succession' 'flow' (ambiguity) redefinitions+=FeatureChainName
+	 *     isAbstract?='abstract' 'succession' (ambiguity) redefinitions+=FeatureChainName
+	 *     isAbstract?='abstract' (ambiguity) redefinitions+=FeatureChainName
+	 *     isComposite?='composite' 'binding' (ambiguity) redefinitions+=FeatureChainName
+	 *     isComposite?='composite' 'bool' (ambiguity) redefinitions+=FeatureChainName
+	 *     isComposite?='composite' 'connector' (ambiguity) redefinitions+=FeatureChainName
+	 *     isComposite?='composite' 'expr' (ambiguity) redefinitions+=FeatureChainName
+	 *     isComposite?='composite' 'flow' (ambiguity) redefinitions+=FeatureChainName
+	 *     isComposite?='composite' 'inv' 'true'? (ambiguity) redefinitions+=FeatureChainName
+	 *     isComposite?='composite' 'step' (ambiguity) redefinitions+=FeatureChainName
+	 *     isComposite?='composite' 'succession' 'flow' (ambiguity) redefinitions+=FeatureChainName
+	 *     isComposite?='composite' 'succession' (ambiguity) redefinitions+=FeatureChainName
+	 *     isComposite?='composite' (ambiguity) redefinitions+=FeatureChainName
+	 *     isConstantBasic?='const' 'binding' (ambiguity) redefinitions+=FeatureChainName
+	 *     isConstantBasic?='const' 'bool' (ambiguity) redefinitions+=FeatureChainName
+	 *     isConstantBasic?='const' 'connector' (ambiguity) redefinitions+=FeatureChainName
+	 *     isConstantBasic?='const' 'expr' (ambiguity) redefinitions+=FeatureChainName
+	 *     isConstantBasic?='const' 'flow' (ambiguity) redefinitions+=FeatureChainName
+	 *     isConstantBasic?='const' 'inv' 'true'? (ambiguity) redefinitions+=FeatureChainName
+	 *     isConstantBasic?='const' 'step' (ambiguity) redefinitions+=FeatureChainName
+	 *     isConstantBasic?='const' 'succession' 'flow' (ambiguity) redefinitions+=FeatureChainName
+	 *     isConstantBasic?='const' 'succession' (ambiguity) redefinitions+=FeatureChainName
+	 *     isConstantBasic?='const' (ambiguity) redefinitions+=FeatureChainName
+	 *     isDerived?='derived' 'binding' (ambiguity) redefinitions+=FeatureChainName
+	 *     isDerived?='derived' 'bool' (ambiguity) redefinitions+=FeatureChainName
+	 *     isDerived?='derived' 'connector' (ambiguity) redefinitions+=FeatureChainName
+	 *     isDerived?='derived' 'expr' (ambiguity) redefinitions+=FeatureChainName
+	 *     isDerived?='derived' 'flow' (ambiguity) redefinitions+=FeatureChainName
+	 *     isDerived?='derived' 'inv' 'true'? (ambiguity) redefinitions+=FeatureChainName
+	 *     isDerived?='derived' 'step' (ambiguity) redefinitions+=FeatureChainName
+	 *     isDerived?='derived' 'succession' 'flow' (ambiguity) redefinitions+=FeatureChainName
+	 *     isDerived?='derived' 'succession' (ambiguity) redefinitions+=FeatureChainName
+	 *     isDerived?='derived' (ambiguity) redefinitions+=FeatureChainName
+	 *     isEnd?='end' 'binding' (ambiguity) redefinitions+=FeatureChainName
+	 *     isEnd?='end' 'bool' (ambiguity) redefinitions+=FeatureChainName
+	 *     isEnd?='end' 'connector' (ambiguity) redefinitions+=FeatureChainName
+	 *     isEnd?='end' 'expr' (ambiguity) redefinitions+=FeatureChainName
+	 *     isEnd?='end' 'flow' (ambiguity) redefinitions+=FeatureChainName
+	 *     isEnd?='end' 'inv' 'true'? (ambiguity) redefinitions+=FeatureChainName
+	 *     isEnd?='end' 'step' (ambiguity) redefinitions+=FeatureChainName
+	 *     isEnd?='end' 'succession' 'flow' (ambiguity) redefinitions+=FeatureChainName
+	 *     isEnd?='end' 'succession' (ambiguity) redefinitions+=FeatureChainName
+	 *     isEnd?='end' (ambiguity) redefinitions+=FeatureChainName
+	 *     isMember?='member' 'binding' (ambiguity) redefinitions+=FeatureChainName
+	 *     isMember?='member' 'bool' (ambiguity) redefinitions+=FeatureChainName
+	 *     isMember?='member' 'connector' (ambiguity) redefinitions+=FeatureChainName
+	 *     isMember?='member' 'expr' (ambiguity) redefinitions+=FeatureChainName
+	 *     isMember?='member' 'flow' (ambiguity) redefinitions+=FeatureChainName
+	 *     isMember?='member' 'inv' 'true'? (ambiguity) redefinitions+=FeatureChainName
+	 *     isMember?='member' 'step' (ambiguity) redefinitions+=FeatureChainName
+	 *     isMember?='member' 'succession' 'flow' (ambiguity) redefinitions+=FeatureChainName
+	 *     isMember?='member' 'succession' (ambiguity) redefinitions+=FeatureChainName
+	 *     isMember?='member' (ambiguity) redefinitions+=FeatureChainName
+	 *     isNegated?='false' (ambiguity) redefinitions+=FeatureChainName
+	 *     isNonunique?='nonunique' (ambiguity) redefinitions+=FeatureChainName
+	 *     isOrdered?='ordered' (ambiguity) redefinitions+=FeatureChainName
+	 *     isPortion?='portion' 'binding' (ambiguity) redefinitions+=FeatureChainName
+	 *     isPortion?='portion' 'bool' (ambiguity) redefinitions+=FeatureChainName
+	 *     isPortion?='portion' 'connector' (ambiguity) redefinitions+=FeatureChainName
+	 *     isPortion?='portion' 'expr' (ambiguity) redefinitions+=FeatureChainName
+	 *     isPortion?='portion' 'flow' (ambiguity) redefinitions+=FeatureChainName
+	 *     isPortion?='portion' 'inv' 'true'? (ambiguity) redefinitions+=FeatureChainName
+	 *     isPortion?='portion' 'step' (ambiguity) redefinitions+=FeatureChainName
+	 *     isPortion?='portion' 'succession' 'flow' (ambiguity) redefinitions+=FeatureChainName
+	 *     isPortion?='portion' 'succession' (ambiguity) redefinitions+=FeatureChainName
+	 *     isPortion?='portion' (ambiguity) redefinitions+=FeatureChainName
+	 *     isReturn?='return' 'binding' (ambiguity) redefinitions+=FeatureChainName
+	 *     isReturn?='return' 'bool' (ambiguity) redefinitions+=FeatureChainName
+	 *     isReturn?='return' 'connector' (ambiguity) redefinitions+=FeatureChainName
+	 *     isReturn?='return' 'expr' (ambiguity) redefinitions+=FeatureChainName
+	 *     isReturn?='return' 'flow' (ambiguity) redefinitions+=FeatureChainName
+	 *     isReturn?='return' 'inv' 'true'? (ambiguity) redefinitions+=FeatureChainName
+	 *     isReturn?='return' 'step' (ambiguity) redefinitions+=FeatureChainName
+	 *     isReturn?='return' 'succession' 'flow' (ambiguity) redefinitions+=FeatureChainName
+	 *     isReturn?='return' 'succession' (ambiguity) redefinitions+=FeatureChainName
+	 *     isReturn?='return' (ambiguity) redefinitions+=FeatureChainName
+	 *     isSufficient?='all' (ambiguity) redefinitions+=FeatureChainName
+	 *     isVariable?='var' 'binding' (ambiguity) redefinitions+=FeatureChainName
+	 *     isVariable?='var' 'bool' (ambiguity) redefinitions+=FeatureChainName
+	 *     isVariable?='var' 'connector' (ambiguity) redefinitions+=FeatureChainName
+	 *     isVariable?='var' 'expr' (ambiguity) redefinitions+=FeatureChainName
+	 *     isVariable?='var' 'flow' (ambiguity) redefinitions+=FeatureChainName
+	 *     isVariable?='var' 'inv' 'true'? (ambiguity) redefinitions+=FeatureChainName
+	 *     isVariable?='var' 'step' (ambiguity) redefinitions+=FeatureChainName
+	 *     isVariable?='var' 'succession' 'flow' (ambiguity) redefinitions+=FeatureChainName
+	 *     isVariable?='var' 'succession' (ambiguity) redefinitions+=FeatureChainName
+	 *     isVariable?='var' (ambiguity) redefinitions+=FeatureChainName
+	 *     isVariant?='variant' 'binding' (ambiguity) redefinitions+=FeatureChainName
+	 *     isVariant?='variant' 'bool' (ambiguity) redefinitions+=FeatureChainName
+	 *     isVariant?='variant' 'connector' (ambiguity) redefinitions+=FeatureChainName
+	 *     isVariant?='variant' 'expr' (ambiguity) redefinitions+=FeatureChainName
+	 *     isVariant?='variant' 'flow' (ambiguity) redefinitions+=FeatureChainName
+	 *     isVariant?='variant' 'inv' 'true'? (ambiguity) redefinitions+=FeatureChainName
+	 *     isVariant?='variant' 'step' (ambiguity) redefinitions+=FeatureChainName
+	 *     isVariant?='variant' 'succession' 'flow' (ambiguity) redefinitions+=FeatureChainName
+	 *     isVariant?='variant' 'succession' (ambiguity) redefinitions+=FeatureChainName
+	 *     isVariant?='variant' (ambiguity) redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'binding' (ambiguity) redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'bool' (ambiguity) redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'connector' (ambiguity) redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'expr' (ambiguity) redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'flow' (ambiguity) redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'inv' 'true'? (ambiguity) redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'step' (ambiguity) redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'succession' 'flow' (ambiguity) redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'succession' (ambiguity) redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) redefinitions+=FeatureChainName
+	 *     redefinedFeature+=FeatureChainName (ambiguity) redefinitions+=FeatureChainName
+	 *     redefinitions+=FeatureChainName (ambiguity) redefinitions+=FeatureChainName
+	 *     references+=FeatureChainName (ambiguity) redefinitions+=FeatureChainName
+	 *     subsetting+=FeatureChainName (ambiguity) redefinitions+=FeatureChainName
+	 *     typings+=FeatureTypingName (ambiguity) redefinitions+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'binding' (ambiguity) redefinitions+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'bool' (ambiguity) redefinitions+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'connector' (ambiguity) redefinitions+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'expr' (ambiguity) redefinitions+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'flow' (ambiguity) redefinitions+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'inv' 'true'? (ambiguity) redefinitions+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'step' (ambiguity) redefinitions+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'succession' 'flow' (ambiguity) redefinitions+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'succession' (ambiguity) redefinitions+=FeatureChainName
+	 *     visibility=VisibilityIndicator (ambiguity) redefinitions+=FeatureChainName
+	 
+	 * </pre>
+	 */
+	protected void emit_FeatureSpecialization_ColonGreaterThanSignGreaterThanSignKeyword_4_0_0_or_RedefinesKeyword_4_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ':&gt;' | 'specializes' | 'subsets'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'binding' (ambiguity) subsetting+=FeatureChainName
+	 *     (rule start) 'bool' (ambiguity) subsetting+=FeatureChainName
+	 *     (rule start) 'connector' (ambiguity) subsetting+=FeatureChainName
+	 *     (rule start) 'expr' (ambiguity) subsetting+=FeatureChainName
+	 *     (rule start) 'flow' (ambiguity) subsetting+=FeatureChainName
+	 *     (rule start) 'inv' 'true'? (ambiguity) subsetting+=FeatureChainName
+	 *     (rule start) 'step' (ambiguity) subsetting+=FeatureChainName
+	 *     (rule start) 'succession' 'flow' (ambiguity) subsetting+=FeatureChainName
+	 *     (rule start) 'succession' (ambiguity) subsetting+=FeatureChainName
+	 *     (rule start) (ambiguity) subsetting+=FeatureChainName
+	 *     MultiHigh=MultiplicityExpression ']' (ambiguity) subsetting+=FeatureChainName
+	 *     MultiLow=MultiplicityExpression ']' (ambiguity) subsetting+=FeatureChainName
+	 *     crosses+=FeatureChainName (ambiguity) subsetting+=FeatureChainName
+	 *     crossingFeature+=CrossingFeature 'binding' (ambiguity) subsetting+=FeatureChainName
+	 *     crossingFeature+=CrossingFeature 'bool' (ambiguity) subsetting+=FeatureChainName
+	 *     crossingFeature+=CrossingFeature 'connector' (ambiguity) subsetting+=FeatureChainName
+	 *     crossingFeature+=CrossingFeature 'expr' (ambiguity) subsetting+=FeatureChainName
+	 *     crossingFeature+=CrossingFeature 'feature' (ambiguity) subsetting+=FeatureChainName
+	 *     crossingFeature+=CrossingFeature 'flow' (ambiguity) subsetting+=FeatureChainName
+	 *     crossingFeature+=CrossingFeature 'inv' 'true'? (ambiguity) subsetting+=FeatureChainName
+	 *     crossingFeature+=CrossingFeature 'step' (ambiguity) subsetting+=FeatureChainName
+	 *     crossingFeature+=CrossingFeature 'succession' 'flow' (ambiguity) subsetting+=FeatureChainName
+	 *     crossingFeature+=CrossingFeature 'succession' (ambiguity) subsetting+=FeatureChainName
+	 *     declaredName=Name (ambiguity) subsetting+=FeatureChainName
+	 *     declaredShortName=Name '&gt;' (ambiguity) subsetting+=FeatureChainName
+	 *     direction=FeatureDirection 'binding' (ambiguity) subsetting+=FeatureChainName
+	 *     direction=FeatureDirection 'bool' (ambiguity) subsetting+=FeatureChainName
+	 *     direction=FeatureDirection 'connector' (ambiguity) subsetting+=FeatureChainName
+	 *     direction=FeatureDirection 'expr' (ambiguity) subsetting+=FeatureChainName
+	 *     direction=FeatureDirection 'flow' (ambiguity) subsetting+=FeatureChainName
+	 *     direction=FeatureDirection 'inv' 'true'? (ambiguity) subsetting+=FeatureChainName
+	 *     direction=FeatureDirection 'step' (ambiguity) subsetting+=FeatureChainName
+	 *     direction=FeatureDirection 'succession' 'flow' (ambiguity) subsetting+=FeatureChainName
+	 *     direction=FeatureDirection 'succession' (ambiguity) subsetting+=FeatureChainName
+	 *     direction=FeatureDirection (ambiguity) subsetting+=FeatureChainName
+	 *     isAbstract?='abstract' 'binding' (ambiguity) subsetting+=FeatureChainName
+	 *     isAbstract?='abstract' 'bool' (ambiguity) subsetting+=FeatureChainName
+	 *     isAbstract?='abstract' 'connector' (ambiguity) subsetting+=FeatureChainName
+	 *     isAbstract?='abstract' 'expr' (ambiguity) subsetting+=FeatureChainName
+	 *     isAbstract?='abstract' 'flow' (ambiguity) subsetting+=FeatureChainName
+	 *     isAbstract?='abstract' 'inv' 'true'? (ambiguity) subsetting+=FeatureChainName
+	 *     isAbstract?='abstract' 'step' (ambiguity) subsetting+=FeatureChainName
+	 *     isAbstract?='abstract' 'succession' 'flow' (ambiguity) subsetting+=FeatureChainName
+	 *     isAbstract?='abstract' 'succession' (ambiguity) subsetting+=FeatureChainName
+	 *     isAbstract?='abstract' (ambiguity) subsetting+=FeatureChainName
+	 *     isComposite?='composite' 'binding' (ambiguity) subsetting+=FeatureChainName
+	 *     isComposite?='composite' 'bool' (ambiguity) subsetting+=FeatureChainName
+	 *     isComposite?='composite' 'connector' (ambiguity) subsetting+=FeatureChainName
+	 *     isComposite?='composite' 'expr' (ambiguity) subsetting+=FeatureChainName
+	 *     isComposite?='composite' 'flow' (ambiguity) subsetting+=FeatureChainName
+	 *     isComposite?='composite' 'inv' 'true'? (ambiguity) subsetting+=FeatureChainName
+	 *     isComposite?='composite' 'step' (ambiguity) subsetting+=FeatureChainName
+	 *     isComposite?='composite' 'succession' 'flow' (ambiguity) subsetting+=FeatureChainName
+	 *     isComposite?='composite' 'succession' (ambiguity) subsetting+=FeatureChainName
+	 *     isComposite?='composite' (ambiguity) subsetting+=FeatureChainName
+	 *     isConstantBasic?='const' 'binding' (ambiguity) subsetting+=FeatureChainName
+	 *     isConstantBasic?='const' 'bool' (ambiguity) subsetting+=FeatureChainName
+	 *     isConstantBasic?='const' 'connector' (ambiguity) subsetting+=FeatureChainName
+	 *     isConstantBasic?='const' 'expr' (ambiguity) subsetting+=FeatureChainName
+	 *     isConstantBasic?='const' 'flow' (ambiguity) subsetting+=FeatureChainName
+	 *     isConstantBasic?='const' 'inv' 'true'? (ambiguity) subsetting+=FeatureChainName
+	 *     isConstantBasic?='const' 'step' (ambiguity) subsetting+=FeatureChainName
+	 *     isConstantBasic?='const' 'succession' 'flow' (ambiguity) subsetting+=FeatureChainName
+	 *     isConstantBasic?='const' 'succession' (ambiguity) subsetting+=FeatureChainName
+	 *     isConstantBasic?='const' (ambiguity) subsetting+=FeatureChainName
+	 *     isDerived?='derived' 'binding' (ambiguity) subsetting+=FeatureChainName
+	 *     isDerived?='derived' 'bool' (ambiguity) subsetting+=FeatureChainName
+	 *     isDerived?='derived' 'connector' (ambiguity) subsetting+=FeatureChainName
+	 *     isDerived?='derived' 'expr' (ambiguity) subsetting+=FeatureChainName
+	 *     isDerived?='derived' 'flow' (ambiguity) subsetting+=FeatureChainName
+	 *     isDerived?='derived' 'inv' 'true'? (ambiguity) subsetting+=FeatureChainName
+	 *     isDerived?='derived' 'step' (ambiguity) subsetting+=FeatureChainName
+	 *     isDerived?='derived' 'succession' 'flow' (ambiguity) subsetting+=FeatureChainName
+	 *     isDerived?='derived' 'succession' (ambiguity) subsetting+=FeatureChainName
+	 *     isDerived?='derived' (ambiguity) subsetting+=FeatureChainName
+	 *     isEnd?='end' 'binding' (ambiguity) subsetting+=FeatureChainName
+	 *     isEnd?='end' 'bool' (ambiguity) subsetting+=FeatureChainName
+	 *     isEnd?='end' 'connector' (ambiguity) subsetting+=FeatureChainName
+	 *     isEnd?='end' 'expr' (ambiguity) subsetting+=FeatureChainName
+	 *     isEnd?='end' 'flow' (ambiguity) subsetting+=FeatureChainName
+	 *     isEnd?='end' 'inv' 'true'? (ambiguity) subsetting+=FeatureChainName
+	 *     isEnd?='end' 'step' (ambiguity) subsetting+=FeatureChainName
+	 *     isEnd?='end' 'succession' 'flow' (ambiguity) subsetting+=FeatureChainName
+	 *     isEnd?='end' 'succession' (ambiguity) subsetting+=FeatureChainName
+	 *     isEnd?='end' (ambiguity) subsetting+=FeatureChainName
+	 *     isMember?='member' 'binding' (ambiguity) subsetting+=FeatureChainName
+	 *     isMember?='member' 'bool' (ambiguity) subsetting+=FeatureChainName
+	 *     isMember?='member' 'connector' (ambiguity) subsetting+=FeatureChainName
+	 *     isMember?='member' 'expr' (ambiguity) subsetting+=FeatureChainName
+	 *     isMember?='member' 'flow' (ambiguity) subsetting+=FeatureChainName
+	 *     isMember?='member' 'inv' 'true'? (ambiguity) subsetting+=FeatureChainName
+	 *     isMember?='member' 'step' (ambiguity) subsetting+=FeatureChainName
+	 *     isMember?='member' 'succession' 'flow' (ambiguity) subsetting+=FeatureChainName
+	 *     isMember?='member' 'succession' (ambiguity) subsetting+=FeatureChainName
+	 *     isMember?='member' (ambiguity) subsetting+=FeatureChainName
+	 *     isNegated?='false' (ambiguity) subsetting+=FeatureChainName
+	 *     isNonunique?='nonunique' (ambiguity) subsetting+=FeatureChainName
+	 *     isOrdered?='ordered' (ambiguity) subsetting+=FeatureChainName
+	 *     isPortion?='portion' 'binding' (ambiguity) subsetting+=FeatureChainName
+	 *     isPortion?='portion' 'bool' (ambiguity) subsetting+=FeatureChainName
+	 *     isPortion?='portion' 'connector' (ambiguity) subsetting+=FeatureChainName
+	 *     isPortion?='portion' 'expr' (ambiguity) subsetting+=FeatureChainName
+	 *     isPortion?='portion' 'flow' (ambiguity) subsetting+=FeatureChainName
+	 *     isPortion?='portion' 'inv' 'true'? (ambiguity) subsetting+=FeatureChainName
+	 *     isPortion?='portion' 'step' (ambiguity) subsetting+=FeatureChainName
+	 *     isPortion?='portion' 'succession' 'flow' (ambiguity) subsetting+=FeatureChainName
+	 *     isPortion?='portion' 'succession' (ambiguity) subsetting+=FeatureChainName
+	 *     isPortion?='portion' (ambiguity) subsetting+=FeatureChainName
+	 *     isReturn?='return' 'binding' (ambiguity) subsetting+=FeatureChainName
+	 *     isReturn?='return' 'bool' (ambiguity) subsetting+=FeatureChainName
+	 *     isReturn?='return' 'connector' (ambiguity) subsetting+=FeatureChainName
+	 *     isReturn?='return' 'expr' (ambiguity) subsetting+=FeatureChainName
+	 *     isReturn?='return' 'flow' (ambiguity) subsetting+=FeatureChainName
+	 *     isReturn?='return' 'inv' 'true'? (ambiguity) subsetting+=FeatureChainName
+	 *     isReturn?='return' 'step' (ambiguity) subsetting+=FeatureChainName
+	 *     isReturn?='return' 'succession' 'flow' (ambiguity) subsetting+=FeatureChainName
+	 *     isReturn?='return' 'succession' (ambiguity) subsetting+=FeatureChainName
+	 *     isReturn?='return' (ambiguity) subsetting+=FeatureChainName
+	 *     isSufficient?='all' (ambiguity) subsetting+=FeatureChainName
+	 *     isVariable?='var' 'binding' (ambiguity) subsetting+=FeatureChainName
+	 *     isVariable?='var' 'bool' (ambiguity) subsetting+=FeatureChainName
+	 *     isVariable?='var' 'connector' (ambiguity) subsetting+=FeatureChainName
+	 *     isVariable?='var' 'expr' (ambiguity) subsetting+=FeatureChainName
+	 *     isVariable?='var' 'flow' (ambiguity) subsetting+=FeatureChainName
+	 *     isVariable?='var' 'inv' 'true'? (ambiguity) subsetting+=FeatureChainName
+	 *     isVariable?='var' 'step' (ambiguity) subsetting+=FeatureChainName
+	 *     isVariable?='var' 'succession' 'flow' (ambiguity) subsetting+=FeatureChainName
+	 *     isVariable?='var' 'succession' (ambiguity) subsetting+=FeatureChainName
+	 *     isVariable?='var' (ambiguity) subsetting+=FeatureChainName
+	 *     isVariant?='variant' 'binding' (ambiguity) subsetting+=FeatureChainName
+	 *     isVariant?='variant' 'bool' (ambiguity) subsetting+=FeatureChainName
+	 *     isVariant?='variant' 'connector' (ambiguity) subsetting+=FeatureChainName
+	 *     isVariant?='variant' 'expr' (ambiguity) subsetting+=FeatureChainName
+	 *     isVariant?='variant' 'flow' (ambiguity) subsetting+=FeatureChainName
+	 *     isVariant?='variant' 'inv' 'true'? (ambiguity) subsetting+=FeatureChainName
+	 *     isVariant?='variant' 'step' (ambiguity) subsetting+=FeatureChainName
+	 *     isVariant?='variant' 'succession' 'flow' (ambiguity) subsetting+=FeatureChainName
+	 *     isVariant?='variant' 'succession' (ambiguity) subsetting+=FeatureChainName
+	 *     isVariant?='variant' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'binding' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'bool' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'connector' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'expr' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'flow' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'inv' 'true'? (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'step' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'succession' 'flow' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'succession' (ambiguity) subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) subsetting+=FeatureChainName
+	 *     redefinedFeature+=FeatureChainName (ambiguity) subsetting+=FeatureChainName
+	 *     redefinitions+=FeatureChainName (ambiguity) subsetting+=FeatureChainName
+	 *     references+=FeatureChainName (ambiguity) subsetting+=FeatureChainName
+	 *     subsetting+=FeatureChainName (ambiguity) subsetting+=FeatureChainName
+	 *     typings+=FeatureTypingName (ambiguity) subsetting+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'binding' (ambiguity) subsetting+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'bool' (ambiguity) subsetting+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'connector' (ambiguity) subsetting+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'expr' (ambiguity) subsetting+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'flow' (ambiguity) subsetting+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'inv' 'true'? (ambiguity) subsetting+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'step' (ambiguity) subsetting+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'succession' 'flow' (ambiguity) subsetting+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'succession' (ambiguity) subsetting+=FeatureChainName
+	 *     visibility=VisibilityIndicator (ambiguity) subsetting+=FeatureChainName
+	 
+	 * </pre>
+	 */
+	protected void emit_FeatureSpecialization_ColonGreaterThanSignKeyword_1_0_0_or_SpecializesKeyword_1_0_1_or_SubsetsKeyword_1_0_2(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ':' | ('typed' 'by')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'binding' (ambiguity) typings+=FeatureTypingName
+	 *     (rule start) 'bool' (ambiguity) typings+=FeatureTypingName
+	 *     (rule start) 'connector' (ambiguity) typings+=FeatureTypingName
+	 *     (rule start) 'expr' (ambiguity) typings+=FeatureTypingName
+	 *     (rule start) 'flow' (ambiguity) typings+=FeatureTypingName
+	 *     (rule start) 'inv' 'true'? (ambiguity) typings+=FeatureTypingName
+	 *     (rule start) 'step' (ambiguity) typings+=FeatureTypingName
+	 *     (rule start) 'succession' 'flow' (ambiguity) typings+=FeatureTypingName
+	 *     (rule start) 'succession' (ambiguity) typings+=FeatureTypingName
+	 *     (rule start) (ambiguity) typings+=FeatureTypingName
+	 *     MultiHigh=MultiplicityExpression ']' (ambiguity) typings+=FeatureTypingName
+	 *     MultiLow=MultiplicityExpression ']' (ambiguity) typings+=FeatureTypingName
+	 *     crosses+=FeatureChainName (ambiguity) typings+=FeatureTypingName
+	 *     crossingFeature+=CrossingFeature 'binding' (ambiguity) typings+=FeatureTypingName
+	 *     crossingFeature+=CrossingFeature 'bool' (ambiguity) typings+=FeatureTypingName
+	 *     crossingFeature+=CrossingFeature 'connector' (ambiguity) typings+=FeatureTypingName
+	 *     crossingFeature+=CrossingFeature 'expr' (ambiguity) typings+=FeatureTypingName
+	 *     crossingFeature+=CrossingFeature 'feature' (ambiguity) typings+=FeatureTypingName
+	 *     crossingFeature+=CrossingFeature 'flow' (ambiguity) typings+=FeatureTypingName
+	 *     crossingFeature+=CrossingFeature 'inv' 'true'? (ambiguity) typings+=FeatureTypingName
+	 *     crossingFeature+=CrossingFeature 'step' (ambiguity) typings+=FeatureTypingName
+	 *     crossingFeature+=CrossingFeature 'succession' 'flow' (ambiguity) typings+=FeatureTypingName
+	 *     crossingFeature+=CrossingFeature 'succession' (ambiguity) typings+=FeatureTypingName
+	 *     declaredName=Name (ambiguity) typings+=FeatureTypingName
+	 *     declaredShortName=Name '&gt;' (ambiguity) typings+=FeatureTypingName
+	 *     direction=FeatureDirection 'binding' (ambiguity) typings+=FeatureTypingName
+	 *     direction=FeatureDirection 'bool' (ambiguity) typings+=FeatureTypingName
+	 *     direction=FeatureDirection 'connector' (ambiguity) typings+=FeatureTypingName
+	 *     direction=FeatureDirection 'expr' (ambiguity) typings+=FeatureTypingName
+	 *     direction=FeatureDirection 'flow' (ambiguity) typings+=FeatureTypingName
+	 *     direction=FeatureDirection 'inv' 'true'? (ambiguity) typings+=FeatureTypingName
+	 *     direction=FeatureDirection 'step' (ambiguity) typings+=FeatureTypingName
+	 *     direction=FeatureDirection 'succession' 'flow' (ambiguity) typings+=FeatureTypingName
+	 *     direction=FeatureDirection 'succession' (ambiguity) typings+=FeatureTypingName
+	 *     direction=FeatureDirection (ambiguity) typings+=FeatureTypingName
+	 *     isAbstract?='abstract' 'binding' (ambiguity) typings+=FeatureTypingName
+	 *     isAbstract?='abstract' 'bool' (ambiguity) typings+=FeatureTypingName
+	 *     isAbstract?='abstract' 'connector' (ambiguity) typings+=FeatureTypingName
+	 *     isAbstract?='abstract' 'expr' (ambiguity) typings+=FeatureTypingName
+	 *     isAbstract?='abstract' 'flow' (ambiguity) typings+=FeatureTypingName
+	 *     isAbstract?='abstract' 'inv' 'true'? (ambiguity) typings+=FeatureTypingName
+	 *     isAbstract?='abstract' 'step' (ambiguity) typings+=FeatureTypingName
+	 *     isAbstract?='abstract' 'succession' 'flow' (ambiguity) typings+=FeatureTypingName
+	 *     isAbstract?='abstract' 'succession' (ambiguity) typings+=FeatureTypingName
+	 *     isAbstract?='abstract' (ambiguity) typings+=FeatureTypingName
+	 *     isComposite?='composite' 'binding' (ambiguity) typings+=FeatureTypingName
+	 *     isComposite?='composite' 'bool' (ambiguity) typings+=FeatureTypingName
+	 *     isComposite?='composite' 'connector' (ambiguity) typings+=FeatureTypingName
+	 *     isComposite?='composite' 'expr' (ambiguity) typings+=FeatureTypingName
+	 *     isComposite?='composite' 'flow' (ambiguity) typings+=FeatureTypingName
+	 *     isComposite?='composite' 'inv' 'true'? (ambiguity) typings+=FeatureTypingName
+	 *     isComposite?='composite' 'step' (ambiguity) typings+=FeatureTypingName
+	 *     isComposite?='composite' 'succession' 'flow' (ambiguity) typings+=FeatureTypingName
+	 *     isComposite?='composite' 'succession' (ambiguity) typings+=FeatureTypingName
+	 *     isComposite?='composite' (ambiguity) typings+=FeatureTypingName
+	 *     isConstantBasic?='const' 'binding' (ambiguity) typings+=FeatureTypingName
+	 *     isConstantBasic?='const' 'bool' (ambiguity) typings+=FeatureTypingName
+	 *     isConstantBasic?='const' 'connector' (ambiguity) typings+=FeatureTypingName
+	 *     isConstantBasic?='const' 'expr' (ambiguity) typings+=FeatureTypingName
+	 *     isConstantBasic?='const' 'flow' (ambiguity) typings+=FeatureTypingName
+	 *     isConstantBasic?='const' 'inv' 'true'? (ambiguity) typings+=FeatureTypingName
+	 *     isConstantBasic?='const' 'step' (ambiguity) typings+=FeatureTypingName
+	 *     isConstantBasic?='const' 'succession' 'flow' (ambiguity) typings+=FeatureTypingName
+	 *     isConstantBasic?='const' 'succession' (ambiguity) typings+=FeatureTypingName
+	 *     isConstantBasic?='const' (ambiguity) typings+=FeatureTypingName
+	 *     isDerived?='derived' 'binding' (ambiguity) typings+=FeatureTypingName
+	 *     isDerived?='derived' 'bool' (ambiguity) typings+=FeatureTypingName
+	 *     isDerived?='derived' 'connector' (ambiguity) typings+=FeatureTypingName
+	 *     isDerived?='derived' 'expr' (ambiguity) typings+=FeatureTypingName
+	 *     isDerived?='derived' 'flow' (ambiguity) typings+=FeatureTypingName
+	 *     isDerived?='derived' 'inv' 'true'? (ambiguity) typings+=FeatureTypingName
+	 *     isDerived?='derived' 'step' (ambiguity) typings+=FeatureTypingName
+	 *     isDerived?='derived' 'succession' 'flow' (ambiguity) typings+=FeatureTypingName
+	 *     isDerived?='derived' 'succession' (ambiguity) typings+=FeatureTypingName
+	 *     isDerived?='derived' (ambiguity) typings+=FeatureTypingName
+	 *     isEnd?='end' 'binding' (ambiguity) typings+=FeatureTypingName
+	 *     isEnd?='end' 'bool' (ambiguity) typings+=FeatureTypingName
+	 *     isEnd?='end' 'connector' (ambiguity) typings+=FeatureTypingName
+	 *     isEnd?='end' 'expr' (ambiguity) typings+=FeatureTypingName
+	 *     isEnd?='end' 'flow' (ambiguity) typings+=FeatureTypingName
+	 *     isEnd?='end' 'inv' 'true'? (ambiguity) typings+=FeatureTypingName
+	 *     isEnd?='end' 'step' (ambiguity) typings+=FeatureTypingName
+	 *     isEnd?='end' 'succession' 'flow' (ambiguity) typings+=FeatureTypingName
+	 *     isEnd?='end' 'succession' (ambiguity) typings+=FeatureTypingName
+	 *     isEnd?='end' (ambiguity) typings+=FeatureTypingName
+	 *     isMember?='member' 'binding' (ambiguity) typings+=FeatureTypingName
+	 *     isMember?='member' 'bool' (ambiguity) typings+=FeatureTypingName
+	 *     isMember?='member' 'connector' (ambiguity) typings+=FeatureTypingName
+	 *     isMember?='member' 'expr' (ambiguity) typings+=FeatureTypingName
+	 *     isMember?='member' 'flow' (ambiguity) typings+=FeatureTypingName
+	 *     isMember?='member' 'inv' 'true'? (ambiguity) typings+=FeatureTypingName
+	 *     isMember?='member' 'step' (ambiguity) typings+=FeatureTypingName
+	 *     isMember?='member' 'succession' 'flow' (ambiguity) typings+=FeatureTypingName
+	 *     isMember?='member' 'succession' (ambiguity) typings+=FeatureTypingName
+	 *     isMember?='member' (ambiguity) typings+=FeatureTypingName
+	 *     isNegated?='false' (ambiguity) typings+=FeatureTypingName
+	 *     isNonunique?='nonunique' (ambiguity) typings+=FeatureTypingName
+	 *     isOrdered?='ordered' (ambiguity) typings+=FeatureTypingName
+	 *     isPortion?='portion' 'binding' (ambiguity) typings+=FeatureTypingName
+	 *     isPortion?='portion' 'bool' (ambiguity) typings+=FeatureTypingName
+	 *     isPortion?='portion' 'connector' (ambiguity) typings+=FeatureTypingName
+	 *     isPortion?='portion' 'expr' (ambiguity) typings+=FeatureTypingName
+	 *     isPortion?='portion' 'flow' (ambiguity) typings+=FeatureTypingName
+	 *     isPortion?='portion' 'inv' 'true'? (ambiguity) typings+=FeatureTypingName
+	 *     isPortion?='portion' 'step' (ambiguity) typings+=FeatureTypingName
+	 *     isPortion?='portion' 'succession' 'flow' (ambiguity) typings+=FeatureTypingName
+	 *     isPortion?='portion' 'succession' (ambiguity) typings+=FeatureTypingName
+	 *     isPortion?='portion' (ambiguity) typings+=FeatureTypingName
+	 *     isReturn?='return' 'binding' (ambiguity) typings+=FeatureTypingName
+	 *     isReturn?='return' 'bool' (ambiguity) typings+=FeatureTypingName
+	 *     isReturn?='return' 'connector' (ambiguity) typings+=FeatureTypingName
+	 *     isReturn?='return' 'expr' (ambiguity) typings+=FeatureTypingName
+	 *     isReturn?='return' 'flow' (ambiguity) typings+=FeatureTypingName
+	 *     isReturn?='return' 'inv' 'true'? (ambiguity) typings+=FeatureTypingName
+	 *     isReturn?='return' 'step' (ambiguity) typings+=FeatureTypingName
+	 *     isReturn?='return' 'succession' 'flow' (ambiguity) typings+=FeatureTypingName
+	 *     isReturn?='return' 'succession' (ambiguity) typings+=FeatureTypingName
+	 *     isReturn?='return' (ambiguity) typings+=FeatureTypingName
+	 *     isSufficient?='all' (ambiguity) typings+=FeatureTypingName
+	 *     isVariable?='var' 'binding' (ambiguity) typings+=FeatureTypingName
+	 *     isVariable?='var' 'bool' (ambiguity) typings+=FeatureTypingName
+	 *     isVariable?='var' 'connector' (ambiguity) typings+=FeatureTypingName
+	 *     isVariable?='var' 'expr' (ambiguity) typings+=FeatureTypingName
+	 *     isVariable?='var' 'flow' (ambiguity) typings+=FeatureTypingName
+	 *     isVariable?='var' 'inv' 'true'? (ambiguity) typings+=FeatureTypingName
+	 *     isVariable?='var' 'step' (ambiguity) typings+=FeatureTypingName
+	 *     isVariable?='var' 'succession' 'flow' (ambiguity) typings+=FeatureTypingName
+	 *     isVariable?='var' 'succession' (ambiguity) typings+=FeatureTypingName
+	 *     isVariable?='var' (ambiguity) typings+=FeatureTypingName
+	 *     isVariant?='variant' 'binding' (ambiguity) typings+=FeatureTypingName
+	 *     isVariant?='variant' 'bool' (ambiguity) typings+=FeatureTypingName
+	 *     isVariant?='variant' 'connector' (ambiguity) typings+=FeatureTypingName
+	 *     isVariant?='variant' 'expr' (ambiguity) typings+=FeatureTypingName
+	 *     isVariant?='variant' 'flow' (ambiguity) typings+=FeatureTypingName
+	 *     isVariant?='variant' 'inv' 'true'? (ambiguity) typings+=FeatureTypingName
+	 *     isVariant?='variant' 'step' (ambiguity) typings+=FeatureTypingName
+	 *     isVariant?='variant' 'succession' 'flow' (ambiguity) typings+=FeatureTypingName
+	 *     isVariant?='variant' 'succession' (ambiguity) typings+=FeatureTypingName
+	 *     isVariant?='variant' (ambiguity) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'binding' (ambiguity) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'bool' (ambiguity) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'connector' (ambiguity) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'expr' (ambiguity) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'flow' (ambiguity) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'inv' 'true'? (ambiguity) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'step' (ambiguity) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'succession' 'flow' (ambiguity) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'succession' (ambiguity) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) typings+=FeatureTypingName
+	 *     redefinedFeature+=FeatureChainName (ambiguity) typings+=FeatureTypingName
+	 *     redefinitions+=FeatureChainName (ambiguity) typings+=FeatureTypingName
+	 *     references+=FeatureChainName (ambiguity) typings+=FeatureTypingName
+	 *     subsetting+=FeatureChainName (ambiguity) typings+=FeatureTypingName
+	 *     typings+=FeatureTypingName (ambiguity) typings+=FeatureTypingName
+	 *     visibility=VisibilityIndicator 'binding' (ambiguity) typings+=FeatureTypingName
+	 *     visibility=VisibilityIndicator 'bool' (ambiguity) typings+=FeatureTypingName
+	 *     visibility=VisibilityIndicator 'connector' (ambiguity) typings+=FeatureTypingName
+	 *     visibility=VisibilityIndicator 'expr' (ambiguity) typings+=FeatureTypingName
+	 *     visibility=VisibilityIndicator 'flow' (ambiguity) typings+=FeatureTypingName
+	 *     visibility=VisibilityIndicator 'inv' 'true'? (ambiguity) typings+=FeatureTypingName
+	 *     visibility=VisibilityIndicator 'step' (ambiguity) typings+=FeatureTypingName
+	 *     visibility=VisibilityIndicator 'succession' 'flow' (ambiguity) typings+=FeatureTypingName
+	 *     visibility=VisibilityIndicator 'succession' (ambiguity) typings+=FeatureTypingName
+	 *     visibility=VisibilityIndicator (ambiguity) typings+=FeatureTypingName
+	 
+	 * </pre>
+	 */
+	protected void emit_FeatureSpecialization_ColonKeyword_0_0_0_or___TypedKeyword_0_0_1_0_ByKeyword_0_0_1_1__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     '=&gt;' | 'crosses'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'binding' (ambiguity) crosses+=FeatureChainName
+	 *     (rule start) 'bool' (ambiguity) crosses+=FeatureChainName
+	 *     (rule start) 'connector' (ambiguity) crosses+=FeatureChainName
+	 *     (rule start) 'expr' (ambiguity) crosses+=FeatureChainName
+	 *     (rule start) 'flow' (ambiguity) crosses+=FeatureChainName
+	 *     (rule start) 'inv' 'true'? (ambiguity) crosses+=FeatureChainName
+	 *     (rule start) 'step' (ambiguity) crosses+=FeatureChainName
+	 *     (rule start) 'succession' 'flow' (ambiguity) crosses+=FeatureChainName
+	 *     (rule start) 'succession' (ambiguity) crosses+=FeatureChainName
+	 *     (rule start) (ambiguity) crosses+=FeatureChainName
+	 *     MultiHigh=MultiplicityExpression ']' (ambiguity) crosses+=FeatureChainName
+	 *     MultiLow=MultiplicityExpression ']' (ambiguity) crosses+=FeatureChainName
+	 *     crosses+=FeatureChainName (ambiguity) crosses+=FeatureChainName
+	 *     crossingFeature+=CrossingFeature 'binding' (ambiguity) crosses+=FeatureChainName
+	 *     crossingFeature+=CrossingFeature 'bool' (ambiguity) crosses+=FeatureChainName
+	 *     crossingFeature+=CrossingFeature 'connector' (ambiguity) crosses+=FeatureChainName
+	 *     crossingFeature+=CrossingFeature 'expr' (ambiguity) crosses+=FeatureChainName
+	 *     crossingFeature+=CrossingFeature 'feature' (ambiguity) crosses+=FeatureChainName
+	 *     crossingFeature+=CrossingFeature 'flow' (ambiguity) crosses+=FeatureChainName
+	 *     crossingFeature+=CrossingFeature 'inv' 'true'? (ambiguity) crosses+=FeatureChainName
+	 *     crossingFeature+=CrossingFeature 'step' (ambiguity) crosses+=FeatureChainName
+	 *     crossingFeature+=CrossingFeature 'succession' 'flow' (ambiguity) crosses+=FeatureChainName
+	 *     crossingFeature+=CrossingFeature 'succession' (ambiguity) crosses+=FeatureChainName
+	 *     declaredName=Name (ambiguity) crosses+=FeatureChainName
+	 *     declaredShortName=Name '&gt;' (ambiguity) crosses+=FeatureChainName
+	 *     direction=FeatureDirection 'binding' (ambiguity) crosses+=FeatureChainName
+	 *     direction=FeatureDirection 'bool' (ambiguity) crosses+=FeatureChainName
+	 *     direction=FeatureDirection 'connector' (ambiguity) crosses+=FeatureChainName
+	 *     direction=FeatureDirection 'expr' (ambiguity) crosses+=FeatureChainName
+	 *     direction=FeatureDirection 'flow' (ambiguity) crosses+=FeatureChainName
+	 *     direction=FeatureDirection 'inv' 'true'? (ambiguity) crosses+=FeatureChainName
+	 *     direction=FeatureDirection 'step' (ambiguity) crosses+=FeatureChainName
+	 *     direction=FeatureDirection 'succession' 'flow' (ambiguity) crosses+=FeatureChainName
+	 *     direction=FeatureDirection 'succession' (ambiguity) crosses+=FeatureChainName
+	 *     direction=FeatureDirection (ambiguity) crosses+=FeatureChainName
+	 *     isAbstract?='abstract' 'binding' (ambiguity) crosses+=FeatureChainName
+	 *     isAbstract?='abstract' 'bool' (ambiguity) crosses+=FeatureChainName
+	 *     isAbstract?='abstract' 'connector' (ambiguity) crosses+=FeatureChainName
+	 *     isAbstract?='abstract' 'expr' (ambiguity) crosses+=FeatureChainName
+	 *     isAbstract?='abstract' 'flow' (ambiguity) crosses+=FeatureChainName
+	 *     isAbstract?='abstract' 'inv' 'true'? (ambiguity) crosses+=FeatureChainName
+	 *     isAbstract?='abstract' 'step' (ambiguity) crosses+=FeatureChainName
+	 *     isAbstract?='abstract' 'succession' 'flow' (ambiguity) crosses+=FeatureChainName
+	 *     isAbstract?='abstract' 'succession' (ambiguity) crosses+=FeatureChainName
+	 *     isAbstract?='abstract' (ambiguity) crosses+=FeatureChainName
+	 *     isComposite?='composite' 'binding' (ambiguity) crosses+=FeatureChainName
+	 *     isComposite?='composite' 'bool' (ambiguity) crosses+=FeatureChainName
+	 *     isComposite?='composite' 'connector' (ambiguity) crosses+=FeatureChainName
+	 *     isComposite?='composite' 'expr' (ambiguity) crosses+=FeatureChainName
+	 *     isComposite?='composite' 'flow' (ambiguity) crosses+=FeatureChainName
+	 *     isComposite?='composite' 'inv' 'true'? (ambiguity) crosses+=FeatureChainName
+	 *     isComposite?='composite' 'step' (ambiguity) crosses+=FeatureChainName
+	 *     isComposite?='composite' 'succession' 'flow' (ambiguity) crosses+=FeatureChainName
+	 *     isComposite?='composite' 'succession' (ambiguity) crosses+=FeatureChainName
+	 *     isComposite?='composite' (ambiguity) crosses+=FeatureChainName
+	 *     isConstantBasic?='const' 'binding' (ambiguity) crosses+=FeatureChainName
+	 *     isConstantBasic?='const' 'bool' (ambiguity) crosses+=FeatureChainName
+	 *     isConstantBasic?='const' 'connector' (ambiguity) crosses+=FeatureChainName
+	 *     isConstantBasic?='const' 'expr' (ambiguity) crosses+=FeatureChainName
+	 *     isConstantBasic?='const' 'flow' (ambiguity) crosses+=FeatureChainName
+	 *     isConstantBasic?='const' 'inv' 'true'? (ambiguity) crosses+=FeatureChainName
+	 *     isConstantBasic?='const' 'step' (ambiguity) crosses+=FeatureChainName
+	 *     isConstantBasic?='const' 'succession' 'flow' (ambiguity) crosses+=FeatureChainName
+	 *     isConstantBasic?='const' 'succession' (ambiguity) crosses+=FeatureChainName
+	 *     isConstantBasic?='const' (ambiguity) crosses+=FeatureChainName
+	 *     isDerived?='derived' 'binding' (ambiguity) crosses+=FeatureChainName
+	 *     isDerived?='derived' 'bool' (ambiguity) crosses+=FeatureChainName
+	 *     isDerived?='derived' 'connector' (ambiguity) crosses+=FeatureChainName
+	 *     isDerived?='derived' 'expr' (ambiguity) crosses+=FeatureChainName
+	 *     isDerived?='derived' 'flow' (ambiguity) crosses+=FeatureChainName
+	 *     isDerived?='derived' 'inv' 'true'? (ambiguity) crosses+=FeatureChainName
+	 *     isDerived?='derived' 'step' (ambiguity) crosses+=FeatureChainName
+	 *     isDerived?='derived' 'succession' 'flow' (ambiguity) crosses+=FeatureChainName
+	 *     isDerived?='derived' 'succession' (ambiguity) crosses+=FeatureChainName
+	 *     isDerived?='derived' (ambiguity) crosses+=FeatureChainName
+	 *     isEnd?='end' 'binding' (ambiguity) crosses+=FeatureChainName
+	 *     isEnd?='end' 'bool' (ambiguity) crosses+=FeatureChainName
+	 *     isEnd?='end' 'connector' (ambiguity) crosses+=FeatureChainName
+	 *     isEnd?='end' 'expr' (ambiguity) crosses+=FeatureChainName
+	 *     isEnd?='end' 'flow' (ambiguity) crosses+=FeatureChainName
+	 *     isEnd?='end' 'inv' 'true'? (ambiguity) crosses+=FeatureChainName
+	 *     isEnd?='end' 'step' (ambiguity) crosses+=FeatureChainName
+	 *     isEnd?='end' 'succession' 'flow' (ambiguity) crosses+=FeatureChainName
+	 *     isEnd?='end' 'succession' (ambiguity) crosses+=FeatureChainName
+	 *     isEnd?='end' (ambiguity) crosses+=FeatureChainName
+	 *     isMember?='member' 'binding' (ambiguity) crosses+=FeatureChainName
+	 *     isMember?='member' 'bool' (ambiguity) crosses+=FeatureChainName
+	 *     isMember?='member' 'connector' (ambiguity) crosses+=FeatureChainName
+	 *     isMember?='member' 'expr' (ambiguity) crosses+=FeatureChainName
+	 *     isMember?='member' 'flow' (ambiguity) crosses+=FeatureChainName
+	 *     isMember?='member' 'inv' 'true'? (ambiguity) crosses+=FeatureChainName
+	 *     isMember?='member' 'step' (ambiguity) crosses+=FeatureChainName
+	 *     isMember?='member' 'succession' 'flow' (ambiguity) crosses+=FeatureChainName
+	 *     isMember?='member' 'succession' (ambiguity) crosses+=FeatureChainName
+	 *     isMember?='member' (ambiguity) crosses+=FeatureChainName
+	 *     isNegated?='false' (ambiguity) crosses+=FeatureChainName
+	 *     isNonunique?='nonunique' (ambiguity) crosses+=FeatureChainName
+	 *     isOrdered?='ordered' (ambiguity) crosses+=FeatureChainName
+	 *     isPortion?='portion' 'binding' (ambiguity) crosses+=FeatureChainName
+	 *     isPortion?='portion' 'bool' (ambiguity) crosses+=FeatureChainName
+	 *     isPortion?='portion' 'connector' (ambiguity) crosses+=FeatureChainName
+	 *     isPortion?='portion' 'expr' (ambiguity) crosses+=FeatureChainName
+	 *     isPortion?='portion' 'flow' (ambiguity) crosses+=FeatureChainName
+	 *     isPortion?='portion' 'inv' 'true'? (ambiguity) crosses+=FeatureChainName
+	 *     isPortion?='portion' 'step' (ambiguity) crosses+=FeatureChainName
+	 *     isPortion?='portion' 'succession' 'flow' (ambiguity) crosses+=FeatureChainName
+	 *     isPortion?='portion' 'succession' (ambiguity) crosses+=FeatureChainName
+	 *     isPortion?='portion' (ambiguity) crosses+=FeatureChainName
+	 *     isReturn?='return' 'binding' (ambiguity) crosses+=FeatureChainName
+	 *     isReturn?='return' 'bool' (ambiguity) crosses+=FeatureChainName
+	 *     isReturn?='return' 'connector' (ambiguity) crosses+=FeatureChainName
+	 *     isReturn?='return' 'expr' (ambiguity) crosses+=FeatureChainName
+	 *     isReturn?='return' 'flow' (ambiguity) crosses+=FeatureChainName
+	 *     isReturn?='return' 'inv' 'true'? (ambiguity) crosses+=FeatureChainName
+	 *     isReturn?='return' 'step' (ambiguity) crosses+=FeatureChainName
+	 *     isReturn?='return' 'succession' 'flow' (ambiguity) crosses+=FeatureChainName
+	 *     isReturn?='return' 'succession' (ambiguity) crosses+=FeatureChainName
+	 *     isReturn?='return' (ambiguity) crosses+=FeatureChainName
+	 *     isSufficient?='all' (ambiguity) crosses+=FeatureChainName
+	 *     isVariable?='var' 'binding' (ambiguity) crosses+=FeatureChainName
+	 *     isVariable?='var' 'bool' (ambiguity) crosses+=FeatureChainName
+	 *     isVariable?='var' 'connector' (ambiguity) crosses+=FeatureChainName
+	 *     isVariable?='var' 'expr' (ambiguity) crosses+=FeatureChainName
+	 *     isVariable?='var' 'flow' (ambiguity) crosses+=FeatureChainName
+	 *     isVariable?='var' 'inv' 'true'? (ambiguity) crosses+=FeatureChainName
+	 *     isVariable?='var' 'step' (ambiguity) crosses+=FeatureChainName
+	 *     isVariable?='var' 'succession' 'flow' (ambiguity) crosses+=FeatureChainName
+	 *     isVariable?='var' 'succession' (ambiguity) crosses+=FeatureChainName
+	 *     isVariable?='var' (ambiguity) crosses+=FeatureChainName
+	 *     isVariant?='variant' 'binding' (ambiguity) crosses+=FeatureChainName
+	 *     isVariant?='variant' 'bool' (ambiguity) crosses+=FeatureChainName
+	 *     isVariant?='variant' 'connector' (ambiguity) crosses+=FeatureChainName
+	 *     isVariant?='variant' 'expr' (ambiguity) crosses+=FeatureChainName
+	 *     isVariant?='variant' 'flow' (ambiguity) crosses+=FeatureChainName
+	 *     isVariant?='variant' 'inv' 'true'? (ambiguity) crosses+=FeatureChainName
+	 *     isVariant?='variant' 'step' (ambiguity) crosses+=FeatureChainName
+	 *     isVariant?='variant' 'succession' 'flow' (ambiguity) crosses+=FeatureChainName
+	 *     isVariant?='variant' 'succession' (ambiguity) crosses+=FeatureChainName
+	 *     isVariant?='variant' (ambiguity) crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'binding' (ambiguity) crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'bool' (ambiguity) crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'connector' (ambiguity) crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'expr' (ambiguity) crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'flow' (ambiguity) crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'inv' 'true'? (ambiguity) crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'step' (ambiguity) crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'succession' 'flow' (ambiguity) crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'succession' (ambiguity) crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) crosses+=FeatureChainName
+	 *     redefinedFeature+=FeatureChainName (ambiguity) crosses+=FeatureChainName
+	 *     redefinitions+=FeatureChainName (ambiguity) crosses+=FeatureChainName
+	 *     references+=FeatureChainName (ambiguity) crosses+=FeatureChainName
+	 *     subsetting+=FeatureChainName (ambiguity) crosses+=FeatureChainName
+	 *     typings+=FeatureTypingName (ambiguity) crosses+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'binding' (ambiguity) crosses+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'bool' (ambiguity) crosses+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'connector' (ambiguity) crosses+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'expr' (ambiguity) crosses+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'flow' (ambiguity) crosses+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'inv' 'true'? (ambiguity) crosses+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'step' (ambiguity) crosses+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'succession' 'flow' (ambiguity) crosses+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'succession' (ambiguity) crosses+=FeatureChainName
+	 *     visibility=VisibilityIndicator (ambiguity) crosses+=FeatureChainName
+	 
+	 * </pre>
+	 */
+	protected void emit_FeatureSpecialization_CrossesKeyword_3_0_1_or_EqualsSignGreaterThanSignKeyword_3_0_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ':' | ('typed' 'by')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     typedFeature=QualifiedName (ambiguity) typeName=FeatureChainName
+	 
+	 * </pre>
+	 */
+	protected void emit_FeatureTyping_ColonKeyword_4_0_or___TypedKeyword_4_1_0_ByKeyword_4_1_1__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     typeName=FeatureChainName (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_FeatureTyping_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     '='?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     isDefault?='default' (ambiguity) valuePart=Expression
+	 
+	 * </pre>
+	 */
+	protected void emit_FeatureValue_EqualsSignKeyword_0_2_1_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'feature' (ambiguity) (rule start)
+	 *     MultiHigh=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     chainingFeature+=FeatureChainName (ambiguity) (rule end)
+	 *     crosses+=FeatureChainName (ambiguity) (rule end)
+	 *     crossingFeature+=CrossingFeature 'feature' (ambiguity) (rule end)
+	 *     declaredName=Name (ambiguity) (rule end)
+	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
+	 *     differencing+=FeatureChainName (ambiguity) (rule end)
+	 *     direction=FeatureDirection 'feature' (ambiguity) (rule end)
+	 *     disjoining+=FeatureChainName (ambiguity) (rule end)
+	 *     featuringType+=FeatureChainName (ambiguity) (rule end)
+	 *     intersecting+=FeatureChainName (ambiguity) (rule end)
+	 *     invertingFeature+=FeatureChainName (ambiguity) (rule end)
+	 *     isAbstract?='abstract' 'feature' (ambiguity) (rule end)
+	 *     isComposite?='composite' 'feature' (ambiguity) (rule end)
+	 *     isConstantBasic?='const' 'feature' (ambiguity) (rule end)
+	 *     isDerived?='derived' 'feature' (ambiguity) (rule end)
+	 *     isEnd?='end' 'feature' (ambiguity) (rule end)
+	 *     isMember?='member' 'feature' (ambiguity) (rule end)
+	 *     isNonunique?='nonunique' (ambiguity) (rule end)
+	 *     isOrdered?='ordered' (ambiguity) (rule end)
+	 *     isPortion?='portion' 'feature' (ambiguity) (rule end)
+	 *     isReturn?='return' 'feature' (ambiguity) (rule end)
+	 *     isVariable?='var' 'feature' (ambiguity) (rule end)
+	 *     isVariant?='variant' 'feature' (ambiguity) (rule end)
+	 *     originalType=QualifiedName (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) (rule end)
+	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
+	 *     references+=FeatureChainName (ambiguity) (rule end)
+	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
+	 *     typings+=FeatureTypingName (ambiguity) (rule end)
+	 *     unioning+=FeatureChainName (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
+	 *     visibility=VisibilityIndicator 'feature' (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Feature_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'flow' (ambiguity) (rule start)
+	 *     FlowEnd+=FeatureChainName (ambiguity) (rule end)
+	 *     MultiHigh=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     chainingFeature+=FeatureChainName (ambiguity) (rule end)
+	 *     crosses+=FeatureChainName (ambiguity) (rule end)
+	 *     crossingFeature+=CrossingFeature 'flow' (ambiguity) (rule end)
+	 *     declaredName=Name (ambiguity) (rule end)
+	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
+	 *     differencing+=FeatureChainName (ambiguity) (rule end)
+	 *     direction=FeatureDirection 'flow' (ambiguity) (rule end)
+	 *     disjoining+=FeatureChainName (ambiguity) (rule end)
+	 *     featuringType+=FeatureChainName (ambiguity) (rule end)
+	 *     intersecting+=FeatureChainName (ambiguity) (rule end)
+	 *     invertingFeature+=FeatureChainName (ambiguity) (rule end)
+	 *     isAbstract?='abstract' 'flow' (ambiguity) (rule end)
+	 *     isComposite?='composite' 'flow' (ambiguity) (rule end)
+	 *     isConstantBasic?='const' 'flow' (ambiguity) (rule end)
+	 *     isDerived?='derived' 'flow' (ambiguity) (rule end)
+	 *     isEnd?='end' 'flow' (ambiguity) (rule end)
+	 *     isMember?='member' 'flow' (ambiguity) (rule end)
+	 *     isNonunique?='nonunique' (ambiguity) (rule end)
+	 *     isOrdered?='ordered' (ambiguity) (rule end)
+	 *     isPortion?='portion' 'flow' (ambiguity) (rule end)
+	 *     isReturn?='return' 'flow' (ambiguity) (rule end)
+	 *     isVariable?='var' 'flow' (ambiguity) (rule end)
+	 *     isVariant?='variant' 'flow' (ambiguity) (rule end)
+	 *     originalType=QualifiedName (ambiguity) (rule end)
+	 *     payload=PayloadParameter (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'flow' (ambiguity) (rule end)
+	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
+	 *     references+=FeatureChainName (ambiguity) (rule end)
+	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
+	 *     typings+=FeatureTypingName (ambiguity) (rule end)
+	 *     unioning+=FeatureChainName (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
+	 *     visibility=VisibilityIndicator 'flow' (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Flow_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -567,6 +2246,338 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ';' | ('{' '}')
 	 *
 	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'inv' 'true'? (ambiguity) (rule start)
+	 *     MultiHigh=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     chainingFeature+=FeatureChainName (ambiguity) (rule end)
+	 *     crosses+=FeatureChainName (ambiguity) (rule end)
+	 *     crossingFeature+=CrossingFeature 'inv' 'true'? (ambiguity) (rule end)
+	 *     declaredName=Name (ambiguity) (rule end)
+	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
+	 *     differencing+=FeatureChainName (ambiguity) (rule end)
+	 *     direction=FeatureDirection 'inv' 'true'? (ambiguity) (rule end)
+	 *     disjoining+=FeatureChainName (ambiguity) (rule end)
+	 *     featuringType+=FeatureChainName (ambiguity) (rule end)
+	 *     intersecting+=FeatureChainName (ambiguity) (rule end)
+	 *     invertingFeature+=FeatureChainName (ambiguity) (rule end)
+	 *     isAbstract?='abstract' 'inv' 'true'? (ambiguity) (rule end)
+	 *     isComposite?='composite' 'inv' 'true'? (ambiguity) (rule end)
+	 *     isConstantBasic?='const' 'inv' 'true'? (ambiguity) (rule end)
+	 *     isDerived?='derived' 'inv' 'true'? (ambiguity) (rule end)
+	 *     isEnd?='end' 'inv' 'true'? (ambiguity) (rule end)
+	 *     isMember?='member' 'inv' 'true'? (ambiguity) (rule end)
+	 *     isNegated?='false' (ambiguity) (rule end)
+	 *     isNonunique?='nonunique' (ambiguity) (rule end)
+	 *     isOrdered?='ordered' (ambiguity) (rule end)
+	 *     isPortion?='portion' 'inv' 'true'? (ambiguity) (rule end)
+	 *     isReturn?='return' 'inv' 'true'? (ambiguity) (rule end)
+	 *     isVariable?='var' 'inv' 'true'? (ambiguity) (rule end)
+	 *     isVariant?='variant' 'inv' 'true'? (ambiguity) (rule end)
+	 *     originalType=QualifiedName (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'inv' 'true'? (ambiguity) (rule end)
+	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
+	 *     references+=FeatureChainName (ambiguity) (rule end)
+	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
+	 *     typings+=FeatureTypingName (ambiguity) (rule end)
+	 *     unioning+=FeatureChainName (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
+	 *     visibility=VisibilityIndicator 'inv' 'true'? (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Invariant_SemicolonKeyword_7_0_or___LeftCurlyBracketKeyword_7_1_0_RightCurlyBracketKeyword_7_1_3__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     'true'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'inv' (ambiguity) '&lt;' declaredShortName=Name
+	 *     (rule start) 'inv' (ambiguity) '=' valuePart=Expression
+	 *     (rule start) 'inv' (ambiguity) '[' MultiLow=MultiplicityExpression
+	 *     (rule start) 'inv' (ambiguity) '{' elements+=FunctionBodyElement
+	 *     (rule start) 'inv' (ambiguity) '{' resultExpressionParameter+=ResultExpression
+	 *     (rule start) 'inv' (ambiguity) (':' | ('typed' 'by')) typings+=FeatureTypingName
+	 *     (rule start) 'inv' (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
+	 *     (rule start) 'inv' (ambiguity) (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
+	 *     (rule start) 'inv' (ambiguity) (':&gt;&gt;' | 'redefines') redefinitions+=FeatureChainName
+	 *     (rule start) 'inv' (ambiguity) (';' | ('{' '}')) (rule start)
+	 *     (rule start) 'inv' (ambiguity) ('=&gt;' | 'crosses') crosses+=FeatureChainName
+	 *     (rule start) 'inv' (ambiguity) ('~' | 'conjugates') originalType=QualifiedName
+	 *     (rule start) 'inv' (ambiguity) declaredName=Name
+	 *     (rule start) 'inv' (ambiguity) isDefault?='default'
+	 *     (rule start) 'inv' (ambiguity) isInitial?=':='
+	 *     (rule start) 'inv' (ambiguity) isNonunique?='nonunique'
+	 *     (rule start) 'inv' (ambiguity) isOrdered?='ordered'
+	 *     (rule start) 'inv' (ambiguity) isSufficient?='all'
+	 *     crossingFeature+=CrossingFeature 'inv' (ambiguity) '&lt;' declaredShortName=Name
+	 *     crossingFeature+=CrossingFeature 'inv' (ambiguity) '=' valuePart=Expression
+	 *     crossingFeature+=CrossingFeature 'inv' (ambiguity) '[' MultiLow=MultiplicityExpression
+	 *     crossingFeature+=CrossingFeature 'inv' (ambiguity) '{' elements+=FunctionBodyElement
+	 *     crossingFeature+=CrossingFeature 'inv' (ambiguity) '{' resultExpressionParameter+=ResultExpression
+	 *     crossingFeature+=CrossingFeature 'inv' (ambiguity) (':' | ('typed' 'by')) typings+=FeatureTypingName
+	 *     crossingFeature+=CrossingFeature 'inv' (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
+	 *     crossingFeature+=CrossingFeature 'inv' (ambiguity) (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
+	 *     crossingFeature+=CrossingFeature 'inv' (ambiguity) (':&gt;&gt;' | 'redefines') redefinitions+=FeatureChainName
+	 *     crossingFeature+=CrossingFeature 'inv' (ambiguity) (';' | ('{' '}')) (rule end)
+	 *     crossingFeature+=CrossingFeature 'inv' (ambiguity) ('=&gt;' | 'crosses') crosses+=FeatureChainName
+	 *     crossingFeature+=CrossingFeature 'inv' (ambiguity) ('~' | 'conjugates') originalType=QualifiedName
+	 *     crossingFeature+=CrossingFeature 'inv' (ambiguity) declaredName=Name
+	 *     crossingFeature+=CrossingFeature 'inv' (ambiguity) isDefault?='default'
+	 *     crossingFeature+=CrossingFeature 'inv' (ambiguity) isInitial?=':='
+	 *     crossingFeature+=CrossingFeature 'inv' (ambiguity) isNonunique?='nonunique'
+	 *     crossingFeature+=CrossingFeature 'inv' (ambiguity) isOrdered?='ordered'
+	 *     crossingFeature+=CrossingFeature 'inv' (ambiguity) isSufficient?='all'
+	 *     direction=FeatureDirection 'inv' (ambiguity) '&lt;' declaredShortName=Name
+	 *     direction=FeatureDirection 'inv' (ambiguity) '=' valuePart=Expression
+	 *     direction=FeatureDirection 'inv' (ambiguity) '[' MultiLow=MultiplicityExpression
+	 *     direction=FeatureDirection 'inv' (ambiguity) '{' elements+=FunctionBodyElement
+	 *     direction=FeatureDirection 'inv' (ambiguity) '{' resultExpressionParameter+=ResultExpression
+	 *     direction=FeatureDirection 'inv' (ambiguity) (':' | ('typed' 'by')) typings+=FeatureTypingName
+	 *     direction=FeatureDirection 'inv' (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
+	 *     direction=FeatureDirection 'inv' (ambiguity) (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
+	 *     direction=FeatureDirection 'inv' (ambiguity) (':&gt;&gt;' | 'redefines') redefinitions+=FeatureChainName
+	 *     direction=FeatureDirection 'inv' (ambiguity) (';' | ('{' '}')) (rule end)
+	 *     direction=FeatureDirection 'inv' (ambiguity) ('=&gt;' | 'crosses') crosses+=FeatureChainName
+	 *     direction=FeatureDirection 'inv' (ambiguity) ('~' | 'conjugates') originalType=QualifiedName
+	 *     direction=FeatureDirection 'inv' (ambiguity) declaredName=Name
+	 *     direction=FeatureDirection 'inv' (ambiguity) isDefault?='default'
+	 *     direction=FeatureDirection 'inv' (ambiguity) isInitial?=':='
+	 *     direction=FeatureDirection 'inv' (ambiguity) isNonunique?='nonunique'
+	 *     direction=FeatureDirection 'inv' (ambiguity) isOrdered?='ordered'
+	 *     direction=FeatureDirection 'inv' (ambiguity) isSufficient?='all'
+	 *     isAbstract?='abstract' 'inv' (ambiguity) '&lt;' declaredShortName=Name
+	 *     isAbstract?='abstract' 'inv' (ambiguity) '=' valuePart=Expression
+	 *     isAbstract?='abstract' 'inv' (ambiguity) '[' MultiLow=MultiplicityExpression
+	 *     isAbstract?='abstract' 'inv' (ambiguity) '{' elements+=FunctionBodyElement
+	 *     isAbstract?='abstract' 'inv' (ambiguity) '{' resultExpressionParameter+=ResultExpression
+	 *     isAbstract?='abstract' 'inv' (ambiguity) (':' | ('typed' 'by')) typings+=FeatureTypingName
+	 *     isAbstract?='abstract' 'inv' (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
+	 *     isAbstract?='abstract' 'inv' (ambiguity) (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
+	 *     isAbstract?='abstract' 'inv' (ambiguity) (':&gt;&gt;' | 'redefines') redefinitions+=FeatureChainName
+	 *     isAbstract?='abstract' 'inv' (ambiguity) (';' | ('{' '}')) (rule end)
+	 *     isAbstract?='abstract' 'inv' (ambiguity) ('=&gt;' | 'crosses') crosses+=FeatureChainName
+	 *     isAbstract?='abstract' 'inv' (ambiguity) ('~' | 'conjugates') originalType=QualifiedName
+	 *     isAbstract?='abstract' 'inv' (ambiguity) declaredName=Name
+	 *     isAbstract?='abstract' 'inv' (ambiguity) isDefault?='default'
+	 *     isAbstract?='abstract' 'inv' (ambiguity) isInitial?=':='
+	 *     isAbstract?='abstract' 'inv' (ambiguity) isNonunique?='nonunique'
+	 *     isAbstract?='abstract' 'inv' (ambiguity) isOrdered?='ordered'
+	 *     isAbstract?='abstract' 'inv' (ambiguity) isSufficient?='all'
+	 *     isComposite?='composite' 'inv' (ambiguity) '&lt;' declaredShortName=Name
+	 *     isComposite?='composite' 'inv' (ambiguity) '=' valuePart=Expression
+	 *     isComposite?='composite' 'inv' (ambiguity) '[' MultiLow=MultiplicityExpression
+	 *     isComposite?='composite' 'inv' (ambiguity) '{' elements+=FunctionBodyElement
+	 *     isComposite?='composite' 'inv' (ambiguity) '{' resultExpressionParameter+=ResultExpression
+	 *     isComposite?='composite' 'inv' (ambiguity) (':' | ('typed' 'by')) typings+=FeatureTypingName
+	 *     isComposite?='composite' 'inv' (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
+	 *     isComposite?='composite' 'inv' (ambiguity) (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
+	 *     isComposite?='composite' 'inv' (ambiguity) (':&gt;&gt;' | 'redefines') redefinitions+=FeatureChainName
+	 *     isComposite?='composite' 'inv' (ambiguity) (';' | ('{' '}')) (rule end)
+	 *     isComposite?='composite' 'inv' (ambiguity) ('=&gt;' | 'crosses') crosses+=FeatureChainName
+	 *     isComposite?='composite' 'inv' (ambiguity) ('~' | 'conjugates') originalType=QualifiedName
+	 *     isComposite?='composite' 'inv' (ambiguity) declaredName=Name
+	 *     isComposite?='composite' 'inv' (ambiguity) isDefault?='default'
+	 *     isComposite?='composite' 'inv' (ambiguity) isInitial?=':='
+	 *     isComposite?='composite' 'inv' (ambiguity) isNonunique?='nonunique'
+	 *     isComposite?='composite' 'inv' (ambiguity) isOrdered?='ordered'
+	 *     isComposite?='composite' 'inv' (ambiguity) isSufficient?='all'
+	 *     isConstantBasic?='const' 'inv' (ambiguity) '&lt;' declaredShortName=Name
+	 *     isConstantBasic?='const' 'inv' (ambiguity) '=' valuePart=Expression
+	 *     isConstantBasic?='const' 'inv' (ambiguity) '[' MultiLow=MultiplicityExpression
+	 *     isConstantBasic?='const' 'inv' (ambiguity) '{' elements+=FunctionBodyElement
+	 *     isConstantBasic?='const' 'inv' (ambiguity) '{' resultExpressionParameter+=ResultExpression
+	 *     isConstantBasic?='const' 'inv' (ambiguity) (':' | ('typed' 'by')) typings+=FeatureTypingName
+	 *     isConstantBasic?='const' 'inv' (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
+	 *     isConstantBasic?='const' 'inv' (ambiguity) (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
+	 *     isConstantBasic?='const' 'inv' (ambiguity) (':&gt;&gt;' | 'redefines') redefinitions+=FeatureChainName
+	 *     isConstantBasic?='const' 'inv' (ambiguity) (';' | ('{' '}')) (rule end)
+	 *     isConstantBasic?='const' 'inv' (ambiguity) ('=&gt;' | 'crosses') crosses+=FeatureChainName
+	 *     isConstantBasic?='const' 'inv' (ambiguity) ('~' | 'conjugates') originalType=QualifiedName
+	 *     isConstantBasic?='const' 'inv' (ambiguity) declaredName=Name
+	 *     isConstantBasic?='const' 'inv' (ambiguity) isDefault?='default'
+	 *     isConstantBasic?='const' 'inv' (ambiguity) isInitial?=':='
+	 *     isConstantBasic?='const' 'inv' (ambiguity) isNonunique?='nonunique'
+	 *     isConstantBasic?='const' 'inv' (ambiguity) isOrdered?='ordered'
+	 *     isConstantBasic?='const' 'inv' (ambiguity) isSufficient?='all'
+	 *     isDerived?='derived' 'inv' (ambiguity) '&lt;' declaredShortName=Name
+	 *     isDerived?='derived' 'inv' (ambiguity) '=' valuePart=Expression
+	 *     isDerived?='derived' 'inv' (ambiguity) '[' MultiLow=MultiplicityExpression
+	 *     isDerived?='derived' 'inv' (ambiguity) '{' elements+=FunctionBodyElement
+	 *     isDerived?='derived' 'inv' (ambiguity) '{' resultExpressionParameter+=ResultExpression
+	 *     isDerived?='derived' 'inv' (ambiguity) (':' | ('typed' 'by')) typings+=FeatureTypingName
+	 *     isDerived?='derived' 'inv' (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
+	 *     isDerived?='derived' 'inv' (ambiguity) (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
+	 *     isDerived?='derived' 'inv' (ambiguity) (':&gt;&gt;' | 'redefines') redefinitions+=FeatureChainName
+	 *     isDerived?='derived' 'inv' (ambiguity) (';' | ('{' '}')) (rule end)
+	 *     isDerived?='derived' 'inv' (ambiguity) ('=&gt;' | 'crosses') crosses+=FeatureChainName
+	 *     isDerived?='derived' 'inv' (ambiguity) ('~' | 'conjugates') originalType=QualifiedName
+	 *     isDerived?='derived' 'inv' (ambiguity) declaredName=Name
+	 *     isDerived?='derived' 'inv' (ambiguity) isDefault?='default'
+	 *     isDerived?='derived' 'inv' (ambiguity) isInitial?=':='
+	 *     isDerived?='derived' 'inv' (ambiguity) isNonunique?='nonunique'
+	 *     isDerived?='derived' 'inv' (ambiguity) isOrdered?='ordered'
+	 *     isDerived?='derived' 'inv' (ambiguity) isSufficient?='all'
+	 *     isEnd?='end' 'inv' (ambiguity) '&lt;' declaredShortName=Name
+	 *     isEnd?='end' 'inv' (ambiguity) '=' valuePart=Expression
+	 *     isEnd?='end' 'inv' (ambiguity) '[' MultiLow=MultiplicityExpression
+	 *     isEnd?='end' 'inv' (ambiguity) '{' elements+=FunctionBodyElement
+	 *     isEnd?='end' 'inv' (ambiguity) '{' resultExpressionParameter+=ResultExpression
+	 *     isEnd?='end' 'inv' (ambiguity) (':' | ('typed' 'by')) typings+=FeatureTypingName
+	 *     isEnd?='end' 'inv' (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
+	 *     isEnd?='end' 'inv' (ambiguity) (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
+	 *     isEnd?='end' 'inv' (ambiguity) (':&gt;&gt;' | 'redefines') redefinitions+=FeatureChainName
+	 *     isEnd?='end' 'inv' (ambiguity) (';' | ('{' '}')) (rule end)
+	 *     isEnd?='end' 'inv' (ambiguity) ('=&gt;' | 'crosses') crosses+=FeatureChainName
+	 *     isEnd?='end' 'inv' (ambiguity) ('~' | 'conjugates') originalType=QualifiedName
+	 *     isEnd?='end' 'inv' (ambiguity) declaredName=Name
+	 *     isEnd?='end' 'inv' (ambiguity) isDefault?='default'
+	 *     isEnd?='end' 'inv' (ambiguity) isInitial?=':='
+	 *     isEnd?='end' 'inv' (ambiguity) isNonunique?='nonunique'
+	 *     isEnd?='end' 'inv' (ambiguity) isOrdered?='ordered'
+	 *     isEnd?='end' 'inv' (ambiguity) isSufficient?='all'
+	 *     isMember?='member' 'inv' (ambiguity) '&lt;' declaredShortName=Name
+	 *     isMember?='member' 'inv' (ambiguity) '=' valuePart=Expression
+	 *     isMember?='member' 'inv' (ambiguity) '[' MultiLow=MultiplicityExpression
+	 *     isMember?='member' 'inv' (ambiguity) '{' elements+=FunctionBodyElement
+	 *     isMember?='member' 'inv' (ambiguity) '{' resultExpressionParameter+=ResultExpression
+	 *     isMember?='member' 'inv' (ambiguity) (':' | ('typed' 'by')) typings+=FeatureTypingName
+	 *     isMember?='member' 'inv' (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
+	 *     isMember?='member' 'inv' (ambiguity) (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
+	 *     isMember?='member' 'inv' (ambiguity) (':&gt;&gt;' | 'redefines') redefinitions+=FeatureChainName
+	 *     isMember?='member' 'inv' (ambiguity) (';' | ('{' '}')) (rule end)
+	 *     isMember?='member' 'inv' (ambiguity) ('=&gt;' | 'crosses') crosses+=FeatureChainName
+	 *     isMember?='member' 'inv' (ambiguity) ('~' | 'conjugates') originalType=QualifiedName
+	 *     isMember?='member' 'inv' (ambiguity) declaredName=Name
+	 *     isMember?='member' 'inv' (ambiguity) isDefault?='default'
+	 *     isMember?='member' 'inv' (ambiguity) isInitial?=':='
+	 *     isMember?='member' 'inv' (ambiguity) isNonunique?='nonunique'
+	 *     isMember?='member' 'inv' (ambiguity) isOrdered?='ordered'
+	 *     isMember?='member' 'inv' (ambiguity) isSufficient?='all'
+	 *     isPortion?='portion' 'inv' (ambiguity) '&lt;' declaredShortName=Name
+	 *     isPortion?='portion' 'inv' (ambiguity) '=' valuePart=Expression
+	 *     isPortion?='portion' 'inv' (ambiguity) '[' MultiLow=MultiplicityExpression
+	 *     isPortion?='portion' 'inv' (ambiguity) '{' elements+=FunctionBodyElement
+	 *     isPortion?='portion' 'inv' (ambiguity) '{' resultExpressionParameter+=ResultExpression
+	 *     isPortion?='portion' 'inv' (ambiguity) (':' | ('typed' 'by')) typings+=FeatureTypingName
+	 *     isPortion?='portion' 'inv' (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
+	 *     isPortion?='portion' 'inv' (ambiguity) (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
+	 *     isPortion?='portion' 'inv' (ambiguity) (':&gt;&gt;' | 'redefines') redefinitions+=FeatureChainName
+	 *     isPortion?='portion' 'inv' (ambiguity) (';' | ('{' '}')) (rule end)
+	 *     isPortion?='portion' 'inv' (ambiguity) ('=&gt;' | 'crosses') crosses+=FeatureChainName
+	 *     isPortion?='portion' 'inv' (ambiguity) ('~' | 'conjugates') originalType=QualifiedName
+	 *     isPortion?='portion' 'inv' (ambiguity) declaredName=Name
+	 *     isPortion?='portion' 'inv' (ambiguity) isDefault?='default'
+	 *     isPortion?='portion' 'inv' (ambiguity) isInitial?=':='
+	 *     isPortion?='portion' 'inv' (ambiguity) isNonunique?='nonunique'
+	 *     isPortion?='portion' 'inv' (ambiguity) isOrdered?='ordered'
+	 *     isPortion?='portion' 'inv' (ambiguity) isSufficient?='all'
+	 *     isReturn?='return' 'inv' (ambiguity) '&lt;' declaredShortName=Name
+	 *     isReturn?='return' 'inv' (ambiguity) '=' valuePart=Expression
+	 *     isReturn?='return' 'inv' (ambiguity) '[' MultiLow=MultiplicityExpression
+	 *     isReturn?='return' 'inv' (ambiguity) '{' elements+=FunctionBodyElement
+	 *     isReturn?='return' 'inv' (ambiguity) '{' resultExpressionParameter+=ResultExpression
+	 *     isReturn?='return' 'inv' (ambiguity) (':' | ('typed' 'by')) typings+=FeatureTypingName
+	 *     isReturn?='return' 'inv' (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
+	 *     isReturn?='return' 'inv' (ambiguity) (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
+	 *     isReturn?='return' 'inv' (ambiguity) (':&gt;&gt;' | 'redefines') redefinitions+=FeatureChainName
+	 *     isReturn?='return' 'inv' (ambiguity) (';' | ('{' '}')) (rule end)
+	 *     isReturn?='return' 'inv' (ambiguity) ('=&gt;' | 'crosses') crosses+=FeatureChainName
+	 *     isReturn?='return' 'inv' (ambiguity) ('~' | 'conjugates') originalType=QualifiedName
+	 *     isReturn?='return' 'inv' (ambiguity) declaredName=Name
+	 *     isReturn?='return' 'inv' (ambiguity) isDefault?='default'
+	 *     isReturn?='return' 'inv' (ambiguity) isInitial?=':='
+	 *     isReturn?='return' 'inv' (ambiguity) isNonunique?='nonunique'
+	 *     isReturn?='return' 'inv' (ambiguity) isOrdered?='ordered'
+	 *     isReturn?='return' 'inv' (ambiguity) isSufficient?='all'
+	 *     isVariable?='var' 'inv' (ambiguity) '&lt;' declaredShortName=Name
+	 *     isVariable?='var' 'inv' (ambiguity) '=' valuePart=Expression
+	 *     isVariable?='var' 'inv' (ambiguity) '[' MultiLow=MultiplicityExpression
+	 *     isVariable?='var' 'inv' (ambiguity) '{' elements+=FunctionBodyElement
+	 *     isVariable?='var' 'inv' (ambiguity) '{' resultExpressionParameter+=ResultExpression
+	 *     isVariable?='var' 'inv' (ambiguity) (':' | ('typed' 'by')) typings+=FeatureTypingName
+	 *     isVariable?='var' 'inv' (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
+	 *     isVariable?='var' 'inv' (ambiguity) (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
+	 *     isVariable?='var' 'inv' (ambiguity) (':&gt;&gt;' | 'redefines') redefinitions+=FeatureChainName
+	 *     isVariable?='var' 'inv' (ambiguity) (';' | ('{' '}')) (rule end)
+	 *     isVariable?='var' 'inv' (ambiguity) ('=&gt;' | 'crosses') crosses+=FeatureChainName
+	 *     isVariable?='var' 'inv' (ambiguity) ('~' | 'conjugates') originalType=QualifiedName
+	 *     isVariable?='var' 'inv' (ambiguity) declaredName=Name
+	 *     isVariable?='var' 'inv' (ambiguity) isDefault?='default'
+	 *     isVariable?='var' 'inv' (ambiguity) isInitial?=':='
+	 *     isVariable?='var' 'inv' (ambiguity) isNonunique?='nonunique'
+	 *     isVariable?='var' 'inv' (ambiguity) isOrdered?='ordered'
+	 *     isVariable?='var' 'inv' (ambiguity) isSufficient?='all'
+	 *     isVariant?='variant' 'inv' (ambiguity) '&lt;' declaredShortName=Name
+	 *     isVariant?='variant' 'inv' (ambiguity) '=' valuePart=Expression
+	 *     isVariant?='variant' 'inv' (ambiguity) '[' MultiLow=MultiplicityExpression
+	 *     isVariant?='variant' 'inv' (ambiguity) '{' elements+=FunctionBodyElement
+	 *     isVariant?='variant' 'inv' (ambiguity) '{' resultExpressionParameter+=ResultExpression
+	 *     isVariant?='variant' 'inv' (ambiguity) (':' | ('typed' 'by')) typings+=FeatureTypingName
+	 *     isVariant?='variant' 'inv' (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
+	 *     isVariant?='variant' 'inv' (ambiguity) (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
+	 *     isVariant?='variant' 'inv' (ambiguity) (':&gt;&gt;' | 'redefines') redefinitions+=FeatureChainName
+	 *     isVariant?='variant' 'inv' (ambiguity) (';' | ('{' '}')) (rule end)
+	 *     isVariant?='variant' 'inv' (ambiguity) ('=&gt;' | 'crosses') crosses+=FeatureChainName
+	 *     isVariant?='variant' 'inv' (ambiguity) ('~' | 'conjugates') originalType=QualifiedName
+	 *     isVariant?='variant' 'inv' (ambiguity) declaredName=Name
+	 *     isVariant?='variant' 'inv' (ambiguity) isDefault?='default'
+	 *     isVariant?='variant' 'inv' (ambiguity) isInitial?=':='
+	 *     isVariant?='variant' 'inv' (ambiguity) isNonunique?='nonunique'
+	 *     isVariant?='variant' 'inv' (ambiguity) isOrdered?='ordered'
+	 *     isVariant?='variant' 'inv' (ambiguity) isSufficient?='all'
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'inv' (ambiguity) '&lt;' declaredShortName=Name
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'inv' (ambiguity) '=' valuePart=Expression
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'inv' (ambiguity) '[' MultiLow=MultiplicityExpression
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'inv' (ambiguity) '{' elements+=FunctionBodyElement
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'inv' (ambiguity) '{' resultExpressionParameter+=ResultExpression
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'inv' (ambiguity) (':' | ('typed' 'by')) typings+=FeatureTypingName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'inv' (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'inv' (ambiguity) (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'inv' (ambiguity) (':&gt;&gt;' | 'redefines') redefinitions+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'inv' (ambiguity) (';' | ('{' '}')) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'inv' (ambiguity) ('=&gt;' | 'crosses') crosses+=FeatureChainName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'inv' (ambiguity) ('~' | 'conjugates') originalType=QualifiedName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'inv' (ambiguity) declaredName=Name
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'inv' (ambiguity) isDefault?='default'
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'inv' (ambiguity) isInitial?=':='
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'inv' (ambiguity) isNonunique?='nonunique'
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'inv' (ambiguity) isOrdered?='ordered'
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'inv' (ambiguity) isSufficient?='all'
+	 *     visibility=VisibilityIndicator 'inv' (ambiguity) '&lt;' declaredShortName=Name
+	 *     visibility=VisibilityIndicator 'inv' (ambiguity) '=' valuePart=Expression
+	 *     visibility=VisibilityIndicator 'inv' (ambiguity) '[' MultiLow=MultiplicityExpression
+	 *     visibility=VisibilityIndicator 'inv' (ambiguity) '{' elements+=FunctionBodyElement
+	 *     visibility=VisibilityIndicator 'inv' (ambiguity) '{' resultExpressionParameter+=ResultExpression
+	 *     visibility=VisibilityIndicator 'inv' (ambiguity) (':' | ('typed' 'by')) typings+=FeatureTypingName
+	 *     visibility=VisibilityIndicator 'inv' (ambiguity) ('::&gt;' | 'references') references+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'inv' (ambiguity) (':&gt;' | 'specializes' | 'subsets') subsetting+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'inv' (ambiguity) (':&gt;&gt;' | 'redefines') redefinitions+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'inv' (ambiguity) (';' | ('{' '}')) (rule end)
+	 *     visibility=VisibilityIndicator 'inv' (ambiguity) ('=&gt;' | 'crosses') crosses+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'inv' (ambiguity) ('~' | 'conjugates') originalType=QualifiedName
+	 *     visibility=VisibilityIndicator 'inv' (ambiguity) declaredName=Name
+	 *     visibility=VisibilityIndicator 'inv' (ambiguity) isDefault?='default'
+	 *     visibility=VisibilityIndicator 'inv' (ambiguity) isInitial?=':='
+	 *     visibility=VisibilityIndicator 'inv' (ambiguity) isNonunique?='nonunique'
+	 *     visibility=VisibilityIndicator 'inv' (ambiguity) isOrdered?='ordered'
+	 *     visibility=VisibilityIndicator 'inv' (ambiguity) isSufficient?='all'
+	 
+	 * </pre>
+	 */
+	protected void emit_Invariant_TrueKeyword_4_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
 	 *     declaredName=Name (ambiguity) (rule end)
 	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
 	 *     isLibrary?='library' 'package' (ambiguity) (rule end)
@@ -604,6 +2615,134 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * </pre>
 	 */
 	protected void emit_Metaclass_SemicolonKeyword_4_0_or___LeftCurlyBracketKeyword_4_1_0_RightCurlyBracketKeyword_4_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     'feature'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) (':&gt;&gt;' | 'redefines')? redefinedFeature+=FeatureChainName
+	 *     isVariant?='variant' (ambiguity) (':&gt;&gt;' | 'redefines')? redefinedFeature+=FeatureChainName
+	 *     visibility=VisibilityIndicator (ambiguity) (':&gt;&gt;' | 'redefines')? redefinedFeature+=FeatureChainName
+	 
+	 * </pre>
+	 */
+	protected void emit_MetadataBodyFeature_FeatureKeyword_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     MultiHigh=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     crosses+=FeatureChainName (ambiguity) (rule end)
+	 *     isNonunique?='nonunique' (ambiguity) (rule end)
+	 *     isOrdered?='ordered' (ambiguity) (rule end)
+	 *     redefinedFeature+=FeatureChainName (ambiguity) (rule end)
+	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
+	 *     references+=FeatureChainName (ambiguity) (rule end)
+	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
+	 *     typings+=FeatureTypingName (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_MetadataBodyFeature_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (':&gt;&gt;' | 'redefines')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'feature'? (ambiguity) redefinedFeature+=FeatureChainName
+	 *     isVariant?='variant' 'feature'? (ambiguity) redefinedFeature+=FeatureChainName
+	 *     visibility=VisibilityIndicator 'feature'? (ambiguity) redefinedFeature+=FeatureChainName
+	 
+	 * </pre>
+	 */
+	protected void emit_MetadataBodyFeature___ColonGreaterThanSignGreaterThanSignKeyword_2_0_or_RedefinesKeyword_2_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ':' | ('defined' 'by')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     declaredName=Name (ambiguity) metadataTyping=QualifiedName
+	 *     declaredShortName=Name '&gt;' (ambiguity) metadataTyping=QualifiedName
+	 
+	 * </pre>
+	 */
+	protected void emit_MetadataFeature_ColonKeyword_3_1_0_or___DefinedKeyword_3_1_1_0_ByKeyword_3_1_1_1__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     'metadata' | '@'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) '&lt;' declaredShortName=Name
+	 *     (rule start) (ambiguity) (':' | ('defined' 'by'))? metadataTyping=QualifiedName
+	 *     (rule start) (ambiguity) declaredName=Name
+	 *     isVariant?='variant' (ambiguity) '&lt;' declaredShortName=Name
+	 *     isVariant?='variant' (ambiguity) (':' | ('defined' 'by'))? metadataTyping=QualifiedName
+	 *     isVariant?='variant' (ambiguity) declaredName=Name
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) '&lt;' declaredShortName=Name
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) (':' | ('defined' 'by'))? metadataTyping=QualifiedName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT (ambiguity) declaredName=Name
+	 *     visibility=VisibilityIndicator (ambiguity) '&lt;' declaredShortName=Name
+	 *     visibility=VisibilityIndicator (ambiguity) (':' | ('defined' 'by'))? metadataTyping=QualifiedName
+	 *     visibility=VisibilityIndicator (ambiguity) declaredName=Name
+	 
+	 * </pre>
+	 */
+	protected void emit_MetadataFeature_CommercialAtKeyword_2_1_or_MetadataKeyword_2_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     annotatedElement+=QualifiedName (ambiguity) (rule end)
+	 *     metadataTyping=QualifiedName (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_MetadataFeature_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (':' | ('defined' 'by'))?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) ('metadata' | '@') (ambiguity) metadataTyping=QualifiedName
+	 *     isVariant?='variant' ('metadata' | '@') (ambiguity) metadataTyping=QualifiedName
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT ('metadata' | '@') (ambiguity) metadataTyping=QualifiedName
+	 *     visibility=VisibilityIndicator ('metadata' | '@') (ambiguity) metadataTyping=QualifiedName
+	 
+	 * </pre>
+	 */
+	protected void emit_MetadataFeature___ColonKeyword_3_1_0_or___DefinedKeyword_3_1_1_0_ByKeyword_3_1_1_1____q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -685,6 +2824,34 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	/**
 	 * <pre>
 	 * Ambiguous syntax:
+	 *     ':&gt;&gt;' | 'redefines'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     redefiningFeature=FeatureChainName (ambiguity) redefinedFeature=FeatureChainName
+	 
+	 * </pre>
+	 */
+	protected void emit_Redefinition_ColonGreaterThanSignGreaterThanSignKeyword_4_0_or_RedefinesKeyword_4_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     redefinedFeature=FeatureChainName (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Redefinition_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
 	 *     ':&gt;' | 'specializes'
 	 *
 	 * This ambiguous syntax occurs at:
@@ -702,6 +2869,82 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * </pre>
 	 */
 	protected void emit_SpecializationPart_ColonGreaterThanSignKeyword_0_0_or_SpecializesKeyword_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ':&gt;' | 'specializes'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     specific=FeatureChainName (ambiguity) general=FeatureChainName
+	 
+	 * </pre>
+	 */
+	protected void emit_Specialization_ColonGreaterThanSignKeyword_4_0_or_SpecializesKeyword_4_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     general=FeatureChainName (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Specialization_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'step' (ambiguity) (rule start)
+	 *     MultiHigh=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     chainingFeature+=FeatureChainName (ambiguity) (rule end)
+	 *     crosses+=FeatureChainName (ambiguity) (rule end)
+	 *     crossingFeature+=CrossingFeature 'step' (ambiguity) (rule end)
+	 *     declaredName=Name (ambiguity) (rule end)
+	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
+	 *     differencing+=FeatureChainName (ambiguity) (rule end)
+	 *     direction=FeatureDirection 'step' (ambiguity) (rule end)
+	 *     disjoining+=FeatureChainName (ambiguity) (rule end)
+	 *     featuringType+=FeatureChainName (ambiguity) (rule end)
+	 *     intersecting+=FeatureChainName (ambiguity) (rule end)
+	 *     invertingFeature+=FeatureChainName (ambiguity) (rule end)
+	 *     isAbstract?='abstract' 'step' (ambiguity) (rule end)
+	 *     isComposite?='composite' 'step' (ambiguity) (rule end)
+	 *     isConstantBasic?='const' 'step' (ambiguity) (rule end)
+	 *     isDerived?='derived' 'step' (ambiguity) (rule end)
+	 *     isEnd?='end' 'step' (ambiguity) (rule end)
+	 *     isMember?='member' 'step' (ambiguity) (rule end)
+	 *     isNonunique?='nonunique' (ambiguity) (rule end)
+	 *     isOrdered?='ordered' (ambiguity) (rule end)
+	 *     isPortion?='portion' 'step' (ambiguity) (rule end)
+	 *     isReturn?='return' 'step' (ambiguity) (rule end)
+	 *     isVariable?='var' 'step' (ambiguity) (rule end)
+	 *     isVariant?='variant' 'step' (ambiguity) (rule end)
+	 *     originalType=QualifiedName (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'step' (ambiguity) (rule end)
+	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
+	 *     references+=FeatureChainName (ambiguity) (rule end)
+	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
+	 *     typings+=FeatureTypingName (ambiguity) (rule end)
+	 *     unioning+=FeatureChainName (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
+	 *     visibility=VisibilityIndicator 'step' (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Step_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -737,6 +2980,34 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	/**
 	 * <pre>
 	 * Ambiguous syntax:
+	 *     ':&gt;' | 'specializes'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     subclassifier=QualifiedName (ambiguity) superclassifier=QualifiedName
+	 
+	 * </pre>
+	 */
+	protected void emit_Subclassification_ColonGreaterThanSignKeyword_4_0_or_SpecializesKeyword_4_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     superclassifier=QualifiedName (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Subclassification_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
 	 *     ':&gt;' | 'subsets'
 	 *
 	 * This ambiguous syntax occurs at:
@@ -749,6 +3020,133 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * </pre>
 	 */
 	protected void emit_Subsets_ColonGreaterThanSignKeyword_0_0_or_SubsetsKeyword_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ':&gt;' | 'subsets'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     subsettingFeature=FeatureChainName (ambiguity) subsettedFeature=FeatureChainName
+	 
+	 * </pre>
+	 */
+	protected void emit_Subsetting_ColonGreaterThanSignKeyword_4_0_or_SubsetsKeyword_4_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     subsettedFeature=FeatureChainName (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Subsetting_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'succession' 'flow' (ambiguity) (rule start)
+	 *     FlowEnd+=FeatureChainName (ambiguity) (rule end)
+	 *     MultiHigh=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     chainingFeature+=FeatureChainName (ambiguity) (rule end)
+	 *     crosses+=FeatureChainName (ambiguity) (rule end)
+	 *     crossingFeature+=CrossingFeature 'succession' 'flow' (ambiguity) (rule end)
+	 *     declaredName=Name (ambiguity) (rule end)
+	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
+	 *     differencing+=FeatureChainName (ambiguity) (rule end)
+	 *     direction=FeatureDirection 'succession' 'flow' (ambiguity) (rule end)
+	 *     disjoining+=FeatureChainName (ambiguity) (rule end)
+	 *     featuringType+=FeatureChainName (ambiguity) (rule end)
+	 *     intersecting+=FeatureChainName (ambiguity) (rule end)
+	 *     invertingFeature+=FeatureChainName (ambiguity) (rule end)
+	 *     isAbstract?='abstract' 'succession' 'flow' (ambiguity) (rule end)
+	 *     isComposite?='composite' 'succession' 'flow' (ambiguity) (rule end)
+	 *     isConstantBasic?='const' 'succession' 'flow' (ambiguity) (rule end)
+	 *     isDerived?='derived' 'succession' 'flow' (ambiguity) (rule end)
+	 *     isEnd?='end' 'succession' 'flow' (ambiguity) (rule end)
+	 *     isMember?='member' 'succession' 'flow' (ambiguity) (rule end)
+	 *     isNonunique?='nonunique' (ambiguity) (rule end)
+	 *     isOrdered?='ordered' (ambiguity) (rule end)
+	 *     isPortion?='portion' 'succession' 'flow' (ambiguity) (rule end)
+	 *     isReturn?='return' 'succession' 'flow' (ambiguity) (rule end)
+	 *     isVariable?='var' 'succession' 'flow' (ambiguity) (rule end)
+	 *     isVariant?='variant' 'succession' 'flow' (ambiguity) (rule end)
+	 *     originalType=QualifiedName (ambiguity) (rule end)
+	 *     payload=PayloadParameter (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'succession' 'flow' (ambiguity) (rule end)
+	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
+	 *     references+=FeatureChainName (ambiguity) (rule end)
+	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
+	 *     typings+=FeatureTypingName (ambiguity) (rule end)
+	 *     unioning+=FeatureChainName (ambiguity) (rule end)
+	 *     valuePart=Expression (ambiguity) (rule end)
+	 *     visibility=VisibilityIndicator 'succession' 'flow' (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_SuccessionFlow_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'succession' (ambiguity) (rule start)
+	 *     MultiHigh=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     MultiLow=MultiplicityExpression ']' (ambiguity) (rule end)
+	 *     chainingFeature+=FeatureChainName (ambiguity) (rule end)
+	 *     connectorPart+=ConnectorEnd (ambiguity) (rule end)
+	 *     crosses+=FeatureChainName (ambiguity) (rule end)
+	 *     crossingFeature+=CrossingFeature 'succession' (ambiguity) (rule end)
+	 *     declaredName=Name (ambiguity) (rule end)
+	 *     declaredShortName=Name '&gt;' (ambiguity) (rule end)
+	 *     differencing+=FeatureChainName (ambiguity) (rule end)
+	 *     direction=FeatureDirection 'succession' (ambiguity) (rule end)
+	 *     disjoining+=FeatureChainName (ambiguity) (rule end)
+	 *     featuringType+=FeatureChainName (ambiguity) (rule end)
+	 *     intersecting+=FeatureChainName (ambiguity) (rule end)
+	 *     invertingFeature+=FeatureChainName (ambiguity) (rule end)
+	 *     isAbstract?='abstract' 'succession' (ambiguity) (rule end)
+	 *     isComposite?='composite' 'succession' (ambiguity) (rule end)
+	 *     isConstantBasic?='const' 'succession' (ambiguity) (rule end)
+	 *     isDerived?='derived' 'succession' (ambiguity) (rule end)
+	 *     isEnd?='end' 'succession' (ambiguity) (rule end)
+	 *     isMember?='member' 'succession' (ambiguity) (rule end)
+	 *     isNonunique?='nonunique' (ambiguity) (rule end)
+	 *     isOrdered?='ordered' (ambiguity) (rule end)
+	 *     isPortion?='portion' 'succession' (ambiguity) (rule end)
+	 *     isReturn?='return' 'succession' (ambiguity) (rule end)
+	 *     isSufficient?='all' (ambiguity) (rule end)
+	 *     isVariable?='var' 'succession' (ambiguity) (rule end)
+	 *     isVariant?='variant' 'succession' (ambiguity) (rule end)
+	 *     originalType=QualifiedName (ambiguity) (rule end)
+	 *     prefixMetadataExtension+=PREFIXNAME_TEXT 'succession' (ambiguity) (rule end)
+	 *     redefinitions+=FeatureChainName (ambiguity) (rule end)
+	 *     references+=FeatureChainName (ambiguity) (rule end)
+	 *     subsetting+=FeatureChainName (ambiguity) (rule end)
+	 *     typings+=FeatureTypingName (ambiguity) (rule end)
+	 *     unioning+=FeatureChainName (ambiguity) (rule end)
+	 *     visibility=VisibilityIndicator 'succession' (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_Succession_SemicolonKeyword_5_0_or___LeftCurlyBracketKeyword_5_1_0_RightCurlyBracketKeyword_5_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -838,6 +3236,20 @@ public class KerMLOCSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * </pre>
 	 */
 	protected void emit_TextualRepresentation_RepKeyword_1_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ';' | ('{' '}')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     featuringType=QualifiedName (ambiguity) (rule end)
+	 
+	 * </pre>
+	 */
+	protected void emit_TypeFeaturing_SemicolonKeyword_6_0_or___LeftCurlyBracketKeyword_6_1_0_RightCurlyBracketKeyword_6_1_2__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

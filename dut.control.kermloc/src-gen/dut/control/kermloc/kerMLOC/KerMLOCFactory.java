@@ -87,6 +87,24 @@ public interface KerMLOCFactory extends EFactory
   FunctionBodyElement createFunctionBodyElement();
 
   /**
+   * Returns a new object of class '<em>Relationship Body Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Relationship Body Element</em>'.
+   * @generated
+   */
+  RelationshipBodyElement createRelationshipBodyElement();
+
+  /**
+   * Returns a new object of class '<em>Metadata Body Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Metadata Body Element</em>'.
+   * @generated
+   */
+  MetadataBodyElement createMetadataBodyElement();
+
+  /**
    * Returns a new object of class '<em>Annotating Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -103,6 +121,15 @@ public interface KerMLOCFactory extends EFactory
    * @generated
    */
   NonFeatureElement createNonFeatureElement();
+
+  /**
+   * Returns a new object of class '<em>Feature Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Feature Element</em>'.
+   * @generated
+   */
+  FeatureElement createFeatureElement();
 
   /**
    * Returns a new object of class '<em>Package</em>'.
@@ -157,6 +184,24 @@ public interface KerMLOCFactory extends EFactory
    * @generated
    */
   TextualRepresentation createTextualRepresentation();
+
+  /**
+   * Returns a new object of class '<em>Metadata Feature</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Metadata Feature</em>'.
+   * @generated
+   */
+  MetadataFeature createMetadataFeature();
+
+  /**
+   * Returns a new object of class '<em>Metadata Body Feature</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Metadata Body Feature</em>'.
+   * @generated
+   */
+  MetadataBodyFeature createMetadataBodyFeature();
 
   /**
    * Returns a new object of class '<em>Import Element</em>'.
@@ -321,6 +366,177 @@ public interface KerMLOCFactory extends EFactory
   Predicate createPredicate();
 
   /**
+   * Returns a new object of class '<em>Specialization</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Specialization</em>'.
+   * @generated
+   */
+  Specialization createSpecialization();
+
+  /**
+   * Returns a new object of class '<em>Conjugation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Conjugation</em>'.
+   * @generated
+   */
+  Conjugation createConjugation();
+
+  /**
+   * Returns a new object of class '<em>Feature Typing</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Feature Typing</em>'.
+   * @generated
+   */
+  FeatureTyping createFeatureTyping();
+
+  /**
+   * Returns a new object of class '<em>Subclassification</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Subclassification</em>'.
+   * @generated
+   */
+  Subclassification createSubclassification();
+
+  /**
+   * Returns a new object of class '<em>Disjoining</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Disjoining</em>'.
+   * @generated
+   */
+  Disjoining createDisjoining();
+
+  /**
+   * Returns a new object of class '<em>Feature Inverting</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Feature Inverting</em>'.
+   * @generated
+   */
+  FeatureInverting createFeatureInverting();
+
+  /**
+   * Returns a new object of class '<em>Subsetting</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Subsetting</em>'.
+   * @generated
+   */
+  Subsetting createSubsetting();
+
+  /**
+   * Returns a new object of class '<em>Redefinition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Redefinition</em>'.
+   * @generated
+   */
+  Redefinition createRedefinition();
+
+  /**
+   * Returns a new object of class '<em>Type Featuring</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Type Featuring</em>'.
+   * @generated
+   */
+  TypeFeaturing createTypeFeaturing();
+
+  /**
+   * Returns a new object of class '<em>Feature</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Feature</em>'.
+   * @generated
+   */
+  Feature createFeature();
+
+  /**
+   * Returns a new object of class '<em>Step</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Step</em>'.
+   * @generated
+   */
+  Step createStep();
+
+  /**
+   * Returns a new object of class '<em>Expression Class</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Expression Class</em>'.
+   * @generated
+   */
+  ExpressionClass createExpressionClass();
+
+  /**
+   * Returns a new object of class '<em>Boolean Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Boolean Expression</em>'.
+   * @generated
+   */
+  BooleanExpression createBooleanExpression();
+
+  /**
+   * Returns a new object of class '<em>Invariant</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Invariant</em>'.
+   * @generated
+   */
+  Invariant createInvariant();
+
+  /**
+   * Returns a new object of class '<em>Connector</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Connector</em>'.
+   * @generated
+   */
+  Connector createConnector();
+
+  /**
+   * Returns a new object of class '<em>Binding Connector</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Binding Connector</em>'.
+   * @generated
+   */
+  BindingConnector createBindingConnector();
+
+  /**
+   * Returns a new object of class '<em>Succession</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Succession</em>'.
+   * @generated
+   */
+  Succession createSuccession();
+
+  /**
+   * Returns a new object of class '<em>Flow</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Flow</em>'.
+   * @generated
+   */
+  Flow createFlow();
+
+  /**
+   * Returns a new object of class '<em>Succession Flow</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Succession Flow</em>'.
+   * @generated
+   */
+  SuccessionFlow createSuccessionFlow();
+
+  /**
    * Returns a new object of class '<em>Result Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -328,6 +544,33 @@ public interface KerMLOCFactory extends EFactory
    * @generated
    */
   ResultExpression createResultExpression();
+
+  /**
+   * Returns a new object of class '<em>Crossing Feature</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Crossing Feature</em>'.
+   * @generated
+   */
+  CrossingFeature createCrossingFeature();
+
+  /**
+   * Returns a new object of class '<em>Connector End</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Connector End</em>'.
+   * @generated
+   */
+  ConnectorEnd createConnectorEnd();
+
+  /**
+   * Returns a new object of class '<em>Payload Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Payload Parameter</em>'.
+   * @generated
+   */
+  PayloadParameter createPayloadParameter();
 
   /**
    * Returns a new object of class '<em>Identification</em>'.
@@ -357,13 +600,13 @@ public interface KerMLOCFactory extends EFactory
   PrefixMetadata createPrefixMetadata();
 
   /**
-   * Returns a new object of class '<em>Multiplicity Bounds</em>'.
+   * Returns a new object of class '<em>Multiplicity Range</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Multiplicity Bounds</em>'.
+   * @return a new object of class '<em>Multiplicity Range</em>'.
    * @generated
    */
-  MultiplicityBounds createMultiplicityBounds();
+  MultiplicityRange createMultiplicityRange();
 
   /**
    * Returns a new object of class '<em>Feature Specialization</em>'.
@@ -526,6 +769,195 @@ public interface KerMLOCFactory extends EFactory
    * @generated
    */
   ClassifierDeclaration createClassifierDeclaration();
+
+  /**
+   * Returns a new object of class '<em>Feature Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Feature Declaration</em>'.
+   * @generated
+   */
+  FeatureDeclaration createFeatureDeclaration();
+
+  /**
+   * Returns a new object of class '<em>Feature Relationship Part</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Feature Relationship Part</em>'.
+   * @generated
+   */
+  FeatureRelationshipPart createFeatureRelationshipPart();
+
+  /**
+   * Returns a new object of class '<em>Chaining Part</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Chaining Part</em>'.
+   * @generated
+   */
+  ChainingPart createChainingPart();
+
+  /**
+   * Returns a new object of class '<em>Inverting Part</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Inverting Part</em>'.
+   * @generated
+   */
+  InvertingPart createInvertingPart();
+
+  /**
+   * Returns a new object of class '<em>Type Featuring Part</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Type Featuring Part</em>'.
+   * @generated
+   */
+  TypeFeaturingPart createTypeFeaturingPart();
+
+  /**
+   * Returns a new object of class '<em>Feature Specialization Part</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Feature Specialization Part</em>'.
+   * @generated
+   */
+  FeatureSpecializationPart createFeatureSpecializationPart();
+
+  /**
+   * Returns a new object of class '<em>Multiplicity Part</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Multiplicity Part</em>'.
+   * @generated
+   */
+  MultiplicityPart createMultiplicityPart();
+
+  /**
+   * Returns a new object of class '<em>Multiplicity Modifiers</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Multiplicity Modifiers</em>'.
+   * @generated
+   */
+  MultiplicityModifiers createMultiplicityModifiers();
+
+  /**
+   * Returns a new object of class '<em>Feature Conjugation Part</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Feature Conjugation Part</em>'.
+   * @generated
+   */
+  FeatureConjugationPart createFeatureConjugationPart();
+
+  /**
+   * Returns a new object of class '<em>Feature Prefix</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Feature Prefix</em>'.
+   * @generated
+   */
+  FeaturePrefix createFeaturePrefix();
+
+  /**
+   * Returns a new object of class '<em>End Feature Prefix</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>End Feature Prefix</em>'.
+   * @generated
+   */
+  EndFeaturePrefix createEndFeaturePrefix();
+
+  /**
+   * Returns a new object of class '<em>Basic Feature Prefix</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Basic Feature Prefix</em>'.
+   * @generated
+   */
+  BasicFeaturePrefix createBasicFeaturePrefix();
+
+  /**
+   * Returns a new object of class '<em>Value Part</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Value Part</em>'.
+   * @generated
+   */
+  ValuePart createValuePart();
+
+  /**
+   * Returns a new object of class '<em>Feature Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Feature Value</em>'.
+   * @generated
+   */
+  FeatureValue createFeatureValue();
+
+  /**
+   * Returns a new object of class '<em>Flow Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Flow Declaration</em>'.
+   * @generated
+   */
+  FlowDeclaration createFlowDeclaration();
+
+  /**
+   * Returns a new object of class '<em>Payload Feature</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Payload Feature</em>'.
+   * @generated
+   */
+  PayloadFeature createPayloadFeature();
+
+  /**
+   * Returns a new object of class '<em>Payload Feature Specialization Part</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Payload Feature Specialization Part</em>'.
+   * @generated
+   */
+  PayloadFeatureSpecializationPart createPayloadFeatureSpecializationPart();
+
+  /**
+   * Returns a new object of class '<em>Connector Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Connector Declaration</em>'.
+   * @generated
+   */
+  ConnectorDeclaration createConnectorDeclaration();
+
+  /**
+   * Returns a new object of class '<em>Binary Connector Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Binary Connector Declaration</em>'.
+   * @generated
+   */
+  BinaryConnectorDeclaration createBinaryConnectorDeclaration();
+
+  /**
+   * Returns a new object of class '<em>Nary Connector Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Nary Connector Declaration</em>'.
+   * @generated
+   */
+  NaryConnectorDeclaration createNaryConnectorDeclaration();
+
+  /**
+   * Returns a new object of class '<em>Extended Prefix</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Extended Prefix</em>'.
+   * @generated
+   */
+  ExtendedPrefix createExtendedPrefix();
 
   /**
    * Returns the package supported by this factory.

@@ -20,7 +20,7 @@ package dut.control.kermloc.kerMLOC;
  * @model
  * @generated
  */
-public interface CodeAnnotation extends GeneralBodyElements, AnnotatingBodyElement
+public interface CodeAnnotation extends GeneralBodyElements, AnnotatingBodyElement, RelationshipBodyElement, MetadataBodyElement
 {
   /**
    * Returns the value of the '<em><b>Body</b></em>' attribute.

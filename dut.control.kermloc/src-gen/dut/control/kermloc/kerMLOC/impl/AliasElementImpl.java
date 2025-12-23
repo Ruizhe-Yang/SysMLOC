@@ -7,6 +7,7 @@ import dut.control.kermloc.kerMLOC.AliasElement;
 import dut.control.kermloc.kerMLOC.AnnotatingBodyElement;
 import dut.control.kermloc.kerMLOC.KerMLOCPackage;
 import dut.control.kermloc.kerMLOC.MemberPrefix;
+import dut.control.kermloc.kerMLOC.MetadataBodyElement;
 import dut.control.kermloc.kerMLOC.VisibilityIndicator;
 
 import java.util.Collection;
@@ -172,7 +173,7 @@ public class AliasElementImpl extends GeneralBodyElementsImpl implements AliasEl
   @Override
   protected EClass eStaticClass()
   {
-    return KerMLOCPackage.Literals.ALIAS_ELEMENT;
+    return KerMLOCPackage.eINSTANCE.getAliasElement();
   }
 
   /**
@@ -457,6 +458,13 @@ public class AliasElementImpl extends GeneralBodyElementsImpl implements AliasEl
   @Override
   public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass)
   {
+    if (baseClass == MetadataBodyElement.class)
+    {
+      switch (derivedFeatureID)
+      {
+        default: return -1;
+      }
+    }
     if (baseClass == MemberPrefix.class)
     {
       switch (derivedFeatureID)
@@ -477,6 +485,13 @@ public class AliasElementImpl extends GeneralBodyElementsImpl implements AliasEl
   @Override
   public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass)
   {
+    if (baseClass == MetadataBodyElement.class)
+    {
+      switch (baseFeatureID)
+      {
+        default: return -1;
+      }
+    }
     if (baseClass == MemberPrefix.class)
     {
       switch (baseFeatureID)

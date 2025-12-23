@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:LibraryPackage" declaredName="Base" isStandard="true" isLibrary="true">
+    <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9; * This package defines the classifiers and features that provide the bases for the typing&#xA;&#x9; * of all elements in the language.&#xA;&#x9; */"/>
+    <elements xsi:type="kerMLOC:Classifier" isAbstract="true" declaredName="Anything">
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;     * Anything is the top level generalized type in the language. &#xA;&#x9;     */"/>
+      <elements xsi:type="kerMLOC:Feature" declaredName="self" MultiLow="1">
+        <typings>Anything</typings>
+        <subsetting>things</subsetting>
+        <chainingFeature>things.that</chainingFeature>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The source of a SelfLink of this thing to itself. self is thus a feature that&#xA;&#x9;&#x9;&#x9; * relates everything to itself. It is also the value of the nested &quot;that&quot; feature&#xA;&#x9;&#x9;&#x9; * of all other things featured by this thing.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:DataType" isAbstract="true" declaredName="DataValue">
+      <subsetting>Anything</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Value is the most general classifier of entities that are values that do not change&#xA;&#x9;&#x9; * over time.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" declaredName="self">
+        <typings>DataValue</typings>
+        <redefinitions>Anything::self</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Feature" isAbstract="true" declaredName="things" MultiLow="1" MultiHigh="*" isNonunique="true">
+      <typings>Anything</typings>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * things is the top-level feature in the language.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" declaredName="that" MultiLow="1">
+        <typings>Anything</typings>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * For each value of things, the &quot;featuring instance&quot; of that value. &#xA;&#x9;&#x9;&#x9; * This is enforced by declaring Anything::self to be the chaining of things.that, &#xA;&#x9;&#x9;&#x9; * restricting it the single value of self.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Feature" isAbstract="true" declaredName="dataValues" MultiLow="0" MultiHigh="*" isNonunique="true">
+      <typings>DataValue</typings>
+      <subsetting>things</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * dataValues is a specialization of things restricted to type DataValue.&#xA;&#x9;&#x9; */"/>
+    </elements>
+    <elements xsi:type="kerMLOC:Feature" isAbstract="true" declaredName="naturals" MultiLow="0" MultiHigh="*">
+      <typings>ScalarValues::Natural</typings>
+      <subsetting>dataValues</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * naturals is a specialization of dataValues restricted to type Natural. &#xA;&#x9;&#x9; * It is the root feature of all multiplicities, which map from a feature to&#xA;&#x9;&#x9; * the set of Natural numbers representing allowable cardinalities of the feature.&#xA;&#x9;&#x9; */"/>
+    </elements>
+    <elements xsi:type="kerMLOC:Multiplicity" declaredName="exactlyOne" MultiLow="1" MultiHigh="1">
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * exactlyOne is a multiplicity range requiring a cardinality of exactly one.&#xA;&#x9;&#x9; */"/>
+    </elements>
+    <elements xsi:type="kerMLOC:Multiplicity" declaredName="zeroOrOne" MultiLow="0" MultiHigh="1">
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * zeroOrOne is a multiplicity range requiring a cardinality of zero or one.&#xA;&#x9;&#x9; */"/>
+    </elements>
+    <elements xsi:type="kerMLOC:Multiplicity" declaredName="oneToMany" MultiLow="1" MultiHigh="*">
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * oneToMany is a multiplicity range allowing any cardinality of one or more.&#xA;&#x9;&#x9; */"/>
+    </elements>
+    <elements xsi:type="kerMLOC:Multiplicity" declaredName="zeroToMany" MultiLow="0" MultiHigh="*">
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * zeroToMany is a multiplicity range allowing any cardinality of zero or more&#xA;&#x9;&#x9; * (that is, no restriction).&#xA;&#x9;&#x9; */"/>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

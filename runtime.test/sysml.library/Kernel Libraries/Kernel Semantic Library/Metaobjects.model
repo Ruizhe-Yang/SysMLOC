@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:LibraryPackage" declaredName="Metaobjects" isStandard="true" isLibrary="true">
+    <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9; * This package defines Metaclasses and Features that are related to the typing of syntactic and semantic metadata.&#xA;&#x9; */"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Objects::Object"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Objects::objects"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="KerML::Element"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="KerML::Type"/>
+    <elements xsi:type="kerMLOC:Metaclass" isAbstract="true" declaredName="Metaobject">
+      <subsetting>Object</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * A Metaobject contains syntactic or semantic information about one or more annotatedElements. &#xA;&#x9;&#x9; * It is the most general Metaclass. All other Metaclasses must subclassify it directly or indirectly.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature">
+        <typings>Metaobject</typings>
+        <redefinitions>self</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isAbstract="true" declaredName="annotatedElement" MultiLow="1" MultiHigh="*">
+        <typings>Element</typings>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The Elements annotated by this Metaobject. This is set automatically when a Metaobject is&#xA;&#x9;&#x9;&#x9; * instantiated as the value of a MetadataFeature.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Metaclass" isAbstract="true" declaredName="SemanticMetadata">
+      <subsetting>Metaobject</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * SemanticMetadata is a Metaobject that requires its single annotatedType to directly or indirectly specialize &#xA;&#x9;&#x9; * a baseType that models the semantics for the annotatedType.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" isAbstract="true" MultiLow="1">
+        <typings>Type</typings>
+        <redefinitions>annotatedElement</redefinitions>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The single annotatedElement of this SemanticMetadata, which must be a Type.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="baseType" MultiLow="1">
+        <typings>Type</typings>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The required base Type for the annotatedType.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Feature" declaredName="metaobjects" MultiLow="0" MultiHigh="*">
+      <typings>Metaobject</typings>
+      <subsetting>objects</subsetting>
+      <elements xsi:type="kerMLOC:Comment" body="/*&#xA;&#x9;&#x9; * metaobjects is a specialization of objects restricted to type Metadata. It is the most general &#xA;&#x9;&#x9; * MetadataFeature. All other MetadataFeatures must subset it directly or indirectly.&#xA;&#x9;&#x9; */"/>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

@@ -37,7 +37,7 @@ public class NamespaceBodyElementImpl extends MinimalEObjectImpl.Container imple
   @Override
   protected EClass eStaticClass()
   {
-    return KerMLOCPackage.Literals.NAMESPACE_BODY_ELEMENT;
+    return KerMLOCPackage.eINSTANCE.getNamespaceBodyElement();
   }
 
 } //NamespaceBodyElementImpl

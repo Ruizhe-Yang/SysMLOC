@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:LibraryPackage" declaredName="VectorFunctions" isStandard="true" isLibrary="true">
+    <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9; * This package defines abstract functions on VectorValues corresponding to the algebraic operations&#xA;&#x9; * provided by a vector space with inner product. It also includes concrete implementations of these&#xA;&#x9; * functions specifically for CartesianVectorValues.&#xA;&#x9; */"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ScalarValues::NumericalValue"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ScalarValues::Positive"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ScalarValues::Real"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ScalarValues::Boolean"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="NumericalFunctions" isNamespace="true"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="RealFunctions::sqrt"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="TrigFunctions::arccos"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="SequenceFunctions::size"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ControlFunctions" isNamespace="true"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="public" declaredName="VectorValues" isNamespace="true"/>
+    <elements xsi:type="kerMLOC:Comment" body="/* Generic arithmetic functions for all VectorValues. */"/>
+    <elements xsi:type="kerMLOC:Function" isAbstract="true" declaredName="isZeroVector">
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Return whether a VectorValue is a zero vector.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="v" MultiLow="1">
+        <typings>VectorValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Boolean</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" isAbstract="true" declaredName="'+'">
+      <subsetting>DataFunctions::'+'</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * With two arguments, returns the sum of two VectorValues. With one argument, returns that VectorValue.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="v" MultiLow="1">
+        <typings>VectorValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="w" MultiLow="0" MultiHigh="1">
+        <typings>VectorValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" declaredName="u" MultiLow="1">
+        <typings>VectorValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Invariant" declaredName="zeroAddition">
+        <resultExpressionParameter resultExpression="w == null or isZeroVector(w) implies u == w"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Invariant" declaredName="commutivity">
+        <resultExpressionParameter resultExpression="w != null implies u == w + v"/>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" isAbstract="true" declaredName="'-'">
+      <subsetting>DataFunctions::'-'</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * With two arguments, returns the difference of two VectorValues. With one arguments, returns the inverse&#xA;&#x9;&#x9; * of the given VectorValue, that is, the VectorValue that, when added to the original VectorValue, results in&#xA;&#x9;&#x9; * the zeroVector.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="v" MultiLow="1">
+        <typings>VectorValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="w" MultiLow="0" MultiHigh="1">
+        <typings>VectorValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" declaredName="u" MultiLow="1">
+        <typings>VectorValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Invariant" declaredName="negation">
+        <resultExpressionParameter resultExpression="w == null implies isZeroVector(v + u)"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Invariant" declaredName="difference">
+        <resultExpressionParameter resultExpression="w != null implies v + u == w"/>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" isAbstract="true" declaredName="sum0">
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Return the sum of a collection of VectorValues. If the collection is empty, return a given zero vector.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="coll" MultiLow="*" isNonunique="true">
+        <typings>VectorValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="zero" MultiLow="1">
+        <typings>VectorValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Invariant" declaredName="precondition">
+        <resultExpressionParameter resultExpression="isZeroVector(zero)"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" declaredName="s" MultiLow="1" valuePart="coll->reduce '+' ?? zero">
+        <typings>VectorValue</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Comment" body="/* Functions specific to NumericalVectorValues. */"/>
+    <elements xsi:type="kerMLOC:Function" declaredName="VectorOf">
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Construct a NumericalVectorValue whose elements are a non-empty list of component NumericalValues.&#xA;&#x9;&#x9; * The dimension of the NumericalVectorValue is equal to the number of components.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="components" MultiLow="1" MultiHigh="*" isOrdered="true" isNonunique="true">
+        <typings>NumericalValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>NumericalVectorValue</typings>
+        <elements xsi:type="kerMLOC:Feature" valuePart="size(components)">
+          <redefinitions>dimension</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" valuePart="components">
+          <redefinitions>elements</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" isAbstract="true" declaredName="scalarVectorMult">
+      <subsetting>DataFunctions::'*'</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Scalar product of a NumericalValue and a NumericalVectorValue.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>NumericalValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="v" MultiLow="1">
+        <typings>NumericalVectorValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" declaredName="w" MultiLow="1">
+        <typings>NumericalVectorValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Invariant" declaredName="scaling">
+        <resultExpressionParameter resultExpression="norm(w) == x * norm(v)"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Invariant" declaredName="zeroLength">
+        <resultExpressionParameter resultExpression="isZeroVector(w) implies isZero(norm(w))"/>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:AliasElement" memberName="'*'" memberElement="scalarVectorMult"/>
+    <elements xsi:type="kerMLOC:Function" isAbstract="true" declaredName="vectorScalarMult">
+      <subsetting>DataFunctions::'*'</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Scalar product of a NumericalVectorValue and a NumericalValue, which has the same value as the scalar product of the&#xA;&#x9;&#x9; * NumericalValue and the NumericalVectorValue.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="v" MultiLow="1">
+        <typings>NumericalVectorValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>NumericalValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" declaredName="w" MultiLow="1" isDefault="true" valuePart="scalarVectorMult(x, v)">
+        <typings>NumericalVectorValue</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" isAbstract="true" declaredName="vectorScalarDiv">
+      <subsetting>DataFunctions::'/'</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Scalar quotient of a NumericalVectorValue and a NumericalValue, defined as the scalar product of the inverse of the &#xA;&#x9;&#x9; * NumericalValue and the NumericalVectorValue.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="v" MultiLow="1">
+        <typings>NumericalVectorValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>NumericalValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" declaredName="w" MultiLow="1" valuePart="scalarVectorMult(1.0 / x, v)">
+        <typings>NumericalVectorValue</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" isAbstract="true" declaredName="inner">
+      <subsetting>DataFunctions::'*'</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Inner product of two NumericalVectorValues.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="v" MultiLow="1">
+        <typings>NumericalVectorValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="w" MultiLow="1">
+        <typings>NumericalVectorValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" declaredName="x" MultiLow="1">
+        <typings>NumericalValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Invariant" declaredName="commmutivity">
+        <resultExpressionParameter resultExpression="x == inner(w, v)"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Invariant" declaredName="zeroInner">
+        <resultExpressionParameter resultExpression="isZeroVector(v) or isZeroVector(w) implies isZero(x)"/>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" isAbstract="true" declaredName="norm">
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * The norm (magnitude) of a NumericalVectorValue, as a NumericalValue.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="v" MultiLow="1">
+        <typings>NumericalVectorValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" declaredName="l" MultiLow="1">
+        <typings>NumericalValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Invariant" declaredName="squareNorm">
+        <resultExpressionParameter resultExpression="l * l == inner(v,v)"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Invariant" declaredName="lengthZero">
+        <resultExpressionParameter resultExpression="isZero(l) == isZeroVector(v)"/>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" isAbstract="true" declaredName="angle">
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * The angle between two NumericalVectorValues, as a NumericalValue.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="v" MultiLow="1">
+        <typings>NumericalVectorValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="w" MultiLow="1">
+        <typings>NumericalVectorValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" declaredName="theta" MultiLow="1">
+        <typings>NumericalValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Invariant" declaredName="commutivity">
+        <resultExpressionParameter resultExpression="theta == angle(w, v)"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Invariant" declaredName="lengthInsensitive">
+        <resultExpressionParameter resultExpression="theta == angle(w / norm(w), v / norm(v))"/>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Comment" body="/* Specialized functions with concrete definitions for CartesianVectorValues. */"/>
+    <elements xsi:type="kerMLOC:Function" declaredName="CartesianVectorOf">
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Construct a CartesianVectorValue whose elements are a non-empty list of Real components.&#xA;&#x9;&#x9; * The dimension of the NumericalVectorValue is equal to the number of components.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="components" MultiLow="*" isOrdered="true" isNonunique="true">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>CartesianVectorValue</typings>
+        <elements xsi:type="kerMLOC:Feature" valuePart="size(components)">
+          <redefinitions>dimension</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" valuePart="components">
+          <redefinitions>elements</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="CartesianThreeVectorOf">
+      <subsetting>CartesianVectorOf</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="components" MultiLow="3" isOrdered="true" isNonunique="true">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>CartesianThreeVectorValue</typings>
+        <elements xsi:type="kerMLOC:Feature">
+          <redefinitions>CartesianVectorOf::result::dimension</redefinitions>
+          <redefinitions>CartesianThreeVectorValue::dimension</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Feature" declaredName="cartesianZeroVector" MultiLow="3" valuePart="( CartesianVectorOf(0.0), CartesianVectorOf((0.0, 0.0)), CartesianThreeVectorOf((0.0, 0.0, 0.0)) )">
+      <typings>CartesianVectorValue</typings>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * Cartesian zero vectors of 1, 2 and 3 dimensions.&#xA;&#x9;&#x9; */"/>
+    </elements>
+    <elements xsi:type="kerMLOC:Feature" declaredName="cartesian3DZeroVector" MultiLow="1" valuePart="cartesianZeroVector#(3)">
+      <typings>CartesianThreeVectorValue</typings>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="isCartesianZeroVector">
+      <subsetting>isZeroVector</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * A CartesianVectorValue is a zero vector if all its elements are zero.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="v" MultiLow="1">
+        <typings>CartesianVectorValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="v.elements->forAll{in x; x == 0.0}">
+        <typings>Boolean</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="'cartesian+'">
+      <subsetting>'+'</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="v" MultiLow="1">
+        <typings>CartesianVectorValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="w" MultiLow="0" MultiHigh="1">
+        <typings>CartesianVectorValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Invariant" declaredName="precondition">
+        <resultExpressionParameter resultExpression="w != null implies v.dimension == w.dimension"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" declaredName="u" MultiLow="1" valuePart="if w == null? v else CartesianVectorOf( (1..w.dimension)->collect{in i : Positive; v#(i) + w#(i)} )">
+        <typings>CartesianVectorValue</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="'cartesian-'">
+      <subsetting>'-'</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="v" MultiLow="1">
+        <typings>CartesianVectorValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="w" MultiLow="0" MultiHigh="1">
+        <typings>CartesianVectorValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Invariant" declaredName="precondition">
+        <resultExpressionParameter resultExpression="w != null implies v.dimension == w.dimension"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" declaredName="u" MultiLow="1" valuePart="CartesianVectorOf( if w == null? CartesianVectorOf(v.elements->collect{in x : Real; -x}) else CartesianVectorOf( (1..v.dimension)->collect{in i : Positive; v#(i) - w#(i)} ) )">
+        <typings>CartesianVectorValue</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="cartesianScalarVectorMult">
+      <subsetting>scalarVectorMult</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="v" MultiLow="1">
+        <typings>CartesianVectorValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" declaredName="w" MultiLow="1" valuePart="CartesianVectorOf( v.elements->collect{in y : Real; x * y} )">
+        <typings>CartesianVectorValue</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="cartesianVectorScalarMult">
+      <subsetting>vectorScalarMult</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="v" MultiLow="1">
+        <typings>CartesianVectorValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" declaredName="w" MultiLow="1" valuePart="cartesianScalarVectorMult(x, v)">
+        <typings>CartesianVectorValue</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="cartesianInner">
+      <subsetting>inner</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="v" MultiLow="1">
+        <typings>CartesianVectorValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="w" MultiLow="1">
+        <typings>CartesianVectorValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Invariant" declaredName="precondition">
+        <resultExpressionParameter resultExpression="v.dimension == w.dimension"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" declaredName="x" MultiLow="1" valuePart="(1..v.dimension)->collect{in i : Positive; v#(i) * w#(i)}->reduce RealFunctions::'+'">
+        <typings>Real</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="cartesianNorm">
+      <subsetting>norm</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="v" MultiLow="1">
+        <typings>CartesianVectorValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" declaredName="l" MultiLow="1" valuePart="sqrt(cartesianInner(v, v))">
+        <typings>NumericalValue</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="cartesianAngle">
+      <subsetting>angle</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="v" MultiLow="1">
+        <typings>CartesianVectorValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="w" MultiLow="1">
+        <typings>CartesianVectorValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Invariant" declaredName="precondition">
+        <resultExpressionParameter resultExpression="v.dimension == w.dimension"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" declaredName="theta" MultiLow="1" valuePart="arccos(cartesianInner(v, w) / (norm(v) * norm(w)))">
+        <typings>Real</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="sum">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="coll" MultiLow="*">
+        <typings>CartesianThreeVectorValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="sum0(coll, cartesian3DZeroVector)">
+        <typings>CartesianThreeVectorValue</typings>
+      </elements>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

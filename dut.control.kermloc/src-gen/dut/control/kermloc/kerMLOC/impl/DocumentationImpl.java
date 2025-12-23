@@ -173,7 +173,7 @@ public class DocumentationImpl extends AnnotatingElementImpl implements Document
   @Override
   protected EClass eStaticClass()
   {
-    return KerMLOCPackage.Literals.DOCUMENTATION;
+    return KerMLOCPackage.eINSTANCE.getDocumentation();
   }
 
   /**

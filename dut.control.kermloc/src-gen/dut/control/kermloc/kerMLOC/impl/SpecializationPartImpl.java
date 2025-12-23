@@ -35,7 +35,7 @@ public class SpecializationPartImpl extends SubsettingFeatureChainImpl implement
   @Override
   protected EClass eStaticClass()
   {
-    return KerMLOCPackage.Literals.SPECIALIZATION_PART;
+    return KerMLOCPackage.eINSTANCE.getSpecializationPart();
   }
 
 } //SpecializationPartImpl

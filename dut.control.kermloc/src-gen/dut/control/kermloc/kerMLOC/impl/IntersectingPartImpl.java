@@ -59,7 +59,7 @@ public class IntersectingPartImpl extends MinimalEObjectImpl.Container implement
   @Override
   protected EClass eStaticClass()
   {
-    return KerMLOCPackage.Literals.INTERSECTING_PART;
+    return KerMLOCPackage.eINSTANCE.getIntersectingPart();
   }
 
   /**

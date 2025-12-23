@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:Package" declaredName="Atoms">
+    <elements xsi:type="kerMLOC:Documentation" body="/* This package defines a keyword (atom) for classifiers with&#xD;&#xA;&#x9; * exactly one instance and are disjoint from any others&#xD;&#xA;&#x9; * marked with this keyword.&#xD;&#xA;&#x9; */"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Metaobjects::Metaobject"/>
+    <elements xsi:type="kerMLOC:Classifier" declaredName="Atom"/>
+    <elements xsi:type="kerMLOC:Metaclass" declaredShortName="atom" declaredName="AtomMetadata">
+      <subsetting>Metaobject</subsetting>
+      <elements xsi:type="kerMLOC:Feature" declaredName="baseType" valuePart="Atom meta KerML::Classifier"/>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

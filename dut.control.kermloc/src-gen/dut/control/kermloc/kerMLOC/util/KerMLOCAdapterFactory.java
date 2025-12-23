@@ -8,21 +8,47 @@ import dut.control.kermloc.kerMLOC.AnnotatingBodyElement;
 import dut.control.kermloc.kerMLOC.AnnotatingElement;
 import dut.control.kermloc.kerMLOC.Association;
 import dut.control.kermloc.kerMLOC.AssociationStructure;
+import dut.control.kermloc.kerMLOC.BasicFeaturePrefix;
 import dut.control.kermloc.kerMLOC.Behavior;
+import dut.control.kermloc.kerMLOC.BinaryConnectorDeclaration;
+import dut.control.kermloc.kerMLOC.BindingConnector;
+import dut.control.kermloc.kerMLOC.BooleanExpression;
+import dut.control.kermloc.kerMLOC.ChainingPart;
 import dut.control.kermloc.kerMLOC.Classifier;
 import dut.control.kermloc.kerMLOC.ClassifierConjugationPart;
 import dut.control.kermloc.kerMLOC.ClassifierDeclaration;
 import dut.control.kermloc.kerMLOC.CodeAnnotation;
 import dut.control.kermloc.kerMLOC.Comment;
+import dut.control.kermloc.kerMLOC.Conjugation;
 import dut.control.kermloc.kerMLOC.ConjugationPart;
+import dut.control.kermloc.kerMLOC.Connector;
+import dut.control.kermloc.kerMLOC.ConnectorDeclaration;
+import dut.control.kermloc.kerMLOC.ConnectorEnd;
 import dut.control.kermloc.kerMLOC.CrossFeatureChain;
+import dut.control.kermloc.kerMLOC.CrossingFeature;
 import dut.control.kermloc.kerMLOC.DataType;
 import dut.control.kermloc.kerMLOC.Dependency;
 import dut.control.kermloc.kerMLOC.DifferencingPart;
+import dut.control.kermloc.kerMLOC.Disjoining;
 import dut.control.kermloc.kerMLOC.DisjoiningPart;
 import dut.control.kermloc.kerMLOC.Documentation;
 import dut.control.kermloc.kerMLOC.ElementFilterElement;
+import dut.control.kermloc.kerMLOC.EndFeaturePrefix;
+import dut.control.kermloc.kerMLOC.ExpressionClass;
+import dut.control.kermloc.kerMLOC.ExtendedPrefix;
+import dut.control.kermloc.kerMLOC.Feature;
+import dut.control.kermloc.kerMLOC.FeatureConjugationPart;
+import dut.control.kermloc.kerMLOC.FeatureDeclaration;
+import dut.control.kermloc.kerMLOC.FeatureElement;
+import dut.control.kermloc.kerMLOC.FeatureInverting;
+import dut.control.kermloc.kerMLOC.FeaturePrefix;
+import dut.control.kermloc.kerMLOC.FeatureRelationshipPart;
 import dut.control.kermloc.kerMLOC.FeatureSpecialization;
+import dut.control.kermloc.kerMLOC.FeatureSpecializationPart;
+import dut.control.kermloc.kerMLOC.FeatureTyping;
+import dut.control.kermloc.kerMLOC.FeatureValue;
+import dut.control.kermloc.kerMLOC.Flow;
+import dut.control.kermloc.kerMLOC.FlowDeclaration;
 import dut.control.kermloc.kerMLOC.Function;
 import dut.control.kermloc.kerMLOC.FunctionBodyElement;
 import dut.control.kermloc.kerMLOC.GeneralBodyElements;
@@ -30,34 +56,56 @@ import dut.control.kermloc.kerMLOC.Identification;
 import dut.control.kermloc.kerMLOC.ImportElement;
 import dut.control.kermloc.kerMLOC.Interaction;
 import dut.control.kermloc.kerMLOC.IntersectingPart;
+import dut.control.kermloc.kerMLOC.Invariant;
+import dut.control.kermloc.kerMLOC.InvertingPart;
 import dut.control.kermloc.kerMLOC.KerMLOCPackage;
 import dut.control.kermloc.kerMLOC.LibraryPackage;
 import dut.control.kermloc.kerMLOC.MemberPrefix;
 import dut.control.kermloc.kerMLOC.Metaclass;
+import dut.control.kermloc.kerMLOC.MetadataBodyElement;
+import dut.control.kermloc.kerMLOC.MetadataBodyFeature;
+import dut.control.kermloc.kerMLOC.MetadataFeature;
 import dut.control.kermloc.kerMLOC.Multiplicity;
-import dut.control.kermloc.kerMLOC.MultiplicityBounds;
+import dut.control.kermloc.kerMLOC.MultiplicityModifiers;
+import dut.control.kermloc.kerMLOC.MultiplicityPart;
+import dut.control.kermloc.kerMLOC.MultiplicityRange;
 import dut.control.kermloc.kerMLOC.Namespace;
 import dut.control.kermloc.kerMLOC.NamespaceBodyElement;
+import dut.control.kermloc.kerMLOC.NaryConnectorDeclaration;
 import dut.control.kermloc.kerMLOC.NonFeatureElement;
 import dut.control.kermloc.kerMLOC.PackageBodyElement;
+import dut.control.kermloc.kerMLOC.PayloadFeature;
+import dut.control.kermloc.kerMLOC.PayloadFeatureSpecializationPart;
+import dut.control.kermloc.kerMLOC.PayloadParameter;
 import dut.control.kermloc.kerMLOC.Predicate;
 import dut.control.kermloc.kerMLOC.PrefixMetadata;
+import dut.control.kermloc.kerMLOC.Redefinition;
 import dut.control.kermloc.kerMLOC.RedefinitionFeatureChain;
 import dut.control.kermloc.kerMLOC.ReferenceFeatureChain;
+import dut.control.kermloc.kerMLOC.RelationshipBodyElement;
 import dut.control.kermloc.kerMLOC.ResultExpression;
 import dut.control.kermloc.kerMLOC.RootNamespace;
+import dut.control.kermloc.kerMLOC.Specialization;
 import dut.control.kermloc.kerMLOC.SpecializationPart;
+import dut.control.kermloc.kerMLOC.Step;
 import dut.control.kermloc.kerMLOC.Structure;
+import dut.control.kermloc.kerMLOC.Subclassification;
 import dut.control.kermloc.kerMLOC.Subsets;
+import dut.control.kermloc.kerMLOC.Subsetting;
 import dut.control.kermloc.kerMLOC.SubsettingFeatureChain;
+import dut.control.kermloc.kerMLOC.Succession;
+import dut.control.kermloc.kerMLOC.SuccessionFlow;
 import dut.control.kermloc.kerMLOC.SuperclassingPart;
 import dut.control.kermloc.kerMLOC.TextualRepresentation;
 import dut.control.kermloc.kerMLOC.Type;
 import dut.control.kermloc.kerMLOC.TypeBodyElement;
+import dut.control.kermloc.kerMLOC.TypeFeaturing;
+import dut.control.kermloc.kerMLOC.TypeFeaturingPart;
 import dut.control.kermloc.kerMLOC.TypePrefix;
 import dut.control.kermloc.kerMLOC.TypeRelationshipPart;
 import dut.control.kermloc.kerMLOC.TypingFeatureTyping;
 import dut.control.kermloc.kerMLOC.UnioningPart;
+import dut.control.kermloc.kerMLOC.ValuePart;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -165,6 +213,16 @@ public class KerMLOCAdapterFactory extends AdapterFactoryImpl
         return createFunctionBodyElementAdapter();
       }
       @Override
+      public Adapter caseRelationshipBodyElement(RelationshipBodyElement object)
+      {
+        return createRelationshipBodyElementAdapter();
+      }
+      @Override
+      public Adapter caseMetadataBodyElement(MetadataBodyElement object)
+      {
+        return createMetadataBodyElementAdapter();
+      }
+      @Override
       public Adapter caseAnnotatingElement(AnnotatingElement object)
       {
         return createAnnotatingElementAdapter();
@@ -173,6 +231,11 @@ public class KerMLOCAdapterFactory extends AdapterFactoryImpl
       public Adapter caseNonFeatureElement(NonFeatureElement object)
       {
         return createNonFeatureElementAdapter();
+      }
+      @Override
+      public Adapter caseFeatureElement(FeatureElement object)
+      {
+        return createFeatureElementAdapter();
       }
       @Override
       public Adapter casePackage(dut.control.kermloc.kerMLOC.Package object)
@@ -203,6 +266,16 @@ public class KerMLOCAdapterFactory extends AdapterFactoryImpl
       public Adapter caseTextualRepresentation(TextualRepresentation object)
       {
         return createTextualRepresentationAdapter();
+      }
+      @Override
+      public Adapter caseMetadataFeature(MetadataFeature object)
+      {
+        return createMetadataFeatureAdapter();
+      }
+      @Override
+      public Adapter caseMetadataBodyFeature(MetadataBodyFeature object)
+      {
+        return createMetadataBodyFeatureAdapter();
       }
       @Override
       public Adapter caseImportElement(ImportElement object)
@@ -295,9 +368,119 @@ public class KerMLOCAdapterFactory extends AdapterFactoryImpl
         return createPredicateAdapter();
       }
       @Override
+      public Adapter caseSpecialization(Specialization object)
+      {
+        return createSpecializationAdapter();
+      }
+      @Override
+      public Adapter caseConjugation(Conjugation object)
+      {
+        return createConjugationAdapter();
+      }
+      @Override
+      public Adapter caseFeatureTyping(FeatureTyping object)
+      {
+        return createFeatureTypingAdapter();
+      }
+      @Override
+      public Adapter caseSubclassification(Subclassification object)
+      {
+        return createSubclassificationAdapter();
+      }
+      @Override
+      public Adapter caseDisjoining(Disjoining object)
+      {
+        return createDisjoiningAdapter();
+      }
+      @Override
+      public Adapter caseFeatureInverting(FeatureInverting object)
+      {
+        return createFeatureInvertingAdapter();
+      }
+      @Override
+      public Adapter caseSubsetting(Subsetting object)
+      {
+        return createSubsettingAdapter();
+      }
+      @Override
+      public Adapter caseRedefinition(Redefinition object)
+      {
+        return createRedefinitionAdapter();
+      }
+      @Override
+      public Adapter caseTypeFeaturing(TypeFeaturing object)
+      {
+        return createTypeFeaturingAdapter();
+      }
+      @Override
+      public Adapter caseFeature(Feature object)
+      {
+        return createFeatureAdapter();
+      }
+      @Override
+      public Adapter caseStep(Step object)
+      {
+        return createStepAdapter();
+      }
+      @Override
+      public Adapter caseExpressionClass(ExpressionClass object)
+      {
+        return createExpressionClassAdapter();
+      }
+      @Override
+      public Adapter caseBooleanExpression(BooleanExpression object)
+      {
+        return createBooleanExpressionAdapter();
+      }
+      @Override
+      public Adapter caseInvariant(Invariant object)
+      {
+        return createInvariantAdapter();
+      }
+      @Override
+      public Adapter caseConnector(Connector object)
+      {
+        return createConnectorAdapter();
+      }
+      @Override
+      public Adapter caseBindingConnector(BindingConnector object)
+      {
+        return createBindingConnectorAdapter();
+      }
+      @Override
+      public Adapter caseSuccession(Succession object)
+      {
+        return createSuccessionAdapter();
+      }
+      @Override
+      public Adapter caseFlow(Flow object)
+      {
+        return createFlowAdapter();
+      }
+      @Override
+      public Adapter caseSuccessionFlow(SuccessionFlow object)
+      {
+        return createSuccessionFlowAdapter();
+      }
+      @Override
       public Adapter caseResultExpression(ResultExpression object)
       {
         return createResultExpressionAdapter();
+      }
+      @Override
+      public Adapter caseCrossingFeature(CrossingFeature object)
+      {
+        return createCrossingFeatureAdapter();
+      }
+      @Override
+      public Adapter caseConnectorEnd(ConnectorEnd object)
+      {
+        return createConnectorEndAdapter();
+      }
+      @Override
+      public Adapter casePayloadParameter(PayloadParameter object)
+      {
+        return createPayloadParameterAdapter();
       }
       @Override
       public Adapter caseIdentification(Identification object)
@@ -315,9 +498,9 @@ public class KerMLOCAdapterFactory extends AdapterFactoryImpl
         return createPrefixMetadataAdapter();
       }
       @Override
-      public Adapter caseMultiplicityBounds(MultiplicityBounds object)
+      public Adapter caseMultiplicityRange(MultiplicityRange object)
       {
-        return createMultiplicityBoundsAdapter();
+        return createMultiplicityRangeAdapter();
       }
       @Override
       public Adapter caseFeatureSpecialization(FeatureSpecialization object)
@@ -408,6 +591,111 @@ public class KerMLOCAdapterFactory extends AdapterFactoryImpl
       public Adapter caseClassifierDeclaration(ClassifierDeclaration object)
       {
         return createClassifierDeclarationAdapter();
+      }
+      @Override
+      public Adapter caseFeatureDeclaration(FeatureDeclaration object)
+      {
+        return createFeatureDeclarationAdapter();
+      }
+      @Override
+      public Adapter caseFeatureRelationshipPart(FeatureRelationshipPart object)
+      {
+        return createFeatureRelationshipPartAdapter();
+      }
+      @Override
+      public Adapter caseChainingPart(ChainingPart object)
+      {
+        return createChainingPartAdapter();
+      }
+      @Override
+      public Adapter caseInvertingPart(InvertingPart object)
+      {
+        return createInvertingPartAdapter();
+      }
+      @Override
+      public Adapter caseTypeFeaturingPart(TypeFeaturingPart object)
+      {
+        return createTypeFeaturingPartAdapter();
+      }
+      @Override
+      public Adapter caseFeatureSpecializationPart(FeatureSpecializationPart object)
+      {
+        return createFeatureSpecializationPartAdapter();
+      }
+      @Override
+      public Adapter caseMultiplicityPart(MultiplicityPart object)
+      {
+        return createMultiplicityPartAdapter();
+      }
+      @Override
+      public Adapter caseMultiplicityModifiers(MultiplicityModifiers object)
+      {
+        return createMultiplicityModifiersAdapter();
+      }
+      @Override
+      public Adapter caseFeatureConjugationPart(FeatureConjugationPart object)
+      {
+        return createFeatureConjugationPartAdapter();
+      }
+      @Override
+      public Adapter caseFeaturePrefix(FeaturePrefix object)
+      {
+        return createFeaturePrefixAdapter();
+      }
+      @Override
+      public Adapter caseEndFeaturePrefix(EndFeaturePrefix object)
+      {
+        return createEndFeaturePrefixAdapter();
+      }
+      @Override
+      public Adapter caseBasicFeaturePrefix(BasicFeaturePrefix object)
+      {
+        return createBasicFeaturePrefixAdapter();
+      }
+      @Override
+      public Adapter caseValuePart(ValuePart object)
+      {
+        return createValuePartAdapter();
+      }
+      @Override
+      public Adapter caseFeatureValue(FeatureValue object)
+      {
+        return createFeatureValueAdapter();
+      }
+      @Override
+      public Adapter caseFlowDeclaration(FlowDeclaration object)
+      {
+        return createFlowDeclarationAdapter();
+      }
+      @Override
+      public Adapter casePayloadFeature(PayloadFeature object)
+      {
+        return createPayloadFeatureAdapter();
+      }
+      @Override
+      public Adapter casePayloadFeatureSpecializationPart(PayloadFeatureSpecializationPart object)
+      {
+        return createPayloadFeatureSpecializationPartAdapter();
+      }
+      @Override
+      public Adapter caseConnectorDeclaration(ConnectorDeclaration object)
+      {
+        return createConnectorDeclarationAdapter();
+      }
+      @Override
+      public Adapter caseBinaryConnectorDeclaration(BinaryConnectorDeclaration object)
+      {
+        return createBinaryConnectorDeclarationAdapter();
+      }
+      @Override
+      public Adapter caseNaryConnectorDeclaration(NaryConnectorDeclaration object)
+      {
+        return createNaryConnectorDeclarationAdapter();
+      }
+      @Override
+      public Adapter caseExtendedPrefix(ExtendedPrefix object)
+      {
+        return createExtendedPrefixAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -537,6 +825,36 @@ public class KerMLOCAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.RelationshipBodyElement <em>Relationship Body Element</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.RelationshipBodyElement
+   * @generated
+   */
+  public Adapter createRelationshipBodyElementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.MetadataBodyElement <em>Metadata Body Element</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.MetadataBodyElement
+   * @generated
+   */
+  public Adapter createMetadataBodyElementAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.AnnotatingElement <em>Annotating Element</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -562,6 +880,21 @@ public class KerMLOCAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createNonFeatureElementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.FeatureElement <em>Feature Element</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.FeatureElement
+   * @generated
+   */
+  public Adapter createFeatureElementAdapter()
   {
     return null;
   }
@@ -652,6 +985,36 @@ public class KerMLOCAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createTextualRepresentationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.MetadataFeature <em>Metadata Feature</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.MetadataFeature
+   * @generated
+   */
+  public Adapter createMetadataFeatureAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.MetadataBodyFeature <em>Metadata Body Feature</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.MetadataBodyFeature
+   * @generated
+   */
+  public Adapter createMetadataBodyFeatureAdapter()
   {
     return null;
   }
@@ -927,6 +1290,291 @@ public class KerMLOCAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.Specialization <em>Specialization</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.Specialization
+   * @generated
+   */
+  public Adapter createSpecializationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.Conjugation <em>Conjugation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.Conjugation
+   * @generated
+   */
+  public Adapter createConjugationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.FeatureTyping <em>Feature Typing</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.FeatureTyping
+   * @generated
+   */
+  public Adapter createFeatureTypingAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.Subclassification <em>Subclassification</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.Subclassification
+   * @generated
+   */
+  public Adapter createSubclassificationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.Disjoining <em>Disjoining</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.Disjoining
+   * @generated
+   */
+  public Adapter createDisjoiningAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.FeatureInverting <em>Feature Inverting</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.FeatureInverting
+   * @generated
+   */
+  public Adapter createFeatureInvertingAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.Subsetting <em>Subsetting</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.Subsetting
+   * @generated
+   */
+  public Adapter createSubsettingAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.Redefinition <em>Redefinition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.Redefinition
+   * @generated
+   */
+  public Adapter createRedefinitionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.TypeFeaturing <em>Type Featuring</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.TypeFeaturing
+   * @generated
+   */
+  public Adapter createTypeFeaturingAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.Feature <em>Feature</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.Feature
+   * @generated
+   */
+  public Adapter createFeatureAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.Step <em>Step</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.Step
+   * @generated
+   */
+  public Adapter createStepAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.ExpressionClass <em>Expression Class</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.ExpressionClass
+   * @generated
+   */
+  public Adapter createExpressionClassAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.BooleanExpression <em>Boolean Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.BooleanExpression
+   * @generated
+   */
+  public Adapter createBooleanExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.Invariant <em>Invariant</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.Invariant
+   * @generated
+   */
+  public Adapter createInvariantAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.Connector <em>Connector</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.Connector
+   * @generated
+   */
+  public Adapter createConnectorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.BindingConnector <em>Binding Connector</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.BindingConnector
+   * @generated
+   */
+  public Adapter createBindingConnectorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.Succession <em>Succession</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.Succession
+   * @generated
+   */
+  public Adapter createSuccessionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.Flow <em>Flow</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.Flow
+   * @generated
+   */
+  public Adapter createFlowAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.SuccessionFlow <em>Succession Flow</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.SuccessionFlow
+   * @generated
+   */
+  public Adapter createSuccessionFlowAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.ResultExpression <em>Result Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -937,6 +1585,51 @@ public class KerMLOCAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createResultExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.CrossingFeature <em>Crossing Feature</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.CrossingFeature
+   * @generated
+   */
+  public Adapter createCrossingFeatureAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.ConnectorEnd <em>Connector End</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.ConnectorEnd
+   * @generated
+   */
+  public Adapter createConnectorEndAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.PayloadParameter <em>Payload Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.PayloadParameter
+   * @generated
+   */
+  public Adapter createPayloadParameterAdapter()
   {
     return null;
   }
@@ -987,16 +1680,16 @@ public class KerMLOCAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.MultiplicityBounds <em>Multiplicity Bounds</em>}'.
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.MultiplicityRange <em>Multiplicity Range</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see dut.control.kermloc.kerMLOC.MultiplicityBounds
+   * @see dut.control.kermloc.kerMLOC.MultiplicityRange
    * @generated
    */
-  public Adapter createMultiplicityBoundsAdapter()
+  public Adapter createMultiplicityRangeAdapter()
   {
     return null;
   }
@@ -1267,6 +1960,321 @@ public class KerMLOCAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createClassifierDeclarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.FeatureDeclaration <em>Feature Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.FeatureDeclaration
+   * @generated
+   */
+  public Adapter createFeatureDeclarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.FeatureRelationshipPart <em>Feature Relationship Part</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.FeatureRelationshipPart
+   * @generated
+   */
+  public Adapter createFeatureRelationshipPartAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.ChainingPart <em>Chaining Part</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.ChainingPart
+   * @generated
+   */
+  public Adapter createChainingPartAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.InvertingPart <em>Inverting Part</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.InvertingPart
+   * @generated
+   */
+  public Adapter createInvertingPartAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.TypeFeaturingPart <em>Type Featuring Part</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.TypeFeaturingPart
+   * @generated
+   */
+  public Adapter createTypeFeaturingPartAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.FeatureSpecializationPart <em>Feature Specialization Part</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.FeatureSpecializationPart
+   * @generated
+   */
+  public Adapter createFeatureSpecializationPartAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.MultiplicityPart <em>Multiplicity Part</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.MultiplicityPart
+   * @generated
+   */
+  public Adapter createMultiplicityPartAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.MultiplicityModifiers <em>Multiplicity Modifiers</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.MultiplicityModifiers
+   * @generated
+   */
+  public Adapter createMultiplicityModifiersAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.FeatureConjugationPart <em>Feature Conjugation Part</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.FeatureConjugationPart
+   * @generated
+   */
+  public Adapter createFeatureConjugationPartAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.FeaturePrefix <em>Feature Prefix</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.FeaturePrefix
+   * @generated
+   */
+  public Adapter createFeaturePrefixAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.EndFeaturePrefix <em>End Feature Prefix</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.EndFeaturePrefix
+   * @generated
+   */
+  public Adapter createEndFeaturePrefixAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.BasicFeaturePrefix <em>Basic Feature Prefix</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.BasicFeaturePrefix
+   * @generated
+   */
+  public Adapter createBasicFeaturePrefixAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.ValuePart <em>Value Part</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.ValuePart
+   * @generated
+   */
+  public Adapter createValuePartAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.FeatureValue <em>Feature Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.FeatureValue
+   * @generated
+   */
+  public Adapter createFeatureValueAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.FlowDeclaration <em>Flow Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.FlowDeclaration
+   * @generated
+   */
+  public Adapter createFlowDeclarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.PayloadFeature <em>Payload Feature</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.PayloadFeature
+   * @generated
+   */
+  public Adapter createPayloadFeatureAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.PayloadFeatureSpecializationPart <em>Payload Feature Specialization Part</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.PayloadFeatureSpecializationPart
+   * @generated
+   */
+  public Adapter createPayloadFeatureSpecializationPartAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.ConnectorDeclaration <em>Connector Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.ConnectorDeclaration
+   * @generated
+   */
+  public Adapter createConnectorDeclarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.BinaryConnectorDeclaration <em>Binary Connector Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.BinaryConnectorDeclaration
+   * @generated
+   */
+  public Adapter createBinaryConnectorDeclarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.NaryConnectorDeclaration <em>Nary Connector Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.NaryConnectorDeclaration
+   * @generated
+   */
+  public Adapter createNaryConnectorDeclarationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dut.control.kermloc.kerMLOC.ExtendedPrefix <em>Extended Prefix</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dut.control.kermloc.kerMLOC.ExtendedPrefix
+   * @generated
+   */
+  public Adapter createExtendedPrefixAdapter()
   {
     return null;
   }

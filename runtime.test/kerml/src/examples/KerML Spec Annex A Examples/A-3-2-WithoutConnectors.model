@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:Package" declaredName="WithoutConnectorsModelToBeExecuted">
+    <elements xsi:type="kerMLOC:Documentation" body="/* &#xD;&#xA;&#x9; */"/>
+    <elements xsi:type="kerMLOC:Classifier" declaredName="Bicycle">
+      <elements xsi:type="kerMLOC:Feature" declaredName="rollsOn" MultiLow="2">
+        <typings>Wheel</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="holdsWheel" MultiLow="*">
+        <typings>BikeFork</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Classifier" declaredName="Wheel"/>
+    <elements xsi:type="kerMLOC:Classifier" declaredName="BikeFork"/>
+  </elements>
+  <elements xsi:type="kerMLOC:Package" declaredName="WithoutConnectorsExecution">
+    <elements xsi:type="kerMLOC:Documentation" body="/* &#xD;&#xA;&#x9; */"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Atoms" isNamespace="true"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="WithoutConnectorsModelToBeExecuted" isNamespace="true"/>
+    <elements xsi:type="kerMLOC:Classifier" declaredName="MyWheel1">
+      <prefixMetadataExtension>#atom</prefixMetadataExtension>
+      <subsetting>Wheel</subsetting>
+    </elements>
+    <elements xsi:type="kerMLOC:Classifier" declaredName="MyWheel2">
+      <prefixMetadataExtension>#atom</prefixMetadataExtension>
+      <subsetting>Wheel</subsetting>
+    </elements>
+    <elements xsi:type="kerMLOC:Classifier" declaredName="MyWheel">
+      <unioning>MyWheel1</unioning>
+      <unioning>MyWheel2</unioning>
+    </elements>
+    <elements xsi:type="kerMLOC:Classifier" declaredName="MyBike">
+      <prefixMetadataExtension>#atom</prefixMetadataExtension>
+      <subsetting>Bicycle</subsetting>
+      <elements xsi:type="kerMLOC:Feature">
+        <typings>MyWheel</typings>
+        <redefinitions>rollsOn</redefinitions>
+      </elements>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

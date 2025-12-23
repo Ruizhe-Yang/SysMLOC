@@ -35,7 +35,7 @@ public class SuperclassingPartImpl extends SubsettingFeatureChainImpl implements
   @Override
   protected EClass eStaticClass()
   {
-    return KerMLOCPackage.Literals.SUPERCLASSING_PART;
+    return KerMLOCPackage.eINSTANCE.getSuperclassingPart();
   }
 
 } //SuperclassingPartImpl

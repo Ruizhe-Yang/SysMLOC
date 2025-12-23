@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:LibraryPackage" declaredName="TrigFunctions" isStandard="true" isLibrary="true">
+    <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9; * This package defines basic trigonometric functions on real numbers.&#xA;&#x9; */"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="public" declaredName="ScalarValues::Real"/>
+    <elements xsi:type="kerMLOC:Feature" declaredName="pi">
+      <typings>Real</typings>
+    </elements>
+    <elements xsi:type="kerMLOC:Invariant" declaredName="piPrecision">
+      <resultExpressionParameter resultExpression="RealFunctions::round(pi * 1E20) == 314159265358979323846.0"/>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="deg">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="theta_rad" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="theta_rad * 180 / pi">
+        <typings>Real</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="rad">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="theta_deg">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="theta_deg * pi / 180">
+        <typings>Real</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:DataType" declaredName="UnitBoundedReal">
+      <subsetting>Real</subsetting>
+      <elements xsi:type="kerMLOC:Invariant" declaredName="unitBound">
+        <resultExpressionParameter resultExpression="-1.0 &lt;= that &amp; that &lt;= 1.0"/>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="sin">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="theta" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>UnitBoundedReal</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="cos">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="theta" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>UnitBoundedReal</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="tan">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="theta" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" valuePart="sin(theta) / cos(theta)">
+        <typings>Real</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="cot">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="theta">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" valuePart="cos(theta) / sin(theta)">
+        <typings>Real</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="arcsin">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>UnitBoundedReal</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="arccos">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>UnitBoundedReal</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="arctan">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

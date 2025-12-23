@@ -35,7 +35,7 @@ public class AnnotatingElementImpl extends GeneralBodyElementsImpl implements An
   @Override
   protected EClass eStaticClass()
   {
-    return KerMLOCPackage.Literals.ANNOTATING_ELEMENT;
+    return KerMLOCPackage.eINSTANCE.getAnnotatingElement();
   }
 
 } //AnnotatingElementImpl

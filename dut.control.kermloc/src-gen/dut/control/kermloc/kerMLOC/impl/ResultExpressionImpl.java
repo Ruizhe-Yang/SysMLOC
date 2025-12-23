@@ -65,7 +65,7 @@ public class ResultExpressionImpl extends MemberPrefixImpl implements ResultExpr
   @Override
   protected EClass eStaticClass()
   {
-    return KerMLOCPackage.Literals.RESULT_EXPRESSION;
+    return KerMLOCPackage.eINSTANCE.getResultExpression();
   }
 
   /**

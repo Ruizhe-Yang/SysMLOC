@@ -35,7 +35,7 @@ public class GeneralBodyElementsImpl extends PackageBodyElementImpl implements G
   @Override
   protected EClass eStaticClass()
   {
-    return KerMLOCPackage.Literals.GENERAL_BODY_ELEMENTS;
+    return KerMLOCPackage.eINSTANCE.getGeneralBodyElements();
   }
 
 } //GeneralBodyElementsImpl

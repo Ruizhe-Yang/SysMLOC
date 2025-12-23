@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Multiplicity extends NonFeatureElement, MemberPrefix, Identification, Subsets, SubsettingFeatureChain, MultiplicityBounds
+public interface Multiplicity extends NonFeatureElement, MemberPrefix, Identification, Subsets, SubsettingFeatureChain, MultiplicityRange
 {
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.

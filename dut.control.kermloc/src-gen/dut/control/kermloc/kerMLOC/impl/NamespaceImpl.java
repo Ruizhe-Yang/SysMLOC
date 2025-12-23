@@ -142,7 +142,7 @@ public class NamespaceImpl extends NonFeatureElementImpl implements Namespace
   @Override
   protected EClass eStaticClass()
   {
-    return KerMLOCPackage.Literals.NAMESPACE;
+    return KerMLOCPackage.eINSTANCE.getNamespace();
   }
 
   /**

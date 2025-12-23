@@ -6,7 +6,7 @@ import "http://www.eclipse.org/emf/2002/Ecore" as Ecore
 generate kerMLOC "http://www.control.dut/kermloc/KerMLOC"
 
 RootNamespace:
-	(elements+=GeneralBodyElements)*
+	(elements+=NamespaceBodyElement)*
 ;
 
 // TODO --------------------------------- Body Level ---------------------------------//
@@ -17,7 +17,7 @@ GeneralBodyElements:
     | AliasElement
     | CodeAnnotation
     | NonFeatureElement
-//    | FeatureElement
+    | FeatureElement
 ;
 
 AnnotatingBodyElement:
@@ -40,7 +40,22 @@ NamespaceBodyElement:
 
 FunctionBodyElement:
 	GeneralBodyElements
-//	| ReturnFeatureElement
+;
+
+RelationshipBodyElement:
+	AnnotatingElement
+    | CodeAnnotation
+    | NonFeatureElement
+    | FeatureElement
+;
+
+MetadataBodyElement:
+	AnnotatingElement
+    | ImportElement
+    | AliasElement
+    | CodeAnnotation
+    | NonFeatureElement
+	| MetadataBodyFeature
 ;
 
 // TODO --------------------------------- Abstract Level ---------------------------------//
@@ -49,7 +64,7 @@ AnnotatingElement:
 	Comment
 	| Documentation
 	| TextualRepresentation
-//	| MetadataFeature
+	| MetadataFeature
 ;
 
 NonFeatureElement:
@@ -70,29 +85,29 @@ NonFeatureElement:
 	| Behavior
 	| Function
 	| Predicate
-//	| Specialization
-//	| Conjugation
-//	| FeatureTyping
-//	| Subclassification
-//	| Disjoining
-//	| FeatureInverting
-//	| Subsetting
-//	| Redefinition
-//	| TypeFeaturing
+	| Specialization
+	| Conjugation
+	| FeatureTyping
+	| Subclassification
+	| Disjoining
+	| FeatureInverting
+	| Subsetting
+	| Redefinition
+	| TypeFeaturing
 ;
 
-//FeatureElement:
-//	Feature
-//	| Step
-//	| Expression
-//	| BooleanExpression
-//	| Invariant
-//	| Connector
-//	| BindingConnector
-//	| Succession
-//	| Flow
-//	| SuccessionFlow
-//;
+FeatureElement:
+	Feature
+	| Step
+	| ExpressionClass
+	| BooleanExpression
+	| Invariant
+	| Connector
+	| BindingConnector
+	| Succession
+	| Flow
+	| SuccessionFlow
+;
 
 // TODO --------------------------------- Instance Level ---------------------------------//
 
@@ -122,7 +137,7 @@ Dependency:
 	client+=QualifiedName ( ',' client+=QualifiedName )*
 	'to'
 	supplier+=QualifiedName ( ',' supplier+=QualifiedName )*
-	(';' | '{' ( elements+=AnnotatingElement )* '}')
+	(';' | '{' ( elements+=RelationshipBodyElement )* '}')
 ;
 
 Comment:
@@ -147,6 +162,23 @@ TextualRepresentation:
     ( 'rep' Identification? )?
     'language' language = STRING_VALUE 
     body = REGULAR_COMMENT
+;
+
+MetadataFeature:
+	MemberPrefix
+	PrefixMetadata*
+	( 'metadata' | '@' )
+	( Identification? (':' | 'defined' 'by'))?
+	metadataTyping=QualifiedName
+	( 'about' annotatedElement+=QualifiedName ( ',' annotatedElement+=QualifiedName)* )?
+	( ';' | '{' (elements+=MetadataBodyElement)* '}' )
+;
+
+MetadataBodyFeature:
+	MemberPrefix
+	'feature'? ( ':>>' | 'redefines' )? redefinedFeature += FeatureChainName 
+	FeatureSpecializationPart? ValuePart?
+	( ';' | '{' (elements+=MetadataBodyElement)* '}' )
 ;
 
 ImportElement:
@@ -181,13 +213,13 @@ Multiplicity:
 	MemberPrefix
 	'multiplicity' 
 	Identification?
-	(Subsets | MultiplicityBounds)
+	(Subsets | MultiplicityRange)
 	( ';' | '{' (elements+=TypeBodyElement)* '}')
 ;
 
 Namespace:
 	PrefixMetadata*
-	isNamespace?='namespace' 
+	isNamespace?='namespace'
 	Identification?
 	( ';' | '{' (elements+=NamespaceBodyElement)* '}')
 ;
@@ -198,7 +230,7 @@ Type:
 	'type'
 	( isSufficient ?= 'all' )?
 	Identification?
-	MultiplicityBounds?
+	MultiplicityRange?
 	( SpecializationPart | ConjugationPart )
 	TypeRelationshipPart*
 	( ';' | '{' (elements+=TypeBodyElement)* '}')
@@ -292,9 +324,226 @@ Predicate:
 	( ';' | '{' (elements+=FunctionBodyElement)* (resultExpressionParameter+=ResultExpression)? '}')	
 ;
 
+Specialization:
+	MemberPrefix
+	( isSpecialization?='specialization' Identification? )?
+	'subtype' 
+	specific=FeatureChainName
+	( ':>' | 'specializes')
+	general=FeatureChainName
+	( ';' | '{' (elements+=RelationshipBodyElement)* '}')
+;
+
+Conjugation:
+	MemberPrefix
+	( isConjugation?='conjugation' Identification? )?
+	'conjugate'
+	conjugatedType=FeatureChainName
+	( '~' | 'conjugates')
+	originalType=FeatureChainName
+	( ';' | '{' (elements+=RelationshipBodyElement)* '}')
+;
+
+FeatureTyping:
+	MemberPrefix
+	( isSpecialization?='specialization' Identification? )?
+	'typing' 
+	typedFeature=QualifiedName
+	(':' | 'typed' 'by')
+	typeName=FeatureChainName
+	( ';' | '{' (elements+=RelationshipBodyElement)* '}')
+;
+
+Subclassification:
+	MemberPrefix
+	( isSpecialization?='specialization' Identification? )?
+	'subclassifier'
+	subclassifier=QualifiedName
+	( ':>' | 'specializes')
+	superclassifier=QualifiedName
+	( ';' | '{' (elements+=RelationshipBodyElement)* '}')
+;
+
+Disjoining:
+	MemberPrefix
+	( isDisjoining?='disjoining' Identification? )?
+	'disjoint'
+	typeDisjoined=FeatureChainName
+	'from'
+	disjoiningType=FeatureChainName
+	( ';' | '{' (elements+=RelationshipBodyElement)* '}')
+;
+
+FeatureInverting:
+	MemberPrefix
+	( isFeatureInverting?='inverting' Identification? )?
+	'inverse' 
+	featureInverted=FeatureChainName
+	'of'
+	invertingFeature=FeatureChainName
+	( ';' | '{' (elements+=RelationshipBodyElement)* '}')
+;
+
+Subsetting:
+	MemberPrefix
+	( isSpecialization?='specialization' Identification? )?
+	'subset'
+	subsettingFeature=FeatureChainName
+	( ':>' | 'subsets' )
+	subsettedFeature=FeatureChainName
+	( ';' | '{' (elements+=RelationshipBodyElement)* '}')
+;
+
+Redefinition:
+	MemberPrefix
+	( isSpecialization?='specialization' Identification? )?
+	'redefinition'
+	redefiningFeature=FeatureChainName
+	( ':>>' | 'redefines' )
+	redefinedFeature=FeatureChainName
+	( ';' | '{' (elements+=RelationshipBodyElement)* '}')
+;
+
+TypeFeaturing:
+	MemberPrefix
+	'featuring' 
+	( Identification? isOf?='of')?
+	featureOfType=QualifiedName
+	'by'
+	featuringType=QualifiedName
+	( ';' | '{' (elements+=RelationshipBodyElement)* '}')
+;
+
+Feature:
+	MemberPrefix
+	ExtendedPrefix
+	(FeaturePrefix
+	 ('feature' | PrefixMetadata)
+	 FeatureDeclaration?
+	|( EndFeaturePrefix | BasicFeaturePrefix )
+	 FeatureDeclaration
+	)
+	ValuePart?
+	( ';' | '{' (elements+=TypeBodyElement)* '}')
+;
+
+Step:
+	MemberPrefix
+	ExtendedPrefix
+	FeaturePrefix 
+	'step' 
+	FeatureDeclaration? 
+	ValuePart?
+	( ';' | '{' (elements+=TypeBodyElement)* '}')
+;
+
+ExpressionClass:
+	MemberPrefix
+	ExtendedPrefix
+	FeaturePrefix
+	'expr'
+	FeatureDeclaration? 
+	ValuePart?
+	( ';' | '{' (elements+=FunctionBodyElement)* (resultExpressionParameter+=ResultExpression)? '}')
+;
+
+BooleanExpression:
+	MemberPrefix
+	ExtendedPrefix
+	FeaturePrefix
+	'bool'
+	FeatureDeclaration? 
+	ValuePart?
+	( ';' | '{' (elements+=FunctionBodyElement)* (resultExpressionParameter+=ResultExpression)? '}')
+;
+
+Invariant:
+	MemberPrefix
+	ExtendedPrefix
+	FeaturePrefix
+	'inv'
+	( 'true' | isNegated ?= 'false' )?
+	FeatureDeclaration? 
+	ValuePart?
+	( ';' | '{' (elements+=FunctionBodyElement)* (resultExpressionParameter+=ResultExpression)? '}')
+;
+
+Connector:
+	MemberPrefix
+	ExtendedPrefix
+	FeaturePrefix
+	'connector'
+	( FeatureDeclaration? ValuePart?
+	| ConnectorDeclaration
+	) 
+	( ';' | '{' (elements+=TypeBodyElement)* '}')
+;
+
+BindingConnector:
+	MemberPrefix
+	ExtendedPrefix
+	FeaturePrefix
+	'binding'
+	(FeatureDeclaration 
+	 ( isOf?='of' connectorPart += ConnectorEnd 
+	 '=' connectorPart += ConnectorEnd )?
+	|( isSufficient ?= 'all' )?
+	( (isOf?='of')? connectorPart += ConnectorEnd 
+	 '=' connectorPart += ConnectorEnd )?
+	)
+	( ';' | '{' (elements+=TypeBodyElement)* '}')
+;
+
+Succession:
+	MemberPrefix
+	ExtendedPrefix
+	FeaturePrefix
+	'succession'
+	( FeatureDeclaration 
+	 ( isFirst?='first' connectorPart += ConnectorEnd 
+	 'then' connectorPart += ConnectorEnd )?
+	|( isSufficient ?= 'all' )?
+	( (isFirst?='first')? connectorPart += ConnectorEnd 
+	 'then' connectorPart += ConnectorEnd )?
+	)
+	( ';' | '{' (elements+=TypeBodyElement)* '}')
+;
+
+Flow:
+	MemberPrefix
+	ExtendedPrefix
+	FeaturePrefix
+	'flow'
+	FlowDeclaration
+	( ';' | '{' (elements+=TypeBodyElement)* '}')
+;
+
+SuccessionFlow:
+	MemberPrefix
+	ExtendedPrefix
+	FeaturePrefix
+	'succession' 'flow'
+	FlowDeclaration
+	( ';' | '{' (elements+=TypeBodyElement)* '}')
+;
+
 // TODO --------------------------------- Secondary Instance Level ---------------------------------//
 ResultExpression:
 	MemberPrefix resultExpression=Expression
+;
+
+CrossingFeature:
+	BasicFeaturePrefix FeatureDeclaration
+;
+
+ConnectorEnd:
+	MultiplicityRange?
+	( delcaredName = Name ('::>' | 'references') )?
+	refElement = FeatureChainName
+;
+
+PayloadParameter:
+	PayloadFeature
 ;
 
 // TODO --------------------------------- Fragment Level ---------------------------------//
@@ -314,13 +563,13 @@ fragment PrefixMetadata:
 	prefixMetadataExtension += PREFIXNAME_TEXT
 ;
 
-fragment MultiplicityBounds:
+fragment MultiplicityRange:
 	//	'[' Multiplicity += MultiplicityExpression ']' | '[' Multiplicity += MultiplicityExpression '..' Multiplicity += MultiplicityExpression ']'
 	'[' MultiLow = MultiplicityExpression ( '..' MultiHigh = MultiplicityExpression )? ']'
 ;
 
 fragment FeatureSpecialization:
-	(':'|'defined' 'by') TypingFeatureTyping
+	(':'|'typed' 'by') TypingFeatureTyping
 	| (':>'|'specializes'|'subsets') SubsettingFeatureChain
 	| ('::>'|'references')  ReferenceFeatureChain
 	| ('=>'|'crosses') CrossFeatureChain
@@ -403,17 +652,151 @@ fragment DifferencingPart :
 fragment ClassifierDeclaration:
 	(isSufficient ?= 'all' )?
 	Identification?
-	MultiplicityBounds?
+	MultiplicityRange?
 	( SuperclassingPart | ClassifierConjugationPart )?
 	TypeRelationshipPart*
 ;
 
+fragment FeatureDeclaration:
+	( isSufficient ?= 'all' )? 
+	( Identification ( FeatureSpecializationPart | FeatureConjugationPart )?
+	| FeatureSpecializationPart
+	| FeatureConjugationPart
+	)
+	FeatureRelationshipPart*
+;
 
+fragment FeatureRelationshipPart:
+	TypeRelationshipPart | ChainingPart | InvertingPart | TypeFeaturingPart
+;
+
+fragment ChainingPart:
+	'chains' 
+	chainingFeature+=FeatureChainName
+;
+
+fragment InvertingPart:
+	'inverse' 'of' 
+	invertingFeature+=FeatureChainName
+;
+
+fragment TypeFeaturingPart:
+	'featured' 'by' 
+	featuringType+=FeatureChainName 
+	(',' featuringType+=FeatureChainName)*
+;
+
+fragment FeatureSpecializationPart:
+	( -> FeatureSpecialization )+ MultiplicityPart? FeatureSpecialization*
+	| MultiplicityPart FeatureSpecialization*
+;
+
+fragment MultiplicityPart:
+	MultiplicityRange MultiplicityModifiers?
+	| MultiplicityModifiers
+;
+
+fragment MultiplicityModifiers:
+      isOrdered?='ordered' (isNonunique?='nonunique')?
+    | isNonunique?='nonunique' (isOrdered?='ordered')?
+;
+
+//fragment MultiplicityRange:
+//	//	'[' Multiplicity += MultiplicityExpression ']' | '[' Multiplicity += MultiplicityExpression '..' Multiplicity += MultiplicityExpression ']'
+//	'[' MultiLow = MultiplicityExpression ( '..' MultiHigh = MultiplicityExpression )? ']'
+//;
+
+fragment FeatureConjugationPart:
+	( '~' | 'conjugates' ) originalType=QualifiedName
+;
+
+fragment FeaturePrefix:
+	( EndFeaturePrefix (crossingFeature+=CrossingFeature)?
+	| BasicFeaturePrefix
+	)
+	PrefixMetadata*
+;
+
+fragment EndFeaturePrefix:
+    ( isConstantEnd ?= 'const')? 
+    isEnd ?= 'end'
+;
+
+fragment BasicFeaturePrefix:
+	( direction = FeatureDirection )?
+	( isDerived ?= 'derived' )?
+	( isAbstract ?= 'abstract' )?
+	( isComposite ?= 'composite' | isPortion ?= 'portion' )? 
+	( isVariable ?= 'var' | isConstantBasic ?= 'const' )?
+;
+
+fragment ValuePart:
+	FeatureValue
+;
+
+fragment FeatureValue:
+	( '=' 
+	| isInitial ?= ':='
+	| isDefault ?= 'default' ( '=' | isInitial ?= ':=' )?
+	)
+	valuePart = Expression
+;
+
+fragment FlowDeclaration:
+	FeatureDeclaration? ValuePart?
+      ( 'of' payload=PayloadParameter )?
+	  ( 'from' FlowEnd += FeatureChainName
+	    'to' FlowEnd += FeatureChainName )?
+    | ( isSufficient ?= 'all' )?
+      FlowEnd += FeatureChainName 'to'
+	  FlowEnd += FeatureChainName
+; 
+
+fragment PayloadFeature:
+	//	Identification? PayloadFeatureSpecializationPart? TriggerValuePart
+	Identification? PayloadFeatureSpecializationPart ValuePart?
+	// Warning
+	| Identification? ValuePart
+	| payloadFeatureElement=FeatureChainName MultiplicityRange?
+	| MultiplicityRange payloadFeatureElement=FeatureChainName
+;
+
+fragment PayloadFeatureSpecializationPart:
+	( -> FeatureSpecialization )+ MultiplicityPart? FeatureSpecialization*
+	| MultiplicityPart FeatureSpecialization+
+;
+
+fragment ConnectorDeclaration:
+	BinaryConnectorDeclaration | NaryConnectorDeclaration
+;
+
+fragment BinaryConnectorDeclaration:
+	( FeatureDeclaration? 'from' | isSufficient ?= 'all' 'from'? )?
+	connectorPartBinary += ConnectorEnd 'to' 
+	connectorPartBinary += ConnectorEnd
+;
+
+fragment NaryConnectorDeclaration:
+	FeatureDeclaration? 
+	'(' connectorPart += ConnectorEnd ',' 
+	    connectorPart += ConnectorEnd
+	    ( ',' connectorPart += ConnectorEnd )* 
+	')'
+;
+
+fragment ExtendedPrefix:
+	( isReturn ?= 'return' )?
+	( isMember ?= 'member' )?
+;
 
 // TODO --------------------------------- Enum Level ---------------------------------//
 
 enum VisibilityIndicator:
 	null='NULLVisibility' | public = 'public' | private = 'private' | protected = 'protected'
+;
+
+enum FeatureDirection:
+	null='NULLFeatureDirection' | in = 'in' | out = 'out' | inout = 'inout'
 ;
 
 // TODO --------------------------------- String Level ---------------------------------//
@@ -511,7 +894,7 @@ MultiplicativeExpression:
 ;
 
 ExponentiationExpression:
-	UnaryExpression (('**' | '^') UnaryExpression)?
+	UnaryExpression (('**' | '^') ExponentiationExpression)?
 ;
 
 UnaryExpression:
@@ -601,10 +984,10 @@ BodyExpression:
 		('in' Name FeatureSpecializationName* ';')*
 		// False Grammar (to avoid the usage of '( bodyExpressions += CalculationBodyElement)*')
 		// In OMG's tools, BodyExpression was rewritten as a nested format, but in this tool it is treated as a string, which cannot meet all the needs. This time, the original syntax is retained.
-		('in' 'ref' Name FeatureSpecializationName* ';')*
-		('private' FeatureChainName ':' QualifiedName '=' OwnedExpression ';')*
-		('private' 'attribute' FeatureChainName '=' OwnedExpression ';')?
-		('private' 'attribute' FeatureChainName ':' QualifiedName '{' (':>>' FeatureChainName '=' OwnedExpression ';')* '}')?
+//		('in' 'ref' Name FeatureSpecializationName* ';')*
+//		('private' FeatureChainName ':' QualifiedName '=' OwnedExpression ';')*
+//		('private' 'attribute' FeatureChainName '=' OwnedExpression ';')?
+//		('private' 'attribute' FeatureChainName ':' QualifiedName '{' (':>>' FeatureChainName '=' OwnedExpression ';')* '}')?
 		//
 		OwnedExpression
 	'}'

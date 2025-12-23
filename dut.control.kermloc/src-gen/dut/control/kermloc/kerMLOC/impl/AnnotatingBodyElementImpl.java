@@ -37,7 +37,7 @@ public class AnnotatingBodyElementImpl extends MinimalEObjectImpl.Container impl
   @Override
   protected EClass eStaticClass()
   {
-    return KerMLOCPackage.Literals.ANNOTATING_BODY_ELEMENT;
+    return KerMLOCPackage.eINSTANCE.getAnnotatingBodyElement();
   }
 
 } //AnnotatingBodyElementImpl

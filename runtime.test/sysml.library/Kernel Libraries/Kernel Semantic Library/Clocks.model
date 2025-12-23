@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:LibraryPackage" declaredName="Clocks" isStandard="true" isLibrary="true">
+    <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9; * This package models Clocks that provide an advancing numerical reference &#xA;&#x9; * usable for quantifying the time of an Occurrence.&#xA;&#x9; */"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ScalarValues::NumericalValue"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ScalarValues::Real"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Occurrences::Occurrence"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Occurrences::Life"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ControlFunctions::forAll"/>
+    <elements xsi:type="kerMLOC:Structure" visibility="private" declaredName="UniversalClockLife" MultiLow="1">
+      <subsetting>Clock</subsetting>
+      <subsetting>Life</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;     * UniversalClockLife is the classifier of the singleton Life of the universalClock.&#xA;&#x9;     */"/>
+    </elements>
+    <elements xsi:type="kerMLOC:Feature" declaredName="universalClock" MultiLow="1">
+      <typings>UniversalClockLife</typings>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * universalClock is a single Clock that can be used as a default universal&#xA;&#x9;&#x9; * time reference.&#xA;&#x9;&#x9; */"/>
+    </elements>
+    <elements xsi:type="kerMLOC:Structure" isAbstract="true" declaredName="Clock">
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * A Clock provides a numerical currentTime that advances montonically&#xA;&#x9;&#x9; * over its lifetime. Clock is an abstract base Structure that can be&#xA;&#x9;&#x9; * specialized for different kinds of time quantification (e.g., discrete&#xA;&#x9;&#x9; * time, continuous time, time with units, etc.).&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" visibility="private" declaredName="thisClock">
+        <typings>Clock</typings>
+        <redefinitions>self</redefinitions>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="currentTime" MultiLow="1">
+        <typings>NumericalValue</typings>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * A scalar time reference that advances over the lifetime of the Clock. &#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Invariant" declaredName="timeFlowConstraint">
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The currentTime of a snapshot of a Clock is equal to&#xA;&#x9;&#x9;&#x9; * the TimeOf the snapshot relative to that Clock.&#xA;&#x9;&#x9;&#x9; */"/>
+        <resultExpressionParameter resultExpression="snapshots->forAll{in s : Clock; TimeOf(s, thisClock) == s.currentTime }"/>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" isAbstract="true" declaredName="TimeOf">
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * TimeOf returns a numerical timeInstant for a given Occurrence relative to&#xA;&#x9;&#x9; * a given Clock. The timeInstant is the time of the start of the Occurrence,&#xA;&#x9;&#x9; * which is considered to be synchronized with the snapshot of the Clock &#xA;&#x9;&#x9; * with a currentTime equal to the returned timeInstant.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="o" MultiLow="1">
+        <typings>Occurrence</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="clock" MultiLow="1" isDefault="true" valuePart="localClock">
+        <typings>Clock</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" declaredName="timeInstant" MultiLow="1">
+        <typings>NumericalValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Invariant" declaredName="startTimeConstraint">
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The TimeOf an Occurrence is equal to the time of its start snapshot.&#xA;&#x9;&#x9;&#x9; */"/>
+        <resultExpressionParameter resultExpression="timeInstant == TimeOf(o.startShot, clock)"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Invariant" declaredName="timeOrderingConstraint">
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * If one Occurrence happens before another, then the TimeOf the end&#xA;&#x9;&#x9;&#x9; * snapshot of the first Occurrence is no greater than the TimeOf the &#xA;&#x9;&#x9;&#x9; * second Occurrence.&#xA;&#x9;&#x9;&#x9; */"/>
+        <resultExpressionParameter resultExpression="o.predecessors->forAll{in p : Occurrence; TimeOf(p.endShot, clock) &lt;= timeInstant }"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Invariant" declaredName="timeContinuityConstraint">
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * If one Occurrence happens immediately before another, then the TimeOf &#xA;&#x9;&#x9;&#x9; * the end snapshot of the first Occurrence equals the TimeOf the second&#xA;&#x9;&#x9;&#x9; * Occurrence.&#xA;&#x9;&#x9;&#x9; */"/>
+        <resultExpressionParameter resultExpression="o.immediatePredecessors->forAll{in p : Occurrence; TimeOf(p.endShot, clock) == timeInstant }"/>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="DurationOf">
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * DurationOf returns the duration of a given Occurrence relative to a&#xA;&#x9;&#x9; * given Clock, which is equal to the TimeOf the end snapshot of the&#xA;&#x9;&#x9; * Occurrence minus the TimeOf its start snapshot.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="o" MultiLow="1">
+        <typings>Occurrence</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="clock" MultiLow="1" isDefault="true" valuePart="localClock">
+        <typings>Clock</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" declaredName="duration" valuePart="TimeOf(o.endShot, clock) - TimeOf(o.startShot, clock)">
+        <typings>NumericalValue</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Structure" declaredName="BasicClock">
+      <subsetting>Clock</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * A BasicClock is a Clock whose currentTime is a Real number.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" isVariable="true">
+        <typings>Real</typings>
+        <redefinitions>currentTime</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="BasicTimeOf">
+      <subsetting>TimeOf</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * BasicTimeOf returns the TimeOf an Occurrence as a Real number relative&#xA;&#x9;&#x9; * to a BasicClock.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="o" MultiLow="1">
+        <typings>Occurrence</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="clock" MultiLow="1">
+        <typings>BasicClock</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="BasicDurationOf">
+      <subsetting>DurationOf</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * BasicDurationOf returns the DurationOf an Occurrence as a Real number relative&#xA;&#x9;&#x9; * to a BasicClock.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="o" MultiLow="1">
+        <typings>Occurrence</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="clock" MultiLow="1">
+        <typings>BasicClock</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Real</typings>
+      </elements>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

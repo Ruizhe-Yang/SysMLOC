@@ -37,7 +37,7 @@ public class FunctionBodyElementImpl extends MinimalEObjectImpl.Container implem
   @Override
   protected EClass eStaticClass()
   {
-    return KerMLOCPackage.Literals.FUNCTION_BODY_ELEMENT;
+    return KerMLOCPackage.eINSTANCE.getFunctionBodyElement();
   }
 
 } //FunctionBodyElementImpl

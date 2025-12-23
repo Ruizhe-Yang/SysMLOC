@@ -291,8 +291,7 @@ MetadataUsage:
 	( 'about' annotatedElement+=QualifiedName ( ',' annotatedElement+=QualifiedName)* )?
 	//	( ';' | '{' (elements+=MetadataBodyElement)* '}' )
 	// [Causes LL parsing issues.]
-	( ';' | '{' (elements+=GeneralBodyElements)* '}' )
-	
+	( ';' | '{' (elements+=GeneralBodyElements)* '}' )	
 ;
 
 ElementFilterElement:
@@ -1587,7 +1586,7 @@ MultiplicativeExpression:
 ;
 
 ExponentiationExpression:
-	UnaryExpression (('**' | '^') UnaryExpression)?
+	UnaryExpression (('**' | '^') ExponentiationExpression)?
 ;
 
 UnaryExpression:

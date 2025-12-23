@@ -1,0 +1,1097 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:LibraryPackage" declaredName="KerML" isStandard="true" isLibrary="true">
+    <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9; * This package contains a reflective KerML model of the KerML abstract syntax.&#xA;&#x9; */"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ScalarValues" isNamespace="true"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="public" declaredName="Kernel" isNamespace="true"/>
+    <elements xsi:type="kerMLOC:Package" declaredName="Root">
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="AnnotatingElement">
+        <subsetting>Element</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="annotatedElement" MultiLow="1" MultiHigh="*" isOrdered="true">
+          <typings>Element</typings>
+          <redefinitions>annotatedElement</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isComposite="true" isVariable="true" declaredName="ownedAnnotatingRelationship" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>Annotation</typings>
+          <subsetting>annotation</subsetting>
+          <subsetting>ownedRelationship</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="owningAnnotatingRelationship" MultiLow="0" MultiHigh="1">
+          <typings>Annotation</typings>
+          <subsetting>owningRelationship</subsetting>
+          <subsetting>annotation</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="annotation" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>Annotation</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="Annotation">
+        <subsetting>Relationship</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="annotatedElement" MultiLow="1" MultiHigh="1">
+          <typings>Element</typings>
+          <redefinitions>target</redefinitions>
+          <redefinitions>annotatedElement</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="annotatingElement" MultiLow="1" MultiHigh="1">
+          <typings>AnnotatingElement</typings>
+          <redefinitions>source</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="owningAnnotatedElement" MultiLow="0" MultiHigh="1">
+          <typings>Element</typings>
+          <subsetting>annotatedElement</subsetting>
+          <subsetting>owningRelatedElement</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="owningAnnotatingElement" MultiLow="0" MultiHigh="1">
+          <typings>AnnotatingElement</typings>
+          <subsetting>annotatingElement</subsetting>
+          <subsetting>owningRelatedElement</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isComposite="true" isVariable="true" declaredName="ownedAnnotatingElement" MultiLow="0" MultiHigh="1">
+          <typings>AnnotatingElement</typings>
+          <subsetting>annotatingElement</subsetting>
+          <subsetting>ownedRelatedElement</subsetting>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="Comment">
+        <subsetting>AnnotatingElement</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="'locale'" MultiLow="0" MultiHigh="1">
+          <typings>String</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="body" MultiLow="1" MultiHigh="1">
+          <typings>String</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="Dependency">
+        <subsetting>Relationship</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="client" MultiLow="1" MultiHigh="*" isOrdered="true">
+          <typings>Element</typings>
+          <redefinitions>source</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="supplier" MultiLow="1" MultiHigh="*" isOrdered="true">
+          <typings>Element</typings>
+          <redefinitions>target</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="Documentation">
+        <subsetting>Comment</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="documentedElement" MultiLow="1" MultiHigh="1">
+          <typings>Element</typings>
+          <subsetting>owner</subsetting>
+          <redefinitions>annotatedElement</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" isAbstract="true" declaredName="Element">
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="elementId" MultiLow="1" MultiHigh="1">
+          <typings>String</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="aliasIds" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>String</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="declaredShortName" MultiLow="0" MultiHigh="1">
+          <typings>String</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="declaredName" MultiLow="0" MultiHigh="1">
+          <typings>String</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="isImpliedIncluded" MultiLow="1" MultiHigh="1">
+          <typings>Boolean</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="shortName" MultiLow="0" MultiHigh="1">
+          <typings>String</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="name" MultiLow="0" MultiHigh="1">
+          <typings>String</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="qualifiedName" MultiLow="0" MultiHigh="1">
+          <typings>String</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="isLibraryElement" MultiLow="1" MultiHigh="1">
+          <typings>Boolean</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="owningRelationship" MultiLow="0" MultiHigh="1">
+          <typings>Relationship</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isComposite="true" isVariable="true" declaredName="ownedRelationship" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>Relationship</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="owningMembership" MultiLow="0" MultiHigh="1">
+          <typings>OwningMembership</typings>
+          <subsetting>owningRelationship</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="owningNamespace" MultiLow="0" MultiHigh="1">
+          <typings>Namespace</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="owner" MultiLow="0" MultiHigh="1">
+          <typings>Element</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="ownedElement" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>Element</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="documentation" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>Documentation</typings>
+          <subsetting>ownedElement</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isComposite="true" isVariable="true" declaredName="ownedAnnotation" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>Annotation</typings>
+          <subsetting>ownedRelationship</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="textualRepresentation" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>TextualRepresentation</typings>
+          <subsetting>ownedElement</subsetting>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" isAbstract="true" declaredName="Import">
+        <subsetting>Relationship</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="visibility" MultiLow="1" MultiHigh="1">
+          <typings>VisibilityKind</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="isRecursive" MultiLow="1" MultiHigh="1">
+          <typings>Boolean</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="isImportAll" MultiLow="1" MultiHigh="1">
+          <typings>Boolean</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="importOwningNamespace" MultiLow="1" MultiHigh="1">
+          <typings>Namespace</typings>
+          <subsetting>owningRelatedElement</subsetting>
+          <redefinitions>source</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="importedElement" MultiLow="1" MultiHigh="1">
+          <typings>Element</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="Membership">
+        <subsetting>Relationship</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="memberShortName" MultiLow="0" MultiHigh="1">
+          <typings>String</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="memberName" MultiLow="0" MultiHigh="1">
+          <typings>String</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="visibility" MultiLow="1" MultiHigh="1">
+          <typings>VisibilityKind</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="memberElementId" MultiLow="1" MultiHigh="1">
+          <typings>String</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="memberElement" MultiLow="1" MultiHigh="1">
+          <typings>Element</typings>
+          <redefinitions>target</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="membershipOwningNamespace" MultiLow="1" MultiHigh="1">
+          <typings>Namespace</typings>
+          <subsetting>owningRelatedElement</subsetting>
+          <redefinitions>source</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="MembershipImport">
+        <subsetting>Import</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="importedMembership" MultiLow="1" MultiHigh="1">
+          <typings>Membership</typings>
+          <redefinitions>target</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="Namespace">
+        <subsetting>Element</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isAbstract="true" isVariable="true" declaredName="membership" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>Membership</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isComposite="true" isVariable="true" declaredName="ownedImport" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>Import</typings>
+          <subsetting>ownedRelationship</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="'member'" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>Element</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="ownedMember" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>Element</typings>
+          <subsetting>'member'</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isComposite="true" isVariable="true" declaredName="ownedMembership" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>Membership</typings>
+          <subsetting>membership</subsetting>
+          <subsetting>ownedRelationship</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="importedMembership" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>Membership</typings>
+          <subsetting>membership</subsetting>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="NamespaceImport">
+        <subsetting>Import</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="importedNamespace" MultiLow="1" MultiHigh="1">
+          <typings>Namespace</typings>
+          <redefinitions>target</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="OwningMembership">
+        <subsetting>Membership</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="ownedMemberElementId" MultiLow="1" MultiHigh="1">
+          <typings>String</typings>
+          <redefinitions>memberElementId</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="ownedMemberShortName" MultiLow="0" MultiHigh="1">
+          <typings>String</typings>
+          <redefinitions>memberShortName</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="ownedMemberName" MultiLow="0" MultiHigh="1">
+          <typings>String</typings>
+          <redefinitions>memberName</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isComposite="true" isVariable="true" declaredName="ownedMemberElement" MultiLow="1" MultiHigh="1">
+          <typings>Element</typings>
+          <subsetting>ownedRelatedElement</subsetting>
+          <redefinitions>memberElement</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" isAbstract="true" declaredName="Relationship">
+        <subsetting>Element</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="isImplied" MultiLow="1" MultiHigh="1">
+          <typings>Boolean</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="target" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>Element</typings>
+          <subsetting>relatedElement</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="source" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>Element</typings>
+          <subsetting>relatedElement</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="owningRelatedElement" MultiLow="0" MultiHigh="1">
+          <typings>Element</typings>
+          <subsetting>relatedElement</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isComposite="true" isVariable="true" declaredName="ownedRelatedElement" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>Element</typings>
+          <subsetting>relatedElement</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="relatedElement" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+          <typings>Element</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="TextualRepresentation">
+        <subsetting>AnnotatingElement</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="'language'" MultiLow="1" MultiHigh="1">
+          <typings>String</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="body" MultiLow="1" MultiHigh="1">
+          <typings>String</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="representedElement" MultiLow="1" MultiHigh="1">
+          <typings>Element</typings>
+          <subsetting>owner</subsetting>
+          <redefinitions>annotatedElement</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:DataType" declaredName="VisibilityKind">
+        <elements xsi:type="kerMLOC:Feature" isMember="true" declaredName="'private'" MultiLow="1">
+          <typings>VisibilityKind</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isMember="true" declaredName="'protected'" MultiLow="1">
+          <typings>VisibilityKind</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isMember="true" declaredName="'public'" MultiLow="1">
+          <typings>VisibilityKind</typings>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Package" declaredName="Core">
+      <elements xsi:type="kerMLOC:ImportElement" visibility="public" declaredName="Root" isNamespace="true"/>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="Classifier">
+        <subsetting>Type</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isComposite="true" isVariable="true" declaredName="ownedSubclassification" MultiLow="0" MultiHigh="*">
+          <typings>Subclassification</typings>
+          <subsetting>ownedSpecialization</subsetting>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="Conjugation">
+        <subsetting>Relationship</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="originalType" MultiLow="1" MultiHigh="1">
+          <typings>Type</typings>
+          <redefinitions>target</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="conjugatedType" MultiLow="1" MultiHigh="1">
+          <typings>Type</typings>
+          <redefinitions>source</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="owningType" MultiLow="0" MultiHigh="1">
+          <typings>Type</typings>
+          <subsetting>conjugatedType</subsetting>
+          <subsetting>owningRelatedElement</subsetting>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="CrossSubsetting">
+        <subsetting>Subsetting</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="crossedFeature" MultiLow="1" MultiHigh="1">
+          <typings>Feature</typings>
+          <redefinitions>subsettedFeature</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="crossingFeature" MultiLow="1" MultiHigh="1">
+          <typings>Feature</typings>
+          <redefinitions>owningFeature</redefinitions>
+          <redefinitions>subsettingFeature</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="Differencing">
+        <subsetting>Relationship</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="differencingType" MultiLow="1" MultiHigh="1">
+          <typings>Type</typings>
+          <redefinitions>target</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="typeDifferenced" MultiLow="1" MultiHigh="1">
+          <typings>Type</typings>
+          <subsetting>owningRelatedElement</subsetting>
+          <redefinitions>source</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="Disjoining">
+        <subsetting>Relationship</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="typeDisjoined" MultiLow="1" MultiHigh="1">
+          <typings>Type</typings>
+          <redefinitions>source</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="disjoiningType" MultiLow="1" MultiHigh="1">
+          <typings>Type</typings>
+          <redefinitions>target</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="owningType" MultiLow="0" MultiHigh="1">
+          <typings>Type</typings>
+          <subsetting>owningRelatedElement</subsetting>
+          <subsetting>typeDisjoined</subsetting>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="EndFeatureMembership">
+        <subsetting>FeatureMembership</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isComposite="true" isVariable="true" declaredName="ownedMemberFeature" MultiLow="1" MultiHigh="1">
+          <typings>Feature</typings>
+          <redefinitions>ownedMemberFeature</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="Feature">
+        <subsetting>Type</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="isUnique" MultiLow="1" MultiHigh="1">
+          <typings>Boolean</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="isOrdered" MultiLow="1" MultiHigh="1">
+          <typings>Boolean</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="isComposite" MultiLow="1" MultiHigh="1">
+          <typings>Boolean</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="isEnd" MultiLow="1" MultiHigh="1">
+          <typings>Boolean</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="isDerived" MultiLow="1" MultiHigh="1">
+          <typings>Boolean</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="isPortion" MultiLow="1" MultiHigh="1">
+          <typings>Boolean</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="isVariable" MultiLow="1" MultiHigh="1">
+          <typings>Boolean</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="isConstant" MultiLow="1" MultiHigh="1">
+          <typings>Boolean</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="direction" MultiLow="0" MultiHigh="1">
+          <typings>FeatureDirectionKind</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="owningType" MultiLow="0" MultiHigh="1">
+          <typings>Type</typings>
+          <subsetting>owningNamespace</subsetting>
+          <subsetting>featuringType</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="'type'" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>Type</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isComposite="true" isVariable="true" declaredName="ownedRedefinition" MultiLow="0" MultiHigh="*">
+          <typings>Redefinition</typings>
+          <subsetting>ownedSubsetting</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isComposite="true" isVariable="true" declaredName="ownedSubsetting" MultiLow="0" MultiHigh="*">
+          <typings>Subsetting</typings>
+          <subsetting>ownedSpecialization</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="owningFeatureMembership" MultiLow="0" MultiHigh="1">
+          <typings>FeatureMembership</typings>
+          <subsetting>owningMembership</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="endOwningType" MultiLow="0" MultiHigh="1">
+          <typings>Type</typings>
+          <subsetting>owningType</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isComposite="true" isVariable="true" declaredName="ownedTyping" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>FeatureTyping</typings>
+          <subsetting>ownedSpecialization</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="featuringType" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>Type</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isComposite="true" isVariable="true" declaredName="ownedTypeFeaturing" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>TypeFeaturing</typings>
+          <subsetting>ownedRelationship</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="chainingFeature" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+          <typings>Feature</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isComposite="true" isVariable="true" declaredName="ownedFeatureInverting" MultiLow="0" MultiHigh="*">
+          <typings>FeatureInverting</typings>
+          <subsetting>ownedRelationship</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isComposite="true" isVariable="true" declaredName="ownedFeatureChaining" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>FeatureChaining</typings>
+          <subsetting>ownedRelationship</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isComposite="true" isVariable="true" declaredName="ownedReferenceSubsetting" MultiLow="0" MultiHigh="1">
+          <typings>ReferenceSubsetting</typings>
+          <subsetting>ownedSubsetting</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="featureTarget" MultiLow="1" MultiHigh="1">
+          <typings>Feature</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="crossFeature" MultiLow="0" MultiHigh="1">
+          <typings>Feature</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isComposite="true" isVariable="true" declaredName="ownedCrossSubsetting" MultiLow="0" MultiHigh="1">
+          <typings>CrossSubsetting</typings>
+          <subsetting>ownedSubsetting</subsetting>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="FeatureChaining">
+        <subsetting>Relationship</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="chainingFeature" MultiLow="1" MultiHigh="1">
+          <typings>Feature</typings>
+          <redefinitions>target</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="featureChained" MultiLow="1" MultiHigh="1">
+          <typings>Feature</typings>
+          <subsetting>owningRelatedElement</subsetting>
+          <redefinitions>source</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:DataType" declaredName="FeatureDirectionKind">
+        <elements xsi:type="kerMLOC:Feature" isMember="true" declaredName="'in'" MultiLow="1">
+          <typings>FeatureDirectionKind</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isMember="true" declaredName="'inout'" MultiLow="1">
+          <typings>FeatureDirectionKind</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isMember="true" declaredName="'out'" MultiLow="1">
+          <typings>FeatureDirectionKind</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="FeatureInverting">
+        <subsetting>Relationship</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="featureInverted" MultiLow="1" MultiHigh="1">
+          <typings>Feature</typings>
+          <redefinitions>source</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="invertingFeature" MultiLow="1" MultiHigh="1">
+          <typings>Feature</typings>
+          <redefinitions>target</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="owningFeature" MultiLow="0" MultiHigh="1">
+          <typings>Feature</typings>
+          <subsetting>featureInverted</subsetting>
+          <subsetting>owningRelatedElement</subsetting>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="FeatureMembership">
+        <subsetting>OwningMembership</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="owningType" MultiLow="1" MultiHigh="1">
+          <typings>Type</typings>
+          <redefinitions>membershipOwningNamespace</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isComposite="true" isVariable="true" declaredName="ownedMemberFeature" MultiLow="1" MultiHigh="1">
+          <typings>Feature</typings>
+          <redefinitions>ownedMemberElement</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="FeatureTyping">
+        <subsetting>Specialization</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="typedFeature" MultiLow="1" MultiHigh="1">
+          <typings>Feature</typings>
+          <redefinitions>specific</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="'type'" MultiLow="1" MultiHigh="1">
+          <typings>Type</typings>
+          <redefinitions>general</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="owningFeature" MultiLow="0" MultiHigh="1">
+          <typings>Feature</typings>
+          <subsetting>typedFeature</subsetting>
+          <redefinitions>owningType</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="Intersecting">
+        <subsetting>Relationship</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="intersectingType" MultiLow="1" MultiHigh="1">
+          <typings>Type</typings>
+          <redefinitions>target</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="typeIntersected" MultiLow="1" MultiHigh="1">
+          <typings>Type</typings>
+          <subsetting>owningRelatedElement</subsetting>
+          <redefinitions>source</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="Multiplicity">
+        <subsetting>Feature</subsetting>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="Redefinition">
+        <subsetting>Subsetting</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="redefiningFeature" MultiLow="1" MultiHigh="1">
+          <typings>Feature</typings>
+          <redefinitions>subsettingFeature</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="redefinedFeature" MultiLow="1" MultiHigh="1">
+          <typings>Feature</typings>
+          <redefinitions>subsettedFeature</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="ReferenceSubsetting">
+        <subsetting>Subsetting</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="referencedFeature" MultiLow="1" MultiHigh="1">
+          <typings>Feature</typings>
+          <redefinitions>subsettedFeature</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="referencingFeature" MultiLow="1" MultiHigh="1">
+          <typings>Feature</typings>
+          <redefinitions>owningFeature</redefinitions>
+          <redefinitions>subsettingFeature</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="Specialization">
+        <subsetting>Relationship</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="general" MultiLow="1" MultiHigh="1">
+          <typings>Type</typings>
+          <redefinitions>target</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="specific" MultiLow="1" MultiHigh="1">
+          <typings>Type</typings>
+          <redefinitions>source</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="owningType" MultiLow="0" MultiHigh="1">
+          <typings>Type</typings>
+          <subsetting>owningRelatedElement</subsetting>
+          <subsetting>specific</subsetting>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="Subclassification">
+        <subsetting>Specialization</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="superclassifier" MultiLow="1" MultiHigh="1">
+          <typings>Classifier</typings>
+          <redefinitions>general</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="'subclassifier'" MultiLow="1" MultiHigh="1">
+          <typings>Classifier</typings>
+          <redefinitions>specific</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="owningClassifier" MultiLow="0" MultiHigh="1">
+          <typings>Classifier</typings>
+          <redefinitions>owningType</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="Subsetting">
+        <subsetting>Specialization</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="subsettedFeature" MultiLow="1" MultiHigh="1">
+          <typings>Feature</typings>
+          <redefinitions>general</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="subsettingFeature" MultiLow="1" MultiHigh="1">
+          <typings>Feature</typings>
+          <redefinitions>specific</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="owningFeature" MultiLow="0" MultiHigh="1">
+          <typings>Feature</typings>
+          <subsetting>subsettingFeature</subsetting>
+          <redefinitions>owningType</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="Type">
+        <subsetting>Namespace</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="isAbstract" MultiLow="1" MultiHigh="1">
+          <typings>Boolean</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="isSufficient" MultiLow="1" MultiHigh="1">
+          <typings>Boolean</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="isConjugated" MultiLow="1" MultiHigh="1">
+          <typings>Boolean</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isComposite="true" isVariable="true" declaredName="ownedSpecialization" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>Specialization</typings>
+          <subsetting>ownedRelationship</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isComposite="true" isVariable="true" declaredName="ownedFeatureMembership" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>FeatureMembership</typings>
+          <subsetting>ownedMembership</subsetting>
+          <subsetting>featureMembership</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="'feature'" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>Feature</typings>
+          <subsetting>'member'</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="ownedFeature" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>Feature</typings>
+          <subsetting>ownedMember</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="input" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>Feature</typings>
+          <subsetting>directedFeature</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="output" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>Feature</typings>
+          <subsetting>directedFeature</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="inheritedMembership" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>Membership</typings>
+          <subsetting>membership</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="endFeature" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>Feature</typings>
+          <subsetting>'feature'</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="ownedEndFeature" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>Feature</typings>
+          <subsetting>endFeature</subsetting>
+          <subsetting>ownedFeature</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isComposite="true" isVariable="true" declaredName="ownedConjugator" MultiLow="0" MultiHigh="1">
+          <typings>Conjugation</typings>
+          <subsetting>ownedRelationship</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="inheritedFeature" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>Feature</typings>
+          <subsetting>'feature'</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="'multiplicity'" MultiLow="0" MultiHigh="1">
+          <typings>Multiplicity</typings>
+          <subsetting>ownedMember</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="unioningType" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>Type</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isComposite="true" isVariable="true" declaredName="ownedIntersecting" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>Intersecting</typings>
+          <subsetting>ownedRelationship</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="intersectingType" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>Type</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isComposite="true" isVariable="true" declaredName="ownedUnioning" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>Unioning</typings>
+          <subsetting>ownedRelationship</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isComposite="true" isVariable="true" declaredName="ownedDisjoining" MultiLow="0" MultiHigh="*">
+          <typings>Disjoining</typings>
+          <subsetting>ownedRelationship</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="featureMembership" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>FeatureMembership</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="differencingType" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>Type</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isComposite="true" isVariable="true" declaredName="ownedDifferencing" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>Differencing</typings>
+          <subsetting>ownedRelationship</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="directedFeature" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>Feature</typings>
+          <subsetting>'feature'</subsetting>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="TypeFeaturing">
+        <subsetting>Relationship</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="featureOfType" MultiLow="1" MultiHigh="1">
+          <typings>Feature</typings>
+          <redefinitions>source</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="featuringType" MultiLow="1" MultiHigh="1">
+          <typings>Type</typings>
+          <redefinitions>target</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="owningFeatureOfType" MultiLow="0" MultiHigh="1">
+          <typings>Feature</typings>
+          <subsetting>owningRelatedElement</subsetting>
+          <subsetting>featureOfType</subsetting>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="Unioning">
+        <subsetting>Relationship</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="unioningType" MultiLow="1" MultiHigh="1">
+          <typings>Type</typings>
+          <redefinitions>target</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="typeUnioned" MultiLow="1" MultiHigh="1">
+          <typings>Type</typings>
+          <subsetting>owningRelatedElement</subsetting>
+          <redefinitions>source</redefinitions>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Package" declaredName="Kernel">
+      <elements xsi:type="kerMLOC:ImportElement" visibility="public" declaredName="Core" isNamespace="true"/>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="Association">
+        <subsetting>Classifier</subsetting>
+        <subsetting>Relationship</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="relatedType" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+          <typings>Type</typings>
+          <redefinitions>relatedElement</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="sourceType" MultiLow="0" MultiHigh="1">
+          <typings>Type</typings>
+          <subsetting>relatedType</subsetting>
+          <redefinitions>source</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="targetType" MultiLow="0" MultiHigh="*">
+          <typings>Type</typings>
+          <subsetting>relatedType</subsetting>
+          <redefinitions>target</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="associationEnd" MultiLow="0" MultiHigh="*">
+          <typings>Feature</typings>
+          <redefinitions>endFeature</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="AssociationStructure">
+        <subsetting>Association</subsetting>
+        <subsetting>Structure</subsetting>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="Behavior">
+        <subsetting>Class</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="'step'" MultiLow="0" MultiHigh="*">
+          <typings>Step</typings>
+          <subsetting>'feature'</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="parameter" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>Feature</typings>
+          <redefinitions>directedFeature</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="BindingConnector">
+        <subsetting>Connector</subsetting>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="BooleanExpression">
+        <subsetting>Expression</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="'predicate'" MultiLow="0" MultiHigh="1">
+          <typings>Predicate</typings>
+          <redefinitions>'function'</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="Class">
+        <subsetting>Classifier</subsetting>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="CollectExpression">
+        <subsetting>OperatorExpression</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="operator" MultiLow="1" MultiHigh="1">
+          <typings>String</typings>
+          <redefinitions>operator</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="Connector">
+        <subsetting>Feature</subsetting>
+        <subsetting>Relationship</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="relatedFeature" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+          <typings>Feature</typings>
+          <redefinitions>relatedElement</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="association" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>Association</typings>
+          <redefinitions>'type'</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="connectorEnd" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>Feature</typings>
+          <redefinitions>endFeature</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="sourceFeature" MultiLow="0" MultiHigh="1" isOrdered="true">
+          <typings>Feature</typings>
+          <subsetting>relatedFeature</subsetting>
+          <redefinitions>source</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="targetFeature" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>Feature</typings>
+          <subsetting>relatedFeature</subsetting>
+          <redefinitions>target</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="defaultFeaturingType" MultiLow="0" MultiHigh="1">
+          <typings>Type</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="ConstructorExpression">
+        <subsetting>InstantiationExpression</subsetting>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="DataType">
+        <subsetting>Classifier</subsetting>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="ElementFilterMembership">
+        <subsetting>OwningMembership</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isComposite="true" isVariable="true" declaredName="condition" MultiLow="1" MultiHigh="1">
+          <typings>Expression</typings>
+          <redefinitions>ownedMemberElement</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="Expression">
+        <subsetting>Step</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="isModelLevelEvaluable" MultiLow="1" MultiHigh="1">
+          <typings>Boolean</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="'function'" MultiLow="0" MultiHigh="1">
+          <typings>Function</typings>
+          <redefinitions>'behavior'</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="result" MultiLow="1" MultiHigh="1">
+          <typings>Feature</typings>
+          <subsetting>output</subsetting>
+          <subsetting>parameter</subsetting>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="FeatureChainExpression">
+        <subsetting>OperatorExpression</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="operator" MultiLow="1" MultiHigh="1">
+          <typings>String</typings>
+          <redefinitions>operator</redefinitions>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="targetFeature" MultiLow="1" MultiHigh="1">
+          <typings>Feature</typings>
+          <subsetting>'member'</subsetting>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="FeatureReferenceExpression">
+        <subsetting>Expression</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="referent" MultiLow="1" MultiHigh="1">
+          <typings>Feature</typings>
+          <subsetting>'member'</subsetting>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="FeatureValue">
+        <subsetting>OwningMembership</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="isInitial" MultiLow="1" MultiHigh="1">
+          <typings>Boolean</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="isDefault" MultiLow="1" MultiHigh="1">
+          <typings>Boolean</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="featureWithValue" MultiLow="1" MultiHigh="1">
+          <typings>Feature</typings>
+          <subsetting>membershipOwningNamespace</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isComposite="true" isVariable="true" declaredName="value" MultiLow="1" MultiHigh="1">
+          <typings>Expression</typings>
+          <redefinitions>ownedMemberElement</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="Flow">
+        <subsetting>Connector</subsetting>
+        <subsetting>Step</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="payloadType" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+          <typings>Classifier</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="targetInputFeature" MultiLow="0" MultiHigh="1" isOrdered="true" isNonunique="true">
+          <typings>Feature</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="sourceOutputFeature" MultiLow="0" MultiHigh="1" isOrdered="true" isNonunique="true">
+          <typings>Feature</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="flowEnd" MultiLow="0" MultiHigh="2" isOrdered="true">
+          <typings>FlowEnd</typings>
+          <subsetting>connectorEnd</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="payloadFeature" MultiLow="0" MultiHigh="1">
+          <typings>PayloadFeature</typings>
+          <subsetting>ownedFeature</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="'interaction'" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>Interaction</typings>
+          <redefinitions>association</redefinitions>
+          <redefinitions>'behavior'</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="FlowEnd">
+        <subsetting>Feature</subsetting>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="Function">
+        <subsetting>Behavior</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="isModelLevelEvaluable" MultiLow="1" MultiHigh="1">
+          <typings>Boolean</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="expression" MultiLow="0" MultiHigh="*">
+          <typings>Expression</typings>
+          <subsetting>'step'</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="result" MultiLow="1" MultiHigh="1">
+          <typings>Feature</typings>
+          <subsetting>output</subsetting>
+          <subsetting>parameter</subsetting>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="IndexExpression">
+        <subsetting>OperatorExpression</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="operator" MultiLow="1" MultiHigh="1">
+          <typings>String</typings>
+          <redefinitions>operator</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" isAbstract="true" declaredName="InstantiationExpression">
+        <subsetting>Expression</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="argument" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>Expression</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="instantiatedType" MultiLow="1" MultiHigh="1">
+          <typings>Type</typings>
+          <subsetting>'member'</subsetting>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="Interaction">
+        <subsetting>Association</subsetting>
+        <subsetting>Behavior</subsetting>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="Invariant">
+        <subsetting>BooleanExpression</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="isNegated" MultiLow="1" MultiHigh="1">
+          <typings>Boolean</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="InvocationExpression">
+        <subsetting>InstantiationExpression</subsetting>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="LibraryPackage">
+        <subsetting>Package</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="isStandard" MultiLow="1" MultiHigh="1">
+          <typings>Boolean</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="LiteralBoolean">
+        <subsetting>LiteralExpression</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="value" MultiLow="1" MultiHigh="1">
+          <typings>Boolean</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="LiteralExpression">
+        <subsetting>Expression</subsetting>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="LiteralInfinity">
+        <subsetting>LiteralExpression</subsetting>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="LiteralInteger">
+        <subsetting>LiteralExpression</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="value" MultiLow="1" MultiHigh="1">
+          <typings>Integer</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="LiteralRational">
+        <subsetting>LiteralExpression</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="value" MultiLow="1" MultiHigh="1">
+          <typings>Rational</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="LiteralString">
+        <subsetting>LiteralExpression</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="value" MultiLow="1" MultiHigh="1">
+          <typings>String</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="Metaclass">
+        <subsetting>Structure</subsetting>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="MetadataAccessExpression">
+        <subsetting>Expression</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="referencedElement" MultiLow="1" MultiHigh="1">
+          <typings>Element</typings>
+          <subsetting>'member'</subsetting>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="MetadataFeature">
+        <subsetting>AnnotatingElement</subsetting>
+        <subsetting>Feature</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="'metaclass'" MultiLow="0" MultiHigh="1">
+          <typings>Metaclass</typings>
+          <subsetting>'type'</subsetting>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="MultiplicityRange">
+        <subsetting>Multiplicity</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="lowerBound" MultiLow="0" MultiHigh="1">
+          <typings>Expression</typings>
+          <subsetting>bound</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="upperBound" MultiLow="1" MultiHigh="1">
+          <typings>Expression</typings>
+          <subsetting>bound</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="bound" MultiLow="1" MultiHigh="2" isOrdered="true">
+          <typings>Expression</typings>
+          <subsetting>ownedMember</subsetting>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="NullExpression">
+        <subsetting>Expression</subsetting>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="OperatorExpression">
+        <subsetting>InvocationExpression</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="operator" MultiLow="1" MultiHigh="1">
+          <typings>String</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="Package">
+        <subsetting>Namespace</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="filterCondition" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>Expression</typings>
+          <subsetting>ownedMember</subsetting>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="ParameterMembership">
+        <subsetting>FeatureMembership</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isComposite="true" isVariable="true" declaredName="ownedMemberParameter" MultiLow="1" MultiHigh="1">
+          <typings>Feature</typings>
+          <redefinitions>ownedMemberFeature</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="PayloadFeature">
+        <subsetting>Feature</subsetting>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="Predicate">
+        <subsetting>Function</subsetting>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="ResultExpressionMembership">
+        <subsetting>FeatureMembership</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isComposite="true" isVariable="true" declaredName="ownedResultExpression" MultiLow="1" MultiHigh="1">
+          <typings>Expression</typings>
+          <redefinitions>ownedMemberFeature</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="ReturnParameterMembership">
+        <subsetting>ParameterMembership</subsetting>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="SelectExpression">
+        <subsetting>OperatorExpression</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="operator" MultiLow="1" MultiHigh="1">
+          <typings>String</typings>
+          <redefinitions>operator</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="Step">
+        <subsetting>Feature</subsetting>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="'behavior'" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>Behavior</typings>
+          <subsetting>'type'</subsetting>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isDerived="true" isVariable="true" declaredName="parameter" MultiLow="0" MultiHigh="*" isOrdered="true">
+          <typings>Feature</typings>
+          <redefinitions>directedFeature</redefinitions>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="Structure">
+        <subsetting>Class</subsetting>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="Succession">
+        <subsetting>Connector</subsetting>
+      </elements>
+      <elements xsi:type="kerMLOC:Metaclass" declaredName="SuccessionFlow">
+        <subsetting>Succession</subsetting>
+        <subsetting>Flow</subsetting>
+      </elements>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

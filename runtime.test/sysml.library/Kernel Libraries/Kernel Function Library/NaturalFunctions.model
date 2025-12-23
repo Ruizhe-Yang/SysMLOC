@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:LibraryPackage" declaredName="NaturalFunctions" isStandard="true" isLibrary="true">
+    <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9; * This package defines functions on Natural values, including concrete specialization of the &#xA;&#x9; * general arithmetic and comparison operations.&#xA;&#x9; */"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="public" declaredName="ScalarValues" isNamespace="true"/>
+    <elements xsi:type="kerMLOC:Function" declaredName="'+'">
+      <subsetting>IntegerFunctions::'+'</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>Natural</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="0" MultiHigh="1">
+        <typings>Natural</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Natural</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="'*'">
+      <subsetting>IntegerFunctions::'*'</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>Natural</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="1">
+        <typings>Natural</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Natural</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="'/'">
+      <subsetting>IntegerFunctions::'/'</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>Natural</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="1">
+        <typings>Natural</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Natural</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="'%'">
+      <subsetting>IntegerFunctions::'%'</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>Natural</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="1">
+        <typings>Natural</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Natural</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="'&lt;'">
+      <subsetting>IntegerFunctions::'&lt;'</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>Natural</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="1">
+        <typings>Natural</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Boolean</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="'>'">
+      <subsetting>IntegerFunctions::'>'</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>Natural</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="1">
+        <typings>Natural</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Boolean</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="'&lt;='">
+      <subsetting>IntegerFunctions::'&lt;='</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>Natural</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="1">
+        <typings>Natural</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Boolean</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="'>='">
+      <subsetting>IntegerFunctions::'>='</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>Natural</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="1">
+        <typings>Natural</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Boolean</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="max">
+      <subsetting>IntegerFunctions::max</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>Natural</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="1">
+        <typings>Natural</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Natural</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="min">
+      <subsetting>IntegerFunctions::min</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>Natural</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="1">
+        <typings>Natural</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Natural</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="'=='">
+      <subsetting>IntegerFunctions::'=='</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="0" MultiHigh="1">
+        <typings>Natural</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="y" MultiLow="0" MultiHigh="1">
+        <typings>Natural</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Boolean</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="ToString">
+      <subsetting>IntegerFunctions::ToString</subsetting>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>Natural</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>String</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="ToNatural">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x" MultiLow="1">
+        <typings>String</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Natural</typings>
+      </elements>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

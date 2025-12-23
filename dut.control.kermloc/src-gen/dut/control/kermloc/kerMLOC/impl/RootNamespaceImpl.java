@@ -3,8 +3,8 @@
  */
 package dut.control.kermloc.kerMLOC.impl;
 
-import dut.control.kermloc.kerMLOC.GeneralBodyElements;
 import dut.control.kermloc.kerMLOC.KerMLOCPackage;
+import dut.control.kermloc.kerMLOC.NamespaceBodyElement;
 import dut.control.kermloc.kerMLOC.RootNamespace;
 
 import java.util.Collection;
@@ -44,7 +44,7 @@ public class RootNamespaceImpl extends MinimalEObjectImpl.Container implements R
    * @generated
    * @ordered
    */
-  protected EList<GeneralBodyElements> elements;
+  protected EList<NamespaceBodyElement> elements;
 
   /**
    * <!-- begin-user-doc -->
@@ -64,7 +64,7 @@ public class RootNamespaceImpl extends MinimalEObjectImpl.Container implements R
   @Override
   protected EClass eStaticClass()
   {
-    return KerMLOCPackage.Literals.ROOT_NAMESPACE;
+    return KerMLOCPackage.eINSTANCE.getRootNamespace();
   }
 
   /**
@@ -73,11 +73,11 @@ public class RootNamespaceImpl extends MinimalEObjectImpl.Container implements R
    * @generated
    */
   @Override
-  public EList<GeneralBodyElements> getElements()
+  public EList<NamespaceBodyElement> getElements()
   {
     if (elements == null)
     {
-      elements = new EObjectContainmentEList<GeneralBodyElements>(GeneralBodyElements.class, this, KerMLOCPackage.ROOT_NAMESPACE__ELEMENTS);
+      elements = new EObjectContainmentEList<NamespaceBodyElement>(NamespaceBodyElement.class, this, KerMLOCPackage.ROOT_NAMESPACE__ELEMENTS);
     }
     return elements;
   }
@@ -127,7 +127,7 @@ public class RootNamespaceImpl extends MinimalEObjectImpl.Container implements R
     {
       case KerMLOCPackage.ROOT_NAMESPACE__ELEMENTS:
         getElements().clear();
-        getElements().addAll((Collection<? extends GeneralBodyElements>)newValue);
+        getElements().addAll((Collection<? extends NamespaceBodyElement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

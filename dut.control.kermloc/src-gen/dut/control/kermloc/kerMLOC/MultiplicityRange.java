@@ -7,22 +7,22 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Multiplicity Bounds</b></em>'.
+ * A representation of the model object '<em><b>Multiplicity Range</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dut.control.kermloc.kerMLOC.MultiplicityBounds#getMultiLow <em>Multi Low</em>}</li>
- *   <li>{@link dut.control.kermloc.kerMLOC.MultiplicityBounds#getMultiHigh <em>Multi High</em>}</li>
+ *   <li>{@link dut.control.kermloc.kerMLOC.MultiplicityRange#getMultiLow <em>Multi Low</em>}</li>
+ *   <li>{@link dut.control.kermloc.kerMLOC.MultiplicityRange#getMultiHigh <em>Multi High</em>}</li>
  * </ul>
  *
- * @see dut.control.kermloc.kerMLOC.KerMLOCPackage#getMultiplicityBounds()
+ * @see dut.control.kermloc.kerMLOC.KerMLOCPackage#getMultiplicityRange()
  * @model
  * @generated
  */
-public interface MultiplicityBounds extends EObject
+public interface MultiplicityRange extends EObject
 {
   /**
    * Returns the value of the '<em><b>Multi Low</b></em>' attribute.
@@ -30,14 +30,14 @@ public interface MultiplicityBounds extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Multi Low</em>' attribute.
    * @see #setMultiLow(String)
-   * @see dut.control.kermloc.kerMLOC.KerMLOCPackage#getMultiplicityBounds_MultiLow()
+   * @see dut.control.kermloc.kerMLOC.KerMLOCPackage#getMultiplicityRange_MultiLow()
    * @model
    * @generated
    */
   String getMultiLow();
 
   /**
-   * Sets the value of the '{@link dut.control.kermloc.kerMLOC.MultiplicityBounds#getMultiLow <em>Multi Low</em>}' attribute.
+   * Sets the value of the '{@link dut.control.kermloc.kerMLOC.MultiplicityRange#getMultiLow <em>Multi Low</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Multi Low</em>' attribute.
@@ -52,14 +52,14 @@ public interface MultiplicityBounds extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Multi High</em>' attribute.
    * @see #setMultiHigh(String)
-   * @see dut.control.kermloc.kerMLOC.KerMLOCPackage#getMultiplicityBounds_MultiHigh()
+   * @see dut.control.kermloc.kerMLOC.KerMLOCPackage#getMultiplicityRange_MultiHigh()
    * @model
    * @generated
    */
   String getMultiHigh();
 
   /**
-   * Sets the value of the '{@link dut.control.kermloc.kerMLOC.MultiplicityBounds#getMultiHigh <em>Multi High</em>}' attribute.
+   * Sets the value of the '{@link dut.control.kermloc.kerMLOC.MultiplicityRange#getMultiHigh <em>Multi High</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Multi High</em>' attribute.
@@ -68,4 +68,4 @@ public interface MultiplicityBounds extends EObject
    */
   void setMultiHigh(String value);
 
-} // MultiplicityBounds
+} // MultiplicityRange

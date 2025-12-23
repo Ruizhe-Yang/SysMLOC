@@ -59,7 +59,7 @@ public class DifferencingPartImpl extends MinimalEObjectImpl.Container implement
   @Override
   protected EClass eStaticClass()
   {
-    return KerMLOCPackage.Literals.DIFFERENCING_PART;
+    return KerMLOCPackage.eINSTANCE.getDifferencingPart();
   }
 
   /**

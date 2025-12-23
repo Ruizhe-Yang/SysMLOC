@@ -18963,11 +18963,11 @@ ruleExponentiationExpression returns [AntlrDatatypeRuleToken current=new AntlrDa
 				}
 			)
 			{
-				newCompositeNode(grammarAccess.getExponentiationExpressionAccess().getUnaryExpressionParserRuleCall_1_1());
+				newCompositeNode(grammarAccess.getExponentiationExpressionAccess().getExponentiationExpressionParserRuleCall_1_1());
 			}
-			this_UnaryExpression_3=ruleUnaryExpression
+			this_ExponentiationExpression_3=ruleExponentiationExpression
 			{
-				$current.merge(this_UnaryExpression_3);
+				$current.merge(this_ExponentiationExpression_3);
 			}
 			{
 				afterParserOrEnumRuleCall();

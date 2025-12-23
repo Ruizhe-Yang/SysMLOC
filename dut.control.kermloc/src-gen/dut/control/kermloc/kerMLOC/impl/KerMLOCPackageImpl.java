@@ -3,71 +3,28 @@
  */
 package dut.control.kermloc.kerMLOC.impl;
 
-import dut.control.kermloc.kerMLOC.AliasElement;
-import dut.control.kermloc.kerMLOC.AnnotatingBodyElement;
-import dut.control.kermloc.kerMLOC.AnnotatingElement;
-import dut.control.kermloc.kerMLOC.Association;
-import dut.control.kermloc.kerMLOC.AssociationStructure;
-import dut.control.kermloc.kerMLOC.Behavior;
-import dut.control.kermloc.kerMLOC.Classifier;
-import dut.control.kermloc.kerMLOC.ClassifierConjugationPart;
-import dut.control.kermloc.kerMLOC.ClassifierDeclaration;
-import dut.control.kermloc.kerMLOC.CodeAnnotation;
-import dut.control.kermloc.kerMLOC.Comment;
-import dut.control.kermloc.kerMLOC.ConjugationPart;
-import dut.control.kermloc.kerMLOC.CrossFeatureChain;
-import dut.control.kermloc.kerMLOC.DataType;
-import dut.control.kermloc.kerMLOC.Dependency;
-import dut.control.kermloc.kerMLOC.DifferencingPart;
-import dut.control.kermloc.kerMLOC.DisjoiningPart;
-import dut.control.kermloc.kerMLOC.Documentation;
-import dut.control.kermloc.kerMLOC.ElementFilterElement;
-import dut.control.kermloc.kerMLOC.FeatureSpecialization;
-import dut.control.kermloc.kerMLOC.Function;
-import dut.control.kermloc.kerMLOC.FunctionBodyElement;
-import dut.control.kermloc.kerMLOC.GeneralBodyElements;
-import dut.control.kermloc.kerMLOC.Identification;
-import dut.control.kermloc.kerMLOC.ImportElement;
-import dut.control.kermloc.kerMLOC.Interaction;
-import dut.control.kermloc.kerMLOC.IntersectingPart;
 import dut.control.kermloc.kerMLOC.KerMLOCFactory;
 import dut.control.kermloc.kerMLOC.KerMLOCPackage;
-import dut.control.kermloc.kerMLOC.LibraryPackage;
-import dut.control.kermloc.kerMLOC.MemberPrefix;
-import dut.control.kermloc.kerMLOC.Metaclass;
-import dut.control.kermloc.kerMLOC.Multiplicity;
-import dut.control.kermloc.kerMLOC.MultiplicityBounds;
-import dut.control.kermloc.kerMLOC.Namespace;
-import dut.control.kermloc.kerMLOC.NamespaceBodyElement;
-import dut.control.kermloc.kerMLOC.NonFeatureElement;
-import dut.control.kermloc.kerMLOC.PackageBodyElement;
-import dut.control.kermloc.kerMLOC.Predicate;
-import dut.control.kermloc.kerMLOC.PrefixMetadata;
-import dut.control.kermloc.kerMLOC.RedefinitionFeatureChain;
-import dut.control.kermloc.kerMLOC.ReferenceFeatureChain;
-import dut.control.kermloc.kerMLOC.ResultExpression;
-import dut.control.kermloc.kerMLOC.RootNamespace;
-import dut.control.kermloc.kerMLOC.SpecializationPart;
-import dut.control.kermloc.kerMLOC.Structure;
-import dut.control.kermloc.kerMLOC.Subsets;
-import dut.control.kermloc.kerMLOC.SubsettingFeatureChain;
-import dut.control.kermloc.kerMLOC.SuperclassingPart;
-import dut.control.kermloc.kerMLOC.TextualRepresentation;
-import dut.control.kermloc.kerMLOC.Type;
-import dut.control.kermloc.kerMLOC.TypeBodyElement;
-import dut.control.kermloc.kerMLOC.TypePrefix;
-import dut.control.kermloc.kerMLOC.TypeRelationshipPart;
-import dut.control.kermloc.kerMLOC.TypingFeatureTyping;
-import dut.control.kermloc.kerMLOC.UnioningPart;
-import dut.control.kermloc.kerMLOC.VisibilityIndicator;
+
+import java.io.IOException;
+
+import java.net.URL;
+
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.common.util.WrappedException;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import org.eclipse.emf.ecore.resource.Resource;
+
+import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -77,6 +34,13 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  */
 public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
 {
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected String packageFilename = "kerMLOC.loadinitialization_ecore";
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -131,6 +95,20 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass relationshipBodyElementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass metadataBodyElementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass annotatingElementEClass = null;
 
   /**
@@ -139,6 +117,13 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
    * @generated
    */
   private EClass nonFeatureElementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass featureElementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -181,6 +166,20 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
    * @generated
    */
   private EClass textualRepresentationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass metadataFeatureEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass metadataBodyFeatureEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -313,7 +312,161 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass specializationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass conjugationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass featureTypingEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass subclassificationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass disjoiningEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass featureInvertingEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass subsettingEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass redefinitionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass typeFeaturingEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass featureEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass stepEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass expressionClassEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass booleanExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass invariantEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass connectorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass bindingConnectorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass successionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass flowEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass successionFlowEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass resultExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass crossingFeatureEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass connectorEndEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass payloadParameterEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -341,7 +494,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass multiplicityBoundsEClass = null;
+  private EClass multiplicityRangeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -474,7 +627,161 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass featureDeclarationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass featureRelationshipPartEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass chainingPartEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass invertingPartEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass typeFeaturingPartEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass featureSpecializationPartEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass multiplicityPartEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass multiplicityModifiersEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass featureConjugationPartEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass featurePrefixEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass endFeaturePrefixEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass basicFeaturePrefixEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass valuePartEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass featureValueEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass flowDeclarationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass payloadFeatureEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass payloadFeatureSpecializationPartEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass connectorDeclarationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass binaryConnectorDeclarationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass naryConnectorDeclarationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass extendedPrefixEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EEnum visibilityIndicatorEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum featureDirectionEEnum = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -510,8 +817,6 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #eNS_URI
-   * @see #createPackageContents()
-   * @see #initializePackageContents()
    * @generated
    */
   public static KerMLOCPackage init()
@@ -524,11 +829,11 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
 
     isInited = true;
 
-    // Create package meta-data objects
-    theKerMLOCPackage.createPackageContents();
+    // Load packages
+    theKerMLOCPackage.loadPackage();
 
-    // Initialize created meta-data
-    theKerMLOCPackage.initializePackageContents();
+    // Fix loaded packages
+    theKerMLOCPackage.fixPackageContents();
 
     // Mark meta-data to indicate it can't be changed
     theKerMLOCPackage.freeze();
@@ -546,6 +851,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getRootNamespace()
   {
+    if (rootNamespaceEClass == null)
+    {
+      rootNamespaceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(0);
+    }
     return rootNamespaceEClass;
   }
 
@@ -557,7 +866,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EReference getRootNamespace_Elements()
   {
-    return (EReference)rootNamespaceEClass.getEStructuralFeatures().get(0);
+        return (EReference)getRootNamespace().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -568,6 +877,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getGeneralBodyElements()
   {
+    if (generalBodyElementsEClass == null)
+    {
+      generalBodyElementsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(1);
+    }
     return generalBodyElementsEClass;
   }
 
@@ -579,6 +892,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getAnnotatingBodyElement()
   {
+    if (annotatingBodyElementEClass == null)
+    {
+      annotatingBodyElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(2);
+    }
     return annotatingBodyElementEClass;
   }
 
@@ -590,6 +907,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getPackageBodyElement()
   {
+    if (packageBodyElementEClass == null)
+    {
+      packageBodyElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(3);
+    }
     return packageBodyElementEClass;
   }
 
@@ -601,6 +922,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getTypeBodyElement()
   {
+    if (typeBodyElementEClass == null)
+    {
+      typeBodyElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(4);
+    }
     return typeBodyElementEClass;
   }
 
@@ -612,6 +937,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getNamespaceBodyElement()
   {
+    if (namespaceBodyElementEClass == null)
+    {
+      namespaceBodyElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(5);
+    }
     return namespaceBodyElementEClass;
   }
 
@@ -623,7 +952,41 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getFunctionBodyElement()
   {
+    if (functionBodyElementEClass == null)
+    {
+      functionBodyElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(6);
+    }
     return functionBodyElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getRelationshipBodyElement()
+  {
+    if (relationshipBodyElementEClass == null)
+    {
+      relationshipBodyElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(7);
+    }
+    return relationshipBodyElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getMetadataBodyElement()
+  {
+    if (metadataBodyElementEClass == null)
+    {
+      metadataBodyElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(8);
+    }
+    return metadataBodyElementEClass;
   }
 
   /**
@@ -634,6 +997,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getAnnotatingElement()
   {
+    if (annotatingElementEClass == null)
+    {
+      annotatingElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(9);
+    }
     return annotatingElementEClass;
   }
 
@@ -645,7 +1012,26 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getNonFeatureElement()
   {
+    if (nonFeatureElementEClass == null)
+    {
+      nonFeatureElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(10);
+    }
     return nonFeatureElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getFeatureElement()
+  {
+    if (featureElementEClass == null)
+    {
+      featureElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(11);
+    }
+    return featureElementEClass;
   }
 
   /**
@@ -656,6 +1042,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getPackage()
   {
+    if (packageEClass == null)
+    {
+      packageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(12);
+    }
     return packageEClass;
   }
 
@@ -667,7 +1057,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EAttribute getPackage_DeclaredName()
   {
-    return (EAttribute)packageEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getPackage().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -678,7 +1068,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EReference getPackage_Elements()
   {
-    return (EReference)packageEClass.getEStructuralFeatures().get(1);
+        return (EReference)getPackage().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -689,6 +1079,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getLibraryPackage()
   {
+    if (libraryPackageEClass == null)
+    {
+      libraryPackageEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(13);
+    }
     return libraryPackageEClass;
   }
 
@@ -700,7 +1094,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EAttribute getLibraryPackage_IsStandard()
   {
-    return (EAttribute)libraryPackageEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getLibraryPackage().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -711,7 +1105,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EAttribute getLibraryPackage_IsLibrary()
   {
-    return (EAttribute)libraryPackageEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getLibraryPackage().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -722,7 +1116,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EReference getLibraryPackage_Elements()
   {
-    return (EReference)libraryPackageEClass.getEStructuralFeatures().get(2);
+        return (EReference)getLibraryPackage().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -733,6 +1127,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getDependency()
   {
+    if (dependencyEClass == null)
+    {
+      dependencyEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(14);
+    }
     return dependencyEClass;
   }
 
@@ -744,7 +1142,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EAttribute getDependency_Client()
   {
-    return (EAttribute)dependencyEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getDependency().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -755,7 +1153,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EAttribute getDependency_Supplier()
   {
-    return (EAttribute)dependencyEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getDependency().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -766,7 +1164,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EReference getDependency_Elements()
   {
-    return (EReference)dependencyEClass.getEStructuralFeatures().get(2);
+        return (EReference)getDependency().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -777,6 +1175,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getComment()
   {
+    if (commentEClass == null)
+    {
+      commentEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(15);
+    }
     return commentEClass;
   }
 
@@ -788,7 +1190,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EAttribute getComment_AnnotatedElement()
   {
-    return (EAttribute)commentEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getComment().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -799,7 +1201,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EAttribute getComment_Locale()
   {
-    return (EAttribute)commentEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getComment().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -810,7 +1212,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EAttribute getComment_Body()
   {
-    return (EAttribute)commentEClass.getEStructuralFeatures().get(2);
+        return (EAttribute)getComment().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -821,6 +1223,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getDocumentation()
   {
+    if (documentationEClass == null)
+    {
+      documentationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(16);
+    }
     return documentationEClass;
   }
 
@@ -832,7 +1238,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EAttribute getDocumentation_Locale()
   {
-    return (EAttribute)documentationEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getDocumentation().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -843,7 +1249,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EAttribute getDocumentation_Body()
   {
-    return (EAttribute)documentationEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getDocumentation().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -854,6 +1260,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getTextualRepresentation()
   {
+    if (textualRepresentationEClass == null)
+    {
+      textualRepresentationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(17);
+    }
     return textualRepresentationEClass;
   }
 
@@ -865,7 +1275,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EAttribute getTextualRepresentation_Language()
   {
-    return (EAttribute)textualRepresentationEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getTextualRepresentation().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -876,7 +1286,92 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EAttribute getTextualRepresentation_Body()
   {
-    return (EAttribute)textualRepresentationEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getTextualRepresentation().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getMetadataFeature()
+  {
+    if (metadataFeatureEClass == null)
+    {
+      metadataFeatureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(18);
+    }
+    return metadataFeatureEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getMetadataFeature_MetadataTyping()
+  {
+        return (EAttribute)getMetadataFeature().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getMetadataFeature_AnnotatedElement()
+  {
+        return (EAttribute)getMetadataFeature().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getMetadataFeature_Elements()
+  {
+        return (EReference)getMetadataFeature().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getMetadataBodyFeature()
+  {
+    if (metadataBodyFeatureEClass == null)
+    {
+      metadataBodyFeatureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(19);
+    }
+    return metadataBodyFeatureEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getMetadataBodyFeature_RedefinedFeature()
+  {
+        return (EAttribute)getMetadataBodyFeature().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getMetadataBodyFeature_Elements()
+  {
+        return (EReference)getMetadataBodyFeature().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -887,6 +1382,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getImportElement()
   {
+    if (importElementEClass == null)
+    {
+      importElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(20);
+    }
     return importElementEClass;
   }
 
@@ -898,7 +1397,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EAttribute getImportElement_Visibility()
   {
-    return (EAttribute)importElementEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getImportElement().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -909,7 +1408,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EAttribute getImportElement_IsImportAll()
   {
-    return (EAttribute)importElementEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getImportElement().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -920,7 +1419,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EAttribute getImportElement_DeclaredName()
   {
-    return (EAttribute)importElementEClass.getEStructuralFeatures().get(2);
+        return (EAttribute)getImportElement().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -931,7 +1430,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EAttribute getImportElement_IsNamespace()
   {
-    return (EAttribute)importElementEClass.getEStructuralFeatures().get(3);
+        return (EAttribute)getImportElement().getEStructuralFeatures().get(3);
   }
 
   /**
@@ -942,7 +1441,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EAttribute getImportElement_IsRecursive()
   {
-    return (EAttribute)importElementEClass.getEStructuralFeatures().get(4);
+        return (EAttribute)getImportElement().getEStructuralFeatures().get(4);
   }
 
   /**
@@ -953,7 +1452,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EAttribute getImportElement_FilterPackageExpression()
   {
-    return (EAttribute)importElementEClass.getEStructuralFeatures().get(5);
+        return (EAttribute)getImportElement().getEStructuralFeatures().get(5);
   }
 
   /**
@@ -964,7 +1463,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EReference getImportElement_Elements()
   {
-    return (EReference)importElementEClass.getEStructuralFeatures().get(6);
+        return (EReference)getImportElement().getEStructuralFeatures().get(6);
   }
 
   /**
@@ -975,6 +1474,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getCodeAnnotation()
   {
+    if (codeAnnotationEClass == null)
+    {
+      codeAnnotationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(21);
+    }
     return codeAnnotationEClass;
   }
 
@@ -986,7 +1489,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EAttribute getCodeAnnotation_Body()
   {
-    return (EAttribute)codeAnnotationEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getCodeAnnotation().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -997,6 +1500,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getAliasElement()
   {
+    if (aliasElementEClass == null)
+    {
+      aliasElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(22);
+    }
     return aliasElementEClass;
   }
 
@@ -1008,7 +1515,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EAttribute getAliasElement_MemberShortName()
   {
-    return (EAttribute)aliasElementEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getAliasElement().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1019,7 +1526,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EAttribute getAliasElement_MemberName()
   {
-    return (EAttribute)aliasElementEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getAliasElement().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1030,7 +1537,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EAttribute getAliasElement_MemberElement()
   {
-    return (EAttribute)aliasElementEClass.getEStructuralFeatures().get(2);
+        return (EAttribute)getAliasElement().getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1041,7 +1548,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EReference getAliasElement_Elements()
   {
-    return (EReference)aliasElementEClass.getEStructuralFeatures().get(3);
+        return (EReference)getAliasElement().getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1052,6 +1559,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getElementFilterElement()
   {
+    if (elementFilterElementEClass == null)
+    {
+      elementFilterElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(23);
+    }
     return elementFilterElementEClass;
   }
 
@@ -1063,7 +1574,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EAttribute getElementFilterElement_FilterExpression()
   {
-    return (EAttribute)elementFilterElementEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getElementFilterElement().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1074,6 +1585,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getMultiplicity()
   {
+    if (multiplicityEClass == null)
+    {
+      multiplicityEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(24);
+    }
     return multiplicityEClass;
   }
 
@@ -1085,7 +1600,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EReference getMultiplicity_Elements()
   {
-    return (EReference)multiplicityEClass.getEStructuralFeatures().get(0);
+        return (EReference)getMultiplicity().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1096,6 +1611,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getNamespace()
   {
+    if (namespaceEClass == null)
+    {
+      namespaceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(25);
+    }
     return namespaceEClass;
   }
 
@@ -1107,7 +1626,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EAttribute getNamespace_IsNamespace()
   {
-    return (EAttribute)namespaceEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getNamespace().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1118,7 +1637,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EReference getNamespace_Elements()
   {
-    return (EReference)namespaceEClass.getEStructuralFeatures().get(1);
+        return (EReference)getNamespace().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1129,6 +1648,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getType()
   {
+    if (typeEClass == null)
+    {
+      typeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(26);
+    }
     return typeEClass;
   }
 
@@ -1140,7 +1663,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EAttribute getType_IsSufficient()
   {
-    return (EAttribute)typeEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getType().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1151,7 +1674,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EReference getType_Elements()
   {
-    return (EReference)typeEClass.getEStructuralFeatures().get(1);
+        return (EReference)getType().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1162,6 +1685,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getClassifier()
   {
+    if (classifierEClass == null)
+    {
+      classifierEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(27);
+    }
     return classifierEClass;
   }
 
@@ -1173,7 +1700,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EReference getClassifier_Elements()
   {
-    return (EReference)classifierEClass.getEStructuralFeatures().get(0);
+        return (EReference)getClassifier().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1184,6 +1711,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getClass_()
   {
+    if (classEClass == null)
+    {
+      classEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(28);
+    }
     return classEClass;
   }
 
@@ -1195,7 +1726,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EReference getClass_Elements()
   {
-    return (EReference)classEClass.getEStructuralFeatures().get(0);
+        return (EReference)getClass_().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1206,6 +1737,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getStructure()
   {
+    if (structureEClass == null)
+    {
+      structureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(29);
+    }
     return structureEClass;
   }
 
@@ -1217,7 +1752,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EReference getStructure_Elements()
   {
-    return (EReference)structureEClass.getEStructuralFeatures().get(0);
+        return (EReference)getStructure().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1228,6 +1763,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getMetaclass()
   {
+    if (metaclassEClass == null)
+    {
+      metaclassEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(30);
+    }
     return metaclassEClass;
   }
 
@@ -1239,7 +1778,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EReference getMetaclass_Elements()
   {
-    return (EReference)metaclassEClass.getEStructuralFeatures().get(0);
+        return (EReference)getMetaclass().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1250,6 +1789,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getDataType()
   {
+    if (dataTypeEClass == null)
+    {
+      dataTypeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(31);
+    }
     return dataTypeEClass;
   }
 
@@ -1261,7 +1804,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EReference getDataType_Elements()
   {
-    return (EReference)dataTypeEClass.getEStructuralFeatures().get(0);
+        return (EReference)getDataType().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1272,6 +1815,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getAssociation()
   {
+    if (associationEClass == null)
+    {
+      associationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(32);
+    }
     return associationEClass;
   }
 
@@ -1283,7 +1830,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EReference getAssociation_Elements()
   {
-    return (EReference)associationEClass.getEStructuralFeatures().get(0);
+        return (EReference)getAssociation().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1294,6 +1841,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getAssociationStructure()
   {
+    if (associationStructureEClass == null)
+    {
+      associationStructureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(33);
+    }
     return associationStructureEClass;
   }
 
@@ -1305,7 +1856,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EReference getAssociationStructure_Elements()
   {
-    return (EReference)associationStructureEClass.getEStructuralFeatures().get(0);
+        return (EReference)getAssociationStructure().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1316,6 +1867,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getInteraction()
   {
+    if (interactionEClass == null)
+    {
+      interactionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(34);
+    }
     return interactionEClass;
   }
 
@@ -1327,7 +1882,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EReference getInteraction_Elements()
   {
-    return (EReference)interactionEClass.getEStructuralFeatures().get(0);
+        return (EReference)getInteraction().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1338,6 +1893,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getBehavior()
   {
+    if (behaviorEClass == null)
+    {
+      behaviorEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(35);
+    }
     return behaviorEClass;
   }
 
@@ -1349,7 +1908,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EReference getBehavior_Elements()
   {
-    return (EReference)behaviorEClass.getEStructuralFeatures().get(0);
+        return (EReference)getBehavior().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1360,6 +1919,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getFunction()
   {
+    if (functionEClass == null)
+    {
+      functionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(36);
+    }
     return functionEClass;
   }
 
@@ -1371,7 +1934,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EReference getFunction_Elements()
   {
-    return (EReference)functionEClass.getEStructuralFeatures().get(0);
+        return (EReference)getFunction().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1382,7 +1945,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EReference getFunction_ResultExpressionParameter()
   {
-    return (EReference)functionEClass.getEStructuralFeatures().get(1);
+        return (EReference)getFunction().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1393,6 +1956,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getPredicate()
   {
+    if (predicateEClass == null)
+    {
+      predicateEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(37);
+    }
     return predicateEClass;
   }
 
@@ -1404,7 +1971,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EReference getPredicate_Elements()
   {
-    return (EReference)predicateEClass.getEStructuralFeatures().get(0);
+        return (EReference)getPredicate().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1415,7 +1982,886 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EReference getPredicate_ResultExpressionParameter()
   {
-    return (EReference)predicateEClass.getEStructuralFeatures().get(1);
+        return (EReference)getPredicate().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSpecialization()
+  {
+    if (specializationEClass == null)
+    {
+      specializationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(38);
+    }
+    return specializationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSpecialization_IsSpecialization()
+  {
+        return (EAttribute)getSpecialization().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSpecialization_Specific()
+  {
+        return (EAttribute)getSpecialization().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSpecialization_General()
+  {
+        return (EAttribute)getSpecialization().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSpecialization_Elements()
+  {
+        return (EReference)getSpecialization().getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getConjugation()
+  {
+    if (conjugationEClass == null)
+    {
+      conjugationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(39);
+    }
+    return conjugationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getConjugation_IsConjugation()
+  {
+        return (EAttribute)getConjugation().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getConjugation_ConjugatedType()
+  {
+        return (EAttribute)getConjugation().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getConjugation_OriginalType()
+  {
+        return (EAttribute)getConjugation().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getConjugation_Elements()
+  {
+        return (EReference)getConjugation().getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getFeatureTyping()
+  {
+    if (featureTypingEClass == null)
+    {
+      featureTypingEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(40);
+    }
+    return featureTypingEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getFeatureTyping_IsSpecialization()
+  {
+        return (EAttribute)getFeatureTyping().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getFeatureTyping_TypedFeature()
+  {
+        return (EAttribute)getFeatureTyping().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getFeatureTyping_TypeName()
+  {
+        return (EAttribute)getFeatureTyping().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getFeatureTyping_Elements()
+  {
+        return (EReference)getFeatureTyping().getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSubclassification()
+  {
+    if (subclassificationEClass == null)
+    {
+      subclassificationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(41);
+    }
+    return subclassificationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSubclassification_IsSpecialization()
+  {
+        return (EAttribute)getSubclassification().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSubclassification_Subclassifier()
+  {
+        return (EAttribute)getSubclassification().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSubclassification_Superclassifier()
+  {
+        return (EAttribute)getSubclassification().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSubclassification_Elements()
+  {
+        return (EReference)getSubclassification().getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getDisjoining()
+  {
+    if (disjoiningEClass == null)
+    {
+      disjoiningEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(42);
+    }
+    return disjoiningEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getDisjoining_IsDisjoining()
+  {
+        return (EAttribute)getDisjoining().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getDisjoining_TypeDisjoined()
+  {
+        return (EAttribute)getDisjoining().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getDisjoining_DisjoiningType()
+  {
+        return (EAttribute)getDisjoining().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getDisjoining_Elements()
+  {
+        return (EReference)getDisjoining().getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getFeatureInverting()
+  {
+    if (featureInvertingEClass == null)
+    {
+      featureInvertingEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(43);
+    }
+    return featureInvertingEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getFeatureInverting_IsFeatureInverting()
+  {
+        return (EAttribute)getFeatureInverting().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getFeatureInverting_FeatureInverted()
+  {
+        return (EAttribute)getFeatureInverting().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getFeatureInverting_InvertingFeature()
+  {
+        return (EAttribute)getFeatureInverting().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getFeatureInverting_Elements()
+  {
+        return (EReference)getFeatureInverting().getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSubsetting()
+  {
+    if (subsettingEClass == null)
+    {
+      subsettingEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(44);
+    }
+    return subsettingEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSubsetting_IsSpecialization()
+  {
+        return (EAttribute)getSubsetting().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSubsetting_SubsettingFeature()
+  {
+        return (EAttribute)getSubsetting().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSubsetting_SubsettedFeature()
+  {
+        return (EAttribute)getSubsetting().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSubsetting_Elements()
+  {
+        return (EReference)getSubsetting().getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getRedefinition()
+  {
+    if (redefinitionEClass == null)
+    {
+      redefinitionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(45);
+    }
+    return redefinitionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getRedefinition_IsSpecialization()
+  {
+        return (EAttribute)getRedefinition().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getRedefinition_RedefiningFeature()
+  {
+        return (EAttribute)getRedefinition().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getRedefinition_RedefinedFeature()
+  {
+        return (EAttribute)getRedefinition().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getRedefinition_Elements()
+  {
+        return (EReference)getRedefinition().getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getTypeFeaturing()
+  {
+    if (typeFeaturingEClass == null)
+    {
+      typeFeaturingEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(46);
+    }
+    return typeFeaturingEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTypeFeaturing_IsOf()
+  {
+        return (EAttribute)getTypeFeaturing().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTypeFeaturing_FeatureOfType()
+  {
+        return (EAttribute)getTypeFeaturing().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTypeFeaturing_FeaturingType()
+  {
+        return (EAttribute)getTypeFeaturing().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getTypeFeaturing_Elements()
+  {
+        return (EReference)getTypeFeaturing().getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getFeature()
+  {
+    if (featureEClass == null)
+    {
+      featureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(47);
+    }
+    return featureEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getFeature_Elements()
+  {
+        return (EReference)getFeature().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getStep()
+  {
+    if (stepEClass == null)
+    {
+      stepEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(48);
+    }
+    return stepEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getStep_Elements()
+  {
+        return (EReference)getStep().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getExpressionClass()
+  {
+    if (expressionClassEClass == null)
+    {
+      expressionClassEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(49);
+    }
+    return expressionClassEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getExpressionClass_Elements()
+  {
+        return (EReference)getExpressionClass().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getExpressionClass_ResultExpressionParameter()
+  {
+        return (EReference)getExpressionClass().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getBooleanExpression()
+  {
+    if (booleanExpressionEClass == null)
+    {
+      booleanExpressionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(50);
+    }
+    return booleanExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getBooleanExpression_Elements()
+  {
+        return (EReference)getBooleanExpression().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getBooleanExpression_ResultExpressionParameter()
+  {
+        return (EReference)getBooleanExpression().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getInvariant()
+  {
+    if (invariantEClass == null)
+    {
+      invariantEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(51);
+    }
+    return invariantEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getInvariant_IsNegated()
+  {
+        return (EAttribute)getInvariant().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getInvariant_Elements()
+  {
+        return (EReference)getInvariant().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getInvariant_ResultExpressionParameter()
+  {
+        return (EReference)getInvariant().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getConnector()
+  {
+    if (connectorEClass == null)
+    {
+      connectorEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(52);
+    }
+    return connectorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getConnector_Elements()
+  {
+        return (EReference)getConnector().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getBindingConnector()
+  {
+    if (bindingConnectorEClass == null)
+    {
+      bindingConnectorEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(53);
+    }
+    return bindingConnectorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getBindingConnector_IsOf()
+  {
+        return (EAttribute)getBindingConnector().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getBindingConnector_ConnectorPart()
+  {
+        return (EReference)getBindingConnector().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getBindingConnector_Elements()
+  {
+        return (EReference)getBindingConnector().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSuccession()
+  {
+    if (successionEClass == null)
+    {
+      successionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(54);
+    }
+    return successionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSuccession_IsFirst()
+  {
+        return (EAttribute)getSuccession().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSuccession_ConnectorPart()
+  {
+        return (EReference)getSuccession().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSuccession_Elements()
+  {
+        return (EReference)getSuccession().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getFlow()
+  {
+    if (flowEClass == null)
+    {
+      flowEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(55);
+    }
+    return flowEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getFlow_Elements()
+  {
+        return (EReference)getFlow().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSuccessionFlow()
+  {
+    if (successionFlowEClass == null)
+    {
+      successionFlowEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(56);
+    }
+    return successionFlowEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSuccessionFlow_Elements()
+  {
+        return (EReference)getSuccessionFlow().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1426,6 +2872,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getResultExpression()
   {
+    if (resultExpressionEClass == null)
+    {
+      resultExpressionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(57);
+    }
     return resultExpressionEClass;
   }
 
@@ -1437,7 +2887,74 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EAttribute getResultExpression_ResultExpression()
   {
-    return (EAttribute)resultExpressionEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getResultExpression().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getCrossingFeature()
+  {
+    if (crossingFeatureEClass == null)
+    {
+      crossingFeatureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(58);
+    }
+    return crossingFeatureEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getConnectorEnd()
+  {
+    if (connectorEndEClass == null)
+    {
+      connectorEndEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(59);
+    }
+    return connectorEndEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getConnectorEnd_DelcaredName()
+  {
+        return (EAttribute)getConnectorEnd().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getConnectorEnd_RefElement()
+  {
+        return (EAttribute)getConnectorEnd().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getPayloadParameter()
+  {
+    if (payloadParameterEClass == null)
+    {
+      payloadParameterEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(60);
+    }
+    return payloadParameterEClass;
   }
 
   /**
@@ -1448,6 +2965,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getIdentification()
   {
+    if (identificationEClass == null)
+    {
+      identificationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(61);
+    }
     return identificationEClass;
   }
 
@@ -1459,7 +2980,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EAttribute getIdentification_DeclaredShortName()
   {
-    return (EAttribute)identificationEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getIdentification().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1470,7 +2991,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EAttribute getIdentification_DeclaredName()
   {
-    return (EAttribute)identificationEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getIdentification().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1481,6 +3002,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getMemberPrefix()
   {
+    if (memberPrefixEClass == null)
+    {
+      memberPrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(62);
+    }
     return memberPrefixEClass;
   }
 
@@ -1492,7 +3017,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EAttribute getMemberPrefix_Visibility()
   {
-    return (EAttribute)memberPrefixEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getMemberPrefix().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1503,7 +3028,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EAttribute getMemberPrefix_IsVariant()
   {
-    return (EAttribute)memberPrefixEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getMemberPrefix().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1514,6 +3039,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getPrefixMetadata()
   {
+    if (prefixMetadataEClass == null)
+    {
+      prefixMetadataEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(63);
+    }
     return prefixMetadataEClass;
   }
 
@@ -1525,7 +3054,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EAttribute getPrefixMetadata_PrefixMetadataExtension()
   {
-    return (EAttribute)prefixMetadataEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getPrefixMetadata().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1534,9 +3063,13 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
    * @generated
    */
   @Override
-  public EClass getMultiplicityBounds()
+  public EClass getMultiplicityRange()
   {
-    return multiplicityBoundsEClass;
+    if (multiplicityRangeEClass == null)
+    {
+      multiplicityRangeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(64);
+    }
+    return multiplicityRangeEClass;
   }
 
   /**
@@ -1545,9 +3078,9 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
    * @generated
    */
   @Override
-  public EAttribute getMultiplicityBounds_MultiLow()
+  public EAttribute getMultiplicityRange_MultiLow()
   {
-    return (EAttribute)multiplicityBoundsEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getMultiplicityRange().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1556,9 +3089,9 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
    * @generated
    */
   @Override
-  public EAttribute getMultiplicityBounds_MultiHigh()
+  public EAttribute getMultiplicityRange_MultiHigh()
   {
-    return (EAttribute)multiplicityBoundsEClass.getEStructuralFeatures().get(1);
+        return (EAttribute)getMultiplicityRange().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1569,6 +3102,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getFeatureSpecialization()
   {
+    if (featureSpecializationEClass == null)
+    {
+      featureSpecializationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(65);
+    }
     return featureSpecializationEClass;
   }
 
@@ -1580,6 +3117,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getTypingFeatureTyping()
   {
+    if (typingFeatureTypingEClass == null)
+    {
+      typingFeatureTypingEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(66);
+    }
     return typingFeatureTypingEClass;
   }
 
@@ -1591,7 +3132,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EAttribute getTypingFeatureTyping_Typings()
   {
-    return (EAttribute)typingFeatureTypingEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getTypingFeatureTyping().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1602,6 +3143,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getSubsettingFeatureChain()
   {
+    if (subsettingFeatureChainEClass == null)
+    {
+      subsettingFeatureChainEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(67);
+    }
     return subsettingFeatureChainEClass;
   }
 
@@ -1613,7 +3158,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EAttribute getSubsettingFeatureChain_Subsetting()
   {
-    return (EAttribute)subsettingFeatureChainEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getSubsettingFeatureChain().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1624,6 +3169,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getReferenceFeatureChain()
   {
+    if (referenceFeatureChainEClass == null)
+    {
+      referenceFeatureChainEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(68);
+    }
     return referenceFeatureChainEClass;
   }
 
@@ -1635,7 +3184,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EAttribute getReferenceFeatureChain_References()
   {
-    return (EAttribute)referenceFeatureChainEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getReferenceFeatureChain().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1646,6 +3195,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getCrossFeatureChain()
   {
+    if (crossFeatureChainEClass == null)
+    {
+      crossFeatureChainEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(69);
+    }
     return crossFeatureChainEClass;
   }
 
@@ -1657,7 +3210,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EAttribute getCrossFeatureChain_Crosses()
   {
-    return (EAttribute)crossFeatureChainEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getCrossFeatureChain().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1668,6 +3221,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getRedefinitionFeatureChain()
   {
+    if (redefinitionFeatureChainEClass == null)
+    {
+      redefinitionFeatureChainEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(70);
+    }
     return redefinitionFeatureChainEClass;
   }
 
@@ -1679,7 +3236,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EAttribute getRedefinitionFeatureChain_Redefinitions()
   {
-    return (EAttribute)redefinitionFeatureChainEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getRedefinitionFeatureChain().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1690,6 +3247,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getSubsets()
   {
+    if (subsetsEClass == null)
+    {
+      subsetsEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(71);
+    }
     return subsetsEClass;
   }
 
@@ -1701,6 +3262,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getTypePrefix()
   {
+    if (typePrefixEClass == null)
+    {
+      typePrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(72);
+    }
     return typePrefixEClass;
   }
 
@@ -1712,7 +3277,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EAttribute getTypePrefix_IsAbstract()
   {
-    return (EAttribute)typePrefixEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getTypePrefix().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1723,6 +3288,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getSpecializationPart()
   {
+    if (specializationPartEClass == null)
+    {
+      specializationPartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(73);
+    }
     return specializationPartEClass;
   }
 
@@ -1734,6 +3303,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getSuperclassingPart()
   {
+    if (superclassingPartEClass == null)
+    {
+      superclassingPartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(74);
+    }
     return superclassingPartEClass;
   }
 
@@ -1745,6 +3318,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getClassifierConjugationPart()
   {
+    if (classifierConjugationPartEClass == null)
+    {
+      classifierConjugationPartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(75);
+    }
     return classifierConjugationPartEClass;
   }
 
@@ -1756,7 +3333,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EAttribute getClassifierConjugationPart_OriginalType()
   {
-    return (EAttribute)classifierConjugationPartEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getClassifierConjugationPart().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1767,6 +3344,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getConjugationPart()
   {
+    if (conjugationPartEClass == null)
+    {
+      conjugationPartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(76);
+    }
     return conjugationPartEClass;
   }
 
@@ -1778,7 +3359,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EAttribute getConjugationPart_OriginalType()
   {
-    return (EAttribute)conjugationPartEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getConjugationPart().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1789,6 +3370,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getTypeRelationshipPart()
   {
+    if (typeRelationshipPartEClass == null)
+    {
+      typeRelationshipPartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(77);
+    }
     return typeRelationshipPartEClass;
   }
 
@@ -1800,6 +3385,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getDisjoiningPart()
   {
+    if (disjoiningPartEClass == null)
+    {
+      disjoiningPartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(78);
+    }
     return disjoiningPartEClass;
   }
 
@@ -1811,7 +3400,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EAttribute getDisjoiningPart_Disjoining()
   {
-    return (EAttribute)disjoiningPartEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getDisjoiningPart().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1822,6 +3411,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getUnioningPart()
   {
+    if (unioningPartEClass == null)
+    {
+      unioningPartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(79);
+    }
     return unioningPartEClass;
   }
 
@@ -1833,7 +3426,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EAttribute getUnioningPart_Unioning()
   {
-    return (EAttribute)unioningPartEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getUnioningPart().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1844,6 +3437,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getIntersectingPart()
   {
+    if (intersectingPartEClass == null)
+    {
+      intersectingPartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(80);
+    }
     return intersectingPartEClass;
   }
 
@@ -1855,7 +3452,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EAttribute getIntersectingPart_Intersecting()
   {
-    return (EAttribute)intersectingPartEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getIntersectingPart().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1866,6 +3463,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getDifferencingPart()
   {
+    if (differencingPartEClass == null)
+    {
+      differencingPartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(81);
+    }
     return differencingPartEClass;
   }
 
@@ -1877,7 +3478,7 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EAttribute getDifferencingPart_Differencing()
   {
-    return (EAttribute)differencingPartEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getDifferencingPart().getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1888,6 +3489,10 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EClass getClassifierDeclaration()
   {
+    if (classifierDeclarationEClass == null)
+    {
+      classifierDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(82);
+    }
     return classifierDeclarationEClass;
   }
 
@@ -1899,7 +3504,619 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EAttribute getClassifierDeclaration_IsSufficient()
   {
-    return (EAttribute)classifierDeclarationEClass.getEStructuralFeatures().get(0);
+        return (EAttribute)getClassifierDeclaration().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getFeatureDeclaration()
+  {
+    if (featureDeclarationEClass == null)
+    {
+      featureDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(83);
+    }
+    return featureDeclarationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getFeatureDeclaration_IsSufficient()
+  {
+        return (EAttribute)getFeatureDeclaration().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getFeatureRelationshipPart()
+  {
+    if (featureRelationshipPartEClass == null)
+    {
+      featureRelationshipPartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(84);
+    }
+    return featureRelationshipPartEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getChainingPart()
+  {
+    if (chainingPartEClass == null)
+    {
+      chainingPartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(85);
+    }
+    return chainingPartEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getChainingPart_ChainingFeature()
+  {
+        return (EAttribute)getChainingPart().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getInvertingPart()
+  {
+    if (invertingPartEClass == null)
+    {
+      invertingPartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(86);
+    }
+    return invertingPartEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getInvertingPart_InvertingFeature()
+  {
+        return (EAttribute)getInvertingPart().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getTypeFeaturingPart()
+  {
+    if (typeFeaturingPartEClass == null)
+    {
+      typeFeaturingPartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(87);
+    }
+    return typeFeaturingPartEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getTypeFeaturingPart_FeaturingType()
+  {
+        return (EAttribute)getTypeFeaturingPart().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getFeatureSpecializationPart()
+  {
+    if (featureSpecializationPartEClass == null)
+    {
+      featureSpecializationPartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(88);
+    }
+    return featureSpecializationPartEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getMultiplicityPart()
+  {
+    if (multiplicityPartEClass == null)
+    {
+      multiplicityPartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(89);
+    }
+    return multiplicityPartEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getMultiplicityModifiers()
+  {
+    if (multiplicityModifiersEClass == null)
+    {
+      multiplicityModifiersEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(90);
+    }
+    return multiplicityModifiersEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getMultiplicityModifiers_IsOrdered()
+  {
+        return (EAttribute)getMultiplicityModifiers().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getMultiplicityModifiers_IsNonunique()
+  {
+        return (EAttribute)getMultiplicityModifiers().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getFeatureConjugationPart()
+  {
+    if (featureConjugationPartEClass == null)
+    {
+      featureConjugationPartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(91);
+    }
+    return featureConjugationPartEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getFeatureConjugationPart_OriginalType()
+  {
+        return (EAttribute)getFeatureConjugationPart().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getFeaturePrefix()
+  {
+    if (featurePrefixEClass == null)
+    {
+      featurePrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(92);
+    }
+    return featurePrefixEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getFeaturePrefix_CrossingFeature()
+  {
+        return (EReference)getFeaturePrefix().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getEndFeaturePrefix()
+  {
+    if (endFeaturePrefixEClass == null)
+    {
+      endFeaturePrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(93);
+    }
+    return endFeaturePrefixEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getEndFeaturePrefix_IsConstantEnd()
+  {
+        return (EAttribute)getEndFeaturePrefix().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getEndFeaturePrefix_IsEnd()
+  {
+        return (EAttribute)getEndFeaturePrefix().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getBasicFeaturePrefix()
+  {
+    if (basicFeaturePrefixEClass == null)
+    {
+      basicFeaturePrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(94);
+    }
+    return basicFeaturePrefixEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getBasicFeaturePrefix_Direction()
+  {
+        return (EAttribute)getBasicFeaturePrefix().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getBasicFeaturePrefix_IsDerived()
+  {
+        return (EAttribute)getBasicFeaturePrefix().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getBasicFeaturePrefix_IsAbstract()
+  {
+        return (EAttribute)getBasicFeaturePrefix().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getBasicFeaturePrefix_IsComposite()
+  {
+        return (EAttribute)getBasicFeaturePrefix().getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getBasicFeaturePrefix_IsPortion()
+  {
+        return (EAttribute)getBasicFeaturePrefix().getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getBasicFeaturePrefix_IsVariable()
+  {
+        return (EAttribute)getBasicFeaturePrefix().getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getBasicFeaturePrefix_IsConstantBasic()
+  {
+        return (EAttribute)getBasicFeaturePrefix().getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getValuePart()
+  {
+    if (valuePartEClass == null)
+    {
+      valuePartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(95);
+    }
+    return valuePartEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getFeatureValue()
+  {
+    if (featureValueEClass == null)
+    {
+      featureValueEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(96);
+    }
+    return featureValueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getFeatureValue_IsInitial()
+  {
+        return (EAttribute)getFeatureValue().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getFeatureValue_IsDefault()
+  {
+        return (EAttribute)getFeatureValue().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getFeatureValue_ValuePart()
+  {
+        return (EAttribute)getFeatureValue().getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getFlowDeclaration()
+  {
+    if (flowDeclarationEClass == null)
+    {
+      flowDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(97);
+    }
+    return flowDeclarationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getFlowDeclaration_Payload()
+  {
+        return (EReference)getFlowDeclaration().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getFlowDeclaration_FlowEnd()
+  {
+        return (EAttribute)getFlowDeclaration().getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getPayloadFeature()
+  {
+    if (payloadFeatureEClass == null)
+    {
+      payloadFeatureEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(98);
+    }
+    return payloadFeatureEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getPayloadFeature_PayloadFeatureElement()
+  {
+        return (EAttribute)getPayloadFeature().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getPayloadFeatureSpecializationPart()
+  {
+    if (payloadFeatureSpecializationPartEClass == null)
+    {
+      payloadFeatureSpecializationPartEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(99);
+    }
+    return payloadFeatureSpecializationPartEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getConnectorDeclaration()
+  {
+    if (connectorDeclarationEClass == null)
+    {
+      connectorDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(100);
+    }
+    return connectorDeclarationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getBinaryConnectorDeclaration()
+  {
+    if (binaryConnectorDeclarationEClass == null)
+    {
+      binaryConnectorDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(101);
+    }
+    return binaryConnectorDeclarationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getBinaryConnectorDeclaration_ConnectorPartBinary()
+  {
+        return (EReference)getBinaryConnectorDeclaration().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getNaryConnectorDeclaration()
+  {
+    if (naryConnectorDeclarationEClass == null)
+    {
+      naryConnectorDeclarationEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(102);
+    }
+    return naryConnectorDeclarationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getNaryConnectorDeclaration_ConnectorPart()
+  {
+        return (EReference)getNaryConnectorDeclaration().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getExtendedPrefix()
+  {
+    if (extendedPrefixEClass == null)
+    {
+      extendedPrefixEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(103);
+    }
+    return extendedPrefixEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getExtendedPrefix_IsReturn()
+  {
+        return (EAttribute)getExtendedPrefix().getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getExtendedPrefix_IsMember()
+  {
+        return (EAttribute)getExtendedPrefix().getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1910,7 +4127,26 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
   @Override
   public EEnum getVisibilityIndicator()
   {
+    if (visibilityIndicatorEEnum == null)
+    {
+      visibilityIndicatorEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(104);
+    }
     return visibilityIndicatorEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EEnum getFeatureDirection()
+  {
+    if (featureDirectionEEnum == null)
+    {
+      featureDirectionEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(KerMLOCPackage.eNS_URI).getEClassifiers().get(105);
+    }
+    return featureDirectionEEnum;
   }
 
   /**
@@ -1929,666 +4165,73 @@ public class KerMLOCPackageImpl extends EPackageImpl implements KerMLOCPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private boolean isCreated = false;
+  private boolean isLoaded = false;
 
   /**
-   * Creates the meta-model objects for the package.  This method is
-   * guarded to have no affect on any invocation but its first.
+   * Loads the package and any sub-packages from their serialized form.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  public void createPackageContents()
+  public void loadPackage()
   {
-    if (isCreated) return;
-    isCreated = true;
+    if (isLoaded) return;
+    isLoaded = true;
 
-    // Create classes and their features
-    rootNamespaceEClass = createEClass(ROOT_NAMESPACE);
-    createEReference(rootNamespaceEClass, ROOT_NAMESPACE__ELEMENTS);
+    URL url = getClass().getResource(packageFilename);
+    if (url == null)
+    {
+      throw new RuntimeException("Missing serialized package: " + packageFilename);
+    }
+    URI uri = URI.createURI(url.toString());
+    Resource resource = new EcoreResourceFactoryImpl().createResource(uri);
+    try
+    {
+      resource.load(null);
+    }
+    catch (IOException exception)
+    {
+      throw new WrappedException(exception);
+    }
+    initializeFromLoadedEPackage(this, (EPackage)resource.getContents().get(0));
+    createResource(eNS_URI);
+  }
 
-    generalBodyElementsEClass = createEClass(GENERAL_BODY_ELEMENTS);
 
-    annotatingBodyElementEClass = createEClass(ANNOTATING_BODY_ELEMENT);
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private boolean isFixed = false;
 
-    packageBodyElementEClass = createEClass(PACKAGE_BODY_ELEMENT);
-
-    typeBodyElementEClass = createEClass(TYPE_BODY_ELEMENT);
-
-    namespaceBodyElementEClass = createEClass(NAMESPACE_BODY_ELEMENT);
-
-    functionBodyElementEClass = createEClass(FUNCTION_BODY_ELEMENT);
-
-    annotatingElementEClass = createEClass(ANNOTATING_ELEMENT);
-
-    nonFeatureElementEClass = createEClass(NON_FEATURE_ELEMENT);
-
-    packageEClass = createEClass(PACKAGE);
-    createEAttribute(packageEClass, PACKAGE__DECLARED_NAME);
-    createEReference(packageEClass, PACKAGE__ELEMENTS);
-
-    libraryPackageEClass = createEClass(LIBRARY_PACKAGE);
-    createEAttribute(libraryPackageEClass, LIBRARY_PACKAGE__IS_STANDARD);
-    createEAttribute(libraryPackageEClass, LIBRARY_PACKAGE__IS_LIBRARY);
-    createEReference(libraryPackageEClass, LIBRARY_PACKAGE__ELEMENTS);
-
-    dependencyEClass = createEClass(DEPENDENCY);
-    createEAttribute(dependencyEClass, DEPENDENCY__CLIENT);
-    createEAttribute(dependencyEClass, DEPENDENCY__SUPPLIER);
-    createEReference(dependencyEClass, DEPENDENCY__ELEMENTS);
-
-    commentEClass = createEClass(COMMENT);
-    createEAttribute(commentEClass, COMMENT__ANNOTATED_ELEMENT);
-    createEAttribute(commentEClass, COMMENT__LOCALE);
-    createEAttribute(commentEClass, COMMENT__BODY);
-
-    documentationEClass = createEClass(DOCUMENTATION);
-    createEAttribute(documentationEClass, DOCUMENTATION__LOCALE);
-    createEAttribute(documentationEClass, DOCUMENTATION__BODY);
-
-    textualRepresentationEClass = createEClass(TEXTUAL_REPRESENTATION);
-    createEAttribute(textualRepresentationEClass, TEXTUAL_REPRESENTATION__LANGUAGE);
-    createEAttribute(textualRepresentationEClass, TEXTUAL_REPRESENTATION__BODY);
-
-    importElementEClass = createEClass(IMPORT_ELEMENT);
-    createEAttribute(importElementEClass, IMPORT_ELEMENT__VISIBILITY);
-    createEAttribute(importElementEClass, IMPORT_ELEMENT__IS_IMPORT_ALL);
-    createEAttribute(importElementEClass, IMPORT_ELEMENT__DECLARED_NAME);
-    createEAttribute(importElementEClass, IMPORT_ELEMENT__IS_NAMESPACE);
-    createEAttribute(importElementEClass, IMPORT_ELEMENT__IS_RECURSIVE);
-    createEAttribute(importElementEClass, IMPORT_ELEMENT__FILTER_PACKAGE_EXPRESSION);
-    createEReference(importElementEClass, IMPORT_ELEMENT__ELEMENTS);
-
-    codeAnnotationEClass = createEClass(CODE_ANNOTATION);
-    createEAttribute(codeAnnotationEClass, CODE_ANNOTATION__BODY);
-
-    aliasElementEClass = createEClass(ALIAS_ELEMENT);
-    createEAttribute(aliasElementEClass, ALIAS_ELEMENT__MEMBER_SHORT_NAME);
-    createEAttribute(aliasElementEClass, ALIAS_ELEMENT__MEMBER_NAME);
-    createEAttribute(aliasElementEClass, ALIAS_ELEMENT__MEMBER_ELEMENT);
-    createEReference(aliasElementEClass, ALIAS_ELEMENT__ELEMENTS);
-
-    elementFilterElementEClass = createEClass(ELEMENT_FILTER_ELEMENT);
-    createEAttribute(elementFilterElementEClass, ELEMENT_FILTER_ELEMENT__FILTER_EXPRESSION);
-
-    multiplicityEClass = createEClass(MULTIPLICITY);
-    createEReference(multiplicityEClass, MULTIPLICITY__ELEMENTS);
-
-    namespaceEClass = createEClass(NAMESPACE);
-    createEAttribute(namespaceEClass, NAMESPACE__IS_NAMESPACE);
-    createEReference(namespaceEClass, NAMESPACE__ELEMENTS);
-
-    typeEClass = createEClass(TYPE);
-    createEAttribute(typeEClass, TYPE__IS_SUFFICIENT);
-    createEReference(typeEClass, TYPE__ELEMENTS);
-
-    classifierEClass = createEClass(CLASSIFIER);
-    createEReference(classifierEClass, CLASSIFIER__ELEMENTS);
-
-    classEClass = createEClass(CLASS);
-    createEReference(classEClass, CLASS__ELEMENTS);
-
-    structureEClass = createEClass(STRUCTURE);
-    createEReference(structureEClass, STRUCTURE__ELEMENTS);
-
-    metaclassEClass = createEClass(METACLASS);
-    createEReference(metaclassEClass, METACLASS__ELEMENTS);
-
-    dataTypeEClass = createEClass(DATA_TYPE);
-    createEReference(dataTypeEClass, DATA_TYPE__ELEMENTS);
-
-    associationEClass = createEClass(ASSOCIATION);
-    createEReference(associationEClass, ASSOCIATION__ELEMENTS);
-
-    associationStructureEClass = createEClass(ASSOCIATION_STRUCTURE);
-    createEReference(associationStructureEClass, ASSOCIATION_STRUCTURE__ELEMENTS);
-
-    interactionEClass = createEClass(INTERACTION);
-    createEReference(interactionEClass, INTERACTION__ELEMENTS);
-
-    behaviorEClass = createEClass(BEHAVIOR);
-    createEReference(behaviorEClass, BEHAVIOR__ELEMENTS);
-
-    functionEClass = createEClass(FUNCTION);
-    createEReference(functionEClass, FUNCTION__ELEMENTS);
-    createEReference(functionEClass, FUNCTION__RESULT_EXPRESSION_PARAMETER);
-
-    predicateEClass = createEClass(PREDICATE);
-    createEReference(predicateEClass, PREDICATE__ELEMENTS);
-    createEReference(predicateEClass, PREDICATE__RESULT_EXPRESSION_PARAMETER);
-
-    resultExpressionEClass = createEClass(RESULT_EXPRESSION);
-    createEAttribute(resultExpressionEClass, RESULT_EXPRESSION__RESULT_EXPRESSION);
-
-    identificationEClass = createEClass(IDENTIFICATION);
-    createEAttribute(identificationEClass, IDENTIFICATION__DECLARED_SHORT_NAME);
-    createEAttribute(identificationEClass, IDENTIFICATION__DECLARED_NAME);
-
-    memberPrefixEClass = createEClass(MEMBER_PREFIX);
-    createEAttribute(memberPrefixEClass, MEMBER_PREFIX__VISIBILITY);
-    createEAttribute(memberPrefixEClass, MEMBER_PREFIX__IS_VARIANT);
-
-    prefixMetadataEClass = createEClass(PREFIX_METADATA);
-    createEAttribute(prefixMetadataEClass, PREFIX_METADATA__PREFIX_METADATA_EXTENSION);
-
-    multiplicityBoundsEClass = createEClass(MULTIPLICITY_BOUNDS);
-    createEAttribute(multiplicityBoundsEClass, MULTIPLICITY_BOUNDS__MULTI_LOW);
-    createEAttribute(multiplicityBoundsEClass, MULTIPLICITY_BOUNDS__MULTI_HIGH);
-
-    featureSpecializationEClass = createEClass(FEATURE_SPECIALIZATION);
-
-    typingFeatureTypingEClass = createEClass(TYPING_FEATURE_TYPING);
-    createEAttribute(typingFeatureTypingEClass, TYPING_FEATURE_TYPING__TYPINGS);
-
-    subsettingFeatureChainEClass = createEClass(SUBSETTING_FEATURE_CHAIN);
-    createEAttribute(subsettingFeatureChainEClass, SUBSETTING_FEATURE_CHAIN__SUBSETTING);
-
-    referenceFeatureChainEClass = createEClass(REFERENCE_FEATURE_CHAIN);
-    createEAttribute(referenceFeatureChainEClass, REFERENCE_FEATURE_CHAIN__REFERENCES);
-
-    crossFeatureChainEClass = createEClass(CROSS_FEATURE_CHAIN);
-    createEAttribute(crossFeatureChainEClass, CROSS_FEATURE_CHAIN__CROSSES);
-
-    redefinitionFeatureChainEClass = createEClass(REDEFINITION_FEATURE_CHAIN);
-    createEAttribute(redefinitionFeatureChainEClass, REDEFINITION_FEATURE_CHAIN__REDEFINITIONS);
-
-    subsetsEClass = createEClass(SUBSETS);
-
-    typePrefixEClass = createEClass(TYPE_PREFIX);
-    createEAttribute(typePrefixEClass, TYPE_PREFIX__IS_ABSTRACT);
-
-    specializationPartEClass = createEClass(SPECIALIZATION_PART);
-
-    superclassingPartEClass = createEClass(SUPERCLASSING_PART);
-
-    classifierConjugationPartEClass = createEClass(CLASSIFIER_CONJUGATION_PART);
-    createEAttribute(classifierConjugationPartEClass, CLASSIFIER_CONJUGATION_PART__ORIGINAL_TYPE);
-
-    conjugationPartEClass = createEClass(CONJUGATION_PART);
-    createEAttribute(conjugationPartEClass, CONJUGATION_PART__ORIGINAL_TYPE);
-
-    typeRelationshipPartEClass = createEClass(TYPE_RELATIONSHIP_PART);
-
-    disjoiningPartEClass = createEClass(DISJOINING_PART);
-    createEAttribute(disjoiningPartEClass, DISJOINING_PART__DISJOINING);
-
-    unioningPartEClass = createEClass(UNIONING_PART);
-    createEAttribute(unioningPartEClass, UNIONING_PART__UNIONING);
-
-    intersectingPartEClass = createEClass(INTERSECTING_PART);
-    createEAttribute(intersectingPartEClass, INTERSECTING_PART__INTERSECTING);
-
-    differencingPartEClass = createEClass(DIFFERENCING_PART);
-    createEAttribute(differencingPartEClass, DIFFERENCING_PART__DIFFERENCING);
-
-    classifierDeclarationEClass = createEClass(CLASSIFIER_DECLARATION);
-    createEAttribute(classifierDeclarationEClass, CLASSIFIER_DECLARATION__IS_SUFFICIENT);
-
-    // Create enums
-    visibilityIndicatorEEnum = createEEnum(VISIBILITY_INDICATOR);
+  /**
+   * Fixes up the loaded package, to make it appear as if it had been programmatically built.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void fixPackageContents()
+  {
+    if (isFixed) return;
+    isFixed = true;
+    fixEClassifiers();
   }
 
   /**
+   * Sets the instance class on the given classifier.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private boolean isInitialized = false;
-
-  /**
-   * Complete the initialization of the package and its meta-model.  This
-   * method is guarded to have no affect on any invocation but its first.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void initializePackageContents()
+  @Override
+  protected void fixInstanceClass(EClassifier eClassifier)
   {
-    if (isInitialized) return;
-    isInitialized = true;
-
-    // Initialize package
-    setName(eNAME);
-    setNsPrefix(eNS_PREFIX);
-    setNsURI(eNS_URI);
-
-    // Create type parameters
-
-    // Set bounds for type parameters
-
-    // Add supertypes to classes
-    generalBodyElementsEClass.getESuperTypes().add(this.getPackageBodyElement());
-    generalBodyElementsEClass.getESuperTypes().add(this.getTypeBodyElement());
-    generalBodyElementsEClass.getESuperTypes().add(this.getNamespaceBodyElement());
-    generalBodyElementsEClass.getESuperTypes().add(this.getFunctionBodyElement());
-    annotatingElementEClass.getESuperTypes().add(this.getGeneralBodyElements());
-    annotatingElementEClass.getESuperTypes().add(this.getAnnotatingBodyElement());
-    nonFeatureElementEClass.getESuperTypes().add(this.getGeneralBodyElements());
-    packageEClass.getESuperTypes().add(this.getNonFeatureElement());
-    packageEClass.getESuperTypes().add(this.getMemberPrefix());
-    packageEClass.getESuperTypes().add(this.getPrefixMetadata());
-    libraryPackageEClass.getESuperTypes().add(this.getNonFeatureElement());
-    libraryPackageEClass.getESuperTypes().add(this.getMemberPrefix());
-    libraryPackageEClass.getESuperTypes().add(this.getPrefixMetadata());
-    libraryPackageEClass.getESuperTypes().add(this.getIdentification());
-    dependencyEClass.getESuperTypes().add(this.getNonFeatureElement());
-    dependencyEClass.getESuperTypes().add(this.getMemberPrefix());
-    dependencyEClass.getESuperTypes().add(this.getPrefixMetadata());
-    dependencyEClass.getESuperTypes().add(this.getIdentification());
-    commentEClass.getESuperTypes().add(this.getAnnotatingElement());
-    commentEClass.getESuperTypes().add(this.getMemberPrefix());
-    commentEClass.getESuperTypes().add(this.getIdentification());
-    documentationEClass.getESuperTypes().add(this.getAnnotatingElement());
-    documentationEClass.getESuperTypes().add(this.getMemberPrefix());
-    documentationEClass.getESuperTypes().add(this.getIdentification());
-    textualRepresentationEClass.getESuperTypes().add(this.getAnnotatingElement());
-    textualRepresentationEClass.getESuperTypes().add(this.getMemberPrefix());
-    textualRepresentationEClass.getESuperTypes().add(this.getIdentification());
-    importElementEClass.getESuperTypes().add(this.getGeneralBodyElements());
-    codeAnnotationEClass.getESuperTypes().add(this.getGeneralBodyElements());
-    codeAnnotationEClass.getESuperTypes().add(this.getAnnotatingBodyElement());
-    aliasElementEClass.getESuperTypes().add(this.getGeneralBodyElements());
-    aliasElementEClass.getESuperTypes().add(this.getMemberPrefix());
-    elementFilterElementEClass.getESuperTypes().add(this.getPackageBodyElement());
-    elementFilterElementEClass.getESuperTypes().add(this.getMemberPrefix());
-    multiplicityEClass.getESuperTypes().add(this.getNonFeatureElement());
-    multiplicityEClass.getESuperTypes().add(this.getMemberPrefix());
-    multiplicityEClass.getESuperTypes().add(this.getIdentification());
-    multiplicityEClass.getESuperTypes().add(this.getSubsets());
-    multiplicityEClass.getESuperTypes().add(this.getSubsettingFeatureChain());
-    multiplicityEClass.getESuperTypes().add(this.getMultiplicityBounds());
-    namespaceEClass.getESuperTypes().add(this.getNonFeatureElement());
-    namespaceEClass.getESuperTypes().add(this.getPrefixMetadata());
-    namespaceEClass.getESuperTypes().add(this.getIdentification());
-    typeEClass.getESuperTypes().add(this.getNonFeatureElement());
-    typeEClass.getESuperTypes().add(this.getMemberPrefix());
-    typeEClass.getESuperTypes().add(this.getTypePrefix());
-    typeEClass.getESuperTypes().add(this.getPrefixMetadata());
-    typeEClass.getESuperTypes().add(this.getIdentification());
-    typeEClass.getESuperTypes().add(this.getMultiplicityBounds());
-    typeEClass.getESuperTypes().add(this.getSpecializationPart());
-    typeEClass.getESuperTypes().add(this.getSubsettingFeatureChain());
-    typeEClass.getESuperTypes().add(this.getConjugationPart());
-    typeEClass.getESuperTypes().add(this.getTypeRelationshipPart());
-    typeEClass.getESuperTypes().add(this.getDisjoiningPart());
-    typeEClass.getESuperTypes().add(this.getUnioningPart());
-    typeEClass.getESuperTypes().add(this.getIntersectingPart());
-    typeEClass.getESuperTypes().add(this.getDifferencingPart());
-    classifierEClass.getESuperTypes().add(this.getNonFeatureElement());
-    classifierEClass.getESuperTypes().add(this.getMemberPrefix());
-    classifierEClass.getESuperTypes().add(this.getTypePrefix());
-    classifierEClass.getESuperTypes().add(this.getPrefixMetadata());
-    classifierEClass.getESuperTypes().add(this.getClassifierDeclaration());
-    classifierEClass.getESuperTypes().add(this.getIdentification());
-    classifierEClass.getESuperTypes().add(this.getMultiplicityBounds());
-    classifierEClass.getESuperTypes().add(this.getSuperclassingPart());
-    classifierEClass.getESuperTypes().add(this.getSubsettingFeatureChain());
-    classifierEClass.getESuperTypes().add(this.getClassifierConjugationPart());
-    classifierEClass.getESuperTypes().add(this.getTypeRelationshipPart());
-    classifierEClass.getESuperTypes().add(this.getDisjoiningPart());
-    classifierEClass.getESuperTypes().add(this.getUnioningPart());
-    classifierEClass.getESuperTypes().add(this.getIntersectingPart());
-    classifierEClass.getESuperTypes().add(this.getDifferencingPart());
-    classEClass.getESuperTypes().add(this.getNonFeatureElement());
-    classEClass.getESuperTypes().add(this.getMemberPrefix());
-    classEClass.getESuperTypes().add(this.getTypePrefix());
-    classEClass.getESuperTypes().add(this.getPrefixMetadata());
-    classEClass.getESuperTypes().add(this.getClassifierDeclaration());
-    classEClass.getESuperTypes().add(this.getIdentification());
-    classEClass.getESuperTypes().add(this.getMultiplicityBounds());
-    classEClass.getESuperTypes().add(this.getSuperclassingPart());
-    classEClass.getESuperTypes().add(this.getSubsettingFeatureChain());
-    classEClass.getESuperTypes().add(this.getClassifierConjugationPart());
-    classEClass.getESuperTypes().add(this.getTypeRelationshipPart());
-    classEClass.getESuperTypes().add(this.getDisjoiningPart());
-    classEClass.getESuperTypes().add(this.getUnioningPart());
-    classEClass.getESuperTypes().add(this.getIntersectingPart());
-    classEClass.getESuperTypes().add(this.getDifferencingPart());
-    structureEClass.getESuperTypes().add(this.getNonFeatureElement());
-    structureEClass.getESuperTypes().add(this.getMemberPrefix());
-    structureEClass.getESuperTypes().add(this.getTypePrefix());
-    structureEClass.getESuperTypes().add(this.getPrefixMetadata());
-    structureEClass.getESuperTypes().add(this.getClassifierDeclaration());
-    structureEClass.getESuperTypes().add(this.getIdentification());
-    structureEClass.getESuperTypes().add(this.getMultiplicityBounds());
-    structureEClass.getESuperTypes().add(this.getSuperclassingPart());
-    structureEClass.getESuperTypes().add(this.getSubsettingFeatureChain());
-    structureEClass.getESuperTypes().add(this.getClassifierConjugationPart());
-    structureEClass.getESuperTypes().add(this.getTypeRelationshipPart());
-    structureEClass.getESuperTypes().add(this.getDisjoiningPart());
-    structureEClass.getESuperTypes().add(this.getUnioningPart());
-    structureEClass.getESuperTypes().add(this.getIntersectingPart());
-    structureEClass.getESuperTypes().add(this.getDifferencingPart());
-    metaclassEClass.getESuperTypes().add(this.getNonFeatureElement());
-    metaclassEClass.getESuperTypes().add(this.getMemberPrefix());
-    metaclassEClass.getESuperTypes().add(this.getTypePrefix());
-    metaclassEClass.getESuperTypes().add(this.getPrefixMetadata());
-    metaclassEClass.getESuperTypes().add(this.getClassifierDeclaration());
-    metaclassEClass.getESuperTypes().add(this.getIdentification());
-    metaclassEClass.getESuperTypes().add(this.getMultiplicityBounds());
-    metaclassEClass.getESuperTypes().add(this.getSuperclassingPart());
-    metaclassEClass.getESuperTypes().add(this.getSubsettingFeatureChain());
-    metaclassEClass.getESuperTypes().add(this.getClassifierConjugationPart());
-    metaclassEClass.getESuperTypes().add(this.getTypeRelationshipPart());
-    metaclassEClass.getESuperTypes().add(this.getDisjoiningPart());
-    metaclassEClass.getESuperTypes().add(this.getUnioningPart());
-    metaclassEClass.getESuperTypes().add(this.getIntersectingPart());
-    metaclassEClass.getESuperTypes().add(this.getDifferencingPart());
-    dataTypeEClass.getESuperTypes().add(this.getNonFeatureElement());
-    dataTypeEClass.getESuperTypes().add(this.getMemberPrefix());
-    dataTypeEClass.getESuperTypes().add(this.getTypePrefix());
-    dataTypeEClass.getESuperTypes().add(this.getPrefixMetadata());
-    dataTypeEClass.getESuperTypes().add(this.getClassifierDeclaration());
-    dataTypeEClass.getESuperTypes().add(this.getIdentification());
-    dataTypeEClass.getESuperTypes().add(this.getMultiplicityBounds());
-    dataTypeEClass.getESuperTypes().add(this.getSuperclassingPart());
-    dataTypeEClass.getESuperTypes().add(this.getSubsettingFeatureChain());
-    dataTypeEClass.getESuperTypes().add(this.getClassifierConjugationPart());
-    dataTypeEClass.getESuperTypes().add(this.getTypeRelationshipPart());
-    dataTypeEClass.getESuperTypes().add(this.getDisjoiningPart());
-    dataTypeEClass.getESuperTypes().add(this.getUnioningPart());
-    dataTypeEClass.getESuperTypes().add(this.getIntersectingPart());
-    dataTypeEClass.getESuperTypes().add(this.getDifferencingPart());
-    associationEClass.getESuperTypes().add(this.getNonFeatureElement());
-    associationEClass.getESuperTypes().add(this.getMemberPrefix());
-    associationEClass.getESuperTypes().add(this.getTypePrefix());
-    associationEClass.getESuperTypes().add(this.getPrefixMetadata());
-    associationEClass.getESuperTypes().add(this.getClassifierDeclaration());
-    associationEClass.getESuperTypes().add(this.getIdentification());
-    associationEClass.getESuperTypes().add(this.getMultiplicityBounds());
-    associationEClass.getESuperTypes().add(this.getSuperclassingPart());
-    associationEClass.getESuperTypes().add(this.getSubsettingFeatureChain());
-    associationEClass.getESuperTypes().add(this.getClassifierConjugationPart());
-    associationEClass.getESuperTypes().add(this.getTypeRelationshipPart());
-    associationEClass.getESuperTypes().add(this.getDisjoiningPart());
-    associationEClass.getESuperTypes().add(this.getUnioningPart());
-    associationEClass.getESuperTypes().add(this.getIntersectingPart());
-    associationEClass.getESuperTypes().add(this.getDifferencingPart());
-    associationStructureEClass.getESuperTypes().add(this.getNonFeatureElement());
-    associationStructureEClass.getESuperTypes().add(this.getMemberPrefix());
-    associationStructureEClass.getESuperTypes().add(this.getTypePrefix());
-    associationStructureEClass.getESuperTypes().add(this.getPrefixMetadata());
-    associationStructureEClass.getESuperTypes().add(this.getClassifierDeclaration());
-    associationStructureEClass.getESuperTypes().add(this.getIdentification());
-    associationStructureEClass.getESuperTypes().add(this.getMultiplicityBounds());
-    associationStructureEClass.getESuperTypes().add(this.getSuperclassingPart());
-    associationStructureEClass.getESuperTypes().add(this.getSubsettingFeatureChain());
-    associationStructureEClass.getESuperTypes().add(this.getClassifierConjugationPart());
-    associationStructureEClass.getESuperTypes().add(this.getTypeRelationshipPart());
-    associationStructureEClass.getESuperTypes().add(this.getDisjoiningPart());
-    associationStructureEClass.getESuperTypes().add(this.getUnioningPart());
-    associationStructureEClass.getESuperTypes().add(this.getIntersectingPart());
-    associationStructureEClass.getESuperTypes().add(this.getDifferencingPart());
-    interactionEClass.getESuperTypes().add(this.getNonFeatureElement());
-    interactionEClass.getESuperTypes().add(this.getMemberPrefix());
-    interactionEClass.getESuperTypes().add(this.getTypePrefix());
-    interactionEClass.getESuperTypes().add(this.getPrefixMetadata());
-    interactionEClass.getESuperTypes().add(this.getClassifierDeclaration());
-    interactionEClass.getESuperTypes().add(this.getIdentification());
-    interactionEClass.getESuperTypes().add(this.getMultiplicityBounds());
-    interactionEClass.getESuperTypes().add(this.getSuperclassingPart());
-    interactionEClass.getESuperTypes().add(this.getSubsettingFeatureChain());
-    interactionEClass.getESuperTypes().add(this.getClassifierConjugationPart());
-    interactionEClass.getESuperTypes().add(this.getTypeRelationshipPart());
-    interactionEClass.getESuperTypes().add(this.getDisjoiningPart());
-    interactionEClass.getESuperTypes().add(this.getUnioningPart());
-    interactionEClass.getESuperTypes().add(this.getIntersectingPart());
-    interactionEClass.getESuperTypes().add(this.getDifferencingPart());
-    behaviorEClass.getESuperTypes().add(this.getNonFeatureElement());
-    behaviorEClass.getESuperTypes().add(this.getMemberPrefix());
-    behaviorEClass.getESuperTypes().add(this.getTypePrefix());
-    behaviorEClass.getESuperTypes().add(this.getPrefixMetadata());
-    behaviorEClass.getESuperTypes().add(this.getClassifierDeclaration());
-    behaviorEClass.getESuperTypes().add(this.getIdentification());
-    behaviorEClass.getESuperTypes().add(this.getMultiplicityBounds());
-    behaviorEClass.getESuperTypes().add(this.getSuperclassingPart());
-    behaviorEClass.getESuperTypes().add(this.getSubsettingFeatureChain());
-    behaviorEClass.getESuperTypes().add(this.getClassifierConjugationPart());
-    behaviorEClass.getESuperTypes().add(this.getTypeRelationshipPart());
-    behaviorEClass.getESuperTypes().add(this.getDisjoiningPart());
-    behaviorEClass.getESuperTypes().add(this.getUnioningPart());
-    behaviorEClass.getESuperTypes().add(this.getIntersectingPart());
-    behaviorEClass.getESuperTypes().add(this.getDifferencingPart());
-    functionEClass.getESuperTypes().add(this.getNonFeatureElement());
-    functionEClass.getESuperTypes().add(this.getMemberPrefix());
-    functionEClass.getESuperTypes().add(this.getTypePrefix());
-    functionEClass.getESuperTypes().add(this.getPrefixMetadata());
-    functionEClass.getESuperTypes().add(this.getClassifierDeclaration());
-    functionEClass.getESuperTypes().add(this.getIdentification());
-    functionEClass.getESuperTypes().add(this.getMultiplicityBounds());
-    functionEClass.getESuperTypes().add(this.getSuperclassingPart());
-    functionEClass.getESuperTypes().add(this.getSubsettingFeatureChain());
-    functionEClass.getESuperTypes().add(this.getClassifierConjugationPart());
-    functionEClass.getESuperTypes().add(this.getTypeRelationshipPart());
-    functionEClass.getESuperTypes().add(this.getDisjoiningPart());
-    functionEClass.getESuperTypes().add(this.getUnioningPart());
-    functionEClass.getESuperTypes().add(this.getIntersectingPart());
-    functionEClass.getESuperTypes().add(this.getDifferencingPart());
-    predicateEClass.getESuperTypes().add(this.getNonFeatureElement());
-    predicateEClass.getESuperTypes().add(this.getMemberPrefix());
-    predicateEClass.getESuperTypes().add(this.getTypePrefix());
-    predicateEClass.getESuperTypes().add(this.getPrefixMetadata());
-    predicateEClass.getESuperTypes().add(this.getClassifierDeclaration());
-    predicateEClass.getESuperTypes().add(this.getIdentification());
-    predicateEClass.getESuperTypes().add(this.getMultiplicityBounds());
-    predicateEClass.getESuperTypes().add(this.getSuperclassingPart());
-    predicateEClass.getESuperTypes().add(this.getSubsettingFeatureChain());
-    predicateEClass.getESuperTypes().add(this.getClassifierConjugationPart());
-    predicateEClass.getESuperTypes().add(this.getTypeRelationshipPart());
-    predicateEClass.getESuperTypes().add(this.getDisjoiningPart());
-    predicateEClass.getESuperTypes().add(this.getUnioningPart());
-    predicateEClass.getESuperTypes().add(this.getIntersectingPart());
-    predicateEClass.getESuperTypes().add(this.getDifferencingPart());
-    resultExpressionEClass.getESuperTypes().add(this.getMemberPrefix());
-    featureSpecializationEClass.getESuperTypes().add(this.getTypingFeatureTyping());
-    featureSpecializationEClass.getESuperTypes().add(this.getSubsettingFeatureChain());
-    featureSpecializationEClass.getESuperTypes().add(this.getReferenceFeatureChain());
-    featureSpecializationEClass.getESuperTypes().add(this.getCrossFeatureChain());
-    featureSpecializationEClass.getESuperTypes().add(this.getRedefinitionFeatureChain());
-    subsetsEClass.getESuperTypes().add(this.getSubsettingFeatureChain());
-    typePrefixEClass.getESuperTypes().add(this.getPrefixMetadata());
-    specializationPartEClass.getESuperTypes().add(this.getSubsettingFeatureChain());
-    superclassingPartEClass.getESuperTypes().add(this.getSubsettingFeatureChain());
-    typeRelationshipPartEClass.getESuperTypes().add(this.getDisjoiningPart());
-    typeRelationshipPartEClass.getESuperTypes().add(this.getUnioningPart());
-    typeRelationshipPartEClass.getESuperTypes().add(this.getIntersectingPart());
-    typeRelationshipPartEClass.getESuperTypes().add(this.getDifferencingPart());
-    classifierDeclarationEClass.getESuperTypes().add(this.getIdentification());
-    classifierDeclarationEClass.getESuperTypes().add(this.getMultiplicityBounds());
-    classifierDeclarationEClass.getESuperTypes().add(this.getSuperclassingPart());
-    classifierDeclarationEClass.getESuperTypes().add(this.getClassifierConjugationPart());
-    classifierDeclarationEClass.getESuperTypes().add(this.getTypeRelationshipPart());
-
-    // Initialize classes and features; add operations and parameters
-    initEClass(rootNamespaceEClass, RootNamespace.class, "RootNamespace", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getRootNamespace_Elements(), this.getGeneralBodyElements(), null, "elements", null, 0, -1, RootNamespace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(generalBodyElementsEClass, GeneralBodyElements.class, "GeneralBodyElements", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(annotatingBodyElementEClass, AnnotatingBodyElement.class, "AnnotatingBodyElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(packageBodyElementEClass, PackageBodyElement.class, "PackageBodyElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(typeBodyElementEClass, TypeBodyElement.class, "TypeBodyElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(namespaceBodyElementEClass, NamespaceBodyElement.class, "NamespaceBodyElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(functionBodyElementEClass, FunctionBodyElement.class, "FunctionBodyElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(annotatingElementEClass, AnnotatingElement.class, "AnnotatingElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(nonFeatureElementEClass, NonFeatureElement.class, "NonFeatureElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(packageEClass, dut.control.kermloc.kerMLOC.Package.class, "Package", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getPackage_DeclaredName(), ecorePackage.getEString(), "declaredName", null, 0, 1, dut.control.kermloc.kerMLOC.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPackage_Elements(), this.getPackageBodyElement(), null, "elements", null, 0, -1, dut.control.kermloc.kerMLOC.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(libraryPackageEClass, LibraryPackage.class, "LibraryPackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getLibraryPackage_IsStandard(), ecorePackage.getEBoolean(), "isStandard", null, 0, 1, LibraryPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getLibraryPackage_IsLibrary(), ecorePackage.getEBoolean(), "isLibrary", null, 0, 1, LibraryPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getLibraryPackage_Elements(), this.getPackageBodyElement(), null, "elements", null, 0, -1, LibraryPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(dependencyEClass, Dependency.class, "Dependency", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDependency_Client(), ecorePackage.getEString(), "client", null, 0, -1, Dependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDependency_Supplier(), ecorePackage.getEString(), "supplier", null, 0, -1, Dependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDependency_Elements(), this.getAnnotatingElement(), null, "elements", null, 0, -1, Dependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(commentEClass, Comment.class, "Comment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getComment_AnnotatedElement(), ecorePackage.getEString(), "annotatedElement", null, 0, -1, Comment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getComment_Locale(), ecorePackage.getEString(), "locale", null, 0, 1, Comment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getComment_Body(), ecorePackage.getEString(), "body", null, 0, 1, Comment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(documentationEClass, Documentation.class, "Documentation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDocumentation_Locale(), ecorePackage.getEString(), "locale", null, 0, 1, Documentation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDocumentation_Body(), ecorePackage.getEString(), "body", null, 0, 1, Documentation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(textualRepresentationEClass, TextualRepresentation.class, "TextualRepresentation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getTextualRepresentation_Language(), ecorePackage.getEString(), "language", null, 0, 1, TextualRepresentation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getTextualRepresentation_Body(), ecorePackage.getEString(), "body", null, 0, 1, TextualRepresentation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(importElementEClass, ImportElement.class, "ImportElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getImportElement_Visibility(), this.getVisibilityIndicator(), "visibility", null, 0, 1, ImportElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImportElement_IsImportAll(), ecorePackage.getEBoolean(), "isImportAll", null, 0, 1, ImportElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImportElement_DeclaredName(), ecorePackage.getEString(), "declaredName", null, 0, 1, ImportElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImportElement_IsNamespace(), ecorePackage.getEBoolean(), "isNamespace", null, 0, 1, ImportElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImportElement_IsRecursive(), ecorePackage.getEBoolean(), "isRecursive", null, 0, 1, ImportElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImportElement_FilterPackageExpression(), ecorePackage.getEString(), "filterPackageExpression", null, 0, -1, ImportElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getImportElement_Elements(), this.getAnnotatingBodyElement(), null, "elements", null, 0, -1, ImportElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(codeAnnotationEClass, CodeAnnotation.class, "CodeAnnotation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getCodeAnnotation_Body(), ecorePackage.getEString(), "body", null, 0, 1, CodeAnnotation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(aliasElementEClass, AliasElement.class, "AliasElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAliasElement_MemberShortName(), ecorePackage.getEString(), "memberShortName", null, 0, 1, AliasElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getAliasElement_MemberName(), ecorePackage.getEString(), "memberName", null, 0, 1, AliasElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getAliasElement_MemberElement(), ecorePackage.getEString(), "memberElement", null, 0, 1, AliasElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAliasElement_Elements(), this.getAnnotatingBodyElement(), null, "elements", null, 0, -1, AliasElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(elementFilterElementEClass, ElementFilterElement.class, "ElementFilterElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getElementFilterElement_FilterExpression(), ecorePackage.getEString(), "filterExpression", null, 0, 1, ElementFilterElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(multiplicityEClass, Multiplicity.class, "Multiplicity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getMultiplicity_Elements(), this.getTypeBodyElement(), null, "elements", null, 0, -1, Multiplicity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(namespaceEClass, Namespace.class, "Namespace", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getNamespace_IsNamespace(), ecorePackage.getEBoolean(), "isNamespace", null, 0, 1, Namespace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getNamespace_Elements(), this.getNamespaceBodyElement(), null, "elements", null, 0, -1, Namespace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(typeEClass, Type.class, "Type", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getType_IsSufficient(), ecorePackage.getEBoolean(), "isSufficient", null, 0, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getType_Elements(), this.getTypeBodyElement(), null, "elements", null, 0, -1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(classifierEClass, Classifier.class, "Classifier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getClassifier_Elements(), this.getTypeBodyElement(), null, "elements", null, 0, -1, Classifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(classEClass, dut.control.kermloc.kerMLOC.Class.class, "Class", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getClass_Elements(), this.getTypeBodyElement(), null, "elements", null, 0, -1, dut.control.kermloc.kerMLOC.Class.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(structureEClass, Structure.class, "Structure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getStructure_Elements(), this.getTypeBodyElement(), null, "elements", null, 0, -1, Structure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(metaclassEClass, Metaclass.class, "Metaclass", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getMetaclass_Elements(), this.getTypeBodyElement(), null, "elements", null, 0, -1, Metaclass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(dataTypeEClass, DataType.class, "DataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDataType_Elements(), this.getTypeBodyElement(), null, "elements", null, 0, -1, DataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(associationEClass, Association.class, "Association", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAssociation_Elements(), this.getTypeBodyElement(), null, "elements", null, 0, -1, Association.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(associationStructureEClass, AssociationStructure.class, "AssociationStructure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAssociationStructure_Elements(), this.getTypeBodyElement(), null, "elements", null, 0, -1, AssociationStructure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(interactionEClass, Interaction.class, "Interaction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getInteraction_Elements(), this.getTypeBodyElement(), null, "elements", null, 0, -1, Interaction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(behaviorEClass, Behavior.class, "Behavior", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getBehavior_Elements(), this.getTypeBodyElement(), null, "elements", null, 0, -1, Behavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(functionEClass, Function.class, "Function", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getFunction_Elements(), this.getFunctionBodyElement(), null, "elements", null, 0, -1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFunction_ResultExpressionParameter(), this.getResultExpression(), null, "resultExpressionParameter", null, 0, -1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(predicateEClass, Predicate.class, "Predicate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getPredicate_Elements(), this.getFunctionBodyElement(), null, "elements", null, 0, -1, Predicate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPredicate_ResultExpressionParameter(), this.getResultExpression(), null, "resultExpressionParameter", null, 0, -1, Predicate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(resultExpressionEClass, ResultExpression.class, "ResultExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getResultExpression_ResultExpression(), ecorePackage.getEString(), "resultExpression", null, 0, 1, ResultExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(identificationEClass, Identification.class, "Identification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getIdentification_DeclaredShortName(), ecorePackage.getEString(), "declaredShortName", null, 0, 1, Identification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getIdentification_DeclaredName(), ecorePackage.getEString(), "declaredName", null, 0, 1, Identification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(memberPrefixEClass, MemberPrefix.class, "MemberPrefix", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getMemberPrefix_Visibility(), this.getVisibilityIndicator(), "visibility", null, 0, 1, MemberPrefix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getMemberPrefix_IsVariant(), ecorePackage.getEBoolean(), "isVariant", null, 0, 1, MemberPrefix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(prefixMetadataEClass, PrefixMetadata.class, "PrefixMetadata", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getPrefixMetadata_PrefixMetadataExtension(), ecorePackage.getEString(), "prefixMetadataExtension", null, 0, -1, PrefixMetadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(multiplicityBoundsEClass, MultiplicityBounds.class, "MultiplicityBounds", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getMultiplicityBounds_MultiLow(), ecorePackage.getEString(), "MultiLow", null, 0, 1, MultiplicityBounds.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getMultiplicityBounds_MultiHigh(), ecorePackage.getEString(), "MultiHigh", null, 0, 1, MultiplicityBounds.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(featureSpecializationEClass, FeatureSpecialization.class, "FeatureSpecialization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(typingFeatureTypingEClass, TypingFeatureTyping.class, "TypingFeatureTyping", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getTypingFeatureTyping_Typings(), ecorePackage.getEString(), "typings", null, 0, -1, TypingFeatureTyping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(subsettingFeatureChainEClass, SubsettingFeatureChain.class, "SubsettingFeatureChain", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getSubsettingFeatureChain_Subsetting(), ecorePackage.getEString(), "subsetting", null, 0, -1, SubsettingFeatureChain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(referenceFeatureChainEClass, ReferenceFeatureChain.class, "ReferenceFeatureChain", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getReferenceFeatureChain_References(), ecorePackage.getEString(), "references", null, 0, -1, ReferenceFeatureChain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(crossFeatureChainEClass, CrossFeatureChain.class, "CrossFeatureChain", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getCrossFeatureChain_Crosses(), ecorePackage.getEString(), "crosses", null, 0, -1, CrossFeatureChain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(redefinitionFeatureChainEClass, RedefinitionFeatureChain.class, "RedefinitionFeatureChain", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getRedefinitionFeatureChain_Redefinitions(), ecorePackage.getEString(), "redefinitions", null, 0, -1, RedefinitionFeatureChain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(subsetsEClass, Subsets.class, "Subsets", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(typePrefixEClass, TypePrefix.class, "TypePrefix", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getTypePrefix_IsAbstract(), ecorePackage.getEBoolean(), "isAbstract", null, 0, 1, TypePrefix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(specializationPartEClass, SpecializationPart.class, "SpecializationPart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(superclassingPartEClass, SuperclassingPart.class, "SuperclassingPart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(classifierConjugationPartEClass, ClassifierConjugationPart.class, "ClassifierConjugationPart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getClassifierConjugationPart_OriginalType(), ecorePackage.getEString(), "originalType", null, 0, 1, ClassifierConjugationPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(conjugationPartEClass, ConjugationPart.class, "ConjugationPart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getConjugationPart_OriginalType(), ecorePackage.getEString(), "originalType", null, 0, 1, ConjugationPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(typeRelationshipPartEClass, TypeRelationshipPart.class, "TypeRelationshipPart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(disjoiningPartEClass, DisjoiningPart.class, "DisjoiningPart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDisjoiningPart_Disjoining(), ecorePackage.getEString(), "disjoining", null, 0, -1, DisjoiningPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(unioningPartEClass, UnioningPart.class, "UnioningPart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getUnioningPart_Unioning(), ecorePackage.getEString(), "unioning", null, 0, -1, UnioningPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(intersectingPartEClass, IntersectingPart.class, "IntersectingPart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getIntersectingPart_Intersecting(), ecorePackage.getEString(), "intersecting", null, 0, -1, IntersectingPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(differencingPartEClass, DifferencingPart.class, "DifferencingPart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDifferencingPart_Differencing(), ecorePackage.getEString(), "differencing", null, 0, -1, DifferencingPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(classifierDeclarationEClass, ClassifierDeclaration.class, "ClassifierDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getClassifierDeclaration_IsSufficient(), ecorePackage.getEBoolean(), "isSufficient", null, 0, 1, ClassifierDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    // Initialize enums and add enum literals
-    initEEnum(visibilityIndicatorEEnum, VisibilityIndicator.class, "VisibilityIndicator");
-    addEEnumLiteral(visibilityIndicatorEEnum, VisibilityIndicator.NULL);
-    addEEnumLiteral(visibilityIndicatorEEnum, VisibilityIndicator.PUBLIC);
-    addEEnumLiteral(visibilityIndicatorEEnum, VisibilityIndicator.PRIVATE);
-    addEEnumLiteral(visibilityIndicatorEEnum, VisibilityIndicator.PROTECTED);
-
-    // Create resource
-    createResource(eNS_URI);
+    if (eClassifier.getInstanceClassName() == null)
+    {
+      eClassifier.setInstanceClassName("dut.control.kermloc.kerMLOC." + eClassifier.getName());
+      setGeneratedClassName(eClassifier);
+    }
   }
 
 } //KerMLOCPackageImpl

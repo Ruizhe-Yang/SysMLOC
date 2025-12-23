@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:Package" declaredName="Expressions">
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ScalarFunctions" isNamespace="true"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="BaseFunctions::ToString"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ControlFunctions" isNamespace="true"/>
+    <elements xsi:type="kerMLOC:Feature" declaredName="a">
+      <typings>Integer</typings>
+    </elements>
+    <elements xsi:type="kerMLOC:Feature" declaredName="aa">
+      <typings>Boolean</typings>
+    </elements>
+    <elements xsi:type="kerMLOC:Feature" declaredName="x" valuePart="ToString(a * a + 3 == 4)"/>
+    <elements xsi:type="kerMLOC:Feature" declaredName="y" valuePart="NumericalFunctions::'+'(1,2)"/>
+    <elements xsi:type="kerMLOC:Feature" declaredName="z" valuePart="aa &amp; true xor zz | false implies z">
+      <typings>Boolean</typings>
+    </elements>
+    <elements xsi:type="kerMLOC:Feature" declaredName="zz" valuePart="aa and true xor aa or false implies z">
+      <typings>Boolean</typings>
+    </elements>
+    <elements xsi:type="kerMLOC:Feature" declaredName="grp" valuePart="-x + x * y * y + a ** 3 ^ 4"/>
+    <elements xsi:type="kerMLOC:Feature" declaredName="b" valuePart="if x > y? x-y else y-x"/>
+    <elements xsi:type="kerMLOC:Feature" declaredName="c" valuePart="x->collect {in xx; xx + 1}"/>
+    <elements xsi:type="kerMLOC:Feature" declaredName="c1" valuePart="x.{in xx; xx + 1}"/>
+    <elements xsi:type="kerMLOC:Feature" declaredName="d" valuePart="x->select {in xx; xx != null}"/>
+    <elements xsi:type="kerMLOC:Feature" declaredName="d1" valuePart="x.?{in xx; xx != null}"/>
+    <elements xsi:type="kerMLOC:Feature" declaredName="e" valuePart="x->reduce {in s; in t; s + t}->reduce '+'"/>
+    <elements xsi:type="kerMLOC:Behavior" declaredName="w">
+      <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="v">
+        <typings>Integer</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Step">
+        <typings>ControlPerformances::LoopPerformance</typings>
+        <elements xsi:type="kerMLOC:ExpressionClass" direction="in" declaredName="whileTest">
+          <resultExpressionParameter resultExpression="v > 3"/>
+        </elements>
+        <elements xsi:type="kerMLOC:Step" direction="in" declaredName="body">
+          <elements xsi:type="kerMLOC:Step" declaredName="decrement">
+            <elements xsi:type="kerMLOC:Feature" direction="out" declaredName="v_decr" valuePart="v - 1">
+              <typings>Integer</typings>
+            </elements>
+          </elements>
+          <elements xsi:type="kerMLOC:Succession">
+            <connectorPart refElement="decrement"/>
+            <connectorPart refElement="update"/>
+          </elements>
+          <elements xsi:type="kerMLOC:Step" declaredName="update">
+            <typings>FeatureReferencingPerformances::FeatureWritePerformance</typings>
+            <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="onOccurrence" valuePart="w::self">
+              <elements xsi:type="kerMLOC:Feature">
+                <typings>w</typings>
+                <redefinitions>startingAt</redefinitions>
+                <elements xsi:type="kerMLOC:Feature" direction="inout">
+                  <redefinitions>accessedFeature</redefinitions>
+                  <redefinitions>v</redefinitions>
+                </elements>
+              </elements>
+            </elements>
+            <elements xsi:type="kerMLOC:Feature" direction="inout" declaredName="replacementValues" valuePart="decrement.v_decr"/>
+          </elements>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Feature" declaredName="xx" valuePart="if x == 1 and y == 2? a else if x == 2? b else if x == 3? c else 0"/>
+    <elements xsi:type="kerMLOC:Function" declaredName="TotalMass">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="partMass"/>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="subparts"/>
+      <resultExpressionParameter resultExpression="partMass + (subparts->collect {in p; totalMass(partMass, subparts)}->reduce '+' ?? 0.0)"/>
+    </elements>
+    <elements xsi:type="kerMLOC:ExpressionClass" declaredName="totalMass">
+      <typings>TotalMass</typings>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="mass"/>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="sub"/>
+    </elements>
+    <elements xsi:type="kerMLOC:Feature" declaredName="f">
+      <elements xsi:type="kerMLOC:ExpressionClass" declaredName="s">
+        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="x"/>
+        <elements xsi:type="kerMLOC:Feature" isReturn="true">
+          <typings>Boolean</typings>
+        </elements>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Feature" declaredName="bb" valuePart="f.s(1)">
+      <typings>Boolean</typings>
+    </elements>
+    <elements xsi:type="kerMLOC:Class" declaredName="C">
+      <elements xsi:type="kerMLOC:Feature" isVariable="true" declaredName="count" isInitial="true" valuePart="0">
+        <typings>ScalarValues::Integer</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Feature" declaredName="obj1">
+      <typings>C</typings>
+    </elements>
+    <elements xsi:type="kerMLOC:Feature" declaredName="obj2">
+      <typings>C</typings>
+    </elements>
+    <elements xsi:type="kerMLOC:Feature" declaredName="test1" valuePart="obj1 === obj2"/>
+    <elements xsi:type="kerMLOC:Feature" declaredName="test2" valuePart="x !== obj2"/>
+    <elements xsi:type="kerMLOC:Class" declaredName="L">
+      <elements xsi:type="kerMLOC:Feature" declaredName="c" MultiLow="*">
+        <typings>C</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="count" valuePart="c#(1).count">
+        <typings>ScalarValues::Integer</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Feature" declaredName="l" valuePart="new L()"/>
+    <elements xsi:type="kerMLOC:Feature" declaredName="w1" valuePart="w(xx)"/>
+  </elements>
+</kerMLOC:RootNamespace>

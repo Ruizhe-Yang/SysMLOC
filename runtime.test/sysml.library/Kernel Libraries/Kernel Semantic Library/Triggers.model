@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:LibraryPackage" declaredName="Triggers" isStandard="true" isLibrary="true">
+    <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9; * This package contains functions that return ChangeSignals for triggering&#xA;&#x9; * when a Boolean condition changes from false to true, at a specific time&#xA;&#x9; * or after a specific time delay.&#xA;&#x9; */"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ScalarValues::Boolean"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ScalarValues::NumericalValue"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Occurrences::Occurrence"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="public" declaredName="Clocks" isNamespace="true"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="public" declaredName="Observation" isNamespace="true"/>
+    <elements xsi:type="kerMLOC:Structure" declaredName="TimeSignal">
+      <subsetting>ChangeSignal</subsetting>
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * A TimeSignal is a ChangeSignal whose condition is the currentTime&#xA;&#x9;&#x9; * of a given Clock reaching a specific signalTime.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" declaredName="signalTime" MultiLow="1">
+        <typings>NumericalValue</typings>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The time at which the TimeSignal should be sent.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="signalClock" MultiLow="1">
+        <typings>Clock</typings>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The Clock whose currentTime is being monitored.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:BooleanExpression" visibility="private">
+        <redefinitions>signalCondition</redefinitions>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The Boolean condition of the currentTime of the signalClock being&#xA;&#x9;&#x9;&#x9; * equal to the signalTime.&#xA;&#x9;&#x9;&#x9; */"/>
+        <resultExpressionParameter resultExpression="signalClock.currentTime == signalTime"/>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="TriggerWhen">
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * TriggerWhen returns a monitored ChangeSignal for a given condition,&#xA;&#x9;&#x9; * to be sent to a given receiver when the condition occurs.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:BooleanExpression" direction="in" declaredName="condition" MultiLow="1">
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The BooleanExpression to be monitored for changing from &#xA;&#x9;&#x9;&#x9; * false to true.&#xA;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="receiver" MultiLow="1">
+        <typings>Occurrence</typings>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The Occurrence to which the ChangeSignal is to be sent.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="monitor" MultiLow="1" isDefault="true" valuePart="defaultMonitor">
+        <typings>ChangeMonitor</typings>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The ChangeMonitor to be used to monitor the ChangeSignal condition.&#xA;&#x9;&#x9;&#x9; * The default is the Observation::defaultMonitor.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" declaredName="changeSignal" MultiLow="1" valuePart="new ChangeSignal(condition, monitor)">
+        <typings>ChangeSignal</typings>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The ChangeSignal for the condition, as monitored by the monitor.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Step">
+        <subsetting>monitor.startObservation</subsetting>
+        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="observer" valuePart="receiver"/>
+        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="signal" valuePart="changeSignal"/>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="TriggerAt">
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * TriggerAt returns a monitored TimeSignal to be sent to a receiver when&#xA;&#x9;&#x9; * the currentTime of a given Clock reaches a specific timeInstant. &#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="timeInstant" MultiLow="1">
+        <typings>NumericalValue</typings>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The time instant, relative to the clock, at which the TimeSignal should be sent. &#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="receiver" MultiLow="1">
+        <typings>Occurrence</typings>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The Occurrence to which the TimeSignal is to be sent.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="clock" MultiLow="1" isDefault="true" valuePart="localClock">
+        <typings>Clock</typings>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The Clock to be used as the reference for the timeInstant. The default is&#xA;&#x9;&#x9;&#x9; * the localClock, which will be bound when the function is invoked. &#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="monitor" MultiLow="1" isDefault="true" valuePart="defaultMonitor">
+        <typings>ChangeMonitor</typings>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The ChangeMonitor to be used to monitor the TimeSignal condition.&#xA;&#x9;&#x9;&#x9; * The default is the Observation::defaultMonitor.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" declaredName="timeSignal" MultiLow="1" valuePart="new TimeSignal(timeInstant, clock, monitor)">
+        <typings>TimeSignal</typings>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The TimeSignal for the given timeInstant, as monitored by the monitor.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Step">
+        <subsetting>monitor.startObservation</subsetting>
+        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="observer" valuePart="receiver"/>
+        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="signal" valuePart="timeSignal"/>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="TriggerAfter">
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; * TriggerAfter returns a monitored TimeSignal to be sent to a receiver after&#xA;&#x9;&#x9; * a certain time delay relative to a given Clock.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="delay" MultiLow="1">
+        <typings>NumericalValue</typings>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The time duration, relative to the clock, after which the TimeSignal is sent.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="receiver" MultiLow="1">
+        <typings>Occurrence</typings>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The Occurrence to which the TimeSignal is to be sent.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="clock" MultiLow="1" isDefault="true" valuePart="localClock">
+        <typings>Clock</typings>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The Clock to be used as the reference for the time delay. The default is&#xA;&#x9;&#x9;&#x9; * the localClock, which will be bound when the function is invoked. &#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="monitor" MultiLow="1" isDefault="true" valuePart="defaultMonitor">
+        <typings>ChangeMonitor</typings>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The ChangeMonitor to be used to monitor the TimeSignal condition.&#xA;&#x9;&#x9;&#x9; * The default is the Observation::defaultMonitor.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" declaredName="signal" MultiLow="1" valuePart="TriggerAt(clock.currentTime + delay, receiver, clock, monitor)">
+        <typings>TimeSignal</typings>
+        <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9;&#x9; * The TimeSignal for the currentTime of the clock when the function is invoked&#xA;&#x9;&#x9;&#x9; * plus the given time delay, as monitored by the monitor.&#xA;&#x9;&#x9;&#x9; */"/>
+      </elements>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

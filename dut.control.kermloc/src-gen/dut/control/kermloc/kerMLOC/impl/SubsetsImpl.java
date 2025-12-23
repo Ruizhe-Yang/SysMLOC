@@ -35,7 +35,7 @@ public class SubsetsImpl extends SubsettingFeatureChainImpl implements Subsets
   @Override
   protected EClass eStaticClass()
   {
-    return KerMLOCPackage.Literals.SUBSETS;
+    return KerMLOCPackage.eINSTANCE.getSubsets();
   }
 
 } //SubsetsImpl

@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:LibraryPackage" declaredName="ControlFunctions" isStandard="true" isLibrary="true">
+    <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9; * This package defines functions that correspond to operators in the KerML expression notation &#xA;&#x9; * for which one or more operands are expressions whose evaluation is determined by another operand.&#xA;&#x9; */"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="Base::Anything"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ScalarValues::ScalarValue"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ScalarValues::Boolean"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ScalarFunctions::min"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ScalarFunctions::max"/>
+    <elements xsi:type="kerMLOC:Function" isAbstract="true" declaredName="'.'">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="source" MultiLow="0" MultiHigh="*" isNonunique="true">
+        <typings>Anything</typings>
+        <elements xsi:type="kerMLOC:Feature" isAbstract="true" declaredName="target" MultiLow="0" MultiHigh="*" isNonunique="true">
+          <typings>Anything</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" visibility="private" declaredName="chain">
+        <chainingFeature>source.target</chainingFeature>
+      </elements>
+      <resultExpressionParameter resultExpression="chain"/>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" isAbstract="true" declaredName="'if'">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="test" MultiLow="1">
+        <typings>Boolean</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:ExpressionClass" direction="in" declaredName="thenValue" MultiLow="0" MultiHigh="1">
+        <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+          <typings>Anything</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:ExpressionClass" direction="in" declaredName="elseValue" MultiLow="0" MultiHigh="1">
+        <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+          <typings>Anything</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" isAbstract="true" declaredName="'??'">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="firstValue" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:ExpressionClass" direction="in" declaredName="secondValue" MultiLow="0" MultiHigh="1">
+        <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+          <typings>Anything</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="'and'">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="firstValue" MultiLow="1">
+        <typings>Boolean</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:ExpressionClass" direction="in" declaredName="secondValue" MultiLow="0" MultiHigh="1">
+        <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+          <typings>Boolean</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Boolean</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="'or'">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="firstValue" MultiLow="1">
+        <typings>Boolean</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:ExpressionClass" direction="in" declaredName="secondValue" MultiLow="0" MultiHigh="1">
+        <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+          <typings>Boolean</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Boolean</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="'implies'">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="firstValue" MultiLow="1">
+        <typings>Boolean</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:ExpressionClass" direction="in" declaredName="secondValue" MultiLow="0" MultiHigh="1">
+        <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+          <typings>Boolean</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Boolean</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" isAbstract="true" declaredName="collect">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="collection" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:ExpressionClass" direction="in" declaredName="mapper" MultiLow="0" MultiHigh="*">
+        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="argument" MultiLow="1">
+          <typings>Anything</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+          <typings>Anything</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" isAbstract="true" declaredName="select">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="collection" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:ExpressionClass" direction="in" declaredName="selector" MultiLow="0" MultiHigh="*">
+        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="argument" MultiLow="1">
+          <typings>Anything</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+          <typings>Boolean</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="selectOne">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="collection" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:ExpressionClass" direction="in" declaredName="selector1" MultiLow="0" MultiHigh="*">
+        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="argument" MultiLow="1">
+          <typings>Anything</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+          <typings>Boolean</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="1" valuePart="collection->select {in x; selector1(x)}#(1)">
+        <typings>Anything</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" isAbstract="true" declaredName="reject">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="collection" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:ExpressionClass" direction="in" declaredName="rejector" MultiLow="0" MultiHigh="*">
+        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="argument" MultiLow="1">
+          <typings>Anything</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+          <typings>Boolean</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" isAbstract="true" declaredName="reduce">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="collection" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:ExpressionClass" direction="in" declaredName="reducer" MultiLow="0" MultiHigh="*">
+        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="firstArg" MultiLow="1">
+          <typings>Anything</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="secondArg" MultiLow="1">
+          <typings>Anything</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+          <typings>Anything</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" isAbstract="true" declaredName="forAll">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="collection" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:ExpressionClass" direction="in" declaredName="test" MultiLow="0" MultiHigh="*">
+        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="argument" MultiLow="1">
+          <typings>Anything</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+          <typings>Boolean</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Boolean</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" isAbstract="true" declaredName="exists">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="collection" MultiLow="0" MultiHigh="*" isOrdered="true" isNonunique="true">
+        <typings>Anything</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:ExpressionClass" direction="in" declaredName="test" MultiLow="0" MultiHigh="*">
+        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="argument" MultiLow="1">
+          <typings>Anything</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+          <typings>Boolean</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+        <typings>Boolean</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="allTrue">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="collection" MultiLow="0" MultiHigh="*">
+        <typings>Boolean</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="collection->forAll {in x; x}">
+        <typings>Boolean</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="anyTrue">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="collection" MultiLow="0" MultiHigh="*">
+        <typings>Boolean</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="collection->exists {in x; x}">
+        <typings>Boolean</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="minimize">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="collection" MultiLow="1" MultiHigh="*">
+        <typings>ScalarValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:ExpressionClass" direction="in" declaredName="fn" MultiLow="0" MultiHigh="*">
+        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="argument" MultiLow="1">
+          <typings>ScalarValue</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+          <typings>ScalarValue</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1" valuePart="collection->collect {in x; fn(x)}->reduce min">
+        <typings>ScalarValue</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Function" declaredName="maximize">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="collection" MultiLow="1" MultiHigh="*">
+        <typings>ScalarValue</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:ExpressionClass" direction="in" declaredName="fn" MultiLow="0" MultiHigh="*">
+        <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="argument" MultiLow="1">
+          <typings>ScalarValue</typings>
+        </elements>
+        <elements xsi:type="kerMLOC:Feature" isReturn="true" MultiLow="1">
+          <typings>ScalarValue</typings>
+        </elements>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isReturn="true" valuePart="collection->collect {in x; fn(x)}->reduce max">
+        <typings>ScalarValue</typings>
+      </elements>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:Package" declaredName="MassRollup_2">
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="NumericalFunctions" isNamespace="true"/>
+    <elements xsi:type="kerMLOC:ImportElement" visibility="private" declaredName="ISQ" isNamespace="true"/>
+    <elements xsi:type="kerMLOC:Class" declaredName="MassedThing">
+      <elements xsi:type="kerMLOC:Feature" declaredName="mass">
+        <typings>ScalarValues::Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="totalMass" valuePart="mass + sum(subcomponents.totalMass)">
+        <typings>ScalarValues::Real</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" declaredName="subcomponents">
+        <redefinitions>massedThings</redefinitions>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Feature" declaredName="massedThings" MultiLow="0" MultiHigh="*">
+      <typings>MassedThing</typings>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

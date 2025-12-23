@@ -7,7 +7,7 @@ import dut.control.kermloc.kerMLOC.Identification;
 import dut.control.kermloc.kerMLOC.KerMLOCPackage;
 import dut.control.kermloc.kerMLOC.MemberPrefix;
 import dut.control.kermloc.kerMLOC.Multiplicity;
-import dut.control.kermloc.kerMLOC.MultiplicityBounds;
+import dut.control.kermloc.kerMLOC.MultiplicityRange;
 import dut.control.kermloc.kerMLOC.Subsets;
 import dut.control.kermloc.kerMLOC.SubsettingFeatureChain;
 import dut.control.kermloc.kerMLOC.TypeBodyElement;
@@ -209,7 +209,7 @@ public class MultiplicityImpl extends NonFeatureElementImpl implements Multiplic
   @Override
   protected EClass eStaticClass()
   {
-    return KerMLOCPackage.Literals.MULTIPLICITY;
+    return KerMLOCPackage.eINSTANCE.getMultiplicity();
   }
 
   /**
@@ -588,12 +588,12 @@ public class MultiplicityImpl extends NonFeatureElementImpl implements Multiplic
         default: return -1;
       }
     }
-    if (baseClass == MultiplicityBounds.class)
+    if (baseClass == MultiplicityRange.class)
     {
       switch (derivedFeatureID)
       {
-        case KerMLOCPackage.MULTIPLICITY__MULTI_LOW: return KerMLOCPackage.MULTIPLICITY_BOUNDS__MULTI_LOW;
-        case KerMLOCPackage.MULTIPLICITY__MULTI_HIGH: return KerMLOCPackage.MULTIPLICITY_BOUNDS__MULTI_HIGH;
+        case KerMLOCPackage.MULTIPLICITY__MULTI_LOW: return KerMLOCPackage.MULTIPLICITY_RANGE__MULTI_LOW;
+        case KerMLOCPackage.MULTIPLICITY__MULTI_HIGH: return KerMLOCPackage.MULTIPLICITY_RANGE__MULTI_HIGH;
         default: return -1;
       }
     }
@@ -641,12 +641,12 @@ public class MultiplicityImpl extends NonFeatureElementImpl implements Multiplic
         default: return -1;
       }
     }
-    if (baseClass == MultiplicityBounds.class)
+    if (baseClass == MultiplicityRange.class)
     {
       switch (baseFeatureID)
       {
-        case KerMLOCPackage.MULTIPLICITY_BOUNDS__MULTI_LOW: return KerMLOCPackage.MULTIPLICITY__MULTI_LOW;
-        case KerMLOCPackage.MULTIPLICITY_BOUNDS__MULTI_HIGH: return KerMLOCPackage.MULTIPLICITY__MULTI_HIGH;
+        case KerMLOCPackage.MULTIPLICITY_RANGE__MULTI_LOW: return KerMLOCPackage.MULTIPLICITY__MULTI_LOW;
+        case KerMLOCPackage.MULTIPLICITY_RANGE__MULTI_HIGH: return KerMLOCPackage.MULTIPLICITY__MULTI_HIGH;
         default: return -1;
       }
     }

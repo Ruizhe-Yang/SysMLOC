@@ -109,7 +109,7 @@ public class ElementFilterElementImpl extends PackageBodyElementImpl implements 
   @Override
   protected EClass eStaticClass()
   {
-    return KerMLOCPackage.Literals.ELEMENT_FILTER_ELEMENT;
+    return KerMLOCPackage.eINSTANCE.getElementFilterElement();
   }
 
   /**

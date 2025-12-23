@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kerMLOC:RootNamespace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kerMLOC="http://www.control.dut/kermloc/KerMLOC">
+  <elements xsi:type="kerMLOC:Package" declaredName="VehicleDefinitions">
+    <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9; * Example vehicle definitions model.&#xA;&#x9; */"/>
+    <elements xsi:type="kerMLOC:Comment" body="/* BLOCKS */"/>
+    <elements xsi:type="kerMLOC:Class" declaredName="Vehicle"/>
+    <elements xsi:type="kerMLOC:Class" declaredName="Transmission"/>
+    <elements xsi:type="kerMLOC:Class" declaredName="AxleAssembly"/>
+    <elements xsi:type="kerMLOC:Class" declaredName="Axle"/>
+    <elements xsi:type="kerMLOC:Class" declaredName="Wheel"/>
+    <elements xsi:type="kerMLOC:Class" declaredName="Lugbolt">
+      <elements xsi:type="kerMLOC:Feature" declaredName="tighteningTorque" MultiLow="1">
+        <typings>ScalarValues::Real</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Comment" body="/* INTERFACE BLOCKS */"/>
+    <elements xsi:type="kerMLOC:Class" declaredName="DriveIF">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="driveTorque">
+        <typings>ScalarValues::Real</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Class" declaredName="AxleMountIF">
+      <elements xsi:type="kerMLOC:Feature" direction="out" declaredName="transferredTorque">
+        <typings>ScalarValues::Real</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Class" declaredName="WheelHubIF">
+      <elements xsi:type="kerMLOC:Feature" direction="in" declaredName="appliedTorque">
+        <typings>ScalarValues::Real</typings>
+      </elements>
+    </elements>
+    <elements xsi:type="kerMLOC:Comment" body="/* ASSOCIATION BLOCKS */"/>
+    <elements xsi:type="kerMLOC:Association" declaredName="Mounting">
+      <elements xsi:type="kerMLOC:Documentation" body="/*&#xA;&#x9;&#x9; *  mounting a Wheel to an Axle.&#xA;&#x9;&#x9; */"/>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="axleMount">
+        <typings>AxleMountIF</typings>
+      </elements>
+      <elements xsi:type="kerMLOC:Feature" isEnd="true" declaredName="hub">
+        <typings>WheelHubIF</typings>
+      </elements>
+    </elements>
+  </elements>
+</kerMLOC:RootNamespace>

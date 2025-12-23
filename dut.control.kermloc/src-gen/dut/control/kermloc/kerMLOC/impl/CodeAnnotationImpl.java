@@ -65,7 +65,7 @@ public class CodeAnnotationImpl extends GeneralBodyElementsImpl implements CodeA
   @Override
   protected EClass eStaticClass()
   {
-    return KerMLOCPackage.Literals.CODE_ANNOTATION;
+    return KerMLOCPackage.eINSTANCE.getCodeAnnotation();
   }
 
   /**

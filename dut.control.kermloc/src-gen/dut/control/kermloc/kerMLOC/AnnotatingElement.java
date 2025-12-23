@@ -14,6 +14,6 @@ package dut.control.kermloc.kerMLOC;
  * @model
  * @generated
  */
-public interface AnnotatingElement extends GeneralBodyElements, AnnotatingBodyElement
+public interface AnnotatingElement extends GeneralBodyElements, AnnotatingBodyElement, RelationshipBodyElement, MetadataBodyElement
 {
 } // AnnotatingElement
